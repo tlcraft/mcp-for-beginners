@@ -60,7 +60,7 @@ Each lesson contains:
 
 ## License
 
-This curriculum is provided under the MIT License. See the [LICENSE]( ./LICENSE.md) file for details.
+This curriculum is provided under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 ## Contributing
 
