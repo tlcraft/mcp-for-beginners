@@ -1,4 +1,4 @@
-# Lesson 2: MCP Core Concepts
+# MCP Core Concepts
 
 ## Overview
 
@@ -317,4 +317,4 @@ Design a simple MCP tool that would be useful in your domain. Define:
 
 ---
 
-Next: [Lesson 3: Getting Started](./Lesson3_GettingStarted.md)
+Next: [Getting Started](../02-GettingStarted/Readme.md)

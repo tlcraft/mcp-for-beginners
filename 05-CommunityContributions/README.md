@@ -1,4 +1,4 @@
-# Lesson 6: Community and Contributions
+# Community and Contributions
 
 ## Overview
 
@@ -901,4 +901,4 @@ async def delete_tool(tool_name: str):
 
 ---
 
-Next: [Lesson 7: Case Studies and Projects](./Lesson7_CaseStudies.md)
+Next: [Case Studies and Projects](../06-CaseStudies/Readme.md)

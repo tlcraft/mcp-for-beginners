@@ -1,4 +1,4 @@
-# Lesson 7: Case Studies and Projects
+# Case Studies and Projects
 
 ## Overview
 
@@ -264,11 +264,4 @@ The Model Context Protocol represents a significant step toward standardizing AI
 3. Research an industry not covered in the case studies and outline how MCP could address its specific challenges.
 4. Explore one of the future directions and create a concept for a new MCP extension to support it.
 
-## Next Steps
-
-Congratulations on completing the MCP curriculum! To continue your journey:
-
-1. Join the MCP community to stay updated on the latest developments
-2. Contribute to open-source MCP projects
-3. Apply MCP principles in your own organization's AI initiatives
-4. Explore specialized MCP implementations for your industry
+Next: [Best Practices](../07-BestPractices/Readme.md)

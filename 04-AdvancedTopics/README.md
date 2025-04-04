@@ -1,4 +1,4 @@
-# Lesson 5: Advanced Topics in MCP
+# Advanced Topics in MCP
 
 ## Overview
 
@@ -1096,4 +1096,4 @@ Design an enterprise-grade MCP implementation for a specific use case:
 
 ---
 
-Next: [Lesson 6: Community and Contributions](./Lesson6_CommunityContributions.md)
+Next: [Community and Contributions](../05-CommunityContributions/Readme.md)

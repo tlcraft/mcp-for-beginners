@@ -1,4 +1,4 @@
-# Lesson 4: Practical Implementation
+# Practical Implementation
 
 ## Overview
 
@@ -1167,4 +1167,4 @@ Design a practical MCP workflow that addresses a real-world problem in your doma
 
 ---
 
-Next: [Lesson 5: Advanced Topics](./Lesson5_AdvancedTopics.md)
+Next: [Advanced Topics](../04-AdvancedTopics/Readme.md)

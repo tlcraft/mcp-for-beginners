@@ -1,4 +1,4 @@
-# Lesson 3: Getting Started with MCP
+# Getting Started with MCP
 
 ## Overview
 
@@ -584,4 +584,4 @@ Create a simple MCP server with a tool of your choice:
 
 ---
 
-Next: [Lesson 4: Practical Implementation](./Lesson4_PracticalImplementation.md)
+Next: [Practical Implementation](./Lesson4_PracticalImplementation.md)

@@ -1,4 +1,4 @@
-# Lesson 8: MCP Tool Development Best Practices
+# MCP Tool Development Best Practices
 
 ## Overview
 
@@ -1495,5 +1495,13 @@ Implement the tool schemas, error handling, and a workflow pattern that best sui
 - [Performance Optimization for MCP](https://learn.microsoft.com/en-us/ai/mcp/performance)
 
 ---
+## Next Steps
 
-Next: [Continue Your MCP Journey](./ContinueYourJourney.md)
+Congratulations on completing the MCP curriculum! To continue your journey:
+
+1. Join the MCP community to stay updated on the latest developments
+2. Contribute to open-source MCP projects
+3. Apply MCP principles in your own organization's AI initiatives
+4. Explore specialized MCP implementations for your industry. 
+5. Consider taking advanced courses on specific MCP topics, such as multi-modal integration or enterprise application integration.
+6. Experiment with building your own MCP tools and workflows using the principles learned in this curriculum.

@@ -1,4 +1,4 @@
-# Lesson 1: Introduction to Model Context Protocol (MCP)
+# Introduction to Model Context Protocol (MCP)
 
 ## Overview
 
@@ -168,4 +168,4 @@ Think about an AI application you're interested in building. What external tools
 
 ---
 
-Next: [Lesson 2: Core Concepts](./Lesson2_CoreConcepts.md)
+Next: [Core Concepts](./Lesson2_CoreConcepts.md)
