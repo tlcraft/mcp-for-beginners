@@ -317,4 +317,4 @@ Design a simple MCP tool that would be useful in your domain. Define:
 
 ---
 
-Next: [Getting Started](../02-GettingStarted/Readme.md)
+Next: [Getting Started](../02-GettingStarted/README.md)

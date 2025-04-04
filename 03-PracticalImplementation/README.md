@@ -1167,4 +1167,4 @@ Design a practical MCP workflow that addresses a real-world problem in your doma
 
 ---
 
-Next: [Advanced Topics](../04-AdvancedTopics/Readme.md)
+Next: [Advanced Topics](../04-AdvancedTopics/README.md)

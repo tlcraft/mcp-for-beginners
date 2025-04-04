@@ -584,4 +584,4 @@ Create a simple MCP server with a tool of your choice:
 
 ---
 
-Next: [Practical Implementation](./Lesson4_PracticalImplementation.md)
+Next: [Practical Implementation](../03-PracticalImplementation/README.md)

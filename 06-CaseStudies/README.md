@@ -264,4 +264,4 @@ The Model Context Protocol represents a significant step toward standardizing AI
 3. Research an industry not covered in the case studies and outline how MCP could address its specific challenges.
 4. Explore one of the future directions and create a concept for a new MCP extension to support it.
 
-Next: [Best Practices](../07-BestPractices/Readme.md)
+Next: [Best Practices](../07-BestPractices/README.md)

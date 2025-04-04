@@ -1096,4 +1096,4 @@ Design an enterprise-grade MCP implementation for a specific use case:
 
 ---
 
-Next: [Community and Contributions](../05-CommunityContributions/Readme.md)
+Next: [Community and Contributions](../05-CommunityContributions/README.md)

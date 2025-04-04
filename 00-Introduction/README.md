@@ -168,4 +168,4 @@ Think about an AI application you're interested in building. What external tools
 
 ---
 
-Next: [Core Concepts](../01-CoreConcepts/Readme.md)
+Next: [Core Concepts](../01-CoreConcepts/README.md)
