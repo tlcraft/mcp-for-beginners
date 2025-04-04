@@ -1486,14 +1486,6 @@ Design an MCP tool and workflow for a document processing system that:
 
 Implement the tool schemas, error handling, and a workflow pattern that best suits this scenario. Consider how you would test this implementation.
 
-## Additional Resources
-
-- [MCP Tool Development Guide](https://github.com/microsoft/mcp-for-beginners)
-- [Testing MCP Applications](https://learn.microsoft.com/en-us/ai/mcp/testing)
-- [Workflow Design Patterns](https://learn.microsoft.com/en-us/ai/mcp/workflow-patterns)
-- [MCP Security Best Practices](https://learn.microsoft.com/en-us/ai/mcp/security)
-- [Performance Optimization for MCP](https://learn.microsoft.com/en-us/ai/mcp/performance)
-
 ---
 ## Next Steps
 

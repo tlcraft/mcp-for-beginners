@@ -30,9 +30,7 @@ The MCP ecosystem consists of various components and participants that work toge
 #### Official Channels
 
 - [MCP GitHub Repository](https://github.com/microsoft/mcp-for-beginners)
-- [MCP Documentation](https://github.com/microsoft/mcp-for-beginners/docs)
-- [Microsoft AI Tech Community](https://techcommunity.microsoft.com/t5/ai-cognitive-services-blog/bg-p/AICognitiveServicesBlog)
-- [MCP Discord Server](https://discord.gg/mcp-community)
+- [MCP Documentation](https://modelcontextprotocol.io/introduction)
 
 #### Community-Driven Resources
 
