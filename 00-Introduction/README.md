@@ -50,6 +50,57 @@ MCP follows a client-server architecture with these key components:
 4. **Tools**: Functions that enable specific capabilities (e.g., web search, calculation)
 5. **Data Sources**: External information that the model can access
 
+## How MCP Servers Work
+
+1. Request Flow: 
+    - The MCP Client sends a request to the AI Model running in an MCP Host
+    - The AI Model identifies when it needs external tools or data
+    - The model communicates with the MCP Server using the standardized protocol
+
+2. MCP Server Functionality:
+    - Tool Registry: Maintains a catalog of available tools and their capabilities
+    - Authentication: Verifies permissions for tool access
+    - Request Handler: Processes incoming tool requests from the model
+    - Response Formatter: Structures tool outputs in a format the model can understand
+3. Tool Execution: 
+    - The server routes requests to the appropriate external tools
+    - Tools execute their specialized functions (search, calculation, database queries, etc.)
+    - Results are returned to the model in a consistent format.
+4. Response Completion: 
+    - The AI model incorporates tool outputs into its response.
+    - The final response is sent back to the client application.
+
+graph TD
+    A[AI Model in MCP Host] <-->|MCP Protocol| B[MCP Server]
+    B <-->|Tool Interface| C[Tool 1: Web Search]
+    B <-->|Tool Interface| D[Tool 2: Calculator]
+    B <-->|Tool Interface| E[Tool 3: Database Access]
+    B <-->|Tool Interface| F[Tool 4: File System]
+    
+    Client[MCP Client/Application] -->|Sends Request| A
+    A -->|Returns Response| Client
+    
+    subgraph "MCP Server Components"
+        B
+        G[Tool Registry]
+        H[Authentication]
+        I[Request Handler]
+        J[Response Formatter]
+    end
+    
+    B <--> G
+    B <--> H
+    B <--> I
+    B <--> J
+    
+    style A fill:#f9d5e5,stroke:#333,stroke-width:2px
+    style B fill:#eeeeee,stroke:#333,stroke-width:2px
+    style Client fill:#d5e8f9,stroke:#333,stroke-width:2px
+    style C fill:#c2f0c2,stroke:#333,stroke-width:1px
+    style D fill:#c2f0c2,stroke:#333,stroke-width:1px
+    style E fill:#c2f0c2,stroke:#333,stroke-width:1px
+    style F fill:#c2f0c2,stroke:#333,stroke-width:1px    
+
 ## Code Examples: Basic MCP Concepts
 
 ### .NET Example: Simple MCP Client
