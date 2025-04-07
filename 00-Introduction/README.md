@@ -70,6 +70,7 @@ MCP follows a client-server architecture with these key components:
     - The AI model incorporates tool outputs into its response.
     - The final response is sent back to the client application.
 
+```mermaid
 graph TD
     A[AI Model in MCP Host] <-->|MCP Protocol| B[MCP Server]
     B <-->|Tool Interface| C[Tool 1: Web Search]
@@ -100,6 +101,7 @@ graph TD
     style D fill:#c2f0c2,stroke:#333,stroke-width:1px
     style E fill:#c2f0c2,stroke:#333,stroke-width:1px
     style F fill:#c2f0c2,stroke:#333,stroke-width:1px    
+```
 
 ## Code Examples: Basic MCP Concepts
 
