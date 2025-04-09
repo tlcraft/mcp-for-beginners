@@ -30,14 +30,14 @@ Before diving into MCP development, ensure you have:
 
 ```csharp
 // Create a new .NET project for your MCP server
-dotnet new webapi -n McpDotNetServer
+dotnet new console -n McpDotNetServer
 
 // Change to the project directory
 cd McpDotNetServer
 
 // Add the MCP NuGet packages
-dotnet add package Microsoft.Mcp.Server
-dotnet add package Microsoft.Mcp.Tools
+dotnet add package ModelContextProtocol --prerelease
+dotnet add package Microsoft.Extensions.Hosting
 ```
 
 #### Java Setup
@@ -88,109 +88,49 @@ An MCP server provides tools that extend the capabilities of AI models. Let's st
 
 ### .NET Implementation
 
-```csharp
-using Microsoft.Mcp.Server;
-using Microsoft.Mcp.Tools;
-using System.Text.Json;
+This sample demonstrates how to create an MCP server in C# with a calculator tool implementation:
 
-namespace McpCalculatorServer
+```csharp
+// Create the host builder for the MCP server
+var builder = Host.CreateApplicationBuilder(args);
+
+// Configure the MCP server with tools
+builder.Services
+    .AddMcpServer(options =>
+    {
+        // Optional: Configure server options
+        options.DefaultFunctionOptionsBuilder = builder => builder.WithTimeout(TimeSpan.FromSeconds(30));
+    })
+    .WithStdioServerTransport()  // Add support for stdio transport (for use with language models)
+    .WithHttpServerTransport(options =>  // Also add HTTP transport for direct API access
+    {
+        options.Port = 5000;
+        options.Path = "/mcp";
+    })
+    .WithTools<CalculatorTools>();  // Register our calculator tools
+
+// Add logging to standard error for debugging
+builder.Logging.AddConsole(options =>
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
-            
-            // Add MCP services
-            builder.Services.AddMcpServer(options => {
-                options.ServerName = "Calculator MCP Server";
-                options.ServerVersion = "1.0.0";
-            });
-            
-            // Register calculator tool
-            builder.Services.AddMcpTool<CalculatorTool>();
-            
-            var app = builder.Build();
-            
-            // Configure the MCP middleware pipeline
-            app.UseMcpServer();
-            
-            app.Run("http://localhost:5000");
-        }
-    }
-    
-    public class CalculatorTool : IMcpTool
-    {
-        public string Name => "calculator";
-        public string Description => "Performs basic arithmetic operations";
-        
-        public object GetSchema()
-        {
-            return new {
-                type = "object",
-                properties = new {
-                    operation = new {
-                        type = "string",
-                        enum = new[] { "add", "subtract", "multiply", "divide" }
-                    },
-                    a = new { type = "number" },
-                    b = new { type = "number" }
-                },
-                required = new[] { "operation", "a", "b" }
-            };
-        }
-        
-        public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
-        {
-            // Parse parameters
-            var operation = request.Parameters.GetProperty("operation").GetString();
-            var a = request.Parameters.GetProperty("a").GetDouble();
-            var b = request.Parameters.GetProperty("b").GetDouble();
-            
-            double result = 0;
-            
-            // Perform calculation
-            switch (operation)
-            {
-                case "add":
-                    result = a + b;
-                    break;
-                case "subtract":
-                    result = a - b;
-                    break;
-                case "multiply":
-                    result = a * b;
-                    break;
-                case "divide":
-                    if (b == 0)
-                        throw new ToolExecutionException("Cannot divide by zero");
-                    result = a / b;
-                    break;
-                default:
-                    throw new ToolExecutionException($"Unknown operation: {operation}");
-            }
-            
-            // Return result
-            return new ToolResponse {
-                Result = JsonSerializer.SerializeToElement(new { result })
-            };
-        }
-    }
-}
+    options.LogToStandardErrorThreshold = LogLevel.Trace;
+});
+
+// Run the application
+await builder.Build().RunAsync();
 ```
 
+See the complete implementation in [samples/csharp/McpCalculatorServer.cs](./samples/csharp/McpCalculatorServer.cs)
+
 ### Java Implementation
+
+This sample demonstrates how to create an MCP server in Java with a calculator tool implementation:
 
 ```java
 package com.example.mcp;
 
 import com.mcp.server.McpServer;
-import com.mcp.tools.Tool;
-import com.mcp.tools.ToolRequest;
-import com.mcp.tools.ToolResponse;
-import com.mcp.tools.ToolExecutionException;
 
-public class CalculatorServer {
+public class McpCalculatorServer {
     public static void main(String[] args) {
         // Create and configure MCP server
         McpServer server = new McpServer.Builder()
@@ -207,6 +147,9 @@ public class CalculatorServer {
         System.out.println("Calculator MCP Server started on port 5000");
     }
 }
+```
+
+See the complete implementation in [samples/java/McpCalculatorServer.java](./samples/java/McpCalculatorServer.java)
 
 class CalculatorTool implements Tool {
     @Override
@@ -289,11 +232,13 @@ class CalculatorTool implements Tool {
 
 ### Python Implementation
 
+This sample demonstrates how to create an MCP server in Python with a calculator tool implementation:
+
 ```python
 from mcp_server import McpServer
-from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
-import json
+from mcp_tools import Tool, ToolRequest, ToolResponse
 
+# Create calculator tool class
 class CalculatorTool(Tool):
     def get_name(self):
         return "calculator"
@@ -301,6 +246,7 @@ class CalculatorTool(Tool):
     def get_description(self):
         return "Performs basic arithmetic operations"
     
+    # Define the tool schema including parameters
     def get_schema(self):
         return {
             "type": "object",
@@ -315,56 +261,29 @@ class CalculatorTool(Tool):
             "required": ["operation", "a", "b"]
         }
     
-    def execute(self, request: ToolRequest) -> ToolResponse:
-        # Extract parameters
-        params = request.parameters
-        operation = params.get("operation")
-        a = params.get("a")
-        b = params.get("b")
+    # Create and start server
+    if __name__ == "__main__":
+        # Initialize server
+        server = McpServer(name="Calculator MCP Server")
         
-        # Perform calculation
-        if operation == "add":
-            result = a + b
-        elif operation == "subtract":
-            result = a - b
-        elif operation == "multiply":
-            result = a * b
-        elif operation == "divide":
-            if b == 0:
-                raise ToolExecutionException("Cannot divide by zero")
-            result = a / b
-        else:
-            raise ToolExecutionException(f"Unknown operation: {operation}")
+        # Register tools
+        server.register_tool(CalculatorTool())
         
-        # Return result
-        return ToolResponse(
-            result={"result": result}
-        )
-
-# Create and start server
-if __name__ == "__main__":
-    # Initialize server
-    server = McpServer(
-        name="Calculator MCP Server",
-        version="1.0.0",
-        port=5000
-    )
-    
-    # Register tools
-    server.register_tool(CalculatorTool())
-    
-    # Start server
-    server.start()
-    print("Calculator MCP Server running on port 5000")
+        # Start server
+        server.start()
 ```
+
+See the complete implementation in [samples/python/mcp_calculator_server.py](./samples/python/mcp_calculator_server.py)
 
 ### JavaScript Implementation
 
+This sample demonstrates how to create an MCP server in JavaScript with a calculator tool implementation:
+
 ```javascript
-// Using Express.js for the MCP server
 const express = require('express');
 const { McpServer, ToolRegistry } = require('@mcp/server');
 
+// Create calculator tool
 class CalculatorTool {
   getName() {
     return 'calculator';
@@ -380,50 +299,12 @@ class CalculatorTool {
       properties: {
         operation: {
           type: 'string',
-          enum: ['add', 'subtract', 'multiply', 'divide'],
-          description: 'The arithmetic operation to perform'
+          enum: ['add', 'subtract', 'multiply', 'divide']
         },
-        a: {
-          type: 'number',
-          description: 'First operand'
-        },
-        b: {
-          type: 'number',
-          description: 'Second operand'
-        }
+        a: { type: 'number' },
+        b: { type: 'number' }
       },
       required: ['operation', 'a', 'b']
-    };
-  }
-
-  async execute(request) {
-    const { operation, a, b } = request.parameters;
-    let result = 0;
-
-    // Perform calculation
-    switch (operation) {
-      case 'add':
-        result = a + b;
-        break;
-      case 'subtract':
-        result = a - b;
-        break;
-      case 'multiply':
-        result = a * b;
-        break;
-      case 'divide':
-        if (b === 0) {
-          throw new Error('Cannot divide by zero');
-        }
-        result = a / b;
-        break;
-      default:
-        throw new Error(`Unknown operation: ${operation}`);
-    }
-
-    // Return result
-    return {
-      result: result
     };
   }
 }
@@ -442,26 +323,14 @@ const mcpServer = new McpServer({
   toolRegistry: toolRegistry
 });
 
-// Set up MCP endpoints
-app.post('/mcp/execute', async (req, res) => {
-  try {
-    const response = await mcpServer.handleRequest(req.body);
-    res.json(response);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-});
-
-app.get('/mcp/tools', (req, res) => {
-  res.json(mcpServer.getAvailableTools());
-});
-
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Calculator MCP Server started on port ${PORT}`);
 });
 ```
+
+See the complete implementation in [samples/javascript/mcp_calculator_server.js](./samples/javascript/mcp_calculator_server.js)
 
 ## Building an MCP Client
 
@@ -470,42 +339,58 @@ Now let's create a client application that connects to our MCP server and uses t
 ### .NET Client
 
 ```csharp
-using Microsoft.Mcp.Client;
-using System;
-using System.Threading.Tasks;
+using System.Net.Http.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
-namespace McpCalculatorClient
+namespace MyFirstMCP;
+
+public class MonkeyService
 {
-    class Program
+    HttpClient httpClient;
+    public MonkeyService()
     {
-        static async Task Main(string[] args)
-        {
-            // Create MCP client
-            var client = new McpClient("http://localhost:5000");
-            
-            // Define a prompt that requires calculation
-            string prompt = "What is 135 * 28?";
-            
-            Console.WriteLine($"User: {prompt}");
-            
-            // Send request with access to the calculator tool
-            var response = await client.SendPromptAsync(prompt, 
-                new McpToolOptions { AllowedTools = ["calculator"] });
-            
-            Console.WriteLine($"AI: {response.GeneratedText}");
-            
-            // Display tool usage information
-            if (response.ToolCalls?.Count > 0)
-            {
-                Console.WriteLine("\nTool calls made:");
-                foreach (var toolCall in response.ToolCalls)
-                {
-                    Console.WriteLine($"- {toolCall.ToolName} with parameters: {toolCall.Parameters}");
-                    Console.WriteLine($"  Result: {toolCall.Result}");
-                }
-            }
-        }
+        this.httpClient = new HttpClient();  
     }
+
+    List<Monkey> monkeyList = new();
+    public async Task<List<Monkey>> GetMonkeys()
+    {
+        if (monkeyList?.Count > 0)
+            return monkeyList;
+
+        var response = await httpClient.GetAsync("https://www.montemagno.com/monkeys.json");
+        if (response.IsSuccessStatusCode)
+        {
+            monkeyList = await response.Content.ReadFromJsonAsync(MonkeyContext.Default.ListMonkey) ?? [];
+        }
+
+        monkeyList ??= [];
+
+        return monkeyList;
+    }
+
+    public async Task<Monkey?> GetMonkey(string name)
+    {
+        var monkeys = await GetMonkeys();
+        return monkeys.FirstOrDefault(m => m.Name?.Equals(name, StringComparison.OrdinalIgnoreCase) == true);
+    }
+}
+
+public partial class Monkey
+{
+    public string? Name { get; set; }
+    public string? Location { get; set; }
+    public string? Details { get; set; }
+    public string? Image { get; set; }
+    public int Population { get; set; }
+    public double Latitude { get; set; }
+    public double Longitude { get; set; }
+}
+
+[JsonSerializable(typeof(List<Monkey>))]
+internal sealed partial class MonkeyContext : JsonSerializerContext {
+
 }
 ```
 
