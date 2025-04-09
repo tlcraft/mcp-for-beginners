@@ -96,22 +96,26 @@ namespace MultiModalMcpExample
             // Analyze based on the requested analysis type
             var analysisResult = analysisType switch
             {
-                "objects" => await _imageService.DetectObjectsAsync(imageData),
-                "text" => await _imageService.RecognizeTextAsync(imageData),
+                "objects" => await _imageService.DetectObjectsAsync(imageData),                "text" => await _imageService.RecognizeTextAsync(imageData),
                 "faces" => await _imageService.DetectFacesAsync(imageData),
                 _ => await _imageService.AnalyzeGeneralAsync(imageData) // Default general analysis
             };
             
-            // Return structured result as a ToolResponse with content
-            return new ToolResponse
+            // Return structured result as a ToolResponse
+            // Format follows the MCP specification for content structure
+            var content = new List<ContentItem>
             {
-                Content = new List<ContentItem>
+                new ContentItem
                 {
-                    new TextContent(JsonSerializer.Serialize(analysisResult))
+                    Type = ContentType.Text,
+                    Text = JsonSerializer.Serialize(analysisResult)
                 }
             };
-            return new ToolResponse {
-                Result = JsonSerializer.SerializeToElement(analysisResult)
+            
+            return new ToolResponse
+            {
+                Content = content,
+                IsError = false
             };
         }
         
@@ -125,19 +129,34 @@ namespace MultiModalMcpExample
     // Multi-modal MCP server with image and text processing
     public class MultiModalMcpServer
     {
-        public static void Configure(IServiceCollection services)
+        public static async Task Main(string[] args)
         {
-            // Register base MCP services
-            services.AddMcpServer(options => {
-                options.ServerName = "Multi-Modal MCP Server";
-                options.ServerVersion = "1.0.0";
-                options.MaxRequestSize = 10 * 1024 * 1024; // 10MB for larger payloads like images
-            });
+            // Create an MCP server
+            var server = new McpServer(
+                name: "Multi-Modal MCP Server",
+                version: "1.0.0"
+            );
             
-            // Register image analysis services
-            services.AddSingleton<IImageAnalysisService, ComputerVisionService>();
+            // Configure server for multi-modal support
+            var serverOptions = new McpServerOptions
+            {
+                MaxRequestSize = 10 * 1024 * 1024, // 10MB for larger payloads like images
+                SupportedContentTypes = new[]
+                {
+                    "image/jpeg",
+                    "image/png",
+                    "text/plain",
+                    "application/json"
+                }
+            };
             
-            // Register text and image tools
+            // Create image analysis service
+            var imageService = new ComputerVisionService();
+            
+            // Register image analysis tools
+            server.AddTool(new ImageAnalysisTool(imageService));
+            
+            // Register a text-to-image tool
             services.AddMcpTool<TextAnalysisTool>();
             services.AddMcpTool<ImageAnalysisTool>();
             services.AddMcpTool<DocumentGenerationTool>(); // Tool that can generate documents with text and images
