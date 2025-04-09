@@ -7,7 +7,7 @@ This lesson provides practical guidance on setting up MCP environments and build
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
-- Set up development environments for MCP in .NET, Java, and Python
+- Set up development environments for MCP in .NET, Java, Python, and JavaScript
 - Build and deploy basic MCP servers with custom tools
 - Create MCP clients that connect to servers and models
 - Test and debug MCP implementations
@@ -19,9 +19,9 @@ By the end of this lesson, you will be able to:
 
 Before diving into MCP development, ensure you have:
 
-1. **Development Environment**: For your chosen language (.NET, Java, or Python)
-2. **IDE/Editor**: Visual Studio, VS Code, IntelliJ, Eclipse, or PyCharm
-3. **Package Managers**: NuGet, Maven/Gradle, or pip
+1. **Development Environment**: For your chosen language (.NET, Java, Python, or JavaScript)
+2. **IDE/Editor**: Visual Studio, VS Code, IntelliJ, Eclipse, PyCharm, or any JavaScript editor
+3. **Package Managers**: NuGet, Maven/Gradle, pip, or npm
 4. **API Keys**: For any AI services you plan to use (e.g., Azure OpenAI Service)
 
 ### Installation and Setup
@@ -70,6 +70,16 @@ source mcp-env/bin/activate
 
 # Install MCP packages
 pip install mcp-server mcp-client
+```
+
+#### JavaScript Setup
+
+```bash
+# Initialize a new Node.js project
+npm init -y
+
+# Install MCP server package
+npm install @mcp/server express
 ```
 
 ## Creating Your First MCP Server
@@ -348,6 +358,111 @@ if __name__ == "__main__":
     print("Calculator MCP Server running on port 5000")
 ```
 
+### JavaScript Implementation
+
+```javascript
+// Using Express.js for the MCP server
+const express = require('express');
+const { McpServer, ToolRegistry } = require('@mcp/server');
+
+class CalculatorTool {
+  getName() {
+    return 'calculator';
+  }
+
+  getDescription() {
+    return 'Performs basic arithmetic operations';
+  }
+
+  getSchema() {
+    return {
+      type: 'object',
+      properties: {
+        operation: {
+          type: 'string',
+          enum: ['add', 'subtract', 'multiply', 'divide'],
+          description: 'The arithmetic operation to perform'
+        },
+        a: {
+          type: 'number',
+          description: 'First operand'
+        },
+        b: {
+          type: 'number',
+          description: 'Second operand'
+        }
+      },
+      required: ['operation', 'a', 'b']
+    };
+  }
+
+  async execute(request) {
+    const { operation, a, b } = request.parameters;
+    let result = 0;
+
+    // Perform calculation
+    switch (operation) {
+      case 'add':
+        result = a + b;
+        break;
+      case 'subtract':
+        result = a - b;
+        break;
+      case 'multiply':
+        result = a * b;
+        break;
+      case 'divide':
+        if (b === 0) {
+          throw new Error('Cannot divide by zero');
+        }
+        result = a / b;
+        break;
+      default:
+        throw new Error(`Unknown operation: ${operation}`);
+    }
+
+    // Return result
+    return {
+      result: result
+    };
+  }
+}
+
+// Create Express app
+const app = express();
+app.use(express.json());
+
+// Create and configure MCP server
+const toolRegistry = new ToolRegistry();
+toolRegistry.registerTool(new CalculatorTool());
+
+const mcpServer = new McpServer({
+  serverName: 'Calculator MCP Server',
+  serverVersion: '1.0.0',
+  toolRegistry: toolRegistry
+});
+
+// Set up MCP endpoints
+app.post('/mcp/execute', async (req, res) => {
+  try {
+    const response = await mcpServer.handleRequest(req.body);
+    res.json(response);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+app.get('/mcp/tools', (req, res) => {
+  res.json(mcpServer.getAvailableTools());
+});
+
+// Start server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Calculator MCP Server started on port ${PORT}`);
+});
+```
+
 ## Building an MCP Client
 
 Now let's create a client application that connects to our MCP server and uses the calculator tool.
@@ -471,6 +586,106 @@ if response.tool_calls:
         print(f"  Result: {tool_call.result}")
 ```
 
+### JavaScript Client
+
+```javascript
+// Using Node.js with the MCP client
+const { McpClient } = require('@mcp/client');
+
+// Create MCP client
+const client = new McpClient({
+  serverUrl: 'http://localhost:5000'
+});
+
+// Define prompt
+const prompt = "What is 135 * 28?";
+
+console.log(`User: ${prompt}`);
+
+// Send request to the MCP server
+(async () => {
+  try {
+    const response = await client.sendPrompt(prompt, {
+      allowedTools: ['calculator']
+    });
+    
+    // Display response
+    console.log(`AI: ${response.generatedText}`);
+    
+    // Display tool usage information
+    if (response.toolCalls && response.toolCalls.length > 0) {
+      console.log('\nTool calls made:');
+      response.toolCalls.forEach(toolCall => {
+        console.log(`- ${toolCall.name} with parameters:`, toolCall.parameters);
+        console.log(`  Result:`, toolCall.result);
+      });
+    }
+  } catch (error) {
+    console.error('Error communicating with MCP server:', error);
+  }
+})();
+```
+
+#### Browser-Based JavaScript Client
+
+```javascript
+// Using the MCP client library in a browser environment
+import { McpClient } from '@mcp/client-browser';
+
+// Set up the UI elements
+const promptInput = document.getElementById('prompt-input');
+const submitButton = document.getElementById('submit-button');
+const responseDiv = document.getElementById('response');
+const toolCallsDiv = document.getElementById('tool-calls');
+
+// Initialize the client
+const client = new McpClient({
+  serverUrl: '/api/mcp' // Relative URL for browser environment
+});
+
+// Handle form submission
+submitButton.addEventListener('click', async () => {
+  const prompt = promptInput.value;
+  if (!prompt) return;
+  
+  try {
+    // Show loading state
+    responseDiv.textContent = 'Thinking...';
+    toolCallsDiv.textContent = '';
+    
+    // Send the request
+    const response = await client.sendPrompt(prompt, {
+      allowedTools: ['calculator'],
+      temperature: 0.7
+    });
+    
+    // Display the response
+    responseDiv.textContent = response.generatedText;
+    
+    // Display any tool calls
+    if (response.toolCalls && response.toolCalls.length > 0) {
+      const toolCallsList = document.createElement('ul');
+      
+      response.toolCalls.forEach(toolCall => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+          <strong>${toolCall.name}</strong> called with parameters: 
+          <pre>${JSON.stringify(toolCall.parameters, null, 2)}</pre>
+          <br>
+          Result: <pre>${JSON.stringify(toolCall.result, null, 2)}</pre>
+        `;
+        toolCallsList.appendChild(listItem);
+      });
+      
+      toolCallsDiv.innerHTML = '<h4>Tool Calls:</h4>';
+      toolCallsDiv.appendChild(toolCallsList);
+    }
+  } catch (error) {
+    responseDiv.textContent = `Error: ${error.message}`;
+  }
+});
+```
+
 ## Testing and Debugging
 
 ### Testing MCP Servers
@@ -535,7 +750,7 @@ CMD ["python", "calculator_server.py"]
 Deploy MCP servers to cloud platforms:
 
 1. **Azure App Service**:
-   - Supports .NET, Java, and Python
+   - Supports .NET, Java, Python, and JavaScript
    - Easy integration with Azure services
 
 2. **AWS Lambda**:
@@ -573,7 +788,7 @@ Several pre-built MCP integrations are available:
 ## Exercise
 
 Create a simple MCP server with a tool of your choice:
-1. Implement the tool in your preferred language (.NET, Java, or Python)
+1. Implement the tool in your preferred language (.NET, Java, Python, or JavaScript)
 2. Define input parameters and return values
 3. Build a simple client that uses your tool
 4. Test the implementation with various inputs

@@ -404,7 +404,22 @@ if __name__ == "__main__":
 
 ## Sampling in Model Context Protocol
 
-Sampling strategies are critical for optimizing model responses in MCP implementations. The right sampling configuration can dramatically improve response quality and performance.
+Sampling strategies are critical for optimizing model responses in MCP implementations. The right sampling configuration can dramatically improve response quality and performance. MCP provides a standardized way to control how models generate text with specific parameters that influence randomness, creativity, and coherence.
+
+### Sampling Parameters Overview
+
+MCP defines the following sampling parameters that can be configured in client requests:
+
+| Parameter | Description | Typical Range |
+|-----------|-------------|---------------|
+| `temperature` | Controls randomness in token selection | 0.0 - 2.0 |
+| `top_p` | Nucleus sampling - limits tokens to top cumulative probability | 0.0 - 1.0 |
+| `top_k` | Limits token selection to top K options | 1 - 100 |
+| `presence_penalty` | Penalizes tokens based on their presence in the text so far | -2.0 - 2.0 |
+| `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
+| `seed` | Specific random seed for reproducible results | Integer value |
+| `max_tokens` | Maximum number of tokens to generate | Integer value |
+| `stop_sequences` | Custom sequences that stop generation when encountered | Array of strings |
 
 ### Temperature and Top-K/Top-P Sampling
 
@@ -444,6 +459,64 @@ public class SamplingExample
 }
 ```
 
+```javascript
+// JavaScript Example: Temperature and Top-P sampling configuration
+const { McpClient } = require('@mcp/client');
+
+async function demonstrateSampling() {
+  // Initialize the MCP client
+  const client = new McpClient({
+    serverUrl: 'https://mcp-server-example.com',
+    apiKey: process.env.MCP_API_KEY
+  });
+  
+  // Configure request with different sampling parameters
+  const creativeSampling = {
+    temperature: 0.9,    // Higher temperature = more randomness/creativity
+    topP: 0.92,          // Consider tokens with top 92% probability mass
+    frequencyPenalty: 0.6, // Reduce repetition of token sequences
+    presencePenalty: 0.4   // Penalize tokens that have appeared in the text so far
+  };
+  
+  const factualSampling = {
+    temperature: 0.2,    // Lower temperature = more deterministic/factual
+    topP: 0.85,          // Slightly more focused token selection
+    frequencyPenalty: 0.2, // Minimal repetition penalty
+    presencePenalty: 0.1   // Minimal presence penalty
+  };
+  
+  try {
+    // Send two requests with different sampling configurations
+    const creativeResponse = await client.sendPrompt(
+      "Generate innovative ideas for sustainable urban transportation",
+      {
+        allowedTools: ['ideaGenerator', 'environmentalImpactTool'],
+        ...creativeSampling
+      }
+    );
+    
+    const factualResponse = await client.sendPrompt(
+      "Explain how electric vehicles impact carbon emissions",
+      {
+        allowedTools: ['factChecker', 'dataAnalysisTool'],
+        ...factualSampling
+      }
+    );
+    
+    console.log('Creative Response (temperature=0.9):');
+    console.log(creativeResponse.generatedText);
+    
+    console.log('\nFactual Response (temperature=0.2):');
+    console.log(factualResponse.generatedText);
+    
+  } catch (error) {
+    console.error('Error demonstrating sampling:', error);
+  }
+}
+
+demonstrateSampling();
+```
+
 ### Deterministic Sampling
 
 For applications requiring consistent outputs, deterministic sampling ensures reproducible results.
@@ -471,7 +544,7 @@ public class DeterministicSamplingExample {
             .setSeed(fixedSeed)
             .setTemperature(0.0)
             .build();
-            
+        
         // Execute both requests
         McpResponse response1 = client.sendRequest(request1);
         McpResponse response2 = client.sendRequest(request2);
@@ -483,6 +556,51 @@ public class DeterministicSamplingExample {
             response1.getGeneratedText().equals(response2.getGeneratedText()));
     }
 }
+```
+
+```javascript
+// JavaScript Example: Deterministic responses with seed control
+const { McpClient } = require('@mcp/client');
+
+async function deterministicSampling() {
+  const client = new McpClient({
+    serverUrl: 'https://mcp-server-example.com'
+  });
+  
+  const fixedSeed = 12345;
+  const prompt = "Generate a random password with 8 characters";
+  
+  try {
+    // First request with fixed seed
+    const response1 = await client.sendPrompt(prompt, {
+      seed: fixedSeed,
+      temperature: 0.0  // Zero temperature for maximum determinism
+    });
+    
+    // Second request with same seed and temperature
+    const response2 = await client.sendPrompt(prompt, {
+      seed: fixedSeed,
+      temperature: 0.0
+    });
+    
+    // Third request with different seed but same temperature
+    const response3 = await client.sendPrompt(prompt, {
+      seed: 67890,
+      temperature: 0.0
+    });
+    
+    console.log('Response 1:', response1.generatedText);
+    console.log('Response 2:', response2.generatedText);
+    console.log('Response 3:', response3.generatedText);
+    console.log('Responses 1 and 2 match:', response1.generatedText === response2.generatedText);
+    console.log('Responses 1 and 3 match:', response1.generatedText === response3.generatedText);
+    
+  } catch (error) {
+    console.error('Error in deterministic sampling demo:', error);
+  }
+}
+
+deterministicSampling();
 ```
 
 ### Dynamic Sampling Configuration
@@ -535,6 +653,195 @@ class DynamicSamplingService:
             "applied_sampling": sampling_params,
             "task_type": task_type
         }
+```
+
+```javascript
+// JavaScript Example: Dynamic sampling configuration based on user context
+class AdaptiveSamplingManager {
+  constructor(mcpClient) {
+    this.client = mcpClient;
+    
+    // Define base sampling profiles
+    this.samplingProfiles = {
+      creative: { temperature: 0.85, topP: 0.94, frequencyPenalty: 0.7, presencePenalty: 0.5 },
+      factual: { temperature: 0.2, topP: 0.85, frequencyPenalty: 0.3, presencePenalty: 0.1 },
+      code: { temperature: 0.25, topP: 0.9, frequencyPenalty: 0.4, presencePenalty: 0.3 },
+      conversational: { temperature: 0.7, topP: 0.9, frequencyPenalty: 0.6, presencePenalty: 0.4 }
+    };
+    
+    // Track historical performance
+    this.performanceHistory = [];
+  }
+  
+  // Detect task type from prompt
+  detectTaskType(prompt, context = {}) {
+    const promptLower = prompt.toLowerCase();
+    
+    // Simple heuristic detection - could be enhanced with ML classification
+    if (context.taskType) return context.taskType;
+    
+    if (promptLower.includes('code') || 
+        promptLower.includes('function') || 
+        promptLower.includes('program')) {
+      return 'code';
+    }
+    
+    if (promptLower.includes('explain') || 
+        promptLower.includes('what is') || 
+        promptLower.includes('how does')) {
+      return 'factual';
+    }
+    
+    if (promptLower.includes('creative') || 
+        promptLower.includes('imagine') || 
+        promptLower.includes('story')) {
+      return 'creative';
+    }
+    
+    // Default to conversational if no clear type is detected
+    return 'conversational';
+  }
+  
+  // Calculate sampling parameters based on context and user preferences
+  getSamplingParameters(prompt, context = {}) {
+    // Detect the type of task
+    const taskType = this.detectTaskType(prompt, context);
+    
+    // Get base profile
+    let params = {...this.samplingProfiles[taskType]};
+    
+    // Adjust based on user preferences
+    if (context.userPreferences) {
+      const { creativity, precision, consistency } = context.userPreferences;
+      
+      if (creativity !== undefined) {
+        // Scale from 1-10 to appropriate temperature range
+        params.temperature = 0.1 + (creativity * 0.09); // 0.1-1.0
+      }
+      
+      if (precision !== undefined) {
+        // Higher precision means lower topP (more focused selection)
+        params.topP = 1.0 - (precision * 0.05); // 0.5-1.0
+      }
+      
+      if (consistency !== undefined) {
+        // Higher consistency means lower penalties
+        params.frequencyPenalty = 0.1 + ((10 - consistency) * 0.08); // 0.1-0.9
+      }
+    }
+    
+    // Apply learned adjustments from performance history
+    this.applyLearnedAdjustments(params, taskType);
+    
+    return params;
+  }
+  
+  applyLearnedAdjustments(params, taskType) {
+    // Simple adaptive logic - could be enhanced with more sophisticated algorithms
+    const relevantHistory = this.performanceHistory
+      .filter(entry => entry.taskType === taskType)
+      .slice(-5); // Only consider recent history
+    
+    if (relevantHistory.length > 0) {
+      // Calculate average performance scores
+      const avgScore = relevantHistory.reduce((sum, entry) => sum + entry.score, 0) / relevantHistory.length;
+      
+      // If performance is below threshold, adjust parameters
+      if (avgScore < 0.7) {
+        // Slight adjustment toward safer values
+        params.temperature = Math.max(params.temperature * 0.9, 0.1);
+        params.topP = Math.max(params.topP * 0.95, 0.5);
+      }
+    }
+  }
+  
+  recordPerformance(prompt, samplingParams, response, score) {
+    // Record performance for future adjustments
+    this.performanceHistory.push({
+      timestamp: Date.now(),
+      taskType: this.detectTaskType(prompt),
+      samplingParams,
+      responseLength: response.generatedText.length,
+      score // 0-1 rating of response quality
+    });
+    
+    // Limit history size
+    if (this.performanceHistory.length > 100) {
+      this.performanceHistory.shift();
+    }
+  }
+  
+  async generateResponse(prompt, context = {}) {
+    // Get optimized sampling parameters
+    const samplingParams = this.getSamplingParameters(prompt, context);
+    
+    // Send request with optimized parameters
+    const response = await this.client.sendPrompt(prompt, {
+      ...samplingParams,
+      allowedTools: context.allowedTools || []
+    });
+    
+    // If user provides feedback, record it for future optimization
+    if (context.recordPerformance) {
+      this.recordPerformance(prompt, samplingParams, response, context.feedbackScore || 0.5);
+    }
+    
+    return {
+      response,
+      appliedSamplingParams: samplingParams,
+      detectedTaskType: this.detectTaskType(prompt, context)
+    };
+  }
+}
+
+// Example usage
+async function demonstrateAdaptiveSampling() {
+  const client = new McpClient({
+    serverUrl: 'https://mcp-server-example.com'
+  });
+  
+  const samplingManager = new AdaptiveSamplingManager(client);
+  
+  try {
+    // Creative task with custom user preferences
+    const creativeResult = await samplingManager.generateResponse(
+      "Write a short poem about artificial intelligence",
+      {
+        userPreferences: {
+          creativity: 9,  // High creativity (1-10)
+          consistency: 3  // Low consistency (1-10)
+        }
+      }
+    );
+    
+    console.log('Creative Task:');
+    console.log(`Detected type: ${creativeResult.detectedTaskType}`);
+    console.log('Applied sampling:', creativeResult.appliedSamplingParams);
+    console.log(creativeResult.response.generatedText);
+    
+    // Code generation task
+    const codeResult = await samplingManager.generateResponse(
+      "Write a JavaScript function to calculate the Fibonacci sequence",
+      {
+        userPreferences: {
+          creativity: 2,  // Low creativity
+          precision: 8,   // High precision
+          consistency: 9  // High consistency
+        }
+      }
+    );
+    
+    console.log('\nCode Task:');
+    console.log(`Detected type: ${codeResult.detectedTaskType}`);
+    console.log('Applied sampling:', codeResult.appliedSamplingParams);
+    console.log(codeResult.response.generatedText);
+    
+  } catch (error) {
+    console.error('Error in adaptive sampling demo:', error);
+  }
+}
+
+demonstrateAdaptiveSampling();
 ```
 
 ## Routing in Model Context Protocol

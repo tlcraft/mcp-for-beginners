@@ -280,6 +280,51 @@ if __name__ == "__main__":
     print("MCP Server running on port 3000")
 ```
 
+### JavaScript Example: Creating an MCP Client
+
+```javascript
+// Using Node.js with the MCP client library
+const { McpClient } = require('@mcp/client');
+
+async function runMcpExample() {
+  // Initialize the MCP client
+  const client = new McpClient({
+    serverUrl: 'https://mcp-server-example.com',
+    apiKey: process.env.MCP_API_KEY // Use environment variable for security
+  });
+  
+  // Create a request with a prompt
+  const prompt = "What's the current weather in London?";
+  
+  try {
+    // Send the request to the MCP server
+    const response = await client.sendPrompt(prompt, {
+      allowedTools: ['weatherTool'], // Specify which tools the model can use
+      temperature: 0.7,
+      maxTokens: 300
+    });
+    
+    // Process the response
+    console.log('Model response:', response.generatedText);
+    
+    // Check if any tools were used
+    if (response.toolCalls && response.toolCalls.length > 0) {
+      console.log('\nTools used:');
+      response.toolCalls.forEach(toolCall => {
+        console.log(`- ${toolCall.name} with parameters:`, toolCall.parameters);
+        console.log(`  Result:`, toolCall.result);
+      });
+    }
+  } catch (error) {
+    console.error('Error communicating with MCP server:', error);
+  }
+}
+
+runMcpExample();
+```
+
+This JavaScript example demonstrates how to create an MCP client that connects to a server, sends a prompt, and processes the response including any tool calls that were made.
+
 ## Security and Authorization
 
 MCP includes built-in concepts for managing security:
