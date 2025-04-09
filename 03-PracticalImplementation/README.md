@@ -15,7 +15,20 @@ By the end of this lesson, you will be able to:
 
 ## Working with MCP SDKs
 
-### .NET SDK
+This section provides practical examples of implementing MCP across multiple programming languages. You can find sample code in the `samples` directory organized by language.
+
+### Available Samples
+
+The repository includes sample implementations in the following languages:
+
+- C# (.NET)
+- Java
+- JavaScript
+- Python
+
+Each sample demonstrates key MCP concepts and implementation patterns for that specific language and ecosystem.
+
+### C# (.NET) Implementation
 
 The .NET SDK for MCP provides comprehensive tooling for building both clients and servers.
 
@@ -26,79 +39,46 @@ The .NET SDK for MCP provides comprehensive tooling for building both clients an
 - Built-in DI container integration
 - Streaming response support
 
-#### Advanced Implementation
+For a complete C# implementation sample, see [MCPSample.cs](samples/csharp/MCPSample.cs) in the samples directory.
 
-```csharp
-using Microsoft.Mcp.Server;
-using Microsoft.Mcp.Tools;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using System.Text.Json;
-using System.Threading.Tasks;
+### Java Implementation
 
-namespace AdvancedMcpServer
-{
-    public class Startup
-    {
-        public void ConfigureServices(IServiceCollection services)
-        {
-            // Add MCP server with configuration
-            services.AddMcpServer(options => {
-                options.ServerName = "Advanced MCP Server";
-                options.ServerVersion = "1.0.0";
-                options.MaxConcurrentRequests = 10;
-                options.EnableStreamingResponses = true;
-            });
-            
-            // Register tools
-            services.AddMcpTool<FileSearchTool>();
-            services.AddMcpTool<DatabaseQueryTool>();
-            
-            // Register custom services used by tools
-            services.AddSingleton<IFileIndexService, FileIndexService>();
-            services.AddSingleton<IDatabaseService, DatabaseService>();
-            
-            // Add logging
-            services.AddLogging(builder => {
-                builder.AddConsole();
-                builder.SetMinimumLevel(LogLevel.Information);
-            });
-        }
-        
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            
-            // Use middleware for authentication (if needed)
-            app.UseAuthentication();
-            
-            // Use MCP server middleware
-            app.UseMcpServer();
-            
-            app.UseRouting();
-            app.UseEndpoints(endpoints => {
-                endpoints.MapControllers();
-            });
-        }
-    }
-    
-    // Sample advanced tool with dependency injection
-    public class DatabaseQueryTool : IMcpTool
-    {
-        private readonly IDatabaseService _databaseService;
-        private readonly ILogger<DatabaseQueryTool> _logger;
-        
-        public DatabaseQueryTool(IDatabaseService databaseService, ILogger<DatabaseQueryTool> logger)
-        {
-            _databaseService = databaseService;
-            _logger = logger;
-        }
-        
-        public string Name => "databaseQuery";
-        public string Description => "Queries a database for information";
+The Java SDK offers robust MCP implementation options with enterprise-grade features.
+
+#### Key Features
+
+- Spring Framework integration
+- Strong type safety
+- Reactive programming support
+- Comprehensive error handling
+
+For a complete Java implementation sample, see [MCPSample.java](samples/java/MCPSample.java) in the samples directory.
+
+### JavaScript Implementation
+
+The JavaScript SDK provides a lightweight and flexible approach to MCP implementation.
+
+#### Key Features
+
+- Node.js and browser support
+- Promise-based API
+- Easy integration with Express and other frameworks
+- WebSocket support for streaming
+
+For a complete JavaScript implementation sample, see [mcp_sample.js](samples/javascript/mcp_sample.js) in the samples directory.
+
+### Python Implementation
+
+The Python SDK offers a Pythonic approach to MCP implementation with excellent ML framework integrations.
+
+#### Key Features
+
+- Async/await support with asyncio
+- Flask and FastAPI integration
+- Simple tool registration
+- Native integration with popular ML libraries
+
+For a complete Python implementation sample, see [mcp_sample.py](samples/python/mcp_sample.py) in the samples directory.
         
         public object GetSchema()
         {

@@ -20,9 +20,14 @@ This open-source curriculum is designed to teach the concepts and fundamentals o
 - Exploring pre-built integrations
 
 ### [PracticalImplementation](./03-PracticalImplementation/README.md)
-- Using SDKs across languages (.NET, Java, Python)
+- Using SDKs across languages (.NET, Java, JavaScript, Python)
 - Debugging and testing MCP servers
 - Creating reusable prompt templates and workflows
+- **Sample Implementations**:
+  - [C# .NET Sample](./03-PracticalImplementation/samples/csharp/MCPSample.cs)
+  - [Java Sample](./03-PracticalImplementation/samples/java/MCPSample.java)
+  - [JavaScript Sample](./03-PracticalImplementation/samples/javascript/mcp_sample.js)
+  - [Python Sample](./03-PracticalImplementation/samples/python/mcp_sample.py)
 
 ### [AdvancedTopics](./04-AdvancedTopics/README.md)
 - Multi-modal integration and scalability
