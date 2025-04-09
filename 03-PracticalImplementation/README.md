@@ -1145,6 +1145,289 @@ class DataProcessingWorkflow(Workflow):
             return result
 ```
 
+## Optimizing MCP Implementations for Performance and Reliability
+
+### Key Features
+
+- Strong typing and async/await support
+- Integration with ASP.NET Core middleware
+- Built-in DI container integration
+- Streaming response support
+
+## Integrating MCP with Azure API Management
+
+Azure API Management (APIM) provides a robust platform for publishing, securing, and managing MCP servers. This integration offers benefits such as authentication, rate limiting, analytics, and more.
+
+### Setting Up MCP Endpoints in Azure API Management
+
+To integrate your MCP server with Azure API Management:
+
+1. **Create an API Management Instance**:
+   ```bash
+   az apim create --name "mcp-api-management" --resource-group "mcp-resources" --publisher-name "Your Organization" --publisher-email "admin@example.com" --sku-name "Developer"
+   ```
+
+2. **Import MCP APIs with OpenAPI Specification**:
+   Create an OpenAPI specification for your MCP server endpoints and import it into API Management.
+
+   ```json
+   {
+     "openapi": "3.0.0",
+     "info": {
+       "title": "MCP Server API",
+       "version": "1.0.0"
+     },
+     "paths": {
+       "/mcp/v1/tool-list": {
+         "get": {
+           "summary": "Get available tools",
+           "responses": {
+             "200": {
+               "description": "List of available tools"
+             }
+           }
+         }
+       },
+       "/mcp/v1/generate": {
+         "post": {
+           "summary": "Generate content with tool access",
+           "requestBody": {
+             "content": {
+               "application/json": {
+                 "schema": {
+                   "type": "object",
+                   "properties": {
+                     "prompt": {
+                       "type": "string"
+                     },
+                     "allowedTools": {
+                       "type": "array",
+                       "items": {
+                         "type": "string"
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           },
+           "responses": {
+             "200": {
+               "description": "Generated content"
+             }
+           }
+         }
+       }
+     }
+   }
+   ```
+
+3. **Configure Policies for Authentication and Rate Limiting**:
+
+   ```xml
+   <policies>
+     <inbound>
+       <base />
+       <authentication-managed-identity resource="https://your-mcp-server.example.com" />
+       <rate-limit calls="5" renewal-period="60" />
+       <cors>
+         <allowed-origins>
+           <origin>https://your-client-app.example.com</origin>
+         </allowed-origins>
+         <allowed-methods>
+           <method>GET</method>
+           <method>POST</method>
+         </allowed-methods>
+       </cors>
+     </inbound>
+   </policies>
+   ```
+
+### Implementing MCP with Azure Functions
+
+Azure Functions can serve as lightweight MCP tools or even host an entire MCP server:
+
+```csharp
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.Http;
+using Microsoft.Extensions.Logging;
+using Microsoft.Mcp.Server;
+using Microsoft.Mcp.Tools;
+using System.Threading.Tasks;
+
+namespace MCP.AzureFunctions
+{
+    public class McpServerFunctions
+    {
+        private readonly IMcpServer _mcpServer;
+        
+        public McpServerFunctions(IMcpServer mcpServer)
+        {
+            _mcpServer = mcpServer;
+        }
+        
+        [FunctionName("GenerateContent")]
+        public async Task<IActionResult> GenerateContent(
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "mcp/v1/generate")] HttpRequest req,
+            ILogger log)
+        {
+            log.LogInformation("Processing MCP generate content request");
+            
+            try
+            {
+                // Deserialize the request
+                var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+                var mcpRequest = JsonSerializer.Deserialize<McpRequest>(requestBody);
+                
+                // Process the request through the MCP server
+                var response = await _mcpServer.ProcessRequestAsync(mcpRequest);
+                
+                return new OkObjectResult(response);
+            }
+            catch (Exception ex)
+            {
+                log.LogError(ex, "Error processing MCP request");
+                return new StatusCodeResult(500);
+            }
+        }
+        
+        [FunctionName("GetToolList")]
+        public IActionResult GetToolList(
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "mcp/v1/tool-list")] HttpRequest req,
+            ILogger log)
+        {
+            log.LogInformation("Processing MCP tool list request");
+            
+            try
+            {
+                var tools = _mcpServer.GetAvailableTools();
+                return new OkObjectResult(tools);
+            }
+            catch (Exception ex)
+            {
+                log.LogError(ex, "Error getting MCP tool list");
+                return new StatusCodeResult(500);
+            }
+        }
+    }
+}
+```
+
+### Scaling MCP with Azure Kubernetes Service
+
+For high-performance MCP implementations, Azure Kubernetes Service (AKS) provides container orchestration:
+
+```yaml
+# mcp-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mcp-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mcp-server
+  template:
+    metadata:
+      labels:
+        app: mcp-server
+    spec:
+      containers:
+      - name: mcp-server
+        image: mcpregistry.azurecr.io/mcp-server:v1.0
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Production"
+        - name: ConnectionStrings__Storage
+          valueFrom:
+            secretKeyRef:
+              name: mcp-secrets
+              key: storage-connection
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mcp-server-service
+spec:
+  selector:
+    app: mcp-server
+  ports:
+  - port: 80
+    targetPort: 80
+  type: LoadBalancer
+```
+
+Deploy with:
+```bash
+kubectl apply -f mcp-deployment.yaml
+```
+
+### Monitoring MCP Performance with Azure Monitor
+
+Configure Application Insights to monitor MCP performance metrics:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    // Add Application Insights
+    services.AddApplicationInsightsTelemetry();
+    
+    // Add MCP server with configuration
+    services.AddMcpServer(options => {
+        options.ServerName = "Azure MCP Server";
+        options.ServerVersion = "1.0.0";
+        options.MaxConcurrentRequests = 10;
+        options.EnableStreamingResponses = true;
+    });
+    
+    // Add custom telemetry for MCP
+    services.AddSingleton<ITelemetryInitializer, McpTelemetryInitializer>();
+}
+```
+
+Custom telemetry for tracking MCP-specific metrics:
+
+```csharp
+public class McpTelemetryInitializer : ITelemetryInitializer
+{
+    public void Initialize(ITelemetry telemetry)
+    {
+        if (telemetry is RequestTelemetry requestTelemetry)
+        {
+            // Extract MCP-specific data from the current request
+            var httpContext = HttpContextAccessor.HttpContext;
+            if (httpContext != null)
+            {
+                // Add MCP-specific properties
+                if (httpContext.Request.Path.StartsWithSegments("/mcp/v1"))
+                {
+                    requestTelemetry.Properties["IsMcpRequest"] = "true";
+                    
+                    // Identify tool calls
+                    if (httpContext.Request.Path.Value.Contains("/tool/"))
+                    {
+                        var toolName = httpContext.Request.Path.Value.Split("/").LastOrDefault();
+                        requestTelemetry.Properties["McpToolName"] = toolName;
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
 ## Key Takeaways
 
 - MCP SDKs provide language-specific tools for implementing robust MCP solutions
