@@ -2,15 +2,19 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Mcp;
-using Mcp.Server;
-using Mcp.Server.Transport;
+using ModelContextProtocol.SDK.Server;
+using ModelContextProtocol.SDK.Server.Tools;
+using ModelContextProtocol.SDK.Server.Content;
+using ModelContextProtocol.SDK.Server.Transport;
 using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+
+namespace QuickstartCalculator
 {
     public class Program
-    {
-        public static async Task Main(string[] args)
+    {        public static async Task Main(string[] args)
         {
             // Create the host builder for the MCP server
             var builder = Host.CreateApplicationBuilder(args);
@@ -19,65 +23,117 @@ using System.Threading.Tasks;
             builder.Services
                 .AddMcpServer(options =>
                 {
+                    options.Name = "Calculator MCP Server";
+                    options.Version = "1.0.0";
                     // Optional: Configure server options
-                    options.DefaultFunctionOptionsBuilder = builder => builder.WithTimeout(TimeSpan.FromSeconds(30));
+                    options.ServerConfiguration = config => 
+                    {
+                        config.DefaultToolTimeout = TimeSpan.FromSeconds(30);
+                    };
                 })
-                .WithStdioServerTransport()  // Add support for stdio transport (for use with language models)
-                .WithHttpServerTransport(options =>  // Also add HTTP transport for direct API access
-                {
-                    options.Port = 5000;
-                    options.Path = "/mcp";
-                })
-                .WithTools<CalculatorTools>();  // Register our calculator tools
+                .AddStdioTransport()  // Add support for stdio transport
+                .AddTool<CalculatorTool>();  // Register our calculator tool
 
             // Add logging to standard error for debugging
             builder.Logging.AddConsole(options =>
             {
-                options.LogToStandardErrorThreshold = LogLevel.Trace;
+                options.LogToStandardErrorThreshold = LogLevel.Information;
             });
 
-            Console.WriteLine("Starting MCP server...");
-            Console.WriteLine("HTTP server available at http://localhost:5000/mcp");
+            Console.WriteLine("Starting Calculator MCP Server...");
 
             // Run the application
             await builder.Build().RunAsync();
         }
-    }
-
-    // Define calculator tools implementation
-    public class CalculatorTools
+    }    // Define calculator tool implementation
+    public class CalculatorTool : ITool
     {
-        private readonly ILogger<CalculatorTools> _logger;
+        private readonly ILogger<CalculatorTool> _logger;
 
-        public CalculatorTools(ILogger<CalculatorTools> logger)
+        public CalculatorTool(ILogger<CalculatorTool> logger)
         {
             _logger = logger;
         }
 
-        [McpTool("calculate", "Performs basic arithmetic operations")]
-        public Task<CalculationResult> CalculateAsync(
-            [McpParameter(Description = "The operation to perform (add, subtract, multiply, divide)")] string operation,
-            [McpParameter(Description = "First number")] double a,
-            [McpParameter(Description = "Second number")] double b)
+        public string Name => "calculator";
+        public string Description => "Performs basic arithmetic operations";
+
+        public ToolDefinition GetDefinition()
         {
+            return new ToolDefinition
+            {
+                Name = Name,
+                Description = Description,
+                Parameters = new Dictionary<string, ParameterDefinition>
+                {
+                    ["operation"] = new ParameterDefinition
+                    {
+                        Type = ParameterType.String,
+                        Description = "The operation to perform",
+                        Enum = new[] { "add", "subtract", "multiply", "divide" }
+                    },
+                    ["a"] = new ParameterDefinition
+                    {
+                        Type = ParameterType.Number,
+                        Description = "First number"
+                    },
+                    ["b"] = new ParameterDefinition
+                    {
+                        Type = ParameterType.Number,
+                        Description = "Second number"
+                    }
+                },
+                Required = new[] { "operation", "a", "b" }
+            };
+        }
+
+        public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
+        {
+            var operation = parameters["operation"].ToString();
+            var a = Convert.ToDouble(parameters["a"]);
+            var b = Convert.ToDouble(parameters["b"]);
+            
             _logger.LogInformation($"Calculating {a} {operation} {b}");
             
-            double result = operation.ToLowerInvariant() switch
-            {
-                "add" => a + b,
-                "subtract" => a - b,
-                "multiply" => a * b,
-                "divide" => b != 0 ? a / b : throw new ArgumentException("Cannot divide by zero"),
-                _ => throw new ArgumentException($"Unknown operation: {operation}")
-            };
+            double result;
             
-            return Task.FromResult(new CalculationResult { Result = result });
+            switch (operation)
+            {
+                case "add":
+                    result = a + b;
+                    break;
+                case "subtract":
+                    result = a - b;
+                    break;
+                case "multiply":
+                    result = a * b;
+                    break;
+                case "divide":
+                    if (b == 0)
+                        throw new ArgumentException("Cannot divide by zero");
+                    result = a / b;
+                    break;
+                default:
+                    throw new ArgumentException($"Unknown operation: {operation}");
+            }
+            
+            // Return result in standard MCP content format
+            return new ToolResponse
+            {
+                Content = new ContentItem[]
+                {
+                    new TextContent($"{{\"result\": {result}}}")
+                }
+            };
         }
     }
 
-    // Define result model
-    public class CalculationResult
+    // Define calculator operations enum
+    public enum CalculatorOperation
     {
-        public double Result { get; set; }
+        Add,
+        Subtract,
+        Multiply,
+        Divide
     }
 }

@@ -1,7 +1,7 @@
-// mcp_calculator_server.js - Sample MCP Calculator Server implementation in JavaScript
-const { createServer } = require('@modelcontextprotocol/typescript-sdk/server');
-const { createStdioTransport } = require('@modelcontextprotocol/typescript-sdk/transports');
-const { z } = require('zod');
+// mcp_calculator_server.ts - Sample MCP Calculator Server implementation in TypeScript
+import { createServer } from '@modelcontextprotocol/typescript-sdk/server';
+import { createStdioTransport } from '@modelcontextprotocol/typescript-sdk/transports';
+import { z } from 'zod';
 
 // Create an MCP server
 const server = createServer({
@@ -42,7 +42,8 @@ server.tools.register({
         throw new Error(`Unknown operation: ${operation}`);
     }
 
-    // Return result    return {
+    // Return result
+    return {
       content: [
         {
           type: 'text',
@@ -51,10 +52,10 @@ server.tools.register({
       ]
     };
   }
-});
+);
 
 // Connect the server using stdio transport
-const transport = createStdioTransport();
-server.start(transport).catch(console.error);
+const transport = new StdioServerTransport();
+server.connect(transport).catch(console.error);
 
 console.log('Calculator MCP Server started');

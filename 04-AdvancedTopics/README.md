@@ -9,9 +9,16 @@ This lesson explores advanced concepts in Model Context Protocol implementation,
 By the end of this lesson, you will be able to:
 - Implement multi-modal capabilities within MCP frameworks
 - Design scalable MCP architectures for high-demand scenarios
-- Apply security best practices to protect sensitive data and functions
-- Integrate MCP with enterprise systems like Azure OpenAI and Microsoft AI Foundry
+- Apply security best practices aligned with MCP's security principles
+- Integrate MCP with enterprise AI systems and frameworks
 - Optimize performance and reliability in production environments
+
+## Additional References
+
+For the most up-to-date information on advanced MCP topics, refer to:
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## Multi-Modal Integration
 
@@ -26,19 +33,21 @@ Multi-modal MCP implementations typically involve:
 3. **Unified Context Management**: System to maintain context across different modalities
 4. **Response Generation**: Capability to generate responses that may include multiple modalities
 
-### .NET Multi-Modal Example: Image Analysis
+### C# Multi-Modal Example: Image Analysis
 
 ```csharp
-using Microsoft.Mcp.Server;
-using Microsoft.Mcp.Tools;
+using ModelContextProtocol.SDK.Server;
+using ModelContextProtocol.SDK.Server.Tools;
+using ModelContextProtocol.SDK.Server.Content;
 using System.Text.Json;
 using System.IO;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace MultiModalMcpExample
 {
     // Tool for image analysis
-    public class ImageAnalysisTool : IMcpTool
+    public class ImageAnalysisTool : ITool
     {
         private readonly IImageAnalysisService _imageService;
         
@@ -49,35 +58,39 @@ namespace MultiModalMcpExample
         
         public string Name => "imageAnalysis";
         public string Description => "Analyzes image content and extracts information";
-        
-        public object GetSchema()
+          public ToolDefinition GetDefinition()
         {
-            return new {
-                type = "object",
-                properties = new {
-                    imageUrl = new { 
-                        type = "string",
-                        description = "URL to the image to analyze" 
+            return new ToolDefinition
+            {
+                Name = Name,
+                Description = Description,
+                Parameters = new Dictionary<string, ParameterDefinition>
+                {
+                    ["imageUrl"] = new ParameterDefinition
+                    {
+                        Type = ParameterType.String,
+                        Description = "URL to the image to analyze" 
                     },
-                    analysisType = new { 
-                        type = "string", 
-                        enum = new[] { "general", "objects", "text", "faces" },
-                        default = "general"
+                    ["analysisType"] = new ParameterDefinition
+                    {
+                        Type = ParameterType.String,
+                        Description = "Type of analysis to perform",
+                        Enum = new[] { "general", "objects", "text", "faces" },
+                        Default = "general"
                     }
                 },
-                required = new[] { "imageUrl" }
+                Required = new[] { "imageUrl" }
             };
         }
         
-        public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
+        public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
         {
             // Extract parameters
-            string imageUrl = request.Parameters.GetProperty("imageUrl").GetString();
-            string analysisType = request.Parameters.TryGetProperty("analysisType", out var type) 
-                ? type.GetString() 
+            string imageUrl = parameters["imageUrl"].ToString();
+            string analysisType = parameters.ContainsKey("analysisType") 
+                ? parameters["analysisType"].ToString() 
                 : "general";
-            
-            // Download or access the image
+              // Download or access the image
             byte[] imageData = await DownloadImageAsync(imageUrl);
             
             // Analyze based on the requested analysis type
@@ -89,7 +102,14 @@ namespace MultiModalMcpExample
                 _ => await _imageService.AnalyzeGeneralAsync(imageData) // Default general analysis
             };
             
-            // Return structured result
+            // Return structured result as a ToolResponse with content
+            return new ToolResponse
+            {
+                Content = new List<ContentItem>
+                {
+                    new TextContent(JsonSerializer.Serialize(analysisResult))
+                }
+            };
             return new ToolResponse {
                 Result = JsonSerializer.SerializeToElement(analysisResult)
             };

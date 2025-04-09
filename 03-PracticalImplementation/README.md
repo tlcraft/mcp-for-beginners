@@ -2,16 +2,26 @@
 
 ## Overview
 
-This lesson focuses on practical aspects of MCP implementation across multiple programming languages. We'll explore how to use MCP SDKs in .NET, Java, and Python to build robust applications, debug and test MCP servers, and create reusable prompt templates and workflows.
+This lesson focuses on practical aspects of MCP implementation across multiple programming languages. We'll explore how to use MCP SDKs in C#, Java, TypeScript, JavaScript, and Python to build robust applications, debug and test MCP servers, and create reusable resources, prompts, and tools.
 
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
-- Implement MCP solutions using SDKs in .NET, Java, and Python
+- Implement MCP solutions using official SDKs in various programming languages
 - Debug and test MCP servers systematically
-- Create reusable prompt templates for consistent AI interactions
+- Create and use server features (Resources, Prompts, and Tools)
 - Design effective MCP workflows for complex tasks
 - Optimize MCP implementations for performance and reliability
+
+## Official SDK Resources
+
+The Model Context Protocol offers official SDKs for multiple languages:
+
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) 
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
 
 ## Working with MCP SDKs
 
@@ -21,23 +31,37 @@ This section provides practical examples of implementing MCP across multiple pro
 
 The repository includes sample implementations in the following languages:
 
-- C# (.NET)
+- C#
 - Java
+- TypeScript
 - JavaScript
 - Python
 
 Each sample demonstrates key MCP concepts and implementation patterns for that specific language and ecosystem.
 
-### C# (.NET) Implementation
+### Core Server Features
 
-The .NET SDK for MCP provides comprehensive tooling for building both clients and servers.
+MCP servers can implement any combination of these features:
 
-#### Key Features
+#### Resources
+Resources provide context and data for the user or AI model to use:
+- Document repositories
+- Knowledge bases
+- Structured data sources
+- File systems
 
-- Strong typing and async/await support
-- Integration with ASP.NET Core middleware
-- Built-in DI container integration
-- Streaming response support
+#### Prompts
+Prompts are templated messages and workflows for users:
+- Pre-defined conversation templates
+- Guided interaction patterns
+- Specialized dialogue structures
+
+#### Tools
+Tools are functions for the AI model to execute:
+- Data processing utilities
+- External API integrations
+- Computational capabilities
+- Search functionality
 
 #### Sample Implementations
 

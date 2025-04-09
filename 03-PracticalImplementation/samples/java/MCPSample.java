@@ -1,104 +1,164 @@
 package org.example.mcp;
 
-import java.util.Arrays;
+import io.modelcontextprotocol.sdk.core.McpServer;
+import io.modelcontextprotocol.sdk.core.client.McpClient;
+import io.modelcontextprotocol.sdk.core.client.sampling.DefaultCompletionRequest;
+import io.modelcontextprotocol.sdk.core.client.sampling.DefaultSamplingConfiguration;
+import io.modelcontextprotocol.sdk.core.client.sampling.DefaultSamplingOptions;
+import io.modelcontextprotocol.sdk.core.client.sampling.SamplingPrompt;
+import io.modelcontextprotocol.sdk.core.client.sampling.SamplingResult;
+import io.modelcontextprotocol.sdk.core.transport.DefaultMcpSession;
+import io.modelcontextprotocol.sdk.core.transport.McpTransport;
+import io.modelcontextprotocol.sdk.core.transport.stdio.StdioTransport;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Flow;
-import java.util.concurrent.SubmissionPublisher;
 import java.util.logging.Logger;
 
 /**
- * MCP Server implementation in Java
+ * MCP Sample implementation in Java using the latest Java SDK
  */
-public class MCPServer {
-    private final String serverName;
-    private final String version;
-    private final List<String> supportedModels;
-    private static final Logger logger = Logger.getLogger(MCPServer.class.getName());
+public class MCPSample {
+    private static final Logger logger = Logger.getLogger(MCPSample.class.getName());
+    private final McpServer server;
+    private final McpClient client;
+    private final List<String> supportedModels = List.of("gpt-4", "llama-3-70b", "claude-3-sonnet");
 
-    public MCPServer(String serverName, String version) {
-        this.serverName = serverName;
-        this.version = version;
-        this.supportedModels = Arrays.asList("gpt-4", "llama-3-70b", "claude-3-sonnet");
+    public MCPSample() {
+        // Create a transport for the server
+        McpTransport serverTransport = new StdioTransport();
+        var serverSession = new DefaultMcpSession(serverTransport);
+        
+        // Initialize the server
+        server = McpServer.builder()
+                .name("MCP Sample Server")
+                .version("1.0.0")
+                .build(serverSession);
+                
+        // Create a transport for the client
+        McpTransport clientTransport = new StdioTransport();
+        var clientSession = new DefaultMcpSession(clientTransport);
+        
+        // Initialize the client
+        client = McpClient.builder()
+                .name("MCP Sample Client")
+                .build(clientSession);
+    }
+    
+    /**
+     * Start the server and client
+     */
+    public void start() {
+        server.start().join();
+        client.start().join();
+        logger.info("MCP Sample Server and Client started");
     }
 
     /**
-     * Handle an MCP completion request
+     * Handle an MCP completion request using the MCP client
      * 
-     * @param request The request parameters
+     * @param model The model to use
+     * @param prompt The prompt to send
      * @return CompletableFuture containing the response
      */
-    public CompletableFuture<Map<String, Object>> handleCompletionRequest(Map<String, Object> request) {
-        logger.info("Processing completion request for model: " + request.getOrDefault("model", "unknown"));
+    public CompletableFuture<SamplingResult> handleCompletionRequest(String model, String prompt) {
+        logger.info("Processing completion request for model: " + model);
 
-        // Validate request
-        if (!request.containsKey("model")) {
-            Map<String, Object> errorResponse = new HashMap<>();
-            errorResponse.put("error", "Model is required");
-            return CompletableFuture.completedFuture(errorResponse);
-        }
-
-        String model = (String) request.get("model");
+        // Validate model
         if (!supportedModels.contains(model)) {
-            Map<String, Object> errorResponse = new HashMap<>();
-            errorResponse.put("error", "Model " + model + " not supported");
-            return CompletableFuture.completedFuture(errorResponse);
+            return CompletableFuture.failedFuture(
+                new IllegalArgumentException("Model " + model + " not supported"));
         }
 
-        if (!request.containsKey("prompt")) {
-            Map<String, Object> errorResponse = new HashMap<>();
-            errorResponse.put("error", "Prompt is required");
-            return CompletableFuture.completedFuture(errorResponse);
-        }
-
-        // In a real implementation, this would call an AI model
-        // Here we just echo back parts of the request with a mock response
-        return CompletableFuture.supplyAsync(() -> {
-            try {
-                // Simulate network delay
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-
-            String prompt = (String) request.get("prompt");
-            String responseId = "mcp-resp-" + request.getOrDefault("id", UUID.randomUUID().toString());
-            
-            Map<String, Object> usage = new HashMap<>();
-            usage.put("promptTokens", prompt.split("\\s+").length);
-            usage.put("completionTokens", 20);
-            usage.put("totalTokens", prompt.split("\\s+").length + 20);
-
-            Map<String, Object> response = new HashMap<>();
-            response.put("id", responseId);
-            response.put("model", model);
-            response.put("response", "This is a response to: " + 
-                (prompt.length() > 30 ? prompt.substring(0, 30) + "..." : prompt));
-            response.put("usage", usage);
-
-            return response;
-        });
+        // Create sampling configuration
+        var config = DefaultSamplingConfiguration.builder()
+                .model(model)
+                .build();
+        
+        // Create sampling options
+        var options = DefaultSamplingOptions.builder()
+                .temperature(0.7)
+                .maxTokens(100)
+                .build();
+        
+        // Create prompt
+        var samplingPrompt = SamplingPrompt.fromText(prompt);
+        
+        // Create completion request
+        var request = DefaultCompletionRequest.builder()
+                .configuration(config)
+                .options(options)
+                .prompt(samplingPrompt)
+                .build();
+        
+        // Execute the completion request
+        return client.sampling().complete(request);
     }
 
     /**
-     * Stream a completion response
+     * Stream a completion response using the MCP client
      * 
-     * @param request The request parameters
-     * @return A Publisher that emits response chunks
-     */
-    public Flow.Publisher<Map<String, Object>> streamCompletion(Map<String, Object> request) {
-        SubmissionPublisher<Map<String, Object>> publisher = new SubmissionPublisher<>();
+     * @param model The model to use
+     * @param prompt The prompt to send
+     * @return CompletableFuture containing the streamed result
+     */    public CompletableFuture<SamplingResult> streamCompletion(String model, String prompt) {
+        logger.info("Streaming completion request for model: " + model);
+        
+        // Validate model
+        if (!supportedModels.contains(model)) {
+            return CompletableFuture.failedFuture(
+                new IllegalArgumentException("Model " + model + " not supported"));
+        }
 
-        CompletableFuture.runAsync(() -> {
-            // Validate request
-            if (!request.containsKey("model") || !request.containsKey("prompt")) {
-                Map<String, Object> errorResponse = new HashMap<>();
-                errorResponse.put("error", "Invalid request parameters");
-                publisher.submit(errorResponse);
-                publisher.close();
+        // Create sampling configuration
+        var config = DefaultSamplingConfiguration.builder()
+                .model(model)
+                .build();
+        
+        // Create sampling options
+        var options = DefaultSamplingOptions.builder()
+                .temperature(0.7)
+                .maxTokens(100)
+                .build();
+        
+        // Create prompt
+        var samplingPrompt = SamplingPrompt.fromText(prompt);
+        
+        // Create completion request
+        var request = DefaultCompletionRequest.builder()
+                .configuration(config)
+                .options(options)
+                .prompt(samplingPrompt)
+                .build();
+        
+        // Execute the streaming request
+        return client.sampling().completeStreaming(request);
+    }
+    
+    /**
+     * Main method for demonstration
+     */
+    public static void main(String[] args) {
+        var mcpSample = new MCPSample();
+        mcpSample.start();
+        
+        // Example of using the sample
+        String model = "gpt-4";
+        String prompt = "Explain the Model Context Protocol in a sentence.";
+        
+        mcpSample.handleCompletionRequest(model, prompt)
+            .thenAccept(result -> {
+                logger.info("Completion result: " + result.content());
+            })
+            .exceptionally(ex -> {
+                logger.severe("Error during completion: " + ex.getMessage());
+                return null;
+            });
+    }
+}
                 return;
             }
 

@@ -3,10 +3,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Mcp;
-using Mcp.Server;
-using Mcp.Server.Transport;
 using System;
+using System.Collections.Generic;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -22,23 +20,27 @@ namespace MCP.Samples.CSharp
         public static async Task Main(string[] args)
         {
             // Create the host application builder - standard pattern for .NET apps
-            var builder = Host.CreateApplicationBuilder(args);
-
-            // Configure the MCP server with tools from the official SDK
+            var builder = Host.CreateApplicationBuilder(args);            // Configure the MCP server with tools from the official SDK
             builder.Services.AddMcpServer(options =>
             {
+                options.Name = "Sample MCP Server";
+                options.Version = "1.0.0";
+                
                 // Optional: Configure server options
-                options.DefaultFunctionOptionsBuilder = builder => builder.WithTimeout(TimeSpan.FromSeconds(30));
+                options.ServerConfiguration = config => 
+                {
+                    config.DefaultToolTimeout = TimeSpan.FromSeconds(30);
+                };
             })
-            .WithStdioServerTransport()
-            .WithHttpServerTransport(options => 
+            .AddStdioTransport()
+            .AddHttpTransport(options => 
             {
                 // Example: Configure HTTP transport options
                 options.Port = 5000;
                 options.Path = "/mcp";
             })
-            .WithTools<WeatherTools>() // Register weather tools
-            .WithTools<AdditionalTools>(); // Example of registering another tool class
+            .AddTool<WeatherTool>() // Register weather tools
+            .AddTool<AdditionalTool>(); // Example of registering another tool
 
             // Add logging to standard error for debugging
             builder.Logging.AddConsole(options =>

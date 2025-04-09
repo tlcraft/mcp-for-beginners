@@ -6,213 +6,183 @@ This module demonstrates how to implement a basic MCP server that can handle
 completion requests. It provides a mock implementation that simulates
 interaction with various AI models.
 
-For more information about MCP: https://modelcontextprotocol.github.io/
+For more information about MCP: https://modelcontextprotocol.io/
 """
 
 import asyncio
 import json
 import logging
-from typing import Dict, List, Optional, Union, Any
+from typing import Dict, List, Any, Optional
+
+from modelcontextprotocol import create_server
+from modelcontextprotocol.server import MCPServer, ServerConfig
+from modelcontextprotocol.tool import ToolDefinition, ToolParameters, ToolResponse
+from modelcontextprotocol.resource import ResourceDefinition, ResourceParameters, ResourceResponse
+from modelcontextprotocol.content import ContentItem, TextContent
+from modelcontextprotocol.transports import create_stdio_transport
+from modelcontextprotocol.exceptions import MCPToolError, MCPResourceError
 
 # Configure module logger
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-class MCPServer:
-    """
-    A mock implementation of an MCP server.
+class ExtendedMcpServer:
+    """Extended MCP Server implementation with additional features."""
     
-    This class demonstrates the basic structure and functionality of an MCP server,
-    including handling completion requests and validating inputs.
-    
-    Attributes:
-        server_name: Name of the MCP server
-        version: Version string of the server implementation
-        models: List of supported AI model identifiers
-    """
-    
-    def __init__(self, server_name: str, version: str):
-        """
-        Initialize a new MCP server instance.
-        
-        Args:
-            server_name: The name identifier for this server
-            version: The version string for this server implementation
-        """
-        self.server_name = server_name
+    def __init__(self, name="Python MCP Server", version="1.0.0"):
+        """Initialize the MCP server instance."""
+        self.name = name
         self.version = version
         self.models = ["gpt-4", "llama-3-70b", "claude-3-sonnet"]
-        self._configure_logger()
-      def _configure_logger(self) -> None:
-        """Configure the internal logger for the MCP server."""
-        self.logger = logging.getLogger("mcp.server")
-        self.logger.setLevel(logging.INFO)
         
-        # Avoid adding handlers if they already exist
-        if not self.logger.handlers:
-            handler = logging.StreamHandler()
-            formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-            handler.setFormatter(formatter)
-            self.logger.addHandler(handler)
-    
-    async def handle_completion_request(self, request: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Handle an MCP completion request.
+        # Create the server configuration
+        config = ServerConfig(
+            name=self.name,
+            version=self.version,
+            description="An extended MCP server implementation with multiple features"
+        )
         
-        This method processes a request for an AI model completion, validates the
-        request parameters, and returns a properly formatted response.
+        # Create the core MCP server
+        self.server = create_server(config)
         
-        Args:
-            request: Dictionary containing the completion request parameters
-                    Must include 'model' and 'prompt' at minimum
-            
-        Returns:
-            Dictionary containing the completion response or error information
-        """
-        model_name = request.get('model', 'unknown')
-        self.logger.info(f"Processing completion request for model: {model_name}")
+        # Register completion tool
+        self._register_completion_tool()
         
-        # Validate request
-        if 'model' not in request:
-            self.logger.error("Request missing required 'model' parameter")
-            return {"error": "Model is required"}
+        # Register models resource
+        self._register_models_resource()
+      def _register_completion_tool(self):
+        """Register the completion tool with the server."""
+        # Define the tool with parameters
+        completion_tool = ToolDefinition(
+            name="completion",
+            description="Generate completions using AI models",
+            parameters={
+                "model": {
+                    "type": "string",
+                    "enum": self.models,
+                    "description": "The AI model to use for completion"
+                },
+                "prompt": {
+                    "type": "string",
+                    "description": "The prompt text to complete"
+                },
+                "temperature": {
+                    "type": "number",
+                    "description": "Sampling temperature (0.0 to 1.0)"
+                },
+                "max_tokens": {
+                    "type": "number",
+                    "description": "Maximum number of tokens to generate"
+                }
+            },
+            required=["model", "prompt"]
+        )
         
-        if request['model'] not in self.models:
-            self.logger.error(f"Unsupported model requested: {request['model']}")
-            return {"error": f"Model {request['model']} not supported"}
-            
-        if 'prompt' not in request:
-            self.logger.error("Request missing required 'prompt' parameter")
-            return {"error": "Prompt is required"}
-            
+        # Register the tool with its handler
+        self.server.tools.register(completion_tool, self._handle_completion)
+      async def _handle_completion(self, params: ToolParameters) -> ToolResponse:
+        """Handle completion requests."""
+        model = params["model"]
+        prompt = params["prompt"]
+        logger.info(f"Processing completion request for model: {model}")
+        
+        # Validate model
+        if model not in self.models:
+            raise MCPToolError(f"Model {model} not supported")
+        
         # In a real implementation, this would call an AI model
         # Here we just echo back parts of the request with a mock response
-        request_id = request.get('id', '12345')
-        prompt_text = request['prompt']
-        token_count = len(prompt_text.split())
+        completion_text = f"This is a response to: {prompt[:30]}..."
         
-        response = {
-            "id": f"mcp-resp-{request_id}",
-            "model": request['model'],
-            "response": f"This is a response to: {prompt_text[:30]}...",
+        # Return structured response
+        return ToolResponse(
+            content=[
+                TextContent(completion_text)
+            ],
+            metadata={
+                "id": f"mcp-resp-{asyncio.get_event_loop().time()}",
+                "model": model,
+            }
             "usage": {
-                "prompt_tokens": token_count,
-                "completion_tokens": 20,
-                "total_tokens": token_count + 20
+                "promptTokens": len(prompt.split()),
+                "completionTokens": 20,
+                "totalTokens": len(prompt.split()) + 20
             }
         }
         
         # Simulate network delay
         await asyncio.sleep(0.5)
-        self.logger.info(f"Completed request {request_id}")
-        return response
-
-class MCPClient:
-    """
-    A client for interacting with Model Context Protocol (MCP) servers.
-    
-    This class provides methods to send completion requests to an MCP server
-    and process the responses.
-    
-    Attributes:
-        server_url: The URL of the MCP server to connect to
-    """
-    
-    def __init__(self, server_url: str):
-        """
-        Initialize a new MCP client.
         
-        Args:
-            server_url: The URL of the MCP server to connect to
-        """
-        self.server_url = server_url
-        self.logger = logging.getLogger("mcp.client")
-        self.logger.setLevel(logging.INFO)
-        
-        # Ensure logger has a handler
-        if not self.logger.handlers:
-            handler = logging.StreamHandler()
-            formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-            handler.setFormatter(formatter)
-            self.logger.addHandler(handler)
-        
-    async def create_completion(self, 
-                              model: str, 
-                              prompt: str, 
-                              temperature: float = 0.7, 
-                              max_tokens: int = 100) -> Dict[str, Any]:
-        """
-        Send a completion request to an MCP server.
-        
-        Args:
-            model: The identifier of the AI model to use
-            prompt: The input text to send to the model
-            temperature: Controls randomness in the output (0.0 to 1.0)
-            max_tokens: Maximum number of tokens to generate
-            
-        Returns:
-            Dictionary containing the completion response from the server
-        """
-        self.logger.info(f"Sending completion request to {self.server_url}")
-        
-        request_id = f"req-{id(self):x}"
-        
-        # In a real implementation, this would use HTTP to send the request
-        # Here we simulate by directly creating and returning a request object
-        request = {
-            "id": request_id,
-            "model": model,
-            "prompt": prompt,
-            "temperature": temperature,
-            "max_tokens": max_tokens
+        # Return result in the content format
+        return {
+            "content": [
+                {
+                    "type": "text",
+                    "text": json.dumps(response)
+                }
+            ]
         }
-        
-        self.logger.debug(f"Request details: model={model}, length={len(prompt)} chars")
-        
-        # This would normally be sent over HTTP
-        # For this sample, we'll create a server and call it directly
-        server = MCPServer("Sample MCP Server", "1.0")
-        response = await server.handle_completion_request(request)
-        
-        if "error" in response:
-            self.logger.error(f"Error in completion request: {response['error']}")
-        else:
-            self.logger.info(f"Completion successful for request {request_id}")
-            
-        return response
-
-
-async def main() -> None:
-    """
-    Example usage of the MCP client and server.
     
-    Demonstrates how to create a client, send a completion request, and
-    display the server's response.
-    """
-    # Configure logging
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    def _create_models_resource(self) -> Resource:
+        """Create and return the models resource."""
+        class ModelsResource(Resource):
+            async def get(self, uri, params=None):
+                logger.info("Retrieving available models")
+                models_data = [
+                    {
+                        "id": "gpt-4",
+                        "name": "GPT-4",
+                        "description": "OpenAI's GPT-4 large language model"
+                    },
+                    {
+                        "id": "llama-3-70b",
+                        "name": "LLaMA 3 (70B)",
+                        "description": "Meta's LLaMA 3 with 70 billion parameters"
+                    },
+                    {
+                        "id": "claude-3-sonnet",
+                        "name": "Claude 3 Sonnet",
+                        "description": "Anthropic's Claude 3 Sonnet model"
+                    }
+                ]
+                
+                return {
+                    "contents": [
+                        {
+                            "uri": uri.href,
+                            "text": json.dumps({"models": models_data})
+                        }
+                    ]
+                }
+        
+        return ModelsResource('models://', template='models://')
+    
+    async def connect(self):
+        """Connect the server using stdio transport."""
+        transport = StdioTransport()
+        await self.server.connect(transport)
+        logger.info(f"Server connected via stdio transport")
+    
+    def get_supported_models(self):
+        """Return the list of supported models."""
+        return list(self.models)
+
+
+async def main():
+    """Initialize and start the MCP server."""
+    # Create the extended MCP server
+    server = ExtendedMcpServer(
+        name="Python MCP Demo Server",
+        version="1.0.0"
     )
     
-    # Example usage
-    client = MCPClient("https://mcp.example.org")
+    logger.info(f"MCP Server '{server.name}' initialized")
+    logger.info(f"Supported models: {', '.join(server.get_supported_models())}")
     
-    print("Sending MCP completion request...")
-    
-    response = await client.create_completion(
-        model="gpt-4",
-        prompt="Explain the Model Context Protocol in simple terms",
-        temperature=0.7,
-        max_tokens=100
-    )
-      print("\n--- MCP Response ---")
-    print(json.dumps(response, indent=2))
+    # Connect and run the server
+    await server.connect()
 
-
-if __name__ == "__main__":
-    """Entry point when the script is run directly."""
-    asyncio.run(main())
 
 if __name__ == "__main__":
     asyncio.run(main())

@@ -1,6 +1,12 @@
 # Model Context Protocol (MCP) Curriculum
 
-This open-source curriculum is designed to teach the concepts and fundamentals of the Model Context Protocol (MCP), with practical examples in .NET, Java, JavaScript and Python.
+This open-source curriculum is designed to teach the concepts and fundamentals of the Model Context Protocol (MCP), with practical examples in C#, Java, JavaScript, TypeScript, and Python.
+
+## Official Resources
+
+- [MCP Documentation](https://modelcontextprotocol.io/) - Guides and tutorials
+- [MCP Specification](https://spec.modelcontextprotocol.io/) - Protocol details
+- [GitHub Repository](https://github.com/modelcontextprotocol) - Official code and SDKs
 
 ## Curriculum Structure
 
@@ -18,16 +24,23 @@ This open-source curriculum is designed to teach the concepts and fundamentals o
 - Setting up MCP environments
 - Building basic MCP servers and clients
 - Exploring pre-built integrations
+- **Calculator Sample Implementations**:
+  - [C# Calculator Server](./02-GettingStarted/samples/csharp/McpCalculatorServer.cs)
+  - [Java Calculator Server](./02-GettingStarted/samples/java/McpCalculatorServer.java)
+  - [JavaScript Calculator Server](./02-GettingStarted/samples/javascript/mcp_calculator_server.js)
+  - [Python Calculator Server](./02-GettingStarted/samples/python/mcp_calculator_server.py)
+  - [TypeScript Calculator Server](./02-GettingStarted/samples/typescript/mcp_calculator_server.ts)
 
 ### [PracticalImplementation](./03-PracticalImplementation/README.md)
-- Using SDKs across languages (.NET, Java, JavaScript, Python)
+- Using SDKs across languages (C#, Java, JavaScript, TypeScript, Python)
 - Debugging and testing MCP servers
 - Creating reusable prompt templates and workflows
-- **Sample Implementations**:
-  - [C# .NET Sample](./03-PracticalImplementation/samples/csharp/MCPSample.cs)
+- **Advanced Sample Implementations**:
+  - [C# Sample](./03-PracticalImplementation/samples/csharp/MCPSample.cs)
   - [Java Sample](./03-PracticalImplementation/samples/java/MCPSample.java)
   - [JavaScript Sample](./03-PracticalImplementation/samples/javascript/mcp_sample.js)
   - [Python Sample](./03-PracticalImplementation/samples/python/mcp_sample.py)
+  - [TypeScript Sample](./03-PracticalImplementation/samples/typescript/mcp_sample.ts)
 
 ### [AdvancedTopics](./04-AdvancedTopics/README.md)
 - Multi-modal integration and scalability

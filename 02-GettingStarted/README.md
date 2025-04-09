@@ -2,14 +2,14 @@
 
 ## Overview
 
-This lesson provides practical guidance on setting up MCP environments and building your first MCP applications. You'll learn how to set up the necessary tools and frameworks, build basic MCP servers and clients, and test your implementations.
+This lesson provides practical guidance on setting up MCP environments and building your first MCP applications. You'll learn how to set up the necessary tools and frameworks, build basic MCP servers, create host applications, and test your implementations.
 
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
-- Set up development environments for MCP in .NET, Java, Python, and JavaScript
-- Build and deploy basic MCP servers with custom tools
-- Create MCP clients that connect to servers and models
+- Set up development environments for MCP in C#, Java, Python, TypeScript, and JavaScript
+- Build and deploy basic MCP servers with custom features (resources, prompts, and tools)
+- Create host applications that connect to MCP servers
 - Test and debug MCP implementations
 - Understand common setup challenges and their solutions
 
@@ -19,25 +19,33 @@ By the end of this lesson, you will be able to:
 
 Before diving into MCP development, ensure you have:
 
-1. **Development Environment**: For your chosen language (.NET, Java, Python, or JavaScript)
-2. **IDE/Editor**: Visual Studio, VS Code, IntelliJ, Eclipse, PyCharm, or any JavaScript editor
-3. **Package Managers**: NuGet, Maven/Gradle, pip, or npm
-4. **API Keys**: For any AI services you plan to use (e.g., Azure OpenAI Service)
+1. **Development Environment**: For your chosen language (C#, Java, Python, TypeScript, or JavaScript)
+2. **IDE/Editor**: Visual Studio, VS Code, IntelliJ, Eclipse, PyCharm, or any modern code editor
+3. **Package Managers**: NuGet, Maven/Gradle, pip, or npm/yarn
+4. **API Keys**: For any AI services you plan to use in your host applications
+
+### Official SDKs
+
+MCP provides official SDKs for multiple languages:
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
 
 ### Installation and Setup
 
-#### .NET Setup
+#### C# Setup
 
 ```csharp
 // Create a new .NET project for your MCP server
-dotnet new console -n McpDotNetServer
+dotnet new console -n McpCSharpServer
 
 // Change to the project directory
-cd McpDotNetServer
+cd McpCSharpServer
 
 // Add the MCP NuGet packages
-dotnet add package ModelContextProtocol --prerelease
-dotnet add package Microsoft.Extensions.Hosting
+dotnet add package ModelContextProtocol.SDK --prerelease
 ```
 
 #### Java Setup
@@ -49,6 +57,33 @@ mvn archetype:generate -DgroupId=com.example.mcp -DartifactId=mcp-java-server -D
 # Add MCP dependencies to pom.xml
 <dependencies>
     <dependency>
+        <groupId>io.modelcontextprotocol</groupId>
+        <artifactId>mcp-sdk</artifactId>
+        <version>0.1.0</version>
+    </dependency>
+</dependencies>
+```
+
+#### TypeScript/JavaScript Setup
+
+```bash
+# Create a new npm project
+mkdir mcp-ts-server && cd mcp-ts-server
+npm init -y
+
+# Install the MCP TypeScript SDK
+npm install @modelcontextprotocol/typescript-sdk
+```
+
+#### Python Setup
+
+```bash
+# Create a virtual environment
+python -m venv mcp-env
+source mcp-env/bin/activate  # On Windows: mcp-env\Scripts\activate
+
+# Install the MCP Python SDK
+pip install modelcontextprotocol
         <groupId>com.mcp</groupId>
         <artifactId>mcp-server</artifactId>
         <version>1.0.0</version>
@@ -91,29 +126,15 @@ An MCP server provides tools that extend the capabilities of AI models. Let's st
 This sample demonstrates how to create an MCP server in C# with a calculator tool implementation:
 
 ```csharp
-// Create the host builder for the MCP server
+// Create a host builder for the MCP server
 var builder = Host.CreateApplicationBuilder(args);
 
 // Configure the MCP server with tools
 builder.Services
-    .AddMcpServer(options =>
-    {
-        // Optional: Configure server options
-        options.DefaultFunctionOptionsBuilder = builder => builder.WithTimeout(TimeSpan.FromSeconds(30));
-    })
-    .WithStdioServerTransport()  // Add support for stdio transport (for use with language models)
-    .WithHttpServerTransport(options =>  // Also add HTTP transport for direct API access
-    {
-        options.Port = 5000;
-        options.Path = "/mcp";
-    })
+    .AddMcpServer()
+    .WithStdioServerTransport()  
+    .WithHttpServerTransport(options => { options.Port = 5000; })
     .WithTools<CalculatorTools>();  // Register our calculator tools
-
-// Add logging to standard error for debugging
-builder.Logging.AddConsole(options =>
-{
-    options.LogToStandardErrorThreshold = LogLevel.Trace;
-});
 
 // Run the application
 await builder.Build().RunAsync();

@@ -25,28 +25,62 @@ A multinational corporation implemented an MCP-based solution to standardize AI 
 **Technical Implementation:**
 ```python
 # Python MCP server implementation for customer support
-from mcp_server import MCPServer
-from mcp_routers import ModelRouter, PromptRouter
+import logging
+import asyncio
+from modelcontextprotocol import create_server, ServerConfig
+from modelcontextprotocol.server import MCPServer
+from modelcontextprotocol.transports import create_http_transport
+from modelcontextprotocol.resources import ResourceDefinition
+from modelcontextprotocol.prompts import PromptDefinition
+from modelcontextprotocol.tool import ToolDefinition
 
-# Configure multiple model providers with fallback options
-model_router = ModelRouter([
-    ("customer_queries", "azure-openai"),
-    ("internal_knowledge", "local-llama"),
-    ("fallback", "openai")
-])
+# Configure logging
+logging.basicConfig(level=logging.INFO)
 
-# Define prompt templates with consistent company voice
-prompt_router = PromptRouter("./templates/customer_support")
+async def main():
+    # Create server configuration
+    config = ServerConfig(
+        name="Enterprise Customer Support Server",
+        version="1.0.0",
+        description="MCP server for handling customer support inquiries"
+    )
+    
+    # Initialize MCP server
+    server = create_server(config)
+    
+    # Register knowledge base resources
+    server.resources.register(
+        ResourceDefinition(
+            name="customer_kb",
+            description="Customer knowledge base documentation"
+        ),
+        lambda params: get_customer_documentation(params)
+    )
+    
+    # Register prompt templates
+    server.prompts.register(
+        PromptDefinition(
+            name="support_template",
+            description="Templates for customer support responses"
+        ),
+        lambda params: get_support_templates(params)
+    )
+    
+    # Register support tools
+    server.tools.register(
+        ToolDefinition(
+            name="ticketing",
+            description="Create and update support tickets"
+        ),
+        handle_ticketing_operations
+    )
+    
+    # Start server with HTTP transport
+    transport = create_http_transport(port=8080)
+    await server.run(transport)
 
-# Initialize MCP server with compliance logging
-server = MCPServer(
-    model_router=model_router,
-    prompt_router=prompt_router,
-    compliance_logging=True,
-    auth_provider="azure-ad"
-)
-
-server.start(port=8080)
+if __name__ == "__main__":
+    asyncio.run(main())
 ```
 
 **Results:** 30% reduction in model costs, 45% improvement in response consistency, and enhanced compliance across global operations.
@@ -62,13 +96,15 @@ A healthcare provider developed an MCP infrastructure to integrate multiple spec
 
 **Technical Implementation:**
 ```csharp
-// C# MCP client implementation in healthcare application
-using MCP.Client;
-using MCP.Security;
+// C# MCP host application implementation in healthcare application
+using Microsoft.Extensions.DependencyInjection;
+using ModelContextProtocol.SDK.Client;
+using ModelContextProtocol.SDK.Security;
+using ModelContextProtocol.SDK.Resources;
 
 public class DiagnosticAssistant
 {
-    private readonly MCPClient _mcpClient;
+    private readonly MCPHostClient _mcpClient;
     private readonly PatientContext _patientContext;
     
     public DiagnosticAssistant(PatientContext patientContext)
@@ -76,23 +112,44 @@ public class DiagnosticAssistant
         _patientContext = patientContext;
         
         // Configure MCP client with healthcare-specific settings
-        _mcpClient = new MCPClientBuilder()
-            .WithEndpoint("https://healthcare-mcp.example.org")
-            .WithAuthentication(new HIPAACompliantAuth())
-            .WithEncryption(EncryptionLevel.Medical)
-            .WithAuditTrail(true)
+        var clientOptions = new ClientOptions
+        {
+            Name = "Healthcare Diagnostic Assistant",
+            Version = "1.0.0",
+            Security = new SecurityOptions
+            {
+                Encryption = EncryptionLevel.Medical,
+                AuditEnabled = true
+            }
+        };
+        
+        _mcpClient = new MCPHostClientBuilder()
+            .WithOptions(clientOptions)
+            .WithTransport(new HttpTransport("https://healthcare-mcp.example.org"))
+            .WithAuthentication(new HIPAACompliantAuthProvider())
             .Build();
     }
     
     public async Task<DiagnosticSuggestion> GetDiagnosticAssistance(
         string symptoms, string patientHistory)
     {
-        // Create contextual request with appropriate model selection
-        var response = await _mcpClient.SendRequestAsync(
-            modelName: _patientContext.GetSpecialty(),
-            promptTemplate: "diagnostic_assistance",
-            parameters: new {
-                symptoms = symptoms,
+        // Create request with appropriate resources and tool access
+        var resourceRequest = new ResourceRequest
+        {
+            Name = "patient_records",
+            Parameters = new Dictionary<string, object>
+            {
+                ["patientId"] = _patientContext.PatientId,
+                ["requestingProvider"] = _patientContext.ProviderId
+            }
+        };
+        
+        // Request diagnostic assistance using appropriate prompt
+        var response = await _mcpClient.SendPromptRequestAsync(
+            promptName: "diagnostic_assistance",
+            parameters: new Dictionary<string, object>
+            {
+                ["symptoms"] = symptoms,
                 patientHistory = patientHistory,
                 relevantGuidelines = _patientContext.GetRelevantGuidelines()
             });

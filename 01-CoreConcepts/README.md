@@ -14,91 +14,121 @@ By the end of this lesson, you will:
 
 ## MCP Architecture: A Deeper Look
 
-The MCP architecture follows a client-server model designed to facilitate seamless interaction between AI models and external systems. Let's break down this architecture into its core components.
+The MCP architecture follows a client-server model designed to facilitate seamless integration between LLM applications and external data sources and tools. Let's break down this architecture into its core components.
 
-### 1. MCP Clients
+### 1. Hosts
 
-**MCP Clients** are applications or services that initiate interactions with AI models. They:
+**Hosts** are LLM applications that initiate connections. They:
 
-- Send requests to MCP Hosts with prompts/instructions
-- Specify which tools and capabilities should be available
-- Receive and process model responses
+- Execute or interact with AI models to generate responses
+- Initiate connections with MCP servers
 - Manage the conversation flow and user interface
+- Control permission and security constraints
+- Handle user consent for data sharing and tool execution
 
-Examples of MCP Clients include chat applications, productivity tools, and enterprise software that leverages AI capabilities.
+Examples of Hosts include chat applications, productivity tools, and enterprise software that leverages AI capabilities.
 
-### 2. MCP Hosts
+### 2. Clients
 
-**MCP Hosts** are environments that run AI models. They:
+**Clients** are connectors within the host application. They:
 
-- Execute the AI model to generate responses
-- Manage communication between clients and servers
-- Route tool calls from the model to appropriate servers
-- Handle permission and security constraints
-- Return model outputs to the client
+- Send requests to servers with prompts/instructions
+- Negotiate capabilities with servers
+- Manage tool execution requests from models
+- Process and display responses to users
 
-MCP Hosts can be cloud-based services (like Azure OpenAI Service or AI Foundry) or self-hosted environments running local models.
+Clients operate as part of the host application to facilitate communication with MCP servers.
 
-### 3. MCP Servers
+### 3. Servers
 
-**MCP Servers** provide tools and data sources that extend the model's capabilities. They:
+**Servers** are services that provide context and capabilities. They:
 
-- Register available tools with the host
-- Receive and execute tool calls from the model
-- Return tool outputs back to the model via the host
-- Manage authentication and authorization for tools
-- Handle data access and transformation
+- Register available features (resources, prompts, tools)
+- Receive and execute tool calls from the client
+- Provide contextual information to enhance model responses
+- Return outputs back to the client
+- Maintain state across interactions when needed
 
-MCP Servers can be developed by anyone to extend model capabilities with specialized functionality.
+Servers can be developed by anyone to extend model capabilities with specialized functionality.
 
-### 4. Tools
+### 4. Server Features
 
-**Tools** are individual functions or capabilities exposed by MCP Servers. Each tool:
+MCP servers can offer any of the following features:
 
-- Has a unique name and description
-- Accepts specific parameters
-- Returns structured outputs
-- Performs a discrete function (e.g., web search, calculation, database query)
-
-Tools are the fundamental units of functionality that models can access through MCP.
-
-### 5. Data Sources
-
-**Data Sources** are repositories of information that tools can access:
-
-- Local files and databases
+#### Resources
+- Context and data for the user or AI model to use
 - Knowledge bases and document repositories
+- Local files and databases
 - APIs and web services
-- Real-time data streams
+
+#### Prompts
+- Templated messages and workflows for users
+- Pre-defined interaction patterns
+- Specialized conversation templates
+
+#### Tools
+- Functions for the AI model to execute
+- Each tool has a unique name and description
+- Accepts specific parameters and returns structured outputs
+- Performs discrete functions (e.g., web search, calculation, database query)
+
+### 5. Client Features
+
+Clients may offer the following feature to servers:
+
+#### Sampling
+- Server-initiated agentic behaviors
+- Recursive LLM interactions
+- Allows servers to request additional model completions
 
 ## Information Flow in MCP
 
-1. **Client Initiates Request**: The client sends a prompt/instruction to the host
-2. **Host Processes with Model**: The AI model generates a response or tool call
-3. **Tool Execution**: If the model calls a tool, the request goes to the appropriate server
-4. **Server Processes Tool Call**: The server executes the tool and returns results
-5. **Model Incorporates Tool Results**: The model uses tool outputs to generate its final response
-6. **Response Returned to Client**: The client receives the model's response
+1. **Host Initiates Connection**: The host application connects to an MCP server
+2. **Capability Negotiation**: Client and server exchange information about their capabilities
+3. **User Request**: The user provides a prompt or request to the host
+4. **Resource or Tool Use**: 
+   - The client may request resources from the server
+   - When the model needs to use a tool, the client sends a request to the server
+5. **Server Execution**: The server processes the request and returns results
+6. **Response Generation**: The client incorporates server responses into the model's output
+7. **Result Presentation**: The host presents the final response to the user
 
-## Communication Mechanisms
+## Protocol Details
 
-MCP supports multiple communication protocols to accommodate different use cases:
+MCP is built on [JSON-RPC](https://www.jsonrpc.org/) 2.0, providing a standardized message format for communication between components.
 
-### 1. Standard Input/Output (STDIO)
+### Key Protocol Features
 
-- **Use Case**: Local development and simple integrations
-- **Characteristics**: Text-based, synchronous communication
-- **Advantages**: Simple to implement, no network dependencies
-- **Limitations**: Limited to same-machine communication
+#### Base Protocol
+- JSON-RPC message format
+- Stateful connections
+- Server and client capability negotiation
 
-### 2. Server-Sent Events (SSE)
+#### Additional Utilities
+- Configuration options
+- Progress tracking
+- Request cancellation
+- Error reporting
+- Logging
 
-- **Use Case**: Web applications requiring streaming responses
-- **Characteristics**: HTTP-based, one-way real-time streaming from server to client
-- **Advantages**: Works through firewalls, supports streaming tokens
-- **Limitations**: One-way communication only
+### Security Considerations
 
-### 3. WebSockets
+MCP implementations should follow these key security principles:
+
+1. **User Consent and Control**
+   - Explicit consent for data access and operations
+   - User control over shared data and actions
+   - Clear UIs for reviewing and authorizing activities
+
+2. **Data Privacy**
+   - Explicit consent before exposing user data
+   - Appropriate access controls for user data
+   - Protection against unauthorized data transmission
+
+3. **Tool Safety**
+   - Explicit consent before tool invocation
+   - Clear understanding of tool functionality
+   - Proper security boundaries for tool execution
 
 - **Use Case**: Interactive applications requiring bidirectional communication
 - **Characteristics**: Full-duplex communication channel

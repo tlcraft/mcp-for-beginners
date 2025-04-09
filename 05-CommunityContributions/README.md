@@ -29,15 +29,17 @@ The MCP ecosystem consists of various components and participants that work toge
 
 #### Official Channels
 
-- [MCP GitHub Repository](https://github.com/microsoft/mcp-for-beginners)
-- [MCP Documentation](https://modelcontextprotocol.io/introduction)
+- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
 
 #### Community-Driven Resources
 
-- Community extensions and tool libraries
+- Language-specific SDK implementations
+- Server implementations and tool libraries
 - Blog posts and tutorials
-- MCP meetups and conferences
-- Stack Overflow and GitHub Discussions
+- Community forums and social media discussions
 
 ## Contributing to MCP
 

@@ -6,68 +6,60 @@ This module demonstrates how to create a simple MCP server with a calculator too
 that can perform basic arithmetic operations (add, subtract, multiply, divide).
 """
 
-import json
+import asyncio
 import logging
-from typing import Dict, Any, Optional
+from typing import Dict, Any, List, Literal
 
-from mcp_server import McpServer
-from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
+from modelcontextprotocol import create_server
+from modelcontextprotocol.server import MCPServer, ServerConfig
+from modelcontextprotocol.tool import ToolDefinition, ToolParameters, ToolResponse
+from modelcontextprotocol.transports import create_stdio_transport
+from modelcontextprotocol.exceptions import MCPToolError
 
 
-class CalculatorTool(Tool):
+async def calculator_tool(params: ToolParameters) -> ToolResponse:
     """
     A tool that performs basic arithmetic operations.
     
     This tool handles add, subtract, multiply, and divide operations
     on two numerical operands.
     """
+    operation = params["operation"]
+    a = params["a"]
+    b = params["b"]
     
-    def get_name(self) -> str:
-        """Return the name of the tool."""
-        return "calculator"
-        
-    def get_description(self) -> str:
-        """Return a description of the tool."""
-        return "Performs basic arithmetic operations"
+    result = None
+    try:
+        if operation == "add":
+            result = a + b
+        elif operation == "subtract":
+            result = a - b
+        elif operation == "multiply":
+            result = a * b
+        elif operation == "divide":
+            if b == 0:
+                raise MCPToolError("Cannot divide by zero")
+            result = a / b
+        else:
+            raise MCPToolError(f"Unknown operation: {operation}")
+    except Exception as e:
+        raise MCPToolError(f"Error performing calculation: {str(e)}")
     
-    def get_schema(self) -> Dict[str, Any]:
-        """
-        Define the schema for the calculator tool.
-        
-        The schema specifies the required parameters and their types.
-        
-        Returns:
-            Dict[str, Any]: The JSON schema definition
-        """
-        return {
-            "type": "object",
-            "properties": {
-                "operation": {
-                    "type": "string",
-                    "enum": ["add", "subtract", "multiply", "divide"],
-                    "description": "The arithmetic operation to perform"
-                },
-                "a": {"type": "number", "description": "First operand"},
-                "b": {"type": "number", "description": "Second operand"}
-            },
-            "required": ["operation", "a", "b"]
-        }
-      def execute(self, request: ToolRequest) -> ToolResponse:
+    return ToolResponse(content={"result": result})
         """
         Execute the calculation based on the provided operation and operands.
         
         Args:
-            request (ToolRequest): The request containing operation parameters
+            params: Dictionary containing the operation parameters
                                   
         Returns:
-            ToolResponse: Response containing the calculation result
+            Dictionary containing the calculation result
             
         Raises:
-            ToolExecutionException: If division by zero is attempted or an unknown
-                                   operation is provided
+            ToolExecutionError: If division by zero is attempted or an unknown
+                                operation is provided
         """
         # Extract parameters
-        params = request.parameters
         operation = params.get("operation")
         a = params.get("a")
         b = params.get("b")
@@ -81,15 +73,20 @@ class CalculatorTool(Tool):
             result = a * b
         elif operation == "divide":
             if b == 0:
-                raise ToolExecutionException("Cannot divide by zero")
+                raise ToolExecutionError("Cannot divide by zero")
             result = a / b
         else:
-            raise ToolExecutionException(f"Unknown operation: {operation}")
+            raise ToolExecutionError(f"Unknown operation: {operation}")
         
-        # Return result
-        return ToolResponse(
-            result={"result": result}
-        )
+        # Return result in the content format
+        return {
+            "content": [
+                {
+                    "type": "text",
+                    "text": f'{{"result": {result}}}'
+                }
+            ]
+        }
 
 
 def configure_logging():
@@ -101,27 +98,53 @@ def configure_logging():
     )
 
 
-def main():
+async def main():
     """Initialize and start the MCP server with calculator tool."""
     # Configure logging
     configure_logging()
     logger = logging.getLogger(__name__)
     
-    # Initialize server
-    server = McpServer(
-        name="Calculator MCP Server",
-        version="1.0.0",
-        port=5000
+    logger.info("Creating Calculator MCP Server")
+    
+    # Define the calculator tool
+    calculator_definition = ToolDefinition(
+        name="calculator",
+        description="Performs basic arithmetic operations",
+        parameters={
+            "operation": {
+                "type": "string",
+                "enum": ["add", "subtract", "multiply", "divide"],
+                "description": "The arithmetic operation to perform"
+            },
+            "a": {
+                "type": "number",
+                "description": "First operand"
+            },
+            "b": {
+                "type": "number",
+                "description": "Second operand"
+            }
+        },
+        required=["operation", "a", "b"]
     )
     
-    # Register tools
-    calculator_tool = CalculatorTool()
-    server.register_tool(calculator_tool)
+    # Create server configuration
+    config = ServerConfig(
+        name="Calculator MCP Server",
+        version="1.0.0"
+    )
     
-    # Start server
-    logger.info("Starting Calculator MCP Server on port 5000")
-    server.start()
+    # Create server
+    server = create_server(config)
+    
+    # Register the calculator tool
+    server.tools.register(calculator_definition, calculator_tool)
+    
+    # Connect the server using stdio transport
+    logger.info("Starting Calculator MCP Server with stdio transport")
+    transport = create_stdio_transport()
+    await server.run(transport)
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

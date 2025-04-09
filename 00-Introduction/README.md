@@ -44,11 +44,14 @@ Before MCP, integrating AI models with external tools required custom, often bri
 
 MCP follows a client-server architecture with these key components:
 
-1. **MCP Host**: The environment running an AI model
-2. **MCP Client**: The application requesting capabilities from the model
-3. **MCP Server**: The service that provides tools and data to the model
-4. **Tools**: Functions that enable specific capabilities (e.g., web search, calculation)
-5. **Data Sources**: External information that the model can access
+1. **Hosts**: LLM applications that initiate connections
+2. **Clients**: Connectors within the host application that request capabilities
+3. **Servers**: Services that provide context and capabilities to the model
+4. **Features**:
+   - **Resources**: Context and data for the user or AI model to use
+   - **Prompts**: Templated messages and workflows for users
+   - **Tools**: Functions for the AI model to execute
+   - **Sampling**: Server-initiated agentic behaviors and recursive LLM interactions
 
 ## How MCP Servers Work
 

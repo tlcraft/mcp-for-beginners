@@ -1,17 +1,24 @@
-# MCP Tool Development Best Practices
+# MCP Development Best Practices
 
 ## Overview
 
-This lesson focuses on advanced best practices for developing, testing, and deploying MCP tools in production environments. As MCP ecosystems grow in complexity and importance, following established patterns ensures reliability, maintainability, and interoperability. This lesson consolidates practical wisdom gained from real-world MCP implementations to guide you in creating robust, efficient tools and workflows.
+This lesson focuses on advanced best practices for developing, testing, and deploying MCP servers and features in production environments. As MCP ecosystems grow in complexity and importance, following established patterns ensures reliability, maintainability, and interoperability. This lesson consolidates practical wisdom gained from real-world MCP implementations to guide you in creating robust, efficient servers with effective resources, prompts, and tools.
 
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
-- Apply industry best practices in MCP tool design and implementation
-- Create comprehensive testing strategies for MCP tools and servers
+- Apply industry best practices in MCP server and feature design
+- Create comprehensive testing strategies for MCP servers
 - Design efficient, reusable workflow patterns for complex MCP applications
-- Implement proper error handling, logging, and observability in MCP tools
-- Optimize MCP tools for performance, security, and maintainability
+- Implement proper error handling, logging, and observability in MCP servers
+- Optimize MCP implementations for performance, security, and maintainability
+
+## Additional References
+
+For the most up-to-date information on MCP best practices, refer to:
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## MCP Tool Development Best Practices
 
@@ -19,12 +26,12 @@ By the end of this lesson, you will be able to:
 
 #### 1. Single Responsibility Principle
 
-Each MCP tool should have a clear, focused purpose. Rather than creating monolithic tools that attempt to handle multiple concerns, develop specialized tools that excel at specific tasks.
+Each MCP feature should have a clear, focused purpose. Rather than creating monolithic tools that attempt to handle multiple concerns, develop specialized tools that excel at specific tasks.
 
 **Good Example:**
 ```csharp
 // A focused tool that does one thing well
-public class WeatherForecastTool : IMcpTool
+public class WeatherForecastTool : ITool
 {
     private readonly IWeatherService _weatherService;
     
@@ -36,29 +43,44 @@ public class WeatherForecastTool : IMcpTool
     public string Name => "weatherForecast";
     public string Description => "Gets weather forecast for a specific location";
     
-    public object GetSchema()
+    public ToolDefinition GetDefinition()
     {
-        return new {
-            type = "object",
-            properties = new {
-                location = new { type = "string", description = "City or location name" },
-                days = new { type = "integer", description = "Number of forecast days", default = 3 }
+        return new ToolDefinition
+        {
+            Name = Name,
+            Description = Description,
+            Parameters = new Dictionary<string, ParameterDefinition>
+            {
+                ["location"] = new ParameterDefinition
+                {
+                    Type = ParameterType.String,
+                    Description = "City or location name"
+                },
+                ["days"] = new ParameterDefinition
+                {
+                    Type = ParameterType.Integer,
+                    Description = "Number of forecast days",
+                    Default = 3
+                }
             },
-            required = new[] { "location" }
+            Required = new[] { "location" }
         };
     }
-    
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
+      public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
     {
-        var location = request.Parameters.GetProperty("location").GetString();
-        var days = request.Parameters.TryGetProperty("days", out var daysValue) 
-            ? daysValue.GetInt32() 
+        var location = parameters["location"].ToString();
+        var days = parameters.ContainsKey("days") 
+            ? Convert.ToInt32(parameters["days"]) 
             : 3;
             
         var forecast = await _weatherService.GetForecastAsync(location, days);
         
-        return new ToolResponse {
-            Result = JsonSerializer.SerializeToElement(forecast)
+        return new ToolResponse
+        {
+            Content = new List<ContentItem>
+            {
+                new TextContent(JsonSerializer.Serialize(forecast))
+            }
         };
     }
 }
@@ -67,18 +89,30 @@ public class WeatherForecastTool : IMcpTool
 **Poor Example:**
 ```csharp
 // A tool trying to do too many things
-public class WeatherToolSuite : IMcpTool
+public class WeatherToolSuite : ITool
 {
     public string Name => "weather";
     public string Description => "Weather-related functionality";
     
-    public object GetSchema()
+    public ToolDefinition GetDefinition()
     {
-        return new {
-            type = "object",
-            properties = new {
-                action = new { type = "string", enum = new[] { "forecast", "history", "alerts", "radar" } },
-                location = new { type = "string" },
+        return new ToolDefinition
+        {
+            Name = Name,
+            Description = Description,
+            Parameters = new Dictionary<string, ParameterDefinition>
+            {
+                ["action"] = new ParameterDefinition
+                {
+                    Type = ParameterType.String,
+                    Description = "Weather action to perform",
+                    Enum = new[] { "forecast", "history", "alerts", "radar" }
+                },
+                ["location"] = new ParameterDefinition
+                {
+                    Type = ParameterType.String,
+                    Description = "City or location name"
+                },
                 // Many more properties for different actions...
             },
             required = new[] { "action", "location" }
