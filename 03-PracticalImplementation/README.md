@@ -123,11 +123,11 @@ For a complete Python implementation sample, see [mcp_sample.py](samples/python/
 
 ### Implementations and Deployment 
 
-Remote-mcp-functions-python: This repository is a quickstart template for building and deploying custom remote MCP (Model Context Protocol) servers using Azure Functions with Python. 
+Remote-mcp-functions-python: This repository is a quickstart template for building and deploying custom remote MCP (Model Context Protocol) servers using Azure Functions with Python, C# .NET or Node/TypeScript. 
 
 It provides a complete solution that allows developers to:
 
-- Build and run locally: Develop and debug a Python-based MCP server on a local machine
+- Build and run locally: Develop and debug a MCP server on a local machine
 - Deploy to Azure: Easily deploy to the cloud with a simple azd up command
 - Connect from clients: Connect to the MCP server from various clients including VS Code's Copilot agent mode and the MCP Inspector tool
 
@@ -142,6 +142,10 @@ It provides a complete solution that allows developers to:
 The repository includes all necessary configuration files, source code, and infrastructure definitions to quickly get started with a production-ready MCP server implementation.
 
 - [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Sample implementation of MCP using Azure Functions with Python
+
+- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)- Sample implementation of MCP using Azure Functions with C# .NET
+
+- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Sample implementation of MCP using Azure Functions with Node/TypeScript.
 
 
 ## Key Takeaways
