@@ -1,384 +1,312 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading;
-using System.Threading.Tasks;
+// Updated sample based on https://github.com/modelcontextprotocol/csharp-sdk/tree/main/samples
+// This sample combines patterns from QuickstartWeatherServer and other examples in the repository
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Mcp;
+using Mcp.Server;
+using Mcp.Server.Transport;
+using System;
+using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace MCP.Samples.CSharp
 {
     /// <summary>
-    /// Sample implementation of a Model Context Protocol (MCP) server in C# .NET
+    /// Sample implementation of a Model Context Protocol (MCP) server in C#
+    /// Demonstrates basic setup and tool registration following the official SDK patterns from the
+    /// official ModelContextProtocol C# SDK: https://github.com/modelcontextprotocol/csharp-sdk
     /// </summary>
-    public class MCPServer
+    public class Program
     {
-        private readonly string _serverName;
-        private readonly string _serverVersion;
-        private readonly List<string> _supportedModels;
-        private readonly ILogger<MCPServer> _logger;
-
-        public MCPServer(string serverName, string serverVersion, ILogger<MCPServer> logger = null)
+        public static async Task Main(string[] args)
         {
-            _serverName = serverName;
-            _serverVersion = serverVersion;
-            _supportedModels = new List<string> { "gpt-4", "llama-3-70b", "claude-3-sonnet" };
-            _logger = logger ?? LoggerFactory.Create(builder => builder.AddConsole()).CreateLogger<MCPServer>();
-        }
+            // Create the host application builder - standard pattern for .NET apps
+            var builder = Host.CreateApplicationBuilder(args);
 
-        /// <summary>
-        /// Handle an MCP completion request
-        /// </summary>
-        /// <param name="request">The completion request</param>
-        /// <returns>The completion response</returns>
-        public async Task<MCPCompletionResponse> HandleCompletionRequestAsync(MCPCompletionRequest request)
-        {
-            _logger.LogInformation($"Processing completion request for model: {request.Model ?? "unknown"}");
-            
-            // Validate request
-            if (string.IsNullOrEmpty(request.Model))
+            // Configure the MCP server with tools from the official SDK
+            builder.Services.AddMcpServer(options =>
             {
-                throw new ArgumentException("Model is required");
-            }
-            
-            if (!_supportedModels.Contains(request.Model))
+                // Optional: Configure server options
+                options.DefaultFunctionOptionsBuilder = builder => builder.WithTimeout(TimeSpan.FromSeconds(30));
+            })
+            .WithStdioServerTransport()
+            .WithHttpServerTransport(options => 
             {
-                throw new ArgumentException($"Model {request.Model} not supported");
-            }
-            
-            if (string.IsNullOrEmpty(request.Prompt))
-            {
-                throw new ArgumentException("Prompt is required");
-            }
-            
-            // In a real implementation, this would call an AI model
-            // Here we just echo back parts of the request with a mock response
-            var response = new MCPCompletionResponse
-            {
-                Id = $"mcp-resp-{request.Id ?? Guid.NewGuid().ToString()}",
-                Model = request.Model,
-                Response = $"This is a response to: {request.Prompt.Substring(0, Math.Min(30, request.Prompt.Length))}...",
-                Usage = new MCPUsage
-                {
-                    PromptTokens = request.Prompt.Split(' ').Length,
-                    CompletionTokens = 20,
-                    TotalTokens = request.Prompt.Split(' ').Length + 20
-                }
-            };
-            
-            // Simulate network delay
-            await Task.Delay(500);
-            return response;
-        }
+                // Example: Configure HTTP transport options
+                options.Port = 5000;
+                options.Path = "/mcp";
+            })
+            .WithTools<WeatherTools>() // Register weather tools
+            .WithTools<AdditionalTools>(); // Example of registering another tool class
 
-        /// <summary>
-        /// Stream a completion response
-        /// </summary>
-        /// <param name="request">The completion request</param>
-        /// <param name="cancellationToken">Cancellation token</param>
-        /// <returns>An asynchronous stream of completion chunks</returns>
-        public async IAsyncEnumerable<MCPStreamingResponse> StreamCompletionAsync(
-            MCPCompletionRequest request,
-            [System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken = default)
-        {
-            // Validate request
-            if (string.IsNullOrEmpty(request.Model) || string.IsNullOrEmpty(request.Prompt))
+            // Add logging to standard error for debugging
+            builder.Logging.AddConsole(options =>
             {
-                yield return new MCPStreamingResponse 
-                { 
-                    Error = "Invalid request parameters" 
-                };
-                yield break;
-            }
+                options.LogToStandardErrorThreshold = LogLevel.Trace;
+            });
 
-            // Mock streaming response generation
-            string responseText = "This is a streaming response to your prompt about Model Context Protocol. " +
-                "MCP standardizes how applications communicate with AI models, making it easier to build AI-powered applications " +
-                "that work consistently across different model providers.";
-            
-            string[] words = responseText.Split(' ');
+            Console.WriteLine("Starting MCP server...");
+            Console.WriteLine("HTTP server available at http://localhost:5000/mcp");
+            Console.WriteLine("Press Ctrl+C to exit");
 
-            for (int i = 0; i < words.Length && !cancellationToken.IsCancellationRequested; i++)
-            {
-                // Simulate token-by-token generation
-                await Task.Delay(100, cancellationToken);
-                
-                yield return new MCPStreamingResponse
-                {
-                    Id = $"mcp-stream-{request.Id ?? Guid.NewGuid().ToString()}",
-                    Model = request.Model,
-                    Delta = words[i] + " ",
-                    Finished = false
-                };
-            }
-
-            // Final message
-            if (!cancellationToken.IsCancellationRequested)
-            {
-                yield return new MCPStreamingResponse
-                {
-                    Id = $"mcp-stream-{request.Id ?? Guid.NewGuid().ToString()}",
-                    Model = request.Model,
-                    Delta = "",
-                    Finished = true,
-                    Usage = new MCPUsage
-                    {
-                        PromptTokens = request.Prompt.Split(' ').Length,
-                        CompletionTokens = words.Length,
-                        TotalTokens = request.Prompt.Split(' ').Length + words.Length
-                    }
-                };
-            }
+            // Run the application
+            await builder.Build().RunAsync();
         }
     }
 
     /// <summary>
-    /// Sample implementation of a Model Context Protocol (MCP) client in C# .NET
+    /// Sample weather tools implementation following the official C# SDK patterns
+    /// Reference: https://github.com/modelcontextprotocol/csharp-sdk/tree/main/samples/QuickstartWeatherServer
     /// </summary>
-    public class MCPClient
+    public class WeatherTools
     {
-        private readonly string _serverUrl;
-        private readonly ILogger<MCPClient> _logger;
+        private readonly ILogger<WeatherTools> _logger;
 
-        public MCPClient(string serverUrl, ILogger<MCPClient> logger = null)
+        public WeatherTools(ILogger<WeatherTools> logger)
         {
-            _serverUrl = serverUrl;
-            _logger = logger ?? LoggerFactory.Create(builder => builder.AddConsole()).CreateLogger<MCPClient>();
+            _logger = logger;
         }
 
         /// <summary>
-        /// Send a completion request to an MCP server
+        /// Gets the current weather for a given location
         /// </summary>
-        /// <param name="request">The completion request</param>
-        /// <returns>The completion response</returns>
-        public async Task<MCPCompletionResponse> CreateCompletionAsync(MCPCompletionRequest request)
+        /// <param name="location">The location to get weather for</param>
+        /// <returns>The weather information</returns>
+        [McpTool("getCurrentWeather", "Gets the current weather for a location")]
+        public async Task<WeatherResult> GetCurrentWeatherAsync(
+            [McpParameter(Description = "The location to get weather for")] string location)
         {
-            _logger.LogInformation($"Sending completion request to {_serverUrl}");
+            _logger.LogInformation($"Getting weather for {location}");
+
+            // Simulate API call delay
+            await Task.Delay(500);
             
-            // Validate request
-            if (string.IsNullOrEmpty(request.Model))
+            // Return mock weather data
+            return new WeatherResult
             {
-                throw new ArgumentException("Model is required");
-            }
-            
-            if (string.IsNullOrEmpty(request.Prompt))
-            {
-                throw new ArgumentException("Prompt is required");
-            }
-            
-            // Ensure request has an ID
-            if (string.IsNullOrEmpty(request.Id))
-            {
-                request.Id = Guid.NewGuid().ToString();
-            }
-            
-            // In a real implementation, this would use HttpClient to send the request
-            // For this sample, we'll create a server and call it directly
-            var server = new MCPServer("Sample MCP Server", "1.0");
-            return await server.HandleCompletionRequestAsync(request);
+                Location = location,
+                Temperature = new Random().Next(0, 35),
+                Condition = GetRandomWeatherCondition(),
+                Timestamp = DateTime.UtcNow
+            };
         }
 
         /// <summary>
-        /// Stream a completion from an MCP server
+        /// Gets the weather forecast for a given location
         /// </summary>
-        /// <param name="request">The completion request</param>
-        /// <param name="cancellationToken">Optional cancellation token</param>
-        /// <returns>An asynchronous stream of completion chunks</returns>
-        public IAsyncEnumerable<MCPStreamingResponse> CreateCompletionStreamAsync(
-            MCPCompletionRequest request, 
-            CancellationToken cancellationToken = default)
+        /// <param name="location">The location to get forecast for</param>
+        /// <param name="days">Number of days to forecast (1-7)</param>
+        /// <returns>The weather forecast information</returns>
+        [McpTool("getWeatherForecast", "Gets a weather forecast for a location")]
+        public async Task<WeatherForecast> GetWeatherForecastAsync(
+            [McpParameter(Description = "The location to get forecast for")] string location,
+            [McpParameter(Description = "Number of days to forecast (1-7)")] int days)
         {
-            _logger.LogInformation($"Starting streaming completion with {_serverUrl}");
-            
-            // Validate request
-            if (string.IsNullOrEmpty(request.Model))
+            _logger.LogInformation($"Getting {days}-day forecast for {location}");
+
+            if (days < 1 || days > 7)
             {
-                throw new ArgumentException("Model is required");
+                throw new ArgumentOutOfRangeException(nameof(days), "Days must be between 1 and 7");
             }
+
+            // Simulate API call delay
+            await Task.Delay(500);
             
-            if (string.IsNullOrEmpty(request.Prompt))
+            // Generate mock forecast data
+            var forecast = new WeatherForecast
             {
-                throw new ArgumentException("Prompt is required");
-            }
-            
-            // Ensure request has an ID
-            if (string.IsNullOrEmpty(request.Id))
+                Location = location,
+                Days = new WeatherDay[days]
+            };
+
+            var random = new Random();
+
+            for (int i = 0; i < days; i++)
             {
-                request.Id = Guid.NewGuid().ToString();
+                forecast.Days[i] = new WeatherDay
+                {
+                    Date = DateTime.UtcNow.AddDays(i + 1),
+                    HighTemperature = random.Next(10, 38),
+                    LowTemperature = random.Next(-5, 15),
+                    Condition = GetRandomWeatherCondition()
+                };
             }
+
+            return forecast;
+        }
+
+        private static string GetRandomWeatherCondition()
+        {
+            string[] conditions = { "Sunny", "Partly Cloudy", "Cloudy", "Rainy", "Thunderstorms", "Snowy", "Foggy" };
+            return conditions[new Random().Next(conditions.Length)];
+        }
+    }
+
+    /// <summary>
+    /// Additional tools example showing how to implement more complex MCP tools
+    /// Based on patterns from various samples in the C# SDK repository
+    /// </summary>
+    public class AdditionalTools
+    {
+        private readonly ILogger<AdditionalTools> _logger;
+
+        public AdditionalTools(ILogger<AdditionalTools> logger)
+        {
+            _logger = logger;
+        }
+
+        /// <summary>
+        /// Example of a tool that accepts a complex object as input
+        /// </summary>
+        [McpTool("searchDatabase", "Search a database with filters")]
+        public async Task<SearchResult> SearchDatabaseAsync(
+            [McpParameter(Description = "Search query")] string query,
+            [McpParameter(Description = "Database to search", Schema = @"{""type"":""string"",""enum"":[""products"",""customers"",""orders""]}")] 
+            string database,
+            [McpParameter(Description = "Maximum results to return", IsOptional = true)] 
+            int? maxResults = 10)
+        {
+            _logger.LogInformation($"Searching {database} database for: {query}");
+
+            // Simulate API call delay
+            await Task.Delay(500);
             
-            // Set streaming flag
-            request.Stream = true;
-            
-            // In a real implementation, this would use HttpClient with streaming
-            // For this sample, we'll create a server and return its streaming response
-            var server = new MCPServer("Sample MCP Server", "1.0");
-            return server.StreamCompletionAsync(request, cancellationToken);
+            // Return mock search results
+            var result = new SearchResult
+            {
+                Query = query,
+                Database = database,
+                ResultCount = new Random().Next(0, maxResults ?? 10),
+                SearchTime = new Random().NextDouble()
+            };
+
+            // Add some mock results
+            result.Results = new object[result.ResultCount];
+            for (int i = 0; i < result.ResultCount; i++)
+            {
+                result.Results[i] = database switch
+                {
+                    "products" => new { Id = i, Name = $"Product {i}", Price = new Random().Next(10, 1000) },
+                    "customers" => new { Id = i, Name = $"Customer {i}", Email = $"customer{i}@example.com" },
+                    "orders" => new { Id = i, CustomerId = new Random().Next(1, 100), Amount = new Random().Next(100, 10000) },
+                    _ => new { Id = i, Name = $"Unknown {i}" }
+                };
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Example of a streaming tool that returns a stream of results
+        /// </summary>
+        [McpTool("generateReport", "Generate a report with streaming updates")]
+        public async IAsyncEnumerable<ReportUpdate> GenerateReportAsync(
+            [McpParameter(Description = "Report type")] string reportType,
+            [McpParameter(Description = "Number of sections to generate")] int sections)
+        {
+            _logger.LogInformation($"Starting generation of {reportType} report with {sections} sections");
+
+            for (int i = 0; i < sections; i++)
+            {
+                // Simulate processing time
+                await Task.Delay(300);
+                
+                yield return new ReportUpdate
+                {
+                    SectionNumber = i + 1,
+                    SectionName = $"Section {i + 1}",
+                    PercentComplete = (i + 1) * 100 / sections,
+                    Message = $"Completed processing section {i + 1} of {sections}"
+                };
+            }
+
+            _logger.LogInformation("Report generation complete");
         }
     }
 
     #region Model Classes
 
     /// <summary>
-    /// Represents an MCP completion request
+    /// Represents a current weather reading result
     /// </summary>
-    public class MCPCompletionRequest
+    public class WeatherResult
     {
-        [JsonPropertyName("id")]
-        public string Id { get; set; }
-        
-        [JsonPropertyName("model")]
-        public string Model { get; set; }
-        
-        [JsonPropertyName("prompt")]
-        public string Prompt { get; set; }
-        
-        [JsonPropertyName("temperature")]
-        public double Temperature { get; set; } = 0.7;
-        
-        [JsonPropertyName("max_tokens")]
-        public int MaxTokens { get; set; } = 100;
-        
-        [JsonPropertyName("stream")]
-        public bool Stream { get; set; }
+        public string Location { get; set; }
+        public double Temperature { get; set; }
+        public string Condition { get; set; }
+        public DateTime Timestamp { get; set; }
     }
 
     /// <summary>
-    /// Represents an MCP completion response
+    /// Represents a weather forecast for multiple days
     /// </summary>
-    public class MCPCompletionResponse
+    public class WeatherForecast
     {
-        [JsonPropertyName("id")]
-        public string Id { get; set; }
-        
-        [JsonPropertyName("model")]
-        public string Model { get; set; }
-        
-        [JsonPropertyName("response")]
-        public string Response { get; set; }
-        
-        [JsonPropertyName("usage")]
-        public MCPUsage Usage { get; set; }
-        
-        [JsonPropertyName("error")]
-        public string Error { get; set; }
+        public string Location { get; set; }
+        public WeatherDay[] Days { get; set; }
     }
 
     /// <summary>
-    /// Represents an MCP streaming response chunk
+    /// Represents weather conditions for a single day
     /// </summary>
-    public class MCPStreamingResponse
+    public class WeatherDay
     {
-        [JsonPropertyName("id")]
-        public string Id { get; set; }
-        
-        [JsonPropertyName("model")]
-        public string Model { get; set; }
-        
-        [JsonPropertyName("delta")]
-        public string Delta { get; set; }
-        
-        [JsonPropertyName("finished")]
-        public bool Finished { get; set; }
-        
-        [JsonPropertyName("usage")]
-        public MCPUsage Usage { get; set; }
-        
-        [JsonPropertyName("error")]
-        public string Error { get; set; }
+        public DateTime Date { get; set; }
+        public double HighTemperature { get; set; }
+        public double LowTemperature { get; set; }
+        public string Condition { get; set; }
     }
 
     /// <summary>
-    /// Represents token usage information in an MCP response
+    /// Represents a database search result
     /// </summary>
-    public class MCPUsage
+    public class SearchResult
     {
-        [JsonPropertyName("prompt_tokens")]
-        public int PromptTokens { get; set; }
-        
-        [JsonPropertyName("completion_tokens")]
-        public int CompletionTokens { get; set; }
-        
-        [JsonPropertyName("total_tokens")]
-        public int TotalTokens { get; set; }
+        public string Query { get; set; }
+        public string Database { get; set; }
+        public int ResultCount { get; set; }
+        public double SearchTime { get; set; }
+        public object[] Results { get; set; }
+    }
+
+    /// <summary>
+    /// Represents a streaming update during report generation
+    /// </summary>
+    public class ReportUpdate
+    {
+        public int SectionNumber { get; set; }
+        public string SectionName { get; set; }
+        public int PercentComplete { get; set; }
+        public string Message { get; set; }
     }
 
     #endregion
 
-    /// <summary>
-    /// Example program demonstrating MCP client and server usage
-    /// </summary>
-    public class Program
+    #region Attribute Definitions (For educational purposes only)
+    // Note: The following attribute definitions are for demonstration only
+    // In a real project, you would use the actual attributes from the MCP SDK
+
+    [AttributeUsage(AttributeTargets.Method)]
+    public class McpToolAttribute : Attribute
     {
-        public static async Task Main(string[] args)
+        public McpToolAttribute(string name, string description)
         {
-            // Configure logging
-            using var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
-            var logger = loggerFactory.CreateLogger<Program>();
-            
-            logger.LogInformation("Starting MCP sample application");
-            
-            // Create client
-            var client = new MCPClient("https://mcp.example.org");
-            
-            // Standard completion example
-            logger.LogInformation("Running standard completion example");
-            
-            try
-            {
-                var response = await client.CreateCompletionAsync(new MCPCompletionRequest
-                {
-                    Model = "gpt-4",
-                    Prompt = "Explain the Model Context Protocol in simple terms",
-                    Temperature = 0.7,
-                    MaxTokens = 100
-                });
-                
-                Console.WriteLine("\n--- MCP Response ---");
-                Console.WriteLine(JsonSerializer.Serialize(response, new JsonSerializerOptions { WriteIndented = true }));
-            }
-            catch (Exception ex)
-            {
-                logger.LogError($"Error in completion example: {ex.Message}");
-            }
-            
-            // Streaming example
-            logger.LogInformation("Running streaming completion example");
-            
-            try
-            {
-                var cts = new CancellationTokenSource(TimeSpan.FromSeconds(10));
-                Console.WriteLine("\n--- Streaming Example ---");
-                
-                await foreach (var chunk in client.CreateCompletionStreamAsync(
-                    new MCPCompletionRequest
-                    {
-                        Model = "gpt-4",
-                        Prompt = "Explain streaming in MCP",
-                        Temperature = 0.7
-                    }, cts.Token))
-                {
-                    if (!string.IsNullOrEmpty(chunk.Delta))
-                    {
-                        Console.Write(chunk.Delta);
-                    }
-                    
-                    if (chunk.Finished)
-                    {
-                        Console.WriteLine("\n\nStream finished");
-                        Console.WriteLine($"Usage: {JsonSerializer.Serialize(chunk.Usage)}");
-                    }
-                }
-            }
-            catch (OperationCanceledException)
-            {
-                logger.LogWarning("Streaming example was cancelled or timed out");
-            }
-            catch (Exception ex)
-            {
-                logger.LogError($"Error in streaming example: {ex.Message}");
-            }
+            Name = name;
+            Description = description;
         }
+
+        public string Name { get; }
+        public string Description { get; }
     }
+
+    [AttributeUsage(AttributeTargets.Parameter)]
+    public class McpParameterAttribute : Attribute
+    {
+        public string Description { get; set; }
+        public string Schema { get; set; }
+        public bool IsOptional { get; set; }
+    }
+
+    #endregion
 }

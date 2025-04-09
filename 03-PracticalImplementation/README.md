@@ -39,7 +39,17 @@ The .NET SDK for MCP provides comprehensive tooling for building both clients an
 - Built-in DI container integration
 - Streaming response support
 
-For a complete C# implementation sample, see [MCPSample.cs](samples/csharp/MCPSample.cs) in the samples directory.
+#### Sample Implementations
+
+The official C# SDK repository contains several sample implementations demonstrating different aspects of MCP:
+
+- **Basic MCP Client**: Simple example showing how to create an MCP client and call tools
+- **Basic MCP Server**: Minimal server implementation with basic tool registration
+- **Advanced MCP Server**: Full-featured server with tool registration, authentication, and error handling
+- **ASP.NET Integration**: Examples demonstrating integration with ASP.NET Core
+- **Tool Implementation Patterns**: Various patterns for implementing tools with different complexity levels
+
+For complete C# implementation samples, visit the [official C# SDK samples repository](https://github.com/modelcontextprotocol/csharp-sdk/tree/main/samples).
 
 ### Java Implementation
 
