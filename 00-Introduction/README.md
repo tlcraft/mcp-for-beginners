@@ -106,90 +106,20 @@ graph TD
     style F fill:#c2f0c2,stroke:#333,stroke-width:1px    
 ```
 
-## Code Examples: Basic MCP Concepts
+## Code Examples: Creating Your First MCP Server
 
-### .NET Example: Simple MCP Client
-Reference https://github.com/modelcontextprotocol/csharp-sdk
+MCP servers allow you to extend LLM capabilities by providing data and functionality. 
 
-```csharp
-using Microsoft.Mcp.Client;
+Here are examples of creating a simple MCP server in different languages:
 
-public class SimpleMcpExample
-{
-    public async Task RunExample()
-    {
-        // Create an MCP client
-        var client = new McpClient("https://mcp-server-url.com");
-        
-        // Define a simple prompt
-        string prompt = "What's the weather in Seattle right now?";
-        
-        // Send request to MCP server
-        var response = await client.SendPromptAsync(prompt, 
-            new McpToolOptions { AllowedTools = ["weatherTool"] });
-            
-        // Display the response
-        Console.WriteLine(response.GeneratedText);
-    }
-}
-```
+### Python Example: https://github.com/modelcontextprotocol/python-sdk
 
-### Java Example: Basic MCP Connection
-Reference https://github.com/modelcontextprotocol/java-sdk 
+### TypeScript Example: https://github.com/modelcontextprotocol/typescript-sdk
 
-```java
-import com.mcp.client.McpClient;
-import com.mcp.models.McpRequest;
-import com.mcp.models.McpResponse;
+### Java Example: https://github.com/modelcontextprotocol/java-sdk
 
-public class McpIntroduction {
-    public static void main(String[] args) {
-        // Initialize MCP client
-        McpClient client = new McpClient.Builder()
-            .setServerUrl("https://mcp-server-example.com")
-            .build();
-            
-        // Create request
-        McpRequest request = new McpRequest.Builder()
-            .setPrompt("What's the weather in Seattle right now?")
-            .addTool("weatherTool")
-            .build();
-            
-        // Send request and get response
-        McpResponse response = client.sendRequest(request);
-        
-        // Process response
-        System.out.println("Model response: " + response.getGeneratedText());
-    }
-}
-```
+### C# .NET Example: https://github.com/modelcontextprotocol/csharp-sdk
 
-### Python Example: Simple MCP Integration
-Reference https://github.com/modelcontextprotocol/python-sdk
-
-
-```python
-from mcp_client import McpClient
-
-# Initialize the MCP client
-client = McpClient(server_url="https://mcp-server.example.com")
-
-# Define a prompt that might need external tools
-prompt = "What's the weather in Seattle right now?"
-
-# Send the request to the MCP server
-response = client.send_prompt(
-    prompt=prompt,
-    allowed_tools=["weatherTool"]
-)
-
-# Process the response
-print(f"Model response: {response.generated_text}")
-
-# Check if any tools were used
-if response.tool_calls:
-    print(f"Tools used: {', '.join(t.tool_name for t in response.tool_calls)}")
-```
 
 ## Real-World Applications
 
@@ -220,7 +150,8 @@ Think about an AI application you're interested in building. What external tools
 
 ## Additional Resources
 
-- [MCP GitHub Repository](https://github.com/microsoft/mcp-for-beginners)
+- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+
 
 ---
 
