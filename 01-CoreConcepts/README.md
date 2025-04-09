@@ -140,108 +140,109 @@ MCP implementations should follow these key security principles:
 ### .NET Example: Creating a Simple MCP Server with Tools
 
 ```csharp
-using Microsoft.Mcp.Server;
-using Microsoft.Mcp.Tools;
+using System;
+using System.Threading.Tasks;
+using ModelContextProtocol.Server;
+using ModelContextProtocol.Server.Transport;
+using ModelContextProtocol.Server.Tools;
 
-public class WeatherServer : IMcpServer
+public class WeatherServer
 {
-    public void ConfigureServices(IServiceCollection services)
+    public static async Task Main(string[] args)
     {
+        // Create an MCP server
+        var server = new McpServer(
+            name: "Weather MCP Server",
+            version: "1.0.0"
+        );
+        
         // Register our custom weather tool
-        services.AddMcpTool<WeatherTool>("weatherTool");
+        server.AddTool<string, WeatherData>("weatherTool", 
+            description: "Gets current weather for a location",
+            execute: async (location) => {
+                // Call weather API (simplified)
+                var weatherData = await GetWeatherDataAsync(location);
+                return weatherData;
+            });
+        
+        // Connect the server using stdio transport
+        var transport = new StdioServerTransport();
+        await server.ConnectAsync(transport);
+        
+        Console.WriteLine("Weather MCP Server started");
+        
+        // Keep the server running until process is terminated
+        await Task.Delay(-1);
     }
     
-    public void Configure(IMcpApplicationBuilder app)
+    private static async Task<WeatherData> GetWeatherDataAsync(string location)
     {
-        // Configure middleware
-        app.UseAuthentication();
-        app.UseMcpServer();
+        // This would normally call a weather API
+        // Simplified for demonstration
+        await Task.Delay(100); // Simulate API call
+        return new WeatherData { 
+            Temperature = 72.5,
+            Conditions = "Sunny",
+            Location = location
+        };
     }
 }
 
-// Custom tool implementation
-public class WeatherTool : IMcpTool
+public class WeatherData
 {
-    public string Name => "weatherTool";
-    public string Description => "Gets current weather for a location";
-    
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
-    {
-        // Extract location parameter
-        var location = request.Parameters.GetValue<string>("location");
-        
-        // Call weather API (simplified)
-        var weatherData = await GetWeatherDataAsync(location);
-        
-        // Return formatted response
-        return new ToolResponse 
-        {
-            Result = new { 
-                Temperature = weatherData.Temperature,
-                Conditions = weatherData.Conditions,
-                Location = weatherData.Location
-            }
-        };
-    }
+    public double Temperature { get; set; }
+    public string Conditions { get; set; }
+    public string Location { get; set; }
 }
 ```
 
 ### Java Example: MCP Server Components
 
 ```java
-import com.mcp.server.McpServer;
-import com.mcp.tools.Tool;
-import com.mcp.tools.ToolRequest;
-import com.mcp.tools.ToolResponse;
+import io.modelcontextprotocol.server.McpServer;
+import io.modelcontextprotocol.server.McpToolDefinition;
+import io.modelcontextprotocol.server.transport.StdioServerTransport;
+import io.modelcontextprotocol.server.tool.ToolExecutionContext;
+import io.modelcontextprotocol.server.tool.ToolResponse;
 
 public class WeatherMcpServer {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // Create an MCP server
-        McpServer server = new McpServer.Builder()
-            .setPort(3000)
+        McpServer server = McpServer.builder()
+            .name("Weather MCP Server")
+            .version("1.0.0")
             .build();
             
         // Register a weather tool
-        server.registerTool(new WeatherTool());
+        server.registerTool(McpToolDefinition.builder("weatherTool")
+            .description("Gets current weather for a location")
+            .parameter("location", String.class)
+            .execute((ToolExecutionContext ctx) -> {
+                String location = ctx.getParameter("location", String.class);
+                
+                // Get weather data (simplified)
+                WeatherData data = getWeatherData(location);
+                
+                // Return formatted response
+                return ToolResponse.content(
+                    String.format("Temperature: %.1f°F, Conditions: %s, Location: %s", 
+                    data.getTemperature(), 
+                    data.getConditions(), 
+                    data.getLocation())
+                );
+            })
+            .build());
         
-        // Start the server
-        server.start();
-        System.out.println("MCP Server started on port 3000");
-    }
-}
-
-// Custom weather tool implementation
-class WeatherTool implements Tool {
-    @Override
-    public String getName() {
-        return "weatherTool";
-    }
-    
-    @Override
-    public String getDescription() {
-        return "Gets current weather for a location";
-    }
-    
-    @Override
-    public ToolResponse execute(ToolRequest request) {
-        // Extract location from parameters
-        String location = request.getParameters().get("location").asText();
-        
-        // Get weather data (simplified)
-        WeatherData data = getWeatherData(location);
-        
-        // Create and return response
-        Map<String, Object> result = new HashMap<>();
-        result.put("temperature", data.getTemperature());
-        result.put("conditions", data.getConditions());
-        result.put("location", data.getLocation());
-        
-        return new ToolResponse.Builder()
-            .setResult(result)
-            .build();
+        // Connect the server using stdio transport
+        try (StdioServerTransport transport = new StdioServerTransport()) {
+            server.connect(transport);
+            System.out.println("Weather MCP Server started");
+            // Keep server running until process is terminated
+            Thread.currentThread().join();
+        }
     }
     
-    private WeatherData getWeatherData(String location) {
+    private static WeatherData getWeatherData(String location) {
         // Implementation would call a weather API
         // Simplified for example purposes
         return new WeatherData(72.5, "Sunny", location);
@@ -253,104 +254,159 @@ class WeatherData {
     private String conditions;
     private String location;
     
-    // Constructor and getters
-    // ...
+    public WeatherData(double temperature, String conditions, String location) {
+        this.temperature = temperature;
+        this.conditions = conditions;
+        this.location = location;
+    }
+    
+    public double getTemperature() {
+        return temperature;
+    }
+    
+    public String getConditions() {
+        return conditions;
+    }
+    
+    public String getLocation() {
+        return location;
+    }
 }
 ```
 
 ### Python Example: Building an MCP Server
 
 ```python
-from mcp_server import McpServer
-from mcp_tools import Tool, ToolRequest, ToolResponse
-import requests
+#!/usr/bin/env python3
+import asyncio
+from mcp.server.fastmcp import FastMCP
+from mcp.server.transports.stdio import serve_stdio
 
-class WeatherTool(Tool):
-    def get_name(self):
-        return "weatherTool"
-        
-    def get_description(self):
-        return "Gets current weather for a location"
-    
-    def execute(self, request: ToolRequest) -> ToolResponse:
-        # Get location from parameters
-        location = request.parameters.get("location")
-        
-        # Fetch weather data (simplified)
-        weather_data = self._get_weather_data(location)
-        
-        # Return formatted response
-        return ToolResponse(
-            result={
-                "temperature": weather_data["temperature"],
-                "conditions": weather_data["conditions"],
-                "location": weather_data["location"]
-            }
-        )
-    
-    def _get_weather_data(self, location):
-        # This would normally call a weather API
+# Create a FastMCP server
+mcp = FastMCP(
+    name="Weather MCP Server",
+    version="1.0.0"
+)
+
+@mcp.tool()
+def get_weather(location: str) -> dict:
+    """Gets current weather for a location."""
+    # This would normally call a weather API
+    # Simplified for demonstration
+    return {
+        "temperature": 72.5,
+        "conditions": "Sunny",
+        "location": location
+    }
+
+# Alternative approach using a class
+class WeatherTools:
+    @mcp.tool()
+    def forecast(self, location: str, days: int = 1) -> dict:
+        """Gets weather forecast for a location for the specified number of days."""
+        # This would normally call a weather API forecast endpoint
         # Simplified for demonstration
         return {
-            "temperature": 72.5,
-            "conditions": "Sunny",
-            "location": location
+            "location": location,
+            "forecast": [
+                {"day": i+1, "temperature": 70 + i, "conditions": "Partly Cloudy"}
+                for i in range(days)
+            ]
         }
 
-# Create and start the server
+# Initialize class for its methods to be registered as tools
+weather_tools = WeatherTools()
+
 if __name__ == "__main__":
-    # Initialize server
-    server = McpServer(port=3000)
-    
-    # Register tools
-    server.register_tool(WeatherTool())
-    
-    # Start server
-    server.start()
-    print("MCP Server running on port 3000")
+    # Start the server with stdio transport
+    print("Weather MCP Server starting...")
+    asyncio.run(serve_stdio(mcp))
+```
 ```
 
-### JavaScript Example: Creating an MCP Client
+### JavaScript Example: Creating an MCP Server
 
 ```javascript
-// Using Node.js with the MCP client library
-const { McpClient } = require('@mcp/client');
+// Using the official Model Context Protocol SDK
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { z } from "zod"; // For parameter validation
 
-async function runMcpExample() {
-  // Initialize the MCP client
-  const client = new McpClient({
-    serverUrl: 'https://mcp-server-example.com',
-    apiKey: process.env.MCP_API_KEY // Use environment variable for security
-  });
-  
-  // Create a request with a prompt
-  const prompt = "What's the current weather in London?";
-  
-  try {
-    // Send the request to the MCP server
-    const response = await client.sendPrompt(prompt, {
-      allowedTools: ['weatherTool'], // Specify which tools the model can use
-      temperature: 0.7,
-      maxTokens: 300
-    });
+// Create an MCP server
+const server = new McpServer({
+  name: "Weather MCP Server",
+  version: "1.0.0"
+});
+
+// Define a weather tool
+server.tool(
+  "weatherTool",
+  {
+    location: z.string().describe("The location to get weather for")
+  },
+  async ({ location }) => {
+    // This would normally call a weather API
+    // Simplified for demonstration
+    const weatherData = await getWeatherData(location);
     
-    // Process the response
-    console.log('Model response:', response.generatedText);
-    
-    // Check if any tools were used
-    if (response.toolCalls && response.toolCalls.length > 0) {
-      console.log('\nTools used:');
-      response.toolCalls.forEach(toolCall => {
-        console.log(`- ${toolCall.name} with parameters:`, toolCall.parameters);
-        console.log(`  Result:`, toolCall.result);
-      });
-    }
-  } catch (error) {
-    console.error('Error communicating with MCP server:', error);
+    return {
+      content: [
+        { 
+          type: "text", 
+          text: `Temperature: ${weatherData.temperature}°F, Conditions: ${weatherData.conditions}, Location: ${weatherData.location}` 
+        }
+      ]
+    };
   }
+);
+
+// Define a forecast tool
+server.tool(
+  "forecastTool",
+  {
+    location: z.string(),
+    days: z.number().default(3).describe("Number of days for forecast")
+  },
+  async ({ location, days }) => {
+    // This would normally call a weather API
+    // Simplified for demonstration
+    const forecast = await getForecastData(location, days);
+    
+    return {
+      content: [
+        { 
+          type: "text", 
+          text: `${days}-day forecast for ${location}: ${JSON.stringify(forecast)}` 
+        }
+      ]
+    };
+  }
+);
+
+// Helper functions
+async function getWeatherData(location) {
+  // Simulate API call
+  return {
+    temperature: 72.5,
+    conditions: "Sunny",
+    location: location
+  };
 }
 
-runMcpExample();
+async function getForecastData(location, days) {
+  // Simulate API call
+  return Array.from({ length: days }, (_, i) => ({
+    day: i + 1,
+    temperature: 70 + Math.floor(Math.random() * 10),
+    conditions: i % 2 === 0 ? "Sunny" : "Partly Cloudy"
+  }));
+}
+
+// Connect the server using stdio transport
+const transport = new StdioServerTransport();
+server.connect(transport).catch(console.error);
+
+console.log("Weather MCP Server started");
 ```
 
 This JavaScript example demonstrates how to create an MCP client that connects to a server, sends a prompt, and processes the response including any tool calls that were made.

@@ -2,149 +2,47 @@
 """
 Sample MCP Calculator Server implementation in Python.
 
-This module demonstrates how to create a simple MCP server with a calculator tool
+This module demonstrates how to create a simple MCP server with calculator tools
 that can perform basic arithmetic operations (add, subtract, multiply, divide).
 """
 
 import asyncio
-import logging
-from typing import Dict, Any, List, Literal
+from mcp.server.fastmcp import FastMCP
+from mcp.server.transports.stdio import serve_stdio
 
-from modelcontextprotocol import create_server
-from modelcontextprotocol.server import MCPServer, ServerConfig
-from modelcontextprotocol.tool import ToolDefinition, ToolParameters, ToolResponse
-from modelcontextprotocol.transports import create_stdio_transport
-from modelcontextprotocol.exceptions import MCPToolError
+# Create a FastMCP server
+mcp = FastMCP(
+    name="Calculator MCP Server",
+    version="1.0.0"
+)
 
+@mcp.tool()
+def add(a: float, b: float) -> float:
+    """Add two numbers together and return the result."""
+    return a + b
 
-async def calculator_tool(params: ToolParameters) -> ToolResponse:
+@mcp.tool()
+def subtract(a: float, b: float) -> float:
+    """Subtract b from a and return the result."""
+    return a - b
+
+@mcp.tool()
+def multiply(a: float, b: float) -> float:
+    """Multiply two numbers together and return the result."""
+    return a * b
+
+@mcp.tool()
+def divide(a: float, b: float) -> float:
     """
-    A tool that performs basic arithmetic operations.
+    Divide a by b and return the result.
     
-    This tool handles add, subtract, multiply, and divide operations
-    on two numerical operands.
+    Raises:
+        ValueError: If b is zero
     """
-    operation = params["operation"]
-    a = params["a"]
-    b = params["b"]
-    
-    result = None
-    try:
-        if operation == "add":
-            result = a + b
-        elif operation == "subtract":
-            result = a - b
-        elif operation == "multiply":
-            result = a * b
-        elif operation == "divide":
-            if b == 0:
-                raise MCPToolError("Cannot divide by zero")
-            result = a / b
-        else:
-            raise MCPToolError(f"Unknown operation: {operation}")
-    except Exception as e:
-        raise MCPToolError(f"Error performing calculation: {str(e)}")
-    
-    return ToolResponse(content={"result": result})
-        """
-        Execute the calculation based on the provided operation and operands.
-        
-        Args:
-            params: Dictionary containing the operation parameters
-                                  
-        Returns:
-            Dictionary containing the calculation result
-            
-        Raises:
-            ToolExecutionError: If division by zero is attempted or an unknown
-                                operation is provided
-        """
-        # Extract parameters
-        operation = params.get("operation")
-        a = params.get("a")
-        b = params.get("b")
-        
-        # Perform calculation
-        if operation == "add":
-            result = a + b
-        elif operation == "subtract":
-            result = a - b
-        elif operation == "multiply":
-            result = a * b
-        elif operation == "divide":
-            if b == 0:
-                raise ToolExecutionError("Cannot divide by zero")
-            result = a / b
-        else:
-            raise ToolExecutionError(f"Unknown operation: {operation}")
-        
-        # Return result in the content format
-        return {
-            "content": [
-                {
-                    "type": "text",
-                    "text": f'{{"result": {result}}}'
-                }
-            ]
-        }
-
-
-def configure_logging():
-    """Configure basic logging for the application."""
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-        handlers=[logging.StreamHandler()]
-    )
-
-
-async def main():
-    """Initialize and start the MCP server with calculator tool."""
-    # Configure logging
-    configure_logging()
-    logger = logging.getLogger(__name__)
-    
-    logger.info("Creating Calculator MCP Server")
-    
-    # Define the calculator tool
-    calculator_definition = ToolDefinition(
-        name="calculator",
-        description="Performs basic arithmetic operations",
-        parameters={
-            "operation": {
-                "type": "string",
-                "enum": ["add", "subtract", "multiply", "divide"],
-                "description": "The arithmetic operation to perform"
-            },
-            "a": {
-                "type": "number",
-                "description": "First operand"
-            },
-            "b": {
-                "type": "number",
-                "description": "Second operand"
-            }
-        },
-        required=["operation", "a", "b"]
-    )
-    
-    # Create server configuration
-    config = ServerConfig(
-        name="Calculator MCP Server",
-        version="1.0.0"
-    )
-    
-    # Create server
-    server = create_server(config)
-    
-    # Register the calculator tool
-    server.tools.register(calculator_definition, calculator_tool)
-    
-    # Connect the server using stdio transport
-    logger.info("Starting Calculator MCP Server with stdio transport")
-    transport = create_stdio_transport()
-    await server.run(transport)
-
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    return a / b
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    # Start the server with stdio transport
+    asyncio.run(serve_stdio(mcp))

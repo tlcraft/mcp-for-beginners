@@ -1,89 +1,80 @@
-// McpCalculatorServer.java - Sample MCP Calculator Server implementation in Java
-package com.example.mcp;
+import io.modelcontextprotocol.server.McpServer;
+import io.modelcontextprotocol.server.McpToolDefinition;
+import io.modelcontextprotocol.server.transport.StdioServerTransport;
+import io.modelcontextprotocol.server.tool.ToolExecutionContext;
+import io.modelcontextprotocol.server.tool.ToolResponse;
 
-import io.modelcontextprotocol.MCPServer;
-import io.modelcontextprotocol.ServerBuilder;
-import io.modelcontextprotocol.ServerConfig;
-import io.modelcontextprotocol.content.ContentItem;
-import io.modelcontextprotocol.content.TextContent;
-import io.modelcontextprotocol.tool.ToolDefinition;
-import io.modelcontextprotocol.tool.ToolExecutor;
-import io.modelcontextprotocol.tool.ToolResponse;
-import io.modelcontextprotocol.transport.stdio.StdioTransport;
+/**
+ * Sample MCP Calculator Server implementation in Java.
+ * 
+ * This class demonstrates how to create a simple MCP server with calculator tools
+ * that can perform basic arithmetic operations (add, subtract, multiply, divide).
+ */
+public class McpCalculatorServer {
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.CompletableFuture;
-
-public class McpCalculatorServer {    public static void main(String[] args) throws Exception {
-        // Configure the server
-        ServerConfig config = new ServerConfig.Builder()
+    public static void main(String[] args) throws Exception {
+        // Create an MCP server
+        McpServer server = McpServer.builder()
             .name("Calculator MCP Server")
             .version("1.0.0")
             .build();
         
-        // Create MCP server
-        MCPServer server = new ServerBuilder()
-            .config(config)
-            .build();
-        
-        // Define calculator tool
-        ToolDefinition calculatorTool = new ToolDefinition.Builder()
-            .name("calculator")
-            .description("Performs basic arithmetic operations")
-            .addParameter("operation", "string", "The arithmetic operation to perform")
-                .withEnum("add", "subtract", "multiply", "divide")
-            .addParameter("a", "number", "First operand")
-            .addParameter("b", "number", "Second operand")
-            .addRequiredParameters("operation", "a", "b")
-            .build();
+        // Define calculator tools for each operation
+        server.registerTool(McpToolDefinition.builder("add")
+            .description("Add two numbers together")
+            .parameter("a", Double.class)
+            .parameter("b", Double.class)
+            .execute((ToolExecutionContext ctx) -> {
+                double a = ctx.getParameter("a", Double.class);
+                double b = ctx.getParameter("b", Double.class);
+                return ToolResponse.content(String.valueOf(a + b));
+            })
+            .build());
             
-        // Register calculator tool
-        server.registerTool(calculatorTool, new ToolExecutor() {
-            @Override
-            public CompletableFuture<ToolResponse> execute(Map<String, Object> params) {
-                // Extract parameters
-                String operation = (String) params.get("operation");
-                double a = ((Number) params.get("a")).doubleValue();
-                double b = ((Number) params.get("b")).doubleValue();
+        server.registerTool(McpToolDefinition.builder("subtract")
+            .description("Subtract b from a")
+            .parameter("a", Double.class)
+            .parameter("b", Double.class)
+            .execute((ToolExecutionContext ctx) -> {
+                double a = ctx.getParameter("a", Double.class);
+                double b = ctx.getParameter("b", Double.class);
+                return ToolResponse.content(String.valueOf(a - b));
+            })
+            .build());
+            
+        server.registerTool(McpToolDefinition.builder("multiply")
+            .description("Multiply two numbers together")
+            .parameter("a", Double.class)
+            .parameter("b", Double.class)
+            .execute((ToolExecutionContext ctx) -> {
+                double a = ctx.getParameter("a", Double.class);
+                double b = ctx.getParameter("b", Double.class);
+                return ToolResponse.content(String.valueOf(a * b));
+            })
+            .build());
+            
+        server.registerTool(McpToolDefinition.builder("divide")
+            .description("Divide a by b")
+            .parameter("a", Double.class)
+            .parameter("b", Double.class)
+            .execute((ToolExecutionContext ctx) -> {
+                double a = ctx.getParameter("a", Double.class);
+                double b = ctx.getParameter("b", Double.class);
                 
-                double result = 0;
-                  // Perform calculation
-                switch (operation) {
-                    case "add":
-                        result = a + b;
-                        break;
-                    case "subtract":
-                        result = a - b;
-                        break;
-                    case "multiply":
-                        result = a * b;
-                        break;
-                    case "divide":
-                        if (b == 0) {
-                            throw new IllegalArgumentException("Cannot divide by zero");
-                        }
-                        result = a / b;
-                        break;
-                    default:
-                        throw new IllegalArgumentException("Unknown operation: " + operation);
+                if (b == 0) {
+                    return ToolResponse.error("Cannot divide by zero");
                 }
                 
-                // Return result in standard MCP content format
-                ContentItem textContent = new TextContent(String.format("{\"result\": %f}", result));
-                ToolResponse response = new ToolResponse.Builder()
-                    .addContent(textContent)
-                    .build();
-                
-                return CompletableFuture.completedFuture(response);
-            }
-        });
-        
-        System.out.println("Starting Calculator MCP Server");
-        
-        // Start server with stdio transport
-        StdioTransport transport = new StdioTransport();
-        server.start(transport).join();
+                return ToolResponse.content(String.valueOf(a / b));
+            })
+            .build());
+            
+        // Connect the server using stdio transport
+        try (StdioServerTransport transport = new StdioServerTransport()) {
+            server.connect(transport);
+            System.out.println("Calculator MCP Server started");
+            // Keep server running until process is terminated
+            Thread.currentThread().join();
+        }
     }
 }
