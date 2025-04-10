@@ -298,6 +298,27 @@ public class FinancialRiskMCPServer {
    - Standardized audit trails and explainability interfaces
    - Integration with emerging AI governance frameworks
 
+
+### MCP Solutions from Microsoft 
+
+Microsoft and Azure have developed several open-source repositories to help developers implement MCP in various scenarios:
+
+#### Microsoft Organization
+1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - A Playwright MCP server for browser automation and testing
+2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - A OneDrive MCP server implementation for local testing and community contribution
+
+#### Azure-Samples Organization
+1. [mcp](https://github.com/Azure-Samples/mcp) - Links to samples, tools, and resources for building and integrating MCP servers on Azure using multiple languages
+2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Reference MCP servers demonstrating authentication with the current Model Context Protocol specification
+3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - Landing page for Remote MCP Server implementations in Azure Functions with links to language-specific repos
+4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Quickstart template for building and deploying custom remote MCP servers using Azure Functions with Python
+5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Quickstart template for building and deploying custom remote MCP servers using Azure Functions with .NET/C#
+6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Quickstart template for building and deploying custom remote MCP servers using Azure Functions with TypeScript
+7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) - Azure API Management as AI Gateway to Remote MCP servers using Python
+8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) - APIM ❤️ AI experiments including MCP capabilities, integrating with Azure OpenAI and AI Foundry
+
+These repositories provide various implementations, templates, and resources for working with the Model Context Protocol across different programming languages and Azure services. They cover a range of use cases from basic server implementations to authentication, cloud deployment, and enterprise integration scenarios.
+
 ### Research Opportunities
 
 - Efficient prompt optimization techniques within MCP frameworks
