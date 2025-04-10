@@ -1,4 +1,4 @@
-# Lessons from Early Adoption
+# Case Studies and Projects
 
 ## Overview
 

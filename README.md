@@ -15,12 +15,12 @@ This open-source curriculum is designed to teach the concepts and fundamentals o
 - Importance of standardizing AI model interactions
 - Real-world applications and benefits
 
-### [CoreConcepts](./01-CoreConcepts/README.md)
+### [Core Concepts](./01-CoreConcepts/README.md)
 - Client-server architecture in MCP
 - Key components of the MCP ecosystem
 - Communication mechanisms
 
-### [GettingStarted](./02-GettingStarted/README.md)
+### [Getting Started](./02-GettingStarted/README.md)
 - Setting up MCP environments
 - Building basic MCP servers and clients
 - Exploring pre-built integrations
@@ -31,7 +31,7 @@ This open-source curriculum is designed to teach the concepts and fundamentals o
   - [Python Calculator Server](./02-GettingStarted/samples/python/mcp_calculator_server.py)
   - [TypeScript Calculator Server](./02-GettingStarted/samples/typescript/mcp_calculator_server.ts)
 
-### [PracticalImplementation](./03-PracticalImplementation/README.md)
+### [Practical Implementation](./03-PracticalImplementation/README.md)
 - Using SDKs across languages (C#, Java, JavaScript, TypeScript, Python)
 - Debugging and testing MCP servers
 - Creating reusable prompt templates and workflows
@@ -42,22 +42,22 @@ This open-source curriculum is designed to teach the concepts and fundamentals o
   - [Python Sample](./03-PracticalImplementation/samples/python/mcp_sample.py)
   - [TypeScript Sample](./03-PracticalImplementation/samples/typescript/mcp_sample.ts)
 
-### [AdvancedTopics](./04-AdvancedTopics/README.md)
+### [Advanced Topics](./04-AdvancedTopics/README.md)
 - Multi-modal integration and scalability
 - Security best practices
 - Integration with enterprise applications
 
-### [CommunityContributions](./05-CommunityContributions/README.md)
+### [Community Contributions](./05-CommunityContributions/README.md)
 - Contributing to MCP development
 - Engaging with the community
 - Best practices for collaboration
 
-### [CaseStudies](./06-CaseStudies/README.md)
+### [Lessons from Early Adoption](./06-CaseStudies/README.md)
 - Real-world MCP implementations
 - Hands-on projects to build MCP-based solutions
 - Future directions for MCP technology
 
-### [BestPractices](./07-BestPractices/README.md)
+### [Best Practices](./07-BestPractices/README.md)
 - Performance optimization techniques
 - Scalable MCP architecture design
 - Error handling and resiliency patterns
