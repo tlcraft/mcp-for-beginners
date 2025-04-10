@@ -40,6 +40,44 @@ MCP provides official SDKs for multiple languages:
 
 ### Installation and Setup
 
+### VS Code GitHub Copilot
+
+<table>
+<table>
+<tr>
+  <th align="left">GitHub</th>
+  <td><a href="https://github.com/microsoft/vscode">https://github.com/microsoft/vscode</a></td>
+</tr>
+<tr>
+  <th align="left">Website</th>
+  <td><a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></td>
+</tr>
+</table>
+<table>
+<tr><th align="left">License</th><td>MIT</td></tr>
+<tr><th align="left">Type</th><td>Desktop app, Web app</td></tr>
+<tr><th align="left">Platforms</th><td>Windows, MacOS, Linux, Web</td></tr>
+<tr><th align="left">Pricing</th><td>Freemium (GitHub Copilot subscription)</td></tr>
+<tr><th align="left">Programming Languages</th><td>TypeScript</td></tr>
+</table>
+
+VS Code integrates MCP with GitHub Copilot through [agent mode](https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode), allowing direct interaction with MCP-provided tools within your agentic coding workflow. Configure servers in Claude Desktop, workspace or user settings, with guided MCP installation and secure handling of keys in input variables to avoid leaking hard-coded keys.
+
+**Key Features:**
+- Support for stdio and server-sent events (SSE) transport
+- Per-session selection of tools per agent session for optimal performance
+- Easy server debugging with restart commands and output logging
+- Tool calls with editable inputs and always-allow toggle
+- Integration with existing VS Code extension system to register MCP servers from extensions
+
+<details>
+<summary>Screenshots</summary>
+
+![Guided MCP server configuration in VS Code](../images/00-Introduction/add-mcp-server.png)
+![Tool selection per agent session](./images/00-Introduction/vscode/agent-tools.png)
+![Easily debug errors during MCP development](./images/00-Introduction/vscode/debugging-output.png)
+</details>
+
 #### TypeScript/JavaScript
 
 ```bash
