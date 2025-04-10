@@ -70,12 +70,20 @@ VS Code integrates MCP with GitHub Copilot through [agent mode](https://code.vis
 - Tool calls with editable inputs and always-allow toggle
 - Integration with existing VS Code extension system to register MCP servers from extensions
 
+#### Command-line configuration
+You can also use the VS Code command-line interface to add an MCP server to your user profile or to a workspace.
+
+To add an MCP server to your user profile, use the --add-mcp command line option, and provide the JSON server configuration in the form {\"name\":\"server-name\",\"command\":...}.
+
+```
+code --add-mcp "{\"name\":\"my-server\",\"command\": \"uvx\",\"args\": [\"mcp-server-fetch\"]}"
+```
 <details>
 <summary>Screenshots</summary>
 
-![Guided MCP server configuration in VS Code](../images/02-GettingStarted/add-mcp-server.png)
-![Tool selection per agent session](../images/02-GettingStarted/agent-tools.png)
-![Easily debug errors during MCP development](../images/02-GettingStarted/debugging-output.png)
+![Guided MCP server configuration in VS Code](../images/02-GettingStarted/chat-mode-agent.png)
+![Tool selection per agent session](../images/02-GettingStarted/agent-mode-select-tools.png)
+![Easily debug errors during MCP development](../images/02-GettingStarted/mcp-list-servers.png)
 </details>
 
 #### TypeScript/JavaScript
