@@ -140,7 +140,7 @@ An agent connecting to an MCP server automatically learns the server's available
 
 This streamlined integration aligns with the flow depicted in the mermaid diagram, where servers provide both tools and knowledge, ensuring seamless collaboration across systems. 
 
-### Example 
+### Example Scalable Agent Solution
 
 ```mermaid
 graph TD
