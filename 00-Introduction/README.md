@@ -130,6 +130,39 @@ MCP enables a wide range of applications by extending AI capabilities:
 3. **Agent Systems**: Create AI agents that can take actions in the world through API calls
 4. **Augmented Generation**: Enhance AI outputs with real-time data and specialized tools
 
+The Model Context Protocol (MCP) acts as a universal standard for AI interactions, much like how USB-C standardized physical connections for devices. In the world of AI, MCP provides a consistent interface, allowing models (clients) to integrate seamlessly with external tools and data providers (servers). This eliminates the need for diverse, custom protocols for each API or data source.
+
+Under MCP, an MCP-compatible tool (referred to as an MCP server) follows a unified standard. These servers can list the tools or actions they offer and execute those actions when requested by an AI agent. AI agent platforms that support MCP are capable of discovering available tools from the servers and invoking them through this standard protocol.
+
+Beyond offering tools, MCP also facilitates access to knowledge. It enables applications to provide context to large language models (LLMs) by linking them to various data sources. For instance, an MCP server might represent a company’s document repository, allowing agents to retrieve relevant information on demand. Another server could handle specific actions like sending emails or updating records. From the agent’s perspective, these are simply tools it can use—some tools return data (knowledge context), while others perform actions. MCP efficiently manages both.
+
+An agent connecting to an MCP server automatically learns the server's available capabilities and accessible data through a standard format. This standardization enables dynamic tool availability. For example, adding a new MCP server to an agent’s system makes its functions immediately usable without requiring further customization of the agent's instructions.
+
+This streamlined integration aligns with the flow depicted in the mermaid diagram, where servers provide both tools and knowledge, ensuring seamless collaboration across systems. 
+
+### Example 
+```
+graph TD
+    User -->|Prompt| LLM
+    LLM -->|Response| User
+    LLM -->|MCP| ServerA
+    LLM -->|MCP| ServerB
+    ServerA -->|Universal connector| ServerB
+    ServerA --> KnowledgeA
+    ServerA --> ToolsA
+    ServerB --> KnowledgeB
+    ServerB --> ToolsB
+
+    subgraph Server A
+        KnowledgeA[Knowledge]
+        ToolsA[Tools]
+    end
+
+    subgraph Server B
+        KnowledgeB[Knowledge]
+        ToolsB[Tools]
+    end
+```
 ## Practical Benefits of MCP
 
 - **Freshness**: Models can access up-to-date information beyond their training data
