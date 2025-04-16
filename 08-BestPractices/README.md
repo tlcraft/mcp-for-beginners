@@ -1515,9 +1515,7 @@ MCP servers serve as crucial middleware between AI models and client application
 - Resilience against failures and edge cases
 - Consistent performance under various loads
 
-## Testing Pyramid for MCP Servers
-
-![Testing Pyramid](../images/07-BestPractices/testing-pyramid.png)
+## Unit Testing for MCP Servers
 
 ### Unit Testing (Foundation)
 
