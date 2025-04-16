@@ -64,6 +64,7 @@ This open-source curriculum is designed to teach the concepts and fundamentals o
 - Performance optimization techniques
 - Scalable MCP architecture design
 - Error handling and resiliency patterns
+- Testing MCP
 
 ## Prerequisites
 
