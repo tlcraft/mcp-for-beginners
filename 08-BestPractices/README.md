@@ -1499,6 +1499,391 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
+# Testing MCP Servers: Best Practices and Top Tips
+
+## Overview
+
+Testing is a critical aspect of developing reliable, high-quality MCP servers. This guide provides comprehensive best practices and tips for testing your MCP servers throughout the development lifecycle, from unit tests to integration tests and end-to-end validation.
+
+## Why Testing Matters for MCP Servers
+
+MCP servers serve as crucial middleware between AI models and client applications. Thorough testing ensures:
+
+- Reliability in production environments
+- Accurate handling of requests and responses
+- Proper implementation of MCP specifications
+- Resilience against failures and edge cases
+- Consistent performance under various loads
+
+## Testing Pyramid for MCP Servers
+
+![Testing Pyramid](../images/07-BestPractices/testing-pyramid.png)
+
+### Unit Testing (Foundation)
+
+Unit tests verify individual components of your MCP server in isolation.
+
+#### What to Test
+
+1. **Resource Handlers**: Test each resource handler's logic independently
+2. **Tool Implementations**: Verify tool behavior with various inputs
+3. **Prompt Templates**: Ensure prompt templates render correctly
+4. **Schema Validation**: Test parameter validation logic
+5. **Error Handling**: Verify error responses for invalid inputs
+
+#### Best Practices for Unit Testing
+
+```csharp
+// Example unit test for a calculator tool in C#
+[Fact]
+public async Task CalculatorTool_Add_ReturnsCorrectSum()
+{
+    // Arrange
+    var calculator = new CalculatorTool();
+    var parameters = new Dictionary<string, object>
+    {
+        ["operation"] = "add",
+        ["a"] = 5,
+        ["b"] = 7
+    };
+    
+    // Act
+    var response = await calculator.ExecuteAsync(parameters);
+    var result = JsonSerializer.Deserialize<CalculationResult>(response.Content[0].ToString());
+    
+    // Assert
+    Assert.Equal(12, result.Value);
+}
+```
+
+```python
+# Example unit test for a calculator tool in Python
+def test_calculator_tool_add():
+    # Arrange
+    calculator = CalculatorTool()
+    parameters = {
+        "operation": "add",
+        "a": 5,
+        "b": 7
+    }
+    
+    # Act
+    response = calculator.execute(parameters)
+    result = json.loads(response.content[0].text)
+    
+    # Assert
+    assert result["value"] == 12
+```
+
+### Integration Testing (Middle Layer)
+
+Integration tests verify interactions between components of your MCP server.
+
+#### What to Test
+
+1. **Server Initialization**: Test server startup with various configurations
+2. **Route Registration**: Verify all endpoints are correctly registered
+3. **Request Processing**: Test the full request-response cycle
+4. **Error Propagation**: Ensure errors are properly handled across components
+5. **Authentication & Authorization**: Test security mechanisms
+
+#### Best Practices for Integration Testing
+
+```csharp
+// Example integration test for MCP server in C#
+[Fact]
+public async Task Server_ProcessToolRequest_ReturnsValidResponse()
+{
+    // Arrange
+    var server = new McpServer();
+    server.RegisterTool(new CalculatorTool());
+    await server.StartAsync();
+    
+    var request = new McpRequest
+    {
+        Tool = "calculator",
+        Parameters = new Dictionary<string, object>
+        {
+            ["operation"] = "multiply",
+            ["a"] = 6,
+            ["b"] = 7
+        }
+    };
+    
+    // Act
+    var response = await server.ProcessRequestAsync(request);
+    
+    // Assert
+    Assert.NotNull(response);
+    Assert.Equal(McpStatusCodes.Success, response.StatusCode);
+    // Additional assertions for response content
+    
+    // Cleanup
+    await server.StopAsync();
+}
+```
+
+### End-to-End Testing (Top Layer)
+
+End-to-end tests verify the complete system behavior from client to server.
+
+#### What to Test
+
+1. **Client-Server Communication**: Test complete request-response cycles
+2. **Real Client SDKs**: Test with actual client implementations
+3. **Performance Under Load**: Verify behavior with multiple concurrent requests
+4. **Error Recovery**: Test system recovery from failures
+5. **Long-Running Operations**: Verify handling of streaming and long operations
+
+#### Best Practices for E2E Testing
+
+```typescript
+// Example E2E test with a client in TypeScript
+describe('MCP Server E2E Tests', () => {
+  let client: McpClient;
+  
+  beforeAll(async () => {
+    // Start server in test environment
+    await startTestServer();
+    client = new McpClient('http://localhost:5000');
+  });
+  
+  afterAll(async () => {
+    await stopTestServer();
+  });
+  
+  test('Client can invoke calculator tool and get correct result', async () => {
+    // Act
+    const response = await client.invokeToolAsync('calculator', {
+      operation: 'divide',
+      a: 20,
+      b: 4
+    });
+    
+    // Assert
+    expect(response.statusCode).toBe(200);
+    expect(response.content[0].text).toContain('5');
+  });
+});
+```
+
+## Mocking Strategies for MCP Testing
+
+Mocking is essential for isolating components during testing.
+
+### Components to Mock
+
+1. **External AI Models**: Mock model responses for predictable testing
+2. **External Services**: Mock API dependencies (databases, third-party services)
+3. **Authentication Services**: Mock identity providers
+4. **Resource Providers**: Mock expensive resource handlers
+
+### Example: Mocking an AI Model Response
+
+```csharp
+// C# example with Moq
+var mockModel = new Mock<ILanguageModel>();
+mockModel
+    .Setup(m => m.GenerateResponseAsync(
+        It.IsAny<string>(),
+        It.IsAny<McpRequestContext>()))
+    .ReturnsAsync(new ModelResponse { 
+        Text = "Mocked model response",
+        FinishReason = FinishReason.Completed
+    });
+
+var server = new McpServer(modelClient: mockModel.Object);
+```
+
+```python
+# Python example with unittest.mock
+@patch('mcp_server.models.OpenAIModel')
+def test_with_mock_model(mock_model):
+    # Configure mock
+    mock_model.return_value.generate_response.return_value = {
+        "text": "Mocked model response",
+        "finish_reason": "completed"
+    }
+    
+    # Use mock in test
+    server = McpServer(model_client=mock_model)
+    # Continue with test
+```
+
+## Performance Testing
+
+Performance testing is crucial for production MCP servers.
+
+### What to Measure
+
+1. **Latency**: Response time for requests
+2. **Throughput**: Requests handled per second
+3. **Resource Utilization**: CPU, memory, network usage
+4. **Concurrency Handling**: Behavior under parallel requests
+5. **Scaling Characteristics**: Performance as load increases
+
+### Tools for Performance Testing
+
+- **k6**: Open-source load testing tool
+- **JMeter**: Comprehensive performance testing
+- **Locust**: Python-based load testing
+- **Azure Load Testing**: Cloud-based performance testing
+
+### Example: Basic Load Test with k6
+
+```javascript
+// k6 script for load testing MCP server
+import http from 'k6/http';
+import { check, sleep } from 'k6';
+
+export const options = {
+  vus: 10,  // 10 virtual users
+  duration: '30s',
+};
+
+export default function () {
+  const payload = JSON.stringify({
+    tool: 'calculator',
+    parameters: {
+      operation: 'add',
+      a: Math.floor(Math.random() * 100),
+      b: Math.floor(Math.random() * 100)
+    }
+  });
+
+  const params = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer test-token'
+    },
+  };
+
+  const res = http.post('http://localhost:5000/api/tools/invoke', payload, params);
+  
+  check(res, {
+    'status is 200': (r) => r.status === 200,
+    'response time < 500ms': (r) => r.timings.duration < 500,
+  });
+  
+  sleep(1);
+}
+```
+
+## Test Automation for MCP Servers
+
+Automating your tests ensures consistent quality and faster feedback loops.
+
+### CI/CD Integration
+
+1. **Run Unit Tests on Pull Requests**: Ensure code changes don't break existing functionality
+2. **Integration Tests in Staging**: Run integration tests in pre-production environments
+3. **Performance Baselines**: Maintain performance benchmarks to catch regressions
+4. **Security Scans**: Automate security testing as part of the pipeline
+
+### Example CI Pipeline (GitHub Actions)
+
+```yaml
+name: MCP Server Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Runtime
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '8.0.x'
+    
+    - name: Restore dependencies
+      run: dotnet restore
+    
+    - name: Build
+      run: dotnet build --no-restore
+    
+    - name: Unit Tests
+      run: dotnet test --no-build --filter Category=Unit
+    
+    - name: Integration Tests
+      run: dotnet test --no-build --filter Category=Integration
+      
+    - name: Performance Tests
+      run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
+```
+
+## Testing for Compliance with MCP Specification
+
+Verify your server correctly implements the MCP specification.
+
+### Key Compliance Areas
+
+1. **API Endpoints**: Test required endpoints (/resources, /tools, etc.)
+2. **Request/Response Format**: Validate schema compliance
+3. **Error Codes**: Verify correct status codes for various scenarios
+4. **Content Types**: Test handling of different content types
+5. **Authentication Flow**: Verify spec-compliant auth mechanisms
+
+### Compliance Test Suite
+
+```csharp
+[Fact]
+public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
+{
+    // Arrange
+    var client = new HttpClient();
+    client.DefaultRequestHeaders.Add("Authorization", "Bearer test-token");
+    
+    // Act
+    var response = await client.GetAsync("http://localhost:5000/api/resources");
+    var content = await response.Content.ReadAsStringAsync();
+    var resources = JsonSerializer.Deserialize<ResourceList>(content);
+    
+    // Assert
+    Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    Assert.NotNull(resources);
+    Assert.All(resources.Resources, resource => 
+    {
+        Assert.NotNull(resource.Id);
+        Assert.NotNull(resource.Type);
+        // Additional schema validation
+    });
+}
+```
+
+## Top 10 Tips for Effective MCP Server Testing
+
+1. **Test Tool Definitions Separately**: Verify schema definitions independently from tool logic
+2. **Use Parameterized Tests**: Test tools with a variety of inputs, including edge cases
+3. **Check Error Responses**: Verify proper error handling for all possible error conditions
+4. **Test Authorization Logic**: Ensure proper access control for different user roles
+5. **Monitor Test Coverage**: Aim for high coverage of critical path code
+6. **Test Streaming Responses**: Verify proper handling of streaming content
+7. **Simulate Network Issues**: Test behavior under poor network conditions
+8. **Test Resource Limits**: Verify behavior when reaching quotas or rate limits
+9. **Automate Regression Tests**: Build a suite that runs on every code change
+10. **Document Test Cases**: Maintain clear documentation of test scenarios
+
+## Common Testing Pitfalls
+
+- **Over-reliance on happy path testing**: Make sure to test error cases thoroughly
+- **Ignoring performance testing**: Identify bottlenecks before they affect production
+- **Testing in isolation only**: Combine unit, integration, and E2E tests
+- **Incomplete API coverage**: Ensure all endpoints and features are tested
+- **Inconsistent test environments**: Use containers to ensure consistent test environments
+
+## Conclusion
+
+A comprehensive testing strategy is essential for developing reliable, high-quality MCP servers. By implementing the best practices and tips outlined in this guide, you can ensure your MCP implementations meet the highest standards of quality, reliability, and performance.
+
+
 ## Key Takeaways
 
 1. **Tool Design**: Follow single responsibility principle, use dependency injection, and design for composability
