@@ -20,7 +20,8 @@ This open-source curriculum is designed to teach the concepts and fundamentals o
 - Key components of the MCP ecosystem
 - Communication mechanisms
 
-###[Security](./02-Security/readme.md)
+### [Security](./02-Security/readme.md)
+- to do
 
 ### [Getting Started](./03-GettingStarted/README.md)
 - Setting up MCP environments
