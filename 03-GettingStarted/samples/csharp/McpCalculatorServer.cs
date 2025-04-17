@@ -4,56 +4,42 @@ using ModelContextProtocol.Server;
 using ModelContextProtocol.Server.Transport;
 using ModelContextProtocol.Server.Tools;
 
-namespace McpCalculatorSample
+namespace McpCalculatorSample;
+
+/// <summary>
+/// Sample MCP Calculator Server implementation in C#.
+/// 
+/// This class demonstrates how to create a simple MCP server with calculator tools
+/// that can perform basic arithmetic operations (add, subtract, multiply, divide).
+/// </summary>
+[McpServerToolType]
+public class McpCalculatorServer
 {
-    /// <summary>
-    /// Sample MCP Calculator Server implementation in C#.
-    /// 
-    /// This class demonstrates how to create a simple MCP server with calculator tools
-    /// that can perform basic arithmetic operations (add, subtract, multiply, divide).
-    /// </summary>
-    public class McpCalculatorServer
+    [McpServerTool, Description("Calculates the sum of two numbers")]
+    public static async double Add(double numberA, double numberB)
     {
-        public static async Task Main(string[] args)
+        return numberA + numberB;
+    }
+
+    [McpServerTool, Description("Calculates the difference of two numbers")]
+    public static async double Subtract(double numberA, double numberB)
+    {
+        return numberA - numberB;
+    }
+
+    [McpServerTool, Description("Calculates the product of two numbers")]
+    public static async double Multiply(double numberA, double numberB)
+    {
+        return numberA * numberB;
+    }
+    
+    [McpServerTool, Description("Calculates the quotient of two numbers")]
+    public static async double Divide(double numberA, double numberB)
+    {
+        if (numberB == 0)
         {
-            // Create an MCP server
-            var server = new McpServer(
-                name: "Calculator MCP Server",
-                version: "1.0.0"
-            );
-            
-            // Define calculator tools for each operation
-            server.AddTool<double, double, double>("add", 
-                description: "Add two numbers together",
-                execute: (a, b) => Task.FromResult(a + b));
-                
-            server.AddTool<double, double, double>("subtract", 
-                description: "Subtract b from a",
-                execute: (a, b) => Task.FromResult(a - b));
-                
-            server.AddTool<double, double, double>("multiply", 
-                description: "Multiply two numbers together",
-                execute: (a, b) => Task.FromResult(a * b));
-                
-            server.AddTool<double, double, double>("divide", 
-                description: "Divide a by b",
-                execute: (a, b) => 
-                {
-                    if (b == 0)
-                    {
-                        throw new ArgumentException("Cannot divide by zero");
-                    }
-                    return Task.FromResult(a / b);
-                });
-            
-            // Connect the server using stdio transport
-            var transport = new StdioServerTransport();
-            await server.ConnectAsync(transport);
-            
-            Console.WriteLine("Calculator MCP Server started");
-            
-            // Keep the server running until process is terminated
-            await Task.Delay(-1);
+            throw new ArgumentException("Cannot divide by zero");
         }
+        return numberA / numberB;
     }
 }
