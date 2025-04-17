@@ -340,7 +340,7 @@ az containerapp create \
 
 ## Samples 
 
-- [Java Calculator](./samples/java/calculator/)
+- [Java Calculator](./samples/java/calculator/.mvn/README.md)
 - [.Net Calculator](./samples/csharp/)
 - [JavaScript Calculator](./samples/javascript/)
 - [TypeScript Calculator](./samples/typescript/)
