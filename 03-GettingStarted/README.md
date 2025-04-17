@@ -338,6 +338,14 @@ az containerapp create \
 - Testing and debugging are essential for reliable MCP implementations
 - Deployment options range from local development to cloud-based solutions
 
+## Samples 
+
+[Java Calculator](./samples/java/calculator/)
+[.Net Calculator](./samples/csharp/)
+[JavaScript Calculator](./samples/javascript/)
+[TypeScript Calculator](./samples/typescript/)
+[Python Calculator](./samples/python/)
+
 ## Exercise
 
 Create a simple MCP server with a tool of your choice:
