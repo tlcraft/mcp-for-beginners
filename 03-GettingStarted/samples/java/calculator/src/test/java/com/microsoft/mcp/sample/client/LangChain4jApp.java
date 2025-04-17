@@ -30,7 +30,7 @@ public class LangChain4jApp {
          ChatLanguageModel model = OpenAiChatModel.builder()
                 .apiKey(System.getenv("OPENAI_API_KEY"))
                 .timeout(Duration.ofSeconds(60))
-                .modelName("gpt-4o-mini")
+                .modelName("o4-mini")
                 .logRequests(true)
                 .logResponses(true)
                 .build();

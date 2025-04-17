@@ -74,7 +74,7 @@ The project also includes a LangChain4j example client in `com.microsoft.mcp.sam
 This example demonstrates:
 - Connecting to the calculator MCP server via SSE transport
 - Using LangChain4j to create a chat bot that can leverage calculator operations
-- Integrating with OpenAI models (using gpt-4o-mini by default)
+- Integrating with OpenAI models (using o4-mini by default)
 
 The client sends the following sample queries to demonstrate functionality:
 1. Calculating the sum of two numbers
@@ -87,7 +87,7 @@ Run the example and check the console output to see how the AI model uses the ca
 // Sample usage
 ChatLanguageModel model = OpenAiChatModel.builder()
         .apiKey(System.getenv("OPENAI_API_KEY"))
-        .modelName("gpt-4o-mini")
+        .modelName("o4-mini")
         .build();
 
 McpTransport transport = new HttpMcpTransport.Builder()
