@@ -340,11 +340,11 @@ az containerapp create \
 
 ## Samples 
 
-[Java Calculator](./samples/java/calculator/)
-[.Net Calculator](./samples/csharp/)
-[JavaScript Calculator](./samples/javascript/)
-[TypeScript Calculator](./samples/typescript/)
-[Python Calculator](./samples/python/)
+- [Java Calculator](./samples/java/calculator/)
+- [.Net Calculator](./samples/csharp/)
+- [JavaScript Calculator](./samples/javascript/)
+- [TypeScript Calculator](./samples/typescript/)
+- [Python Calculator](./samples/python/)
 
 ## Exercise
 
