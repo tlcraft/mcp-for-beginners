@@ -322,7 +322,6 @@ if __name__ == "__main__":
     print("Weather MCP Server starting...")
     asyncio.run(serve_stdio(mcp))
 ```
-```
 
 ### JavaScript Example: Creating an MCP Server
 

@@ -20,47 +20,51 @@ This open-source curriculum is designed to teach the concepts and fundamentals o
 - Key components of the MCP ecosystem
 - Communication mechanisms
 
-### [Getting Started](./02-GettingStarted/README.md)
+### [Security](./02-Security/readme.md)
+- to do
+
+### [Getting Started](./03-GettingStarted/README.md)
 - Setting up MCP environments
 - Building basic MCP servers and clients
 - Exploring pre-built integrations
 - **Calculator Sample Implementations**:
-  - [C# Calculator Server](./02-GettingStarted/samples/csharp/McpCalculatorServer.cs)
-  - [Java Calculator Server](./02-GettingStarted/samples/java/McpCalculatorServer.java)
-  - [JavaScript Calculator Server](./02-GettingStarted/samples/javascript/mcp_calculator_server.js)
-  - [Python Calculator Server](./02-GettingStarted/samples/python/mcp_calculator_server.py)
-  - [TypeScript Calculator Server](./02-GettingStarted/samples/typescript/mcp_calculator_server.ts)
+  - [C# Calculator Server](./03-GettingStarted/samples/csharp/McpCalculatorServer.cs)
+  - [Java Calculator Server](./03-GettingStarted/samples/java/McpCalculatorServer.java)
+  - [JavaScript Calculator Server](./03-GettingStarted/samples/javascript/mcp_calculator_server.js)
+  - [Python Calculator Server](./03-GettingStarted/samples/python/mcp_calculator_server.py)
+  - [TypeScript Calculator Server](./03-GettingStarted/samples/typescript/mcp_calculator_server.ts)
 
-### [Practical Implementation](./03-PracticalImplementation/README.md)
+### [Practical Implementation](./04-PracticalImplementation/README.md)
 - Using SDKs across languages (C#, Java, JavaScript, TypeScript, Python)
 - Debugging and testing MCP servers
 - Creating reusable prompt templates and workflows
 - **Advanced Sample Implementations**:
-  - [C# Sample](./03-PracticalImplementation/samples/csharp/MCPSample.cs)
-  - [Java Sample](./03-PracticalImplementation/samples/java/MCPSample.java)
-  - [JavaScript Sample](./03-PracticalImplementation/samples/javascript/mcp_sample.js)
-  - [Python Sample](./03-PracticalImplementation/samples/python/mcp_sample.py)
-  - [TypeScript Sample](./03-PracticalImplementation/samples/typescript/mcp_sample.ts)
+  - [C# Sample](./04-PracticalImplementation/samples/csharp/MCPSample.cs)
+  - [Java Sample](./04-PracticalImplementation/samples/java/MCPSample.java)
+  - [JavaScript Sample](./04-PracticalImplementation/samples/javascript/mcp_sample.js)
+  - [Python Sample](./04-PracticalImplementation/samples/python/mcp_sample.py)
+  - [TypeScript Sample](./04-PracticalImplementation/samples/typescript/mcp_sample.ts)
 
-### [Advanced Topics](./04-AdvancedTopics/README.md)
+### [Advanced Topics](./05-AdvancedTopics/README.md)
 - Multi-modal integration and scalability
 - Security best practices
 - Integration with enterprise applications
 
-### [Community Contributions](./05-CommunityContributions/README.md)
+### [Community Contributions](./06-CommunityContributions/README.md)
 - Contributing to MCP development
 - Engaging with the community
 - Best practices for collaboration
 
-### [Lessons from Early Adoption](./06-CaseStudies/README.md)
+### [Lessons from Early Adoption](./07-CaseStudies/README.md)
 - Real-world MCP implementations
 - Hands-on projects to build MCP-based solutions
 - Future directions for MCP technology
 
-### [Best Practices](./07-BestPractices/README.md)
+### [Best Practices](./08-BestPractices/README.md)
 - Performance optimization techniques
 - Scalable MCP architecture design
 - Error handling and resiliency patterns
+- Testing MCP
 
 ## Prerequisites
 
