@@ -83,37 +83,6 @@ The client sends the following sample queries to demonstrate functionality:
 
 Run the example and check the console output to see how the AI model uses the calculator tools to respond to queries.
 
-```java
-// Sample usage
-ChatLanguageModel model = OpenAiChatModel.builder()
-        .apiKey(System.getenv("OPENAI_API_KEY"))
-        .modelName("o4-mini")
-        .build();
-
-McpTransport transport = new HttpMcpTransport.Builder()
-        .sseUrl("http://localhost:8080/sse")
-        .build();
-        
-McpClient mcpClient = new DefaultMcpClient.Builder()
-        .transport(transport)
-        .build();
-
-// Create a tool provider using the MCP client
-ToolProvider toolProvider = McpToolProvider.builder()
-        .mcpClients(List.of(mcpClient))
-        .build();
-
-// Build an AI service with the model and tool provider
-Bot bot = AiServices.builder(Bot.class)
-        .chatLanguageModel(model)
-        .toolProvider(toolProvider)
-        .build();
-
-// Chat with the bot using calculator operations
-String response = bot.chat("Calculate the sum of 24.5 and 17.3");
-System.out.println(response);
-```
-
 ## Dependencies
 
 The project requires the Spring AI MCP Server WebFlux Boot Starter:
