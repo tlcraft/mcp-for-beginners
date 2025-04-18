@@ -57,7 +57,16 @@
             <artifactId>langchain4j-open-ai</artifactId>
             <version>${langchain4j.version}</version>
         </dependency>
-        
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-open-ai-official</artifactId>
+            <version>${langchain4j.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-github-models</artifactId>
+            <version>${langchain4j.version}</version>
+        </dependency>
         <!-- JUnit dependencies for testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -76,6 +85,8 @@
             <version>5.10.2</version>
             <scope>test</scope>
         </dependency>
+
+
     </dependencies>
 
     <build>
