@@ -2,17 +2,25 @@ package com.microsoft.mcp.sample.client;
 
 import java.util.Map;
 
+import org.springframework.web.reactive.function.client.WebClient;
+
 import io.modelcontextprotocol.client.McpClient;
+import io.modelcontextprotocol.client.transport.WebFluxSseClientTransport;
 import io.modelcontextprotocol.spec.McpClientTransport;
 import io.modelcontextprotocol.spec.McpSchema.CallToolRequest;
 import io.modelcontextprotocol.spec.McpSchema.CallToolResult;
 import io.modelcontextprotocol.spec.McpSchema.ListToolsResult;
 
-public class SampleClient {
-
+public class SDKClient {
+	
+	public static void main(String[] args) {
+		var transport = new WebFluxSseClientTransport(WebClient.builder().baseUrl("http://localhost:8080"));
+		new SDKClient(transport).run();
+	}
+	
 	private final McpClientTransport transport;
 
-	public SampleClient(McpClientTransport transport) {
+	public SDKClient(McpClientTransport transport) {
 		this.transport = transport;
 	}
 
