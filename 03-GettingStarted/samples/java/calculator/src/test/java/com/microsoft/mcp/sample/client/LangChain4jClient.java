@@ -8,10 +8,7 @@ import dev.langchain4j.mcp.client.transport.http.HttpMcpTransport;
 import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.model.openaiofficial.OpenAiOfficialChatModel;
 import dev.langchain4j.service.AiServices;
-import dev.langchain4j.model.openaiofficial.OpenAiOfficialChatModel;
-
 import dev.langchain4j.service.tool.ToolProvider;
-import dev.langchain4j.mcp.client.transport.stdio.StdioMcpTransport;
 
 import java.time.Duration;
 import java.util.List;

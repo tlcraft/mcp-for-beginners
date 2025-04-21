@@ -172,6 +172,28 @@ Build the project using Maven:
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
+### Using MCP Inspector
+
+The MCP Inspector is a helpful tool for interacting with MCP services. To use it with this calculator service:
+
+1. **Install and run MCP Inspector** in a new terminal window:
+   ```bash
+   npx @modelcontextprotocol/inspector
+   ```
+
+2. **Access the web UI** by clicking the URL displayed by the app (typically http://localhost:6274)
+
+3. **Configure the connection**:
+   - Set the transport type to "SSE"
+   - Set the URL to your running server's SSE endpoint: `http://localhost:8080/sse`
+   - Click "Connect"
+
+4. **Use the tools**:
+   - Click "List Tools" to see available calculator operations
+   - Select a tool and click "Run Tool" to execute an operation
+
+![MCP Inspector Screenshot](images/tool.png)
+
 ### Using Docker
 
 The project includes a Dockerfile for containerized deployment:
