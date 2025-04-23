@@ -1,4 +1,4 @@
-# Introduction to Model Context Protocol (MCP)
+# Introduction to Model Context Protocol (MCP) 
 
 ## Overview
 
