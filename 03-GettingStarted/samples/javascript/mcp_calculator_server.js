@@ -1,7 +1,7 @@
 // mcp_calculator_server.js - Sample MCP Calculator Server implementation in JavaScript
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { z } from "zod";
+import { z } from "zod"; 
 
 // Create an MCP server
 const server = new McpServer({
