@@ -1,18 +1,3 @@
-## Getting Started
-
-### Project Setup
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/roryp/contentsafety.git
-   cd contentsafety
-   ```
-
-2. Install dependencies:
-   ```sh
-   mvn install
-   ```
-
 ## System Architecture
 
 This project demonstrates a web application that uses content safety checking before passing user prompts to a calculator service via Model Context Protocol (MCP).
