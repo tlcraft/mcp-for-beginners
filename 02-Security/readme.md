@@ -31,7 +31,7 @@ At the time of writing, the MCP specification assumes that developers will to wr
 -   Implement [best practices for token validation and lifetime](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens)
 -   [Use secure token storage and encrypt tokens](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)
 
-* At the time of writing, an RFC has been proposed to change MCP servers from OAuth Providers (OP) to Resource Providers (RP) that use an external identity provider (IdP) as the "golden path". This would enable MCP servers to be integrated with third-party identity providers which provide stronger security controls and abstract the OAuth token storage and management away from the MCP server. You can contribute to and view this RFC [here](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/284). *
+*At the time of writing, an RFC has been proposed to change MCP servers from OAuth Providers (OP) to Resource Providers (RP) that use an external identity provider (IdP) as the "golden path". This would enable MCP servers to be integrated with third-party identity providers which provide stronger security controls and abstract the OAuth token storage and management away from the MCP server. You can contribute to and view this RFC [here](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/284).*
 
 # Excessive permissions for MCP servers
 
