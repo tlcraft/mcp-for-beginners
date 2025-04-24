@@ -1,5 +1,3 @@
-[![Video Preview](tai.jpg)](tai.mp4)
-
 ## Getting Started
 
 ### Project Setup
