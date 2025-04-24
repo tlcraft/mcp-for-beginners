@@ -1,22 +1,14 @@
-**Overview**
+#Overview
 
 Introducing any new technology can introduce new security challenges or exacerbate existing security risks. In this blog post, we're going to look at some of the security risks that could be introduced to your environment when using Model Context Protocol (MCP), and what controls you can put in place to mitigate them.
 
-**Learning Objectives**
+#Learning Objectives
 
 
 By the end of this lesson, you will:
 
 -   Understand some of the security risks inherent in the MCP specification 
 -   Explain some of the mitigating controls that can be implemented to reduce security risks when using MCP
-
-**MCP Security controls**
-
-Any system which has access to important resources has implied security challenges. Security challenges can generally be addressed through correct application of fundamental security controls and concepts.  As MCP is only newly defined, the specification is changing very rapidly and as the protocol evolves. Eventually the security controls within it will mature, enabling a better integration with enterprise and established security architectures and best practices.
-
-Research published in the [Microsoft Digital Defence Report](https://aka.ms/mddr) states that 98% of reported breaches would be prevented by robust security hygiene and the best protection against any kind of breach is to get your baseline security hygiene, secure coding best practices and supply chain security right - those tried and tested practices that we already know about still make the most impact in reducing security risk.
-
-Let's look at some of the ways that you can start to address security risks when adopting MCP.
 
 ### MCP security controls
 
