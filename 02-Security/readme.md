@@ -19,13 +19,14 @@ Let's look at some of the ways that you can start to address security risks when
 
 # MCP server authentication
 
-Problem statement: At the time of writing, the MCP specification assumes that developers will to write their own authentication server. This requires knowledge of OAuth and related security constraints. MCP servers act as OAuth 2.0 Authorization Servers, managing the required user authentication directly rather than delegating it to an external service such as Microsoft Entra ID.
+### Problem statement 
+At the time of writing, the MCP specification assumes that developers will to write their own authentication server. This requires knowledge of OAuth and related security constraints. MCP servers act as OAuth 2.0 Authorization Servers, managing the required user authentication directly rather than delegating it to an external service such as Microsoft Entra ID.
 
-Risks: 
+### Risks: 
 - Misconfigured authorization logic in the MCP server can lead to sensitive data exposure and incorrectly applied access controls.
 - OAuth token theft on the local MCP server . If stolen, the token can then be used to impersonate the MCP server and access resources and data from the service that the OAuth token is for.
 
-Mitigating controls:
+### Mitigating controls:
 
 -   Thoroughly review your MCP server authorization logic, here some posts discussing this in more detail - [Azure API Management Your Auth Gateway For MCP Servers | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) and [Using Microsoft Entra ID To Authenticate With MCP Servers Via Sessions - Den Delimarsky](https://den.dev/blog/mcp-server-auth-entra-id-session/)
 -   Implement [best practices for token validation and lifetime](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens)
