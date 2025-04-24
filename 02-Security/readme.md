@@ -1,4 +1,4 @@
-*Overview
+# Overview
 
 Introducing any new technology can introduce new security challenges or exacerbate existing security risks. In this blog post, we're going to look at some of the security risks that could be introduced to your environment when using Model Context Protocol (MCP), and what controls you can put in place to mitigate them.
 
