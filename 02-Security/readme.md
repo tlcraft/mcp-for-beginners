@@ -65,14 +65,14 @@ Malicious or compromised MCP servers can introduce significant risks by exposing
 
 These vulnerabilities highlight the need for robust validation, monitoring, and security controls when integrating MCP servers and tools into your environment. For a deeper dive, see the linked references above.
 
-![prompt-injection-lg-2048x1034](./images/prompt-injection.png)
+![prompt-injection-lg-2048x1034](../images/02-Security/prompt-injection.png)
 
 **Indirect Prompt Injection** (also known as cross-domain prompt injection or XPIA) is a critical vulnerability in generative AI systems, including those using the Model Context Protocol (MCP). In this attack, malicious instructions are hidden within external content—such as documents, web pages, or emails. When the AI system processes this content, it may interpret the embedded instructions as legitimate user commands, resulting in unintended actions like data leakage, generation of harmful content, or manipulation of user interactions. For a detailed explanation and real-world examples, see [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/).
 
 A particularly dangerous form of this attack is **Tool Poisoning**. Here, attackers inject malicious instructions into the metadata of MCP tools (such as tool descriptions or parameters). Since large language models (LLMs) rely on this metadata to decide which tools to invoke, compromised descriptions can trick the model into executing unauthorized tool calls or bypassing security controls. These manipulations are often invisible to end users but can be interpreted and acted upon by the AI system. This risk is heightened in hosted MCP server environments, where tool definitions can be updated after user approval—a scenario sometimes referred to as a "[rug pull](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)". In such cases, a tool that was previously safe may later be modified to perform malicious actions, such as exfiltrating data or altering system behavior, without the user's knowledge. For more on this attack vector, see [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
 
 
-![tool-injection-lg-2048x1239 (1)](./images/tool-injection.png)
+![tool-injection-lg-2048x1239 (1)](../images/02-Security/tool-injection.png)
 
 
 ## Risks
@@ -96,7 +96,7 @@ Unintended AI actions present a variety of security risks that include data exfi
 
 You can read more about AI prompt shields in the [Prompt Shields documentation](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection).
 
-![prompt-shield-lg-2048x1328](./images/prompt-shield.png)
+![prompt-shield-lg-2048x1328](../images/02-Security/prompt-shield.png)
 
 
 ### Supply chain security
