@@ -21,7 +21,7 @@ Let's look at some of the ways that you can start to address security risks when
 # MCP server authentication (if your MCP implementation was before 26th April 2025)
 
 ### Problem statement 
-The original MCP specification assumed that developers would to write their own authentication server. This requires knowledge of OAuth and related security constraints. MCP servers acted as OAuth 2.0 Authorization Servers, managing the required user authentication directly rather than delegating it to an external service such as Microsoft Entra ID. As of 26 April 2025, a change to the specification allows for MCP to be integrated to a third party identity server, such as Entra ID.
+The original MCP specification assumed that developers would write their own authentication server. This requires knowledge of OAuth and related security constraints. MCP servers acted as OAuth 2.0 Authorization Servers, managing the required user authentication directly rather than delegating it to an external service such as Microsoft Entra ID. As of 26 April 2025, an update to the MCP specification allows for MCP servers to delegate user authentication to an external service.
 
 ### Risks
 - Misconfigured authorization logic in the MCP server can lead to sensitive data exposure and incorrectly applied access controls.
