@@ -63,7 +63,7 @@ A type of Indirect Prompt Injection attack known as **Tool Poisoning** is a vu
 Unintended AI actions present a variety of security risks that include data exfiltration and privacy breaches.
 
 ### Mitigating controls
-###Using prompt shields to protect against Indirect Prompt Injection attacks
+### Using prompt shields to protect against Indirect Prompt Injection attacks
 -----------------------------------------------------------------------------
 
 **AI Prompt Shields** are a solution developed by Microsoft to defend against both direct and indirect prompt injection attacks. They help through:
@@ -81,7 +81,7 @@ You can read more about AI prompt shields in the [Prompt Shields documentation]
 ![prompt-shield-lg-2048x1328](https://github.com/user-attachments/assets/7f5f3ddc-5c2b-4420-aa68-3b8cb4dd896a)
 
 
-###Supply chain security
+### Supply chain security
 
 Supply chain security fundamentals persist in the AI era: verify all components before integration (including models, not just code packages), maintain secure deployment pipelines, and implement continuous application and security monitoring. The difference isn’t in the security principles but in what constitutes your supply chain. It now extends to foundation models, embeddings services, and context providers. They require the same rigorous verification as traditional dependencies.
 
