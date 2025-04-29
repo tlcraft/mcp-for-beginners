@@ -59,7 +59,7 @@ A type of Indirect Prompt Injection attack known as **Tool Poisoning** is a vu
 ![tool-injection-lg-2048x1239 (1)](https://github.com/user-attachments/assets/cff88cbb-5f01-45a9-acbe-37567cefcfd9)
 
 
-### Risks
+## Risks
 Unintended AI actions present a variety of security risks that include data exfiltration and privacy breaches.
 
 ### Mitigating controls
