@@ -18,10 +18,10 @@ Research published in the [Microsoft Digital Defense Report](https://aka.ms/mdd
 
 Let's look at some of the ways that you can start to address security risks when adopting MCP.
 
-# MCP server authentication
+# MCP server authentication - **If you implemented MCP before 26th April 2025 then the following advice is relevent to you.**
 
 ### Problem statement 
-The original MCP specification assumed that developers would to write their own authentication server. This requires knowledge of OAuth and related security constraints. MCP servers acted as OAuth 2.0 Authorization Servers, managing the required user authentication directly rather than delegating it to an external service such as Microsoft Entra ID. **If you implemented MCP before 26th April 2025 then the following advice is relevent to you.**
+The original MCP specification assumed that developers would to write their own authentication server. This requires knowledge of OAuth and related security constraints. MCP servers acted as OAuth 2.0 Authorization Servers, managing the required user authentication directly rather than delegating it to an external service such as Microsoft Entra ID. 
 
 ### Risks
 - Misconfigured authorization logic in the MCP server can lead to sensitive data exposure and incorrectly applied access controls.
