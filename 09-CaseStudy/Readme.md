@@ -11,6 +11,23 @@
 - **Extensible Tooling:** Implements reusable MCP tools and prompt templates, enabling rapid adaptation to new domains or business requirements.
 - **User Experience:** Provides a conversational interface for users to interact with the travel agents, powered by Azure OpenAI and MCP.
 
+## Architecture
+![Architecture](https://github.com/Azure-Samples/azure-ai-travel-agents/blob/main/docs/ai-travel-agents-architecture-diagram.png)
+
+### Architecture Diagram Description
+
+The Azure AI Travel Agents solution is architected for modularity, scalability, and secure integration of multiple AI agents and enterprise data sources. The main components and data flow are as follows:
+
+- **User Interface:** Users interact with the system through a conversational UI (such as a web chat or Teams bot), which sends user queries and receives travel recommendations.
+- **MCP Server:** Serves as the central orchestrator, receiving user input, managing context, and coordinating the actions of specialized agents (e.g., FlightAgent, HotelAgent, ItineraryAgent) via the Model Context Protocol.
+- **AI Agents:** Each agent is responsible for a specific domain (flights, hotels, itineraries) and is implemented as an MCP tool. Agents use prompt templates and logic to process requests and generate responses.
+- **Azure OpenAI Service:** Provides advanced natural language understanding and generation, enabling agents to interpret user intent and generate conversational responses.
+- **Azure AI Search & Enterprise Data:** Agents query Azure AI Search and other enterprise data sources to retrieve up-to-date information on flights, hotels, and travel options.
+- **Authentication & Security:** Integrates with Microsoft Entra ID for secure authentication and applies least-privilege access controls to all resources.
+- **Deployment:** Designed for deployment on Azure Container Apps, ensuring scalability, monitoring, and operational efficiency.
+
+This architecture enables seamless orchestration of multiple AI agents, secure integration with enterprise data, and a robust, extensible platform for building domain-specific AI solutions.
+
 ## Technical Implementation
 - **MCP Server:** Hosts the core orchestration logic, exposes agent tools, and manages context for multi-step travel planning workflows.
 - **Agents:** Each agent (e.g., FlightAgent, HotelAgent) is implemented as an MCP tool with its own prompt templates and logic.
