@@ -28,8 +28,8 @@ This open-source curriculum is designed to teach the concepts and fundamentals o
 - Setting up MCP environments
 - Building basic MCP servers and clients
 - Exploring pre-built integrations
-- **Calculator Sample Implementations**:
-  <details>
+- **MCP Calculator Example**:
+<details>
   <summary><strong>Calculator Sample Implementations</strong></summary>
 
   - [C# Calculator Server](./03-GettingStarted/samples/csharp/README.md)
@@ -44,6 +44,7 @@ This open-source curriculum is designed to teach the concepts and fundamentals o
 - Using SDKs across languages (C#, Java, JavaScript, TypeScript, Python)
 - Debugging and testing MCP servers
 - Creating reusable prompt templates and workflows
+- **MCP Advanced Calculator Example**:
 <details>
   <summary><strong>Advanced Sample Implementations</strong></summary>
 
