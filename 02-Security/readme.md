@@ -48,14 +48,46 @@ MCP servers may have been granted excessive permissions to the service/resource 
 # Indirect prompt injection attacks
 
 ### Problem statement
-Researchers have shown that the Model Context Protocol (MCP) is vulnerable to a subset of Indirect Prompt Injection attacks known as Tool Poisoning Attacks. Tool poisoning is a scenario where an attacker embeds malicious instructions within the descriptions of MCP tools. These instructions are invisible to users but can be interpreted by the AI model and its underlying systems, leading to unintended actions that could ultimately lead to harmful outcomes.
+
+Developers and security researchers have identified a few scenarios where malicious MCP servers can expose customer data in ways organizations don’t expect. While these vulnerabilities are not new in the industry, their applicability to MCP and AI-based workloads warrants a closer look. These include [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/) as well as a subset of this class of attacks, known as [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
+
+![prompt-injection-lg-2048x1034](https://github.com/user-attachments/assets/f6fb7bf9-f51d-4eec-8cf4-a14a70d8e016)
+
+An **Indirect Prompt Injection** vulnerability (also known as cross-domain prompt injection or XPIA) is a security exploit targeting generative AI systems where malicious instructions are embedded in external content, such as documents, web pages, or emails. When the AI system processes external content, it misinterprets the embedded instructions as valid commands from the user, leading to unintended actions, such as data exfiltration, generation of harmful or misleading content, or manipulating subsequent user interactions.
+
+A type of Indirect Prompt Injection attack known as **Tool Poisoning** is a vulnerability where an attacker embeds malicious instructions within the descriptions of MCP tools. In a MCP server, every tool has some metadata associated with it, such as a name and a description. LLMs use this metadata to determine which tools to invoke based on user input. Compromised descriptions can manipulate the model into executing unintended tool calls, bypassing security controls designed to protect the system. Malicious instructions in tool metadata are invisible to users but can be interpreted by the AI model and its underlying systems. This is particularly dangerous in hosted MCP server scenarios, where tool definitions can be dynamically amended to include malicious content later (called a “[rug pull](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)” by some researchers). A user that previously approved a tool for use with their LLM may end up with a tool that changed since their approval happened. In that context, the tool can perform actions that were originally not declared, such as data exfiltration or manipulation.
+![tool-injection-lg-2048x1239 (1)](https://github.com/user-attachments/assets/cff88cbb-5f01-45a9-acbe-37567cefcfd9)
+
 
 ### Risks
 Unintended AI actions present a variety of security risks that include data exfiltration and privacy breaches.
 
 ### Mitigating controls
--   Implement AI prompt shields: in Azure AI Foundry, you can follow [these](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/quickstart-jailbreak?pivots=programming-language-foundry-portal) steps to implement AI prompt shields.
--   Implement robust supply chain security: you can read more about how Microsoft implements supply chain security internally [here](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/).
+**Using prompt shields to protect against Indirect Prompt Injection attacks**
+-----------------------------------------------------------------------------
+
+**AI Prompt Shields** are a solution developed by Microsoft to defend against both direct and indirect prompt injection attacks. They help through:
+
+1.  **Detection and Filtering**: Prompt Shields use advanced machine learning algorithms and natural language processing to detect and filter out malicious instructions embedded in external content, such as documents, web pages, or emails.
+    
+2.  **Spotlighting**: This technique helps the AI system distinguish between valid system instructions and potentially untrustworthy external inputs. By transforming the input text in a way that makes it more relevant to the model, Spotlighting ensures that the AI can better identify and ignore malicious instructions.
+    
+3.  **Delimiters and Datamarking**: Including delimiters in the system message explicitly outlines the location of the input text, helping the AI system recognize and separate user inputs from potentially harmful external content. Datamarking extends this concept by using special markers to highlight the boundaries of trusted and untrusted data.
+    
+4.  **Continuous Monitoring and Updates**: Microsoft continuously monitors and updates Prompt Shields to address new and evolving threats. This proactive approach ensures that the defenses remain effective against the latest attack techniques.
+    
+You can read more about AI prompt shields in the [Prompt Shields documentation](https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/jailbreak-detection).
+
+![prompt-shield-lg-2048x1328](https://github.com/user-attachments/assets/7f5f3ddc-5c2b-4420-aa68-3b8cb4dd896a)
+
+
+**Supply chain security**
+
+Supply chain security fundamentals persist in the AI era: verify all components before integration (including models, not just code packages), maintain secure deployment pipelines, and implement continuous application and security monitoring. The difference isn’t in the security principles but in what constitutes your supply chain. It now extends to foundation models, embeddings services, and context providers. They require the same rigorous verification as traditional dependencies.
+
+[GitHub Advanced Security](https://github.com/security/advanced-security) provides several features to enhance supply chain security, including secret, dependency, and CodeQL scanning. These tools are integrated into [Azure DevOps](https://azure.microsoft.com/en-us/products/devops) and [Azure Repos](https://azure.microsoft.com/en-us/products/devops/repos/), allowing teams to identify and mitigate security vulnerabilities in their code and dependencies.
+
+Microsoft also implements extensive supply chain security practices internally for all our products. You can read more about this in [The Journey to Secure the Software Supply Chain at Microsoft](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/).
 
 # Established security best practices that will uplift your MCP implementation's security posture
 
