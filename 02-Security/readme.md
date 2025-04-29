@@ -21,7 +21,7 @@ Let's look at some of the ways that you can start to address security risks when
 # MCP server authentication
 
 ### Problem statement 
-At the time of writing, the MCP specification assumes that developers will to write their own authentication server. This requires knowledge of OAuth and related security constraints. MCP servers act as OAuth 2.0 Authorization Servers, managing the required user authentication directly rather than delegating it to an external service such as Microsoft Entra ID.
+The original MCP specification assumed that developers would to write their own authentication server. This requires knowledge of OAuth and related security constraints. MCP servers acted as OAuth 2.0 Authorization Servers, managing the required user authentication directly rather than delegating it to an external service such as Microsoft Entra ID. **If you implemented MCP before 26th April 2025 then the following advice is relevent to you.**
 
 ### Risks
 - Misconfigured authorization logic in the MCP server can lead to sensitive data exposure and incorrectly applied access controls.
@@ -32,7 +32,6 @@ At the time of writing, the MCP specification assumes that developers will to wr
 -   Implement [best practices for token validation and lifetime](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens)
 -   [Use secure token storage and encrypt tokens](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)
 
-*At the time of writing, an RFC has been proposed to change MCP servers from OAuth Providers (OP) to Resource Providers (RP) that use an external identity provider (IdP) as the "golden path". This would enable MCP servers to be integrated with third-party identity providers which provide stronger security controls and abstract the OAuth token storage and management away from the MCP server. You can contribute to and view this RFC [here](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/284).*
 
 # Excessive permissions for MCP servers
 
