@@ -77,6 +77,11 @@ This open-source curriculum is designed to teach the concepts and fundamentals o
 - Error handling and resiliency patterns
 - Testing MCP
 
+### [Case Studies](./09-CaseStudy/Readme.md)
+- In-depth real-world MCP solution breakdowns
+- Reference architectures and implementation patterns
+- Step-by-step explanations and diagrams for practical learning
+
 ## Prerequisites
 
 - Basic programming knowledge in at least one of: C#, Java, or Python
