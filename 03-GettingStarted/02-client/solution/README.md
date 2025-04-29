@@ -1,0 +1,3 @@
+Here's the solutions for each runtime:
+
+- [TypeScript](./typescript/app.ts)
