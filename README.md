@@ -1,3 +1,5 @@
+![MCP-for-beginners](./images/mcp-beginners.png)
+
 # Model Context Protocol (MCP) Curriculum
 
 This open-source curriculum is designed to teach the concepts and fundamentals of the Model Context Protocol (MCP), with practical examples in C#, Java, JavaScript, TypeScript, and Python.
