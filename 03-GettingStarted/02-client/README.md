@@ -366,7 +366,15 @@ The key takeaways for this chapter is the following about clients:
 
 ## Additional Resources
 
-- TODO
+- [Building clients in MCP](https://modelcontextprotocol.io/quickstart/client)
+
+## Samples 
+
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../samples/csharp/)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../samples/python/) 
 
 ## What's Next
 
