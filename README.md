@@ -1,3 +1,5 @@
+![MCP-for-beginners](./images/mcp-beginners.png)
+
 # Model Context Protocol (MCP) Curriculum
 
 This open-source curriculum is designed to teach the concepts and fundamentals of the Model Context Protocol (MCP), with practical examples in C#, Java, JavaScript, TypeScript, and Python.
@@ -28,23 +30,33 @@ This open-source curriculum is designed to teach the concepts and fundamentals o
 - Setting up MCP environments
 - Building basic MCP servers and clients
 - Exploring pre-built integrations
-- **Calculator Sample Implementations**:
-  - [C# Calculator Server](./03-GettingStarted/samples/csharp/McpCalculatorServer.cs)
-  - [Java Calculator Server](./03-GettingStarted/samples/java/McpCalculatorServer.java)
-  - [JavaScript Calculator Server](./03-GettingStarted/samples/javascript/mcp_calculator_server.js)
-  - [Python Calculator Server](./03-GettingStarted/samples/python/mcp_calculator_server.py)
-  - [TypeScript Calculator Server](./03-GettingStarted/samples/typescript/mcp_calculator_server.ts)
+- **MCP Calculator Example**:
+<details>
+  <summary><strong>Calculator Sample Implementations</strong></summary>
 
+  - [C# Calculator Server](./03-GettingStarted/samples/csharp/README.md)
+  - [Java Calculator Server](./03-GettingStarted/samples/java/calculator/README.md)
+  - [JavaScript Calculator Server](./03-GettingStarted/samples/javascript/README.md)
+  - [Python Calculator Server](./03-GettingStarted/samples/python/mcp_calculator_server.py)
+  - [TypeScript Calculator Server](./03-GettingStarted/samples/typescript/README.md)
+
+</details>
+  
 ### [Practical Implementation](./04-PracticalImplementation/README.md)
 - Using SDKs across languages (C#, Java, JavaScript, TypeScript, Python)
 - Debugging and testing MCP servers
 - Creating reusable prompt templates and workflows
-- **Advanced Sample Implementations**:
-  - [C# Sample](./04-PracticalImplementation/samples/csharp/MCPSample.cs)
-  - [Java Sample](./04-PracticalImplementation/samples/java/MCPSample.java)
-  - [JavaScript Sample](./04-PracticalImplementation/samples/javascript/mcp_sample.js)
+- **MCP Advanced Calculator Example**:
+<details>
+  <summary><strong>Advanced Sample Implementations</strong></summary>
+
+  - [C# Sample](./04-PracticalImplementation/samples/csharp/README.md)
+  - [Java Sample](./04-PracticalImplementation/samples/java/containerapp/README.md)
+  - [JavaScript Sample](./04-PracticalImplementation/samples/javascript/README.md)
   - [Python Sample](./04-PracticalImplementation/samples/python/mcp_sample.py)
-  - [TypeScript Sample](./04-PracticalImplementation/samples/typescript/mcp_sample.ts)
+  - [TypeScript Sample](./04-PracticalImplementation/samples/typescript/README.md)
+
+</details>
 
 ### [Advanced Topics](./05-AdvancedTopics/README.md)
 - Multi-modal integration and scalability
@@ -66,6 +78,11 @@ This open-source curriculum is designed to teach the concepts and fundamentals o
 - Scalable MCP architecture design
 - Error handling and resiliency patterns
 - Testing MCP
+
+### [Case Studies](./09-CaseStudy/Readme.md)
+- In-depth real-world MCP solution breakdowns
+- Reference architectures and implementation patterns
+- Step-by-step explanations and diagrams for practical learning
 
 ## Prerequisites
 

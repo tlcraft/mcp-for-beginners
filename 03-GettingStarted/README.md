@@ -129,9 +129,9 @@ code --add-mcp "{\"name\":\"my-server\",\"command\": \"uvx\",\"args\": [\"mcp-se
 <details>
 <summary>Screenshots</summary>
 
-![Guided MCP server configuration in Visual Studio Code](../images/02-GettingStarted/chat-mode-agent.png)
-![Tool selection per agent session](../images/02-GettingStarted/agent-mode-select-tools.png)
-![Easily debug errors during MCP development](../images/02-GettingStarted/mcp-list-servers.png)
+![Guided MCP server configuration in Visual Studio Code](../images/03-GettingStarted/chat-mode-agent.png)
+![Tool selection per agent session](../images/03-GettingStarted/agent-mode-select-tools.png)
+![Easily debug errors during MCP development](../images/03-GettingStarted/mcp-list-servers.png)
 </details>
 
 #### TypeScript/JavaScript

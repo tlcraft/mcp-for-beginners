@@ -55,11 +55,7 @@ These environment variables are used by the application to authenticate with the
 
 ### Starting the Calculator MCP Server
 
-The calculator server is located in the "calculator" directory of this project. Before running the client, you need to start the calculator MCP server in SSE mode on localhost:8080.
-
-#### Run the Calculator Server
-
-Make sure the calculator example is running at `http://localhost:8080/sse`.
+Before running the client, you need to start the calculator MCP server in SSE mode on localhost:8080.
 
 ## Project Description
 
