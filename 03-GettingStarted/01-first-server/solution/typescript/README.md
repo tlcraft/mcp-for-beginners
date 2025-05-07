@@ -30,7 +30,7 @@ Once the server is connected:
 - try listing tools and run `add`, with args 2 and 4, you should see 6 in the result.
 - go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
 
-### Testing in ClI mode
+### Testing in CLI mode
 
 The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
 

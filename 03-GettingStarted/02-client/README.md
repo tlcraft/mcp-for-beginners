@@ -108,6 +108,16 @@ import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js"
 
 </details>
 
+<details>
+<summary>Python</summary>
+
+```python
+from mcp import ClientSession, StdioServerParameters, types
+from mcp.client.stdio import stdio_client
+```
+
+</details>
+
 Let's move on to instantiation.
 
 ### -2- Instantiating client and transport
@@ -162,6 +172,45 @@ In the preceding code we've:
 
 </details>
 
+<details>
+<summary>Python</summary>
+
+```python
+from mcp import ClientSession, StdioServerParameters, types
+from mcp.client.stdio import stdio_client
+
+# Create server parameters for stdio connection
+server_params = StdioServerParameters(
+    command="mcp",  # Executable
+    args=["run", "server.py"],  # Optional command line arguments
+    env=None,  # Optional environment variables
+)
+
+async def run():
+    async with stdio_client(server_params) as (read, write):
+        async with ClientSession(
+            read, write
+        ) as session:
+            # Initialize the connection
+            await session.initialize()
+
+          
+
+if __name__ == "__main__":
+    import asyncio
+
+    asyncio.run(run())
+```
+
+In the preceding code we've:
+
+- Imported the needed libraries
+- Instantiated a server parameters object as we will use this to run the server so we can connect to it with our client.
+- Defined a method `run` that in turn calls `stdio_client` which starts a client session. 
+- Created an entry point where we provide the `run` method to `asyncio.run`.
+
+</details>
+
 ### -3- Listing the server features
 
 Now, we have a client that can connect to should the program be run. However, it doesn't actually list its features so let's do that next:
@@ -181,6 +230,28 @@ const tools = await client.listTools();
 ```
 
 </details>
+
+<details>
+<summary>Python</summary>
+
+```python
+# List available resources
+resources = await session.list_resources()
+print("LISTING RESOURCES")
+for resource in resources:
+    print("Resource: ", resource)
+
+# List available tools
+tools = await session.list_tools()
+print("LISTING TOOLS")
+for tool in tools.tools:
+    print("Tool: ", tool.name)
+```
+
+Here we list the available resources, `list_resources()` and tools, `list_tools` and print them out.
+
+</details>
+
 
 Great, now we've captures all the features. Now the question is when do we use them? Well, this client is pretty simple, simple in the sense that we will need to explicitly call the features when we want them. In the next chapter, we will create a more advanced client that has access to it's own large language model, LLM. For now though, let's see how we can invoke the features on the server:
 
@@ -276,6 +347,27 @@ In the preceding code we:
 
 </details>
 
+<details>
+<summary>Python</summary>
+
+```python
+# Read a resource
+print("READING RESOURCE")
+content, mime_type = await session.read_resource("greeting://hello")
+
+# Call a tool
+print("CALL TOOL")
+result = await session.call_tool("add", arguments={"a": 1, "b": 7})
+print(result.content)
+```
+
+In the preceding code, we've:
+
+- Called a resource called `greeting` using `read_resource`.
+- Invoked a tool called `add` using `call_tool`.
+
+</details>
+
 ### -5- Run the client
 
 To run the client, type the following command in the terminal:
@@ -295,11 +387,22 @@ npm run client
 
 </details>
 
+<details>
+<summary>Python</summary>
+
+Call the client with the following command:
+
+```sh
+python client.py
+```
+
+</details>
+
 ## Assignment
 
 In this assignment, you'll use what you've learned in creating a client but create a client of your own.
 
-Here's a server you can use that you need to call via your client code:
+Here's a server you can use that you need to call via your client code, see if you can add more features to the server to make it more interesting.
 
 <details>
 <summary>TypeScript</summary>
@@ -347,6 +450,34 @@ main().catch((error) => {
   console.error("Fatal error: ", error);
   process.exit(1);
 });
+```
+
+</details>
+
+<details>
+<summary>Python</summary>
+
+```python
+# server.py
+from mcp.server.fastmcp import FastMCP
+
+# Create an MCP server
+mcp = FastMCP("Demo")
+
+
+# Add an addition tool
+@mcp.tool()
+def add(a: int, b: int) -> int:
+    """Add two numbers"""
+    return a + b
+
+
+# Add a dynamic greeting resource
+@mcp.resource("greeting://{name}")
+def get_greeting(name: str) -> str:
+    """Get a personalized greeting"""
+    return f"Hello, {name}!"
+
 ```
 
 </details>

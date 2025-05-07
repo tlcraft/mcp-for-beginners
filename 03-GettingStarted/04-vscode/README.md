@@ -127,7 +127,7 @@ Try adding a server entry to you *mcp.json* file and make sure you can start/sto
 
 ## Solution
 
-No solution provided.
+[Solution](./solution/README.md)
 
 ## Key Takeaways
 

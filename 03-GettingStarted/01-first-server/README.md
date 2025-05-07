@@ -607,6 +607,10 @@ Create a simple MCP server with a tool of your choice:
 3. Run the inspector tool to ensure the server works as intended.
 4. Test the implementation with various inputs.
 
+## Solution
+
+[Solution](./solution/README.md)
+
 ## Additional Resources
 
 - [MCP GitHub Repository](https://github.com/microsoft/mcp-for-beginners)
