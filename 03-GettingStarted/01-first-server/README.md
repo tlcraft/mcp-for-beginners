@@ -207,10 +207,7 @@ Generative AI can generate text, images, and even code.
 
 ```sh
 # For server development
-pip install mcp-server-sdk
-
-# For client development
-pip install mcp-client-sdk
+pip install "mcp[cli]"
 ```
 
 </details>
@@ -260,6 +257,15 @@ Now that you have your SDK installed, let's create a project next:
   ```
 </details>
 
+<details>
+  <summary>Python</summary>
+
+  ```sh
+  python -m venv venv
+  venv\Scrips\activate
+  ```
+</details>
+
 ### -3- Create project files
 
 <details>
@@ -301,6 +307,13 @@ Now that you have your SDK installed, let's create a project next:
  ``` 
 </details>
 
+<details>
+<summary>Python</summary>
+
+Create a file *server.py*
+</details>
+
+
 ### -4- Create server code
 
 <details>
@@ -320,6 +333,19 @@ const server = new McpServer({
 ```
 
 Now you have a server, but it doesn't do much, let' fix that.
+</details>
+
+<details>
+<summary>Python</summary>
+
+```python
+# server.py
+from mcp.server.fastmcp import FastMCP
+
+# Create an MCP server
+mcp = FastMCP("Demo")
+```
+
 </details>
 
 ### -5- Adding a tool and a resource
@@ -367,6 +393,31 @@ Add a tool and a resource by adding the following code:
     text: "a text"
   }
   ```
+</details>
+
+<details>
+<summary>Python</summary>
+
+```python
+# Add an addition tool
+@mcp.tool()
+def add(a: int, b: int) -> int:
+    """Add two numbers"""
+    return a + b
+
+
+# Add a dynamic greeting resource
+@mcp.resource("greeting://{name}")
+def get_greeting(name: str) -> str:
+    """Get a personalized greeting"""
+    return f"Hello, {name}!"
+```
+
+In the preceding code we've:
+
+- Defined a tool `add` that takes parameters `a` and `p`, both integers. 
+- Created a resource called `greeting` that takes parameter `name`.
+
 </details>
 
 ### -6 Final code
@@ -423,6 +474,33 @@ await server.connect(transport);
 
 </details>
 
+<details>
+<summary>Python</summary>
+
+```python
+# server.py
+from mcp.server.fastmcp import FastMCP
+
+# Create an MCP server
+mcp = FastMCP("Demo")
+
+
+# Add an addition tool
+@mcp.tool()
+def add(a: int, b: int) -> int:
+    """Add two numbers"""
+    return a + b
+
+
+# Add a dynamic greeting resource
+@mcp.resource("greeting://{name}")
+def get_greeting(name: str) -> str:
+    """Get a personalized greeting"""
+    return f"Hello, {name}!"
+```
+
+</details>
+
 ### -7- Test the server
 
 Start the server with the following command:
@@ -436,6 +514,14 @@ npm run build
 
 </details>
 
+<details>
+<summary>Python</summary>
+
+```sh
+mcp run server.py
+```
+</details>
+
 ### -8- Run using the inspector
 
 The inspector is a great tool that can start up your server and lets you interact with it so you can test that it works. Let's start it up:
@@ -443,11 +529,33 @@ The inspector is a great tool that can start up your server and lets you interac
 > [!NOTE]
 > it might look different in the "command" field as it contains the command for running a server with your specific runtime/
 
+<details>
+<summary>TypeScript</summary>
+
 ```sh
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
 or add it to your *package.json* like so: ` "inspector": "npx @modelcontextprotocol/inspector node build/index.js"` and then run `npm run inspect`
+
+</details>
+
+<details>
+<summary>Python</summary>
+
+Python wraps a Node.js tool called inspector. It's possible to call said tool like so:
+
+```sh
+mcp dev server.py
+```
+
+However, it doesn't implement all the methods available on the tool so you're recommended to run the Node.js tool directly like below:
+
+```sh
+npx @modelcontextprotocol/inspector mcp run server.py
+```
+
+</details>
 
 You should see the following user interface:
 
@@ -465,9 +573,6 @@ You should see the following user interface:
   ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 Congrats, you've managed to create and run your first server!
-
-
-
 
 ### Official SDKs
 
