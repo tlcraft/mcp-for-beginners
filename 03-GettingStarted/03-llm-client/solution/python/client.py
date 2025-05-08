@@ -59,7 +59,7 @@ def call_llm(prompt, functions):
 
     return functions_to_call
 
-def convert_to_llm_tools(tool):
+def convert_to_llm_tool(tool):
     tool_schema = {
         "type": "function",
         "function": {
@@ -98,7 +98,7 @@ async def run():
             for tool in tools.tools:
                 print("Tool: ", tool.name)
                 print("Tool", tool.inputSchema["properties"])
-                functions.append(convert_to_llm_tools(tool))
+                functions.append(convert_to_llm_tool(tool))
             
             prompt = "Add 2 to 20"
 
