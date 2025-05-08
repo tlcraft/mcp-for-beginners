@@ -1,6 +1,6 @@
 # Running this sample
 
-You're recommended to install `uv` but it's not a must, see [instructions](https://docs.astral.sh/uv/#highlights)
+This sample involves having an LLM on the client. The LLM needs you to either run this in a Codespaces or for you to set up a personal access token in GitHub to work.
 
 ## -1- Install the dependencies
 
@@ -24,10 +24,10 @@ npm run client
 You should see a result similar to:
 
 ```text
-Prompt:  {
-  type: 'text',
-  text: 'Please review this code:\n\nconsole.log("hello");'
-}
-Resource template:  file
-Tool result:  { content: [ { type: 'text', text: '9' } ] }
+Asking server for available tools
+MCPClient started on stdin/stdout
+Querying LLM:  What is the sum of 2 and 3?
+Making tool call
+Calling tool add with args "{\"a\":2,\"b\":3}"
+Tool result:  { content: [ { type: 'text', text: '5' } ] }
 ```

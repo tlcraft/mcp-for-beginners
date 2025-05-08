@@ -65,43 +65,7 @@ Add the following content to *mcp.json*:
 }
 ```
 
-Here's a simple example above how to start a server written in Node.js. 
-
-Let's call out the important parts:
-
-- `input`, you can add input that you want to pass the server. Here's how you can use it:
-
-  ```json
-  {
-    // 💡 Inputs are prompted on first server start, then stored securely by VS Code.
-    "inputs": [
-      {
-        "type": "promptString",
-        "id": "perplexity-key",
-        "description": "Perplexity API Key",
-        "password": true
-      }
-    ],
-    "servers": {
-      // https://github.com/ppl-ai/modelcontextprotocol/
-      "Perplexity": {
-        "type": "stdio",
-        "command": "npx",
-        "args": ["-y", "@modelcontextprotocol/server-perplexity-ask"],
-        "env": {
-          "PERPLEXITY_API_KEY": "${input:perplexity-key}"
-        }
-      }
-    }
-  }
-  ```
-
-  This example is from [Visual Studio Code docs])(https://code.visualstudio.com/docs/copilot/chat/mcp-servers). But it does show you can set things up so that you're prompted for input by setting `type` to "promptString". In the `servers` element, you can then interpolate the input through `${input:perplexity-key}`. This is a great way to keep secrets out of the code but you're still in need of prompting the user to ensure they can use the server correctly. In this case, the key gets passed as an environment variable.
-
-- `servers`, this holds a number of server entries.
-- An entry in `servers` element, an entry typically has a type that's either `stdio` or `sse`. Depending on chosen type, you'll be asked for different properties to go with it. For type "stdio" it needs a `command` and `args` that together should start up the server, so for example `command` and `["/c", "node", "<absolute path>\\build\\index.js"]`. For "sse", you instead need to specify a `url` to where your running server lives, let's look at that in the next chapter.
-
-Now that we have a good understanding, let's start the server next:
+Here's a simple example above how to start a server written in Node.js, for other runtimes point out the proper command for starting the server using `command` and `args`.
 
 ### -3- Start the server
 

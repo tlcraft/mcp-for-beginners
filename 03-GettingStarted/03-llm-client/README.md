@@ -374,11 +374,13 @@ class MyClient {
               input_schema: tool.inputSchema,
             });
         });
+
+        const prompt = "What is the sum of 2 and 3?";
     
         const messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
             {
                 role: "user",
-                content: "What is the sum of 2 and 3?",
+                content: prompt,
             },
         ];
 

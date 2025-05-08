@@ -22,6 +22,10 @@ SSE is one of two supported transport types. You've already seen the first one s
 - SSE needs you to handle two things connection and messages.
 - As this is a server that can live anywhere, you need that to reflect in how you work with tools like the Inspector and Visual Studio. What that means is that instead of pointing out how to start the server, you instead point to the endpoint where it can establish a connection. See below example code:
 
+
+    <details>
+    <summary>TypeScript</summary>
+
     ```typescript
     app.get("/sse", async (_: Request, res: Response) => {
         const transport = new SSEServerTransport('/messages', res);
@@ -47,6 +51,36 @@ SSE is one of two supported transport types. You've already seen the first one s
 
     - `/sse` is set up as a route. When a request is made towards this route, a new transport instance is created and the server *connects* using this transport
     - `/messages`, this is the route that handles incoming messages.
+
+    </details>
+
+    <details>
+    <summary>Python</summary>
+
+    ```python
+    mcp = FastMCP("My App")
+
+    @mcp.tool()
+    def add(a: int, b: int) -> int:
+        """Add two numbers"""
+        return a + b
+
+    # Mount the SSE server to the existing ASGI server
+    app = Starlette(
+        routes=[
+            Mount('/', app=mcp.sse_app()),
+        ]
+    )
+
+    ```
+
+    In the preceding code we:
+
+    - Create an instance of an ASGI server (using Starletter specifically) and mount the default route `/`
+
+      What happens behind the scenes is that the routes `/sse` and `/messages` are setup to handle connections and messages respectively. The rest of the app, like adding features like tools, happens like with stdio servers.
+
+    </details>
 
 Now that we know a little bit more about SSE, let's build an SSE server next.
 
@@ -79,13 +113,32 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-</details>
-
 In the preceding code we've:
 
 - Created a server instance.
 - Defined an using the web framework express.
 - Created a transports variable that we will use to store incoming connections.
+
+</details>
+
+<details>
+<summary>Python</summary>
+
+```python
+from starlette.applications import Starlette
+from starlette.routing import Mount, Host
+from mcp.server.fastmcp import FastMCP
+
+
+mcp = FastMCP("My App")
+```
+
+In the preceding code we've:
+
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
+
+</details>
 
 Let's add the needed routes next.
 
@@ -119,14 +172,30 @@ app.post("/messages", async (req: Request, res: Response) => {
 app.listen(3001);
 ```
 
-</details>
-
 In the preceding code we've defined:
 
 - An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
 - A `/messages` route that takes care of incoming messages.
 
-This code looks the same for all SSE servers.
+</details>
+
+<details>
+<summary>Python</summary>
+
+```python
+app = Starlette(
+    routes=[
+        Mount('/', app=mcp.sse_app()),
+    ]
+)
+```
+
+In the preceding code we've:
+
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
+
+</details>
+
 
 Let's add capabilties to the server next.
 
@@ -156,6 +225,20 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 ```
 
 Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
+
+</details>
+
+<details>
+<summary>Python</summary>
+
+```python
+@mcp.tool()
+def add(a: int, b: int) -> int:
+    """Add two numbers"""
+    return a + b
+```
+
+Now your server has one tool.
 
 </details>
 
@@ -219,6 +302,32 @@ app.listen(3001);
 
 </details>
 
+<details>
+<summary>Python</summary>
+
+```python
+from starlette.applications import Starlette
+from starlette.routing import Mount, Host
+from mcp.server.fastmcp import FastMCP
+
+
+mcp = FastMCP("My App")
+
+@mcp.tool()
+def add(a: int, b: int) -> int:
+    """Add two numbers"""
+    return a + b
+
+# Mount the SSE server to the existing ASGI server
+app = Starlette(
+    routes=[
+        Mount('/', app=mcp.sse_app()),
+    ]
+)
+```
+
+</details>
+
 Great, we have a server using SSE, let's take it for a spin next.
 
 ## Exercise: Debugging an SSE Server with Inspector
@@ -240,19 +349,26 @@ To run the inspector, you first must have an SSE server running, so let's do tha
 
     </details>
 
-1. Run the inspector
-
     <details>
-    <summary>Typescript</summary>
+    <summary>Python</summary>
 
-    ```sh
-    npx @modelcontextprotocol/inspector
+    ```python
+    uvicorn server:app
     ```
 
-    Note how we don't pass any commands to it. Let's connect the inspector to the server next.
-
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
     </details>
 
+1. Run the inspector
+
+    > ![NOTE]
+    > Run this in a separate terminal window than the server is running in.
+
+    ```sh
+    npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
+    ```
+
+    Running the inspector looks the same in all runtimes. Note how we instead of passing a path to our server and a command for starting the server we instead pass the URL where the server is running and we also specify the `/sse` route.
 
 ### -2- Trying out the tool
 
@@ -262,45 +378,13 @@ Connect the server by selecting SSE in the droplist and fill in the url field wh
 
 Great, you're able to work with the inspector, let's see how we can work with Visual Studio Code next.
 
-## Exercise: Consuming an SSE Server via Visual Studio Code
-
-### -0- Prestep 
-
-If you don't already have .vscode folder with an mcp.json file create it.
-
-Now let's add the following entry:
-
-```json
- "sse-server": {
-    "type": "sse",
-    "url": "http://localhost:4321/sse",
-}
-```
-
-
-Adapt the above value of `url` depending on where your server is. Also note how type is `sse`. 
-
-### -1 Connect server 
-
-Connect your server by pressing the "play" icon. 
-
-You should now be able to use your server's tools from the chat window in GitHub Copilot
-
-### -2- Test server
-
-Type a prompt like for example "tell me a joke", this should indicate in GitHub Copilot that it wants to run the tool "random-joke".
-
-You should see a Chuck Norris joke be displayed in the GitHub Copilot chat window. 
-
-Congrats !
-
 ## Assignment
 
-Try building out your server with more capabilities. See [this page](https://api.chucknorris.io/) for more endpoints you could be supporting. Some responses return back an icon url, consider how you could be showing that in GitHub Copilot or via a client.
+Try building out your server with more capabilities. See [this page](https://api.chucknorris.io/) to for example add a tool that calls an API, you decide what the server should look like.  Have fun :)
 
 ## Solution
 
-[Solution](./solution/README.md)
+[Solution](./solution/README.md) Here's a possible solution with working code.
 
 ## Key Takeaways
 
@@ -308,7 +392,7 @@ The takeaways from this chapter is the following:
 
 - SSE is the second supported transport next to stdio.
 - To support SSE, you need to manage incoming connections and messages using a web framework.
-- You can use both Inspector and Visual Studio Code to consume SSE server, just like stdio servers.
+- You can use both Inspector and Visual Studio Code to consume SSE server, just like stdio servers. Note how it differs a little between stdio and SSE. For SSE, you need to start up the server separately and then run your inspector tool. For the inspector tool, there's also some differences in that you need to specify the URL. 
 
 ## Samples 
 
