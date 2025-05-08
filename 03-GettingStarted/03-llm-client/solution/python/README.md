@@ -18,6 +18,8 @@ venv\Scrips\activate
 
 ```bash
 pip install "mcp[cli]"
+pip install openai
+pip install azure-ai-inference
 ```
 
 ## -3- Run the sample
