@@ -270,25 +270,27 @@ Now that you have your SDK installed, let's create a project next:
 
 <details>
   <summary>TypeScript</summary>
-  Create a *package.json* with the following content
-```json
-{
-   "type": "module",
-   "bin": {
-     "weather": "./build/index.js"
-   },
-   "scripts": {
-     "build": "tsc && node build/index.js"
-   },
-   "files": [
-     "build"
-   ],
-}
-```
+  
+  Create a *package.json* with the following content:
+  
+  ```json
+  {
+     "type": "module",
+     "bin": {
+       "weather": "./build/index.js"
+     },
+     "scripts": {
+       "build": "tsc && node build/index.js"
+     },
+     "files": [
+       "build"
+     ],
+  }
+  ```
 
- Create a *tsconfig.json* with the following content:
+  Create a *tsconfig.json* with the following content:
 
- ```json
+  ```json
   {
     "compilerOptions": {
       "target": "ES2022",
@@ -304,7 +306,7 @@ Now that you have your SDK installed, let's create a project next:
     "include": ["src/**/*"],
     "exclude": ["node_modules"]
   }
- ``` 
+  ``` 
 </details>
 
 <details>
@@ -318,21 +320,22 @@ Create a file *server.py*
 
 <details>
   <summary>TypeScript</summary>
+  
   Create a file *server.ts* and add the following code:
 
-```typescript
-import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { z } from "zod";
- 
-// Create an MCP server
-const server = new McpServer({
-  name: "Demo",
-  version: "1.0.0"
-});
-```
+  ```typescript
+  import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
+  import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+  import { z } from "zod";
+   
+  // Create an MCP server
+  const server = new McpServer({
+    name: "Demo",
+    version: "1.0.0"
+  });
+  ```
 
-Now you have a server, but it doesn't do much, let' fix that.
+ Now you have a server, but it doesn't do much, let' fix that.
 </details>
 
 <details>
