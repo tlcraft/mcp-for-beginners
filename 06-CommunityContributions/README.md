@@ -901,4 +901,4 @@ async def delete_tool(tool_name: str):
 
 ---
 
-Next: [Case Studies and Projects](../06-CaseStudies/README.md)
+Next: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
