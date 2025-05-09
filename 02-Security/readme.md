@@ -1,4 +1,4 @@
-# Overview
+# Security Best Practices
 
 Adopting the Model Context Protocol (MCP) brings powerful new capabilities to AI-driven applications, but also introduces unique security challenges that extend beyond traditional software risks. In addition to established concerns like secure coding, least privilege, and supply chain security, MCP and AI workloads face new threats such as prompt injection, tool poisoning, and dynamic tool modification. These risks can lead to data exfiltration, privacy breaches, and unintended system behavior if not properly managed.
 
@@ -154,3 +154,6 @@ Any MCP implementation inherits the existing security posture of your organizati
 - [Azure API Management as Auth Gateway for MCP](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
 - [Using Microsoft Entra ID to Authenticate with MCP Servers](https://den.dev/blog/mcp-server-auth-entra-id-session/)
 
+### Next 
+
+Next: [Chapter 4: Practical Implementation](/04-PracticalImplementation/README.md)
