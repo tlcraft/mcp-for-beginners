@@ -1,3 +1,5 @@
+## Getting Started 
+
 This section consists of several lessons:
 
 - **Your first server**, in this first lesson, you will learn how to create your first server and inspect it with the inspector tool, a vauable way to test and debug your server, [to the lesson](/03-GettingStarted/01-first-server/README.md)
