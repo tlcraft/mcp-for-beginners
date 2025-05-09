@@ -156,4 +156,4 @@ Any MCP implementation inherits the existing security posture of your organizati
 
 ### Next 
 
-Next: [Chapter 4: Practical Implementation](/04-PracticalImplementation/README.md)
+Next: [Chapter 3: Getting Started](/03-GettingStarted/README.md)
