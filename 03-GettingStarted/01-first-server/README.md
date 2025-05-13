@@ -216,11 +216,8 @@ pip install "mcp[cli]"
 <summary>.NET</summary>
 
 ```sh
-# Using NuGet Package Manager
-Install-Package ModelContextProtocol.SDK
-
-# Using .NET CLI
-dotnet add package ModelContextProtocol.SDK
+dotnet add package ModelContextProtocol --prerelease
+dotnet add package Microsoft.Extensions.Hosting
 ```
 
 </details>
@@ -315,6 +312,15 @@ Now that you have your SDK installed, let's create a project next:
 Create a file *server.py*
 </details>
 
+<details>
+<summary>.NET</summary>
+
+```sh
+dotnet new console
+```
+
+</details>
+
 
 ### -4- Create server code
 
@@ -347,6 +353,34 @@ from mcp.server.fastmcp import FastMCP
 
 # Create an MCP server
 mcp = FastMCP("Demo")
+```
+
+</details>
+
+<details>
+<summary>.NET</summary>
+
+```csharp
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using ModelContextProtocol.Server;
+using System.ComponentModel;
+
+var builder = Host.CreateApplicationBuilder(args);
+builder.Logging.AddConsole(consoleLogOptions =>
+{
+    // Configure all logs to go to stderr
+    consoleLogOptions.LogToStandardErrorThreshold = LogLevel.Trace;
+});
+
+builder.Services
+    .AddMcpServer()
+    .WithStdioServerTransport()
+    .WithToolsFromAssembly();
+await builder.Build().RunAsync();
+
+// add features
 ```
 
 </details>
@@ -420,6 +454,20 @@ In the preceding code we've:
 
 - Defined a tool `add` that takes parameters `a` and `p`, both integers. 
 - Created a resource called `greeting` that takes parameter `name`.
+
+</details>
+
+<details>
+<summary>.NET</summary>
+
+```csharp
+[McpServerToolType]
+public static class CalculatorTool
+{
+    [McpServerTool, Description("Adds two numbers")]
+    public static string Add(int a, int b) => $"Sum {a + b}";
+}
+```
 
 </details>
 
@@ -504,6 +552,39 @@ def get_greeting(name: str) -> str:
 
 </details>
 
+<details>
+<summary>.NET</summary>
+
+```dotnet
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using ModelContextProtocol.Server;
+using System.ComponentModel;
+
+var builder = Host.CreateApplicationBuilder(args);
+builder.Logging.AddConsole(consoleLogOptions =>
+{
+    // Configure all logs to go to stderr
+    consoleLogOptions.LogToStandardErrorThreshold = LogLevel.Trace;
+});
+
+builder.Services
+    .AddMcpServer()
+    .WithStdioServerTransport()
+    .WithToolsFromAssembly();
+await builder.Build().RunAsync();
+
+[McpServerToolType]
+public static class CalculatorTool
+{
+    [McpServerTool, Description("Adds two numbers")]
+    public static string Add(int a, int b) => $"Sum {a + b}";
+}
+```
+
+</details>
+
 ### -7- Test the server
 
 Start the server with the following command:
@@ -523,6 +604,15 @@ npm run build
 ```sh
 mcp run server.py
 ```
+</details>
+
+<details>
+<summary>.NET</summary>
+
+```sh
+dotnet run
+```
+
 </details>
 
 ### -8- Run using the inspector
@@ -556,6 +646,15 @@ However, it doesn't implement all the methods available on the tool so you're re
 
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
+```
+
+</details>
+
+<details>
+<summary>.NET</summary>
+
+```sh
+npx @modelcontextprotocol/inspector dotnet run
 ```
 
 </details>
