@@ -118,6 +118,19 @@ from mcp.client.stdio import stdio_client
 
 </details>
 
+<details>
+<summary>.NET</summary>
+
+```csharp
+using Microsoft.Extensions.AI;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using ModelContextProtocol.Client;
+using ModelContextProtocol.Protocol.Transport;
+```
+
+</details>
+
 Let's move on to instantiation.
 
 ### -2- Instantiating client and transport
@@ -211,6 +224,43 @@ In the preceding code we've:
 
 </details>
 
+<details>
+<summary>.NET</summary>
+
+```dotnet
+using Microsoft.Extensions.AI;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using ModelContextProtocol.Client;
+using ModelContextProtocol.Protocol.Transport;
+
+var builder = Host.CreateApplicationBuilder(args);
+
+builder.Configuration
+    .AddEnvironmentVariables()
+    .AddUserSecrets<Program>();
+
+
+
+var clientTransport = new StdioClientTransport(new()
+{
+    Name = "Demo Server",
+    Command = "dotnet",
+    Arguments = ["run", "--project", "path/to/file.csproj"],
+});
+
+await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
+```
+
+In the preceding code we've:
+
+- Imported the needed libraries.
+- Create an stdio transport and created a client `mcpClient`. The latter is something we will use to list and invoke features on the MCP Server.
+
+Note, in "Arguments", you can either point to the *.csproj* or to the executable.
+
+</details>
+
 ### -3- Listing the server features
 
 Now, we have a client that can connect to should the program be run. However, it doesn't actually list its features so let's do that next:
@@ -252,6 +302,19 @@ Here we list the available resources, `list_resources()` and tools, `list_tools`
 
 </details>
 
+<details>
+<summary>.NET</summary>
+
+```dotnet
+foreach (var tool in await client.ListToolsAsync())
+{
+    Console.WriteLine($"{tool.Name} ({tool.Description})");
+}
+```
+
+Above is an example how we can list the tools on the server. For each tool, we then print out its name.
+
+</details>
 
 Great, now we've captures all the features. Now the question is when do we use them? Well, this client is pretty simple, simple in the sense that we will need to explicitly call the features when we want them. In the next chapter, we will create a more advanced client that has access to it's own large language model, LLM. For now though, let's see how we can invoke the features on the server:
 
@@ -368,6 +431,27 @@ In the preceding code, we've:
 
 </details>
 
+<details>
+<summary>C#</summary>
+
+1. Let's add some code to call a tool:
+
+  ```csharp
+  var result = await mcpClient.CallToolAsync(
+      "Add",
+      new Dictionary<string, object?>() { ["a"] = 1, ["b"] = 3  },
+      cancellationToken:CancellationToken.None);
+  ```
+
+1. To print out the result, here's some code to handle that:
+
+  ```csharp
+  Console.WriteLine(result.Content.First(c => c.Type == "text").Text);
+  // Sum 4
+  ```
+
+</details>
+
 ### -5- Run the client
 
 To run the client, type the following command in the terminal:
@@ -394,6 +478,15 @@ Call the client with the following command:
 
 ```sh
 python client.py
+```
+
+</details>
+
+<details>
+<summary>.NET</summary>
+
+```sh
+dotnet run
 ```
 
 </details>
@@ -479,6 +572,43 @@ def get_greeting(name: str) -> str:
     return f"Hello, {name}!"
 
 ```
+
+</details>
+
+<details>
+<summary>.NET</summary>
+
+```csharp
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using ModelContextProtocol.Server;
+using System.ComponentModel;
+
+var builder = Host.CreateApplicationBuilder(args);
+builder.Logging.AddConsole(consoleLogOptions =>
+{
+    // Configure all logs to go to stderr
+    consoleLogOptions.LogToStandardErrorThreshold = LogLevel.Trace;
+});
+
+builder.Services
+    .AddMcpServer()
+    .WithStdioServerTransport()
+    .WithToolsFromAssembly();
+await builder.Build().RunAsync();
+
+[McpServerToolType]
+public static class CalculatorTool
+{
+    [McpServerTool, Description("Adds two numbers")]
+    public static string Add(int a, int b) => $"Sum {a + b}";
+}
+```
+
+See this project to see how you can [add prompts and resources](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/samples/EverythingServer/Program.cs).
+
+Also, check this link for how to invoke [prompts and resources](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/).
 
 </details>
 
