@@ -82,6 +82,31 @@ SSE is one of two supported transport types. You've already seen the first one s
 
     </details>
 
+    <details>
+    <summary>.NET</summary>
+
+    ```csharp
+    var builder = WebApplication.CreateBuilder(args);
+    builder.Services
+        .AddMcpServer()
+        .WithTools<Tools>();
+
+
+    builder.Services.AddHttpClient();
+
+    var app = builder.Build();
+
+    app.MapMcp();
+    ```
+
+    There are two methods that helps us go from a web server to a web server supporting SSE and that is:
+
+    - `AddMcpServer`, this method adds capabilities.
+    - `MapMcp`, this adds routes like `/SSE` and `/messages`.
+
+
+    </details>
+
 Now that we know a little bit more about SSE, let's build an SSE server next.
 
 ## Exercise: Creating an SSE Server
@@ -140,6 +165,29 @@ In the preceding code we've:
 
 </details>
 
+<details>
+<summary>.NET</summary>
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+builder.Services
+    .AddMcpServer();
+
+
+builder.Services.AddHttpClient();
+
+var app = builder.Build();
+
+// TODO: add routes 
+```
+
+At this point, we've:
+
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
+
+</details>
+
 Let's add the needed routes next.
 
 ### -2- Add routes
@@ -193,6 +241,25 @@ app = Starlette(
 In the preceding code we've:
 
 - Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
+
+</details>
+
+<details>
+<summary>.NET</summary>
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+builder.Services
+    .AddMcpServer();
+
+builder.Services.AddHttpClient();
+
+var app = builder.Build();
+
+app.MapMcp();
+```
+
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
 </details>
 
@@ -328,6 +395,64 @@ app = Starlette(
 
 </details>
 
+<details>
+<summary>.NET</summary>
+
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
+
+  ```csharp
+  using System.ComponentModel;
+  using System.Text.Json;
+  using ModelContextProtocol.Server;
+
+  namespace server;
+
+  [McpServerToolType]
+  public sealed class Tools
+  {
+
+      public Tools()
+      {
+      
+      }
+
+      [McpServerTool, Description("Add two numbers together.")]
+      public async Task<string> AddNumbers(
+          [Description("The first number")] int a,
+          [Description("The second number")] int b)
+      {
+          return (a + b).ToString();
+      }
+
+  }
+  ```
+
+  Here we've added the following:
+
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
+
+1. Let's leverage the `Tools` class we just created:
+
+  ```csharp
+  var builder = WebApplication.CreateBuilder(args);
+  builder.Services
+      .AddMcpServer()
+      .WithTools<Tools>();
+
+
+  builder.Services.AddHttpClient();
+
+  var app = builder.Build();
+
+  app.MapMcp();
+  ```
+
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
+
+
+</details>
+
 Great, we have a server using SSE, let's take it for a spin next.
 
 ## Exercise: Debugging an SSE Server with Inspector
@@ -352,17 +477,28 @@ To run the inspector, you first must have an SSE server running, so let's do tha
     <details>
     <summary>Python</summary>
 
-    ```python
+    ```sh
     uvicorn server:app
     ```
 
     Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
     </details>
 
+    <details>
+    <summary>.NET</summary>
+
+    ```sh
+    dotnet run
+    ```
+
+    This should start the server. To interface with it you need a new terminal.
+
+    </details>
+
 1. Run the inspector
 
     > ![NOTE]
-    > Run this in a separate terminal window than the server is running in.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
@@ -374,7 +510,7 @@ To run the inspector, you first must have an SSE server running, so let's do tha
 
 Connect the server by selecting SSE in the droplist and fill in the url field where your server is running, for example http:localhost:4321/sse. Now click the "Connect" button. As before, select to list tools, select a tool and provide input values. You should see a result like below:
 
-![](./assets/sse-inspector.png)
+![SSE Server running in inspector](./assets/sse-inspector.png)
 
 Great, you're able to work with the inspector, let's see how we can work with Visual Studio Code next.
 
