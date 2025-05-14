@@ -120,6 +120,31 @@ In the preceding code we've:
 
 </details>
 
+<details>
+<summary>.NET</summary>
+
+```csharp
+using Azure;
+using Azure.AI.Inference;
+using Azure.Identity;
+using System.Text.Json;
+using ModelContextProtocol.Client;
+using ModelContextProtocol.Protocol.Transport;
+using System.Text.Json;
+
+var clientTransport = new StdioClientTransport(new()
+{
+    Name = "Demo Server",
+    Command = "/workspaces/mcp-for-beginners/03-GettingStarted/02-client/solution/server/bin/Debug/net8.0/server",
+    Arguments = [],
+});
+
+await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
+```
+
+</details>
+
+
 Great, for our next step, let's list the capbilities on the server.
 
 ### -2 List server capabilities
@@ -174,6 +199,36 @@ for tool in tools.tools:
 Here's what we added:
 
 - Listing resources and tools and printed them. For tools we also list `inputSchema` which we use later.
+
+</details>
+
+<details>
+<summary>.NET</summary>
+
+```csharp
+async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
+{
+    Console.WriteLine("Listing tools");
+    var tools = await mcpClient.ListToolsAsync();
+
+    List<ChatCompletionsToolDefinition> toolDefinitions = new List<ChatCompletionsToolDefinition>();
+
+    foreach (var tool in tools)
+    {
+        Console.WriteLine($"Connected to server with tools: {tool.Name}");
+        Console.WriteLine($"Tool description: {tool.Description}");
+        Console.WriteLine($"Tool parameters: {tool.JsonSchema}");
+
+        // TODO: convert tool defintion from MCP tool to LLm tool     
+    }
+
+    return toolDefinitions;
+}
+```
+
+In the preceding code we've:
+
+
 
 </details>
 

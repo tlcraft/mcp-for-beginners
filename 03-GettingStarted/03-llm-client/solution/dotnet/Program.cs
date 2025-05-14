@@ -15,11 +15,11 @@ var chatHistory = new List<ChatRequestMessage>
 };
 
 var clientTransport = new StdioClientTransport(new()
-    {
-        Name = "Demo Server",
-        Command = "/workspaces/mcp-for-beginners/03-GettingStarted/02-client/solution/server/bin/Debug/net8.0/server",
-        Arguments = [],
-    });
+{
+    Name = "Demo Server",
+    Command = "/workspaces/mcp-for-beginners/03-GettingStarted/02-client/solution/server/bin/Debug/net8.0/server",
+    Arguments = [],
+});
 
     Console.WriteLine("Setting up stdio transport");
 
@@ -77,8 +77,6 @@ ChatCompletionsToolDefinition CreateToolDefinition()
 
 async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
 {
-    
-
     Console.WriteLine("Listing tools");
     var tools = await mcpClient.ListToolsAsync();
 
@@ -97,21 +95,10 @@ async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
         Console.WriteLine($"Tool definition: {def}");
         toolDefinitions.Add(def);
 
-        // foreach (var property in tool.JsonSchema.EnumerateObject())
-        // {
-        //     Console.WriteLine($"Property: {property.Name}, Type: {property.Value.ValueKind}");
-
-        // }
-
-        Console.WriteLine($"Properties: {propertiesElement}");
-
-        
+        Console.WriteLine($"Properties: {propertiesElement}");        
     }
 
-    // call mcp server
-    // convert each tool to a function definition
     return toolDefinitions;
-
 }
 
 // -1. List tools on mcp server
@@ -151,8 +138,6 @@ for (int i = 0; i < response.ToolCalls.Count; i++)
     var call = response.ToolCalls[i];
     Console.WriteLine($"Tool call {i}: {call.Name} with arguments {call.Arguments}");
     //Tool call 0: add with arguments {"a":2,"b":4}
-
-    //  new Dictionary<string, object?>() { ["a"] = 1, ["b"] = 3  },
 
     var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(call.Arguments);
     var result = await mcpClient.CallToolAsync(
