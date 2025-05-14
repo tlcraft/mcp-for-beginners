@@ -44,37 +44,6 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
     return toolDefinition;
 }
 
-
-ChatCompletionsToolDefinition CreateToolDefinition()
-{
-    // define tools
-    FunctionDefinition addFunction = new FunctionDefinition("add")
-    {
-        Description = "adds two numbers",
-        Parameters = BinaryData.FromObjectAsJson(new
-        {
-            Type = "object",
-            Properties = new
-            {
-                a = new
-                {
-                    Type = "integer",
-                    Description = "the first number to add"
-                },
-                b = new
-                {
-                    Type = "integer",
-                    Description = "the second number to add"
-                }
-            }
-        },
-        new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase })
-    };
-
-    ChatCompletionsToolDefinition def = new ChatCompletionsToolDefinition(addFunction);
-    return def;
-}
-
 async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
 {
     Console.WriteLine("Listing tools");
@@ -101,7 +70,7 @@ async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
     return toolDefinitions;
 }
 
-// -1. List tools on mcp server
+// 1. List tools on mcp server
 
 var tools = await GetMcpTools();
 for (int i = 0; i < tools.Count; i++)
@@ -110,28 +79,24 @@ for (int i = 0; i < tools.Count; i++)
     Console.WriteLine($"MCP Tools def: {i}: {tool}");
 }
 
-// 0. Define the chat history and the user message
+// 2. Define the chat history and the user message
 var userMessage = "add 2 and 4";
 
 chatHistory.Add(new ChatRequestUserMessage(userMessage));
 
-// 1. Define tools
-ChatCompletionsToolDefinition def = CreateToolDefinition();
-
-
-// 2. Define options, including the tools
+// 3. Define options, including the tools
 var options = new ChatCompletionsOptions(chatHistory)
 {
     Model = "gpt-4o-mini",
     Tools = { tools[0] }
 };
 
-// 3. Call the model  
+// 4. Call the model
 
 ChatCompletions? response = await client.CompleteAsync(options);
 var content = response.Content;
 
-// 4. Check if the response contains a function call
+// 5. Check if the response contains a function call
 ChatCompletionsToolCall? calls = response.ToolCalls.FirstOrDefault();
 for (int i = 0; i < response.ToolCalls.Count; i++)
 {
@@ -150,7 +115,7 @@ for (int i = 0; i < response.ToolCalls.Count; i++)
 
 }
 
-// 5. Print the generic response
+// 6. Print the generic response
 Console.WriteLine($"Assistant response: {content}");
 // Console.WriteLine($"Function call: {functionCall?.Name}");
 
