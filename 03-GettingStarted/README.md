@@ -10,6 +10,11 @@ This section consists of several lessons:
 
 - **Consuming a server GitHub Copilot Agent mode in Visual Studio Code**. Here, we're looking at running our MCP Server from within Visual Studio Code, [to the lesson](/03-GettingStarted/04-vscode/README.md)
 
+- **Consuming from a SSE (Server Sent Events)** SEE is a standard for server-to-client streaming, allowing servers to push real-time updates to clients over HTTP [to the lesson](/03-GettingStarted/05-sse-server/README.md)
+
+- **Utilising AI Toolkit for VSCode** to consume and test your MCP Clients and Servers [to the lesson](/03-GettingStarted/06-aitk/README.md)
+
+
 The Model Context Protocol (MCP) is an open protocol that standardizes how applications provide context to LLMs. Think of MCP like a USB-C port for AI applications - it provides a standardized way to connect AI models to different data sources and tools.
 
 ## Learning Objectives
@@ -396,4 +401,4 @@ Create a simple MCP server with a tool of your choice:
 
 ## What's next
 
-Next: [Practical Implementation](/04-PracticalImplementation/README.md)
+Next: [Creating your first MCP Server](/03-GettingStarted/01-first-server/)
