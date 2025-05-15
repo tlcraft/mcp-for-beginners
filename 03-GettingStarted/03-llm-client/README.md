@@ -120,6 +120,31 @@ In the preceding code we've:
 
 </details>
 
+<details>
+<summary>.NET</summary>
+
+```csharp
+using Azure;
+using Azure.AI.Inference;
+using Azure.Identity;
+using System.Text.Json;
+using ModelContextProtocol.Client;
+using ModelContextProtocol.Protocol.Transport;
+using System.Text.Json;
+
+var clientTransport = new StdioClientTransport(new()
+{
+    Name = "Demo Server",
+    Command = "/workspaces/mcp-for-beginners/03-GettingStarted/02-client/solution/server/bin/Debug/net8.0/server",
+    Arguments = [],
+});
+
+await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
+```
+
+</details>
+
+
 Great, for our next step, let's list the capbilities on the server.
 
 ### -2 List server capabilities
@@ -174,6 +199,37 @@ for tool in tools.tools:
 Here's what we added:
 
 - Listing resources and tools and printed them. For tools we also list `inputSchema` which we use later.
+
+</details>
+
+<details>
+<summary>.NET</summary>
+
+```csharp
+async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
+{
+    Console.WriteLine("Listing tools");
+    var tools = await mcpClient.ListToolsAsync();
+
+    List<ChatCompletionsToolDefinition> toolDefinitions = new List<ChatCompletionsToolDefinition>();
+
+    foreach (var tool in tools)
+    {
+        Console.WriteLine($"Connected to server with tools: {tool.Name}");
+        Console.WriteLine($"Tool description: {tool.Description}");
+        Console.WriteLine($"Tool parameters: {tool.JsonSchema}");
+
+        // TODO: convert tool defintion from MCP tool to LLm tool     
+    }
+
+    return toolDefinitions;
+}
+```
+
+In the preceding code we've:
+
+- Listed the tools available on the MCP Server
+- For each tool, listed name, description and its schema. The latter is something we will use to call the tools shortly.
 
 </details>
 
@@ -269,6 +325,84 @@ Next step after listing server capabilities is to convert them into a format tha
     ```
 
     Here, we're adding a call to `convert_to_llm_tool` to convert the MCP tool response to something we can feed the LLM later.
+
+</details>
+
+<details>
+<summary>.NET</summary>
+
+1. Let's add code to convert the MCP tool response to something the LLM can understand
+
+    ```csharp
+    ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
+    { 
+        // convert the tool to a function definition
+        FunctionDefinition functionDefinition = new FunctionDefinition(name)
+        {
+            Description = description,
+            Parameters = BinaryData.FromObjectAsJson(new
+            {
+                Type = "object",
+                Properties = jsonElement
+            },
+            new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase })
+        };
+
+        // create a tool definition
+        ChatCompletionsToolDefinition toolDefinition = new ChatCompletionsToolDefinition(functionDefinition);
+        return toolDefinition;
+    }
+    ```
+
+    In the preceding code we've:
+
+    - Created a function `ConvertFrom` that takes, name, description and input schema.
+    - Defined functionality that creates a FunctionDefinition that gets passed to a ChatCompletionsDefinition. The latter is something the LLM can understant.
+
+1. Let's see how we can update some existing code to take advantage of this function above:
+
+    ```csharp
+    async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
+    {
+        Console.WriteLine("Listing tools");
+        var tools = await mcpClient.ListToolsAsync();
+
+        List<ChatCompletionsToolDefinition> toolDefinitions = new List<ChatCompletionsToolDefinition>();
+
+        foreach (var tool in tools)
+        {
+            Console.WriteLine($"Connected to server with tools: {tool.Name}");
+            Console.WriteLine($"Tool description: {tool.Description}");
+            Console.WriteLine($"Tool parameters: {tool.JsonSchema}");
+
+            JsonElement propertiesElement;
+            tool.JsonSchema.TryGetProperty("properties", out propertiesElement);
+
+            var def = ConvertFrom(tool.Name, tool.Description, propertiesElement);
+            Console.WriteLine($"Tool definition: {def}");
+            toolDefinitions.Add(def);
+
+            Console.WriteLine($"Properties: {propertiesElement}");        
+        }
+
+        return toolDefinitions;
+    }
+    ```
+
+    In the preceding code, we've:
+
+    - Update the function to convert the MCP tool response to an LLm tool. Let's highlight the code we added:
+
+        ```csharp
+        JsonElement propertiesElement;
+        tool.JsonSchema.TryGetProperty("properties", out propertiesElement);
+
+        var def = ConvertFrom(tool.Name, tool.Description, propertiesElement);
+        Console.WriteLine($"Tool definition: {def}");
+        toolDefinitions.Add(def);
+        ```
+
+        The input schema is part of the tool response but on the "properties" attribute, so we need to extract. Furthermore, we now call `ConvertFrom` with the tool details. Now we've done the heavy lifting, let's see how it call comes together as we handle a user prompt next.
 
 </details>
 
@@ -610,13 +744,214 @@ client.connectToServer(transport);
 
 </details>
 
+<details>
+<summary>.NET</summary>
+
+1. Let's show some code for doing an LLM prompt request:
+
+    ```csharp
+    var tools = await GetMcpTools();
+
+    for (int i = 0; i < tools.Count; i++)
+    {
+        var tool = tools[i];
+        Console.WriteLine($"MCP Tools def: {i}: {tool}");
+    }
+
+    // 0. Define the chat history and the user message
+    var userMessage = "add 2 and 4";
+
+    chatHistory.Add(new ChatRequestUserMessage(userMessage));
+
+    // 1. Define tools
+    ChatCompletionsToolDefinition def = CreateToolDefinition();
+
+
+    // 2. Define options, including the tools
+    var options = new ChatCompletionsOptions(chatHistory)
+    {
+        Model = "gpt-4o-mini",
+        Tools = { tools[0] }
+    };
+
+    // 3. Call the model  
+
+    ChatCompletions? response = await client.CompleteAsync(options);
+    var content = response.Content;
+
+    ```
+
+    In the preceding code we've:
+
+    - Fetched tools from the MCP server, `var tools = await GetMcpTools()`.
+    - Defined a user prompt `userMessage`.
+    - Constructor an options object specifying model and tools.
+    - Made a request towards the LLM.
+
+1. One last step, let's see if the LLM thinks we should call a function:
+
+    ```csharp
+    // 4. Check if the response contains a function call
+    ChatCompletionsToolCall? calls = response.ToolCalls.FirstOrDefault();
+    for (int i = 0; i < response.ToolCalls.Count; i++)
+    {
+        var call = response.ToolCalls[i];
+        Console.WriteLine($"Tool call {i}: {call.Name} with arguments {call.Arguments}");
+        //Tool call 0: add with arguments {"a":2,"b":4}
+
+        var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(call.Arguments);
+        var result = await mcpClient.CallToolAsync(
+            call.Name,
+            dict!,
+            cancellationToken: CancellationToken.None
+        );
+
+        Console.WriteLine(result.Content.First(c => c.Type == "text").Text);
+
+    }
+    ```
+
+    In the preceding code we've:
+
+    - Looped through a list of function calls.
+    - For each tool call, parse out name and arguments and call the tool on the MCP server using the MCP client. Finally we print the results.
+
+Here's the code in full:
+
+```csharp
+using Azure;
+using Azure.AI.Inference;
+using Azure.Identity;
+using System.Text.Json;
+using ModelContextProtocol.Client;
+using ModelContextProtocol.Protocol.Transport;
+using System.Text.Json;
+
+var endpoint = "https://models.inference.ai.azure.com";
+var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN"); // Your GitHub Access Token
+var client = new ChatCompletionsClient(new Uri(endpoint), new AzureKeyCredential(token));
+var chatHistory = new List<ChatRequestMessage>
+{
+    new ChatRequestSystemMessage("You are a helpful assistant that knows about AI")
+};
+
+var clientTransport = new StdioClientTransport(new()
+{
+    Name = "Demo Server",
+    Command = "/workspaces/mcp-for-beginners/03-GettingStarted/02-client/solution/server/bin/Debug/net8.0/server",
+    Arguments = [],
+});
+
+Console.WriteLine("Setting up stdio transport");
+
+await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
+
+ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
+{ 
+    // convert the tool to a function definition
+    FunctionDefinition functionDefinition = new FunctionDefinition(name)
+    {
+        Description = description,
+        Parameters = BinaryData.FromObjectAsJson(new
+        {
+            Type = "object",
+            Properties = jsonElement
+        },
+        new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase })
+    };
+
+    // create a tool definition
+    ChatCompletionsToolDefinition toolDefinition = new ChatCompletionsToolDefinition(functionDefinition);
+    return toolDefinition;
+}
+
+
+
+async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
+{
+    Console.WriteLine("Listing tools");
+    var tools = await mcpClient.ListToolsAsync();
+
+    List<ChatCompletionsToolDefinition> toolDefinitions = new List<ChatCompletionsToolDefinition>();
+
+    foreach (var tool in tools)
+    {
+        Console.WriteLine($"Connected to server with tools: {tool.Name}");
+        Console.WriteLine($"Tool description: {tool.Description}");
+        Console.WriteLine($"Tool parameters: {tool.JsonSchema}");
+
+        JsonElement propertiesElement;
+        tool.JsonSchema.TryGetProperty("properties", out propertiesElement);
+
+        var def = ConvertFrom(tool.Name, tool.Description, propertiesElement);
+        Console.WriteLine($"Tool definition: {def}");
+        toolDefinitions.Add(def);
+
+        Console.WriteLine($"Properties: {propertiesElement}");        
+    }
+
+    return toolDefinitions;
+}
+
+// 1. List tools on mcp server
+
+var tools = await GetMcpTools();
+for (int i = 0; i < tools.Count; i++)
+{
+    var tool = tools[i];
+    Console.WriteLine($"MCP Tools def: {i}: {tool}");
+}
+
+// 2. Define the chat history and the user message
+var userMessage = "add 2 and 4";
+
+chatHistory.Add(new ChatRequestUserMessage(userMessage));
+
+
+// 3. Define options, including the tools
+var options = new ChatCompletionsOptions(chatHistory)
+{
+    Model = "gpt-4o-mini",
+    Tools = { tools[0] }
+};
+
+// 4. Call the model  
+
+ChatCompletions? response = await client.CompleteAsync(options);
+var content = response.Content;
+
+// 5. Check if the response contains a function call
+ChatCompletionsToolCall? calls = response.ToolCalls.FirstOrDefault();
+for (int i = 0; i < response.ToolCalls.Count; i++)
+{
+    var call = response.ToolCalls[i];
+    Console.WriteLine($"Tool call {i}: {call.Name} with arguments {call.Arguments}");
+    //Tool call 0: add with arguments {"a":2,"b":4}
+
+    var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(call.Arguments);
+    var result = await mcpClient.CallToolAsync(
+        call.Name,
+        dict!,
+        cancellationToken: CancellationToken.None
+    );
+
+    Console.WriteLine(result.Content.First(c => c.Type == "text").Text);
+
+}
+
+// 5. Print the generic response
+Console.WriteLine($"Assistant response: {content}");
+```
+
+</details>
+
 Great, you did it!
 
 ## Assignment
 
 Take the code from the exercise and build out the server with some more tools. Then create a client with an LLM, like in the exercise, and test it out with different prompts to make sure all your server tools gets called dynamically. This way of building a client means the end user will have a great user experience as they're able to use prompts, instead of exact client commands, and be oblivious to any MCP server being called.
 
-## Solution
+## Solution 
 
 [Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
