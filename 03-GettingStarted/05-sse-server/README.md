@@ -544,4 +544,4 @@ The takeaways from this chapter is the following:
 
 ## What's Next
 
-- Next: [Practical implementations](/04-PracticalImplementation/README.md)
+- Next: [Getting Started with AI Toolkit for VSCode](/03-GettingStarted/06-aitk/README.md)

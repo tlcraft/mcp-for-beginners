@@ -184,4 +184,4 @@ The takeaways from this chapter is the following:
 
 ## What's Next
 
-- Next: [Lesson 4 Practical Implementation](/04-PracticalImplementation/README.md)
+- Next: [Lesson 4 Practical Implementation]](/04-PracticalImplementation/README.md)

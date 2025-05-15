@@ -719,4 +719,4 @@ Create a simple MCP server with a tool of your choice:
 
 ## What's next
 
-Next: [Practical Implementation](/03-GettingStarted/02-client/README.md)
+Next: [Getting Started with MCP Clients](/03-GettingStarted/02-client/README.md)
