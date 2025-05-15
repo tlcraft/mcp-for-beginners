@@ -951,7 +951,7 @@ Great, you did it!
 
 Take the code from the exercise and build out the server with some more tools. Then create a client with an LLM, like in the exercise, and test it out with different prompts to make sure all your server tools gets called dynamically. This way of building a client means the end user will have a great user experience as they're able to use prompts, instead of exact client commands, and be oblivious to any MCP server being called.
 
-## Solution
+## Solution 
 
 [Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 

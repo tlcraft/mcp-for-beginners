@@ -62,7 +62,7 @@ async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
 
         var def = ConvertFrom(tool.Name, tool.Description, propertiesElement);
         Console.WriteLine($"Tool definition: {def}");
-        toolDefinitions.Add(def);
+        toolDefinitions.Add(def); 
 
         Console.WriteLine($"Properties: {propertiesElement}");        
     }

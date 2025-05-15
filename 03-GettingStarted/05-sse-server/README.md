@@ -1,6 +1,6 @@
 # SSE Server
 
-SSE (Server Sent Events) is a standard for server-to-client streaming, allowing servers to push real-time updates to clients over HTTP. This is particularly useful for applications that require live updates, such as chat applications, notifications, or real-time data feeds. Also, your server can be used by multiple clients at the same time as it lives on a server that can be run somewhere in the cloud for example
+SSE (Server Sent Events) is a standard for server-to-client streaming, allowing servers to push real-time updates to clients over HTTP. This is particularly useful for applications that require live updates, such as chat applications, notifications, or real-time data feeds. Also, your server can be used by multiple clients at the same time as it lives on a server that can be run somewhere in the cloud for example.
 
 ## Overview
 

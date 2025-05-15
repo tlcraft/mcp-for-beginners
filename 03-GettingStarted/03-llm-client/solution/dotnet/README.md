@@ -13,7 +13,7 @@ Should install the following libraries: Azure AI Inference, Azure Identity, Micr
 
 ## Run
 
-```sh
+```sh 
 dotnet run
 ```
 

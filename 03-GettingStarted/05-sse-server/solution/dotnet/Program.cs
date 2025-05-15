@@ -3,7 +3,7 @@ using server;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddMcpServer()
-    .WithTools<Tools>();
+    .WithTools<Tools>(); 
 
 
 builder.Services.AddHttpClient();

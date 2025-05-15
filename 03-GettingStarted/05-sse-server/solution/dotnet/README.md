@@ -33,7 +33,7 @@ Once the server is connected:
 
 You can launch it directly in CLI mode by running the following command:
 
-```bash
+```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
