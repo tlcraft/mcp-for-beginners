@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "537bdb70a3ce1e8bd86c83c74bf98c77",
-  "translation_date": "2025-05-16T14:22:06+00:00",
+  "original_hash": "ceacbad0013938974fc0bf493e93f05b",
+  "translation_date": "2025-05-16T17:09:33+00:00",
   "source_file": "README.md",
   "language_code": "de"
 }
@@ -22,34 +22,36 @@ CO_OP_TRANSLATOR_METADATA:
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 
-Folgen Sie diesen Schritten, um mit diesen Ressourcen zu starten:
+Folgen Sie diesen Schritten, um mit diesen Ressourcen zu beginnen:
 1. **Forken Sie das Repository**: Klicken Sie auf [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/network)
-2. **Klonen Sie das Repository**: `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Treten Sie dem Microsoft Azure AI Foundry Discord bei und tauschen Sie sich mit Experten und anderen Entwicklern aus**](https://discord.com/invite/ByRwuEEgH4)
+2. **Klonen Sie das Repository**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
+3. [**Treten Sie dem Microsoft Azure AI Foundry Discord bei und treffen Sie Experten sowie andere Entwickler**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Mehrsprachige Unterstützung
 
-#### Unterstützt durch GitHub Action (Automatisiert & immer aktuell)
+### Unterstützt durch GitHub Action (Automatisiert & immer aktuell)
+
+[Französisch](../fr/README.md) | [Spanisch](../es/README.md) | [Deutsch](./README.md) | [Chinesisch (vereinfacht)](../zh/README.md)  [Japanisch](../ja/README.md) | [Koreanisch](../ko/README.md) | [Polnisch](../pl/README.md)
 
 
 # 🚀 Ultimativer Leitfaden zum Model Context Protocol (MCP) Curriculum für Einsteiger
 
-## **Lernen Sie MCP mit praxisnahen Code-Beispielen in C#, Java, JavaScript, Python und TypeScript**
+## **Lernen Sie MCP mit praxisnahen Codebeispielen in C#, Java, JavaScript, Python und TypeScript**
 
 ## 🧠 Überblick über das Model Context Protocol Curriculum
 
-Das **Model Context Protocol (MCP)** ist ein modernes Framework, das darauf abzielt, die Interaktionen zwischen KI-Modellen und Client-Anwendungen zu standardisieren. Dieses Open-Source-Curriculum bietet einen strukturierten Lernpfad mit praktischen Programmierbeispielen und realen Anwendungsfällen in beliebten Programmiersprachen wie C#, Java, JavaScript, TypeScript und Python.
+Das **Model Context Protocol (MCP)** ist ein innovatives Framework, das darauf ausgelegt ist, die Interaktionen zwischen KI-Modellen und Client-Anwendungen zu standardisieren. Dieses Open-Source-Curriculum bietet einen strukturierten Lernpfad mit praktischen Codebeispielen und realen Anwendungsfällen in beliebten Programmiersprachen wie C#, Java, JavaScript, TypeScript und Python.
 
-Egal, ob Sie KI-Entwickler, Systemarchitekt oder Softwareingenieur sind – dieser Leitfaden ist Ihre umfassende Ressource, um die Grundlagen und Implementierungsstrategien von MCP zu meistern.
+Egal, ob Sie KI-Entwickler, Systemarchitekt oder Softwareingenieur sind – dieser Leitfaden ist Ihre umfassende Ressource, um die Grundlagen und Implementierungsstrategien von MCP zu beherrschen.
 
 ## 🔗 Offizielle MCP-Ressourcen
 
 - 📘 [MCP Dokumentation](https://modelcontextprotocol.io/) – Ausführliche Tutorials und Benutzerhandbücher  
 - 📜 [MCP Spezifikation](https://spec.modelcontextprotocol.io/) – Protokollarchitektur und technische Referenzen  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-Source-SDKs, Tools und Codebeispiele  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-Source SDKs, Tools und Codebeispiele  
 
-## 🧭 Vollständige MCP Curriculum-Struktur
+## 🧭 Vollständiger MCP Curriculum Aufbau
 
 ### 📌 [Einführung in MCP](./00-Introduction/README.md)
 
@@ -59,11 +61,11 @@ Egal, ob Sie KI-Entwickler, Systemarchitekt oder Softwareingenieur sind – dies
 
 ### 🧩 [Kernkonzepte erklärt](./01-CoreConcepts/README.md)
 
-- Verständnis der Client-Server-Architektur im MCP
+- Verständnis der Client-Server-Architektur in MCP
 - Wichtige Protokollkomponenten: Anfragen, Antworten und Schemata
-- MCP Messaging- und Datenaustauschmuster
+- MCP Nachrichten- und Datenaustauschmuster
 
-### 🔐 [Sicherheit im MCP](./02-Security/readme.md)
+### 🔐 [Sicherheit in MCP](./02-Security/readme.md)
 
 - Erkennung von Sicherheitsbedrohungen in MCP-basierten Systemen
 - Techniken und bewährte Methoden zur Absicherung von Implementierungen
@@ -71,12 +73,12 @@ Egal, ob Sie KI-Entwickler, Systemarchitekt oder Softwareingenieur sind – dies
 ### 🚀 [Erste Schritte mit MCP](./03-GettingStarted/README.md)
 
 - Einrichtung und Konfiguration der Umgebung
-- Erstellung einfacher MCP-Server und Clients
+- Erstellung grundlegender MCP-Server und Clients
 - Integration von MCP in bestehende Anwendungen
 
-#### 🧮 MCP Rechner Beispielprojekte:
+#### 🧮 Beispielprojekte für den MCP Rechner:
 <details>
-  <summary><strong>Code-Beispiele nach Sprache erkunden</strong></summary>
+  <summary><strong>Code-Implementierungen nach Sprache erkunden</strong></summary>
 
   - [C# MCP Server Beispiel](./03-GettingStarted/samples/csharp/README.md)
   - [Java MCP Rechner](./03-GettingStarted/samples/java/calculator/README.md)
@@ -85,86 +87,86 @@ Egal, ob Sie KI-Entwickler, Systemarchitekt oder Softwareingenieur sind – dies
   - [TypeScript MCP Beispiel](./03-GettingStarted/samples/typescript/README.md)
 
 </details>
-
 ### 🛠️ [Praktische Umsetzung](./04-PracticalImplementation/README.md)
 
-- Nutzung von SDKs in verschiedenen Sprachen
-- Debugging, Tests und Validierung
-- Erstellung wiederverwendbarer Prompt-Vorlagen und Workflows
+- Verwendung von SDKs in verschiedenen Programmiersprachen  
+- Debugging, Tests und Validierung  
+- Erstellen wiederverwendbarer Prompt-Vorlagen und Workflows  
 
-#### 💡 MCP Fortgeschrittene Rechnerprojekte:
-<details>
-  <summary><strong>Fortgeschrittene Beispiele entdecken</strong></summary>
+#### 💡 MCP Advanced Calculator Projekte:  
+<details>  
+  <summary><strong>Fortgeschrittene Beispiele entdecken</strong></summary>  
 
-  - [Fortgeschrittenes C# Beispiel](./04-PracticalImplementation/samples/csharp/README.md)
-  - [Java Container App Beispiel](./04-PracticalImplementation/samples/java/containerapp/README.md)
-  - [JavaScript Fortgeschrittenes Beispiel](./04-PracticalImplementation/samples/javascript/README.md)
-  - [Python Komplexe Implementierung](../../04-PracticalImplementation/samples/python/mcp_sample.py)
-  - [TypeScript Container Beispiel](./04-PracticalImplementation/samples/typescript/README.md)
+  - [Advanced C# Sample](./04-PracticalImplementation/samples/csharp/README.md)  
+  - [Java Container App Example](./04-PracticalImplementation/samples/java/containerapp/README.md)  
+  - [JavaScript Advanced Sample](./04-PracticalImplementation/samples/javascript/README.md)  
+  - [Python Complex Implementation](../../04-PracticalImplementation/samples/python/mcp_sample.py)  
+  - [TypeScript Container Sample](./04-PracticalImplementation/samples/typescript/README.md)  
 
-</details>
+</details>  
 
-### 🎓 [Fortgeschrittene Themen im MCP](./05-AdvancedTopics/README.md)
+### 🎓 [Fortgeschrittene Themen in MCP](./05-AdvancedTopics/README.md)
 
-- Multimodale KI-Workflows und Erweiterbarkeit
-- Sichere Skalierungsstrategien
-- MCP in Unternehmensökosystemen
-### 🌍 [Community Contributions](./06-CommunityContributions/README.md)
+- Multimodale KI-Workflows und Erweiterungsmöglichkeiten  
+- Sichere Skalierungsstrategien  
+- MCP in Unternehmensökosystemen  
 
-- Wie man Code und Dokumentation beisteuert  
+### 🌍 [Community-Beiträge](./06-CommunityContributions/README.md)
+
+- Wie man Code und Dokumentation beiträgt  
 - Zusammenarbeit über GitHub  
 - Community-getriebene Verbesserungen und Feedback  
 
-### 📈 [Insights from Early Adoption](./07-CaseStudies/README.md)
+### 📈 [Erkenntnisse aus der frühen Nutzung](./07-CaseStudies/README.md)
 
-- Praxisnahe Implementierungen und was funktioniert hat  
+- Praxisnahe Implementierungen und bewährte Methoden  
 - Aufbau und Bereitstellung von MCP-basierten Lösungen  
-- Trends und zukünftige Roadmap  
+- Trends und zukünftiger Fahrplan  
 
-### 📏 [Best Practices for MCP](./08-BestPractices/README.md)
+### 📏 [Best Practices für MCP](./08-BestPractices/README.md)
 
-- Leistungsoptimierung und Feinabstimmung  
+- Performance-Tuning und Optimierung  
 - Gestaltung fehlertoleranter MCP-Systeme  
 - Test- und Resilienzstrategien  
 
-### 📊 [MCP Case Studies](./09-CaseStudy/Readme.md)
+### 📊 [MCP Fallstudien](./09-CaseStudy/Readme.md)
 
-- Tiefgehende Analysen von MCP-Lösungsarchitekturen  
+- Tiefgehende Einblicke in MCP-Lösungsarchitekturen  
 - Bereitstellungspläne und Integrationstipps  
-- Kommentierte Diagramme und Projektübersichten  
+- Kommentierte Diagramme und Projekt-Durchläufe  
 
-## 🎯 Prerequisites for Learning MCP
+## 🎯 Voraussetzungen zum Erlernen von MCP
 
-Um das Beste aus diesem Curriculum herauszuholen, solltest du Folgendes mitbringen:
+Um das Beste aus diesem Lehrplan herauszuholen, solltest du folgendes mitbringen:
 
 - Grundkenntnisse in C#, Java oder Python  
 - Verständnis des Client-Server-Modells und von APIs  
 - (Optional) Vertrautheit mit Konzepten des maschinellen Lernens  
 
-## 🛠️ How to Use This Curriculum Effectively
+## 🛠️ So nutzt du diesen Lehrplan effektiv
 
-Jede Lektion in diesem Leitfaden beinhaltet:
+Jede Lektion in diesem Leitfaden enthält:
 
 1. Klare Erklärungen der MCP-Konzepte  
-2. Live-Code-Beispiele in mehreren Sprachen  
+2. Live-Code-Beispiele in verschiedenen Sprachen  
 3. Übungen zum Aufbau echter MCP-Anwendungen  
 4. Zusätzliche Ressourcen für fortgeschrittene Lernende  
 
-## 📜 License Information
+## 📜 Lizenzinformationen
 
-Dieser Inhalt ist unter der **MIT License** lizenziert. Für die Bedingungen siehe die [LICENSE](../../LICENSE).
+Dieser Inhalt steht unter der **MIT License**. Die Bedingungen findest du in der [LICENSE](../../LICENSE).  
 
-## 🤝 Contribution Guidelines
+## 🤝 Richtlinien für Beiträge
 
-Dieses Projekt freut sich über Beiträge und Vorschläge. Die meisten Beiträge erfordern, dass du einer Contributor License Agreement (CLA) zustimmst, die bestätigt, dass du das Recht hast und tatsächlich gewährst, uns die Rechte zur Nutzung deines Beitrags einzuräumen. Details findest du unter <https://cla.opensource.microsoft.com>.
+Dieses Projekt freut sich über Beiträge und Vorschläge. Die meisten Beiträge erfordern, dass du einer Contributor License Agreement (CLA) zustimmst, die bestätigt, dass du berechtigt bist und tatsächlich die Rechte hast, uns die Nutzung deines Beitrags zu erlauben. Details findest du unter <https://cla.opensource.microsoft.com>.  
 
-Wenn du eine Pull-Anfrage einreichst, prüft ein CLA-Bot automatisch, ob du eine CLA vorlegen musst, und kennzeichnet die PR entsprechend (z. B. Status-Check, Kommentar). Folge einfach den Anweisungen des Bots. Dies musst du nur einmal für alle Repositories mit unserer CLA tun.
+Wenn du einen Pull Request einreichst, prüft ein CLA-Bot automatisch, ob du eine CLA bereitstellen musst, und versieht den PR entsprechend (z. B. Statusprüfung, Kommentar). Folge einfach den Anweisungen des Bots. Dies musst du nur einmal für alle Repositories mit unserer CLA machen.  
 
-Dieses Projekt hat den [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) übernommen. Weitere Informationen findest du in den [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) oder kontaktiere [opencode@microsoft.com](mailto:opencode@microsoft.com) bei weiteren Fragen oder Anmerkungen.
+Dieses Projekt hat den [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) übernommen. Weitere Informationen findest du in den [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) oder kontaktiere [opencode@microsoft.com](mailto:opencode@microsoft.com) bei weiteren Fragen oder Anmerkungen.  
 
-## ™️ Trademark Notice
+## ™️ Markenzeichen-Hinweis
 
-Dieses Projekt kann Marken oder Logos von Projekten, Produkten oder Dienstleistungen enthalten. Die autorisierte Nutzung von Microsoft-Marken oder -Logos unterliegt den [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general). Die Verwendung von Microsoft-Marken oder -Logos in modifizierten Versionen dieses Projekts darf keine Verwirrung stiften oder eine Microsoft-Unterstützung suggerieren. Jede Nutzung von Marken oder Logos Dritter unterliegt den jeweiligen Richtlinien dieser Dritten.
+Dieses Projekt kann Marken oder Logos von Projekten, Produkten oder Dienstleistungen enthalten. Die autorisierte Verwendung von Microsoft-Marken oder -Logos unterliegt den [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) und muss diesen entsprechen. Die Nutzung von Microsoft-Marken oder -Logos in modifizierten Versionen dieses Projekts darf nicht zu Verwechslungen führen oder eine Microsoft-Unterstützung suggerieren. Die Verwendung von Marken oder Logos Dritter unterliegt den jeweiligen Richtlinien dieser Dritten.
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Verwendung dieser Übersetzung entstehen.
