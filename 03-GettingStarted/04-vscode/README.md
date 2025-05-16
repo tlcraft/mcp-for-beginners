@@ -14,6 +14,29 @@ By the end of this lesson, you will be able to:
 - Run capabilities like tools via GitHub Copilot.
 - Configure Visual Studio Code to find and manage your MCP Server.
 
+## Usage
+
+You can control your MCP server in two different ways:
+
+- User interface, you will see how this is done later in this chapter.
+- Terminal, it's possible to control things from the terminal using the `code` exectuable:
+
+  To add an MCP server to your user profile, use the --add-mcp command line option, and provide the JSON server configuration in the form {\"name\":\"server-name\",\"command\":...}.
+
+  ```
+  code --add-mcp "{\"name\":\"my-server\",\"command\": \"uvx\",\"args\": [\"mcp-server-fetch\"]}"
+  ```
+  <details>
+  <summary>Screenshots</summary>
+
+  ![Guided MCP server configuration in Visual Studio Code](../images/03-GettingStarted/chat-mode-agent.png)
+  ![Tool selection per agent session](../images/03-GettingStarted/agent-mode-select-tools.png)
+  ![Easily debug errors during MCP development](../images/03-GettingStarted/mcp-list-servers.png)
+  </details>
+
+Let's talk more about how we use the visual interface in the next sections.
+
+
 ## Approach 
 
 Here's how we need to approach this at high level:

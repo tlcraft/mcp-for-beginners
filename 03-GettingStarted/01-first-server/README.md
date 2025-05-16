@@ -108,32 +108,6 @@ Here's a screenshot of what it can look like:
 
 ![](/03-GettingStarted/01-first-server/assets/connected.png)
 
-### Manual Testing
-
-You can test MCP servers directly using HTTP requests:
-
-```bash
-# Example: Test server metadata
-curl http://localhost:3000/v1/metadata
-
-# Example: Execute a tool
-curl -X POST http://localhost:3000/v1/tools/execute \
-  -H "Content-Type: application/json" \
-  -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
-```
-
-### Unit Testing
-
-Create unit tests for your tools and resources to ensure they work as expected:
-
-```javascript
-// Example using Jest
-test('Calculator tool returns correct result', async () => {
-  const response = await calculatorTool.handler({ expression: '5+5' });
-  expect(response.result).toBe(10);
-});
-```
-
 ## Common Setup Issues and Solutions
 
 | Issue | Possible Solution |
