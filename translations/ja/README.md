@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "537bdb70a3ce1e8bd86c83c74bf98c77",
-  "translation_date": "2025-05-16T14:22:34+00:00",
+  "original_hash": "ceacbad0013938974fc0bf493e93f05b",
+  "translation_date": "2025-05-16T17:09:55+00:00",
   "source_file": "README.md",
   "language_code": "ja"
 }
@@ -24,38 +24,40 @@ CO_OP_TRANSLATOR_METADATA:
 
 これらのリソースを使い始めるには、以下の手順に従ってください：
 1. **リポジトリをフォークする**: クリック [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/network)
-2. **リポジトリをクローンする**: `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Microsoft Azure AI Foundry Discordに参加して、専門家や他の開発者と交流する**](https://discord.com/invite/ByRwuEEgH4)
+2. **リポジトリをクローンする**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
+3. [**Microsoft Azure AI Foundry Discord に参加して、専門家や他の開発者と交流しよう**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 多言語サポート
+### 🌐 多言語対応
 
-#### GitHub Actionによるサポート（自動化＆常に最新）
+### GitHub Action によるサポート（自動化＆常に最新）
+
+[French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Chinese (Simplified)](../zh/README.md)  [Japanese](./README.md) | [Korean](../ko/README.md) | [Polish](../pl/README.md)
 
 
-# 🚀 Model Context Protocol (MCP) 初心者向けカリキュラムの究極ガイド
+# 🚀 初心者向け Model Context Protocol (MCP) カリキュラム 完全ガイド
 
-## **C#, Java, JavaScript, Python, TypeScriptで学ぶMCPの実践コード例**
+## **C#, Java, JavaScript, Python, TypeScript の実践コード例で学ぶ MCP**
 
-## 🧠 Model Context Protocolカリキュラムの概要
+## 🧠 Model Context Protocol カリキュラムの概要
 
-**Model Context Protocol (MCP)** は、AIモデルとクライアントアプリケーション間のやり取りを標準化するために設計された最先端のフレームワークです。このオープンソースのカリキュラムは、C#, Java, JavaScript, TypeScript, Pythonといった主要なプログラミング言語での実践的なコード例や実際のユースケースを含む体系的な学習パスを提供します。
+**Model Context Protocol (MCP)** は、AIモデルとクライアントアプリケーション間のやり取りを標準化する最先端のフレームワークです。このオープンソースのカリキュラムは、C#, Java, JavaScript, TypeScript, Python といった人気のプログラミング言語での実用的なコード例や実際のユースケースを交えた体系的な学習パスを提供します。
 
-AI開発者、システムアーキテクト、ソフトウェアエンジニアのいずれであっても、このガイドはMCPの基本から実装戦略までをマスターするための包括的なリソースです。
+AI開発者、システムアーキテクト、ソフトウェアエンジニアを問わず、このガイドはMCPの基礎から実装方法までをマスターするための包括的なリソースです。
 
-## 🔗 MCP公式リソース
+## 🔗 公式MCPリソース
 
 - 📘 [MCPドキュメント](https://modelcontextprotocol.io/) – 詳細なチュートリアルとユーザーガイド  
 - 📜 [MCP仕様書](https://spec.modelcontextprotocol.io/) – プロトコルの構造と技術的リファレンス  
-- 🧑‍💻 [MCP GitHubリポジトリ](https://github.com/modelcontextprotocol) – オープンソースSDK、ツール、コードサンプル  
+- 🧑‍💻 [MCP GitHubリポジトリ](https://github.com/modelcontextprotocol) – オープンソースのSDK、ツール、コードサンプル  
 
-## 🧭 MCPカリキュラム全体構成
+## 🧭 MCPカリキュラムの全体構成
 
 ### 📌 [MCP入門](./00-Introduction/README.md)
 
-- Model Context Protocolとは何か？
+- Model Context Protocolとは何か
 - AIパイプラインにおける標準化の重要性
-- MCPの実用的なユースケースとメリット
+- MCPの実用例とメリット
 
 ### 🧩 [コアコンセプトの解説](./01-CoreConcepts/README.md)
 
@@ -65,36 +67,35 @@ AI開発者、システムアーキテクト、ソフトウェアエンジニア
 
 ### 🔐 [MCPのセキュリティ](./02-Security/readme.md)
 
-- MCPベースのシステムにおけるセキュリティ脅威の特定
-- セキュアな実装のための手法とベストプラクティス
+- MCPベースのシステムにおけるセキュリティリスクの特定
+- 実装を安全に保つための手法とベストプラクティス
 
-### 🚀 [MCPの始め方](./03-GettingStarted/README.md)
+### 🚀 [MCPのはじめ方](./03-GettingStarted/README.md)
 
-- 環境構築と設定
+- 環境設定と構築
 - 基本的なMCPサーバーとクライアントの作成
 - 既存アプリケーションへのMCP統合
 
-#### 🧮 MCP計算機サンプルプロジェクト：
+#### 🧮 MCP電卓サンプルプロジェクト：
 <details>
-  <summary><strong>言語別コード実装を確認する</strong></summary>
+  <summary><strong>言語別コード実装を見てみる</strong></summary>
 
   - [C# MCPサーバー例](./03-GettingStarted/samples/csharp/README.md)
-  - [Java MCP計算機](./03-GettingStarted/samples/java/calculator/README.md)
+  - [Java MCP電卓](./03-GettingStarted/samples/java/calculator/README.md)
   - [JavaScript MCPデモ](./03-GettingStarted/samples/javascript/README.md)
   - [Python MCPサーバー](../../03-GettingStarted/samples/python/mcp_calculator_server.py)
   - [TypeScript MCP例](./03-GettingStarted/samples/typescript/README.md)
 
 </details>
-
 ### 🛠️ [実践的な実装](./04-PracticalImplementation/README.md)
 
-- 各言語でのSDK利用
+- 複数言語でのSDKの利用
 - デバッグ、テスト、検証
 - 再利用可能なプロンプトテンプレートとワークフローの作成
 
-#### 💡 MCP高度な計算機プロジェクト：
+#### 💡 MCP高度計算プロジェクト：
 <details>
-  <summary><strong>高度なサンプルを確認する</strong></summary>
+  <summary><strong>高度なサンプルを探る</strong></summary>
 
   - [高度なC#サンプル](./04-PracticalImplementation/samples/csharp/README.md)
   - [Javaコンテナアプリ例](./04-PracticalImplementation/samples/java/containerapp/README.md)
@@ -108,63 +109,64 @@ AI開発者、システムアーキテクト、ソフトウェアエンジニア
 
 - マルチモーダルAIワークフローと拡張性
 - セキュアなスケーリング戦略
-- エンタープライズエコシステムにおけるMCP
-### 🌍 [Community Contributions](./06-CommunityContributions/README.md)
+- 企業エコシステムにおけるMCP
 
-- コードやドキュメントの貢献方法  
-- GitHubを使った共同作業  
-- コミュニティ主導の改善とフィードバック  
+### 🌍 [コミュニティへの貢献](./06-CommunityContributions/README.md)
 
-### 📈 [Insights from Early Adoption](./07-CaseStudies/README.md)
+- コードやドキュメントの貢献方法
+- GitHubを通じたコラボレーション
+- コミュニティ主導の改善とフィードバック
 
-- 実際の導入事例と成功ポイント  
-- MCPベースのソリューションの構築と展開  
-- トレンドと今後のロードマップ  
+### 📈 [早期導入からの洞察](./07-CaseStudies/README.md)
 
-### 📏 [Best Practices for MCP](./08-BestPractices/README.md)
+- 実際の導入事例と成功要因
+- MCPベースのソリューションの構築と展開
+- トレンドと今後のロードマップ
 
-- パフォーマンスチューニングと最適化  
-- 障害に強いMCPシステムの設計  
-- テストとレジリエンス戦略  
+### 📏 [MCPのベストプラクティス](./08-BestPractices/README.md)
 
-### 📊 [MCP Case Studies](./09-CaseStudy/Readme.md)
+- パフォーマンスチューニングと最適化
+- 障害に強いMCPシステムの設計
+- テストとレジリエンス戦略
 
-- MCPソリューションアーキテクチャの詳細解析  
-- 展開の設計図と統合のヒント  
-- 注釈付き図解とプロジェクトのウォークスルー  
+### 📊 [MCPケーススタディ](./09-CaseStudy/Readme.md)
 
-## 🎯 Prerequisites for Learning MCP
+- MCPソリューションアーキテクチャの詳細解析
+- 展開の設計図と統合のヒント
+- 注釈付き図解とプロジェクトのウォークスルー
 
-このカリキュラムを最大限に活用するには、以下の知識があると良いでしょう：
+## 🎯 MCP学習の前提条件
 
-- C#、Java、またはPythonの基本知識  
-- クライアントサーバーモデルやAPIの理解  
-- （任意）機械学習の基本概念の知識  
+このカリキュラムを最大限に活用するには、以下が望ましいです：
 
-## 🛠️ How to Use This Curriculum Effectively
+- C#、Java、またはPythonの基本知識
+- クライアントサーバーモデルとAPIの理解
+- （任意）機械学習の基本概念への親しみ
 
-このガイドの各レッスンには以下が含まれます：
+## 🛠️ このカリキュラムの効果的な使い方
 
-1. MCPの概念をわかりやすく解説  
-2. 複数言語によるライブコード例  
-3. 実際のMCPアプリケーションを作る演習  
-4. より深く学びたい方向けの追加リソース  
+各レッスンには以下が含まれます：
 
-## 📜 License Information
+1. MCPの概念のわかりやすい解説  
+2. 複数言語でのライブコード例  
+3. 実際のMCPアプリケーション構築の演習  
+4. 上級者向けの追加リソース  
 
-このコンテンツは**MIT License**のもとで提供されています。利用条件については[LICENSE](../../LICENSE)をご覧ください。
+## 📜 ライセンス情報
 
-## 🤝 Contribution Guidelines
+このコンテンツは**MITライセンス**のもとで提供されています。利用規約については[LICENSE](../../LICENSE)をご覧ください。
 
-このプロジェクトは貢献や提案を歓迎します。ほとんどの貢献には、あなたが権利を持ち、実際に私たちに使用権を与えることを宣言するContributor License Agreement（CLA）への同意が必要です。詳細は<https://cla.opensource.microsoft.com>をご覧ください。
+## 🤝 貢献ガイドライン
 
-プルリクエストを送ると、CLAボットが自動的にCLAの提出が必要か判断し、PRにステータスチェックやコメントなどの形で表示します。ボットの指示に従うだけでOKです。この手続きはCLAを使用しているすべてのリポジトリで一度だけ行えば十分です。
+このプロジェクトでは貢献や提案を歓迎しています。ほとんどの貢献には、貢献者が権利を持ち、実際に当該権利を付与することを宣言するContributor License Agreement（CLA）への同意が必要です。詳細は<https://cla.opensource.microsoft.com>をご覧ください。
 
-このプロジェクトは[Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)を採用しています。詳しくは[Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)をご覧いただくか、ご質問があれば[opencode@microsoft.com](mailto:opencode@microsoft.com)までご連絡ください。
+プルリクエストを送信すると、CLAボットが自動的にCLAの必要性を判定し、PRに適切な表示（ステータスチェックやコメントなど）を行います。ボットの指示に従うだけで手続きは完了します。この操作はCLAを利用する全リポジトリで一度だけ必要です。
 
-## ™️ Trademark Notice
+このプロジェクトは[Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)を採用しています。詳細は[Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)をご覧いただくか、質問やコメントは[opencode@microsoft.com](mailto:opencode@microsoft.com)までお問い合わせください。
 
-このプロジェクトにはプロジェクト名、製品名、サービス名の商標やロゴが含まれる場合があります。Microsoftの商標やロゴの正当な使用は、[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)に従う必要があります。Microsoftの商標やロゴを改変したバージョンで使用する場合は、混乱を招いたりMicrosoftのスポンサーシップを示唆したりしないようにしてください。第三者の商標やロゴの使用は、それぞれの第三者のポリシーに従います。
+## ™️ 商標について
 
-**免責事項**:  
-本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。原文の言語によるオリジナル文書が権威ある情報源とみなされます。重要な情報については、専門の人間翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても責任を負いかねます。
+このプロジェクトにはプロジェクト、製品、サービスの商標やロゴが含まれている場合があります。Microsoftの商標やロゴの正当な使用は、[Microsoftの商標・ブランドガイドライン](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)に従う必要があります。改変版でのMicrosoft商標やロゴの使用は混乱を招かず、Microsoftの後援を示唆してはなりません。第三者の商標やロゴの使用は、該当する第三者のポリシーに従います。
+
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。原文の母国語版が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や解釈の相違について、当方は一切の責任を負いかねます。
