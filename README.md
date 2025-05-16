@@ -21,7 +21,9 @@ Follow these steps to get started using these resource :
 
 ### 🌐 Multi-Language Support
 
-#### Supported via GitHub Action (Automated & Always Up-to-Date)
+### Supported via GitHub Action (Automated & Always Up-to-Date)
+
+[French](./translations/fr/README.md) | [Spanish](./translations/es/README.md) | [German](./translations/de/README.md) | [Chinese (Simplified)](./translations/zh/README.md)  [Japanese](./translations/ja/README.md) | [Korean](./translations/ko/README.md) | [Polish](./translations/pl/README.md)
 
 
 # 🚀 Ultimate Guide to the Model Context Protocol (MCP) Curriculum for Beginners
