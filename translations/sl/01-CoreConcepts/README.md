@@ -1,117 +1,117 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "056918462dca9b8f75901709fb8f470c",
-  "translation_date": "2025-05-17T07:05:51+00:00",
+  "original_hash": "788eb17750e970a0bc3b5e7f2e99975b",
+  "translation_date": "2025-05-18T15:39:24+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "sl"
 }
 -->
-# 📖 MCP بنیادی تصورات: AI انضمام کے لیے ماڈل کانٹیکسٹ پروٹوکول میں مہارت حاصل کرنا
+# 📖 MCP Core Concepts: Mastering the Model Context Protocol for AI Integration
 
-ماڈل کانٹیکسٹ پروٹوکول (MCP) ایک طاقتور، معیاری فریم ورک ہے جو بڑے زبان کے ماڈلز (LLMs) اور بیرونی ٹولز، ایپلیکیشنز، اور ڈیٹا سورسز کے درمیان مواصلات کو بہتر بناتا ہے۔ یہ SEO- بہتر شدہ گائیڈ آپ کو MCP کے بنیادی تصورات کے ذریعے چلائے گی، اس بات کو یقینی بناتے ہوئے کہ آپ اس کے کلائنٹ-سرور فن تعمیر، ضروری اجزاء، مواصلاتی میکانکس، اور بہترین عمل درآمد کے طریقوں کو سمجھتے ہیں۔
+Model Context Protocol (MCP) je močan, standardiziran okvir, ki optimizira komunikacijo med velikimi jezikovnimi modeli (LLM) in zunanjimi orodji, aplikacijami ter podatkovnimi viri. Ta SEO-optimiziran vodič te bo popeljal skozi osnovne koncepte MCP, da boš razumel njegovo klient-strežniško arhitekturo, ključne komponente, mehanizme komunikacije in najboljše prakse implementacije.
 
-## جائزہ
+## Pregled
 
-یہ سبق ماڈل کانٹیکسٹ پروٹوکول (MCP) ماحولیاتی نظام کو تشکیل دینے والے بنیادی فن تعمیر اور اجزاء کی چھان بین کرتا ہے۔ آپ کلائنٹ-سرور فن تعمیر، کلیدی اجزاء، اور مواصلاتی طریقہ کار کے بارے میں سیکھیں گے جو MCP تعاملات کو طاقت دیتے ہیں۔
+Ta lekcija raziskuje osnovno arhitekturo in komponente, ki sestavljajo MCP ekosistem. Spoznal boš klient-strežniško arhitekturo, ključne komponente in komunikacijske mehanizme, ki omogočajo MCP interakcije.
 
-## 👩‍🎓 کلیدی سیکھنے کے مقاصد
+## 👩‍🎓 Ključni cilji učenja
 
-اس سبق کے اختتام تک، آپ:
+Na koncu te lekcije boš:
 
-- MCP کلائنٹ-سرور فن تعمیر کو سمجھیں گے۔
-- میزبانوں، کلائنٹس، اور سرورز کے کردار اور ذمہ داریوں کی شناخت کریں۔
-- ان بنیادی خصوصیات کا تجزیہ کریں جو MCP کو ایک لچکدار انضمام کی پرت بناتی ہیں۔
-- MCP ماحولیاتی نظام کے اندر معلومات کے بہاؤ کو سیکھیں۔
-- .NET، جاوا، پائتھون، اور جاوا اسکرپٹ میں کوڈ کی مثالوں کے ذریعے عملی بصیرت حاصل کریں۔
+- Razumel MCP klient-strežniško arhitekturo.
+- Prepoznal vloge in odgovornosti Hostov, Klientov in Strežnikov.
+- Analiziral osnovne lastnosti, ki MCP naredijo prilagodljivo integracijsko plast.
+- Naučil se, kako poteka pretok informacij znotraj MCP ekosistema.
+- Pridobil praktične vpoglede preko primerov kode v .NET, Java, Python in JavaScript.
 
-## 🔎 MCP فن تعمیر: ایک گہری نظر
+## 🔎 MCP arhitektura: Podrobnejši pogled
 
-MCP ماحولیاتی نظام ایک کلائنٹ-سرور ماڈل پر بنایا گیا ہے۔ یہ ماڈیولر ڈھانچہ AI ایپلیکیشنز کو ٹولز، ڈیٹا بیس، APIs، اور سیاق و سباق کے وسائل کے ساتھ مؤثر طریقے سے تعامل کرنے کی اجازت دیتا ہے۔ آئیے اس فن تعمیر کو اس کے بنیادی اجزاء میں تقسیم کریں۔
+MCP ekosistem temelji na klient-strežniškem modelu. Ta modularna struktura omogoča AI aplikacijam učinkovito interakcijo z orodji, podatkovnimi bazami, API-ji in kontekstualnimi viri. Razdelimo to arhitekturo na njene osnovne komponente.
 
-### 1. میزبان
+### 1. Hosti
 
-ماڈل کانٹیکسٹ پروٹوکول (MCP) میں، میزبان پروٹوکول کے ساتھ تعامل کرنے کے لیے صارفین کے لیے بنیادی انٹرفیس کے طور پر اہم کردار ادا کرتے ہیں۔ میزبان ایپلیکیشنز یا ماحول ہیں جو ڈیٹا، ٹولز، اور پرامپٹس تک رسائی کے لیے MCP سرورز کے ساتھ کنکشن شروع کرتے ہیں۔ میزبان کی مثالوں میں مربوط ترقیاتی ماحول (IDEs) جیسے Visual Studio Code، AI ٹولز جیسے Claude Desktop، یا مخصوص کاموں کے لیے بنائے گئے حسب ضرورت ایجنٹ شامل ہیں۔
+V Model Context Protocolu (MCP) imajo Hosti ključno vlogo kot primarni vmesnik, preko katerega uporabniki komunicirajo s protokolom. Hosti so aplikacije ali okolja, ki vzpostavijo povezave s MCP strežniki za dostop do podatkov, orodij in pozivov. Primeri Hostov so integrirana razvojna okolja (IDE), kot je Visual Studio Code, AI orodja kot Claude Desktop ali po meri izdelani agenti za specifične naloge.
 
-**میزبان** LLM ایپلیکیشنز ہیں جو کنکشن شروع کرتے ہیں۔ وہ:
+**Hosti** so LLM aplikacije, ki vzpostavljajo povezave. Oni:
 
-- جوابات پیدا کرنے کے لیے AI ماڈلز کے ساتھ عمل کرتے ہیں یا تعامل کرتے ہیں۔
-- MCP سرورز کے ساتھ کنکشن شروع کریں۔
-- گفتگو کے بہاؤ اور صارف کے انٹرفیس کا نظم کریں۔
-- اجازت اور سیکیورٹی کی پابندیوں کو کنٹرول کریں۔
-- ڈیٹا شیئرنگ اور ٹول کے نفاذ کے لیے صارف کی رضامندی کو ہینڈل کریں۔
+- Izvajajo ali sodelujejo z AI modeli za generiranje odgovorov.
+- Začnejo povezave s MCP strežniki.
+- Upravljajo potek pogovora in uporabniški vmesnik.
+- Nadzorujejo dovoljenja in varnostne omejitve.
+- Urejajo uporabniški pristanek za deljenje podatkov in izvajanje orodij.
 
-### 2. کلائنٹس
+### 2. Klienti
 
-کلائنٹس ضروری اجزاء ہیں جو میزبانوں اور MCP سرورز کے درمیان تعامل کو آسان بناتے ہیں۔ کلائنٹس ثالث کے طور پر کام کرتے ہیں، میزبانوں کو MCP سرورز کی طرف سے فراہم کردہ فعالیتوں تک رسائی اور استعمال کرنے کے قابل بناتے ہیں۔ وہ MCP فن تعمیر کے اندر ہموار مواصلات اور موثر ڈیٹا ایکسچینج کو یقینی بنانے میں اہم کردار ادا کرتے ہیں۔
+Klienti so ključne komponente, ki olajšajo interakcijo med Hosti in MCP strežniki. Delujejo kot posredniki, ki omogočajo Hostom dostop in uporabo funkcionalnosti MCP strežnikov. Imajo pomembno vlogo pri zagotavljanju gladke komunikacije in učinkovite izmenjave podatkov znotraj MCP arhitekture.
 
-**کلائنٹس** میزبان ایپلیکیشن کے اندر کنیکٹرز ہیں۔ وہ:
+**Klienti** so konektorji znotraj host aplikacije. Oni:
 
-- سرورز کو پرامپٹس/ہدایات کے ساتھ درخواستیں بھیجیں۔
-- سرورز کے ساتھ صلاحیتوں پر بات چیت کریں۔
-- ماڈلز سے ٹول کے نفاذ کی درخواستوں کا نظم کریں۔
-- صارفین کو جوابات پر عمل کریں اور ڈسپلے کریں۔
+- Pošiljajo zahteve strežnikom s pozivi/instrukcijami.
+- Pogajajo zmogljivosti s strežniki.
+- Upravljajo zahteve modelov za izvajanje orodij.
+- Procesirajo in prikazujejo odgovore uporabnikom.
 
-### 3. سرورز
+### 3. Strežniki
 
-سرورز MCP کلائنٹس سے درخواستوں کو سنبھالنے اور مناسب جوابات فراہم کرنے کے ذمہ دار ہیں۔ وہ ڈیٹا کی بازیافت، ٹول کے نفاذ، اور پرامپٹ جنریشن جیسے مختلف آپریشنز کا انتظام کرتے ہیں۔ سرورز اس بات کو یقینی بناتے ہیں کہ کلائنٹس اور میزبانوں کے درمیان مواصلت موثر اور قابل اعتماد ہے، تعامل کے عمل کی سالمیت کو برقرار رکھتے ہوئے۔
+Strežniki so odgovorni za obdelavo zahtev MCP klientov in zagotavljanje ustreznih odgovorov. Upravljajo različne operacije, kot so pridobivanje podatkov, izvajanje orodij in generiranje pozivov. Strežniki zagotavljajo učinkovito in zanesljivo komunikacijo med klienti in Hosti ter ohranjajo integriteto procesa interakcije.
 
-**سرورز** خدمات ہیں جو سیاق و سباق اور صلاحیتیں فراہم کرتے ہیں۔ وہ:
+**Strežniki** so storitve, ki zagotavljajo kontekst in zmogljivosti. Oni:
 
-- دستیاب خصوصیات (وسائل، پرامپٹس، ٹولز) کو رجسٹر کریں۔
-- کلائنٹ سے ٹول کالز وصول کریں اور ان پر عمل درآمد کریں۔
-- ماڈل کے جوابات کو بڑھانے کے لیے سیاق و سباق کی معلومات فراہم کریں۔
-- آؤٹ پٹس کو کلائنٹ کے پاس واپس کریں
-- جب ضرورت ہو تو تعاملات کے دوران ریاست کو برقرار رکھیں
+- Registrirajo razpoložljive funkcije (viri, pozivi, orodja)
+- Sprejemajo in izvajajo klice orodij od klienta
+- Zagotavljajo kontekstualne informacije za izboljšanje odgovorov modela
+- Vračajo rezultate nazaj klientu
+- Po potrebi ohranjajo stanje med interakcijami
 
-کوئی بھی ماڈل کی صلاحیتوں کو خصوصی فعالیت کے ساتھ بڑھانے کے لیے سرورز تیار کر سکتا ہے۔
+Strežnike lahko razvije kdorkoli, da razširi zmogljivosti modela s specializiranimi funkcionalnostmi.
 
-### 4. سرور کی خصوصیات
+### 4. Funkcije strežnika
 
-ماڈل کانٹیکسٹ پروٹوکول (MCP) میں سرورز بنیادی تعمیراتی بلاکس فراہم کرتے ہیں جو کلائنٹس، میزبانوں، اور زبان کے ماڈلز کے درمیان بھرپور تعاملات کو فعال کرتے ہیں۔ یہ خصوصیات ساختی سیاق و سباق، ٹولز، اور پرامپٹس کی پیشکش کرکے MCP کی صلاحیتوں کو بڑھانے کے لیے ڈیزائن کی گئی ہیں۔
+Strežniki v Model Context Protocolu (MCP) nudijo osnovne gradnike, ki omogočajo bogate interakcije med klienti, hosti in jezikovnimi modeli. Te funkcije so zasnovane za izboljšanje zmogljivosti MCP z zagotavljanjem strukturiranega konteksta, orodij in pozivov.
 
-MCP سرورز درج ذیل میں سے کوئی بھی خصوصیات پیش کر سکتے ہیں:
+MCP strežniki lahko ponudijo katerokoli od naslednjih funkcij:
 
-#### 📑 وسائل
+#### 📑 Viri
 
-ماڈل کانٹیکسٹ پروٹوکول (MCP) میں وسائل مختلف قسم کے سیاق و سباق اور ڈیٹا کو گھیرے ہوئے ہیں جنہیں صارفین یا AI ماڈلز استعمال کر سکتے ہیں۔ ان میں شامل ہیں:
+Viri v Model Context Protocolu (MCP) zajemajo različne vrste konteksta in podatkov, ki jih lahko uporabniki ali AI modeli uporabijo. Ti vključujejo:
 
-- **سیاق و سباق کے ڈیٹا**: معلومات اور سیاق و سباق جو صارفین یا AI ماڈلز فیصلہ سازی اور کام کے نفاذ کے لیے فائدہ اٹھا سکتے ہیں۔
-- **علمی اڈے اور دستاویز کے ذخیرے**: ساختہ اور غیر ساختہ ڈیٹا کے مجموعے، جیسے مضامین، کتابچے، اور تحقیقی مقالے، جو قیمتی بصیرت اور معلومات فراہم کرتے ہیں۔
-- **مقامی فائلیں اور ڈیٹا بیس**: آلات پر یا ڈیٹا بیس کے اندر مقامی طور پر ذخیرہ کردہ ڈیٹا، پروسیسنگ اور تجزیہ کے لیے قابل رسائی۔
-- **APIs اور ویب سروسز**: بیرونی انٹرفیس اور خدمات جو اضافی ڈیٹا اور فعالیت پیش کرتی ہیں، مختلف آن لائن وسائل اور ٹولز کے ساتھ انضمام کو فعال کرتی ہیں۔
+- **Kontekstualni podatki**: Informacije in kontekst, ki jih uporabniki ali AI modeli lahko izkoristijo za odločanje in izvajanje nalog.
+- **Znanstvene baze in zbirke dokumentov**: Zbirke strukturiranih in nestrukturiranih podatkov, kot so članki, priročniki in raziskovalni prispevki, ki nudijo dragocene vpoglede in informacije.
+- **Lokalne datoteke in baze podatkov**: Podatki, shranjeni lokalno na napravah ali znotraj baz podatkov, dostopni za obdelavo in analizo.
+- **API-ji in spletne storitve**: Zunanji vmesniki in storitve, ki nudijo dodatne podatke in funkcionalnosti ter omogočajo integracijo z različnimi spletnimi viri in orodji.
 
-وسائل کی ایک مثال ایک ڈیٹا بیس اسکیمہ یا ایک فائل ہو سکتی ہے جس تک اس طرح رسائی حاصل کی جا سکتی ہے:
+Primer vira je lahko shema baze podatkov ali datoteka, ki ji lahko dostopaš takole:
 
 ```text
 file://log.txt
 database://schema
 ```
 
-### 🤖 پرامپٹس
+### 🤖 Pozivi
 
-ماڈل کانٹیکسٹ پروٹوکول (MCP) میں پرامپٹس مختلف پہلے سے طے شدہ سانچوں اور تعامل کے نمونوں کو شامل کرتے ہیں جو صارف کے ورک فلو کو ہموار کرنے اور مواصلات کو بڑھانے کے لیے ڈیزائن کیے گئے ہیں۔ ان میں شامل ہیں:
+Pozivi v Model Context Protocolu (MCP) vključujejo različne vnaprej določene predloge in vzorce interakcij, zasnovane za poenostavitev uporabniških potekov in izboljšanje komunikacije. Ti vključujejo:
 
-- **ٹیمپلیٹ شدہ پیغامات اور ورک فلو**: پہلے سے ساختہ پیغامات اور عمل جو صارفین کو مخصوص کاموں اور تعاملات کے ذریعے رہنمائی کرتے ہیں۔
-- **پہلے سے طے شدہ تعامل کے نمونے**: اعمال اور جوابات کے معیاری سلسلے جو مستقل اور موثر مواصلات کو آسان بناتے ہیں۔
-- **خصوصی گفتگو کے سانچے**: مخصوص قسم کی گفتگو کے لیے موزوں حسب ضرورت سانچے، متعلقہ اور سیاق و سباق کے لحاظ سے مناسب تعاملات کو یقینی بناتے ہیں۔
+- **Predstrukturirana sporočila in poteki dela**: Vnaprej oblikovana sporočila in procesi, ki vodijo uporabnike skozi specifične naloge in interakcije.
+- **Vnaprej določeni vzorci interakcij**: Standardizirani zaporedji dejanj in odgovorov, ki omogočajo dosledno in učinkovito komunikacijo.
+- **Specializirane predloge pogovorov**: Prilagodljive predloge, namenjene določenim vrstam pogovorov, ki zagotavljajo relevantne in kontekstualno primerne interakcije.
 
-ایک پرامپٹ ٹیمپلیٹ اس طرح نظر آ سکتا ہے:
+Predloga poziva je lahko videti takole:
 
 ```markdown
 Generate a product slogan based on the following {{product}} with the following {{keywords}}
 ```
 
-#### ⛏️ اوزار
+#### ⛏️ Orodja
 
-ماڈل کانٹیکسٹ پروٹوکول (MCP) میں ٹولز وہ افعال ہیں جنہیں AI ماڈل مخصوص کام انجام دینے کے لیے انجام دے سکتا ہے۔ یہ ٹولز AI ماڈل کی صلاحیتوں کو بڑھانے کے لیے ڈیزائن کیے گئے ہیں، جس سے ساختہ اور قابل اعتماد آپریشنز فراہم کیے جا سکتے ہیں۔ کلیدی پہلوؤں میں شامل ہیں:
+Orodja v Model Context Protocolu (MCP) so funkcije, ki jih lahko AI model izvede za opravljanje specifičnih nalog. Ta orodja so zasnovana za izboljšanje zmogljivosti AI modela z zagotavljanjem strukturiranih in zanesljivih operacij. Ključni vidiki vključujejo:
 
-- **AI ماڈل کو انجام دینے کے لیے افعال**: ٹولز قابل عمل افعال ہیں جنہیں AI ماڈل مختلف کام انجام دینے کے لیے طلب کر سکتا ہے۔
-- **منفرد نام اور تفصیل**: ہر ٹول کا ایک مخصوص نام اور ایک تفصیلی وضاحت ہوتی ہے جو اس کے مقصد اور فعالیت کی وضاحت کرتی ہے۔
-- **پیرامیٹرز اور آؤٹ پٹس**: ٹولز مخصوص پیرامیٹرز کو قبول کرتے ہیں اور ساختہ آؤٹ پٹس واپس کرتے ہیں، مستقل اور پیش گوئی کے نتائج کو یقینی بناتے ہیں۔
-- **ڈسکریٹ فنکشنز**: ٹولز مجرد افعال انجام دیتے ہیں جیسے ویب سرچز، حسابات، اور ڈیٹا بیس کے سوالات۔
+- **Funkcije, ki jih AI model lahko izvede**: Orodja so izvršljive funkcije, ki jih AI model lahko pokliče za izvedbo različnih nalog.
+- **Edinstveno ime in opis**: Vsako orodje ima edinstveno ime in podroben opis, ki pojasnjuje njegov namen in funkcionalnost.
+- **Parametri in rezultati**: Orodja sprejemajo specifične parametre in vračajo strukturirane rezultate, kar zagotavlja dosledne in predvidljive izide.
+- **Diskretne funkcije**: Orodja opravljajo posamezne funkcije, kot so spletna iskanja, izračuni in poizvedbe v bazah podatkov.
 
-ایک مثال کا آلہ اس طرح نظر آ سکتا ہے:
+Primer orodja je lahko videti takole:
 
 ```typescript
 server.tool(
@@ -125,77 +125,368 @@ server.tool(
 )
 ```
 
-## کلائنٹ کی خصوصیات
+## Funkcije klienta
 
-ماڈل کانٹیکسٹ پروٹوکول (MCP) میں، کلائنٹس پروٹوکول کے اندر مجموعی فعالیت اور تعامل کو بڑھاتے ہوئے سرورز کو کئی کلیدی خصوصیات پیش کرتے ہیں۔ قابل ذکر خصوصیات میں سے ایک سیمپلنگ ہے۔
+V Model Context Protocolu (MCP) klienti strežnikom ponujajo več ključnih funkcij, ki izboljšujejo celotno funkcionalnost in interakcijo znotraj protokola. Ena izmed pomembnih funkcij je Sampling.
 
-### 👉 سیمپلنگ
+### 👉 Sampling
 
-- **سرور سے شروع ہونے والے ایجنٹک رویے**: کلائنٹس سرورز کو مخصوص اعمال یا طرز عمل کو خود مختار طور پر شروع کرنے کے قابل بناتے ہیں، نظام کی متحرک صلاحیتوں کو بڑھاتے ہیں۔
-- **ریکرسیو LLM تعاملات**: یہ خصوصیت بڑے زبان کے ماڈلز (LLMs) کے ساتھ ریکرسیو تعاملات کی اجازت دیتی ہے، جو کاموں کی زیادہ پیچیدہ اور تکراری پروسیسنگ کو قابل بناتی ہے۔
-- **اضافی ماڈل تکمیل کی درخواست کرنا**: سرورز ماڈل سے اضافی تکمیل کی درخواست کر سکتے ہیں، اس بات کو یقینی بناتے ہوئے کہ جوابات مکمل اور سیاق و سباق کے لحاظ سے متعلقہ ہیں۔
+- **Strežniško iniciirane agentne obnašanja**: Klienti omogočajo strežnikom, da samostojno sprožijo določena dejanja ali vedenja, kar povečuje dinamične zmogljivosti sistema.
+- **Rekurzivne interakcije z LLM**: Ta funkcija omogoča rekurzivne interakcije z velikimi jezikovnimi modeli (LLM), kar omogoča kompleksnejšo in iterativno obdelavo nalog.
+- **Zahtevanje dodatnih zaključkov modela**: Strežniki lahko zahtevajo dodatne zaključke modela, s čimer zagotavljajo celovite in kontekstualno ustrezne odgovore.
 
-## MCP میں معلومات کا بہاؤ
+## Pretok informacij v MCP
 
-ماڈل کانٹیکسٹ پروٹوکول (MCP) میزبانوں، کلائنٹس، سرورز، اور ماڈلز کے درمیان معلومات کے بہاؤ کی وضاحت کرتا ہے۔ اس بہاؤ کو سمجھنا اس بات کو واضح کرنے میں مدد کرتا ہے کہ کس طرح صارف کی درخواستیں پروسیس کی جاتی ہیں اور بیرونی ٹولز اور ڈیٹا کو ماڈل کے جوابات میں کیسے ضم کیا جاتا ہے۔
+Model Context Protocol (MCP) definira strukturiran pretok informacij med hosti, klienti, strežniki in modeli. Razumevanje tega pretoka pomaga razjasniti, kako se obdelujejo uporabniške zahteve in kako se zunanji podatki ter orodja integrirajo v odgovore modela.
 
-- **میزبان کنکشن شروع کرتا ہے**  
-  میزبان ایپلیکیشن (جیسے IDE یا چیٹ انٹرفیس) STDIO، WebSocket، یا کسی اور معاون ٹرانسپورٹ کے ذریعے عام طور پر MCP سرور سے کنکشن قائم کرتی ہے۔
+- **Host vzpostavi povezavo**  
+  Host aplikacija (kot IDE ali klepetalni vmesnik) vzpostavi povezavo s MCP strežnikom, običajno preko STDIO, WebSocket ali drugega podprtega transporta.
 
-- **صلاحیت کا گفت و شنید**  
-  کلائنٹ (میزبان میں سرایت شدہ) اور سرور ان کی تعاون یافتہ خصوصیات، ٹولز، وسائل، اور پروٹوکول ورژن کے بارے میں معلومات کا تبادلہ کرتے ہیں۔ یہ یقینی بناتا ہے کہ دونوں فریق اس سیشن کے لیے دستیاب صلاحیتوں کو سمجھتے ہیں۔
+- **Pogajanje zmogljivosti**  
+  Klient (vgrajen v host) in strežnik si izmenjata informacije o podprtih funkcijah, orodjih, virih in verzijah protokola. To zagotavlja, da obe strani razumeta razpoložljive zmogljivosti za sejo.
 
-- **صارف کی درخواست**  
-  صارف میزبان کے ساتھ تعامل کرتا ہے (مثلاً، ایک پرامپٹ یا کمانڈ درج کرتا ہے)۔ میزبان اس ان پٹ کو جمع کرتا ہے اور اسے پروسیسنگ کے لیے کلائنٹ کے حوالے کرتا ہے۔
+- **Uporabniška zahteva**  
+  Uporabnik komunicira z hostom (npr. vnese poziv ali ukaz). Host zbere ta vhod in ga posreduje klientu v obdelavo.
 
-- **وسائل یا ٹول کا استعمال**  
-  - کلائنٹ ماڈل کی تفہیم کو تقویت دینے کے لیے سرور سے اضافی سیاق و سباق یا وسائل (جیسے فائلیں، ڈیٹا بیس کے اندراجات، یا علمی اساس کے مضامین) کی درخواست کر سکتا ہے۔
-  - اگر ماڈل اس بات کا تعین کرتا ہے کہ کسی ٹول کی ضرورت ہے (مثال کے طور پر، ڈیٹا لانے، حساب کرنے، یا API کو کال کرنے کے لیے)، کلائنٹ ٹول کے نام اور پیرامیٹرز کی وضاحت کرتے ہوئے سرور کو ٹول کال کی درخواست بھیجتا ہے۔
+- **Uporaba vira ali orodja**  
+  - Klient lahko zahteva dodatni kontekst ali vire od strežnika (kot so datoteke, vnosi v bazi ali članki iz znanstvene baze), da obogati razumevanje modela.
+  - Če model ugotovi, da je potrebno orodje (npr. za pridobitev podatkov, izračun ali klic API-ja), klient pošlje zahtevo za klic orodja strežniku, s podanim imenom orodja in parametri.
 
-- **سرور کا نفاذ**  
-  سرور وسائل یا ٹول کی درخواست وصول کرتا ہے، ضروری آپریشنز کو انجام دیتا ہے (جیسے کہ فنکشن چلانا، ڈیٹا بیس سے استفسار کرنا، یا فائل کو بازیافت کرنا)، اور کلائنٹ کو ایک ساختہ فارمیٹ میں نتائج واپس کرتا ہے۔
+- **Izvajanje strežnika**  
+  Strežnik prejme zahtevo za vir ali orodje, izvede potrebne operacije (kot so zagon funkcije, poizvedba v bazi ali pridobitev datoteke) in vrne rezultate klientu v strukturirani obliki.
 
-- **جواب کی نسل**  
-  کلائنٹ ماڈل تعامل میں سرور کے جوابات (وسائل کے ڈیٹا، ٹول کے آؤٹ پٹس، وغیرہ) کو مربوط کرتا ہے۔ ماڈل ایک جامع اور سیاق و سباق کے لحاظ سے متعلقہ جواب پیدا کرنے کے لیے اس معلومات کا استعمال کرتا ہے۔
+- **Generiranje odgovora**  
+  Klient integrira odgovore strežnika (podatki vira, izhodi orodij itd.) v tekočo interakcijo z modelom. Model uporabi te informacije za ustvarjanje celovitega in kontekstualno ustreznega odgovora.
 
-- **نتیجہ کی پیشکش**  
-  میزبان کلائنٹ سے حتمی آؤٹ پٹ وصول کرتا ہے اور اسے صارف کے سامنے پیش کرتا ہے، جس میں اکثر ماڈل کے تیار کردہ متن اور ٹول کے نفاذ یا وسائل کی تلاش کے نتائج شامل ہوتے ہیں۔
+- **Predstavitev rezultata**  
+  Host prejme končni izhod od klienta in ga prikaže uporabniku, pogosto vključujoč tako besedilo, ki ga je ustvaril model, kot tudi rezultate izvajanja orodij ali iskanja po virih.
 
-یہ بہاؤ MCP کو جدید، انٹرایکٹو، اور سیاق و سباق سے آگاہ AI ایپلیکیشنز کی حمایت کرنے کے قابل بناتا ہے، ماڈلز کو بیرونی ٹولز اور ڈیٹا سورسز سے بغیر کسی رکاوٹ کے جوڑتا ہے۔
+Ta potek omogoča MCP podporo naprednim, interaktivnim in kontekstualno zavednim AI aplikacijam z nemoteno povezavo modelov z zunanjimi orodji in podatkovnimi viri.
 
-## پروٹوکول کی تفصیلات
+## Podrobnosti protokola
 
-MCP (ماڈل کانٹیکسٹ پروٹوکول) [JSON-RPC 2.0](https://www.jsonrpc.org/) پر بنایا گیا ہے، جو میزبانوں، کلائنٹس، اور سرورز کے درمیان مواصلات کے لیے ایک معیاری، زبان سے آزاد پیغام کی شکل فراہم کرتا ہے۔ یہ بنیاد متنوع پلیٹ فارمز اور پروگرامنگ زبانوں میں قابل اعتماد، ساختہ، اور توسیع پذیر تعاملات کو فعال کرتی ہے۔
+MCP (Model Context Protocol) temelji na [JSON-RPC 2.0](https://www.jsonrpc.org/), ki zagotavlja standardiziran, jezikovno neodvisen format sporočil za komunikacijo med hosti, klienti in strežniki. Ta osnova omogoča zanesljive, strukturirane in razširljive interakcije na različnih platformah in programskih jezikih.
 
-### کلیدی پروٹوکول کی خصوصیات
+### Ključne funkcije protokola
 
-MCP ٹول کال، وسائل تک رسائی، اور پرامپٹ مینجمنٹ کے لیے اضافی کنونشنز کے ساتھ JSON-RPC 2.0 کو بڑھاتا ہے۔ یہ متعدد ٹرانسپورٹ لیئرز (STDIO، WebSocket، SSE) کی حمایت کرتا ہے اور اجزاء کے درمیان محفوظ، توسیع پذیر، اور زبان سے آزاد مواصلات کو فعال کرتا ہے۔
+MCP razširja JSON-RPC 2.0 z dodatnimi konvencijami za klic orodij, dostop do virov in upravljanje pozivov. Podpira več transportnih slojev (STDIO, WebSocket, SSE) ter omogoča varno, razširljivo in jezikovno neodvisno komunikacijo med komponentami.
 
-#### 🧢 بنیادی پروٹوکول
+#### 🧢 Osnovni protokol
 
-- **JSON-RPC پیغام کی شکل**: تمام درخواستیں اور جوابات JSON-RPC 2.0 کی وضاحتیں استعمال کرتے ہیں، جو طریقہ کار کے لیے مستقل ڈھانچہ، پیرامیٹرز، نتائج، اور خرابیوں کو سنبھالنے کو یقینی بناتے ہیں۔
-- **حالت کے ساتھ کنکشنز**: MCP سیشنز متعدد درخواستوں کے دوران حالت کو برقرار رکھتے ہیں، جاری گفتگو، سیاق و سباق کے جمع ہونے، اور وسائل کے انتظام کی حمایت کرتے ہیں۔
-- **صلاحیت کا گفت و شنید**: کنکشن سیٹ اپ کے دوران، کلائنٹس اور سرورز تعاون یافتہ خصوصیات، پروٹوکول ورژنز، دستیاب ٹولز، اور وسائل کے بارے میں معلومات کا تبادلہ کرتے ہیں۔ یہ یقینی بناتا ہے کہ دونوں فریق ایک دوسرے کی صلاحیتوں کو سمجھتے ہیں اور اس کے مطابق ڈھال سکتے ہیں۔
+- **JSON-RPC format sporočil**: Vse zahteve in odgovori uporabljajo specifikacijo JSON-RPC 2.0, kar zagotavlja dosledno strukturo za klice metod, parametre, rezultate in obravnavo napak.
+- **Stanje povezav**: MCP seje ohranjajo stanje skozi več zahtev, podpirajo tekoče pogovore, akumulacijo konteksta in upravljanje virov.
+- **Pogajanje zmogljivosti**: Med vzpostavitvijo povezave si klient in strežnik izmenjata informacije o podprtih funkcijah, verzijah protokola, razpoložljivih orodjih in virih. To zagotavlja, da obe strani razumeta zmogljivosti druga druge in se lahko prilagodita.
 
-#### ➕ اضافی سہولیات
+#### ➕ Dodatna orodja
 
-ذیل میں کچھ اضافی سہولیات اور پروٹوکول کی توسیعات ہیں جو MCP ڈویلپر کے تجربے کو بڑھانے اور جدید منظرناموں کو فعال کرنے کے لیے فراہم کرتا ہے:
+Spodaj so nekatera dodatna orodja in razširitve protokola, ki jih MCP nudi za izboljšanje izkušenj razvijalcev in omogočanje naprednih scenarijev:
 
-- **ترتیبات کے اختیارات**: MCP سیشن پیرامیٹرز کی متحرک ترتیب کی اجازت دیتا ہے، جیسے ٹول کی اجازتیں، وسائل تک رسائی، اور ماڈل کی ترتیبات، ہر تعامل کے مطابق۔
-- **پیش رفت کی نگرانی**: طویل عرصے تک چلنے والے آپریشنز پیش رفت کی تازہ کاریوں کی اطلاع دے سکتے ہیں، پیچیدہ کاموں کے دوران جوابدہ صارف انٹرفیس اور بہتر صارف کے تجربے کو فعال کرتے ہیں۔
-- **درخواست کی منسوخی**: کلائنٹس پرواز میں درخواستوں کو منسوخ کر سکتے ہیں، جس سے صارفین کو ان کارروائیوں میں مداخلت کرنے کی اجازت ملتی ہے جن کی اب ضرورت نہیں ہے یا جن میں بہت زیادہ وقت لگ رہا ہے۔
-- **خرابی کی اطلاع دہی**: معیاری خرابی کے پیغامات اور کوڈ مسائل کی تشخیص، ناکامیوں کو ہموار طریقے سے سنبھالنے، اور صارفین اور ڈویلپرز کو قابل عمل تاثرات فراہم کرنے میں مدد کرتے ہیں۔
-- **لاگنگ**: دونوں کلائنٹس اور سرورز پروٹوکول تعاملات کی آڈٹ، ڈیبگنگ، اور نگرانی کے لیے ساختہ لاگ جاری کر سکتے ہیں۔
+- **Konfiguracijske možnosti**: MCP omogoča dinamično konfiguracijo parametrov seje, kot so dovoljenja za orodja, dostop do virov in nastavitve modela, prilagojene vsaki interakciji.
+- **Sledenje napredku**: Dolgotrajne operacije lahko poročajo o napredku, kar omogoča odzivne uporabniške vmesnike in boljšo uporabniško izkušnjo pri kompleksnih nalogah.
+- **Preklic zahtev**: Klienti lahko prekličejo v teku zahtevke, kar uporabnikom omogoča prekinitev operacij, ki niso več potrebne ali trajajo predolgo.
+- **Poročanje napak**: Standardizirana sporočila o napakah in kode pomagajo diagnosticirati težave, obravnavati napake elegantno in nuditi uporabne povratne informacije uporabnikom in razvijalcem.
+- **Dnevnik**: Tako klienti kot strežniki lahko oddajajo strukturirane dnevnike za revizijo, odpravljanje napak in spremljanje interakcij protokola.
 
-ان پروٹوکول کی خصوصیات کا فائدہ اٹھاتے ہوئے، MCP زبان کے ماڈلز اور بیرونی ٹولز یا ڈیٹا سورسز کے درمیان مضبوط، محفوظ، اور لچکدار مواصلات کو یقینی بناتا ہے۔
+Z izkoriščanjem teh funkcij protokola MCP zagotavlja robustno, varno in prilagodljivo komunikacijo med jezikovnimi modeli ter zunanjimi orodji ali podatkovnimi viri.
 
-### 🔐 سیکیورٹی کے تحفظات
+### 🔐 Varnostni vidiki
 
-MCP کے نفاذ کو محفوظ اور قابل اعتماد تعاملات کو یقینی بنانے کے لیے کئی کلیدی حفاظتی اصولوں کی پابندی کرنی چاہیے:
+Implementacije MCP bi morale upoštevati več ključnih varnostnih načel, da zagotovijo varne in zaupanja vredne interakcije:
 
-- **صارف کی رضامندی اور کنٹرول**: کسی بھی ڈیٹا تک رسائی یا کارروائی کرنے سے پہلے صارفین کو واضح رضامندی فراہم کرنی چاہیے۔ انہیں یہ واضح کنٹرول ہونا چاہیے کہ کون سا ڈیٹا شیئر کیا گیا ہے اور کون سے اعمال کی اجازت ہے، انٹرفیس کے ذریعے سرگرمیوں کا جائزہ لینے اور ان کی منظوری کے لیے مدد فراہم کی گئی ہے۔
+- **Uporabniški pristanek in nadzor**: Uporabniki morajo dati izrecno privolitev, preden se dostopajo podatki ali izvajajo operacije. Morajo imeti jasen nadzor nad tem, kateri podatki se delijo in katere akcije so odobrene, podprto z intuitivnimi uporabniškimi vmesniki za pregledovanje in odobritev aktivnosti.
 
-- **ڈیٹا کی رازداری**: صارف کے ڈیٹا کو صرف واضح رضامندی کے ساتھ بے نقاب کیا جانا چاہیے اور مناسب رسائی کنٹرولز کے ذریعے محفوظ کیا جانا چاہیے۔ MCP کے نفاذ کو غیر مجاز ڈیٹا کی ترسیل کے خلاف حفاظت کر
+- **Zasebnost podatkov**: Uporabniški podatki naj bodo razkriti le z izrecnim pristankom in zaščiteni z ustreznimi nadzori dostopa. Implementacije MCP morajo preprečevati nepooblaščen prenos podatkov in zagotavljati varstvo zasebnosti skozi vse interakcije.
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko samodejni prevodi vsebujejo napake ali netočnosti. Originalni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za kritične informacije priporočamo profesionalni človeški prevod. Ne odgovarjamo za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+- **Varnost orodij**: Pred klicem kateregakoli orodja je potreben izrecen uporabniški pristanek. Uporabniki morajo imeti jasno razumevanje funkcionalnosti vsakega orodja, hkrati pa morajo biti vzpostavljene robustne varnostne meje, da se prepreči nenamerno ali nevarno izvajanje orodij.
+
+Sledenje tem načelom zagotavlja, da MCP ohranja zaupanje uporabnikov, zasebnost in varnost v vseh interakcijah protokola.
+
+## Primeri kode: Ključne komponente
+
+Spodaj so primeri kode v več priljubljenih programskih jezikih, ki prikazujejo, kako implementirati ključne MCP strežniške komponente in orodja.
+
+### .NET primer: Ustvarjanje preprostega MCP strežnika z orodji
+
+Tukaj je praktičen primer kode v .NET, ki prikazuje, kako implementirati preprost MCP strežnik s po meri izdelanimi orodji. Primer prikazuje, kako definirati in registrirati orodja, obdelovati zahteve ter povezati strežnik z Model Context Protocolom.
+
+```csharp
+using System;
+using System.Threading.Tasks;
+using ModelContextProtocol.Server;
+using ModelContextProtocol.Server.Transport;
+using ModelContextProtocol.Server.Tools;
+
+public class WeatherServer
+{
+    public static async Task Main(string[] args)
+    {
+        // Create an MCP server
+        var server = new McpServer(
+            name: "Weather MCP Server",
+            version: "1.0.0"
+        );
+        
+        // Register our custom weather tool
+        server.AddTool<string, WeatherData>("weatherTool", 
+            description: "Gets current weather for a location",
+            execute: async (location) => {
+                // Call weather API (simplified)
+                var weatherData = await GetWeatherDataAsync(location);
+                return weatherData;
+            });
+        
+        // Connect the server using stdio transport
+        var transport = new StdioServerTransport();
+        await server.ConnectAsync(transport);
+        
+        Console.WriteLine("Weather MCP Server started");
+        
+        // Keep the server running until process is terminated
+        await Task.Delay(-1);
+    }
+    
+    private static async Task<WeatherData> GetWeatherDataAsync(string location)
+    {
+        // This would normally call a weather API
+        // Simplified for demonstration
+        await Task.Delay(100); // Simulate API call
+        return new WeatherData { 
+            Temperature = 72.5,
+            Conditions = "Sunny",
+            Location = location
+        };
+    }
+}
+
+public class WeatherData
+{
+    public double Temperature { get; set; }
+    public string Conditions { get; set; }
+    public string Location { get; set; }
+}
+```
+
+### Java primer: MCP strežniške komponente
+
+Ta primer prikazuje enak MCP strežnik in registracijo orodij kot zgornji .NET primer, vendar implementiran v Javi.
+
+```java
+import io.modelcontextprotocol.server.McpServer;
+import io.modelcontextprotocol.server.McpToolDefinition;
+import io.modelcontextprotocol.server.transport.StdioServerTransport;
+import io.modelcontextprotocol.server.tool.ToolExecutionContext;
+import io.modelcontextprotocol.server.tool.ToolResponse;
+
+public class WeatherMcpServer {
+    public static void main(String[] args) throws Exception {
+        // Create an MCP server
+        McpServer server = McpServer.builder()
+            .name("Weather MCP Server")
+            .version("1.0.0")
+            .build();
+            
+        // Register a weather tool
+        server.registerTool(McpToolDefinition.builder("weatherTool")
+            .description("Gets current weather for a location")
+            .parameter("location", String.class)
+            .execute((ToolExecutionContext ctx) -> {
+                String location = ctx.getParameter("location", String.class);
+                
+                // Get weather data (simplified)
+                WeatherData data = getWeatherData(location);
+                
+                // Return formatted response
+                return ToolResponse.content(
+                    String.format("Temperature: %.1f°F, Conditions: %s, Location: %s", 
+                    data.getTemperature(), 
+                    data.getConditions(), 
+                    data.getLocation())
+                );
+            })
+            .build());
+        
+        // Connect the server using stdio transport
+        try (StdioServerTransport transport = new StdioServerTransport()) {
+            server.connect(transport);
+            System.out.println("Weather MCP Server started");
+            // Keep server running until process is terminated
+            Thread.currentThread().join();
+        }
+    }
+    
+    private static WeatherData getWeatherData(String location) {
+        // Implementation would call a weather API
+        // Simplified for example purposes
+        return new WeatherData(72.5, "Sunny", location);
+    }
+}
+
+class WeatherData {
+    private double temperature;
+    private String conditions;
+    private String location;
+    
+    public WeatherData(double temperature, String conditions, String location) {
+        this.temperature = temperature;
+        this.conditions = conditions;
+        this.location = location;
+    }
+    
+    public double getTemperature() {
+        return temperature;
+    }
+    
+    public String getConditions() {
+        return conditions;
+    }
+    
+    public String getLocation() {
+        return location;
+    }
+}
+```
+
+### Python primer: Izgradnja MCP strežnika
+
+V tem primeru pokažemo, kako zgraditi MCP strežnik v Pythonu. Prav tako so prikazane dve različni poti za ustvarjanje orodij.
+
+```python
+#!/usr/bin/env python3
+import asyncio
+from mcp.server.fastmcp import FastMCP
+from mcp.server.transports.stdio import serve_stdio
+
+# Create a FastMCP server
+mcp = FastMCP(
+    name="Weather MCP Server",
+    version="1.0.0"
+)
+
+@mcp.tool()
+def get_weather(location: str) -> dict:
+    """Gets current weather for a location."""
+    # This would normally call a weather API
+    # Simplified for demonstration
+    return {
+        "temperature": 72.5,
+        "conditions": "Sunny",
+        "location": location
+    }
+
+# Alternative approach using a class
+class WeatherTools:
+    @mcp.tool()
+    def forecast(self, location: str, days: int = 1) -> dict:
+        """Gets weather forecast for a location for the specified number of days."""
+        # This would normally call a weather API forecast endpoint
+        # Simplified for demonstration
+        return {
+            "location": location,
+            "forecast": [
+                {"day": i+1, "temperature": 70 + i, "conditions": "Partly Cloudy"}
+                for i in range(days)
+            ]
+        }
+
+# Initialize class for its methods to be registered as tools
+weather_tools = WeatherTools()
+
+if __name__ == "__main__":
+    # Start the server with stdio transport
+    print("Weather MCP Server starting...")
+    asyncio.run(serve_stdio(mcp))
+```
+
+### JavaScript primer: Ustvarjanje MCP strežnika
+
+Ta primer prikazuje ustvarjanje MCP strežnika v JavaScriptu in registracijo dveh orodij, povezanih z vremensko napovedjo.
+
+```javascript
+// Using the official Model Context Protocol SDK
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { z } from "zod"; // For parameter validation
+
+// Create an MCP server
+const server = new McpServer({
+  name: "Weather MCP Server",
+  version: "1.0.0"
+});
+
+// Define a weather tool
+server.tool(
+  "weatherTool",
+  {
+    location: z.string().describe("The location to get weather for")
+  },
+  async ({ location }) => {
+    // This would normally call a weather API
+    // Simplified for demonstration
+    const weatherData = await getWeatherData(location);
+    
+    return {
+      content: [
+        { 
+          type: "text", 
+          text: `Temperature: ${weatherData.temperature}°F, Conditions: ${weatherData.conditions}, Location: ${weatherData.location}` 
+        }
+      ]
+    };
+  }
+);
+
+// Define a forecast tool
+server.tool(
+  "forecastTool",
+  {
+    location: z.string(),
+    days: z.number().default(3).describe("Number of days for forecast")
+  },
+  async ({ location, days }) => {
+    // This would normally call a weather API
+    // Simplified for demonstration
+    const forecast = await getForecastData(location, days);
+    
+    return {
+      content: [
+        { 
+          type: "text", 
+          text: `${days}-day forecast for ${location}: ${JSON.stringify(forecast)}` 
+        }
+      ]
+    };
+  }
+);
+
+// Helper functions
+async function getWeatherData(location) {
+  // Simulate API call
+  return {
+    temperature: 72.5,
+    conditions: "Sunny",
+    location: location
+  };
+}
+
+async function getForecastData(location, days) {
+  // Simulate API call
+  return Array.from({ length: days }, (_, i) => ({
+    day: i + 1,
+    temperature: 70 + Math.floor(Math.random() * 10),
+    conditions: i % 2 === 0 ? "Sunny" : "Partly Cloudy"
+  }));
+}
+
+// Connect the server using stdio transport
+const transport = new StdioServerTransport();
+server.connect(transport).catch(console.error);
+
+console.log("Weather MCP Server started");
+```
+
+Ta JavaScript primer prikazuje, kako ustvariti MCP klienta, ki se poveže na strežnik, pošlje poziv in obdela odgovor, vključno z vsemi klici orodij, ki so bili izvedeni.
+
+
+
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.

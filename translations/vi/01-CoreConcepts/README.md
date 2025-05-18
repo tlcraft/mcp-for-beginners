@@ -1,116 +1,117 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "056918462dca9b8f75901709fb8f470c",
-  "translation_date": "2025-05-17T06:49:07+00:00",
+  "original_hash": "788eb17750e970a0bc3b5e7f2e99975b",
+  "translation_date": "2025-05-18T15:26:22+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "vi"
 }
 -->
-# 📖 Các Khái Niệm Cốt Lõi MCP: Làm Chủ Giao Thức Ngữ Cảnh Mô Hình cho Tích Hợp AI
+# 📖 Khái niệm cốt lõi MCP: Làm chủ Model Context Protocol cho tích hợp AI
 
-Giao Thức Ngữ Cảnh Mô Hình (MCP) là một khung chuẩn hóa mạnh mẽ tối ưu hóa giao tiếp giữa các Mô Hình Ngôn Ngữ Lớn (LLM) và các công cụ, ứng dụng, và nguồn dữ liệu bên ngoài. Hướng dẫn tối ưu hóa SEO này sẽ dẫn bạn qua các khái niệm cốt lõi của MCP, đảm bảo bạn hiểu kiến trúc khách-chủ, các thành phần thiết yếu, cơ chế giao tiếp, và các thực tiễn tốt nhất trong việc triển khai.
+Model Context Protocol (MCP) là một khuôn khổ tiêu chuẩn mạnh mẽ, tối ưu hóa giao tiếp giữa các Mô hình Ngôn ngữ Lớn (LLMs) với các công cụ, ứng dụng và nguồn dữ liệu bên ngoài. Hướng dẫn tối ưu SEO này sẽ dẫn bạn qua các khái niệm cốt lõi của MCP, đảm bảo bạn hiểu kiến trúc client-server, các thành phần thiết yếu, cơ chế giao tiếp và các thực hành tốt nhất khi triển khai.
 
-## Tổng Quan
+## Tổng quan
 
-Bài học này khám phá kiến trúc cơ bản và các thành phần tạo nên hệ sinh thái Giao Thức Ngữ Cảnh Mô Hình (MCP). Bạn sẽ học về kiến trúc khách-chủ, các thành phần chính, và các cơ chế giao tiếp thúc đẩy các tương tác MCP.
+Bài học này khám phá kiến trúc cơ bản và các thành phần cấu thành hệ sinh thái Model Context Protocol (MCP). Bạn sẽ tìm hiểu về kiến trúc client-server, các thành phần chính và cơ chế giao tiếp giúp MCP vận hành hiệu quả.
 
-## 👩‍🎓 Mục Tiêu Học Tập Chính
+## 👩‍🎓 Mục tiêu học tập chính
 
-Cuối bài học này, bạn sẽ:
+Sau bài học này, bạn sẽ:
 
-- Hiểu kiến trúc khách-chủ của MCP.
-- Xác định vai trò và trách nhiệm của Máy chủ, Khách hàng, và Máy chủ.
-- Phân tích các tính năng cốt lõi làm cho MCP trở thành một lớp tích hợp linh hoạt.
-- Học cách thông tin lưu chuyển trong hệ sinh thái MCP.
-- Nhận được những hiểu biết thực tế qua các ví dụ mã trong .NET, Java, Python, và JavaScript.
+- Hiểu kiến trúc client-server của MCP.
+- Nhận biết vai trò và trách nhiệm của Hosts, Clients và Servers.
+- Phân tích các tính năng cốt lõi làm MCP trở thành lớp tích hợp linh hoạt.
+- Tìm hiểu cách thông tin luân chuyển trong hệ sinh thái MCP.
+- Nắm được kiến thức thực tiễn qua các ví dụ code bằng .NET, Java, Python và JavaScript.
 
-## 🔎 Kiến Trúc MCP: Một Cái Nhìn Sâu Hơn
+## 🔎 Kiến trúc MCP: Cái nhìn sâu hơn
 
-Hệ sinh thái MCP được xây dựng trên mô hình khách-chủ. Cấu trúc mô-đun này cho phép các ứng dụng AI tương tác với các công cụ, cơ sở dữ liệu, API, và các nguồn tài nguyên ngữ cảnh một cách hiệu quả. Hãy cùng phân tích kiến trúc này thành các thành phần cốt lõi.
+Hệ sinh thái MCP được xây dựng trên mô hình client-server. Cấu trúc mô-đun này cho phép các ứng dụng AI tương tác hiệu quả với công cụ, cơ sở dữ liệu, API và tài nguyên ngữ cảnh. Hãy cùng phân tích kiến trúc này thành các thành phần chính.
 
-### 1. Máy chủ
+### 1. Hosts
 
-Trong Giao Thức Ngữ Cảnh Mô Hình (MCP), Máy chủ đóng vai trò quan trọng như giao diện chính mà qua đó người dùng tương tác với giao thức. Máy chủ là các ứng dụng hoặc môi trường khởi tạo kết nối với các máy chủ MCP để truy cập dữ liệu, công cụ, và lời nhắc. Ví dụ về Máy chủ bao gồm các môi trường phát triển tích hợp (IDE) như Visual Studio Code, các công cụ AI như Claude Desktop, hoặc các tác nhân tùy chỉnh được thiết kế cho các nhiệm vụ cụ thể.
+Trong Model Context Protocol (MCP), Hosts giữ vai trò quan trọng như giao diện chính để người dùng tương tác với giao thức. Hosts là các ứng dụng hoặc môi trường khởi tạo kết nối với MCP servers để truy cập dữ liệu, công cụ và các prompts. Ví dụ về Hosts bao gồm các môi trường phát triển tích hợp (IDEs) như Visual Studio Code, công cụ AI như Claude Desktop, hoặc các tác nhân tùy chỉnh được thiết kế cho các nhiệm vụ cụ thể.
 
-**Máy chủ** là các ứng dụng LLM khởi tạo kết nối. Chúng:
+**Hosts** là các ứng dụng LLM khởi tạo kết nối. Họ:
 
-- Thực thi hoặc tương tác với các mô hình AI để tạo ra phản hồi.
-- Khởi tạo kết nối với các máy chủ MCP.
+- Thực thi hoặc tương tác với các mô hình AI để tạo phản hồi.
+- Khởi tạo kết nối với MCP servers.
 - Quản lý luồng hội thoại và giao diện người dùng.
-- Kiểm soát quyền hạn và các ràng buộc bảo mật.
-- Xử lý sự đồng ý của người dùng cho việc chia sẻ dữ liệu và thực thi công cụ.
+- Kiểm soát quyền và các giới hạn bảo mật.
+- Xử lý sự đồng ý của người dùng về việc chia sẻ dữ liệu và thực thi công cụ.
 
-### 2. Khách hàng
+### 2. Clients
 
-Khách hàng là các thành phần thiết yếu tạo điều kiện cho sự tương tác giữa Máy chủ và các máy chủ MCP. Khách hàng hoạt động như các trung gian, cho phép Máy chủ truy cập và sử dụng các chức năng được cung cấp bởi các máy chủ MCP. Chúng đóng vai trò quan trọng trong việc đảm bảo giao tiếp suôn sẻ và trao đổi dữ liệu hiệu quả trong kiến trúc MCP.
+Clients là các thành phần thiết yếu giúp kết nối giữa Hosts và MCP servers. Clients hoạt động như trung gian, cho phép Hosts truy cập và sử dụng các chức năng do MCP servers cung cấp. Họ đóng vai trò quan trọng trong việc đảm bảo giao tiếp trơn tru và trao đổi dữ liệu hiệu quả trong kiến trúc MCP.
 
-**Khách hàng** là các kết nối trong ứng dụng máy chủ. Chúng:
+**Clients** là các kết nối bên trong ứng dụng host. Họ:
 
-- Gửi yêu cầu đến các máy chủ với các lời nhắc/hướng dẫn.
-- Đàm phán khả năng với các máy chủ.
-- Quản lý các yêu cầu thực thi công cụ từ các mô hình.
+- Gửi yêu cầu tới server kèm theo prompts/hướng dẫn.
+- Thương lượng khả năng với server.
+- Quản lý các yêu cầu thực thi công cụ từ mô hình.
 - Xử lý và hiển thị phản hồi cho người dùng.
 
-### 3. Máy chủ
+### 3. Servers
 
-Máy chủ chịu trách nhiệm xử lý các yêu cầu từ khách hàng MCP và cung cấp các phản hồi thích hợp. Chúng quản lý các hoạt động khác nhau như truy xuất dữ liệu, thực thi công cụ, và tạo lời nhắc. Máy chủ đảm bảo rằng giao tiếp giữa khách hàng và Máy chủ là hiệu quả và đáng tin cậy, duy trì tính toàn vẹn của quá trình tương tác.
+Servers chịu trách nhiệm xử lý các yêu cầu từ MCP clients và cung cấp phản hồi phù hợp. Họ quản lý các hoạt động như truy xuất dữ liệu, thực thi công cụ và tạo prompt. Servers đảm bảo giao tiếp giữa clients và Hosts hiệu quả và đáng tin cậy, duy trì tính toàn vẹn của quá trình tương tác.
 
-**Máy chủ** là các dịch vụ cung cấp ngữ cảnh và khả năng. Chúng:
+**Servers** là các dịch vụ cung cấp ngữ cảnh và khả năng. Họ:
 
-- Đăng ký các tính năng có sẵn (tài nguyên, lời nhắc, công cụ)
-- Nhận và thực thi các cuộc gọi công cụ từ khách hàng
-- Cung cấp thông tin ngữ cảnh để nâng cao phản hồi của mô hình
-- Trả kết quả về cho khách hàng
-- Duy trì trạng thái qua các tương tác khi cần thiết
+- Đăng ký các tính năng có sẵn (nguồn lực, prompt, công cụ)
+- Nhận và thực thi các cuộc gọi công cụ từ client
+- Cung cấp thông tin ngữ cảnh để tăng cường phản hồi của mô hình
+- Trả kết quả về cho client
+- Duy trì trạng thái trong các tương tác khi cần thiết
 
-Máy chủ có thể được phát triển bởi bất kỳ ai để mở rộng khả năng của mô hình với các chức năng chuyên biệt.
+Servers có thể được phát triển bởi bất kỳ ai để mở rộng khả năng mô hình với chức năng chuyên biệt.
 
-### 4. Các Tính Năng của Máy chủ
+### 4. Tính năng Server
 
-Máy chủ trong Giao Thức Ngữ Cảnh Mô Hình (MCP) cung cấp các khối xây dựng cơ bản cho phép tương tác phong phú giữa khách hàng, máy chủ, và các mô hình ngôn ngữ. Các tính năng này được thiết kế để nâng cao khả năng của MCP bằng cách cung cấp ngữ cảnh có cấu trúc, công cụ, và lời nhắc.
+Servers trong Model Context Protocol (MCP) cung cấp các khối xây dựng cơ bản cho phép tương tác phong phú giữa clients, hosts và các mô hình ngôn ngữ. Những tính năng này được thiết kế để nâng cao khả năng của MCP bằng cách cung cấp ngữ cảnh có cấu trúc, công cụ và prompt.
 
-Máy chủ MCP có thể cung cấp bất kỳ tính năng nào sau đây:
+MCP servers có thể cung cấp bất kỳ tính năng nào sau đây:
 
-#### 📑 Tài Nguyên
+#### 📑 Nguồn lực
 
-Tài nguyên trong Giao Thức Ngữ Cảnh Mô Hình (MCP) bao gồm các loại ngữ cảnh và dữ liệu khác nhau có thể được người dùng hoặc mô hình AI sử dụng. Chúng bao gồm:
+Nguồn lực trong Model Context Protocol (MCP) bao gồm các loại ngữ cảnh và dữ liệu khác nhau có thể được người dùng hoặc mô hình AI sử dụng. Bao gồm:
 
-- **Dữ Liệu Ngữ Cảnh**: Thông tin và ngữ cảnh mà người dùng hoặc mô hình AI có thể tận dụng để đưa ra quyết định và thực hiện nhiệm vụ.
-- **Cơ Sở Kiến Thức và Kho Tài Liệu**: Các bộ sưu tập dữ liệu có cấu trúc và không cấu trúc, chẳng hạn như bài viết, hướng dẫn, và tài liệu nghiên cứu, cung cấp thông tin và cái nhìn sâu sắc có giá trị.
-- **Tệp Cục Bộ và Cơ Sở Dữ Liệu**: Dữ liệu được lưu trữ cục bộ trên các thiết bị hoặc trong các cơ sở dữ liệu, có thể truy cập để xử lý và phân tích.
-- **API và Dịch Vụ Web**: Các giao diện và dịch vụ bên ngoài cung cấp dữ liệu và chức năng bổ sung, cho phép tích hợp với các nguồn tài nguyên và công cụ trực tuyến khác nhau.
+- **Dữ liệu ngữ cảnh**: Thông tin và ngữ cảnh mà người dùng hoặc mô hình AI có thể tận dụng để ra quyết định và thực hiện nhiệm vụ.
+- **Cơ sở tri thức và kho tài liệu**: Bộ sưu tập dữ liệu có cấu trúc và phi cấu trúc, như bài báo, hướng dẫn, và các bài nghiên cứu, cung cấp thông tin và hiểu biết giá trị.
+- **Tệp và cơ sở dữ liệu cục bộ**: Dữ liệu lưu trữ tại thiết bị hoặc trong cơ sở dữ liệu, có thể truy cập để xử lý và phân tích.
+- **API và dịch vụ web**: Giao diện và dịch vụ bên ngoài cung cấp thêm dữ liệu và chức năng, cho phép tích hợp với nhiều tài nguyên và công cụ trực tuyến.
 
-Một ví dụ về tài nguyên có thể là một sơ đồ cơ sở dữ liệu hoặc một tệp có thể được truy cập như sau:
+Ví dụ về một nguồn lực có thể là sơ đồ cơ sở dữ liệu hoặc một tệp có thể truy cập như sau:
 
 ```text
 file://log.txt
 database://schema
 ```
 
-### 🤖 Lời Nhắc
-Lời nhắc trong Giao Thức Ngữ Cảnh Mô Hình (MCP) bao gồm các mẫu và mô hình tương tác được định sẵn được thiết kế để hợp lý hóa quy trình làm việc của người dùng và nâng cao giao tiếp. Chúng bao gồm:
+### 🤖 Prompts
 
-- **Tin Nhắn và Quy Trình Mẫu**: Các tin nhắn và quy trình có cấu trúc trước hướng dẫn người dùng thông qua các nhiệm vụ và tương tác cụ thể.
-- **Mô Hình Tương Tác Định Sẵn**: Các chuỗi hành động và phản hồi tiêu chuẩn hóa tạo điều kiện cho giao tiếp nhất quán và hiệu quả.
-- **Mẫu Hội Thoại Chuyên Biệt**: Các mẫu có thể tùy chỉnh được thiết kế cho các loại hội thoại cụ thể, đảm bảo tương tác phù hợp và có ngữ cảnh.
+Prompts trong Model Context Protocol (MCP) bao gồm các mẫu định sẵn và các kiểu tương tác được thiết kế để đơn giản hóa quy trình làm việc của người dùng và tăng cường giao tiếp. Bao gồm:
 
-Một mẫu lời nhắc có thể trông như sau:
+- **Thông điệp và quy trình mẫu**: Các thông điệp và quy trình được cấu trúc sẵn giúp hướng dẫn người dùng qua các nhiệm vụ và tương tác cụ thể.
+- **Mẫu tương tác định sẵn**: Chuỗi hành động và phản hồi tiêu chuẩn giúp giao tiếp nhất quán và hiệu quả.
+- **Mẫu hội thoại chuyên biệt**: Các mẫu tùy chỉnh dành cho các loại hội thoại cụ thể, đảm bảo tương tác phù hợp và có ngữ cảnh.
+
+Một mẫu prompt có thể trông như sau:
 
 ```markdown
 Generate a product slogan based on the following {{product}} with the following {{keywords}}
 ```
 
-#### ⛏️ Công Cụ
+#### ⛏️ Công cụ
 
-Công cụ trong Giao Thức Ngữ Cảnh Mô Hình (MCP) là các chức năng mà mô hình AI có thể thực hiện để thực hiện các nhiệm vụ cụ thể. Các công cụ này được thiết kế để nâng cao khả năng của mô hình AI bằng cách cung cấp các hoạt động có cấu trúc và đáng tin cậy. Các khía cạnh chính bao gồm:
+Công cụ trong Model Context Protocol (MCP) là các hàm mà mô hình AI có thể thực thi để thực hiện các nhiệm vụ cụ thể. Những công cụ này được thiết kế để nâng cao khả năng của mô hình AI bằng cách cung cấp các thao tác có cấu trúc và đáng tin cậy. Các điểm chính bao gồm:
 
-- **Chức Năng cho Mô Hình AI Thực Hiện**: Công cụ là các chức năng có thể thực thi mà mô hình AI có thể gọi để thực hiện các nhiệm vụ khác nhau.
-- **Tên và Mô Tả Độc Đáo**: Mỗi công cụ có một tên riêng biệt và một mô tả chi tiết giải thích mục đích và chức năng của nó.
-- **Tham Số và Kết Quả**: Công cụ chấp nhận các tham số cụ thể và trả về các kết quả có cấu trúc, đảm bảo kết quả nhất quán và có thể dự đoán được.
-- **Chức Năng Riêng Lẻ**: Công cụ thực hiện các chức năng riêng lẻ như tìm kiếm web, tính toán, và truy vấn cơ sở dữ liệu.
+- **Hàm để mô hình AI thực thi**: Công cụ là các hàm có thể được mô hình gọi để thực hiện các nhiệm vụ khác nhau.
+- **Tên duy nhất và mô tả**: Mỗi công cụ có tên riêng biệt và mô tả chi tiết giải thích mục đích và chức năng.
+- **Tham số và đầu ra**: Công cụ nhận các tham số cụ thể và trả về kết quả có cấu trúc, đảm bảo kết quả nhất quán và dự đoán được.
+- **Chức năng riêng biệt**: Công cụ thực hiện các chức năng riêng biệt như tìm kiếm web, tính toán, truy vấn cơ sở dữ liệu.
 
-Một công cụ ví dụ có thể trông như sau:
+Ví dụ về một công cụ có thể như sau:
 
 ```typescript
 server.tool(
@@ -124,88 +125,89 @@ server.tool(
 )
 ```
 
-## Tính Năng của Khách hàng
-Trong Giao Thức Ngữ Cảnh Mô Hình (MCP), khách hàng cung cấp một số tính năng chính cho các máy chủ, nâng cao chức năng và tương tác tổng thể trong giao thức. Một trong những tính năng đáng chú ý là Lấy mẫu.
+## Tính năng Client
 
-### 👉 Lấy Mẫu
+Trong Model Context Protocol (MCP), clients cung cấp một số tính năng chính cho servers, nâng cao chức năng tổng thể và tương tác trong giao thức. Một trong những tính năng nổi bật là Sampling.
 
-- **Hành Vi Tác Nhân Khởi Tạo Từ Máy chủ**: Khách hàng cho phép máy chủ khởi tạo các hành động hoặc hành vi cụ thể một cách tự động, nâng cao khả năng động của hệ thống.
-- **Tương Tác LLM Đệ Quy**: Tính năng này cho phép tương tác đệ quy với các mô hình ngôn ngữ lớn (LLM), cho phép xử lý nhiệm vụ phức tạp và lặp đi lặp lại hơn.
-- **Yêu Cầu Bổ Sung Hoàn Thành Mô Hình**: Máy chủ có thể yêu cầu bổ sung các hoàn thành từ mô hình, đảm bảo rằng các phản hồi là đầy đủ và có ngữ cảnh.
+### 👉 Sampling
 
-## Lưu Lượng Thông Tin trong MCP
+- **Hành vi đại lý do server khởi xướng**: Clients cho phép servers khởi xướng các hành động hoặc hành vi cụ thể một cách tự động, tăng cường khả năng động của hệ thống.
+- **Tương tác LLM đệ quy**: Tính năng này cho phép tương tác đệ quy với các mô hình ngôn ngữ lớn (LLMs), hỗ trợ xử lý phức tạp và lặp đi lặp lại các nhiệm vụ.
+- **Yêu cầu bổ sung hoàn thành mô hình**: Servers có thể yêu cầu các kết quả bổ sung từ mô hình, đảm bảo phản hồi đầy đủ và phù hợp ngữ cảnh.
 
-Giao Thức Ngữ Cảnh Mô Hình (MCP) định nghĩa một luồng thông tin có cấu trúc giữa các máy chủ, khách hàng, máy chủ, và mô hình. Hiểu được luồng này giúp làm rõ cách mà các yêu cầu của người dùng được xử lý và cách mà các công cụ và dữ liệu bên ngoài được tích hợp vào các phản hồi của mô hình.
+## Luồng thông tin trong MCP
 
-- **Máy chủ Khởi Tạo Kết Nối**  
-  Ứng dụng máy chủ (chẳng hạn như một IDE hoặc giao diện trò chuyện) thiết lập một kết nối đến một máy chủ MCP, thường thông qua STDIO, WebSocket, hoặc một giao thức truyền tải được hỗ trợ khác.
+Model Context Protocol (MCP) định nghĩa luồng thông tin có cấu trúc giữa hosts, clients, servers và các mô hình. Hiểu được luồng này giúp làm rõ cách xử lý yêu cầu người dùng và cách các công cụ, dữ liệu bên ngoài được tích hợp vào phản hồi mô hình.
 
-- **Đàm Phán Khả Năng**  
-  Khách hàng (được nhúng trong máy chủ) và máy chủ trao đổi thông tin về các tính năng, công cụ, tài nguyên, và phiên bản giao thức mà họ hỗ trợ. Điều này đảm bảo cả hai bên hiểu những khả năng nào có sẵn cho phiên làm việc.
+- **Host khởi tạo kết nối**  
+  Ứng dụng host (như IDE hoặc giao diện chat) thiết lập kết nối tới MCP server, thường qua STDIO, WebSocket hoặc các phương thức truyền tải được hỗ trợ khác.
 
-- **Yêu Cầu của Người Dùng**  
-  Người dùng tương tác với máy chủ (ví dụ: nhập một lời nhắc hoặc lệnh). Máy chủ thu thập đầu vào này và chuyển nó cho khách hàng để xử lý.
+- **Thương lượng khả năng**  
+  Client (nhúng trong host) và server trao đổi thông tin về các tính năng, công cụ, nguồn lực và phiên bản giao thức được hỗ trợ. Điều này đảm bảo cả hai bên hiểu được các khả năng có sẵn cho phiên làm việc.
 
-- **Sử Dụng Tài Nguyên hoặc Công Cụ**  
-  - Khách hàng có thể yêu cầu thêm ngữ cảnh hoặc tài nguyên từ máy chủ (chẳng hạn như tệp, mục nhập cơ sở dữ liệu, hoặc bài viết trong cơ sở kiến thức) để làm giàu sự hiểu biết của mô hình.
-  - Nếu mô hình xác định rằng cần một công cụ (ví dụ: để lấy dữ liệu, thực hiện tính toán, hoặc gọi một API), khách hàng gửi một yêu cầu thực thi công cụ đến máy chủ, chỉ định tên công cụ và các tham số.
+- **Yêu cầu người dùng**  
+  Người dùng tương tác với host (ví dụ nhập prompt hoặc lệnh). Host thu thập dữ liệu này và chuyển cho client xử lý.
 
-- **Thực Thi Máy chủ**  
-  Máy chủ nhận yêu cầu tài nguyên hoặc công cụ, thực hiện các hoạt động cần thiết (chẳng hạn như chạy một chức năng, truy vấn một cơ sở dữ liệu, hoặc truy xuất một tệp), và trả về kết quả cho khách hàng dưới dạng có cấu trúc.
+- **Sử dụng nguồn lực hoặc công cụ**  
+  - Client có thể yêu cầu thêm ngữ cảnh hoặc nguồn lực từ server (như tệp, mục cơ sở dữ liệu, hoặc bài viết trong kho tri thức) để làm giàu hiểu biết của mô hình.
+  - Nếu mô hình xác định cần công cụ (ví dụ để lấy dữ liệu, thực hiện phép tính, hoặc gọi API), client gửi yêu cầu gọi công cụ tới server, chỉ định tên công cụ và các tham số.
 
-- **Tạo Phản Hồi**  
-  Khách hàng tích hợp các phản hồi của máy chủ (dữ liệu tài nguyên, kết quả công cụ, v.v.) vào tương tác mô hình đang diễn ra. Mô hình sử dụng thông tin này để tạo ra một phản hồi toàn diện và có ngữ cảnh.
+- **Thực thi server**  
+  Server nhận yêu cầu nguồn lực hoặc công cụ, thực hiện các thao tác cần thiết (như chạy hàm, truy vấn cơ sở dữ liệu, hoặc lấy tệp), và trả kết quả về cho client dưới dạng có cấu trúc.
 
-- **Trình Bày Kết Quả**  
-  Máy chủ nhận đầu ra cuối cùng từ khách hàng và trình bày nó cho người dùng, thường bao gồm cả văn bản được tạo bởi mô hình và bất kỳ kết quả nào từ việc thực thi công cụ hoặc tìm kiếm tài nguyên.
+- **Tạo phản hồi**  
+  Client tích hợp phản hồi từ server (dữ liệu nguồn lực, kết quả công cụ, v.v.) vào tương tác mô hình đang diễn ra. Mô hình sử dụng thông tin này để tạo ra phản hồi đầy đủ và phù hợp ngữ cảnh.
 
-Luồng này cho phép MCP hỗ trợ các ứng dụng AI tiên tiến, tương tác, và nhận thức ngữ cảnh bằng cách kết nối liền mạch các mô hình với các công cụ và nguồn dữ liệu bên ngoài.
+- **Hiển thị kết quả**  
+  Host nhận đầu ra cuối cùng từ client và trình bày cho người dùng, thường bao gồm cả văn bản do mô hình tạo ra và bất kỳ kết quả nào từ thực thi công cụ hoặc tra cứu nguồn lực.
 
-## Chi Tiết Giao Thức
+Luồng này cho phép MCP hỗ trợ các ứng dụng AI tương tác tiên tiến, có nhận thức ngữ cảnh bằng cách kết nối liền mạch mô hình với các công cụ và nguồn dữ liệu bên ngoài.
 
-MCP (Giao Thức Ngữ Cảnh Mô Hình) được xây dựng trên [JSON-RPC 2.0](https://www.jsonrpc.org/), cung cấp một định dạng thông điệp chuẩn hóa, không phụ thuộc ngôn ngữ cho giao tiếp giữa các máy chủ, khách hàng, và máy chủ. Nền tảng này cho phép các tương tác đáng tin cậy, có cấu trúc, và mở rộng trên các nền tảng và ngôn ngữ lập trình khác nhau.
+## Chi tiết giao thức
 
-### Các Tính Năng Chính của Giao Thức
+MCP (Model Context Protocol) được xây dựng trên nền tảng [JSON-RPC 2.0](https://www.jsonrpc.org/), cung cấp định dạng tin nhắn tiêu chuẩn, không phụ thuộc ngôn ngữ cho giao tiếp giữa hosts, clients và servers. Nền tảng này cho phép tương tác đáng tin cậy, có cấu trúc và mở rộng trên nhiều nền tảng và ngôn ngữ lập trình.
 
-MCP mở rộng JSON-RPC 2.0 với các quy ước bổ sung cho việc thực thi công cụ, truy cập tài nguyên, và quản lý lời nhắc. Nó hỗ trợ nhiều lớp truyền tải (STDIO, WebSocket, SSE) và cho phép giao tiếp an toàn, mở rộng, và không phụ thuộc ngôn ngữ giữa các thành phần.
+### Tính năng chính của giao thức
 
-#### 🧢 Giao Thức Cơ Bản
+MCP mở rộng JSON-RPC 2.0 với các quy ước bổ sung cho gọi công cụ, truy cập nguồn lực và quản lý prompt. Nó hỗ trợ nhiều lớp truyền tải (STDIO, WebSocket, SSE) và cho phép giao tiếp bảo mật, mở rộng, không phụ thuộc ngôn ngữ giữa các thành phần.
 
-- **Định Dạng Thông Điệp JSON-RPC**: Tất cả các yêu cầu và phản hồi sử dụng đặc tả JSON-RPC 2.0, đảm bảo cấu trúc nhất quán cho các cuộc gọi phương thức, tham số, kết quả, và xử lý lỗi.
-- **Kết Nối Có Trạng Thái**: Các phiên MCP duy trì trạng thái qua nhiều yêu cầu, hỗ trợ các cuộc hội thoại đang diễn ra, tích lũy ngữ cảnh, và quản lý tài nguyên.
-- **Đàm Phán Khả Năng**: Trong quá trình thiết lập kết nối, khách hàng và máy chủ trao đổi thông tin về các tính năng được hỗ trợ, phiên bản giao thức, các công cụ có sẵn, và tài nguyên. Điều này đảm bảo cả hai bên hiểu khả năng của nhau và có thể điều chỉnh cho phù hợp.
+#### 🧢 Giao thức cơ bản
 
-#### ➕ Tiện Ích Bổ Sung
+- **Định dạng tin nhắn JSON-RPC**: Tất cả yêu cầu và phản hồi sử dụng chuẩn JSON-RPC 2.0, đảm bảo cấu trúc nhất quán cho các cuộc gọi phương thức, tham số, kết quả và xử lý lỗi.
+- **Kết nối trạng thái**: Phiên MCP duy trì trạng thái qua nhiều yêu cầu, hỗ trợ hội thoại liên tục, tích lũy ngữ cảnh và quản lý nguồn lực.
+- **Thương lượng khả năng**: Trong quá trình thiết lập kết nối, clients và servers trao đổi thông tin về các tính năng hỗ trợ, phiên bản giao thức, công cụ và nguồn lực có sẵn. Điều này đảm bảo cả hai bên hiểu khả năng của nhau và có thể điều chỉnh phù hợp.
 
-Dưới đây là một số tiện ích bổ sung và mở rộng giao thức mà MCP cung cấp để nâng cao trải nghiệm của nhà phát triển và cho phép các kịch bản tiên tiến:
+#### ➕ Tiện ích bổ sung
 
-- **Tùy Chọn Cấu Hình**: MCP cho phép cấu hình động các tham số phiên, chẳng hạn như quyền công cụ, truy cập tài nguyên, và cài đặt mô hình, được điều chỉnh cho từng tương tác.
-- **Theo Dõi Tiến Độ**: Các hoạt động kéo dài có thể báo cáo các cập nhật tiến độ, cho phép giao diện người dùng đáp ứng và cải thiện trải nghiệm người dùng trong các nhiệm vụ phức tạp.
-- **Hủy Yêu Cầu**: Khách hàng có thể hủy các yêu cầu đang bay, cho phép người dùng ngắt các hoạt động không còn cần thiết hoặc mất quá nhiều thời gian.
-- **Báo Cáo Lỗi**: Các thông điệp và mã lỗi chuẩn hóa giúp chẩn đoán các vấn đề, xử lý lỗi một cách tinh tế, và cung cấp phản hồi có thể hành động cho người dùng và nhà phát triển.
-- **Ghi Nhật Ký**: Cả khách hàng và máy chủ có thể phát ra các nhật ký có cấu trúc để kiểm toán, gỡ lỗi, và giám sát các tương tác giao thức.
+Dưới đây là một số tiện ích và mở rộng giao thức mà MCP cung cấp để nâng cao trải nghiệm nhà phát triển và hỗ trợ các kịch bản nâng cao:
 
-Bằng cách tận dụng các tính năng giao thức này, MCP đảm bảo giao tiếp mạnh mẽ, an toàn, và linh hoạt giữa các mô hình ngôn ngữ và các công cụ hoặc nguồn dữ liệu bên ngoài.
+- **Tùy chọn cấu hình**: MCP cho phép cấu hình động các tham số phiên làm việc, như quyền sử dụng công cụ, truy cập nguồn lực và cài đặt mô hình, tùy chỉnh theo từng tương tác.
+- **Theo dõi tiến độ**: Các thao tác chạy dài có thể báo cáo cập nhật tiến độ, giúp giao diện người dùng phản hồi nhanh và cải thiện trải nghiệm trong các nhiệm vụ phức tạp.
+- **Hủy yêu cầu**: Clients có thể hủy các yêu cầu đang xử lý, cho phép người dùng ngắt các thao tác không còn cần thiết hoặc mất nhiều thời gian.
+- **Báo cáo lỗi**: Tin nhắn lỗi và mã lỗi chuẩn hóa giúp chẩn đoán sự cố, xử lý lỗi mượt mà và cung cấp phản hồi hữu ích cho người dùng và nhà phát triển.
+- **Ghi log**: Cả clients và servers có thể phát sinh log có cấu trúc để kiểm toán, gỡ lỗi và giám sát các tương tác giao thức.
 
-### 🔐 Các Cân Nhắc về Bảo Mật
+Bằng cách tận dụng các tính năng giao thức này, MCP đảm bảo giao tiếp mạnh mẽ, an toàn và linh hoạt giữa các mô hình ngôn ngữ và công cụ hoặc nguồn dữ liệu bên ngoài.
 
-Các triển khai MCP nên tuân thủ một số nguyên tắc bảo mật chính để đảm bảo các tương tác an toàn và đáng tin cậy:
+### 🔐 Các lưu ý về bảo mật
 
-- **Sự Đồng Ý và Kiểm Soát của Người Dùng**: Người dùng phải cung cấp sự đồng ý rõ ràng trước khi bất kỳ dữ liệu nào được truy cập hoặc các hoạt động được thực hiện. Họ nên có quyền kiểm soát rõ ràng về dữ liệu nào được chia sẻ và các hành động nào được ủy quyền, được hỗ trợ bởi giao diện người dùng trực quan để xem xét và phê duyệt các hoạt động.
+Các triển khai MCP nên tuân thủ một số nguyên tắc bảo mật quan trọng để đảm bảo tương tác an toàn và đáng tin cậy:
 
-- **Bảo Mật Dữ Liệu**: Dữ liệu người dùng chỉ nên được tiếp xúc với sự đồng ý rõ ràng và phải được bảo vệ bởi các kiểm soát truy cập thích hợp. Các triển khai MCP phải bảo vệ chống lại việc truyền dữ liệu trái phép và đảm bảo rằng quyền riêng tư được duy trì trong suốt tất cả các tương tác.
+- **Sự đồng ý và kiểm soát của người dùng**: Người dùng phải cung cấp sự đồng ý rõ ràng trước khi bất kỳ dữ liệu nào được truy cập hoặc thao tác được thực hiện. Họ cần có quyền kiểm soát rõ ràng về dữ liệu nào được chia sẻ và hành động nào được phép, được hỗ trợ bởi giao diện người dùng trực quan để xem xét và phê duyệt các hoạt động.
 
-- **An Toàn Công Cụ**: Trước khi thực thi bất kỳ công cụ nào, cần có sự đồng ý rõ ràng của người dùng. Người dùng nên có sự hiểu biết rõ ràng về chức năng của từng công cụ, và các ranh giới bảo mật mạnh mẽ phải được thực thi để ngăn chặn việc thực thi công cụ không mong muốn hoặc không an toàn.
+- **Bảo mật dữ liệu**: Dữ liệu người dùng chỉ được tiếp cận khi có sự đồng ý rõ ràng và phải được bảo vệ bởi các cơ chế kiểm soát truy cập thích hợp. Triển khai MCP cần bảo vệ chống lại việc truyền dữ liệu trái phép và đảm bảo quyền riêng tư được duy trì trong suốt quá trình tương tác.
 
-Bằng cách tuân theo các nguyên tắc này, MCP đảm bảo rằng niềm tin, quyền riêng tư, và an toàn của người dùng được duy trì trong tất cả các tương tác giao thức.
+- **An toàn công cụ**: Trước khi gọi bất kỳ công cụ nào, cần có sự đồng ý rõ ràng của người dùng. Người dùng cần hiểu rõ chức năng của từng công cụ, và các ranh giới bảo mật nghiêm ngặt phải được áp dụng để ngăn chặn việc thực thi công cụ không an toàn hoặc ngoài ý muốn.
 
-## Ví Dụ Mã: Các Thành Phần Chính
+Bằng cách tuân thủ các nguyên tắc này, MCP đảm bảo rằng sự tin tưởng, quyền riêng tư và an toàn của người dùng được duy trì trong toàn bộ các tương tác giao thức.
 
-Dưới đây là các ví dụ mã trong một số ngôn ngữ lập trình phổ biến minh họa cách triển khai các thành phần máy chủ MCP chính và các công cụ.
+## Ví dụ code: Các thành phần chính
 
-### Ví Dụ .NET: Tạo Máy chủ MCP Đơn Giản với Công Cụ
+Dưới đây là các ví dụ code bằng nhiều ngôn ngữ lập trình phổ biến minh họa cách triển khai các thành phần server MCP và công cụ.
 
-Dưới đây là một ví dụ mã .NET thực tế minh họa cách triển khai một máy chủ MCP đơn giản với các công cụ tùy chỉnh. Ví dụ này trình bày cách định nghĩa và đăng ký công cụ, xử lý yêu cầu, và kết nối máy chủ bằng Giao Thức Ngữ Cảnh Mô Hình.
+### Ví dụ .NET: Tạo MCP Server đơn giản với công cụ
+
+Đây là ví dụ thực tế bằng .NET minh họa cách triển khai MCP server đơn giản với các công cụ tùy chỉnh. Ví dụ này trình bày cách định nghĩa và đăng ký công cụ, xử lý yêu cầu và kết nối server sử dụng Model Context Protocol.
 
 ```csharp
 using System;
@@ -264,9 +266,241 @@ public class WeatherData
 }
 ```
 
-### Ví Dụ Java: Các Thành Phần Máy chủ MCP
+### Ví dụ Java: Thành phần MCP Server
 
-Ví
+Ví dụ này trình bày MCP server và đăng ký công cụ tương tự ví dụ .NET ở trên, nhưng được triển khai bằng Java.
+
+```java
+import io.modelcontextprotocol.server.McpServer;
+import io.modelcontextprotocol.server.McpToolDefinition;
+import io.modelcontextprotocol.server.transport.StdioServerTransport;
+import io.modelcontextprotocol.server.tool.ToolExecutionContext;
+import io.modelcontextprotocol.server.tool.ToolResponse;
+
+public class WeatherMcpServer {
+    public static void main(String[] args) throws Exception {
+        // Create an MCP server
+        McpServer server = McpServer.builder()
+            .name("Weather MCP Server")
+            .version("1.0.0")
+            .build();
+            
+        // Register a weather tool
+        server.registerTool(McpToolDefinition.builder("weatherTool")
+            .description("Gets current weather for a location")
+            .parameter("location", String.class)
+            .execute((ToolExecutionContext ctx) -> {
+                String location = ctx.getParameter("location", String.class);
+                
+                // Get weather data (simplified)
+                WeatherData data = getWeatherData(location);
+                
+                // Return formatted response
+                return ToolResponse.content(
+                    String.format("Temperature: %.1f°F, Conditions: %s, Location: %s", 
+                    data.getTemperature(), 
+                    data.getConditions(), 
+                    data.getLocation())
+                );
+            })
+            .build());
+        
+        // Connect the server using stdio transport
+        try (StdioServerTransport transport = new StdioServerTransport()) {
+            server.connect(transport);
+            System.out.println("Weather MCP Server started");
+            // Keep server running until process is terminated
+            Thread.currentThread().join();
+        }
+    }
+    
+    private static WeatherData getWeatherData(String location) {
+        // Implementation would call a weather API
+        // Simplified for example purposes
+        return new WeatherData(72.5, "Sunny", location);
+    }
+}
+
+class WeatherData {
+    private double temperature;
+    private String conditions;
+    private String location;
+    
+    public WeatherData(double temperature, String conditions, String location) {
+        this.temperature = temperature;
+        this.conditions = conditions;
+        this.location = location;
+    }
+    
+    public double getTemperature() {
+        return temperature;
+    }
+    
+    public String getConditions() {
+        return conditions;
+    }
+    
+    public String getLocation() {
+        return location;
+    }
+}
+```
+
+### Ví dụ Python: Xây dựng MCP Server
+
+Trong ví dụ này, chúng tôi trình bày cách xây dựng MCP server bằng Python. Bạn cũng sẽ thấy hai cách khác nhau để tạo công cụ.
+
+```python
+#!/usr/bin/env python3
+import asyncio
+from mcp.server.fastmcp import FastMCP
+from mcp.server.transports.stdio import serve_stdio
+
+# Create a FastMCP server
+mcp = FastMCP(
+    name="Weather MCP Server",
+    version="1.0.0"
+)
+
+@mcp.tool()
+def get_weather(location: str) -> dict:
+    """Gets current weather for a location."""
+    # This would normally call a weather API
+    # Simplified for demonstration
+    return {
+        "temperature": 72.5,
+        "conditions": "Sunny",
+        "location": location
+    }
+
+# Alternative approach using a class
+class WeatherTools:
+    @mcp.tool()
+    def forecast(self, location: str, days: int = 1) -> dict:
+        """Gets weather forecast for a location for the specified number of days."""
+        # This would normally call a weather API forecast endpoint
+        # Simplified for demonstration
+        return {
+            "location": location,
+            "forecast": [
+                {"day": i+1, "temperature": 70 + i, "conditions": "Partly Cloudy"}
+                for i in range(days)
+            ]
+        }
+
+# Initialize class for its methods to be registered as tools
+weather_tools = WeatherTools()
+
+if __name__ == "__main__":
+    # Start the server with stdio transport
+    print("Weather MCP Server starting...")
+    asyncio.run(serve_stdio(mcp))
+```
+
+### Ví dụ JavaScript: Tạo MCP Server
+
+Ví dụ này trình bày việc tạo MCP server bằng JavaScript và cách đăng ký hai công cụ liên quan đến thời tiết.
+
+```javascript
+// Using the official Model Context Protocol SDK
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { z } from "zod"; // For parameter validation
+
+// Create an MCP server
+const server = new McpServer({
+  name: "Weather MCP Server",
+  version: "1.0.0"
+});
+
+// Define a weather tool
+server.tool(
+  "weatherTool",
+  {
+    location: z.string().describe("The location to get weather for")
+  },
+  async ({ location }) => {
+    // This would normally call a weather API
+    // Simplified for demonstration
+    const weatherData = await getWeatherData(location);
+    
+    return {
+      content: [
+        { 
+          type: "text", 
+          text: `Temperature: ${weatherData.temperature}°F, Conditions: ${weatherData.conditions}, Location: ${weatherData.location}` 
+        }
+      ]
+    };
+  }
+);
+
+// Define a forecast tool
+server.tool(
+  "forecastTool",
+  {
+    location: z.string(),
+    days: z.number().default(3).describe("Number of days for forecast")
+  },
+  async ({ location, days }) => {
+    // This would normally call a weather API
+    // Simplified for demonstration
+    const forecast = await getForecastData(location, days);
+    
+    return {
+      content: [
+        { 
+          type: "text", 
+          text: `${days}-day forecast for ${location}: ${JSON.stringify(forecast)}` 
+        }
+      ]
+    };
+  }
+);
+
+// Helper functions
+async function getWeatherData(location) {
+  // Simulate API call
+  return {
+    temperature: 72.5,
+    conditions: "Sunny",
+    location: location
+  };
+}
+
+async function getForecastData(location, days) {
+  // Simulate API call
+  return Array.from({ length: days }, (_, i) => ({
+    day: i + 1,
+    temperature: 70 + Math.floor(Math.random() * 10),
+    conditions: i % 2 === 0 ? "Sunny" : "Partly Cloudy"
+  }));
+}
+
+// Connect the server using stdio transport
+const transport = new StdioServerTransport();
+server.connect(transport).catch(console.error);
+
+console.log("Weather MCP Server started");
+```
+
+Ví dụ JavaScript này minh họa cách tạo MCP client kết nối tới server, gửi prompt và xử lý phản hồi bao gồm các cuộc gọi công cụ đã được thực hiện.
+
+## Bảo mật và ủy quyền
+
+MCP bao gồm một số khái niệm và cơ chế tích hợp để quản lý bảo mật và ủy quyền xuyên suốt giao thức:
+
+1. **Kiểm soát quyền công cụ**:  
+  Clients có thể chỉ định công cụ nào mô hình được phép sử dụng trong phiên làm việc. Điều này đảm bảo chỉ các công cụ được ủy quyền rõ ràng mới được truy cập, giảm thiểu rủi ro thao tác ngoài ý muốn hoặc không an toàn. Quyền có thể được cấu hình động dựa trên sở thích người dùng, chính sách tổ chức hoặc ngữ cảnh tương tác.
+
+2. **Xác thực**:  
+  Servers có thể yêu cầu xác thực trước khi cấp quyền truy cập công cụ, nguồn lực hoặc thao tác nhạy cảm. Điều này có thể bao gồm API key, token OAuth hoặc các phương thức xác thực khác. Xác thực đúng cách đảm bảo chỉ các client và người dùng tin cậy mới có thể gọi các khả năng server.
+
+3. **Kiểm tra hợp lệ**:  
+  Việc kiểm tra tham số được thực thi cho tất cả các cuộc gọi công cụ. Mỗi công cụ định nghĩa kiểu, định dạng và ràng buộc tham số mong đợi, và server xác thực các yêu cầu đầu vào tương ứng. Điều này ngăn ngừa đầu vào không hợp lệ hoặc độc hại ảnh hưởng đến các triển khai công cụ và giúp duy trì tính toàn vẹn của thao tác.
+
+4. **Giới hạn tần suất**:  
+  Để ngăn chặn lạm dụng và đảm bảo sử dụng công bằng tài nguyên server, MCP servers có thể áp dụng giới hạn tần suất cho các cuộc gọi công cụ và truy cập nguồn lực. Giới hạn có thể áp dụng theo người dùng, phiên làm việc hoặc toàn cục, giúp bảo vệ chống các cuộc tấn công từ chối dịch vụ hoặc tiêu
 
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa của nó nên được coi là nguồn đáng tin cậy. Đối với thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp của con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ nguyên bản nên được xem là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

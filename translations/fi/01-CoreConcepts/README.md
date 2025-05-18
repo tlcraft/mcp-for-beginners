@@ -1,87 +1,87 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "056918462dca9b8f75901709fb8f470c",
-  "translation_date": "2025-05-17T06:45:22+00:00",
+  "original_hash": "788eb17750e970a0bc3b5e7f2e99975b",
+  "translation_date": "2025-05-18T15:23:05+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "fi"
 }
 -->
-# 📖 MCP:n ydinkonseptit: Mallin kontekstiprotokollan hallinta AI-integraatiota varten
+# 📖 MCP Core Concepts: Mastering the Model Context Protocol for AI Integration
 
-Model Context Protocol (MCP) on tehokas, standardoitu kehys, joka optimoi viestinnän suurten kielimallien (LLM) ja ulkoisten työkalujen, sovellusten ja tietolähteiden välillä. Tämä SEO-optimoitu opas johdattaa sinut MCP:n ydinkonsepteihin varmistaen, että ymmärrät sen asiakas-palvelin-arkkitehtuurin, keskeiset komponentit, viestintämekaniikan ja parhaat käytännöt toteutuksessa.
+Model Context Protocol (MCP) on tehokas ja standardoitu kehys, joka optimoi viestinnän suurten kielimallien (LLM) ja ulkoisten työkalujen, sovellusten sekä tietolähteiden välillä. Tämä SEO-optimoitu opas johdattaa sinut MCP:n ydinkäsitteisiin, varmistaen, että ymmärrät sen asiakas-palvelinarkkitehtuurin, keskeiset osat, viestintämekanismit ja parhaat toteutustavat.
 
 ## Yleiskatsaus
 
-Tämä oppitunti tutkii Model Context Protocol (MCP) -ekosysteemin perusarkkitehtuuria ja komponentteja. Opit asiakas-palvelin-arkkitehtuurista, keskeisistä komponenteista ja viestintämekanismeista, jotka ohjaavat MCP-vuorovaikutuksia.
+Tässä oppitunnissa tutustutaan Model Context Protocolin (MCP) perusrakenteeseen ja sen muodostaviin osiin. Opit asiakas-palvelinarkkitehtuurista, keskeisistä komponenteista ja viestintämenetelmistä, jotka mahdollistavat MCP:n toiminnot.
 
-## 👩‍🎓 Tärkeimmät oppimistavoitteet
+## 👩‍🎓 Keskeiset oppimistavoitteet
 
-Tämän oppitunnin lopussa osaat:
+Oppitunnin lopussa osaat:
 
-- Ymmärtää MCP:n asiakas-palvelin-arkkitehtuurin.
-- Tunnistaa isäntien, asiakkaiden ja palvelimien roolit ja vastuut.
-- Analysoida MCP:n joustavaksi integraatiokerrokseksi tekeviä ydintoimintoja.
+- Ymmärtää MCP:n asiakas-palvelinarkkitehtuurin.
+- Tunnistaa Hostien, Clientien ja Serverien roolit ja vastuut.
+- Analysoida MCP:n joustavuuden mahdollistavia keskeisiä ominaisuuksia.
 - Oppia, miten tieto virtaa MCP-ekosysteemissä.
-- Saada käytännön näkemyksiä koodiesimerkkien kautta .NET-, Java-, Python- ja JavaScript-kielillä.
+- Saada käytännön näkemyksiä .NET-, Java-, Python- ja JavaScript-koodiesimerkkien kautta.
 
-## 🔎 MCP-arkkitehtuuri: Syvällisempi tarkastelu
+## 🔎 MCP-arkkitehtuuri: Syvällisempi katsaus
 
-MCP-ekosysteemi on rakennettu asiakas-palvelin-mallin pohjalta. Tämä modulaarinen rakenne mahdollistaa AI-sovellusten tehokkaan vuorovaikutuksen työkalujen, tietokantojen, API:iden ja kontekstuaalisten resurssien kanssa. Puretaanpa tämä arkkitehtuuri sen keskeisiin komponentteihin.
+MCP-ekosysteemi perustuu asiakas-palvelin-malliin. Tämä modulaarinen rakenne mahdollistaa tekoälysovellusten tehokkaan vuorovaikutuksen työkalujen, tietokantojen, API:en ja kontekstuaalisten resurssien kanssa. Puretaan tämä arkkitehtuuri sen keskeisiin osiin.
 
-### 1. Isännät
+### 1. Hosts
 
-Model Context Protocol (MCP) -protokollassa isännillä on keskeinen rooli ensisijaisena käyttöliittymänä, jonka kautta käyttäjät ovat vuorovaikutuksessa protokollan kanssa. Isännät ovat sovelluksia tai ympäristöjä, jotka aloittavat yhteyksiä MCP-palvelimiin saadakseen pääsyn tietoihin, työkaluihin ja kehotteisiin. Esimerkkejä isännistä ovat integroitu kehitysympäristö (IDE) kuten Visual Studio Code, AI-työkalut kuten Claude Desktop tai erityistehtäviin suunnitellut mukautetut agentit.
+Model Context Protocolissa (MCP) Hostit ovat keskeinen käyttöliittymä, jonka kautta käyttäjät ovat vuorovaikutuksessa protokollan kanssa. Hostit ovat sovelluksia tai ympäristöjä, jotka aloittavat yhteydet MCP-palvelimiin saadakseen käyttöönsä dataa, työkaluja ja kehotteita. Esimerkkejä Hostista ovat integroidut kehitysympäristöt (IDE) kuten Visual Studio Code, tekoälytyökalut kuten Claude Desktop tai tehtäviin räätälöidyt agentit.
 
-**Isännät** ovat LLM-sovelluksia, jotka aloittavat yhteydet. Ne:
+**Hostit** ovat LLM-sovelluksia, jotka aloittavat yhteydenoton. Ne:
 
-- Suorittavat tai ovat vuorovaikutuksessa AI-mallien kanssa tuottaakseen vastauksia.
+- Suorittavat tai ovat vuorovaikutuksessa tekoälymallien kanssa vastauksien luomiseksi.
 - Aloittavat yhteydet MCP-palvelimiin.
-- Hallinnoivat keskustelun kulkua ja käyttöliittymää.
-- Kontrolloivat lupia ja tietoturvarajoituksia.
-- Käsittelevät käyttäjän suostumusta tietojen jakamiseen ja työkalujen suorittamiseen.
+- Hallitsevat keskustelun kulkua ja käyttöliittymää.
+- Valvovat käyttöoikeuksia ja turvallisuusrajoituksia.
+- Käsittelevät käyttäjän suostumuksen datan jakamiseen ja työkalujen suorittamiseen.
 
-### 2. Asiakkaat
+### 2. Clients
 
-Asiakkaat ovat olennaisia komponentteja, jotka helpottavat isäntien ja MCP-palvelimien välistä vuorovaikutusta. Asiakkaat toimivat välittäjinä, jotka mahdollistavat isännille MCP-palvelimien tarjoamien toimintojen hyödyntämisen. Ne ovat keskeisessä roolissa varmistaessaan sujuvan viestinnän ja tehokkaan tiedonvaihdon MCP-arkkitehtuurissa.
+Clientit ovat olennaisia komponentteja, jotka mahdollistavat vuorovaikutuksen Hostien ja MCP-palvelimien välillä. Clientit toimivat välittäjinä, joiden avulla Hostit pääsevät käyttämään MCP-palvelimien tarjoamia toimintoja. Ne varmistavat sujuvan viestinnän ja tehokkaan tiedonvaihdon MCP-arkkitehtuurissa.
 
-**Asiakkaat** ovat liittimiä isäntäohjelmassa. Ne:
+**Clientit** ovat liittimiä host-sovelluksen sisällä. Ne:
 
-- Lähettävät pyyntöjä palvelimille kehotteiden/ohjeiden kanssa.
-- Neuvottelevat ominaisuuksista palvelimien kanssa.
-- Hallinnoivat mallien työkalun suorituspyyntöjä.
+- Lähettävät pyyntöjä palvelimille kehotteiden tai ohjeiden kanssa.
+- Neuvottelevat palvelimien kyvykkyyksistä.
+- Hallitsevat mallien työkalukäyttöpyyntöjä.
 - Käsittelevät ja näyttävät vastaukset käyttäjille.
 
-### 3. Palvelimet
+### 3. Servers
 
-Palvelimet vastaavat MCP-asiakkaiden pyyntöjen käsittelystä ja sopivien vastausten antamisesta. Ne hallitsevat erilaisia toimintoja, kuten tiedonhakua, työkalujen suorittamista ja kehotteiden luomista. Palvelimet varmistavat, että viestintä asiakkaiden ja isäntien välillä on tehokasta ja luotettavaa, säilyttäen vuorovaikutusprosessin eheyden.
+Serverit vastaavat MCP-clientien pyyntöjen käsittelystä ja asianmukaisten vastausten tarjoamisesta. Ne hallinnoivat erilaisia toimintoja, kuten datan hakua, työkalujen suorittamista ja kehotteiden luontia. Serverit varmistavat, että viestintä clientien ja Hostien välillä on tehokasta ja luotettavaa, ylläpitäen vuorovaikutuksen eheyttä.
 
-**Palvelimet** ovat palveluja, jotka tarjoavat kontekstia ja kykyjä. Ne:
+**Serverit** ovat palveluita, jotka tarjoavat kontekstia ja toiminnallisuuksia. Ne:
 
-- Rekisteröivät käytettävissä olevat ominaisuudet (resurssit, kehotteet, työkalut)
-- Vastaanottavat ja suorittavat asiakaspyynnöistä tulevat työkalukutsut
+- Rekisteröivät saatavilla olevat ominaisuudet (resurssit, kehotteet, työkalut)
+- Ottavat vastaan ja suorittavat työkalukutsut clientilta
 - Tarjoavat kontekstuaalista tietoa mallin vastausten parantamiseksi
-- Palauttavat tuotokset takaisin asiakkaalle
+- Palauttavat tulokset clientille
 - Ylläpitävät tilaa vuorovaikutusten välillä tarvittaessa
 
-Palvelimia voi kehittää kuka tahansa laajentaakseen mallin kykyjä erikoistuneilla toiminnoilla.
+Serverit voivat olla kenen tahansa kehittämiä laajentaakseen mallin kyvykkyyksiä erikoistuneilla toiminnoilla.
 
-### 4. Palvelimen ominaisuudet
+### 4. Serverin ominaisuudet
 
-Model Context Protocol (MCP) -palvelimet tarjoavat perustavanlaatuisia rakennuspalikoita, jotka mahdollistavat rikkaan vuorovaikutuksen asiakkaiden, isäntien ja kielimallien välillä. Nämä ominaisuudet on suunniteltu parantamaan MCP:n kykyjä tarjoamalla rakenteellista kontekstia, työkaluja ja kehotteita.
+Model Context Protocolin (MCP) serverit tarjoavat perusrakenteet, jotka mahdollistavat rikkaat vuorovaikutukset clientien, hostien ja kielimallien välillä. Nämä ominaisuudet on suunniteltu parantamaan MCP:n kyvykkyyksiä tarjoamalla rakenteellista kontekstia, työkaluja ja kehotteita.
 
-MCP-palvelimet voivat tarjota seuraavia ominaisuuksia:
+MCP-serverit voivat tarjota seuraavia ominaisuuksia:
 
 #### 📑 Resurssit
 
-Model Context Protocol (MCP) -resurssit kattavat erilaisia konteksteja ja tietoja, joita käyttäjät tai AI-mallit voivat hyödyntää. Näitä ovat:
+MCP:n resurssit kattavat erilaisia kontekstin ja datan tyyppejä, joita käyttäjät tai tekoälymallit voivat hyödyntää. Näihin kuuluvat:
 
-- **Kontekstuaalinen tieto**: Tieto ja konteksti, jota käyttäjät tai AI-mallit voivat hyödyntää päätöksenteossa ja tehtävien suorittamisessa.
-- **Tietopohjat ja dokumenttivarastot**: Rakenteellisten ja rakenteettomien tietojen kokoelmat, kuten artikkelit, käyttöoppaat ja tutkimuspaperit, jotka tarjoavat arvokasta tietoa ja näkemyksiä.
-- **Paikalliset tiedostot ja tietokannat**: Paikallisesti laitteissa tai tietokannoissa tallennetut tiedot, jotka ovat käytettävissä käsittelyyn ja analyysiin.
-- **API:t ja verkkopalvelut**: Ulkoiset rajapinnat ja palvelut, jotka tarjoavat lisätietoa ja toimintoja, mahdollistaen integraation erilaisten verkkolähteiden ja työkalujen kanssa.
+- **Kontekstuaalinen data**: Tieto ja konteksti, joita käyttäjät tai tekoälymallit voivat käyttää päätöksenteossa ja tehtävien suorittamisessa.
+- **Tietopankit ja dokumenttivarastot**: Rakenteellista ja rakenteetonta dataa, kuten artikkeleita, käsikirjoja ja tutkimuspapereita, jotka tarjoavat arvokasta tietoa.
+- **Paikalliset tiedostot ja tietokannat**: Laitteilla tai tietokannoissa paikallisesti tallennettua dataa, joka on käytettävissä käsittelyyn ja analyysiin.
+- **API:t ja verkkopalvelut**: Ulkoiset rajapinnat ja palvelut, jotka tarjoavat lisätietoja ja toiminnallisuuksia mahdollistaen integraation erilaisiin verkkolähteisiin ja työkaluihin.
 
-Esimerkki resurssista voi olla tietokantaskeema tai tiedosto, johon pääsee käsiksi näin:
+Esimerkki resurssista voi olla tietokannan skeema tai tiedosto, johon pääsee käsiksi seuraavasti:
 
 ```text
 file://log.txt
@@ -89,13 +89,14 @@ database://schema
 ```
 
 ### 🤖 Kehotteet
-Model Context Protocol (MCP) -kehotteet sisältävät erilaisia ennalta määriteltyjä malleja ja vuorovaikutuskuvioita, jotka on suunniteltu virtaviivaistamaan käyttäjän työnkulkuja ja parantamaan viestintää. Näihin kuuluu:
 
-- **Mallinnetut viestit ja työnkulut**: Ennalta rakenteelliset viestit ja prosessit, jotka ohjaavat käyttäjiä tiettyjen tehtävien ja vuorovaikutusten läpi.
-- **Ennalta määritellyt vuorovaikutuskuviot**: Standardoidut toimintojen ja vastausten sekvenssit, jotka helpottavat johdonmukaista ja tehokasta viestintää.
-- **Erikoistuneet keskustelumallit**: Mukautettavat mallit, jotka on räätälöity tietyn tyyppisille keskusteluille, varmistaen merkitykselliset ja kontekstuaalisesti sopivat vuorovaikutukset.
+MCP:n kehotteet sisältävät erilaisia valmiiksi määriteltyjä malleja ja vuorovaikutuskuvioita, jotka helpottavat käyttäjän työnkulkuja ja parantavat viestintää. Näihin kuuluvat:
 
-Kehotemalli voi näyttää tältä:
+- **Mallinnetut viestit ja työnkulut**: Ennalta rakennetut viestit ja prosessit, jotka ohjaavat käyttäjiä tiettyjen tehtävien ja vuorovaikutusten läpi.
+- **Ennalta määritellyt vuorovaikutuskuviot**: Standardoidut toimintojen ja vastausten sarjat, jotka tukevat johdonmukaista ja tehokasta viestintää.
+- **Erikoistuneet keskustelumallit**: Räätälöitävät mallit tietyn tyyppisille keskusteluille, jotka varmistavat asiaankuuluvan ja kontekstuaalisesti sopivan vuorovaikutuksen.
+
+Kehotepohja voi näyttää tältä:
 
 ```markdown
 Generate a product slogan based on the following {{product}} with the following {{keywords}}
@@ -103,14 +104,14 @@ Generate a product slogan based on the following {{product}} with the following 
 
 #### ⛏️ Työkalut
 
-Model Context Protocol (MCP) -työkalut ovat toimintoja, joita AI-malli voi suorittaa suorittaakseen tiettyjä tehtäviä. Nämä työkalut on suunniteltu parantamaan AI-mallin kykyjä tarjoamalla rakenteellisia ja luotettavia toimintoja. Keskeisiä piirteitä ovat:
+MCP:n työkalut ovat toimintoja, joita tekoälymalli voi suorittaa tiettyjen tehtävien hoitamiseksi. Nämä työkalut on suunniteltu laajentamaan mallin kyvykkyyksiä tarjoamalla rakenteellisia ja luotettavia toimintoja. Keskeisiä piirteitä ovat:
 
-- **Toiminnot AI-mallille suoritettavaksi**: Työkalut ovat suoritettavia toimintoja, joita AI-malli voi kutsua suorittaakseen erilaisia tehtäviä.
-- **Uniikki nimi ja kuvaus**: Jokaisella työkalulla on erottuva nimi ja yksityiskohtainen kuvaus, joka selittää sen tarkoituksen ja toiminnallisuuden.
-- **Parametrit ja tuotokset**: Työkalut hyväksyvät tiettyjä parametreja ja palauttavat rakenteellisia tuotoksia, varmistaen johdonmukaiset ja ennustettavat tulokset.
-- **Diskreetit toiminnot**: Työkalut suorittavat diskreettejä toimintoja, kuten verkkohakuja, laskelmia ja tietokantakyselyjä.
+- **Toiminnot, joita tekoälymalli voi suorittaa**: Työkalut ovat suoritettavia funktioita, joita malli voi kutsua tehtävien hoitamiseksi.
+- **Uniikki nimi ja kuvaus**: Jokaisella työkalulla on oma nimi ja yksityiskohtainen kuvaus, joka selittää sen tarkoituksen ja toiminnallisuuden.
+- **Parametrit ja tulosteet**: Työkalut ottavat vastaan tiettyjä parametreja ja palauttavat rakenteellisia tuloksia, mikä takaa yhdenmukaiset ja ennustettavat lopputulokset.
+- **Eristetyt toiminnot**: Työkalut suorittavat erillisiä toimintoja, kuten verkkohakuja, laskelmia ja tietokantakyselyjä.
 
-Esimerkki työkalusta voisi näyttää tältä:
+Esimerkkityökalu voisi näyttää tältä:
 
 ```typescript
 server.tool(
@@ -124,76 +125,85 @@ server.tool(
 )
 ```
 
-## Asiakasominaisuudet
-Model Context Protocol (MCP) -protokollassa asiakkaat tarjoavat useita keskeisiä ominaisuuksia palvelimille, parantaen protokollan yleistä toiminnallisuutta ja vuorovaikutusta. Yksi merkittävistä ominaisuuksista on näytteenotto.
+## Clientin ominaisuudet
 
-### 👉 Näytteenotto
+MCP:ssa clientit tarjoavat useita keskeisiä ominaisuuksia servereille, jotka parantavat protokollan kokonaisfunktionaalisuutta ja vuorovaikutusta. Yksi merkittävistä ominaisuuksista on Sampling.
 
-- **Palvelimen aloittamat agenttikäyttäytymiset**: Asiakkaat mahdollistavat palvelimien aloittaa tiettyjä toimintoja tai käyttäytymismalleja itsenäisesti, parantaen järjestelmän dynaamisia kykyjä.
-- **Rekursiiviset LLM-vuorovaikutukset**: Tämä ominaisuus mahdollistaa rekursiiviset vuorovaikutukset suurten kielimallien (LLM) kanssa, mahdollistaen monimutkaisemman ja iteratiivisemman tehtävien käsittelyn.
-- **Lisämallien täydentämisen pyytäminen**: Palvelimet voivat pyytää lisätäydennyksiä mallilta, varmistaen, että vastaukset ovat perusteellisia ja kontekstuaalisesti merkityksellisiä.
+### 👉 Sampling
 
-## Tiedonkulku MCP:ssä
+- **Palvelimen käynnistämät agenttitoiminnot**: Clientit mahdollistavat serverien autonomisten toimintojen tai käyttäytymisten käynnistämisen, mikä lisää järjestelmän dynaamisia kyvykkyyksiä.
+- **Rekursiiviset LLM-vuorovaikutukset**: Tämä ominaisuus mahdollistaa rekursiivisen vuorovaikutuksen suurten kielimallien kanssa, mahdollistaen monimutkaisemman ja iteratiivisemman tehtävien käsittelyn.
+- **Lisämallin täydentämisten pyytäminen**: Serverit voivat pyytää mallilta lisävastauksia varmistaakseen, että vastaukset ovat perusteellisia ja kontekstuaalisesti relevantteja.
 
-Model Context Protocol (MCP) määrittelee rakenteellisen tiedonkulun isäntien, asiakkaiden, palvelimien ja mallien välillä. Tämän kulun ymmärtäminen auttaa selventämään, miten käyttäjäpyynnöt käsitellään ja miten ulkoiset työkalut ja tiedot integroidaan mallin vastauksiin.
+## Tiedon kulku MCP:ssä
 
-- **Isäntä aloittaa yhteyden**  
-  Isäntäohjelma (kuten IDE tai keskustelukäyttöliittymä) luo yhteyden MCP-palvelimeen, yleensä STDIO:n, WebSocketin tai muun tuetun siirtotavan kautta.
+Model Context Protocol (MCP) määrittelee rakenteellisen tiedonkulun Hostien, Clientien, Serverien ja mallien välillä. Tämän virran ymmärtäminen auttaa hahmottamaan, miten käyttäjän pyynnöt käsitellään ja miten ulkoiset työkalut ja data integroidaan mallin vastauksiin.
 
-- **Ominaisuusneuvottelu**  
-  Asiakas (upotettuna isäntään) ja palvelin vaihtavat tietoa tuetuista ominaisuuksistaan, työkaluistaan, resursseistaan ja protokollaversioistaan. Tämä varmistaa, että molemmat osapuolet ymmärtävät, mitä kykyjä on käytettävissä istunnon aikana.
+- **Host aloittaa yhteyden**  
+  Host-sovellus (esim. IDE tai chat-käyttöliittymä) muodostaa yhteyden MCP-palvelimeen, tyypillisesti STDIO:n, WebSocketin tai muun tuetun kuljetusmenetelmän kautta.
 
-- **Käyttäjäpyyntö**  
-  Käyttäjä on vuorovaikutuksessa isännän kanssa (esim. syöttää kehotteen tai komennon). Isäntä kerää tämän syötteen ja välittää sen asiakkaalle käsiteltäväksi.
+- **Kyvykkyyksien neuvottelu**  
+  Client (hostin sisällä) ja serveri vaihtavat tietoa tukemistaan ominaisuuksista, työkaluista, resursseista ja protokollaversioista. Tämä varmistaa, että molemmat osapuolet ymmärtävät käytettävissä olevat kyvykkyydet istunnon ajaksi.
+
+- **Käyttäjän pyyntö**  
+  Käyttäjä on vuorovaikutuksessa hostin kanssa (esim. syöttää kehotteen tai komennon). Host kerää tämän syötteen ja välittää sen clientille käsittelyä varten.
 
 - **Resurssin tai työkalun käyttö**  
-  - Asiakas voi pyytää lisäkontekstia tai resursseja palvelimelta (kuten tiedostoja, tietokantamerkintöjä tai tietopohja-artikkeleita) rikastuttaakseen mallin ymmärrystä.
-  - Jos malli päättää, että tarvitaan työkalu (esim. tiedon hakemiseen, laskennan suorittamiseen tai API-kutsun tekemiseen), asiakas lähettää työkalukutsupyynnön palvelimelle, määrittäen työkalun nimen ja parametrit.
+  - Client voi pyytää lisäkontekstia tai resursseja serveriltä (kuten tiedostoja, tietokantamerkintöjä tai tietopankkiartikkeleita) rikastuttaakseen mallin ymmärrystä.
+  - Jos malli katsoo työkalun tarpeelliseksi (esim. datan hakemiseen, laskutoimituksen tekemiseen tai API-kutsuun), client lähettää työkalukutsupyynnön serverille, määrittäen työkalun nimen ja parametrit.
 
-- **Palvelimen suoritus**  
-  Palvelin vastaanottaa resurssi- tai työkalupyynnön, suorittaa tarvittavat toiminnot (kuten toiminnon suorittaminen, tietokantakysely tai tiedoston hakeminen) ja palauttaa tulokset asiakkaalle rakenteellisessa muodossa.
+- **Serverin suoritus**  
+  Serveri vastaanottaa resurssi- tai työkalupyynnön, suorittaa tarvittavat toimenpiteet (kuten funktion ajon, tietokantakyselyn tai tiedoston haun) ja palauttaa tulokset clientille rakenteellisessa muodossa.
 
-- **Vastauksen luominen**  
-  Asiakas integroi palvelimen vastaukset (resurssitiedot, työkalun tuotokset jne.) meneillään olevaan mallivuorovaikutukseen. Malli käyttää tätä tietoa luodakseen kattavan ja kontekstuaalisesti merkityksellisen vastauksen.
+- **Vastauksen muodostaminen**  
+  Client yhdistää serverin vastaukset (resurssidatan, työkalujen tulokset jne.) käynnissä olevaan mallin vuorovaikutukseen. Malli käyttää tätä tietoa luodakseen kattavan ja kontekstuaalisesti sopivan vastauksen.
 
 - **Tuloksen esittäminen**  
-  Isäntä vastaanottaa lopullisen tuloksen asiakkaalta ja esittää sen käyttäjälle, usein sisältäen sekä mallin tuottaman tekstin että kaikki työkalusuorituksista tai resurssihakemuksista saadut tulokset.
+  Host saa lopullisen tuloksen clientiltä ja esittää sen käyttäjälle, usein sisältäen sekä mallin generoiman tekstin että työkalujen suoritus- tai resurssihakujen tulokset.
 
-Tämä kulku mahdollistaa MCP:n tukemaan edistyneitä, interaktiivisia ja kontekstuaalisesti tietoisia AI-sovelluksia yhdistämällä saumattomasti mallit ulkoisiin työkaluihin ja tietolähteisiin.
+Tämä tiedonkulku mahdollistaa MCP:n tukemaan kehittyneitä, interaktiivisia ja kontekstia ymmärtäviä tekoälysovelluksia yhdistämällä mallit saumattomasti ulkoisiin työkaluihin ja tietolähteisiin.
 
 ## Protokollan yksityiskohdat
 
-MCP (Model Context Protocol) perustuu [JSON-RPC 2.0](https://www.jsonrpc.org/):aan, tarjoten standardoidun, kieliriippumattoman viestimuodon isäntien, asiakkaiden ja palvelimien väliseen viestintään. Tämä perusta mahdollistaa luotettavat, rakenteelliset ja laajennettavat vuorovaikutukset monipuolisilla alustoilla ja ohjelmointikielillä.
+MCP (Model Context Protocol) rakentuu [JSON-RPC 2.0](https://www.jsonrpc.org/) -protokollan päälle, tarjoten standardoidun ja kieliriippumattoman viestimuodon hostien, clientien ja serverien väliseen viestintään. Tämä perusta mahdollistaa luotettavat, rakenteelliset ja laajennettavat vuorovaikutukset eri alustoilla ja ohjelmointikielillä.
 
 ### Keskeiset protokollaominaisuudet
 
-MCP laajentaa JSON-RPC 2.0:aa lisäkonventioilla työkalukutsuille, resurssien käytölle ja kehotteiden hallinnalle. Se tukee useita siirtokerroksia (STDIO, WebSocket, SSE) ja mahdollistaa turvallisen, laajennettavan ja kieliriippumattoman viestinnän komponenttien välillä.
+MCP laajentaa JSON-RPC 2.0:aa lisäsäännöillä työkalukutsujen, resurssien käytön ja kehotteiden hallinnan osalta. Se tukee useita kuljetuskerroksia (STDIO, WebSocket, SSE) ja mahdollistaa turvallisen, laajennettavan ja kieliriippumattoman viestinnän komponenttien välillä.
 
 #### 🧢 Perusprotokolla
 
-- **JSON-RPC-viestimuoto**: Kaikki pyynnöt ja vastaukset käyttävät JSON-RPC 2.0 -määrittelyä, varmistaen johdonmukaisen rakenteen menetelmäkutsuille, parametreille, tuloksille ja virheenkäsittelylle.
-- **Tilalliset yhteydet**: MCP-istunnot ylläpitävät tilaa useiden pyyntöjen välillä, tukien jatkuvia keskusteluja, kontekstin kertymistä ja resurssien hallintaa.
-- **Ominaisuusneuvottelu**: Yhteyden muodostamisen aikana asiakkaat ja palvelimet vaihtavat tietoa tuetuista ominaisuuksista, protokollaversioista, käytettävissä olevista työkaluista ja resursseista. Tämä varmistaa, että molemmat osapuolet ymmärtävät toistensa kyvyt ja voivat mukautua vastaavasti.
+- **JSON-RPC-viestimuoto**: Kaikki pyynnöt ja vastaukset noudattavat JSON-RPC 2.0 -määritystä, mikä takaa yhdenmukaisen rakenteen metodikutsuille, parametreille, tuloksille ja virheenkäsittelylle.
+- **Tila säilyttävät yhteydet**: MCP-istunnot ylläpitävät tilaa useiden pyyntöjen ajan, mahdollistaen jatkuvat keskustelut, kontekstin kertymisen ja resurssien hallinnan.
+- **Kyvykkyyksien neuvottelu**: Yhteyden muodostamisen yhteydessä client ja serveri vaihtavat tietoa tukemistaan ominaisuuksista, protokollaversioista, käytettävissä olevista työkaluista ja resursseista. Tämä varmistaa, että molemmat osapuolet ymmärtävät toistensa kyvykkyydet ja voivat mukautua niiden mukaan.
 
-#### ➕ Lisätyökalut
+#### ➕ Lisäominaisuudet
 
-Alla on joitain lisätyökaluja ja protokollalaajennuksia, joita MCP tarjoaa parantaakseen kehittäjäkokemusta ja mahdollistamaan edistyneitä skenaarioita:
+Alla on joitakin lisäominaisuuksia ja protokollan laajennuksia, joita MCP tarjoaa kehittäjäkokemuksen parantamiseksi ja edistyneiden skenaarioiden mahdollistamiseksi:
 
-- **Määritysasetukset**: MCP mahdollistaa istuntoparametrien dynaamisen määrityksen, kuten työkaluluvat, resurssien käyttö ja malliasetukset, räätälöitynä jokaiselle vuorovaikutukselle.
-- **Edistymisen seuranta**: Pitkäkestoiset toiminnot voivat raportoida edistymispäivityksiä, mahdollistaen reagoivat käyttöliittymät ja paremman käyttäjäkokemuksen monimutkaisten tehtävien aikana.
-- **Pyyntöjen peruutus**: Asiakkaat voivat peruuttaa kesken olevat pyynnöt, mahdollistaen käyttäjille keskeyttää toiminnot, joita ei enää tarvita tai jotka kestävät liian kauan.
-- **Virheraportointi**: Standardoidut virheilmoitukset ja koodit auttavat diagnosoimaan ongelmia, käsittelemään virheitä sujuvasti ja tarjoamaan toimivia palautteita käyttäjille ja kehittäjille.
-- **Lokitus**: Sekä asiakkaat että palvelimet voivat lähettää rakenteellisia lokitietoja auditointia, virheenkorjausta ja protokollavuorovaikutusten seurantaa varten.
+- **Konfigurointivaihtoehdot**: MCP mahdollistaa istuntoparametrien dynaamisen konfiguroinnin, kuten työkalujen käyttöoikeudet, resurssien käyttö ja mallin asetukset, räätälöityinä kuhunkin vuorovaikutukseen.
+- **Edistymisen seuranta**: Pitkään kestävät operaatiot voivat raportoida edistymistietoja, mahdollistaen responsiivisen käyttöliittymän ja paremman käyttökokemuksen monimutkaisissa tehtävissä.
+- **Pyyntöjen peruutus**: Clientit voivat peruuttaa käynnissä olevia pyyntöjä, antaen käyttäjille mahdollisuuden keskeyttää tarpeettomat tai liian pitkään kestävät toiminnot.
+- **Virheraportointi**: Standardoidut virheilmoitukset ja -koodit auttavat ongelmien diagnosoinnissa, virheiden hallinnassa ja tarjoavat käyttäjille sekä kehittäjille käyttökelpoista palautetta.
+- **Lokitus**: Sekä clientit että serverit voivat tuottaa rakenteellisia lokeja auditointia, virheenkorjausta ja protokollan valvontaa varten.
 
-Hyödyntämällä näitä protokollaominaisuuksia MCP varmistaa kestävän, turvallisen ja joustavan viestinnän kielimallien ja ulkoisten työkalujen tai tietolähteiden välillä.
+Näiden protokollaominaisuuksien avulla MCP takaa vahvan, turvallisen ja joustavan viestinnän kielimallien ja ulkoisten työkalujen tai tietolähteiden välillä.
 
-### 🔐 Turvallisuuskysymykset
+### 🔐 Turvallisuusnäkökohdat
 
-MCP-toteutusten tulisi noudattaa useita keskeisiä turvallisuusperiaatteita varmistaakseen turvalliset ja luotettavat vuorovaikutukset:
+MCP:n toteutusten tulisi noudattaa useita keskeisiä turvallisuusperiaatteita varmistaakseen turvalliset ja luotettavat vuorovaikutukset:
 
-- **Käyttäjän suostumus ja hallinta**: Käyttäjien on annettava nimenomainen suostumus ennen kuin mitään tietoja käytetään tai toimintoja suoritetaan. Heillä tulisi olla selkeä hallinta siitä, mitä tietoja jaetaan ja mitkä toiminnot ovat sallittuja, tukien intuitiivisia käyttöliittymiä toimintojen tarkistamiseen ja hyväksymiseen.
+- **Käyttäjän suostumus ja hallinta**: Käyttäjien on annettava selkeä suostumus ennen datan käyttöä tai toimintojen suorittamista. Heillä tulee olla selkeä kontrolli siitä, mitä dataa jaetaan ja mitkä toimet ovat sallittuja, tuettuna intuitiivisilla käyttöliittymillä toimien tarkasteluun ja hyväksymiseen.
 
-- **Tietosuoja**: Käyttäjätietoja tulisi paljastaa vain nimenomaisella suostumuksella, ja niiden on oltava suojattu asianmukaisilla käyttöoikeuksilla. MCP-toteutusten on suojattava luvattomalta tiedonsiirrolta ja varmistettava
+- **Datan yksityisyys**: Käyttäjädatan käyttö on sallittua vain selkeällä suostumuksella, ja se on suojattava asianmukaisin pääsynvalvontakeinoin. MCP:n toteutusten on estettävä luvaton datansiirto ja varmistettava yksityisyyden säilyminen kaikissa vuorovaikutuksissa.
+
+- **Työkalujen turvallisuus**: Ennen työkalun kutsumista vaaditaan käyttäjän selkeä suostumus. Käyttäjien tulee ymmärtää kunkin työkalun toiminnallisuus, ja tiukat turvallisuusrajat on toteutettava estämään ei-toivottu tai vaarallinen työkalun suoritus.
+
+Näiden periaatteiden noudattaminen varmistaa, että MCP ylläpitää käyttäjien luottamusta, yksityisyyttä ja turvallisuutta kaikissa protokollan vuorovaikutuksissa.
+
+## Koodiesimerkit: Keskeiset komponentit
+
+Alla on esimerkkejä useilla suosituilla ohjelmointikielillä, jotka havainnollistavat, miten keskeisiä MCP-serverikomponent
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, olkaa tietoisia siitä, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää virallisena lähteenä. Kriittistä tietoa varten suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää ensisijaisena lähteenä. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinymmärryksistä tai virhetulkinnoista.

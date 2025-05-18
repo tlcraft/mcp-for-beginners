@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "056918462dca9b8f75901709fb8f470c",
-  "translation_date": "2025-05-17T06:11:50+00:00",
+  "original_hash": "788eb17750e970a0bc3b5e7f2e99975b",
+  "translation_date": "2025-05-18T14:50:18+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "en"
 }
@@ -58,11 +58,11 @@ Servers are responsible for handling requests from MCP clients and providing app
 
 **Servers** are services that provide context and capabilities. They:
 
-- Register available features (resources, prompts, tools).
-- Receive and execute tool calls from the client.
-- Provide contextual information to enhance model responses.
-- Return outputs back to the client.
-- Maintain state across interactions when needed.
+- Register available features (resources, prompts, tools)
+- Receive and execute tool calls from the client
+- Provide contextual information to enhance model responses
+- Return outputs back to the client
+- Maintain state across interactions when needed
 
 Servers can be developed by anyone to extend model capabilities with specialized functionality.
 
@@ -96,7 +96,7 @@ Prompts in the Model Context Protocol (MCP) include various pre-defined template
 - **Pre-defined Interaction Patterns**: Standardized sequences of actions and responses that facilitate consistent and efficient communication.
 - **Specialized Conversation Templates**: Customizable templates tailored for specific types of conversations, ensuring relevant and contextually appropriate interactions.
 
-A prompt template can look like so:
+A prompt template can look like this:
 
 ```markdown
 Generate a product slogan based on the following {{product}} with the following {{keywords}}
@@ -111,7 +111,7 @@ Tools in the Model Context Protocol (MCP) are functions that the AI model can ex
 - **Parameters and Outputs**: Tools accept specific parameters and return structured outputs, ensuring consistent and predictable results.
 - **Discrete Functions**: Tools perform discrete functions such as web searches, calculations, and database queries.
 
-An example tool could look like so:
+An example tool could look like this:
 
 ```typescript
 server.tool(
@@ -149,7 +149,7 @@ The Model Context Protocol (MCP) defines a structured flow of information betwee
   The user interacts with the host (e.g., enters a prompt or command). The host collects this input and passes it to the client for processing.
 
 - **Resource or Tool Use**  
-  - The client may request additional context or resources from the server (such as files, database entries, or knowledge base articles) to enrich the model's understanding.
+  - The client may request additional context or resources from the server (such as files, database entries, or knowledge base articles) to enrich the model's understanding.  
   - If the model determines that a tool is needed (e.g., to fetch data, perform a calculation, or call an API), the client sends a tool invocation request to the server, specifying the tool name and parameters.
 
 - **Server Execution**  
@@ -509,46 +509,46 @@ By combining these mechanisms, MCP provides a secure foundation for integrating 
 MCP communication uses structured JSON messages to facilitate clear and reliable interactions between clients, servers, and models. The main message types include:
 
 - **Client Request**  
-  Sent from the client to the server, this message typically includes:
-  - The user's prompt or command
-  - Conversation history for context
-  - Tool configuration and permissions
+  Sent from the client to the server, this message typically includes:  
+  - The user's prompt or command  
+  - Conversation history for context  
+  - Tool configuration and permissions  
   - Any additional metadata or session information
 
 - **Model Response**  
-  Returned by the model (via the client), this message contains:
-  - Generated text or completion based on the prompt and context
-  - Optional tool call instructions if the model determines a tool should be invoked
+  Returned by the model (via the client), this message contains:  
+  - Generated text or completion based on the prompt and context  
+  - Optional tool call instructions if the model determines a tool should be invoked  
   - References to resources or additional context as needed
 
 - **Tool Request**  
-  Sent from the client to the server when a tool needs to be executed. This message includes:
-  - The name of the tool to invoke
-  - Parameters required by the tool (validated against the tool's schema)
+  Sent from the client to the server when a tool needs to be executed. This message includes:  
+  - The name of the tool to invoke  
+  - Parameters required by the tool (validated against the tool's schema)  
   - Contextual information or identifiers for tracking the request
 
 - **Tool Response**  
-  Returned by the server after executing a tool. This message provides:
-  - The results of the tool execution (structured data or content)
-  - Any errors or status information if the tool call failed
+  Returned by the server after executing a tool. This message provides:  
+  - The results of the tool execution (structured data or content)  
+  - Any errors or status information if the tool call failed  
   - Optionally, additional metadata or logs related to the execution
 
 These structured messages ensure that each step in the MCP workflow is explicit, traceable, and extensible, supporting advanced scenarios such as multi-turn conversations, tool chaining, and robust error handling.
 
 ## Key Takeaways
 
-- MCP uses a client-server architecture to connect models with external capabilities.
-- The ecosystem consists of clients, hosts, servers, tools, and data sources.
-- Communication can happen through STDIO, SSE, or WebSockets.
-- Tools are the fundamental units of functionality exposed to models.
-- Structured communication protocols ensure consistent interactions.
+- MCP uses a client-server architecture to connect models with external capabilities  
+- The ecosystem consists of clients, hosts, servers, tools, and data sources  
+- Communication can happen through STDIO, SSE, or WebSockets  
+- Tools are the fundamental units of functionality exposed to models  
+- Structured communication protocols ensure consistent interactions
 
 ## Exercise
 
-Design a simple MCP tool that would be useful in your domain. Define:
-1. What the tool would be named
-2. What parameters it would accept
-3. What output it would return
+Design a simple MCP tool that would be useful in your domain. Define:  
+1. What the tool would be named  
+2. What parameters it would accept  
+3. What output it would return  
 4. How a model might use this tool to solve user problems
 
 ---
@@ -558,4 +558,4 @@ Design a simple MCP tool that would be useful in your domain. Define:
 Next: [Chapter 2: Security](/02-Security/readme.md)
 
 **Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
