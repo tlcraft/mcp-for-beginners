@@ -480,3 +480,7 @@ bin/
 # Misc
 .DS_Store
 Thumbs.db
+
+# Environments
+.env
+.venv
