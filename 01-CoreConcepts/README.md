@@ -73,7 +73,7 @@ Resources in the Model Context Protocol (MCP) encompass various types of context
 - **Local Files and Databases**: Data stored locally on devices or within databases, accessible for processing and analysis.
 - **APIs and Web Services**: External interfaces and services that offer additional data and functionalities, enabling integration with various online resources and tools.
 
-A nexample of a resource can be a database schema or a file than be accessed like so:
+An example of a resource can be a database schema or a file than be accessed like so:
 
 ```text
 file://log.txt
