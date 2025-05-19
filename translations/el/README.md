@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ce7bdf442957a1b4876032fd8ac80617",
-  "translation_date": "2025-05-19T10:53:24+00:00",
+  "original_hash": "a016679b18071ab1ad4309c0cb4cb8ca",
+  "translation_date": "2025-05-19T14:56:35+00:00",
   "source_file": "README.md",
   "language_code": "el"
 }
@@ -23,37 +23,37 @@ CO_OP_TRANSLATOR_METADATA:
 
 
 Ακολουθήστε αυτά τα βήματα για να ξεκινήσετε να χρησιμοποιείτε αυτούς τους πόρους:
-1. **Κάντε Fork το Αποθετήριο**: Κάντε κλικ στο [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/network)
+1. **Δημιουργήστε Fork το Αποθετήριο**: Κάντε κλικ στο [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/network)
 2. **Κλωνοποιήστε το Αποθετήριο**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Εγγραφείτε στο Microsoft Azure AI Foundry Discord και γνωρίστε ειδικούς και άλλους προγραμματιστές**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Εγγραφείτε στο Azure AI Foundry Discord και γνωρίστε ειδικούς και άλλους προγραμματιστές**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Υποστήριξη πολλαπλών γλωσσών
+### 🌐 Υποστήριξη Πολλών Γλωσσών
 
-#### Υποστηρίζεται μέσω GitHub Action (Αυτοματοποιημένο & Πάντα ενημερωμένο)
-[French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Portuguese (Brazil)](../br/README.md) | [Italian](../it/README.md) | [Polish](../pl/README.md) | [Turkish](../tr/README.md) | [Greek](./README.md) | [Thai](../th/README.md) | [Swedish](../sv/README.md) | [Danish](../da/README.md) | [Norwegian](../no/README.md) | [Finnish](../fi/README.md) | [Dutch](../nl/README.md) | [Hebrew](../he/README.md) | [Vietnamese](../vi/README.md) | [Indonesian](../id/README.md) | [Malay](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungarian](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romanian](../ro/README.md) | [Bulgarian](../bg/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Croatian](../hr/README.md) | [Slovenian](../sl/README.md)
-# 🚀 Ο Απόλυτος Οδηγός για το Πρόγραμμα Σπουδών Model Context Protocol (MCP) για Αρχάριους
+#### Υποστηρίζεται μέσω GitHub Action (Αυτοματοποιημένο & Πάντα Ενημερωμένο)
+[Γαλλικά](../fr/README.md) | [Ισπανικά](../es/README.md) | [Γερμανικά](../de/README.md) | [Ρωσικά](../ru/README.md) | [Αραβικά](../ar/README.md) | [Περσικά (Φαρσί)](../fa/README.md) | [Ουρντού](../ur/README.md) | [Κινέζικα (Απλοποιημένα)](../zh/README.md) | [Κινέζικα (Παραδοσιακά, Μακάου)](../mo/README.md) | [Κινέζικα (Παραδοσιακά, Χονγκ Κονγκ)](../hk/README.md) | [Κινέζικα (Παραδοσιακά, Ταϊβάν)](../tw/README.md) | [Ιαπωνικά](../ja/README.md) | [Κορεατικά](../ko/README.md) | [Χίντι](../hi/README.md) | [Μπενγκάλι](../bn/README.md) | [Μαράθι](../mr/README.md) | [Νεπάλι](../ne/README.md) | [Πουντζάμπι (Γκουρμούκι)](../pa/README.md) | [Πορτογαλικά (Πορτογαλία)](../pt/README.md) | [Πορτογαλικά (Βραζιλία)](../br/README.md) | [Ιταλικά](../it/README.md) | [Πολωνικά](../pl/README.md) | [Τουρκικά](../tr/README.md) | [Ελληνικά](./README.md) | [Ταϊλανδέζικα](../th/README.md) | [Σουηδικά](../sv/README.md) | [Δανέζικα](../da/README.md) | [Νορβηγικά](../no/README.md) | [Φινλανδικά](../fi/README.md) | [Ολλανδικά](../nl/README.md) | [Εβραϊκά](../he/README.md) | [Βιετναμέζικα](../vi/README.md) | [Ινδονησιακά](../id/README.md) | [Μαλαϊκά](../ms/README.md) | [Ταγκάλογκ (Φιλιππινέζικα)](../tl/README.md) | [Σουαχίλι](../sw/README.md) | [Ουγγρικά](../hu/README.md) | [Τσέχικα](../cs/README.md) | [Σλοβακικά](../sk/README.md) | [Ρουμανικά](../ro/README.md) | [Βουλγαρικά](../bg/README.md) | [Σερβικά (Κυριλλικά)](../sr/README.md) | [Κροατικά](../hr/README.md) | [Σλοβενικά](../sl/README.md)
+# 🚀 Ο απόλυτος οδηγός για το Πρότυπο Πρωτόκολλο Μοντέλου (MCP) για Αρχάριους
 
-## **Μάθε MCP με Πρακτικά Παραδείγματα Κώδικα σε C#, Java, JavaScript, Python και TypeScript**
+## **Μάθε MCP με πρακτικά παραδείγματα κώδικα σε C#, Java, JavaScript, Python και TypeScript**
 
-## 🧠 Επισκόπηση του Προγράμματος Σπουδών Model Context Protocol
+## 🧠 Επισκόπηση του Προγράμματος Σπουδών του Model Context Protocol
 
-Το **Model Context Protocol (MCP)** είναι ένα καινοτόμο πλαίσιο σχεδιασμένο να τυποποιεί τις αλληλεπιδράσεις μεταξύ μοντέλων AI και εφαρμογών πελατών. Αυτό το ανοιχτού κώδικα πρόγραμμα σπουδών προσφέρει μια δομημένη πορεία μάθησης, με πρακτικά παραδείγματα κώδικα και πραγματικές περιπτώσεις χρήσης, σε δημοφιλείς γλώσσες προγραμματισμού όπως C#, Java, JavaScript, TypeScript και Python.
+Το **Model Context Protocol (MCP)** είναι ένα πρωτοποριακό πλαίσιο σχεδιασμένο να τυποποιεί τις αλληλεπιδράσεις μεταξύ μοντέλων AI και πελατειακών εφαρμογών. Αυτό το ανοιχτού κώδικα πρόγραμμα σπουδών προσφέρει μια δομημένη διαδρομή μάθησης, με πρακτικά παραδείγματα κώδικα και πραγματικές περιπτώσεις χρήσης, σε δημοφιλείς γλώσσες προγραμματισμού όπως C#, Java, JavaScript, TypeScript και Python.
 
-Είτε είστε προγραμματιστής AI, αρχιτέκτονας συστημάτων ή μηχανικός λογισμικού, αυτός ο οδηγός είναι ο ολοκληρωμένος πόρος σας για να κατανοήσετε τα βασικά και τις στρατηγικές υλοποίησης του MCP.
+Είτε είστε προγραμματιστής AI, αρχιτέκτονας συστημάτων ή μηχανικός λογισμικού, αυτός ο οδηγός είναι ο ολοκληρωμένος πόρος σας για να κατανοήσετε τα βασικά του MCP και τις στρατηγικές υλοποίησής του.
 
 ## 🔗 Επίσημοι Πόροι MCP
 
 - 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Αναλυτικά tutorials και οδηγοί χρήσης  
 - 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Αρχιτεκτονική πρωτοκόλλου και τεχνικές αναφορές  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Ανοιχτού κώδικα SDKs, εργαλεία και παραδείγματα κώδικα  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Ανοιχτού κώδικα SDKs, εργαλεία και δείγματα κώδικα  
 
 ## 🧭 Πλήρης Δομή Προγράμματος Σπουδών MCP
 
 ### 📌 [Εισαγωγή στο MCP](./00-Introduction/README.md)
 
 - Τι είναι το Model Context Protocol;  
-- Γιατί η τυποποίηση είναι σημαντική στις ροές εργασίας AI  
+- Γιατί η τυποποίηση είναι σημαντική στις ροές AI  
 - Πρακτικές περιπτώσεις χρήσης και οφέλη του MCP  
 
 ### 🧩 [Βασικές Έννοιες Εξηγημένες](./01-CoreConcepts/README.md)
@@ -69,13 +69,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 🚀 [Ξεκινώντας με το MCP](./03-GettingStarted/README.md)
 
-- Ρύθμιση περιβάλλοντος και παραμετροποίηση  
-- Δημιουργία βασικών MCP διακομιστών και πελατών  
-- Ενσωμάτωση MCP με υπάρχουσες εφαρμογές  
+- Ρύθμιση και παραμετροποίηση περιβάλλοντος  
+- Δημιουργία βασικών MCP servers και clients  
+- Ενσωμάτωση MCP σε υπάρχουσες εφαρμογές  
 
-#### 🧮 Παραδείγματα MCP Calculator:
+#### 🧮 Δείγματα Έργων MCP Calculator:  
 <details>
-  <summary><strong>Εξερευνήστε Υλοποιήσεις Κώδικα ανά Γλώσσα</strong></summary>
+  <summary><strong>Εξερεύνηση Υλοποιήσεων Κώδικα ανά Γλώσσα</strong></summary>
 
   - [C# MCP Server Example](./03-GettingStarted/samples/csharp/README.md)  
   - [Java MCP Calculator](./03-GettingStarted/samples/java/calculator/README.md)  
@@ -91,9 +91,9 @@ CO_OP_TRANSLATOR_METADATA:
 - Εντοπισμός σφαλμάτων, δοκιμές και επικύρωση  
 - Δημιουργία επαναχρησιμοποιήσιμων προτύπων prompt και ροών εργασίας  
 
-#### 💡 Προχωρημένα Έργα MCP Calculator:
+#### 💡 Προχωρημένα Έργα MCP Calculator:  
 <details>
-  <summary><strong>Εξερευνήστε Προχωρημένα Παραδείγματα</strong></summary>
+  <summary><strong>Εξερεύνηση Προχωρημένων Δειγμάτων</strong></summary>
 
   - [Advanced C# Sample](./04-PracticalImplementation/samples/csharp/README.md)  
   - [Java Container App Example](./04-PracticalImplementation/samples/java/containerapp/README.md)  
@@ -107,66 +107,65 @@ CO_OP_TRANSLATOR_METADATA:
 
 - Πολυμορφικές ροές εργασίας AI και επεκτασιμότητα  
 - Στρατηγικές ασφαλούς κλιμάκωσης  
-- Το MCP σε επιχειρηματικά οικοσυστήματα  
+- MCP σε επιχειρηματικά οικοσυστήματα  
 
-### 🌍 [Συνεισφορές της Κοινότητας](./06-CommunityContributions/README.md)
+### 🌍 [Συνεισφορές Κοινότητας](./06-CommunityContributions/README.md)
 
 - Πώς να συνεισφέρετε κώδικα και τεκμηρίωση  
 - Συνεργασία μέσω GitHub  
-- Βελτιώσεις και ανατροφοδότηση που προέρχονται από την κοινότητα  
+- Βελτιώσεις και ανατροφοδότηση που προέρχεται από την κοινότητα  
 
 ### 📈 [Εμπειρίες από Πρώιμη Υιοθέτηση](./07-CaseStudies/README.md)
 
-- Πραγματικές υλοποιήσεις και αποτελέσματα  
-- Δημιουργία και ανάπτυξη λύσεων βασισμένων σε MCP  
+- Πραγματικές υλοποιήσεις και τι λειτούργησε  
+- Κατασκευή και ανάπτυξη λύσεων βασισμένων σε MCP  
 - Τάσεις και μελλοντικός οδικός χάρτης  
 
 ### 📏 [Βέλτιστες Πρακτικές για MCP](./08-BestPractices/README.md)
 
 - Βελτιστοποίηση απόδοσης και ρύθμιση  
-- Σχεδιασμός ανθεκτικών συστημάτων MCP  
+- Σχεδιασμός συστημάτων MCP με ανθεκτικότητα σε σφάλματα  
 - Δοκιμές και στρατηγικές ανθεκτικότητας  
 
 ### 📊 [Μελέτες Περίπτωσης MCP](./09-CaseStudy/Readme.md)
 
-- Αναλυτική παρουσίαση αρχιτεκτονικών λύσεων MCP  
-- Σχέδια ανάπτυξης και συμβουλές ενσωμάτωσης  
-- Επεξηγηματικά διαγράμματα και βήμα-βήμα καθοδήγηση έργου  
+- Αναλυτικές παρουσιάσεις αρχιτεκτονικών λύσεων MCP  
+- Οδηγοί ανάπτυξης και συμβουλές ενσωμάτωσης  
+- Σχολιασμένα διαγράμματα και αναλυτική παρουσίαση έργων  
 
 ## 🎯 Προαπαιτούμενα για τη Μάθηση MCP
 
 Για να αξιοποιήσετε στο έπακρο αυτό το πρόγραμμα σπουδών, θα πρέπει να έχετε:
 
 - Βασικές γνώσεις σε C#, Java ή Python  
-- Κατανόηση του μοντέλου πελάτη-διακομιστή και APIs  
+- Κατανόηση του μοντέλου πελάτη-διακομιστή και των APIs  
 - (Προαιρετικά) Εξοικείωση με έννοιες μηχανικής μάθησης  
 
 ## 🛠️ Πώς να Χρησιμοποιήσετε Αποτελεσματικά Αυτό το Πρόγραμμα Σπουδών
 
 Κάθε μάθημα σε αυτόν τον οδηγό περιλαμβάνει:
 
-1. Καθαρές εξηγήσεις των εννοιών MCP  
-2. Παραδείγματα ζωντανού κώδικα σε πολλές γλώσσες  
-3. Ασκήσεις για την ανάπτυξη πραγματικών εφαρμογών MCP  
+1. Σαφείς εξηγήσεις των εννοιών MCP  
+2. Ζωντανά παραδείγματα κώδικα σε πολλές γλώσσες  
+3. Ασκήσεις για την κατασκευή πραγματικών εφαρμογών MCP  
 4. Επιπλέον πόρους για προχωρημένους μαθητές  
 
 ## 📜 Πληροφορίες Άδειας
 
-Αυτό το περιεχόμενο διατίθεται υπό την **Άδεια MIT**. Για όρους και προϋποθέσεις, δείτε το [LICENSE](../../LICENSE).
+Αυτό το περιεχόμενο διατίθεται υπό την **MIT License**. Για όρους και προϋποθέσεις, δείτε το [LICENSE](../../LICENSE).
 
 ## 🤝 Οδηγίες Συνεισφοράς
 
-Αυτό το έργο καλωσορίζει συνεισφορές και προτάσεις. Οι περισσότερες συνεισφορές απαιτούν να συμφωνήσετε με μια  
-Συμφωνία Άδειας Συνεισφοράς (CLA) που δηλώνει ότι έχετε το δικαίωμα, και πράγματι παραχωρείτε, τα δικαιώματα χρήσης της συνεισφοράς σας. Για λεπτομέρειες, επισκεφθείτε <https://cla.opensource.microsoft.com>.
+Αυτό το έργο καλωσορίζει συνεισφορές και προτάσεις. Οι περισσότερες συνεισφορές απαιτούν να συμφωνήσετε σε μια  
+Συμφωνία Άδειας Συνεισφοράς (CLA) που δηλώνει ότι έχετε το δικαίωμα, και πράγματι παραχωρείτε, τα δικαιώματα χρήσης της συνεισφοράς σας. Για λεπτομέρειες, επισκεφτείτε το <https://cla.opensource.microsoft.com>.
 
-Όταν υποβάλλετε ένα pull request, ένα bot CLA θα καθορίσει αυτόματα αν χρειάζεται να παρέχετε  
-CLA και θα προσθέσει τα κατάλληλα σχόλια ή ελέγχους κατάστασης. Απλώς ακολουθήστε τις οδηγίες του bot. Θα χρειαστεί να το κάνετε μόνο μία φορά για όλα τα repos που χρησιμοποιούν τη CLA μας.
+Όταν υποβάλετε ένα pull request, ένα bot CLA θα καθορίσει αυτόματα αν χρειάζεται να παρέχετε CLA και θα προσθέσει τις κατάλληλες ενδείξεις (π.χ., έλεγχος κατάστασης, σχόλιο). Απλώς ακολουθήστε τις οδηγίες που παρέχει το bot. Θα χρειαστεί να το κάνετε μόνο μία φορά σε όλα τα αποθετήρια που χρησιμοποιούν την CLA μας.
 
 Αυτό το έργο έχει υιοθετήσει τον [Κώδικα Δεοντολογίας Ανοιχτού Κώδικα της Microsoft](https://opensource.microsoft.com/codeofconduct/).  
-Για περισσότερες πληροφορίες δείτε το [FAQ Κώδικα Δεοντολογίας](https://opensource.microsoft.com/codeofconduct/faq/) ή επικοινωνήστε με [opencode@microsoft.com](mailto:opencode@microsoft.com) για επιπλέον ερωτήσεις ή σχόλια.
+Για περισσότερες πληροφορίες δείτε το [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) ή επικοινωνήστε με [opencode@microsoft.com](mailto:opencode@microsoft.com) για επιπλέον ερωτήσεις ή σχόλια.
 
 ## 🎒 Άλλα Μαθήματα  
-Η ομάδα μας παράγει και άλλα μαθήματα! Δείτε:
+Η ομάδα μας παράγει και άλλα μαθήματα! Ρίξτε μια ματιά:
 
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-beginners?WT.mc_id=academic-105485-koreyst)  
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
@@ -191,4 +190,4 @@ CLA και θα προσθέσει τα κατάλληλα σχόλια ή ελ�
 Οποιαδήποτε χρήση εμπορικών σημάτων ή λογοτύπων τρίτων υπόκειται στις πολιτικές αυτών των τρίτων.
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που προσπαθούμε για ακρίβεια, παρακαλούμε να λάβετε υπόψη ότι οι αυτοματοποιημένες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η επίσημη πηγή. Για κρίσιμες πληροφορίες, συνιστάται η επαγγελματική μετάφραση από άνθρωπο. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που προσπαθούμε για ακρίβεια, παρακαλούμε να λάβετε υπόψη ότι οι αυτοματοποιημένες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική μετάφραση από ανθρώπους. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ce7bdf442957a1b4876032fd8ac80617",
-  "translation_date": "2025-05-19T11:03:04+00:00",
+  "original_hash": "a016679b18071ab1ad4309c0cb4cb8ca",
+  "translation_date": "2025-05-19T15:07:32+00:00",
   "source_file": "README.md",
   "language_code": "cs"
 }
@@ -22,31 +22,31 @@ CO_OP_TRANSLATOR_METADATA:
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 
-Siga estes passos para começar a usar esses recursos:
-1. **Faça um Fork do Repositório**: Clique em [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/network)
-2. **Clone o Repositório**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Junte-se ao Microsoft Azure AI Foundry Discord e conheça especialistas e outros desenvolvedores**](https://discord.com/invite/ByRwuEEgH4)
+Börja med att följa dessa steg för att använda dessa resurser:
+1. **Fork:a Repositoryt**: Klicka på [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/network)
+2. **Klona Repositoryt**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
+3. [**Gå med i Azure AI Foundry Discord och träffa experter och andra utvecklare**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Suporte Multilíngue
+### 🌐 Stöd för flera språk
 
-#### Suportado via GitHub Action (Automatizado e Sempre Atualizado)
-[Francouzština](../fr/README.md) | [Španělština](../es/README.md) | [Němčina](../de/README.md) | [Ruština](../ru/README.md) | [Arabština](../ar/README.md) | [Perština (Fársí)](../fa/README.md) | [Urdu](../ur/README.md) | [Čínština (zjednodušená)](../zh/README.md) | [Čínština (tradiční, Macao)](../mo/README.md) | [Čínština (tradiční, Hongkong)](../hk/README.md) | [Čínština (tradiční, Tchaj-wan)](../tw/README.md) | [Japonština](../ja/README.md) | [Korejština](../ko/README.md) | [Hindština](../hi/README.md) | [Bengálština](../bn/README.md) | [Maráthština](../mr/README.md) | [Nepálština](../ne/README.md) | [Paňdžábština (Gurmukhi)](../pa/README.md) | [Portugalština (Portugalsko)](../pt/README.md) | [Portugalština (Brazílie)](../br/README.md) | [Italština](../it/README.md) | [Polština](../pl/README.md) | [Turečtina](../tr/README.md) | [Řečtina](../el/README.md) | [Thajština](../th/README.md) | [Švédština](../sv/README.md) | [Dánština](../da/README.md) | [Norština](../no/README.md) | [Finština](../fi/README.md) | [Nizozemština](../nl/README.md) | [Hebrejština](../he/README.md) | [Vietnamština](../vi/README.md) | [Indonéština](../id/README.md) | [Malajština](../ms/README.md) | [Tagalog (Filipíny)](../tl/README.md) | [Svahilština](../sw/README.md) | [Maďarština](../hu/README.md) | [Čeština](./README.md) | [Slovenština](../sk/README.md) | [Rumunština](../ro/README.md) | [Bulharština](../bg/README.md) | [Srbština (cyrilice)](../sr/README.md) | [Chorvatština](../hr/README.md) | [Slovinština](../sl/README.md)
+#### Stöds via GitHub Action (Automatiserat & alltid uppdaterat)
+[Francouzština](../fr/README.md) | [Španělština](../es/README.md) | [Němčina](../de/README.md) | [Ruština](../ru/README.md) | [Arabština](../ar/README.md) | [Perština (Fársí)](../fa/README.md) | [Urdu](../ur/README.md) | [Čínština (zjednodušená)](../zh/README.md) | [Čínština (tradiční, Macao)](../mo/README.md) | [Čínština (tradiční, Hongkong)](../hk/README.md) | [Čínština (tradiční, Tchaj-wan)](../tw/README.md) | [Japonština](../ja/README.md) | [Korejština](../ko/README.md) | [Hindština](../hi/README.md) | [Bengálština](../bn/README.md) | [Maráthština](../mr/README.md) | [Nepálština](../ne/README.md) | [Paňdžábština (Gurmukhí)](../pa/README.md) | [Portugalština (Portugalsko)](../pt/README.md) | [Portugalština (Brazílie)](../br/README.md) | [Italština](../it/README.md) | [Polština](../pl/README.md) | [Turečtina](../tr/README.md) | [Řečtina](../el/README.md) | [Thajština](../th/README.md) | [Švédština](../sv/README.md) | [Dánština](../da/README.md) | [Norština](../no/README.md) | [Finština](../fi/README.md) | [Nizozemština](../nl/README.md) | [Hebrejština](../he/README.md) | [Vietnamština](../vi/README.md) | [Indonéština](../id/README.md) | [Malajština](../ms/README.md) | [Tagalog (Filipínština)](../tl/README.md) | [Svahilština](../sw/README.md) | [Maďarština](../hu/README.md) | [Čeština](./README.md) | [Slovenština](../sk/README.md) | [Rumunština](../ro/README.md) | [Bulharština](../bg/README.md) | [Srbština (cyrilice)](../sr/README.md) | [Chorvatština](../hr/README.md) | [Slovinština](../sl/README.md)
 # 🚀 Ultimate Guide to the Model Context Protocol (MCP) Curriculum for Beginners
 
 ## **Learn MCP with Hands-on Code Examples in C#, Java, JavaScript, Python, and TypeScript**
 
 ## 🧠 Overview of the Model Context Protocol Curriculum
 
-The **Model Context Protocol (MCP)** is an advanced framework created to standardize the interaction between AI models and client applications. This open-source curriculum provides a structured learning path with practical coding examples and real-world scenarios, covering popular programming languages such as C#, Java, JavaScript, TypeScript, and Python.
+The **Model Context Protocol (MCP)** is a state-of-the-art framework created to standardize interactions between AI models and client applications. This open-source curriculum provides a structured learning path, complete with practical coding examples and real-world scenarios, covering popular programming languages including C#, Java, JavaScript, TypeScript, and Python.
 
-Whether you're an AI developer, system architect, or software engineer, this guide is your all-in-one resource to master MCP fundamentals and implementation techniques.
+Whether you're an AI developer, system architect, or software engineer, this guide serves as your all-in-one resource for mastering MCP basics and implementation techniques.
 
 ## 🔗 Official MCP Resources
 
 - 📘 [MCP Documentation](https://modelcontextprotocol.io/) – In-depth tutorials and user manuals  
 - 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol design and technical references  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and sample code  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code samples  
 
 ## 🧭 Complete MCP Curriculum Structure
 
@@ -69,7 +69,7 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 
 ### 🚀 [Getting Started with MCP](./03-GettingStarted/README.md)
 
-- Environment setup and configuration  
+- Setting up and configuring the environment  
 - Building basic MCP servers and clients  
 - Integrating MCP with existing applications  
 
@@ -87,7 +87,7 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 
 ### 🛠️ [Practical Implementation](./04-PracticalImplementation/README.md)
 
-- Using SDKs in different languages  
+- Using SDKs across various languages  
 - Debugging, testing, and validation  
 - Creating reusable prompt templates and workflows  
 
@@ -117,8 +117,8 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 
 ### 📈 [Insights from Early Adoption](./07-CaseStudies/README.md)
 
-- Real-world implementations and lessons learned  
-- Building and deploying MCP-based solutions  
+- Real-world deployments and lessons learned  
+- Building and launching MCP-based solutions  
 - Trends and future roadmap  
 
 ### 📏 [Best Practices for MCP](./08-BestPractices/README.md)
@@ -156,11 +156,11 @@ This content is licensed under the **MIT License**. For terms and conditions, se
 
 ## 🤝 Contribution Guidelines
 
-This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) confirming that you have the rights to, and actually do, grant us the rights to use your contribution. For details, visit <https://cla.opensource.microsoft.com>.
+This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) confirming that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit <https://cla.opensource.microsoft.com>.
 
-When you submit a pull request, a CLA bot will automatically check if you need to provide a CLA and update the PR accordingly (e.g., status check, comment). Just follow the bot's instructions. You only need to do this once for all repos using our CLA.
+When submitting a pull request, a CLA bot will automatically determine if you need to provide a CLA and will label the PR accordingly (e.g., status check, comment). Just follow the instructions from the bot. You only need to do this once across all repos using our CLA.
 
-This project follows the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more details, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any questions or feedback.
+This project follows the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more details, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any questions or comments.
 
 ## 🎒 Other Courses
 Our team offers other courses! Check out:
@@ -180,11 +180,12 @@ Our team offers other courses! Check out:
 - [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 
-## ™️ Trademark Notice
+## ™️ 상표 고지
 
-이 프로젝트에는 프로젝트, 제품 또는 서비스에 대한 상표나 로고가 포함될 수 있습니다. Microsoft 상표 또는 로고의 허가된 사용은 [Microsoft의 상표 및 브랜드 가이드라인](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)을 준수해야 합니다.  
-이 프로젝트의 수정된 버전에서 Microsoft 상표나 로고를 사용하는 경우 혼동을 일으키거나 Microsoft의 후원을 암시해서는 안 됩니다.  
-서드파티 상표나 로고의 사용은 해당 서드파티의 정책을 따라야 합니다.
+이 프로젝트에는 프로젝트, 제품 또는 서비스의 상표 또는 로고가 포함될 수 있습니다. Microsoft 상표 또는 로고의 권한 있는 사용은 
+[Microsoft의 상표 및 브랜드 가이드라인](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)을 준수해야 합니다.  
+수정된 버전의 이 프로젝트에서 Microsoft 상표 또는 로고를 사용할 경우 혼동을 일으키거나 Microsoft의 후원을 암시해서는 안 됩니다.  
+서드파티 상표 또는 로고의 사용은 해당 서드파티의 정책에 따릅니다.
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo chybné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za závazný zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
