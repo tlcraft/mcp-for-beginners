@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e5fedda7171780db663f0845c39d8d72",
-  "translation_date": "2025-05-19T16:36:49+00:00",
+  "original_hash": "d0ef2af30fdcc2163da049bb92b81746",
+  "translation_date": "2025-05-19T17:20:01+00:00",
   "source_file": "README.md",
   "language_code": "en"
 }
@@ -38,38 +38,38 @@ Follow these steps to get started using these resources:
 
 ## 🧠 Overview of the Model Context Protocol Curriculum
 
-The **Model Context Protocol (MCP)** is an innovative framework designed to standardize the interaction between AI models and client applications. This open-source curriculum provides a clear learning path, featuring practical coding examples and real-world scenarios across popular programming languages such as C#, Java, JavaScript, TypeScript, and Python.
+The **Model Context Protocol (MCP)** is an innovative framework designed to standardize communication between AI models and client applications. This open-source curriculum provides a structured learning path, featuring practical coding examples and real-world scenarios across popular programming languages like C#, Java, JavaScript, TypeScript, and Python.
 
-Whether you’re an AI developer, system architect, or software engineer, this guide serves as your all-in-one resource to master the fundamentals and implementation techniques of MCP.
+Whether you’re an AI developer, system architect, or software engineer, this guide serves as your complete resource for mastering the fundamentals and implementation techniques of MCP.
 
 ## 🔗 Official MCP Resources
 
-- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Comprehensive tutorials and user guides  
-- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol architecture and technical references  
+- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Detailed tutorials and user manuals  
+- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol design and technical references  
 - 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code samples  
 
 ## 🧭 Complete MCP Curriculum Structure
 
 | Title | Description | Link |
 |--|--|--|
-| **00 - Introduction to MCP** | An introduction to the Model Context Protocol and its importance in AI workflows, covering what MCP is, why standardization matters, and practical use cases and benefits | [Introduction](./00-Introduction/README.md) |
-| **01 - Core Concepts Explained** | A deep dive into MCP’s core concepts, including client-server architecture, key protocol components, and messaging patterns | [Core Concepts](./01-CoreConcepts/README.md) |
-| **02 - Security in MCP** | Identifying security risks in MCP-based systems, along with techniques and best practices for secure implementations | [Security](/02-Security/readme.md) |
-| **03 - Getting Started with MCP** | Setting up your environment, creating basic MCP servers and clients, and integrating MCP with existing applications | [Getting Started](./03-GettingStarted/README.md) |
-| **3.1 - First server** | How to set up a basic server using the MCP protocol, understanding server-client interactions, and testing the server | [First Server](./03-GettingStarted/01-first-server/README.md) |
-| **3.2 - First client**  | How to set up a basic client using the MCP protocol, understanding client-server interactions, and testing the client | [First Client](./03-GettingStarted/02-client/README.md) |
-| **3.3 - Client with LLM**  | Setting up a client that uses MCP with a Large Language Model (LLM) | [Client with LLM](./03-GettingStarted/03-llm-client/README.md) |
-| **3.4 - Consuming a server with Visual Studio Code** | Configuring Visual Studio Code to consume servers using the MCP protocol | [Consuming a server with Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
-| **3.5 - Creating a server using SSE** | SSE allows exposing a server to the internet. This section guides you through creating a server using SSE | [Creating a server using SSE](./03-GettingStarted/05-sse-server/README.md) |
+| **00 - Introduction to MCP** | An introduction to the Model Context Protocol and its role in AI pipelines, covering what MCP is, why standardization is important, plus practical use cases and benefits | [Introduction](./00-Introduction/README.md) |
+| **01 - Core Concepts Explained** | A deep dive into MCP’s core concepts, including client-server architecture, main protocol components, and messaging patterns | [Core Concepts](./01-CoreConcepts/README.md) |
+| **02 - Security in MCP** | Identifying security risks in MCP-based systems, along with techniques and best practices for securing implementations | [Security](/02-Security/readme.md) |
+| **03 - Getting Started with MCP** | Setting up your environment, creating basic MCP servers and clients, and integrating MCP into existing applications | [Getting Started](./03-GettingStarted/README.md) |
+| **3.1 - First server** | How to set up a basic server using MCP, understanding server-client interaction, and testing the server | [First Server](./03-GettingStarted/01-first-server/README.md) |
+| **3.2 - First client**  | How to set up a basic client using MCP, understanding client-server interaction, and testing the client | [First Client](./03-GettingStarted/02-client/README.md) |
+| **3.3 - Client with LLM**  | Setting up a client using MCP with a Large Language Model (LLM) | [Client with LLM](./03-GettingStarted/03-llm-client/README.md) |
+| **3.4 - Consuming a server with Visual Studio Code** | Configuring Visual Studio Code to consume servers via the MCP protocol | [Consuming a server with Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
+| **3.5 - Creating a server using SSE** | SSE lets us expose a server to the internet. This section guides you through creating a server using SSE | [Creating a server using SSE](./03-GettingStarted/05-sse-server/README.md) |
 | **3.6 - Use AI Toolkit** | The AI toolkit is a powerful tool to help you manage your AI and MCP workflows | [Use AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
-| **3.7 - Testing your server** | Testing is a crucial part of development. This section walks you through using various tools to test your server | [Testing your server](./03-GettingStarted/07-testing/README.md) |
-| **3.8 - Deploy your server** | How to transition from local development to production. This section covers developing and deploying your server | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
-| **04 - Practical Implementation** | Working with SDKs in different languages, debugging, testing, validation, and creating reusable prompt templates and workflows | [Practical Implementation](./04-PracticalImplementation/README.md) |
-| **05 - Advanced Topics in MCP** | Exploring multi-modal AI workflows, extensibility, secure scaling strategies, and MCP’s role in enterprise ecosystems | [Advanced Topics](./05-AdvancedTopics/README.md) |
-| **06 - Community Contributions** | How to contribute code and documentation, collaborate via GitHub, and participate in community-driven improvements and feedback | [Community Contributions](./06-CommunityContributions/README.md) |
-| **07 - Insights from Early Adoption** | Real-world MCP implementations, lessons learned, building and deploying MCP-based solutions, trends, and future plans | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
-| **08 - Best Practices for MCP** | Performance tuning and optimization, designing fault-tolerant MCP systems, testing, and resilience strategies | [Best Practices](./08-BestPractices/README.md) |
-| **09 - MCP Case Studies** | Detailed analyses of MCP solution architectures, deployment blueprints, integration tips, annotated diagrams, and project walkthroughs | [Case Studies](./09-CaseStudy/README.md) |
+| **3.7 - Testing your server** | Testing is a crucial part of development. This section covers how to test your server using various tools | [Testing your server](./03-GettingStarted/07-testing/README.md) |
+| **3.8 - Deploy your server** | How to move from local development to production deployment of your server | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
+| **04 - Practical Implementation** | Using SDKs in different languages, debugging, testing, validation, and creating reusable prompt templates and workflows | [Practical Implementation](./04-PracticalImplementation/README.md) |
+| **05 - Advanced Topics in MCP** | Multi-modal AI workflows, extensibility, secure scaling strategies, and MCP in enterprise environments | [Advanced Topics](./05-AdvancedTopics/README.md) |
+| **06 - Community Contributions** | How to contribute code and documentation, collaborate on GitHub, and engage in community-driven improvements and feedback | [Community Contributions](./06-CommunityContributions/README.md) |
+| **07 - Insights from Early Adoption** | Real-world implementations, lessons learned, building and deploying MCP-based solutions, trends, and future plans | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
+| **08 - Best Practices for MCP** | Performance tuning, designing fault-tolerant MCP systems, and strategies for testing and resilience | [Best Practices](./08-BestPractices/README.md) |
+| **09 - MCP Case Studies** | Detailed examinations of MCP solution architectures, deployment blueprints, integration tips, annotated diagrams, and project walkthroughs | [Case Studies](./09-CaseStudy/README.md) |
 
 ## Sample Projects
 
@@ -134,9 +134,9 @@ For more information see the [Code of Conduct FAQ](https://opensource.microsoft.
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## 🎒 Other Courses
-Our team offers other courses! Take a look:
+Our team produces other courses! Check out:
 
-- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
@@ -153,11 +153,11 @@ Our team offers other courses! Take a look:
 
 ## ™️ Trademark Notice
 
-This project may include trademarks or logos for projects, products, or services. Authorized use of Microsoft
-trademarks or logos must comply with and follow
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Using Microsoft trademarks or logos in modified versions of this project must not cause confusion or suggest Microsoft sponsorship.
-Any use of third-party trademarks or logos is subject to the policies of those third parties.
+Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
+Any use of third-party trademarks or logos is subject to those third-parties' policies.
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
