@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ce7bdf442957a1b4876032fd8ac80617",
-  "translation_date": "2025-05-19T10:35:07+00:00",
+  "original_hash": "a016679b18071ab1ad4309c0cb4cb8ca",
+  "translation_date": "2025-05-19T14:37:27+00:00",
   "source_file": "README.md",
   "language_code": "en"
 }
@@ -22,10 +22,10 @@ CO_OP_TRANSLATOR_METADATA:
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 
-Follow these steps to get started using these resources:
+Follow these steps to start using these resources:
 1. **Fork the Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/network)
 2. **Clone the Repository**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Join The Microsoft Azure AI Foundry Discord to connect with experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Join The Azure AI Foundry Discord to connect with experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Multi-Language Support
@@ -38,15 +38,15 @@ Follow these steps to get started using these resources:
 
 ## 🧠 Overview of the Model Context Protocol Curriculum
 
-The **Model Context Protocol (MCP)** is an innovative framework designed to standardize interactions between AI models and client applications. This open-source curriculum provides a structured learning path, featuring practical coding examples and real-world use cases across popular programming languages such as C#, Java, JavaScript, TypeScript, and Python.
+The **Model Context Protocol (MCP)** is an innovative framework designed to standardize how AI models interact with client applications. This open-source curriculum provides a structured learning path with practical coding examples and real-world use cases in popular programming languages like C#, Java, JavaScript, TypeScript, and Python.
 
-Whether you're an AI developer, system architect, or software engineer, this guide serves as your comprehensive resource for mastering MCP fundamentals and implementation techniques.
+Whether you’re an AI developer, system architect, or software engineer, this guide is your all-in-one resource for mastering MCP basics and implementation techniques.
 
 ## 🔗 Official MCP Resources
 
-- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – In-depth tutorials and user guides  
-- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol architecture and technical details  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code samples  
+- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – In-depth tutorials and user manuals  
+- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol design and technical details  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code examples  
 
 ## 🧭 Complete MCP Curriculum Structure
 
@@ -54,24 +54,24 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 
 - What is the Model Context Protocol?  
 - Why standardization is important in AI pipelines  
-- Practical use cases and benefits of MCP  
+- Practical applications and benefits of MCP  
 
 ### 🧩 [Core Concepts Explained](./01-CoreConcepts/README.md)
 
 - Understanding client-server architecture in MCP  
-- Key protocol elements: requests, responses, and schemas  
+- Main protocol components: requests, responses, and schemas  
 - MCP messaging and data exchange patterns  
 
 ### 🔐 [Security in MCP](./02-Security/readme.md)
 
-- Identifying security threats in MCP-based systems  
-- Techniques and best practices for securing implementations  
+- Recognizing security risks in MCP-based systems  
+- Methods and best practices for securing implementations  
 
 ### 🚀 [Getting Started with MCP](./03-GettingStarted/README.md)
 
-- Setting up and configuring your environment  
-- Creating basic MCP servers and clients  
-- Integrating MCP with existing applications  
+- Setting up the environment and configuration  
+- Building basic MCP servers and clients  
+- Integrating MCP into existing applications  
 
 #### 🧮 MCP Calculator Sample Projects:
 <details>
@@ -87,8 +87,8 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 
 ### 🛠️ [Practical Implementation](./04-PracticalImplementation/README.md)
 
-- Using SDKs in various languages  
-- Debugging, testing, and validation  
+- Using SDKs in different programming languages  
+- Debugging, testing, and validation techniques  
 - Creating reusable prompt templates and workflows  
 
 #### 💡 MCP Advanced Calculator Projects:
@@ -112,25 +112,25 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 ### 🌍 [Community Contributions](./06-CommunityContributions/README.md)
 
 - How to contribute code and documentation  
-- Collaborating on GitHub  
+- Collaborating through GitHub  
 - Community-driven improvements and feedback  
 
 ### 📈 [Insights from Early Adoption](./07-CaseStudies/README.md)
 
 - Real-world implementations and lessons learned  
 - Building and deploying MCP-based solutions  
-- Trends and future roadmap  
+- Trends and future development roadmap  
 
 ### 📏 [Best Practices for MCP](./08-BestPractices/README.md)
 
 - Performance tuning and optimization  
 - Designing fault-tolerant MCP systems  
-- Testing and resilience strategies  
+- Testing and resilience approaches  
 
 ### 📊 [MCP Case Studies](./09-CaseStudy/Readme.md)
 
-- In-depth looks at MCP solution architectures  
-- Deployment blueprints and integration tips  
+- In-depth analysis of MCP solution architectures  
+- Deployment blueprints and integration advice  
 - Annotated diagrams and project walkthroughs  
 
 ## 🎯 Prerequisites for Learning MCP
@@ -143,7 +143,7 @@ To get the most from this curriculum, you should have:
 
 ## 🛠️ How to Use This Curriculum Effectively
 
-Each lesson in this guide includes:
+Each lesson includes:
 
 1. Clear explanations of MCP concepts  
 2. Live code examples in multiple languages  
@@ -158,7 +158,7 @@ This content is licensed under the **MIT License**. For terms and conditions, se
 
 This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) confirming that you have the rights to grant us permission to use your contribution. For details, visit <https://cla.opensource.microsoft.com>.
 
-When you submit a pull request, a CLA bot will automatically check whether you need to provide a CLA and will update the PR accordingly (e.g., status check, comment). Just follow the bot's instructions. You only need to do this once across all repositories using our CLA.
+When you submit a pull request, a CLA bot will automatically check if you need to provide a CLA and will mark the PR accordingly (e.g., status check, comment). Just follow the instructions from the bot. You only need to do this once across all repositories using our CLA.
 
 This project follows the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any questions or comments.
 
@@ -182,9 +182,11 @@ Our team offers other courses! Check out:
 
 ## ™️ Trademark Notice
 
-This project may include trademarks or logos for various projects, products, or services. Authorized use of Microsoft trademarks or logos must comply with and follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-Using Microsoft trademarks or logos in modified versions of this project must not create confusion or suggest Microsoft sponsorship.  
-Any use of third-party trademarks or logos must adhere to the policies of those third parties.
+This project may include trademarks or logos related to projects, products, or services. Authorized use of Microsoft
+trademarks or logos must comply with and follow
+[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Using Microsoft trademarks or logos in modified versions of this project must not create confusion or suggest Microsoft sponsorship.
+Any use of third-party trademarks or logos is governed by those third parties' policies.
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

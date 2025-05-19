@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ce7bdf442957a1b4876032fd8ac80617",
-  "translation_date": "2025-05-19T10:56:14+00:00",
+  "original_hash": "a016679b18071ab1ad4309c0cb4cb8ca",
+  "translation_date": "2025-05-19T14:59:39+00:00",
   "source_file": "README.md",
   "language_code": "no"
 }
@@ -23,147 +23,147 @@ CO_OP_TRANSLATOR_METADATA:
 
 
 Følg disse trinnene for å komme i gang med å bruke disse ressursene:
-1. **Gaffel depotet**: Klikk [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/network)
-2. **Klon depotet**: `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Bli med i Microsoft Azure AI Foundry Discord og møt eksperter og andre utviklere**](https://discord.com/invite/ByRwuEEgH4)
+1. **Lag en fork av Repository**: Klikk [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/network)
+2. **Klon Repository**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
+3. [**Bli med i Azure AI Foundry Discord og møt eksperter og andre utviklere**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Flerspråklig støtte
 
 #### Støttes via GitHub Action (Automatisk og alltid oppdatert)
-[Français](../fr/README.md) | [Espagnol](../es/README.md) | [Allemand](../de/README.md) | [Russe](../ru/README.md) | [Arabe](../ar/README.md) | [Persan (Farsi)](../fa/README.md) | [Ourdou](../ur/README.md) | [Chinois (simplifié)](../zh/README.md) | [Chinois (traditionnel, Macao)](../mo/README.md) | [Chinois (traditionnel, Hong Kong)](../hk/README.md) | [Chinois (traditionnel, Taïwan)](../tw/README.md) | [Japonais](../ja/README.md) | [Coréen](../ko/README.md) | [Hindi](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Népalais](../ne/README.md) | [Pendjabi (Gurmukhi)](../pa/README.md) | [Portugais (Portugal)](../pt/README.md) | [Portugais (Brésil)](../br/README.md) | [Italien](../it/README.md) | [Polonais](../pl/README.md) | [Turc](../tr/README.md) | [Grec](../el/README.md) | [Thaï](../th/README.md) | [Suédois](../sv/README.md) | [Danois](../da/README.md) | [Norvégien](./README.md) | [Finnois](../fi/README.md) | [Néerlandais](../nl/README.md) | [Hébreu](../he/README.md) | [Vietnamien](../vi/README.md) | [Indonésien](../id/README.md) | [Malais](../ms/README.md) | [Tagalog (Philippin)](../tl/README.md) | [Swahili](../sw/README.md) | [Hongrois](../hu/README.md) | [Tchèque](../cs/README.md) | [Slovaque](../sk/README.md) | [Roumain](../ro/README.md) | [Bulgare](../bg/README.md) | [Serbe (cyrillique)](../sr/README.md) | [Croate](../hr/README.md) | [Slovène](../sl/README.md)
-# 🚀 Den ultimate guiden til Model Context Protocol (MCP)-pensumet for nybegynnere
+[French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Portuguese (Brazil)](../br/README.md) | [Italian](../it/README.md) | [Polish](../pl/README.md) | [Turkish](../tr/README.md) | [Greek](../el/README.md) | [Thai](../th/README.md) | [Swedish](../sv/README.md) | [Danish](../da/README.md) | [Norwegian](./README.md) | [Finnish](../fi/README.md) | [Dutch](../nl/README.md) | [Hebrew](../he/README.md) | [Vietnamese](../vi/README.md) | [Indonesian](../id/README.md) | [Malay](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungarian](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romanian](../ro/README.md) | [Bulgarian](../bg/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Croatian](../hr/README.md) | [Slovenian](../sl/README.md)
+# 🚀 Den ultimate guiden til Model Context Protocol (MCP) læreplanen for nybegynnere
 
 ## **Lær MCP med praktiske kodeeksempler i C#, Java, JavaScript, Python og TypeScript**
 
-## 🧠 Oversikt over Model Context Protocol-pensumet
+## 🧠 Oversikt over Model Context Protocol læreplanen
 
-**Model Context Protocol (MCP)** er et banebrytende rammeverk utviklet for å standardisere samhandling mellom AI-modeller og klientapplikasjoner. Dette åpen kildekode-pensumet tilbyr en strukturert læringsvei, komplett med praktiske kodeeksempler og virkelige brukstilfeller, på populære programmeringsspråk som C#, Java, JavaScript, TypeScript og Python.
+**Model Context Protocol (MCP)** er et banebrytende rammeverk designet for å standardisere samspillet mellom AI-modeller og klientapplikasjoner. Denne åpen kildekode-læreplanen tilbyr en strukturert læringsvei, komplett med praktiske kodeeksempler og virkelige bruksområder, på populære programmeringsspråk som C#, Java, JavaScript, TypeScript og Python.
 
 Enten du er AI-utvikler, systemarkitekt eller programvareingeniør, er denne guiden din omfattende ressurs for å mestre MCP-grunnprinsipper og implementeringsstrategier.
 
 ## 🔗 Offisielle MCP-ressurser
 
-- 📘 [MCP-dokumentasjon](https://modelcontextprotocol.io/) – Detaljerte veiledninger og brukerguider  
-- 📜 [MCP-spesifikasjon](https://spec.modelcontextprotocol.io/) – Protokollarkitektur og tekniske referanser  
-- 🧑‍💻 [MCP GitHub-repositorium](https://github.com/modelcontextprotocol) – Åpen kildekode SDK-er, verktøy og kodeeksempler  
+- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Detaljerte veiledninger og brukermanualer  
+- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protokollarkitektur og tekniske referanser  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Åpen kildekode SDK-er, verktøy og kodeeksempler  
 
-## 🧭 Komplett MCP-pensumstruktur
+## 🧭 Fullstendig MCP læreplanstruktur
 
 ### 📌 [Introduksjon til MCP](./00-Introduction/README.md)
 
 - Hva er Model Context Protocol?  
 - Hvorfor standardisering er viktig i AI-pipelines  
-- Praktiske brukstilfeller og fordeler med MCP  
+- Praktiske bruksområder og fordeler med MCP  
 
 ### 🧩 [Kjernebegreper forklart](./01-CoreConcepts/README.md)
 
-- Forståelse av klient-server-arkitektur i MCP  
-- Viktige protokollkomponenter: forespørsler, svar og skjemaer  
-- MCP-meldinger og mønstre for datautveksling  
+- Forstå klient-server-arkitektur i MCP  
+- Nøkkelkomponenter i protokollen: forespørsler, svar og skjemaer  
+- MCP-meldinger og datautvekslingsmønstre  
 
 ### 🔐 [Sikkerhet i MCP](./02-Security/readme.md)
 
 - Identifisere sikkerhetstrusler i MCP-baserte systemer  
-- Metoder og beste praksis for sikre implementeringer  
+- Teknikker og beste praksis for sikre implementasjoner  
 
 ### 🚀 [Kom i gang med MCP](./03-GettingStarted/README.md)
 
-- Oppsett og konfigurering av miljø  
-- Lage grunnleggende MCP-servere og klienter  
+- Oppsett og konfigurasjon av miljø  
+- Lage enkle MCP-servere og klienter  
 - Integrere MCP med eksisterende applikasjoner  
 
-#### 🧮 MCP kalkulator eksempelprosjekter:
+#### 🧮 MCP Kalkulator eksempelprosjekter:
 <details>
   <summary><strong>Utforsk kodeimplementasjoner per språk</strong></summary>
 
-  - [C# MCP Server-eksempel](./03-GettingStarted/samples/csharp/README.md)  
-  - [Java MCP kalkulator](./03-GettingStarted/samples/java/calculator/README.md)  
-  - [JavaScript MCP-demo](./03-GettingStarted/samples/javascript/README.md)  
-  - [Python MCP-server](../../03-GettingStarted/samples/python/mcp_calculator_server.py)  
-  - [TypeScript MCP-eksempel](./03-GettingStarted/samples/typescript/README.md)  
+  - [C# MCP Server Eksempel](./03-GettingStarted/samples/csharp/README.md)  
+  - [Java MCP Kalkulator](./03-GettingStarted/samples/java/calculator/README.md)  
+  - [JavaScript MCP Demo](./03-GettingStarted/samples/javascript/README.md)  
+  - [Python MCP Server](../../03-GettingStarted/samples/python/mcp_calculator_server.py)  
+  - [TypeScript MCP Eksempel](./03-GettingStarted/samples/typescript/README.md)  
 
 </details>
 
 ### 🛠️ [Praktisk implementering](./04-PracticalImplementation/README.md)
 
-- Bruke SDK-er på tvers av språk  
+- Bruke SDK-er på tvers av ulike språk  
 - Feilsøking, testing og validering  
 - Lage gjenbrukbare prompt-maler og arbeidsflyter  
 
-#### 💡 MCP avanserte kalkulatorprosjekter:
+#### 💡 MCP Avanserte kalkulatorprosjekter:
 <details>
   <summary><strong>Utforsk avanserte eksempler</strong></summary>
 
-  - [Avansert C# eksempel](./04-PracticalImplementation/samples/csharp/README.md)  
-  - [Java container-app-eksempel](./04-PracticalImplementation/samples/java/containerapp/README.md)  
-  - [JavaScript avansert eksempel](./04-PracticalImplementation/samples/javascript/README.md)  
-  - [Python kompleks implementering](../../04-PracticalImplementation/samples/python/mcp_sample.py)  
-  - [TypeScript container-eksempel](./04-PracticalImplementation/samples/typescript/README.md)  
+  - [Avansert C# Eksempel](./04-PracticalImplementation/samples/csharp/README.md)  
+  - [Java Container App Eksempel](./04-PracticalImplementation/samples/java/containerapp/README.md)  
+  - [JavaScript Avansert Eksempel](./04-PracticalImplementation/samples/javascript/README.md)  
+  - [Python Kompleks Implementering](../../04-PracticalImplementation/samples/python/mcp_sample.py)  
+  - [TypeScript Container Eksempel](./04-PracticalImplementation/samples/typescript/README.md)  
 
 </details>
 
 ### 🎓 [Avanserte temaer i MCP](./05-AdvancedTopics/README.md)
 
 - Multi-modale AI-arbeidsflyter og utvidbarhet  
-- Sikre strategier for skalering  
+- Sikre skaleringsstrategier  
 - MCP i bedriftsøkosystemer  
 
-### 🌍 [Bidrag fra fellesskapet](./06-CommunityContributions/README.md)
+### 🌍 [Fellesskapsbidrag](./06-CommunityContributions/README.md)
 
 - Hvordan bidra med kode og dokumentasjon  
 - Samarbeid via GitHub  
 - Fellesskapsdrevne forbedringer og tilbakemeldinger  
 
-### 📈 [Innsikter fra tidlig adopsjon](./07-CaseStudies/README.md)
+### 📈 [Innsikter fra tidlig bruk](./07-CaseStudies/README.md)
 
-- Virkelige implementeringer og hva som fungerte  
-- Bygging og utrulling av MCP-baserte løsninger  
+- Virkelige implementasjoner og hva som fungerte  
+- Bygge og distribuere MCP-baserte løsninger  
 - Trender og fremtidig veikart  
 
 ### 📏 [Beste praksis for MCP](./08-BestPractices/README.md)
 
-- Ytelsesoptimalisering og tuning  
+- Ytelsesjustering og optimalisering  
 - Design av feiltolerante MCP-systemer  
 - Testing og robusthetsstrategier  
 
 ### 📊 [MCP casestudier](./09-CaseStudy/Readme.md)
 
-- Grundige analyser av MCP-løsningsarkitekturer  
-- Utrullingsplaner og integrasjonstips  
+- Dypdykk i MCP-løsningsarkitekturer  
+- Distribusjonsplaner og integrasjonstips  
 - Annoterte diagrammer og prosjektgjennomganger  
 
 ## 🎯 Forutsetninger for å lære MCP
 
-For å få mest mulig ut av dette pensumet bør du ha:
+For å få mest mulig ut av denne læreplanen bør du ha:
 
 - Grunnleggende kunnskap i C#, Java eller Python  
 - Forståelse av klient-server-modellen og API-er  
 - (Valgfritt) Kjennskap til maskinlæringskonsepter  
 
-## 🛠️ Hvordan bruke dette pensumet effektivt
+## 🛠️ Hvordan bruke denne læreplanen effektivt
 
-Hver leksjon i denne guiden inkluderer:
+Hver leksjon i denne guiden inneholder:
 
 1. Klare forklaringer av MCP-konsepter  
 2. Live kodeeksempler i flere språk  
 3. Øvelser for å bygge ekte MCP-applikasjoner  
-4. Ekstra ressurser for viderekomne  
+4. Ekstra ressurser for avanserte lærende  
 
 ## 📜 Lisensinformasjon
 
-Dette innholdet er lisensiert under **MIT-lisensen**. For vilkår og betingelser, se [LICENSE](../../LICENSE).
+Dette innholdet er lisensiert under **MIT License**. For vilkår og betingelser, se [LICENSE](../../LICENSE).
 
 ## 🤝 Retningslinjer for bidrag
 
-Dette prosjektet tar imot bidrag og forslag. De fleste bidrag krever at du godtar en Contributor License Agreement (CLA) som bekrefter at du har rett til, og faktisk gir oss, rettighetene til å bruke ditt bidrag. For detaljer, se <https://cla.opensource.microsoft.com>.
+Dette prosjektet ønsker bidrag og forslag velkommen. De fleste bidrag krever at du godtar en Contributor License Agreement (CLA) som bekrefter at du har rettighetene til, og faktisk gir oss, rettighetene til å bruke ditt bidrag. For detaljer, se <https://cla.opensource.microsoft.com>.
 
-Når du sender en pull request, vil en CLA-bot automatisk avgjøre om du må levere en CLA og merke PR-en deretter (f.eks. statuskontroll, kommentar). Følg bare instruksjonene fra boten. Du trenger kun å gjøre dette én gang for alle repositorier som bruker vår CLA.
+Når du sender en pull request, vil en CLA-bot automatisk avgjøre om du må levere en CLA og merke PR-en deretter (f.eks. statuskontroll, kommentar). Følg bare instruksjonene fra boten. Du trenger bare å gjøre dette én gang på tvers av alle repos som bruker vår CLA.
 
-Dette prosjektet har tatt i bruk [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For mer informasjon, se [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) eller kontakt [opencode@microsoft.com](mailto:opencode@microsoft.com) for spørsmål eller kommentarer.
+Dette prosjektet har tatt i bruk [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For mer informasjon, se [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) eller kontakt [opencode@microsoft.com](mailto:opencode@microsoft.com) ved spørsmål eller kommentarer.
 
 ## 🎒 Andre kurs  
-Teamet vårt lager flere kurs! Sjekk ut:
+Teamet vårt produserer flere kurs! Sjekk ut:
 
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-beginners?WT.mc_id=academic-105485-koreyst)  
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
@@ -182,10 +182,11 @@ Teamet vårt lager flere kurs! Sjekk ut:
 
 ## ™️ Varemerkevarsel
 
-Dette prosjektet kan inneholde varemerker eller logoer for prosjekter, produkter eller tjenester. Autorisert bruk av Microsofts varemerker eller logoer er underlagt og må følge
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Dette prosjektet kan inneholde varemerker eller logoer for prosjekter, produkter eller tjenester. Autorisert bruk av Microsofts
+varemerker eller logoer er underlagt og må følge
+[Microsofts retningslinjer for varemerker og merkevare](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
 Bruk av Microsofts varemerker eller logoer i modifiserte versjoner av dette prosjektet må ikke skape forvirring eller antyde at Microsoft sponser prosjektet.
-Enhver bruk av tredjeparts varemerker eller logoer er underlagt disse tredjepartenes retningslinjer.
+Enhver bruk av tredjeparts varemerker eller logoer er underlagt tredjepartenes retningslinjer.
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på dets opprinnelige språk bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
