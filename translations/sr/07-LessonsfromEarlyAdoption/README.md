@@ -1,37 +1,37 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a6482c201133cb6cb0742918b373a523",
-  "translation_date": "2025-05-17T16:40:03+00:00",
+  "original_hash": "344a126b620ff7997158542fd31be6a4",
+  "translation_date": "2025-05-19T22:29:25+00:00",
   "source_file": "07-LessonsfromEarlyAdoption/README.md",
   "language_code": "sr"
 }
 -->
-# Lekcije od ranih usvajača
+# Lekcije od Ranih Korisnika
 
 ## Pregled
 
-Ova lekcija istražuje kako su rani usvajači iskoristili Model Context Protocol (MCP) za rešavanje stvarnih izazova i podsticanje inovacija u različitim industrijama. Kroz detaljne studije slučaja i praktične projekte, videćete kako MCP omogućava standardizovanu, sigurnu i skalabilnu AI integraciju—povezujući velike jezičke modele, alate i poslovne podatke u jedinstven okvir. Steći ćete praktično iskustvo u dizajniranju i izgradnji rešenja zasnovanih na MCP-u, učićete iz dokazanih obrazaca implementacije i otkrićete najbolje prakse za implementaciju MCP-a u produkcionim okruženjima. Lekcija takođe ističe nove trendove, buduće pravce i resurse otvorenog koda kako biste ostali na čelu MCP tehnologije i njenog razvojnog ekosistema.
+Ova lekcija istražuje kako su rani korisnici iskoristili Model Context Protocol (MCP) da reše stvarne izazove i podstaknu inovacije u različitim industrijama. Kroz detaljne studije slučaja i praktične projekte, videćete kako MCP omogućava standardizovanu, sigurnu i skalabilnu AI integraciju—povezujući velike jezičke modele, alate i enterprise podatke u jedinstvenom okviru. Steći ćete praktično iskustvo u dizajniranju i izgradnji rešenja zasnovanih na MCP-u, naučiti iz dokazanih obrazaca implementacije i otkriti najbolje prakse za primenu MCP-a u produkcionim okruženjima. Lekcija takođe ističe nove trendove, buduće pravce i open-source resurse koji će vam pomoći da ostanete u vrhu MCP tehnologije i njenog rastućeg ekosistema.
 
 ## Ciljevi učenja
 
-- Analizirati stvarne MCP implementacije u različitim industrijama
-- Dizajnirati i izgraditi kompletne aplikacije zasnovane na MCP-u
-- Istražiti nove trendove i buduće pravce u MCP tehnologiji
-- Primijeniti najbolje prakse u stvarnim razvojnim scenarijima
+- Analizirati stvarne MCP implementacije u različitim industrijama  
+- Dizajnirati i izgraditi kompletne aplikacije zasnovane na MCP-u  
+- Istražiti nove trendove i buduće pravce u MCP tehnologiji  
+- Primijeniti najbolje prakse u stvarnim razvojnim scenarijima  
 
-## Stvarne MCP implementacije
+## Stvarne MCP Implementacije
 
-### Studija slučaja 1: Automatizacija korisničke podrške u preduzećima
+### Studija slučaja 1: Automatizacija Enterprise Korisničke Podrške
 
-Jedna multinacionalna korporacija implementirala je rešenje zasnovano na MCP-u kako bi standardizovala AI interakcije kroz svoje sisteme korisničke podrške. Ovo im je omogućilo da:
+Multinacionalna kompanija implementirala je rešenje zasnovano na MCP-u da standardizuje AI interakcije u svojim sistemima korisničke podrške. Ovo im je omogućilo da:
 
-- Kreiraju jedinstven interfejs za više LLM provajdera
-- Održe konzistentno upravljanje promptovima kroz odeljenja
-- Implementiraju robusne sigurnosne i kontrolne mere usklađenosti
-- Lako prelaze između različitih AI modela na osnovu specifičnih potreba
+- Kreiraju jedinstven interfejs za više LLM provajdera  
+- Održavaju dosledno upravljanje promptovima u različitim odeljenjima  
+- Implementiraju snažne bezbednosne i usklađene kontrole  
+- Lako menjaju AI modele u zavisnosti od specifičnih potreba  
 
-**Tehnička implementacija:**
+**Tehnička implementacija:**  
 ```python
 # Python MCP server implementation for customer support
 import logging
@@ -92,18 +92,18 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-**Rezultati:** 30% smanjenje troškova modela, 45% poboljšanje konzistentnosti odgovora i poboljšana usklađenost kroz globalne operacije.
+**Rezultati:** 30% smanjenje troškova modela, 45% poboljšanje doslednosti odgovora i poboljšana usklađenost u globalnim operacijama.
 
-### Studija slučaja 2: Asistent za dijagnostiku u zdravstvu
+### Studija slučaja 2: Asistent za Dijagnostiku u Zdravstvu
 
-Jedan pružalac zdravstvenih usluga razvio je MCP infrastrukturu kako bi integrisao više specijalizovanih medicinskih AI modela, istovremeno osiguravajući zaštitu osetljivih podataka pacijenata:
+Zdravstveni provajder razvio je MCP infrastrukturu za integraciju više specijalizovanih medicinskih AI modela, uz osiguranje zaštite osetljivih podataka pacijenata:
 
-- Bešavno prebacivanje između generalističkih i specijalističkih medicinskih modela
-- Stroge kontrole privatnosti i tragovi revizije
-- Integracija sa postojećim sistemima elektronskih zdravstvenih kartona (EHR)
-- Konzistentno inženjering promptova za medicinsku terminologiju
+- Besprekorno prebacivanje između opštih i specijalističkih medicinskih modela  
+- Stroge kontrole privatnosti i audita  
+- Integracija sa postojećim sistemima elektronskih zdravstvenih kartona (EHR)  
+- Dosledno inženjerstvo promptova za medicinsku terminologiju  
 
-**Tehnička implementacija:**
+**Tehnička implementacija:**  
 ```csharp
 // C# MCP host application implementation in healthcare application
 using Microsoft.Extensions.DependencyInjection;
@@ -168,18 +168,18 @@ public class DiagnosticAssistant
 }
 ```
 
-**Rezultati:** Poboljšane dijagnostičke sugestije za lekare uz održavanje potpune HIPAA usklađenosti i značajno smanjenje prebacivanja konteksta između sistema.
+**Rezultati:** Poboljšani dijagnostički predlozi za lekare uz potpunu HIPAA usklađenost i značajno smanjenje prebacivanja konteksta između sistema.
 
-### Studija slučaja 3: Analiza rizika u finansijskim uslugama
+### Studija slučaja 3: Analiza Rizika u Finansijskim Uslugama
 
-Jedna finansijska institucija implementirala je MCP kako bi standardizovala procese analize rizika u različitim odeljenjima:
+Finansijska institucija implementirala je MCP da standardizuje procese analize rizika u različitim odeljenjima:
 
-- Kreirali su jedinstven interfejs za modele kreditnog rizika, detekciju prevara i investicionih rizika
-- Implementirali stroge kontrole pristupa i verzionisanje modela
-- Obezbedili revizorsku sposobnost svih AI preporuka
-- Održali konzistentno formatiranje podataka kroz različite sisteme
+- Kreiran jedinstven interfejs za modele kreditnog rizika, detekciju prevara i investicionog rizika  
+- Implementirane stroge kontrole pristupa i verzionisanje modela  
+- Obezbeđena auditabilnost svih AI preporuka  
+- Održavanje doslednog formata podataka u različitim sistemima  
 
-**Tehnička implementacija:**
+**Tehnička implementacija:**  
 ```java
 // Java MCP server for financial risk assessment
 import org.mcp.server.*;
@@ -210,18 +210,18 @@ public class FinancialRiskMCPServer {
 }
 ```
 
-**Rezultati:** Poboljšana regulatorna usklađenost, 40% brži ciklusi implementacije modela i poboljšana konzistentnost procene rizika kroz odeljenja.
+**Rezultati:** Poboljšana usklađenost sa regulativom, 40% brži ciklusi implementacije modela i poboljšana doslednost procene rizika.
 
-### Studija slučaja 4: Microsoft Playwright MCP Server za automatizaciju pretraživača
+### Studija slučaja 4: Microsoft Playwright MCP Server za Automatizaciju Pretraživača
 
-Microsoft je razvio [Playwright MCP server](https://github.com/microsoft/playwright-mcp) kako bi omogućio sigurnu, standardizovanu automatizaciju pretraživača kroz Model Context Protocol. Ovo rešenje omogućava AI agentima i LLM-ovima da interaguju sa web pretraživačima na kontrolisan, revizorski i proširiv način—omogućavajući slučajeve upotrebe kao što su automatizovano web testiranje, ekstrakcija podataka i end-to-end tokovi rada.
+Microsoft je razvio [Playwright MCP server](https://github.com/microsoft/playwright-mcp) koji omogućava sigurnu, standardizovanu automatizaciju pretraživača preko Model Context Protocol-a. Ovo rešenje dozvoljava AI agentima i LLM-ovima da interaguju sa web pretraživačima na kontrolisan, auditan i proširiv način—omogućavajući primene kao što su automatizovano testiranje weba, ekstrakcija podataka i end-to-end radni tokovi.
 
-- Izlaže mogućnosti automatizacije pretraživača (navigacija, popunjavanje obrazaca, snimanje ekrana, itd.) kao MCP alate
-- Implementira stroge kontrole pristupa i peskovnike kako bi sprečio neovlašćene radnje
-- Pruža detaljne revizorske zapise za sve interakcije pretraživača
-- Podržava integraciju sa Azure OpenAI i drugim LLM provajderima za automatizaciju vođenu agentima
+- Izlaže mogućnosti automatizacije pretraživača (navigacija, popunjavanje formi, pravljenje snimaka ekrana itd.) kao MCP alate  
+- Implementira stroge kontrole pristupa i sandboxing da spreči neautorizovane radnje  
+- Pruža detaljne audit zapise za sve interakcije sa pretraživačem  
+- Podržava integraciju sa Azure OpenAI i drugim LLM provajderima za automatizaciju vođenu agentima  
 
-**Tehnička implementacija:**
+**Tehnička implementacija:**  
 ```typescript
 // TypeScript: Registering Playwright browser automation tools in an MCP server
 import { createServer, ToolDefinition } from 'modelcontextprotocol';
@@ -257,25 +257,25 @@ server.listen(8080);
 ```
 
 **Rezultati:**  
-- Omogućena sigurna, programska automatizacija pretraživača za AI agente i LLM-ove
-- Smanjen manuelni napor testiranja i poboljšano pokrivanje testova za web aplikacije
-- Pružena ponovno upotrebljiva, proširiva platforma za integraciju alata zasnovanih na pretraživaču u poslovnim okruženjima
+- Omogućena sigurna, programabilna automatizacija pretraživača za AI agente i LLM-ove  
+- Smanjen manuelni napor u testiranju i poboljšan obuhvat testova web aplikacija  
+- Pružena višekratno upotrebljiva i proširiva platforma za integraciju alata zasnovanih na pretraživaču u enterprise okruženjima  
 
 **Reference:**  
-- [Playwright MCP Server GitHub Repozitorijum](https://github.com/microsoft/playwright-mcp)
-- [Microsoft AI i rešenja za automatizaciju](https://azure.microsoft.com/en-us/products/ai-services/)
+- [Playwright MCP Server GitHub Repository](https://github.com/microsoft/playwright-mcp)  
+- [Microsoft AI and Automation Solutions](https://azure.microsoft.com/en-us/products/ai-services/)  
 
-### Studija slučaja 5: Azure MCP – Model Context Protocol kao usluga na nivou preduzeća
+### Studija slučaja 5: Azure MCP – Enterprise-Grade Model Context Protocol kao Usluga
 
-Azure MCP ([https://aka.ms/azmcp](https://aka.ms/azmcp)) je Microsoftova upravljana, preduzeća vredna implementacija Model Context Protocol-a, dizajnirana da pruži skalabilne, sigurne i usklađene MCP server sposobnosti kao cloud uslugu. Azure MCP omogućava organizacijama da brzo implementiraju, upravljaju i integrišu MCP servere sa Azure AI, podacima i sigurnosnim uslugama, smanjujući operativne troškove i ubrzavajući usvajanje AI.
+Azure MCP ([https://aka.ms/azmcp](https://aka.ms/azmcp)) je Microsoftova upravljana, enterprise-grade implementacija Model Context Protocol-a, dizajnirana da pruži skalabilne, sigurne i usklađene MCP server kapacitete kao cloud uslugu. Azure MCP omogućava organizacijama brzo postavljanje, upravljanje i integraciju MCP servera sa Azure AI, podacima i bezbednosnim servisima, smanjujući operativni trošak i ubrzavajući usvajanje AI.
 
-- Potpuno upravljano hosting MCP servera sa ugrađenim skaliranjem, nadzorom i sigurnošću
-- Nativna integracija sa Azure OpenAI, Azure AI Search i drugim Azure uslugama
-- Autentikacija i autorizacija na nivou preduzeća putem Microsoft Entra ID
-- Podrška za prilagođene alate, šablone promptova i konektore resursa
-- Usklađenost sa sigurnosnim i regulatornim zahtevima preduzeća
+- Potpuno upravljano hostovanje MCP servera sa ugrađenim skaliranjem, nadzorom i bezbednošću  
+- Nativna integracija sa Azure OpenAI, Azure AI Search i drugim Azure servisima  
+- Enterprise autentikacija i autorizacija putem Microsoft Entra ID  
+- Podrška za prilagođene alate, šablone promptova i konektore resursa  
+- Usklađenost sa enterprise sigurnosnim i regulatornim zahtevima  
 
-**Tehnička implementacija:**
+**Tehnička implementacija:**  
 ```yaml
 # Example: Azure MCP server deployment configuration (YAML)
 apiVersion: mcp.microsoft.com/v1
@@ -302,165 +302,164 @@ spec:
 ```
 
 **Rezultati:**  
-- Smanjeno vreme do vrednosti za AI projekte u preduzećima pružanjem spremne za upotrebu, usklađene MCP server platforme
-- Pojednostavljena integracija LLM-ova, alata i izvora podataka preduzeća
-- Poboljšana sigurnost, uvid i operativna efikasnost za MCP radne opterećenja
+- Skratio vreme do vrednosti za enterprise AI projekte pružajući spremnu, usklađenu MCP server platformu  
+- Pojednostavljena integracija LLM-ova, alata i enterprise izvora podataka  
+- Poboljšana sigurnost, posmatranje i operativna efikasnost MCP radnih opterećenja  
 
 **Reference:**  
-- [Azure MCP Dokumentacija](https://aka.ms/azmcp)
-- [Azure AI Usluge](https://azure.microsoft.com/en-us/products/ai-services/)
+- [Azure MCP Dokumentacija](https://aka.ms/azmcp)  
+- [Azure AI Servisi](https://azure.microsoft.com/en-us/products/ai-services/)  
 
-## Praktični projekti
+## Studija slučaja 6: NLWeb
 
-### Projekat 1: Izgradnja MCP servera sa više provajdera
+MCP (Model Context Protocol) je novi protokol za chatbotove i AI asistente za interakciju sa alatima. Svaka NLWeb instanca je takođe MCP server, koji podržava jednu osnovnu metodu, ask, koja se koristi za postavljanje pitanja web sajtu na prirodnom jeziku. Vraćeni odgovor koristi schema.org, široko korišćen vokabular za opisivanje web podataka. U slobodnijem smislu, MCP je NLWeb kao što je Http za HTML. NLWeb kombinuje protokole, schema.org formate i primer koda da pomogne sajtovima da brzo kreiraju ove krajnje tačke, koristeći prednosti kako za ljude kroz konverzacione interfejse, tako i za mašine kroz prirodnu agent-agent interakciju.
+
+NLWeb se sastoji iz dva različita dela:  
+- Protokol, veoma jednostavan za početak, za interfejs sa sajtom na prirodnom jeziku i format koji koristi json i schema.org za vraćeni odgovor. Pogledajte dokumentaciju o REST API-ju za više detalja.  
+- Jednostavna implementacija (1) koja koristi postojeći markup, za sajtove koji se mogu apstrahovati kao liste stavki (proizvodi, recepti, atrakcije, recenzije itd.). Zajedno sa setom korisničkih interfejs widgeta, sajtovi lako mogu pružiti konverzacione interfejse za svoj sadržaj. Pogledajte dokumentaciju o životnom ciklusu chat upita za više detalja o tome kako to funkcioniše.  
+
+**Reference:**  
+- [Azure MCP Dokumentacija](https://aka.ms/azmcp)  
+- [NLWeb](https://github.com/microsoft/NlWeb)  
+
+## Praktični Projekti
+
+### Projekat 1: Izgradnja MCP Servera sa Više Provajdera
 
 **Cilj:** Kreirati MCP server koji može usmeravati zahteve ka više AI model provajdera na osnovu specifičnih kriterijuma.
 
-**Zahtevi:**
-- Podrška za najmanje tri različita provajdera modela (npr. OpenAI, Anthropic, lokalni modeli)
-- Implementirati mehanizam usmeravanja na osnovu metapodataka zahteva
-- Kreirati sistem konfiguracije za upravljanje akreditivima provajdera
-- Dodati keširanje za optimizaciju performansi i troškova
-- Izgraditi jednostavnu kontrolnu tablu za praćenje korišćenja
+**Zahtevi:**  
+- Podrška za najmanje tri različita provajdera modela (npr. OpenAI, Anthropic, lokalni modeli)  
+- Implementacija mehanizma za usmeravanje na osnovu metapodataka zahteva  
+- Kreiranje sistema konfiguracije za upravljanje akreditivima provajdera  
+- Dodavanje keširanja za optimizaciju performansi i troškova  
+- Izgradnja jednostavnog kontrolnog panela za praćenje korišćenja  
 
-**Koraci implementacije:**
-1. Postaviti osnovnu MCP server infrastrukturu
-2. Implementirati adaptere provajdera za svaku AI model uslugu
-3. Kreirati logiku usmeravanja na osnovu atributa zahteva
-4. Dodati mehanizme keširanja za česte zahteve
-5. Razviti kontrolnu tablu za nadzor
-6. Testirati sa različitim obrascima zahteva
+**Koraci implementacije:**  
+1. Postaviti osnovnu infrastrukturu MCP servera  
+2. Implementirati adaptere za svakog AI model provajdera  
+3. Kreirati logiku usmeravanja baziranu na atributima zahteva  
+4. Dodati keš mehanizme za česte zahteve  
+5. Razviti kontrolni panel za praćenje  
+6. Testirati sa različitim obrascima zahteva  
 
-**Tehnologije:** Izaberite između Python (.NET/Java/Python na osnovu vašeg izbora), Redis za keširanje i jednostavni web okvir za kontrolnu tablu.
+**Tehnologije:** Izaberite između Python (.NET/Java/Python po želji), Redis za keširanje i jednostavan web okvir za kontrolni panel.
 
-### Projekat 2: Sistem za upravljanje promptovima u preduzećima
+### Projekat 2: Enterprise Sistem za Upravljanje Promptovima
 
-**Cilj:** Razviti MCP zasnovan sistem za upravljanje, verzionisanje i implementaciju šablona promptova u celoj organizaciji.
+**Cilj:** Razviti sistem zasnovan na MCP-u za upravljanje, verzionisanje i implementaciju šablona promptova u organizaciji.
 
-**Zahtevi:**
-- Kreirati centralizovani repozitorijum za šablone promptova
-- Implementirati verzionisanje i radne tokove odobravanja
-- Izgraditi mogućnosti testiranja šablona sa uzorcima ulaza
-- Razviti kontrole pristupa zasnovane na ulogama
-- Kreirati API za preuzimanje i implementaciju šablona
+**Zahtevi:**  
+- Kreirati centralizovani repozitorijum za šablone promptova  
+- Implementirati verzionisanje i tokove odobravanja  
+- Izgraditi mogućnosti testiranja šablona sa primerima ulaza  
+- Razviti kontrole pristupa zasnovane na ulogama  
+- Kreirati API za preuzimanje i implementaciju šablona  
 
-**Koraci implementacije:**
-1. Dizajnirati šemu baze podataka za skladištenje šablona
-2. Kreirati osnovni API za CRUD operacije šablona
-3. Implementirati sistem verzionisanja
-4. Izgraditi radni tok odobravanja
-5. Razviti okvir za testiranje
-6. Kreirati jednostavan web interfejs za upravljanje
-7. Integrisati sa MCP serverom
+**Koraci implementacije:**  
+1. Dizajnirati šemu baze podataka za skladištenje šablona  
+2. Kreirati osnovni API za CRUD operacije šablona  
+3. Implementirati sistem verzionisanja  
+4. Izgraditi tok odobravanja  
+5. Razviti testni okvir  
+6. Kreirati jednostavan web interfejs za upravljanje  
+7. Integrisati sa MCP serverom  
 
-**Tehnologije:** Vaš izbor backend okvira, SQL ili NoSQL baze podataka i frontend okvira za interfejs za upravljanje.
+**Tehnologije:** Po izboru backend framework, SQL ili NoSQL baza, i frontend framework za interfejs upravljanja.
 
-### Projekat 3: Platforma za generisanje sadržaja zasnovana na MCP-u
+### Projekat 3: Platforma za Generisanje Sadržaja zasnovana na MCP-u
 
-**Cilj:** Izgraditi platformu za generisanje sadržaja koja koristi MCP za pružanje konzistentnih rezultata kroz različite vrste sadržaja.
+**Cilj:** Izgraditi platformu za generisanje sadržaja koja koristi MCP da obezbedi dosledne rezultate za različite tipove sadržaja.
 
-**Zahtevi:**
-- Podrška za više formata sadržaja (blog postovi, društveni mediji, marketinški tekstovi)
-- Implementirati generisanje zasnovano na šablonima sa opcijama prilagođavanja
-- Kreirati sistem za pregled i povratne informacije sadržaja
-- Pratiti metrike performansi sadržaja
-- Podržati verzionisanje i iteraciju sadržaja
+**Zahtevi:**  
+- Podrška za više formata sadržaja (blog postovi, društvene mreže, marketinški tekstovi)  
+- Implementacija generisanja zasnovanog na šablonima sa opcijama prilagođavanja  
+- Kreiranje sistema za pregled i povratne informacije o sadržaju  
+- Praćenje metrika performansi sadržaja  
+- Podrška za verzionisanje i iteraciju sadržaja  
 
-**Koraci implementacije:**
-1. Postaviti MCP klijent infrastrukturu
-2. Kreirati šablone za različite tipove sadržaja
-3. Izgraditi pipeline za generisanje sadržaja
-4. Implementirati sistem za pregled
-5. Razviti sistem za praćenje metrika
-6. Kreirati korisnički interfejs za upravljanje šablonima i generisanje sadržaja
+**Koraci implementacije:**  
+1. Postaviti MCP klijentsku infrastrukturu  
+2. Kreirati šablone za različite tipove sadržaja  
+3. Izgraditi pipeline za generisanje sadržaja  
+4. Implementirati sistem pregleda  
+5. Razviti sistem za praćenje metrika  
+6. Kreirati korisnički interfejs za upravljanje šablonima i generisanjem sadržaja  
 
-**Tehnologije:** Vaš preferirani programski jezik, web okvir i sistem baze podataka.
+**Tehnologije:** Po izboru programski jezik, web framework i sistem baze podataka.
 
-## Budući pravci za MCP tehnologiju
+## Budući Pravci MCP Tehnologije
 
-### Novi trendovi
+### Novi Trendovi
 
-1. **Multi-Modal MCP**
-   - Proširenje MCP-a za standardizaciju interakcija sa modelima slike, zvuka i videa
-   - Razvoj sposobnosti za rezonovanje između modaliteta
-   - Standardizovani formati promptova za različite modalitete
+1. **Multi-Modalni MCP**  
+   - Proširenje MCP-a za standardizaciju interakcija sa modelima za slike, zvuk i video  
+   - Razvoj sposobnosti za međumodalno rezonovanje  
+   - Standardizovani formati promptova za različite modalitete  
 
-2. **Federativna MCP infrastruktura**
-   - Distribuirane MCP mreže koje mogu deliti resurse među organizacijama
-   - Standardizovani protokoli za sigurno deljenje modela
-   - Tehnike privatnosti očuvanja računanja
+2. **Federisana MCP Infrastruktura**  
+   - Distribuirane MCP mreže koje dele resurse između organizacija  
+   - Standardizovani protokoli za sigurnu razmenu modela  
+   - Tehnike računanja koje čuvaju privatnost  
 
-3. **MCP tržišta**
-   - Ekosistemi za deljenje i monetizaciju MCP šablona i dodataka
-   - Procesi osiguranja kvaliteta i sertifikacije
-   - Integracija sa tržištima modela
+3. **MCP Tržišta**  
+   - Ekosistemi za deljenje i monetizaciju MCP šablona i plugina  
+   - Procesi kontrole kvaliteta i sertifikacije  
+   - Integracija sa tržištima modela  
 
-4. **MCP za Edge Computing**
-   - Adaptacija MCP standarda za uređaje sa ograničenim resursima
-   - Optimizovani protokoli za okruženja sa niskim protokom
-   - Specijalizovane MCP implementacije za IoT ekosisteme
+4. **MCP za Edge Computing**  
+   - Prilagođavanje MCP standarda za uređaje sa ograničenim resursima  
+   - Optimizovani protokoli za mreže sa malim protokom podataka  
+   - Specijalizovane MCP implementacije za IoT ekosisteme  
 
-5. **Regulatorni okviri**
-   - Razvoj MCP ekstenzija za regulatornu usklađenost
-   - Standardizovani tragovi revizije i interfejsi za objašnjivost
-   - Integracija sa novim AI okvirima upravljanja
+5. **Regulatorni Okviri**  
+   - Razvoj MCP ekstenzija za usklađenost sa regulativama  
+   - Standardizovani audit tragovi i interfejsi za objašnjivost  
+   - Integracija sa rastućim okvirima upravljanja AI-jem  
 
-### MCP rešenja od Microsofta
+### MCP Rešenja od Microsofta
 
-Microsoft i Azure su razvili nekoliko repozitorijuma otvorenog koda kako bi pomogli programerima da implementiraju MCP u različitim scenarijima:
+Microsoft i Azure su razvili nekoliko open-source repozitorijuma koji pomažu programerima da implementiraju MCP u različitim scenarijima:
 
-#### Microsoft Organizacija
-1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - Playwright MCP server za automatizaciju i testiranje pretraživača
-2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - OneDrive MCP server implementacija za lokalno testiranje i doprinos zajednici
+#### Microsoft Organizacija  
+1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - Playwright MCP server za automatizaciju i testiranje pretraživača  
+2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - OneDrive MCP server implementacija za lokalno testiranje i doprinos zajednici  
+3. [NLWeb](https://github.com/microsoft/NlWeb) - Kolekcija otvorenih protokola i alata sa fokusom na osnovni sloj za AI Web  
 
-#### Azure-Samples Organizacija
-1. [mcp](https://github.com/Azure-Samples/mcp) - Linkovi do uzoraka, alata i resursa za izgradnju i integraciju MCP servera na Azure-u koristeći više jezika
-2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Referentni MCP serveri koji demonstriraju autentikaciju sa trenutnom specifikacijom Model Context Protocol-a
-3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - Početna stranica za implementacije udaljenih MCP servera u Azure funkcijama sa linkovima do repozitorijuma specifičnih za jezik
-4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Šablon za brzi početak izgradnje i implementacije prilagođenih udaljenih MCP servera koristeći Azure funkcije sa Python-om
-5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Šablon za brzi početak izgradnje i implementacije prilagođenih udaljenih MCP servera koristeći Azure funkcije sa .NET/C#
-6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Šablon za brzi početak izgradnje i implementacije prilagođenih udaljenih MCP servera koristeći Azure funkcije sa TypeScript-om
-7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) - Azure API Management kao AI Gateway za udaljene MCP servere koristeći Python
-8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) - APIM ❤️ AI eksperimenti uključujući MCP sposobnosti, integraciju sa Azure OpenAI i AI Foundry
+#### Azure-Samples Organizacija  
+1. [mcp](https://github.com/Azure-Samples/mcp) - Linkovi ka primerima, alatima i resursima za izgradnju i integraciju MCP servera na Azure-u koristeći više jezika  
+2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Referentni MCP serveri koji demonstriraju autentikaciju prema aktuelnoj specifikaciji Model Context Protocol-a  
+3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - Početna stranica za Remote MCP Server implementacije u Azure Functions sa linkovima ka jezičkim repozitorijumima  
+4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Quickstart šablon za izgradnju i implementaciju prilagođenih remote MCP servera koristeći Azure Functions i Python  
+5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Quickstart šablon za izgradnju i implementaciju prilagođenih remote MCP servera koristeći Azure Functions i .NET/C#  
+6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Quickstart šablon za izgradnju i implementaciju prilagođenih remote MCP servera koristeći Azure Functions i TypeScript  
+7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) - Azure API Management kao AI Gateway ka Remote MCP serverima koristeći Python  
+8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) - APIM ❤️ AI eksperimenti uključujući MCP mogućnosti, integraciju sa Azure OpenAI i AI Foundry  
 
-Ovi repozitorijumi pružaju različite implementacije, šablone i resurse za rad sa Model Context Protocol-om kroz različite programske jezike i Azure usluge. Pokrivaju širok spektar slučajeva upotrebe od osnovnih server implementacija do autentikacije, cloud implementacije i scenarija integracije u preduzećima.
+Ovi repozitorijumi pružaju različite implementacije, šablone i resurse za rad sa Model Context Protocol-om na različitim programskim jezicima i Azure servisima. Pokrivaju širok spektar slučajeva od osnovnih server implementacija do autentikacije, cloud deployment-a i enterprise integracije.
 
-#### MCP Resursi Direktorijum
+#### MCP Resources Direktorijum
 
-Direktorijum [MCP Resursi](https://github.com/microsoft/mcp/tree/main/Resources) u zvaničnom Microsoft MCP repozitorijumu pruža kuriranu kolekciju uzoraka resursa, šablona promptova i definicija alata za korišćenje sa Model Context Protocol serverima. Ovaj direktorijum je dizajniran da pomogne programerima da brzo počnu sa MCP-om nudeći ponovo upotrebljive gradivne blokove i primere najboljih praksi za:
+[Direktorijum MCP Resources](https://github.com/microsoft/mcp/tree/main/Resources) u zvaničnom Microsoft MCP repozitorijumu pruža pažljivo odabranu kolekciju primera resursa, šablona promptova i definicija alata za upotrebu sa Model Context Protocol serverima. Ovaj direktorijum je dizajniran da pomogne programerima da brzo započnu rad sa MCP-om nudeći višekratno upotrebljive komponente i primere najboljih praksi za:
 
-- **Šabloni promptova:** Spremni za upotrebu šabloni promptova za uobičajene AI zadatke i scenarije, koji se mogu prilagoditi za vaše sopstvene MCP server implementacije.
-- **Definicije alata:** Primeri šema alata i metapodataka za standardizaciju integracije i pozivanja alata kroz različite MCP servere.
-- **Uzorci resursa:** Primeri definicija resursa za povezivanje sa izvorima podataka, API-ima i spoljnim uslugama unutar MCP okvira.
-- **Referentne implementacije:** Praktični uzorci koji demonstriraju kako strukturirati i organizovati resurse, promptove i alate u stvarnim MCP projektima.
-
-Ovi resursi ubrzavaju razvoj, promovišu standardizaciju i pomažu u osiguravanju najboljih praksi pri izgradnji i implementaciji rešenja zasnovanih na MCP-u.
-
-#### MCP Resursi Direktorijum
-- [MCP Resursi (Uzorci promptova, alata i definicija resursa)](https://github.com/microsoft/mcp/tree/main/Resources)
-
-### Istraživačke mogućnosti
-
-- Efikasne tehnike optimizacije promptova unutar MCP okvira
-- Sigurnosni modeli za MCP implementacije sa više zakupaca
-- Benchmarking performansi kroz različite MCP implementacije
-- Formalne metode verifikacije za MCP servere
-
-## Zaključak
-
-Model Context Protocol (MCP) brzo oblikuje budućnost standardizovane, sigurne i interoperabilne AI integracije kroz industrije. Kroz studije slučaja i praktične projekte u ovoj lekciji, videli ste kako rani usvajači—uključujući Microsoft i Azure—koriste MCP za rešavanje stvarnih izazova, ubrzanje usvajanja AI i osiguranje usklađenosti, sigurnosti i skalabilnosti. MCP-ov modularni pristup
+- **Prompt Šabloni:** Spremni za upotrebu šabloni za uobičajene AI zadatke i scenarije, prilagodljivi za vaše MCP implementacije.  
+- **Definicije Alata:** Primeri šema alata i metapodataka za standardizaciju integracije i pozivanja alata na različitim MCP serverima.  
+- **Primeri Resursa:** Primeri
+- [Remote MCP Functions Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-python)
+- [Remote MCP Functions .NET (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)
+- [Remote MCP Functions TypeScript (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-typescript)
 - [Remote MCP APIM Functions Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
 - [AI-Gateway (Azure-Samples)](https://github.com/Azure-Samples/AI-Gateway)
 - [Microsoft AI and Automation Solutions](https://azure.microsoft.com/en-us/products/ai-services/)
 
 ## Vežbe
 
-1. Analizirajte jednu od studija slučaja i predložite alternativni pristup implementaciji.
-2. Izaberite jednu od ideja za projekte i napravite detaljnu tehničku specifikaciju.
-3. Istražite industriju koja nije obuhvaćena u studijama slučaja i predstavite kako MCP može rešiti njene specifične izazove.
-4. Istražite jedan od pravaca za budućnost i napravite koncept za novu MCP ekstenziju koja bi ga podržala.
+1. Analizirajte jedan od studija slučaja i predložite alternativni pristup implementaciji.
+2. Izaberite jednu od ideja za projekat i napravite detaljnu tehničku specifikaciju.
+3. Istražite industriju koja nije obuhvaćena studijama slučaja i napravite pregled kako bi MCP mogao da reši njene specifične izazove.
+4. Istražite jedan od budućih pravaca i osmislite koncept nove MCP ekstenzije koja bi ga podržavala.
 
-Sledeće: [Najbolje prakse](../08-BestPractices/README.md)
+Sledeće: [Best Practices](../08-BestPractices/README.md)
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем услуге за аутоматско превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако настојимо да обезбедимо тачност, молимо вас да будете свесни да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на свом изворном језику треба сматрати меродавним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразумевања или погрешна тумачења која могу произаћи из коришћења овог превода.
+Овај документ је преведен помоћу AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални превод од стране људског преводиоца. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала употребом овог превода.
