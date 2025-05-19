@@ -296,10 +296,20 @@ spec:
 - Reduced time-to-value for enterprise AI projects by providing a ready-to-use, compliant MCP server platform
 - Simplified integration of LLMs, tools, and enterprise data sources
 - Enhanced security, observability, and operational efficiency for MCP workloads
-
 **References:**  
 - [Azure MCP Documentation](https://aka.ms/azmcp)
 - [Azure AI Services](https://azure.microsoft.com/en-us/products/ai-services/)
+
+## Case Study 6: NLWeb 
+MCP (Model Context Protocol) is an emerging protocol for Chatbots and AI assistants to interact with tools. Every NLWeb instance is also an MCP server, which supports one core method, ask, which is used to ask a website a question in natural language. The returned response leverages schema.org, a widely-used vocabulary for describing web data. Loosely speaking, MCP is NLWeb as Http is to HTML. NLWeb combines protocols, Schema.org formats, and sample code to help sites rapidly create these endpoints, benefiting both humans through conversational interfaces and machines through natural agent-to-agent interaction.
+
+There are two distinct components to NLWeb.
+- A protocol, very simple to begin with, to interface with a site in natural language and a format, leveraging json and schema.org for the returned answer. See the documentation on the REST API for more details.
+- A straightforward implementation of (1) that leverages existing markup, for sites that can be abstracted as lists of items (products, recipes, attractions, reviews, etc.). Together with a set of user interface widgets, sites can easily provide conversational interfaces to their content. See the documentation on Life of a chat query for more details on how this works.
+ 
+**References:**  
+- [Azure MCP Documentation](https://aka.ms/azmcp)
+- [NLWeb](https://github.com/microsoft/NlWeb)
 
 ## Hands-on Projects
 
@@ -404,7 +414,8 @@ Microsoft and Azure have developed several open-source repositories to help deve
 #### Microsoft Organization
 1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - A Playwright MCP server for browser automation and testing
 2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - A OneDrive MCP server implementation for local testing and community contribution
-
+3. [NLWeb](https://github.com/microsoft/NlWeb) - NLWeb is a collection of open protocols and associated open source tools. Its main focus is establishing a foundational layer for the AI Web 
+ 
 #### Azure-Samples Organization
 1. [mcp](https://github.com/Azure-Samples/mcp) - Links to samples, tools, and resources for building and integrating MCP servers on Azure using multiple languages
 2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Reference MCP servers demonstrating authentication with the current Model Context Protocol specification
