@@ -43,26 +43,26 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 
 ## 🧭 Complete MCP Curriculum Structure
 
-| Title | Description | Link |
+| Ch | Title | Description | Link |
 |--|--|--|
-| **00 - Introduction to MCP** | Overview of the Model Context Protocol and its significance in AI pipelines, including what is the Model Context Protocol, why standardization matter and practical use cases and benefits | [Introduction](./00-Introduction/README.md) |
-| **01 - Core Concepts Explained** | In-depth exploration of the core concepts of MCP, including client-server architecture, key protocol components, and messaging patterns | [Core Concepts](./01-CoreConcepts/README.md) |
-| **02 - Security in MCP** | Identifying security threats within MCP-based systems, techniques and best practices for securing implementations | [Security](/02-Security/readme.md) |
-| **03 - Getting Started with MCP** | Environment setup and configuration, creating basic MCP servers and clients, integrating MCP with existing applications | [Getting Started](./03-GettingStarted/README.md) |
-| **3.1 - First server** | Setting up a basic server using the MCP protocol, understanding the server-client interaction, and testing the server | [First Server](./03-GettingStarted/01-first-server/README.md) |
-| **3.2 - First client**  | Setting up a basic client using the MCP protocol, understanding the client-server interaction, and testing the client | [First Client](./03-GettingStarted/02-client/README.md) |
-| **3.3 - Client with LLM**  | Setting up a client using the MCP protocol with a Large Language Model (LLM) | [Client with LLM](./03-GettingStarted/03-llm-client/README.md) |
-| **3.4 - Consuming a server with Visual Studio Code** | Setting up Visual Studio Code to consume servers using the MCP protocol | [Consuming a server with Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
-| **3.5 - Creating a server using SSE** | SSE helps us expose a server to the internet. This section will help you create a server using SSE | [Creating a server using SSE](./03-GettingStarted/05-sse-server/README.md) |
-| **3.6 - Use AI Toolkit** | AI toolkit is a great tool that will help you manage your AI and MCP workflow. | [Use AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
-| **3.7 - Testing your server** | Testing is an important part of the development process. This section will help you test use several different tools. | [Testing your server](./03-GettingStarted/07-testing/README.md) |
-| **3.8 - Deploy your server** | How do you go from local development to production? This section will help you develop and deploy your server. | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
-| **04 - Practical Implementation** | Using SDKs across different languages, debugging, testing, and validation, crafting reusable prompt templates and workflows | [Practical Implementation](./04-PracticalImplementation/README.md) |
-| **05 - Advanced Topics in MCP** | Multi-modal AI workflows and extensibility, secure scaling strategies, MCP in enterprise ecosystems | [Advanced Topics](./05-AdvancedTopics/README.md) |
-| **06 - Community Contributions** | How to contribute code and docs, collaborating via GitHub, community-driven enhancements and feedback | [Community Contributions](./06-CommunityContributions/README.md) |
-| **07 - Insights from Early Adoption** | Real-world implementations and what worked, building and deploying MCP-based solutions, trends and future roadmap | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
-| **08 - Best Practices for MCP** | Performance tuning and optimization, designing fault-tolerant MCP systems, testing and resilience strategies | [Best Practices](./08-BestPractices/README.md) |
-| **09 - MCP Case Studies** | Deep-dives into MCP solution architectures, deployment blueprints and integration tips, annotated diagrams and project walkthroughs | [Case Studies](./09-CaseStudy/README.md) |
+| 00 | **Introduction to MCP** | Overview of the Model Context Protocol and its significance in AI pipelines, including what is the Model Context Protocol, why standardization matter and practical use cases and benefits | [Introduction](./00-Introduction/README.md) |
+| 01 | **Core Concepts Explained** | In-depth exploration of the core concepts of MCP, including client-server architecture, key protocol components, and messaging patterns | [Core Concepts](./01-CoreConcepts/README.md) |
+| 02 | **Security in MCP** | Identifying security threats within MCP-based systems, techniques and best practices for securing implementations | [Security](/02-Security/readme.md) |
+| 03 | **Getting Started with MCP** | Environment setup and configuration, creating basic MCP servers and clients, integrating MCP with existing applications | [Getting Started](./03-GettingStarted/README.md) |
+| -| 1 | **First server** | Setting up a basic server using the MCP protocol, understanding the server-client interaction, and testing the server | [First Server](./03-GettingStarted/01-first-server/README.md) |
+| -| 2 | **First client**  | Setting up a basic client using the MCP protocol, understanding the client-server interaction, and testing the client | [First Client](./03-GettingStarted/02-client/README.md) |
+| -| 3 | **Client with LLM**  | Setting up a client using the MCP protocol with a Large Language Model (LLM) | [Client with LLM](./03-GettingStarted/03-llm-client/README.md) |
+| -| 4 | **Consuming a server with Visual Studio Code** | Setting up Visual Studio Code to consume servers using the MCP protocol | [Consuming a server with Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
+| -| 5 | **Creating a server using SSE** | SSE helps us expose a server to the internet. This section will help you create a server using SSE | [Creating a server using SSE](./03-GettingStarted/05-sse-server/README.md) |
+| -| 6 | **Use AI Toolkit** | AI toolkit is a great tool that will help you manage your AI and MCP workflow. | [Use AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
+| -| 7 | **Testing your server** | Testing is an important part of the development process. This section will help you test use several different tools. | [Testing your server](./03-GettingStarted/07-testing/README.md) |
+| -| 8 | **Deploy your server** | How do you go from local development to production? This section will help you develop and deploy your server. | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
+| 04 | **Practical Implementation** | Using SDKs across different languages, debugging, testing, and validation, crafting reusable prompt templates and workflows | [Practical Implementation](./04-PracticalImplementation/README.md) |
+| 05 | **Advanced Topics in MCP** | Multi-modal AI workflows and extensibility, secure scaling strategies, MCP in enterprise ecosystems | [Advanced Topics](./05-AdvancedTopics/README.md) |
+| 06 | **Community Contributions** | How to contribute code and docs, collaborating via GitHub, community-driven enhancements and feedback | [Community Contributions](./06-CommunityContributions/README.md) |
+| 07 | **Insights from Early Adoption** | Real-world implementations and what worked, building and deploying MCP-based solutions, trends and future roadmap | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
+| 08 | **Best Practices for MCP** | Performance tuning and optimization, designing fault-tolerant MCP systems, testing and resilience strategies | [Best Practices](./08-BestPractices/README.md) |
+| 09 | **MCP Case Studies** | Deep-dives into MCP solution architectures, deployment blueprints and integration tips, annotated diagrams and project walkthroughs | [Case Studies](./09-CaseStudy/README.md) |
 
 ## Sample Projects
 
