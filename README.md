@@ -129,7 +129,7 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 ## 🎒 Other Courses
 Our team produces other courses! Check out:
 
-- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
