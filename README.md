@@ -44,7 +44,7 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 ## 🧭 Complete MCP Curriculum Structure
 
 | Ch | Title | Description | Link |
-|--|--|--|
+|--|--|--|--|
 | 00 | **Introduction to MCP** | Overview of the Model Context Protocol and its significance in AI pipelines, including what is the Model Context Protocol, why standardization matter and practical use cases and benefits | [Introduction](./00-Introduction/README.md) |
 | 01 | **Core Concepts Explained** | In-depth exploration of the core concepts of MCP, including client-server architecture, key protocol components, and messaging patterns | [Core Concepts](./01-CoreConcepts/README.md) |
 | 02 | **Security in MCP** | Identifying security threats within MCP-based systems, techniques and best practices for securing implementations | [Security](/02-Security/readme.md) |
