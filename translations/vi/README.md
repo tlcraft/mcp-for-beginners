@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d0ef2af30fdcc2163da049bb92b81746",
-  "translation_date": "2025-05-19T17:43:51+00:00",
+  "original_hash": "89d94ba19c7c317d115cd1b7b2896ad3",
+  "translation_date": "2025-05-19T22:12:25+00:00",
   "source_file": "README.md",
   "language_code": "vi"
 }
@@ -25,76 +25,74 @@ CO_OP_TRANSLATOR_METADATA:
 Làm theo các bước sau để bắt đầu sử dụng các tài nguyên này:
 1. **Fork Repository**: Nhấn vào [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/network)
 2. **Clone Repository**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Tham gia Azure AI Foundry Discord để gặp gỡ chuyên gia và các nhà phát triển khác**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Tham gia Azure AI Foundry Discord để gặp gỡ các chuyên gia và các nhà phát triển khác**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Hỗ trợ đa ngôn ngữ
 
 #### Hỗ trợ qua GitHub Action (Tự động & Luôn cập nhật)
-[Pháp](../fr/README.md) | [Tây Ban Nha](../es/README.md) | [Đức](../de/README.md) | [Nga](../ru/README.md) | [Ả Rập](../ar/README.md) | [Ba Tư (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Trung Quốc (Giản thể)](../zh/README.md) | [Trung Quốc (Phồn thể, Macau)](../mo/README.md) | [Trung Quốc (Phồn thể, Hồng Kông)](../hk/README.md) | [Trung Quốc (Phồn thể, Đài Loan)](../tw/README.md) | [Nhật Bản](../ja/README.md) | [Hàn Quốc](../ko/README.md) | [Hindi](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Bồ Đào Nha (Bồ Đào Nha)](../pt/README.md) | [Bồ Đào Nha (Brazil)](../br/README.md) | [Ý](../it/README.md) | [Ba Lan](../pl/README.md) | [Thổ Nhĩ Kỳ](../tr/README.md) | [Hy Lạp](../el/README.md) | [Thái](../th/README.md) | [Thụy Điển](../sv/README.md) | [Đan Mạch](../da/README.md) | [Na Uy](../no/README.md) | [Phần Lan](../fi/README.md) | [Hà Lan](../nl/README.md) | [Do Thái](../he/README.md) | [Tiếng Việt](./README.md) | [Indonesia](../id/README.md) | [Mã Lai](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungary](../hu/README.md) | [Séc](../cs/README.md) | [Slovak](../sk/README.md) | [Romania](../ro/README.md) | [Bungari](../bg/README.md) | [Serbia (Chữ Kirin)](../sr/README.md) | [Croatia](../hr/README.md) | [Slovenia](../sl/README.md)
-# 🚀 Hướng dẫn toàn diện về Chương trình Model Context Protocol (MCP) cho người mới bắt đầu
+[Pháp](../fr/README.md) | [Tây Ban Nha](../es/README.md) | [Đức](../de/README.md) | [Nga](../ru/README.md) | [Ả Rập](../ar/README.md) | [Ba Tư (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Trung Quốc (Giản thể)](../zh/README.md) | [Trung Quốc (Phồn thể, Macau)](../mo/README.md) | [Trung Quốc (Phồn thể, Hồng Kông)](../hk/README.md) | [Trung Quốc (Phồn thể, Đài Loan)](../tw/README.md) | [Nhật Bản](../ja/README.md) | [Hàn Quốc](../ko/README.md) | [Ấn Độ](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Bồ Đào Nha (Bồ Đào Nha)](../pt/README.md) | [Bồ Đào Nha (Brazil)](../br/README.md) | [Ý](../it/README.md) | [Ba Lan](../pl/README.md) | [Thổ Nhĩ Kỳ](../tr/README.md) | [Hy Lạp](../el/README.md) | [Thái Lan](../th/README.md) | [Thụy Điển](../sv/README.md) | [Đan Mạch](../da/README.md) | [Na Uy](../no/README.md) | [Phần Lan](../fi/README.md) | [Hà Lan](../nl/README.md) | [Do Thái](../he/README.md) | [Tiếng Việt](./README.md) | [Indonesia](../id/README.md) | [Mã Lai](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungary](../hu/README.md) | [Séc](../cs/README.md) | [Slovakia](../sk/README.md) | [Romania](../ro/README.md) | [Bulgaria](../bg/README.md) | [Serbia (Cyrillic)](../sr/README.md) | [Croatia](../hr/README.md) | [Slovenia](../sl/README.md)
+# 🚀 Chương Trình Đào Tạo Model Context Protocol (MCP) Cho Người Mới Bắt Đầu
 
-## **Học MCP với các ví dụ mã thực tế bằng C#, Java, JavaScript, Python và TypeScript**
+## **Học MCP Qua Ví Dụ Mã Thực Tế Bằng C#, Java, JavaScript, Python, và TypeScript**
 
-## 🧠 Tổng quan về chương trình Model Context Protocol
+## 🧠 Tổng Quan Về Chương Trình Đào Tạo Model Context Protocol
 
-**Model Context Protocol (MCP)** là một khuôn khổ tiên tiến được thiết kế để chuẩn hóa các tương tác giữa các mô hình AI và ứng dụng khách. Chương trình mã nguồn mở này cung cấp một lộ trình học tập có cấu trúc, kèm theo các ví dụ lập trình thực tế và các trường hợp sử dụng trong đời thực, trên nhiều ngôn ngữ lập trình phổ biến như C#, Java, JavaScript, TypeScript và Python.
+**Model Context Protocol (MCP)** là một framework tiên tiến được thiết kế để chuẩn hóa tương tác giữa các mô hình AI và ứng dụng khách. Chương trình đào tạo mã nguồn mở này cung cấp lộ trình học tập có cấu trúc, kèm theo các ví dụ mã thực tế và các trường hợp sử dụng trong thế giới thực, trải dài trên các ngôn ngữ lập trình phổ biến như C#, Java, JavaScript, TypeScript và Python.
 
 Dù bạn là nhà phát triển AI, kiến trúc sư hệ thống hay kỹ sư phần mềm, hướng dẫn này là tài nguyên toàn diện giúp bạn làm chủ các kiến thức cơ bản và chiến lược triển khai MCP.
 
-## 🔗 Tài nguyên chính thức của MCP
+## 🔗 Tài Nguyên Chính Thức của MCP
 
 - 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Hướng dẫn chi tiết và tài liệu người dùng  
 - 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Kiến trúc giao thức và tài liệu kỹ thuật  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – SDK mã nguồn mở, công cụ và mẫu mã  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – SDK mã nguồn mở, công cụ và ví dụ mã  
 
-## 🧭 Cấu trúc chương trình MCP đầy đủ
+## 🧭 Cấu Trúc Toàn Bộ Chương Trình Đào Tạo MCP
 
-| Tiêu đề | Mô tả | Liên kết |
-|--|--|--|
-| **00 - Giới thiệu về MCP** | Tổng quan về Model Context Protocol và tầm quan trọng của nó trong các pipeline AI, bao gồm MCP là gì, tại sao chuẩn hóa lại quan trọng và các trường hợp sử dụng thực tế cùng lợi ích | [Introduction](./00-Introduction/README.md) |
-| **01 - Giải thích các khái niệm cốt lõi** | Khám phá sâu các khái niệm cốt lõi của MCP, bao gồm kiến trúc client-server, các thành phần chính của giao thức và mô hình tin nhắn | [Core Concepts](./01-CoreConcepts/README.md) |
-| **02 - Bảo mật trong MCP** | Xác định các mối đe dọa bảo mật trong hệ thống dựa trên MCP, kỹ thuật và thực hành tốt nhất để bảo vệ triển khai | [Security](/02-Security/readme.md) |
-| **03 - Bắt đầu với MCP** | Thiết lập môi trường và cấu hình, tạo các server và client MCP cơ bản, tích hợp MCP với các ứng dụng hiện có | [Getting Started](./03-GettingStarted/README.md) |
-| **3.1 - Server đầu tiên** | Thiết lập một server cơ bản sử dụng giao thức MCP, hiểu về tương tác server-client và kiểm thử server | [First Server](./03-GettingStarted/01-first-server/README.md) |
-| **3.2 - Client đầu tiên**  | Thiết lập một client cơ bản sử dụng giao thức MCP, hiểu về tương tác client-server và kiểm thử client | [First Client](./03-GettingStarted/02-client/README.md) |
-| **3.3 - Client với LLM**  | Thiết lập client sử dụng giao thức MCP với mô hình ngôn ngữ lớn (LLM) | [Client with LLM](./03-GettingStarted/03-llm-client/README.md) |
-| **3.4 - Sử dụng Visual Studio Code để kết nối server** | Thiết lập Visual Studio Code để kết nối với server qua giao thức MCP | [Consuming a server with Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
-| **3.5 - Tạo server sử dụng SSE** | SSE giúp ta mở server ra internet. Phần này sẽ hướng dẫn bạn tạo server sử dụng SSE | [Creating a server using SSE](./03-GettingStarted/05-sse-server/README.md) |
-| **3.6 - Sử dụng AI Toolkit** | AI Toolkit là công cụ tuyệt vời giúp bạn quản lý workflow AI và MCP của mình | [Use AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
-| **3.7 - Kiểm thử server của bạn** | Kiểm thử là phần quan trọng trong quy trình phát triển. Phần này sẽ giúp bạn kiểm thử bằng nhiều công cụ khác nhau | [Testing your server](./03-GettingStarted/07-testing/README.md) |
-| **3.8 - Triển khai server của bạn** | Làm thế nào để chuyển từ phát triển cục bộ sang môi trường sản xuất? Phần này sẽ giúp bạn phát triển và triển khai server | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
-| **04 - Triển khai thực tế** | Sử dụng SDK trên nhiều ngôn ngữ, gỡ lỗi, kiểm thử và xác nhận, tạo các mẫu prompt và workflow có thể tái sử dụng | [Practical Implementation](./04-PracticalImplementation/README.md) |
-| **05 - Chủ đề nâng cao trong MCP** | Workflow AI đa phương thức và khả năng mở rộng, chiến lược bảo mật khi mở rộng, MCP trong hệ sinh thái doanh nghiệp | [Advanced Topics](./05-AdvancedTopics/README.md) |
-| **06 - Đóng góp cộng đồng** | Cách đóng góp mã và tài liệu, hợp tác qua GitHub, nâng cao và phản hồi do cộng đồng điều khiển | [Community Contributions](./06-CommunityContributions/README.md) |
-| **07 - Những bài học từ những người dùng đầu tiên** | Các triển khai thực tế và điều gì đã hiệu quả, xây dựng và triển khai các giải pháp dựa trên MCP, xu hướng và lộ trình tương lai | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
-| **08 - Thực hành tốt nhất cho MCP** | Tối ưu hiệu suất, thiết kế hệ thống MCP chịu lỗi, chiến lược kiểm thử và độ bền | [Best Practices](./08-BestPractices/README.md) |
-| **09 - Nghiên cứu trường hợp MCP** | Phân tích sâu kiến trúc giải pháp MCP, bản thiết kế triển khai và mẹo tích hợp, sơ đồ chú thích và hướng dẫn dự án | [Case Studies](./09-CaseStudy/README.md) |
+| Ch | Tiêu Đề | Mô Tả | Liên Kết |
+|--|--|--|--|
+| 00 | **Giới Thiệu Về MCP** | Tổng quan về Model Context Protocol và tầm quan trọng của nó trong pipeline AI, bao gồm MCP là gì, lý do chuẩn hóa quan trọng và các trường hợp sử dụng cùng lợi ích thực tế | [Introduction](./00-Introduction/README.md) |
+| 01 | **Giải Thích Các Khái Niệm Cốt Lõi** | Khám phá sâu về các khái niệm cốt lõi của MCP, bao gồm kiến trúc client-server, các thành phần chính của giao thức và các mẫu tin nhắn | [Core Concepts](./01-CoreConcepts/README.md) |
+| 02 | **Bảo Mật Trong MCP** | Nhận diện các mối đe dọa bảo mật trong hệ thống dựa trên MCP, kỹ thuật và các thực hành tốt nhất để bảo vệ triển khai | [Security](/02-Security/readme.md) |
+| 03 | **Bắt Đầu Với MCP** | Thiết lập môi trường và cấu hình, tạo server và client MCP cơ bản, tích hợp MCP với ứng dụng hiện có | [Getting Started](./03-GettingStarted/README.md) |
+| 3.1 | **Server Đầu Tiên** | Thiết lập server cơ bản sử dụng giao thức MCP, hiểu tương tác server-client và kiểm thử server | [First Server](./03-GettingStarted/01-first-server/README.md) |
+| 3.2 | **Client Đầu Tiên** | Thiết lập client cơ bản sử dụng giao thức MCP, hiểu tương tác client-server và kiểm thử client | [First Client](./03-GettingStarted/02-client/README.md) |
+| 3.3 | **Client với LLM** | Thiết lập client sử dụng MCP kết hợp với Large Language Model (LLM) | [Client with LLM](./03-GettingStarted/03-llm-client/README.md) |
+| 3.4 | **Sử Dụng Visual Studio Code Để Kết Nối Server** | Cấu hình Visual Studio Code để kết nối và sử dụng server theo giao thức MCP | [Consuming a server with Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
+| 3.5 | **Tạo Server Sử Dụng SSE** | SSE giúp chúng ta mở server ra internet. Phần này sẽ hướng dẫn bạn tạo server sử dụng SSE | [Creating a server using SSE](./03-GettingStarted/05-sse-server/README.md) |
+| 3.6 | **Sử Dụng AI Toolkit** | AI Toolkit là công cụ tuyệt vời giúp bạn quản lý workflow AI và MCP | [Use AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
+| 3.7 | **Kiểm Thử Server Của Bạn** | Kiểm thử là phần quan trọng trong quá trình phát triển. Phần này sẽ giúp bạn sử dụng nhiều công cụ khác nhau để kiểm thử | [Testing your server](./03-GettingStarted/07-testing/README.md) |
+| 3.8 | **Triển Khai Server** | Làm thế nào để chuyển từ phát triển cục bộ sang môi trường sản xuất? Phần này sẽ giúp bạn phát triển và triển khai server | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
+| 04 | **Triển Khai Thực Tế** | Sử dụng SDK trên nhiều ngôn ngữ, gỡ lỗi, kiểm thử và xác thực, tạo các mẫu prompt và workflow có thể tái sử dụng | [Practical Implementation](./04-PracticalImplementation/README.md) |
+| 05 | **Chủ Đề Nâng Cao Trong MCP** | Workflow AI đa phương thức và khả năng mở rộng, chiến lược mở rộng bảo mật, MCP trong hệ sinh thái doanh nghiệp | [Advanced Topics](./05-AdvancedTopics/README.md) |
+| 06 | **Đóng Góp Cộng Đồng** | Cách đóng góp mã và tài liệu, hợp tác qua GitHub, cải tiến và phản hồi từ cộng đồng | [Community Contributions](./06-CommunityContributions/README.md) |
+| 07 | **Bài Học Từ Việc Áp Dụng Sớm** | Triển khai thực tế và những gì đã thành công, xây dựng và triển khai giải pháp dựa trên MCP, xu hướng và lộ trình tương lai | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
+| 08 | **Thực Hành Tốt Nhất Cho MCP** | Tối ưu hiệu năng, thiết kế hệ thống MCP chịu lỗi, kiểm thử và chiến lược đảm bảo độ bền | [Best Practices](./08-BestPractices/README.md) |
+| 09 | **Nghiên Cứu Trường Hợp MCP** | Phân tích sâu kiến trúc giải pháp MCP, bản thiết kế triển khai và mẹo tích hợp, sơ đồ chú thích và hướng dẫn dự án | [Case Studies](./09-CaseStudy/README.md) |
 
-## Các dự án mẫu
+## Dự Án Mẫu
 
-### 🧮 Dự án mẫu Máy tính MCP:
+### 🧮 Dự Án Mẫu Máy Tính MCP:
 <details>
-  <summary><strong>Khám phá các ví dụ mã theo ngôn ngữ</strong></summary>
+  <summary><strong>Khám Phá Các Ví Dụ Mã Theo Ngôn Ngữ</strong></summary>
 
-  - [Ví dụ server MCP C#](./03-GettingStarted/samples/csharp/README.md)
-  - [Máy tính MCP Java](./03-GettingStarted/samples/java/calculator/README.md)
+  - [Ví Dụ Server MCP C#](./03-GettingStarted/samples/csharp/README.md)
+  - [Máy Tính MCP Java](./03-GettingStarted/samples/java/calculator/README.md)
   - [Demo MCP JavaScript](./03-GettingStarted/samples/javascript/README.md)
   - [Server MCP Python](../../03-GettingStarted/samples/python/mcp_calculator_server.py)
-  - [Ví dụ MCP TypeScript](./03-GettingStarted/samples/typescript/README.md)
+  - [Ví Dụ MCP TypeScript](./03-GettingStarted/samples/typescript/README.md)
 
 </details>
 
-### 💡 Dự án Máy tính nâng cao MCP:
+### 💡 Dự Án Máy Tính MCP Nâng Cao:
 <details>
-  <summary><strong>Khám phá các mẫu nâng cao</strong></summary>
+  <summary><strong>Khám Phá Các Ví Dụ Nâng Cao</strong></summary>
 
-  - [Mẫu nâng cao C#](./04-PracticalImplementation/samples/csharp/README.md)
-  - [Ví dụ ứng dụng Container Java](./04-PracticalImplementation/samples/java/containerapp/README.md)
-  - [Mẫu nâng cao JavaScript](./04-PracticalImplementation/samples/javascript/README.md)
-  - [Triển khai phức tạp Python](../../04-PracticalImplementation/samples/python/mcp_sample.py)
-
-</details>
+  - [Ví Dụ Nâng Cao C#](./04-PracticalImplementation/samples/csharp/README.md)
+  - [Ví Dụ Ứng Dụng Container Java](./04-PracticalImplementation/samples/java/containerapp/README.md)
+  - [Ví Dụ Nâng Cao JavaScript](./04-PracticalImplementation/samples/javascript/README.md)
+  - [Triển Khai Phức Tạp Python](../../04-PracticalImplementation/samples/python/mcp_sample.py)
 - [TypeScript Container Sample](./04-PracticalImplementation/samples/typescript/README.md)
 
 </details>
@@ -114,24 +112,24 @@ Mỗi bài học trong hướng dẫn này bao gồm:
 
 1. Giải thích rõ ràng về các khái niệm MCP  
 2. Ví dụ mã nguồn trực tiếp bằng nhiều ngôn ngữ  
-3. Bài tập để xây dựng ứng dụng MCP thực tế  
+3. Bài tập để xây dựng các ứng dụng MCP thực tế  
 4. Tài nguyên bổ sung cho người học nâng cao  
 
 ## 📜 Thông tin bản quyền
 
-Nội dung này được cấp phép theo **MIT License**. Để biết điều khoản và điều kiện, xem tại [LICENSE](../../LICENSE).
+Nội dung này được cấp phép theo **MIT License**. Để biết điều khoản, xem [LICENSE](../../LICENSE).
 
 ## 🤝 Hướng dẫn đóng góp
 
-Dự án này hoan nghênh các đóng góp và ý kiến. Hầu hết các đóng góp yêu cầu bạn đồng ý với Thỏa thuận Cấp phép Đóng góp (CLA) xác nhận rằng bạn có quyền và thực sự cấp quyền cho chúng tôi sử dụng đóng góp của bạn. Chi tiết xem tại <https://cla.opensource.microsoft.com>.
+Dự án này hoan nghênh các đóng góp và đề xuất. Phần lớn các đóng góp yêu cầu bạn đồng ý với thỏa thuận Contributor License Agreement (CLA) xác nhận rằng bạn có quyền và thực sự cấp quyền cho chúng tôi sử dụng đóng góp của bạn. Chi tiết xem tại <https://cla.opensource.microsoft.com>.
 
-Khi bạn gửi pull request, một bot CLA sẽ tự động xác định xem bạn có cần cung cấp CLA hay không và đánh dấu PR tương ứng (ví dụ: kiểm tra trạng thái, bình luận). Chỉ cần làm theo hướng dẫn của bot. Bạn chỉ cần thực hiện việc này một lần cho tất cả các kho sử dụng CLA của chúng tôi.
+Khi bạn gửi pull request, một bot CLA sẽ tự động xác định xem bạn có cần cung cấp CLA không và sẽ đánh dấu PR phù hợp (ví dụ: kiểm tra trạng thái, bình luận). Bạn chỉ cần làm theo hướng dẫn của bot. Việc này chỉ cần thực hiện một lần cho tất cả các kho sử dụng CLA của chúng tôi.
 
 Dự án này đã áp dụng [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).  
-Để biết thêm thông tin, xem [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) hoặc liên hệ [opencode@microsoft.com](mailto:opencode@microsoft.com) nếu có câu hỏi hoặc góp ý thêm.
+Để biết thêm thông tin, xem [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) hoặc liên hệ [opencode@microsoft.com](mailto:opencode@microsoft.com) nếu có câu hỏi hay góp ý thêm.
 
-## 🎒 Các khóa học khác
-Nhóm của chúng tôi còn có nhiều khóa học khác! Hãy xem:
+## 🎒 Các khóa học khác  
+Nhóm của chúng tôi còn phát triển nhiều khóa học khác! Hãy khám phá:
 
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
@@ -148,12 +146,11 @@ Nhóm của chúng tôi còn có nhiều khóa học khác! Hãy xem:
 - [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
 
 
-## ™️ Thông báo thương hiệu
+## ™️ Thông báo về nhãn hiệu
 
-Dự án này có thể chứa các thương hiệu hoặc logo của các dự án, sản phẩm hoặc dịch vụ. Việc sử dụng thương hiệu hoặc logo Microsoft được phép phải tuân thủ và theo đúng  
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-Việc sử dụng thương hiệu hoặc logo Microsoft trong các phiên bản chỉnh sửa của dự án này không được gây nhầm lẫn hoặc ngụ ý Microsoft tài trợ.  
-Bất kỳ việc sử dụng thương hiệu hoặc logo của bên thứ ba nào đều phải tuân theo chính sách của bên thứ ba đó.
+Dự án này có thể chứa nhãn hiệu hoặc logo của các dự án, sản phẩm, hoặc dịch vụ. Việc sử dụng nhãn hiệu hoặc logo của Microsoft phải tuân theo và theo đúng [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
+Việc sử dụng nhãn hiệu hoặc logo Microsoft trong các phiên bản chỉnh sửa của dự án này không được gây nhầm lẫn hoặc ngụ ý được Microsoft tài trợ.  
+Việc sử dụng nhãn hiệu hoặc logo của bên thứ ba phải tuân theo chính sách của bên thứ ba đó.
 
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ nguyên bản nên được coi là nguồn thông tin chính thức. Đối với những thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hay giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được coi là nguồn chính xác và có thẩm quyền. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

@@ -1,37 +1,37 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a6482c201133cb6cb0742918b373a523",
-  "translation_date": "2025-05-17T16:32:37+00:00",
+  "original_hash": "344a126b620ff7997158542fd31be6a4",
+  "translation_date": "2025-05-19T22:18:35+00:00",
   "source_file": "07-LessonsfromEarlyAdoption/README.md",
   "language_code": "sw"
 }
 -->
-# Masomo kutoka kwa Watumiaji wa Mapema
+# Mafunzo kutoka kwa Watumiaji wa Mapema
 
 ## Muhtasari
 
-Somohili linaangazia jinsi watumiaji wa mapema walivyotumia Model Context Protocol (MCP) kutatua changamoto za ulimwengu wa kweli na kuendesha ubunifu katika sekta mbalimbali. Kupitia masomo ya kina na miradi ya mikono, utaona jinsi MCP inavyowezesha ujumuishaji wa AI ulio sanifu, salama, na unaoweza kupanuka—kuunganisha mifano mikubwa ya lugha, zana, na data ya biashara katika mfumo mmoja. Utapata uzoefu wa vitendo katika kubuni na kujenga suluhisho za msingi za MCP, kujifunza kutoka kwa mifumo ya utekelezaji iliyothibitishwa, na kugundua mbinu bora za kupeleka MCP katika mazingira ya uzalishaji. Somo hili pia linaangazia mitindo inayoibuka, mwelekeo wa siku zijazo, na rasilimali za wazi kusaidia uwe mbele katika teknolojia ya MCP na mfumo wake unaoendelea.
+Somo hili linaangazia jinsi watumiaji wa mapema walivyotumia Model Context Protocol (MCP) kutatua changamoto halisi na kuendesha uvumbuzi katika sekta mbalimbali. Kupitia masomo ya kina na miradi ya vitendo, utaona jinsi MCP inavyowawezesha kuunganisha kwa viwango sawa, kwa usalama, na kwa upanuzi AI—kuunganisha mifano mikubwa ya lugha, zana, na data za biashara katika mfumo mmoja. Utapata uzoefu wa kubuni na kujenga suluhisho za MCP, kujifunza kutoka kwa mifumo iliyothibitishwa, na kugundua mbinu bora za kutekeleza MCP katika mazingira ya uzalishaji. Somo pia linaangazia mwenendo unaojitokeza, mwelekeo wa baadaye, na rasilimali za chanzo wazi kusaidia kubaki mbele katika teknolojia ya MCP na mfumo wake unaobadilika.
 
 ## Malengo ya Kujifunza
 
-- Kuchambua utekelezaji wa MCP wa ulimwengu wa kweli katika sekta mbalimbali
-- Kubuni na kujenga programu kamili za msingi za MCP
-- Kuchunguza mitindo inayoibuka na mwelekeo wa siku zijazo katika teknolojia ya MCP
-- Kutumia mbinu bora katika hali halisi za maendeleo
+- Kuchambua utekelezaji halisi wa MCP katika sekta tofauti  
+- Kubuni na kujenga programu kamili zinazotumia MCP  
+- Kuchunguza mwenendo mpya na mwelekeo wa baadaye katika teknolojia ya MCP  
+- Kutumia mbinu bora katika mazingira halisi ya maendeleo  
 
-## Utekelezaji wa MCP wa Ulimwengu wa Kweli
+## Utekelezaji Halisi wa MCP
 
-### Uchunguzi wa Kesi 1: Uendeshaji wa Msaada wa Wateja wa Biashara
+### Mfano wa Kesi 1: Uendeshaji wa Huduma kwa Wateja wa Kampuni kwa Uautomatishaji
 
-Kampuni ya kimataifa ilitekeleza suluhisho la msingi la MCP ili kusanifu mwingiliano wa AI katika mifumo yao ya msaada kwa wateja. Hii iliwapa uwezo wa:
+Kampuni ya kimataifa ilitekeleza suluhisho la MCP ili kuweka viwango sawa vya mwingiliano wa AI katika mifumo yao ya huduma kwa wateja. Hili liliruhusu:
 
-- Kuunda interface iliyounganishwa kwa watoa huduma wengi wa LLM
-- Kudumisha usimamizi wa maombi ulio thabiti katika idara mbalimbali
-- Kutekeleza udhibiti wa usalama na uzingatiaji wenye nguvu
-- Kubadili kwa urahisi kati ya mifano tofauti ya AI kulingana na mahitaji maalum
+- Kuunda kiolesura kimoja kwa watoa huduma wa LLM mbalimbali  
+- Kudumisha usimamizi thabiti wa maagizo katika idara zote  
+- Kutekeleza udhibiti madhubuti wa usalama na ufuataji wa sheria  
+- Kubadilisha kwa urahisi kati ya mifano tofauti ya AI kulingana na mahitaji maalum  
 
-**Utekelezaji wa Kiufundi:**
+**Utekelezaji wa Kiufundi:**  
 ```python
 # Python MCP server implementation for customer support
 import logging
@@ -92,18 +92,18 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-**Matokeo:** Punguzo la 30% katika gharama za mfano, uboreshaji wa 45% katika uthabiti wa majibu, na uzingatiaji ulioimarishwa katika shughuli za kimataifa.
+**Matokeo:** Kupungua kwa gharama za mifano kwa 30%, kuboresha uthabiti wa majibu kwa 45%, na kuimarika kwa ufuataji wa sheria katika shughuli za kimataifa.
 
-### Uchunguzi wa Kesi 2: Msaidizi wa Utambuzi wa Afya
+### Mfano wa Kesi 2: Msaidizi wa Uchunguzi wa Afya
 
-Mtoa huduma wa afya aliunda miundombinu ya MCP ili kuunganisha mifano ya AI ya matibabu maalum huku akihakikisha data nyeti ya wagonjwa inabaki salama:
+Mtoa huduma wa afya alitengeneza miundombinu ya MCP kuunganisha mifano mbalimbali maalum ya AI ya matibabu huku akihakikisha data nyeti za wagonjwa zinabaki salama:
 
-- Kubadilika bila mshono kati ya mifano ya matibabu ya jumla na maalum
-- Udhibiti mkali wa faragha na nyaraka za ukaguzi
-- Ujumuishaji na mifumo iliyopo ya Rekodi za Afya za Kielektroniki (EHR)
-- Uhandisi wa maombi ulio thabiti kwa istilahi ya matibabu
+- Kubadilisha kwa urahisi kati ya mifano ya matibabu ya jumla na maalum  
+- Udhibiti mkali wa faragha na rekodi za ufuatiliaji  
+- Uunganishaji na mifumo ya Rekodi za Afya za Kielektroniki (EHR) iliyopo  
+- Uthabiti wa usimamizi wa maagizo kwa istilahi za matibabu  
 
-**Utekelezaji wa Kiufundi:**
+**Utekelezaji wa Kiufundi:**  
 ```csharp
 // C# MCP host application implementation in healthcare application
 using Microsoft.Extensions.DependencyInjection;
@@ -168,18 +168,18 @@ public class DiagnosticAssistant
 }
 ```
 
-**Matokeo:** Mapendekezo bora ya utambuzi kwa madaktari huku ukidumisha uzingatiaji kamili wa HIPAA na kupunguzwa kwa kiasi kikubwa kwa ubadilishaji wa muktadha kati ya mifumo.
+**Matokeo:** Kuboresha mapendekezo ya uchunguzi kwa madaktari huku ikidumisha uzingatiaji kamili wa HIPAA na kupunguza kwa kiasi kikubwa mabadiliko ya muktadha kati ya mifumo.
 
-### Uchunguzi wa Kesi 3: Uchambuzi wa Hatari za Huduma za Kifedha
+### Mfano wa Kesi 3: Uchambuzi wa Hatari katika Huduma za Fedha
 
-Taasisi ya kifedha ilitekeleza MCP kusanifu michakato yao ya uchambuzi wa hatari katika idara mbalimbali:
+Taasisi ya kifedha ilitekeleza MCP kuweka viwango vya mchakato wa uchambuzi wa hatari katika idara mbalimbali:
 
-- Iliunda interface iliyounganishwa kwa mifano ya hatari ya mkopo, kugundua udanganyifu, na hatari ya uwekezaji
-- Kutekeleza udhibiti mkali wa ufikiaji na toleo la modeli
-- Kuhakikisha uwezekano wa ukaguzi wa mapendekezo yote ya AI
-- Kudumisha muundo wa data ulio thabiti katika mifumo tofauti
+- Kuunda kiolesura kimoja kwa mifano ya hatari ya mkopo, kugundua udanganyifu, na hatari za uwekezaji  
+- Kutekeleza udhibiti mkali wa ufikiaji na usimamizi wa toleo la mifano  
+- Kuhakikisha ufuatiliaji wa mapendekezo yote ya AI  
+- Kudumisha muundo thabiti wa data kati ya mifumo mbalimbali  
 
-**Utekelezaji wa Kiufundi:**
+**Utekelezaji wa Kiufundi:**  
 ```java
 // Java MCP server for financial risk assessment
 import org.mcp.server.*;
@@ -210,18 +210,18 @@ public class FinancialRiskMCPServer {
 }
 ```
 
-**Matokeo:** Uzingatiaji wa kanuni ulioimarishwa, mzunguko wa utekelezaji wa modeli wa haraka kwa 40%, na uthabiti wa tathmini ya hatari ulioimarishwa katika idara.
+**Matokeo:** Kuimarika kwa ufuataji wa kanuni, kuharakisha mizunguko ya utekelezaji wa mifano kwa 40%, na kuboresha uthabiti wa tathmini ya hatari katika idara.
 
-### Uchunguzi wa Kesi 4: Microsoft Playwright MCP Server kwa Uendeshaji wa Kivinjari
+### Mfano wa Kesi 4: Microsoft Playwright MCP Server kwa Uautomatishaji wa Vivinjari
 
-Microsoft ilitengeneza [Playwright MCP server](https://github.com/microsoft/playwright-mcp) kuwezesha uendeshaji wa kivinjari ulio sanifu na salama kupitia Model Context Protocol. Suluhisho hili linawezesha mawakala wa AI na LLM kuingiliana na vivinjari vya wavuti kwa njia iliyodhibitiwa, inayoweza kukaguliwa, na inayoweza kupanuliwa—ikiwezesha matumizi kama vile majaribio ya wavuti yaliyojiendesha, uchimbaji wa data, na mtiririko wa kazi wa mwisho hadi mwisho.
+Microsoft ilitengeneza [Playwright MCP server](https://github.com/microsoft/playwright-mcp) kuwezesha uautomatishaji salama na wenye viwango vya vivinjari kupitia Model Context Protocol. Suluhisho hili huruhusu maajenti wa AI na LLM kuingiliana na vivinjari vya wavuti kwa njia iliyodhibitiwa, inayofuata sheria, na inayoweza kupanuliwa—kusaidia matumizi kama vile upimaji wa wavuti uliojaa uendeshaji, uchukuaji wa data, na taratibu kamili za kazi.
 
-- Hutoa uwezo wa uendeshaji wa kivinjari (urambazaji, kujaza fomu, kunasa picha, n.k.) kama zana za MCP
-- Kutekeleza udhibiti mkali wa ufikiaji na kuweka kwenye kisanduku cha mchanga ili kuzuia vitendo visivyoidhinishwa
-- Kutoa nyaraka za ukaguzi wa kina kwa mwingiliano wote wa kivinjari
-- Inasaidia ujumuishaji na Azure OpenAI na watoa huduma wengine wa LLM kwa uendeshaji unaoendeshwa na mawakala
+- Inaonyesha uwezo wa uautomatishaji wa kivinjari (kuvinjari, kujaza fomu, kupiga picha za skrini, n.k.) kama zana za MCP  
+- Kutekeleza udhibiti mkali wa ufikiaji na sandboxing kuzuia vitendo visivyoidhinishwa  
+- Kutoa rekodi za kina za ufuatiliaji kwa mwingiliano wote wa kivinjari  
+- Kusaidia uunganishaji na Azure OpenAI na watoa huduma wengine wa LLM kwa uautomatishaji unaoendeshwa na maajenti  
 
-**Utekelezaji wa Kiufundi:**
+**Utekelezaji wa Kiufundi:**  
 ```typescript
 // TypeScript: Registering Playwright browser automation tools in an MCP server
 import { createServer, ToolDefinition } from 'modelcontextprotocol';
@@ -257,25 +257,25 @@ server.listen(8080);
 ```
 
 **Matokeo:**  
-- Uwezeshaji wa uendeshaji wa kivinjari ulio salama, wa programu kwa mawakala wa AI na LLM
-- Punguzo la juhudi za majaribio ya mwongozo na uboreshaji wa usambazaji wa majaribio kwa programu za wavuti
-- Kutoa mfumo unaoweza kutumika tena, unaoweza kupanuliwa kwa ujumuishaji wa zana za msingi wa kivinjari katika mazingira ya biashara
+- Kuwezesha uautomatishaji wa kivinjari salama na wa programu kwa maajenti wa AI na LLM  
+- Kupunguza juhudi za upimaji wa mikono na kuboresha upana wa majaribio kwa programu za wavuti  
+- Kutoa mfumo unaoweza kutumika tena na kupanuliwa kwa uunganishaji wa zana za kivinjari katika mazingira ya biashara  
 
 **Marejeleo:**  
-- [Playwright MCP Server GitHub Repository](https://github.com/microsoft/playwright-mcp)
+- [Playwright MCP Server GitHub Repository](https://github.com/microsoft/playwright-mcp)  
 - [Microsoft AI and Automation Solutions](https://azure.microsoft.com/en-us/products/ai-services/)
 
-### Uchunguzi wa Kesi 5: Azure MCP – Model Context Protocol ya Daraja la Biashara kama Huduma
+### Mfano wa Kesi 5: Azure MCP – Model Context Protocol ya Kiwango cha Biashara kama Huduma
 
-Azure MCP ([https://aka.ms/azmcp](https://aka.ms/azmcp)) ni utekelezaji ulio simamiwa na Microsoft wa daraja la biashara wa Model Context Protocol, ulioundwa kutoa uwezo wa seva ya MCP unaoweza kupanuka, salama, na unaozingatia kanuni kama huduma ya wingu. Azure MCP inawezesha mashirika kupeleka, kusimamia, na kuunganisha seva za MCP na huduma za Azure AI, data, na usalama, kupunguza mzigo wa kiutendaji na kuharakisha upitishaji wa AI.
+Azure MCP ([https://aka.ms/azmcp](https://aka.ms/azmcp)) ni utekelezaji wa Microsoft wa MCP wa kiwango cha biashara, uliosimamiwa, ulioundwa kutoa uwezo wa seva za MCP zenye upanuzi, usalama, na ufuataji wa sheria kama huduma ya wingu. Azure MCP inawawezesha mashirika kupeleka, kusimamia, na kuunganisha seva za MCP kwa haraka na huduma za Azure AI, data, na usalama, kupunguza mzigo wa uendeshaji na kuharakisha matumizi ya AI.
 
-- Ukaribishaji wa seva ya MCP ulio simamiwa kikamilifu na upanuzi wa ndani, ufuatiliaji, na usalama
-- Ujumuishaji wa asili na Azure OpenAI, Azure AI Search, na huduma nyingine za Azure
-- Uthibitishaji na idhini ya biashara kupitia Microsoft Entra ID
-- Msaada kwa zana maalum, templeti za maombi, na viunganishi vya rasilimali
-- Uzingatiaji wa mahitaji ya usalama na kanuni za biashara
+- Ukarabati wa seva za MCP zenye usimamizi kamili zenye upanuzi, ufuatiliaji, na usalama wa ndani  
+- Uunganishaji wa asili na Azure OpenAI, Azure AI Search, na huduma nyingine za Azure  
+- Uthibitishaji na idhini ya biashara kupitia Microsoft Entra ID  
+- Msaada kwa zana maalum, templeti za maagizo, na viunganishi vya rasilimali  
+- Uzingatiaji wa mahitaji ya usalama na kanuni za biashara  
 
-**Utekelezaji wa Kiufundi:**
+**Utekelezaji wa Kiufundi:**  
 ```yaml
 # Example: Azure MCP server deployment configuration (YAML)
 apiVersion: mcp.microsoft.com/v1
@@ -302,154 +302,155 @@ spec:
 ```
 
 **Matokeo:**  
-- Punguzo la muda wa thamani kwa miradi ya AI ya biashara kwa kutoa jukwaa la seva ya MCP linaloweza kutumika mara moja, linalozingatia kanuni
-- Urahisi wa ujumuishaji wa LLM, zana, na vyanzo vya data vya biashara
-- Usalama ulioimarishwa, ufuatiliaji, na ufanisi wa kiutendaji kwa mizigo ya kazi ya MCP
+- Kupunguza muda wa kupata thamani kwa miradi ya AI ya biashara kwa kutoa jukwaa la seva za MCP linalotumika moja kwa moja na linalozingatia sheria  
+- Kuwezesha kuunganishwa kwa urahisi kwa LLM, zana, na vyanzo vya data vya biashara  
+- Kuimarisha usalama, uangalizi, na ufanisi wa uendeshaji kwa mzigo wa MCP  
 
 **Marejeleo:**  
-- [Azure MCP Documentation](https://aka.ms/azmcp)
+- [Azure MCP Documentation](https://aka.ms/azmcp)  
 - [Azure AI Services](https://azure.microsoft.com/en-us/products/ai-services/)
 
-## Miradi ya Mikono
+## Mfano wa Kesi 6: NLWeb  
+MCP (Model Context Protocol) ni itifaki inayojitokeza kwa Chatbots na wasaidizi wa AI kuingiliana na zana. Kila mfano wa NLWeb pia ni seva ya MCP, inayounga mkono njia kuu moja, ask, inayotumika kuuliza tovuti swali kwa lugha ya asili. Jibu linalorejeshwa linatumia schema.org, msamiati unaotumika sana wa kuelezea data za wavuti. Kwa kifupi, MCP ni NLWeb kama Http ilivyo kwa HTML. NLWeb huunganisha itifaki, muundo wa Schema.org, na mfano wa msimbo kusaidia tovuti kuunda haraka vituo hivi, vinavyonufaisha wanadamu kupitia kiolesura cha mazungumzo na mashine kupitia mwingiliano wa maajenti kwa maajenti wa asili.
 
-### Mradi 1: Jenga Seva ya MCP ya Watoa Huduma Wengi
+Kuna vipengele viwili tofauti vya NLWeb.  
+- Itifaki rahisi kuanzia, ya kuingiliana na tovuti kwa lugha ya asili na muundo unaotumia json na schema.org kwa jibu linalorejeshwa. Angalia nyaraka za REST API kwa maelezo zaidi.  
+- Utekelezaji rahisi wa (1) unaotumia alama zilizopo, kwa tovuti zinazoweza kufupishwa kama orodha za vitu (bidhaa, mapishi, vivutio, maoni, n.k.). Pamoja na seti ya vidhibiti vya kiolesura cha mtumiaji, tovuti zinaweza kutoa kwa urahisi kiolesura cha mazungumzo kwa maudhui yao. Angalia nyaraka za Life of a chat query kwa maelezo zaidi jinsi inavyofanya kazi.  
 
-**Lengo:** Unda seva ya MCP inayoweza kuelekeza maombi kwa watoa huduma wengi wa modeli ya AI kulingana na vigezo maalum.
+**Marejeleo:**  
+- [Azure MCP Documentation](https://aka.ms/azmcp)  
+- [NLWeb](https://github.com/microsoft/NlWeb)
 
-**Mahitaji:**
-- Msaada kwa angalau watoa huduma watatu tofauti wa modeli (mfano, OpenAI, Anthropic, modeli za ndani)
-- Tekeleza utaratibu wa kuelekeza kulingana na metadata ya maombi
-- Unda mfumo wa usanidi wa kusimamia hati za watoa huduma
-- Ongeza uhifadhi ili kuboresha utendaji na gharama
-- Jenga dashibodi rahisi ya ufuatiliaji wa matumizi
+## Miradi ya Vitendo
 
-**Hatua za Utekelezaji:**
-1. Sanidi miundombinu ya msingi ya seva ya MCP
-2. Tekeleza adapta za watoa huduma kwa kila huduma ya modeli ya AI
-3. Unda mantiki ya kuelekeza kulingana na sifa za maombi
-4. Ongeza mifumo ya uhifadhi kwa maombi ya mara kwa mara
-5. Tengeneza dashibodi ya ufuatiliaji
-6. Jaribu na mifumo mbalimbali ya maombi
+### Mradi 1: Jenga Seva ya MCP Inayounga Mkono Watoa Huduma Wengi
 
-**Teknolojia:** Chagua kutoka Python (.NET/Java/Python kulingana na upendeleo wako), Redis kwa uhifadhi, na mfumo rahisi wa wavuti kwa dashibodi.
+**Lengo:** Tengeneza seva ya MCP inayoweza kuongoza maombi kwa watoa huduma wa mifano ya AI wengi kulingana na vigezo maalum.
 
-### Mradi 2: Mfumo wa Usimamizi wa Maombi wa Biashara
+**Mahitaji:**  
+- Kuunga mkono angalau watoa huduma watatu wa mifano tofauti (mfano, OpenAI, Anthropic, mifano ya ndani)  
+- Kutekeleza mfumo wa kuongoza maombi kulingana na metadata ya ombi  
+- Kuunda mfumo wa usanidi wa kusimamia nyaraka za watoa huduma  
+- Kuongeza caching kuboresha utendaji na gharama  
+- Kujenga dashibodi rahisi ya kufuatilia matumizi  
 
-**Lengo:** Kuendeleza mfumo wa msingi wa MCP wa kusimamia, kuweka toleo, na kupeleka templeti za maombi katika shirika.
+**Hatua za Utekelezaji:**  
+1. Andaa miundombinu ya msingi ya seva ya MCP  
+2. Tekeleza adapters za watoa huduma kwa kila huduma ya mfano wa AI  
+3. Tengeneza mantiki ya kuongoza kulingana na sifa za ombi  
+4. Ongeza mbinu za caching kwa maombi yanayojirudia mara kwa mara  
+5. Tengeneza dashibodi ya ufuatiliaji  
+6. Fanya majaribio na mifumo tofauti ya maombi  
 
-**Mahitaji:**
-- Unda hazina ya kati kwa templeti za maombi
-- Tekeleza mfumo wa kuweka toleo na mchakato wa idhini
-- Jenga uwezo wa kujaribu templeti na pembejeo za sampuli
-- Kuendeleza udhibiti wa ufikiaji wa msingi wa majukumu
-- Unda API ya upatikanaji na upelekeaji wa templeti
+**Teknolojia:** Chagua kati ya Python (.NET/Java/Python kulingana na upendeleo wako), Redis kwa caching, na fremu rahisi ya wavuti kwa dashibodi.
 
-**Hatua za Utekelezaji:**
-1. Buni muundo wa hifadhidata kwa uhifadhi wa templeti
-2. Unda API ya msingi kwa operesheni za CRUD za templeti
-3. Tekeleza mfumo wa kuweka toleo
-4. Jenga mchakato wa idhini
-5. Kuendeleza mfumo wa majaribio
-6. Unda interface rahisi ya wavuti kwa usimamizi
-7. Unganisha na seva ya MCP
+### Mradi 2: Mfumo wa Usimamizi wa Maagizo wa Biashara
 
-**Teknolojia:** Chaguo lako la mfumo wa nyuma, hifadhidata ya SQL au NoSQL, na mfumo wa mbele kwa interface ya usimamizi.
+**Lengo:** Tengeneza mfumo wa MCP wa kusimamia, kuandaa matoleo, na kupeleka templeti za maagizo katika shirika.
 
-### Mradi 3: Jukwaa la Kuzalisha Maudhui kwa Msingi wa MCP
+**Mahitaji:**  
+- Kuunda hifadhi kuu ya templeti za maagizo  
+- Kutekeleza mfumo wa kuandaa matoleo na mchakato wa idhini  
+- Kujenga uwezo wa kujaribu templeti kwa kuingiza sampuli  
+- Kuendeleza udhibiti wa ufikiaji kwa misingi ya majukumu  
+- Kuunda API ya upokeaji na upeleka templeti  
 
-**Lengo:** Jenga jukwaa la kuzalisha maudhui linalotumia MCP kutoa matokeo thabiti katika aina tofauti za maudhui.
+**Hatua za Utekelezaji:**  
+1. Buni muundo wa hifadhidata kwa ajili ya kuhifadhi templeti  
+2. Tengeneza API kuu ya shughuli za CRUD za templeti  
+3. Tekeleza mfumo wa kuandaa matoleo  
+4. Jenga mchakato wa idhini  
+5. Endeleza mfumo wa majaribio  
+6. Tengeneza kiolesura rahisi cha wavuti kwa usimamizi  
+7. Unganisha na seva ya MCP  
 
-**Mahitaji:**
-- Msaada kwa miundo tofauti ya maudhui (machapisho ya blogi, mitandao ya kijamii, nakala za uuzaji)
-- Tekeleza uzalishaji kwa msingi wa templeti na chaguo za ubinafsishaji
-- Unda mfumo wa ukaguzi wa maudhui na maoni
-- Fuatilia vipimo vya utendaji wa maudhui
-- Msaada kwa kuweka toleo na kurudia kwa maudhui
+**Teknolojia:** Chagua fremu ya nyuma unayopendelea, hifadhidata ya SQL au NoSQL, na fremu ya mbele kwa kiolesura cha usimamizi.
 
-**Hatua za Utekelezaji:**
-1. Sanidi miundombinu ya mteja wa MCP
-2. Unda templeti kwa aina tofauti za maudhui
-3. Jenga mchakato wa uzalishaji wa maudhui
-4. Tekeleza mfumo wa ukaguzi
-5. Kuendeleza mfumo wa ufuatiliaji wa vipimo
-6. Unda interface ya mtumiaji kwa usimamizi wa templeti na uzalishaji wa maudhui
+### Mradi 3: Jukwaa la Uundaji wa Maudhui Unaotumia MCP
 
-**Teknolojia:** Lugha yako ya programu inayopendekezwa, mfumo wa wavuti, na mfumo wa hifadhidata.
+**Lengo:** Jenga jukwaa la uundaji wa maudhui linalotumia MCP kutoa matokeo thabiti kwa aina mbalimbali za maudhui.
 
-## Mwelekeo wa Siku za Usoni kwa Teknolojia ya MCP
+**Mahitaji:**  
+- Kuunga mkono miundo mingi ya maudhui (makala za blog, mitandao ya kijamii, nakala za masoko)  
+- Kutekeleza uundaji unaotegemea templeti na chaguzi za kubinafsisha  
+- Kuunda mfumo wa uhakiki na maoni ya maudhui  
+- Kufuatilia vipimo vya utendaji wa maudhui  
+- Kuunga mkono kuandaa matoleo na marekebisho ya maudhui  
 
-### Mitindo Inayoibuka
+**Hatua za Utekelezaji:**  
+1. Andaa miundombinu ya mteja wa MCP  
+2. Tengeneza templeti za aina mbalimbali za maudhui  
+3. Jenga mchakato wa uundaji wa maudhui  
+4. Tekeleza mfumo wa uhakiki  
+5. Endeleza mfumo wa kufuatilia vipimo  
+6. Tengeneza kiolesura cha mtumiaji kwa usimamizi wa templeti na uundaji wa maudhui  
 
-1. **MCP ya Njia Nyingi**
-   - Upanuzi wa MCP ili kusanifu mwingiliano na mifano ya picha, sauti, na video
-   - Maendeleo ya uwezo wa mantiki wa njia mbalimbali
-   - Miundo sanifu ya maombi kwa njia tofauti
+**Teknolojia:** Lugha ya programu unayopendelea, fremu ya wavuti, na mfumo wa hifadhidata.
 
-2. **Miundombinu ya MCP ya Kifederali**
-   - Mitandao ya MCP iliyosambazwa inayoweza kushiriki rasilimali katika mashirika
-   - Itifaki sanifu za kushiriki modeli kwa usalama
-   - Mbinu za hesabu zinazohifadhi faragha
+## Mwelekeo wa Baadaye wa Teknolojia ya MCP
 
-3. **Masoko ya MCP**
-   - Ekosistimu za kushiriki na kupata MCP templates na plugins
-   - Mchakato wa uhakikisho wa ubora na vyeti
-   - Ujumuishaji na masoko ya modeli
+### Mwenendo Unaojitokeza
 
-4. **MCP kwa Kompyuta ya Kando**
-   - Urekebishaji wa viwango vya MCP kwa vifaa vya kando vilivyo na rasilimali kidogo
-   - Itifaki zilizoboreshwa kwa mazingira ya kipimo data kidogo
-   - Utekelezaji maalum wa MCP kwa ekosistimu za IoT
+1. **MCP ya Multi-Modal**  
+   - Upanuzi wa MCP kuweka viwango vya mwingiliano na mifano ya picha, sauti, na video  
+   - Maendeleo ya uwezo wa kufikiri kwa njia za modal mbalimbali  
+   - Muundo thabiti wa maagizo kwa modal tofauti  
 
-5. **Mifumo ya Kanuni**
-   - Maendeleo ya viendelezi vya MCP kwa uzingatiaji wa kanuni
-   - Nyaraka sanifu za ukaguzi na interfaces za kuelezea
-   - Ujumuishaji na mifumo ya utawala wa AI inayochipuka
+2. **Miundombinu ya MCP Iliosambazwa**  
+   - Mitandao ya MCP inayosambazwa inayoweza kushirikiana rasilimali kati ya mashirika  
+   - Itifaki za viwango vya usalama wa kushiriki mifano  
+   - Mbinu za kompyuta zinazohifadhi faragha  
+
+3. **Masoko ya MCP**  
+   - Mfumo wa kushiriki na kupata kipato kwa templeti na viendelezi vya MCP  
+   - Mchakato wa uhakikisho wa ubora na vyeti  
+   - Uunganishaji na masoko ya mifano  
+
+4. **MCP kwa Edge Computing**  
+   - Urekebishaji wa viwango vya MCP kwa vifaa vya edge vyenye rasilimali finyu  
+   - Itifaki zilizoboreshwa kwa mazingira ya mtandao mdogo  
+   - Utekelezaji maalum wa MCP kwa mifumo ya IoT  
+
+5. **Mifumo ya Kanuni**  
+   - Maendeleo ya nyongeza za MCP kwa ufuataji wa kanuni  
+   - Rekodi thabiti za ufuatiliaji na kiolesura cha ufafanuzi  
+   - Uunganishaji na mifumo inayoibuka ya usimamizi wa AI  
 
 ### Suluhisho za MCP kutoka Microsoft
 
-Microsoft na Azure wameunda hazina kadhaa za wazi kusaidia wasanidi programu kutekeleza MCP katika hali mbalimbali:
+Microsoft na Azure wameunda maktaba kadhaa za chanzo wazi kusaidia watengenezaji kutekeleza MCP katika mazingira mbalimbali:
 
-#### Shirika la Microsoft
-1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - Seva ya Playwright MCP kwa uendeshaji na majaribio ya kivinjari
-2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - Utekelezaji wa seva ya OneDrive MCP kwa majaribio ya ndani na mchango wa jamii
+#### Shirika la Microsoft  
+1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - Seva ya Playwright MCP kwa uautomatishaji na upimaji wa vivinjari  
+2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - Utekelezaji wa seva ya MCP ya OneDrive kwa upimaji wa ndani na michango ya jamii  
+3. [NLWeb](https://github.com/microsoft/NlWeb) - Mkusanyiko wa itifaki wazi na zana za chanzo wazi. Lengo kuu ni kuweka msingi wa AI Web  
 
-#### Shirika la Azure-Samples
-1. [mcp](https://github.com/Azure-Samples/mcp) - Viungo vya sampuli, zana, na rasilimali za kujenga na kuunganisha seva za MCP kwenye Azure kwa kutumia lugha mbalimbali
-2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Seva za MCP za marejeleo zinazodhihirisha uthibitishaji na vipimo vya sasa vya Model Context Protocol
-3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - Ukurasa wa kutua kwa utekelezaji wa Seva ya MCP ya Mbali katika Azure Functions na viungo kwa hazina maalum za lugha
-4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Template ya kuanza haraka kwa kujenga na kupeleka seva za MCP za mbali maalum kwa kutumia Azure Functions na Python
-5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Template ya kuanza haraka kwa kujenga na kupeleka seva za MCP za mbali maalum kwa kutumia Azure Functions na .NET/C#
-6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Template ya kuanza haraka kwa kujenga na kupeleka seva za MCP za mbali maalum kwa kutumia Azure Functions na TypeScript
-7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) - Usimamizi wa API wa Azure kama Lango la AI kwa seva za MCP za mbali kwa kutumia Python
-8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) - APIM ❤️ majaribio ya AI ikiwa ni pamoja na uwezo wa MCP, ujumuishaji na Azure OpenAI na AI Foundry
+#### Shirika la Azure-Samples  
+1. [mcp](https://github.com/Azure-Samples/mcp) - Viungo vya mifano, zana, na rasilimali za kujenga na kuunganisha seva za MCP kwenye Azure kwa lugha nyingi  
+2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Seva za MCP za marejeleo zinazoonyesha uthibitishaji kwa sifa ya Model Context Protocol  
+3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - Ukurasa wa kuanzia kwa utekelezaji wa seva za MCP za mbali katika Azure Functions na viungo vya maktaba za lugha  
+4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Kiolezo cha haraka cha kujenga na kupeleka seva za MCP za mbali kwa kutumia Azure Functions na Python  
+5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Kiolezo cha haraka cha kujenga na kupeleka seva za MCP za mbali kwa kutumia Azure Functions na .NET/C#  
+6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Kiolezo cha haraka cha kujenga na kupeleka seva za MCP za mbali kwa kutumia Azure Functions na TypeScript  
+7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) - Azure API Management kama AI Gateway kwa seva za MCP za mbali kwa kutumia Python  
+8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) - Maajaribio ya APIM ❤️ AI ikiwa na uwezo wa MCP, ikijumuisha Azure OpenAI na AI Foundry  
 
-Hazina hizi zinatoa utekelezaji mbalimbali, templates, na rasilimali za kufanya kazi na Model Context Protocol katika lugha tofauti za programu na huduma za Azure. Zinashughulikia matumizi mbalimbali kutoka kwa utekelezaji wa seva za msingi hadi uthibitishaji, upelekaji wa wingu, na hali za ujumuishaji wa biashara.
-
-#### Saraka ya Rasilimali za MCP
-
-Saraka ya [MCP Resources](https://github.com/microsoft/mcp/tree/main/Resources) katika hazina rasmi ya Microsoft MCP inatoa mkusanyiko ulioratibiwa wa rasilimali za sampuli, templeti za maombi, na ufafanuzi wa zana kwa matumizi na seva za Model Context Protocol. Saraka hii imeundwa kusaidia wasanidi programu kuanza haraka na MCP kwa kutoa vizuizi vya ujenzi vinavyoweza kutumika tena na mifano bora ya vitendo kwa:
-
-- **Templeti za Maombi:** Templeti za maombi zinazoweza kutumika moja kwa moja kwa kazi na hali za kawaida za AI, ambazo zinaweza kubadilishwa kwa utekelezaji wako wa seva ya MCP.
-- **Ufafanuzi wa Zana:** Mifano ya schemas za zana na metadata ili kusanifu ujumuishaji wa zana na utekelezaji katika seva tofauti za MCP.
-- **Sampuli za Rasilimali:** Mifano ya ufafanuzi wa rasilimali kwa kuunganisha na vyanzo vya data, APIs, na huduma za nje ndani ya mfumo wa MCP.
-- **Utekelezaji wa Marejeleo:** Sampuli za vitendo zinazoonyesha jinsi ya kuunda na kupanga rasilimali, maombi, na zana katika miradi halisi ya MCP.
-
-Rasilimali hizi zinaharakisha maendeleo, zinakuza usanifu, na husaidia kuhakikisha mbinu bora wakati wa kujenga na kupeleka suluhisho za msingi za MCP.
-
-#### Saraka ya Rasilimali za MCP
-- [MCP Resources (Sample Prompts, Tools, and Resource Definitions)](https://github.com/m
+Maktaba hizi zin
+- [Remote MCP Functions Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-python)
+- [Remote MCP Functions .NET (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)
+- [Remote MCP Functions TypeScript (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-typescript)
 - [Remote MCP APIM Functions Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
 - [AI-Gateway (Azure-Samples)](https://github.com/Azure-Samples/AI-Gateway)
 - [Microsoft AI and Automation Solutions](https://azure.microsoft.com/en-us/products/ai-services/)
 
 ## Mazoezi
 
-1. Changanua moja ya tafiti za kesi na toa njia mbadala ya utekelezaji.
-2. Chagua moja ya mawazo ya mradi na uunde maelezo ya kina ya kiufundi.
-3. Fanya utafiti wa sekta ambayo haijafunikwa kwenye tafiti za kesi na fafanua jinsi MCP inaweza kushughulikia changamoto zake maalum.
-4. Chunguza moja ya mwelekeo wa baadaye na uunde dhana ya upanuzi mpya wa MCP ili kuunga mkono.
+1. Changanua moja ya tafiti za kesi na pendekeza njia mbadala ya utekelezaji.
+2. Chagua moja ya mawazo ya mradi na tengeneza maelezo ya kina ya kiufundi.
+3. Fanya utafiti wa sekta ambayo haijashughulikiwa katika tafiti za kesi na eleza jinsi MCP inaweza kushughulikia changamoto zake maalum.
+4. Chunguza moja ya mwelekeo wa baadaye na tengeneza dhana ya nyongeza mpya ya MCP kuunga mkono hilo.
 
-Ifuatayo: [Mbinu Bora](../08-BestPractices/README.md)
+Ifuatayo: [Best Practices](../08-BestPractices/README.md)
 
-**Kanusho**: 
-Hati hii imetafsiriwa kwa kutumia huduma ya kutafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatuwajibiki kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kangamsha**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za moja kwa moja zinaweza kuwa na makosa au upotovu. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

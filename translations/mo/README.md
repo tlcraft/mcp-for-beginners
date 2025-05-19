@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d0ef2af30fdcc2163da049bb92b81746",
-  "translation_date": "2025-05-19T17:26:40+00:00",
+  "original_hash": "89d94ba19c7c317d115cd1b7b2896ad3",
+  "translation_date": "2025-05-19T21:35:05+00:00",
   "source_file": "README.md",
   "language_code": "mo"
 }
@@ -22,119 +22,117 @@ CO_OP_TRANSLATOR_METADATA:
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 
-Следуйте этим шагам, чтобы начать работу с этими ресурсами:
-1. **Сделайте форк репозитория**: Нажмите [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/network)
-2. **Клонируйте репозиторий**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Присоединяйтесь к Discord Azure AI Foundry, чтобы познакомиться с экспертами и другими разработчиками**](https://discord.com/invite/ByRwuEEgH4)
+Siga estos pasos para comenzar a usar estos recursos:
+1. **Haz un fork del repositorio**: Haz clic en [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/network)
+2. **Clona el repositorio**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
+3. [**Únete al Discord de Azure AI Foundry y conecta con expertos y otros desarrolladores**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Многоязычная поддержка
+### 🌐 Soporte multilingüe
 
-#### Поддерживается через GitHub Action (Автоматически и всегда актуально)
-[法文](../fr/README.md) | [西班牙文](../es/README.md) | [德文](../de/README.md) | [俄文](../ru/README.md) | [阿拉伯文](../ar/README.md) | [波斯文 (法爾西語)](../fa/README.md) | [烏爾都文](../ur/README.md) | [中文 (簡體)](../zh/README.md) | [中文 (繁體，澳門)](./README.md) | [中文 (繁體，香港)](../hk/README.md) | [中文 (繁體，台灣)](../tw/README.md) | [日文](../ja/README.md) | [韓文](../ko/README.md) | [印地文](../hi/README.md) | [孟加拉文](../bn/README.md) | [馬拉地文](../mr/README.md) | [尼泊爾文](../ne/README.md) | [旁遮普文 (古魯穆奇)](../pa/README.md) | [葡萄牙文 (葡萄牙)](../pt/README.md) | [葡萄牙文 (巴西)](../br/README.md) | [義大利文](../it/README.md) | [波蘭文](../pl/README.md) | [土耳其文](../tr/README.md) | [希臘文](../el/README.md) | [泰文](../th/README.md) | [瑞典文](../sv/README.md) | [丹麥文](../da/README.md) | [挪威文](../no/README.md) | [芬蘭文](../fi/README.md) | [荷蘭文](../nl/README.md) | [希伯來文](../he/README.md) | [越南文](../vi/README.md) | [印尼文](../id/README.md) | [馬來文](../ms/README.md) | [他加祿文 (菲律賓語)](../tl/README.md) | [斯瓦希里文](../sw/README.md) | [匈牙利文](../hu/README.md) | [捷克文](../cs/README.md) | [斯洛伐克文](../sk/README.md) | [羅馬尼亞文](../ro/README.md) | [保加利亞文](../bg/README.md) | [塞爾維亞文 (西里爾字母)](../sr/README.md) | [克羅埃西亞文](../hr/README.md) | [斯洛文尼亞文](../sl/README.md)Please write the output from left to right.
+#### Soportado mediante GitHub Action (Automatizado y siempre actualizado)
+[French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](./README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Portuguese (Brazil)](../br/README.md) | [Italian](../it/README.md) | [Polish](../pl/README.md) | [Turkish](../tr/README.md) | [Greek](../el/README.md) | [Thai](../th/README.md) | [Swedish](../sv/README.md) | [Danish](../da/README.md) | [Norwegian](../no/README.md) | [Finnish](../fi/README.md) | [Dutch](../nl/README.md) | [Hebrew](../he/README.md) | [Vietnamese](../vi/README.md) | [Indonesian](../id/README.md) | [Malay](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungarian](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romanian](../ro/README.md) | [Bulgarian](../bg/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Croatian](../hr/README.md) | [Slovenian](../sl/README.md)
+# 🚀 Model Context Protocol (MCP) Դասընթաց սկսնակների համար
 
-[法文](../fr/README.md) | [西班牙文](../es/README.md) | [德文](../de/README.md) | [俄文](../ru/README.md) | [阿拉伯文](../ar/README.md) | [波斯文 (法爾西語)](../fa/README.md) | [烏爾都文](../ur/README.md) | [中文 (簡體)](../zh/README.md) | [中文 (繁體，澳門)](./README.md) | [中文 (繁體，香港)](../hk/README.md) | [中文 (繁體，台灣)](../tw/README.md) | [日文](../ja/README.md) | [韓文](../ko/README.md) | [印地文](../hi/README.md) | [孟加拉文](../bn/README.md) | [馬拉地文](../mr/README.md) | [尼泊爾文](../ne/README.md) | [旁遮普文 (古魯穆奇)](../pa/README.md) | [葡萄牙文 (葡萄牙)](../pt/README.md) | [葡萄牙文 (巴西)](../br/README.md) | [義大利文](../it/README.md) | [波蘭文](../pl/README.md) | [土耳其文](../tr/README.md) | [希臘文](../el/README.md) | [泰文](../th/README.md) | [瑞典文](../sv/README.md) | [丹麥文](../da/README.md) | [挪威文](../no/README.md) | [芬蘭文](../fi/README.md) | [荷蘭文](../nl/README.md) | [希伯來文](../he/README.md) | [越南文](../vi/README.md) | [印尼文](../id/README.md) | [馬來文](../ms/README.md) | [他加祿文 (菲律賓語)](../tl/README.md) | [斯瓦希里文](../sw/README.md) | [匈牙利文](../hu/README.md) | [捷克文](../cs/README.md) | [斯洛伐克文](../sk/README.md) | [羅馬尼亞文](../ro/README.md) | [保加利亞文](../bg/README.md) | [塞爾維亞文 (西里爾字母)](../sr/README.md) | [克羅埃西亞文](../hr/README.md) | [斯洛文尼亞文](../sl/README.md)
-# 🚀 Ultimate Guide to the Model Context Protocol (MCP) Curriculum for Beginners
+## **Սովորեք MCP ձեռքի վրա կոդավորման օրինակներով C#, Java, JavaScript, Python և TypeScript լեզուներով**
 
-## **Learn MCP with Hands-on Code Examples in C#, Java, JavaScript, Python, and TypeScript**
+## 🧠 Model Context Protocol Դասընթացի ակնարկ
 
-## 🧠 Overview of the Model Context Protocol Curriculum
+**Model Context Protocol (MCP)**-ը ժամանակակից շրջանակ է, որը նախատեսված է AI մոդելների և հաճախորդ հավելվածների միջև փոխազդեցությունները ստանդարտացնելու համար։ Այս բաց կոդով դասընթացը առաջարկում է կառուցվածքային ուսուցման ուղի՝ գործնական կոդավորման օրինակներով և իրական օգտագործման դեպքերով, ընդգրկելով C#, Java, JavaScript, TypeScript և Python հայտնի ծրագրավորման լեզուները։
 
-The **Model Context Protocol (MCP)** is a cutting-edge framework designed to standardize interactions between AI models and client applications. This open-source curriculum offers a structured learning path, complete with practical coding examples and real-world use cases, across popular programming languages including C#, Java, JavaScript, TypeScript, and Python.
+Անկախ նրանից, թե դուք AI ծրագրավորող եք, համակարգի ճարտարապետ կամ ծրագրային ինժեներ, այս ուղեցույցը ձեր համապարփակ ռեսուրսն է MCP հիմունքներն ու կիրառման ռազմավարությունները յուրացնելու համար։
 
-Whether you're an AI developer, system architect, or software engineer, this guide is your comprehensive resource for mastering MCP fundamentals and implementation strategies.
+## 🔗 Պաշտոնական MCP ռեսուրսներ
 
-## 🔗 Official MCP Resources
+- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Լրացուցիչ ձեռնարկներ և օգտագործողի ուղեցույցներ  
+- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Փաթթվածության ճարտարապետություն և տեխնիկական հղումներ  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Բաց կոդով SDK-ներ, գործիքներ և կոդի օրինակներ  
 
-- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Detailed tutorials and user guides  
-- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol architecture and technical references  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code samples  
+## 🧭 MCP Դասընթացի ամբողջական կառուցվածքը
 
-## 🧭 Complete MCP Curriculum Structure
+| Ch | Վերնագիր | Նկարագրություն | Հղում |
+|--|--|--|--|
+| 00 | **MCP-ին ներածություն** | Model Context Protocol-ի ակնարկը և դրա կարևորությունը AI խողովակաշարերում, ինչ է MCP-ն, ինչու է ստանդարտավորումը կարևոր և գործնական օգտագործման դեպքեր ու օգուտներ | [Introduction](./00-Introduction/README.md) |
+| 01 | **Հիմնական հասկացություններ** | MCP-ի հիմնական հասկացությունների խորքային ուսումնասիրություն, ներառյալ հաճախորդ-սերվեր ճարտարապետությունը, հիմնական պրոտոկոլի բաղադրիչները և հաղորդակցության ձևերը | [Core Concepts](./01-CoreConcepts/README.md) |
+| 02 | **Անվտանգություն MCP-ում** | MCP-հիմնված համակարգերում անվտանգության սպառնալիքների բացահայտում, տեխնիկաներ և լավագույն փորձեր իրականացման անվտանգության համար | [Security](/02-Security/readme.md) |
+| 03 | **Սկիզբ MCP-ով** | Շրջակա միջավայրի կարգավորում և պատրաստում, պարզ MCP սերվերների և հաճախորդների ստեղծում, MCP-ի ինտեգրում արդեն գոյություն ունեցող հավելվածների հետ | [Getting Started](./03-GettingStarted/README.md) |
+| 3.1 | **Առաջին սերվերը** | Հիմնական սերվերի կազմավորում MCP պրոտոկոլով, սերվեր-հաճախորդ փոխազդեցության ըմբռնում և սերվերի թեստավորում | [First Server](./03-GettingStarted/01-first-server/README.md) |
+| 3.2 | **Առաջին հաճախորդը** | Հիմնական հաճախորդի կազմավորում MCP պրոտոկոլով, հաճախորդ-սերվեր փոխազդեցության ըմբռնում և հաճախորդի թեստավորում | [First Client](./03-GettingStarted/02-client/README.md) |
+| 3.3 | **Հաճախորդ LLM-ով** | Հաճախորդի կազմավորում MCP պրոտոկոլով՝ օգտագործելով մեծ լեզվական մոդել (LLM) | [Client with LLM](./03-GettingStarted/03-llm-client/README.md) |
+| 3.4 | **Սերվերի օգտագործում Visual Studio Code-ով** | Visual Studio Code-ի կարգավորում՝ MCP պրոտոկոլով սերվերների օգտագործման համար | [Consuming a server with Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
+| 3.5 | **Սերվեր ստեղծում SSE-ով** | SSE-ն օգնում է սերվերը բացել ինտերնետում։ Այս բաժինը կօգնի ձեզ ստեղծել սերվեր SSE-ով | [Creating a server using SSE](./03-GettingStarted/05-sse-server/README.md) |
+| 3.6 | **Օգտագործեք AI Toolkit** | AI toolkit-ը հիանալի գործիք է, որը կօգնի կառավարել ձեր AI և MCP աշխատանքային հոսքերը | [Use AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
+| 3.7 | **Սերվերի թեստավորում** | Թեստավորումը կարևոր մաս է զարգացման գործընթացում։ Այս բաժինը կօգնի օգտագործել տարբեր գործիքներ սերվերի թեստավորման համար | [Testing your server](./03-GettingStarted/07-testing/README.md) |
+| 3.8 | **Սերվերի տեղադրում** | Ինչպես անցնել տեղական զարգացումից արտադրության։ Այս բաժինը կօգնի զարգացնել և տեղադրել ձեր սերվերը | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
+| 04 | **Գործնական իրականացում** | SDK-ների օգտագործում տարբեր լեզուներով, սխալների որոնում, թեստավորում և վավերացում, վերօգտագործվող prompt-ների և աշխատանքային հոսքերի պատրաստում | [Practical Implementation](./04-PracticalImplementation/README.md) |
+| 05 | **MCP-ի առաջադեմ թեմաներ** | Մուլտիմոդալ AI աշխատանքային հոսքեր և ընդլայնելիություն, անվտանգ մասշտաբավորում, MCP-ն ձեռնարկատիրական էկոհամակարգերում | [Advanced Topics](./05-AdvancedTopics/README.md) |
+| 06 | **Համայնքային ներդրումներ** | Ինչպես ներդնել կոդ և փաստաթղթեր, համագործակցություն GitHub-ում, համայնքային բարելավումներ և արձագանքներ | [Community Contributions](./06-CommunityContributions/README.md) |
+| 07 | **Նախնական կիրառման դասեր** | Իրական կյանքի կիրառումներ և հաջողված մոտեցումներ, MCP-հիմնված լուծումների կառուցում և տեղադրում, միտումներ և ապագայի ճանապարհային քարտեզ | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
+| 08 | **MCP լավագույն փորձեր** | Գործունակության կարգավորում և օպտիմիզացում, MCP համակարգերի սխալակայուն դիզայն, թեստավորում և դիմացկունության ռազմավարություններ | [Best Practices](./08-BestPractices/README.md) |
+| 09 | **MCP դեպքերի ուսումնասիրություններ** | MCP լուծումների ճարտարապետությունների խորքային վերլուծություն, տեղադրման պլաններ և ինտեգրման խորհուրդներ, մեկնաբանված սխեմատիկներ և նախագծի քայլ առ քայլ ցուցումներ | [Case Studies](./09-CaseStudy/README.md) |
 
-| Title | Description | Link |
-|--|--|--|
-| **00 - Introduction to MCP** | Model Context Protocol ရဲ့ အဓိကအကြောင်းအရာများ၊ AI pipeline များအတွက် အရေးကြီးမှု၊ MCP ဆိုတာဘာလဲ၊ စံချိန်စံညွှန်းရေးရာအရေးပါမှုနဲ့ လက်တွေ့ အသုံးချမှုများနှင့် အကျိုးကျေးဇူးများကို မိတ်ဆက်ပြသခြင်း | [Introduction](./00-Introduction/README.md) |
-| **01 - Core Concepts Explained** | MCP ရဲ့ အခြေခံအယူအဆများကို အပြည့်အစုံရှင်းပြခြင်း၊ client-server architecture, protocol ၏ အဓိကအစိတ်အပိုင်းများနှင့် messaging pattern များအကြောင်း | [Core Concepts](./01-CoreConcepts/README.md) |
-| **02 - Security in MCP** | MCP အခြေပြု စနစ်များတွင် ဖြစ်နိုင်သော လုံခြုံရေး အန္တရာယ်များ၊ လုံခြုံရေးနည်းလမ်းများနှင့် အကောင်းဆုံးလေ့လာမှုများ | [Security](/02-Security/readme.md) |
-| **03 - Getting Started with MCP** | ပတ်ဝန်းကျင် ပြင်ဆင်ခြင်း၊ MCP server နှင့် client များ ဖန်တီးခြင်း၊ MCP ကို ရှိပြီးသား application များနှင့် ပေါင်းစပ်ခြင်း | [Getting Started](./03-GettingStarted/README.md) |
-| **3.1 - First server** | MCP protocol အသုံးပြု၍ အခြေခံ server တစ်ခု တည်ဆောက်ခြင်း၊ server-client အပြန်အလှန်ဆက်သွယ်မှုနားလည်ခြင်း၊ server စမ်းသပ်ခြင်း | [First Server](./03-GettingStarted/01-first-server/README.md) |
-| **3.2 - First client**  | MCP protocol အသုံးပြု၍ အခြေခံ client တစ်ခု တည်ဆောက်ခြင်း၊ client-server အပြန်အလှန်ဆက်သွယ်မှုနားလည်ခြင်း၊ client စမ်းသပ်ခြင်း | [First Client](./03-GettingStarted/02-client/README.md) |
-| **3.3 - Client with LLM**  | MCP protocol နှင့် အတူ Large Language Model (LLM) အသုံးပြု client တည်ဆောက်ခြင်း | [Client with LLM](./03-GettingStarted/03-llm-client/README.md) |
-| **3.4 - Consuming a server with Visual Studio Code** | Visual Studio Code ကို အသုံးပြု၍ MCP protocol server များကို အသုံးပြုခြင်း | [Consuming a server with Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
-| **3.5 - Creating a server using SSE** | SSE ကို အသုံးပြု၍ အင်တာနက်ပေါ်တွင် server တစ်ခု ထုတ်ပြန်ရန် ကူညီပေးခြင်း။ ဒီအပိုင်းမှာ SSE ဖြင့် server တည်ဆောက်နည်းကို လေ့လာပါမည် | [Creating a server using SSE](./03-GettingStarted/05-sse-server/README.md) |
-| **3.6 - Use AI Toolkit** | AI toolkit သည် သင့် AI နှင့် MCP workflow ကို စီမံခန့်ခွဲရန် အထောက်အကူပြုကိရိယာကောင်းတစ်ခု ဖြစ်သည် | [Use AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
-| **3.7 - Testing your server** | စမ်းသပ်ခြင်းသည် ဖွံ့ဖြိုးတိုးတက်မှု လုပ်ငန်းစဉ်တွင် အရေးကြီးသော အပိုင်းတစ်ခု ဖြစ်သည်။ ဒီအပိုင်းမှာ မတူညီသော ကိရိယာများကို အသုံးပြု၍ စမ်းသပ်နည်းများကို လေ့လာပါမည် | [Testing your server](./03-GettingStarted/07-testing/README.md) |
-| **3.8 - Deploy your server** | ဒေသခံ ဖွံ့ဖြိုးမှုမှ ထုတ်လုပ်မှုဆီသို့ ပြောင်းရွှေ့ခြင်းနည်းလမ်းများ၊ server တည်ဆောက်ခြင်းနှင့် deploy ပြုလုပ်ခြင်း | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
-| **04 - Practical Implementation** | ဘာသာစကားအမျိုးမျိုးအတွင်း SDK များအသုံးပြုခြင်း၊ debugging, စမ်းသပ်ခြင်းနှင့် အတည်ပြုခြင်း၊ ပြန်လည်အသုံးပြုနိုင်သော prompt template များနှင့် workflow များ ဖန်တီးခြင်း | [Practical Implementation](./04-PracticalImplementation/README.md) |
-| **05 - Advanced Topics in MCP** | Multi-modal AI workflow များနှင့် တိုးချဲ့နိုင်မှု၊ လုံခြုံစိတ်ချရသော များပြားစွာတိုးချဲ့ခြင်းနည်းလမ်းများ၊ စီးပွားရေးအဆင့် MCP အသုံးပြုမှု | [Advanced Topics](./05-AdvancedTopics/README.md) |
-| **06 - Community Contributions** | ကုဒ်နှင့် စာတမ်းများ ပံ့ပိုးထောက်ပံ့နည်း၊ GitHub မှတဆင့် ပူးပေါင်းဆောင်ရွက်ခြင်း၊ အသိုင်းအဝိုင်းမှ တိုးတက်မှုများနှင့် တုံ့ပြန်ချက်များ | [Community Contributions](./06-CommunityContributions/README.md) |
-| **07 - Insights from Early Adoption** | လက်တွေ့အသုံးပြုမှုများနှင့် အောင်မြင်မှုများ၊ MCP အခြေပြု ဖြေရှင်းချက်များ တည်ဆောက်ခြင်းနှင့် ထုတ်လုပ်ခြင်း၊ လမ်းကြောင်းနှင့် အနာဂတ် ရှုမြင်ချက်များ | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
-| **08 - Best Practices for MCP** | စွမ်းဆောင်ရည် တိုးတက်အောင် ပြုလုပ်ခြင်း၊ MCP စနစ်များကို မတည့်မှုခံနိုင်ရည်ရှိအောင် ဒီဇိုင်းဆွဲခြင်း၊ စမ်းသပ်ခြင်းနှင့် စိတ်ချရမှုနည်းလမ်းများ | [Best Practices](./08-BestPractices/README.md) |
-| **09 - MCP Case Studies** | MCP ဖြေရှင်းချက်များ၏ အဆောက်အအုံများ၊ ထုတ်လုပ်မှု စီမံကိန်းများနှင့် ပေါင်းစပ်နည်းများ၊ မှတ်ချက်များပါဝင်သည့် ပုံဆွဲများနှင့် project လမ်းညွှန်ချက်များ | [Case Studies](./09-CaseStudy/README.md) |
+## Օրինակային նախագծեր
 
-## Sample Projects
-
-### 🧮 MCP Calculator Sample Projects:
+### 🧮 MCP Calculator Օրինակային նախագծեր:
 <details>
-  <summary><strong>ဘာသာစကားအလိုက် ကုဒ်နမူနာများကို ရှာဖွေကြည့်ရှုရန်</strong></summary>
+  <summary><strong>Կոդի իրականացման ուսումնասիրում ըստ լեզվի</strong></summary>
 
-  - [C# MCP Server Example](./03-GettingStarted/samples/csharp/README.md)
+  - [C# MCP Server Օրինակ](./03-GettingStarted/samples/csharp/README.md)
   - [Java MCP Calculator](./03-GettingStarted/samples/java/calculator/README.md)
-  - [JavaScript MCP Demo](./03-GettingStarted/samples/javascript/README.md)
+  - [JavaScript MCP Դեմո](./03-GettingStarted/samples/javascript/README.md)
   - [Python MCP Server](../../03-GettingStarted/samples/python/mcp_calculator_server.py)
-  - [TypeScript MCP Example](./03-GettingStarted/samples/typescript/README.md)
+  - [TypeScript MCP Օրինակ](./03-GettingStarted/samples/typescript/README.md)
 
 </details>
 
-### 💡 MCP Advanced Calculator Projects:
+### 💡 MCP Առաջադեմ Calculator նախագծեր:
 <details>
-  <summary><strong>တိုးတက်သော နမူနာများကို ရှာဖွေကြည့်ရှုရန်</strong></summary>
+  <summary><strong>Ուսումնասիրեք առաջադեմ օրինակները</strong></summary>
 
-  - [Advanced C# Sample](./04-PracticalImplementation/samples/csharp/README.md)
-  - [Java Container App Example](./04-PracticalImplementation/samples/java/containerapp/README.md)
-  - [JavaScript Advanced Sample](./04-PracticalImplementation/samples/javascript/README.md)
-  - [Python Complex Implementation](../../04-PracticalImplementation/samples/python/mcp_sample.py)
+  - [Առաջադեմ C# Օրինակ](./04-PracticalImplementation/samples/csharp/README.md)
+  - [Java Container App Օրինակ](./04-PracticalImplementation/samples/java/containerapp/README.md)
+  - [JavaScript Առաջադեմ Օրինակ](./04-PracticalImplementation/samples/javascript/README.md)
+  - [Python Սարդբարդ իրականացում](../../04-PracticalImplementation/samples/python/mcp_sample.py)
 - [TypeScript Container Sample](./04-PracticalImplementation/samples/typescript/README.md)
 
 </details>
 
 
-## 🎯 MCP 학습을 위한 사전 조건
+## 🎯 MCP 배우기 위한 전제 조건
 
 이 커리큘럼을 최대한 활용하려면 다음이 필요합니다:
 
-- C#, Java, 또는 Python 기본 지식
-- 클라이언트-서버 모델과 API 이해
-- (선택 사항) 머신러닝 개념에 대한 친숙함
+- C#, Java, 또는 Python에 대한 기본 지식  
+- 클라이언트-서버 모델과 API에 대한 이해  
+- (선택 사항) 머신러닝 개념에 대한 친숙함  
 
-## 🛠️ 이 커리큘럼을 효과적으로 활용하는 방법
+## 🛠️ 이 커리큘럼을 효과적으로 사용하는 방법
 
 이 가이드의 각 수업에는 다음이 포함됩니다:
 
 1. MCP 개념에 대한 명확한 설명  
 2. 여러 언어로 된 실시간 코드 예제  
-3. 실제 MCP 애플리케이션을 만들기 위한 연습 문제  
+3. 실제 MCP 애플리케이션을 만드는 연습 문제  
 4. 고급 학습자를 위한 추가 자료  
 
 ## 📜 라이선스 정보
 
-이 콘텐츠는 **MIT License**에 따라 라이선스가 부여됩니다. 이용 약관은 [LICENSE](../../LICENSE)를 참고하세요.
+이 콘텐츠는 **MIT 라이선스** 하에 제공됩니다. 약관은 [LICENSE](../../LICENSE)에서 확인하세요.
 
 ## 🤝 기여 가이드라인
 
-이 프로젝트는 기여와 제안을 환영합니다. 대부분의 기여는 기여 권한을 보유하고 실제로 권한을 부여한다는 내용을 선언하는
-Contributor License Agreement (CLA)에 동의해야 합니다. 자세한 내용은 <https://cla.opensource.microsoft.com>를 참조하세요.
+이 프로젝트는 기여와 제안을 환영합니다. 대부분의 기여는 기여자가 권리를 가지고 실제로 권리를 부여한다는 내용을 담은  
+Contributor License Agreement(CLA)에 동의해야 합니다. 자세한 내용은 <https://cla.opensource.microsoft.com>를 참고하세요.
 
-풀 리퀘스트를 제출하면 CLA 봇이 자동으로 CLA 제출 필요 여부를 판단하고 PR에 적절한 표시(예: 상태 검사, 댓글)를 추가합니다.
-봇이 안내하는 절차를 따르면 되며, 모든 저장소에서 한 번만 진행하면 됩니다.
+풀 리퀘스트를 제출하면 CLA 봇이 자동으로 CLA 제출 필요 여부를 판단하고 PR에 적절한 표시(예: 상태 확인, 코멘트)를 합니다.  
+봇의 안내에 따라 진행하면 되며, 이 과정은 모든 저장소에서 한 번만 하면 됩니다.
 
-이 프로젝트는 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)를 채택했습니다.
-자세한 내용은 [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)를 참고하거나
-추가 질문이나 의견은 [opencode@microsoft.com](mailto:opencode@microsoft.com)으로 문의하세요.
+이 프로젝트는 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)를 채택했습니다.  
+자세한 내용은 [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)를 참고하거나,  
+추가 질문이나 의견이 있으면 [opencode@microsoft.com](mailto:opencode@microsoft.com)으로 연락하세요.
 
-## 🎒 기타 강좌
-우리 팀은 다른 강좌도 제작합니다! 확인해 보세요:
+## 🎒 기타 강의
+저희 팀은 다른 강의도 제공합니다! 확인해 보세요:
 
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
@@ -153,10 +151,14 @@ Contributor License Agreement (CLA)에 동의해야 합니다. 자세한 내용�
 
 ## ™️ 상표 고지
 
-이 프로젝트에는 프로젝트, 제품 또는 서비스의 상표나 로고가 포함될 수 있습니다. Microsoft 상표 또는 로고의 권한 있는 사용은
-[Microsoft의 상표 및 브랜드 가이드라인](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)을 준수해야 합니다.
-이 프로젝트의 수정된 버전에서 Microsoft 상표 또는 로고를 사용하는 경우 혼동을 일으키거나 Microsoft 후원을 암시해서는 안 됩니다.
-제3자 상표 또는 로고 사용은 해당 제3자의 정책을 따릅니다.
+이 프로젝트에는 프로젝트, 제품 또는 서비스의 상표나 로고가 포함될 수 있습니다. Microsoft 상표 또는 로고의  
+공인된 사용은 [Microsoft의 상표 및 브랜드 가이드라인](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)을 준수해야 합니다.  
+수정된 버전에서 Microsoft 상표 또는 로고를 사용하는 경우 혼동을 주거나 Microsoft의 후원을 암시해서는 안 됩니다.  
+제3자 상표 또는 로고의 사용은 해당 제3자의 정책을 따라야 합니다.
 
 **Disclaimer**:  
 This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+Could you please clarify what you mean by "mo"? Are you referring to a specific language or dialect? If you can provide more details, I will be happy to assist with the translation.
