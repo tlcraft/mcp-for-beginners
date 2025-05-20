@@ -1,37 +1,37 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "344a126b620ff7997158542fd31be6a4",
-  "translation_date": "2025-05-19T21:55:26+00:00",
+  "original_hash": "1ccfe1a6ea77e42862b92ae53cb6cddf",
+  "translation_date": "2025-05-20T16:50:14+00:00",
   "source_file": "07-LessonsfromEarlyAdoption/README.md",
   "language_code": "br"
 }
 -->
-# Añs da Adopterezhioù Goude
+# Les leçons des premiers adopteurs
 
-## Kentañ Taol
+## Vue d’ensemble
 
-Ar lezenn-mañ a sellet ouzh penaos an adopterezhioù kentañ o deus implijet ar Model Context Protocol (MCP) evit seveniñ problemoù gwirion ha kas ar c'helenn e pleustr er c'hiltoù. Dre stadioù resis hag obererezhioù pratik, e welit penaos MCP a ro ur frammoù unvan, sur ha lieskour evit an integradur AI — o stagañ modeloù yezh bras, ostilhoù, ha roadennoù embregerezh e-barzh un doare. E kasit da vezañ gouest da sevel ha dizhañ diskoulmoù war MCP, deskit eus patromoù stank implijout hag an doareoù gwellañ evit lakaat MCP e pleustr e produioù. Ar lezenn a zispleg ivez ar modoù nevez, an dazont, hag ar c'hinnigioù digor evit sikour ac'hanoc'h chom war-raok er bed MCP hag e hec'h evolu.
+Cette leçon explore comment les premiers adopteurs ont utilisé le Model Context Protocol (MCP) pour résoudre des défis concrets et stimuler l’innovation dans différents secteurs. À travers des études de cas détaillées et des projets pratiques, vous découvrirez comment MCP permet une intégration IA standardisée, sécurisée et évolutive — reliant grands modèles de langage, outils et données d’entreprise dans un cadre unifié. Vous gagnerez en expérience pratique en concevant et construisant des solutions basées sur MCP, apprendrez des modèles d’implémentation éprouvés et découvrirez les bonnes pratiques pour déployer MCP en production. La leçon met aussi en lumière les tendances émergentes, les orientations futures et les ressources open source pour vous aider à rester à la pointe de la technologie MCP et de son écosystème en évolution.
 
-## Palioù ar Goulennoù
+## Objectifs d’apprentissage
 
-- Analis ar stummoù MCP implijet er vuhez gwir e meur a di
-- Dizhañ ha sevel arventennoù klok war MCP
-- Merkañ ha studiañ ar modoù nevez ha dazont ar teknoloji MCP
-- Implijout ar reolennoù gwellañ e stummoù sevel gwirion
+- Analyser des implémentations MCP concrètes dans différents secteurs  
+- Concevoir et développer des applications complètes basées sur MCP  
+- Explorer les tendances émergentes et les orientations futures de la technologie MCP  
+- Appliquer les bonnes pratiques dans des scénarios de développement réels  
 
-## Stummoù MCP er Vuhez Gwir
+## Implémentations MCP dans le monde réel
 
-### Stumm 1 : Otoemglev Kinnig Gwerzh Kliantoù Embregerezh
+### Étude de cas 1 : Automatisation du support client en entreprise
 
-Ur c'horporadeg bedeliet en deus lakaet e pleustr ur diskoulm war MCP evit unvaniekaat an darempredoù AI er servijoù skoazell d'ar c'hliantoù. Dre-se e oa bet aes dezho:
+Une multinationale a déployé une solution basée sur MCP pour standardiser les interactions IA dans ses systèmes de support client. Cela leur a permis de :
 
-- Krouiñ ur skeudenn unvan evit meur a frammoù LLM
-- Merkañ ar stummoù prompt e-keñver departamantoù
-- Sevel kontroloù surentez ha kenderc'hel an talvoudegezhioù
-- Gouzout cheñch etre modeloù AI disheñvel hervez ar c'houlzad
+- Créer une interface unifiée pour plusieurs fournisseurs de LLM  
+- Maintenir une gestion cohérente des prompts entre les départements  
+- Mettre en place des contrôles stricts de sécurité et conformité  
+- Basculer facilement entre différents modèles IA selon les besoins spécifiques  
 
-**Implij teknik:**  
+**Implémentation technique :**  
 ```python
 # Python MCP server implementation for customer support
 import logging
@@ -92,18 +92,18 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-**Disoc'hoù:** 30% nebeutaat ar c'hostez modeloù, 45% gwellañ e kresk ar respontoù, ha kresk e kenderc'hel an talvoudegezhioù war bed ar c'horporadeg.
+**Résultats :** réduction de 30 % des coûts liés aux modèles, amélioration de 45 % de la cohérence des réponses, et renforcement de la conformité à l’échelle mondiale.
 
-### Stumm 2 : Sikour Dizoloiñ yec'hed
+### Étude de cas 2 : Assistant de diagnostic en santé
 
-Ur provijer yec'hed a lakaet e pleustr ur strujerezh MCP evit stagañ meur a model AI medisin dreistordinal, o mirout an titouroù kuzhet eus ar paciented:
+Un prestataire de soins de santé a développé une infrastructure MCP pour intégrer plusieurs modèles IA médicaux spécialisés tout en garantissant la protection des données sensibles des patients :
 
-- Gouzout cheñch hep sikenniñ etre modeloù medisin hollek ha kenderc'hel
-- Kontrolioù prevezded ha daolenn ar c'hinnigoù start
-- Stagañ gant ar sistemoù EHR (Electronic Health Record) a-vremañ
-- Merkañ ar stummoù prompt evit ar yezh medisin
+- Passage fluide entre modèles médicaux généralistes et spécialistes  
+- Contrôles de confidentialité stricts et pistes d’audit  
+- Intégration avec les systèmes existants de dossiers médicaux électroniques (EHR)  
+- Ingénierie des prompts cohérente pour la terminologie médicale  
 
-**Implij teknik:**  
+**Implémentation technique :**  
 ```csharp
 // C# MCP host application implementation in healthcare application
 using Microsoft.Extensions.DependencyInjection;
@@ -168,18 +168,18 @@ public class DiagnosticAssistant
 }
 ```
 
-**Disoc'hoù:** Gwellañ ar c'hinnig d'ar medisin, kenderc'hel hollek an adheriñ da HIPAA, ha disoc'h bras e cheñch ar c'hemm etre sistemoù.
+**Résultats :** suggestions diagnostiques améliorées pour les médecins, respect total de la conformité HIPAA et réduction significative des changements de contexte entre systèmes.
 
-### Stumm 3 : Analis Risk er Servijoù Moneiz
+### Étude de cas 3 : Analyse des risques dans les services financiers
 
-Ur bank a implije MCP evit unvaniekaat o doareoù analyz risk er departamantoù disheñvel:
+Une institution financière a adopté MCP pour standardiser ses processus d’analyse des risques à travers plusieurs départements :
 
-- Krouiñ ur skeudenn unvan evit modeloù risk krediñ, goulloù fraud, ha risk moneiz
-- Sevel kontroloù start evit ar gounid hag ar stummoù modeloù
-- Gwiriañ an holl c'hinnig AI
-- Kenderc'hel ur furmad roadennoù stank e meur a sistemoù
+- Interface unifiée pour les modèles de risque de crédit, détection de fraude et risque d’investissement  
+- Contrôles d’accès stricts et gestion des versions des modèles  
+- Auditabilité garantie de toutes les recommandations IA  
+- Formatage cohérent des données entre systèmes variés  
 
-**Implij teknik:**  
+**Implémentation technique :**  
 ```java
 // Java MCP server for financial risk assessment
 import org.mcp.server.*;
@@ -210,18 +210,18 @@ public class FinancialRiskMCPServer {
 }
 ```
 
-**Disoc'hoù:** Kresk e kenderc'hel an talvoudegezhioù, 40% buanoc'h evit lakaat modeloù e pleustr, ha gwellañ ar furmad risk e departamantoù.
+**Résultats :** conformité réglementaire renforcée, cycles de déploiement des modèles accélérés de 40 %, et meilleure cohérence des évaluations des risques entre départements.
 
-### Stumm 4 : Microsoft Playwright MCP Server evit Otoemglev ar Porched
+### Étude de cas 4 : Serveur MCP Microsoft Playwright pour l’automatisation navigateur
 
-Microsoft en deus krouet [ar servijer Playwright MCP](https://github.com/microsoft/playwright-mcp) evit merañ ar porched web e doare sur ha unvan gant Model Context Protocol. Ar solutenn-mañ a ro d'agent AI ha LLM da ober gant ar porched web e doare meret, gouest da heuliañ ha kas war-raok traoù — evit testennoù web automatet, tapout roadennoù, ha reizhañ prosesoù komplek.
+Microsoft a développé le [serveur Playwright MCP](https://github.com/microsoft/playwright-mcp) pour permettre une automatisation navigateur sécurisée et standardisée via le Model Context Protocol. Cette solution autorise les agents IA et LLM à interagir avec les navigateurs web de manière contrôlée, traçable et extensible — pour des cas d’usage comme les tests web automatisés, l’extraction de données, et les workflows de bout en bout.
 
-- Diskouez a ra galloudoù otoemglev ar porched (mont en-dro, leuniañ furmoù, tapout skeudennoù, hag all) evel ostilhoù MCP
-- Sevel kontroloù start hag ur sandboks evit mirout an implijoù
-- Kinnig daolenn daolenn audit evit an holl obererezhioù
-- Stagañ gant Azure OpenAI hag ar re all evit automatisañ dre agentoù
+- Expose les capacités d’automatisation du navigateur (navigation, remplissage de formulaires, capture d’écran, etc.) en tant qu’outils MCP  
+- Implémente des contrôles d’accès stricts et un sandboxing pour éviter les actions non autorisées  
+- Fournit des journaux d’audit détaillés pour toutes les interactions navigateur  
+- Supporte l’intégration avec Azure OpenAI et autres fournisseurs LLM pour l’automatisation pilotée par agents  
 
-**Implij teknik:**  
+**Implémentation technique :**  
 ```typescript
 // TypeScript: Registering Playwright browser automation tools in an MCP server
 import { createServer, ToolDefinition } from 'modelcontextprotocol';
@@ -256,26 +256,26 @@ server.tools.register(
 server.listen(8080);
 ```
 
-**Disoc'hoù:**  
-- Otoemglev sur war ar porched evit agentoù AI ha LLM  
-- Disoc'hoù bras war ar c'hoantoù testennoù ha gwellañ ar c'hemm  
-- Frammoù dibar ha lieskour evit stagañ ostilhoù browser e lec'hioù embregerezh
+**Résultats :**  
+- Automatisation navigateur sécurisée et programmable pour agents IA et LLM  
+- Réduction des efforts de tests manuels et amélioration de la couverture des tests web  
+- Cadre réutilisable et extensible pour l’intégration d’outils basés sur navigateur en environnement d’entreprise  
 
-**Kemmoù:**  
+**Références :**  
 - [Playwright MCP Server GitHub Repository](https://github.com/microsoft/playwright-mcp)  
 - [Microsoft AI and Automation Solutions](https://azure.microsoft.com/en-us/products/ai-services/)
 
-### Stumm 5 : Azure MCP – Model Context Protocol evit an embregerezh evel servij
+### Étude de cas 5 : Azure MCP – Model Context Protocol entreprise en tant que service
 
-Azure MCP ([https://aka.ms/azmcp](https://aka.ms/azmcp)) zo implijadenn embregerezh ha renablet eus Model Context Protocol gant Microsoft, savet evit kinnig servijoù MCP lieskour, sur ha kenderc'hel evel servij en arroud. Azure MCP a ro d'ar skipailhoù an tu da lakaat e pleustr, merañ, ha stagañ servijoù MCP gant servijoù Azure AI, roadennoù ha surentez, o diskenn al labour ha buanaat ar mont war-raok en AI.
+Azure MCP ([https://aka.ms/azmcp](https://aka.ms/azmcp)) est l’implémentation managée et entreprise du Model Context Protocol par Microsoft, conçue pour offrir des capacités de serveur MCP scalables, sécurisées et conformes en mode cloud. Azure MCP permet aux organisations de déployer, gérer et intégrer rapidement des serveurs MCP avec les services Azure AI, données et sécurité, réduisant ainsi la charge opérationnelle et accélérant l’adoption de l’IA.
 
-- Hosting servijer MCP kempennet a-wechoù gant skalerezh, mererezh, ha surentez
-- Stagañ orin gant Azure OpenAI, Azure AI Search, hag ar re all
-- Kemmoù gwirioù embregerezh dre Microsoft Entra ID
-- Stagañ ostilhoù a-boutin, templadoù prompt, ha kinnigourien roadennoù
-- Kenderc'hel an talvoudegezhioù surentez ha renabl evit embregerezh
+- Hébergement managé complet de serveurs MCP avec montée en charge, monitoring et sécurité intégrés  
+- Intégration native avec Azure OpenAI, Azure AI Search et autres services Azure  
+- Authentification et autorisation d’entreprise via Microsoft Entra ID  
+- Support des outils personnalisés, modèles de prompts et connecteurs de ressources  
+- Conformité aux exigences de sécurité et réglementaires d’entreprise  
 
-**Implij teknik:**  
+**Implémentation technique :**  
 ```yaml
 # Example: Azure MCP server deployment configuration (YAML)
 apiVersion: mcp.microsoft.com/v1
@@ -301,150 +301,181 @@ spec:
     logAnalyticsWorkspace: <your-log-analytics-id>
 ```
 
-**Disoc'hoù:**  
-- Diskenn buanoc'h evit raktresoù AI embregerezh gant ur servijer MCP prest da implijout  
-- Simplañ ar stummoù stagañ modeloù LLM, ostilhoù, ha roadennoù embregerezh  
-- Kresk surentez, gweladenniñ, ha efedusted labour evit ar c'hargoù MCP
+**Résultats :**  
+- Réduction du time-to-value des projets IA grâce à une plateforme MCP prête à l’emploi et conforme  
+- Simplification de l’intégration des LLM, outils et sources de données d’entreprise  
+- Sécurité, observabilité et efficacité opérationnelle accrues pour les charges MCP  
 
-**Kemmoù:**  
+**Références :**  
 - [Azure MCP Documentation](https://aka.ms/azmcp)  
 - [Azure AI Services](https://azure.microsoft.com/en-us/products/ai-services/)
 
-## Stumm 6 : NLWeb  
-MCP (Model Context Protocol) zo ur protokol o tont er-maez evit ar chatbot ha sikourerien AI evit ober gant ostilhoù. Pep implijer NLWeb zo ivez ur servijer MCP, hag e kaver un doare kreñv, ask, da c'houlenn ur goulenn en yezh naturel war ur lec'hienn. Ar respont kaset en-dro a implije schema.org, ur yezh a vez implijet kalz evit deskrivañ roadennoù web. A-benn ar fin, MCP a zo NLWeb evel ma vez Http evit HTML. NLWeb a staga protokoloù, furmad schema.org, ha kod sampl evit sikour an tiadoù da grouiñ an dra-se buan, o reiñ plijadur d'an dud dre an interfezoù komz ha d'ar roboted dre darempredoù natur.
+## Étude de cas 6 : NLWeb
 
-Div elfenn disheñvel zo er NLWeb:  
-- Ur protokol simpl evit kregiñ, evit kevreañ gant ur lec'hienn en yezh naturel ha furmad, o implijout json ha schema.org evit ar respont. Sellit ouzh an teulioù REST API evit muioc'h a ditouroù.  
-- Implij simpl eus (1) o implijout ar marc'hadenn a-vremañ, evit lec'hioù a c'heller diskouez evel rolloù (produioù, resis, lec'hioù da welout, kemmoù, hag all). E-giz-se, gant ostilhoù UI, e c'hell an tiadoù kinnig interfezoù komz evit o roadennoù. Sellit ouzh an teulioù Life of a chat query evit gouzout penaos e vez graet-se.
+MCP (Model Context Protocol) est un protocole émergent permettant aux chatbots et assistants IA d’interagir avec des outils. Chaque instance NLWeb est aussi un serveur MCP, supportant une méthode principale, ask, utilisée pour poser une question en langage naturel à un site web. La réponse renvoyée utilise schema.org, un vocabulaire largement adopté pour décrire les données web. Pour simplifier, MCP est à NLWeb ce que HTTP est à HTML. NLWeb combine protocoles, formats Schema.org et exemples de code pour aider les sites à créer rapidement ces points d’accès, bénéficiant aux humains via des interfaces conversationnelles et aux machines via des interactions agent-à-agent naturelles.
 
-**Kemmoù:**  
+NLWeb se compose de deux éléments distincts :  
+- Un protocole très simple pour interagir en langage naturel avec un site et un format s’appuyant sur json et schema.org pour la réponse. Voir la documentation REST API pour plus de détails.  
+- Une implémentation simple de (1) qui exploite le balisage existant, pour les sites pouvant être vus comme des listes d’éléments (produits, recettes, attractions, avis, etc.). Avec un ensemble de widgets d’interface utilisateur, les sites peuvent facilement proposer des interfaces conversationnelles à leur contenu. Voir la documentation Life of a chat query pour comprendre le fonctionnement.  
+
+**Références :**  
 - [Azure MCP Documentation](https://aka.ms/azmcp)  
 - [NLWeb](https://github.com/microsoft/NlWeb)
 
-## Obererezhioù Praktikel
+### Étude de cas 7 : MCP pour Foundry – Intégration des agents Azure AI
 
-### Obererezh 1 : Sevel ur servijer MCP evit meur a frammoù
+Les serveurs Azure AI Foundry MCP montrent comment MCP peut orchestrer et gérer agents IA et workflows en environnement d’entreprise. En intégrant MCP avec Azure AI Foundry, les organisations standardisent les interactions agents, tirent parti de la gestion des workflows de Foundry, et garantissent des déploiements sécurisés et scalables. Cette approche permet le prototypage rapide, un monitoring robuste, et une intégration fluide avec les services Azure AI, supportant des scénarios avancés comme la gestion des connaissances et l’évaluation des agents. Les développeurs bénéficient d’une interface unifiée pour construire, déployer et superviser les pipelines d’agents, tandis que les équipes IT gagnent en sécurité, conformité et efficacité opérationnelle. La solution est idéale pour les entreprises souhaitant accélérer l’adoption de l’IA tout en gardant le contrôle sur des processus complexes pilotés par agents.
 
-**Pal:** Krouiñ ur servijer MCP a c'hell kas ar gouladoù da meur a frammoù model AI hervez meizad resis.
+**Références :**  
+- [MCP Foundry GitHub Repository](https://github.com/azure-ai-foundry/mcp-foundry)  
+- [Integrating Azure AI Agents with MCP (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
 
-**Reolennoù:**  
-- Stagañ gant tri frammoù modeloù disheñvel (da skouer OpenAI, Anthropic, modeloù lec'hel)  
-- Implijout ur mod routañ hervez an titouroù er goulenn  
-- Krouiñ ur sistem kempenn evit mererezh ar c'hrededennioù  
-- Ouzhpennañ cacherezh evit gwellañ ar produiñ ha disoc'hoù  
-- Sevel ur postel sklaer evit mererezh ar c'hempennadennoù
+### Étude de cas 8 : Foundry MCP Playground – Expérimentation et prototypage
 
-**Dizoloadur:**  
-1. Krouiñ ar servijer MCP diazezet  
-2. Implijout adaptoù provijer evit pep servij model AI  
-3. Sevel al leurenn routañ hervez an titouroù goulennet  
-4. Ouzhpennañ mekanikoù cacherezh evit ar gouladoù ampart  
-5. Krouiñ ar postel mererezh  
-6. Gwiriañ gant meur a stumm goulenn
+Le Foundry MCP Playground offre un environnement prêt à l’emploi pour expérimenter avec les serveurs MCP et les intégrations Azure AI Foundry. Les développeurs peuvent rapidement prototyper, tester et évaluer modèles IA et workflows agents à partir des ressources du catalogue et des labs Azure AI Foundry. Le playground simplifie la mise en place, propose des projets exemples, et soutient le développement collaboratif, facilitant l’exploration des bonnes pratiques et de nouveaux scénarios avec un minimum de contraintes. Il est particulièrement utile pour les équipes souhaitant valider des idées, partager leurs expériences, et accélérer l’apprentissage sans infrastructure complexe. En abaissant la barrière à l’entrée, le playground favorise l’innovation et les contributions communautaires dans l’écosystème MCP et Azure AI Foundry.
 
-**Technologiezhioù:** Python (pe .NET/Java), Redis evit cacherezh, ha ur frammoù web simpl evit ar postel.
+**Références :**  
+- [Foundry MCP Playground GitHub Repository](https://github.com/azure-ai-foundry/foundry-mcp-playground)
 
-### Obererezh 2 : Sistem Mererezh Prompt Embregerezh
+## Projets pratiques
 
-**Pal:** Sevel ur sistem war MCP evit mererezh, stummañ, ha lakaat e pleustr templadoù prompt e-barzh ur skipailh.
+### Projet 1 : Construire un serveur MCP multi-fournisseurs
 
-**Reolennoù:**  
-- Krouiñ ur c'hentelad kentañ evit templadoù prompt  
-- Implijout stummañ ha raktresoù goulenn digas  
-- Sevel ar galloudoù testañ gant samploù  
-- Staliañ kontroloù gwirioù hervez rolioù  
-- Krouiñ ur API evit kavout ha lakaat e pleustr templadoù
+**Objectif :** Créer un serveur MCP capable de router les requêtes vers plusieurs fournisseurs de modèles IA selon des critères spécifiques.
 
-**Dizoloadur:**  
-1. Dizhañ ar skeudenn roadennoù evit ar stummad  
-2. Krouiñ ar API kreñv evit obererezhioù CRUD  
-3. Implijout ar sistem stummañ  
-4. Sevel ar raktresoù goulenn digas  
-5. Krouiñ ar frammoù testañ  
-6. Krouiñ ur web simpl evit mererezh  
-7. Stagañ gant servijer MCP
+**Exigences :**  
+- Supporter au moins trois fournisseurs de modèles différents (ex. OpenAI, Anthropic, modèles locaux)  
+- Implémenter un mécanisme de routage basé sur les métadonnées des requêtes  
+- Créer un système de configuration pour gérer les identifiants fournisseurs  
+- Ajouter un cache pour optimiser performances et coûts  
+- Construire un tableau de bord simple pour le suivi de l’utilisation  
 
-**Technologiezhioù:** Diwallit ar frammoù backend, diazezer roadennoù SQL pe NoSQL, ha frammoù frontend evit ar mererezh.
+**Étapes de mise en œuvre :**  
+1. Mettre en place l’infrastructure serveur MCP de base  
+2. Implémenter les adaptateurs fournisseurs pour chaque service de modèle IA  
+3. Créer la logique de routage basée sur les attributs des requêtes  
+4. Ajouter les mécanismes de cache pour les requêtes fréquentes  
+5. Développer le tableau de bord de monitoring  
+6. Tester avec différents profils de requêtes  
 
-### Obererezh 3 : Pladenn Genadurel Kontennoù war MCP
+**Technologies :** Choix entre Python (.NET/Java/Python selon préférence), Redis pour le cache, et un framework web simple pour le tableau de bord.
 
-**Pal:** Sevel ur pladenn da genadurel kontennoù o implijout MCP evit kinnig disoc'hoù stabil war meur a stumm kontennoù.
+### Projet 2 : Système d’administration centralisée des prompts en entreprise
 
-**Reolennoù:**  
-- Stagañ meur a furmad kontennoù (postoù blog, media sokial, skridoù marc'had)  
-- Implijout generadur war templadoù gant goulennoù personelaet  
-- Krouiñ ur sistem enklask ha respont d'ar kontennoù  
-- Heuliañ ar perzhioù kontennoù  
-- Stagañ stummañ ha dreuzkas kontennoù
+**Objectif :** Développer un système MCP pour gérer, versionner et déployer des modèles de prompts dans une organisation.
 
-**Dizoloadur:**  
-1. Diazezañ an MCP client  
-2. Krouiñ templadoù evit meur a stumm kontennoù  
-3. Sevel ar pipeline generadur  
-4. Implijout ar sistem enklask  
-5. Krouiñ ar sistem heuliañ metrikoù  
-6. Krouiñ ur interfez implijer evit mererezh templadoù ha generadur
+**Exigences :**  
+- Créer un dépôt centralisé pour les modèles de prompts  
+- Mettre en place un système de versioning et workflows d’approbation  
+- Construire des capacités de test des templates avec exemples d’entrées  
+- Développer des contrôles d’accès basés sur les rôles  
+- Créer une API pour la récupération et le déploiement des templates  
 
-**Technologiezhioù:** Ho yezh programmadur hag ur frammoù web ha diazezer roadennoù.
+**Étapes de mise en œuvre :**  
+1. Concevoir le schéma de base de données pour stocker les templates  
+2. Créer l’API principale pour les opérations CRUD sur les templates  
+3. Implémenter le système de versioning  
+4. Construire le workflow d’approbation  
+5. Développer le framework de test  
+6. Créer une interface web simple pour la gestion  
+7. Intégrer avec un serveur MCP  
 
-## Dazont ar Teknologie MCP
+**Technologies :** Choix libre du framework backend, base SQL ou NoSQL, et framework frontend pour l’interface.
 
-### Modoù Nevez
+### Projet 3 : Plateforme de génération de contenu basée sur MCP
 
-1. **MCP Multi-Modad**  
-   - Kresk ar MCP evit urzhiataoù skeudenn, son, ha video  
-   - Krouiñ galloudoù resonnañ er modadoù disheñvel  
-   - Furmad prompt unvan evit modadoù disheñvel
+**Objectif :** Construire une plateforme de génération de contenu utilisant MCP pour garantir des résultats cohérents sur différents types de contenu.
 
-2. **Strujerezh MCP Fedet**  
-   - Rouedad MCP distroet evit stagañ roadennoù etre skipailhoù  
-   - Protokoloù unvan evit mererezh modeloù sur  
-   - Teknikoù prevezded evit ar c'hemennoù
+**Exigences :**  
+- Supporter plusieurs formats de contenu (articles de blog, réseaux sociaux, textes marketing)  
+- Implémenter une génération basée sur templates avec options de personnalisation  
+- Créer un système de revue et feedback du contenu  
+- Suivre les métriques de performance du contenu  
+- Supporter le versioning et l’itération des contenus  
 
-3. **MCP Marchoù**  
-   - Eveloù evit rannañ ha monetizañ templadoù ha plugeinoù MCP  
-   - Gwiriañ kalite ha sertifikañ  
-   - Stagañ gant marchoù modeloù
+**Étapes de mise en œuvre :**  
+1. Mettre en place l’infrastructure client MCP  
+2. Créer les templates pour chaque type de contenu  
+3. Construire la chaîne de génération de contenu  
+4. Implémenter le système de revue  
+5. Développer le suivi des métriques  
+6. Créer une interface utilisateur pour la gestion des templates et la génération  
 
-4. **MCP evit Edge Computing**  
-   - Adaptañ MCP evit an dispozitivoù serret gant arc'hant  
-   - Protokoloù optimet evit lec'hioù niverus  
-   - Implijioù MCP spesial evit IoT
+**Technologies :** Langage de programmation, framework web et base de données au choix.
 
-5. **Kembrañ Regulel**  
-   - Krouiñ estajoù MCP evit kenderc'hel an talvoudegezhioù regulel  
-   - Daolenn audit unvan ha skeudennoù displeg  
-   - Stagañ gant ar freuzioù mererezh AI
+## Orientations futures de la technologie MCP
 
-### Diskoulmoù MCP gant Microsoft
+### Tendances émergentes
 
-Microsoft ha Azure o deus krouet meur a c'hinnigioù digor evit sikour ar c'hodourien da implijout MCP e meur a stumm:
+1. **MCP multimodal**  
+   - Extension de MCP pour standardiser les interactions avec modèles image, audio et vidéo  
+   - Développement de capacités de raisonnement intermodal  
+   - Formats de prompts standardisés pour différentes modalités  
 
-#### Microsoft Organization  
-1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - Servijer MCP evit Playwright evit otoemglev ha testennoù browser  
-2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - Implijadenn servijer MCP OneDrive evit testennoù lec'hel ha kemmoù kevredigezhel  
-3. [NLWeb](https://github.com/microsoft/NlWeb) - Un toullad protokoloù digor ha ostilhoù evit kreñvaat ar bed AI Web
+2. **Infrastructure MCP fédérée**  
+   - Réseaux MCP distribués partageant ressources entre organisations  
+   - Protocoles standardisés pour le partage sécurisé de modèles  
+   - Techniques de calcul préservant la confidentialité  
 
-#### Azure-Samples Organization  
-1. [mcp](https://github.com/Azure-Samples/mcp) - Samploù, ostilhoù, ha kinnigioù evit sevel ha stagañ servijoù MCP war Azure e meur a yezh  
-2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Servijoù MCP evit ar mererezh gwirioù hervez ar spesifikadur Model Context Protocol  
-3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - Pajenn da lakaat e pleustr servijoù MCP war Azure Functions  
-4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Templet start evit sevel ha lakaat e pleustr servijoù MCP war Azure Functions gant Python  
-5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Templet start evit .NET/C#  
-6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Templet start evit TypeScript  
-7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) - Azure API Management evel porzh AI evit servijoù MCP gant Python  
-8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) - Experimentoù APIM ❤️ AI, o stagañ Azure OpenAI ha AI Foundry
+3. **Marchés MCP**  
+   - Écosystèmes pour partager et monétiser templates et plugins MCP  
+   - Processus d’assurance qualité et certification  
+   - Intégration avec les marketplaces de modèles  
 
-Ar re-mañ a ginnig meur a implijadenn, templetennoù, ha kinnigioù evit ober gant Model Context Protocol e meur a yezh hag er servijoù Azure. Gant implijadenn eus servijoù diazezet betek gwirioù ha stummoù embregerezh.
+4. **MCP pour edge computing**  
+   - Adaptation des standards MCP aux appareils edge à ressources limitées  
+   - Protocoles optimisés pour environnements à faible bande passante  
+   - Implémentations spécialisées pour écosystèmes IoT  
 
-#### Dielladur Kinnigioù MCP
+5. **Cadres réglementaires**  
+   - Développement d’extensions MCP pour conformité réglementaire  
+   - Pistes d’audit standardisées et interfaces d’explicabilité  
+   - Intégration avec les cadres émergents de gouvernance IA  
 
-Ar [dielladur MCP Resources](https://github.com/microsoft/mcp/tree/main/Resources) e lec'h micherel MCP Microsoft a ginnig un toullad samploù, templadoù prompt, ha deskrivadurioù ostilhoù evit ar servijoù MCP. An dielladur-mañ a sikouro ar c'hodourien da kregiñ buan gant MCP dre an elfennoù dibar ha patromoù gwellañ evit:
+### Solutions MCP de Microsoft
 
-- **Templadoù Prompt:** Templadoù prest da implij evit doareoù AI boutin, a c'hell bezañ adimplijet evit ho servijoù MCP.  
-- **Deskrivadurioù Ostilhoù:** Skemadoù ha metadonneoù sampl evit unvaniekaat ar stummoù ostilhoù war MCP.  
-- **Samploù Roadennoù:** Deskrivadurioù sampl evit stagañ gant data, APIoù, ha servijoù all e-barzh MCP.  
-- **Implijadenn Referens:**
+Microsoft et Azure ont développé plusieurs dépôts open source pour aider les développeurs à implémenter MCP dans divers scénarios :
+
+#### Organisation Microsoft  
+1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) – Serveur Playwright MCP pour automatisation et tests navigateur  
+2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) – Implémentation serveur MCP OneDrive pour tests locaux et contributions communautaires  
+3. [NLWeb](https://github.com/microsoft/NlWeb) – Collection de protocoles ouverts et outils open source, visant à établir une couche fondamentale pour le Web IA  
+
+#### Organisation Azure-Samples  
+1. [mcp](https://github.com/Azure-Samples/mcp) – Exemples, outils et ressources pour construire et intégrer des serveurs MCP sur Azure avec plusieurs langages  
+2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) – Serveurs MCP de référence démontrant l’authentification selon la spécification actuelle MCP  
+3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) – Page d’accueil des implémentations Remote MCP Server en Azure Functions avec liens vers repos par langage  
+4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) – Template quickstart pour construire et déployer des serveurs MCP distants personnalisés en Python avec Azure Functions  
+5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) – Template quickstart pour serveurs MCP distants personnalisés en .NET/C# avec Azure Functions  
+6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) – Template quickstart pour serveurs MCP distants personnalisés en TypeScript avec Azure Functions  
+7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) – Azure API Management comme passerelle IA vers serveurs MCP distants en Python  
+8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) – Expériences APIM ❤️ IA incluant capacités MCP, intégration avec Azure OpenAI et AI Foundry  
+
+Ces dépôts offrent diverses implémentations, templates et ressources pour travailler avec le Model Context Protocol dans plusieurs langages et services Azure. Ils couvrent un large éventail de cas d’usage, des serveurs basiques à l’authentification, déploiement cloud et intégration entreprise.
+
+#### Répertoire de ressources MCP
+
+Le [répertoire MCP Resources](https://github.com/microsoft/mcp/tree/main/Resources) dans le dépôt officiel Microsoft MCP fournit une collection sélectionnée d’exemples de ressources, modèles de prompts et définitions d’outils pour une utilisation avec les serveurs Model Context Protocol. Ce répertoire aide les développeurs à démarrer rapidement avec MCP en proposant des blocs réutilisables et des exemples de bonnes pratiques pour :
+
+- **Modèles de prompts :** Templates prêts à l’emploi pour tâches et scénarios IA courants, adaptables à vos implémentations MCP  
+- **Définitions d’outils :** Schémas et métadonnées d’exemple pour standardiser l’intégration et l’appel d’outils dans différents serveurs MCP  
+- **Exemples de ressources :** Définitions de ressources pour connecter sources de données, API et services externes dans le cadre MCP  
+- **Implémentations de référence :** Exemples pratiques montrant comment structurer et organiser ressources, prompts et outils dans des projets MCP réels  
+
+Ces ressources accélèrent le développement, favorisent la standardisation et assurent les bonnes pratiques lors de la construction et du déploiement de solutions basées sur MCP.
+
+#### Répertoire MCP Resources  
+- [MCP Resources (exemples de prompts, outils et définitions de ressources)](https://github.com/microsoft/mcp/tree/main/Resources)
+
+### Opportunités de recherche
+
+- Techniques efficaces d’optim
+- [Azure MCP Documentation](https://aka.ms/azmcp)
+- [Playwright MCP Server GitHub Repository](https://github.com/microsoft/playwright-mcp)
+- [Files MCP Server (OneDrive)](https://github.com/microsoft/files-mcp-server)
+- [Azure-Samples MCP](https://github.com/Azure-Samples/mcp)
+- [MCP Auth Servers (Azure-Samples)](https://github.com/Azure-Samples/mcp-auth-servers)
+- [Remote MCP Functions (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions)
 - [Remote MCP Functions Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-python)
 - [Remote MCP Functions .NET (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)
 - [Remote MCP Functions TypeScript (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-typescript)
@@ -456,10 +487,10 @@ Ar [dielladur MCP Resources](https://github.com/microsoft/mcp/tree/main/Resource
 
 1. Analise um dos estudos de caso e proponha uma abordagem alternativa de implementação.
 2. Escolha uma das ideias de projeto e crie uma especificação técnica detalhada.
-3. Pesquise um setor que não foi abordado nos estudos de caso e descreva como o MCP poderia resolver seus desafios específicos.
-4. Explore uma das direções futuras e crie um conceito para uma nova extensão do MCP que a suporte.
+3. Pesquise um setor que não foi abordado nos estudos de caso e descreva como o MCP poderia solucionar seus desafios específicos.
+4. Explore uma das direções futuras e crie um conceito para uma nova extensão MCP que a suporte.
 
 Próximo: [Best Practices](../08-BestPractices/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.

@@ -1,102 +1,102 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "788eb17750e970a0bc3b5e7f2e99975b",
-  "translation_date": "2025-05-18T15:30:06+00:00",
+  "original_hash": "154c00dc3b2c792102e4845c19fbd166",
+  "translation_date": "2025-05-20T17:55:43+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "sw"
 }
 -->
-# 📖 MCP Core Concepts: Kujuwa Model Context Protocol kwa Uingizaji wa AI
+# 📖 MCP Core Concepts: Ujifunzaji wa Model Context Protocol kwa Muungano wa AI
 
-Model Context Protocol (MCP) ni mfumo thabiti na wenye nguvu unaoimarisha mawasiliano kati ya Large Language Models (LLMs) na zana za nje, programu, na vyanzo vya data. Mwongozo huu ulioandaliwa kwa SEO utakuelekeza kupitia dhana kuu za MCP, kuhakikisha unaelewa usanifu wake wa mteja-server, vipengele muhimu, mbinu za mawasiliano, na mbinu bora za utekelezaji.
+Model Context Protocol (MCP) ni mfumo wenye nguvu na uliopangwa viwango unaoboreshwa mawasiliano kati ya Large Language Models (LLMs) na zana za nje, programu, na vyanzo vya data. Mwongozo huu ulioboreshwa kwa SEO utakufundisha dhana kuu za MCP, kuhakikisha unaelewa usanifu wa client-server, vipengele muhimu, mbinu za mawasiliano, na mbinu bora za utekelezaji.
 
 ## Muhtasari
 
-Somo hili linachunguza usanifu wa msingi na vipengele vinavyounda mfumo wa Model Context Protocol (MCP). Utajifunza kuhusu usanifu wa mteja-server, vipengele muhimu, na mbinu za mawasiliano zinazowezesha mwingiliano wa MCP.
+Somo hili linaangazia usanifu wa msingi na vipengele vinavyounda mfumo wa Model Context Protocol (MCP). Utajifunza kuhusu usanifu wa client-server, vipengele muhimu, na mbinu za mawasiliano zinazochochea mwingiliano wa MCP.
 
 ## 👩‍🎓 Malengo Muhimu ya Kujifunza
 
-Mwisho wa somo hili, utakuwa na uwezo wa:
+Mwisho wa somo hili, utakuwa umeweza:
 
-- Kuelewa usanifu wa mteja-server wa MCP.
+- Kuelewa usanifu wa MCP wa client-server.
 - Kutambua majukumu ya Hosts, Clients, na Servers.
-- Kuchambua vipengele kuu vinavyofanya MCP kuwa safu ya kuunganisha yenye kubadilika.
-- Kujifunza jinsi taarifa zinavyotiririka ndani ya mfumo wa MCP.
+- Kuchambua sifa kuu zinazofanya MCP kuwa safu rahisi ya muungano.
+- Kujifunza jinsi taarifa zinavyosambaa ndani ya mfumo wa MCP.
 - Kupata maarifa ya vitendo kupitia mifano ya msimbo katika .NET, Java, Python, na JavaScript.
 
-## 🔎 Usanifu wa MCP: Mtazamo wa Kina
+## 🔎 Usanifu wa MCP: Muangalia Zaidi
 
-Mfumo wa MCP umejengwa kwa mfano wa mteja-server. Muundo huu wa moduli unaruhusu programu za AI kuunganishwa kwa ufanisi na zana, hifadhidata, APIs, na rasilimali za muktadha. Hebu tugawanye usanifu huu katika vipengele vyake muhimu.
+Mfumo wa MCP umejengwa kwa mfano wa client-server. Muundo huu wa moduli unaruhusu programu za AI kuingiliana na zana, hifadhidata, APIs, na rasilimali za muktadha kwa ufanisi. Hebu tuchambue usanifu huu kwa vipengele vyake muhimu.
 
 ### 1. Hosts
 
-Katika Model Context Protocol (MCP), Hosts ni sehemu muhimu kama kiolesura kikuu ambacho watumiaji hutumia kuingiliana na itifaki. Hosts ni programu au mazingira yanayoanzisha muunganisho na seva za MCP ili kupata data, zana, na maelekezo. Mfano wa Hosts ni mazingira ya maendeleo kama Visual Studio Code, zana za AI kama Claude Desktop, au mawakala waliotengenezwa maalum kwa kazi fulani.
+Katika Model Context Protocol (MCP), Hosts ni sehemu muhimu kama kiolesura cha msingi ambacho watumiaji hutumia kuingiliana na itifaki. Hosts ni programu au mazingira yanayoanzisha muunganisho na seva za MCP ili kupata data, zana, na maagizo. Mifano ya Hosts ni pamoja na mazingira ya maendeleo yaliyojumuishwa (IDEs) kama Visual Studio Code, zana za AI kama Claude Desktop, au mawakala maalum yaliyojengwa kwa kazi fulani.
 
-**Hosts** ni programu za LLM zinazozindua muunganisho. Wanap:
+**Hosts** ni programu za LLM zinazozindua muunganisho. Wanahakikisha:
 
-- Kutekeleza au kuingiliana na modeli za AI ili kutoa majibu.
+- Kutekeleza au kuingiliana na mifano ya AI ili kutoa majibu.
 - Kuanzisha muunganisho na seva za MCP.
 - Kusimamia mtiririko wa mazungumzo na kiolesura cha mtumiaji.
 - Kudhibiti ruhusa na vizingiti vya usalama.
-- Kushughulikia idhini ya mtumiaji kwa kushiriki data na kutekeleza zana.
+- Kushughulikia ridhaa za mtumiaji kwa kushiriki data na kutekeleza zana.
 
 ### 2. Clients
 
-Clients ni vipengele muhimu vinavyorahisisha mwingiliano kati ya Hosts na seva za MCP. Clients hufanya kama madalali, kuruhusu Hosts kufikia na kutumia kazi zinazotolewa na seva za MCP. Wanahakikisha mawasiliano laini na kubadilishana data kwa ufanisi ndani ya usanifu wa MCP.
+Clients ni vipengele muhimu vinavyorahisisha mwingiliano kati ya Hosts na seva za MCP. Clients hufanya kazi kama wasuluhishi, kuruhusu Hosts kufikia na kutumia huduma zinazotolewa na seva za MCP. Wanachukua jukumu muhimu kuhakikisha mawasiliano laini na kubadilishana data kwa ufanisi ndani ya usanifu wa MCP.
 
-**Clients** ni viunganishi ndani ya programu ya host. Wanap:
+**Clients** ni viunganishi ndani ya programu ya host. Wanahakikisha:
 
-- Kutuma maombi kwa seva kwa maelekezo/maagizo.
-- Kujadiliana kuhusu uwezo na seva.
-- Kusimamia maombi ya utekelezaji wa zana kutoka kwa modeli.
+- Kutuma maombi kwa seva kwa maagizo/maelekezo.
+- Kujadiliana uwezo na seva.
+- Kusimamia maombi ya utekelezaji wa zana kutoka kwa mifano.
 - Kuchakata na kuonyesha majibu kwa watumiaji.
 
 ### 3. Servers
 
-Servers zinahusika na kushughulikia maombi kutoka kwa clients wa MCP na kutoa majibu yanayofaa. Zinadhibiti shughuli mbalimbali kama upokeaji data, utekelezaji wa zana, na uundaji wa maelekezo. Servers huhakikisha mawasiliano kati ya clients na Hosts ni ya ufanisi na ya kuaminika, huku zikidumisha uadilifu wa mchakato wa mwingiliano.
+Seva zinahusika na kushughulikia maombi kutoka kwa clients wa MCP na kutoa majibu yanayofaa. Zinadhibiti shughuli mbalimbali kama upokeaji wa data, utekelezaji wa zana, na utengenezaji wa maagizo. Seva zinahakikisha mawasiliano kati ya clients na Hosts ni ya ufanisi na ya kuaminika, zikidumisha uadilifu wa mchakato wa mwingiliano.
 
-**Servers** ni huduma zinazotoa muktadha na uwezo. Wanap:
+**Servers** ni huduma zinazotoa muktadha na uwezo. Wanahakikisha:
 
-- Kusajili vipengele vinavyopatikana (rasilimali, maelekezo, zana)
+- Kusajili vipengele vinavyopatikana (rasilimali, maagizo, zana)
 - Kupokea na kutekeleza maombi ya zana kutoka kwa client
 - Kutoa taarifa za muktadha ili kuboresha majibu ya modeli
 - Kurudisha matokeo kwa client
 - Kudumisha hali katika mwingiliano inapohitajika
 
-Servers zinaweza kutengenezwa na mtu yeyote kuongeza uwezo wa modeli kwa kazi maalum.
+Seva zinaweza kuundwa na mtu yeyote kuongeza uwezo wa modeli kwa huduma maalum.
 
 ### 4. Vipengele vya Server
 
-Servers katika Model Context Protocol (MCP) hutoa vipengele msingi vinavyowezesha mwingiliano tajiri kati ya clients, hosts, na modeli za lugha. Vipengele hivi vimeundwa kuongeza uwezo wa MCP kwa kutoa muktadha uliopangwa, zana, na maelekezo.
+Seva katika Model Context Protocol (MCP) hutoa vipengele vya msingi vinavyowezesha mwingiliano tajiri kati ya clients, hosts, na modeli za lugha. Vipengele hivi vimeundwa kuongeza uwezo wa MCP kwa kutoa muktadha uliopangwa, zana, na maagizo.
 
 Seva za MCP zinaweza kutoa vipengele vifuatavyo:
 
 #### 📑 Rasilimali
 
-Rasilimali katika Model Context Protocol (MCP) ni aina mbalimbali za muktadha na data zinazoweza kutumiwa na watumiaji au modeli za AI. Hizi ni pamoja na:
+Rasilimali katika Model Context Protocol (MCP) ni aina mbalimbali za muktadha na data zinazoweza kutumiwa na watumiaji au mifano ya AI. Hizi ni pamoja na:
 
-- **Data za Muktadha**: Taarifa na muktadha ambao watumiaji au modeli za AI wanaweza kutumia kwa maamuzi na utekelezaji wa kazi.
-- **Misingi ya Maarifa na Hifadhidata za Nyaraka**: Mkusanyiko wa data zilizopangwa na zisizopangwa, kama makala, mwongozo, na tafiti, zinazotoa maarifa na taarifa muhimu.
-- **Faili za Kiwanda na Hifadhidata**: Data zilizohifadhiwa ndani ya vifaa au hifadhidata, zinazopatikana kwa uchakataji na uchambuzi.
-- **APIs na Huduma za Mtandao**: Kiolesura na huduma za nje zinazotoa data na uwezo zaidi, kuruhusu ushirikiano na rasilimali na zana mbalimbali mtandaoni.
+- **Data za Muktadha**: Taarifa na muktadha ambao watumiaji au mifano ya AI wanaweza kutumia kwa maamuzi na utekelezaji wa kazi.
+- **Misingi ya Maarifa na Hifadhidata za Nyaraka**: Mkusanyiko wa data zilizopangwa na zisizopangwa, kama makala, mwongozo, na karatasi za utafiti, zinazotoa maarifa muhimu.
+- **Faili za Kiasili na Hifadhidata**: Data iliyohifadhiwa ndani ya vifaa au hifadhidata, inayopatikana kwa uchakataji na uchambuzi.
+- **APIs na Huduma za Mtandao**: Kiolesura na huduma za nje zinazotoa data na uwezo zaidi, kuruhusu muunganisho na rasilimali na zana mbalimbali mtandaoni.
 
-Mfano wa rasilimali unaweza kuwa muundo wa hifadhidata au faili inayopatikana kwa njia hii:
+Mfano wa rasilimali inaweza kuwa schema ya hifadhidata au faili inayoweza kufikiwa kama ifuatavyo:
 
 ```text
 file://log.txt
 database://schema
 ```
 
-### 🤖 Maelekezo
+### 🤖 Maagizo
 
-Maelekezo katika Model Context Protocol (MCP) ni templeti na mifumo ya mwingiliano iliyotanguliwa iliyoundwa kuwezesha mtiririko wa kazi kwa watumiaji na kuboresha mawasiliano. Hizi ni pamoja na:
+Maagizo katika Model Context Protocol (MCP) ni templeti mbalimbali zilizotanguliwa na mifumo ya mwingiliano iliyoundwa kurahisisha mtiririko wa kazi za watumiaji na kuboresha mawasiliano. Hizi ni pamoja na:
 
-- **Ujumbe na Mtiririko wa Kazi uliopangwa**: Ujumbe na michakato iliyopangwa ambayo huongoza watumiaji kupitia kazi maalum na mwingiliano.
-- **Mifumo ya Mwingiliano Iliyotanguliwa**: Mfululizo wa hatua na majibu yaliyopangwa ili kuwezesha mawasiliano thabiti na yenye ufanisi.
+- **Ujumbe wa Templeti na Mtiririko wa Kazi**: Ujumbe na michakato iliyopangwa kabla inayowaongoza watumiaji kupitia kazi maalum na mwingiliano.
+- **Mifumo ya Mwingiliano Iliyo Tanguliwa**: Mfuatano wa hatua na majibu yaliyopangwa kwa lengo la mawasiliano thabiti na yenye ufanisi.
 - **Templeti Maalum za Mazungumzo**: Templeti zinazoweza kubadilishwa kwa aina maalum za mazungumzo, kuhakikisha mwingiliano unaofaa na wenye muktadha.
 
-Templeti ya maelekezo inaweza kuonekana kama ifuatavyo:
+Templeti ya agizo inaweza kuonekana kama ifuatavyo:
 
 ```markdown
 Generate a product slogan based on the following {{product}} with the following {{keywords}}
@@ -104,18 +104,18 @@ Generate a product slogan based on the following {{product}} with the following 
 
 #### ⛏️ Zana
 
-Zana katika Model Context Protocol (MCP) ni kazi ambazo modeli ya AI inaweza kutekeleza kufanya kazi maalum. Zana hizi zimetengenezwa kuongeza uwezo wa modeli kwa kutoa operesheni zilizopangwa na za kuaminika. Vipengele muhimu ni:
+Zana katika Model Context Protocol (MCP) ni kazi ambazo modeli ya AI inaweza kutekeleza kufanya kazi maalum. Zana hizi zimeundwa kuongeza uwezo wa modeli ya AI kwa kutoa operesheni zilizopangwa na za kuaminika. Vipengele muhimu ni:
 
-- **Kazi za Kutekelezwa na Modeli ya AI**: Zana ni kazi zinazotekelezwa ambazo modeli ya AI inaweza kuitumia kutekeleza kazi mbalimbali.
-- **Jina la Kipekee na Maelezo**: Kila zana ina jina la kipekee na maelezo ya kina yanayoelezea kusudi na kazi zake.
-- **Vigezo na Matokeo**: Zana zinapokea vigezo maalum na kurudisha matokeo yaliyopangwa, kuhakikisha matokeo thabiti na yanayotarajiwa.
-- **Kazi Zilizojitenga**: Zana hufanya kazi maalum kama utafutaji mtandaoni, mahesabu, na maswali ya hifadhidata.
+- **Kazi za AI kutekeleza**: Zana ni kazi zinazoweza kutekelezwa ambazo modeli ya AI inaweza kuitumia kutekeleza kazi mbalimbali.
+- **Jina la Kipekee na Maelezo**: Kila zana ina jina la kipekee na maelezo ya kina yanayoelezea madhumuni na utendaji wake.
+- **Vigezo na Matokeo**: Zana zinakubali vigezo maalum na kurudisha matokeo yaliyopangwa, kuhakikisha matokeo thabiti na yanayotarajiwa.
+- **Kazi Zilizojitenga**: Zana hufanya kazi maalum kama utafutaji wa mtandao, mahesabu, na maswali ya hifadhidata.
 
 Mfano wa zana unaweza kuonekana kama ifuatavyo:
 
 ```typescript
 server.tool(
-  "GetProducts"
+  "GetProducts",
   {
     pageSize: z.string().optional(),
     pageCount: z.string().optional()
@@ -127,85 +127,85 @@ server.tool(
 
 ## Vipengele vya Client
 
-Katika Model Context Protocol (MCP), clients hutoa vipengele muhimu kwa seva, vinavyoongeza utendaji na mwingiliano ndani ya itifaki. Mojawapo ya vipengele maarufu ni Sampling.
+Katika Model Context Protocol (MCP), clients hutoa vipengele kadhaa muhimu kwa seva, vinavyoongeza utendaji wa jumla na mwingiliano ndani ya itifaki. Moja ya vipengele vinavyoonekana ni Sampling.
 
 ### 👉 Sampling
 
-- **Tabia za Wakala Zinazoanzishwa na Seva**: Clients huruhusu seva kuanzisha vitendo au tabia fulani kwa uhuru, kuongeza uwezo wa mfumo.
-- **Mwingiliano wa Kurudia na LLM**: Kipengele hiki huruhusu mwingiliano wa kurudia na modeli kubwa za lugha (LLMs), kuwezesha usindikaji mgumu na wa hatua kwa hatua wa kazi.
-- **Kuomba Makamilisho Zaidi ya Modeli**: Seva zinaweza kuomba makamilisho ya ziada kutoka kwa modeli, kuhakikisha majibu ni kamili na yanayolingana na muktadha.
+- **Tabia za Wakala Zilizozinduliwa na Seva**: Clients huruhusu seva kuanzisha hatua maalum au tabia kwa kujitegemea, kuongeza uwezo wa mfumo kwa mabadiliko ya hali.
+- **Mwingiliano Rudufu wa LLM**: Kipengele hiki huruhusu mwingiliano wa rudufu na mifano mikubwa ya lugha (LLMs), kuwezesha usindikaji wa kazi ngumu na wa mara kwa mara.
+- **Kutoa Maombi ya Ukamilisho Zaidi wa Modeli**: Seva zinaweza kuomba ukamilisho zaidi kutoka kwa modeli, kuhakikisha majibu ni kamili na yanayohusiana na muktadha.
 
 ## Mtiririko wa Taarifa katika MCP
 
-Model Context Protocol (MCP) huainisha mtiririko uliopangwa wa taarifa kati ya hosts, clients, servers, na modeli. Kuelewa mtiririko huu kunasaidia kufafanua jinsi maombi ya mtumiaji yanavyosindikwa na jinsi zana za nje na data zinavyojumuishwa katika majibu ya modeli.
+Model Context Protocol (MCP) inaelezea mtiririko uliopangwa wa taarifa kati ya hosts, clients, servers, na modeli. Kuelewa mtiririko huu kunasaidia kufafanua jinsi maombi ya mtumiaji yanavyosindikwa na jinsi zana za nje na data zinavyoingizwa katika majibu ya modeli.
 
 - **Host Huanzisha Muunganisho**  
   Programu ya host (kama IDE au kiolesura cha mazungumzo) huanzisha muunganisho na seva ya MCP, kawaida kupitia STDIO, WebSocket, au usafirishaji mwingine unaoungwa mkono.
 
-- **Mazungumzo ya Uwezo**  
-  Client (iliyomo ndani ya host) na seva hubadilishana taarifa kuhusu vipengele, zana, rasilimali, na toleo la itifaki wanazounga mkono. Hii huhakikisha pande zote zinaelewa uwezo uliopo kwa kikao.
+- **Majadiliano ya Uwezo**  
+  Client (iliyowekwa ndani ya host) na seva hubadilishana taarifa kuhusu vipengele wanavyounga mkono, zana, rasilimali, na matoleo ya itifaki. Hii inahakikisha pande zote zinaelewa uwezo uliopo kwa kikao.
 
 - **Ombi la Mtumiaji**  
-  Mtumiaji huingiliana na host (mfano, kuingiza maelekezo au amri). Host hukusanya ingizo hili na kupeleka kwa client kwa usindikaji.
+  Mtumiaji huingiliana na host (mfano, kuingiza agizo au amri). Host hukusanya maingizo haya na kuyapeleka kwa client kwa usindikaji.
 
 - **Matumizi ya Rasilimali au Zana**  
-  - Client inaweza kuomba muktadha au rasilimali zaidi kutoka kwa seva (kama faili, rekodi za hifadhidata, au makala za misingi ya maarifa) ili kuongeza ufahamu wa modeli.
-  - Ikiwa modeli inaamua zana inahitajika (mfano, kupata data, kufanya mahesabu, au kuita API), client hutuma ombi la kuitisha zana kwa seva, ikibainisha jina la zana na vigezo.
+  - Client inaweza kuomba muktadha zaidi au rasilimali kutoka kwa seva (kama faili, rekodi za hifadhidata, au makala za misingi ya maarifa) ili kuongeza uelewa wa modeli.
+  - Ikiwa modeli inaamua zana ni muhimu (mfano, kupata data, kufanya mahesabu, au kuita API), client hutuma ombi la kuitisha zana kwa seva, ikieleza jina la zana na vigezo.
 
 - **Utekelezaji wa Seva**  
-  Seva hupokea ombi la rasilimali au zana, hutekeleza shughuli zinazohitajika (kama kuendesha kazi, kuuliza hifadhidata, au kupata faili), na kurudisha matokeo kwa client kwa muundo uliopangwa.
+  Seva hupokea ombi la rasilimali au zana, hufanya operesheni zinazohitajika (kama kuendesha kazi, kuuliza hifadhidata, au kupata faili), na kurudisha matokeo kwa client kwa muundo uliopangwa.
 
 - **Uundaji wa Majibu**  
-  Client huunganisha majibu ya seva (data za rasilimali, matokeo ya zana, nk) katika mwingiliano unaoendelea wa modeli. Modeli hutumia taarifa hii kutoa jibu kamili na linalolingana na muktadha.
+  Client huunganisha majibu ya seva (data za rasilimali, matokeo ya zana, nk) katika mwingiliano unaoendelea wa modeli. Modeli hutumia taarifa hii kutoa jibu kamili na linalofaa kimaudhui.
 
 - **Uwasilishaji wa Matokeo**  
-  Host hupokea matokeo ya mwisho kutoka kwa client na kuyaonyesha kwa mtumiaji, mara nyingi ikiwa ni pamoja na maandishi yaliyotengenezwa na modeli pamoja na matokeo yoyote ya utekelezaji wa zana au utafutaji wa rasilimali.
+  Host hupokea matokeo ya mwisho kutoka kwa client na kuyaonyesha kwa mtumiaji, mara nyingi ikiwa ni pamoja na maandishi yaliyotengenezwa na modeli na matokeo yoyote ya utekelezaji wa zana au upataji wa rasilimali.
 
-Mtiririko huu unaruhusu MCP kuunga mkono programu za AI zenye mwingiliano wa hali ya juu, zenye ufahamu wa muktadha kwa kuunganisha modeli na zana za nje na vyanzo vya data kwa urahisi.
+Mtiririko huu unaruhusu MCP kuunga mkono programu za AI zenye mwingiliano wa hali ya juu, zinazojua muktadha kwa kuunganisha modeli na zana za nje na vyanzo vya data kwa urahisi.
 
 ## Maelezo ya Itifaki
 
-MCP (Model Context Protocol) imejengwa juu ya [JSON-RPC 2.0](https://www.jsonrpc.org/), ikitoa muundo wa ujumbe uliopangwa, usioegemea lugha, kwa mawasiliano kati ya hosts, clients, na servers. Msingi huu unaruhusu mwingiliano thabiti, uliopangwa, na unaoweza kupanuliwa kati ya majukwaa na lugha za programu mbalimbali.
+MCP (Model Context Protocol) imejengwa juu ya [JSON-RPC 2.0](https://www.jsonrpc.org/), ikitoa muundo wa ujumbe uliowekwa viwango, usioegemea lugha kwa mawasiliano kati ya hosts, clients, na servers. Msingi huu unaruhusu mwingiliano thabiti, uliopangwa, na unaoweza kupanuliwa kati ya majukwaa na lugha mbalimbali za programu.
 
 ### Vipengele Muhimu vya Itifaki
 
-MCP inaongeza JSON-RPC 2.0 kwa mila za ziada za kuitisha zana, kupata rasilimali, na usimamizi wa maelekezo. Inasaidia tabaka mbalimbali za usafirishaji (STDIO, WebSocket, SSE) na kuwezesha mawasiliano salama, yanayoweza kupanuliwa, na yasiyoegemea lugha kati ya vipengele.
+MCP inaongeza JSON-RPC 2.0 kwa mila za ziada za kuitisha zana, upatikanaji wa rasilimali, na usimamizi wa maagizo. Inasaidia tabaka mbalimbali za usafirishaji (STDIO, WebSocket, SSE) na kuwezesha mawasiliano salama, yanayoweza kupanuliwa, na yasiyoegemea lugha kati ya vipengele.
 
 #### 🧢 Itifaki ya Msingi
 
-- **Muundo wa Ujumbe wa JSON-RPC**: Maombi na majibu yote hutumia vipimo vya JSON-RPC 2.0, kuhakikisha muundo thabiti kwa miito ya mbinu, vigezo, matokeo, na usimamizi wa makosa.
+- **Muundo wa Ujumbe wa JSON-RPC**: Maombi na majibu yote hutumia sifa ya JSON-RPC 2.0, kuhakikisha muundo thabiti kwa wito wa njia, vigezo, matokeo, na usimamizi wa makosa.
 - **Muunganisho wenye Hali**: Vikao vya MCP hudumisha hali kati ya maombi mengi, kuunga mkono mazungumzo yanayoendelea, mkusanyiko wa muktadha, na usimamizi wa rasilimali.
-- **Mazungumzo ya Uwezo**: Wakati wa kuanzisha muunganisho, clients na servers hubadilishana taarifa kuhusu vipengele vinavyounga mkono, matoleo ya itifaki, zana, na rasilimali zinazopatikana. Hii huhakikisha pande zote zinaelewa uwezo wa mwenzake na zinaweza kubadilika ipasavyo.
+- **Majadiliano ya Uwezo**: Wakati wa kuanzisha muunganisho, clients na servers hubadilishana taarifa kuhusu vipengele vinavyoungwa mkono, matoleo ya itifaki, zana na rasilimali zilizopo. Hii inahakikisha pande zote zinaelewa uwezo wa mwenzake na zinaweza kuendana.
 
 #### ➕ Zana Zaidi
 
-Hapa chini ni zana na nyongeza za itifaki ambazo MCP hutoa ili kuboresha uzoefu wa msanidi na kuwezesha hali za juu:
+Hapa chini ni zana za ziada na nyongeza za itifaki MCP hutoa ili kuboresha uzoefu wa msanidi na kuwezesha hali za juu:
 
-- **Chaguzi za Usanidi**: MCP huruhusu usanidi wa mabadiliko ya vigezo vya kikao, kama ruhusa za zana, upatikanaji wa rasilimali, na mipangilio ya modeli, iliyobinafsishwa kwa kila mwingiliano.
-- **Ufuatiliaji wa Maendeleo**: Shughuli za muda mrefu zinaweza kutoa taarifa za maendeleo, kuwezesha kiolesura cha mtumiaji chenye mwitikio na uzoefu bora wakati wa kazi ngumu.
-- **Kufuta Maombi**: Clients wanaweza kufuta maombi yanayoendelea, kuruhusu watumiaji kusitisha shughuli zisizohitajika au zinazochukua muda mrefu.
-- **Ripoti za Makosa**: Ujumbe wa makosa uliopangwa na nambari husaidia kutambua matatizo, kushughulikia kushindwa kwa hila, na kutoa mrejesho unaoweza kutekelezeka kwa watumiaji na wasanidi.
-- **Kulogiwa**: Clients na servers wote wanaweza kutoa logi zilizoandaliwa kwa ajili ya ukaguzi, utatuzi, na ufuatiliaji wa mwingiliano wa itifaki.
+- **Chaguzi za Usanidi**: MCP inaruhusu usanidi wa mabadiliko ya vigezo vya kikao, kama ruhusa za zana, upatikanaji wa rasilimali, na mipangilio ya modeli, iliyobinafsishwa kwa kila mwingiliano.
+- **Ufuatiliaji wa Maendeleo**: Operesheni za muda mrefu zinaweza kutoa taarifa za maendeleo, kuruhusu violesura vya mtumiaji kuwa na majibu na uzoefu bora wakati wa kazi ngumu.
+- **Kughairi Maombi**: Clients wanaweza kughairi maombi yanayoendelea, kuruhusu watumiaji kusitisha operesheni ambazo hazihitajiki tena au zinachukua muda mrefu.
+- **Ripoti za Makosa**: Ujumbe na nambari za makosa zilizoainishwa husaidia kutambua matatizo, kushughulikia kushindwa kwa heshima, na kutoa mrejesho unaoweza kutekelezeka kwa watumiaji na wasanidi.
+- **Kulogiwa**: Clients na servers wanaweza kutoa logi zilizo pangwa kwa ajili ya ukaguzi, utatuzi, na ufuatiliaji wa mwingiliano wa itifaki.
 
-Kwa kutumia vipengele hivi vya itifaki, MCP huhakikisha mawasiliano imara, salama, na yenye kubadilika kati ya modeli za lugha na zana au vyanzo vya data vya nje.
+Kwa kutumia vipengele hivi vya itifaki, MCP inahakikisha mawasiliano thabiti, salama, na yenye ufanisi kati ya modeli za lugha na zana za nje au vyanzo vya data.
 
 ### 🔐 Mambo ya Usalama
 
-Utekelezaji wa MCP unapaswa kufuata kanuni muhimu za usalama ili kuhakikisha mwingiliano salama na wa kuaminika:
+Utekelezaji wa MCP unapaswa kufuata kanuni kuu za usalama kuhakikisha mwingiliano salama na wa kuaminika:
 
-- **Idhini na Udhibiti wa Mtumiaji**: Watumiaji lazima watoe idhini wazi kabla data yoyote kupatikana au shughuli kutekelezwa. Wanapaswa kuwa na udhibiti wa wazi juu ya data inayoshirikiwa na vitendo vinavyoruhusiwa, kwa msaada wa kiolesura rahisi cha mtumiaji cha kukagua na kuidhinisha shughuli.
-- **Faragha ya Data**: Data za watumiaji zinapaswa kuonyeshwa tu kwa idhini wazi na kulindwa kwa udhibiti mzuri wa upatikanaji. Utekelezaji wa MCP lazima ulinde dhidi ya usambazaji usioidhinishwa wa data na kuhakikisha faragha inahifadhiwa katika mwingiliano wote.
-- **Usalama wa Zana**: Kabla ya kuitisha zana yoyote, idhini wazi ya mtumiaji inahitajika. Watumiaji wanapaswa kuelewa wazi kazi za kila zana, na mipaka thabiti ya usalama lazima itekelezwe kuzuia utekelezaji usiofaa au hatari wa zana.
+- **Ridhaa na Udhibiti wa Mtumiaji**: Watumiaji wanapaswa kutoa ridhaa wazi kabla ya kufikia data yoyote au kutekeleza operesheni. Wanapaswa kuwa na udhibiti wazi juu ya data inayoshirikiwa na hatua zinazoruhusiwa, zikiwa na violesura vya mtumiaji vinavyorahisisha ukaguzi na idhini ya shughuli.
+- **Faragha ya Data**: Data za watumiaji zinapaswa kuonyeshwa tu kwa ridhaa wazi na kulindwa kwa udhibiti wa upatikanaji unaofaa. Utekelezaji wa MCP lazima ulinde dhidi ya usafirishaji usioidhinishwa wa data na kuhakikisha faragha inadumishwa katika mwingiliano wote.
+- **Usalama wa Zana**: Kabla ya kuitisha zana yoyote, ridhaa wazi ya mtumiaji inahitajika. Watumiaji wanapaswa kuelewa kwa uwazi kazi za kila zana, na mipaka imara ya usalama inapaswa kutekelezwa kuzuia utekelezaji usiohitajika au hatari wa zana.
 
-Kwa kufuata kanuni hizi, MCP huhakikisha kuwa imani, faragha, na usalama wa mtumiaji vinahifadhiwa katika mwingiliano yote ya itifaki.
+Kwa kufuata kanuni hizi, MCP inahakikisha kuwa imani, faragha, na usalama wa mtumiaji vinadumishwa katika mwingiliano yote ya itifaki.
 
 ## Mifano ya Msimbo: Vipengele Muhimu
 
-Hapa chini ni mifano ya msimbo katika lugha maarufu mbalimbali inayoonyesha jinsi ya kutekeleza vipengele muhimu vya seva ya MCP na zana.
+Hapa chini kuna mifano ya msimbo katika lugha maarufu za programu inayoonyesha jinsi ya kutekeleza vipengele muhimu vya seva za MCP na zana.
 
-### Mfano wa .NET: Kuunda Seva Rahisi ya MCP yenye Zana
+### Mfano wa .NET: Kuunda Seva Rahisi ya MCP na Zana
 
-Huu ni mfano wa vitendo wa .NET unaoonyesha jinsi ya kutekeleza seva rahisi ya MCP yenye zana za kawaida. Mfano huu unaonyesha jinsi ya kufafanua na kusajili zana, kushughulikia maombi, na kuunganisha seva kwa kutumia Model Context Protocol.
+Huu ni mfano wa msimbo wa .NET unaoonyesha jinsi ya kutekeleza seva rahisi ya MCP yenye zana maalum. Mfano huu unaonyesha jinsi ya kufafanua na kusajili zana, kushughulikia maombi, na kuunganisha seva kwa kutumia Model Context Protocol.
 
 ```csharp
 using System;
@@ -266,7 +266,7 @@ public class WeatherData
 
 ### Mfano wa Java: Vipengele vya Seva ya MCP
 
-Mfano huu unaonyesha seva na usajili wa zana kama ilivyo kwenye mfano wa .NET hapo juu, lakini umeandikwa kwa Java.
+Mfano huu unaonyesha seva ile ile ya MCP na usajili wa zana kama ilivyo katika mfano wa .NET hapo juu, lakini umeandikwa kwa Java.
 
 ```java
 import io.modelcontextprotocol.server.McpServer;
@@ -482,13 +482,11 @@ server.connect(transport).catch(console.error);
 console.log("Weather MCP Server started");
 ```
 
-Mfano huu wa JavaScript unaonyesha jinsi ya kuunda client ya MCP inayounganisha na seva, kutuma maelekezo, na kushughulikia majibu pamoja na maombi yoyote ya zana yaliyotolewa.
+Mfano huu wa JavaScript unaonyesha jinsi ya kuunda client ya MCP inayounganisha na seva, kutuma agizo, na kushughulikia majibu ikiwa ni pamoja na wito wowote wa zana uliofanywa.
 
-## Usalama na Idhini
+## Usalama na Uidhinishaji
 
-MCP inajumuisha dhana na mbinu kadhaa za kudhibiti usalama na idhini katika itifaki nzima:
+MCP
 
-1. **Udhibiti wa Ruhusa za Zana
-
-**Kikoso cha lawama**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya utafsiri wa AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kasoro. Hati asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebwi jukumu lolote kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiasi cha majibu**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kasoro. Hati asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu na ya binadamu inapendekezwa. Hatuna dhamana kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
