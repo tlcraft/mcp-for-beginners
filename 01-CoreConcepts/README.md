@@ -73,7 +73,7 @@ Resources in the Model Context Protocol (MCP) encompass various types of context
 - **Local Files and Databases**: Data stored locally on devices or within databases, accessible for processing and analysis.
 - **APIs and Web Services**: External interfaces and services that offer additional data and functionalities, enabling integration with various online resources and tools.
 
-An example of a resource can be a database schema or a file than be accessed like so:
+An example of a resource can be a database schema or a file that can be accessed like so:
 
 ```text
 file://log.txt
@@ -97,7 +97,7 @@ Generate a product slogan based on the following {{product}} with the following 
 
 Tools in the Model Context Protocol (MCP) are functions that the AI model can execute to perform specific tasks. These tools are designed to enhance the capabilities of the AI model by providing structured and reliable operations. Key aspects include:
 
-- **Functions for the AI Model to Execute**: Tools are executable functions that the AI model can invoke to carry out various tasks.
+- **Functions for the AI model to execute**: Tools are executable functions that the AI model can invoke to carry out various tasks.
 - **Unique Name and Description**: Each tool has a distinct name and a detailed description that explains its purpose and functionality.
 - **Parameters and Outputs**: Tools accept specific parameters and return structured outputs, ensuring consistent and predictable results.
 - **Discrete Functions**: Tools perform discrete functions such as web searches, calculations, and database queries.
@@ -106,7 +106,7 @@ An example tool could look like so:
 
 ```typescript
 server.tool(
-  "GetProducts"
+  "GetProducts",
   {
     pageSize: z.string().optional(),
     pageCount: z.string().optional()
@@ -123,7 +123,7 @@ In the Model Context Protocol (MCP), clients offer several key features to serve
 
 - **Server-Initiated Agentic Behaviors**: Clients enable servers to initiate specific actions or behaviors autonomously, enhancing the dynamic capabilities of the system.
 - **Recursive LLM Interactions**: This feature allows for recursive interactions with large language models (LLMs), enabling more complex and iterative processing of tasks.
-- **Requesting Additional Model Completions*: Servers can request additional completions from the model, ensuring that the responses are thorough and contextually relevant.
+- **Requesting Additional Model Completions**: Servers can request additional completions from the model, ensuring that the responses are thorough and contextually relevant.
 
 ## Information Flow in MCP
 
@@ -389,7 +389,7 @@ if __name__ == "__main__":
 
 ### JavaScript Example: Creating an MCP Server
 
-This example shows MCP server creation in JavaScript and shows how to register two tools related to weather.
+This example shows MCP server creation in JavaScript and how to register two weather-related tools.
 
 ```javascript
 // Using the official Model Context Protocol SDK

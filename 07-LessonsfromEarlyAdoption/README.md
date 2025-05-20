@@ -311,6 +311,21 @@ There are two distinct components to NLWeb.
 - [Azure MCP Documentation](https://aka.ms/azmcp)
 - [NLWeb](https://github.com/microsoft/NlWeb)
 
+### Case Study 7: MCP for Foundry – Integrating Azure AI Agents
+
+Azure AI Foundry MCP servers demonstrate how MCP can be used to orchestrate and manage AI agents and workflows in enterprise environments. By integrating MCP with Azure AI Foundry, organizations can standardize agent interactions, leverage Foundry's workflow management, and ensure secure, scalable deployments. This approach enables rapid prototyping, robust monitoring, and seamless integration with Azure AI services, supporting advanced scenarios such as knowledge management and agent evaluation. Developers benefit from a unified interface for building, deploying, and monitoring agent pipelines, while IT teams gain improved security, compliance, and operational efficiency. The solution is ideal for enterprises seeking to accelerate AI adoption and maintain control over complex agent-driven processes.
+
+**References:**
+- [MCP Foundry GitHub Repository](https://github.com/azure-ai-foundry/mcp-foundry)
+- [Integrating Azure AI Agents with MCP (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
+
+### Case Study 8: Foundry MCP Playground – Experimentation and Prototyping
+
+The Foundry MCP Playground offers a ready-to-use environment for experimenting with MCP servers and Azure AI Foundry integrations. Developers can quickly prototype, test, and evaluate AI models and agent workflows using resources from the Azure AI Foundry Catalog and Labs. The playground streamlines setup, provides sample projects, and supports collaborative development, making it easy to explore best practices and new scenarios with minimal overhead. It is especially useful for teams looking to validate ideas, share experiments, and accelerate learning without the need for complex infrastructure. By lowering the barrier to entry, the playground helps foster innovation and community contributions in the MCP and Azure AI Foundry ecosystem.
+
+**References:**
+- [Foundry MCP Playground GitHub Repository](https://github.com/azure-ai-foundry/foundry-mcp-playground)
+
 ## Hands-on Projects
 
 ### Project 1: Build a Multi-Provider MCP Server
@@ -455,6 +470,9 @@ The Model Context Protocol (MCP) is rapidly shaping the future of standardized, 
 
 ## Additional Resources
 
+- [MCP Foundry GitHub Repository](https://github.com/azure-ai-foundry/mcp-foundry)
+- [Foundry MCP Playground](https://github.com/azure-ai-foundry/foundry-mcp-playground)
+- [Integrating Azure AI Agents with MCP (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
 - [MCP GitHub Repository (Microsoft)](https://github.com/microsoft/mcp)
 - [MCP Resources Directory (Sample Prompts, Tools, and Resource Definitions)](https://github.com/microsoft/mcp/tree/main/Resources)
 - [MCP Community & Documentation](https://modelcontextprotocol.io/introduction)

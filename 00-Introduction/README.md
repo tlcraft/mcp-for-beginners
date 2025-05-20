@@ -1,6 +1,6 @@
 # Introduction to Model Context Protocol (MCP): Why It Matters for Scalable AI Applications
 
-Generative AI applications are a great step forward as they often let the user interact with the app using natural language prompts. However, as more time and resources are invested in such apps, you want to make sure you can easily integrate functionalities and resources in such a way that it's easy to extend, that your app can cater to more than one model being used, and its intricacies. In short, building Gen AI apps is easy to begin with but as it grows and becomes more complex, you need to start defining an architecture and most likely will need to lean on a standard to make sure your apps are built in a consistent way. This is where MCP comes into to organize things, to provide a standard.
+Generative AI applications are a great step forward as they often let the user interact with the app using natural language prompts. However, as more time and resources are invested in such apps, you want to make sure you can easily integrate functionalities and resources in such a way that it's easy to extend, that your app can cater to more than one model being used, and its intricacies. In short, building Gen AI apps is easy to begin with but as it grows and becomes more complex, you need to start defining an architecture and most likely will need to lean on a standard to make sure your apps are built in a consistent way. This is where MCP comes in to organize things, to provide a standard.
 
 ---
 
@@ -160,7 +160,7 @@ The Model Context Protocol (MCP) acts as a universal standard for AI interaction
 
 Under MCP, an MCP-compatible tool (referred to as an MCP server) follows a unified standard. These servers can list the tools or actions they offer and execute those actions when requested by an AI agent. AI agent platforms that support MCP are capable of discovering available tools from the servers and invoking them through this standard protocol.
 
-### 💡 Facilities access to knowledge
+### 💡 Facilitates access to knowledge
 
 Beyond offering tools, MCP also facilitates access to knowledge. It enables applications to provide context to large language models (LLMs) by linking them to various data sources. For instance, an MCP server might represent a company’s document repository, allowing agents to retrieve relevant information on demand. Another server could handle specific actions like sending emails or updating records. From the agent’s perspective, these are simply tools it can use—some tools return data (knowledge context), while others perform actions. MCP efficiently manages both.
 
@@ -194,11 +194,11 @@ graph TD
 ```
 ## 🔐 Practical Benefits of MCP
 
-Here's some practical benefits to using MCP:
+Here's the practical benefits to using MCP:
 
 - **Freshness**: Models can access up-to-date information beyond their training data
 - **Capability Extension**: Models can leverage specialized tools for tasks they weren't trained for
-- **Reduced Hallucinations**: External data sources provide factual grounding
+- **Reduced hallucinations**: External data sources provide factual grounding
 - **Privacy**: Sensitive data can stay within secure environments instead of being embedded in prompts
 
 ## 📌 Key Takeaways
