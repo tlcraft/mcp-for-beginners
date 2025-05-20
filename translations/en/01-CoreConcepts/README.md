@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "788eb17750e970a0bc3b5e7f2e99975b",
-  "translation_date": "2025-05-18T14:50:18+00:00",
+  "original_hash": "154c00dc3b2c792102e4845c19fbd166",
+  "translation_date": "2025-05-20T15:31:42+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "en"
 }
@@ -96,7 +96,7 @@ Prompts in the Model Context Protocol (MCP) include various pre-defined template
 - **Pre-defined Interaction Patterns**: Standardized sequences of actions and responses that facilitate consistent and efficient communication.
 - **Specialized Conversation Templates**: Customizable templates tailored for specific types of conversations, ensuring relevant and contextually appropriate interactions.
 
-A prompt template can look like this:
+A prompt template can look like so:
 
 ```markdown
 Generate a product slogan based on the following {{product}} with the following {{keywords}}
@@ -106,16 +106,16 @@ Generate a product slogan based on the following {{product}} with the following 
 
 Tools in the Model Context Protocol (MCP) are functions that the AI model can execute to perform specific tasks. These tools are designed to enhance the capabilities of the AI model by providing structured and reliable operations. Key aspects include:
 
-- **Functions for the AI Model to Execute**: Tools are executable functions that the AI model can invoke to carry out various tasks.
+- **Functions for the AI model to execute**: Tools are executable functions that the AI model can invoke to carry out various tasks.
 - **Unique Name and Description**: Each tool has a distinct name and a detailed description that explains its purpose and functionality.
 - **Parameters and Outputs**: Tools accept specific parameters and return structured outputs, ensuring consistent and predictable results.
 - **Discrete Functions**: Tools perform discrete functions such as web searches, calculations, and database queries.
 
-An example tool could look like this:
+An example tool could look like so:
 
 ```typescript
 server.tool(
-  "GetProducts"
+  "GetProducts",
   {
     pageSize: z.string().optional(),
     pageCount: z.string().optional()
@@ -399,7 +399,7 @@ if __name__ == "__main__":
 
 ### JavaScript Example: Creating an MCP Server
 
-This example shows MCP server creation in JavaScript and shows how to register two tools related to weather.
+This example shows MCP server creation in JavaScript and how to register two weather-related tools.
 
 ```javascript
 // Using the official Model Context Protocol SDK
@@ -490,16 +490,16 @@ This JavaScript example demonstrates how to create an MCP client that connects t
 
 MCP includes several built-in concepts and mechanisms for managing security and authorization throughout the protocol:
 
-1. **Tool Permission Control**:  
+1. **Tool Permission Control**  
   Clients can specify which tools a model is allowed to use during a session. This ensures that only explicitly authorized tools are accessible, reducing the risk of unintended or unsafe operations. Permissions can be configured dynamically based on user preferences, organizational policies, or the context of the interaction.
 
-2. **Authentication**:  
+2. **Authentication**  
   Servers can require authentication before granting access to tools, resources, or sensitive operations. This may involve API keys, OAuth tokens, or other authentication schemes. Proper authentication ensures that only trusted clients and users can invoke server-side capabilities.
 
-3. **Validation**:  
+3. **Validation**  
   Parameter validation is enforced for all tool invocations. Each tool defines the expected types, formats, and constraints for its parameters, and the server validates incoming requests accordingly. This prevents malformed or malicious input from reaching tool implementations and helps maintain the integrity of operations.
 
-4. **Rate Limiting**:  
+4. **Rate Limiting**  
   To prevent abuse and ensure fair usage of server resources, MCP servers can implement rate limiting for tool calls and resource access. Rate limits can be applied per user, per session, or globally, and help protect against denial-of-service attacks or excessive resource consumption.
 
 By combining these mechanisms, MCP provides a secure foundation for integrating language models with external tools and data sources, while giving users and developers fine-grained control over access and usage.

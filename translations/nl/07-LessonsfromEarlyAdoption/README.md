@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "344a126b620ff7997158542fd31be6a4",
-  "translation_date": "2025-05-19T22:10:32+00:00",
+  "original_hash": "1ccfe1a6ea77e42862b92ae53cb6cddf",
+  "translation_date": "2025-05-20T17:31:22+00:00",
   "source_file": "07-LessonsfromEarlyAdoption/README.md",
   "language_code": "nl"
 }
@@ -11,25 +11,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Overzicht
 
-Deze les onderzoekt hoe vroege gebruikers het Model Context Protocol (MCP) hebben ingezet om echte problemen op te lossen en innovatie in verschillende sectoren te stimuleren. Aan de hand van gedetailleerde casestudies en praktische projecten zie je hoe MCP gestandaardiseerde, veilige en schaalbare AI-integratie mogelijk maakt—door grote taalmodellen, tools en bedrijfsdata te verbinden binnen één uniform framework. Je doet praktische ervaring op met het ontwerpen en bouwen van MCP-gebaseerde oplossingen, leert van bewezen implementatiepatronen en ontdekt best practices voor het uitrollen van MCP in productieomgevingen. De les belicht ook opkomende trends, toekomstige richtingen en open-source bronnen om je te helpen voorop te blijven lopen in MCP-technologie en het zich ontwikkelende ecosysteem.
+Deze les onderzoekt hoe vroege gebruikers het Model Context Protocol (MCP) hebben ingezet om echte problemen op te lossen en innovatie in verschillende sectoren te stimuleren. Door middel van gedetailleerde casestudies en praktische projecten zie je hoe MCP gestandaardiseerde, veilige en schaalbare AI-integratie mogelijk maakt—door grote taalmodellen, tools en bedrijfsdata te verbinden binnen één uniform kader. Je krijgt praktische ervaring met het ontwerpen en bouwen van MCP-gebaseerde oplossingen, leert van bewezen implementatiepatronen en ontdekt best practices voor het uitrollen van MCP in productieomgevingen. De les belicht ook opkomende trends, toekomstige richtingen en open-source bronnen die je helpen voorop te blijven lopen in de ontwikkeling van MCP-technologie en het groeiende ecosysteem.
 
 ## Leerdoelen
 
-- Analyseer echte MCP-implementaties in verschillende sectoren  
-- Ontwerp en bouw complete MCP-gebaseerde applicaties  
+- Analyseer MCP-implementaties uit de praktijk in verschillende sectoren  
+- Ontwerp en bouw volledige MCP-gebaseerde applicaties  
 - Verken opkomende trends en toekomstige ontwikkelingen in MCP-technologie  
-- Pas best practices toe in echte ontwikkelsituaties  
+- Pas best practices toe in echte ontwikkelscenario’s  
 
-## Echte MCP-implementaties
+## MCP-implementaties uit de praktijk
 
-### Casestudy 1: Automatisering van klantondersteuning in bedrijven
+### Casestudy 1: Automatisering van klantenservice in ondernemingen
 
-Een multinational implementeerde een MCP-gebaseerde oplossing om AI-interacties te standaardiseren binnen hun klantondersteuningssystemen. Dit stelde hen in staat om:
+Een multinational implementeerde een MCP-gebaseerde oplossing om AI-interacties binnen hun klantenservicesystemen te standaardiseren. Hierdoor konden ze:
 
-- Een uniforme interface te creëren voor meerdere LLM-providers  
-- Consistent promptbeheer over afdelingen heen te behouden  
-- Robuuste beveiligings- en compliance-controles te implementeren  
-- Gemakkelijk te schakelen tussen verschillende AI-modellen op basis van specifieke behoeften  
+- Eén uniforme interface creëren voor meerdere LLM-aanbieders  
+- Consistent promptbeheer behouden over verschillende afdelingen  
+- Robuuste beveiligings- en compliancecontroles implementeren  
+- Gemakkelijk wisselen tussen verschillende AI-modellen op basis van specifieke behoeften  
 
 **Technische implementatie:**  
 ```python
@@ -92,15 +92,15 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-**Resultaten:** 30% reductie in modelkosten, 45% verbetering in responsconsistentie en verbeterde compliance in wereldwijde operaties.
+**Resultaten:** 30% kostenreductie voor modellen, 45% verbetering in responsconsistentie en verbeterde naleving van regels binnen wereldwijde operaties.
 
 ### Casestudy 2: Diagnostische assistent in de gezondheidszorg
 
 Een zorgverlener ontwikkelde een MCP-infrastructuur om meerdere gespecialiseerde medische AI-modellen te integreren, terwijl gevoelige patiëntgegevens beschermd bleven:
 
 - Naadloos schakelen tussen algemene en specialistische medische modellen  
-- Strikte privacycontroles en audit trails  
-- Integratie met bestaande Elektronische Patiënten Dossiers (EHR)  
+- Strikte privacycontroles en auditlogs  
+- Integratie met bestaande Elektronische Patiënten Dossiers (EPD)  
 - Consistente prompt engineering voor medische terminologie  
 
 **Technische implementatie:**  
@@ -168,15 +168,15 @@ public class DiagnosticAssistant
 }
 ```
 
-**Resultaten:** Verbeterde diagnostische suggesties voor artsen, volledige HIPAA-compliance en aanzienlijke vermindering van context-switching tussen systemen.
+**Resultaten:** Verbeterde diagnostische suggesties voor artsen, volledige HIPAA-compliance en aanzienlijke vermindering van contextwisselingen tussen systemen.
 
 ### Casestudy 3: Risicoanalyse in financiële dienstverlening
 
 Een financiële instelling gebruikte MCP om hun risicoanalyseprocessen over verschillende afdelingen te standaardiseren:
 
-- Een uniforme interface voor kredietrisico-, fraude-detectie- en investeringsrisicomodellen  
+- Eén uniforme interface voor kredietrisico, fraude-detectie en investeringsrisicomodellen  
 - Strikte toegangscontrole en versiebeheer van modellen  
-- Waarborging van auditbaarheid van alle AI-aanbevelingen  
+- Zorgde voor auditbaarheid van alle AI-aanbevelingen  
 - Consistente dataformattering over diverse systemen  
 
 **Technische implementatie:**  
@@ -210,16 +210,16 @@ public class FinancialRiskMCPServer {
 }
 ```
 
-**Resultaten:** Verbeterde naleving van regelgeving, 40% snellere modeluitrolcycli en meer consistente risico-inschattingen over afdelingen heen.
+**Resultaten:** Verbeterde naleving van regelgeving, 40% snellere implementatiecycli van modellen en betere consistentie in risicobeoordelingen tussen afdelingen.
 
-### Casestudy 4: Microsoft Playwright MCP Server voor browserautomatisering
+### Casestudy 4: Microsoft Playwright MCP-server voor browserautomatisering
 
-Microsoft ontwikkelde de [Playwright MCP server](https://github.com/microsoft/playwright-mcp) om veilige, gestandaardiseerde browserautomatisering mogelijk te maken via het Model Context Protocol. Deze oplossing laat AI-agenten en LLMs toe om op een gecontroleerde, auditeerbare en uitbreidbare manier met webbrowsers te communiceren—voor toepassingen zoals geautomatiseerde webtests, data-extractie en end-to-end workflows.
+Microsoft ontwikkelde de [Playwright MCP-server](https://github.com/microsoft/playwright-mcp) om veilige, gestandaardiseerde browserautomatisering mogelijk te maken via het Model Context Protocol. Deze oplossing stelt AI-agenten en LLM’s in staat om op een gecontroleerde, controleerbare en uitbreidbare manier met webbrowsers te communiceren—voor toepassingen zoals geautomatiseerd webtesten, data-extractie en end-to-end workflows.
 
-- Browserautomatiseringsmogelijkheden (navigatie, formulier invullen, screenshots maken, etc.) worden als MCP-tools aangeboden  
-- Strikte toegangscontrole en sandboxing voorkomen ongeautoriseerde acties  
-- Gedetailleerde auditlogs voor alle browserinteracties  
-- Ondersteuning voor integratie met Azure OpenAI en andere LLM-providers voor agentgestuurde automatisering  
+- Biedt browserautomatiseringsmogelijkheden (navigatie, formulierinvoer, screenshot maken, etc.) aan als MCP-tools  
+- Implementeert strikte toegangscontrole en sandboxing om onbevoegde acties te voorkomen  
+- Levert gedetailleerde auditlogs van alle browserinteracties  
+- Ondersteunt integratie met Azure OpenAI en andere LLM-aanbieders voor agentgestuurde automatisering  
 
 **Technische implementatie:**  
 ```typescript
@@ -257,23 +257,23 @@ server.listen(8080);
 ```
 
 **Resultaten:**  
-- Veilige, programmeerbare browserautomatisering voor AI-agenten en LLMs mogelijk gemaakt  
+- Mogelijkheid tot veilige, programmatische browserautomatisering voor AI-agenten en LLM’s  
 - Verminderde handmatige testinspanning en verbeterde testdekking voor webapplicaties  
-- Herbruikbaar, uitbreidbaar framework voor browsergebaseerde toolintegratie in bedrijfsomgevingen  
+- Een herbruikbaar, uitbreidbaar framework voor browsergebaseerde toolintegratie in bedrijfsomgevingen  
 
 **Referenties:**  
 - [Playwright MCP Server GitHub Repository](https://github.com/microsoft/playwright-mcp)  
 - [Microsoft AI and Automation Solutions](https://azure.microsoft.com/en-us/products/ai-services/)
 
-### Casestudy 5: Azure MCP – Enterprise-grade Model Context Protocol als dienst
+### Casestudy 5: Azure MCP – Enterprise-grade Model Context Protocol als service
 
-Azure MCP ([https://aka.ms/azmcp](https://aka.ms/azmcp)) is Microsoft’s beheerde, enterprise-grade implementatie van het Model Context Protocol, ontworpen om schaalbare, veilige en compliant MCP-serverfunctionaliteit als clouddienst te leveren. Azure MCP stelt organisaties in staat om snel MCP-servers te implementeren, beheren en integreren met Azure AI, data en beveiligingsdiensten, waardoor operationele lasten verminderen en AI-adoptie versnelt.
+Azure MCP ([https://aka.ms/azmcp](https://aka.ms/azmcp)) is Microsofts beheerde, enterprise-grade implementatie van het Model Context Protocol, ontworpen om schaalbare, veilige en conforme MCP-serverfunctionaliteit als cloudservice te bieden. Azure MCP stelt organisaties in staat om snel MCP-servers te implementeren, beheren en integreren met Azure AI, data en beveiligingsdiensten, waardoor operationele lasten afnemen en AI-adoptie versnelt.
 
-- Volledig beheerde MCP-serverhosting met ingebouwde schaalbaarheid, monitoring en beveiliging  
-- Native integratie met Azure OpenAI, Azure AI Search en andere Azure-diensten  
-- Enterprise authenticatie en autorisatie via Microsoft Entra ID  
+- Volledig beheerde hosting van MCP-servers met ingebouwde schaalbaarheid, monitoring en beveiliging  
+- Natuurlijke integratie met Azure OpenAI, Azure AI Search en andere Azure-diensten  
+- Enterprise-authenticatie en autorisatie via Microsoft Entra ID  
 - Ondersteuning voor aangepaste tools, prompttemplates en resource connectors  
-- Voldoet aan enterprise beveiligings- en regelgevingseisen  
+- Voldoet aan enterprise beveiligings- en regelgevingsvereisten  
 
 **Technische implementatie:**  
 ```yaml
@@ -302,49 +302,65 @@ spec:
 ```
 
 **Resultaten:**  
-- Kortere time-to-value voor enterprise AI-projecten door een kant-en-klare, compliant MCP-serverplatform te bieden  
-- Eenvoudigere integratie van LLMs, tools en bedrijfsdatabronnen  
-- Verbeterde beveiliging, observability en operationele efficiëntie voor MCP workloads  
+- Verkorte time-to-value voor enterprise AI-projecten door een kant-en-klaar, compliant MCP-serverplatform te bieden  
+- Vereenvoudigde integratie van LLM’s, tools en bedrijfsdatabronnen  
+- Verbeterde beveiliging, observeerbaarheid en operationele efficiëntie voor MCP workloads  
 
 **Referenties:**  
 - [Azure MCP Documentation](https://aka.ms/azmcp)  
 - [Azure AI Services](https://azure.microsoft.com/en-us/products/ai-services/)
 
-## Casestudy 6: NLWeb  
-MCP (Model Context Protocol) is een opkomend protocol voor chatbots en AI-assistenten om met tools te communiceren. Elke NLWeb-instantie is ook een MCP-server die één kernmethode ondersteunt, ask, waarmee je een website een vraag in natuurlijke taal kunt stellen. Het antwoord maakt gebruik van schema.org, een veelgebruikte vocabulaire om webdata te beschrijven. Vrij vertaald is MCP voor NLWeb wat HTTP is voor HTML. NLWeb combineert protocollen, schema.org-formaten en voorbeeldcode om sites snel deze endpoints te laten maken, wat zowel mensen via conversatie-interfaces als machines via natuurlijke agent-tot-agent interactie ten goede komt.
+## Casestudy 6: NLWeb
 
-NLWeb bestaat uit twee onderdelen:  
-- Een protocol, heel eenvoudig om mee te beginnen, om in natuurlijke taal met een site te communiceren en een formaat dat json en schema.org gebruikt voor het antwoord. Zie de documentatie over de REST API voor meer details.  
-- Een eenvoudige implementatie van (1) die bestaande markup benut, voor sites die geabstraheerd kunnen worden als lijsten met items (producten, recepten, attracties, reviews, etc.). Samen met een set gebruikersinterface-widgets kunnen sites makkelijk conversatie-interfaces bieden voor hun content. Zie de documentatie over Life of a chat query voor meer uitleg.  
+MCP (Model Context Protocol) is een opkomend protocol voor chatbots en AI-assistenten om met tools te communiceren. Elke NLWeb-instantie is ook een MCP-server die één kernmethode ondersteunt, ask, waarmee een website een vraag in natuurlijke taal kan worden gesteld. Het teruggegeven antwoord maakt gebruik van schema.org, een veelgebruikte vocabulaire voor het beschrijven van webdata. Vrij vertaald is MCP voor NLWeb wat HTTP is voor HTML. NLWeb combineert protocollen, Schema.org-formaten en voorbeeldcode om sites te helpen snel deze eindpunten te creëren, wat zowel mensen via conversatie-interfaces als machines via natuurlijke agent-tot-agent interactie ten goede komt.
+
+NLWeb bestaat uit twee duidelijke componenten:  
+- Een protocol, eenvoudig te beginnen, om via natuurlijke taal met een site te communiceren en een formaat dat json en schema.org gebruikt voor het antwoord. Zie de documentatie over de REST API voor meer details.  
+- Een eenvoudige implementatie van (1) die bestaande markup benut, voor sites die kunnen worden geabstraheerd als lijsten met items (producten, recepten, attracties, recensies, etc.). Samen met een set gebruikersinterface-widgets kunnen sites gemakkelijk conversatie-interfaces voor hun content aanbieden. Zie de documentatie over Life of a chat query voor meer uitleg over de werking.  
 
 **Referenties:**  
 - [Azure MCP Documentation](https://aka.ms/azmcp)  
 - [NLWeb](https://github.com/microsoft/NlWeb)
 
-## Praktische projecten
+### Casestudy 7: MCP voor Foundry – Integratie van Azure AI-agenten
 
-### Project 1: Bouw een Multi-Provider MCP Server
+Azure AI Foundry MCP-servers tonen aan hoe MCP gebruikt kan worden om AI-agenten en workflows in bedrijfsomgevingen te orkestreren en beheren. Door MCP te integreren met Azure AI Foundry kunnen organisaties agentinteracties standaardiseren, gebruikmaken van Foundry’s workflowbeheer en zorgen voor veilige, schaalbare implementaties. Deze aanpak maakt snelle prototyping, robuuste monitoring en naadloze integratie met Azure AI-diensten mogelijk, en ondersteunt geavanceerde scenario’s zoals kennisbeheer en agentevaluatie. Ontwikkelaars profiteren van een uniforme interface voor het bouwen, implementeren en monitoren van agentpijplijnen, terwijl IT-teams verbeterde beveiliging, compliance en operationele efficiëntie krijgen. De oplossing is ideaal voor bedrijven die AI-adoptie willen versnellen en controle willen houden over complexe agentgestuurde processen.
 
-**Doel:** Maak een MCP-server die verzoeken kan routeren naar meerdere AI-modelproviders op basis van specifieke criteria.
+**Referenties:**  
+- [MCP Foundry GitHub Repository](https://github.com/azure-ai-foundry/mcp-foundry)  
+- [Integrating Azure AI Agents with MCP (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
+
+### Casestudy 8: Foundry MCP Playground – Experimenteren en prototypen
+
+De Foundry MCP Playground biedt een kant-en-klare omgeving om te experimenteren met MCP-servers en Azure AI Foundry-integraties. Ontwikkelaars kunnen snel AI-modellen en agentworkflows prototypen, testen en evalueren met resources uit de Azure AI Foundry Catalog en Labs. De playground vereenvoudigt de setup, biedt voorbeeldprojecten en ondersteunt samenwerking, waardoor het makkelijk is best practices en nieuwe scenario’s te verkennen met minimale overhead. Het is vooral nuttig voor teams die ideeën willen valideren, experimenten willen delen en het leerproces willen versnellen zonder complexe infrastructuur. Door de instapdrempel te verlagen, stimuleert de playground innovatie en community-bijdragen binnen het MCP- en Azure AI Foundry-ecosysteem.
+
+**Referenties:**  
+- [Foundry MCP Playground GitHub Repository](https://github.com/azure-ai-foundry/foundry-mcp-playground)
+
+## Hands-on projecten
+
+### Project 1: Bouw een MCP-server met meerdere providers
+
+**Doel:** Maak een MCP-server die verzoeken kan routeren naar verschillende AI-modelproviders op basis van specifieke criteria.
 
 **Vereisten:**  
-- Ondersteuning voor minstens drie verschillende modelproviders (bijv. OpenAI, Anthropic, lokale modellen)  
+- Ondersteuning voor minimaal drie verschillende modelproviders (bijv. OpenAI, Anthropic, lokale modellen)  
 - Implementeer een routeringsmechanisme gebaseerd op metadata van verzoeken  
 - Maak een configuratiesysteem voor het beheren van provider-credentials  
 - Voeg caching toe om prestaties en kosten te optimaliseren  
-- Bouw een eenvoudig dashboard voor monitoring van gebruik  
+- Bouw een eenvoudig dashboard voor het monitoren van gebruik  
 
-**Implementatiestappen:**  
-1. Zet de basis MCP-serverinfrastructuur op  
+**Stappen voor implementatie:**  
+1. Zet de basisinfrastructuur van de MCP-server op  
 2. Implementeer provider-adapters voor elke AI-modelservice  
 3. Maak de routeringslogica op basis van verzoekattributen  
-4. Voeg cachingmechanismen toe voor veelvoorkomende verzoeken  
-5. Ontwikkel het monitoringdashboard  
+4. Voeg cachingmechanismen toe voor frequente verzoeken  
+5. Ontwikkel het monitoringsdashboard  
 6. Test met verschillende verzoekpatronen  
 
-**Technologieën:** Kies uit Python (.NET/Java/Python naar voorkeur), Redis voor caching, en een eenvoudig webframework voor het dashboard.
+**Technologieën:** Kies uit Python (.NET/Java/Python naar voorkeur), Redis voor caching en een eenvoudig webframework voor het dashboard.
 
-### Project 2: Enterprise Prompt Management Systeem
+### Project 2: Enterprise Prompt Management System
 
 **Doel:** Ontwikkel een MCP-gebaseerd systeem voor het beheren, versioneren en uitrollen van prompttemplates binnen een organisatie.
 
@@ -355,98 +371,98 @@ NLWeb bestaat uit twee onderdelen:
 - Ontwikkel rolgebaseerde toegangscontrole  
 - Maak een API voor het ophalen en uitrollen van templates  
 
-**Implementatiestappen:**  
+**Stappen voor implementatie:**  
 1. Ontwerp het databaseschema voor templateopslag  
-2. Maak de kern-API voor CRUD-operaties op templates  
+2. Maak de core API voor CRUD-operaties op templates  
 3. Implementeer het versiebeheersysteem  
 4. Bouw de goedkeuringsworkflow  
 5. Ontwikkel het testframework  
 6. Maak een eenvoudige webinterface voor beheer  
 7. Integreer met een MCP-server  
 
-**Technologieën:** Vrije keuze van backend-framework, SQL of NoSQL database, en frontend-framework voor de beheerinterface.
+**Technologieën:** Keuze van backendframework, SQL of NoSQL database, en een frontendframework voor de beheersinterface.
 
-### Project 3: MCP-gebaseerd Contentgeneratieplatform
+### Project 3: MCP-gebaseerd contentgeneratieplatform
 
-**Doel:** Bouw een contentgeneratieplatform dat MCP benut om consistente resultaten te leveren voor verschillende contenttypes.
+**Doel:** Bouw een platform voor contentgeneratie dat MCP gebruikt om consistente resultaten te leveren voor verschillende contenttypes.
 
 **Vereisten:**  
-- Ondersteun meerdere contentformaten (blogposts, social media, marketingteksten)  
+- Ondersteuning voor meerdere contentformaten (blogposts, social media, marketingteksten)  
 - Implementeer template-gebaseerde generatie met aanpassingsmogelijkheden  
-- Creëer een contentreview- en feedbacksysteem  
-- Volg contentprestatiemetrics  
-- Ondersteun contentversiebeheer en iteraties  
+- Creëer een systeem voor contentreview en feedback  
+- Volg prestatiegegevens van content  
+- Ondersteun contentversiebeheer en iteratie  
 
-**Implementatiestappen:**  
+**Stappen voor implementatie:**  
 1. Zet de MCP-clientinfrastructuur op  
 2. Maak templates voor verschillende contenttypes  
-3. Bouw de contentgeneratie-pijplijn  
+3. Bouw de contentgeneratiepijplijn  
 4. Implementeer het reviewsysteem  
 5. Ontwikkel het metrics tracking systeem  
 6. Maak een gebruikersinterface voor templatebeheer en contentgeneratie  
 
-**Technologieën:** Voorkeursprogrammeertaal, webframework en databasesysteem.
+**Technologieën:** Je favoriete programmeertaal, webframework en databasesysteem.
 
-## Toekomstige ontwikkelingen voor MCP-technologie
+## Toekomstige richtingen voor MCP-technologie
 
 ### Opkomende trends
 
-1. **Multi-Modal MCP**  
+1. **Multi-modale MCP**  
    - Uitbreiding van MCP om interacties met beeld-, audio- en videomodellen te standaardiseren  
    - Ontwikkeling van cross-modale redeneercapaciteiten  
    - Gestandaardiseerde promptformaten voor verschillende modaliteiten  
 
 2. **Federated MCP-infrastructuur**  
    - Gedistribueerde MCP-netwerken die middelen kunnen delen tussen organisaties  
-   - Gestandaardiseerde protocollen voor veilige modeldeling  
-   - Privacybeschermende rekentechnieken  
+   - Gestandaardiseerde protocollen voor veilige modeluitwisseling  
+   - Privacybewarende rekenmethoden  
 
 3. **MCP-marktplaatsen**  
-   - Ecosystemen voor het delen en gelde verdienen met MCP-templates en plugins  
+   - Ecosystemen voor het delen en monetariseren van MCP-templates en plugins  
    - Kwaliteitsborging en certificeringsprocessen  
    - Integratie met modelmarktplaatsen  
 
 4. **MCP voor edge computing**  
-   - Aanpassing van MCP-standaarden voor apparaten met beperkte resources aan de rand  
+   - Aanpassing van MCP-standaarden voor apparaten met beperkte resources aan de edge  
    - Geoptimaliseerde protocollen voor omgevingen met lage bandbreedte  
    - Gespecialiseerde MCP-implementaties voor IoT-ecosystemen  
 
 5. **Regelgevingskaders**  
-   - Ontwikkeling van MCP-extensies voor naleving van regelgeving  
-   - Gestandaardiseerde audit trails en uitlegbaarheidsinterfaces  
-   - Integratie met opkomende AI-governance frameworks  
+   - Ontwikkeling van MCP-uitbreidingen voor naleving van regelgeving  
+   - Gestandaardiseerde auditlogs en verklaringsinterfaces  
+   - Integratie met opkomende AI-governancekaders  
 
 ### MCP-oplossingen van Microsoft
 
-Microsoft en Azure hebben verschillende open-source repositories ontwikkeld om ontwikkelaars te ondersteunen bij het implementeren van MCP in diverse scenario’s:
+Microsoft en Azure hebben verschillende open-source repositories ontwikkeld om ontwikkelaars te helpen MCP in diverse scenario’s te implementeren:
 
 #### Microsoft-organisatie  
-1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - Een Playwright MCP-server voor browserautomatisering en testen  
-2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - Een OneDrive MCP-serverimplementatie voor lokale tests en communitybijdragen  
-3. [NLWeb](https://github.com/microsoft/NlWeb) - NLWeb is een verzameling open protocollen en bijbehorende open source tools, gericht op het opzetten van een fundamentele laag voor het AI-web  
+1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) – Een Playwright MCP-server voor browserautomatisering en testen  
+2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) – Een OneDrive MCP-serverimplementatie voor lokaal testen en communitybijdragen  
+3. [NLWeb](https://github.com/microsoft/NlWeb) – NLWeb is een verzameling open protocollen en bijbehorende open-source tools, gericht op het leggen van een fundamentele laag voor het AI-web  
 
 #### Azure-Samples organisatie  
-1. [mcp](https://github.com/Azure-Samples/mcp) - Links naar voorbeelden, tools en bronnen voor het bouwen en integreren van MCP-servers op Azure met meerdere talen  
-2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Referentie MCP-servers die authenticatie demonstreren volgens de huidige Model Context Protocol-specificatie  
-3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - Landingspagina voor Remote MCP Server-implementaties in Azure Functions met links naar taalspecifieke repositories  
-4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Quickstart-template voor het bouwen en uitrollen van aangepaste remote MCP-servers met Azure Functions in Python  
-5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Quickstart-template voor het bouwen en uitrollen van aangepaste remote MCP-servers met Azure Functions in .NET/C#  
-6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Quickstart-template voor het bouwen en uitrollen van aangepaste remote MCP-servers met Azure Functions in TypeScript  
-7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) - Azure API Management als AI Gateway naar Remote MCP-servers met Python  
-8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) - APIM ❤️ AI-experimenten inclusief MCP-functionaliteiten, integratie met Azure OpenAI en AI Foundry  
+1. [mcp](https://github.com/Azure-Samples/mcp) – Links naar voorbeelden, tools en resources voor het bouwen en integreren van MCP-servers op Azure in verschillende talen  
+2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) – Referentie MCP-servers die authenticatie demonstreren volgens de huidige Model Context Protocol-specificatie  
+3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) – Startpagina voor Remote MCP-serverimplementaties in Azure Functions met links naar taalspecifieke repositories  
+4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) – Quickstart-template voor het bouwen en uitrollen van aangepaste remote MCP-servers met Azure Functions in Python  
+5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) – Quickstart-template voor het bouwen en uitrollen van aangepaste remote MCP-servers met Azure Functions in .NET/C#  
+6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) – Quickstart-template voor het bouwen en uitrollen van aangepaste remote MCP-servers met Azure Functions in TypeScript  
+7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) – Azure API Management als AI Gateway naar Remote MCP-servers met Python  
+8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) – APIM ❤️ AI-experimenten inclusief MCP-functionaliteiten, integratie met Azure OpenAI en AI Foundry  
 
-Deze repositories bieden diverse implementaties, templates en bronnen voor het werken met het Model Context Protocol in verschillende programmeertalen en Azure-diensten. Ze bestrijken uiteenlopende use cases, van basisserverimplementaties tot authenticatie, clouduitrol en enterprise-integraties.
+Deze repositories bieden diverse implementaties, templates en resources voor het werken met het Model Context Protocol in verschillende programmeertalen en Azure-diensten. Ze bestrijken uiteenlopende use cases van basisserverimplementaties tot authenticatie, clouddeployment en enterprise-integraties.
 
 #### MCP Resources Directory
 
-De [MCP Resources directory](https://github.com/microsoft/mcp/tree/main/Resources) in de officiële Microsoft MCP-repository bevat een zorgvuldig samengestelde verzameling voorbeeldbronnen, prompttemplates en tooldefinities voor gebruik met Model Context Protocol-servers. Deze directory helpt ontwikkelaars snel aan de slag te gaan met MCP door herbruikbare bouwstenen en best-practice voorbeelden te bieden voor:
+De [MCP Resources directory](https://github.com/microsoft/mcp/tree/main/Resources) in de officiële Microsoft MCP-repository bevat een samengestelde verzameling voorbeeldresources, prompttemplates en tooldefinities voor gebruik met Model Context Protocol-servers. Deze directory helpt ontwikkelaars snel aan de slag te gaan met MCP door herbruikbare bouwstenen en best-practice voorbeelden te bieden voor:
 
 - **Prompt Templates:** Klaar-voor-gebruik prompttemplates voor veelvoorkomende AI-taken en scenario’s, aanpasbaar voor eigen MCP-serverimplementaties  
-- **Tool Definitions:** Voorbeeldschemas en metadata om toolintegratie en aanroepen te standaardiseren tussen verschillende MCP-servers  
-- **Resource Samples:** Voorbeeldresource-definities voor het koppelen van databronnen, API’s en externe diensten binnen het MCP-framework  
-- **Reference Implementations:** Praktische voorbeelden die laten zien hoe je resources, prompts en tools structureert en organiseert in echte MCP-projecten  
+- **Tool Definitions:** Voorbeeldschemas en metadata om toolintegratie en aanroep te standaardiseren over verschillende MCP-servers  
+- **Resource Samples:** Voorbeelden van resource-definities voor verbinding met databronnen, API’s en externe diensten binnen het MCP-kader  
+- **Reference Implementations:** Praktische voorbeelden die laten zien hoe resources, prompts en tools gestructureerd en georganiseerd kunnen worden in echte MCP-projecten  
 
-Deze bronnen versnellen de ontwikkeling, bevorderen standaardisatie en helpen best practices te waarborgen bij het bouwen en uitrollen van MCP-oplossingen.
+Deze bronnen versnellen ontwikkeling, bevorderen standaardisatie en helpen best practices te waarborgen bij het bouwen en uitrollen van MCP-gebaseerde oplossingen.
 
 #### MCP Resources Directory  
 - [MCP Resources (Sample Prompts, Tools, and Resource Definitions)](https://github.com/microsoft/mcp/tree/main/Resources)
@@ -455,23 +471,17 @@ Deze bronnen versnellen de ontwikkeling, bevorderen standaardisatie en helpen be
 
 - Efficiënte promptoptimalisatietechnieken binnen MCP-frameworks  
 - Beveiligingsmodellen voor multi-tenant MCP-implementaties  
-- Prestatiebenchmarking van verschillende MCP-implementaties  
+- Prestatiebenchmarks van verschillende MCP-implementaties  
 - Formele verificatiemethoden voor MCP-servers  
 
 ## Conclusie
 
-Het Model Context Protocol (MCP) vormt snel de toekomst van gestandaardiseerde, veilige en interoperabele AI-integratie in diverse sectoren. Via de casestudies en praktische projecten in deze les heb je gezien hoe vroege gebruikers—waaronder Microsoft en Azure—MCP inzetten om echte uitdagingen aan te pakken, AI-adoptie te versnellen en compliance, veiligheid en schaalbaarheid te waarborgen. De modulaire aanpak van MCP stelt organisaties in staat om grote taalmodellen, tools en bedrijfsdata te verbinden binnen een uniform, auditeerbaar framework. Terwijl MCP zich blijft ontwikkelen, is betrokkenheid bij de community, het verkennen van open-source bronnen en het toepassen van best practices essentieel om robuuste, toekomstbestendige AI-oplossingen te bouwen.
-
-## Aanvullende bronnen
-
-- [MCP GitHub Repository (Microsoft)](https://github.com/microsoft/mcp)  
-- [MCP Resources Directory (Sample Prompts, Tools, and Resource Definitions)](https://github.com/microsoft/mcp/tree/main/Resources)  
-- [MCP Community & Documentation](https://modelcontextprotocol.io/introduction)  
-- [Azure MCP Documentation](https://aka.ms/azmcp)  
-- [Playwright MCP Server GitHub Repository](https://github.com/microsoft/playwright-mcp)  
-- [Files MCP Server (OneDrive)](https://github.com/microsoft/files-mcp-server)  
-- [Azure-Samples MCP](https://github.com/Azure-Samples/mcp)  
-- [MCP Auth Servers (Azure-Samples)](https://github.com/Azure-Samples/mcp-auth-servers)  
+Het Model Context Protocol (MCP) vormt snel de toekomst van gestandaardiseerde, veilige en interoperabele AI-integratie in diverse sectoren. Door de casestudies en hands-on projecten in deze les heb je gezien hoe vroege gebruikers—waaronder Microsoft en Azure—MCP inzetten om echte problemen op te lossen, AI-adoptie te
+- [Azure MCP Documentatie](https://aka.ms/azmcp)
+- [Playwright MCP Server GitHub Repository](https://github.com/microsoft/playwright-mcp)
+- [Files MCP Server (OneDrive)](https://github.com/microsoft/files-mcp-server)
+- [Azure-Samples MCP](https://github.com/Azure-Samples/mcp)
+- [MCP Auth Servers (Azure-Samples)](https://github.com/Azure-Samples/mcp-auth-servers)
 - [Remote MCP Functions (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions)
 - [Remote MCP Functions Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-python)
 - [Remote MCP Functions .NET (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)
@@ -482,12 +492,12 @@ Het Model Context Protocol (MCP) vormt snel de toekomst van gestandaardiseerde, 
 
 ## Oefeningen
 
-1. Analyseer een van de casestudy’s en stel een alternatieve implementatieaanpak voor.
+1. Analyseer een van de casestudy's en stel een alternatieve implementatie-aanpak voor.
 2. Kies een van de projectideeën en maak een gedetailleerde technische specificatie.
-3. Onderzoek een sector die niet in de casestudy’s aan bod komt en schets hoe MCP de specifieke uitdagingen daarvan kan aanpakken.
-4. Verken een van de toekomstige richtingen en ontwikkel een concept voor een nieuwe MCP-uitbreiding ter ondersteuning daarvan.
+3. Onderzoek een sector die niet behandeld wordt in de casestudy's en schets hoe MCP de specifieke uitdagingen ervan kan aanpakken.
+4. Verken een van de toekomstige richtingen en ontwikkel een concept voor een nieuwe MCP-extensie om deze te ondersteunen.
 
 Volgende: [Best Practices](../08-BestPractices/README.md)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal geldt als de gezaghebbende bron. Voor belangrijke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

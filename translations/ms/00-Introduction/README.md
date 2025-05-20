@@ -1,107 +1,107 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "02301140adbd807ecf0f17720fa307bc",
-  "translation_date": "2025-05-17T06:06:17+00:00",
+  "original_hash": "cf84f987e1b771d2201408e110dfd2db",
+  "translation_date": "2025-05-20T17:45:38+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "ms"
 }
 -->
-# Pengenalan kepada Protokol Konteks Model (MCP): Mengapa Ia Penting untuk Aplikasi AI yang Boleh Diskalakan
+# Introduction to Model Context Protocol (MCP): Why It Matters for Scalable AI Applications
 
-Aplikasi AI generatif adalah satu langkah besar ke hadapan kerana ia sering membolehkan pengguna berinteraksi dengan aplikasi menggunakan arahan bahasa semula jadi. Walau bagaimanapun, apabila lebih banyak masa dan sumber dilaburkan dalam aplikasi tersebut, anda ingin memastikan anda boleh mengintegrasikan fungsi dan sumber dengan mudah supaya ia mudah untuk diperluas, bahawa aplikasi anda boleh memenuhi lebih daripada satu model yang digunakan, dan kerumitannya. Ringkasnya, membina aplikasi Gen AI adalah mudah untuk dimulakan tetapi apabila ia berkembang dan menjadi lebih kompleks, anda perlu mula mentakrifkan seni bina dan kemungkinan besar akan memerlukan piawaian untuk memastikan aplikasi anda dibina dengan cara yang konsisten. Di sinilah MCP datang untuk mengatur perkara, untuk menyediakan piawaian.
-
----
-
-## **🔍 Apakah Protokol Konteks Model (MCP)?**
-
-**Protokol Konteks Model (MCP)** ialah **antara muka terbuka dan piawai** yang membolehkan Model Bahasa Besar (LLM) berinteraksi dengan lancar dengan alat, API, dan sumber data luaran. Ia menyediakan seni bina yang konsisten untuk meningkatkan fungsi model AI melebihi data latihan mereka, membolehkan sistem AI yang lebih pintar, boleh diskalakan, dan lebih responsif.
+Generative AI applications represent a significant advancement, often allowing users to interact with the app through natural language prompts. However, as more time and resources are invested in these apps, it's important to ensure that functionalities and resources can be easily integrated and extended, that the app supports multiple models and their complexities. In other words, building Gen AI apps is straightforward initially, but as they grow more complex, you need to define an architecture and likely rely on a standard to keep your apps consistent. This is where MCP comes in—to organize and provide a standard.
 
 ---
 
-## **🎯 Mengapa Standardisasi dalam AI Penting**
+## **🔍 What Is the Model Context Protocol (MCP)?**
 
-Apabila aplikasi AI generatif menjadi lebih kompleks, adalah penting untuk menerima pakai piawaian yang memastikan **skalabiliti, kebolehluasan**, dan **kebolehkekalan**. MCP menangani keperluan ini dengan:
-
-- Menyatukan integrasi alat-model
-- Mengurangkan penyelesaian khusus yang rapuh dan satu kali
-- Membolehkan pelbagai model wujud dalam satu ekosistem
+The **Model Context Protocol (MCP)** is an **open, standardized interface** that enables Large Language Models (LLMs) to seamlessly interact with external tools, APIs, and data sources. It offers a consistent architecture to enhance AI model capabilities beyond their training data, making AI systems smarter, scalable, and more responsive.
 
 ---
 
-## **📚 Objektif Pembelajaran**
+## **🎯 Why Standardization in AI Matters**
 
-Pada akhir artikel ini, anda akan dapat:
+As generative AI applications grow more complex, adopting standards that guarantee **scalability, extensibility**, and **maintainability** becomes crucial. MCP addresses these needs by:
 
-- Mentakrifkan **Protokol Konteks Model (MCP)** dan kes penggunaan
-- Memahami bagaimana MCP menstandardkan komunikasi model-ke-alat
-- Mengenal pasti komponen teras seni bina MCP
-- Meneroka aplikasi dunia nyata MCP dalam konteks perusahaan dan pembangunan
-
----
-
-## **💡 Mengapa Protokol Konteks Model (MCP) Adalah Pengubah Permainan**
-
-### **🔗 MCP Menyelesaikan Pemecahan dalam Interaksi AI**
-
-Sebelum MCP, mengintegrasikan model dengan alat memerlukan:
-
-- Kod khusus untuk setiap pasangan alat-model
-- API tidak piawai untuk setiap vendor
-- Gangguan kerap disebabkan oleh kemas kini
-- Skalabiliti yang lemah dengan lebih banyak alat
-
-### **✅ Manfaat Standardisasi MCP**
-
-| **Manfaat**               | **Penerangan**                                                                |
-|---------------------------|--------------------------------------------------------------------------------|
-| Interoperabiliti          | LLM berfungsi dengan lancar dengan alat merentasi pelbagai vendor             |
-| Konsistensi               | Tingkah laku seragam merentasi platform dan alat                              |
-| Kebolehgunaan Semula      | Alat yang dibina sekali boleh digunakan merentasi projek dan sistem           |
-| Pembangunan Dipercepat    | Mengurangkan masa pembangunan dengan menggunakan antara muka piawai dan sedia pasang |
+- Unifying model-tool integrations  
+- Reducing fragile, one-off custom solutions  
+- Allowing multiple models to coexist within a single ecosystem  
 
 ---
 
-## **🧱 Tinjauan Seni Bina MCP Peringkat Tinggi**
+## **📚 Learning Objectives**
 
-MCP mengikuti model **klien-pelayan**, di mana:
+By the end of this article, you'll be able to:
 
-- **Hos MCP** menjalankan model AI
-- **Klien MCP** memulakan permintaan
-- **Pelayan MCP** menyediakan konteks, alat, dan keupayaan
-
-### **Komponen Utama:**
-
-- **Sumber** – Data statik atau dinamik untuk model  
-- **Arahan** – Aliran kerja prapasti untuk penjanaan berpanduan  
-- **Alat** – Fungsi boleh laksana seperti carian, pengiraan  
-- **Pensampelan** – Tingkah laku agen melalui interaksi berulang
+- Define **Model Context Protocol (MCP)** and its use cases  
+- Understand how MCP standardizes communication between models and tools  
+- Identify the core components of MCP architecture  
+- Explore real-world MCP applications in enterprise and development settings  
 
 ---
 
-## Bagaimana Pelayan MCP Berfungsi
+## **💡 Why the Model Context Protocol (MCP) Is a Game-Changer**
 
-Pelayan MCP beroperasi dengan cara berikut:
+### **🔗 MCP Solves Fragmentation in AI Interactions**
 
-- **Aliran Permintaan**: 
-    1. Klien MCP menghantar permintaan kepada Model AI yang berjalan di Hos MCP.
-    2. Model AI mengenal pasti bila ia memerlukan alat atau data luaran.
-    3. Model berkomunikasi dengan Pelayan MCP menggunakan protokol piawai.
+Before MCP, integrating models with tools required:
 
-- **Fungsi Pelayan MCP**:
-    - Daftar Alat: Menyimpan katalog alat yang tersedia dan keupayaan mereka.
-    - Pengesahan: Mengesahkan kebenaran untuk akses alat.
-    - Pengendali Permintaan: Memproses permintaan alat yang masuk dari model.
-    - Pemformat Respons: Menyusun keluaran alat dalam format yang boleh difahami oleh model.
+- Custom code for each tool-model combination  
+- Non-standard APIs from different vendors  
+- Frequent breaks due to updates  
+- Poor scalability as the number of tools increased  
 
-- **Pelaksanaan Alat**: 
-    - Pelayan mengarahkan permintaan kepada alat luaran yang sesuai
-    - Alat melaksanakan fungsi khusus mereka (carian, pengiraan, pertanyaan pangkalan data, dll.)
-    - Keputusan dikembalikan kepada model dalam format yang konsisten.
+### **✅ Benefits of MCP Standardization**
 
-- **Penyelesaian Respons**: 
-    - Model AI menggabungkan keluaran alat ke dalam responsnya.
-    - Respons akhir dihantar kembali kepada aplikasi klien.
+| **Benefit**              | **Description**                                                                |
+|--------------------------|--------------------------------------------------------------------------------|
+| Interoperability         | LLMs work smoothly with tools from various vendors                            |
+| Consistency              | Uniform behavior across platforms and tools                                   |
+| Reusability              | Tools built once can be reused across multiple projects and systems           |
+| Accelerated Development  | Reduce development time by using standardized, plug-and-play interfaces       |
+
+---
+
+## **🧱 High-Level MCP Architecture Overview**
+
+MCP follows a **client-server model**, where:
+
+- **MCP Hosts** run the AI models  
+- **MCP Clients** send requests  
+- **MCP Servers** provide context, tools, and capabilities  
+
+### **Key Components:**
+
+- **Resources** – Static or dynamic data for models  
+- **Prompts** – Predefined workflows guiding generation  
+- **Tools** – Executable functions like search or calculations  
+- **Sampling** – Agentic behavior through recursive interactions  
+
+---
+
+## How MCP Servers Work
+
+MCP servers operate as follows:
+
+- **Request Flow**:  
+    1. The MCP Client sends a request to the AI Model running on an MCP Host.  
+    2. The AI Model detects when it needs external tools or data.  
+    3. The model communicates with the MCP Server using the standardized protocol.  
+
+- **MCP Server Functionality**:  
+    - Tool Registry: Keeps a catalog of available tools and their capabilities.  
+    - Authentication: Confirms permissions for tool access.  
+    - Request Handler: Manages incoming tool requests from the model.  
+    - Response Formatter: Structures tool outputs into a format the model can process.  
+
+- **Tool Execution**:  
+    - The server forwards requests to the appropriate external tools.  
+    - Tools perform their specialized tasks (search, calculations, database queries, etc.).  
+    - Results are returned to the model in a consistent format.  
+
+- **Response Completion**:  
+    - The AI model integrates tool outputs into its response.  
+    - The final response is sent back to the client application.  
 
 ```mermaid
 graph TD
@@ -136,47 +136,43 @@ graph TD
     style F fill:#c2f0c2,stroke:#333,stroke-width:1px    
 ```
 
-## 👨‍💻 Cara Membina Pelayan MCP (Dengan Contoh)
+## 👨‍💻 How to Build an MCP Server (With Examples)
 
-Pelayan MCP membolehkan anda memperluas keupayaan LLM dengan menyediakan data dan fungsi. 
+MCP servers let you extend LLM capabilities by supplying data and functionality.
 
-Bersedia untuk mencubanya? Berikut adalah contoh membuat pelayan MCP ringkas dalam pelbagai bahasa:
+Ready to get started? Here are examples of building a simple MCP server in various languages:
 
-- **Contoh Python**: https://github.com/modelcontextprotocol/python-sdk
+- **Python Example**: https://github.com/modelcontextprotocol/python-sdk  
+- **TypeScript Example**: https://github.com/modelcontextprotocol/typescript-sdk  
+- **Java Example**: https://github.com/modelcontextprotocol/java-sdk  
+- **C#/.NET Example**: https://github.com/modelcontextprotocol/csharp-sdk  
 
-- **Contoh TypeScript**: https://github.com/modelcontextprotocol/typescript-sdk
+## 🌍 Real-World Use Cases for MCP
 
-- **Contoh Java**: https://github.com/modelcontextprotocol/java-sdk
+MCP powers a wide array of applications by extending AI capabilities:
 
-- **Contoh C#/.NET**: https://github.com/modelcontextprotocol/csharp-sdk
+| **Application**              | **Description**                                                                |
+|------------------------------|--------------------------------------------------------------------------------|
+| Enterprise Data Integration  | Connect LLMs to databases, CRMs, or internal tools                             |
+| Agentic AI Systems           | Enable autonomous agents with tool access and decision-making workflows        |
+| Multi-modal Applications     | Combine text, image, and audio tools within a single unified AI app            |
+| Real-time Data Integration   | Incorporate live data into AI interactions for more accurate, up-to-date results|
 
+### 🧠 MCP = Universal Standard for AI Interactions
 
-## 🌍 Kes Penggunaan Dunia Nyata untuk MCP
+The Model Context Protocol (MCP) serves as a universal standard for AI interactions, similar to how USB-C standardized physical device connections. In AI, MCP offers a consistent interface, allowing models (clients) to integrate smoothly with external tools and data providers (servers). This removes the need for numerous custom protocols for each API or data source.
 
-MCP membolehkan pelbagai aplikasi dengan memperluas keupayaan AI:
+Under MCP, an MCP-compatible tool (an MCP server) adheres to a unified standard. These servers list the tools or actions they provide and execute them when requested by an AI agent. Platforms supporting MCP can discover available tools from servers and invoke them through this standard protocol.
 
-| **Aplikasi**                | **Penerangan**                                                                |
-|-----------------------------|--------------------------------------------------------------------------------|
-| Integrasi Data Perusahaan   | Sambungkan LLM ke pangkalan data, CRM, atau alat dalaman                      |
-| Sistem AI Agen              | Membolehkan agen autonomi dengan akses alat dan aliran kerja membuat keputusan |
-| Aplikasi Multi-modal        | Gabungkan alat teks, imej, dan audio dalam satu aplikasi AI yang bersatu       |
-| Integrasi Data Masa Nyata   | Bawa data langsung ke dalam interaksi AI untuk keluaran yang lebih tepat dan semasa |
+### 💡 Facilitates access to knowledge
 
-### 🧠 MCP = Piawai Universal untuk Interaksi AI
+Beyond offering tools, MCP also facilitates knowledge access. It enables applications to provide context to large language models (LLMs) by linking them to various data sources. For example, an MCP server might represent a company’s document repository, allowing agents to fetch relevant information on demand. Another server might handle specific actions like sending emails or updating records. From the agent’s viewpoint, these are just tools it can use—some return data (knowledge context), others perform actions. MCP efficiently manages both.
 
-Protokol Konteks Model (MCP) bertindak sebagai piawai universal untuk interaksi AI, sama seperti bagaimana USB-C menstandardkan sambungan fizikal untuk peranti. Dalam dunia AI, MCP menyediakan antara muka yang konsisten, membolehkan model (klien) untuk berintegrasi dengan lancar dengan alat luaran dan penyedia data (pelayan). Ini menghapuskan keperluan untuk protokol yang berbeza dan khusus untuk setiap API atau sumber data.
+An agent connecting to an MCP server automatically learns the server's available capabilities and accessible data through a standard format. This standardization allows dynamic tool availability. For instance, adding a new MCP server to an agent’s system makes its functions immediately usable without needing further customization of the agent's instructions.
 
-Di bawah MCP, alat yang serasi dengan MCP (dirujuk sebagai pelayan MCP) mengikuti piawai bersatu. Pelayan ini boleh menyenaraikan alat atau tindakan yang mereka tawarkan dan melaksanakan tindakan tersebut apabila diminta oleh agen AI. Platform agen AI yang menyokong MCP mampu menemui alat yang tersedia dari pelayan dan memanggilnya melalui protokol piawai ini.
+This streamlined integration aligns with the flow shown in the mermaid diagram, where servers provide both tools and knowledge, ensuring smooth collaboration across systems.
 
-### 💡 Memudahkan akses kepada pengetahuan
-
-Selain menawarkan alat, MCP juga memudahkan akses kepada pengetahuan. Ia membolehkan aplikasi menyediakan konteks kepada model bahasa besar (LLM) dengan menghubungkannya kepada pelbagai sumber data. Sebagai contoh, pelayan MCP mungkin mewakili repositori dokumen syarikat, membolehkan agen mendapatkan maklumat yang relevan atas permintaan. Pelayan lain boleh mengendalikan tindakan tertentu seperti menghantar e-mel atau mengemas kini rekod. Dari perspektif agen, ini hanyalah alat yang boleh digunakannya—beberapa alat mengembalikan data (konteks pengetahuan), sementara yang lain melaksanakan tindakan. MCP menguruskan kedua-duanya dengan cekap.
-
-Agen yang menyambung ke pelayan MCP secara automatik mempelajari keupayaan dan data yang boleh diakses oleh pelayan melalui format piawai. Standardisasi ini membolehkan ketersediaan alat dinamik. Sebagai contoh, menambah pelayan MCP baru ke sistem agen menjadikan fungsinya segera boleh digunakan tanpa memerlukan penyesuaian lanjut arahan agen.
-
-Integrasi yang dipermudah ini selaras dengan aliran yang digambarkan dalam diagram mermaid, di mana pelayan menyediakan kedua-dua alat dan pengetahuan, memastikan kerjasama yang lancar merentasi sistem.
-
-### 👉 Contoh: Penyelesaian Agen Boleh Diskalakan
+### 👉 Example: Scalable Agent Solution
 
 ```mermaid
 graph TD
@@ -200,38 +196,39 @@ graph TD
         ToolsB[Tools]
     end
 ```
-## 🔐 Manfaat Praktikal MCP
 
-Berikut adalah beberapa manfaat praktikal menggunakan MCP:
+## 🔐 Practical Benefits of MCP
 
-- **Kebaruan**: Model boleh mengakses maklumat terkini melebihi data latihan mereka
-- **Pemanjangan Keupayaan**: Model boleh memanfaatkan alat khusus untuk tugas yang tidak dilatih
-- **Pengurangan Halusinasi**: Sumber data luaran menyediakan asas fakta
-- **Privasi**: Data sensitif boleh kekal dalam persekitaran selamat dan bukannya dimasukkan dalam arahan
+Here are the practical benefits of using MCP:
 
-## 📌 Pengambilan Utama
+- **Freshness**: Models can access current information beyond their training data  
+- **Capability Extension**: Models can use specialized tools for tasks they weren’t trained on  
+- **Reduced hallucinations**: External data sources provide factual grounding  
+- **Privacy**: Sensitive data stays within secure environments instead of being embedded in prompts  
 
-Berikut adalah pengambilan utama untuk menggunakan MCP:
+## 📌 Key Takeaways
 
-- **MCP** menstandardkan bagaimana model AI berinteraksi dengan alat dan data
-- Menggalakkan **kebolehluasan, konsistensi, dan interoperabiliti**
-- MCP membantu **mengurangkan masa pembangunan, meningkatkan kebolehpercayaan, dan memperluas keupayaan model**
-- Seni bina klien-pelayan **memungkinkan aplikasi AI yang fleksibel dan boleh diperluas**
+Key points to remember about MCP:
 
-## 🧠 Latihan
+- **MCP** standardizes how AI models interact with tools and data  
+- Promotes **extensibility, consistency, and interoperability**  
+- Helps **reduce development time, improve reliability, and extend model capabilities**  
+- The client-server architecture **enables flexible, extensible AI applications**  
 
-Fikirkan tentang aplikasi AI yang anda berminat untuk membina.
+## 🧠 Exercise
 
-- Alat atau data **luaran** manakah yang boleh meningkatkan keupayaannya?
-- Bagaimana MCP boleh membuat integrasi **lebih mudah dan lebih dipercayai?**
+Think about an AI application you want to build.
 
-## Sumber Tambahan
+- Which **external tools or data** could enhance its capabilities?  
+- How might MCP make integration **simpler and more reliable?**  
 
-- [Repositori GitHub MCP](https://github.com/modelcontextprotocol)
+## Additional Resources
 
-## Apa yang seterusnya
+- [MCP GitHub Repository](https://github.com/modelcontextprotocol)  
 
-Seterusnya: [Bab 1: Konsep Teras](/01-CoreConcepts/README.md)
+## What's next
+
+Next: [Chapter 1: Core Concepts](/01-CoreConcepts/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

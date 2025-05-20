@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "788eb17750e970a0bc3b5e7f2e99975b",
-  "translation_date": "2025-05-18T14:59:02+00:00",
+  "original_hash": "154c00dc3b2c792102e4845c19fbd166",
+  "translation_date": "2025-05-20T16:04:42+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "mo"
 }
@@ -81,7 +81,7 @@ Resources in the Model Context Protocol (MCP) encompass various types of context
 - **Local Files and Databases**: Data stored locally on devices or within databases, accessible for processing and analysis.
 - **APIs and Web Services**: External interfaces and services that offer additional data and functionalities, enabling integration with various online resources and tools.
 
-An example of a resource can be a database schema or a file than be accessed like so:
+An example of a resource can be a database schema or a file that can be accessed like so:
 
 ```text
 file://log.txt
@@ -105,7 +105,7 @@ Generate a product slogan based on the following {{product}} with the following 
 
 Tools in the Model Context Protocol (MCP) are functions that the AI model can execute to perform specific tasks. These tools are designed to enhance the capabilities of the AI model by providing structured and reliable operations. Key aspects include:
 
-- **Functions for the AI Model to Execute**: Tools are executable functions that the AI model can invoke to carry out various tasks.
+- **Functions for the AI model to execute**: Tools are executable functions that the AI model can invoke to carry out various tasks.
 - **Unique Name and Description**: Each tool has a distinct name and a detailed description that explains its purpose and functionality.
 - **Parameters and Outputs**: Tools accept specific parameters and return structured outputs, ensuring consistent and predictable results.
 - **Discrete Functions**: Tools perform discrete functions such as web searches, calculations, and database queries.
@@ -114,7 +114,7 @@ An example tool could look like so:
 
 ```typescript
 server.tool(
-  "GetProducts"
+  "GetProducts",
   {
     pageSize: z.string().optional(),
     pageCount: z.string().optional()
@@ -131,7 +131,7 @@ In the Model Context Protocol (MCP), clients offer several key features to serve
 
 - **Server-Initiated Agentic Behaviors**: Clients enable servers to initiate specific actions or behaviors autonomously, enhancing the dynamic capabilities of the system.
 - **Recursive LLM Interactions**: This feature allows for recursive interactions with large language models (LLMs), enabling more complex and iterative processing of tasks.
-- **Requesting Additional Model Completions*: Servers can request additional completions from the model, ensuring that the responses are thorough and contextually relevant.
+- **Requesting Additional Model Completions**: Servers can request additional completions from the model, ensuring that the responses are thorough and contextually relevant.
 
 ## Information Flow in MCP
 
@@ -397,7 +397,7 @@ if __name__ == "__main__":
 
 ### JavaScript Example: Creating an MCP Server
 
-This example shows MCP server creation in JavaScript and shows how to register two tools related to weather.
+This example shows MCP server creation in JavaScript and how to register two weather-related tools.
 
 ```javascript
 // Using the official Model Context Protocol SDK
@@ -557,4 +557,4 @@ Design a simple MCP tool that would be useful in your domain. Define:
 Next: [Chapter 2: Security](/02-Security/readme.md)
 
 **Disclaimer**:  
-Thi document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+Thiz documint haz bin translaited yusing AI translaition servis [Co-op Translator](https://github.com/Azure/co-op-translator). Whyl wee stryve for akyuracy, pleez be awair that otomaytid translaitions may kontain erorrs or inakurysees. The orijinal documint in its naytiv langwidge shood be konsidred the authoritativ sours. For kritikall informayshun, profeshunal hyuman translaition iz rekomended. Wee ar not laybl for eny misundarstandings or misinterpretayshuns arizing from the yus of this translaition.

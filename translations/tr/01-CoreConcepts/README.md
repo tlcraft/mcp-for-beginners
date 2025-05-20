@@ -1,74 +1,74 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "788eb17750e970a0bc3b5e7f2e99975b",
-  "translation_date": "2025-05-18T15:14:45+00:00",
+  "original_hash": "154c00dc3b2c792102e4845c19fbd166",
+  "translation_date": "2025-05-20T17:04:48+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "tr"
 }
 -->
-# 📖 MCP Temel Kavramları: Yapay Zeka Entegrasyonu için Model Context Protocol'ü Ustalaşmak
+# 📖 MCP Temel Kavramları: Yapay Zeka Entegrasyonu için Model Context Protocol'ü Öğrenmek
 
-Model Context Protocol (MCP), Büyük Dil Modelleri (LLM'ler) ile dış araçlar, uygulamalar ve veri kaynakları arasındaki iletişimi optimize eden güçlü, standartlaştırılmış bir çerçevedir. Bu SEO uyumlu rehber, MCP'nin istemci-sunucu mimarisi, temel bileşenleri, iletişim mekanizmaları ve uygulama en iyi uygulamalarını anlamanızı sağlayacak.
+Model Context Protocol (MCP), Büyük Dil Modelleri (LLM'ler) ile dış araçlar, uygulamalar ve veri kaynakları arasındaki iletişimi optimize eden güçlü ve standartlaştırılmış bir çerçevedir. Bu SEO uyumlu rehber, MCP'nin istemci-sunucu mimarisini, temel bileşenlerini, iletişim mekanizmalarını ve uygulama en iyi uygulamalarını anlamanızı sağlayacak.
 
 ## Genel Bakış
 
-Bu ders, Model Context Protocol (MCP) ekosistemini oluşturan temel mimari ve bileşenleri keşfeder. MCP etkileşimlerini güçlendiren istemci-sunucu mimarisi, ana bileşenler ve iletişim mekanizmalarını öğreneceksiniz.
+Bu ders, Model Context Protocol (MCP) ekosistemini oluşturan temel mimari ve bileşenleri inceler. MCP etkileşimlerini destekleyen istemci-sunucu mimarisi, ana bileşenler ve iletişim mekanizmaları hakkında bilgi edineceksiniz.
 
 ## 👩‍🎓 Temel Öğrenme Hedefleri
 
 Bu dersin sonunda:
 
 - MCP istemci-sunucu mimarisini anlayacaksınız.
-- Hosts, Clients ve Servers’ın rollerini ve sorumluluklarını tanımlayacaksınız.
-- MCP’yi esnek bir entegrasyon katmanı yapan temel özellikleri analiz edeceksiniz.
-- MCP ekosistemi içindeki bilgi akışını öğreneceksiniz.
-- .NET, Java, Python ve JavaScript ile kod örnekleri üzerinden pratik bilgiler edineceksiniz.
+- Hostların, İstemcilerin ve Sunucuların rollerini ve sorumluluklarını tanımlayacaksınız.
+- MCP'yi esnek bir entegrasyon katmanı yapan temel özellikleri analiz edeceksiniz.
+- MCP ekosisteminde bilgi akışının nasıl gerçekleştiğini öğreneceksiniz.
+- .NET, Java, Python ve JavaScript ile kod örnekleri üzerinden pratik bilgiler kazanacaksınız.
 
 ## 🔎 MCP Mimarisi: Daha Derin Bir Bakış
 
 MCP ekosistemi, istemci-sunucu modeli üzerine kuruludur. Bu modüler yapı, yapay zeka uygulamalarının araçlar, veritabanları, API'ler ve bağlamsal kaynaklarla verimli şekilde etkileşim kurmasını sağlar. Bu mimariyi temel bileşenlerine ayıralım.
 
-### 1. Hosts
+### 1. Hostlar
 
-Model Context Protocol (MCP) içinde Hosts, kullanıcıların protokolle etkileşime geçtiği birincil arayüz olarak kritik bir rol oynar. Hosts, MCP sunucularıyla bağlantı kurarak veri, araç ve istemlere erişim sağlayan uygulamalar veya ortamlardır. Hosts örnekleri arasında Visual Studio Code gibi entegre geliştirme ortamları (IDE'ler), Claude Desktop gibi yapay zeka araçları veya belirli görevler için özel olarak tasarlanmış ajanlar bulunur.
+Model Context Protocol (MCP) içinde Hostlar, kullanıcıların protokolle etkileşim kurduğu birincil arayüzü oluşturur. Hostlar, MCP sunucularıyla bağlantı başlatan ve veri, araçlar ile istemler erişen uygulamalar veya ortamlar olarak tanımlanır. Hostlara örnek olarak Visual Studio Code gibi entegre geliştirme ortamları, Claude Desktop gibi yapay zeka araçları veya belirli görevler için özel olarak tasarlanmış ajanlar verilebilir.
 
-**Hosts**, bağlantı başlatan LLM uygulamalarıdır. Şunları yaparlar:
+**Hostlar**, bağlantı başlatan LLM uygulamalarıdır. Şunları yaparlar:
 
-- Yanıt üretmek için yapay zeka modellerini çalıştırır veya onlarla etkileşime girerler.
-- MCP sunucularıyla bağlantı kurarlar.
-- Konuşma akışını ve kullanıcı arayüzünü yönetirler.
-- İzin ve güvenlik kısıtlamalarını kontrol ederler.
-- Veri paylaşımı ve araç çalıştırma için kullanıcı onayını yönetirler.
+- Yanıt üretmek için yapay zeka modellerini çalıştırır veya onlarla etkileşir.
+- MCP sunucularıyla bağlantı başlatır.
+- Konuşma akışını ve kullanıcı arayüzünü yönetir.
+- İzin ve güvenlik kısıtlamalarını kontrol eder.
+- Veri paylaşımı ve araç çalıştırma için kullanıcı onayını yönetir.
 
-### 2. Clients
+### 2. İstemciler
 
-Clients, Hosts ile MCP sunucuları arasındaki etkileşimi kolaylaştıran temel bileşenlerdir. Clients, Hosts’un MCP sunucularının sunduğu işlevleri erişip kullanabilmesini sağlayan aracılar olarak görev yapar. MCP mimarisinde sorunsuz iletişim ve verimli veri alışverişi sağlamada önemli bir rol oynarlar.
+İstemciler, Hostlar ile MCP sunucuları arasındaki etkileşimi kolaylaştıran temel bileşenlerdir. İstemciler, Hostların MCP sunucularının sağladığı işlevselliklere erişimini ve kullanımını sağlayan aracılardır. MCP mimarisinde sorunsuz iletişim ve verimli veri alışverişi sağlamakta kritik rol oynarlar.
 
-**Clients**, host uygulaması içinde bağlayıcılardır. Şunları yaparlar:
+**İstemciler**, host uygulaması içindeki bağlayıcılardır. Şunları yaparlar:
 
-- Sunuculara istemler gönderirler (promptlar/talimatlar ile).
-- Sunucularla yetenek müzakeresi yaparlar.
-- Modellerden gelen araç çalıştırma isteklerini yönetirler.
-- Yanıtları işler ve kullanıcıya gösterirler.
+- Sunuculara istem veya talimat gönderir.
+- Sunucularla yetenek müzakeresi yapar.
+- Modellerden gelen araç çalıştırma isteklerini yönetir.
+- Yanıtları işleyip kullanıcılara gösterir.
 
-### 3. Servers
+### 3. Sunucular
 
-Servers, MCP clients'tan gelen istekleri işlemek ve uygun yanıtları sağlamakla sorumludur. Veri alma, araç çalıştırma ve istem oluşturma gibi çeşitli işlemleri yönetirler. Clients ve Hosts arasındaki iletişimin verimli ve güvenilir olmasını sağlar, etkileşim sürecinin bütünlüğünü korurlar.
+Sunucular, MCP istemcilerinden gelen istekleri işlemek ve uygun yanıtları sağlamakla sorumludur. Veri alma, araç çalıştırma ve istem oluşturma gibi çeşitli işlemleri yönetirler. Sunucular, istemciler ile Hostlar arasındaki iletişimin verimli ve güvenilir olmasını sağlar, etkileşim sürecinin bütünlüğünü korur.
 
-**Servers**, bağlam ve yetenek sağlayan hizmetlerdir. Şunları yaparlar:
+**Sunucular**, bağlam ve yetenek sağlayan hizmetlerdir. Şunları yaparlar:
 
-- Mevcut özellikleri kaydederler (kaynaklar, istemler, araçlar).
-- Client'tan gelen araç çağrılarını alır ve çalıştırırlar.
-- Model yanıtlarını geliştirmek için bağlamsal bilgi sağlarlar.
-- Çıktıları client'a geri döndürürler.
-- Gerekirse etkileşimler arasında durumu korurlar.
+- Mevcut özellikleri (kaynaklar, istemler, araçlar) kaydeder.
+- İstemciden gelen araç çağrılarını alır ve çalıştırır.
+- Model yanıtlarını geliştirmek için bağlamsal bilgi sağlar.
+- Çıktıları istemciye geri döner.
+- Gerekirse etkileşimler arasında durumu korur.
 
-Servers, model yeteneklerini özel işlevsellikle genişletmek için herkes tarafından geliştirilebilir.
+Sunucular, model yeteneklerini özel işlevsellikle genişletmek için herkes tarafından geliştirilebilir.
 
-### 4. Server Özellikleri
+### 4. Sunucu Özellikleri
 
-Model Context Protocol (MCP) sunucuları, clients, hosts ve dil modelleri arasında zengin etkileşimleri mümkün kılan temel yapı taşlarını sağlar. Bu özellikler, MCP'nin yeteneklerini yapılandırılmış bağlam, araçlar ve istemler sunarak artırmak üzere tasarlanmıştır.
+Model Context Protocol (MCP) sunucuları, istemciler, hostlar ve dil modelleri arasında zengin etkileşimleri mümkün kılan temel yapı taşlarını sağlar. Bu özellikler, MCP'nin yeteneklerini yapılandırılmış bağlam, araçlar ve istemler sunarak artırmak için tasarlanmıştır.
 
 MCP sunucuları aşağıdaki özelliklerden herhangi birini sunabilir:
 
@@ -76,12 +76,12 @@ MCP sunucuları aşağıdaki özelliklerden herhangi birini sunabilir:
 
 Model Context Protocol (MCP) içindeki kaynaklar, kullanıcıların veya yapay zeka modellerinin kullanabileceği çeşitli bağlam ve veri türlerini kapsar. Bunlar şunları içerir:
 
-- **Bağlamsal Veriler**: Kullanıcıların veya yapay zeka modellerinin karar verme ve görev yürütme için kullanabileceği bilgi ve bağlam.
-- **Bilgi Tabanları ve Doküman Depoları**: Makaleler, kılavuzlar ve araştırma makaleleri gibi yapılandırılmış ve yapılandırılmamış veri koleksiyonları, değerli içgörüler ve bilgiler sağlar.
-- **Yerel Dosyalar ve Veritabanları**: Cihazlarda veya veritabanlarında yerel olarak depolanan, işleme ve analiz için erişilebilir veriler.
-- **API’ler ve Web Servisleri**: Çeşitli çevrimiçi kaynaklar ve araçlarla entegrasyon sağlayan ek veri ve işlevsellik sunan dış arayüzler ve servisler.
+- **Bağlamsal Veriler**: Kullanıcıların veya modellerin karar verme ve görev yürütme için kullanabileceği bilgi ve bağlam.
+- **Bilgi Tabanları ve Doküman Depoları**: Makaleler, kılavuzlar ve araştırma raporları gibi yapılandırılmış ve yapılandırılmamış veri koleksiyonları, değerli bilgiler sağlar.
+- **Yerel Dosyalar ve Veritabanları**: Cihazlarda veya veritabanlarında yerel olarak saklanan ve işleme için erişilebilen veriler.
+- **API'ler ve Web Servisleri**: Çeşitli çevrimiçi kaynaklar ve araçlarla entegrasyon sağlayan ek veri ve işlevsellik sunan dış arayüzler.
 
-Bir kaynak örneği, şöyle erişilebilen bir veritabanı şeması veya dosya olabilir:
+Bir kaynak örneği, bir veritabanı şeması veya şu şekilde erişilebilen bir dosya olabilir:
 
 ```text
 file://log.txt
@@ -90,13 +90,13 @@ database://schema
 
 ### 🤖 İstemler
 
-Model Context Protocol (MCP) içindeki istemler, kullanıcı iş akışlarını kolaylaştırmak ve iletişimi geliştirmek için tasarlanmış çeşitli ön tanımlı şablonlar ve etkileşim desenlerini içerir. Bunlar şunları kapsar:
+Model Context Protocol (MCP) içindeki istemler, kullanıcı iş akışlarını kolaylaştırmak ve iletişimi geliştirmek için tasarlanmış çeşitli ön tanımlı şablonlar ve etkileşim kalıplarını içerir. Bunlar şunlardır:
 
-- **Şablonlanmış Mesajlar ve İş Akışları**: Kullanıcıları belirli görevler ve etkileşimler boyunca yönlendiren önceden yapılandırılmış mesajlar ve süreçler.
-- **Ön Tanımlı Etkileşim Desenleri**: Tutarlı ve verimli iletişimi kolaylaştıran standartlaştırılmış eylem ve yanıt dizileri.
-- **Özel Konuşma Şablonları**: Belirli konuşma türleri için uyarlanabilir şablonlar, ilgili ve bağlamsal olarak uygun etkileşimler sağlar.
+- **Şablonlu Mesajlar ve İş Akışları**: Kullanıcıları belirli görevler ve etkileşimler boyunca yönlendiren önceden yapılandırılmış mesajlar ve süreçler.
+- **Ön Tanımlı Etkileşim Kalıpları**: Tutarlı ve verimli iletişimi kolaylaştıran standart eylem ve yanıt dizileri.
+- **Özelleştirilmiş Konuşma Şablonları**: Belirli konuşma türleri için uygun ve bağlama uygun etkileşimler sağlayan özelleştirilebilir şablonlar.
 
-Bir istem şablonu şöyle görünebilir:
+Bir istem şablonu şu şekilde olabilir:
 
 ```markdown
 Generate a product slogan based on the following {{product}} with the following {{keywords}}
@@ -104,18 +104,18 @@ Generate a product slogan based on the following {{product}} with the following 
 
 #### ⛏️ Araçlar
 
-Model Context Protocol (MCP) içindeki araçlar, yapay zeka modelinin belirli görevleri gerçekleştirmek için çalıştırabileceği işlevlerdir. Bu araçlar, yapay zeka modelinin yeteneklerini yapılandırılmış ve güvenilir işlemler sağlayarak artırmak üzere tasarlanmıştır. Temel özellikler şunlardır:
+Model Context Protocol (MCP) içindeki araçlar, yapay zeka modelinin belirli görevleri yerine getirmek için çalıştırabileceği işlevlerdir. Bu araçlar, yapay zeka modelinin yeteneklerini yapılandırılmış ve güvenilir işlemler sunarak artırmak için tasarlanmıştır. Temel özellikler şunlardır:
 
-- **Yapay Zeka Modelinin Çalıştırabileceği Fonksiyonlar**: Araçlar, yapay zeka modelinin çağırabileceği yürütülebilir fonksiyonlardır.
-- **Benzersiz İsim ve Açıklama**: Her aracın amacı ve işlevselliği açıklayan ayrı bir adı ve detaylı açıklaması vardır.
-- **Parametreler ve Çıktılar**: Araçlar belirli parametreleri kabul eder ve yapılandırılmış çıktılar döndürür, böylece tutarlı ve öngörülebilir sonuçlar sağlanır.
+- **Yapay zeka modelinin çalıştırabileceği işlevler**: Araçlar, modelin çeşitli görevleri yerine getirmek için çağırabileceği çalıştırılabilir fonksiyonlardır.
+- **Benzersiz İsim ve Açıklama**: Her aracın amacı ve işlevselliği açıklayan kendine özgü bir adı ve detaylı bir açıklaması vardır.
+- **Parametreler ve Çıktılar**: Araçlar belirli parametreleri kabul eder ve yapılandırılmış çıktılar döner, böylece tutarlı ve öngörülebilir sonuçlar sağlanır.
 - **Ayrık Fonksiyonlar**: Araçlar web aramaları, hesaplamalar ve veritabanı sorguları gibi ayrı işlevleri yerine getirir.
 
-Bir araç örneği şöyle olabilir:
+Bir araç örneği şu şekilde olabilir:
 
 ```typescript
 server.tool(
-  "GetProducts"
+  "GetProducts",
   {
     pageSize: z.string().optional(),
     pageCount: z.string().optional()
@@ -125,89 +125,89 @@ server.tool(
 )
 ```
 
-## Client Özellikleri
+## İstemci Özellikleri
 
-Model Context Protocol (MCP) içinde clients, sunuculara çeşitli temel özellikler sunarak protokol içindeki genel işlevselliği ve etkileşimi artırır. Öne çıkan özelliklerden biri Sampling’dir.
+Model Context Protocol (MCP) içinde istemciler, sunuculara çeşitli önemli özellikler sunarak protokol içindeki genel işlevselliği ve etkileşimi geliştirir. Öne çıkan özelliklerden biri Sampling'dir.
 
 ### 👉 Sampling
 
-- **Sunucu Tarafından Başlatılan Ajan Davranışları**: Clients, sunucuların belirli eylemleri veya davranışları otonom olarak başlatmasını sağlar, sistemin dinamik yeteneklerini artırır.
-- **Yinelenen LLM Etkileşimleri**: Bu özellik, büyük dil modelleri (LLM'ler) ile yinelenen etkileşimlere olanak tanır, görevlerin daha karmaşık ve yinelemeli işlenmesini sağlar.
-- **Ek Model Tamamlamaları Talebi**: Sunucular, modelden ek tamamlamalar talep edebilir, böylece yanıtların kapsamlı ve bağlamsal olarak uygun olması sağlanır.
+- **Sunucu Başlatmalı Ajan Davranışları**: İstemciler, sunucuların belirli eylemleri veya davranışları özerk olarak başlatmasına olanak tanır, sistemin dinamik yeteneklerini artırır.
+- **Yinelenen LLM Etkileşimleri**: Bu özellik, büyük dil modelleriyle (LLM) yinelenen etkileşimlere izin verir, böylece görevlerin daha karmaşık ve yinelemeli işlenmesini sağlar.
+- **Ek Model Tamamlamaları Talebi**: Sunucular, yanıtların kapsamlı ve bağlama uygun olmasını sağlamak için modelden ek tamamlamalar talep edebilir.
 
 ## MCP'de Bilgi Akışı
 
-Model Context Protocol (MCP), hosts, clients, servers ve modeller arasında yapılandırılmış bir bilgi akışı tanımlar. Bu akışı anlamak, kullanıcı isteklerinin nasıl işlendiğini ve dış araçlar ile verilerin model yanıtlarına nasıl entegre edildiğini netleştirir.
+Model Context Protocol (MCP), hostlar, istemciler, sunucular ve modeller arasında yapılandırılmış bir bilgi akışı tanımlar. Bu akışın anlaşılması, kullanıcı isteklerinin nasıl işlendiğini ve dış araçlar ile verilerin model yanıtlarına nasıl entegre edildiğini açıklığa kavuşturur.
 
 - **Host Bağlantı Başlatır**  
-  Host uygulaması (örneğin bir IDE veya sohbet arayüzü), genellikle STDIO, WebSocket veya desteklenen başka bir taşıma yöntemiyle MCP sunucusuna bağlantı kurar.
+  Host uygulaması (örneğin bir IDE veya sohbet arayüzü), genellikle STDIO, WebSocket veya desteklenen başka bir taşıma yoluyla MCP sunucusuna bağlantı kurar.
 
 - **Yetenek Müzakeresi**  
-  Host içindeki client ile sunucu, destekledikleri özellikler, araçlar, kaynaklar ve protokol sürümleri hakkında bilgi alışverişi yapar. Bu, her iki tarafın oturum için hangi yeteneklerin mevcut olduğunu anlamasını sağlar.
+  Host içindeki istemci ve sunucu, destekledikleri özellikler, araçlar, kaynaklar ve protokol sürümleri hakkında bilgi alışverişi yapar. Bu, her iki tarafın oturum için mevcut yetenekleri anlamasını sağlar.
 
 - **Kullanıcı İsteği**  
-  Kullanıcı host ile etkileşime girer (örneğin bir istem veya komut girer). Host bu girdiyi toplar ve işleme için client’a iletir.
+  Kullanıcı host ile etkileşime girer (örneğin bir istem veya komut girer). Host bu girdiyi toplar ve işlenmek üzere istemciye iletir.
 
 - **Kaynak veya Araç Kullanımı**  
-  - Client, modelin anlayışını zenginleştirmek için sunucudan ek bağlam veya kaynaklar (dosyalar, veritabanı kayıtları veya bilgi tabanı makaleleri gibi) talep edebilir.  
-  - Model bir aracın gerekli olduğuna karar verirse (örneğin veri çekmek, hesaplama yapmak veya API çağrısı yapmak için), client araç çağrısı isteğini sunucuya gönderir; araç adı ve parametreleri belirtilir.
+  - İstemci, modelin anlayışını zenginleştirmek için sunucudan ek bağlam veya kaynaklar (dosyalar, veritabanı girdileri, bilgi tabanı makaleleri gibi) talep edebilir.
+  - Model, bir aracın gerekli olduğunu belirlerse (örneğin veri almak, hesaplama yapmak veya API çağrısı yapmak için), istemci araç çağrısı isteğini sunucuya, araç adı ve parametreleriyle birlikte gönderir.
 
-- **Sunucu Çalıştırması**  
-  Sunucu kaynak veya araç isteğini alır, gerekli işlemleri yapar (fonksiyon çalıştırma, veritabanı sorgulama veya dosya alma gibi) ve sonuçları yapılandırılmış biçimde client’a döner.
+- **Sunucu İşlemi**  
+  Sunucu kaynak veya araç isteğini alır, gerekli işlemleri yapar (örneğin bir fonksiyon çalıştırma, veritabanı sorgulama veya dosya alma) ve sonuçları yapılandırılmış formatta istemciye döner.
 
 - **Yanıt Oluşturma**  
-  Client, sunucunun yanıtlarını (kaynak verileri, araç çıktıları vb.) devam eden model etkileşimine entegre eder. Model, kapsamlı ve bağlamsal olarak uygun bir yanıt üretmek için bu bilgileri kullanır.
+  İstemci, sunucunun yanıtlarını (kaynak verileri, araç çıktıları vb.) devam eden model etkileşimine entegre eder. Model, bu bilgileri kapsamlı ve bağlama uygun yanıt üretmek için kullanır.
 
 - **Sonucun Sunumu**  
-  Host, client’tan aldığı nihai çıktıyı kullanıcıya sunar; genellikle modelin oluşturduğu metin ve araç çalıştırma ya da kaynak sorgulama sonuçları birlikte gösterilir.
+  Host, istemciden gelen nihai çıktıyı alır ve kullanıcıya sunar; genellikle model tarafından üretilen metin ile araç çalıştırma veya kaynak sorgulama sonuçlarını içerir.
 
-Bu akış, MCP’nin modelleri dış araçlar ve veri kaynaklarıyla kesintisiz bağlayarak gelişmiş, etkileşimli ve bağlam farkındalığı yüksek yapay zeka uygulamalarını desteklemesini sağlar.
+Bu akış, MCP'nin modelleri dış araçlar ve veri kaynaklarıyla sorunsuzca bağlayarak gelişmiş, etkileşimli ve bağlam farkındalığı yüksek yapay zeka uygulamalarını desteklemesini sağlar.
 
 ## Protokol Detayları
 
-MCP (Model Context Protocol), hosts, clients ve servers arasında iletişim için standartlaştırılmış, dil bağımsız bir mesaj formatı sağlayan [JSON-RPC 2.0](https://www.jsonrpc.org/) üzerine inşa edilmiştir. Bu temel, farklı platformlar ve programlama dilleri arasında güvenilir, yapılandırılmış ve genişletilebilir etkileşimlere olanak tanır.
+MCP (Model Context Protocol), [JSON-RPC 2.0](https://www.jsonrpc.org/) üzerine inşa edilmiştir ve hostlar, istemciler ile sunucular arasında standart, dil bağımsız mesaj formatı sağlar. Bu temel, farklı platformlar ve programlama dilleri arasında güvenilir, yapılandırılmış ve genişletilebilir etkileşimlere olanak tanır.
 
 ### Temel Protokol Özellikleri
 
-MCP, araç çağrısı, kaynak erişimi ve istem yönetimi için ek kurallarla JSON-RPC 2.0’ı genişletir. Çoklu taşıma katmanlarını (STDIO, WebSocket, SSE) destekler ve bileşenler arasında güvenli, genişletilebilir ve dil bağımsız iletişim sağlar.
+MCP, araç çağrısı, kaynak erişimi ve istem yönetimi için ek kurallarla JSON-RPC 2.0'ı genişletir. Birden çok taşıma katmanını (STDIO, WebSocket, SSE) destekler ve bileşenler arasında güvenli, genişletilebilir ve dil bağımsız iletişim sağlar.
 
 #### 🧢 Temel Protokol
 
-- **JSON-RPC Mesaj Formatı**: Tüm istek ve yanıtlar JSON-RPC 2.0 spesifikasyonuna uygun olarak yapılandırılır; metod çağrıları, parametreler, sonuçlar ve hata yönetimi tutarlı biçimdedir.
-- **Durumlu Bağlantılar**: MCP oturumları, birden fazla istek boyunca durumu korur; devam eden konuşmaları, bağlam birikimini ve kaynak yönetimini destekler.
-- **Yetenek Müzakeresi**: Bağlantı kurulurken, clients ve servers destekledikleri özellikler, protokol sürümleri, mevcut araçlar ve kaynaklar hakkında bilgi alışverişi yapar. Bu, her iki tarafın birbirinin yeteneklerini anlamasını ve uyum sağlamasını sağlar.
+- **JSON-RPC Mesaj Formatı**: Tüm istekler ve yanıtlar JSON-RPC 2.0 spesifikasyonunu kullanır, böylece yöntem çağrıları, parametreler, sonuçlar ve hata yönetimi için tutarlı yapı sağlanır.
+- **Durumlu Bağlantılar**: MCP oturumları, birden çok istek boyunca durumu korur; devam eden konuşmaları, bağlam birikimini ve kaynak yönetimini destekler.
+- **Yetenek Müzakeresi**: Bağlantı kurulurken, istemciler ve sunucular desteklenen özellikler, protokol sürümleri, mevcut araçlar ve kaynaklar hakkında bilgi alışverişi yapar. Bu, her iki tarafın birbirinin yeteneklerini anlamasını ve uyum sağlamasını sağlar.
 
 #### ➕ Ek Yardımcılar
 
-MCP, geliştirici deneyimini artırmak ve gelişmiş senaryoları mümkün kılmak için aşağıdaki ek yardımcılar ve protokol uzantılarını sunar:
+MCP'nin geliştirici deneyimini artırmak ve gelişmiş senaryoları desteklemek için sunduğu ek yardımcılar ve protokol genişletmeleri şunlardır:
 
-- **Konfigürasyon Seçenekleri**: MCP, oturum parametrelerinin dinamik yapılandırılmasına izin verir; araç izinleri, kaynak erişimi ve model ayarları gibi etkileşimlere özel ayarlamalar yapılabilir.
-- **İlerleme Takibi**: Uzun süren işlemler ilerleme güncellemeleri raporlayabilir; bu sayede kullanıcı arayüzleri daha duyarlı olur ve karmaşık görevlerde kullanıcı deneyimi iyileşir.
-- **İstek İptali**: Clients, devam eden istekleri iptal edebilir; kullanıcılar artık gerek kalmayan veya çok uzun süren işlemleri durdurabilir.
-- **Hata Raporlama**: Standartlaştırılmış hata mesajları ve kodları, sorunların teşhis edilmesini, hataların zarifçe yönetilmesini ve kullanıcılar ile geliştiricilere uygulanabilir geri bildirim sağlanmasını kolaylaştırır.
-- **Kayıt Tutma**: Hem clients hem de servers, denetim, hata ayıklama ve protokol etkileşimlerinin izlenmesi için yapılandırılmış loglar üretebilir.
+- **Yapılandırma Seçenekleri**: MCP, oturum parametrelerinin dinamik yapılandırılmasına izin verir; araç izinleri, kaynak erişimi ve model ayarları gibi, her etkileşime özel olarak uyarlanabilir.
+- **İlerleme Takibi**: Uzun süren işlemler ilerleme güncellemeleri raporlayabilir, bu da kullanıcı arayüzlerinin daha duyarlı olmasını ve karmaşık görevlerde daha iyi deneyim sağlar.
+- **İstek İptali**: İstemciler, devam eden istekleri iptal edebilir; böylece artık gerekli olmayan veya çok uzun süren işlemler durdurulabilir.
+- **Hata Bildirimi**: Standartlaştırılmış hata mesajları ve kodları, sorunların teşhisini, hataların zarif yönetimini ve kullanıcılara ile geliştiricilere uygulanabilir geri bildirim sağlamayı kolaylaştırır.
+- **Kayıt Tutma**: Hem istemciler hem de sunucular, protokol etkileşimlerini denetleme, hata ayıklama ve izleme için yapılandırılmış günlükler oluşturabilir.
 
-Bu protokol özellikleri sayesinde MCP, dil modelleri ile dış araçlar veya veri kaynakları arasında sağlam, güvenli ve esnek iletişim sağlar.
+Bu protokol özelliklerini kullanarak MCP, dil modelleri ile dış araçlar veya veri kaynakları arasında sağlam, güvenli ve esnek iletişim sağlar.
 
 ### 🔐 Güvenlik Hususları
 
-MCP uygulamaları, güvenli ve güvenilir etkileşimler sağlamak için birkaç temel güvenlik ilkesine uymalıdır:
+MCP uygulamaları, güvenli ve güvenilir etkileşimler sağlamak için aşağıdaki temel güvenlik ilkelerine uymalıdır:
 
-- **Kullanıcı Onayı ve Kontrolü**: Herhangi bir veri erişimi veya işlem gerçekleştirilmeden önce kullanıcıdan açık onay alınmalıdır. Kullanıcılar, hangi verilerin paylaşıldığı ve hangi işlemlerin yetkilendirildiği üzerinde net kontrole sahip olmalı; bu işlemleri gözden geçirme ve onaylama için sezgisel kullanıcı arayüzleri desteklenmelidir.
+- **Kullanıcı Onayı ve Kontrolü**: Herhangi bir veri erişimi veya işlem yapılmadan önce kullanıcıdan açık onay alınmalıdır. Kullanıcılar, hangi verilerin paylaşıldığı ve hangi işlemlerin yetkilendirildiği üzerinde net kontrole sahip olmalı, bu faaliyetleri gözden geçirmek ve onaylamak için sezgisel kullanıcı arayüzleri sunulmalıdır.
 
-- **Veri Gizliliği**: Kullanıcı verileri yalnızca açık onayla paylaşılmalı ve uygun erişim kontrolleriyle korunmalıdır. MCP uygulamaları, yetkisiz veri iletimine karşı koruma sağlamalı ve gizliliğin tüm etkileşimler boyunca sürdürülmesini temin etmelidir.
+- **Veri Gizliliği**: Kullanıcı verileri yalnızca açık onayla paylaşılmalı ve uygun erişim kontrolleri ile korunmalıdır. MCP uygulamaları, yetkisiz veri iletimine karşı koruma sağlamalı ve tüm etkileşimlerde gizliliğin korunmasını güvence altına almalıdır.
 
-- **Araç Güvenliği**: Herhangi bir araç çağrılmadan önce açık kullanıcı onayı gereklidir. Kullanıcılar, her aracın işlevselliğini net şekilde anlamalı ve istenmeyen veya güvensiz araç çalıştırmalarını önlemek için sağlam güvenlik sınırları uygulanmalıdır.
+- **Araç Güvenliği**: Herhangi bir araç çağrılmadan önce açık kullanıcı onayı gereklidir. Kullanıcılar her aracın işlevselliğini net şekilde anlamalı ve istenmeyen veya güvensiz araç çalıştırmayı önlemek için sağlam güvenlik sınırları uygulanmalıdır.
 
 Bu ilkeler takip edilerek, MCP kullanıcı güveni, gizliliği ve güvenliğini tüm protokol etkileşimlerinde korur.
 
 ## Kod Örnekleri: Temel Bileşenler
 
-Aşağıda, popüler programlama dillerinde MCP sunucu bileşenleri ve araçlarının nasıl uygulanacağını gösteren kod örnekleri bulunmaktadır.
+Aşağıda, popüler programlama dillerinde temel MCP sunucu bileşenleri ve araçlarının nasıl uygulanacağını gösteren kod örnekleri bulunmaktadır.
 
 ### .NET Örneği: Araçlarla Basit Bir MCP Sunucusu Oluşturma
 
-İşte özel araçlar tanımlamayı ve kaydetmeyi, istekleri işlemeyi ve Model Context Protocol kullanarak sunucu bağlantısı kurmayı gösteren pratik bir .NET kod örneği.
+İşte özel araçlar içeren basit bir MCP sunucusunu nasıl uygulayacağını gösteren pratik .NET kod örneği. Bu örnek, araçların tanımlanması, kaydedilmesi, isteklerin işlenmesi ve Model Context Protocol kullanılarak sunucuya bağlanmayı gösterir.
 
 ```csharp
 using System;
@@ -268,7 +268,7 @@ public class WeatherData
 
 ### Java Örneği: MCP Sunucu Bileşenleri
 
-Bu örnek, yukarıdaki .NET örneğiyle aynı MCP sunucu ve araç kaydını Java ile uygular.
+Bu örnek, yukarıdaki .NET örneğiyle aynı MCP sunucusu ve araç kaydını Java dilinde uygular.
 
 ```java
 import io.modelcontextprotocol.server.McpServer;
@@ -348,7 +348,7 @@ class WeatherData {
 
 ### Python Örneği: MCP Sunucusu Oluşturma
 
-Bu örnekte, Python’da bir MCP sunucusunun nasıl kurulacağı gösterilir. Ayrıca iki farklı araç oluşturma yöntemi sunulur.
+Bu örnekte, Python'da bir MCP sunucusunun nasıl oluşturulacağı gösterilir. Ayrıca iki farklı araç oluşturma yöntemi sunulur.
 
 ```python
 #!/usr/bin/env python3
@@ -399,7 +399,7 @@ if __name__ == "__main__":
 
 ### JavaScript Örneği: MCP Sunucusu Oluşturma
 
-Bu örnek, JavaScript ile MCP sunucusu oluşturmayı ve hava durumu ile ilgili iki aracın kaydını gösterir.
+Bu örnek, JavaScript'te MCP sunucusunun nasıl oluşturulacağını ve hava durumu ile ilgili iki aracın nasıl kaydedileceğini gösterir.
 
 ```javascript
 // Using the official Model Context Protocol SDK
@@ -484,19 +484,17 @@ server.connect(transport).catch(console.error);
 console.log("Weather MCP Server started");
 ```
 
-Bu JavaScript örneği, bir MCP client’ın sunucuya bağlanmasını, bir istem göndermesini ve yapılan araç çağrılarını içeren yanıtı işlemesini gösterir.
+Bu JavaScript örneği, bir MCP istemcisinin sunucuya nasıl bağlanacağını, bir istem göndereceğini ve yapılan araç çağrılarını içeren yanıtı nasıl işleyeceğini gösterir.
 
 ## Güvenlik ve Yetkilendirme
 
-MCP, protokol boyunca güvenlik ve yetkilendirmeyi yönetmek için birkaç yerleşik kavram ve mekanizma içerir:
+MCP, protokol boyunca güvenlik ve yetkilendirmeyi yönetmek için bir dizi yerleşik kavram ve mekanizma içerir:
 
 1. **Araç İzin Kontrolü**:  
-  Clients, bir modelin oturum sırasında hangi araçları kullanabileceğini belirtebilir. Bu, yalnızca açıkça yetkilendirilmiş araçların erişilebilir olmasını sağlar ve istenmeyen veya güvensiz işlemlerin riskini azaltır. İzinler, kullanıcı tercihleri, organizasyon politikaları veya etkileşim bağlamına göre dinamik olarak yapılandırılabilir.
+   İstemciler, bir modelin oturum sırasında hangi araçları kullanabileceğini belirtebilir. Bu, yalnızca açıkça yetkilendirilmiş araçlara erişim sağlanmasını garanti eder ve istenmeyen veya güvensiz işlemler riskini azaltır. İzinler, kullanıcı tercihleri, organizasyon politikaları veya etkileşim bağlamına göre dinamik olarak yapılandırılabilir.
 
 2. **Kimlik Doğrulama**:  
-  Sunucular, araçlara, kaynaklara veya hassas işlemlere erişim öncesinde kimlik doğrulama isteyebilir. Bu API anahtarları, OAuth token’ları veya diğer kimlik doğrulama şemalarını içerebilir. Doğru kimlik doğrulama, yalnızca güvenilir client ve kullanıcıların sunucu tarafı yetenekleri çağırmasını sağlar.
-
-3. **Doğrulama**
+   Sunucular, araçlara
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek herhangi bir yanlış anlama veya yorum hatasından sorumlu değiliz.
