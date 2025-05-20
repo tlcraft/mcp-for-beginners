@@ -1,4 +1,4 @@
-# Lessons from Early Adoprters
+# Lessons from Early Adopters
 
 ## Overview
 

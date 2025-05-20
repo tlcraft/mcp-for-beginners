@@ -21,7 +21,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **Doświadczenie użytkownika:** Udostępnia interfejs konwersacyjny, pozwalający użytkownikom na interakcję z agentami podróży, zasilany przez Azure OpenAI i MCP.
 
 ## Architektura
-![Architecture](https://github.com/Azure-Samples/azure-ai-travel-agents/blob/main/docs/ai-travel-agents-architecture-diagram.png)
+![Architecture](https://raw.githubusercontent.com/Azure-Samples/azure-ai-travel-agents/main/docs/ai-travel-agents-architecture-diagram.png)
 
 ### Opis diagramu architektury
 

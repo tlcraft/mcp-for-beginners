@@ -12,7 +12,7 @@
 - **User Experience:** Provides a conversational interface for users to interact with the travel agents, powered by Azure OpenAI and MCP.
 
 ## Architecture
-![Architecture](https://github.com/Azure-Samples/azure-ai-travel-agents/blob/main/docs/ai-travel-agents-architecture-diagram.png)
+![Architecture](https://raw.githubusercontent.com/Azure-Samples/azure-ai-travel-agents/main/docs/ai-travel-agents-architecture-diagram.png)
 
 ### Architecture Diagram Description
 

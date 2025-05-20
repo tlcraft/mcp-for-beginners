@@ -546,4 +546,4 @@ Design a simple MCP tool that would be useful in your domain. Define:
 
 ## What's next
 
-Next: [Chapter 2: Security](/02-Security/readme.md)
+Next: [Chapter 2: Security](/02-Security/README.md)

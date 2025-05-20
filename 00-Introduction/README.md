@@ -1,6 +1,6 @@
 # Introduction to Model Context Protocol (MCP): Why It Matters for Scalable AI Applications
 
-Generative AI applications are a great step forward as they often let the user interact with the app using natural language prompts. However, as more time and resources are invested in such apps, you want to make sure you can easily integrate functionalities and resources in such a way that it's easy to extend, that your app can cater to more than one model being used, and its intricacies. In short, building Gen AI apps is easy to begin with but as it grows and becomes more complex, you need to start defining an architecture and most likely will need to lean on a standard to make sure your apps are built in a consistent way. This is where MCP comes in to organize things, to provide a standard.
+Generative AI applications are a great step forward as they often let the user interact with the app using natural language prompts. However, as more time and resources are invested in such apps, you want to make sure you can easily integrate functionalities and resources in such a way that it's easy to extend, that your app can cater to more than one model being used, and handle various model intricacies. In short, building Gen AI apps is easy to begin with, but as they grow and become more complex, you need to start defining an architecture and will likely need to rely on a standard to ensure your apps are built in a consistent way. This is where MCP comes in to organize things and provide a standard.
 
 ---
 
@@ -194,11 +194,11 @@ graph TD
 ```
 ## 🔐 Practical Benefits of MCP
 
-Here's the practical benefits to using MCP:
+Here are the practical benefits of using MCP:
 
 - **Freshness**: Models can access up-to-date information beyond their training data
 - **Capability Extension**: Models can leverage specialized tools for tasks they weren't trained for
-- **Reduced hallucinations**: External data sources provide factual grounding
+- **Reduced Hallucinations**: External data sources provide factual grounding
 - **Privacy**: Sensitive data can stay within secure environments instead of being embedded in prompts
 
 ## 📌 Key Takeaways
