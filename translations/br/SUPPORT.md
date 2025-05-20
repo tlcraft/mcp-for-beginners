@@ -1,33 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b7244261ee19497082edf33bcce64717",
-  "translation_date": "2025-05-17T05:48:01+00:00",
+  "original_hash": "b3cffaf217113101e21eba532be806ea",
+  "translation_date": "2025-05-20T21:15:14+00:00",
   "source_file": "SUPPORT.md",
   "language_code": "br"
 }
 -->
-# TODO: O responsável por este repositório ainda não editou este arquivo
+# Apoio
 
-**PROPRIETÁRIO DO REPO**: Você quer suporte do Serviço de Atendimento ao Cliente (CSS) para este produto/projeto?
+## Como registrar problemas e obter ajuda  
 
-- **Sem suporte CSS:** Preencha este modelo com informações sobre como registrar problemas e obter ajuda.
-- **Com suporte CSS:** Preencha um formulário de entrada em [aka.ms/onboardsupport](https://aka.ms/onboardsupport). O CSS trabalhará com/você para determinar os próximos passos.
-- **Não tem certeza?** Preencha um formulário de entrada como se a resposta fosse "Sim". O CSS ajudará você a decidir.
+Este projeto utiliza GitHub Issues para acompanhar bugs e solicitações de funcionalidades. Por favor, pesquise os issues existentes antes de abrir novos para evitar duplicatas. Para novos problemas, registre seu bug ou solicitação de funcionalidade como um novo Issue.
 
-*Então, remova este primeiro título deste arquivo SUPPORT.MD antes de publicar seu repositório.*
+Para ajuda e dúvidas sobre o uso deste projeto, por favor:
+- Confira o [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4), onde especialistas e desenvolvedores se reúnem
+- Utilize os recursos da [Model Context Protocol Community](https://modelcontextprotocol.io/community/) para perguntas relacionadas ao protocolo
 
-# Suporte
+## Política de Suporte da Microsoft  
 
-## Como registrar problemas e obter ajuda
-
-Este projeto usa GitHub Issues para rastrear bugs e solicitações de recursos. Por favor, pesquise as issues existentes antes de registrar novas para evitar duplicatas. Para novas issues, registre seu bug ou solicitação de recurso como uma nova Issue.
-
-Para ajuda e dúvidas sobre o uso deste projeto, por favor **MANTENEDOR DO REPO: INSIRA INSTRUÇÕES AQUI SOBRE COMO ENGAJAR OS PROPRIETÁRIOS DO REPO OU A COMUNIDADE PARA AJUDA. PODERIA SER UMA TAG NO STACK OVERFLOW OU OUTRO CANAL. ONDE VOCÊ AJUDARÁ AS PESSOAS?**.
-
-## Política de Suporte da Microsoft
-
-O suporte para este **PROJETO ou PRODUTO** é limitado aos recursos listados acima.
+O suporte para o projeto Model Context Protocol (MCP) for Beginners está limitado aos recursos listados acima.
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações errôneas decorrentes do uso desta tradução.
+Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.

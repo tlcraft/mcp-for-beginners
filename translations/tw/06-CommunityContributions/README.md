@@ -1,84 +1,84 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6e190a963029f156b7ecffad7093b8ce",
-  "translation_date": "2025-05-17T15:48:24+00:00",
+  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
+  "translation_date": "2025-05-20T20:43:55+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "tw"
 }
 -->
-# 社群與貢獻
+# Community and Contributions
 
-## 概述
+## Overview
 
-本課程重點在於如何參與MCP社群、貢獻於MCP生態系統，以及遵循協作開發的最佳實踐。了解如何參與開源MCP專案對於希望塑造此技術未來的人至關重要。
+這一課著重於如何參與 MCP 社群、為 MCP 生態系統做出貢獻，以及遵循協作開發的最佳實踐。了解如何參與開源 MCP 專案，對於想要塑造這項技術未來的人來說至關重要。
 
-## 學習目標
+## Learning Objectives
 
-完成本課程後，你將能夠：
-- 了解MCP社群與生態系統的結構
-- 有效參與MCP社群論壇與討論
-- 貢獻於MCP開源倉庫
-- 創建並分享自訂的MCP工具
-- 遵循MCP開發與協作的最佳實踐
+完成本課後，你將能夠：
+- 了解 MCP 社群和生態系統的結構
+- 有效參與 MCP 社群論壇和討論
+- 為 MCP 開源資源庫做出貢獻
+- 創建並分享自訂的 MCP 工具
+- 遵循 MCP 開發與協作的最佳實踐
 
-## MCP社群生態系統
+## The MCP Community Ecosystem
 
-MCP生態系統由多個元件與參與者組成，共同推進協議的發展。
+MCP 生態系統由多個組成部分和參與者共同推動協議的進步。
 
-### 主要社群元件
+### Key Community Components
 
-1. **核心協議維護者**：Microsoft及其他組織維護核心MCP規範與參考實作
-2. **工具開發者**：創建MCP工具的個人與團隊
-3. **整合供應商**：將MCP整合到其產品與服務中的公司
-4. **終端使用者**：在應用中使用MCP的開發者與組織
-5. **貢獻者**：貢獻代碼、文件或其他資源的社群成員
+1. **Core Protocol Maintainers**：Microsoft 及其他維護核心 MCP 規範與參考實作的組織
+2. **Tool Developers**：創造 MCP 工具的個人與團隊
+3. **Integration Providers**：將 MCP 整合到產品與服務中的公司
+4. **End Users**：在應用程式中使用 MCP 的開發者與組織
+5. **Contributors**：為社群貢獻程式碼、文件或其他資源的成員
 
-### 社群資源
+### Community Resources
 
-#### 官方管道
+#### Official Channels
 
-- [MCP GitHub倉庫](https://github.com/modelcontextprotocol)
-- [MCP文件](https://modelcontextprotocol.io/)
-- [MCP規範](https://spec.modelcontextprotocol.io/)
-- [GitHub討論](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
 
-#### 社群驅動資源
+#### Community-Driven Resources
 
-- 特定語言的SDK實作
-- 伺服器實作與工具庫
-- 部落格文章與教程
-- 社群論壇與社交媒體討論
+- 針對不同語言的 SDK 實作
+- 伺服器實作與工具函式庫
+- 部落格文章與教學
+- 社群論壇與社群媒體討論
 
-## 貢獻於MCP
+## Contributing to MCP
 
-### 貢獻類型
+### Types of Contributions
 
-MCP生態系統歡迎各種類型的貢獻：
+MCP 生態系統歡迎各種形式的貢獻：
 
-1. **代碼貢獻**：
-   - 核心協議增強
-   - 錯誤修正
+1. **Code Contributions**：
+   - 核心協議的改進
+   - 修復錯誤
    - 工具實作
-   - 不同語言的客戶端/伺服器庫
+   - 不同語言的客戶端／伺服器函式庫
 
-2. **文件**：
-   - 改進現有文件
-   - 創建教程與指南
-   - 翻譯文件
-   - 創建範例與示例應用
+2. **Documentation**：
+   - 改善現有文件
+   - 製作教學與指南
+   - 文件翻譯
+   - 創建範例與示範應用程式
 
-3. **社群支持**：
-   - 在論壇回答問題
-   - 測試並報告問題
+3. **Community Support**：
+   - 回答論壇問題
+   - 測試並回報問題
    - 組織社群活動
    - 指導新貢獻者
 
-### 貢獻過程：核心協議
+### Contribution Process: Core Protocol
 
-要貢獻於核心MCP協議或官方實作：
+若要對核心 MCP 協議或官方實作做出貢獻：
 
-#### .NET範例：貢獻協議增強
+#### .NET Example: Contributing a Protocol Enhancement
 
 ```csharp
 // Example contribution to MCP protocol: Adding support for binary data streams
@@ -145,7 +145,7 @@ namespace Microsoft.Mcp.Protocol
 }
 ```
 
-#### Java範例：貢獻錯誤修正
+#### Java Example: Contributing a Bug Fix
 
 ```java
 package com.mcp.tools;
@@ -230,7 +230,7 @@ public class ToolParameterValidator {
 }
 ```
 
-#### Python範例：貢獻新工具到標準庫
+#### Python Example: Contributing a New Tool to the Standard Library
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -390,23 +390,23 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### 貢獻指南
+### Contribution Guidelines
 
-要成功貢獻於MCP專案：
+成功為 MCP 專案貢獻的建議步驟：
 
-1. **從小開始**：從文件、錯誤修正或小增強開始
-2. **遵循風格指南**：遵循專案的代碼風格與約定
-3. **撰寫測試**：為你的代碼貢獻加入單元測試
-4. **記錄你的工作**：為新功能或更改添加清晰的文件
-5. **提交有針對性的PR**：保持拉取請求專注於單一問題或功能
-6. **回應反饋**：對貢獻的反饋保持回應
+1. **Start Small**：先從文件、錯誤修正或小幅改進開始
+2. **Follow the Style Guide**：遵守專案的程式風格與慣例
+3. **Write Tests**：為程式碼貢獻撰寫單元測試
+4. **Document Your Work**：為新功能或變更撰寫清楚的文件
+5. **Submit Targeted PRs**：保持拉取請求聚焦在單一問題或功能
+6. **Engage with Feedback**：積極回應貢獻的回饋意見
 
-### 範例貢獻工作流程
+### Example Contribution Workflow
 
 ```bash
 # Clone the repository
 git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp
+cd mcp-for-beginners
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -429,13 +429,13 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## 創建並分享自訂MCP工具
+## Creating and Sharing Custom MCP Tools
 
-創建並分享自訂工具是貢獻於MCP生態系統的最有價值方式之一。
+創造並分享自訂 MCP 工具，是對 MCP 生態系統最有價值的貢獻方式之一。
 
-### 開發可分享的工具
+### Developing Shareable Tools
 
-#### .NET範例：創建可分享的工具包
+#### .NET Example: Creating a Shareable Tool Package
 
 ```csharp
 // Create a new .NET library project
@@ -541,7 +541,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Java範例：為工具創建Maven包
+#### Java Example: Creating a Maven Package for Tools
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -642,7 +642,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Python範例：發布PyPI包
+#### Python Example: Publishing a PyPI Package
 
 ```python
 # Directory structure for a PyPI package:
@@ -747,68 +747,68 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### 分享最佳實踐
+### Sharing Best Practices
 
-與社群分享MCP工具時：
+與社群分享 MCP 工具時，請注意：
 
-1. **完整文件**：
-   - 記錄目的、使用方法與範例
-   - 解釋參數與返回值
-   - 記錄任何外部依賴
+1. **Complete Documentation**：
+   - 文件說明用途、使用方法與範例
+   - 解釋參數與回傳值
+   - 文件化任何外部依賴
 
-2. **錯誤處理**：
-   - 實施穩健的錯誤處理
+2. **Error Handling**：
+   - 實作完善的錯誤處理
    - 提供有用的錯誤訊息
-   - 優雅地處理邊緣情況
+   - 優雅處理邊界狀況
 
-3. **性能考量**：
+3. **Performance Considerations**：
    - 優化速度與資源使用
-   - 在適當時實施緩存
-   - 考慮可擴展性
+   - 適當時實作快取機制
+   - 考量擴充性
 
-4. **安全性**：
-   - 使用安全的API密鑰與身份驗證
-   - 驗證與清理輸入
-   - 對外部API調用實施速率限制
+4. **Security**：
+   - 使用安全的 API 金鑰與驗證機制
+   - 驗證並清理輸入資料
+   - 對外部 API 呼叫實作速率限制
 
-5. **測試**：
-   - 包括全面的測試覆蓋
-   - 使用不同的輸入類型與邊緣情況進行測試
-   - 記錄測試程序
+5. **Testing**：
+   - 包含完整的測試覆蓋率
+   - 測試不同輸入類型與邊界狀況
+   - 文件化測試程序
 
-## 社群協作與最佳實踐
+## Community Collaboration and Best Practices
 
-有效的協作是繁榮的MCP生態系統的關鍵。
+有效的協作是 MCP 生態系統蓬勃發展的關鍵。
 
-### 通訊渠道
+### Communication Channels
 
-- GitHub問題與討論
-- Microsoft技術社群
-- Discord與Slack頻道
+- GitHub Issues 和 Discussions
+- Microsoft Tech Community
+- Discord 和 Slack 頻道
 - Stack Overflow（標籤：`model-context-protocol` or `mcp`）
 
-### 代碼審查
+### Code Reviews
 
-審查MCP貢獻時：
+審查 MCP 貢獻時，請注意：
 
-1. **清晰度**：代碼是否清晰且有良好的文件？
-2. **正確性**：是否按預期工作？
-3. **一致性**：是否遵循專案約定？
-4. **完整性**：是否包含測試與文件？
-5. **安全性**：是否有任何安全問題？
+1. **Clarity**：程式碼是否清楚且有良好文件？
+2. **Correctness**：功能是否如預期運作？
+3. **Consistency**：是否符合專案慣例？
+4. **Completeness**：是否包含測試與文件？
+5. **Security**：是否有安全疑慮？
 
-### 版本相容性
+### Version Compatibility
 
-開發MCP時：
+開發 MCP 時：
 
-1. **協議版本管理**：遵循你的工具支持的MCP協議版本
-2. **客戶端相容性**：考慮向後相容性
-3. **伺服器相容性**：遵循伺服器實作指南
-4. **重大更改**：清晰記錄任何重大更改
+1. **Protocol Versioning**：遵守你工具支援的 MCP 協議版本
+2. **Client Compatibility**：考慮向後相容性
+3. **Server Compatibility**：遵循伺服器實作指引
+4. **Breaking Changes**：明確文件化任何重大變更
 
-## 範例社群專案：MCP工具註冊表
+## Example Community Project: MCP Tool Registry
 
-重要的社群貢獻可以是開發一個MCP工具的公共註冊表。
+一個重要的社群貢獻可能是開發 MCP 工具的公開登錄庫。
 
 ```python
 # Example schema for a community tool registry API
@@ -887,29 +887,30 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## 重要收穫
+## Key Takeaways
 
-- MCP社群多樣化，歡迎各種類型的貢獻
-- 貢獻於MCP可以從核心協議增強到自訂工具
-- 遵循貢獻指南提高PR被接受的機會
-- 創建並分享MCP工具是增強生態系統的有價值方式
-- 社群協作對MCP的成長與改進至關重要
+- MCP 社群多元且歡迎各種形式的貢獻
+- 為 MCP 貢獻可涵蓋從核心協議改進到自訂工具
+- 遵守貢獻指南能提升 PR 被接受的機率
+- 創建並分享 MCP 工具是強化生態系統的寶貴方式
+- 社群協作對 MCP 的成長與改進至關重要
 
-## 練習
+## Exercise
 
-1. 根據你的技能與興趣識別MCP生態系統中你可以貢獻的領域
-2. Fork MCP倉庫並設置本地開發環境
-3. 創建對社群有益的小增強、錯誤修正或工具
-4. 用適當的測試與文件記錄你的貢獻
-5. 向適當的倉庫提交拉取請求
+1. 根據你的技能與興趣，找出 MCP 生態系統中你能貢獻的領域
+2. Fork MCP 資源庫並設置本地開發環境
+3. 創建一個小改進、錯誤修正或工具，造福社群
+4. 以適當的測試與文件記錄你的貢獻
+5. 向適當的資源庫提交拉取請求
 
-## 其他資源
+## Additional Resources
 
-- [MCP社群專案](https://github.com/topics/model-context-protocol)
+- [MCP Community Projects](https://github.com/topics/model-context-protocol)
+
 
 ---
 
-下一步：[早期採用的課程](../07-LessonsfromEarlyAdoption/README.md)
+Next: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **免責聲明**：  
-本文檔使用AI翻譯服務[Co-op Translator](https://github.com/Azure/co-op-translator)進行翻譯。我們努力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原始語言的文件作為權威來源。對於關鍵信息，建議使用專業人工翻譯。對於因使用此翻譯而產生的任何誤解或誤讀，我們不承擔責任。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意自動翻譯可能包含錯誤或不精確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯所產生之任何誤解或誤釋負責。

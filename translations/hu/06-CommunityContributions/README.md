@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6e190a963029f156b7ecffad7093b8ce",
-  "translation_date": "2025-05-17T15:57:20+00:00",
+  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
+  "translation_date": "2025-05-20T22:20:35+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "hu"
 }
@@ -11,74 +11,74 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Áttekintés
 
-Ez a lecke arra összpontosít, hogyan lehet bekapcsolódni az MCP közösségébe, hozzájárulni az MCP ökoszisztémához, és követni a legjobb gyakorlatokat a közös fejlesztéshez. Az MCP nyílt forráskódú projektekben való részvétel megértése elengedhetetlen azok számára, akik formálni szeretnék e technológia jövőjét.
+Ez a lecke arra fókuszál, hogyan lehet bekapcsolódni az MCP közösségbe, hozzájárulni az MCP ökoszisztémához, és követni a legjobb gyakorlatokat a közös fejlesztés során. Az MCP nyílt forráskódú projektjeiben való részvétel megértése elengedhetetlen azok számára, akik szeretnék alakítani ennek a technológiának a jövőjét.
 
 ## Tanulási célok
 
 A lecke végére képes leszel:
 - Megérteni az MCP közösség és ökoszisztéma felépítését
 - Hatékonyan részt venni az MCP közösségi fórumokon és vitákban
-- Hozzájárulni az MCP nyílt forráskódú tárolókhoz
-- Egyedi MCP eszközöket létrehozni és megosztani
-- Követni az MCP fejlesztés és együttműködés legjobb gyakorlatait
+- Hozzájárulni az MCP nyílt forráskódú tárolóihoz
+- Egyedi MCP eszközöket készíteni és megosztani
+- Követni az MCP fejlesztési és együttműködési legjobb gyakorlatokat
 
 ## Az MCP közösségi ökoszisztéma
 
-Az MCP ökoszisztéma különböző komponensekből és résztvevőkből áll, akik együtt dolgoznak a protokoll előmozdításán.
+Az MCP ökoszisztéma különböző elemekből és résztvevőkből áll, akik együtt dolgoznak a protokoll fejlesztésén.
 
-### Kulcsfontosságú közösségi komponensek
+### Kulcsfontosságú közösségi elemek
 
-1. **Alapvető protokoll karbantartók**: Microsoft és más szervezetek, amelyek az MCP specifikációk és referencia implementációk karbantartásáért felelősek
-2. **Eszközfejlesztők**: Személyek és csapatok, akik MCP eszközöket készítenek
-3. **Integrációs szolgáltatók**: Cégek, amelyek integrálják az MCP-t termékeikbe és szolgáltatásaikba
-4. **Végfelhasználók**: Fejlesztők és szervezetek, akik az MCP-t alkalmazásaikban használják
-5. **Hozzájárulók**: Közösségi tagok, akik kódot, dokumentációt vagy más erőforrásokat biztosítanak
+1. **Core Protocol Maintainers**: A Microsoft és más szervezetek, amelyek az MCP alapvető specifikációit és referencia implementációit tartják karban
+2. **Tool Developers**: Egyének és csapatok, akik MCP eszközöket fejlesztenek
+3. **Integration Providers**: Cégek, amelyek beépítik az MCP-t termékeikbe és szolgáltatásaikba
+4. **End Users**: Fejlesztők és szervezetek, akik MCP-t használnak alkalmazásaikban
+5. **Contributors**: Közösségi tagok, akik kódot, dokumentációt vagy más erőforrásokat adnak hozzá
 
-### Közösségi erőforrások
+### Közösségi források
 
 #### Hivatalos csatornák
 
 - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
-- [MCP Dokumentáció](https://modelcontextprotocol.io/)
-- [MCP Specifikáció](https://spec.modelcontextprotocol.io/)
-- [GitHub Viták](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
 
-#### Közösség által vezérelt erőforrások
+#### Közösség által létrehozott források
 
 - Nyelvspecifikus SDK implementációk
 - Szerver implementációk és eszközkönyvtárak
-- Blogbejegyzések és útmutatók
+- Blogbejegyzések és oktatóanyagok
 - Közösségi fórumok és közösségi média viták
 
 ## Hozzájárulás az MCP-hez
 
-### Hozzájárulások típusai
+### Hozzájárulás típusai
 
-Az MCP ökoszisztéma különféle hozzájárulásokat vár:
+Az MCP ökoszisztéma különféle hozzájárulásokat fogad el:
 
-1. **Kódhozzájárulások**:
-   - Alapvető protokoll fejlesztések
+1. **Kód hozzájárulások**:
+   - Core protokoll fejlesztések
    - Hibajavítások
-   - Eszközimplementációk
-   - Ügyfél/szerver könyvtárak különböző nyelveken
+   - Eszköz implementációk
+   - Kliens/szerver könyvtárak különböző nyelveken
 
 2. **Dokumentáció**:
-   - A meglévő dokumentáció javítása
-   - Útmutatók és útmutatók készítése
+   - Meglévő dokumentáció javítása
+   - Oktatóanyagok és útmutatók készítése
    - Dokumentáció fordítása
-   - Példák és mintaalkalmazások készítése
+   - Példák és mintapéldányok készítése
 
 3. **Közösségi támogatás**:
-   - Kérdések megválaszolása a fórumokon
-   - Hibák tesztelése és jelentése
+   - Kérdések megválaszolása fórumokon
+   - Tesztelés és hibajelentés
    - Közösségi események szervezése
    - Új hozzájárulók mentorálása
 
-### Hozzájárulási folyamat: Alapvető protokoll
+### Hozzájárulási folyamat: Core Protocol
 
-Az MCP alapvető protokolljához vagy hivatalos implementációihoz való hozzájárulás:
+Ha a core MCP protokollhoz vagy hivatalos implementációkhoz szeretnél hozzájárulni:
 
-#### .NET Példa: Protokoll fejlesztés hozzájárulása
+#### .NET példa: Protokoll fejlesztés hozzájárulása
 
 ```csharp
 // Example contribution to MCP protocol: Adding support for binary data streams
@@ -145,7 +145,7 @@ namespace Microsoft.Mcp.Protocol
 }
 ```
 
-#### Java Példa: Hibajavítás hozzájárulása
+#### Java példa: Hibajavítás hozzájárulása
 
 ```java
 package com.mcp.tools;
@@ -230,7 +230,7 @@ public class ToolParameterValidator {
 }
 ```
 
-#### Python Példa: Új eszköz hozzájárulása a standard könyvtárhoz
+#### Python példa: Új eszköz hozzáadása az alapkönyvtárhoz
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -392,21 +392,21 @@ class CsvProcessingTool(Tool):
 
 ### Hozzájárulási irányelvek
 
-Az MCP projektekhez való sikeres hozzájárulás érdekében:
+Ahhoz, hogy sikeres hozzájárulást tegyél az MCP projektekhez:
 
-1. **Kezdj kicsiben**: Kezdj dokumentációval, hibajavítással vagy kisebb fejlesztésekkel
-2. **Kövesd a stílusirányelveket**: Tartsd be a projekt kódolási stílusát és konvencióit
-3. **Írj teszteket**: Tartalmazz egységteszteket a kódhozzájárulásaidhoz
-4. **Dokumentáld a munkád**: Adj hozzá világos dokumentációt az új funkciókhoz vagy változtatásokhoz
-5. **Célzott PR-ek benyújtása**: Tartsd a pull requesteket egyetlen problémára vagy funkcióra fókuszálva
-6. **Fogadd el a visszajelzéseket**: Légy válaszkész a hozzájárulásaidra adott visszajelzésekre
+1. **Kezdj kicsiben**: Dokumentációval, hibajavításokkal vagy kisebb fejlesztésekkel kezdj
+2. **Kövesd a stílus útmutatót**: Tartsd be a projekt kódolási stílusát és konvencióit
+3. **Írj teszteket**: Mellékelj egységteszteket a kódodhoz
+4. **Dokumentáld a munkádat**: Adj világos dokumentációt az új funkciókról vagy változtatásokról
+5. **Célzott PR-eket küldj**: A pull requestek egyetlen problémára vagy funkcióra koncentráljanak
+6. **Légy nyitott a visszajelzésekre**: Válaszolj a hozzászólásokra és kérdésekre
 
 ### Példa hozzájárulási munkafolyamat
 
 ```bash
 # Clone the repository
 git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp
+cd mcp-for-beginners
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -429,13 +429,13 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Egyedi MCP eszközök létrehozása és megosztása
+## Egyedi MCP eszközök készítése és megosztása
 
-Az MCP ökoszisztémához való hozzájárulás egyik legértékesebb módja az egyedi eszközök létrehozása és megosztása.
+Az egyik legértékesebb módja az MCP ökoszisztéma támogatásának, ha egyedi eszközöket készítesz és osztasz meg.
 
 ### Megosztható eszközök fejlesztése
 
-#### .NET Példa: Megosztható eszközcsomag létrehozása
+#### .NET példa: Megosztható eszköz csomag készítése
 
 ```csharp
 // Create a new .NET library project
@@ -541,7 +541,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Java Példa: Maven csomag létrehozása eszközök számára
+#### Java példa: Maven csomag készítése eszközökhöz
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -642,7 +642,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Python Példa: PyPI csomag közzététele
+#### Python példa: PyPI csomag közzététele
 
 ```python
 # Directory structure for a PyPI package:
@@ -752,63 +752,63 @@ class SentimentAnalysisTool(Tool):
 Amikor MCP eszközöket osztasz meg a közösséggel:
 
 1. **Teljes dokumentáció**:
-   - Dokumentáld a célt, használatot és példákat
+   - Írd le a célját, használatát és példákat
    - Magyarázd el a paramétereket és visszatérési értékeket
    - Dokumentáld az esetleges külső függőségeket
 
 2. **Hibakezelés**:
-   - Valósíts meg robusztus hibakezelést
+   - Valósíts meg megbízható hibakezelést
    - Adj hasznos hibaüzeneteket
-   - Kezeld az élekeseteket kegyelmesen
+   - Kezeld szépen a szélsőséges eseteket
 
-3. **Teljesítmény szempontok**:
-   - Optimalizáld a sebesség és erőforrás használat szempontjából
-   - Valósíts meg gyorsítótárazást, amikor megfelelő
-   - Fontold meg a skálázhatóságot
+3. **Teljesítmény**:
+   - Optimalizáld a sebességet és az erőforrás-használatot
+   - Használj cache-elést, ahol indokolt
+   - Gondolj a skálázhatóságra
 
 4. **Biztonság**:
    - Használj biztonságos API kulcsokat és hitelesítést
    - Érvényesítsd és tisztítsd meg a bemeneteket
-   - Valósíts meg sebességkorlátozást külső API hívásokhoz
+   - Valósíts meg sebességkorlátozást külső API hívásoknál
 
 5. **Tesztelés**:
-   - Tartalmazz átfogó teszt lefedettséget
-   - Tesztelj különböző bemeneti típusokkal és élekesetekkel
-   - Dokumentáld a tesztelési eljárásokat
+   - Biztosíts átfogó tesztlefedettséget
+   - Tesztelj különböző bemeneti típusokkal és szélsőséges esetekkel
+   - Dokumentáld a tesztelési folyamatokat
 
 ## Közösségi együttműködés és legjobb gyakorlatok
 
-A hatékony együttműködés kulcsfontosságú az MCP ökoszisztéma virágzásához.
+A hatékony együttműködés kulcsfontosságú egy sikeres MCP ökoszisztéma számára.
 
 ### Kommunikációs csatornák
 
-- GitHub problémák és viták
+- GitHub Issues és Discussions
 - Microsoft Tech Community
 - Discord és Slack csatornák
 - Stack Overflow (címke: `model-context-protocol` or `mcp`)
 
-### Kódellenőrzések
+### Kódáttekintések
 
-Az MCP hozzájárulások ellenőrzésekor:
+Az MCP hozzájárulások áttekintésekor:
 
-1. **Világosság**: Világos és jól dokumentált a kód?
-2. **Helyesség**: Úgy működik, ahogy várható?
-3. **Következetesség**: Követi a projekt konvencióit?
+1. **Átláthatóság**: Világos és jól dokumentált a kód?
+2. **Helyesség**: Működik a várt módon?
+3. **Következetesség**: Betartja a projekt konvencióit?
 4. **Teljesség**: Tartalmaz teszteket és dokumentációt?
-5. **Biztonság**: Vannak biztonsági aggályok?
+5. **Biztonság**: Van-e biztonsági kockázat?
 
-### Verziókompatibilitás
+### Verzió kompatibilitás
 
-Az MCP fejlesztésekor:
+MCP fejlesztésekor:
 
-1. **Protokoll verziózás**: Tartsd be az MCP protokoll verziót, amelyet az eszközöd támogat
-2. **Ügyfél kompatibilitás**: Fontold meg a visszafelé kompatibilitást
+1. **Protokoll verzió**: Kövesd az általad támogatott MCP protokoll verziót
+2. **Kliens kompatibilitás**: Gondolj a visszafelé kompatibilitásra
 3. **Szerver kompatibilitás**: Kövesd a szerver implementációs irányelveket
-4. **Törő változások**: Dokumentáld világosan az esetleges törő változásokat
+4. **Változások dokumentálása**: Egyértelműen dokumentáld a visszafordíthatatlan változtatásokat
 
-## Példa közösségi projekt: MCP Eszközregisztráció
+## Példa közösségi projekt: MCP Tool Registry
 
-Egy fontos közösségi hozzájárulás lehet egy nyilvános MCP eszközregisztráció fejlesztése.
+Egy fontos közösségi hozzájárulás lehet egy nyilvános MCP eszközregiszter fejlesztése.
 
 ```python
 # Example schema for a community tool registry API
@@ -889,28 +889,28 @@ async def delete_tool(tool_name: str):
 
 ## Főbb tanulságok
 
-- Az MCP közösség sokszínű és különféle hozzájárulásokat vár
-- Az MCP-hez való hozzájárulás terjedhet alapvető protokoll fejlesztésektől egyedi eszközökig
-- A hozzájárulási irányelvek követése növeli az esélyét annak, hogy PR-ed elfogadják
-- Az MCP eszközök létrehozása és megosztása értékes módja az ökoszisztéma gazdagításának
+- Az MCP közösség sokszínű, és különféle hozzájárulásokat fogad el
+- A hozzájárulás lehet core protokoll fejlesztés vagy egyedi eszközök készítése
+- A hozzájárulási irányelvek követése növeli a PR elfogadásának esélyét
+- Egyedi MCP eszközök készítése és megosztása értékes módja az ökoszisztéma fejlesztésének
 - A közösségi együttműködés elengedhetetlen az MCP növekedéséhez és fejlődéséhez
 
 ## Gyakorlat
 
-1. Azonosíts egy területet az MCP ökoszisztémában, ahol a képességeid és érdeklődési köreid alapján hozzájárulhatnál
-2. Forkold az MCP tárolót és állítsd be a helyi fejlesztési környezetet
-3. Készíts egy kisebb fejlesztést, hibajavítást vagy eszközt, amely a közösség számára hasznos lenne
-4. Dokumentáld a hozzájárulásod megfelelő tesztekkel és dokumentációval
-5. Nyújts be egy pull requestet a megfelelő tárolóhoz
+1. Válassz ki egy területet az MCP ökoszisztémában, ahol a képességeid és érdeklődésed alapján hozzájárulhatnál
+2. Forkold az MCP tárolót, és állítsd be a helyi fejlesztői környezetet
+3. Készíts egy kisebb fejlesztést, hibajavítást vagy eszközt, ami hasznos lehet a közösség számára
+4. Dokumentáld a hozzájárulásodat megfelelő tesztekkel és dokumentációval
+5. Küldj pull requestet a megfelelő tárolóba
 
-## További erőforrások
+## További források
 
-- [MCP Közösségi Projektek](https://github.com/topics/model-context-protocol)
+- [MCP Community Projects](https://github.com/topics/model-context-protocol)
 
 
 ---
 
-Következő: [Korai alkalmazás tanulságai](../07-LessonsfromEarlyAdoption/README.md)
+Következő: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
-**Felelősség kizárása**:  
-Ez a dokumentum AI fordítási szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével került lefordításra. Bár igyekszünk pontosságra törekedni, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő a hiteles forrásnak. Kritikus információk esetén javasolt a professzionális emberi fordítás igénybevétele. Nem vállalunk felelősséget semmilyen félreértésért vagy félremagyarázásért, amely a fordítás használatából ered.
+**Nyilatkozat:**  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.

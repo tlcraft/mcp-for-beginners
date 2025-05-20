@@ -1,82 +1,82 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6e190a963029f156b7ecffad7093b8ce",
-  "translation_date": "2025-05-17T15:53:42+00:00",
+  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
+  "translation_date": "2025-05-20T21:45:37+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "da"
 }
 -->
-# Fællesskab og Bidrag
+# Community og Bidrag
 
 ## Oversigt
 
-Denne lektion fokuserer på, hvordan man engagerer sig i MCP-fællesskabet, bidrager til MCP-økosystemet og følger bedste praksis for samarbejdsudvikling. At forstå, hvordan man deltager i open-source MCP-projekter, er essentielt for dem, der ønsker at forme fremtiden for denne teknologi.
+Denne lektion fokuserer på, hvordan man engagerer sig i MCP-fællesskabet, bidrager til MCP-økosystemet og følger bedste praksis for samarbejdsudvikling. Det er vigtigt at forstå, hvordan man deltager i open-source MCP-projekter, hvis man ønsker at forme fremtiden for denne teknologi.
 
 ## Læringsmål
 
-Ved slutningen af denne lektion vil du være i stand til at:
-- Forstå strukturen af MCP-fællesskabet og økosystemet
-- Deltage effektivt i MCP-fællesskabsfora og diskussioner
+Når du har gennemført denne lektion, vil du kunne:
+- Forstå strukturen i MCP-fællesskabet og økosystemet
+- Deltage effektivt i MCP-fællesskabets fora og diskussioner
 - Bidrage til MCP open-source repositories
-- Oprette og dele skræddersyede MCP-værktøjer
+- Oprette og dele tilpassede MCP-værktøjer
 - Følge bedste praksis for MCP-udvikling og samarbejde
 
-## MCP Fællesskabets Økosystem
+## MCP-fællesskabets Økosystem
 
-MCP-økosystemet består af forskellige komponenter og deltagere, der arbejder sammen for at fremme protokollen.
+MCP-økosystemet består af forskellige komponenter og deltagere, som arbejder sammen for at fremme protokollen.
 
 ### Vigtige Fællesskabskomponenter
 
-1. **Kerneprotokol Vedligeholdere**: Microsoft og andre organisationer, der vedligeholder de centrale MCP-specifikationer og referenceimplementeringer
-2. **Værktøjsudviklere**: Personer og teams, der skaber MCP-værktøjer
-3. **Integrationsudbydere**: Virksomheder, der integrerer MCP i deres produkter og tjenester
-4. **Slutbrugere**: Udviklere og organisationer, der bruger MCP i deres applikationer
-5. **Bidragydere**: Fællesskabsmedlemmer, der bidrager med kode, dokumentation eller andre ressourcer
+1. **Core Protocol Maintainers**: Microsoft og andre organisationer, der vedligeholder de grundlæggende MCP-specifikationer og referenceimplementeringer  
+2. **Tool Developers**: Personer og teams, der skaber MCP-værktøjer  
+3. **Integration Providers**: Virksomheder, der integrerer MCP i deres produkter og tjenester  
+4. **End Users**: Udviklere og organisationer, der bruger MCP i deres applikationer  
+5. **Contributors**: Fællesskabsmedlemmer, der bidrager med kode, dokumentation eller andre ressourcer  
 
 ### Fællesskabsressourcer
 
 #### Officielle Kanaler
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
-- [MCP Dokumentation](https://modelcontextprotocol.io/)
-- [MCP Specifikation](https://spec.modelcontextprotocol.io/)
-- [GitHub Diskussioner](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP GitHub Repository](https://github.com/modelcontextprotocol)  
+- [MCP Documentation](https://modelcontextprotocol.io/)  
+- [MCP Specification](https://spec.modelcontextprotocol.io/)  
+- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)  
 
 #### Fællesskabsdrevne Ressourcer
 
-- Sprog-specifikke SDK-implementeringer
-- Serverimplementeringer og værktøjsbiblioteker
-- Blogindlæg og tutorials
-- Fællesskabsfora og sociale mediediskussioner
+- Sprog-specifikke SDK-implementeringer  
+- Serverimplementeringer og værktøjsbiblioteker  
+- Blogindlæg og tutorials  
+- Fællesskabsfora og diskussioner på sociale medier  
 
 ## Bidrag til MCP
 
 ### Typer af Bidrag
 
-MCP-økosystemet byder forskellige typer bidrag velkommen:
+MCP-økosystemet byder på forskellige typer af bidrag:
 
-1. **Kodebidrag**:
-   - Forbedringer af kerneprotokollen
-   - Fejlrettelser
-   - Værktøjsimplementeringer
-   - Klient/server biblioteker i forskellige sprog
+1. **Code Contributions**:  
+   - Forbedringer af core-protokollen  
+   - Fejlrettelser  
+   - Implementering af værktøjer  
+   - Client/server biblioteker i forskellige sprog  
 
-2. **Dokumentation**:
-   - Forbedring af eksisterende dokumentation
-   - Oprettelse af tutorials og vejledninger
-   - Oversættelse af dokumentation
-   - Oprettelse af eksempler og prøveapplikationer
+2. **Documentation**:  
+   - Forbedring af eksisterende dokumentation  
+   - Oprettelse af tutorials og vejledninger  
+   - Oversættelse af dokumentation  
+   - Oprettelse af eksempler og prøveapplikationer  
 
-3. **Fællesskabsstøtte**:
-   - Besvare spørgsmål på fora
-   - Testning og rapportering af problemer
-   - Organisering af fællesskabsbegivenheder
-   - Mentoring af nye bidragydere
+3. **Community Support**:  
+   - Besvare spørgsmål i fora  
+   - Teste og rapportere problemer  
+   - Organisere fællesskabsarrangementer  
+   - Vejlede nye bidragsydere  
 
-### Bidragsproces: Kerneprotokol
+### Bidragsproces: Core Protocol
 
-For at bidrage til kerne MCP-protokollen eller officielle implementeringer:
+For at bidrage til den grundlæggende MCP-protokol eller officielle implementeringer:
 
 #### .NET Eksempel: Bidrage med en Protokolforbedring
 
@@ -390,23 +390,23 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Bidragsretningslinjer
+### Retningslinjer for Bidrag
 
 For at lave et vellykket bidrag til MCP-projekter:
 
-1. **Start Småt**: Begynd med dokumentation, fejlrettelser eller små forbedringer
-2. **Følg Stilguiden**: Overhold kodestilen og konventionerne for projektet
-3. **Skriv Tests**: Inkluder enhedstests for dine kodebidrag
-4. **Dokumentér Dit Arbejde**: Tilføj klar dokumentation for nye funktioner eller ændringer
-5. **Indsend Målrettede PR'er**: Hold pull requests fokuseret på et enkelt problem eller funktion
-6. **Engager Dig i Feedback**: Vær lydhør over for feedback på dine bidrag
+1. **Start Småt**: Begynd med dokumentation, fejlrettelser eller små forbedringer  
+2. **Følg Styleguiden**: Overhold projektets kodestandarder og konventioner  
+3. **Skriv Tests**: Inkluder enhedstests for dine kodebidrag  
+4. **Dokumenter Dit Arbejde**: Tilføj klar dokumentation for nye funktioner eller ændringer  
+5. **Indsend Målrettede PR’er**: Hold pull requests fokuseret på et enkelt problem eller funktion  
+6. **Engager Dig i Feedback**: Vær lydhør over for feedback på dine bidrag  
 
-### Eksempel på Bidragsarbejdsgang
+### Eksempel på Bidragsworkflow
 
 ```bash
 # Clone the repository
 git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp
+cd mcp-for-beginners
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -429,9 +429,9 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Oprettelse og Deling af Skræddersyede MCP-værktøjer
+## Oprettelse og Deling af Tilpassede MCP-værktøjer
 
-En af de mest værdifulde måder at bidrage til MCP-økosystemet på er ved at skabe og dele skræddersyede værktøjer.
+En af de mest værdifulde måder at bidrage til MCP-økosystemet på er ved at skabe og dele tilpassede værktøjer.
 
 ### Udvikling af Delbare Værktøjer
 
@@ -642,7 +642,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Python Eksempel: Udgivelse af en PyPI-pakke
+#### Python Eksempel: Publicering af en PyPI-pakke
 
 ```python
 # Directory structure for a PyPI package:
@@ -751,30 +751,30 @@ class SentimentAnalysisTool(Tool):
 
 Når du deler MCP-værktøjer med fællesskabet:
 
-1. **Komplet Dokumentation**:
-   - Dokumentér formål, brug og eksempler
-   - Forklar parametre og returværdier
-   - Dokumentér eventuelle eksterne afhængigheder
+1. **Fuldstændig Dokumentation**:  
+   - Dokumenter formål, brug og eksempler  
+   - Forklar parametre og returværdier  
+   - Dokumenter eventuelle eksterne afhængigheder  
 
-2. **Fejlhåndtering**:
-   - Implementér robust fejlhåndtering
-   - Giv nyttige fejlmeddelelser
-   - Håndter kanttilfælde elegant
+2. **Fejlhåndtering**:  
+   - Implementer robust fejlhåndtering  
+   - Giv brugbare fejlmeddelelser  
+   - Håndter kanttilfælde elegant  
 
-3. **Ydelsesovervejelser**:
-   - Optimer for både hastighed og ressourceforbrug
-   - Implementér caching, når det er passende
-   - Overvej skalerbarhed
+3. **Ydeevne**:  
+   - Optimer både hastighed og ressourceforbrug  
+   - Implementer caching, hvor det er relevant  
+   - Tænk på skalerbarhed  
 
-4. **Sikkerhed**:
-   - Brug sikre API-nøgler og autentifikation
-   - Valider og sanér input
-   - Implementér hastighedsbegrænsning for eksterne API-kald
+4. **Sikkerhed**:  
+   - Brug sikre API-nøgler og autentificering  
+   - Valider og rens input  
+   - Implementer rate limiting for eksterne API-kald  
 
-5. **Testning**:
-   - Inkluder omfattende testdækning
-   - Test med forskellige inputtyper og kanttilfælde
-   - Dokumentér testprocedurer
+5. **Testning**:  
+   - Inkluder omfattende testdækning  
+   - Test med forskellige inputtyper og kanttilfælde  
+   - Dokumenter testprocedurer  
 
 ## Fællesskabssamarbejde og Bedste Praksis
 
@@ -782,33 +782,33 @@ Effektivt samarbejde er nøglen til et blomstrende MCP-økosystem.
 
 ### Kommunikationskanaler
 
-- GitHub Issues og Diskussioner
-- Microsoft Tech Community
-- Discord og Slack-kanaler
-- Stack Overflow (tag: `model-context-protocol` or `mcp`)
+- GitHub Issues og Discussions  
+- Microsoft Tech Community  
+- Discord og Slack-kanaler  
+- Stack Overflow (tag: `model-context-protocol` or `mcp`)  
 
-### Kodegennemgange
+### Code Reviews
 
 Når du gennemgår MCP-bidrag:
 
-1. **Klarhed**: Er koden klar og veldokumenteret?
-2. **Korrekthed**: Fungerer det som forventet?
-3. **Konsistens**: Følger det projektkonventionerne?
-4. **Komplethed**: Er tests og dokumentation inkluderet?
-5. **Sikkerhed**: Er der nogen sikkerhedsproblemer?
+1. **Klarhed**: Er koden klar og godt dokumenteret?  
+2. **Korrekthed**: Fungerer det som forventet?  
+3. **Konsistens**: Følger det projektets konventioner?  
+4. **Fuldstændighed**: Er tests og dokumentation inkluderet?  
+5. **Sikkerhed**: Er der nogen sikkerhedsproblemer?  
 
 ### Versionskompatibilitet
 
 Når du udvikler til MCP:
 
-1. **Protokolversionering**: Overhold den MCP-protokolversion, dit værktøj understøtter
-2. **Klientkompatibilitet**: Overvej bagudkompatibilitet
-3. **Serverkompatibilitet**: Følg retningslinjerne for serverimplementering
-4. **Brudte Ændringer**: Dokumentér tydeligt eventuelle brudte ændringer
+1. **Protokolversionering**: Følg den MCP-protokolversion, dit værktøj understøtter  
+2. **Client-kompatibilitet**: Overvej bagudkompatibilitet  
+3. **Server-kompatibilitet**: Følg serverimplementeringsretningslinjer  
+4. **Breaking Changes**: Dokumenter tydeligt eventuelle inkompatible ændringer  
 
-## Eksempel på Fællesskabsprojekt: MCP Værktøjsregister
+## Eksempel på Fællesskabsprojekt: MCP Tool Registry
 
-En vigtig fællesskabsbidrag kunne være udviklingen af et offentligt register for MCP-værktøjer.
+Et vigtigt fællesskabsbidrag kunne være at udvikle et offentligt register for MCP-værktøjer.
 
 ```python
 # Example schema for a community tool registry API
@@ -889,27 +889,28 @@ async def delete_tool(tool_name: str):
 
 ## Vigtige Pointer
 
-- MCP-fællesskabet er mangfoldigt og byder forskellige typer bidrag velkommen
-- Bidrag til MCP kan variere fra kerneprotokolforbedringer til skræddersyede værktøjer
-- At følge bidragsretningslinjer øger chancerne for, at din PR bliver accepteret
-- At skabe og dele MCP-værktøjer er en værdifuld måde at forbedre økosystemet på
-- Fællesskabssamarbejde er essentielt for vækst og forbedring af MCP
+- MCP-fællesskabet er mangfoldigt og byder på mange typer af bidrag  
+- Bidrag til MCP kan spænde fra core-protokolforbedringer til tilpassede værktøjer  
+- At følge bidragsretningslinjerne øger chancerne for, at din PR bliver accepteret  
+- At skabe og dele MCP-værktøjer er en værdifuld måde at styrke økosystemet på  
+- Fællesskabssamarbejde er afgørende for MCP’s vækst og udvikling  
 
 ## Øvelse
 
-1. Identificer et område i MCP-økosystemet, hvor du kunne bidrage baseret på dine færdigheder og interesser
-2. Fork MCP-repositoriet og opsæt et lokalt udviklingsmiljø
-3. Opret en lille forbedring, fejlrettelse eller værktøj, der vil gavne fællesskabet
-4. Dokumentér dit bidrag med passende tests og dokumentation
-5. Indsend en pull request til det relevante repository
+1. Identificer et område i MCP-økosystemet, hvor du kan bidrage ud fra dine færdigheder og interesser  
+2. Fork MCP-repositoriet og opsæt et lokalt udviklingsmiljø  
+3. Lav en lille forbedring, fejlrettelse eller et værktøj, som vil gavne fællesskabet  
+4. Dokumenter dit bidrag med passende tests og dokumentation  
+5. Indsend en pull request til det relevante repository  
 
 ## Yderligere Ressourcer
 
-- [MCP Fællesskabsprojekter](https://github.com/topics/model-context-protocol)
+- [MCP Community Projects](https://github.com/topics/model-context-protocol)  
+
 
 ---
 
-Næste: [Lektioner fra Tidlig Adoption](../07-LessonsfromEarlyAdoption/README.md)
+Next: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Mens vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der måtte opstå ved brug af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

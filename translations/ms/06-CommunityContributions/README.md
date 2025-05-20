@@ -1,84 +1,84 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6e190a963029f156b7ecffad7093b8ce",
-  "translation_date": "2025-05-17T15:56:13+00:00",
+  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
+  "translation_date": "2025-05-20T22:08:30+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "ms"
 }
 -->
-# Komuniti dan Sumbangan
+# קהילה ותרומות
 
-## Gambaran Keseluruhan
+## סקירה כללית
 
-Pelajaran ini memberi tumpuan kepada bagaimana untuk melibatkan diri dengan komuniti MCP, menyumbang kepada ekosistem MCP, dan mengikuti amalan terbaik untuk pembangunan kolaboratif. Memahami cara untuk mengambil bahagian dalam projek MCP sumber terbuka adalah penting bagi mereka yang ingin membentuk masa depan teknologi ini.
+השיעור הזה מתמקד באיך להשתלב בקהילת MCP, לתרום למערכת האקולוגית של MCP, ולפעול לפי שיטות עבודה מומלצות לפיתוח שיתופי. הבנת האופן שבו משתתפים בפרויקטים בקוד פתוח של MCP חיונית למי שמעוניין לעצב את עתיד הטכנולוגיה הזו.
 
-## Objektif Pembelajaran
+## מטרות הלמידה
 
-Menjelang akhir pelajaran ini, anda akan dapat:
-- Memahami struktur komuniti dan ekosistem MCP
-- Mengambil bahagian dengan berkesan dalam forum dan perbincangan komuniti MCP
-- Menyumbang kepada repositori sumber terbuka MCP
-- Mencipta dan berkongsi alat MCP tersuai
-- Mengikuti amalan terbaik untuk pembangunan dan kerjasama MCP
+בסוף השיעור תוכל:
+- להבין את מבנה קהילת MCP והמערכת האקולוגית שלה
+- להשתתף בצורה יעילה בפורומים ודיונים של קהילת MCP
+- לתרום למאגרי הקוד הפתוח של MCP
+- ליצור ולשתף כלים מותאמים אישית ל-MCP
+- לפעול לפי שיטות עבודה מומלצות לפיתוח ושיתוף פעולה ב-MCP
 
-## Ekosistem Komuniti MCP
+## המערכת האקולוגית של קהילת MCP
 
-Ekosistem MCP terdiri daripada pelbagai komponen dan peserta yang bekerjasama untuk memajukan protokol.
+המערכת האקולוגית של MCP כוללת רכיבים ומשתתפים שונים שעובדים יחד לקידום הפרוטוקול.
 
-### Komponen Utama Komuniti
+### רכיבים מרכזיים בקהילה
 
-1. **Penyelenggara Protokol Teras**: Microsoft dan organisasi lain yang menyelenggara spesifikasi MCP teras dan pelaksanaan rujukan
-2. **Pembangun Alat**: Individu dan pasukan yang mencipta alat MCP
-3. **Penyedia Integrasi**: Syarikat yang mengintegrasikan MCP ke dalam produk dan perkhidmatan mereka
-4. **Pengguna Akhir**: Pembangun dan organisasi yang menggunakan MCP dalam aplikasi mereka
-5. **Penyumbang**: Ahli komuniti yang menyumbang kod, dokumentasi, atau sumber lain
+1. **מחזיקי הליבה של הפרוטוקול**: מיקרוסופט וארגונים אחרים שמתחזקים את המפרטים המרכזיים של MCP ואת המימושים הרפרנסיים
+2. **מפתחי כלים**: יחידים וצוותים שיוצרים כלים עבור MCP
+3. **ספקי אינטגרציה**: חברות שמשלבות את MCP במוצרים ובשירותים שלהן
+4. **משתמשי קצה**: מפתחים וארגונים שמשתמשים ב-MCP באפליקציות שלהם
+5. **תורמים**: חברי הקהילה שתורמים קוד, תיעוד או משאבים אחרים
 
-### Sumber Komuniti
+### משאבים קהילתיים
 
-#### Saluran Rasmi
+#### ערוצים רשמיים
 
-- [Repositori GitHub MCP](https://github.com/modelcontextprotocol)
-- [Dokumentasi MCP](https://modelcontextprotocol.io/)
-- [Spesifikasi MCP](https://spec.modelcontextprotocol.io/)
-- [Perbincangan GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
+- [מאגר GitHub של MCP](https://github.com/modelcontextprotocol)
+- [תיעוד MCP](https://modelcontextprotocol.io/)
+- [מפרט MCP](https://spec.modelcontextprotocol.io/)
+- [דיונים ב-GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
 
-#### Sumber Dipacu Komuniti
+#### משאבים שמונעים על ידי הקהילה
 
-- Pelaksanaan SDK khusus bahasa
-- Pelaksanaan pelayan dan perpustakaan alat
-- Pos blog dan tutorial
-- Forum komuniti dan perbincangan media sosial
+- מימושי SDK בשפות שונות
+- מימושי שרת וספריות כלים
+- פוסטים בבלוג ומדריכים
+- פורומים קהילתיים ודיונים ברשתות חברתיות
 
-## Menyumbang kepada MCP
+## תרומה ל-MCP
 
-### Jenis Sumbangan
+### סוגי תרומות
 
-Ekosistem MCP mengalu-alukan pelbagai jenis sumbangan:
+המערכת האקולוגית של MCP מקבלת בברכה סוגים שונים של תרומות:
 
-1. **Sumbangan Kod**:
-   - Peningkatan protokol teras
-   - Pembetulan pepijat
-   - Pelaksanaan alat
-   - Perpustakaan klien/pelayan dalam pelbagai bahasa
+1. **תרומות קוד**:
+   - שיפורים בפרוטוקול הליבה
+   - תיקוני באגים
+   - מימוש כלים
+   - ספריות לקוח/שרת בשפות שונות
 
-2. **Dokumentasi**:
-   - Meningkatkan dokumentasi sedia ada
-   - Mencipta tutorial dan panduan
-   - Menterjemah dokumentasi
-   - Mencipta contoh dan aplikasi sampel
+2. **תיעוד**:
+   - שיפור התיעוד הקיים
+   - יצירת מדריכים והדרכות
+   - תרגום תיעוד
+   - יצירת דוגמאות ואפליקציות לדוגמה
 
-3. **Sokongan Komuniti**:
-   - Menjawab soalan di forum
-   - Menguji dan melaporkan isu
-   - Menganjurkan acara komuniti
-   - Membimbing penyumbang baru
+3. **תמיכה קהילתית**:
+   - מענה לשאלות בפורומים
+   - בדיקה ודיווח על בעיות
+   - ארגון אירועים קהילתיים
+   - חניכת תורמים חדשים
 
-### Proses Sumbangan: Protokol Teras
+### תהליך התרומה: פרוטוקול הליבה
 
-Untuk menyumbang kepada protokol MCP teras atau pelaksanaan rasmi:
+כדי לתרום לפרוטוקול הליבה של MCP או למימושים הרשמיים:
 
-#### Contoh .NET: Menyumbang Peningkatan Protokol
+#### דוגמה ב-.NET: תרומת שיפור לפרוטוקול
 
 ```csharp
 // Example contribution to MCP protocol: Adding support for binary data streams
@@ -145,7 +145,7 @@ namespace Microsoft.Mcp.Protocol
 }
 ```
 
-#### Contoh Java: Menyumbang Pembetulan Pepijat
+#### דוגמה ב-Java: תרומת תיקון באג
 
 ```java
 package com.mcp.tools;
@@ -230,7 +230,7 @@ public class ToolParameterValidator {
 }
 ```
 
-#### Contoh Python: Menyumbang Alat Baru ke Perpustakaan Standard
+#### דוגמה בפייתון: תרומת כלי חדש לספריה הסטנדרטית
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -390,23 +390,23 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Garis Panduan Sumbangan
+### הנחיות לתרומה
 
-Untuk membuat sumbangan yang berjaya kepada projek MCP:
+כדי להצליח לתרום לפרויקטים של MCP:
 
-1. **Mulakan Kecil**: Mulakan dengan dokumentasi, pembetulan pepijat, atau peningkatan kecil
-2. **Ikuti Panduan Gaya**: Patuh kepada gaya pengkodan dan konvensyen projek
-3. **Tulis Ujian**: Sertakan ujian unit untuk sumbangan kod anda
-4. **Dokumentasikan Kerja Anda**: Tambah dokumentasi jelas untuk ciri baru atau perubahan
-5. **Serahkan PR Berfokus**: Kekalkan permintaan tarik tertumpu pada satu isu atau ciri
-6. **Terlibat dengan Maklum Balas**: Responsif terhadap maklum balas pada sumbangan anda
+1. **התחל בקטן**: התחל בתיעוד, תיקוני באגים או שיפורים קטנים
+2. **עקוב אחרי מדריך הסגנון**: שמור על סגנון הקוד והקונבנציות של הפרויקט
+3. **כתוב בדיקות**: כלול בדיקות יחידה לתרומות הקוד שלך
+4. **תעד את העבודה שלך**: הוסף תיעוד ברור לתכונות או שינויים חדשים
+5. **הגש PR ממוקדים**: שמור על בקשות משיכה שממוקדות בנושא או תכונה אחת
+6. **היה מעורב עם משוב**: הגיב למשוב על התרומות שלך
 
-### Aliran Kerja Sumbangan Contoh
+### דוגמת זרימת עבודה לתרומה
 
 ```bash
 # Clone the repository
 git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp
+cd mcp-for-beginners
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -429,13 +429,13 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Mencipta dan Berkongsi Alat MCP Tersuai
+## יצירה ושיתוף של כלים מותאמים ל-MCP
 
-Salah satu cara paling berharga untuk menyumbang kepada ekosistem MCP adalah dengan mencipta dan berkongsi alat tersuai.
+אחד הדרכים החשובות לתרום למערכת האקולוגית של MCP הוא ליצור ולשתף כלים מותאמים אישית.
 
-### Membangunkan Alat yang Boleh Dikongsi
+### פיתוח כלים לשיתוף
 
-#### Contoh .NET: Mencipta Pakej Alat yang Boleh Dikongsi
+#### דוגמה ב-.NET: יצירת חבילת כלים לשיתוף
 
 ```csharp
 // Create a new .NET library project
@@ -541,7 +541,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Contoh Java: Mencipta Pakej Maven untuk Alat
+#### דוגמה ב-Java: יצירת חבילת Maven לכלים
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -642,7 +642,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Contoh Python: Menerbitkan Pakej PyPI
+#### דוגמה בפייתון: פרסום חבילת PyPI
 
 ```python
 # Directory structure for a PyPI package:
@@ -747,68 +747,68 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### Berkongsi Amalan Terbaik
+### שיתוף שיטות עבודה מומלצות
 
-Apabila berkongsi alat MCP dengan komuniti:
+כשמשתפים כלים של MCP עם הקהילה:
 
-1. **Dokumentasi Lengkap**:
-   - Dokumentasikan tujuan, penggunaan, dan contoh
-   - Terangkan parameter dan nilai pulangan
-   - Dokumentasikan sebarang kebergantungan luaran
+1. **תיעוד מלא**:
+   - תאר את המטרה, השימוש ודוגמאות
+   - הסבר פרמטרים וערכי החזרה
+   - תעד תלות חיצונית במידת הצורך
 
-2. **Pengendalian Ralat**:
-   - Laksanakan pengendalian ralat yang kukuh
-   - Berikan mesej ralat yang berguna
-   - Tangani kes tepi dengan baik
+2. **טיפול בשגיאות**:
+   - יישם טיפול שגיאות אמין
+   - ספק הודעות שגיאה מועילות
+   - התמודד עם מקרים קיצוניים בצורה חלקה
 
-3. **Pertimbangan Prestasi**:
-   - Optimumkan untuk kelajuan dan penggunaan sumber
-   - Laksanakan caching apabila sesuai
-   - Pertimbangkan kebolehskalaan
+3. **שיקולי ביצועים**:
+   - אופטימיזציה למהירות ולשימוש במשאבים
+   - יישם מטמון כשמתאים
+   - שקול מדרגיות
 
-4. **Keselamatan**:
-   - Gunakan kunci API dan pengesahan yang selamat
-   - Sahkan dan bersihkan input
-   - Laksanakan had kadar untuk panggilan API luaran
+4. **אבטחה**:
+   - השתמש במפתחות API ואימות מאובטחים
+   - אמת ונקה קלטים
+   - יישם הגבלת קצב לקריאות API חיצוניות
 
-5. **Ujian**:
-   - Sertakan liputan ujian yang komprehensif
-   - Uji dengan jenis input dan kes tepi yang berbeza
-   - Dokumentasikan prosedur ujian
+5. **בדיקות**:
+   - כלל כיסוי בדיקות מקיף
+   - בדוק עם סוגי קלט שונים ומקרים קיצוניים
+   - תעד נהלי בדיקה
 
-## Kerjasama Komuniti dan Amalan Terbaik
+## שיתוף פעולה קהילתי ושיטות עבודה מומלצות
 
-Kerjasama yang berkesan adalah kunci kepada ekosistem MCP yang berkembang.
+שיתוף פעולה אפקטיבי הוא המפתח למערכת אקולוגית מצליחה של MCP.
 
-### Saluran Komunikasi
+### ערוצי תקשורת
 
-- Isu dan Perbincangan GitHub
-- Komuniti Tech Microsoft
-- Saluran Discord dan Slack
-- Stack Overflow (tag: `model-context-protocol` or `mcp`)
+- GitHub Issues ו-Discussions
+- Microsoft Tech Community
+- ערוצי Discord ו-Slack
+- Stack Overflow (תג: `model-context-protocol` or `mcp`)
 
-### Semakan Kod
+### סקירות קוד
 
-Apabila menyemak sumbangan MCP:
+כשמבצעים סקירות לתרומות MCP:
 
-1. **Kejelasan**: Adakah kod jelas dan didokumentasikan dengan baik?
-2. **Ketepatan**: Adakah ia berfungsi seperti yang dijangkakan?
-3. **Konsistensi**: Adakah ia mengikuti konvensyen projek?
-4. **Kelengkapan**: Adakah ujian dan dokumentasi disertakan?
-5. **Keselamatan**: Adakah terdapat sebarang kebimbangan keselamatan?
+1. **בהירות**: האם הקוד ברור ומתועד היטב?
+2. **נכונות**: האם הוא פועל כמצופה?
+3. **עקביות**: האם הוא עומד בקונבנציות הפרויקט?
+4. **שלימות**: האם כלולות בדיקות ותיעוד?
+5. **אבטחה**: האם קיימות בעיות אבטחה?
 
-### Keserasian Versi
+### תאימות גרסאות
 
-Apabila membangunkan untuk MCP:
+בעת פיתוח ל-MCP:
 
-1. **Pengversian Protokol**: Patuh kepada versi protokol MCP yang disokong oleh alat anda
-2. **Keserasian Klien**: Pertimbangkan keserasian ke belakang
-3. **Keserasian Pelayan**: Ikuti garis panduan pelaksanaan pelayan
-4. **Perubahan Pecah**: Dokumentasikan sebarang perubahan pecah dengan jelas
+1. **גרסת פרוטוקול**: שמור על תאימות לגרסת הפרוטוקול ש-tool שלך תומך בה
+2. **תאימות לקוח**: שקול תאימות לאחור
+3. **תאימות שרת**: פעל לפי הנחיות מימוש השרת
+4. **שינויים שבירים**: תעד בבירור כל שינויים שבירים
 
-## Projek Komuniti Contoh: Daftar Alat MCP
+## דוגמת פרויקט קהילתי: רישום כלי MCP
 
-Sumbangan komuniti yang penting boleh menjadi pembangunan daftar awam untuk alat MCP.
+תרומה חשובה לקהילה יכולה להיות פיתוח רישום ציבורי לכלי MCP.
 
 ```python
 # Example schema for a community tool registry API
@@ -887,29 +887,30 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## Poin Utama
+## נקודות מרכזיות
 
-- Komuniti MCP adalah pelbagai dan mengalu-alukan pelbagai jenis sumbangan
-- Menyumbang kepada MCP boleh berkisar dari peningkatan protokol teras hingga alat tersuai
-- Mengikuti garis panduan sumbangan meningkatkan peluang PR anda diterima
-- Mencipta dan berkongsi alat MCP adalah cara berharga untuk meningkatkan ekosistem
-- Kerjasama komuniti adalah penting untuk pertumbuhan dan penambahbaikan MCP
+- קהילת MCP מגוונת ומקבלת סוגים שונים של תרומות
+- התרומה ל-MCP יכולה לנוע משיפורים בפרוטוקול הליבה ועד לכלים מותאמים אישית
+- שמירה על הנחיות התרומה מעלה את הסיכוי שה-PR שלך יתקבל
+- יצירה ושיתוף של כלים ל-MCP היא דרך משמעותית לשפר את המערכת האקולוגית
+- שיתוף פעולה קהילתי חיוני לצמיחה ולשיפור של MCP
 
-## Latihan
+## תרגיל
 
-1. Kenal pasti kawasan dalam ekosistem MCP di mana anda boleh membuat sumbangan berdasarkan kemahiran dan minat anda
-2. Fork repositori MCP dan sediakan persekitaran pembangunan tempatan
-3. Cipta peningkatan kecil, pembetulan pepijat, atau alat yang akan memberi manfaat kepada komuniti
-4. Dokumentasikan sumbangan anda dengan ujian dan dokumentasi yang betul
-5. Serahkan permintaan tarik ke repositori yang sesuai
+1. זהה תחום במערכת האקולוגית של MCP שבו תוכל לתרום בהתבסס על כישורים ותחומי עניין שלך
+2. בצע fork למאגר MCP והקם סביבת פיתוח מקומית
+3. צור שיפור קטן, תיקון באג או כלי שיתרום לקהילה
+4. תעד את התרומה שלך עם בדיקות ותיעוד מתאימים
+5. הגש בקשת משיכה למאגר המתאים
 
-## Sumber Tambahan
+## משאבים נוספים
 
-- [Projek Komuniti MCP](https://github.com/topics/model-context-protocol)
+- [פרויקטים קהילתיים של MCP](https://github.com/topics/model-context-protocol)
+
 
 ---
 
-Seterusnya: [Pelajaran dari Penggunaan Awal](../07-LessonsfromEarlyAdoption/README.md)
+הבא: [לקחים מאימוץ מוקדם](../07-LessonsfromEarlyAdoption/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

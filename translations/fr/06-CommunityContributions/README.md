@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6e190a963029f156b7ecffad7093b8ce",
-  "translation_date": "2025-05-16T15:51:45+00:00",
+  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
+  "translation_date": "2025-05-20T20:09:35+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "fr"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Aperçu
 
-Cette leçon explique comment s’impliquer dans la communauté MCP, contribuer à l’écosystème MCP et suivre les bonnes pratiques pour un développement collaboratif. Comprendre comment participer aux projets open source MCP est essentiel pour ceux qui souhaitent influencer l’avenir de cette technologie.
+Cette leçon explique comment s’impliquer dans la communauté MCP, contribuer à son écosystème et suivre les bonnes pratiques pour un développement collaboratif. Comprendre comment participer aux projets open source MCP est essentiel pour ceux qui souhaitent influencer l’avenir de cette technologie.
 
 ## Objectifs d’apprentissage
 
@@ -24,7 +24,7 @@ Cette leçon explique comment s’impliquer dans la communauté MCP, contribuer 
 
 ## L’écosystème de la communauté MCP
 
-L’écosystème MCP regroupe différents composants et acteurs qui travaillent ensemble pour faire évoluer le protocole.
+L’écosystème MCP regroupe différents composants et participants qui collaborent pour faire avancer le protocole.
 
 ### Composants clés de la communauté
 
@@ -46,11 +46,11 @@ L’écosystème MCP regroupe différents composants et acteurs qui travaillent 
 #### Ressources pilotées par la communauté
 
 - Implémentations SDK spécifiques aux langages
-- Implémentations serveurs et bibliothèques d’outils
+- Implémentations serveur et bibliothèques d’outils
 - Articles de blog et tutoriels
 - Forums communautaires et discussions sur les réseaux sociaux
 
-## Contribuer à MCP
+## Contribuer au MCP
 
 ### Types de contributions
 
@@ -74,11 +74,11 @@ L’écosystème MCP accueille différents types de contributions :
    - Organiser des événements communautaires
    - Encadrer les nouveaux contributeurs
 
-### Processus de contribution : protocole central
+### Processus de contribution : Protocole central
 
 Pour contribuer au protocole MCP central ou aux implémentations officielles :
 
-#### Exemple .NET : contribuer une amélioration du protocole
+#### Exemple .NET : Contribution d’une amélioration du protocole
 
 ```csharp
 // Example contribution to MCP protocol: Adding support for binary data streams
@@ -145,7 +145,7 @@ namespace Microsoft.Mcp.Protocol
 }
 ```
 
-#### Exemple Java : contribuer une correction de bug
+#### Exemple Java : Contribution d’une correction de bug
 
 ```java
 package com.mcp.tools;
@@ -230,7 +230,7 @@ public class ToolParameterValidator {
 }
 ```
 
-#### Exemple Python : contribuer un nouvel outil à la bibliothèque standard
+#### Exemple Python : Contribution d’un nouvel outil à la bibliothèque standard
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -394,19 +394,19 @@ class CsvProcessingTool(Tool):
 
 Pour réussir votre contribution aux projets MCP :
 
-1. **Commencez petit** : débutez par la documentation, les corrections de bugs ou de petites améliorations
-2. **Suivez le guide de style** : respectez les conventions et le style de code du projet
-3. **Écrivez des tests** : incluez des tests unitaires pour vos contributions de code
-4. **Documentez votre travail** : ajoutez une documentation claire pour les nouvelles fonctionnalités ou modifications
-5. **Soumettez des PR ciblées** : gardez les pull requests centrées sur un seul problème ou une seule fonctionnalité
-6. **Interagissez avec les retours** : soyez réactif aux commentaires sur vos contributions
+1. **Commencez petit** : Débutez par la documentation, les corrections de bugs ou de petites améliorations
+2. **Suivez la guide de style** : Respectez les conventions et le style de codage du projet
+3. **Écrivez des tests** : Ajoutez des tests unitaires pour vos contributions
+4. **Documentez votre travail** : Fournissez une documentation claire pour les nouvelles fonctionnalités ou modifications
+5. **Soumettez des PR ciblées** : Concentrez vos pull requests sur un seul problème ou une seule fonctionnalité
+6. **Répondez aux retours** : Soyez réactif aux commentaires sur vos contributions
 
 ### Exemple de workflow de contribution
 
 ```bash
 # Clone the repository
 git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp
+cd mcp-for-beginners
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -431,11 +431,11 @@ git push origin feature/my-contribution
 
 ## Créer et partager des outils MCP personnalisés
 
-L’une des contributions les plus précieuses à l’écosystème MCP est la création et le partage d’outils personnalisés.
+Une des façons les plus précieuses de contribuer à l’écosystème MCP est de créer et partager des outils personnalisés.
 
-### Développer des outils partageables
+### Développement d’outils partageables
 
-#### Exemple .NET : créer un package d’outil partageable
+#### Exemple .NET : Création d’un package d’outil partageable
 
 ```csharp
 // Create a new .NET library project
@@ -541,7 +541,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Exemple Java : créer un package Maven pour les outils
+#### Exemple Java : Création d’un package Maven pour les outils
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -642,7 +642,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Exemple Python : publier un package PyPI
+#### Exemple Python : Publication d’un package PyPI
 
 ```python
 # Directory structure for a PyPI package:
@@ -747,32 +747,32 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### Partager les bonnes pratiques
+### Bonnes pratiques de partage
 
-Lorsque vous partagez des outils MCP avec la communauté :
+Lors du partage d’outils MCP avec la communauté :
 
 1. **Documentation complète** :
-   - Documentez l’objectif, l’utilisation et des exemples
-   - Expliquez les paramètres et les valeurs de retour
+   - Expliquez l’objectif, l’utilisation et fournissez des exemples
+   - Détaillez les paramètres et valeurs de retour
    - Documentez les dépendances externes éventuelles
 
 2. **Gestion des erreurs** :
-   - Implémentez une gestion robuste des erreurs
-   - Fournissez des messages d’erreur utiles
+   - Implémentez une gestion d’erreurs robuste
+   - Fournissez des messages d’erreur clairs et utiles
    - Gérez les cas limites avec soin
 
 3. **Considérations de performance** :
-   - Optimisez à la fois la rapidité et l’utilisation des ressources
-   - Mettez en place un système de cache si nécessaire
+   - Optimisez à la fois la rapidité et la consommation de ressources
+   - Mettez en place un cache si nécessaire
    - Pensez à la scalabilité
 
 4. **Sécurité** :
-   - Utilisez des clés API et une authentification sécurisées
+   - Utilisez des clés API sécurisées et une authentification appropriée
    - Validez et assainissez les entrées
-   - Implémentez une limitation du nombre d’appels aux API externes
+   - Implémentez une limitation du taux pour les appels API externes
 
 5. **Tests** :
-   - Couvrez les tests de manière exhaustive
+   - Couvrez largement vos tests
    - Testez avec différents types d’entrées et cas limites
    - Documentez les procédures de test
 
@@ -794,21 +794,21 @@ Lors de la revue des contributions MCP :
 1. **Clarté** : Le code est-il clair et bien documenté ?
 2. **Exactitude** : Fonctionne-t-il comme prévu ?
 3. **Cohérence** : Respecte-t-il les conventions du projet ?
-4. **Complétude** : Tests et documentation sont-ils inclus ?
+4. **Complétude** : Les tests et la documentation sont-ils inclus ?
 5. **Sécurité** : Y a-t-il des risques de sécurité ?
 
 ### Compatibilité des versions
 
 Lors du développement pour MCP :
 
-1. **Gestion des versions du protocole** : Respectez la version du protocole MCP supportée par votre outil
-2. **Compatibilité client** : Prenez en compte la compatibilité descendante
-3. **Compatibilité serveur** : Suivez les directives d’implémentation serveur
-4. **Modifications incompatibles** : Documentez clairement toute rupture de compatibilité
+1. **Version du protocole** : Respectez la version du protocole MCP prise en charge par votre outil
+2. **Compatibilité client** : Prenez en compte la rétrocompatibilité
+3. **Compatibilité serveur** : Suivez les directives des implémentations serveur
+4. **Modifications majeures** : Documentez clairement tout changement incompatible
 
-## Exemple de projet communautaire : registre des outils MCP
+## Exemple de projet communautaire : Registre des outils MCP
 
-Une contribution communautaire importante pourrait être le développement d’un registre public pour les outils MCP.
+Une contribution communautaire importante pourrait être le développement d’un registre public des outils MCP.
 
 ```python
 # Example schema for a community tool registry API
@@ -890,18 +890,18 @@ async def delete_tool(tool_name: str):
 ## Points clés à retenir
 
 - La communauté MCP est diverse et accueille différents types de contributions
-- Contribuer à MCP peut aller des améliorations du protocole central aux outils personnalisés
-- Suivre les directives de contribution augmente les chances d’acceptation de votre PR
+- Contribuer au MCP peut aller des améliorations du protocole central aux outils personnalisés
+- Suivre les directives de contribution augmente les chances que votre PR soit acceptée
 - Créer et partager des outils MCP est un moyen précieux d’enrichir l’écosystème
-- La collaboration communautaire est essentielle pour la croissance et l’amélioration de MCP
+- La collaboration communautaire est essentielle pour la croissance et l’amélioration du MCP
 
 ## Exercice
 
-1. Identifiez un domaine dans l’écosystème MCP où vous pourriez contribuer selon vos compétences et centres d’intérêt
+1. Identifiez un domaine dans l’écosystème MCP où vous pourriez apporter une contribution selon vos compétences et intérêts
 2. Forkez le dépôt MCP et configurez un environnement de développement local
-3. Créez une petite amélioration, correction de bug ou outil qui profiterait à la communauté
-4. Documentez votre contribution avec des tests et une documentation appropriés
-5. Soumettez une pull request vers le dépôt approprié
+3. Créez une petite amélioration, correction de bug ou un outil bénéfique pour la communauté
+4. Documentez votre contribution avec des tests et une documentation appropriée
+5. Soumettez une pull request au dépôt concerné
 
 ## Ressources supplémentaires
 
@@ -913,4 +913,4 @@ async def delete_tool(tool_name: str):
 Suivant : [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle humaine est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou d’interprétations erronées résultant de l’utilisation de cette traduction.

@@ -1,107 +1,107 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "cf84f987e1b771d2201408e110dfd2db",
-  "translation_date": "2025-05-20T16:02:21+00:00",
+  "original_hash": "1d88dee994dcbb3fa52c271d0c0817b5",
+  "translation_date": "2025-05-20T20:35:15+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "mo"
 }
 -->
-# مقدمة في بروتوكول سياق النموذج (MCP): لماذا هو مهم لتطبيقات الذكاء الاصطناعي القابلة للتوسع
+# Introduction to Model Context Protocol (MCP): Why It Matters for Scalable AI Applications
 
-تطبيقات الذكاء الاصطناعي التوليدية تمثل خطوة كبيرة للأمام لأنها غالبًا ما تتيح للمستخدم التفاعل مع التطبيق باستخدام أوامر طبيعية. ولكن مع استثمار المزيد من الوقت والموارد في هذه التطبيقات، سترغب في التأكد من سهولة دمج الوظائف والموارد بطريقة تسهل التوسيع، بحيث يمكن لتطبيقك دعم أكثر من نموذج واحد مع تعقيداته. باختصار، بناء تطبيقات الذكاء الاصطناعي التوليدية سهل في البداية، لكن مع نموها وتعقيدها، تحتاج إلى بدء تحديد بنية وربما الاعتماد على معيار لضمان بناء تطبيقاتك بطريقة متسقة. هنا يأتي دور MCP لتنظيم الأمور وتوفير معيار.
-
----
-
-## **🔍 ما هو بروتوكول سياق النموذج (MCP)؟**
-
-بروتوكول سياق النموذج (MCP) هو **واجهة مفتوحة وموحدة** تسمح لنماذج اللغة الكبيرة (LLMs) بالتفاعل بسلاسة مع الأدوات الخارجية، وواجهات برمجة التطبيقات، ومصادر البيانات. يوفر بنية متسقة لتعزيز وظائف نماذج الذكاء الاصطناعي بما يتجاوز بيانات التدريب، مما يمكن أنظمة الذكاء الاصطناعي من أن تكون أكثر ذكاءً، وقابلة للتوسع، وأكثر استجابة.
+Generative AI applications represent a significant advancement as they often allow users to interact with the app through natural language prompts. However, as more time and resources are invested in these apps, it becomes important to ensure easy integration of functionalities and resources in a way that supports extensibility, allows multiple models to be used, and manages various model complexities. In short, building Gen AI apps is straightforward initially, but as they scale and grow more complex, defining an architecture and relying on a standard becomes necessary to ensure consistent app development. This is where MCP comes in to organize and provide a standard.
 
 ---
 
-## **🎯 لماذا تعتبر المعايير مهمة في الذكاء الاصطناعي**
+## **🔍 What Is the Model Context Protocol (MCP)?**
 
-مع تعقد تطبيقات الذكاء الاصطناعي التوليدية، يصبح من الضروري اعتماد معايير تضمن **القابلية للتوسع، والقابلية للتمديد، وقابلية الصيانة**. يعالج MCP هذه الاحتياجات من خلال:
-
-- توحيد تكاملات النماذج مع الأدوات
-- تقليل الحلول المخصصة الهشة والفردية
-- السماح بتواجد نماذج متعددة ضمن نظام بيئي واحد
+The **Model Context Protocol (MCP)** is an **open, standardized interface** that enables Large Language Models (LLMs) to interact smoothly with external tools, APIs, and data sources. It offers a consistent architecture to extend AI model capabilities beyond their training data, allowing for smarter, scalable, and more responsive AI systems.
 
 ---
 
-## **📚 أهداف التعلم**
+## **🎯 Why Standardization in AI Matters**
 
-بنهاية هذا المقال، ستكون قادرًا على:
+As generative AI applications become more sophisticated, adopting standards that ensure **scalability, extensibility**, and **maintainability** is crucial. MCP addresses these needs by:
 
-- تعريف **بروتوكول سياق النموذج (MCP)** وحالات استخدامه
-- فهم كيف يقوم MCP بتوحيد الاتصال بين النموذج والأدوات
-- التعرف على المكونات الأساسية لبنية MCP
-- استكشاف تطبيقات MCP في سياقات المؤسسات والتطوير
-
----
-
-## **💡 لماذا يُعتبر بروتوكول سياق النموذج (MCP) نقطة تحول**
-
-### **🔗 MCP يحل مشكلة التشتت في تفاعلات الذكاء الاصطناعي**
-
-قبل MCP، كان دمج النماذج مع الأدوات يتطلب:
-
-- كود مخصص لكل زوج من النموذج والأداة
-- واجهات برمجة تطبيقات غير موحدة لكل بائع
-- انقطاعات متكررة بسبب التحديثات
-- ضعف في القابلية للتوسع مع زيادة الأدوات
-
-### **✅ فوائد توحيد MCP**
-
-| **الفائدة**              | **الوصف**                                                                    |
-|--------------------------|------------------------------------------------------------------------------|
-| التوافقية                | تعمل نماذج LLM بسلاسة مع الأدوات عبر بائعين مختلفين                         |
-| الاتساق                  | سلوك موحد عبر المنصات والأدوات                                                |
-| إعادة الاستخدام          | الأدوات المبنية مرة يمكن استخدامها عبر مشاريع وأنظمة متعددة                  |
-| تسريع التطوير            | تقليل وقت التطوير باستخدام واجهات موحدة قابلة للتوصيل والتشغيل                |
+- Unifying model-tool integrations  
+- Reducing fragile, one-off custom solutions  
+- Enabling multiple models to coexist within a single ecosystem  
 
 ---
 
-## **🧱 نظرة عامة على بنية MCP عالية المستوى**
+## **📚 Learning Objectives**
 
-يتبع MCP نموذج **العميل-الخادم**، حيث:
+By the end of this article, you will be able to:
 
-- **مضيفو MCP** يديرون النماذج الذكية
-- **عملاء MCP** يبدؤون الطلبات
-- **خوادم MCP** تقدم السياق، الأدوات، والقدرات
-
-### **المكونات الرئيسية:**
-
-- **الموارد** – بيانات ثابتة أو ديناميكية للنماذج  
-- **المطالبات** – سير عمل محدد مسبقًا للتوليد الموجه  
-- **الأدوات** – وظائف قابلة للتنفيذ مثل البحث والحسابات  
-- **العينة** – سلوك وكيل عبر تفاعلات متكررة
+- Define **Model Context Protocol (MCP)** and its use cases  
+- Understand how MCP standardizes communication between models and tools  
+- Identify the core components of MCP architecture  
+- Explore practical applications of MCP in enterprise and development settings  
 
 ---
 
-## كيف تعمل خوادم MCP
+## **💡 Why the Model Context Protocol (MCP) Is a Game-Changer**
 
-تعمل خوادم MCP بالطريقة التالية:
+### **🔗 MCP Solves Fragmentation in AI Interactions**
 
-- **تدفق الطلبات**:  
-    1. يرسل عميل MCP طلبًا إلى نموذج الذكاء الاصطناعي الذي يعمل على مضيف MCP.  
-    2. يحدد النموذج متى يحتاج إلى أدوات أو بيانات خارجية.  
-    3. يتواصل النموذج مع خادم MCP باستخدام البروتوكول الموحد.
+Before MCP, integrating models with tools involved:
 
-- **وظائف خادم MCP**:  
-    - سجل الأدوات: يحتفظ بفهرس الأدوات المتاحة وقدراتها.  
-    - المصادقة: يتحقق من أذونات الوصول إلى الأدوات.  
-    - معالج الطلبات: يعالج طلبات الأدوات الواردة من النموذج.  
-    - منسق الاستجابة: ينظم مخرجات الأدوات بشكل يمكن للنموذج فهمه.
+- Writing custom code for each tool-model pair  
+- Using non-standard APIs for each vendor  
+- Frequent disruptions caused by updates  
+- Poor scalability as the number of tools increased  
 
-- **تنفيذ الأدوات**:  
-    - يوجه الخادم الطلبات إلى الأدوات الخارجية المناسبة  
-    - تنفذ الأدوات وظائفها المتخصصة (بحث، حساب، استعلامات قاعدة بيانات، إلخ)  
-    - تُعاد النتائج إلى النموذج بتنسيق موحد.
+### **✅ Benefits of MCP Standardization**
 
-- **اكتمال الاستجابة**:  
-    - يدمج النموذج مخرجات الأدوات في استجابته  
-    - تُرسل الاستجابة النهائية إلى تطبيق العميل
+| **Benefit**              | **Description**                                                                |
+|--------------------------|--------------------------------------------------------------------------------|
+| Interoperability         | LLMs work seamlessly with tools from various vendors                          |
+| Consistency              | Uniform behavior across different platforms and tools                         |
+| Reusability              | Tools built once can be reused across projects and systems                    |
+| Accelerated Development  | Development time is reduced by using standardized, plug-and-play interfaces   |
+
+---
+
+## **🧱 High-Level MCP Architecture Overview**
+
+MCP follows a **client-server model**, where:
+
+- **MCP Hosts** run the AI models  
+- **MCP Clients** initiate requests  
+- **MCP Servers** provide context, tools, and capabilities  
+
+### **Key Components:**
+
+- **Resources** – Static or dynamic data available to models  
+- **Prompts** – Predefined workflows to guide generation  
+- **Tools** – Executable functions like search or calculations  
+- **Sampling** – Agentic behavior through recursive interactions  
+
+---
+
+## How MCP Servers Work
+
+MCP servers function as follows:
+
+- **Request Flow**:  
+    1. The MCP Client sends a request to the AI Model hosted on an MCP Host.  
+    2. The AI Model determines when it requires external tools or data.  
+    3. The model communicates with the MCP Server via the standardized protocol.
+
+- **MCP Server Functionality**:  
+    - Tool Registry: Maintains a catalog of available tools and their capabilities.  
+    - Authentication: Verifies permissions for tool access.  
+    - Request Handler: Processes tool requests coming from the model.  
+    - Response Formatter: Structures tool outputs into a format the model can understand.
+
+- **Tool Execution**:  
+    - The server routes requests to the appropriate external tools.  
+    - Tools perform their specialized functions (search, calculation, database queries, etc.).  
+    - Results are returned to the model in a consistent format.
+
+- **Response Completion**:  
+    - The AI model integrates tool outputs into its response.  
+    - The final response is sent back to the client application.
 
 ```mermaid
 graph TD
@@ -136,46 +136,46 @@ graph TD
     style F fill:#c2f0c2,stroke:#333,stroke-width:1px    
 ```
 
-## 👨‍💻 كيف تبني خادم MCP (مع أمثلة)
+## 👨‍💻 How to Build an MCP Server (With Examples)
 
-تسمح خوادم MCP بتوسيع قدرات LLM من خلال توفير البيانات والوظائف.
+MCP servers let you extend LLM capabilities by providing additional data and functionality.
 
-هل أنت مستعد لتجربته؟ إليك أمثلة لإنشاء خادم MCP بسيط بلغات مختلفة:
+Ready to get started? Here are examples of creating a simple MCP server in various programming languages:
 
-- **مثال بايثون**: https://github.com/modelcontextprotocol/python-sdk
+- **Python Example**: https://github.com/modelcontextprotocol/python-sdk
 
-- **مثال تايب سكريبت**: https://github.com/modelcontextprotocol/typescript-sdk
+- **TypeScript Example**: https://github.com/modelcontextprotocol/typescript-sdk
 
-- **مثال جافا**: https://github.com/modelcontextprotocol/java-sdk
+- **Java Example**: https://github.com/modelcontextprotocol/java-sdk
 
-- **مثال C#/.NET**: https://github.com/modelcontextprotocol/csharp-sdk
+- **C#/.NET Example**: https://github.com/modelcontextprotocol/csharp-sdk
 
-## 🌍 حالات استخدام MCP في العالم الحقيقي
+## 🌍 Real-World Use Cases for MCP
 
-يمكن MCP من مجموعة واسعة من التطبيقات من خلال توسيع قدرات الذكاء الاصطناعي:
+MCP supports a wide variety of applications by extending AI capabilities:
 
-| **التطبيق**                 | **الوصف**                                                                    |
-|------------------------------|------------------------------------------------------------------------------|
-| دمج بيانات المؤسسات         | ربط نماذج LLM بقواعد البيانات، أنظمة إدارة العملاء، أو الأدوات الداخلية      |
-| أنظمة الذكاء الاصطناعي الوكيلة | تمكين الوكلاء المستقلين من الوصول إلى الأدوات وسير العمل لاتخاذ القرارات    |
-| تطبيقات متعددة الوسائط       | دمج أدوات النص، الصورة، والصوت ضمن تطبيق ذكاء اصطناعي موحد                   |
-| دمج البيانات الحية          | جلب البيانات المباشرة في تفاعلات الذكاء الاصطناعي لتحقيق مخرجات أدق وحديثة  |
+| **Application**              | **Description**                                                                |
+|------------------------------|--------------------------------------------------------------------------------|
+| Enterprise Data Integration  | Connect LLMs to databases, CRMs, or internal tools                             |
+| Agentic AI Systems           | Enable autonomous agents with access to tools and decision-making workflows    |
+| Multi-modal Applications     | Combine text, image, and audio tools within a single unified AI app            |
+| Real-time Data Integration   | Incorporate live data into AI interactions for more accurate, current outputs  |
 
-### 🧠 MCP = المعيار العالمي لتفاعلات الذكاء الاصطناعي
+### 🧠 MCP = Universal Standard for AI Interactions
 
-يعمل بروتوكول سياق النموذج (MCP) كمعيار عالمي لتفاعلات الذكاء الاصطناعي، تمامًا كما وحد USB-C الاتصالات المادية للأجهزة. في عالم الذكاء الاصطناعي، يوفر MCP واجهة متسقة تسمح للنماذج (العملاء) بالاندماج بسلاسة مع الأدوات ومزودي البيانات الخارجيين (الخوادم). هذا يلغي الحاجة إلى بروتوكولات مخصصة ومتنوعة لكل API أو مصدر بيانات.
+The Model Context Protocol (MCP) serves as a universal standard for AI interactions, similar to how USB-C standardized physical connections for devices. In AI, MCP provides a consistent interface that allows models (clients) to integrate seamlessly with external tools and data providers (servers). This removes the need for multiple, custom protocols for every API or data source.
 
-تتبع الأدوات المتوافقة مع MCP (المعروفة بخوادم MCP) معيارًا موحدًا. يمكن لهذه الخوادم سرد الأدوات أو الإجراءات التي تقدمها وتنفيذ تلك الإجراءات عند طلبها من وكيل الذكاء الاصطناعي. منصات الوكلاء التي تدعم MCP قادرة على اكتشاف الأدوات المتاحة من الخوادم واستدعائها من خلال هذا البروتوكول الموحد.
+Under MCP, an MCP-compatible tool (called an MCP server) follows a unified standard. These servers can list the tools or actions they provide and execute those actions when requested by an AI agent. AI agent platforms supporting MCP can discover available tools from servers and invoke them through this standardized protocol.
 
-### 💡 يسهل الوصول إلى المعرفة
+### 💡 Facilitates access to knowledge
 
-بعيدًا عن توفير الأدوات، يسهل MCP أيضًا الوصول إلى المعرفة. يمكّن التطبيقات من تقديم السياق لنماذج اللغة الكبيرة (LLMs) من خلال ربطها بمصادر بيانات متعددة. على سبيل المثال، قد يمثل خادم MCP مستودع وثائق شركة، مما يسمح للوكلاء باسترجاع معلومات ذات صلة عند الطلب. قد يتولى خادم آخر مهام محددة مثل إرسال البريد الإلكتروني أو تحديث السجلات. من منظور الوكيل، هذه مجرد أدوات يمكنه استخدامها—بعض الأدوات تعيد بيانات (سياق المعرفة)، وأخرى تنفذ إجراءات. يدير MCP كلا الحالتين بكفاءة.
+Beyond providing tools, MCP also facilitates access to knowledge. It enables applications to supply context to large language models (LLMs) by connecting them to diverse data sources. For example, an MCP server might represent a company’s document repository, allowing agents to retrieve relevant information on demand. Another server might handle specific tasks like sending emails or updating records. From the agent’s perspective, these are simply tools it can use—some tools return data (knowledge context), while others perform actions. MCP manages both efficiently.
 
-يتعلم الوكيل المتصل بخادم MCP تلقائيًا القدرات المتاحة والبيانات التي يمكن الوصول إليها من خلال تنسيق موحد. تتيح هذه المعايير توفر الأدوات بشكل ديناميكي. على سبيل المثال، إضافة خادم MCP جديد إلى نظام الوكيل يجعل وظائفه متاحة فورًا دون الحاجة لتخصيص إضافي لتعليمات الوكيل.
+An agent connecting to an MCP server automatically learns about the server's available capabilities and accessible data through a standard format. This standardization enables dynamic tool availability. For instance, adding a new MCP server to an agent’s system immediately makes its functions usable without needing to modify the agent's instructions.
 
-يتماشى هذا التكامل السلس مع التدفق الموضح في مخطط mermaid، حيث توفر الخوادم كل من الأدوات والمعرفة، مما يضمن تعاونًا سلسًا بين الأنظمة.
+This streamlined integration follows the flow shown in the mermaid diagram, where servers provide both tools and knowledge, ensuring smooth collaboration across systems.
 
-### 👉 مثال: حل وكيل قابل للتوسع
+### 👉 Example: Scalable Agent Solution
 
 ```mermaid
 graph TD
@@ -199,42 +199,39 @@ graph TD
         ToolsB[Tools]
     end
 ```
-## 🔐 الفوائد العملية لـ MCP
 
-إليك الفوائد العملية لاستخدام MCP:
+## 🔐 Practical Benefits of MCP
 
-- **الحداثة**: يمكن للنماذج الوصول إلى معلومات محدثة تتجاوز بيانات التدريب  
-- **توسيع القدرات**: يمكن للنماذج الاستفادة من أدوات متخصصة لمهام لم يتم تدريبها عليها  
-- **تقليل الهلوسة**: توفر مصادر البيانات الخارجية أساسًا واقعيًا  
-- **الخصوصية**: يمكن للبيانات الحساسة البقاء داخل بيئات آمنة بدلاً من تضمينها في المطالبات
+Here are the practical advantages of using MCP:
 
-## 📌 النقاط الرئيسية
+- **Freshness**: Models can access up-to-date information beyond their training data  
+- **Capability Extension**: Models can use specialized tools for tasks outside their original training  
+- **Reduced Hallucinations**: External data sources provide factual grounding  
+- **Privacy**: Sensitive data remains within secure environments instead of being embedded in prompts  
 
-فيما يلي النقاط الرئيسية لاستخدام MCP:
+## 📌 Key Takeaways
 
-- **MCP** يوحد طريقة تفاعل نماذج الذكاء الاصطناعي مع الأدوات والبيانات  
-- يعزز **القابلية للتمديد، والاتساق، والتوافقية**  
-- يساعد MCP في **تقليل وقت التطوير، وتحسين الاعتمادية، وتوسيع قدرات النماذج**  
-- بنية العميل-الخادم **تمكّن تطبيقات ذكاء اصطناعي مرنة وقابلة للتوسع**
+The main points to remember about MCP:
 
-## 🧠 تمرين
+- **MCP** standardizes how AI models interact with tools and data  
+- Promotes **extensibility, consistency, and interoperability**  
+- Helps **reduce development time, improve reliability, and expand model capabilities**  
+- The client-server architecture **enables flexible, extensible AI applications**  
 
-فكر في تطبيق ذكاء اصطناعي تهتم ببنائه.
+## 🧠 Exercise
 
-- ما هي **الأدوات أو البيانات الخارجية** التي قد تعزز قدراته؟  
-- كيف يمكن أن يجعل MCP عملية الدمج **أبسط وأكثر موثوقية**؟
+Consider an AI application you want to build.
 
-## موارد إضافية
+- Which **external tools or data** could enhance its capabilities?  
+- How could MCP make integration **simpler and more reliable?**  
+
+## Additional Resources
 
 - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
 
-## ماذا بعد
+## What's next
 
-التالي: [الفصل 1: المفاهيم الأساسية](/01-CoreConcepts/README.md)
+Next: [Chapter 1: Core Concepts](/01-CoreConcepts/README.md)
 
 **Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-I’m not familiar with a language or code named “mo.” Could you please clarify what language or format “mo” refers to? For example, is it Moldovan, Mohawk, a programming language, or something else? That way, I can provide an accurate translation.
+Thiz dokyument haz been translayted yusing AI translaytion servyce [Co-op Translator](https://github.com/Azure/co-op-translator). Whyle we stryve for akkuracy, pleese be awere that automayted translaytions may kontain errurz or inakkuraseez. The orygynal dokyument in itz naytiv langwage shood be konsydered the authoritativ sorce. For krytikal informayshun, profeshynal hyuman translaytion is rekomended. We ar not lyable for any myzunderstandings or myzinterpretayshuns aryzing from the yuse of this translaytion.

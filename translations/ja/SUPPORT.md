@@ -1,33 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b7244261ee19497082edf33bcce64717",
-  "translation_date": "2025-05-16T14:20:17+00:00",
+  "original_hash": "b3cffaf217113101e21eba532be806ea",
+  "translation_date": "2025-05-20T20:44:11+00:00",
   "source_file": "SUPPORT.md",
   "language_code": "ja"
 }
 -->
-# TODO: このリポジトリのメンテナはまだこのファイルを編集していません
-
-**REPO OWNER**: この製品/プロジェクトに対してCustomer Service & Support (CSS)のサポートを希望しますか？
-
-- **CSSサポートなし:** 問題の報告方法やサポートの受け方について、このテンプレートに情報を記入してください。
-- **CSSサポートあり:** [aka.ms/onboardsupport](https://aka.ms/onboardsupport)で受付フォームに記入してください。CSSが連携し、次のステップを一緒に検討します。
-- **わからない場合:** 「はい」として受付フォームに記入してください。CSSが判断を手助けします。
-
-*その後、このSUPPORT.MDファイルの最初の見出しは公開前に削除してください。*
-
 # サポート
 
 ## 問題の報告方法とサポートの受け方  
 
-このプロジェクトではGitHub Issuesを使ってバグや機能リクエストを管理しています。重複を避けるため、問題を報告する前に既存のIssueを検索してください。新しい問題については、バグや機能リクエストを新しいIssueとして報告してください。
+このプロジェクトでは、バグや機能要望の管理にGitHub Issuesを使用しています。重複を避けるため、新しいIssueを作成する前に既存のIssueを検索してください。新しい問題がある場合は、バグ報告や機能要望を新しいIssueとして提出してください。
 
-このプロジェクトの使い方や質問に関するサポートについては、**REPO MAINTAINER: ここにリポジトリ所有者やコミュニティに問い合わせる方法を記入してください。Stack Overflowのタグやその他のチャネルなどが考えられます。どこでサポートを提供しますか？**。
+このプロジェクトの使用に関する質問やサポートについては、以下をご利用ください：
+- 専門家や開発者が集まる[Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4)を確認する
+- プロトコルに関する質問は[Model Context Protocol Community](https://modelcontextprotocol.io/community/)のリソースを活用する
 
-## Microsoftサポートポリシー  
+## Microsoft サポートポリシー  
 
-この**PROJECT or PRODUCT**のサポートは、上記に記載されたリソースに限定されます。
+Model Context Protocol (MCP) for Beginnersプロジェクトのサポートは、上記のリソースに限定されています。
 
-**免責事項**：  
-本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されました。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご了承ください。原文の母国語版が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
+**免責事項**:  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご了承ください。原文の言語による文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、一切の責任を負いかねます。

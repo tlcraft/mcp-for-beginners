@@ -1,117 +1,117 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "154c00dc3b2c792102e4845c19fbd166",
-  "translation_date": "2025-05-20T18:27:12+00:00",
+  "original_hash": "4bf553c18e7e226c3d76ab0cde627d26",
+  "translation_date": "2025-05-20T22:46:31+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "sl"
 }
 -->
-# 📖 MCP Core Concepts: Mojtama Model Context Protocol par AI Integration
+# 📖 MCP Core Concepts: Mastering the Model Context Protocol for AI Integration
 
-Model Context Protocol (MCP) ek takatwar, standardized framework hai jo Large Language Models (LLMs) aur external tools, applications, aur data sources ke darmiyan communication ko optimize karta hai. Yeh SEO-optimized guide aapko MCP ke core concepts samjhata hai, jisme client-server architecture, zaroori components, communication ke tareeqe, aur implementation ke best practices shamil hain.
+Model Context Protocol (MCP) je močan, standardiziran okvir, ki optimizira komunikacijo med velikimi jezikovnimi modeli (LLM) in zunanjimi orodji, aplikacijami ter podatkovnimi viri. Ta SEO-optimiziran vodič vas bo popeljal skozi osnovne koncepte MCP, da boste razumeli njegovo klient-strežniško arhitekturo, ključne komponente, mehanizme komunikacije in najboljše prakse za implementacijo.
 
-## Overview
+## Pregled
 
-Is sabaq mein hum Model Context Protocol (MCP) ke bunyadi architecture aur components ka jaiza lenge. Aap client-server architecture, key components, aur communication ke tareeqe samjhenge jo MCP interactions ko chalate hain.
+Ta lekcija raziskuje osnovno arhitekturo in komponente, ki sestavljajo ekosistem Model Context Protocol (MCP). Spoznali boste klient-strežniško arhitekturo, ključne komponente in komunikacijske mehanizme, ki poganjajo interakcije MCP.
 
-## 👩‍🎓 Key Learning Objectives
+## 👩‍🎓 Ključni cilji učenja
 
-Is sabaq ke end tak aap:
+Ob koncu te lekcije boste:
 
-- MCP client-server architecture ko samjhenge.
-- Hosts, Clients, aur Servers ke roles aur zimmedariyan pehchanenge.
-- MCP ko ek flexible integration layer banane wale core features ka tajziya karenge.
-- MCP ecosystem mein information ke flow ko samjhenge.
-- .NET, Java, Python, aur JavaScript mein code examples ke zariye practical insights hasil karenge.
+- Razumeli MCP klient-strežniško arhitekturo.
+- Prepoznali vloge in odgovornosti Hosts, Clients in Servers.
+- Analizirali glavne značilnosti, ki MCP naredijo prilagodljivo integracijsko plast.
+- Spoznali, kako poteka pretok informacij znotraj MCP ekosistema.
+- Pridobili praktične vpoglede preko primerov kode v .NET, Javi, Pythonu in JavaScriptu.
 
-## 🔎 MCP Architecture: Ek Gehri Nazar
+## 🔎 MCP Arhitektura: Pogled od blizu
 
-MCP ecosystem client-server model par mabni hai. Yeh modular structure AI applications ko tools, databases, APIs, aur contextual resources ke saath asaani se interact karne deta hai. Aaiye is architecture ko uske bunyadi components mein todte hain.
+Ekosistem MCP temelji na klient-strežniškem modelu. Ta modularna struktura omogoča AI aplikacijam učinkovito interakcijo z orodji, bazami podatkov, API-ji in kontekstualnimi viri. Razdelimo to arhitekturo na ključne komponente.
 
 ### 1. Hosts
 
-Model Context Protocol (MCP) mein Hosts ek aham kirdar ada karte hain jo users ko protocol ke primary interface ke taur par connect karte hain. Hosts woh applications ya environments hain jo MCP servers se data, tools, aur prompts hasil karne ke liye connections shuru karte hain. Misal ke taur par Visual Studio Code jaise IDEs, Claude Desktop jese AI tools, ya khas tasks ke liye banaye gaye custom agents.
+V Model Context Protocol (MCP) imajo Hosts ključno vlogo kot primarni vmesnik, preko katerega uporabniki komunicirajo s protokolom. Hosts so aplikacije ali okolja, ki vzpostavijo povezave z MCP strežniki za dostop do podatkov, orodij in pozivov. Primeri Hosts so integrirana razvojna okolja (IDE) kot Visual Studio Code, AI orodja kot Claude Desktop ali po meri izdelani agenti za specifične naloge.
 
-**Hosts** LLM applications hain jo connections initiate karte hain. Yeh:
+**Hosts** so LLM aplikacije, ki vzpostavljajo povezave. Njihove naloge so:
 
-- AI models ke saath interact ya execute kar ke responses banate hain.
-- MCP servers se connections shuru karte hain.
-- Conversation flow aur user interface ko manage karte hain.
-- Permissions aur security constraints ko control karte hain.
-- Data sharing aur tool execution ke liye user consent handle karte hain.
+- Izvajanje ali interakcija z AI modeli za generiranje odgovorov.
+- Vzpostavljanje povezav z MCP strežniki.
+- Upravljanje poteka pogovora in uporabniškega vmesnika.
+- Nadzor dovoljenj in varnostnih omejitev.
+- Upravljanje uporabniškega soglasja za deljenje podatkov in izvajanje orodij.
 
 ### 2. Clients
 
-Clients woh zaroori components hain jo Hosts aur MCP servers ke darmiyan interaction ko asaan banate hain. Yeh intermediaries ka kirdar ada karte hain, jisse Hosts MCP servers ki functionalities tak access aur istemal kar sakte hain. Yeh MCP architecture mein smooth communication aur efficient data exchange ko yaqini banate hain.
+Clients so ključne komponente, ki olajšajo interakcijo med Hosts in MCP strežniki. Delujejo kot posredniki, ki omogočajo Hostom dostop in uporabo funkcionalnosti MCP strežnikov. Igrajo pomembno vlogo pri zagotavljanju nemotenega komuniciranja in učinkovite izmenjave podatkov v MCP arhitekturi.
 
-**Clients** host application ke andar connectors hote hain. Yeh:
+**Clients** so konektorji znotraj host aplikacije. Njihove naloge so:
 
-- Servers ko prompts/instructions ke saath requests bhejte hain.
-- Servers ke saath capabilities negotiate karte hain.
-- Models se tool execution requests ko manage karte hain.
-- Users ko responses process aur display karte hain.
+- Pošiljanje zahtev strežnikom s pozivi/instrukcijami.
+- Pogajanje o zmožnostih s strežniki.
+- Upravljanje zahtev za izvajanje orodij s strani modelov.
+- Obdelava in prikaz odgovorov uporabnikom.
 
 ### 3. Servers
 
-Servers MCP clients se requests receive karte hain aur munasib responses dete hain. Yeh data retrieval, tool execution, aur prompt generation jaise operations ko manage karte hain. Servers ensure karte hain ke clients aur Hosts ke darmiyan communication efficient aur reliable ho, interaction process ki integrity barqarar rahe.
+Servers so odgovorni za obdelavo zahtev MCP klientov in zagotavljanje ustreznih odgovorov. Upravljajo različne operacije, kot so pridobivanje podatkov, izvajanje orodij in generiranje pozivov. Servers zagotavljajo, da je komunikacija med klienti in Hosts učinkovita in zanesljiva ter ohranjajo integriteto procesa interakcije.
 
-**Servers** services hain jo context aur capabilities provide karte hain. Yeh:
+**Servers** so storitve, ki zagotavljajo kontekst in zmožnosti. Njihove naloge so:
 
-- Available features (resources, prompts, tools) ko register karte hain.
-- Client se tool calls receive aur execute karte hain.
-- Model responses ko behtar banane ke liye contextual information dete hain.
-- Outputs client ko wapas bhejte hain.
-- Zarurat par state ko interactions ke darmiyan maintain karte hain.
+- Registracija razpoložljivih funkcij (viri, pozivi, orodja).
+- Sprejem in izvajanje klicev orodij od klienta.
+- Zagotavljanje kontekstualnih informacij za izboljšanje odgovorov modela.
+- Vračanje rezultatov klientu.
+- Ohranjanje stanja med interakcijami, če je potrebno.
 
-Servers kisi bhi developer ke zariye banaye ja sakte hain taake model capabilities ko specialized functionalities ke saath barhaya ja sake.
+Servers lahko razvije kdorkoli, da razširi zmogljivosti modela s specializirano funkcionalnostjo.
 
-### 4. Server Features
+### 4. Lastnosti strežnikov
 
-MCP servers aise bunyadi building blocks provide karte hain jo clients, hosts, aur language models ke darmiyan rich interactions ko mumkin banate hain. Yeh features MCP ki capabilities ko structured context, tools, aur prompts ke zariye enhance karte hain.
+Strežniki v Model Context Protocol (MCP) nudijo osnovne gradnike, ki omogočajo bogate interakcije med klienti, hosti in jezikovnimi modeli. Te lastnosti so zasnovane za izboljšanje zmogljivosti MCP z zagotavljanjem strukturiranega konteksta, orodij in pozivov.
 
-MCP servers in features mein se koi bhi offer kar sakte hain:
+MCP strežniki lahko nudijo katerokoli od naslednjih funkcij:
 
-#### 📑 Resources
+#### 📑 Viri
 
-Model Context Protocol (MCP) mein Resources mukhtalif qisam ke context aur data hain jo users ya AI models istemal kar sakte hain. In mein shamil hain:
+Viri v Model Context Protocol (MCP) zajemajo različne vrste konteksta in podatkov, ki jih lahko uporabijo uporabniki ali AI modeli. Ti vključujejo:
 
-- **Contextual Data**: Maloomat aur context jo users ya AI models decision-making aur task execution ke liye istemal karte hain.
-- **Knowledge Bases aur Document Repositories**: Structured aur unstructured data ka majmua, jaise articles, manuals, research papers, jo qeemti maloomat faraham karte hain.
-- **Local Files aur Databases**: Aise data jo devices par ya databases mein local tor par store hota hai, jo processing aur analysis ke liye dastiyab hota hai.
-- **APIs aur Web Services**: External interfaces aur services jo mazeed data aur functionalities faraham karte hain, jisse online resources aur tools ke saath integration mumkin hota hai.
+- **Kontekstualni podatki**: Informacije in kontekst, ki jih uporabniki ali AI modeli lahko uporabijo za odločanje in izvedbo nalog.
+- **Baze znanja in zbirke dokumentov**: Zbirke strukturiranih in nestrukturiranih podatkov, kot so članki, priročniki in raziskovalni dokumenti, ki nudijo dragocene vpoglede in informacije.
+- **Lokalne datoteke in baze podatkov**: Podatki, shranjeni lokalno na napravah ali v bazah podatkov, dostopni za obdelavo in analizo.
+- **API-ji in spletne storitve**: Zunanji vmesniki in storitve, ki nudijo dodatne podatke in funkcionalnosti ter omogočajo integracijo z različnimi spletnimi viri in orodji.
 
-Resource ki ek misaal database schema ya file ho sakti hai jo is tarah access ki ja sakti hai:
+Primer vira je lahko shema baze podatkov ali datoteka, do katere dostopate takole:
 
 ```text
 file://log.txt
 database://schema
 ```
 
-### 🤖 Prompts
+### 🤖 Pozivi
 
-Model Context Protocol (MCP) mein Prompts mukhtalif pre-defined templates aur interaction patterns hote hain jo user workflows ko streamline karte hain aur communication behtar banate hain. In mein shamil hain:
+Pozivi v Model Context Protocol (MCP) vključujejo različne vnaprej določene predloge in vzorce interakcije, ki poenostavljajo uporabniške delovne tokove in izboljšajo komunikacijo. Ti vključujejo:
 
-- **Templated Messages aur Workflows**: Pehle se tayar shuda messages aur processes jo users ko specific tasks aur interactions mein guide karte hain.
-- **Pre-defined Interaction Patterns**: Standard sequences of actions aur responses jo consistent aur efficient communication ko facilitate karte hain.
-- **Specialized Conversation Templates**: Customizable templates jo mukhtalif conversation types ke liye banaye gaye hain, taake relevant aur contextually munasib interactions ho sakein.
+- **Predstrukturirana sporočila in delovni tokovi**: Vnaprej oblikovana sporočila in procesi, ki vodijo uporabnike skozi specifične naloge in interakcije.
+- **Vnaprej določeni vzorci interakcije**: Standardizirani zaporedji dejanj in odgovorov, ki omogočajo dosledno in učinkovito komunikacijo.
+- **Specializirane predloge pogovorov**: Prilagodljive predloge, namenjene specifičnim vrstam pogovorov, ki zagotavljajo relevantne in kontekstualno primerne interakcije.
 
-Prompt template kuch is tarah lag sakta hai:
+Predloga poziva je lahko videti takole:
 
 ```markdown
 Generate a product slogan based on the following {{product}} with the following {{keywords}}
 ```
 
-#### ⛏️ Tools
+#### ⛏️ Orodja
 
-Model Context Protocol (MCP) mein Tools woh functions hain jo AI model specific tasks perform karne ke liye execute kar sakta hai. Yeh tools AI model ki capabilities ko structured aur reliable operations ke zariye barhate hain. Key aspects yeh hain:
+Orodja v Model Context Protocol (MCP) so funkcije, ki jih lahko AI model izvede za opravljanje specifičnih nalog. Ta orodja so zasnovana za izboljšanje zmogljivosti AI modela z zagotavljanjem strukturiranih in zanesljivih operacij. Ključni vidiki vključujejo:
 
-- **AI model ke liye executable functions**: Tools aise functions hain jo AI model invoke kar sakta hai taake mukhtalif tasks anjaam de.
-- **Unique Name aur Description**: Har tool ka ek munfarid naam aur tafseeli wazahat hoti hai jo uske maqsad aur functionality ko bayan karti hai.
-- **Parameters aur Outputs**: Tools specific parameters accept karte hain aur structured outputs dete hain, jo consistent aur predictable results ko yaqini banata hai.
-- **Discrete Functions**: Tools alag alag functions perform karte hain jaise web searches, calculations, aur database queries.
+- **Funkcije za izvedbo AI modela**: Orodja so izvršljive funkcije, ki jih AI model lahko pokliče za izvedbo različnih nalog.
+- **Edinstveno ime in opis**: Vsako orodje ima jasno ime in podroben opis, ki pojasnjuje njegov namen in funkcionalnost.
+- **Parametri in rezultati**: Orodja sprejemajo določene parametre in vračajo strukturirane rezultate, kar zagotavlja dosledne in predvidljive izide.
+- **Diskretne funkcije**: Orodja opravljajo ločene funkcije, kot so spletno iskanje, izračuni in poizvedbe v bazah podatkov.
 
-Ek misaal tool kuch is tarah ho sakta hai:
+Primer orodja je lahko videti takole:
 
 ```typescript
 server.tool(
@@ -125,87 +125,89 @@ server.tool(
 )
 ```
 
-## Client Features
+## Lastnosti klientov
 
-Model Context Protocol (MCP) mein clients servers ko kuch key features provide karte hain jo protocol ki overall functionality aur interaction ko behtar banate hain. In mein se ek aham feature Sampling hai.
+V Model Context Protocol (MCP) klienti strežnikom nudijo več ključnih funkcij, ki izboljšujejo celotno funkcionalnost in interakcijo znotraj protokola. Ena izmed pomembnih funkcij je Sampling.
 
 ### 👉 Sampling
 
-- **Server-Initiated Agentic Behaviors**: Clients servers ko yeh ijazat dete hain ke wo specific actions ya behaviors apne aap initiate kar saken, jis se system ki dynamic capabilities barhti hain.
-- **Recursive LLM Interactions**: Yeh feature large language models (LLMs) ke recursive interactions ko mumkin banata hai, jo zyada complex aur iterative task processing ko support karta hai.
-- **Additional Model Completions ki Request**: Servers model se mazeed completions ki darkhwast kar sakte hain, taake responses mukammal aur context ke mutabiq hon.
+- **Agentne vedenjske akcije, ki jih sproži strežnik**: Klienti omogočajo strežnikom, da samostojno sprožijo določena dejanja ali vedenja, kar povečuje dinamične zmogljivosti sistema.
+- **Rekurzivne interakcije z LLM**: Ta funkcija omogoča rekurzivne interakcije z velikimi jezikovnimi modeli, kar omogoča bolj zapleteno in iterativno obdelavo nalog.
+- **Zahteva po dodatnih zaključkih modela**: Strežniki lahko zahtevajo dodatne zaključke od modela, da so odgovori celoviti in kontekstualno ustrezni.
 
-## MCP mein Information Flow
+## Pretok informacij v MCP
 
-Model Context Protocol (MCP) hosts, clients, servers, aur models ke darmiyan structured information flow define karta hai. Is flow ko samajhne se yeh wazeh hota hai ke user requests kaise process hoti hain aur external tools aur data model responses mein kaise shamil hote hain.
+Model Context Protocol (MCP) določa strukturiran pretok informacij med hosti, klienti, strežniki in modeli. Razumevanje tega pretoka pomaga razjasniti, kako se uporabniške zahteve obdelujejo in kako se zunanji podatki ter orodja vključujejo v odgovore modela.
 
-- **Host Connection Initiate karta hai**  
-  Host application (jaise IDE ya chat interface) MCP server se connection establish karta hai, aam tor par STDIO, WebSocket, ya kisi aur supported transport ke zariye.
+- **Host vzpostavi povezavo**  
+  Host aplikacija (npr. IDE ali klepetalni vmesnik) vzpostavi povezavo z MCP strežnikom, običajno preko STDIO, WebSocket ali drugega podprt transporta.
 
-- **Capability Negotiation**  
-  Client (jo host mein embedded hota hai) aur server apni supported features, tools, resources, aur protocol versions ke mutaliq maloomat ka tabadla karte hain. Is se dono taraf ko pata chalta hai ke session ke liye kaun si capabilities available hain.
+- **Pogajanje o zmožnostih**  
+  Klient (vgrajen v host) in strežnik si izmenjata informacije o podprtih funkcijah, orodjih, virih in različicah protokola. Tako obe strani razumeta, katere zmožnosti so na voljo za sejo.
 
-- **User Request**  
-  User host ke saath interact karta hai (jaise prompt ya command type karta hai). Host yeh input collect karta hai aur client ko processing ke liye bhejta hai.
+- **Uporabniška zahteva**  
+  Uporabnik komunicira z hostom (npr. vnese poziv ali ukaz). Host zbere ta vhod in ga posreduje klientu za obdelavo.
 
-- **Resource ya Tool Use**  
-  - Client server se mazeed context ya resources (files, database entries, ya knowledge base articles) maang sakta hai taake model ki samajh behtar ho.
-  - Agar model ko lagta hai ke tool ki zarurat hai (jaise data fetch karna, calculation karna, ya API call karna), client server ko tool invocation request bhejta hai, jisme tool ka naam aur parameters specified hote hain.
+- **Uporaba vira ali orodja**  
+  - Klient lahko zahteva dodatni kontekst ali vire od strežnika (kot so datoteke, vnosi v bazi ali članki iz baze znanja), da obogati razumevanje modela.
+  - Če model presodi, da je potrebno orodje (npr. za pridobivanje podatkov, izračun ali klic API-ja), klient pošlje strežniku zahtevo za izvedbo orodja, pri čemer navede ime orodja in parametre.
 
-- **Server Execution**  
-  Server resource ya tool request receive karta hai, zaroori operations execute karta hai (jaise function chalana, database query karna, ya file retrieve karna), aur results client ko structured format mein wapas bhejta hai.
+- **Izvedba strežnika**  
+  Strežnik prejme zahtevo za vir ali orodje, izvede potrebne operacije (kot so izvajanje funkcije, poizvedba v bazi ali pridobivanje datoteke) in vrne rezultate klientu v strukturirani obliki.
 
-- **Response Generation**  
-  Client server ke responses (resource data, tool outputs, waghera) ko model interaction mein integrate karta hai. Model is maloomat ka istemal karke comprehensive aur contextually relevant response banata hai.
+- **Generiranje odgovora**  
+  Klient integrira strežnikove odgovore (podatke vira, izhode orodij itd.) v tekočo interakcijo z modelom. Model uporabi te informacije za generiranje celovitega in kontekstualno ustreznega odgovora.
 
-- **Result Presentation**  
-  Host client se final output receive karta hai aur user ko display karta hai, jisme aam tor par model ki generated text aur tool executions ya resource lookups ke results shamil hote hain.
+- **Prikaz rezultata**  
+  Host prejme končni izhod od klienta in ga prikaže uporabniku, pogosto vključujoč tako generirano besedilo modela kot tudi rezultate izvajanja orodij ali iskanja po virih.
 
-Yeh flow MCP ko advanced, interactive, aur context-aware AI applications support karne ke qabil banata hai jo models ko external tools aur data sources ke saath seamlessly connect karta hai.
+Ta tok omogoča MCP, da podpira napredne, interaktivne in kontekstualno ozaveščene AI aplikacije z brezhibno povezavo modelov z zunanjimi orodji in podatkovnimi viri.
 
-## Protocol Details
+## Podrobnosti protokola
 
-MCP (Model Context Protocol) [JSON-RPC 2.0](https://www.jsonrpc.org/) par mabni hai, jo hosts, clients, aur servers ke darmiyan communication ke liye standardized, language-agnostic message format provide karta hai. Yeh bunyad mukhtalif platforms aur programming languages mein reliable, structured, aur extensible interactions ko mumkin banati hai.
+MCP (Model Context Protocol) temelji na [JSON-RPC 2.0](https://www.jsonrpc.org/), ki zagotavlja standardiziran, jezikovno neodvisen format sporočil za komunikacijo med hosti, klienti in strežniki. Ta osnova omogoča zanesljive, strukturirane in razširljive interakcije preko različnih platform in programskih jezikov.
 
-### Key Protocol Features
+### Ključne lastnosti protokola
 
-MCP JSON-RPC 2.0 ko tools invocation, resource access, aur prompt management ke liye mazeed conventions ke sath extend karta hai. Yeh multiple transport layers (STDIO, WebSocket, SSE) support karta hai aur components ke darmiyan secure, extensible, aur language-agnostic communication enable karta hai.
+MCP širi JSON-RPC 2.0 z dodatnimi konvencijami za klic orodij, dostop do virov in upravljanje pozivov. Podpira več transportnih plasti (STDIO, WebSocket, SSE) ter omogoča varno, razširljivo in jezikovno neodvisno komunikacijo med komponentami.
 
-#### 🧢 Base Protocol
+#### 🧢 Osnovni protokol
 
-- **JSON-RPC Message Format**: Tamam requests aur responses JSON-RPC 2.0 specification par mabni hoti hain, jo method calls, parameters, results, aur error handling ke liye consistent structure ensure karti hai.
-- **Stateful Connections**: MCP sessions multiple requests ke darmiyan state maintain karte hain, ongoing conversations, context accumulation, aur resource management ko support karte hain.
-- **Capability Negotiation**: Connection setup ke dauran clients aur servers apni supported features, protocol versions, available tools, aur resources ke mutaliq maloomat ka tabadla karte hain. Is se dono taraf ko ek doosre ki capabilities ka pata chalta hai aur wo accordingly adapt kar sakte hain.
+- **JSON-RPC format sporočil**: Vse zahteve in odgovori uporabljajo specifikacijo JSON-RPC 2.0, kar zagotavlja dosledno strukturo za klice metod, parametre, rezultate in obravnavo napak.
+- **Stanje povezav**: MCP seje ohranjajo stanje čez več zahtev, podpirajo tekoče pogovore, kopičenje konteksta in upravljanje virov.
+- **Pogajanje o zmožnostih**: Med vzpostavitvijo povezave si klienti in strežniki izmenjajo informacije o podprtih funkcijah, različicah protokola, razpoložljivih orodjih in virih. Tako obe strani razumejo zmogljivosti in se lahko prilagodijo.
 
-#### ➕ Additional Utilities
+#### ➕ Dodatna orodja
 
-Neeche kuch mazeed utilities aur protocol extensions hain jo MCP developers ke experience ko behtar banane aur advanced scenarios enable karne ke liye provide karta hai:
+Spodaj so dodatna orodja in razširitve protokola, ki jih MCP ponuja za izboljšanje izkušnje razvijalcev in omogočanje naprednih scenarijev:
 
-- **Configuration Options**: MCP session parameters jaise tool permissions, resource access, aur model settings ko dynamic tor par configure karne ki sahulat deta hai, jo har interaction ke mutabiq tailor ki ja sakti hain.
-- **Progress Tracking**: Long-running operations progress updates report kar sakte hain, jis se responsive user interfaces aur behtar user experience complex tasks ke dauran mumkin hota hai.
-- **Request Cancellation**: Clients in-flight requests cancel kar sakte hain, jis se users un operations ko rok sakte hain jo ab zaroori nahi ya zyada waqt le rahe hain.
-- **Error Reporting**: Standardized error messages aur codes issues diagnose karne, failures ko gracefully handle karne, aur users aur developers ko actionable feedback dene mein madadgar hote hain.
-- **Logging**: Clients aur servers dono structured logs emit kar sakte hain jo auditing, debugging, aur protocol interactions ki monitoring ke liye zaroori hain.
+- **Možnosti konfiguracije**: MCP omogoča dinamično konfiguracijo parametrov seje, kot so dovoljenja za orodja, dostop do virov in nastavitve modela, prilagojene vsaki interakciji.
+- **Sledenje napredku**: Dolgotrajne operacije lahko poročajo o napredku, kar omogoča odzivne uporabniške vmesnike in boljšo uporabniško izkušnjo med kompleksnimi nalogami.
+- **Preklic zahtev**: Klienti lahko prekličejo tekoče zahteve, kar uporabnikom omogoča prekinitev operacij, ki niso več potrebne ali trajajo predolgo.
+- **Poročanje o napakah**: Standardizirana sporočila o napakah in kode pomagajo diagnosticirati težave, obravnavati napake brez prekinitev in nuditi uporabne povratne informacije uporabnikom in razvijalcem.
+- **Zapisovanje**: Tako klienti kot strežniki lahko oddajajo strukturirane zapise za revizijo, odpravljanje napak in nadzor interakcij protokola.
 
-In protocol features ke zariye MCP robust, secure, aur flexible communication ensure karta hai language models aur external tools ya data sources ke darmiyan.
+Z uporabo teh funkcij MCP zagotavlja robustno, varno in prilagodljivo komunikacijo med jezikovnimi modeli in zunanjimi orodji ali podatkovnimi viri.
 
-### 🔐 Security Considerations
+### 🔐 Varnostni vidiki
 
-MCP implementations ko kuch aham security principles ki pabandi karni chahiye taake safe aur trustworthy interactions ho sakein:
+Implementacije MCP bi morale slediti več ključnim varnostnim načelom, da zagotovijo varne in zanesljive interakcije:
 
-- **User Consent aur Control**: Kisi bhi data access ya operation se pehle users ki wazeh raza mandi zaroori hai. Users ko yeh control milna chahiye ke wo kaunsa data share karte hain aur kaun si actions authorize karte hain, jise samajhne aur approve karne ke liye user-friendly interfaces hon.
-- **Data Privacy**: User data sirf explicit consent ke sath expose hona chahiye aur munasib access controls ke zariye mehfooz rehna chahiye. MCP implementations unauthorized data transmission se bachayen aur privacy har interaction mein barqarar rakhen.
-- **Tool Safety**: Kisi bhi tool ko invoke karne se pehle user ki explicit consent lena zaroori hai. Users ko har tool ki functionality ka wazeh pata hona chahiye, aur mazboot security boundaries enforce karni chahiye taake tools ka unintended ya unsafe istemal na ho.
+- **Uporabniško soglasje in nadzor**: Uporabniki morajo izrecno dati soglasje, preden se dostopajo podatki ali izvajajo operacije. Morajo imeti jasen nadzor nad tem, kateri podatki se delijo in katere akcije so odobrene, podprto z intuitivnimi uporabniškimi vmesniki za pregled in potrditev dejavnosti.
 
-In principles par amal karke MCP user trust, privacy, aur safety ko protocol interactions mein barqarar rakhta hai.
+- **Zasebnost podatkov**: Uporabniški podatki naj bodo dostopni le z izrecnim soglasjem in zaščiteni z ustreznimi dostopnimi kontrolami. Implementacije MCP morajo preprečiti nepooblaščen prenos podatkov in zagotoviti ohranjanje zasebnosti skozi vse interakcije.
 
-## Code Examples: Key Components
+- **Varnost orodij**: Pred klicem kateregakoli orodja je potrebno izrecno uporabniško soglasje. Uporabniki morajo jasno razumeti funkcionalnost vsakega orodja, hkrati pa morajo biti vzpostavljene robustne varnostne meje, ki preprečujejo nenamerno ali nevarno izvajanje orodij.
 
-Neeche chand mashhoor programming languages mein code examples diye gaye hain jo MCP server components aur tools ko implement karne ka tariqa dikhate hain.
+S spoštovanjem teh načel MCP zagotavlja, da je zaupanje uporabnikov, zasebnost in varnost ohranjena skozi vse interakcije protokola.
 
-### .NET Example: Simple MCP Server with Tools Banana
+## Primeri kode: ključne komponente
 
-Yeh practical .NET code example dikhata hai ke simple MCP server kaise implement kiya jaye custom tools ke sath. Yeh example tools define karne, register karne, requests handle karne, aur Model Context Protocol ke zariye server connect karne ka tariqa batata hai.
+Spodaj so primeri kode v več priljubljenih programskih jezikih, ki prikazujejo, kako implementirati ključne MCP strežniške komponente in orodja.
+
+### .NET primer: Ustvarjanje preprostega MCP strežnika z orodji
+
+Tukaj je praktičen .NET primer kode, ki prikazuje, kako implementirati preprost MCP strežnik s po meri izdelanimi orodji. Primer prikazuje, kako definirati in registrirati orodja, obdelovati zahteve in povezati strežnik z Model Context Protocol.
 
 ```csharp
 using System;
@@ -264,9 +266,9 @@ public class WeatherData
 }
 ```
 
-### Java Example: MCP Server Components
+### Java primer: MCP strežniške komponente
 
-Yeh example upar wale .NET example jaisa MCP server aur tool registration Java mein implement karta hai.
+Ta primer prikazuje enak MCP strežnik in registracijo orodij kot zgornji .NET primer, vendar izvedeno v Javi.
 
 ```java
 import io.modelcontextprotocol.server.McpServer;
@@ -344,9 +346,9 @@ class WeatherData {
 }
 ```
 
-### Python Example: MCP Server Banana
+### Python primer: Izgradnja MCP strežnika
 
-Is example mein dikhaya gaya hai ke Python mein MCP server kaise banaya jaye. Aapko do mukhtalif tareeqe tools banane ke bhi dikhaye gaye hain.
+V tem primeru pokažemo, kako zgraditi MCP strežnik v Pythonu. Prikazana sta tudi dva različna načina ustvarjanja orodij.
 
 ```python
 #!/usr/bin/env python3
@@ -395,9 +397,9 @@ if __name__ == "__main__":
     asyncio.run(serve_stdio(mcp))
 ```
 
-### JavaScript Example: MCP Server Banana
+### JavaScript primer: Ustvarjanje MCP strežnika
 
-Yeh example JavaScript mein MCP server creation aur do weather-related tools register karne ka tariqa dikhata hai.
+Ta primer prikazuje ustvarjanje MCP strežnika v JavaScriptu in registracijo dveh orodij, povezanih z vremenskimi podatki.
 
 ```javascript
 // Using the official Model Context Protocol SDK
@@ -482,60 +484,14 @@ server.connect(transport).catch(console.error);
 console.log("Weather MCP Server started");
 ```
 
-Yeh JavaScript example dikhata hai ke MCP client kaise server se connect karta hai, prompt bhejta hai, aur response process karta hai jisme tool calls bhi shamil hain.
+Ta JavaScript primer prikazuje, kako ustvariti MCP klienta, ki se poveže s strežnikom, pošlje poziv in obdela odgovor, vključno z vsemi opravljenimi klici orodij.
 
-## Security aur Authorization
+## Varnost in pooblastila
 
-MCP mein security aur authorization manage karne ke liye kuch built-in concepts aur mechanisms mojood hain:
+MCP vključuje več vgrajenih konceptov in mehanizmov za upravljanje varnosti in pooblastil skozi celoten protokol:
 
-1. **Tool Permission Control**  
-  Clients specify kar sakte hain ke model session ke dauran kaun se tools use kar sakta hai. Yeh ensure karta hai ke sirf explicitly authorized tools accessible hon, jis se unintended ya unsafe operations ka risk kam hota hai. Permissions user preferences, organizational policies, ya interaction context ke mutabiq dynamically configure ki ja sakti hain.
+1. **Nadzor dovoljenj za orodja**  
 
-2. **Authentication**  
-  Servers tools, resources, ya sensitive operations tak access dene se pehle authentication talab kar sakte hain. Is mein API keys, OAuth tokens, ya dusre authentication schemes shamil ho sakte hain. Proper authentication ensure karti hai ke sirf trusted clients aur users server-side capabilities invoke kar saken.
 
-3. **Validation**  
-  Tamam tool invocations ke liye parameter validation enforce ki jati hai. Har tool apne parameters ke expected types, formats, aur constraints define karta hai, aur server incoming requests ko validate karta hai. Yeh malformed ya malicious input ko tool implementations tak pohanchne se rokta hai aur operations ki integrity barqarar rakhta hai.
-
-4. **Rate Limiting**  
-  Abuse rokne aur server resources ka munasib istemal yaqini banane ke liye MCP servers tool calls aur resource access par rate limiting implement kar sakte hain. Rate limits per user, per session, ya globally lagayi ja sakti hain, jo denial-of-service attacks ya excessive resource consumption se bachati hain.
-
-In mechanisms ke zariye MCP language models ko external tools aur data sources ke saath secure integration ke liye mazboot bunyad faraham karta hai, aur users aur developers ko access aur usage par fine-grained control deta hai.
-
-## Protocol Messages
-
-MCP communication structured JSON messages ka istemal karta hai taake clients, servers, aur models ke darmiyan wazeh aur reliable interactions ho saken. Main message types yeh hain:
-
-- **Client Request**  
-  Client se server ko bheja jata hai, aam tor par is mein shamil hota hai:
-  - User ka prompt ya command
-  - Conversation history context ke liye
-  - Tool configuration aur permissions
-  - Mazeed metadata ya session maloomat
-
-- **Model Response**  
-  Model (client ke zariye) se wapas aata hai, is mein hota hai:
-  - Prompt aur context ke mutabiq generated text ya completion
-  - Optional tool call instructions agar model decide kare ke tool invoke karna hai
-  - Zarurat par resources ya additional context ke references
-
-- **Tool Request**  
-  Client se server ko tab bheja jata hai jab tool execute karna ho. Is message mein shamil hota hai:
-  - Invoke karne wale tool ka naam
-  - Tool ke parameters (tool ke schema ke mutabiq validate kiye gaye)
-  - Contextual information ya request tracking ke liye identifiers
-
-- **Tool Response**  
-  Server se tool execution ke baad wapas aata hai. Yeh message deta hai:
-  - Tool execution ke results (structured data ya content)
-  - Agar tool call fail ho to errors ya status information
-  - Zarurat par execution se related mazeed metadata ya logs
-
-Yeh structured messages ensure karte hain ke MCP workflow ke har step mein wazahat, traceability, aur extensibility ho, jo multi-turn conversations, tool chaining, aur robust error handling jaise advanced scenarios ko support karta hai.
-
-## Key Takeaways
-
-- MCP client-server architecture use karta hai taake models ko external
-
-**Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatski prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvorno jeziku je treba šteti za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Izjava o omejitvi odgovornosti**:  
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.

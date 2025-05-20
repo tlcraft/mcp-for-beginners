@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "154c00dc3b2c792102e4845c19fbd166",
-  "translation_date": "2025-05-20T16:04:42+00:00",
+  "original_hash": "4bf553c18e7e226c3d76ab0cde627d26",
+  "translation_date": "2025-05-20T20:36:45+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "mo"
 }
@@ -554,7 +554,11 @@ Design a simple MCP tool that would be useful in your domain. Define:
 
 ## What's next
 
-Next: [Chapter 2: Security](/02-Security/readme.md)
+Next: [Chapter 2: Security](/02-Security/README.md)
 
 **Disclaimer**:  
-Thiz documint haz bin translaited yusing AI translaition servis [Co-op Translator](https://github.com/Azure/co-op-translator). Whyl wee stryve for akyuracy, pleez be awair that otomaytid translaitions may kontain erorrs or inakurysees. The orijinal documint in its naytiv langwidge shood be konsidred the authoritativ sours. For kritikall informayshun, profeshunal hyuman translaition iz rekomended. Wee ar not laybl for eny misundarstandings or misinterpretayshuns arizing from the yus of this translaition.
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+If by "mo" you mean a specific language or code, please clarify which language "mo" refers to, so I can provide an accurate translation.

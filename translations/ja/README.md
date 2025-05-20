@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5957474e94fe62b2e334f2664abb6e9b",
-  "translation_date": "2025-05-20T16:14:24+00:00",
+  "original_hash": "d52296c6503f4198db04375341953877",
+  "translation_date": "2025-05-20T20:44:17+00:00",
   "source_file": "README.md",
   "language_code": "ja"
 }
@@ -25,74 +25,74 @@ CO_OP_TRANSLATOR_METADATA:
 これらのリソースを使い始めるには、以下の手順に従ってください：
 1. **リポジトリをフォークする**: クリック [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/network)
 2. **リポジトリをクローンする**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Azure AI Foundry Discordに参加して、専門家や他の開発者と交流しましょう**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Azure AI Foundry Discordに参加して、専門家や他の開発者と交流しよう**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 多言語サポート
+### 🌐 多言語対応
 
 #### GitHub Actionによるサポート（自動化＆常に最新）
-[フランス語](../fr/README.md) | [スペイン語](../es/README.md) | [ドイツ語](../de/README.md) | [ロシア語](../ru/README.md) | [アラビア語](../ar/README.md) | [ペルシャ語 (ファルシ)](../fa/README.md) | [ウルドゥー語](../ur/README.md) | [中国語（簡体字）](../zh/README.md) | [中国語（繁体字、マカオ）](../mo/README.md) | [中国語（繁体字、香港）](../hk/README.md) | [中国語（繁体字、台湾）](../tw/README.md) | [日本語](./README.md) | [韓国語](../ko/README.md) | [ヒンディー語](../hi/README.md) | [ベンガル語](../bn/README.md) | [マラーティー語](../mr/README.md) | [ネパール語](../ne/README.md) | [パンジャブ語（グルムキー）](../pa/README.md) | [ポルトガル語（ポルトガル）](../pt/README.md) | [ポルトガル語（ブラジル）](../br/README.md) | [イタリア語](../it/README.md) | [ポーランド語](../pl/README.md) | [トルコ語](../tr/README.md) | [ギリシャ語](../el/README.md) | [タイ語](../th/README.md) | [スウェーデン語](../sv/README.md) | [デンマーク語](../da/README.md) | [ノルウェー語](../no/README.md) | [フィンランド語](../fi/README.md) | [オランダ語](../nl/README.md) | [ヘブライ語](../he/README.md) | [ベトナム語](../vi/README.md) | [インドネシア語](../id/README.md) | [マレー語](../ms/README.md) | [タガログ語（フィリピン語）](../tl/README.md) | [スワヒリ語](../sw/README.md) | [ハンガリー語](../hu/README.md) | [チェコ語](../cs/README.md) | [スロバキア語](../sk/README.md) | [ルーマニア語](../ro/README.md) | [ブルガリア語](../bg/README.md) | [セルビア語（キリル）](../sr/README.md) | [クロアチア語](../hr/README.md) | [スロベニア語](../sl/README.md) Please write the output from left to right.
-# 🚀 Model Context Protocol (MCP) 初心者向けカリキュラム
+[フランス語](../fr/README.md) | [スペイン語](../es/README.md) | [ドイツ語](../de/README.md) | [ロシア語](../ru/README.md) | [アラビア語](../ar/README.md) | [ペルシャ語 (ファルシ)](../fa/README.md) | [ウルドゥー語](../ur/README.md) | [中国語（簡体字）](../zh/README.md) | [中国語（繁体字、マカオ）](../mo/README.md) | [中国語（繁体字、香港）](../hk/README.md) | [中国語（繁体字、台湾）](../tw/README.md) | [日本語](./README.md) | [韓国語](../ko/README.md) | [ヒンディー語](../hi/README.md) | [ベンガル語](../bn/README.md) | [マラーティー語](../mr/README.md) | [ネパール語](../ne/README.md) | [パンジャブ語（グルムキー）](../pa/README.md) | [ポルトガル語（ポルトガル）](../pt/README.md) | [ポルトガル語（ブラジル）](../br/README.md) | [イタリア語](../it/README.md) | [ポーランド語](../pl/README.md) | [トルコ語](../tr/README.md) | [ギリシャ語](../el/README.md) | [タイ語](../th/README.md) | [スウェーデン語](../sv/README.md) | [デンマーク語](../da/README.md) | [ノルウェー語](../no/README.md) | [フィンランド語](../fi/README.md) | [オランダ語](../nl/README.md) | [ヘブライ語](../he/README.md) | [ベトナム語](../vi/README.md) | [インドネシア語](../id/README.md) | [マレー語](../ms/README.md) | [タガログ語（フィリピン）](../tl/README.md) | [スワヒリ語](../sw/README.md) | [ハンガリー語](../hu/README.md) | [チェコ語](../cs/README.md) | [スロバキア語](../sk/README.md) | [ルーマニア語](../ro/README.md) | [ブルガリア語](../bg/README.md) | [セルビア語（キリル文字）](../sr/README.md) | [クロアチア語](../hr/README.md) | [スロベニア語](../sl/README.md) 左から右へ出力してください。
+# 🚀 初心者向け Model Context Protocol (MCP) カリキュラム
 
-## **C#, Java, JavaScript, Python, TypeScriptで学ぶMCPの実践コード例**
+## **C#, Java, JavaScript, Python, TypeScript で学ぶ MCP ハンズオンコード例**
 
-## 🧠 Model Context Protocolカリキュラムの概要
+## 🧠 Model Context Protocol カリキュラムの概要
 
-**Model Context Protocol (MCP)** は、AIモデルとクライアントアプリケーション間のやり取りを標準化するための最先端フレームワークです。このオープンソースのカリキュラムは、C#, Java, JavaScript, TypeScript, Pythonなどの人気プログラミング言語で、実践的なコード例や実際のユースケースを交えた体系的な学習パスを提供します。
+**Model Context Protocol (MCP)** は、AIモデルとクライアントアプリケーション間のやり取りを標準化するために設計された最先端のフレームワークです。このオープンソースのカリキュラムは、C#, Java, JavaScript, TypeScript, Python といった主要なプログラミング言語での実践的なコード例や実際のユースケースを含む体系的な学習パスを提供します。
 
-AI開発者、システムアーキテクト、ソフトウェアエンジニアのいずれであっても、このガイドはMCPの基本と実装戦略を習得するための総合的なリソースです。
+AI開発者、システムアーキテクト、ソフトウェアエンジニアを問わず、本ガイドは MCP の基礎と実装戦略をマスターするための包括的なリソースです。
 
-## 🔗 MCP公式リソース
+## 🔗 公式 MCP リソース
 
 - 📘 [MCP Documentation](https://modelcontextprotocol.io/) – 詳細なチュートリアルとユーザーガイド  
-- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – プロトコルの構造と技術的リファレンス  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – オープンソースSDK、ツール、コードサンプル  
+- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – プロトコルのアーキテクチャと技術リファレンス  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – オープンソースのSDK、ツール、コードサンプル  
 
-## 🧭 MCPカリキュラム全体構成
+## 🧭 MCP カリキュラム全体構成
 
 | Ch | タイトル | 説明 | リンク |
 |--|--|--|--|
-| 00 | **MCP入門** | Model Context Protocolの概要とAIパイプラインにおける重要性、MCPとは何か、標準化の意義、実践的なユースケースとメリット | [Introduction](./00-Introduction/README.md) |
-| 01 | **コアコンセプトの解説** | MCPのコアコンセプトを詳細に解説。クライアント・サーバーアーキテクチャ、主要なプロトコル要素、メッセージングパターン | [Core Concepts](./01-CoreConcepts/README.md) |
-| 02 | **MCPにおけるセキュリティ** | MCPベースのシステムに潜むセキュリティ脅威の特定、実装を安全に保つための手法とベストプラクティス | [Security](/02-Security/readme.md) |
-| 03 | **MCPの始め方** | 環境構築と設定、基本的なMCPサーバー・クライアントの作成、既存アプリケーションとの統合 | [Getting Started](./03-GettingStarted/README.md) |
-| 3.1 | **最初のサーバー** | MCPプロトコルを使った基本的なサーバーのセットアップ、サーバーとクライアントのやり取りの理解、サーバーのテスト | [First Server](./03-GettingStarted/01-first-server/README.md) |
-| 3.2 | **最初のクライアント** | MCPプロトコルを使った基本的なクライアントのセットアップ、クライアントとサーバーのやり取りの理解、クライアントのテスト | [First Client](./03-GettingStarted/02-client/README.md) |
-| 3.3 | **LLMを使ったクライアント** | MCPプロトコルを使い、大規模言語モデル（LLM）を組み込んだクライアントのセットアップ | [Client with LLM](./03-GettingStarted/03-llm-client/README.md) |
-| 3.4 | **Visual Studio Codeでサーバーを利用する** | Visual Studio Codeを使ってMCPプロトコルのサーバーを利用する設定方法 | [Consuming a server with Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
-| 3.5 | **SSEを使ったサーバーの作成** | SSEを利用してインターネット上にサーバーを公開する方法。このセクションではSSEを使ったサーバー作成を解説 | [Creating a server using SSE](./03-GettingStarted/05-sse-server/README.md) |
-| 3.6 | **AIツールキットの活用** | AIツールキットはAIとMCPのワークフロー管理に役立つ優れたツールです。 | [Use AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
-| 3.7 | **サーバーのテスト** | テストは開発プロセスの重要な一部です。このセクションでは複数のツールを使ったテスト方法を紹介します。 | [Testing your server](./03-GettingStarted/07-testing/README.md) |
-| 3.8 | **サーバーのデプロイ** | ローカル開発から本番環境への移行方法。このセクションではサーバーの開発とデプロイ方法を解説 | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
-| 04 | **実践的な実装** | 各言語のSDK利用、デバッグ、テスト、検証、再利用可能なプロンプトテンプレートやワークフローの作成 | [Practical Implementation](./04-PracticalImplementation/README.md) |
+| 00 | **MCP 入門** | Model Context Protocol の概要とAIパイプラインにおける重要性、MCPとは何か、標準化の意義、実用例と利点の紹介 | [Introduction](./00-Introduction/README.md) |
+| 01 | **コアコンセプト解説** | MCPの基本概念の詳細解説、クライアント・サーバーアーキテクチャ、主要なプロトコル要素、メッセージングパターン | [Core Concepts](./01-CoreConcepts/README.md) |
+| 02 | **MCPにおけるセキュリティ** | MCPベースシステムにおけるセキュリティリスクの特定、実装を安全にするための技術とベストプラクティス | [Security](/02-Security/README.md) |
+| 03 | **MCP はじめの一歩** | 環境構築と設定、基本的なMCPサーバーとクライアントの作成、既存アプリケーションとの統合 | [Getting Started](./03-GettingStarted/README.md) |
+| 3.1 | **最初のサーバー** | MCPプロトコルを使った基本サーバーのセットアップ、サーバーとクライアントのやり取りの理解、サーバーのテスト | [First Server](./03-GettingStarted/01-first-server/README.md) |
+| 3.2 | **最初のクライアント** | MCPプロトコルを使った基本クライアントのセットアップ、クライアントとサーバーのやり取りの理解、クライアントのテスト | [First Client](./03-GettingStarted/02-client/README.md) |
+| 3.3 | **LLMを使ったクライアント** | MCPプロトコルを用いて大規模言語モデル（LLM）と連携するクライアントのセットアップ | [Client with LLM](./03-GettingStarted/03-llm-client/README.md) |
+| 3.4 | **Visual Studio Codeでサーバーを利用する** | MCPプロトコルを使ってVisual Studio Codeからサーバーを利用する設定方法 | [Consuming a server with Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
+| 3.5 | **SSEを使ったサーバー作成** | SSEを利用してサーバーをインターネットに公開する方法。このセクションではSSEを使ったサーバー作成を学びます | [Creating a server using SSE](./03-GettingStarted/05-sse-server/README.md) |
+| 3.6 | **AIツールキットの活用** | AIツールキットはAIおよびMCPワークフローの管理に役立つ優れたツールです | [Use AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
+| 3.7 | **サーバーのテスト** | テストは開発プロセスの重要な部分です。このセクションでは複数のツールを使ったテスト方法を解説します | [Testing your server](./03-GettingStarted/07-testing/README.md) |
+| 3.8 | **サーバーのデプロイ** | ローカル開発から本番環境への移行方法。このセクションではサーバーの開発とデプロイ方法を説明します | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
+| 04 | **実践的な実装** | 複数言語のSDK利用、デバッグ、テスト、検証、再利用可能なプロンプトテンプレートとワークフローの作成 | [Practical Implementation](./04-PracticalImplementation/README.md) |
 | 05 | **MCPの高度なトピック** | マルチモーダルAIワークフローと拡張性、安全なスケーリング戦略、企業エコシステムにおけるMCP | [Advanced Topics](./05-AdvancedTopics/README.md) |
-| 06 | **コミュニティへの貢献** | コードやドキュメントへの貢献方法、GitHubを通じたコラボレーション、コミュニティ主導の改善やフィードバック | [Community Contributions](./06-CommunityContributions/README.md) |
-| 07 | **早期導入事例からの知見** | 実際の導入例と成功事例、MCPベースのソリューション構築と展開、トレンドや将来のロードマップ | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
-| 08 | **MCPのベストプラクティス** | パフォーマンスチューニングと最適化、フォールトトレラントなMCPシステム設計、テストと耐障害性戦略 | [Best Practices](./08-BestPractices/README.md) |
-| 09 | **MCPケーススタディ** | MCPソリューションのアーキテクチャ詳細、展開の設計図や統合のヒント、注釈付き図解やプロジェクトの解説 | [Case Studies](./09-CaseStudy/README.md) |
+| 06 | **コミュニティへの貢献** | コードやドキュメントの貢献方法、GitHubを通じた協力、コミュニティ主導の改善とフィードバック | [Community Contributions](./06-CommunityContributions/README.md) |
+| 07 | **早期導入からの洞察** | 実際の導入事例と成功要因、MCPベースのソリューションの構築と展開、トレンドと今後のロードマップ | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
+| 08 | **MCPのベストプラクティス** | パフォーマンスチューニングと最適化、耐障害性の高いMCPシステム設計、テストとレジリエンス戦略 | [Best Practices](./08-BestPractices/README.md) |
+| 09 | **MCP ケーススタディ** | MCPソリューションのアーキテクチャ詳細、展開設計図と統合のコツ、注釈付き図解とプロジェクト解説 | [Case Studies](./09-CaseStudy/README.md) |
 
 ## サンプルプロジェクト
 
-### 🧮 MCP電卓サンプルプロジェクト：
+### 🧮 MCP 電卓サンプルプロジェクト：
 <details>
   <summary><strong>言語別コード実装を探る</strong></summary>
 
-  - [C# MCPサーバー例](./03-GettingStarted/samples/csharp/README.md)
-  - [Java MCP電卓](./03-GettingStarted/samples/java/calculator/README.md)
-  - [JavaScript MCPデモ](./03-GettingStarted/samples/javascript/README.md)
-  - [Python MCPサーバー](../../03-GettingStarted/samples/python/mcp_calculator_server.py)
-  - [TypeScript MCP例](./03-GettingStarted/samples/typescript/README.md)
+  - [C# MCP サーバー例](./03-GettingStarted/samples/csharp/README.md)
+  - [Java MCP 電卓](./03-GettingStarted/samples/java/calculator/README.md)
+  - [JavaScript MCP デモ](./03-GettingStarted/samples/javascript/README.md)
+  - [Python MCP サーバー](../../03-GettingStarted/samples/python/mcp_calculator_server.py)
+  - [TypeScript MCP 例](./03-GettingStarted/samples/typescript/README.md)
 
 </details>
 
-### 💡 MCP高度電卓プロジェクト：
+### 💡 MCP 高度な電卓プロジェクト：
 <details>
   <summary><strong>高度なサンプルを探る</strong></summary>
 
-  - [高度なC#サンプル](./04-PracticalImplementation/samples/csharp/README.md)
-  - [Javaコンテナアプリ例](./04-PracticalImplementation/samples/java/containerapp/README.md)
-  - [JavaScript高度サンプル](./04-PracticalImplementation/samples/javascript/README.md)
-  - [Python複雑実装](../../04-PracticalImplementation/samples/python/mcp_sample.py)
+  - [高度な C# サンプル](./04-PracticalImplementation/samples/csharp/README.md)
+  - [Java コンテナアプリ例](./04-PracticalImplementation/samples/java/containerapp/README.md)
+  - [JavaScript 高度なサンプル](./04-PracticalImplementation/samples/javascript/README.md)
+  - [Python 複雑な実装](../../04-PracticalImplementation/samples/python/mcp_sample.py)
 - [TypeScript Container Sample](./04-PracticalImplementation/samples/typescript/README.md)
 
 </details>
@@ -100,35 +100,35 @@ AI開発者、システムアーキテクト、ソフトウェアエンジニア
 
 ## 🎯 MCP学習の前提条件
 
-このカリキュラムを最大限に活用するために、以下の知識があると良いでしょう：
+このカリキュラムを最大限に活用するためには、以下が必要です：
 
 - C#、Java、またはPythonの基本知識
 - クライアントサーバーモデルとAPIの理解
 - （任意）機械学習の基本概念の知識
 
-## 🛠️ 効果的なカリキュラムの使い方
+## 🛠️ このカリキュラムの効果的な使い方
 
 このガイドの各レッスンには以下が含まれます：
 
-1. MCPの概念をわかりやすく解説  
+1. MCPの概念のわかりやすい説明  
 2. 複数言語でのライブコード例  
 3. 実際のMCPアプリケーションを作る演習  
 4. 上級者向けの追加リソース  
 
 ## 📜 ライセンス情報
 
-このコンテンツは**MITライセンス**のもとで提供されています。利用規約は[LICENSE](../../LICENSE)をご覧ください。
+このコンテンツは**MITライセンス**のもとで提供されています。利用条件については[LICENSE](../../LICENSE)をご覧ください。
 
-## 🤝 貢献ガイドライン
+## 🤝 コントリビューションガイドライン
 
-このプロジェクトでは、貢献や提案を歓迎しています。ほとんどの貢献には、あなたが貢献物の権利を有し、実際に当社に使用権を付与することを宣言するContributor License Agreement（CLA）への同意が必要です。詳細は <https://cla.opensource.microsoft.com> をご覧ください。
+このプロジェクトは貢献や提案を歓迎しています。ほとんどの貢献には、貢献者が権利を有し、実際に当社に使用権を付与していることを宣言するContributor License Agreement (CLA)への同意が必要です。詳細は<https://cla.opensource.microsoft.com>をご覧ください。
 
-プルリクエストを送ると、CLAボットが自動的にCLAの提出が必要か判断し、PRに適切なステータスやコメントを付けます。ボットの指示に従うだけでOKです。CLAの手続きは当社のすべてのリポジトリで一度だけ行えば十分です。
+プルリクエストを提出すると、CLAボットが自動的にCLAの提出が必要か判断し、PRに適切な表示（ステータスチェックやコメントなど）を行います。ボットの指示に従ってください。CLAは当社のすべてのリポジトリで一度だけ行えば十分です。
 
-このプロジェクトは[Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)を採用しています。詳しくは[Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)をご覧いただくか、質問があれば[opencode@microsoft.com](mailto:opencode@microsoft.com)までお問い合わせください。
+このプロジェクトは[Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)を採用しています。詳細は[Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)をご覧いただくか、質問やコメントがあれば[opencode@microsoft.com](mailto:opencode@microsoft.com)までご連絡ください。
 
 ## 🎒 その他のコース
-当チームでは他にも様々なコースを提供しています。ぜひご覧ください：
+当チームでは他にもコースを提供しています！ぜひご覧ください：
 
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
@@ -147,9 +147,9 @@ AI開発者、システムアーキテクト、ソフトウェアエンジニア
 
 ## ™️ 商標に関する注意
 
-このプロジェクトには、プロジェクト、製品、サービスの商標やロゴが含まれている場合があります。Microsoftの商標やロゴの使用は、[Microsoftの商標およびブランドガイドライン](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)に従う必要があります。  
-Microsoftの商標やロゴを改変した形で使用する場合、混乱を招いたりMicrosoftの後援を示唆したりしてはなりません。  
-第三者の商標やロゴの使用は、それぞれの第三者のポリシーに従います。
+このプロジェクトには、プロジェクト、製品、サービスの商標やロゴが含まれている場合があります。Microsoftの商標やロゴの正当な使用は、[Microsoftの商標およびブランドガイドライン](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)に従う必要があります。  
+本プロジェクトの改変版でMicrosoftの商標やロゴを使用する場合、混同を招いたりMicrosoftの支援を示唆したりしてはいけません。  
+第三者の商標やロゴの使用については、それぞれの第三者のポリシーに従ってください。
 
 **免責事項**：  
-本書類はAI翻訳サービス「Co-op Translator」（https://github.com/Azure/co-op-translator）を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご了承ください。原文の言語によるオリジナルの文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
+本書類はAI翻訳サービス「Co-op Translator」（https://github.com/Azure/co-op-translator）を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

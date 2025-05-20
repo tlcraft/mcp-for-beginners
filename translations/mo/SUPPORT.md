@@ -1,32 +1,31 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b7244261ee19497082edf33bcce64717",
-  "translation_date": "2025-05-17T05:46:01+00:00",
+  "original_hash": "b3cffaf217113101e21eba532be806ea",
+  "translation_date": "2025-05-20T20:34:31+00:00",
   "source_file": "SUPPORT.md",
   "language_code": "mo"
 }
 -->
-# TODO: މައިންޓޭނަރު މި ރަޕޯގައި މި ފައިލު އަދި އުފައްދަ ނުވޭ
+# Support
 
-**ރަޕޯ އޯނަރ:** އެއްޗެއް ކަސްޓަމަރ ސަރވިސް އަންޑް ސަޕޯޓް (CSS) ކުރަން ޖަވާބުތަ؟  
+## How to file issues and get help  
 
-- **CSS ސަޕޯޓް ނެތް:** މި ޓެމްޕްލޭޓަށް މައްސަލަތައް އަދި އެހެން ކޮން ކަމުން އެއްކުރަން ކަމަށް ތަފްޞީލު ކުރަން ޖަވާބުތައް ތަފްޞީލުވާނެ.  
-- **އާއި CSS ސަޕޯޓް:** އެއް އިންޓޭކް ފޯމެއް އަދި [aka.ms/onboardsupport](https://aka.ms/onboardsupport) ގައި ފޯމު ފައިލް ކުރަން. CSS ތިބާއަށް ބޭނުން ހަދާފައިވާނެ.  
-- **އަލުން ނުންމުން؟** އެއް އިންޓޭކް ފޯމެއް އަދި "އާއި" އެއްކުރަން. CSS ތިބާއަށް ބޭނުން ހަދާފައިވާނެ.  
+This project uses GitHub Issues to track bugs and feature requests. Please search the existing  
+issues before filing new issues to avoid duplicates. For new issues, file your bug or  
+feature request as a new Issue.
 
-*މި ފަތުރު ސަޕޯޓް.އެމްޑީ ފައިލު އިތުރު ރަޕޯގައި ލިބިފައި ތަފްޞީލުކުރަން.*
+For help and questions about using this project, please:  
+- Check the [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) where experts and fellow developers gather  
+- Use the [Model Context Protocol Community](https://modelcontextprotocol.io/community/) resources for protocol-related questions
 
-# ސަޕޯޓް
+## Microsoft Support Policy  
 
-## މައްސަލަތައް ތަފްޞީލުކުރަން އަދި ކަމުގެ ޖަވާބުތައް ހަދަންޖެހޭ  
+Support for the Model Context Protocol (MCP) for Beginners project is limited to the resources listed above.
 
-މި ޕްރޮޖެކްޓަށް ގިޓްހަބް އިސިއުސް ޔޫސް ކުރަން އިސްއިއުތައް އަދި ފީޗަރ ރިކުއެސްޓްތައް ޓްރެކް ކުރަންޖެހޭ. އިސްއިއުތަކުގެ ތިރީގައި އަލުން އިސްއިއުތަކުގެ ތަފްޞީލުކުރަން އަދި ފަހަރުގެ މައްސަލަތަކަށް އެއް އިސްއިއު އިން ފައިލް ކުރަންޖެހޭ.  
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
 
-މި ޕްރޮޖެކްޓް ޔޫސް ކުރަން ތައްޔާރުން އަދި މަސްތަކަށް އެހެން އެއްކުރަން ހަދާ ކުރަން މައިންޓޭނަރަށް: **ރަޕޯ މައިންޓޭނަރ: އެއްކުރަން ޖަވާބުތައް އަދި މި ރަޕޯ އޯނަރސް ނުވަތަ ކޮމިއުނިޓީއަށް ތަފްޞީލުކުރަން. އެއް ސްޓެކް އޯވަރފްލޯ ޓެގް ނުވަތަ ތިރީގައި ހަދައިދާނެއެވެ. ކަމުގެ ޖަވާބުތައް އެއްކުރަން މިތަ؟**  
+---
 
-## މައިކްސޮފްޓް ސަޕޯޓް ޕޮލިސީ  
-
-މި **ޕްރޮޖެކްޓް ނުވަތަ ޕްރޮޑަކްޓް** އެއްކުރަން ތިރީގައި މައްސަލަތަކަށް އެއްކުރަން ތަފްޞީލުވާނެ.
-
-I'm sorry, but it seems there is a misunderstanding. "Mo" is not a recognized language code, so I am unable to provide a translation. Could you please specify the language you would like the text translated into?
+Could you please clarify what language or dialect "mo" refers to? This will help me provide an accurate translation.
