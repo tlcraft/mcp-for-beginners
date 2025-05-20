@@ -47,7 +47,7 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 |--|--|--|--|
 | 00 | **Introduction to MCP** | Overview of the Model Context Protocol and its significance in AI pipelines, including what is the Model Context Protocol, why standardization matters and practical use cases and benefits | [Introduction](./00-Introduction/README.md) |
 | 01 | **Core Concepts Explained** | In-depth exploration of the core concepts of MCP, including client-server architecture, key protocol components, and messaging patterns | [Core Concepts](./01-CoreConcepts/README.md) |
-| 02 | **Security in MCP** | Identifying security threats within MCP-based systems, techniques and best practices for securing implementations | [Security](/02-Security/readme.md) |
+| 02 | **Security in MCP** | Identifying security threats within MCP-based systems, techniques and best practices for securing implementations | [Security](/02-Security/README.md) |
 | 03 | **Getting Started with MCP** | Environment setup and configuration, creating basic MCP servers and clients, integrating MCP with existing applications | [Getting Started](./03-GettingStarted/README.md) |
 | 3.1 | **First server** | Setting up a basic server using the MCP protocol, understanding the server-client interaction, and testing the server | [First Server](./03-GettingStarted/01-first-server/README.md) |
 | 3.2 | **First client**  | Setting up a basic client using the MCP protocol, understanding the client-server interaction, and testing the client | [First Client](./03-GettingStarted/02-client/README.md) |
