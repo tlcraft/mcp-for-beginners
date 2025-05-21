@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1ccfe1a6ea77e42862b92ae53cb6cddf",
-  "translation_date": "2025-05-20T16:03:33+00:00",
+  "original_hash": "296d5c8913271ef3bd696fd46d998711",
+  "translation_date": "2025-05-20T20:36:08+00:00",
   "source_file": "07-LessonsfromEarlyAdoption/README.md",
   "language_code": "mo"
 }
 -->
-# Lessons from Early Adoprters
+# Lessons from Early Adopters
 
 ## Overview
 
@@ -498,18 +498,18 @@ The Model Context Protocol (MCP) is rapidly shaping the future of standardized, 
 - [AI-Gateway (Azure-Samples)](https://github.com/Azure-Samples/AI-Gateway)
 - [Microsoft AI and Automation Solutions](https://azure.microsoft.com/en-us/products/ai-services/)
 
-## تمرین‌ها
+## Exercises
 
-1. یکی از مطالعات موردی را تحلیل کنید و رویکردی جایگزین برای پیاده‌سازی پیشنهاد دهید.
-2. یکی از ایده‌های پروژه را انتخاب کرده و مشخصات فنی دقیقی تهیه کنید.
-3. صنعتی که در مطالعات موردی پوشش داده نشده را بررسی کرده و شرح دهید که MCP چگونه می‌تواند چالش‌های خاص آن را حل کند.
-4. یکی از مسیرهای آینده را بررسی کرده و یک مفهوم برای توسعه جدید MCP جهت پشتیبانی از آن ایجاد کنید.
+1. Analyzează unul dintre studiile de caz și propune o abordare alternativă de implementare.
+2. Alege una dintre ideile de proiect și creează o specificație tehnică detaliată.
+3. Cercetează o industrie care nu este acoperită în studiile de caz și conturează cum ar putea MCP să răspundă provocărilor specifice acesteia.
+4. Explorează una dintre direcțiile viitoare și creează un concept pentru o nouă extensie MCP care să o susțină.
 
-بعدی: [Best Practices](../08-BestPractices/README.md)
+Next: [Best Practices](../08-BestPractices/README.md)
 
 **Disclaimer**:  
 This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
 
 ---
 
-Could you please clarify what language or dialect "mo" refers to? There are several possibilities (e.g., Moldovan, Moro, or others), and I want to ensure I provide the correct translation.
+If by "mo" you mean a specific language or code, please clarify which language "mo" refers to so I can provide the correct translation.

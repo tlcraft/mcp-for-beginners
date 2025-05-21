@@ -1,33 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b7244261ee19497082edf33bcce64717",
-  "translation_date": "2025-05-17T05:52:00+00:00",
+  "original_hash": "b3cffaf217113101e21eba532be806ea",
+  "translation_date": "2025-05-20T22:36:05+00:00",
   "source_file": "SUPPORT.md",
   "language_code": "sr"
 }
 -->
-# TODO: Održavalac ovog repozitorijuma još nije uredio ovu datoteku
-
-**VLASNIK REPOZITORIJUMA**: Da li želite podršku za korisnički servis i podršku (CSS) za ovaj proizvod/projekat?
-
-- **Bez CSS podrške:** Popunite ovaj šablon informacijama o tome kako prijaviti probleme i dobiti pomoć.
-- **Da, CSS podrška:** Popunite formular na [aka.ms/onboardsupport](https://aka.ms/onboardsupport). CSS će raditi sa vama/pomoći vam da odredite sledeće korake.
-- **Niste sigurni?** Popunite formular kao da je odgovor "Da". CSS će vam pomoći da odlučite.
-
-*Zatim uklonite ovaj prvi naslov iz ove SUPPORT.MD datoteke pre objavljivanja vašeg repozitorijuma.*
-
 # Podrška
 
 ## Kako prijaviti probleme i dobiti pomoć
 
-Ovaj projekat koristi GitHub Issues za praćenje grešaka i zahteva za nove funkcionalnosti. Molimo vas da pretražite postojeće probleme pre nego što prijavite nove kako biste izbegli duplikate. Za nove probleme, prijavite vašu grešku ili zahtev za funkcionalnost kao novi Issue.
+Ovaj projekat koristi GitHub Issues za praćenje grešaka i zahteva za novim funkcionalnostima. Molimo vas da pre prijavljivanja novih problema proverite postojeće prijave kako biste izbegli duplikate. Za nove probleme, prijavite vašu grešku ili zahtev kao novi Issue.
 
-Za pomoć i pitanja o korišćenju ovog projekta, molimo vas **ODRŽAVALAC REPOZITORIJUMA: UNESITE UPUTSTVA OVDE KAKO DA STUPITE U KONTAKT SA VLASNICIMA REPOZITORIJUMA ILI ZAJEDNICOM ZA POMOĆ. MOŽE BITI STACK OVERFLOW TAG ILI DRUGI KANAL. GDE ĆETE POMAGATI LJUDIMA?**.
+Za pomoć i pitanja u vezi sa korišćenjem ovog projekta, molimo vas da:
+- Proverite [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) gde se okupljaju stručnjaci i drugi programeri
+- Koristite resurse [Model Context Protocol Community](https://modelcontextprotocol.io/community/) za pitanja vezana za protokol
 
-## Microsoft politika podrške
+## Microsoft Support Policy
 
-Podrška za ovaj **PROJEKAT ili PROIZVOD** je ograničena na resurse navedene iznad.
+Podrška za Model Context Protocol (MCP) for Beginners projekat ograničena je na gore navedene resurse.
 
-**Одрицање од одговорности**:  
-Овај документ је преведен коришћењем услуге за превођење уз помоћ вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да будемо прецизни, молимо вас да будете свесни да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати меродавним извором. За критичне информације, препоручује се професионални људски превод. Не сносимо одговорност за било каква неразумевања или погрешна тумачења која могу произаћи из коришћења овог превода.
+**Ограничење одговорности**:  
+Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне тумачења која могу настати коришћењем овог превода.

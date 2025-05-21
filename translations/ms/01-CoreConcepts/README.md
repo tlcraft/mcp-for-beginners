@@ -1,87 +1,88 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "154c00dc3b2c792102e4845c19fbd166",
-  "translation_date": "2025-05-20T17:46:40+00:00",
+  "original_hash": "4bf553c18e7e226c3d76ab0cde627d26",
+  "translation_date": "2025-05-20T22:07:57+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "ms"
 }
 -->
-# 📖 MCP Core Concepts: Dominando el Protocolo de Contexto de Modelo para la Integración de IA
+# 📖 MCP Core Concepts: Mastering the Model Context Protocol for AI Integration
 
-El Protocolo de Contexto de Modelo (MCP) es un marco estandarizado y potente que optimiza la comunicación entre Modelos de Lenguaje Extenso (LLMs) y herramientas externas, aplicaciones y fuentes de datos. Esta guía optimizada para SEO te llevará a través de los conceptos fundamentales del MCP, asegurando que comprendas su arquitectura cliente-servidor, componentes esenciales, mecánicas de comunicación y mejores prácticas de implementación.
+The Model Context Protocol (MCP) is a powerful, standardized framework that optimizes communication between Large Language Models (LLMs) and external tools, applications, and data sources. This SEO-optimized guide will walk you through the core concepts of MCP, ensuring you understand its client-server architecture, essential components, communication mechanics, and implementation best practices.
 
-## Visión General
+## Overview
 
-Esta lección explora la arquitectura fundamental y los componentes que conforman el ecosistema del Protocolo de Contexto de Modelo (MCP). Aprenderás sobre la arquitectura cliente-servidor, los componentes clave y los mecanismos de comunicación que impulsan las interacciones del MCP.
+This lesson explores the fundamental architecture and components that make up the Model Context Protocol (MCP) ecosystem. You'll learn about the client-server architecture, key components, and communication mechanisms that power MCP interactions.
 
-## 👩‍🎓 Objetivos de Aprendizaje Clave
+## 👩‍🎓 Key Learning Objectives
 
-Al final de esta lección, podrás:
+By the end of this lesson, you will:
 
-- Entender la arquitectura cliente-servidor del MCP.
-- Identificar los roles y responsabilidades de Hosts, Clients y Servers.
-- Analizar las características principales que hacen del MCP una capa de integración flexible.
-- Aprender cómo fluye la información dentro del ecosistema MCP.
-- Obtener conocimientos prácticos a través de ejemplos de código en .NET, Java, Python y JavaScript.
+- Understand the MCP client-server architecture.
+- Identify roles and responsibilities of Hosts, Clients, and Servers.
+- Analyze the core features that make MCP a flexible integration layer.
+- Learn how information flows within the MCP ecosystem.
+- Gain practical insights through code examples in .NET, Java, Python, and JavaScript.
 
-## 🔎 Arquitectura MCP: Una Mirada Más Profunda
+## 🔎 MCP Architecture: A Deeper Look
 
-El ecosistema MCP está construido sobre un modelo cliente-servidor. Esta estructura modular permite que las aplicaciones de IA interactúen de manera eficiente con herramientas, bases de datos, APIs y recursos contextuales. Vamos a desglosar esta arquitectura en sus componentes principales.
+The MCP ecosystem is built on a client-server model. This modular structure allows AI applications to interact with tools, databases, APIs, and contextual resources efficiently. Let's break down this architecture into its core components.
 
 ### 1. Hosts
 
-En el Protocolo de Contexto de Modelo (MCP), los Hosts desempeñan un papel crucial como la interfaz principal a través de la cual los usuarios interactúan con el protocolo. Los Hosts son aplicaciones o entornos que inician conexiones con los servidores MCP para acceder a datos, herramientas y prompts. Ejemplos de Hosts incluyen entornos de desarrollo integrados (IDEs) como Visual Studio Code, herramientas de IA como Claude Desktop, o agentes personalizados diseñados para tareas específicas.
+In the Model Context Protocol (MCP), Hosts play a crucial role as the primary interface through which users interact with the protocol. Hosts are applications or environments that initiate connections with MCP servers to access data, tools, and prompts. Examples of Hosts include integrated development environments (IDEs) like Visual Studio Code, AI tools like Claude Desktop, or custom-built agents designed for specific tasks
 
-**Hosts** son aplicaciones LLM que inician conexiones. Ellos:
+**Hosts** are LLM applications that initiate connections. They:
 
-- Ejecutan o interactúan con modelos de IA para generar respuestas.
-- Inician conexiones con servidores MCP.
-- Gestionan el flujo de conversación y la interfaz de usuario.
-- Controlan permisos y restricciones de seguridad.
-- Manejan el consentimiento del usuario para compartir datos y ejecutar herramientas.
+- Execute or interact with AI models to generate responses.
+- Initiate connections with MCP servers.
+- Manage the conversation flow and user interface.
+- Control permission and security constraints.
+- Handle user consent for data sharing and tool execution.
+
 
 ### 2. Clients
 
-Los Clients son componentes esenciales que facilitan la interacción entre Hosts y servidores MCP. Actúan como intermediarios, permitiendo que los Hosts accedan y utilicen las funcionalidades proporcionadas por los servidores MCP. Juegan un papel crucial para garantizar una comunicación fluida y un intercambio eficiente de datos dentro de la arquitectura MCP.
+Clients are essential components that facilitate the interaction between Hosts and MCP servers. Clients act as intermediaries, enabling Hosts to access and utilize the functionalities provided by MCP servers. They play a crucial role in ensuring smooth communication and efficient data exchange within the MCP architecture
 
-**Clients** son conectores dentro de la aplicación host. Ellos:
+**Clients** are connectors within the host application. They:
 
-- Envían solicitudes a los servidores con prompts o instrucciones.
-- Negocian capacidades con los servidores.
-- Gestionan solicitudes de ejecución de herramientas provenientes de los modelos.
-- Procesan y muestran respuestas a los usuarios.
+- Send requests to servers with prompts/instructions.
+- Negotiate capabilities with servers.
+- Manage tool execution requests from models.
+- Process and display responses to users.
 
 ### 3. Servers
 
-Los Servers son responsables de manejar las solicitudes de los clients MCP y proporcionar respuestas adecuadas. Gestionan diversas operaciones como recuperación de datos, ejecución de herramientas y generación de prompts. Los servers aseguran que la comunicación entre clients y hosts sea eficiente y confiable, manteniendo la integridad del proceso de interacción.
+Servers are responsible for handling requests from MCP clients and providing appropriate responses. They manage various operations such as data retrieval, tool execution, and prompt generation. Servers ensure that the communication between clients and Hosts is efficient and reliable, maintaining the integrity of the interaction process
 
-**Servers** son servicios que proveen contexto y funcionalidades. Ellos:
+**Servers** are services that provide context and capabilities. They:
 
-- Registran las características disponibles (recursos, prompts, herramientas).
-- Reciben y ejecutan llamadas a herramientas desde el cliente.
-- Proporcionan información contextual para mejorar las respuestas del modelo.
-- Devuelven resultados al cliente.
-- Mantienen estado a lo largo de las interacciones cuando es necesario.
+- Register available features (resources, prompts, tools)
+- Receive and execute tool calls from the client
+- Provide contextual information to enhance model responses
+- Return outputs back to the client
+- Maintain state across interactions when needed
 
-Los servers pueden ser desarrollados por cualquiera para ampliar las capacidades del modelo con funcionalidades especializadas.
+Servers can be developed by anyone to extend model capabilities with specialized functionality.
 
-### 4. Características del Server
+### 4. Server Features
 
-Los servers en el Protocolo de Contexto de Modelo (MCP) ofrecen bloques fundamentales que permiten interacciones enriquecidas entre clients, hosts y modelos de lenguaje. Estas características están diseñadas para potenciar las capacidades del MCP ofreciendo contexto estructurado, herramientas y prompts.
+Servers in the Model Context Protocol (MCP) provide fundamental building blocks that enable rich interactions between clients, hosts, and language models. These features are designed to enhance the capabilities of MCP by offering structured context, tools, and prompts.
 
-Los servers MCP pueden ofrecer cualquiera de las siguientes características:
+MCP servers can offer any of the following features:
 
-#### 📑 Recursos
+#### 📑 Resources 
 
-Los recursos en el Protocolo de Contexto de Modelo (MCP) abarcan varios tipos de contexto y datos que pueden ser utilizados por usuarios o modelos de IA. Estos incluyen:
+Resources in the Model Context Protocol (MCP) encompass various types of context and data that can be utilized by users or AI models. These include:
 
-- **Datos Contextuales**: Información y contexto que los usuarios o modelos de IA pueden aprovechar para la toma de decisiones y ejecución de tareas.
-- **Bases de Conocimiento y Repositorios de Documentos**: Colecciones de datos estructurados y no estructurados, como artículos, manuales y papers de investigación, que brindan información valiosa.
-- **Archivos Locales y Bases de Datos**: Datos almacenados localmente en dispositivos o dentro de bases de datos, accesibles para procesamiento y análisis.
-- **APIs y Servicios Web**: Interfaces y servicios externos que ofrecen datos y funcionalidades adicionales, permitiendo integración con diversos recursos y herramientas en línea.
+- **Contextual Data**: Information and context that users or AI models can leverage for decision-making and task execution.
+- **Knowledge Bases and Document Repositories**: Collections of structured and unstructured data, such as articles, manuals, and research papers, that provide valuable insights and information.
+- **Local Files and Databases**: Data stored locally on devices or within databases, accessible for processing and analysis.
+- **APIs and Web Services**: External interfaces and services that offer additional data and functionalities, enabling integration with various online resources and tools.
 
-Un ejemplo de recurso puede ser un esquema de base de datos o un archivo que se puede acceder así:
+An example of a resource can be a database schema or a file that can be accessed like so:
 
 ```text
 file://log.txt
@@ -89,29 +90,28 @@ database://schema
 ```
 
 ### 🤖 Prompts
+Prompts in the Model Context Protocol (MCP) include various pre-defined templates and interaction patterns designed to streamline user workflows and enhance communication. These include:
 
-Los prompts en el Protocolo de Contexto de Modelo (MCP) incluyen varias plantillas predefinidas y patrones de interacción diseñados para agilizar flujos de trabajo y mejorar la comunicación. Estos incluyen:
+- **Templated Messages and Workflows**: Pre-structured messages and processes that guide users through specific tasks and interactions.
+- **Pre-defined Interaction Patterns**: Standardized sequences of actions and responses that facilitate consistent and efficient communication.
+- **Specialized Conversation Templates**: Customizable templates tailored for specific types of conversations, ensuring relevant and contextually appropriate interactions.
 
-- **Mensajes y Flujos de Trabajo Plantilla**: Mensajes y procesos preestructurados que guían a los usuarios a través de tareas e interacciones específicas.
-- **Patrones de Interacción Predefinidos**: Secuencias estandarizadas de acciones y respuestas que facilitan una comunicación consistente y eficiente.
-- **Plantillas Especializadas de Conversación**: Plantillas personalizables adaptadas para tipos específicos de conversaciones, asegurando interacciones relevantes y contextualmente adecuadas.
-
-Una plantilla de prompt puede verse así:
+A prompt template can look like so:
 
 ```markdown
 Generate a product slogan based on the following {{product}} with the following {{keywords}}
 ```
 
-#### ⛏️ Herramientas
+#### ⛏️ Tools
 
-Las herramientas en el Protocolo de Contexto de Modelo (MCP) son funciones que el modelo de IA puede ejecutar para realizar tareas específicas. Estas herramientas están diseñadas para ampliar las capacidades del modelo proporcionando operaciones estructuradas y confiables. Aspectos clave incluyen:
+Tools in the Model Context Protocol (MCP) are functions that the AI model can execute to perform specific tasks. These tools are designed to enhance the capabilities of the AI model by providing structured and reliable operations. Key aspects include:
 
-- **Funciones para que el modelo de IA las ejecute**: Las herramientas son funciones ejecutables que el modelo puede invocar para realizar diversas tareas.
-- **Nombre único y descripción**: Cada herramienta tiene un nombre distinto y una descripción detallada que explica su propósito y funcionalidad.
-- **Parámetros y salidas**: Las herramientas aceptan parámetros específicos y devuelven resultados estructurados, garantizando resultados consistentes y predecibles.
-- **Funciones discretas**: Las herramientas realizan funciones específicas como búsquedas web, cálculos y consultas a bases de datos.
+- **Functions for the AI model to execute**: Tools are executable functions that the AI model can invoke to carry out various tasks.
+- **Unique Name and Description**: Each tool has a distinct name and a detailed description that explains its purpose and functionality.
+- **Parameters and Outputs**: Tools accept specific parameters and return structured outputs, ensuring consistent and predictable results.
+- **Discrete Functions**: Tools perform discrete functions such as web searches, calculations, and database queries.
 
-Un ejemplo de herramienta podría verse así:
+An example tool could look like so:
 
 ```typescript
 server.tool(
@@ -125,89 +125,88 @@ server.tool(
 )
 ```
 
-## Características del Client
-
-En el Protocolo de Contexto de Modelo (MCP), los clients ofrecen varias características clave a los servers, mejorando la funcionalidad e interacción general dentro del protocolo. Una de las características destacadas es Sampling.
+## Client Features
+In the Model Context Protocol (MCP), clients offer several key features to servers, enhancing the overall functionality and interaction within the protocol. One of the notable features is Sampling.
 
 ### 👉 Sampling
 
-- **Comportamientos Agénticos Iniciados por el Server**: Los clients permiten que los servers inicien acciones o comportamientos específicos de manera autónoma, mejorando las capacidades dinámicas del sistema.
-- **Interacciones Recursivas con LLM**: Esta característica permite interacciones recursivas con modelos de lenguaje extensos (LLMs), facilitando un procesamiento más complejo e iterativo de tareas.
-- **Solicitud de Completaciones Adicionales del Modelo**: Los servers pueden solicitar completaciones adicionales al modelo, asegurando que las respuestas sean completas y contextualmente relevantes.
+- **Server-Initiated Agentic Behaviors**: Clients enable servers to initiate specific actions or behaviors autonomously, enhancing the dynamic capabilities of the system.
+- **Recursive LLM Interactions**: This feature allows for recursive interactions with large language models (LLMs), enabling more complex and iterative processing of tasks.
+- **Requesting Additional Model Completions**: Servers can request additional completions from the model, ensuring that the responses are thorough and contextually relevant.
 
-## Flujo de Información en MCP
+## Information Flow in MCP
 
-El Protocolo de Contexto de Modelo (MCP) define un flujo estructurado de información entre hosts, clients, servers y modelos. Comprender este flujo ayuda a clarificar cómo se procesan las solicitudes de los usuarios y cómo las herramientas y datos externos se integran en las respuestas del modelo.
+The Model Context Protocol (MCP) defines a structured flow of information between hosts, clients, servers, and models. Understanding this flow helps clarify how user requests are processed and how external tools and data are integrated into model responses.
 
-- **Host inicia conexión**  
-  La aplicación host (como un IDE o interfaz de chat) establece una conexión con un servidor MCP, típicamente vía STDIO, WebSocket u otro transporte soportado.
+- **Host Initiates Connection**  
+  The host application (such as an IDE or chat interface) establishes a connection to an MCP server, typically via STDIO, WebSocket, or another supported transport.
 
-- **Negociación de Capacidades**  
-  El client (integrado en el host) y el server intercambian información sobre las características, herramientas, recursos y versiones de protocolo que soportan. Esto asegura que ambas partes entiendan las capacidades disponibles para la sesión.
+- **Capability Negotiation**  
+  The client (embedded in the host) and the server exchange information about their supported features, tools, resources, and protocol versions. This ensures both sides understand what capabilities are available for the session.
 
-- **Solicitud del Usuario**  
-  El usuario interactúa con el host (por ejemplo, ingresando un prompt o comando). El host recoge esta entrada y la pasa al client para su procesamiento.
+- **User Request**  
+  The user interacts with the host (e.g., enters a prompt or command). The host collects this input and passes it to the client for processing.
 
-- **Uso de Recurso o Herramienta**  
-  - El client puede solicitar contexto o recursos adicionales al server (como archivos, entradas de base de datos o artículos de la base de conocimiento) para enriquecer la comprensión del modelo.
-  - Si el modelo determina que se necesita una herramienta (por ejemplo, para obtener datos, realizar un cálculo o llamar a una API), el client envía una solicitud de invocación de herramienta al server, especificando el nombre de la herramienta y los parámetros.
+- **Resource or Tool Use**  
+  - The client may request additional context or resources from the server (such as files, database entries, or knowledge base articles) to enrich the model's understanding.
+  - If the model determines that a tool is needed (e.g., to fetch data, perform a calculation, or call an API), the client sends a tool invocation request to the server, specifying the tool name and parameters.
 
-- **Ejecución en el Server**  
-  El server recibe la solicitud de recurso o herramienta, ejecuta las operaciones necesarias (como correr una función, consultar una base de datos o recuperar un archivo) y devuelve los resultados al client en un formato estructurado.
+- **Server Execution**  
+  The server receives the resource or tool request, executes the necessary operations (such as running a function, querying a database, or retrieving a file), and returns the results to the client in a structured format.
 
-- **Generación de Respuesta**  
-  El client integra las respuestas del server (datos de recursos, salidas de herramientas, etc.) en la interacción continua con el modelo. El modelo utiliza esta información para generar una respuesta completa y contextualmente relevante.
+- **Response Generation**  
+  The client integrates the server's responses (resource data, tool outputs, etc.) into the ongoing model interaction. The model uses this information to generate a comprehensive and contextually relevant response.
 
-- **Presentación del Resultado**  
-  El host recibe la salida final del client y la presenta al usuario, a menudo incluyendo tanto el texto generado por el modelo como cualquier resultado de ejecuciones de herramientas o consultas a recursos.
+- **Result Presentation**  
+  The host receives the final output from the client and presents it to the user, often including both the model's generated text and any results from tool executions or resource lookups.
 
-Este flujo permite que MCP soporte aplicaciones de IA avanzadas, interactivas y conscientes del contexto, conectando de manera fluida modelos con herramientas y fuentes de datos externas.
+This flow enables MCP to support advanced, interactive, and context-aware AI applications by seamlessly connecting models with external tools and data sources.
 
-## Detalles del Protocolo
+## Protocol Details
 
-MCP (Protocolo de Contexto de Modelo) está construido sobre [JSON-RPC 2.0](https://www.jsonrpc.org/), proporcionando un formato de mensaje estandarizado y agnóstico al lenguaje para la comunicación entre hosts, clients y servers. Esta base permite interacciones confiables, estructuradas y extensibles a través de diversas plataformas y lenguajes de programación.
+MCP (Model Context Protocol) is built on top of [JSON-RPC 2.0](https://www.jsonrpc.org/), providing a standardized, language-agnostic message format for communication between hosts, clients, and servers. This foundation enables reliable, structured, and extensible interactions across diverse platforms and programming languages.
 
-### Características Clave del Protocolo
+### Key Protocol Features
 
-MCP extiende JSON-RPC 2.0 con convenciones adicionales para invocación de herramientas, acceso a recursos y gestión de prompts. Soporta múltiples capas de transporte (STDIO, WebSocket, SSE) y habilita una comunicación segura, extensible y agnóstica al lenguaje entre componentes.
+MCP extends JSON-RPC 2.0 with additional conventions for tool invocation, resource access, and prompt management. It supports multiple transport layers (STDIO, WebSocket, SSE) and enables secure, extensible, and language-agnostic communication between components.
 
-#### 🧢 Protocolo Base
+#### 🧢 Base Protocol
 
-- **Formato de Mensajes JSON-RPC**: Todas las solicitudes y respuestas utilizan la especificación JSON-RPC 2.0, asegurando una estructura consistente para llamadas a métodos, parámetros, resultados y manejo de errores.
-- **Conexiones con Estado**: Las sesiones MCP mantienen estado a lo largo de múltiples solicitudes, soportando conversaciones continuas, acumulación de contexto y gestión de recursos.
-- **Negociación de Capacidades**: Durante la configuración de la conexión, clients y servers intercambian información sobre características soportadas, versiones del protocolo, herramientas y recursos disponibles. Esto garantiza que ambas partes comprendan las capacidades del otro y puedan adaptarse en consecuencia.
+- **JSON-RPC Message Format**: All requests and responses use the JSON-RPC 2.0 specification, ensuring consistent structure for method calls, parameters, results, and error handling.
+- **Stateful Connections**: MCP sessions maintain state across multiple requests, supporting ongoing conversations, context accumulation, and resource management.
+- **Capability Negotiation**: During connection setup, clients and servers exchange information about supported features, protocol versions, available tools, and resources. This ensures both sides understand each other's capabilities and can adapt accordingly.
 
-#### ➕ Utilidades Adicionales
+#### ➕ Additional Utilities
 
-A continuación, algunas utilidades y extensiones del protocolo que MCP ofrece para mejorar la experiencia del desarrollador y habilitar escenarios avanzados:
+Below are some additional utilities and protocol extensions that MCP provides to enhance developer experience and enable advanced scenarios:
 
-- **Opciones de Configuración**: MCP permite configurar dinámicamente parámetros de sesión, como permisos de herramientas, acceso a recursos y ajustes del modelo, adaptados a cada interacción.
-- **Seguimiento de Progreso**: Operaciones de larga duración pueden reportar actualizaciones de progreso, permitiendo interfaces de usuario más responsivas y mejor experiencia durante tareas complejas.
-- **Cancelación de Solicitudes**: Los clients pueden cancelar solicitudes en curso, permitiendo a los usuarios interrumpir operaciones que ya no son necesarias o que están tardando demasiado.
-- **Reporte de Errores**: Mensajes y códigos de error estandarizados ayudan a diagnosticar problemas, manejar fallas de forma elegante y proporcionar retroalimentación útil a usuarios y desarrolladores.
-- **Registro de Logs**: Tanto clients como servers pueden emitir logs estructurados para auditoría, depuración y monitoreo de las interacciones del protocolo.
+- **Configuration Options**: MCP allows dynamic configuration of session parameters, such as tool permissions, resource access, and model settings, tailored to each interaction.
+- **Progress Tracking**: Long-running operations can report progress updates, enabling responsive user interfaces and better user experience during complex tasks.
+- **Request Cancellation**: Clients can cancel in-flight requests, allowing users to interrupt operations that are no longer needed or taking too long.
+- **Error Reporting**: Standardized error messages and codes help diagnose issues, handle failures gracefully, and provide actionable feedback to users and developers.
+- **Logging**: Both clients and servers can emit structured logs for auditing, debugging, and monitoring protocol interactions.
 
-Al aprovechar estas características, MCP asegura una comunicación robusta, segura y flexible entre modelos de lenguaje y herramientas o fuentes de datos externas.
+By leveraging these protocol features, MCP ensures robust, secure, and flexible communication between language models and external tools or data sources.
 
-### 🔐 Consideraciones de Seguridad
+### 🔐 Security Considerations
 
-Las implementaciones MCP deben adherirse a varios principios clave de seguridad para garantizar interacciones seguras y confiables:
+MCP implementations should adhere to several key security principles to ensure safe and trustworthy interactions:
 
-- **Consentimiento y Control del Usuario**: Los usuarios deben otorgar consentimiento explícito antes de que cualquier dato sea accedido o se realicen operaciones. Deben tener control claro sobre qué datos se comparten y qué acciones están autorizadas, apoyado por interfaces intuitivas para revisar y aprobar actividades.
+- **User Consent and Control**: Users must provide explicit consent before any data is accessed or operations are performed. They should have clear control over what data is shared and which actions are authorized, supported by intuitive user interfaces for reviewing and approving activities.
 
-- **Privacidad de Datos**: Los datos del usuario solo deben ser expuestos con consentimiento explícito y deben estar protegidos mediante controles de acceso adecuados. Las implementaciones MCP deben protegerse contra transmisiones no autorizadas y asegurar que la privacidad se mantenga durante todas las interacciones.
+- **Data Privacy**: User data should only be exposed with explicit consent and must be protected by appropriate access controls. MCP implementations must safeguard against unauthorized data transmission and ensure that privacy is maintained throughout all interactions.
 
-- **Seguridad de las Herramientas**: Antes de invocar cualquier herramienta, se requiere consentimiento explícito del usuario. Los usuarios deben entender claramente la funcionalidad de cada herramienta, y se deben imponer límites de seguridad robustos para evitar ejecuciones no intencionadas o inseguras.
+- **Tool Safety**: Before invoking any tool, explicit user consent is required. Users should have a clear understanding of each tool’s functionality, and robust security boundaries must be enforced to prevent unintended or unsafe tool execution.
 
-Siguiendo estos principios, MCP garantiza que la confianza, privacidad y seguridad del usuario se mantengan en todas las interacciones del protocolo.
+By following these principles, MCP ensures that user trust, privacy, and safety are maintained across all protocol interactions.
 
-## Ejemplos de Código: Componentes Clave
+## Code Examples: Key Components
 
-A continuación, se presentan ejemplos de código en varios lenguajes populares que ilustran cómo implementar componentes clave de un servidor MCP y herramientas.
+Below are code examples in several popular programming languages that illustrate how to implement key MCP server components and tools.
 
-### Ejemplo en .NET: Creando un Servidor MCP Simple con Herramientas
+### .NET Example: Creating a Simple MCP Server with Tools
 
-Aquí tienes un ejemplo práctico en .NET que demuestra cómo implementar un servidor MCP simple con herramientas personalizadas. Este ejemplo muestra cómo definir y registrar herramientas, manejar solicitudes y conectar el servidor usando el Protocolo de Contexto de Modelo.
+Here is a practical .NET code example demonstrating how to implement a simple MCP server with custom tools. This example showcases how to define and register tools, handle requests, and connect the server using the Model Context Protocol.
 
 ```csharp
 using System;
@@ -266,9 +265,9 @@ public class WeatherData
 }
 ```
 
-### Ejemplo en Java: Componentes del Servidor MCP
+### Java Example: MCP Server Components
 
-Este ejemplo demuestra el mismo servidor MCP y registro de herramientas que el ejemplo en .NET anterior, pero implementado en Java.
+This example demonstrates the same MCP server and tool registration as the .NET example above, but implemented in Java.
 
 ```java
 import io.modelcontextprotocol.server.McpServer;
@@ -346,9 +345,9 @@ class WeatherData {
 }
 ```
 
-### Ejemplo en Python: Construyendo un Servidor MCP
+### Python Example: Building an MCP Server
 
-En este ejemplo mostramos cómo construir un servidor MCP en Python. También se presentan dos formas diferentes de crear herramientas.
+In this example we show how to build an MCP server in Python. You're also shown two different ways to create tools.
 
 ```python
 #!/usr/bin/env python3
@@ -397,9 +396,9 @@ if __name__ == "__main__":
     asyncio.run(serve_stdio(mcp))
 ```
 
-### Ejemplo en JavaScript: Creando un Servidor MCP
+### JavaScript Example: Creating an MCP Server
 
-Este ejemplo muestra la creación de un servidor MCP en JavaScript y cómo registrar dos herramientas relacionadas con el clima.
+This example shows MCP server creation in JavaScript and how to register two weather-related tools.
 
 ```javascript
 // Using the official Model Context Protocol SDK
@@ -484,71 +483,79 @@ server.connect(transport).catch(console.error);
 console.log("Weather MCP Server started");
 ```
 
-Este ejemplo en JavaScript demuestra cómo crear un cliente MCP que se conecta a un servidor, envía un prompt y procesa la respuesta, incluyendo cualquier llamada a herramientas que se haya realizado.
+This JavaScript example demonstrates how to create an MCP client that connects to a server, sends a prompt, and processes the response including any tool calls that were made.
 
-## Seguridad y Autorización
+## Security and Authorization
 
-MCP incluye varios conceptos y mecanismos incorporados para gestionar la seguridad y autorización a lo largo del protocolo:
+MCP includes several built-in concepts and mechanisms for managing security and authorization throughout the protocol:
 
-1. **Control de Permisos de Herramientas**:  
-  Los clients pueden especificar qué herramientas un modelo puede usar durante una sesión. Esto asegura que solo las herramientas explícitamente autorizadas estén accesibles, reduciendo el riesgo de operaciones no deseadas o inseguras. Los permisos pueden configurarse dinámicamente según preferencias del usuario, políticas organizacionales o el contexto de la interacción.
+1. **Tool Permission Control**:  
+  Clients can specify which tools a model is allowed to use during a session. This ensures that only explicitly authorized tools are accessible, reducing the risk of unintended or unsafe operations. Permissions can be configured dynamically based on user preferences, organizational policies, or the context of the interaction.
 
-2. **Autenticación**:  
-  Los servers pueden requerir autenticación antes de otorgar acceso a herramientas, recursos u operaciones sensibles. Esto puede involucrar claves API, tokens OAuth u otros esquemas de autenticación. La autenticación adecuada asegura que solo clients y usuarios confiables puedan invocar capacidades del servidor.
+2. **Authentication**:  
+  Servers can require authentication before granting access to tools, resources, or sensitive operations. This may involve API keys, OAuth tokens, or other authentication schemes. Proper authentication ensures that only trusted clients and users can invoke server-side capabilities.
 
-3. **Validación**:  
-  Se aplica validación de parámetros para todas las invocaciones de herramientas. Cada herramienta define los tipos, formatos y restricciones esperados para sus parámetros, y el servidor valida las solicitudes entrantes en consecuencia. Esto previene que entradas malformadas o maliciosas lleguen a las implementaciones de herramientas y ayuda a mantener la integridad de las operaciones.
+3. **Validation**:  
+  Parameter validation is enforced for all tool invocations. Each tool defines the expected types, formats, and constraints for its parameters, and the server validates incoming requests accordingly. This prevents malformed or malicious input from reaching tool implementations and helps maintain the integrity of operations.
 
-4. **Limitación de Tasa**:  
-  Para prevenir abusos y asegurar un uso justo de los recursos del servidor, los servers MCP pueden implementar limitación de tasa para llamadas a herramientas y acceso a recursos. Los límites pueden aplicarse por usuario, por sesión o de manera global, ayudando a proteger contra ataques de denegación de servicio o consumo excesivo de recursos.
+4. **Rate Limiting**:  
+  To prevent abuse and ensure fair usage of server resources, MCP servers can implement rate limiting for tool calls and resource access. Rate limits can be applied per user, per session, or globally, and help protect against denial-of-service attacks or excessive resource consumption.
 
-Combinando estos mecanismos, MCP proporciona una base segura para integrar modelos de lenguaje con herramientas y fuentes de datos externas, mientras ofrece a usuarios y desarrolladores control detallado sobre acceso y uso.
+By combining these mechanisms, MCP provides a secure foundation for integrating language models with external tools and data sources, while giving users and developers fine-grained control over access and usage.
 
-## Mensajes del Protocolo
+## Protocol Messages
 
-La comunicación MCP utiliza mensajes JSON estructurados para facilitar interacciones claras y confiables entre clients, servers y modelos. Los tipos principales de mensajes incluyen:
+MCP communication uses structured JSON messages to facilitate clear and reliable interactions between clients, servers, and models. The main message types include:
 
-- **Solicitud del Cliente**  
-  Enviada desde el client al server, este mensaje típicamente incluye:
-  - El prompt o comando del usuario
-  - Historial de conversación para contexto
-  - Configuración y permisos de herramientas
-  - Metadatos adicionales o información de sesión
+- **Client Request**  
+  Sent from the client to the server, this message typically includes:
+  - The user's prompt or command
+  - Conversation history for context
+  - Tool configuration and permissions
+  - Any additional metadata or session information
 
-- **Respuesta del Modelo**  
-  Devuelta por el modelo (a través del client), este mensaje contiene:
-  - Texto generado o completación basada en el prompt y contexto
-  - Instrucciones opcionales para llamada a herramientas si el modelo determina que debe invocarse una herramienta
-  - Referencias a recursos o contexto adicional según sea necesario
+- **Model Response**  
+  Returned by the model (via the client), this message contains:
+  - Generated text or completion based on the prompt and context
+  - Optional tool call instructions if the model determines a tool should be invoked
+  - References to resources or additional context as needed
 
-- **Solicitud de Herramienta**  
-  Enviada desde el client al server cuando se necesita ejecutar una herramienta. Este mensaje incluye:
-  - El nombre de la herramienta a invocar
-  - Parámetros requeridos por la herramienta (validados según el esquema de la herramienta)
-  - Información contextual o identificadores para seguimiento de la solicitud
+- **Tool Request**  
+  Sent from the client to the server when a tool needs to be executed. This message includes:
+  - The name of the tool to invoke
+  - Parameters required by the tool (validated against the tool's schema)
+  - Contextual information or identifiers for tracking the request
 
-- **Respuesta de Herramienta**  
-  Devuelta por el server tras ejecutar una herramienta. Este mensaje provee:
-  - Resultados de la ejecución de la herramienta (datos estructurados o contenido)
-  - Errores o información de estado si la llamada a la herramienta falló
-  - Opcionalmente, metadatos o logs relacionados con la ejecución
+- **Tool Response**  
+  Returned by the server after executing a tool. This message provides:
+  - The results of the tool execution (structured data or content)
+  - Any errors or status information if the tool call failed
+  - Optionally, additional metadata or logs related to the execution
 
-Estos mensajes estructurados aseguran que cada paso en el flujo de trabajo MCP sea explícito, rastreable y extensible, soportando escenarios avanzados como conversaciones multi-turno, encadenamiento de herramientas y manejo robusto de errores.
+These structured messages ensure that each step in the MCP workflow is explicit, traceable, and extensible, supporting advanced scenarios such as multi-turn conversations, tool chaining, and robust error handling.
 
-## Puntos Clave
+## Key Takeaways
 
-- MCP utiliza una arquitectura cliente-servidor para conectar modelos con capacidades externas
-- El ecosistema está compuesto por clients, hosts, servers, herramientas y fuentes de datos
-- La comunicación puede ocurrir a través de STDIO, SSE o WebSockets
-- Las herramientas son las unidades fundamentales de funcionalidad expuestas a los modelos
-- Protocolos de comunicación estructurados aseguran interacciones consistentes
+- MCP uses a client-server architecture to connect models with external capabilities
+- The ecosystem consists of clients, hosts, servers, tools, and data sources
+- Communication can happen through STDIO, SSE, or WebSockets
+- Tools are the fundamental units of functionality exposed to models
+- Structured communication protocols ensure consistent interactions
 
-## Ejercicio
+## Exercise
 
-Diseña una herramienta MCP simple que sea útil en tu dominio. Define:
-1. Cómo se llamaría la herramienta
-2. Qué parámetros aceptaría
-3. Qué salida devolver
+Design a simple MCP tool that would be useful in your domain. Define:
+1. What the tool would be named
+2. What parameters it would accept
+3. What output it would return
+4. How a model might use this tool to solve user problems
+
+
+---
+
+## What's next
+
+Next: [Chapter 2: Security](/02-Security/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

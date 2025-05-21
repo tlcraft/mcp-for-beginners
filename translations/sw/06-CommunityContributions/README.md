@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6e190a963029f156b7ecffad7093b8ce",
-  "translation_date": "2025-05-17T15:56:57+00:00",
+  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
+  "translation_date": "2025-05-20T22:16:43+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "sw"
 }
@@ -11,74 +11,74 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Muhtasari
 
-Somu hili linazingatia jinsi ya kuhusika na jamii ya MCP, kuchangia kwenye ekosistimu ya MCP, na kufuata mbinu bora za maendeleo ya pamoja. Kuelewa jinsi ya kushiriki katika miradi ya MCP ya chanzo wazi ni muhimu kwa wale wanaotaka kuunda mustakabali wa teknolojia hii.
+Somo hili linazingatia jinsi ya kushiriki katika jamii ya MCP, kuchangia kwenye mfumo wa MCP, na kufuata mbinu bora za maendeleo ya ushirikiano. Kuelewa jinsi ya kushiriki katika miradi ya wazi ya MCP ni muhimu kwa wale wanaotaka kuunda mustakabali wa teknolojia hii.
 
 ## Malengo ya Kujifunza
 
-Mwisho wa somu hili, utaweza:
-- Kuelewa muundo wa jamii na ekosistimu ya MCP
-- Kushiriki kwa ufanisi katika majadiliano na vikao vya jamii ya MCP
-- Kuchangia kwenye hifadhi za MCP za chanzo wazi
-- Kuunda na kushiriki zana maalum za MCP
-- Kufuatilia mbinu bora za maendeleo na ushirikiano wa MCP
+Mwisho wa somo hili, utaweza:
+- Kuelewa muundo wa jamii na mfumo wa MCP
+- Kushiriki kwa ufanisi katika mijadala na majukwaa ya jamii ya MCP
+- Kuchangia kwenye hifadhidata za chanzo wazi za MCP
+- Kutengeneza na kushiriki zana maalum za MCP
+- Kufuata mbinu bora za maendeleo na ushirikiano wa MCP
 
-## Ekosistimu ya Jamii ya MCP
+## Mfumo wa Jamii wa MCP
 
-Ekosistimu ya MCP ina vipengele mbalimbali na washiriki wanaofanya kazi pamoja ili kuendeleza itifaki.
+Mfumo wa MCP unajumuisha vipengele na washiriki mbalimbali wanaofanya kazi pamoja kusukuma mbele itifaki.
 
 ### Vipengele Muhimu vya Jamii
 
-1. **Wadumishaji wa Itifaki Kuu**: Microsoft na mashirika mengine yanayodumisha maelezo ya MCP ya msingi na utekelezaji wa marejeo
-2. **Watengenezaji wa Zana**: Watu binafsi na timu zinazounda zana za MCP
-3. **Watoaji wa Ujumuishaji**: Kampuni zinazojumuisha MCP katika bidhaa na huduma zao
-4. **Watumiaji wa Mwisho**: Watengenezaji na mashirika yanayotumia MCP katika programu zao
-5. **Wachangiaji**: Wanachama wa jamii wanaochangia msimbo, nyaraka, au rasilimali nyingine
+1. **Wahifadhi wa Itifaki ya Msingi**: Microsoft na mashirika mengine yanayohifadhi vipimo vya msingi vya MCP na utekelezaji wa rejea
+2. **Waendelezaji wa Zana**: Watu binafsi na timu zinazotengeneza zana za MCP
+3. **Watoa Huduma za Muunganiko**: Makampuni yanayojumuisha MCP kwenye bidhaa na huduma zao
+4. **Watumiaji wa Mwisho**: Waendelezaji na mashirika yanayotumia MCP katika programu zao
+5. **Wachangiaji**: Wanajamii wanaochangia msimbo, nyaraka, au rasilimali nyingine
 
 ### Rasilimali za Jamii
 
 #### Njia Rasmi
 
-- [Hifadhi ya MCP GitHub](https://github.com/modelcontextprotocol)
-- [Nyaraka za MCP](https://modelcontextprotocol.io/)
-- [Maelezo ya MCP](https://spec.modelcontextprotocol.io/)
-- [Majadiliano ya GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
 
 #### Rasilimali Zinazoendeshwa na Jamii
 
-- Utekelezaji wa SDK maalum kwa lugha
-- Utekelezaji wa seva na maktaba ya zana
+- Utekelezaji wa SDK kwa lugha mbalimbali
+- Utekelezaji wa seva na maktaba za zana
 - Machapisho ya blogu na mafunzo
-- Vikao vya jamii na majadiliano ya mitandao ya kijamii
+- Mijadala ya majukwaa ya jamii na mitandao ya kijamii
 
-## Kuchangia kwa MCP
+## Kuchangia MCP
 
 ### Aina za Michango
 
-Ekosistimu ya MCP inakaribisha aina mbalimbali za michango:
+Mfumo wa MCP unakaribisha aina mbalimbali za michango:
 
 1. **Michango ya Msimbo**:
-   - Uboreshaji wa itifaki kuu
+   - Maboresho ya itifaki ya msingi
    - Marekebisho ya hitilafu
    - Utekelezaji wa zana
-   - Maktaba za mteja/seva katika lugha tofauti
+   - Maktaba za mteja/seva kwa lugha tofauti
 
 2. **Nyaraka**:
    - Kuboresha nyaraka zilizopo
-   - Kuunda mafunzo na miongozo
+   - Kutengeneza mafunzo na mwongozo
    - Kutafsiri nyaraka
-   - Kuunda mifano na programu za sampuli
+   - Kutengeneza mifano na programu za majaribio
 
 3. **Msaada wa Jamii**:
-   - Kujibu maswali kwenye vikao
-   - Kupima na kuripoti masuala
+   - Kujibu maswali kwenye majukwaa
+   - Kupima na kuripoti matatizo
    - Kuandaa matukio ya jamii
-   - Kutoa mafunzo kwa wachangiaji wapya
+   - Kusaidia wachangiaji wapya
 
-### Mchakato wa Michango: Itifaki Kuu
+### Mchakato wa Kuchangia: Itifaki ya Msingi
 
-Ili kuchangia kwenye itifaki kuu ya MCP au utekelezaji rasmi:
+Kuchangia kwenye itifaki ya msingi ya MCP au utekelezaji rasmi:
 
-#### Mfano wa .NET: Kuchangia Uboreshaji wa Itifaki
+#### Mfano wa .NET: Kuchangia Maboresho ya Itifaki
 
 ```csharp
 // Example contribution to MCP protocol: Adding support for binary data streams
@@ -230,7 +230,7 @@ public class ToolParameterValidator {
 }
 ```
 
-#### Mfano wa Python: Kuchangia Zana Mpya kwenye Maktaba ya Kawaida
+#### Mfano wa Python: Kuchangia Zana Mpya kwa Maktaba ya Kawaida
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -392,21 +392,21 @@ class CsvProcessingTool(Tool):
 
 ### Miongozo ya Michango
 
-Ili kufanya mchango wenye mafanikio kwa miradi ya MCP:
+Ili kufanya mchango wenye mafanikio kwenye miradi ya MCP:
 
-1. **Anza Kidogo**: Anza na nyaraka, marekebisho ya hitilafu, au uboreshaji mdogo
-2. **Fuata Mwongozo wa Mtindo**: Zingatia mtindo wa uandishi wa msimbo na kanuni za mradi
-3. **Andika Majaribio**: Jumuisha majaribio ya vitengo kwa michango yako ya msimbo
-4. **Tia Nyaraka Kazi Yako**: Ongeza nyaraka wazi kwa vipengele vipya au mabadiliko
-5. **Tuma PR Zilizoelekezwa**: Weka maombi ya kuvuta yakiwa yameelekezwa kwenye suala au kipengele kimoja
-6. **Husika na Maoni**: Kuwa tayari kujibu maoni kuhusu michango yako
+1. **Anza Kidogo**: Anza na nyaraka, marekebisho ya hitilafu, au maboresho madogo
+2. **Fuata Mwongozo wa Mtindo**: Zingatia mtindo wa kuandika msimbo na kanuni za mradi
+3. **Andika Majaribio**: Jumuisha majaribio ya kitengo kwa michango yako ya msimbo
+4. **Andika Nyaraka za Kazi Yako**: Ongeza nyaraka wazi kwa vipengele vipya au mabadiliko
+5. **Wasilisha PR Zilizolengwa**: Weka ombi la kuvuta likizingatia tatizo au kipengele kimoja
+6. **Shiriki maoni**: Jitahidi kujibu maoni kuhusu michango yako
 
-### Mfano wa Mtiririko wa Michango
+### Mfano wa Mchakato wa Kuchangia
 
 ```bash
 # Clone the repository
 git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp
+cd mcp-for-beginners
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -429,13 +429,13 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Kuunda na Kushiriki Zana Maalum za MCP
+## Kutengeneza na Kushiriki Zana Maalum za MCP
 
-Njia moja muhimu ya kuchangia kwenye ekosistimu ya MCP ni kuunda na kushiriki zana maalum.
+Moja ya njia muhimu za kuchangia kwenye mfumo wa MCP ni kutengeneza na kushiriki zana maalum.
 
-### Kuendeleza Zana Zinazoweza Kushirikishwa
+### Kuendeleza Zana Zinazoweza Kushirikiwa
 
-#### Mfano wa .NET: Kuunda Pakiti ya Zana Inayoweza Kushirikishwa
+#### Mfano wa .NET: Kutengeneza Pakiti ya Zana Inayoweza Kushirikiwa
 
 ```csharp
 // Create a new .NET library project
@@ -541,7 +541,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Mfano wa Java: Kuunda Pakiti ya Maven kwa Zana
+#### Mfano wa Java: Kutengeneza Pakiti ya Maven kwa Zana
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -752,38 +752,38 @@ class SentimentAnalysisTool(Tool):
 Unaposhiriki zana za MCP na jamii:
 
 1. **Nyaraka Kamili**:
-   - Eleza madhumuni, matumizi, na mifano
-   - Eleza vigezo na thamani za kurudi
-   - Tia nyaraka utegemezi wowote wa nje
+   - Elezea madhumuni, matumizi, na mifano
+   - Elezea vigezo na thamani zinazorejeshwa
+   - Andika kuhusu utegemezi wowote wa nje
 
-2. **Ushughulikiaji wa Hitilafu**:
-   - Tekeleza usimamizi thabiti wa hitilafu
-   - Toa ujumbe wa hitilafu wa maana
-   - Ushughulikie kesi za ukingo kwa ustadi
+2. **Udhibiti wa Makosa**:
+   - Tekeleza udhibiti thabiti wa makosa
+   - Toa ujumbe wa makosa unaosaidia
+   - Shughulikia matukio ya pembezoni kwa uangalifu
 
-3. **Mazoea ya Utendaji**:
-   - Boreshaji kwa kasi na matumizi ya rasilimali
-   - Tekeleza uhifadhi inapofaa
-   - Zingatia upanuzi
+3. **Mambo ya Utendaji**:
+   - Boresha kwa kasi na matumizi ya rasilimali
+   - Tekeleza caching inapofaa
+   - Fikiria upanuzi wa matumizi
 
 4. **Usalama**:
-   - Tumia funguo za API salama na uthibitishaji
-   - Thibitisha na kusafisha ingizo
-   - Tekeleza upunguzaji wa kiwango kwa miito ya API za nje
+   - Tumia API keys salama na uthibitishaji
+   - Hakiki na safisha ingizo
+   - Tekeleza ukomo wa mwendo kwa miito ya API ya nje
 
-5. **Upimaji**:
-   - Jumuisha ufunikaji kamili wa majaribio
-   - Pima kwa aina tofauti za ingizo na kesi za ukingo
-   - Tia nyaraka utaratibu wa majaribio
+5. **Majaribio**:
+   - Jumuisha majaribio ya kina
+   - Jaribu na aina tofauti za ingizo na matukio ya pembezoni
+   - Andika taratibu za majaribio
 
 ## Ushirikiano wa Jamii na Mbinu Bora
 
-Ushirikiano wa ufanisi ni muhimu kwa ekosistimu ya MCP inayostawi.
+Ushirikiano mzuri ni muhimu kwa ukuaji wa mfumo wa MCP.
 
 ### Njia za Mawasiliano
 
-- Masuala na Majadiliano ya GitHub
-- Jamii ya Teknolojia ya Microsoft
+- Masuala na Mijadala ya GitHub
+- Microsoft Tech Community
 - Njia za Discord na Slack
 - Stack Overflow (tag: `model-context-protocol` or `mcp`)
 
@@ -791,24 +791,24 @@ Ushirikiano wa ufanisi ni muhimu kwa ekosistimu ya MCP inayostawi.
 
 Unapopitia michango ya MCP:
 
-1. **Uwazi**: Je, msimbo ni wazi na umetiwa nyaraka vizuri?
-2. **Usahihi**: Je, inafanya kazi kama inavyotarajiwa?
-3. **Muendelezo**: Je, inafuata kanuni za mradi?
-4. **Ukamilifu**: Je, majaribio na nyaraka zimejumuishwa?
-5. **Usalama**: Je, kuna wasiwasi wowote wa usalama?
+1. **Uwazi**: Je, msimbo ni wazi na umeandikwa vizuri?
+2. **Uhalisia**: Je, unafanya kazi kama inavyotarajiwa?
+3. **Ulinganifu**: Je, unafuata kanuni za mradi?
+4. **Ukamilifu**: Je, majaribio na nyaraka vimejumuishwa?
+5. **Usalama**: Je, kuna masuala yoyote ya usalama?
 
-### Utangamano wa Toleo
+### Ulinganifu wa Toleo
 
-Unapokua kwa MCP:
+Unapofanya maendeleo kwa MCP:
 
-1. **Utoaji wa Itifaki**: Zingatia toleo la itifaki ya MCP ambalo zana yako inaunga mkono
-2. **Utangamano wa Mteja**: Zingatia utangamano wa nyuma
-3. **Utangamano wa Seva**: Fuata miongozo ya utekelezaji wa seva
-4. **Mabadiliko Yanayovunja**: Tia nyaraka wazi mabadiliko yoyote yanayovunja
+1. **Toleo la Itifaki**: Fuata toleo la itifaki ya MCP ambalo zana yako inaunga mkono
+2. **Ulinganifu wa Mteja**: Fikiria ulinganifu wa nyuma
+3. **Ulinganifu wa Seva**: Fuata miongozo ya utekelezaji wa seva
+4. **Mabadiliko Yanayovunja**: Elezea kwa uwazi mabadiliko yanayovunja
 
 ## Mfano wa Mradi wa Jamii: Usajili wa Zana za MCP
 
-Mchango muhimu wa jamii unaweza kuwa kuendeleza usajili wa umma wa zana za MCP.
+Mchango muhimu wa jamii unaweza kuwa kutengeneza rejista ya umma kwa zana za MCP.
 
 ```python
 # Example schema for a community tool registry API
@@ -887,30 +887,30 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## Mambo Muhimu ya Kujifunza
+## Muhimu wa Kumbuka
 
 - Jamii ya MCP ni tofauti na inakaribisha aina mbalimbali za michango
-- Kuchangia kwa MCP kunaweza kuanzia uboreshaji wa itifaki kuu hadi zana maalum
-- Kufuatilia miongozo ya michango kunaongeza uwezekano wa PR yako kukubaliwa
-- Kuunda na kushiriki zana za MCP ni njia muhimu ya kuboresha ekosistimu
-- Ushirikiano wa jamii ni muhimu kwa ukuaji na uboreshaji wa MCP
+- Kuchangia MCP kunaweza kuanzia maboresho ya itifaki ya msingi hadi zana maalum
+- Kufuata miongozo ya michango huongeza nafasi ya PR yako kukubaliwa
+- Kutengeneza na kushiriki zana za MCP ni njia yenye thamani ya kuboresha mfumo
+- Ushirikiano wa jamii ni muhimu kwa ukuaji na kuboresha MCP
 
-## Zoezi
+## Zoefu
 
-1. Tambua eneo katika ekosistimu ya MCP ambapo unaweza kufanya mchango kulingana na ujuzi na maslahi yako
-2. Fanya fork ya hifadhi ya MCP na uunde mazingira ya maendeleo ya ndani
-3. Unda uboreshaji mdogo, marekebisho ya hitilafu, au zana ambayo itafaidisha jamii
-4. Tia nyaraka mchango wako kwa majaribio na nyaraka sahihi
-5. Tuma ombi la kuvuta kwenye hifadhi inayofaa
+1. Tambua eneo katika mfumo wa MCP ambapo unaweza kuchangia kulingana na ujuzi na maslahi yako
+2. Fokisha hifadhidata ya MCP na weka mazingira ya maendeleo ya ndani
+3. Tengeneza maboresho madogo, marekebisho ya hitilafu, au zana itakayowanufaisha wanajamii
+4. Andika nyaraka za mchango wako pamoja na majaribio sahihi
+5. Wasilisha ombi la kuvuta kwenye hifadhidata inayofaa
 
-## Rasilimali za Ziada
+## Rasilimali Zaidi
 
-- [Miradi ya Jamii ya MCP](https://github.com/topics/model-context-protocol)
+- [MCP Community Projects](https://github.com/topics/model-context-protocol)
 
 
 ---
 
-Inayofuata: [Masomo kutoka kwa Kupitishwa Mapema](../07-LessonsfromEarlyAdoption/README.md)
+Ifuatayo: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
-**Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya kutafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upotovu. Hati asilia katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo chenye mamlaka. Kwa habari muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa maelewano mabaya au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Hati ya Kukataa**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatubeba uwajibikaji wowote kwa kutoelewana au tafsiri potofu zitokanazo na matumizi ya tafsiri hii.

@@ -1,33 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b7244261ee19497082edf33bcce64717",
-  "translation_date": "2025-05-17T05:50:52+00:00",
+  "original_hash": "b3cffaf217113101e21eba532be806ea",
+  "translation_date": "2025-05-20T22:13:03+00:00",
   "source_file": "SUPPORT.md",
   "language_code": "sw"
 }
 -->
-# TODO: Msimamizi wa hazina hii bado hajahariri faili hii
+# Support
 
-**MMILIKI WA REPO**: Je, unataka msaada wa Huduma kwa Wateja na Usaidizi (CSS) kwa bidhaa/mradi huu?
+## Jinsi ya kufungua matatizo na kupata msaada
 
-- **Hakuna msaada wa CSS:** Jaza kiolezo hiki na maelezo ya jinsi ya kuwasilisha masuala na kupata msaada.
-- **Ndiyo msaada wa CSS:** Jaza fomu ya kuingiza kwenye [aka.ms/onboardsupport](https://aka.ms/onboardsupport). CSS itakusaidia kuamua hatua zinazofuata.
-- **Sijui?** Jaza fomu ya kuingiza kana kwamba jibu ni "Ndiyo". CSS itakusaidia kuamua.
+Mradi huu unatumia GitHub Issues kufuatilia hitilafu na maombi ya vipengele. Tafadhali tafuta matatizo yaliyopo kabla ya kufungua matatizo mapya ili kuepuka kurudia. Kwa matatizo mapya, fungua hitilafu yako au ombi la kipengele kama Issue mpya.
 
-*Halafu ondoa kichwa hiki cha kwanza kutoka kwenye faili hii ya SUPPORT.MD kabla ya kuchapisha hazina yako.*
+Kwa msaada na maswali kuhusu kutumia mradi huu, tafadhali:
+- Angalia [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) ambapo wataalamu na waendelezaji wenzako hukusanyika
+- Tumia rasilimali za [Model Context Protocol Community](https://modelcontextprotocol.io/community/) kwa maswali yanayohusiana na itifaki
 
-# Msaada
+## Microsoft Support Policy
 
-## Jinsi ya kuwasilisha masuala na kupata msaada  
+Msaada kwa Model Context Protocol (MCP) kwa mradi wa Waanzilishi unazuiliwa kwa rasilimali zilizotajwa hapo juu.
 
-Mradi huu unatumia Masuala ya GitHub kufuatilia hitilafu na maombi ya vipengele. Tafadhali tafuta masuala yaliyopo kabla ya kuwasilisha masuala mapya ili kuepuka kurudia. Kwa masuala mapya, wasilisha hitilafu yako au ombi la kipengele kama suala jipya.
-
-Kwa msaada na maswali kuhusu kutumia mradi huu, tafadhali **MSIMAMIZI WA REPO: WEKA MAELEKEZO HAPA JINSI YA KUWASILIANA NA WAMILIKI WA REPO AU JAMII KWA MSAADA. INAWEZA KUWA TAG YA STACK OVERFLOW AU NJIA NYINGINE. WAPI UTAWASAIDIA WATU?**.
-
-## Sera ya Msaada ya Microsoft  
-
-Msaada kwa **MRADI au BIDHAA** hii ni mdogo kwa rasilimali zilizoorodheshwa hapo juu.
-
-**Kanusho**: 
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokamilika. Hati ya asili katika lugha yake ya kiasili inapaswa kuzingatiwa kama chanzo rasmi. Kwa taarifa muhimu, tafsiri ya kibinadamu ya kitaalamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+**Kaaisho:**  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kuwa tafsiri za moja kwa moja zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

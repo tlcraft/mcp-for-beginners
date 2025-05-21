@@ -1,37 +1,37 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1ccfe1a6ea77e42862b92ae53cb6cddf",
-  "translation_date": "2025-05-20T17:20:46+00:00",
+  "original_hash": "296d5c8913271ef3bd696fd46d998711",
+  "translation_date": "2025-05-20T21:43:45+00:00",
   "source_file": "07-LessonsfromEarlyAdoption/README.md",
   "language_code": "da"
 }
 -->
-# Lessons from Early Adoprters
+# Lessons from Early Adopters
 
 ## Oversigt
 
-Denne lektion undersøger, hvordan tidlige brugere har udnyttet Model Context Protocol (MCP) til at løse virkelige udfordringer og drive innovation på tværs af brancher. Gennem detaljerede casestudier og praktiske projekter vil du se, hvordan MCP muliggør standardiseret, sikker og skalerbar AI-integration—der forbinder store sprogmodeller, værktøjer og virksomhedens data i en samlet ramme. Du får praktisk erfaring med at designe og bygge MCP-baserede løsninger, lærer af dokumenterede implementeringsmønstre og opdager bedste praksis for udrulning af MCP i produktionsmiljøer. Lektionen fremhæver også nye tendenser, fremtidige retninger og open source-ressourcer, så du kan holde dig på forkant med MCP-teknologien og dens udviklende økosystem.
+Denne lektion undersøger, hvordan tidlige brugere har udnyttet Model Context Protocol (MCP) til at løse virkelige udfordringer og fremme innovation på tværs af brancher. Gennem detaljerede casestudier og praktiske projekter vil du se, hvordan MCP muliggør standardiseret, sikker og skalerbar AI-integration – ved at forbinde store sprogmodeller, værktøjer og virksomheders data i en samlet ramme. Du får praktisk erfaring med at designe og bygge MCP-baserede løsninger, lærer af gennemprøvede implementeringsmønstre og opdager bedste praksis for udrulning af MCP i produktionsmiljøer. Lektionen fremhæver også nye tendenser, fremtidige retninger og open source-ressourcer, som hjælper dig med at holde dig på forkant med MCP-teknologien og dens udviklende økosystem.
 
 ## Læringsmål
 
 - Analysere virkelige MCP-implementeringer på tværs af forskellige brancher  
 - Designe og bygge komplette MCP-baserede applikationer  
 - Udforske nye tendenser og fremtidige retninger inden for MCP-teknologi  
-- Anvende bedste praksis i faktiske udviklingsscenarier  
+- Anvende bedste praksis i reelle udviklingsscenarier  
 
-## Virkelige MCP-implementeringer
+## Virkelige MCP-Implementeringer
 
 ### Casestudie 1: Automatisering af Enterprise Kundesupport
 
 En multinational virksomhed implementerede en MCP-baseret løsning for at standardisere AI-interaktioner på tværs af deres kundesupportsystemer. Dette gjorde det muligt for dem at:
 
-- Skabe et samlet interface for flere LLM-udbydere  
+- Skabe en samlet grænseflade til flere LLM-udbydere  
 - Opretholde konsistent promptstyring på tværs af afdelinger  
 - Implementere robuste sikkerheds- og compliance-kontroller  
-- Nem skift mellem forskellige AI-modeller baseret på specifikke behov  
+- Let skifte mellem forskellige AI-modeller baseret på specifikke behov  
 
-**Teknisk implementering:**  
+**Teknisk Implementering:**  
 ```python
 # Python MCP server implementation for customer support
 import logging
@@ -92,18 +92,18 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-**Resultater:** 30 % reduktion i modelomkostninger, 45 % forbedring i responsens konsistens og øget compliance på tværs af globale operationer.
+**Resultater:** 30% reduktion i modelomkostninger, 45% forbedring i responssammenhæng og styrket compliance på tværs af globale operationer.
 
-### Casestudie 2: Diagnostisk Assistent i Sundhedssektoren
+### Casestudie 2: Sundhedsdiagnostisk Assistent
 
-En sundhedsudbyder udviklede en MCP-infrastruktur til at integrere flere specialiserede medicinske AI-modeller, samtidig med at følsomme patientdata blev beskyttet:
+En sundhedsudbyder udviklede en MCP-infrastruktur for at integrere flere specialiserede medicinske AI-modeller, samtidig med at følsomme patientdata blev beskyttet:
 
-- Problemfri skift mellem generalist- og specialistmedicinske modeller  
+- Problemfri skift mellem generelle og specialiserede medicinske modeller  
 - Strenge privatlivskontroller og revisionsspor  
-- Integration med eksisterende Electronic Health Record (EHR)-systemer  
-- Konsistent prompt engineering for medicinsk terminologi  
+- Integration med eksisterende Elektroniske Patientjournaler (EHR)  
+- Konsistent promptudformning for medicinsk terminologi  
 
-**Teknisk implementering:**  
+**Teknisk Implementering:**  
 ```csharp
 // C# MCP host application implementation in healthcare application
 using Microsoft.Extensions.DependencyInjection;
@@ -168,18 +168,18 @@ public class DiagnosticAssistant
 }
 ```
 
-**Resultater:** Forbedrede diagnostiske forslag til læger samtidig med fuld HIPAA-overholdelse og betydelig reduktion af kontekstskift mellem systemer.
+**Resultater:** Forbedrede diagnostiske forslag til læger med fuld HIPAA-overholdelse og betydelig reduktion i kontekstskift mellem systemer.
 
 ### Casestudie 3: Risikostyring i Finanssektoren
 
-En finansiel institution implementerede MCP for at standardisere deres risikovurderingsprocesser på tværs af afdelinger:
+En finansiel institution implementerede MCP for at standardisere deres risikostyringsprocesser på tværs af forskellige afdelinger:
 
-- Skabte et samlet interface for kreditrisiko, bedrageriopsporing og investeringsrisikomodeller  
-- Implementerede strenge adgangskontroller og versionsstyring af modeller  
+- Skabte en samlet grænseflade til kreditrisiko, bedrageridetektion og investeringsrisikomodeller  
+- Implementerede strenge adgangskontroller og modelversionering  
 - Sikrede sporbarhed af alle AI-anbefalinger  
 - Opretholdt ensartet dataformat på tværs af forskellige systemer  
 
-**Teknisk implementering:**  
+**Teknisk Implementering:**  
 ```java
 // Java MCP server for financial risk assessment
 import org.mcp.server.*;
@@ -210,18 +210,18 @@ public class FinancialRiskMCPServer {
 }
 ```
 
-**Resultater:** Forbedret regulatorisk overholdelse, 40 % hurtigere udrulningscyklusser for modeller og bedre konsistens i risikovurderinger på tværs af afdelinger.
+**Resultater:** Forbedret regulatorisk compliance, 40% hurtigere udrulningscyklusser for modeller og øget konsistens i risikovurdering på tværs af afdelinger.
 
 ### Casestudie 4: Microsoft Playwright MCP Server til Browserautomatisering
 
-Microsoft udviklede [Playwright MCP serveren](https://github.com/microsoft/playwright-mcp) for at muliggøre sikker, standardiseret browserautomatisering gennem Model Context Protocol. Denne løsning gør det muligt for AI-agenter og LLM’er at interagere med webbrowsere på en kontrolleret, reviderbar og udvidelsesvenlig måde—med brugsscenarier som automatiseret webtest, dataudtræk og end-to-end workflows.
+Microsoft udviklede [Playwright MCP server](https://github.com/microsoft/playwright-mcp) for at muliggøre sikker, standardiseret browserautomatisering via Model Context Protocol. Denne løsning tillader AI-agenter og LLM’er at interagere med webbrowsere på en kontrolleret, reviderbar og udvidelsesvenlig måde – hvilket muliggør brugsscenarier som automatiseret webtest, dataudtræk og end-to-end workflows.
 
-- Eksponerer browserautomatiseringsfunktioner (navigation, formularudfyldning, screenshot, osv.) som MCP-værktøjer  
+- Eksponerer browserautomatiseringsfunktioner (navigation, formularudfyldning, screenshot, m.m.) som MCP-værktøjer  
 - Implementerer strenge adgangskontroller og sandboxing for at forhindre uautoriserede handlinger  
-- Leverer detaljerede revisionslogs for alle browserinteraktioner  
+- Tilbyder detaljerede revisionslogfiler for alle browserinteraktioner  
 - Understøtter integration med Azure OpenAI og andre LLM-udbydere til agentdrevet automatisering  
 
-**Teknisk implementering:**  
+**Teknisk Implementering:**  
 ```typescript
 // TypeScript: Registering Playwright browser automation tools in an MCP server
 import { createServer, ToolDefinition } from 'modelcontextprotocol';
@@ -263,19 +263,19 @@ server.listen(8080);
 
 **Referencer:**  
 - [Playwright MCP Server GitHub Repository](https://github.com/microsoft/playwright-mcp)  
-- [Microsoft AI and Automation Solutions](https://azure.microsoft.com/en-us/products/ai-services/)
+- [Microsoft AI and Automation Solutions](https://azure.microsoft.com/en-us/products/ai-services/)  
 
-### Casestudie 5: Azure MCP – Enterprise-Grade Model Context Protocol som Service
+### Casestudie 5: Azure MCP – Enterprise-Grade Model Context Protocol som en Service
 
 Azure MCP ([https://aka.ms/azmcp](https://aka.ms/azmcp)) er Microsofts administrerede, enterprise-grade implementering af Model Context Protocol, designet til at levere skalerbare, sikre og compliant MCP-serverfunktioner som en cloudtjeneste. Azure MCP gør det muligt for organisationer hurtigt at udrulle, administrere og integrere MCP-servere med Azure AI, data og sikkerhedstjenester, hvilket reducerer driftsomkostninger og fremskynder AI-adoption.
 
 - Fuldt administreret MCP-serverhosting med indbygget skalering, overvågning og sikkerhed  
 - Native integration med Azure OpenAI, Azure AI Search og andre Azure-tjenester  
-- Enterprise-godkendelse og autorisation via Microsoft Entra ID  
-- Support for brugerdefinerede værktøjer, promptskabeloner og ressourceforbindelser  
+- Enterprise-autentificering og autorisation via Microsoft Entra ID  
+- Support til brugerdefinerede værktøjer, promptskabeloner og ressourceforbindelser  
 - Overholdelse af virksomheders sikkerheds- og regulatoriske krav  
 
-**Teknisk implementering:**  
+**Teknisk Implementering:**  
 ```yaml
 # Example: Azure MCP server deployment configuration (YAML)
 apiVersion: mcp.microsoft.com/v1
@@ -303,117 +303,117 @@ spec:
 
 **Resultater:**  
 - Forkortet time-to-value for enterprise AI-projekter ved at tilbyde en klar-til-brug, compliant MCP-serverplatform  
-- Forenklet integration af LLM’er, værktøjer og virksomhedens datakilder  
-- Forbedret sikkerhed, observabilitet og operationel effektivitet for MCP-arbejdsbelastninger  
+- Forenklet integration af LLM’er, værktøjer og virksomheders datakilder  
+- Forbedret sikkerhed, observabilitet og driftsmæssig effektivitet for MCP-arbejdsbelastninger  
 
 **Referencer:**  
 - [Azure MCP Documentation](https://aka.ms/azmcp)  
-- [Azure AI Services](https://azure.microsoft.com/en-us/products/ai-services/)
+- [Azure AI Services](https://azure.microsoft.com/en-us/products/ai-services/)  
 
 ## Casestudie 6: NLWeb  
-MCP (Model Context Protocol) er et nyt protokol til chatbots og AI-assistenter, der skal interagere med værktøjer. Hver NLWeb-instans er også en MCP-server, som understøtter en kernefunktion, ask, der bruges til at stille et websted et spørgsmål på naturligt sprog. Det returnerede svar bruger schema.org, et bredt anvendt vokabularium til at beskrive webdata. Løst sagt er MCP for NLWeb, hvad Http er for HTML. NLWeb kombinerer protokoller, schema.org-formater og eksempel-kode for at hjælpe websteder med hurtigt at oprette disse endpoints, hvilket gavner både mennesker gennem samtalegrænseflader og maskiner gennem naturlig agent-til-agent interaktion.
+MCP (Model Context Protocol) er en ny protokol, der gør det muligt for chatbots og AI-assistenter at interagere med værktøjer. Hver NLWeb-instans fungerer også som en MCP-server, der understøtter en kernefunktion, ask, som bruges til at stille et spørgsmål til en hjemmeside på naturligt sprog. Det returnerede svar benytter schema.org, et udbredt vokabularium til beskrivelse af webdata. Kort sagt er MCP for NLWeb, hvad Http er for HTML. NLWeb kombinerer protokoller, schema.org-formater og eksempel-kode for at hjælpe hjemmesider med hurtigt at oprette disse endpoints, hvilket gavner både mennesker via samtalegrænseflader og maskiner via naturlig agent-til-agent-interaktion.
 
-NLWeb består af to forskellige komponenter:  
-- En protokol, meget enkel at starte med, til at interagere med et site på naturligt sprog og et format, der bruger json og schema.org til det returnerede svar. Se dokumentationen om REST API for flere detaljer.  
-- En ligetil implementering af (1), der udnytter eksisterende markup, for sites der kan abstraheres som lister over elementer (produkter, opskrifter, attraktioner, anmeldelser osv.). Sammen med et sæt brugergrænsefladewidgets kan sites nemt tilbyde samtalegrænseflader til deres indhold. Se dokumentationen om Life of a chat query for flere detaljer om, hvordan det fungerer.  
+NLWeb består af to separate komponenter:  
+- En protokol, som er meget simpel at komme i gang med, til at interagere med en hjemmeside på naturligt sprog og et format, der benytter json og schema.org til det returnerede svar. Se dokumentationen om REST API for flere detaljer.  
+- En enkel implementering af (1), der udnytter eksisterende markup for sider, der kan abstraheres som lister af elementer (produkter, opskrifter, seværdigheder, anmeldelser osv.). Sammen med et sæt brugergrænseflade-widgets kan sider nemt tilbyde samtalegrænseflader til deres indhold. Se dokumentationen om Life of a chat query for flere detaljer om, hvordan det fungerer.  
 
 **Referencer:**  
 - [Azure MCP Documentation](https://aka.ms/azmcp)  
-- [NLWeb](https://github.com/microsoft/NlWeb)
+- [NLWeb](https://github.com/microsoft/NlWeb)  
 
 ### Casestudie 7: MCP for Foundry – Integration af Azure AI-agenter
 
-Azure AI Foundry MCP-servere demonstrerer, hvordan MCP kan bruges til at orkestrere og administrere AI-agenter og workflows i virksomhedsmiljøer. Ved at integrere MCP med Azure AI Foundry kan organisationer standardisere agentinteraktioner, udnytte Foundrys workflow-administration og sikre sikre, skalerbare udrulninger. Denne tilgang muliggør hurtig prototyping, robust overvågning og sømløs integration med Azure AI-tjenester, som understøtter avancerede scenarier som vidensstyring og agentvurdering. Udviklere får et samlet interface til at bygge, udrulle og overvåge agent-pipelines, mens IT-teams opnår forbedret sikkerhed, compliance og operationel effektivitet. Løsningen er ideel til virksomheder, der ønsker at fremskynde AI-adoption og bevare kontrol over komplekse agentdrevne processer.
+Azure AI Foundry MCP-servere demonstrerer, hvordan MCP kan bruges til at orkestrere og styre AI-agenter og workflows i virksomhedsmiljøer. Ved at integrere MCP med Azure AI Foundry kan organisationer standardisere agentinteraktioner, udnytte Foundrys workflow-styring og sikre sikre, skalerbare udrulninger. Denne tilgang muliggør hurtig prototyping, robust overvågning og sømløs integration med Azure AI-tjenester og understøtter avancerede scenarier som vidensstyring og agentvurdering. Udviklere får en samlet grænseflade til at bygge, udrulle og overvåge agent-pipelines, mens IT-teams opnår forbedret sikkerhed, compliance og driftsmæssig effektivitet. Løsningen er ideel til virksomheder, der ønsker at accelerere AI-adoption og bevare kontrol over komplekse agentdrevne processer.
 
 **Referencer:**  
 - [MCP Foundry GitHub Repository](https://github.com/azure-ai-foundry/mcp-foundry)  
-- [Integrating Azure AI Agents with MCP (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
+- [Integrating Azure AI Agents with MCP (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)  
 
-### Casestudie 8: Foundry MCP Playground – Eksperimenter og Prototyper
+### Casestudie 8: Foundry MCP Playground – Eksperimentering og Prototyping
 
-Foundry MCP Playground tilbyder et klar-til-brug miljø til eksperimenter med MCP-servere og Azure AI Foundry-integrationer. Udviklere kan hurtigt prototype, teste og evaluere AI-modeller og agent-workflows ved hjælp af ressourcer fra Azure AI Foundry Catalog og Labs. Playgrounden forenkler opsætning, leverer eksempelprojekter og understøtter samarbejdsudvikling, hvilket gør det nemt at udforske bedste praksis og nye scenarier med minimal indsats. Den er især nyttig for teams, der ønsker at validere idéer, dele eksperimenter og fremskynde læring uden behov for kompleks infrastruktur. Ved at sænke adgangsbarrieren hjælper playgrounden med at fremme innovation og bidrag fra fællesskabet i MCP- og Azure AI Foundry-økosystemet.
+Foundry MCP Playground tilbyder et klar-til-brug-miljø til eksperimentering med MCP-servere og Azure AI Foundry-integrationer. Udviklere kan hurtigt prototype, teste og evaluere AI-modeller og agent-workflows ved hjælp af ressourcer fra Azure AI Foundry Catalog og Labs. Playgrounden forenkler opsætning, tilbyder eksempler på projekter og understøtter samarbejdsudvikling, hvilket gør det nemt at udforske bedste praksis og nye scenarier med minimal overhead. Det er især nyttigt for teams, der ønsker at validere ideer, dele eksperimenter og accelerere læring uden behov for kompleks infrastruktur. Ved at sænke adgangsbarrieren hjælper playgrounden med at fremme innovation og bidrag fra fællesskabet i MCP- og Azure AI Foundry-økosystemet.
 
 **Referencer:**  
-- [Foundry MCP Playground GitHub Repository](https://github.com/azure-ai-foundry/foundry-mcp-playground)
+- [Foundry MCP Playground GitHub Repository](https://github.com/azure-ai-foundry/foundry-mcp-playground)  
 
 ## Praktiske Projekter
 
 ### Projekt 1: Byg en Multi-Provider MCP Server
 
-**Mål:** Skab en MCP-server, der kan rute forespørgsler til flere AI-modeludbydere baseret på specifikke kriterier.
+**Mål:** Opret en MCP-server, der kan dirigere forespørgsler til flere AI-modeludbydere baseret på specifikke kriterier.
 
 **Krav:**  
-- Understøtte mindst tre forskellige modeludbydere (fx OpenAI, Anthropic, lokale modeller)  
-- Implementere en routing-mekanisme baseret på metadata i forespørgsler  
-- Oprette et konfigurationssystem til håndtering af udbyder-legitimationsoplysninger  
-- Tilføje caching for at optimere ydeevne og omkostninger  
-- Bygge et simpelt dashboard til overvågning af brug  
+- Understøt mindst tre forskellige modeludbydere (fx OpenAI, Anthropic, lokale modeller)  
+- Implementer en routing-mekanisme baseret på forespørgselsmetadata  
+- Opret et konfigurationssystem til håndtering af udbyderlegitimationsoplysninger  
+- Tilføj caching for at optimere ydeevne og omkostninger  
+- Byg et simpelt dashboard til overvågning af brug  
 
 **Implementeringstrin:**  
 1. Opsæt grundlæggende MCP-serverinfrastruktur  
 2. Implementer adaptere til hver AI-modelservice  
-3. Skab routinglogik baseret på forespørgselsattributter  
-4. Tilføj caching-mekanismer til hyppige forespørgsler  
+3. Opret routinglogik baseret på forespørgselsattributter  
+4. Tilføj cachingmekanismer til hyppige forespørgsler  
 5. Udvikl overvågningsdashboard  
 6. Test med forskellige forespørgselsmønstre  
 
-**Teknologier:** Vælg mellem Python (.NET/Java/Python efter eget valg), Redis til caching og et simpelt webframework til dashboard.
+**Teknologier:** Vælg mellem Python (.NET/Java/Python efter eget valg), Redis til caching og et simpelt webframework til dashboardet.
 
 ### Projekt 2: Enterprise Prompt Management System
 
-**Mål:** Udvikl et MCP-baseret system til at styre, versionere og udrulle promptskabeloner på tværs af en organisation.
+**Mål:** Udvikl et MCP-baseret system til håndtering, versionering og udrulning af promptskabeloner i en organisation.
 
 **Krav:**  
-- Opret et centralt lager for promptskabeloner  
-- Implementer versionsstyring og godkendelsesworkflow  
-- Byg testfunktionalitet for skabeloner med prøveinput  
+- Opret et centraliseret lager til promptskabeloner  
+- Implementer versionering og godkendelsesprocesser  
+- Byg testfunktionalitet til skabeloner med eksempler på input  
 - Udvikl rollebaserede adgangskontroller  
-- Opret en API til hentning og udrulning af skabeloner  
+- Opret et API til skabelonhentning og udrulning  
 
 **Implementeringstrin:**  
 1. Design databaseskema til skabelonlagring  
 2. Opret kerne-API til CRUD-operationer på skabeloner  
-3. Implementer versionsstyringssystem  
+3. Implementer versionsstyring  
 4. Byg godkendelsesworkflow  
 5. Udvikl testframework  
-6. Skab en simpel webgrænseflade til administration  
+6. Opret en simpel webgrænseflade til administration  
 7. Integrer med en MCP-server  
 
-**Teknologier:** Valgfrit backend-framework, SQL eller NoSQL database og frontend-framework til administrationsinterface.
+**Teknologier:** Valgfrit backend-framework, SQL eller NoSQL database og frontend-framework til administrationsgrænsefladen.
 
-### Projekt 3: MCP-baseret Platform til Indholdsgenerering
+### Projekt 3: MCP-Baseret Indholdsgenereringsplatform
 
-**Mål:** Byg en platform til indholdsgenerering, der udnytter MCP til at levere konsistente resultater på tværs af forskellige indholdstyper.
+**Mål:** Byg en platform til indholdsgenerering, der bruger MCP til at levere konsistente resultater på tværs af forskellige indholdstyper.
 
 **Krav:**  
-- Understøtte flere indholdsformater (blogindlæg, sociale medier, marketingtekster)  
-- Implementere skabelonbaseret generering med tilpasningsmuligheder  
-- Oprette et system til indholdsfeedback og -gennemgang  
-- Spore indholdsperformance-målinger  
-- Understøtte versionering og iteration af indhold  
+- Understøt flere indholdsformater (blogindlæg, sociale medier, marketingtekst)  
+- Implementer skabelonbaseret generering med tilpasningsmuligheder  
+- Opret et system til indholdsrevision og feedback  
+- Spor indholdsperformance-metrikker  
+- Understøt versionering og iteration af indhold  
 
 **Implementeringstrin:**  
 1. Opsæt MCP-klientinfrastruktur  
 2. Opret skabeloner til forskellige indholdstyper  
 3. Byg indholdsgenereringspipeline  
-4. Implementer gennemgangssystem  
-5. Udvikl system til måling af performance  
-6. Skab brugerinterface til skabelonstyring og indholdsgenerering  
+4. Implementer revisionssystem  
+5. Udvikl system til metriksregistrering  
+6. Opret brugergrænseflade til skabelonstyring og indholdsgenerering  
 
-**Teknologier:** Valgt programmeringssprog, webframework og databasesystem.
+**Teknologier:** Foretrukket programmeringssprog, webframework og databasesystem.
 
 ## Fremtidige Retninger for MCP Teknologi
 
 ### Nye Tendenser
 
-1. **Multi-Modal MCP**  
+1. **Multi-Modale MCP**  
    - Udvidelse af MCP til at standardisere interaktioner med billed-, lyd- og videomodeller  
    - Udvikling af tværmodal ræsonnering  
    - Standardiserede promptformater for forskellige modaliteter  
 
 2. **Federeret MCP Infrastruktur**  
    - Distribuerede MCP-netværk, der kan dele ressourcer på tværs af organisationer  
-   - Standardiserede protokoller for sikker deling af modeller  
+   - Standardiserede protokoller til sikker modeldeling  
    - Privatlivsbevarende beregningsteknikker  
 
 3. **MCP Markedspladser**  
@@ -422,8 +422,8 @@ Foundry MCP Playground tilbyder et klar-til-brug miljø til eksperimenter med MC
    - Integration med modelmarkedspladser  
 
 4. **MCP til Edge Computing**  
-   - Tilpasning af MCP-standarder til ressourcestærkt begrænsede edge-enheder  
-   - Optimerede protokoller til lav-båndbredde miljøer  
+   - Tilpasning af MCP-standarder til ressourcebegrænsede edge-enheder  
+   - Optimerede protokoller til lav båndbredde  
    - Specialiserede MCP-implementeringer til IoT-økosystemer  
 
 5. **Regulatoriske Rammer**  
@@ -433,24 +433,24 @@ Foundry MCP Playground tilbyder et klar-til-brug miljø til eksperimenter med MC
 
 ### MCP-løsninger fra Microsoft
 
-Microsoft og Azure har udviklet flere open source repositories, der hjælper udviklere med at implementere MCP i forskellige scenarier:
+Microsoft og Azure har udviklet flere open source-repositorier for at hjælpe udviklere med at implementere MCP i forskellige scenarier:
 
-#### Microsoft Organization  
-1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - En Playwright MCP-server til browserautomatisering og test  
-2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - En OneDrive MCP-serverimplementering til lokal test og community-bidrag  
-3. [NLWeb](https://github.com/microsoft/NlWeb) - NLWeb er en samling af åbne protokoller og tilhørende open source-værktøjer med fokus på at etablere et fundamentalt lag for AI Web  
+#### Microsoft Organisation  
+1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) – En Playwright MCP-server til browserautomatisering og test  
+2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) – En OneDrive MCP-serverimplementering til lokal test og community-bidrag  
+3. [NLWeb](https://github.com/microsoft/NlWeb) – NLWeb er en samling af åbne protokoller og tilhørende open source-værktøjer med fokus på at etablere et fundament for AI Web  
 
-#### Azure-Samples Organization  
-1. [mcp](https://github.com/Azure-Samples/mcp) - Links til eksempler, værktøjer og ressourcer til at bygge og integrere MCP-servere på Azure med flere sprog  
-2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Reference MCP-servere, der demonstrerer godkendelse med den aktuelle Model Context Protocol-specifikation  
-3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - Landingpage for Remote MCP Server-implementeringer i Azure Functions med links til sprog-specifikke repos  
-4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Quickstart-skabelon til at bygge og udrulle brugerdefinerede remote MCP-servere med Azure Functions i Python  
-5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Quickstart-skabelon til at bygge og udrulle brugerdefinerede remote MCP-servere med Azure Functions i .NET/C#  
-6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Quickstart-skabelon til at bygge og udrulle brugerdefinerede remote MCP-servere med Azure Functions i TypeScript  
-7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) - Azure API Management som AI Gateway til Remote MCP-servere ved brug af Python  
-8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) - APIM ❤️ AI-eksperimenter inkl. MCP-funktioner, integration med Azure OpenAI og AI Foundry  
+#### Azure-Samples Organisation  
+1. [mcp](https://github.com/Azure-Samples/mcp) – Links til eksempler, værktøjer og ressourcer til at bygge og integrere MCP-servere på Azure med flere sprog  
+2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) – Reference MCP-servere, der demonstrerer autentificering med den aktuelle Model Context Protocol-specifikation  
+3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) – Landingsside for Remote MCP Server-implementeringer i Azure Functions med links til sprog-specifikke repos  
+4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) – Quickstart-skabelon til at bygge og udrulle brugerdefinerede remote MCP-servere med Azure Functions i Python  
+5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) – Quickstart-skabelon til at bygge og udrulle brugerdefinerede remote MCP-servere med Azure Functions i .NET/C#  
+6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) – Quickstart-skabelon til at bygge og udrulle brugerdefinerede remote MCP-servere med Azure Functions i TypeScript  
+7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) – Azure API Management som AI Gateway til Remote MCP-servere med Python  
+8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) – APIM ❤️ AI-eksperimenter inkl. MCP-funktioner, integration med Azure OpenAI og AI Foundry  
 
-Disse repositories tilbyder forskellige implementeringer, skabeloner og ressourcer til arbejde med Model Context Protocol på tværs af forskellige programmeringssprog og Azure-t
+Disse repositorier tilbyder forskellige implementeringer, skabel
 - [Azure MCP Documentation](https://aka.ms/azmcp)
 - [Playwright MCP Server GitHub Repository](https://github.com/microsoft/playwright-mcp)
 - [Files MCP Server (OneDrive)](https://github.com/microsoft/files-mcp-server)
@@ -466,12 +466,12 @@ Disse repositories tilbyder forskellige implementeringer, skabeloner og ressourc
 
 ## Øvelser
 
-1. Analyser et af casestudierne og foreslå en alternativ implementeringsmetode.
-2. Vælg en af projektidéerne og lav en detaljeret teknisk specifikation.
-3. Undersøg en branche, der ikke er dækket i casestudierne, og skitser hvordan MCP kunne løse dens specifikke udfordringer.
-4. Udforsk en af de fremtidige retninger og lav et koncept for en ny MCP-udvidelse, der kan understøtte den.
+1. Analyser en af case-studierne og foreslå en alternativ implementeringsmetode.
+2. Vælg en af projektideerne og udarbejd en detaljeret teknisk specifikation.
+3. Undersøg en branche, der ikke er dækket i case-studierne, og skitsér, hvordan MCP kunne løse dens specifikke udfordringer.
+4. Udforsk en af fremtidige retninger og udvikl et koncept for en ny MCP-udvidelse, der kan understøtte den.
 
 Næste: [Best Practices](../08-BestPractices/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6e190a963029f156b7ecffad7093b8ce",
-  "translation_date": "2025-05-17T15:55:31+00:00",
+  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
+  "translation_date": "2025-05-20T22:03:31+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "vi"
 }
@@ -11,74 +11,74 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Tổng quan
 
-Bài học này tập trung vào cách tham gia vào cộng đồng MCP, đóng góp cho hệ sinh thái MCP, và tuân theo các thực hành tốt nhất cho phát triển hợp tác. Hiểu cách tham gia vào các dự án MCP mã nguồn mở là điều cần thiết cho những ai muốn định hình tương lai của công nghệ này.
+Bài học này tập trung vào cách tham gia cộng đồng MCP, đóng góp vào hệ sinh thái MCP và tuân theo các thực hành tốt nhất trong phát triển hợp tác. Hiểu cách tham gia các dự án mã nguồn mở MCP là điều cần thiết cho những ai muốn định hình tương lai của công nghệ này.
 
 ## Mục tiêu học tập
 
-Sau khi hoàn thành bài học này, bạn sẽ có thể:
+Sau bài học này, bạn sẽ có thể:
 - Hiểu cấu trúc của cộng đồng và hệ sinh thái MCP
-- Tham gia hiệu quả vào các diễn đàn và thảo luận cộng đồng MCP
+- Tham gia hiệu quả vào các diễn đàn và thảo luận của cộng đồng MCP
 - Đóng góp vào các kho mã nguồn mở MCP
 - Tạo và chia sẻ các công cụ MCP tùy chỉnh
-- Tuân theo các thực hành tốt nhất cho phát triển và hợp tác MCP
+- Tuân theo các thực hành tốt nhất trong phát triển và hợp tác MCP
 
 ## Hệ sinh thái cộng đồng MCP
 
-Hệ sinh thái MCP bao gồm các thành phần và người tham gia khác nhau cùng làm việc để tiến bộ giao thức.
+Hệ sinh thái MCP bao gồm nhiều thành phần và người tham gia cùng làm việc để phát triển giao thức.
 
-### Các thành phần cộng đồng chính
+### Các thành phần chính của cộng đồng
 
-1. **Người bảo trì giao thức cốt lõi**: Microsoft và các tổ chức khác duy trì các thông số kỹ thuật cốt lõi của MCP và các triển khai tham chiếu
-2. **Nhà phát triển công cụ**: Cá nhân và nhóm tạo ra các công cụ MCP
-3. **Nhà cung cấp tích hợp**: Các công ty tích hợp MCP vào sản phẩm và dịch vụ của họ
-4. **Người dùng cuối**: Các nhà phát triển và tổ chức sử dụng MCP trong ứng dụng của họ
-5. **Người đóng góp**: Các thành viên cộng đồng đóng góp mã, tài liệu, hoặc tài nguyên khác
+1. **Core Protocol Maintainers**: Microsoft và các tổ chức khác chịu trách nhiệm duy trì các đặc tả lõi MCP và các triển khai tham chiếu
+2. **Tool Developers**: Cá nhân và nhóm tạo ra các công cụ MCP
+3. **Integration Providers**: Các công ty tích hợp MCP vào sản phẩm và dịch vụ của họ
+4. **End Users**: Các nhà phát triển và tổ chức sử dụng MCP trong ứng dụng của mình
+5. **Contributors**: Thành viên cộng đồng đóng góp mã nguồn, tài liệu hoặc các nguồn lực khác
 
 ### Tài nguyên cộng đồng
 
 #### Kênh chính thức
 
-- [Kho GitHub MCP](https://github.com/modelcontextprotocol)
-- [Tài liệu MCP](https://modelcontextprotocol.io/)
-- [Thông số MCP](https://spec.modelcontextprotocol.io/)
-- [Thảo luận trên GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
 
-#### Tài nguyên do cộng đồng điều khiển
+#### Tài nguyên do cộng đồng phát triển
 
 - Các triển khai SDK theo ngôn ngữ
-- Các triển khai máy chủ và thư viện công cụ
+- Triển khai server và thư viện công cụ
 - Bài viết blog và hướng dẫn
 - Diễn đàn cộng đồng và thảo luận trên mạng xã hội
 
-## Đóng góp cho MCP
+## Đóng góp vào MCP
 
 ### Các loại đóng góp
 
 Hệ sinh thái MCP chào đón nhiều loại đóng góp khác nhau:
 
-1. **Đóng góp mã**:
-   - Nâng cao giao thức cốt lõi
+1. **Code Contributions**:
+   - Nâng cấp giao thức lõi
    - Sửa lỗi
    - Triển khai công cụ
-   - Thư viện khách/máy chủ bằng các ngôn ngữ khác nhau
+   - Thư viện client/server cho các ngôn ngữ khác nhau
 
-2. **Tài liệu**:
+2. **Documentation**:
    - Cải thiện tài liệu hiện có
-   - Tạo hướng dẫn và hướng dẫn
+   - Tạo hướng dẫn và bài học
    - Dịch tài liệu
    - Tạo ví dụ và ứng dụng mẫu
 
-3. **Hỗ trợ cộng đồng**:
+3. **Community Support**:
    - Trả lời câu hỏi trên diễn đàn
-   - Kiểm tra và báo cáo vấn đề
+   - Kiểm thử và báo cáo lỗi
    - Tổ chức sự kiện cộng đồng
    - Hướng dẫn người đóng góp mới
 
-### Quy trình đóng góp: Giao thức cốt lõi
+### Quy trình đóng góp: Core Protocol
 
-Để đóng góp vào giao thức MCP cốt lõi hoặc các triển khai chính thức:
+Để đóng góp vào giao thức lõi MCP hoặc các triển khai chính thức:
 
-#### Ví dụ .NET: Đóng góp nâng cao giao thức
+#### Ví dụ .NET: Đóng góp nâng cấp giao thức
 
 ```csharp
 // Example contribution to MCP protocol: Adding support for binary data streams
@@ -230,7 +230,7 @@ public class ToolParameterValidator {
 }
 ```
 
-#### Ví dụ Python: Đóng góp công cụ mới vào thư viện chuẩn
+#### Ví dụ Python: Đóng góp công cụ mới cho thư viện chuẩn
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -394,19 +394,19 @@ class CsvProcessingTool(Tool):
 
 Để đóng góp thành công vào các dự án MCP:
 
-1. **Bắt đầu nhỏ**: Bắt đầu với tài liệu, sửa lỗi, hoặc cải tiến nhỏ
-2. **Tuân theo hướng dẫn phong cách**: Tuân theo phong cách mã hóa và quy ước của dự án
-3. **Viết kiểm tra**: Bao gồm kiểm tra đơn vị cho các đóng góp mã của bạn
-4. **Tài liệu công việc của bạn**: Thêm tài liệu rõ ràng cho các tính năng mới hoặc thay đổi
-5. **Gửi PR có mục tiêu**: Giữ pull request tập trung vào một vấn đề hoặc tính năng duy nhất
-6. **Phản hồi với phản hồi**: Hãy phản hồi với phản hồi về các đóng góp của bạn
+1. **Bắt đầu từ nhỏ**: Khởi đầu với tài liệu, sửa lỗi hoặc nâng cấp nhỏ
+2. **Tuân theo hướng dẫn phong cách**: Giữ đúng phong cách mã nguồn và quy ước của dự án
+3. **Viết test**: Bao gồm các bài kiểm thử đơn vị cho đóng góp mã của bạn
+4. **Tài liệu công việc của bạn**: Thêm tài liệu rõ ràng cho tính năng hoặc thay đổi mới
+5. **Gửi PR có mục tiêu rõ ràng**: Giữ pull request tập trung vào một vấn đề hoặc tính năng duy nhất
+6. **Phản hồi tích cực**: Trả lời các góp ý về đóng góp của bạn
 
-### Quy trình đóng góp ví dụ
+### Quy trình làm việc ví dụ khi đóng góp
 
 ```bash
 # Clone the repository
 git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp
+cd mcp-for-beginners
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -431,7 +431,7 @@ git push origin feature/my-contribution
 
 ## Tạo và chia sẻ công cụ MCP tùy chỉnh
 
-Một trong những cách có giá trị nhất để đóng góp vào hệ sinh thái MCP là tạo và chia sẻ các công cụ tùy chỉnh.
+Một trong những cách đóng góp giá trị nhất cho hệ sinh thái MCP là tạo và chia sẻ các công cụ tùy chỉnh.
 
 ### Phát triển công cụ có thể chia sẻ
 
@@ -642,7 +642,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Ví dụ Python: Xuất bản gói PyPI
+#### Ví dụ Python: Phát hành gói PyPI
 
 ```python
 # Directory structure for a PyPI package:
@@ -747,68 +747,68 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### Chia sẻ thực hành tốt nhất
+### Chia sẻ các thực hành tốt nhất
 
 Khi chia sẻ công cụ MCP với cộng đồng:
 
-1. **Tài liệu hoàn chỉnh**:
-   - Tài liệu mục đích, cách sử dụng và ví dụ
-   - Giải thích tham số và giá trị trả về
-   - Tài liệu bất kỳ phụ thuộc bên ngoài nào
+1. **Tài liệu đầy đủ**:
+   - Giải thích mục đích, cách sử dụng và ví dụ
+   - Mô tả các tham số và giá trị trả về
+   - Ghi rõ các phụ thuộc bên ngoài
 
 2. **Xử lý lỗi**:
-   - Thực hiện xử lý lỗi mạnh mẽ
+   - Thực hiện xử lý lỗi chặt chẽ
    - Cung cấp thông báo lỗi hữu ích
-   - Xử lý các trường hợp biên một cách êm đẹp
+   - Xử lý các trường hợp đặc biệt một cách mềm dẻo
 
-3. **Xem xét hiệu suất**:
-   - Tối ưu hóa cho cả tốc độ và sử dụng tài nguyên
-   - Thực hiện bộ nhớ đệm khi thích hợp
+3. **Xem xét hiệu năng**:
+   - Tối ưu cả tốc độ và sử dụng tài nguyên
+   - Áp dụng caching khi phù hợp
    - Xem xét khả năng mở rộng
 
 4. **Bảo mật**:
-   - Sử dụng khóa API và xác thực an toàn
-   - Xác thực và làm sạch đầu vào
-   - Thực hiện giới hạn tốc độ cho các cuộc gọi API bên ngoài
+   - Sử dụng API key và xác thực an toàn
+   - Kiểm tra và làm sạch đầu vào
+   - Giới hạn tần suất gọi API bên ngoài
 
-5. **Kiểm tra**:
-   - Bao gồm độ phủ kiểm tra toàn diện
-   - Kiểm tra với các loại đầu vào khác nhau và các trường hợp biên
-   - Tài liệu quy trình kiểm tra
+5. **Kiểm thử**:
+   - Bao gồm phạm vi kiểm thử toàn diện
+   - Kiểm thử với nhiều loại đầu vào và trường hợp biên
+   - Ghi lại quy trình kiểm thử
 
-## Cộng tác cộng đồng và thực hành tốt nhất
+## Hợp tác cộng đồng và thực hành tốt nhất
 
-Cộng tác hiệu quả là chìa khóa cho một hệ sinh thái MCP phát triển.
+Hợp tác hiệu quả là chìa khóa cho một hệ sinh thái MCP phát triển mạnh.
 
 ### Kênh giao tiếp
 
-- Vấn đề và thảo luận trên GitHub
+- GitHub Issues và Discussions
 - Microsoft Tech Community
 - Kênh Discord và Slack
 - Stack Overflow (tag: `model-context-protocol` or `mcp`)
 
-### Đánh giá mã
+### Đánh giá mã nguồn
 
-Khi đánh giá các đóng góp MCP:
+Khi đánh giá đóng góp MCP:
 
-1. **Rõ ràng**: Mã có rõ ràng và được tài liệu tốt không?
-2. **Chính xác**: Nó có hoạt động như mong đợi không?
-3. **Nhất quán**: Nó có tuân theo quy ước dự án không?
-4. **Đầy đủ**: Các kiểm tra và tài liệu có được bao gồm không?
-5. **Bảo mật**: Có bất kỳ vấn đề bảo mật nào không?
+1. **Rõ ràng**: Mã có dễ hiểu và có tài liệu không?
+2. **Chính xác**: Nó hoạt động đúng như mong đợi?
+3. **Nhất quán**: Có tuân theo quy ước dự án không?
+4. **Đầy đủ**: Có kèm theo test và tài liệu không?
+5. **Bảo mật**: Có vấn đề bảo mật nào không?
 
 ### Tương thích phiên bản
 
 Khi phát triển cho MCP:
 
-1. **Phiên bản giao thức**: Tuân theo phiên bản giao thức MCP mà công cụ của bạn hỗ trợ
-2. **Tương thích khách**: Xem xét khả năng tương thích ngược
-3. **Tương thích máy chủ**: Tuân theo hướng dẫn triển khai máy chủ
-4. **Thay đổi đột phá**: Tài liệu rõ ràng bất kỳ thay đổi đột phá nào
+1. **Phiên bản giao thức**: Tuân thủ phiên bản giao thức MCP mà công cụ hỗ trợ
+2. **Tương thích client**: Xem xét khả năng tương thích ngược
+3. **Tương thích server**: Tuân theo hướng dẫn triển khai server
+4. **Thay đổi phá vỡ**: Ghi rõ các thay đổi phá vỡ
 
-## Dự án cộng đồng ví dụ: Đăng ký công cụ MCP
+## Dự án cộng đồng ví dụ: MCP Tool Registry
 
-Một đóng góp cộng đồng quan trọng có thể là phát triển một đăng ký công khai cho các công cụ MCP.
+Một đóng góp cộng đồng quan trọng có thể là phát triển một registry công khai cho các công cụ MCP.
 
 ```python
 # Example schema for a community tool registry API
@@ -887,30 +887,30 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## Điểm chính
+## Những điểm chính cần nhớ
 
-- Cộng đồng MCP rất đa dạng và chào đón nhiều loại đóng góp
-- Đóng góp cho MCP có thể từ nâng cao giao thức cốt lõi đến công cụ tùy chỉnh
-- Tuân theo hướng dẫn đóng góp cải thiện khả năng PR của bạn được chấp nhận
-- Tạo và chia sẻ công cụ MCP là cách có giá trị để nâng cao hệ sinh thái
-- Cộng tác cộng đồng là điều cần thiết cho sự phát triển và cải tiến của MCP
+- Cộng đồng MCP đa dạng và chào đón nhiều loại đóng góp khác nhau
+- Đóng góp có thể từ nâng cấp giao thức lõi đến các công cụ tùy chỉnh
+- Tuân theo hướng dẫn đóng góp giúp tăng khả năng PR được chấp nhận
+- Tạo và chia sẻ công cụ MCP là cách giá trị để phát triển hệ sinh thái
+- Hợp tác cộng đồng là yếu tố thiết yếu cho sự phát triển và cải tiến MCP
 
 ## Bài tập
 
 1. Xác định một lĩnh vực trong hệ sinh thái MCP mà bạn có thể đóng góp dựa trên kỹ năng và sở thích của mình
 2. Fork kho MCP và thiết lập môi trường phát triển cục bộ
-3. Tạo một cải tiến nhỏ, sửa lỗi, hoặc công cụ có lợi cho cộng đồng
-4. Tài liệu đóng góp của bạn với kiểm tra và tài liệu thích hợp
-5. Gửi một pull request đến kho thích hợp
+3. Tạo một nâng cấp nhỏ, sửa lỗi hoặc công cụ có ích cho cộng đồng
+4. Tài liệu đóng góp của bạn với các bài test và tài liệu phù hợp
+5. Gửi pull request tới kho thích hợp
 
 ## Tài nguyên bổ sung
 
-- [Dự án cộng đồng MCP](https://github.com/topics/model-context-protocol)
+- [MCP Community Projects](https://github.com/topics/model-context-protocol)
 
 
 ---
 
-Tiếp theo: [Bài học từ việc áp dụng sớm](../07-LessonsfromEarlyAdoption/README.md)
+Tiếp theo: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa của nó nên được coi là nguồn đáng tin cậy. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp của con người. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được xem là nguồn chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu nhầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

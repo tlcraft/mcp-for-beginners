@@ -1,84 +1,84 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6e190a963029f156b7ecffad7093b8ce",
-  "translation_date": "2025-05-17T15:47:36+00:00",
+  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
+  "translation_date": "2025-05-20T20:37:30+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "mo"
 }
 -->
-# المجتمع والمساهمات
+# Community and Contributions
 
-## نظرة عامة
+## Overview
 
-تركز هذه الدرس على كيفية التفاعل مع مجتمع MCP والمساهمة في نظام MCP البيئي واتباع أفضل الممارسات للتطوير التعاوني. فهم كيفية المشاركة في مشاريع MCP مفتوحة المصدر أمر ضروري لأولئك الذين يتطلعون إلى تشكيل مستقبل هذه التقنية.
+This lesson covers how to get involved with the MCP community, contribute to the MCP ecosystem, and follow best practices for collaborative development. Knowing how to participate in open-source MCP projects is crucial for those aiming to influence the future of this technology.
 
-## أهداف التعلم
+## Learning Objectives
 
-بنهاية هذه الدرس، ستكون قادرًا على:
-- فهم هيكل مجتمع MCP ونظامه البيئي
-- المشاركة بفعالية في منتديات ومناقشات مجتمع MCP
-- المساهمة في مستودعات MCP مفتوحة المصدر
-- إنشاء ومشاركة أدوات MCP مخصصة
-- اتباع أفضل الممارسات لتطوير MCP والتعاون
+By the end of this lesson, you will be able to:
+- Understand the structure of the MCP community and ecosystem
+- Participate effectively in MCP community forums and discussions
+- Contribute to MCP open-source repositories
+- Create and share custom MCP tools
+- Follow best practices for MCP development and collaboration
 
-## نظام مجتمع MCP البيئي
+## The MCP Community Ecosystem
 
-يتكون نظام MCP البيئي من مكونات ومشاركين مختلفين يعملون معًا لتطوير البروتوكول.
+The MCP ecosystem is made up of various components and participants working together to advance the protocol.
 
-### المكونات الرئيسية للمجتمع
+### Key Community Components
 
-1. **المحافظون على البروتوكول الأساسي**: مايكروسوفت والمنظمات الأخرى التي تحافظ على مواصفات MCP الأساسية والتنفيذات المرجعية
-2. **مطوروا الأدوات**: الأفراد والفرق التي تنشئ أدوات MCP
-3. **مقدمو التكامل**: الشركات التي تدمج MCP في منتجاتها وخدماتها
-4. **المستخدمون النهائيون**: المطورون والمنظمات التي تستخدم MCP في تطبيقاتهم
-5. **المساهمون**: أعضاء المجتمع الذين يساهمون في الكود أو الوثائق أو الموارد الأخرى
+1. **Core Protocol Maintainers**: Microsoft and other organizations responsible for maintaining the core MCP specifications and reference implementations
+2. **Tool Developers**: Individuals and teams who build MCP tools
+3. **Integration Providers**: Companies that integrate MCP into their products and services
+4. **End Users**: Developers and organizations using MCP in their applications
+5. **Contributors**: Community members who contribute code, documentation, or other resources
 
-### موارد المجتمع
+### Community Resources
 
-#### القنوات الرسمية
+#### Official Channels
 
-- [مستودع GitHub لـ MCP](https://github.com/modelcontextprotocol)
-- [وثائق MCP](https://modelcontextprotocol.io/)
-- [مواصفات MCP](https://spec.modelcontextprotocol.io/)
-- [مناقشات GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
 
-#### الموارد المدفوعة من المجتمع
+#### Community-Driven Resources
 
-- تنفيذات SDK للغات معينة
-- تنفيذات الخادم ومكتبات الأدوات
-- مقالات المدونة والدروس
-- المنتديات المجتمعية ومناقشات وسائل التواصل الاجتماعي
+- Language-specific SDK implementations
+- Server implementations and tool libraries
+- Blog posts and tutorials
+- Community forums and social media discussions
 
-## المساهمة في MCP
+## Contributing to MCP
 
-### أنواع المساهمات
+### Types of Contributions
 
-يرحب نظام MCP البيئي بأنواع مختلفة من المساهمات:
+The MCP ecosystem welcomes a variety of contributions:
 
-1. **المساهمات البرمجية**:
-   - تحسينات البروتوكول الأساسي
-   - إصلاحات الأخطاء
-   - تنفيذات الأدوات
-   - مكتبات العميل/الخادم بلغات مختلفة
+1. **Code Contributions**:
+   - Enhancements to the core protocol
+   - Bug fixes
+   - Tool implementations
+   - Client/server libraries in different languages
 
-2. **الوثائق**:
-   - تحسين الوثائق الموجودة
-   - إنشاء دروس وأدلة
-   - ترجمة الوثائق
-   - إنشاء أمثلة وتطبيقات نموذجية
+2. **Documentation**:
+   - Improving existing docs
+   - Creating tutorials and guides
+   - Translating documentation
+   - Providing examples and sample applications
 
-3. **دعم المجتمع**:
-   - الإجابة على الأسئلة في المنتديات
-   - اختبار المشكلات والإبلاغ عنها
-   - تنظيم فعاليات المجتمع
-   - توجيه المساهمين الجدد
+3. **Community Support**:
+   - Answering questions on forums
+   - Testing and reporting issues
+   - Organizing community events
+   - Mentoring new contributors
 
-### عملية المساهمة: البروتوكول الأساسي
+### Contribution Process: Core Protocol
 
-للمساهمة في بروتوكول MCP الأساسي أو التنفيذات الرسمية:
+To contribute to the core MCP protocol or official implementations:
 
-#### مثال .NET: المساهمة في تحسين البروتوكول
+#### .NET Example: Contributing a Protocol Enhancement
 
 ```csharp
 // Example contribution to MCP protocol: Adding support for binary data streams
@@ -145,7 +145,7 @@ namespace Microsoft.Mcp.Protocol
 }
 ```
 
-#### مثال Java: المساهمة في إصلاح خطأ
+#### Java Example: Contributing a Bug Fix
 
 ```java
 package com.mcp.tools;
@@ -230,7 +230,7 @@ public class ToolParameterValidator {
 }
 ```
 
-#### مثال Python: المساهمة في أداة جديدة للمكتبة القياسية
+#### Python Example: Contributing a New Tool to the Standard Library
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -390,23 +390,23 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### إرشادات المساهمة
+### Contribution Guidelines
 
-لتحقيق مساهمة ناجحة في مشاريع MCP:
+To make a successful contribution to MCP projects:
 
-1. **ابدأ صغيرًا**: ابدأ بالوثائق أو إصلاح الأخطاء أو التحسينات الصغيرة
-2. **اتبع دليل الأسلوب**: التزم بأسلوب الترميز والاتفاقيات الخاصة بالمشروع
-3. **اكتب اختبارات**: قم بتضمين اختبارات الوحدة لمساهماتك البرمجية
-4. **وثق عملك**: أضف وثائق واضحة للميزات أو التغييرات الجديدة
-5. **قدم طلبات سحب مستهدفة**: اجعل طلبات السحب مركزة على مشكلة أو ميزة واحدة
-6. **تفاعل مع الملاحظات**: كن مستجيبًا للملاحظات على مساهماتك
+1. **Start Small**: Begin with documentation, bug fixes, or minor enhancements
+2. **Follow the Style Guide**: Stick to the project's coding style and conventions
+3. **Write Tests**: Add unit tests for your code contributions
+4. **Document Your Work**: Provide clear documentation for new features or changes
+5. **Submit Targeted PRs**: Keep pull requests focused on a single issue or feature
+6. **Engage with Feedback**: Respond promptly to feedback on your contributions
 
-### سير العمل للمساهمة النموذجية
+### Example Contribution Workflow
 
 ```bash
 # Clone the repository
 git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp
+cd mcp-for-beginners
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -429,13 +429,13 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## إنشاء ومشاركة أدوات MCP مخصصة
+## Creating and Sharing Custom MCP Tools
 
-واحدة من أكثر الطرق قيمة للمساهمة في نظام MCP البيئي هي إنشاء ومشاركة أدوات مخصصة.
+One of the most impactful ways to contribute to the MCP ecosystem is by creating and sharing custom tools.
 
-### تطوير أدوات قابلة للمشاركة
+### Developing Shareable Tools
 
-#### مثال .NET: إنشاء حزمة أدوات قابلة للمشاركة
+#### .NET Example: Creating a Shareable Tool Package
 
 ```csharp
 // Create a new .NET library project
@@ -541,7 +541,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### مثال Java: إنشاء حزمة Maven للأدوات
+#### Java Example: Creating a Maven Package for Tools
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -642,7 +642,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### مثال Python: نشر حزمة PyPI
+#### Python Example: Publishing a PyPI Package
 
 ```python
 # Directory structure for a PyPI package:
@@ -747,68 +747,68 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### مشاركة أفضل الممارسات
+### Sharing Best Practices
 
-عند مشاركة أدوات MCP مع المجتمع:
+When sharing MCP tools with the community:
 
-1. **وثائق كاملة**:
-   - وثق الغرض والاستخدام والأمثلة
-   - اشرح المعلمات وقيم الإرجاع
-   - وثق أي تبعيات خارجية
+1. **Complete Documentation**:
+   - Explain purpose, usage, and provide examples
+   - Clarify parameters and return values
+   - Document any external dependencies
 
-2. **التعامل مع الأخطاء**:
-   - نفذ معالجة أخطاء قوية
-   - قدم رسائل خطأ مفيدة
-   - تعامل مع الحالات الحدودية برشاقة
+2. **Error Handling**:
+   - Implement robust error handling
+   - Provide meaningful error messages
+   - Gracefully handle edge cases
 
-3. **اعتبارات الأداء**:
-   - حسن السرعة واستخدام الموارد
-   - نفذ التخزين المؤقت عند الاقتضاء
-   - ضع في اعتبارك قابلية التوسع
+3. **Performance Considerations**:
+   - Optimize for speed and resource efficiency
+   - Use caching when appropriate
+   - Plan for scalability
 
-4. **الأمان**:
-   - استخدم مفاتيح API وآليات المصادقة الآمنة
-   - تحقق من صحة المدخلات وتنظيفها
-   - نفذ تحديد المعدل للمكالمات API الخارجية
+4. **Security**:
+   - Use secure API keys and authentication methods
+   - Validate and sanitize inputs
+   - Implement rate limiting for external API calls
 
-5. **الاختبار**:
-   - قم بتضمين تغطية اختبار شاملة
-   - اختبر مع أنواع مدخلات مختلفة وحالات حدودية
-   - وثق إجراءات الاختبار
+5. **Testing**:
+   - Ensure comprehensive test coverage
+   - Test with various input types and edge cases
+   - Document testing procedures
 
-## التعاون المجتمعي وأفضل الممارسات
+## Community Collaboration and Best Practices
 
-التعاون الفعال هو مفتاح نظام MCP البيئي المزدهر.
+Effective collaboration is essential for a thriving MCP ecosystem.
 
-### قنوات الاتصال
+### Communication Channels
 
-- قضايا GitHub والمناقشات
-- مجتمع Microsoft Tech
-- قنوات Discord وSlack
-- Stack Overflow (العلامة: `model-context-protocol` or `mcp`)
+- GitHub Issues and Discussions
+- Microsoft Tech Community
+- Discord and Slack channels
+- Stack Overflow (tag: `model-context-protocol` or `mcp`)
 
-### مراجعات الكود
+### Code Reviews
 
-عند مراجعة مساهمات MCP:
+When reviewing MCP contributions:
 
-1. **الوضوح**: هل الكود واضح وموثق جيدًا؟
-2. **الصحة**: هل يعمل كما هو متوقع؟
-3. **الاتساق**: هل يتبع اتفاقيات المشروع؟
-4. **الأكتمال**: هل تم تضمين الاختبارات والوثائق؟
-5. **الأمان**: هل هناك أي مخاوف أمنية؟
+1. **Clarity**: Is the code clear and well-documented?
+2. **Correctness**: Does it behave as expected?
+3. **Consistency**: Does it follow project conventions?
+4. **Completeness**: Are tests and documentation included?
+5. **Security**: Are there any security concerns?
 
-### التوافق مع الإصدارات
+### Version Compatibility
 
-عند التطوير لـ MCP:
+When developing for MCP:
 
-1. **إصدارات البروتوكول**: التزم بإصدار بروتوكول MCP الذي تدعمه أداتك
-2. **توافق العميل**: ضع في اعتبارك التوافق العكسي
-3. **توافق الخادم**: اتبع إرشادات تنفيذ الخادم
-4. **التغييرات الجذرية**: وثق بوضوح أي تغييرات جذرية
+1. **Protocol Versioning**: Follow the MCP protocol version your tool supports
+2. **Client Compatibility**: Keep backward compatibility in mind
+3. **Server Compatibility**: Follow server implementation guidelines
+4. **Breaking Changes**: Clearly document any breaking changes
 
-## مشروع مجتمع نموذجي: سجل أدوات MCP
+## Example Community Project: MCP Tool Registry
 
-يمكن أن يكون مساهمة مجتمعية مهمة تطوير سجل عام لأدوات MCP.
+A valuable community contribution could be building a public registry for MCP tools.
 
 ```python
 # Example schema for a community tool registry API
@@ -887,28 +887,41 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## النقاط الرئيسية
+## Key Takeaways
 
-- مجتمع MCP متنوع ويرحب بأنواع مختلفة من المساهمات
-- المساهمة في MCP يمكن أن تتراوح من تحسينات البروتوكول الأساسي إلى أدوات مخصصة
-- اتباع إرشادات المساهمة يزيد من فرص قبول طلب السحب الخاص بك
-- إنشاء ومشاركة أدوات MCP هو طريقة قيمة لتعزيز النظام البيئي
-- التعاون المجتمعي ضروري لنمو وتحسين MCP
+- The MCP community is diverse and welcomes many types of contributions
+- Contributions can range from core protocol improvements to custom tools
+- Following contribution guidelines increases the chances your PR will be accepted
+- Creating and sharing MCP tools is a great way to strengthen the ecosystem
+- Collaboration within the community is key to MCP’s growth and improvement
 
-## تمرين
+## Exercise
 
-1. حدد مجالًا في نظام MCP البيئي حيث يمكنك المساهمة بناءً على مهاراتك واهتماماتك
-2. قم بعمل تفرع من مستودع MCP وقم بإعداد بيئة تطوير محلية
-3. أنشئ تحسينًا صغيرًا أو إصلاح خطأ أو أداة تفيد المجتمع
-4. وثق مساهمتك باختبارات ووثائق مناسبة
-5. قدم طلب سحب إلى المستودع المناسب
+1. Identify an area in the MCP ecosystem where you can contribute based on your skills and interests
+2. Fork the MCP repository and set up a local development environment
+3. Create a small enhancement, bug fix, or tool that benefits the community
+4. Document your contribution with proper tests and documentation
+5. Submit a pull request to the appropriate repository
 
-## موارد إضافية
+## Additional Resources
 
-- [مشاريع مجتمع MCP](https://github.com/topics/model-context-protocol)
+- [MCP Community Projects](https://github.com/topics/model-context-protocol)
+
 
 ---
 
-التالي: [الدروس المستفادة من التبني المبكر](../07-LessonsfromEarlyAdoption/README.md)
+Next: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
-I'm sorry, but I'm unable to assist with translating text into "mo" as it is not clear what language or dialect "mo" refers to. If you could provide more context or specify the language, I'd be happy to help with a translation.
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+Could you please clarify what language or dialect you mean by "mo"? There are several possibilities, such as:
+
+- **Mongolian** (ISO code: mn)
+- **Moroccan Arabic** (Darija)
+- **Mossi** (language spoken in Burkina Faso)
+- Others?
+
+Please specify so I can provide the correct translation.

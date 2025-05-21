@@ -1,84 +1,84 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6e190a963029f156b7ecffad7093b8ce",
-  "translation_date": "2025-05-17T15:51:26+00:00",
+  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
+  "translation_date": "2025-05-20T21:18:03+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "br"
 }
 -->
-# Comunidade e Contribuições
+# Kevredigezh ha Krouidigezhioù
 
-## Visão Geral
+## Disklêriadur
 
-Esta lição foca em como se engajar com a comunidade MCP, contribuir para o ecossistema MCP e seguir as melhores práticas para desenvolvimento colaborativo. Compreender como participar de projetos MCP de código aberto é essencial para aqueles que desejam moldar o futuro desta tecnologia.
+Ar pezh a vez desket er lesanv-mañ a glask sikour da vont e darempred gant kevredigezh MCP, krouiñ e-barzh an ekosistem MCP, ha heuliañ ar reolennoù gwellañ evit an diorren en em gav. Kompren penaos bezañ ezel eus raktresoù MCP digor eo pouezus evit ar reoù a fell dezho sevel dazont ar teknologiezh-se.
 
-## Objetivos de Aprendizagem
+## Palioù ar c’hendiviz
 
-Ao final desta lição, você será capaz de:
-- Compreender a estrutura da comunidade e do ecossistema MCP
-- Participar efetivamente em fóruns e discussões da comunidade MCP
-- Contribuir para repositórios de código aberto do MCP
-- Criar e compartilhar ferramentas MCP personalizadas
-- Seguir as melhores práticas para desenvolvimento e colaboração no MCP
+A-benn echuiñ ar lesanv-mañ, e c’hallit:
+- Kompren strujur kevredigezh ha ekosistem MCP
+- Mont e darempred gant foromoù ha diskouezadegoù kevredigezhel MCP
+- Krouiñ e-barzh ar c’huzulioù MCP digor
+- Krouiñ ha rannañ ostilhoù MCP personelaet
+- Heuliañ ar reolennoù gwellañ evit diorren ha kevredigezh MCP
 
-## O Ecossistema da Comunidade MCP
+## Ekosistem Kevredigezh MCP
 
-O ecossistema MCP consiste em vários componentes e participantes que trabalham juntos para avançar o protocolo.
+An ekosistem MCP a zo savet gant meur a elfenn ha a dud a labour asambles evit gwellaat ar protokol.
 
-### Principais Componentes da Comunidade
+### Elfennou Kevredigezh Pennañ
 
-1. **Mantenedores do Protocolo Central**: Microsoft e outras organizações que mantêm as especificações centrais do MCP e implementações de referência
-2. **Desenvolvedores de Ferramentas**: Indivíduos e equipes que criam ferramentas MCP
-3. **Provedores de Integração**: Empresas que integram MCP em seus produtos e serviços
-4. **Usuários Finais**: Desenvolvedores e organizações que usam MCP em suas aplicações
-5. **Contribuidores**: Membros da comunidade que contribuem com código, documentação ou outros recursos
+1. **Merañ Kernelezh Protokol** : Microsoft ha strolladoù all a vez o merañ spesifikadoù ha implijadennoù meneg MCP
+2. **Krouerien Ostilhoù** : Tud ha skipailhoù a vez o krouiñ ostilhoù MCP
+3. **Proviederezh Ensoc’h** : Kumpaneoù o implij MCP e o produioù ha servijoù
+4. **Implijerien Diwezhañ** : Diouzh an diorrened hag ar strolladoù o implij MCP e o arloadoù
+5. **Krouerien** : Ezeloù kevredigezhel o krouiñ kod, teulioù pe resoursoù all
 
-### Recursos da Comunidade
+### Resoursoù Kevredigezhel
 
-#### Canais Oficiais
+#### Skenoù Resis
 
-- [Repositório GitHub do MCP](https://github.com/modelcontextprotocol)
-- [Documentação do MCP](https://modelcontextprotocol.io/)
-- [Especificação do MCP](https://spec.modelcontextprotocol.io/)
-- [Discussões no GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
 
-#### Recursos Criados pela Comunidade
+#### Resoursoù Krouet gant Kevredigezh
 
-- Implementações de SDK específicas para linguagens
-- Implementações de servidor e bibliotecas de ferramentas
-- Postagens em blogs e tutoriais
-- Fóruns da comunidade e discussões em redes sociais
+- Implijadennoù SDK hervez yezh
+- Implijadennoù servijer ha levraouegoù ostilhoù
+- Poelladennoù ha enklaskoù
+- Foromoù kevredigezhel ha diskouezadegoù war ar rouedadoù sokial
 
-## Contribuindo para o MCP
+## Krouiñ e-barzh MCP
 
-### Tipos de Contribuições
+### Seurt Krouidigezhioù
 
-O ecossistema MCP acolhe vários tipos de contribuições:
+Ekosistem MCP a groga d’ober meur a seurt krouidigezhioù:
 
-1. **Contribuições de Código**:
-   - Melhorias no protocolo central
-   - Correção de bugs
-   - Implementações de ferramentas
-   - Bibliotecas de cliente/servidor em diferentes linguagens
+1. **Krouidigezhioù Kod** :
+   - Gwelladennoù protokol kernelezh
+   - Reteroù bug
+   - Implijadennoù ostilhoù
+   - Levraouegoù klijent/servijer e yezhoù disheñvel
 
-2. **Documentação**:
-   - Melhorar a documentação existente
-   - Criar tutoriais e guias
-   - Traduzir documentação
-   - Criar exemplos e aplicações de amostra
+2. **Teulioù** :
+   - Gwellaat an teulioù a zo
+   - Krouiñ enklaskoù ha kuzulioù
+   - Troidigezh teulioù
+   - Krouiñ skouerioù ha arloadoù skouer
 
-3. **Suporte à Comunidade**:
-   - Responder perguntas em fóruns
-   - Testar e relatar problemas
-   - Organizar eventos comunitários
-   - Orientar novos contribuidores
+3. **Sikour Kevredigezhel** :
+   - Respont d’ar goulennou war foromoù
+   - Ober war-dro ar c’hudennoù ha reiñ ditouroù
+   - Rannañ darvoudoù kevredigezhel
+   - Mentorañ krouerien nevez
 
-### Processo de Contribuição: Protocolo Central
+### Prozès Krouidigezh : Kernelezh Protokol
 
-Para contribuir com o protocolo central do MCP ou implementações oficiais:
+Evit krouiñ e-barzh protokol kernelezh MCP pe implijadennoù resis:
 
-#### Exemplo em .NET: Contribuindo com uma Melhoria de Protocolo
+#### Skouer .NET : Krouiñ un diorren protokol
 
 ```csharp
 // Example contribution to MCP protocol: Adding support for binary data streams
@@ -145,7 +145,7 @@ namespace Microsoft.Mcp.Protocol
 }
 ```
 
-#### Exemplo em Java: Contribuindo com uma Correção de Bug
+#### Skouer Java : Krouiñ un ret bug
 
 ```java
 package com.mcp.tools;
@@ -230,7 +230,7 @@ public class ToolParameterValidator {
 }
 ```
 
-#### Exemplo em Python: Contribuindo com uma Nova Ferramenta para a Biblioteca Padrão
+#### Skouer Python : Krouiñ un ostilh nevez evit ar levraoueg standard
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -390,23 +390,23 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Diretrizes de Contribuição
+### Reolennoù Krouidigezh
 
-Para fazer uma contribuição bem-sucedida para projetos MCP:
+Evit ober ur c’hrouidigezh buan ha sur e raktresoù MCP :
 
-1. **Comece Pequeno**: Inicie com documentação, correção de bugs ou pequenas melhorias
-2. **Siga o Guia de Estilo**: Adira ao estilo de codificação e convenções do projeto
-3. **Escreva Testes**: Inclua testes unitários para suas contribuições de código
-4. **Documente Seu Trabalho**: Adicione documentação clara para novas funcionalidades ou mudanças
-5. **Envie PRs Focados**: Mantenha os pull requests focados em um único problema ou funcionalidade
-6. **Interaja com o Feedback**: Seja responsivo ao feedback sobre suas contribuições
+1. **Kregiñ Bihan** : Gwelout da gentañ gant teulioù, reteroù bug pe diorrennoù bihan
+2. **Heuliañ ar Roll-stil** : Dilenn ar roll-stil koderezh ha konventiounen ar raktres
+3. **Skrivañ Amprouadennoù** : Ouzhpennañ amprouadennoù unit evit ho kod
+4. **Teulioù Ho Labour** : Ouzhpennañ teulioù sklaer evit ar goulennoù nevez pe kemmoù
+5. **Kas PRoù Staget** : Bezit sklaer ha staget war un danvez pe ul lodenn bennak
+6. **Mont e Darempred gant Respontoù** : Respont d’ar respontoù war ho krouidigezhioù
 
-### Fluxo de Trabalho de Contribuição Exemplar
+### Obererezh Krouidigezh Skouer
 
 ```bash
 # Clone the repository
 git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp
+cd mcp-for-beginners
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -429,13 +429,13 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Criando e Compartilhando Ferramentas MCP Personalizadas
+## Krouiñ ha Rannañ Ostilhoù MCP Personelaet
 
-Uma das maneiras mais valiosas de contribuir para o ecossistema MCP é criando e compartilhando ferramentas personalizadas.
+Un doare talvoudus evit krouiñ e-barzh ekosistem MCP eo krouiñ ha rannañ ostilhoù personelaet.
 
-### Desenvolvendo Ferramentas Compartilháveis
+### Diorezh Ostilhoù Rannaet
 
-#### Exemplo em .NET: Criando um Pacote de Ferramentas Compartilhável
+#### Skouer .NET : Krouiñ un paket ostilh rannaet
 
 ```csharp
 // Create a new .NET library project
@@ -541,7 +541,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Exemplo em Java: Criando um Pacote Maven para Ferramentas
+#### Skouer Java : Krouiñ un paket Maven evit ostilhoù
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -642,7 +642,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Exemplo em Python: Publicando um Pacote PyPI
+#### Skouer Python : Embann un paket PyPI
 
 ```python
 # Directory structure for a PyPI package:
@@ -747,68 +747,68 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### Compartilhando Melhores Práticas
+### Rannañ Reolennoù Gwellañ
 
-Ao compartilhar ferramentas MCP com a comunidade:
+Pa ranndit ostilhoù MCP gant ar gevredigezh :
 
-1. **Documentação Completa**:
-   - Documente o propósito, uso e exemplos
-   - Explique parâmetros e valores de retorno
-   - Documente quaisquer dependências externas
+1. **Teulioù Koulzad** :
+   - Teulioù war pal, implij ha skouerioù
+   - Deskrivañ parametrou ha talvoudoù
+   - Teulioù war heuliadoù all
 
-2. **Tratamento de Erros**:
-   - Implemente tratamento de erros robusto
-   - Forneça mensagens de erro úteis
-   - Trate casos extremos de forma elegante
+2. **Diorren Erruerioù** :
+   - Implij diorren erruerioù kreñv
+   - Roiñ kemmoù erruerioù talvoudus
+   - Diorezh ar c’hudennoù er mareoù difennet
 
-3. **Considerações de Desempenho**:
-   - Otimize para velocidade e uso de recursos
-   - Implemente caching quando apropriado
-   - Considere a escalabilidade
+3. **Diskouezder Perfurmance** :
+   - Optimaat evit buan ha implij resoursoù
+   - Implij kacheoù pa vez ret
+   - Sell ouzh skalabilite
 
-4. **Segurança**:
-   - Use chaves de API e autenticação seguras
-   - Valide e sanitize entradas
-   - Implemente limitação de taxa para chamadas de API externas
+4. **Surentez** :
+   - Implij kleadoù API sur ha autentikadur
+   - Gwiriañ ha glanañ ar c’hinnigou
+   - Implij limitaduroù evit galvioù API all
 
-5. **Testes**:
-   - Inclua cobertura de teste abrangente
-   - Teste com diferentes tipos de entrada e casos extremos
-   - Documente os procedimentos de teste
+5. **Amprouadennoù** :
+   - Ouzhpennañ amprouadennoù don
+   - Amprouiñ gant meur a seurt danvez ha c’hudennoù difennet
+   - Teulioù diwar-benn ar mod amprouiñ
 
-## Colaboração Comunitária e Melhores Práticas
+## Kevredigezh ha Reolennoù Gwellañ Kevredigezhel
 
-Colaboração efetiva é chave para um ecossistema MCP próspero.
+Kevredigezh efedus a zo diazez evit un ekosistem MCP pinvidik.
 
-### Canais de Comunicação
+### Skenoù Komz
 
-- Issues e Discussões no GitHub
-- Comunidade Tech da Microsoft
-- Canais no Discord e Slack
+- GitHub Issues ha Discussions
+- Microsoft Tech Community
+- Skenoù Discord ha Slack
 - Stack Overflow (tag: `model-context-protocol` or `mcp`)
 
-### Revisões de Código
+### Adwelet Kod
 
-Ao revisar contribuições para o MCP:
+Pa vez adwelet krouidigezhioù MCP :
 
-1. **Clareza**: O código é claro e bem documentado?
-2. **Corretude**: Funciona como esperado?
-3. **Consistência**: Segue as convenções do projeto?
-4. **Completude**: Testes e documentação estão incluídos?
-5. **Segurança**: Há preocupações de segurança?
+1. **Sklêrijenn** : A vez ar kod sklaer ha mat teuliet ?
+2. **Gwirionez** : A ra ar pezh e vez diskoachet ?
+3. **Konsistans** : A heulia ar c’honventiounen raktres ?
+4. **Hollekder** : A zo amprouadennoù ha teulioù ?
+5. **Surentez** : A zo kudennoù surentez ?
 
-### Compatibilidade de Versões
+### Kevreerezh Stummoù
 
-Ao desenvolver para o MCP:
+Pa vez diorren evit MCP :
 
-1. **Versionamento do Protocolo**: Adira à versão do protocolo MCP que sua ferramenta suporta
-2. **Compatibilidade com Cliente**: Considere a compatibilidade retroativa
-3. **Compatibilidade com Servidor**: Siga as diretrizes de implementação do servidor
-4. **Mudanças de Ruptura**: Documente claramente quaisquer mudanças de ruptura
+1. **Stumm Protokol** : Heulia stumm protokol MCP ho ostilh a sikour
+2. **Kevreerezh Klijent** : Sell ouzh kevreerezh diabarzh
+3. **Kevreerezh Servijer** : Heulia ar reolennoù implijad servijer
+4. **Kemmoù Stourm** : Teulioù sklaer evit kemmoù stourm
 
-## Projeto Comunitário Exemplar: Registro de Ferramentas MCP
+## Raktres Kevredigezhel Skouer : Rekortr Ostilhoù MCP
 
-Uma importante contribuição comunitária poderia ser desenvolver um registro público para ferramentas MCP.
+Un dastumad kevredigezhel pouezus a c’hall bezañ krouiñ ur roll publik evit ostilhoù MCP.
 
 ```python
 # Example schema for a community tool registry API
@@ -887,29 +887,30 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## Principais Conclusões
+## Punktoù Pennañ
 
-- A comunidade MCP é diversa e acolhe vários tipos de contribuições
-- Contribuir para o MCP pode variar de melhorias no protocolo central a ferramentas personalizadas
-- Seguir as diretrizes de contribuição melhora as chances de seu PR ser aceito
-- Criar e compartilhar ferramentas MCP é uma maneira valiosa de aprimorar o ecossistema
-- A colaboração comunitária é essencial para o crescimento e melhoria do MCP
+- Kevredigezh MCP a zo liesseurt ha degemer meur a seurt krouidigezhioù
+- Krouiñ e-barzh MCP a c’hall bezañ eus gwelladennoù protokol kernelezh da ostilhoù personelaet
+- Heuliañ reolennoù krouidigezh a gresk an tu da gontañ ho PR da vezañ degemeret
+- Krouiñ ha rannañ ostilhoù MCP zo un doare talvoudus evit gwellaat an ekosistem
+- Kevredigezh kevredigezhel eo diazez evit kresk ha gwellaat MCP
 
-## Exercício
+## Exercis
 
-1. Identifique uma área no ecossistema MCP onde você poderia fazer uma contribuição com base em suas habilidades e interesses
-2. Faça um fork do repositório MCP e configure um ambiente de desenvolvimento local
-3. Crie uma pequena melhoria, correção de bug ou ferramenta que beneficie a comunidade
-4. Documente sua contribuição com testes e documentação adequados
-5. Envie um pull request para o repositório apropriado
+1. Kavet ur rann e-barzh ekosistem MCP ma c’hallit krouiñ un dra hervez ho skiantoù ha ho dedenn
+2. Doug an darempred MCP ha lakaat ur c’hinnig diorren lec’hel da vont war-raok
+3. Krouiñ un diorren bihan, ur ret bug pe ur ostilh evit sikour ar gevredigezh
+4. Teulioù ho krouidigezh gant amprouadennoù ha teulioù mat
+5. Kas ur pull request d’ar c’huzul resis
 
-## Recursos Adicionais
+## Resoursoù ouzhpenn
 
-- [Projetos da Comunidade MCP](https://github.com/topics/model-context-protocol)
+- [MCP Community Projects](https://github.com/topics/model-context-protocol)
+
 
 ---
 
-Próximo: [Lições da Adoção Inicial](../07-LessonsfromEarlyAdoption/README.md)
+Next: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.

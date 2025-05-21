@@ -1,33 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b7244261ee19497082edf33bcce64717",
-  "translation_date": "2025-05-17T05:46:34+00:00",
+  "original_hash": "b3cffaf217113101e21eba532be806ea",
+  "translation_date": "2025-05-20T20:37:45+00:00",
   "source_file": "SUPPORT.md",
   "language_code": "hk"
 }
 -->
-# TODO: 此存储库的维护者尚未编辑此文件
+# 支援
 
-**存储库拥有者**：您是否希望为此产品/项目提供客户服务与支持 (CSS) 支持？
+## 如何提交問題及尋求協助  
 
-- **无 CSS 支持**：填写此模板以了解如何提交问题和获取帮助。
-- **有 CSS 支持**：填写 [aka.ms/onboardsupport](https://aka.ms/onboardsupport) 上的申请表。CSS 将与您合作/帮助您确定下一步。
-- **不确定？** 填写申请表，假设答案是“是”。CSS 将帮助您决定。
+此項目使用 GitHub Issues 來追蹤錯誤及功能請求。請在提交新問題前先搜尋現有問題，以避免重複。對於新問題，請將錯誤或功能請求以新的 Issue 形式提交。
 
-*然后在发布您的存储库之前从此 SUPPORT.MD 文件中删除这个第一个标题。*
+如需使用本項目的協助及有任何疑問，請：
+- 查看 [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4)，這裡聚集了專家及其他開發者
+- 利用 [Model Context Protocol Community](https://modelcontextprotocol.io/community/) 的資源，解決協議相關問題
 
-# 支持
+## Microsoft 支援政策  
 
-## 如何提交问题并获取帮助  
-
-此项目使用 GitHub Issues 来跟踪错误和功能请求。请在提交新问题之前搜索现有问题以避免重复。对于新问题，请将您的错误或功能请求作为新问题提交。
-
-关于使用此项目的帮助和问题，请 **存储库维护者：在此处插入说明，说明如何与存储库拥有者或社区互动以获得帮助。可以是一个 Stack Overflow 标签或其他渠道。您将在哪里帮助人们？**。
-
-## Microsoft 支持政策  
-
-对这个 **项目或产品** 的支持仅限于上面列出的资源。
+Model Context Protocol (MCP) for Beginners 項目的支援僅限於上述資源。
 
 **免責聲明**：  
-此文件是使用AI翻譯服務[Co-op Translator](https://github.com/Azure/co-op-translator)翻譯的。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原語言的文件作為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對於因使用此翻譯而產生的任何誤解或誤讀不承擔責任。
+本文件使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原文文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤詮釋概不負責。
