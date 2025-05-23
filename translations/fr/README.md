@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "daa913f25210240b3d124c873fb984c9",
-  "translation_date": "2025-05-23T05:50:36+00:00",
+  "original_hash": "20240296dc2c4f9fb20fb56b5af6841f",
+  "translation_date": "2025-05-23T06:28:43+00:00",
   "source_file": "README.md",
   "language_code": "fr"
 }
@@ -15,7 +15,7 @@ CO_OP_TRANSLATOR_METADATA:
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 [![GitHub watchers](https://img.shields.io/github/watchers/microsoft/mcp-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/mcp-for-beginners/watchers)
-[![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/network)
+[![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 [![GitHub stars](https://img.shields.io/github/stars/microsoft/mcp-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/mcp-for-beginners/stargazers)
 
 
@@ -23,61 +23,61 @@ CO_OP_TRANSLATOR_METADATA:
 
 
 Suivez ces étapes pour commencer à utiliser ces ressources :
-1. **Forkez le dépôt** : Cliquez sur [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/network)
+1. **Forkez le dépôt** : Cliquez sur [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Clonez le dépôt** : `git clone https://github.com/microsoft/mcp-for-beginners.git`
 3. [**Rejoignez le Discord Azure AI Foundry et rencontrez des experts ainsi que d'autres développeurs**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Support multilingue
 
-#### Pris en charge via GitHub Action (Automatisé et toujours à jour)
-[Français](./README.md) | [Espagnol](../es/README.md) | [Allemand](../de/README.md) | [Russe](../ru/README.md) | [Arabe](../ar/README.md) | [Persan (Farsi)](../fa/README.md) | [Ourdou](../ur/README.md) | [Chinois (Simplifié)](../zh/README.md) | [Chinois (Traditionnel, Macao)](../mo/README.md) | [Chinois (Traditionnel, Hong Kong)](../hk/README.md) | [Chinois (Traditionnel, Taïwan)](../tw/README.md) | [Japonais](../ja/README.md) | [Coréen](../ko/README.md) | [Hindi](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Népalais](../ne/README.md) | [Pendjabi (Gurmukhi)](../pa/README.md) | [Portugais (Portugal)](../pt/README.md) | [Portugais (Brésil)](../br/README.md) | [Italien](../it/README.md) | [Polonais](../pl/README.md) | [Turc](../tr/README.md) | [Grec](../el/README.md) | [Thaï](../th/README.md) | [Suédois](../sv/README.md) | [Danois](../da/README.md) | [Norvégien](../no/README.md) | [Finnois](../fi/README.md) | [Néerlandais](../nl/README.md) | [Hébreu](../he/README.md) | [Vietnamien](../vi/README.md) | [Indonésien](../id/README.md) | [Malais](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hongrois](../hu/README.md) | [Tchèque](../cs/README.md) | [Slovaque](../sk/README.md) | [Roumain](../ro/README.md) | [Bulgare](../bg/README.md) | [Serbe (Cyrillique)](../sr/README.md) | [Croate](../hr/README.md) | [Slovène](../sl/README.md)
-# 🚀 Programme Model Context Protocol (MCP) pour Débutants
+#### Pris en charge via GitHub Action (Automatisé & Toujours à jour)
+[Français](./README.md) | [Espagnol](../es/README.md) | [Allemand](../de/README.md) | [Russe](../ru/README.md) | [Arabe](../ar/README.md) | [Persan (Farsi)](../fa/README.md) | [Ourdou](../ur/README.md) | [Chinois (Simplifié)](../zh/README.md) | [Chinois (Traditionnel, Macao)](../mo/README.md) | [Chinois (Traditionnel, Hong Kong)](../hk/README.md) | [Chinois (Traditionnel, Taïwan)](../tw/README.md) | [Japonais](../ja/README.md) | [Coréen](../ko/README.md) | [Hindi](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Népalais](../ne/README.md) | [Pendjabi (Gurmukhi)](../pa/README.md) | [Portugais (Portugal)](../pt/README.md) | [Portugais (Brésil)](../br/README.md) | [Italien](../it/README.md) | [Polonais](../pl/README.md) | [Turc](../tr/README.md) | [Grec](../el/README.md) | [Thaï](../th/README.md) | [Suédois](../sv/README.md) | [Danois](../da/README.md) | [Norvégien](../no/README.md) | [Finnois](../fi/README.md) | [Néerlandais](../nl/README.md) | [Hébreu](../he/README.md) | [Vietnamien](../vi/README.md) | [Indonésien](../id/README.md) | [Malais](../ms/README.md) | [Tagalog (Philippin)](../tl/README.md) | [Swahili](../sw/README.md) | [Hongrois](../hu/README.md) | [Tchèque](../cs/README.md) | [Slovaque](../sk/README.md) | [Roumain](../ro/README.md) | [Bulgare](../bg/README.md) | [Serbe (Cyrillique)](../sr/README.md) | [Croate](../hr/README.md) | [Slovène](../sl/README.md)
+# 🚀 Curriculum du Model Context Protocol (MCP) pour Débutants
 
 ## **Apprenez MCP avec des exemples de code pratiques en C#, Java, JavaScript, Python et TypeScript**
 
-## 🧠 Aperçu du programme Model Context Protocol
+## 🧠 Aperçu du Curriculum Model Context Protocol
 
-Le **Model Context Protocol (MCP)** est un cadre innovant conçu pour standardiser les interactions entre les modèles d’IA et les applications clientes. Ce programme open-source propose un parcours d’apprentissage structuré, avec des exemples de code concrets et des cas d’utilisation réels, dans plusieurs langages populaires tels que C#, Java, JavaScript, TypeScript et Python.
+Le **Model Context Protocol (MCP)** est un cadre innovant conçu pour standardiser les interactions entre les modèles d’IA et les applications clientes. Ce curriculum open-source propose un parcours d’apprentissage structuré, avec des exemples de code pratiques et des cas d’usage réels, couvrant des langages populaires tels que C#, Java, JavaScript, TypeScript et Python.
 
-Que vous soyez développeur IA, architecte système ou ingénieur logiciel, ce guide est votre ressource complète pour maîtriser les fondamentaux du MCP et ses stratégies d’implémentation.
+Que vous soyez développeur IA, architecte système ou ingénieur logiciel, ce guide est votre ressource complète pour maîtriser les bases du MCP et ses stratégies d’implémentation.
 
-## 🔗 Ressources officielles MCP
+## 🔗 Ressources Officielles MCP
 
-- 📘 [Documentation MCP](https://modelcontextprotocol.io/) – Tutoriels détaillés et guides utilisateurs  
+- 📘 [Documentation MCP](https://modelcontextprotocol.io/) – Tutoriels détaillés et guides utilisateur  
 - 📜 [Spécification MCP](https://spec.modelcontextprotocol.io/) – Architecture du protocole et références techniques  
-- 🧑‍💻 [Dépôt GitHub MCP](https://github.com/modelcontextprotocol) – SDK open-source, outils et exemples de code  
+- 🧑‍💻 [Dépôt GitHub MCP](https://github.com/modelcontextprotocol) – SDKs open-source, outils et exemples de code  
 
-## 🧭 Structure complète du programme MCP
+## 🧭 Structure Complète du Curriculum MCP
 
 | Ch | Titre | Description | Lien |
 |--|--|--|--|
-| 00 | **Introduction au MCP** | Présentation du Model Context Protocol et son importance dans les pipelines IA, incluant ce qu’est le Model Context Protocol, pourquoi la standardisation est essentielle, ainsi que des cas d’usage et bénéfices concrets | [Introduction](./00-Introduction/README.md) |
-| 01 | **Concepts clés expliqués** | Exploration approfondie des concepts fondamentaux du MCP, incluant l’architecture client-serveur, les composants principaux du protocole et les modèles de communication | [Concepts clés](./01-CoreConcepts/README.md) |
+| 00 | **Introduction au MCP** | Présentation du Model Context Protocol et de son importance dans les pipelines IA, incluant ce qu’est le MCP, pourquoi la standardisation est essentielle, ainsi que des cas d’usage et avantages concrets | [Introduction](./00-Introduction/README.md) |
+| 01 | **Concepts Clés Expliqués** | Exploration approfondie des concepts fondamentaux du MCP, incluant l’architecture client-serveur, les composants clés du protocole, et les modèles de messagerie | [Concepts Clés](./01-CoreConcepts/README.md) |
 | 02 | **Sécurité dans MCP** | Identification des menaces de sécurité dans les systèmes basés sur MCP, techniques et bonnes pratiques pour sécuriser les implémentations | [Sécurité](./02-Security/README.md) |
-| 03 | **Premiers pas avec MCP** | Configuration de l’environnement, création de serveurs et clients MCP basiques, intégration de MCP dans des applications existantes | [Premiers pas](./03-GettingStarted/README.md) |
-| 3.1 | **Premier serveur** | Mise en place d’un serveur basique utilisant le protocole MCP, compréhension des interactions serveur-client, et tests du serveur | [Premier serveur](./03-GettingStarted/01-first-server/README.md) |
-| 3.2 | **Premier client** | Mise en place d’un client basique utilisant le protocole MCP, compréhension des interactions client-serveur, et tests du client | [Premier client](./03-GettingStarted/02-client/README.md) |
+| 03 | **Premiers Pas avec MCP** | Configuration de l’environnement, création de serveurs et clients MCP basiques, intégration de MCP dans des applications existantes | [Premiers Pas](./03-GettingStarted/README.md) |
+| 3.1 | **Premier serveur** | Mise en place d’un serveur basique utilisant le protocole MCP, compréhension de l’interaction serveur-client, et tests du serveur | [Premier Serveur](./03-GettingStarted/01-first-server/README.md) |
+| 3.2 | **Premier client** | Mise en place d’un client basique utilisant le protocole MCP, compréhension de l’interaction client-serveur, et tests du client | [Premier Client](./03-GettingStarted/02-client/README.md) |
 | 3.3 | **Client avec LLM** | Configuration d’un client utilisant le protocole MCP avec un Large Language Model (LLM) | [Client avec LLM](./03-GettingStarted/03-llm-client/README.md) |
 | 3.4 | **Consommer un serveur avec Visual Studio Code** | Configuration de Visual Studio Code pour consommer des serveurs utilisant le protocole MCP | [Consommer un serveur avec Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
-| 3.5 | **Créer un serveur avec SSE** | SSE permet d’exposer un serveur sur internet. Cette section vous guide pour créer un serveur avec SSE | [Créer un serveur avec SSE](./03-GettingStarted/05-sse-server/README.md) |
-| 3.6 | **Utiliser AI Toolkit** | AI Toolkit est un outil puissant qui vous aidera à gérer vos flux de travail IA et MCP. | [Utiliser AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
-| 3.7 | **Tester votre serveur** | Les tests sont une étape cruciale du développement. Cette section vous présente plusieurs outils pour tester votre serveur. | [Tester votre serveur](./03-GettingStarted/07-testing/README.md) |
-| 3.8 | **Déployer votre serveur** | Comment passer du développement local à la production ? Cette section vous accompagne dans le développement et le déploiement de votre serveur. | [Déployer votre serveur](./03-GettingStarted/08-deployment/README.md) |
-| 04 | **Implémentation pratique** | Utilisation des SDK dans différents langages, débogage, tests et validation, création de modèles de prompts et workflows réutilisables | [Implémentation pratique](./04-PracticalImplementation/README.md) |
-| 05 | **Sujets avancés dans MCP** | Workflows IA multimodaux et extensibilité, stratégies de montée en charge sécurisée, MCP dans les écosystèmes d’entreprise | [Sujets avancés](./05-AdvancedTopics/README.md) |
-| 06 | **Contributions communautaires** | Comment contribuer au code et à la documentation, collaboration via GitHub, améliorations et retours de la communauté | [Contributions communautaires](./06-CommunityContributions/README.md) |
-| 07 | **Retours d’expérience des premiers utilisateurs** | Implémentations réelles et résultats, construction et déploiement de solutions basées sur MCP, tendances et feuille de route future | [Retours d’expérience](./07-LessonsFromEarlyAdoption/README.md) |
-| 08 | **Bonnes pratiques pour MCP** | Optimisation des performances, conception de systèmes MCP tolérants aux pannes, stratégies de test et de résilience | [Bonnes pratiques](./08-BestPractices/README.md) |
-| 09 | **Études de cas MCP** | Analyses détaillées des architectures de solutions MCP, plans de déploiement et conseils d’intégration, diagrammes annotés et présentations de projets | [Études de cas](./09-CaseStudy/README.md) |
+| 3.5 | **Créer un serveur avec SSE** | SSE nous permet d’exposer un serveur sur internet. Cette section vous guide pour créer un serveur avec SSE | [Créer un serveur avec SSE](./03-GettingStarted/05-sse-server/README.md) |
+| 3.6 | **Utiliser AI Toolkit** | AI Toolkit est un excellent outil pour gérer votre flux de travail AI et MCP. | [Utiliser AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
+| 3.7 | **Tester votre serveur** | Les tests sont une étape clé du développement. Cette section vous aide à tester avec plusieurs outils différents. | [Tester votre serveur](./03-GettingStarted/07-testing/README.md) |
+| 3.8 | **Déployer votre serveur** | Comment passer du développement local à la production ? Cette section vous guide pour développer et déployer votre serveur. | [Déployer votre serveur](./03-GettingStarted/08-deployment/README.md) |
+| 04 | **Implémentation Pratique** | Utilisation des SDK dans différents langages, débogage, tests et validation, création de modèles de prompt et workflows réutilisables | [Implémentation Pratique](./04-PracticalImplementation/README.md) |
+| 05 | **Sujets Avancés dans MCP** | Workflows IA multimodaux et extensibilité, stratégies de montée en charge sécurisée, MCP dans les écosystèmes d’entreprise | [Sujets Avancés](./05-AdvancedTopics/README.md) |
+| 06 | **Contributions Communautaires** | Comment contribuer au code et à la documentation, collaboration via GitHub, améliorations et retours de la communauté | [Contributions Communautaires](./06-CommunityContributions/README.md) |
+| 07 | **Retours d’Expérience des Premiers Utilisateurs** | Implémentations concrètes et résultats obtenus, création et déploiement de solutions basées sur MCP, tendances et feuille de route | [Retours d’Expérience](./07-LessonsFromEarlyAdoption/README.md) |
+| 08 | **Bonnes Pratiques pour MCP** | Optimisation des performances, conception de systèmes MCP tolérants aux pannes, stratégies de test et de résilience | [Bonnes Pratiques](./08-BestPractices/README.md) |
+| 09 | **Études de Cas MCP** | Analyses approfondies des architectures de solutions MCP, plans de déploiement et conseils d’intégration, diagrammes annotés et parcours de projets | [Études de Cas](./09-CaseStudy/README.md) |
 
-## Projets exemples
+## Projets d’Exemple
 
-### 🧮 Projets exemples MCP Calculator :
+### 🧮 Projets d’Exemple MCP Calculator :
 <details>
   <summary><strong>Explorez les implémentations par langage</strong></summary>
 
-  - [Exemple serveur MCP en C#](./03-GettingStarted/samples/csharp/README.md)
+  - [Exemple Serveur MCP en C#](./03-GettingStarted/samples/csharp/README.md)
   - [Calculatrice MCP en Java](./03-GettingStarted/samples/java/calculator/README.md)
   - [Démo MCP en JavaScript](./03-GettingStarted/samples/javascript/README.md)
   - [Serveur MCP en Python](../../03-GettingStarted/samples/python/mcp_calculator_server.py)
@@ -85,14 +85,14 @@ Que vous soyez développeur IA, architecte système ou ingénieur logiciel, ce g
 
 </details>
 
-### 💡 Projets avancés MCP Calculator :
+### 💡 Projets Avancés MCP Calculator :
 <details>
   <summary><strong>Explorez les exemples avancés</strong></summary>
 
-  - [Exemple avancé en C#](./04-PracticalImplementation/samples/csharp/README.md)
-  - [Exemple d’application container Java](./04-PracticalImplementation/samples/java/containerapp/README.md)
-  - [Exemple avancé en JavaScript](./04-PracticalImplementation/samples/javascript/README.md)
-  - [Implémentation complexe en Python](../../04-PracticalImplementation/samples/python/mcp_sample.py)
+  - [Exemple Avancé en C#](./04-PracticalImplementation/samples/csharp/README.md)
+  - [Exemple d’Application Conteneur Java](./04-PracticalImplementation/samples/java/containerapp/README.md)
+  - [Exemple Avancé en JavaScript](./04-PracticalImplementation/samples/javascript/README.md)
+  - [Implémentation Complexe en Python](../../04-PracticalImplementation/samples/python/mcp_sample.py)
 - [Exemple de conteneur TypeScript](./04-PracticalImplementation/samples/typescript/README.md)
 
 </details>
@@ -100,11 +100,11 @@ Que vous soyez développeur IA, architecte système ou ingénieur logiciel, ce g
 
 ## 🎯 Prérequis pour apprendre MCP
 
-Pour tirer le meilleur parti de ce programme, vous devriez avoir :
+Pour tirer le meilleur parti de ce programme, vous devez avoir :
 
 - Des connaissances de base en C#, Java ou Python  
 - Une compréhension du modèle client-serveur et des API  
-- (Optionnel) Une familiarité avec les concepts de machine learning  
+- (Optionnel) Une familiarité avec les concepts d’apprentissage automatique  
 
 ## 🛠️ Comment utiliser ce programme efficacement
 
@@ -119,19 +119,19 @@ Chaque leçon de ce guide comprend :
 
 Ce contenu est sous licence **MIT License**. Pour les termes et conditions, consultez le [LICENSE](../../LICENSE).
 
-## 🤝 Guide de contribution
+## 🤝 Directives de contribution
 
-Ce projet accueille contributions et suggestions. La plupart des contributions nécessitent que vous acceptiez un  
-Contributor License Agreement (CLA) déclarant que vous avez le droit, et que vous nous accordez effectivement,  
-les droits d’utilisation de votre contribution. Pour plus de détails, visitez <https://cla.opensource.microsoft.com>.
+Ce projet accepte les contributions et suggestions. La plupart des contributions nécessitent que vous acceptiez un  
+Contrat de Licence de Contributeur (CLA) déclarant que vous avez le droit, et que vous accordez effectivement,  
+les droits d’utiliser votre contribution. Pour plus de détails, visitez <https://cla.opensource.microsoft.com>.
 
 Lorsque vous soumettez une pull request, un bot CLA déterminera automatiquement si vous devez fournir  
-un CLA et annotera la PR en conséquence (par exemple, vérification de statut, commentaire). Il vous suffit de suivre  
-les instructions données par le bot. Cette étape n’est nécessaire qu’une seule fois pour tous les dépôts utilisant notre CLA.
+un CLA et ajoutera les indications appropriées (par exemple, vérification de statut, commentaire). Suivez simplement les instructions  
+données par le bot. Vous n’aurez à faire cela qu’une seule fois pour tous les dépôts utilisant notre CLA.
 
-Ce projet a adopté le [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).  
-Pour plus d’informations, consultez la [FAQ sur le Code de conduite](https://opensource.microsoft.com/codeofconduct/faq/) ou contactez  
-[opencode@microsoft.com](mailto:opencode@microsoft.com) pour toute question ou remarque supplémentaire.
+Ce projet a adopté le [Code de Conduite Open Source de Microsoft](https://opensource.microsoft.com/codeofconduct/).  
+Pour plus d’informations, consultez la [FAQ du Code de Conduite](https://opensource.microsoft.com/codeofconduct/faq/) ou  
+contactez [opencode@microsoft.com](mailto:opencode@microsoft.com) pour toute question ou remarque supplémentaire.
 
 ## 🎒 Autres cours  
 Notre équipe propose d’autres cours ! Découvrez :
@@ -152,12 +152,12 @@ Notre équipe propose d’autres cours ! Découvrez :
 - [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
 
 
-## ™️ Avis sur les marques déposées
+## ™️ Avis de marque
 
-Ce projet peut contenir des marques ou logos de projets, produits ou services. L’utilisation autorisée des marques ou logos Microsoft  
-est soumise et doit respecter les [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-L’usage des marques ou logos Microsoft dans des versions modifiées de ce projet ne doit pas prêter à confusion ni laisser entendre un parrainage Microsoft.  
-Toute utilisation de marques ou logos de tiers est soumise aux politiques de ces tiers.
+Ce projet peut contenir des marques déposées ou logos de projets, produits ou services. L’utilisation autorisée des marques ou logos Microsoft  
+est soumise aux [Directives sur les marques et la marque de Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
+L’utilisation des marques ou logos Microsoft dans des versions modifiées de ce projet ne doit pas créer de confusion ni laisser entendre un parrainage par Microsoft.  
+Toute utilisation de marques ou logos tiers est soumise aux politiques de ces tiers.
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous ne sommes pas responsables des malentendus ou des mauvaises interprétations résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous ne saurions être tenus responsables des malentendus ou des erreurs d'interprétation résultant de l'utilisation de cette traduction.
