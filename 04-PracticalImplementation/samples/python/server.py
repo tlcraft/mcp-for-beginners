@@ -9,14 +9,11 @@ interaction with various AI models.
 For more information about MCP: https://modelcontextprotocol.io/
 """
 
-import asyncio
 import json
 import logging
-from typing import Dict, List, Any, Optional
 
 # Import FastMCP - the high-level MCP server API
 from mcp.server.fastmcp import FastMCP
-from mcp.server.fastmcp.prompts import base
 
 # Configure module logger
 logging.basicConfig(level=logging.INFO)

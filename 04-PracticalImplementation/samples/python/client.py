@@ -96,10 +96,8 @@ async def main():
                             print("\n5. Code review prompt:")
                             print(f"   {text_content.text}")
     
-    except Exception as e:
-        logger.error(f"Error: {e}")
-        import traceback
-        logger.error(f"Traceback: {traceback.format_exc()}")
+    except Exception:
+        logger.exception("An error occurred")
         sys.exit(1)
 
 if __name__ == "__main__":
