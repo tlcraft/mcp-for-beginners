@@ -40,7 +40,7 @@ public class SecurityConfiguration {
         
         http.authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
             .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))
-            .csrf(csrf -> csrf.disable());
+            .csrf(Customizer.withDefaults());
         
         return http.build();
     }

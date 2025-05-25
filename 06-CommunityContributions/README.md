@@ -397,7 +397,7 @@ To make a successful contribution to MCP projects:
 ```bash
 # Clone the repository
 git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp
+cd mcp-for-beginners
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -901,4 +901,4 @@ async def delete_tool(tool_name: str):
 
 ---
 
-Next: [Case Studies and Projects](../06-CaseStudies/README.md)
+Next: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)

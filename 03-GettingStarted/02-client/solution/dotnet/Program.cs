@@ -1,0 +1,51 @@
+﻿using Microsoft.Extensions.AI;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using ModelContextProtocol.Client;
+using ModelContextProtocol.Protocol.Transport;
+
+var builder = Host.CreateApplicationBuilder(args);
+
+builder.Configuration
+    .AddEnvironmentVariables()
+    .AddUserSecrets<Program>();
+
+
+
+// var clientTransport = new StdioClientTransport(new StdioClientTransportOptions
+// {
+//     Name = "Everything",
+//     Command = "npx",
+//     Arguments = ["-y", "@modelcontextprotocol/server-everything"],
+// });
+
+
+var clientTransport = new StdioClientTransport(new()
+{
+    Name = "Demo Server",
+    Command = "/workspaces/mcp-for-beginners/03-GettingStarted/02-client/solution/server/bin/Debug/net8.0/server",
+    Arguments = [],
+});
+
+Console.WriteLine("Setting up stdio transport");
+
+await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
+
+Console.WriteLine("Listing tools");
+
+var tools = await mcpClient.ListToolsAsync();
+
+foreach (var tool in tools)
+{
+    Console.WriteLine($"Connected to server with tools: {tool.Name}");
+}
+
+var result = await mcpClient.CallToolAsync(
+    "Add",
+    new Dictionary<string, object?>() { ["a"] = 1, ["b"] = 3  },
+    cancellationToken:CancellationToken.None);
+
+Console.WriteLine(result.Content.First(c => c.Type == "text").Text);
+
+
+

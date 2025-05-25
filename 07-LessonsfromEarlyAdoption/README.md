@@ -1,4 +1,4 @@
-# Lessons from Early Adoprters
+# Lessons from Early Adopters
 
 ## Overview
 
@@ -296,10 +296,35 @@ spec:
 - Reduced time-to-value for enterprise AI projects by providing a ready-to-use, compliant MCP server platform
 - Simplified integration of LLMs, tools, and enterprise data sources
 - Enhanced security, observability, and operational efficiency for MCP workloads
-
 **References:**  
 - [Azure MCP Documentation](https://aka.ms/azmcp)
 - [Azure AI Services](https://azure.microsoft.com/en-us/products/ai-services/)
+
+## Case Study 6: NLWeb 
+MCP (Model Context Protocol) is an emerging protocol for Chatbots and AI assistants to interact with tools. Every NLWeb instance is also an MCP server, which supports one core method, ask, which is used to ask a website a question in natural language. The returned response leverages schema.org, a widely-used vocabulary for describing web data. Loosely speaking, MCP is NLWeb as Http is to HTML. NLWeb combines protocols, Schema.org formats, and sample code to help sites rapidly create these endpoints, benefiting both humans through conversational interfaces and machines through natural agent-to-agent interaction.
+
+There are two distinct components to NLWeb.
+- A protocol, very simple to begin with, to interface with a site in natural language and a format, leveraging json and schema.org for the returned answer. See the documentation on the REST API for more details.
+- A straightforward implementation of (1) that leverages existing markup, for sites that can be abstracted as lists of items (products, recipes, attractions, reviews, etc.). Together with a set of user interface widgets, sites can easily provide conversational interfaces to their content. See the documentation on Life of a chat query for more details on how this works.
+ 
+**References:**  
+- [Azure MCP Documentation](https://aka.ms/azmcp)
+- [NLWeb](https://github.com/microsoft/NlWeb)
+
+### Case Study 7: MCP for Foundry – Integrating Azure AI Agents
+
+Azure AI Foundry MCP servers demonstrate how MCP can be used to orchestrate and manage AI agents and workflows in enterprise environments. By integrating MCP with Azure AI Foundry, organizations can standardize agent interactions, leverage Foundry's workflow management, and ensure secure, scalable deployments. This approach enables rapid prototyping, robust monitoring, and seamless integration with Azure AI services, supporting advanced scenarios such as knowledge management and agent evaluation. Developers benefit from a unified interface for building, deploying, and monitoring agent pipelines, while IT teams gain improved security, compliance, and operational efficiency. The solution is ideal for enterprises seeking to accelerate AI adoption and maintain control over complex agent-driven processes.
+
+**References:**
+- [MCP Foundry GitHub Repository](https://github.com/azure-ai-foundry/mcp-foundry)
+- [Integrating Azure AI Agents with MCP (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
+
+### Case Study 8: Foundry MCP Playground – Experimentation and Prototyping
+
+The Foundry MCP Playground offers a ready-to-use environment for experimenting with MCP servers and Azure AI Foundry integrations. Developers can quickly prototype, test, and evaluate AI models and agent workflows using resources from the Azure AI Foundry Catalog and Labs. The playground streamlines setup, provides sample projects, and supports collaborative development, making it easy to explore best practices and new scenarios with minimal overhead. It is especially useful for teams looking to validate ideas, share experiments, and accelerate learning without the need for complex infrastructure. By lowering the barrier to entry, the playground helps foster innovation and community contributions in the MCP and Azure AI Foundry ecosystem.
+
+**References:**
+- [Foundry MCP Playground GitHub Repository](https://github.com/azure-ai-foundry/foundry-mcp-playground)
 
 ## Hands-on Projects
 
@@ -404,7 +429,8 @@ Microsoft and Azure have developed several open-source repositories to help deve
 #### Microsoft Organization
 1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - A Playwright MCP server for browser automation and testing
 2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - A OneDrive MCP server implementation for local testing and community contribution
-
+3. [NLWeb](https://github.com/microsoft/NlWeb) - NLWeb is a collection of open protocols and associated open source tools. Its main focus is establishing a foundational layer for the AI Web 
+ 
 #### Azure-Samples Organization
 1. [mcp](https://github.com/Azure-Samples/mcp) - Links to samples, tools, and resources for building and integrating MCP servers on Azure using multiple languages
 2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Reference MCP servers demonstrating authentication with the current Model Context Protocol specification
@@ -444,6 +470,9 @@ The Model Context Protocol (MCP) is rapidly shaping the future of standardized, 
 
 ## Additional Resources
 
+- [MCP Foundry GitHub Repository](https://github.com/azure-ai-foundry/mcp-foundry)
+- [Foundry MCP Playground](https://github.com/azure-ai-foundry/foundry-mcp-playground)
+- [Integrating Azure AI Agents with MCP (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
 - [MCP GitHub Repository (Microsoft)](https://github.com/microsoft/mcp)
 - [MCP Resources Directory (Sample Prompts, Tools, and Resource Definitions)](https://github.com/microsoft/mcp/tree/main/Resources)
 - [MCP Community & Documentation](https://modelcontextprotocol.io/introduction)
@@ -467,4 +496,4 @@ The Model Context Protocol (MCP) is rapidly shaping the future of standardized, 
 3. Research an industry not covered in the case studies and outline how MCP could address its specific challenges.
 4. Explore one of the future directions and create a concept for a new MCP extension to support it.
 
-Next: [Best Practices](../07-BestPractices/README.md)
+Next: [Best Practices](../08-BestPractices/README.md)
