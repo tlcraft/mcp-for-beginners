@@ -1,62 +1,130 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "584c4d6b470d865ad04746f5da3574b6",
-  "translation_date": "2025-05-17T14:55:14+00:00",
+  "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
+  "translation_date": "2025-05-25T13:28:11+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "mo"
 }
 -->
-# नमूना
+# Model Context Protocol (MCP) Python Implementation
 
-यह MCP सर्वर के लिए एक Python नमूना है।
+This repository contains a Python implementation of the Model Context Protocol (MCP), showing how to create both a server and client application that communicate using the MCP standard.
 
-यह मॉड्यूल एक मूल MCP सर्वर को लागू करने का तरीका प्रदर्शित करता है जो पूर्णता अनुरोधों को संभाल सकता है। यह विभिन्न AI मॉडल के साथ बातचीत को अनुकरण करने वाला एक मॉक कार्यान्वयन प्रदान करता है।
+## Overview
 
-यहां टूल पंजीकरण प्रक्रिया कैसी दिखती है:
+The MCP implementation consists of two main components:
+
+1. **MCP Server (`server.py`)** - A server that exposes:
+   - **Tools**: Functions that can be called remotely
+   - **Resources**: Data that can be retrieved
+   - **Prompts**: Templates for generating prompts for language models
+
+2. **MCP Client (`client.py`)** - A client application that connects to the server and uses its features
+
+## Features
+
+This implementation demonstrates several key MCP features:
+
+### Tools
+- `completion` - Generates text completions from AI models (simulated)
+- `add` - Simple calculator that adds two numbers
+
+### Resources
+- `models://` - Returns information about available AI models
+- `greeting://{name}` - Returns a personalized greeting for a given name
+
+### Prompts
+- `review_code` - Generates a prompt for reviewing code
+
+## Installation
+
+To use this MCP implementation, install the required packages:
+
+```powershell
+pip install mcp-server mcp-client
+```
+
+## Running the Server and Client
+
+### Starting the Server
+
+Run the server in one terminal window:
+
+```powershell
+python server.py
+```
+
+The server can also be run in development mode using the MCP CLI:
+
+```powershell
+mcp dev server.py
+```
+
+Or installed in Claude Desktop (if available):
+
+```powershell
+mcp install server.py
+```
+
+### Running the Client
+
+Run the client in another terminal window:
+
+```powershell
+python client.py
+```
+
+This will connect to the server and demonstrate all available features.
+
+### Client Usage
+
+The client (`client.py`) demonstrates all the MCP capabilities:
+
+```powershell
+python client.py
+```
+
+This will connect to the server and exercise all features including tools, resources, and prompts. The output will show:
+
+1. Calculator tool result (5 + 7 = 12)
+2. Completion tool response to "What is the meaning of life?"
+3. List of available AI models
+4. Personalized greeting for "MCP Explorer"
+5. Code review prompt template
+
+## Implementation Details
+
+The server is implemented using the `FastMCP` API, which provides high-level abstractions for defining MCP services. Here's a simplified example of how tools are defined:
 
 ```python
-completion_tool = ToolDefinition(
-    name="completion",
-    description="Generate completions using AI models",
-    parameters={
-        "model": {
-            "type": "string",
-            "enum": self.models,
-            "description": "The AI model to use for completion"
-        },
-        "prompt": {
-            "type": "string",
-            "description": "The prompt text to complete"
-        },
-        "temperature": {
-            "type": "number",
-            "description": "Sampling temperature (0.0 to 1.0)"
-        },
-        "max_tokens": {
-            "type": "number",
-            "description": "Maximum number of tokens to generate"
-        }
-    },
-    required=["model", "prompt"]
-)
-
-# Register the tool with its handler
-self.server.tools.register(completion_tool, self._handle_completion)
+@mcp.tool()
+def add(a: int, b: int) -> int:
+    """Add two numbers together
+    
+    Args:
+        a: First number
+        b: Second number
+    
+    Returns:
+        The sum of the two numbers
+    """
+    logger.info(f"Adding {a} and {b}")
+    return a + b
 ```
 
-## स्थापना
+The client uses the MCP client library to connect to and call the server:
 
-निम्नलिखित कमांड चलाएं:
-
-```bash
-pip install mcp
+```python
+async with stdio_client(server_params) as (reader, writer):
+    async with ClientSession(reader, writer) as session:
+        await session.initialize()
+        result = await session.call_tool("add", arguments={"a": 5, "b": 7})
 ```
 
-## चलाएं
+## Learn More
 
-```bash
-python mcp_sample.py
-```
+For more information about MCP, visit: https://modelcontextprotocol.io/
 
-I'm sorry, but I can't provide a translation into "mo" as it is not clear which language you are referring to. Could you please specify the language you need the text translated into?
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

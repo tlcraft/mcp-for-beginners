@@ -1,63 +1,130 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "584c4d6b470d865ad04746f5da3574b6",
-  "translation_date": "2025-05-17T14:58:46+00:00",
+  "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
+  "translation_date": "2025-05-25T13:31:42+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "nl"
 }
 -->
-# Voorbeeld
+# Model Context Protocol (MCP) Python-implementatie
 
-Dit is een Python-voorbeeld voor een MCP-server.
+Deze repository bevat een Python-implementatie van het Model Context Protocol (MCP), waarin wordt getoond hoe je zowel een server- als clientapplicatie maakt die communiceren volgens de MCP-standaard.
 
-Deze module demonstreert hoe je een basis MCP-server kunt implementeren die verzoeken om voltooiing kan afhandelen. Het biedt een mock-implementatie die interactie met verschillende AI-modellen simuleert.
+## Overzicht
 
-Hier zie je hoe het registratieproces van de tool eruitziet:
+De MCP-implementatie bestaat uit twee hoofdcomponenten:
+
+1. **MCP Server (`server.py`)** – Een server die het volgende aanbiedt:
+   - **Tools**: Functies die op afstand aangeroepen kunnen worden
+   - **Resources**: Gegevens die opgevraagd kunnen worden
+   - **Prompts**: Sjablonen voor het genereren van prompts voor taalmodellen
+
+2. **MCP Client (`client.py`)** – Een clientapplicatie die verbinding maakt met de server en gebruikmaakt van de aangeboden functionaliteiten
+
+## Functionaliteiten
+
+Deze implementatie laat verschillende belangrijke MCP-functies zien:
+
+### Tools
+- `completion` – Genereert tekstafwerkingen van AI-modellen (gesimuleerd)
+- `add` – Eenvoudige rekenmachine die twee getallen optelt
+
+### Resources
+- `models://` – Geeft informatie over beschikbare AI-modellen
+- `greeting://{name}` – Geeft een gepersonaliseerde begroeting voor een opgegeven naam
+
+### Prompts
+- `review_code` – Genereert een prompt voor code review
+
+## Installatie
+
+Om deze MCP-implementatie te gebruiken, installeer je de benodigde pakketten:
+
+```powershell
+pip install mcp-server mcp-client
+```
+
+## Server en Client starten
+
+### Server starten
+
+Start de server in een terminalvenster:
+
+```powershell
+python server.py
+```
+
+De server kan ook in ontwikkelmodus worden gestart met de MCP CLI:
+
+```powershell
+mcp dev server.py
+```
+
+Of geïnstalleerd worden in Claude Desktop (indien beschikbaar):
+
+```powershell
+mcp install server.py
+```
+
+### Client starten
+
+Start de client in een ander terminalvenster:
+
+```powershell
+python client.py
+```
+
+Dit maakt verbinding met de server en demonstreert alle beschikbare functies.
+
+### Clientgebruik
+
+De client (`client.py`) laat alle MCP-mogelijkheden zien:
+
+```powershell
+python client.py
+```
+
+Dit maakt verbinding met de server en gebruikt alle functies, inclusief tools, resources en prompts. De uitvoer toont:
+
+1. Resultaat van de rekenmachine-tool (5 + 7 = 12)
+2. Antwoord van de completion-tool op "What is the meaning of life?"
+3. Lijst van beschikbare AI-modellen
+4. Gepersonaliseerde begroeting voor "MCP Explorer"
+5. Promptsjabloon voor code review
+
+## Implementatiedetails
+
+De server is geïmplementeerd met de `FastMCP` API, die hoog-niveau abstracties biedt voor het definiëren van MCP-diensten. Hier is een vereenvoudigd voorbeeld van hoe tools worden gedefinieerd:
 
 ```python
-completion_tool = ToolDefinition(
-    name="completion",
-    description="Generate completions using AI models",
-    parameters={
-        "model": {
-            "type": "string",
-            "enum": self.models,
-            "description": "The AI model to use for completion"
-        },
-        "prompt": {
-            "type": "string",
-            "description": "The prompt text to complete"
-        },
-        "temperature": {
-            "type": "number",
-            "description": "Sampling temperature (0.0 to 1.0)"
-        },
-        "max_tokens": {
-            "type": "number",
-            "description": "Maximum number of tokens to generate"
-        }
-    },
-    required=["model", "prompt"]
-)
-
-# Register the tool with its handler
-self.server.tools.register(completion_tool, self._handle_completion)
+@mcp.tool()
+def add(a: int, b: int) -> int:
+    """Add two numbers together
+    
+    Args:
+        a: First number
+        b: Second number
+    
+    Returns:
+        The sum of the two numbers
+    """
+    logger.info(f"Adding {a} and {b}")
+    return a + b
 ```
 
-## Installeren
+De client gebruikt de MCP clientbibliotheek om verbinding te maken met en aanroepen te doen naar de server:
 
-Voer de volgende opdracht uit:
-
-```bash
-pip install mcp
+```python
+async with stdio_client(server_params) as (reader, writer):
+    async with ClientSession(reader, writer) as session:
+        await session.initialize()
+        result = await session.call_tool("add", arguments={"a": 5, "b": 7})
 ```
 
-## Uitvoeren
+## Meer informatie
 
-```bash
-python mcp_sample.py
-```
+Voor meer informatie over MCP, bezoek: https://modelcontextprotocol.io/
 
-**Disclaimer**:
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, moet u zich ervan bewust zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in zijn oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+**Disclaimer**:  
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

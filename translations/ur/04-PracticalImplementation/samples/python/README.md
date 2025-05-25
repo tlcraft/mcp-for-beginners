@@ -1,63 +1,130 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "584c4d6b470d865ad04746f5da3574b6",
-  "translation_date": "2025-05-17T14:55:09+00:00",
+  "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
+  "translation_date": "2025-05-25T13:27:52+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "ur"
 }
 -->
-# نمونہ
+# ماڈل کانٹیکسٹ پروٹوکول (MCP) پائتھون امپلیمنٹیشن
 
-یہ ایک MCP سرور کے لیے Python نمونہ ہے۔
+یہ ریپوزیٹری ماڈل کانٹیکسٹ پروٹوکول (MCP) کی پائتھون میں امپلیمنٹیشن پر مشتمل ہے، جو دکھاتی ہے کہ کیسے ایک سرور اور کلائنٹ ایپلیکیشن بنائی جاتی ہے جو MCP اسٹینڈرڈ کے تحت بات چیت کرتی ہیں۔
 
-یہ ماڈیول یہ دکھاتا ہے کہ ایک بنیادی MCP سرور کیسے نافذ کیا جا سکتا ہے جو تکمیل کی درخواستوں کو سنبھال سکتا ہے۔ یہ مختلف AI ماڈلز کے ساتھ تعامل کی تقلید کرنے والی ایک فرضی عملدرآمد فراہم کرتا ہے۔
+## جائزہ
 
-یہاں ٹول رجسٹریشن کے عمل کی صورت دکھائی گئی ہے:
+MCP کی امپلیمنٹیشن دو اہم اجزاء پر مشتمل ہے:
+
+1. **MCP سرور (`server.py`)** - ایک سرور جو فراہم کرتا ہے:
+   - **ٹولز**: فنکشنز جو ریموٹلی کال کیے جا سکتے ہیں
+   - **ریزورسز**: ڈیٹا جو حاصل کیا جا سکتا ہے
+   - **پرومپٹس**: زبان کے ماڈلز کے لیے پرومپٹ بنانے کے سانچے
+
+2. **MCP کلائنٹ (`client.py`)** - ایک کلائنٹ ایپلیکیشن جو سرور سے جڑتی ہے اور اس کی خصوصیات استعمال کرتی ہے
+
+## خصوصیات
+
+یہ امپلیمنٹیشن MCP کی کئی اہم خصوصیات دکھاتی ہے:
+
+### ٹولز
+- `completion` - AI ماڈلز سے ٹیکسٹ کمپلیشنز تیار کرتا ہے (نقالی)
+- `add` - ایک سادہ کیلکولیٹر جو دو نمبروں کو جمع کرتا ہے
+
+### ریزورسز
+- `models://` - دستیاب AI ماڈلز کے بارے میں معلومات دیتا ہے
+- `greeting://{name}` - دیے گئے نام کے لیے ذاتی نوعیت کا سلام پیش کرتا ہے
+
+### پرومپٹس
+- `review_code` - کوڈ ریویو کے لیے پرومپٹ تیار کرتا ہے
+
+## انسٹالیشن
+
+اس MCP امپلیمنٹیشن کو استعمال کرنے کے لیے ضروری پیکجز انسٹال کریں:
+
+```powershell
+pip install mcp-server mcp-client
+```
+
+## سرور اور کلائنٹ چلانا
+
+### سرور شروع کرنا
+
+سرور کو ایک ٹرمینل ونڈو میں چلائیں:
+
+```powershell
+python server.py
+```
+
+سرور کو ڈویلپمنٹ موڈ میں MCP CLI کے ذریعے بھی چلایا جا سکتا ہے:
+
+```powershell
+mcp dev server.py
+```
+
+یا Claude Desktop میں انسٹال کریں (اگر دستیاب ہو):
+
+```powershell
+mcp install server.py
+```
+
+### کلائنٹ چلانا
+
+کلائنٹ کو دوسری ٹرمینل ونڈو میں چلائیں:
+
+```powershell
+python client.py
+```
+
+یہ سرور سے جڑ جائے گا اور تمام دستیاب خصوصیات دکھائے گا۔
+
+### کلائنٹ کا استعمال
+
+کلائنٹ (`client.py`) MCP کی تمام صلاحیتیں ظاہر کرتا ہے:
+
+```powershell
+python client.py
+```
+
+یہ سرور سے جڑ کر تمام خصوصیات استعمال کرے گا جن میں ٹولز، ریزورسز، اور پرومپٹس شامل ہیں۔ نتیجہ یہ ہوگا:
+
+1. کیلکولیٹر ٹول کا نتیجہ (5 + 7 = 12)
+2. کمپلیشن ٹول کا جواب "زندگی کا مطلب کیا ہے؟"
+3. دستیاب AI ماڈلز کی فہرست
+4. "MCP Explorer" کے لیے ذاتی سلام
+5. کوڈ ریویو کے لیے پرومپٹ سانچہ
+
+## امپلیمنٹیشن کی تفصیلات
+
+سرور `FastMCP` API استعمال کرتے ہوئے بنایا گیا ہے، جو MCP سروسز کی تعریف کے لیے اعلیٰ سطح کی ایبسٹریکشنز فراہم کرتا ہے۔ یہاں ٹولز کی تعریف کا سادہ سا مثال ہے:
 
 ```python
-completion_tool = ToolDefinition(
-    name="completion",
-    description="Generate completions using AI models",
-    parameters={
-        "model": {
-            "type": "string",
-            "enum": self.models,
-            "description": "The AI model to use for completion"
-        },
-        "prompt": {
-            "type": "string",
-            "description": "The prompt text to complete"
-        },
-        "temperature": {
-            "type": "number",
-            "description": "Sampling temperature (0.0 to 1.0)"
-        },
-        "max_tokens": {
-            "type": "number",
-            "description": "Maximum number of tokens to generate"
-        }
-    },
-    required=["model", "prompt"]
-)
-
-# Register the tool with its handler
-self.server.tools.register(completion_tool, self._handle_completion)
+@mcp.tool()
+def add(a: int, b: int) -> int:
+    """Add two numbers together
+    
+    Args:
+        a: First number
+        b: Second number
+    
+    Returns:
+        The sum of the two numbers
+    """
+    logger.info(f"Adding {a} and {b}")
+    return a + b
 ```
 
-## انسٹال کریں
+کلائنٹ MCP کلائنٹ لائبریری استعمال کرتا ہے تاکہ سرور سے جڑ کر کال کرے:
 
-مندرجہ ذیل کمانڈ چلائیں:
-
-```bash
-pip install mcp
+```python
+async with stdio_client(server_params) as (reader, writer):
+    async with ClientSession(reader, writer) as session:
+        await session.initialize()
+        result = await session.call_tool("add", arguments={"a": 5, "b": 7})
 ```
 
-## چلائیں
+## مزید جانیں
 
-```bash
-python mcp_sample.py
-```
+MCP کے بارے میں مزید معلومات کے لیے ملاحظہ کریں: https://modelcontextprotocol.io/
 
-**ڈس کلیمر**:
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشش کرتے ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا نقائص ہو سکتے ہیں۔ اصل دستاویز کو اس کی مقامی زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ورانہ انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والے کسی بھی غلط فہمی یا غلط تشریح کے لیے ہم ذمہ دار نہیں ہیں۔
+**دستخطی نوٹ**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کی کوشش کرتے ہیں، براہ کرم اس بات سے آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا کمی بیشی ہو سکتی ہے۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ تجویز کیا جاتا ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔
