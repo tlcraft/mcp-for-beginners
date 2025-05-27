@@ -1,31 +1,31 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d88dee994dcbb3fa52c271d0c0817b5",
-  "translation_date": "2025-05-20T20:35:15+00:00",
+  "original_hash": "25a94c681cf43612ff394d8cf78a74de",
+  "translation_date": "2025-05-27T15:57:06+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "mo"
 }
 -->
 # Introduction to Model Context Protocol (MCP): Why It Matters for Scalable AI Applications
 
-Generative AI applications represent a significant advancement as they often allow users to interact with the app through natural language prompts. However, as more time and resources are invested in these apps, it becomes important to ensure easy integration of functionalities and resources in a way that supports extensibility, allows multiple models to be used, and manages various model complexities. In short, building Gen AI apps is straightforward initially, but as they scale and grow more complex, defining an architecture and relying on a standard becomes necessary to ensure consistent app development. This is where MCP comes in to organize and provide a standard.
+Generative AI applications represent a significant advancement by allowing users to interact with software through natural language prompts. However, as you invest more time and resources into these applications, it becomes crucial to integrate functionalities and resources in a way that supports easy expansion, accommodates multiple models, and manages various model-specific details. In short, building Gen AI apps is straightforward initially, but as they grow in complexity, you need to define an architecture and likely rely on a standard to ensure consistent development. This is where MCP comes in to organize and provide a standardized approach.
 
 ---
 
 ## **🔍 What Is the Model Context Protocol (MCP)?**
 
-The **Model Context Protocol (MCP)** is an **open, standardized interface** that enables Large Language Models (LLMs) to interact smoothly with external tools, APIs, and data sources. It offers a consistent architecture to extend AI model capabilities beyond their training data, allowing for smarter, scalable, and more responsive AI systems.
+The **Model Context Protocol (MCP)** is an **open, standardized interface** that enables Large Language Models (LLMs) to seamlessly interact with external tools, APIs, and data sources. It offers a consistent architecture to enhance AI model capabilities beyond their training data, supporting smarter, scalable, and more responsive AI systems.
 
 ---
 
 ## **🎯 Why Standardization in AI Matters**
 
-As generative AI applications become more sophisticated, adopting standards that ensure **scalability, extensibility**, and **maintainability** is crucial. MCP addresses these needs by:
+As generative AI applications become increasingly complex, adopting standards that guarantee **scalability, extensibility**, and **maintainability** is essential. MCP addresses these requirements by:
 
-- Unifying model-tool integrations  
-- Reducing fragile, one-off custom solutions  
-- Enabling multiple models to coexist within a single ecosystem  
+- Unifying model-tool integrations
+- Reducing fragile, one-off custom solutions
+- Allowing multiple models to coexist within the same ecosystem
 
 ---
 
@@ -33,10 +33,10 @@ As generative AI applications become more sophisticated, adopting standards that
 
 By the end of this article, you will be able to:
 
-- Define **Model Context Protocol (MCP)** and its use cases  
-- Understand how MCP standardizes communication between models and tools  
-- Identify the core components of MCP architecture  
-- Explore practical applications of MCP in enterprise and development settings  
+- Define **Model Context Protocol (MCP)** and its use cases
+- Understand how MCP standardizes communication between models and tools
+- Identify the core components of MCP architecture
+- Explore real-world applications of MCP in enterprise and development settings
 
 ---
 
@@ -46,19 +46,19 @@ By the end of this article, you will be able to:
 
 Before MCP, integrating models with tools involved:
 
-- Writing custom code for each tool-model pair  
-- Using non-standard APIs for each vendor  
-- Frequent disruptions caused by updates  
-- Poor scalability as the number of tools increased  
+- Writing custom code for each tool-model pair
+- Using non-standard APIs for each vendor
+- Frequent breaks caused by updates
+- Poor scalability as more tools were added
 
 ### **✅ Benefits of MCP Standardization**
 
 | **Benefit**              | **Description**                                                                |
 |--------------------------|--------------------------------------------------------------------------------|
-| Interoperability         | LLMs work seamlessly with tools from various vendors                          |
-| Consistency              | Uniform behavior across different platforms and tools                         |
-| Reusability              | Tools built once can be reused across projects and systems                    |
-| Accelerated Development  | Development time is reduced by using standardized, plug-and-play interfaces   |
+| Interoperability         | LLMs work seamlessly with tools from different vendors                         |
+| Consistency              | Uniform behavior across platforms and tools                                    |
+| Reusability              | Tools built once can be reused across projects and systems                     |
+| Accelerated Development  | Reduced development time through standardized, plug-and-play interfaces       |
 
 ---
 
@@ -72,36 +72,36 @@ MCP follows a **client-server model**, where:
 
 ### **Key Components:**
 
-- **Resources** – Static or dynamic data available to models  
-- **Prompts** – Predefined workflows to guide generation  
-- **Tools** – Executable functions like search or calculations  
-- **Sampling** – Agentic behavior through recursive interactions  
+- **Resources** – Static or dynamic data for models  
+- **Prompts** – Predefined workflows for guided generation  
+- **Tools** – Executable functions such as search, calculations  
+- **Sampling** – Agent-like behavior through recursive interactions  
 
 ---
 
 ## How MCP Servers Work
 
-MCP servers function as follows:
+MCP servers operate as follows:
 
 - **Request Flow**:  
-    1. The MCP Client sends a request to the AI Model hosted on an MCP Host.  
+    1. The MCP Client sends a request to the AI Model running on an MCP Host.  
     2. The AI Model determines when it requires external tools or data.  
-    3. The model communicates with the MCP Server via the standardized protocol.
+    3. The model communicates with the MCP Server via the standardized protocol.  
 
 - **MCP Server Functionality**:  
     - Tool Registry: Maintains a catalog of available tools and their capabilities.  
-    - Authentication: Verifies permissions for tool access.  
-    - Request Handler: Processes tool requests coming from the model.  
-    - Response Formatter: Structures tool outputs into a format the model can understand.
+    - Authentication: Verifies permissions for accessing tools.  
+    - Request Handler: Processes incoming tool requests from the model.  
+    - Response Formatter: Structures tool outputs into a format the model can understand.  
 
 - **Tool Execution**:  
-    - The server routes requests to the appropriate external tools.  
-    - Tools perform their specialized functions (search, calculation, database queries, etc.).  
-    - Results are returned to the model in a consistent format.
+    - The server forwards requests to the appropriate external tools  
+    - Tools perform their specialized functions (search, calculation, database queries, etc.)  
+    - Results are returned to the model in a consistent format  
 
 - **Response Completion**:  
-    - The AI model integrates tool outputs into its response.  
-    - The final response is sent back to the client application.
+    - The AI model integrates tool outputs into its response  
+    - The final response is sent back to the client application  
 
 ```mermaid
 graph TD
@@ -138,9 +138,9 @@ graph TD
 
 ## 👨‍💻 How to Build an MCP Server (With Examples)
 
-MCP servers let you extend LLM capabilities by providing additional data and functionality.
+MCP servers enable you to extend LLM capabilities by providing additional data and functionality.
 
-Ready to get started? Here are examples of creating a simple MCP server in various programming languages:
+Ready to get started? Here are examples of creating a simple MCP server in various languages:
 
 - **Python Example**: https://github.com/modelcontextprotocol/python-sdk
 
@@ -152,28 +152,28 @@ Ready to get started? Here are examples of creating a simple MCP server in vario
 
 ## 🌍 Real-World Use Cases for MCP
 
-MCP supports a wide variety of applications by extending AI capabilities:
+MCP supports a broad range of applications by extending AI capabilities:
 
 | **Application**              | **Description**                                                                |
 |------------------------------|--------------------------------------------------------------------------------|
 | Enterprise Data Integration  | Connect LLMs to databases, CRMs, or internal tools                             |
-| Agentic AI Systems           | Enable autonomous agents with access to tools and decision-making workflows    |
+| Agentic AI Systems           | Enable autonomous agents with tool access and decision-making workflows        |
 | Multi-modal Applications     | Combine text, image, and audio tools within a single unified AI app            |
-| Real-time Data Integration   | Incorporate live data into AI interactions for more accurate, current outputs  |
+| Real-time Data Integration   | Incorporate live data into AI interactions for more accurate, up-to-date outputs|
 
 ### 🧠 MCP = Universal Standard for AI Interactions
 
-The Model Context Protocol (MCP) serves as a universal standard for AI interactions, similar to how USB-C standardized physical connections for devices. In AI, MCP provides a consistent interface that allows models (clients) to integrate seamlessly with external tools and data providers (servers). This removes the need for multiple, custom protocols for every API or data source.
+The Model Context Protocol (MCP) serves as a universal standard for AI interactions, similar to how USB-C standardized physical device connections. In AI, MCP provides a consistent interface that allows models (clients) to integrate effortlessly with external tools and data providers (servers). This removes the need for diverse, custom protocols for each API or data source.
 
-Under MCP, an MCP-compatible tool (called an MCP server) follows a unified standard. These servers can list the tools or actions they provide and execute those actions when requested by an AI agent. AI agent platforms supporting MCP can discover available tools from servers and invoke them through this standardized protocol.
+Under MCP, an MCP-compatible tool (an MCP server) follows a unified standard. These servers can list the tools or actions they provide and execute those actions when requested by an AI agent. AI platforms supporting MCP can discover available tools from servers and invoke them through this standard protocol.
 
 ### 💡 Facilitates access to knowledge
 
-Beyond providing tools, MCP also facilitates access to knowledge. It enables applications to supply context to large language models (LLMs) by connecting them to diverse data sources. For example, an MCP server might represent a company’s document repository, allowing agents to retrieve relevant information on demand. Another server might handle specific tasks like sending emails or updating records. From the agent’s perspective, these are simply tools it can use—some tools return data (knowledge context), while others perform actions. MCP manages both efficiently.
+Besides providing tools, MCP also facilitates access to knowledge. It enables applications to supply context to large language models (LLMs) by linking them to various data sources. For example, an MCP server might represent a company’s document repository, allowing agents to retrieve relevant information on demand. Another server might handle specific actions like sending emails or updating records. From the agent’s perspective, these are simply tools it can use—some tools return data (knowledge context), while others perform actions. MCP efficiently manages both.
 
-An agent connecting to an MCP server automatically learns about the server's available capabilities and accessible data through a standard format. This standardization enables dynamic tool availability. For instance, adding a new MCP server to an agent’s system immediately makes its functions usable without needing to modify the agent's instructions.
+When an agent connects to an MCP server, it automatically learns the server’s available capabilities and accessible data through a standard format. This standardization enables dynamic tool availability. For instance, adding a new MCP server to an agent’s system makes its functions immediately available without needing further customization of the agent’s instructions.
 
-This streamlined integration follows the flow shown in the mermaid diagram, where servers provide both tools and knowledge, ensuring smooth collaboration across systems.
+This streamlined integration aligns with the flow shown in the mermaid diagram, where servers provide both tools and knowledge, ensuring smooth collaboration across systems.
 
 ### 👉 Example: Scalable Agent Solution
 
@@ -200,22 +200,84 @@ graph TD
     end
 ```
 
+### 🔄 Advanced MCP Scenarios with Client-Side LLM Integration
+
+Beyond the basic MCP architecture, advanced scenarios involve both client and server hosting LLMs, enabling more sophisticated interactions:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as 👤 User
+    participant ClientApp as 🖥️ Client App
+    participant ClientLLM as 🧠 Client LLM
+    participant Server1 as 🔧 MCP Server 1
+    participant Server2 as 📚 MCP Server 2
+    participant ServerLLM as 🤖 Server LLM
+    
+    %% Discovery Phase
+    rect rgb(220, 240, 255)
+        Note over ClientApp, Server2: TOOL DISCOVERY PHASE
+        ClientApp->>+Server1: Request available tools/resources
+        Server1-->>-ClientApp: Return tool list (JSON)
+        ClientApp->>+Server2: Request available tools/resources
+        Server2-->>-ClientApp: Return tool list (JSON)
+        Note right of ClientApp: Store combined tool<br/>catalog locally
+    end
+    
+    %% User Interaction
+    rect rgb(255, 240, 220)
+        Note over User, ClientLLM: USER INTERACTION PHASE
+        User->>+ClientApp: Enter natural language prompt
+        ClientApp->>+ClientLLM: Forward prompt + tool catalog
+        ClientLLM->>-ClientLLM: Analyze prompt & select tools
+    end
+    
+    %% Scenario A: Direct Tool Calling
+    alt Direct Tool Calling
+        rect rgb(220, 255, 220)
+            Note over ClientApp, Server1: SCENARIO A: DIRECT TOOL CALLING
+            ClientLLM->>+ClientApp: Request tool execution
+            ClientApp->>+Server1: Execute specific tool
+            Server1-->>-ClientApp: Return results
+            ClientApp->>+ClientLLM: Process results
+            ClientLLM-->>-ClientApp: Generate response
+            ClientApp-->>-User: Display final answer
+        end
+    
+    %% Scenario B: Feature Negotiation (VS Code style)
+    else Feature Negotiation (VS Code style)
+        rect rgb(255, 220, 220)
+            Note over ClientApp, ServerLLM: SCENARIO B: FEATURE NEGOTIATION
+            ClientLLM->>+ClientApp: Identify needed capabilities
+            ClientApp->>+Server2: Negotiate features/capabilities
+            Server2->>+ServerLLM: Request additional context
+            ServerLLM-->>-Server2: Provide context
+            Server2-->>-ClientApp: Return available features
+            ClientApp->>+Server2: Call negotiated tools
+            Server2-->>-ClientApp: Return results
+            ClientApp->>+ClientLLM: Process results
+            ClientLLM-->>-ClientApp: Generate response
+            ClientApp-->>-User: Display final answer
+        end
+    end
+```
+
 ## 🔐 Practical Benefits of MCP
 
-Here are the practical advantages of using MCP:
+Here are the practical benefits of using MCP:
 
-- **Freshness**: Models can access up-to-date information beyond their training data  
-- **Capability Extension**: Models can use specialized tools for tasks outside their original training  
+- **Freshness**: Models can access current information beyond their training data  
+- **Capability Extension**: Models can leverage specialized tools for tasks outside their training  
 - **Reduced Hallucinations**: External data sources provide factual grounding  
-- **Privacy**: Sensitive data remains within secure environments instead of being embedded in prompts  
+- **Privacy**: Sensitive data can remain secure instead of being embedded in prompts  
 
 ## 📌 Key Takeaways
 
-The main points to remember about MCP:
+Key points to remember about MCP:
 
-- **MCP** standardizes how AI models interact with tools and data  
+- **MCP** standardizes AI model interaction with tools and data  
 - Promotes **extensibility, consistency, and interoperability**  
-- Helps **reduce development time, improve reliability, and expand model capabilities**  
+- Helps **reduce development time, improve reliability, and extend model capabilities**  
 - The client-server architecture **enables flexible, extensible AI applications**  
 
 ## 🧠 Exercise
@@ -234,4 +296,4 @@ Consider an AI application you want to build.
 Next: [Chapter 1: Core Concepts](/01-CoreConcepts/README.md)
 
 **Disclaimer**:  
-Thiz dokyument haz been translayted yusing AI translaytion servyce [Co-op Translator](https://github.com/Azure/co-op-translator). Whyle we stryve for akkuracy, pleese be awere that automayted translaytions may kontain errurz or inakkuraseez. The orygynal dokyument in itz naytiv langwage shood be konsydered the authoritativ sorce. For krytikal informayshun, profeshynal hyuman translaytion is rekomended. We ar not lyable for any myzunderstandings or myzinterpretayshuns aryzing from the yuse of this translaytion.
+Thys documynt has been translaited usyng AI translaition servyce [Co-op Translator](https://github.com/Azure/co-op-translator). Whyle we stryve for accurasy, pleese be awere that automatyed translaitions may contayn errors or inaccuracyes. The orygynal documynt in its natyve language shoold be consydered the authorytatyve source. For crytycal informatyion, professyonal human translaition is recommended. We are not lyable for any mysunderstandyngs or mysinterpretatyons arysyng from the use of thys translaition.
