@@ -1,107 +1,107 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d88dee994dcbb3fa52c271d0c0817b5",
-  "translation_date": "2025-05-20T21:15:53+00:00",
+  "original_hash": "25a94c681cf43612ff394d8cf78a74de",
+  "translation_date": "2025-05-27T16:02:40+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "br"
 }
 -->
-# Introdution da Model Context Protocol (MCP): Por Que É Importante para Aplicações de IA Escaláveis
+# Introduction au Model Context Protocol (MCP) : Pourquoi c’est important pour les applications IA évolutives
 
-Aplicações de IA generativa representam um grande avanço, pois geralmente permitem que o usuário interaja com o app usando comandos em linguagem natural. No entanto, à medida que mais tempo e recursos são investidos nessas aplicações, é fundamental garantir que você possa integrar funcionalidades e recursos de forma simples, que seja fácil expandir, que seu app suporte o uso de mais de um modelo e lide com as particularidades de cada modelo. Em resumo, construir apps de IA generativa é fácil no começo, mas à medida que crescem e ficam mais complexos, é preciso começar a definir uma arquitetura e provavelmente depender de um padrão para garantir que seus apps sejam construídos de forma consistente. É aí que o MCP entra para organizar e oferecer esse padrão.
-
----
-
-## **🔍 O Que É o Model Context Protocol (MCP)?**
-
-O **Model Context Protocol (MCP)** é uma **interface aberta e padronizada** que permite que Grandes Modelos de Linguagem (LLMs) interajam de forma fluida com ferramentas externas, APIs e fontes de dados. Ele oferece uma arquitetura consistente para ampliar a funcionalidade dos modelos de IA além dos dados de treinamento, possibilitando sistemas de IA mais inteligentes, escaláveis e responsivos.
+Les applications d’IA générative représentent une avancée majeure, car elles permettent souvent à l’utilisateur d’interagir avec l’application via des instructions en langage naturel. Cependant, à mesure que l’on investit plus de temps et de ressources dans ces applications, il est important de pouvoir intégrer facilement des fonctionnalités et des ressources de manière à ce que l’extension soit simple, que l’application puisse gérer plusieurs modèles simultanément, et qu’elle prenne en compte les spécificités de chaque modèle. En résumé, créer des applications d’IA générative est simple au départ, mais à mesure qu’elles grandissent et deviennent plus complexes, il faut commencer à définir une architecture et s’appuyer sur une norme pour garantir une construction cohérente des applications. C’est là qu’intervient le MCP pour organiser tout cela et fournir un standard.
 
 ---
 
-## **🎯 Por Que a Padronização em IA É Importante**
+## **🔍 Qu’est-ce que le Model Context Protocol (MCP) ?**
 
-À medida que aplicações de IA generativa ficam mais complexas, é essencial adotar padrões que garantam **escalabilidade, extensibilidade** e **manutenibilidade**. O MCP atende a essas necessidades por meio de:
-
-- Unificação das integrações entre modelos e ferramentas
-- Redução de soluções customizadas frágeis e pontuais
-- Permitir que múltiplos modelos coexistam em um mesmo ecossistema
+Le **Model Context Protocol (MCP)** est une **interface ouverte et standardisée** qui permet aux grands modèles de langage (LLM) d’interagir sans accroc avec des outils externes, des API et des sources de données. Il offre une architecture cohérente pour enrichir les fonctionnalités des modèles d’IA au-delà de leurs données d’entraînement, permettant ainsi des systèmes d’IA plus intelligents, évolutifs et réactifs.
 
 ---
 
-## **📚 Objetivos de Aprendizagem**
+## **🎯 Pourquoi la standardisation est-elle importante en IA ?**
 
-Ao final deste artigo, você será capaz de:
+À mesure que les applications d’IA générative se complexifient, il devient essentiel d’adopter des standards garantissant **l’évolutivité, l’extensibilité** et la **maintenabilité**. MCP répond à ces besoins en :
 
-- Definir o **Model Context Protocol (MCP)** e seus casos de uso
-- Entender como o MCP padroniza a comunicação entre modelo e ferramenta
-- Identificar os componentes principais da arquitetura MCP
-- Explorar aplicações reais do MCP em contextos empresariais e de desenvolvimento
-
----
-
-## **💡 Por Que o Model Context Protocol (MCP) É Revolucionário**
-
-### **🔗 MCP Resolve a Fragmentação nas Interações de IA**
-
-Antes do MCP, integrar modelos com ferramentas exigia:
-
-- Código customizado para cada par ferramenta-modelo
-- APIs não padronizadas para cada fornecedor
-- Quebras frequentes devido a atualizações
-- Baixa escalabilidade conforme o número de ferramentas aumentava
-
-### **✅ Benefícios da Padronização MCP**
-
-| **Benefício**            | **Descrição**                                                                 |
-|--------------------------|-------------------------------------------------------------------------------|
-| Interoperabilidade       | LLMs funcionam perfeitamente com ferramentas de diferentes fornecedores       |
-| Consistência            | Comportamento uniforme entre plataformas e ferramentas                        |
-| Reutilização            | Ferramentas criadas uma vez podem ser usadas em vários projetos e sistemas    |
-| Desenvolvimento Ágil    | Reduz o tempo de desenvolvimento usando interfaces padronizadas e plug-and-play |
+- Unifiant les intégrations modèle-outil  
+- Réduisant les solutions personnalisées fragiles et ponctuelles  
+- Permettant à plusieurs modèles de coexister dans un même écosystème  
 
 ---
 
-## **🧱 Visão Geral da Arquitetura MCP em Alto Nível**
+## **📚 Objectifs d’apprentissage**
 
-O MCP segue um **modelo cliente-servidor**, onde:
+À la fin de cet article, vous serez capable de :
 
-- **Hosts MCP** executam os modelos de IA
-- **Clientes MCP** iniciam as requisições
-- **Servidores MCP** fornecem contexto, ferramentas e capacidades
-
-### **Componentes Principais:**
-
-- **Recursos** – Dados estáticos ou dinâmicos para os modelos  
-- **Prompts** – Fluxos pré-definidos para geração guiada  
-- **Ferramentas** – Funções executáveis como busca, cálculos  
-- **Amostragem** – Comportamento agente via interações recursivas
+- Définir le **Model Context Protocol (MCP)** et ses cas d’usage  
+- Comprendre comment MCP standardise la communication entre modèles et outils  
+- Identifier les composants clés de l’architecture MCP  
+- Explorer des applications concrètes du MCP en entreprise et en développement  
 
 ---
 
-## Como Funcionam os Servidores MCP
+## **💡 Pourquoi le Model Context Protocol (MCP) change la donne**
 
-Servidores MCP operam da seguinte forma:
+### **🔗 MCP résout la fragmentation dans les interactions IA**
 
-- **Fluxo de Requisição**:  
-    1. O Cliente MCP envia uma requisição para o Modelo de IA rodando em um Host MCP.  
-    2. O Modelo de IA identifica quando precisa de ferramentas ou dados externos.  
-    3. O modelo se comunica com o Servidor MCP usando o protocolo padronizado.
+Avant MCP, intégrer des modèles avec des outils nécessitait :
 
-- **Funcionalidades do Servidor MCP**:  
-    - Registro de Ferramentas: Mantém um catálogo das ferramentas disponíveis e suas capacidades.  
-    - Autenticação: Verifica permissões para acesso às ferramentas.  
-    - Manipulador de Requisições: Processa pedidos de ferramentas vindos do modelo.  
-    - Formatador de Respostas: Estrutura as saídas das ferramentas em um formato compreensível para o modelo.
+- Du code personnalisé pour chaque paire outil-modèle  
+- Des API non standardisées propres à chaque fournisseur  
+- Des ruptures fréquentes dues aux mises à jour  
+- Une mauvaise évolutivité avec l’ajout d’outils  
 
-- **Execução das Ferramentas**:  
-    - O servidor encaminha as requisições para as ferramentas externas apropriadas  
-    - As ferramentas executam suas funções especializadas (busca, cálculo, consultas a banco de dados, etc.)  
-    - Os resultados são retornados ao modelo em formato consistente.
+### **✅ Avantages de la standardisation MCP**
 
-- **Conclusão da Resposta**:  
-    - O modelo de IA incorpora as saídas das ferramentas em sua resposta.  
-    - A resposta final é enviada de volta para o aplicativo cliente.
+| **Avantage**             | **Description**                                                               |
+|-------------------------|-------------------------------------------------------------------------------|
+| Interopérabilité        | Les LLM fonctionnent de manière fluide avec des outils de différents fournisseurs |
+| Cohérence               | Comportement uniforme sur toutes les plateformes et outils                   |
+| Réutilisabilité         | Les outils développés une fois peuvent être utilisés dans plusieurs projets  |
+| Développement accéléré  | Réduction du temps de développement grâce à des interfaces standardisées et plug-and-play |
+
+---
+
+## **🧱 Vue d’ensemble de l’architecture MCP**
+
+MCP suit un **modèle client-serveur**, où :
+
+- Les **MCP Hosts** hébergent les modèles IA  
+- Les **MCP Clients** initient les requêtes  
+- Les **MCP Servers** fournissent contexte, outils et capacités  
+
+### **Composants clés :**
+
+- **Ressources** – Données statiques ou dynamiques pour les modèles  
+- **Prompts** – Flux de travail prédéfinis pour une génération guidée  
+- **Outils** – Fonctions exécutables comme la recherche, les calculs  
+- **Sampling** – Comportement agentique via des interactions récursives  
+
+---
+
+## Fonctionnement des MCP Servers
+
+Les serveurs MCP fonctionnent de la manière suivante :
+
+- **Flux de requête** :  
+    1. Le MCP Client envoie une requête au modèle IA hébergé dans un MCP Host.  
+    2. Le modèle IA détecte quand il a besoin d’outils ou de données externes.  
+    3. Le modèle communique avec le MCP Server via le protocole standardisé.
+
+- **Fonctionnalités du MCP Server** :  
+    - Registre des outils : Gère un catalogue des outils disponibles et leurs capacités.  
+    - Authentification : Vérifie les permissions d’accès aux outils.  
+    - Gestionnaire de requêtes : Traite les demandes d’outils venant du modèle.  
+    - Formateur de réponses : Structure les sorties des outils dans un format compréhensible par le modèle.
+
+- **Exécution des outils** :  
+    - Le serveur redirige les requêtes vers les outils externes appropriés  
+    - Les outils exécutent leurs fonctions spécialisées (recherche, calcul, requêtes en base, etc.)  
+    - Les résultats sont retournés au modèle dans un format uniforme.
+
+- **Finalisation de la réponse** :  
+    - Le modèle IA intègre les résultats des outils dans sa réponse.  
+    - La réponse finale est renvoyée à l’application cliente.
 
 ```mermaid
 graph TD
@@ -136,46 +136,47 @@ graph TD
     style F fill:#c2f0c2,stroke:#333,stroke-width:1px    
 ```
 
-## 👨‍💻 Como Construir um Servidor MCP (Com Exemplos)
+## 👨‍💻 Comment construire un MCP Server (avec exemples)
 
-Servidores MCP permitem que você amplie as capacidades dos LLMs fornecendo dados e funcionalidades.
+Les serveurs MCP vous permettent d’étendre les capacités des LLM en fournissant données et fonctionnalités.
 
-Quer experimentar? Aqui estão exemplos de como criar um servidor MCP simples em diferentes linguagens:
+Prêt à essayer ? Voici des exemples pour créer un serveur MCP simple dans différents langages :
 
-- **Exemplo em Python**: https://github.com/modelcontextprotocol/python-sdk
+- **Exemple Python** : https://github.com/modelcontextprotocol/python-sdk
 
-- **Exemplo em TypeScript**: https://github.com/modelcontextprotocol/typescript-sdk
+- **Exemple TypeScript** : https://github.com/modelcontextprotocol/typescript-sdk
 
-- **Exemplo em Java**: https://github.com/modelcontextprotocol/java-sdk
+- **Exemple Java** : https://github.com/modelcontextprotocol/java-sdk
 
-- **Exemplo em C#/.NET**: https://github.com/modelcontextprotocol/csharp-sdk
+- **Exemple C#/.NET** : https://github.com/modelcontextprotocol/csharp-sdk
 
-## 🌍 Casos de Uso Reais para MCP
 
-O MCP possibilita uma ampla variedade de aplicações ao ampliar as capacidades da IA:
+## 🌍 Cas d’usage concrets pour MCP
 
-| **Aplicação**               | **Descrição**                                                                 |
-|----------------------------|-------------------------------------------------------------------------------|
-| Integração de Dados Empresariais | Conecta LLMs a bancos de dados, CRMs ou ferramentas internas                |
-| Sistemas de IA Agentiva     | Permite agentes autônomos com acesso a ferramentas e fluxos de decisão        |
-| Aplicações Multimodais      | Combina ferramentas de texto, imagem e áudio em um único app de IA unificado  |
-| Integração de Dados em Tempo Real | Trazer dados ao vivo para interações de IA, gerando respostas mais precisas e atualizadas |
+MCP permet une large gamme d’applications en étendant les capacités de l’IA :
 
-### 🧠 MCP = Padrão Universal para Interações de IA
+| **Application**              | **Description**                                                                 |
+|------------------------------|---------------------------------------------------------------------------------|
+| Intégration de données en entreprise | Connecter les LLM aux bases de données, CRM ou outils internes                  |
+| Systèmes IA agentiques       | Permettre aux agents autonomes d’accéder aux outils et de suivre des workflows décisionnels |
+| Applications multimodales    | Combiner texte, image et audio dans une application IA unifiée                  |
+| Intégration de données en temps réel | Intégrer des données en direct dans les interactions IA pour des résultats plus précis et actuels |
 
-O Model Context Protocol (MCP) funciona como um padrão universal para interações de IA, assim como o USB-C padronizou conexões físicas para dispositivos. No mundo da IA, o MCP oferece uma interface consistente, permitindo que modelos (clientes) se integrem perfeitamente com ferramentas externas e provedores de dados (servidores). Isso elimina a necessidade de protocolos diversos e customizados para cada API ou fonte de dados.
+### 🧠 MCP = Standard universel pour les interactions IA
 
-Sob o MCP, uma ferramenta compatível (chamada de servidor MCP) segue um padrão unificado. Esses servidores podem listar as ferramentas ou ações que oferecem e executá-las quando solicitadas por um agente de IA. Plataformas de agentes de IA que suportam MCP são capazes de descobrir as ferramentas disponíveis nos servidores e acioná-las por meio desse protocolo padrão.
+Le Model Context Protocol (MCP) agit comme un standard universel pour les interactions IA, à l’image de la normalisation USB-C pour les connexions physiques des appareils. Dans l’univers de l’IA, MCP fournit une interface cohérente, permettant aux modèles (clients) de s’intégrer sans effort aux outils externes et fournisseurs de données (serveurs). Cela élimine le besoin de protocoles personnalisés et variés pour chaque API ou source de données.
 
-### 💡 Facilita o acesso ao conhecimento
+Avec MCP, un outil compatible (appelé serveur MCP) suit une norme unifiée. Ces serveurs peuvent lister les outils ou actions qu’ils proposent et exécuter ces actions lorsqu’un agent IA les sollicite. Les plateformes d’agents IA compatibles MCP peuvent découvrir les outils disponibles sur les serveurs et les invoquer via ce protocole standard.
 
-Além de oferecer ferramentas, o MCP também facilita o acesso ao conhecimento. Ele permite que aplicações forneçam contexto aos grandes modelos de linguagem (LLMs) conectando-os a diversas fontes de dados. Por exemplo, um servidor MCP pode representar o repositório de documentos de uma empresa, permitindo que agentes recuperem informações relevantes sob demanda. Outro servidor pode lidar com ações específicas, como enviar e-mails ou atualizar registros. Para o agente, essas são apenas ferramentas que pode usar — algumas retornam dados (contexto de conhecimento), outras executam ações. O MCP gerencia ambos de forma eficiente.
+### 💡 Facilite l’accès à la connaissance
 
-Um agente que se conecta a um servidor MCP aprende automaticamente as capacidades disponíveis e os dados acessíveis por meio de um formato padrão. Essa padronização permite que as ferramentas estejam dinamicamente disponíveis. Por exemplo, adicionar um novo servidor MCP ao sistema do agente torna suas funções imediatamente utilizáveis, sem necessidade de customização adicional nas instruções do agente.
+Au-delà de la fourniture d’outils, MCP facilite aussi l’accès à la connaissance. Il permet aux applications de fournir du contexte aux grands modèles de langage (LLM) en les reliant à diverses sources de données. Par exemple, un serveur MCP peut représenter le dépôt documentaire d’une entreprise, permettant aux agents de récupérer des informations pertinentes à la demande. Un autre serveur pourrait gérer des actions spécifiques comme l’envoi d’e-mails ou la mise à jour d’enregistrements. Du point de vue de l’agent, ce sont simplement des outils utilisables : certains retournent des données (contexte de connaissance), d’autres effectuent des actions. MCP gère efficacement les deux.
 
-Essa integração simplificada está alinhada com o fluxo ilustrado no diagrama mermaid, onde servidores fornecem tanto ferramentas quanto conhecimento, garantindo colaboração fluida entre sistemas.
+Un agent connecté à un serveur MCP apprend automatiquement les capacités et données accessibles via un format standard. Cette standardisation permet une disponibilité dynamique des outils. Par exemple, ajouter un nouveau serveur MCP au système d’un agent rend ses fonctions immédiatement utilisables sans nécessiter de personnalisation supplémentaire des instructions de l’agent.
 
-### 👉 Exemplo: Solução de Agente Escalável
+Cette intégration fluide correspond au flux illustré dans le diagramme mermaid, où les serveurs fournissent à la fois outils et connaissances, assurant une collaboration sans faille entre les systèmes.
+
+### 👉 Exemple : Solution d’agent évolutive
 
 ```mermaid
 graph TD
@@ -200,38 +201,101 @@ graph TD
     end
 ```
 
-## 🔐 Benefícios Práticos do MCP
+### 🔄 Scénarios avancés MCP avec intégration LLM côté client
 
-Aqui estão os benefícios práticos do uso do MCP:
+Au-delà de l’architecture MCP basique, il existe des scénarios avancés où client et serveur contiennent tous deux des LLM, permettant des interactions plus sophistiquées :
 
-- **Atualização**: Modelos podem acessar informações atualizadas além dos dados de treinamento  
-- **Extensão de Capacidades**: Modelos podem usar ferramentas especializadas para tarefas para as quais não foram treinados  
-- **Redução de Alucinações**: Fontes externas de dados fornecem base factual  
-- **Privacidade**: Dados sensíveis podem permanecer em ambientes seguros, sem precisar ficar embutidos nos prompts
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as 👤 User
+    participant ClientApp as 🖥️ Client App
+    participant ClientLLM as 🧠 Client LLM
+    participant Server1 as 🔧 MCP Server 1
+    participant Server2 as 📚 MCP Server 2
+    participant ServerLLM as 🤖 Server LLM
+    
+    %% Discovery Phase
+    rect rgb(220, 240, 255)
+        Note over ClientApp, Server2: TOOL DISCOVERY PHASE
+        ClientApp->>+Server1: Request available tools/resources
+        Server1-->>-ClientApp: Return tool list (JSON)
+        ClientApp->>+Server2: Request available tools/resources
+        Server2-->>-ClientApp: Return tool list (JSON)
+        Note right of ClientApp: Store combined tool<br/>catalog locally
+    end
+    
+    %% User Interaction
+    rect rgb(255, 240, 220)
+        Note over User, ClientLLM: USER INTERACTION PHASE
+        User->>+ClientApp: Enter natural language prompt
+        ClientApp->>+ClientLLM: Forward prompt + tool catalog
+        ClientLLM->>-ClientLLM: Analyze prompt & select tools
+    end
+    
+    %% Scenario A: Direct Tool Calling
+    alt Direct Tool Calling
+        rect rgb(220, 255, 220)
+            Note over ClientApp, Server1: SCENARIO A: DIRECT TOOL CALLING
+            ClientLLM->>+ClientApp: Request tool execution
+            ClientApp->>+Server1: Execute specific tool
+            Server1-->>-ClientApp: Return results
+            ClientApp->>+ClientLLM: Process results
+            ClientLLM-->>-ClientApp: Generate response
+            ClientApp-->>-User: Display final answer
+        end
+    
+    %% Scenario B: Feature Negotiation (VS Code style)
+    else Feature Negotiation (VS Code style)
+        rect rgb(255, 220, 220)
+            Note over ClientApp, ServerLLM: SCENARIO B: FEATURE NEGOTIATION
+            ClientLLM->>+ClientApp: Identify needed capabilities
+            ClientApp->>+Server2: Negotiate features/capabilities
+            Server2->>+ServerLLM: Request additional context
+            ServerLLM-->>-Server2: Provide context
+            Server2-->>-ClientApp: Return available features
+            ClientApp->>+Server2: Call negotiated tools
+            Server2-->>-ClientApp: Return results
+            ClientApp->>+ClientLLM: Process results
+            ClientLLM-->>-ClientApp: Generate response
+            ClientApp-->>-User: Display final answer
+        end
+    end
+```
 
-## 📌 Principais Conclusões
+## 🔐 Avantages pratiques du MCP
 
-Os principais pontos para usar o MCP são:
+Voici les bénéfices concrets de l’utilisation du MCP :
 
-- O **MCP** padroniza como modelos de IA interagem com ferramentas e dados  
-- Promove **extensibilidade, consistência e interoperabilidade**  
-- MCP ajuda a **reduzir o tempo de desenvolvimento, melhorar a confiabilidade e ampliar as capacidades do modelo**  
-- A arquitetura cliente-servidor **permite aplicações de IA flexíveis e extensíveis**
+- **Actualité** : Les modèles peuvent accéder à des informations à jour, au-delà de leurs données d’entraînement  
+- **Extension des capacités** : Les modèles peuvent utiliser des outils spécialisés pour des tâches non couvertes par leur entraînement  
+- **Réduction des hallucinations** : Les sources de données externes apportent un ancrage factuel  
+- **Confidentialité** : Les données sensibles peuvent rester dans des environnements sécurisés sans être intégrées aux prompts  
 
-## 🧠 Exercício
+## 📌 Points clés à retenir
 
-Pense em uma aplicação de IA que você gostaria de construir.
+Voici les points essentiels à retenir sur l’utilisation du MCP :
 
-- Quais **ferramentas externas ou dados** poderiam melhorar suas capacidades?  
-- Como o MCP poderia tornar a integração **mais simples e confiável?**
+- **MCP** standardise la manière dont les modèles IA interagissent avec outils et données  
+- Favorise **extensibilité, cohérence et interopérabilité**  
+- MCP aide à **réduire le temps de développement, améliorer la fiabilité et étendre les capacités des modèles**  
+- L’architecture client-serveur **permet des applications IA flexibles et extensibles**  
 
-## Recursos Adicionais
+## 🧠 Exercice
 
-- [Repositório MCP no GitHub](https://github.com/modelcontextprotocol)
+Réfléchissez à une application IA que vous souhaitez développer.
 
-## O que vem a seguir
+- Quels **outils ou données externes** pourraient améliorer ses capacités ?  
+- Comment MCP pourrait-il rendre l’intégration **plus simple et plus fiable** ?  
 
-Próximo: [Capítulo 1: Conceitos Básicos](/01-CoreConcepts/README.md)
+## Ressources supplémentaires
+
+- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+
+
+## Et après ?
+
+Suivant : [Chapitre 1 : Concepts de base](/01-CoreConcepts/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, por favor, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

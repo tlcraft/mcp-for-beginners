@@ -1,27 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d88dee994dcbb3fa52c271d0c0817b5",
-  "translation_date": "2025-05-20T21:26:13+00:00",
+  "original_hash": "25a94c681cf43612ff394d8cf78a74de",
+  "translation_date": "2025-05-27T16:03:57+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "tr"
 }
 -->
-# Model Context Protocol (MCP) Giriş: Ölçeklenebilir Yapay Zeka Uygulamaları İçin Neden Önemli?
+# Model Context Protocol (MCP) Tanıtımı: Ölçeklenebilir Yapay Zeka Uygulamaları İçin Neden Önemli?
 
-Üretken yapay zeka uygulamaları, kullanıcıların doğal dil komutlarıyla uygulama ile etkileşim kurmasını sağladıkları için büyük bir ilerlemedir. Ancak, bu tür uygulamalara daha fazla zaman ve kaynak yatırıldıkça, işlevsellikleri ve kaynakları kolayca entegre edebildiğinizden, uygulamanızın birden fazla model kullanımını destekleyebildiğinden ve farklı model karmaşıklıklarını yönetebildiğinden emin olmak istersiniz. Kısacası, Gen AI uygulamaları başlamak için kolaydır, ancak büyüyüp karmaşıklaştıkça bir mimari tanımlamaya başlamanız ve uygulamalarınızın tutarlı bir şekilde inşa edilmesini sağlamak için muhtemelen bir standarda güvenmeniz gerekir. İşte burada MCP devreye girer, işleri düzenler ve bir standart sunar.
+Üretken yapay zeka uygulamaları, kullanıcıların doğal dil komutlarıyla uygulamayla etkileşim kurmasını sağladığı için büyük bir ilerlemedir. Ancak, bu tür uygulamalara daha fazla zaman ve kaynak yatırıldıkça, işlevsellikleri ve kaynakları kolayca entegre edebilmek, uygulamanızın birden fazla modeli destekleyebilmesi ve farklı model karmaşıklıklarını yönetebilmesi önem kazanır. Kısacası, üretken yapay zeka uygulamaları başlangıçta kolay olsa da, büyüyüp karmaşıklaştıkça bir mimari tanımlamaya başlamanız gerekir ve uygulamalarınızın tutarlı bir şekilde inşa edilmesini sağlamak için muhtemelen bir standarda güvenmeniz gerekir. İşte MCP, işleri düzenlemek ve bir standart sunmak için devreye girer.
 
 ---
 
 ## **🔍 Model Context Protocol (MCP) Nedir?**
 
-**Model Context Protocol (MCP)**, Büyük Dil Modellerinin (LLM'ler) harici araçlar, API'ler ve veri kaynaklarıyla sorunsuzca etkileşim kurmasını sağlayan **açık, standart bir arayüzdür**. AI model fonksiyonelliğini eğitim verilerinin ötesine taşıyan tutarlı bir mimari sunar; böylece daha akıllı, ölçeklenebilir ve daha duyarlı AI sistemleri mümkün olur.
+**Model Context Protocol (MCP)**, Büyük Dil Modellerinin (LLM'ler) harici araçlar, API’ler ve veri kaynaklarıyla sorunsuz bir şekilde etkileşim kurmasını sağlayan **açık ve standartlaştırılmış bir arayüzdür**. Eğitim verilerinin ötesinde yapay zeka model fonksiyonelliğini artırmak için tutarlı bir mimari sunar; böylece daha akıllı, ölçeklenebilir ve yanıt verebilir yapay zeka sistemleri mümkün olur.
 
 ---
 
-## **🎯 Yapay Zekada Standardizasyon Neden Önemlidir?**
+## **🎯 Yapay Zekada Standardizasyon Neden Önemlidir**
 
-Üretken yapay zeka uygulamaları karmaşıklaştıkça, **ölçeklenebilirlik, genişletilebilirlik** ve **bakım kolaylığı** sağlayan standartların benimsenmesi zorunlu hale gelir. MCP bu ihtiyaçları şu şekilde karşılar:
+Üretken yapay zeka uygulamaları karmaşıklaştıkça, **ölçeklenebilirlik, genişletilebilirlik** ve **bakım kolaylığı** sağlayan standartların benimsenmesi kritik hale gelir. MCP, bu ihtiyaçları şu yollarla karşılar:
 
 - Model ve araç entegrasyonlarını birleştirir
 - Kırılgan, tek seferlik özel çözümleri azaltır
@@ -34,48 +34,48 @@ CO_OP_TRANSLATOR_METADATA:
 Bu makalenin sonunda şunları yapabileceksiniz:
 
 - **Model Context Protocol (MCP)**’yi ve kullanım alanlarını tanımlamak
-- MCP’nin modelden araca iletişimi nasıl standartlaştırdığını anlamak
+- MCP’nin model-araç iletişimini nasıl standartlaştırdığını anlamak
 - MCP mimarisinin temel bileşenlerini belirlemek
-- MCP’nin kurumsal ve geliştirme ortamlarındaki gerçek dünya uygulamalarını keşfetmek
+- MCP’nin kurumsal ve geliştirme bağlamlarındaki gerçek dünya uygulamalarını keşfetmek
 
 ---
 
-## **💡 Model Context Protocol (MCP) Neden Bir Oyun Değiştiricidir?**
+## **💡 Model Context Protocol (MCP) Neden Bir Oyun Değiştirici?**
 
-### **🔗 MCP, Yapay Zeka Etkileşimlerindeki Parçalanmayı Çözer**
+### **🔗 MCP, Yapay Zeka Etkileşimlerindeki Parçalanmayı Çözüyor**
 
-MCP öncesinde, modelleri araçlarla entegre etmek için:
+MCP’den önce, modelleri araçlarla entegre etmek için:
 
-- Her araç-model çifti için özel kod yazmak gerekiyordu
+- Her araç-model çifti için özel kod yazılması gerekiyordu
 - Her satıcı için standart dışı API’ler kullanılıyordu
-- Güncellemeler sık sık kopmalara neden oluyordu
-- Daha fazla araçla ölçeklenebilirlik zayıftı
+- Güncellemeler sık sık kesintilere yol açıyordu
+- Daha fazla araç eklendikçe ölçeklenebilirlik kötüleşiyordu
 
 ### **✅ MCP Standardizasyonunun Faydaları**
 
 | **Fayda**                | **Açıklama**                                                                   |
 |--------------------------|--------------------------------------------------------------------------------|
-| Birlikte Çalışabilirlik  | LLM’ler farklı satıcıların araçlarıyla sorunsuz çalışır                       |
-| Tutarlılık               | Platformlar ve araçlar arasında uniform davranış                              |
-| Yeniden Kullanılabilirlik| Bir kez oluşturulan araçlar farklı projelerde ve sistemlerde kullanılabilir   |
-| Geliştirme Hızlandırma   | Standart, tak-çalıştır arayüzlerle geliştirme süresini kısaltır               |
+| Birlikte Çalışabilirlik  | LLM’ler farklı satıcıların araçlarıyla sorunsuz çalışır                        |
+| Tutarlılık               | Platformlar ve araçlar arasında uniform davranış                               |
+| Yeniden Kullanılabilirlik| Bir kez oluşturulan araçlar projeler ve sistemler arasında kullanılabilir      |
+| Hızlandırılmış Geliştirme| Standart, tak-çalıştır arayüzler sayesinde geliştirme süresini kısaltır        |
 
 ---
 
-## **🧱 MCP Mimarisi Yüksek Seviyede**
+## **🧱 Yüksek Seviyede MCP Mimarisi Genel Bakış**
 
-MCP, **istemci-sunucu modeli** izler; burada:
+MCP, **istemci-sunucu modeli** ile çalışır; burada:
 
-- **MCP Hosts** AI modellerini çalıştırır
-- **MCP Clients** istek başlatır
-- **MCP Servers** bağlam, araçlar ve yetenekler sağlar
+- **MCP Host’ları** yapay zeka modellerini çalıştırır
+- **MCP Client’ları** istek başlatır
+- **MCP Server’ları** bağlam, araçlar ve yetenekleri sağlar
 
-### **Temel Bileşenler:**
+### **Ana Bileşenler:**
 
-- **Resources (Kaynaklar)** – Modeller için statik veya dinamik veriler  
-- **Prompts (Komutlar)** – Yönlendirilmiş üretim için önceden tanımlı iş akışları  
-- **Tools (Araçlar)** – Arama, hesaplama gibi çalıştırılabilir fonksiyonlar  
-- **Sampling (Örnekleme)** – Yinelemeli etkileşimlerle ajan davranışı
+- **Kaynaklar** – Modeller için statik veya dinamik veriler  
+- **Komutlar (Prompts)** – Yönlendirilmiş üretim için önceden tanımlı iş akışları  
+- **Araçlar** – Arama, hesaplama gibi yürütülebilir fonksiyonlar  
+- **Örnekleme (Sampling)** – Yinelemeli etkileşimlerle ajan davranışı
 
 ---
 
@@ -84,24 +84,24 @@ MCP, **istemci-sunucu modeli** izler; burada:
 MCP sunucuları şu şekilde çalışır:
 
 - **İstek Akışı**:  
-    1. MCP Client, MCP Host’ta çalışan AI Modeline bir istek gönderir.  
-    2. AI Model, dış araçlar veya verilere ihtiyaç duyduğunu tespit eder.  
-    3. Model, standart protokolü kullanarak MCP Server ile iletişim kurar.
+    1. MCP Client, MCP Host’ta çalışan Yapay Zeka Modeline bir istek gönderir.  
+    2. Yapay Zeka Modeli, harici araçlara veya verilere ihtiyaç duyduğunu tespit eder.  
+    3. Model, standartlaştırılmış protokolü kullanarak MCP Server ile iletişim kurar.
 
 - **MCP Sunucu Fonksiyonları**:  
-    - Araç Kaydı: Mevcut araçların ve yeteneklerinin kataloğunu tutar.  
+    - Araç Kataloğu: Mevcut araçları ve yeteneklerini listeler.  
     - Kimlik Doğrulama: Araç erişim izinlerini doğrular.  
     - İstek İşleyici: Modelden gelen araç isteklerini işler.  
-    - Yanıt Formatlayıcı: Araç çıktısını modelin anlayacağı biçimde yapılandırır.
+    - Yanıt Biçimlendirici: Araç çıktısını modelin anlayacağı formata dönüştürür.
 
 - **Araç Çalıştırma**:  
-    - Sunucu, istekleri uygun harici araçlara yönlendirir  
-    - Araçlar uzmanlık gerektiren işlevlerini (arama, hesaplama, veri tabanı sorguları vb.) gerçekleştirir  
-    - Sonuçlar tutarlı formatta modele geri döner
+    - Sunucu istekleri uygun harici araçlara yönlendirir  
+    - Araçlar uzmanlaşmış fonksiyonlarını (arama, hesaplama, veri tabanı sorguları vb.) gerçekleştirir  
+    - Sonuçlar tutarlı bir formatta modele iletilir.
 
 - **Yanıt Tamamlama**:  
-    - AI modeli araç çıktısını yanıtına entegre eder  
-    - Son yanıt istemci uygulamaya gönderilir
+    - Yapay zeka modeli, araç çıktısını yanıtına dahil eder.  
+    - Nihai yanıt istemci uygulamasına gönderilir.
 
 ```mermaid
 graph TD
@@ -136,9 +136,9 @@ graph TD
     style F fill:#c2f0c2,stroke:#333,stroke-width:1px    
 ```
 
-## 👨‍💻 MCP Sunucusu Nasıl Kurulur (Örneklerle)
+## 👨‍💻 MCP Sunucusu Nasıl Oluşturulur (Örneklerle)
 
-MCP sunucuları, LLM yeteneklerini veri ve işlevsellik sağlayarak genişletmenize olanak tanır.
+MCP sunucuları, LLM yeteneklerini veri ve fonksiyonlarla genişletmenize olanak tanır.
 
 Denemeye hazır mısınız? İşte farklı dillerde basit bir MCP sunucusu oluşturma örnekleri:
 
@@ -153,28 +153,28 @@ Denemeye hazır mısınız? İşte farklı dillerde basit bir MCP sunucusu oluş
 
 ## 🌍 MCP’nin Gerçek Dünya Kullanım Alanları
 
-MCP, AI yeteneklerini genişleterek çok çeşitli uygulamaları mümkün kılar:
+MCP, yapay zeka yeteneklerini genişleterek çok çeşitli uygulamalara imkan tanır:
 
-| **Uygulama**                | **Açıklama**                                                                  |
+| **Uygulama**                 | **Açıklama**                                                                 |
 |-----------------------------|-------------------------------------------------------------------------------|
-| Kurumsal Veri Entegrasyonu  | LLM’leri veri tabanlarına, CRM’lere veya dahili araçlara bağlama              |
-| Ajan Tabanlı AI Sistemleri  | Araç erişimi ve karar alma iş akışlarıyla otonom ajanları etkinleştirme       |
-| Çok Modlu Uygulamalar       | Tek bir birleşik AI uygulamasında metin, görsel ve ses araçlarını birleştirme |
-| Gerçek Zamanlı Veri Entegrasyonu | Canlı veriyi AI etkileşimlerine dahil ederek daha doğru ve güncel çıktı sağlama |
+| Kurumsal Veri Entegrasyonu   | LLM’leri veri tabanları, CRM’ler veya dahili araçlara bağlama                 |
+| Ajanik Yapay Zeka Sistemleri| Araç erişimi ve karar alma iş akışlarına sahip otonom ajanlar oluşturma       |
+| Çok Modlu Uygulamalar        | Metin, görüntü ve ses araçlarını tek bir birleşik yapay zeka uygulamasında birleştirme |
+| Gerçek Zamanlı Veri Entegrasyonu| Yapay zeka etkileşimlerine canlı veri getirerek daha doğru, güncel çıktılar sağlama |
 
-### 🧠 MCP = AI Etkileşimleri İçin Evrensel Standart
+### 🧠 MCP = Yapay Zeka Etkileşimleri İçin Evrensel Standart
 
-Model Context Protocol (MCP), USB-C’nin cihazlar için fiziksel bağlantıları standartlaştırması gibi, AI etkileşimlerinde evrensel bir standart görevi görür. AI dünyasında MCP, modellerin (istemciler) harici araçlar ve veri sağlayıcılarla (sunucular) sorunsuz entegrasyonunu sağlayan tutarlı bir arayüz sunar. Bu sayede her API veya veri kaynağı için farklı, özel protokollere gerek kalmaz.
+Model Context Protocol (MCP), USB-C’nin cihazlar için fiziksel bağlantıları standartlaştırması gibi yapay zeka etkileşimleri için evrensel bir standart görevi görür. Yapay zeka dünyasında MCP, modellerin (istemciler) harici araçlar ve veri sağlayıcıları (sunucular) ile sorunsuz entegrasyon sağlamasına olanak tanıyan tutarlı bir arayüz sunar. Bu, her API veya veri kaynağı için farklı, özel protokollere ihtiyaç duyulmasını ortadan kaldırır.
 
-MCP uyumlu bir araç (MCP sunucusu olarak adlandırılır) birleşik bir standardı takip eder. Bu sunucular, sundukları araçları veya eylemleri listeleyebilir ve AI ajan tarafından istendiğinde bu eylemleri gerçekleştirebilir. MCP destekleyen AI ajan platformları, sunuculardan mevcut araçları keşfedip bu standart protokol aracılığıyla çağırabilir.
+MCP altında, MCP uyumlu bir araç (MCP sunucusu olarak adlandırılır) birleşik bir standart izler. Bu sunucular sundukları araçları veya eylemleri listeleyebilir ve bir yapay zeka ajanı tarafından istendiğinde bu eylemleri gerçekleştirebilir. MCP’yi destekleyen yapay zeka ajan platformları, sunuculardaki mevcut araçları keşfedebilir ve bu standart protokol aracılığıyla çağırabilir.
 
 ### 💡 Bilgiye Erişimi Kolaylaştırır
 
-Araçlar sunmanın ötesinde, MCP bilgiye erişimi de kolaylaştırır. Uygulamaların büyük dil modellerine (LLM) bağlam sağlamasını, yani çeşitli veri kaynaklarına bağlanmasını mümkün kılar. Örneğin, bir MCP sunucusu bir şirketin belge deposunu temsil edebilir ve ajanların ihtiyaç duyduklarında ilgili bilgileri çekmesini sağlar. Başka bir sunucu e-posta gönderme veya kayıt güncelleme gibi belirli işlemleri yapabilir. Ajan açısından bunlar sadece kullanabileceği araçlardır — bazıları veri (bilgi bağlamı) döndürürken, diğerleri eylem gerçekleştirir. MCP her ikisini de etkin şekilde yönetir.
+Araçlar sunmanın ötesinde, MCP bilgiye erişimi de kolaylaştırır. Uygulamaların büyük dil modellerine (LLM’lere) bağlam sağlamasını, yani çeşitli veri kaynaklarına bağlanmasını mümkün kılar. Örneğin, bir MCP sunucusu bir şirketin belge deposunu temsil edebilir ve ajanların ihtiyaç duyduklarında ilgili bilgileri almasını sağlar. Başka bir sunucu ise e-posta gönderme veya kayıt güncelleme gibi spesifik işlemleri yönetebilir. Ajan açısından bunlar sadece kullanabileceği araçlardır—bazı araçlar veri (bilgi bağlamı) döndürürken, diğerleri işlem yapar. MCP her ikisini de verimli şekilde yönetir.
 
-Bir ajan MCP sunucusuna bağlandığında, sunucunun mevcut yeteneklerini ve erişilebilir verilerini standart bir format aracılığıyla otomatik olarak öğrenir. Bu standardizasyon dinamik araç kullanılabilirliği sağlar. Örneğin, bir ajanın sistemine yeni bir MCP sunucusu eklemek, işlevlerinin hemen kullanılmasını sağlar; ajan talimatlarında ekstra özelleştirme gerektirmez.
+Bir ajan MCP sunucusuna bağlandığında, sunucunun mevcut yeteneklerini ve erişilebilir verileri standart bir formatla otomatik olarak öğrenir. Bu standardizasyon, araçların dinamik olarak kullanılabilir olmasını sağlar. Örneğin, ajanın sistemine yeni bir MCP sunucusu eklemek, fonksiyonlarının hemen kullanılabilir olmasını sağlar ve ajanın talimatlarında ek özelleştirme gerektirmez.
 
-Bu sadeleştirilmiş entegrasyon, sunucuların hem araç hem de bilgi sağladığı mermaid diyagramında gösterilen akışla uyumludur ve sistemler arası kesintisiz işbirliğini garanti eder.
+Bu kolaylaştırılmış entegrasyon, sunucuların hem araçları hem de bilgiyi sağladığı ve sistemler arasında sorunsuz iş birliği sağladığı mermaid diyagramındaki akışla uyumludur.
 
 ### 👉 Örnek: Ölçeklenebilir Ajan Çözümü
 
@@ -201,38 +201,101 @@ graph TD
     end
 ```
 
+### 🔄 İstemci Tarafı LLM Entegrasyonuyla Gelişmiş MCP Senaryoları
+
+Temel MCP mimarisinin ötesinde, hem istemci hem sunucu tarafında LLM’lerin bulunduğu ve daha karmaşık etkileşimlerin mümkün olduğu gelişmiş senaryolar vardır:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as 👤 User
+    participant ClientApp as 🖥️ Client App
+    participant ClientLLM as 🧠 Client LLM
+    participant Server1 as 🔧 MCP Server 1
+    participant Server2 as 📚 MCP Server 2
+    participant ServerLLM as 🤖 Server LLM
+    
+    %% Discovery Phase
+    rect rgb(220, 240, 255)
+        Note over ClientApp, Server2: TOOL DISCOVERY PHASE
+        ClientApp->>+Server1: Request available tools/resources
+        Server1-->>-ClientApp: Return tool list (JSON)
+        ClientApp->>+Server2: Request available tools/resources
+        Server2-->>-ClientApp: Return tool list (JSON)
+        Note right of ClientApp: Store combined tool<br/>catalog locally
+    end
+    
+    %% User Interaction
+    rect rgb(255, 240, 220)
+        Note over User, ClientLLM: USER INTERACTION PHASE
+        User->>+ClientApp: Enter natural language prompt
+        ClientApp->>+ClientLLM: Forward prompt + tool catalog
+        ClientLLM->>-ClientLLM: Analyze prompt & select tools
+    end
+    
+    %% Scenario A: Direct Tool Calling
+    alt Direct Tool Calling
+        rect rgb(220, 255, 220)
+            Note over ClientApp, Server1: SCENARIO A: DIRECT TOOL CALLING
+            ClientLLM->>+ClientApp: Request tool execution
+            ClientApp->>+Server1: Execute specific tool
+            Server1-->>-ClientApp: Return results
+            ClientApp->>+ClientLLM: Process results
+            ClientLLM-->>-ClientApp: Generate response
+            ClientApp-->>-User: Display final answer
+        end
+    
+    %% Scenario B: Feature Negotiation (VS Code style)
+    else Feature Negotiation (VS Code style)
+        rect rgb(255, 220, 220)
+            Note over ClientApp, ServerLLM: SCENARIO B: FEATURE NEGOTIATION
+            ClientLLM->>+ClientApp: Identify needed capabilities
+            ClientApp->>+Server2: Negotiate features/capabilities
+            Server2->>+ServerLLM: Request additional context
+            ServerLLM-->>-Server2: Provide context
+            Server2-->>-ClientApp: Return available features
+            ClientApp->>+Server2: Call negotiated tools
+            Server2-->>-ClientApp: Return results
+            ClientApp->>+ClientLLM: Process results
+            ClientLLM-->>-ClientApp: Generate response
+            ClientApp-->>-User: Display final answer
+        end
+    end
+```
+
 ## 🔐 MCP’nin Pratik Faydaları
 
 MCP kullanmanın pratik faydaları şunlardır:
 
-- **Güncellik**: Modeller eğitim verilerinin ötesinde güncel bilgilere erişebilir  
-- **Yetenek Genişletme**: Modeller, eğitilmedikleri görevler için özel araçlardan faydalanabilir  
-- **Halüsinasyonların Azalması**: Dış veri kaynakları gerçeklere dayalı destek sağlar  
+- **Güncellik**: Modeller, eğitim verilerinin ötesinde güncel bilgilere erişebilir  
+- **Yetenek Genişletme**: Modeller, eğitilmedikleri görevler için uzman araçlardan faydalanabilir  
+- **Halüsinasyonların Azalması**: Harici veri kaynakları gerçeklere dayalı bilgi sağlar  
 - **Gizlilik**: Hassas veriler, istemlerde gömülü olmak yerine güvenli ortamlarda kalabilir
 
 ## 📌 Önemli Noktalar
 
-MCP kullanımı için önemli çıkarımlar:
+MCP kullanımıyla ilgili önemli noktalar:
 
-- **MCP**, AI modellerinin araçlar ve verilerle nasıl etkileşime girdiğini standartlaştırır  
+- **MCP**, yapay zeka modellerinin araçlar ve verilerle nasıl etkileşime girdiğini standartlaştırır  
 - **Genişletilebilirlik, tutarlılık ve birlikte çalışabilirliği** teşvik eder  
-- MCP, geliştirme süresini kısaltır, güvenilirliği artırır ve model yeteneklerini genişletir  
-- İstemci-sunucu mimarisi, esnek ve genişletilebilir AI uygulamalarını mümkün kılar
+- MCP, **geliştirme süresini azaltır, güvenilirliği artırır ve model yeteneklerini genişletir**  
+- İstemci-sunucu mimarisi, **esnek ve genişletilebilir yapay zeka uygulamalarına olanak tanır**
 
 ## 🧠 Alıştırma
 
-İlginizi çeken bir AI uygulaması düşünün.
+İlgilendiğiniz bir yapay zeka uygulaması hakkında düşünün.
 
 - Hangi **harici araçlar veya veriler** yeteneklerini artırabilir?  
-- MCP entegrasyonu nasıl **daha basit ve güvenilir** hale getirebilir?
+- MCP entegrasyonunu nasıl **daha basit ve güvenilir** hale getirebilir?
 
 ## Ek Kaynaklar
 
 - [MCP GitHub Deposu](https://github.com/modelcontextprotocol)
+
 
 ## Sonraki Adım
 
 Sonraki: [Bölüm 1: Temel Kavramlar](/01-CoreConcepts/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yanlış yorumlamalar nedeniyle sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek herhangi bir yanlış anlama veya yorum hatasından sorumlu değiliz.
