@@ -22,18 +22,38 @@ Research published in the [Microsoft Digital Defense Report](https://aka.ms/mdd
 
 Let's look at some of the ways that you can start to address security risks when adopting MCP.
 
-# MCP server authentication (if your MCP implementation was before 26th April 2025)
-
-> **Note:** The following information is correct as of 26th April 2025. The MCP protocol is continually evolving, and future implementations may introduce new authentication patterns and controls. For the latest updates and guidance, always refer to the [MCP Specification](https://spec.modelcontextprotocol.io/) and the official [MCP GitHub repository](https://github.com/modelcontextprotocol).
+> **Note:** The following information is correct as of **29th May 2025**. The MCP protocol is continually evolving, and future implementations may introduce new authentication patterns and controls. For the latest updates and guidance, always refer to the [MCP Specification](https://spec.modelcontextprotocol.io/) and the official [MCP GitHub repository](https://github.com/modelcontextprotocol) and [security best practice page](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices).
 
 ### Problem statement 
-The original MCP specification assumed that developers would write their own authentication server. This required knowledge of OAuth and related security constraints. MCP servers acted as OAuth 2.0 Authorization Servers, managing the required user authentication directly rather than delegating it to an external service such as Microsoft Entra ID. As of 26 April 2025, an update to the MCP specification allows for MCP servers to delegate user authentication to an external service.
+The original MCP specification assumed that developers would write their own authentication server. This required knowledge of OAuth and related security constraints. MCP servers acted as OAuth 2.0 Authorization Servers, managing the required user authentication directly rather than delegating it to an external service such as Microsoft Entra ID. As of **26 April 2025**, an update to the MCP specification allows for MCP servers to delegate user authentication to an external service.
 
 ### Risks
 - Misconfigured authorization logic in the MCP server can lead to sensitive data exposure and incorrectly applied access controls.
 - OAuth token theft on the local MCP server. If stolen, the token can then be used to impersonate the MCP server and access resources and data from the service that the OAuth token is for.
 
+#### Token Passthrough
+Token passthrough is explicitly forbidden in the authorization specification as it introduces a number of security risks, that include:
+
+#### Security Control Circumvention
+The MCP Server or downstream APIs might implement important security controls like rate limiting, request validation, or traffic monitoring, that depend on the token audience or other credential constraints. If clients can obtain and use tokens directly with the downstream APIs without the MCP server validating them properly or ensuring that the tokens are issued for the right service, they bypass these controls.
+
+#### Accountability and Audit Trail Issues
+The MCP Server will be unable to identify or distinguish between MCP Clients when clients are calling with an upstream-issued access token which may be opaque to the MCP Server.
+The downstream Resource Server’s logs may show requests that appear to come from a different source with a different identity, rather than the MCP server that is actually forwarding the tokens.
+Both factors make incident investigation, controls, and auditing more difficult.
+If the MCP Server passes tokens without validating their claims (e.g., roles, privileges, or audience) or other metadata, a malicious actor in possession of a stolen token can use the server as a proxy for data exfiltration.
+
+#### Trust Boundary Issues
+The downstream Resource Server grants trust to specific entities. This trust might include assumptions about origin or client behavior patterns. Breaking this trust boundary could lead to unexpected issues.
+If the token is accepted by multiple services without proper validation, an attacker compromising one service can use the token to access other connected services.
+
+#### Future Compatibility Risk
+Even if an MCP Server starts as a “pure proxy” today, it might need to add security controls later. Starting with proper token audience separation makes it easier to evolve the security model.
+
 ### Mitigating controls
+
+**MCP servers MUST NOT accept any tokens that were not explicitly issued for the MCP server**
+
 - **Review and Harden Authorization Logic:** Carefully audit your MCP server’s authorization implementation to ensure only intended users and clients can access sensitive resources. For practical guidance, see [Azure API Management Your Auth Gateway For MCP Servers | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) and [Using Microsoft Entra ID To Authenticate With MCP Servers Via Sessions - Den Delimarsky](https://den.dev/blog/mcp-server-auth-entra-id-session/).
 - **Enforce Secure Token Practices:** Follow [Microsoft’s best practices for token validation and lifetime](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens) to prevent misuse of access tokens and reduce the risk of token replay or theft.
 - **Protect Token Storage:** Always store tokens securely and use encryption to safeguard them at rest and in transit. For implementation tips, see [Use secure token storage and encrypt tokens](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2).
@@ -152,6 +172,7 @@ Any MCP implementation inherits the existing security posture of your organizati
 - [Best Practices for Token Validation and Lifetime](https://learn.microsoft.com/entra/identity-platform/access-tokens)
 - [Use Secure Token Storage and Encrypt Tokens (YouTube)](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)
 - [Azure API Management as Auth Gateway for MCP](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
+- [MCP Security Best Practice](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 - [Using Microsoft Entra ID to Authenticate with MCP Servers](https://den.dev/blog/mcp-server-auth-entra-id-session/)
 
 ### Next 
