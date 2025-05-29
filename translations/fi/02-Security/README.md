@@ -1,116 +1,119 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "98be664d3b19a81ee24fa3f920233864",
-  "translation_date": "2025-05-20T23:15:04+00:00",
+  "original_hash": "f00aedb7b1d11b7eaacb0618d8791c65",
+  "translation_date": "2025-05-29T23:25:14+00:00",
   "source_file": "02-Security/README.md",
   "language_code": "fi"
 }
 -->
 # Security Best Practices
 
-Model Context Protocolin (MCP) käyttöönotto tuo tekoälypohjaisiin sovelluksiin tehokkaita uusia ominaisuuksia, mutta samalla se tuo mukanaan ainutlaatuisia tietoturvahaasteita, jotka ylittävät perinteiset ohjelmistoriskit. Vakiintuneiden asioiden, kuten turvallisen koodauksen, vähimmän oikeuden periaatteen ja toimitusketjun turvallisuuden lisäksi MCP ja tekoälykuormitukset kohtaavat uusia uhkia, kuten promptin manipulointi, työkalujen myrkyttäminen ja työkalujen dynaaminen muokkaus. Näitä riskejä ei hallita oikein, ne voivat johtaa tietovuotoihin, yksityisyyden loukkauksiin ja odottamattomiin järjestelmän toimintoihin.
+Model Context Protocolin (MCP) käyttöönotto tuo tekoälypohjaisiin sovelluksiin tehokkaita uusia ominaisuuksia, mutta myös ainutlaatuisia turvallisuushaasteita, jotka ylittävät perinteiset ohjelmistoriskit. Vakiintuneiden asioiden, kuten turvallisen koodauksen, vähimmän oikeuden periaatteen ja toimitusketjun turvallisuuden lisäksi MCP- ja tekoälykuormitukset kohtaavat uusia uhkia, kuten prompttien injektoinnin, työkalujen myrkytyksen ja dynaamisen työkalumuokkauksen. Näihin riskeihin liittyy tietovuotoja, yksityisyyden loukkauksia ja odottamattomia järjestelmäkäyttäytymisiä, jos niitä ei hallita asianmukaisesti.
 
-Tässä oppitunnissa käsitellään MCP:hen liittyviä keskeisimpiä tietoturvariskejä — kuten todennus, valtuutus, liialliset käyttöoikeudet, epäsuora promptin manipulointi ja toimitusketjun haavoittuvuudet — ja tarjotaan käytännön ohjeita ja parhaita käytäntöjä niiden hallitsemiseksi. Opit myös hyödyntämään Microsoftin ratkaisuja, kuten Prompt Shields, Azure Content Safety ja GitHub Advanced Security, vahvistaaksesi MCP:n toteutustasi. Näiden hallintakeinojen ymmärtäminen ja soveltaminen auttaa merkittävästi vähentämään tietoturvaloukkauksen riskiä ja varmistamaan, että tekoälyjärjestelmäsi pysyvät luotettavina ja turvallisina.
+Tässä oppitunnissa käsitellään MCP:hen liittyviä keskeisimpiä turvallisuusriskejä — kuten todennus, valtuutus, liialliset käyttöoikeudet, epäsuora prompttien injektointi ja toimitusketjun haavoittuvuudet — sekä tarjotaan käytännön hallintakeinoja ja parhaita käytäntöjä niiden lieventämiseksi. Opit myös hyödyntämään Microsoftin ratkaisuja, kuten Prompt Shields, Azure Content Safety ja GitHub Advanced Security, vahvistaaksesi MCP-toteutustasi. Näiden kontrollien ymmärtäminen ja soveltaminen auttaa merkittävästi vähentämään tietoturvaloukkauksen riskiä ja varmistamaan, että tekoälyjärjestelmäsi pysyvät luotettavina ja kestävinä.
 
 # Learning Objectives
 
-Tämän oppitunnin jälkeen osaat:
+Tämän oppitunnin lopuksi osaat:
 
-- Tunnistaa ja selittää Model Context Protocolin (MCP) tuomat ainutlaatuiset tietoturvariskit, kuten promptin manipuloinnin, työkalujen myrkyttämisen, liialliset käyttöoikeudet ja toimitusketjun haavoittuvuudet.
-- Kuvailla ja soveltaa tehokkaita hallintakeinoja MCP:n tietoturvariskien vähentämiseksi, kuten vahvaa todennusta, vähimmän oikeuden periaatetta, turvallista tokenien hallintaa ja toimitusketjun varmennusta.
-- Ymmärtää ja hyödyntää Microsoftin ratkaisuja, kuten Prompt Shields, Azure Content Safety ja GitHub Advanced Security, MCP:n ja tekoälykuormien suojaamiseksi.
-- Tunnistaa työkalujen metatietojen validoinnin, dynaamisten muutosten seurannan ja epäsuorien promptin manipulointihyökkäysten torjunnan merkityksen.
-- Sisällyttää vakiintuneita tietoturvakäytäntöjä — kuten turvallista koodausta, palvelimen koventamista ja zero trust -arkkitehtuuria — MCP:n toteutukseen vähentääksesi tietoturvaloukkausten riskiä ja vaikutuksia.
+- Tunnistaa ja selittää Model Context Protocolin (MCP) aiheuttamat ainutlaatuiset turvallisuusriskit, kuten prompttien injektoinnin, työkalujen myrkytyksen, liialliset käyttöoikeudet ja toimitusketjun haavoittuvuudet.
+- Kuvailla ja soveltaa tehokkaita lieventäviä toimenpiteitä MCP:n turvallisuusriskeihin, kuten vahvaa todennusta, vähimmän oikeuden periaatetta, turvallista tokenien hallintaa ja toimitusketjun varmistusta.
+- Ymmärtää ja hyödyntää Microsoftin ratkaisuja, kuten Prompt Shields, Azure Content Safety ja GitHub Advanced Security, MCP:n ja tekoälykuormitusten suojaamiseen.
+- Tunnistaa työkalumetadatan validoinnin, dynaamisten muutosten seurannan ja epäsuorien prompttien injektointihyökkäysten torjunnan merkityksen.
+- Sisällyttää vakiintuneita turvallisuusparhaita käytäntöjä — kuten turvallinen koodaus, palvelimen koventaminen ja zero trust -arkkitehtuuri — MCP-toteutukseesi vähentääksesi tietoturvaloukkausten todennäköisyyttä ja vaikutuksia.
 
 # MCP security controls
 
-Järjestelmillä, joilla on pääsy tärkeisiin resursseihin, on luonnollisesti tietoturvahaasteita. Nämä haasteet voidaan yleensä ratkaista soveltamalla oikein perusperiaatteita ja hallintakeinoja. Koska MCP on vasta uusi määritelmä, sen spesifikaatio kehittyy nopeasti. Protokollan kehittyessä myös sen tietoturvatoimenpiteet kypsyvät, mahdollistaen paremman integraation yritys- ja vakiintuneisiin tietoturva-arkkitehtuureihin ja parhaisiin käytäntöihin.
+Järjestelmillä, joilla on pääsy tärkeisiin resursseihin, on luonnollisesti turvallisuushaasteita. Turvallisuusongelmat voidaan yleensä ratkaista soveltamalla oikein perusturvallisuuskontrolleja ja -periaatteita. Koska MCP on vasta hiljattain määritelty, sen spesifikaatio muuttuu nopeasti ja protokolla kehittyy. Lopulta siihen sisältyvät turvallisuuskontrollit kypsyvät, mikä mahdollistaa paremman integraation yritystason ja vakiintuneiden turvallisuusarkkitehtuurien ja parhaiden käytäntöjen kanssa.
 
-Microsoftin [Digital Defense Reportissa](https://aka.ms/mddr) julkaistu tutkimus osoittaa, että 98 % raportoituja tietoturvaloukkauksia olisi estetty vahvalla tietoturvahygeinalla. Paras suoja minkä tahansa loukkauksen varalta on saada perusasiat kuntoon — turvallinen koodaus, vähimmän oikeuden periaate ja toimitusketjun turvallisuus — nämä tutkitut ja todistetut käytännöt ovat edelleen tehokkaimpia keinoja vähentää tietoturvariskejä.
+[Microsoft Digital Defense Report](https://aka.ms/mddr) -raportin mukaan 98 % raportoituista tietomurroista olisi estettävissä vahvalla turvallisuushygienialla. Paras suoja minkä tahansa loukkauksen varalta onkin saada perusturvallisuushygienia, turvallisen koodauksen parhaat käytännöt ja toimitusketjun turvallisuus kuntoon — ne tutkitut ja testatut käytännöt, jotka jo tiedämme, ovat edelleen tehokkaimpia turvallisuusriskien vähentämisessä.
 
-Katsotaanpa joitakin keinoja, joilla voit alkaa hallita tietoturvariskejä MCP:n käyttöönotossa.
+Katsotaanpa joitakin tapoja, joilla voit aloittaa turvallisuusriskien käsittelyn MCP:n käyttöönotossa.
 
-# MCP server authentication (if your MCP implementation was before 26th April 2025)
+> **Note:** Seuraavat tiedot ovat voimassa **29. toukokuuta 2025**. MCP-protokolla kehittyy jatkuvasti, ja tulevat toteutukset voivat tuoda uusia todennusmalleja ja kontrollikeinoja. Viimeisimmät päivitykset ja ohjeet löydät aina [MCP Specification](https://spec.modelcontextprotocol.io/), virallisesta [MCP GitHub repository](https://github.com/modelcontextprotocol) ja [security best practice page](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices) -sivuilta.
 
-> **Note:** Seuraavat tiedot ovat voimassa 26.4.2025 asti. MCP-protokolla kehittyy jatkuvasti, ja tulevissa toteutuksissa voi olla uusia todennusmalleja ja hallintakeinoja. Ajantasaiset tiedot ja ohjeet löytyvät aina [MCP Specification](https://spec.modelcontextprotocol.io/) -sivustolta ja virallisesta [MCP GitHub -repositoriosta](https://github.com/modelcontextprotocol).
+### Problem statement  
+Alkuperäinen MCP-spesifikaatio oletti, että kehittäjät kirjoittaisivat oman todennuspalvelimensa. Tämä edellytti OAuthiin ja siihen liittyviin turvallisuusrajoitteisiin perehtymistä. MCP-palvelimet toimivat OAuth 2.0 -valtuutuspalvelimina, hoitaen käyttäjän todennuksen suoraan sen sijaan, että delegoisivat sen ulkoiselle palvelulle, kuten Microsoft Entra ID:lle. Päivityksen myötä 26.4.2025 alkaen MCP-palvelimet voivat delegoida käyttäjien todennuksen ulkoiselle palvelulle.
 
-### Ongelman kuvaus  
-Alkuperäinen MCP-spesifikaatio oletti, että kehittäjät kirjoittaisivat oman todennuspalvelimensa. Tämä edellytti OAuth-osaamista ja siihen liittyvien tietoturvarajoitteiden hallintaa. MCP-palvelimet toimivat OAuth 2.0 -valtuutuspalvelimina, hoitaen käyttäjien todennuksen itse sen sijaan, että olisivat delegoineet sen ulkoiselle palvelulle, kuten Microsoft Entra ID:lle. 26.4.2025 julkaistu MCP-spesifikaation päivitys mahdollistaa MCP-palvelimien delegoida käyttäjien todennuksen ulkoiselle palvelulle.
+### Risks
+- MCP-palvelimen valtuutuslogiikan väärä konfigurointi voi johtaa arkaluontoisen tiedon vuotamiseen ja virheellisiin käyttöoikeuksiin.
+- OAuth-tokenin varastaminen paikalliselta MCP-palvelimelta. Jos token varastetaan, sitä voidaan käyttää esiintymään MCP-palvelimena ja pääsemään käsiksi palvelun resursseihin ja tietoihin, joita token koskee.
 
-### Riskit
-- Virheellisesti konfiguroitu valtuutuslogiikka MCP-palvelimessa voi johtaa arkaluonteisen tiedon vuotamiseen ja väärin sovellettuihin pääsynhallintoihin.
-- OAuth-tokenin varastaminen paikalliselta MCP-palvelimelta. Jos token varastetaan, sitä voidaan käyttää palvelimen henkilöllisyyden väärentämiseen ja pääsyn saamiseen tokenin kohteena oleviin resursseihin ja tietoihin.
+#### Token Passthrough  
+Tokenin suora välitys on valtuutusspesifikaatiossa nimenomaan kielletty, koska se aiheuttaa useita turvallisuusriskejä, kuten:
 
-### Hallintakeinot
-- **Tarkista ja kovenna valtuutuslogiikkaa:** Tarkista huolellisesti MCP-palvelimesi valtuutusmekanismit varmistaaksesi, että vain tarkoitetut käyttäjät ja asiakkaat pääsevät arkaluonteisiin resursseihin. Käytännön ohjeita löydät mm. [Azure API Management Your Auth Gateway For MCP Servers | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) ja [Using Microsoft Entra ID To Authenticate With MCP Servers Via Sessions - Den Delimarsky](https://den.dev/blog/mcp-server-auth-entra-id-session/).
-- **Noudata turvallisia token-käytäntöjä:** Seuraa [Microsoftin parhaita käytäntöjä tokenien validointiin ja elinkaareen](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens) estääksesi tokenien väärinkäytön ja vähentääksesi tokenien uudelleenkäytön tai varastamisen riskiä.
-- **Suojaa tokenien tallennus:** Säilytä tokenit aina turvallisesti ja käytä salausta niiden suojaamiseksi levossa ja siirrossa. Toteutusvinkkejä löydät [Use secure token storage and encrypt tokens](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2) -videolta.
+#### Turvallisuuskontrollien ohittaminen  
+MCP-palvelin tai alavirran API:t voivat toteuttaa tärkeitä turvakontrolleja, kuten pyyntöjen rajoituksia, validointia tai liikenteen seurantaa, jotka perustuvat tokenin kohdeyleisöön tai muihin tunnistetietoihin. Jos asiakkaat voivat saada ja käyttää tokeneita suoraan alavirran API:en kanssa ilman, että MCP-palvelin validoi niitä oikein tai varmistaa, että tokenit on myönnetty oikealle palvelulle, nämä kontrollit ohitetaan.
+
+#### Vastuu ja auditointiongelmat  
+MCP-palvelin ei pysty tunnistamaan tai erottamaan MCP-asiakkaita, kun asiakkaat kutsuvat ylävirran myönnetyllä access tokenilla, joka voi olla MCP-palvelimelle läpinäkymätön.  
+Alavirran resurssipalvelimen lokit saattavat näyttää pyyntöjä, jotka vaikuttavat tulevan eri lähteestä eri identiteetillä kuin MCP-palvelimelta, joka oikeasti välittää tokenit.  
+Molemmat tekijät vaikeuttavat tapaustutkintaa, kontrollien toimeenpanoa ja auditointia.  
+Jos MCP-palvelin välittää tokeneita ilman niiden väitteiden (esim. roolit, oikeudet tai kohdeyleisö) tai muun metadatan validointia, pahantahtoinen toimija, jolla on varastettu token, voi käyttää palvelinta välityspalvelimena tietovuotoon.
+
+#### Luottamusrajat  
+Alavirran resurssipalvelin luottaa tiettyihin tahoihin. Tämä luottamus voi sisältää oletuksia alkuperästä tai asiakaskäyttäytymismalleista. Tämän luottamusrajan rikkominen voi johtaa odottamattomiin ongelmiin.  
+Jos token hyväksytään useissa palveluissa ilman asianmukaista validointia, hyökkääjä, joka on kompromissannut yhden palvelun, voi käyttää tokenia päästäkseen muihin yhdistettyihin palveluihin.
+
+#### Tulevaisuuden yhteensopivuusriski  
+Vaikka MCP-palvelin aloittaisi tänään “puhtaana välityspalvelimena”, sen saattaa myöhemmin olla tarpeen lisätä turvakontrolleja. Oikean tokenin kohdeyleisön erottelun aloittaminen helpottaa turvallisuusmallin kehittämistä.
+
+### Mitigating controls
+
+**MCP-palvelimet EIVÄT SAA HYVÄKSYÄ tokenia, joita ei nimenomaisesti ole myönnetty MCP-palvelimelle**
+
+- **Tarkasta ja vahvista valtuutuslogiikka:** Tarkasta huolellisesti MCP-palvelimesi valtuutus toteutus varmistaaksesi, että vain tarkoitetut käyttäjät ja asiakkaat pääsevät arkaluontoisiin resursseihin. Käytännön ohjeita löydät [Azure API Management Your Auth Gateway For MCP Servers | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) ja [Using Microsoft Entra ID To Authenticate With MCP Servers Via Sessions - Den Delimarsky](https://den.dev/blog/mcp-server-auth-entra-id-session/) -artikkeleista.
+- **Noudattakaa turvallisia token-käytäntöjä:** Noudata [Microsoftin parhaita käytäntöjä tokenien validointiin ja elinkaareen](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens) estääksesi tokenien väärinkäytön ja vähentääksesi tokenin toistokäytön tai varastamisen riskiä.
+- **Suojaa tokenien tallennus:** Säilytä tokenit aina turvallisesti ja käytä salausmenetelmiä niiden suojaamiseksi levossa ja siirrossa. Toteutusvinkkejä löydät [Use secure token storage and encrypt tokens](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2) -videolta.
 
 # Excessive permissions for MCP servers
 
-### Ongelman kuvaus  
-MCP-palvelimille on voitu myöntää liialliset käyttöoikeudet niihin palveluihin tai resursseihin, joihin ne pääsevät käsiksi. Esimerkiksi MCP-palvelin, joka on osa tekoälypohjaista myyntisovellusta ja yhdistyy yrityksen tietovarastoon, tulisi saada käyttöoikeudet rajattuna vain myyntitietoihin, eikä sen tulisi päästä käsiksi kaikkiin varaston tiedostoihin. Paluu vähimmän oikeuden periaatteeseen (yksi vanhimmista tietoturvaperiaatteista) korostaa, ettei resurssilla tulisi olla oikeuksia enempää kuin mitä sen tehtävien suorittaminen vaatii. Tekoäly lisää haasteita, koska sen joustavuuden mahdollistamiseksi on vaikea määritellä tarkasti tarvittavat oikeudet.
+### Problem statement  
+MCP-palvelimille on voitu myöntää liialliset käyttöoikeudet palveluun tai resurssiin, johon ne pääsevät käsiksi. Esimerkiksi MCP-palvelin, joka on osa tekoälypohjaista myyntisovellusta ja yhdistyy yrityksen tietovarastoon, tulisi rajata pääsy myyntitietoihin eikä sallia pääsyä kaikkiin varaston tiedostoihin. Viitaten vähimmän oikeuden periaatteeseen (yksi vanhimmista turvallisuusperiaatteista), mikään resurssi ei saisi saada käyttöoikeuksia, jotka ylittävät sen tarvitsemat tehtävät. Tekoäly tuo tähän haasteita, koska joustavuuden mahdollistamiseksi on vaikeaa määritellä tarkasti tarvittavat oikeudet.
 
-### Riskit  
-- Liialliset oikeudet voivat mahdollistaa tietojen poistamisen tai muokkaamisen, mihin MCP-palvelimen ei olisi tarkoitus päästä käsiksi. Tämä voi myös aiheuttaa yksityisyysongelmia, jos tiedot sisältävät henkilötietoja (PII).
+### Risks  
+- Liiallisten käyttöoikeuksien myöntäminen voi mahdollistaa tietovuodot tai tietojen muokkaamisen, joihin MCP-palvelimen ei ollut tarkoitus päästä käsiksi. Tämä voi olla myös yksityisyysongelma, jos data sisältää henkilötietoja (PII).
 
-### Hallintakeinot  
-- **Sovella vähimmän oikeuden periaatetta:** Myönnä MCP-palvelimelle vain ne vähimmäisoikeudet, jotka sen tehtävien suorittamiseen tarvitaan. Tarkista ja päivitä nämä oikeudet säännöllisesti, jotta ne eivät ylitä tarpeellista tasoa. Tarkempaa ohjeistusta löytyy [Secure least-privileged access](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access) -sivulta.
-- **Käytä roolipohjaista pääsynhallintaa (RBAC):** Määritä MCP-palvelimelle roolit, jotka on tiukasti rajattu tiettyihin resursseihin ja toimiin, välttäen laajoja tai tarpeettomia oikeuksia.
-- **Seuraa ja tarkasta käyttöoikeuksia:** Valvo käyttöoikeuksien käyttöä jatkuvasti ja tee pääsylokien auditointeja, jotta liialliset tai käyttämättömät oikeudet voidaan havaita ja korjata nopeasti.
+### Mitigating controls  
+- **Sovella vähimmän oikeuden periaatetta:** Myönnä MCP-palvelimelle vain välttämättömät oikeudet sen tehtävien suorittamiseen. Tarkista ja päivitä käyttöoikeuksia säännöllisesti varmistaaksesi, etteivät ne ylitä tarpeellista. Tarkempia ohjeita löydät [Secure least-privileged access](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access) -sivulta.
+- **Käytä roolipohjaista käyttöoikeuksien hallintaa (RBAC):** Määrittele MCP-palvelimelle roolit, jotka ovat tiukasti rajattuja tiettyihin resursseihin ja toimiin, välttäen laajoja tai tarpeettomia oikeuksia.
+- **Valvo ja auditoi käyttöoikeuksia:** Seuraa jatkuvasti käyttöoikeuksien käyttöä ja auditointilokeja havaitaksesi ja korjataksesi liialliset tai käyttämättömät oikeudet nopeasti.
 
 # Indirect prompt injection attacks
 
-### Ongelman kuvaus
+### Problem statement
 
-Vihamieliset tai kompromettoidut MCP-palvelimet voivat aiheuttaa merkittäviä riskejä paljastamalla asiakastietoja tai mahdollistamalla ei-toivottuja toimintoja. Nämä riskit ovat erityisen tärkeitä tekoäly- ja MCP-pohjaisissa kuormissa, joissa:
+Pahantahtoiset tai kompromissatut MCP-palvelimet voivat aiheuttaa merkittäviä riskejä paljastamalla asiakastietoja tai sallimalla ei-toivottuja toimintoja. Nämä riskit ovat erityisen merkittäviä tekoäly- ja MCP-pohjaisissa kuormituksissa, joissa:
 
-- **Prompt Injection -hyökkäykset:** Hyökkääjät upottavat haitallisia ohjeita promptteihin tai ulkoiseen sisältöön, jolloin tekoälyjärjestelmä suorittaa ei-toivottuja toimintoja tai vuotaa arkaluonteisia tietoja. Lisätietoja: [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
-- **Tool Poisoning:** Hyökkääjät manipuloivat työkalujen metatietoja (kuten kuvauksia tai parametreja) vaikuttaakseen tekoälyn käyttäytymiseen, mahdollistaen tietoturvatoimien ohittamisen tai tietovuodot. Lisätietoja: [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
-- **Cross-Domain Prompt Injection:** Haitalliset ohjeet on upotettu dokumentteihin, verkkosivuihin tai sähköposteihin, joita tekoäly käsittelee, mikä johtaa tietovuotoihin tai manipulointiin.
-- **Dynaaminen työkalumuokkaus (Rug Pulls):** Työkalumäärittelyjä voidaan muuttaa käyttäjän hyväksynnän jälkeen, jolloin uusia haitallisia toimintoja voidaan lisätä käyttäjän tietämättä.
+- **Prompt Injection -hyökkäykset:** Hyökkääjät upottavat haitallisia ohjeita kehotteisiin tai ulkoiseen sisältöön, saaden tekoälyn suorittamaan ei-toivottuja toimintoja tai vuotamaan arkaluontoisia tietoja. Lisätietoja: [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
+- **Tool Poisoning:** Hyökkääjät manipuloivat työkalujen metadataa (kuten kuvauksia tai parametreja) vaikuttaakseen tekoälyn käyttäytymiseen, mahdollisesti ohittaen turvakontrollit tai vuotaen tietoja. Lisätietoja: [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
+- **Ristiin-domain prompttien injektointi:** Haitalliset ohjeet upotetaan dokumentteihin, verkkosivuille tai sähköposteihin, joita tekoäly sitten käsittelee, johtuen tietovuotoihin tai manipulointiin.
+- **Dynaaminen työkalumuokkaus (Rug Pulls):** Työkalumäärittelyjä voidaan muuttaa käyttäjän hyväksynnän jälkeen, tuoden uusia haitallisia toimintoja ilman käyttäjän tietämystä.
 
-Nämä haavoittuvuudet korostavat vahvan validoinnin, valvonnan ja tietoturvatoimien tarvetta MCP-palvelimien ja työkalujen integroinnissa ympäristöösi. Tarkempaa tietoa löytyy yllä mainituista lähteistä.
+Nämä haavoittuvuudet korostavat tarvetta vahvalle validoinnille, seurannalle ja turvallisuuskontrolleille, kun MCP-palvelimia ja työkaluja integroidaan ympäristöösi. Syvällisempää tietoa löydät yllä olevista linkeistä.
 
 ![prompt-injection-lg-2048x1034](../../../translated_images/prompt-injection.ed9fbfde297ca877c15bc6daa808681cd3c3dc7bf27bbbda342ef1ba5fc4f52d.fi.png)
 
-**Epäsuora promptin manipulointi** (tunnetaan myös nimellä cross-domain prompt injection tai XPIA) on vakava haavoittuvuus generatiivisissa tekoälyjärjestelmissä, mukaan lukien MCP:tä käyttävät. Tässä hyökkäyksessä haitalliset ohjeet piilotetaan ulkoiseen sisältöön — kuten dokumentteihin, verkkosivuille tai sähköposteihin. Kun tekoäly käsittelee tätä sisältöä, se saattaa tulkita upotetut ohjeet laillisiksi käyttäjän komennoiksi, mikä johtaa ei-toivottuihin toimintoihin kuten tietovuotoihin, haitallisen sisällön tuottamiseen tai käyttäjävuorovaikutusten manipulointiin. Tarkempi selitys ja esimerkit löytyvät osoitteesta [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/).
+**Epäsuora prompttien injektointi** (tunnetaan myös nimellä ristiindomain prompttien injektointi tai XPIA) on kriittinen haavoittuvuus generatiivisissa tekoälyjärjestelmissä, mukaan lukien MCP:tä käyttävät. Tässä hyökkäyksessä haitalliset ohjeet piilotetaan ulkoiseen sisältöön — kuten dokumentteihin, verkkosivuille tai sähköposteihin. Kun tekoäly käsittelee tätä sisältöä, se saattaa tulkita upotetut ohjeet laillisiksi käyttäjän komennoiksi, mikä johtaa ei-toivottuihin toimintoihin, kuten tietovuotoihin, haitallisen sisällön luomiseen tai käyttäjävuorovaikutuksen manipulointiin. Tarkempi selitys ja käytännön esimerkit löytyvät osoitteesta [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/).
 
-Erityisen vaarallinen muoto tästä hyökkäyksestä on **Tool Poisoning**. Tässä hyökkääjät injektoivat haitallisia ohjeita MCP-työkalujen metatietoihin (kuten työkalun kuvauksiin tai parametreihin). Koska suuret kielimallit (LLM:t) käyttävät näitä metatietoja päättääkseen, mitä työkaluja kutsutaan, kompromettoidut kuvaukset voivat huijata mallia suorittamaan luvattomia työkalukutsuja tai ohittamaan tietoturvatoimet. Nämä manipuloinnit ovat usein näkymättömiä loppukäyttäjille, mutta tekoälyjärjestelmä voi tulkita ja toimia niiden mukaan. Tämä riski korostuu isännöidyissä MCP-palvelinympäristöissä, joissa työkalumäärittelyjä voidaan päivittää käyttäjän hyväksynnän jälkeen — tilanne, jota kutsutaan joskus "[rug pulliksi](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)". Tällöin aiemmin turvallinen työkalu saatetaan myöhemmin muuttaa suorittamaan haitallisia toimintoja, kuten tietovuotoja tai järjestelmän käyttäytymisen muuttamista, ilman käyttäjän tietoa. Lisätietoja tästä hyökkäysvektorista löytyy osoitteesta [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
+Erityisen vaarallinen hyökkäysmuoto on **Tool Poisoning**. Tässä hyökkääjät injektoivat haitallisia ohjeita MCP-työkalujen metadataan (kuten työkalun kuvaukseen tai parametreihin). Koska suuret kielimallit (LLM) käyttävät tätä metadataa päättäessään, mitä työkaluja kutsua, manipuloidut kuvaukset voivat huijata mallia suorittamaan valtuuttamattomia työkalukutsuja tai ohittamaan turvakontrollit. Nämä manipulaatiot ovat usein loppukäyttäjille näkymättömiä, mutta tekoälyjärjestelmä voi tulkita ja toimia niiden mukaan. Riski korostuu isännöidyissä MCP-palvelinympäristöissä, joissa työkalumäärittelyjä voidaan päivittää käyttäjän hyväksynnän jälkeen — tilannetta kutsutaan joskus "rug pulliksi" ([rug pull](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)). Tällöin aiemmin turvallinen työkalu voidaan myöhemmin muuttaa suorittamaan haitallisia toimintoja, kuten tietovuotoja tai järjestelmän käyttäytymisen muuttamista, ilman käyttäjän tietoa. Lisätietoa tästä hyökkäysvektorista löytyy [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks) -artikkelista.
 
 ![tool-injection-lg-2048x1239 (1)](../../../translated_images/tool-injection.3b0b4a6b24de6befe7d3afdeae44138ef005881aebcfc84c6f61369ce31e3640.fi.png)
 
-## Riskit  
-Tekoälyn ei-toivotut toiminnot aiheuttavat erilaisia tietoturvariskejä, kuten tietovuotoja ja yksityisyyden loukkauksia.
+## Risks  
+Ei-toivotut tekoälytoiminnot aiheuttavat monenlaisia turvallisuusriskejä, kuten tietovuotoja ja yksityisyysloukkauksia.
 
-### Hallintakeinot  
-### Prompt Shieldsin käyttö epäsuoria promptin manipulointihyökkäyksiä vastaan
+### Mitigating controls  
+### Prompt Shieldsien käyttö epäsuoria prompttien injektointihyökkäyksiä vastaan  
 -----------------------------------------------------------------------------
 
-**AI Prompt Shields** on Microsoftin kehittämä ratkaisu, joka suojaa sekä suoralta että epäsuoralta promptin manipuloinnilta. Ne auttavat seuraavasti:
+**AI Prompt Shields** ovat Microsoftin kehittämä ratkaisu, joka suojaa sekä suoralta että epäsuoralta prompttien injektoinnilta. Ne auttavat seuraavilla tavoilla:
 
-1.  **Havaitseminen ja suodatus:** Prompt Shields käyttävät kehittyneitä koneoppimisalgoritmeja ja luonnollisen kielen käsittelyä tunnistaakseen ja suodattaakseen haitalliset ohjeet ulkoisessa sisällössä, kuten dokumenteissa, verkkosivuilla tai sähköposteissa.
+1.  **Havaitseminen ja suodatus:** Prompt Shields hyödyntävät edistynyttä koneoppimista ja luonnollisen kielen käsittelyä tunnistaakseen ja suodattaakseen haitalliset ohjeet, jotka on upotettu ulkoiseen sisältöön, kuten dokumentteihin, verkkosivuille tai sähköposteihin.
     
-2.  **Spotlighting:** Tämä tekniikka auttaa tekoälyä erottamaan lailliset järjestelmäohjeet epäluotettavista ulkoisista syötteistä. Muokkaamalla syötetekstiä mallille merkityksellisempään muotoon Spotlighting varmistaa, että tekoäly tunnistaa ja ohittaa haitalliset ohjeet paremmin.
-    
-3.  **Erotinmerkit ja datamerkinnät:** Järjestelmäviestiin sisällytettävät erotinmerkit määrittävät selkeästi syötteen sijainnin, auttaen tekoälyä erottamaan käyttäjän syötteet mahdollisesti haitallisesta ulkoisesta sisällöstä. Datamerkinnät laajentavat tätä konseptia käyttämällä erityisiä merkkejä korostamaan luotettujen ja epäluotettujen tietojen rajat.
-    
-4.  **Jatkuva valvonta ja päivitykset:** Microsoft valvoo ja päivittää Prompt Shields -ratkaisua jatkuvasti uusien ja kehittyvien uhkien torjumiseksi. Tämä ennakoiva lähestymistapa varmistaa, että puolustukset pysyvät tehokkaina uusimpia hyökkäystekniikoita vastaan.
-    
-5. **Integrointi Azure Content Safetyn kanssa:** Prompt Shields ovat osa laajempaa Azure AI Content Safety -kokonaisuutta, joka tarjoaa lisätyökaluja jailbreak-hyökkäysten, haitallisen sisällön ja muiden tekoälyn tietoturvariskien havaitsemiseen.
-
-Lisätietoja AI prompt shields -ratkaisusta löytyy [Prompt Shields documentation](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection) -sivustolta.
-
-![prompt-shield-lg-2048x1328](../../../translated_images/prompt-shield.ff5b95be76e9c78c6ec0888206a4a6a0a5ab4bb787832a9eceef7a62fe0138d1.fi.png)
-
-### Supply chain security
-
-Toimitusketjun turvallisuus on edelleen keskeistä tekoälyn aikakaudella, mutta toimitusketjun käsitys on laajentunut. Perinteisten koodipakettien lisäksi sinun tulee nyt huolellisesti varmistaa ja valvoa kaikkia tekoälyyn liittyviä komponentteja, mukaan lukien pohjamallit, upotuspalvelut, kontekstin tarjoajat ja kolmannen osapuolen API:t. Jokainen näistä voi tuoda haavoittuvuuksia tai riskejä, jos niitä ei hallita asianmukaisesti.
-
-**Keskeiset toimitusketjun turvallisuuskäytännöt tekoälylle ja MCP:lle:**
-- **Varmista kaikki komponentit ennen integrointia:** Tämä koskee paitsi avoimen lähdekoodin kirjastoja, myös tekoälymalleja, tietolähteitä ja ulkoisia API-rajapintoja. Tarkista aina alkuperä, lisenssit ja tunnetut haavoittuvuudet.
-- **Ylläpidä turvallisia käyttöönotto-putkia:** Käytä automatisoituja CI/CD-putkia, joissa on integroitu tietoturvaskannaus ongelmien varhaiseen havaitsemiseen. Varmista, että tuot
+2.  **Spotlighting:** Tämä tekniikka auttaa tekoälyä erottamaan pätevät järjestelmäohjeet mahdollisesti epäluotettavista ulkoisista syötteistä. Muokkaamalla syötteen tekstiä mallille merkityksellisemmäksi Spotlighting
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
 - [OWASP Top 10 for LLMs](https://genai.owasp.org/download/43299/?tmstv=1731900559)
 - [GitHub Advanced Security](https://github.com/security/advanced-security)
 - [Azure DevOps](https://azure.microsoft.com/products/devops)
@@ -120,6 +123,7 @@ Toimitusketjun turvallisuus on edelleen keskeistä tekoälyn aikakaudella, mutta
 - [Best Practices for Token Validation and Lifetime](https://learn.microsoft.com/entra/identity-platform/access-tokens)
 - [Use Secure Token Storage and Encrypt Tokens (YouTube)](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)
 - [Azure API Management as Auth Gateway for MCP](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
+- [MCP Security Best Practice](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 - [Using Microsoft Entra ID to Authenticate with MCP Servers](https://den.dev/blog/mcp-server-auth-entra-id-session/)
 
 ### Seuraava
@@ -127,4 +131,4 @@ Toimitusketjun turvallisuus on edelleen keskeistä tekoälyn aikakaudella, mutta
 Seuraava: [Luku 3: Aloittaminen](/03-GettingStarted/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty tekoälypohjaisella käännöspalvelulla [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinkäsityksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää auktoritatiivisena lähteenä. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.
