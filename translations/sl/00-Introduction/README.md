@@ -1,42 +1,42 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "25a94c681cf43612ff394d8cf78a74de",
-  "translation_date": "2025-05-27T16:14:47+00:00",
+  "original_hash": "1446979020432f512c883848d7eca144",
+  "translation_date": "2025-05-29T21:55:41+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "sl"
 }
 -->
 # Introduction to Model Context Protocol (MCP): Zakaj je pomemben za razširljive AI aplikacije
 
-Generativne AI aplikacije so velik korak naprej, saj uporabnikom pogosto omogočajo interakcijo z aplikacijo preko naravnega jezika. Vendar pa, ko vanje vložite več časa in virov, želite zagotoviti, da lahko funkcionalnosti in viri enostavno integrirate na način, ki omogoča razširljivost, da vaša aplikacija podpira več modelov hkrati in obvladuje različne posebnosti modelov. Na kratko, gradnja Gen AI aplikacij je na začetku enostavna, a ko rastejo in postanejo bolj kompleksne, je potrebno začeti definirati arhitekturo in verjetno se boste morali opreti na standard, ki zagotavlja dosledno izdelavo aplikacij. Tu pride MCP, da stvari organizira in zagotovi standard.
+Generativne AI aplikacije so velik korak naprej, saj uporabnikom pogosto omogočajo interakcijo z aplikacijo preko naravnih jezikovnih ukazov. Vendar, ko vanje vložite več časa in virov, želite zagotoviti, da lahko enostavno integrirate funkcionalnosti in vire na način, ki omogoča enostavno razširjanje, da vaša aplikacija podpira več modelov hkrati in obvladuje različne posebnosti modelov. Skratka, gradnja generativnih AI aplikacij je sprva enostavna, a ko rastejo in postajajo bolj kompleksne, morate začeti definirati arhitekturo in verjetno se boste morali zanašati na standard, ki zagotavlja, da so vaše aplikacije zgrajene dosledno. Tu pride MCP, ki organizira stvari in zagotavlja standard.
 
 ---
 
 ## **🔍 Kaj je Model Context Protocol (MCP)?**
 
-**Model Context Protocol (MCP)** je **odprti, standardizirani vmesnik**, ki omogoča velikim jezikovnim modelom (LLM) nemoteno sodelovanje z zunanjimi orodji, API-ji in podatkovnimi viri. Ponuja dosledno arhitekturo za izboljšanje funkcionalnosti AI modelov onkraj njihovih učnih podatkov, kar omogoča pametnejše, razširljivejše in bolj odzivne AI sisteme.
+**Model Context Protocol (MCP)** je **odprt, standardiziran vmesnik**, ki omogoča velikim jezikovnim modelom (LLM) nemoteno sodelovanje z zunanjimi orodji, API-ji in podatkovnimi viri. Ponuja dosledno arhitekturo za izboljšanje funkcionalnosti AI modelov onkraj njihovih učnih podatkov, kar omogoča pametnejše, razširljivejše in odzivnejše AI sisteme.
 
 ---
 
 ## **🎯 Zakaj je standardizacija v AI pomembna**
 
-Ko generativne AI aplikacije postajajo bolj zapletene, je nujno sprejeti standarde, ki zagotavljajo **razširljivost, razširljivost** in **vzdržljivost**. MCP naslavlja te potrebe z:
+Ker generativne AI aplikacije postajajo bolj kompleksne, je nujno sprejeti standarde, ki zagotavljajo **razširljivost, razširljivost** in **vzdržnost**. MCP naslavlja te potrebe z:
 
-- Poenotenjem integracij modelov z orodji
-- Zmanjšanjem krhkih, enkratnih rešitev po meri
-- Omogočanjem soobstoja več modelov v enem ekosistemu
+- Združevanjem integracij model- orodje
+- Zmanjšanjem krhkih, enkratnih prilagojenih rešitev
+- Omogočanjem soobstoja več modelov znotraj enega ekosistema
 
 ---
 
 ## **📚 Cilji učenja**
 
-Na koncu tega članka boste znali:
+Na koncu tega članka boste lahko:
 
-- Opredeliti **Model Context Protocol (MCP)** in njegove primere uporabe
-- Razumeti, kako MCP standardizira komunikacijo med modelom in orodji
-- Prepoznati osnovne komponente MCP arhitekture
-- Raziskati resnične primere uporabe MCP v podjetjih in razvojnih okoljih
+- Definirali **Model Context Protocol (MCP)** in njegove primere uporabe
+- Razumeli, kako MCP standardizira komunikacijo med modelom in orodjem
+- Prepoznali ključne sestavine MCP arhitekture
+- Raziščili praktične primere uporabe MCP v podjetjih in razvoju
 
 ---
 
@@ -46,36 +46,36 @@ Na koncu tega članka boste znali:
 
 Pred MCP je integracija modelov z orodji zahtevala:
 
-- Kodo po meri za vsak par orodje-model
-- Nestandardne API-je za vsakega ponudnika
+- Prilagojeno kodo za vsak par orodje-model
+- Nestandardizirane API-je za vsakega ponudnika
 - Pogoste prekinitve zaradi posodobitev
 - Slabo razširljivost z več orodji
 
 ### **✅ Prednosti standardizacije MCP**
 
-| **Prednost**             | **Opis**                                                                      |
-|-------------------------|-------------------------------------------------------------------------------|
-| Interoperabilnost       | LLM-ji delujejo nemoteno z orodji različnih ponudnikov                       |
-| Konsistentnost          | Enotno vedenje na različnih platformah in orodjih                            |
-| Ponovna uporabnost      | Orodja, zgrajena enkrat, se lahko uporabljajo v različnih projektih in sistemih |
-| Pospešen razvoj         | Zmanjšanje časa razvoja z uporabo standardiziranih, plug-and-play vmesnikov  |
+| **Prednost**             | **Opis**                                                                       |
+|--------------------------|--------------------------------------------------------------------------------|
+| Interoperabilnost        | LLM-ji nemoteno delujejo z orodji različnih ponudnikov                        |
+| Konsistentnost           | Enotno vedenje na različnih platformah in orodjih                             |
+| Ponovna uporaba          | Orodja, zgrajena enkrat, se lahko uporabljajo v različnih projektih in sistemih|
+| Pospešen razvoj          | Zmanjšanje časa razvoja z uporabo standardiziranih, plug-and-play vmesnikov   |
 
 ---
 
-## **🧱 Pregled visoke ravni MCP arhitekture**
+## **🧱 Pregled MCP arhitekture na visoki ravni**
 
 MCP sledi **modelu klient-strežnik**, kjer:
 
-- **MCP gostitelji** poganjajo AI modele
-- **MCP klienti** pošiljajo zahteve
-- **MCP strežniki** nudijo kontekst, orodja in zmogljivosti
+- **MCP Host** poganja AI modele
+- **MCP Client** pošilja zahteve
+- **MCP Server** nudi kontekst, orodja in zmogljivosti
 
-### **Ključne komponente:**
+### **Ključne sestavine:**
 
 - **Viri** – Statični ali dinamični podatki za modele  
-- **Pozivi** – Vnaprej definirani poteki za vodeno generiranje  
+- **Pozivi (Prompts)** – Vnaprej definirani delovni tokovi za usmerjeno generacijo  
 - **Orodja** – Izvedljive funkcije, kot so iskanje, izračuni  
-- **Vzorcevanje** – Agentno vedenje preko rekurzivnih interakcij
+- **Vzorcevanje (Sampling)** – Agentno vedenje preko rekurzivnih interakcij
 
 ---
 
@@ -83,27 +83,31 @@ MCP sledi **modelu klient-strežnik**, kjer:
 
 MCP strežniki delujejo na naslednji način:
 
-- **Potek zahteve**: 
-    1. MCP klient pošlje zahtevo AI modelu, ki teče na MCP gostitelju.
-    2. AI model prepozna, kdaj potrebuje zunanja orodja ali podatke.
-    3. Model komunicira z MCP strežnikom preko standardiziranega protokola.
+- **Potek zahtevka**:  
+    1. MCP Client pošlje zahtevo AI modelu, ki teče v MCP Hostu.  
+    2. AI model prepozna, kdaj potrebuje zunanja orodja ali podatke.  
+    3. Model komunicira z MCP Serverjem preko standardiziranega protokola.
 
-- **Funkcionalnosti MCP strežnika**:
-    - Register orodij: Vodi katalog razpoložljivih orodij in njihovih zmogljivosti.
-    - Avtentikacija: Preverja dovoljenja za dostop do orodij.
-    - Obdelava zahtev: Procesira prihajajoče zahteve za orodja iz modela.
-    - Oblikovalec odgovorov: Strukturira izhode orodij v format, ki ga model razume.
+- **Funkcionalnosti MCP Serverja**:  
+    - Registracija orodij: Vodi katalog razpoložljivih orodij in njihovih zmogljivosti.  
+    - Avtentikacija: Preverja dovoljenja za dostop do orodij.  
+    - Obdelava zahtev: Obravnava dohodne zahteve za orodja iz modela.  
+    - Oblikovanje odgovorov: Strukturira izhode orodij v obliki, ki jo model razume.
 
-- **Izvajanje orodij**: 
-    - Strežnik usmerja zahteve na ustrezna zunanja orodja
-    - Orodja izvajajo svoje specializirane funkcije (iskanje, izračuni, poizvedbe v bazi itd.)
+- **Izvedba orodij**:  
+    - Strežnik usmerja zahteve do ustreznih zunanjih orodij  
+    - Orodja izvajajo svoje specializirane funkcije (iskanje, izračuni, poizvedbe v bazah itd.)  
     - Rezultati se vrnejo modelu v dosledni obliki.
 
-- **Dokončanje odgovora**: 
-    - AI model vključi izhode orodij v svoj odgovor.
-    - Končni odgovor se pošlje nazaj aplikaciji klienta.
+- **Zaključek odgovora**:  
+    - AI model vključi izhode orodij v svoj odgovor.  
+    - Končni odgovor se pošlje nazaj klientu aplikacije.
 
 ```mermaid
+---
+title: MCP Server Architecture and Component Interactions
+description: A diagram showing how AI models interact with MCP servers and various tools, depicting the request flow and server components including Tool Registry, Authentication, Request Handler, and Response Formatter
+---
 graph TD
     A[AI Model in MCP Host] <-->|MCP Protocol| B[MCP Server]
     B <-->|Tool Interface| C[Tool 1: Web Search]
@@ -138,9 +142,9 @@ graph TD
 
 ## 👨‍💻 Kako zgraditi MCP strežnik (z primeri)
 
-MCP strežniki vam omogočajo razširitev zmogljivosti LLM-jev z zagotavljanjem podatkov in funkcionalnosti.
+MCP strežniki omogočajo razširitev zmogljivosti LLM-jev z zagotavljanjem podatkov in funkcionalnosti.
 
-Pripravljeni na preizkus? Tukaj so primeri ustvarjanja preprostega MCP strežnika v različnih jezikih:
+Pripravljeni za preizkus? Tukaj so primeri ustvarjanja preprostega MCP strežnika v različnih jezikih:
 
 - **Python primer**: https://github.com/modelcontextprotocol/python-sdk
 
@@ -151,35 +155,38 @@ Pripravljeni na preizkus? Tukaj so primeri ustvarjanja preprostega MCP strežnik
 - **C#/.NET primer**: https://github.com/modelcontextprotocol/csharp-sdk
 
 
-## 🌍 Resnični primeri uporabe MCP
+## 🌍 Praktični primeri uporabe MCP
 
 MCP omogoča širok nabor aplikacij z razširitvijo AI zmogljivosti:
 
-| **Uporaba**                  | **Opis**                                                                      |
-|------------------------------|-------------------------------------------------------------------------------|
-| Integracija podatkov v podjetjih | Povezava LLM-jev z bazami podatkov, CRM-ji ali notranjimi orodji              |
-| Agentni AI sistemi           | Omogočanje avtonomnih agentov z dostopom do orodij in delovnimi tokovi odločanja |
-| Multimodalne aplikacije      | Združevanje tekstovnih, slikovnih in avdio orodij v eni združeni AI aplikaciji |
-| Integracija podatkov v realnem času | Vnos živih podatkov v AI interakcije za natančnejše in aktualne izhode          |
+| **Uporaba**                | **Opis**                                                                       |
+|----------------------------|--------------------------------------------------------------------------------|
+| Integracija podjetniških podatkov | Povezava LLM-jev z bazami, CRM-ji ali notranjimi orodji                     |
+| Agentni AI sistemi          | Omogočanje avtonomnih agentov z dostopom do orodij in delovnimi tokovi odločanja |
+| Večmodalne aplikacije       | Združevanje tekstovnih, slikovnih in avdio orodij v eni združeni AI aplikaciji |
+| Integracija podatkov v realnem času | Vnos aktualnih podatkov v AI interakcije za natančnejše in ažurne izhode     |
 
+### 🧠 MCP = Univerzalni standard za AI interakcije
 
-### 🧠 MCP = univerzalni standard za AI interakcije
+Model Context Protocol (MCP) deluje kot univerzalni standard za AI interakcije, podobno kot je USB-C standardiziral fizične povezave naprav. V svetu AI MCP zagotavlja dosleden vmesnik, ki omogoča modelom (klientom) nemoteno integracijo z zunanjimi orodji in podatkovnimi ponudniki (strežniki). Tako ni več potrebe po različnih, prilagojenih protokolih za vsak API ali podatkovni vir.
 
-Model Context Protocol (MCP) deluje kot univerzalni standard za AI interakcije, podobno kot je USB-C standardiziral fizične povezave naprav. V svetu AI MCP zagotavlja dosleden vmesnik, ki modelom (klientom) omogoča nemoteno integracijo z zunanjimi orodji in ponudniki podatkov (strežniki). Tako ni več potrebe po različnih, prilagojenih protokolih za vsak API ali podatkovni vir.
-
-V okviru MCP orodje, združljivo z MCP (imenovano MCP strežnik), sledi enotnemu standardu. Ti strežniki lahko navajajo orodja ali akcije, ki jih ponujajo, in izvajajo te akcije, ko jih zahteva AI agent. Platforme AI agentov, ki podpirajo MCP, lahko odkrijejo razpoložljiva orodja na strežnikih in jih pokličejo preko tega standardnega protokola.
+Po MCP-ju MCP-kompatibilno orodje (imenovano MCP strežnik) sledi enotnemu standardu. Ti strežniki lahko navajajo orodja ali akcije, ki jih ponujajo, in jih izvajajo, ko jih zahteva AI agent. Platforme AI agentov, ki podpirajo MCP, lahko odkrijejo razpoložljiva orodja na strežnikih in jih kličejo preko tega standardnega protokola.
 
 ### 💡 Omogoča dostop do znanja
 
-Poleg ponujanja orodij MCP omogoča tudi dostop do znanja. Omogoča aplikacijam, da zagotovijo kontekst velikim jezikovnim modelom (LLM) z povezovanjem do različnih podatkovnih virov. Na primer, MCP strežnik lahko predstavlja podjetniški repozitorij dokumentov, kar agentom omogoča pridobivanje relevantnih informacij po potrebi. Drug strežnik lahko upravlja specifične akcije, kot so pošiljanje elektronske pošte ali posodabljanje zapisov. Z vidika agenta so to preprosto orodja, ki jih lahko uporablja — nekatera orodja vračajo podatke (kontext znanja), druga izvajajo akcije. MCP učinkovito upravlja oboje.
+Poleg ponujanja orodij MCP omogoča tudi dostop do znanja. Omogoča aplikacijam, da velikim jezikovnim modelom (LLM) zagotovijo kontekst z povezovanjem do različnih podatkovnih virov. Na primer, MCP strežnik lahko predstavlja dokumentni repozitorij podjetja, kar agentom omogoča pridobivanje relevantnih informacij na zahtevo. Drug strežnik lahko upravlja specifične akcije, kot so pošiljanje elektronskih sporočil ali posodabljanje zapisov. Z vidika agenta so to preprosto orodja, ki jih lahko uporablja – nekatera orodja vračajo podatke (kontext znanja), druga pa izvajajo akcije. MCP učinkovito upravlja oboje.
 
-Agent, ki se poveže z MCP strežnikom, samodejno spozna razpoložljive zmogljivosti strežnika in dostopne podatke preko standardiziranega formata. Ta standardizacija omogoča dinamično razpoložljivost orodij. Na primer, dodajanje novega MCP strežnika v sistem agenta takoj omogoči uporabo njegovih funkcij brez dodatnih prilagoditev navodil agenta.
+Agent, ki se poveže na MCP strežnik, samodejno spozna razpoložljive zmogljivosti strežnika in dostopne podatke preko standardiziranega formata. Ta standardizacija omogoča dinamično razpoložljivost orodij. Na primer, dodajanje novega MCP strežnika v sistem agenta naredi njegove funkcije takoj uporabne brez dodatnih prilagoditev navodil za agenta.
 
-Ta poenostavljena integracija sledi toku, prikazanemu v mermaid diagramu, kjer strežniki zagotavljajo tako orodja kot znanje, kar omogoča nemoteno sodelovanje med sistemi.
+Ta poenostavljena integracija se ujema s tokom, prikazanim v mermaid diagramu, kjer strežniki zagotavljajo tako orodja kot znanje, kar omogoča nemoteno sodelovanje med sistemi.
 
-### 👉 Primer: razširljiva agentna rešitev
+### 👉 Primer: Razširljiva rešitev agenta
 
 ```mermaid
+---
+title: Scalable Agent Solution with MCP
+description: A diagram illustrating how a user interacts with an LLM that connects to multiple MCP servers, with each server providing both knowledge and tools, creating a scalable AI system architecture
+---
 graph TD
     User -->|Prompt| LLM
     LLM -->|Response| User
@@ -207,6 +214,10 @@ graph TD
 Poleg osnovne MCP arhitekture obstajajo napredni scenariji, kjer tako klient kot strežnik vsebujeta LLM-je, kar omogoča bolj sofisticirane interakcije:
 
 ```mermaid
+---
+title: Advanced MCP Scenarios with Client-Server LLM Integration
+description: A sequence diagram showing the detailed interaction flow between user, client application, client LLM, multiple MCP servers, and server LLM, illustrating tool discovery, user interaction, direct tool calling, and feature negotiation phases
+---
 sequenceDiagram
     autonumber
     actor User as 👤 User
@@ -264,39 +275,38 @@ sequenceDiagram
     end
 ```
 
-## 🔐 Praktične koristi MCP
+## 🔐 Praktične prednosti MCP
 
-Tukaj so praktične koristi uporabe MCP:
+Tukaj so praktične prednosti uporabe MCP:
 
-- **Svežina**: modeli lahko dostopajo do ažurnih informacij onkraj učnih podatkov
-- **Razširitev zmogljivosti**: modeli lahko uporabijo specializirana orodja za naloge, za katere niso bili usposobljeni
-- **Zmanjšanje halucinacij**: zunanji podatkovni viri zagotavljajo dejansko osnovo
-- **Zasebnost**: občutljivi podatki lahko ostanejo v varnem okolju, namesto da so vključeni v pozive
+- **Svežina**: modeli lahko dostopajo do ažurnih informacij onkraj svojih učnih podatkov  
+- **Razširitev zmogljivosti**: modeli lahko uporabljajo specializirana orodja za naloge, za katere niso bili trenirani  
+- **Zmanjšanje halucinacij**: zunanji podatkovni viri zagotavljajo dejansko podlago  
+- **Zasebnost**: občutljivi podatki ostanejo v varnih okoljih, namesto da bi bili vdelani v pozive
 
 ## 📌 Ključne ugotovitve
 
-Ključne ugotovitve pri uporabi MCP:
+Ključne ugotovitve za uporabo MCP:
 
-- **MCP** standardizira način, kako AI modeli komunicirajo z orodji in podatki
-- Spodbuja **razširljivost, konsistentnost in interoperabilnost**
-- MCP pomaga **zmanjšati čas razvoja, izboljšati zanesljivost in razširiti zmogljivosti modelov**
-- Arhitektura klient-strežnik **omogoča prilagodljive, razširljive AI aplikacije**
+- **MCP** standardizira način interakcije AI modelov z orodji in podatki  
+- Spodbuja **razširljivost, konsistentnost in interoperabilnost**  
+- MCP pomaga **skrajšati čas razvoja, izboljšati zanesljivost in razširiti zmogljivosti modelov**  
+- Arhitektura klient-strežnik **omogoča fleksibilne, razširljive AI aplikacije**
 
 ## 🧠 Vaja
 
-Pomislite na AI aplikacijo, ki jo želite razviti.
+Premislite o AI aplikaciji, ki jo želite razviti.
 
-- Katera **zunanja orodja ali podatki** bi lahko izboljšali njene zmogljivosti?
-- Kako bi MCP lahko naredil integracijo **preprostejšo in bolj zanesljivo?**
+- Katera **zunanja orodja ali podatki** bi lahko izboljšali njene zmogljivosti?  
+- Kako bi MCP lahko naredil integracijo **enostavnejšo in bolj zanesljivo?**
 
 ## Dodatni viri
 
-- [MCP GitHub repozitorij](https://github.com/modelcontextprotocol)
-
+- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## Kaj sledi
 
-Naprej: [Poglavje 1: Osnovni koncepti](/01-CoreConcepts/README.md)
+Naprej: [Chapter 1: Core Concepts](/01-CoreConcepts/README.md)
 
-**Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+**Izjava o omejitvi odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za kritične informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
