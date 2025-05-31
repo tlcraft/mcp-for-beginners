@@ -201,7 +201,8 @@ async def product_search(query: str, num_results: int = DEFAULT_RESULTS_LIMIT, c
         params = {
             "q": query,
             "engine": "google_shopping",
-            "shopping_intent": "high"
+            "shopping_intent": "high",
+            "num": num_results
         }
         
         # Make the API request
