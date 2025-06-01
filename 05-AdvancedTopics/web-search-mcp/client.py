@@ -11,6 +11,19 @@ shows how to call each of the four specialized search tools:
 - news_search: For recent news articles
 - product_search: For e-commerce product information
 - qna: For direct question-answer snippets
+
+Quick Start:
+
+1. Get a free API key from SerpAPI (https://serpapi.com/), then create a `.env` file in this folder with:
+   SERPAPI_KEY=your_serpapi_key_here
+2. Install dependencies:
+   pip install -r ../../requirements.txt
+3. Start the server:
+   python server.py
+4. In a new terminal, run the client:
+   python client.py
+   # Or for interactive mode:
+   python client.py --interactive
 """
 
 import asyncio
