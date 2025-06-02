@@ -1,8 +1,22 @@
-## MCP Root Contexts
+# MCP Root Contexts
 
 Root contexts are a fundamental concept in the Model Context Protocol that provide a persistent layer for maintaining conversation history and shared state across multiple requests and sessions.
 
-### Understanding Root Contexts
+## Introduction
+
+In this lesson, we will explore how to create, manage, and utilize root contexts in MCP. 
+
+## Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+- Understand the purpose and structure of root contexts
+- Create and manage root contexts using MCP client libraries
+- Implement root contexts in .NET, Java, JavaScript, and Python applications
+- Utilize root contexts for multi-turn conversations and state management
+- Implement best practices for root context management
+
+## Understanding Root Contexts
 
 Root contexts serve as containers that hold the history and state for a series of related interactions. They enable:
 
@@ -13,12 +27,12 @@ Root contexts serve as containers that hold the history and state for a series o
 
 In MCP, root contexts have these key characteristics:
 
-- Each root context has a unique identifier
-- They can contain conversation history, user preferences, and other metadata
-- They can be created, accessed, and archived as needed
-- They support fine-grained access control and permissions
+- Each root context has a unique identifier.
+- They can contain conversation history, user preferences, and other metadata.
+- They can be created, accessed, and archived as needed.
+- They support fine-grained access control and permissions.
 
-### Root Context Lifecycle
+## Root Context Lifecycle
 
 ```mermaid
 flowchart TD
@@ -29,7 +43,12 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### .NET Example: Working with Root Contexts
+## Working with Root Contexts
+
+Here's an example of how to create and manage root contexts. 
+
+<details>
+<summary>csharp</summary>
 
 ```csharp
 // .NET Example: Root Context Management
@@ -51,7 +70,7 @@ public class RootContextExample
     
     public async Task DemonstrateRootContextAsync()
     {
-        // Create a new root context
+        // 1. Create a new root context
         var contextResult = await _contextManager.CreateRootContextAsync(new RootContextCreateOptions
         {
             Name = "Customer Support Session",
@@ -66,7 +85,7 @@ public class RootContextExample
         string contextId = contextResult.ContextId;
         Console.WriteLine($"Created root context with ID: {contextId}");
         
-        // First interaction using the context
+        // 2. First interaction using the context
         var response1 = await _client.SendPromptAsync(
             "I'm having issues scaling my web service deployment in the cloud.", 
             new SendPromptOptions { RootContextId = contextId }
@@ -82,14 +101,14 @@ public class RootContextExample
         
         Console.WriteLine($"Second response: {response2.GeneratedText}");
         
-        // Add metadata to the context based on conversation
+        // 3. Add metadata to the context based on conversation
         await _contextManager.UpdateContextMetadataAsync(contextId, new Dictionary<string, string>
         {
             ["TechnicalEnvironment"] = "Kubernetes",
             ["IssueType"] = "Scaling"
         });
         
-        // Get context information
+        // 4. Get context information
         var contextInfo = await _contextManager.GetRootContextInfoAsync(contextId);
         
         Console.WriteLine("Context Information:");
@@ -97,14 +116,29 @@ public class RootContextExample
         Console.WriteLine($"- Created: {contextInfo.CreatedAt}");
         Console.WriteLine($"- Messages: {contextInfo.MessageCount}");
         
-        // When the conversation is complete, archive the context
+        // 5. When the conversation is complete, archive the context
         await _contextManager.ArchiveRootContextAsync(contextId);
         Console.WriteLine($"Archived context {contextId}");
     }
 }
 ```
 
-### Java Example: Root Context Implementation
+In the preceding code we've:
+
+1. Created a root context for a customer support session.
+1. Sent multiple messages within that context, allowing the model to maintain state.
+1. Updated the context with relevant metadata based on the conversation.
+1. Retrieved context information to understand the conversation history.
+1. Archived the context when the conversation was complete.
+
+</details>
+
+## Example: Root Context Implementation for financial analysis
+
+In this example, we will create a root context for a financial analysis session, demonstrating how to maintain state across multiple interactions.
+
+<details>
+<summary>java</summary>
 
 ```java
 // Java Example: Root Context Implementation
@@ -138,13 +172,13 @@ public class RootContextsDemo {
         metadata.put("userRole", "Financial Analyst");
         metadata.put("dataSource", "Q1 2025 Financial Reports");
         
-        // Create a new root context
+        // 1. Create a new root context
         RootContext context = contextManager.createRootContext("Financial Analysis Session", metadata);
         String contextId = context.getId();
         
         System.out.println("Created context: " + contextId);
         
-        // First interaction
+        // 2. First interaction
         McpResponse response1 = client.sendPrompt(
             "Analyze the trends in Q1 financial data for our technology division",
             contextId
@@ -152,7 +186,7 @@ public class RootContextsDemo {
         
         System.out.println("First response: " + response1.getGeneratedText());
         
-        // Update context with important information gained from response
+        // 3. Update context with important information gained from response
         contextManager.addContextMetadata(contextId, 
             Map.of("identifiedTrend", "Increasing cloud infrastructure costs"));
         
@@ -164,7 +198,7 @@ public class RootContextsDemo {
         
         System.out.println("Second response: " + response2.getGeneratedText());
         
-        // Generate a summary of the analysis session
+        // 4. Generate a summary of the analysis session
         McpResponse summaryResponse = client.sendPrompt(
             "Summarize our analysis of the technology division financials in 3-5 key points",
             contextId
@@ -183,14 +217,29 @@ public class RootContextsDemo {
         System.out.println("- Analysis Summary: " + 
             updatedContext.getMetadata().get("analysisSummary"));
             
-        // Archive context when done
+        // 5. Archive context when done
         contextManager.archiveContext(contextId);
         System.out.println("Context archived");
     }
 }
 ```
 
-### JavaScript Example: Root Context Management
+In the preceding code, we've:
+
+1. Created a root context for a financial analysis session.
+2. Sent multiple messages within that context, allowing the model to maintain state.
+3. Updated the context with relevant metadata based on the conversation.
+4. Generated a summary of the analysis session and stored it in the context metadata.
+5. Archived the context when the conversation was complete.
+
+</details>
+
+## Example: Root Context Management
+
+Managing root contexts effectively is crucial for maintaining conversation history and state. Below is an example of how to implement root context management.
+
+<details>
+<summary>JavaScript</summary>
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -383,7 +432,7 @@ async function demonstrateContextSession() {
   const session = new ContextSession('https://mcp-server-example.com');
   
   try {
-    // Create a new context for a product support conversation
+    // 1. Create a new context for a product support conversation
     const contextId = await session.createConversationContext(
       'Product Support - Database Performance',
       {
@@ -394,7 +443,7 @@ async function demonstrateContextSession() {
       }
     );
     
-    // First message in the conversation
+    // 2. First message in the conversation
     const response1 = await session.sendMessage(
       contextId,
       "I'm experiencing slow query performance on our database cluster after the latest update.",
@@ -410,18 +459,19 @@ async function demonstrateContextSession() {
     );
     console.log('Response 2:', response2.message);
     
-    // Get information about the context
+    // 3. Get information about the context
     const contextInfo = await session.getContextInfo(contextId);
     console.log('Context Information:', contextInfo);
     
-    // Generate and display conversation summary
+    // 4. Generate and display conversation summary
     const summary = await session.generateContextSummary(contextId);
     console.log('Conversation Summary:', summary);
     
-    // Archive the context when done
+    // 5. Archive the context when done
     const archiveResult = await session.archiveContext(contextId);
     console.log('Archive Result:', archiveResult);
     
+    // 6. Handle any errors gracefully
   } catch (error) {
     console.error('Error in context session demonstration:', error);
   }
@@ -430,7 +480,28 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Python Example: Root Context for Multi-Turn Assistance
+In the preceding code we've:
+
+1. Created a root context for a product support conversation with the function `createConversationContext`. In this case, the context is about database performance issues.
+
+1. Sent multiple messages within that context, allowing the model to maintain state with the function `sendMessage`. The messages being sent are about slow query performance and index configuration.
+
+1. Updated the context with relevant metadata based on the conversation.
+
+1. Generated a summary of the conversation and stored it in the context metadata with the function `generateContextSummary`.
+
+1. Archived the context when the conversation was complete with the function `archiveContext`.
+
+1. Handled errors gracefully to ensure robustness.
+
+</details>
+
+## Root Context for Multi-Turn Assistance
+
+In this example, we will create a root context for a multi-turn assistance session, demonstrating how to maintain state across multiple interactions.
+
+<details>
+<summary>Python</summary>
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -523,14 +594,14 @@ class AssistantSession:
 async def demo_assistant_session():
     assistant = AssistantSession("https://mcp-server-example.com")
     
-    # Create session
+    # 1. Create session
     context_id = await assistant.create_session(
         "Technical Support Session",
         {"name": "Alex", "technical_level": "advanced", "product": "Cloud Services"}
     )
     print(f"Created session with context ID: {context_id}")
     
-    # First interaction
+    # 2. First interaction
     response1 = await assistant.send_message(
         context_id, 
         "I'm having trouble with the auto-scaling feature in your cloud platform.",
@@ -545,11 +616,11 @@ async def demo_assistant_session():
     )
     print(f"Response 2: {response2.generated_text}")
     
-    # Get history
+    # 3. Get history
     history = await assistant.get_conversation_history(context_id)
     print(f"Session has {len(history['messages'])} messages")
     
-    # End session
+    # 4. End session
     end_result = await assistant.end_session(context_id)
     print(f"Session ended with summary: {end_result['summary']}")
 
@@ -557,21 +628,38 @@ if __name__ == "__main__":
     asyncio.run(demo_assistant_session())
 ```
 
-### Root Context Best Practices
+In the preceding code we've:
 
-1. **Create Focused Contexts**: Create separate root contexts for different conversation purposes or domains to maintain clarity.
+1. Created a root context for a technical support session with the function `create_session`. The context includes user information such as name and technical level.
 
-2. **Set Expiration Policies**: Implement policies to archive or delete old contexts to manage storage and comply with data retention policies.
+1. Sent multiple messages within that context, allowing the model to maintain state with the function `send_message`. The messages being sent are about issues with the auto-scaling feature.
 
-3. **Store Relevant Metadata**: Use context metadata to store important information about the conversation that might be useful later.
+1. Retrieved conversation history using the function `get_conversation_history`, which provides context information and messages.
 
-4. **Use Context IDs Consistently**: Once a context is created, use its ID consistently for all related requests to maintain continuity.
+1. Ended the session by archiving the context and generating a summary with the function `end_session`. The summary captures key points from the conversation.
 
-5. **Generate Summaries**: When a context grows large, consider generating summaries to capture essential information while managing context size.
+</details>
 
-6. **Implement Access Control**: For multi-user systems, implement proper access controls to ensure privacy and security of conversation contexts.
+## Root Context Best Practices
 
-7. **Handle Context Limitations**: Be aware of context size limitations and implement strategies for handling very long conversations.
+Here are some best practices for managing root contexts effectively:
 
-8. **Archive When Complete**: Archive contexts when conversations are complete to free resources while preserving the conversation history.
+- **Create Focused Contexts**: Create separate root contexts for different conversation purposes or domains to maintain clarity.
 
+- **Set Expiration Policies**: Implement policies to archive or delete old contexts to manage storage and comply with data retention policies.
+
+- **Store Relevant Metadata**: Use context metadata to store important information about the conversation that might be useful later.
+
+- **Use Context IDs Consistently**: Once a context is created, use its ID consistently for all related requests to maintain continuity.
+
+- **Generate Summaries**: When a context grows large, consider generating summaries to capture essential information while managing context size.
+
+- **Implement Access Control**: For multi-user systems, implement proper access controls to ensure privacy and security of conversation contexts.
+
+- **Handle Context Limitations**: Be aware of context size limitations and implement strategies for handling very long conversations.
+
+- **Archive When Complete**: Archive contexts when conversations are complete to free resources while preserving the conversation history.
+
+## What's next
+
+- [Routing](../mcp-routing/README.md)

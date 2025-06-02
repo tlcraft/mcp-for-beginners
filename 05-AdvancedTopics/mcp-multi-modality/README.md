@@ -1,8 +1,8 @@
 # Multi-Modal Integration
 
-MCP supports not just text-based interactions but also multi-modal capabilities, allowing models to work with images, audio, and other data types.
+Multi-modal applications are becoming increasingly important in AI, enabling richer interactions and more complex tasks. The Model Context Protocol (MCP) provides a framework for building multi-modal applications that can handle various types of data, such as text, images, and audio.
 
-This chapter demonstrates how to build a real-world multi modal application.
+MCP supports not just text-based interactions but also multi-modal capabilities, allowing models to work with images, audio, and other data types.
 
 ## Introduction
 
@@ -19,12 +19,12 @@ By the end of this lesson, you will be able to:
 
 Multi-modal MCP implementations typically involve:
 
-- **Modal-Specific Parsers**: Components that convert different media types into formats the model can process
+- **Modal-Specific Parsers**: Components that convert different media types into formats the model can process.
 - **Modal-Specific Tools**: Special tools designed to handle specific modalities (image analysis, audio processing)
 - **Unified Context Management**: System to maintain context across different modalities
-- **Response Generation**: Capability to generate responses that may include multiple modalities
+- **Response Generation**: Capability to generate responses that may include multiple modalities.
 
-### Multi-Modal Example: Image Analysis
+## Multi-Modal Example: Image Analysis
 
 In the below example, we will analyze an image and extract information.
 
@@ -161,12 +161,24 @@ namespace MultiModalMcpExample
 }
 ```
 
+In the preceding example, we've:
+
+- Created an `ImageAnalysisTool` that can analyze images using a hypothetical `IImageAnalysisService`.
+- Configured the MCP server to handle larger requests and support image content types.
+- Registered the image analysis tool with the server.
+- Implemented a method to download images from a URL and analyze them based on the requested type (objects, text, faces, etc.).
+- Returned structured results in a format compliant with the MCP specification.
+
 </details>
 
-### Multi-Modal Example: Audio Processing
+## Multi-Modal Example: Audio Processing
+
+Audio processing is another common modality in multi-modal applications. Below is an example of how to implement an audio transcription tool that can handle audio files and return transcriptions.
 
 <details>
 <summary>Java</summary>
+
+Let's implement an audio transcription tool:
 
 ```java
 package com.example.mcp.multimodal;
@@ -293,6 +305,17 @@ public class MultiModalApplication {
     }
 }
 ```
+
+In the preceding example, we've:
+
+- Created an `AudioTranscriptionTool` that can transcribe audio files. 
+- Defined the tool's schema to accept either a URL or base64-encoded audio data.
+- Implemented the `execute` method to handle audio processing and transcription.
+- Configured the MCP server to handle multi-modal requests, including audio and image processing.
+- Registered the audio transcription tool with the server.
+- Implemented a method to download audio files from a URL or decode base64 audio data.
+- Used an `AudioProcessor` service to handle the actual transcription logic.
+- Started the MCP server to listen for requests.
 
 </details>
 
@@ -449,3 +472,7 @@ if __name__ == "__main__":
 ```
 
 </details>
+
+## What's next
+
+- [Oauth 2](../mcp-oauth2-demo/README.md)

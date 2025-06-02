@@ -1,5 +1,7 @@
 # Advanced Topics in MCP 
 
+This chapter is meant to cover a series of advanced topics in Model Context Protocol (MCP) implementation, including multi-modal integration, scalability, security best practices, and enterprise integration. These topics are crucial for building robust and production-ready MCP applications that can meet the demands of modern AI systems.
+
 ## Overview
 
 This lesson explores advanced concepts in Model Context Protocol implementation, focusing on multi-modal integration, scalability, security best practices, and enterprise integration. These topics are essential for building production-grade MCP applications that can handle complex requirements in enterprise environments.
@@ -7,6 +9,7 @@ This lesson explores advanced concepts in Model Context Protocol implementation,
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
+
 - Implement multi-modal capabilities within MCP frameworks
 - Design scalable MCP architectures for high-demand scenarios
 - Apply security best practices aligned with MCP's security principles
@@ -17,15 +20,15 @@ By the end of this lesson, you will be able to:
 
 | Link | Title | Description |
 |------|-------|-------------|
-| [MCP OAuth2 sample](./mcp-oauth2-demo/) | MCP OAuth2 Demo | Minimal Spring Boot app showing OAuth2 with MCP, both as Authorization and Resource Server. Demonstrates secure token issuance, protected endpoints, Azure Container Apps deployment, and API Management integration. |
-| [Web Search sample](./web-search-mcp/) | Web Search MCP | Python MCP server and client integrating with SerpAPI for real-time web, news, product search, and Q&A. Demonstrates multi-tool orchestration, external API integration, and robust error handling. |
-| [Multi modal sample](./mcp-multi-modality/README.md) | MCP Multi modal samples  | Samples for audio, image and multi modal response |
-| [Integration with Azure](./mcp-integration/README.md) | Integrate with Azure | Learn how to integrate your MCP Server on Azure |
-| [Root Contexts](./mcp-root-contexts/README.md) | Root contexts  | Learn more about root context and how to implement them |
-| [Routing](./mcp-routing/README.md) | Routing | Learn different types of routing |
-| [Sampling](./mcp-sampling/README.md) | Sampling | Learn how to work with sampling |
-| [Scaling](./mcp-scaling/README.md) | Scaling  | Learn about scaling |
-| [Security](./mcp-security/README.md) | Security  | Secure your MCP Server |
+| [5.1 Integration with Azure](./mcp-integration/README.md) | Integrate with Azure | Learn how to integrate your MCP Server on Azure |
+| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | MCP Multi modal samples  | Samples for audio, image and multi modal response |
+| [5.3 MCP OAuth2 sample](./mcp-oauth2-demo/) | MCP OAuth2 Demo | Minimal Spring Boot app showing OAuth2 with MCP, both as Authorization and Resource Server. Demonstrates secure token issuance, protected endpoints, Azure Container Apps deployment, and API Management integration. |
+| [5.4 Root Contexts](./mcp-root-contexts/README.md) | Root contexts  | Learn more about root context and how to implement them |
+| [5.5 Routing](./mcp-routing/README.md) | Routing | Learn different types of routing |
+| [5.6 Sampling](./mcp-sampling/README.md) | Sampling | Learn how to work with sampling |
+| [5.7 Scaling](./mcp-scaling/README.md) | Scaling  | Learn about scaling |
+| [5.8 Security](./mcp-security/README.md) | Security  | Secure your MCP Server |
+| [5.9 Web Search sample](./web-search-mcp/README.md) | Web Search MCP | Python MCP server and client integrating with SerpAPI for real-time web, news, product search, and Q&A. Demonstrates multi-tool orchestration, external API integration, and robust error handling. |
 
 ## Additional References
 
@@ -61,4 +64,4 @@ Design an enterprise-grade MCP implementation for a specific use case:
 
 ## What's next
 
-- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
+- [5.1 MCP Integration](./mcp-integration/README.md)

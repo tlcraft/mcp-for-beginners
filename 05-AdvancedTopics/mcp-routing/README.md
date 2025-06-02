@@ -1,10 +1,28 @@
-## Routing in Model Context Protocol
+##Routing in Model Context Protocol
 
 Routing is essential for directing requests to the appropriate models, tools, or services within an MCP ecosystem.
 
-### Content-Based Routing
+## Introduction
 
-Content-based routing directs requests to specialized services based on the content of the request.
+Routing in the Model Context Protocol (MCP) involves directing requests to the most suitable models or services based on various criteria such as content type, user context, and system load. This ensures efficient processing and optimal resource utilization.
+
+## Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+- Understand the principles of routing in MCP.
+- Implement content-based routing to direct requests to specialized services.
+- Apply intelligent load balancing strategies to optimize resource utilization.
+- Implement dynamic tool routing based on request context.
+
+## Content-Based Routing
+
+Content-based routing directs requests to specialized services based on the content of the request. For example, requests related to code generation can be routed to a specialized code model, while creative writing requests can be sent to a creative writing model.
+
+Let's look at an example implementation in different programming languages.
+
+<details>
+<summary>.NET</summary>
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -75,9 +93,32 @@ public class ContentBasedRouter
 }
 ```
 
-### Intelligent Load Balancing
+In the preceding code, we've:
 
-Load balancing optimizes resource utilization and ensures high availability for MCP services.
+- Created a `ContentBasedRouter` class that routes requests based on the content of the prompt.
+- Initialized specialized clients for different domains (code, creative, scientific, general).
+- Implemented a simple classifier that determines the category of the prompt and routes it to the appropriate specialized service.
+- Used a fallback mechanism to route requests to a general service if no specialized service is available.
+- Implemented asynchronous processing to handle requests efficiently.
+- Used a dictionary to map content categories to specialized MCP clients.
+- Implemented a simple classifier that analyzes the prompt and returns the appropriate category.
+- Used the specialized client to send the request and receive a response.
+- Handled cases where the prompt does not match any specialized category by routing to a general service.
+
+</details>
+
+## Intelligent Load Balancing
+
+Load balancing optimizes resource utilization and ensures high availability for MCP services. There are different ways to implement load balancing, such as round-robin, weighted response time, or content-aware strategies.
+
+Let's look at below example implementation that uses the following strategies:
+
+- **Round Robin**: Distributes requests evenly across available servers.
+- **Weighted Response Time**: Routes requests to servers based on their average response time.
+- **Content-Aware**: Routes requests to specialized servers based on the content of the request.
+
+<details>
+<summary>Java</summary>
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -206,9 +247,27 @@ public class McpLoadBalancer {
 }
 ```
 
-### Dynamic Tool Routing
+In the preceding code, we've:
 
-Tool routing ensures that tool calls are directed to the most appropriate service based on context.
+- Created a `McpLoadBalancer` class that manages a list of MCP server nodes and routes requests based on the selected load balancing strategy.
+- Implemented different load balancing strategies: `RoundRobinStrategy`, `ResponseTimeStrategy`, and `ContentAwareStrategy`.
+- Used a `ScheduledExecutorService` to periodically check the health of server nodes.
+- Implemented a health check mechanism that marks nodes as healthy or unhealthy based on their response to health checks.
+- Handled request processing with error handling and fallback logic to ensure high availability.
+- Used a `McpServerNode` class to represent individual MCP server nodes, including their health status, average response time, and current load.
+- Implemented a `McpRequest` class to encapsulate request details such as the prompt and allowed tools.
+- Used Java Streams to filter and select nodes based on health status and specialization.
+
+</details>
+
+## Dynamic Tool Routing
+
+Tool routing ensures that tool calls are directed to the most appropriate service based on context. For example, a weather tool call may need to be routed to a regional endpoint based on the user's location, or a calculator tool may need to use a specific version of the API.
+
+Let's have a look at an example implementation that demonstrates dynamic tool routing based on request analysis, regional endpoints, and versioning support.
+
+<details>
+<summary>Python</summary>
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -319,7 +378,21 @@ class McpToolRouter:
             raise
 ```
 
-### Sampling and Routing Architecture in MCP
+In the preceding code, we've:
+
+- Created a `McpToolRouter` class that manages tool routing based on request analysis, regional endpoints, and versioning support.
+- Registered available tool endpoints and regional endpoints for global distribution.
+- Implemented dynamic routing logic that selects the appropriate endpoint based on user context, such as region and data residency requirements.
+- Implemented versioning support for tools, allowing users to specify which version of a tool they want to use.
+- Used asynchronous HTTP requests to execute tool calls and handle responses.
+
+</details>
+
+## Sampling and Routing Architecture in MCP
+
+Sampling is a critical component of the Model Context Protocol (MCP) that allows for efficient request processing and routing. It involves analyzing incoming requests to determine the most appropriate model or service to handle them, based on various criteria such as content type, user context, and system load.
+
+Sampling and routing can be combined to create a robust architecture that optimizes resource utilization and ensures high availability. The sampling process can be used to classify requests, while routing directs them to the appropriate models or services.
 
 The diagram below illustrates how sampling and routing work together in a comprehensive MCP architecture:
 
@@ -388,3 +461,6 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
+## What's next
+
+- [Sampling](../mcp-sampling/README.md)

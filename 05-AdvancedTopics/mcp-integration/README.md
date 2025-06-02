@@ -1,8 +1,28 @@
-## Enterprise Integration
+# Enterprise Integration
 
-Integrating MCP with enterprise systems like Azure OpenAI and Microsoft AI Foundry.
+When building MCP Servers in an enterprise context, you often need to integrate with existing AI platforms and services. This section covers how to integrate MCP with enterprise systems like Azure OpenAI and Microsoft AI Foundry, enabling advanced AI capabilities and tool orchestration.
 
-### Azure OpenAI Integration
+## Introduction
+
+In this lesson, you'll learn how to integrate Model Context Protocol (MCP) with enterprise AI systems, focusing on Azure OpenAI and Microsoft AI Foundry. These integrations allow you to leverage powerful AI models and tools while maintaining the flexibility and extensibility of MCP.
+
+## Learning Objectives
+
+By the end of this lesson, you will be able to:
+
+- Integrate MCP with Azure OpenAI to utilize its AI capabilities.
+- Implement MCP tool orchestration with Azure OpenAI.
+- Combine MCP with Microsoft AI Foundry for advanced AI agent capabilities.
+- Leverage Azure Machine Learning (ML) for executing ML pipelines and registering models as MCP tools.
+
+## Azure OpenAI Integration
+
+Azure OpenAI provides access to powerful AI models like GPT-4 and others. Integrating MCP with Azure OpenAI allows you to utilize these models while maintaining the flexibility of MCP's tool orchestration.
+
+<details>
+<summary>csharp</summary>
+
+In this code snippet, we demonstrate how to integrate MCP with Azure OpenAI using the Azure OpenAI SDK. 
 
 ```csharp
 // .NET Azure OpenAI Integration
@@ -66,7 +86,24 @@ namespace EnterpriseIntegration
 }
 ```
 
-### Microsoft AI Foundry Integration
+In the preceding code we've:
+
+- Configured the Azure OpenAI client with the endpoint, deployment name and API key.
+- Created a method `GetCompletionWithToolsAsync` to get completions with tool support.
+- Handled tool calls in the response.
+
+You're encouraged to implement the actual tool handling logic based on your specific MCP server setup.
+
+</details>
+
+## Microsoft AI Foundry Integration
+
+Azure AI Foundry provides a platform for building and deploying AI agents. Integrating MCP with AI Foundry allows you to leverage its capabilities while maintaining the flexibility of MCP.
+
+In the below code, we develop an Agent integration that processes requests and handles tool calls using MCP.
+
+<details>
+<summary>Java</summary>
 
 ```java
 // Java AI Foundry Agent Integration
@@ -124,7 +161,20 @@ public class AIFoundryMcpBridge {
 }
 ```
 
-### Python Enterprise Integration Example
+In the preceding code, we've:
+
+- Created an `AIFoundryMcpBridge` class that integrates with both AI Foundry and MCP.
+- Implemented a method `processAgentRequest` that processes an AI Foundry agent request.
+- Handled tool calls by executing them through the MCP client and submitting the results back to the AI Foundry agent.
+
+</details>
+
+## Integrating MCP with Azure ML
+
+Integrating MCP with Azure Machine Learning (ML) allows you to leverage Azure's powerful ML capabilities while maintaining the flexibility of MCP. This integration can be used to execute ML pipelines, register models as tools, and manage compute resources.
+
+<details>
+<summary>Python</summary>
 
 ```python
 # Python Azure AI Integration
@@ -247,3 +297,17 @@ class EnterpriseAiIntegration:
         }
         return mapping.get(ml_type, "string")
 ```
+
+In the preceding code, we've:
+
+- Created an `EnterpriseAiIntegration` class that integrates MCP with Azure ML.
+- Implemented an `execute_ml_pipeline` method that processes input data using MCP tools and submits an ML pipeline to Azure ML.
+- Implemented a `register_ml_model_as_tool` method that registers an Azure ML model as an MCP tool, including creating the necessary deployment environment and compute resources.
+- Mapped Azure ML data types to JSON schema types for tool registration.
+- Used asynchronous programming to handle potentially long-running operations like ML pipeline execution and model registration.
+
+</details>
+
+## What's next
+
+- [Multi modality](../mcp-multi-modality/README.md)
