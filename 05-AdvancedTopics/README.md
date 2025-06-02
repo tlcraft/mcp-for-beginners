@@ -13,6 +13,13 @@ By the end of this lesson, you will be able to:
 - Integrate MCP with enterprise AI systems and frameworks
 - Optimize performance and reliability in production environments
 
+## Sample Projects
+
+| Link | Title | Description |
+|------|-------|-------------|
+| [mcp-oauth2-demo](./mcp-oauth2-demo/) | MCP OAuth2 Demo | Minimal Spring Boot app showing OAuth2 with MCP, both as Authorization and Resource Server. Demonstrates secure token issuance, protected endpoints, Azure Container Apps deployment, and API Management integration. |
+| [web-search-mcp](./web-search-mcp/) | Web Search MCP | Python MCP server and client integrating with SerpAPI for real-time web, news, product search, and Q&A. Demonstrates multi-tool orchestration, external API integration, and robust error handling. |
+
 ## Additional References
 
 For the most up-to-date information on advanced MCP topics, refer to:
@@ -2544,4 +2551,4 @@ Design an enterprise-grade MCP implementation for a specific use case:
 
 ---
 
-Next: [Community and Contributions](../06-CommunityContributions/README.md)
+Next: [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)

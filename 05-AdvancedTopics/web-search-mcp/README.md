@@ -458,3 +458,7 @@ logging.basicConfig(
 )
 ```
 </details>
+
+---
+
+Next: [6. Community Contributions](../../06-CommunityContributions/README.md)

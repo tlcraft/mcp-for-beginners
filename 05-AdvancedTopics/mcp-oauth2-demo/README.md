@@ -108,3 +108,7 @@ Add this inbound policy to your API:
 ```
 
 APIM will fetch the JWKS and validate every request.
+
+---
+
+Next: [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
