@@ -1,4 +1,4 @@
-# Advanced Topics in MCP
+# Advanced Topics in MCP 
 
 ## Overview
 
