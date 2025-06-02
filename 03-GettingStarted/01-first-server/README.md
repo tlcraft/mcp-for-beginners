@@ -233,7 +233,7 @@ Now that you have your SDK installed, let's create a project next:
 
   ```sh
   python -m venv venv
-  venv\Scrips\activate
+  venv\Scripts\activate
   ```
 </details>
 
