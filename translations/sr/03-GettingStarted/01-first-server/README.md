@@ -1,40 +1,40 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d730cbe43a8efc148677fdbc849a7d5e",
-  "translation_date": "2025-06-02T17:09:20+00:00",
+  "original_hash": "262e6e510f0c3fe1e36180eadcd67c33",
+  "translation_date": "2025-06-02T17:48:00+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "sr"
 }
 -->
-### -2- Kreirajte projekat
+### -2- Kreiranje projekta
 
-Sada kada ste instalirali SDK, hajde da kreiramo projekat:
+Sada kada ste instalirali SDK, hajde da kreiramo projekat: 
 
-### -3- Kreirajte fajlove projekta
+### -3- Kreiranje fajlova projekta
 
-### -4- Kreirajte kod servera
+### -4- Pisanje koda servera
 
 ### -5- Dodavanje alata i resursa
 
-Dodajte alat i resurs tako što ćete dodati sledeći kod:
+Dodajte alat i resurs dodavanjem sledećeg koda:
 
-### -6- Završni kod
+### -6- Konačni kod
 
-Dodajmo poslednji kod koji nam je potreban da server može da se pokrene:
+Dodajmo poslednji deo koda koji je potreban da server može da se pokrene:
 
-### -7- Testirajte server
+### -7- Testiranje servera
 
 Pokrenite server sledećom komandom:
 
 ### -8- Pokretanje pomoću inspektora
 
-Inspektor je sjajan alat koji može da pokrene vaš server i omogućava vam da sa njim interagujete kako biste testirali da li radi. Hajde da ga pokrenemo:
+Inspektor je sjajan alat koji može da pokrene vaš server i omogući vam interakciju sa njim kako biste testirali da li radi. Hajde da ga pokrenemo:
 
 > [!NOTE]
 > može izgledati drugačije u polju "command" jer sadrži komandu za pokretanje servera sa vašim specifičnim runtime-om/
 
-Treba da vidite sledeći korisnički interfejs:
+Trebalo bi da vidite sledeći korisnički interfejs:
 
 ![Poveži](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sr.png)
 
@@ -43,18 +43,18 @@ Treba da vidite sledeći korisnički interfejs:
 
    ![Povezano](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.sr.png)
 
-2. Izaberite "Tools" i "listTools", trebalo bi da se pojavi opcija "Add", kliknite na "Add" i unesite vrednosti parametara.
+2. Izaberite "Tools" i "listTools", trebalo bi da se pojavi opcija "Add", izaberite "Add" i unesite vrednosti parametara.
 
-   Trebalo bi da vidite sledeći odgovor, tj. rezultat sa alata "add":
+   Trebalo bi da vidite sledeći odgovor, tj. rezultat iz alata "add":
 
-   ![Rezultat izvršavanja add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.sr.png)
+   ![Rezultat pokretanja add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.sr.png)
 
 Čestitamo, uspešno ste kreirali i pokrenuli svoj prvi server!
 
 ### Zvanični SDK-ovi
 
 MCP pruža zvanične SDK-ove za više jezika:
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Održava se u saradnji sa Microsoft-om
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Održava se u saradnji sa Microsoftom
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Održava se u saradnji sa Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Zvanična TypeScript implementacija
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Zvanična Python implementacija
@@ -64,9 +64,9 @@ MCP pruža zvanične SDK-ove za više jezika:
 
 ## Ključni zaključci
 
-- Postavljanje MCP razvojne sredine je jednostavno uz SDK-ove specifične za jezik
-- Izgradnja MCP servera podrazumeva kreiranje i registraciju alata sa jasno definisanim šemama
-- Testiranje i otklanjanje grešaka su ključni za pouzdane MCP implementacije
+- Postavljanje MCP razvojne okoline je jednostavno uz SDK-ove specifične za jezik
+- Kreiranje MCP servera podrazumeva pravljenje i registrovanje alata sa jasnim šemama
+- Testiranje i otklanjanje grešaka su neophodni za pouzdane MCP implementacije
 
 ## Primeri
 
@@ -80,7 +80,7 @@ MCP pruža zvanične SDK-ove za više jezika:
 
 Kreirajte jednostavan MCP server sa alatom po vašem izboru:
 1. Implementirajte alat u jeziku koji preferirate (.NET, Java, Python ili JavaScript).
-2. Definišite ulazne parametre i vrednosti povratka.
+2. Definišite ulazne parametre i vrednosti koje se vraćaju.
 3. Pokrenite inspektor alat da proverite da li server radi kako treba.
 4. Testirajte implementaciju sa različitim ulazima.
 
@@ -90,11 +90,13 @@ Kreirajte jednostavan MCP server sa alatom po vašem izboru:
 
 ## Dodatni resursi
 
-- [MCP GitHub Repozitorijum](https://github.com/microsoft/mcp-for-beginners)
+- [Izgradnja agenata koristeći Model Context Protocol na Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Remote MCP sa Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Šta sledi
 
-Dalje: [Uvod u MCP klijente](/03-GettingStarted/02-client/README.md)
+Sledeće: [Getting Started with MCP Clients](/03-GettingStarted/02-client/README.md)
 
-**Одрицање од одговорности**:  
-Овај документ је преведен помоћу AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални превод од стране људског стручњака. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.
+**Ограничење одговорности**:  
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетом. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

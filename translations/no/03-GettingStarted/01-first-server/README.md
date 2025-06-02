@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d730cbe43a8efc148677fdbc849a7d5e",
-  "translation_date": "2025-06-02T17:03:18+00:00",
+  "original_hash": "262e6e510f0c3fe1e36180eadcd67c33",
+  "translation_date": "2025-06-02T17:36:52+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "no"
 }
@@ -19,9 +19,9 @@ Nå som du har installert SDK-en, la oss opprette et prosjekt neste steg:
 
 Legg til et verktøy og en ressurs ved å legge til følgende kode:
 
-### -6- Endelig kode
+### -6- Fullstendig kode
 
-La oss legge til den siste koden vi trenger slik at serveren kan starte:
+La oss legge til den siste koden vi trenger for at serveren skal kunne starte:
 
 ### -7- Test serveren
 
@@ -34,18 +34,18 @@ Inspector er et flott verktøy som kan starte serveren din og lar deg samhandle 
 > [!NOTE]
 > Det kan se annerledes ut i "kommando"-feltet siden det inneholder kommandoen for å kjøre en server med din spesifikke runtime/
 
-Du skal se følgende brukergrensesnitt:
+Du skal nå se følgende brukergrensesnitt:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.no.png)
 
 1. Koble til serveren ved å velge Connect-knappen  
-   Når du kobler til serveren, skal du nå se følgende:
+   Når du har koblet til serveren, bør du nå se følgende:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.no.png)
 
-2. Velg "Tools" og "listTools", du skal se "Add" dukke opp, velg "Add" og fyll inn parameterverdiene.
+2. Velg "Tools" og "listTools", du skal nå se "Add" vises, velg "Add" og fyll inn parameterverdiene.
 
-   Du skal se følgende respons, altså et resultat fra "add"-verktøyet:
+   Du skal se følgende svar, altså et resultat fra "add"-verktøyet:
 
    ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.no.png)
 
@@ -56,16 +56,16 @@ Gratulerer, du har klart å opprette og kjøre din første server!
 MCP tilbyr offisielle SDK-er for flere språk:  
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Vedlikeholdes i samarbeid med Microsoft  
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Vedlikeholdes i samarbeid med Spring AI  
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Den offisielle TypeScript-implementeringen  
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Den offisielle Python-implementeringen  
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Den offisielle Kotlin-implementeringen  
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Den offisielle TypeScript-implementasjonen  
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Den offisielle Python-implementasjonen  
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Den offisielle Kotlin-implementasjonen  
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Vedlikeholdes i samarbeid med Loopwork AI  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Den offisielle Rust-implementeringen
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Den offisielle Rust-implementasjonen
 
 ## Viktige punkter
 
-- Å sette opp et MCP-utviklingsmiljø er enkelt med språkspesifikke SDK-er  
-- Å bygge MCP-servere innebærer å opprette og registrere verktøy med klare skjemaer  
+- Oppsett av MCP-utviklingsmiljø er enkelt med språkspesifikke SDK-er  
+- Å bygge MCP-servere innebærer å lage og registrere verktøy med tydelige skjemaer  
 - Testing og feilsøking er essensielt for pålitelige MCP-implementasjoner
 
 ## Eksempler
@@ -78,11 +78,11 @@ MCP tilbyr offisielle SDK-er for flere språk:
 
 ## Oppgave
 
-Lag en enkel MCP-server med et verktøy du velger selv:  
+Lag en enkel MCP-server med et verktøy etter eget valg:  
 1. Implementer verktøyet i ditt foretrukne språk (.NET, Java, Python eller JavaScript).  
 2. Definer inputparametere og returverdier.  
 3. Kjør inspector-verktøyet for å sikre at serveren fungerer som forventet.  
-4. Test implementeringen med ulike inputverdier.
+4. Test implementasjonen med ulike inputverdier.
 
 ## Løsning
 
@@ -90,11 +90,13 @@ Lag en enkel MCP-server med et verktøy du velger selv:
 
 ## Ekstra ressurser
 
-- [MCP GitHub Repository](https://github.com/microsoft/mcp-for-beginners)
+- [Bygg agenter med Model Context Protocol på Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
+- [Remote MCP med Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Hva nå
 
 Neste: [Kom i gang med MCP-klienter](/03-GettingStarted/02-client/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på dets opprinnelige språk bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på dets opprinnelige språk skal betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår fra bruk av denne oversettelsen.
