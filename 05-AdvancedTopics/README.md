@@ -2551,4 +2551,6 @@ Design an enterprise-grade MCP implementation for a specific use case:
 
 ---
 
-Next: [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
+## What's next
+
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
