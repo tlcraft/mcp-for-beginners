@@ -1,51 +1,51 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e650db55873b456296a9c620069e2f71",
-  "translation_date": "2025-06-02T11:16:45+00:00",
+  "original_hash": "d730cbe43a8efc148677fdbc849a7d5e",
+  "translation_date": "2025-06-02T17:08:25+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "ro"
 }
 -->
-### -2- Crearea proiectului
+### -2- Creează proiectul
 
-Acum că ai instalat SDK-ul, să trecem la crearea unui proiect:
+Acum că ai instalat SDK-ul, să creăm următorul proiect:
 
-### -3- Crearea fișierelor proiectului
+### -3- Creează fișierele proiectului
 
-### -4- Crearea codului serverului
+### -4- Creează codul serverului
 
-### -5- Adăugarea unui tool și a unei resurse
+### -5- Adaugă un tool și o resursă
 
-Adaugă un tool și o resursă prin includerea următorului cod:
+Adaugă un tool și o resursă prin inserarea următorului cod:
 
 ### -6 Codul final
 
-Să adăugăm codul final necesar pentru a porni serverul:
+Să adăugăm ultimul cod necesar pentru ca serverul să pornească:
 
-### -7- Testarea serverului
+### -7- Testează serverul
 
 Pornește serverul cu următoarea comandă:
 
-### -8- Rularea cu inspectorul
+### -8- Rulează folosind inspectorul
 
-Inspectorul este un instrument excelent care poate porni serverul și îți permite să interacționezi cu el pentru a testa funcționarea. Să-l pornim:
+Inspectorul este un instrument excelent care poate porni serverul și îți permite să interacționezi cu el pentru a testa funcționarea acestuia. Să-l pornim:
 
 > [!NOTE]
-> poate arăta diferit în câmpul "command" deoarece conține comanda pentru rularea serverului cu runtime-ul tău specific/
+> Comanda afișată în câmpul „command” poate arăta diferit, deoarece conține comanda specifică pentru rularea serverului cu runtime-ul tău.
 
 Ar trebui să vezi următoarea interfață:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ro.png)
 
-1. Conectează-te la server apăsând butonul Connect  
-   Odată conectat la server, ar trebui să vezi următoarea imagine:
+1. Conectează-te la server selectând butonul Connect  
+   Odată ce te-ai conectat la server, ar trebui să vezi următorul ecran:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.ro.png)
 
-2. Selectează "Tools" și apoi "listTools", ar trebui să apară opțiunea "Add", selecteaz-o și completează valorile parametrilor.
+2. Selectează „Tools” și „listTools”, ar trebui să apară opțiunea „Add”, selecteaz-o și completează valorile parametrilor.
 
-   Vei vedea următorul răspuns, adică rezultatul de la tool-ul "add":
+   Ar trebui să vezi următorul răspuns, adică un rezultat de la tool-ul „add”:
 
    ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.ro.png)
 
@@ -62,27 +62,27 @@ MCP oferă SDK-uri oficiale pentru mai multe limbaje:
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Menținut în colaborare cu Loopwork AI
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Implementarea oficială Rust
 
-## Concluzii cheie
+## Concluzii importante
 
 - Configurarea unui mediu de dezvoltare MCP este simplă cu SDK-urile specifice fiecărui limbaj
-- Construirea serverelor MCP implică crearea și înregistrarea tool-urilor cu scheme clare
-- Testarea și depanarea sunt esențiale pentru implementări MCP fiabile
+- Construirea serverelor MCP implică crearea și înregistrarea de tool-uri cu scheme clare
+- Testarea și depanarea sunt esențiale pentru implementări MCP de încredere
 
 ## Exemple
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Calculator Java](../samples/java/calculator/README.md)
+- [Calculator .Net](../../../../03-GettingStarted/samples/csharp)
+- [Calculator JavaScript](../samples/javascript/README.md)
+- [Calculator TypeScript](../samples/typescript/README.md)
+- [Calculator Python](../../../../03-GettingStarted/samples/python)
 
 ## Tema
 
-Creează un server MCP simplu cu un tool la alegere:
-1. Implementează tool-ul în limbajul preferat (.NET, Java, Python sau JavaScript).
-2. Definește parametrii de intrare și valorile de returnare.
-3. Rulează instrumentul inspector pentru a verifica dacă serverul funcționează corect.
-4. Testează implementarea cu diverse inputuri.
+Creează un server MCP simplu cu un tool ales de tine:  
+1. Implementează tool-ul în limbajul preferat (.NET, Java, Python sau JavaScript).  
+2. Definește parametrii de intrare și valorile returnate.  
+3. Rulează tool-ul inspector pentru a verifica dacă serverul funcționează corect.  
+4. Testează implementarea cu diverse intrări.
 
 ## Soluție
 
@@ -94,7 +94,7 @@ Creează un server MCP simplu cu un tool la alegere:
 
 ## Ce urmează
 
-Următorul pas: [Getting Started with MCP Clients](/03-GettingStarted/02-client/README.md)
+Următorul pas: [Început cu MCP Clients](/03-GettingStarted/02-client/README.md)
 
 **Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea în urma utilizării acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
