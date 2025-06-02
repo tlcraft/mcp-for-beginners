@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e650db55873b456296a9c620069e2f71",
-  "translation_date": "2025-06-02T11:01:45+00:00",
+  "original_hash": "d730cbe43a8efc148677fdbc849a7d5e",
+  "translation_date": "2025-06-02T16:53:47+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "fa"
 }
@@ -17,84 +17,84 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### -5- افزودن یک ابزار و یک منبع
 
-با اضافه کردن کد زیر، یک ابزار و یک منبع اضافه کنید:
+با افزودن کد زیر، یک ابزار و یک منبع اضافه کنید:
 
 ### -6- کد نهایی
 
-کد نهایی را اضافه کنیم تا سرور بتواند راه‌اندازی شود:
+بیایید آخرین کدی که برای راه‌اندازی سرور نیاز داریم را اضافه کنیم:
 
-### -7- آزمایش سرور
+### -7- تست سرور
 
-سرور را با دستور زیر اجرا کنید:
+سرور را با دستور زیر راه‌اندازی کنید:
 
 ### -8- اجرا با استفاده از Inspector
 
-Inspector ابزاری عالی است که می‌تواند سرور شما را راه‌اندازی کند و به شما اجازه می‌دهد با آن تعامل داشته باشید تا مطمئن شوید همه چیز به درستی کار می‌کند. بیایید آن را اجرا کنیم:
+Inspector ابزاری عالی است که می‌تواند سرور شما را راه‌اندازی کند و به شما اجازه می‌دهد با آن تعامل داشته باشید تا تست کنید که درست کار می‌کند. بیایید آن را اجرا کنیم:
 
 > [!NOTE]
-> ممکن است در قسمت "command" کمی متفاوت به نظر برسد چون شامل دستور اجرای سرور با runtime خاص شما است.
+> ممکن است در فیلد "command" متفاوت به نظر برسد چون شامل دستور اجرای سرور با runtime خاص شما است.
 
 شما باید رابط کاربری زیر را ببینید:
 
-![اتصال](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.fa.png)
+![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.fa.png)
 
 1. با انتخاب دکمه Connect به سرور متصل شوید  
-   پس از اتصال به سرور، باید صفحه زیر را مشاهده کنید:
+   وقتی به سرور متصل شدید، باید صفحه زیر را مشاهده کنید:
 
-   ![متصل شده](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.fa.png)
+   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.fa.png)
 
-2. گزینه‌های "Tools" و "listTools" را انتخاب کنید، باید گزینه "Add" ظاهر شود، "Add" را انتخاب کنید و مقادیر پارامترها را وارد نمایید.
+2. گزینه‌های "Tools" و "listTools" را انتخاب کنید، باید گزینه "Add" ظاهر شود، آن را انتخاب کرده و مقادیر پارامترها را وارد کنید.
 
-   باید پاسخ زیر را ببینید، یعنی نتیجه‌ای از ابزار "add":
+   شما باید پاسخ زیر را ببینید، یعنی نتیجه‌ای از ابزار "add":
 
-   ![نتیجه اجرای add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.fa.png)
+   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.fa.png)
 
-تبریک می‌گوییم، شما موفق شدید اولین سرور خود را ایجاد و اجرا کنید!
+تبریک! شما موفق شدید اولین سرور خود را ایجاد و اجرا کنید!
 
 ### SDKهای رسمی
 
-MCP SDKهای رسمی برای چند زبان ارائه می‌دهد:
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - با همکاری مایکروسافت نگهداری می‌شود
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - با همکاری Spring AI نگهداری می‌شود
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - پیاده‌سازی رسمی TypeScript
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - پیاده‌سازی رسمی Python
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - پیاده‌سازی رسمی Kotlin
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - با همکاری Loopwork AI نگهداری می‌شود
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - پیاده‌سازی رسمی Rust
+MCP SDKهای رسمی برای چند زبان ارائه می‌دهد:  
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - با همکاری مایکروسافت نگهداری می‌شود  
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - با همکاری Spring AI نگهداری می‌شود  
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - پیاده‌سازی رسمی TypeScript  
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - پیاده‌سازی رسمی Python  
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - پیاده‌سازی رسمی Kotlin  
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - با همکاری Loopwork AI نگهداری می‌شود  
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - پیاده‌سازی رسمی Rust  
 
 ## نکات کلیدی
 
-- راه‌اندازی محیط توسعه MCP با استفاده از SDKهای مخصوص زبان، ساده است  
-- ساخت سرورهای MCP شامل ایجاد و ثبت ابزارها با اسکیمای مشخص است  
-- آزمایش و رفع اشکال برای پیاده‌سازی‌های قابل اعتماد MCP ضروری است
+- راه‌اندازی محیط توسعه MCP با SDKهای اختصاصی زبان‌ها بسیار ساده است  
+- ساخت سرورهای MCP شامل ایجاد و ثبت ابزارها با اسکیمای واضح است  
+- تست و اشکال‌زدایی برای پیاده‌سازی‌های قابل اعتماد MCP ضروری است  
 
 ## نمونه‌ها
 
-- [ماشین حساب جاوا](../samples/java/calculator/README.md)  
-- [ماشین حساب .Net](../../../../03-GettingStarted/samples/csharp)  
-- [ماشین حساب جاوااسکریپت](../samples/javascript/README.md)  
-- [ماشین حساب تایپ‌اسکریپت](../samples/typescript/README.md)  
-- [ماشین حساب پایتون](../../../../03-GettingStarted/samples/python)
+- [ماشین‌حساب Java](../samples/java/calculator/README.md)  
+- [ماشین‌حساب .Net](../../../../03-GettingStarted/samples/csharp)  
+- [ماشین‌حساب JavaScript](../samples/javascript/README.md)  
+- [ماشین‌حساب TypeScript](../samples/typescript/README.md)  
+- [ماشین‌حساب Python](../../../../03-GettingStarted/samples/python)  
 
 ## تمرین
 
-یک سرور ساده MCP با یک ابزار دلخواه بسازید:  
-1. ابزار را در زبان مورد علاقه خود (.NET، Java، Python، یا JavaScript) پیاده‌سازی کنید.  
+یک سرور ساده MCP با یک ابزار دلخواه خود بسازید:  
+1. ابزار را در زبان مورد علاقه خود پیاده‌سازی کنید (.NET، Java، Python، یا JavaScript).  
 2. پارامترهای ورودی و مقادیر بازگشتی را تعریف کنید.  
-3. ابزار Inspector را اجرا کنید تا مطمئن شوید سرور به درستی کار می‌کند.  
-4. پیاده‌سازی را با ورودی‌های مختلف تست کنید.
+3. ابزار inspector را اجرا کنید تا مطمئن شوید سرور طبق انتظار کار می‌کند.  
+4. پیاده‌سازی را با ورودی‌های مختلف تست کنید.  
 
-## راه حل
+## راه‌حل
 
-[راه حل](./solution/README.md)
+[راه‌حل](./solution/README.md)  
 
 ## منابع اضافی
 
-- [مخزن GitHub MCP](https://github.com/microsoft/mcp-for-beginners)
+- [مخزن GitHub MCP](https://github.com/microsoft/mcp-for-beginners)  
 
 ## مرحله بعد
 
 بعدی: [شروع کار با کلاینت‌های MCP](/03-GettingStarted/02-client/README.md)
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌هایی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرست ناشی از استفاده از این ترجمه نیستیم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نواقصی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوء تفاهم یا تفسیر نادرستی که ناشی از استفاده از این ترجمه باشد، نیستیم.
