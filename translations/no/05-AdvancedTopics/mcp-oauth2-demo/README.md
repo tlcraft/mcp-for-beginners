@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:33:25+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:11:20+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "no"
 }
@@ -11,8 +11,8 @@ CO_OP_TRANSLATOR_METADATA:
 
 Dette prosjektet er en **minimal Spring Boot-applikasjon** som fungerer som både:
 
-* en **Spring Authorization Server** (som utsteder JWT-tilgangstokener via `client_credentials`-flyten), og  
-* en **Resource Server** (som beskytter sitt eget `/hello` endepunkt).
+* en **Spring Authorization Server** (utsteder JWT-tilgangstokener via `client_credentials`-flyten), og  
+* en **Resource Server** (beskytter sitt eget `/hello`-endepunkt).
 
 Det speiler oppsettet vist i [Spring-blogginnlegget (2. april 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Teste OAuth2-konfigurasjonen
+## Testing av OAuth2-konfigurasjonen
 
 Du kan teste OAuth2-sikkerhetskonfigurasjonen med følgende steg:
 
-### 1. Sjekk at serveren kjører og er sikret
+### 1. Bekreft at serveren kjører og er sikret
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Hent et tilgangstoken ved bruk av klientlegitimasjon
+### 2. Skaff et tilgangstoken ved bruk av klientlegitimasjon
 
 ```bash
 # Get and extract the full token response
@@ -63,7 +63,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
 
 Merk: Basic Authentication-headeren (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Tilgang til det beskyttede endepunktet med tokenet
+### 3. Få tilgang til det beskyttede endepunktet med tokenet
 
 ```bash
 # Using the saved token
@@ -77,7 +77,7 @@ Et vellykket svar med "Hello from MCP OAuth2 Demo!" bekrefter at OAuth2-konfigur
 
 ---
 
-## Bygg container
+## Container build
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Distribuer til **Azure Container Apps**
+## Deploy til **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -102,7 +102,7 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 ## Koble til **Azure API Management**
 
-Legg til denne innkommende policyen i API-en din:
+Legg til denne inbound-policyen i API-et ditt:
 
 ```xml
 <inbound>
@@ -122,7 +122,7 @@ APIM vil hente JWKS og validere hver forespørsel.
 
 ## Hva nå
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på dets opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved bruk av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk skal betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår fra bruken av denne oversettelsen.

@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:54:13+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:34:47+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "bg"
 }
 -->
 # MCP OAuth2 Demo
 
-Този проект е **минимално Spring Boot приложение**, което изпълнява ролята и на:
+Този проект е **минимално Spring Boot приложение**, което изпълнява ролята както на:
 
-* **Spring Authorization Server** (издава JWT токени за достъп чрез `client_credentials` потока), и  
-* **Resource Server** (защитава собствения си `/hello` endpoint).
+* **Spring Authorization Server** (издава JWT достъпни токени чрез `client_credentials` flow), така и  
+* **Resource Server** (защитава собствената си `/hello` крайна точка).
 
-Той отразява конфигурацията, показана в [блога на Spring (2 април 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Той отразява конфигурацията, показана в [Spring блог поста (2 април 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,7 +36,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Тестване на OAuth2 конфигурацията
 
-Можете да тествате OAuth2 защитата, като следвате тези стъпки:
+Можете да тествате OAuth2 сигурността чрез следните стъпки:
 
 ### 1. Проверете дали сървърът работи и е защитен
 
@@ -45,7 +45,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -v http://localhost:8081/
 ```
 
-### 2. Вземете токен за достъп с помощта на клиентски идентификационни данни
+### 2. Вземете достъпен токен с помощта на клиентски данни
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Забележка: Заглавката за Basic Authentication е `bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Забележка: Basic Authentication хедърът (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Достъп до защитения endpoint с токена
+### 3. Достъп до защитената крайна точка с токена
 
 ```bash
 # Using the saved token
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Деплой в **Azure Container Apps**
+## Разгръщане в **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -96,11 +96,11 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 Ingress FQDN става вашият **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`).
+Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
-## Интеграция с **Azure API Management**
+## Свързване с **Azure API Management**
 
 Добавете тази входяща политика към вашето API:
 
@@ -122,7 +122,7 @@ APIM ще изтегли JWKS и ще валидира всяка заявка.
 
 ## Какво следва
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Отказ от отговорност**:  
-Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или неправилни тълкувания, произтичащи от използването на този превод.
+Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или погрешни тълкувания, произтичащи от използването на този превод.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:03:04+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T18:29:57+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "mo"
 }
@@ -11,8 +11,8 @@ CO_OP_TRANSLATOR_METADATA:
 
 Este proyecto es una **aplicación mínima de Spring Boot** que funciona como:
 
-* un **Spring Authorization Server** (emitiendo tokens de acceso JWT mediante el flujo `client_credentials`), y  
-* un **Resource Server** (protegiendo su propio endpoint `/hello`).
+* un **Servidor de Autorización Spring** (emitiendo tokens de acceso JWT mediante el flujo `client_credentials`), y  
+* un **Servidor de Recursos** (protegiendo su propio endpoint `/hello`).
 
 Refleja la configuración mostrada en el [post del blog de Spring (2 Abr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Probando la configuración OAuth2
+## Probando la configuración de OAuth2
 
 Puedes probar la configuración de seguridad OAuth2 con los siguientes pasos:
 
-### 1. Verifica que el servidor esté funcionando y seguro
+### 1. Verifica que el servidor esté en funcionamiento y seguro
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Obtén un token de acceso usando credenciales de cliente
+### 2. Obtén un token de acceso usando las credenciales del cliente
 
 ```bash
 # Get and extract the full token response
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Una respuesta exitosa con "Hello from MCP OAuth2 Demo!" confirma que la configuración OAuth2 funciona correctamente.
+Una respuesta exitosa con "Hello from MCP OAuth2 Demo!" confirma que la configuración de OAuth2 funciona correctamente.
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Desplegar en **Azure Container Apps**
+## Despliegue en **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -100,7 +100,7 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 ---
 
-## Integrar con **Azure API Management**
+## Integración con **Azure API Management**
 
 Agrega esta política de entrada a tu API:
 
@@ -122,11 +122,7 @@ APIM obtendrá el JWKS y validará cada solicitud.
 
 ## Qué sigue
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-If by "mo" you mean a specific language or dialect, could you please clarify which language "mo" refers to? This will help me provide an accurate translation.
+Dis dokyumen it transletid yusng AI transleyshon sarvis [Co-op Translator](https://github.com/Azure/co-op-translator). Wai wi strav for akyuras, plis bi aware dat otomaytid transleyshons me bi kontening erors or inakyerasees. Di orijinal dokyumen in its neitiv langwij shud bi konsidrd di autoritativ sors. For kritikal informeyshon, profeshonal hyuman transleyshon is rekomended. Wi ar not laybl for eni misunderstandingz or misinterpretations arising from di yus of dis transleyshon.

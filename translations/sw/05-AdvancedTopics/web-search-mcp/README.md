@@ -1,52 +1,52 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b0660b689ab793a8e9aefe29fb7f8b6a",
-  "translation_date": "2025-06-02T13:22:38+00:00",
+  "original_hash": "bc249f8b228953fafca05f94bb572aac",
+  "translation_date": "2025-06-02T19:25:36+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "sw"
 }
 -->
-# Lesson: Kujenga Server ya Utafutaji Mtandao wa MCP
+# Lesson: Kujenga Web Search MCP Server
 
-Sura hii inaonyesha jinsi ya kujenga wakala halisi wa AI unaounganisha na API za nje, kushughulikia aina mbalimbali za data, kusimamia makosa, na kuendesha zana nyingi—yote kwa muundo unaotumika katika uzalishaji. Utaona:
+Sura hii inaonyesha jinsi ya kujenga wakala halisi wa AI anayejumuisha APIs za nje, kushughulikia aina mbalimbali za data, kusimamia makosa, na kuendesha zana nyingi—yote haya kwa muundo unaotumika katika uzalishaji. Utajifunza:
 
-- **Ushirikiano na API za nje zinazohitaji uthibitishaji**
+- **Ujumlishaji wa APIs za nje zinazohitaji uthibitishaji**
 - **Kushughulikia aina mbalimbali za data kutoka kwa vyanzo vingi**
-- **Mbinu thabiti za kushughulikia makosa na kuandika kumbukumbu**
-- **Uendeshaji wa zana nyingi katika server moja**
+- **Mikakati thabiti ya kushughulikia makosa na kurekodi matukio**
+- **Uendeshaji wa zana nyingi ndani ya server moja**
 
-Mwisho wa somo, utakuwa na uzoefu wa vitendo na mifumo bora inayohitajika kwa matumizi ya AI ya hali ya juu na programu zinazotumia LLM.
+Mwisho wa somo, utakuwa na uzoefu wa vitendo na mifano bora muhimu kwa programu za AI na LLM zilizoendelea.
 
 ## Utangulizi
 
-Katika somo hili, utajifunza jinsi ya kujenga server na mteja wa MCP wa hali ya juu ambao huongeza uwezo wa LLM kwa data ya mtandao kwa wakati halisi kwa kutumia SerpAPI. Hii ni ujuzi muhimu kwa kuunda mawakala wa AI yanayoweza kupata taarifa za hivi karibuni mtandaoni.
+Katika somo hili, utajifunza jinsi ya kujenga MCP server na mteja wa hali ya juu unaoongeza uwezo wa LLM kwa data ya mtandao ya wakati halisi kwa kutumia SerpAPI. Hii ni ujuzi muhimu kwa kuunda mawakala wa AI wenye uwezo wa kupata taarifa za sasa kutoka mtandao.
 
 ## Malengo ya Kujifunza
 
 Mwisho wa somo hili, utaweza:
 
-- Kuunganisha API za nje (kama SerpAPI) kwa usalama kwenye server ya MCP
-- Kutekeleza zana nyingi kwa ajili ya utafutaji mtandao, habari, bidhaa, na maswali-jawabu
+- Kuunganisha APIs za nje (kama SerpAPI) kwa usalama ndani ya MCP server
+- Kutekeleza zana nyingi kwa ajili ya utafutaji wa wavuti, habari, bidhaa, na maswali-jawabu
 - Kuchambua na kuandaa data iliyopangwa kwa matumizi ya LLM
-- Kushughulikia makosa na kusimamia viwango vya maombi kwa ufanisi
+- Kushughulikia makosa na kusimamia mipaka ya maombi ya API kwa ufanisi
 - Kujenga na kujaribu wateja wa MCP wa moja kwa moja na wa mwingiliano
 
-## Server ya Utafutaji Mtandao ya MCP
+## Web Search MCP Server
 
-Sehemu hii inaonyesha usanifu na sifa za Server ya Utafutaji Mtandao ya MCP. Utaona jinsi FastMCP na SerpAPI vinavyotumika pamoja kuongeza uwezo wa LLM kwa data ya mtandao kwa wakati halisi.
+Sehemu hii inaelezea usanifu na sifa za Web Search MCP Server. Utaona jinsi FastMCP na SerpAPI vinavyotumika pamoja kuongeza uwezo wa LLM kwa data ya mtandao ya wakati halisi.
 
 ### Muhtasari
 
-Utekelezaji huu una zana nne zinazothibitisha uwezo wa MCP kushughulikia kazi mbalimbali zinazotegemea API za nje kwa usalama na ufanisi:
+Utekelezaji huu una zana nne zinazothibitisha uwezo wa MCP kushughulikia kazi mbalimbali za API za nje kwa usalama na ufanisi:
 
-- **general_search**: Kwa matokeo mapana ya mtandao
+- **general_search**: Kwa matokeo ya jumla ya wavuti
 - **news_search**: Kwa vichwa vya habari vya hivi karibuni
-- **product_search**: Kwa data za e-commerce
+- **product_search**: Kwa data ya e-commerce
 - **qna**: Kwa vipande vya maswali na majibu
 
 ### Sifa
-- **Mifano ya Msimbo**: Inajumuisha sehemu za msimbo maalum kwa lugha ya Python (na rahisi kuongeza lugha nyingine) kwa kutumia sehemu zinazoweza kufichwa ili kufafanua vizuri
+- **Mifano ya Msimbo**: Inajumuisha sehemu za msimbo maalum wa lugha kwa Python (na rahisi kupanuliwa kwa lugha nyingine) kwa kutumia sehemu zinazoweza kufichwa kwa uwazi
 
 <details>  
 <summary>Python</summary>  
@@ -69,11 +69,11 @@ async def run_search():
 ```
 </details>
 
-Kabla ya kuendesha mteja, ni muhimu kuelewa kile server inachofanya. [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
+Kabla ya kuendesha mteja, ni vyema kuelewa kazi za server. Angalia [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
 
 You can review the full implementation in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
-Hapa kuna mfano mfupi wa jinsi server inavyofafanua na kusajili zana:
+Hapa ni mfano mfupi wa jinsi server inavyofafanua na kusajili zana:
 
 <details>  
 <summary>Python Server</summary> 
@@ -93,24 +93,24 @@ if __name__ == "__main__":
 ```
 </details>
 
-- **Ushirikiano na API za Nje**: Inaonyesha jinsi ya kushughulikia funguo za API na maombi ya nje kwa usalama
-- **Uchambuzi wa Data Iliyo Pangiliwa**: Inaonyesha jinsi ya kubadilisha majibu ya API kuwa muundo unaofaa kwa LLM
-- **Kushughulikia Makosa**: Kushughulikia makosa kwa nguvu pamoja na kuandika kumbukumbu ipasavyo
-- **Mteja wa Mwingiliano**: Inajumuisha majaribio ya moja kwa moja na hali ya mwingiliano kwa ajili ya majaribio
-- **Usimamizi wa Muktadha**: Inatumia MCP Context kwa ajili ya kuandika kumbukumbu na kufuatilia maombi
+- **Ujumlishaji wa API za Nje**: Inaonyesha jinsi ya kushughulikia kwa usalama funguo za API na maombi ya nje
+- **Uchambuzi wa Data Iliyo Pangiliwa**: Inaonyesha jinsi ya kubadilisha majibu ya API kuwa muundo unaopendelewa na LLM
+- **Kushughulikia Makosa**: Kushughulikia makosa kwa nguvu na kurekodi matukio ipasavyo
+- **Mteja wa Mwingiliano**: Inajumuisha majaribio ya moja kwa moja na hali ya mwingiliano kwa majaribio
+- **Usimamizi wa Muktadha**: Inatumia MCP Context kwa ajili ya kurekodi na kufuatilia maombi
 
 ## Mahitaji ya Awali
 
-Kabla ya kuanza, hakikisha mazingira yako yamewekwa ipasavyo kwa kufuata hatua hizi. Hii itahakikisha kwamba tegemezi zote zimewekwa na funguo zako za API zimepangwa kwa usahihi kwa maendeleo na majaribio bila matatizo.
+Kabla ya kuanza, hakikisha mazingira yako yamewekwa ipasavyo kwa kufuata hatua hizi. Hii itahakikisha kuwa utegemezi wote umewekwa na funguo zako za API zimewekwa kwa usahihi kwa maendeleo na majaribio bila matatizo.
 
-- Python 3.8 au zaidi
-- Funguo ya SerpAPI (Jisajili kwenye [SerpAPI](https://serpapi.com/) - kiwango cha bure kinapatikana)
+- Python 3.8 au juu zaidi
+- Funguo ya SerpAPI API (Jisajili kwenye [SerpAPI](https://serpapi.com/) - tier ya bure inapatikana)
 
 ## Ufungaji
 
 Ili kuanza, fuata hatua hizi kuweka mazingira yako:
 
-1. Sakinisha tegemezi kwa kutumia uv (inapendekezwa) au pip:
+1. Sakinisha utegemezi kwa kutumia uv (inayopendekezwa) au pip:
 
 ```bash
 # Using uv (recommended)
@@ -120,7 +120,7 @@ uv pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-2. Tengeneza faili `.env` kwenye mizizi ya mradi na funguo yako ya SerpAPI:
+2. Tengeneza faili `.env` kwenye mzizi wa mradi na funguo yako ya SerpAPI:
 
 ```
 SERPAPI_KEY=your_serpapi_key_here
@@ -128,19 +128,19 @@ SERPAPI_KEY=your_serpapi_key_here
 
 ## Matumizi
 
-Server ya Utafutaji Mtandao ya MCP ni sehemu kuu inayotoa zana za utafutaji mtandao, habari, bidhaa, na maswali-jawabu kwa kuunganishwa na SerpAPI. Inashughulikia maombi yanayoingia, kusimamia simu za API, kuchambua majibu, na kurudisha matokeo yaliyopangwa kwa mteja.
+Web Search MCP Server ni sehemu kuu inayotoa zana za utafutaji wa wavuti, habari, bidhaa, na maswali-jawabu kwa kuunganishwa na SerpAPI. Inashughulikia maombi yanayoingia, kusimamia simu za API, kuchambua majibu, na kurudisha matokeo yaliyopangwa kwa mteja.
 
-Unaweza kupitia utekelezaji kamili katika [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
+Unaweza kupitia utekelezaji kamili kwenye [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
 ### Kuendesha Server
 
-Kuanzisha server ya MCP, tumia amri ifuatayo:
+Kuanza MCP server, tumia amri ifuatayo:
 
 ```bash
 python server.py
 ```
 
-Server itaendesha kama server ya MCP inayotumia stdio ambayo mteja anaweza kuunganishwa moja kwa moja.
+Server itaendesha kama MCP server inayotumia stdio ambayo mteja anaweza kuunganishwa moja kwa moja.
 
 ### Hali za Mteja
 
@@ -153,24 +153,24 @@ You can review the full implementation in [`client.py`](../../../../05-AdvancedT
 
 ### Kuendesha Mteja
 
-Kuendesha majaribio ya moja kwa moja (hii itaanzisha server moja kwa moja):
+Kukimbia majaribio ya moja kwa moja (hii itaanzisha server moja kwa moja):
 
 ```bash
 python client.py
 ```
 
-Au endesha katika hali ya mwingiliano:
+Au endesha kwa hali ya mwingiliano:
 
 ```bash
 python client.py --interactive
 ```
 
-### Kujaribu kwa Njia Mbalimbali
+### Kujaribu kwa Njia Mbali Mbali
 
 Kuna njia kadhaa za kujaribu na kuingiliana na zana zinazotolewa na server, kulingana na mahitaji na mtiririko wako wa kazi.
 
-#### Kuandika Skripti za Jaribio Maalum kwa MCP Python SDK
-Unaweza pia kujenga skripti zako za majaribio kwa kutumia MCP Python SDK:
+#### Kuandika Skripti Maalum za Jaribio kwa MCP Python SDK
+Pia unaweza kujenga skripti zako za jaribio kwa kutumia MCP Python SDK:
 
 <details>
 <summary>Python</summary>
@@ -195,27 +195,27 @@ async def test_custom_query():
 ```
 </details>
 
-Katika muktadha huu, "skripti ya jaribio" inamaanisha programu maalum ya Python unayoandika ili itumike kama mteja wa server ya MCP. Badala ya kuwa jaribio rasmi la kitengo, skripti hii inakuwezesha kuunganishwa na server, kuitisha zana yoyote na vigezo unavyotaka, na kuchambua matokeo. Njia hii ni muhimu kwa:
-- Kuanzisha na kujaribu kuitisha zana
-- Kuhakiki jinsi server inavyotenda kwa pembejeo tofauti
-- Kuendesha mfululizo wa kuitisha zana kiotomatiki
-- Kujenga mtiririko wako wa kazi au ushirikiano juu ya server ya MCP
+Katika muktadha huu, "skripti ya jaribio" inamaanisha programu maalum ya Python unayoandika kuifanya kama mteja wa MCP server. Badala ya kuwa jaribio rasmi la kitengo, skripti hii inakuwezesha kuunganishwa na server kwa mpangilio, kuitisha zana yoyote na vigezo unavyotaka, na kuchunguza matokeo. Njia hii ni muhimu kwa:
+- Kuunda prototypes na kujaribu miito ya zana
+- Kuhakiki jinsi server inavyojibu pembejeo tofauti
+- Kuendesha miito ya zana mara kwa mara kiotomatiki
+- Kujenga mitiririko au ujumuishaji wako juu ya MCP server
 
-Unaweza kutumia skripti za jaribio kujaribu haraka maswali mapya, kutatua tabia ya zana, au hata kama msingi wa otomatiki zaidi. Hapa chini kuna mfano wa jinsi ya kutumia MCP Python SDK kuunda skripti kama hiyo:
+Unaweza kutumia skripti za jaribio haraka kujaribu maswali mapya, kutatua matatizo ya zana, au hata kama msingi wa uendeshaji wa hali ya juu zaidi. Hapa chini ni mfano wa jinsi ya kutumia MCP Python SDK kuunda skripti kama hiyo:
 
 ## Maelezo ya Zana
 
-Unaweza kutumia zana zifuatazo zinazotolewa na server kufanya aina mbalimbali za utafutaji na maswali. Kila zana imeelezewa hapa chini pamoja na vigezo na mfano wa matumizi.
+Unaweza kutumia zana zifuatazo zinazotolewa na server kufanya aina tofauti za utafutaji na maswali. Kila zana inaelezewa hapa chini pamoja na vigezo na mfano wa matumizi.
 
 Sehemu hii inatoa maelezo kuhusu kila zana inayopatikana na vigezo vyake.
 
 ### general_search
 
-Hufanya utafutaji wa mtandao kwa jumla na kurudisha matokeo yaliyopangwa.
+Hufanya utafutaji wa jumla wa wavuti na kurudisha matokeo yaliyopangwa.
 
 **Jinsi ya kuitisha zana hii:**
 
-Unaweza kuitisha `general_search` kutoka kwenye skripti yako kwa kutumia MCP Python SDK, au kuingiliana nayo kwa kutumia Inspector au hali ya mwingiliano ya mteja. Hapa kuna mfano wa msimbo kwa kutumia SDK:
+Unaweza kuitisha `general_search` kutoka kwa skripti yako kwa kutumia MCP Python SDK, au kuingiliana nayo kwa kutumia Inspector au hali ya mwingiliano ya mteja. Hapa kuna mfano wa msimbo kwa kutumia SDK:
 
 <details>
 <summary>Mfano wa Python</summary>
@@ -237,10 +237,10 @@ async def run_general_search():
 ```
 </details>
 
-Vinginevyo, katika hali ya mwingiliano, chagua `general_search` from the menu and enter your query when prompted.
+Mbali na hayo, katika hali ya mwingiliano, chagua `general_search` from the menu and enter your query when prompted.
 
 **Parameters:**
-- `query` (kamba): Swali la utafutaji
+- `query` (string): Swali la utafutaji
 
 **Mfano wa Ombi:**
 
@@ -256,7 +256,7 @@ Hufanya utafutaji wa makala za habari za hivi karibuni zinazohusiana na swali.
 
 **Jinsi ya kuitisha zana hii:**
 
-Unaweza kuitisha `news_search` kutoka kwenye skripti yako kwa kutumia MCP Python SDK, au kuingiliana nayo kwa kutumia Inspector au hali ya mwingiliano ya mteja. Hapa kuna mfano wa msimbo kwa kutumia SDK:
+Unaweza kuitisha `news_search` kutoka kwa skripti yako kwa kutumia MCP Python SDK, au kuingiliana nayo kwa kutumia Inspector au hali ya mwingiliano ya mteja. Hapa kuna mfano wa msimbo kwa kutumia SDK:
 
 <details>
 <summary>Mfano wa Python</summary>
@@ -278,10 +278,10 @@ async def run_news_search():
 ```
 </details>
 
-Vinginevyo, katika hali ya mwingiliano, chagua `news_search` from the menu and enter your query when prompted.
+Mbali na hayo, katika hali ya mwingiliano, chagua `news_search` from the menu and enter your query when prompted.
 
 **Parameters:**
-- `query` (kamba): Swali la utafutaji
+- `query` (string): Swali la utafutaji
 
 **Mfano wa Ombi:**
 
@@ -297,7 +297,7 @@ Hufanya utafutaji wa bidhaa zinazolingana na swali.
 
 **Jinsi ya kuitisha zana hii:**
 
-Unaweza kuitisha `product_search` kutoka kwenye skripti yako kwa kutumia MCP Python SDK, au kuingiliana nayo kwa kutumia Inspector au hali ya mwingiliano ya mteja. Hapa kuna mfano wa msimbo kwa kutumia SDK:
+Unaweza kuitisha `product_search` kutoka kwa skripti yako kwa kutumia MCP Python SDK, au kuingiliana nayo kwa kutumia Inspector au hali ya mwingiliano ya mteja. Hapa kuna mfano wa msimbo kwa kutumia SDK:
 
 <details>
 <summary>Mfano wa Python</summary>
@@ -319,10 +319,10 @@ async def run_product_search():
 ```
 </details>
 
-Vinginevyo, katika hali ya mwingiliano, chagua `product_search` from the menu and enter your query when prompted.
+Mbali na hayo, katika hali ya mwingiliano, chagua `product_search` from the menu and enter your query when prompted.
 
 **Parameters:**
-- `query` (kamba): Swali la utafutaji wa bidhaa
+- `query` (string): Swali la utafutaji wa bidhaa
 
 **Mfano wa Ombi:**
 
@@ -338,7 +338,7 @@ Hupata majibu ya moja kwa moja kwa maswali kutoka kwa injini za utafutaji.
 
 **Jinsi ya kuitisha zana hii:**
 
-Unaweza kuitisha `qna` kutoka kwenye skripti yako kwa kutumia MCP Python SDK, au kuingiliana nayo kwa kutumia Inspector au hali ya mwingiliano ya mteja. Hapa kuna mfano wa msimbo kwa kutumia SDK:
+Unaweza kuitisha `qna` kutoka kwa skripti yako kwa kutumia MCP Python SDK, au kuingiliana nayo kwa kutumia Inspector au hali ya mwingiliano ya mteja. Hapa kuna mfano wa msimbo kwa kutumia SDK:
 
 <details>
 <summary>Mfano wa Python</summary>
@@ -360,10 +360,10 @@ async def run_qna():
 ```
 </details>
 
-Vinginevyo, katika hali ya mwingiliano, chagua `qna` from the menu and enter your question when prompted.
+Mbali na hayo, katika hali ya mwingiliano, chagua `qna` from the menu and enter your question when prompted.
 
 **Parameters:**
-- `question` (kamba): Swali unalotaka kupata jibu
+- `question` (string): Swali unalotaka kupata jibu
 
 **Mfano wa Ombi:**
 
@@ -375,7 +375,7 @@ Vinginevyo, katika hali ya mwingiliano, chagua `qna` from the menu and enter you
 
 ## Maelezo ya Msimbo
 
-Sehemu hii inatoa vipande vya msimbo na marejeleo ya utekelezaji wa server na mteja.
+Sehemu hii inatoa vipande vya msimbo na marejeleo kwa utekelezaji wa server na mteja.
 
 <details>
 <summary>Python</summary>
@@ -390,27 +390,27 @@ import httpx
 ```
 </details>
 
-## Misingi ya Juu katika Somo Hili
+## Dhana za Juu katika Somo Hili
 
-Kabla ya kuanza kujenga, hapa kuna baadhi ya dhana muhimu za hali ya juu zitakazojitokeza katika sura hii. Kuelewa hizi kutakusaidia kufuatilia kwa urahisi, hata kama ni mpya kwako:
+Kabla ya kuanza kujenga, hapa kuna dhana muhimu za juu zitakazojitokeza katika sura hii. Kuelewa hizi kutakusaidia kufuatilia, hata kama ni mpya kwako:
 
-- **Uendeshaji wa Zana Nyingi**: Hii inamaanisha kuendesha zana tofauti kadhaa (kama utafutaji mtandao, utafutaji habari, utafutaji bidhaa, na maswali-jawabu) ndani ya server moja ya MCP. Inaruhusu server yako kushughulikia kazi mbalimbali, siyo moja tu.
-- **Kushughulikia Viwango vya Maombi ya API**: API nyingi za nje (kama SerpAPI) hupunguza idadi ya maombi unayoweza kutuma kwa muda fulani. Msimbo mzuri unahakikisha kukagua viwango hivi na kuzishughulikia kwa staha, ili app yako isivunjike ukiwa umefikia kikomo.
-- **Uchambuzi wa Data Iliyo Pangiliwa**: Majibu ya API mara nyingi ni magumu na yenye muundo wa ndani. Dhana hii ni kuhusu kubadilisha majibu hayo kuwa muundo safi, rahisi kutumia na rafiki kwa LLM au programu nyingine.
-- **Urejeshaji wa Makosa**: Wakati mwingine mambo hayendi sawa—labda mtandao umevunjika, au API hairejeshi kile unachotarajia. Urejeshaji wa makosa unamaanisha msimbo wako unaweza kushughulikia matatizo haya na bado kutoa maoni yenye maana, badala ya kuanguka.
-- **Uhakiki wa Vigezo**: Hii ni kuhusu kuhakikisha kwamba pembejeo zote kwa zana zako ni sahihi na salama kutumia. Inajumuisha kuweka thamani za msingi na kuhakikisha aina za data ni sahihi, ambayo husaidia kuzuia hitilafu na mkanganyiko.
+- **Uendeshaji wa Zana Nyingi**: Hii inamaanisha kuendesha zana tofauti (kama utafutaji wa wavuti, habari, bidhaa, na maswali-jawabu) ndani ya MCP server moja. Inaruhusu server yako kushughulikia kazi mbalimbali, si moja tu.
+- **Kushughulikia Mipaka ya Kiwango cha Maombi ya API**: APIs nyingi za nje (kama SerpAPI) zina mipaka ya idadi ya maombi unayoweza kufanya kwa muda fulani. Msimbo mzuri huangalia mipaka hii na kushughulikia kwa ustadi, ili programu yako isivunjike ukipita kikomo.
+- **Uchambuzi wa Data Iliyo Pangiliwa**: Majibu ya API mara nyingi ni magumu na yenye tabaka nyingi. Dhana hii ni kuhusu kubadilisha majibu hayo kuwa muundo safi, rahisi kutumia na rafiki kwa LLM au programu nyingine.
+- **Urejeshaji wa Makosa**: Wakati mwingine mambo hayakwendi sawa—labda mtandao unashindwa, au API hairejeshi kile unachotarajia. Urejeshaji wa makosa unamaanisha msimbo wako unaweza kushughulikia matatizo haya na bado kutoa mrejesho wenye manufaa, badala ya kuanguka kabisa.
+- **Uthibitishaji wa Vigezo**: Hii ni kuhusu kuhakikisha kwamba pembejeo zote za zana zako ni sahihi na salama kutumia. Inajumuisha kuweka thamani za msingi na kuhakikisha aina ni sahihi, ambayo husaidia kuzuia hitilafu na mkanganyiko.
 
-Sehemu hii itakusaidia kugundua na kutatua matatizo ya kawaida unayoweza kukutana nayo unapotumia Server ya Utafutaji Mtandao ya MCP. Ukikumbana na makosa au tabia isiyotarajiwa, sehemu hii ya kutatua matatizo inatoa suluhisho kwa matatizo yanayojitokeza mara kwa mara. Pitia vidokezo hivi kabla ya kutafuta msaada zaidi—mara nyingi huondoa matatizo haraka.
+Sehemu hii itakusaidia kugundua na kutatua matatizo ya kawaida unayoweza kukutana nayo ukiwa unafanya kazi na Web Search MCP Server. Ukikumbana na makosa au tabia isiyotegemewa, sehemu hii ya utatuzi inatoa suluhisho kwa matatizo yanayojirudia mara nyingi. Pitia vidokezo hivi kabla ya kutafuta msaada zaidi—mara nyingi hutatua matatizo haraka.
 
-## Kutatua Matatizo
+## Utatuzi wa Matatizo
 
-Unapofanya kazi na Server ya Utafutaji Mtandao ya MCP, huenda ukakutana na matatizo mara kwa mara—hii ni kawaida wakati wa kuendeleza kwa kutumia API za nje na zana mpya. Sehemu hii inatoa suluhisho za vitendo kwa matatizo yanayojitokeza mara kwa mara, ili urudi kwenye kazi haraka. Ukikumbana na kosa, anza hapa: vidokezo hapa chini vinashughulikia matatizo yanayokumba watumiaji wengi na mara nyingi vinaweza kutatua tatizo lako bila msaada zaidi.
+Unapofanya kazi na Web Search MCP Server, mara kwa mara unaweza kukutana na changamoto—hii ni kawaida wakati wa kuendeleza kwa kutumia APIs za nje na zana mpya. Sehemu hii inatoa suluhisho za vitendo kwa matatizo yanayojirudia, ili uweze kurejea kwenye mstari haraka. Ukikumbana na kosa, anza hapa: vidokezo hapa chini vinashughulikia matatizo ambayo watumiaji wengi hukutana nayo na mara nyingi vinaweza kutatua tatizo lako bila msaada wa ziada.
 
 ### Matatizo ya Kawaida
 
-Hapa chini ni baadhi ya matatizo yanayojitokeza mara kwa mara kwa watumiaji, pamoja na maelezo wazi na hatua za kuyatatua:
+Hapa chini ni baadhi ya matatizo yanayojirudia mara kwa mara watumiaji hukutana nayo, pamoja na maelezo wazi na hatua za kuyatatua:
 
-1. **SERPAPI_KEY Haipo katika faili .env**
+1. **Kukosekana kwa SERPAPI_KEY katika faili .env**
    - Ikiwa unaona kosa `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
 
 2. **Module not found errors**
@@ -420,11 +420,11 @@ Hapa chini ni baadhi ya matatizo yanayojitokeza mara kwa mara kwa watumiaji, pam
    - If you get an error like `Error during client execution`, it often means the client can't connect to the server, or the server isn't running as expected. Double-check that both the client and server are compatible versions, and that `server.py` is present and running in the correct directory. Restarting both the server and client can also help.
 
 4. **SerpAPI errors**
-   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env`, hakikisha umeunda faili `.env` kama inavyoelezwa. Ikiwa funguo yako ni sahihi lakini bado unapata kosa hili, angalia kama kiwango chako cha bure kimeisha.
+   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env` hakikisha umeunda faili `.env` kama inavyohitajika. Ikiwa funguo yako ni sahihi lakini bado unapata kosa hili, angalia kama tier yako ya bure imeisha.
 
-### Hali ya Debug
+### Hali ya Kurekodi (Debug Mode)
 
-Kwa kawaida, app inaandika kumbukumbu za habari muhimu tu. Ikiwa unataka kuona maelezo zaidi kuhusu kinachoendelea (kwa mfano, kutatua matatizo magumu), unaweza kuwasha hali ya DEBUG. Hii itaonyesha mengi zaidi kuhusu kila hatua app inayoichukua.
+Kwa kawaida, programu inarekodi tu taarifa muhimu. Ikiwa unataka kuona maelezo zaidi kuhusu kinachoendelea (kwa mfano, kutambua matatizo magumu), unaweza kuwezesha hali ya DEBUG. Hii itaonyesha mengi zaidi kuhusu kila hatua inayochukuliwa na programu.
 
 **Mfano: Matokeo ya Kawaida**
 ```plaintext
@@ -446,9 +446,9 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-Angalia jinsi hali ya DEBUG inajumuisha mistari ya ziada kuhusu maombi ya HTTP, majibu, na maelezo mengine ya ndani. Hii inaweza kusaidia sana wakati wa kutatua matatizo.
+Angalia jinsi hali ya DEBUG inajumuisha mistari ya ziada kuhusu maombi ya HTTP, majibu, na maelezo mengine ya ndani. Hii inaweza kusaidia sana katika utatuzi wa matatizo.
 
-Ili kuwasha hali ya DEBUG, weka kiwango cha kuandika kumbukumbu kuwa DEBUG juu ya `client.py` or `server.py`:
+Ili kuwezesha hali ya DEBUG, weka kiwango cha kurekodi (logging level) kuwa DEBUG juu ya faili yako `client.py` or `server.py`:
 
 <details>
 <summary>Python</summary>
@@ -465,9 +465,9 @@ logging.basicConfig(
 
 ---
 
-## Kinachofuata
+## Hatua inayofuata
 
-- [6. Michango ya Jamii](../../06-CommunityContributions/README.md)
+- [6. Community Contributions](../../06-CommunityContributions/README.md)
 
-**Kasi ya Majaribio**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo halali. Kwa taarifa muhimu, tafsiri ya kitaalamu inayotolewa na binadamu inashauriwa. Hatubebwi jukumu kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kang’amuzi**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za moja kwa moja zinaweza kuwa na makosa au upungufu wa usahihi. Hati asilia katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo halali. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

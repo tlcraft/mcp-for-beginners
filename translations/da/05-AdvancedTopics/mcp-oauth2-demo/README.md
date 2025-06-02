@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:31:59+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:09:40+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "da"
 }
@@ -12,9 +12,9 @@ CO_OP_TRANSLATOR_METADATA:
 Dette projekt er en **minimal Spring Boot-applikation**, der fungerer som både:
 
 * en **Spring Authorization Server** (udsteder JWT-adgangstokens via `client_credentials` flowet), og  
-* en **Resource Server** (beskytter sit eget `/hello` endpoint).
+* en **Resource Server** (beskytter sin egen `/hello` endpoint).
 
-Det afspejler opsætningen vist i [Spring blogindlægget (2. april 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Det spejler opsætningen vist i [Spring blogindlægget (2. apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -63,7 +63,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
 
 Note: Basic Authentication-headeren (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Få adgang til det beskyttede endpoint med tokenet
+### 3. Få adgang til den beskyttede endpoint ved hjælp af tokenet
 
 ```bash
 # Using the saved token
@@ -116,13 +116,13 @@ Tilføj denne inbound policy til din API:
 </inbound>
 ```
 
-APIM henter JWKS og validerer hver anmodning.
+APIM vil hente JWKS og validere hver anmodning.
 
 ---
 
-## Hvad er det næste
+## Hvad er næste skridt
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

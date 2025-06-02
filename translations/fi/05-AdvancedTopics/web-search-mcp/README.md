@@ -1,52 +1,52 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b0660b689ab793a8e9aefe29fb7f8b6a",
-  "translation_date": "2025-06-02T13:18:32+00:00",
+  "original_hash": "bc249f8b228953fafca05f94bb572aac",
+  "translation_date": "2025-06-02T19:13:15+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "fi"
 }
 -->
-# Lesson: Web-hakupalvelimen MCP-palvelimen rakentaminen
+# Lesson: Web-hakupalvelimen MCP:n rakentaminen
 
-Tässä luvussa näytetään, miten rakennetaan käytännön tekoälyagentti, joka yhdistyy ulkoisiin API-rajapintoihin, käsittelee monipuolisia tietotyyppejä, hallitsee virheitä ja ohjaa useita työkaluja – kaikki tuotantovalmiissa muodossa. Näet:
+Tässä luvussa näytetään, miten rakennetaan käytännön AI-agentti, joka integroituu ulkoisiin API:hin, käsittelee erilaisia tietotyyppejä, hoitaa virhetilanteet ja koordinoi useita työkaluja – kaikki tuotantovalmiissa muodossa. Näet:
 
-- **Yhdistäminen ulkoisiin API:hin, jotka vaativat todennuksen**
-- **Monipuolisten tietotyyppien käsittely useista rajapinnoista**
-- **Vankka virheenkäsittely ja lokitusstrategiat**
-- **Usean työkalun hallinta yhdessä palvelimessa**
+- **Integraation ulkoisten API:iden kanssa, jotka vaativat todennuksen**
+- **Erilaisten tietotyyppien käsittelyn useista rajapinnoista**
+- **Vankat virheenkäsittely- ja lokitusstrategiat**
+- **Monityökalujen orkestroinnin yhdessä palvelimessa**
 
-Lopuksi sinulla on käytännön kokemusta kuvioista ja parhaista käytännöistä, jotka ovat olennaisia kehittyneissä tekoäly- ja LLM-pohjaisissa sovelluksissa.
+Lopuksi sinulla on käytännön kokemusta malleista ja parhaista käytännöistä, jotka ovat olennaisia edistyneissä AI- ja LLM-pohjaisissa sovelluksissa.
 
 ## Johdanto
 
-Tässä oppitunnissa opit rakentamaan kehittyneen MCP-palvelimen ja -asiakkaan, joka laajentaa LLM:n kykyjä reaaliaikaisella verkkodatalla SerpAPI:n avulla. Tämä on tärkeä taito dynaamisten tekoälyagenttien kehittämisessä, jotka voivat hakea ajantasaisia tietoja verkosta.
+Tässä oppitunnissa opit rakentamaan kehittyneen MCP-palvelimen ja -asiakkaan, joka laajentaa LLM:n kykyjä reaaliaikaisella verkkodatan haulla SerpAPI:n avulla. Tämä on tärkeä taito dynaamisten AI-agenttien kehittämiseen, jotka pystyvät hakemaan ajantasaista tietoa verkosta.
 
 ## Oppimistavoitteet
 
-Tämän oppitunnin jälkeen osaat:
+Oppitunnin lopuksi osaat:
 
-- Integroida ulkoisia API:ja (kuten SerpAPI) turvallisesti MCP-palvelimeen
-- Toteuttaa useita työkaluja verkko-, uutis-, tuotehaulle ja kysymys-vastaus-toiminnolle
-- Jäsentää ja muotoilla strukturoitua dataa LLM:n käyttöön
-- Käsitellä virheitä ja hallita API-kutsujen rajoituksia tehokkaasti
-- Rakentaa ja testata sekä automatisoituja että interaktiivisia MCP-asiakkaita
+- Integroida ulkoisia API:ita (kuten SerpAPI) turvallisesti MCP-palvelimeen
+- Toteuttaa useita työkaluja verkko-, uutis-, tuotetutkimukseen ja kysymys-vastaus-toimintoihin
+- Jäsentää ja muotoilla rakenteellista dataa LLM:n käyttöön sopivaksi
+- Käsitellä virheitä ja hallita API-kutsujen määrärajoituksia tehokkaasti
+- Rakentaa ja testata sekä automatisoituja että vuorovaikutteisia MCP-asiakkaita
 
-## Web-hakupalvelimen MCP-palvelin
+## Web Search MCP Server
 
 Tässä osiossa esitellään Web Search MCP Serverin arkkitehtuuri ja ominaisuudet. Näet, miten FastMCP ja SerpAPI toimivat yhdessä laajentaen LLM:n kykyjä reaaliaikaisella verkkodatalla.
 
-### Yleiskatsaus
+### Yleiskuvaus
 
-Tämä toteutus sisältää neljä työkalua, jotka osoittavat MCP:n kyvyn käsitellä monipuolisia, ulkoisiin API:hin perustuvia tehtäviä turvallisesti ja tehokkaasti:
+Tässä toteutuksessa on neljä työkalua, jotka osoittavat MCP:n kyvyn käsitellä monipuolisia, ulkoisiin API:hin perustuvia tehtäviä turvallisesti ja tehokkaasti:
 
-- **general_search**: Laajat verkkohakutulokset
-- **news_search**: Viimeaikaiset uutisotsikot
-- **product_search**: Verkkokaupan tuotetiedot
-- **qna**: Kysymys-vastaus-pätkät
+- **general_search**: Laajoihin verkkohakuihin
+- **news_search**: Viimeaikaisiin uutisotsikoihin
+- **product_search**: Verkkokauppatietoihin
+- **qna**: Kysymys-vastaus-pätkiin
 
 ### Ominaisuudet
-- **Koodiesimerkit**: Sisältää kielikohtaisia koodilohkoja Pythonille (ja helposti laajennettavissa muihin kieliin) selkeyttä varten taitettavissa osioissa
+- **Koodiesimerkit**: Sisältää kielikohtaiset koodilohkot Pythonille (ja helposti laajennettavissa muihin kieliin) selkeyttä tuovilla laajennettavilla osioilla
 
 <details>  
 <summary>Python</summary>  
@@ -69,11 +69,11 @@ async def run_search():
 ```
 </details>
 
-Ennen kuin ajat asiakasta, on hyödyllistä ymmärtää, mitä palvelin tekee. Katso [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
+Ennen asiakkaan käynnistämistä on hyödyllistä ymmärtää, mitä palvelin tekee. [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
 
 You can review the full implementation in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
-Tässä lyhyt esimerkki siitä, miten palvelin määrittelee ja rekisteröi työkalun:
+Alla on lyhyt esimerkki siitä, miten palvelin määrittelee ja rekisteröi työkalun:
 
 <details>  
 <summary>Python Server</summary> 
@@ -93,24 +93,24 @@ if __name__ == "__main__":
 ```
 </details>
 
-- **Ulkoisen API:n integrointi**: Näyttää, miten API-avaimia ja ulkoisia pyyntöjä käsitellään turvallisesti
-- **Strukturoidun datan jäsentäminen**: Kuvaa, miten API-vastaukset muunnetaan LLM:lle sopivaan muotoon
-- **Virheenkäsittely**: Vankka virheiden hallinta ja asianmukainen lokitus
-- **Interaktiivinen asiakas**: Sisältää automatisoidut testit ja interaktiivisen tilan testaukseen
-- **Kontekstinhallinta**: Käyttää MCP Contextia lokitukseen ja pyyntöjen seurantaan
+- **Ulkoisen API:n integraatio**: Näyttää, miten API-avaimia ja ulkoisia pyyntöjä käsitellään turvallisesti
+- **Rakenteellisen datan jäsentäminen**: Kuvaa, miten API-vastaukset muunnetaan LLM:lle sopiviksi
+- **Virheenkäsittely**: Vankka virheiden käsittely ja asianmukainen lokitus
+- **Vuorovaikutteinen asiakas**: Sisältää automatisoituja testejä ja vuorovaikutteisen tilan testaukseen
+- **Kontekstinhallinta**: Hyödyntää MCP Contextia lokitukseen ja pyyntöjen seurantaan
 
 ## Esivaatimukset
 
-Ennen aloittamista varmista, että ympäristösi on asetettu oikein seuraamalla näitä ohjeita. Tämä varmistaa, että kaikki riippuvuudet on asennettu ja API-avaimet on konfiguroitu sujuvaa kehitystä ja testausta varten.
+Ennen aloittamista varmista, että ympäristösi on oikein asetettu seuraamalla näitä ohjeita. Näin varmistat, että kaikki riippuvuudet on asennettu ja API-avaimesi on konfiguroitu oikein sujuvaa kehitystä ja testausta varten.
 
 - Python 3.8 tai uudempi
 - SerpAPI API-avain (Rekisteröidy osoitteessa [SerpAPI](https://serpapi.com/) – ilmainen taso saatavilla)
 
 ## Asennus
 
-Aloita seuraavasti ympäristösi määrittäminen:
+Aloita seuraamalla näitä vaiheita ympäristösi määrittämiseksi:
 
-1. Asenna riippuvuudet käyttäen uv (suositeltu) tai pip:
+1. Asenna riippuvuudet käyttäen uv:ta (suositeltu) tai pip:iä:
 
 ```bash
 # Using uv (recommended)
@@ -128,7 +128,7 @@ SERPAPI_KEY=your_serpapi_key_here
 
 ## Käyttö
 
-Web Search MCP Server on keskeinen komponentti, joka tarjoaa työkaluja verkko-, uutis-, tuotehakuun ja kysymys-vastaus-toimintoihin yhdistämällä SerpAPI:n. Se käsittelee saapuvat pyynnöt, hallinnoi API-kutsuja, jäsentää vastaukset ja palauttaa rakenteelliset tulokset asiakkaalle.
+Web Search MCP Server on keskeinen komponentti, joka tarjoaa työkaluja verkko-, uutis-, tuotetutkimukseen ja kysymys-vastaus-toimintoihin integroimalla SerpAPI:n. Se käsittelee saapuvat pyynnöt, hallitsee API-kutsut, jäsentää vastaukset ja palauttaa rakenteelliset tulokset asiakkaalle.
 
 Voit tarkastella koko toteutusta tiedostossa [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
@@ -153,24 +153,24 @@ You can review the full implementation in [`client.py`](../../../../05-AdvancedT
 
 ### Asiakkaan käynnistäminen
 
-Suorita automatisoidut testit (käynnistää palvelimen automaattisesti):
+Suorita automatisoidut testit (tämä käynnistää palvelimen automaattisesti):
 
 ```bash
 python client.py
 ```
 
-Tai aja interaktiivisessa tilassa:
+Tai aja vuorovaikutteisessa tilassa:
 
 ```bash
 python client.py --interactive
 ```
 
-### Testaus eri tavoilla
+### Testaus eri menetelmillä
 
-Työkaluja voi testata ja käyttää eri tavoin tarpeidesi ja työnkulkujesi mukaan.
+Työkaluja voi testata ja käyttää monin eri tavoin tarpeidesi ja työnkulun mukaan.
 
-#### Omien testiskriptien kirjoittaminen MCP Python SDK:lla
-Voit myös rakentaa omia testiskriptejä MCP Python SDK:lla:
+#### Oman testiskriptin kirjoittaminen MCP Python SDK:lla
+Voit myös rakentaa omia testiskriptejä MCP Python SDK:n avulla:
 
 <details>
 <summary>Python</summary>
@@ -195,28 +195,28 @@ async def test_custom_query():
 ```
 </details>
 
-Tässä yhteydessä "testiskripti" tarkoittaa omaa Python-ohjelmaa, jolla toimitaan MCP-palvelimen asiakkaana. Sen sijaan, että kyseessä olisi virallinen yksikkötesti, skripti mahdollistaa ohjelmallisen yhteyden palvelimeen, työkalujen kutsumisen halutuilla parametreilla ja tulosten tarkastelun. Tämä lähestymistapa on hyödyllinen:
+Tässä yhteydessä "testiskripti" tarkoittaa omaa Python-ohjelmaa, jolla toimit MCP-palvelimen asiakkaana. Sen sijaan, että kyse olisi muodollisesta yksikkötestistä, skripti antaa sinun ohjelmallisesti yhdistää palvelimeen, kutsua mitä tahansa sen työkaluista valitsemillasi parametreilla ja tarkastella tuloksia. Tämä on hyödyllistä:
 
 - Työkalukutsujen prototypointiin ja kokeiluun
-- Palvelimen vastausten validointiin eri syötteillä
-- Toistuvien kutsujen automatisointiin
-- Omien työnkulkujen tai integraatioiden rakentamiseen MCP-palvelimen päälle
+- Palvelimen vasteen validointiin eri syötteillä
+- Toistuvien työkalukutsujen automatisointiin
+- Oman työnkulun tai integraation rakentamiseen MCP-palvelimen päälle
 
-Testiskriptit sopivat uusien kyselyjen nopeaan kokeiluun, työkalun toiminnan virheenkorjaukseen tai lähtökohdaksi kehittyneempään automaatioon. Alla on esimerkki MCP Python SDK:n käytöstä tällaisen skriptin luomiseksi:
+Voit käyttää testiskriptejä nopeasti kokeillaksesi uusia hakuja, selvittääksesi työkalun toimintaa tai aloittaaksesi kehittyneemmän automaation. Alla esimerkki MCP Python SDK:n käytöstä skriptin luomiseen:
 
 ## Työkalujen kuvaukset
 
-Palvelimen tarjoamia työkaluja voi käyttää erilaisten hakujen ja kyselyiden tekemiseen. Jokainen työkalu on kuvattu alla sen parametrien ja esimerkkikäytön kanssa.
+Palvelimen tarjoamia työkaluja voi käyttää erilaisten hakujen ja kyselyiden tekemiseen. Jokainen työkalu on kuvattu alla parametreineen ja esimerkkikäyttöineen.
 
-Tässä osiossa on tietoa jokaisesta käytettävissä olevasta työkalusta ja niiden parametreista.
+Tässä osiossa kerrotaan yksityiskohtaisesti jokaisesta käytettävissä olevasta työkalusta ja niiden parametreista.
 
 ### general_search
 
-Suorittaa yleisen verkkohaku ja palauttaa muotoillut tulokset.
+Suorittaa yleisen verkkohakukyselyn ja palauttaa muotoillut tulokset.
 
-**Työkalun kutsuminen:**
+**Näin kutsut tätä työkalua:**
 
-Voit kutsua `general_search`-työkalua omasta skriptistä MCP Python SDK:lla tai interaktiivisesti Inspectorissa tai interaktiivisessa asiakastilassa. Tässä esimerkki SDK:n käytöstä:
+Voit kutsua `general_search`-työkalua omasta skriptistäsi MCP Python SDK:n avulla tai vuorovaikutteisesti Inspectorin tai interaktiivisen asiakastilan kautta. Tässä esimerkki SDK:n käytöstä:
 
 <details>
 <summary>Python-esimerkki</summary>
@@ -253,11 +253,11 @@ Vaihtoehtoisesti interaktiivisessa tilassa valitse `general_search` from the men
 
 ### news_search
 
-Hakee viimeisimpiä uutisartikkeleita liittyen kyselyyn.
+Hakee viimeaikaisia uutisartikkeleita hakukyselyn perusteella.
 
-**Työkalun kutsuminen:**
+**Näin kutsut tätä työkalua:**
 
-Voit kutsua `news_search`-työkalua omasta skriptistä MCP Python SDK:lla tai interaktiivisesti Inspectorissa tai interaktiivisessa asiakastilassa. Tässä esimerkki SDK:n käytöstä:
+Voit kutsua `news_search`-työkalua omasta skriptistäsi MCP Python SDK:n avulla tai vuorovaikutteisesti Inspectorin tai interaktiivisen asiakastilan kautta. Tässä esimerkki SDK:n käytöstä:
 
 <details>
 <summary>Python-esimerkki</summary>
@@ -294,11 +294,11 @@ Vaihtoehtoisesti interaktiivisessa tilassa valitse `news_search` from the menu a
 
 ### product_search
 
-Hakee tuotteita, jotka vastaavat kyselyä.
+Hakee tuotteita, jotka vastaavat hakukyselyä.
 
-**Työkalun kutsuminen:**
+**Näin kutsut tätä työkalua:**
 
-Voit kutsua `product_search`-työkalua omasta skriptistä MCP Python SDK:lla tai interaktiivisesti Inspectorissa tai interaktiivisessa asiakastilassa. Tässä esimerkki SDK:n käytöstä:
+Voit kutsua `product_search`-työkalua omasta skriptistäsi MCP Python SDK:n avulla tai vuorovaikutteisesti Inspectorin tai interaktiivisen asiakastilan kautta. Tässä esimerkki SDK:n käytöstä:
 
 <details>
 <summary>Python-esimerkki</summary>
@@ -337,9 +337,9 @@ Vaihtoehtoisesti interaktiivisessa tilassa valitse `product_search` from the men
 
 Hakee suoria vastauksia kysymyksiin hakukoneista.
 
-**Työkalun kutsuminen:**
+**Näin kutsut tätä työkalua:**
 
-Voit kutsua `qna`-työkalua omasta skriptistä MCP Python SDK:lla tai interaktiivisesti Inspectorissa tai interaktiivisessa asiakastilassa. Tässä esimerkki SDK:n käytöstä:
+Voit kutsua `qna`-työkalua omasta skriptistäsi MCP Python SDK:n avulla tai vuorovaikutteisesti Inspectorin tai interaktiivisen asiakastilan kautta. Tässä esimerkki SDK:n käytöstä:
 
 <details>
 <summary>Python-esimerkki</summary>
@@ -364,7 +364,7 @@ async def run_qna():
 Vaihtoehtoisesti interaktiivisessa tilassa valitse `qna` from the menu and enter your question when prompted.
 
 **Parameters:**
-- `question` (merkkijono): Kysymys, johon etsitään vastausta
+- `question` (merkkijono): Kysymys, johon etsit vastausta
 
 **Esimerkkipyyntö:**
 
@@ -393,23 +393,23 @@ import httpx
 
 ## Edistyneet käsitteet tässä oppitunnissa
 
-Ennen rakentamista tässä muutamia tärkeitä edistyneitä käsitteitä, joita esiintyy läpi luvun. Niiden ymmärtäminen auttaa seuraamaan sisältöä, vaikka ne olisivatkin uusia:
+Ennen rakentamista tässä on muutamia tärkeitä edistyneitä käsitteitä, jotka esiintyvät koko luvun ajan. Niiden ymmärtäminen auttaa sinua pysymään mukana, vaikka ne olisivat sinulle uusia:
 
-- **Usean työkalun orkestrointi**: Tämä tarkoittaa useiden eri työkalujen (kuten verkkohaku, uutishaku, tuotehaku ja kysymys-vastaus) ajamista yhdessä MCP-palvelimessa. Se mahdollistaa palvelimen hoitaa monipuolisia tehtäviä, ei vain yhtä.
-- **API-kutsujen rajoitusten hallinta**: Monet ulkoiset API:t (kuten SerpAPI) rajoittavat, kuinka monta pyyntöä voi tehdä tietyssä ajassa. Hyvä koodi tarkistaa nämä rajat ja käsittelee ne sujuvasti, jotta sovellus ei kaadu rajaan törmätessään.
-- **Strukturoidun datan jäsentäminen**: API-vastaukset ovat usein monimutkaisia ja sisäkkäisiä. Tämä käsite tarkoittaa, että vastaukset muutetaan selkeiksi, helposti käytettäviksi muodoiksi, jotka sopivat LLM:lle tai muille ohjelmille.
-- **Virheiden palauttaminen**: Joskus tapahtuu virheitä – esimerkiksi verkko pettää tai API ei palauta odotettua. Virheiden palauttaminen tarkoittaa, että koodi osaa käsitellä nämä ongelmat ja antaa hyödyllistä palautetta sen sijaan, että kaatuisi.
-- **Parametrien validointi**: Tämä tarkoittaa, että tarkistetaan, että kaikki työkalujen syötteet ovat oikein ja turvallisia käyttää. Sisältää oletusarvojen asettamisen ja tyyppien varmistamisen, mikä auttaa ehkäisemään virheitä ja sekaannuksia.
+- **Monityökalujen orkestrointi**: Tämä tarkoittaa useiden erilaisten työkalujen (kuten verkkohaku, uutishaku, tuotetutkimus ja kysymys-vastaus) ajamista samassa MCP-palvelimessa. Se mahdollistaa palvelimen käsittelevän monipuolisia tehtäviä yhden sijaan.
+- **API-kutsujen määrärajoitusten hallinta**: Monet ulkoiset API:t (kuten SerpAPI) rajoittavat, kuinka monta pyyntöä voit tehdä tietyssä ajassa. Hyvä koodi tarkistaa nämä rajat ja käsittelee ne sulavasti, jotta sovelluksesi ei kaadu rajojen ylittyessä.
+- **Rakenteellisen datan jäsentäminen**: API-vastaukset ovat usein monimutkaisia ja sisäkkäisiä. Tämä käsite tarkoittaa näiden vastausten muuntamista selkeiksi, helposti käytettäviksi muodoiksi, jotka sopivat LLM:lle tai muille ohjelmille.
+- **Virheiden palautuminen**: Joskus tapahtuu virheitä – verkko voi pettää tai API ei palauta odotettua. Virheiden palautuminen tarkoittaa, että koodisi osaa käsitellä nämä ongelmat ja antaa hyödyllistä palautetta kaatumisen sijaan.
+- **Parametrien validointi**: Tämä tarkoittaa kaikkien työkalujen syötteiden tarkistamista oikeiksi ja turvallisiksi käyttää. Siihen kuuluu oletusarvojen asettaminen ja tyyppien varmistaminen, mikä auttaa estämään virheitä ja sekaannuksia.
 
-Tämä osio auttaa diagnosoimaan ja ratkaisemaan yleisiä ongelmia, joita voit kohdata työskennellessäsi Web Search MCP Serverin kanssa. Jos kohtaat virheitä tai odottamatonta käyttäytymistä, tämä vianmääritysosio tarjoaa ratkaisuja yleisimpiin ongelmiin. Tutustu näihin vinkkeihin ennen lisäavun hakemista – ne usein ratkaisevat ongelmat nopeasti.
+Tämä osio auttaa sinua diagnosoimaan ja ratkaisemaan yleisiä ongelmia, joita voit kohdata työskennellessäsi Web Search MCP Serverin kanssa. Jos kohtaat virheitä tai odottamatonta käyttäytymistä, tämä vianmääritysosio tarjoaa ratkaisuja yleisimpiin ongelmiin. Käy nämä vinkit läpi ennen lisäavun hakemista – ne usein korjaavat ongelmat nopeasti.
 
 ## Vianmääritys
 
-Työskennellessäsi Web Search MCP Serverin kanssa saatat toisinaan kohdata ongelmia – tämä on normaalia ulkoisten API:en ja uusien työkalujen kanssa työskennellessä. Tämä osio tarjoaa käytännön ratkaisuja yleisimpiin ongelmiin, jotta pääset nopeasti takaisin työskentelyyn. Jos kohtaat virheen, aloita tästä: alla olevat vinkit käsittelevät yleisimpiä käyttäjien kohtaamia ongelmia ja voivat usein ratkaista ongelmasi ilman lisäapua.
+Työskennellessäsi Web Search MCP Serverin kanssa saatat toisinaan kohdata ongelmia – tämä on normaalia, kun kehität ulkoisten API:iden ja uusien työkalujen kanssa. Tämä osio tarjoaa käytännön ratkaisuja yleisimpiin ongelmiin, jotta pääset nopeasti takaisin raiteille. Jos kohtaat virheen, aloita tästä: alla olevat vinkit käsittelevät eniten käyttäjien kohtaamia ongelmia ja voivat usein ratkaista ongelmasi ilman lisäapua.
 
-### Yleisimmät ongelmat
+### Yleiset ongelmat
 
-Alla on joitakin yleisimpiä ongelmia, joita käyttäjät kohtaavat, selkeine selityksineen ja ratkaisuohjeineen:
+Alla on joitakin yleisimpiä käyttäjien kohtaamia ongelmia, selitykset ja ohjeet niiden ratkaisemiseksi:
 
 1. **SERPAPI_KEY puuttuu .env-tiedostosta**
    - Jos näet virheen `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
@@ -421,13 +421,13 @@ Alla on joitakin yleisimpiä ongelmia, joita käyttäjät kohtaavat, selkeine se
    - If you get an error like `Error during client execution`, it often means the client can't connect to the server, or the server isn't running as expected. Double-check that both the client and server are compatible versions, and that `server.py` is present and running in the correct directory. Restarting both the server and client can also help.
 
 4. **SerpAPI errors**
-   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your ``, varmista, että sinulla on `.env`-tiedosto. Jos avain on oikein, mutta virhe jatkuu, tarkista onko ilmainen tasosi loppunut.
+   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env`-tiedosto tarvittaessa. Jos avain on oikea mutta virhe jatkuu, tarkista, onko ilmainen tasosi kulunut loppuun.
 
 ### Debug-tila
 
-Oletuksena sovellus lokittaa vain tärkeät tiedot. Jos haluat nähdä enemmän tietoja tapahtumista (esim. vaikeiden ongelmien diagnosointiin), voit ottaa DEBUG-tilan käyttöön. Tämä näyttää paljon enemmän tietoa sovelluksen jokaisesta vaiheesta.
+Oletuksena sovellus kirjaa vain tärkeimmät tiedot. Jos haluat nähdä enemmän yksityiskohtia tapahtumista (esim. monimutkaisten ongelmien diagnosointiin), voit ottaa DEBUG-tilan käyttöön. Tämä näyttää paljon enemmän tietoa sovelluksen jokaisesta vaiheesta.
 
-**Esimerkki: Normaali tulostus**
+**Esimerkki: Normaali tuloste**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:24,123 - __main__ - INFO - Successfully called general_search
@@ -436,7 +436,7 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-**Esimerkki: DEBUG-tulostus**
+**Esimerkki: DEBUG-tuloste**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:23,457 - httpx - DEBUG - HTTP Request: GET https://serpapi.com/search ...
@@ -447,9 +447,9 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-Huomaa, että DEBUG-tila sisältää lisärivejä HTTP-pyynnöistä, vastauksista ja muista sisäisistä yksityiskohdista. Tämä voi olla erittäin hyödyllistä vianmäärityksessä.
+Huomaa, että DEBUG-tila sisältää lisärivejä HTTP-pyynnöistä, vastauksista ja muista sisäisistä tiedoista. Tämä voi olla erittäin hyödyllistä vianmäärityksessä.
 
-Ota DEBUG-tila käyttöön asettamalla lokitustaso DEBUG:ksi `client.py` or `server.py`-tiedoston yläosassa:
+Ota DEBUG-tila käyttöön asettamalla lokitustaso DEBUG:ksi `client.py` or `server.py`-tiedoston alussa:
 
 <details>
 <summary>Python</summary>
@@ -471,4 +471,4 @@ logging.basicConfig(
 - [6. Community Contributions](../../06-CommunityContributions/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulee pitää auktoritatiivisena lähteenä. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinymmärryksistä tai virhetulkinnoista.

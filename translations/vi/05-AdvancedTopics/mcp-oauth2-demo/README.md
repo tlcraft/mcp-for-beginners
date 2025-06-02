@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:39:47+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:18:30+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "vi"
 }
 -->
 # MCP OAuth2 Demo
 
-Dự án này là một **ứng dụng Spring Boot tối giản** đóng vai trò đồng thời:
+Dự án này là một **ứng dụng Spring Boot tối giản** vừa đóng vai trò:
 
-* một **Spring Authorization Server** (phát hành token truy cập JWT qua `client_credentials` flow), và  
+* một **Spring Authorization Server** (phát hành token truy cập JWT thông qua `client_credentials` flow), và  
 * một **Resource Server** (bảo vệ chính endpoint `/hello` của nó).
 
-Nó phản chiếu cấu hình được trình bày trong [bài viết trên blog Spring (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Nó mô phỏng cấu hình được trình bày trong [bài viết trên blog Spring (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,7 +36,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Kiểm tra cấu hình OAuth2
 
-Bạn có thể kiểm tra cấu hình bảo mật OAuth2 theo các bước sau:
+Bạn có thể kiểm tra cấu hình bảo mật OAuth2 bằng các bước sau:
 
 ### 1. Xác nhận server đang chạy và đã được bảo vệ
 
@@ -45,7 +45,7 @@ Bạn có thể kiểm tra cấu hình bảo mật OAuth2 theo các bước sau:
 curl -v http://localhost:8081/
 ```
 
-### 2. Lấy access token bằng client credentials
+### 2. Lấy token truy cập bằng client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Note: Header Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Lưu ý: Header Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
 ### 3. Truy cập endpoint được bảo vệ bằng token
 
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Phản hồi thành công với "Hello from MCP OAuth2 Demo!" xác nhận cấu hình OAuth2 hoạt động chính xác.
+Phản hồi thành công với thông điệp "Hello from MCP OAuth2 Demo!" xác nhận cấu hình OAuth2 hoạt động chính xác.
 
 ---
 
@@ -120,9 +120,9 @@ APIM sẽ lấy JWKS và xác thực mọi yêu cầu.
 
 ---
 
-## Tiếp theo là gì
+## Tiếp theo
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc sự không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn chính xác và đáng tin cậy. Đối với thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp của con người. Chúng tôi không chịu trách nhiệm đối với bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.

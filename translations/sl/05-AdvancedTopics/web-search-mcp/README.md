@@ -1,52 +1,52 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b0660b689ab793a8e9aefe29fb7f8b6a",
-  "translation_date": "2025-06-02T13:28:53+00:00",
+  "original_hash": "bc249f8b228953fafca05f94bb572aac",
+  "translation_date": "2025-06-02T19:40:29+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "sl"
 }
 -->
-# Lesson: Gradnja Web Search MCP strežnika
+# Lesson: Building a Web Search MCP Server
 
-Ta poglavje prikazuje, kako zgraditi resničnega AI agenta, ki se poveže z zunanjimi API-ji, obravnava različne vrste podatkov, upravlja napake in usklajuje več orodij – vse v produkcijsko pripravljenem formatu. Videli boste:
+This chapter shows how to create a real-world AI agent that connects with external APIs, handles various data types, manages errors, and coordinates multiple tools—all ready for production. You’ll learn about:
 
-- **Integracija z zunanjimi API-ji, ki zahtevajo avtentikacijo**
-- **Obravnava različnih vrst podatkov z več končnih točk**
-- **Robustne strategije za upravljanje napak in beleženje**
-- **Usklajevanje več orodij v enem strežniku**
+- **Connecting with external APIs that need authentication**
+- **Handling different data types from several endpoints**
+- **Strong error handling and logging methods**
+- **Coordinating multiple tools in one server**
 
-Na koncu boste pridobili praktične izkušnje s vzorci in najboljšimi praksami, ki so ključne za napredne AI in LLM-podprte aplikacije.
+By the end, you’ll gain hands-on experience with patterns and best practices essential for advanced AI and LLM-powered apps.
 
-## Uvod
+## Introduction
 
-V tej lekciji se boste naučili, kako zgraditi napreden MCP strežnik in odjemalca, ki razširjata zmogljivosti LLM z uporabo spletnih podatkov v realnem času preko SerpAPI. To je ključna veščina za razvoj dinamičnih AI agentov, ki dostopajo do aktualnih informacij s spleta.
+In this lesson, you’ll learn how to build an advanced MCP server and client that extend LLM capabilities using real-time web data through SerpAPI. This skill is key for building dynamic AI agents that can access current information from the web.
 
-## Cilji učenja
+## Learning Objectives
 
-Do konca te lekcije boste znali:
+By the end of this lesson, you will be able to:
 
-- Varnostno integrirati zunanje API-je (kot je SerpAPI) v MCP strežnik
-- Implementirati več orodij za spletno, novičarsko, produktno iskanje in vprašanja-odgovore
-- Parsirati in oblikovati strukturirane podatke za uporabo z LLM
-- Učinkovito upravljati napake in omejitve hitrosti API-ja
-- Zgraditi in testirati tako avtomatizirane kot interaktivne MCP odjemalce
+- Securely integrate external APIs (like SerpAPI) into an MCP server
+- Implement multiple tools for web, news, product search, and Q&A
+- Parse and format structured data for LLM usage
+- Effectively handle errors and manage API rate limits
+- Build and test both automated and interactive MCP clients
 
-## Web Search MCP strežnik
+## Web Search MCP Server
 
-Ta del predstavlja arhitekturo in funkcionalnosti Web Search MCP strežnika. Videli boste, kako FastMCP in SerpAPI skupaj razširjata zmogljivosti LLM z realnimi spletnimi podatki.
+This section presents the architecture and features of the Web Search MCP Server. You’ll see how FastMCP and SerpAPI work together to extend LLM capabilities with live web data.
 
-### Pregled
+### Overview
 
-Implementacija vključuje štiri orodja, ki prikazujejo sposobnost MCP za varno in učinkovito upravljanje različnih zunanjih API-jev:
+This setup includes four tools demonstrating MCP’s ability to securely and efficiently handle diverse external API tasks:
 
-- **general_search**: za široke spletne rezultate
-- **news_search**: za najnovejše naslove novic
-- **product_search**: za podatke iz e-trgovine
-- **qna**: za kratke odgovore na vprašanja
+- **general_search**: For broad web results
+- **news_search**: For latest headlines
+- **product_search**: For e-commerce data
+- **qna**: For question-and-answer snippets
 
-### Funkcionalnosti
-- **Primeri kode**: Vključeni so jezikovno specifični blok kode za Python (z možnostjo enostavne razširitve na druge jezike) z zložljivimi razdelki za preglednost
+### Features
+- **Code Examples**: Contains language-specific code blocks for Python (and easily extendable to other languages) with collapsible sections for clarity
 
 <details>  
 <summary>Python</summary>  
@@ -69,11 +69,11 @@ async def run_search():
 ```
 </details>
 
-Pred zagonom odjemalca je koristno razumeti, kaj strežnik počne. [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
+Before running the client, it helps to understand what the server does. See [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
 
 You can review the full implementation in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
-Tukaj je kratek primer, kako strežnik definira in registrira orodje:
+Here’s a brief example of how the server defines and registers a tool:
 
 <details>  
 <summary>Python Server</summary> 
@@ -93,24 +93,24 @@ if __name__ == "__main__":
 ```
 </details>
 
-- **Integracija zunanjega API-ja**: prikazuje varno upravljanje API ključev in zunanjih zahtevkov
-- **Parsiranje strukturiranih podatkov**: prikazuje, kako spremeniti odgovore API-ja v formate, prijazne za LLM
-- **Upravljanje napak**: robustno upravljanje napak z ustreznim beleženjem
-- **Interaktivni odjemalec**: vključuje tako avtomatizirane teste kot interaktivni način za testiranje
-- **Upravljanje konteksta**: uporablja MCP Context za beleženje in sledenje zahtevkom
+- **External API Integration**: Shows secure handling of API keys and external requests
+- **Structured Data Parsing**: Demonstrates converting API responses into LLM-friendly formats
+- **Error Handling**: Strong error handling with proper logging
+- **Interactive Client**: Includes automated tests and an interactive testing mode
+- **Context Management**: Uses MCP Context for logging and tracking requests
 
-## Predpogoji
+## Prerequisites
 
-Pred začetkom poskrbite, da imate okolje pravilno nastavljeno z naslednjimi koraki. Tako boste zagotovili, da so vse odvisnosti nameščene in da so vaši API ključi pravilno konfigurirani za nemoten razvoj in testiranje.
+Before you start, ensure your environment is properly set up by following these steps. This guarantees all dependencies are installed and your API keys are configured for smooth development and testing.
 
-- Python 3.8 ali novejši
-- SerpAPI API ključ (prijavite se na [SerpAPI](https://serpapi.com/) - na voljo brezplačna različica)
+- Python 3.8 or newer
+- SerpAPI API Key (Sign up at [SerpAPI](https://serpapi.com/) - free tier available)
 
-## Namestitev
+## Installation
 
-Za začetek sledite tem korakom za nastavitev okolja:
+To get started, follow these steps to prepare your environment:
 
-1. Namestite odvisnosti z uv (priporočeno) ali pip:
+1. Install dependencies using uv (recommended) or pip:
 
 ```bash
 # Using uv (recommended)
@@ -120,57 +120,57 @@ uv pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-2. V korenski mapi projekta ustvarite datoteko `.env` s svojim SerpAPI ključem:
+2. Create a `.env` file in the project root with your SerpAPI key:
 
 ```
 SERPAPI_KEY=your_serpapi_key_here
 ```
 
-## Uporaba
+## Usage
 
-Web Search MCP strežnik je osrednji del, ki izpostavlja orodja za spletno, novičarsko, produktno iskanje in Q&A z integracijo SerpAPI. Obravnava dohodne zahteve, upravlja API klice, parsira odgovore in vrača strukturirane rezultate odjemalcu.
+The Web Search MCP Server is the main component exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
 
-Celotno implementacijo si lahko ogledate v [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
+You can review the full implementation in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
-### Zagon strežnika
+### Running the Server
 
-Za zagon MCP strežnika uporabite naslednji ukaz:
+To start the MCP server, run this command:
 
 ```bash
 python server.py
 ```
 
-Strežnik bo tekel kot stdio MCP strežnik, s katerim se lahko odjemalec poveže neposredno.
+The server will operate as a stdio-based MCP server that the client can connect to directly.
 
-### Načini odjemalca
+### Client Modes
 
-Odjemalec (`client.py`) supports two modes for interacting with the MCP server:
+The client (`client.py`) supports two modes for interacting with the MCP server:
 
 - **Normal mode**: Runs automated tests that exercise all the tools and verify their responses. This is useful for quickly checking that the server and tools are working as expected.
 - **Interactive mode**: Starts a menu-driven interface where you can manually select and call tools, enter custom queries, and see results in real time. This is ideal for exploring the server's capabilities and experimenting with different inputs.
 
 You can review the full implementation in [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
 
-### Zagon odjemalca
+### Running the Client
 
-Za zagon avtomatiziranih testov (to bo samodejno zagnalo strežnik):
+To run automated tests (this will automatically start the server):
 
 ```bash
 python client.py
 ```
 
-Ali pa v interaktivnem načinu:
+Or run in interactive mode:
 
 ```bash
 python client.py --interactive
 ```
 
-### Testiranje z različnimi metodami
+### Testing with Different Methods
 
-Obstaja več načinov za testiranje in interakcijo z orodji, ki jih strežnik ponuja, odvisno od vaših potreb in delovnega toka.
+There are multiple ways to test and interact with the server’s tools, depending on your needs and workflow.
 
-#### Pisanje lastnih testnih skript z MCP Python SDK
-Lahko tudi ustvarite svoje testne skripte z uporabo MCP Python SDK:
+#### Writing Custom Test Scripts with the MCP Python SDK
+You can also create your own test scripts using the MCP Python SDK:
 
 <details>
 <summary>Python</summary>
@@ -195,30 +195,30 @@ async def test_custom_query():
 ```
 </details>
 
-V tem kontekstu "testna skripta" pomeni lasten Python program, ki ga napišete kot odjemalca MCP strežnika. Namesto formalnega enotnega testa ta skripta omogoča programatično povezavo s strežnikom, klic katerega koli orodja z izbranimi parametri in pregled rezultatov. Ta pristop je uporaben za:
-- Prototipiranje in eksperimentiranje s klici orodij
-- Preverjanje odziva strežnika na različne vhodne podatke
-- Avtomatizacijo ponavljajočih se klicev orodij
-- Gradnjo lastnih potekov dela ali integracij na vrhu MCP strežnika
+Here, a "test script" is a custom Python program you write to act as a client for the MCP server. Rather than a formal unit test, this script lets you programmatically connect to the server, call any tool with parameters you choose, and inspect results. This is useful for:
+- Prototyping and experimenting with tool calls
+- Checking how the server responds to different inputs
+- Automating repeated tool calls
+- Building your own workflows or integrations on top of the MCP server
 
-Testne skripte lahko uporabite za hitro preizkušanje novih poizvedb, odpravljanje napak orodij ali kot izhodišče za bolj napredno avtomatizacijo. Spodaj je primer uporabe MCP Python SDK za ustvarjanje take skripte:
+Test scripts let you quickly try new queries, debug tool behavior, or start advanced automation. Below is an example of using the MCP Python SDK to create such a script:
 
-## Opisi orodij
+## Tool Descriptions
 
-Za izvajanje različnih vrst iskanj in poizvedb lahko uporabite naslednja orodja, ki jih strežnik ponuja. Vsako orodje je opisano spodaj z njegovimi parametri in primeri uporabe.
+You can use the following tools provided by the server to perform various searches and queries. Each tool is described below with its parameters and example usage.
 
-Ta del ponuja podrobnosti o posameznih orodjih in njihovih parametrih.
+This section details each available tool and its parameters.
 
 ### general_search
 
-Izvede splošno spletno iskanje in vrne oblikovane rezultate.
+Performs a general web search and returns formatted results.
 
-**Kako klicati to orodje:**
+**How to call this tool:**
 
-`general_search` lahko pokličete iz svoje skripte z MCP Python SDK ali interaktivno preko Inspectorja ali interaktivnega načina odjemalca. Tukaj je primer kode z uporabo SDK:
+You can call `general_search` from your own script using the MCP Python SDK, or interactively via the Inspector or interactive client mode. Here’s a code example using the SDK:
 
 <details>
-<summary>Primer v Pythonu</summary>
+<summary>Python Example</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -237,12 +237,12 @@ async def run_general_search():
 ```
 </details>
 
-Alternativno, v interaktivnem načinu izberite `general_search` from the menu and enter your query when prompted.
+Alternatively, in interactive mode, select `general_search` from the menu and enter your query when prompted.
 
 **Parameters:**
-- `query` (string): iskalni poizvedek
+- `query` (string): The search query
 
-**Primer zahteve:**
+**Example Request:**
 
 ```json
 {
@@ -252,14 +252,14 @@ Alternativno, v interaktivnem načinu izberite `general_search` from the menu an
 
 ### news_search
 
-Išče nedavne novičarske članke, povezane s poizvedbo.
+Searches for recent news articles related to a query.
 
-**Kako klicati to orodje:**
+**How to call this tool:**
 
-`news_search` lahko pokličete iz svoje skripte z MCP Python SDK ali interaktivno preko Inspectorja ali interaktivnega načina odjemalca. Tukaj je primer kode z uporabo SDK:
+You can call `news_search` from your own script using the MCP Python SDK, or interactively via the Inspector or interactive client mode. Here’s a code example using the SDK:
 
 <details>
-<summary>Primer v Pythonu</summary>
+<summary>Python Example</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -278,12 +278,12 @@ async def run_news_search():
 ```
 </details>
 
-Alternativno, v interaktivnem načinu izberite `news_search` from the menu and enter your query when prompted.
+Alternatively, in interactive mode, select `news_search` from the menu and enter your query when prompted.
 
 **Parameters:**
-- `query` (string): iskalni poizvedek
+- `query` (string): The search query
 
-**Primer zahteve:**
+**Example Request:**
 
 ```json
 {
@@ -293,14 +293,14 @@ Alternativno, v interaktivnem načinu izberite `news_search` from the menu and e
 
 ### product_search
 
-Išče izdelke, ki ustrezajo poizvedbi.
+Searches for products matching a query.
 
-**Kako klicati to orodje:**
+**How to call this tool:**
 
-`product_search` lahko pokličete iz svoje skripte z MCP Python SDK ali interaktivno preko Inspectorja ali interaktivnega načina odjemalca. Tukaj je primer kode z uporabo SDK:
+You can call `product_search` from your own script using the MCP Python SDK, or interactively via the Inspector or interactive client mode. Here’s a code example using the SDK:
 
 <details>
-<summary>Primer v Pythonu</summary>
+<summary>Python Example</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -319,12 +319,12 @@ async def run_product_search():
 ```
 </details>
 
-Alternativno, v interaktivnem načinu izberite `product_search` from the menu and enter your query when prompted.
+Alternatively, in interactive mode, select `product_search` from the menu and enter your query when prompted.
 
 **Parameters:**
-- `query` (string): iskalni poizvedek za izdelke
+- `query` (string): The product search query
 
-**Primer zahteve:**
+**Example Request:**
 
 ```json
 {
@@ -334,14 +334,14 @@ Alternativno, v interaktivnem načinu izberite `product_search` from the menu an
 
 ### qna
 
-Pridobi neposredne odgovore na vprašanja iz iskalnikov.
+Gets direct answers to questions from search engines.
 
-**Kako klicati to orodje:**
+**How to call this tool:**
 
-`qna` lahko pokličete iz svoje skripte z MCP Python SDK ali interaktivno preko Inspectorja ali interaktivnega načina odjemalca. Tukaj je primer kode z uporabo SDK:
+You can call `qna` from your own script using the MCP Python SDK, or interactively via the Inspector or interactive client mode. Here’s a code example using the SDK:
 
 <details>
-<summary>Primer v Pythonu</summary>
+<summary>Python Example</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -360,12 +360,12 @@ async def run_qna():
 ```
 </details>
 
-Alternativno, v interaktivnem načinu izberite `qna` from the menu and enter your question when prompted.
+Alternatively, in interactive mode, select `qna` from the menu and enter your question when prompted.
 
 **Parameters:**
-- `question` (string): vprašanje, na katerega želite odgovor
+- `question` (string): The question to find an answer for
 
-**Primer zahteve:**
+**Example Request:**
 
 ```json
 {
@@ -373,14 +373,14 @@ Alternativno, v interaktivnem načinu izberite `qna` from the menu and enter you
 }
 ```
 
-## Podrobnosti kode
+## Code Details
 
-Ta del ponuja izseke kode in reference za implementacije strežnika in odjemalca.
+This section provides code snippets and references for the server and client implementations.
 
 <details>
 <summary>Python</summary>
 
-Poglejte [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) and [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) za celotne podrobnosti implementacije.
+See [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) and [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) for full implementation details.
 
 ```python
 # Example snippet from server.py:
@@ -390,28 +390,28 @@ import httpx
 ```
 </details>
 
-## Napredni koncepti v tej lekciji
+## Advanced Concepts in This Lesson
 
-Preden začnete z gradnjo, je tukaj nekaj pomembnih naprednih konceptov, ki se bodo pojavljali skozi to poglavje. Razumevanje teh vam bo pomagalo slediti, tudi če so vam novi:
+Before you start building, here are some important advanced concepts you’ll encounter throughout this chapter. Understanding these will help you follow along, even if you’re new to them:
 
-- **Usklajevanje več orodij**: pomeni, da v enem MCP strežniku poganjate več različnih orodij (kot so spletno iskanje, novičarsko iskanje, iskanje izdelkov in Q&A). To omogoča vašemu strežniku, da obravnava različne naloge, ne le eno.
-- **Upravljanje omejitev hitrosti API-ja**: mnogi zunanji API-ji (kot SerpAPI) omejujejo, koliko zahtev lahko naredite v določenem času. Dobra koda preverja te omejitve in jih obravnava na primeren način, da aplikacija ne pade, če presežete limit.
-- **Parsiranje strukturiranih podatkov**: odgovori API-jev so pogosto kompleksni in gnezdeni. Ta koncept pomeni pretvorbo teh odgovorov v čiste, enostavne formate, prijazne za LLM ali druge programe.
-- **Obnavljanje po napakah**: včasih gre kaj narobe – morda omrežje ne deluje ali API ne vrne pričakovanih podatkov. Obnavljanje po napakah pomeni, da vaša koda zna te težave obravnavati in še vedno dati uporabne povratne informacije, namesto da bi padla.
-- **Preverjanje parametrov**: pomeni, da preverite, ali so vsi vhodi v vaša orodja pravilni in varni za uporabo. Vključuje nastavljanje privzetih vrednosti in preverjanje tipov, kar pomaga preprečiti napake in zmedo.
+- **Multi-tool Orchestration**: Running several tools (web search, news search, product search, Q&A) inside one MCP server. This lets your server handle various tasks, not just one.
+- **API Rate Limit Handling**: Many external APIs (like SerpAPI) limit how many requests you can make in a certain time. Good code detects these limits and handles them smoothly, so your app doesn’t break if you hit a limit.
+- **Structured Data Parsing**: API responses can be complex and nested. This concept means converting those responses into clean, easy-to-use formats that are friendly for LLMs or other programs.
+- **Error Recovery**: Sometimes things go wrong—like network failures or unexpected API responses. Error recovery means your code can handle these issues and still provide useful feedback instead of crashing.
+- **Parameter Validation**: Checking that all inputs to your tools are correct and safe. This includes setting default values and ensuring types are right, helping avoid bugs and confusion.
 
-Ta del vam bo pomagal diagnosticirati in rešiti pogoste težave, s katerimi se lahko srečate pri delu z Web Search MCP strežnikom. Če naletite na napake ali nepričakovano vedenje, ta razdelek ponuja rešitve za najpogostejše težave. Preden poiščete dodatno pomoč, si oglejte te nasvete – pogosto hitro odpravijo težave.
+This section helps you diagnose and fix common issues you might meet when working with the Web Search MCP Server. If you encounter errors or unexpected behavior, this troubleshooting section offers solutions to frequent problems. Check these tips first—they often solve issues quickly.
 
-## Odpravljanje težav
+## Troubleshooting
 
-Pri delu z Web Search MCP strežnikom se lahko občasno pojavijo težave – to je normalno pri razvoju z zunanjimi API-ji in novimi orodji. Ta del ponuja praktične rešitve za najpogostejše težave, da boste hitro spet na pravi poti. Če naletite na napako, začnite tukaj: spodnji nasveti naslovijo težave, s katerimi se večina uporabnikov srečuje, in pogosto rešijo problem brez dodatne pomoči.
+When working with the Web Search MCP Server, you might occasionally face issues—this is normal when developing with external APIs and new tools. This section gives practical fixes for the most common problems so you can get back on track fast. If you hit an error, start here: these tips cover issues most users face and often fix problems without extra help.
 
-### Pogoste težave
+### Common Issues
 
-Spodaj so najpogostejši problemi, s katerimi se srečujejo uporabniki, skupaj s pojasnili in koraki za rešitev:
+Here are some frequent problems users run into, with clear explanations and how to fix them:
 
-1. **Manjkajoči SERPAPI_KEY v datoteki .env**
-   - Če vidite napako `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
+1. **Missing SERPAPI_KEY in .env file**
+   - If you see the error `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
 
 2. **Module not found errors**
    - Errors such as `ModuleNotFoundError: No module named 'httpx'` indicate that a required Python package is missing. This usually happens if you haven't installed all the dependencies. To resolve this, run `pip install -r requirements.txt` in your terminal to install everything your project needs.
@@ -420,13 +420,13 @@ Spodaj so najpogostejši problemi, s katerimi se srečujejo uporabniki, skupaj s
    - If you get an error like `Error during client execution`, it often means the client can't connect to the server, or the server isn't running as expected. Double-check that both the client and server are compatible versions, and that `server.py` is present and running in the correct directory. Restarting both the server and client can also help.
 
 4. **SerpAPI errors**
-   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env` datoteko, jo ustvarite, če je še ni. Če je ključ pravilen, a napaka ostaja, preverite, ali ste porabili kvoto brezplačnega paketa.
+   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env` file if needed. If your key is correct but the error persists, check if your free tier quota is used up.
 
-### Način za odpravljanje napak (Debug mode)
+### Debug Mode
 
-Privzeto aplikacija beleži samo pomembne informacije. Če želite videti več podrobnosti o dogajanju (na primer za lažje diagnosticiranje težav), lahko omogočite način DEBUG. Ta vam bo prikazal veliko več o vsakem koraku, ki ga aplikacija izvaja.
+By default, the app logs only important info. To see more details about what’s happening (e.g., to troubleshoot tricky issues), enable DEBUG mode. This shows much more about each step the app takes.
 
-**Primer: običajen izpis**
+**Example: Normal Output**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:24,123 - __main__ - INFO - Successfully called general_search
@@ -435,7 +435,7 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-**Primer: izpis v načinu DEBUG**
+**Example: DEBUG Output**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:23,457 - httpx - DEBUG - HTTP Request: GET https://serpapi.com/search ...
@@ -446,9 +446,9 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-Opazite, da način DEBUG vključuje dodatne vrstice o HTTP zahtevah, odgovorih in drugih notranjih podrobnostih. To je lahko zelo koristno pri odpravljanju težav.
+Notice DEBUG mode adds extra lines about HTTP requests, responses, and internal details. This is very useful for troubleshooting.
 
-Za omogočanje načina DEBUG nastavite nivo beleženja na DEBUG na vrhu vaše datoteke `client.py` or `server.py`:
+To enable DEBUG mode, set the logging level to DEBUG at the top of your `client.py` or `server.py`:
 
 <details>
 <summary>Python</summary>
@@ -465,9 +465,9 @@ logging.basicConfig(
 
 ---
 
-## Kaj sledi
+## What's next 
 
-- [6. Prispevki skupnosti](../../06-CommunityContributions/README.md)
+- [6. Community Contributions](../../06-CommunityContributions/README.md)
 
-**Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatski prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Ne odgovarjamo za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Izjava o omejitvi odgovornosti**:  
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvorno jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazumevanja ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.

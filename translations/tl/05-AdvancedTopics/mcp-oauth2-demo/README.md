@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:44:31+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:23:23+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "tl"
 }
 -->
 # MCP OAuth2 Demo
 
-Ang proyekto na ito ay isang **minimal na Spring Boot application** na nagsisilbing:
+Ang proyektong ito ay isang **minimal na Spring Boot application** na nagsisilbing:
 
-* isang **Spring Authorization Server** (na nag-iisyu ng JWT access tokens gamit ang `client_credentials` flow), at  
-* isang **Resource Server** (na pinoprotektahan ang sarili nitong `/hello` endpoint).
+* isang **Spring Authorization Server** (nagbibigay ng JWT access tokens gamit ang `client_credentials` flow), at  
+* isang **Resource Server** (pinoprotektahan ang sariling `/hello` endpoint).
 
-Ito ay katulad ng setup na ipinakita sa [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Ito ay sumusunod sa setup na ipinakita sa [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -34,7 +34,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Pagsusuri ng OAuth2 Configuration
+## Pagsubok sa OAuth2 Configuration
 
 Maaari mong subukan ang OAuth2 security configuration gamit ang mga sumusunod na hakbang:
 
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Note: Ang Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Note: Ang Basic Authentication header ay (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. I-access ang protected endpoint gamit ang token
+### 3. I-access ang protektadong endpoint gamit ang token
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Ang matagumpay na tugon na may "Hello from MCP OAuth2 Demo!" ay nagpapatunay na tama ang pagkakaayos ng OAuth2 configuration.
+Ang matagumpay na tugon na may "Hello from MCP OAuth2 Demo!" ay nagpapatunay na maayos ang OAuth2 configuration.
 
 ---
 
-## Pagbuo ng Container
+## Container build
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -100,7 +100,7 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 ---
 
-## Pag-integrate sa **Azure API Management**
+## Isama sa **Azure API Management**
 
 Idagdag ang inbound policy na ito sa iyong API:
 
@@ -116,13 +116,13 @@ Idagdag ang inbound policy na ito sa iyong API:
 </inbound>
 ```
 
-Kukunin ng APIM ang JWKS at ibe-validate ang bawat request.
+Kukunin ng APIM ang JWKS at ivavalidate ang bawat request.
 
 ---
 
 ## Ano ang susunod
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang serbisyong AI na pagsasalin [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami na maging tumpak, pakatandaan na ang awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
