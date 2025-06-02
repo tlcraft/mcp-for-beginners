@@ -1,6 +1,5 @@
 # Lesson: Building a Web Search MCP Server
 
-## Why This Lesson Belongs in Advanced Topics
 
 This chapter demonstrates how to build a real-world AI agent that integrates with external APIs, handles diverse data types, manages errors, and orchestrates multiple tools—all in a production-ready format. You'll see:
 
