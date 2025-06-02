@@ -255,7 +255,7 @@ Now that you have your SDK installed, let's create a project next:
      },
      "files": [
        "build"
-     ],
+     ]
   }
   ```
 
@@ -301,7 +301,7 @@ dotnet new console
 <details>
   <summary>TypeScript</summary>
   
-  Create a file *server.ts* and add the following code:
+  Create a file *index.ts* and add the following code:
 
   ```typescript
   import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";

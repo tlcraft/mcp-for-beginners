@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5331ffd328a54b90f76706c52b673e27",
-  "translation_date": "2025-05-16T15:06:55+00:00",
+  "original_hash": "e650db55873b456296a9c620069e2f71",
+  "translation_date": "2025-06-02T11:00:07+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "es"
 }
@@ -21,7 +21,7 @@ Agrega una herramienta y un recurso añadiendo el siguiente código:
 
 ### -6 Código final
 
-Vamos a añadir el último código que necesitamos para que el servidor pueda iniciarse:
+Vamos a añadir el último código que necesitamos para que el servidor pueda arrancar:
 
 ### -7- Probar el servidor
 
@@ -29,7 +29,7 @@ Inicia el servidor con el siguiente comando:
 
 ### -8- Ejecutar usando el inspector
 
-El inspector es una gran herramienta que puede iniciar tu servidor y te permite interactuar con él para que puedas probar que funciona. Vamos a iniciarlo:
+El inspector es una herramienta excelente que puede iniciar tu servidor y te permite interactuar con él para que puedas probar que funciona. Vamos a iniciarlo:
 
 > [!NOTE]
 > puede verse diferente en el campo "command" ya que contiene el comando para ejecutar un servidor con tu runtime específico/
@@ -38,7 +38,7 @@ Deberías ver la siguiente interfaz de usuario:
 
 ![Conectar](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.es.png)
 
-1. Conéctate al servidor seleccionando el botón Conectar  
+1. Conéctate al servidor seleccionando el botón Connect  
    Una vez conectado al servidor, deberías ver lo siguiente:
 
    ![Conectado](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.es.png)
@@ -53,7 +53,7 @@ Deberías ver la siguiente interfaz de usuario:
 
 ### SDKs oficiales
 
-MCP ofrece SDKs oficiales para múltiples lenguajes:
+MCP ofrece SDKs oficiales para varios lenguajes:
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Mantenido en colaboración con Microsoft
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Mantenido en colaboración con Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - La implementación oficial en TypeScript
@@ -64,24 +64,24 @@ MCP ofrece SDKs oficiales para múltiples lenguajes:
 
 ## Puntos clave
 
-- Configurar un entorno de desarrollo MCP es sencillo con los SDKs específicos para cada lenguaje
+- Configurar un entorno de desarrollo MCP es sencillo con SDKs específicos para cada lenguaje
 - Construir servidores MCP implica crear y registrar herramientas con esquemas claros
-- Las pruebas y la depuración son esenciales para implementaciones MCP confiables
+- Probar y depurar son esenciales para implementaciones MCP confiables
 
 ## Ejemplos
 
-- [Calculadora en Java](../samples/java/calculator/README.md)
-- [Calculadora en .Net](../../../../03-GettingStarted/samples/csharp)
-- [Calculadora en JavaScript](../samples/javascript/README.md)
-- [Calculadora en TypeScript](../samples/typescript/README.md)
-- [Calculadora en Python](../../../../03-GettingStarted/samples/python)
+- [Calculadora Java](../samples/java/calculator/README.md)
+- [Calculadora .Net](../../../../03-GettingStarted/samples/csharp)
+- [Calculadora JavaScript](../samples/javascript/README.md)
+- [Calculadora TypeScript](../samples/typescript/README.md)
+- [Calculadora Python](../../../../03-GettingStarted/samples/python)
 
 ## Tarea
 
-Crea un servidor MCP simple con una herramienta de tu elección:  
-1. Implementa la herramienta en tu lenguaje preferido (.NET, Java, Python o JavaScript).  
-2. Define los parámetros de entrada y los valores de retorno.  
-3. Ejecuta la herramienta inspector para asegurarte de que el servidor funcione correctamente.  
+Crea un servidor MCP simple con una herramienta de tu elección:
+1. Implementa la herramienta en tu lenguaje preferido (.NET, Java, Python o JavaScript).
+2. Define los parámetros de entrada y los valores de retorno.
+3. Ejecuta la herramienta inspector para asegurarte de que el servidor funcione correctamente.
 4. Prueba la implementación con diferentes entradas.
 
 ## Solución
@@ -96,5 +96,5 @@ Crea un servidor MCP simple con una herramienta de tu elección:
 
 Siguiente: [Primeros pasos con clientes MCP](/03-GettingStarted/02-client/README.md)
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso Legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea derivada del uso de esta traducción.
