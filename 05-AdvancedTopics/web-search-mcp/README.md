@@ -459,4 +459,6 @@ logging.basicConfig(
 
 ---
 
-Next: [6. Community Contributions](../../06-CommunityContributions/README.md)
+## What's next 
+
+- [6. Community Contributions](../../06-CommunityContributions/README.md)
