@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-29T20:17:04+00:00",
+  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
+  "translation_date": "2025-06-02T12:21:23+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "br"
 }
 -->
 # MCP OAuth2 Demo
 
-Este projeto é uma **aplicação Spring Boot minimalista** que atua como:
+Este projeto é uma **aplicação Spring Boot mínima** que atua como:
 
 * um **Spring Authorization Server** (emitindo tokens de acesso JWT via o fluxo `client_credentials`), e  
 * um **Resource Server** (protegendo seu próprio endpoint `/hello`).
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Deploy para **Azure Container Apps**
+## Deploy no **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,7 +95,7 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-O FQDN de ingresso se torna seu **issuer** (`https://<fqdn>`).  
+O FQDN de ingress se torna seu **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
@@ -116,7 +116,13 @@ Adicione esta política inbound à sua API:
 </inbound>
 ```
 
-O APIM irá buscar o JWKS e validar cada requisição.
+O APIM buscará o JWKS e validará cada requisição.
+
+---
+
+## Próximos passos
+
+- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, por favor, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

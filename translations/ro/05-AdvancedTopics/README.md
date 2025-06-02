@@ -1,48 +1,55 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:24:44+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:51:57+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "ro"
 }
 -->
-# Subiecte avansate în MCP
+# Subiecte Avansate în MCP
 
 ## Prezentare generală
 
-Această lecție explorează concepte avansate în implementarea Protocolului de Context al Modelului, concentrându-se pe integrarea multimodală, scalabilitate, cele mai bune practici de securitate și integrarea în mediul enterprise. Aceste subiecte sunt esențiale pentru construirea aplicațiilor MCP de producție care pot gestiona cerințe complexe în mediile enterprise.
+Această lecție explorează concepte avansate în implementarea Model Context Protocol, concentrându-se pe integrarea multi-modală, scalabilitate, bune practici de securitate și integrarea în mediile enterprise. Aceste subiecte sunt esențiale pentru construirea aplicațiilor MCP de nivel producție, capabile să gestioneze cerințe complexe în mediile enterprise.
 
 ## Obiective de învățare
 
-La sfârșitul acestei lecții, vei fi capabil să:
-- Implementezi capacități multimodale în cadrul MCP
-- Proiectezi arhitecturi MCP scalabile pentru scenarii cu cerere ridicată
-- Aplici cele mai bune practici de securitate aliniate cu principiile de securitate ale MCP
-- Integrezi MCP cu sistemele și cadrele AI ale întreprinderii
-- Optimizezi performanța și fiabilitatea în mediile de producție
+La finalul acestei lecții, vei putea:
+- Implementa capabilități multi-modale în cadrul MCP
+- Proiecta arhitecturi MCP scalabile pentru scenarii cu cerințe ridicate
+- Aplica cele mai bune practici de securitate conforme cu principiile MCP
+- Integra MCP cu sisteme și cadre AI enterprise
+- Optimiza performanța și fiabilitatea în mediile de producție
+
+## Proiecte exemplu
+
+| Link | Titlu | Descriere |
+|------|-------|-------------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Aplicație minimă Spring Boot care arată OAuth2 cu MCP, atât ca Authorization, cât și ca Resource Server. Demonstrează emiterea securizată a token-urilor, endpoint-uri protejate, implementare pe Azure Container Apps și integrare cu API Management. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web Search MCP | Server și client MCP în Python care integrează SerpAPI pentru căutare web, știri, produse și Q&A în timp real. Demonstrează orchestrarea multi-tool, integrarea API extern și gestionarea robustă a erorilor. |
 
 ## Referințe suplimentare
 
 Pentru cele mai actualizate informații despre subiectele avansate MCP, consultă:
-- [Documentația MCP](https://modelcontextprotocol.io/)
-- [Specificația MCP](https://spec.modelcontextprotocol.io/)
-- [Repository GitHub](https://github.com/modelcontextprotocol)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
 
-## Integrarea multimodală
+## Integrarea Multi-Modală
 
-MCP suportă nu doar interacțiuni bazate pe text, ci și capacități multimodale, permițând modelelor să lucreze cu imagini, audio și alte tipuri de date.
+MCP suportă nu doar interacțiuni bazate pe text, ci și capabilități multi-modale, permițând modelelor să lucreze cu imagini, audio și alte tipuri de date.
 
-### Arhitectura pentru suport multimodal
+### Arhitectura pentru suport multi-modal
 
-Implementările MCP multimodale implică de obicei:
+Implementările MCP multi-modale implică de obicei:
 
-1. **Parsoare specifice modalităților**: Componente care convertesc diferite tipuri de media în formate pe care modelul le poate procesa
-2. **Instrumente specifice modalităților**: Instrumente speciale proiectate pentru a gestiona modalități specifice (analiza imaginii, procesarea audio)
-3. **Management unificat al contextului**: Sistem pentru menținerea contextului între diferite modalități
+1. **Parser-e specifice modalității**: Componente care transformă diferite tipuri de media în formate procesabile de model
+2. **Unelte specifice modalității**: Unelte speciale concepute pentru a gestiona modalități specifice (analiza imaginilor, procesarea audio)
+3. **Gestionarea unificată a contextului**: Sistem care menține contextul peste diferite modalități
 4. **Generarea răspunsurilor**: Capacitatea de a genera răspunsuri care pot include mai multe modalități
 
-### Exemplu C# multimodal: analiza imaginii
+### Exemplu C# Multi-Modal: Analiza imaginilor
 
 ```csharp
 using ModelContextProtocol.SDK.Server;
@@ -174,7 +181,7 @@ namespace MultiModalMcpExample
 }
 ```
 
-### Exemplu Java multimodal: procesarea audio
+### Exemplu Java Multi-Modal: Procesarea audio
 
 ```java
 package com.example.mcp.multimodal;
@@ -302,7 +309,7 @@ public class MultiModalApplication {
 }
 ```
 
-### Exemplu Python multimodal: generarea răspunsurilor multimodale
+### Exemplu Python Multi-Modal: Generarea răspunsurilor multi-modale
 
 ```python
 from mcp_server import McpServer
@@ -450,27 +457,27 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## Contextele radăcină MCP
+## Root Contexts în MCP
 
-Contextele radăcină sunt un concept fundamental în Protocolul de Context al Modelului care oferă un strat persistent pentru menținerea istoricului conversației și a stării partajate între cereri și sesiuni multiple.
+Root contexts sunt un concept fundamental în Model Context Protocol, oferind un strat persistent pentru menținerea istoricului conversației și a stării partajate între multiple cereri și sesiuni.
 
-### Înțelegerea contextelor radăcină
+### Înțelegerea Root Contexts
 
-Contextele radăcină servesc ca containere care păstrează istoricul și starea pentru o serie de interacțiuni legate. Ele permit:
+Root contexts funcționează ca niște containere care păstrează istoricul și starea pentru o serie de interacțiuni conexe. Ele permit:
 
-- **Persistența conversației**: Menținerea conversațiilor coerente cu mai multe întoarceri
-- **Managementul memoriei**: Stocarea și recuperarea informațiilor între interacțiuni
-- **Managementul stării**: Urmărirea progresului în fluxuri de lucru complexe
-- **Partajarea contextului**: Permite accesul mai multor clienți la aceeași stare a conversației
+- **Persistența conversației**: Menținerea conversațiilor coerente pe mai multe runde
+- **Gestionarea memoriei**: Stocarea și recuperarea informațiilor între interacțiuni
+- **Gestionarea stării**: Urmărirea progresului în fluxuri de lucru complexe
+- **Partajarea contextului**: Permite mai multor clienți să acceseze aceeași stare a conversației
 
-În MCP, contextele radăcină au aceste caracteristici cheie:
+În MCP, root contexts au următoarele caracteristici cheie:
 
-- Fiecare context radăcină are un identificator unic
-- Ele pot conține istoricul conversației, preferințele utilizatorului și alte metadate
-- Pot fi create, accesate și arhivate după nevoie
-- Suportă controlul accesului și permisiuni detaliate
+- Fiecare root context are un identificator unic
+- Pot conține istoricul conversației, preferințe ale utilizatorului și alte metadate
+- Pot fi create, accesate și arhivate după necesitate
+- Suportă control fin al accesului și permisiuni
 
-### Ciclu de viață al contextelor radăcină
+### Ciclu de viață al Root Context
 
 ```mermaid
 flowchart TD
@@ -481,7 +488,7 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### Exemplu .NET: lucrul cu contexte radăcină
+### Exemplu .NET: Lucrul cu Root Contexts
 
 ```csharp
 // .NET Example: Root Context Management
@@ -556,7 +563,7 @@ public class RootContextExample
 }
 ```
 
-### Exemplu Java: implementarea contextului radăcină
+### Exemplu Java: Implementarea Root Context
 
 ```java
 // Java Example: Root Context Implementation
@@ -642,7 +649,7 @@ public class RootContextsDemo {
 }
 ```
 
-### Exemplu JavaScript: managementul contextului radăcină
+### Exemplu JavaScript: Gestionarea Root Context
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Exemplu Python: context radăcină pentru asistență cu mai multe întoarceri
+### Exemplu Python: Root Context pentru asistență multi-turn
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1009,31 +1016,31 @@ if __name__ == "__main__":
     asyncio.run(demo_assistant_session())
 ```
 
-### Cele mai bune practici pentru contexte radăcină
+### Cele mai bune practici pentru Root Context
 
-1. **Crearea contextelor focalizate**: Creează contexte radăcină separate pentru diferite scopuri sau domenii ale conversației pentru a menține claritatea.
+1. **Creează contexte focalizate**: Creează root contexts separate pentru scopuri sau domenii diferite ale conversației pentru a menține claritatea.
 
-2. **Setarea politicilor de expirare**: Implementează politici pentru arhivarea sau ștergerea contextelor vechi pentru a gestiona stocarea și a respecta politicile de retenție a datelor.
+2. **Setează politici de expirare**: Implementează politici pentru arhivarea sau ștergerea contextelor vechi pentru a gestiona stocarea și a respecta politicile de retenție a datelor.
 
-3. **Stocarea metadatelor relevante**: Folosește metadatele contextului pentru a stoca informații importante despre conversație care ar putea fi utile ulterior.
+3. **Stochează metadate relevante**: Folosește metadatele contextului pentru a păstra informații importante despre conversație care ar putea fi utile ulterior.
 
-4. **Utilizarea consistentă a ID-urilor de context**: Odată ce un context este creat, folosește ID-ul său în mod consistent pentru toate cererile legate pentru a menține continuitatea.
+4. **Folosește constant ID-urile contextului**: Odată ce un context este creat, folosește consistent ID-ul său pentru toate cererile conexe pentru a menține continuitatea.
 
-5. **Generarea de rezumate**: Când un context devine mare, ia în considerare generarea de rezumate pentru a captura informațiile esențiale în timp ce gestionezi dimensiunea contextului.
+5. **Generează rezumate**: Când un context devine prea mare, ia în considerare generarea unor rezumate pentru a capta informațiile esențiale și a gestiona dimensiunea contextului.
 
-6. **Implementarea controlului accesului**: Pentru sistemele cu mai mulți utilizatori, implementează controale de acces adecvate pentru a asigura confidențialitatea și securitatea contextelor conversației.
+6. **Implementează controlul accesului**: Pentru sistemele multi-utilizator, implementează controale adecvate pentru a asigura confidențialitatea și securitatea contextelor conversației.
 
-7. **Gestionarea limitărilor contextului**: Fii conștient de limitările dimensiunii contextului și implementează strategii pentru gestionarea conversațiilor foarte lungi.
+7. **Gestionează limitările contextului**: Fii conștient de limitările privind dimensiunea contextului și implementează strategii pentru gestionarea conversațiilor foarte lungi.
 
-8. **Arhivarea la finalizare**: Arhivează contexte atunci când conversațiile sunt complete pentru a elibera resursele în timp ce păstrezi istoricul conversației.
+8. **Arhivează când este complet**: Arhivează contextul când conversațiile sunt încheiate pentru a elibera resurse, păstrând totodată istoricul conversației.
 
-## Eșantionarea în Protocolul de Context al Modelului
+## Sampling în Model Context Protocol
 
-Strategiile de eșantionare sunt esențiale pentru optimizarea răspunsurilor modelului în implementările MCP. Configurația corectă de eșantionare poate îmbunătăți dramatic calitatea și performanța răspunsurilor. MCP oferă o modalitate standardizată de a controla modul în care modelele generează text cu parametri specifici care influențează aleatoritatea, creativitatea și coerența.
+Strategiile de sampling sunt esențiale pentru optimizarea răspunsurilor modelului în implementările MCP. Configurația corectă a sampling-ului poate îmbunătăți semnificativ calitatea și performanța răspunsurilor. MCP oferă o metodă standardizată de control a modului în care modelele generează text, cu parametri care influențează aleatorietatea, creativitatea și coerența.
 
-### Prezentare generală a parametrilor de eșantionare
+### Prezentare generală a parametrilor de sampling
 
-MCP definește următorii parametri de eșantionare care pot fi configurați în cererile clientului:
+MCP definește următorii parametri de sampling care pot fi configurați în cererile client:
 
 | Parametru | Descriere | Interval tipic |
 |-----------|-------------|---------------|
@@ -1046,9 +1053,9 @@ MCP definește următorii parametri de eșantionare care pot fi configurați în
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
 | `stop_sequences` | Secvențe personalizate care opresc generarea când sunt întâlnite | Array de șiruri |
 
-### Eșantionarea Temperature și Top-K/Top-P
+### Sampling Temperature și Top-K/Top-P
 
-Parametrii de eșantionare permit ajustarea fină a comportamentului modelelor de limbaj pentru a obține echilibrul dorit între ieșirile deterministe și creative.
+Parametrii de sampling permit reglarea fină a comportamentului modelelor de limbaj pentru a atinge echilibrul dorit între rezultate deterministe și creative.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1142,9 +1149,9 @@ async function demonstrateSampling() {
 demonstrateSampling();
 ```
 
-### Eșantionarea deterministă
+### Sampling determinist
 
-Pentru aplicațiile care necesită ieșiri consistente, eșantionarea deterministă asigură rezultate reproducibile.
+Pentru aplicații care necesită rezultate consistente, sampling-ul determinist asigură reproducibilitatea rezultatelor.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1228,9 +1235,9 @@ async function deterministicSampling() {
 deterministicSampling();
 ```
 
-### Configurația dinamică a eșantionării
+### Configurație dinamică a sampling-ului
 
-Eșantionarea inteligentă adaptează parametrii în funcție de contextul și cerințele fiecărei cereri.
+Sampling-ul inteligent adaptează parametrii în funcție de context și de cerințele fiecărei solicitări.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1469,13 +1476,13 @@ async function demonstrateAdaptiveSampling() {
 demonstrateAdaptiveSampling();
 ```
 
-## Rutarea în Protocolul de Context al Modelului
+## Routing în Model Context Protocol
 
-Rutarea este esențială pentru direcționarea cererilor către modelele, instrumentele sau serviciile corespunzătoare în cadrul unui ecosistem MCP.
+Routing-ul este esențial pentru direcționarea cererilor către modelele, uneltele sau serviciile potrivite din cadrul ecosistemului MCP.
 
-### Rutarea bazată pe conținut
+### Routing bazat pe conținut
 
-Rutarea bazată pe conținut direcționează cererile către servicii specializate pe baza conținutului cererii.
+Routing-ul bazat pe conținut direcționează cererile către servicii specializate în funcție de conținutul solicitării.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1546,9 +1553,9 @@ public class ContentBasedRouter
 }
 ```
 
-### Balansarea inteligentă a încărcării
+### Echilibrare inteligentă a încărcării
 
-Balansarea încărcării optimizează utilizarea resurselor și asigură disponibilitatea ridicată a serviciilor MCP.
+Echilibrarea încărcării optimizează utilizarea resurselor și asigură disponibilitate ridicată pentru serviciile MCP.
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -1677,9 +1684,9 @@ public class McpLoadBalancer {
 }
 ```
 
-### Rutarea dinamică a instrumentelor
+### Routing dinamic al uneltelor
 
-Rutarea instrumentelor asigură că apelurile instrumentelor sunt direcționate către serviciul cel mai adecvat pe baza contextului.
+Routing-ul uneltelor asigură direcționarea apelurilor către serviciul cel mai potrivit în funcție de context.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1790,9 +1797,9 @@ class McpToolRouter:
             raise
 ```
 
-### Arhitectura de eșantionare și rutare în MCP
+### Arhitectura sampling și routing în MCP
 
-Diagrama de mai jos ilustrează modul în care eșantionarea și rutarea funcționează împreună într-o arhitectură cuprinzătoare MCP:
+Diagrama de mai jos ilustrează modul în care sampling-ul și routing-ul funcționează împreună într-o arhitectură MCP cuprinzătoare:
 
 ```mermaid
 flowchart TB
@@ -1859,13 +1866,13 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Scalabilitatea și performanța ridicată a MCP
+## Scalabilitate și MCP de înaltă performanță
 
 Pentru implementările enterprise, MCP trebuie adesea să gestioneze volume mari de cereri cu latență minimă.
 
 ### Strategii de scalabilitate
 
-#### Scalabilitate orizontală
+#### Scalare orizontală
 
 ```csharp
 // ASP.NET Core MCP load balancing configuration
@@ -1895,7 +1902,7 @@ public class McpLoadBalancedStartup
 }
 ```
 
-#### Scalabilitate verticală și optimizarea resurselor
+#### Scalare verticală și optimizarea resurselor
 
 ```java
 // Java MCP server with resource optimization
@@ -2011,13 +2018,13 @@ class DistributedMcpServer:
         await self.redis.wait_closed()
 ```
 
-## Cele mai bune practici de securitate
+## Bune practici de securitate
 
-Securitatea este critică pentru implementările MCP, mai ales în mediile enterprise.
+Securitatea este esențială pentru implementările MCP, mai ales în mediile enterprise.
 
 ### Autentificare și autorizare
 
-#### Integrarea .NET Identity
+#### Integrare .NET Identity
 
 ```csharp
 public class SecureMcpStartup
@@ -2088,7 +2095,7 @@ public class SecureMcpStartup
 }
 ```
 
-#### Integrarea Java Spring Security
+#### Integrare Java Spring Security
 
 ```java
 @Configuration
@@ -2142,7 +2149,7 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 ### Protecția datelor și confidențialitate
 
-#### Exemplu de protecție a datelor în Python
+#### Exemplu Python pentru protecția datelor
 
 ```python
 from mcp_server import McpServer
@@ -2278,11 +2285,11 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-## Integrarea în mediul enterprise
+## Integrare enterprise
 
-Integrarea MCP cu sistemele enterprise precum Azure OpenAI și Microsoft AI Foundry.
+Integrarea MCP cu sisteme enterprise precum Azure OpenAI și Microsoft AI Foundry.
 
-### Integrarea Azure OpenAI
+### Integrare Azure OpenAI
 
 ```csharp
 // .NET Azure OpenAI Integration
@@ -2346,7 +2353,7 @@ namespace EnterpriseIntegration
 }
 ```
 
-### Integrarea Microsoft AI Foundry
+### Integrare Microsoft AI Foundry
 
 ```java
 // Java AI Foundry Agent Integration
@@ -2404,7 +2411,7 @@ public class AIFoundryMcpBridge {
 }
 ```
 
-### Exemplu de integrare enterprise în Python
+### Exemplu Python de integrare enterprise
 
 ```python
 # Python Azure AI Integration
@@ -2528,32 +2535,34 @@ class EnterpriseAiIntegration:
         return mapping.get(ml_type, "string")
 ```
 
-## Puncte cheie
+## Concluzii cheie
 
-- Implementările MCP multimodale extind capacitățile AI dincolo de procesarea textului
-- Scalabilitatea este esențială pentru implementările enterprise și poate fi abordată prin scalabilitate orizontală și verticală
-- Măsurile de securitate cuprinzătoare protejează datele și asigură controlul corespunzător al accesului
-- Integrarea enterprise cu platforme precum Azure OpenAI și Microsoft AI Foundry îmbunătățește capacitățile MCP
-- Implementările avansate MCP beneficiază de arhitecturi optimizate și management atent al resurselor
+- Implementările MCP multi-modale extind capabilitățile AI dincolo de procesarea textului
+- Scalabilitatea este esențială pentru implementările enterprise și poate fi abordată prin scalare orizontală și verticală
+- Măsurile cuprinzătoare de securitate protejează datele și asigură controlul corect al accesului
+- Integrarea enterprise cu platforme precum Azure OpenAI și Microsoft AI Foundry îmbunătățește capabilitățile MCP
+- Implementările avansate MCP beneficiază de arhitecturi optimizate și gestionare atentă a resurselor
 
 ## Exercițiu
 
 Proiectează o implementare MCP de nivel enterprise pentru un caz de utilizare specific:
 
-1. Identifică cerințele multimodale pentru cazul tău de utilizare
+1. Identifică cerințele multi-modale pentru cazul tău de utilizare
 2. Conturează controalele de securitate necesare pentru protejarea datelor sensibile
-3. Proiectează o arhitectură scalabilă care poate gestiona încărcări variabile
+3. Proiectează o arhitectură scalabilă care să poată gestiona încărcări variabile
 4. Planifică punctele de integrare cu sistemele AI enterprise
-5. Documentează potențialele blocaje de performanță și strategiile de atenuare
+5. Documentează posibilele blocaje de performanță și strategiile de atenuare
 
 ## Resurse suplimentare
 
-- [Documentația Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Documentația Microsoft AI Foundry](https://learn.microsoft.com/en-us/ai-services/)
+- [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
-Următor: [Comunitate și contribuții](../06-CommunityContributions/README.md)
+## Ce urmează
 
-**Declinarea responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți de faptul că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională umană. Nu suntem responsabili pentru neînțelegeri sau interpretări greșite care rezultă din utilizarea acestei traduceri.
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
+
+**Declinare a responsabilității**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

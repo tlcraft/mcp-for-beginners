@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:26:43+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:58:33+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "sl"
 }
@@ -11,38 +11,45 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Pregled
 
-Ta lekcija raziskuje napredne koncepte v implementaciji Model Context Protocol, s poudarkom na večmodalni integraciji, razširljivosti, najboljših praksah varnosti in integraciji v podjetju. Te teme so ključne za gradnjo produkcijskih MCP aplikacij, ki lahko obravnavajo kompleksne zahteve v podjetniških okoljih.
+Ta lekcija raziskuje napredne koncepte implementacije Model Context Protocol, s poudarkom na večmodalni integraciji, razširljivosti, varnostnih najboljših praksah in integraciji v podjetja. Te teme so ključne za gradnjo produkcijskih MCP aplikacij, ki lahko obvladujejo zahtevne zahteve v poslovnih okoljih.
 
 ## Cilji učenja
 
-Do konca te lekcije boste sposobni:
-- Implementirati večmodalne zmožnosti znotraj MCP okvirov
-- Oblikovati razširljive MCP arhitekture za scenarije z visoko povpraševanjem
-- Uporabiti najboljše prakse varnosti v skladu z varnostnimi načeli MCP
+Do konca te lekcije boste znali:
+- Implementirati večmodalne zmogljivosti znotraj MCP okvirjev
+- Načrtovati razširljive MCP arhitekture za scenarije z veliko obremenitvijo
+- Uporabiti varnostne najboljše prakse v skladu z varnostnimi načeli MCP
 - Integrirati MCP s podjetniškimi AI sistemi in okviri
 - Optimizirati zmogljivost in zanesljivost v produkcijskih okoljih
 
-## Dodatne reference
+## Primeri projektov
 
-Za najbolj ažurne informacije o naprednih temah MCP se obrnite na:
+| Povezava | Naslov | Opis |
+|----------|--------|-------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimalna Spring Boot aplikacija, ki prikazuje OAuth2 z MCP, kot Avtorizacijski in Vir strežnik. Prikazuje varno izdajo žetonov, zaščitene končne točke, namestitev na Azure Container Apps in integracijo z API Management. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web Search MCP | Python MCP strežnik in odjemalec, ki se povezuje s SerpAPI za iskanje v spletu, novicah, produktih in Q&A v realnem času. Prikazuje večorodno orkestracijo, integracijo zunanjih API-jev in robustno ravnanje z napakami. |
+
+## Dodatni viri
+
+Za najnovejše informacije o naprednih temah MCP si oglejte:
 - [MCP Dokumentacija](https://modelcontextprotocol.io/)
 - [MCP Specifikacija](https://spec.modelcontextprotocol.io/)
 - [GitHub Repozitorij](https://github.com/modelcontextprotocol)
 
 ## Večmodalna integracija
 
-MCP podpira ne le interakcije na podlagi besedila, temveč tudi večmodalne zmožnosti, ki omogočajo modelom delo s slikami, zvokom in drugimi vrstami podatkov.
+MCP podpira ne samo interakcije na osnovi besedila, temveč tudi večmodalne zmogljivosti, ki omogočajo modelom delo s slikami, zvokom in drugimi vrstami podatkov.
 
-### Arhitektura za podporo večmodalnosti
+### Arhitektura za večmodalno podporo
 
 Večmodalne implementacije MCP običajno vključujejo:
 
-1. **Parserji specifični za modalnost**: Komponente, ki pretvorijo različne medijske tipe v formate, ki jih model lahko obdeluje
-2. **Orodja specifična za modalnost**: Posebna orodja, namenjena obravnavi specifičnih modalnosti (analiza slik, obdelava zvoka)
-3. **Upravljanje združenega konteksta**: Sistem za ohranjanje konteksta med različnimi modalnostmi
-4. **Generiranje odzivov**: Zmožnost generiranja odzivov, ki lahko vključujejo več modalnosti
+1. **Modalno-specifične parserje**: Komponente, ki pretvarjajo različne medijske tipe v formate, ki jih model lahko obdela
+2. **Modalno-specifična orodja**: Posebna orodja za delo z določenimi modalitetami (analiza slik, obdelava zvoka)
+3. **Unificirano upravljanje konteksta**: Sistem za vzdrževanje konteksta preko različnih modalitet
+4. **Generiranje odgovorov**: Zmožnost ustvarjanja odgovorov, ki lahko vključujejo več modalitet
 
-### C# primer večmodalnosti: Analiza slik
+### C# primer večmodalnosti: analiza slik
 
 ```csharp
 using ModelContextProtocol.SDK.Server;
@@ -174,7 +181,7 @@ namespace MultiModalMcpExample
 }
 ```
 
-### Java primer večmodalnosti: Obdelava zvoka
+### Java primer večmodalnosti: obdelava zvoka
 
 ```java
 package com.example.mcp.multimodal;
@@ -302,7 +309,7 @@ public class MultiModalApplication {
 }
 ```
 
-### Python primer večmodalnosti: Generiranje večmodalnih odzivov
+### Python primer večmodalnosti: generiranje večmodalnih odgovorov
 
 ```python
 from mcp_server import McpServer
@@ -450,27 +457,27 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## MCP korenski konteksti
+## Root konteksti v MCP
 
-Korenski konteksti so temeljni koncept v Model Context Protocol, ki zagotavljajo trajno plast za ohranjanje zgodovine pogovorov in deljenega stanja preko več zahtev in sej.
+Root konteksti so osnovni koncept v Model Context Protocol, ki zagotavljajo vztrajni sloj za ohranjanje zgodovine pogovora in skupnega stanja čez več zahtev in sej.
 
-### Razumevanje korenskih kontekstov
+### Razumevanje root kontekstov
 
-Korenski konteksti služijo kot posode, ki hranijo zgodovino in stanje za serijo povezanih interakcij. Omogočajo:
+Root konteksti služijo kot vsebniki, ki hranijo zgodovino in stanje za vrsto povezanih interakcij. Omogočajo:
 
-- **Trajnost pogovora**: Ohranjanje koherentnih večkratnih pogovorov
+- **Vztrajnost pogovora**: Ohranjanje koherentnih večkratnih izmenjav
 - **Upravljanje spomina**: Shranjevanje in pridobivanje informacij med interakcijami
-- **Upravljanje stanja**: Sledenje napredku v kompleksnih delovnih tokovih
-- **Deljenje konteksta**: Omogočanje več strankam dostop do istega stanja pogovora
+- **Upravljanje stanja**: Sledenje napredku v zapletenih delovnih tokovih
+- **Deljenje konteksta**: Omogočanje dostopa več strankam do istega stanja pogovora
 
-V MCP imajo korenski konteksti te ključne značilnosti:
+V MCP imajo root konteksti te ključne lastnosti:
 
-- Vsak korenski kontekst ima edinstven identifikator
-- Lahko vsebuje zgodovino pogovorov, uporabniške preference in druge metapodatke
-- Lahko jih ustvarite, dostopate do njih in arhivirate po potrebi
-- Podpirajo natančen nadzor dostopa in dovoljenja
+- Vsak root kontekst ima edinstven identifikator
+- Lahko vsebujejo zgodovino pogovora, uporabniške preference in drugo metapodatke
+- Lahko se ustvarjajo, dostopajo in arhivirajo po potrebi
+- Podpirajo finozrnate kontrole dostopa in dovoljenja
 
-### Življenjski cikel korenskih kontekstov
+### Življenjski cikel root kontekstov
 
 ```mermaid
 flowchart TD
@@ -481,7 +488,7 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### .NET primer: Delo s korenskimi konteksti
+### .NET primer: delo z root konteksti
 
 ```csharp
 // .NET Example: Root Context Management
@@ -556,7 +563,7 @@ public class RootContextExample
 }
 ```
 
-### Java primer: Implementacija korenskih kontekstov
+### Java primer: implementacija root konteksta
 
 ```java
 // Java Example: Root Context Implementation
@@ -642,7 +649,7 @@ public class RootContextsDemo {
 }
 ```
 
-### JavaScript primer: Upravljanje korenskih kontekstov
+### JavaScript primer: upravljanje root konteksta
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Python primer: Korenski kontekst za večkratno pomoč
+### Python primer: root kontekst za večkratno pomoč
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1009,34 +1016,34 @@ if __name__ == "__main__":
     asyncio.run(demo_assistant_session())
 ```
 
-### Najboljše prakse korenskih kontekstov
+### Najboljše prakse za root kontekste
 
-1. **Ustvarite osredotočene kontekste**: Ustvarite ločene korenske kontekste za različne namene ali domene pogovorov, da ohranite jasnost.
+1. **Ustvarjajte osredotočene kontekste**: Za različne namene pogovorov ali domene ustvarjajte ločene root kontekste za boljšo jasnost.
 
-2. **Nastavite politike poteka**: Uvedite politike za arhiviranje ali brisanje starih kontekstov, da upravljate shranjevanje in se držite politik zadrževanja podatkov.
+2. **Nastavite politike poteka**: Uvedite politike za arhiviranje ali brisanje starih kontekstov za upravljanje prostora in skladnost s pravili hrambe podatkov.
 
-3. **Shranjujte relevantne metapodatke**: Uporabite metapodatke konteksta za shranjevanje pomembnih informacij o pogovoru, ki bi lahko bile koristne kasneje.
+3. **Shranjujte pomembne metapodatke**: Uporabite metapodatke konteksta za shranjevanje pomembnih informacij o pogovoru, ki so lahko kasneje uporabne.
 
-4. **Dosledno uporabljajte ID-je konteksta**: Ko je kontekst ustvarjen, dosledno uporabljajte njegov ID za vse povezane zahteve, da ohranite kontinuiteto.
+4. **Dosledno uporabljajte ID-je konteksta**: Ko je kontekst ustvarjen, dosledno uporabljajte njegov ID za vse povezane zahteve za ohranjanje kontinuitete.
 
-5. **Generirajte povzetke**: Ko kontekst postane velik, razmislite o generiranju povzetkov, da zajamete bistvene informacije ob upravljanju velikosti konteksta.
+5. **Generirajte povzetke**: Ko kontekst postane obsežen, razmislite o generiranju povzetkov za zajem bistvenih informacij ob hkratnem upravljanju velikosti konteksta.
 
-6. **Uvedite nadzor dostopa**: Za sisteme z več uporabniki uvedite ustrezne kontrole dostopa, da zagotovite zasebnost in varnost kontekstov pogovora.
+6. **Uvedite kontrole dostopa**: Za sisteme z več uporabniki uvedite ustrezne kontrole dostopa za zagotovitev zasebnosti in varnosti kontekstov pogovorov.
 
-7. **Obravnavajte omejitve konteksta**: Zavedajte se omejitev velikosti konteksta in uvedite strategije za obravnavo zelo dolgih pogovorov.
+7. **Obvladujte omejitve konteksta**: Zavedajte se omejitev velikosti konteksta in uvedite strategije za obvladovanje zelo dolgih pogovorov.
 
-8. **Arhivirajte, ko je končano**: Arhivirajte kontekste, ko so pogovori zaključeni, da sprostite vire ob ohranjanju zgodovine pogovora.
+8. **Arhivirajte ob zaključku**: Arhivirajte kontekste, ko so pogovori zaključeni, da sprostite vire ob ohranitvi zgodovine pogovora.
 
-## Vzorčenje v Model Context Protocol
+## Vzorecanje v Model Context Protocol
 
-Strategije vzorčenja so ključne za optimizacijo odzivov modela v implementacijah MCP. Prava konfiguracija vzorčenja lahko dramatično izboljša kakovost in zmogljivost odziva. MCP zagotavlja standardiziran način nadzora, kako modeli generirajo besedilo s specifičnimi parametri, ki vplivajo na naključnost, kreativnost in koherenco.
+Strategije vzorčenja so ključne za optimizacijo odzivov modelov v implementacijah MCP. Pravilna konfiguracija vzorčenja lahko bistveno izboljša kakovost in zmogljivost odzivov. MCP zagotavlja standardiziran način nadzora generiranja besedila z določenimi parametri, ki vplivajo na naključnost, ustvarjalnost in koherenco.
 
 ### Pregled parametrov vzorčenja
 
-MCP definira naslednje parametre vzorčenja, ki jih je mogoče konfigurirati v zahtevah strank:
+MCP definira naslednje parametre vzorčenja, ki jih je mogoče nastaviti v zahtevah odjemalca:
 
-| Parameter | Opis | Tipičen obseg |
-|-----------|-------------|---------------|
+| Parameter | Opis | Tipični razpon |
+|-----------|-------|----------------|
 | `temperature` | Controls randomness in token selection | 0.0 - 2.0 |
 | `top_p` | Nucleus sampling - limits tokens to top cumulative probability | 0.0 - 1.0 |
 | `top_k` | Limits token selection to top K options | 1 - 100 |
@@ -1044,11 +1051,11 @@ MCP definira naslednje parametre vzorčenja, ki jih je mogoče konfigurirati v z
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | Prilagojene sekvence, ki ustavijo generacijo ob srečanju | Array of strings |
+| `stop_sequences` | Niz posebnih sekvenc, ki ustavijo generiranje, ko so zaznane | Polje nizov |
 
-### Vzorčenje Temperature in Top-K/Top-P
+### Temperature in Top-K/Top-P vzorčenje
 
-Parametri vzorčenja omogočajo fino nastavitev obnašanja jezikovnih modelov za doseganje želene ravnoteže med determinističnimi in kreativnimi izhodi.
+Parametri vzorčenja omogočajo natančno prilagajanje vedenja jezikovnih modelov za dosego želene ravnotežja med determinističnimi in ustvarjalnimi izhodi.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1144,7 +1151,7 @@ demonstrateSampling();
 
 ### Deterministično vzorčenje
 
-Za aplikacije, ki zahtevajo dosledne izhode, deterministično vzorčenje zagotavlja reproducibilne rezultate.
+Za aplikacije, ki zahtevajo dosledne rezultate, deterministično vzorčenje zagotavlja ponovljive izide.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1230,7 +1237,7 @@ deterministicSampling();
 
 ### Dinamična konfiguracija vzorčenja
 
-Inteligentno vzorčenje prilagaja parametre glede na kontekst in zahteve vsake zahteve.
+Pametno vzorčenje prilagaja parametre glede na kontekst in zahteve posamezne zahteve.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1471,11 +1478,11 @@ demonstrateAdaptiveSampling();
 
 ## Usmerjanje v Model Context Protocol
 
-Usmerjanje je bistveno za usmerjanje zahtev do ustreznih modelov, orodij ali storitev znotraj ekosistema MCP.
+Usmerjanje je ključno za usmerjanje zahtev na ustrezne modele, orodja ali storitve znotraj MCP ekosistema.
 
 ### Usmerjanje na podlagi vsebine
 
-Usmerjanje na podlagi vsebine usmerja zahteve do specializiranih storitev glede na vsebino zahteve.
+Usmerjanje na podlagi vsebine usmerja zahteve na specializirane storitve glede na vsebino zahteve.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1546,9 +1553,9 @@ public class ContentBasedRouter
 }
 ```
 
-### Inteligentno razporejanje obremenitve
+### Inteligentno uravnoteženje obremenitve
 
-Razporejanje obremenitve optimizira izrabo virov in zagotavlja visoko razpoložljivost za storitve MCP.
+Uravnoteženje obremenitve optimizira uporabo virov in zagotavlja visoko razpoložljivost MCP storitev.
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -1679,7 +1686,7 @@ public class McpLoadBalancer {
 
 ### Dinamično usmerjanje orodij
 
-Usmerjanje orodij zagotavlja, da se klici orodij usmerjajo na najbolj ustrezno storitev glede na kontekst.
+Usmerjanje orodij zagotavlja, da so klici orodij usmerjeni na najbolj primerno storitev glede na kontekst.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1792,7 +1799,7 @@ class McpToolRouter:
 
 ### Arhitektura vzorčenja in usmerjanja v MCP
 
-Diagram spodaj ponazarja, kako vzorčenje in usmerjanje delujeta skupaj v celoviti arhitekturi MCP:
+Spodnja shema prikazuje, kako vzorčenje in usmerjanje delujeta skupaj v celoviti MCP arhitekturi:
 
 ```mermaid
 flowchart TB
@@ -1859,9 +1866,9 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Razširljivost in visoko zmogljiv MCP
+## Razširljivost in visoke zmogljivosti MCP
 
-Za podjetniške implementacije MCP pogosto potrebujejo obravnavo velikih količin zahtev z minimalno zakasnitvijo.
+Za podjetniške namestitve morajo implementacije MCP pogosto obvladovati velike količine zahtev z minimalno zakasnitvijo.
 
 ### Strategije razširljivosti
 
@@ -1928,7 +1935,7 @@ public class OptimizedMcpServer {
 }
 ```
 
-#### Porazdeljena arhitektura
+#### Distribuirana arhitektura
 
 ```python
 # Python MCP server in distributed architecture
@@ -2011,7 +2018,7 @@ class DistributedMcpServer:
         await self.redis.wait_closed()
 ```
 
-## Najboljše prakse varnosti
+## Najboljše varnostne prakse
 
 Varnost je ključna za implementacije MCP, še posebej v podjetniških okoljih.
 
@@ -2088,7 +2095,7 @@ public class SecureMcpStartup
 }
 ```
 
-#### Java integracija Spring varnosti
+#### Java Spring Security integracija
 
 ```java
 @Configuration
@@ -2278,11 +2285,11 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-## Integracija v podjetju
+## Podjetniška integracija
 
-Integracija MCP s podjetniškimi sistemi, kot sta Azure OpenAI in Microsoft AI Foundry.
+Integracija MCP s podjetniškimi sistemi, kot so Azure OpenAI in Microsoft AI Foundry.
 
-### Integracija Azure OpenAI
+### Azure OpenAI integracija
 
 ```csharp
 // .NET Azure OpenAI Integration
@@ -2346,7 +2353,7 @@ namespace EnterpriseIntegration
 }
 ```
 
-### Integracija Microsoft AI Foundry
+### Microsoft AI Foundry integracija
 
 ```java
 // Java AI Foundry Agent Integration
@@ -2404,7 +2411,7 @@ public class AIFoundryMcpBridge {
 }
 ```
 
-### Python primer integracije v podjetju
+### Python primer podjetniške integracije
 
 ```python
 # Python Azure AI Integration
@@ -2530,21 +2537,21 @@ class EnterpriseAiIntegration:
 
 ## Ključne ugotovitve
 
-- Večmodalne implementacije MCP razširjajo zmožnosti AI onkraj obdelave besedila
-- Razširljivost je ključna za podjetniške implementacije in jo je mogoče obravnavati z horizontalnim in vertikalnim skaliranjem
-- Celoviti varnostni ukrepi ščitijo podatke in zagotavljajo pravilne kontrole dostopa
-- Integracija v podjetje s platformami, kot sta Azure OpenAI in Microsoft AI Foundry, izboljšuje zmožnosti MCP
+- Večmodalne implementacije MCP razširjajo AI zmogljivosti onkraj obdelave besedila
+- Razširljivost je ključna za podjetniške namestitve in jo je mogoče nasloviti s horizontalnim in vertikalnim skaliranjem
+- Celovite varnostne ukrepe ščitijo podatke in zagotavljajo ustrezno kontrolo dostopa
+- Podjetniška integracija s platformami, kot sta Azure OpenAI in Microsoft AI Foundry, izboljšuje zmogljivosti MCP
 - Napredne implementacije MCP koristijo od optimiziranih arhitektur in skrbnega upravljanja virov
 
 ## Vaja
 
-Oblikujte podjetniško MCP implementacijo za specifičen primer uporabe:
+Načrtujte podjetniško MCP implementacijo za določen primer uporabe:
 
-1. Identificirajte večmodalne zahteve za vaš primer uporabe
-2. Opredelite varnostne kontrole, potrebne za zaščito občutljivih podatkov
-3. Oblikujte razširljivo arhitekturo, ki lahko obravnava različno obremenitev
-4. Načrtujte točke integracije s podjetniškimi AI sistemi
-5. Dokumentirajte potencialne ozka grla zmogljivosti in strategije ublažitve
+1. Določite večmodalne zahteve za vaš primer uporabe
+2. Opredelite varnostne kontrole za zaščito občutljivih podatkov
+3. Načrtujte razširljivo arhitekturo, ki lahko obvladuje različne obremenitve
+4. Načrtujte integracijske točke s podjetniškimi AI sistemi
+5. Dokumentirajte potencialna ozka grla zmogljivosti in strategije za njihovo ublažitev
 
 ## Dodatni viri
 
@@ -2553,7 +2560,9 @@ Oblikujte podjetniško MCP implementacijo za specifičen primer uporabe:
 
 ---
 
-Naprej: [Skupnost in prispevki](../06-CommunityContributions/README.md)
+## Kaj sledi
+
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve AI prevajanja [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav se trudimo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v svojem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije je priporočljiv profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v izvorni jezik je treba šteti za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

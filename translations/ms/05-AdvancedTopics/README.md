@@ -1,48 +1,55 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:21:51+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:42:11+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "ms"
 }
 -->
-# Topik Lanjutan dalam MCP
+# موضوعات پیشرفته در MCP
 
-## Gambaran Umum
+## مرور کلی
 
-Pelajaran ini meneroka konsep lanjutan dalam pelaksanaan Protokol Model Context, dengan fokus pada integrasi multi-modal, kebolehskalaan, amalan terbaik keselamatan, dan integrasi perusahaan. Topik ini penting untuk membina aplikasi MCP tahap produksi yang dapat menangani keperluan kompleks dalam persekitaran perusahaan.
+این درس به بررسی مفاهیم پیشرفته در پیاده‌سازی پروتکل مدل کانتکست (MCP) می‌پردازد، با تمرکز بر ادغام چندرسانه‌ای، مقیاس‌پذیری، بهترین روش‌های امنیتی و ادغام سازمانی. این موضوعات برای ساخت برنامه‌های MCP با کیفیت تولید که بتوانند نیازهای پیچیده در محیط‌های سازمانی را مدیریت کنند، ضروری هستند.
 
-## Objektif Pembelajaran
+## اهداف یادگیری
 
-Pada akhir pelajaran ini, anda akan dapat:
-- Melaksanakan kemampuan multi-modal dalam rangka kerja MCP
-- Merancang seni bina MCP yang boleh diskala untuk senario permintaan tinggi
-- Menerapkan amalan terbaik keselamatan yang selaras dengan prinsip keselamatan MCP
-- Mengintegrasikan MCP dengan sistem AI perusahaan dan rangka kerja
-- Mengoptimumkan prestasi dan kebolehpercayaan dalam persekitaran produksi
+در پایان این درس، قادر خواهید بود:
+- قابلیت‌های چندرسانه‌ای را در چارچوب‌های MCP پیاده‌سازی کنید
+- معماری‌های مقیاس‌پذیر MCP را برای سناریوهای با تقاضای بالا طراحی کنید
+- بهترین روش‌های امنیتی مطابق با اصول امنیتی MCP را به کار ببرید
+- MCP را با سیستم‌ها و چارچوب‌های هوش مصنوعی سازمانی ادغام کنید
+- عملکرد و قابلیت اطمینان در محیط‌های تولید را بهینه کنید
 
-## Rujukan Tambahan
+## پروژه‌های نمونه
 
-Untuk maklumat terkini mengenai topik MCP lanjutan, rujuk kepada:
-- [Dokumentasi MCP](https://modelcontextprotocol.io/)
-- [Spesifikasi MCP](https://spec.modelcontextprotocol.io/)
-- [Repositori GitHub](https://github.com/modelcontextprotocol)
+| لینک | عنوان | توضیحات |
+|------|-------|-------------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | دموی MCP OAuth2 | برنامه ساده Spring Boot که OAuth2 را با MCP، هم به عنوان سرور مجوز و هم سرور منابع نشان می‌دهد. شامل صدور امن توکن، نقاط انتهایی محافظت شده، استقرار در Azure Container Apps و ادغام با مدیریت API است. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | جستجوی وب MCP | سرور و کلاینت Python MCP که با SerpAPI برای جستجوی وب، اخبار، محصولات و پرسش و پاسخ در زمان واقعی ادغام شده است. نمونه‌ای از هماهنگی چندابزاری، ادغام API خارجی و مدیریت خطا قوی. |
 
-## Integrasi Multi-Modal
+## مراجع اضافی
 
-MCP menyokong bukan sahaja interaksi berasaskan teks tetapi juga kemampuan multi-modal, membolehkan model bekerja dengan imej, audio, dan jenis data lain.
+برای اطلاعات به‌روز درباره موضوعات پیشرفته MCP، به موارد زیر مراجعه کنید:
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
 
-### Seni Bina untuk Sokongan Multi-Modal
+## ادغام چندرسانه‌ای
 
-Pelaksanaan MCP multi-modal biasanya melibatkan:
+MCP تنها تعاملات مبتنی بر متن را پشتیبانی نمی‌کند، بلکه قابلیت‌های چندرسانه‌ای را فراهم می‌کند تا مدل‌ها بتوانند با تصاویر، صدا و سایر انواع داده‌ها کار کنند.
 
-1. **Pengurai Khusus Modal**: Komponen yang menukar jenis media berbeza ke dalam format yang boleh diproses oleh model
-2. **Alat Khusus Modal**: Alat khas yang direka untuk mengendalikan modaliti tertentu (analisis imej, pemprosesan audio)
-3. **Pengurusan Konteks Bersepadu**: Sistem untuk mengekalkan konteks merentasi modaliti berbeza
-4. **Penjanaan Tindak Balas**: Keupayaan untuk menghasilkan tindak balas yang mungkin termasuk pelbagai modaliti
+### معماری برای پشتیبانی چندرسانه‌ای
 
-### Contoh C# Multi-Modal: Analisis Imej
+پیاده‌سازی‌های چندرسانه‌ای MCP معمولاً شامل موارد زیر هستند:
+
+1. **تجزیه‌کننده‌های خاص مدال**: اجزایی که انواع مختلف رسانه را به فرمتی تبدیل می‌کنند که مدل بتواند پردازش کند
+2. **ابزارهای خاص مدال**: ابزارهای ویژه طراحی شده برای مدیریت مدال‌های خاص (تحلیل تصویر، پردازش صدا)
+3. **مدیریت یکپارچه کانتکست**: سیستمی برای حفظ کانتکست در بین مدال‌های مختلف
+4. **تولید پاسخ**: توانایی تولید پاسخ‌هایی که ممکن است شامل چندین مدال باشند
+
+### مثال چندرسانه‌ای C#: تحلیل تصویر
 
 ```csharp
 using ModelContextProtocol.SDK.Server;
@@ -174,7 +181,7 @@ namespace MultiModalMcpExample
 }
 ```
 
-### Contoh Java Multi-Modal: Pemprosesan Audio
+### مثال چندرسانه‌ای Java: پردازش صدا
 
 ```java
 package com.example.mcp.multimodal;
@@ -302,7 +309,7 @@ public class MultiModalApplication {
 }
 ```
 
-### Contoh Python Multi-Modal: Penjanaan Tindak Balas Multi-Modal
+### مثال چندرسانه‌ای Python: تولید پاسخ چندرسانه‌ای
 
 ```python
 from mcp_server import McpServer
@@ -450,27 +457,27 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## Konteks Akar MCP
+## کانتکست‌های ریشه‌ای MCP
 
-Konteks akar adalah konsep asas dalam Protokol Model Context yang menyediakan lapisan berterusan untuk mengekalkan sejarah perbualan dan keadaan yang dikongsi merentasi pelbagai permintaan dan sesi.
+کانتکست‌های ریشه‌ای یک مفهوم اساسی در پروتکل مدل کانتکست هستند که لایه‌ای پایدار برای حفظ تاریخچه مکالمه و وضعیت مشترک در چندین درخواست و جلسه فراهم می‌کنند.
 
-### Memahami Konteks Akar
+### درک کانتکست‌های ریشه‌ای
 
-Konteks akar berfungsi sebagai bekas yang menyimpan sejarah dan keadaan untuk satu siri interaksi yang berkaitan. Mereka membolehkan:
+کانتکست‌های ریشه‌ای به عنوان ظرف‌هایی عمل می‌کنند که تاریخچه و وضعیت یک سری تعاملات مرتبط را نگه می‌دارند. آن‌ها امکان می‌دهند:
 
-- **Ketahanan Perbualan**: Mengekalkan perbualan berbilang giliran yang koheren
-- **Pengurusan Memori**: Menyimpan dan mengambil maklumat merentasi interaksi
-- **Pengurusan Keadaan**: Menjejaki kemajuan dalam aliran kerja yang kompleks
-- **Perkongsian Konteks**: Membenarkan pelbagai pelanggan mengakses keadaan perbualan yang sama
+- **پایداری مکالمه**: حفظ مکالمات چندمرحله‌ای منسجم
+- **مدیریت حافظه**: ذخیره و بازیابی اطلاعات در تعاملات مختلف
+- **مدیریت وضعیت**: پیگیری پیشرفت در فرآیندهای پیچیده
+- **اشتراک‌گذاری کانتکست**: اجازه دسترسی چندین کلاینت به همان وضعیت مکالمه
 
-Dalam MCP, konteks akar mempunyai ciri-ciri utama ini:
+در MCP، کانتکست‌های ریشه‌ای ویژگی‌های کلیدی زیر را دارند:
 
-- Setiap konteks akar mempunyai pengenal unik
-- Mereka boleh mengandungi sejarah perbualan, keutamaan pengguna, dan metadata lain
-- Mereka boleh dicipta, diakses, dan diarkibkan mengikut keperluan
-- Mereka menyokong kawalan akses dan kebenaran yang terperinci
+- هر کانتکست ریشه‌ای شناسه یکتایی دارد
+- می‌توانند شامل تاریخچه مکالمه، ترجیحات کاربر و متادیتای دیگر باشند
+- می‌توان آن‌ها را ایجاد، دسترسی و آرشیو کرد
+- از کنترل دسترسی دقیق و مجوزها پشتیبانی می‌کنند
 
-### Kitar Hayat Konteks Akar
+### چرخه عمر کانتکست ریشه‌ای
 
 ```mermaid
 flowchart TD
@@ -481,7 +488,7 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### Contoh .NET: Bekerja dengan Konteks Akar
+### مثال .NET: کار با کانتکست‌های ریشه‌ای
 
 ```csharp
 // .NET Example: Root Context Management
@@ -556,7 +563,7 @@ public class RootContextExample
 }
 ```
 
-### Contoh Java: Pelaksanaan Konteks Akar
+### مثال Java: پیاده‌سازی کانتکست ریشه‌ای
 
 ```java
 // Java Example: Root Context Implementation
@@ -642,7 +649,7 @@ public class RootContextsDemo {
 }
 ```
 
-### Contoh JavaScript: Pengurusan Konteks Akar
+### مثال JavaScript: مدیریت کانتکست ریشه‌ای
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Contoh Python: Konteks Akar untuk Bantuan Berbilang Giliran
+### مثال Python: کانتکست ریشه‌ای برای کمک چندمرحله‌ای
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1009,34 +1016,34 @@ if __name__ == "__main__":
     asyncio.run(demo_assistant_session())
 ```
 
-### Amalan Terbaik Konteks Akar
+### بهترین روش‌ها برای کانتکست ریشه‌ای
 
-1. **Cipta Konteks Fokus**: Cipta konteks akar berasingan untuk tujuan atau domain perbualan yang berbeza untuk mengekalkan kejelasan.
+1. **ایجاد کانتکست‌های متمرکز**: برای اهداف یا حوزه‌های مختلف مکالمه، کانتکست‌های ریشه‌ای جداگانه ایجاد کنید تا وضوح حفظ شود.
 
-2. **Tetapkan Polisi Tamat Tempoh**: Laksanakan polisi untuk mengarkibkan atau memadam konteks lama untuk menguruskan penyimpanan dan mematuhi polisi pengekalan data.
+2. **تنظیم سیاست‌های انقضا**: سیاست‌هایی برای آرشیو یا حذف کانتکست‌های قدیمی پیاده‌سازی کنید تا مدیریت ذخیره‌سازی و رعایت سیاست‌های نگهداری داده انجام شود.
 
-3. **Simpan Metadata Berkaitan**: Gunakan metadata konteks untuk menyimpan maklumat penting tentang perbualan yang mungkin berguna kemudian.
+3. **ذخیره متادیتای مرتبط**: از متادیتای کانتکست برای ذخیره اطلاعات مهم درباره مکالمه که ممکن است بعداً مفید باشد استفاده کنید.
 
-4. **Gunakan ID Konteks Secara Konsisten**: Setelah konteks dicipta, gunakan IDnya secara konsisten untuk semua permintaan yang berkaitan untuk mengekalkan kesinambungan.
+4. **استفاده مداوم از شناسه کانتکست**: پس از ایجاد کانتکست، برای تمام درخواست‌های مرتبط به طور مداوم از شناسه آن استفاده کنید تا پیوستگی حفظ شود.
 
-5. **Hasilkan Ringkasan**: Apabila konteks menjadi besar, pertimbangkan untuk menghasilkan ringkasan untuk menangkap maklumat penting sambil menguruskan saiz konteks.
+5. **تولید خلاصه‌ها**: وقتی کانتکست بزرگ می‌شود، تولید خلاصه‌هایی برای ثبت اطلاعات اساسی و مدیریت اندازه کانتکست را در نظر بگیرید.
 
-6. **Laksanakan Kawalan Akses**: Untuk sistem berbilang pengguna, laksanakan kawalan akses yang betul untuk memastikan privasi dan keselamatan konteks perbualan.
+6. **پیاده‌سازی کنترل دسترسی**: در سیستم‌های چندکاربره، کنترل‌های دسترسی مناسب را برای اطمینان از حفظ حریم خصوصی و امنیت کانتکست‌های مکالمه اعمال کنید.
 
-7. **Tangani Keterbatasan Konteks**: Sadarilah batasan saiz konteks dan laksanakan strategi untuk menangani perbualan yang sangat panjang.
+7. **مدیریت محدودیت‌های کانتکست**: از محدودیت‌های اندازه کانتکست آگاه باشید و استراتژی‌هایی برای مدیریت مکالمات بسیار طولانی پیاده‌سازی کنید.
 
-8. **Arkibkan Apabila Selesai**: Arkibkan konteks apabila perbualan selesai untuk membebaskan sumber sambil memelihara sejarah perbualan.
+8. **آرشیو در پایان**: پس از اتمام مکالمات، کانتکست‌ها را آرشیو کنید تا منابع آزاد شده و تاریخچه مکالمه حفظ شود.
 
-## Persampelan dalam Protokol Model Context
+## نمونه‌گیری در پروتکل مدل کانتکست
 
-Strategi persampelan adalah penting untuk mengoptimumkan tindak balas model dalam pelaksanaan MCP. Konfigurasi persampelan yang tepat dapat meningkatkan kualiti dan prestasi tindak balas secara dramatik. MCP menyediakan cara standard untuk mengawal bagaimana model menghasilkan teks dengan parameter tertentu yang mempengaruhi kebolehacakan, kreativiti, dan koheren.
+استراتژی‌های نمونه‌گیری برای بهینه‌سازی پاسخ‌های مدل در پیاده‌سازی‌های MCP حیاتی هستند. پیکربندی صحیح نمونه‌گیری می‌تواند کیفیت و عملکرد پاسخ را به طور چشمگیری بهبود بخشد. MCP راهی استاندارد برای کنترل نحوه تولید متن توسط مدل‌ها با پارامترهای خاص که بر تصادفی بودن، خلاقیت و انسجام تأثیر می‌گذارند، ارائه می‌دهد.
 
-### Gambaran Keseluruhan Parameter Persampelan
+### مرور پارامترهای نمونه‌گیری
 
-MCP mendefinisikan parameter persampelan berikut yang boleh dikonfigurasi dalam permintaan pelanggan:
+MCP پارامترهای نمونه‌گیری زیر را تعریف می‌کند که می‌توانند در درخواست‌های کلاینت تنظیم شوند:
 
-| Parameter | Penerangan | Julat Tipikal |
-|-----------|-------------|---------------|
+| پارامتر | توضیح | بازه معمول |
+|---------|--------|------------|
 | `temperature` | Controls randomness in token selection | 0.0 - 2.0 |
 | `top_p` | Nucleus sampling - limits tokens to top cumulative probability | 0.0 - 1.0 |
 | `top_k` | Limits token selection to top K options | 1 - 100 |
@@ -1044,11 +1051,11 @@ MCP mendefinisikan parameter persampelan berikut yang boleh dikonfigurasi dalam 
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | Urutan khusus yang menghentikan penjanaan apabila ditemui | Array string |
+| `stop_sequences` | توالی‌های سفارشی که هنگام مواجهه با آن‌ها تولید متوقف می‌شود | آرایه‌ای از رشته‌ها |
 
-### Persampelan Temperature dan Top-K/Top-P
+### نمونه‌گیری Temperature و Top-K/Top-P
 
-Parameter persampelan membolehkan penalaan halus tingkah laku model bahasa untuk mencapai keseimbangan yang diinginkan antara keluaran deterministik dan kreatif.
+پارامترهای نمونه‌گیری امکان تنظیم دقیق رفتار مدل‌های زبانی را فراهم می‌کنند تا تعادل مطلوب بین خروجی‌های قطعی و خلاقانه برقرار شود.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1142,9 +1149,9 @@ async function demonstrateSampling() {
 demonstrateSampling();
 ```
 
-### Persampelan Deterministik
+### نمونه‌گیری قطعی
 
-Untuk aplikasi yang memerlukan keluaran konsisten, persampelan deterministik memastikan hasil yang boleh diulang.
+برای برنامه‌هایی که نیاز به خروجی‌های ثابت دارند، نمونه‌گیری قطعی نتایج قابل بازتولید را تضمین می‌کند.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1228,9 +1235,9 @@ async function deterministicSampling() {
 deterministicSampling();
 ```
 
-### Konfigurasi Persampelan Dinamik
+### پیکربندی نمونه‌گیری پویا
 
-Persampelan pintar menyesuaikan parameter berdasarkan konteks dan keperluan setiap permintaan.
+نمونه‌گیری هوشمند پارامترها را بر اساس کانتکست و نیازهای هر درخواست تنظیم می‌کند.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1469,13 +1476,13 @@ async function demonstrateAdaptiveSampling() {
 demonstrateAdaptiveSampling();
 ```
 
-## Penghalaan dalam Protokol Model Context
+## مسیریابی در پروتکل مدل کانتکست
 
-Penghalaan adalah penting untuk mengarahkan permintaan kepada model, alat, atau perkhidmatan yang sesuai dalam ekosistem MCP.
+مسیریابی برای هدایت درخواست‌ها به مدل‌ها، ابزارها یا خدمات مناسب در اکوسیستم MCP ضروری است.
 
-### Penghalaan Berasaskan Kandungan
+### مسیریابی مبتنی بر محتوا
 
-Penghalaan berasaskan kandungan mengarahkan permintaan kepada perkhidmatan khusus berdasarkan kandungan permintaan.
+مسیریابی مبتنی بر محتوا درخواست‌ها را بر اساس محتوای آن‌ها به خدمات تخصصی هدایت می‌کند.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1546,9 +1553,9 @@ public class ContentBasedRouter
 }
 ```
 
-### Pengimbangan Beban Pintar
+### تعادل بار هوشمند
 
-Pengimbangan beban mengoptimumkan penggunaan sumber dan memastikan ketersediaan tinggi untuk perkhidmatan MCP.
+تعادل بار بهینه‌سازی استفاده از منابع و تضمین دسترسی بالا برای خدمات MCP را فراهم می‌کند.
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -1677,9 +1684,9 @@ public class McpLoadBalancer {
 }
 ```
 
-### Penghalaan Alat Dinamik
+### مسیریابی پویا ابزارها
 
-Penghalaan alat memastikan panggilan alat diarahkan kepada perkhidmatan yang paling sesuai berdasarkan konteks.
+مسیریابی ابزارها اطمینان می‌دهد که تماس‌های ابزار به مناسب‌ترین سرویس بر اساس کانتکست هدایت می‌شوند.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1790,9 +1797,9 @@ class McpToolRouter:
             raise
 ```
 
-### Seni Bina Persampelan dan Penghalaan dalam MCP
+### معماری نمونه‌گیری و مسیریابی در MCP
 
-Rajah di bawah menggambarkan bagaimana persampelan dan penghalaan bekerjasama dalam seni bina MCP yang komprehensif:
+نمودار زیر نحوه همکاری نمونه‌گیری و مسیریابی را در معماری جامع MCP نشان می‌دهد:
 
 ```mermaid
 flowchart TB
@@ -1859,13 +1866,13 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Kebolehskalaan dan Prestasi Tinggi MCP
+## مقیاس‌پذیری و MCP با عملکرد بالا
 
-Untuk pelaksanaan perusahaan, pelaksanaan MCP sering perlu menangani jumlah permintaan yang tinggi dengan latensi minimum.
+برای استقرارهای سازمانی، پیاده‌سازی‌های MCP معمولاً باید حجم بالایی از درخواست‌ها را با کمترین تأخیر مدیریت کنند.
 
-### Strategi Kebolehskalaan
+### استراتژی‌های مقیاس‌پذیری
 
-#### Skalabilitas Mendatar
+#### مقیاس‌گذاری افقی
 
 ```csharp
 // ASP.NET Core MCP load balancing configuration
@@ -1895,7 +1902,7 @@ public class McpLoadBalancedStartup
 }
 ```
 
-#### Skalabilitas Menegak dan Pengoptimuman Sumber
+#### مقیاس‌گذاری عمودی و بهینه‌سازی منابع
 
 ```java
 // Java MCP server with resource optimization
@@ -1928,7 +1935,7 @@ public class OptimizedMcpServer {
 }
 ```
 
-#### Seni Bina Teragih
+#### معماری توزیع‌شده
 
 ```python
 # Python MCP server in distributed architecture
@@ -2011,13 +2018,13 @@ class DistributedMcpServer:
         await self.redis.wait_closed()
 ```
 
-## Amalan Terbaik Keselamatan
+## بهترین روش‌های امنیتی
 
-Keselamatan adalah kritikal untuk pelaksanaan MCP, terutama dalam persekitaran perusahaan.
+امنیت برای پیاده‌سازی‌های MCP، به ویژه در محیط‌های سازمانی، حیاتی است.
 
-### Pengesahan dan Kebenaran
+### احراز هویت و مجوزدهی
 
-#### Integrasi Identiti .NET
+#### ادغام .NET Identity
 
 ```csharp
 public class SecureMcpStartup
@@ -2088,7 +2095,7 @@ public class SecureMcpStartup
 }
 ```
 
-#### Integrasi Keselamatan Java Spring
+#### ادغام Java Spring Security
 
 ```java
 @Configuration
@@ -2140,9 +2147,9 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 }
 ```
 
-### Perlindungan Data dan Privasi
+### حفاظت داده و حریم خصوصی
 
-#### Contoh Perlindungan Data Python
+#### مثال حفاظت داده Python
 
 ```python
 from mcp_server import McpServer
@@ -2278,11 +2285,11 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-## Integrasi Perusahaan
+## ادغام سازمانی
 
-Mengintegrasikan MCP dengan sistem perusahaan seperti Azure OpenAI dan Microsoft AI Foundry.
+ادغام MCP با سیستم‌های سازمانی مانند Azure OpenAI و Microsoft AI Foundry.
 
-### Integrasi Azure OpenAI
+### ادغام Azure OpenAI
 
 ```csharp
 // .NET Azure OpenAI Integration
@@ -2346,7 +2353,7 @@ namespace EnterpriseIntegration
 }
 ```
 
-### Integrasi Microsoft AI Foundry
+### ادغام Microsoft AI Foundry
 
 ```java
 // Java AI Foundry Agent Integration
@@ -2404,7 +2411,7 @@ public class AIFoundryMcpBridge {
 }
 ```
 
-### Contoh Integrasi Perusahaan Python
+### مثال ادغام سازمانی Python
 
 ```python
 # Python Azure AI Integration
@@ -2528,32 +2535,34 @@ class EnterpriseAiIntegration:
         return mapping.get(ml_type, "string")
 ```
 
-## Pengambilan Utama
+## نکات کلیدی
 
-- Pelaksanaan MCP multi-modal memperluaskan kemampuan AI di luar pemprosesan teks
-- Kebolehskalaan adalah penting untuk pelaksanaan perusahaan dan boleh ditangani melalui skalabilitas mendatar dan menegak
-- Langkah keselamatan yang komprehensif melindungi data dan memastikan kawalan akses yang tepat
-- Integrasi perusahaan dengan platform seperti Azure OpenAI dan Microsoft AI Foundry meningkatkan kemampuan MCP
-- Pelaksanaan MCP lanjutan mendapat manfaat daripada seni bina yang dioptimumkan dan pengurusan sumber yang teliti
+- پیاده‌سازی‌های چندرسانه‌ای MCP قابلیت‌های هوش مصنوعی را فراتر از پردازش متن گسترش می‌دهند
+- مقیاس‌پذیری برای استقرارهای سازمانی حیاتی است و می‌توان آن را از طریق مقیاس‌گذاری افقی و عمودی مدیریت کرد
+- اقدامات امنیتی جامع از داده‌ها محافظت کرده و کنترل دسترسی مناسب را تضمین می‌کنند
+- ادغام سازمانی با پلتفرم‌هایی مانند Azure OpenAI و Microsoft AI Foundry قابلیت‌های MCP را افزایش می‌دهد
+- پیاده‌سازی‌های پیشرفته MCP از معماری‌های بهینه و مدیریت دقیق منابع بهره‌مند می‌شوند
 
-## Latihan
+## تمرین
 
-Rancang pelaksanaan MCP tahap perusahaan untuk kes penggunaan tertentu:
+یک پیاده‌سازی MCP با کیفیت سازمانی برای یک مورد کاربردی خاص طراحی کنید:
 
-1. Kenal pasti keperluan multi-modal untuk kes penggunaan anda
-2. Gariskan kawalan keselamatan yang diperlukan untuk melindungi data sensitif
-3. Reka bentuk seni bina yang boleh diskala yang dapat menangani beban yang berbeza
-4. Rancang titik integrasi dengan sistem AI perusahaan
-5. Dokumen potensi kesesakan prestasi dan strategi mitigasi
+1. نیازهای چندرسانه‌ای مورد استفاده خود را شناسایی کنید
+2. کنترل‌های امنیتی لازم برای حفاظت از داده‌های حساس را ترسیم کنید
+3. معماری مقیاس‌پذیری که بتواند بارهای متغیر را مدیریت کند، طراحی کنید
+4. نقاط ادغام با سیستم‌های هوش مصنوعی سازمانی را برنامه‌ریزی کنید
+5. گلوگاه‌های عملکرد احتمالی و راهکارهای کاهش آن‌ها را مستندسازی کنید
 
-## Sumber Tambahan
+## منابع اضافی
 
-- [Dokumentasi Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Dokumentasi Microsoft AI Foundry](https://learn.microsoft.com/en-us/ai-services/)
+- [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
-Seterusnya: [Komuniti dan Sumbangan](../06-CommunityContributions/README.md)
+## مرحله بعد
+
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

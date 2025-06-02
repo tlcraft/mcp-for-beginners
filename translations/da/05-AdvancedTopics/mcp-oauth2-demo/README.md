@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:42:16+00:00",
+  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
+  "translation_date": "2025-06-02T12:31:59+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "da"
 }
@@ -12,13 +12,13 @@ CO_OP_TRANSLATOR_METADATA:
 Dette projekt er en **minimal Spring Boot-applikation**, der fungerer som både:
 
 * en **Spring Authorization Server** (udsteder JWT-adgangstokens via `client_credentials` flowet), og  
-* en **Resource Server** (beskytter sin egen `/hello` endpoint).
+* en **Resource Server** (beskytter sit eget `/hello` endpoint).
 
-Det afspejler opsætningen vist i [Spring blogindlægget (2. apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Det afspejler opsætningen vist i [Spring blogindlægget (2. april 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
-## Hurtig start (lokal)
+## Hurtig start (lokalt)
 
 ```bash
 # build & run
@@ -38,14 +38,14 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 Du kan teste OAuth2-sikkerhedskonfigurationen med følgende trin:
 
-### 1. Bekræft, at serveren kører og er sikret
+### 1. Bekræft at serveren kører og er sikret
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Få en adgangstoken ved hjælp af klientoplysninger
+### 2. Hent et adgangstoken ved hjælp af client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Bemærk: Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Note: Basic Authentication-headeren (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Adgang til den beskyttede endpoint ved hjælp af token
+### 3. Få adgang til det beskyttede endpoint med tokenet
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-En vellykket respons med "Hello from MCP OAuth2 Demo!" bekræfter, at OAuth2-konfigurationen fungerer korrekt.
+Et succesfuldt svar med "Hello from MCP OAuth2 Demo!" bekræfter, at OAuth2-konfigurationen fungerer korrekt.
 
 ---
 
-## Container bygning
+## Container build
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Udrul til **Azure Container Apps**
+## Deploy til **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -100,9 +100,9 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 ---
 
-## Tilslut til **Azure API Management**
+## Integrer med **Azure API Management**
 
-Tilføj denne indgående politik til din API:
+Tilføj denne inbound policy til din API:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Tilføj denne indgående politik til din API:
 </inbound>
 ```
 
-APIM vil hente JWKS og validere hver anmodning.
+APIM henter JWKS og validerer hver anmodning.
+
+---
+
+## Hvad er det næste
+
+- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på at sikre nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der måtte opstå ved brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

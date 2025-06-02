@@ -1,48 +1,55 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:11:15+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:04:14+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "hk"
 }
 -->
-# 進階主題：MCP
+# Advanced Topics in MCP
 
-## 概述
+## Overview
 
-本課程探討模型上下文協議（MCP）實現中的進階概念，重點在於多模態整合、擴展性、安全最佳實踐及企業整合。這些主題對於建立能夠處理企業環境中複雜需求的生產級MCP應用至關重要。
+今課程探討 Model Context Protocol 實作中的進階概念，重點包括多模態整合、可擴展性、安全最佳實踐及企業整合。這些主題對於建構能應付企業環境中複雜需求的生產級 MCP 應用至關重要。
 
-## 學習目標
+## Learning Objectives
 
-完成本課程後，您將能夠：
-- 在MCP框架中實現多模態功能
-- 設計可擴展的MCP架構以應對高需求情境
-- 應用與MCP安全原則一致的安全最佳實踐
-- 將MCP整合到企業AI系統和框架中
-- 在生產環境中優化性能和可靠性
+完成本課程後，你將能夠：
+- 在 MCP 框架中實現多模態功能
+- 設計可擴展的 MCP 架構以應對高需求場景
+- 應用符合 MCP 安全原則的安全最佳實踐
+- 將 MCP 與企業 AI 系統及框架整合
+- 優化生產環境中的效能與可靠性
 
-## 其他參考資料
+## Sample Projects
 
-如需MCP進階主題的最新信息，請參閱：
+| Link | Title | Description |
+|------|-------|-------------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | 簡易 Spring Boot 應用展示 MCP 中 OAuth2 的用法，涵蓋授權伺服器及資源伺服器。示範安全的 token 發行、受保護端點、Azure Container Apps 部署及 API 管理整合。 |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web Search MCP | Python MCP 伺服器與客戶端整合 SerpAPI，實現即時網頁、新聞、產品搜尋及問答功能。示範多工具協調、外部 API 整合及強健的錯誤處理。 |
+
+## Additional References
+
+欲獲取最新進階 MCP 主題資訊，請參考：
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
-## 多模態整合
+## Multi-Modal Integration
 
-MCP不僅支持基於文本的交互，還支持多模態功能，使模型能夠處理影像、音頻及其他數據類型。
+MCP 不只支援文字互動，還具備多模態能力，讓模型能處理圖片、音訊及其他資料類型。
 
-### 支持多模態的架構
+### Architecture for Multi-Modal Support
 
-多模態MCP實現通常包括：
+多模態 MCP 實作通常包含：
 
-1. **模態特定解析器**：將不同媒體類型轉換為模型可處理的格式的組件
-2. **模態特定工具**：專門設計用於處理特定模態（如影像分析、音頻處理）的工具
-3. **統一上下文管理**：在不同模態間保持上下文的系統
-4. **回應生成**：能夠生成可能包含多種模態的回應
+1. **Modal-Specific Parsers**：將不同媒體類型轉換成模型可處理格式的元件
+2. **Modal-Specific Tools**：專門處理特定模態（如影像分析、音訊處理）的工具
+3. **Unified Context Management**：跨模態維護上下文的系統
+4. **Response Generation**：能生成包含多模態內容的回應能力
 
-### C#多模態範例：影像分析
+### C# Multi-Modal Example: Image Analysis
 
 ```csharp
 using ModelContextProtocol.SDK.Server;
@@ -174,7 +181,7 @@ namespace MultiModalMcpExample
 }
 ```
 
-### Java多模態範例：音頻處理
+### Java Multi-Modal Example: Audio Processing
 
 ```java
 package com.example.mcp.multimodal;
@@ -302,7 +309,7 @@ public class MultiModalApplication {
 }
 ```
 
-### Python多模態範例：多模態回應生成
+### Python Multi-Modal Example: Multi-Modal Response Generation
 
 ```python
 from mcp_server import McpServer
@@ -450,27 +457,27 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## MCP根上下文
+## MCP Root Contexts
 
-根上下文是模型上下文協議中的基本概念，提供持久層以維持會話歷史及在多個請求和會話間共享狀態。
+Root contexts 是 Model Context Protocol 中的核心概念，提供持久層以維護對話歷史和多個請求及會話間的共享狀態。
 
-### 理解根上下文
+### Understanding Root Contexts
 
-根上下文作為容器，保存一系列相關交互的歷史和狀態。它們使得：
+Root contexts 作為容器，保存一系列相關互動的歷史和狀態。它們能：
 
-- **會話持久性**：保持連貫的多輪對話
-- **記憶管理**：在交互中存儲和檢索信息
-- **狀態管理**：跟踪複雜工作流程中的進度
-- **上下文共享**：允許多個客戶端訪問相同的會話狀態
+- **對話持續性**：維持連貫的多輪對話
+- **記憶管理**：跨互動存取資訊
+- **狀態管理**：追蹤複雜工作流程進度
+- **上下文共享**：允許多個客戶端存取相同對話狀態
 
-在MCP中，根上下文具有以下關鍵特徵：
+在 MCP 中，root contexts 具備以下特性：
 
-- 每個根上下文都有唯一的識別符
-- 它們可以包含會話歷史、用戶偏好及其他元數據
-- 它們可以根據需要創建、訪問和存檔
-- 它們支持細粒度的訪問控制和許可權
+- 每個 root context 有唯一識別碼
+- 可包含對話歷史、使用者偏好及其他元資料
+- 可依需求建立、存取及封存
+- 支援細緻的存取控制及權限管理
 
-### 根上下文生命周期
+### Root Context Lifecycle
 
 ```mermaid
 flowchart TD
@@ -481,7 +488,7 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### .NET範例：處理根上下文
+### .NET Example: Working with Root Contexts
 
 ```csharp
 // .NET Example: Root Context Management
@@ -556,7 +563,7 @@ public class RootContextExample
 }
 ```
 
-### Java範例：根上下文實現
+### Java Example: Root Context Implementation
 
 ```java
 // Java Example: Root Context Implementation
@@ -642,7 +649,7 @@ public class RootContextsDemo {
 }
 ```
 
-### JavaScript範例：根上下文管理
+### JavaScript Example: Root Context Management
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Python範例：多輪協助的根上下文
+### Python Example: Root Context for Multi-Turn Assistance
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1009,33 +1016,26 @@ if __name__ == "__main__":
     asyncio.run(demo_assistant_session())
 ```
 
-### 根上下文最佳實踐
+### Root Context Best Practices
 
-1. **創建專注的上下文**：為不同的會話目的或領域創建獨立的根上下文以保持清晰。
+1. **Create Focused Contexts**：針對不同對話目的或領域建立獨立 root context，保持清晰。
+2. **Set Expiration Policies**：實施封存或刪除舊 context 的政策，以管理儲存並符合資料保留規範。
+3. **Store Relevant Metadata**：利用上下文元資料儲存對話中可能日後有用的重要資訊。
+4. **Use Context IDs Consistently**：建立後持續使用相同 ID 處理相關請求，維持連續性。
+5. **Generate Summaries**：當上下文變大時，考慮產生摘要以擷取關鍵資訊並控制上下文大小。
+6. **Implement Access Control**：多用戶系統應實施適當存取控制，確保對話上下文的隱私與安全。
+7. **Handle Context Limitations**：注意上下文大小限制，並實施策略處理超長對話。
+8. **Archive When Complete**：對話結束後封存上下文，釋放資源同時保留對話歷史。
 
-2. **設定過期政策**：實施政策以存檔或刪除舊上下文以管理存儲並遵守數據保留政策。
+## Sampling in Model Context Protocol
 
-3. **存儲相關元數據**：使用上下文元數據存儲可能在未來有用的會話重要信息。
+取樣策略對優化 MCP 實作中的模型回應至關重要。適當的取樣配置能顯著提升回應品質與效能。MCP 提供標準化方式，透過特定參數控制模型產生文字的隨機性、創造力與連貫性。
 
-4. **一致使用上下文ID**：一旦創建上下文，請在所有相關請求中一致使用其ID以保持連續性。
+### Sampling Parameters Overview
 
-5. **生成摘要**：當上下文變得龐大時，考慮生成摘要以捕捉重要信息同時管理上下文大小。
+MCP 定義以下取樣參數，可於客戶端請求中設定：
 
-6. **實施訪問控制**：對於多用戶系統，實施適當的訪問控制以確保會話上下文的隱私和安全。
-
-7. **處理上下文限制**：注意上下文大小限制並實施策略以處理非常長的會話。
-
-8. **完成後存檔**：當會話完成時存檔上下文以釋放資源同時保留會話歷史。
-
-## 模型上下文協議中的採樣
-
-採樣策略對於優化MCP實現中的模型回應至關重要。正確的採樣配置可以顯著提高回應質量和性能。MCP提供了一種標準化的方法來控制模型生成文本的方式，具有影響隨機性、創造力和連貫性的特定參數。
-
-### 採樣參數概述
-
-MCP定義了以下可在客戶端請求中配置的採樣參數：
-
-| 參數 | 描述 | 典型範圍 |
+| Parameter | Description | Typical Range |
 |-----------|-------------|---------------|
 | `temperature` | Controls randomness in token selection | 0.0 - 2.0 |
 | `top_p` | Nucleus sampling - limits tokens to top cumulative probability | 0.0 - 1.0 |
@@ -1044,11 +1044,11 @@ MCP定義了以下可在客戶端請求中配置的採樣參數：
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | 自定義序列在遇到時停止生成 | 字符串數組 |
+| `stop_sequences` | 遇到指定序列時停止生成的自訂序列 | 字串陣列 |
 
-### 溫度和Top-K/Top-P採樣
+### Temperature and Top-K/Top-P Sampling
 
-採樣參數允許微調語言模型的行為，以實現確定性和創造性輸出的所需平衡。
+取樣參數讓語言模型行為微調，達到決定性與創造性輸出的理想平衡。
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1142,9 +1142,9 @@ async function demonstrateSampling() {
 demonstrateSampling();
 ```
 
-### 確定性採樣
+### Deterministic Sampling
 
-對於需要一致輸出的應用，確定性採樣確保可重複的結果。
+對需要一致輸出的應用，決定性取樣確保結果可重現。
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1228,9 +1228,9 @@ async function deterministicSampling() {
 deterministicSampling();
 ```
 
-### 動態採樣配置
+### Dynamic Sampling Configuration
 
-智能採樣根據每個請求的上下文和需求調整參數。
+智慧取樣根據上下文及請求需求調整參數。
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1469,13 +1469,13 @@ async function demonstrateAdaptiveSampling() {
 demonstrateAdaptiveSampling();
 ```
 
-## 模型上下文協議中的路由
+## Routing in Model Context Protocol
 
-路由對於在MCP生態系統中將請求導向適當的模型、工具或服務至關重要。
+Routing 是將請求導向適當模型、工具或服務的關鍵，確保 MCP 生態系統運作順暢。
 
-### 基於內容的路由
+### Content-Based Routing
 
-基於內容的路由根據請求內容將請求導向專業服務。
+內容導向路由根據請求內容導向專門服務。
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1546,9 +1546,9 @@ public class ContentBasedRouter
 }
 ```
 
-### 智能負載均衡
+### Intelligent Load Balancing
 
-負載均衡優化資源利用並確保MCP服務的高可用性。
+負載平衡優化資源利用率，確保 MCP 服務高可用性。
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -1677,7 +1677,7 @@ public class McpLoadBalancer {
 }
 ```
 
-### 動態工具路由
+### Dynamic Tool Routing
 
 工具路由確保工具調用根據上下文導向最合適的服務。
 
@@ -1790,9 +1790,9 @@ class McpToolRouter:
             raise
 ```
 
-### MCP中的採樣和路由架構
+### Sampling and Routing Architecture in MCP
 
-下圖展示了採樣和路由如何在綜合MCP架構中協同工作：
+下圖展示取樣與路由如何在完整 MCP 架構中協同運作：
 
 ```mermaid
 flowchart TB
@@ -1859,13 +1859,13 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## 可擴展性和高性能MCP
+## Scalability and High-Performance MCP
 
-對於企業部署，MCP實現通常需要以最小的延遲處理大量請求。
+企業部署中，MCP 實作常需處理大量請求並保持極低延遲。
 
-### 可擴展性策略
+### Scalability Strategies
 
-#### 水平擴展
+#### Horizontal Scaling
 
 ```csharp
 // ASP.NET Core MCP load balancing configuration
@@ -1895,7 +1895,7 @@ public class McpLoadBalancedStartup
 }
 ```
 
-#### 垂直擴展和資源優化
+#### Vertical Scaling and Resource Optimization
 
 ```java
 // Java MCP server with resource optimization
@@ -1928,7 +1928,7 @@ public class OptimizedMcpServer {
 }
 ```
 
-#### 分布式架構
+#### Distributed Architecture
 
 ```python
 # Python MCP server in distributed architecture
@@ -2011,13 +2011,13 @@ class DistributedMcpServer:
         await self.redis.wait_closed()
 ```
 
-## 安全最佳實踐
+## Security Best Practices
 
-安全對於MCP實現至關重要，尤其是在企業環境中。
+安全性對 MCP 實作尤為重要，尤其是在企業環境中。
 
-### 身份驗證和授權
+### Authentication and Authorization
 
-#### .NET身份集成
+#### .NET Identity Integration
 
 ```csharp
 public class SecureMcpStartup
@@ -2088,7 +2088,7 @@ public class SecureMcpStartup
 }
 ```
 
-#### Java Spring Security集成
+#### Java Spring Security Integration
 
 ```java
 @Configuration
@@ -2140,9 +2140,9 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 }
 ```
 
-### 數據保護和隱私
+### Data Protection and Privacy
 
-#### Python數據保護範例
+#### Python Data Protection Example
 
 ```python
 from mcp_server import McpServer
@@ -2278,11 +2278,11 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-## 企業整合
+## Enterprise Integration
 
-將MCP整合到Azure OpenAI和Microsoft AI Foundry等企業系統中。
+將 MCP 與企業系統如 Azure OpenAI 及 Microsoft AI Foundry 整合。
 
-### Azure OpenAI整合
+### Azure OpenAI Integration
 
 ```csharp
 // .NET Azure OpenAI Integration
@@ -2346,7 +2346,7 @@ namespace EnterpriseIntegration
 }
 ```
 
-### Microsoft AI Foundry整合
+### Microsoft AI Foundry Integration
 
 ```java
 // Java AI Foundry Agent Integration
@@ -2404,7 +2404,7 @@ public class AIFoundryMcpBridge {
 }
 ```
 
-### Python企業整合範例
+### Python Enterprise Integration Example
 
 ```python
 # Python Azure AI Integration
@@ -2528,32 +2528,34 @@ class EnterpriseAiIntegration:
         return mapping.get(ml_type, "string")
 ```
 
-## 主要收穫
+## Key Takeaways
 
-- 多模態MCP實現將AI能力擴展到文本處理之外
-- 可擴展性對於企業部署至關重要，可以通過水平和垂直擴展來解決
-- 綜合安全措施保護數據並確保適當的訪問控制
-- 與Azure OpenAI和Microsoft AI Foundry等平台的企業整合增強了MCP能力
-- 進階MCP實現受益於優化的架構和仔細的資源管理
+- 多模態 MCP 實作擴展 AI 能力，超越純文字處理
+- 可擴展性對企業部署至關重要，可透過水平及垂直擴展實現
+- 全面安全措施保護資料並確保適當存取控制
+- 與 Azure OpenAI 及 Microsoft AI Foundry 等平台整合，強化 MCP 功能
+- 進階 MCP 實作受益於優化架構及謹慎的資源管理
 
-## 練習
+## Exercise
 
-設計一個針對特定使用案例的企業級MCP實現：
+設計一個企業級 MCP 實作以應用於特定場景：
 
-1. 確定您的使用案例的多模態需求
-2. 列出保護敏感數據所需的安全控制
-3. 設計一個可擴展的架構以處理不同的負載
-4. 計劃與企業AI系統的整合點
-5. 記錄潛在的性能瓶頸及緩解策略
+1. 確認用例的多模態需求
+2. 制定保護敏感資料的安全控管措施
+3. 設計能應對不同負載的可擴展架構
+4. 規劃與企業 AI 系統的整合點
+5. 文件化潛在效能瓶頸及緩解策略
 
-## 其他資源
+## Additional Resources
 
 - [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
 - [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
-下一步：[社群和貢獻](../06-CommunityContributions/README.md)
+## What's next
 
-**免責聲明**：
-此文件已使用AI翻譯服務[Co-op Translator](https://github.com/Azure/co-op-translator)進行翻譯。儘管我們努力確保準確性，請注意自動翻譯可能包含錯誤或不準確之處。應以原始語言的文件作為權威來源。對於重要信息，建議使用專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或錯誤解釋不承擔責任。
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
+
+**免責聲明**：  
+本文件使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議使用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-16T14:28:42+00:00",
+  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
+  "translation_date": "2025-06-02T11:53:43+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "de"
 }
 -->
 # MCP OAuth2 Demo
 
-Dieses Projekt ist eine **minimale Spring Boot-Anwendung**, die sowohl als:
+Dieses Projekt ist eine **minimalistische Spring Boot-Anwendung**, die gleichzeitig als:
 
-* **Spring Authorization Server** (ausstellend JWT-Zugriffstoken über den `client_credentials`-Flow), als auch  
-* als **Resource Server** (der seinen eigenen `/hello`-Endpunkt schützt) fungiert.
+* ein **Spring Authorization Server** (stellt JWT-Zugangstoken über den `client_credentials`-Flow aus), und  
+* ein **Resource Server** (schützt den eigenen `/hello`-Endpunkt).
 
-Es spiegelt die im [Spring Blogbeitrag (2. Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) gezeigte Einrichtung wider.
+Es spiegelt die im [Spring Blogbeitrag (2. Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) gezeigte Konfiguration wider.
 
 ---
 
-## Schnellstart (lokal)
+## Schneller Start (lokal)
 
 ```bash
 # build & run
@@ -36,16 +36,16 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Testen der OAuth2-Konfiguration
 
-Sie können die OAuth2-Sicherheitskonfiguration mit den folgenden Schritten testen:
+Du kannst die OAuth2-Sicherheitskonfiguration mit den folgenden Schritten testen:
 
-### 1. Überprüfen, ob der Server läuft und gesichert ist
+### 1. Überprüfe, ob der Server läuft und gesichert ist
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Ein Zugriffstoken mit Client-Credentials erhalten
+### 2. Erhalte ein Zugriffstoken mit Client-Anmeldedaten
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Hinweis: Der Basic-Authentication-Header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Hinweis: Der Basic-Authentifizierungsheader (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Zugriff auf den geschützten Endpunkt mit dem Token
+### 3. Greife mit dem Token auf den geschützten Endpunkt zu
 
 ```bash
 # Using the saved token
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Der Ingress-FQDN wird zu Ihrem **Issuer** (`https://<fqdn>`).  
+Der Ingress-FQDN wird zu deinem **Issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
 ## Integration in **Azure API Management**
 
-Fügen Sie diese Inbound-Policy zu Ihrer API hinzu:
+Füge diese Inbound-Policy zu deiner API hinzu:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Fügen Sie diese Inbound-Policy zu Ihrer API hinzu:
 </inbound>
 ```
 
-APIM ruft das JWKS ab und validiert jede Anfrage.
+APIM ruft die JWKS ab und validiert jede Anfrage.
+
+---
+
+## Was kommt als Nächstes
+
+- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Verwendung dieser Übersetzung entstehen.

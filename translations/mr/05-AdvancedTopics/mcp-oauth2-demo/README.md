@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:40:20+00:00",
+  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
+  "translation_date": "2025-06-02T12:14:53+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "mr"
 }
 -->
 # MCP OAuth2 डेमो
 
-हा प्रकल्प एक **किमान Spring Boot अनुप्रयोग** आहे जो दोन्हीप्रमाणे कार्य करतो:
+हा प्रोजेक्ट एक **मिनिमल Spring Boot ऍप्लिकेशन** आहे जे दोन्ही भूमिका बजावते:
 
-* एक **Spring Authorization Server** (JWT access tokens जारी करतो `client_credentials` प्रवाहाद्वारे), आणि  
-* एक **Resource Server** (त्याच्या स्वतःच्या `/hello` एन्डपॉइंटचे संरक्षण करतो).
+* एक **Spring Authorization Server** (जो JWT access tokens `client_credentials` फ्लो वापरून जारी करतो), आणि  
+* एक **Resource Server** (जो स्वतःचा `/hello` endpoint संरक्षित करतो).
 
-हे [Spring ब्लॉग पोस्ट (2 एप्रिल 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) मध्ये दर्शवलेल्या सेटअपशी जुळते.
+हे [Spring ब्लॉग पोस्ट (2 एप्रिल 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) मध्ये दाखवलेल्या सेटअपशी जुळते.
 
 ---
 
-## जलद प्रारंभ (स्थानिक)
+## जलद सुरुवात (स्थानिक)
 
 ```bash
 # build & run
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## OAuth2 कॉन्फिगरेशन चाचणी
+## OAuth2 कॉन्फिगरेशनची चाचणी करणे
 
-तुम्ही खालील चरणांसह OAuth2 सुरक्षा कॉन्फिगरेशनची चाचणी करू शकता:
+खालील पायऱ्यांनी तुम्ही OAuth2 सुरक्षा कॉन्फिगरेशनची चाचणी करू शकता:
 
-### 1. सर्व्हर चालू आहे आणि सुरक्षित आहे हे सत्यापित करा
+### 1. सर्व्हर चालू आहे आणि सुरक्षित आहे का ते तपासा
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. क्लायंट क्रेडेन्शियल्स वापरून प्रवेश टोकन मिळवा
+### 2. क्लायंट क्रेडेन्शियल्स वापरून access token मिळवा
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-टीप: बेसिक ऑथेंटिकेशन हेडर (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+टीप: Basic Authentication हेडर (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret` आहे.
 
-### 3. टोकन वापरून संरक्षित एन्डपॉइंटवर प्रवेश करा
+### 3. token वापरून संरक्षित endpoint ला प्रवेश करा
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-"MCP OAuth2 डेमोकडून नमस्कार!" असा यशस्वी प्रतिसाद मिळाल्यास OAuth2 कॉन्फिगरेशन योग्यरित्या कार्यरत आहे हे पुष्टी होते.
+"Hello from MCP OAuth2 Demo!" असा यशस्वी प्रतिसाद मिळाल्यास OAuth2 कॉन्फिगरेशन योग्यरित्या कार्यरत आहे याची खात्री होते.
 
 ---
 
-## कंटेनर बांधणी
+## कंटेनर बिल्ड
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## **Azure Container Apps** वर तैनात करा
+## **Azure Container Apps** मध्ये डिप्लॉय करा
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-प्रवेश FQDN तुमचा **issuer** बनतो (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+ingress FQDN तुमचा **issuer** (`https://<fqdn>`).  
+Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`) बनतो.
 
 ---
 
-## **Azure API Management** मध्ये वायर करा
+## **Azure API Management** मध्ये कनेक्ट करा
 
-तुमच्या API मध्ये हा इनबाउंड धोरण जोडा:
+तुमच्या API मध्ये हा inbound पॉलिसी जोडा:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM JWKS मिळवेल आणि प्रत्येक विनंतीची पडताळणी करेल.
+APIM JWKS प्राप्त करेल आणि प्रत्येक विनंतीची पडताळणी करेल.
+
+---
+
+## पुढे काय
+
+- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
 
 **अस्वीकरण**:  
-हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून भाषांतरित करण्यात आला आहे. आम्ही अचूकतेसाठी प्रयत्न करत असलो तरी कृपया लक्षात ठेवा की स्वयंचलित भाषांतरांमध्ये त्रुटी किंवा अचूकतेचा अभाव असू शकतो. मूळ भाषेतील दस्तऐवज हा अधिकृत स्रोत म्हणून विचारात घेतला पाहिजे. महत्त्वपूर्ण माहितीसाठी, व्यावसायिक मानवी भाषांतराची शिफारस केली जाते. या भाषांतराचा वापर केल्यामुळे निर्माण होणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थासाठी आम्ही जबाबदार नाही.
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) चा वापर करून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्न करतो, तरी कृपया लक्षात ठेवा की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेचा अभाव असू शकतो. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला पाहिजे. महत्त्वाच्या माहिती साठी व्यावसायिक मानवी अनुवाद शिफारसीय आहे. या अनुवादाच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गैरसमज किंवा चुकीच्या अर्थलावणीबाबत आम्ही जबाबदार नाही.

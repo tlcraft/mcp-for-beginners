@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:24:13+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:50:12+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "sk"
 }
@@ -11,38 +11,45 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Prehľad
 
-Táto lekcia sa zaoberá pokročilými konceptmi implementácie Model Context Protocolu, zameriavajúc sa na multimodálnu integráciu, škálovateľnosť, osvedčené bezpečnostné postupy a podnikové integrácie. Tieto témy sú nevyhnutné pre vytváranie produkčných MCP aplikácií, ktoré dokážu zvládnuť zložité požiadavky v podnikových prostrediach.
+Táto lekcia skúma pokročilé koncepty implementácie Model Context Protocol, so zameraním na multimodálnu integráciu, škálovateľnosť, bezpečnostné osvedčené postupy a integráciu do podnikového prostredia. Témy sú kľúčové pre tvorbu produkčných aplikácií MCP, ktoré zvládnu komplexné požiadavky v podnikových prostrediach.
 
 ## Ciele učenia
 
 Na konci tejto lekcie budete schopní:
-- Implementovať multimodálne schopnosti v rámci MCP rámcov
-- Navrhnúť škálovateľné MCP architektúry pre vysoké nároky
-- Aplikovať osvedčené bezpečnostné postupy v súlade s bezpečnostnými princípmi MCP
-- Integrovať MCP s podnikový AI systémami a rámcami
-- Optimalizovať výkon a spoľahlivosť v produkčných prostrediach
+- Implementovať multimodálne schopnosti v rámci MCP
+- Navrhnúť škálovateľné MCP architektúry pre náročné scenáre
+- Použiť bezpečnostné osvedčené postupy v súlade s bezpečnostnými princípmi MCP
+- Integrovať MCP s podnikových AI systémami a rámcami
+- Optimalizovať výkon a spoľahlivosť v produkčnom prostredí
+
+## Ukážkové projekty
+
+| Odkaz | Názov | Popis |
+|-------|-------|-------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimálna Spring Boot aplikácia demonštrujúca OAuth2 s MCP, ako Autorizačný a Zdrojový server. Ukazuje bezpečné vydávanie tokenov, chránené koncové body, nasadenie v Azure Container Apps a integráciu s API Management. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web Search MCP | Python MCP server a klient integrujúci SerpAPI pre vyhľadávanie webu, správ, produktov a Q&A v reálnom čase. Demonštruje orchestráciu viacerých nástrojov, integráciu externých API a robustné spracovanie chýb. |
 
 ## Ďalšie odkazy
 
-Pre najaktuálnejšie informácie o pokročilých témach MCP, pozrite si:
-- [MCP Dokumentáciu](https://modelcontextprotocol.io/)
-- [MCP Špecifikáciu](https://spec.modelcontextprotocol.io/)
+Pre najnovšie informácie o pokročilých témach MCP navštívte:
+- [MCP Dokumentácia](https://modelcontextprotocol.io/)
+- [MCP Špecifikácia](https://spec.modelcontextprotocol.io/)
 - [GitHub Repozitár](https://github.com/modelcontextprotocol)
 
 ## Multimodálna integrácia
 
-MCP podporuje nielen textové interakcie, ale aj multimodálne schopnosti, čo umožňuje modelom pracovať s obrázkami, zvukom a inými typmi dát.
+MCP podporuje nielen textové interakcie, ale aj multimodálne schopnosti, ktoré umožňujú modelom pracovať s obrázkami, zvukom a ďalšími typmi dát.
 
 ### Architektúra pre multimodálnu podporu
 
-Multimodálne MCP implementácie zvyčajne zahŕňajú:
+Multimodálne implementácie MCP zvyčajne zahŕňajú:
 
-1. **Špecifické analyzátory modálov**: Komponenty, ktoré konvertujú rôzne typy médií do formátov, ktoré model môže spracovať
-2. **Špecifické nástroje modálov**: Špeciálne nástroje navrhnuté na spracovanie konkrétnych modalít (analýza obrázkov, spracovanie zvuku)
-3. **Zjednotená správa kontextu**: Systém na udržanie kontextu naprieč rôznymi modalitami
-4. **Generovanie odpovedí**: Schopnosť generovať odpovede, ktoré môžu zahŕňať viacero modalít
+1. **Parsers špecifické pre modalitu**: Komponenty, ktoré prevádzajú rôzne typy médií do formátov spracovateľných modelom
+2. **Nástroje špecifické pre modalitu**: Špeciálne nástroje na spracovanie konkrétnych modalít (analýza obrázkov, spracovanie zvuku)
+3. **Unifikovaná správa kontextu**: Systém na udržiavanie kontextu naprieč rôznymi modalitami
+4. **Generovanie odpovedí**: Schopnosť vytvárať odpovede, ktoré môžu obsahovať viacero modalít
 
-### C# Príklad multimodálnej analýzy obrázkov
+### C# príklad multimodálnej analýzy obrázkov
 
 ```csharp
 using ModelContextProtocol.SDK.Server;
@@ -174,7 +181,7 @@ namespace MultiModalMcpExample
 }
 ```
 
-### Java Príklad spracovania zvuku
+### Java príklad multimodálneho spracovania zvuku
 
 ```java
 package com.example.mcp.multimodal;
@@ -302,7 +309,7 @@ public class MultiModalApplication {
 }
 ```
 
-### Python Príklad generovania multimodálnej odpovede
+### Python príklad generovania multimodálnych odpovedí
 
 ```python
 from mcp_server import McpServer
@@ -450,27 +457,27 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## MCP Koreňové kontexty
+## MCP Root Contexts
 
-Koreňové kontexty sú základným konceptom v Model Context Protocol, ktorý poskytuje trvalú vrstvu pre udržanie histórie konverzácie a zdieľaného stavu naprieč viacerými požiadavkami a reláciami.
+Root contexty sú základným konceptom Model Context Protocol, ktoré poskytujú perzistentnú vrstvu na uchovávanie histórie konverzácií a zdieľaného stavu naprieč viacerými požiadavkami a reláciami.
 
-### Porozumenie koreňovým kontextom
+### Pochopenie Root Contextov
 
-Koreňové kontexty slúžia ako kontajnery, ktoré držia históriu a stav pre sériu súvisiacich interakcií. Umožňujú:
+Root contexty slúžia ako kontajnery uchovávajúce históriu a stav série súvisiacich interakcií. Umožňujú:
 
-- **Perzistencia konverzácie**: Udržanie koherentných viacnásobných konverzácií
-- **Správa pamäte**: Ukladanie a získavanie informácií naprieč interakciami
-- **Správa stavu**: Sledovanie pokroku v zložitých pracovných postupoch
+- **Perzistenciu konverzácie**: Udržiavanie koherentných viackolových rozhovorov
+- **Správu pamäte**: Ukladanie a načítanie informácií medzi interakciami
+- **Správu stavu**: Sledovanie postupu v komplexných pracovných tokoch
 - **Zdieľanie kontextu**: Umožnenie viacerým klientom prístup k rovnakému stavu konverzácie
 
-V MCP majú koreňové kontexty tieto kľúčové charakteristiky:
+V MCP majú root contexty tieto kľúčové vlastnosti:
 
-- Každý koreňový kontext má unikátny identifikátor
-- Môžu obsahovať históriu konverzácie, preferencie používateľa a ďalšie metadáta
-- Môžu byť vytvorené, prístupné a archivované podľa potreby
-- Podporujú jemne zrnitú kontrolu prístupu a oprávnenia
+- Každý root context má jedinečný identifikátor
+- Môžu obsahovať históriu konverzácie, používateľské preferencie a ďalšie metadáta
+- Môžu byť vytvárané, prístupné a archivované podľa potreby
+- Podporujú jemnozrnnú kontrolu prístupu a oprávnenia
 
-### Životný cyklus koreňového kontextu
+### Životný cyklus Root Contextu
 
 ```mermaid
 flowchart TD
@@ -481,7 +488,7 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### .NET Príklad práce s koreňovými kontextmi
+### .NET príklad: Práca s Root Contextmi
 
 ```csharp
 // .NET Example: Root Context Management
@@ -556,7 +563,7 @@ public class RootContextExample
 }
 ```
 
-### Java Príklad implementácie koreňového kontextu
+### Java príklad: Implementácia Root Contextu
 
 ```java
 // Java Example: Root Context Implementation
@@ -642,7 +649,7 @@ public class RootContextsDemo {
 }
 ```
 
-### JavaScript Príklad správy koreňového kontextu
+### JavaScript príklad: Správa Root Contextu
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Python Príklad koreňového kontextu pre viacnásobnú asistenciu
+### Python príklad: Root Context pre viackolovú asistenciu
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1009,34 +1016,34 @@ if __name__ == "__main__":
     asyncio.run(demo_assistant_session())
 ```
 
-### Osvedčené postupy koreňového kontextu
+### Osvedčené postupy pre Root Contexty
 
-1. **Vytvárajte zamerané kontexty**: Vytvárajte samostatné koreňové kontexty pre rôzne účely alebo domény konverzácie na udržanie jasnosti.
+1. **Vytvárajte zamerané contexty**: Pre rôzne účely alebo domény konverzácií vytvárajte samostatné root contexty pre lepšiu prehľadnosť.
 
-2. **Nastavte politiky vypršania**: Implementujte politiky na archiváciu alebo odstránenie starých kontextov na správu úložiska a dodržiavanie politík uchovávania dát.
+2. **Nastavte politiky expirácie**: Zavádzajte pravidlá na archiváciu alebo mazanie starých contextov pre správu úložiska a dodržiavanie pravidiel uchovávania dát.
 
-3. **Ukladajte relevantné metadáta**: Používajte metadáta kontextu na ukladanie dôležitých informácií o konverzácii, ktoré môžu byť užitočné neskôr.
+3. **Ukladajte relevantné metadáta**: Používajte metadáta kontextu na uchovávanie dôležitých informácií o konverzácii, ktoré môžu byť neskôr užitočné.
 
-4. **Používajte ID kontextu konzistentne**: Keď je kontext vytvorený, používajte jeho ID konzistentne pre všetky súvisiace požiadavky na udržanie kontinuity.
+4. **Konzistentne používajte ID contextu**: Po vytvorení contextu používajte jeho ID dôsledne vo všetkých súvisiacich požiadavkách pre zachovanie kontinuity.
 
-5. **Generujte súhrny**: Keď kontext rastie veľký, zvážte generovanie súhrnov na zachytenie podstatných informácií pri správe veľkosti kontextu.
+5. **Generujte zhrnutia**: Ak context narastie, zvážte vytvorenie zhrnutí na zachytenie podstatných informácií a riadenie veľkosti kontextu.
 
-6. **Implementujte kontrolu prístupu**: Pre systémy s viacerými používateľmi implementujte správne kontroly prístupu na zabezpečenie súkromia a bezpečnosti kontextov konverzácie.
+6. **Implementujte kontrolu prístupu**: Pre viacpoužívateľské systémy zavádzajte správne prístupové práva na ochranu súkromia a bezpečnosti konverzačných contextov.
 
-7. **Riešte obmedzenia kontextu**: Buďte si vedomí obmedzení veľkosti kontextu a implementujte stratégie na zvládanie veľmi dlhých konverzácií.
+7. **Zvládajte obmedzenia contextu**: Buďte si vedomí limitov veľkosti contextu a implementujte stratégie na spracovanie veľmi dlhých konverzácií.
 
-8. **Archivujte po dokončení**: Archivujte kontexty po dokončení konverzácií na uvoľnenie zdrojov pri zachovaní histórie konverzácie.
+8. **Archivujte po ukončení**: Po skončení konverzácií archivujte contexty, aby ste uvoľnili zdroje a zároveň zachovali históriu rozhovorov.
 
 ## Sampling v Model Context Protocol
 
-Strategie vzorkovania sú kritické pre optimalizáciu odpovedí modelu v MCP implementáciách. Správna konfigurácia vzorkovania môže dramaticky zlepšiť kvalitu a výkon odpovedí. MCP poskytuje štandardizovaný spôsob, ako kontrolovať, ako modely generujú text s konkrétnymi parametrami, ktoré ovplyvňujú náhodnosť, kreativitu a koherenciu.
+Samplingové stratégie sú kľúčové pre optimalizáciu odpovedí modelov v implementáciách MCP. Správne nastavenie samplingových parametrov môže výrazne zlepšiť kvalitu a výkon odpovedí. MCP poskytuje štandardizovaný spôsob, ako riadiť generovanie textu modelmi pomocou parametrov ovplyvňujúcich náhodnosť, kreativitu a koherenciu.
 
-### Prehľad parametrov vzorkovania
+### Prehľad samplingových parametrov
 
-MCP definuje nasledujúce parametre vzorkovania, ktoré môžu byť konfigurované v klientských požiadavkách:
+MCP definuje nasledujúce samplingové parametre, ktoré je možné nastaviť v požiadavkách klienta:
 
 | Parameter | Popis | Typický rozsah |
-|-----------|-------------|---------------|
+|-----------|--------|----------------|
 | `temperature` | Controls randomness in token selection | 0.0 - 2.0 |
 | `top_p` | Nucleus sampling - limits tokens to top cumulative probability | 0.0 - 1.0 |
 | `top_k` | Limits token selection to top K options | 1 - 100 |
@@ -1044,11 +1051,11 @@ MCP definuje nasledujúce parametre vzorkovania, ktoré môžu byť konfigurovan
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | Vlastné sekvencie, ktoré zastavia generovanie pri stretnutí | Pole reťazcov |
+| `stop_sequences` | Vlastné sekvencie, ktoré zastavia generovanie pri ich výskyte | Pole reťazcov |
 
-### Vzorkovanie teploty a Top-K/Top-P
+### Temperature a Top-K/Top-P sampling
 
-Parametre vzorkovania umožňujú jemné doladenie správania jazykových modelov na dosiahnutie požadovanej rovnováhy medzi deterministickými a kreatívnymi výstupmi.
+Samplingové parametre umožňujú jemné doladenie správania jazykových modelov tak, aby sa dosiahol požadovaný balans medzi deterministickými a kreatívnymi výstupmi.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1142,9 +1149,9 @@ async function demonstrateSampling() {
 demonstrateSampling();
 ```
 
-### Deterministické vzorkovanie
+### Deterministický sampling
 
-Pre aplikácie vyžadujúce konzistentné výstupy, deterministické vzorkovanie zabezpečuje reprodukovateľné výsledky.
+Pre aplikácie vyžadujúce konzistentné výstupy zabezpečuje deterministický sampling reprodukovateľné výsledky.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1228,9 +1235,9 @@ async function deterministicSampling() {
 deterministicSampling();
 ```
 
-### Dynamická konfigurácia vzorkovania
+### Dynamická konfigurácia sampling
 
-Inteligentné vzorkovanie prispôsobuje parametre na základe kontextu a požiadaviek každej požiadavky.
+Inteligentný sampling prispôsobuje parametre na základe kontextu a požiadaviek každej žiadosti.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1471,11 +1478,11 @@ demonstrateAdaptiveSampling();
 
 ## Routing v Model Context Protocol
 
-Routing je nevyhnutný pre smerovanie požiadaviek na vhodné modely, nástroje alebo služby v rámci MCP ekosystému.
+Routing je nevyhnutný na smerovanie požiadaviek k vhodným modelom, nástrojom alebo službám v rámci MCP ekosystému.
 
 ### Routing založený na obsahu
 
-Routing založený na obsahu smeruje požiadavky na špecializované služby na základe obsahu požiadavky.
+Routing založený na obsahu smeruje požiadavky k špecializovaným službám podľa obsahu požiadavky.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1546,9 +1553,9 @@ public class ContentBasedRouter
 }
 ```
 
-### Inteligentné rozloženie záťaže
+### Inteligentné vyvažovanie záťaže
 
-Rozloženie záťaže optimalizuje využitie zdrojov a zabezpečuje vysokú dostupnosť MCP služieb.
+Vyvažovanie záťaže optimalizuje využitie zdrojov a zabezpečuje vysokú dostupnosť MCP služieb.
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -1677,9 +1684,9 @@ public class McpLoadBalancer {
 }
 ```
 
-### Dynamické smerovanie nástrojov
+### Dynamický routing nástrojov
 
-Smerovanie nástrojov zabezpečuje, že volania nástrojov sú smerované na najvhodnejšiu službu na základe kontextu.
+Routing nástrojov zabezpečuje, že volania nástrojov smerujú k najvhodnejšej službe na základe kontextu.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1790,9 +1797,9 @@ class McpToolRouter:
             raise
 ```
 
-### Architektúra vzorkovania a smerovania v MCP
+### Architektúra sampling a routing v MCP
 
-Diagram nižšie ilustruje, ako vzorkovanie a smerovanie spolupracujú v komplexnej MCP architektúre:
+Nižšie uvedený diagram ilustruje, ako sampling a routing spolupracujú v komplexnej architektúre MCP:
 
 ```mermaid
 flowchart TB
@@ -1861,7 +1868,7 @@ flowchart TB
 
 ## Škálovateľnosť a vysoký výkon MCP
 
-Pre podnikové nasadenia MCP implementácie často potrebujú zvládnuť veľké objemy požiadaviek s minimálnou latenciou.
+Pre podnikové nasadenia musí MCP často zvládať veľké množstvo požiadaviek s minimálnou latenciou.
 
 ### Stratégie škálovateľnosti
 
@@ -2011,13 +2018,13 @@ class DistributedMcpServer:
         await self.redis.wait_closed()
 ```
 
-## Osvedčené bezpečnostné postupy
+## Bezpečnostné osvedčené postupy
 
-Bezpečnosť je kritická pre MCP implementácie, najmä v podnikových prostrediach.
+Bezpečnosť je kľúčová pre implementácie MCP, najmä v podnikových prostrediach.
 
-### Autentifikácia a autorizácia
+### Overovanie a autorizácia
 
-#### .NET Identity Integrácia
+#### .NET integrácia Identity
 
 ```csharp
 public class SecureMcpStartup
@@ -2088,7 +2095,7 @@ public class SecureMcpStartup
 }
 ```
 
-#### Java Spring Security Integrácia
+#### Java Spring Security integrácia
 
 ```java
 @Configuration
@@ -2142,7 +2149,7 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 ### Ochrana dát a súkromie
 
-#### Python Príklad ochrany dát
+#### Python príklad ochrany dát
 
 ```python
 from mcp_server import McpServer
@@ -2280,9 +2287,9 @@ class SecureCustomerDataTool(Tool):
 
 ## Podniková integrácia
 
-Integrácia MCP s podnikovými systémami ako Azure OpenAI a Microsoft AI Foundry.
+Integrácia MCP s podnikových systémami ako Azure OpenAI a Microsoft AI Foundry.
 
-### Azure OpenAI Integrácia
+### Integrácia Azure OpenAI
 
 ```csharp
 // .NET Azure OpenAI Integration
@@ -2346,7 +2353,7 @@ namespace EnterpriseIntegration
 }
 ```
 
-### Microsoft AI Foundry Integrácia
+### Integrácia Microsoft AI Foundry
 
 ```java
 // Java AI Foundry Agent Integration
@@ -2404,7 +2411,7 @@ public class AIFoundryMcpBridge {
 }
 ```
 
-### Python Príklad podnikovej integrácie
+### Python príklad podnikovej integrácie
 
 ```python
 # Python Azure AI Integration
@@ -2528,23 +2535,23 @@ class EnterpriseAiIntegration:
         return mapping.get(ml_type, "string")
 ```
 
-## Kľúčové poznatky
+## Kľúčové zhrnutie
 
-- Multimodálne MCP implementácie rozširujú schopnosti AI nad rámec spracovania textu
-- Škálovateľnosť je nevyhnutná pre podnikové nasadenia a môže byť riešená horizontálnym a vertikálnym škálovaním
+- Multimodálne implementácie MCP rozširujú AI schopnosti za hranice spracovania textu
+- Škálovateľnosť je nevyhnutná pre podnikové nasadenia a rieši sa horizontálnym aj vertikálnym škálovaním
 - Komplexné bezpečnostné opatrenia chránia dáta a zabezpečujú správnu kontrolu prístupu
-- Podniková integrácia s platformami ako Azure OpenAI a Microsoft AI Foundry zvyšuje schopnosti MCP
-- Pokročilé MCP implementácie profitujú z optimalizovaných architektúr a starostlivej správy zdrojov
+- Podniková integrácia s platformami ako Azure OpenAI a Microsoft AI Foundry rozširuje možnosti MCP
+- Pokročilé implementácie MCP profitujú z optimalizovaných architektúr a starostlivého manažmentu zdrojov
 
 ## Cvičenie
 
-Navrhnite podnikové MCP implementáciu pre konkrétny prípad použitia:
+Navrhnite produkčnú MCP implementáciu pre konkrétny prípad použitia:
 
 1. Identifikujte multimodálne požiadavky pre váš prípad použitia
-2. Vymenujte bezpečnostné kontroly potrebné na ochranu citlivých dát
-3. Navrhnite škálovateľnú architektúru, ktorá dokáže zvládnuť rôzne zaťaženie
-4. Naplánujte integračné body s podnikovými AI systémami
-5. Dokumentujte potenciálne úzke miesta výkonu a stratégie na ich zmiernenie
+2. Navrhnite bezpečnostné opatrenia na ochranu citlivých dát
+3. Navrhnite škálovateľnú architektúru schopnú zvládnuť rôzne zaťaženie
+4. Naplánujte integračné body s podnikových AI systémami
+5. Zdokumentujte možné výkonnostné úzke miesta a stratégie ich riešenia
 
 ## Ďalšie zdroje
 
@@ -2553,7 +2560,9 @@ Navrhnite podnikové MCP implementáciu pre konkrétny prípad použitia:
 
 ---
 
-Ďalej: [Komunita a príspevky](../06-CommunityContributions/README.md)
+## Čo ďalej
+
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
 
 **Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, upozorňujeme, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, vezmite prosím na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie sa odporúča profesionálny ľudský preklad. Nezodpovedáme za žiadne nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.

@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:45:34+00:00",
+  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
+  "translation_date": "2025-06-02T12:59:05+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "sl"
 }
 -->
-# MCP OAuth2 පෙළගැස්ම
+# MCP OAuth2 Demo
 
-මෙම ව්‍යාපෘතිය **අවම Spring Boot යෙදුමක්** වන අතර එය දෙකක් ලෙස ක්‍රියා කරයි:
+This project is a **minimalen Spring Boot aplikacija**, ki deluje kot:
 
-* **Spring අවසර සර්වර්** (JWT ප්‍රවේශ ටෝකන නිකුත් කිරීමේ `client_credentials` ගැලීම් හරහා), සහ  
-* **සම්පත් සර්වර්** (තමන්ගේම `/hello` අන්තර්ගතය ආරක්ෂා කිරීම).
+* **Spring Authorization Server** (izdaja JWT dostopne žetone prek `client_credentials` toka), in  
+* **Resource Server** (varuje svoj `/hello` endpoint).
 
-එය [Spring බ්ලොග් ලිපිය (2025 අප්‍රේල් 2)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) හි දැක්වෙන සැකසුම පෙන්වයි.
+Sledi nastavitvi, prikazani v [Spring blog objavi (2. aprila 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
-## ඉක්මන් ආරම්භය (ස්ථානික)
+## Hiter začetek (lokalno)
 
 ```bash
 # build & run
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## OAuth2 වින්‍යාසය පරීක්ෂා කිරීම
+## Preizkušanje OAuth2 konfiguracije
 
-ඔබට OAuth2 ආරක්ෂිත වින්‍යාසය පරීක්ෂා කළ හැකිය පහත පියවර මගින්:
+OAuth2 varnostno konfiguracijo lahko preizkusite z naslednjimi koraki:
 
-### 1. සර්වර් ක්‍රියාත්මක වන බව සහ ආරක්ෂිත බව තහවුරු කරන්න
+### 1. Preverite, da strežnik deluje in je zaščiten
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. ගනුදෙනුකරු අයිතිවාසිකම් භාවිතා කරමින් ප්‍රවේශ ටෝකනයක් ලබා ගන්න
+### 2. Pridobite dostopni žeton z uporabo klientskih poverilnic
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-සටහන: මූලික සත්‍යාපන ශීර්ෂය (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Opomba: Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. ටෝකනය භාවිතා කරමින් ආරක්ෂිත අන්තර්ගතය ප්‍රවේශ වන්න
+### 3. Dostopajte do zaščitenega endpointa z žetonom
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-"MCP OAuth2 පෙළගැස්මෙන් ආයුබෝවන්!" යන සාර්ථක පිළිතුරක් ලැබීමෙන් OAuth2 වින්‍යාසය නිවැරදිව ක්‍රියාත්මක වන බව තහවුරු වේ.
+Uspešen odgovor z "Hello from MCP OAuth2 Demo!" potrjuje, da OAuth2 konfiguracija deluje pravilno.
 
 ---
 
-## කන්ටේනර් ගොඩනැගීම
+## Gradnja kontejnerja
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## **Azure Container Apps** වෙත යොමු කිරීම
+## Namestitev v **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-ආගමන FQDN ඔබේ **නිකුත්කරු** වේ (`https://<fqdn>`).  
+Vhodni FQDN postane vaš **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
-## **Azure API Management** වෙත සම්බන්ධ වීම
+## Povezava z **Azure API Management**
 
-ඔබේ API සඳහා මෙම ආගත ප්‍රතිපත්තිය එක් කරන්න:
+Dodajte to inbound politiko svojemu API-ju:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM JWKS ලබා ගෙන, සෑම ඉල්ලීමක්ම සත්‍යාපනය කරනු ඇත.
+APIM bo pridobil JWKS in preverjal vsak zahtevek.
 
-**Omejitev odgovornosti**: 
-Ta dokument je bil preveden z uporabo storitve AI za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da se zavedate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za kritične informacije je priporočljivo profesionalno človeško prevajanje. Ne odgovarjamo za kakršne koli nesporazume ali napačne interpretacije, ki bi nastale zaradi uporabe tega prevoda.
+---
+
+## Kaj sledi
+
+- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+
+**Opozorilo**:  
+Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:19:24+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:34:26+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "fi"
 }
@@ -11,38 +11,45 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Yleiskatsaus
 
-Tässä oppitunnissa käsitellään kehittyneitä käsitteitä Model Context Protocol -protokollan toteutuksessa, keskittyen monimuotoiseen integraatioon, skaalautuvuuteen, turvallisuuden parhaisiin käytäntöihin ja yritysintegratioon. Nämä aiheet ovat välttämättömiä tuotantotasoisten MCP-sovellusten rakentamisessa, jotka pystyvät käsittelemään monimutkaisia vaatimuksia yritysympäristöissä.
+Tässä oppitunnissa käsitellään edistyneitä käsitteitä Model Context Protocolin toteutuksessa, keskittyen monimodaaliseen integraatioon, skaalautuvuuteen, tietoturvan parhaisiin käytäntöihin ja yritysintegrointiin. Nämä aiheet ovat olennaisia tuotantotason MCP-sovellusten rakentamisessa, jotka pystyvät käsittelemään monimutkaisia vaatimuksia yritysympäristöissä.
 
 ## Oppimistavoitteet
 
-Oppitunnin lopussa osaat:
-- Toteuttaa monimuotoisia ominaisuuksia MCP-kehyksissä
-- Suunnitella skaalautuvia MCP-arkkitehtuureja korkean kysynnän tilanteisiin
-- Soveltaa turvallisuuden parhaita käytäntöjä MCP:n turvallisuusperiaatteiden mukaisesti
-- Integroi MCP yrityksen AI-järjestelmiin ja -kehyksiin
+Tämän oppitunnin jälkeen osaat:
+- Toteuttaa monimodaalisia ominaisuuksia MCP-kehyksissä
+- Suunnitella skaalautuvia MCP-arkkitehtuureja vaativiin käyttötapauksiin
+- Soveltaa tietoturvan parhaita käytäntöjä MCP:n turvallisuusperiaatteiden mukaisesti
+- Integroida MCP yritysten tekoälyjärjestelmiin ja -kehyksiin
 - Optimoida suorituskykyä ja luotettavuutta tuotantoympäristöissä
+
+## Esimerkkiprojektit
+
+| Linkki | Otsikko | Kuvaus |
+|--------|---------|--------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimipainoinen Spring Boot -sovellus, joka näyttää OAuth2:n toiminnan MCP:n kanssa sekä Authorization- että Resource Server -rooleissa. Esittelee turvallisen tokenin myöntämisen, suojatut päätepisteet, Azure Container Apps -käyttöönoton ja API Management -integraation. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web Search MCP | Python MCP -palvelin ja -asiakas, jotka integroivat SerpAPI:n reaaliaikaiseen web-, uutis-, tuotehakuun ja kysymys-vastaus -toimintoihin. Esittelee monityökalujen orkestroinnin, ulkoisen API:n integraation ja vankan virheenkäsittelyn. |
 
 ## Lisäviitteet
 
-Ajankohtaisimman tiedon kehittyneistä MCP-aiheista löydät:
-- [MCP Dokumentaatio](https://modelcontextprotocol.io/)
-- [MCP Määrittely](https://spec.modelcontextprotocol.io/)
+Ajantasaisimman tiedon MCP:n edistyneistä aiheista löydät osoitteista:
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
-## Monimuotoinen integraatio
+## Monimodaalinen integraatio
 
-MCP tukee tekstipohjaisten vuorovaikutusten lisäksi myös monimuotoisia ominaisuuksia, joiden avulla mallit voivat työskennellä kuvien, äänen ja muiden tietotyyppien kanssa.
+MCP tukee paitsi tekstipohjaisia vuorovaikutuksia myös monimodaalisia ominaisuuksia, jotka mahdollistavat mallien työskentelyn kuvien, äänen ja muiden tietotyyppien kanssa.
 
-### Arkkitehtuuri monimuotoisen tuen toteuttamiseksi
+### Arkkitehtuuri monimodaaliseen tukeen
 
-Monimuotoiset MCP-toteutukset sisältävät yleensä:
+Monimodaaliset MCP-toteutukset sisältävät tyypillisesti:
 
-1. **Modalikohtaiset jäsentimet**: Komponentit, jotka muuntavat eri mediatyypit muotoihin, joita malli voi käsitellä
-2. **Modalikohtaiset työkalut**: Erikoistyökalut, jotka on suunniteltu käsittelemään tiettyjä modaliteetteja (kuvan analysointi, äänen käsittely)
+1. **Modal-specifiset parserit**: Komponentit, jotka muuntavat eri mediatyypit malleille prosessoitavaan muotoon
+2. **Modal-specifiset työkalut**: Erityiset työkalut, jotka käsittelevät tiettyjä modaliteetteja (kuvanalyysi, äänenkäsittely)
 3. **Yhtenäinen kontekstinhallinta**: Järjestelmä, joka ylläpitää kontekstia eri modaliteettien välillä
-4. **Vastauksen generointi**: Kyky luoda vastauksia, jotka voivat sisältää useita modaliteetteja
+4. **Vastausten generointi**: Kyky tuottaa vastauksia, jotka voivat sisältää useita modaliteetteja
 
-### C# Monimuotoinen esimerkki: Kuvan analysointi
+### C# Monimodaalinen esimerkki: Kuvan analysointi
 
 ```csharp
 using ModelContextProtocol.SDK.Server;
@@ -174,7 +181,7 @@ namespace MultiModalMcpExample
 }
 ```
 
-### Java Monimuotoinen esimerkki: Äänen käsittely
+### Java Monimodaalinen esimerkki: Äänen käsittely
 
 ```java
 package com.example.mcp.multimodal;
@@ -302,7 +309,7 @@ public class MultiModalApplication {
 }
 ```
 
-### Python Monimuotoinen esimerkki: Monimuotoinen vastauksen generointi
+### Python Monimodaalinen esimerkki: Monimodaalinen vastausten generointi
 
 ```python
 from mcp_server import McpServer
@@ -450,27 +457,27 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## MCP Juurikontekstit
+## MCP Root Contexts
 
-Juurikontekstit ovat Model Context Protocol -protokollan perustavanlaatuinen käsite, joka tarjoaa pysyvän kerroksen keskusteluhistorian ja jaetun tilan ylläpitämiseen useiden pyyntöjen ja istuntojen välillä.
+Root contextit ovat keskeinen käsite Model Context Protocolissa, tarjoten pysyvän kerroksen keskusteluhistorian ja jaetun tilan ylläpitämiseen useiden pyyntöjen ja istuntojen välillä.
 
-### Juurikontekstien ymmärtäminen
+### Root contextien ymmärtäminen
 
-Juurikontekstit toimivat säiliöinä, jotka sisältävät historian ja tilan sarjalle toisiinsa liittyviä vuorovaikutuksia. Ne mahdollistavat:
+Root contextit toimivat säiliöinä, jotka pitävät sisällään historiaa ja tilaa sarjalle toisiinsa liittyviä vuorovaikutuksia. Ne mahdollistavat:
 
-- **Keskustelun pysyvyys**: Koherenttien monivaiheisten keskustelujen ylläpitäminen
-- **Muistinhallinta**: Tiedon tallentaminen ja hakeminen vuorovaikutusten välillä
-- **Tilanhallinta**: Edistymisen seuraaminen monimutkaisissa työnkuluissa
-- **Kontekstin jakaminen**: Mahdollistaa useiden asiakkaiden pääsyn samaan keskustelutilaan
+- **Keskustelun pysyvyyden**: Monikierroksisten keskustelujen johdonmukaisen ylläpidon
+- **Muistinhallinnan**: Tiedon tallentamisen ja hakemisen vuorovaikutusten välillä
+- **Tilanhallinnan**: Edistymisen seurannan monimutkaisissa työnkuluissa
+- **Kontekstin jakamisen**: Useiden asiakkaiden pääsyn samaan keskustelutilaan
 
-MCP:ssä juurikonteksteilla on nämä keskeiset ominaisuudet:
+MCP:ssä root contexteilla on seuraavat keskeiset ominaisuudet:
 
-- Jokaisella juurikontekstilla on ainutlaatuinen tunniste
+- Jokaisella root contextilla on ainutlaatuinen tunniste
 - Ne voivat sisältää keskusteluhistorian, käyttäjäasetukset ja muuta metadataa
 - Ne voidaan luoda, käyttää ja arkistoida tarpeen mukaan
-- Ne tukevat hienojakoista pääsynhallintaa ja käyttöoikeuksia
+- Ne tukevat hienojakoista pääsynvalvontaa ja käyttöoikeuksia
 
-### Juurikontekstin elinkaari
+### Root contextin elinkaari
 
 ```mermaid
 flowchart TD
@@ -481,7 +488,7 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### .NET Esimerkki: Työskentely juurikontekstien kanssa
+### .NET-esimerkki: Root contextien käsittely
 
 ```csharp
 // .NET Example: Root Context Management
@@ -556,7 +563,7 @@ public class RootContextExample
 }
 ```
 
-### Java Esimerkki: Juurikontekstin toteutus
+### Java-esimerkki: Root contextin toteutus
 
 ```java
 // Java Example: Root Context Implementation
@@ -642,7 +649,7 @@ public class RootContextsDemo {
 }
 ```
 
-### JavaScript Esimerkki: Juurikontekstin hallinta
+### JavaScript-esimerkki: Root contextin hallinta
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Python Esimerkki: Juurikonteksti monivaiheiselle avustukselle
+### Python-esimerkki: Root context monikierroksiseen avustukseen
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1009,34 +1016,34 @@ if __name__ == "__main__":
     asyncio.run(demo_assistant_session())
 ```
 
-### Juurikontekstin parhaat käytännöt
+### Root contextin parhaat käytännöt
 
-1. **Luo keskittyneitä konteksteja**: Luo erillisiä juurikonteksteja eri keskustelutarkoituksiin tai -alueisiin selkeyden ylläpitämiseksi.
+1. **Luo kohdennettuja konteksteja**: Luo erilliset root contextit eri keskustelutarkoituksia tai toimialoja varten selkeyden säilyttämiseksi.
 
-2. **Aseta vanhenemiskäytännöt**: Toteuta käytännöt vanhojen kontekstien arkistoimiseksi tai poistamiseksi tallennuksen hallitsemiseksi ja tietojen säilyttämiskäytäntöjen noudattamiseksi.
+2. **Aseta vanhenemiskäytännöt**: Toteuta käytännöt vanhojen kontekstien arkistointiin tai poistamiseen tallennustilan hallitsemiseksi ja tietojen säilytyssääntöjen noudattamiseksi.
 
-3. **Tallenna oleellinen metadata**: Käytä kontekstin metadataa tärkeän keskustelutiedon tallentamiseen, joka voi olla hyödyllistä myöhemmin.
+3. **Tallenna olennaista metadataa**: Käytä kontekstin metatietoja tallentaaksesi tärkeitä tietoja keskustelusta, joita saatetaan tarvita myöhemmin.
 
-4. **Käytä kontekstin tunnisteita johdonmukaisesti**: Kun konteksti on luotu, käytä sen tunnistetta johdonmukaisesti kaikissa siihen liittyvissä pyynnöissä jatkuvuuden ylläpitämiseksi.
+4. **Käytä kontekstitunnuksia johdonmukaisesti**: Kun konteksti on luotu, käytä sen tunnusta johdonmukaisesti kaikissa siihen liittyvissä pyynnöissä jatkuvuuden ylläpitämiseksi.
 
-5. **Luo tiivistelmiä**: Kun konteksti kasvaa suureksi, harkitse tiivistelmien luomista oleellisen tiedon tallentamiseksi samalla kun hallitset kontekstin kokoa.
+5. **Luo tiivistelmiä**: Kun konteksti kasvaa suureksi, harkitse tiivistelmien luomista tärkeän tiedon tallentamiseksi ja kontekstin koon hallitsemiseksi.
 
-6. **Toteuta pääsynhallinta**: Monikäyttäjäjärjestelmissä toteuta asianmukaiset pääsynhallinnat keskustelukontekstien yksityisyyden ja turvallisuuden varmistamiseksi.
+6. **Toteuta pääsynvalvonta**: Monikäyttäjäjärjestelmissä toteuta asianmukaiset pääsynvalvontamekanismit keskustelukontekstien yksityisyyden ja turvallisuuden varmistamiseksi.
 
-7. **Käsittele kontekstin rajoituksia**: Ole tietoinen kontekstin kokorajoituksista ja toteuta strategioita erittäin pitkien keskustelujen käsittelemiseksi.
+7. **Huomioi kontekstin rajoitukset**: Ole tietoinen kontekstin koon rajoituksista ja toteuta strategioita erittäin pitkien keskustelujen käsittelyyn.
 
-8. **Arkistoi, kun valmis**: Arkistoi kontekstit, kun keskustelut ovat valmiit, vapauttaaksesi resursseja samalla kun säilytät keskusteluhistorian.
+8. **Arkistoi, kun valmis**: Arkistoi kontekstit keskustelujen päätyttyä vapauttaaksesi resursseja samalla säilyttäen keskusteluhistorian.
 
-## Mallin kontekstiprotokollan näytteenotto
+## Näytteenotto Model Context Protocolissa
 
-Näytteenottostrategiat ovat kriittisiä mallivastausten optimoinnissa MCP-toteutuksissa. Oikea näytteenottokonfiguraatio voi parantaa merkittävästi vastausten laatua ja suorituskykyä. MCP tarjoaa standardoidun tavan hallita, miten mallit tuottavat tekstiä tietyillä parametreilla, jotka vaikuttavat satunnaisuuteen, luovuuteen ja johdonmukaisuuteen.
+Näytteenottostrategiat ovat keskeisiä mallivastausten optimoinnissa MCP-toteutuksissa. Oikea näytteenottoasetusten valinta voi merkittävästi parantaa vastausten laatua ja suorituskykyä. MCP tarjoaa standardoidun tavan hallita mallien tekstin generointia parametreilla, jotka vaikuttavat satunnaisuuteen, luovuuteen ja johdonmukaisuuteen.
 
-### Näytteenottoparametrien yleiskatsaus
+### Näytteenoton parametrien yleiskatsaus
 
-MCP määrittelee seuraavat näytteenottoparametrit, joita voidaan konfiguroida asiakaspalvelupyynnöissä:
+MCP määrittelee seuraavat näytteenoton parametrit, joita voidaan asettaa asiakaspyynnöissä:
 
-| Parametri | Kuvaus | Tyypillinen vaihteluväli |
-|-----------|-------------|---------------|
+| Parametri | Kuvaus | Tyypillinen arvoalue |
+|-----------|---------|---------------------|
 | `temperature` | Controls randomness in token selection | 0.0 - 2.0 |
 | `top_p` | Nucleus sampling - limits tokens to top cumulative probability | 0.0 - 1.0 |
 | `top_k` | Limits token selection to top K options | 1 - 100 |
@@ -1044,11 +1051,11 @@ MCP määrittelee seuraavat näytteenottoparametrit, joita voidaan konfiguroida 
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | Mukautetut sekvenssit, jotka lopettavat generoinnin kohdattaessa | Merkkijonojen taulukko |
+| `stop_sequences` | Mukautetut sekvenssit, jotka lopettavat generoinnin kohdalle osuessaan | Merkkijonotaulukko |
 
-### Lämpötila ja Top-K/Top-P näytteenotto
+### Temperature ja Top-K/Top-P -näytteenotto
 
-Näytteenottoparametrit mahdollistavat kielimallien käyttäytymisen hienosäädön halutun tasapainon saavuttamiseksi determinististen ja luovien tulosten välillä.
+Näytteenoton parametrit mahdollistavat kielimallien käyttäytymisen hienosäädön halutun tasapainon saavuttamiseksi deterministisen ja luovan tuotoksen välillä.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1144,7 +1151,7 @@ demonstrateSampling();
 
 ### Deterministinen näytteenotto
 
-Sovelluksille, jotka vaativat johdonmukaisia tuloksia, deterministinen näytteenotto varmistaa toistettavat tulokset.
+Sovelluksissa, joissa tarvitaan johdonmukaisia tuloksia, deterministinen näytteenotto takaa toistettavat vastaukset.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1228,9 +1235,9 @@ async function deterministicSampling() {
 deterministicSampling();
 ```
 
-### Dynaaminen näytteenottokonfiguraatio
+### Dynaaminen näytteenottoasetusten hallinta
 
-Älykäs näytteenotto mukauttaa parametreja kunkin pyynnön kontekstin ja vaatimusten perusteella.
+Älykäs näytteenotto mukauttaa parametreja pyynnön kontekstin ja vaatimusten mukaan.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1469,13 +1476,13 @@ async function demonstrateAdaptiveSampling() {
 demonstrateAdaptiveSampling();
 ```
 
-## Reititys mallin kontekstiprotokollassa
+## Reititys Model Context Protocolissa
 
-Reititys on välttämätöntä, jotta pyynnöt ohjautuvat oikeisiin malleihin, työkaluihin tai palveluihin MCP-ekosysteemissä.
+Reititys on oleellinen osa pyyntöjen ohjaamista sopiville malleille, työkaluille tai palveluille MCP-ekosysteemissä.
 
-### Sisällön perusteella tapahtuva reititys
+### Sisältöpohjainen reititys
 
-Sisällön perusteella tapahtuva reititys ohjaa pyynnöt erikoistuneisiin palveluihin pyynnön sisällön perusteella.
+Sisältöpohjainen reititys ohjaa pyynnöt erikoistuneille palveluille pyynnön sisällön perusteella.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1546,9 +1553,9 @@ public class ContentBasedRouter
 }
 ```
 
-### Älykäs kuormituksen tasapainotus
+### Älykäs kuormantasapainotus
 
-Kuormituksen tasapainotus optimoi resurssien käytön ja varmistaa MCP-palveluiden korkean saatavuuden.
+Kuormantasapainotus optimoi resurssien käytön ja varmistaa MCP-palveluiden korkean saatavuuden.
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -1679,7 +1686,7 @@ public class McpLoadBalancer {
 
 ### Dynaaminen työkalureititys
 
-Työkalureititys varmistaa, että työkalukutsut ohjautuvat kontekstin perusteella sopivimpaan palveluun.
+Työkalureititys varmistaa, että työkalukutsut ohjataan kontekstin perusteella sopivimmalle palvelulle.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1790,7 +1797,7 @@ class McpToolRouter:
             raise
 ```
 
-### Näytteenoton ja reitityksen arkkitehtuuri MCP:ssa
+### Näytteenoton ja reitityksen arkkitehtuuri MCP:ssä
 
 Alla oleva kaavio havainnollistaa, miten näytteenotto ja reititys toimivat yhdessä kattavassa MCP-arkkitehtuurissa:
 
@@ -1861,11 +1868,11 @@ flowchart TB
 
 ## Skaalautuvuus ja korkean suorituskyvyn MCP
 
-Yritysten käyttöönotossa MCP-toteutusten on usein kyettävä käsittelemään suuria määriä pyyntöjä mahdollisimman pienellä viiveellä.
+Yrityskäyttöön tarkoitetut MCP-toteutukset joutuvat usein käsittelemään suuria pyyntömääriä mahdollisimman vähäisellä viiveellä.
 
-### Skaalautuvuusstrategiat
+### Skaalautumisstrategiat
 
-#### Horisontaalinen skaalaus
+#### Vaakasuuntainen skaalaus
 
 ```csharp
 // ASP.NET Core MCP load balancing configuration
@@ -1895,7 +1902,7 @@ public class McpLoadBalancedStartup
 }
 ```
 
-#### Vertikaalinen skaalaus ja resurssioptimointi
+#### Pystysuuntainen skaalaus ja resurssien optimointi
 
 ```java
 // Java MCP server with resource optimization
@@ -2011,11 +2018,11 @@ class DistributedMcpServer:
         await self.redis.wait_closed()
 ```
 
-## Turvallisuuden parhaat käytännöt
+## Tietoturvan parhaat käytännöt
 
-Turvallisuus on kriittistä MCP-toteutuksille, erityisesti yritysympäristöissä.
+Tietoturva on kriittinen osa MCP-toteutuksia, erityisesti yritysympäristöissä.
 
-### Autentikointi ja auktorisointi
+### Todennus ja valtuutus
 
 #### .NET Identity -integraatio
 
@@ -2140,9 +2147,9 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 }
 ```
 
-### Tietosuoja ja yksityisyys
+### Datan suojaus ja yksityisyys
 
-#### Python tietosuojan esimerkki
+#### Python-datan suojausesimerkki
 
 ```python
 from mcp_server import McpServer
@@ -2404,7 +2411,7 @@ public class AIFoundryMcpBridge {
 }
 ```
 
-### Python yritysintegroinnin esimerkki
+### Python-yritysintegrointiesimerkki
 
 ```python
 # Python Azure AI Integration
@@ -2530,30 +2537,32 @@ class EnterpriseAiIntegration:
 
 ## Keskeiset opit
 
-- Monimuotoiset MCP-toteutukset laajentavat AI-ominaisuuksia tekstinkäsittelyn ulkopuolelle
-- Skaalautuvuus on välttämätöntä yrityksen käyttöönotossa ja sitä voidaan käsitellä horisontaalisen ja vertikaalisen skaalaamisen avulla
-- Kattavat turvallisuustoimenpiteet suojaavat tietoja ja varmistavat asianmukaisen pääsynhallinnan
-- Yritysintegraatio alustojen kuten Azure OpenAI ja Microsoft AI Foundry kanssa parantaa MCP:n ominaisuuksia
-- Kehittyneet MCP-toteutukset hyötyvät optimoiduista arkkitehtuureista ja huolellisesta resurssien hallinnasta
+- Monimodaaliset MCP-toteutukset laajentavat tekoälyn kyvykkyyksiä tekstinkäsittelyn ulkopuolelle
+- Skaalautuvuus on välttämätöntä yrityskäyttöön ja sen voi toteuttaa vaakasuoralla ja pystysuoralla skaalaamisella
+- Laajat tietoturvatoimet suojaavat dataa ja varmistavat asianmukaisen pääsynvalvonnan
+- Yritysintegrointi alustoihin kuten Azure OpenAI ja Microsoft AI Foundry vahvistaa MCP:n kyvykkyyksiä
+- Edistyneet MCP-toteutukset hyötyvät optimoiduista arkkitehtuureista ja huolellisesta resurssien hallinnasta
 
 ## Harjoitus
 
-Suunnittele yritystason MCP-toteutus tietylle käyttötapaukselle:
+Suunnittele tuotantotason MCP-toteutus tietylle käyttötapaukselle:
 
-1. Määritä monimuotoiset vaatimukset käyttötapauksellesi
-2. Laadi tarvittavat turvallisuuskontrollit suojaamaan arkaluonteisia tietoja
-3. Suunnittele skaalautuva arkkitehtuuri, joka voi käsitellä vaihtelevaa kuormitusta
-4. Suunnittele integrointipisteet yrityksen AI-järjestelmiin
-5. Dokumentoi mahdolliset suorituskyvyn pullonkaulat ja niiden lieventämisstrategiat
+1. Määrittele monimodaaliset vaatimukset käyttötapauksellesi
+2. Laadi tietoturvakontrollit arkaluonteisen datan suojaamiseksi
+3. Suunnittele skaalautuva arkkitehtuuri, joka pystyy käsittelemään vaihtelevaa kuormaa
+4. Suunnittele integraatiopisteet yritysten tekoälyjärjestelmiin
+5. Dokumentoi mahdolliset suorituskykyyn liittyvät pullonkaulat ja niiden lieventämisstrategiat
 
 ## Lisäresurssit
 
-- [Azure OpenAI Dokumentaatio](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Microsoft AI Foundry Dokumentaatio](https://learn.microsoft.com/en-us/ai-services/)
+- [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
-Seuraava: [Yhteisö ja kontribuutiot](../06-CommunityContributions/README.md)
+## Mitä seuraavaksi
+
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälykäännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, on hyvä olla tietoinen siitä, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittistä tietoa varten suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinkäsityksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

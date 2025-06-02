@@ -1,46 +1,53 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:16:14+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:25:21+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "tr"
 }
 -->
-# MCP'de İleri Düzey Konular
+# MCP'de İleri Konular
 
 ## Genel Bakış
 
-Bu ders, Model Context Protocol uygulamasında ileri düzey kavramları keşfeder ve çok modlu entegrasyon, ölçeklenebilirlik, güvenlik en iyi uygulamaları ve kurumsal entegrasyon konularına odaklanır. Bu konular, kurumsal ortamlardaki karmaşık gereksinimleri karşılayabilen üretim kalitesinde MCP uygulamaları geliştirmek için gereklidir.
+Bu ders, Model Context Protocol uygulamasında ileri kavramları inceleyerek çok modlu entegrasyon, ölçeklenebilirlik, güvenlik en iyi uygulamaları ve kurumsal entegrasyona odaklanmaktadır. Bu konular, kurumsal ortamlarda karmaşık gereksinimleri karşılayabilen üretim kalitesinde MCP uygulamaları geliştirmek için önemlidir.
 
 ## Öğrenme Hedefleri
 
 Bu dersin sonunda şunları yapabileceksiniz:
-- MCP çerçeveleri içinde çok modlu yetenekler uygulamak
+- MCP çerçeveleri içinde çok modlu yetenekleri uygulamak
 - Yüksek talep senaryoları için ölçeklenebilir MCP mimarileri tasarlamak
-- MCP'nin güvenlik ilkelerine uygun güvenlik en iyi uygulamalarını uygulamak
-- MCP'yi kurumsal AI sistemleri ve çerçeveleriyle entegre etmek
+- MCP'nin güvenlik prensipleriyle uyumlu güvenlik en iyi uygulamalarını uygulamak
+- MCP'yi kurumsal AI sistemleri ve çerçeveleri ile entegre etmek
 - Üretim ortamlarında performans ve güvenilirliği optimize etmek
 
-## Ek Kaynaklar
+## Örnek Projeler
 
-İleri düzey MCP konuları hakkında en güncel bilgiler için:
-- [MCP Belgeleri](https://modelcontextprotocol.io/)
-- [MCP Spesifikasyonu](https://spec.modelcontextprotocol.io/)
-- [GitHub Deposu](https://github.com/modelcontextprotocol)
+| Bağlantı | Başlık | Açıklama |
+|----------|--------|----------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | MCP ile OAuth2'yi hem Yetkilendirme hem de Kaynak Sunucusu olarak gösteren minimal Spring Boot uygulaması. Güvenli token verme, korumalı uç noktalar, Azure Container Apps dağıtımı ve API Yönetimi entegrasyonunu gösterir. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web Search MCP | SerpAPI ile gerçek zamanlı web, haber, ürün araması ve Soru-Cevap entegrasyonu sağlayan Python MCP sunucu ve istemcisi. Çoklu araç orkestrasyonu, dış API entegrasyonu ve sağlam hata yönetimi gösterir. |
+
+## Ek Referanslar
+
+İleri MCP konuları hakkında en güncel bilgiler için bakınız:
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## Çok Modlu Entegrasyon
 
-MCP sadece metin tabanlı etkileşimleri değil, aynı zamanda modellerin görüntüler, sesler ve diğer veri türleriyle çalışmasına olanak tanıyan çok modlu yetenekleri de destekler.
+MCP sadece metin tabanlı etkileşimleri değil, aynı zamanda modellerin görüntü, ses ve diğer veri türleriyle çalışmasını sağlayan çok modlu yetenekleri destekler.
 
 ### Çok Modlu Destek için Mimari
 
 Çok modlu MCP uygulamaları genellikle şunları içerir:
 
-1. **Modal-Spesifik Çözücüler**: Farklı medya türlerini modelin işleyebileceği formatlara dönüştüren bileşenler
-2. **Modal-Spesifik Araçlar**: Belirli modalleri (görüntü analizi, ses işleme) ele almak için tasarlanmış özel araçlar
-3. **Birleşik Bağlam Yönetimi**: Farklı modallar arasında bağlamı koruyan sistem
-4. **Yanıt Üretimi**: Birden fazla modal içerebilen yanıtlar üretebilme yeteneği
+1. **Modala Özgü Ayrıştırıcılar**: Farklı medya türlerini modelin işleyebileceği formata dönüştüren bileşenler  
+2. **Modala Özgü Araçlar**: Belirli modaliteleri (görüntü analizi, ses işleme) işlemek için tasarlanmış özel araçlar  
+3. **Birleşik Bağlam Yönetimi**: Farklı modaliteler arasında bağlamı koruyan sistem  
+4. **Yanıt Üretimi**: Birden fazla modaliteyi içerebilecek yanıtlar oluşturabilme yeteneği  
 
 ### C# Çok Modlu Örnek: Görüntü Analizi
 
@@ -452,23 +459,23 @@ if __name__ == "__main__":
 
 ## MCP Kök Bağlamları
 
-Kök bağlamlar, Model Context Protocol'de birden fazla istek ve oturum arasında konuşma geçmişini ve paylaşılan durumu korumak için kalıcı bir katman sağlayan temel bir kavramdır.
+Kök bağlamlar, Model Context Protocol'de birden çok istek ve oturum arasında konuşma geçmişi ve paylaşılan durumu koruyan kalıcı bir katman sağlayan temel bir kavramdır.
 
 ### Kök Bağlamları Anlamak
 
-Kök bağlamlar, bir dizi ilişkili etkileşim için geçmişi ve durumu tutan kaplar olarak hizmet eder. Bunlar:
+Kök bağlamlar, ilişkili bir dizi etkileşim için geçmişi ve durumu tutan kapsayıcılar olarak hizmet eder. Bunlar şunları sağlar:
 
-- **Konuşma Kalıcılığı**: Tutarlı çoklu dönüşlü konuşmaları sürdürme
-- **Bellek Yönetimi**: Etkileşimler arasında bilgi depolama ve alma
-- **Durum Yönetimi**: Karmaşık iş akışlarında ilerlemeyi izleme
-- **Bağlam Paylaşımı**: Birden fazla istemcinin aynı konuşma durumuna erişmesine izin verme
+- **Konuşma Sürekliliği**: Tutarlı çok aşamalı konuşmaları sürdürmek  
+- **Bellek Yönetimi**: Etkileşimler arasında bilgiyi depolamak ve geri çağırmak  
+- **Durum Yönetimi**: Karmaşık iş akışlarında ilerlemeyi takip etmek  
+- **Bağlam Paylaşımı**: Birden fazla istemcinin aynı konuşma durumuna erişmesine izin vermek  
 
-MCP'de kök bağlamların bu temel özellikleri vardır:
+MCP'de kök bağlamların temel özellikleri:
 
-- Her kök bağlamın benzersiz bir tanımlayıcısı vardır
-- Konuşma geçmişi, kullanıcı tercihleri ve diğer meta verileri içerebilirler
-- Gerektiğinde oluşturulabilir, erişilebilir ve arşivlenebilirler
-- İnce ayarlı erişim kontrolü ve izinleri desteklerler
+- Her kök bağlamın benzersiz bir kimliği vardır  
+- Konuşma geçmişi, kullanıcı tercihleri ve diğer meta verileri içerebilir  
+- Gerektiğinde oluşturulabilir, erişilebilir ve arşivlenebilir  
+- İnce taneli erişim kontrolü ve izinleri destekler  
 
 ### Kök Bağlam Yaşam Döngüsü
 
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Python Örneği: Çoklu Dönüş Yardımı için Kök Bağlam
+### Python Örneği: Çok Aşamalı Yardım için Kök Bağlam
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1011,32 +1018,25 @@ if __name__ == "__main__":
 
 ### Kök Bağlam En İyi Uygulamaları
 
-1. **Odaklı Bağlamlar Oluşturun**: Farklı konuşma amaçları veya alanları için ayrı kök bağlamlar oluşturarak netliği koruyun.
-
-2. **Son Kullanım Politikaları Belirleyin**: Depolama yönetimi ve veri saklama politikalarına uyum için eski bağlamları arşivlemek veya silmek için politikalar uygulayın.
-
-3. **İlgili Meta Verileri Saklayın**: Daha sonra faydalı olabilecek konuşma hakkında önemli bilgileri saklamak için bağlam meta verilerini kullanın.
-
-4. **Bağlam Kimliklerini Tutarlı Kullanın**: Bir bağlam oluşturulduktan sonra, tüm ilgili istekler için kimliğini tutarlı bir şekilde kullanarak sürekliliği koruyun.
-
-5. **Özetler Oluşturun**: Bir bağlam büyüdüğünde, bağlam boyutunu yönetirken temel bilgileri yakalamak için özetler oluşturmayı düşünün.
-
-6. **Erişim Kontrolünü Uygulayın**: Çok kullanıcılı sistemler için, konuşma bağlamlarının gizliliğini ve güvenliğini sağlamak için uygun erişim kontrolleri uygulayın.
-
-7. **Bağlam Sınırlamalarını Yönetin**: Bağlam boyutu sınırlamalarının farkında olun ve çok uzun konuşmaları ele almak için stratejiler uygulayın.
-
-8. **Tamamlandığında Arşivleyin**: Kaynakları serbest bırakırken konuşma geçmişini korumak için konuşmalar tamamlandığında bağlamları arşivleyin.
+1. **Odaklanmış Bağlamlar Oluşturun**: Farklı konuşma amaçları veya alanları için ayrı kök bağlamlar oluşturarak netliği koruyun.  
+2. **Süre Sonu Politikaları Belirleyin**: Depolamayı yönetmek ve veri saklama politikalarına uymak için eski bağlamları arşivleme veya silme politikaları uygulayın.  
+3. **İlgili Meta Verileri Saklayın**: Konuşmayla ilgili ileride faydalı olabilecek önemli bilgileri bağlam meta verisinde tutun.  
+4. **Bağlam Kimliklerini Tutarlı Kullanın**: Bir bağlam oluşturulduktan sonra, sürekliliği sağlamak için tüm ilgili isteklerde kimliğini tutarlı kullanın.  
+5. **Özetler Oluşturun**: Bağlam büyüdüğünde, önemli bilgileri yakalamak ve bağlam boyutunu yönetmek için özetler oluşturmayı düşünün.  
+6. **Erişim Kontrolü Uygulayın**: Çok kullanıcılı sistemlerde, konuşma bağlamlarının gizliliği ve güvenliği için uygun erişim kontrolleri uygulayın.  
+7. **Bağlam Sınırlamalarını Yönetin**: Bağlam boyutu sınırlamalarının farkında olun ve çok uzun konuşmalar için stratejiler geliştirin.  
+8. **Tamamlandığında Arşivleyin**: Konuşmalar tamamlandığında kaynakları serbest bırakmak ve konuşma geçmişini korumak için bağlamları arşivleyin.  
 
 ## Model Context Protocol'de Örnekleme
 
-Örnekleme stratejileri, MCP uygulamalarında model yanıtlarını optimize etmek için kritiktir. Doğru örnekleme yapılandırması, yanıt kalitesini ve performansını önemli ölçüde artırabilir. MCP, modellerin metin üretme şeklini belirli parametrelerle kontrol etmek için standart bir yol sağlar; bu parametreler rastgeleliği, yaratıcılığı ve tutarlılığı etkiler.
+Örnekleme stratejileri, MCP uygulamalarında model yanıtlarını optimize etmek için kritik öneme sahiptir. Doğru örnekleme yapılandırması, yanıt kalitesi ve performansını önemli ölçüde artırabilir. MCP, modellerin metin üretimini rastgelelik, yaratıcılık ve tutarlılığı etkileyen belirli parametrelerle kontrol etmenin standart bir yolunu sağlar.
 
 ### Örnekleme Parametreleri Genel Bakış
 
 MCP, istemci isteklerinde yapılandırılabilecek aşağıdaki örnekleme parametrelerini tanımlar:
 
 | Parametre | Açıklama | Tipik Aralık |
-|-----------|-------------|---------------|
+|-----------|----------|--------------|
 | `temperature` | Controls randomness in token selection | 0.0 - 2.0 |
 | `top_p` | Nucleus sampling - limits tokens to top cumulative probability | 0.0 - 1.0 |
 | `top_k` | Limits token selection to top K options | 1 - 100 |
@@ -1044,11 +1044,11 @@ MCP, istemci isteklerinde yapılandırılabilecek aşağıdaki örnekleme parame
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | Karşılaşıldığında üretimi durduran özel diziler | Dizi |
+| `stop_sequences` | Karşılaşıldığında üretimi durduran özel diziler | Dizi halinde stringler |
 
-### Sıcaklık ve Top-K/Top-P Örnekleme
+### Temperature ve Top-K/Top-P Örnekleme
 
-Örnekleme parametreleri, dil modellerinin davranışını, deterministik ve yaratıcı çıktılar arasında istenen dengeyi sağlamak için ince ayar yapmayı sağlar.
+Örnekleme parametreleri, dil modellerinin davranışını istenilen deterministik ve yaratıcı çıktı dengesi için ince ayar yapmaya olanak tanır.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1144,7 +1144,7 @@ demonstrateSampling();
 
 ### Deterministik Örnekleme
 
-Tutarlı çıktılar gerektiren uygulamalar için, deterministik örnekleme tekrarlanabilir sonuçlar sağlar.
+Tutarlı çıktılar gerektiren uygulamalar için deterministik örnekleme, tekrarlanabilir sonuçlar sağlar.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1230,7 +1230,7 @@ deterministicSampling();
 
 ### Dinamik Örnekleme Yapılandırması
 
-Akıllı örnekleme, her isteğin bağlamı ve gereksinimlerine göre parametreleri ayarlar.
+Akıllı örnekleme, her isteğin bağlamı ve gereksinimlerine göre parametreleri uyarlamaktadır.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1471,11 +1471,11 @@ demonstrateAdaptiveSampling();
 
 ## Model Context Protocol'de Yönlendirme
 
-Yönlendirme, MCP ekosistemi içindeki istekleri uygun modellere, araçlara veya hizmetlere yönlendirmek için esastır.
+Yönlendirme, MCP ekosisteminde istekleri uygun model, araç veya servislere yönlendirmek için gereklidir.
 
 ### İçerik Tabanlı Yönlendirme
 
-İçerik tabanlı yönlendirme, isteklerin içeriğine göre özel hizmetlere yönlendirir.
+İçerik tabanlı yönlendirme, istekleri içeriğe göre uzmanlaşmış servislere yönlendirir.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1548,7 +1548,7 @@ public class ContentBasedRouter
 
 ### Akıllı Yük Dengeleme
 
-Yük dengeleme, kaynak kullanımını optimize eder ve MCP hizmetleri için yüksek kullanılabilirliği sağlar.
+Yük dengeleme, kaynak kullanımını optimize eder ve MCP servislerinin yüksek erişilebilirliğini sağlar.
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -1679,7 +1679,7 @@ public class McpLoadBalancer {
 
 ### Dinamik Araç Yönlendirme
 
-Araç yönlendirme, araç çağrılarının bağlama göre en uygun hizmete yönlendirilmesini sağlar.
+Araç yönlendirme, araç çağrılarının bağlama göre en uygun servise gitmesini sağlar.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1792,7 +1792,7 @@ class McpToolRouter:
 
 ### MCP'de Örnekleme ve Yönlendirme Mimarisi
 
-Aşağıdaki diyagram, kapsamlı bir MCP mimarisinde örnekleme ve yönlendirmenin birlikte nasıl çalıştığını gösterir:
+Aşağıdaki diyagram, örnekleme ve yönlendirmenin kapsamlı bir MCP mimarisinde nasıl birlikte çalıştığını gösterir:
 
 ```mermaid
 flowchart TB
@@ -1861,11 +1861,11 @@ flowchart TB
 
 ## Ölçeklenebilirlik ve Yüksek Performanslı MCP
 
-Kurumsal dağıtımlar için MCP uygulamaları genellikle yüksek hacimli istekleri minimum gecikme ile ele almalıdır.
+Kurumsal dağıtımlar için, MCP uygulamalarının genellikle yüksek hacimli istekleri düşük gecikmeyle işlemesi gerekir.
 
 ### Ölçeklenebilirlik Stratejileri
 
-#### Yatay Ölçekleme
+#### Yatay Ölçeklendirme
 
 ```csharp
 // ASP.NET Core MCP load balancing configuration
@@ -1895,7 +1895,7 @@ public class McpLoadBalancedStartup
 }
 ```
 
-#### Dikey Ölçekleme ve Kaynak Optimizasyonu
+#### Dikey Ölçeklendirme ve Kaynak Optimizasyonu
 
 ```java
 // Java MCP server with resource optimization
@@ -2017,7 +2017,7 @@ Güvenlik, özellikle kurumsal ortamlarda MCP uygulamaları için kritik öneme 
 
 ### Kimlik Doğrulama ve Yetkilendirme
 
-#### .NET Kimlik Entegrasyonu
+#### .NET Identity Entegrasyonu
 
 ```csharp
 public class SecureMcpStartup
@@ -2528,32 +2528,34 @@ class EnterpriseAiIntegration:
         return mapping.get(ml_type, "string")
 ```
 
-## Anahtar Çıkarımlar
+## Önemli Noktalar
 
-- Çok modlu MCP uygulamaları, AI yeteneklerini metin işleme ötesine taşır
-- Ölçeklenebilirlik, kurumsal dağıtımlar için esastır ve yatay ve dikey ölçekleme ile ele alınabilir
-- Kapsamlı güvenlik önlemleri, verileri korur ve uygun erişim kontrolünü sağlar
-- Azure OpenAI ve Microsoft AI Foundry gibi platformlarla kurumsal entegrasyon, MCP yeteneklerini artırır
-- Gelişmiş MCP uygulamaları, optimize edilmiş mimarilerden ve dikkatli kaynak yönetiminden fayda sağlar
+- Çok modlu MCP uygulamaları, AI yeteneklerini metin işleme dışına genişletir  
+- Ölçeklenebilirlik, kurumsal dağıtımlar için esastır ve yatay ile dikey ölçeklendirme ile ele alınabilir  
+- Kapsamlı güvenlik önlemleri, verileri korur ve uygun erişim kontrolünü sağlar  
+- Azure OpenAI ve Microsoft AI Foundry gibi platformlarla kurumsal entegrasyon, MCP yeteneklerini artırır  
+- İleri MCP uygulamaları, optimize mimariler ve dikkatli kaynak yönetimi ile fayda sağlar  
 
-## Egzersiz
+## Alıştırma
 
-Belirli bir kullanım durumu için kurumsal düzeyde bir MCP uygulaması tasarlayın:
+Belirli bir kullanım senaryosu için kurumsal düzeyde MCP uygulaması tasarlayın:
 
-1. Kullanım durumunuz için çok modlu gereksinimleri belirleyin
-2. Hassas verileri korumak için gerekli güvenlik kontrollerini ana hatlarıyla belirtin
-3. Değişen yükleri karşılayabilecek ölçeklenebilir bir mimari tasarlayın
-4. Kurumsal AI sistemleriyle entegrasyon noktalarını planlayın
-5. Potansiyel performans darboğazlarını ve hafifletme stratejilerini belgeleyin
+1. Kullanım senaryonuz için çok modlu gereksinimleri belirleyin  
+2. Hassas verileri korumak için gerekli güvenlik kontrollerini tasarlayın  
+3. Değişen yükleri karşılayabilecek ölçeklenebilir bir mimari tasarlayın  
+4. Kurumsal AI sistemleri ile entegrasyon noktalarını planlayın  
+5. Olası performans darboğazlarını ve çözüm stratejilerini belgeleyin  
 
 ## Ek Kaynaklar
 
-- [Azure OpenAI Belgeleri](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Microsoft AI Foundry Belgeleri](https://learn.microsoft.com/en-us/ai-services/)
+- [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)  
+- [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)  
 
 ---
 
-Sonraki: [Topluluk ve Katkılar](../06-CommunityContributions/README.md)
+## Sonraki Adım
 
-**Feragatname**:
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilmektedir. Bu çevirinin kullanımından doğabilecek yanlış anlama veya yanlış yorumlamalardan sorumlu değiliz.
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
+
+**Feragatname**:  
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

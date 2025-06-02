@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:22:16+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:43:54+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "tl"
 }
@@ -11,38 +11,45 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Pangkalahatang-ideya
 
-Ang araling ito ay tumatalakay sa mga advanced na konsepto sa pagpapatupad ng Model Context Protocol, na nakatuon sa multi-modal integration, scalability, mga pinakamahusay na kasanayan sa seguridad, at enterprise integration. Ang mga paksang ito ay mahalaga para sa pagbuo ng production-grade na MCP applications na kayang humawak ng kumplikadong mga pangangailangan sa enterprise environments.
+Tinutuklas ng araling ito ang mga advanced na konsepto sa pagpapatupad ng Model Context Protocol, na nakatuon sa multi-modal na integrasyon, scalability, mga pinakamahusay na kasanayan sa seguridad, at enterprise integration. Mahalaga ang mga paksang ito para sa pagbuo ng production-grade na mga aplikasyon ng MCP na kayang hawakan ang mga komplikadong pangangailangan sa mga enterprise na kapaligiran.
 
-## Mga Layunin sa Pag-aaral
+## Mga Layunin sa Pagkatuto
 
-Sa pagtatapos ng araling ito, magagawa mo:
-- Magpatupad ng multi-modal capabilities sa loob ng MCP frameworks
-- Magdisenyo ng scalable MCP architectures para sa mataas na demand na mga sitwasyon
-- Mag-aplay ng mga pinakamahusay na kasanayan sa seguridad na naaayon sa mga prinsipyo ng seguridad ng MCP
-- Isama ang MCP sa enterprise AI systems at frameworks
-- I-optimize ang pagganap at pagiging maaasahan sa production environments
+Sa pagtatapos ng araling ito, magagawa mong:
+- Ipatupad ang multi-modal na kakayahan sa loob ng mga MCP framework
+- Magdisenyo ng scalable na mga arkitektura ng MCP para sa mga sitwasyong may mataas na demand
+- Ilapat ang mga pinakamahusay na kasanayan sa seguridad na naaayon sa mga prinsipyo ng seguridad ng MCP
+- Isama ang MCP sa mga enterprise AI system at framework
+- I-optimize ang performance at pagiging maaasahan sa mga production environment
 
-## Karagdagang Mga Sanggunian
+## Mga Halimbawang Proyekto
 
-Para sa pinakabagong impormasyon sa mga advanced na paksa ng MCP, sumangguni sa:
+| Link | Pamagat | Paglalarawan |
+|------|---------|--------------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimal na Spring Boot app na nagpapakita ng OAuth2 gamit ang MCP, bilang Authorization at Resource Server. Ipinapakita nito ang secure na pag-isyu ng token, protektadong endpoints, deployment sa Azure Container Apps, at integrasyon sa API Management. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web Search MCP | Python MCP server at client na nag-iintegrate sa SerpAPI para sa real-time na paghahanap ng web, balita, produkto, at Q&A. Ipinapakita ang multi-tool orchestration, integrasyon ng external API, at matibay na error handling. |
+
+## Karagdagang Sanggunian
+
+Para sa pinaka-updated na impormasyon tungkol sa mga advanced na paksa sa MCP, sumangguni sa:
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## Multi-Modal Integration
 
-Ang MCP ay sumusuporta hindi lamang sa mga text-based na interaksyon kundi pati na rin sa multi-modal capabilities, na nagpapahintulot sa mga modelo na magtrabaho sa mga imahe, audio, at iba pang uri ng data.
+Sinusuportahan ng MCP hindi lang ang mga text-based na interaksyon kundi pati na rin ang multi-modal na kakayahan, na nagpapahintulot sa mga modelo na gumana sa mga larawan, audio, at iba pang uri ng data.
 
-### Arkitektura para sa Suporta ng Multi-Modal
+### Arkitektura para sa Multi-Modal Support
 
-Karaniwang kasama sa mga multi-modal na pagpapatupad ng MCP ang:
+Karaniwang kinabibilangan ang mga multi-modal MCP implementation ng:
 
-1. **Modal-Specific Parsers**: Mga sangkap na nagko-convert ng iba't ibang uri ng media sa mga format na kayang iproseso ng modelo
-2. **Modal-Specific Tools**: Mga espesyal na kasangkapan na dinisenyo para sa partikular na mga modality (pagsusuri ng imahe, pagproseso ng audio)
+1. **Modal-Specific Parsers**: Mga bahagi na nagko-convert ng iba't ibang uri ng media sa mga format na kayang iproseso ng modelo
+2. **Modal-Specific Tools**: Mga espesyal na kasangkapan na idinisenyo para hawakan ang partikular na modality (pagsusuri ng larawan, pagproseso ng audio)
 3. **Unified Context Management**: Sistema para mapanatili ang konteksto sa iba't ibang modality
-4. **Response Generation**: Kakayahan na bumuo ng mga tugon na maaaring maglaman ng maramihang modality
+4. **Response Generation**: Kakayahang gumawa ng mga tugon na maaaring magsama ng maraming modality
 
-### Halimbawa ng C# Multi-Modal: Pagsusuri ng Imahe
+### Halimbawa sa C# Multi-Modal: Pagsusuri ng Larawan
 
 ```csharp
 using ModelContextProtocol.SDK.Server;
@@ -174,7 +181,7 @@ namespace MultiModalMcpExample
 }
 ```
 
-### Halimbawa ng Java Multi-Modal: Pagproseso ng Audio
+### Halimbawa sa Java Multi-Modal: Pagproseso ng Audio
 
 ```java
 package com.example.mcp.multimodal;
@@ -302,7 +309,7 @@ public class MultiModalApplication {
 }
 ```
 
-### Halimbawa ng Python Multi-Modal: Paggawa ng Tugon ng Multi-Modal
+### Halimbawa sa Python Multi-Modal: Paggawa ng Multi-Modal na Tugon
 
 ```python
 from mcp_server import McpServer
@@ -450,25 +457,25 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## MCP Root Contexts
+## Mga Root Context sa MCP
 
-Ang mga root contexts ay isang pangunahing konsepto sa Model Context Protocol na nagbibigay ng persistent layer para sa pagpapanatili ng kasaysayan ng pag-uusap at ibinahaging estado sa iba't ibang mga kahilingan at sesyon.
+Ang mga root context ay isang pangunahing konsepto sa Model Context Protocol na nagbibigay ng persistent layer para mapanatili ang kasaysayan ng pag-uusap at shared state sa maraming kahilingan at session.
 
 ### Pag-unawa sa Root Contexts
 
-Ang mga root contexts ay nagsisilbing mga lalagyan na humahawak ng kasaysayan at estado para sa isang serye ng mga kaugnay na interaksyon. Sila ay nagpapahintulot sa:
+Ang mga root context ay nagsisilbing mga lalagyan na humahawak sa kasaysayan at estado para sa isang serye ng magkakaugnay na interaksyon. Pinapayagan nila ang:
 
-- **Pagpapanatili ng Pag-uusap**: Pagpapanatili ng maayos na multi-turn na pag-uusap
-- **Pamamahala ng Memorya**: Pag-iimbak at pagkuha ng impormasyon sa mga interaksyon
-- **Pamamahala ng Estado**: Pagsubaybay sa pag-unlad sa kumplikadong mga workflow
-- **Pagbabahagi ng Konteksto**: Pagbibigay-daan sa maraming kliyente na ma-access ang parehong estado ng pag-uusap
+- **Pagpapanatili ng Pag-uusap**: Pagpapanatili ng magkakaugnay na multi-turn na pag-uusap
+- **Memory Management**: Pag-iimbak at pagkuha ng impormasyon sa iba't ibang interaksyon
+- **State Management**: Pagsubaybay sa progreso sa mga komplikadong workflow
+- **Context Sharing**: Pagbibigay-daan sa maraming kliyente na ma-access ang parehong estado ng pag-uusap
 
-Sa MCP, ang mga root contexts ay may mga pangunahing katangian:
+Sa MCP, ang mga root context ay may mga sumusunod na pangunahing katangian:
 
 - Bawat root context ay may natatanging identifier
-- Maaari silang maglaman ng kasaysayan ng pag-uusap, mga kagustuhan ng gumagamit, at iba pang metadata
-- Maaari silang likhain, ma-access, at ma-archive kung kinakailangan
-- Sila ay sumusuporta sa fine-grained access control at mga pahintulot
+- Maaari itong maglaman ng kasaysayan ng pag-uusap, mga preference ng user, at iba pang metadata
+- Maaari itong malikha, ma-access, at ma-archive kung kinakailangan
+- Sinusuportahan nito ang fine-grained access control at mga permiso
 
 ### Lifecycle ng Root Context
 
@@ -481,7 +488,7 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### Halimbawa ng .NET: Paggawa sa Root Contexts
+### Halimbawa sa .NET: Paggamit ng Root Contexts
 
 ```csharp
 // .NET Example: Root Context Management
@@ -556,7 +563,7 @@ public class RootContextExample
 }
 ```
 
-### Halimbawa ng Java: Pagpapatupad ng Root Context
+### Halimbawa sa Java: Pagpapatupad ng Root Context
 
 ```java
 // Java Example: Root Context Implementation
@@ -642,7 +649,7 @@ public class RootContextsDemo {
 }
 ```
 
-### Halimbawa ng JavaScript: Pamamahala ng Root Context
+### Halimbawa sa JavaScript: Pamamahala ng Root Context
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Halimbawa ng Python: Root Context para sa Multi-Turn Assistance
+### Halimbawa sa Python: Root Context para sa Multi-Turn Assistance
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1011,32 +1018,32 @@ if __name__ == "__main__":
 
 ### Mga Pinakamahusay na Kasanayan sa Root Context
 
-1. **Lumikha ng Nakatuon na Contexts**: Lumikha ng hiwalay na root contexts para sa iba't ibang layunin o domain ng pag-uusap upang mapanatili ang kalinawan.
+1. **Gumawa ng Nakatuong Contexts**: Gumawa ng hiwalay na root context para sa iba't ibang layunin o domain ng pag-uusap upang mapanatili ang kalinawan.
 
-2. **Itakda ang Mga Patakaran sa Pag-expire**: Magpatupad ng mga patakaran upang i-archive o tanggalin ang mga lumang contexts upang pamahalaan ang imbakan at sumunod sa mga patakaran sa pag-iimbak ng data.
+2. **Magtakda ng Expiration Policies**: Magpatupad ng mga patakaran para i-archive o tanggalin ang mga lumang context upang pamahalaan ang storage at sumunod sa mga patakaran sa data retention.
 
-3. **Mag-imbak ng Kaugnay na Metadata**: Gumamit ng metadata ng konteksto upang mag-imbak ng mahalagang impormasyon tungkol sa pag-uusap na maaaring maging kapaki-pakinabang sa hinaharap.
+3. **Mag-imbak ng Mahahalagang Metadata**: Gamitin ang context metadata para mag-imbak ng mahahalagang impormasyon tungkol sa pag-uusap na maaaring magamit sa hinaharap.
 
-4. **Gamitin ang mga Context ID nang Konsistent**: Kapag ang isang konteksto ay nalikha, gamitin ang ID nito nang konsistent para sa lahat ng kaugnay na mga kahilingan upang mapanatili ang pagkakaugnay.
+4. **Gamitin nang Konsistent ang Context IDs**: Kapag nalikha na ang isang context, gamitin nang pare-pareho ang ID nito para sa lahat ng kaugnay na kahilingan upang mapanatili ang continuity.
 
-5. **Bumuo ng mga Buod**: Kapag ang isang konteksto ay lumaki, isaalang-alang ang pagbuo ng mga buod upang makuha ang mahahalagang impormasyon habang pinamamahalaan ang laki ng konteksto.
+5. **Gumawa ng Mga Buod**: Kapag lumaki na ang context, isaalang-alang ang paggawa ng mga buod para masaklaw ang mahahalagang impormasyon habang pinamamahalaan ang laki ng context.
 
-6. **Magpatupad ng Access Control**: Para sa mga multi-user na sistema, magpatupad ng tamang mga control sa pag-access upang matiyak ang privacy at seguridad ng mga konteksto ng pag-uusap.
+6. **Magpatupad ng Access Control**: Para sa mga multi-user system, magpatupad ng tamang access control upang matiyak ang privacy at seguridad ng mga context ng pag-uusap.
 
-7. **Pamahalaan ang mga Limitasyon ng Konteksto**: Maging aware sa mga limitasyon ng laki ng konteksto at magpatupad ng mga estratehiya para sa pamamahala ng napakahabang pag-uusap.
+7. **Harapin ang Mga Limitasyon ng Context**: Maging maalam sa mga limitasyon sa laki ng context at magpatupad ng mga estratehiya para sa napakahabang mga pag-uusap.
 
-8. **I-archive Kapag Tapos na**: I-archive ang mga konteksto kapag tapos na ang mga pag-uusap upang magpalaya ng mga mapagkukunan habang pinapanatili ang kasaysayan ng pag-uusap.
+8. **I-archive Kapag Tapos Na**: I-archive ang mga context kapag natapos na ang pag-uusap upang makapagpalaya ng mga resources habang pinapanatili ang kasaysayan ng pag-uusap.
 
 ## Sampling sa Model Context Protocol
 
-Ang mga estratehiya sa sampling ay kritikal para sa pag-optimize ng mga tugon ng modelo sa mga pagpapatupad ng MCP. Ang tamang sampling configuration ay maaaring lubos na mapabuti ang kalidad ng tugon at pagganap. Ang MCP ay nagbibigay ng standardized na paraan upang kontrolin kung paano bumubuo ang mga modelo ng teksto gamit ang mga partikular na parameter na nakakaimpluwensya sa randomness, creativity, at coherence.
+Mahalaga ang mga sampling strategy para i-optimize ang mga tugon ng modelo sa mga implementasyon ng MCP. Ang tamang sampling configuration ay maaaring magpabuti nang malaki sa kalidad at performance ng tugon. Nagbibigay ang MCP ng standardized na paraan para kontrolin kung paano bumubuo ng teksto ang mga modelo gamit ang mga partikular na parameter na nakakaapekto sa randomness, creativity, at coherence.
 
 ### Pangkalahatang-ideya ng Sampling Parameters
 
-Tinutukoy ng MCP ang mga sumusunod na sampling parameters na maaaring i-configure sa mga kahilingan ng kliyente:
+Itinakda ng MCP ang mga sumusunod na sampling parameter na maaaring i-configure sa mga kahilingan ng kliyente:
 
 | Parameter | Paglalarawan | Karaniwang Saklaw |
-|-----------|-------------|---------------|
+|-----------|--------------|-------------------|
 | `temperature` | Controls randomness in token selection | 0.0 - 2.0 |
 | `top_p` | Nucleus sampling - limits tokens to top cumulative probability | 0.0 - 1.0 |
 | `top_k` | Limits token selection to top K options | 1 - 100 |
@@ -1044,11 +1051,11 @@ Tinutukoy ng MCP ang mga sumusunod na sampling parameters na maaaring i-configur
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | Custom sequences na humihinto sa pagbuo kapag natagpuan | Array ng mga string |
+| `stop_sequences` | Mga custom na sequence na humihinto sa generation kapag na-encounter | Array ng mga string |
 
 ### Temperature at Top-K/Top-P Sampling
 
-Ang mga sampling parameters ay nagbibigay-daan sa fine-tuning ng pag-uugali ng mga language models upang makamit ang nais na balanse sa pagitan ng deterministic at creative na outputs.
+Pinapayagan ng mga sampling parameter ang masusing pag-aayos ng kilos ng mga language model para makamit ang nais na balanse sa pagitan ng deterministic at creative na output.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1144,7 +1151,7 @@ demonstrateSampling();
 
 ### Deterministic Sampling
 
-Para sa mga application na nangangailangan ng consistent na outputs, ang deterministic sampling ay nagsisiguro ng reproducible na mga resulta.
+Para sa mga aplikasyon na nangangailangan ng konsistent na output, tinitiyak ng deterministic sampling ang reproducible na resulta.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1230,7 +1237,7 @@ deterministicSampling();
 
 ### Dynamic Sampling Configuration
 
-Ang intelligent sampling ay umaangkop ng mga parameter batay sa konteksto at mga pangangailangan ng bawat kahilingan.
+Ang intelligent sampling ay ina-adjust ang mga parameter base sa konteksto at pangangailangan ng bawat kahilingan.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1471,11 +1478,11 @@ demonstrateAdaptiveSampling();
 
 ## Routing sa Model Context Protocol
 
-Ang routing ay mahalaga para sa pagdidirekta ng mga kahilingan sa tamang mga modelo, tools, o serbisyo sa loob ng isang MCP ecosystem.
+Mahalaga ang routing para idirekta ang mga kahilingan sa tamang modelo, tool, o serbisyo sa loob ng MCP ecosystem.
 
 ### Content-Based Routing
 
-Ang content-based routing ay nagdidirekta ng mga kahilingan sa mga espesyal na serbisyo batay sa nilalaman ng kahilingan.
+Pinapadala ng content-based routing ang mga kahilingan sa mga espesyal na serbisyo base sa nilalaman ng kahilingan.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1548,7 +1555,7 @@ public class ContentBasedRouter
 
 ### Intelligent Load Balancing
 
-Ang load balancing ay nag-o-optimize ng paggamit ng mga mapagkukunan at nagsisiguro ng mataas na availability para sa mga serbisyo ng MCP.
+Ino-optimize ng load balancing ang paggamit ng mga resources at tinitiyak ang mataas na availability para sa mga serbisyo ng MCP.
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -1679,7 +1686,7 @@ public class McpLoadBalancer {
 
 ### Dynamic Tool Routing
 
-Ang tool routing ay nagsisiguro na ang mga tawag sa tool ay naituturo sa pinaka-angkop na serbisyo batay sa konteksto.
+Tinitiyak ng tool routing na ang mga tawag sa tool ay naituturo sa pinaka-angkop na serbisyo base sa konteksto.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1792,7 +1799,7 @@ class McpToolRouter:
 
 ### Sampling at Routing Architecture sa MCP
 
-Ang diagram sa ibaba ay naglalarawan kung paano nagtutulungan ang sampling at routing sa isang komprehensibong MCP architecture:
+Ipinapakita ng diagram sa ibaba kung paano nagtutulungan ang sampling at routing sa isang komprehensibong MCP architecture:
 
 ```mermaid
 flowchart TB
@@ -1859,9 +1866,9 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Scalability at Mataas na Pagganap ng MCP
+## Scalability at High-Performance MCP
 
-Para sa mga deployment ng enterprise, ang mga pagpapatupad ng MCP ay madalas na kailangang humawak ng mataas na volume ng mga kahilingan na may minimal na latency.
+Para sa mga enterprise deployment, madalas kailangang hawakan ng mga implementasyon ng MCP ang mataas na volume ng mga kahilingan na may minimal na latency.
 
 ### Mga Estratehiya sa Scalability
 
@@ -2013,11 +2020,11 @@ class DistributedMcpServer:
 
 ## Mga Pinakamahusay na Kasanayan sa Seguridad
 
-Ang seguridad ay kritikal para sa mga pagpapatupad ng MCP, lalo na sa mga enterprise environments.
+Mahalaga ang seguridad para sa mga implementasyon ng MCP, lalo na sa mga enterprise na kapaligiran.
 
 ### Authentication at Authorization
 
-#### .NET Identity Integration
+#### Integrasyon ng .NET Identity
 
 ```csharp
 public class SecureMcpStartup
@@ -2088,7 +2095,7 @@ public class SecureMcpStartup
 }
 ```
 
-#### Java Spring Security Integration
+#### Integrasyon ng Java Spring Security
 
 ```java
 @Configuration
@@ -2142,7 +2149,7 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 ### Proteksyon ng Data at Privacy
 
-#### Halimbawa ng Python Data Protection
+#### Halimbawa ng Proteksyon ng Data sa Python
 
 ```python
 from mcp_server import McpServer
@@ -2280,9 +2287,9 @@ class SecureCustomerDataTool(Tool):
 
 ## Enterprise Integration
 
-Pagsasama ng MCP sa mga enterprise systems tulad ng Azure OpenAI at Microsoft AI Foundry.
+Pagsasama ng MCP sa mga enterprise system tulad ng Azure OpenAI at Microsoft AI Foundry.
 
-### Azure OpenAI Integration
+### Integrasyon sa Azure OpenAI
 
 ```csharp
 // .NET Azure OpenAI Integration
@@ -2346,7 +2353,7 @@ namespace EnterpriseIntegration
 }
 ```
 
-### Microsoft AI Foundry Integration
+### Integrasyon sa Microsoft AI Foundry
 
 ```java
 // Java AI Foundry Agent Integration
@@ -2404,7 +2411,7 @@ public class AIFoundryMcpBridge {
 }
 ```
 
-### Halimbawa ng Python Enterprise Integration
+### Halimbawa ng Enterprise Integration sa Python
 
 ```python
 # Python Azure AI Integration
@@ -2528,23 +2535,23 @@ class EnterpriseAiIntegration:
         return mapping.get(ml_type, "string")
 ```
 
-## Mahahalagang Aral
+## Mga Pangunahing Punto
 
-- Ang mga multi-modal na pagpapatupad ng MCP ay nagpapalawak ng mga kakayahan ng AI sa labas ng pagproseso ng teksto
-- Ang scalability ay mahalaga para sa mga deployment ng enterprise at maaaring matugunan sa pamamagitan ng horizontal at vertical scaling
-- Ang komprehensibong mga hakbang sa seguridad ay nagpoprotekta sa data at nagsisiguro ng tamang control sa pag-access
-- Ang enterprise integration sa mga platform tulad ng Azure OpenAI at Microsoft AI Foundry ay nagpapahusay ng mga kakayahan ng MCP
-- Ang mga advanced na pagpapatupad ng MCP ay nakikinabang mula sa optimized architectures at maingat na pamamahala ng mga mapagkukunan
+- Pinalalawak ng mga multi-modal MCP implementation ang kakayahan ng AI lampas sa pagproseso ng teksto
+- Mahalaga ang scalability para sa mga enterprise deployment at maaaring tugunan sa pamamagitan ng horizontal at vertical scaling
+- Pinoprotektahan ng komprehensibong mga hakbang sa seguridad ang data at tinitiyak ang tamang access control
+- Pinapalawak ng enterprise integration sa mga platform tulad ng Azure OpenAI at Microsoft AI Foundry ang kakayahan ng MCP
+- Nakikinabang ang mga advanced na implementasyon ng MCP mula sa optimized na mga arkitektura at maingat na pamamahala ng resources
 
-## Ehersisyo
+## Pagsasanay
 
-Magdisenyo ng enterprise-grade na pagpapatupad ng MCP para sa isang tiyak na kaso ng paggamit:
+Magdisenyo ng enterprise-grade na implementasyon ng MCP para sa isang partikular na use case:
 
-1. Tukuyin ang mga kinakailangan sa multi-modal para sa iyong kaso ng paggamit
-2. I-outline ang mga kontrol sa seguridad na kailangan para protektahan ang sensitibong data
-3. Magdisenyo ng scalable na arkitektura na kayang humawak ng iba't ibang load
-4. Planuhin ang mga integration points sa mga enterprise AI systems
-5. Idokumento ang mga potensyal na bottleneck sa pagganap at mga estratehiya sa pagmitiga
+1. Tukuyin ang mga multi-modal na pangangailangan para sa iyong use case
+2. Ilahad ang mga kontrol sa seguridad na kailangan para protektahan ang sensitibong data
+3. Magdisenyo ng scalable na arkitektura na kayang hawakan ang pabago-bagong load
+4. Planuhin ang mga integration point sa mga enterprise AI system
+5. Idokumento ang mga posibleng bottleneck sa performance at mga estratehiya para malutas ito
 
 ## Karagdagang Mga Mapagkukunan
 
@@ -2553,7 +2560,9 @@ Magdisenyo ng enterprise-grade na pagpapatupad ng MCP para sa isang tiyak na kas
 
 ---
 
-Susunod: [Community and Contributions](../06-CommunityContributions/README.md)
+## Ano ang Susunod
 
-**Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Habang sinisikap naming maging tama, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o kamalian. Ang orihinal na dokumento sa sariling wika nito ang dapat ituring na mapagkakatiwalaang sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasaling-wika ng tao. Hindi kami mananagot para sa anumang hindi pagkakaintindihan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
+
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagaman nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaintindihan o maling interpretasyon na nagmula sa paggamit ng pagsasaling ito.

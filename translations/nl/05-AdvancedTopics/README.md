@@ -1,48 +1,55 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:20:03+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:36:01+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "nl"
 }
 -->
-# Geavanceerde Onderwerpen in MCP
+# Geavanceerde onderwerpen in MCP
 
 ## Overzicht
 
-Deze les verkent geavanceerde concepten in de implementatie van Model Context Protocol, met de nadruk op multimodale integratie, schaalbaarheid, beveiligingsbest practices en integratie in ondernemingen. Deze onderwerpen zijn essentieel voor het bouwen van productieklare MCP-toepassingen die complexe vereisten in bedrijfsomgevingen kunnen verwerken.
+Deze les behandelt geavanceerde concepten in de implementatie van het Model Context Protocol, met de focus op multi-modale integratie, schaalbaarheid, beveiligingspraktijken en integratie binnen ondernemingen. Deze onderwerpen zijn essentieel voor het bouwen van productieklare MCP-toepassingen die complexe eisen in bedrijfsomgevingen aankunnen.
 
 ## Leerdoelen
 
 Aan het einde van deze les kun je:
-- Multimodale mogelijkheden implementeren binnen MCP-frameworks
-- Schaalbare MCP-architecturen ontwerpen voor situaties met hoge vraag
-- Beveiligingsbest practices toepassen die in lijn zijn met MCP's beveiligingsprincipes
-- MCP integreren met AI-systemen en -frameworks voor ondernemingen
+- Multi-modale mogelijkheden binnen MCP-frameworks implementeren
+- Schaalbare MCP-architecturen ontwerpen voor scenario's met hoge vraag
+- Beveiligingsbest practices toepassen die aansluiten bij de beveiligingsprincipes van MCP
+- MCP integreren met enterprise AI-systemen en frameworks
 - Prestaties en betrouwbaarheid optimaliseren in productieomgevingen
 
-## Aanvullende Referenties
+## Voorbeeldprojecten
+
+| Link | Titel | Beschrijving |
+|------|-------|--------------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimale Spring Boot-app die OAuth2 met MCP laat zien, zowel als Authorization als Resource Server. Demonstreert veilige tokenuitgifte, beveiligde endpoints, deployment op Azure Container Apps en integratie met API Management. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web Search MCP | Python MCP-server en client die integreren met SerpAPI voor real-time web-, nieuws-, productzoekopdrachten en Q&A. Demonstreert multi-tool orkestratie, integratie van externe API’s en robuuste foutafhandeling. |
+
+## Aanvullende referenties
 
 Voor de meest actuele informatie over geavanceerde MCP-onderwerpen, raadpleeg:
-- [MCP Documentatie](https://modelcontextprotocol.io/)
-- [MCP Specificatie](https://spec.modelcontextprotocol.io/)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
-## Multimodale Integratie
+## Multi-modale integratie
 
-MCP ondersteunt niet alleen tekstgebaseerde interacties, maar ook multimodale mogelijkheden, waardoor modellen kunnen werken met afbeeldingen, audio en andere datatypes.
+MCP ondersteunt niet alleen tekstgebaseerde interacties, maar ook multi-modale mogelijkheden, waardoor modellen kunnen werken met afbeeldingen, audio en andere datatypes.
 
-### Architectuur voor Multimodale Ondersteuning
+### Architectuur voor multi-modale ondersteuning
 
-Multimodale MCP-implementaties omvatten doorgaans:
+Multi-modale MCP-implementaties omvatten doorgaans:
 
-1. **Modal-Specifieke Parsers**: Componenten die verschillende mediatypen omzetten in formaten die het model kan verwerken
-2. **Modal-Specifieke Tools**: Speciale tools ontworpen om specifieke modaliteiten te verwerken (beeldanalyse, audioprocessing)
-3. **Geïntegreerd Contextbeheer**: Systeem om context te behouden over verschillende modaliteiten
-4. **Responsgeneratie**: Mogelijkheid om reacties te genereren die meerdere modaliteiten kunnen omvatten
+1. **Modal-specifieke parsers**: Componenten die verschillende mediatypes omzetten in formaten die het model kan verwerken
+2. **Modal-specifieke tools**: Speciale tools ontworpen om specifieke modaliteiten te behandelen (beeldanalyse, audiobewerking)
+3. **Geünificeerde contextbeheer**: Systeem om context te behouden over verschillende modaliteiten heen
+4. **Responsegeneratie**: Mogelijkheid om reacties te genereren die meerdere modaliteiten kunnen bevatten
 
-### C# Multimodaal Voorbeeld: Beeldanalyse
+### C# Multi-modale voorbeeld: beeldanalyse
 
 ```csharp
 using ModelContextProtocol.SDK.Server;
@@ -174,7 +181,7 @@ namespace MultiModalMcpExample
 }
 ```
 
-### Java Multimodaal Voorbeeld: Audioprocessing
+### Java Multi-modale voorbeeld: audiobewerking
 
 ```java
 package com.example.mcp.multimodal;
@@ -302,7 +309,7 @@ public class MultiModalApplication {
 }
 ```
 
-### Python Multimodaal Voorbeeld: Multimodale Responsgeneratie
+### Python Multi-modale voorbeeld: multi-modale responsegeneratie
 
 ```python
 from mcp_server import McpServer
@@ -450,27 +457,27 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## MCP Root Contexten
+## MCP Root Contexts
 
-Root contexten zijn een fundamenteel concept in het Model Context Protocol dat een persistente laag biedt voor het behouden van gespreksgeschiedenis en gedeelde status over meerdere verzoeken en sessies.
+Root contexts zijn een fundamenteel concept in het Model Context Protocol die een persistente laag bieden voor het behouden van gespreksgeschiedenis en gedeelde status over meerdere verzoeken en sessies.
 
-### Begrip van Root Contexten
+### Root contexts begrijpen
 
-Root contexten dienen als containers die de geschiedenis en status voor een reeks gerelateerde interacties vasthouden. Ze maken mogelijk:
+Root contexts fungeren als containers die de geschiedenis en status bewaren voor een reeks gerelateerde interacties. Ze maken mogelijk:
 
-- **Gesprekspersistentie**: Het behouden van samenhangende meeromdraai gesprekken
-- **Geheugenbeheer**: Informatie opslaan en ophalen over interacties
-- **Statusbeheer**: Voortgang bijhouden in complexe workflows
-- **Contextdeling**: Meerdere klanten toegang geven tot dezelfde gespreksstatus
+- **Gesprekspersistentie**: Het behouden van coherente multi-turn gesprekken
+- **Geheugenbeheer**: Opslaan en ophalen van informatie over interacties heen
+- **Statusbeheer**: Het volgen van voortgang in complexe workflows
+- **Contextdeling**: Meerdere clients toegang geven tot dezelfde gespreksstatus
 
-In MCP hebben root contexten deze belangrijke kenmerken:
+In MCP hebben root contexts de volgende belangrijke kenmerken:
 
-- Elke root context heeft een unieke identificatie
+- Elke root context heeft een unieke identifier
 - Ze kunnen gespreksgeschiedenis, gebruikersvoorkeuren en andere metadata bevatten
-- Ze kunnen worden gemaakt, benaderd en gearchiveerd indien nodig
+- Ze kunnen worden aangemaakt, benaderd en gearchiveerd indien nodig
 - Ze ondersteunen fijnmazige toegangscontrole en permissies
 
-### Root Context Levenscyclus
+### Levenscyclus van root contexts
 
 ```mermaid
 flowchart TD
@@ -481,7 +488,7 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### .NET Voorbeeld: Werken met Root Contexten
+### .NET voorbeeld: werken met root contexts
 
 ```csharp
 // .NET Example: Root Context Management
@@ -556,7 +563,7 @@ public class RootContextExample
 }
 ```
 
-### Java Voorbeeld: Root Context Implementatie
+### Java voorbeeld: root context implementatie
 
 ```java
 // Java Example: Root Context Implementation
@@ -642,7 +649,7 @@ public class RootContextsDemo {
 }
 ```
 
-### JavaScript Voorbeeld: Root Context Beheer
+### JavaScript voorbeeld: root context beheer
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Python Voorbeeld: Root Context voor Meerdere Omwentelingen Assistentie
+### Python voorbeeld: root context voor multi-turn assistentie
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1009,34 +1016,34 @@ if __name__ == "__main__":
     asyncio.run(demo_assistant_session())
 ```
 
-### Root Context Best Practices
+### Best practices voor root contexts
 
-1. **Creëer Gefocuste Contexten**: Creëer aparte root contexten voor verschillende gespreksdoeleinden of domeinen om duidelijkheid te behouden.
+1. **Creëer gerichte contexts**: Maak aparte root contexts voor verschillende gespreksonderwerpen of domeinen om overzicht te behouden.
 
-2. **Stel Vervalbeleid in**: Implementeer beleid om oude contexten te archiveren of verwijderen om opslag te beheren en te voldoen aan gegevensbewaarbeleid.
+2. **Stel vervalbeleid in**: Implementeer beleid om oude contexts te archiveren of verwijderen voor opslagbeheer en naleving van gegevensbewaarbeleid.
 
-3. **Sla Relevante Metadata op**: Gebruik contextmetadata om belangrijke informatie over het gesprek op te slaan die later nuttig kan zijn.
+3. **Sla relevante metadata op**: Gebruik contextmetadata om belangrijke informatie over het gesprek op te slaan die later nuttig kan zijn.
 
-4. **Gebruik Context-ID's Consistent**: Zodra een context is gemaakt, gebruik zijn ID consistent voor alle gerelateerde verzoeken om continuïteit te behouden.
+4. **Gebruik context-ID’s consistent**: Gebruik de ID van een context consequent voor alle gerelateerde verzoeken om continuïteit te waarborgen.
 
-5. **Genereer Samenvattingen**: Wanneer een context groot wordt, overweeg dan om samenvattingen te genereren om essentiële informatie vast te leggen terwijl de contextgrootte wordt beheerd.
+5. **Genereer samenvattingen**: Wanneer een context groot wordt, overweeg dan samenvattingen te maken om essentiële informatie vast te leggen en de contextgrootte te beheren.
 
-6. **Implementeer Toegangscontrole**: Voor systemen met meerdere gebruikers, implementeer goede toegangscontrole om privacy en veiligheid van gesprekscontexten te waarborgen.
+6. **Implementeer toegangscontrole**: Voor systemen met meerdere gebruikers, zorg voor juiste toegangscontrole om privacy en beveiliging van gesprekcontexts te garanderen.
 
-7. **Behandel Contextbeperkingen**: Wees bewust van contextgrootte beperkingen en implementeer strategieën voor het behandelen van zeer lange gesprekken.
+7. **Houd rekening met contextlimieten**: Wees bewust van de limieten in contextgrootte en implementeer strategieën voor zeer lange gesprekken.
 
-8. **Archiveer Wanneer Compleet**: Archiveer contexten wanneer gesprekken voltooid zijn om middelen vrij te maken terwijl de gespreksgeschiedenis behouden blijft.
+8. **Archiveer bij afronding**: Archiveer contexts zodra gesprekken zijn afgerond om middelen vrij te maken en toch de gespreksgeschiedenis te bewaren.
 
 ## Sampling in Model Context Protocol
 
-Samplingstrategieën zijn cruciaal voor het optimaliseren van modelreacties in MCP-implementaties. De juiste samplingconfiguratie kan de kwaliteit en prestaties van reacties aanzienlijk verbeteren. MCP biedt een gestandaardiseerde manier om te controleren hoe modellen tekst genereren met specifieke parameters die invloed hebben op willekeurigheid, creativiteit en samenhang.
+Samplingstrategieën zijn cruciaal voor het optimaliseren van modelresponsen in MCP-implementaties. De juiste samplingconfiguratie kan de kwaliteit en prestaties van de respons aanzienlijk verbeteren. MCP biedt een gestandaardiseerde manier om te bepalen hoe modellen tekst genereren met specifieke parameters die invloed hebben op willekeur, creativiteit en samenhang.
 
-### Sampling Parameters Overzicht
+### Overzicht samplingparameters
 
-MCP definieert de volgende samplingparameters die kunnen worden geconfigureerd in klantverzoeken:
+MCP definieert de volgende samplingparameters die kunnen worden ingesteld in clientverzoeken:
 
-| Parameter | Beschrijving | Typisch Bereik |
-|-----------|-------------|---------------|
+| Parameter | Beschrijving | Typisch bereik |
+|-----------|--------------|----------------|
 | `temperature` | Controls randomness in token selection | 0.0 - 2.0 |
 | `top_p` | Nucleus sampling - limits tokens to top cumulative probability | 0.0 - 1.0 |
 | `top_k` | Limits token selection to top K options | 1 - 100 |
@@ -1044,11 +1051,11 @@ MCP definieert de volgende samplingparameters die kunnen worden geconfigureerd i
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | Aangepaste sequenties die de generatie stoppen wanneer ze worden aangetroffen | Array van strings |
+| `stop_sequences` | Aangepaste reeksen die de generatie stoppen zodra ze worden aangetroffen | Array van strings |
 
-### Temperatuur en Top-K/Top-P Sampling
+### Temperature en Top-K/Top-P sampling
 
-Samplingparameters stellen je in staat het gedrag van taalmodellen fijn af te stemmen om de gewenste balans tussen deterministische en creatieve outputs te bereiken.
+Samplingparameters maken het mogelijk het gedrag van taalmodellen fijn af te stemmen om de gewenste balans te bereiken tussen deterministische en creatieve outputs.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1142,9 +1149,9 @@ async function demonstrateSampling() {
 demonstrateSampling();
 ```
 
-### Deterministisch Sampling
+### Deterministische sampling
 
-Voor toepassingen die consistente outputs vereisen, zorgt deterministisch sampling voor reproduceerbare resultaten.
+Voor toepassingen die consistente output vereisen, zorgt deterministische sampling voor reproduceerbare resultaten.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1228,7 +1235,7 @@ async function deterministicSampling() {
 deterministicSampling();
 ```
 
-### Dynamische Sampling Configuratie
+### Dynamische samplingconfiguratie
 
 Intelligente sampling past parameters aan op basis van de context en vereisten van elk verzoek.
 
@@ -1471,11 +1478,11 @@ demonstrateAdaptiveSampling();
 
 ## Routing in Model Context Protocol
 
-Routing is essentieel voor het sturen van verzoeken naar de juiste modellen, tools of services binnen een MCP-ecosysteem.
+Routing is essentieel om verzoeken naar de juiste modellen, tools of services binnen een MCP-ecosysteem te leiden.
 
-### Content-Based Routing
+### Content-gebaseerde routing
 
-Content-based routing stuurt verzoeken naar gespecialiseerde services op basis van de inhoud van het verzoek.
+Content-gebaseerde routing leidt verzoeken naar gespecialiseerde services op basis van de inhoud van het verzoek.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1546,7 +1553,7 @@ public class ContentBasedRouter
 }
 ```
 
-### Intelligente Load Balancing
+### Intelligente load balancing
 
 Load balancing optimaliseert het gebruik van middelen en zorgt voor hoge beschikbaarheid van MCP-services.
 
@@ -1677,9 +1684,9 @@ public class McpLoadBalancer {
 }
 ```
 
-### Dynamische Tool Routing
+### Dynamische tool routing
 
-Tool routing zorgt ervoor dat tooloproepen worden gericht naar de meest geschikte service op basis van de context.
+Tool routing zorgt ervoor dat toolaanroepen worden doorgestuurd naar de meest geschikte service op basis van de context.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1790,7 +1797,7 @@ class McpToolRouter:
             raise
 ```
 
-### Sampling en Routing Architectuur in MCP
+### Sampling- en routingarchitectuur in MCP
 
 Het onderstaande diagram illustreert hoe sampling en routing samenwerken in een uitgebreide MCP-architectuur:
 
@@ -1859,13 +1866,13 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Schaalbaarheid en Hoogwaardige MCP
+## Schaalbaarheid en high-performance MCP
 
-Voor bedrijfsimplementaties moeten MCP-implementaties vaak grote hoeveelheden verzoeken met minimale latentie verwerken.
+Voor enterprise-implementaties moeten MCP-oplossingen vaak grote hoeveelheden verzoeken verwerken met minimale vertraging.
 
 ### Schaalbaarheidsstrategieën
 
-#### Horizontaal Schalen
+#### Horizontale schaalvergroting
 
 ```csharp
 // ASP.NET Core MCP load balancing configuration
@@ -1895,7 +1902,7 @@ public class McpLoadBalancedStartup
 }
 ```
 
-#### Verticaal Schalen en Resource Optimalisatie
+#### Verticale schaalvergroting en resource-optimalisatie
 
 ```java
 // Java MCP server with resource optimization
@@ -1928,7 +1935,7 @@ public class OptimizedMcpServer {
 }
 ```
 
-#### Gedistribueerde Architectuur
+#### Gedistribueerde architectuur
 
 ```python
 # Python MCP server in distributed architecture
@@ -2011,13 +2018,13 @@ class DistributedMcpServer:
         await self.redis.wait_closed()
 ```
 
-## Beveiligingsbest Practices
+## Beveiligingsbest practices
 
-Beveiliging is cruciaal voor MCP-implementaties, vooral in bedrijfsomgevingen.
+Beveiliging is cruciaal voor MCP-implementaties, vooral in enterprise-omgevingen.
 
-### Authenticatie en Autorisatie
+### Authenticatie en autorisatie
 
-#### .NET Identity Integratie
+#### .NET Identity-integratie
 
 ```csharp
 public class SecureMcpStartup
@@ -2088,7 +2095,7 @@ public class SecureMcpStartup
 }
 ```
 
-#### Java Spring Security Integratie
+#### Java Spring Security-integratie
 
 ```java
 @Configuration
@@ -2140,9 +2147,9 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 }
 ```
 
-### Gegevensbescherming en Privacy
+### Gegevensbescherming en privacy
 
-#### Python Gegevensbescherming Voorbeeld
+#### Python voorbeeld gegevensbescherming
 
 ```python
 from mcp_server import McpServer
@@ -2278,11 +2285,11 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-## Integratie in Ondernemingen
+## Enterprise-integratie
 
-MCP integreren met bedrijfssystemen zoals Azure OpenAI en Microsoft AI Foundry.
+Integratie van MCP met enterprise-systemen zoals Azure OpenAI en Microsoft AI Foundry.
 
-### Azure OpenAI Integratie
+### Azure OpenAI-integratie
 
 ```csharp
 // .NET Azure OpenAI Integration
@@ -2346,7 +2353,7 @@ namespace EnterpriseIntegration
 }
 ```
 
-### Microsoft AI Foundry Integratie
+### Microsoft AI Foundry-integratie
 
 ```java
 // Java AI Foundry Agent Integration
@@ -2404,7 +2411,7 @@ public class AIFoundryMcpBridge {
 }
 ```
 
-### Python Integratie Voorbeeld voor Ondernemingen
+### Python enterprise-integratievoorbeeld
 
 ```python
 # Python Azure AI Integration
@@ -2528,32 +2535,34 @@ class EnterpriseAiIntegration:
         return mapping.get(ml_type, "string")
 ```
 
-## Belangrijke Punten
+## Belangrijke conclusies
 
-- Multimodale MCP-implementaties breiden AI-mogelijkheden uit voorbij tekstverwerking
-- Schaalbaarheid is essentieel voor bedrijfsimplementaties en kan worden aangepakt via horizontaal en verticaal schalen
-- Uitgebreide beveiligingsmaatregelen beschermen gegevens en zorgen voor goede toegangscontrole
-- Integratie in bedrijven met platforms zoals Azure OpenAI en Microsoft AI Foundry verbetert MCP-mogelijkheden
-- Geavanceerde MCP-implementaties profiteren van geoptimaliseerde architecturen en zorgvuldig middelenbeheer
+- Multi-modale MCP-implementaties breiden AI-mogelijkheden uit voorbij tekstverwerking
+- Schaalbaarheid is essentieel voor enterprise-implementaties en kan worden bereikt via horizontale en verticale schaalvergroting
+- Uitgebreide beveiligingsmaatregelen beschermen data en zorgen voor correcte toegangscontrole
+- Enterprise-integratie met platforms zoals Azure OpenAI en Microsoft AI Foundry versterkt MCP-mogelijkheden
+- Geavanceerde MCP-implementaties profiteren van geoptimaliseerde architecturen en zorgvuldig resourcebeheer
 
 ## Oefening
 
-Ontwerp een MCP-implementatie van ondernemingsklasse voor een specifiek gebruiksscenario:
+Ontwerp een enterprise-grade MCP-implementatie voor een specifieke use case:
 
-1. Identificeer multimodale vereisten voor je gebruiksscenario
-2. Schets de beveiligingscontroles die nodig zijn om gevoelige gegevens te beschermen
-3. Ontwerp een schaalbare architectuur die variabele belasting aankan
-4. Plan integratiepunten met AI-systemen voor ondernemingen
-5. Documenteer potentiële prestatieknelpunten en strategieën voor mitigatie
+1. Identificeer multi-modale vereisten voor je use case
+2. Schets de benodigde beveiligingsmaatregelen om gevoelige data te beschermen
+3. Ontwerp een schaalbare architectuur die verschillende belastingen aankan
+4. Plan integratiepunten met enterprise AI-systemen
+5. Documenteer mogelijke prestatieknelpunten en strategieën om deze te mitigeren
 
-## Aanvullende Bronnen
+## Aanvullende bronnen
 
-- [Azure OpenAI Documentatie](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Microsoft AI Foundry Documentatie](https://learn.microsoft.com/en-us/ai-services/)
+- [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
-Volgende: [Community en Bijdragen](../06-CommunityContributions/README.md)
+## Wat volgt
 
-**Disclaimer**:
-Dit document is vertaald met behulp van de AI vertaaldienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we ons best doen voor nauwkeurigheid, willen we u erop wijzen dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in zijn oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
+
+**Disclaimer**:  
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor belangrijke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

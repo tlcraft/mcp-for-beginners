@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-16T14:27:41+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:01:04+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "zh"
 }
@@ -11,36 +11,43 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 概述
 
-本课将探讨 Model Context Protocol 实现中的高级概念，重点关注多模态集成、可扩展性、安全最佳实践以及企业集成。这些主题对于构建能够满足企业环境复杂需求的生产级 MCP 应用至关重要。
+本课将探讨 Model Context Protocol 实现中的高级概念，重点包括多模态集成、可扩展性、安全最佳实践以及企业集成。这些主题对于构建能够应对企业环境中复杂需求的生产级 MCP 应用至关重要。
 
 ## 学习目标
 
 完成本课后，您将能够：
 - 在 MCP 框架内实现多模态功能
-- 设计适用于高需求场景的可扩展 MCP 架构
+- 设计适用于高负载场景的可扩展 MCP 架构
 - 应用符合 MCP 安全原则的安全最佳实践
 - 将 MCP 集成到企业 AI 系统和框架中
 - 优化生产环境中的性能和可靠性
 
-## 参考资料
+## 示例项目
+
+| 链接 | 标题 | 描述 |
+|------|-------|-------------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 演示 | 简洁的 Spring Boot 应用，展示 MCP 中 OAuth2 的使用，既作为授权服务器又作为资源服务器。演示安全的令牌发行、受保护的端点、Azure 容器应用部署以及 API 管理集成。 |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web 搜索 MCP | Python MCP 服务器和客户端，集成 SerpAPI 实现实时网页、新闻、产品搜索及问答。展示多工具编排、外部 API 集成和健壮的错误处理。 |
+
+## 额外参考资料
 
 有关 MCP 高级主题的最新信息，请参阅：
-- [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
-- [GitHub Repository](https://github.com/modelcontextprotocol)
+- [MCP 文档](https://modelcontextprotocol.io/)
+- [MCP 规范](https://spec.modelcontextprotocol.io/)
+- [GitHub 仓库](https://github.com/modelcontextprotocol)
 
 ## 多模态集成
 
-MCP 不仅支持基于文本的交互，还支持多模态功能，使模型能够处理图像、音频及其他数据类型。
+MCP 不仅支持基于文本的交互，还支持多模态能力，使模型能够处理图像、音频及其他数据类型。
 
 ### 多模态支持架构
 
 多模态 MCP 实现通常包括：
 
-1. **特定模态解析器**：将不同媒体类型转换为模型可处理的格式的组件
-2. **特定模态工具**：专门用于处理特定模态（图像分析、音频处理）的工具
-3. **统一上下文管理**：跨不同模态维护上下文的系统
-4. **响应生成**：能够生成可能包含多种模态内容的响应
+1. **模态特定解析器**：将不同媒体类型转换为模型可处理的格式的组件
+2. **模态特定工具**：专门处理特定模态（如图像分析、音频处理）的工具
+3. **统一上下文管理**：维护跨不同模态上下文的系统
+4. **响应生成**：能够生成包含多种模态内容的响应
 
 ### C# 多模态示例：图像分析
 
@@ -452,21 +459,21 @@ if __name__ == "__main__":
 
 ## MCP 根上下文
 
-根上下文是 Model Context Protocol 的核心概念，提供了一个持久层，用于维护多次请求和会话之间的对话历史和共享状态。
+根上下文是 Model Context Protocol 的核心概念，提供了一个持久层，用于维护多次请求和会话中的对话历史和共享状态。
 
 ### 理解根上下文
 
 根上下文作为容器，保存一系列相关交互的历史和状态。它们支持：
 
-- **对话持久性**：保持连贯的多轮对话
+- **对话持久化**：维护连贯的多轮对话
 - **记忆管理**：跨交互存储和检索信息
 - **状态管理**：跟踪复杂工作流的进展
 - **上下文共享**：允许多个客户端访问相同的对话状态
 
 在 MCP 中，根上下文具有以下关键特性：
 
-- 每个根上下文都有唯一标识符
-- 可以包含对话历史、用户偏好和其他元数据
+- 每个根上下文拥有唯一标识符
+- 可包含对话历史、用户偏好及其他元数据
 - 可根据需要创建、访问和归档
 - 支持细粒度的访问控制和权限管理
 
@@ -481,7 +488,7 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### .NET 示例：操作根上下文
+### .NET 示例：根上下文操作
 
 ```csharp
 // .NET Example: Root Context Management
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Python 示例：多轮辅助的根上下文
+### Python 示例：多轮协助的根上下文
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1011,20 +1018,20 @@ if __name__ == "__main__":
 
 ### 根上下文最佳实践
 
-1. **创建专注的上下文**：为不同的对话目的或领域创建独立的根上下文，保持清晰。
-2. **设置过期策略**：实施归档或删除旧上下文的策略，以管理存储并符合数据保留政策。
-3. **存储相关元数据**：利用上下文元数据保存对话中的重要信息，便于后续使用。
-4. **一致使用上下文 ID**：创建后，在所有相关请求中保持一致使用上下文 ID，确保连续性。
-5. **生成摘要**：当上下文变得庞大时，考虑生成摘要，捕捉关键信息，同时控制上下文大小。
-6. **实施访问控制**：对于多用户系统，实施适当的访问控制，确保对话上下文的隐私和安全。
-7. **处理上下文限制**：注意上下文大小限制，制定处理超长对话的策略。
+1. **创建聚焦的上下文**：为不同的对话目的或领域创建独立的根上下文，以保持清晰。
+2. **设定过期策略**：实施归档或删除旧上下文的策略，以管理存储并遵守数据保留政策。
+3. **存储相关元数据**：利用上下文元数据保存对话中可能后续有用的重要信息。
+4. **一致使用上下文 ID**：创建上下文后，所有相关请求都应使用相同的 ID 以保持连续性。
+5. **生成摘要**：当上下文变大时，考虑生成摘要以捕捉关键信息，同时控制上下文大小。
+6. **实施访问控制**：对于多用户系统，实施适当的访问控制以确保对话上下文的隐私和安全。
+7. **处理上下文限制**：了解上下文大小限制，并制定处理超长对话的策略。
 8. **完成后归档**：对话结束后归档上下文，释放资源的同时保留对话历史。
 
 ## Model Context Protocol 中的采样
 
-采样策略对于优化 MCP 实现中的模型响应至关重要。合适的采样配置能够显著提升响应质量和性能。MCP 提供了一种标准化方式，通过特定参数控制模型生成文本时的随机性、创造力和连贯性。
+采样策略对于优化 MCP 实现中的模型响应至关重要。合适的采样配置能够显著提升响应质量和性能。MCP 提供了标准化方式，允许通过特定参数控制模型生成文本的随机性、创造性和连贯性。
 
-### 采样参数概述
+### 采样参数概览
 
 MCP 定义了以下可在客户端请求中配置的采样参数：
 
@@ -1037,11 +1044,11 @@ MCP 定义了以下可在客户端请求中配置的采样参数：
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | 遇到指定序列时停止生成的自定义序列 | 字符串数组 |
+| `stop_sequences` | 遇到这些自定义序列时停止生成 | 字符串数组 |
 
-### Temperature 和 Top-K/Top-P 采样
+### Temperature 与 Top-K/Top-P 采样
 
-采样参数允许细调语言模型的行为，实现确定性与创造性输出之间的平衡。
+采样参数允许微调语言模型的行为，以实现确定性与创造性输出之间的平衡。
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1223,7 +1230,7 @@ deterministicSampling();
 
 ### 动态采样配置
 
-智能采样根据上下文和请求需求动态调整参数。
+智能采样根据每次请求的上下文和需求动态调整参数。
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1464,11 +1471,11 @@ demonstrateAdaptiveSampling();
 
 ## Model Context Protocol 中的路由
 
-路由对于将请求定向到 MCP 生态系统中的合适模型、工具或服务至关重要。
+路由对于将请求引导至 MCP 生态系统中合适的模型、工具或服务至关重要。
 
 ### 基于内容的路由
 
-基于内容的路由根据请求内容将请求导向专门的服务。
+基于内容的路由根据请求内容将请求定向到专门的服务。
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1672,7 +1679,7 @@ public class McpLoadBalancer {
 
 ### 动态工具路由
 
-工具路由确保工具调用根据上下文被导向最合适的服务。
+工具路由确保工具调用根据上下文被定向到最合适的服务。
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1785,7 +1792,7 @@ class McpToolRouter:
 
 ### MCP 中的采样与路由架构
 
-下图展示了采样与路由如何协同工作，构建完整的 MCP 架构：
+下图展示了采样和路由如何在完整的 MCP 架构中协同工作：
 
 ```mermaid
 flowchart TB
@@ -1854,11 +1861,11 @@ flowchart TB
 
 ## MCP 的可扩展性与高性能
 
-对于企业级部署，MCP 实现通常需要处理大量请求并保持极低延迟。
+对于企业级部署，MCP 实现通常需要处理高并发请求，同时保持低延迟。
 
 ### 可扩展性策略
 
-#### 横向扩展
+#### 水平扩展
 
 ```csharp
 // ASP.NET Core MCP load balancing configuration
@@ -1888,7 +1895,7 @@ public class McpLoadBalancedStartup
 }
 ```
 
-#### 纵向扩展与资源优化
+#### 垂直扩展与资源优化
 
 ```java
 // Java MCP server with resource optimization
@@ -2006,7 +2013,7 @@ class DistributedMcpServer:
 
 ## 安全最佳实践
 
-安全对于 MCP 实现尤其在企业环境中至关重要。
+安全对 MCP 实现尤为重要，特别是在企业环境中。
 
 ### 认证与授权
 
@@ -2273,7 +2280,7 @@ class SecureCustomerDataTool(Tool):
 
 ## 企业集成
 
-将 MCP 与企业系统如 Azure OpenAI 和 Microsoft AI Foundry 集成。
+将 MCP 集成到 Azure OpenAI 和 Microsoft AI Foundry 等企业系统中。
 
 ### Azure OpenAI 集成
 
@@ -2523,30 +2530,32 @@ class EnterpriseAiIntegration:
 
 ## 关键要点
 
-- 多模态 MCP 实现拓展了 AI 的能力，超越了文本处理
-- 可扩展性对于企业部署至关重要，可通过横向和纵向扩展实现
-- 全面的安全措施保护数据并确保适当的访问控制
-- 与 Azure OpenAI 和 Microsoft AI Foundry 等平台的企业集成提升了 MCP 能力
-- 高级 MCP 实现受益于优化架构和细致的资源管理
+- 多模态 MCP 实现扩展了 AI 在文本处理之外的能力
+- 可扩展性对于企业部署至关重要，可通过水平和垂直扩展实现
+- 全面的安全措施保护数据并确保访问控制
+- 与 Azure OpenAI 和 Microsoft AI Foundry 等平台的企业集成增强了 MCP 功能
+- 高级 MCP 实现受益于优化的架构和细致的资源管理
 
 ## 练习
 
-设计一个针对特定用例的企业级 MCP 实现：
+设计一个面向企业的 MCP 实现以满足特定用例：
 
 1. 确定用例的多模态需求
 2. 概述保护敏感数据所需的安全控制
 3. 设计能够应对不同负载的可扩展架构
 4. 规划与企业 AI 系统的集成点
-5. 记录潜在性能瓶颈及其缓解策略
+5. 记录潜在的性能瓶颈及其缓解策略
 
 ## 额外资源
 
-- [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
+- [Azure OpenAI 文档](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Microsoft AI Foundry 文档](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
-下一节：[社区与贡献](../06-CommunityContributions/README.md)
+## 接下来
+
+- [5.1 MCP OAuth2 演示](./mcp-oauth2-demo/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。我们不对因使用本翻译而产生的任何误解或曲解承担责任。
+本文件由 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻译而成。尽管我们力求准确，但请注意自动翻译可能存在错误或不准确之处。原始文件的原文版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。

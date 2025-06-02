@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:18:53+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:32:57+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "no"
 }
@@ -11,38 +11,45 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Oversikt
 
-Denne leksjonen utforsker avanserte konsepter i implementering av Model Context Protocol, med fokus på multimodal integrasjon, skalerbarhet, sikkerhetsbestepraksis og integrasjon i bedrifter. Disse emnene er essensielle for å bygge MCP-applikasjoner av produksjonskvalitet som kan håndtere komplekse krav i bedriftsmiljøer.
+Denne leksjonen utforsker avanserte konsepter i implementering av Model Context Protocol, med fokus på multimodal integrasjon, skalerbarhet, sikkerhetspraksis og bedriftsintegrasjon. Disse temaene er essensielle for å bygge produksjonsklare MCP-applikasjoner som kan håndtere komplekse krav i bedriftsmiljøer.
 
 ## Læringsmål
 
-Ved slutten av denne leksjonen vil du kunne:
+Etter denne leksjonen vil du kunne:
 - Implementere multimodale funksjoner innen MCP-rammeverk
-- Designe skalerbare MCP-arkitekturer for høy etterspørselsscenarier
-- Anvende sikkerhetsbestepraksis i tråd med MCPs sikkerhetsprinsipper
-- Integrere MCP med bedrifts-AI-systemer og -rammeverk
+- Designe skalerbare MCP-arkitekturer for krevende scenarier
+- Anvende sikkerhetsprinsipper i tråd med MCPs sikkerhetspraksis
+- Integrere MCP med bedrifts-AI-systemer og rammeverk
 - Optimalisere ytelse og pålitelighet i produksjonsmiljøer
+
+## Eksempelsprosjekter
+
+| Lenke | Tittel | Beskrivelse |
+|-------|--------|-------------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimal Spring Boot-app som viser OAuth2 med MCP, både som autorisasjons- og ressursserver. Demonstrerer sikker tokenutstedelse, beskyttede endepunkter, Azure Container Apps-distribusjon og API Management-integrasjon. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web Search MCP | Python MCP-server og klient som integrerer med SerpAPI for sanntidssøk på web, nyheter, produkter og spørsmål/svar. Viser flerverktøy-orchestrering, ekstern API-integrasjon og robust feilhåndtering. |
 
 ## Ytterligere referanser
 
-For den mest oppdaterte informasjonen om avanserte MCP-emner, se:
-- [MCP-dokumentasjon](https://modelcontextprotocol.io/)
-- [MCP-spesifikasjon](https://spec.modelcontextprotocol.io/)
-- [GitHub-repositorium](https://github.com/modelcontextprotocol)
+For oppdatert informasjon om avanserte MCP-emner, se:
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## Multimodal integrasjon
 
-MCP støtter ikke bare tekstbaserte interaksjoner, men også multimodale funksjoner, slik at modeller kan arbeide med bilder, lyd og andre datatyper.
+MCP støtter ikke bare tekstbaserte interaksjoner, men også multimodale funksjoner som lar modeller arbeide med bilder, lyd og andre datatyper.
 
 ### Arkitektur for multimodal støtte
 
-Multimodale MCP-implementasjoner involverer vanligvis:
+Multimodale MCP-implementeringer involverer vanligvis:
 
-1. **Modalspesifikke parser**: Komponenter som konverterer forskjellige medietyper til formater modellen kan prosessere
-2. **Modalspesifikke verktøy**: Spesielle verktøy designet for å håndtere spesifikke modaliteter (bildeanalyse, lydbehandling)
-3. **Enhetlig kontekststyring**: System for å opprettholde kontekst på tvers av forskjellige modaliteter
-4. **Responsgenerering**: Evne til å generere responser som kan inkludere flere modaliteter
+1. **Modal-spesifikke parser**: Komponenter som konverterer ulike medietyper til formater modellen kan behandle
+2. **Modal-spesifikke verktøy**: Spesialiserte verktøy designet for å håndtere bestemte modaliteter (bildeanalyse, lydbehandling)
+3. **Enhetlig kontekststyring**: System som opprettholder kontekst på tvers av modaliteter
+4. **Responsgenerering**: Evne til å generere svar som kan inkludere flere modaliteter
 
-### C# multimodalt eksempel: Bildeanalyse
+### C# multimodal eksempel: Bildeanalyse
 
 ```csharp
 using ModelContextProtocol.SDK.Server;
@@ -174,7 +181,7 @@ namespace MultiModalMcpExample
 }
 ```
 
-### Java multimodalt eksempel: Lydbehandling
+### Java multimodal eksempel: Lydbehandling
 
 ```java
 package com.example.mcp.multimodal;
@@ -302,7 +309,7 @@ public class MultiModalApplication {
 }
 ```
 
-### Python multimodalt eksempel: Multimodal responsgenerering
+### Python multimodal eksempel: Generering av multimodale svar
 
 ```python
 from mcp_server import McpServer
@@ -450,27 +457,27 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## MCP rotkontekster
+## MCP Root Contexts
 
-Rotkontekster er et grunnleggende konsept i Model Context Protocol som gir et vedvarende lag for å opprettholde samtalehistorikk og delt tilstand på tvers av flere forespørsler og økter.
+Root contexts er et grunnleggende konsept i Model Context Protocol som gir et vedvarende lag for å opprettholde samtalehistorikk og delt tilstand på tvers av flere forespørsler og økter.
 
-### Forstå rotkontekster
+### Forstå root contexts
 
-Rotkontekster fungerer som beholdere som holder historikken og tilstanden for en serie relaterte interaksjoner. De muliggjør:
+Root contexts fungerer som beholdere som lagrer historikk og tilstand for en serie relaterte interaksjoner. De muliggjør:
 
-- **Samtalevedvarende**: Opprettholde koherente flervendte samtaler
-- **Minnehåndtering**: Lagring og henting av informasjon på tvers av interaksjoner
-- **Tilstandshåndtering**: Sporing av fremdrift i komplekse arbeidsflyter
-- **Kontekstdeling**: Tillate flere klienter å få tilgang til samme samtalestatus
+- **Samtalepersistens**: Opprettholde sammenhengende flertrinnssamtaler
+- **Minnestyring**: Lagring og henting av informasjon på tvers av interaksjoner
+- **Tilstandsstyring**: Sporing av fremdrift i komplekse arbeidsflyter
+- **Deling av kontekst**: Tillate flere klienter å få tilgang til samme samtaletilstand
 
-I MCP har rotkontekster disse nøkkelfunksjonene:
+I MCP har root contexts disse nøkkelfunksjonene:
 
-- Hver rotkontekst har en unik identifikator
+- Hver root context har en unik identifikator
 - De kan inneholde samtalehistorikk, brukerpreferanser og annen metadata
-- De kan opprettes, nås og arkiveres etter behov
-- De støtter finmasket tilgangskontroll og tillatelser
+- De kan opprettes, aksesseres og arkiveres etter behov
+- De støtter detaljert tilgangskontroll og tillatelser
 
-### Rotkontekst livssyklus
+### Livssyklus for root context
 
 ```mermaid
 flowchart TD
@@ -481,7 +488,7 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### .NET-eksempel: Arbeide med rotkontekster
+### .NET-eksempel: Arbeide med root contexts
 
 ```csharp
 // .NET Example: Root Context Management
@@ -556,7 +563,7 @@ public class RootContextExample
 }
 ```
 
-### Java-eksempel: Implementering av rotkontekst
+### Java-eksempel: Implementering av root context
 
 ```java
 // Java Example: Root Context Implementation
@@ -642,7 +649,7 @@ public class RootContextsDemo {
 }
 ```
 
-### JavaScript-eksempel: Håndtering av rotkontekst
+### JavaScript-eksempel: Root context-administrasjon
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Python-eksempel: Rotkontekst for flervendt assistanse
+### Python-eksempel: Root context for flertrinnshjelp
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1009,33 +1016,33 @@ if __name__ == "__main__":
     asyncio.run(demo_assistant_session())
 ```
 
-### Beste praksis for rotkontekster
+### Beste praksis for root contexts
 
-1. **Opprett fokuserte kontekster**: Opprett separate rotkontekster for forskjellige samtaleformål eller domener for å opprettholde klarhet.
+1. **Opprett fokuserte kontekster**: Lag separate root contexts for ulike samtaleformål eller domener for å opprettholde klarhet.
 
-2. **Sett utløpspolicyer**: Implementer policyer for å arkivere eller slette gamle kontekster for å håndtere lagring og overholde datalagringspolicyer.
+2. **Sett utløpsregler**: Implementer regler for arkivering eller sletting av gamle kontekster for å håndtere lagring og overholde datalagringspolicyer.
 
 3. **Lagre relevant metadata**: Bruk kontekstmetadata til å lagre viktig informasjon om samtalen som kan være nyttig senere.
 
-4. **Bruk kontekst-IDer konsekvent**: Når en kontekst er opprettet, bruk dens ID konsekvent for alle relaterte forespørsler for å opprettholde kontinuitet.
+4. **Bruk kontekst-IDer konsekvent**: Når en kontekst er opprettet, bruk dens ID konsekvent for alle tilknyttede forespørsler for å opprettholde kontinuitet.
 
-5. **Generer sammendrag**: Når en kontekst blir stor, vurder å generere sammendrag for å fange essensiell informasjon mens du håndterer kontekststørrelse.
+5. **Generer sammendrag**: Når en kontekst vokser seg stor, vurder å lage sammendrag for å fange essensiell informasjon samtidig som kontekststørrelsen håndteres.
 
 6. **Implementer tilgangskontroll**: For systemer med flere brukere, implementer riktig tilgangskontroll for å sikre personvern og sikkerhet for samtalekontekster.
 
-7. **Håndter kontekstbegrensninger**: Vær oppmerksom på kontekststørrelsesbegrensninger og implementer strategier for å håndtere svært lange samtaler.
+7. **Håndter kontekstbegrensninger**: Vær oppmerksom på begrensninger i kontekststørrelse og implementer strategier for å håndtere svært lange samtaler.
 
-8. **Arkiver når fullført**: Arkiver kontekster når samtaler er fullført for å frigjøre ressurser mens du bevarer samtalehistorikken.
+8. **Arkiver når ferdig**: Arkiver kontekster når samtaler er fullført for å frigjøre ressurser samtidig som samtalehistorikken bevares.
 
-## Utvalg i Model Context Protocol
+## Sampling i Model Context Protocol
 
-Utvalgsstrategier er avgjørende for å optimalisere modellresponser i MCP-implementasjoner. Den riktige utvalgskonfigurasjonen kan dramatisk forbedre responskvalitet og ytelse. MCP gir en standardisert måte å kontrollere hvordan modeller genererer tekst med spesifikke parametere som påvirker tilfeldighet, kreativitet og sammenheng.
+Sampling-strategier er viktige for å optimalisere modellrespons i MCP-implementeringer. Riktig sampling-konfigurasjon kan dramatisk forbedre responskvalitet og ytelse. MCP tilbyr en standardisert måte å kontrollere hvordan modeller genererer tekst med spesifikke parametere som påvirker tilfeldighet, kreativitet og sammenheng.
 
-### Oversikt over utvalgsparametere
+### Oversikt over sampling-parametere
 
-MCP definerer følgende utvalgsparametere som kan konfigureres i klientforespørsler:
+MCP definerer følgende sampling-parametere som kan konfigureres i klientforespørsler:
 
-| Parameter | Beskrivelse | Typisk rekkevidde |
+| Parameter | Beskrivelse | Typisk område |
 |-----------|-------------|---------------|
 | `temperature` | Controls randomness in token selection | 0.0 - 2.0 |
 | `top_p` | Nucleus sampling - limits tokens to top cumulative probability | 0.0 - 1.0 |
@@ -1044,11 +1051,11 @@ MCP definerer følgende utvalgsparametere som kan konfigureres i klientforespør
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | Tilpassede sekvenser som stopper generering når de oppdages | Array av strenger |
+| `stop_sequences` | Egendefinerte sekvenser som stopper generering når de oppdages | Array av strenger |
 
-### Temperatur og Top-K/Top-P utvalg
+### Temperatur og Top-K/Top-P sampling
 
-Utvalgsparametere tillater finjustering av oppførselen til språkmodeller for å oppnå ønsket balanse mellom deterministiske og kreative utganger.
+Sampling-parametere lar deg finjustere modellens oppførsel for å oppnå ønsket balanse mellom deterministiske og kreative svar.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1142,9 +1149,9 @@ async function demonstrateSampling() {
 demonstrateSampling();
 ```
 
-### Deterministisk utvalg
+### Deterministisk sampling
 
-For applikasjoner som krever konsistente utganger, sikrer deterministisk utvalg reproduserbare resultater.
+For applikasjoner som krever konsistente svar, sikrer deterministisk sampling reproduserbare resultater.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1228,9 +1235,9 @@ async function deterministicSampling() {
 deterministicSampling();
 ```
 
-### Dynamisk utvalgskonfigurasjon
+### Dynamisk sampling-konfigurasjon
 
-Intelligent utvalg tilpasser parametere basert på konteksten og kravene til hver forespørsel.
+Intelligent sampling tilpasser parametere basert på kontekst og krav i hver forespørsel.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1469,13 +1476,13 @@ async function demonstrateAdaptiveSampling() {
 demonstrateAdaptiveSampling();
 ```
 
-## Ruting i Model Context Protocol
+## Routing i Model Context Protocol
 
-Ruting er essensielt for å dirigere forespørsler til de riktige modellene, verktøyene eller tjenestene innen et MCP-økosystem.
+Routing er essensielt for å dirigere forespørsler til riktige modeller, verktøy eller tjenester innen et MCP-økosystem.
 
-### Innholdsbasert ruting
+### Innholdsbasert routing
 
-Innholdsbasert ruting dirigerer forespørsler til spesialiserte tjenester basert på innholdet i forespørselen.
+Innholdsbasert routing sender forespørsler til spesialiserte tjenester basert på innholdet i forespørselen.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1679,7 +1686,7 @@ public class McpLoadBalancer {
 
 ### Dynamisk verktøyruting
 
-Verktøyruting sikrer at verktøykall blir dirigert til den mest passende tjenesten basert på kontekst.
+Verktøyruting sørger for at verktøykall sendes til mest passende tjeneste basert på kontekst.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1790,9 +1797,9 @@ class McpToolRouter:
             raise
 ```
 
-### Utvalgs- og rutingsarkitektur i MCP
+### Sampling- og routing-arkitektur i MCP
 
-Diagrammet nedenfor illustrerer hvordan utvalg og ruting fungerer sammen i en omfattende MCP-arkitektur:
+Diagrammet under illustrerer hvordan sampling og routing fungerer sammen i en helhetlig MCP-arkitektur:
 
 ```mermaid
 flowchart TB
@@ -1861,7 +1868,7 @@ flowchart TB
 
 ## Skalerbarhet og høyytelses MCP
 
-For bedriftsimplementasjoner må MCP ofte håndtere høye volum av forespørsler med minimal ventetid.
+For bedriftsdistribusjoner må MCP-implementeringer ofte håndtere høye forespørselsvolumer med minimal ventetid.
 
 ### Skalerbarhetsstrategier
 
@@ -2011,9 +2018,9 @@ class DistributedMcpServer:
         await self.redis.wait_closed()
 ```
 
-## Sikkerhetsbestepraksis
+## Sikkerhetspraksis
 
-Sikkerhet er kritisk for MCP-implementasjoner, spesielt i bedriftsmiljøer.
+Sikkerhet er avgjørende for MCP-implementeringer, spesielt i bedriftsmiljøer.
 
 ### Autentisering og autorisasjon
 
@@ -2142,7 +2149,7 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 ### Databeskyttelse og personvern
 
-#### Python databeskyttelse eksempel
+#### Python-eksempel på databeskyttelse
 
 ```python
 from mcp_server import McpServer
@@ -2280,7 +2287,7 @@ class SecureCustomerDataTool(Tool):
 
 ## Bedriftsintegrasjon
 
-Integrere MCP med bedriftssystemer som Azure OpenAI og Microsoft AI Foundry.
+Integrering av MCP med bedriftsystemer som Azure OpenAI og Microsoft AI Foundry.
 
 ### Azure OpenAI-integrasjon
 
@@ -2404,7 +2411,7 @@ public class AIFoundryMcpBridge {
 }
 ```
 
-### Python bedriftsintegrasjon eksempel
+### Python-eksempel på bedriftsintegrasjon
 
 ```python
 # Python Azure AI Integration
@@ -2530,30 +2537,32 @@ class EnterpriseAiIntegration:
 
 ## Viktige punkter
 
-- Multimodale MCP-implementasjoner utvider AI-funksjoner utover tekstbehandling
-- Skalerbarhet er essensielt for bedriftsimplementasjoner og kan adresseres gjennom horisontal og vertikal skalering
-- Omfattende sikkerhetstiltak beskytter data og sikrer riktig tilgangskontroll
-- Bedriftsintegrasjon med plattformer som Azure OpenAI og Microsoft AI Foundry forbedrer MCP-funksjoner
-- Avanserte MCP-implementasjoner drar nytte av optimaliserte arkitekturer og nøye ressursstyring
+- Multimodale MCP-implementeringer utvider AI-kapasiteter utover tekstbehandling
+- Skalerbarhet er avgjørende for bedriftsdistribusjoner og kan løses gjennom horisontal og vertikal skalering
+- Omfattende sikkerhetstiltak beskytter data og sikrer korrekt tilgangskontroll
+- Bedriftsintegrasjon med plattformer som Azure OpenAI og Microsoft AI Foundry forbedrer MCP-kapasiteter
+- Avanserte MCP-implementeringer drar nytte av optimaliserte arkitekturer og nøye ressursstyring
 
 ## Øvelse
 
-Design en bedriftsklasse MCP-implementasjon for en spesifikk brukstilfelle:
+Design en produksjonsklar MCP-implementering for et spesifikt brukstilfelle:
 
 1. Identifiser multimodale krav for ditt brukstilfelle
-2. Skisser sikkerhetskontrollene som trengs for å beskytte sensitive data
+2. Skisser sikkerhetskontroller som trengs for å beskytte sensitiv data
 3. Design en skalerbar arkitektur som kan håndtere varierende belastning
 4. Planlegg integrasjonspunkter med bedrifts-AI-systemer
-5. Dokumenter potensielle ytelsesflaskehalser og avbøtende strategier
+5. Dokumenter potensielle ytelsesflaskehalser og strategier for å håndtere disse
 
 ## Ytterligere ressurser
 
-- [Azure OpenAI-dokumentasjon](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Microsoft AI Foundry-dokumentasjon](https://learn.microsoft.com/en-us/ai-services/)
+- [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
-Neste: [Fellesskap og bidrag](../06-CommunityContributions/README.md)
+## Hva nå
+
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet har blitt oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi jobber for nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår fra bruken av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

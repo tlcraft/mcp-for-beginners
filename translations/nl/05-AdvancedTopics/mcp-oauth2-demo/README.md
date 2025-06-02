@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:42:54+00:00",
+  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
+  "translation_date": "2025-06-02T12:36:34+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "nl"
 }
 -->
 # MCP OAuth2 Demo
 
-Dit project is een **minimale Spring Boot-applicatie** die fungeert als zowel:
+Dit project is een **minimale Spring Boot applicatie** die zowel fungeert als:
 
-* een **Spring Authorization Server** (die JWT-toegangstokens uitgeeft via de `client_credentials` flow), en  
+* een **Spring Authorization Server** (die JWT access tokens uitgeeft via de `client_credentials` flow), en  
 * een **Resource Server** (die zijn eigen `/hello` endpoint beschermt).
 
-Het weerspiegelt de opzet zoals getoond in de [Spring blog post (2 apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Het weerspiegelt de opzet zoals getoond in de [Spring blogpost (2 apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
-## Snelle start (lokaal)
+## Snel starten (lokaal)
 
 ```bash
 # build & run
@@ -34,9 +34,9 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Testen van de OAuth2-configuratie
+## Testen van de OAuth2 Configuratie
 
-Je kunt de OAuth2-beveiligingsconfiguratie testen met de volgende stappen:
+Je kunt de OAuth2 beveiligingsconfiguratie testen met de volgende stappen:
 
 ### 1. Controleer of de server draait en beveiligd is
 
@@ -45,7 +45,7 @@ Je kunt de OAuth2-beveiligingsconfiguratie testen met de volgende stappen:
 curl -v http://localhost:8081/
 ```
 
-### 2. Verkrijg een toegangstoken met behulp van client credentials
+### 2. Verkrijg een access token met client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Opmerking: De Basic Authentication-header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Let op: De Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Toegang tot het beveiligde endpoint met behulp van het token
+### 3. Toegang krijgen tot het beschermde endpoint met het token
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Een succesvolle reactie met "Hello from MCP OAuth2 Demo!" bevestigt dat de OAuth2-configuratie correct werkt.
+Een succesvolle respons met "Hello from MCP OAuth2 Demo!" bevestigt dat de OAuth2 configuratie correct werkt.
 
 ---
 
-## Container bouwen
+## Container build
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Implementeren naar **Azure Container Apps**
+## Deploy naar **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-De ingress FQDN wordt je **issuer** (`https://<fqdn>`).  
+De ingress FQDN wordt jouw **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
 ## Koppelen aan **Azure API Management**
 
-Voeg dit inkomende beleid toe aan je API:
+Voeg deze inbound policy toe aan je API:
 
 ```xml
 <inbound>
@@ -118,5 +118,11 @@ Voeg dit inkomende beleid toe aan je API:
 
 APIM haalt de JWKS op en valideert elke aanvraag.
 
+---
+
+## Wat nu
+
+- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertaaldienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we ons best doen voor nauwkeurigheid, moet u er rekening mee houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in zijn oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. We zijn niet aansprakelijk voor eventuele misverstanden of misinterpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
