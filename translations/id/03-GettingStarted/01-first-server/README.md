@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d730cbe43a8efc148677fdbc849a7d5e",
-  "translation_date": "2025-06-02T17:05:23+00:00",
+  "original_hash": "262e6e510f0c3fe1e36180eadcd67c33",
+  "translation_date": "2025-06-02T17:40:45+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "id"
 }
 -->
 ### -2- Membuat proyek
 
-Sekarang setelah Anda menginstal SDK, mari buat proyek berikutnya:
+Sekarang setelah SDK Anda terpasang, mari buat proyek berikutnya:
 
 ### -3- Membuat file proyek
 
@@ -21,29 +21,29 @@ Tambahkan tool dan resource dengan menambahkan kode berikut:
 
 ### -6 Kode akhir
 
-Mari tambahkan kode terakhir yang kita butuhkan agar server dapat dijalankan:
+Mari tambahkan kode terakhir yang kita butuhkan agar server bisa dijalankan:
 
 ### -7- Menguji server
 
-Jalankan server dengan perintah berikut:
+Mulai server dengan perintah berikut:
 
 ### -8- Menjalankan menggunakan inspector
 
-Inspector adalah alat yang hebat yang dapat menjalankan server Anda dan memungkinkan Anda berinteraksi dengannya sehingga Anda dapat menguji apakah server berfungsi. Mari jalankan:
+Inspector adalah alat yang sangat berguna yang dapat memulai server Anda dan memungkinkan Anda berinteraksi dengannya sehingga Anda bisa menguji apakah server bekerja. Mari jalankan:
 
 > [!NOTE]
-> tampilannya mungkin berbeda di bidang "command" karena berisi perintah untuk menjalankan server dengan runtime spesifik Anda
+> mungkin terlihat berbeda di kolom "command" karena berisi perintah untuk menjalankan server dengan runtime spesifik Anda
 
 Anda akan melihat antarmuka pengguna berikut:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.id.png)
 
-1. Sambungkan ke server dengan memilih tombol Connect  
-   Setelah Anda terhubung ke server, Anda akan melihat tampilan berikut:
+1. Hubungkan ke server dengan memilih tombol Connect  
+   Setelah terhubung ke server, Anda akan melihat tampilan berikut:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.id.png)
 
-2. Pilih "Tools" dan "listTools", Anda akan melihat "Add" muncul, pilih "Add" dan isi nilai parameter.
+2. Pilih "Tools" dan "listTools", Anda akan melihat tombol "Add" muncul, pilih "Add" dan isi nilai parameter.
 
    Anda akan melihat respons berikut, yaitu hasil dari tool "add":
 
@@ -53,19 +53,19 @@ Selamat, Anda telah berhasil membuat dan menjalankan server pertama Anda!
 
 ### SDK Resmi
 
-MCP menyediakan SDK resmi untuk beberapa bahasa:
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Dipelihara bekerja sama dengan Microsoft
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Dipelihara bekerja sama dengan Spring AI
+MCP menyediakan SDK resmi untuk berbagai bahasa:
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Dikelola bersama Microsoft
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Dikelola bersama Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Implementasi resmi TypeScript
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Implementasi resmi Python
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Implementasi resmi Kotlin
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Dipelihara bekerja sama dengan Loopwork AI
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Dikelola bersama Loopwork AI
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Implementasi resmi Rust
 
-## Poin Penting
+## Hal-hal Penting yang Perlu Diingat
 
-- Menyiapkan lingkungan pengembangan MCP cukup mudah dengan SDK spesifik bahasa
-- Membangun server MCP melibatkan pembuatan dan pendaftaran tool dengan skema yang jelas
+- Menyiapkan lingkungan pengembangan MCP cukup mudah dengan SDK khusus bahasa
+- Membangun server MCP melibatkan pembuatan dan pendaftaran tools dengan skema yang jelas
 - Pengujian dan debugging sangat penting untuk implementasi MCP yang andal
 
 ## Contoh
@@ -79,22 +79,24 @@ MCP menyediakan SDK resmi untuk beberapa bahasa:
 ## Tugas
 
 Buat server MCP sederhana dengan tool pilihan Anda:
-1. Implementasikan tool dalam bahasa favorit Anda (.NET, Java, Python, atau JavaScript).
-2. Definisikan parameter input dan nilai pengembalian.
-3. Jalankan alat inspector untuk memastikan server berfungsi sesuai harapan.
+1. Implementasikan tool tersebut dalam bahasa pilihan Anda (.NET, Java, Python, atau JavaScript).
+2. Definisikan parameter input dan nilai kembalian.
+3. Jalankan tool inspector untuk memastikan server bekerja sesuai harapan.
 4. Uji implementasi dengan berbagai input.
 
 ## Solusi
 
 [Solusi](./solution/README.md)
 
-## Sumber Daya Tambahan
+## Sumber Tambahan
 
-- [Repositori MCP di GitHub](https://github.com/microsoft/mcp-for-beginners)
+- [Membangun Agen menggunakan Model Context Protocol di Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [MCP Remote dengan Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Selanjutnya
 
-Berikutnya: [Memulai dengan Klien MCP](/03-GettingStarted/02-client/README.md)
+Berikutnya: [Memulai dengan MCP Clients](/03-GettingStarted/02-client/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan terjemahan yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan menggunakan jasa terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.

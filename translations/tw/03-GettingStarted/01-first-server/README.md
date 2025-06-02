@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d730cbe43a8efc148677fdbc849a7d5e",
-  "translation_date": "2025-06-02T16:55:48+00:00",
+  "original_hash": "262e6e510f0c3fe1e36180eadcd67c33",
+  "translation_date": "2025-06-02T17:22:47+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "tw"
 }
@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### -4- 撰寫伺服器程式碼
 
-### -5- 新增工具和資源
+### -5- 新增工具與資源
 
-透過加入以下程式碼來新增工具和資源：
+透過新增以下程式碼來加入一個工具和一個資源：
 
-### -6- 最終程式碼
+### -6 最終程式碼
 
 讓我們加入最後需要的程式碼，讓伺服器能夠啟動：
 
@@ -29,27 +29,27 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### -8- 使用 Inspector 執行
 
-Inspector 是一個很棒的工具，可以啟動你的伺服器，並讓你與它互動以測試功能。讓我們啟動它：
+Inspector 是一個很棒的工具，可以啟動你的伺服器並讓你與它互動，方便測試功能是否正常。讓我們啟動它：
 
 > [!NOTE]
-> 在「command」欄位中顯示的指令可能會因你使用的執行環境而有所不同。
+> 在「command」欄位中，指令可能會依你的執行環境而有所不同。
 
-你應該會看到以下的使用者介面：
+你會看到以下的使用者介面：
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.tw.png)
 
-1. 按下 Connect 按鈕連接到伺服器  
-   連接成功後，你會看到以下畫面：
+1. 點選 Connect 按鈕連接到伺服器  
+   連接後，你應該會看到以下畫面：
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.tw.png)
 
-2. 選擇「Tools」和「listTools」，你會看到「Add」功能，點選「Add」並填入參數值。
+2. 選擇「Tools」和「listTools」，你會看到「Add」工具，點選「Add」並填入參數值。
 
-   你應該會看到以下回應，也就是「add」工具的執行結果：
+   你會看到以下回應，也就是「add」工具的執行結果：
 
    ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.tw.png)
 
-恭喜你，成功建立並執行了你的第一個伺服器！
+恭喜你，成功建立並執行你的第一個伺服器！
 
 ### 官方 SDK
 
@@ -62,11 +62,11 @@ MCP 提供多種語言的官方 SDK：
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - 與 Loopwork AI 合作維護
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - 官方 Rust 實作
 
-## 重要重點
+## 重要重點整理
 
-- 使用語言專屬的 SDK 設定 MCP 開發環境相當簡單
-- 建立 MCP 伺服器需要創建並註冊具有明確結構的工具
-- 測試與除錯對於可靠的 MCP 實作至關重要
+- 利用語言專屬的 SDK，建立 MCP 開發環境非常簡單
+- 建立 MCP 伺服器時，需要建立並註冊帶有明確結構的工具
+- 測試與除錯對於穩定的 MCP 實作至關重要
 
 ## 範例
 
@@ -78,11 +78,11 @@ MCP 提供多種語言的官方 SDK：
 
 ## 作業
 
-建立一個簡單的 MCP 伺服器，並包含你選擇的工具：
-1. 在你偏好的語言 (.NET、Java、Python 或 JavaScript) 中實作該工具。
+建立一個簡單的 MCP 伺服器並加入你選擇的工具：
+1. 使用你喜歡的語言 (.NET、Java、Python 或 JavaScript) 實作該工具。
 2. 定義輸入參數與回傳值。
-3. 使用 Inspector 工具確認伺服器運作正常。
-4. 使用不同輸入測試實作。
+3. 使用 inspector 工具確認伺服器運作正常。
+4. 使用不同輸入測試該實作。
 
 ## 解答
 
@@ -90,11 +90,13 @@ MCP 提供多種語言的官方 SDK：
 
 ## 額外資源
 
-- [MCP GitHub 倉庫](https://github.com/microsoft/mcp-for-beginners)
+- [使用 Model Context Protocol 在 Azure 上建立 Agents](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [使用 Azure Container Apps 遠端 MCP (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## 下一步
 
-下一章節：[Getting Started with MCP Clients](/03-GettingStarted/02-client/README.md)
+下一章：[Getting Started with MCP Clients](/03-GettingStarted/02-client/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們努力追求準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯所產生之任何誤解或誤譯負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於提供準確的翻譯，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生之任何誤解或誤譯負責。

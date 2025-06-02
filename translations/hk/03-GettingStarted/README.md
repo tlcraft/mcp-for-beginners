@@ -1,96 +1,99 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8fdd5786214b32ad33d8b5cf9012a0f7",
-  "translation_date": "2025-05-17T08:06:10+00:00",
+  "original_hash": "b547c992c056d4296d641ed8ec2cc4cb",
+  "translation_date": "2025-06-02T17:21:28+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "hk"
 }
 -->
-## 入門指南
+## Getting Started  
 
-這一部分包含幾個課程：
+呢個部分包括幾個課堂：
 
-- **-1- 你的第一個伺服器**，在這第一堂課中，你將學習如何建立你的第一個伺服器，並使用檢查工具來檢視它，這是一個測試和除錯伺服器的有用方法，[前往課程](/03-GettingStarted/01-first-server/README.md)
+- **-1- 你嘅第一個伺服器**，喺呢個第一課，你會學到點樣建立你嘅第一個伺服器，並用 inspector 工具檢查佢，呢個係一個好有用嘅方法去測試同除錯你嘅伺服器，[去課堂](/03-GettingStarted/01-first-server/README.md)
 
-- **-2- 客戶端**，在這堂課中，你將學習如何編寫一個可以連接到你伺服器的客戶端，[前往課程](/03-GettingStarted/02-client/README.md)
+- **-2- 客戶端**，喺呢課你會學到點寫一個可以連接你伺服器嘅客戶端，[去課堂](/03-GettingStarted/02-client/README.md)
 
-- **-3- 使用LLM的客戶端**，一個更好的編寫客戶端的方法是加入LLM，使其能夠與你的伺服器“協商”應該做什麼，[前往課程](/03-GettingStarted/03-llm-client/README.md)
+- **-3- 帶 LLM 嘅客戶端**，寫客戶端更好嘅方法係加埋 LLM，咁佢可以同你嘅伺服器「傾偈」決定要做啲乜，[去課堂](/03-GettingStarted/03-llm-client/README.md)
 
-- **-4- 在Visual Studio Code中以GitHub Copilot Agent模式使用伺服器**。在這裡，我們將從Visual Studio Code中運行我們的MCP伺服器，[前往課程](/03-GettingStarted/04-vscode/README.md)
+- **-4- 喺 Visual Studio Code 用 GitHub Copilot Agent 模式消費伺服器**。呢度我哋會睇點喺 Visual Studio Code 裡面運行我哋嘅 MCP Server，[去課堂](/03-GettingStarted/04-vscode/README.md)
 
-- **-5- 使用SSE (伺服器發送事件)** SSE是一種伺服器到客戶端的串流標準，允許伺服器通過HTTP推送即時更新到客戶端，[前往課程](/03-GettingStarted/05-sse-server/README.md)
+- **-5- 用 SSE (Server Sent Events) 消費**。SSE 係一個伺服器到客戶端嘅串流標準，令伺服器可以透過 HTTP 即時推送更新俾客戶端，[去課堂](/03-GettingStarted/05-sse-server/README.md)
 
-- **-6- 使用VSCode的AI工具包** 來使用和測試你的MCP客戶端和伺服器，[前往課程](/03-GettingStarted/06-aitk/README.md)
+- **-6- 善用 AI Toolkit for VSCode** 去消費同測試你嘅 MCP 客戶端同伺服器，[去課堂](/03-GettingStarted/06-aitk/README.md)
 
-- **-7 測試**。在這裡，我們將特別關注如何以不同的方式測試我們的伺服器和客戶端，[前往課程](/03-GettingStarted/07-testing/README.md)
+- **-7 測試**。呢度我哋會特別集中講點樣用唔同方法測試我哋嘅伺服器同客戶端，[去課堂](/03-GettingStarted/07-testing/README.md)
 
-- **-8- 部署**。這一章將探討不同的MCP解決方案部署方法，[前往課程](/03-GettingStarted/08-deployment/README.md)
+- **-8- 部署**。呢章會睇下唔同方法去部署你嘅 MCP 解決方案，[去課堂](/03-GettingStarted/08-deployment/README.md)
 
-模型上下文協議（MCP）是一種開放協議，標準化應用程式如何向LLM提供上下文。可以將MCP想像成AI應用程式的USB-C端口——它提供了一種標準化的方法來將AI模型連接到不同的數據源和工具。
+
+Model Context Protocol (MCP) 係一個開放協議，標準化應用程式點樣提供上下文俾 LLM。你可以將 MCP 想像成 AI 應用嘅 USB-C 端口 — 佢提供咗一個標準化嘅方法去連接 AI 模型同唔同嘅數據來源同工具。
 
 ## 學習目標
 
-在這堂課結束時，你將能夠：
+完成呢課後，你會識得：
 
-- 設置C#、Java、Python、TypeScript和JavaScript的MCP開發環境
-- 構建和部署具有自定義功能（資源、提示和工具）的基本MCP伺服器
-- 創建連接到MCP伺服器的主機應用程式
-- 測試和除錯MCP實現
-- 理解常見的設置挑戰及其解決方案
-- 將你的MCP實現連接到流行的LLM服務
+- 為 C#、Java、Python、TypeScript 同 JavaScript 設置 MCP 嘅開發環境
+- 建立同部署具自訂功能（資源、提示同工具）嘅基本 MCP 伺服器
+- 建立連接 MCP 伺服器嘅主機應用程式
+- 測試同除錯 MCP 嘅實現
+- 理解常見嘅設置問題同解決方案
+- 將你嘅 MCP 實現連接到流行嘅 LLM 服務
 
-## 設置你的MCP環境
+## 設置你嘅 MCP 環境
 
-在開始使用MCP之前，準備你的開發環境並了解基本工作流程是很重要的。本節將指導你完成初始設置步驟，以確保順利開始使用MCP。
+開始使用 MCP 之前，好重要嘅係準備好你嘅開發環境，同埋了解基本嘅工作流程。呢部分會帶你完成初步設置步驟，確保你可以順利開始用 MCP。
 
 ### 先決條件
 
-在深入MCP開發之前，確保你擁有：
+開始 MCP 開發前，請確保你有：
 
-- **開發環境**：為你選擇的語言（C#、Java、Python、TypeScript或JavaScript）
-- **IDE/編輯器**：Visual Studio、Visual Studio Code、IntelliJ、Eclipse、PyCharm或任何現代代碼編輯器
-- **包管理器**：NuGet、Maven/Gradle、pip或npm/yarn
-- **API金鑰**：用於你計劃在主機應用程式中使用的任何AI服務
+- **開發環境**：適用於你揀嘅語言（C#、Java、Python、TypeScript 或 JavaScript）
+- **IDE/編輯器**：Visual Studio、Visual Studio Code、IntelliJ、Eclipse、PyCharm 或任何現代化嘅程式碼編輯器
+- **套件管理器**：NuGet、Maven/Gradle、pip 或 npm/yarn
+- **API 金鑰**：用於你計劃喺主機應用程式使用嘅 AI 服務
 
-### 官方SDK
+### 官方 SDKs
 
-在接下來的章節中，你將看到使用Python、TypeScript、Java和.NET構建的解決方案。以下是所有官方支持的SDK。
+喺接下來嘅章節，你會見到用 Python、TypeScript、Java 同 .NET 建立嘅解決方案。以下係所有官方支持嘅 SDK。
 
-MCP提供多種語言的官方SDK：
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - 與Microsoft合作維護
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - 與Spring AI合作維護
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - 官方TypeScript實現
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - 官方Python實現
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - 官方Kotlin實現
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - 與Loopwork AI合作維護
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - 官方Rust實現
+MCP 提供多種語言嘅官方 SDK：
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - 與 Microsoft 合作維護
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - 與 Spring AI 合作維護
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - 官方 TypeScript 實現
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - 官方 Python 實現
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - 官方 Kotlin 實現
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - 與 Loopwork AI 合作維護
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - 官方 Rust 實現
 
-## 關鍵要點
+## 主要重點
 
-- 使用語言特定的SDK設置MCP開發環境非常簡單
-- 構建MCP伺服器涉及創建和註冊具有明確架構的工具
-- MCP客戶端連接到伺服器和模型以利用擴展功能
-- 測試和除錯對於可靠的MCP實現至關重要
-- 部署選項範圍從本地開發到基於雲的解決方案
+- 用針對語言嘅 SDK 設置 MCP 開發環境好簡單
+- 建立 MCP 伺服器需要創建同註冊有清晰結構嘅工具
+- MCP 客戶端會連接伺服器同模型，發揮擴展功能
+- 測試同除錯對穩定嘅 MCP 實現好重要
+- 部署選擇由本地開發到雲端方案都有
 
 ## 練習
 
-我們有一組範例，補充了你將在本節所有章節中看到的練習。此外，每個章節還有自己的練習和作業
+我哋準備咗一套範例，配合你喺呢部分所有章節嘅練習。此外，每個章節都有自己嘅練習同作業。
 
-- [Java 計算器](./samples/java/calculator/README.md)
-- [.Net 計算器](../../../03-GettingStarted/samples/csharp)
-- [JavaScript 計算器](./samples/javascript/README.md)
-- [TypeScript 計算器](./samples/typescript/README.md)
-- [Python 計算器](../../../03-GettingStarted/samples/python)
+- [Java 計算機](./samples/java/calculator/README.md)
+- [.Net 計算機](../../../03-GettingStarted/samples/csharp)
+- [JavaScript 計算機](./samples/javascript/README.md)
+- [TypeScript 計算機](./samples/typescript/README.md)
+- [Python 計算機](../../../03-GettingStarted/samples/python)
 
-## 其他資源
+## 額外資源
 
-- [MCP GitHub 資料庫](https://github.com/microsoft/mcp-for-beginners)
+- [用 Model Context Protocol 喺 Azure 建立 Agents](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [用 Azure Container Apps 遠端 MCP (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
-## 接下來是什麼
+## 下一步
 
-接下來：[創建你的第一個MCP伺服器](/03-GettingStarted/01-first-server/README.md)
+下一步: [建立你嘅第一個 MCP Server](/03-GettingStarted/01-first-server/README.md)
 
 **免責聲明**：  
-本文件使用AI翻譯服務[Co-op Translator](https://github.com/Azure/co-op-translator)進行翻譯。我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原始語言的文件作為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或誤釋不承擔責任。
+本文件係用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯。雖然我哋努力追求準確，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件嘅母語版本應被視為權威來源。對於重要資訊，建議使用專業人工翻譯。我哋對因使用本翻譯而引致嘅任何誤解或誤釋概不負責。

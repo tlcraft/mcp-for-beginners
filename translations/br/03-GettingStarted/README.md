@@ -1,84 +1,84 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8fdd5786214b32ad33d8b5cf9012a0f7",
-  "translation_date": "2025-05-29T20:20:26+00:00",
+  "original_hash": "b547c992c056d4296d641ed8ec2cc4cb",
+  "translation_date": "2025-06-02T17:30:07+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "br"
 }
 -->
-## Kemm Daouzañ  
+## Getting Started  
 
-Ar rann-se en deus meur a lezenn:
+Esta seção consiste em várias lições:
 
-- **-1- Ho servijer kentañ**, er lezenn gentañ-mañ, deskiñ a rez penaos krouiñ ho servijer kentañ ha sellet ouzh e labour gant ar benveg inspecter, ur mod talvoudus evit klask ha disklêriañ ho servijer, [d'ar lezenn](/03-GettingStarted/01-first-server/README.md)
+- **-1- Seu primeiro servidor**, nesta primeira lição, você aprenderá como criar seu primeiro servidor e inspecioná-lo com a ferramenta inspector, uma forma valiosa de testar e depurar seu servidor, [para a lição](/03-GettingStarted/01-first-server/README.md)
 
-- **-2- Klient**, er lezenn-mañ, deskiñ a rez penaos skrivañ ur klient a c’hell kevreañ gant ho servijer, [d'ar lezenn](/03-GettingStarted/02-client/README.md)
+- **-2- Cliente**, nesta lição, você aprenderá como escrever um cliente que pode se conectar ao seu servidor, [para a lição](/03-GettingStarted/02-client/README.md)
 
-- **-3- Klient gant LLM**, ur mod gwelloc’h evit skrivañ ur klient eo ouzhpennañ ur LLM da hemañ evit ma c’hell "kelaouiñ" gant ho servijer war ar pezh da ober, [d'ar lezenn](/03-GettingStarted/03-llm-client/README.md)
+- **-3- Cliente com LLM**, uma forma ainda melhor de escrever um cliente é adicionando um LLM para que ele possa "negociar" com seu servidor o que fazer, [para a lição](/03-GettingStarted/03-llm-client/README.md)
 
-- **-4- Konsumañ ur servijer mod Agent GitHub Copilot e Visual Studio Code**. Amañ e sellomp ouzh mont war-raok hon MCP Server eus Visual Studio Code, [d'ar lezenn](/03-GettingStarted/04-vscode/README.md)
+- **-4- Consumindo um servidor no modo GitHub Copilot Agent no Visual Studio Code**. Aqui, veremos como executar nosso MCP Server dentro do Visual Studio Code, [para a lição](/03-GettingStarted/04-vscode/README.md)
 
-- **-5- Konsumañ gant SSE (Server Sent Events)** SSE zo ur standart evit stlennañ a servijer da klient, a ro d’ar servijeroù an tu da stlennañ hiziv-holl d’ar klientoù dre HTTP [d'ar lezenn](/03-GettingStarted/05-sse-server/README.md)
+- **-5- Consumindo via SSE (Server Sent Events)** SSE é um padrão para streaming do servidor para o cliente, permitindo que servidores enviem atualizações em tempo real para os clientes via HTTP [para a lição](/03-GettingStarted/05-sse-server/README.md)
 
-- **-6- Implij ar C’hit Toolkit AI evit VSCode** evit konsumañ ha testenniñ ho MCP Klientoù ha Servijeroù [d'ar lezenn](/03-GettingStarted/06-aitk/README.md)
+- **-6- Utilizando AI Toolkit para VSCode** para consumir e testar seus MCP Clients e Servers [para a lição](/03-GettingStarted/06-aitk/README.md)
 
-- **-7- Testañ**. Amañ e vo muioc’h a sell war an doareoù da zistagañ hon servijer ha hon klient, [d'ar lezenn](/03-GettingStarted/07-testing/README.md)
+- **-7 Testes**. Aqui focaremos especialmente em como podemos testar nosso servidor e cliente de diferentes maneiras, [para a lição](/03-GettingStarted/07-testing/README.md)
 
-- **-8- Deployañ**. Ar pennad-se a sell ouzh doareoù disheñvel da deployañ ho solucioù MCP, [d'ar lezenn](/03-GettingStarted/08-deployment/README.md)
-
-
-Ar Model Context Protocol (MCP) zo ur protokol digor a stardal penaos ma ro ar raktresoù kontekst d'ar LLM. Sell ouzh MCP evel ur porzh USB-C evit ar c’hiladoù AI - e ro un doare standard da kevreañ modeloù AI gant disoc’hoù data ha ostilhoù disheñvel.
-
-## Palioù ar C’hlask
-
-A-benn fin ar lezenn-mañ e vo tu deoc’h:
-
-- Krouiñ an enskrivadurioù diorren evit MCP e C#, Java, Python, TypeScript, ha JavaScript
-- Sevel ha deployañ servijeroù MCP diazez gant perzhioù personelaet (amantadoù, stummoù, ha ostilhoù)
-- Krouiñ ar raktresoù host a kevreañ gant servijeroù MCP
-- Testañ ha disklêriañ implijadennoù MCP
-- Kompren an diaesterioù en aozadur hag o diskoulmoù
-- Kevreañ ho implijadennoù MCP gant servijoù LLM brudet
-
-## Krouiñ ho Endro MCP
-
-A-raok ma kregiñ gant MCP, pouezus eo prestaat ho endro diorren ha kompren ar mod labour diazez. Ar rann-se a sikour ac’hanoc’h gant ar stummoù kentañ evit krouiñ ur servijenn aes gant MCP.
-
-### Prerequisiteoù
-
-A-raok ma kregiñ gant diorren MCP, gwiriit e vez deoc’h:
-
-- **Endro diorren**: Evit ho yezh dibabet (C#, Java, Python, TypeScript pe JavaScript)
-- **IDE/Embannour**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm pe ur c’hod embannour modern all
-- **Menedourien paketioù**: NuGet, Maven/Gradle, pip, pe npm/yarn
-- **Anezenn API**: Evit an holl servijoù AI ma vo implijet e ho raktresoù host
+- **-8- Deployment**. Este capítulo abordará diferentes formas de fazer o deployment das suas soluções MCP, [para a lição](/03-GettingStarted/08-deployment/README.md)
 
 
-### SDKioù Ofisiel
+O Model Context Protocol (MCP) é um protocolo aberto que padroniza como aplicações fornecem contexto para LLMs. Pense no MCP como uma porta USB-C para aplicações de IA – ele oferece uma forma padronizada de conectar modelos de IA a diferentes fontes de dados e ferramentas.
 
-Er pennadoù da zont e welit solucioù krouet gant Python, TypeScript, Java ha .NET. Setu an holl SDKoù ofisiel skoazellet.
+## Learning Objectives
 
-MCP a ro SDKoù ofisiel evit meur a yezh:
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Kenstrolliet gant Microsoft
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Kenstrolliet gant Spring AI
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Implijadenn ofisiel TypeScript
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Implijadenn ofisiel Python
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Implijadenn ofisiel Kotlin
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Kenstrolliet gant Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Implijadenn ofisiel Rust
+Ao final desta lição, você será capaz de:
 
-## Peseurt Poentioù Talvoudus
+- Configurar ambientes de desenvolvimento para MCP em C#, Java, Python, TypeScript e JavaScript
+- Construir e fazer o deploy de servidores MCP básicos com funcionalidades customizadas (recursos, prompts e ferramentas)
+- Criar aplicações host que se conectam a servidores MCP
+- Testar e depurar implementações MCP
+- Entender desafios comuns na configuração e suas soluções
+- Conectar suas implementações MCP a serviços populares de LLM
 
-- Krouiñ un endro diorren MCP a zo aes gant SDKoù yezh-spesel
-- Sevel servijeroù MCP a dalvez da grouiñ ha enrollañ ostilhoù gant skemas sklaer
-- Klientoù MCP a kevrea ouzh servijeroù ha modeloù evit implijout o galloudoù estrekhet
-- Testañ ha disklêriañ zo pouezus evit implijadennoù MCP a-feson
-- Displegañ deployañ a stummoù disheñvel, eus diorren lec’hel betek solucioù war an tonkad
+## Setting Up Your MCP Environment
 
-## Praktikañ
+Antes de começar a trabalhar com MCP, é importante preparar seu ambiente de desenvolvimento e entender o fluxo básico de trabalho. Esta seção vai guiá-lo pelos passos iniciais para garantir um começo tranquilo com MCP.
 
-Bez’ ez eus ur roll eus samploù a ziskouez an exerciceoù e pep pennad eus ar rann-se. War-lerc’h e vez ivez exerciceoù ha labourioù war al lec’hienn.
+### Prerequisites
+
+Antes de mergulhar no desenvolvimento MCP, certifique-se de ter:
+
+- **Ambiente de Desenvolvimento**: Para a linguagem escolhida (C#, Java, Python, TypeScript ou JavaScript)
+- **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm ou qualquer editor de código moderno
+- **Gerenciadores de Pacotes**: NuGet, Maven/Gradle, pip ou npm/yarn
+- **Chaves de API**: Para quaisquer serviços de IA que planeja usar nas aplicações host
+
+
+### Official SDKs
+
+Nos próximos capítulos você verá soluções construídas usando Python, TypeScript, Java e .NET. Aqui estão todos os SDKs oficialmente suportados.
+
+O MCP oferece SDKs oficiais para várias linguagens:
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Mantido em colaboração com a Microsoft
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Mantido em colaboração com Spring AI
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Implementação oficial em TypeScript
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Implementação oficial em Python
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Implementação oficial em Kotlin
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Mantido em colaboração com Loopwork AI
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Implementação oficial em Rust
+
+## Key Takeaways
+
+- Configurar um ambiente de desenvolvimento MCP é simples com SDKs específicos para cada linguagem
+- Construir servidores MCP envolve criar e registrar ferramentas com esquemas claros
+- Clientes MCP conectam-se a servidores e modelos para aproveitar capacidades estendidas
+- Testar e depurar são essenciais para implementações MCP confiáveis
+- Opções de deployment variam desde desenvolvimento local até soluções baseadas na nuvem
+
+## Practicing
+
+Temos um conjunto de exemplos que complementam os exercícios que você verá em todos os capítulos desta seção. Além disso, cada capítulo também possui seus próprios exercícios e tarefas
 
 - [Java Calculator](./samples/java/calculator/README.md)
 - [.Net Calculator](../../../03-GettingStarted/samples/csharp)
@@ -86,13 +86,15 @@ Bez’ ez eus ur roll eus samploù a ziskouez an exerciceoù e pep pennad eus ar
 - [TypeScript Calculator](./samples/typescript/README.md)
 - [Python Calculator](../../../03-GettingStarted/samples/python)
 
-## Adalioù ouzhpenn
+## Additional Resources
 
-- [MCP GitHub Repository](https://github.com/microsoft/mcp-for-beginners)
+- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
-## Petra a zeu
+## What's next
 
-Da zont: [Krouiñ ho Servijer MCP kentañ](/03-GettingStarted/01-first-server/README.md)
+Próximo: [Criando seu primeiro MCP Server](/03-GettingStarted/01-first-server/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.

@@ -1,40 +1,40 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d730cbe43a8efc148677fdbc849a7d5e",
-  "translation_date": "2025-06-02T17:08:25+00:00",
+  "original_hash": "262e6e510f0c3fe1e36180eadcd67c33",
+  "translation_date": "2025-06-02T17:46:29+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "ro"
 }
 -->
-### -2- Creează proiectul
+### -2- Crearea proiectului
 
 Acum că ai instalat SDK-ul, să creăm următorul proiect:
 
-### -3- Creează fișierele proiectului
+### -3- Crearea fișierelor proiectului
 
-### -4- Creează codul serverului
+### -4- Crearea codului serverului
 
-### -5- Adaugă un tool și o resursă
+### -5- Adăugarea unui tool și a unei resurse
 
-Adaugă un tool și o resursă prin inserarea următorului cod:
+Adaugă un tool și o resursă prin includerea următorului cod:
 
 ### -6 Codul final
 
 Să adăugăm ultimul cod necesar pentru ca serverul să pornească:
 
-### -7- Testează serverul
+### -7- Testarea serverului
 
 Pornește serverul cu următoarea comandă:
 
-### -8- Rulează folosind inspectorul
+### -8- Rulare folosind inspectorul
 
-Inspectorul este un instrument excelent care poate porni serverul și îți permite să interacționezi cu el pentru a testa funcționarea acestuia. Să-l pornim:
+Inspectorul este un instrument excelent care poate porni serverul și îți permite să interacționezi cu el pentru a testa dacă funcționează. Să-l pornim:
 
 > [!NOTE]
-> Comanda afișată în câmpul „command” poate arăta diferit, deoarece conține comanda specifică pentru rularea serverului cu runtime-ul tău.
+> poate arăta diferit în câmpul „command”, deoarece conține comanda pentru rularea unui server cu runtime-ul tău specific/
 
-Ar trebui să vezi următoarea interfață:
+Ar trebui să vezi următoarea interfață de utilizator:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ro.png)
 
@@ -43,7 +43,7 @@ Ar trebui să vezi următoarea interfață:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.ro.png)
 
-2. Selectează „Tools” și „listTools”, ar trebui să apară opțiunea „Add”, selecteaz-o și completează valorile parametrilor.
+2. Selectează „Tools” și „listTools”, ar trebui să apară „Add”, selectează „Add” și completează valorile parametrilor.
 
    Ar trebui să vezi următorul răspuns, adică un rezultat de la tool-ul „add”:
 
@@ -62,27 +62,27 @@ MCP oferă SDK-uri oficiale pentru mai multe limbaje:
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Menținut în colaborare cu Loopwork AI
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Implementarea oficială Rust
 
-## Concluzii importante
+## Concluzii cheie
 
-- Configurarea unui mediu de dezvoltare MCP este simplă cu SDK-urile specifice fiecărui limbaj
-- Construirea serverelor MCP implică crearea și înregistrarea de tool-uri cu scheme clare
-- Testarea și depanarea sunt esențiale pentru implementări MCP de încredere
+- Configurarea unui mediu de dezvoltare MCP este simplă cu SDK-uri specifice limbajelor
+- Construirea serverelor MCP implică crearea și înregistrarea tool-urilor cu scheme clare
+- Testarea și depanarea sunt esențiale pentru implementări MCP fiabile
 
 ## Exemple
 
-- [Calculator Java](../samples/java/calculator/README.md)
-- [Calculator .Net](../../../../03-GettingStarted/samples/csharp)
-- [Calculator JavaScript](../samples/javascript/README.md)
-- [Calculator TypeScript](../samples/typescript/README.md)
-- [Calculator Python](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Tema
+## Exercițiu
 
-Creează un server MCP simplu cu un tool ales de tine:  
-1. Implementează tool-ul în limbajul preferat (.NET, Java, Python sau JavaScript).  
-2. Definește parametrii de intrare și valorile returnate.  
-3. Rulează tool-ul inspector pentru a verifica dacă serverul funcționează corect.  
-4. Testează implementarea cu diverse intrări.
+Creează un server MCP simplu cu un tool la alegere:
+1. Implementează tool-ul în limbajul preferat (.NET, Java, Python sau JavaScript).
+2. Definește parametrii de intrare și valorile returnate.
+3. Rulează instrumentul inspector pentru a te asigura că serverul funcționează conform așteptărilor.
+4. Testează implementarea cu diverse valori de intrare.
 
 ## Soluție
 
@@ -90,11 +90,13 @@ Creează un server MCP simplu cu un tool ales de tine:
 
 ## Resurse suplimentare
 
-- [Depozitul MCP pe GitHub](https://github.com/microsoft/mcp-for-beginners)
+- [Construirea agenților folosind Model Context Protocol pe Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [MCP la distanță cu Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [Agent .NET OpenAI MCP](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Ce urmează
 
-Următorul pas: [Început cu MCP Clients](/03-GettingStarted/02-client/README.md)
+Următorul pas: [Începerea cu MCP Clients](/03-GettingStarted/02-client/README.md)
 
 **Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
