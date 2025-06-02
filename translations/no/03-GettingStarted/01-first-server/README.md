@@ -1,45 +1,45 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "37563349cd6894fe00489bf3b4d488ae",
-  "translation_date": "2025-06-02T10:36:52+00:00",
+  "original_hash": "e650db55873b456296a9c620069e2f71",
+  "translation_date": "2025-06-02T11:11:31+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "no"
 }
 -->
 ### -2- Opprett prosjekt
 
-Nå som du har installert SDK-en, la oss opprette et prosjekt neste steg:
+Nå som du har installert SDK-en din, la oss opprette et prosjekt:  
 
-### -3- Opprett prosjektfiler
+### -3- Opprett prosjektfiler  
 
-### -4- Lag serverkode
+### -4- Lag serverkode  
 
-### -5- Legge til et verktøy og en ressurs
+### -5- Legg til et verktøy og en ressurs
 
-Legg til et verktøy og en ressurs ved å legge til følgende kode:
+Legg til et verktøy og en ressurs ved å legge inn følgende kode:  
 
 ### -6- Fullstendig kode
 
-La oss legge til den siste koden vi trenger slik at serveren kan starte:
+La oss legge til den siste koden vi trenger slik at serveren kan starte:  
 
 ### -7- Test serveren
 
-Start serveren med følgende kommando:
+Start serveren med følgende kommando:  
 
 ### -8- Kjør med inspector
 
-Inspector er et flott verktøy som kan starte serveren din og lar deg samhandle med den slik at du kan teste at den fungerer. La oss starte den:
+Inspector er et flott verktøy som kan starte opp serveren din og lar deg samhandle med den slik at du kan teste at den fungerer. La oss starte den:
 
 > [!NOTE]
-> Det kan se annerledes ut i "command"-feltet siden det inneholder kommandoen for å kjøre en server med ditt spesifikke runtime/
+> det kan se annerledes ut i "command"-feltet siden det inneholder kommandoen for å kjøre en server med ditt spesifikke runtime/
 
-Du skal nå se følgende brukergrensesnitt:
+Du skal se følgende brukergrensesnitt:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.no.png)
 
 1. Koble til serveren ved å velge Connect-knappen  
-   Når du kobler til serveren, skal du nå se følgende:
+   Når du er koblet til serveren, skal du nå se følgende:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.no.png)
 
@@ -49,7 +49,7 @@ Du skal nå se følgende brukergrensesnitt:
 
    ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.no.png)
 
-Gratulerer, du har klart å lage og kjøre din første server!
+Gratulerer, du har klart å opprette og kjøre din første server!
 
 ### Offisielle SDK-er
 
@@ -64,7 +64,7 @@ MCP tilbyr offisielle SDK-er for flere språk:
 
 ## Viktige punkter
 
-- Oppsett av MCP-utviklingsmiljø er enkelt med språkspesifikke SDK-er
+- Å sette opp et MCP-utviklingsmiljø er enkelt med språkspesifikke SDK-er
 - Å bygge MCP-servere innebærer å lage og registrere verktøy med klare skjemaer
 - Testing og feilsøking er essensielt for pålitelige MCP-implementasjoner
 
@@ -78,17 +78,17 @@ MCP tilbyr offisielle SDK-er for flere språk:
 
 ## Oppgave
 
-Lag en enkel MCP-server med et verktøy etter eget valg:  
-1. Implementer verktøyet i ditt foretrukne språk (.NET, Java, Python eller JavaScript).  
-2. Definer inputparametere og returverdier.  
-3. Kjør inspector-verktøyet for å sikre at serveren fungerer som forventet.  
-4. Test implementeringen med ulike inputverdier.
+Lag en enkel MCP-server med et verktøy etter eget valg:
+1. Implementer verktøyet i ditt foretrukne språk (.NET, Java, Python eller JavaScript).
+2. Definer inndata-parametere og returverdier.
+3. Kjør inspector-verktøyet for å sikre at serveren fungerer som forventet.
+4. Test implementeringen med ulike input.
 
 ## Løsning
 
 [Løsning](./solution/README.md)
 
-## Tilleggsressurser
+## Ekstra ressurser
 
 - [MCP GitHub Repository](https://github.com/microsoft/mcp-for-beginners)
 
@@ -97,4 +97,4 @@ Lag en enkel MCP-server med et verktøy etter eget valg:
 Neste: [Getting Started with MCP Clients](/03-GettingStarted/02-client/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på det opprinnelige språket bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

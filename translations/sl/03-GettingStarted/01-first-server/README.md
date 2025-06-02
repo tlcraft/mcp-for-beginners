@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "37563349cd6894fe00489bf3b4d488ae",
-  "translation_date": "2025-06-02T10:44:02+00:00",
+  "original_hash": "e650db55873b456296a9c620069e2f71",
+  "translation_date": "2025-06-02T11:18:36+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "sl"
 }
@@ -27,27 +27,27 @@ Dodajmo zadnjo kodo, ki jo potrebujemo, da se strežnik lahko zažene:
 
 Zaženi strežnik z naslednjim ukazom:
 
-### -8- Zaženi z uporabo inspectorja
+### -8- Zaženi z inspektorjem
 
-Inspector je odlično orodje, ki lahko zažene tvoj strežnik in ti omogoči interakcijo z njim, da lahko preizkusiš njegovo delovanje. Zaženi ga tako:
+Inspektor je odlično orodje, ki lahko zažene tvoj strežnik in ti omogoči interakcijo z njim, da lahko preveriš, ali deluje. Začnimo:
 
 > [!NOTE]
-> v polju "command" je lahko drugačen ukaz, saj vsebuje ukaz za zagon strežnika z izbranim runtime-om
+> V polju "ukaz" se lahko prikaže drugače, saj vsebuje ukaz za zagon strežnika s tvojim specifičnim runtime-om.
 
 Videti bi moral naslednji uporabniški vmesnik:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sl.png)
+![Poveži](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sl.png)
 
-1. Poveži se s strežnikom s klikom na gumb Connect  
-   Ko se povežeš s strežnikom, bi moral zdaj videti naslednje:
+1. Poveži se s strežnikom tako, da izbereš gumb Connect  
+   Ko se povežeš s strežnikom, bi moral videti naslednje:
 
-   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.sl.png)
+   ![Povezan](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.sl.png)
 
-2. Izberi "Tools" in "listTools", videl boš gumb "Add", klikni na "Add" in izpolni vrednosti parametrov.
+2. Izberi "Tools" in "listTools", prikazati bi se moral "Add", izberi "Add" in izpolni vrednosti parametrov.
 
-Videti bi moral naslednji odgovor, torej rezultat orodja "add":
+   Videti bi moral naslednji odgovor, torej rezultat orodja "add":
 
-![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.sl.png)
+   ![Rezultat izvajanja add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.sl.png)
 
 Čestitke, uspel si ustvariti in zagnati svoj prvi strežnik!
 
@@ -56,7 +56,7 @@ Videti bi moral naslednji odgovor, torej rezultat orodja "add":
 MCP ponuja uradne SDK-je za več programskih jezikov:
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - vzdrževan v sodelovanju z Microsoftom
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - vzdrževan v sodelovanju s Spring AI
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - uradna implementacija za TypeScript
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - uradna TypeScript implementacija
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - uradna Python implementacija
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - uradna Kotlin implementacija
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - vzdrževan v sodelovanju z Loopwork AI
@@ -68,21 +68,21 @@ MCP ponuja uradne SDK-je za več programskih jezikov:
 - Izgradnja MCP strežnikov vključuje ustvarjanje in registracijo orodij z jasnimi shemami
 - Testiranje in odpravljanje napak sta ključna za zanesljive MCP implementacije
 
-## Primeri
+## Vzorci
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Java Kalkulator](../samples/java/calculator/README.md)
+- [.Net Kalkulator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Kalkulator](../samples/javascript/README.md)
+- [TypeScript Kalkulator](../samples/typescript/README.md)
+- [Python Kalkulator](../../../../03-GettingStarted/samples/python)
 
 ## Naloga
 
-Ustvari preprost MCP strežnik z orodjem po tvoji izbiri:  
-1. Implementiraj orodje v želenem jeziku (.NET, Java, Python ali JavaScript).  
-2. Določi vhodne parametre in povratne vrednosti.  
-3. Zaženi inspector orodje, da preveriš, ali strežnik deluje kot je predvideno.  
-4. Testiraj implementacijo z različnimi vhodnimi podatki.
+Ustvari preprost MCP strežnik z orodjem po tvoji izbiri:
+1. Implementiraj orodje v želenem jeziku (.NET, Java, Python ali JavaScript).
+2. Določi vhodne parametre in povratne vrednosti.
+3. Zaženi inspektor, da preveriš, ali strežnik deluje kot je predvideno.
+4. Testiraj implementacijo z različnimi vnosi.
 
 ## Rešitev
 
@@ -90,11 +90,11 @@ Ustvari preprost MCP strežnik z orodjem po tvoji izbiri:
 
 ## Dodatni viri
 
-- [MCP GitHub skladišče](https://github.com/microsoft/mcp-for-beginners)
+- [MCP GitHub repozitorij](https://github.com/microsoft/mcp-for-beginners)
 
 ## Kaj sledi
 
-Naslednje: [Začetek z MCP klienti](/03-GettingStarted/02-client/README.md)
+Naslednje: [Getting Started with MCP Clients](/03-GettingStarted/02-client/README.md)
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za kritične informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za strojno prevajanje AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za kritične informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.

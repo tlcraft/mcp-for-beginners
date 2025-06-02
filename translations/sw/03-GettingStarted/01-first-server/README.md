@@ -1,55 +1,55 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "37563349cd6894fe00489bf3b4d488ae",
-  "translation_date": "2025-06-02T10:40:15+00:00",
+  "original_hash": "e650db55873b456296a9c620069e2f71",
+  "translation_date": "2025-06-02T11:14:46+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "sw"
 }
 -->
-### -2- Tengeneza mradi
+### -2- Unda tengeneza mradi
 
-Sasa baada ya kufunga SDK yako, hebu tengeneza mradi unaofuata:
+Sasa umeweka SDK yako, hebu tuanze kuunda mradi:  
 
-### -3- Tengeneza faili za mradi
+### -3- Unda faili za mradi  
 
-### -4- Tengeneza msimbo wa seva
+### -4- Andika msimbo wa server  
 
 ### -5- Ongeza chombo na rasilimali
 
-Ongeza chombo na rasilimali kwa kuongeza msimbo ufuatao:
+Ongeza chombo na rasilimali kwa kuongeza msimbo ufuatao:  
 
 ### -6 Msimbo wa mwisho
 
-Tuweke msimbo wa mwisho unaohitajika ili seva ianze:
+Hebu tuongeze msimbo wa mwisho unaohitajika ili server ianze:  
 
-### -7- Jaribu seva
+### -7- Jaribu server
 
-Anzisha seva kwa amri ifuatayo:
+Anzisha server kwa amri ifuatayo:  
 
 ### -8- Endesha kwa kutumia inspector
 
-Inspector ni chombo kizuri kinachoweza kuanzisha seva yako na kuruhusu kuingiliana nayo ili kujaribu kama inafanya kazi. Hebu tuianze:
+Inspector ni chombo kizuri kinachoweza kuanzisha server yako na kuruhusu kuingiliana nayo ili upime kama inafanya kazi. Hebu tuanze:
 
 > [!NOTE]
-> inaweza kuonekana tofauti kwenye sehemu ya "command" kwa kuwa ina amri ya kuendesha seva kwa runtime yako maalum/
+> Inaweza kuonekana tofauti katika sehemu ya "command" kwani ina amri ya kuendesha server kwa runtime yako maalum/
 
-Utapokea interface ifuatayo ya mtumiaji:
+Utapaswa kuona interface ifuatayo ya mtumiaji:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sw.png)
 
-1. Ungana na seva kwa kubofya kitufe cha Connect  
-   Ukishaunda na seva, sasa utapata interface ifuatayo:
+1. Ungana na server kwa kubofya kitufe cha Connect  
+   Ukishunganisha na server, sasa utapaswa kuona ifuatayo:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.sw.png)
 
-2. Chagua "Tools" na "listTools", utaona "Add" ionekane, chagua "Add" na jaza thamani za vigezo.
+2. Chagua "Tools" kisha "listTools", utaona "Add" ionekane, chagua "Add" na jaza thamani za vigezo.
 
-   Utapokea jibu lifuatayo, yaani matokeo kutoka kwa chombo cha "add":
+   Utapata jibu lifuatayo, yaani matokeo kutoka kwa chombo cha "add":
 
    ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.sw.png)
 
-Hongera, umefanikiwa kuunda na kuendesha seva yako ya kwanza!
+Hongera, umefanikiwa kuunda na kuendesha server yako ya kwanza!
 
 ### SDK Rasmi
 
@@ -65,8 +65,8 @@ MCP hutoa SDK rasmi kwa lugha mbalimbali:
 ## Muhimu Kumbuka
 
 - Kuandaa mazingira ya maendeleo ya MCP ni rahisi kwa kutumia SDK maalum za lugha
-- Kujenga seva za MCP kunahusisha kuunda na kusajili vyombo vyenye schema wazi
-- Kupima na kutatua matatizo ni muhimu kwa utekelezaji wa MCP unaotegemewa
+- Kujenga server za MCP kunahusisha kuunda na kusajili vyombo vyenye schemas wazi
+- Kupima na kutatua hitilafu ni muhimu kwa utekelezaji wa MCP unaoaminika
 
 ## Sampuli
 
@@ -76,13 +76,13 @@ MCP hutoa SDK rasmi kwa lugha mbalimbali:
 - [TypeScript Calculator](../samples/typescript/README.md)
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Kazi ya Nyumbani
+## Kazi ya Nyumba
 
-Tengeneza seva rahisi ya MCP yenye chombo cha uchaguzi wako:
+Unda server rahisi ya MCP yenye chombo unachotaka:
 1. Tekeleza chombo kwa lugha unayopendelea (.NET, Java, Python, au JavaScript).
-2. Eleza vigezo vya kuingiza na thamani za kurudisha.
-3. Endesha chombo cha inspector kuhakikisha seva inafanya kazi kama inavyotakiwa.
-4. Jaribu utekelezaji kwa vingozi tofauti.
+2. Eleza vigezo vya ingizo na thamani za kurudisha.
+3. Endesha chombo cha inspector kuhakikisha server inafanya kazi kama ilivyokusudiwa.
+4. Jaribu utekelezaji kwa viingilio mbalimbali.
 
 ## Suluhisho
 
@@ -94,7 +94,7 @@ Tengeneza seva rahisi ya MCP yenye chombo cha uchaguzi wako:
 
 ## Nini kinachofuata
 
-Ifuatayo: [Kuanzia na Wateja wa MCP](/03-GettingStarted/02-client/README.md)
+Ifuatayo: [Getting Started with MCP Clients](/03-GettingStarted/02-client/README.md)
 
-**Kiondoa lawama**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kufanikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati asilia katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubeba dhamana yoyote kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kasi ya majibu**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kasoro. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu na ya binadamu inapendekezwa. Hatuna dhamana kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.

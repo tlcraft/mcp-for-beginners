@@ -1,104 +1,100 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "37563349cd6894fe00489bf3b4d488ae",
-  "translation_date": "2025-06-02T10:28:30+00:00",
+  "original_hash": "e650db55873b456296a9c620069e2f71",
+  "translation_date": "2025-06-02T11:03:04+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "mo"
 }
 -->
-### -2- Create project
+### -2- Tsim tsa projek
 
-Nüüd, kui sul on SDK paigaldatud, loome järgmise sammuna projekti:
+Tam sim no koj twb nruab tau koj SDK lawm, cia li tsim ib lub projek tom ntej:
 
-### -3- Loo projekti failid
+### -3- Tsim cov ntaub ntawv projek
 
-### -4- Loo serveri kood
+### -4- Sau cov code server
 
-### -5- Tööriista ja ressursi lisamine
+### -5- Ntxiv ib qho cuab yeej thiab ib qho kev pab
 
-Lisa tööriist ja ressurss, lisades järgmise koodi:
+Ntxiv ib qho cuab yeej thiab ib qho kev pab los ntawm kev ntxiv cov code hauv qab no:
 
-### -6 Lõplik kood
+### -6- Code kawg
 
-Lisame viimase koodi, mida serveri käivitamiseks vaja on:
+Cia li ntxiv cov code kawg uas peb xav tau kom server tuaj yeem khiav tau:
 
-### -7- Testi serverit
+### -7- Kuaj server
 
-Käivita server järgmise käsuga:
+Pib server nrog cov lus txib hauv qab no:
 
-### -8- Käivita inspectoriga
+### -8- Khiav siv inspector
 
-Inspector on suurepärane tööriist, mis käivitab su serveri ja võimaldab sellega suhelda, et testida selle toimimist. Käivitame selle:
+Inspector yog ib qho cuab yeej zoo heev uas tuaj yeem pib koj server thiab tso cai rau koj sib cuag nrog nws kom koj tuaj yeem kuaj xyuas seb nws puas ua haujlwm. Cia li pib nws:
 
 > [!NOTE]
-> käsurea väli võib välja näha erinev, kuna see sisaldab käsku serveri käivitamiseks sinu konkreetse runtime'i jaoks/
+> nws yuav zoo li txawv me ntsis hauv "command" teb vim nws muaj lus txib rau khiav ib lub server nrog koj qhov runtime tshwj xeeb/
 
-Sa peaksid nägema järgmist kasutajaliidest:
+Koj yuav pom cov interface siv hauv qab no:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.mo.png)
 
-1. Ühendu serveriga, valides Connect nupu  
-  Kui oled serveriga ühendatud, peaksid nägema järgmist:
+1. Txuas rau server los ntawm kev xaiv khawm Connect  
+  Thaum koj txuas rau server lawm, koj yuav pom cov hauv qab no:
 
   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.mo.png)
 
-2. Vali "Tools" ja "listTools", sa peaksid nägema "Add" nuppu, vali "Add" ja täida parameetrite väärtused.
+1. Xaiv "Tools" thiab "listTools", koj yuav pom "Add" tshwm, xaiv "Add" thiab sau cov nqi parameter.
 
-  Sa peaksid nägema järgmist vastust, mis on "add" tööriista tulemus:
+  Koj yuav pom cov lus teb hauv qab no, piv txwv li ib qho txiaj ntsig los ntawm "add" cuab yeej:
 
   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.mo.png)
 
-Palju õnne, oled edukalt loonud ja käivitanud oma esimese serveri!
+Zoo siab, koj twb tsim thiab khiav tau koj thawj server lawm!
 
-### Ametlikud SDK-d
+### SDKs Official
 
-MCP pakub ametlikke SDK-sid mitmele keelele:
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Hooldatud koostöös Microsoftiga
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Hooldatud koostöös Spring AI-ga
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Ametlik TypeScripti teostus
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Ametlik Python'i teostus
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Ametlik Kotlin'i teostus
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Hooldatud koostöös Loopwork AI-ga
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Ametlik Rust'i teostus
+MCP muab SDKs official rau ntau hom lus:
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Ua haujlwm nrog Microsoft
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Ua haujlwm nrog Spring AI
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Qhov official TypeScript implementation
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Qhov official Python implementation
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Qhov official Kotlin implementation
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Ua haujlwm nrog Loopwork AI
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Qhov official Rust implementation
 
-## Peamised järeldused
+## Cov Ntsiab Lus Muaj Zog
 
-- MCP arenduskeskkonna seadistamine on lihtne tänu keeltespetsiifilistele SDK-dele
-- MCP serverite loomine hõlmab tööriistade loomist ja registreerimist selgete skeemidega
-- Testimine ja silumine on usaldusväärsete MCP teostuste jaoks hädavajalikud
+- Teem up ib lub MCP development environment yooj yim nrog cov SDKs tshwj xeeb rau hom lus
+- Tsim MCP servers suav nrog kev tsim thiab sau npe cov cuab yeej nrog schemas meej
+- Kuaj thiab debug yog qhov tseem ceeb rau kev ua kom MCP implementations ntseeg tau
 
-## Näited
+## Cov piv txwv
 
-- [Java kalkulaator](../samples/java/calculator/README.md)
-- [.Net kalkulaator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript kalkulaator](../samples/javascript/README.md)
-- [TypeScript kalkulaator](../samples/typescript/README.md)
-- [Python kalkulaator](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Ülesanne
+## Assignment
 
-Loo lihtne MCP server valitud tööriistaga:
-1. Rakenda tööriist oma eelistatud keeles (.NET, Java, Python või JavaScript).
-2. Määra sisendparameetrid ja tagastatavad väärtused.
-3. Käivita inspector tööriist, et veenduda serveri korrektses töös.
-4. Testi teostust erinevate sisenditega.
+Tsim ib lub MCP server yooj yim nrog ib qho cuab yeej uas koj nyiam:
+1. Ua tiav cov cuab yeej hauv koj hom lus nyiam (.NET, Java, Python, lossis JavaScript).
+2. Qhia cov parameter input thiab cov nqi rov qab.
+3. Khiav inspector tool kom paub tseeb tias server ua haujlwm raws li xav tau.
+4. Kuaj qhov implementation nrog ntau yam input.
 
-## Lahendus
+## Solution
 
-[Lahendus](./solution/README.md)
+[Solution](./solution/README.md)
 
-## Täiendavad ressursid
+## Cov Kws Pab Ntxiv
 
-- [MCP GitHubi hoidla](https://github.com/microsoft/mcp-for-beginners)
+- [MCP GitHub Repository](https://github.com/microsoft/mcp-for-beginners)
 
-## Mis järgmiseks
+## Qhov tom ntej
 
-Järgmine: [MCP klientidega alustamine](/03-GettingStarted/02-client/README.md)
+Tom ntej: [Getting Started with MCP Clients](/03-GettingStarted/02-client/README.md)
 
 **Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.  
-
----
-
-If you meant "mo" as a specific language or code, please clarify which language "mo" refers to so I can provide the correct translation.
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

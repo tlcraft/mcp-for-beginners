@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "37563349cd6894fe00489bf3b4d488ae",
-  "translation_date": "2025-06-02T10:43:35+00:00",
+  "original_hash": "e650db55873b456296a9c620069e2f71",
+  "translation_date": "2025-06-02T11:18:12+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "hr"
 }
 -->
 ### -2- Kreirajte projekt
 
-Sada kada ste instalirali svoj SDK, sljedeći korak je kreirati projekt:
+Sad kad ste instalirali svoj SDK, sljedeći korak je kreirati projekt:
 
 ### -3- Kreirajte datoteke projekta
 
@@ -17,35 +17,35 @@ Sada kada ste instalirali svoj SDK, sljedeći korak je kreirati projekt:
 
 ### -5- Dodavanje alata i resursa
 
-Dodajte alat i resurs tako da unesete sljedeći kod:
+Dodajte alat i resurs dodavanjem sljedećeg koda:
 
 ### -6 Završni kod
 
-Dodajmo posljednji kod koji nam treba da server može pokrenuti:
+Dodajmo posljednji potrebni kod kako bi se server mogao pokrenuti:
 
 ### -7- Testirajte server
 
 Pokrenite server sljedećom naredbom:
 
-### -8- Pokretanje pomoću inspektora
+### -8- Pokrenite pomoću inspectora
 
-Inspektor je izvrstan alat koji može pokrenuti vaš server i omogućiti vam interakciju s njim kako biste testirali radi li ispravno. Pokrenimo ga:
+Inspector je odličan alat koji može pokrenuti vaš server i omogućiti vam interakciju s njim kako biste testirali njegov rad. Pokrenimo ga:
 
 > [!NOTE]
-> može izgledati drugačije u polju "command" jer sadrži naredbu za pokretanje servera s vašim specifičnim runtime-om
+> u polju "command" može izgledati drugačije jer sadrži naredbu za pokretanje servera s vašim specifičnim runtime-om
 
 Trebali biste vidjeti sljedeće korisničko sučelje:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.hr.png)
 
-1. Povežite se sa serverom pritiskom na gumb Connect  
-   Kada se povežete sa serverom, trebali biste vidjeti sljedeće:
+1. Povežite se sa serverom klikom na gumb Connect  
+   Nakon povezivanja sa serverom, trebali biste vidjeti sljedeće:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.hr.png)
 
-2. Odaberite "Tools" i "listTools", trebali biste vidjeti da se pojavljuje "Add", odaberite "Add" i unesite vrijednosti parametara.
+2. Odaberite "Tools" i "listTools", trebali biste vidjeti opciju "Add", kliknite na "Add" i unesite vrijednosti parametara.
 
-   Trebali biste vidjeti sljedeći odgovor, tj. rezultat iz "add" alata:
+   Trebali biste vidjeti sljedeći odgovor, tj. rezultat iz alata "add":
 
    ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.hr.png)
 
@@ -53,7 +53,7 @@ Trebali biste vidjeti sljedeće korisničko sučelje:
 
 ### Službeni SDK-ovi
 
-MCP pruža službene SDK-ove za više jezika:
+MCP nudi službene SDK-ove za više jezika:
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Održava se u suradnji s Microsoftom
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Održava se u suradnji sa Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Službena TypeScript implementacija
@@ -62,27 +62,27 @@ MCP pruža službene SDK-ove za više jezika:
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Održava se u suradnji s Loopwork AI
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Službena Rust implementacija
 
-## Ključne spoznaje
+## Ključne napomene
 
-- Postavljanje MCP razvojnih okruženja je jednostavno uz SDK-ove specifične za jezik
+- Postavljanje MCP razvojne okoline je jednostavno uz SDK-ove specifične za jezik
 - Izgradnja MCP servera uključuje kreiranje i registraciju alata s jasnim shemama
-- Testiranje i ispravljanje pogrešaka su ključni za pouzdane MCP implementacije
+- Testiranje i ispravljanje pogrešaka ključni su za pouzdane MCP implementacije
 
 ## Primjeri
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Java Kalkulator](../samples/java/calculator/README.md)
+- [.Net Kalkulator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Kalkulator](../samples/javascript/README.md)
+- [TypeScript Kalkulator](../samples/typescript/README.md)
+- [Python Kalkulator](../../../../03-GettingStarted/samples/python)
 
 ## Zadatak
 
-Kreirajte jednostavan MCP server s alatom po vašem izboru:  
-1. Implementirajte alat u željenom jeziku (.NET, Java, Python ili JavaScript).  
-2. Definirajte ulazne parametre i povratne vrijednosti.  
-3. Pokrenite alat inspektora kako biste provjerili radi li server kako treba.  
-4. Testirajte implementaciju s različitim ulazima.
+Kreirajte jednostavan MCP server s alatom po vašem izboru:
+1. Implementirajte alat u jeziku koji preferirate (.NET, Java, Python ili JavaScript).
+2. Definirajte ulazne parametre i povratne vrijednosti.
+3. Pokrenite inspector alat kako biste provjerili radi li server ispravno.
+4. Testirajte implementaciju s različitim unosima.
 
 ## Rješenje
 
@@ -97,4 +97,4 @@ Kreirajte jednostavan MCP server s alatom po vašem izboru:
 Sljedeće: [Getting Started with MCP Clients](/03-GettingStarted/02-client/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj je dokument preveden korištenjem AI usluge za prijevod [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument preveden je korištenjem AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba se smatrati službenim i autoritativnim izvorom. Za važne informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
