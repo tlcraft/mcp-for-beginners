@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:08:28+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T11:49:11+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "en"
 }
@@ -11,36 +11,43 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Overview
 
-This lesson explores advanced concepts in Model Context Protocol implementation, focusing on multi-modal integration, scalability, security best practices, and enterprise integration. These topics are essential for building production-grade MCP applications that can handle complex requirements in enterprise environments.
+This lesson covers advanced concepts in implementing the Model Context Protocol, focusing on multi-modal integration, scalability, security best practices, and enterprise integration. These topics are crucial for building production-ready MCP applications that can meet complex requirements in enterprise settings.
 
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
-- Implement multi-modal capabilities within MCP frameworks
-- Design scalable MCP architectures for high-demand scenarios
-- Apply security best practices aligned with MCP's security principles
+- Implement multi-modal features within MCP frameworks
+- Design scalable MCP architectures for high-demand use cases
+- Apply security best practices aligned with MCP’s security principles
 - Integrate MCP with enterprise AI systems and frameworks
 - Optimize performance and reliability in production environments
 
+## Sample Projects
+
+| Link | Title | Description |
+|------|-------|-------------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimal Spring Boot app demonstrating OAuth2 with MCP, acting as both Authorization and Resource Server. Shows secure token issuance, protected endpoints, deployment on Azure Container Apps, and API Management integration. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web Search MCP | Python MCP server and client integrating with SerpAPI for real-time web, news, product searches, and Q&A. Demonstrates multi-tool orchestration, external API integration, and robust error handling. |
+
 ## Additional References
 
-For the most up-to-date information on advanced MCP topics, refer to:
+For the latest information on advanced MCP topics, see:
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## Multi-Modal Integration
 
-MCP supports not just text-based interactions but also multi-modal capabilities, allowing models to work with images, audio, and other data types.
+MCP supports not only text-based interactions but also multi-modal capabilities, enabling models to work with images, audio, and other data types.
 
 ### Architecture for Multi-Modal Support
 
-Multi-modal MCP implementations typically involve:
+Multi-modal MCP implementations generally include:
 
-1. **Modal-Specific Parsers**: Components that convert different media types into formats the model can process
-2. **Modal-Specific Tools**: Special tools designed to handle specific modalities (image analysis, audio processing)
-3. **Unified Context Management**: System to maintain context across different modalities
-4. **Response Generation**: Capability to generate responses that may include multiple modalities
+1. **Modal-Specific Parsers**: Components that convert various media types into formats the model can process
+2. **Modal-Specific Tools**: Specialized tools designed to handle specific modalities (e.g., image analysis, audio processing)
+3. **Unified Context Management**: Systems that maintain context across different modalities
+4. **Response Generation**: Ability to produce responses that may include multiple modalities
 
 ### C# Multi-Modal Example: Image Analysis
 
@@ -452,21 +459,21 @@ if __name__ == "__main__":
 
 ## MCP Root Contexts
 
-Root contexts are a fundamental concept in the Model Context Protocol that provide a persistent layer for maintaining conversation history and shared state across multiple requests and sessions.
+Root contexts are a core concept in the Model Context Protocol that provide a persistent layer for maintaining conversation history and shared state across multiple requests and sessions.
 
 ### Understanding Root Contexts
 
-Root contexts serve as containers that hold the history and state for a series of related interactions. They enable:
+Root contexts act as containers that hold history and state for a series of related interactions. They enable:
 
-- **Conversation Persistence**: Maintaining coherent multi-turn conversations
+- **Conversation Persistence**: Maintaining coherent multi-turn dialogues
 - **Memory Management**: Storing and retrieving information across interactions
-- **State Management**: Tracking progress in complex workflows
+- **State Management**: Tracking progress through complex workflows
 - **Context Sharing**: Allowing multiple clients to access the same conversation state
 
-In MCP, root contexts have these key characteristics:
+In MCP, root contexts have these key features:
 
 - Each root context has a unique identifier
-- They can contain conversation history, user preferences, and other metadata
+- They can store conversation history, user preferences, and other metadata
 - They can be created, accessed, and archived as needed
 - They support fine-grained access control and permissions
 
@@ -1011,29 +1018,29 @@ if __name__ == "__main__":
 
 ### Root Context Best Practices
 
-1. **Create Focused Contexts**: Create separate root contexts for different conversation purposes or domains to maintain clarity.
+1. **Create Focused Contexts**: Use separate root contexts for different conversation goals or domains to keep things clear.
 
-2. **Set Expiration Policies**: Implement policies to archive or delete old contexts to manage storage and comply with data retention policies.
+2. **Set Expiration Policies**: Implement policies to archive or delete old contexts to manage storage and comply with data retention requirements.
 
-3. **Store Relevant Metadata**: Use context metadata to store important information about the conversation that might be useful later.
+3. **Store Relevant Metadata**: Use context metadata to save important details about the conversation that may be useful later.
 
 4. **Use Context IDs Consistently**: Once a context is created, use its ID consistently for all related requests to maintain continuity.
 
-5. **Generate Summaries**: When a context grows large, consider generating summaries to capture essential information while managing context size.
+5. **Generate Summaries**: When a context becomes large, consider creating summaries to capture key information while managing context size.
 
-6. **Implement Access Control**: For multi-user systems, implement proper access controls to ensure privacy and security of conversation contexts.
+6. **Implement Access Control**: For multi-user systems, apply proper access controls to ensure privacy and security of conversation contexts.
 
-7. **Handle Context Limitations**: Be aware of context size limitations and implement strategies for handling very long conversations.
+7. **Handle Context Limitations**: Be aware of context size limits and implement strategies for managing very long conversations.
 
-8. **Archive When Complete**: Archive contexts when conversations are complete to free resources while preserving the conversation history.
+8. **Archive When Complete**: Archive contexts after conversations finish to free resources while preserving history.
 
 ## Sampling in Model Context Protocol
 
-Sampling strategies are critical for optimizing model responses in MCP implementations. The right sampling configuration can dramatically improve response quality and performance. MCP provides a standardized way to control how models generate text with specific parameters that influence randomness, creativity, and coherence.
+Sampling strategies are crucial for optimizing model responses in MCP implementations. The right sampling setup can significantly improve response quality and performance. MCP provides a standardized way to control how models generate text with parameters that affect randomness, creativity, and coherence.
 
 ### Sampling Parameters Overview
 
-MCP defines the following sampling parameters that can be configured in client requests:
+MCP defines these sampling parameters configurable in client requests:
 
 | Parameter | Description | Typical Range |
 |-----------|-------------|---------------|
@@ -1048,7 +1055,7 @@ MCP defines the following sampling parameters that can be configured in client r
 
 ### Temperature and Top-K/Top-P Sampling
 
-Sampling parameters allow fine-tuning the behavior of language models to achieve the desired balance between deterministic and creative outputs.
+Sampling parameters allow fine-tuning language model behavior to balance between deterministic and creative outputs.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1144,7 +1151,7 @@ demonstrateSampling();
 
 ### Deterministic Sampling
 
-For applications requiring consistent outputs, deterministic sampling ensures reproducible results.
+For applications needing consistent outputs, deterministic sampling ensures reproducible results.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1230,7 +1237,7 @@ deterministicSampling();
 
 ### Dynamic Sampling Configuration
 
-Intelligent sampling adapts parameters based on the context and requirements of each request.
+Smart sampling adapts parameters based on context and request requirements.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1471,11 +1478,11 @@ demonstrateAdaptiveSampling();
 
 ## Routing in Model Context Protocol
 
-Routing is essential for directing requests to the appropriate models, tools, or services within an MCP ecosystem.
+Routing is key to directing requests to the right models, tools, or services within an MCP ecosystem.
 
 ### Content-Based Routing
 
-Content-based routing directs requests to specialized services based on the content of the request.
+Content-based routing sends requests to specialized services depending on the request content.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1548,7 +1555,7 @@ public class ContentBasedRouter
 
 ### Intelligent Load Balancing
 
-Load balancing optimizes resource utilization and ensures high availability for MCP services.
+Load balancing optimizes resource use and ensures high availability of MCP services.
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -1679,7 +1686,7 @@ public class McpLoadBalancer {
 
 ### Dynamic Tool Routing
 
-Tool routing ensures that tool calls are directed to the most appropriate service based on context.
+Tool routing directs tool calls to the most appropriate service based on context.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1792,7 +1799,7 @@ class McpToolRouter:
 
 ### Sampling and Routing Architecture in MCP
 
-The diagram below illustrates how sampling and routing work together in a comprehensive MCP architecture:
+The diagram below shows how sampling and routing work together in a full MCP architecture:
 
 ```mermaid
 flowchart TB
@@ -1861,7 +1868,7 @@ flowchart TB
 
 ## Scalability and High-Performance MCP
 
-For enterprise deployments, MCP implementations often need to handle high volumes of requests with minimal latency.
+Enterprise deployments often require MCP implementations to handle high request volumes with minimal latency.
 
 ### Scalability Strategies
 
@@ -2013,7 +2020,7 @@ class DistributedMcpServer:
 
 ## Security Best Practices
 
-Security is critical for MCP implementations, especially in enterprise environments.
+Security is vital for MCP implementations, especially in enterprise environments.
 
 ### Authentication and Authorization
 
@@ -2280,7 +2287,7 @@ class SecureCustomerDataTool(Tool):
 
 ## Enterprise Integration
 
-Integrating MCP with enterprise systems like Azure OpenAI and Microsoft AI Foundry.
+Integrating MCP with enterprise systems such as Azure OpenAI and Microsoft AI Foundry.
 
 ### Azure OpenAI Integration
 
@@ -2530,10 +2537,10 @@ class EnterpriseAiIntegration:
 
 ## Key Takeaways
 
-- Multi-modal MCP implementations extend AI capabilities beyond text processing
-- Scalability is essential for enterprise deployments and can be addressed through horizontal and vertical scaling
-- Comprehensive security measures protect data and ensure proper access control
-- Enterprise integration with platforms like Azure OpenAI and Microsoft AI Foundry enhances MCP capabilities
+- Multi-modal MCP implementations expand AI capabilities beyond text processing
+- Scalability is essential for enterprise deployments and can be addressed via horizontal and vertical scaling
+- Robust security measures protect data and ensure proper access control
+- Enterprise integration with platforms like Azure OpenAI and Microsoft AI Foundry enhances MCP functionality
 - Advanced MCP implementations benefit from optimized architectures and careful resource management
 
 ## Exercise
@@ -2542,9 +2549,9 @@ Design an enterprise-grade MCP implementation for a specific use case:
 
 1. Identify multi-modal requirements for your use case
 2. Outline the security controls needed to protect sensitive data
-3. Design a scalable architecture that can handle varying load
+3. Design a scalable architecture capable of handling varying loads
 4. Plan integration points with enterprise AI systems
-5. Document potential performance bottlenecks and mitigation strategies
+5. Document potential performance bottlenecks and strategies to mitigate them
 
 ## Additional Resources
 
@@ -2553,7 +2560,9 @@ Design an enterprise-grade MCP implementation for a specific use case:
 
 ---
 
-Next: [Community and Contributions](../06-CommunityContributions/README.md)
+## What's next
+
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

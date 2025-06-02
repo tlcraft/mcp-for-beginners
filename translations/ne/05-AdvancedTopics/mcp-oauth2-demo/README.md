@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:40:42+00:00",
+  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
+  "translation_date": "2025-06-02T12:16:23+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "ne"
 }
 -->
-# MCP OAuth2 डेमो
+# MCP OAuth2 Demo
 
-यो परियोजना एक **सानो स्प्रिंग बूट एप्लिकेशन** हो जुन दुबैको रूपमा काम गर्छ:
+यो प्रोजेक्ट एक **सानो Spring Boot एप्लिकेशन** हो जुन दुवैको रूपमा काम गर्छ:
 
-* एक **स्प्रिंग प्राधिकरण सर्भर** (JWT पहुँच टोकनहरू `client_credentials` प्रवाह मार्फत जारी गर्दै), र  
-* एक **स्रोत सर्भर** (आफ्नो `/hello` अन्त बिन्दु सुरक्षित गर्दै)।
+* एक **Spring Authorization Server** (जो `client_credentials` फ्लो मार्फत JWT एक्सेस टोकन जारी गर्छ), र  
+* एक **Resource Server** (आफ्नो `/hello` endpoint सुरक्षा गर्ने).
 
-यो सेटअपलाई [स्प्रिंग ब्लग पोस्ट (२ अप्रिल २०२५)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) मा देखाइएको छ।
+यसले [Spring ब्लग पोस्ट (2 अप्रिल 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) मा देखाइएको सेटअपलाई प्रतिबिम्बित गर्छ।
 
 ---
 
-## छिटो सुरुवात (स्थानीय)
+## छिटो सुरु (लोकल)
 
 ```bash
 # build & run
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## OAuth2 कन्फिगरेसन परीक्षण गर्दै
+## OAuth2 कन्फिगरेसन टेस्ट गर्ने
 
-तपाईं निम्न चरणहरू प्रयोग गरेर OAuth2 सुरक्षा कन्फिगरेसन परीक्षण गर्न सक्नुहुन्छ:
+तपाईंले OAuth2 सुरक्षा कन्फिगरेसन तलका चरणहरू मार्फत टेस्ट गर्न सक्नुहुन्छ:
 
-### १. सर्भर चलिरहेको र सुरक्षित भएको सुनिश्चित गर्नुहोस्
+### 1. सर्भर चलिरहेको र सुरक्षित छ कि छैन जाँच गर्नुहोस्
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### २. क्लाइन्ट प्रमाणपत्र प्रयोग गरेर पहुँच टोकन प्राप्त गर्नुहोस्
+### 2. क्लाइन्ट क्रेडेन्शियल्स प्रयोग गरी एक्सेस टोकन लिनुहोस्
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-नोट: बेसिक प्रमाणिकरण हेडर (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Note: Basic Authentication हेडर (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret` हो।
 
-### ३. टोकन प्रयोग गरेर सुरक्षित अन्त बिन्दुमा पहुँच गर्नुहोस्
+### 3. टोकन प्रयोग गरी सुरक्षित endpoint मा पहुँच गर्नुहोस्
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-"MCP OAuth2 डेमोबाट नमस्ते!" भन्ने सफल प्रतिक्रिया प्राप्त गर्दा OAuth2 कन्फिगरेसन सही रूपमा काम गरिरहेको पुष्टि हुन्छ।
+"Hello from MCP OAuth2 Demo!" भन्ने सफल प्रतिक्रिया पाएमा OAuth2 कन्फिगरेसन ठीकसँग काम गरिरहेको पुष्टि हुन्छ।
 
 ---
 
-## कन्टेनर निर्माण
+## कन्टेनर बनाउने
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## **Azure Container Apps** मा परिनियोजन गर्नुहोस्
+## **Azure Container Apps** मा डिप्लोय गर्नुहोस्
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-इन्ग्रेस FQDN तपाईंको **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io` हुन्छ।
+Ingress FQDN तपाईंको **issuer** हुन्छ (`https://<fqdn>`).  
+Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`)।
 
 ---
 
-## **Azure API Management** मा जडान गर्नुहोस्
+## **Azure API Management** सँग जोड्नुहोस्
 
-तपाईंको API मा यो इनबाउन्ड नीति थप्नुहोस्:
+तपाईंको API मा यो inbound policy थप्नुहोस्:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM ले JWKS प्राप्त गर्नेछ र प्रत्येक अनुरोधलाई मान्यता दिनेछ।
+APIM ले JWKS ल्याएर हरेक अनुरोधको मान्यता गर्नेछ।
+
+---
+
+## अब के गर्ने
+
+- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
 
 **अस्वीकरण**:  
-यो दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरेर अनुवाद गरिएको छ। हामी शुद्धताको लागि प्रयास गर्छौं, तर कृपया सचेत रहनुहोस् कि स्वचालित अनुवादहरूमा त्रुटिहरू वा अशुद्धताहरू हुन सक्छन्। यसको मूल भाषा मा रहेको दस्तावेजलाई आधिकारिक स्रोत मान्नुपर्छ। महत्वपूर्ण जानकारीको लागि, व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न हुने कुनै पनि गलतफहमी वा गलत व्याख्या को लागि हामी जिम्मेवार छैनौं।
+यो दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) को प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा अशुद्धता हुनसक्छ। मूल दस्तावेज़ यसको मूल भाषामा नै प्रामाणिक स्रोत मान्नुपर्छ। महत्वपूर्ण जानकारीको लागि व्यावसायिक मानवीय अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।

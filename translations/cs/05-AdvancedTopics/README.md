@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-27T16:16:10+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:48:49+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "cs"
 }
@@ -11,36 +11,43 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Overview
 
-Esta lección explora conceptos avanzados en la implementación del Model Context Protocol, enfocándose en la integración multimodal, escalabilidad, mejores prácticas de seguridad e integración empresarial. Estos temas son esenciales para construir aplicaciones MCP de nivel producción que puedan manejar requisitos complejos en entornos empresariales.
+This lesson delves into advanced concepts in Model Context Protocol implementation, focusing on multi-modal integration, scalability, security best practices, and enterprise integration. These topics are crucial for building production-ready MCP applications capable of meeting complex enterprise demands.
 
 ## Learning Objectives
 
-Al finalizar esta lección, serás capaz de:
-- Implementar capacidades multimodales dentro de los frameworks MCP
-- Diseñar arquitecturas MCP escalables para escenarios de alta demanda
-- Aplicar mejores prácticas de seguridad alineadas con los principios de seguridad de MCP
-- Integrar MCP con sistemas y frameworks de IA empresariales
-- Optimizar el rendimiento y la confiabilidad en entornos de producción
+By the end of this lesson, you will be able to:
+- Implement multi-modal features within MCP frameworks
+- Design scalable MCP architectures for high-demand environments
+- Apply security best practices aligned with MCP’s security principles
+- Integrate MCP with enterprise AI systems and frameworks
+- Optimize performance and reliability in production settings
+
+## Sample Projects
+
+| Link | Title | Description |
+|------|-------|-------------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimal Spring Boot app demonstrating OAuth2 with MCP as both Authorization and Resource Server. Shows secure token issuance, protected endpoints, Azure Container Apps deployment, and API Management integration. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web Search MCP | Python MCP server and client integrating with SerpAPI for real-time web, news, product search, and Q&A. Demonstrates multi-tool orchestration, external API integration, and robust error handling. |
 
 ## Additional References
 
-Para obtener la información más actualizada sobre temas avanzados de MCP, consulta:
+For the latest information on advanced MCP topics, see:
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## Multi-Modal Integration
 
-MCP soporta no solo interacciones basadas en texto, sino también capacidades multimodales, permitiendo que los modelos trabajen con imágenes, audio y otros tipos de datos.
+MCP supports not only text-based interactions but also multi-modal capabilities, enabling models to process images, audio, and other data types.
 
 ### Architecture for Multi-Modal Support
 
-Las implementaciones multimodales de MCP suelen involucrar:
+Multi-modal MCP implementations generally include:
 
-1. **Modal-Specific Parsers**: Componentes que convierten diferentes tipos de medios en formatos que el modelo puede procesar
-2. **Modal-Specific Tools**: Herramientas especiales diseñadas para manejar modalidades específicas (análisis de imágenes, procesamiento de audio)
-3. **Unified Context Management**: Sistema para mantener el contexto a través de diferentes modalidades
-4. **Response Generation**: Capacidad para generar respuestas que pueden incluir múltiples modalidades
+1. **Modal-Specific Parsers**: Components that transform various media types into formats the model can process
+2. **Modal-Specific Tools**: Specialized tools for handling particular modalities (e.g., image analysis, audio processing)
+3. **Unified Context Management**: A system to maintain context across different modalities
+4. **Response Generation**: Ability to generate responses that may incorporate multiple modalities
 
 ### C# Multi-Modal Example: Image Analysis
 
@@ -452,23 +459,23 @@ if __name__ == "__main__":
 
 ## MCP Root Contexts
 
-Los root contexts son un concepto fundamental en el Model Context Protocol que proporcionan una capa persistente para mantener el historial de conversación y el estado compartido a través de múltiples solicitudes y sesiones.
+Root contexts are a core concept in the Model Context Protocol, providing a persistent layer to maintain conversation history and shared state across multiple requests and sessions.
 
 ### Understanding Root Contexts
 
-Los root contexts funcionan como contenedores que almacenan el historial y el estado para una serie de interacciones relacionadas. Permiten:
+Root contexts act as containers that store the history and state for a series of related interactions. They enable:
 
-- **Conversation Persistence**: Mantener conversaciones coherentes de múltiples turnos
-- **Memory Management**: Almacenar y recuperar información a lo largo de las interacciones
-- **State Management**: Rastrear el progreso en flujos de trabajo complejos
-- **Context Sharing**: Permitir que múltiples clientes accedan al mismo estado de conversación
+- **Conversation Persistence**: Maintaining coherent multi-turn dialogues
+- **Memory Management**: Saving and retrieving information across interactions
+- **State Management**: Tracking progress in complex workflows
+- **Context Sharing**: Allowing multiple clients to access the same conversation state
 
-En MCP, los root contexts tienen estas características clave:
+Key features of root contexts in MCP include:
 
-- Cada root context tiene un identificador único
-- Pueden contener historial de conversación, preferencias del usuario y otros metadatos
-- Pueden ser creados, accedidos y archivados según sea necesario
-- Soportan control de acceso granular y permisos
+- Each root context has a unique identifier
+- They can hold conversation history, user preferences, and metadata
+- They can be created, accessed, and archived as needed
+- They support fine-grained access control and permissions
 
 ### Root Context Lifecycle
 
@@ -1011,29 +1018,29 @@ if __name__ == "__main__":
 
 ### Root Context Best Practices
 
-1. **Create Focused Contexts**: Crea root contexts separados para diferentes propósitos o dominios de conversación para mantener claridad.
+1. **Create Focused Contexts**: Use separate root contexts for different conversation topics or domains to maintain clarity.
 
-2. **Set Expiration Policies**: Implementa políticas para archivar o eliminar contextos antiguos para gestionar almacenamiento y cumplir con políticas de retención de datos.
+2. **Set Expiration Policies**: Implement policies to archive or delete old contexts to manage storage and comply with data retention requirements.
 
-3. **Store Relevant Metadata**: Usa metadatos de contexto para almacenar información importante sobre la conversación que pueda ser útil posteriormente.
+3. **Store Relevant Metadata**: Use context metadata to save important conversation details that might be useful later.
 
-4. **Use Context IDs Consistently**: Una vez creado un contexto, usa su ID consistentemente para todas las solicitudes relacionadas para mantener la continuidad.
+4. **Use Context IDs Consistently**: Once a context is created, use its ID consistently for all related requests to ensure continuity.
 
-5. **Generate Summaries**: Cuando un contexto crece demasiado, considera generar resúmenes para capturar la información esencial mientras gestionas el tamaño del contexto.
+5. **Generate Summaries**: When a context grows large, create summaries to capture key information while managing context size.
 
-6. **Implement Access Control**: Para sistemas multiusuario, implementa controles de acceso adecuados para asegurar la privacidad y seguridad de los contextos de conversación.
+6. **Implement Access Control**: For multi-user systems, enforce proper access controls to protect privacy and security of conversation contexts.
 
-7. **Handle Context Limitations**: Ten en cuenta las limitaciones de tamaño de contexto e implementa estrategias para manejar conversaciones muy largas.
+7. **Handle Context Limitations**: Be mindful of context size limits and develop strategies to manage very long conversations.
 
-8. **Archive When Complete**: Archiva contextos cuando las conversaciones hayan terminado para liberar recursos y preservar el historial.
+8. **Archive When Complete**: Archive contexts once conversations are finished to free resources while preserving history.
 
 ## Sampling in Model Context Protocol
 
-Las estrategias de muestreo son críticas para optimizar las respuestas del modelo en implementaciones MCP. La configuración adecuada de muestreo puede mejorar significativamente la calidad y el rendimiento de las respuestas. MCP proporciona una forma estandarizada de controlar cómo los modelos generan texto con parámetros específicos que influyen en la aleatoriedad, creatividad y coherencia.
+Sampling strategies are essential for optimizing model responses in MCP implementations. Proper sampling configuration can significantly improve response quality and efficiency. MCP provides a standardized way to control text generation with parameters influencing randomness, creativity, and coherence.
 
 ### Sampling Parameters Overview
 
-MCP define los siguientes parámetros de muestreo que pueden configurarse en las solicitudes del cliente:
+MCP defines the following sampling parameters configurable in client requests:
 
 | Parameter | Description | Typical Range |
 |-----------|-------------|---------------|
@@ -1044,11 +1051,11 @@ MCP define los siguientes parámetros de muestreo que pueden configurarse en las
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | Secuencias personalizadas que detienen la generación cuando se encuentran | Array de cadenas |
+| `stop_sequences` | Custom sequences that stop generation when encountered | Array of strings |
 
 ### Temperature and Top-K/Top-P Sampling
 
-Los parámetros de muestreo permiten ajustar el comportamiento de los modelos de lenguaje para lograr el equilibrio deseado entre salidas deterministas y creativas.
+Sampling parameters allow fine-tuning of language model behavior to balance deterministic and creative outputs.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1144,7 +1151,7 @@ demonstrateSampling();
 
 ### Deterministic Sampling
 
-Para aplicaciones que requieren salidas consistentes, el muestreo determinista asegura resultados reproducibles.
+For use cases requiring consistent outputs, deterministic sampling guarantees reproducible results.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1230,7 +1237,7 @@ deterministicSampling();
 
 ### Dynamic Sampling Configuration
 
-El muestreo inteligente adapta los parámetros según el contexto y los requisitos de cada solicitud.
+Intelligent sampling adjusts parameters dynamically based on context and request requirements.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1471,11 +1478,11 @@ demonstrateAdaptiveSampling();
 
 ## Routing in Model Context Protocol
 
-El enrutamiento es esencial para dirigir las solicitudes a los modelos, herramientas o servicios apropiados dentro de un ecosistema MCP.
+Routing is key to directing requests to the right models, tools, or services within an MCP ecosystem.
 
 ### Content-Based Routing
 
-El enrutamiento basado en contenido dirige las solicitudes a servicios especializados según el contenido de la solicitud.
+Content-based routing directs requests to specialized services depending on request content.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1548,7 +1555,7 @@ public class ContentBasedRouter
 
 ### Intelligent Load Balancing
 
-El balanceo de carga optimiza la utilización de recursos y asegura alta disponibilidad para los servicios MCP.
+Load balancing improves resource utilization and ensures high availability of MCP services.
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -1679,7 +1686,7 @@ public class McpLoadBalancer {
 
 ### Dynamic Tool Routing
 
-El enrutamiento de herramientas garantiza que las llamadas a herramientas se dirijan al servicio más adecuado según el contexto.
+Tool routing ensures calls are sent to the most appropriate service based on context.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1792,7 +1799,7 @@ class McpToolRouter:
 
 ### Sampling and Routing Architecture in MCP
 
-El diagrama a continuación ilustra cómo el muestreo y el enrutamiento trabajan juntos en una arquitectura MCP integral:
+The diagram below shows how sampling and routing integrate within a comprehensive MCP architecture:
 
 ```mermaid
 flowchart TB
@@ -1861,7 +1868,7 @@ flowchart TB
 
 ## Scalability and High-Performance MCP
 
-Para implementaciones empresariales, las implementaciones MCP a menudo necesitan manejar altos volúmenes de solicitudes con latencia mínima.
+Enterprise MCP deployments often need to handle large volumes of requests with minimal latency.
 
 ### Scalability Strategies
 
@@ -2013,7 +2020,7 @@ class DistributedMcpServer:
 
 ## Security Best Practices
 
-La seguridad es crítica para las implementaciones MCP, especialmente en entornos empresariales.
+Security is paramount for MCP implementations, especially in enterprise environments.
 
 ### Authentication and Authorization
 
@@ -2280,7 +2287,7 @@ class SecureCustomerDataTool(Tool):
 
 ## Enterprise Integration
 
-Integrando MCP con sistemas empresariales como Azure OpenAI y Microsoft AI Foundry.
+Integrating MCP with enterprise systems such as Azure OpenAI and Microsoft AI Foundry.
 
 ### Azure OpenAI Integration
 
@@ -2530,21 +2537,21 @@ class EnterpriseAiIntegration:
 
 ## Key Takeaways
 
-- Las implementaciones multimodales de MCP amplían las capacidades de IA más allá del procesamiento de texto
-- La escalabilidad es esencial para despliegues empresariales y puede abordarse mediante escalado horizontal y vertical
-- Medidas de seguridad integrales protegen los datos y aseguran un control de acceso adecuado
-- La integración empresarial con plataformas como Azure OpenAI y Microsoft AI Foundry potencia las capacidades de MCP
-- Las implementaciones avanzadas de MCP se benefician de arquitecturas optimizadas y una gestión cuidadosa de recursos
+- Multi-modal MCP implementations expand AI capabilities beyond text processing
+- Scalability is crucial for enterprise deployments and can be achieved via horizontal and vertical scaling
+- Robust security measures protect data and ensure proper access control
+- Enterprise integration with platforms like Azure OpenAI and Microsoft AI Foundry enhances MCP capabilities
+- Advanced MCP implementations benefit from optimized architectures and careful resource management
 
 ## Exercise
 
-Diseña una implementación MCP de nivel empresarial para un caso de uso específico:
+Design an enterprise-grade MCP implementation for a specific use case:
 
-1. Identifica los requisitos multimodales para tu caso de uso
-2. Esboza los controles de seguridad necesarios para proteger datos sensibles
-3. Diseña una arquitectura escalable que pueda manejar cargas variables
-4. Planea puntos de integración con sistemas de IA empresariales
-5. Documenta posibles cuellos de botella en el rendimiento y estrategias de mitigación
+1. Identify multi-modal requirements for your scenario
+2. Outline security controls needed to protect sensitive data
+3. Design a scalable architecture to handle variable loads
+4. Plan integration points with enterprise AI systems
+5. Document potential performance bottlenecks and mitigation strategies
 
 ## Additional Resources
 
@@ -2553,7 +2560,9 @@ Diseña una implementación MCP de nivel empresarial para un caso de uso especí
 
 ---
 
-Next: [Community and Contributions](../06-CommunityContributions/README.md)
+## What's next
+
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za závazný zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo mylné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

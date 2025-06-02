@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:43:05+00:00",
+  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
+  "translation_date": "2025-06-02T12:38:16+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "he"
 }
 -->
-# MCP OAuth2 דמו
+# MCP OAuth2 Demo
 
-הפרויקט הזה הוא **יישום מינימלי של Spring Boot** שמשמש גם כ:
+הפרויקט הזה הוא **יישום Spring Boot מינימלי** שפועל גם בתור:
 
-* **שרת הרשאות של Spring** (המנפיק JWT access tokens באמצעות הזרימה של `client_credentials`), וגם  
-* **שרת משאבים** (מגן על נקודת הקצה של `/hello` שלו).
+* **שרת הרשאות Spring** (מנפיק אסימוני JWT דרך הזרימה של `client_credentials`), וגם  
+* **שרת משאבים** (מגן על נקודת הקצה שלו `/hello`).
 
-הוא משקף את ההגדרה המוצגת בפוסט בבלוג של [Spring (2 אפריל 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+זה משקף את ההגדרה שמוצגת ב-[פוסט הבלוג של Spring (2 באפריל 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
-## התחלה מהירה (מקומי)
+## התחלה מהירה (מקומית)
 
 ```bash
 # build & run
@@ -36,7 +36,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## בדיקת תצורת OAuth2
 
-ניתן לבדוק את תצורת האבטחה של OAuth2 באמצעות השלבים הבאים:
+ניתן לבדוק את תצורת האבטחה של OAuth2 עם השלבים הבאים:
 
 ### 1. ודא שהשרת פועל ומאובטח
 
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-הערה: הכותרת של Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+[!NOTE] הכותרת Basic Authentication היא (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
 ### 3. גש לנקודת הקצה המוגנת באמצעות האסימון
 
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-תגובה מוצלחת עם "Hello from MCP OAuth2 Demo!" מאשרת שהתצורה של OAuth2 עובדת כראוי.
+תגובה מוצלחת עם "Hello from MCP OAuth2 Demo!" מאשרת שהתצורה של OAuth2 פועלת כראוי.
 
 ---
 
-## בניית מיכל
+## בניית מכולה
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-ה-FQDN של הכניסה הופך ל**issuer** שלך (`https://<fqdn>`).  
+ה-FQDN של ה-ingress הופך ל**issuer** שלך (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
 ## חיבור ל-**Azure API Management**
 
-הוסף מדיניות נכנסת זו ל-API שלך:
+הוסף את מדיניות ה-inbound הזו ל-API שלך:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM יבצע אחזור של JWKS ויאמת כל בקשה.
+APIM ימשוך את ה-JWKS ויוודא כל בקשה.
+
+---
+
+## מה הלאה
+
+- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, אנא היו מודעים לכך שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור הסמכותי. למידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי בני אדם. אנו לא נושאים באחריות לכל אי הבנות או פירושים שגויים הנובעים משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו הוא המקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי אדם. אנו לא אחראים לכל אי-הבנה או פרשנות שגויה הנובעים מהשימוש בתרגום זה.

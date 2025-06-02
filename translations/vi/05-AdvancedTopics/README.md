@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:20:55+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:39:09+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "vi"
 }
@@ -11,36 +11,43 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Tổng Quan
 
-Bài học này khám phá các khái niệm nâng cao trong việc triển khai Giao Thức Ngữ Cảnh Mô Hình, tập trung vào tích hợp đa phương thức, khả năng mở rộng, các thực hành bảo mật tốt nhất, và tích hợp doanh nghiệp. Những chủ đề này rất cần thiết để xây dựng các ứng dụng MCP chất lượng sản xuất có thể xử lý các yêu cầu phức tạp trong môi trường doanh nghiệp.
+Bài học này khám phá các khái niệm nâng cao trong việc triển khai Model Context Protocol, tập trung vào tích hợp đa phương thức, khả năng mở rộng, các thực hành bảo mật tốt nhất và tích hợp doanh nghiệp. Những chủ đề này rất quan trọng để xây dựng các ứng dụng MCP đạt chuẩn sản xuất, có thể xử lý các yêu cầu phức tạp trong môi trường doanh nghiệp.
 
 ## Mục Tiêu Học Tập
 
-Sau khi hoàn thành bài học này, bạn sẽ có thể:
-- Triển khai khả năng đa phương thức trong các khung MCP
+Sau bài học này, bạn sẽ có khả năng:
+- Triển khai các tính năng đa phương thức trong các framework MCP
 - Thiết kế kiến trúc MCP có khả năng mở rộng cho các tình huống yêu cầu cao
-- Áp dụng các thực hành bảo mật tốt nhất phù hợp với nguyên tắc bảo mật của MCP
-- Tích hợp MCP với các hệ thống và khung AI doanh nghiệp
-- Tối ưu hóa hiệu suất và độ tin cậy trong môi trường sản xuất
+- Áp dụng các thực hành bảo mật phù hợp với các nguyên tắc bảo mật của MCP
+- Tích hợp MCP với các hệ thống và framework AI doanh nghiệp
+- Tối ưu hiệu năng và độ tin cậy trong môi trường sản xuất
 
-## Tài Liệu Tham Khảo Bổ Sung
+## Dự Án Mẫu
 
-Để có thông tin cập nhật nhất về các chủ đề MCP nâng cao, tham khảo:
-- [Tài Liệu MCP](https://modelcontextprotocol.io/)
-- [Đặc Tả MCP](https://spec.modelcontextprotocol.io/)
-- [Kho Lưu Trữ GitHub](https://github.com/modelcontextprotocol)
+| Link | Tiêu Đề | Mô Tả |
+|------|---------|-------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Ứng dụng Spring Boot đơn giản minh họa OAuth2 với MCP, vừa làm Authorization Server lẫn Resource Server. Thể hiện phát hành token an toàn, các endpoint được bảo vệ, triển khai trên Azure Container Apps, và tích hợp API Management. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web Search MCP | Máy chủ và client MCP bằng Python tích hợp với SerpAPI cho tìm kiếm web, tin tức, sản phẩm và hỏi đáp theo thời gian thực. Minh họa phối hợp nhiều công cụ, tích hợp API bên ngoài và xử lý lỗi mạnh mẽ. |
+
+## Tham Khảo Thêm
+
+Để cập nhật thông tin mới nhất về các chủ đề nâng cao MCP, tham khảo:
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## Tích Hợp Đa Phương Thức
 
-MCP hỗ trợ không chỉ các tương tác dựa trên văn bản mà còn khả năng đa phương thức, cho phép các mô hình làm việc với hình ảnh, âm thanh, và các loại dữ liệu khác.
+MCP không chỉ hỗ trợ tương tác dựa trên văn bản mà còn có khả năng đa phương thức, cho phép mô hình làm việc với hình ảnh, âm thanh và các loại dữ liệu khác.
 
 ### Kiến Trúc Hỗ Trợ Đa Phương Thức
 
 Các triển khai MCP đa phương thức thường bao gồm:
 
-1. **Bộ Phân Tích Cụ Thể Theo Phương Thức**: Các thành phần chuyển đổi các loại phương tiện khác nhau thành các định dạng mà mô hình có thể xử lý
-2. **Công Cụ Cụ Thể Theo Phương Thức**: Các công cụ đặc biệt được thiết kế để xử lý các phương thức cụ thể (phân tích hình ảnh, xử lý âm thanh)
-3. **Quản Lý Ngữ Cảnh Thống Nhất**: Hệ thống để duy trì ngữ cảnh trên các phương thức khác nhau
-4. **Tạo Phản Hồi**: Khả năng tạo ra các phản hồi có thể bao gồm nhiều phương thức
+1. **Bộ Phân Tích Riêng Cho Modal**: Các thành phần chuyển đổi các loại phương tiện khác nhau thành định dạng mà mô hình có thể xử lý
+2. **Công Cụ Riêng Cho Modal**: Công cụ đặc biệt thiết kế để xử lý các phương thức cụ thể (phân tích hình ảnh, xử lý âm thanh)
+3. **Quản Lý Ngữ Cảnh Thống Nhất**: Hệ thống duy trì ngữ cảnh xuyên suốt các phương thức khác nhau
+4. **Tạo Phản Hồi**: Khả năng tạo ra phản hồi có thể bao gồm nhiều phương thức
 
 ### Ví Dụ C# Đa Phương Thức: Phân Tích Hình Ảnh
 
@@ -450,27 +457,27 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## Ngữ Cảnh Gốc trong MCP
+## Root Contexts trong MCP
 
-Ngữ cảnh gốc là một khái niệm cơ bản trong Giao Thức Ngữ Cảnh Mô Hình, cung cấp một lớp lưu trữ liên tục để duy trì lịch sử hội thoại và trạng thái chia sẻ trên nhiều yêu cầu và phiên.
+Root contexts là khái niệm cơ bản trong Model Context Protocol, cung cấp lớp lưu trữ bền vững để duy trì lịch sử hội thoại và trạng thái chia sẻ qua nhiều yêu cầu và phiên làm việc.
 
-### Hiểu Ngữ Cảnh Gốc
+### Hiểu Về Root Contexts
 
-Ngữ cảnh gốc đóng vai trò như các thùng chứa giữ lịch sử và trạng thái cho một loạt các tương tác liên quan. Chúng cho phép:
+Root contexts đóng vai trò như các container giữ lịch sử và trạng thái cho một chuỗi các tương tác liên quan. Chúng cho phép:
 
-- **Duy Trì Hội Thoại**: Duy trì các hội thoại nhiều lượt nhất quán
+- **Duy Trì Hội Thoại**: Giữ cho các cuộc trò chuyện đa lượt diễn ra mạch lạc
 - **Quản Lý Bộ Nhớ**: Lưu trữ và truy xuất thông tin qua các tương tác
-- **Quản Lý Trạng Thái**: Theo dõi tiến trình trong các quy trình làm việc phức tạp
-- **Chia Sẻ Ngữ Cảnh**: Cho phép nhiều khách hàng truy cập cùng một trạng thái hội thoại
+- **Quản Lý Trạng Thái**: Theo dõi tiến trình trong các quy trình phức tạp
+- **Chia Sẻ Ngữ Cảnh**: Cho phép nhiều client truy cập cùng trạng thái hội thoại
 
-Trong MCP, ngữ cảnh gốc có các đặc điểm chính sau:
+Trong MCP, root contexts có các đặc điểm chính:
 
-- Mỗi ngữ cảnh gốc có một định danh duy nhất
-- Chúng có thể chứa lịch sử hội thoại, sở thích người dùng, và các siêu dữ liệu khác
-- Chúng có thể được tạo, truy cập, và lưu trữ khi cần
-- Chúng hỗ trợ kiểm soát truy cập và quyền hạn chi tiết
+- Mỗi root context có một định danh duy nhất
+- Có thể chứa lịch sử hội thoại, sở thích người dùng và các metadata khác
+- Có thể được tạo, truy cập và lưu trữ khi cần
+- Hỗ trợ kiểm soát truy cập chi tiết và quyền hạn
 
-### Vòng Đời Ngữ Cảnh Gốc
+### Vòng Đời Root Context
 
 ```mermaid
 flowchart TD
@@ -481,7 +488,7 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### Ví Dụ .NET: Làm Việc Với Ngữ Cảnh Gốc
+### Ví Dụ .NET: Làm Việc Với Root Contexts
 
 ```csharp
 // .NET Example: Root Context Management
@@ -556,7 +563,7 @@ public class RootContextExample
 }
 ```
 
-### Ví Dụ Java: Triển Khai Ngữ Cảnh Gốc
+### Ví Dụ Java: Triển Khai Root Context
 
 ```java
 // Java Example: Root Context Implementation
@@ -642,7 +649,7 @@ public class RootContextsDemo {
 }
 ```
 
-### Ví Dụ JavaScript: Quản Lý Ngữ Cảnh Gốc
+### Ví Dụ JavaScript: Quản Lý Root Context
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Ví Dụ Python: Ngữ Cảnh Gốc Cho Hỗ Trợ Nhiều Lượt
+### Ví Dụ Python: Root Context Cho Hỗ Trợ Đa Lượt
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1009,34 +1016,34 @@ if __name__ == "__main__":
     asyncio.run(demo_assistant_session())
 ```
 
-### Các Thực Hành Tốt Nhất Về Ngữ Cảnh Gốc
+### Thực Hành Tốt Nhất Với Root Context
 
-1. **Tạo Ngữ Cảnh Tập Trung**: Tạo các ngữ cảnh gốc riêng biệt cho các mục đích hội thoại hoặc lĩnh vực khác nhau để duy trì sự rõ ràng.
+1. **Tạo Các Context Tập Trung**: Tạo các root context riêng biệt cho từng mục đích hoặc lĩnh vực hội thoại để giữ sự rõ ràng.
 
-2. **Đặt Chính Sách Hết Hạn**: Thực hiện các chính sách để lưu trữ hoặc xóa các ngữ cảnh cũ để quản lý lưu trữ và tuân thủ chính sách lưu giữ dữ liệu.
+2. **Đặt Chính Sách Hết Hạn**: Áp dụng chính sách lưu trữ hoặc xóa các context cũ để quản lý dung lượng và tuân thủ quy định bảo lưu dữ liệu.
 
-3. **Lưu Trữ Siêu Dữ Liệu Liên Quan**: Sử dụng siêu dữ liệu ngữ cảnh để lưu trữ thông tin quan trọng về cuộc hội thoại có thể hữu ích sau này.
+3. **Lưu Metadata Liên Quan**: Dùng metadata của context để lưu thông tin quan trọng về hội thoại có thể cần dùng sau này.
 
-4. **Sử Dụng Định Danh Ngữ Cảnh Một Cách Nhất Quán**: Khi một ngữ cảnh được tạo, sử dụng định danh của nó một cách nhất quán cho tất cả các yêu cầu liên quan để duy trì tính liên tục.
+4. **Sử Dụng ID Context Nhất Quán**: Khi đã tạo context, sử dụng ID của nó một cách nhất quán cho tất cả các yêu cầu liên quan để duy trì sự liên tục.
 
-5. **Tạo Tóm Tắt**: Khi một ngữ cảnh trở nên lớn, hãy xem xét việc tạo ra các tóm tắt để nắm bắt thông tin quan trọng trong khi quản lý kích thước ngữ cảnh.
+5. **Tạo Bản Tóm Tắt**: Khi context trở nên lớn, cân nhắc tạo bản tóm tắt để nắm bắt thông tin thiết yếu đồng thời quản lý kích thước context.
 
-6. **Thực Hiện Kiểm Soát Truy Cập**: Đối với các hệ thống nhiều người dùng, thực hiện các kiểm soát truy cập thích hợp để đảm bảo quyền riêng tư và bảo mật của các ngữ cảnh hội thoại.
+6. **Triển Khai Kiểm Soát Truy Cập**: Với hệ thống đa người dùng, thực hiện kiểm soát truy cập phù hợp để đảm bảo riêng tư và an toàn cho các context hội thoại.
 
-7. **Xử Lý Giới Hạn Ngữ Cảnh**: Nhận thức về giới hạn kích thước ngữ cảnh và thực hiện các chiến lược để xử lý các cuộc hội thoại rất dài.
+7. **Xử Lý Giới Hạn Context**: Nhận biết giới hạn kích thước context và áp dụng chiến lược xử lý cho các hội thoại dài.
 
-8. **Lưu Trữ Khi Hoàn Thành**: Lưu trữ các ngữ cảnh khi các cuộc hội thoại hoàn thành để giải phóng tài nguyên trong khi vẫn bảo tồn lịch sử hội thoại.
+8. **Lưu Trữ Khi Hoàn Thành**: Lưu trữ các context khi hội thoại kết thúc để giải phóng tài nguyên đồng thời giữ lại lịch sử hội thoại.
 
-## Lấy Mẫu trong Giao Thức Ngữ Cảnh Mô Hình
+## Sampling trong Model Context Protocol
 
-Các chiến lược lấy mẫu rất quan trọng để tối ưu hóa phản hồi của mô hình trong các triển khai MCP. Cấu hình lấy mẫu đúng có thể cải thiện đáng kể chất lượng và hiệu suất phản hồi. MCP cung cấp một cách tiêu chuẩn hóa để kiểm soát cách các mô hình tạo văn bản với các tham số cụ thể ảnh hưởng đến tính ngẫu nhiên, sáng tạo, và tính mạch lạc.
+Chiến lược sampling rất quan trọng để tối ưu phản hồi mô hình trong các triển khai MCP. Cấu hình sampling phù hợp có thể cải thiện đáng kể chất lượng và hiệu năng phản hồi. MCP cung cấp cách chuẩn hóa để điều khiển cách mô hình sinh văn bản với các tham số cụ thể ảnh hưởng đến độ ngẫu nhiên, sáng tạo và tính mạch lạc.
 
-### Tổng Quan Về Tham Số Lấy Mẫu
+### Tổng Quan Các Tham Số Sampling
 
-MCP định nghĩa các tham số lấy mẫu sau có thể được cấu hình trong các yêu cầu của khách hàng:
+MCP định nghĩa các tham số sampling sau có thể được cấu hình trong yêu cầu client:
 
 | Tham Số | Mô Tả | Phạm Vi Thông Thường |
-|---------|-------|---------------------|
+|---------|--------|---------------------|
 | `temperature` | Controls randomness in token selection | 0.0 - 2.0 |
 | `top_p` | Nucleus sampling - limits tokens to top cumulative probability | 0.0 - 1.0 |
 | `top_k` | Limits token selection to top K options | 1 - 100 |
@@ -1044,11 +1051,11 @@ MCP định nghĩa các tham số lấy mẫu sau có thể được cấu hình
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | Các chuỗi tùy chỉnh dừng tạo khi gặp phải | Mảng chuỗi |
+| `stop_sequences` | Các chuỗi tùy chỉnh dừng sinh văn bản khi gặp | Mảng chuỗi |
 
-### Lấy Mẫu Nhiệt Độ và Top-K/Top-P
+### Temperature và Top-K/Top-P Sampling
 
-Các tham số lấy mẫu cho phép tinh chỉnh hành vi của các mô hình ngôn ngữ để đạt được sự cân bằng mong muốn giữa đầu ra xác định và sáng tạo.
+Các tham số sampling cho phép điều chỉnh hành vi của mô hình ngôn ngữ để đạt được sự cân bằng mong muốn giữa đầu ra có tính quyết định và sáng tạo.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1142,9 +1149,9 @@ async function demonstrateSampling() {
 demonstrateSampling();
 ```
 
-### Lấy Mẫu Xác Định
+### Sampling Quyết Định
 
-Đối với các ứng dụng yêu cầu đầu ra nhất quán, lấy mẫu xác định đảm bảo kết quả có thể tái tạo.
+Đối với các ứng dụng cần đầu ra nhất quán, sampling quyết định đảm bảo kết quả có thể tái tạo.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1228,9 +1235,9 @@ async function deterministicSampling() {
 deterministicSampling();
 ```
 
-### Cấu Hình Lấy Mẫu Động
+### Cấu Hình Sampling Động
 
-Lấy mẫu thông minh điều chỉnh các tham số dựa trên ngữ cảnh và yêu cầu của từng yêu cầu.
+Sampling thông minh điều chỉnh tham số dựa trên ngữ cảnh và yêu cầu của từng yêu cầu.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1469,13 +1476,13 @@ async function demonstrateAdaptiveSampling() {
 demonstrateAdaptiveSampling();
 ```
 
-## Điều Hướng trong Giao Thức Ngữ Cảnh Mô Hình
+## Routing trong Model Context Protocol
 
-Điều hướng rất quan trọng để chỉ đạo các yêu cầu đến các mô hình, công cụ, hoặc dịch vụ phù hợp trong một hệ sinh thái MCP.
+Routing rất quan trọng để điều hướng yêu cầu đến các mô hình, công cụ hoặc dịch vụ phù hợp trong hệ sinh thái MCP.
 
-### Điều Hướng Dựa Trên Nội Dung
+### Routing Dựa Trên Nội Dung
 
-Điều hướng dựa trên nội dung chỉ đạo các yêu cầu đến các dịch vụ chuyên biệt dựa trên nội dung của yêu cầu.
+Routing dựa trên nội dung chuyển hướng yêu cầu đến các dịch vụ chuyên biệt dựa vào nội dung yêu cầu.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1548,7 +1555,7 @@ public class ContentBasedRouter
 
 ### Cân Bằng Tải Thông Minh
 
-Cân bằng tải tối ưu hóa việc sử dụng tài nguyên và đảm bảo tính sẵn sàng cao cho các dịch vụ MCP.
+Cân bằng tải tối ưu sử dụng tài nguyên và đảm bảo tính sẵn sàng cao cho dịch vụ MCP.
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -1677,9 +1684,9 @@ public class McpLoadBalancer {
 }
 ```
 
-### Điều Hướng Công Cụ Động
+### Routing Công Cụ Động
 
-Điều hướng công cụ đảm bảo rằng các cuộc gọi công cụ được chỉ đạo đến dịch vụ phù hợp nhất dựa trên ngữ cảnh.
+Routing công cụ đảm bảo các cuộc gọi công cụ được chuyển đến dịch vụ thích hợp nhất dựa trên ngữ cảnh.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1790,9 +1797,9 @@ class McpToolRouter:
             raise
 ```
 
-### Kiến Trúc Lấy Mẫu và Điều Hướng trong MCP
+### Kiến Trúc Sampling và Routing trong MCP
 
-Sơ đồ dưới đây minh họa cách lấy mẫu và điều hướng làm việc cùng nhau trong một kiến trúc MCP toàn diện:
+Sơ đồ dưới đây minh họa cách sampling và routing phối hợp trong kiến trúc MCP toàn diện:
 
 ```mermaid
 flowchart TB
@@ -1859,11 +1866,11 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## MCP Khả Năng Mở Rộng và Hiệu Suất Cao
+## Khả Năng Mở Rộng và Hiệu Năng Cao của MCP
 
-Đối với các triển khai doanh nghiệp, các triển khai MCP thường cần xử lý khối lượng yêu cầu lớn với độ trễ tối thiểu.
+Đối với triển khai doanh nghiệp, các giải pháp MCP thường cần xử lý khối lượng lớn yêu cầu với độ trễ thấp nhất.
 
-### Chiến Lược Khả Năng Mở Rộng
+### Chiến Lược Mở Rộng
 
 #### Mở Rộng Ngang
 
@@ -1895,7 +1902,7 @@ public class McpLoadBalancedStartup
 }
 ```
 
-#### Mở Rộng Dọc và Tối Ưu Hóa Tài Nguyên
+#### Mở Rộng Dọc và Tối Ưu Tài Nguyên
 
 ```java
 // Java MCP server with resource optimization
@@ -2011,13 +2018,13 @@ class DistributedMcpServer:
         await self.redis.wait_closed()
 ```
 
-## Các Thực Hành Bảo Mật Tốt Nhất
+## Thực Hành Bảo Mật Tốt Nhất
 
-Bảo mật là rất quan trọng cho các triển khai MCP, đặc biệt trong môi trường doanh nghiệp.
+Bảo mật là yếu tố then chốt cho các triển khai MCP, đặc biệt trong môi trường doanh nghiệp.
 
-### Xác Thực và Ủy Quyền
+### Xác Thực và Phân Quyền
 
-#### Tích Hợp Định Danh .NET
+#### Tích Hợp .NET Identity
 
 ```csharp
 public class SecureMcpStartup
@@ -2088,7 +2095,7 @@ public class SecureMcpStartup
 }
 ```
 
-#### Tích Hợp Bảo Mật Java Spring
+#### Tích Hợp Java Spring Security
 
 ```java
 @Configuration
@@ -2528,32 +2535,34 @@ class EnterpriseAiIntegration:
         return mapping.get(ml_type, "string")
 ```
 
-## Kết Luận Chính
+## Những Điểm Chính Cần Nhớ
 
-- Các triển khai MCP đa phương thức mở rộng khả năng AI vượt ra ngoài xử lý văn bản
-- Khả năng mở rộng là cần thiết cho các triển khai doanh nghiệp và có thể được giải quyết thông qua mở rộng ngang và dọc
-- Các biện pháp bảo mật toàn diện bảo vệ dữ liệu và đảm bảo kiểm soát truy cập đúng đắn
-- Tích hợp doanh nghiệp với các nền tảng như Azure OpenAI và Microsoft AI Foundry nâng cao khả năng MCP
-- Các triển khai MCP nâng cao được hưởng lợi từ các kiến trúc tối ưu hóa và quản lý tài nguyên cẩn thận
+- Triển khai MCP đa phương thức mở rộng khả năng AI vượt ra ngoài xử lý văn bản
+- Khả năng mở rộng là thiết yếu cho các triển khai doanh nghiệp và có thể giải quyết qua mở rộng ngang và dọc
+- Các biện pháp bảo mật toàn diện bảo vệ dữ liệu và đảm bảo kiểm soát truy cập đúng cách
+- Tích hợp doanh nghiệp với các nền tảng như Azure OpenAI và Microsoft AI Foundry nâng cao năng lực MCP
+- Các triển khai MCP nâng cao hưởng lợi từ kiến trúc tối ưu và quản lý tài nguyên cẩn thận
 
 ## Bài Tập
 
-Thiết kế một triển khai MCP cấp doanh nghiệp cho một trường hợp sử dụng cụ thể:
+Thiết kế một triển khai MCP chuẩn doanh nghiệp cho một trường hợp sử dụng cụ thể:
 
-1. Xác định các yêu cầu đa phương thức cho trường hợp sử dụng của bạn
-2. Phác thảo các kiểm soát bảo mật cần thiết để bảo vệ dữ liệu nhạy cảm
-3. Thiết kế một kiến trúc có khả năng mở rộng có thể xử lý tải thay đổi
-4. Lên kế hoạch các điểm tích hợp với các hệ thống AI doanh nghiệp
-5. Tài liệu các nút thắt hiệu suất tiềm năng và chiến lược giảm thiểu
+1. Xác định các yêu cầu đa phương thức cho trường hợp của bạn
+2. Phác thảo các biện pháp kiểm soát bảo mật cần thiết để bảo vệ dữ liệu nhạy cảm
+3. Thiết kế kiến trúc có khả năng mở rộng để xử lý tải biến đổi
+4. Lập kế hoạch các điểm tích hợp với hệ thống AI doanh nghiệp
+5. Ghi lại các nút thắt hiệu năng tiềm năng và chiến lược giảm thiểu
 
-## Tài Nguyên Bổ Sung
+## Tài Nguyên Thêm
 
-- [Tài Liệu Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Tài Liệu Microsoft AI Foundry](https://learn.microsoft.com/en-us/ai-services/)
+- [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
-Tiếp theo: [Cộng Đồng và Đóng Góp](../06-CommunityContributions/README.md)
+## Tiếp Theo
 
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn tài liệu chính thức. Đối với thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp của con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
+
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc sai sót. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn chính xác và có thẩm quyền. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp của con người. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

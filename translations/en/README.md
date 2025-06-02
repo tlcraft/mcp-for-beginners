@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20240296dc2c4f9fb20fb56b5af6841f",
-  "translation_date": "2025-05-23T06:28:06+00:00",
+  "original_hash": "677cecb63a0bf6c0f49e40ffc15f6189",
+  "translation_date": "2025-06-02T11:48:26+00:00",
   "source_file": "README.md",
   "language_code": "en"
 }
@@ -25,12 +25,12 @@ CO_OP_TRANSLATOR_METADATA:
 Follow these steps to get started using these resources:
 1. **Fork the Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Clone the Repository**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Join The Azure AI Foundry Discord and connect with experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Join The Azure AI Foundry Discord to connect with experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Multi-Language Support
 
-#### Supported through GitHub Action (Automated & Always Up-to-Date)
+#### Supported via GitHub Action (Automated & Always Up-to-Date)
 [French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Portuguese (Brazil)](../br/README.md) | [Italian](../it/README.md) | [Polish](../pl/README.md) | [Turkish](../tr/README.md) | [Greek](../el/README.md) | [Thai](../th/README.md) | [Swedish](../sv/README.md) | [Danish](../da/README.md) | [Norwegian](../no/README.md) | [Finnish](../fi/README.md) | [Dutch](../nl/README.md) | [Hebrew](../he/README.md) | [Vietnamese](../vi/README.md) | [Indonesian](../id/README.md) | [Malay](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungarian](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romanian](../ro/README.md) | [Bulgarian](../bg/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Croatian](../hr/README.md) | [Slovenian](../sl/README.md)
 # 🚀 Model Context Protocol (MCP) Curriculum for Beginners
 
@@ -38,9 +38,9 @@ Follow these steps to get started using these resources:
 
 ## 🧠 Overview of the Model Context Protocol Curriculum
 
-The **Model Context Protocol (MCP)** is a state-of-the-art framework designed to standardize the interaction between AI models and client applications. This open-source curriculum provides a structured learning path, complete with practical coding examples and real-world scenarios, across popular programming languages including C#, Java, JavaScript, TypeScript, and Python.
+The **Model Context Protocol (MCP)** is an innovative framework designed to standardize communication between AI models and client applications. This open-source curriculum provides a clear learning path with practical coding examples and real-world use cases, covering popular programming languages such as C#, Java, JavaScript, TypeScript, and Python.
 
-Whether you are an AI developer, system architect, or software engineer, this guide is your all-in-one resource for mastering the fundamentals of MCP and how to implement it.
+Whether you're an AI developer, system architect, or software engineer, this guide serves as your complete resource for mastering MCP basics and implementation techniques.
 
 ## 🔗 Official MCP Resources
 
@@ -52,24 +52,26 @@ Whether you are an AI developer, system architect, or software engineer, this gu
 
 | Ch | Title | Description | Link |
 |--|--|--|--|
-| 00 | **Introduction to MCP** | Overview of the Model Context Protocol and its importance in AI pipelines, including what MCP is, why standardization is crucial, and practical use cases and benefits | [Introduction](./00-Introduction/README.md) |
-| 01 | **Core Concepts Explained** | Deep dive into the core concepts of MCP, covering client-server architecture, key protocol components, and messaging patterns | [Core Concepts](./01-CoreConcepts/README.md) |
-| 02 | **Security in MCP** | Identifying security risks in MCP-based systems, along with techniques and best practices for securing implementations | [Security](/02-Security/README.md) |
-| 03 | **Getting Started with MCP** | Setting up the environment and configuration, creating basic MCP servers and clients, and integrating MCP into existing applications | [Getting Started](./03-GettingStarted/README.md) |
+| 00 | **Introduction to MCP** | Overview of the Model Context Protocol and its role in AI pipelines, including what MCP is, why standardization is important, and practical use cases and benefits | [Introduction](./00-Introduction/README.md) |
+| 01 | **Core Concepts Explained** | Detailed explanation of MCP’s core concepts, including client-server architecture, main protocol components, and messaging patterns | [Core Concepts](./01-CoreConcepts/README.md) |
+| 02 | **Security in MCP** | Identifying security risks in MCP-based systems, along with techniques and best practices for secure implementations | [Security](/02-Security/README.md) |
+| 03 | **Getting Started with MCP** | Setting up your environment, creating basic MCP servers and clients, and integrating MCP with existing applications | [Getting Started](./03-GettingStarted/README.md) |
 | 3.1 | **First server** | Setting up a basic server using the MCP protocol, understanding server-client interaction, and testing the server | [First Server](./03-GettingStarted/01-first-server/README.md) |
 | 3.2 | **First client**  | Setting up a basic client using the MCP protocol, understanding client-server interaction, and testing the client | [First Client](./03-GettingStarted/02-client/README.md) |
 | 3.3 | **Client with LLM**  | Setting up a client using the MCP protocol with a Large Language Model (LLM) | [Client with LLM](./03-GettingStarted/03-llm-client/README.md) |
-| 3.4 | **Consuming a server with Visual Studio Code** | Configuring Visual Studio Code to connect to servers using the MCP protocol | [Consuming a server with Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
-| 3.5 | **Creating a server using SSE** | SSE allows us to expose a server to the internet. This section guides you through creating a server using SSE | [Creating a server using SSE](./03-GettingStarted/05-sse-server/README.md) |
-| 3.6 | **Use AI Toolkit** | The AI Toolkit is a powerful tool to help you manage your AI and MCP workflows | [Use AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
-| 3.7 | **Testing your server** | Testing is a vital part of development. This section walks you through using several different tools for testing | [Testing your server](./03-GettingStarted/07-testing/README.md) |
-| 3.8 | **Deploy your server** | How to move from local development to production. This section helps you develop and deploy your server | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
-| 04 | **Practical Implementation** | Using SDKs across various languages, debugging, testing, and validation, creating reusable prompt templates and workflows | [Practical Implementation](./04-PracticalImplementation/README.md) |
-| 05 | **Advanced Topics in MCP** | Multi-modal AI workflows and extensibility, secure scaling strategies, MCP in enterprise ecosystems | [Advanced Topics](./05-AdvancedTopics/README.md) |
-| 06 | **Community Contributions** | How to contribute code and documentation, collaborating on GitHub, community-driven improvements and feedback | [Community Contributions](./06-CommunityContributions/README.md) |
-| 07 | **Insights from Early Adoption** | Real-world implementations and lessons learned, building and deploying MCP-based solutions, trends and future roadmap | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
-| 08 | **Best Practices for MCP** | Performance tuning and optimization, designing fault-tolerant MCP systems, testing and resilience strategies | [Best Practices](./08-BestPractices/README.md) |
-| 09 | **MCP Case Studies** | In-depth looks at MCP solution architectures, deployment blueprints and integration tips, annotated diagrams and project walkthroughs | [Case Studies](./09-CaseStudy/README.md) |
+| 3.4 | **Consuming a server with Visual Studio Code** | Configuring Visual Studio Code to interact with servers using the MCP protocol | [Consuming a server with Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
+| 3.5 | **Creating a server using SSE** | SSE allows exposing a server to the internet. This section guides you through creating a server using SSE | [Creating a server using SSE](./03-GettingStarted/05-sse-server/README.md) |
+| 3.6 | **Use AI Toolkit** | The AI Toolkit is a powerful tool to help you manage your AI and MCP workflows. | [Use AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
+| 3.7 | **Testing your server** | Testing is a crucial part of development. This section shows you how to test using various tools. | [Testing your server](./03-GettingStarted/07-testing/README.md) |
+| 3.8 | **Deploy your server** | How to move from local development to production. This section guides you through developing and deploying your server. | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
+| 04 | **Practical Implementation** | Using SDKs in different languages, debugging, testing, validation, and creating reusable prompt templates and workflows | [Practical Implementation](./04-PracticalImplementation/README.md) |
+| 05 | **Advanced Topics in MCP** | Multi-modal AI workflows and extensibility, secure scaling strategies, and MCP in enterprise environments | [Advanced Topics](./05-AdvancedTopics/README.md) |
+| 5.1 | **MCP OAuth2 Demo** | Implementing OAuth2 authentication with MCP servers, including access token validation, scope-based authorization, and securing API endpoints | [MCP OAuth2 Demo](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
+| 5.2 | **Web Search with MCP** | Implementing web search features using the Model Context Protocol, including query processing, result handling, and integrating with search APIs | [Web Search MCP](./05-AdvancedTopics/web-search-mcp/README.md) |
+| 06 | **Community Contributions** | How to contribute code and documentation, collaborate via GitHub, and participate in community-driven improvements and feedback | [Community Contributions](./06-CommunityContributions/README.md) |
+| 07 | **Insights from Early Adoption** | Real-world implementations and lessons learned, building and deploying MCP-based solutions, trends, and future roadmap | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
+| 08 | **Best Practices for MCP** | Performance tuning and optimization, designing fault-tolerant MCP systems, and strategies for testing and resilience | [Best Practices](./08-BestPractices/README.md) |
+| 09 | **MCP Case Studies** | In-depth looks at MCP solution architectures, deployment blueprints, integration tips, annotated diagrams, and project walkthroughs | [Case Studies](./09-CaseStudy/README.md) |
 
 ## Sample Projects
 
@@ -91,9 +93,9 @@ Whether you are an AI developer, system architect, or software engineer, this gu
 
   - [Advanced C# Sample](./04-PracticalImplementation/samples/csharp/README.md)
   - [Java Container App Example](./04-PracticalImplementation/samples/java/containerapp/README.md)
-  - [JavaScript Advanced Sample](./04-PracticalImplementation/samples/javascript/README.md)
+- [JavaScript Advanced Sample](./04-PracticalImplementation/samples/javascript/README.md)
   - [Python Complex Implementation](../../04-PracticalImplementation/samples/python/mcp_sample.py)
-- [TypeScript Container Sample](./04-PracticalImplementation/samples/typescript/README.md)
+  - [TypeScript Container Sample](./04-PracticalImplementation/samples/typescript/README.md)
 
 </details>
 
@@ -134,7 +136,7 @@ For more information see the [Code of Conduct FAQ](https://opensource.microsoft.
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## 🎒 Other Courses
-Our team produces other courses! Check out:
+Our team offers other courses! Take a look:
 
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
@@ -154,11 +156,11 @@ Our team produces other courses! Check out:
 
 ## ™️ Trademark Notice
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
-trademarks or logos is subject to and must follow
+This project may include trademarks or logos related to projects, products, or services. Authorized use of Microsoft
+trademarks or logos must comply with
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos is subject to those third-parties' policies.
+Using Microsoft trademarks or logos in modified versions of this project must not cause confusion or suggest Microsoft sponsorship.
+Any use of third-party trademarks or logos is governed by those third parties' policies.
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

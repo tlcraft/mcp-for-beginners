@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-16T14:28:50+00:00",
+  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
+  "translation_date": "2025-06-02T12:07:57+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "ja"
 }
 -->
 # MCP OAuth2 デモ
 
-このプロジェクトは、**最小限の Spring Boot アプリケーション**であり、以下の両方の役割を果たします：
+このプロジェクトは、**最小限の Spring Boot アプリケーション**で、以下の両方の役割を果たします：
 
-* **Spring Authorization Server**（`client_credentials` フローを使って JWT アクセストークンを発行）  
-* **Resource Server**（自身の `/hello` エンドポイントを保護）
+* **Spring Authorization Server**（`client_credentials` フローを使って JWT アクセストークンを発行）、および  
+* **Resource Server**（自身の `/hello` エンドポイントを保護）。
 
-これは、[Spring ブログ記事（2025年4月2日）](https://spring.io/blog/2025/04/02/mcp-server-oauth2)で紹介されている構成を再現しています。
+[Spring ブログ記事 (2025年4月2日)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) で紹介されている構成を踏襲しています。
 
 ---
 
@@ -38,14 +38,14 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 以下の手順で OAuth2 セキュリティ設定をテストできます：
 
-### 1. サーバーが起動していて保護されていることを確認する
+### 1. サーバーが起動してセキュアになっていることを確認
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. クライアントクレデンシャルを使ってアクセストークンを取得する
+### 2. クライアント認証情報を使ってアクセストークンを取得
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-補足：Basic認証ヘッダーは `bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret` です。
+注意：Basic 認証ヘッダーは (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret` です。
 
-### 3. トークンを使って保護されたエンドポイントにアクセスする
+### 3. トークンを使って保護されたエンドポイントにアクセス
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-"Hello from MCP OAuth2 Demo!" のレスポンスが返ってくれば、OAuth2 設定が正しく動作していることを示します。
+"Hello from MCP OAuth2 Demo!" のレスポンスが返ってくれば、OAuth2 設定が正しく動作していることが確認できます。
 
 ---
 
@@ -100,7 +100,7 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 ---
 
-## **Azure API Management** への連携
+## **Azure API Management** との連携
 
 API に以下のインバウンドポリシーを追加してください：
 
@@ -118,5 +118,11 @@ API に以下のインバウンドポリシーを追加してください：
 
 APIM は JWKS を取得し、すべてのリクエストを検証します。
 
-**免責事項**:  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご了承ください。原文はあくまで正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じたいかなる誤解や解釈違いについても、一切の責任を負いかねます。
+---
+
+## 次にやること
+
+- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知おきください。原文の言語による文書が権威ある情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨いたします。本翻訳の利用により生じたいかなる誤解や誤訳についても、一切の責任を負いかねます。

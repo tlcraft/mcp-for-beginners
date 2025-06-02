@@ -1,48 +1,55 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:23:16+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:47:08+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "hu"
 }
 -->
-# Fejlett témák az MCP-ben
+# Haladó témakörök az MCP-ben
 
 ## Áttekintés
 
-Ez a lecke az Model Context Protocol megvalósításának fejlett fogalmait tárgyalja, különös tekintettel a multimodális integrációra, skálázhatóságra, biztonsági legjobb gyakorlatokra és vállalati integrációra. Ezek a témák elengedhetetlenek a gyártási szintű MCP alkalmazások építéséhez, amelyek képesek kezelni a komplex követelményeket vállalati környezetben.
+Ez a lecke az MCP (Model Context Protocol) megvalósításának haladóbb fogalmait tárgyalja, különös tekintettel a többmodalitás integrációjára, skálázhatóságra, biztonsági legjobb gyakorlatokra és vállalati integrációra. Ezek a témák elengedhetetlenek ahhoz, hogy vállalati környezetben összetett igényeket kezelő, éles használatra alkalmas MCP alkalmazásokat építsünk.
 
 ## Tanulási célok
 
 A lecke végére képes leszel:
-- Multimodális képességek megvalósítása MCP keretrendszerekben
-- Skálázható MCP architektúrák tervezése magas igényű helyzetekre
-- Biztonsági legjobb gyakorlatok alkalmazása az MCP biztonsági elveivel összhangban
-- MCP integrálása vállalati AI rendszerekkel és keretrendszerekkel
-- Teljesítmény és megbízhatóság optimalizálása gyártási környezetben
+- Többmodalitású képességek megvalósítására MCP keretrendszerekben
+- Skálázható MCP architektúrák tervezésére nagy terhelésű helyzetekre
+- Biztonsági legjobb gyakorlatok alkalmazására az MCP biztonsági elveinek megfelelően
+- MCP integrálására vállalati AI rendszerekkel és keretrendszerekkel
+- Teljesítmény és megbízhatóság optimalizálására éles környezetben
+
+## Minta projektek
+
+| Link | Cím | Leírás |
+|------|-------|-------------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimális Spring Boot alkalmazás, amely bemutatja az OAuth2 használatát MCP-vel, mint Authorization és Resource Server. Biztonságos token kibocsátást, védett végpontokat, Azure Container Apps telepítést és API Management integrációt mutat be. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web Search MCP | Python MCP szerver és kliens, amely integrálja a SerpAPI-t valós idejű webes, hírek, termékkeresés és kérdés-válasz funkciókhoz. Több eszköz koordinációját, külső API integrációt és robosztus hibakezelést demonstrál. |
 
 ## További hivatkozások
 
-A legfrissebb információkért az MCP fejlett témáiról lásd:
+A legfrissebb információkért az MCP haladó témáiról lásd:
 - [MCP Dokumentáció](https://modelcontextprotocol.io/)
 - [MCP Specifikáció](https://spec.modelcontextprotocol.io/)
-- [GitHub Repository](https://github.com/modelcontextprotocol)
+- [GitHub tárhely](https://github.com/modelcontextprotocol)
 
-## Multimodális integráció
+## Többmodalitás integráció
 
-Az MCP nemcsak szövegalapú interakciókat támogat, hanem multimodális képességeket is, lehetővé téve a modellek számára, hogy képekkel, hangokkal és más adatformákkal dolgozzanak.
+Az MCP nem csak szöveges interakciókat támogat, hanem többmodalitású képességeket is, lehetővé téve a modellek számára, hogy képekkel, hanggal és más adat típusokkal is dolgozzanak.
 
-### Architektúra a multimodális támogatáshoz
+### Többmodalitás támogatás architektúrája
 
-A multimodális MCP megvalósítások tipikusan magukban foglalják:
+A többmodalitású MCP megvalósítások általában a következő elemekből állnak:
 
-1. **Modal-Specifikus Parserek**: Olyan komponensek, amelyek különböző médiatípusokat alakítanak át a modell által feldolgozható formátumokká
-2. **Modal-Specifikus Eszközök**: Speciális eszközök, amelyek adott modalitások kezelésére lettek tervezve (képelemzés, hangfeldolgozás)
-3. **Egységes Kontextuskezelés**: Rendszer a kontextus fenntartására különböző modalitások között
-4. **Válaszgenerálás**: Képesség válaszok generálására, amelyek több modalitást is tartalmazhatnak
+1. **Modal-specifikus elemzők**: Olyan komponensek, amelyek különböző médiaformátumokat alakítanak át a modell által feldolgozható formátumokká
+2. **Modal-specifikus eszközök**: Különleges eszközök, amelyek adott modalitásokat kezelnek (képelemzés, hangfeldolgozás)
+3. **Egységes kontextuskezelés**: Rendszer, amely fenntartja a kontextust a különböző modalitások között
+4. **Válaszgenerálás**: Képesség válaszokat generálni, amelyek több modalitást is tartalmazhatnak
 
-### C# Multimodális példa: Képelemzés
+### C# többmodalitás példa: Képelemzés
 
 ```csharp
 using ModelContextProtocol.SDK.Server;
@@ -174,7 +181,7 @@ namespace MultiModalMcpExample
 }
 ```
 
-### Java Multimodális példa: Hangfeldolgozás
+### Java többmodalitás példa: Hangfeldolgozás
 
 ```java
 package com.example.mcp.multimodal;
@@ -302,7 +309,7 @@ public class MultiModalApplication {
 }
 ```
 
-### Python Multimodális példa: Multimodális válaszgenerálás
+### Python többmodalitás példa: Többmodalitású válaszgenerálás
 
 ```python
 from mcp_server import McpServer
@@ -450,27 +457,27 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## MCP Gyökérkontextusok
+## MCP Root Context-ek
 
-A gyökérkontextusok az Model Context Protocol alapvető fogalmai, amelyek állandó réteget biztosítanak a beszélgetési előzmények és a megosztott állapot fenntartására több kérés és munkamenet között.
+A root context-ek alapvető fogalmak az MCP-ben, amelyek egy tartós réteget biztosítanak a beszélgetési előzmények és megosztott állapotok kezelésére több kérés és munkamenet során.
 
-### Gyökérkontextusok megértése
+### A root context-ek megértése
 
-A gyökérkontextusok konténerek, amelyek egy sor kapcsolódó interakció előzményeit és állapotát tartalmazzák. Lehetővé teszik:
+A root context-ek olyan tárolók, amelyek egy sor kapcsolódó interakció előzményeit és állapotát őrzik. Ezek lehetővé teszik:
 
-- **Beszélgetési Tartósság**: Koherens többfordulós beszélgetések fenntartása
-- **Memóriakezelés**: Információ tárolása és visszakeresése interakciók során
-- **Állapotkezelés**: Haladás nyomon követése komplex munkafolyamatokban
-- **Kontextusmegosztás**: Több ügyfél számára lehetővé teszi ugyanazon beszélgetési állapot elérését
+- **Beszélgetés fennmaradása**: Koherens, többfordulós beszélgetések fenntartása
+- **Memóriakezelés**: Információk tárolása és előhívása az interakciók között
+- **Állapotkezelés**: Haladás nyomon követése összetett munkafolyamatokban
+- **Kontextus megosztás**: Több kliens számára ugyanazon beszélgetési állapot elérhetővé tétele
 
-Az MCP-ben a gyökérkontextusoknak ezek a fő jellemzői vannak:
+Az MCP-ben a root context-ek fő jellemzői:
 
-- Minden gyökérkontextusnak egyedi azonosítója van
-- Tartalmazhatnak beszélgetési előzményeket, felhasználói preferenciákat és egyéb metaadatokat
-- Létrehozhatók, elérhetők és archiválhatók, ahogy szükséges
-- Finomhangolt hozzáférés-ellenőrzést és jogosultságokat támogatnak
+- Minden root context egyedi azonosítóval rendelkezik
+- Tartalmazhat beszélgetési előzményeket, felhasználói beállításokat és egyéb metaadatokat
+- Létrehozhatók, elérhetők és archiválhatók igény szerint
+- Finomhangolt hozzáférés-vezérlést és jogosultságokat támogatnak
 
-### Gyökérkontextus életciklus
+### Root context életciklus
 
 ```mermaid
 flowchart TD
@@ -481,7 +488,7 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### .NET Példa: Gyökérkontextusokkal való munka
+### .NET példa: Root context-ek kezelése
 
 ```csharp
 // .NET Example: Root Context Management
@@ -556,7 +563,7 @@ public class RootContextExample
 }
 ```
 
-### Java Példa: Gyökérkontextus megvalósítás
+### Java példa: Root context megvalósítás
 
 ```java
 // Java Example: Root Context Implementation
@@ -642,7 +649,7 @@ public class RootContextsDemo {
 }
 ```
 
-### JavaScript Példa: Gyökérkontextus kezelés
+### JavaScript példa: Root context kezelés
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Python Példa: Gyökérkontextus többfordulós segítségnyújtáshoz
+### Python példa: Root context többfordulós segítséghez
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1009,33 +1016,33 @@ if __name__ == "__main__":
     asyncio.run(demo_assistant_session())
 ```
 
-### Gyökérkontextus legjobb gyakorlatok
+### Root context legjobb gyakorlatok
 
-1. **Fókuszált kontextusok létrehozása**: Hozz létre külön gyökérkontextusokat különböző beszélgetési célokra vagy területekre a tisztaság fenntartása érdekében.
+1. **Fókuszált context-ek létrehozása**: Külön root context-ek létrehozása különböző beszélgetési célokra vagy területekre az átláthatóság érdekében.
 
-2. **Lejárati szabályok beállítása**: Alkalmazz szabályokat a régi kontextusok archiválására vagy törlésére a tárolás kezelése és az adatmegőrzési szabályok betartása érdekében.
+2. **Lejárati szabályok beállítása**: Olyan szabályok alkalmazása, amelyek archiválják vagy törlik a régi context-eket a tárhely kezelése és az adatmegőrzési előírások betartása érdekében.
 
-3. **Releváns metaadatok tárolása**: Használj kontextus metaadatokat a beszélgetés fontos információinak tárolására, amelyek később hasznosak lehetnek.
+3. **Releváns metaadatok tárolása**: Kontextus metaadatok használata fontos beszélgetési információk tárolására, amelyek később hasznosak lehetnek.
 
-4. **Kontextus azonosítók következetes használata**: Miután egy kontextus létrejött, következetesen használd az azonosítóját minden kapcsolódó kéréshez a folytonosság fenntartása érdekében.
+4. **Kontextus azonosítók következetes használata**: Miután egy context létrejött, annak azonosítóját következetesen használjuk az összes kapcsolódó kéréshez a folytonosság megőrzéséhez.
 
-5. **Összefoglalók generálása**: Amikor egy kontextus nagyra nő, fontold meg összefoglalók generálását az alapvető információk rögzítésére, miközben a kontextus méretét kezeljük.
+5. **Összefoglalók generálása**: Ha egy context túl nagyra nő, érdemes összefoglalókat készíteni, hogy a lényeges információk megmaradjanak, miközben a context mérete kezelhető marad.
 
-6. **Hozzáférés-ellenőrzés megvalósítása**: Többfelhasználós rendszerek esetén alkalmazz megfelelő hozzáférés-ellenőrzést a beszélgetési kontextusok magánéletének és biztonságának biztosítása érdekében.
+6. **Hozzáférés-vezérlés megvalósítása**: Többfelhasználós rendszerek esetén megfelelő hozzáférés-vezérlés alkalmazása a beszélgetési context-ek adatvédelmének és biztonságának biztosítására.
 
-7. **Kontextus korlátok kezelése**: Légy tudatában a kontextus méretkorlátainak, és alkalmazz stratégiákat a nagyon hosszú beszélgetések kezelésére.
+7. **Kontextus korlátok kezelése**: Tudatában lenni a context méretkorlátainak és stratégiákat alkalmazni nagyon hosszú beszélgetések kezelésére.
 
-8. **Archiválás, amikor befejeződik**: Archiváld a kontextusokat, amikor a beszélgetések befejeződnek, hogy felszabadítsd a forrásokat, miközben megőrzöd a beszélgetési előzményeket.
+8. **Archiválás a befejezéskor**: A beszélgetések befejeztével archiválni a context-eket, hogy felszabadítsuk az erőforrásokat, miközben megőrizzük a beszélgetési előzményeket.
 
-## Mintavételezés az Model Context Protocolban
+## Mintavételezés a Model Context Protocol-ban
 
-A mintavételi stratégiák kritikusak a modellválaszok optimalizálásához az MCP megvalósításokban. A megfelelő mintavételi konfiguráció drámaian javíthatja a válasz minőségét és teljesítményét. Az MCP szabványos módot biztosít a modellek szöveggenerálásának vezérlésére, meghatározott paraméterekkel, amelyek befolyásolják a véletlenszerűséget, kreativitást és koherenciát.
+A mintavételezési stratégiák kulcsfontosságúak a modellválaszok optimalizálásában MCP megvalósításokban. A megfelelő mintavételezési beállítás jelentősen javíthatja a válasz minőségét és teljesítményét. Az MCP szabványos módot biztosít arra, hogy hogyan generáljanak a modellek szöveget olyan paraméterekkel, amelyek befolyásolják a véletlenszerűséget, kreativitást és koherenciát.
 
-### Mintavételi paraméterek áttekintése
+### Mintavételezési paraméterek áttekintése
 
-Az MCP az alábbi mintavételi paramétereket határozza meg, amelyek klienskérésekben konfigurálhatók:
+Az MCP a következő mintavételezési paramétereket definiálja, amelyeket kliens kérésekben lehet konfigurálni:
 
-| Paraméter | Leírás | Tipikus tartomány |
+| Paraméter | Leírás | Jellemző tartomány |
 |-----------|-------------|---------------|
 | `temperature` | Controls randomness in token selection | 0.0 - 2.0 |
 | `top_p` | Nucleus sampling - limits tokens to top cumulative probability | 0.0 - 1.0 |
@@ -1044,11 +1051,11 @@ Az MCP az alábbi mintavételi paramétereket határozza meg, amelyek klienskér
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | Egyéni sorozatok, amelyek megállítják a generálást, amikor találkoznak velük | Stringek tömbje |
+| `stop_sequences` | Egyedi sorozatok, amelyek találatakor a generálás megáll | Karakterláncok tömbje |
 
-### Hőmérséklet és Top-K/Top-P mintavétel
+### Temperature és Top-K/Top-P mintavételezés
 
-A mintavételi paraméterek lehetővé teszik a nyelvi modellek viselkedésének finomhangolását a determinisztikus és kreatív kimenetek közötti kívánt egyensúly elérése érdekében.
+A mintavételezési paraméterek lehetővé teszik a nyelvi modellek viselkedésének finomhangolását, hogy elérjük a kívánt egyensúlyt a determinisztikus és kreatív kimenetek között.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1142,9 +1149,9 @@ async function demonstrateSampling() {
 demonstrateSampling();
 ```
 
-### Determinisztikus mintavétel
+### Determinisztikus mintavételezés
 
-Azokhoz az alkalmazásokhoz, amelyek következetes kimeneteket igényelnek, a determinisztikus mintavétel biztosítja a reprodukálható eredményeket.
+Olyan alkalmazásokhoz, ahol következetes kimenetek szükségesek, a determinisztikus mintavételezés biztosítja az ismételhető eredményeket.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1228,9 +1235,9 @@ async function deterministicSampling() {
 deterministicSampling();
 ```
 
-### Dinamikus mintavételi konfiguráció
+### Dinamikus mintavételezési konfiguráció
 
-Az intelligens mintavétel a kontextus és az egyes kérések követelményei alapján alkalmazkodik a paraméterekhez.
+Az intelligens mintavételezés a kérés kontextusa és követelményei alapján igazítja a paramétereket.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1469,13 +1476,13 @@ async function demonstrateAdaptiveSampling() {
 demonstrateAdaptiveSampling();
 ```
 
-## Útválasztás az Model Context Protocolban
+## Routing a Model Context Protocol-ban
 
-Az útválasztás elengedhetetlen a kérések megfelelő modellekhez, eszközökhöz vagy szolgáltatásokhoz történő irányításához az MCP ökoszisztémán belül.
+A routing elengedhetetlen a kérések megfelelő modellekhez, eszközökhöz vagy szolgáltatásokhoz irányításához az MCP ökoszisztémában.
 
-### Tartalom alapú útválasztás
+### Tartalom-alapú routing
 
-A tartalom alapú útválasztás a kéréseket speciális szolgáltatásokhoz irányítja a kérés tartalma alapján.
+A tartalom-alapú routing a kérések tartalma alapján specializált szolgáltatásokhoz irányítja azokat.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1677,9 +1684,9 @@ public class McpLoadBalancer {
 }
 ```
 
-### Dinamikus eszközútválasztás
+### Dinamikus eszköz routing
 
-Az eszközútválasztás biztosítja, hogy az eszköz hívásai a legmegfelelőbb szolgáltatáshoz legyenek irányítva a kontextus alapján.
+Az eszköz routing biztosítja, hogy az eszközhívások a legmegfelelőbb szolgáltatáshoz jussanak el a kontextus alapján.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1790,9 +1797,9 @@ class McpToolRouter:
             raise
 ```
 
-### Mintavételi és útválasztási architektúra az MCP-ben
+### Mintavételezés és routing architektúra az MCP-ben
 
-Az alábbi diagram szemlélteti, hogyan működnek együtt a mintavétel és útválasztás egy átfogó MCP architektúrában:
+Az alábbi ábra bemutatja, hogyan működik együtt a mintavételezés és a routing egy átfogó MCP architektúrában:
 
 ```mermaid
 flowchart TB
@@ -1859,9 +1866,9 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Skálázhatóság és magas teljesítményű MCP
+## Skálázhatóság és nagy teljesítményű MCP
 
-Vállalati telepítések esetén az MCP megvalósításoknak gyakran kell kezelniük nagy mennyiségű kérést minimális késleltetéssel.
+Vállalati telepítések esetén az MCP megvalósításoknak gyakran kell nagy mennyiségű kérést minimális késleltetéssel kezelniük.
 
 ### Skálázhatósági stratégiák
 
@@ -2013,7 +2020,7 @@ class DistributedMcpServer:
 
 ## Biztonsági legjobb gyakorlatok
 
-A biztonság kritikus az MCP megvalósításoknál, különösen vállalati környezetben.
+A biztonság kritikus fontosságú az MCP megvalósításoknál, különösen vállalati környezetben.
 
 ### Hitelesítés és jogosultságkezelés
 
@@ -2142,7 +2149,7 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 ### Adatvédelem és adatbiztonság
 
-#### Python adatvédelem példa
+#### Python adatvédelmi példa
 
 ```python
 from mcp_server import McpServer
@@ -2280,7 +2287,7 @@ class SecureCustomerDataTool(Tool):
 
 ## Vállalati integráció
 
-Az MCP integrálása vállalati rendszerekkel, mint az Azure OpenAI és a Microsoft AI Foundry.
+MCP integrálása vállalati rendszerekkel, mint az Azure OpenAI és a Microsoft AI Foundry.
 
 ### Azure OpenAI integráció
 
@@ -2404,7 +2411,7 @@ public class AIFoundryMcpBridge {
 }
 ```
 
-### Python vállalati integráció példa
+### Python vállalati integrációs példa
 
 ```python
 # Python Azure AI Integration
@@ -2530,21 +2537,21 @@ class EnterpriseAiIntegration:
 
 ## Főbb tanulságok
 
-- A multimodális MCP megvalósítások kiterjesztik az AI képességeket a szövegfeldolgozáson túl
-- A skálázhatóság elengedhetetlen a vállalati telepítésekhez, és horizontális és vertikális skálázással kezelhető
-- Átfogó biztonsági intézkedések védik az adatokat és biztosítják a megfelelő hozzáférés-ellenőrzést
-- Vállalati integráció olyan platformokkal, mint az Azure OpenAI és a Microsoft AI Foundry, fokozza az MCP képességeit
-- A fejlett MCP megvalósítások optimalizált architektúrákból és gondos erőforrás-kezelésből profitálnak
+- A többmodalitású MCP megvalósítások az AI képességeit túlmutatják a szövegfeldolgozáson
+- A skálázhatóság elengedhetetlen a vállalati telepítésekhez, amelyet horizontális és vertikális skálázással lehet megvalósítani
+- Átfogó biztonsági intézkedések védik az adatokat és biztosítják a megfelelő hozzáférés-vezérlést
+- A vállalati integráció olyan platformokkal, mint az Azure OpenAI és a Microsoft AI Foundry, kibővíti az MCP képességeit
+- A haladó MCP megvalósítások optimalizált architektúrák és gondos erőforrás-kezelés előnyeit élvezik
 
 ## Gyakorlat
 
-Tervezd meg egy vállalati szintű MCP megvalósítást egy konkrét esetre:
+Tervezzen egy vállalati szintű MCP megvalósítást egy konkrét feladatra:
 
-1. Határozd meg a multimodális követelményeket az esetedhez
-2. Vázold fel a biztonsági ellenőrzéseket az érzékeny adatok védelmére
-3. Tervezd meg a skálázható architektúrát, amely képes kezelni a változó terhelést
-4. Tervezd meg az integrációs pontokat vállalati AI rendszerekkel
-5. Dokumentáld a potenciális teljesítmény szűk keresztmetszeteket és enyhítési stratégiákat
+1. Azonosítsa a többmodalitású követelményeket az adott feladathoz
+2. Vázolja fel a szükséges biztonsági intézkedéseket az érzékeny adatok védelméhez
+3. Tervezzen skálázható architektúrát, amely kezelni tudja a változó terhelést
+4. Tervezze meg az integrációs pontokat vállalati AI rendszerekkel
+5. Dokumentálja a lehetséges teljesítménybeli szűk keresztmetszeteket és azok kezelési stratégiáit
 
 ## További források
 
@@ -2553,7 +2560,9 @@ Tervezd meg egy vállalati szintű MCP megvalósítást egy konkrét esetre:
 
 ---
 
-Következő: [Közösség és hozzájárulások](../06-CommunityContributions/README.md)
+## Mi következik
 
-**Felelősségi nyilatkozat**:  
-Ez a dokumentum az AI fordítási szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) használatával készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén ajánlott a professzionális emberi fordítás. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félremagyarázásokért.
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
+
+**Jogi nyilatkozat**:  
+Ezt a dokumentumot az AI fordító szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár az pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből eredő félreértésekért vagy félreértelmezésekért.

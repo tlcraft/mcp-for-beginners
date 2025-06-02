@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20240296dc2c4f9fb20fb56b5af6841f",
-  "translation_date": "2025-05-23T07:01:47+00:00",
+  "original_hash": "677cecb63a0bf6c0f49e40ffc15f6189",
+  "translation_date": "2025-06-02T12:57:42+00:00",
   "source_file": "README.md",
   "language_code": "sl"
 }
@@ -22,135 +22,135 @@ CO_OP_TRANSLATOR_METADATA:
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 
-Sledite tem korakom da začnete uporabljati te vire:
+Sledite tem korakom, da začnete uporabljati te vire:
 1. **Razvezi repozitorij**: Kliknite [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
-2. **Kloniraj repozitorij**: `git clone https://github.com/microsoft/mcp-for-beginners.git`
+2. **Kloniraj repozitorij**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
 3. [**Pridruži se Azure AI Foundry Discordu in spoznaj strokovnjake ter druge razvijalce**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Podpora za več jezikov
 
 #### Podprto preko GitHub Action (avtomatizirano in vedno posodobljeno)
-[Francosko](../fr/README.md) | [Špansko](../es/README.md) | [Nemško](../de/README.md) | [Rusko](../ru/README.md) | [Arabsko](../ar/README.md) | [Perzijsko (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Kitajsko (poenostavljeno)](../zh/README.md) | [Kitajsko (tradicionalno, Makao)](../mo/README.md) | [Kitajsko (tradicionalno, Hong Kong)](../hk/README.md) | [Kitajsko (tradicionalno, Tajvan)](../tw/README.md) | [Japonsko](../ja/README.md) | [Korejsko](../ko/README.md) | [Hindsko](../hi/README.md) | [Bengalsko](../bn/README.md) | [Marathijsko](../mr/README.md) | [Nepalsko](../ne/README.md) | [Pandžabsko (Gurmukhi)](../pa/README.md) | [Portugalsko (Portugalska)](../pt/README.md) | [Portugalsko (Brazilija)](../br/README.md) | [Italijansko](../it/README.md) | [Poljsko](../pl/README.md) | [Turško](../tr/README.md) | [Grško](../el/README.md) | [Tajsko](../th/README.md) | [Švedsko](../sv/README.md) | [Dansko](../da/README.md) | [Norveško](../no/README.md) | [Finsko](../fi/README.md) | [Nizozemsko](../nl/README.md) | [Hebrejsko](../he/README.md) | [Vietnamsko](../vi/README.md) | [Indonezijsko](../id/README.md) | [Malezijsko](../ms/README.md) | [Tagalog (Filipini)](../tl/README.md) | [Svahilsko](../sw/README.md) | [Madžarsko](../hu/README.md) | [Češko](../cs/README.md) | [Slovaško](../sk/README.md) | [Romunsko](../ro/README.md) | [Bolgarščina](../bg/README.md) | [Srbsko (cirilica)](../sr/README.md) | [Hrvaško](../hr/README.md) | [Slovensko](./README.md)
-# 🚀 Model Context Protocol (MCP) වැඩසටහන ආරම්භකරුවන් සඳහා
 
-## **C#, Java, JavaScript, Python, සහ TypeScript භාෂාවලින් MCP අත්හදා බැලීමේ කේත උදාහරණ සමඟ ඉගෙන ගන්න**
+# 🚀 Model Context Protocol (MCP) Curriculum za začetnike
 
-## 🧠 Model Context Protocol වැඩසටහන පිළිබඳ සාරාංශය
+## **Nauči se MCP z praktičnimi primeri kode v C#, Java, JavaScript, Python in TypeScript**
 
-**Model Context Protocol (MCP)** යනු AI ආදර්ශ සහ ගනුදෙනුකරුවන් අතර අන්තර්ක්‍රියා සම්මත කිරීමට නිර්මාණය කරන ලද නවීන මාර්ගෝපදේශයකි. මෙම විවෘත මූලාශ්‍ර වැඩසටහන C#, Java, JavaScript, TypeScript සහ Python ඇතුළු ජනප්‍රිය වැඩසටහන් භාෂාවල ප්‍රායෝගික කේත උදාහරණ සහ යථාර්ථ භාවිතා අවස්ථා සමඟ ක්‍රමවත් ඉගෙනුම් මාර්ගයක් සපයයි.
+## 🧠 Pregled učnega načrta Model Context Protocol
 
-ඔබ AI සංවර්ධකයෙකු වුවද, පද්ධති සැලසුම්කරුවෙකු වුවද, මෘදුකාංග ඉංජිනේරුවෙකු වුවද, මෙම මාර්ගෝපදේශය MCP මූලික කරුණු සහ ක්‍රියාත්මක කිරීමේ ක්‍රමවේද ඉගෙන ගැනීමට ඔබේ සම්පූර්ණ මාර්ගෝපදේශයයි.
+**Model Context Protocol (MCP)** je napreden okvir, zasnovan za standardizacijo interakcij med AI modeli in odjemalskimi aplikacijami. Ta odprtokodni učni načrt ponuja strukturirano pot učenja, skupaj s praktičnimi primeri kode in resničnimi primeri uporabe v priljubljenih programskih jezikih, kot so C#, Java, JavaScript, TypeScript in Python.
 
-## 🔗 නිල MCP සම්පත්
+Ne glede na to, ali ste AI razvijalec, sistemski arhitekt ali programski inženir, je ta vodič vaš celovit vir za obvladovanje osnov MCP in strategij za implementacijo.
 
-- 📘 [MCP ලේඛනය](https://modelcontextprotocol.io/) – විස්තරාත්මක පාඨමාලා සහ පරිශීලක මාර්ගෝපදේශ  
-- 📜 [MCP විශේෂාංග](https://spec.modelcontextprotocol.io/) – ප්‍රොටෝකෝල ව්‍යුහය සහ තාක්ෂණික යොමු  
-- 🧑‍💻 [MCP GitHub ගිණුම](https://github.com/modelcontextprotocol) – විවෘත මූලාශ්‍ර SDK, මෙවලම් සහ කේත උදාහරණ  
+## 🔗 Uradni viri MCP
 
-## 🧭 MCP වැඩසටහන සම්පූර්ණ ව්‍යුහය
+- 📘 [MCP Dokumentacija](https://modelcontextprotocol.io/) – Podrobni vodiči in uporabniška navodila  
+- 📜 [MCP Specifikacija](https://spec.modelcontextprotocol.io/) – Arhitektura protokola in tehnične reference  
+- 🧑‍💻 [MCP GitHub Repozitorij](https://github.com/modelcontextprotocol) – Odprtokodni SDK-ji, orodja in primeri kode  
 
-| අංකය | මාතෘකාව | විස්තරය | සබැඳිය |
+## 🧭 Celotna struktura učnega načrta MCP
+
+| Poglavje | Naslov | Opis | Povezava |
 |--|--|--|--|
-| 00 | **MCP හඳුන්වාදීම** | Model Context Protocol සහ එහි AI නළලේ පදනම් වැදගත්කම, MCP යනු කුමක්ද, සම්මත කිරීමේ වැදගත්කම සහ ප්‍රායෝගික භාවිතා අවස්ථා සහ වාසි | [හඳුන්වාදීම](./00-Introduction/README.md) |
-| 01 | **මූලික අදහස් විස්තර කිරීම** | MCP මූලික අදහස් ගවේෂණය, සේවාදායක-සේවාලාභී ව්‍යුහය, ප්‍රධාන ප්‍රොටෝකෝල සංරචක සහ පණිවිඩ රටා | [මූලික අදහස්](./01-CoreConcepts/README.md) |
-| 02 | **MCP හි ආරක්ෂාව** | MCP පදනම් පද්ධති තුළ ආරක්ෂක අනතුරු හඳුනා ගැනීම, ආරක්ෂිත ක්‍රියාත්මක කිරීම් සඳහා ක්‍රම සහ හොඳ පුරුදු | [ආරක්ෂාව](./02-Security/README.md) |
-| 03 | **MCP සමඟ ආරම්භ කිරීම** | පරිසර සැකසුම සහ වින්‍යාසය, මූලික MCP සේවාදායක සහ සේවාලාභී නිර්මාණය, MCP පවතින යෙදුම් සමඟ ඒකාබද්ධ කිරීම | [ආරම්භ කිරීම](./03-GettingStarted/README.md) |
-| 3.1 | **පළමු සේවාදායකයා** | MCP ප්‍රොටෝකෝලය භාවිතා කරමින් මූලික සේවාදායකයක් පිහිටුවීම, සේවාදායක-සේවාලාභී අන්තර්ක්‍රියාව අවබෝධ කර ගැනීම සහ සේවාදායක පරීක්ෂා කිරීම | [පළමු සේවාදායකයා](./03-GettingStarted/01-first-server/README.md) |
-| 3.2 | **පළමු සේවාලාභියා** | MCP ප්‍රොටෝකෝලය භාවිතා කරමින් මූලික සේවාලාභියා පිහිටුවීම, සේවාලාභී-සේවාදායක අන්තර්ක්‍රියාව අවබෝධ කර ගැනීම සහ සේවාලාභී පරීක්ෂා කිරීම | [පළමු සේවාලාභියා](./03-GettingStarted/02-client/README.md) |
-| 3.3 | **LLM සමඟ සේවාලාභියා** | විශාල භාෂා ආදර්ශයක් (LLM) සමඟ MCP ප්‍රොටෝකෝලය භාවිතා කරමින් සේවාලාභියා පිහිටුවීම | [LLM සමඟ සේවාලාභියා](./03-GettingStarted/03-llm-client/README.md) |
-| 3.4 | **Visual Studio Code සමඟ සේවාදායක භාවිතය** | MCP ප්‍රොටෝකෝලය භාවිතා කරමින් Visual Studio Code මඟින් සේවාදායක භාවිතා කිරීම සඳහා සැකසීම | [Visual Studio Code සමඟ සේවාදායක භාවිතය](./03-GettingStarted/04-vscode/README.md) |
-| 3.5 | **SSE භාවිතා කරමින් සේවාදායකයක් නිර්මාණය කිරීම** | SSE අපට සේවාදායකය අන්තර්ජාලයට පිවිසුම් දීමට උදව් කරන අතර, මෙම කොටස SSE භාවිතා කරමින් සේවාදායකයක් නිර්මාණය කිරීමට උපකාරී වේ | [SSE භාවිතා කරමින් සේවාදායකයක් නිර්මාණය කිරීම](./03-GettingStarted/05-sse-server/README.md) |
-| 3.6 | **AI මෙවලම් කට්ටලය භාවිතා කිරීම** | AI මෙවලම් කට්ටලය ඔබේ AI සහ MCP වැඩපිළිවෙළ කළමනාකරණය කිරීමට හොඳ උපකරණයකි | [AI මෙවලම් කට්ටලය භාවිතා කිරීම](./03-GettingStarted/06-aitk/README.md) |
-| 3.7 | **ඔබේ සේවාදායකය පරීක්ෂා කිරීම** | පරීක්ෂාව සංවර්ධන ක්‍රියාවලියේ වැදගත් කොටසකි. මෙම කොටස ඔබට විවිධ මෙවලම් භාවිතයෙන් පරීක්ෂා කිරීමට උපකාරී වේ | [ඔබේ සේවාදායකය පරීක්ෂා කිරීම](./03-GettingStarted/07-testing/README.md) |
-| 3.8 | **ඔබේ සේවාදායකය යොදා ගැනීම** | දේශීය සංවර්ධනයෙන් නිෂ්පාදනයට යාම කෙසේද? මෙම කොටස ඔබට සේවාදායකය සංවර්ධනය කර යොදා ගැනීමට උපකාරී වේ | [ඔබේ සේවාදායකය යොදා ගැනීම](./03-GettingStarted/08-deployment/README.md) |
-| 04 | **ප්‍රායෝගික ක්‍රියාත්මක කිරීම** | විවිධ භාෂා සඳහා SDK භාවිතය, දෝෂ සෙවීම, පරීක්ෂාව සහ වලංගු කිරීම, නැවත භාවිතා කළ හැකි ප්‍රොම්ප්ට් ආකෘති සහ වැඩපිළිවෙළ නිර්මාණය | [ප්‍රායෝගික ක්‍රියාත්මක කිරීම](./04-PracticalImplementation/README.md) |
-| 05 | **MCP හි උසස් මාතෘකා** | බහු මාදිලි AI වැඩපිළිවෙළ සහ විහිදුම්, ආරක්ෂිත විශාලත්වය සඳහා යුක්ති, ව්‍යාපාරික පරිසරවල MCP | [උසස් මාතෘකා](./05-AdvancedTopics/README.md) |
-| 06 | **සමාජයීය දායකත්වය** | කේත සහ ලේඛන දායකත්වය, GitHub හරහා සම්බන්ධ වීම, සමාජය මගින් ගෙන එන වැඩිදියුණු කිරීම් සහ ප්‍රතිචාර | [සමාජයීය දායකත්වය](./06-CommunityContributions/README.md) |
-| 07 | **පැරණි භාවිතයෙන් ලබාගත් අත්දැකීම්** | යථාර්ථ ක්‍රියාත්මක කිරීම් සහ සාර්ථක වූ කරුණු, MCP පදනම් විසඳුම් ගොඩනැගීම සහ යොදා ගැනීම, ප්‍රවණතා සහ අනාගත සැලැස්ම | [අත්දැකීම්](./07-LessonsFromEarlyAdoption/README.md) |
-| 08 | **MCP සඳහා හොඳ පුරුදු** | කාර්යක්ෂමතාව වැඩි දියුණු කිරීම, දෝෂ-සහන MCP පද්ධති සැලසුම් කිරීම, පරීක්ෂාව සහ ප්‍රතිරෝධක ක්‍රමවේද | [හොඳ පුරුදු](./08-BestPractices/README.md) |
-| 09 | **MCP කේස් අධ්‍යයන** | MCP විසඳුම් ව්‍යුහයන්, යොදා ගැනීමේ සැලැස්ම් සහ ඒකාබද්ධ කිරීමේ උපදෙස්, විස්තරාත්මක රූප සහ ව්‍යාපෘති මාර්ගෝපදේශ | [කේස් අධ්‍යයන](./09-CaseStudy/README.md) |
+| 00 | **Uvod v MCP** | Pregled Model Context Protocol in njegov pomen v AI procesih, vključno s tem, kaj je Model Context Protocol, zakaj je standardizacija pomembna ter praktični primeri uporabe in koristi | [Uvod](./00-Introduction/README.md) |
+| 01 | **Razlaga osnovnih konceptov** | Podroben pregled osnovnih konceptov MCP, vključno z arhitekturo klient-strežnik, ključnimi komponentami protokola in vzorci sporočanja | [Osnovni koncepti](./01-CoreConcepts/README.md) |
+| 02 | **Varnost v MCP** | Prepoznavanje varnostnih groženj v sistemih, ki temeljijo na MCP, tehnike in najboljše prakse za varno implementacijo | [Varnost](./02-Security/README.md) |
+| 03 | **Začetek z MCP** | Nastavitev okolja in konfiguracija, ustvarjanje osnovnih MCP strežnikov in odjemalcev, integracija MCP z obstoječimi aplikacijami | [Začetek](./03-GettingStarted/README.md) |
+| 3.1 | **Prvi strežnik** | Nastavitev osnovnega strežnika z uporabo MCP protokola, razumevanje interakcije med strežnikom in odjemalcem ter testiranje strežnika | [Prvi strežnik](./03-GettingStarted/01-first-server/README.md) |
+| 3.2 | **Prvi odjemalec** | Nastavitev osnovnega odjemalca z uporabo MCP protokola, razumevanje interakcije med odjemalcem in strežnikom ter testiranje odjemalca | [Prvi odjemalec](./03-GettingStarted/02-client/README.md) |
+| 3.3 | **Odjemalec z LLM** | Nastavitev odjemalca z uporabo MCP protokola in velikega jezikovnega modela (LLM) | [Odjemalec z LLM](./03-GettingStarted/03-llm-client/README.md) |
+| 3.4 | **Uporaba strežnika z Visual Studio Code** | Nastavitev Visual Studio Code za uporabo strežnikov prek MCP protokola | [Uporaba strežnika z Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
+| 3.5 | **Ustvarjanje strežnika s SSE** | SSE nam omogoča izpostavitev strežnika na internet. Ta del vas bo vodil pri ustvarjanju strežnika s SSE | [Ustvarjanje strežnika s SSE](./03-GettingStarted/05-sse-server/README.md) |
+| 3.6 | **Uporaba AI Toolkit** | AI toolkit je odlično orodje, ki vam pomaga upravljati vaš AI in MCP potek dela. | [Uporaba AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
+| 3.7 | **Testiranje vašega strežnika** | Testiranje je pomemben del razvojnega procesa. Ta del vam bo pomagal uporabiti različna orodja za testiranje. | [Testiranje vašega strežnika](./03-GettingStarted/07-testing/README.md) |
+| 3.8 | **Implementacija strežnika** | Kako preiti iz lokalnega razvoja v produkcijo? Ta del vas bo vodil pri razvoju in implementaciji strežnika. | [Implementacija strežnika](./03-GettingStarted/08-deployment/README.md) |
+| 04 | **Praktična implementacija** | Uporaba SDK-jev v različnih jezikih, odpravljanje napak, testiranje in validacija, izdelava ponovno uporabnih predlog in potekov dela | [Praktična implementacija](./04-PracticalImplementation/README.md) |
+| 05 | **Napredne teme v MCP** | Večmodalni AI poteki dela in razširljivost, varne strategije skaliranja, MCP v podjetniških ekosistemih | [Napredne teme](./05-AdvancedTopics/README.md) |
+| 5.1 | **MCP OAuth2 Demo** | Implementacija OAuth2 avtentikacije z MCP strežniki, vključno z validacijo dostopnih žetonov, avtorizacijo na podlagi obsega in zaščito varnih API končnih točk | [MCP OAuth2 Demo](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
+| 5.2 | **Spletno iskanje z MCP** | Implementacija spletnih iskalnih funkcionalnosti z Model Context Protocol, vključno z obdelavo iskalnih poizvedb, upravljanjem rezultatov in integracijo z iskalnimi API-ji | [Spletno iskanje MCP](./05-AdvancedTopics/web-search-mcp/README.md) |
+| 06 | **Prispevki skupnosti** | Kako prispevati k kodi in dokumentaciji, sodelovanje preko GitHub, izboljšave in povratne informacije, ki jih vodi skupnost | [Prispevki skupnosti](./06-CommunityContributions/README.md) |
+| 07 | **Izkušnje zgodnjih uporabnikov** | Resnične implementacije in kaj je delovalo, gradnja in uvajanje rešitev na osnovi MCP, trendi in prihodnja smernica | [Izkušnje](./07-LessonsFromEarlyAdoption/README.md) |
+| 08 | **Najboljše prakse za MCP** | Nastavitve zmogljivosti in optimizacija, načrtovanje odpornosti MCP sistemov, testiranje in strategije vzdržljivosti | [Najboljše prakse](./08-BestPractices/README.md) |
+| 09 | **Primeri uporabe MCP** | Podrobne analize arhitektur MCP rešitev, načrti uvajanja in nasveti za integracijo, opremljeni diagrami in predstavitve projektov | [Primeri uporabe](./09-CaseStudy/README.md) |
 
-## උදාහරණ ව්‍යාපෘති
+## Primeri projektov
 
-### 🧮 MCP ගණක උදාහරණ ව්‍යාපෘති:
+### 🧮 MCP kalkulator - primeri projektov:
 <details>
-  <summary><strong>භාෂා අනුව කේත ක්‍රියාත්මක කිරීම් සොයා බලන්න</strong></summary>
+  <summary><strong>Razišči primere kode po jezikih</strong></summary>
 
-  - [C# MCP සේවාදායක උදාහරණය](./03-GettingStarted/samples/csharp/README.md)
-  - [Java MCP ගණකය](./03-GettingStarted/samples/java/calculator/README.md)
-  - [JavaScript MCP ප්‍රදර්ශනය](./03-GettingStarted/samples/javascript/README.md)
-  - [Python MCP සේවාදායකය](../../03-GettingStarted/samples/python/mcp_calculator_server.py)
-  - [TypeScript MCP උදාහරණය](./03-GettingStarted/samples/typescript/README.md)
+  - [C# MCP strežnik - primer](./03-GettingStarted/samples/csharp/README.md)
+  - [Java MCP kalkulator](./03-GettingStarted/samples/java/calculator/README.md)
+  - [JavaScript MCP demo](./03-GettingStarted/samples/javascript/README.md)
+  - [Python MCP strežnik](../../03-GettingStarted/samples/python/mcp_calculator_server.py)
+  - [TypeScript MCP primer](./03-GettingStarted/samples/typescript/README.md)
 
 </details>
 
-### 💡 MCP උසස් ගණක ව්‍යාපෘති:
+### 💡 Napredni MCP kalkulator projekti:
 <details>
-  <summary><strong>උසස් උදාහරණ සොයා බලන්න</strong></summary>
+  <summary><strong>Razišči napredne primere</strong></summary>
 
-  - [උසස් C# උදාහරණය](./04-PracticalImplementation/samples/csharp/README.md)
-  - [Java පත්ර යෙදුම් උදාහරණය](./04-PracticalImplementation/samples/java/containerapp/README.md)
-  - [JavaScript උසස් උදාහරණය](./04-PracticalImplementation/samples/javascript/README.md)
-  - [Python සංකීර්ණ ක්‍රියාත්මක කිරීම](../../04-PracticalImplementation/samples/python/mcp_sample.py)
-
-</details>
-- [TypeScript Container Sample](./04-PracticalImplementation/samples/typescript/README.md)
+  - [Napredni C# primer](./04-PracticalImplementation/samples/csharp/README.md)
+  - [Java Container App primer](./04-PracticalImplementation/samples/java/containerapp/README.md)
+- [JavaScript Advanced Sample](./04-PracticalImplementation/samples/javascript/README.md)
+  - [Python Complex Implementation](../../04-PracticalImplementation/samples/python/mcp_sample.py)
+  - [TypeScript Container Sample](./04-PracticalImplementation/samples/typescript/README.md)
 
 </details>
 
 
-## 🎯 MCP Sikšana Prerequisites
+## 🎯 MCP ඉගෙනීමට අවශ්‍ය පෙර අවශ්‍යතා
 
-Aye curriculum thiyanna hondatama laba ganna, oyāṭa thiyēnē:
+මෙම පාඨමාලාවෙන් උපරිම ප්‍රයෝජනයක් ගන්න, ඔබට තිබිය යුතුය:
 
-- C#, Java, hō Python mulika jñāna  
-- Client-server model saha APIs gena adahas  
-- (Iḍaṭa) Machine learning avadhāna samaga paricaya  
+- C#, Java හෝ Python මූලික දැනුම
+- client-server ආකෘතිය සහ APIs පිළිබඳ අවබෝධය
+- (විකල්ප) යන්ත්‍ර ඉගෙනුම් සංකල්ප හඳුනා ගැනීම
 
-## 🛠️ Me Curriculum Pilibanda Hōdaya Hāgēma Baḷaparīkṣā Kirīma
+## 🛠️ මෙම පාඨමාලාව කාර්යක්ෂමව භාවිතා කරන ආකාරය
 
-Mē pātalavalin pratyēka pātala atulata thiyē:
+මෙම මාර්ගෝපදේශයේ සෑම පාඩමකම අඩංගු වන්නේ:
 
-1. MCP avadhāna saṭahan pilibandha vū sādharana vēdanā  
-2. Bāṣā anēka pamanvalin live code udāhāraṇaya  
-3. Satya MCP apekṣātmaka apekṣātmaka kriyāva  
-4. Adhika jñāna prāptikaraṇayēta atirikta sādhanayak  
+1. MCP සංකල්ප පැහැදිලි කිරීම  
+2. බහු භාෂා වල සජීවී කේත උදාහරණ  
+3. යථාර්ථ MCP යෙදුම් නිර්මාණය සඳහා පුහුණු අභ්‍යාස  
+4. උසස් අධ්‍යයන සඳහා අමතර සම්පත්  
 
-## 📜 License Viśēṣa
+## 📜 බලපත්‍ර තොරතුරු
 
-Mē saṃgr̥haya **MIT License** an̆gaṇīma atharaṭa piḷiban̆da. Niyama saha śarṭa balanna [LICENSE](../../LICENSE).
+මෙම අන්තර්ගතය **MIT License** යටතේ බලපත්‍ර ලැබී ඇත. නියමයන් සහ කොන්දේසි සඳහා, බලන්න [LICENSE](../../LICENSE).
 
-## 🤝 Sahakaraṇa Niyamaval
+## 🤝 දායකත්ව මාර්ගෝපදේශ
 
-Mē pariyojanāva sahakaraṇayen saha sujīvanayen āhvanayak karanavā. Bahu sahakaraṇayaṭa Contributor License Agreement (CLA) ekaka sammatī dīma avashya. Mē sammatī prāptikaraṇayen, oyāṭa adhipatiya dīma saha oyā dīmaṭa hekiyāva thiyē. Vistarayen balanna <https://cla.opensource.microsoft.com>.
+මෙම ව්‍යාපෘතිය දායකත්ව සහ යෝජනා පිළිගනී. බොහෝ දායකත්ව සඳහා, ඔබට Contributor License Agreement (CLA) එකකට එකඟ වීම අවශ්‍ය වේ, එයින් ඔබට ඔබේ දායකත්වය භාවිතා කිරීමේ අයිතිය ඇති බව සහතික කිරීම සිදු වේ. විස්තර සඳහා, <https://cla.opensource.microsoft.com> වෙත පිවිසෙන්න.
 
-Pull request ekak yomu karaṇavāma, CLA bot ekak svayaṁ kriyātmaka vidhiyen oyāṭa CLA ekak dīma avashya da balā PR eka anukūla karaṇavā (udāhāraṇayak lesa, sthiti parīkṣā, tipaṇṇī). Bot ekin pavatina nirdēśa anusaranna. Mē kriyāva oyāṭa samasta repovalin ekēma karanna one.
+ඔබ pull request එකක් ඉදිරිපත් කරන විට, CLA bot එක ඔබට CLA එකක් අවශ්‍යදැයි ස්වයංක්‍රීයව තීරණය කර, PR එකට අදාළ සලකුණු (උදා: තත්ත්ව පරීක්ෂණය, අදහස) එකතු කරයි. bot එක විසින් දෙන උපදෙස් පිළිපදින්න. අපගේ CLA භාවිතා කරන සියලුම repos සඳහා ඔබට මෙය එක්වරක් පමණි සිදු කිරීමට සිදු වන්නේ.
 
-Mē pariyojanāva [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) an̆gaṇīma karayi. Vistarayen balanna [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) hō [opencode@microsoft.com](mailto:opencode@microsoft.com) samaga sampradāya karaṇṇā.
+මෙම ව්‍යාපෘතිය [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) අනුගමනය කරයි. වැඩි විස්තර සඳහා [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) බලන්න හෝ [opencode@microsoft.com](mailto:opencode@microsoft.com) වෙත අමතන්න.
 
-## 🎒 Anya Paṭala  
-Āmāruvaṭa vīmaṭa nam, amāruvaṭaṭa mē paṭala balanna:
+## 🎒 අනෙක් පාඨමාලා
+අපගේ කණ්ඩායම වෙනත් පාඨමාලාද නිපදවයි! බලන්න:
 
-- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
-- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)  
-- [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
-- [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
-- [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Mastering GitHub Copilot for AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
-- [Mastering GitHub Copilot for C#/.NET Developers](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
-- [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
+- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
+- [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+- [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+- [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Mastering GitHub Copilot for AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+- [Mastering GitHub Copilot for C#/.NET Developers](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+- [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 
-## ™️ Udyōga Lipi Pivisum
+## ™️ වෙළඳ ලකුණු දැනුම්දීම
 
-Mē pariyojanāvē thiyē udyōga lipi hō logos, pariyojanā, utpādana, hō seva samaga sambandha. Microsoft udyōga lipi hō logos ādhāra kirīma, [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) anusārayi. Microsoft udyōga lipi hō logos vimaṭa parivartita rūpaya balāpiḷigannē nathīma saha Microsoft samarthanaya pradarśana karannē nathīma avashya. Tṛtīya pakṣa udyōga lipi hō logos upayōga karana hæṭiyē tṛtīya pakṣa niyama anusarayi.
+මෙම ව්‍යාපෘතියේ ව්‍යාපෘති, නිෂ්පාදන හෝ සේවාවන් සඳහා වෙළඳ ලකුණු හෝ ලාංඡන අඩංගු විය හැක. Microsoft වෙළඳ ලකුණු හෝ ලාංඡන භාවිතය Microsoft හි වෙළඳ ලකුණු සහ වෙළඳ නාම මාර්ගෝපදේශයන්ට (https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) අනුකූලව සිදු කළ යුතුය. Microsoft වෙළඳ ලකුණු හෝ ලාංඡන වෙනස් කරන ලද අනුවාද වල භාවිතය Microsoft ආධාරකත්වය හෝ ගැටුමක් ඇති කර නොවිය යුතුය. තෙවන පාර්ශව වෙළඳ ලකුණු හෝ ලාංඡන භාවිතය එම පාර්ශවයන්ගේ ප්‍රතිපත්ති යටතේ පවති.
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazumevanja ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v izvorni jezik velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.

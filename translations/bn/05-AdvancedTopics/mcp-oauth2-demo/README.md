@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:40:11+00:00",
+  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
+  "translation_date": "2025-06-02T12:12:52+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "bn"
 }
 -->
-# এমসিপি OAuth2 ডেমো
+# MCP OAuth2 ডেমো
 
-এই প্রকল্পটি একটি **ন্যূনতম স্প্রিং বুট অ্যাপ্লিকেশন** যা উভয়ের কাজ করে:
+এই প্রকল্পটি একটি **সর্বনিম্ন Spring Boot অ্যাপ্লিকেশন** যা একই সাথে কাজ করে:
 
-* একটি **স্প্রিং অথরাইজেশন সার্ভার** (JWT অ্যাক্সেস টোকেন প্রদান করে `client_credentials` ফ্লো এর মাধ্যমে), এবং  
-* একটি **রিসোর্স সার্ভার** (তার নিজস্ব `/hello` এন্ডপয়েন্ট সুরক্ষিত করে)।
+* একটি **Spring Authorization Server** (যা `client_credentials` ফ্লো ব্যবহার করে JWT অ্যাক্সেস টোকেন ইস্যু করে), এবং  
+* একটি **Resource Server** (যা তার নিজস্ব `/hello` এন্ডপয়েন্ট সুরক্ষিত করে)।
 
-এটি [স্প্রিং ব্লগ পোস্ট (২ এপ্রিল ২০২৫)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) এ প্রদর্শিত সেটআপের প্রতিচ্ছবি।
+এটি [Spring ব্লগ পোস্ট (২ এপ্রিল ২০২৫)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) এ দেখানো সেটআপের প্রতিফলন।
 
 ---
 
@@ -36,16 +36,16 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## OAuth2 কনফিগারেশন পরীক্ষা
 
-আপনি নিম্নলিখিত পদক্ষেপগুলি ব্যবহার করে OAuth2 নিরাপত্তা কনফিগারেশন পরীক্ষা করতে পারেন:
+নিম্নলিখিত ধাপগুলি অনুসরণ করে আপনি OAuth2 সিকিউরিটি কনফিগারেশন পরীক্ষা করতে পারেন:
 
-### ১. নিশ্চিত করুন যে সার্ভার চলছে এবং সুরক্ষিত
+### ১. নিশ্চিত করুন সার্ভার চলছে এবং সুরক্ষিত
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### ২. ক্লায়েন্ট পরিচয়পত্র ব্যবহার করে একটি অ্যাক্সেস টোকেন পান
+### ২. ক্লায়েন্ট ক্রেডেনশিয়াল ব্যবহার করে অ্যাক্সেস টোকেন নিন
 
 ```bash
 # Get and extract the full token response
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-বিঃদ্রঃ: বেসিক অথেন্টিকেশন হেডার (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Note: Basic Authentication হেডার (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`।
 
 ### ৩. টোকেন ব্যবহার করে সুরক্ষিত এন্ডপয়েন্টে প্রবেশ করুন
 
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-"এমসিপি OAuth2 ডেমো থেকে হ্যালো!" সহ একটি সফল প্রতিক্রিয়া নিশ্চিত করে যে OAuth2 কনফিগারেশন সঠিকভাবে কাজ করছে।
+"Hello from MCP OAuth2 Demo!" সহ সফল রেসপন্স নিশ্চিত করে যে OAuth2 কনফিগারেশন সঠিকভাবে কাজ করছে।
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## **অ্যাজিউর কন্টেইনার অ্যাপস** এ মোতায়েন
+## **Azure Container Apps** এ ডিপ্লয় করুন
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-ইনগ্রেস FQDN আপনার **প্রদানকারী** হয়ে যায় (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+ইনগ্রেস FQDN আপনার **issuer** হয়ে যায় (`https://<fqdn>`).  
+Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`)।
 
 ---
 
-## **অ্যাজিউর এপিআই ম্যানেজমেন্ট** এ সংযোগ
+## **Azure API Management** এর সাথে সংযুক্ত করুন
 
-আপনার এপিআইতে এই ইনবাউন্ড পলিসি যোগ করুন:
+আপনার API-তে এই ইনবাউন্ড পলিসি যোগ করুন:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM JWKS সংগ্রহ করবে এবং প্রতিটি অনুরোধ যাচাই করবে।
+APIM JWKS ফেচ করবে এবং প্রতিটি রিকোয়েস্ট যাচাই করবে।
+
+---
+
+## পরবর্তী ধাপ
+
+- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
 
 **অস্বীকৃতি**:  
-এই নথিটি AI অনুবাদ পরিষেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনুবাদ করা হয়েছে। আমরা যথাসম্ভব সঠিকতার চেষ্টা করি, তবে অনুগ্রহ করে মনে রাখবেন যে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসামঞ্জস্য থাকতে পারে। মূল ভাষায় থাকা নথিটিকে প্রামাণিক উৎস হিসাবে বিবেচনা করা উচিত। গুরুত্বপূর্ণ তথ্যের জন্য, পেশাদার মানব অনুবাদ সুপারিশ করা হয়। এই অনুবাদ ব্যবহারের ফলে উদ্ভূত কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী নই।
+এই নথিটি AI অনুবাদ সেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনূদিত হয়েছে। আমরা যথাসাধ্য সঠিকতার চেষ্টা করি, তবে দয়া করে মনে রাখবেন যে স্বয়ংক্রিয় অনুবাদে ভুল বা অসঙ্গতি থাকতে পারে। মূল নথিটি তার স্বাভাবিক ভাষায়ই কর্তৃত্বপূর্ণ উৎস হিসেবে বিবেচনা করা উচিত। গুরুত্বপূর্ণ তথ্যের জন্য পেশাদার মানুষের অনুবাদ গ্রহণ করার পরামর্শ দেওয়া হয়। এই অনুবাদের ব্যবহারে সৃষ্ট কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী নই।

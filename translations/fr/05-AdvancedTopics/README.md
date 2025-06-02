@@ -1,26 +1,33 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-16T14:25:57+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T11:50:37+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "fr"
 }
 -->
-# Sujets avancés dans MCP
+# Sujets avancés en MCP
 
-## Vue d'ensemble
+## Aperçu
 
-Cette leçon explore des concepts avancés dans l'implémentation du Model Context Protocol, en mettant l'accent sur l'intégration multi-modale, la scalabilité, les bonnes pratiques de sécurité et l'intégration en entreprise. Ces sujets sont essentiels pour développer des applications MCP prêtes pour la production capables de gérer des exigences complexes dans des environnements d'entreprise.
+Cette leçon explore des concepts avancés dans l’implémentation du Model Context Protocol, en mettant l’accent sur l’intégration multi-modale, la scalabilité, les bonnes pratiques de sécurité et l’intégration en entreprise. Ces sujets sont essentiels pour développer des applications MCP de qualité production capables de gérer des exigences complexes en environnement professionnel.
 
-## Objectifs d'apprentissage
+## Objectifs d’apprentissage
 
 À la fin de cette leçon, vous serez capable de :
-- Implémenter des capacités multi-modales au sein des frameworks MCP
-- Concevoir des architectures MCP évolutives pour des scénarios à forte demande
-- Appliquer les meilleures pratiques de sécurité conformes aux principes de sécurité de MCP
-- Intégrer MCP avec des systèmes et frameworks d'IA d'entreprise
-- Optimiser la performance et la fiabilité en environnement de production
+- Mettre en œuvre des capacités multi-modales au sein des frameworks MCP
+- Concevoir des architectures MCP scalables pour des scénarios à forte demande
+- Appliquer les meilleures pratiques de sécurité conformes aux principes de sécurité MCP
+- Intégrer MCP avec des systèmes et frameworks d’IA en entreprise
+- Optimiser les performances et la fiabilité en environnement de production
+
+## Projets d’exemple
+
+| Lien | Titre | Description |
+|------|-------|-------------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | Démo MCP OAuth2 | Application Spring Boot minimaliste démontrant OAuth2 avec MCP, à la fois comme serveur d’autorisation et serveur de ressources. Illustre l’émission sécurisée de jetons, les points d’accès protégés, le déploiement sur Azure Container Apps et l’intégration avec API Management. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Recherche Web MCP | Serveur et client MCP en Python intégrant SerpAPI pour la recherche en temps réel sur le web, actualités, produits et Q&R. Montre l’orchestration multi-outils, l’intégration d’API externes et la gestion robuste des erreurs. |
 
 ## Références supplémentaires
 
@@ -29,20 +36,20 @@ Pour les informations les plus récentes sur les sujets avancés MCP, consultez 
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
-## Intégration multi-modale
+## Intégration Multi-Modale
 
-MCP prend en charge non seulement les interactions basées sur du texte, mais aussi des capacités multi-modales, permettant aux modèles de travailler avec des images, de l'audio et d'autres types de données.
+MCP prend en charge non seulement les interactions textuelles mais aussi les capacités multi-modales, permettant aux modèles de traiter des images, de l’audio et d’autres types de données.
 
 ### Architecture pour le support multi-modal
 
 Les implémentations MCP multi-modales impliquent généralement :
 
-1. **Parsers spécifiques à chaque modalité** : Composants qui convertissent différents types de médias en formats exploitables par le modèle
-2. **Outils spécifiques à chaque modalité** : Outils dédiés au traitement de modalités particulières (analyse d’images, traitement audio)
-3. **Gestion unifiée du contexte** : Système pour maintenir le contexte à travers différentes modalités
-4. **Génération de réponses** : Capacité à produire des réponses pouvant inclure plusieurs modalités
+1. **Analyseurs spécifiques à chaque modalité** : composants qui convertissent différents types de médias en formats exploitables par le modèle
+2. **Outils spécifiques à chaque modalité** : outils dédiés au traitement de modalités particulières (analyse d’image, traitement audio)
+3. **Gestion unifiée du contexte** : système assurant la cohérence du contexte à travers les différentes modalités
+4. **Génération de réponses** : capacité à produire des réponses pouvant inclure plusieurs modalités
 
-### Exemple C# multi-modal : Analyse d’image
+### Exemple multi-modal en C# : Analyse d’image
 
 ```csharp
 using ModelContextProtocol.SDK.Server;
@@ -174,7 +181,7 @@ namespace MultiModalMcpExample
 }
 ```
 
-### Exemple Java multi-modal : Traitement audio
+### Exemple multi-modal en Java : Traitement audio
 
 ```java
 package com.example.mcp.multimodal;
@@ -302,7 +309,7 @@ public class MultiModalApplication {
 }
 ```
 
-### Exemple Python multi-modal : Génération de réponses multi-modales
+### Exemple multi-modal en Python : Génération de réponses multi-modales
 
 ```python
 from mcp_server import McpServer
@@ -452,23 +459,23 @@ if __name__ == "__main__":
 
 ## Contextes racines MCP
 
-Les contextes racines sont un concept fondamental du Model Context Protocol qui fournissent une couche persistante pour maintenir l’historique des conversations et l’état partagé à travers plusieurs requêtes et sessions.
+Les contextes racines sont un concept fondamental du Model Context Protocol, fournissant une couche persistante pour conserver l’historique des conversations et l’état partagé sur plusieurs requêtes et sessions.
 
 ### Comprendre les contextes racines
 
-Les contextes racines servent de conteneurs qui conservent l’historique et l’état pour une série d’interactions liées. Ils permettent :
+Les contextes racines servent de conteneurs qui stockent l’historique et l’état d’une série d’interactions liées. Ils permettent :
 
-- **Persistance des conversations** : Maintenir la cohérence des échanges multi-tours
-- **Gestion de la mémoire** : Stocker et récupérer des informations entre les interactions
-- **Gestion d’état** : Suivre la progression dans des workflows complexes
-- **Partage de contexte** : Permettre à plusieurs clients d’accéder au même état de conversation
+- **Persistance de la conversation** : maintien de conversations multi-tours cohérentes
+- **Gestion de la mémoire** : stockage et récupération d’informations entre les interactions
+- **Gestion d’état** : suivi de l’avancement dans des workflows complexes
+- **Partage de contexte** : permettre à plusieurs clients d’accéder au même état de conversation
 
 Dans MCP, les contextes racines présentent ces caractéristiques clés :
 
 - Chaque contexte racine possède un identifiant unique
 - Ils peuvent contenir l’historique des conversations, les préférences utilisateur et d’autres métadonnées
 - Ils peuvent être créés, consultés et archivés selon les besoins
-- Ils supportent un contrôle d’accès et des permissions granulaires
+- Ils supportent un contrôle d’accès et des permissions granulaire
 
 ### Cycle de vie des contextes racines
 
@@ -1013,27 +1020,27 @@ if __name__ == "__main__":
 
 1. **Créer des contextes ciblés** : Créez des contextes racines distincts pour différents objectifs ou domaines de conversation afin de garder une bonne clarté.
 
-2. **Définir des politiques d’expiration** : Mettez en place des règles pour archiver ou supprimer les anciens contextes afin de gérer le stockage et respecter les politiques de rétention des données.
+2. **Définir des politiques d’expiration** : Mettez en place des règles pour archiver ou supprimer les anciens contextes afin de gérer le stockage et respecter les politiques de conservation des données.
 
-3. **Stocker les métadonnées pertinentes** : Utilisez les métadonnées du contexte pour conserver des informations importantes sur la conversation qui pourraient être utiles ultérieurement.
+3. **Stocker les métadonnées pertinentes** : Utilisez les métadonnées de contexte pour conserver des informations importantes sur la conversation susceptibles d’être utiles ultérieurement.
 
-4. **Utiliser les IDs de contexte de manière cohérente** : Une fois un contexte créé, utilisez son ID de façon cohérente pour toutes les requêtes liées afin de maintenir la continuité.
+4. **Utiliser les IDs de contexte de manière cohérente** : Une fois un contexte créé, utilisez systématiquement son ID pour toutes les requêtes associées afin de maintenir la continuité.
 
-5. **Générer des résumés** : Lorsque le contexte devient volumineux, envisagez de créer des résumés pour capturer les informations essentielles tout en maîtrisant la taille du contexte.
+5. **Générer des résumés** : Lorsque le contexte devient volumineux, envisagez de générer des résumés pour capturer l’essentiel tout en maîtrisant la taille du contexte.
 
-6. **Mettre en œuvre un contrôle d’accès** : Pour les systèmes multi-utilisateurs, implémentez des contrôles d’accès appropriés pour garantir la confidentialité et la sécurité des contextes de conversation.
+6. **Mettre en œuvre un contrôle d’accès** : Pour les systèmes multi-utilisateurs, appliquez des contrôles d’accès appropriés afin d’assurer la confidentialité et la sécurité des contextes de conversation.
 
-7. **Gérer les limites de contexte** : Soyez conscient des limitations de taille des contextes et mettez en place des stratégies pour gérer les conversations très longues.
+7. **Gérer les limites de contexte** : Soyez conscient des limites de taille des contextes et mettez en place des stratégies pour gérer les conversations très longues.
 
-8. **Archiver à la fin** : Archivez les contextes lorsque les conversations sont terminées pour libérer des ressources tout en conservant l’historique.
+8. **Archiver une fois terminé** : Archivez les contextes lorsque les conversations sont terminées pour libérer des ressources tout en conservant l’historique.
 
 ## Échantillonnage dans Model Context Protocol
 
-Les stratégies d’échantillonnage sont cruciales pour optimiser les réponses des modèles dans les implémentations MCP. Une configuration d’échantillonnage adaptée peut considérablement améliorer la qualité et la performance des réponses. MCP fournit une méthode standardisée pour contrôler la génération de texte par les modèles à l’aide de paramètres spécifiques influençant l’aléatoire, la créativité et la cohérence.
+Les stratégies d’échantillonnage sont cruciales pour optimiser les réponses des modèles dans les implémentations MCP. Une bonne configuration d’échantillonnage peut considérablement améliorer la qualité et la performance des réponses. MCP offre un moyen standardisé de contrôler la génération de texte par les modèles avec des paramètres spécifiques influençant l’aléatoire, la créativité et la cohérence.
 
 ### Vue d’ensemble des paramètres d’échantillonnage
 
-MCP définit les paramètres d’échantillonnage suivants qui peuvent être configurés dans les requêtes client :
+MCP définit les paramètres d’échantillonnage suivants, configurables dans les requêtes client :
 
 | Paramètre | Description | Plage typique |
 |-----------|-------------|---------------|
@@ -1044,11 +1051,11 @@ MCP définit les paramètres d’échantillonnage suivants qui peuvent être con
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | Séquences personnalisées qui arrêtent la génération lorsqu’elles sont rencontrées | Tableau de chaînes |
+| `stop_sequences` | Séquences personnalisées qui interrompent la génération lorsqu’elles sont rencontrées | Tableau de chaînes |
 
 ### Échantillonnage Temperature et Top-K/Top-P
 
-Les paramètres d’échantillonnage permettent d’ajuster finement le comportement des modèles de langage pour atteindre l’équilibre souhaité entre sorties déterministes et créatives.
+Les paramètres d’échantillonnage permettent d’ajuster finement le comportement des modèles de langage pour trouver l’équilibre souhaité entre sorties déterministes et créatives.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1144,7 +1151,7 @@ demonstrateSampling();
 
 ### Échantillonnage déterministe
 
-Pour les applications nécessitant des sorties cohérentes, l’échantillonnage déterministe garantit des résultats reproductibles.
+Pour les applications nécessitant des résultats constants, l’échantillonnage déterministe garantit des résultats reproductibles.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1230,7 +1237,7 @@ deterministicSampling();
 
 ### Configuration dynamique de l’échantillonnage
 
-L’échantillonnage intelligent adapte les paramètres en fonction du contexte et des besoins de chaque requête.
+L’échantillonnage intelligent adapte les paramètres en fonction du contexte et des exigences de chaque requête.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1475,7 +1482,7 @@ Le routage est essentiel pour diriger les requêtes vers les modèles, outils ou
 
 ### Routage basé sur le contenu
 
-Le routage basé sur le contenu dirige les requêtes vers des services spécialisés selon le contenu de la requête.
+Le routage basé sur le contenu oriente les requêtes vers des services spécialisés selon le contenu de la requête.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1546,9 +1553,9 @@ public class ContentBasedRouter
 }
 ```
 
-### Équilibrage de charge intelligent
+### Répartition intelligente de la charge
 
-L’équilibrage de charge optimise l’utilisation des ressources et garantit une haute disponibilité des services MCP.
+La répartition de charge optimise l’utilisation des ressources et garantit une haute disponibilité des services MCP.
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -1679,7 +1686,7 @@ public class McpLoadBalancer {
 
 ### Routage dynamique des outils
 
-Le routage des outils assure que les appels aux outils sont dirigés vers le service le plus approprié selon le contexte.
+Le routage des outils assure que les appels aux outils sont dirigés vers le service le plus adapté selon le contexte.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1861,7 +1868,7 @@ flowchart TB
 
 ## Scalabilité et MCP haute performance
 
-Pour les déploiements en entreprise, les implémentations MCP doivent souvent gérer un grand volume de requêtes avec une latence minimale.
+Pour les déploiements en entreprise, les implémentations MCP doivent souvent gérer un volume élevé de requêtes avec une latence minimale.
 
 ### Stratégies de scalabilité
 
@@ -2013,7 +2020,7 @@ class DistributedMcpServer:
 
 ## Bonnes pratiques de sécurité
 
-La sécurité est cruciale pour les implémentations MCP, en particulier dans les environnements d’entreprise.
+La sécurité est un aspect critique des implémentations MCP, surtout en environnement professionnel.
 
 ### Authentification et autorisation
 
@@ -2280,7 +2287,7 @@ class SecureCustomerDataTool(Tool):
 
 ## Intégration en entreprise
 
-Intégrer MCP avec des systèmes d’entreprise tels que Azure OpenAI et Microsoft AI Foundry.
+Intégration de MCP avec des systèmes d’entreprise comme Azure OpenAI et Microsoft AI Foundry.
 
 ### Intégration Azure OpenAI
 
@@ -2530,30 +2537,32 @@ class EnterpriseAiIntegration:
 
 ## Points clés à retenir
 
-- Les implémentations MCP multi-modales étendent les capacités d’IA au-delà du traitement du texte
-- La scalabilité est essentielle pour les déploiements en entreprise et peut être abordée par scalabilité horizontale et verticale
-- Des mesures de sécurité complètes protègent les données et assurent un contrôle d’accès approprié
-- L’intégration en entreprise avec des plateformes comme Azure OpenAI et Microsoft AI Foundry améliore les capacités MCP
+- Les implémentations MCP multi-modales étendent les capacités d’IA au-delà du traitement textuel
+- La scalabilité est essentielle pour les déploiements en entreprise et peut être assurée par scalabilité horizontale et verticale
+- Des mesures de sécurité complètes protègent les données et garantissent un contrôle d’accès approprié
+- L’intégration en entreprise avec des plateformes comme Azure OpenAI et Microsoft AI Foundry renforce les capacités MCP
 - Les implémentations avancées MCP bénéficient d’architectures optimisées et d’une gestion rigoureuse des ressources
 
 ## Exercice
 
-Concevez une implémentation MCP de niveau entreprise pour un cas d’usage spécifique :
+Concevez une implémentation MCP de qualité entreprise pour un cas d’usage spécifique :
 
-1. Identifiez les besoins multi-modaux pour votre cas d’usage
+1. Identifiez les besoins multi-modaux de votre cas d’usage
 2. Définissez les contrôles de sécurité nécessaires pour protéger les données sensibles
-3. Concevez une architecture évolutive capable de gérer des charges variables
-4. Planifiez les points d’intégration avec les systèmes IA d’entreprise
-5. Documentez les goulets d’étranglement potentiels en termes de performance et les stratégies d’atténuation
+3. Concevez une architecture scalable capable de gérer des charges variables
+4. Planifiez les points d’intégration avec les systèmes d’IA en entreprise
+5. Documentez les éventuels goulets d’étranglement en performance et les stratégies d’atténuation
 
 ## Ressources supplémentaires
 
-- [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
+- [Documentation Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Documentation Microsoft AI Foundry](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
-Suivant : [Community and Contributions](../06-CommunityContributions/README.md)
+## Et ensuite
+
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle humaine est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l'utilisation de cette traduction.

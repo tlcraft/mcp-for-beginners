@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-27T16:16:28+00:00",
+  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
+  "translation_date": "2025-06-02T12:49:15+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "cs"
 }
 -->
 # MCP OAuth2 Demo
 
-Этот проект — **минимальное Spring Boot приложение**, которое выполняет роль:
+This project is a **минимальное Spring Boot приложение**, которое выполняет функции:
 
-* **Spring Authorization Server** (выдающего JWT access tokens через `client_credentials` flow), и  
-* **Resource Server** (защищая собственный `/hello` endpoint).
+* **Spring Authorization Server** (выдаёт JWT access tokens через `client_credentials` flow), и  
+* **Resource Server** (защищает собственный `/hello` endpoint).
 
-Он повторяет настройку, показанную в [публикации в блоге Spring (2 апр 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Это повторяет конфигурацию, показанную в [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,7 +36,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Тестирование конфигурации OAuth2
 
-Вы можете проверить конфигурацию безопасности OAuth2 следующими шагами:
+Вы можете проверить безопасность OAuth2 с помощью следующих шагов:
 
 ### 1. Убедитесь, что сервер запущен и защищён
 
@@ -45,7 +45,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -v http://localhost:8081/
 ```
 
-### 2. Получите access token с помощью client credentials
+### 2. Получите access token, используя client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Примечание: Заголовок Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Примечание: заголовок Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Получите доступ к защищённому endpoint, используя токен
+### 3. Доступ к защищённому endpoint с помощью токена
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Успешный ответ с "Hello from MCP OAuth2 Demo!" подтверждает, что конфигурация OAuth2 работает корректно.
+Успешный ответ с сообщением "Hello from MCP OAuth2 Demo!" подтверждает, что конфигурация OAuth2 работает корректно.
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Деплой в **Azure Container Apps**
+## Развёртывание в **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -102,7 +102,7 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 ## Интеграция с **Azure API Management**
 
-Добавьте эту входящую политику в ваш API:
+Добавьте эту inbound policy в ваш API:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM получит JWKS и будет валидировать каждый запрос.
+APIM будет получать JWKS и проверять каждый запрос.
+
+---
+
+## Что дальше
+
+- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné interpretace vzniklé použitím tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakákoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

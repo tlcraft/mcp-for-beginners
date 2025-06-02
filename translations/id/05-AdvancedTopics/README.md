@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:21:30+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:40:52+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "id"
 }
@@ -11,38 +11,45 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Ikhtisar
 
-Pelajaran ini mengeksplorasi konsep lanjutan dalam implementasi Model Context Protocol, dengan fokus pada integrasi multi-modal, skalabilitas, praktik terbaik keamanan, dan integrasi perusahaan. Topik-topik ini penting untuk membangun aplikasi MCP yang siap produksi yang dapat menangani persyaratan kompleks dalam lingkungan perusahaan.
+Pelajaran ini membahas konsep lanjutan dalam implementasi Model Context Protocol, dengan fokus pada integrasi multi-modal, skalabilitas, praktik keamanan terbaik, dan integrasi enterprise. Topik-topik ini penting untuk membangun aplikasi MCP kelas produksi yang mampu menangani kebutuhan kompleks di lingkungan enterprise.
 
 ## Tujuan Pembelajaran
 
-Pada akhir pelajaran ini, Anda akan dapat:
-- Menerapkan kemampuan multi-modal dalam kerangka MCP
-- Merancang arsitektur MCP yang skalabel untuk skenario permintaan tinggi
-- Menerapkan praktik terbaik keamanan yang selaras dengan prinsip keamanan MCP
-- Mengintegrasikan MCP dengan sistem dan kerangka kerja AI perusahaan
-- Mengoptimalkan kinerja dan keandalan dalam lingkungan produksi
+Pada akhir pelajaran ini, Anda akan mampu:
+- Menerapkan kemampuan multi-modal dalam kerangka kerja MCP
+- Merancang arsitektur MCP yang skalabel untuk skenario dengan permintaan tinggi
+- Menerapkan praktik keamanan terbaik yang sesuai dengan prinsip keamanan MCP
+- Mengintegrasikan MCP dengan sistem dan kerangka kerja AI enterprise
+- Mengoptimalkan performa dan keandalan di lingkungan produksi
+
+## Proyek Contoh
+
+| Link | Judul | Deskripsi |
+|------|-------|-------------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Aplikasi Spring Boot minimal yang menunjukkan OAuth2 dengan MCP, baik sebagai Authorization maupun Resource Server. Menunjukkan penerbitan token yang aman, endpoint terlindungi, deployment Azure Container Apps, dan integrasi API Management. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web Search MCP | Server dan klien MCP Python yang terintegrasi dengan SerpAPI untuk pencarian web, berita, produk, dan tanya jawab secara real-time. Menunjukkan orkestrasi multi-tool, integrasi API eksternal, dan penanganan kesalahan yang kuat. |
 
 ## Referensi Tambahan
 
-Untuk informasi terkini tentang topik MCP lanjutan, lihat:
-- [Dokumentasi MCP](https://modelcontextprotocol.io/)
-- [Spesifikasi MCP](https://spec.modelcontextprotocol.io/)
-- [Repositori GitHub](https://github.com/modelcontextprotocol)
+Untuk informasi terbaru tentang topik MCP lanjutan, lihat:
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## Integrasi Multi-Modal
 
-MCP mendukung tidak hanya interaksi berbasis teks tetapi juga kemampuan multi-modal, memungkinkan model untuk bekerja dengan gambar, audio, dan jenis data lainnya.
+MCP mendukung tidak hanya interaksi berbasis teks tetapi juga kemampuan multi-modal, memungkinkan model bekerja dengan gambar, audio, dan jenis data lainnya.
 
 ### Arsitektur untuk Dukungan Multi-Modal
 
 Implementasi MCP multi-modal biasanya melibatkan:
 
-1. **Parser Spesifik Modal**: Komponen yang mengubah berbagai jenis media menjadi format yang dapat diproses oleh model
+1. **Parser Spesifik Modal**: Komponen yang mengubah berbagai jenis media menjadi format yang dapat diproses model
 2. **Alat Spesifik Modal**: Alat khusus yang dirancang untuk menangani modalitas tertentu (analisis gambar, pemrosesan audio)
-3. **Manajemen Konteks Terpadu**: Sistem untuk mempertahankan konteks di berbagai modalitas
-4. **Generasi Respons**: Kemampuan untuk menghasilkan respons yang mungkin mencakup beberapa modalitas
+3. **Manajemen Konteks Terpadu**: Sistem untuk menjaga konteks di berbagai modalitas
+4. **Generasi Respons**: Kemampuan menghasilkan respons yang mungkin mencakup berbagai modalitas
 
-### Contoh C# Multi-Modal: Analisis Gambar
+### Contoh Multi-Modal C#: Analisis Gambar
 
 ```csharp
 using ModelContextProtocol.SDK.Server;
@@ -174,7 +181,7 @@ namespace MultiModalMcpExample
 }
 ```
 
-### Contoh Java Multi-Modal: Pemrosesan Audio
+### Contoh Multi-Modal Java: Pemrosesan Audio
 
 ```java
 package com.example.mcp.multimodal;
@@ -302,7 +309,7 @@ public class MultiModalApplication {
 }
 ```
 
-### Contoh Python Multi-Modal: Generasi Respons Multi-Modal
+### Contoh Multi-Modal Python: Generasi Respons Multi-Modal
 
 ```python
 from mcp_server import McpServer
@@ -450,27 +457,27 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## Konteks Root MCP
+## Root Contexts MCP
 
-Konteks root adalah konsep fundamental dalam Model Context Protocol yang menyediakan lapisan persisten untuk mempertahankan riwayat percakapan dan status bersama di berbagai permintaan dan sesi.
+Root contexts adalah konsep dasar dalam Model Context Protocol yang menyediakan lapisan persisten untuk menyimpan riwayat percakapan dan status bersama di berbagai permintaan dan sesi.
 
-### Memahami Konteks Root
+### Memahami Root Contexts
 
-Konteks root berfungsi sebagai wadah yang menyimpan riwayat dan status untuk serangkaian interaksi terkait. Mereka memungkinkan:
+Root contexts berfungsi sebagai wadah yang menyimpan riwayat dan status untuk serangkaian interaksi terkait. Mereka memungkinkan:
 
-- **Persistensi Percakapan**: Mempertahankan percakapan multi-putaran yang koheren
-- **Manajemen Memori**: Menyimpan dan mengambil informasi di berbagai interaksi
-- **Manajemen Status**: Melacak kemajuan dalam alur kerja yang kompleks
-- **Berbagi Konteks**: Memungkinkan beberapa klien mengakses status percakapan yang sama
+- **Persistensi Percakapan**: Mempertahankan percakapan multi-putar yang koheren
+- **Manajemen Memori**: Menyimpan dan mengambil informasi antar interaksi
+- **Manajemen Status**: Melacak kemajuan dalam alur kerja kompleks
+- **Berbagi Konteks**: Memungkinkan banyak klien mengakses status percakapan yang sama
 
-Dalam MCP, konteks root memiliki karakteristik utama ini:
+Dalam MCP, root contexts memiliki karakteristik utama berikut:
 
-- Setiap konteks root memiliki pengidentifikasi unik
-- Mereka dapat berisi riwayat percakapan, preferensi pengguna, dan metadata lainnya
-- Mereka dapat dibuat, diakses, dan diarsipkan sesuai kebutuhan
-- Mereka mendukung kontrol akses dan izin yang terperinci
+- Setiap root context memiliki pengenal unik
+- Dapat berisi riwayat percakapan, preferensi pengguna, dan metadata lainnya
+- Dapat dibuat, diakses, dan diarsipkan sesuai kebutuhan
+- Mendukung kontrol akses dan izin yang rinci
 
-### Siklus Hidup Konteks Root
+### Siklus Hidup Root Context
 
 ```mermaid
 flowchart TD
@@ -481,7 +488,7 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### Contoh .NET: Bekerja dengan Konteks Root
+### Contoh .NET: Bekerja dengan Root Contexts
 
 ```csharp
 // .NET Example: Root Context Management
@@ -556,7 +563,7 @@ public class RootContextExample
 }
 ```
 
-### Contoh Java: Implementasi Konteks Root
+### Contoh Java: Implementasi Root Context
 
 ```java
 // Java Example: Root Context Implementation
@@ -642,7 +649,7 @@ public class RootContextsDemo {
 }
 ```
 
-### Contoh JavaScript: Manajemen Konteks Root
+### Contoh JavaScript: Manajemen Root Context
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Contoh Python: Konteks Root untuk Bantuan Multi-Putaran
+### Contoh Python: Root Context untuk Bantuan Multi-Turn
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1009,27 +1016,27 @@ if __name__ == "__main__":
     asyncio.run(demo_assistant_session())
 ```
 
-### Praktik Terbaik Konteks Root
+### Praktik Terbaik Root Context
 
-1. **Buat Konteks yang Fokus**: Buat konteks root terpisah untuk tujuan percakapan atau domain yang berbeda untuk menjaga kejelasan.
+1. **Buat Konteks yang Terfokus**: Buat root contexts terpisah untuk tujuan atau domain percakapan yang berbeda agar tetap jelas.
 
-2. **Tetapkan Kebijakan Kedaluwarsa**: Terapkan kebijakan untuk mengarsipkan atau menghapus konteks lama untuk mengelola penyimpanan dan mematuhi kebijakan retensi data.
+2. **Tetapkan Kebijakan Kadaluarsa**: Terapkan kebijakan untuk mengarsipkan atau menghapus konteks lama guna mengelola penyimpanan dan mematuhi kebijakan retensi data.
 
-3. **Simpan Metadata yang Relevan**: Gunakan metadata konteks untuk menyimpan informasi penting tentang percakapan yang mungkin berguna nanti.
+3. **Simpan Metadata yang Relevan**: Gunakan metadata konteks untuk menyimpan informasi penting tentang percakapan yang mungkin berguna di kemudian hari.
 
-4. **Gunakan ID Konteks Secara Konsisten**: Setelah konteks dibuat, gunakan ID-nya secara konsisten untuk semua permintaan terkait untuk menjaga kontinuitas.
+4. **Gunakan ID Konteks Secara Konsisten**: Setelah konteks dibuat, gunakan ID-nya secara konsisten untuk semua permintaan terkait agar kontinuitas terjaga.
 
-5. **Hasilkan Ringkasan**: Ketika konteks tumbuh besar, pertimbangkan untuk menghasilkan ringkasan untuk menangkap informasi penting sambil mengelola ukuran konteks.
+5. **Buat Ringkasan**: Ketika konteks menjadi besar, pertimbangkan membuat ringkasan untuk menangkap informasi penting sambil mengelola ukuran konteks.
 
 6. **Terapkan Kontrol Akses**: Untuk sistem multi-pengguna, terapkan kontrol akses yang tepat untuk memastikan privasi dan keamanan konteks percakapan.
 
-7. **Tangani Batasan Konteks**: Sadarilah batasan ukuran konteks dan terapkan strategi untuk menangani percakapan yang sangat panjang.
+7. **Tangani Batasan Konteks**: Sadari batasan ukuran konteks dan terapkan strategi untuk menangani percakapan yang sangat panjang.
 
-8. **Arsipkan Saat Selesai**: Arsipkan konteks saat percakapan selesai untuk membebaskan sumber daya sambil mempertahankan riwayat percakapan.
+8. **Arsipkan Saat Selesai**: Arsipkan konteks saat percakapan selesai untuk membebaskan sumber daya sambil tetap menyimpan riwayat percakapan.
 
 ## Sampling dalam Model Context Protocol
 
-Strategi sampling sangat penting untuk mengoptimalkan respons model dalam implementasi MCP. Konfigurasi sampling yang tepat dapat secara dramatis meningkatkan kualitas dan kinerja respons. MCP menyediakan cara standar untuk mengontrol bagaimana model menghasilkan teks dengan parameter spesifik yang mempengaruhi kebaruan, kreativitas, dan koherensi.
+Strategi sampling sangat penting untuk mengoptimalkan respons model dalam implementasi MCP. Konfigurasi sampling yang tepat dapat secara signifikan meningkatkan kualitas respons dan performa. MCP menyediakan cara standar untuk mengontrol bagaimana model menghasilkan teks dengan parameter tertentu yang memengaruhi randomness, kreativitas, dan koherensi.
 
 ### Ikhtisar Parameter Sampling
 
@@ -1044,11 +1051,11 @@ MCP mendefinisikan parameter sampling berikut yang dapat dikonfigurasi dalam per
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | Urutan khusus yang menghentikan generasi saat ditemui | Array dari string |
+| `stop_sequences` | Urutan khusus yang menghentikan generasi saat ditemukan | Array string |
 
-### Sampling Suhu dan Top-K/Top-P
+### Sampling Temperature dan Top-K/Top-P
 
-Parameter sampling memungkinkan penyesuaian perilaku model bahasa untuk mencapai keseimbangan yang diinginkan antara output deterministik dan kreatif.
+Parameter sampling memungkinkan penyetelan perilaku model bahasa untuk mencapai keseimbangan yang diinginkan antara output deterministik dan kreatif.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1230,7 +1237,7 @@ deterministicSampling();
 
 ### Konfigurasi Sampling Dinamis
 
-Sampling cerdas mengadaptasi parameter berdasarkan konteks dan persyaratan setiap permintaan.
+Sampling cerdas menyesuaikan parameter berdasarkan konteks dan kebutuhan setiap permintaan.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1471,11 +1478,11 @@ demonstrateAdaptiveSampling();
 
 ## Routing dalam Model Context Protocol
 
-Routing sangat penting untuk mengarahkan permintaan ke model, alat, atau layanan yang sesuai dalam ekosistem MCP.
+Routing penting untuk mengarahkan permintaan ke model, alat, atau layanan yang sesuai dalam ekosistem MCP.
 
 ### Routing Berbasis Konten
 
-Routing berbasis konten mengarahkan permintaan ke layanan khusus berdasarkan konten permintaan.
+Routing berbasis konten mengarahkan permintaan ke layanan khusus berdasarkan isi permintaan.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1546,9 +1553,9 @@ public class ContentBasedRouter
 }
 ```
 
-### Penyeimbangan Beban Cerdas
+### Load Balancing Cerdas
 
-Penyeimbangan beban mengoptimalkan pemanfaatan sumber daya dan memastikan ketersediaan tinggi untuk layanan MCP.
+Load balancing mengoptimalkan pemanfaatan sumber daya dan memastikan ketersediaan tinggi untuk layanan MCP.
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -1679,7 +1686,7 @@ public class McpLoadBalancer {
 
 ### Routing Alat Dinamis
 
-Routing alat memastikan bahwa panggilan alat diarahkan ke layanan yang paling sesuai berdasarkan konteks.
+Routing alat memastikan panggilan alat diarahkan ke layanan yang paling tepat berdasarkan konteks.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1790,9 +1797,9 @@ class McpToolRouter:
             raise
 ```
 
-### Arsitektur Sampling dan Routing dalam MCP
+### Arsitektur Sampling dan Routing di MCP
 
-Diagram di bawah ini menggambarkan bagaimana sampling dan routing bekerja sama dalam arsitektur MCP yang komprehensif:
+Diagram berikut menggambarkan bagaimana sampling dan routing bekerja bersama dalam arsitektur MCP yang komprehensif:
 
 ```mermaid
 flowchart TB
@@ -1859,13 +1866,13 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Skalabilitas dan Kinerja Tinggi MCP
+## Skalabilitas dan MCP Berperforma Tinggi
 
-Untuk penerapan perusahaan, implementasi MCP seringkali perlu menangani volume permintaan yang tinggi dengan latensi minimal.
+Untuk deployment enterprise, implementasi MCP sering kali harus menangani volume permintaan yang tinggi dengan latensi minimal.
 
 ### Strategi Skalabilitas
 
-#### Skalabilitas Horizontal
+#### Scaling Horizontal
 
 ```csharp
 // ASP.NET Core MCP load balancing configuration
@@ -1895,7 +1902,7 @@ public class McpLoadBalancedStartup
 }
 ```
 
-#### Skalabilitas Vertikal dan Optimasi Sumber Daya
+#### Scaling Vertikal dan Optimasi Sumber Daya
 
 ```java
 // Java MCP server with resource optimization
@@ -2011,13 +2018,13 @@ class DistributedMcpServer:
         await self.redis.wait_closed()
 ```
 
-## Praktik Terbaik Keamanan
+## Praktik Keamanan Terbaik
 
-Keamanan sangat penting untuk implementasi MCP, terutama dalam lingkungan perusahaan.
+Keamanan sangat penting untuk implementasi MCP, terutama di lingkungan enterprise.
 
 ### Autentikasi dan Otorisasi
 
-#### Integrasi Identitas .NET
+#### Integrasi .NET Identity
 
 ```csharp
 public class SecureMcpStartup
@@ -2088,7 +2095,7 @@ public class SecureMcpStartup
 }
 ```
 
-#### Integrasi Keamanan Java Spring
+#### Integrasi Java Spring Security
 
 ```java
 @Configuration
@@ -2278,9 +2285,9 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-## Integrasi Perusahaan
+## Integrasi Enterprise
 
-Mengintegrasikan MCP dengan sistem perusahaan seperti Azure OpenAI dan Microsoft AI Foundry.
+Mengintegrasikan MCP dengan sistem enterprise seperti Azure OpenAI dan Microsoft AI Foundry.
 
 ### Integrasi Azure OpenAI
 
@@ -2404,7 +2411,7 @@ public class AIFoundryMcpBridge {
 }
 ```
 
-### Contoh Integrasi Perusahaan Python
+### Contoh Integrasi Enterprise Python
 
 ```python
 # Python Azure AI Integration
@@ -2531,29 +2538,31 @@ class EnterpriseAiIntegration:
 ## Poin Penting
 
 - Implementasi MCP multi-modal memperluas kemampuan AI di luar pemrosesan teks
-- Skalabilitas penting untuk penerapan perusahaan dan dapat diatasi melalui skalabilitas horizontal dan vertikal
-- Langkah-langkah keamanan yang komprehensif melindungi data dan memastikan kontrol akses yang tepat
-- Integrasi perusahaan dengan platform seperti Azure OpenAI dan Microsoft AI Foundry meningkatkan kemampuan MCP
-- Implementasi MCP yang canggih mendapat manfaat dari arsitektur yang dioptimalkan dan manajemen sumber daya yang hati-hati
+- Skalabilitas sangat penting untuk deployment enterprise dan dapat diatasi melalui scaling horizontal dan vertikal
+- Langkah keamanan komprehensif melindungi data dan memastikan kontrol akses yang tepat
+- Integrasi enterprise dengan platform seperti Azure OpenAI dan Microsoft AI Foundry meningkatkan kemampuan MCP
+- Implementasi MCP lanjutan mendapatkan manfaat dari arsitektur yang dioptimalkan dan pengelolaan sumber daya yang cermat
 
 ## Latihan
 
-Rancang implementasi MCP tingkat perusahaan untuk kasus penggunaan tertentu:
+Rancang implementasi MCP kelas enterprise untuk kasus penggunaan tertentu:
 
-1. Identifikasi persyaratan multi-modal untuk kasus penggunaan Anda
-2. Garis besar kontrol keamanan yang diperlukan untuk melindungi data sensitif
-3. Rancang arsitektur yang skalabel yang dapat menangani beban yang bervariasi
-4. Rencanakan titik integrasi dengan sistem AI perusahaan
-5. Dokumentasikan potensi hambatan kinerja dan strategi mitigasi
+1. Identifikasi kebutuhan multi-modal untuk kasus penggunaan Anda
+2. Rancang kontrol keamanan yang diperlukan untuk melindungi data sensitif
+3. Rancang arsitektur skalabel yang dapat menangani beban yang bervariasi
+4. Rencanakan titik integrasi dengan sistem AI enterprise
+5. Dokumentasikan potensi hambatan performa dan strategi mitigasinya
 
 ## Sumber Daya Tambahan
 
-- [Dokumentasi Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Dokumentasi Microsoft AI Foundry](https://learn.microsoft.com/en-us/ai-services/)
+- [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
-Selanjutnya: [Komunitas dan Kontribusi](../06-CommunityContributions/README.md)
+## Selanjutnya
+
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi penting, disarankan menggunakan terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau kesalahan interpretasi yang timbul dari penggunaan terjemahan ini.

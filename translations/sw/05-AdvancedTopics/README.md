@@ -1,46 +1,53 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:22:42+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:45:36+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "sw"
 }
 -->
-# Mada ya Juu katika MCP
+# Madaftari ya Juu katika MCP
 
 ## Muhtasari
 
-Somo hili linachunguza dhana za juu katika utekelezaji wa Model Context Protocol, likilenga ushirikiano wa njia nyingi, upanuzi, mbinu bora za usalama, na ushirikiano wa kibiashara. Mada hizi ni muhimu kwa kujenga programu za MCP za kiwango cha uzalishaji zinazoweza kushughulikia mahitaji magumu katika mazingira ya biashara.
+Somo hili linachunguza dhana za juu katika utekelezaji wa Model Context Protocol, likilenga muunganisho wa njia nyingi, upanuzi, mbinu bora za usalama, na muunganisho wa biashara. Mada hizi ni muhimu kwa kujenga programu za MCP za kiwango cha uzalishaji zinazoweza kushughulikia mahitaji tata katika mazingira ya biashara.
 
 ## Malengo ya Kujifunza
 
 Mwisho wa somo hili, utaweza:
 - Kutekeleza uwezo wa njia nyingi ndani ya mifumo ya MCP
-- Kusanifu miundombinu ya MCP inayoweza kupanuka kwa hali za mahitaji makubwa
+- Kubuni miundo inayoweza kupanuka ya MCP kwa hali za mahitaji makubwa
 - Kutumia mbinu bora za usalama zinazolingana na kanuni za usalama za MCP
-- Kuunganisha MCP na mifumo na mifumo ya AI ya kibiashara
-- Kuboresha utendaji na uaminifu katika mazingira ya uzalishaji
+- Kuunganisha MCP na mifumo na mifumo ya AI ya biashara
+- Kuboresha utendaji na kuaminika katika mazingira ya uzalishaji
 
-## Marejeleo ya Ziada
+## Miradi ya Mfano
 
-Kwa habari za hivi karibuni zaidi kuhusu mada za juu za MCP, rejelea:
+| Kiungo | Kichwa | Maelezo |
+|--------|--------|----------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Programu ndogo ya Spring Boot inaonyesha OAuth2 na MCP, kama Seva ya Idhini na Seva ya Rasilimali. Inaonyesha utoaji wa tokeni salama, vituo vilivyo saliwa, uanzishaji wa Azure Container Apps, na muunganisho wa Usimamizi wa API. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Utafutaji wa Mtandao MCP | Seva na mteja wa Python MCP unaounganisha na SerpAPI kwa utafutaji wa moja kwa moja wa wavuti, habari, bidhaa, na maswali na majibu. Inaonyesha usimamizi wa zana nyingi, muunganisho wa API za nje, na utunzaji thabiti wa makosa. |
+
+## Marejeleo Zaidi
+
+Kwa taarifa za kisasa kuhusu mada za juu za MCP, rejelea:
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
-## Ushirikiano wa Njia Nyingi
+## Muunganisho wa Njia Nyingi
 
-MCP inasaidia sio tu mwingiliano wa maandishi lakini pia uwezo wa njia nyingi, ikiruhusu mifano kufanya kazi na picha, sauti, na aina nyingine za data.
+MCP haiji tu kwa mwingiliano wa maandishi bali pia ina uwezo wa njia nyingi, kuruhusu mifano kufanya kazi na picha, sauti, na aina nyingine za data.
 
-### Miundombinu ya Usaidizi wa Njia Nyingi
+### Miundo ya Kuunga Mkono Njia Nyingi
 
-Utekelezaji wa njia nyingi wa MCP kwa kawaida unahusisha:
+Utekelezaji wa MCP wa njia nyingi kawaida unahusisha:
 
-1. **Vichanganuzi Maalum vya Njia**: Vipengele vinavyobadilisha aina tofauti za media kuwa miundo ambayo mfano unaweza kusindika
-2. **Zana Maalum za Njia**: Zana maalum zilizoundwa kushughulikia njia maalum (uchambuzi wa picha, usindikaji wa sauti)
-3. **Usimamizi wa Muktadha Ulio Unganishwa**: Mfumo wa kudumisha muktadha katika njia tofauti
-4. **Uzalishaji wa Majibu**: Uwezo wa kuzalisha majibu yanayoweza kujumuisha njia nyingi
+1. **Vichambuzi Maalum kwa Modal**: Vipengele vinavyobadilisha aina tofauti za vyombo kuwa muundo unaoweza kuchakatwa na mfano
+2. **Zana Maalum kwa Modal**: Zana maalum zilizoundwa kushughulikia modal tofauti (uchambuzi wa picha, usindikaji wa sauti)
+3. **Usimamizi wa Muktadha Uliounganishwa**: Mfumo wa kudumisha muktadha kati ya modal tofauti
+4. **Uundaji wa Majibu**: Uwezo wa kuunda majibu yanayoweza kujumuisha modal nyingi
 
 ### Mfano wa C# wa Njia Nyingi: Uchambuzi wa Picha
 
@@ -302,7 +309,7 @@ public class MultiModalApplication {
 }
 ```
 
-### Mfano wa Python wa Njia Nyingi: Uzalishaji wa Majibu ya Njia Nyingi
+### Mfano wa Python wa Njia Nyingi: Uundaji wa Majibu ya Njia Nyingi
 
 ```python
 from mcp_server import McpServer
@@ -450,27 +457,27 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## Muktadha wa Mizizi ya MCP
+## Muktadha Msingi wa MCP
 
-Muktadha wa mizizi ni dhana ya msingi katika Model Context Protocol ambayo hutoa safu ya kudumu kwa kudumisha historia ya mazungumzo na hali iliyoshirikiwa katika maombi na vikao vingi.
+Muktadha msingi ni dhana muhimu katika Model Context Protocol inayotoa tabaka la kudumu la kuhifadhi historia ya mazungumzo na hali ya pamoja kati ya maombi na vikao vingi.
 
-### Kuelewa Muktadha wa Mizizi
+### Kuelewa Muktadha Msingi
 
-Muktadha wa mizizi hutumika kama kontena zinazoshikilia historia na hali kwa mfululizo wa mwingiliano unaohusiana. Zinawezesha:
+Muktadha msingi hutumika kama chombo kinachoshikilia historia na hali kwa mfululizo wa mwingiliano unaohusiana. Hutoa:
 
-- **Uvumilivu wa Mazungumzo**: Kudumisha mazungumzo yenye mzunguko wa mizunguko mingi
-- **Usimamizi wa Kumbukumbu**: Kuhifadhi na kurejesha taarifa katika mwingiliano
-- **Usimamizi wa Hali**: Kufuatilia maendeleo katika mchakato mgumu
-- **Kushiriki Muktadha**: Kuruhusu wateja wengi kufikia hali ya mazungumzo sawa
+- **Kudumu kwa Mazungumzo**: Kuhifadhi mazungumzo yenye mizunguko mingi yenye mwelekeo
+- **Usimamizi wa Kumbukumbu**: Kuhifadhi na kupata taarifa kati ya mwingiliano
+- **Usimamizi wa Hali**: Kufuatilia maendeleo katika taratibu tata
+- **Kushirikiana kwa Muktadha**: Kuruhusu wateja wengi kufikia hali ile ile ya mazungumzo
 
-Katika MCP, muktadha wa mizizi una sifa hizi muhimu:
+Katika MCP, muktadha msingi una sifa hizi muhimu:
 
-- Kila muktadha wa mizizi una kitambulisho cha kipekee
-- Unaweza kuwa na historia ya mazungumzo, mapendeleo ya mtumiaji, na metadata nyingine
+- Kila muktadha msingi una kitambulisho cha kipekee
+- Unaweza kuhifadhi historia ya mazungumzo, mapendeleo ya mtumiaji, na metadata nyingine
 - Unaweza kuundwa, kufikiwa, na kuhifadhiwa kama inavyohitajika
-- Unaunga mkono udhibiti wa ufikiaji wa kina na ruhusa
+- Unaunga mkono udhibiti wa upatikanaji na ruhusa kwa undani
 
-### Mzunguko wa Maisha wa Muktadha wa Mizizi
+### Mzunguko wa Maisha wa Muktadha Msingi
 
 ```mermaid
 flowchart TD
@@ -481,7 +488,7 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### Mfano wa .NET: Kufanya Kazi na Muktadha wa Mizizi
+### Mfano wa .NET: Kufanya kazi na Muktadha Msingi
 
 ```csharp
 // .NET Example: Root Context Management
@@ -556,7 +563,7 @@ public class RootContextExample
 }
 ```
 
-### Mfano wa Java: Utekelezaji wa Muktadha wa Mizizi
+### Mfano wa Java: Utekelezaji wa Muktadha Msingi
 
 ```java
 // Java Example: Root Context Implementation
@@ -642,7 +649,7 @@ public class RootContextsDemo {
 }
 ```
 
-### Mfano wa JavaScript: Usimamizi wa Muktadha wa Mizizi
+### Mfano wa JavaScript: Usimamizi wa Muktadha Msingi
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### Mfano wa Python: Muktadha wa Mizizi kwa Usaidizi wa Mizunguko Mingi
+### Mfano wa Python: Muktadha Msingi kwa Msaada wa Mizunguko Mingi
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1009,34 +1016,34 @@ if __name__ == "__main__":
     asyncio.run(demo_assistant_session())
 ```
 
-### Mbinu Bora za Muktadha wa Mizizi
+### Mbinu Bora za Muktadha Msingi
 
-1. **Unda Muktadha Uliozingatia**: Unda muktadha tofauti wa mizizi kwa madhumuni au nyanja tofauti za mazungumzo ili kudumisha uwazi.
+1. **Unda Muktadha Ulioelekezwa**: Unda muktadha tofauti kwa madhumuni tofauti ya mazungumzo au maeneo ili kudumisha uwazi.
 
-2. **Weka Sera za Muda wa Kuisha**: Tekeleza sera za kuhifadhi au kufuta muktadha wa zamani ili kudhibiti uhifadhi na kuzingatia sera za uhifadhi wa data.
+2. **Weka Sera za Kumalizika**: Tekeleza sera za kuhifadhi au kufuta muktadha wa zamani ili kusimamia hifadhi na kufuata sera za uhifadhi wa data.
 
-3. **Hifadhi Metadata Muhimu**: Tumia metadata ya muktadha kuhifadhi taarifa muhimu kuhusu mazungumzo ambayo inaweza kuwa muhimu baadaye.
+3. **Hifadhi Metadata Muhimu**: Tumia metadata ya muktadha kuhifadhi taarifa muhimu kuhusu mazungumzo ambayo inaweza kuwa ya msaada baadaye.
 
-4. **Tumia Vitambulisho vya Muktadha kwa Ulinganifu**: Mara muktadha unapoundwa, tumia kitambulisho chake kwa ulinganifu kwa maombi yote yanayohusiana ili kudumisha mwendelezo.
+4. **Tumia Vitambulisho vya Muktadha kwa Ulinganifu**: Mara muktadha unapotengenezwa, tumia ID yake kwa uthabiti kwa maombi yote yanayohusiana ili kudumisha mfuatano.
 
-5. **Zalisha Muhtasari**: Wakati muktadha unakua mkubwa, zingatia kuzalisha muhtasari wa kukamata taarifa muhimu huku ukidhibiti ukubwa wa muktadha.
+5. **Tengeneza Muhtasari**: Muktadha ukiwa mkubwa, fikiria kutengeneza muhtasari wa kushikilia taarifa muhimu huku ukidhibiti ukubwa wa muktadha.
 
-6. **Tekeleza Udhibiti wa Ufikiaji**: Kwa mifumo ya watumiaji wengi, tekeleza udhibiti sahihi wa ufikiaji ili kuhakikisha faragha na usalama wa muktadha wa mazungumzo.
+6. **Tekeleza Udhibiti wa Upatikanaji**: Kwa mifumo ya watumiaji wengi, tekeleza udhibiti sahihi wa upatikanaji ili kuhakikisha faragha na usalama wa muktadha wa mazungumzo.
 
-7. **Shughulikia Vikwazo vya Muktadha**: Fahamu vikwazo vya ukubwa wa muktadha na tekeleza mikakati ya kushughulikia mazungumzo marefu sana.
+7. **Shughulikia Mipaka ya Muktadha**: Fahamu mipaka ya ukubwa wa muktadha na tekeleza mikakati ya kushughulikia mazungumzo marefu sana.
 
-8. **Hifadhi Unapomaliza**: Hifadhi muktadha wakati mazungumzo yanapomalizika ili kuachilia rasilimali huku ukihifadhi historia ya mazungumzo.
+8. **Hifadhi Muktadha Mkiwa Umeisha**: Hifadhi muktadha mara mazungumzo yanapokamilika ili kuondoa rasilimali huku ukihifadhi historia ya mazungumzo.
 
-## Utoaji Sampuli katika Model Context Protocol
+## Uchaguzi katika Model Context Protocol
 
-Mikakati ya utoaji sampuli ni muhimu kwa kuboresha majibu ya mifano katika utekelezaji wa MCP. Usanidi sahihi wa utoaji sampuli unaweza kuboresha kwa kiasi kikubwa ubora na utendaji wa majibu. MCP inatoa njia sanifu ya kudhibiti jinsi mifano inavyozalisha maandishi na vigezo maalum vinavyoathiri nasibu, ubunifu, na ushirikiano.
+Mikakati ya uchaguzi ni muhimu kwa kuboresha majibu ya mfano katika utekelezaji wa MCP. Mipangilio sahihi ya uchaguzi inaweza kuboresha sana ubora wa majibu na utendaji. MCP inatoa njia ya kawaida ya kudhibiti jinsi mifano inavyotengeneza maandishi kwa vigezo maalum vinavyoathiri randomness, ubunifu, na muunganiko.
 
-### Muhtasari wa Vigezo vya Utoaji Sampuli
+### Muhtasari wa Vigezo vya Uchaguzi
 
-MCP inafafanua vigezo vifuatavyo vya utoaji sampuli ambavyo vinaweza kusanidiwa katika maombi ya mteja:
+MCP inaeleza vigezo vifuatavyo vya uchaguzi ambavyo vinaweza kupangwa katika maombi ya mteja:
 
-| Kipengele | Maelezo | Wigo wa Kawaida |
-|-----------|-------------|---------------|
+| Kigezo | Maelezo | Anuwai ya Kawaida |
+|--------|----------|------------------|
 | `temperature` | Controls randomness in token selection | 0.0 - 2.0 |
 | `top_p` | Nucleus sampling - limits tokens to top cumulative probability | 0.0 - 1.0 |
 | `top_k` | Limits token selection to top K options | 1 - 100 |
@@ -1044,11 +1051,11 @@ MCP inafafanua vigezo vifuatavyo vya utoaji sampuli ambavyo vinaweza kusanidiwa 
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | Mfuatano maalum unaosimamisha uzalishaji unapokutana | Array ya maandishi |
+| `stop_sequences` | Mfuatano maalum unaoacha uzalishaji unapokutana nao | Orodha ya mistari |
 
-### Utoaji Sampuli wa Temperature na Top-K/Top-P
+### Uchaguzi wa Joto na Top-K/Top-P
 
-Vigezo vya utoaji sampuli huruhusu urekebishaji wa tabia ya mifano ya lugha ili kufikia uwiano unaotakiwa kati ya matokeo ya kithabiti na ya ubunifu.
+Vigezo vya uchaguzi huruhusu kuboresha tabia za mifano ya lugha kufikia mchanganyiko unaotakiwa kati ya matokeo yanayojirudia na ubunifu.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1142,9 +1149,9 @@ async function demonstrateSampling() {
 demonstrateSampling();
 ```
 
-### Utoaji Sampuli wa Kithabiti
+### Uchaguzi wa Kuthibitishwa
 
-Kwa programu zinazohitaji matokeo ya kithabiti, utoaji sampuli wa kithabiti huhakikisha matokeo yanayoweza kurudiwa.
+Kwa programu zinazohitaji matokeo thabiti, uchaguzi wa kuthibitishwa huhakikisha matokeo yanayoweza kurudiwa.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1228,9 +1235,9 @@ async function deterministicSampling() {
 deterministicSampling();
 ```
 
-### Usanidi wa Utoaji Sampuli wa Kiadilifu
+### Mipangilio ya Uchaguzi ya Kihisia
 
-Utoaji sampuli wa kiadilifu hubadilisha vigezo kulingana na muktadha na mahitaji ya kila ombi.
+Uchaguzi wa akili hubadilisha vigezo kulingana na muktadha na mahitaji ya kila ombi.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1469,13 +1476,13 @@ async function demonstrateAdaptiveSampling() {
 demonstrateAdaptiveSampling();
 ```
 
-## Uelekezaji katika Model Context Protocol
+## Upangaji katika Model Context Protocol
 
-Uelekezaji ni muhimu kwa kuelekeza maombi kwa mifano, zana, au huduma zinazofaa ndani ya mfumo wa MCP.
+Upangaji ni muhimu kwa kuelekeza maombi kwa mifano, zana, au huduma zinazofaa ndani ya mfumo wa MCP.
 
-### Uelekezaji wa Kulingana na Maudhui
+### Upangaji Kulingana na Yaliyomo
 
-Uelekezaji wa kulingana na maudhui huongoza maombi kwa huduma maalum kulingana na maudhui ya ombi.
+Upangaji kulingana na yaliyomo huelekeza maombi kwa huduma maalum kulingana na yaliyomo katika ombi.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1546,9 +1553,9 @@ public class ContentBasedRouter
 }
 ```
 
-### Usawazishaji wa Mizigo wa Kiadilifu
+### Usawazishaji wa Mizigo wa Kihisia
 
-Usawazishaji wa mizigo unalenga kuboresha matumizi ya rasilimali na kuhakikisha upatikanaji wa juu kwa huduma za MCP.
+Usawazishaji wa mizigo huboresha matumizi ya rasilimali na kuhakikisha upatikanaji wa juu kwa huduma za MCP.
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -1677,9 +1684,9 @@ public class McpLoadBalancer {
 }
 ```
 
-### Uelekezaji wa Zana wa Kiadilifu
+### Upangaji wa Zana wa Kihisia
 
-Uelekezaji wa zana unahakikisha kuwa miito ya zana inaelekezwa kwa huduma inayofaa zaidi kulingana na muktadha.
+Upangaji wa zana huhakikisha simu za zana zinaelekezwa kwa huduma inayofaa zaidi kulingana na muktadha.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1790,9 +1797,9 @@ class McpToolRouter:
             raise
 ```
 
-### Usanifu wa Utoaji Sampuli na Uelekezaji katika MCP
+### Miundo ya Uchaguzi na Upangaji katika MCP
 
-Mchoro hapa chini unaonyesha jinsi utoaji sampuli na uelekezaji unavyofanya kazi pamoja katika usanifu wa kina wa MCP:
+Mchoro ufuatao unaonyesha jinsi uchaguzi na upangaji vinavyofanya kazi pamoja katika usanifu kamili wa MCP:
 
 ```mermaid
 flowchart TB
@@ -1859,11 +1866,11 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Uwezo wa Kupanuka na Utendaji wa Juu wa MCP
+## Upanuzi na MCP ya Utendaji wa Juu
 
-Kwa utekelezaji wa kibiashara, utekelezaji wa MCP mara nyingi unahitaji kushughulikia idadi kubwa ya maombi kwa ucheleweshaji mdogo.
+Kwa utekelezaji wa biashara, mara nyingi MCP inahitaji kushughulikia idadi kubwa ya maombi kwa ucheleweshaji mdogo.
 
-### Mikakati ya Uwezo wa Kupanuka
+### Mikakati ya Upanuzi
 
 #### Upanuzi wa Usawa
 
@@ -1928,7 +1935,7 @@ public class OptimizedMcpServer {
 }
 ```
 
-#### Usanifu wa Kijamii
+#### Miundo ya Kusambazwa
 
 ```python
 # Python MCP server in distributed architecture
@@ -2015,9 +2022,9 @@ class DistributedMcpServer:
 
 Usalama ni muhimu kwa utekelezaji wa MCP, hasa katika mazingira ya biashara.
 
-### Uthibitishaji na Uidhinishaji
+### Uthibitishaji na Idhini
 
-#### Ujumuishaji wa .NET Identity
+#### Muunganisho wa .NET Identity
 
 ```csharp
 public class SecureMcpStartup
@@ -2088,7 +2095,7 @@ public class SecureMcpStartup
 }
 ```
 
-#### Ujumuishaji wa Java Spring Security
+#### Muunganisho wa Java Spring Security
 
 ```java
 @Configuration
@@ -2278,11 +2285,11 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-## Ushirikiano wa Kibiashara
+## Muunganisho wa Biashara
 
-Kuunganisha MCP na mifumo ya kibiashara kama Azure OpenAI na Microsoft AI Foundry.
+Kuunganisha MCP na mifumo ya biashara kama Azure OpenAI na Microsoft AI Foundry.
 
-### Ujumuishaji wa Azure OpenAI
+### Muunganisho wa Azure OpenAI
 
 ```csharp
 // .NET Azure OpenAI Integration
@@ -2346,7 +2353,7 @@ namespace EnterpriseIntegration
 }
 ```
 
-### Ujumuishaji wa Microsoft AI Foundry
+### Muunganisho wa Microsoft AI Foundry
 
 ```java
 // Java AI Foundry Agent Integration
@@ -2404,7 +2411,7 @@ public class AIFoundryMcpBridge {
 }
 ```
 
-### Mfano wa Ujumuishaji wa Kibiashara wa Python
+### Mfano wa Muunganisho wa Biashara wa Python
 
 ```python
 # Python Azure AI Integration
@@ -2528,32 +2535,34 @@ class EnterpriseAiIntegration:
         return mapping.get(ml_type, "string")
 ```
 
-## Mambo Muhimu ya Kumbuka
+## Muhimu wa Kumbuka
 
-- Utekelezaji wa njia nyingi wa MCP huongeza uwezo wa AI zaidi ya usindikaji wa maandishi
-- Uwezo wa kupanuka ni muhimu kwa utekelezaji wa kibiashara na unaweza kushughulikiwa kupitia upanuzi wa usawa na wima
-- Hatua za kina za usalama hulinda data na kuhakikisha udhibiti sahihi wa ufikiaji
-- Ushirikiano wa kibiashara na majukwaa kama Azure OpenAI na Microsoft AI Foundry huongeza uwezo wa MCP
-- Utekelezaji wa juu wa MCP unafaidika na usanifu ulioboreshwa na usimamizi wa rasilimali kwa makini
+- Utekelezaji wa MCP wa njia nyingi unaongeza uwezo wa AI zaidi ya usindikaji wa maandishi
+- Upanuzi ni muhimu kwa utekelezaji wa biashara na unaweza kushughulikiwa kupitia upanuzi wa usawa na wima
+- Hatua kamili za usalama hulinda data na kuhakikisha udhibiti sahihi wa upatikanaji
+- Muunganisho wa biashara na majukwaa kama Azure OpenAI na Microsoft AI Foundry huongeza uwezo wa MCP
+- Utekelezaji wa juu wa MCP unafaidika na usanifu ulioboreshwa na usimamizi makini wa rasilimali
 
-## Zoezi
+## Zoefu
 
-Sanifu utekelezaji wa MCP wa kiwango cha biashara kwa kesi maalum ya matumizi:
+Buni utekelezaji wa MCP wa kiwango cha biashara kwa matumizi maalum:
 
-1. Tambua mahitaji ya njia nyingi kwa kesi yako ya matumizi
+1. Tambua mahitaji ya njia nyingi kwa matumizi yako
 2. Eleza udhibiti wa usalama unaohitajika kulinda data nyeti
-3. Sanifu usanifu unaoweza kupanuka ambao unaweza kushughulikia mzigo tofauti
-4. Panga sehemu za ujumuishaji na mifumo ya AI ya kibiashara
-5. Andika vizuizi vya utendaji vinavyoweza kutokea na mikakati ya kupunguza
+3. Buni usanifu unaoweza kupanuka unaoshughulikia mzigo unaobadilika
+4. Panga maeneo ya muunganisho na mifumo ya AI ya biashara
+5. Andika mafadhaiko yanayoweza kutokea ya utendaji na mikakati ya kuyatatua
 
-## Rasilimali za Ziada
+## Rasilimali Zaidi
 
 - [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
 - [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
-Next: [Community and Contributions](../06-CommunityContributions/README.md)
+## Nini Kifuatacho
 
-**Kanusho**: 
-Hati hii imetafsiriwa kwa kutumia huduma ya kutafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuelewana. Hati ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kibinadamu ya kitaalamu inapendekezwa. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
+
+**Kasi ya majibu**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati asilia katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zitokanazo na matumizi ya tafsiri hii.

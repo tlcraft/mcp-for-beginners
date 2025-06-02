@@ -1,48 +1,55 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "deb1d3b973ff806b7c4d87e0e7e5ee52",
-  "translation_date": "2025-05-17T15:10:48+00:00",
+  "original_hash": "a1c6fd414ab8b2efe382e85d4f276afa",
+  "translation_date": "2025-06-02T12:02:37+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "mo"
 }
 -->
-# مواضيع متقدمة في بروتوكول سياق النموذج
+# Advanced Topics in MCP
 
-## نظرة عامة
+## Overview
 
-تستكشف هذه الدرس مفاهيم متقدمة في تنفيذ بروتوكول سياق النموذج، مع التركيز على التكامل متعدد الوسائط، قابلية التوسع، أفضل الممارسات الأمنية، وتكامل المؤسسات. هذه المواضيع ضرورية لبناء تطبيقات بروتوكول سياق النموذج الجاهزة للإنتاج التي يمكنها التعامل مع متطلبات معقدة في بيئات المؤسسات.
+This lesson delves into advanced concepts of Model Context Protocol implementation, emphasizing multi-modal integration, scalability, security best practices, and enterprise integration. These topics are crucial for developing production-grade MCP applications capable of meeting complex enterprise demands.
 
-## أهداف التعلم
+## Learning Objectives
 
-بنهاية هذه الدرس، ستكون قادرًا على:
-- تنفيذ قدرات متعددة الوسائط ضمن أطر عمل بروتوكول سياق النموذج
-- تصميم هياكل بروتوكول سياق النموذج قابلة للتوسع لسيناريوهات عالية الطلب
-- تطبيق أفضل الممارسات الأمنية المتوافقة مع مبادئ أمان بروتوكول سياق النموذج
-- دمج بروتوكول سياق النموذج مع أنظمة وأطر عمل الذكاء الاصطناعي للمؤسسات
-- تحسين الأداء والموثوقية في بيئات الإنتاج
+By the end of this lesson, you will be able to:
+- Implement multi-modal capabilities within MCP frameworks
+- Design scalable MCP architectures for high-demand scenarios
+- Apply security best practices aligned with MCP's security principles
+- Integrate MCP with enterprise AI systems and frameworks
+- Optimize performance and reliability in production environments
 
-## مراجع إضافية
+## Sample Projects
 
-للحصول على أحدث المعلومات حول مواضيع بروتوكول سياق النموذج المتقدمة، يرجى الرجوع إلى:
-- [وثائق بروتوكول سياق النموذج](https://modelcontextprotocol.io/)
-- [مواصفات بروتوكول سياق النموذج](https://spec.modelcontextprotocol.io/)
-- [مستودع GitHub](https://github.com/modelcontextprotocol)
+| Link | Title | Description |
+|------|-------|-------------|
+| [mcp-oauth2-demo](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimal Spring Boot app showing OAuth2 with MCP, both as Authorization and Resource Server. Demonstrates secure token issuance, protected endpoints, Azure Container Apps deployment, and API Management integration. |
+| [web-search-mcp](../../../05-AdvancedTopics/web-search-mcp) | Web Search MCP | Python MCP server and client integrating with SerpAPI for real-time web, news, product search, and Q&A. Demonstrates multi-tool orchestration, external API integration, and robust error handling. |
 
-## التكامل متعدد الوسائط
+## Additional References
 
-يدعم بروتوكول سياق النموذج ليس فقط التفاعلات النصية ولكن أيضًا القدرات متعددة الوسائط، مما يسمح للنماذج بالعمل مع الصور والصوت وأنواع البيانات الأخرى.
+For the latest details on advanced MCP topics, refer to:
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
 
-### هندسة دعم متعدد الوسائط
+## Multi-Modal Integration
 
-عادةً ما تتضمن تنفيذات بروتوكول سياق النموذج متعددة الوسائط:
+MCP supports not only text-based interactions but also multi-modal features, enabling models to work with images, audio, and other data types.
 
-1. **محللات خاصة بالوسائط**: مكونات تحول أنواع الوسائط المختلفة إلى صيغ يمكن للنموذج معالجتها
-2. **أدوات خاصة بالوسائط**: أدوات خاصة مصممة للتعامل مع وسائط معينة (تحليل الصور، معالجة الصوت)
-3. **إدارة سياق موحدة**: نظام للحفاظ على السياق عبر وسائط مختلفة
-4. **توليد الاستجابة**: القدرة على توليد استجابات قد تشمل وسائط متعددة
+### Architecture for Multi-Modal Support
 
-### مثال C#: تحليل الصور
+Multi-modal MCP implementations generally include:
+
+1. **Modal-Specific Parsers**: Components that convert various media types into formats the model can process
+2. **Modal-Specific Tools**: Specialized tools designed to handle particular modalities (image analysis, audio processing)
+3. **Unified Context Management**: Systems to maintain context across different modalities
+4. **Response Generation**: Ability to produce responses that may involve multiple modalities
+
+### C# Multi-Modal Example: Image Analysis
 
 ```csharp
 using ModelContextProtocol.SDK.Server;
@@ -174,7 +181,7 @@ namespace MultiModalMcpExample
 }
 ```
 
-### مثال Java: معالجة الصوت
+### Java Multi-Modal Example: Audio Processing
 
 ```java
 package com.example.mcp.multimodal;
@@ -302,7 +309,7 @@ public class MultiModalApplication {
 }
 ```
 
-### مثال Python: توليد استجابة متعددة الوسائط
+### Python Multi-Modal Example: Multi-Modal Response Generation
 
 ```python
 from mcp_server import McpServer
@@ -450,27 +457,27 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## سياقات الجذر في بروتوكول سياق النموذج
+## MCP Root Contexts
 
-تعتبر سياقات الجذر مفهومًا أساسيًا في بروتوكول سياق النموذج الذي يوفر طبقة مستمرة للحفاظ على تاريخ المحادثة والحالة المشتركة عبر طلبات وجلسات متعددة.
+Root contexts are a core concept in the Model Context Protocol, providing a persistent layer to maintain conversation history and shared state across multiple requests and sessions.
 
-### فهم سياقات الجذر
+### Understanding Root Contexts
 
-تعمل سياقات الجذر كحاويات تحمل التاريخ والحالة لسلسلة من التفاعلات ذات الصلة. تمكن من:
+Root contexts act as containers holding the history and state for a series of related interactions. They enable:
 
-- **استمرارية المحادثة**: الحفاظ على محادثات متعددة الأدوار متماسكة
-- **إدارة الذاكرة**: تخزين واسترجاع المعلومات عبر التفاعلات
-- **إدارة الحالة**: تتبع التقدم في سير العمل المعقدة
-- **مشاركة السياق**: السماح لعدة عملاء بالوصول إلى نفس حالة المحادثة
+- **Conversation Persistence**: Supporting coherent multi-turn conversations
+- **Memory Management**: Storing and retrieving information across interactions
+- **State Management**: Tracking progress in complex workflows
+- **Context Sharing**: Allowing multiple clients to access the same conversation state
 
-في بروتوكول سياق النموذج، تتميز سياقات الجذر بهذه الخصائص الرئيسية:
+In MCP, root contexts have these main features:
 
-- كل سياق جذر له معرف فريد
-- يمكن أن تحتوي على تاريخ المحادثة، تفضيلات المستخدم، وبيانات وصفية أخرى
-- يمكن إنشاؤها، الوصول إليها، وأرشفتها حسب الحاجة
-- تدعم التحكم في الوصول الدقيق والأذونات
+- Each root context has a unique identifier
+- They can hold conversation history, user preferences, and other metadata
+- They can be created, accessed, and archived as needed
+- They support fine-grained access control and permissions
 
-### دورة حياة سياق الجذر
+### Root Context Lifecycle
 
 ```mermaid
 flowchart TD
@@ -481,7 +488,7 @@ flowchart TD
     D --> E[Archive Context When Complete]
 ```
 
-### مثال .NET: العمل مع سياقات الجذر
+### .NET Example: Working with Root Contexts
 
 ```csharp
 // .NET Example: Root Context Management
@@ -556,7 +563,7 @@ public class RootContextExample
 }
 ```
 
-### مثال Java: تنفيذ سياق الجذر
+### Java Example: Root Context Implementation
 
 ```java
 // Java Example: Root Context Implementation
@@ -642,7 +649,7 @@ public class RootContextsDemo {
 }
 ```
 
-### مثال JavaScript: إدارة سياق الجذر
+### JavaScript Example: Root Context Management
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -882,7 +889,7 @@ async function demonstrateContextSession() {
 demonstrateContextSession();
 ```
 
-### مثال Python: سياق الجذر للمساعدة متعددة الأدوار
+### Python Example: Root Context for Multi-Turn Assistance
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -1009,33 +1016,33 @@ if __name__ == "__main__":
     asyncio.run(demo_assistant_session())
 ```
 
-### أفضل الممارسات لسياقات الجذر
+### Root Context Best Practices
 
-1. **إنشاء سياقات مركزة**: إنشاء سياقات جذر منفصلة لأغراض أو مجالات محادثة مختلفة للحفاظ على الوضوح.
+1. **Create Focused Contexts**: Maintain clarity by creating separate root contexts for different conversation goals or domains.
 
-2. **تحديد سياسات انتهاء الصلاحية**: تنفيذ سياسات لأرشفة أو حذف السياقات القديمة لإدارة التخزين والامتثال لسياسات الاحتفاظ بالبيانات.
+2. **Set Expiration Policies**: Establish policies to archive or delete old contexts to manage storage and comply with data retention rules.
 
-3. **تخزين البيانات الوصفية ذات الصلة**: استخدام البيانات الوصفية للسياق لتخزين معلومات مهمة حول المحادثة قد تكون مفيدة لاحقًا.
+3. **Store Relevant Metadata**: Use context metadata to keep important conversation details that may be useful later.
 
-4. **استخدام معرفات السياق بشكل متسق**: بمجرد إنشاء سياق، استخدم معرفه بشكل متسق لجميع الطلبات ذات الصلة للحفاظ على الاستمرارية.
+4. **Use Context IDs Consistently**: After creating a context, consistently use its ID for all related requests to preserve continuity.
 
-5. **توليد ملخصات**: عندما ينمو السياق بشكل كبير، فكر في توليد ملخصات لالتقاط المعلومات الأساسية أثناء إدارة حجم السياق.
+5. **Generate Summaries**: When contexts grow large, create summaries to capture key information while managing size.
 
-6. **تنفيذ التحكم في الوصول**: بالنسبة لأنظمة متعددة المستخدمين، تنفيذ ضوابط الوصول المناسبة لضمان الخصوصية وأمان سياقات المحادثة.
+6. **Implement Access Control**: For multi-user systems, enforce proper access controls to protect privacy and security of conversation contexts.
 
-7. **التعامل مع قيود السياق**: كن على دراية بقيود حجم السياق وتنفيذ استراتيجيات للتعامل مع المحادثات الطويلة جدًا.
+7. **Handle Context Limitations**: Be mindful of context size limits and develop strategies for managing very long conversations.
 
-8. **أرشفة عند الاكتمال**: أرشفة السياقات عند اكتمال المحادثات لتحرير الموارد مع الحفاظ على تاريخ المحادثة.
+8. **Archive When Complete**: Archive contexts after conversations finish to free resources while preserving history.
 
-## أخذ العينات في بروتوكول سياق النموذج
+## Sampling in Model Context Protocol
 
-استراتيجيات أخذ العينات ضرورية لتحسين استجابات النموذج في تنفيذات بروتوكول سياق النموذج. يمكن للتكوين الصحيح لأخذ العينات تحسين جودة الأداء بشكل كبير. يوفر بروتوكول سياق النموذج طريقة موحدة للتحكم في كيفية توليد النماذج للنص باستخدام معلمات محددة تؤثر على العشوائية، الإبداع، والتماسك.
+Sampling strategies are vital for optimizing model responses in MCP implementations. Proper sampling configuration can significantly enhance response quality and performance. MCP standardizes how models generate text using parameters that influence randomness, creativity, and coherence.
 
-### نظرة عامة على معلمات أخذ العينات
+### Sampling Parameters Overview
 
-يعرف بروتوكول سياق النموذج معلمات أخذ العينات التالية التي يمكن تكوينها في طلبات العميل:
+MCP defines these sampling parameters configurable in client requests:
 
-| المعلمة | الوصف | النطاق النموذجي |
+| Parameter | Description | Typical Range |
 |-----------|-------------|---------------|
 | `temperature` | Controls randomness in token selection | 0.0 - 2.0 |
 | `top_p` | Nucleus sampling - limits tokens to top cumulative probability | 0.0 - 1.0 |
@@ -1044,11 +1051,11 @@ if __name__ == "__main__":
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
 | `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | تسلسلات مخصصة توقف التوليد عند مواجهتها | مجموعة من السلاسل |
+| `stop_sequences` | Custom sequences that stop generation when encountered | Array of strings |
 
-### أخذ العينات بدرجة الحرارة وأخذ العينات Top-K/Top-P
+### Temperature and Top-K/Top-P Sampling
 
-تسمح معلمات أخذ العينات بضبط سلوك نماذج اللغة لتحقيق التوازن المطلوب بين المخرجات الحتمية والإبداعية.
+Sampling parameters allow fine-tuning model behavior to balance deterministic and creative outputs.
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -1142,9 +1149,9 @@ async function demonstrateSampling() {
 demonstrateSampling();
 ```
 
-### أخذ العينات الحتمية
+### Deterministic Sampling
 
-بالنسبة للتطبيقات التي تتطلب مخرجات متسقة، يضمن أخذ العينات الحتمية نتائج قابلة للتكرار.
+For applications needing consistent outputs, deterministic sampling ensures reproducible results.
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -1228,9 +1235,9 @@ async function deterministicSampling() {
 deterministicSampling();
 ```
 
-### تكوين أخذ العينات الديناميكي
+### Dynamic Sampling Configuration
 
-يتكيف أخذ العينات الذكي مع المعلمات بناءً على السياق ومتطلبات كل طلب.
+Smart sampling adjusts parameters based on context and specific request needs.
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -1469,13 +1476,13 @@ async function demonstrateAdaptiveSampling() {
 demonstrateAdaptiveSampling();
 ```
 
-## التوجيه في بروتوكول سياق النموذج
+## Routing in Model Context Protocol
 
-التوجيه ضروري لتوجيه الطلبات إلى النماذج والأدوات والخدمات المناسبة داخل نظام بروتوكول سياق النموذج.
+Routing directs requests to the appropriate models, tools, or services within an MCP ecosystem.
 
-### التوجيه بناءً على المحتوى
+### Content-Based Routing
 
-يوجه التوجيه بناءً على المحتوى الطلبات إلى الخدمات المتخصصة بناءً على محتوى الطلب.
+Content-based routing sends requests to specialized services depending on the request content.
 
 ```csharp
 // .NET Example: Content-based routing in MCP
@@ -1546,9 +1553,9 @@ public class ContentBasedRouter
 }
 ```
 
-### موازنة التحميل الذكية
+### Intelligent Load Balancing
 
-تحسن موازنة التحميل استغلال الموارد وتضمن توفرًا عاليًا لخدمات بروتوكول سياق النموذج.
+Load balancing optimizes resource use and guarantees high availability for MCP services.
 
 ```java
 // Java Example: Intelligent load balancing for MCP servers
@@ -1677,9 +1684,9 @@ public class McpLoadBalancer {
 }
 ```
 
-### التوجيه الديناميكي للأدوات
+### Dynamic Tool Routing
 
-يضمن توجيه الأدوات أن يتم توجيه مكالمات الأدوات إلى الخدمة الأكثر ملاءمة بناءً على السياق.
+Tool routing ensures tool calls reach the most suitable service based on context.
 
 ```python
 # Python Example: Dynamic tool routing based on request analysis
@@ -1790,9 +1797,9 @@ class McpToolRouter:
             raise
 ```
 
-### هندسة أخذ العينات والتوجيه في بروتوكول سياق النموذج
+### Sampling and Routing Architecture in MCP
 
-يوضح الرسم البياني أدناه كيف يعمل أخذ العينات والتوجيه معًا في هندسة شاملة لبروتوكول سياق النموذج:
+The diagram below shows how sampling and routing collaborate within a comprehensive MCP architecture:
 
 ```mermaid
 flowchart TB
@@ -1859,13 +1866,13 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## قابلية التوسع والأداء العالي لبروتوكول سياق النموذج
+## Scalability and High-Performance MCP
 
-بالنسبة لنشر المؤسسات، غالبًا ما تحتاج تنفيذات بروتوكول سياق النموذج إلى التعامل مع كميات كبيرة من الطلبات بأقل تأخير ممكن.
+Enterprise deployments often require MCP implementations to handle large volumes of requests with minimal delay.
 
-### استراتيجيات قابلية التوسع
+### Scalability Strategies
 
-#### التوسع الأفقي
+#### Horizontal Scaling
 
 ```csharp
 // ASP.NET Core MCP load balancing configuration
@@ -1895,7 +1902,7 @@ public class McpLoadBalancedStartup
 }
 ```
 
-#### التوسع العمودي وتحسين الموارد
+#### Vertical Scaling and Resource Optimization
 
 ```java
 // Java MCP server with resource optimization
@@ -1928,7 +1935,7 @@ public class OptimizedMcpServer {
 }
 ```
 
-#### هندسة موزعة
+#### Distributed Architecture
 
 ```python
 # Python MCP server in distributed architecture
@@ -2011,13 +2018,13 @@ class DistributedMcpServer:
         await self.redis.wait_closed()
 ```
 
-## أفضل الممارسات الأمنية
+## Security Best Practices
 
-الأمان ضروري لتنفيذات بروتوكول سياق النموذج، خاصة في بيئات المؤسسات.
+Security is paramount in MCP implementations, especially within enterprise environments.
 
-### المصادقة والتفويض
+### Authentication and Authorization
 
-#### تكامل هوية .NET
+#### .NET Identity Integration
 
 ```csharp
 public class SecureMcpStartup
@@ -2088,7 +2095,7 @@ public class SecureMcpStartup
 }
 ```
 
-#### تكامل أمان Java Spring
+#### Java Spring Security Integration
 
 ```java
 @Configuration
@@ -2140,9 +2147,9 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 }
 ```
 
-### حماية البيانات والخصوصية
+### Data Protection and Privacy
 
-#### مثال حماية البيانات في Python
+#### Python Data Protection Example
 
 ```python
 from mcp_server import McpServer
@@ -2278,11 +2285,11 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-## تكامل المؤسسات
+## Enterprise Integration
 
-دمج بروتوكول سياق النموذج مع أنظمة المؤسسات مثل Azure OpenAI وMicrosoft AI Foundry.
+Integrating MCP with enterprise systems such as Azure OpenAI and Microsoft AI Foundry.
 
-### تكامل Azure OpenAI
+### Azure OpenAI Integration
 
 ```csharp
 // .NET Azure OpenAI Integration
@@ -2346,7 +2353,7 @@ namespace EnterpriseIntegration
 }
 ```
 
-### تكامل Microsoft AI Foundry
+### Microsoft AI Foundry Integration
 
 ```java
 // Java AI Foundry Agent Integration
@@ -2404,7 +2411,7 @@ public class AIFoundryMcpBridge {
 }
 ```
 
-### مثال Python لتكامل المؤسسات
+### Python Enterprise Integration Example
 
 ```python
 # Python Azure AI Integration
@@ -2528,31 +2535,34 @@ class EnterpriseAiIntegration:
         return mapping.get(ml_type, "string")
 ```
 
-## النقاط الرئيسية
+## Key Takeaways
 
-- توسع تنفيذات بروتوكول سياق النموذج متعددة الوسائط قدرات الذكاء الاصطناعي إلى ما وراء معالجة النصوص
-- قابلية التوسع ضرورية لنشر المؤسسات ويمكن معالجتها من خلال التوسع الأفقي والعمودي
-- تدابير الأمان الشاملة تحمي البيانات وتضمن التحكم في الوصول المناسب
-- التكامل المؤسسي مع منصات مثل Azure OpenAI وMicrosoft AI Foundry يعزز قدرات بروتوكول سياق النموذج
-- تستفيد تنفيذات بروتوكول سياق النموذج المتقدمة من هياكل محسنة وإدارة موارد دقيقة
+- Multi-modal MCP implementations extend AI capabilities beyond text processing
+- Scalability is critical for enterprise deployments and can be achieved through horizontal and vertical scaling
+- Robust security measures protect data and ensure proper access control
+- Enterprise integration with platforms like Azure OpenAI and Microsoft AI Foundry enhances MCP functionality
+- Advanced MCP implementations benefit from optimized architectures and careful resource management
 
-## تمرين
+## Exercise
 
-صمم تنفيذ بروتوكول سياق النموذج من الدرجة المؤسسية لحالة استخدام محددة:
+Design an enterprise-grade MCP implementation for a specific use case:
 
-1. تحديد المتطلبات متعددة الوسائط لحالة الاستخدام الخاصة بك
-2. تحديد الضوابط الأمنية اللازمة لحماية البيانات الحساسة
-3. تصميم هندسة قابلة للتوسع يمكنها التعامل مع التحميل المتغير
-4. تخطيط نقاط التكامل مع أنظمة الذكاء الاصطناعي للمؤسسات
-5. توثيق الاختناقات المحتملة في الأداء واستراتيجيات التخفيف
+1. Identify multi-modal requirements for your use case
+2. Outline the security controls needed to protect sensitive data
+3. Design a scalable architecture that can handle varying load
+4. Plan integration points with enterprise AI systems
+5. Document potential performance bottlenecks and mitigation strategies
 
-## موارد إضافية
+## Additional Resources
 
-- [وثائق Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [وثائق Microsoft AI Foundry](https://learn.microsoft.com/en-us/ai-services/)
+- [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
-التالي: [المجتمع والمساهمات](../06-CommunityContributions/README.md)
+## What's next
 
-I'm sorry, but it seems that "mo" is not a recognized language code or name. Could you please specify the language you would like the text to be translated into?
+- [5.1 MCP OAuth2 Demo](./mcp-oauth2-demo/README.md)
+
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

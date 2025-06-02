@@ -1,18 +1,18 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:42:08+00:00",
+  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
+  "translation_date": "2025-06-02T12:30:34+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "sv"
 }
 -->
 # MCP OAuth2 Demo
 
-Detta projekt är en **minimal Spring Boot-applikation** som fungerar som både:
+Det här projektet är en **minimal Spring Boot-applikation** som fungerar som både:
 
-* en **Spring Authorization Server** (utfärdar JWT-access tokens via `client_credentials` flödet), och  
-* en **Resource Server** (skyddar sin egen `/hello` endpoint).
+* en **Spring Authorization Server** (utfärdar JWT-access tokens via `client_credentials`-flödet), och  
+* en **Resource Server** (skyddar sin egen `/hello`-endpoint).
 
 Det speglar uppsättningen som visas i [Spring-blogginlägget (2 apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
@@ -45,7 +45,7 @@ Du kan testa OAuth2-säkerhetskonfigurationen med följande steg:
 curl -v http://localhost:8081/
 ```
 
-### 2. Få en access token med klientuppgifter
+### 2. Hämta en access token med klientuppgifter
 
 ```bash
 # Get and extract the full token response
@@ -63,7 +63,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
 
 Obs: Basic Authentication-headern (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Åtkomst till den skyddade endpointen med token
+### 3. Anslut till den skyddade endpointen med token
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Ett framgångsrikt svar med "Hello from MCP OAuth2 Demo!" bekräftar att OAuth2-konfigurationen fungerar korrekt.
+Ett lyckat svar med "Hello from MCP OAuth2 Demo!" bekräftar att OAuth2-konfigurationen fungerar korrekt.
 
 ---
 
-## Containerbygge
+## Bygg container
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Ingress FQDN blir din **issuer** (`https://<fqdn>`).  
+Ingressens FQDN blir din **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
-## Koppla in i **Azure API Management**
+## Integrera med **Azure API Management**
 
-Lägg till denna inkommande policy till din API:
+Lägg till denna inbound-policy till din API:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Lägg till denna inkommande policy till din API:
 </inbound>
 ```
 
-APIM kommer att hämta JWKS och validera varje begäran.
+APIM hämtar JWKS och validerar varje förfrågan.
+
+---
+
+## Vad händer härnäst
+
+- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen var medveten om att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på sitt modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi är inte ansvariga för eventuella missförstånd eller misstolkningar som uppstår vid användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål ska betraktas som den auktoritativa källan. För viktig information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
