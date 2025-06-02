@@ -201,7 +201,6 @@ You can use test scripts to quickly try out new queries, debug tool behavior, or
 
 You can use the following tools provided by the server to perform different types of searches and queries. Each tool is described below with its parameters and example usage.
 
-## Tool Descriptions
 
 This section provides details about each available tool and their parameters.
 
