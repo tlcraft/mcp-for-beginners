@@ -113,4 +113,4 @@ APIM will fetch the JWKS and validate every request.
 
 ## What's next
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
