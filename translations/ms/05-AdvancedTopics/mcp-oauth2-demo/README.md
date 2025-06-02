@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:42:54+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:21:49+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "ms"
 }
@@ -14,7 +14,7 @@ This project is a **minimal Spring Boot application** that serves as both:
 * a **Spring Authorization Server** (issuing JWT access tokens via the `client_credentials` flow), and  
 * a **Resource Server** (securing its own `/hello` endpoint).
 
-It replicates the setup described in the [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+It replicates the setup shown in the [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,7 +36,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Testing the OAuth2 Configuration
 
-You can verify the OAuth2 security setup by following these steps:
+You can verify the OAuth2 security setup with the following steps:
 
 ### 1. Confirm the server is running and secured
 
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-A successful response with "Hello from MCP OAuth2 Demo!" indicates the OAuth2 configuration is functioning properly.
+A successful response showing "Hello from MCP OAuth2 Demo!" indicates the OAuth2 setup is functioning properly.
 
 ---
 
@@ -116,13 +116,13 @@ Add this inbound policy to your API:
 </inbound>
 ```
 
-APIM will retrieve the JWKS and validate every request.
+APIM will retrieve the JWKS and validate each request.
 
 ---
 
 ## What's next
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

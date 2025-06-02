@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:22:40+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T18:58:07+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "it"
 }
 -->
-# MCP OAuth2 Demo
+# Demo MCP OAuth2
 
-Questo progetto è una **applicazione Spring Boot minimale** che funge sia da:
+Este proyecto es una **aplicación mínima de Spring Boot** que funciona como:
 
-* **Spring Authorization Server** (emettendo token di accesso JWT tramite il flusso `client_credentials`), sia  
-* **Resource Server** (proteggendo il proprio endpoint `/hello`).
+* un **Spring Authorization Server** (emitiendo tokens de acceso JWT mediante el flujo `client_credentials`), y  
+* un **Resource Server** (protegiendo su propio endpoint `/hello`).
 
-Ricalca la configurazione mostrata nel [post del blog Spring (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Refleja la configuración mostrada en el [post del blog de Spring (2 Abr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
-## Avvio rapido (locale)
+## Inicio rápido (local)
 
 ```bash
 # build & run
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Testare la configurazione OAuth2
+## Probando la configuración OAuth2
 
-Puoi testare la configurazione di sicurezza OAuth2 con i seguenti passaggi:
+Puedes probar la configuración de seguridad OAuth2 con los siguientes pasos:
 
-### 1. Verifica che il server sia attivo e protetto
+### 1. Verifica que el servidor esté en ejecución y protegido
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Ottieni un token di accesso usando le credenziali client
+### 2. Obtén un token de acceso usando client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Nota: l’header di Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Nota: El encabezado de autenticación Basic (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Accedi all’endpoint protetto usando il token
+### 3. Accede al endpoint protegido usando el token
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Una risposta positiva con "Hello from MCP OAuth2 Demo!" conferma che la configurazione OAuth2 funziona correttamente.
+Una respuesta exitosa con "Hello from MCP OAuth2 Demo!" confirma que la configuración OAuth2 funciona correctamente.
 
 ---
 
-## Build del container
+## Construcción del contenedor
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Deploy su **Azure Container Apps**
+## Despliegue en **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Il FQDN di ingress diventa il tuo **issuer** (`https://<fqdn>`).  
+El FQDN de ingreso se convierte en tu **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
-## Integrazione con **Azure API Management**
+## Integración con **Azure API Management**
 
-Aggiungi questa policy inbound alla tua API:
+Agrega esta política inbound a tu API:
 
 ```xml
 <inbound>
@@ -116,13 +116,13 @@ Aggiungi questa policy inbound alla tua API:
 </inbound>
 ```
 
-APIM recupererà il JWKS e validerà ogni richiesta.
+APIM obtendrá el JWKS y validará cada solicitud.
 
 ---
 
-## Cosa fare dopo
+## Qué sigue
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali fraintendimenti o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale umana. Non siamo responsabili per eventuali malintesi o interpretazioni errate derivanti dall'uso di questa traduzione.

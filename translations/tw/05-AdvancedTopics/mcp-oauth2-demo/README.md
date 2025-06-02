@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:06:16+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T18:33:04+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "tw"
 }
 -->
-# MCP OAuth2 示範
+# MCP OAuth2 Demo
 
 這個專案是一個**簡易的 Spring Boot 應用程式**，同時扮演：
 
 * **Spring 授權伺服器**（透過 `client_credentials` 流程發行 JWT 存取權杖），以及  
 * **資源伺服器**（保護自己的 `/hello` 端點）。
 
-它模仿了 [Spring 部落格文章 (2025 年 4 月 2 日)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) 中的設定。
+它與 [Spring 部落格文章 (2025 年 4 月 2 日)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) 中的設定相符。
 
 ---
 
-## 快速開始（本機）
+## 快速開始（本地）
 
 ```bash
 # build & run
@@ -38,7 +38,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 你可以透過以下步驟測試 OAuth2 的安全設定：
 
-### 1. 確認伺服器正在運行且已保護
+### 1. 確認伺服器正在運行且已受保護
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-注意：Basic Authentication 標頭是 (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`。
+注意：Basic Authentication 標頭 (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`。
 
-### 3. 使用權杖存取受保護的端點
+### 3. 使用權杖存取受保護端點
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-如果成功回應 "Hello from MCP OAuth2 Demo!"，表示 OAuth2 設定正常運作。
+如果回應成功且顯示 "Hello from MCP OAuth2 Demo!"，表示 OAuth2 設定運作正常。
 
 ---
 
-## 建置容器映像
+## 建置容器
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Ingress FQDN 將成為你的**發行者**（`https://<fqdn>`).  
+Ingress 的 FQDN 將成為你的**發行者**（`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`）。
 
 ---
 
 ## 整合到 **Azure API Management**
 
-在你的 API 加入這個 inbound policy：
+將此 inbound policy 加入你的 API：
 
 ```xml
 <inbound>
@@ -116,13 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM 會取得 JWKS 並驗證每個請求。
+APIM 將會擷取 JWKS 並驗證每一筆請求。
 
 ---
 
-## 接下來做什麼
+## 接下來的步驟
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不精確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生之任何誤解或誤譯負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威依據。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生之任何誤解或誤譯負責。

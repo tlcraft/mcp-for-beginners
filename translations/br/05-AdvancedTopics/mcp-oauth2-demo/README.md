@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:21:23+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T18:56:20+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "br"
 }
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Deploy no **Azure Container Apps**
+## Deploy para **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,7 +95,7 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-O FQDN de ingress se torna seu **issuer** (`https://<fqdn>`).  
+O FQDN do ingress torna-se seu **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
@@ -122,7 +122,7 @@ O APIM buscará o JWKS e validará cada requisição.
 
 ## Próximos passos
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido usando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

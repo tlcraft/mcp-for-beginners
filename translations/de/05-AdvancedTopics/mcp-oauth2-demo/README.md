@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T11:53:43+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T18:19:34+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "de"
 }
 -->
 # MCP OAuth2 Demo
 
-Dieses Projekt ist eine **minimalistische Spring Boot-Anwendung**, die gleichzeitig als:
+Dieses Projekt ist eine **minimalistische Spring Boot-Anwendung**, die sowohl als:
 
-* ein **Spring Authorization Server** (stellt JWT-Zugangstoken über den `client_credentials`-Flow aus), und  
-* ein **Resource Server** (schützt den eigenen `/hello`-Endpunkt).
+* **Spring Authorization Server** (der JWT-Zugriffstoken über den `client_credentials`-Flow ausstellt), als auch  
+* als **Resource Server** (der seinen eigenen `/hello`-Endpunkt schützt) fungiert.
 
-Es spiegelt die im [Spring Blogbeitrag (2. Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) gezeigte Konfiguration wider.
+Es spiegelt die im [Spring Blogbeitrag (2. Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) gezeigte Einrichtung wider.
 
 ---
 
-## Schneller Start (lokal)
+## Schnellstart (lokal)
 
 ```bash
 # build & run
@@ -45,7 +45,7 @@ Du kannst die OAuth2-Sicherheitskonfiguration mit den folgenden Schritten testen
 curl -v http://localhost:8081/
 ```
 
-### 2. Erhalte ein Zugriffstoken mit Client-Anmeldedaten
+### 2. Hole ein Zugriffstoken mit Client-Anmeldedaten
 
 ```bash
 # Get and extract the full token response
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Eine erfolgreiche Antwort mit "Hello from MCP OAuth2 Demo!" bestätigt, dass die OAuth2-Konfiguration korrekt funktioniert.
+Eine erfolgreiche Antwort mit „Hello from MCP OAuth2 Demo!“ bestätigt, dass die OAuth2-Konfiguration korrekt funktioniert.
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Deployment zu **Azure Container Apps**
+## Bereitstellung auf **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -116,13 +116,13 @@ Füge diese Inbound-Policy zu deiner API hinzu:
 </inbound>
 ```
 
-APIM ruft die JWKS ab und validiert jede Anfrage.
+APIM holt das JWKS und validiert jede Anfrage.
 
 ---
 
 ## Was kommt als Nächstes
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Verwendung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

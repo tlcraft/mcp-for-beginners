@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:18:28+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T18:51:16+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "pa"
 }
 -->
-# MCP OAuth2 Demo
+# MCP OAuth2 ਡੈਮੋ
 
-ਇਹ ਪ੍ਰੋਜੈਕਟ ਇੱਕ **ਘੱਟੋ-ਘੱਟ Spring Boot ਐਪਲੀਕੇਸ਼ਨ** ਹੈ ਜੋ ਦੋਹਾਂ ਵਜੋਂ ਕੰਮ ਕਰਦਾ ਹੈ:
+ਇਹ ਪ੍ਰੋਜੈਕਟ ਇੱਕ **ਸਰਲ Spring Boot ਐਪਲੀਕੇਸ਼ਨ** ਹੈ ਜੋ ਦੋਹਾਂ ਵਜੋਂ ਕੰਮ ਕਰਦਾ ਹੈ:
 
 * ਇੱਕ **Spring Authorization Server** (ਜੋ `client_credentials` ਫਲੋ ਰਾਹੀਂ JWT ਐਕਸੈਸ ਟੋਕਨ ਜਾਰੀ ਕਰਦਾ ਹੈ), ਅਤੇ  
 * ਇੱਕ **Resource Server** (ਜੋ ਆਪਣੇ `/hello` ਐਂਡਪੌਇੰਟ ਦੀ ਸੁਰੱਖਿਆ ਕਰਦਾ ਹੈ)।
 
-ਇਹ [Spring ਬਲੌਗ ਪੋਸਟ (2 ਅਪ੍ਰੈਲ 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) ਵਿੱਚ ਦਰਸਾਏ ਗਏ ਸੈਟਅਪ ਨੂੰ ਦਰਸਾਉਂਦਾ ਹੈ।
+ਇਹ ਉਸ ਸੈਟਅਪ ਦੀ ਨਕਲ ਕਰਦਾ ਹੈ ਜੋ [Spring ਬਲੌਗ ਪੋਸਟ (2 ਅਪਰੈਲ 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) ਵਿੱਚ ਦਿਖਾਇਆ ਗਿਆ ਹੈ।
 
 ---
 
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## OAuth2 ਕਨਫਿਗਰੇਸ਼ਨ ਦੀ ਜਾਂਚ
+## OAuth2 ਸੰਰਚਨਾ ਦੀ ਜਾਂਚ
 
-ਤੁਸੀਂ ਹੇਠਾਂ ਦਿੱਤੇ ਕਦਮਾਂ ਨਾਲ OAuth2 ਸੁਰੱਖਿਆ ਕਨਫਿਗਰੇਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰ ਸਕਦੇ ਹੋ:
+ਤੁਸੀਂ ਹੇਠਾਂ ਦਿੱਤੇ ਕਦਮਾਂ ਨਾਲ OAuth2 ਸੁਰੱਖਿਆ ਸੰਰਚਨਾ ਦੀ ਜਾਂਚ ਕਰ ਸਕਦੇ ਹੋ:
 
-### 1. ਸਰਵਰ ਚੱਲ ਰਹਿਆ ਹੈ ਅਤੇ ਸੁਰੱਖਿਅਤ ਹੈ ਇਹ ਪੁਸ਼ਟੀ ਕਰੋ
+### 1. ਸਰਵਰ ਚੱਲ ਰਿਹਾ ਹੈ ਅਤੇ ਸੁਰੱਖਿਅਤ ਹੈ ਇਹ ਪੱਕਾ ਕਰੋ
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. ਕਲਾਇੰਟ ਪ੍ਰਮਾਣ ਪੱਤਰਾਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਐਕਸੈਸ ਟੋਕਨ ਪ੍ਰਾਪਤ ਕਰੋ
+### 2. ਕਲਾਇੰਟ ਕ੍ਰੈਡੈਂਸ਼ਲਸ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਐਕਸੈਸ ਟੋਕਨ ਪ੍ਰਾਪਤ ਕਰੋ
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-ਨੋਟ: Basic Authentication ਹੈਡਰ (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret` ਹੈ।
+ਨੋਟ: Basic Authentication ਹੈਡਰ (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`।
 
-### 3. ਟੋਕਨ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਸੁਰੱਖਿਅਤ ਐਂਡਪੌਇੰਟ ਤੱਕ ਪਹੁੰਚੋ
+### 3. ਟੋਕਨ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਸੁਰੱਖਿਅਤ ਐਂਡਪੌਇੰਟ ਤੱਕ ਪਹੁੰਚ ਕਰੋ
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-"Hello from MCP OAuth2 Demo!" ਨਾਲ ਸਫਲ ਜਵਾਬ ਮਿਲਣਾ ਇਹ ਪੁਸ਼ਟੀ ਕਰਦਾ ਹੈ ਕਿ OAuth2 ਕਨਫਿਗਰੇਸ਼ਨ ਠੀਕ ਕੰਮ ਕਰ ਰਿਹਾ ਹੈ।
+"Hello from MCP OAuth2 Demo!" ਵਾਲਾ ਸਫਲ ਜਵਾਬ ਇਹ ਪੁਸ਼ਟੀ ਕਰਦਾ ਹੈ ਕਿ OAuth2 ਸੰਰਚਨਾ ਠੀਕ ਤਰ੍ਹਾਂ ਕੰਮ ਕਰ ਰਹੀ ਹੈ।
 
 ---
 
-## ਕੰਟੇਨਰ ਬਿਲਡ
+## ਕੰਟੇਨਰ ਬਣਾਉਣਾ
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## **Azure Container Apps** 'ਤੇ ਡਿਪਲੌਏ ਕਰੋ
+## **Azure Container Apps** 'ਤੇ ਡਿਪਲੋਇ ਕਰੋ
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -96,7 +96,7 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 Ingress FQDN ਤੁਹਾਡਾ **issuer** ਬਣ ਜਾਂਦਾ ਹੈ (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`)।
+Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`।
 
 ---
 
@@ -116,13 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM JWKS ਲੈ ਕੇ ਹਰ ਬੇਨਤੀ ਦੀ ਜਾਂਚ ਕਰੇਗਾ।
+APIM JWKS ਲਵੇਗਾ ਅਤੇ ਹਰ ਬੇਨਤੀ ਦੀ ਜਾਂਚ ਕਰੇਗਾ।
 
 ---
 
 ## ਅਗਲਾ ਕੀ ਹੈ
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
-**ਅਸਵੀਕਾਰੋक्ति**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਥਿਰਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਅਧਿਕਾਰਤ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਜਰੂਰੀ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਤਪੰਨ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਭ੍ਰਮ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+**ਡਿਸਕਲੇਮਰ**:  
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਹੀਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਨਾਲ ਹੋਣ ਵਾਲੀਆਂ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀਆਂ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆਵਾਂ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।

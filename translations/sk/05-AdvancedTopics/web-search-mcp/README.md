@@ -1,22 +1,22 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b0660b689ab793a8e9aefe29fb7f8b6a",
-  "translation_date": "2025-06-02T13:25:06+00:00",
+  "original_hash": "bc249f8b228953fafca05f94bb572aac",
+  "translation_date": "2025-06-02T19:31:17+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "sk"
 }
 -->
-# Lekcia: Vytvorenie Web Search MCP Servera
+# Lesson: Vytváranie MCP servera pre webové vyhľadávanie
 
-Táto kapitola ukazuje, ako vytvoriť reálneho AI agenta, ktorý sa integruje s externými API, spracováva rôzne typy dát, rieši chyby a koordinuje viacero nástrojov – všetko v produkčnej kvalite. Uvidíte:
+Táto kapitola ukazuje, ako vytvoriť reálneho AI agenta, ktorý integruje externé API, spracováva rôzne typy dát, rieši chyby a koordinuje viacero nástrojov – to všetko v produkčne pripravenom formáte. Uvidíte:
 
 - **Integráciu s externými API vyžadujúcimi autentifikáciu**
-- **Spracovanie rôznych typov dát z viacerých endpointov**
+- **Spracovanie rôznych dátových typov z viacerých endpointov**
 - **Robustné riešenie chýb a stratégie logovania**
-- **Orchestru viacerých nástrojov v jednom serveri**
+- **Koordináciu viacerých nástrojov v jednom serveri**
 
-Na konci budete mať praktické skúsenosti s patternmi a najlepšími praktikami, ktoré sú nevyhnutné pre pokročilé AI a aplikácie využívajúce LLM.
+Na konci budete mať praktické skúsenosti s patternmi a osvedčenými postupmi, ktoré sú nevyhnutné pre pokročilé AI a LLM aplikácie.
 
 ## Úvod
 
@@ -26,10 +26,10 @@ V tejto lekcii sa naučíte, ako vytvoriť pokročilý MCP server a klienta, kto
 
 Na konci tejto lekcie budete schopní:
 
-- Bezpečne integrovať externé API (ako SerpAPI) do MCP servera
-- Implementovať viacero nástrojov pre vyhľadávanie na webe, správy, produkty a Q&A
+- Bezpečne integrovať externé API (napr. SerpAPI) do MCP servera
+- Implementovať viacero nástrojov pre webové, spravodajské, produktové vyhľadávanie a Q&A
 - Parsovať a formátovať štruktúrované dáta pre LLM
-- Efektívne riešiť chyby a spravovať limity API
+- Efektívne riešiť chyby a spravovať limity API volaní
 - Vytvárať a testovať automatizovaných aj interaktívnych MCP klientov
 
 ## Web Search MCP Server
@@ -38,15 +38,15 @@ Táto sekcia predstavuje architektúru a funkcie Web Search MCP Servera. Uvidít
 
 ### Prehľad
 
-Táto implementácia obsahuje štyri nástroje, ktoré demonštrujú schopnosť MCP bezpečne a efektívne spracovávať rôznorodé úlohy založené na externých API:
+Táto implementácia obsahuje štyri nástroje, ktoré demonštrujú schopnosť MCP bezpečne a efektívne spracovať rôznorodé úlohy založené na externých API:
 
 - **general_search**: Pre široké výsledky z webu
-- **news_search**: Pre najnovšie titulky správ
-- **product_search**: Pre dáta z e-commerce
+- **news_search**: Pre najnovšie správy
+- **product_search**: Pre e-commerce dáta
 - **qna**: Pre otázky a odpovede
 
 ### Funkcie
-- **Príklady kódu**: Obsahuje jazykovo špecifické bloky kódu pre Python (a ľahko rozšíriteľné na ďalšie jazyky) s rozbaľovacími sekciami pre prehľadnosť
+- **Príklady kódu**: Obsahuje jazykovo špecifické bloky pre Python (a ľahko rozšíriteľné na iné jazyky) s možnosťou zbalenia pre prehľadnosť
 
 <details>  
 <summary>Python</summary>  
@@ -94,21 +94,21 @@ if __name__ == "__main__":
 </details>
 
 - **Integrácia externého API**: Ukazuje bezpečné spracovanie API kľúčov a externých požiadaviek
-- **Parsovanie štruktúrovaných dát**: Ukazuje, ako transformovať odpovede API do formátu vhodného pre LLM
-- **Riešenie chýb**: Robustné spracovanie chýb s primeraným logovaním
-- **Interaktívny klient**: Obsahuje automatizované testy aj interaktívny režim pre testovanie
-- **Správa kontextu**: Využíva MCP Context na logovanie a sledovanie požiadaviek
+- **Parsovanie štruktúrovaných dát**: Ukazuje, ako transformovať odpovede API do formátov vhodných pre LLM
+- **Riešenie chýb**: Robustné spracovanie chýb s adekvátnym logovaním
+- **Interaktívny klient**: Obsahuje automatizované testy aj interaktívny režim na testovanie
+- **Správa kontextu**: Využíva MCP Context pre logovanie a sledovanie požiadaviek
 
 ## Predpoklady
 
-Pred začiatkom sa uistite, že máte správne nastavené prostredie podľa nasledujúcich krokov. Tým zabezpečíte, že všetky závislosti sú nainštalované a vaše API kľúče správne nakonfigurované pre bezproblémový vývoj a testovanie.
+Pred začatím si overte, že máte správne nastavené prostredie podľa týchto krokov. Tým zabezpečíte, že všetky závislosti sú nainštalované a API kľúče sú správne nakonfigurované pre plynulý vývoj a testovanie.
 
-- Python 3.8 alebo vyšší
-- SerpAPI API kľúč (Zaregistrujte sa na [SerpAPI](https://serpapi.com/) – dostupná je bezplatná úroveň)
+- Python 3.8 alebo novší
+- SerpAPI API kľúč (Registrácia na [SerpAPI](https://serpapi.com/) – dostupná aj bezplatná úroveň)
 
 ## Inštalácia
 
-Ak chcete začať, postupujte podľa týchto krokov na nastavenie prostredia:
+Na začiatok postupujte podľa týchto krokov pre nastavenie prostredia:
 
 1. Nainštalujte závislosti pomocou uv (odporúčané) alebo pip:
 
@@ -120,7 +120,7 @@ uv pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-2. Vytvorte `.env` súbor v koreňovom adresári projektu s vaším SerpAPI kľúčom:
+2. Vytvorte `.env` súbor v koreňovom adresári projektu so svojím SerpAPI kľúčom:
 
 ```
 SERPAPI_KEY=your_serpapi_key_here
@@ -128,9 +128,9 @@ SERPAPI_KEY=your_serpapi_key_here
 
 ## Použitie
 
-Web Search MCP Server je jadrom, ktoré sprístupňuje nástroje pre vyhľadávanie na webe, správy, produkty a Q&A integráciou so SerpAPI. Spracováva prichádzajúce požiadavky, riadi volania API, parsuje odpovede a vracia štruktúrované výsledky klientovi.
+Web Search MCP Server je jadro, ktoré poskytuje nástroje pre vyhľadávanie na webe, správy, produktové vyhľadávanie a Q&A integráciou so SerpAPI. Spracováva prichádzajúce požiadavky, riadi volania API, parsuje odpovede a vracia štruktúrované výsledky klientovi.
 
-Kompletnú implementáciu nájdete v [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
+Celú implementáciu nájdete v [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
 ### Spustenie servera
 
@@ -140,7 +140,7 @@ Pre spustenie MCP servera použite nasledujúci príkaz:
 python server.py
 ```
 
-Server pobieha ako stdio-based MCP server, ku ktorému sa klient môže priamo pripojiť.
+Server bude bežať ako stdio-based MCP server, ku ktorému sa klient môže priamo pripojiť.
 
 ### Režimy klienta
 
@@ -153,13 +153,13 @@ You can review the full implementation in [`client.py`](../../../../05-AdvancedT
 
 ### Spustenie klienta
 
-Pre spustenie automatizovaných testov (týmto sa automaticky spustí aj server):
+Na spustenie automatizovaných testov (tým sa automaticky spustí aj server):
 
 ```bash
 python client.py
 ```
 
-Alebo spustite v interaktívnom režime:
+Alebo spustite interaktívny režim:
 
 ```bash
 python client.py --interactive
@@ -167,10 +167,9 @@ python client.py --interactive
 
 ### Testovanie rôznymi spôsobmi
 
-Existuje niekoľko možností, ako testovať a pracovať s nástrojmi, ktoré server poskytuje, podľa vašich potrieb a pracovného toku.
+Existuje niekoľko možností, ako testovať a pracovať s nástrojmi poskytovanými serverom podľa vašich potrieb a pracovného toku.
 
 #### Písanie vlastných testovacích skriptov s MCP Python SDK
-
 Môžete si tiež vytvoriť vlastné testovacie skripty pomocou MCP Python SDK:
 
 <details>
@@ -196,28 +195,27 @@ async def test_custom_query():
 ```
 </details>
 
-V tomto kontexte "testovací skript" znamená vlastný Python program, ktorý napíšete ako klient pre MCP server. Namiesto formálneho unit testu tento skript umožňuje programaticky sa pripojiť k serveru, volať jeho nástroje s vlastnými parametrami a kontrolovať výsledky. Tento prístup je užitočný pre:
-
+V tomto kontexte „testovací skript“ znamená vlastný Python program, ktorý píšete ako klienta pre MCP server. Namiesto formálneho unit testu tento skript umožňuje programovo sa pripojiť k serveru, volať jeho nástroje s vybranými parametrami a kontrolovať výsledky. Tento prístup je užitočný pre:
 - Prototypovanie a experimentovanie s volaniami nástrojov
-- Overovanie reakcií servera na rôzne vstupy
+- Overovanie, ako server reaguje na rôzne vstupy
 - Automatizáciu opakovaných volaní nástrojov
-- Vytváranie vlastných pracovných tokov alebo integrácií nad MCP serverom
+- Vytváranie vlastných workflow alebo integrácií nad MCP serverom
 
 Testovacie skripty môžete použiť na rýchle vyskúšanie nových dotazov, ladenie správania nástrojov alebo ako východiskový bod pre pokročilejšiu automatizáciu. Nižšie je príklad použitia MCP Python SDK na vytvorenie takéhoto skriptu:
 
-## Popis nástrojov
+## Popisy nástrojov
 
-Môžete použiť nasledujúce nástroje poskytované serverom na vykonávanie rôznych typov vyhľadávaní a dotazov. Každý nástroj je popísaný spolu s parametrami a príkladmi použitia.
+Môžete použiť nasledujúce nástroje poskytované serverom na vykonávanie rôznych typov vyhľadávania a dopytov. Každý nástroj je popísaný spolu s jeho parametrami a príkladmi použitia.
 
-Táto sekcia poskytuje podrobnosti o každom dostupnom nástroji a ich parametroch.
+Táto sekcia obsahuje podrobnosti o jednotlivých dostupných nástrojoch a ich parametroch.
 
 ### general_search
 
-Vykonáva všeobecné vyhľadávanie na webe a vracia formátované výsledky.
+Vykonáva všeobecné webové vyhľadávanie a vracia naformátované výsledky.
 
 **Ako volať tento nástroj:**
 
-`general_search` môžete volať zo svojho skriptu pomocou MCP Python SDK, alebo interaktívne cez Inspector či interaktívny režim klienta. Tu je príklad v SDK:
+`general_search` môžete volať z vlastného skriptu pomocou MCP Python SDK alebo interaktívne cez Inspector či interaktívny režim klienta. Tu je príklad kódu s použitím SDK:
 
 <details>
 <summary>Python príklad</summary>
@@ -258,7 +256,7 @@ Vyhľadáva najnovšie správy súvisiace s dotazom.
 
 **Ako volať tento nástroj:**
 
-`news_search` môžete volať zo svojho skriptu pomocou MCP Python SDK, alebo interaktívne cez Inspector či interaktívny režim klienta. Tu je príklad v SDK:
+`news_search` môžete volať z vlastného skriptu pomocou MCP Python SDK alebo interaktívne cez Inspector či interaktívny režim klienta. Tu je príklad kódu s použitím SDK:
 
 <details>
 <summary>Python príklad</summary>
@@ -299,7 +297,7 @@ Vyhľadáva produkty zodpovedajúce dotazu.
 
 **Ako volať tento nástroj:**
 
-`product_search` môžete volať zo svojho skriptu pomocou MCP Python SDK, alebo interaktívne cez Inspector či interaktívny režim klienta. Tu je príklad v SDK:
+`product_search` môžete volať z vlastného skriptu pomocou MCP Python SDK alebo interaktívne cez Inspector či interaktívny režim klienta. Tu je príklad kódu s použitím SDK:
 
 <details>
 <summary>Python príklad</summary>
@@ -324,7 +322,7 @@ async def run_product_search():
 Alternatívne v interaktívnom režime vyberte `product_search` from the menu and enter your query when prompted.
 
 **Parameters:**
-- `query` (string): Vyhľadávací dotaz produktu
+- `query` (string): Dotaz na vyhľadávanie produktu
 
 **Príklad požiadavky:**
 
@@ -340,7 +338,7 @@ Získava priame odpovede na otázky z vyhľadávačov.
 
 **Ako volať tento nástroj:**
 
-`qna` môžete volať zo svojho skriptu pomocou MCP Python SDK, alebo interaktívne cez Inspector či interaktívny režim klienta. Tu je príklad v SDK:
+`qna` môžete volať z vlastného skriptu pomocou MCP Python SDK alebo interaktívne cez Inspector či interaktívny režim klienta. Tu je príklad kódu s použitím SDK:
 
 <details>
 <summary>Python príklad</summary>
@@ -365,7 +363,7 @@ async def run_qna():
 Alternatívne v interaktívnom režime vyberte `qna` from the menu and enter your question when prompted.
 
 **Parameters:**
-- `question` (string): Otázka, na ktorú hľadáte odpoveď
+- `question` (string): Otázka, na ktorú chcete nájsť odpoveď
 
 **Príklad požiadavky:**
 
@@ -375,9 +373,9 @@ Alternatívne v interaktívnom režime vyberte `qna` from the menu and enter you
 }
 ```
 
-## Podrobnosti kódu
+## Detaily kódu
 
-Táto sekcia poskytuje úryvky kódu a odkazy na implementácie servera a klienta.
+Táto sekcia obsahuje úryvky kódu a odkazy na implementácie servera a klienta.
 
 <details>
 <summary>Python</summary>
@@ -394,26 +392,26 @@ import httpx
 
 ## Pokročilé koncepty v tejto lekcii
 
-Pred začatím vývoja tu sú niektoré dôležité pokročilé koncepty, ktoré sa budú v tejto kapitole objavovať. Ich pochopenie vám pomôže lepšie sledovať obsah, aj keď sú pre vás nové:
+Pred začiatkom vývoja si prejdeme niekoľko dôležitých pokročilých konceptov, ktoré sa budú v celej kapitole objavovať. Ich pochopenie vám pomôže lepšie sledovať obsah, aj keď s nimi ešte nemáte skúsenosti:
 
-- **Orchestrácia viacerých nástrojov**: Znamená to spúšťanie viacerých rôznych nástrojov (ako webové vyhľadávanie, správy, vyhľadávanie produktov a Q&A) v jednom MCP serveri. Umožňuje serveru spracovávať rôzne úlohy, nielen jednu.
-- **Riešenie limitov API**: Mnohé externé API (ako SerpAPI) obmedzujú počet požiadaviek za určitý čas. Dobrý kód tieto limity kontroluje a spracováva ich elegantne, aby aplikácia neskončila chybou pri dosiahnutí limitu.
-- **Parsovanie štruktúrovaných dát**: Odpovede API sú často komplexné a vnorené. Tento koncept znamená premeniť tieto odpovede na čisté, ľahko použiteľné formáty vhodné pre LLM alebo iné programy.
-- **Obnova po chybe**: Niekedy sa stane, že niečo zlyhá – napríklad sieť alebo API nevráti očakávané dáta. Obnova po chybe znamená, že kód dokáže tieto problémy spracovať a stále poskytnúť užitočné informácie namiesto pádu aplikácie.
+- **Koordinácia viacerých nástrojov**: Znamená to spúšťanie viacerých rôznych nástrojov (napr. webové vyhľadávanie, správy, produktové vyhľadávanie a Q&A) v jednom MCP serveri. Umožňuje serveru zvládať rôzne úlohy, nielen jednu.
+- **Riešenie limitov API volaní**: Mnohé externé API (napr. SerpAPI) obmedzujú počet požiadaviek za určitý čas. Kvalitný kód tieto limity kontroluje a spracováva ich šetrne, aby aplikácia neprestala fungovať pri dosiahnutí limitu.
+- **Parsovanie štruktúrovaných dát**: Odpovede API sú často zložité a vnorené. Tento koncept znamená pretransformovanie týchto odpovedí do čistých a ľahko použiteľných formátov vhodných pre LLM alebo iné programy.
+- **Obnova po chybe**: Niekedy sa niečo pokazí – napríklad sieť zlyhá alebo API nevráti očakávané dáta. Obnova po chybe znamená, že kód tieto problémy zvládne a poskytne užitočné informácie namiesto pádu aplikácie.
 - **Validácia parametrov**: Znamená overovanie, že všetky vstupy do nástrojov sú správne a bezpečné na použitie. Zahŕňa nastavenie predvolených hodnôt a kontrolu typov, čo pomáha predchádzať chybám a nejasnostiam.
 
-Táto sekcia vám pomôže diagnostikovať a vyriešiť bežné problémy, na ktoré môžete natrafiť pri práci s Web Search MCP Serverom. Ak narazíte na chyby alebo neočakávané správanie, táto časť poskytuje riešenia najčastejších problémov. Prezrite si tieto tipy predtým, než požiadate o ďalšiu pomoc – často rýchlo vyriešia problém.
+Táto sekcia vám pomôže diagnostikovať a vyriešiť bežné problémy, ktoré môžete stretnúť pri práci s Web Search MCP Serverom. Ak narazíte na chyby alebo neočakávané správanie, táto sekcia poskytuje riešenia najčastejších problémov. Prezrite si tieto tipy predtým, než požiadate o ďalšiu pomoc – často rýchlo vyriešia problém.
 
 ## Riešenie problémov
 
-Pri práci s Web Search MCP Serverom sa občas môžete stretnúť s problémami – to je bežné pri vývoji s externými API a novými nástrojmi. Táto sekcia ponúka praktické riešenia najčastejších problémov, aby ste sa mohli rýchlo vrátiť k práci. Ak narazíte na chybu, začnite tu: nasledujúce tipy riešia problémy, s ktorými sa stretáva väčšina používateľov, a často dokážu vyriešiť váš problém bez ďalšej pomoci.
+Pri práci s Web Search MCP Serverom sa občas môžu vyskytnúť problémy – to je bežné pri vývoji s externými API a novými nástrojmi. Táto sekcia ponúka praktické riešenia najčastejších problémov, aby ste sa mohli rýchlo vrátiť k práci. Ak narazíte na chybu, začnite tu: tipy nižšie riešia problémy, s ktorými sa stretáva väčšina používateľov, a často vyriešia váš problém bez potreby ďalšej pomoci.
 
 ### Bežné problémy
 
-Nižšie sú uvedené najčastejšie problémy používateľov spolu s jasnými vysvetleniami a krokmi na ich vyriešenie:
+Nižšie sú uvedené niektoré z najčastejších problémov používateľov spolu s jasným vysvetlením a krokmi na ich vyriešenie:
 
-1. **Chýba SERPAPI_KEY v .env súbore**
-   - Ak vidíte chybu `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
+1. **Chýbajúci SERPAPI_KEY v .env súbore**
+   - Ak sa zobrazí chyba `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
 
 2. **Module not found errors**
    - Errors such as `ModuleNotFoundError: No module named 'httpx'` indicate that a required Python package is missing. This usually happens if you haven't installed all the dependencies. To resolve this, run `pip install -r requirements.txt` in your terminal to install everything your project needs.
@@ -422,13 +420,13 @@ Nižšie sú uvedené najčastejšie problémy používateľov spolu s jasnými 
    - If you get an error like `Error during client execution`, it often means the client can't connect to the server, or the server isn't running as expected. Double-check that both the client and server are compatible versions, and that `server.py` is present and running in the correct directory. Restarting both the server and client can also help.
 
 4. **SerpAPI errors**
-   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your ``, vytvorte alebo upravte `.env` súbor podľa potreby. Ak máte správny kľúč, no chyba pretrváva, skontrolujte, či vám nevypršal bezplatný limit.
+   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env` súbor vytvorte, ak ešte neexistuje. Ak je kľúč správny, no chyba pretrváva, skontrolujte, či vám nevypršal limit bezplatnej úrovne.
 
-### Debug režim
+### Režim ladenia (Debug Mode)
 
-Štandardne aplikácia loguje iba dôležité informácie. Ak chcete vidieť viac detailov o tom, čo sa deje (napríklad pre diagnostiku zložitých problémov), môžete zapnúť DEBUG režim. Ten vám zobrazí oveľa viac informácií o každom kroku aplikácie.
+Štandardne aplikácia loguje iba dôležité informácie. Ak chcete vidieť viac detailov o tom, čo sa deje (napríklad pre diagnostiku zložitejších problémov), môžete zapnúť režim DEBUG. Ten zobrazí oveľa viac informácií o každom kroku aplikácie.
 
-**Príklad: Normálny výstup**
+**Príklad: bežný výstup**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:24,123 - __main__ - INFO - Successfully called general_search
@@ -437,7 +435,7 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-**Príklad: DEBUG výstup**
+**Príklad: výstup v režime DEBUG**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:23,457 - httpx - DEBUG - HTTP Request: GET https://serpapi.com/search ...
@@ -448,9 +446,9 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-Všimnite si, že DEBUG režim obsahuje ďalšie riadky o HTTP požiadavkách, odpovediach a ďalších interných detailoch. Toto môže byť veľmi užitočné pri riešení problémov.
+Všimnite si, že režim DEBUG obsahuje ďalšie riadky o HTTP požiadavkách, odpovediach a iných interných detailoch. To môže byť veľmi užitočné pri riešení problémov.
 
-Pre zapnutie DEBUG režimu nastavte úroveň logovania na DEBUG v hornej časti vášho `client.py` or `server.py`:
+Pre zapnutie režimu DEBUG nastavte úroveň logovania na DEBUG v hornej časti `client.py` or `server.py`:
 
 <details>
 <summary>Python</summary>
@@ -471,5 +469,5 @@ logging.basicConfig(
 
 - [6. Community Contributions](../../06-CommunityContributions/README.md)
 
-**Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, majte prosím na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+**Zrieknutie sa zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, majte prosím na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

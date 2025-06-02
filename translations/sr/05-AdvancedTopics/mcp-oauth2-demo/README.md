@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:55:49+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:36:42+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "sr"
 }
@@ -12,9 +12,9 @@ CO_OP_TRANSLATOR_METADATA:
 Ovaj projekat je **minimalna Spring Boot aplikacija** koja funkcioniše kao:
 
 * **Spring Authorization Server** (izdaje JWT pristupne tokene preko `client_credentials` toka), i  
-* **Resource Server** (štiti sopstveni `/hello` endpoint).
+* **Resource Server** (štiti svoj `/hello` endpoint).
 
-Ona replicira podešavanje prikazano u [Spring blog postu (2. april 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Ona prati podešavanje prikazano u [Spring blog postu (2. apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Napomena: Basic Authentication header je (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Napomena: Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
 ### 3. Pristupite zaštićenom endpointu koristeći token
 
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Uspešan odgovor sa "Hello from MCP OAuth2 Demo!" potvrđuje da OAuth2 konfiguracija ispravno funkcioniše.
+Uspešan odgovor sa "Hello from MCP OAuth2 Demo!" potvrđuje da OAuth2 konfiguracija radi ispravno.
 
 ---
 
@@ -116,13 +116,13 @@ Dodajte ovu inbound politiku vašem API-ju:
 </inbound>
 ```
 
-APIM će preuzeti JWKS i validirati svaki zahtev.
+APIM će preuzimati JWKS i validirati svaki zahtev.
 
 ---
 
-## Šta sledi
+## Šta dalje
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
-**Одрицање од одговорности**:  
-Овај документ је преведен помоћу АИ преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде прецизан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати коначним и ауторитетним извором. За критичне информације препоручује се професионални превод од стране људског преводиоца. Нисмо одговорни за било каква неспоразума или погрешне интерпретације настале употребом овог превода.
+**Odricanje od odgovornosti**:  
+Ovaj dokument je preveden korišćenjem AI prevodilačke usluge [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo tačnosti, imajte na umu da automatski prevodi mogu sadržavati greške ili netačnosti. Izvorni dokument na njegovom izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prevod. Nismo odgovorni za bilo kakva nesporazumevanja ili pogrešna tumačenja nastala upotrebom ovog prevoda.

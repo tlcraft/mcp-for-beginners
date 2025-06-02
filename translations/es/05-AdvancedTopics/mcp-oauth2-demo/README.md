@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T11:52:27+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T18:17:29+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "es"
 }
@@ -11,10 +11,10 @@ CO_OP_TRANSLATOR_METADATA:
 
 Este proyecto es una **aplicación mínima de Spring Boot** que funciona como:
 
-* un **Servidor de Autorización Spring** (emitiendo tokens de acceso JWT mediante el flujo `client_credentials`), y  
-* un **Servidor de Recursos** (protegiendo su propio endpoint `/hello`).
+* un **Spring Authorization Server** (emitiendo tokens de acceso JWT mediante el flujo `client_credentials`), y  
+* un **Resource Server** (protegiendo su propio endpoint `/hello`).
 
-Refleja la configuración mostrada en la [entrada del blog de Spring (2 Abr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Refleja la configuración mostrada en la [publicación del blog de Spring (2 Abr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Probando la configuración OAuth2
+## Prueba de la configuración OAuth2
 
 Puedes probar la configuración de seguridad OAuth2 con los siguientes pasos:
 
-### 1. Verifica que el servidor esté en ejecución y seguro
+### 1. Verifica que el servidor esté en funcionamiento y protegido
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Obtén un token de acceso usando credenciales de cliente
+### 2. Obtén un token de acceso usando las credenciales del cliente
 
 ```bash
 # Get and extract the full token response
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Una respuesta exitosa con "Hello from MCP OAuth2 Demo!" confirma que la configuración OAuth2 está funcionando correctamente.
+Una respuesta exitosa con "Hello from MCP OAuth2 Demo!" confirma que la configuración OAuth2 funciona correctamente.
 
 ---
 
@@ -122,7 +122,7 @@ APIM obtendrá el JWKS y validará cada solicitud.
 
 ## Qué sigue
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
-**Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Descargo de responsabilidad**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea derivada del uso de esta traducción.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:28:56+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:05:58+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "th"
 }
@@ -11,14 +11,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 โปรเจกต์นี้เป็น **แอปพลิเคชัน Spring Boot ขนาดเล็ก** ที่ทำหน้าที่ทั้ง:
 
-* เป็น **Spring Authorization Server** (ออก JWT access token ผ่าน `client_credentials` flow) และ  
-* เป็น **Resource Server** (ปกป้อง `/hello` endpoint ของตัวเอง)
+* เป็น **Spring Authorization Server** (ออกโทเค็น JWT ผ่าน flow `client_credentials`), และ  
+* เป็น **Resource Server** (ปกป้อง endpoint ของตัวเอง `/hello`)
 
-โครงสร้างนี้เหมือนกับที่แสดงใน [บล็อกของ Spring (2 เม.ย. 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2)
+การตั้งค่านี้สะท้อนตามที่แสดงใน [บล็อกของ Spring (2 เม.ย. 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2)
 
 ---
 
-## เริ่มต้นอย่างรวดเร็ว (เครื่องท้องถิ่น)
+## เริ่มต้นอย่างรวดเร็ว (ในเครื่อง)
 
 ```bash
 # build & run
@@ -38,7 +38,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 คุณสามารถทดสอบการตั้งค่าความปลอดภัย OAuth2 ได้ตามขั้นตอนต่อไปนี้:
 
-### 1. ตรวจสอบว่าเซิร์ฟเวอร์กำลังทำงานและถูกป้องกัน
+### 1. ตรวจสอบว่าเซิร์ฟเวอร์กำลังทำงานและปลอดภัย
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-หมายเหตุ: ส่วนหัว Basic Authentication คือ (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`
+หมายเหตุ: ส่วนหัว Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`
 
 ### 3. เข้าถึง endpoint ที่ถูกป้องกันโดยใช้ token
 
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-ถ้าตอบกลับสำเร็จพร้อมข้อความ "Hello from MCP OAuth2 Demo!" แสดงว่าการตั้งค่า OAuth2 ทำงานถูกต้อง
+หากได้รับการตอบกลับสำเร็จพร้อมข้อความ "Hello from MCP OAuth2 Demo!" แสดงว่าการตั้งค่า OAuth2 ทำงานถูกต้อง
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## ดีพลอยไปยัง **Azure Container Apps**
+## การนำไปใช้กับ **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Ingress FQDN จะกลายเป็น **issuer** ของคุณ (`https://<fqdn>`).  
+FQDN ของ ingress จะกลายเป็น **issuer** ของคุณ (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`)
 
 ---
 
 ## เชื่อมต่อกับ **Azure API Management**
 
-เพิ่มนโยบาย inbound นี้ใน API ของคุณ:
+เพิ่มนโยบาย inbound นี้ไปยัง API ของคุณ:
 
 ```xml
 <inbound>
@@ -120,9 +120,9 @@ APIM จะดึง JWKS และตรวจสอบคำขอทุกค
 
 ---
 
-## ต่อไปคืออะไร
+## ต่อไปทำอะไรดี
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลสำคัญ แนะนำให้ใช้การแปลโดยผู้เชี่ยวชาญมนุษย์ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้การแปลมีความถูกต้อง โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่แม่นยำ เอกสารต้นฉบับในภาษาต้นทางควรถูกพิจารณาเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยมนุษย์มืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความที่ผิดพลาดใด ๆ ที่เกิดจากการใช้การแปลนี้

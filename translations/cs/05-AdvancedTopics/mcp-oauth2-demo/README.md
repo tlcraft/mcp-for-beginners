@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:49:15+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:29:11+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "cs"
 }
 -->
 # MCP OAuth2 Demo
 
-This project is a **минимальное Spring Boot приложение**, которое выполняет функции:
+This project is a **minimal Spring Boot application** that functions as both:
 
-* **Spring Authorization Server** (выдаёт JWT access tokens через `client_credentials` flow), и  
-* **Resource Server** (защищает собственный `/hello` endpoint).
+* a **Spring Authorization Server** (issuing JWT access tokens via the `client_credentials` flow), and  
+* a **Resource Server** (protecting its own `/hello` endpoint).
 
-Это повторяет конфигурацию, показанную в [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+It replicates the setup shown in the [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
-## Быстрый старт (локально)
+## Quick start (local)
 
 ```bash
 # build & run
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Тестирование конфигурации OAuth2
+## Testing the OAuth2 Configuration
 
-Вы можете проверить безопасность OAuth2 с помощью следующих шагов:
+You can test the OAuth2 security configuration by following these steps:
 
-### 1. Убедитесь, что сервер запущен и защищён
+### 1. Verify the server is running and secured
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Получите access token, используя client credentials
+### 2. Get an access token using client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Примечание: заголовок Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Note: The Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Доступ к защищённому endpoint с помощью токена
+### 3. Access the protected endpoint using the token
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Успешный ответ с сообщением "Hello from MCP OAuth2 Demo!" подтверждает, что конфигурация OAuth2 работает корректно.
+A successful response with "Hello from MCP OAuth2 Demo!" confirms that the OAuth2 setup is working properly.
 
 ---
 
-## Сборка контейнера
+## Container build
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Развёртывание в **Azure Container Apps**
+## Deploy to **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Ingress FQDN становится вашим **issuer** (`https://<fqdn>`).  
+The ingress FQDN becomes your **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
-## Интеграция с **Azure API Management**
+## Wire into **Azure API Management**
 
-Добавьте эту inbound policy в ваш API:
+Add this inbound policy to your API:
 
 ```xml
 <inbound>
@@ -116,13 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM будет получать JWKS и проверять каждый запрос.
+APIM will retrieve the JWKS and validate every request.
 
 ---
 
-## Что дальше
+## What's next
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakákoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakákoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

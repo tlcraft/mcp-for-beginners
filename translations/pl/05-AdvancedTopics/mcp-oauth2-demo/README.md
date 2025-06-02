@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:24:10+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:00:01+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "pl"
 }
@@ -14,7 +14,7 @@ Ten projekt to **minimalna aplikacja Spring Boot**, która pełni jednocześnie 
 * **Spring Authorization Server** (wydającego tokeny dostępu JWT za pomocą flow `client_credentials`), oraz  
 * **Resource Server** (chroniącego własny endpoint `/hello`).
 
-Odzwierciedla konfigurację pokazaną w [wpisie na blogu Spring (2 kwietnia 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Odwzorowuje konfigurację pokazaną w [wpisie na blogu Spring (2 kwi 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Uwaga: nagłówek Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Uwaga: Nagłówek Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Uzyskaj dostęp do chronionego endpointu używając tokena
+### 3. Uzyskaj dostęp do chronionego endpointu używając tokenu
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Pomyślna odpowiedź z tekstem "Hello from MCP OAuth2 Demo!" potwierdza, że konfiguracja OAuth2 działa poprawnie.
+Pomyślna odpowiedź z "Hello from MCP OAuth2 Demo!" potwierdza, że konfiguracja OAuth2 działa poprawnie.
 
 ---
 
@@ -122,7 +122,7 @@ APIM pobierze JWKS i zweryfikuje każde żądanie.
 
 ## Co dalej
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy pamiętać, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło wiążące. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uważany za wiarygodne źródło. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

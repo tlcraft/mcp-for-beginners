@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:34:58+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:13:08+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "fi"
 }
 -->
 # MCP OAuth2 Demo
 
-Tämä projekti on **minimaalinen Spring Boot -sovellus**, joka toimii sekä:
+Tämä projekti on **minimalistinen Spring Boot -sovellus**, joka toimii sekä:
 
 * **Spring Authorization Serverina** (joka myöntää JWT-pääsytunnuksia `client_credentials`-prosessin kautta), että  
-* **Resource Serverina** (joka suojaa omaa `/hello`-päätepistettään).
+* **Resource Serverina** (suojaa oman `/hello`-päätepisteensä).
 
-Se vastaa [Springin blogikirjoituksessa (2.4.2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) esitettyä asetusta.
+Se vastaa asetusta, joka on esitelty [Springin blogikirjoituksessa (2.4.2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -34,7 +34,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## OAuth2-määrityksen testaus
+## OAuth2-määrityksen testaaminen
 
 Voit testata OAuth2-turvamääritystä seuraavilla vaiheilla:
 
@@ -45,7 +45,7 @@ Voit testata OAuth2-turvamääritystä seuraavilla vaiheilla:
 curl -v http://localhost:8081/
 ```
 
-### 2. Hanki pääsytunnus client credentials -menetelmällä
+### 2. Hanki pääsytunnus käyttäen client credentials -tunnistusta
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Huom: Basic Authentication -otsikko (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Huomautus: Basic Authentication -otsake (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Käytä suojaettua päätepistettä tunnuksella
+### 3. Käytä suojattua päätepistettä tunnuksella
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Onnistunut vastaus "Hello from MCP OAuth2 Demo!" -viestillä vahvistaa, että OAuth2-määritys toimii oikein.
+Onnistunut vastaus, jossa lukee "Hello from MCP OAuth2 Demo!", vahvistaa, että OAuth2-määritys toimii oikein.
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Julkaisu **Azure Container Appsiin**
+## Julkaisu **Azure Container Apps** -ympäristöön
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -100,7 +100,7 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 ---
 
-## Yhdistä **Azure API Managementiin**
+## Integrointi **Azure API Managementiin**
 
 Lisää tämä inbound-politiikka API:si:
 
@@ -122,7 +122,7 @@ APIM hakee JWKS:n ja validoi jokaisen pyynnön.
 
 ## Mitä seuraavaksi
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, ole hyvä ja huomioi, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.

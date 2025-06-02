@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9dc0d1fc8ddcd9426558f0d200894951",
-  "translation_date": "2025-06-02T12:38:16+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:16:40+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "he"
 }
 -->
-# MCP OAuth2 Demo
+# הדגמת MCP OAuth2
 
-הפרויקט הזה הוא **יישום Spring Boot מינימלי** שפועל גם בתור:
+הפרויקט הזה הוא **אפליקציית Spring Boot מינימלית** שפועלת גם בתור:
 
-* **שרת הרשאות Spring** (מנפיק אסימוני JWT דרך הזרימה של `client_credentials`), וגם  
+* **שרת הרשאות Spring** (מנפיק אסימוני גישה JWT דרך הזרימה `client_credentials`), וגם  
 * **שרת משאבים** (מגן על נקודת הקצה שלו `/hello`).
 
-זה משקף את ההגדרה שמוצגת ב-[פוסט הבלוג של Spring (2 באפריל 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+זה משקף את ההגדרה המוצגת ב-[פוסט הבלוג של Spring (2 באפריל 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-[!NOTE] הכותרת Basic Authentication היא (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+[!NOTE] כותרת ה-Basic Authentication היא (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
 ### 3. גש לנקודת הקצה המוגנת באמצעות האסימון
 
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-ה-FQDN של ה-ingress הופך ל**issuer** שלך (`https://<fqdn>`).  
+שם המארח (FQDN) של ה-ingress יהפוך ל-**issuer** שלך (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
 ## חיבור ל-**Azure API Management**
 
-הוסף את מדיניות ה-inbound הזו ל-API שלך:
+הוסף מדיניות זו ל-API שלך:
 
 ```xml
 <inbound>
@@ -122,7 +122,7 @@ APIM ימשוך את ה-JWKS ויוודא כל בקשה.
 
 ## מה הלאה
 
-- [5.2 Web Search MCP Sample](../web-search-mcp/README.md)
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו הוא המקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי אדם. אנו לא אחראים לכל אי-הבנה או פרשנות שגויה הנובעים מהשימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש להיות מודעים לכך שתרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. יש להתייחס למסמך המקורי בשפת המקור כמקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי הבנה או פרשנות שגויה הנובעים משימוש בתרגום זה.
