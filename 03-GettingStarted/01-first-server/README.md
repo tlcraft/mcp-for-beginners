@@ -689,7 +689,9 @@ Create a simple MCP server with a tool of your choice:
 
 ## Additional Resources
 
-- [MCP GitHub Repository](https://github.com/microsoft/mcp-for-beginners)
+- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## What's next
 
