@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "37563349cd6894fe00489bf3b4d488ae",
-  "translation_date": "2025-06-02T10:24:52+00:00",
+  "original_hash": "e650db55873b456296a9c620069e2f71",
+  "translation_date": "2025-06-02T10:59:24+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "en"
 }
@@ -21,7 +21,7 @@ Add a tool and a resource by including the following code:
 
 ### -6 Final code
 
-Let's add the final code needed to start the server:
+Let's add the final pieces of code needed to start the server:
 
 ### -7- Test the server
 
@@ -29,10 +29,10 @@ Start the server with the following command:
 
 ### -8- Run using the inspector
 
-The inspector is a great tool that can launch your server and let you interact with it so you can verify it works. Let’s get it started:
+The inspector is a fantastic tool that can launch your server and let you interact with it so you can verify that it’s working properly. Let’s get it started:
 
 > [!NOTE]  
-> It might look different in the "command" field as it contains the command for running a server with your specific runtime/
+> The "command" field might look different since it includes the command for running a server with your specific runtime.
 
 You should see the following user interface:
 
@@ -45,7 +45,7 @@ You should see the following user interface:
 
 2. Select "Tools" and then "listTools". You should see "Add" appear. Select "Add" and fill in the parameter values.
 
-   You should see the following response, which is the result from the "add" tool:
+   You should get a response like this, showing the result from the "add" tool:
 
    ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.en.png)
 
@@ -64,7 +64,7 @@ MCP offers official SDKs for several languages:
 
 ## Key Takeaways
 
-- Setting up an MCP development environment is straightforward with language-specific SDKs  
+- Setting up an MCP development environment is simple with language-specific SDKs  
 - Building MCP servers involves creating and registering tools with well-defined schemas  
 - Testing and debugging are crucial for reliable MCP implementations  
 
