@@ -1,44 +1,44 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a3cbadbf632058aa59a523ac659aa1df",
-  "translation_date": "2025-05-17T12:29:34+00:00",
+  "original_hash": "af6cee6052e751674c1d9022a4b204e6",
+  "translation_date": "2025-06-03T14:50:35+00:00",
   "source_file": "03-GettingStarted/06-aitk/README.md",
   "language_code": "ro"
 }
 -->
 # Consumarea unui server din extensia AI Toolkit pentru Visual Studio Code
 
-Când construiești un agent AI, nu este doar despre generarea de răspunsuri inteligente; este și despre a-i oferi agentului capacitatea de a acționa. Aici intervine Protocolul Contextului Modelului (MCP). MCP facilitează accesul agenților la instrumente și servicii externe într-un mod consistent. Gândește-te la asta ca la conectarea agentului tău la o trusă de unelte pe care chiar o poate folosi.
+Când construiești un agent AI, nu este vorba doar despre generarea unor răspunsuri inteligente; este și despre a-i oferi agentului tău capacitatea de a lua acțiuni. Aici intervine Model Context Protocol (MCP). MCP facilitează accesul agenților la unelte și servicii externe într-un mod consecvent. Gândește-te la asta ca și cum ai conecta agentul tău la o cutie de scule pe care o poate *folosi cu adevărat*.
 
-Să presupunem că conectezi un agent la serverul MCP al calculatorului tău. Dintr-o dată, agentul tău poate efectua operații matematice doar primind un prompt precum „Cât face 47 înmulțit cu 89?”—fără a fi nevoie să codifici logică sau să construiești API-uri personalizate.
+Să presupunem că conectezi un agent la serverul tău MCP calculator. Dintr-o dată, agentul tău poate efectua operații matematice doar primind un prompt de genul „Cât fac 47 înmulțit cu 89?”—fără să fie nevoie să scrii logică hardcodata sau să construiești API-uri personalizate.
 
 ## Prezentare generală
 
-Această lecție acoperă cum să conectezi un server MCP de calculator la un agent cu extensia [AI Toolkit](https://aka.ms/AIToolkit) în Visual Studio Code, permițând agentului tău să efectueze operații matematice precum adunarea, scăderea, înmulțirea și împărțirea prin limbaj natural.
+Această lecție acoperă modul de conectare a unui server MCP calculator la un agent folosind extensia [AI Toolkit](https://aka.ms/AIToolkit) în Visual Studio Code, permițând agentului tău să efectueze operații matematice precum adunarea, scăderea, înmulțirea și împărțirea prin limbaj natural.
 
-AI Toolkit este o extensie puternică pentru Visual Studio Code care simplifică dezvoltarea agenților. Inginerii AI pot construi cu ușurință aplicații AI dezvoltând și testând modele AI generative—local sau în cloud. Extensia suportă majoritatea modelelor generative disponibile astăzi.
+AI Toolkit este o extensie puternică pentru Visual Studio Code care simplifică dezvoltarea agenților. Inginerii AI pot construi ușor aplicații AI dezvoltând și testând modele generative AI—local sau în cloud. Extensia suportă majoritatea modelelor generative majore disponibile în prezent.
 
-*Notă*: AI Toolkit suportă în prezent Python și TypeScript.
+*Notă*: AI Toolkit suportă momentan Python și TypeScript.
 
 ## Obiective de învățare
 
-Până la sfârșitul acestei lecții, vei fi capabil să:
+La finalul acestei lecții, vei putea:
 
-- Consumi un server MCP prin AI Toolkit.
-- Configurezi o configurație de agent pentru a-i permite să descopere și să utilizeze instrumentele furnizate de serverul MCP.
-- Utilizezi instrumentele MCP prin limbaj natural.
+- Consuma un server MCP prin AI Toolkit.
+- Configura o configurație de agent pentru a-i permite să descopere și să utilizeze uneltele oferite de serverul MCP.
+- Utiliza uneltele MCP prin limbaj natural.
 
 ## Abordare
 
-Iată cum trebuie să abordăm acest lucru la un nivel înalt:
+Iată cum trebuie să abordăm acest proces la nivel înalt:
 
 - Creează un agent și definește promptul său de sistem.
-- Creează un server MCP cu instrumente de calculator.
-- Conectează Builder-ul Agentului la serverul MCP.
-- Testează invocarea instrumentelor agentului prin limbaj natural.
+- Creează un server MCP cu unelte calculator.
+- Conectează Agent Builder la serverul MCP.
+- Testează invocarea uneltelor agentului prin limbaj natural.
 
-Grozav, acum că înțelegem fluxul, să configurăm un agent AI pentru a folosi instrumente externe prin MCP, îmbunătățindu-i capacitățile!
+Perfect, acum că înțelegem fluxul, să configurăm un agent AI pentru a folosi unelte externe prin MCP, sporindu-i capabilitățile!
 
 ## Cerințe preliminare
 
@@ -47,59 +47,67 @@ Grozav, acum că înțelegem fluxul, să configurăm un agent AI pentru a folosi
 
 ## Exercițiu: Consumarea unui server
 
-În acest exercițiu, vei construi, rula și îmbunătăți un agent AI cu instrumente dintr-un server MCP în interiorul Visual Studio Code folosind AI Toolkit.
+În acest exercițiu, vei construi, rula și îmbunătăți un agent AI cu unelte dintr-un server MCP în Visual Studio Code folosind AI Toolkit.
 
-### -0- Prepas, adaugă modelul OpenAI GPT-4o la Modelele Mele
+### -0- Pas preliminar, adaugă modelul OpenAI GPT-4o în My Models
 
-Exercițiul folosește modelul **GPT-4o**. Modelul trebuie să fie adăugat la **Modelele Mele** înainte de a crea agentul.
+Exercițiul folosește modelul **GPT-4o**. Modelul trebuie adăugat în **My Models** înainte de a crea agentul.
+
+![Screenshot al interfeței de selecție a modelului din extensia AI Toolkit pentru Visual Studio Code. Titlul spune „Find the right model for your AI Solution” cu un subtitlu care încurajează descoperirea, testarea și implementarea modelelor AI. Sub „Popular Models” sunt afișate șase carduri de modele: DeepSeek-R1 (hostat pe GitHub), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - mic, rapid) și DeepSeek-R1 (hostat pe Ollama). Fiecare card include opțiuni de „Add” sau „Try in Playground”.](../../../../translated_images/aitk-model-catalog.c0c66f0d9ac0ee73c1d21b9207db99e914ef9dd52fced6f226c2b1f537e2c447.ro.png)
 
 1. Deschide extensia **AI Toolkit** din **Activity Bar**.
-1. În secțiunea **Catalog**, selectează **Models** pentru a deschide **Model Catalog**. Selectarea **Models** deschide **Model Catalog** într-o filă nouă de editor.
-1. În bara de căutare **Model Catalog**, introdu **OpenAI GPT-4o**.
-1. Fă clic pe **+ Add** pentru a adăuga modelul la lista ta **My Models**. Asigură-te că ai selectat modelul care este **Hosted by GitHub**.
-1. În **Activity Bar**, confirmă că modelul **OpenAI GPT-4o** apare în listă.
+2. În secțiunea **Catalog**, selectează **Models** pentru a deschide **Model Catalog**. Selectarea **Models** deschide catalogul într-un tab nou.
+3. În bara de căutare a **Model Catalog**, introdu **OpenAI GPT-4o**.
+4. Apasă pe **+ Add** pentru a adăuga modelul în lista ta **My Models**. Asigură-te că ai selectat modelul **Hosted by GitHub**.
+5. În **Activity Bar**, verifică dacă modelul **OpenAI GPT-4o** apare în listă.
 
 ### -1- Creează un agent
 
-**Agent (Prompt) Builder** îți permite să creezi și să personalizezi propriii agenți AI. În această secțiune, vei crea un agent nou și vei atribui un model pentru a alimenta conversația.
+**Agent (Prompt) Builder** îți permite să creezi și să personalizezi proprii agenți AI. În această secțiune, vei crea un agent nou și îi vei atribui un model pentru a susține conversația.
+
+![Screenshot al interfeței „Calculator Agent” din extensia AI Toolkit pentru Visual Studio Code. În panoul din stânga, modelul selectat este „OpenAI GPT-4o (via GitHub).” Un prompt de sistem spune „You are a professor in university teaching math,” iar promptul utilizatorului este „Explain to me the Fourier equation in simple terms.” Alte opțiuni includ butoane pentru adăugarea uneltelor, activarea MCP Server și selectarea output-ului structurat. Un buton albastru „Run” este jos. În panoul din dreapta, sub „Get Started with Examples,” sunt listate trei agenți exemplu: Web Developer (cu MCP Server, Second-Grade Simplifier și Dream Interpreter, fiecare cu descrieri scurte ale funcțiilor lor).](../../../../translated_images/aitk-agent-builder.fb7df60f7923b4d8ba839662bf6d7647e843c01b57256e1e9adecb46a64d3408.ro.png)
 
 1. Deschide extensia **AI Toolkit** din **Activity Bar**.
-1. În secțiunea **Tools**, selectează **Agent (Prompt) Builder**. Selectarea **Agent (Prompt) Builder** deschide **Agent (Prompt) Builder** într-o filă nouă de editor.
-1. Fă clic pe butonul **+ New Builder**. Extensia va lansa un asistent de configurare prin **Command Palette**.
-1. Introdu numele **Calculator Agent** și apasă **Enter**.
-1. În **Agent (Prompt) Builder**, pentru câmpul **Model**, selectează modelul **OpenAI GPT-4o (via GitHub)**.
+2. În secțiunea **Tools**, selectează **Agent (Prompt) Builder**. Aceasta deschide **Agent (Prompt) Builder** într-un tab nou.
+3. Apasă butonul **+ New Agent**. Extensia va lansa un wizard prin **Command Palette**.
+4. Introdu numele **Calculator Agent** și apasă **Enter**.
+5. În **Agent (Prompt) Builder**, la câmpul **Model**, selectează modelul **OpenAI GPT-4o (via GitHub)**.
 
 ### -2- Creează un prompt de sistem pentru agent
 
-Cu agentul configurat, este timpul să-i definești personalitatea și scopul. În această secțiune, vei folosi funcția **Generate system prompt** pentru a descrie comportamentul dorit al agentului—în acest caz, un agent de calculator—și vei avea modelul să scrie promptul de sistem pentru tine.
+Acum că agentul este schițat, e timpul să-i definești personalitatea și scopul. În această secțiune, vei folosi funcția **Generate system prompt** pentru a descrie comportamentul dorit al agentului — în acest caz, un agent calculator — și modelul va scrie promptul de sistem pentru tine.
 
-1. Pentru secțiunea **Prompts**, fă clic pe butonul **Generate system prompt**. Acest buton se deschide în constructorul de prompturi care folosește AI pentru a genera un prompt de sistem pentru agent.
-1. În fereastra **Generate a prompt**, introdu următorul text: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
-1. Fă clic pe butonul **Generate**. Va apărea o notificare în colțul din dreapta jos confirmând că promptul de sistem este generat. Odată ce generarea promptului este completă, promptul va apărea în câmpul **System prompt** al **Agent (Prompt) Builder**.
-1. Revizuiește **System prompt** și modifică dacă este necesar.
+![Screenshot al interfeței „Calculator Agent” din AI Toolkit pentru Visual Studio Code cu o fereastră modală deschisă intitulată „Generate a prompt.” Modalul explică că un șablon de prompt poate fi generat prin furnizarea unor detalii de bază și include o casetă de text cu promptul de sistem exemplu: „You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.” Sub caseta de text sunt butoanele „Close” și „Generate.” În fundal se văd parțial configurația agentului, inclusiv modelul selectat „OpenAI GPT-4o (via GitHub)” și câmpurile pentru promptul de sistem și cel al utilizatorului.](../../../../translated_images/aitk-generate-prompt.0d4292407c15282bf714e327f5d3d833389324004135727ef28adc22dbbb4e8f.ro.png)
+
+1. În secțiunea **Prompts**, apasă butonul **Generate system prompt**. Acest buton deschide prompt builder-ul care folosește AI pentru a genera un prompt de sistem pentru agent.
+2. În fereastra **Generate a prompt**, introdu următorul text: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
+3. Apasă butonul **Generate**. În colțul din dreapta jos va apărea o notificare care confirmă generarea promptului de sistem. După finalizare, promptul va apărea în câmpul **System prompt** din **Agent (Prompt) Builder**.
+4. Revizuiește promptul de sistem și modifică-l dacă este necesar.
 
 ### -3- Creează un server MCP
 
-Acum că ai definit promptul de sistem al agentului—ghidându-i comportamentul și răspunsurile—este timpul să echipezi agentul cu capabilități practice. În această secțiune, vei crea un server MCP de calculator cu instrumente pentru a executa calcule de adunare, scădere, înmulțire și împărțire. Acest server va permite agentului tău să efectueze operații matematice în timp real ca răspuns la prompturi în limbaj natural.
+Acum că ai definit promptul de sistem al agentului — care îi ghidează comportamentul și răspunsurile — e timpul să-l echipezi cu capabilități practice. În această secțiune, vei crea un server MCP calculator cu unelte pentru adunare, scădere, înmulțire și împărțire. Acest server va permite agentului să efectueze operații matematice în timp real ca răspuns la prompturi în limbaj natural.
 
-AI Toolkit este echipat cu șabloane pentru a facilita crearea propriului server MCP. Vom folosi șablonul Python pentru a crea serverul MCP de calculator.
+!["Screenshot al secțiunii inferioare a interfeței Calculator Agent din extensia AI Toolkit pentru Visual Studio Code. Se văd meniuri extinse pentru „Tools” și „Structure output,” împreună cu un meniu dropdown „Choose output format” setat pe „text.” În dreapta, există un buton „+ MCP Server” pentru adăugarea unui server Model Context Protocol. Un placeholder pentru iconița unei imagini este afișat deasupra secțiunii Tools.](../../../../translated_images/aitk-add-mcp-server.9b158809336d87e8076eb5954846040a7370c88046639a09e766398c8855c3d3.ro.png)
 
-*Notă*: AI Toolkit suportă în prezent Python și TypeScript.
+AI Toolkit este echipat cu șabloane pentru a ușura crearea propriului server MCP. Vom folosi șablonul Python pentru a crea serverul MCP calculator.
 
-1. În secțiunea **Tools** a **Agent (Prompt) Builder**, fă clic pe butonul **+ MCP Server**. Extensia va lansa un asistent de configurare prin **Command Palette**.
-1. Selectează **+ Add Server**.
-1. Selectează **Create a New MCP Server**.
-1. Selectează **python-weather** ca șablon.
-1. Selectează **Default folder** pentru a salva șablonul serverului MCP.
-1. Introdu următorul nume pentru server: **Calculator**
-1. Se va deschide o fereastră nouă Visual Studio Code. Selectează **Yes, I trust the authors**.
-1. Folosind terminalul (**Terminal** > **New Terminal**), creează un mediu virtual: `python -m venv .venv`
-1. Folosind terminalul, activează mediul virtual:
+*Notă*: AI Toolkit suportă momentan Python și TypeScript.
+
+1. În secțiunea **Tools** din **Agent (Prompt) Builder**, apasă butonul **+ MCP Server**. Extensia va lansa un wizard prin **Command Palette**.
+2. Selectează **+ Add Server**.
+3. Selectează **Create a New MCP Server**.
+4. Selectează șablonul **python-weather**.
+5. Selectează **Default folder** pentru a salva șablonul serverului MCP.
+6. Introdu următorul nume pentru server: **Calculator**
+7. Se va deschide o nouă fereastră Visual Studio Code. Selectează **Yes, I trust the authors**.
+8. Folosind terminalul (**Terminal** > **New Terminal**), creează un mediu virtual: `python -m venv .venv`
+9. Folosind terminalul, activează mediul virtual:
     1. Windows - `.venv\Scripts\activate`
-    1. macOS/Linux - `source venv/bin/activate`
-1. Folosind terminalul, instalează dependențele: `pip install -e .[dev]`
-1. În vizualizarea **Explorer** a **Activity Bar**, extinde directorul **src** și selectează **server.py** pentru a deschide fișierul în editor.
-1. Înlocuiește codul din fișierul **server.py** cu următorul și salvează:
+    2. macOS/Linux - `source venv/bin/activate`
+10. Folosind terminalul, instalează dependențele: `pip install -e .[dev]`
+11. În vizualizarea **Explorer** din **Activity Bar**, extinde directorul **src** și selectează fișierul **server.py** pentru a-l deschide în editor.
+12. Înlocuiește codul din fișierul **server.py** cu următorul și salvează:
 
     ```python
     """
@@ -142,40 +150,42 @@ AI Toolkit este echipat cu șabloane pentru a facilita crearea propriului server
         return a / b
     ```
 
-### -4- Rulează agentul cu serverul MCP de calculator
+### -4- Rulează agentul cu serverul MCP calculator
 
-Acum că agentul tău are instrumente, este timpul să le folosești! În această secțiune, vei trimite prompturi agentului pentru a testa și valida dacă agentul folosește instrumentul adecvat de la serverul MCP de calculator.
+Acum că agentul tău are unelte, e timpul să le folosești! În această secțiune, vei trimite prompturi agentului pentru a testa și valida dacă acesta folosește uneltele potrivite din serverul MCP calculator.
 
-Vei rula serverul MCP de calculator pe mașina ta de dezvoltare locală prin **Agent Builder** ca client MCP.
+![Screenshot al interfeței Calculator Agent din extensia AI Toolkit pentru Visual Studio Code. În panoul din stânga, sub „Tools,” un server MCP numit local-server-calculator_server este adăugat, afișând patru unelte disponibile: add, subtract, multiply și divide. Un badge arată că patru unelte sunt active. Mai jos este o secțiune „Structure output” restrânsă și un buton albastru „Run.” În panoul din dreapta, sub „Model Response,” agentul invocă uneltele multiply și subtract cu intrările {"a": 3, "b": 25} și {"a": 75, "b": 20} respectiv. „Tool Response” final este afișat ca 75.0. Un buton „View Code” apare jos.](../../../../translated_images/aitk-agent-response-with-tools.0f0da2c6eef5eb3f5b7592d6d056449aa8aaa42a3ab0b0c2f14269b3049cfdb5.ro.png)
+
+Vei rula serverul MCP calculator pe mașina ta locală de dezvoltare prin **Agent Builder** ca și client MCP.
 
 1. Apasă `F5` to start debugging the MCP server. The **Agent (Prompt) Builder** will open in a new editor tab. The status of the server is visible in the terminal.
-1. In the **User prompt** field of the **Agent (Prompt) Builder**, enter the following prompt: `Am cumpărat 3 articole la prețul de 25 $ fiecare, și apoi am folosit un discount de 20 $. Cât am plătit?`
+1. In the **User prompt** field of the **Agent (Prompt) Builder**, enter the following prompt: `Am cumpărat 3 produse, fiecare cu prețul de 25$, apoi am folosit o reducere de 20$. Cât am plătit?`
 1. Click the **Run** button to generate the agent's response.
 1. Review the agent output. The model should conclude that you paid **$55**.
 1. Here's a breakdown of what should occur:
     - The agent selects the **multiply** and **substract** tools to aid in the calculation.
     - The respective `a` and `b` values are assigned for the **multiply** tool.
-    - The respective `a` and `b` sunt atribuite pentru instrumentul **subtract**.
-    - Răspunsul de la fiecare instrument este furnizat în respectivul **Tool Response**.
-    - Rezultatul final de la model este furnizat în **Model Response** final.
-1. Trimite prompturi suplimentare pentru a testa mai departe agentul. Poți modifica promptul existent în câmpul **User prompt** făcând clic în câmp și înlocuind promptul existent.
-1. După ce ai terminat testarea agentului, poți opri serverul prin **terminal** introducând **CTRL/CMD+C** pentru a ieși.
+    - The respective `a` and `b` valorile sunt atribuite pentru unealta **subtract**.
+    - Răspunsul de la fiecare unealtă este afișat în câmpul **Tool Response** corespunzător.
+    - Rezultatul final al modelului este afișat în câmpul **Model Response** final.
+2. Trimite prompturi suplimentare pentru a testa agentul mai departe. Poți modifica promptul existent în câmpul **User prompt** făcând click în câmp și înlocuind promptul curent.
+3. Când ai terminat testarea agentului, poți opri serverul din **terminal** prin apăsarea **CTRL/CMD+C** pentru a ieși.
 
-## Temă
+## Tema pentru acasă
 
-Încearcă să adaugi o intrare suplimentară de instrument în fișierul **server.py** (ex: returnează rădăcina pătrată a unui număr). Trimite prompturi suplimentare care ar necesita ca agentul să folosească noul tău instrument (sau instrumentele existente). Asigură-te că repornești serverul pentru a încărca instrumentele nou adăugate.
+Încearcă să adaugi o unealtă suplimentară în fișierul tău **server.py** (ex: returnează rădăcina pătrată a unui număr). Trimite prompturi care ar necesita folosirea noii unelte (sau a celor existente) de către agent. Asigură-te că repornești serverul pentru a încărca uneltele adăugate.
 
 ## Soluție
 
-[Soluție](./solution/README.md)
+[Solution](./solution/README.md)
 
-## Concluzii cheie
+## Puncte cheie
 
-Concluziile din acest capitol sunt următoarele:
+Ce am reținut din acest capitol:
 
-- Extensia AI Toolkit este un client excelent care îți permite să consumi servere MCP și instrumentele lor.
-- Poți adăuga noi instrumente la serverele MCP, extinzând capacitățile agentului pentru a satisface cerințele în evoluție.
-- AI Toolkit include șabloane (ex: șabloane de server MCP Python) pentru a simplifica crearea de instrumente personalizate.
+- Extensia AI Toolkit este un client excelent care îți permite să consumi servere MCP și uneltele lor.
+- Poți adăuga unelte noi serverelor MCP, extinzând capabilitățile agentului pentru a răspunde cerințelor în schimbare.
+- AI Toolkit include șabloane (ex: șabloane pentru servere MCP în Python) pentru a simplifica crearea uneltelor personalizate.
 
 ## Resurse suplimentare
 
@@ -183,7 +193,7 @@ Concluziile din acest capitol sunt următoarele:
 
 ## Ce urmează
 
-Urmează: [Lecția 4 Implementare practică](/04-PracticalImplementation/README.md)
+Următorul pas: [Lesson 4 Practical Implementation](/04-PracticalImplementation/README.md)
 
-**Declinarea responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să obținem acuratețe, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională umană. Nu suntem responsabili pentru niciun fel de neînțelegeri sau interpretări greșite care rezultă din utilizarea acestei traduceri.
+**Declinare a responsabilității**:  
+Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să țineți cont că traducerile automate pot conține erori sau inexactități. Documentul original, în limba sa nativă, trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot rezulta din utilizarea acestei traduceri.

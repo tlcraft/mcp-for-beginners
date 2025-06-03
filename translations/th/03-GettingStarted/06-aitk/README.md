@@ -1,105 +1,113 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a3cbadbf632058aa59a523ac659aa1df",
-  "translation_date": "2025-05-17T12:22:45+00:00",
+  "original_hash": "af6cee6052e751674c1d9022a4b204e6",
+  "translation_date": "2025-06-03T14:39:34+00:00",
   "source_file": "03-GettingStarted/06-aitk/README.md",
   "language_code": "th"
 }
 -->
-# การใช้งานเซิร์ฟเวอร์จากส่วนขยาย AI Toolkit สำหรับ Visual Studio Code
+# การใช้งานเซิร์ฟเวอร์จาก AI Toolkit extension สำหรับ Visual Studio Code
 
-เมื่อคุณสร้างเอเจนต์ AI ไม่ใช่แค่เรื่องของการสร้างการตอบสนองที่ชาญฉลาด แต่ยังเกี่ยวกับการให้เอเจนต์ของคุณมีความสามารถในการดำเนินการด้วย นั่นคือที่มาของ Model Context Protocol (MCP) MCP ทำให้ง่ายต่อการเข้าถึงเครื่องมือและบริการภายนอกในลักษณะที่สม่ำเสมอ คิดว่ามันเหมือนการเชื่อมต่อเอเจนต์ของคุณเข้ากับกล่องเครื่องมือที่สามารถใช้งานได้จริง
+เมื่อคุณกำลังสร้างเอเจนต์ AI ไม่ใช่แค่การสร้างคำตอบที่ชาญฉลาดเท่านั้น แต่ยังรวมถึงการให้เอเจนต์ของคุณสามารถทำงานได้จริง นั่นคือที่มาของ Model Context Protocol (MCP) MCP ช่วยให้เอเจนต์เข้าถึงเครื่องมือและบริการภายนอกได้อย่างสม่ำเสมอ เปรียบเสมือนการเสียบเอเจนต์ของคุณเข้ากับกล่องเครื่องมือที่มัน *สามารถ* ใช้งานได้จริง
 
-สมมติว่าคุณเชื่อมต่อเอเจนต์กับเซิร์ฟเวอร์ MCP ของเครื่องคิดเลข ทันทีที่เอเจนต์ของคุณสามารถทำการคำนวณทางคณิตศาสตร์ได้เพียงแค่รับคำถามเช่น "47 คูณ 89 เท่าไหร่?"—ไม่จำเป็นต้องเขียนโค้ดลอจิกหรือสร้าง API เอง
+สมมติว่าคุณเชื่อมต่อเอเจนต์กับเซิร์ฟเวอร์ MCP เครื่องคิดเลข ทันใดนั้นเอเจนต์ของคุณก็สามารถทำการคำนวณได้โดยแค่รับคำถามอย่าง “47 คูณ 89 เท่ากับเท่าไหร่?” — ไม่จำเป็นต้องเขียนโค้ดลอจิกเองหรือสร้าง API แบบกำหนดเอง
 
 ## ภาพรวม
 
-บทเรียนนี้ครอบคลุมวิธีการเชื่อมต่อเซิร์ฟเวอร์ MCP ของเครื่องคิดเลขกับเอเจนต์ด้วย [AI Toolkit](https://aka.ms/AIToolkit) ส่วนขยายใน Visual Studio Code เพื่อให้เอเจนต์ของคุณสามารถทำการคำนวณทางคณิตศาสตร์เช่น การบวก ลบ คูณ และหาร ผ่านภาษาธรรมชาติ
+บทเรียนนี้ครอบคลุมวิธีการเชื่อมต่อเซิร์ฟเวอร์ MCP เครื่องคิดเลขกับเอเจนต์โดยใช้ [AI Toolkit](https://aka.ms/AIToolkit) extension ใน Visual Studio Code เพื่อให้เอเจนต์ของคุณสามารถทำการคำนวณเช่น บวก ลบ คูณ หาร ผ่านภาษาธรรมชาติได้
 
-AI Toolkit เป็นส่วนขยายที่ทรงพลังสำหรับ Visual Studio Code ที่ช่วยให้การพัฒนาเอเจนต์เป็นไปอย่างราบรื่น วิศวกร AI สามารถสร้างแอปพลิเคชัน AI ได้ง่ายๆ โดยการพัฒนาและทดสอบโมเดล AI เชิงสร้างสรรค์—ในเครื่องหรือในคลาวด์ ส่วนขยายนี้รองรับโมเดลเชิงสร้างสรรค์ที่สำคัญที่สุดที่มีอยู่ในปัจจุบัน
+AI Toolkit เป็น extension ที่ทรงพลังสำหรับ Visual Studio Code ที่ช่วยให้นักพัฒนา AI สร้างแอปพลิเคชัน AI ได้อย่างรวดเร็วและง่ายดาย โดยการพัฒนาและทดสอบโมเดล AI สร้างสรรค์—ทั้งแบบโลคัลและบนคลาวด์ extension นี้รองรับโมเดลสร้างสรรค์หลักๆ ที่มีอยู่ในปัจจุบัน
 
-*หมายเหตุ*: AI Toolkit ปัจจุบันรองรับ Python และ TypeScript
+*หมายเหตุ*: AI Toolkit รองรับ Python และ TypeScript ในตอนนี้
 
 ## วัตถุประสงค์การเรียนรู้
 
 เมื่อจบบทเรียนนี้ คุณจะสามารถ:
 
-- ใช้เซิร์ฟเวอร์ MCP ผ่าน AI Toolkit
-- กำหนดค่าเอเจนต์เพื่อให้สามารถค้นหาและใช้เครื่องมือที่เซิร์ฟเวอร์ MCP ให้มา
+- ใช้งานเซิร์ฟเวอร์ MCP ผ่าน AI Toolkit
+- ตั้งค่า agent configuration เพื่อให้เอเจนต์ค้นหาและใช้งานเครื่องมือที่เซิร์ฟเวอร์ MCP จัดให้
 - ใช้เครื่องมือ MCP ผ่านภาษาธรรมชาติ
 
 ## วิธีการ
 
-นี่คือวิธีที่เราต้องดำเนินการในระดับสูง:
+นี่คือวิธีการที่เราจะดำเนินการในระดับสูง:
 
-- สร้างเอเจนต์และกำหนดข้อความระบบของมัน
-- สร้างเซิร์ฟเวอร์ MCP พร้อมเครื่องมือเครื่องคิดเลข
+- สร้างเอเจนต์และกำหนด system prompt ของมัน
+- สร้างเซิร์ฟเวอร์ MCP พร้อมเครื่องคิดเลข
 - เชื่อมต่อ Agent Builder กับเซิร์ฟเวอร์ MCP
 - ทดสอบการเรียกใช้เครื่องมือของเอเจนต์ผ่านภาษาธรรมชาติ
 
-ดีมาก ตอนนี้เราเข้าใจการไหลแล้ว มาตั้งค่าเอเจนต์ AI เพื่อใช้เครื่องมือภายนอกผ่าน MCP เพื่อเพิ่มประสิทธิภาพของมัน!
+เยี่ยมเลย ตอนนี้ที่เราเข้าใจกระบวนการแล้ว มาเริ่มตั้งค่าเอเจนต์ AI เพื่อใช้เครื่องมือภายนอกผ่าน MCP เพื่อเพิ่มความสามารถของมันกัน!
 
-## ข้อกำหนดเบื้องต้น
+## สิ่งที่ต้องมี
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [AI Toolkit for Visual Studio Code](https://aka.ms/AIToolkit)
 
-## การฝึก: การใช้เซิร์ฟเวอร์
+## แบบฝึกหัด: การใช้งานเซิร์ฟเวอร์
 
 ในแบบฝึกหัดนี้ คุณจะสร้าง รัน และปรับปรุงเอเจนต์ AI ด้วยเครื่องมือจากเซิร์ฟเวอร์ MCP ภายใน Visual Studio Code โดยใช้ AI Toolkit
 
-### -0- ขั้นตอนก่อนหน้า เพิ่มโมเดล OpenAI GPT-4o ไปยัง My Models
+### -0- ขั้นตอนเตรียม เพิ่มโมเดล OpenAI GPT-4o ไปยัง My Models
 
-แบบฝึกหัดนี้ใช้โมเดล **GPT-4o** โมเดลควรจะถูกเพิ่มไปยัง **My Models** ก่อนที่จะสร้างเอเจนต์
+แบบฝึกหัดนี้ใช้โมเดล **GPT-4o** โมเดลนี้ควรถูกเพิ่มเข้าไปใน **My Models** ก่อนสร้างเอเจนต์
 
-1. เปิดส่วนขยาย **AI Toolkit** จาก **Activity Bar**
-1. ในส่วน **Catalog** เลือก **Models** เพื่อเปิด **Model Catalog** การเลือก **Models** จะเปิด **Model Catalog** ในแท็บตัวแก้ไขใหม่
-1. ในแถบค้นหา **Model Catalog** ใส่ **OpenAI GPT-4o**
-1. คลิก **+ Add** เพื่อเพิ่มโมเดลไปยังรายการ **My Models** ของคุณ ตรวจสอบให้แน่ใจว่าคุณได้เลือกโมเดลที่ **Hosted by GitHub**
-1. ใน **Activity Bar** ยืนยันว่าโมเดล **OpenAI GPT-4o** ปรากฏในรายการ
+![Screenshot of a model selection interface in Visual Studio Code's AI Toolkit extension. The heading reads "Find the right model for your AI Solution" with a subtitle encouraging users to discover, test, and deploy AI models. Below, under “Popular Models,” six model cards are displayed: DeepSeek-R1 (GitHub-hosted), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Small, Fast), and DeepSeek-R1 (Ollama-hosted). Each card includes options to “Add” the model or “Try in Playground](../../../../translated_images/aitk-model-catalog.c0c66f0d9ac0ee73c1d21b9207db99e914ef9dd52fced6f226c2b1f537e2c447.th.png)
+
+1. เปิด **AI Toolkit** extension จาก **Activity Bar**
+2. ในส่วน **Catalog** เลือก **Models** เพื่อเปิด **Model Catalog** การเลือก **Models** จะเปิดแท็บ editor ใหม่
+3. ในแถบค้นหาของ **Model Catalog** พิมพ์ **OpenAI GPT-4o**
+4. คลิก **+ Add** เพื่อเพิ่มโมเดลนี้ไปยังรายการ **My Models** ให้แน่ใจว่าเลือกโมเดลที่ **Hosted by GitHub**
+5. ใน **Activity Bar** ตรวจสอบว่าโมเดล **OpenAI GPT-4o** ปรากฏในรายการแล้ว
 
 ### -1- สร้างเอเจนต์
 
-**Agent (Prompt) Builder** ช่วยให้คุณสร้างและปรับแต่งเอเจนต์ที่ใช้พลังงานจาก AI ของคุณเอง ในส่วนนี้ คุณจะสร้างเอเจนต์ใหม่และกำหนดโมเดลเพื่อขับเคลื่อนการสนทนา
+**Agent (Prompt) Builder** ช่วยให้คุณสร้างและปรับแต่งเอเจนต์ AI ของคุณเองได้ ในส่วนนี้ คุณจะสร้างเอเจนต์ใหม่และกำหนดโมเดลเพื่อขับเคลื่อนการสนทนา
 
-1. เปิดส่วนขยาย **AI Toolkit** จาก **Activity Bar**
-1. ในส่วน **Tools** เลือก **Agent (Prompt) Builder** การเลือก **Agent (Prompt) Builder** จะเปิด **Agent (Prompt) Builder** ในแท็บตัวแก้ไขใหม่
-1. คลิกปุ่ม **+ New Builder** ส่วนขยายจะเปิดตัวช่วยสร้างการตั้งค่าผ่าน **Command Palette**
-1. ใส่ชื่อ **Calculator Agent** แล้วกด **Enter**
-1. ใน **Agent (Prompt) Builder** สำหรับฟิลด์ **Model** เลือกโมเดล **OpenAI GPT-4o (via GitHub)**
+![Screenshot of the "Calculator Agent" builder interface in the AI Toolkit extension for Visual Studio Code. On the left panel, the model selected is "OpenAI GPT-4o (via GitHub)." A system prompt reads "You are a professor in university teaching math," and the user prompt says, "Explain to me the Fourier equation in simple terms." Additional options include buttons for adding tools, enabling MCP Server, and selecting structured output. A blue “Run” button is at the bottom. On the right panel, under "Get Started with Examples," three sample agents are listed: Web Developer (with MCP Server, Second-Grade Simplifier, and Dream Interpreter, each with brief descriptions of their functions.](../../../../translated_images/aitk-agent-builder.fb7df60f7923b4d8ba839662bf6d7647e843c01b57256e1e9adecb46a64d3408.th.png)
 
-### -2- สร้างข้อความระบบสำหรับเอเจนต์
+1. เปิด **AI Toolkit** extension จาก **Activity Bar**
+2. ในส่วน **Tools** เลือก **Agent (Prompt) Builder** การเลือกนี้จะเปิดแท็บ editor ใหม่
+3. คลิกปุ่ม **+ New Agent** ระบบจะเปิด wizard ตั้งค่าผ่าน **Command Palette**
+4. ใส่ชื่อ **Calculator Agent** แล้วกด **Enter**
+5. ใน **Agent (Prompt) Builder** ที่ช่อง **Model** เลือกโมเดล **OpenAI GPT-4o (via GitHub)**
 
-เมื่อเอเจนต์ถูกสร้างขึ้นแล้ว ก็ถึงเวลาที่จะกำหนดบุคลิกภาพและวัตถุประสงค์ของมัน ในส่วนนี้ คุณจะใช้ฟีเจอร์ **Generate system prompt** เพื่ออธิบายพฤติกรรมที่ตั้งใจของเอเจนต์—ในกรณีนี้คือเอเจนต์เครื่องคิดเลข—และให้โมเดลเขียนข้อความระบบให้คุณ
+### -2- สร้าง system prompt สำหรับเอเจนต์
 
-1. สำหรับส่วน **Prompts** คลิกปุ่ม **Generate system prompt** ปุ่มนี้เปิดในตัวสร้างข้อความซึ่งใช้ AI ในการสร้างข้อความระบบสำหรับเอเจนต์
-1. ในหน้าต่าง **Generate a prompt** ใส่ข้อมูลดังนี้ `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
-1. คลิกปุ่ม **Generate** จะมีการแจ้งเตือนปรากฏขึ้นที่มุมล่างขวาเพื่อยืนยันว่ากำลังสร้างข้อความระบบ เมื่อการสร้างข้อความเสร็จสิ้น ข้อความจะปรากฏในฟิลด์ **System prompt** ของ **Agent (Prompt) Builder**
-1. ทบทวน **System prompt** และปรับปรุงหากจำเป็น
+เมื่อสร้างโครงสร้างเอเจนต์แล้ว ถึงเวลากำหนดบุคลิกและวัตถุประสงค์ ในส่วนนี้ คุณจะใช้ฟีเจอร์ **Generate system prompt** เพื่อบรรยายพฤติกรรมที่ต้องการของเอเจนต์—ในกรณีนี้คือเอเจนต์เครื่องคิดเลข—และให้โมเดลเขียน system prompt ให้คุณ
+
+![Screenshot of the "Calculator Agent" interface in the AI Toolkit for Visual Studio Code with a modal window open titled "Generate a prompt." The modal explains that a prompt template can be generated by sharing basic details and includes a text box with the sample system prompt: "You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result." Below the text box are "Close" and "Generate" buttons. In the background, part of the agent configuration is visible, including the selected model "OpenAI GPT-4o (via GitHub)" and fields for system and user prompts.](../../../../translated_images/aitk-generate-prompt.0d4292407c15282bf714e327f5d3d833389324004135727ef28adc22dbbb4e8f.th.png)
+
+1. ในส่วน **Prompts** คลิกปุ่ม **Generate system prompt** ซึ่งจะเปิดตัวสร้าง prompt ที่ใช้ AI ช่วยสร้าง system prompt สำหรับเอเจนต์
+2. ในหน้าต่าง **Generate a prompt** ให้ใส่ข้อความต่อไปนี้: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
+3. คลิกปุ่ม **Generate** จะมีการแจ้งเตือนที่มุมล่างขวาว่ากำลังสร้าง system prompt เมื่อเสร็จแล้ว prompt จะปรากฏในช่อง **System prompt** ของ **Agent (Prompt) Builder**
+4. ตรวจสอบ **System prompt** และแก้ไขถ้าจำเป็น
 
 ### -3- สร้างเซิร์ฟเวอร์ MCP
 
-เมื่อคุณได้กำหนดข้อความระบบของเอเจนต์แล้ว—ชี้นำพฤติกรรมและการตอบสนอง—ถึงเวลาที่จะให้เอเจนต์มีความสามารถที่เป็นประโยชน์ ในส่วนนี้ คุณจะสร้างเซิร์ฟเวอร์ MCP เครื่องคิดเลขพร้อมเครื่องมือในการดำเนินการบวก ลบ คูณ และหาร การคำนวณนี้จะทำให้เอเจนต์ของคุณสามารถทำการคำนวณทางคณิตศาสตร์แบบเรียลไทม์ในตอบสนองต่อคำถามภาษาธรรมชาติ
+ตอนนี้ที่คุณกำหนด system prompt ให้เอเจนต์แล้ว เพื่อชี้นำพฤติกรรมและการตอบสนอง ถึงเวลาติดตั้งความสามารถจริงให้เอเจนต์ ในส่วนนี้ คุณจะสร้างเซิร์ฟเวอร์ MCP เครื่องคิดเลขที่มีเครื่องมือสำหรับบวก ลบ คูณ และ หาร เพื่อให้เอเจนต์สามารถคำนวณแบบเรียลไทม์เมื่อได้รับคำถามเป็นภาษาธรรมชาติ
 
-AI Toolkit มีเทมเพลตสำหรับการสร้างเซิร์ฟเวอร์ MCP ของคุณเองได้ง่ายๆ เราจะใช้เทมเพลต Python สำหรับการสร้างเซิร์ฟเวอร์ MCP เครื่องคิดเลข
+!["Screenshot of the lower section of the Calculator Agent interface in the AI Toolkit extension for Visual Studio Code. It shows expandable menus for “Tools” and “Structure output,” along with a dropdown menu labeled “Choose output format” set to “text.” To the right, there is a button labeled “+ MCP Server” for adding a Model Context Protocol server. An image icon placeholder is shown above the Tools section.](../../../../translated_images/aitk-add-mcp-server.9b158809336d87e8076eb5954846040a7370c88046639a09e766398c8855c3d3.th.png)
 
-*หมายเหตุ*: AI Toolkit ปัจจุบันรองรับ Python และ TypeScript
+AI Toolkit มาพร้อมกับเทมเพลตที่ช่วยให้สร้างเซิร์ฟเวอร์ MCP ได้ง่าย เราจะใช้เทมเพลต Python สำหรับสร้างเซิร์ฟเวอร์ MCP เครื่องคิดเลขนี้
 
-1. ในส่วน **Tools** ของ **Agent (Prompt) Builder** คลิกปุ่ม **+ MCP Server** ส่วนขยายจะเปิดตัวช่วยสร้างการตั้งค่าผ่าน **Command Palette**
-1. เลือก **+ Add Server**
-1. เลือก **Create a New MCP Server**
-1. เลือก **python-weather** เป็นเทมเพลต
-1. เลือก **Default folder** เพื่อบันทึกเทมเพลตเซิร์ฟเวอร์ MCP
-1. ใส่ชื่อเซิร์ฟเวอร์ดังนี้: **Calculator**
-1. หน้าต่าง Visual Studio Code ใหม่จะเปิดขึ้น เลือก **Yes, I trust the authors**
-1. ใช้ terminal (**Terminal** > **New Terminal**) สร้างสภาพแวดล้อมเสมือน `python -m venv .venv`
-1. ใช้ terminal เปิดใช้งานสภาพแวดล้อมเสมือน:
+*หมายเหตุ*: AI Toolkit รองรับ Python และ TypeScript ในตอนนี้
+
+1. ในส่วน **Tools** ของ **Agent (Prompt) Builder** คลิกปุ่ม **+ MCP Server** ระบบจะเปิด wizard ตั้งค่าผ่าน **Command Palette**
+2. เลือก **+ Add Server**
+3. เลือก **Create a New MCP Server**
+4. เลือกเทมเพลต **python-weather**
+5. เลือก **Default folder** เพื่อบันทึกเทมเพลตเซิร์ฟเวอร์ MCP
+6. ตั้งชื่อเซิร์ฟเวอร์เป็น **Calculator**
+7. หน้าต่าง Visual Studio Code ใหม่จะเปิดขึ้น เลือก **Yes, I trust the authors**
+8. ใช้ terminal (**Terminal** > **New Terminal**) สร้าง virtual environment: `python -m venv .venv`
+9. ใช้ terminal เปิดใช้งาน virtual environment:
     1. Windows - `.venv\Scripts\activate`
-    1. macOS/Linux - `source venv/bin/activate`
-1. ใช้ terminal ติดตั้ง dependencies `pip install -e .[dev]`
-1. ใน **Explorer** view ของ **Activity Bar** ขยายไดเรกทอรี **src** และเลือก **server.py** เพื่อเปิดไฟล์ในตัวแก้ไข
-1. แทนที่โค้ดในไฟล์ **server.py** ด้วยข้อมูลต่อไปนี้และบันทึก:
+    2. macOS/Linux - `source venv/bin/activate`
+10. ใช้ terminal ติดตั้ง dependencies: `pip install -e .[dev]`
+11. ในมุมมอง **Explorer** ของ **Activity Bar** ขยายโฟลเดอร์ **src** และเลือก **server.py** เพื่อเปิดไฟล์ใน editor
+12. แทนที่โค้ดในไฟล์ **server.py** ด้วยโค้ดต่อไปนี้แล้วบันทึก:
 
     ```python
     """
@@ -144,9 +152,11 @@ AI Toolkit มีเทมเพลตสำหรับการสร้าง
 
 ### -4- รันเอเจนต์กับเซิร์ฟเวอร์ MCP เครื่องคิดเลข
 
-ตอนนี้เอเจนต์ของคุณมีเครื่องมือแล้ว ถึงเวลาที่จะใช้มัน! ในส่วนนี้ คุณจะส่งคำถามไปยังเอเจนต์เพื่อทดสอบและตรวจสอบว่าเอเจนต์ใช้เครื่องมือที่เหมาะสมจากเซิร์ฟเวอร์ MCP เครื่องคิดเลขหรือไม่
+ตอนนี้ที่เอเจนต์ของคุณมีเครื่องมือแล้ว ถึงเวลานำไปใช้! ในส่วนนี้ คุณจะส่งคำถามไปยังเอเจนต์เพื่อทดสอบและตรวจสอบว่าเอเจนต์เรียกใช้เครื่องมือที่ถูกต้องจากเซิร์ฟเวอร์ MCP เครื่องคิดเลขหรือไม่
 
-คุณจะรันเซิร์ฟเวอร์ MCP เครื่องคิดเลขบนเครื่องพัฒนาในพื้นที่ของคุณผ่าน **Agent Builder** เป็น MCP client
+![Screenshot of the Calculator Agent interface in the AI Toolkit extension for Visual Studio Code. On the left panel, under “Tools,” an MCP server named local-server-calculator_server is added, showing four available tools: add, subtract, multiply, and divide. A badge shows that four tools are active. Below is a collapsed “Structure output” section and a blue “Run” button. On the right panel, under “Model Response,” the agent invokes the multiply and subtract tools with inputs {"a": 3, "b": 25} and {"a": 75, "b": 20} respectively. The final “Tool Response” is shown as 75.0. A “View Code” button appears at the bottom.](../../../../translated_images/aitk-agent-response-with-tools.0f0da2c6eef5eb3f5b7592d6d056449aa8aaa42a3ab0b0c2f14269b3049cfdb5.th.png)
+
+คุณจะรันเซิร์ฟเวอร์ MCP เครื่องคิดเลขบนเครื่องพัฒนาของคุณในฐานะลูกค้า MCP ผ่าน **Agent Builder**
 
 1. กด `F5` to start debugging the MCP server. The **Agent (Prompt) Builder** will open in a new editor tab. The status of the server is visible in the terminal.
 1. In the **User prompt** field of the **Agent (Prompt) Builder**, enter the following prompt: `I bought 3 items priced at $25 each, and then used a $20 discount. How much did I pay?`
@@ -155,35 +165,35 @@ AI Toolkit มีเทมเพลตสำหรับการสร้าง
 1. Here's a breakdown of what should occur:
     - The agent selects the **multiply** and **substract** tools to aid in the calculation.
     - The respective `a` and `b` values are assigned for the **multiply** tool.
-    - The respective `a` and `b` ค่าเหล่านี้จะถูกกำหนดสำหรับเครื่องมือ **subtract**
-    - การตอบสนองจากแต่ละเครื่องมือจะถูกให้ใน **Tool Response** ที่เกี่ยวข้อง
-    - ผลลัพธ์สุดท้ายจากโมเดลจะถูกให้ใน **Model Response** สุดท้าย
-1. ส่งคำถามเพิ่มเติมเพื่อทดสอบเอเจนต์เพิ่มเติม คุณสามารถปรับเปลี่ยนคำถามที่มีอยู่ในฟิลด์ **User prompt** โดยคลิกเข้าไปในฟิลด์และแทนที่คำถามที่มีอยู่
-1. เมื่อคุณเสร็จสิ้นการทดสอบเอเจนต์ คุณสามารถหยุดเซิร์ฟเวอร์ผ่าน **terminal** โดยการใส่ **CTRL/CMD+C** เพื่อออก
+    - The respective `a` and `b` ค่าถูกกำหนดให้กับเครื่องมือ **subtract**
+    - คำตอบจากแต่ละเครื่องมือจะแสดงในส่วน **Tool Response**
+    - ผลลัพธ์สุดท้ายจากโมเดลจะแสดงในส่วน **Model Response**
+2. ส่งคำถามเพิ่มเติมเพื่อทดสอบเอเจนต์ คุณสามารถแก้ไขคำถามในช่อง **User prompt** โดยคลิกและแทนที่คำถามเดิม
+3. เมื่อทดสอบเสร็จแล้ว คุณสามารถหยุดเซิร์ฟเวอร์ได้โดยกด **CTRL/CMD+C** ใน terminal เพื่อออก
 
-## การมอบหมาย
+## การบ้าน
 
-ลองเพิ่มเครื่องมือเพิ่มเติมในไฟล์ **server.py** ของคุณ (เช่น การคืนค่ารากที่สองของตัวเลข) ส่งคำถามเพิ่มเติมที่ต้องการให้เอเจนต์ใช้เครื่องมือใหม่ของคุณ (หรือเครื่องมือที่มีอยู่) อย่าลืมรีสตาร์ทเซิร์ฟเวอร์เพื่อโหลดเครื่องมือที่เพิ่มใหม่
+ลองเพิ่มเครื่องมือใหม่ในไฟล์ **server.py** ของคุณ (เช่น ฟังก์ชันหาค่ารากที่สองของตัวเลข) ส่งคำถามเพิ่มเติมที่ต้องใช้เครื่องมือใหม่ (หรือเครื่องมือเดิม) เพื่อให้เอเจนต์ใช้งาน อย่าลืมรีสตาร์ทเซิร์ฟเวอร์เพื่อโหลดเครื่องมือที่เพิ่มเข้ามาใหม่
 
-## คำตอบ
+## แนวทางแก้ไข
 
 [Solution](./solution/README.md)
 
-## ประเด็นสำคัญ
+## ข้อสรุปสำคัญ
 
-ประเด็นสำคัญจากบทนี้คือ:
+ข้อสรุปจากบทนี้คือ:
 
-- ส่วนขยาย AI Toolkit เป็น client ที่ยอดเยี่ยมที่ให้คุณใช้เซิร์ฟเวอร์ MCP และเครื่องมือของมัน
-- คุณสามารถเพิ่มเครื่องมือใหม่ให้กับเซิร์ฟเวอร์ MCP ขยายความสามารถของเอเจนต์เพื่อให้ตรงกับความต้องการที่เปลี่ยนแปลง
-- AI Toolkit มีเทมเพลต (เช่น เทมเพลตเซิร์ฟเวอร์ MCP Python) เพื่อทำให้การสร้างเครื่องมือที่กำหนดเองง่ายขึ้น
+- AI Toolkit เป็น client ที่ยอดเยี่ยมที่ช่วยให้คุณใช้งาน MCP Servers และเครื่องมือของพวกเขาได้
+- คุณสามารถเพิ่มเครื่องมือใหม่ให้กับเซิร์ฟเวอร์ MCP เพื่อขยายความสามารถของเอเจนต์ให้ตอบโจทย์ความต้องการที่เปลี่ยนแปลงได้
+- AI Toolkit มีเทมเพลต (เช่น เทมเพลตเซิร์ฟเวอร์ MCP Python) ที่ช่วยให้ง่ายต่อการสร้างเครื่องมือแบบกำหนดเอง
 
 ## แหล่งข้อมูลเพิ่มเติม
 
 - [AI Toolkit docs](https://aka.ms/AIToolkit/doc)
 
-## อะไรต่อไป
+## ต่อไป
 
-ต่อไป: [บทที่ 4 การนำไปใช้จริง](/04-PracticalImplementation/README.md)
+ถัดไป: [Lesson 4 Practical Implementation](/04-PracticalImplementation/README.md)
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปล AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้มีความถูกต้อง โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นฉบับควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้การแปลโดยมนุษย์มืออาชีพ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้มีความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่แม่นยำ เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่น่าเชื่อถือที่สุด สำหรับข้อมูลที่มีความสำคัญ ขอแนะนำให้ใช้บริการแปลโดยมนุษย์มืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความที่ผิดพลาดใด ๆ ที่เกิดขึ้นจากการใช้การแปลนี้
