@@ -1,44 +1,44 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a3cbadbf632058aa59a523ac659aa1df",
-  "translation_date": "2025-05-17T12:27:21+00:00",
+  "original_hash": "af6cee6052e751674c1d9022a4b204e6",
+  "translation_date": "2025-06-03T14:46:37+00:00",
   "source_file": "03-GettingStarted/06-aitk/README.md",
   "language_code": "tl"
 }
 -->
 # Paggamit ng server mula sa AI Toolkit extension para sa Visual Studio Code
 
-Kapag nagtatayo ka ng AI agent, hindi lang ito tungkol sa pagbuo ng matatalinong sagot; mahalaga rin na bigyan mo ang iyong agent ng kakayahang kumilos. Dito pumapasok ang Model Context Protocol (MCP). Pinapadali ng MCP para sa mga agent na ma-access ang mga external na tools at serbisyo sa isang consistent na paraan. Isipin mo ito na parang ikinokonekta mo ang iyong agent sa isang toolbox na magagamit nito.
+Kapag gumagawa ka ng AI agent, hindi lang ito tungkol sa paggawa ng matatalinong sagot; mahalaga rin na mabigyan ang agent ng kakayahang kumilos. Dito pumapasok ang Model Context Protocol (MCP). Pinapadali ng MCP para sa mga agent na ma-access ang mga external na tools at serbisyo sa isang pare-parehong paraan. Isipin mo ito na parang pagsaksak ng iyong agent sa isang toolbox na *talagang* magagamit nito.
 
-Halimbawa, ikonekta mo ang isang agent sa iyong calculator MCP server. Bigla, ang iyong agent ay makakagawa ng mga operasyon sa matematika sa pamamagitan lang ng pagtanggap ng prompt tulad ng "Ano ang 47 times 89?"—hindi na kailangan ng hardcode logic o pagbuo ng custom APIs.
+Halimbawa, ikinonekta mo ang isang agent sa iyong calculator MCP server. Bigla, kaya na ng agent mo na magsagawa ng mga operasyon sa matematika sa pamamagitan lang ng pagtanggap ng prompt na “Ano ang 47 times 89?”—hindi mo na kailangang mag-hardcode ng logic o gumawa ng custom na API.
 
 ## Pangkalahatang-ideya
 
-Saklaw ng araling ito kung paano ikonekta ang isang calculator MCP server sa isang agent gamit ang [AI Toolkit](https://aka.ms/AIToolkit) extension sa Visual Studio Code, na nagbibigay-daan sa iyong agent na magsagawa ng mga operasyon sa matematika tulad ng addition, subtraction, multiplication, at division sa pamamagitan ng natural na wika.
+Tinuturo ng araling ito kung paano ikonekta ang calculator MCP server sa isang agent gamit ang [AI Toolkit](https://aka.ms/AIToolkit) extension sa Visual Studio Code, na nagbibigay-daan sa iyong agent na magsagawa ng mga operasyon sa matematika tulad ng addition, subtraction, multiplication, at division gamit ang natural na wika.
 
-Ang AI Toolkit ay isang makapangyarihang extension para sa Visual Studio Code na pinapasimple ang pag-develop ng agent. Madaling makakagawa ang mga AI Engineers ng AI applications sa pamamagitan ng pag-develop at pag-test ng generative AI models—locally o sa cloud. Sinusuportahan ng extension ang karamihan sa mga pangunahing generative models na available ngayon.
+Ang AI Toolkit ay isang makapangyarihang extension para sa Visual Studio Code na nagpapadali sa pagbuo ng mga agent. Madaling makagawa ang mga AI Engineers ng AI applications sa pamamagitan ng pag-develop at pag-test ng mga generative AI models—lokal man o sa cloud. Sinusuportahan ng extension ang karamihan sa mga pangunahing generative models na available ngayon.
 
 *Note*: Sa kasalukuyan, sinusuportahan ng AI Toolkit ang Python at TypeScript.
 
-## Mga Layunin sa Pag-aaral
+## Mga Layunin sa Pagkatuto
 
-Sa pagtatapos ng araling ito, magagawa mo ang sumusunod:
+Sa pagtatapos ng araling ito, magagawa mong:
 
-- Paggamit ng MCP server sa pamamagitan ng AI Toolkit.
-- I-configure ang configuration ng agent upang paganahin ito na matuklasan at gamitin ang mga tool na ibinigay ng MCP server.
-- Gamitin ang mga tool ng MCP sa pamamagitan ng natural na wika.
+- Gumamit ng MCP server gamit ang AI Toolkit.
+- I-configure ang agent para mahanap at magamit ang mga tool na ibinibigay ng MCP server.
+- Gamitin ang mga MCP tool gamit ang natural na wika.
 
-## Paraan
+## Pamamaraan
 
-Narito kung paano natin kailangan lapitan ito sa mataas na antas:
+Ganito ang pangkalahatang hakbang na susundin natin:
 
 - Gumawa ng agent at tukuyin ang system prompt nito.
 - Gumawa ng MCP server na may mga calculator tools.
 - Ikonekta ang Agent Builder sa MCP server.
-- I-test ang invocation ng tool ng agent sa pamamagitan ng natural na wika.
+- Subukan ang pagtawag ng tool ng agent gamit ang natural na wika.
 
-Magaling, ngayong naiintindihan na natin ang daloy, mag-configure tayo ng AI agent upang gamitin ang mga external tools sa pamamagitan ng MCP, pinapahusay ang mga kakayahan nito!
+Ayos! Ngayon na naiintindihan na natin ang daloy, i-configure natin ang AI agent para magamit ang mga external na tools sa pamamagitan ng MCP, para mapalawak ang kakayahan nito!
 
 ## Mga Kinakailangan
 
@@ -47,59 +47,67 @@ Magaling, ngayong naiintindihan na natin ang daloy, mag-configure tayo ng AI age
 
 ## Ehersisyo: Paggamit ng server
 
-Sa ehersisyong ito, magtatayo, magpapatakbo, at magpapahusay ka ng AI agent gamit ang mga tool mula sa isang MCP server sa loob ng Visual Studio Code gamit ang AI Toolkit.
+Sa ehersisyong ito, gagawa, patatakbuhin, at paiigtingin mo ang isang AI agent gamit ang mga tool mula sa MCP server sa loob ng Visual Studio Code gamit ang AI Toolkit.
 
 ### -0- Paunang hakbang, idagdag ang OpenAI GPT-4o model sa My Models
 
-Ginagamit ng ehersisyo ang **GPT-4o** model. Dapat idagdag ang model sa **My Models** bago gumawa ng agent.
+Gagamitin sa ehersisyong ito ang **GPT-4o** model. Siguraduhing maidagdag ang model sa **My Models** bago gumawa ng agent.
+
+![Screenshot ng model selection interface sa AI Toolkit extension ng Visual Studio Code. Nakasulat sa itaas ang "Find the right model for your AI Solution" na may subtitle na hinihikayat ang mga user na mag-discover, mag-test, at mag-deploy ng AI models. Sa ibaba, sa ilalim ng “Popular Models,” makikita ang anim na model cards: DeepSeek-R1 (GitHub-hosted), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Small, Fast), at DeepSeek-R1 (Ollama-hosted). Bawat card ay may opsyon na “Add” o “Try in Playground”.](../../../../translated_images/aitk-model-catalog.c0c66f0d9ac0ee73c1d21b9207db99e914ef9dd52fced6f226c2b1f537e2c447.tl.png)
 
 1. Buksan ang **AI Toolkit** extension mula sa **Activity Bar**.
-1. Sa **Catalog** section, piliin ang **Models** upang buksan ang **Model Catalog**. Ang pagpili sa **Models** ay magbubukas ng **Model Catalog** sa isang bagong editor tab.
-1. Sa **Model Catalog** search bar, ilagay ang **OpenAI GPT-4o**.
-1. I-click ang **+ Add** upang idagdag ang model sa iyong **My Models** list. Siguraduhin na napili mo ang model na **Hosted by GitHub**.
-1. Sa **Activity Bar**, kumpirmahin na ang **OpenAI GPT-4o** model ay lumalabas sa listahan.
+1. Sa seksyong **Catalog**, piliin ang **Models** para buksan ang **Model Catalog**. Ang pagpili ng **Models** ay magbubukas ng **Model Catalog** sa bagong editor tab.
+1. Sa search bar ng **Model Catalog**, i-type ang **OpenAI GPT-4o**.
+1. I-click ang **+ Add** para idagdag ang model sa iyong **My Models** list. Siguraduhing ang model na pinili mo ay **Hosted by GitHub**.
+1. Sa **Activity Bar**, tiyaking lumabas ang **OpenAI GPT-4o** model sa listahan.
 
 ### -1- Gumawa ng agent
 
-Ang **Agent (Prompt) Builder** ay nagbibigay-daan sa iyo na gumawa at i-customize ang sarili mong AI-powered agents. Sa seksyong ito, gagawa ka ng bagong agent at mag-aasign ng model upang paganahin ang pag-uusap.
+Pinapahintulutan ka ng **Agent (Prompt) Builder** na gumawa at i-customize ang sarili mong AI-powered agent. Sa bahaging ito, gagawa ka ng bagong agent at magtatalaga ng model na siyang magpapatakbo ng pag-uusap.
+
+![Screenshot ng "Calculator Agent" builder interface sa AI Toolkit extension ng Visual Studio Code. Sa kaliwang panel, ang napiling model ay "OpenAI GPT-4o (via GitHub)." May system prompt na nagsasabing "You are a professor in university teaching math," at user prompt na "Explain to me the Fourier equation in simple terms." May mga opsyon para magdagdag ng tools, paganahin ang MCP Server, at pumili ng structured output. May asul na “Run” button sa ibaba. Sa kanang panel, sa ilalim ng "Get Started with Examples," may tatlong sample agents: Web Developer (may MCP Server), Second-Grade Simplifier, at Dream Interpreter, na may mga maikling paglalarawan ng kanilang mga gawain.](../../../../translated_images/aitk-agent-builder.fb7df60f7923b4d8ba839662bf6d7647e843c01b57256e1e9adecb46a64d3408.tl.png)
 
 1. Buksan ang **AI Toolkit** extension mula sa **Activity Bar**.
-1. Sa **Tools** section, piliin ang **Agent (Prompt) Builder**. Ang pagpili sa **Agent (Prompt) Builder** ay magbubukas ng **Agent (Prompt) Builder** sa isang bagong editor tab.
-1. I-click ang **+ New Builder** button. Ang extension ay maglulunsad ng setup wizard sa pamamagitan ng **Command Palette**.
-1. Ilagay ang pangalan **Calculator Agent** at pindutin ang **Enter**.
-1. Sa **Agent (Prompt) Builder**, para sa **Model** field, piliin ang **OpenAI GPT-4o (via GitHub)** model.
+1. Sa seksyong **Tools**, piliin ang **Agent (Prompt) Builder**. Magbubukas ito sa bagong editor tab.
+1. I-click ang **+ New Agent** button. Maglalabas ang extension ng setup wizard sa pamamagitan ng **Command Palette**.
+1. Ilagay ang pangalan na **Calculator Agent** at pindutin ang **Enter**.
+1. Sa **Agent (Prompt) Builder**, sa field na **Model**, piliin ang **OpenAI GPT-4o (via GitHub)** model.
 
 ### -2- Gumawa ng system prompt para sa agent
 
-Kapag na-skeleton na ang agent, oras na upang tukuyin ang personalidad at layunin nito. Sa seksyong ito, gagamitin mo ang **Generate system prompt** feature upang ilarawan ang nais na pag-uugali ng agent—sa kasong ito, isang calculator agent—at hayaan ang model na isulat ang system prompt para sa iyo.
+Ngayon na na-set up na ang agent, panahon na para tukuyin ang personalidad at layunin nito. Sa bahaging ito, gagamitin mo ang **Generate system prompt** feature para ilarawan ang intensyon ng agent—sa kasong ito, isang calculator agent—at hayaan ang model na isulat ang system prompt para sa iyo.
 
-1. Para sa **Prompts** section, i-click ang **Generate system prompt** button. Ang button na ito ay magbubukas sa prompt builder na gumagamit ng AI upang bumuo ng system prompt para sa agent.
-1. Sa **Generate a prompt** window, ilagay ang sumusunod: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
-1. I-click ang **Generate** button. Isang notification ang lalabas sa ibabang-kanang sulok na kumpirmasyon na ang system prompt ay ginagawa. Kapag kumpleto na ang pagbuo ng prompt, ang prompt ay lilitaw sa **System prompt** field ng **Agent (Prompt) Builder**.
+![Screenshot ng "Calculator Agent" interface sa AI Toolkit para sa Visual Studio Code na may bukas na modal window na pinamagatang "Generate a prompt." Ipinapaliwanag ng modal na pwedeng gumawa ng prompt template sa pamamagitan ng pagbibigay ng mga pangunahing detalye at may textbox na may sample system prompt: "You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result." Sa ibaba ng textbox ay may mga button na "Close" at "Generate." Sa background, makikita ang bahagi ng agent configuration kasama ang napiling model "OpenAI GPT-4o (via GitHub)" at mga field para sa system at user prompts.](../../../../translated_images/aitk-generate-prompt.0d4292407c15282bf714e327f5d3d833389324004135727ef28adc22dbbb4e8f.tl.png)
+
+1. Sa seksyong **Prompts**, i-click ang **Generate system prompt** button. Bubukas ito sa prompt builder na gumagamit ng AI para gumawa ng system prompt para sa agent.
+1. Sa window na **Generate a prompt**, ilagay ang sumusunod: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
+1. I-click ang **Generate** button. Lalabas ang notification sa ibabang-kanang sulok na nagpapatunay na ginagawa ang system prompt. Kapag tapos na, lalabas ang prompt sa **System prompt** field ng **Agent (Prompt) Builder**.
 1. Suriin ang **System prompt** at baguhin kung kinakailangan.
 
 ### -3- Gumawa ng MCP server
 
-Ngayon na na-tukoy mo ang system prompt ng iyong agent—ginagabayan ang pag-uugali at mga tugon nito—oras na upang bigyan ang agent ng mga praktikal na kakayahan. Sa seksyong ito, gagawa ka ng calculator MCP server na may mga tool upang magsagawa ng mga kalkulasyon ng addition, subtraction, multiplication, at division. Ang server na ito ay magpapahintulot sa iyong agent na magsagawa ng real-time na mga operasyon sa matematika bilang tugon sa mga natural na language prompts.
+Ngayon na natukoy mo na ang system prompt ng agent—na gagabay sa kilos at sagot nito—panahon na para bigyan ang agent ng praktikal na kakayahan. Sa bahaging ito, gagawa ka ng calculator MCP server na may mga tool para sa addition, subtraction, multiplication, at division. Papayagan ng server na ito ang agent na magsagawa ng mga real-time na operasyon sa matematika bilang tugon sa mga prompt gamit ang natural na wika.
 
-Ang AI Toolkit ay may mga templates para sa kadalian ng paggawa ng sarili mong MCP server. Gagamitin natin ang Python template para sa paggawa ng calculator MCP server.
+![Screenshot ng ibabang bahagi ng Calculator Agent interface sa AI Toolkit extension para sa Visual Studio Code. Makikita ang mga expandable menus para sa “Tools” at “Structure output,” pati na rin ang dropdown menu na “Choose output format” na nakapili sa “text.” Sa kanan, may button na “+ MCP Server” para magdagdag ng Model Context Protocol server. May placeholder icon ng larawan sa itaas ng Tools section.](../../../../translated_images/aitk-add-mcp-server.9b158809336d87e8076eb5954846040a7370c88046639a09e766398c8855c3d3.tl.png)
+
+May mga template ang AI Toolkit para mapadali ang paggawa ng sarili mong MCP server. Gagamitin natin ang Python template para sa paggawa ng calculator MCP server.
 
 *Note*: Sa kasalukuyan, sinusuportahan ng AI Toolkit ang Python at TypeScript.
 
-1. Sa **Tools** section ng **Agent (Prompt) Builder**, i-click ang **+ MCP Server** button. Ang extension ay maglulunsad ng setup wizard sa pamamagitan ng **Command Palette**.
+1. Sa seksyong **Tools** ng **Agent (Prompt) Builder**, i-click ang **+ MCP Server** button. Maglalabas ang extension ng setup wizard sa pamamagitan ng **Command Palette**.
 1. Piliin ang **+ Add Server**.
 1. Piliin ang **Create a New MCP Server**.
 1. Piliin ang **python-weather** bilang template.
-1. Piliin ang **Default folder** upang i-save ang MCP server template.
-1. Ilagay ang sumusunod na pangalan para sa server: **Calculator**
-1. Isang bagong Visual Studio Code window ang magbubukas. Piliin ang **Yes, I trust the authors**.
-1. Gamitin ang terminal (**Terminal** > **New Terminal**), gumawa ng virtual environment: `python -m venv .venv`
-1. Gamitin ang terminal, i-activate ang virtual environment:
+1. Piliin ang **Default folder** para i-save ang MCP server template.
+1. Ilagay ang pangalan ng server: **Calculator**
+1. Magbubukas ang bagong Visual Studio Code window. Piliin ang **Yes, I trust the authors**.
+1. Sa terminal (**Terminal** > **New Terminal**), gumawa ng virtual environment: `python -m venv .venv`
+1. Sa terminal, i-activate ang virtual environment:
     1. Windows - `.venv\Scripts\activate`
     1. macOS/Linux - `source venv/bin/activate`
-1. Gamitin ang terminal, i-install ang dependencies: `pip install -e .[dev]`
-1. Sa **Explorer** view ng **Activity Bar**, i-expand ang **src** directory at piliin ang **server.py** upang buksan ang file sa editor.
-1. Palitan ang code sa **server.py** file ng sumusunod at i-save:
+1. Sa terminal, i-install ang mga dependencies: `pip install -e .[dev]`
+1. Sa **Explorer** view ng **Activity Bar**, i-expand ang **src** directory at piliin ang **server.py** para buksan ito sa editor.
+1. Palitan ang laman ng **server.py** file ng sumusunod at i-save:
 
     ```python
     """
@@ -144,9 +152,11 @@ Ang AI Toolkit ay may mga templates para sa kadalian ng paggawa ng sarili mong M
 
 ### -4- Patakbuhin ang agent gamit ang calculator MCP server
 
-Ngayon na ang iyong agent ay may mga tool, oras na upang gamitin ang mga ito! Sa seksyong ito, magbibigay ka ng mga prompt sa agent upang subukan at kumpirmahin kung ang agent ay gumagamit ng tamang tool mula sa calculator MCP server.
+Ngayon na may mga tool na ang iyong agent, panahon na para gamitin ang mga ito! Sa bahaging ito, magsusumite ka ng mga prompt sa agent para subukan at tiyakin kung ginagamit ng agent ang tamang tool mula sa calculator MCP server.
 
-Ikaw ay magpapatakbo ng calculator MCP server sa iyong local dev machine sa pamamagitan ng **Agent Builder** bilang MCP client.
+![Screenshot ng Calculator Agent interface sa AI Toolkit extension para sa Visual Studio Code. Sa kaliwang panel, sa ilalim ng “Tools,” may idinagdag na MCP server na pinangalanang local-server-calculator_server, na nagpapakita ng apat na available na tools: add, subtract, multiply, at divide. May badge na nagpapakita na apat na tools ang active. Sa ibaba ay nakatago ang “Structure output” section at may asul na “Run” button. Sa kanang panel, sa ilalim ng “Model Response,” tinatawag ng agent ang multiply at subtract tools na may inputs na {"a": 3, "b": 25} at {"a": 75, "b": 20} ayon sa pagkakasunod. Ang huling “Tool Response” ay ipinapakita bilang 75.0. May button na “View Code” sa ibaba.](../../../../translated_images/aitk-agent-response-with-tools.0f0da2c6eef5eb3f5b7592d6d056449aa8aaa42a3ab0b0c2f14269b3049cfdb5.tl.png)
+
+Patatakbuhin mo ang calculator MCP server sa iyong lokal na dev machine gamit ang **Agent Builder** bilang MCP client.
 
 1. Pindutin ang `F5` to start debugging the MCP server. The **Agent (Prompt) Builder** will open in a new editor tab. The status of the server is visible in the terminal.
 1. In the **User prompt** field of the **Agent (Prompt) Builder**, enter the following prompt: `I bought 3 items priced at $25 each, and then used a $20 discount. How much did I pay?`
@@ -155,29 +165,29 @@ Ikaw ay magpapatakbo ng calculator MCP server sa iyong local dev machine sa pama
 1. Here's a breakdown of what should occur:
     - The agent selects the **multiply** and **substract** tools to aid in the calculation.
     - The respective `a` and `b` values are assigned for the **multiply** tool.
-    - The respective `a` and `b` values ay na-assign para sa **subtract** tool.
-    - Ang tugon mula sa bawat tool ay ibinibigay sa respective **Tool Response**.
-    - Ang final output mula sa model ay ibinibigay sa final **Model Response**.
-1. Mag-submit ng karagdagang mga prompt upang mas higit pang subukan ang agent. Maaari mong baguhin ang existing prompt sa **User prompt** field sa pamamagitan ng pag-click sa field at pagpapalit ng existing prompt.
-1. Kapag tapos ka na sa pag-test sa agent, maaari mong ihinto ang server sa pamamagitan ng **terminal** sa pamamagitan ng pagpasok ng **CTRL/CMD+C** upang mag-quit.
+    - The respective `a` and `b` na mga values ay naka-assign para sa **subtract** tool.
+    - Ang sagot mula sa bawat tool ay makikita sa kani-kanilang **Tool Response**.
+    - Ang huling output mula sa model ay makikita sa final na **Model Response**.
+1. Mag-submit ng dagdag pang mga prompt para masubukan pa ang agent. Maaari mong baguhin ang kasalukuyang prompt sa **User prompt** field sa pamamagitan ng pag-click at pagpapalit ng prompt.
+1. Kapag tapos ka na sa pagsubok, pwede mong itigil ang server sa pamamagitan ng **terminal** sa pagpasok ng **CTRL/CMD+C** para lumabas.
 
-## Takdang-aralin
+## Takdang-Aralin
 
-Subukang magdagdag ng karagdagang tool entry sa iyong **server.py** file (halimbawa: ibalik ang square root ng isang numero). Mag-submit ng karagdagang mga prompt na mangangailangan sa agent na gamitin ang iyong bagong tool (o existing tools). Siguraduhing i-restart ang server upang i-load ang mga bagong idinagdag na tools.
+Subukan mong magdagdag ng bagong tool entry sa iyong **server.py** file (halimbawa: magbalik ng square root ng isang numero). Mag-submit ng dagdag pang mga prompt na mangangailangan na gamitin ng agent ang bagong tool (o mga kasalukuyang tool). Siguraduhing i-restart ang server para ma-load ang mga bagong tool.
 
 ## Solusyon
 
-[Solusyon](./solution/README.md)
+[Solution](./solution/README.md)
 
-## Mga Pangunahing Puntos
+## Mahahalagang Punto
 
-Ang mga pangunahing puntos mula sa kabanatang ito ay ang sumusunod:
+Ang mga mahahalagang natutunan mula sa kabanatang ito ay:
 
-- Ang AI Toolkit extension ay isang mahusay na client na nagpapahintulot sa iyo na gamitin ang MCP Servers at ang kanilang mga tools.
-- Maaari kang magdagdag ng mga bagong tools sa MCP servers, pinapalawak ang kakayahan ng agent upang matugunan ang mga umuusbong na pangangailangan.
-- Kasama sa AI Toolkit ang mga templates (halimbawa, Python MCP server templates) upang pasimplehin ang paglikha ng custom tools.
+- Ang AI Toolkit extension ay isang mahusay na client na nagpapahintulot sa iyo na gumamit ng MCP Servers at kanilang mga tools.
+- Maaari kang magdagdag ng bagong tools sa MCP servers, na nagpapalawak ng kakayahan ng agent upang matugunan ang mga nagbabagong pangangailangan.
+- Kasama sa AI Toolkit ang mga template (hal., Python MCP server templates) para mapadali ang paggawa ng mga custom na tools.
 
-## Karagdagang Mga Mapagkukunan
+## Karagdagang Resources
 
 - [AI Toolkit docs](https://aka.ms/AIToolkit/doc)
 
@@ -185,5 +195,5 @@ Ang mga pangunahing puntos mula sa kabanatang ito ay ang sumusunod:
 
 Susunod: [Lesson 4 Practical Implementation](/04-PracticalImplementation/README.md)
 
-**Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Habang sinisikap namin ang pagiging tumpak, mangyaring tandaan na ang awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatumpak. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na mapagkakatiwalaang mapagkukunan. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot para sa anumang hindi pagkakaintindihan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+**Pagtatanggol**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

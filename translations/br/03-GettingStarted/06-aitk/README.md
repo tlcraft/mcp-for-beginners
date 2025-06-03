@@ -1,113 +1,113 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a3cbadbf632058aa59a523ac659aa1df",
-  "translation_date": "2025-05-29T20:25:09+00:00",
+  "original_hash": "af6cee6052e751674c1d9022a4b204e6",
+  "translation_date": "2025-06-03T14:35:56+00:00",
   "source_file": "03-GettingStarted/06-aitk/README.md",
   "language_code": "br"
 }
 -->
-# Consumindo um servidor da extensão AI Toolkit para Visual Studio Code
+# Konsommer un serveur depuis l’extension AI Toolkit pour Visual Studio Code
 
-Quando você está construindo um agente de IA, não se trata apenas de gerar respostas inteligentes; é também sobre dar ao seu agente a capacidade de agir. É aí que entra o Model Context Protocol (MCP). O MCP facilita o acesso dos agentes a ferramentas e serviços externos de forma consistente. Pense nisso como conectar seu agente a uma caixa de ferramentas que ele pode *realmente* usar.
+Quand vous créez un agent IA, il ne s'agit pas seulement de générer des réponses intelligentes ; il faut aussi donner à votre agent la capacité d’agir. C’est là qu’intervient le Model Context Protocol (MCP). MCP facilite l’accès des agents à des outils et services externes de manière cohérente. Imaginez-le comme une boîte à outils dans laquelle votre agent peut *vraiment* puiser.
 
-Suponha que você conecte um agente ao seu servidor MCP de calculadora. De repente, seu agente pode realizar operações matemáticas apenas recebendo um comando como “Quanto é 47 vezes 89?”—sem precisar codificar a lógica manualmente ou criar APIs personalizadas.
+Par exemple, si vous connectez un agent à votre serveur MCP calculatrice, votre agent pourra effectuer des opérations mathématiques simplement en recevant une requête comme « Combien font 47 fois 89 ? » — sans avoir à coder la logique ou créer des API personnalisées.
 
-## Visão geral
+## Vue d’ensemble
 
-Esta lição aborda como conectar um servidor MCP de calculadora a um agente usando a extensão [AI Toolkit](https://aka.ms/AIToolkit) no Visual Studio Code, permitindo que seu agente realize operações matemáticas como adição, subtração, multiplicação e divisão por meio de linguagem natural.
+Cette leçon explique comment connecter un serveur MCP calculatrice à un agent avec l’extension [AI Toolkit](https://aka.ms/AIToolkit) dans Visual Studio Code, permettant à votre agent de réaliser des opérations mathématiques telles que addition, soustraction, multiplication et division via le langage naturel.
 
-O AI Toolkit é uma extensão poderosa para o Visual Studio Code que simplifica o desenvolvimento de agentes. Engenheiros de IA podem facilmente construir aplicações de IA desenvolvendo e testando modelos generativos — localmente ou na nuvem. A extensão suporta a maioria dos principais modelos generativos disponíveis atualmente.
+AI Toolkit est une extension puissante pour Visual Studio Code qui simplifie le développement d’agents. Les ingénieurs IA peuvent facilement créer des applications IA en développant et testant des modèles génératifs, localement ou dans le cloud. L’extension prend en charge la plupart des modèles génératifs majeurs disponibles aujourd’hui.
 
-*Nota*: O AI Toolkit atualmente suporta Python e TypeScript.
+*Note* : AI Toolkit supporte actuellement Python et TypeScript.
 
-## Objetivos de aprendizado
+## Objectifs d’apprentissage
 
-Ao final desta lição, você será capaz de:
+À la fin de cette leçon, vous serez capable de :
 
-- Consumir um servidor MCP via AI Toolkit.
-- Configurar a configuração de um agente para permitir que ele descubra e utilize ferramentas fornecidas pelo servidor MCP.
-- Utilizar ferramentas MCP via linguagem natural.
+- Consommer un serveur MCP via AI Toolkit.
+- Configurer un agent pour lui permettre de découvrir et utiliser les outils fournis par le serveur MCP.
+- Utiliser les outils MCP via le langage naturel.
 
-## Abordagem
+## Approche
 
-Veja como precisamos abordar isso em alto nível:
+Voici comment aborder cela à un niveau global :
 
-- Criar um agente e definir seu prompt de sistema.
-- Criar um servidor MCP com ferramentas de calculadora.
-- Conectar o Agent Builder ao servidor MCP.
-- Testar a invocação das ferramentas do agente via linguagem natural.
+- Créer un agent et définir son prompt système.
+- Créer un serveur MCP avec des outils calculatrice.
+- Connecter l’Agent Builder au serveur MCP.
+- Tester l’invocation des outils de l’agent via langage naturel.
 
-Ótimo, agora que entendemos o fluxo, vamos configurar um agente de IA para aproveitar ferramentas externas via MCP, ampliando suas capacidades!
+Parfait, maintenant que nous comprenons le déroulé, configurons un agent IA pour exploiter des outils externes via MCP et ainsi augmenter ses capacités !
 
-## Pré-requisitos
+## Prérequis
 
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [AI Toolkit para Visual Studio Code](https://aka.ms/AIToolkit)
+- [AI Toolkit pour Visual Studio Code](https://aka.ms/AIToolkit)
 
-## Exercício: Consumindo um servidor
+## Exercice : Consommer un serveur
 
-Neste exercício, você vai construir, executar e aprimorar um agente de IA com ferramentas de um servidor MCP dentro do Visual Studio Code usando o AI Toolkit.
+Dans cet exercice, vous allez construire, exécuter et améliorer un agent IA avec des outils d’un serveur MCP dans Visual Studio Code grâce à AI Toolkit.
 
-### -0- Passo prévio, adicione o modelo OpenAI GPT-4o em Meus Modelos
+### -0- Étape préalable, ajoutez le modèle OpenAI GPT-4o à Mes Modèles
 
-O exercício utiliza o modelo **GPT-4o**. O modelo deve ser adicionado em **Meus Modelos** antes de criar o agente.
+L’exercice utilise le modèle **GPT-4o**. Ce modèle doit être ajouté à **Mes Modèles** avant de créer l’agent.
 
-![Screenshot da interface de seleção de modelos na extensão AI Toolkit do Visual Studio Code. O título diz "Find the right model for your AI Solution" com um subtítulo incentivando a descobrir, testar e implantar modelos de IA. Abaixo, na seção “Popular Models,” são exibidos seis cartões de modelos: DeepSeek-R1 (hospedado no GitHub), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Pequeno, Rápido) e DeepSeek-R1 (hospedado no Ollama). Cada cartão inclui opções para “Add” ou “Try in Playground”.](../../../../translated_images/aitk-model-catalog.c0c66f0d9ac0ee73c1d21b9207db99e914ef9dd52fced6f226c2b1f537e2c447.br.png)
+![Capture d’écran de l’interface de sélection de modèle dans l’extension AI Toolkit de Visual Studio Code. Le titre indique « Find the right model for your AI Solution » avec un sous-titre invitant à découvrir, tester et déployer des modèles IA. Sous « Popular Models », six cartes de modèles sont affichées : DeepSeek-R1 (hébergé sur GitHub), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Small, Fast), et DeepSeek-R1 (hébergé sur Ollama). Chaque carte propose des options « Add » ou « Try in Playground ».](../../../../translated_images/aitk-model-catalog.c0c66f0d9ac0ee73c1d21b9207db99e914ef9dd52fced6f226c2b1f537e2c447.br.png)
 
-1. Abra a extensão **AI Toolkit** na **Barra de Atividades**.
-1. Na seção **Catalog**, selecione **Models** para abrir o **Model Catalog**. Selecionar **Models** abre o **Model Catalog** em uma nova aba do editor.
-1. Na barra de busca do **Model Catalog**, digite **OpenAI GPT-4o**.
-1. Clique em **+ Add** para adicionar o modelo à sua lista **Meus Modelos**. Certifique-se de selecionar o modelo que está **Hospedado pelo GitHub**.
-1. Na **Barra de Atividades**, confirme que o modelo **OpenAI GPT-4o** aparece na lista.
+1. Ouvrez l’extension **AI Toolkit** depuis la **Barre d’activité**.
+2. Dans la section **Catalog**, sélectionnez **Models** pour ouvrir le **Model Catalog**. Cette action ouvre le catalogue dans un nouvel onglet.
+3. Dans la barre de recherche du **Model Catalog**, saisissez **OpenAI GPT-4o**.
+4. Cliquez sur **+ Add** pour ajouter le modèle à votre liste **My Models**. Vérifiez que vous avez choisi le modèle **Hosted by GitHub**.
+5. Dans la **Barre d’activité**, assurez-vous que le modèle **OpenAI GPT-4o** apparaît dans la liste.
 
-### -1- Criar um agente
+### -1- Créer un agent
 
-O **Agent (Prompt) Builder** permite criar e personalizar seus próprios agentes alimentados por IA. Nesta seção, você criará um novo agente e atribuirá um modelo para conduzir a conversa.
+L’**Agent (Prompt) Builder** vous permet de créer et personnaliser vos propres agents IA. Ici, vous allez créer un nouvel agent et lui attribuer un modèle pour alimenter la conversation.
 
-![Screenshot da interface do construtor "Calculator Agent" na extensão AI Toolkit para Visual Studio Code. No painel esquerdo, o modelo selecionado é "OpenAI GPT-4o (via GitHub)". Um prompt de sistema diz "Você é um professor universitário ensinando matemática" e o prompt do usuário diz "Explique para mim a equação de Fourier em termos simples." Opções adicionais incluem botões para adicionar ferramentas, ativar MCP Server e selecionar saída estruturada. Um botão azul “Run” está na parte inferior. No painel direito, sob "Get Started with Examples," três agentes de exemplo são listados: Web Developer (com MCP Server), Second-Grade Simplifier e Dream Interpreter, cada um com breves descrições de suas funções.](../../../../translated_images/aitk-agent-builder.fb7df60f7923b4d8ba839662bf6d7647e843c01b57256e1e9adecb46a64d3408.br.png)
+![Capture d’écran de l’interface du builder « Calculator Agent » dans l’extension AI Toolkit de Visual Studio Code. Sur le panneau de gauche, le modèle sélectionné est « OpenAI GPT-4o (via GitHub) ». Un prompt système indique « You are a professor in university teaching math », et le prompt utilisateur dit « Explain to me the Fourier equation in simple terms. » Des options supplémentaires incluent des boutons pour ajouter des outils, activer MCP Server, et choisir une sortie structurée. Un bouton bleu « Run » est en bas. Sur le panneau de droite, sous « Get Started with Examples », trois agents exemples sont listés : Web Developer (avec MCP Server), Second-Grade Simplifier, et Dream Interpreter, chacun avec une brève description.](../../../../translated_images/aitk-agent-builder.fb7df60f7923b4d8ba839662bf6d7647e843c01b57256e1e9adecb46a64d3408.br.png)
 
-1. Abra a extensão **AI Toolkit** na **Barra de Atividades**.
-1. Na seção **Tools**, selecione **Agent (Prompt) Builder**. Selecionar **Agent (Prompt) Builder** abre o construtor em uma nova aba do editor.
-1. Clique no botão **+ New Builder**. A extensão iniciará um assistente de configuração via **Command Palette**.
-1. Digite o nome **Calculator Agent** e pressione **Enter**.
-1. No **Agent (Prompt) Builder**, no campo **Model**, selecione o modelo **OpenAI GPT-4o (via GitHub)**.
+1. Ouvrez l’extension **AI Toolkit** depuis la **Barre d’activité**.
+2. Dans la section **Tools**, sélectionnez **Agent (Prompt) Builder**. Cela ouvre le builder dans un nouvel onglet.
+3. Cliquez sur le bouton **+ New Agent**. L’extension lance un assistant via la **Palette de commandes**.
+4. Entrez le nom **Calculator Agent** et appuyez sur **Entrée**.
+5. Dans le builder, pour le champ **Model**, sélectionnez le modèle **OpenAI GPT-4o (via GitHub)**.
 
-### -2- Criar um prompt de sistema para o agente
+### -2- Créer un prompt système pour l’agent
 
-Com o agente criado, é hora de definir sua personalidade e propósito. Nesta seção, você usará o recurso **Generate system prompt** para descrever o comportamento pretendido do agente — neste caso, um agente calculadora — e deixar o modelo gerar o prompt do sistema para você.
+Avec l’agent créé, il est temps de définir sa personnalité et son objectif. Ici, vous allez utiliser la fonction **Generate system prompt** pour décrire le comportement attendu de l’agent — un agent calculatrice — et laisser le modèle générer ce prompt système.
 
-![Screenshot da interface do "Calculator Agent" no AI Toolkit para Visual Studio Code com uma janela modal aberta intitulada "Generate a prompt." A modal explica que um template de prompt pode ser gerado compartilhando detalhes básicos e inclui uma caixa de texto com o prompt de sistema de exemplo: "Você é um assistente de matemática útil e eficiente. Quando receber um problema envolvendo aritmética básica, responda com o resultado correto." Abaixo da caixa de texto há botões "Close" e "Generate". Ao fundo, parte da configuração do agente é visível, incluindo o modelo selecionado "OpenAI GPT-4o (via GitHub)" e campos para prompts de sistema e usuário.](../../../../translated_images/aitk-generate-prompt.0d4292407c15282bf714e327f5d3d833389324004135727ef28adc22dbbb4e8f.br.png)
+![Capture d’écran de l’interface « Calculator Agent » dans AI Toolkit avec une fenêtre modale intitulée « Generate a prompt ». La modale explique qu’un template de prompt peut être généré en fournissant des détails de base et inclut une zone de texte avec un exemple : « You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result. » Sous la zone, les boutons « Close » et « Generate ». En arrière-plan, une partie de la configuration de l’agent est visible, avec le modèle sélectionné « OpenAI GPT-4o (via GitHub) » et les champs prompts système et utilisateur.](../../../../translated_images/aitk-generate-prompt.0d4292407c15282bf714e327f5d3d833389324004135727ef28adc22dbbb4e8f.br.png)
 
-1. Na seção **Prompts**, clique no botão **Generate system prompt**. Esse botão abre o construtor de prompt que usa IA para gerar o prompt do sistema para o agente.
-1. Na janela **Generate a prompt**, insira o seguinte: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
-1. Clique no botão **Generate**. Uma notificação aparecerá no canto inferior direito confirmando que o prompt do sistema está sendo gerado. Quando a geração for concluída, o prompt aparecerá no campo **System prompt** do **Agent (Prompt) Builder**.
-1. Revise o **System prompt** e modifique se necessário.
+1. Dans la section **Prompts**, cliquez sur le bouton **Generate system prompt**. Ce bouton ouvre le générateur de prompt qui utilise l’IA pour créer un prompt système.
+2. Dans la fenêtre **Generate a prompt**, saisissez : `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
+3. Cliquez sur **Generate**. Une notification apparaît en bas à droite pour confirmer que le prompt est en cours de génération. Une fois terminé, le prompt s’affiche dans le champ **System prompt** du builder.
+4. Relisez le **System prompt** et modifiez-le si besoin.
 
-### -3- Criar um servidor MCP
+### -3- Créer un serveur MCP
 
-Agora que você definiu o prompt de sistema do seu agente — orientando seu comportamento e respostas — é hora de equipar o agente com capacidades práticas. Nesta seção, você criará um servidor MCP de calculadora com ferramentas para executar operações de adição, subtração, multiplicação e divisão. Esse servidor permitirá que seu agente realize cálculos em tempo real em resposta a comandos em linguagem natural.
+Maintenant que vous avez défini le prompt système de l’agent — qui guide son comportement et ses réponses — il est temps de lui donner des capacités concrètes. Ici, vous allez créer un serveur MCP calculatrice avec des outils pour effectuer addition, soustraction, multiplication et division. Ce serveur permettra à votre agent d’exécuter des opérations mathématiques en temps réel à partir de requêtes en langage naturel.
 
-![Screenshot da seção inferior da interface do Calculator Agent na extensão AI Toolkit para Visual Studio Code. Mostra menus expansíveis para “Tools” e “Structure output,” junto com um menu dropdown “Choose output format” configurado para “text.” À direita, há um botão “+ MCP Server” para adicionar um servidor Model Context Protocol. Um ícone de imagem está acima da seção Tools.](../../../../translated_images/aitk-add-mcp-server.9b158809336d87e8076eb5954846040a7370c88046639a09e766398c8855c3d3.br.png)
+![Capture d’écran de la partie basse de l’interface Calculator Agent dans AI Toolkit. On y voit des menus dépliables « Tools » et « Structure output », un menu déroulant « Choose output format » réglé sur « text », et un bouton « + MCP Server » pour ajouter un serveur Model Context Protocol. Une icône image est affichée au-dessus de la section Tools.](../../../../translated_images/aitk-add-mcp-server.9b158809336d87e8076eb5954846040a7370c88046639a09e766398c8855c3d3.br.png)
 
-O AI Toolkit vem equipado com templates para facilitar a criação do seu próprio servidor MCP. Usaremos o template Python para criar o servidor MCP de calculadora.
+AI Toolkit propose des templates pour faciliter la création de serveurs MCP. Nous utiliserons le template Python pour créer ce serveur calculatrice.
 
-*Nota*: O AI Toolkit atualmente suporta Python e TypeScript.
+*Note* : AI Toolkit supporte actuellement Python et TypeScript.
 
-1. Na seção **Tools** do **Agent (Prompt) Builder**, clique no botão **+ MCP Server**. A extensão iniciará um assistente de configuração via **Command Palette**.
-1. Selecione **+ Add Server**.
-1. Selecione **Create a New MCP Server**.
-1. Selecione **python-weather** como template.
-1. Selecione **Default folder** para salvar o template do servidor MCP.
-1. Digite o seguinte nome para o servidor: **Calculator**
-1. Uma nova janela do Visual Studio Code será aberta. Selecione **Yes, I trust the authors**.
-1. Usando o terminal (**Terminal** > **New Terminal**), crie um ambiente virtual: `python -m venv .venv`
-1. No terminal, ative o ambiente virtual:
+1. Dans la section **Tools** de l’**Agent (Prompt) Builder**, cliquez sur le bouton **+ MCP Server**. L’extension lance un assistant via la **Palette de commandes**.
+2. Sélectionnez **+ Add Server**.
+3. Sélectionnez **Create a New MCP Server**.
+4. Choisissez le template **python-weather**.
+5. Sélectionnez **Default folder** pour sauvegarder le template.
+6. Nommez le serveur : **Calculator**
+7. Une nouvelle fenêtre Visual Studio Code s’ouvre. Sélectionnez **Yes, I trust the authors**.
+8. Dans le terminal (**Terminal** > **New Terminal**), créez un environnement virtuel : `python -m venv .venv`
+9. Activez l’environnement virtuel via le terminal :
     1. Windows - `.venv\Scripts\activate`
-    1. macOS/Linux - `source venv/bin/activate`
-1. No terminal, instale as dependências: `pip install -e .[dev]`
-1. Na visualização **Explorer** da **Barra de Atividades**, expanda o diretório **src** e selecione o arquivo **server.py** para abrir no editor.
-1. Substitua o código no arquivo **server.py** pelo seguinte e salve:
+    2. macOS/Linux - `source venv/bin/activate`
+10. Installez les dépendances via le terminal : `pip install -e .[dev]`
+11. Dans l’explorateur de fichiers (**Activity Bar**), développez le dossier **src** et ouvrez **server.py**.
+12. Remplacez le contenu du fichier **server.py** par le code suivant et enregistrez :
 
     ```python
     """
@@ -150,50 +150,50 @@ O AI Toolkit vem equipado com templates para facilitar a criação do seu própr
         return a / b
     ```
 
-### -4- Execute o agente com o servidor MCP de calculadora
+### -4- Exécuter l’agent avec le serveur MCP calculatrice
 
-Agora que seu agente tem ferramentas, é hora de usá-las! Nesta seção, você enviará comandos ao agente para testar e validar se ele utiliza a ferramenta apropriada do servidor MCP de calculadora.
+Maintenant que votre agent dispose d’outils, il est temps de les utiliser ! Ici, vous allez envoyer des requêtes à l’agent pour vérifier qu’il utilise bien les outils appropriés du serveur MCP calculatrice.
 
-![Screenshot da interface do Calculator Agent na extensão AI Toolkit para Visual Studio Code. No painel esquerdo, sob “Tools,” um servidor MCP chamado local-server-calculator_server está adicionado, mostrando quatro ferramentas disponíveis: add, subtract, multiply e divide. Um selo indica que quatro ferramentas estão ativas. Abaixo está uma seção “Structure output” recolhida e um botão azul “Run.” No painel direito, sob “Model Response,” o agente invoca as ferramentas multiply e subtract com entradas {"a": 3, "b": 25} e {"a": 75, "b": 20} respectivamente. A “Tool Response” final é mostrada como 75.0. Um botão “View Code” aparece na parte inferior.](../../../../translated_images/aitk-agent-response-with-tools.0f0da2c6eef5eb3f5b7592d6d056449aa8aaa42a3ab0b0c2f14269b3049cfdb5.br.png)
+![Capture d’écran de l’interface Calculator Agent dans AI Toolkit. Sur le panneau gauche, sous « Tools », un serveur MCP nommé local-server-calculator_server est ajouté, montrant quatre outils disponibles : add, subtract, multiply, et divide. Un badge indique que quatre outils sont actifs. En dessous, la section « Structure output » est repliée et un bouton bleu « Run » est visible. Sur le panneau droit, sous « Model Response », l’agent invoque les outils multiply et subtract avec les entrées {"a": 3, "b": 25} et {"a": 75, "b": 20} respectivement. La réponse finale de l’outil est affichée comme 75.0. Un bouton « View Code » est en bas.](../../../../translated_images/aitk-agent-response-with-tools.0f0da2c6eef5eb3f5b7592d6d056449aa8aaa42a3ab0b0c2f14269b3049cfdb5.br.png)
 
-Você vai executar o servidor MCP de calculadora na sua máquina local de desenvolvimento via **Agent Builder** como cliente MCP.
+Vous allez exécuter le serveur MCP calculatrice sur votre machine locale en tant que client MCP via l’**Agent Builder**.
 
-1. Pressione `F5` to start debugging the MCP server. The **Agent (Prompt) Builder** will open in a new editor tab. The status of the server is visible in the terminal.
-1. In the **User prompt** field of the **Agent (Prompt) Builder**, enter the following prompt: `I bought 3 items priced at $25 each, and then used a $20 discount. How much did I pay?`
+1. Appuyez sur `F5` to start debugging the MCP server. The **Agent (Prompt) Builder** will open in a new editor tab. The status of the server is visible in the terminal.
+1. In the **User prompt** field of the **Agent (Prompt) Builder**, enter the following prompt: `J’ai acheté 3 articles à 25 $ chacun, puis utilisé une remise de 20 $. Combien ai-je payé ?`
 1. Click the **Run** button to generate the agent's response.
 1. Review the agent output. The model should conclude that you paid **$55**.
 1. Here's a breakdown of what should occur:
     - The agent selects the **multiply** and **substract** tools to aid in the calculation.
     - The respective `a` and `b` values are assigned for the **multiply** tool.
-    - The respective `a` and `b` valores são atribuídos para a ferramenta **subtract**.
-    - A resposta de cada ferramenta é exibida na respectiva **Tool Response**.
-    - A saída final do modelo aparece na **Model Response** final.
-1. Envie comandos adicionais para testar mais o agente. Você pode modificar o prompt existente no campo **User prompt** clicando nele e substituindo o texto.
-1. Quando terminar de testar o agente, você pode parar o servidor pelo **terminal** pressionando **CTRL/CMD+C** para sair.
+    - The respective `a` and `b` sont assignées à l’outil **subtract**.
+    - La réponse de chaque outil apparaît dans la section **Tool Response** correspondante.
+    - Le résultat final du modèle est affiché dans la section **Model Response**.
+2. Soumettez d’autres requêtes pour tester davantage l’agent. Vous pouvez modifier le prompt existant dans le champ **User prompt** en cliquant dedans et en remplaçant le texte.
+3. Une fois vos tests terminés, vous pouvez arrêter le serveur via le **terminal** en tapant **CTRL/CMD+C**.
 
-## Tarefa
+## Exercice à réaliser
 
-Tente adicionar uma ferramenta extra ao seu arquivo **server.py** (ex: retornar a raiz quadrada de um número). Envie comandos que exijam que o agente use sua nova ferramenta (ou as ferramentas existentes). Lembre-se de reiniciar o servidor para carregar as ferramentas adicionadas.
+Essayez d’ajouter une nouvelle fonction dans votre fichier **server.py** (par exemple : retourner la racine carrée d’un nombre). Envoyez des requêtes supplémentaires qui obligeraient l’agent à utiliser votre nouvel outil (ou les outils existants). N’oubliez pas de redémarrer le serveur pour prendre en compte les nouveaux outils.
 
-## Solução
+## Solution
 
 [Solution](./solution/README.md)
 
-## Principais aprendizados
+## Points clés à retenir
 
-Os principais aprendizados deste capítulo são:
+Voici les points clés de ce chapitre :
 
-- A extensão AI Toolkit é um ótimo cliente que permite consumir servidores MCP e suas ferramentas.
-- Você pode adicionar novas ferramentas aos servidores MCP, ampliando as capacidades do agente para atender a requisitos em evolução.
-- O AI Toolkit inclui templates (ex: templates de servidor MCP em Python) para simplificar a criação de ferramentas personalizadas.
+- L’extension AI Toolkit est un excellent client qui vous permet de consommer des serveurs MCP et leurs outils.
+- Vous pouvez ajouter de nouveaux outils aux serveurs MCP, étendant ainsi les capacités de l’agent pour répondre à des besoins évolutifs.
+- AI Toolkit inclut des templates (par exemple, des templates Python pour serveurs MCP) pour simplifier la création d’outils personnalisés.
 
-## Recursos adicionais
+## Ressources supplémentaires
 
-- [Documentação do AI Toolkit](https://aka.ms/AIToolkit/doc)
+- [Documentation AI Toolkit](https://aka.ms/AIToolkit/doc)
 
-## O que vem a seguir
+## Et après ?
 
-Próximo: [Lesson 4 Practical Implementation](/04-PracticalImplementation/README.md)
+Suivant : [Leçon 4 Mise en pratique](/04-PracticalImplementation/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
