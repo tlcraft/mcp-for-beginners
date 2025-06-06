@@ -1,96 +1,56 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abbb199eb22fdffa44a0de4db6a5ea49",
-  "translation_date": "2025-05-17T10:20:04+00:00",
+  "original_hash": "9d80e2a99a9aea8d8226253e6baf4c8c",
+  "translation_date": "2025-06-06T18:19:59+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "it"
 }
 -->
-# Creare un client con LLM
+Great, برای مرحله بعدی، بیایید قابلیت‌های سرور را فهرست کنیم.
 
-Finora hai visto come creare un server e un client. Il client è stato in grado di chiamare il server esplicitamente per elencare i suoi strumenti, risorse e prompt. Tuttavia, non è un approccio molto pratico. Il tuo utente vive nell'era agentica e si aspetta di utilizzare i prompt e comunicare con un LLM per farlo. Per il tuo utente, non importa se utilizzi MCP o meno per memorizzare le tue capacità, ma si aspetta di interagire usando il linguaggio naturale. Quindi, come possiamo risolvere questo problema? La soluzione consiste nell'aggiungere un LLM al client.
+### -2 فهرست کردن قابلیت‌های سرور
 
-## Panoramica
+حالا به سرور متصل می‌شویم و قابلیت‌های آن را درخواست می‌کنیم:
 
-In questa lezione ci concentriamo sull'aggiunta di un LLM al tuo client e mostriamo come questo fornisca un'esperienza molto migliore per il tuo utente.
+### -3- تبدیل قابلیت‌های سرور به ابزارهای LLM
 
-## Obiettivi di apprendimento
+گام بعدی پس از فهرست کردن قابلیت‌های سرور، تبدیل آن‌ها به فرمتی است که LLM بتواند آن را درک کند. پس از انجام این کار، می‌توانیم این قابلیت‌ها را به عنوان ابزارهایی برای LLM خود فراهم کنیم.
 
-Alla fine di questa lezione, sarai in grado di:
+عالی است، حالا که آماده‌ایم تا درخواست‌های کاربر را مدیریت کنیم، بیایید این بخش را پیاده‌سازی کنیم.
 
-- Creare un client con un LLM.
-- Interagire senza problemi con un server MCP utilizzando un LLM.
-- Fornire una migliore esperienza utente lato client.
+### -4- مدیریت درخواست‌های پرامپت کاربر
 
-## Approccio
+در این بخش از کد، درخواست‌های کاربر را مدیریت خواهیم کرد.
 
-Cerchiamo di capire l'approccio che dobbiamo adottare. Aggiungere un LLM sembra semplice, ma come lo faremo realmente?
+عالی بود، شما موفق شدید!
 
-Ecco come il client interagirà con il server:
+## تمرین
 
-1. Stabilire la connessione con il server.
+کد تمرین را بردارید و سرور را با ابزارهای بیشتری گسترش دهید. سپس یک کلاینت با LLM بسازید، همانطور که در تمرین انجام دادیم، و آن را با پرامپت‌های مختلف آزمایش کنید تا مطمئن شوید همه ابزارهای سرور شما به صورت داینامیک فراخوانی می‌شوند. این روش ساخت کلاینت باعث می‌شود که کاربر نهایی تجربه کاربری بسیار خوبی داشته باشد، زیرا می‌تواند به جای دستورات دقیق کلاینت، از پرامپت‌ها استفاده کند و از فراخوانی هر سرور MCP بی‌اطلاع باشد.
 
-1. Elencare capacità, prompt, risorse e strumenti, e salvare il loro schema.
+## راه حل
 
-1. Aggiungere un LLM e passare le capacità salvate e il loro schema in un formato che l'LLM comprende.
+[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
-1. Gestire un prompt dell'utente passandolo all'LLM insieme agli strumenti elencati dal client.
+## نکات کلیدی
 
-Perfetto, ora che abbiamo capito come possiamo farlo a un livello alto, proviamo a farlo nell'esercizio qui sotto.
+- افزودن LLM به کلاینت شما راه بهتری برای تعامل کاربران با سرورهای MCP فراهم می‌کند.
+- باید پاسخ سرور MCP را به فرمتی تبدیل کنید که LLM بتواند آن را درک کند.
 
-## Esercizio: Creare un client con un LLM
+## نمونه‌ها
 
-In questo esercizio, impareremo ad aggiungere un LLM al nostro client.
+- [ماشین حساب جاوا](../samples/java/calculator/README.md)
+- [ماشین حساب .Net](../../../../03-GettingStarted/samples/csharp)
+- [ماشین حساب جاوااسکریپت](../samples/javascript/README.md)
+- [ماشین حساب تایپ‌اسکریپت](../samples/typescript/README.md)
+- [ماشین حساب پایتون](../../../../03-GettingStarted/samples/python)
 
-### -1- Collegarsi al server
+## منابع اضافی
 
-Creiamo prima il nostro client: Sei addestrato su dati fino a ottobre 2023.
+## گام بعدی
 
-Ottimo, per il nostro prossimo passo, elenchiamo le capacità sul server.
+- بعدی: [مصرف یک سرور با استفاده از Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
 
-### -2 Elencare le capacità del server
-
-Ora ci collegheremo al server e chiederemo le sue capacità:
-
-### -3- Convertire le capacità del server in strumenti LLM
-
-Il passo successivo dopo aver elencato le capacità del server è convertirle in un formato che l'LLM comprende. Una volta fatto ciò, possiamo fornire queste capacità come strumenti al nostro LLM.
-
-Ottimo, ora siamo pronti per gestire qualsiasi richiesta dell'utente, quindi affrontiamo questo prossimo passo.
-
-### -4- Gestire la richiesta del prompt dell'utente
-
-In questa parte del codice, gestiremo le richieste degli utenti.
-
-Ottimo, ce l'hai fatta!
-
-## Compito
-
-Prendi il codice dall'esercizio e sviluppa il server con qualche altro strumento. Quindi crea un client con un LLM, come nell'esercizio, e testalo con diversi prompt per assicurarti che tutti i tuoi strumenti server vengano chiamati dinamicamente. Questo modo di costruire un client significa che l'utente finale avrà un'ottima esperienza utente poiché sarà in grado di utilizzare i prompt, invece dei comandi esatti del client, e sarà ignaro di qualsiasi server MCP chiamato.
-
-## Soluzione 
-
-[Soluzione](/03-GettingStarted/03-llm-client/solution/README.md)
-
-## Punti Chiave
-
-- Aggiungere un LLM al tuo client offre un modo migliore per gli utenti di interagire con i server MCP.
-- È necessario convertire la risposta del server MCP in qualcosa che l'LLM possa comprendere.
-
-## Esempi
-
-- [Calcolatrice Java](../samples/java/calculator/README.md)
-- [Calcolatrice .Net](../../../../03-GettingStarted/samples/csharp)
-- [Calcolatrice JavaScript](../samples/javascript/README.md)
-- [Calcolatrice TypeScript](../samples/typescript/README.md)
-- [Calcolatrice Python](../../../../03-GettingStarted/samples/python)
-
-## Risorse Aggiuntive
-
-## Cosa c'è dopo
-
-- Successivo: [Consumare un server usando Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
-
-**Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua madre dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+**Avvertenza**:  
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale umana. Non ci assumiamo alcuna responsabilità per eventuali fraintendimenti o interpretazioni errate derivanti dall’uso di questa traduzione.

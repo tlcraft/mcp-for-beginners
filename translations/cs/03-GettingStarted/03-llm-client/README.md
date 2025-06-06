@@ -1,41 +1,41 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abbb199eb22fdffa44a0de4db6a5ea49",
-  "translation_date": "2025-05-27T16:19:51+00:00",
+  "original_hash": "9d80e2a99a9aea8d8226253e6baf4c8c",
+  "translation_date": "2025-06-06T18:43:57+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "cs"
 }
 -->
-Skvěle, pro náš další krok vyjmenujme schopnosti na serveru.
+Skvěle, v dalším kroku si vyjmenujme schopnosti na serveru.
 
 ### -2 Vyjmenování schopností serveru
 
 Nyní se připojíme k serveru a požádáme o jeho schopnosti:
 
-### -3 Převod schopností serveru na nástroje pro LLM
+### -3 Převod schopností serveru na nástroje LLM
 
-Dalším krokem po vyjmenování schopností serveru je jejich převod do formátu, kterému LLM rozumí. Jakmile to uděláme, můžeme tyto schopnosti předat jako nástroje našemu LLM.
+Dalším krokem po vyjmenování schopností serveru je převést je do formátu, kterému LLM rozumí. Jakmile to uděláme, můžeme tyto schopnosti poskytnout jako nástroje našemu LLM.
 
-Skvěle, nyní jsme připraveni zpracovávat uživatelské požadavky, pojďme se do toho pustit.
+Skvěle, teď jsme připraveni zpracovávat požadavky uživatelů, pojďme se na to zaměřit.
 
 ### -4 Zpracování uživatelských požadavků
 
-V této části kódu budeme zpracovávat požadavky uživatele.
+V této části kódu budeme zpracovávat požadavky uživatelů.
 
-Skvěle, podařilo se ti to!
+Výborně, zvládli jste to!
 
 ## Zadání
 
-Vezmi kód z cvičení a rozšiř server o další nástroje. Pak vytvoř klienta s LLM, jako v cvičení, a otestuj ho s různými požadavky, aby se ujistil, že všechny nástroje serveru jsou volány dynamicky. Tento způsob tvorby klienta zajistí skvělý uživatelský zážitek, protože uživatelé mohou používat přirozený jazyk místo přesných příkazů klienta a nemusí přitom vědět, že je volán MCP server.
+Vezměte kód z cvičení a rozšiřte server o další nástroje. Poté vytvořte klienta s LLM, stejně jako v cvičení, a otestujte ho s různými dotazy, abyste se ujistili, že všechny nástroje serveru jsou volány dynamicky. Tento způsob vytváření klienta znamená, že koncový uživatel bude mít skvělý uživatelský zážitek, protože může používat přirozené dotazy místo přesných příkazů klienta a nebude si muset všímat, že je volán nějaký MCP server.
 
 ## Řešení
 
-[Řešení](/03-GettingStarted/03-llm-client/solution/README.md)
+[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## Klíčové poznatky
+## Hlavní poznatky
 
-- Přidání LLM do klienta poskytuje uživatelům lepší způsob interakce s MCP servery.
+- Přidání LLM do klienta poskytuje lepší způsob, jak uživatelé mohou komunikovat s MCP servery.
 - Je potřeba převést odpověď MCP serveru do formátu, kterému LLM rozumí.
 
 ## Ukázky
@@ -48,9 +48,9 @@ Vezmi kód z cvičení a rozšiř server o další nástroje. Pak vytvoř klient
 
 ## Další zdroje
 
-## Co bude dál
+## Co dál
 
 - Další: [Použití serveru ve Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

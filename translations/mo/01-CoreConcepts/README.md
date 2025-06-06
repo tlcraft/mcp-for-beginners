@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "4bf553c18e7e226c3d76ab0cde627d26",
-  "translation_date": "2025-05-20T20:36:45+00:00",
+  "original_hash": "f00defb149ee1ac4a799e44a9783c7fc",
+  "translation_date": "2025-06-06T18:03:48+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "mo"
 }
@@ -40,6 +40,7 @@ In the Model Context Protocol (MCP), Hosts play a crucial role as the primary in
 - Manage the conversation flow and user interface.
 - Control permission and security constraints.
 - Handle user consent for data sharing and tool execution.
+
 
 ### 2. Clients
 
@@ -386,12 +387,11 @@ class WeatherTools:
             ]
         }
 
-# Initialize class for its methods to be registered as tools
+# Instantiate the class to register its tools
 weather_tools = WeatherTools()
 
+# Start the server using stdio transport
 if __name__ == "__main__":
-    # Start the server with stdio transport
-    print("Weather MCP Server starting...")
     asyncio.run(serve_stdio(mcp))
 ```
 
@@ -561,4 +561,4 @@ This document has been translated using AI translation service [Co-op Translator
 
 ---
 
-If by "mo" you mean a specific language or code, please clarify which language "mo" refers to, so I can provide an accurate translation.
+If by "mo" you meant a specific language or code (for example, Moldovan, or a language code), please clarify. Currently, "mo" is not a widely recognized language code or language name. If you provide more details, I can assist you better.
