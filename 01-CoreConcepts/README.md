@@ -378,12 +378,11 @@ class WeatherTools:
             ]
         }
 
-# Initialize class for its methods to be registered as tools
+# Instantiate the class to register its tools
 weather_tools = WeatherTools()
 
+# Start the server using stdio transport
 if __name__ == "__main__":
-    # Start the server with stdio transport
-    print("Weather MCP Server starting...")
     asyncio.run(serve_stdio(mcp))
 ```
 
