@@ -1,91 +1,50 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abbb199eb22fdffa44a0de4db6a5ea49",
-  "translation_date": "2025-05-17T10:30:47+00:00",
+  "original_hash": "9d80e2a99a9aea8d8226253e6baf4c8c",
+  "translation_date": "2025-06-06T18:52:51+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "sl"
 }
 -->
-# Ustvarjanje klienta z LLM
+Super, za naš naslednji korak pa naštejmo zmogljivosti na strežniku.
 
-Doslej ste videli, kako ustvariti strežnik in klienta. Klient je lahko izrecno poklical strežnik, da bi našteval njegove orodja, vire in pozive. Vendar pa to ni zelo praktičen pristop. Vaš uporabnik živi v agentni dobi in pričakuje, da bo uporabljal pozive in komuniciral z LLM za to. Za vašega uporabnika ni pomembno, ali uporabljate MCP ali ne za shranjevanje vaših zmogljivosti, pričakujejo pa, da bodo komunicirali v naravnem jeziku. Kako torej to rešimo? Rešitev je v dodajanju LLM klientu.
+### -2 Naštejmo zmogljivosti strežnika
 
-## Pregled
+Zdaj se bomo povezali s strežnikom in povprašali po njegovih zmogljivostih:
 
-V tej lekciji se osredotočamo na dodajanje LLM vašemu klientu in prikazujemo, kako to zagotavlja veliko boljšo izkušnjo za vašega uporabnika.
+### -3- Pretvori zmogljivosti strežnika v orodja za LLM
 
-## Cilji učenja
+Naslednji korak po tem, ko smo našteli zmogljivosti strežnika, je, da jih pretvorimo v format, ki ga razume LLM. Ko to naredimo, lahko te zmogljivosti ponudimo kot orodja našemu LLM.
 
-Do konca te lekcije boste lahko:
+Super, zdaj smo pripravljeni za obravnavo uporabniških zahtev, zato se lotimo tega.
 
-- Ustvarili klienta z LLM.
-- Brez težav komunicirali z MCP strežnikom z uporabo LLM.
-- Zagotovili boljšo uporabniško izkušnjo na strani klienta.
+### -4- Obravnava uporabniškega poziva
 
-## Pristop
+V tem delu kode bomo obravnavali uporabniške zahteve.
 
-Poskusimo razumeti pristop, ki ga moramo sprejeti. Dodajanje LLM se sliši preprosto, a ali bomo to dejansko storili?
+Super, uspelo ti je!
 
-Tako bo klient komuniciral s strežnikom:
+## Domača naloga
 
-1. Vzpostavite povezavo s strežnikom.
-
-1. Naštejte zmogljivosti, pozive, vire in orodja ter shranite njihovo shemo.
-
-1. Dodajte LLM in posredujte shranjene zmogljivosti ter njihovo shemo v obliki, ki jo LLM razume.
-
-1. Obdelajte uporabniški poziv tako, da ga posredujete LLM skupaj z orodji, ki jih je navedel klient.
-
-Odlično, zdaj razumemo, kako to lahko storimo na visoki ravni, poskusimo to v spodnji vaji.
-
-## Vaja: Ustvarjanje klienta z LLM
-
-V tej vaji se bomo naučili dodati LLM našemu klientu.
-
-### -1- Povežite se s strežnikom
-
-Najprej ustvarimo našega klienta:
-Usposobljeni ste na podatkih do oktobra 2023.
-
-Odlično, za naš naslednji korak, naštejmo zmogljivosti na strežniku.
-
-### -2 Naštejte zmogljivosti strežnika
-
-Zdaj se bomo povezali s strežnikom in povprašali po njegovih zmogljivostih.
-
-### -3- Pretvorite zmogljivosti strežnika v orodja LLM
-
-Naslednji korak po naštevanju zmogljivosti strežnika je, da jih pretvorimo v obliko, ki jo LLM razume. Ko to storimo, lahko te zmogljivosti zagotovimo kot orodja našemu LLM.
-
-Odlično, zdaj smo pripravljeni obdelati katero koli uporabniško zahtevo, zato se lotimo tega naslednjega.
-
-### -4- Obdelajte uporabniško zahtevo
-
-V tem delu kode bomo obdelali uporabniške zahteve.
-
-Odlično, uspelo vam je!
-
-## Naloga
-
-Vzemite kodo iz vaje in razširite strežnik z nekaj več orodji. Nato ustvarite klienta z LLM, kot v vaji, in ga preizkusite z različnimi pozivi, da se prepričate, da se vsa orodja strežnika klicajo dinamično. Ta način gradnje klienta pomeni, da bo končni uporabnik imel odlično uporabniško izkušnjo, saj bo lahko uporabljal pozive, namesto natančnih ukazov klienta, in ne bo opazil, da se kliče MCP strežnik.
+Vzemi kodo iz vaje in razširi strežnik z dodatnimi orodji. Nato ustvari odjemalca z LLM, kot v vaji, in ga preizkusi z različnimi pozivi, da se prepričaš, da se vsa orodja strežnika kličejo dinamično. Tak način izdelave odjemalca omogoča odlično uporabniško izkušnjo, saj lahko uporabniki uporabljajo naravni jezik namesto natančnih ukazov odjemalca in so pri tem nepremišljeni glede klicev MCP strežnika.
 
 ## Rešitev
 
-[Rešitev](/03-GettingStarted/03-llm-client/solution/README.md)
+[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## Ključni zaključki
+## Ključne ugotovitve
 
-- Dodajanje LLM vašemu klientu zagotavlja boljši način za uporabnike, da komunicirajo z MCP strežniki.
-- Odgovor MCP strežnika morate pretvoriti v nekaj, kar LLM lahko razume.
+- Dodajanje LLM k odjemalcu omogoča uporabnikom bolj naraven način interakcije z MCP strežniki.
+- Odziv MCP strežnika je treba pretvoriti v obliko, ki jo LLM razume.
 
-## Vzorci
+## Primeri
 
-- [Java Kalkulator](../samples/java/calculator/README.md)
-- [.Net Kalkulator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Kalkulator](../samples/javascript/README.md)
-- [TypeScript Kalkulator](../samples/typescript/README.md)
-- [Python Kalkulator](../../../../03-GettingStarted/samples/python)
+- [Java kalkulator](../samples/java/calculator/README.md)
+- [.Net kalkulator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript kalkulator](../samples/javascript/README.md)
+- [TypeScript kalkulator](../samples/typescript/README.md)
+- [Python kalkulator](../../../../03-GettingStarted/samples/python)
 
 ## Dodatni viri
 
@@ -93,5 +52,5 @@ Vzemite kodo iz vaje in razširite strežnik z nekaj več orodji. Nato ustvarite
 
 - Naslednje: [Uporaba strežnika z Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
 
-**Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve AI za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko samodejni prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za kritične informacije je priporočljivo profesionalno človeško prevajanje. Ne odgovarjamo za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+**Opozorilo**:  
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.

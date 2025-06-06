@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "4bf553c18e7e226c3d76ab0cde627d26",
-  "translation_date": "2025-05-20T22:07:57+00:00",
+  "original_hash": "f00defb149ee1ac4a799e44a9783c7fc",
+  "translation_date": "2025-06-06T18:39:02+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "ms"
 }
@@ -387,12 +387,11 @@ class WeatherTools:
             ]
         }
 
-# Initialize class for its methods to be registered as tools
+# Instantiate the class to register its tools
 weather_tools = WeatherTools()
 
+# Start the server using stdio transport
 if __name__ == "__main__":
-    # Start the server with stdio transport
-    print("Weather MCP Server starting...")
     asyncio.run(serve_stdio(mcp))
 ```
 
@@ -558,4 +557,4 @@ Design a simple MCP tool that would be useful in your domain. Define:
 Next: [Chapter 2: Security](/02-Security/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

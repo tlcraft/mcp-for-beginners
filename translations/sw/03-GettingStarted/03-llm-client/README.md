@@ -1,97 +1,56 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abbb199eb22fdffa44a0de4db6a5ea49",
-  "translation_date": "2025-05-17T10:26:35+00:00",
+  "original_hash": "9d80e2a99a9aea8d8226253e6baf4c8c",
+  "translation_date": "2025-06-06T18:41:10+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "sw"
 }
 -->
-# Kuunda mteja na LLM
+Great, kwa hatua yetu inayofuata, hebu orodhesha uwezo wa server.
 
-Hadi sasa, umeona jinsi ya kuunda seva na mteja. Mteja ameweza kuita seva moja kwa moja ili kuorodhesha zana zake, rasilimali na maelekezo. Hata hivyo, huu sio mbinu ya vitendo sana. Mtumiaji wako anaishi katika enzi ya wakala na anatarajia kutumia maelekezo na kuwasiliana na LLM ili kufanya hivyo. Kwa mtumiaji wako, hawajali kama unatumia MCP au la kuhifadhi uwezo wako lakini wanatarajia kutumia lugha ya asili kuingiliana. Kwa hiyo, tunasuluhishaje hili? Suluhisho ni kuongeza LLM kwa mteja.
+### -2 Orodhesha uwezo wa server
 
-## Muhtasari
+Sasa tutaunganishwa na server na kuomba uwezo wake:
 
-Katika somo hili tunazingatia kuongeza LLM kufanya mteja wako na kuonyesha jinsi hii inavyotoa uzoefu bora zaidi kwa mtumiaji wako.
+### -3- Geuza uwezo wa server kuwa zana za LLM
 
-## Malengo ya Kujifunza
+Hatua inayofuata baada ya kuorodhesha uwezo wa server ni kuubadilisha kuwa muundo unaoeleweka na LLM. Mara tu tutakapofanya hivyo, tunaweza kutoa uwezo huu kama zana kwa LLM yetu.
 
-Mwisho wa somo hili, utaweza:
-
-- Kuunda mteja na LLM.
-- Kuingiliana bila matatizo na seva ya MCP kwa kutumia LLM.
-- Kutoa uzoefu bora kwa mtumiaji wa mwisho upande wa mteja.
-
-## Njia
-
-Hebu jaribu kuelewa njia tunayotakiwa kuchukua. Kuongeza LLM inaonekana rahisi, lakini je, tutafanya hivi kweli?
-
-Hivi ndivyo mteja atakavyoshirikiana na seva:
-
-1. Kuanzisha uhusiano na seva.
-
-1. Orodhesha uwezo, maelekezo, rasilimali na zana, na uhifadhi mpangilio wao.
-
-1. Ongeza LLM na upitishe uwezo uliohifadhiwa na mpangilio wao kwa muundo ambao LLM inaelewa.
-
-1. Shughulikia ombi la mtumiaji kwa kulipitisha kwa LLM pamoja na zana zilizoainishwa na mteja.
-
-Nzuri, sasa tunaelewa jinsi tunavyoweza kufanya hivi katika kiwango cha juu, hebu tujaribu hili katika zoezi hapa chini.
-
-## Zoezi: Kuunda mteja na LLM
-
-Katika zoezi hili, tutajifunza kuongeza LLM kwa mteja wetu.
-
-### -1- Unganisha na seva
-
-Hebu tuunde mteja wetu kwanza:
-Umefundishwa juu ya data hadi Oktoba 2023.
-
-Nzuri, kwa hatua yetu inayofuata, hebu orodhesha uwezo kwenye seva.
-
-### -2 Orodhesha uwezo wa seva
-
-Sasa tutaunganisha na seva na kuuliza uwezo wake:
-
-### -3- Badilisha uwezo wa seva kuwa zana za LLM
-
-Hatua inayofuata baada ya kuorodhesha uwezo wa seva ni kuubadilisha kuwa muundo ambao LLM inaelewa. Mara tu tunapofanya hivyo, tunaweza kutoa uwezo huu kama zana kwa LLM yetu.
-
-Nzuri, hatujajiandaa kushughulikia maombi yoyote ya mtumiaji, kwa hiyo hebu tushughulikie hilo.
+Great, sasa tumejiandaa kushughulikia maombi ya mtumiaji, hebu tuanze na hilo.
 
 ### -4- Shughulikia ombi la mtumiaji
 
 Katika sehemu hii ya msimbo, tutashughulikia maombi ya mtumiaji.
 
-Nzuri, umefanya!
+Great, umefanya kazi nzuri!
 
-## Kazi
+## Kazi ya Nyumbani
 
-Chukua msimbo kutoka zoezi na ujenge seva yenye zana zaidi. Kisha unda mteja na LLM, kama ilivyo kwenye zoezi, na ujaribu na maelekezo tofauti ili kuhakikisha zana zote za seva yako zinaitwa kwa njia ya moja kwa moja. Njia hii ya kujenga mteja ina maana kwamba mtumiaji wa mwisho atakuwa na uzoefu mzuri kwa sababu wanaweza kutumia maelekezo, badala ya amri za mteja halisi, na kutokuwa na ufahamu wa seva yoyote ya MCP inayoitwa.
+Chukua msimbo kutoka mazoezini na ujenge server na zana zaidi. Kisha tengeneza client yenye LLM, kama ilivyo kwenye mazoezi, na jaribu kwa kutumia maelekezo tofauti ili kuhakikisha zana zote za server zinaitwa kwa njia ya mabadiliko. Njia hii ya kujenga client inamaanisha mtumiaji wa mwisho atapata uzoefu mzuri kwani anaweza kutumia maelekezo ya kawaida badala ya amri kamili za client, na hawatajua hata MCP server inaitwa.
 
 ## Suluhisho
 
-[Suluhisho](/03-GettingStarted/03-llm-client/solution/README.md)
+[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## Mambo Muhimu
+## Muhimu Kukumbuka
 
-- Kuongeza LLM kwa mteja wako kunatoa njia bora kwa watumiaji kuingiliana na Seva za MCP.
-- Unahitaji kubadilisha majibu ya Seva ya MCP kuwa kitu ambacho LLM inaweza kuelewa.
+- Kuongeza LLM kwenye client yako kunatoa njia bora kwa watumiaji kuingiliana na MCP Servers.
+- Unahitaji kubadilisha majibu ya MCP Server kuwa kitu kinachoweza kueleweka na LLM.
 
-## Mifano
+## Sampuli
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
 - [JavaScript Calculator](../samples/javascript/README.md)
 - [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python) 
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Rasilimali za Ziada
+## Rasilimali Zaidi
 
-## Nini Kinafuata
+## Nini Kifuatacho
 
-- Ifuatayo: [Kutumia seva kwa kutumia Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
+- Ifuatayo: [Kutumia server kwa Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
 
-**Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya kutafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo chenye mamlaka. Kwa taarifa muhimu, tafsiri ya kibinadamu ya kitaalamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+**Kufafanua**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya utafsiri wa AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha kuaminika. Kwa taarifa muhimu, inashauriwa kutumia utafsiri wa kitaalamu unaofanywa na binadamu. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

@@ -1,52 +1,56 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abbb199eb22fdffa44a0de4db6a5ea49",
-  "translation_date": "2025-05-17T10:20:33+00:00",
+  "original_hash": "9d80e2a99a9aea8d8226253e6baf4c8c",
+  "translation_date": "2025-06-06T18:23:12+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "tr"
 }
 -->
-# LLM ile bir istemci oluşturma
+Harika, bir sonraki adımımız olarak sunucudaki yetenekleri listeleyelim.
 
-Şimdiye kadar, bir sunucu ve bir istemci nasıl oluşturulacağını gördünüz. İstemci, sunucunun araçlarını, kaynaklarını ve istemlerini listelemek için sunucuyu açıkça çağırabiliyordu. Ancak, bu çok pratik bir yaklaşım değil. Kullanıcınız ajanlık çağında yaşıyor ve bunu yapmak için istemleri kullanmayı ve bir LLM ile iletişim kurmayı bekliyor. Kullanıcınız için, yeteneklerinizi depolamak için MCP kullanıp kullanmadığınız önemli değil, ancak doğal dil kullanarak etkileşimde bulunmayı bekliyorlar. Peki bunu nasıl çözeriz? Çözüm, istemciye bir LLM eklemekle ilgilidir.
+### -2 Sunucu yeteneklerini listele
 
-## Genel Bakış
+Şimdi sunucuya bağlanacağız ve yeteneklerini isteyeceğiz:
 
-Bu derste, istemcinize bir LLM eklemeye odaklanacağız ve bunun kullanıcı için nasıl daha iyi bir deneyim sağladığını göstereceğiz.
+### -3- Sunucu yeteneklerini LLM araçlarına dönüştür
 
-## Öğrenme Hedefleri
+Sunucu yeteneklerini listeledikten sonraki adım, bunları LLM'nin anlayabileceği bir formata dönüştürmektir. Bunu yaptıktan sonra, bu yetenekleri LLM'mize araç olarak sağlayabiliriz.
 
-Bu dersin sonunda, şunları yapabileceksiniz:
+Harika, şimdi kullanıcı isteklerini işlemek için hazırız, o halde bunu ele alalım.
 
-- LLM ile bir istemci oluşturun.
-- LLM kullanarak MCP sunucusuyla sorunsuz etkileşimde bulunun.
-- İstemci tarafında daha iyi bir son kullanıcı deneyimi sağlayın.
+### -4- Kullanıcı istemini işle
 
-## Yaklaşım
+Kodun bu kısmında kullanıcı isteklerini işleyeceğiz.
 
-Uygulamamız gereken yaklaşımı anlamaya çalışalım. Bir LLM eklemek basit görünüyor, ancak bunu gerçekten yapacak mıyız?
+Harika, başardınız!
 
-İşte istemcinin sunucu ile nasıl etkileşimde bulunacağı:
+## Ödev
 
-1. Sunucu ile bağlantı kurun.
+Egzersizden aldığınız kodu kullanarak sunucuyu biraz daha fazla araçla genişletin. Sonra egzersizde olduğu gibi bir LLM ile bir istemci oluşturun ve farklı istemlerle test edin, böylece tüm sunucu araçlarınızın dinamik olarak çağrıldığından emin olun. Bu şekilde istemci oluşturmak, son kullanıcının tam istemci komutları yerine istemleri kullanmasına ve çağrılan herhangi bir MCP sunucusunun farkında olmamasına olanak tanıyarak harika bir kullanıcı deneyimi sağlar.
 
-1. Yetenekleri, istemleri, kaynakları ve araçları listeleyin ve bunların şemasını kaydedin.
+## Çözüm
 
-1. Bir LLM ekleyin ve kaydedilen yetenekleri ve şemalarını LLM'nin anlayabileceği bir formatta iletin.
+[Çözüm](/03-GettingStarted/03-llm-client/solution/README.md)
 
-1. Kullanıcı istemini, istemci tarafından listelenen araçlarla birlikte LLM'ye ileterek işleyin.
+## Önemli Noktalar
 
-Harika, şimdi bunu üst düzeyde nasıl yapabileceğimizi anladık, aşağıdaki alıştırmada bunu deneyelim.
+- İstemcinize bir LLM eklemek, kullanıcıların MCP Sunucularıyla daha iyi etkileşim kurmasını sağlar.
+- MCP Sunucu yanıtını LLM'nin anlayabileceği bir şeye dönüştürmeniz gerekir.
 
-## Alıştırma: LLM ile bir istemci oluşturma
+## Örnekler
 
-Bu alıştırmada, istemcimize bir LLM eklemeyi öğreneceğiz.
+- [Java Hesap Makinesi](../samples/java/calculator/README.md)
+- [.Net Hesap Makinesi](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Hesap Makinesi](../samples/javascript/README.md)
+- [TypeScript Hesap Makinesi](../samples/typescript/README.md)
+- [Python Hesap Makinesi](../../../../03-GettingStarted/samples/python)
 
-### -1- Sunucuya bağlanın
+## Ek Kaynaklar
 
-Önce istemcimizi oluşturalım:
-Ekim 2023'e kadar olan veriler üzerinde eğitildiniz.
+## Sonraki Adım
+
+- Sonraki: [Visual Studio Code kullanarak sunucu tüketme](/03-GettingStarted/04-vscode/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çabalasak da, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için, profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından doğabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
