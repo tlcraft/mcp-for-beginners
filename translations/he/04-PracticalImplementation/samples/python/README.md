@@ -1,63 +1,130 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "584c4d6b470d865ad04746f5da3574b6",
-  "translation_date": "2025-05-17T14:59:03+00:00",
+  "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
+  "translation_date": "2025-05-25T13:31:52+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "he"
 }
 -->
-# דוגמה
+# פרוטוקול הקשר מודל (MCP) מימוש בפייתון
 
-זוהי דוגמת פייתון לשרת MCP.
+מאגר זה מכיל מימוש בפייתון של פרוטוקול הקשר מודל (MCP), המדגים כיצד ליצור גם אפליקציית שרת וגם לקוח התקשורת באמצעות תקן MCP.
 
-מודול זה מדגים כיצד ליישם שרת MCP בסיסי שיכול לטפל בבקשות להשלמה. הוא מספק יישום דמה שמדמה אינטראקציה עם דגמי AI שונים.
+## סקירה כללית
 
-כך נראה תהליך רישום הכלי:
+מימוש ה-MCP מורכב משני רכיבים עיקריים:
 
-```python
-completion_tool = ToolDefinition(
-    name="completion",
-    description="Generate completions using AI models",
-    parameters={
-        "model": {
-            "type": "string",
-            "enum": self.models,
-            "description": "The AI model to use for completion"
-        },
-        "prompt": {
-            "type": "string",
-            "description": "The prompt text to complete"
-        },
-        "temperature": {
-            "type": "number",
-            "description": "Sampling temperature (0.0 to 1.0)"
-        },
-        "max_tokens": {
-            "type": "number",
-            "description": "Maximum number of tokens to generate"
-        }
-    },
-    required=["model", "prompt"]
-)
+1. **MCP Server (`server.py`)** – שרת החשוף:
+   - **כלים**: פונקציות שניתן לקרוא להן מרחוק
+   - **משאבים**: נתונים שניתן לשלוף
+   - **הנחיות**: תבניות ליצירת הנחיות למודלים לשוניים
 
-# Register the tool with its handler
-self.server.tools.register(completion_tool, self._handle_completion)
-```
+2. **MCP Client (`client.py`)** – אפליקציית לקוח שמתחברת לשרת ומשתמשת בתכונותיו
+
+## תכונות
+
+מימוש זה מדגים מספר תכונות מרכזיות של MCP:
+
+### כלים
+- `completion` – מייצר השלמות טקסט ממודלים של בינה מלאכותית (מדומה)
+- `add` – מחשבון פשוט שמחבר שני מספרים
+
+### משאבים
+- `models://` – מחזיר מידע על מודלי בינה מלאכותית זמינים
+- `greeting://{name}` – מחזיר ברכה מותאמת אישית לשם נתון
+
+### הנחיות
+- `review_code` – מייצר הנחיה לסקירת קוד
 
 ## התקנה
 
-הרץ את הפקודה הבאה:
+כדי להשתמש במימוש MCP זה, התקן את החבילות הנדרשות:
 
-```bash
-pip install mcp
+```powershell
+pip install mcp-server mcp-client
 ```
 
-## הרצה
+## הפעלת השרת והלקוח
 
-```bash
-python mcp_sample.py
+### הפעלת השרת
+
+הרץ את השרת בחלון טרמינל אחד:
+
+```powershell
+python server.py
 ```
+
+ניתן גם להפעיל את השרת במצב פיתוח באמצעות MCP CLI:
+
+```powershell
+mcp dev server.py
+```
+
+או להתקין ב-Claude Desktop (אם זמין):
+
+```powershell
+mcp install server.py
+```
+
+### הפעלת הלקוח
+
+הרץ את הלקוח בחלון טרמינל נוסף:
+
+```powershell
+python client.py
+```
+
+זה יתחבר לשרת וידגים את כל התכונות הזמינות.
+
+### שימוש בלקוח
+
+הלקוח (`client.py`) מדגים את כל יכולות ה-MCP:
+
+```powershell
+python client.py
+```
+
+זה יתחבר לשרת ויבצע את כל התכונות כולל כלים, משאבים והנחיות. הפלט יציג:
+
+1. תוצאת כלי המחשבון (5 + 7 = 12)
+2. תגובת כלי ההשלמה לשאלה "מה משמעות החיים?"
+3. רשימת מודלי הבינה המלאכותית הזמינים
+4. ברכה מותאמת אישית ל-"MCP Explorer"
+5. תבנית הנחיה לסקירת קוד
+
+## פרטי מימוש
+
+השרת מיושם באמצעות ה-`FastMCP` API, המספק הפשטות ברמה גבוהה להגדרת שירותי MCP. הנה דוגמה פשוטה לאופן הגדרת הכלים:
+
+```python
+@mcp.tool()
+def add(a: int, b: int) -> int:
+    """Add two numbers together
+    
+    Args:
+        a: First number
+        b: Second number
+    
+    Returns:
+        The sum of the two numbers
+    """
+    logger.info(f"Adding {a} and {b}")
+    return a + b
+```
+
+הלקוח משתמש בספריית הלקוח של MCP להתחברות וקריאה לשרת:
+
+```python
+async with stdio_client(server_params) as (reader, writer):
+    async with ClientSession(reader, writer) as session:
+        await session.initialize()
+        result = await session.call_tool("add", arguments={"a": 5, "b": 7})
+```
+
+## למידע נוסף
+
+למידע נוסף על MCP, בקרו בכתובת: https://modelcontextprotocol.io/
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). בעוד אנו שואפים לדיוק, אנא היו מודעים לכך שתרגומים אוטומטיים עשויים להכיל טעויות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור הסמכותי. למידע קריטי, מומלץ להשתמש בתרגום מקצועי אנושי. אנו לא אחראים לכל אי הבנות או פרשנויות מוטעות הנובעות מהשימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

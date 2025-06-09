@@ -2,31 +2,31 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-17T10:43:53+00:00",
+  "translation_date": "2025-05-27T16:20:09+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "cs"
 }
 -->
-# Spusťte tento příklad
+# Run this sample
 
 > [!NOTE]
-> Tento příklad předpokládá, že používáte instance GitHub Codespaces. Pokud chcete spustit tento příklad lokálně, musíte si na GitHubu nastavit osobní přístupový token.
+> This sample assumes you're using a GitHub Codespaces instance. If you want to run this locally, you need to set up a personal access token on GitHub.
 
-## Instalace knihoven
+## Install libraries
 
 ```sh
 dotnet restore
 ```
 
-Měly by se nainstalovat následující knihovny: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol 
+Dovresti installare le seguenti librerie: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol 
 
-## Spuštění
+## Run
 
 ```sh 
 dotnet run
 ```
 
-Měli byste vidět výstup podobný:
+Dovresti vedere un output simile a:
 
 ```text
 Setting up stdio transport
@@ -41,7 +41,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Velká část výstupu je jen ladění, ale důležité je, že uvádíte nástroje ze serveru MCP, tyto nástroje přeměníte na nástroje LLM a skončíte s odpovědí klienta MCP "Sum 6".
+Gran parte dell'output è solo per il debug, ma ciò che conta è che stai elencando gli strumenti dal MCP Server, li trasformi in strumenti LLM e ottieni una risposta dal client MCP "Sum 6".
 
-**Upozornění**:  
-Tento dokument byl přeložen pomocí služby pro automatický překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

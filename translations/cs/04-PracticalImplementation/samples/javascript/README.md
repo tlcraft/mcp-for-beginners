@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:53:06+00:00",
+  "translation_date": "2025-05-27T16:26:08+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "cs"
 }
 -->
-# Vzorek
+# Sample
 
-Toto je ukázka JavaScriptu pro MCP Server
+This is a C# sample for an MCP Server
 
-Zde je příklad registrace nástroje, kde registrujeme nástroj, který provádí simulovaný hovor na LLM:
+Here's an example of a tool registration where we register a tool that makes a mock call to an LLM:
 
 ```javascript
 this.mcpServer.tool(
@@ -74,19 +74,19 @@ this.mcpServer.tool(
 );
 ```
 
-## Instalace
+## Install
 
-Spusťte následující příkaz:
+Run the following command:
 
 ```bash
 npm install
 ```
 
-## Spuštění
+## Run
 
 ```bash
 npm start
 ```
 
-**Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI překladu [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme zodpovědní za jakékoli nedorozumění nebo chybné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo mylné výklady vyplývající z použití tohoto překladu.

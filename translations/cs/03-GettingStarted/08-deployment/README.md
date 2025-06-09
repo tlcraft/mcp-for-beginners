@@ -2,59 +2,59 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7816cc28f7ab9a54e31f9246429ffcd9",
-  "translation_date": "2025-05-17T12:55:32+00:00",
+  "translation_date": "2025-05-27T16:20:20+00:00",
   "source_file": "03-GettingStarted/08-deployment/README.md",
   "language_code": "cs"
 }
 -->
-# Nasazení MCP serverů
+# Deploying MCP Servers
 
-Nasazení vašeho MCP serveru umožňuje ostatním přístup k jeho nástrojům a zdrojům mimo vaše lokální prostředí. Existuje několik strategií nasazení, které je třeba zvážit v závislosti na vašich požadavcích na škálovatelnost, spolehlivost a snadnost správy. Níže najdete pokyny pro nasazení MCP serverů lokálně, v kontejnerech a do cloudu.
+Развертывание вашего MCP сервера позволяет другим получить доступ к его инструментам и ресурсам вне вашей локальной среды. Существует несколько стратегий развертывания, которые стоит рассмотреть в зависимости от требований к масштабируемости, надежности и удобству управления. Ниже вы найдете рекомендации по развертыванию MCP серверов локально, в контейнерах и в облаке.
 
-## Přehled
+## Overview
 
-Tato lekce pokrývá, jak nasadit vaši aplikaci MCP Server.
+В этом уроке рассказывается, как развернуть ваше приложение MCP Server.
 
-## Cíle učení
+## Learning Objectives
 
-Na konci této lekce budete schopni:
+К концу урока вы сможете:
 
-- Vyhodnotit různé přístupy k nasazení.
-- Nasadit svou aplikaci.
+- Оценивать различные подходы к развертыванию.
+- Развернуть ваше приложение.
 
-## Lokální vývoj a nasazení
+## Local development and deployment
 
-Pokud je váš server určen k použití na uživatelském počítači, můžete postupovat podle následujících kroků:
+Если ваш сервер предназначен для использования на машине пользователя, выполните следующие шаги:
 
-1. **Stáhněte server**. Pokud jste server nenapsali, stáhněte jej nejprve na svůj počítač.
-2. **Spusťte proces serveru**: Spusťte svou aplikaci MCP serveru.
+1. **Скачайте сервер**. Если вы не писали сервер, сначала скачайте его на свою машину.  
+1. **Запустите процесс сервера**: Запустите ваше приложение MCP server.
 
-Pro SSE (není potřeba pro server typu stdio)
+Для SSE (не требуется для сервера типа stdio)
 
-1. **Nakonfigurujte síť**: Ujistěte se, že server je přístupný na očekávaném portu.
-2. **Připojte klienty**: Použijte lokální připojovací URL jako `http://localhost:3000`.
+1. **Настройте сеть**: Убедитесь, что сервер доступен на ожидаемом порту.  
+1. **Подключите клиентов**: Используйте локальные URL подключения, например `http://localhost:3000`.
 
-## Nasazení do cloudu
+## Cloud Deployment
 
-MCP servery mohou být nasazeny na různé cloudové platformy:
+MCP серверы можно развернуть на различных облачных платформах:
 
-- **Bezserverové funkce**: Nasazení lehkých MCP serverů jako bezserverových funkcí.
-- **Služby kontejnerů**: Použijte služby jako Azure Container Apps, AWS ECS nebo Google Cloud Run.
-- **Kubernetes**: Nasazení a správa MCP serverů v Kubernetes klastrech pro vysokou dostupnost.
+- **Serverless Functions**: Развертывайте легковесные MCP серверы как безсерверные функции.  
+- **Container Services**: Используйте сервисы вроде Azure Container Apps, AWS ECS или Google Cloud Run.  
+- **Kubernetes**: Развертывайте и управляйте MCP серверами в кластерах Kubernetes для высокой доступности.
 
-### Příklad: Azure Container Apps
+### Example: Azure Container Apps
 
-Azure Container Apps podporují nasazení MCP serverů. Stále se pracuje na jeho vývoji a aktuálně podporuje SSE servery.
+Azure Container Apps поддерживают развертывание MCP Servers. Это еще в разработке, и в настоящее время поддерживаются SSE серверы.
 
-Jak na to:
+Вот как это можно сделать:
 
-1. Klonujte repozitář:
+1. Клонируйте репозиторий:
 
   ```sh
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
   ```
 
-2. Spusťte ho lokálně pro otestování:
+1. Запустите локально для тестирования:
 
   ```sh
   uv venv
@@ -68,7 +68,7 @@ Jak na to:
   uv run fastapi dev main.py
   ```
 
-3. Pro vyzkoušení lokálně vytvořte soubor *mcp.json* ve složce *.vscode* a přidejte následující obsah:
+1. Чтобы попробовать локально, создайте файл *mcp.json* в каталоге *.vscode* и добавьте следующий контент:
 
   ```json
   {
@@ -92,25 +92,26 @@ Jak na to:
   }
   ```
 
-  Jakmile je SSE server spuštěn, můžete kliknout na ikonu přehrávání v JSON souboru, nyní byste měli vidět nástroje na serveru, které jsou zachyceny GitHub Copilotem, viz ikona Nástroje.
+  После запуска SSE сервера вы можете нажать на иконку воспроизведения в JSON файле, теперь инструменты сервера должны определяться GitHub Copilot, смотрите иконку Tool.
 
-4. Pro nasazení spusťte následující příkaz:
+1. Для развертывания выполните следующую команду:
 
   ```sh
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-A je to, nasadit lokálně, nasadit do Azure podle těchto kroků.
+Вот и все — разверните локально или в Azure, следуя этим шагам.
 
-## Další zdroje
+## Additional Resources
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
-- [Článek Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
-- [Repozitář Azure Container Apps MCP](https://github.com/anthonychu/azure-container-apps-mcp-sample)
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
+- [Azure Container Apps article](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
+- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
 
-## Co dál
 
-- Další: [Praktická implementace](/04-PracticalImplementation/README.md)
+## What's Next
 
-**Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI překladatele [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme zodpovědní za jakékoli nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+- Далее: [Practical Implementation](/04-PracticalImplementation/README.md)
+
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo mylné výklady vyplývající z použití tohoto překladu.

@@ -2,40 +2,40 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-05-17T12:02:25+00:00",
+  "translation_date": "2025-05-29T20:24:22+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "br"
 }
 -->
 # Executando este exemplo
 
-Recomenda-se instalar `uv`, mas não é obrigatório, veja [instruções](https://docs.astral.sh/uv/#highlights)
+É recomendado instalar `uv`, mas não é obrigatório, veja as [instruções](https://docs.astral.sh/uv/#highlights)
 
-## -0- Crie um ambiente virtual
+## -0- Criar um ambiente virtual
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Ative o ambiente virtual
+## -1- Ativar o ambiente virtual
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Instale as dependências
+## -2- Instalar as dependências
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- Execute o exemplo
+## -3- Executar o exemplo
 
 ```bash
 mcp run server.py
 ```
 
-## -4- Teste o exemplo
+## -4- Testar o exemplo
 
 Com o servidor rodando em um terminal, abra outro terminal e execute o seguinte comando:
 
@@ -47,20 +47,20 @@ Isso deve iniciar um servidor web com uma interface visual que permite testar o 
 
 Uma vez que o servidor esteja conectado:
 
-- tente listar ferramentas e execute `add`, with args 2 and 4, you should see 6 in the result.
+- tente listar as ferramentas e execute `add`, with args 2 and 4, you should see 6 in the result.
 - go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
 
 ### Testing in ClI mode
 
-The inspector you ran is actually a Node.js app and `mcp dev` é um wrapper em torno disso.
+The inspector you ran is actually a Node.js app and `mcp dev`, que é um wrapper para isso.
 
-Você pode iniciá-lo diretamente no modo CLI executando o seguinte comando:
+Você pode iniciar diretamente no modo CLI executando o seguinte comando:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-Isso listará todas as ferramentas disponíveis no servidor. Você deverá ver a seguinte saída:
+Isso vai listar todas as ferramentas disponíveis no servidor. Você deve ver a seguinte saída:
 
 ```text
 {
@@ -97,7 +97,7 @@ Para invocar uma ferramenta, digite:
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Você deverá ver a seguinte saída:
+Você deve ver a seguinte saída:
 
 ```text
 {
@@ -112,8 +112,8 @@ Você deverá ver a seguinte saída:
 ```
 
 > ![!TIP]
-> Geralmente é muito mais rápido executar o inspetor no modo CLI do que no navegador.
-> Leia mais sobre o inspetor [aqui](https://github.com/modelcontextprotocol/inspector).
+> Geralmente é muito mais rápido rodar o inspector no modo CLI do que no navegador.
+> Leia mais sobre o inspector [aqui](https://github.com/modelcontextprotocol/inspector).
 
-**Aviso Legal**:
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritária. Para informações críticas, é recomendada a tradução humana profissional. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações errôneas decorrentes do uso desta tradução.
+**Aviso Legal**:  
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.

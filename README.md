@@ -59,6 +59,15 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 | 3.8 | **Deploy your server** | How do you go from local development to production? This section will help you develop and deploy your server. | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
 | 04 | **Practical Implementation** | Using SDKs across different languages, debugging, testing, and validation, crafting reusable prompt templates and workflows | [Practical Implementation](./04-PracticalImplementation/README.md) |
 | 05 | **Advanced Topics in MCP** | Multi-modal AI workflows and extensibility, secure scaling strategies, MCP in enterprise ecosystems | [Advanced Topics](./05-AdvancedTopics/README.md) |
+| 5.1 | **MCP Integration with Azure** | Shows integration with Azure | [MCP Azure integration](./05-AdvancedTopics/mcp-integration/README.md) |
+| 5.2 | **Multi modality** | Showing how to work with different modalities like images and more | [Multi modality](./05-AdvancedTopics/mcp-multi-modality/README.md) |
+| 5.3 | **MCP OAuth2 Demo** | Minimal Spring Boot app showing OAuth2 with MCP, both as Authorization and Resource Server. Demonstrates secure token issuance, protected endpoints, Azure Container Apps deployment, and API Management integration. | [MCP OAuth2 Demo](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
+| 5.4 | **Root Contexts** | Learn more about root context and how to implement them | [Root Contexts](./05-AdvancedTopics/mcp-root-contexts/README.md) |
+| 5.5 | **Routing** | Learn different types of routing | [Routing](./05-AdvancedTopics/mcp-routing/README.md) |
+| 5.6 | **Sampling** | Learn how to work with sampling | [Sampling](./05-AdvancedTopics/mcp-sampling/README.md) |
+| 5.7 | **Scaling** | Learn about scaling MCP servers, including horizontal and vertical scaling strategies, resource optimization, and performance tuning | [Scaling](./05-AdvancedTopics/mcp-scaling/README.md) |
+| 5.8 | **Security** | Secure your MCP Server, including authentication, authorization, and data protection strategies | [Security](./05-AdvancedTopics/mcp-security/README.md) |
+| 5.9 | **Web Search MCP** | Python MCP server and client integrating with SerpAPI for real-time web, news, product search, and Q&A. Demonstrates multi-tool orchestration, external API integration, and robust error handling | [Web Search MCP](./05-AdvancedTopics/web-search-mcp/README.md) |
 | 06 | **Community Contributions** | How to contribute code and docs, collaborating via GitHub, community-driven enhancements and feedback | [Community Contributions](./06-CommunityContributions/README.md) |
 | 07 | **Insights from Early Adoption** | Real-world implementations and what worked, building and deploying MCP-based solutions, trends and future roadmap | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
 | 08 | **Best Practices for MCP** | Performance tuning and optimization, designing fault-tolerant MCP systems, testing and resilience strategies | [Best Practices](./08-BestPractices/README.md) |

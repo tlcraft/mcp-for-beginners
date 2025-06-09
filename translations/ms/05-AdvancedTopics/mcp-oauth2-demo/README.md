@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:43:30+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:21:49+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "ms"
 }
 -->
 # MCP OAuth2 Demo
 
-Projek ini adalah **aplikasi Spring Boot minimal** yang berfungsi sebagai:
+This project is a **minimal Spring Boot application** that serves as both:
 
-* **Spring Authorization Server** (mengeluarkan token akses JWT melalui aliran `client_credentials`), dan  
-* **Resource Server** (melindungi endpoint `/hello` sendiri).
+* a **Spring Authorization Server** (issuing JWT access tokens via the `client_credentials` flow), and  
+* a **Resource Server** (securing its own `/hello` endpoint).
 
-Ia mencerminkan penyediaan yang ditunjukkan dalam [catatan blog Spring (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+It replicates the setup shown in the [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
-## Permulaan cepat (tempatan)
+## Quick start (local)
 
 ```bash
 # build & run
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Menguji Konfigurasi OAuth2
+## Testing the OAuth2 Configuration
 
-Anda boleh menguji konfigurasi keselamatan OAuth2 dengan langkah-langkah berikut:
+You can verify the OAuth2 security setup with the following steps:
 
-### 1. Pastikan pelayan sedang berjalan dan dilindungi
+### 1. Confirm the server is running and secured
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Dapatkan token akses menggunakan kelayakan klien
+### 2. Obtain an access token using client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Nota: Tajuk Pengesahan Asas (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Note: The Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Akses endpoint yang dilindungi menggunakan token
+### 3. Use the token to access the protected endpoint
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Respons yang berjaya dengan "Hello from MCP OAuth2 Demo!" mengesahkan bahawa konfigurasi OAuth2 berfungsi dengan betul.
+A successful response showing "Hello from MCP OAuth2 Demo!" indicates the OAuth2 setup is functioning properly.
 
 ---
 
-## Bina kontena
+## Container build
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Sebarkan ke **Azure Container Apps**
+## Deploy to **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-FQDN ingress menjadi **issuer** anda (`https://<fqdn>`).  
+The ingress FQDN becomes your **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
-## Sambungkan ke **Azure API Management**
+## Wire into **Azure API Management**
 
-Tambah polisi masuk ini kepada API anda:
+Add this inbound policy to your API:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Tambah polisi masuk ini kepada API anda:
 </inbound>
 ```
 
-APIM akan mendapatkan JWKS dan mengesahkan setiap permintaan.
+APIM will retrieve the JWKS and validate each request.
+
+---
+
+## What's next
+
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

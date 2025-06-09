@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:38:52+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T18:22:52+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "ar"
 }
 -->
-# MCP OAuth2 Demo
+# عرض MCP OAuth2
 
 هذا المشروع هو **تطبيق Spring Boot بسيط** يعمل كـ:
 
-* **خادم تفويض Spring** (يصدر رموز JWT عبر تدفق `client_credentials`)، و  
+* **خادم تفويض Spring** (يصدر رموز وصول JWT عبر تدفق `client_credentials`)، و  
 * **خادم موارد** (يحمي نقطة النهاية الخاصة به `/hello`).
 
-يعكس الإعداد الموضح في [مقالة مدونة Spring (2 أبريل 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+يُطابق الإعداد المعروض في [مقال مدونة Spring (2 أبريل 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
-## البدء السريع (محلي)
+## بدء سريع (محلي)
 
 ```bash
 # build & run
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-ملاحظة: يحتوي رأس المصادقة الأساسية (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+ملاحظة: رأس المصادقة الأساسية (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
 ### 3. الوصول إلى نقطة النهاية المحمية باستخدام الرمز
 
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-يؤكد الرد الناجح مع "مرحبًا من MCP OAuth2 Demo!" أن تكوين OAuth2 يعمل بشكل صحيح.
+الاستجابة الناجحة مع "مرحبًا من عرض MCP OAuth2!" تؤكد أن تكوين OAuth2 يعمل بشكل صحيح.
 
 ---
 
@@ -86,23 +86,16 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## النشر إلى **تطبيقات حاويات Azure**
+## النشر إلى **تطبيقات الحاويات في Azure**
 
-```bash
-az containerapp up -n mcp-oauth2 \
-  -g demo-rg -l westeurope \
-  --image <your-registry>/mcp-oauth2-demo:latest \
-  --ingress external --target-port 8081
-```
-
-يصبح FQDN للتوجيه هو **الجهة المصدرة** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+يصبح اسم المجال الكامل للوصول هو **المُصدر** (`https://<fqdn>`).  
+Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`).
 
 ---
 
-## ربط في **إدارة واجهة برمجة تطبيقات Azure**
+## الربط مع **إدارة API في Azure**
 
-أضف هذه السياسة الواردة إلى واجهة برمجة التطبيقات الخاصة بك:
+أضف سياسة الدخول هذه إلى واجهة برمجة التطبيقات الخاصة بك:
 
 ```xml
 <inbound>
@@ -118,5 +111,11 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 ستقوم APIM بجلب JWKS والتحقق من كل طلب.
 
-**إخلاء المسؤولية**:  
-تم ترجمة هذه الوثيقة باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يُرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار الوثيقة الأصلية بلغتها الأصلية المصدر الرسمي. بالنسبة للمعلومات الحيوية، يُوصى بالترجمة البشرية الاحترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة تنشأ عن استخدام هذه الترجمة.
+---
+
+## ما هو التالي
+
+- [الجذور السياقية](../mcp-root-contexts/README.md)
+
+**تنويه**:  
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي والمعتمد. للمعلومات الحساسة أو الهامة، يُنصح بالاستعانة بترجمة بشرية محترفة. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

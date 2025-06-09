@@ -1,18 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:41:27+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:01:53+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "tr"
 }
 -->
 # MCP OAuth2 Demo
 
-Bu proje, hem **Spring Yetkilendirme Sunucusu** (JWT erişim belirteçleri `client_credentials` akışı aracılığıyla veren) hem de  
-**Kaynak Sunucusu** (kendi `/hello` uç noktasını koruyan) olarak işlev gören **minimal bir Spring Boot uygulaması**dır.
+Bu proje, hem şunları yapan **minimal bir Spring Boot uygulamasıdır**:
 
-[Spring blog yazısında (2 Nisan 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) gösterilen kurulumu yansıtır.
+* **Spring Authorization Server** (JWT erişim tokenlarını `client_credentials` akışı ile veren), ve  
+* **Resource Server** (kendi `/hello` uç noktasını koruyan).
+
+[Spring blog yazısında (2 Nis 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) gösterilen yapı ile aynıdır.
 
 ---
 
@@ -36,14 +38,14 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 OAuth2 güvenlik yapılandırmasını aşağıdaki adımlarla test edebilirsiniz:
 
-### 1. Sunucunun çalıştığını ve güvenli olduğunu doğrulayın
+### 1. Sunucunun çalıştığını ve korunduğunu doğrulayın
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. İstemci kimlik bilgilerini kullanarak bir erişim belirteci alın
+### 2. İstemci kimlik bilgileri ile erişim tokenı alın
 
 ```bash
 # Get and extract the full token response
@@ -59,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Not: Temel Kimlik Doğrulama başlığı (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Not: Basic Authentication başlığı (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Belirteci kullanarak korunan uç noktaya erişin
+### 3. Token kullanarak korumalı uç noktaya erişin
 
 ```bash
 # Using the saved token
@@ -71,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-"MCP OAuth2 Demo'dan Merhaba!" yanıtı başarılı bir şekilde alındığında OAuth2 yapılandırmasının doğru çalıştığını doğrular.
+"Hello from MCP OAuth2 Demo!" içeren başarılı bir yanıt, OAuth2 yapılandırmasının doğru çalıştığını gösterir.
 
 ---
 
-## Konteyner oluşturma
+## Container oluşturma
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -84,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## **Azure Container Apps**'e Dağıtım
+## **Azure Container Apps** üzerine dağıtım
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -93,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Giriş FQDN'niz **issuer** olur (`https://<fqdn>`).  
+Ingress FQDN, sizin **issuer** adresiniz olur (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
-## **Azure API Management** ile Bağlantı Kurma
+## **Azure API Management** ile entegrasyon
 
-API'nize bu inbound politikasını ekleyin:
+API’nize bu inbound policy’yi ekleyin:
 
 ```xml
 <inbound>
@@ -114,7 +116,13 @@ API'nize bu inbound politikasını ekleyin:
 </inbound>
 ```
 
-APIM, JWKS'i alacak ve her isteği doğrulayacaktır.
+APIM JWKS’yi alır ve her isteği doğrular.
+
+---
+
+## Sonraki adımlar
+
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluğu sağlamak için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanılması sonucunda oluşabilecek yanlış anlamalar veya yanlış yorumlamalardan dolayı sorumlu değiliz.
+Bu belge, [Co-op Translator](https://github.com/Azure/co-op-translator) adlı yapay zeka çeviri hizmeti kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

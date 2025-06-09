@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abbb199eb22fdffa44a0de4db6a5ea49",
-  "translation_date": "2025-05-16T14:57:29+00:00",
+  "original_hash": "9d80e2a99a9aea8d8226253e6baf4c8c",
+  "translation_date": "2025-06-06T18:21:39+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "pl"
 }
@@ -13,13 +13,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 Teraz połączymy się z serwerem i poprosimy o jego możliwości:
 
-### -3 Przekształć możliwości serwera na narzędzia LLM
+### -3- Konwersja możliwości serwera na narzędzia LLM
 
-Kolejnym krokiem po wypisaniu możliwości serwera jest przekształcenie ich na format, który rozumie LLM. Gdy to zrobimy, możemy udostępnić te możliwości jako narzędzia dla naszego LLM.
+Kolejnym krokiem po wypisaniu możliwości serwera jest przekształcenie ich do formatu zrozumiałego dla LLM. Gdy to zrobimy, możemy udostępnić te możliwości jako narzędzia dla naszego LLM.
 
-Świetnie, teraz jesteśmy gotowi obsłużyć zapytania użytkownika, więc zajmijmy się tym następnym krokiem.
+Świetnie, teraz jesteśmy gotowi, aby obsłużyć żądania użytkownika, zajmijmy się tym.
 
-### -4 Obsłuż zapytanie użytkownika
+### -4- Obsługa zapytań użytkownika
 
 W tej części kodu zajmiemy się obsługą zapytań użytkownika.
 
@@ -27,16 +27,16 @@ W tej części kodu zajmiemy się obsługą zapytań użytkownika.
 
 ## Zadanie
 
-Weź kod z ćwiczenia i rozbuduj serwer o dodatkowe narzędzia. Następnie stwórz klienta z LLM, tak jak w ćwiczeniu, i przetestuj go z różnymi zapytaniami, aby upewnić się, że wszystkie narzędzia serwera są wywoływane dynamicznie. Taki sposób tworzenia klienta zapewni użytkownikowi końcowemu świetne doświadczenie, ponieważ będzie mógł korzystać z promptów zamiast dokładnych poleceń klienta i nie będzie musiał wiedzieć o wywoływaniu serwera MCP.
+Weź kod z ćwiczenia i rozbuduj serwer o dodatkowe narzędzia. Następnie stwórz klienta z LLM, tak jak w ćwiczeniu, i przetestuj go z różnymi promptami, aby upewnić się, że wszystkie narzędzia serwera są wywoływane dynamicznie. Ten sposób tworzenia klienta zapewnia użytkownikowi końcowemu doskonałe doświadczenie, ponieważ może korzystać z promptów zamiast precyzyjnych poleceń klienta i nie musi wiedzieć o wywoływaniu serwera MCP.
 
 ## Rozwiązanie
 
 [Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## Kluczowe wnioski
+## Najważniejsze informacje
 
 - Dodanie LLM do klienta zapewnia lepszy sposób interakcji użytkowników z serwerami MCP.
-- Musisz przekształcić odpowiedź serwera MCP na format zrozumiały dla LLM.
+- Musisz przekształcić odpowiedź serwera MCP do formatu zrozumiałego dla LLM.
 
 ## Przykłady
 
@@ -50,7 +50,7 @@ Weź kod z ćwiczenia i rozbuduj serwer o dodatkowe narzędzia. Następnie stwó
 
 ## Co dalej
 
-- Następne: [Korzystanie z serwera za pomocą Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
+- Dalej: [Korzystanie z serwera za pomocą Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za wiarygodne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy uważać za źródło autorytatywne. W przypadku istotnych informacji zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

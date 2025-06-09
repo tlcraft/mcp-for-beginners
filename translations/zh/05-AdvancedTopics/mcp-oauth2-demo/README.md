@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-16T14:29:06+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T18:28:24+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "zh"
 }
 -->
 # MCP OAuth2 演示
 
-该项目是一个**最简化的 Spring Boot 应用程序**，既作为：
+该项目是一个**极简的 Spring Boot 应用程序**，同时扮演以下角色：
 
-* **Spring 授权服务器**（通过 `client_credentials` 流程颁发 JWT 访问令牌），同时  
+* **Spring 授权服务器**（通过 `client_credentials` 流程颁发 JWT 访问令牌），以及  
 * **资源服务器**（保护其自身的 `/hello` 端点）。
 
-它与[Spring 博客文章（2025年4月2日）](https://spring.io/blog/2025/04/02/mcp-server-oauth2)中展示的设置相呼应。
+它复刻了 [Spring 博客文章（2025 年 4 月 2 日）](https://spring.io/blog/2025/04/02/mcp-server-oauth2) 中展示的设置。
 
 ---
 
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-注意：Basic 认证头部（`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`。
+注意：Basic 认证头为 `bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`。
 
 ### 3. 使用令牌访问受保护端点
 
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-如果响应成功并显示 “Hello from MCP OAuth2 Demo!”，则说明 OAuth2 配置工作正常。
+如果响应成功并显示 “Hello from MCP OAuth2 Demo!”，则说明 OAuth2 配置正常工作。
 
 ---
 
-## 构建容器
+## 容器构建
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -95,7 +95,7 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-入口 FQDN 将成为你的**issuer**（`https://<fqdn>`).  
+入口 FQDN 将成为你的**发行者**（`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`）。
 
 ---
@@ -118,5 +118,11 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 APIM 会获取 JWKS 并验证每个请求。
 
+---
+
+## 下一步
+
+- [Root contexts](../mcp-root-contexts/README.md)
+
 **免责声明**：  
-本文件由 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻译。尽管我们力求准确，但请注意，自动翻译可能存在错误或不准确之处。原始语言的文件应被视为权威版本。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而引起的任何误解或误释，我们概不负责。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们努力确保准确性，但请注意自动翻译可能存在错误或不准确之处。原始文件的原文版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。

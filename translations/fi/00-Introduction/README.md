@@ -1,31 +1,31 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d88dee994dcbb3fa52c271d0c0817b5",
-  "translation_date": "2025-05-20T21:50:28+00:00",
+  "original_hash": "1446979020432f512c883848d7eca144",
+  "translation_date": "2025-05-29T21:50:14+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "fi"
 }
 -->
 # Johdanto Model Context Protocoliin (MCP): Miksi se on tärkeä skaalautuville tekoälysovelluksille
 
-Generatiiviset tekoälysovellukset ovat suuri edistysaskel, sillä ne usein mahdollistavat käyttäjän vuorovaikutuksen sovelluksen kanssa luonnollisen kielen kehotteilla. Kuitenkin, kun tällaisiin sovelluksiin sijoitetaan enemmän aikaa ja resursseja, haluat varmistaa, että voit helposti integroida toiminnallisuuksia ja resursseja siten, että laajentaminen on helppoa, sovelluksesi pystyy palvelemaan useampaa mallia samanaikaisesti ja käsittelemään erilaisia mallien erityispiirteitä. Lyhyesti sanottuna generatiivisten tekoälysovellusten rakentaminen on aluksi helppoa, mutta niiden kasvaessa ja monimutkaistuessa sinun on alettava määritellä arkkitehtuuria ja todennäköisesti luotettava standardiin, jotta sovelluksesi rakennetaan johdonmukaisella tavalla. Tässä kohtaa MCP astuu kuvaan järjestämään asioita ja tarjoamaan standardin.
+Generatiiviset tekoälysovellukset ovat suuri askel eteenpäin, sillä ne usein mahdollistavat käyttäjän vuorovaikutuksen sovelluksen kanssa luonnollisen kielen kehotteilla. Kuitenkin, kun tällaisiin sovelluksiin investoidaan enemmän aikaa ja resursseja, haluat varmistaa, että voit helposti integroida toiminnallisuuksia ja resursseja tavalla, joka on helppo laajentaa, että sovelluksesi pystyy tukemaan useamman mallin käyttöä ja käsittelemään erilaisia mallien erityispiirteitä. Lyhyesti sanottuna, generatiivisten tekoälysovellusten rakentaminen on aluksi helppoa, mutta niiden kasvaessa ja monimutkaistuessa sinun täytyy alkaa määritellä arkkitehtuuria ja todennäköisesti luottaa standardiin, joka varmistaa, että sovelluksesi rakennetaan johdonmukaisella tavalla. Tässä kohtaa MCP astuu kuvaan järjestämään asioita ja tarjoamaan standardin.
 
 ---
 
 ## **🔍 Mikä on Model Context Protocol (MCP)?**
 
-**Model Context Protocol (MCP)** on **avoin, standardoitu rajapinta**, joka mahdollistaa suurten kielimallien (LLM) saumattoman vuorovaikutuksen ulkoisten työkalujen, API:en ja tietolähteiden kanssa. Se tarjoaa johdonmukaisen arkkitehtuurin, joka laajentaa tekoälymallien toiminnallisuutta niiden koulutusdatan ulkopuolelle, mahdollistaen älykkäämmät, skaalautuvat ja reagoivammat tekoälyjärjestelmät.
+**Model Context Protocol (MCP)** on **avoin, standardoitu rajapinta**, joka mahdollistaa suurten kielimallien (LLM) saumattoman vuorovaikutuksen ulkoisten työkalujen, API:en ja tietolähteiden kanssa. Se tarjoaa johdonmukaisen arkkitehtuurin tekoälymallien toiminnallisuuden laajentamiseen koulutusdatan ulkopuolelle, mahdollistaen älykkäämmät, skaalautuvat ja reagoivammat tekoälyjärjestelmät.
 
 ---
 
-## **🎯 Miksi standardisointi tekoälyssä on tärkeää**
+## **🎯 Miksi standardointi tekoälyssä on tärkeää**
 
-Kun generatiiviset tekoälysovellukset monimutkaistuvat, on olennaista omaksua standardeja, jotka takaavat **skaalautuvuuden, laajennettavuuden** ja **ylläpidettävyyden**. MCP vastaa näihin tarpeisiin:
+Kun generatiiviset tekoälysovellukset monimutkaistuvat, on olennaista ottaa käyttöön standardeja, jotka takaavat **skaalautuvuuden, laajennettavuuden** ja **ylläpidettävyyden**. MCP vastaa näihin tarpeisiin:
 
-- Yhdistelee mallien ja työkalujen integraatiot
-- Vähentää hauraita, kertaluonteisia räätälöityjä ratkaisuja
-- Mahdollistaa useiden mallien rinnakkaisen toiminnan yhdessä ekosysteemissä
+- Yhdistelemällä mallien ja työkalujen integraatiot
+- Vähentämällä hauraita, kertaluonteisia räätälöityjä ratkaisuja
+- Sallimalla useiden mallien toimia samassa ekosysteemissä
 
 ---
 
@@ -42,40 +42,40 @@ Tämän artikkelin lopussa osaat:
 
 ## **💡 Miksi Model Context Protocol (MCP) on mullistava**
 
-### **🔗 MCP ratkaisee tekoälyn vuorovaikutusten pirstaloitumisen**
+### **🔗 MCP ratkaisee tekoälyn vuorovaikutuksen pirstoutumisen**
 
-Ennen MCP:tä mallien ja työkalujen integrointi vaati:
+Ennen MCP:tä mallien yhdistäminen työkaluihin vaati:
 
 - Räätälöityä koodia jokaista työkalu-malli-paria varten
-- Ei-standardisoituja API-rajapintoja jokaiselta toimittajalta
-- Usein rikkoutuvia integraatioita päivitysten vuoksi
+- Ei-standardisoituja API:ita jokaiselta toimittajalta
+- Usein katkoksia päivitysten vuoksi
 - Huonoa skaalautuvuutta työkalujen määrän kasvaessa
 
-### **✅ MCP-standardisoinnin hyödyt**
+### **✅ MCP-standardoinnin hyödyt**
 
-| **Hyöty**               | **Kuvaus**                                                                   |
-|-------------------------|------------------------------------------------------------------------------|
-| Yhteentoimivuus         | LLM:t toimivat saumattomasti eri toimittajien työkalujen kanssa              |
-| Johdonmukaisuus         | Tasalaatuinen käyttäytyminen eri alustoilla ja työkaluissa                   |
-| Uudelleenkäytettävyys   | Kerran rakennettuja työkaluja voidaan käyttää useissa projekteissa ja järjestelmissä |
-| Kehityksen nopeutuminen | Kehitysaikaa säästyy standardoitujen, plug-and-play -rajapintojen ansiosta    |
+| **Hyöty**                | **Kuvaus**                                                                     |
+|--------------------------|--------------------------------------------------------------------------------|
+| Yhteentoimivuus          | LLM:t toimivat saumattomasti erilaisten toimittajien työkalujen kanssa         |
+| Johdonmukaisuus          | Tasainen käyttäytyminen eri alustoilla ja työkaluissa                          |
+| Uudelleenkäytettävyys    | Kerran rakennettuja työkaluja voi käyttää useissa projekteissa ja järjestelmissä |
+| Kehityksen nopeutus      | Kehitysaikaa säästyy standardoitujen, plug-and-play-rajapintojen ansiosta      |
 
 ---
 
-## **🧱 MCP-arkkitehtuurin yleiskatsaus**
+## **🧱 Korkean tason MCP-arkkitehtuurin yleiskatsaus**
 
 MCP noudattaa **asiakas-palvelin-mallia**, jossa:
 
-- **MCP-isännät** pyörittävät tekoälymalleja
-- **MCP-asiakkaat** tekevät pyyntöjä
-- **MCP-palvelimet** tarjoavat kontekstin, työkalut ja ominaisuudet
+- **MCP Hosts** pyörittävät tekoälymalleja
+- **MCP Clients** tekevät pyyntöjä
+- **MCP Servers** tarjoavat kontekstin, työkalut ja ominaisuudet
 
-### **Keskeiset osat:**
+### **Keskeiset komponentit:**
 
 - **Resurssit** – Staattista tai dynaamista dataa malleille  
 - **Kehotteet** – Ennalta määriteltyjä työnkulkuja ohjattuun generointiin  
-- **Työkalut** – Suoritettavia toimintoja, kuten hakuja ja laskutoimituksia  
-- **Näytteistys** – Agenttimaista käyttäytymistä rekursiivisten vuorovaikutusten kautta
+- **Työkalut** – Suoritettavia toimintoja kuten haku, laskenta  
+- **Näytteistys** – Agenttimainen käyttäytyminen rekursiivisten vuorovaikutusten kautta
 
 ---
 
@@ -84,26 +84,30 @@ MCP noudattaa **asiakas-palvelin-mallia**, jossa:
 MCP-palvelimet toimivat seuraavasti:
 
 - **Pyyntöjen kulku**:  
-    1. MCP-asiakas lähettää pyynnön tekoälymallille, joka toimii MCP-isännässä.  
-    2. Tekoälymalli tunnistaa, milloin se tarvitsee ulkoisia työkaluja tai dataa.  
-    3. Malli kommunikoi MCP-palvelimen kanssa standardoidun protokollan avulla.
+    1. MCP Client lähettää pyynnön AI-mallille, joka toimii MCP Hostissa.  
+    2. AI-malli tunnistaa, milloin se tarvitsee ulkoisia työkaluja tai dataa.  
+    3. Malli kommunikoi MCP Serverin kanssa standardoidun protokollan avulla.
 
 - **MCP-palvelimen toiminnot**:  
     - Työkalurekisteri: Pitää kirjaa saatavilla olevista työkaluista ja niiden ominaisuuksista.  
-    - Todennus: Varmistaa työkalujen käyttöoikeudet.  
-    - Pyyntöjen käsittelijä: Käsittelee mallilta tulevat työkalupyyntöjä.  
-    - Vastausten muotoilija: Jäsentää työkalujen tuottamat tulokset mallin ymmärtämään muotoon.
+    - Todentaminen: Varmistaa käyttöoikeudet työkalujen käyttöön.  
+    - Pyyntöjen käsittelijä: Käsittelee mallin lähettämät työkalupyyntöjä.  
+    - Vastauksen muotoilija: Jäsentää työkalujen tuottamat tulokset mallin ymmärtämään muotoon.
 
 - **Työkalujen suoritus**:  
-    - Palvelin ohjaa pyynnöt oikeille ulkoisille työkaluille  
-    - Työkalut suorittavat erikoistuneet tehtävänsä (haku, laskenta, tietokantakyselyt jne.)  
-    - Tulokset palautetaan mallille yhdenmukaisessa muodossa.
+    - Palvelin ohjaa pyynnöt oikeille ulkoisille työkaluilla  
+    - Työkalut suorittavat erikoistuneet toiminnot (haku, laskenta, tietokantakyselyt jne.)  
+    - Tulokset palautetaan mallille yhtenäisessä muodossa.
 
 - **Vastauksen viimeistely**:  
-    - Tekoälymalli yhdistää työkalujen tulokset vastaukseensa.  
+    - AI-malli yhdistää työkalujen tulokset vastaukseensa.  
     - Lopullinen vastaus lähetetään takaisin asiakassovellukselle.
 
 ```mermaid
+---
+title: MCP Server Architecture and Component Interactions
+description: A diagram showing how AI models interact with MCP servers and various tools, depicting the request flow and server components including Tool Registry, Authentication, Request Handler, and Response Formatter
+---
 graph TD
     A[AI Model in MCP Host] <-->|MCP Protocol| B[MCP Server]
     B <-->|Tool Interface| C[Tool 1: Web Search]
@@ -136,11 +140,11 @@ graph TD
     style F fill:#c2f0c2,stroke:#333,stroke-width:1px    
 ```
 
-## 👨‍💻 Miten rakentaa MCP-palvelin (esimerkkien avulla)
+## 👨‍💻 Miten rakentaa MCP-palvelin (esimerkkien kera)
 
-MCP-palvelimet mahdollistavat LLM:n kykyjen laajentamisen tarjoamalla dataa ja toiminnallisuutta.
+MCP-palvelimet antavat sinun laajentaa LLM-mallien kyvykkyyksiä tarjoamalla dataa ja toiminnallisuutta.
 
-Valmiina kokeilemaan? Tässä esimerkkejä yksinkertaisen MCP-palvelimen luomisesta eri kielillä:
+Valmis kokeilemaan? Tässä esimerkkejä yksinkertaisen MCP-palvelimen luomisesta eri kielillä:
 
 - **Python-esimerkki**: https://github.com/modelcontextprotocol/python-sdk
 
@@ -150,34 +154,38 @@ Valmiina kokeilemaan? Tässä esimerkkejä yksinkertaisen MCP-palvelimen luomise
 
 - **C#/.NET-esimerkki**: https://github.com/modelcontextprotocol/csharp-sdk
 
-## 🌍 MCP:n käytännön sovellukset
+## 🌍 MCP:n käytännön käyttötapaukset
 
-MCP mahdollistaa laajan valikoiman sovelluksia laajentamalla tekoälyn kykyjä:
+MCP mahdollistaa monipuolisia sovelluksia laajentamalla tekoälyn kyvykkyyksiä:
 
-| **Sovellus**               | **Kuvaus**                                                                 |
-|---------------------------|-----------------------------------------------------------------------------|
-| Yritystietojen integraatio | Yhdistää LLM:t tietokantoihin, CRM-järjestelmiin tai sisäisiin työkaluihin  |
-| Agenttipohjaiset tekoälyjärjestelmät | Mahdollistaa autonomiset agentit työkalujen käyttöoikeuksilla ja päätöksentekotyönkuluilla |
-| Monimodaaliset sovellukset | Yhdistää teksti-, kuva- ja ääni työkalut yhteen yhtenäiseen tekoälysovellukseen |
-| Reaaliaikainen dataintegraatio | Tuottaa live-dataa tekoälyn vuorovaikutuksiin tarkempien ja ajankohtaisten tulosten saamiseksi |
+| **Sovellus**                | **Kuvaus**                                                                     |
+|----------------------------|--------------------------------------------------------------------------------|
+| Yritysdatan integrointi    | Yhdistää LLM:t tietokantoihin, CRM-järjestelmiin tai sisäisiin työkaluihin     |
+| Agenttipohjaiset tekoälyjärjestelmät | Mahdollistaa autonomiset agentit työkalujen käyttöoikeuksilla ja päätöksenteolla |
+| Monimodaaliset sovellukset | Yhdistää teksti-, kuva- ja ääni työkalut yhdeksi yhtenäiseksi tekoälysovellukseksi |
+| Reaaliaikainen dataintegrointi | Tuo live-dataa tekoälyn vuorovaikutuksiin tarkempien ja ajankohtaisten tulosten saamiseksi |
 
 ### 🧠 MCP = Yleinen standardi tekoälyn vuorovaikutuksille
 
-Model Context Protocol (MCP) toimii yleisenä standardina tekoälyn vuorovaikutuksissa, aivan kuten USB-C standardisoi laitteiden fyysiset liitännät. Tekoälyn maailmassa MCP tarjoaa yhdenmukaisen rajapinnan, jonka avulla mallit (asiakkaat) voivat integroitua saumattomasti ulkoisiin työkaluihin ja datan tarjoajiin (palvelimet). Tämä poistaa tarpeen käyttää erilaisia, räätälöityjä protokollia jokaiselle API:lle tai tietolähteelle.
+Model Context Protocol (MCP) toimii yleisenä standardina tekoälyn vuorovaikutuksille, samalla tavoin kuin USB-C vakiinnutti fyysiset liitännät laitteille. Tekoälyn maailmassa MCP tarjoaa yhdenmukaisen rajapinnan, jonka avulla mallit (asiakkaat) voivat integroitua saumattomasti ulkoisten työkalujen ja datan tarjoajien (palvelinten) kanssa. Tämä poistaa tarpeen käyttää erilaisia räätälöityjä protokollia jokaiselle API:lle tai tietolähteelle.
 
-MCP-yhteensopiva työkalu (jota kutsutaan MCP-palvelimeksi) noudattaa yhtenäistä standardia. Nämä palvelimet voivat listata tarjoamansa työkalut tai toiminnot ja suorittaa ne, kun tekoälyagentti pyytää. MCP:tä tukevat tekoälyagenttialustat pystyvät löytämään palvelimien tarjoamat työkalut ja kutsumaan niitä tämän standardin mukaisesti.
+MCP-yhteensopiva työkalu (jota kutsutaan MCP-palvelimeksi) noudattaa yhtenäistä standardia. Nämä palvelimet voivat listata tarjoamansa työkalut tai toiminnot ja suorittaa ne, kun tekoälyagentti pyytää. MCP:tä tukevat tekoälyagenttialustat pystyvät löytämään palvelimien tarjoamat työkalut ja kutsumaan niitä tämän standardoidun protokollan kautta.
 
 ### 💡 Helpottaa tiedon saatavuutta
 
-Työkalujen tarjoamisen lisäksi MCP helpottaa tiedon saatavuutta. Se mahdollistaa sovellusten kontekstin tarjoamisen suurille kielimalleille (LLM) linkittämällä ne erilaisiin tietolähteisiin. Esimerkiksi MCP-palvelin voi edustaa yrityksen dokumenttivarastoa, jolloin agentit voivat hakea tarpeellista tietoa pyynnöstä. Toinen palvelin voi hoitaa tiettyjä toimintoja, kuten sähköpostien lähettämistä tai tietueiden päivittämistä. Agentin näkökulmasta nämä ovat vain työkaluja — osa työkaluista palauttaa tietoa (tiedon konteksti), kun taas toiset suorittavat toimintoja. MCP hallinnoi molempia tehokkaasti.
+Työkalujen tarjoamisen lisäksi MCP helpottaa myös tiedon saatavuutta. Se mahdollistaa sovellusten tarjoavan kontekstia suurille kielimalleille (LLM) yhdistämällä ne eri tietolähteisiin. Esimerkiksi MCP-palvelin voi edustaa yrityksen dokumenttivarastoa, jolloin agentit voivat hakea tarpeellista tietoa pyynnöstä. Toinen palvelin voi hoitaa tiettyjä toimintoja, kuten sähköpostien lähettämistä tai tietueiden päivittämistä. Agentin näkökulmasta nämä ovat vain työkaluja, joita se voi käyttää — jotkut työkalut palauttavat dataa (tietokontekstia), toiset suorittavat toimintoja. MCP hallinnoi molempia tehokkaasti.
 
-Agentti, joka yhdistyy MCP-palvelimeen, oppii automaattisesti palvelimen saatavilla olevat ominaisuudet ja käytettävissä olevan datan standardoidun muodon kautta. Tämä standardisointi mahdollistaa dynaamisen työkalujen saatavuuden. Esimerkiksi uuden MCP-palvelimen lisääminen agentin järjestelmään tekee sen toiminnot välittömästi käytettäväksi ilman, että agentin ohjeita tarvitsee muokata.
+Agentti, joka yhdistyy MCP-palvelimeen, oppii automaattisesti palvelimen saatavilla olevat ominaisuudet ja käytettävissä olevan datan standardoidun muodon kautta. Tämä standardointi mahdollistaa dynaamisen työkalujen saatavuuden. Esimerkiksi uuden MCP-palvelimen lisääminen agentin järjestelmään tekee sen toiminnot heti käyttökelpoisiksi ilman lisämuokkauksia agentin ohjeistuksiin.
 
-Tämä virtaviivainen integraatio vastaa mermaid-kaaviossa kuvattua toimintamallia, jossa palvelimet tarjoavat sekä työkaluja että tietoa, varmistaen saumattoman yhteistyön järjestelmien välillä.
+Tämä virtaviivaistettu integraatio vastaa mermaid-kaaviossa kuvattua virtaa, jossa palvelimet tarjoavat sekä työkaluja että tietoa, varmistaen sujuvan yhteistyön järjestelmien välillä.
 
 ### 👉 Esimerkki: Skaalautuva agenttiratkaisu
 
 ```mermaid
+---
+title: Scalable Agent Solution with MCP
+description: A diagram illustrating how a user interacts with an LLM that connects to multiple MCP servers, with each server providing both knowledge and tools, creating a scalable AI system architecture
+---
 graph TD
     User -->|Prompt| LLM
     LLM -->|Response| User
@@ -200,30 +208,96 @@ graph TD
     end
 ```
 
+### 🔄 Kehittyneet MCP-skenaariot, joissa LLM:t ovat myös asiakkaalla
+
+Perus-MCP-arkkitehtuurin lisäksi on kehittyneitä tilanteita, joissa sekä asiakas että palvelin sisältävät LLM-malleja, mahdollistaen monimutkaisempia vuorovaikutuksia:
+
+```mermaid
+---
+title: Advanced MCP Scenarios with Client-Server LLM Integration
+description: A sequence diagram showing the detailed interaction flow between user, client application, client LLM, multiple MCP servers, and server LLM, illustrating tool discovery, user interaction, direct tool calling, and feature negotiation phases
+---
+sequenceDiagram
+    autonumber
+    actor User as 👤 User
+    participant ClientApp as 🖥️ Client App
+    participant ClientLLM as 🧠 Client LLM
+    participant Server1 as 🔧 MCP Server 1
+    participant Server2 as 📚 MCP Server 2
+    participant ServerLLM as 🤖 Server LLM
+    
+    %% Discovery Phase
+    rect rgb(220, 240, 255)
+        Note over ClientApp, Server2: TOOL DISCOVERY PHASE
+        ClientApp->>+Server1: Request available tools/resources
+        Server1-->>-ClientApp: Return tool list (JSON)
+        ClientApp->>+Server2: Request available tools/resources
+        Server2-->>-ClientApp: Return tool list (JSON)
+        Note right of ClientApp: Store combined tool<br/>catalog locally
+    end
+    
+    %% User Interaction
+    rect rgb(255, 240, 220)
+        Note over User, ClientLLM: USER INTERACTION PHASE
+        User->>+ClientApp: Enter natural language prompt
+        ClientApp->>+ClientLLM: Forward prompt + tool catalog
+        ClientLLM->>-ClientLLM: Analyze prompt & select tools
+    end
+    
+    %% Scenario A: Direct Tool Calling
+    alt Direct Tool Calling
+        rect rgb(220, 255, 220)
+            Note over ClientApp, Server1: SCENARIO A: DIRECT TOOL CALLING
+            ClientLLM->>+ClientApp: Request tool execution
+            ClientApp->>+Server1: Execute specific tool
+            Server1-->>-ClientApp: Return results
+            ClientApp->>+ClientLLM: Process results
+            ClientLLM-->>-ClientApp: Generate response
+            ClientApp-->>-User: Display final answer
+        end
+    
+    %% Scenario B: Feature Negotiation (VS Code style)
+    else Feature Negotiation (VS Code style)
+        rect rgb(255, 220, 220)
+            Note over ClientApp, ServerLLM: SCENARIO B: FEATURE NEGOTIATION
+            ClientLLM->>+ClientApp: Identify needed capabilities
+            ClientApp->>+Server2: Negotiate features/capabilities
+            Server2->>+ServerLLM: Request additional context
+            ServerLLM-->>-Server2: Provide context
+            Server2-->>-ClientApp: Return available features
+            ClientApp->>+Server2: Call negotiated tools
+            Server2-->>-ClientApp: Return results
+            ClientApp->>+ClientLLM: Process results
+            ClientLLM-->>-ClientApp: Generate response
+            ClientApp-->>-User: Display final answer
+        end
+    end
+```
+
 ## 🔐 MCP:n käytännön hyödyt
 
-Tässä MCP:n käytön konkreettiset edut:
+Tässä MCP:n käytännön hyödyt:
 
-- **Ajantasaisuus**: Mallit voivat käyttää tuoretta tietoa koulutusdatan ulkopuolelta  
-- **Kykyjen laajennus**: Mallit voivat hyödyntää erikoistuneita työkaluja tehtäviin, joihin ne eivät ole koulutettuja  
-- **Vähemmän harhaluuloja**: Ulkoiset tietolähteet tarjoavat faktapohjan  
-- **Tietosuoja**: Herkkä data voi pysyä suojatuissa ympäristöissä sen sijaan, että se upotettaisiin kehotteisiin
+- **Ajantasaisuus**: Mallit pääsevät käsiksi ajankohtaiseen tietoon koulutusdatan ulkopuolella  
+- **Kyvykkyyksien laajennus**: Mallit voivat hyödyntää erikoistuneita työkaluja tehtäviin, joihin niitä ei ole koulutettu  
+- **Harhojen vähentäminen**: Ulkoiset tietolähteet tarjoavat faktapohjan  
+- **Yksityisyys**: Arkaluonteinen data voi pysyä suojatuissa ympäristöissä eikä sisälly kehotteisiin
 
-## 📌 Tärkeimmät opit
+## 📌 Keskeiset opit
 
-Seuraavat ovat MCP:n käytön keskeiset opit:
+Tärkeimmät opit MCP:n käytöstä:
 
-- **MCP** standardisoi tekoälymallien vuorovaikutuksen työkalujen ja datan kanssa  
+- **MCP** standardisoi, miten tekoälymallit kommunikoivat työkalujen ja datan kanssa  
 - Edistää **laajennettavuutta, johdonmukaisuutta ja yhteentoimivuutta**  
-- MCP auttaa **kehitysaikojen lyhentämisessä, luotettavuuden parantamisessa ja mallien kyvykkyyksien laajentamisessa**  
-- Asiakas-palvelin-arkkitehtuuri mahdollistaa **joustavat, laajennettavat tekoälysovellukset**
+- MCP auttaa **vähentämään kehitysaikaa, parantamaan luotettavuutta ja laajentamaan mallien kyvykkyyksiä**  
+- Asiakas-palvelin-arkkitehtuuri **mahdollistaa joustavat, laajennettavat tekoälysovellukset**
 
 ## 🧠 Harjoitus
 
-Ajattele tekoälysovellusta, jonka haluaisit rakentaa.
+Pohdi tekoälysovellusta, jota haluaisit rakentaa.
 
-- Mitkä **ulkoiset työkalut tai data** voisivat parantaa sen kykyjä?  
-- Miten MCP voisi tehdä integraatiosta **yksinkertaisempaa ja luotettavampaa?**
+- Mitkä **ulkoiset työkalut tai data** voisivat parantaa sen kyvykkyyksiä?  
+- Miten MCP voisi tehdä integraatiosta **yksinkertaisempaa ja luotettavampaa**?
 
 ## Lisäresurssit
 
@@ -231,7 +305,7 @@ Ajattele tekoälysovellusta, jonka haluaisit rakentaa.
 
 ## Mitä seuraavaksi
 
-Seuraava: [Luku 1: Keskeiset käsitteet](/01-CoreConcepts/README.md)
+Seuraava: [Luku 1: Peruskäsitteet](/01-CoreConcepts/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulee pitää auktoritatiivisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkintojen seurauksista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulee pitää auktoritatiivisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaisen ihmiskääntäjän käyttöä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinymmärryksistä tai tulkinnoista.

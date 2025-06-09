@@ -2,65 +2,66 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-17T09:16:01+00:00",
+  "translation_date": "2025-05-29T20:23:16+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "br"
 }
 -->
-# Executando este exemplo
+# Running this sample
 
-É recomendado instalar `uv`, mas não é obrigatório. Veja [instruções](https://docs.astral.sh/uv/#highlights)
+You're recommended to install `uv` but it's not a must, see [instructions](https://docs.astral.sh/uv/#highlights)
 
-## -0- Crie um ambiente virtual
+## -0- Create a virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Ative o ambiente virtual
+## -1- Activate the virtual environment
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Instale as dependências
+## -2- Install the dependencies
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- Execute o exemplo
+## -3- Run the sample
+
 
 ```bash
 mcp run server.py
 ```
 
-## -4- Teste o exemplo
+## -4- Test the sample
 
-Com o servidor rodando em um terminal, abra outro terminal e execute o seguinte comando:
+With the server running in one terminal, open another terminal and run the following command:
 
 ```bash
 mcp dev server.py
 ```
 
-Isso deve iniciar um servidor web com uma interface visual que permite testar o exemplo.
+This should start a web server with a visual interface allowing you to test the sample.
 
-Uma vez que o servidor estiver conectado:
+Once the server is connected: 
 
-- tente listar as ferramentas e execute `add`, with args 2 and 4, you should see 6 in the result.
+- try listing tools and run `add`, with args 2 and 4, you should see 6 in the result.
 - go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
 
 ### Testing in ClI mode
 
-The inspector you ran is actually a Node.js app and `mcp dev`, que é um wrapper em torno disso.
+The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
 
-Você pode iniciá-lo diretamente no modo CLI executando o seguinte comando:
+You can launch it directly in CLI mode by running the following command:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Isso irá listar todas as ferramentas disponíveis no servidor. Você deve ver o seguinte resultado:
+This will list all the tools available in the server. You should see the following output:
 
 ```text
 {
@@ -91,13 +92,13 @@ Isso irá listar todas as ferramentas disponíveis no servidor. Você deve ver o
 }
 ```
 
-Para invocar uma ferramenta, digite:
+To invoke a tool type:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Você deve ver o seguinte resultado:
+You should see the following output:
 
 ```text
 {
@@ -112,8 +113,8 @@ Você deve ver o seguinte resultado:
 ```
 
 > ![!TIP]
-> Geralmente é muito mais rápido executar o inspector no modo CLI do que no navegador.
-> Leia mais sobre o inspector [aqui](https://github.com/modelcontextprotocol/inspector).
+> It's usually a lot faster to run the ispector in CLI mode than in the browser.
+> Read more about the inspector [here](https://github.com/modelcontextprotocol/inspector).
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional por um humano. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

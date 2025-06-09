@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:38:39+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T18:14:16+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "en"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 This project is a **minimal Spring Boot application** that serves as both:
 
-* a **Spring Authorization Server** (providing JWT access tokens via the `client_credentials` flow), and  
+* a **Spring Authorization Server** (issuing JWT access tokens via the `client_credentials` flow), and  
 * a **Resource Server** (securing its own `/hello` endpoint).
 
 It replicates the setup shown in the [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
@@ -36,9 +36,9 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Testing the OAuth2 Configuration
 
-You can test the OAuth2 security setup with the following steps:
+You can verify the OAuth2 security setup by following these steps:
 
-### 1. Verify the server is running and secured
+### 1. Confirm the server is running and secured
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-A successful response with "Hello from MCP OAuth2 Demo!" confirms that the OAuth2 setup is functioning correctly.
+A successful response with "Hello from MCP OAuth2 Demo!" indicates the OAuth2 configuration is working as expected.
 
 ---
 
@@ -116,7 +116,13 @@ Add this inbound policy to your API:
 </inbound>
 ```
 
-APIM will retrieve the JWKS and validate every request.
+APIM will retrieve the JWKS and validate each request.
+
+---
+
+## What's next
+
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

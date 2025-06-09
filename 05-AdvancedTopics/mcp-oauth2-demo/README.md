@@ -108,3 +108,9 @@ Add this inbound policy to your API:
 ```
 
 APIM will fetch the JWKS and validate every request.
+
+---
+
+## What's next
+
+- [Root contexts](../mcp-root-contexts/README.md)

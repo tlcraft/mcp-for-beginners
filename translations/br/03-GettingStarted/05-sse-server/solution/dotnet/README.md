@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-17T11:55:19+00:00",
+  "translation_date": "2025-05-29T20:24:16+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "br"
 }
@@ -35,8 +35,8 @@ Isso deve iniciar um servidor web com uma interface visual que permite testar o 
 
 Uma vez que o servidor esteja conectado:
 
-- tente listar ferramentas e executar `add`, com argumentos 2 e 4, você deve ver 6 no resultado.
-- vá para recursos e modelo de recurso e chame "greeting", digite um nome e você deve ver uma saudação com o nome que você forneceu.
+- tente listar as ferramentas e executar `add`, com os argumentos 2 e 4, você deve ver 6 no resultado.
+- vá para resources e resource template e chame "greeting", digite um nome e você verá uma saudação com o nome fornecido.
 
 ### Testando no modo CLI
 
@@ -84,7 +84,7 @@ Para invocar uma ferramenta, digite:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Você deve ver a seguinte saída:
+Você deverá ver a seguinte saída:
 
 ```text
 {
@@ -99,8 +99,8 @@ Você deve ver a seguinte saída:
 ```
 
 > ![!TIP]
-> Geralmente é muito mais rápido executar o inspetor no modo CLI do que no navegador.
-> Leia mais sobre o inspetor [aqui](https://github.com/modelcontextprotocol/inspector).
+> Geralmente é muito mais rápido executar o inspector no modo CLI do que no navegador.
+> Leia mais sobre o inspector [aqui](https://github.com/modelcontextprotocol/inspector).
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, é recomendada a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações errôneas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

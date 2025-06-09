@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:41:03+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T18:54:00+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "pt"
 }
 -->
-# Demonstração de OAuth2 do MCP
+# MCP OAuth2 Demo
 
-Este projeto é uma **aplicação Spring Boot mínima** que atua como:
+Este projeto é uma **aplicação Spring Boot minimalista** que atua como:
 
-* um **Servidor de Autorização Spring** (emitindo tokens de acesso JWT via o fluxo `client_credentials`), e  
-* um **Servidor de Recursos** (protegendo seu próprio endpoint `/hello`).
+* um **Spring Authorization Server** (emitindo tokens de acesso JWT via o fluxo `client_credentials`), e  
+* um **Resource Server** (protegendo seu próprio endpoint `/hello`).
 
-Ele reflete a configuração mostrada no [post do blog Spring (2 Abr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Ele espelha a configuração mostrada no [post do blog Spring (2 de abril de 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Testando a Configuração OAuth2
+## Testando a configuração OAuth2
 
 Você pode testar a configuração de segurança OAuth2 com os seguintes passos:
 
-### 1. Verifique se o servidor está em execução e protegido
+### 1. Verifique se o servidor está rodando e protegido
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Obtenha um token de acesso usando credenciais de cliente
+### 2. Obtenha um token de acesso usando client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Nota: O cabeçalho de Autenticação Básica (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Nota: O cabeçalho de Autenticação Basic (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
 ### 3. Acesse o endpoint protegido usando o token
 
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Uma resposta bem-sucedida com "Olá do Demonstração de OAuth2 do MCP!" confirma que a configuração OAuth2 está funcionando corretamente.
+Uma resposta bem-sucedida com "Hello from MCP OAuth2 Demo!" confirma que a configuração OAuth2 está funcionando corretamente.
 
 ---
 
-## Construção de contêiner
+## Build do container
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Implantar em **Azure Container Apps**
+## Deploy no **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-O FQDN de entrada torna-se seu **emissor** (`https://<fqdn>`).  
+O FQDN de ingresso se torna seu **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
-## Integrar ao **Azure API Management**
+## Integração com **Azure API Management**
 
-Adicione esta política de entrada à sua API:
+Adicione esta política inbound à sua API:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Adicione esta política de entrada à sua API:
 </inbound>
 ```
 
-APIM buscará o JWKS e validará cada solicitação.
+O APIM buscará o JWKS e validará cada requisição.
+
+---
+
+## Próximos passos
+
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações errôneas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, por favor, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações errôneas decorrentes do uso desta tradução.

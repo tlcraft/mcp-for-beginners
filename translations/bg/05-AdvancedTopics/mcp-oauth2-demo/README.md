@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:44:59+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:34:47+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "bg"
 }
 -->
-# MCP OAuth2 Демонстрация
+# MCP OAuth2 Demo
 
-Този проект е **минимално Spring Boot приложение**, което действа като:
+Този проект е **минимално Spring Boot приложение**, което изпълнява ролята както на:
 
-* **Spring Authorization Server** (издаващ JWT достъпни токени чрез `client_credentials` потока), и  
-* **Ресурсен сървър** (защитаващ собствения си `/hello` крайна точка).
+* **Spring Authorization Server** (издава JWT достъпни токени чрез `client_credentials` flow), така и  
+* **Resource Server** (защитава собствената си `/hello` крайна точка).
 
-Той отразява настройката, показана в [Spring блог поста (2 април 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Той отразява конфигурацията, показана в [Spring блог поста (2 април 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,16 +36,16 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Тестване на OAuth2 конфигурацията
 
-Можете да тествате OAuth2 конфигурацията за сигурност със следните стъпки:
+Можете да тествате OAuth2 сигурността чрез следните стъпки:
 
-### 1. Уверете се, че сървърът работи и е защитен
+### 1. Проверете дали сървърът работи и е защитен
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Вземете достъпен токен, използвайки клиентски идентификационни данни
+### 2. Вземете достъпен токен с помощта на клиентски данни
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Забележка: Заглавката за основна автентикация (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Забележка: Basic Authentication хедърът (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Достъп до защитената крайна точка, използвайки токена
+### 3. Достъп до защитената крайна точка с токена
 
 ```bash
 # Using the saved token
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Деплой в **Azure Container Apps**
+## Разгръщане в **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,12 +95,12 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Пълното име на входа става вашият **издател** (`https://<fqdn>`).  
+Ingress FQDN става вашият **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
-## Включване в **Azure API Management**
+## Свързване с **Azure API Management**
 
 Добавете тази входяща политика към вашето API:
 
@@ -116,7 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM ще извлече JWKS и ще валидира всяка заявка.
+APIM ще изтегли JWKS и ще валидира всяка заявка.
+
+---
+
+## Какво следва
+
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Отказ от отговорност**:  
-Този документ е преведен с помощта на AI услуга за превод [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да било недоразумения или погрешни тълкувания, произтичащи от използването на този превод.
+Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или погрешни тълкувания, произтичащи от използването на този превод.

@@ -2,65 +2,65 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "717f34718a773f6cf52d8445e40a96bf",
-  "translation_date": "2025-05-17T12:47:16+00:00",
+  "translation_date": "2025-05-27T16:23:27+00:00",
   "source_file": "03-GettingStarted/07-testing/README.md",
   "language_code": "cs"
 }
 -->
-## Testování a ladění
+## Testing and Debugging
 
-Než začnete testovat svůj MCP server, je důležité porozumět dostupným nástrojům a osvědčeným postupům pro ladění. Efektivní testování zajišťuje, že se váš server chová podle očekávání, a pomáhá rychle identifikovat a řešit problémy. Následující část obsahuje doporučené přístupy pro ověření vaší implementace MCP.
+قبل أن تبدأ في اختبار خادم MCP الخاص بك، من المهم أن تفهم الأدوات المتاحة وأفضل الممارسات في عملية التصحيح. يضمن الاختبار الفعّال أن يعمل الخادم كما هو متوقع ويساعدك على تحديد المشكلات وحلها بسرعة. يوضح القسم التالي الطرق الموصى بها للتحقق من تنفيذ MCP الخاص بك.
 
-## Přehled
+## Overview
 
-Tato lekce se zabývá tím, jak vybrat správný přístup k testování a nejúčinnější testovací nástroj.
+تغطي هذه الدرس كيفية اختيار النهج الصحيح للاختبار وأفضل الأدوات المستخدمة في ذلك.
 
-## Cíle učení
+## Learning Objectives
 
-Na konci této lekce budete schopni:
+بنهاية هذا الدرس، ستكون قادرًا على:
 
-- Popsat různé přístupy k testování.
-- Používat různé nástroje k efektivnímu testování vašeho kódu.
+- وصف مختلف الأساليب للاختبار.
+- استخدام أدوات مختلفة لاختبار الكود بفعالية.
 
-## Testování MCP serverů
+## Testing MCP Servers
 
-MCP poskytuje nástroje, které vám pomohou testovat a ladit vaše servery:
+يوفر MCP أدوات تساعدك على اختبار وتصحيح خوادمك:
 
-- **MCP Inspector**: Nástroj příkazového řádku, který lze spustit jak jako CLI nástroj, tak jako vizuální nástroj.
-- **Manuální testování**: Můžete použít nástroj jako curl k provádění webových požadavků, ale jakýkoli nástroj schopný provádět HTTP požadavky bude stačit.
-- **Jednotkové testování**: Je možné použít váš oblíbený testovací rámec k testování funkcí jak serveru, tak klienta.
+- **MCP Inspector**: أداة سطر أوامر يمكن تشغيلها كأداة CLI وأيضًا كأداة بصرية.
+- **الاختبار اليدوي**: يمكنك استخدام أداة مثل curl لإجراء طلبات ويب، لكن أي أداة تدعم HTTP مناسبة.
+- **الاختبار الوحدوي**: يمكنك استخدام إطار الاختبار المفضل لديك لاختبار ميزات كل من الخادم والعميل.
 
-### Použití MCP Inspector
+### Using MCP Inspector
 
-Použití tohoto nástroje jsme popsali v předchozích lekcích, ale pojďme si o něm povědět trochu obecněji. Je to nástroj postavený na Node.js a můžete jej použít voláním `npx`, což dočasně stáhne a nainstaluje samotný nástroj a po dokončení vašeho požadavku se automaticky vyčistí.
+لقد وصفنا استخدام هذه الأداة في الدروس السابقة، ولكن دعنا نتحدث عنها بشكل عام. هي أداة مبنية على Node.js ويمكنك استخدامها عن طريق استدعاء الملف التنفيذي `npx` الذي سيقوم بتحميل الأداة وتثبيتها مؤقتًا ثم ينظف نفسه بعد الانتهاء من تنفيذ طلبك.
 
-[MCP Inspector](https://github.com/modelcontextprotocol/inspector) vám pomáhá:
+يساعدك [MCP Inspector](https://github.com/modelcontextprotocol/inspector) في:
 
-- **Objevovat schopnosti serveru**: Automaticky detekovat dostupné zdroje, nástroje a prompty
-- **Testovat provádění nástrojů**: Zkoušet různé parametry a vidět odpovědi v reálném čase
-- **Zobrazovat metadata serveru**: Zkoumat informace o serveru, schémata a konfigurace
+- **اكتشاف قدرات الخادم**: الكشف التلقائي عن الموارد المتاحة، الأدوات، والتعليمات
+- **اختبار تنفيذ الأدوات**: تجربة معلمات مختلفة ورؤية الردود في الوقت الفعلي
+- **عرض بيانات الخادم التعريفية**: فحص معلومات الخادم، المخططات، والإعدادات
 
-Typické spuštění nástroje vypadá takto:
+تشغيل نموذجي للأداة يبدو كالتالي:
 
 ```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Výše uvedený příkaz spustí MCP a jeho vizuální rozhraní a otevře lokální webové rozhraní ve vašem prohlížeči. Můžete očekávat, že uvidíte dashboard zobrazující vaše registrované MCP servery, jejich dostupné nástroje, zdroje a prompty. Rozhraní vám umožňuje interaktivně testovat provádění nástrojů, zkoumat metadata serveru a zobrazovat odpovědi v reálném čase, což usnadňuje ověřování a ladění vašich implementací MCP serveru.
+الأمر أعلاه يبدأ MCP وواجهته البصرية ويطلق واجهة ويب محلية في متصفحك. يمكنك توقع رؤية لوحة تحكم تعرض خوادم MCP المسجلة، الأدوات المتاحة، الموارد، والتعليمات. تتيح الواجهة اختبار تنفيذ الأدوات بشكل تفاعلي، فحص بيانات الخادم التعريفية، ومشاهدة الردود في الوقت الحقيقي، مما يسهل التحقق من صحة وتنقيح تنفيذات خادم MCP الخاص بك.
 
-Takto to může vypadat: ![Inspector](../../../../translated_images/connect.e0d648e6ecb359d05b60bba83261a6e6e73feb05290c47543a9994ca02e78886.cs.png)
+إليك كيف قد تبدو: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.cs.png)
 
-Tento nástroj můžete také spustit v režimu CLI, v takovém případě přidáte atribut `--cli`. Zde je příklad spuštění nástroje v režimu "CLI", který vypíše všechny nástroje na serveru:
+يمكنك أيضًا تشغيل هذه الأداة في وضع CLI حيث تضيف السمة `--cli`. إليك مثالًا لتشغيل الأداة في وضع "CLI" الذي يعرض جميع الأدوات على الخادم:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
 ```
 
-### Manuální testování
+### Manual Testing
 
-Kromě spuštění inspektorového nástroje pro testování schopností serveru je dalším podobným přístupem spuštění klienta schopného používat HTTP, například curl.
+بجانب تشغيل أداة المفتش لاختبار قدرات الخادم، هناك طريقة مشابهة وهي تشغيل عميل قادر على استخدام HTTP مثل curl.
 
-S curl můžete testovat MCP servery přímo pomocí HTTP požadavků:
+باستخدام curl، يمكنك اختبار خوادم MCP مباشرةً عبر طلبات HTTP:
 
 ```bash
 # Example: Test server metadata
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Jak můžete vidět z výše uvedeného použití curl, používáte POST požadavek k vyvolání nástroje pomocí datového obsahu obsahujícího název nástroje a jeho parametry. Použijte přístup, který vám nejlépe vyhovuje. CLI nástroje obecně bývají rychlejší na použití a umožňují skriptování, což může být užitečné v prostředí CI/CD.
+كما ترى في المثال أعلاه لاستخدام curl، تستخدم طلب POST لاستدعاء أداة مع حمولة تتضمن اسم الأداة ومعلماتها. استخدم الطريقة التي تناسبك. أدوات CLI عادةً ما تكون أسرع في الاستخدام وتميل لأن تُستخدم في السكريبتات، وهو ما يكون مفيدًا في بيئة CI/CD.
 
-### Jednotkové testování
+### Unit Testing
 
-Vytvořte jednotkové testy pro vaše nástroje a zdroje, abyste zajistili, že fungují podle očekávání. Zde je ukázkový testovací kód.
+أنشئ اختبارات وحدوية لأدواتك ومواردك لضمان عملها كما هو متوقع. إليك مثال على كود اختبار.
 
 ```python
 import pytest
@@ -129,33 +129,33 @@ async def test_list_tools_cursor_parameter():
     
 ```
 
-Předchozí kód dělá následující:
+الكود السابق يقوم بما يلي:
 
-- Využívá rámec pytest, který vám umožňuje vytvářet testy jako funkce a používat příkazy assert.
-- Vytváří MCP server se dvěma různými nástroji.
-- Používá příkaz `assert`, aby zkontroloval, že určité podmínky jsou splněny.
+- يستخدم إطار عمل pytest الذي يتيح إنشاء اختبارات كدوال واستخدام عبارات assert.
+- ينشئ خادم MCP يحتوي على أداتين مختلفتين.
+- يستخدم عبارة `assert` للتحقق من تحقق شروط معينة.
 
-Podívejte se na [celý soubor zde](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
+اطلع على [الملف الكامل هنا](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-Na základě výše uvedeného souboru můžete testovat svůj vlastní server, abyste zajistili, že schopnosti jsou vytvořeny, jak by měly být.
+استنادًا إلى الملف أعلاه، يمكنك اختبار خادمك الخاص لضمان إنشاء القدرات كما ينبغي.
 
-Všechny hlavní SDK mají podobné testovací sekce, takže se můžete přizpůsobit vybranému runtime.
+جميع حزم SDK الرئيسية تحتوي على أقسام اختبار مماثلة، لذا يمكنك التكيف مع بيئة التشغيل التي تختارها.
 
-## Ukázky
+## Samples 
 
-- [Java Kalkulačka](../samples/java/calculator/README.md)
-- [.Net Kalkulačka](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Kalkulačka](../samples/javascript/README.md)
-- [TypeScript Kalkulačka](../samples/typescript/README.md)
-- [Python Kalkulačka](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python) 
 
-## Další zdroje
+## Additional Resources
 
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 
-## Co dál
+## What's Next
 
-- Další: [Nasazení](/03-GettingStarted/08-deployment/README.md)
+- التالي: [Deployment](/03-GettingStarted/08-deployment/README.md)
 
-**Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI překladatele [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, prosím, mějte na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo chybné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo mylné výklady vyplývající z použití tohoto překladu.

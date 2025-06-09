@@ -2,86 +2,59 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be745fda2aef9ee7ea772119fc6cdcf7",
-  "translation_date": "2025-05-17T14:19:55+00:00",
+  "translation_date": "2025-05-27T16:26:01+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/src/next-steps.md",
   "language_code": "cs"
 }
 -->
-# Další kroky po `azd init`
+// Next Steps after `azd init`
 
-## Obsah
+// Table of Contents
 
-1. [Další kroky](../../../../../../04-PracticalImplementation/samples/csharp/src)
-2. [Co bylo přidáno](../../../../../../04-PracticalImplementation/samples/csharp/src)
-3. [Účtování](../../../../../../04-PracticalImplementation/samples/csharp/src)
-4. [Řešení problémů](../../../../../../04-PracticalImplementation/samples/csharp/src)
+// 1. Next Steps
+// 2. What was added
+// 3. Billing
+// 4. Troubleshooting
 
-## Další kroky
+// Next Steps
 
-### Zajištění infrastruktury a nasazení aplikačního kódu
+// Provision infrastructure and deploy application code
 
-Spusťte `azd up` pro zajištění vaší infrastruktury a nasazení do Azure v jednom kroku (nebo spusťte `azd provision` a následně `azd deploy` pro splnění úkolů samostatně). Navštivte uvedené koncové body služby, abyste viděli svou aplikaci v provozu!
+// Run `azd up` to provision your infrastructure and deploy to Azure in one step (or run `azd provision` then `azd deploy` to accomplish the tasks separately). Visit the service endpoints listed to see your application up-and-running!
 
-Pokud potřebujete vyřešit nějaké problémy, podívejte se na [řešení problémů](../../../../../../04-PracticalImplementation/samples/csharp/src).
+// To troubleshoot any issues, see troubleshooting.
 
-### Konfigurace CI/CD pipeline
+// Configure CI/CD pipeline
 
-Spusťte `azd pipeline config -e <environment name>` pro konfiguraci nasazovacího pipeline, který se bezpečně připojí k Azure. Zde je specifikováno jméno prostředí pro konfiguraci pipeline s jiným prostředím za účelem izolace. Spusťte `azd env list` a `azd env set` pro znovuzvolení výchozího prostředí po tomto kroku.
+// Run `azd pipeline config -e <environment name>` to configure the deployment pipeline to connect securely to Azure. An environment name is specified here to configure the pipeline with a different environment for isolation purposes. Run `azd env list` and `azd env set` to reselect the default environment after this step.
 
-- Nasazení pomocí `GitHub Actions`: Zvolte `GitHub`, když budete dotázáni na poskytovatele. Pokud váš projekt postrádá soubor `azure-dev.yml`, přijměte výzvu k jeho přidání a pokračujte v konfiguraci pipeline.
+// - Deploying with `GitHub Actions`: Select `GitHub` when prompted for a provider. If your project lacks the `azure-dev.yml` file, accept the prompt to add it and proceed with pipeline configuration.
 
-- Nasazení pomocí `Azure DevOps Pipeline`: Zvolte `Azure DevOps`, když budete dotázáni na poskytovatele. Pokud váš projekt postrádá soubor `azure-dev.yml`, přijměte výzvu k jeho přidání a pokračujte v konfiguraci pipeline.
+// - Deploying with `Azure DevOps Pipeline`: Select `Azure DevOps` when prompted for a provider. If your project lacks the `azure-dev.yml` file, accept the prompt to add it and proceed with pipeline configuration.
 
-## Co bylo přidáno
+// What was added
 
-### Konfigurace infrastruktury
+// Infrastructure configuration
 
-Pro popis infrastruktury a aplikace byl přidán `azure.yaml` s následující strukturou adresářů:
+// To describe the infrastructure and application, an `azure.yaml` was added with the following directory structure:
 
-```yaml
+// ```yaml
 - azure.yaml     # azd project configuration
 ```
 
-Tento soubor obsahuje jedinou službu, která odkazuje na App Host vašeho projektu. Když je to potřeba, použijte `azd` generates the required infrastructure as code in memory and uses it.
+// This file contains a single service, which references your project's App Host. When needed, run azd infra synth to persist it to disk.
 
-If you would like to see or modify the infrastructure that `azd` uses, run `azd infra synth` k jeho uložení na disk.
+// If you do this, some additional directories will be created:
 
-Pokud to uděláte, některé další adresáře budou vytvořeny:
-
-```yaml
+// ```yaml
 - infra/            # Infrastructure as Code (bicep) files
   - main.bicep      # main deployment module
   - resources.bicep # resources shared across your application's services
 ```
 
-Navíc, pro každý projektový zdroj, na který váš App Host odkazuje, bude vytvořen `containerApp.tmpl.yaml` file will be created in a directory named `manifests` next the project file. This file contains the infrastructure as code for running the project on Azure Container Apps.
+// In addition, for each project resource referenced by your app host, a containerApp.tmpl.yaml file will be generated.
 
-*Note*: Once you have synthesized your infrastructure to disk, changes made to your App Host will not be reflected in the infrastructure. You can re-generate the infrastructure by running `azd infra synth` again. It will prompt you before overwriting files. You can pass `--force` to force `azd infra synth` to overwrite the files without prompting.
+// For more details on how to convert your project, visit our official docs at https://learn.microsoft.com/azure/developer/azure-developer-cli/make-azd-compatible?pivots=azd-convert.
 
-*Note*: `azd infra synth` is currently an alpha feature and must be explicitly enabled by running `azd config set alpha.infraSynth on`. You only need to do this once.
-
-## Billing
-
-Visit the *Cost Management + Billing* page in Azure Portal to track current spend. For more information about how you're billed, and how you can monitor the costs incurred in your Azure subscriptions, visit [billing overview](https://learn.microsoft.com/azure/developer/intro/azure-developer-billing).
-
-## Troubleshooting
-
-Q: I visited the service endpoint listed, and I'm seeing a blank page, a generic welcome page, or an error page.
-
-A: Your service may have failed to start, or it may be missing some configuration settings. To investigate further:
-
-1. Run `azd show`. Click on the link under "View in Azure Portal" to open the resource group in Azure Portal.
-2. Navigate to the specific Container App service that is failing to deploy.
-3. Click on the failing revision under "Revisions with Issues".
-4. Review "Status details" for more information about the type of failure.
-5. Observe the log outputs from Console log stream and System log stream to identify any errors.
-6. If logs are written to disk, use *Console* in the navigation to connect to a shell within the running container.
-
-For more troubleshooting information, visit [Container Apps troubleshooting](https://learn.microsoft.com/azure/container-apps/troubleshooting). 
-
-### Additional information
-
-For additional information about setting up your `azd` projekt, navštivte naše oficiální [dokumentace](https://learn.microsoft.com/azure/developer/azure-developer-cli/make-azd-compatible?pivots=azd-convert).
-
-**Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za žádná nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo chybné výklady vzniklé použitím tohoto překladu.

@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e9490aedc71f99bc774af57b207a7adb",
-  "translation_date": "2025-05-17T12:34:25+00:00",
+  "translation_date": "2025-05-29T20:25:34+00:00",
   "source_file": "03-GettingStarted/06-aitk/solution/README.md",
   "language_code": "br"
 }
 -->
-# 📘 Solução da Tarefa: Ampliando Seu Servidor MCP Calculadora com uma Ferramenta de Raiz Quadrada
+# 📘 Solução da Tarefa: Expandindo Seu Servidor MCP da Calculadora com uma Ferramenta de Raiz Quadrada
 
 ## Visão Geral
-Nesta tarefa, você aprimorou seu servidor MCP calculadora adicionando uma nova ferramenta que calcula a raiz quadrada de um número. Essa adição permite que seu agente de IA lide com consultas matemáticas mais avançadas, como "Qual é a raiz quadrada de 16?" ou "Calcule √49," usando comandos em linguagem natural.
+Nesta tarefa, você aprimorou seu servidor MCP da calculadora adicionando uma nova ferramenta que calcula a raiz quadrada de um número. Essa adição permite que seu agente de IA lide com consultas matemáticas mais avançadas, como "Qual é a raiz quadrada de 16?" ou "Calcule √49", usando comandos em linguagem natural.
 
 ## 🛠️ Implementando a Ferramenta de Raiz Quadrada
-Para adicionar essa funcionalidade, você definiu uma nova função ferramenta no seu arquivo server.py. Aqui está a implementação:
+Para adicionar essa funcionalidade, você definiu uma nova função de ferramenta no seu arquivo server.py. Aqui está a implementação:
 
 ```python
 """
@@ -70,33 +70,11 @@ def sqrt(a: float) -> float:
 
 ## 🔍 Como Funciona
 
-- **Importe a ferramenta `math` module**: To perform mathematical operations beyond basic arithmetic, Python provides the built-in `math` module. This module includes a variety of mathematical functions and constants. By importing it using `import math`, you gain access to functions like `math.sqrt()`, which computes the square root of a number.
-- **Function Definition**: The `@server.tool()` decorator registers the `sqrt` function as a tool accessible by your AI agent.
-- **Input Parameter**: The function accepts a single argument `a` of type `float`.
-- **Error Handling**: If `a` is negative, the function raises a `ValueError` to prevent computing the square root of a negative number, which is not supported by the `math.sqrt()` function.
-- **Return Value**: For non-negative inputs, the function returns the square root of `a` using Python's built-in `math.sqrt()` method.
+- **Importe a ferramenta `math.sqrt()` usando `@server.tool()` para criar a função sqrt.**
+- Permitiu que seu agente de IA realizasse cálculos de raiz quadrada por meio de comandos em linguagem natural.
+- Praticou a adição de novas ferramentas e a reinicialização do servidor para integrar funcionalidades adicionais.
 
-## 🔄 Restarting the Server
-After adding the new `sqrt` tool, it's essential to restart your MCP server to ensure the agent recognizes and can utilize the newly added functionality.
-
-## 💬 Example Prompts to Test the New Tool
-Here are some natural language prompts you can use to test the square root functionality:
-
-- "What is the square root of 25?"
-- "Calculate the square root of 81."
-- "Find the square root of 0."
-- "What is the square root of 2.25?"
-
-These prompts should trigger the agent to invoke the `sqrt` tool and return the correct results.
-
-## ✅ Summary
-By completing this assignment, you've:
-
-- Extended your calculator MCP server with a new `sqrt`.
-- Habilitou seu agente de IA para lidar com cálculos de raiz quadrada através de comandos em linguagem natural.
-- Praticou a adição de novas ferramentas e o reinício do servidor para integrar funcionalidades adicionais.
-
-Sinta-se à vontade para experimentar mais, adicionando outras ferramentas matemáticas, como funções de exponenciação ou logaritmos, para continuar aprimorando as capacidades do seu agente!
+Sinta-se à vontade para experimentar mais, adicionando outras ferramentas matemáticas, como exponenciação ou funções logarítmicas, para continuar aprimorando as capacidades do seu agente!
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para alcançar precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações errôneas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

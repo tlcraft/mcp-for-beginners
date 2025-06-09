@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:45:16+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:36:42+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "sr"
 }
@@ -11,10 +11,10 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ovaj projekat je **minimalna Spring Boot aplikacija** koja funkcioniše kao:
 
-* **Spring Authorization Server** (izdaje JWT pristupne tokene putem `client_credentials` toka), i  
-* **Resource Server** (štiti svoj sopstveni `/hello` endpoint).
+* **Spring Authorization Server** (izdaje JWT pristupne tokene preko `client_credentials` toka), i  
+* **Resource Server** (štiti svoj `/hello` endpoint).
 
-Oponaša postavku prikazanu u [Spring blog postu (2. april 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Ona prati podešavanje prikazano u [Spring blog postu (2. apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -38,14 +38,14 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 Možete testirati OAuth2 sigurnosnu konfiguraciju sledećim koracima:
 
-### 1. Proverite da li server radi i da je osiguran
+### 1. Proverite da li server radi i da je zaštićen
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Dobijte pristupni token koristeći poverljive klijentske podatke
+### 2. Nabavite pristupni token koristeći klijentske kredencijale
 
 ```bash
 # Get and extract the full token response
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Napomena: Header za osnovnu autentifikaciju (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Napomena: Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
 ### 3. Pristupite zaštićenom endpointu koristeći token
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Implementacija na **Azure Container Apps**
+## Deploy na **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Ulazni FQDN postaje vaš **issuer** (`https://<fqdn>`).  
+Ingress FQDN postaje vaš **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
 ## Povezivanje sa **Azure API Management**
 
-Dodajte ovu ulaznu politiku vašem API-ju:
+Dodajte ovu inbound politiku vašem API-ju:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Dodajte ovu ulaznu politiku vašem API-ju:
 </inbound>
 ```
 
-APIM će preuzeti JWKS i validirati svaki zahtev.
+APIM će preuzimati JWKS i validirati svaki zahtev.
 
-**Одрицање од одговорности**:  
-Овај документ је преведен коришћењем услуге за превођење помоћу вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да обезбедимо тачност, молимо вас да будете свесни да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитативним извором. За критичне информације, препоручује се професионални превод од стране људи. Не сносимо одговорност за било каква неспоразума или погрешна тумачења која могу настати коришћењем овог превода.
+---
+
+## Šta dalje
+
+- [Root contexts](../mcp-root-contexts/README.md)
+
+**Odricanje od odgovornosti**:  
+Ovaj dokument je preveden korišćenjem AI prevodilačke usluge [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo tačnosti, imajte na umu da automatski prevodi mogu sadržavati greške ili netačnosti. Izvorni dokument na njegovom izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prevod. Nismo odgovorni za bilo kakva nesporazumevanja ili pogrešna tumačenja nastala upotrebom ovog prevoda.

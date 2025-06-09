@@ -1,113 +1,113 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a3cbadbf632058aa59a523ac659aa1df",
-  "translation_date": "2025-05-17T12:22:06+00:00",
+  "original_hash": "af6cee6052e751674c1d9022a4b204e6",
+  "translation_date": "2025-06-03T14:38:52+00:00",
   "source_file": "03-GettingStarted/06-aitk/README.md",
   "language_code": "el"
 }
 -->
-# Κατανάλωση ενός διακομιστή από την επέκταση AI Toolkit για το Visual Studio Code
+# Κατανάλωση ενός server από την επέκταση AI Toolkit για το Visual Studio Code
 
-Όταν δημιουργείτε έναν AI πράκτορα, δεν αφορά μόνο τη δημιουργία έξυπνων απαντήσεων. Είναι επίσης για να δώσετε στον πράκτορά σας τη δυνατότητα να αναλάβει δράση. Εκεί μπαίνει το Model Context Protocol (MCP). Το MCP διευκολύνει τους πράκτορες να έχουν πρόσβαση σε εξωτερικά εργαλεία και υπηρεσίες με συνεπή τρόπο. Σκεφτείτε το σαν να συνδέετε τον πράκτορά σας σε ένα εργαλειοθήκη που μπορεί *πραγματικά* να χρησιμοποιήσει.
+Όταν δημιουργείτε έναν AI agent, δεν πρόκειται μόνο για τη δημιουργία έξυπνων απαντήσεων· έχει σημασία και να δώσετε στον agent τη δυνατότητα να αναλαμβάνει δράση. Εδώ έρχεται το Model Context Protocol (MCP). Το MCP διευκολύνει τους agents να έχουν πρόσβαση σε εξωτερικά εργαλεία και υπηρεσίες με έναν συνεπή τρόπο. Σκεφτείτε το σαν να συνδέετε τον agent σας σε ένα κουτί εργαλείων που μπορεί *πραγματικά* να χρησιμοποιήσει.
 
-Ας πούμε ότι συνδέετε έναν πράκτορα στον διακομιστή MCP της αριθμομηχανής σας. Ξαφνικά, ο πράκτοράς σας μπορεί να εκτελεί μαθηματικές λειτουργίες απλώς λαμβάνοντας μια προτροπή όπως «Ποιο είναι το 47 επί 89;» — δεν χρειάζεται να σκληροκωδικοποιήσετε λογική ή να δημιουργήσετε προσαρμοσμένα APIs.
+Ας υποθέσουμε ότι συνδέετε έναν agent στον MCP server του calculator σας. Ξαφνικά, ο agent μπορεί να εκτελεί μαθηματικές πράξεις απλά λαμβάνοντας ένα prompt όπως «Πόσο κάνει το 47 επί 89;»—χωρίς να χρειάζεται να γράψετε χειροκίνητα λογική ή να φτιάξετε προσαρμοσμένα APIs.
 
 ## Επισκόπηση
 
-Αυτό το μάθημα καλύπτει πώς να συνδέσετε έναν διακομιστή MCP αριθμομηχανής σε έναν πράκτορα με την επέκταση [AI Toolkit](https://aka.ms/AIToolkit) στο Visual Studio Code, επιτρέποντας στον πράκτορά σας να εκτελεί μαθηματικές λειτουργίες όπως πρόσθεση, αφαίρεση, πολλαπλασιασμό και διαίρεση μέσω φυσικής γλώσσας.
+Αυτό το μάθημα καλύπτει πώς να συνδέσετε έναν calculator MCP server σε έναν agent με την επέκταση [AI Toolkit](https://aka.ms/AIToolkit) στο Visual Studio Code, δίνοντας στον agent σας τη δυνατότητα να εκτελεί μαθηματικές πράξεις όπως πρόσθεση, αφαίρεση, πολλαπλασιασμό και διαίρεση μέσω φυσικής γλώσσας.
 
-Το AI Toolkit είναι μια ισχυρή επέκταση για το Visual Studio Code που απλοποιεί την ανάπτυξη πρακτόρων. Οι μηχανικοί AI μπορούν εύκολα να δημιουργήσουν εφαρμογές AI αναπτύσσοντας και δοκιμάζοντας γενετικά μοντέλα AI—τοπικά ή στο cloud. Η επέκταση υποστηρίζει τα περισσότερα από τα κύρια γενετικά μοντέλα που είναι διαθέσιμα σήμερα.
+Το AI Toolkit είναι μια ισχυρή επέκταση για το Visual Studio Code που απλοποιεί την ανάπτυξη agents. Οι AI Engineers μπορούν εύκολα να δημιουργούν AI εφαρμογές αναπτύσσοντας και δοκιμάζοντας γενετικά μοντέλα AI—τοπικά ή στο cloud. Η επέκταση υποστηρίζει τα περισσότερα δημοφιλή γενετικά μοντέλα που υπάρχουν σήμερα.
 
-*Σημείωση*: Το AI Toolkit υποστηρίζει αυτήν τη στιγμή Python και TypeScript.
+*Note*: Το AI Toolkit υποστηρίζει προς το παρόν Python και TypeScript.
 
-## Στόχοι μάθησης
+## Στόχοι Μάθησης
 
-Μέχρι το τέλος αυτού του μαθήματος, θα είστε σε θέση να:
+Στο τέλος αυτού του μαθήματος, θα μπορείτε να:
 
-- Καταναλώνετε έναν διακομιστή MCP μέσω του AI Toolkit.
-- Διαμορφώνετε μια διαμόρφωση πράκτορα για να του επιτρέψετε να ανακαλύψει και να χρησιμοποιήσει εργαλεία που παρέχονται από τον διακομιστή MCP.
-- Χρησιμοποιείτε εργαλεία MCP μέσω φυσικής γλώσσας.
+- Καταναλώνετε έναν MCP server μέσω του AI Toolkit.
+- Ρυθμίζετε μια agent configuration ώστε να μπορεί να ανακαλύπτει και να χρησιμοποιεί εργαλεία που παρέχει ο MCP server.
+- Χρησιμοποιείτε τα εργαλεία MCP μέσω φυσικής γλώσσας.
 
 ## Προσέγγιση
 
-Να πώς πρέπει να προσεγγίσουμε αυτό σε υψηλό επίπεδο:
+Ακολουθεί μια γενική προσέγγιση:
 
-- Δημιουργήστε έναν πράκτορα και ορίστε την προτροπή συστήματός του.
-- Δημιουργήστε έναν διακομιστή MCP με εργαλεία αριθμομηχανής.
-- Συνδέστε το Agent Builder στον διακομιστή MCP.
-- Δοκιμάστε την ενεργοποίηση εργαλείων του πράκτορα μέσω φυσικής γλώσσας.
+- Δημιουργήστε έναν agent και ορίστε το system prompt του.
+- Δημιουργήστε έναν MCP server με εργαλεία calculator.
+- Συνδέστε τον Agent Builder με τον MCP server.
+- Δοκιμάστε την κλήση εργαλείων του agent μέσω φυσικής γλώσσας.
 
-Ωραία, τώρα που καταλαβαίνουμε τη ροή, ας διαμορφώσουμε έναν πράκτορα AI για να αξιοποιήσει εξωτερικά εργαλεία μέσω MCP, ενισχύοντας τις δυνατότητές του!
+Τέλεια, τώρα που κατανοούμε τη ροή, ας ρυθμίσουμε έναν AI agent ώστε να αξιοποιεί εξωτερικά εργαλεία μέσω MCP, ενισχύοντας τις δυνατότητές του!
 
-## Προαπαιτούμενα
+## Απαιτούμενα
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [AI Toolkit για Visual Studio Code](https://aka.ms/AIToolkit)
 
-## Άσκηση: Κατανάλωση ενός διακομιστή
+## Άσκηση: Κατανάλωση ενός server
 
-Σε αυτήν την άσκηση, θα δημιουργήσετε, εκτελέσετε και βελτιώσετε έναν πράκτορα AI με εργαλεία από έναν διακομιστή MCP μέσα στο Visual Studio Code χρησιμοποιώντας το AI Toolkit.
+Σε αυτήν την άσκηση, θα δημιουργήσετε, θα εκτελέσετε και θα βελτιώσετε έναν AI agent με εργαλεία από έναν MCP server μέσα στο Visual Studio Code χρησιμοποιώντας το AI Toolkit.
 
-### -0- Προπαρασκευή, προσθέστε το μοντέλο OpenAI GPT-4o στα My Models
+### -0- Προκαταρκτικό βήμα, προσθέστε το μοντέλο OpenAI GPT-4o στα My Models
 
-Η άσκηση αξιοποιεί το μοντέλο **GPT-4o**. Το μοντέλο πρέπει να προστεθεί στα **My Models** πριν δημιουργήσετε τον πράκτορα.
+Η άσκηση χρησιμοποιεί το μοντέλο **GPT-4o**. Το μοντέλο πρέπει να προστεθεί στα **My Models** πριν τη δημιουργία του agent.
 
-![Στιγμιότυπο οθόνης μιας διεπαφής επιλογής μοντέλου στην επέκταση AI Toolkit του Visual Studio Code. Η επικεφαλίδα αναγράφει "Βρείτε το σωστό μοντέλο για τη λύση AI σας" με έναν υπότιτλο που ενθαρρύνει τους χρήστες να ανακαλύψουν, δοκιμάσουν και αναπτύξουν μοντέλα AI. Κάτω, κάτω από "Δημοφιλή Μοντέλα," εμφανίζονται έξι κάρτες μοντέλων: DeepSeek-R1 (φιλοξενείται στο GitHub), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Μικρό, Γρήγορο), και DeepSeek-R1 (φιλοξενείται στο Ollama). Κάθε κάρτα περιλαμβάνει επιλογές για "Προσθήκη" του μοντέλου ή "Δοκιμή στο Playground](../../../../translated_images/aitk-model-catalog.143ab567942a0c88d21eb49c9f384182a688aa2ca7f44bc263a1c8ee45ee6252.el.png)
+![Screenshot of a model selection interface in Visual Studio Code's AI Toolkit extension. The heading reads "Find the right model for your AI Solution" with a subtitle encouraging users to discover, test, and deploy AI models. Below, under “Popular Models,” six model cards are displayed: DeepSeek-R1 (GitHub-hosted), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Small, Fast), and DeepSeek-R1 (Ollama-hosted). Each card includes options to “Add” the model or “Try in Playground](../../../../translated_images/aitk-model-catalog.c0c66f0d9ac0ee73c1d21b9207db99e914ef9dd52fced6f226c2b1f537e2c447.el.png)
 
-1. Ανοίξτε την επέκταση **AI Toolkit** από τη **Γραμμή Δραστηριότητας**.
-1. Στην ενότητα **Κατάλογος**, επιλέξτε **Μοντέλα** για να ανοίξετε τον **Κατάλογο Μοντέλων**. Επιλέγοντας **Μοντέλα** ανοίγει τον **Κατάλογο Μοντέλων** σε μια νέα καρτέλα επεξεργαστή.
-1. Στη γραμμή αναζήτησης του **Καταλόγου Μοντέλων**, εισαγάγετε **OpenAI GPT-4o**.
-1. Κάντε κλικ στο **+ Προσθήκη** για να προσθέσετε το μοντέλο στη λίστα **My Models** σας. Βεβαιωθείτε ότι έχετε επιλέξει το μοντέλο που είναι **Φιλοξενείται από το GitHub**.
-1. Στη **Γραμμή Δραστηριότητας**, επιβεβαιώστε ότι το μοντέλο **OpenAI GPT-4o** εμφανίζεται στη λίστα.
+1. Ανοίξτε την επέκταση **AI Toolkit** από τη **γραμμή δραστηριοτήτων (Activity Bar)**.
+1. Στην ενότητα **Catalog**, επιλέξτε **Models** για να ανοίξετε το **Model Catalog**. Η επιλογή **Models** ανοίγει το **Model Catalog** σε νέα καρτέλα επεξεργασίας.
+1. Στη γραμμή αναζήτησης του **Model Catalog**, πληκτρολογήστε **OpenAI GPT-4o**.
+1. Πατήστε **+ Add** για να προσθέσετε το μοντέλο στη λίστα **My Models**. Βεβαιωθείτε ότι έχετε επιλέξει το μοντέλο που είναι **Hosted by GitHub**.
+1. Στη **γραμμή δραστηριοτήτων**, επιβεβαιώστε ότι το μοντέλο **OpenAI GPT-4o** εμφανίζεται στη λίστα.
 
-### -1- Δημιουργία πράκτορα
+### -1- Δημιουργία agent
 
-Το **Agent (Prompt) Builder** σας επιτρέπει να δημιουργείτε και να προσαρμόζετε τους δικούς σας πράκτορες με AI. Σε αυτήν την ενότητα, θα δημιουργήσετε έναν νέο πράκτορα και θα του αναθέσετε ένα μοντέλο για να τροφοδοτήσει τη συνομιλία.
+Ο **Agent (Prompt) Builder** σας επιτρέπει να δημιουργήσετε και να προσαρμόσετε τους δικούς σας AI-powered agents. Σε αυτήν την ενότητα, θα δημιουργήσετε έναν νέο agent και θα του αναθέσετε ένα μοντέλο για να τροφοδοτεί τη συνομιλία.
 
-![Στιγμιότυπο οθόνης της διεπαφής δημιουργίας "Calculator Agent" στην επέκταση AI Toolkit για το Visual Studio Code. Στο αριστερό πάνελ, το επιλεγμένο μοντέλο είναι "OpenAI GPT-4o (μέσω GitHub)." Μια προτροπή συστήματος αναγράφει "Είστε καθηγητής σε πανεπιστήμιο που διδάσκει μαθηματικά," και η προτροπή χρήστη λέει, "Εξήγησέ μου την εξίσωση Fourier με απλούς όρους." Επιπλέον επιλογές περιλαμβάνουν κουμπιά για προσθήκη εργαλείων, ενεργοποίηση διακομιστή MCP και επιλογή δομημένης εξόδου. Ένα μπλε κουμπί "Εκτέλεση" βρίσκεται στο κάτω μέρος. Στο δεξιό πάνελ, κάτω από "Ξεκινήστε με Παραδείγματα," αναφέρονται τρεις δείγμα πράκτορες: Web Developer (με διακομιστή MCP, Second-Grade Simplifier, και Dream Interpreter, καθένας με σύντομες περιγραφές των λειτουργιών τους.](../../../../translated_images/aitk-agent-builder.df46f391ec9a2b0e8cd1ddbb1dbc968c42bb20411350a44d87c8f082ba4a45d5.el.png)
+![Screenshot of the "Calculator Agent" builder interface in the AI Toolkit extension for Visual Studio Code. On the left panel, the model selected is "OpenAI GPT-4o (via GitHub)." A system prompt reads "You are a professor in university teaching math," and the user prompt says, "Explain to me the Fourier equation in simple terms." Additional options include buttons for adding tools, enabling MCP Server, and selecting structured output. A blue “Run” button is at the bottom. On the right panel, under "Get Started with Examples," three sample agents are listed: Web Developer (with MCP Server, Second-Grade Simplifier, and Dream Interpreter, each with brief descriptions of their functions.](../../../../translated_images/aitk-agent-builder.fb7df60f7923b4d8ba839662bf6d7647e843c01b57256e1e9adecb46a64d3408.el.png)
 
-1. Ανοίξτε την επέκταση **AI Toolkit** από τη **Γραμμή Δραστηριότητας**.
-1. Στην ενότητα **Εργαλεία**, επιλέξτε **Agent (Prompt) Builder**. Επιλέγοντας **Agent (Prompt) Builder** ανοίγει τον **Agent (Prompt) Builder** σε μια νέα καρτέλα επεξεργαστή.
-1. Κάντε κλικ στο κουμπί **+ Νέος Δημιουργός**. Η επέκταση θα ξεκινήσει έναν οδηγό ρυθμίσεων μέσω του **Command Palette**.
-1. Εισαγάγετε το όνομα **Calculator Agent** και πατήστε **Enter**.
-1. Στον **Agent (Prompt) Builder**, για το πεδίο **Μοντέλο**, επιλέξτε το μοντέλο **OpenAI GPT-4o (μέσω GitHub)**.
+1. Ανοίξτε την επέκταση **AI Toolkit** από τη **γραμμή δραστηριοτήτων**.
+1. Στην ενότητα **Tools**, επιλέξτε **Agent (Prompt) Builder**. Η επιλογή ανοίγει τον **Agent (Prompt) Builder** σε νέα καρτέλα.
+1. Πατήστε το κουμπί **+ New Agent**. Η επέκταση θα ξεκινήσει έναν οδηγό ρύθμισης μέσω της **Command Palette**.
+1. Πληκτρολογήστε το όνομα **Calculator Agent** και πατήστε **Enter**.
+1. Στον **Agent (Prompt) Builder**, στο πεδίο **Model**, επιλέξτε το μοντέλο **OpenAI GPT-4o (via GitHub)**.
 
-### -2- Δημιουργία προτροπής συστήματος για τον πράκτορα
+### -2- Δημιουργία system prompt για τον agent
 
-Με τον πράκτορα να έχει δημιουργηθεί, είναι ώρα να ορίσετε την προσωπικότητα και τον σκοπό του. Σε αυτήν την ενότητα, θα χρησιμοποιήσετε τη δυνατότητα **Generate system prompt** για να περιγράψετε την προοριζόμενη συμπεριφορά του πράκτορα—στην προκειμένη περίπτωση, ενός πράκτορα αριθμομηχανής—και θα έχετε το μοντέλο να γράψει την προτροπή συστήματος για εσάς.
+Με τον agent έτοιμο, ήρθε η ώρα να ορίσετε την προσωπικότητα και το σκοπό του. Σε αυτήν την ενότητα, θα χρησιμοποιήσετε τη λειτουργία **Generate system prompt** για να περιγράψετε τη συμπεριφορά που θέλετε—σε αυτή την περίπτωση, έναν calculator agent—και το μοντέλο θα γράψει το system prompt για εσάς.
 
-![Στιγμιότυπο οθόνης της διεπαφής "Calculator Agent" στο AI Toolkit για το Visual Studio Code με ένα ανοιχτό παράθυρο με τίτλο "Generate a prompt." Το παράθυρο εξηγεί ότι ένα πρότυπο προτροπής μπορεί να δημιουργηθεί με την κοινοποίηση βασικών λεπτομερειών και περιλαμβάνει ένα πλαίσιο κειμένου με την δείγμα προτροπή συστήματος: "Είστε ένας χρήσιμος και αποτελεσματικός βοηθός μαθηματικών. Όταν σας δίνεται ένα πρόβλημα που περιλαμβάνει βασική αριθμητική, απαντάτε με το σωστό αποτέλεσμα." Κάτω από το πλαίσιο κειμένου βρίσκονται κουμπιά "Κλείσιμο" και "Δημιουργία." Στο παρασκήνιο, φαίνεται μέρος της διαμόρφωσης του πράκτορα, συμπεριλαμβανομένου του επιλεγμένου μοντέλου "OpenAI GPT-4o (μέσω GitHub)" και πεδίων για προτροπές συστήματος και χρήστη.](../../../../translated_images/aitk-generate-prompt.fc5fdce97b37f4c22511cc2ed3cc1d85e79ccf21c339e64a9553b9e2cc4dac37.el.png)
+![Screenshot of the "Calculator Agent" interface in the AI Toolkit for Visual Studio Code with a modal window open titled "Generate a prompt." The modal explains that a prompt template can be generated by sharing basic details and includes a text box with the sample system prompt: "You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result." Below the text box are "Close" and "Generate" buttons. In the background, part of the agent configuration is visible, including the selected model "OpenAI GPT-4o (via GitHub)" and fields for system and user prompts.](../../../../translated_images/aitk-generate-prompt.0d4292407c15282bf714e327f5d3d833389324004135727ef28adc22dbbb4e8f.el.png)
 
-1. Για την ενότητα **Προτροπές**, κάντε κλικ στο κουμπί **Generate system prompt**. Αυτό το κουμπί ανοίγει στον δημιουργό προτροπών που αξιοποιεί το AI για να δημιουργήσει μια προτροπή συστήματος για τον πράκτορα.
-1. Στο παράθυρο **Generate a prompt**, εισαγάγετε το ακόλουθο: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
-1. Κάντε κλικ στο κουμπί **Generate**. Θα εμφανιστεί μια ειδοποίηση στην κάτω δεξιά γωνία που επιβεβαιώνει ότι η προτροπή συστήματος δημιουργείται. Μόλις ολοκληρωθεί η δημιουργία της προτροπής, η προτροπή θα εμφανιστεί στο πεδίο **System prompt** του **Agent (Prompt) Builder**.
-1. Ανασκοπήστε την **System prompt** και τροποποιήστε αν είναι απαραίτητο.
+1. Στην ενότητα **Prompts**, πατήστε το κουμπί **Generate system prompt**. Αυτό ανοίγει τον prompt builder που χρησιμοποιεί AI για να δημιουργήσει το system prompt του agent.
+1. Στο παράθυρο **Generate a prompt**, εισάγετε το εξής: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
+1. Πατήστε το κουμπί **Generate**. Θα εμφανιστεί ειδοποίηση κάτω δεξιά που επιβεβαιώνει ότι το system prompt δημιουργείται. Μόλις ολοκληρωθεί, το prompt θα εμφανιστεί στο πεδίο **System prompt** του **Agent (Prompt) Builder**.
+1. Ελέγξτε το **System prompt** και τροποποιήστε το αν χρειάζεται.
 
-### -3- Δημιουργία διακομιστή MCP
+### -3- Δημιουργία MCP server
 
-Τώρα που έχετε ορίσει την προτροπή συστήματος του πράκτορά σας—καθοδηγώντας τη συμπεριφορά και τις απαντήσεις του—είναι ώρα να εξοπλίσετε τον πράκτορα με πρακτικές δυνατότητες. Σε αυτήν την ενότητα, θα δημιουργήσετε έναν διακομιστή MCP αριθμομηχανής με εργαλεία για εκτέλεση υπολογισμών πρόσθεσης, αφαίρεσης, πολλαπλασιασμού και διαίρεσης. Αυτός ο διακομιστής θα επιτρέψει στον πράκτορά σας να εκτελεί μαθηματικές λειτουργίες σε πραγματικό χρόνο σε απάντηση σε φυσικές γλωσσικές προτροπές.
+Τώρα που έχετε ορίσει το system prompt του agent—που καθοδηγεί τη συμπεριφορά και τις απαντήσεις του—ήρθε η ώρα να τον εξοπλίσετε με πρακτικές δυνατότητες. Σε αυτή την ενότητα, θα δημιουργήσετε έναν calculator MCP server με εργαλεία για πρόσθεση, αφαίρεση, πολλαπλασιασμό και διαίρεση. Αυτός ο server θα επιτρέψει στον agent να εκτελεί μαθηματικούς υπολογισμούς σε πραγματικό χρόνο ως απάντηση σε φυσικά prompts.
 
-![Στιγμιότυπο οθόνης του κάτω τμήματος της διεπαφής Calculator Agent στην επέκταση AI Toolkit για το Visual Studio Code. Δείχνει επεκτάσιμα μενού για "Εργαλεία" και "Δομή εξόδου," μαζί με ένα αναπτυσσόμενο μενού με την ετικέτα "Επιλέξτε μορφή εξόδου" ορισμένο σε "κείμενο." Δεξιά, υπάρχει ένα κουμπί με την ετικέτα "+ MCP Server" για προσθήκη ενός διακομιστή Model Context Protocol. Ένα εικονικό εικονίδιο εικόνας δείχνει πάνω από την ενότητα Εργαλεία.](../../../../translated_images/aitk-add-mcp-server.7696efa0c3d1774d2ba903c86c8782fbc80fcb8ac9e51d7c6089cccc47396386.el.png)
+!["Screenshot of the lower section of the Calculator Agent interface in the AI Toolkit extension for Visual Studio Code. It shows expandable menus for “Tools” and “Structure output,” along with a dropdown menu labeled “Choose output format” set to “text.” To the right, there is a button labeled “+ MCP Server” for adding a Model Context Protocol server. An image icon placeholder is shown above the Tools section.](../../../../translated_images/aitk-add-mcp-server.9b158809336d87e8076eb5954846040a7370c88046639a09e766398c8855c3d3.el.png)
 
-Το AI Toolkit είναι εξοπλισμένο με πρότυπα για διευκόλυνση της δημιουργίας του δικού σας διακομιστή MCP. Θα χρησιμοποιήσουμε το πρότυπο Python για τη δημιουργία του διακομιστή MCP αριθμομηχανής.
+Το AI Toolkit διαθέτει πρότυπα για να διευκολύνει τη δημιουργία MCP servers. Θα χρησιμοποιήσουμε το Python template για να δημιουργήσουμε τον calculator MCP server.
 
-*Σημείωση*: Το AI Toolkit υποστηρίζει αυτήν τη στιγμή Python και TypeScript.
+*Note*: Το AI Toolkit υποστηρίζει προς το παρόν Python και TypeScript.
 
-1. Στην ενότητα **Εργαλεία** του **Agent (Prompt) Builder**, κάντε κλικ στο κουμπί **+ MCP Server**. Η επέκταση θα ξεκινήσει έναν οδηγό ρυθμίσεων μέσω του **Command Palette**.
-1. Επιλέξτε **+ Προσθήκη Διακομιστή**.
-1. Επιλέξτε **Δημιουργία Νέου Διακομιστή MCP**.
-1. Επιλέξτε **python-weather** ως πρότυπο.
-1. Επιλέξτε **Προεπιλεγμένος φάκελος** για αποθήκευση του προτύπου διακομιστή MCP.
-1. Εισαγάγετε το ακόλουθο όνομα για τον διακομιστή: **Calculator**
-1. Ένα νέο παράθυρο Visual Studio Code θα ανοίξει. Επιλέξτε **Ναι, εμπιστεύομαι τους συγγραφείς**.
-1. Χρησιμοποιώντας το τερματικό (**Terminal** > **Νέο Τερματικό**), δημιουργήστε ένα εικονικό περιβάλλον: `python -m venv .venv`
-1. Χρησιμοποιώντας το τερματικό, ενεργοποιήστε το εικονικό περιβάλλον:
+1. Στην ενότητα **Tools** του **Agent (Prompt) Builder**, πατήστε το κουμπί **+ MCP Server**. Η επέκταση θα ξεκινήσει έναν οδηγό ρύθμισης μέσω της **Command Palette**.
+1. Επιλέξτε **+ Add Server**.
+1. Επιλέξτε **Create a New MCP Server**.
+1. Επιλέξτε το πρότυπο **python-weather**.
+1. Επιλέξτε **Default folder** για να αποθηκευτεί το πρότυπο MCP server.
+1. Πληκτρολογήστε το όνομα **Calculator** για τον server.
+1. Θα ανοίξει ένα νέο παράθυρο Visual Studio Code. Επιλέξτε **Yes, I trust the authors**.
+1. Χρησιμοποιώντας το τερματικό (**Terminal** > **New Terminal**), δημιουργήστε ένα virtual environment: `python -m venv .venv`
+1. Στο τερματικό, ενεργοποιήστε το virtual environment:
     1. Windows - `.venv\Scripts\activate`
     1. macOS/Linux - `source venv/bin/activate`
-1. Χρησιμοποιώντας το τερματικό, εγκαταστήστε τις εξαρτήσεις: `pip install -e .[dev]`
-1. Στην **Προβολή Εξερεύνησης** της **Γραμμής Δραστηριότητας**, επεκτείνετε τον κατάλογο **src** και επιλέξτε **server.py** για να ανοίξετε το αρχείο στον επεξεργαστή.
-1. Αντικαταστήστε τον κώδικα στο αρχείο **server.py** με το ακόλουθο και αποθηκεύστε:
+1. Στο τερματικό, εγκαταστήστε τις εξαρτήσεις: `pip install -e .[dev]`
+1. Στην προβολή **Explorer** της **γραμμής δραστηριοτήτων**, επεκτείνετε τον φάκελο **src** και ανοίξτε το αρχείο **server.py**.
+1. Αντικαταστήστε τον κώδικα στο αρχείο **server.py** με τον ακόλουθο και αποθηκεύστε:
 
     ```python
     """
@@ -150,25 +150,50 @@ CO_OP_TRANSLATOR_METADATA:
         return a / b
     ```
 
-### -4- Εκτέλεση του πράκτορα με τον διακομιστή MCP αριθμομηχανής
+### -4- Εκτέλεση του agent με τον calculator MCP server
 
-Τώρα που ο πράκτοράς σας έχει εργαλεία, είναι ώρα να τα χρησιμοποιήσετε! Σε αυτήν την ενότητα, θα υποβάλετε προτροπές στον πράκτορα για να δοκιμάσετε και να επικυρώσετε αν ο πράκτορας αξιοποιεί το κατάλληλο εργαλείο από τον διακομιστή MCP αριθμομηχανής.
+Τώρα που ο agent σας έχει εργαλεία, ήρθε η ώρα να τα χρησιμοποιήσετε! Σε αυτή την ενότητα, θα στείλετε prompts στον agent για να δοκιμάσετε και να επαληθεύσετε αν ο agent αξιοποιεί το κατάλληλο εργαλείο από τον calculator MCP server.
 
-![Στιγμιότυπο οθόνης της διεπαφής Calculator Agent στην επέκταση AI Toolkit για το Visual Studio Code. Στο αριστερό πάνελ, κάτω από "Εργαλεία," ένας διακομιστής MCP με το όνομα local-server-calculator_server έχει προστεθεί, δείχνοντας τέσσερα διαθέσιμα εργαλεία: πρόσθεση, αφαίρεση, πολλαπλασιασμός και διαίρεση. Ένα σήμα δείχνει ότι τέσσερα εργαλεία είναι ενεργά. Κάτω είναι μια συμπτυγμένη ενότητα "Δομή εξόδου" και ένα μπλε κουμπί "Εκτέλεση." Στο δεξιό πάνελ, κάτω από "Απάντηση Μοντέλου," ο πράκτορας ενεργοποιεί τα εργαλεία πολλαπλασιασμού και αφαίρεσης με εισόδους {"a": 3, "b": 25} και {"a": 75, "b": 20} αντίστοιχα. Η τελική "Απάντηση Εργαλείου" εμφανίζεται ως 75.0. Ένα κουμπί "Προβολή Κώδικα" εμφανίζεται στο κάτω μέρος.](../../../../translated_images/aitk-agent-response-with-tools.64afc99ab720b2cd97d0142ba8f98aca0ddc9eba46f148adc2c35d6979ddb349.el.png)
+![Screenshot of the Calculator Agent interface in the AI Toolkit extension for Visual Studio Code. On the left panel, under “Tools,” an MCP server named local-server-calculator_server is added, showing four available tools: add, subtract, multiply, and divide. A badge shows that four tools are active. Below is a collapsed “Structure output” section and a blue “Run” button. On the right panel, under “Model Response,” the agent invokes the multiply and subtract tools with inputs {"a": 3, "b": 25} and {"a": 75, "b": 20} respectively. The final “Tool Response” is shown as 75.0. A “View Code” button appears at the bottom.](../../../../translated_images/aitk-agent-response-with-tools.0f0da2c6eef5eb3f5b7592d6d056449aa8aaa42a3ab0b0c2f14269b3049cfdb5.el.png)
 
-Θα εκτελέσετε τον διακομιστή MCP αριθμομηχανής στον τοπικό υπολογιστή ανάπτυξής σας μέσω του **Agent Builder** ως πελάτη MCP.
+Θα εκτελέσετε τον calculator MCP server τοπικά στον υπολογιστή ανάπτυξης μέσω του **Agent Builder** ως MCP client.
 
-1. Πατήστε `F5` to start debugging the MCP server. The **Agent (Prompt) Builder** will open in a new editor tab. The status of the server is visible in the terminal.
-1. In the **User prompt** field of the **Agent (Prompt) Builder**, enter the following prompt: `Αγόρασα 3 αντικείμενα με τιμή $25 το καθένα και στη συνέχεια χρησιμοποίησα έκπτωση $20. Πόσο πλήρωσα;`
+1. Πατήστε `F5`` to start debugging the MCP server. The **Agent (Prompt) Builder** will open in a new editor tab. The status of the server is visible in the terminal.
+1. In the **User prompt** field of the **Agent (Prompt) Builder**, enter the following prompt: `I bought 3 items priced at $25 each, and then used a $20 discount. How much did I pay?`
 1. Click the **Run** button to generate the agent's response.
 1. Review the agent output. The model should conclude that you paid **$55**.
 1. Here's a breakdown of what should occur:
     - The agent selects the **multiply** and **substract** tools to aid in the calculation.
     - The respective `a` and `b` values are assigned for the **multiply** tool.
-    - The respective `a` and `b` οι τιμές ανατίθενται για το εργαλείο **αφαίρεσης**.
-    - Η απάντηση από κάθε εργαλείο παρέχεται στην αντίστοιχη **Απάντηση Εργαλείου**.
-    - Η τελική έξοδος από το μοντέλο παρέχεται στην τελική **Απάντηση Μοντέλου**.
-1. Υποβάλετε επιπλέον προτροπές για να δοκιμάσετε περαιτέρω τον πράκτορα. Μπορείτε
+    - The respective `a` and `b` τιμές ανατίθενται στο εργαλείο **subtract**.
+    - Η απόκριση από κάθε εργαλείο εμφανίζεται στο αντίστοιχο **Tool Response**.
+    - Το τελικό αποτέλεσμα από το μοντέλο εμφανίζεται στο τελικό **Model Response**.
+1. Στείλτε επιπλέον prompts για να δοκιμάσετε περαιτέρω τον agent. Μπορείτε να τροποποιήσετε το υπάρχον prompt στο πεδίο **User prompt** κάνοντας κλικ μέσα και αντικαθιστώντας το.
+1. Όταν τελειώσετε τις δοκιμές, μπορείτε να σταματήσετε τον server από το **τερματικό** πατώντας **CTRL/CMD+C**.
+
+## Ανάθεση
+
+Δοκιμάστε να προσθέσετε μια επιπλέον είσοδο εργαλείου στο αρχείο **server.py** (π.χ. να επιστρέφει την τετραγωνική ρίζα ενός αριθμού). Στείλτε επιπλέον prompts που θα απαιτούν από τον agent να χρησιμοποιήσει το νέο εργαλείο (ή τα υπάρχοντα). Φροντίστε να επανεκκινήσετε τον server για να φορτωθούν τα νέα εργαλεία.
+
+## Λύση
+
+[Solution](./solution/README.md)
+
+## Κύρια Συμπεράσματα
+
+Τα βασικά σημεία από αυτό το κεφάλαιο είναι τα εξής:
+
+- Η επέκταση AI Toolkit είναι ένας εξαιρετικός client που σας επιτρέπει να καταναλώνετε MCP Servers και τα εργαλεία τους.
+- Μπορείτε να προσθέσετε νέα εργαλεία σε MCP servers, επεκτείνοντας τις δυνατότητες του agent ώστε να καλύπτουν τις εξελισσόμενες ανάγκες.
+- Το AI Toolkit περιλαμβάνει πρότυπα (π.χ. Python MCP server templates) που απλοποιούν τη δημιουργία προσαρμοσμένων εργαλείων.
+
+## Επιπλέον Πόροι
+
+- [AI Toolkit docs](https://aka.ms/AIToolkit/doc)
+
+## Τι Ακολουθεί
+
+Επόμενο: [Lesson 4 Practical Implementation](/04-PracticalImplementation/README.md)
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ενώ προσπαθούμε για ακρίβεια, παρακαλώ σημειώστε ότι οι αυτοματοποιημένες μεταφράσεις μπορεί να περιέχουν λάθη ή ανακρίβειες. Το αρχικό έγγραφο στη μητρική του γλώσσα θα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης με τεχνητή νοημοσύνη [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που προσπαθούμε για ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτοματοποιημένες μεταφράσεις ενδέχεται να περιέχουν σφάλματα ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η επίσημη πηγή. Για κρίσιμες πληροφορίες, συνιστάται η επαγγελματική μετάφραση από άνθρωπο. Δεν φέρουμε καμία ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

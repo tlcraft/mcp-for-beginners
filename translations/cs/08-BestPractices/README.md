@@ -2,42 +2,42 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "36e46bfca83e3528afc6f66803efa75e",
-  "translation_date": "2025-05-17T17:14:28+00:00",
+  "translation_date": "2025-05-27T16:17:15+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "cs"
 }
 -->
-# Nejlepší postupy pro vývoj MCP
+# MCP Development Best Practices
 
-## Přehled
+## Overview
 
-Tato lekce se zaměřuje na pokročilé nejlepší postupy pro vývoj, testování a nasazení MCP serverů a funkcí v produkčních prostředích. Jak se ekosystémy MCP stávají složitějšími a důležitějšími, dodržování zavedených vzorů zajišťuje spolehlivost, udržovatelnost a interoperabilitu. Tato lekce shrnuje praktickou moudrost získanou z reálných implementací MCP, aby vás vedla k vytváření robustních a efektivních serverů s účinnými zdroji, podněty a nástroji.
+This lesson focuses on advanced best practices for developing, testing, and deploying MCP servers and features in production environments. As MCP ecosystems grow in complexity and importance, following established patterns ensures reliability, maintainability, and interoperability. This lesson consolidates practical wisdom gained from real-world MCP implementations to guide you in creating robust, efficient servers with effective resources, prompts, and tools.
 
-## Cíle učení
+## Learning Objectives
 
-Na konci této lekce budete schopni:
-- Aplikovat průmyslové nejlepší postupy v návrhu MCP serverů a funkcí
-- Vytvořit komplexní testovací strategie pro MCP servery
-- Navrhnout efektivní, znovu použitelné vzory pracovních postupů pro složité MCP aplikace
-- Implementovat správné zpracování chyb, logování a sledování v MCP serverech
-- Optimalizovat implementace MCP pro výkon, bezpečnost a udržovatelnost
+By the end of this lesson, you will be able to:
+- Apply industry best practices in MCP server and feature design
+- Create comprehensive testing strategies for MCP servers
+- Design efficient, reusable workflow patterns for complex MCP applications
+- Implement proper error handling, logging, and observability in MCP servers
+- Optimize MCP implementations for performance, security, and maintainability
 
-## Další odkazy
+## Additional References
 
-Pro nejaktuálnější informace o nejlepších postupech MCP se podívejte na:
-- [MCP Dokumentaci](https://modelcontextprotocol.io/)
-- [MCP Specifikaci](https://spec.modelcontextprotocol.io/)
-- [GitHub Repozitář](https://github.com/modelcontextprotocol)
+For the most up-to-date information on MCP best practices, refer to:
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
 
-## Nejlepší postupy pro vývoj nástrojů MCP
+## MCP Tool Development Best Practices
 
-### Architektonické principy
+### Architectural Principles
 
-#### 1. Princip jediné odpovědnosti
+#### 1. Single Responsibility Principle
 
-Každá funkce MCP by měla mít jasný a zaměřený účel. Místo vytváření monolitických nástrojů, které se snaží řešit více problémů, vyvíjejte specializované nástroje, které excelují v konkrétních úkolech.
+Each MCP feature should have a clear, focused purpose. Instead of building monolithic tools that try to manage multiple concerns, develop specialized tools that excel at specific tasks.
 
-**Dobrý příklad:**
+**Good Example:**
 ```csharp
 // A focused tool that does one thing well
 public class WeatherForecastTool : ITool
@@ -95,7 +95,7 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-**Špatný příklad:**
+**Poor Example:**
 ```csharp
 // A tool trying to do too many things
 public class WeatherToolSuite : ITool
@@ -153,9 +153,9 @@ public class WeatherToolSuite : ITool
 }
 ```
 
-#### 2. Injekce závislostí a testovatelnost
+#### 2. Dependency Injection and Testability
 
-Navrhujte nástroje tak, aby přijímaly své závislosti prostřednictvím injekce konstruktoru, což je činí testovatelnými a konfigurovatelnými:
+Design your tools to receive dependencies through constructor injection, making them easier to test and configure:
 
 ```java
 // Java example with dependency injection
@@ -179,9 +179,9 @@ public class CurrencyConversionTool implements Tool {
 }
 ```
 
-#### 3. Složitelné nástroje
+#### 3. Composable Tools
 
-Navrhujte nástroje, které lze skládat dohromady pro vytváření složitějších pracovních postupů:
+Build tools that can be combined to form more complex workflows:
 
 ```python
 # Python example showing composable tools
@@ -212,13 +212,13 @@ class DataVisualizationTool(Tool):
 # These tools can be used independently or as part of a workflow
 ```
 
-### Nejlepší postupy návrhu schémat
+### Schema Design Best Practices
 
-Schéma je smlouva mezi modelem a vaším nástrojem. Dobře navržená schémata vedou k lepší použitelnosti nástroje.
+The schema acts as the contract between your model and tool. Well-crafted schemas improve tool usability.
 
-#### 1. Jasné popisy parametrů
+#### 1. Clear Parameter Descriptions
 
-Vždy zahrňte popisné informace pro každý parametr:
+Always provide detailed descriptions for each parameter:
 
 ```csharp
 public object GetSchema()
@@ -255,9 +255,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. Omezující podmínky
+#### 2. Validation Constraints
 
-Zahrňte omezující podmínky pro zamezení neplatným vstupům:
+Include validation rules to prevent invalid input:
 
 ```java
 Map<String, Object> getSchema() {
@@ -297,9 +297,9 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. Konzistentní struktury návratových hodnot
+#### 3. Consistent Return Structures
 
-Udržujte konzistenci ve vašich odpovědních strukturách, aby bylo pro modely snazší interpretovat výsledky:
+Keep response structures consistent to help models interpret results reliably:
 
 ```python
 async def execute_async(self, request):
@@ -338,13 +338,13 @@ def _format_item(self, item):
     }
 ```
 
-### Zpracování chyb
+### Error Handling
 
-Robustní zpracování chyb je klíčové pro udržení spolehlivosti nástrojů MCP.
+Effective error handling is essential for MCP tools to remain dependable.
 
-#### 1. Elegantní zpracování chyb
+#### 1. Graceful Error Handling
 
-Zpracovávejte chyby na odpovídajících úrovních a poskytujte informativní zprávy:
+Handle errors at the right layers and provide informative messages:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -386,9 +386,9 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. Strukturované odpovědi na chyby
+#### 2. Structured Error Responses
 
-Vrátit strukturované informace o chybách, pokud je to možné:
+Whenever possible, return error information in a structured format:
 
 ```java
 @Override
@@ -418,9 +418,9 @@ public ToolResponse execute(ToolRequest request) {
 }
 ```
 
-#### 3. Logika opakování
+#### 3. Retry Logic
 
-Implementovat vhodnou logiku opakování pro přechodné chyby:
+Implement retry mechanisms for transient failures:
 
 ```python
 async def execute_async(self, request):
@@ -446,11 +446,11 @@ async def execute_async(self, request):
             raise ToolExecutionException(f"Operation failed: {str(e)}")
 ```
 
-### Optimalizace výkonu
+### Performance Optimization
 
-#### 1. Cachování
+#### 1. Caching
 
-Implementovat cachování pro nákladné operace:
+Cache results of expensive operations to improve performance:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -496,9 +496,9 @@ public class CachedDataTool : IMcpTool
 }
 ```
 
-#### 2. Asynchronní zpracování
+#### 2. Asynchronous Processing
 
-Použít asynchronní programovací vzory pro operace závislé na I/O:
+Use async programming patterns for I/O-bound tasks:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -547,9 +547,9 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. Omezení zdrojů
+#### 3. Resource Throttling
 
-Implementovat omezení zdrojů, aby se zabránilo přetížení:
+Apply throttling to avoid resource overload:
 
 ```python
 class ThrottledApiTool(Tool):
@@ -611,11 +611,11 @@ class TokenBucketRateLimiter:
         self.last_refill = now
 ```
 
-### Bezpečnostní nejlepší postupy
+### Security Best Practices
 
-#### 1. Validace vstupu
+#### 1. Input Validation
 
-Vždy důkladně validovat vstupní parametry:
+Thoroughly validate all input parameters:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -656,9 +656,9 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. Kontroly autorizace
+#### 2. Authorization Checks
 
-Implementovat správné kontroly autorizace:
+Ensure proper authorization mechanisms are in place:
 
 ```java
 @Override
@@ -682,9 +682,9 @@ public ToolResponse execute(ToolRequest request) {
 }
 ```
 
-#### 3. Zpracování citlivých dat
+#### 3. Sensitive Data Handling
 
-Pečlivě zpracovávat citlivá data:
+Treat sensitive data with care:
 
 ```python
 class SecureDataTool(Tool):
@@ -733,15 +733,15 @@ class SecureDataTool(Tool):
         return redacted
 ```
 
-## Nejlepší postupy testování nástrojů MCP
+## Testing Best Practices for MCP Tools
 
-Komplexní testování zajišťuje, že nástroje MCP fungují správně, zvládají hraniční případy a správně se integrují se zbytkem systému.
+Comprehensive testing guarantees MCP tools work correctly, handle edge cases, and integrate smoothly with the system.
 
-### Jednotkové testování
+### Unit Testing
 
-#### 1. Testování každého nástroje v izolaci
+#### 1. Test Each Tool in Isolation
 
-Vytvářet zaměřené testy pro funkčnost každého nástroje:
+Write focused tests for individual tool functionality:
 
 ```csharp
 [Fact]
@@ -801,9 +801,9 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 }
 ```
 
-#### 2. Testování validace schémat
+#### 2. Schema Validation Testing
 
-Testovat, že schémata jsou platná a správně vynucují omezení:
+Verify schemas are valid and enforce constraints properly:
 
 ```java
 @Test
@@ -846,9 +846,9 @@ public void testSchemaValidation() {
 }
 ```
 
-#### 3. Testy zpracování chyb
+#### 3. Error Handling Tests
 
-Vytvářet specifické testy pro chybové podmínky:
+Create targeted tests for error scenarios:
 
 ```python
 @pytest.mark.asyncio
@@ -904,11 +904,11 @@ async def test_api_tool_handles_rate_limiting():
         assert "try again" in error_msg
 ```
 
-### Integrační testování
+### Integration Testing
 
-#### 1. Testování řetězu nástrojů
+#### 1. Tool Chain Testing
 
-Testovat nástroje pracující společně v očekávaných kombinacích:
+Test tools working together in expected sequences:
 
 ```csharp
 [Fact]
@@ -947,9 +947,9 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 }
 ```
 
-#### 2. Testování MCP serveru
+#### 2. MCP Server Testing
 
-Testovat MCP server s plnou registrací a prováděním nástrojů:
+Test the MCP server with full tool registration and execution:
 
 ```java
 @SpringBootTest
@@ -1015,9 +1015,9 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. End-to-End testování
+#### 3. End-to-End Testing
 
-Testovat kompletní pracovní postupy od modelového podnětu k provedení nástroje:
+Test complete workflows from model prompt to tool execution:
 
 ```python
 @pytest.mark.asyncio
@@ -1072,11 +1072,11 @@ async def test_model_interaction_with_tool():
         assert response.tool_calls[0].tool_name == "weatherForecast"
 ```
 
-### Testování výkonu
+### Performance Testing
 
-#### 1. Zátěžové testování
+#### 1. Load Testing
 
-Testovat, kolik souběžných požadavků váš MCP server zvládne:
+Evaluate how many concurrent requests your MCP server can handle:
 
 ```csharp
 [Fact]
@@ -1109,9 +1109,9 @@ public async Task McpServer_HandlesHighConcurrency()
 }
 ```
 
-#### 2. Stresové testování
+#### 2. Stress Testing
 
-Testovat systém pod extrémním zatížením:
+Test the system under extreme load conditions:
 
 ```java
 @Test
@@ -1164,9 +1164,9 @@ public void testServerUnderStress() {
 }
 ```
 
-#### 3. Monitoring a profilování
+#### 3. Monitoring and Profiling
 
-Nastavit monitoring pro dlouhodobou analýzu výkonu:
+Set up monitoring for long-term performance insights:
 
 ```python
 # Configure monitoring for an MCP server
@@ -1208,13 +1208,13 @@ def configure_monitoring(server):
     return server
 ```
 
-## Návrhové vzory pracovních postupů MCP
+## MCP Workflow Design Patterns
 
-Dobře navržené pracovní postupy MCP zlepšují efektivitu, spolehlivost a udržovatelnost. Zde jsou klíčové vzory, které je třeba dodržovat:
+Well-designed MCP workflows boost efficiency, reliability, and maintainability. Key patterns include:
 
-### 1. Vzor řetězu nástrojů
+### 1. Chain of Tools Pattern
 
-Spojit více nástrojů do sekvence, kde výstup jednoho nástroje se stává vstupem pro další:
+Link multiple tools sequentially, where each tool’s output feeds the next:
 
 ```python
 # Python Chain of Tools implementation
@@ -1253,9 +1253,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. Vzor dispečera
+### 2. Dispatcher Pattern
 
-Použít centrální nástroj, který přesměruje na specializované nástroje na základě vstupu:
+Use a central tool that routes to specialized tools based on input:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1335,9 +1335,9 @@ public class ContentDispatcherTool : IMcpTool
 }
 ```
 
-### 3. Vzor paralelního zpracování
+### 3. Parallel Processing Pattern
 
-Provádět více nástrojů současně pro efektivitu:
+Run multiple tools in parallel to improve efficiency:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1403,9 +1403,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. Vzor obnovy chyb
+### 4. Error Recovery Pattern
 
-Implementovat elegantní záložní řešení pro selhání nástrojů:
+Implement graceful fallbacks for tool failures:
 
 ```python
 class ResilientWorkflow:
@@ -1459,9 +1459,9 @@ async def get_weather(workflow, location):
     )
 ```
 
-### 5. Vzor složení pracovního postupu
+### 5. Workflow Composition Pattern
 
-Vytvářet složité pracovní postupy skládáním jednodušších:
+Construct complex workflows by combining simpler ones:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1508,37 +1508,37 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# Testování MCP serverů: Nejlepší postupy a hlavní tipy
+# Testing MCP Servers: Best Practices and Top Tips
 
-## Přehled
+## Overview
 
-Testování je klíčovým aspektem vývoje spolehlivých, vysoce kvalitních MCP serverů. Tato příručka poskytuje komplexní nejlepší postupy a tipy pro testování vašich MCP serverů během celého životního cyklu vývoje, od jednotkových testů po integrační testy a end-to-end validaci.
+Testing is a vital part of building reliable, high-quality MCP servers. This guide covers best practices and tips for testing MCP servers throughout their lifecycle—from unit testing to integration and end-to-end validation.
 
-## Proč testování je důležité pro MCP servery
+## Why Testing Matters for MCP Servers
 
-MCP servery slouží jako klíčové middleware mezi AI modely a klientskými aplikacemi. Důkladné testování zajišťuje:
+MCP servers act as key middleware between AI models and client apps. Thorough testing ensures:
 
-- Spolehlivost v produkčních prostředích
-- Přesné zpracování požadavků a odpovědí
-- Správnou implementaci specifikací MCP
-- Odolnost vůči selháním a hraničním případům
-- Konzistentní výkon pod různým zatížením
+- Reliability in production
+- Correct request and response handling
+- Proper adherence to MCP specifications
+- Resilience against failures and edge cases
+- Consistent performance under varying loads
 
-## Jednotkové testování pro MCP servery
+## Unit Testing for MCP Servers
 
-### Jednotkové testování (Základ)
+### Unit Testing (Foundation)
 
-Jednotkové testy ověřují jednotlivé komponenty vašeho MCP serveru v izolaci.
+Unit tests check individual MCP server components in isolation.
 
-#### Co testovat
+#### What to Test
 
-1. **Zpracovatele zdrojů**: Testovat logiku každého zpracovatele zdrojů nezávisle
-2. **Implementace nástrojů**: Ověřovat chování nástrojů s různými vstupy
-3. **Šablony podnětů**: Zajistit, aby šablony podnětů byly správně vykresleny
-4. **Validace schémat**: Testovat logiku validace parametrů
-5. **Zpracování chyb**: Ověřovat odpovědi na chyby pro neplatné vstupy
+1. **Resource Handlers**: Test the logic of each resource handler independently
+2. **Tool Implementations**: Verify tool behavior with different inputs
+3. **Prompt Templates**: Ensure prompt templates render as expected
+4. **Schema Validation**: Test parameter validation logic
+5. **Error Handling**: Confirm error responses for invalid inputs
 
-#### Nejlepší postupy pro jednotkové testování
+#### Best Practices for Unit Testing
 
 ```csharp
 // Example unit test for a calculator tool in C#
@@ -1582,19 +1582,19 @@ def test_calculator_tool_add():
     assert result["value"] == 12
 ```
 
-### Integrační testování (Střední vrstva)
+### Integration Testing (Middle Layer)
 
-Integrační testy ověřují interakce mezi komponentami vašeho MCP serveru.
+Integration tests verify how components interact within the MCP server.
 
-#### Co testovat
+#### What to Test
 
-1. **Inicializace serveru**: Testovat spuštění serveru s různými konfiguracemi
-2. **Registrace tras**: Ověřovat, že všechny koncové body jsou správně registrovány
-3. **Zpracování požadavků**: Testovat celý cyklus požadavek-odpověď
-4. **Propagace chyb**: Zajistit, že chyby jsou správně zpracovány mezi komponentami
-5. **Autentizace a autorizace**: Testovat bezpečnostní mechanismy
+1. **Server Initialization**: Test startup with various configurations
+2. **Route Registration**: Confirm all endpoints are registered correctly
+3. **Request Processing**: Test full request-response cycles
+4. **Error Propagation**: Ensure errors propagate correctly across components
+5. **Authentication & Authorization**: Test security features
 
-#### Nejlepší postupy pro integrační testování
+#### Best Practices for Integration Testing
 
 ```csharp
 // Example integration test for MCP server in C#
@@ -1630,19 +1630,19 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 }
 ```
 
-### End-to-End testování (Nejvyšší vrstva)
+### End-to-End Testing (Top Layer)
 
-End-to-end testy ověřují kompletní chování systému od klienta k serveru.
+End-to-end tests validate the complete system behavior from client through server.
 
-#### Co testovat
+#### What to Test
 
-1. **Komunikace klient-server**: Testovat kompletní cykly požadavek-odpověď
-2. **Reálné klientské SDK**: Testovat s aktuálními implementacemi klientů
-3. **Výkon pod zatížením**: Ověřovat chování s více souběžnými požadavky
-4. **Obnova chyb**: Testovat obnovu systému po selháních
-5. **Dlouhotrvající operace**: Ověřovat zpracování streamování a dlouhých operací
+1. **Client-Server Communication**: Test full request-response interactions
+2. **Real Client SDKs**: Test with actual client implementations
+3. **Performance Under Load**: Verify behavior with multiple concurrent requests
+4. **Error Recovery**: Test system recovery from failures
+5. **Long-Running Operations**: Confirm handling of streaming and long operations
 
-#### Nejlepší postupy pro E2E testování
+#### Best Practices for E2E Testing
 
 ```typescript
 // Example E2E test with a client in TypeScript
@@ -1674,18 +1674,18 @@ describe('MCP Server E2E Tests', () => {
 });
 ```
 
-## Strategie mockování pro testování MCP
+## Mocking Strategies for MCP Testing
 
-Mockování je nezbytné pro izolaci komponent během testování.
+Mocking is essential for isolating components during tests.
 
-### Komponenty k mockování
+### Components to Mock
 
-1. **Externí AI modely**: Mockovat odpovědi modelů pro předvídatelné testování
-2. **Externí služby**: Mockovat závislosti API (databáze, služby třetích stran)
-3. **Autentizační služby**: Mockovat poskytovatele identity
-4. **Poskytovatele zdrojů**: Mockovat nákladné zpracovatele zdrojů
+1. **External AI Models**: Mock model responses for predictable results
+2. **External Services**: Mock APIs like databases or third-party services
+3. **Authentication Services**: Mock identity providers
+4. **Resource Providers**: Mock costly resource handlers
 
-### Příklad: Mockování odpovědi AI modelu
+### Example: Mocking an AI Model Response
 
 ```csharp
 // C# example with Moq
@@ -1717,26 +1717,26 @@ def test_with_mock_model(mock_model):
     # Continue with test
 ```
 
-## Testování výkonu
+## Performance Testing
 
-Testování výkonu je klíčové pro produkční MCP servery.
+Performance testing is critical for production-ready MCP servers.
 
-### Co měřit
+### What to Measure
 
-1. **Latence**: Doba odezvy na požadavky
-2. **Průchodnost**: Počet zpracovaných požadavků za sekundu
-3. **Využití zdrojů**: Využití CPU, paměti, sítě
-4. **Zpracování souběžnosti**: Chování při paralelních požadavcích
-5. **Charakteristiky škálování**: Výkon při zvyšujícím se zatížení
+1. **Latency**: Response times for requests
+2. **Throughput**: Number of requests handled per second
+3. **Resource Utilization**: CPU, memory, and network usage
+4. **Concurrency Handling**: Behavior under parallel requests
+5. **Scaling Characteristics**: Performance as load increases
 
-### Nástroje pro testování výkonu
+### Tools for Performance Testing
 
-- **k6**: Open-source nástroj pro zátěžové testování
-- **JMeter**: Komplexní testování výkonu
-- **Locust**: Testování zátěže založené na Pythonu
-- **Azure Load Testing**: Cloudové testování výkonu
+- **k6**: Open-source load testing tool
+- **JMeter**: Comprehensive performance testing tool
+- **Locust**: Python-based load testing framework
+- **Azure Load Testing**: Cloud-based performance testing
 
-### Příklad: Základní zátěžový test s k6
+### Example: Basic Load Test with k6
 
 ```javascript
 // k6 script for load testing MCP server
@@ -1776,18 +1776,18 @@ export default function () {
 }
 ```
 
-## Automatizace testů pro MCP servery
+## Test Automation for MCP Servers
 
-Automatizace testů zajišťuje konzistentní kvalitu a rychlejší zpětnou vazbu.
+Automating tests ensures consistent quality and faster feedback.
 
-### Integrace CI/CD
+### CI/CD Integration
 
-1. **Spouštět jednotkové testy na pull requesty**: Zajistit, že změny kódu neporuší existující funkčnost
-2. **Integrační testy ve stagingu**: Spouštět integrační testy v předprodukčních prostředích
-3. **Výkonnostní základny**: Udržovat výkonnostní benchmarky pro zachycení regresí
-4. **Bezpečnostní skeny**: Automatizovat bezpečnostní testování jako součást pipeline
+1. **Run Unit Tests on Pull Requests**: Prevent breaking changes
+2. **Integration Tests in Staging**: Test in pre-production environments
+3. **Performance Baselines**: Track benchmarks to catch regressions
+4. **Security Scans**: Automate security testing in the pipeline
 
-### Příklad CI Pipeline (GitHub Actions)
+### Example CI Pipeline (GitHub Actions)
 
 ```yaml
 name: MCP Server Tests
@@ -1826,19 +1826,19 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## Testování souladu se specifikací MCP
+## Testing for Compliance with MCP Specification
 
-Ověřte, že váš server správně implementuje specifikaci MCP.
+Verify your server correctly implements the MCP specification.
 
-### Klíčové oblasti souladu
+### Key Compliance Areas
 
-1. **API koncové body**: Testovat požadované koncové body (/resources, /tools, atd.)
-2. **Formát požadavku/odpovědi**: Validovat soulad se schématem
-3. **Kódy chyb**: Ověřovat správné stavové kódy pro různé scénáře
-4. **Typy obsahu**: Testovat zpracování různých typů obsahu
-5. **Autentizační tok**: Ověřovat mechanismy autentizace v souladu se specifikací
+1. **API Endpoints**: Test required endpoints (/resources, /tools, etc.)
+2. **Request/Response Format**: Validate schema compliance
+3. **Error Codes**: Verify correct status codes for scenarios
+4. **Content Types**: Test handling of various content types
+5. **Authentication Flow**: Ensure spec-compliant auth mechanisms
 
-### Testovací sada pro soulad
+### Compliance Test Suite
 
 ```csharp
 [Fact]
@@ -1865,39 +1865,63 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 }
 ```
 
-## Top 10 tipů pro efektivní testování MCP serverů
+## Top 10 Tips for Effective MCP Server Testing
 
-1. **Testovat definice nástrojů samostatně**: Ověřovat definice schémat nezávisle na logice nástrojů
-2. **Používat parametrizované testy**: Testovat nástroje s různými vstupy, včetně hraničních případů
-3. **Kontrolovat odpovědi na chyby**: Ověřovat správné zpracování chyb pro všechny možné chybové podmínky
-4. **Testovat logiku autorizace**: Zajistit správnou kontrolu přístupu pro různé role uživatelů
-5. **Monitorovat pokrytí testů**: Usilovat o vysoké pokrytí kritického kódu
-6. **Testovat streamované odpovědi**: Ověřovat správné zpracování streamovaného obsahu
-7. **Simulovat problémy sítě**: Testovat chování při špatných síťových podmínkách
-8. **Testovat limity zdrojů**: Ověřovat chování při dosažení kvót nebo limitů rychlosti
-9. **Automatizovat regresní testy**: Vytvořit sadu, která se spouští při každé změně kódu
-10. **Dokumentovat testovací případy**: Udržovat jasnou dokumentaci testovacích scénářů
+1. **Test Tool Definitions Separately**: Validate schemas independently from logic
+2. **Use Parameterized Tests**: Cover a wide range of inputs, including edge cases
+3. **Check Error Responses**: Verify proper handling of all error conditions
+4. **Test Authorization Logic**: Confirm access control for different user roles
+5. **Monitor Test Coverage**: Aim for high coverage of critical code paths
+6. **Test Streaming Responses**: Ensure correct handling of streaming data
+7. **Simulate Network Issues**: Test behavior under poor network conditions
+8. **Test Resource Limits**: Verify behavior when hitting quotas or rate limits
+9. **Automate Regression Tests**: Maintain a suite that runs on every change
+10. **Document Test Cases**: Keep clear documentation of test scenarios
 
-## Běžné chyby při testování
+## Common Testing Pitfalls
 
-- **Přílišné spoléhání na testování šťastné cesty**: Ujistěte se, že důkladně testujete chybové případy
-- **Ignorování testování výkonu**: Identifikujte úzká místa, než ovlivní produkci
-- **Testování pouze v izolaci**: Kombinujte jednotkové, integrační a E2E testy
-- **Neúplné pokrytí API**: Zajistit, že všechny koncové body a funkce jsou testovány
-- **Nekonzistentní testovací prostředí**: Používejte kontejnery pro zajištění konzistentních testovacích prostředí
+- **Over-reliance on happy path testing**: Make sure to cover error cases thoroughly
+- **Ignoring performance testing**: Detect bottlenecks before production
+- **Testing in isolation only**: Combine unit, integration, and end-to-end tests
+- **Incomplete API coverage**: Test all endpoints and features
+- **Inconsistent test environments**: Use containers for consistent environments
 
-## Závěr
+## Conclusion
 
-Komplexní testovací strategie je nezbytná pro vývoj spolehlivých, vysoce kvalitních MCP serverů. Implementací nejlepších postupů a tipů uvedených v této příručce můžete zajistit, že vaše implementace MCP splňují nejvyšší standardy kvality, spolehlivosti a výkonu.
+A comprehensive testing strategy is vital for building reliable, high-quality MCP servers. Following the best practices and tips in this guide will help ensure your MCP implementations meet the highest standards of quality, reliability, and performance.
 
-## Klíčové body
+## Key Takeaways
 
-1. **Návrh nástrojů**: Dodržujte princip jediné odpovědnosti, používejte injekci závislostí a navrhujte pro složitelnost
-2. **Návrh schémat**: Vytvářejte jasná, dobře dokumentovaná schémata s odpovídajícími omezujícími podmínkami
-3. **Zpracování chyb**: Implementujte elegantní zpracování chyb, strukturované odpovědi na chyby a logiku opakování
-4. **Výkon**: Používejte cachování, asynchronní zpracování a omezení zdrojů
-5. **Bezpečnost**: Aplikujte důkladnou validaci vstupů, kontroly autorizace a zpracování citlivých dat
-6. **Testování**: Vytvářejte komplexní
+1. **Tool Design**: Adhere to single responsibility, use dependency injection, and design for composability
+2. **Schema Design**: Create clear, documented schemas with validation constraints
+3. **Error Handling**: Implement graceful handling, structured responses, and retries
+4. **Performance**: Utilize caching, async processing, and throttling
+5. **Security**: Apply thorough input validation, authorization checks, and protect sensitive data
+6. **Testing**: Develop comprehensive unit, integration, and end-to-end tests
+7. **Workflow Patterns**: Use proven patterns like chains, dispatchers, and parallel execution
 
-**Upozornění**:
-Tento dokument byl přeložen pomocí služby AI pro překlad [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za žádná nedorozumění nebo nesprávné interpretace vzniklé z použití tohoto překladu.
+## Exercise
+
+Design an MCP tool and workflow for a document processing system that:
+
+1. Accepts documents in multiple formats (PDF, DOCX, TXT)
+2. Extracts text and key information from the documents
+3. Classifies documents by type and content
+4. Generates a summary of each document
+
+Implement the tool schemas, error handling, and a workflow pattern best suited for this scenario. Consider how you would test this implementation.
+
+---
+## Next Steps
+
+Congratulations on completing the MCP curriculum! To continue your journey:
+
+1. Join the MCP community to stay updated on the latest developments
+2. Contribute to open-source MCP projects
+3. Apply MCP principles in your organization's AI initiatives
+4. Explore specialized MCP implementations for your industry
+5. Consider advanced courses on MCP topics like multi-modal integration or enterprise app integration
+6. Experiment with building your own MCP tools and workflows using the principles learned here
+
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vzniklé použitím tohoto překladu.

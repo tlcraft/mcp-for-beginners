@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:41:48+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:03:51+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "el"
 }
 -->
 # Επίδειξη MCP OAuth2
 
-Αυτό το έργο είναι μια **ελάχιστη εφαρμογή Spring Boot** που λειτουργεί ως:
+Αυτό το έργο είναι μια **ελάχιστη εφαρμογή Spring Boot** που λειτουργεί ταυτόχρονα ως:
 
-* **Διακομιστής Εξουσιοδότησης Spring** (εκδίδει JWT access tokens μέσω της ροής `client_credentials`), και  
-* **Διακομιστής Πόρων** (προστατεύει το δικό του `/hello` endpoint).
+* **Διακομιστής Εξουσιοδότησης Spring** (εκδίδοντας JWT access tokens μέσω της ροής `client_credentials`), και  
+* **Διακομιστής Πόρων** (προστατεύοντας το δικό του endpoint `/hello`).
 
-Αντικατοπτρίζει τη ρύθμιση που παρουσιάζεται στο [Spring blog post (2 Απρ 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Αντιγράφει τη ρύθμιση που παρουσιάζεται στο [Spring blog post (2 Απρ 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Δοκιμή της Ρύθμισης OAuth2
+## Δοκιμή της διαμόρφωσης OAuth2
 
-Μπορείτε να δοκιμάσετε τη ρύθμιση ασφαλείας OAuth2 με τα παρακάτω βήματα:
+Μπορείτε να δοκιμάσετε τη διαμόρφωση ασφαλείας OAuth2 με τα παρακάτω βήματα:
 
-### 1. Βεβαιωθείτε ότι ο διακομιστής λειτουργεί και είναι ασφαλής
+### 1. Επαληθεύστε ότι ο διακομιστής τρέχει και είναι ασφαλής
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Αποκτήστε ένα access token χρησιμοποιώντας client credentials
+### 2. Λάβετε ένα access token χρησιμοποιώντας τα client credentials
 
 ```bash
 # Get and extract the full token response
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Μια επιτυχής απάντηση με "Γειά από το MCP OAuth2 Demo!" επιβεβαιώνει ότι η ρύθμιση OAuth2 λειτουργεί σωστά.
+Μια επιτυχημένη απάντηση με το μήνυμα "Hello from MCP OAuth2 Demo!" επιβεβαιώνει ότι η διαμόρφωση OAuth2 λειτουργεί σωστά.
 
 ---
 
-## Δημιουργία Container
+## Δημιουργία container
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -102,7 +102,7 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 ## Ενσωμάτωση στο **Azure API Management**
 
-Προσθέστε αυτήν την εισερχόμενη πολιτική στο API σας:
+Προσθέστε αυτή την inbound πολιτική στο API σας:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-Το APIM θα ανακτήσει το JWKS και θα επαληθεύσει κάθε αίτημα.
+Το APIM θα ανακτήσει το JWKS και θα επαληθεύει κάθε αίτημα.
 
-**Αποποίηση ευθύνης**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ενώ προσπαθούμε για ακρίβεια, παρακαλώ να γνωρίζετε ότι οι αυτοματοποιημένες μεταφράσεις μπορεί να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα θα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρανοήσεις ή εσφαλμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+---
+
+## Τι ακολουθεί
+
+- [Root contexts](../mcp-root-contexts/README.md)
+
+**Αποποίηση ευθυνών**:  
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις μπορεί να περιέχουν σφάλματα ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η επίσημη πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική μετάφραση από ανθρώπους. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

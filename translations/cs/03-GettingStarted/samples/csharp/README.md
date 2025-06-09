@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T13:03:08+00:00",
+  "translation_date": "2025-05-27T16:20:59+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "cs"
 }
 -->
-# Základní kalkulační MCP služba
+# Basic Calculator MCP Service
 
-Tato služba poskytuje základní kalkulační operace prostřednictvím Model Context Protocol (MCP). Je navržena jako jednoduchý příklad pro začátečníky, kteří se učí o implementacích MCP.
+This service provides basic calculator operations through the Model Context Protocol (MCP). It's designed as a simple example for beginners learning about MCP implementations.
 
-Pro více informací viz [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+For more information, see [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## Funkce
+## Features
 
-Tato kalkulační služba nabízí následující možnosti:
+This calculator service offers the following capabilities:
 
-1. **Základní aritmetické operace**:
-   - Sčítání dvou čísel
-   - Odčítání jednoho čísla od druhého
-   - Násobení dvou čísel
-   - Dělení jednoho čísla druhým (s kontrolou dělení nulou)
+1. **Basic Arithmetic Operations**:
+   - Addition of two numbers
+   - Subtraction of one number from another
+   - Multiplication of two numbers
+   - Division of one number by another (with zero division check)
 
-## Použití `stdio` Typu
+## Using `stdio` Type
+  
+## Configuration
 
-## Konfigurace
-
-1. **Konfigurace MCP serverů**:
-   - Otevřete svůj pracovní prostor ve VS Code.
-   - Vytvořte soubor `.vscode/mcp.json` ve složce pracovního prostoru pro konfiguraci MCP serverů. Příklad konfigurace:
+1. **Configure MCP Servers**:
+   - Open your workspace in VS Code.
+   - Create a `.vscode/mcp.json` file in your workspace folder to configure MCP servers. Example configuration:
      ```json
      {
        "servers": {
@@ -46,11 +46,11 @@ Tato kalkulační služba nabízí následující možnosti:
        }
      }
      ```
-	- Nahraďte cestu cestou k vašemu projektu. Cesta by měla být absolutní a nikoli relativní k složce pracovního prostoru. (Příklad: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
+	- Replace the path with the path to your project. The path should be absolute and not relative to the workspace folder. (Example: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## Použití služby
+## Using the Service
 
-Služba poskytuje následující API koncové body prostřednictvím MCP protokolu:
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,18 +78,18 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` s vaším uživatelským jménem na Docker Hub:
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` with your Docker Hub username):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. Po vytvoření obrazu jej nahrajme na Docker Hub. Spusťte následující příkaz:
+1. After the image is built, let's upload it to Docker Hub. Run the following command:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Použití verze v Dockeru
+## Use the Dockerized Version
 
-1. V souboru `.vscode/mcp.json` nahraďte konfiguraci serveru následující:
+1. In the `.vscode/mcp.json` file, replace the server configuration by the following:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -103,11 +103,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Podíváme-li se na konfiguraci, vidíme, že příkaz je `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Looking at the configuration, you can see that the command is `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, a stejně jako předtím můžete požádat kalkulační službu, aby pro vás provedla nějaké výpočty.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, and just like before you can ask the calculator service to do some math for you.
 
-**Prohlášení**:  
-Tento dokument byl přeložen pomocí AI překladové služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme zodpovědní za jakékoli nedorozumění nebo mylné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za závazný zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědni za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

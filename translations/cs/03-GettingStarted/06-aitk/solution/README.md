@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e9490aedc71f99bc774af57b207a7adb",
-  "translation_date": "2025-05-17T12:37:38+00:00",
+  "translation_date": "2025-05-27T16:24:51+00:00",
   "source_file": "03-GettingStarted/06-aitk/solution/README.md",
   "language_code": "cs"
 }
 -->
-# 📘 Řešení úkolu: Rozšíření MCP serveru kalkulačky o nástroj pro výpočet druhé odmocniny
+# 📘 Assignment Solution: Extending Your Calculator MCP Server with a Square Root Tool
 
-## Přehled
-V tomto úkolu jste vylepšili svůj MCP server kalkulačky přidáním nového nástroje, který počítá druhou odmocninu čísla. Toto rozšíření umožňuje vašemu AI agentovi zpracovávat pokročilejší matematické dotazy, jako například "Jaká je druhá odmocnina z 16?" nebo "Vypočítej √49," pomocí přirozeného jazyka.
+## Overview
+In this assignment, you expanded your calculator MCP server by adding a new tool that computes the square root of a number. This upgrade enables your AI agent to process more complex math queries, like "What is the square root of 16?" or "Calculate √49," using natural language prompts.
 
-## 🛠️ Implementace nástroje pro druhou odmocninu
-K přidání této funkce jste definovali novou funkci nástroje ve svém souboru server.py. Zde je implementace:
+## 🛠️ Implementing the Square Root Tool
+To implement this feature, you created a new tool function in your server.py file. Here's the code:
 
 ```python
 """
@@ -68,35 +68,13 @@ def sqrt(a: float) -> float:
     return math.sqrt(a)
 ```
 
-## 🔍 Jak to funguje
+## 🔍 How It Works
 
-- **Importujte nástroj `math` module**: To perform mathematical operations beyond basic arithmetic, Python provides the built-in `math` module. This module includes a variety of mathematical functions and constants. By importing it using `import math`, you gain access to functions like `math.sqrt()`, which computes the square root of a number.
-- **Function Definition**: The `@server.tool()` decorator registers the `sqrt` function as a tool accessible by your AI agent.
-- **Input Parameter**: The function accepts a single argument `a` of type `float`.
-- **Error Handling**: If `a` is negative, the function raises a `ValueError` to prevent computing the square root of a negative number, which is not supported by the `math.sqrt()` function.
-- **Return Value**: For non-negative inputs, the function returns the square root of `a` using Python's built-in `math.sqrt()` method.
+- **Import the `math` module** and use `math.sqrt()` inside a `@server.tool()` decorated function named `sqrt` that takes a float `a` as input and returns the square root, handling `ValueError` exceptions.
+- Enabled your AI agent to process square root calculations through natural language prompts.
+- Practiced adding new tools and restarting the server to integrate additional features.
 
-## 🔄 Restarting the Server
-After adding the new `sqrt` tool, it's essential to restart your MCP server to ensure the agent recognizes and can utilize the newly added functionality.
+Feel free to keep experimenting by adding more math tools, like exponentiation or logarithms, to further improve your agent's abilities!
 
-## 💬 Example Prompts to Test the New Tool
-Here are some natural language prompts you can use to test the square root functionality:
-
-- "What is the square root of 25?"
-- "Calculate the square root of 81."
-- "Find the square root of 0."
-- "What is the square root of 2.25?"
-
-These prompts should trigger the agent to invoke the `sqrt` tool and return the correct results.
-
-## ✅ Summary
-By completing this assignment, you've:
-
-- Extended your calculator MCP server with a new `sqrt`.
-- Umožnili jste vašemu AI agentovi zpracovávat výpočty druhé odmocniny pomocí přirozeného jazyka.
-- Procvičili jste si přidávání nových nástrojů a restartování serveru pro integraci dalších funkcionalit.
-
-Nebojte se experimentovat dál přidáním dalších matematických nástrojů, jako je umocňování nebo logaritmické funkce, abyste pokračovali v rozšiřování schopností vašeho agenta!
-
-**Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, uvědomte si prosím, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vzniklé použitím tohoto překladu.

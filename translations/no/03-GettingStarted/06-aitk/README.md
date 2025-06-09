@@ -1,105 +1,113 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a3cbadbf632058aa59a523ac659aa1df",
-  "translation_date": "2025-05-17T12:24:07+00:00",
+  "original_hash": "af6cee6052e751674c1d9022a4b204e6",
+  "translation_date": "2025-06-03T14:41:38+00:00",
   "source_file": "03-GettingStarted/06-aitk/README.md",
   "language_code": "no"
 }
 -->
-# Konsumere en server fra AI Toolkit-utvidelsen for Visual Studio Code
+# Bruke en server fra AI Toolkit-utvidelsen for Visual Studio Code
 
-Når du bygger en AI-agent, handler det ikke bare om å generere smarte svar; det handler også om å gi agenten muligheten til å ta handling. Det er her Model Context Protocol (MCP) kommer inn. MCP gjør det enkelt for agenter å få tilgang til eksterne verktøy og tjenester på en konsistent måte. Tenk på det som å koble agenten din til en verktøykasse den faktisk kan bruke.
+Når du bygger en AI-agent, handler det ikke bare om å generere smarte svar; det handler også om å gi agenten muligheten til å utføre handlinger. Det er her Model Context Protocol (MCP) kommer inn. MCP gjør det enkelt for agenter å få tilgang til eksterne verktøy og tjenester på en konsistent måte. Tenk på det som å koble agenten din til en verktøykasse den *faktisk* kan bruke.
 
-La oss si at du kobler en agent til MCP-serveren for kalkulatoren din. Plutselig kan agenten utføre matematiske operasjoner bare ved å motta en forespørsel som "Hva er 47 ganger 89?"—ingen behov for å hardkode logikk eller bygge tilpassede API-er.
+La oss si at du kobler en agent til kalkulator-MCP-serveren din. Plutselig kan agenten utføre matteoperasjoner bare ved å motta en prompt som «Hva er 47 ganger 89?» — uten behov for å hardkode logikk eller bygge tilpassede API-er.
 
 ## Oversikt
 
-Denne leksjonen dekker hvordan man kobler en MCP-server for kalkulator til en agent med [AI Toolkit](https://aka.ms/AIToolkit)-utvidelsen i Visual Studio Code, slik at agenten din kan utføre matematiske operasjoner som addisjon, subtraksjon, multiplikasjon og divisjon gjennom naturlig språk.
+Denne leksjonen viser hvordan du kobler en kalkulator-MCP-server til en agent med [AI Toolkit](https://aka.ms/AIToolkit)-utvidelsen i Visual Studio Code, slik at agenten kan utføre matteoperasjoner som addisjon, subtraksjon, multiplikasjon og divisjon via naturlig språk.
 
-AI Toolkit er en kraftig utvidelse for Visual Studio Code som forenkler utviklingen av agenter. AI-ingeniører kan enkelt bygge AI-applikasjoner ved å utvikle og teste generative AI-modeller—lokalt eller i skyen. Utvidelsen støtter de fleste større generative modeller som er tilgjengelige i dag.
+AI Toolkit er en kraftig utvidelse for Visual Studio Code som forenkler utvikling av agenter. AI-ingeniører kan enkelt bygge AI-applikasjoner ved å utvikle og teste generative AI-modeller — enten lokalt eller i skyen. Utvidelsen støtter de fleste store generative modeller som finnes i dag.
 
 *Merk*: AI Toolkit støtter for øyeblikket Python og TypeScript.
 
 ## Læringsmål
 
-Ved slutten av denne leksjonen vil du kunne:
+Etter denne leksjonen skal du kunne:
 
-- Konsumere en MCP-server via AI Toolkit.
-- Konfigurere en agentkonfigurasjon for å gjøre det mulig for den å oppdage og bruke verktøy levert av MCP-serveren.
-- Bruke MCP-verktøy via naturlig språk.
+- Bruke en MCP-server via AI Toolkit.
+- Konfigurere en agent slik at den kan oppdage og bruke verktøy levert av MCP-serveren.
+- Bruke MCP-verktøy gjennom naturlig språk.
 
 ## Tilnærming
 
-Her er hvordan vi må nærme oss dette på et høyt nivå:
+Slik bør vi gå frem på et overordnet nivå:
 
-- Lag en agent og definer systemprompten dens.
+- Lag en agent og definer systemprompten.
 - Lag en MCP-server med kalkulatorverktøy.
 - Koble Agent Builder til MCP-serveren.
-- Test agentens verktøykalling via naturlig språk.
+- Test agentens verktøybruk via naturlig språk.
 
-Flott, nå som vi forstår flyten, la oss konfigurere en AI-agent for å utnytte eksterne verktøy gjennom MCP, og forbedre dens evner!
+Flott, nå som vi forstår flyten, la oss konfigurere en AI-agent som kan bruke eksterne verktøy via MCP og dermed utvide dens funksjonalitet!
 
 ## Forutsetninger
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [AI Toolkit for Visual Studio Code](https://aka.ms/AIToolkit)
 
-## Øvelse: Konsumere en server
+## Øvelse: Bruke en server
 
-I denne øvelsen vil du bygge, kjøre og forbedre en AI-agent med verktøy fra en MCP-server inne i Visual Studio Code ved hjelp av AI Toolkit.
+I denne øvelsen skal du bygge, kjøre og forbedre en AI-agent med verktøy fra en MCP-server inne i Visual Studio Code ved hjelp av AI Toolkit.
 
-### -0- Forberedelse, legg til OpenAI GPT-4o-modellen til Mine Modeller
+### -0- Forberedelse, legg til OpenAI GPT-4o-modellen i Mine modeller
 
-Øvelsen bruker **GPT-4o**-modellen. Modellen bør legges til **Mine Modeller** før agenten opprettes.
+Øvelsen bruker **GPT-4o**-modellen. Modellen må legges til i **Mine modeller** før du lager agenten.
+
+![Skjermbilde av modellvalg i AI Toolkit-utvidelsen for Visual Studio Code. Overskriften lyder "Finn riktig modell for din AI-løsning" med undertittel som oppfordrer til å oppdage, teste og distribuere AI-modeller. Under “Populære modeller” vises seks modellkort: DeepSeek-R1 (GitHub-hostet), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - liten, rask) og DeepSeek-R1 (Ollama-hostet). Hvert kort har mulighet for “Legg til” eller “Prøv i lekeplass”.](../../../../translated_images/aitk-model-catalog.c0c66f0d9ac0ee73c1d21b9207db99e914ef9dd52fced6f226c2b1f537e2c447.no.png)
 
 1. Åpne **AI Toolkit**-utvidelsen fra **Aktivitetslinjen**.
-1. I **Katalog**-seksjonen, velg **Modeller** for å åpne **Model Catalog**. Når du velger **Modeller**, åpnes **Model Catalog** i en ny redigeringsfane.
-1. I søkefeltet i **Model Catalog**, skriv inn **OpenAI GPT-4o**.
-1. Klikk **+ Legg til** for å legge modellen til listen **Mine Modeller**. Sørg for at du har valgt modellen som er **Hosted by GitHub**.
-1. I **Aktivitetslinjen**, bekreft at **OpenAI GPT-4o**-modellen vises i listen.
+2. I **Katalog**-seksjonen velger du **Modeller** for å åpne **Modellkatalogen**. Dette åpner Modellkatalogen i en ny editorfane.
+3. Skriv **OpenAI GPT-4o** i søkefeltet i Modellkatalogen.
+4. Klikk **+ Legg til** for å legge modellen til i listen **Mine modeller**. Pass på at du velger modellen som er **hostet av GitHub**.
+5. I **Aktivitetslinjen** bekrefter du at **OpenAI GPT-4o** vises i listen.
 
 ### -1- Lag en agent
 
-**Agent (Prompt) Builder** lar deg lage og tilpasse dine egne AI-drevne agenter. I denne delen vil du lage en ny agent og tilordne en modell for å drive samtalen.
+**Agent (Prompt) Builder** lar deg lage og tilpasse dine egne AI-drevne agenter. I denne delen lager du en ny agent og tildeler en modell som skal drive samtalen.
+
+![Skjermbilde av "Calculator Agent"-byggergrensesnittet i AI Toolkit-utvidelsen for Visual Studio Code. På venstre panel er modellen valgt til "OpenAI GPT-4o (via GitHub)". En systemprompt lyder "Du er professor ved universitetet og underviser i matematikk," og brukerprompten sier, "Forklar Fourier-ligningen på en enkel måte." Tilleggsvalg inkluderer knapper for å legge til verktøy, aktivere MCP-server og velge strukturert output. En blå “Kjør”-knapp er nederst. På høyre panel under "Kom i gang med eksempler" listes tre prøveagenter: Web Developer (med MCP Server), Second-Grade Simplifier og Dream Interpreter, hver med korte beskrivelser av funksjonene.](../../../../translated_images/aitk-agent-builder.fb7df60f7923b4d8ba839662bf6d7647e843c01b57256e1e9adecb46a64d3408.no.png)
 
 1. Åpne **AI Toolkit**-utvidelsen fra **Aktivitetslinjen**.
-1. I **Verktøy**-seksjonen, velg **Agent (Prompt) Builder**. Når du velger **Agent (Prompt) Builder**, åpnes **Agent (Prompt) Builder** i en ny redigeringsfane.
-1. Klikk på **+ Ny Builder**-knappen. Utvidelsen vil starte en oppsettsveiviser via **Command Palette**.
-1. Skriv inn navnet **Kalkulator Agent** og trykk **Enter**.
-1. I **Agent (Prompt) Builder**, for **Modell**-feltet, velg **OpenAI GPT-4o (via GitHub)**-modellen.
+2. I **Verktøy**-seksjonen velger du **Agent (Prompt) Builder**. Dette åpner Agent (Prompt) Builder i en ny editorfane.
+3. Klikk på **+ Ny agent**-knappen. Utvidelsen starter en oppsettsveiviser via **Kommando-paletten**.
+4. Skriv inn navnet **Calculator Agent** og trykk **Enter**.
+5. I **Agent (Prompt) Builder**, velg **OpenAI GPT-4o (via GitHub)** som modell i **Modell**-feltet.
 
 ### -2- Lag en systemprompt for agenten
 
-Med agenten opprettet, er det på tide å definere dens personlighet og formål. I denne delen vil du bruke **Generer systemprompt**-funksjonen for å beskrive agentens tiltenkte oppførsel—i dette tilfellet en kalkulatoragent—og la modellen skrive systemprompten for deg.
+Når agenten er satt opp, er det tid for å definere dens personlighet og formål. I denne delen bruker du funksjonen **Generer systemprompt** for å beskrive agentens tiltenkte oppførsel — i dette tilfellet en kalkulatoragent — og la modellen skrive systemprompten for deg.
 
-1. For **Prompts**-seksjonen, klikk på **Generer systemprompt**-knappen. Denne knappen åpner promptbyggeren som bruker AI til å generere en systemprompt for agenten.
-1. I **Generer en prompt**-vinduet, skriv inn følgende: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
-1. Klikk på **Generer**-knappen. En varsling vil vises i nederste høyre hjørne som bekrefter at systemprompten genereres. Når promptgenereringen er fullført, vil prompten vises i **Systemprompt**-feltet i **Agent (Prompt) Builder**.
-1. Gjennomgå **Systemprompt** og modifiser om nødvendig.
+![Skjermbilde av "Calculator Agent"-grensesnittet i AI Toolkit for Visual Studio Code med et modalt vindu åpent med tittelen "Generer en prompt." Vinduet forklarer at en promptmal kan genereres ved å dele grunnleggende detaljer, og inkluderer en tekstboks med eksempel på systemprompt: "Du er en hjelpsom og effektiv matematikkassistent. Når du får et problem som involverer grunnleggende aritmetikk, svarer du med korrekt resultat." Under tekstboksen er det knapper for "Lukk" og "Generer". I bakgrunnen er deler av agentkonfigurasjonen synlig, inkludert valgt modell "OpenAI GPT-4o (via GitHub)" og felt for system- og brukerprompter.](../../../../translated_images/aitk-generate-prompt.0d4292407c15282bf714e327f5d3d833389324004135727ef28adc22dbbb4e8f.no.png)
+
+1. I **Prompts**-seksjonen klikker du på **Generer systemprompt**-knappen. Denne åpner promptbyggeren som bruker AI til å lage en systemprompt for agenten.
+2. I vinduet **Generer en prompt**, skriv inn: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
+3. Klikk **Generer**. En varsling vises nederst til høyre som bekrefter at systemprompten genereres. Når genereringen er ferdig, vil prompten vises i feltet **System prompt** i **Agent (Prompt) Builder**.
+4. Gå gjennom systemprompten og endre den ved behov.
 
 ### -3- Lag en MCP-server
 
-Nå som du har definert agentens systemprompt—som styrer dens oppførsel og svar—er det på tide å utstyre agenten med praktiske evner. I denne delen vil du lage en MCP-server for kalkulator med verktøy for å utføre addisjon, subtraksjon, multiplikasjon og divisjon beregninger. Denne serveren vil gjøre det mulig for agenten din å utføre sanntids matematiske operasjoner som svar på naturlige språk forespørsler.
+Nå som du har definert systemprompten som styrer agentens oppførsel og svar, er det tid for å gi agenten praktiske ferdigheter. I denne delen lager du en kalkulator-MCP-server med verktøy for addisjon, subtraksjon, multiplikasjon og divisjon. Denne serveren gjør at agenten kan utføre matteoperasjoner i sanntid som svar på naturlige språk-forespørsler.
 
-AI Toolkit er utstyrt med maler for å gjøre det enkelt å lage din egen MCP-server. Vi vil bruke Python-malen for å lage MCP-serveren for kalkulatoren.
+![Skjermbilde av nedre del av Calculator Agent-grensesnittet i AI Toolkit-utvidelsen for Visual Studio Code. Viser utvidbare menyer for “Verktøy” og “Strukturert output,” samt en nedtrekksmeny merket “Velg output-format” satt til “tekst.” Til høyre er det en knapp merket “+ MCP Server” for å legge til en Model Context Protocol-server. Et bildeikon-plassholder vises over Verktøy-seksjonen.](../../../../translated_images/aitk-add-mcp-server.9b158809336d87e8076eb5954846040a7370c88046639a09e766398c8855c3d3.no.png)
+
+AI Toolkit har maler som gjør det enkelt å lage din egen MCP-server. Vi bruker Python-malen for å lage kalkulator-MCP-serveren.
 
 *Merk*: AI Toolkit støtter for øyeblikket Python og TypeScript.
 
-1. I **Verktøy**-seksjonen i **Agent (Prompt) Builder**, klikk på **+ MCP Server**-knappen. Utvidelsen vil starte en oppsettsveiviser via **Command Palette**.
-1. Velg **+ Legg til Server**.
-1. Velg **Opprett en Ny MCP Server**.
-1. Velg **python-weather** som malen.
-1. Velg **Standardmappe** for å lagre MCP-servermalen.
-1. Skriv inn følgende navn for serveren: **Kalkulator**
-1. Et nytt Visual Studio Code-vindu vil åpne seg. Velg **Ja, jeg stoler på forfatterne**.
-1. Bruk terminalen (**Terminal** > **Ny Terminal**), opprett et virtuelt miljø: `python -m venv .venv`
-1. Bruk terminalen, aktiver det virtuelle miljøet:
+1. I **Verktøy**-seksjonen i **Agent (Prompt) Builder**, klikk på **+ MCP Server**-knappen. Utvidelsen starter en oppsettsveiviser via **Kommando-paletten**.
+2. Velg **+ Legg til server**.
+3. Velg **Lag en ny MCP-server**.
+4. Velg **python-weather** som mal.
+5. Velg **Standardmappe** for å lagre MCP-servermalen.
+6. Skriv inn navnet på serveren: **Calculator**
+7. Et nytt Visual Studio Code-vindu åpnes. Velg **Ja, jeg stoler på forfatterne**.
+8. I terminalen (**Terminal** > **Ny terminal**), opprett et virtuelt miljø: `python -m venv .venv`
+9. Aktiver det virtuelle miljøet i terminalen:
     1. Windows - `.venv\Scripts\activate`
-    1. macOS/Linux - `source venv/bin/activate`
-1. Bruk terminalen, installer avhengighetene: `pip install -e .[dev]`
-1. I **Explorer**-visningen av **Aktivitetslinjen**, utvid **src**-katalogen og velg **server.py** for å åpne filen i redigereren.
-1. Erstatt koden i **server.py**-filen med følgende og lagre:
+    2. macOS/Linux - `source venv/bin/activate`
+10. Installer avhengighetene i terminalen: `pip install -e .[dev]`
+11. I **Utforsker**-visningen i **Aktivitetslinjen**, utvid **src**-mappen og åpne **server.py** i editoren.
+12. Erstatt koden i **server.py** med følgende og lagre:
 
     ```python
     """
@@ -142,28 +150,26 @@ AI Toolkit er utstyrt med maler for å gjøre det enkelt å lage din egen MCP-se
         return a / b
     ```
 
-### -4- Kjøre agenten med MCP-serveren for kalkulator
+### -4- Kjør agenten med kalkulator-MCP-serveren
 
-Nå som agenten din har verktøy, er det på tide å bruke dem! I denne delen vil du sende forespørsler til agenten for å teste og validere om agenten bruker det riktige verktøyet fra MCP-serveren for kalkulator.
+Nå som agenten har verktøy, er det tid for å bruke dem! I denne delen sender du inn forespørsler til agenten for å teste og bekrefte at den bruker riktig verktøy fra kalkulator-MCP-serveren.
 
-Du vil kjøre MCP-serveren for kalkulatoren på din lokale utviklingsmaskin via **Agent Builder** som MCP-klienten.
+![Skjermbilde av Calculator Agent-grensesnittet i AI Toolkit-utvidelsen for Visual Studio Code. På venstre panel under “Verktøy” er en MCP-server kalt local-server-calculator_server lagt til, med fire tilgjengelige verktøy: add, subtract, multiply og divide. En badge viser at fire verktøy er aktive. Under er en sammenfoldet “Strukturert output”-seksjon og en blå “Kjør”-knapp. På høyre panel under “Modellsvar” kaller agenten opp multiply- og subtract-verktøyene med input {"a": 3, "b": 25} og {"a": 75, "b": 20} henholdsvis. Det endelige “Tool Response” vises som 75.0. En “Se kode”-knapp vises nederst.](../../../../translated_images/aitk-agent-response-with-tools.0f0da2c6eef5eb3f5b7592d6d056449aa8aaa42a3ab0b0c2f14269b3049cfdb5.no.png)
 
-1. Trykk `F5` to start debugging the MCP server. The **Agent (Prompt) Builder** will open in a new editor tab. The status of the server is visible in the terminal.
-1. In the **User prompt** field of the **Agent (Prompt) Builder**, enter the following prompt: `Jeg kjøpte 3 varer priset til $25 hver, og brukte deretter en rabatt på $20. Hvor mye betalte jeg?`
-1. Click the **Run** button to generate the agent's response.
-1. Review the agent output. The model should conclude that you paid **$55**.
-1. Here's a breakdown of what should occur:
-    - The agent selects the **multiply** and **substract** tools to aid in the calculation.
-    - The respective `a` and `b` values are assigned for the **multiply** tool.
-    - The respective `a` and `b`-verdier er tilordnet for **subtract**-verktøyet.
-    - Responsen fra hvert verktøy gis i den respektive **Verktøyresponsen**.
-    - Den endelige utgangen fra modellen gis i den endelige **Modellresponsen**.
-1. Send inn flere forespørsler for å teste agenten ytterligere. Du kan endre den eksisterende forespørselen i **Brukerprompt**-feltet ved å klikke inn i feltet og erstatte den eksisterende forespørselen.
-1. Når du er ferdig med å teste agenten, kan du stoppe serveren via **terminalen** ved å skrive inn **CTRL/CMD+C** for å avslutte.
+Du skal kjøre kalkulator-MCP-serveren på din lokale utviklermaskin via **Agent Builder** som MCP-klient.
+
+1. Trykk `F5` for å starte agenten og serveren.
+2. Skriv inn følgende prompt i **Brukerprompt**-feltet:  
+   `Jeg kjøpte 3 varer til 25 dollar hver, og brukte deretter en rabatt på 20 dollar. Hvor mye betalte jeg?`
+3. Verdiene `a` og `b` settes for **subtract**-verktøyet.
+    - Svaret fra hvert verktøy vises i den respektive **Tool Response**.
+    - Det endelige svaret fra modellen vises i **Model Response**.
+4. Send inn flere forespørsler for å teste agenten videre. Du kan endre den eksisterende prompten ved å klikke i **Brukerprompt**-feltet og erstatte teksten.
+5. Når du er ferdig med å teste agenten, kan du stoppe serveren i terminalen ved å trykke **CTRL/CMD+C**.
 
 ## Oppgave
 
-Prøv å legge til en ekstra verktøypost i **server.py**-filen din (f.eks.: returnere kvadratroten av et tall). Send inn flere forespørsler som vil kreve at agenten utnytter ditt nye verktøy (eller eksisterende verktøy). Sørg for å starte serveren på nytt for å laste inn nyopprettede verktøy.
+Prøv å legge til et ekstra verktøy i **server.py**-filen (f.eks. returner kvadratroten av et tall). Send inn flere forespørsler som krever at agenten bruker ditt nye verktøy (eller eksisterende verktøy). Husk å starte serveren på nytt for å laste inn de nye verktøyene.
 
 ## Løsning
 
@@ -171,21 +177,19 @@ Prøv å legge til en ekstra verktøypost i **server.py**-filen din (f.eks.: ret
 
 ## Viktige punkter
 
-De viktigste punktene fra dette kapittelet er følgende:
+Hovedpoengene fra dette kapitlet er:
 
-- AI Toolkit-utvidelsen er en flott klient som lar deg konsumere MCP-servere og deres verktøy.
-- Du kan legge til nye verktøy til MCP-servere, og utvide agentens evner for å møte utviklende krav.
-- AI Toolkit inkluderer maler (f.eks. Python MCP-servermaler) for å forenkle opprettelsen av tilpassede verktøy.
+- AI Toolkit-utvidelsen er en flott klient som lar deg bruke MCP-servere og verktøyene deres.
+- Du kan legge til nye verktøy i MCP-servere for å utvide agentens funksjonalitet etter behov.
+- AI Toolkit inkluderer maler (f.eks. Python MCP-servermaler) som gjør det enklere å lage egne verktøy.
 
-## Tilleggsressurser
+## Ekstra ressurser
 
-- [AI Toolkit docs](https://aka.ms/AIToolkit/doc)
+- [AI Toolkit-dokumentasjon](https://aka.ms/AIToolkit/doc)
 
-## Hva er neste
+## Hva nå
 
-Neste: [Leksjon 4 Praktisk Implementering](/04-PracticalImplementation/README.md)
-
-Sure, here's the translation to Norwegian:
+Neste: [Leksjon 4 Praktisk implementering](/04-PracticalImplementation/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi etterstreber nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår fra bruk av denne oversettelsen.

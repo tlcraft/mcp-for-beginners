@@ -1,63 +1,130 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "584c4d6b470d865ad04746f5da3574b6",
-  "translation_date": "2025-05-16T15:43:46+00:00",
+  "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
+  "translation_date": "2025-05-25T13:28:46+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "ko"
 }
 -->
-# 샘플
+# Model Context Protocol (MCP) Python 구현
 
-이것은 MCP 서버를 위한 Python 샘플입니다.
+이 저장소에는 Model Context Protocol (MCP)의 Python 구현이 포함되어 있으며, MCP 표준을 사용하여 통신하는 서버와 클라이언트 애플리케이션을 만드는 방법을 보여줍니다.
 
-이 모듈은 완성 요청을 처리할 수 있는 기본 MCP 서버를 구현하는 방법을 보여줍니다. 다양한 AI 모델과의 상호작용을 시뮬레이션하는 모의 구현을 제공합니다.
+## 개요
 
-도구 등록 과정은 다음과 같습니다:
+MCP 구현은 두 가지 주요 구성 요소로 이루어져 있습니다:
 
-```python
-completion_tool = ToolDefinition(
-    name="completion",
-    description="Generate completions using AI models",
-    parameters={
-        "model": {
-            "type": "string",
-            "enum": self.models,
-            "description": "The AI model to use for completion"
-        },
-        "prompt": {
-            "type": "string",
-            "description": "The prompt text to complete"
-        },
-        "temperature": {
-            "type": "number",
-            "description": "Sampling temperature (0.0 to 1.0)"
-        },
-        "max_tokens": {
-            "type": "number",
-            "description": "Maximum number of tokens to generate"
-        }
-    },
-    required=["model", "prompt"]
-)
+1. **MCP Server (`server.py`)** - 다음을 제공하는 서버:
+   - **Tools**: 원격으로 호출할 수 있는 함수들
+   - **Resources**: 가져올 수 있는 데이터
+   - **Prompts**: 언어 모델용 프롬프트 생성 템플릿
 
-# Register the tool with its handler
-self.server.tools.register(completion_tool, self._handle_completion)
-```
+2. **MCP Client (`client.py`)** - 서버에 연결하여 기능을 사용하는 클라이언트 애플리케이션
+
+## 기능
+
+이 구현은 여러 주요 MCP 기능을 보여줍니다:
+
+### Tools
+- `completion` - AI 모델에서 텍스트 완성을 생성 (시뮬레이션)
+- `add` - 두 수를 더하는 간단한 계산기
+
+### Resources
+- `models://` - 사용 가능한 AI 모델 정보 반환
+- `greeting://{name}` - 주어진 이름에 대한 개인화된 인사말 반환
+
+### Prompts
+- `review_code` - 코드 리뷰용 프롬프트 생성
 
 ## 설치
 
-다음 명령어를 실행하세요:
+이 MCP 구현을 사용하려면 필요한 패키지를 설치하세요:
 
-```bash
-pip install mcp
+```powershell
+pip install mcp-server mcp-client
 ```
 
-## 실행
+## 서버 및 클라이언트 실행
 
-```bash
-python mcp_sample.py
+### 서버 시작
+
+한 터미널 창에서 서버를 실행하세요:
+
+```powershell
+python server.py
 ```
+
+서버는 MCP CLI를 사용해 개발 모드로 실행할 수도 있습니다:
+
+```powershell
+mcp dev server.py
+```
+
+또는 Claude Desktop에 설치하여 실행할 수도 있습니다(사용 가능한 경우):
+
+```powershell
+mcp install server.py
+```
+
+### 클라이언트 실행
+
+다른 터미널 창에서 클라이언트를 실행하세요:
+
+```powershell
+python client.py
+```
+
+이렇게 하면 서버에 연결되어 모든 사용 가능한 기능을 시연합니다.
+
+### 클라이언트 사용법
+
+클라이언트(`client.py`)는 MCP의 모든 기능을 보여줍니다:
+
+```powershell
+python client.py
+```
+
+서버에 연결하여 tools, resources, prompts를 포함한 모든 기능을 사용합니다. 출력 결과는 다음과 같습니다:
+
+1. 계산기 도구 결과 (5 + 7 = 12)
+2. "What is the meaning of life?"에 대한 완성 도구 응답
+3. 사용 가능한 AI 모델 목록
+4. "MCP Explorer"에 대한 개인화된 인사말
+5. 코드 리뷰 프롬프트 템플릿
+
+## 구현 세부사항
+
+서버는 MCP 서비스를 정의하기 위한 고수준 추상화를 제공하는 `FastMCP` API를 사용하여 구현되었습니다. 다음은 도구가 정의되는 간단한 예시입니다:
+
+```python
+@mcp.tool()
+def add(a: int, b: int) -> int:
+    """Add two numbers together
+    
+    Args:
+        a: First number
+        b: Second number
+    
+    Returns:
+        The sum of the two numbers
+    """
+    logger.info(f"Adding {a} and {b}")
+    return a + b
+```
+
+클라이언트는 MCP 클라이언트 라이브러리를 사용해 서버에 연결하고 호출합니다:
+
+```python
+async with stdio_client(server_params) as (reader, writer):
+    async with ClientSession(reader, writer) as session:
+        await session.initialize()
+        result = await session.call_tool("add", arguments={"a": 5, "b": 7})
+```
+
+## 자세히 알아보기
+
+MCP에 대한 더 많은 정보는 다음에서 확인하세요: https://modelcontextprotocol.io/
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의해 주시기 바랍니다. 원문 문서는 해당 언어의 권위 있는 자료로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역의 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확한 내용이 포함될 수 있음을 양지해 주시기 바랍니다. 원본 문서의 원어 버전이 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역의 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

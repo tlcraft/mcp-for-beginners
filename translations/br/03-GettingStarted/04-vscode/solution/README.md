@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "96e08a8c1049dab757deb64cce4ea1e8",
-  "translation_date": "2025-05-17T11:20:24+00:00",
+  "translation_date": "2025-05-29T20:23:41+00:00",
   "source_file": "03-GettingStarted/04-vscode/solution/README.md",
   "language_code": "br"
 }
 -->
-# Executando o exemplo
+# Running the sample
 
-Aqui assumimos que você já tem um código de servidor funcionando. Por favor, localize um servidor em um dos capítulos anteriores.
+Here we assume you already have a working server code. Please locate a server from one of the earlier chapters.
 
-## Configurar mcp.json
+## Set up mcp.json
 
-Aqui está um arquivo que você usa como referência, [mcp.json](../../../../../03-GettingStarted/04-vscode/solution/mcp.json).
+Here's a file you use for reference, [mcp.json](../../../../../03-GettingStarted/04-vscode/solution/mcp.json).
 
-Altere a entrada do servidor conforme necessário para apontar o caminho absoluto para o seu servidor, incluindo o comando completo necessário para executá-lo.
+Change the server entry as needed to point out the absolute path to your server including the needed full command to run.
 
-No arquivo de exemplo mencionado acima, a entrada do servidor se parece com isto:
+In the example file referred above the server entry looks like so:
 
 ```json
 "hello-mcp": {
@@ -28,7 +28,7 @@ No arquivo de exemplo mencionado acima, a entrada do servidor se parece com isto
 }
 ```
 
-Isso corresponde a executar um comando assim: `cmd /c node <caminho absoluto>\\build\index.js`. 
+This corresponds to running a command like so: `cmd /c node <absolute path>\\build\index.js`. 
 
 - Change this server entry to fit where your server file is located or to what's needed to startup your server depending on your chosen runtime and server location.
 
@@ -40,13 +40,13 @@ Isso corresponde a executar um comando assim: `cmd /c node <caminho absoluto>\\b
 
 ## Run a tool
 
-- Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add` e digitar algo como "add 3 to 20".
+- Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add` type something like "add 3 to 20".
 
-Você deve ver uma ferramenta sendo apresentada acima da caixa de texto do chat, indicando para você selecionar para executar a ferramenta como nesta imagem:
+    You should see a tool being presented above the chat text box indicating for you to select to run the tool like in this visual:
 
-![VS Code indicando que deseja executar uma ferramenta](../../../../../translated_images/vscode-agent.7f56a5ce3cef334adfe737514a7e8ac9384fa4161dd4df14bd3ddc9cd1a154f4.br.png)
+    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.br.png)
 
-Selecionar a ferramenta deve produzir um resultado numérico dizendo "23" se seu comando foi como mencionamos anteriormente.
+    Selecting the tool should produce a numeric result saying "23" if your prompt was like we mentioned previously.
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução humana profissional. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações errôneas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

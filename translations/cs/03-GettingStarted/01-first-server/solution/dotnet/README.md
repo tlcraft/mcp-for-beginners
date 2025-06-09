@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d1954cd45a2563dfea43bfe48cccb0c8",
-  "translation_date": "2025-05-17T09:12:04+00:00",
+  "translation_date": "2025-05-27T16:21:51+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "cs"
 }
 -->
-# Spuštění tohoto příkladu
+# Running this sample
 
-## -1- Nainstalujte závislosti
+## -1- Install the dependencies
 
 ```bash
 dotnet add package ModelContextProtocol --prerelease
@@ -17,36 +17,37 @@ dotnet add package ModelContextProtocol --prerelease
 dotnet add package Microsoft.Extensions.Hosting
 ```
 
-## -3- Spusťte příklad
+## -3- Run the sample
+
 
 ```bash
 dotnet run
 ```
 
-## -4- Otestujte příklad
+## -4- Test the sample
 
-S běžícím serverem v jednom terminálu otevřete další terminál a spusťte následující příkaz:
+With the server running in one terminal, open another terminal and run the following command:
 
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-To by mělo spustit webový server s vizuálním rozhraním, které vám umožní otestovat příklad.
+This should start a web server with a visual interface allowing you to test the sample.
 
-Jakmile je server připojen:
+Once the server is connected: 
 
-- zkuste vypsat nástroje a spusťte `add` s argumenty 2 a 4, měli byste vidět výsledek 6.
-- přejděte na zdroje a šablonu zdrojů a zavolejte "greeting", zadejte jméno a měli byste vidět pozdrav se jménem, které jste zadali.
+- try listing tools and run `add`, with args 2 and 4, you should see 6 in the result.
+- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
 
-### Testování v režimu CLI
+### Testing in CLI mode
 
-Můžete jej spustit přímo v režimu CLI spuštěním následujícího příkazu:
+You can launch it directly in CLI mode by running the following command:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-Tím se vypíší všechny nástroje dostupné na serveru. Měli byste vidět následující výstup:
+This will list all the tools available in the server. You should see the following output:
 
 ```text
 {
@@ -76,13 +77,13 @@ Tím se vypíší všechny nástroje dostupné na serveru. Měli byste vidět n�
 }
 ```
 
-Pro vyvolání nástroje zadejte:
+To invoke a tool type:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-name Add --tool-arg a=1 --tool-arg b=2
 ```
 
-Měli byste vidět následující výstup:
+You should see the following output:
 
 ```text
 {
@@ -97,8 +98,8 @@ Měli byste vidět následující výstup:
 ```
 
 > ![!TIP]
-> Obvykle je mnohem rychlejší spustit inspektor v režimu CLI než v prohlížeči.
-> Přečtěte si více o inspektoru [zde](https://github.com/modelcontextprotocol/inspector).
+> Обычно запуск инспектора в CLI режиме работает значительно быстрее, чем в браузере.
+> Подробнее об инспекторе можно прочитать [здесь](https://github.com/modelcontextprotocol/inspector).
 
-**Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, vezměte prosím na vědomí, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nezodpovídáme za žádná nedorozumění nebo mylné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho rodném jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo chybné výklady vyplývající z použití tohoto překladu.

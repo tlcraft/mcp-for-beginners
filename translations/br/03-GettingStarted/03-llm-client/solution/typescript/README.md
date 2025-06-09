@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6d6315e03f591fb5a39be91da88585dc",
-  "translation_date": "2025-05-17T10:55:06+00:00",
+  "translation_date": "2025-05-29T20:21:38+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/typescript/README.md",
   "language_code": "br"
 }
 -->
 # Executando este exemplo
 
-Este exemplo requer ter um LLM no cliente. O LLM precisa que você execute isso em um Codespaces ou configure um token de acesso pessoal no GitHub para funcionar.
+Este exemplo envolve ter um LLM no cliente. O LLM precisa que você execute isso em um Codespaces ou que configure um token de acesso pessoal no GitHub para funcionar.
 
 ## -1- Instale as dependências
 
@@ -41,4 +41,4 @@ Tool result:  { content: [ { type: 'text', text: '5' } ] }
 ```
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora busquemos precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução humana profissional. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

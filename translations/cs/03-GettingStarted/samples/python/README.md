@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bb55f3119d45c4412fc5555299e60498",
-  "translation_date": "2025-05-17T13:32:22+00:00",
+  "translation_date": "2025-05-27T16:21:12+00:00",
   "source_file": "03-GettingStarted/samples/python/README.md",
   "language_code": "cs"
 }
 -->
-# Ukázka
+# Sample
 
-Toto je ukázka Pythonu pro MCP Server
+Это пример на Python для MCP Server
 
-Takto vypadá část kalkulačky:
+Вот как выглядит часть калькулятора:
 
 ```python
 @mcp.tool()
@@ -42,19 +42,19 @@ def divide(a: float, b: float) -> float:
     return a / b
 ```
 
-## Instalace
+## Install
 
-Spusťte následující příkaz:
+Выполните следующую команду:
 
 ```bash
 pip install mcp
 ```
 
-## Spuštění
+## Run
 
 ```bash
 python mcp_calculator_server.py
 ```
 
-**Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI překladatel [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, prosíme vás, abyste si byli vědomi toho, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo mylné výklady vyplývající z použití tohoto překladu.

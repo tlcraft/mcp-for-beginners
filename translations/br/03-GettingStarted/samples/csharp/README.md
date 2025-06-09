@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T12:59:49+00:00",
+  "translation_date": "2025-05-29T20:22:22+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "br"
 }
 -->
-# Serviço de Calculadora Básica MCP
+# Serviço Básico de Calculadora MCP
 
-Este serviço fornece operações básicas de calculadora através do Model Context Protocol (MCP). Ele é projetado como um exemplo simples para iniciantes que estão aprendendo sobre implementações MCP.
+Este serviço fornece operações básicas de calculadora através do Model Context Protocol (MCP). Foi criado como um exemplo simples para iniciantes que estão aprendendo sobre implementações MCP.
 
 Para mais informações, veja [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
@@ -19,17 +19,17 @@ Este serviço de calculadora oferece as seguintes capacidades:
 
 1. **Operações Aritméticas Básicas**:
    - Adição de dois números
-   - Subtração de um número de outro
+   - Subtração de um número por outro
    - Multiplicação de dois números
    - Divisão de um número por outro (com verificação de divisão por zero)
 
-## Usando `stdio` Tipo
-
+## Usando o Tipo `stdio`
+  
 ## Configuração
 
-1. **Configurar Servidores MCP**:
-   - Abra seu espaço de trabalho no VS Code.
-   - Crie um arquivo `.vscode/mcp.json` na pasta do seu espaço de trabalho para configurar os servidores MCP. Exemplo de configuração:
+1. **Configure os Servidores MCP**:
+   - Abra seu workspace no VS Code.
+   - Crie um arquivo `.vscode/mcp.json` na pasta do seu workspace para configurar os servidores MCP. Exemplo de configuração:
      ```json
      {
        "servers": {
@@ -46,11 +46,11 @@ Este serviço de calculadora oferece as seguintes capacidades:
        }
      }
      ```
-   - Substitua o caminho pelo caminho do seu projeto. O caminho deve ser absoluto e não relativo à pasta do espaço de trabalho. (Exemplo: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
+	- Substitua o caminho pelo caminho do seu projeto. O caminho deve ser absoluto, não relativo à pasta do workspace. (Exemplo: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
 ## Usando o Serviço
 
-O serviço expõe os seguintes endpoints de API através do protocolo MCP:
+O serviço expõe os seguintes endpoints da API através do protocolo MCP:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -82,14 +82,14 @@ The previous soultion is great when you have the .NET SDK installed, and all the
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. Após a imagem ser construída, vamos enviá-la para o Docker Hub. Execute o seguinte comando:
+1. Depois que a imagem for construída, vamos enviá-la para o Docker Hub. Execute o seguinte comando:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Usar a Versão Dockerizada
+## Usando a Versão Dockerizada
 
-1. No arquivo `.vscode/mcp.json`, substitua a configuração do servidor pela seguinte:
+1. No arquivo `.vscode/mcp.json`, substitua a configuração do servidor pelo seguinte:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -107,7 +107,7 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, e assim como antes você pode pedir ao serviço de calculadora para fazer alguns cálculos para você.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, e assim como antes, você pode pedir ao serviço de calculadora para fazer alguns cálculos para você.
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se uma tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

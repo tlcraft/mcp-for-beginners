@@ -2,51 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-17T11:58:31+00:00",
+  "translation_date": "2025-05-27T16:23:14+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "cs"
 }
 -->
-# Spuštění tohoto příkladu
+# Running this sample
 
-## -1- Instalace závislostí
-
-```bash
-dotnet run
-```
-
-## -2- Spuštění příkladu
+## -1- Install the dependencies
 
 ```bash
 dotnet run
 ```
 
-## -3- Testování příkladu
+## -2- Run the sample
 
-Než spustíte níže uvedené, otevřete samostatný terminál (ujistěte se, že server stále běží).
+```bash
+dotnet run
+```
 
-Se spuštěným serverem v jednom terminálu otevřete další terminál a spusťte následující příkaz:
+## -3- Test the sample
+
+Abra una terminal separada antes de ejecutar lo siguiente (asegúrese de que el servidor siga en ejecución).
+
+Con el servidor corriendo en una terminal, abra otra terminal y ejecute el siguiente comando:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-To by mělo spustit webový server s vizuálním rozhraním, které vám umožní otestovat příklad.
+Esto debería iniciar un servidor web con una interfaz visual que le permitirá probar el ejemplo.
 
-Jakmile je server připojen:
+Una vez que el servidor esté conectado: 
 
-- zkuste vypsat nástroje a spusťte `add` s argumenty 2 a 4, měli byste vidět 6 jako výsledek.
-- přejděte k zdrojům a šabloně zdrojů a zavolejte "greeting", zadejte jméno a měli byste vidět pozdrav se zadaným jménem.
+- intente listar las herramientas y ejecute `add`, con los argumentos 2 y 4, debería ver 6 en el resultado.
+- vaya a recursos y plantilla de recursos y llame a "greeting", escriba un nombre y debería ver un saludo con el nombre que proporcionó.
 
-### Testování v režimu CLI
+### Pruebas en modo CLI
 
-Můžete jej spustit přímo v režimu CLI pomocí následujícího příkazu:
+Puede iniciarlo directamente en modo CLI ejecutando el siguiente comando:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-To vypíše všechny nástroje dostupné na serveru. Měli byste vidět následující výstup:
+Esto listará todas las herramientas disponibles en el servidor. Debería ver la siguiente salida:
 
 ```text
 {
@@ -78,13 +78,13 @@ To vypíše všechny nástroje dostupné na serveru. Měli byste vidět následu
 }
 ```
 
-Pro vyvolání nástroje napište:
+Para invocar una herramienta, escriba:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Měli byste vidět následující výstup:
+Debería ver la siguiente salida:
 
 ```text
 {
@@ -99,8 +99,8 @@ Měli byste vidět následující výstup:
 ```
 
 > ![!TIP]
-> Obvykle je mnohem rychlejší spustit inspektor v režimu CLI než v prohlížeči.
-> Přečtěte si více o inspektoru [zde](https://github.com/modelcontextprotocol/inspector).
+> Usualmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
+> Lea más sobre el inspector [aquí](https://github.com/modelcontextprotocol/inspector).
 
-**Upozornění**:  
-Tento dokument byl přeložen pomocí služby AI pro překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, uvědomte si, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme zodpovědní za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vzniklé použitím tohoto překladu.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-16T14:28:35+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T18:15:58+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "fr"
 }
@@ -11,10 +11,10 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ce projet est une **application Spring Boot minimale** qui joue à la fois le rôle de :
 
-* **Serveur d'autorisation Spring** (émission de jetons d'accès JWT via le flux `client_credentials`), et  
-* **Serveur de ressources** (protection de son propre endpoint `/hello`).
+* **Serveur d’autorisation Spring** (délivrant des jetons d’accès JWT via le flux `client_credentials`), et  
+* **Serveur de ressources** (protégeant son propre endpoint `/hello`).
 
-Il reflète la configuration présentée dans le [article du blog Spring (2 avril 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Il reprend la configuration présentée dans le [billet de blog Spring (2 avril 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,16 +36,16 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Tester la configuration OAuth2
 
-Vous pouvez tester la configuration de sécurité OAuth2 avec les étapes suivantes :
+Vous pouvez tester la configuration de sécurité OAuth2 en suivant ces étapes :
 
-### 1. Vérifier que le serveur est en fonctionnement et sécurisé
+### 1. Vérifiez que le serveur est en fonctionnement et sécurisé
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Obtenir un jeton d'accès avec les identifiants client
+### 2. Obtenez un jeton d’accès avec les identifiants client
 
 ```bash
 # Get and extract the full token response
@@ -63,7 +63,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
 
 Note : L’en-tête d’authentification Basic (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Accéder au endpoint protégé avec le jeton
+### 3. Accédez au endpoint protégé avec le jeton
 
 ```bash
 # Using the saved token
@@ -118,5 +118,11 @@ Ajoutez cette politique entrante à votre API :
 
 APIM récupérera le JWKS et validera chaque requête.
 
+---
+
+## Et ensuite
+
+- [Contextes racines](../mcp-root-contexts/README.md)
+
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle humaine est recommandée. Nous ne sommes pas responsables des malentendus ou des interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou d’interprétations erronées résultant de l’utilisation de cette traduction.

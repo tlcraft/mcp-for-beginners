@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:38:45+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T18:21:08+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "ru"
 }
 -->
 # MCP OAuth2 Demo
 
-Этот проект представляет собой **минимальное приложение Spring Boot**, которое выполняет две функции:
+Этот проект — **минимальное Spring Boot приложение**, которое выполняет обе функции:
 
-* **Сервер авторизации Spring** (выдающий JWT токены доступа через поток `client_credentials`), и  
-* **Сервер ресурсов** (защищающий свой собственный конечный `/hello`).
+* **Spring Authorization Server** (выдаёт JWT access токены через `client_credentials` flow), и  
+* **Resource Server** (защищает собственный `/hello` endpoint).
 
-Он повторяет настройку, показанную в [посте в блоге Spring (2 апр 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Он повторяет конфигурацию, показанную в [посте в блоге Spring (2 апр 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,16 +36,16 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Тестирование конфигурации OAuth2
 
-Вы можете протестировать конфигурацию безопасности OAuth2, следуя этим шагам:
+Вы можете проверить настройки безопасности OAuth2 следующими шагами:
 
-### 1. Убедитесь, что сервер работает и защищен
+### 1. Убедитесь, что сервер запущен и защищён
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Получите токен доступа, используя учетные данные клиента
+### 2. Получите access token с помощью client credentials
 
 ```bash
 # Get and extract the full token response
@@ -63,7 +63,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
 
 Примечание: Заголовок Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Получите доступ к защищенному конечному пункту, используя токен
+### 3. Доступ к защищённому endpoint с использованием токена
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Успешный ответ с "Hello from MCP OAuth2 Demo!" подтверждает, что конфигурация OAuth2 работает корректно.
+Успешный ответ с сообщением "Hello from MCP OAuth2 Demo!" подтверждает, что конфигурация OAuth2 работает корректно.
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Развертывание в **Azure Container Apps**
+## Развёртывание в **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Полное доменное имя становится вашим **issuer** (`https://<fqdn>`).  
+FQDN входящего трафика становится вашим **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
-## Интеграция в **Azure API Management**
+## Интеграция с **Azure API Management**
 
-Добавьте эту входящую политику в ваш API:
+Добавьте эту inbound политику в ваш API:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM будет извлекать JWKS и проверять каждый запрос.
+APIM будет получать JWKS и проверять каждый запрос.
+
+---
+
+## Что дальше
+
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **Отказ от ответственности**:  
-Этот документ был переведен с помощью службы автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Мы стремимся к точности, однако, пожалуйста, учтите, что автоматические переводы могут содержать ошибки или неточности. Оригинальный документ на его родном языке следует считать авторитетным источником. Для получения критической информации рекомендуется профессиональный перевод человеком. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникающие в результате использования этого перевода.
+Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, просим учитывать, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется использовать профессиональный перевод, выполненный человеком. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.

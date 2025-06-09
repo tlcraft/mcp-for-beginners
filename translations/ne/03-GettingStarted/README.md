@@ -1,96 +1,99 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8fdd5786214b32ad33d8b5cf9012a0f7",
-  "translation_date": "2025-05-17T08:07:58+00:00",
+  "original_hash": "b547c992c056d4296d641ed8ec2cc4cb",
+  "translation_date": "2025-06-02T17:27:38+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "ne"
 }
 -->
-## सुरु गर्दै
+## Getting Started  
 
-यो भागमा धेरै पाठहरू समावेश छन्:
+Yo section ma kehi lessons haru chan:
 
-- **-1- तपाईंको पहिलो सर्भर**: यस पहिलो पाठमा, तपाईंले आफ्नो पहिलो सर्भर कसरी बनाउन र निरीक्षक उपकरण प्रयोग गरेर जाँच गर्न सिक्नुहुनेछ, यो सर्भर परीक्षण र डिबग गर्नको लागि मूल्यवान तरिका हो, [पाठमा जानुहोस्](/03-GettingStarted/01-first-server/README.md)
+- **-1- Timi ko pahilo server**, yo pahilo lesson ma timi kasari timro pahilo server banaune ra inspector tool le kasari inspect garne sikne chau, yo server test ra debug garna ekdam upyogi chha, [to the lesson](/03-GettingStarted/01-first-server/README.md)
 
-- **-2- क्लाइन्ट**: यस पाठमा, तपाईंले कसरी आफ्नो सर्भरसँग जडान गर्न सक्ने क्लाइन्ट लेख्न सिक्नुहुनेछ, [पाठमा जानुहोस्](/03-GettingStarted/02-client/README.md)
+- **-2- Client**, yo lesson ma timi kasari client le server sanga connect garne code lekhne sikne chau, [to the lesson](/03-GettingStarted/02-client/README.md)
 
-- **-3- LLM सहितको क्लाइन्ट**: क्लाइन्ट लेख्ने अझ राम्रो तरिका भनेको यसमा LLM थप्नु हो ताकि यसले तपाईंको सर्भरसँग के गर्ने भनेर "सम्झौता" गर्न सकियोस्, [पाठमा जानुहोस्](/03-GettingStarted/03-llm-client/README.md)
+- **-3- Client with LLM**, client lekhne aro ramro tarika ho LLM add garera jun server sanga "negotiate" garna sakos, [to the lesson](/03-GettingStarted/03-llm-client/README.md)
 
-- **-4- Visual Studio Code मा GitHub Copilot Agent मोडमा सर्भर उपभोग गर्नुहोस्**: यहाँ, हामी Visual Studio Code बाट हाम्रो MCP सर्भर चलाउन खोजिरहेका छौं, [पाठमा जानुहोस्](/03-GettingStarted/04-vscode/README.md)
+- **-4- Consuming a server GitHub Copilot Agent mode in Visual Studio Code**. Yo ma haami Visual Studio Code bhitra bata MCP Server kasari run garne herne chau, [to the lesson](/03-GettingStarted/04-vscode/README.md)
 
-- **-5- SSE (Server Sent Events) बाट उपभोग गर्नुहोस्**: SEE सर्भरबाट क्लाइन्टमा स्ट्रिमिङको लागि मानक हो, जसले सर्भरहरूलाई HTTP मार्फत क्लाइन्टहरूमा वास्तविक समय अपडेटहरू पठाउन अनुमति दिन्छ [पाठमा जानुहोस्](/03-GettingStarted/05-sse-server/README.md)
+- **-5- Consuming from a SSE (Server Sent Events)** SSE server-to-client streaming ko standard ho, jasle server le HTTP ma realtime updates client haru lai push garna dincha [to the lesson](/03-GettingStarted/05-sse-server/README.md)
 
-- **-6- VSCode को लागि AI Toolkit प्रयोग गर्दै** तपाईंको MCP क्लाइन्टहरू र सर्भरहरू उपभोग र परीक्षण गर्न [पाठमा जानुहोस्](/03-GettingStarted/06-aitk/README.md)
+- **-6- Utilising AI Toolkit for VSCode** le timro MCP Clients ra Servers lai consume garna ra test garna madat garcha [to the lesson](/03-GettingStarted/06-aitk/README.md)
 
-- **-7 परीक्षण**: यहाँ हामी विशेष रूपमा हाम्रो सर्भर र क्लाइन्टलाई विभिन्न तरिकामा परीक्षण कसरी गर्न सकिन्छ भन्ने कुरामा ध्यान केन्द्रित गर्नेछौं, [पाठमा जानुहोस्](/03-GettingStarted/07-testing/README.md)
+- **-7 Testing**. Yo ma haami kasari hami le server ra client lai bibhinna tarikale test garna sakincha bhanera focus garne chau, [to the lesson](/03-GettingStarted/07-testing/README.md)
 
-- **-8- परिनियोजन**: यस अध्यायमा तपाईंको MCP समाधानहरू परिनियोजन गर्ने विभिन्न तरिकाहरू हेर्नेछौं, [पाठमा जानुहोस्](/03-GettingStarted/08-deployment/README.md)
+- **-8- Deployment**. Yo chapter ma hami MCP solutions kasari deploy garne bhanera herne chau, [to the lesson](/03-GettingStarted/08-deployment/README.md)
 
-मोडेल कण्टेक्स्ट प्रोटोकल (MCP) एक खुला प्रोटोकल हो जसले अनुप्रयोगहरू LLMs लाई कसरी सन्दर्भ प्रदान गर्छन् भन्ने मानकीकरण गर्छ। MCP लाई AI अनुप्रयोगहरूको लागि USB-C पोर्ट जस्तै सोच्नुहोस् - यसले AI मोडेलहरूलाई विभिन्न डेटा स्रोतहरू र उपकरणहरूसँग जडान गर्न मानकीकृत तरिका प्रदान गर्छ।
 
-## सिकाइ उद्देश्यहरू
+Model Context Protocol (MCP) ek open protocol ho jun le applications haru lai LLMs sanga context provide garna standard banaucha. MCP lai AI applications ko lagi USB-C port jasto sochnu, jasle AI models lai bibhinna data sources ra tools sanga connect garna standardized tarika dincha.
 
-यस पाठको अन्त्यमा, तपाईं सक्षम हुनुहुनेछ:
+## Learning Objectives
 
-- C#, Java, Python, TypeScript, र JavaScript मा MCP को लागि विकास वातावरण सेट अप गर्नुहोस्
-- अनुकूलित सुविधाहरू (संसाधनहरू, संकेतहरू, र उपकरणहरू) सहित आधारभूत MCP सर्भरहरू निर्माण र परिनियोजन गर्नुहोस्
-- MCP सर्भरहरूमा जडान गर्ने होस्ट अनुप्रयोगहरू सिर्जना गर्नुहोस्
-- MCP कार्यान्वयनहरू परीक्षण र डिबग गर्नुहोस्
-- सामान्य सेटअप चुनौतीहरू र तिनीहरूको समाधान बुझ्नुहोस्
-- आफ्नो MCP कार्यान्वयनहरू लोकप्रिय LLM सेवाहरूमा जडान गर्नुहोस्
+Yo lesson ko antim samma, timi yei garna sakne chau:
 
-## तपाईंको MCP वातावरण सेट अप गर्दै
+- MCP ko lagi C#, Java, Python, TypeScript, ra JavaScript ma development environment setup garne
+- Custom features (resources, prompts, ra tools) sanga basic MCP servers build ra deploy garne
+- MCP servers sanga connect garne host applications create garne
+- MCP implementations test ra debug garne
+- Common setup challenges ra tinka solutions bujhne
+- Popular LLM services sanga timro MCP implementations connect garne
 
-MCP सँग काम गर्न सुरु गर्नु अघि, तपाईंको विकास वातावरण तयार पार्नु र आधारभूत कार्यप्रवाह बुझ्नु महत्त्वपूर्ण छ। यो भागले MCP सँग सहज सुरुवात सुनिश्चित गर्न प्रारम्भिक सेटअप चरणहरू मार्फत तपाईंलाई मार्गदर्शन गर्नेछ।
+## Setting Up Your MCP Environment
 
-### पूर्वापेक्षाहरू
+MCP sanga kaam garnu agadi, development environment prepare garnu ra basic workflow bujhnu jaruri chha. Yo section le initial setup ko steps haru guide garne cha jasle MCP sanga smoothly suru garna dincha.
 
-MCP विकासमा डुब्नु अघि, सुनिश्चित गर्नुहोस् कि तपाईंसँग:
+### Prerequisites
 
-- **विकास वातावरण**: तपाईंको छनौटको भाषा (C#, Java, Python, TypeScript, वा JavaScript) को लागि
-- **IDE/सम्पादक**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm, वा कुनै आधुनिक कोड सम्पादक
-- **प्याकेज प्रबन्धकहरू**: NuGet, Maven/Gradle, pip, वा npm/yarn
-- **API कुञ्जीहरू**: तपाईंको होस्ट अनुप्रयोगहरूमा प्रयोग गर्न योजना बनाएको कुनै AI सेवाहरूको लागि
+MCP development ma utarna agadi, tapai le sure garnu parcha ki:
 
-### आधिकारिक SDKs
+- **Development Environment**: Tapai le chune ko language ko lagi (C#, Java, Python, TypeScript, or JavaScript)
+- **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm, wa kunai modern code editor
+- **Package Managers**: NuGet, Maven/Gradle, pip, wa npm/yarn
+- **API Keys**: Kunai pani AI services jaslai tapai le host applications ma use garna chahanu huncha bhane
 
-आउँदै गरेका अध्यायहरूमा तपाईंले Python, TypeScript, Java, र .NET प्रयोग गरेर बनाइएका समाधानहरू देख्नुहुनेछ। यहाँ सबै आधिकारिक रूपमा समर्थित SDKs छन्।
+### Official SDKs
 
-MCP ले धेरै भाषाहरूको लागि आधिकारिक SDKs प्रदान गर्छ:
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Microsoft सँगको सहकार्यमा सञ्चालित
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Spring AI सँगको सहकार्यमा सञ्चालित
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - आधिकारिक TypeScript कार्यान्वयन
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - आधिकारिक Python कार्यान्वयन
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - आधिकारिक Kotlin कार्यान्वयन
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Loopwork AI सँगको सहकार्यमा सञ्चालित
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - आधिकारिक Rust कार्यान्वयन
+Aghami chapters ma timi le Python, TypeScript, Java ra .NET use gareka solutions herna pauhcha. Yo haamro officially supported SDK haru ko list ho.
 
-## मुख्य निष्कर्षहरू
+MCP le dherai languages ko lagi official SDKs provide garcha:
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Microsoft sanga milera maintain gareko
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Spring AI sanga milera maintain gareko
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Official TypeScript implementation
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Official Python implementation
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Official Kotlin implementation
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Loopwork AI sanga milera maintain gareko
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Official Rust implementation
 
-- भाषा-विशिष्ट SDKs संग MCP विकास वातावरण सेट अप सरल छ
-- MCP सर्भरहरू निर्माण गर्दा स्पष्ट स्कीमाहरू सहित उपकरणहरू सिर्जना र दर्ता गर्न समावेश हुन्छ
-- MCP क्लाइन्टहरू सर्भरहरू र मोडेलहरूसँग जडान हुन्छन् विस्तारित क्षमताहरू प्रयोग गर्न
-- परीक्षण र डिबगिंग विश्वसनीय MCP कार्यान्वयनहरूको लागि आवश्यक छ
-- परिनियोजन विकल्पहरू स्थानीय विकासदेखि क्लाउड-आधारित समाधानसम्मको दायरा
+## Key Takeaways
 
-## अभ्यास गर्दै
+- MCP development environment setup garnu language-specific SDK haru sanga sajilo chha
+- MCP servers build garnu ko matlab tools create ra register garne jasle clear schemas follow garcha
+- MCP clients servers ra models sanga connect garera extended capabilities use garcha
+- Testing ra debugging MCP implementations ko lagi dherai jaruri chha
+- Deployment options local development dekhi cloud-based solutions samma cha
 
-हामीसँग नमूनाहरूको सेट छ जुन यस भागमा सबै अध्यायहरूमा देखिने अभ्यासहरूलाई पूरक बनाउँछ। साथै प्रत्येक अध्यायमा आफ्नै अभ्यासहरू र असाइनमेन्टहरू पनि छन्
+## Practicing
 
-- [Java क्याल्कुलेटर](./samples/java/calculator/README.md)
-- [.Net क्याल्कुलेटर](../../../03-GettingStarted/samples/csharp)
-- [JavaScript क्याल्कुलेटर](./samples/javascript/README.md)
-- [TypeScript क्याल्कुलेटर](./samples/typescript/README.md)
-- [Python क्याल्कुलेटर](../../../03-GettingStarted/samples/python)
+Hamro sanga samples ko set cha jun exercises haru lai supplement garcha jaslai tapai le yo section ko sabai chapters ma herna pauhcha. Sabai chapter haru ma afno exercises ra assignments pani chan.
 
-## अतिरिक्त स्रोतहरू
+- [Java Calculator](./samples/java/calculator/README.md)
+- [.Net Calculator](../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](./samples/javascript/README.md)
+- [TypeScript Calculator](./samples/typescript/README.md)
+- [Python Calculator](../../../03-GettingStarted/samples/python)
 
-- [MCP GitHub Repository](https://github.com/microsoft/mcp-for-beginners)
+## Additional Resources
 
-## अब के
+- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
-अगाडि: [तपाईंको पहिलो MCP सर्भर सिर्जना गर्दै](/03-GettingStarted/01-first-server/README.md)
+## What's next
+
+Next: [Creating your first MCP Server](/03-GettingStarted/01-first-server/README.md)
 
 **अस्वीकरण**:  
-यो दस्तावेज एआई अनुवाद सेवा [को-अप ट्रान्सलेटर](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताको लागि प्रयास गरिरहेका छौं, तर कृपया सचेत रहनुहोस् कि स्वचालित अनुवादमा त्रुटिहरू वा असमानताहरू हुन सक्छन्। यसको मौलिक भाषामा रहेको मूल दस्तावेजलाई आधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीको लागि, पेशेवर मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याको लागि हामी उत्तरदायी हुने छैनौं।
+यो दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) को प्रयोग गरेर अनुवाद गरिएको हो। हामी सटीकता को लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटिहरू वा अशुद्धिहरू हुन सक्छन्। मूल दस्तावेज़ यसको मूल भाषामा अधिकारिक स्रोत मानिनु पर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानवीय अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न हुने कुनै पनि गलतफहमी वा गलत व्याख्याको लागि हामी जिम्मेवार छैनौं।

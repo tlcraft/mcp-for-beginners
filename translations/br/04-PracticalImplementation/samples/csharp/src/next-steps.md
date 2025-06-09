@@ -2,51 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be745fda2aef9ee7ea772119fc6cdcf7",
-  "translation_date": "2025-05-17T14:16:20+00:00",
+  "translation_date": "2025-05-29T20:26:39+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/src/next-steps.md",
   "language_code": "br"
 }
 -->
-# Próximos Passos após `azd init`
+# Próximos passos após `azd init`
 
 ## Índice
 
-1. [Próximos Passos](../../../../../../04-PracticalImplementation/samples/csharp/src)
+1. [Próximos passos](../../../../../../04-PracticalImplementation/samples/csharp/src)
 2. [O que foi adicionado](../../../../../../04-PracticalImplementation/samples/csharp/src)
 3. [Cobrança](../../../../../../04-PracticalImplementation/samples/csharp/src)
-4. [Solução de Problemas](../../../../../../04-PracticalImplementation/samples/csharp/src)
+4. [Solução de problemas](../../../../../../04-PracticalImplementation/samples/csharp/src)
 
-## Próximos Passos
+## Próximos passos
 
-### Provisione a infraestrutura e faça o deploy do código da aplicação
+### Provisionar infraestrutura e implantar o código da aplicação
 
-Execute `azd up` para provisionar sua infraestrutura e fazer o deploy no Azure em um único passo (ou execute `azd provision` e depois `azd deploy` para realizar as tarefas separadamente). Visite os endpoints de serviço listados para ver sua aplicação funcionando!
+Execute `azd up` para provisionar sua infraestrutura e implantar no Azure em um único passo (ou execute `azd provision` e depois `azd deploy` para realizar as tarefas separadamente). Acesse os endpoints do serviço listados para ver sua aplicação funcionando!
 
-Para solucionar quaisquer problemas, veja [solução de problemas](../../../../../../04-PracticalImplementation/samples/csharp/src).
+Para resolver quaisquer problemas, consulte [solução de problemas](../../../../../../04-PracticalImplementation/samples/csharp/src).
 
-### Configure o pipeline de CI/CD
+### Configurar pipeline de CI/CD
 
-Execute `azd pipeline config -e <environment name>` para configurar o pipeline de deploy para se conectar de forma segura ao Azure. Um nome de ambiente é especificado aqui para configurar o pipeline com um ambiente diferente para fins de isolamento. Execute `azd env list` e `azd env set` para reconfigurar o ambiente padrão após esta etapa.
+Execute `azd pipeline config -e <environment name>` para configurar o pipeline de implantação para se conectar de forma segura ao Azure. Um nome de ambiente é especificado aqui para configurar o pipeline com um ambiente diferente para fins de isolamento. Execute `azd env list` e `azd env set` para reselecionar o ambiente padrão após esta etapa.
 
-- Fazendo deploy com `GitHub Actions`: Selecione `GitHub` quando solicitado por um provedor. Se seu projeto não tiver o arquivo `azure-dev.yml`, aceite a solicitação para adicioná-lo e prossiga com a configuração do pipeline.
+- Implantação com `GitHub Actions`: selecione `GitHub` quando for solicitado um provedor. Se seu projeto não tiver o arquivo `azure-dev.yml`, aceite a solicitação para adicioná-lo e continue com a configuração do pipeline.
 
-- Fazendo deploy com `Azure DevOps Pipeline`: Selecione `Azure DevOps` quando solicitado por um provedor. Se seu projeto não tiver o arquivo `azure-dev.yml`, aceite a solicitação para adicioná-lo e prossiga com a configuração do pipeline.
+- Implantação com `Azure DevOps Pipeline`: selecione `Azure DevOps` quando for solicitado um provedor. Se seu projeto não tiver o arquivo `azure-dev.yml`, aceite a solicitação para adicioná-lo e continue com a configuração do pipeline.
 
 ## O que foi adicionado
 
-### Configuração de infraestrutura
+### Configuração da infraestrutura
 
-Para descrever a infraestrutura e a aplicação, um `azure.yaml` foi adicionado com a seguinte estrutura de diretórios:
+Para descrever a infraestrutura e a aplicação, foi adicionado um `azure.yaml` com a seguinte estrutura de diretórios:
 
 ```yaml
 - azure.yaml     # azd project configuration
 ```
 
-Este arquivo contém um único serviço, que faz referência ao App Host do seu projeto. Quando necessário, `azd` generates the required infrastructure as code in memory and uses it.
+Este arquivo contém um único serviço, que referencia o App Host do seu projeto. Quando necessário, use `azd` generates the required infrastructure as code in memory and uses it.
 
-If you would like to see or modify the infrastructure that `azd` uses, run `azd infra synth` para persistir no disco.
+If you would like to see or modify the infrastructure that `azd` uses, run `azd infra synth` para salvar no disco.
 
-Se você fizer isso, alguns diretórios adicionais serão criados:
+Se fizer isso, alguns diretórios adicionais serão criados:
 
 ```yaml
 - infra/            # Infrastructure as Code (bicep) files
@@ -54,7 +54,7 @@ Se você fizer isso, alguns diretórios adicionais serão criados:
   - resources.bicep # resources shared across your application's services
 ```
 
-Além disso, para cada recurso de projeto referenciado pelo seu app host, um `containerApp.tmpl.yaml` file will be created in a directory named `manifests` next the project file. This file contains the infrastructure as code for running the project on Azure Container Apps.
+Além disso, para cada recurso do projeto referenciado pelo seu app host, um projeto `containerApp.tmpl.yaml` file will be created in a directory named `manifests` next the project file. This file contains the infrastructure as code for running the project on Azure Container Apps.
 
 *Note*: Once you have synthesized your infrastructure to disk, changes made to your App Host will not be reflected in the infrastructure. You can re-generate the infrastructure by running `azd infra synth` again. It will prompt you before overwriting files. You can pass `--force` to force `azd infra synth` to overwrite the files without prompting.
 
@@ -81,7 +81,7 @@ For more troubleshooting information, visit [Container Apps troubleshooting](htt
 
 ### Additional information
 
-For additional information about setting up your `azd` projeto, visite nossa [documentação oficial](https://learn.microsoft.com/azure/developer/azure-developer-cli/make-azd-compatible?pivots=azd-convert).
+For additional information about setting up your `azd` será criado. Para mais informações, visite nossa documentação oficial [docs](https://learn.microsoft.com/azure/developer/azure-developer-cli/make-azd-compatible?pivots=azd-convert).
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, é recomendada a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações errôneas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, por favor, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

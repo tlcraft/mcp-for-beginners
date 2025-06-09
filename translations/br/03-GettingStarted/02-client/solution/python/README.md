@@ -2,40 +2,40 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0ab9613fc9595f493847f91275859a18",
-  "translation_date": "2025-05-17T10:01:20+00:00",
+  "translation_date": "2025-05-29T20:25:05+00:00",
   "source_file": "03-GettingStarted/02-client/solution/python/README.md",
   "language_code": "br"
 }
 -->
-# Executando este exemplo
+# Kuriñáñ pe exempló
 
-Recomenda-se instalar `uv`, mas não é obrigatório, veja [instruções](https://docs.astral.sh/uv/#highlights)
+Erekomendádo nde instalá `uv`, pero no es obligatorio, mirá [instructions](https://docs.astral.sh/uv/#highlights)
 
-## -0- Crie um ambiente virtual
+## -0- Eike un entorno virtual
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Ative o ambiente virtual
+## -1- Aktivá pe entorno virtual
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Instale as dependências
+## -2- Instalá pe dependensias
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- Execute o exemplo
+## -3- Ejekuá pe exempló
 
 ```bash
 python client.py
 ```
 
-Você deverá ver uma saída similar a:
+Nde rekóva ikatu oñemohendáva peteî salida oñemohendáva hague:
 
 ```text
 LISTING RESOURCES
@@ -53,4 +53,4 @@ CALL TOOL
 ```
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritária. Para informações críticas, é recomendada a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações errôneas decorrentes do uso desta tradução.
+Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

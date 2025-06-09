@@ -2,40 +2,41 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0ab9613fc9595f493847f91275859a18",
-  "translation_date": "2025-05-17T10:04:26+00:00",
+  "translation_date": "2025-05-27T16:24:18+00:00",
   "source_file": "03-GettingStarted/02-client/solution/python/README.md",
   "language_code": "cs"
 }
 -->
-# Spuštění tohoto příkladu
+# Запуск этого примера
 
-Doporučuje se nainstalovat `uv`, ale není to nutné, viz [pokyny](https://docs.astral.sh/uv/#highlights)
+Рекомендуется установить `uv`, но это не обязательно, смотрите [instructions](https://docs.astral.sh/uv/#highlights)
 
-## -0- Vytvoření virtuálního prostředí
+## -0- Создайте виртуальное окружение
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Aktivace virtuálního prostředí
+## -1- Активируйте виртуальное окружение
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Instalace závislostí
+## -2- Установите зависимости
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- Spuštění příkladu
+## -3- Запустите пример
+
 
 ```bash
 python client.py
 ```
 
-Měli byste vidět výstup podobný:
+Вы должны увидеть вывод, похожий на:
 
 ```text
 LISTING RESOURCES
@@ -52,5 +53,5 @@ CALL TOOL
 [TextContent(type='text', text='8', annotations=None)]
 ```
 
-**Prohlášení**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme zodpovědní za jakékoli nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo mylné výklady vyplývající z použití tohoto překladu.

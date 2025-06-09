@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:39:11+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T18:26:34+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "ur"
 }
 -->
-# ایم سی پی اوتھ2 ڈیمو
+# MCP OAuth2 Demo
 
-یہ پروجیکٹ ایک **کم سے کم اسپرنگ بوٹ ایپلیکیشن** ہے جو دونوں کے طور پر کام کرتی ہے:
+یہ پروجیکٹ ایک **کم سے کم Spring Boot ایپلیکیشن** ہے جو دونوں کے طور پر کام کرتی ہے:
 
-* ایک **اسپرنگ اتھورائزیشن سرور** (جو JWT ایکسیس ٹوکن جاری کرتا ہے `client_credentials` فلو کے ذریعے)، اور  
-* ایک **ریسورس سرور** (اپنے `/hello` اینڈپوائنٹ کو محفوظ بناتا ہے)۔
+* ایک **Spring Authorization Server** (جو JWT ایکسیس ٹوکنز جاری کرتا ہے `client_credentials` فلو کے ذریعے)، اور  
+* ایک **Resource Server** (اپنے `/hello` اینڈپوائنٹ کی حفاظت کرتا ہے)۔
 
-یہ اس سیٹ اپ کو منعکس کرتا ہے جو [اسپرنگ بلاگ پوسٹ (2 اپریل 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) میں دکھایا گیا ہے۔
+یہ [Spring بلاگ پوسٹ (2 اپریل 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) میں دکھائے گئے سیٹ اپ کی عکاسی کرتا ہے۔
 
 ---
 
-## فوری آغاز (مقامی)
+## فوری آغاز (لوکل)
 
 ```bash
 # build & run
@@ -34,9 +34,9 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## اوتھ2 کنفیگریشن کی جانچ
+## OAuth2 کنفیگریشن کی جانچ
 
-آپ درج ذیل مراحل کے ساتھ اوتھ2 سیکیورٹی کنفیگریشن کو جانچ سکتے ہیں:
+آپ مندرجہ ذیل اقدامات کے ذریعے OAuth2 سیکیورٹی کنفیگریشن کی جانچ کر سکتے ہیں:
 
 ### 1. تصدیق کریں کہ سرور چل رہا ہے اور محفوظ ہے
 
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-نوٹ: بیسک اتھینٹیکیشن ہیڈر (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`۔
+نوٹ: Basic Authentication ہیڈر (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret` ہے۔
 
-### 3. ٹوکن کا استعمال کرتے ہوئے محفوظ اینڈپوائنٹ تک رسائی حاصل کریں
+### 3. ٹوکن استعمال کرتے ہوئے محفوظ شدہ اینڈپوائنٹ تک رسائی حاصل کریں
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-"ایم سی پی اوتھ2 ڈیمو سے ہیلو!" کے ساتھ کامیاب جواب اس بات کی تصدیق کرتا ہے کہ اوتھ2 کنفیگریشن صحیح کام کر رہی ہے۔
+"Hello from MCP OAuth2 Demo!" کے ساتھ کامیاب جواب اس بات کی تصدیق کرتا ہے کہ OAuth2 کنفیگریشن صحیح طریقے سے کام کر رہا ہے۔
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## **ایزور کنٹینر ایپس** پر ڈیپلائے کریں
+## **Azure Container Apps** میں تعینات کریں
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-انگریس ایف کیو ڈی این آپ کا **جاری کنندہ** بن جاتا ہے (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`۔
+ingress FQDN آپ کا **issuer** بن جاتا ہے (`https://<fqdn>`).  
+Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`)۔
 
 ---
 
-## **ایزور اے پی آئی مینیجمنٹ** میں وائر کریں
+## **Azure API Management** میں وائر کریں
 
-اپنے اے پی آئی میں یہ ان باؤنڈ پالیسی شامل کریں:
+اپنے API میں یہ inbound پالیسی شامل کریں:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-اے پی آئی ایم JWKS کو حاصل کرے گا اور ہر درخواست کی تصدیق کرے گا۔
+APIM JWKS حاصل کرے گا اور ہر درخواست کی تصدیق کرے گا۔
+
+---
+
+## آگے کیا ہے
+
+- [Root contexts](../mcp-root-contexts/README.md)
 
 **ڈس کلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کے لئے کوشش کرتے ہیں، لیکن براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا غیر درستگیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں معتبر ذریعہ سمجھا جانا چاہئے۔ اہم معلومات کے لئے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ ہم اس ترجمہ کے استعمال سے پیدا ہونے والے کسی بھی غلط فہمی یا غلط تعبیرات کے ذمہ دار نہیں ہیں۔
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار تراجم میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ورانہ انسانی ترجمہ کی سفارش کی جاتی ہے۔ ہم اس ترجمہ کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔

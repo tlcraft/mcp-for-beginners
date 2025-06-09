@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d1fd6d5079bee9fe4f6ed9cfd8031d98",
-  "translation_date": "2025-05-17T13:39:29+00:00",
+  "translation_date": "2025-05-27T16:20:30+00:00",
   "source_file": "03-GettingStarted/samples/typescript/README.md",
   "language_code": "cs"
 }
 -->
-# Ukázka
+# Sample
 
-Toto je ukázka Typescriptu pro MCP server
+Это пример на Typescript для MCP Server
 
-Takto vypadá část kalkulačky:
+Вот как выглядит часть калькулятора:
 
 ```typescript
 // Define calculator tools for each operation
@@ -68,19 +68,19 @@ server.tool(
 );
 ```
 
-## Instalace
+## Install
 
-Spusťte následující příkaz:
+Выполните следующую команду:
 
 ```bash
 npm install
 ```
 
-## Spuštění
+## Run
 
 ```bash
 npm start
 ```
 
-**Zřeknutí se odpovědnosti**:  
-Tento dokument byl přeložen pomocí služby AI pro překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, uvědomte si prosím, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro kritické informace je doporučován profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

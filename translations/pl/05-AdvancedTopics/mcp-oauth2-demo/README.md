@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-16T14:29:13+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:00:01+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "pl"
 }
@@ -14,7 +14,7 @@ Ten projekt to **minimalna aplikacja Spring Boot**, która pełni jednocześnie 
 * **Spring Authorization Server** (wydającego tokeny dostępu JWT za pomocą flow `client_credentials`), oraz  
 * **Resource Server** (chroniącego własny endpoint `/hello`).
 
-Odwzorowuje konfigurację pokazaną w [wpisie na blogu Spring (2 kwietnia 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Odwzorowuje konfigurację pokazaną w [wpisie na blogu Spring (2 kwi 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -45,7 +45,7 @@ Możesz przetestować konfigurację zabezpieczeń OAuth2 wykonując następując
 curl -v http://localhost:8081/
 ```
 
-### 2. Pobierz token dostępu za pomocą poświadczeń klienta
+### 2. Pobierz token dostępu używając client credentials
 
 ```bash
 # Get and extract the full token response
@@ -63,7 +63,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
 
 Uwaga: Nagłówek Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Uzyskaj dostęp do chronionego endpointu za pomocą tokenu
+### 3. Uzyskaj dostęp do chronionego endpointu używając tokenu
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Poprawna odpowiedź z komunikatem "Hello from MCP OAuth2 Demo!" potwierdza, że konfiguracja OAuth2 działa prawidłowo.
+Pomyślna odpowiedź z "Hello from MCP OAuth2 Demo!" potwierdza, że konfiguracja OAuth2 działa poprawnie.
 
 ---
 
@@ -95,7 +95,7 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Adres FQDN ingressu staje się twoim **issuerem** (`https://<fqdn>`).  
+FQDN ingressu staje się Twoim **issuerem** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
@@ -118,5 +118,11 @@ Dodaj tę politykę inbound do swojego API:
 
 APIM pobierze JWKS i zweryfikuje każde żądanie.
 
+---
+
+## Co dalej
+
+- [Root contexts](../mcp-root-contexts/README.md)
+
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym należy traktować jako źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uważany za wiarygodne źródło. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

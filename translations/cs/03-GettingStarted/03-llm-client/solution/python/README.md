@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "24531f2b6b0f7fa3839accf4dc10088a",
-  "translation_date": "2025-05-17T10:51:11+00:00",
+  "translation_date": "2025-05-27T16:20:15+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/python/README.md",
   "language_code": "cs"
 }
 -->
-# Spuštění tohoto příkladu
+# Запуск этого примера
 
-Doporučuje se nainstalovat `uv`, ale není to nutné, podívejte se na [pokyny](https://docs.astral.sh/uv/#highlights)
+Рекомендуется установить `uv`, но это не обязательно, см. [инструкции](https://docs.astral.sh/uv/#highlights)
 
-## -0- Vytvoření virtuálního prostředí
+## -0- Создайте виртуальное окружение
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Aktivace virtuálního prostředí
+## -1- Активируйте виртуальное окружение
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Instalace závislostí
+## -2- Установите зависимости
 
 ```bash
 pip install "mcp[cli]"
@@ -31,13 +31,14 @@ pip install openai
 pip install azure-ai-inference
 ```
 
-## -3- Spuštění příkladu
+## -3- Запустите пример
+
 
 ```bash
 python client.py
 ```
 
-Měli byste vidět výstup podobný:
+Вы должны увидеть вывод, похожий на:
 
 ```text
 LISTING RESOURCES
@@ -54,5 +55,5 @@ TOOL:  {'function': {'arguments': '{"a":2,"b":20}', 'name': 'add'}, 'id': 'call_
 TOOLS result:  [TextContent(type='text', text='22', annotations=None)]
 ```
 
-**Upozornění**:  
-Tento dokument byl přeložen pomocí AI překladové služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, vezměte prosím na vědomí, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za závazný zdroj. Pro důležité informace je doporučen profesionální lidský překlad. Nejsme odpovědní za žádná nedorozumění nebo mylné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

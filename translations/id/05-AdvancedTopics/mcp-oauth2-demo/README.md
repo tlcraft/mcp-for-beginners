@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:43:23+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:20:03+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "id"
 }
@@ -11,14 +11,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 Proyek ini adalah **aplikasi Spring Boot minimal** yang berfungsi sebagai:
 
-* **Spring Authorization Server** (mengeluarkan token akses JWT melalui alur `client_credentials`), dan
+* **Spring Authorization Server** (mengeluarkan token akses JWT melalui alur `client_credentials`), dan  
 * **Resource Server** (melindungi endpoint `/hello` miliknya sendiri).
 
-Ini mencerminkan pengaturan yang ditunjukkan dalam [post blog Spring (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Ini mencerminkan pengaturan yang ditunjukkan dalam [posting blog Spring (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
-## Memulai dengan cepat (lokal)
+## Mulai cepat (lokal)
 
 ```bash
 # build & run
@@ -38,14 +38,14 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 Anda dapat menguji konfigurasi keamanan OAuth2 dengan langkah-langkah berikut:
 
-### 1. Verifikasi bahwa server berjalan dan aman
+### 1. Verifikasi server berjalan dan aman
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Dapatkan token akses menggunakan kredensial klien
+### 2. Dapatkan token akses menggunakan client credentials
 
 ```bash
 # Get and extract the full token response
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Respons sukses dengan "Hello from MCP OAuth2 Demo!" mengonfirmasi bahwa konfigurasi OAuth2 berfungsi dengan benar.
+Respon berhasil dengan "Hello from MCP OAuth2 Demo!" menandakan konfigurasi OAuth2 berfungsi dengan baik.
 
 ---
 
-## Pembuatan kontainer
+## Build Container
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Menerapkan ke **Azure Container Apps**
+## Deploy ke **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,12 +95,12 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-FQDN ingress menjadi **issuer** Anda (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+Ingress FQDN menjadi **issuer** Anda (`https://<fqdn>`).  
+Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`).
 
 ---
 
-## Hubungkan ke **Azure API Management**
+## Integrasi dengan **Azure API Management**
 
 Tambahkan kebijakan inbound ini ke API Anda:
 
@@ -118,5 +118,11 @@ Tambahkan kebijakan inbound ini ke API Anda:
 
 APIM akan mengambil JWKS dan memvalidasi setiap permintaan.
 
+---
+
+## Selanjutnya
+
+- [Root contexts](../mcp-root-contexts/README.md)
+
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi penting, disarankan menggunakan terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau kesalahan interpretasi yang timbul dari penggunaan terjemahan ini.

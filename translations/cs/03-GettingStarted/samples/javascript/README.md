@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0f27f8c14853621d982185e6bbdd1dc6",
-  "translation_date": "2025-05-17T13:25:12+00:00",
+  "translation_date": "2025-05-27T16:21:08+00:00",
   "source_file": "03-GettingStarted/samples/javascript/README.md",
   "language_code": "cs"
 }
 -->
-# Ukázka
+# Sample
 
-Toto je ukázka JavaScriptu pro MCP Server
+Это пример на JavaScript для MCP Server
 
-Takto vypadá část kalkulačky:
+Вот как выглядит часть калькулятора:
 
 ```javascript
 // Define calculator tools for each operation
@@ -68,19 +68,19 @@ server.tool(
 );
 ```
 
-## Instalace
+## Install
 
-Spusťte následující příkaz:
+Выполните следующую команду:
 
 ```bash
 npm install
 ```
 
-## Spuštění
+## Run
 
 ```bash
 npm start
 ```
 
-**Upozornění**:  
-Tento dokument byl přeložen pomocí služby pro automatický překlad [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože se snažíme o přesnost, uvědomte si, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vzniklé použitím tohoto překladu.

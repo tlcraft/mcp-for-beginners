@@ -2,120 +2,121 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e5ea5e7582f70008ea9bec3b3820f20a",
-  "translation_date": "2025-05-17T14:31:07+00:00",
+  "translation_date": "2025-05-27T16:25:23+00:00",
   "source_file": "04-PracticalImplementation/samples/java/containerapp/README.md",
   "language_code": "cs"
 }
 -->
-## Architektura systému
+## System Architecture
 
-Tento projekt demonstruje webovou aplikaci, která používá kontrolu bezpečnosti obsahu před odesláním uživatelských požadavků kalkulační službě prostřednictvím Model Context Protocol (MCP).
+This project demonstrates a web application that performs content safety checks before sending user prompts to a calculator service via Model Context Protocol (MCP).
 
-### Jak to funguje
+![System Architecture Diagram](../../../../../../translated_images/plant.b079fed84e945b7c2978993a16163bb53f0517cfe3548d2e442ff40d619ba4b4.cs.png)
 
-1. **Uživatelský vstup**: Uživatel zadá požadavek na výpočet do webového rozhraní.
-2. **Kontrola bezpečnosti obsahu (vstup)**: Požadavek je analyzován pomocí Azure Content Safety API.
-3. **Rozhodnutí o bezpečnosti (vstup)**:
-   - Pokud je obsah bezpečný (závažnost < 2 ve všech kategoriích), pokračuje ke kalkulačce.
-   - Pokud je obsah označen jako potenciálně škodlivý, proces se zastaví a vrátí se varování.
-4. **Integrace kalkulačky**: Bezpečný obsah je zpracován LangChain4j, který komunikuje s MCP serverem kalkulačky.
-5. **Kontrola bezpečnosti obsahu (výstup)**: Odezva botu je analyzována pomocí Azure Content Safety API.
-6. **Rozhodnutí o bezpečnosti (výstup)**:
-   - Pokud je odezva botu bezpečná, je zobrazena uživateli.
-   - Pokud je odezva botu označena jako potenciálně škodlivá, je nahrazena varováním.
-7. **Odezva**: Výsledky (pokud jsou bezpečné) jsou zobrazeny uživateli spolu s oběma analýzami bezpečnosti.
+### How It Works
 
-## Použití Model Context Protocol (MCP) s kalkulačními službami
+1. **User Input**: The user submits a calculation prompt through the web interface  
+2. **Content Safety Screening (Input)**: The prompt is analyzed by the Azure Content Safety API  
+3. **Safety Decision (Input)**:  
+   - If the content is safe (severity < 2 in all categories), it proceeds to the calculator  
+   - If the content is flagged as potentially harmful, the process stops and returns a warning  
+4. **Calculator Integration**: Safe content is processed by LangChain4j, which communicates with the MCP calculator server  
+5. **Content Safety Screening (Output)**: The bot’s response is analyzed by the Azure Content Safety API  
+6. **Safety Decision (Output)**:  
+   - If the bot response is safe, it’s shown to the user  
+   - If the bot response is flagged as potentially harmful, it’s replaced with a warning  
+7. **Response**: Results (if safe) are displayed to the user along with both safety analyses  
 
-Tento projekt demonstruje, jak používat Model Context Protocol (MCP) k volání kalkulačních MCP služeb z LangChain4j. Implementace používá lokální MCP server běžící na portu 8080 k poskytování kalkulačních operací.
+## Using Model Context Protocol (MCP) with Calculator Services
 
-### Nastavení služby Azure Content Safety
+This project shows how to use Model Context Protocol (MCP) to call calculator MCP services from LangChain4j. The implementation runs a local MCP server on port 8080 to provide calculator operations.
 
-Než začnete používat funkce bezpečnosti obsahu, musíte vytvořit zdroj služby Azure Content Safety:
+### Setting up Azure Content Safety Service
 
-1. Přihlaste se do [Azure Portal](https://portal.azure.com)
-2. Klikněte na "Vytvořit zdroj" a vyhledejte "Content Safety"
-3. Vyberte "Content Safety" a klikněte na "Vytvořit"
-4. Zadejte jedinečný název pro váš zdroj
-5. Vyberte vaše předplatné a skupinu zdrojů (nebo vytvořte novou)
-6. Vyberte podporovaný region (zjistěte [Dostupnost regionů](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services) pro podrobnosti)
-7. Vyberte vhodnou cenovou úroveň
-8. Klikněte na "Vytvořit" pro nasazení zdroje
-9. Po dokončení nasazení klikněte na "Přejít ke zdroji"
-10. V levém panelu, pod "Správa zdrojů", vyberte "Klíče a koncový bod"
-11. Zkopírujte jeden z klíčů a URL koncového bodu pro použití v dalším kroku
+Before using content safety features, create an Azure Content Safety service resource:
 
-### Konfigurace proměnných prostředí
+1. Sign in to the [Azure Portal](https://portal.azure.com)  
+2. Click "Create a resource" and search for "Content Safety"  
+3. Select "Content Safety" and click "Create"  
+4. Enter a unique name for your resource  
+5. Select your subscription and resource group (or create a new one)  
+6. Choose a supported region (check [Region availability](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services) for details)  
+7. Select an appropriate pricing tier  
+8. Click "Create" to deploy the resource  
+9. Once deployment finishes, click "Go to resource"  
+10. In the left pane, under "Resource Management", select "Keys and Endpoint"  
+11. Copy one of the keys and the endpoint URL for use in the next step  
 
-Nastavte proměnnou `GITHUB_TOKEN` prostředí pro autentizaci GitHub modelů:
+### Configuring Environment Variables
+
+Set the `GITHUB_TOKEN` environment variable for GitHub models authentication:  
 ```sh
 export GITHUB_TOKEN=<your_github_token>
 ```
 
-Pro funkce bezpečnosti obsahu nastavte:
+For content safety features, set:  
 ```sh
 export CONTENT_SAFETY_ENDPOINT=<your_content_safety_endpoint>
 export CONTENT_SAFETY_KEY=<your_content_safety_key>
 ```
 
-Tyto proměnné prostředí jsou používány aplikací k autentizaci s Azure Content Safety službou. Pokud tyto proměnné nejsou nastaveny, aplikace použije hodnoty zástupných znaků pro demonstrační účely, ale funkce bezpečnosti obsahu nebudou fungovat správně.
+These environment variables enable the application to authenticate with the Azure Content Safety service. If they are not set, the app will use placeholder values for demonstration, but content safety features will not function properly.
 
-### Spuštění MCP serveru kalkulačky
+### Starting the Calculator MCP Server
 
-Než spustíte klienta, musíte spustit MCP server kalkulačky v režimu SSE na localhost:8080.
+Before running the client, start the calculator MCP server in SSE mode on localhost:8080.
 
-## Popis projektu
+## Project Description
 
-Tento projekt demonstruje integraci Model Context Protocol (MCP) s LangChain4j k volání kalkulačních služeb. Klíčové vlastnosti zahrnují:
+This project demonstrates integrating Model Context Protocol (MCP) with LangChain4j to call calculator services. Key features include:
 
-- Použití MCP k připojení ke kalkulační službě pro základní matematické operace
-- Dvouúrovňovou kontrolu bezpečnosti obsahu jak na uživatelských požadavcích, tak na odezvách botu
-- Integraci s modelem GitHub gpt-4.1-nano prostřednictvím LangChain4j
-- Použití Server-Sent Events (SSE) pro MCP transport
+- Using MCP to connect to a calculator service for basic math operations  
+- Dual-layer content safety checks on both user prompts and bot responses  
+- Integration with GitHub’s gpt-4.1-nano model via LangChain4j  
+- Using Server-Sent Events (SSE) for MCP transport  
 
-## Integrace bezpečnosti obsahu
+## Content Safety Integration
 
-Projekt zahrnuje komplexní funkce bezpečnosti obsahu, aby bylo zajištěno, že jak uživatelské vstupy, tak systémové odezvy jsou bez škodlivého obsahu:
+The project includes comprehensive content safety measures to ensure both user inputs and system responses are free from harmful content:
 
-1. **Kontrola vstupu**: Všechny uživatelské požadavky jsou analyzovány na škodlivé kategorie obsahu, jako je nenávistná řeč, násilí, sebepoškozování a sexuální obsah před zpracováním.
+1. **Input Screening**: All user prompts are analyzed for harmful categories such as hate speech, violence, self-harm, and sexual content before processing.  
+2. **Output Screening**: Even when using potentially uncensored models, all generated responses are checked through the same content safety filters before being displayed.  
 
-2. **Kontrola výstupu**: I při použití potenciálně necenzurovaných modelů systém kontroluje všechny generované odezvy přes stejné filtry bezpečnosti obsahu před jejich zobrazením uživateli.
+This dual-layer approach ensures the system stays safe regardless of which AI model is used, protecting users from harmful inputs and potentially problematic AI-generated outputs.
 
-Tento dvouúrovňový přístup zajišťuje, že systém zůstane bezpečný bez ohledu na to, který AI model je používán, chrání uživatele před škodlivými vstupy i potenciálně problematickými AI generovanými výstupy.
+## Web Client
 
-## Webový klient
+The application features a user-friendly web interface that lets users interact with the Content Safety Calculator system:
 
-Aplikace zahrnuje uživatelsky přívětivé webové rozhraní, které umožňuje uživatelům interakci se systémem Content Safety Calculator:
+### Web Interface Features
 
-### Vlastnosti webového rozhraní
+- Simple, intuitive form for entering calculation prompts  
+- Dual-layer content safety validation (input and output)  
+- Real-time feedback on prompt and response safety  
+- Color-coded safety indicators for easy understanding  
+- Clean, responsive design that works across devices  
+- Example safe prompts to guide users  
 
-- Jednoduchý, intuitivní formulář pro zadání požadavků na výpočet
-- Dvouúrovňová validace bezpečnosti obsahu (vstup a výstup)
-- Okamžitá zpětná vazba o bezpečnosti požadavku a odezvy
-- Barevně kódované indikátory bezpečnosti pro snadnou interpretaci
-- Čistý, responzivní design, který funguje na různých zařízeních
-- Příklady bezpečných požadavků k vedení uživatelů
+### Using the Web Client
 
-### Použití webového klienta
-
-1. Spusťte aplikaci:
+1. Start the application:  
    ```sh
    mvn spring-boot:run
    ```
 
-2. Otevřete prohlížeč a přejděte na `http://localhost:8087`
+2. Open your browser and go to `http://localhost:8087`  
 
-3. Zadejte požadavek na výpočet do poskytnutého textového pole (např. "Spočítejte součet 24.5 a 17.3")
+3. Enter a calculation prompt in the text area (e.g., "Calculate the sum of 24.5 and 17.3")  
 
-4. Klikněte na "Odeslat" pro zpracování vaší žádosti
+4. Click "Submit" to process your request  
 
-5. Zobrazte výsledky, které budou zahrnovat:
-   - Analýzu bezpečnosti obsahu vašeho požadavku
-   - Vypočtený výsledek (pokud byl požadavek bezpečný)
-   - Analýzu bezpečnosti obsahu odezvy botu
-   - Jakákoli varování o bezpečnosti, pokud byl buď vstup nebo výstup označen
+5. View the results, which include:  
+   - Content safety analysis of your prompt  
+   - The calculated result (if the prompt was safe)  
+   - Content safety analysis of the bot’s response  
+   - Any safety warnings if either input or output was flagged  
 
-Webový klient automaticky zpracovává oba procesy ověřování bezpečnosti obsahu, zajišťuje, že všechny interakce jsou bezpečné a vhodné bez ohledu na to, který AI model je používán.
+The web client automatically manages both content safety checks, ensuring all interactions are safe and appropriate regardless of which AI model is used.
 
-**Prohlášení**:  
-Tento dokument byl přeložen pomocí AI překladové služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace je doporučen profesionální lidský překlad. Nejsme zodpovědní za jakékoli nedorozumění nebo mylné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

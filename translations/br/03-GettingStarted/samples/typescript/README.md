@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d1fd6d5079bee9fe4f6ed9cfd8031d98",
-  "translation_date": "2025-05-17T13:36:22+00:00",
+  "translation_date": "2025-05-29T20:21:58+00:00",
   "source_file": "03-GettingStarted/samples/typescript/README.md",
   "language_code": "br"
 }
 -->
-# Exemplo
+# Sample
 
-Este é um exemplo de Typescript para um Servidor MCP
+Este é um exemplo em Typescript para um MCP Server
 
 Veja como fica a parte da calculadora:
 
@@ -83,4 +83,4 @@ npm start
 ```
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, é recomendada a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, por favor, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

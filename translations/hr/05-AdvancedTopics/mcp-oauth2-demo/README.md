@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:45:26+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:38:36+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "hr"
 }
 -->
 # MCP OAuth2 Demo
 
-Ovaj projekt je **minimalna Spring Boot aplikacija** koja djeluje kao:
+Ovaj projekt je **minimalna Spring Boot aplikacija** koja funkcionira kao:
 
-* **Spring Authorization Server** (izdavanje JWT pristupnih tokena putem `client_credentials` toka), i  
-* **Resource Server** (zaštita vlastitog `/hello` krajnjeg točke).
+* **Spring Authorization Server** (izdaje JWT pristupne tokene putem `client_credentials` protoka), i  
+* **Resource Server** (štiti vlastitu `/hello` krajnju točku).
 
-Oponaša postavke prikazane u [Spring blog postu (2. travnja 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Oponaša postavke prikazane u [Spring blog postu (2. travnja 2025.)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,16 +36,16 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Testiranje OAuth2 konfiguracije
 
-Možete testirati OAuth2 sigurnosnu konfiguraciju sljedećim koracima:
+OAuth2 sigurnosnu konfiguraciju možete testirati slijedećim koracima:
 
-### 1. Provjerite je li server pokrenut i osiguran
+### 1. Provjerite je li server pokrenut i zaštićen
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Dobijte pristupni token koristeći vjerodajnice klijenta
+### 2. Dohvatite pristupni token koristeći client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Napomena: Zaglavlje osnovne autentifikacije (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Napomena: Basic Authentication zaglavlje (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
 ### 3. Pristupite zaštićenoj krajnjoj točki koristeći token
 
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Uspješan odgovor s "Pozdrav iz MCP OAuth2 Demo!" potvrđuje da OAuth2 konfiguracija ispravno radi.
+Uspješan odgovor s "Hello from MCP OAuth2 Demo!" potvrđuje da OAuth2 konfiguracija ispravno radi.
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Implementacija na **Azure Container Apps**
+## Deploy na **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-FQDN ulaza postaje vaš **izdavatelj** (`https://<fqdn>`).  
+Ingress FQDN postaje vaš **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
 ## Integracija u **Azure API Management**
 
-Dodajte ovu dolaznu politiku svom API-ju:
+Dodajte ovu inbound politiku u vaš API:
 
 ```xml
 <inbound>
@@ -116,7 +116,13 @@ Dodajte ovu dolaznu politiku svom API-ju:
 </inbound>
 ```
 
-APIM će preuzeti JWKS i provjeriti svaki zahtjev.
+APIM će dohvatiti JWKS i validirati svaki zahtjev.
 
-**Izjava o odricanju odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge prevođenja [Co-op Translator](https://github.com/Azure/co-op-translator). Iako se trudimo osigurati točnost, imajte na umu da automatizirani prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati mjerodavnim izvorom. Za kritične informacije preporučuje se profesionalni prijevod od strane ljudskog prevoditelja. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
+---
+
+## Što dalje
+
+- [Root contexts](../mcp-root-contexts/README.md)
+
+**Odricanje od odgovornosti**:  
+Ovaj je dokument preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.

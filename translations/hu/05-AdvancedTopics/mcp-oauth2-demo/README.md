@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bcd07a55d0e5baece8d0a1a0310fdfe6",
-  "translation_date": "2025-05-17T15:44:12+00:00",
+  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
+  "translation_date": "2025-06-02T19:27:20+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "hu"
 }
 -->
-# MCP OAuth2 Bemutató
+# MCP OAuth2 Demo
 
-Ez a projekt egy **minimális Spring Boot alkalmazás**, amely mindkettőként működik:
+Ez a projekt egy **minimális Spring Boot alkalmazás**, amely egyszerre működik:
 
-* egy **Spring Authorization Server** (JWT hozzáférési tokeneket bocsát ki a `client_credentials` folyamattal), és  
-* egy **Resource Server** (védi a saját `/hello` végpontját).
+* mint **Spring Authorization Server** (JWT hozzáférési tokeneket bocsát ki a `client_credentials` folyamat segítségével), és  
+* mint **Resource Server** (védi a saját `/hello` végpontját).
 
-Tükrözi a [Spring blogbejegyzésben (2025. április 2.)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) bemutatott beállítást.
+Ez a beállítás megegyezik a [Spring blogbejegyzésben (2025. április 2.)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) bemutatottal.
 
 ---
 
-## Gyors kezdés (helyi)
+## Gyors indítás (helyi)
 
 ```bash
 # build & run
@@ -36,7 +36,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Az OAuth2 konfiguráció tesztelése
 
-Az OAuth2 biztonsági konfigurációt a következő lépésekkel tesztelheted:
+Az OAuth2 biztonsági beállításokat a következő lépésekkel tesztelheted:
 
 ### 1. Ellenőrizd, hogy a szerver fut és védett
 
@@ -63,7 +63,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
 
 Megjegyzés: A Basic Authentication fejléc (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Hozzáférés a védett végponthoz a token használatával
+### 3. Érd el a védett végpontot a tokennel
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Egy sikeres válasz az "Hello from MCP OAuth2 Demo!" üzenettel megerősíti, hogy az OAuth2 konfiguráció helyesen működik.
+Ha sikeres választ kapsz "Hello from MCP OAuth2 Demo!" üzenettel, az azt jelenti, hogy az OAuth2 konfiguráció helyesen működik.
 
 ---
 
-## Konténer építés
+## Konténer építése
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Telepítés **Azure Container Apps**-ra
+## Telepítés **Azure Container Apps**-be
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,12 +95,12 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-A beérkező FQDN lesz a **issuer** (`https://<fqdn>`).  
+Az ingress FQDN lesz az **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
-## Kapcsolódás **Azure API Management**-hez
+## Integráció **Azure API Management**-be
 
 Add hozzá ezt a bejövő szabályt az API-dhoz:
 
@@ -116,7 +116,13 @@ Add hozzá ezt a bejövő szabályt az API-dhoz:
 </inbound>
 ```
 
-Az APIM lekéri a JWKS-t és érvényesíti minden kérést.
+Az APIM lekéri a JWKS-t és érvényesíti az összes kérést.
 
-**Felelősségkizárás**:  
-Ezt a dokumentumot a [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítószolgáltatás használatával fordították le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális emberi fordítás. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+---
+
+## Mi következik ezután
+
+- [Root contexts](../mcp-root-contexts/README.md)
+
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből eredő félreértésekért vagy téves értelmezésekért.

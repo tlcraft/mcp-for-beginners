@@ -60,7 +60,7 @@ The **Agent (Prompt) Builder** enables you to create and customize your own AI-p
 
 1. Open the **AI Toolkit** extension from the **Activity Bar**.
 1. In the **Tools** section, select **Agent (Prompt) Builder**. Selecting **Agent (Prompt) Builder** opens the **Agent (Prompt) Builder** in a new editor tab.
-1. Click the **+ New Builder** button. The extension will launch a setup wizard via the **Command Palette**.
+1. Click the **+ New Agent** button. The extension will launch a setup wizard via the **Command Palette**.
 1. Enter the name **Calculator Agent** and press **Enter**.
 1. In the **Agent (Prompt) Builder**, for the **Model** field, select the **OpenAI GPT-4o (via GitHub)** model.
 
