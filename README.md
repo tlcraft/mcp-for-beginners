@@ -72,6 +72,7 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 | 07 | **Insights from Early Adoption** | Real-world implementations and what worked, building and deploying MCP-based solutions, trends and future roadmap | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
 | 08 | **Best Practices for MCP** | Performance tuning and optimization, designing fault-tolerant MCP systems, testing and resilience strategies | [Best Practices](./08-BestPractices/README.md) |
 | 09 | **MCP Case Studies** | Deep-dives into MCP solution architectures, deployment blueprints and integration tips, annotated diagrams and project walkthroughs | [Case Studies](./09-CaseStudy/README.md) |
+| 10 | **Streamlining AI Workflows: Building an MCP Server with AI Toolkit** | Comprehensive hands-on workshop combining MCP with Microsoft's AI Toolkit for VS Code. Learn to build intelligent applications bridging AI models with real-world tools through practical modules covering fundamentals, custom server development, and production deployment strategies. | [Hands On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
 
 ## Sample Projects
 
