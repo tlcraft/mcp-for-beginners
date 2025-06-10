@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "4458d89100952180348d8775b149295e",
-  "translation_date": "2025-06-02T18:28:57+00:00",
+  "original_hash": "3ede7f051090bd4acfe5b068bab9f6b0",
+  "translation_date": "2025-06-10T04:11:24+00:00",
   "source_file": "README.md",
   "language_code": "mo"
 }
@@ -22,70 +22,72 @@ CO_OP_TRANSLATOR_METADATA:
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 
-Kusarudza matanho aya kuti utange kushandisa zviwanikwa izvi:
-1. **Furukisa Repository**: Dzvanya [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
-2. **Kopa Repository**: `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Batanidza kuAzure AI Foundry Discord uye sanganai nenyanzvi pamwe nevamwe vanogadzira**](https://discord.com/invite/ByRwuEEgH4)
+Følg disse trinnene for å komme i gang med å bruke disse ressursene:
+1. **Fork Repository**: Klikk [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
+2. **Klon Repository**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
+3. [**Bli med i Azure AI Foundry Discord og møt eksperter og medutviklere**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Rutsigiro rweMitauro Yakawanda
+### 🌐 Flerspråklig støtte
 
-#### Inotsigirwa neGitHub Action (Inoita zvoga & Inogara Ichivandudzwa)
-[法文](../fr/README.md) | [西班牙文](../es/README.md) | [德文](../de/README.md) | [俄文](../ru/README.md) | [阿拉伯文](../ar/README.md) | [波斯文 (法爾西)](../fa/README.md) | [烏爾都文](../ur/README.md) | [簡體中文](../zh/README.md) | [繁體中文（澳門）](./README.md) | [繁體中文（香港）](../hk/README.md) | [繁體中文（台灣）](../tw/README.md) | [日文](../ja/README.md) | [韓文](../ko/README.md) | [印地文](../hi/README.md) | [孟加拉文](../bn/README.md) | [馬拉地文](../mr/README.md) | [尼泊爾文](../ne/README.md) | [旁遮普文（古魯穆奇）](../pa/README.md) | [葡萄牙文（葡萄牙）](../pt/README.md) | [葡萄牙文（巴西）](../br/README.md) | [義大利文](../it/README.md) | [波蘭文](../pl/README.md) | [土耳其文](../tr/README.md) | [希臘文](../el/README.md) | [泰文](../th/README.md) | [瑞典文](../sv/README.md) | [丹麥文](../da/README.md) | [挪威文](../no/README.md) | [芬蘭文](../fi/README.md) | [荷蘭文](../nl/README.md) | [希伯來文](../he/README.md) | [越南文](../vi/README.md) | [印尼文](../id/README.md) | [馬來文](../ms/README.md) | [他加祿文（菲律賓語）](../tl/README.md) | [斯瓦希里文](../sw/README.md) | [匈牙利文](../hu/README.md) | [捷克文](../cs/README.md) | [斯洛伐克文](../sk/README.md) | [羅馬尼亞文](../ro/README.md) | [保加利亞文](../bg/README.md) | [塞爾維亞文（西里爾字母）](../sr/README.md) | [克羅埃西亞文](../hr/README.md) | [斯洛文尼亞文](../sl/README.md)Please write the output from left to right.
+#### Støttes via GitHub Action (Automatisert og alltid oppdatert)
+[French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](./README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Portuguese (Brazil)](../br/README.md) | [Italian](../it/README.md) | [Polish](../pl/README.md) | [Turkish](../tr/README.md) | [Greek](../el/README.md) | [Thai](../th/README.md) | [Swedish](../sv/README.md) | [Danish](../da/README.md) | [Norwegian](../no/README.md) | [Finnish](../fi/README.md) | [Dutch](../nl/README.md) | [Hebrew](../he/README.md) | [Vietnamese](../vi/README.md) | [Indonesian](../id/README.md) | [Malay](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungarian](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romanian](../ro/README.md) | [Bulgarian](../bg/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Croatian](../hr/README.md) | [Slovenian](../sl/README.md)
 # 🚀 Model Context Protocol (MCP) Curriculum for Beginners
 
 ## **Learn MCP with Hands-on Code Examples in C#, Java, JavaScript, Python, and TypeScript**
 
 ## 🧠 Overview of the Model Context Protocol Curriculum
 
-The **Model Context Protocol (MCP)** is a state-of-the-art framework created to standardize the way AI models interact with client applications. This open-source curriculum provides a clear learning path, packed with practical coding examples and real-world scenarios, across popular programming languages like C#, Java, JavaScript, TypeScript, and Python.
+The **Model Context Protocol (MCP)** is a state-of-the-art framework created to standardize communication between AI models and client applications. This open-source curriculum provides a clear learning path, complete with practical coding examples and real-world scenarios, covering popular programming languages like C#, Java, JavaScript, TypeScript, and Python.
 
-Whether you're an AI developer, system architect, or software engineer, this guide serves as your all-in-one resource to grasp MCP basics and implementation techniques.
+Whether you're an AI developer, system architect, or software engineer, this guide serves as your all-in-one resource to master MCP basics and implementation techniques.
 
 ## 🔗 Official MCP Resources
 
-- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Comprehensive tutorials and user manuals  
-- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol design and technical details  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and example code  
+- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Comprehensive tutorials and user guides  
+- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol design and technical references  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code samples  
 
 ## 🧭 Complete MCP Curriculum Structure
 
 | Ch | Title | Description | Link |
 |--|--|--|--|
-| 00 | **Introduction to MCP** | An overview of the Model Context Protocol and its role in AI workflows, covering what MCP is, why standardization is important, plus practical use cases and advantages | [Introduction](./00-Introduction/README.md) |
-| 01 | **Core Concepts Explained** | Detailed dive into MCP’s core concepts, including client-server architecture, main protocol components, and messaging patterns | [Core Concepts](./01-CoreConcepts/README.md) |
-| 02 | **Security in MCP** | Identifying security risks in MCP-based systems, plus techniques and best practices to secure your implementations | [Security](/02-Security/README.md) |
-| 03 | **Getting Started with MCP** | Setting up your environment, creating basic MCP servers and clients, and integrating MCP with existing apps | [Getting Started](./03-GettingStarted/README.md) |
-| 3.1 | **First server** | How to set up a basic server using MCP, understanding server-client interactions, and testing your server | [First Server](./03-GettingStarted/01-first-server/README.md) |
-| 3.2 | **First client**  | How to set up a basic client using MCP, understanding client-server interactions, and testing your client | [First Client](./03-GettingStarted/02-client/README.md) |
-| 3.3 | **Client with LLM**  | Setting up a client using MCP with a Large Language Model (LLM) | [Client with LLM](./03-GettingStarted/03-llm-client/README.md) |
-| 3.4 | **Consuming a server with Visual Studio Code** | Configuring Visual Studio Code to consume servers using MCP | [Consuming a server with Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
-| 3.5 | **Creating a server using SSE** | SSE allows us to expose a server to the internet. This section guides you through creating a server using SSE | [Creating a server using SSE](./03-GettingStarted/05-sse-server/README.md) |
-| 3.6 | **Use AI Toolkit** | The AI Toolkit is a powerful tool that helps you manage your AI and MCP workflows | [Use AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
-| 3.7 | **Testing your server** | Testing is crucial in development. This section shows you how to test using various tools | [Testing your server](./03-GettingStarted/07-testing/README.md) |
-| 3.8 | **Deploy your server** | Moving from local development to production — this section helps you develop and deploy your server | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
-| 04 | **Practical Implementation** | Using SDKs in different languages, debugging, testing, validation, and creating reusable prompt templates and workflows | [Practical Implementation](./04-PracticalImplementation/README.md) |
-| 05 | **Advanced Topics in MCP** | Multi-modal AI workflows and extensibility, secure scaling strategies, and MCP’s role in enterprise ecosystems | [Advanced Topics](./05-AdvancedTopics/README.md) |
+| 00 | **Introduction to MCP** | Overview of the Model Context Protocol and its role in AI pipelines, including what MCP is, why standardization is important, and practical use cases and benefits | [Introduction](./00-Introduction/README.md) |
+| 01 | **Core Concepts Explained** | Detailed exploration of MCP’s core concepts, including client-server architecture, main protocol components, and messaging patterns | [Core Concepts](./01-CoreConcepts/README.md) |
+| 02 | **Security in MCP** | Identifying security risks in MCP-based systems, along with techniques and best practices to secure implementations | [Security](/02-Security/README.md) |
+| 03 | **Getting Started with MCP** | Setting up the environment and configuration, building basic MCP servers and clients, integrating MCP into existing applications | [Getting Started](./03-GettingStarted/README.md) |
+| 3.1 | **First server** | Setting up a basic server using the MCP protocol, understanding server-client interactions, and testing the server | [First Server](./03-GettingStarted/01-first-server/README.md) |
+| 3.2 | **First client**  | Setting up a basic client using the MCP protocol, understanding client-server interactions, and testing the client | [First Client](./03-GettingStarted/02-client/README.md) |
+| 3.3 | **Client with LLM**  | Setting up a client using the MCP protocol with a Large Language Model (LLM) | [Client with LLM](./03-GettingStarted/03-llm-client/README.md) |
+| 3.4 | **Consuming a server with Visual Studio Code** | Configuring Visual Studio Code to consume servers using the MCP protocol | [Consuming a server with Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
+| 3.5 | **Creating a server using SSE** | SSE allows exposing a server to the internet. This section guides you through creating a server using SSE | [Creating a server using SSE](./03-GettingStarted/05-sse-server/README.md) |
+| 3.6 | **Use AI Toolkit** | The AI toolkit is a powerful tool to help you manage your AI and MCP workflows | [Use AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
+| 3.7 | **Testing your server** | Testing is a crucial part of development. This section shows how to test using several different tools | [Testing your server](./03-GettingStarted/07-testing/README.md) |
+| 3.8 | **Deploy your server** | Moving from local development to production. This section guides you through developing and deploying your server | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
+| 04 | **Practical Implementation** | Using SDKs across various languages, debugging, testing, validation, and creating reusable prompt templates and workflows | [Practical Implementation](./04-PracticalImplementation/README.md) |
+| 05 | **Advanced Topics in MCP** | Multi-modal AI workflows and extensibility, secure scaling methods, MCP in enterprise environments | [Advanced Topics](./05-AdvancedTopics/README.md) |
 | 5.1 | **MCP Integration with Azure** | Demonstrates integration with Azure | [MCP Azure integration](./05-AdvancedTopics/mcp-integration/README.md) |
-| 5.2 | **Multi modality** | How to work with different modalities like images and more | [Multi modality](./05-AdvancedTopics/mcp-multi-modality/README.md) |
-| 5.3 | **MCP OAuth2 Demo** | Minimal Spring Boot app demonstrating OAuth2 with MCP, acting as both Authorization and Resource Server. Shows secure token issuance, protected endpoints, Azure Container Apps deployment, and API Management integration | [MCP OAuth2 Demo](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
+| 5.2 | **Multi modality** | Shows how to work with different modalities like images and more | [Multi modality](./05-AdvancedTopics/mcp-multi-modality/README.md) |
+| 5.3 | **MCP OAuth2 Demo** | Minimal Spring Boot app demonstrating OAuth2 with MCP as both Authorization and Resource Server. Covers secure token issuance, protected endpoints, Azure Container Apps deployment, and API Management integration | [MCP OAuth2 Demo](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
 | 5.4 | **Root Contexts** | Learn about root contexts and how to implement them | [Root Contexts](./05-AdvancedTopics/mcp-root-contexts/README.md) |
 | 5.5 | **Routing** | Explore different types of routing | [Routing](./05-AdvancedTopics/mcp-routing/README.md) |
 | 5.6 | **Sampling** | Learn how to work with sampling | [Sampling](./05-AdvancedTopics/mcp-sampling/README.md) |
-| 5.7 | **Scaling** | Learn about scaling MCP servers, including horizontal and vertical scaling, resource optimization, and performance tuning | [Scaling](./05-AdvancedTopics/mcp-scaling/README.md) |
+| 5.7 | **Scaling** | Understand scaling MCP servers, including horizontal and vertical scaling strategies, resource optimization, and performance tuning | [Scaling](./05-AdvancedTopics/mcp-scaling/README.md) |
 | 5.8 | **Security** | Secure your MCP Server with authentication, authorization, and data protection strategies | [Security](./05-AdvancedTopics/mcp-security/README.md) |
-| 5.9 | **Web Search MCP** | Python MCP server and client integrating SerpAPI for real-time web, news, product search, and Q&A. Demonstrates multi-tool orchestration, external API integration, and strong error handling | [Web Search MCP](./05-AdvancedTopics/web-search-mcp/README.md) |
-| 06 | **Community Contributions** | How to contribute code and documentation, collaborate on GitHub, and participate in community-driven improvements and feedback | [Community Contributions](./06-CommunityContributions/README.md) |
-| 07 | **Insights from Early Adoption** | Real-world implementations, what worked well, building and deploying MCP-based solutions, trends, and future plans | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
-| 08 | **Best Practices for MCP** | Performance tuning and optimization, designing fault-tolerant MCP systems, testing, and resilience strategies | [Best Practices](./08-BestPractices/README.md) |
-| 09 | **MCP Case Studies** | In-depth looks at MCP solution architectures, deployment blueprints, integration tips, annotated diagrams, and project walkthroughs | [Case Studies](./09-CaseStudy/README.md) |
+| 5.9 | **Web Search MCP** | Python MCP server and client integrating with SerpAPI for real-time web, news, product search, and Q&A. Demonstrates multi-tool orchestration, external API integration, and robust error handling | [Web Search MCP](./05-AdvancedTopics/web-search-mcp/README.md) |
+| 06 | **Community Contributions** | How to contribute code and documentation, collaborate via GitHub, and community-driven improvements and feedback | [Community Contributions](./06-CommunityContributions/README.md) |
+| 07 | **Insights from Early Adoption** | Real-world implementations, lessons learned, building and deploying MCP-based solutions, trends, and future roadmap | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
+| 08 | **Best Practices for MCP** | Performance tuning and optimization, designing fault-tolerant MCP systems, testing and resilience strategies | [Best Practices](./08-BestPractices/README.md) |
+| 09 | **MCP Case Studies** | Deep dives into MCP solution architectures, deployment blueprints, integration tips, annotated diagrams, and project walkthroughs | [Case Studies](./09-CaseStudy/README.md) |
+| 10 | **AI 워크플로우 간소화: AI Toolkit을 활용한 MCP 서버 구축** | MCP와 Microsoft의 AI Toolkit for VS Code를 결합한 종합 실습 워크숍입니다. 기본 개념, 맞춤형 서버 개발, 실제 배포 전략을 포함한 실용 모듈을 통해 AI 모델과 실제 도구를 연결하는 지능형 애플리케이션 구축 방법을 배웁니다. | [Hands On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
 
-## Sample Projects
+## 샘플 프로젝트
 
-### 🧮 MCP Calculator Sample Projects:
+### 🧮 MCP 계산기 샘플 프로젝트:
 <details>
-  <summary><strong>Explore Code Implementations by Language</strong></summary>
-- [C# MCP Server Example](./03-GettingStarted/samples/csharp/README.md)
+  <summary><strong>언어별 코드 구현 살펴보기</strong></summary>
+
+  - [C# MCP Server Example](./03-GettingStarted/samples/csharp/README.md)
   - [Java MCP Calculator](./03-GettingStarted/samples/java/calculator/README.md)
   - [JavaScript MCP Demo](./03-GettingStarted/samples/javascript/README.md)
   - [Python MCP Server](../../03-GettingStarted/samples/python/mcp_calculator_server.py)
@@ -93,9 +95,9 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 
 </details>
 
-### 💡 MCP Advanced Calculator Projects:
+### 💡 MCP 고급 계산기 프로젝트:
 <details>
-  <summary><strong>Explore Advanced Samples</strong></summary>
+  <summary><strong>고급 샘플 살펴보기</strong></summary>
 
   - [Advanced C# Sample](./04-PracticalImplementation/samples/csharp/README.md)
   - [Java Container App Example](./04-PracticalImplementation/samples/java/containerapp/README.md)
@@ -106,43 +108,37 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 </details>
 
 
-## 🎯 Prerequisites for Learning MCP
+## 🎯 MCP 학습을 위한 필수 조건
 
-To get the most out of this curriculum, you should have:
+이 커리큘럼을 최대한 활용하려면 다음을 갖추는 것이 좋습니다:
 
-- Basic knowledge of C#, Java, or Python
-- Understanding of client-server model and APIs
-- (Optional) Familiarity with machine learning concepts
+- C#, Java 또는 Python 기본 지식
+- 클라이언트-서버 모델과 API 이해
+- (선택 사항) 머신러닝 개념에 대한 친숙함
 
-## 🛠️ How to Use This Curriculum Effectively
+## 🛠️ 이 커리큘럼을 효과적으로 활용하는 방법
 
-Each lesson in this guide includes:
+이 가이드의 각 수업에는 다음이 포함되어 있습니다:
 
-1. Clear explanations of MCP concepts  
-2. Live code examples in multiple languages  
-3. Exercises to build real MCP applications  
-4. Extra resources for advanced learners  
+1. MCP 개념에 대한 명확한 설명  
+2. 여러 언어로 된 실시간 코드 예제  
+3. 실제 MCP 애플리케이션을 만드는 연습 문제  
+4. 심화 학습자를 위한 추가 자료  
 
-## 📜 License Information
+## 📜 라이선스 정보
 
-This content is licensed under the **MIT License**. For terms and conditions, see the [LICENSE](../../LICENSE).
+이 콘텐츠는 **MIT License** 하에 라이선스가 부여됩니다. 약관은 [LICENSE](../../LICENSE)에서 확인하세요.
 
-## 🤝 Contribution Guidelines
+## 🤝 기여 가이드라인
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit <https://cla.opensource.microsoft.com>.
+이 프로젝트는 기여와 제안을 환영합니다. 대부분의 기여는 기여권 계약서(CLA)에 동의해야 하며, 이는 기여에 대한 권리를 실제로 보유하고 있음을 선언하는 문서입니다. 자세한 내용은 <https://cla.opensource.microsoft.com>을 참조하세요.
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+풀 리퀘스트를 제출하면 CLA 봇이 자동으로 CLA 제출 필요 여부를 판단하고 PR에 상태 검사나 코멘트 등으로 표시합니다. 봇의 안내에 따라 진행하면 되며, 모든 저장소에서 한 번만 진행하면 됩니다.
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+이 프로젝트는 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)를 채택했습니다. 자세한 내용은 [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)를 참고하거나 추가 질문이나 의견은 [opencode@microsoft.com](mailto:opencode@microsoft.com)으로 문의하세요.
 
-## 🎒 Other Courses
-Our team produces other courses! Check out:
+## 🎒 기타 과정
+저희 팀은 다양한 다른 과정도 제공합니다! 확인해 보세요:
 
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
@@ -160,17 +156,9 @@ Our team produces other courses! Check out:
 - [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 
-## ™️ Trademark Notice
+## ™️ 상표 안내
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
-trademarks or logos is subject to and must follow
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos is subject to those third-parties' policies.
+이 프로젝트에는 프로젝트, 제품 또는 서비스의 상표나 로고가 포함될 수 있습니다. Microsoft 상표나 로고의 허가된 사용은 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)을 준수해야 합니다. 수정된 버전의 프로젝트에서 Microsoft 상표나 로고를 사용하는 경우 혼동을 일으키거나 Microsoft의 후원을 암시해서는 안 됩니다. 제3자 상표나 로고 사용은 해당 제3자의 정책을 따릅니다.
 
 **Disclaimer**:  
 This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-(Note: "mo" is not a recognized language code or widely known language. Could you please clarify which language "mo" refers to, or provide more details?)
