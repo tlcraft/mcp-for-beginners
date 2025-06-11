@@ -1,52 +1,52 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bc249f8b228953fafca05f94bb572aac",
-  "translation_date": "2025-06-02T19:27:28+00:00",
+  "original_hash": "7a11a5dcf2f9fdf6392f5a4545cf005e",
+  "translation_date": "2025-06-11T16:15:34+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "hu"
 }
 -->
 # Lesson: Web Search MCP szerver építése
 
-Ez a fejezet bemutatja, hogyan készítsünk egy valós AI ügynököt, amely külső API-kkal integrálódik, különféle adatokat kezel, hibákat kezel, és több eszközt koordinál – mindezt éles környezetre kész formában. Megismerheted:
+Ez a fejezet bemutatja, hogyan építsünk egy valós AI ügynököt, amely külső API-kkal integrálódik, különféle adatokat kezel, hibákat kezel, és több eszközt koordinál – mindezt éles környezetben használható formában. Megismerheted:
 
-- **Hitelesítést igénylő külső API-k integrációja**
-- **Különféle adat típusok kezelése több végponton keresztül**
+- **Hitelesítést igénylő külső API-k integrálása**
+- **Különböző adat típusok kezelése több végponton keresztül**
 - **Robosztus hibakezelési és naplózási stratégiák**
-- **Több eszköz egy szerveren belüli összehangolása**
+- **Több eszköz egy szerveren belüli koordinálása**
 
-A végére gyakorlati tapasztalatot szerzel olyan mintákkal és bevált gyakorlatokkal, amelyek elengedhetetlenek a fejlett AI és LLM-alapú alkalmazásokhoz.
+A végére gyakorlati tapasztalatot szerzel az olyan mintákkal és bevált gyakorlatokkal, amelyek elengedhetetlenek fejlett AI és LLM-alapú alkalmazásokhoz.
 
 ## Bevezetés
 
-Ebben a leckében megtanulod, hogyan építs egy fejlett MCP szervert és klienst, amely valós idejű webes adatokkal bővíti az LLM képességeit a SerpAPI segítségével. Ez kritikus készség dinamikus AI ügynökök fejlesztéséhez, amelyek naprakész információkat tudnak lekérni a webről.
+Ebben a leckében megtanulod, hogyan építs egy fejlett MCP szervert és klienst, amely az LLM képességeit valós idejű webes adatokkal bővíti a SerpAPI segítségével. Ez kulcsfontosságú készség dinamikus AI ügynökök fejlesztéséhez, amelyek naprakész információkat tudnak lekérni az internetről.
 
 ## Tanulási célok
 
 A lecke végére képes leszel:
 
-- Biztonságosan integrálni külső API-kat (például SerpAPI-t) egy MCP szerverbe
-- Több eszközt megvalósítani webes, hírek, termékkereséshez és kérdés-válasz funkciókhoz
-- Strukturált adatokat feldolgozni és formázni LLM számára
-- Hatékonyan kezelni hibákat és API-korlátozásokat
-- Automatikus és interaktív MCP klienseket építeni és tesztelni
+- Biztonságosan integrálni külső API-kat (például SerpAPI) egy MCP szerverbe
+- Több eszközt megvalósítani web-, hírek-, termékkereséshez és kérdés-válasz funkcióhoz
+- Feldolgozni és formázni a strukturált adatokat az LLM számára
+- Hatékonyan kezelni a hibákat és az API-k lekérési korlátait
+- Felépíteni és tesztelni automatizált és interaktív MCP klienseket
 
 ## Web Search MCP szerver
 
-Ebben a részben megismerkedsz a Web Search MCP szerver architektúrájával és funkcióival. Megtudhatod, hogyan használja a FastMCP és SerpAPI kombinációját az LLM képességek valós idejű webes adatokkal való bővítésére.
+Ebben a részben bemutatjuk a Web Search MCP szerver architektúráját és funkcióit. Meglátod, hogyan használja a FastMCP és a SerpAPI együtt az LLM képességeinek valós idejű webes adatokkal való bővítésére.
 
 ### Áttekintés
 
-Ez a megvalósítás négy eszközt tartalmaz, amelyek bemutatják az MCP képességét, hogy biztonságosan és hatékonyan kezeljen különféle, külső API-k által vezérelt feladatokat:
+Ez a megvalósítás négy eszközt tartalmaz, amelyek bemutatják, hogy az MCP hogyan kezeli biztonságosan és hatékonyan a különböző, külső API-alapú feladatokat:
 
 - **general_search**: Általános webes kereséshez
-- **news_search**: Legfrissebb hírekhez
-- **product_search**: E-kereskedelmi adatok lekéréséhez
+- **news_search**: Friss hírek kereséséhez
+- **product_search**: E-kereskedelmi adatok kereséséhez
 - **qna**: Kérdés-válasz részletekhez
 
 ### Funkciók
-- **Kódpéldák**: Nyelvspecifikus kódrészletek Pythonhoz (könnyen bővíthető más nyelvekre), összecsukható szekciókban a könnyebb áttekinthetőségért
+- **Kódpéldák**: Nyelvspecifikus kódblokkok Pythonhoz (könnyen bővíthető más nyelvekre is), összecsukható szakaszokkal a jobb áttekinthetőségért
 
 <details>  
 <summary>Python</summary>  
@@ -69,11 +69,11 @@ async def run_search():
 ```
 </details>
 
-A kliens futtatása előtt hasznos megérteni, mit csinál a szerver. A [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
+A kliens futtatása előtt érdemes megérteni, mit csinál a szerver. A [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
 
 You can review the full implementation in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
-Itt egy rövid példa arra, hogyan definiál és regisztrál egy eszközt a szerver:
+Íme egy rövid példa arra, hogyan definiál és regisztrál egy eszközt a szerver:
 
 <details>  
 <summary>Python Server</summary> 
@@ -93,24 +93,24 @@ if __name__ == "__main__":
 ```
 </details>
 
-- **Külső API integráció**: Biztonságos API kulcs és külső kérések kezelése
+- **Külső API integráció**: Biztonságos API kulcs kezelés és külső kérések bemutatása
 - **Strukturált adat feldolgozás**: API válaszok LLM-barát formátumba alakítása
 - **Hibakezelés**: Robosztus hibakezelés megfelelő naplózással
-- **Interaktív kliens**: Automatikus tesztek és interaktív mód a teszteléshez
-- **Kontekstus menedzsment**: MCP Context használata naplózáshoz és kéréskövetéshez
+- **Interaktív kliens**: Automatizált teszteket és interaktív módot is tartalmaz a teszteléshez
+- **Kontekstuskezelés**: MCP Context használata naplózáshoz és kéréskövetéshez
 
 ## Előfeltételek
 
-Mielőtt elkezdenéd, győződj meg róla, hogy a környezeted megfelelően van beállítva az alábbi lépések szerint. Ez biztosítja, hogy minden függőség telepítve legyen, és az API kulcsaid helyesen legyenek konfigurálva a zökkenőmentes fejlesztéshez és teszteléshez.
+Mielőtt elkezdenéd, győződj meg róla, hogy a környezeted megfelelően van beállítva az alábbi lépések követésével. Ez biztosítja, hogy minden függőség telepítve legyen és az API kulcsaid helyesen legyenek konfigurálva a zökkenőmentes fejlesztéshez és teszteléshez.
 
 - Python 3.8 vagy újabb
-- SerpAPI API kulcs (Regisztrálj a [SerpAPI](https://serpapi.com/) oldalon – ingyenes csomag elérhető)
+- SerpAPI API kulcs (Regisztráció a [SerpAPI](https://serpapi.com/) oldalon – ingyenes csomag elérhető)
 
 ## Telepítés
 
-A kezdéshez kövesd az alábbi lépéseket a környezet beállításához:
+Az induláshoz kövesd az alábbi lépéseket a környezet beállításához:
 
-1. Telepítsd a függőségeket uv (ajánlott) vagy pip használatával:
+1. Telepítsd a függőségeket uv-vel (ajánlott) vagy pip-pel:
 
 ```bash
 # Using uv (recommended)
@@ -120,7 +120,7 @@ uv pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-2. Hozz létre egy `.env` fájlt a projekt gyökerében a SerpAPI kulcsoddal:
+2. Hozz létre egy `.env` fájlt a projekt gyökérkönyvtárában a SerpAPI kulcsoddal:
 
 ```
 SERPAPI_KEY=your_serpapi_key_here
@@ -128,11 +128,11 @@ SERPAPI_KEY=your_serpapi_key_here
 
 ## Használat
 
-A Web Search MCP szerver a központi komponens, amely eszközöket tesz elérhetővé webes, hírek, termékkereséshez és kérdés-válasz funkciókhoz a SerpAPI integrációjával. Kezeli a bejövő kéréseket, API hívásokat, feldolgozza a válaszokat, és strukturált eredményeket ad vissza a kliensnek.
+A Web Search MCP Server az a központi komponens, amely eszközöket biztosít webes, hír-, termékkereséshez és kérdés-válasz funkcióhoz a SerpAPI integrálásával. Kezeli a bejövő kéréseket, az API hívásokat, feldolgozza a válaszokat és strukturált eredményeket ad vissza a kliensnek.
 
 A teljes megvalósítást megtalálod a [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) fájlban.
 
-### Szerver indítása
+### A szerver indítása
 
 Az MCP szerver indításához használd a következő parancsot:
 
@@ -140,26 +140,26 @@ Az MCP szerver indításához használd a következő parancsot:
 python server.py
 ```
 
-A szerver stdio alapú MCP szerverként fut, amelyhez a kliens közvetlenül csatlakozhat.
+A szerver stdio-alapú MCP szerverként fog futni, amelyhez a kliens közvetlenül csatlakozhat.
 
 ### Kliens módok
 
-A kliens a (`client.py`) supports two modes for interacting with the MCP server:
+A kliens (`client.py`) supports two modes for interacting with the MCP server:
 
 - **Normal mode**: Runs automated tests that exercise all the tools and verify their responses. This is useful for quickly checking that the server and tools are working as expected.
 - **Interactive mode**: Starts a menu-driven interface where you can manually select and call tools, enter custom queries, and see results in real time. This is ideal for exploring the server's capabilities and experimenting with different inputs.
 
 You can review the full implementation in [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
 
-### Kliens futtatása
+### A kliens futtatása
 
-Az automatikus tesztek futtatásához (ez automatikusan elindítja a szervert):
+Automatizált tesztek futtatásához (ez automatikusan elindítja a szervert):
 
 ```bash
 python client.py
 ```
 
-Vagy indítsd interaktív módban:
+Vagy interaktív módban:
 
 ```bash
 python client.py --interactive
@@ -167,11 +167,10 @@ python client.py --interactive
 
 ### Tesztelés különböző módokon
 
-Számos módon tesztelheted és használhatod az eszközöket, attól függően, mire van szükséged és hogyan dolgozol.
+Számos módja van az eszközök tesztelésének és interakciójának a szerverrel, az igényeidtől és munkafolyamatodtól függően.
 
 #### Egyedi teszt szkriptek írása az MCP Python SDK-val
-
-Saját teszt szkripteket is írhatsz az MCP Python SDK segítségével:
+Saját teszt szkripteket is készíthetsz az MCP Python SDK segítségével:
 
 <details>
 <summary>Python</summary>
@@ -196,28 +195,28 @@ async def test_custom_query():
 ```
 </details>
 
-Ebben az esetben a "teszt szkript" egy olyan egyedi Python program, amelyet kliensként írsz az MCP szerverhez. Ez nem egy formális egységteszt, hanem egy programozott módja, hogy csatlakozz a szerverhez, bármelyik eszközt meghívd a kívánt paraméterekkel, és megvizsgáld az eredményeket. Ez hasznos:
+Ebben az esetben a "teszt szkript" egy egyedi Python program, amelyet kliensként írsz az MCP szerverhez. Nem formális egységteszt, hanem egy olyan szkript, amely programozottan kapcsolódik a szerverhez, meghív bármelyik eszközt tetszőleges paraméterekkel, és ellenőrzi az eredményeket. Ez a megközelítés hasznos:
 
-- Prototípus készítéshez és kísérletezéshez eszköz hívásokkal
-- Ellenőrizni, hogyan reagál a szerver különböző bemenetekre
-- Ismétlődő eszköz hívások automatizálásához
-- Saját munkafolyamatok vagy integrációk építéséhez az MCP szerverre alapozva
+- Eszközhívások prototípus készítéséhez és kísérletezéshez
+- A szerver válaszainak érvényesítéséhez különböző bemenetekre
+- Ismétlődő eszközhívások automatizálásához
+- Saját munkafolyamatok vagy integrációk építéséhez az MCP szerver fölött
 
-Teszt szkriptekkel gyorsan kipróbálhatsz új lekérdezéseket, hibakereshetsz, vagy akár fejlettebb automatizálás kiindulópontjaként is használhatod. Az alábbi példa bemutatja, hogyan használd az MCP Python SDK-t ilyen szkript létrehozásához:
+Teszt szkriptekkel gyorsan kipróbálhatsz új lekérdezéseket, hibakereshetsz, vagy akár haladóbb automatizálási megoldásokat is építhetsz. Az alábbi példa bemutatja, hogyan használhatod az MCP Python SDK-t ilyen szkript készítéséhez:
 
-## Eszközök leírása
+## Eszközleírások
 
-Az alábbi eszközöket használhatod a szerver által nyújtott különböző keresési és lekérdezési feladatokhoz. Mindegyik eszközt leírjuk a paramétereivel és példákkal.
+Az alábbi eszközöket használhatod a szerver által biztosított különféle keresésekhez és lekérdezésekhez. Minden eszköz leírása tartalmazza a paramétereket és példákat a használatra.
 
-Ez a rész részletesen bemutatja az elérhető eszközöket és paramétereiket.
+Ez a rész részletes információkat nyújt az elérhető eszközökről és azok paramétereiről.
 
 ### general_search
 
-Általános webes keresést végez, és formázott eredményeket ad vissza.
+Általános webes keresést végez és formázott eredményeket ad vissza.
 
 **Hogyan hívd meg ezt az eszközt:**
 
-A `general_search`-t meghívhatod saját szkriptedből az MCP Python SDK-val, vagy interaktívan az Inspector vagy az interaktív kliens mód segítségével. Íme egy példa a SDK használatára:
+A `general_search` eszközt meghívhatod saját szkriptedből az MCP Python SDK-val, vagy interaktív módon az Inspector vagy az interaktív kliens használatával. Íme egy kód példa az SDK-val:
 
 <details>
 <summary>Python példa</summary>
@@ -239,7 +238,7 @@ async def run_general_search():
 ```
 </details>
 
-Interaktív módban válaszd a `general_search` from the menu and enter your query when prompted.
+Alternatívaként interaktív módban válaszd a `general_search` from the menu and enter your query when prompted.
 
 **Parameters:**
 - `query` (string): A keresési lekérdezés paramétert
@@ -254,11 +253,11 @@ Interaktív módban válaszd a `general_search` from the menu and enter your que
 
 ### news_search
 
-Friss hírek keresése egy adott lekérdezés alapján.
+Friss hírek keresése egy adott lekérdezéshez kapcsolódóan.
 
 **Hogyan hívd meg ezt az eszközt:**
 
-A `news_search`-t meghívhatod saját szkriptedből az MCP Python SDK-val, vagy interaktívan az Inspector vagy az interaktív kliens mód segítségével. Íme egy példa a SDK használatára:
+A `news_search` eszközt meghívhatod saját szkriptedből az MCP Python SDK-val, vagy interaktív módon az Inspector vagy az interaktív kliens használatával. Íme egy kód példa az SDK-val:
 
 <details>
 <summary>Python példa</summary>
@@ -280,7 +279,7 @@ async def run_news_search():
 ```
 </details>
 
-Interaktív módban válaszd a `news_search` from the menu and enter your query when prompted.
+Alternatívaként interaktív módban válaszd a `news_search` from the menu and enter your query when prompted.
 
 **Parameters:**
 - `query` (string): A keresési lekérdezés paramétert
@@ -295,11 +294,11 @@ Interaktív módban válaszd a `news_search` from the menu and enter your query 
 
 ### product_search
 
-Termékek keresése egy lekérdezés alapján.
+Termékek keresése egy adott lekérdezés alapján.
 
 **Hogyan hívd meg ezt az eszközt:**
 
-A `product_search`-t meghívhatod saját szkriptedből az MCP Python SDK-val, vagy interaktívan az Inspector vagy az interaktív kliens mód segítségével. Íme egy példa a SDK használatára:
+A `product_search` eszközt meghívhatod saját szkriptedből az MCP Python SDK-val, vagy interaktív módon az Inspector vagy az interaktív kliens használatával. Íme egy kód példa az SDK-val:
 
 <details>
 <summary>Python példa</summary>
@@ -321,10 +320,10 @@ async def run_product_search():
 ```
 </details>
 
-Interaktív módban válaszd a `product_search` from the menu and enter your query when prompted.
+Alternatívaként interaktív módban válaszd a `product_search` from the menu and enter your query when prompted.
 
 **Parameters:**
-- `query` (string): A termék keresési lekérdezés paramétert
+- `query` (string): A termékkeresési lekérdezés paramétert
 
 **Példa kérés:**
 
@@ -336,11 +335,11 @@ Interaktív módban válaszd a `product_search` from the menu and enter your que
 
 ### qna
 
-Közvetlen válaszokat ad kérdésekre keresőmotorokból.
+Közvetlen válaszokat ad keresőmotorokból származó kérdésekre.
 
 **Hogyan hívd meg ezt az eszközt:**
 
-A `qna`-t meghívhatod saját szkriptedből az MCP Python SDK-val, vagy interaktívan az Inspector vagy az interaktív kliens mód segítségével. Íme egy példa a SDK használatára:
+A `qna` eszközt meghívhatod saját szkriptedből az MCP Python SDK-val, vagy interaktív módon az Inspector vagy az interaktív kliens használatával. Íme egy kód példa az SDK-val:
 
 <details>
 <summary>Python példa</summary>
@@ -362,10 +361,10 @@ async def run_qna():
 ```
 </details>
 
-Interaktív módban válaszd a `qna` from the menu and enter your question when prompted.
+Alternatívaként interaktív módban válaszd a `qna` from the menu and enter your question when prompted.
 
 **Parameters:**
-- `question` (string): A válasz keresendő kérdés paramétert
+- `question` (string): A megválaszolandó kérdés paramétert
 
 **Példa kérés:**
 
@@ -377,12 +376,12 @@ Interaktív módban válaszd a `qna` from the menu and enter your question when 
 
 ## Kód részletek
 
-Ez a rész kódrészleteket és hivatkozásokat tartalmaz a szerver és kliens megvalósításához.
+Ez a rész kód részleteket és hivatkozásokat tartalmaz a szerver és kliens megvalósításához.
 
 <details>
 <summary>Python</summary>
 
-A teljes megvalósítást lásd a [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) and [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) fájlban.
+A teljes megvalósítás részletei a [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) and [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) fájlokban találhatók.
 
 ```python
 # Example snippet from server.py:
@@ -392,28 +391,28 @@ import httpx
 ```
 </details>
 
-## Haladó fogalmak ebben a leckében
+## Fejlett fogalmak ebben a leckében
 
-Mielőtt elkezdenéd az építést, itt van néhány fontos haladó fogalom, amelyek végigkísérik ezt a fejezetet. Ezek megértése segít, hogy könnyebben kövesd a tartalmat, még ha újak is számodra:
+Mielőtt elkezdenéd az építést, itt van néhány fontos fejlett fogalom, amelyek végigvonulnak ezen a fejezeten. Ezek megértése segít követni az anyagot, még ha újak is számodra:
 
-- **Több eszköz összehangolása**: Ez azt jelenti, hogy több különböző eszközt (pl. webes keresés, hírek keresése, termékkeresés, kérdés-válasz) futtatsz egyetlen MCP szerveren belül. Ez lehetővé teszi, hogy a szerver többféle feladatot is ellásson, ne csak egyet.
-- **API-korlátozások kezelése**: Sok külső API (például SerpAPI) korlátozza, hogy mennyi kérést küldhetsz egy adott idő alatt. A jó kód ellenőrzi ezeket a korlátokat, és szépen kezeli őket, hogy az alkalmazás ne omoljon össze, ha eléri a limitet.
-- **Strukturált adat feldolgozás**: Az API válaszok gyakran összetettek és beágyazottak. Ez a fogalom arra utal, hogy ezeket a válaszokat tiszta, könnyen használható formátumba alakítjuk, amelyek barátságosak az LLM-ek vagy más programok számára.
-- **Hibajavítás**: Néha valami elromlik – például a hálózat megszakad, vagy az API nem adja vissza a várt adatot. A hibajavítás azt jelenti, hogy a kód kezeli ezeket a problémákat, és hasznos visszajelzést ad, ahelyett, hogy összeomlana.
-- **Paraméter ellenőrzés**: Ez arról szól, hogy megbizonyosodunk arról, hogy az eszközeinkhez adott bemenetek helyesek és biztonságosak. Ez magában foglalja az alapértelmezett értékek beállítását és a típusok ellenőrzését, ami segít elkerülni hibákat és félreértéseket.
+- **Több eszköz koordinációja**: Ez azt jelenti, hogy egyetlen MCP szerveren belül több különböző eszköz fut (például webes keresés, hírek keresése, termékkeresés és kérdés-válasz). Így a szerver többféle feladatot is képes ellátni, nem csak egyet.
+- **API lekérési korlátok kezelése**: Sok külső API (például SerpAPI) korlátozza, hogy mennyi kérést lehet egy adott idő alatt küldeni. A jó kód ellenőrzi ezeket a korlátokat és megfelelően kezeli őket, hogy az alkalmazás ne omoljon össze, ha eléri a limitet.
+- **Strukturált adat feldolgozás**: Az API válaszok gyakran összetettek és többszintűek. Ez a fogalom arról szól, hogyan alakítsuk ezeket a válaszokat tiszta, könnyen használható formátumokká, amelyek barátságosak az LLM-ek vagy más programok számára.
+- **Hibakezelés és helyreállítás**: Néha problémák adódnak – például hálózati hiba vagy az API nem a várt választ adja. A hibakezelés azt jelenti, hogy a kód képes kezelni ezeket a problémákat, és hasznos visszajelzést ad, ahelyett, hogy összeomlana.
+- **Paraméter validáció**: Ez arról szól, hogy ellenőrizzük, hogy az eszközeid bemenetei helyesek és biztonságosak legyenek. Ide tartozik az alapértelmezett értékek beállítása és a típusellenőrzés, ami segít megelőzni hibákat és félreértéseket.
 
-Ez a rész segít diagnosztizálni és megoldani a Web Search MCP szerverrel kapcsolatos gyakori problémákat. Ha hibába ütközöl vagy váratlan viselkedést tapasztalsz, ez a hibakeresési szakasz a leggyakoribb problémákra kínál megoldásokat. Nézd át ezeket a tippeket, mielőtt további segítséget kérnél – gyakran gyorsan megoldják a gondokat.
+Ez a rész segít diagnosztizálni és megoldani a leggyakoribb problémákat, amelyekkel a Web Search MCP szerver használata közben találkozhatsz. Ha hibába vagy váratlan viselkedésbe ütközöl, ez a hibakeresési rész a leggyakoribb problémákra ad megoldást. Érdemes ezeket átnézni, mielőtt további segítséget kérnél – sok esetben gyors megoldást nyújtanak.
 
 ## Hibakeresés
 
-A Web Search MCP szerver használata során időnként előfordulhatnak problémák – ez normális, amikor külső API-kkal és új eszközökkel dolgozol. Ez a rész gyakorlati megoldásokat kínál a leggyakoribb problémákra, hogy gyorsan visszatérhess a munkához. Ha hibát tapasztalsz, innen érdemes kezdeni: az alábbi tippek a leggyakoribb felhasználói problémákat célozzák, és sok esetben extra segítség nélkül is megoldják a gondokat.
+A Web Search MCP szerver használata közben előfordulhatnak problémák – ez teljesen normális, amikor külső API-kkal és új eszközökkel dolgozol. Ez a rész gyakorlati megoldásokat kínál a leggyakoribb gondokra, hogy gyorsan visszatérhess a munkához. Ha hibát tapasztalsz, innen érdemes indítani: az alábbi tippek a legtöbb felhasználó által tapasztalt problémákat fedik le, és gyakran megoldják a gondot külön segítség nélkül.
 
 ### Gyakori problémák
 
-Az alábbiakban néhány leggyakoribb hiba és azok magyarázata, valamint a megoldási lépések találhatók:
+Az alábbiakban a leggyakoribb problémák és azok tiszta magyarázata, valamint a megoldási lépések találhatók:
 
 1. **Hiányzó SERPAPI_KEY a .env fájlban**
-   - Ha az alábbi hibaüzenetet látod: `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
+   - Ha a következő hibát látod: `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
 
 2. **Module not found errors**
    - Errors such as `ModuleNotFoundError: No module named 'httpx'` indicate that a required Python package is missing. This usually happens if you haven't installed all the dependencies. To resolve this, run `pip install -r requirements.txt` in your terminal to install everything your project needs.
@@ -422,11 +421,11 @@ Az alábbiakban néhány leggyakoribb hiba és azok magyarázata, valamint a meg
    - If you get an error like `Error during client execution`, it often means the client can't connect to the server, or the server isn't running as expected. Double-check that both the client and server are compatible versions, and that `server.py` is present and running in the correct directory. Restarting both the server and client can also help.
 
 4. **SerpAPI errors**
-   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your ``, ellenőrizd, hogy van-e `.env` fájlod, és abban helyesen szerepel-e a SERPAPI_KEY. Ha a kulcs helyes, de mégis ezt az üzenetet kapod, ellenőrizd, hogy a szabad csomagod nem merült-e ki.
+   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env` fájl létrehozása szükséges. Ha a kulcsod helyes, de még mindig ezt a hibát kapod, ellenőrizd, hogy az ingyenes csomagod nem merült-e ki.
 
-### Hibakeresési mód
+### Hibakereső mód
 
-Alapértelmezés szerint az alkalmazás csak a fontos információkat naplózza. Ha részletesebben szeretnéd látni, mi történik (például bonyolultabb hibák diagnosztizálásához), engedélyezheted a DEBUG módot. Ez sokkal több részletet mutat meg minden lépésről.
+Alapértelmezés szerint az alkalmazás csak a fontos információkat naplózza. Ha szeretnél részletesebb információkat látni (például nehéz hibák diagnosztizálásához), engedélyezheted a DEBUG módot. Ez sokkal több részletet mutat meg az alkalmazás lépéseiről.
 
 **Példa: Normál kimenet**
 ```plaintext
@@ -448,9 +447,9 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-Figyeld meg, hogy a DEBUG mód extra sorokat tartalmaz HTTP kérésekről, válaszokról és más belső részletekről. Ez nagyon hasznos lehet hibakereséskor.
+Látható, hogy a DEBUG mód extra sorokat tartalmaz az HTTP kérésekről, válaszokról és egyéb belső részletekről. Ez nagyon hasznos lehet a hibakeresés során.
 
-A DEBUG mód engedélyezéséhez állítsd a naplózási szintet DEBUG-ra a `client.py` or `server.py` elején:
+A DEBUG mód bekapcsolásához állítsd a naplózási szintet DEBUG-ra a `client.py` or `server.py` fájl tetején:
 
 <details>
 <summary>Python</summary>
@@ -469,7 +468,7 @@ logging.basicConfig(
 
 ## Mi következik
 
-- [6. Közösségi hozzájárulások](../../06-CommunityContributions/README.md)
+- [5.10 Valós idejű streaming](../mcp-realtimestreaming/README.md)
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár igyekszünk pontos fordítást biztosítani, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt szakmai, emberi fordítást igénybe venni. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ezt a dokumentumot az AI fordítószolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár az pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén szakmai emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.

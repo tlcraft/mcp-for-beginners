@@ -1,52 +1,52 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bc249f8b228953fafca05f94bb572aac",
-  "translation_date": "2025-06-02T19:38:44+00:00",
+  "original_hash": "7a11a5dcf2f9fdf6392f5a4545cf005e",
+  "translation_date": "2025-06-11T16:31:16+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "hr"
 }
 -->
-# Lekcija: Izgradnja MCP servera za pretraživanje weba
+# Lekcija: Izgradnja Web Search MCP Servera
 
-Ovo poglavlje pokazuje kako izgraditi stvarnog AI agenta koji se integrira s vanjskim API-jima, obrađuje različite vrste podataka, upravlja greškama i koordinira više alata — sve u produkcijskom formatu spremnom za upotrebu. Vidjet ćete:
+Ovo poglavlje pokazuje kako izgraditi stvarnog AI agenta koji se integrira s vanjskim API-jima, rukuje različitim vrstama podataka, upravlja greškama i koordinira više alata—sve u proizvodno spremnom formatu. Vidjet ćete:
 
 - **Integraciju s vanjskim API-jima koji zahtijevaju autentifikaciju**
-- **Obradu različitih tipova podataka s više krajnjih točaka**
-- **Robusne strategije za upravljanje greškama i zapisivanje**
-- **Koordinaciju više alata u jednom serveru**
+- **Rukovanje različitim vrstama podataka s više krajnjih točaka**
+- **Robusne strategije za rukovanje greškama i logiranje**
+- **Orkestraciju više alata u jednom serveru**
 
 Na kraju ćete imati praktično iskustvo s obrascima i najboljim praksama koje su ključne za napredne AI i LLM-pokretane aplikacije.
 
 ## Uvod
 
-U ovoj lekciji naučit ćete kako izgraditi napredni MCP server i klijent koji proširuju LLM mogućnosti s podacima u stvarnom vremenu koristeći SerpAPI. Ovo je ključna vještina za razvoj dinamičnih AI agenata koji mogu pristupati ažurnim informacijama s weba.
+U ovoj lekciji naučit ćete kako izgraditi napredni MCP server i klijenta koji proširuju LLM mogućnosti s podacima u stvarnom vremenu koristeći SerpAPI. Ovo je ključna vještina za razvoj dinamičnih AI agenata koji mogu pristupiti ažuriranim informacijama s weba.
 
 ## Ciljevi učenja
 
 Na kraju ove lekcije moći ćete:
 
-- Sigurno integrirati vanjske API-je (kao što je SerpAPI) u MCP server
-- Implementirati više alata za pretraživanje weba, vijesti, proizvoda i Q&A
+- Sigurno integrirati vanjske API-je (poput SerpAPI) u MCP server
+- Implementirati više alata za pretraživanje weba, vijesti, proizvoda i pitanja i odgovora
 - Parsirati i formatirati strukturirane podatke za LLM
 - Učinkovito upravljati greškama i ograničenjima API-ja
 - Izgraditi i testirati automatizirane i interaktivne MCP klijente
 
 ## Web Search MCP Server
 
-Ovaj odjeljak uvodi arhitekturu i značajke Web Search MCP Servera. Vidjet ćete kako se FastMCP i SerpAPI koriste zajedno za proširenje LLM sposobnosti s podacima u stvarnom vremenu.
+Ovaj dio uvodi arhitekturu i značajke Web Search MCP Servera. Vidjet ćete kako se FastMCP i SerpAPI koriste zajedno za proširenje LLM mogućnosti s podacima u stvarnom vremenu.
 
 ### Pregled
 
-Ova implementacija sadrži četiri alata koji pokazuju MCP-ovu sposobnost sigurne i učinkovite obrade različitih zadataka pokretanih vanjskim API-jima:
+Ova implementacija sadrži četiri alata koji pokazuju MCP-ovu sposobnost da sigurno i učinkovito rukuje raznolikim zadacima pokretanim vanjskim API-jima:
 
-- **general_search**: Za široke rezultate s weba
+- **general_search**: Za široke rezultate pretraživanja weba
 - **news_search**: Za najnovije vijesti
 - **product_search**: Za podatke o e-trgovini
 - **qna**: Za isječke pitanja i odgovora
 
 ### Značajke
-- **Primjeri koda**: Uključuje jezično specifične blokove koda za Python (i lako proširivo na druge jezike) koristeći sklopive sekcije radi preglednosti
+- **Primjeri koda**: Uključuje jezične blokove koda za Python (i lako proširive na druge jezike) koristeći sažimajuće sekcije radi jasnoće
 
 <details>  
 <summary>Python</summary>  
@@ -93,22 +93,22 @@ if __name__ == "__main__":
 ```
 </details>
 
-- **Integracija vanjskog API-ja**: Pokazuje sigurno upravljanje API ključevima i vanjskim zahtjevima
-- **Parsiranje strukturiranih podataka**: Prikazuje kako transformirati API odgovore u formate prilagođene LLM-u
-- **Upravljanje greškama**: Robusno rukovanje greškama s odgovarajućim zapisivanjem
+- **Integracija vanjskog API-ja**: Pokazuje sigurno rukovanje API ključevima i vanjskim zahtjevima
+- **Parsiranje strukturiranih podataka**: Prikazuje kako transformirati odgovore API-ja u formate prilagođene LLM-u
+- **Rukovanje greškama**: Robusno upravljanje greškama s prikladnim logiranjem
 - **Interaktivni klijent**: Uključuje automatizirane testove i interaktivni način rada za testiranje
-- **Upravljanje kontekstom**: Koristi MCP Context za zapisivanje i praćenje zahtjeva
+- **Upravljanje kontekstom**: Koristi MCP Context za logiranje i praćenje zahtjeva
 
 ## Preduvjeti
 
-Prije početka, provjerite je li vaše okruženje ispravno postavljeno slijedeći ove korake. To će osigurati da su sve ovisnosti instalirane i da su vaši API ključevi pravilno konfigurirani za nesmetan razvoj i testiranje.
+Prije početka, provjerite da je vaše okruženje pravilno postavljeno slijedeći ove korake. To će osigurati da su sve ovisnosti instalirane i da su vaši API ključevi ispravno konfigurirani za nesmetan razvoj i testiranje.
 
 - Python 3.8 ili noviji
-- SerpAPI API ključ (Registrirajte se na [SerpAPI](https://serpapi.com/) - dostupan je besplatni plan)
+- SerpAPI API ključ (registrirajte se na [SerpAPI](https://serpapi.com/) - dostupna je besplatna razina)
 
 ## Instalacija
 
-Za početak slijedite ove korake za postavljanje vašeg okruženja:
+Za početak, slijedite ove korake za postavljanje okruženja:
 
 1. Instalirajte ovisnosti koristeći uv (preporučeno) ili pip:
 
@@ -128,19 +128,19 @@ SERPAPI_KEY=your_serpapi_key_here
 
 ## Korištenje
 
-Web Search MCP Server je osnovna komponenta koja izlaže alate za pretraživanje weba, vijesti, proizvoda i Q&A integriranjem sa SerpAPI-jem. Obradjuje dolazne zahtjeve, upravlja API pozivima, parsira odgovore i vraća strukturirane rezultate klijentu.
+Web Search MCP Server je ključna komponenta koja izlaže alate za pretraživanje weba, vijesti, proizvoda i Q&A integracijom sa SerpAPI-jem. Rukuje dolaznim zahtjevima, upravlja API pozivima, parsira odgovore i vraća strukturirane rezultate klijentu.
 
 Puni kod možete pregledati u [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
 ### Pokretanje servera
 
-Za pokretanje MCP servera upotrijebite sljedeću naredbu:
+Za pokretanje MCP servera koristite sljedeću naredbu:
 
 ```bash
 python server.py
 ```
 
-Server će raditi kao MCP server baziran na stdio-u kojem se klijent može direktno spojiti.
+Server će raditi kao stdio-bazirani MCP server na koji se klijent može izravno povezati.
 
 ### Načini rada klijenta
 
@@ -167,10 +167,10 @@ python client.py --interactive
 
 ### Testiranje različitim metodama
 
-Postoji nekoliko načina za testiranje i interakciju s alatima koje server pruža, ovisno o vašim potrebama i radnom toku.
+Postoji nekoliko načina za testiranje i interakciju s alatima koje server pruža, ovisno o vašim potrebama i radnom tijeku.
 
-#### Pisanje vlastitih test skripti s MCP Python SDK-om
-Također možete izraditi vlastite test skripte koristeći MCP Python SDK:
+#### Pisanje prilagođenih testnih skripti s MCP Python SDK-om
+Također možete izgraditi vlastite testne skripte koristeći MCP Python SDK:
 
 <details>
 <summary>Python</summary>
@@ -195,19 +195,19 @@ async def test_custom_query():
 ```
 </details>
 
-U ovom kontekstu, "test skripta" znači vlastiti Python program koji pišete da bi djelovao kao klijent MCP serveru. Umjesto formalnog jedinog testa, ova skripta vam omogućava programsku vezu sa serverom, pozivanje bilo kojeg od njegovih alata s parametrima koje odaberete i pregled rezultata. Ovaj pristup je koristan za:
+U ovom kontekstu, "testna skripta" znači prilagođeni Python program koji pišete da djeluje kao klijent MCP servera. Umjesto formalnog jedinicnog testa, ova skripta vam omogućuje programatsko povezivanje sa serverom, pozivanje bilo kojeg od njegovih alata s parametrima koje odaberete i pregled rezultata. Ovaj pristup je koristan za:
 - Prototipiranje i eksperimentiranje s pozivima alata
 - Provjeru kako server reagira na različite ulaze
 - Automatizaciju ponovljenih poziva alata
-- Izgradnju vlastitih radnih tokova ili integracija na vrhu MCP servera
+- Izgradnju vlastitih radnih tijekova ili integracija na vrhu MCP servera
 
-Možete koristiti test skripte za brzo isprobavanje novih upita, otklanjanje grešaka u ponašanju alata ili čak kao polaznu točku za napredniju automatizaciju. Ispod je primjer kako koristiti MCP Python SDK za izradu takve skripte:
+Možete koristiti testne skripte za brzo isprobavanje novih upita, otklanjanje pogrešaka u ponašanju alata ili čak kao polaznu točku za napredniju automatizaciju. Ispod je primjer kako koristiti MCP Python SDK za kreiranje takve skripte:
 
 ## Opisi alata
 
-Možete koristiti sljedeće alate koje pruža server za izvođenje različitih vrsta pretraživanja i upita. Svaki alat je opisan s parametrima i primjerom korištenja.
+Možete koristiti sljedeće alate koje server pruža za izvođenje različitih vrsta pretraživanja i upita. Svaki alat je opisan s parametrima i primjerom korištenja.
 
-Ovaj odjeljak daje detalje o svakom dostupnom alatu i njihovim parametrima.
+Ovaj dio daje detalje o svakom dostupnom alatu i njihovim parametrima.
 
 ### general_search
 
@@ -215,7 +215,7 @@ Izvodi opće pretraživanje weba i vraća formatirane rezultate.
 
 **Kako pozvati ovaj alat:**
 
-Možete pozvati `general_search` iz vlastite skripte koristeći MCP Python SDK ili interaktivno koristeći Inspektora ili interaktivni način rada klijenta. Evo primjera koda koristeći SDK:
+Možete pozvati `general_search` iz vlastite skripte koristeći MCP Python SDK, ili interaktivno koristeći Inspector ili interaktivni način rada klijenta. Evo primjera koda koristeći SDK:
 
 <details>
 <summary>Python primjer</summary>
@@ -252,11 +252,11 @@ Alternativno, u interaktivnom načinu odaberite `general_search` from the menu a
 
 ### news_search
 
-Pretražuje najnovije vijesti vezane uz upit.
+Pretražuje najnovije vijesti povezane s upitom.
 
 **Kako pozvati ovaj alat:**
 
-Možete pozvati `news_search` iz vlastite skripte koristeći MCP Python SDK ili interaktivno koristeći Inspektora ili interaktivni način rada klijenta. Evo primjera koda koristeći SDK:
+Možete pozvati `news_search` iz vlastite skripte koristeći MCP Python SDK, ili interaktivno koristeći Inspector ili interaktivni način rada klijenta. Evo primjera koda koristeći SDK:
 
 <details>
 <summary>Python primjer</summary>
@@ -297,7 +297,7 @@ Pretražuje proizvode koji odgovaraju upitu.
 
 **Kako pozvati ovaj alat:**
 
-Možete pozvati `product_search` iz vlastite skripte koristeći MCP Python SDK ili interaktivno koristeći Inspektora ili interaktivni način rada klijenta. Evo primjera koda koristeći SDK:
+Možete pozvati `product_search` iz vlastite skripte koristeći MCP Python SDK, ili interaktivno koristeći Inspector ili interaktivni način rada klijenta. Evo primjera koda koristeći SDK:
 
 <details>
 <summary>Python primjer</summary>
@@ -338,7 +338,7 @@ Daje izravne odgovore na pitanja iz tražilica.
 
 **Kako pozvati ovaj alat:**
 
-Možete pozvati `qna` iz vlastite skripte koristeći MCP Python SDK ili interaktivno koristeći Inspektora ili interaktivni način rada klijenta. Evo primjera koda koristeći SDK:
+Možete pozvati `qna` iz vlastite skripte koristeći MCP Python SDK, ili interaktivno koristeći Inspector ili interaktivni način rada klijenta. Evo primjera koda koristeći SDK:
 
 <details>
 <summary>Python primjer</summary>
@@ -375,7 +375,7 @@ Alternativno, u interaktivnom načinu odaberite `qna` from the menu and enter yo
 
 ## Detalji koda
 
-Ovaj odjeljak pruža isječke koda i reference za implementacije servera i klijenta.
+Ovaj dio pruža isječke koda i reference za implementacije servera i klijenta.
 
 <details>
 <summary>Python</summary>
@@ -392,23 +392,23 @@ import httpx
 
 ## Napredni koncepti u ovoj lekciji
 
-Prije nego što počnete graditi, ovdje su neki važni napredni koncepti koji će se pojavljivati kroz ovo poglavlje. Razumijevanje ovih pomoći će vam da lakše pratite, čak i ako vam nisu poznati:
+Prije nego što počnete graditi, ovdje su neki važni napredni koncepti koji će se pojavljivati kroz cijelo poglavlje. Razumijevanje ovih pomoći će vam da lakše pratite, čak i ako su vam novi:
 
-- **Koordinacija više alata**: To znači pokretanje nekoliko različitih alata (kao što su web pretraživanje, pretraživanje vijesti, pretraživanje proizvoda i Q&A) unutar jednog MCP servera. Omogućuje vašem serveru da obrađuje različite zadatke, ne samo jedan.
-- **Upravljanje ograničenjima API-ja**: Mnogi vanjski API-ji (kao SerpAPI) ograničavaju koliko zahtjeva možete poslati u određenom vremenu. Dobar kod provjerava te limite i pametno ih upravlja kako aplikacija ne bi pala ako se limit premaši.
-- **Parsiranje strukturiranih podataka**: API odgovori su često složeni i ugniježđeni. Ovaj koncept se odnosi na pretvaranje tih odgovora u čiste, jednostavne formate koji su prilagođeni LLM-ovima ili drugim programima.
-- **Oporavak od grešaka**: Ponekad stvari krenu po zlu — možda mreža zakaže ili API ne vrati očekivano. Oporavak od grešaka znači da vaš kod može upravljati tim problemima i dati korisne povratne informacije, umjesto da se sruši.
-- **Validacija parametara**: Radi se o provjeri da su svi ulazi u vaše alate ispravni i sigurni za korištenje. Uključuje postavljanje zadane vrijednosti i provjeru tipova, što pomaže u sprječavanju grešaka i zabune.
+- **Orkestracija više alata**: To znači pokretanje nekoliko različitih alata (kao što su web pretraživanje, pretraživanje vijesti, pretraživanje proizvoda i Q&A) unutar jednog MCP servera. To omogućava vašem serveru da rukuje različitim zadacima, ne samo jednim.
+- **Upravljanje ograničenjem API-ja**: Mnogi vanjski API-ji (kao SerpAPI) ograničavaju koliko zahtjeva možete poslati u određenom vremenu. Dobar kod provjerava ta ograničenja i lijepo ih rješava, tako da vaša aplikacija ne pukne ako dosegnete limit.
+- **Parsiranje strukturiranih podataka**: Odgovori API-ja često su složeni i ugniježđeni. Ovaj koncept se odnosi na pretvaranje tih odgovora u čiste, jednostavne formate koji su pogodni za LLM ili druge programe.
+- **Oporavak od grešaka**: Ponekad stvari krenu po zlu—mreža može pasti ili API ne vrati očekivani rezultat. Oporavak od grešaka znači da vaš kod može rukovati tim problemima i dati korisne povratne informacije, umjesto da se sruši.
+- **Validacija parametara**: Radi se o provjeri jesu li svi ulazi u vaše alate ispravni i sigurni za korištenje. Uključuje postavljanje zadane vrijednosti i provjeru tipova, što pomaže spriječiti greške i nesporazume.
 
-Ovaj odjeljak pomoći će vam dijagnosticirati i riješiti česte probleme na koje možete naići radeći s Web Search MCP Serverom. Ako naiđete na greške ili neočekivano ponašanje, ovaj dio pruža rješenja za najčešće probleme. Pregledajte ove savjete prije traženja dodatne pomoći — često brzo rješavaju probleme.
+Ovaj dio pomoći će vam da dijagnosticirate i riješite česte probleme na koje možete naići dok radite s Web Search MCP Serverom. Ako naiđete na greške ili neočekivano ponašanje, ovaj dio s rješenjima nudi odgovore na najčešće probleme. Pregledajte ove savjete prije traženja dodatne pomoći—često brzo rješavaju problem.
 
-## Otklanjanje poteškoća
+## Rješavanje problema
 
-Kod rada s Web Search MCP Serverom povremeno se mogu pojaviti problemi — to je normalno pri razvoju s vanjskim API-jima i novim alatima. Ovaj odjeljak nudi praktična rješenja za najčešće probleme kako biste brzo nastavili s radom. Ako naiđete na grešku, započnite ovdje: savjeti u nastavku rješavaju probleme s kojima se većina korisnika susreće i često mogu riješiti vaš problem bez dodatne pomoći.
+Pri radu s Web Search MCP Serverom, povremeno se mogu pojaviti problemi—što je normalno kod razvoja s vanjskim API-jima i novim alatima. Ovaj dio nudi praktična rješenja za najčešće probleme, kako biste brzo nastavili dalje. Ako naiđete na grešku, počnite ovdje: savjeti u nastavku pokrivaju probleme koje većina korisnika susreće i često mogu riješiti vaš problem bez dodatne pomoći.
 
 ### Česti problemi
 
-Ispod su neki od najčešćih problema s kojima se korisnici susreću, zajedno s jasnim objašnjenjima i koracima za njihovo rješavanje:
+Ispod su neki od najčešćih problema koje korisnici susreću, zajedno s jasnim objašnjenjima i koracima za njihovo rješavanje:
 
 1. **Nedostaje SERPAPI_KEY u .env datoteci**
    - Ako vidite grešku `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
@@ -420,13 +420,13 @@ Ispod su neki od najčešćih problema s kojima se korisnici susreću, zajedno s
    - If you get an error like `Error during client execution`, it often means the client can't connect to the server, or the server isn't running as expected. Double-check that both the client and server are compatible versions, and that `server.py` is present and running in the correct directory. Restarting both the server and client can also help.
 
 4. **SerpAPI errors**
-   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env` datoteku ako je potrebno. Ako je ključ ispravan, ali greška i dalje postoji, provjerite nije li vam istekao besplatni kvota plan.
+   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env` datoteku po potrebi. Ako je vaš ključ ispravan, ali još uvijek vidite ovu grešku, provjerite nije li vam istekao kvota za besplatnu razinu.
 
 ### Debug način rada
 
-Po defaultu, aplikacija zapisuje samo važne informacije. Ako želite vidjeti više detalja o tome što se događa (npr. za dijagnosticiranje složenih problema), možete uključiti DEBUG način rada. To će vam pokazati puno više o svakom koraku koji aplikacija poduzima.
+Po defaultu, aplikacija logira samo važne informacije. Ako želite vidjeti više detalja o tome što se događa (npr. za dijagnosticiranje složenijih problema), možete uključiti DEBUG način rada. To će vam prikazati puno više informacija o svakom koraku koji aplikacija poduzima.
 
-**Primjer: Normalni izlaz**
+**Primjer: Normalni ispis**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:24,123 - __main__ - INFO - Successfully called general_search
@@ -435,7 +435,7 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-**Primjer: DEBUG izlaz**
+**Primjer: DEBUG ispis**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:23,457 - httpx - DEBUG - HTTP Request: GET https://serpapi.com/search ...
@@ -446,9 +446,9 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-Primijetite kako DEBUG način uključuje dodatne linije o HTTP zahtjevima, odgovorima i drugim internim detaljima. Ovo može biti vrlo korisno za otklanjanje poteškoća.
+Primijetite kako DEBUG način uključuje dodatne linije o HTTP zahtjevima, odgovorima i drugim internim detaljima. Ovo može biti vrlo korisno za rješavanje problema.
 
-Za uključivanje DEBUG načina, postavite razinu zapisivanja na DEBUG na početku `client.py` or `server.py`:
+Za uključivanje DEBUG načina, postavite razinu logiranja na DEBUG na vrhu vašeg `client.py` or `server.py`:
 
 <details>
 <summary>Python</summary>
@@ -467,7 +467,7 @@ logging.basicConfig(
 
 ## Što slijedi
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.10 Real Time Streaming](../mcp-realtimestreaming/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument preveden je korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Nismo odgovorni za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument preveden je pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

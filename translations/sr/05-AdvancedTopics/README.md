@@ -1,79 +1,80 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "494d87e1c4b9239c70f6a341fcc59a48",
-  "translation_date": "2025-06-02T19:36:28+00:00",
+  "original_hash": "adaf47734a5839447b5c60a27120fbaf",
+  "translation_date": "2025-06-11T16:28:39+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "sr"
 }
 -->
-# Napredne teme u MCP-u
+# Напредне теме у MCP
 
-Ovo poglavlje pokriva niz naprednih tema u implementaciji Model Context Protocol (MCP), uključujući multi-modalnu integraciju, skalabilnost, najbolje prakse za bezbednost i integraciju u preduzeća. Ove teme su ključne za izgradnju robusnih i spremnih za produkciju MCP aplikacija koje mogu da zadovolje zahteve savremenih AI sistema.
+Ово поглавље покрива низ напредних тема у имплементацији Model Context Protocol (MCP), укључујући мултимодалну интеграцију, скалабилност, најбоље праксе у безбедности и интеграцију у предузећима. Ове теме су кључне за изградњу робусних и спремних за производ MCP апликација које могу да задовоље захтеве савремених AI система.
 
-## Pregled
+## Преглед
 
-Ova lekcija istražuje napredne koncepte u implementaciji Model Context Protocol-a, sa fokusom na multi-modalnu integraciju, skalabilnost, najbolje prakse u bezbednosti i integraciju u preduzeća. Ove teme su neophodne za izgradnju MCP aplikacija spremnih za produkciju koje mogu da odgovore na složene zahteve u poslovnim okruženjima.
+Ова лекција истражује напредне концепте у имплементацији Model Context Protocol-а, са фокусом на мултимодалну интеграцију, скалабилност, најбоље праксе у безбедности и интеграцију у предузећима. Ове теме су неопходне за изградњу MCP апликација које могу да одговоре на сложене захтеве у пословним окружењима.
 
-## Ciljevi učenja
+## Циљеви учења
 
-Na kraju ove lekcije bićete u stanju da:
+До краја ове лекције, моћи ћете да:
 
-- Implementirate multi-modalne mogućnosti unutar MCP okvira
-- Dizajnirate skalabilne MCP arhitekture za scenario sa velikim zahtevima
-- Primetite najbolje prakse u bezbednosti u skladu sa MCP bezbednosnim principima
-- Integrirate MCP sa AI sistemima i okvirima za preduzeća
-- Optimizujete performanse i pouzdanost u produkcionim okruženjima
+- Имплементирате мултимодалне могућности у MCP оквирима
+- Дизајнирате скалабилне MCP архитектуре за сценарије са великим оптерећењем
+- Примените најбоље праксе безбедности у складу са MCP безбедносним принципима
+- Интегришете MCP са предузетничким AI системима и оквирима
+- Оптимизујете перформансе и поузданост у производном окружењу
 
-## Lekcije i primeri projekata
+## Лекције и пример пројекти
 
-| Link | Naslov | Opis |
+| Линк | Наслов | Опис |
 |------|--------|-------|
-| [5.1 Integration with Azure](./mcp-integration/README.md) | Integracija sa Azure | Naučite kako da integrišete svoj MCP Server na Azure |
-| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | MCP Multi modalni primeri | Primeri za audio, slike i multi-modalne odgovore |
-| [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimalna Spring Boot aplikacija koja prikazuje OAuth2 sa MCP-om, kako kao Authorization, tako i Resource Server. Prikazuje bezbedno izdavanje tokena, zaštićene krajnje tačke, deployment na Azure Container Apps i integraciju sa API Management-om. |
-| [5.4 Root Contexts](./mcp-root-contexts/README.md) | Root konteksti | Saznajte više o root kontekstu i kako ih implementirati |
-| [5.5 Routing](./mcp-routing/README.md) | Rutiranje | Naučite različite tipove rutiranja |
-| [5.6 Sampling](./mcp-sampling/README.md) | Sampling | Naučite kako da radite sa samplingom |
-| [5.7 Scaling](./mcp-scaling/README.md) | Skaliranje | Naučite o skaliranju |
-| [5.8 Security](./mcp-security/README.md) | Bezbednost | Osigurajte svoj MCP Server |
-| [5.9 Web Search sample](./web-search-mcp/README.md) | Web Search MCP | Python MCP server i klijent koji integrišu SerpAPI za pretragu veba, vesti, proizvoda i pitanja i odgovora u realnom vremenu. Prikazuje orkestraciju više alata, integraciju eksternih API-ja i robusno rukovanje greškama. |
+| [5.1 Integration with Azure](./mcp-integration/README.md) | Интеграција са Azure | Научите како да интегришете ваш MCP сервер на Azure |
+| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | MCP мултимодални примери | Примери за аудио, слике и мултимодалне одговоре |
+| [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 демонстрација | Минимална Spring Boot апликација која показује OAuth2 са MCP-ом, као Authorization и Resource сервер. Приказује безбедно издавање токена, заштићене крајње тачке, деплојмент на Azure Container Apps и интеграцију са API Management-ом. |
+| [5.4 Root Contexts](./mcp-root-contexts/README.md) | Root контексти | Сазнајте више о root контексту и како их имплементирати |
+| [5.5 Routing](./mcp-routing/README.md) | Роутингови | Научите различите типове рутирања |
+| [5.6 Sampling](./mcp-sampling/README.md) | Семење | Научите како да радите са семплингом |
+| [5.7 Scaling](./mcp-scaling/README.md) | Скалабилност | Научите о скалабилности |
+| [5.8 Security](./mcp-security/README.md) | Безбедност | Заштитите ваш MCP сервер |
+| [5.9 Web Search sample](./web-search-mcp/README.md) | Web Search MCP | Python MCP сервер и клијент интегрисани са SerpAPI за претрагу веба, новости, производа и Q&A у реалном времену. Приказује мулти-алатску оркестрацију, интеграцију са спољним API-јима и робусно руковање грешкама. |
+| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Стриминг | Стриминг података у реалном времену постао је неопходан у данашњем свету који се ослања на податке, где послови и апликације захтевају тренутан приступ информацијама за правовремене одлуке. |
 
-## Dodatne reference
+## Додатне референце
 
-Za najnovije informacije o naprednim MCP temama, pogledajte:
+За најсвежије информације о напредним MCP темама, погледајте:
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
-## Ključne poruke
+## Кључне поуке
 
-- Multi-modalne MCP implementacije proširuju AI mogućnosti van obrade teksta
-- Skalabilnost je ključna za primenu u preduzećima i može se rešavati horizontalnim i vertikalnim skaliranjem
-- Sveobuhvatne mere bezbednosti štite podatke i obezbeđuju odgovarajuću kontrolu pristupa
-- Integracija u preduzeća sa platformama kao što su Azure OpenAI i Microsoft AI Foundry poboljšava MCP mogućnosti
-- Napredne MCP implementacije imaju koristi od optimizovanih arhitektura i pažljivog upravljanja resursima
+- Мултимодалне MCP имплементације проширују AI могућности изван обраде текста
+- Скалабилност је кључна за предузетничке имплементације и може се решити хоризонталним и вертикалним скалирањем
+- Комплетне безбедносне мере штите податке и обезбеђују правилну контролу приступа
+- Интеграција у предузећима са платформама као што су Azure OpenAI и Microsoft AI Foundry унапређује MCP могућности
+- Напредне MCP имплементације имају користи од оптимизованих архитектура и пажљивог управљања ресурсима
 
-## Vežba
+## Вежба
 
-Dizajnirajte MCP implementaciju za preduzeće za specifičan slučaj upotrebe:
+Осмислите MCP имплементацију за предузеће у складу са конкретним случајем употребе:
 
-1. Identifikujte multi-modalne zahteve za vaš slučaj upotrebe
-2. Nacrtajte bezbednosne kontrole potrebne za zaštitu osetljivih podataka
-3. Dizajnirajte skalabilnu arhitekturu koja može da podnese promenljive opterećenja
-4. Planirajte tačke integracije sa AI sistemima u preduzeću
-5. Dokumentujte moguće uska grla u performansama i strategije za njihovo ublažavanje
+1. Идентификујте мултимодалне захтеве за ваш случај употребе
+2. Набројте безбедносне контроле потребне за заштиту осетљивих података
+3. Дизајнирајте скалабилну архитектуру која може да поднесе различита оптерећења
+4. Испланирајте интеграционе тачке са предузетничким AI системима
+5. Документирајте потенцијалне узроке успоравања перформанси и стратегије за њихово отклањање
 
-## Dodatni resursi
+## Додатни ресурси
 
 - [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
 - [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
-## Šta sledi
+## Шта следи
 
 - [5.1 MCP Integration](./mcp-integration/README.md)
 
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korišćenjem AI servisa za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo tačnosti, imajte na umu da automatski prevodi mogu sadržati greške ili netačnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prevod. Ne snosimo odgovornost za bilo kakva nesporazumevanja ili pogrešna tumačenja nastala korišćenjem ovog prevoda.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетом. За критичне информације препоручује се професионални превод од стране људског преводиоца. Не сносимо одговорност за било какве неспоразуме или погрешне тумачења настала коришћењем овог превода.
