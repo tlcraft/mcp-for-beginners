@@ -126,16 +126,18 @@ When you run the client, it will:
 ## Expected Output
 
 ```
-Available Tools = ListToolsResult[tools=[...]]
-Add Result = CallToolResult[content=[TextContent[text=8.0]], isError=false]
-Subtract Result = CallToolResult[content=[TextContent[text=6.0]], isError=false]
-Multiply Result = CallToolResult[content=[TextContent[text=42.0]], isError=false]
-Divide Result = CallToolResult[content=[TextContent[text=5.0]], isError=false]
-Power Result = CallToolResult[content=[TextContent[text=256.0]], isError=false]
-Square Root Result = CallToolResult[content=[TextContent[text=4.0]], isError=false]
-Absolute Result = CallToolResult[content=[TextContent[text=5.5]], isError=false]
-Help = CallToolResult[content=[TextContent[text=Available operations: add, subtract, multiply, divide, power, squareRoot, modulus, absolute]], isError=false]
+Available Tools = ListToolsResult[tools=[Tool[name=add, description=Add two numbers together, ...], ...]]
+Add Result = CallToolResult[content=[TextContent[text="5,00 + 3,00 = 8,00"]], isError=false]
+Subtract Result = CallToolResult[content=[TextContent[text="10,00 - 4,00 = 6,00"]], isError=false]
+Multiply Result = CallToolResult[content=[TextContent[text="6,00 * 7,00 = 42,00"]], isError=false]
+Divide Result = CallToolResult[content=[TextContent[text="20,00 / 4,00 = 5,00"]], isError=false]
+Power Result = CallToolResult[content=[TextContent[text="2,00 ^ 8,00 = 256,00"]], isError=false]
+Square Root Result = CallToolResult[content=[TextContent[text="√16,00 = 4,00"]], isError=false]
+Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], isError=false]
+Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
+
+**Note**: You may see Maven warnings about lingering threads at the end - this is normal for reactive applications and doesn't indicate an error.
 
 ## Understanding the Code
 
@@ -179,6 +181,13 @@ If you encounter build errors:
 ```cmd
 .\mvnw clean install -DskipTests
 ```
+
+### Maven Thread Warnings
+You may see warnings about lingering threads at the end of execution:
+```
+[WARNING] thread Thread[#XX,reactor-http-nio-X,5,...] will linger despite being asked to die via interruption
+```
+**Solution**: This is normal for reactive applications using WebFlux and doesn't indicate an error. The application completed successfully.
 
 ## Next Steps
 
