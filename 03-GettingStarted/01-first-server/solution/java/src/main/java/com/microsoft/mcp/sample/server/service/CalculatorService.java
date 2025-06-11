@@ -119,4 +119,23 @@ public class CalculatorService {
         double result = Math.abs(number);
         return String.format("|%.2f| = %.2f", number, result);
     }
+
+    /**
+     * Get help about available calculator operations
+     * @return Information about available operations
+     */
+    @Tool(description = "Get help about available calculator operations")
+    public String help() {
+        return "Basic Calculator MCP Service\n\n" +
+               "Available operations:\n" +
+               "1. add(a, b) - Adds two numbers\n" +
+               "2. subtract(a, b) - Subtracts the second number from the first\n" +
+               "3. multiply(a, b) - Multiplies two numbers\n" +
+               "4. divide(a, b) - Divides the first number by the second\n" +
+               "5. power(base, exponent) - Raises a number to a power\n" +
+               "6. squareRoot(number) - Calculates the square root\n" + 
+               "7. modulus(a, b) - Calculates the remainder of division\n" +
+               "8. absolute(number) - Calculates the absolute value\n\n" +
+               "Example usage: add(5, 3) will return 5 + 3 = 8";
+    }
 }
