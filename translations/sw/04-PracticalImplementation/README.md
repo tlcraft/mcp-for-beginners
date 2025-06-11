@@ -1,36 +1,36 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0e1385a3fadf16bacd2f863757bcf5e0",
-  "translation_date": "2025-05-17T13:59:03+00:00",
+  "original_hash": "7919ce2e537f0c435c7c23fa6775b613",
+  "translation_date": "2025-06-11T18:22:50+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "sw"
 }
 -->
-# Utekelezaji wa Vitendo
+# Utekelezaji wa Kivitendo
 
-Utekelezaji wa vitendo ni pale ambapo nguvu ya Model Context Protocol (MCP) inakuwa dhahiri. Ingawa kuelewa nadharia na usanifu wa MCP ni muhimu, thamani halisi inatokea unapoweka dhana hizi katika matumizi ya kujenga, kujaribu, na kusambaza suluhisho zinazotatua matatizo halisi. Sura hii inaunganisha pengo kati ya maarifa ya dhana na maendeleo ya vitendo, ikikuongoza katika mchakato wa kuleta programu zinazotegemea MCP katika uhai.
+Utekelezaji wa kivitendo ndio sehemu ambapo nguvu ya Model Context Protocol (MCP) inakuwa halisi. Ingawa kuelewa nadharia na usanifu wa MCP ni muhimu, thamani halisi huibuka unapowatumia dhana hizi kujenga, kujaribu, na kutangaza suluhisho zinazotatua matatizo halisi ya dunia. Sura hii inaunganisha pengo kati ya maarifa ya dhana na maendeleo ya vitendo, ikikuongoza kupitia mchakato wa kuleta programu zinazotegemea MCP kuishi.
 
-Ikiwa unakuza wasaidizi wenye akili, kuunganisha AI katika mitiririko ya kazi za biashara, au kujenga zana maalum za usindikaji wa data, MCP inatoa msingi rahisi. Ubunifu wake usioegemea lugha na SDK rasmi kwa lugha maarufu za programu unafanya iweze kufikiwa na watengenezaji mbalimbali. Kwa kutumia SDK hizi, unaweza haraka kuunda, kurudia, na kupanua suluhisho zako katika majukwaa na mazingira tofauti.
+Iwe unatengeneza wasaidizi wa akili, kuunganisha AI katika mchakato wa biashara, au kujenga zana maalum za usindikaji data, MCP hutoa msingi rahisi kubadilika. Muundo wake usioegemea lugha na SDK rasmi kwa lugha maarufu za programu hufanya iwe rahisi kwa watengenezaji wengi. Kwa kutumia SDK hizi, unaweza kuunda mifano haraka, kurudia, na kupanua suluhisho zako kwenye majukwaa na mazingira tofauti.
 
-Katika sehemu zifuatazo, utapata mifano ya vitendo, sampuli za msimbo, na mikakati ya usambazaji inayoonyesha jinsi ya kutekeleza MCP katika C#, Java, TypeScript, JavaScript, na Python. Pia utajifunza jinsi ya kudhibiti na kujaribu seva za MCP, kusimamia API, na kusambaza suluhisho kwa wingu kwa kutumia Azure. Rasilimali hizi za vitendo zimetengenezwa ili kuharakisha kujifunza kwako na kukusaidia kujenga programu za MCP zenye nguvu, tayari kwa uzalishaji kwa ujasiri.
+Katika sehemu zinazofuata, utapata mifano ya vitendo, nambari za mfano, na mikakati ya kutangaza inayothibitisha jinsi ya kutekeleza MCP katika C#, Java, TypeScript, JavaScript, na Python. Pia utajifunza jinsi ya kutatua matatizo na kujaribu seva zako za MCP, kusimamia API, na kutangaza suluhisho kwenye wingu kwa kutumia Azure. Rasilimali hizi za vitendo zimeundwa kukuongezea kasi ya kujifunza na kusaidia kujenga programu imara za MCP zinazoweza kutumika uzalishaji kwa kujiamini.
 
 ## Muhtasari
 
-Somo hili linaangazia vipengele vya vitendo vya utekelezaji wa MCP katika lugha mbalimbali za programu. Tutachunguza jinsi ya kutumia SDK za MCP katika C#, Java, TypeScript, JavaScript, na Python kujenga programu thabiti, kudhibiti na kujaribu seva za MCP, na kuunda rasilimali zinazoweza kutumika tena, vidokezo, na zana.
+Somo hili linazingatia nyanja za vitendo za utekelezaji wa MCP katika lugha mbalimbali za programu. Tutachunguza jinsi ya kutumia MCP SDK katika C#, Java, TypeScript, JavaScript, na Python kujenga programu imara, kutatua matatizo na kujaribu seva za MCP, na kuunda rasilimali, maelekezo, na zana zinazoweza kutumika tena.
 
 ## Malengo ya Kujifunza
 
-Kufikia mwisho wa somo hili, utaweza:
+Mwisho wa somo hili, utaweza:
 - Kutekeleza suluhisho za MCP kwa kutumia SDK rasmi katika lugha mbalimbali za programu
-- Kudhibiti na kujaribu seva za MCP kwa utaratibu
-- Kuunda na kutumia vipengele vya seva (Rasilimali, Vidokezo, na Zana)
-- Kubuni mitiririko ya kazi ya MCP yenye ufanisi kwa kazi ngumu
-- Kuboresha utekelezaji wa MCP kwa utendaji na kuegemea
+- Kutatua matatizo na kujaribu seva za MCP kwa mfumo
+- Kuunda na kutumia vipengele vya seva (Rasilimali, Maelekezo, na Zana)
+- Kubuni mtiririko wa MCP unaofaa kwa kazi ngumu
+- Kuboresha utekelezaji wa MCP kwa utendaji na uaminifu
 
 ## Rasilimali za SDK Rasmi
 
-Model Context Protocol inatoa SDK rasmi kwa lugha mbalimbali:
+Model Context Protocol hutoa SDK rasmi kwa lugha nyingi:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) 
@@ -38,13 +38,13 @@ Model Context Protocol inatoa SDK rasmi kwa lugha mbalimbali:
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
 
-## Kufanya kazi na SDK za MCP
+## Kufanya kazi na MCP SDKs
 
-Sehemu hii inatoa mifano ya vitendo ya kutekeleza MCP katika lugha mbalimbali za programu. Unaweza kupata sampuli za msimbo katika saraka ya `samples` iliyoandaliwa kwa lugha.
+Sehemu hii inatoa mifano ya vitendo ya utekelezaji wa MCP katika lugha nyingi za programu. Unaweza kupata nambari za mfano katika saraka ya `samples` iliyopangwa kwa lugha.
 
-### Sampuli Zinazopatikana
+### Mifano Inayopatikana
 
-Hazina inajumuisha utekelezaji wa sampuli katika lugha zifuatazo:
+Hifadhi ya msimbo ina mifano ya utekelezaji katika lugha zifuatazo:
 
 - C#
 - Java
@@ -52,129 +52,129 @@ Hazina inajumuisha utekelezaji wa sampuli katika lugha zifuatazo:
 - JavaScript
 - Python
 
-Kila sampuli inaonyesha dhana kuu za MCP na mifumo ya utekelezaji kwa lugha na ekosistimu maalum.
+Kila mfano unaonyesha dhana muhimu za MCP na mifumo ya utekelezaji kwa lugha na mazingira husika.
 
 ## Vipengele Vikuu vya Seva
 
 Seva za MCP zinaweza kutekeleza mchanganyiko wowote wa vipengele hivi:
 
-### Rasilimali
-Rasilimali zinatoa muktadha na data kwa mtumiaji au modeli ya AI kutumia:
-- Hazina za hati
+### Rasilimali  
+Rasilimali hutoa muktadha na data kwa mtumiaji au mfano wa AI kutumia:
+- Hifadhi za nyaraka
 - Misingi ya maarifa
-- Vyanzo vya data vilivyoundwa
+- Vyanzo vya data vilivyopangwa
 - Mifumo ya faili
 
-### Vidokezo
-Vidokezo ni ujumbe uliowekwa kiolezo na mitiririko ya kazi kwa watumiaji:
-- Violezo vya mazungumzo vilivyotangulia
-- Mifumo ya mwingiliano iliyosimamiwa
-- Miundo maalum ya mazungumzo
+### Maelekezo  
+Maelekezo ni ujumbe na mitiririko ya kazi iliyotengenezwa kwa mtumiaji:
+- Violezo vya mazungumzo vilivyowekwa awali
+- Mifumo ya mwingiliano iliyoongozwa
+- Muundo maalum wa mazungumzo
 
-### Zana
-Zana ni kazi kwa modeli ya AI kutekeleza:
-- Huduma za usindikaji wa data
-- Miunganisho ya API ya nje
-- Uwezo wa hesabu
-- Utaftaji wa utendaji
+### Zana  
+Zana ni kazi zinazotekelezwa na mfano wa AI:
+- Zana za usindikaji data
+- Uunganishaji wa API za nje
+- Uwezo wa kihesabu
+- Utafutaji
 
-## Utekelezaji wa Sampuli: C#
+## Mifano ya Utekelezaji: C#
 
-Hazina rasmi ya SDK ya C# ina utekelezaji kadhaa wa sampuli unaoonyesha vipengele tofauti vya MCP:
+Hifadhi rasmi ya C# SDK ina mifano kadhaa ya utekelezaji inayonyesha nyanja tofauti za MCP:
 
-- **Mteja wa MCP Msingi**: Mfano rahisi unaoonyesha jinsi ya kuunda mteja wa MCP na kupiga simu zana
+- **Mteja wa MCP Msingi**: Mfano rahisi unaoonyesha jinsi ya kuunda mteja wa MCP na kuita zana
 - **Seva ya MCP Msingi**: Utekelezaji mdogo wa seva na usajili wa zana za msingi
-- **Seva ya MCP ya Juu**: Seva yenye vipengele kamili na usajili wa zana, uthibitishaji, na udhibiti wa makosa
-- **Muunganisho wa ASP.NET**: Mifano inayoonyesha muunganisho na ASP.NET Core
-- **Mifumo ya Utekelezaji wa Zana**: Mifumo mbalimbali ya kutekeleza zana na viwango tofauti vya ugumu
+- **Seva ya MCP ya Juu**: Seva yenye vipengele kamili ikijumuisha usajili wa zana, uthibitishaji, na utunzaji wa makosa
+- **Uunganishaji wa ASP.NET**: Mifano inayoonyesha uunganishaji na ASP.NET Core
+- **Mifumo ya Utekelezaji wa Zana**: Mifumo mbalimbali ya kutekeleza zana kwa ngazi tofauti za ugumu
 
-SDK ya MCP ya C# iko katika hakikisho na API zinaweza kubadilika. Tutaendelea kusasisha blogu hii kadri SDK inavyoendelea.
+SDK ya MCP ya C# iko katika awamu ya majaribio na API zinaweza kubadilika. Tutaendelea kusasisha blogu hii kadri SDK inavyoendelea.
 
-### Vipengele Muhimu 
+### Vipengele Muhimu  
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
 
-- Kujenga [seva yako ya kwanza ya MCP](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
+- Kujenga [Seva yako ya MCP ya Kwanza](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
 
-Kwa sampuli kamili za utekelezaji wa C#, tembelea [hazina rasmi ya sampuli za SDK ya C#](https://github.com/modelcontextprotocol/csharp-sdk)
+Kwa mifano kamili ya utekelezaji wa C#, tembelea [hifadhi rasmi ya mifano ya C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## Utekelezaji wa Sampuli: Utekelezaji wa Java
+## Mfano wa Utekelezaji: Java
 
-SDK ya Java inatoa chaguo za utekelezaji wa MCP zenye nguvu na vipengele vya daraja la biashara.
-
-### Vipengele Muhimu
-
-- Muunganisho wa Mfumo wa Spring
-- Usalama wa aina kali
-- Usaidizi wa programu ya kirekebu
-- Udhibiti wa makosa wa kina
-
-Kwa sampuli kamili ya utekelezaji wa Java, angalia [MCPSample.java](../../../04-PracticalImplementation/samples/java/MCPSample.java) katika saraka ya sampuli.
-
-## Utekelezaji wa Sampuli: Utekelezaji wa JavaScript
-
-SDK ya JavaScript inatoa mbinu nyepesi na rahisi ya utekelezaji wa MCP.
+Java SDK hutoa chaguzi thabiti za utekelezaji wa MCP zenye vipengele vya kiwango cha biashara.
 
 ### Vipengele Muhimu
 
-- Usaidizi wa Node.js na kivinjari
-- API inayotegemea ahadi
-- Muunganisho rahisi na Express na mifumo mingine
-- Usaidizi wa WebSocket kwa utiririshaji
+- Uunganishaji na Spring Framework
+- Usalama mkali wa aina
+- Msaada wa programu ya kuendeshwa kwa matukio (Reactive programming)
+- Utunzaji wa makosa wa kina
 
-Kwa sampuli kamili ya utekelezaji wa JavaScript, angalia [mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js) katika saraka ya sampuli.
+Kwa mfano kamili wa utekelezaji wa Java, angalia [MCPSample.java](../../../04-PracticalImplementation/samples/java/MCPSample.java) katika saraka ya mifano.
 
-## Utekelezaji wa Sampuli: Utekelezaji wa Python
+## Mfano wa Utekelezaji: JavaScript
 
-SDK ya Python inatoa mbinu ya Pythonic kwa utekelezaji wa MCP na miunganisho bora ya mifumo ya ML.
+JavaScript SDK hutoa njia nyepesi na rahisi ya utekelezaji wa MCP.
 
 ### Vipengele Muhimu
 
-- Usaidizi wa async/await na asyncio
-- Muunganisho wa Flask na FastAPI
+- Msaada kwa Node.js na vivinjari
+- API inayotumia ahadi (Promise-based)
+- Uunganishaji rahisi na Express na mifumo mingine
+- Msaada wa WebSocket kwa uenezaji wa data kwa muda halisi
+
+Kwa mfano kamili wa utekelezaji wa JavaScript, angalia [mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js) katika saraka ya mifano.
+
+## Mfano wa Utekelezaji: Python
+
+Python SDK hutoa njia ya Pythonic ya utekelezaji wa MCP yenye uunganisho mzuri na mifumo ya ML.
+
+### Vipengele Muhimu
+
+- Msaada wa async/await kwa asyncio
+- Uunganishaji na Flask na FastAPI
 - Usajili rahisi wa zana
-- Muunganisho wa asili na maktaba maarufu za ML
+- Uunganishaji wa asili na maktaba maarufu za ML
 
-Kwa sampuli kamili ya utekelezaji wa Python, angalia [mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py) katika saraka ya sampuli.
+Kwa mfano kamili wa utekelezaji wa Python, angalia [mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py) katika saraka ya mifano.
 
 ## Usimamizi wa API
 
-Usimamizi wa API ya Azure ni jibu bora kwa jinsi tunavyoweza kulinda seva za MCP. Wazo ni kuweka mfano wa Usimamizi wa API ya Azure mbele ya seva yako ya MCP na kuiruhusu kushughulikia vipengele unavyoweza kutaka kama:
+Azure API Management ni jibu zuri la jinsi tunavyoweza kuimarisha seva za MCP. Wazo ni kuweka mfano wa Azure API Management mbele ya seva yako ya MCP na kuiruhusu kushughulikia vipengele unavyoweza kuhitaji kama:
 
-- upunguzaji wa kiwango
+- kuweka mipaka ya maombi
 - usimamizi wa tokeni
 - ufuatiliaji
-- usawazishaji wa mzigo
+- usawazishaji mzigo
 - usalama
 
-### Sampuli ya Azure
+### Mfano wa Azure
 
-Hapa kuna sampuli ya Azure inayofanya hivyo, yaani [kuunda seva ya MCP na kuilinda kwa Usimamizi wa API ya Azure](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
+Huu ni mfano wa Azure unaofanya hasa hivyo, yaani [kuunda seva ya MCP na kuilinda kwa Azure API Management](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
 
-Angalia jinsi mtiririko wa uthibitishaji unavyofanyika kwenye picha iliyo hapa chini:
+Tazama jinsi mtiririko wa idhini unavyofanyika katika picha ifuatayo:
 
 ![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true) 
 
-Katika picha iliyotangulia, yafuatayo yanatokea:
+Katika picha iliyotangulia, yafuatayo hutokea:
 
-- Uthibitishaji/Uthibitisho unafanyika kwa kutumia Microsoft Entra.
-- Usimamizi wa API ya Azure hufanya kazi kama lango na hutumia sera kuelekeza na kudhibiti trafiki.
-- Azure Monitor hurekodi maombi yote kwa uchambuzi zaidi.
+- Uthibitishaji/Idhini hutekelezwa kwa kutumia Microsoft Entra.
+- Azure API Management hufanya kazi kama lango na hutumia sera kuongoza na kusimamia trafiki.
+- Azure Monitor huhifadhi kumbukumbu za maombi yote kwa uchambuzi zaidi.
 
-#### Mtiririko wa uthibitishaji
+#### Mtiririko wa Idhini
 
-Hebu tuangalie mtiririko wa uthibitishaji kwa undani zaidi:
+Tuchunguze mtiririko wa idhini kwa undani zaidi:
 
 ![Sequence Diagram](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
 
-#### Maelezo ya uthibitishaji wa MCP
+#### Maelezo ya Idhini ya MCP
 
-Jifunze zaidi kuhusu [maelezo ya uthibitishaji wa MCP](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
+Jifunze zaidi kuhusu [maelezo ya Idhini ya MCP](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
 
-## Kusambaza Seva ya MCP ya Mbali kwa Azure
+## Kutangaza Seva ya Remote MCP kwenye Azure
 
-Hebu tuone kama tunaweza kusambaza sampuli tuliyotaja awali:
+Tuweze kuona kama tunaweza kutangaza mfano tuliotaja hapo awali:
 
-1. Clone repo
+1. Nakili hifadhi ya msimbo
 
     ```bash
     git clone https://github.com/Azure-Samples/remote-mcp-apim-functions-python.git
@@ -183,29 +183,29 @@ Hebu tuone kama tunaweza kusambaza sampuli tuliyotaja awali:
 
 1. Sajili `Microsoft.App` resource provider.
     * If you are using Azure CLI, run `az provider register --namespace Microsoft.App --wait`.
-    * If you are using Azure PowerShell, run `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` baada ya muda fulani kuangalia kama usajili umekamilika.
+    * If you are using Azure PowerShell, run `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` baada ya muda ili kuangalia kama usajili umekamilika.
 
-2. Endesha amri hii ya [azd](https://aka.ms/azd) ili kutoa huduma ya usimamizi wa api, programu ya kazi (na msimbo) na rasilimali zote nyingine zinazohitajika za Azure
+2. Endesha amri hii ya [azd](https://aka.ms/azd) ili kuandaa huduma ya usimamizi wa API, programu ya kazi (na msimbo) na rasilimali zote muhimu za Azure
 
     ```shell
     azd up
     ```
 
-    Amri hii inapaswa kusambaza rasilimali zote za wingu kwenye Azure
+    Amri hii inapaswa kutangaza rasilimali zote za wingu kwenye Azure
 
-### Kujaribu seva yako na MCP Inspector
+### Kuijaribu seva yako kwa MCP Inspector
 
-1. Katika **dirisha jipya la terminal**, sakinisha na endesha MCP Inspector
+1. Katika **dirisha jipya la terminal**, weka na endesha MCP Inspector
 
     ```shell
     npx @modelcontextprotocol/inspector
     ```
 
-    Unapaswa kuona kiolesura kinachofanana na:
+    Unapaswa kuona kiolesura kinachofanana na hiki:
 
-    ![Connect to Node inspector](../../../translated_images/connect.126df3a6deef0d2e0850b1a5cf0547c8fc4e2e9e0b354238d0a9dbe7893726fa.sw.png)
+    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sw.png) 
 
-1. Bonyeza CTRL ili kupakia programu ya wavuti ya MCP Inspector kutoka kwa URL iliyoonyeshwa na programu (mf. http://127.0.0.1:6274/#resources)
+1. Bonyeza CTRL na ubofye ili kupakia programu ya wavuti ya MCP Inspector kutoka URL iliyoonyeshwa na programu (mfano http://127.0.0.1:6274/#resources)
 1. Weka aina ya usafirishaji kuwa `SSE`
 1. Set the URL to your running API Management SSE endpoint displayed after `azd up` na **Unganisha**:
 
@@ -213,59 +213,60 @@ Hebu tuone kama tunaweza kusambaza sampuli tuliyotaja awali:
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-5. **Orodhesha Zana**. Bonyeza zana na **Endesha Zana**.  
+5. **Orodhesha Zana**.  Bonyeza zana na **Endesha Zana**.  
 
-Ikiwa hatua zote zimefanya kazi, sasa unapaswa kuwa umeunganishwa na seva ya MCP na umeweza kupiga simu zana.
+Ikiwa hatua zote zimefanikiwa, sasa unapaswa kuwa umeunganishwa na seva ya MCP na umeweza kuita zana.
 
-## Seva za MCP kwa Azure 
+## Seva za MCP kwa Azure
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Seti hii ya hazina ni kiolezo cha kuanza haraka kwa kujenga na kusambaza seva za MCP za mbali za kawaida kwa kutumia Azure Functions na Python, C# .NET au Node/TypeScript. 
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Seti hii ya hifadhi ni templeti za kuanza haraka za kujenga na kutangaza seva za MCP (Model Context Protocol) za mbali kwa kutumia Azure Functions na Python, C# .NET au Node/TypeScript.
 
-Sampuli zinatoa suluhisho kamili linaloruhusu watengenezaji kufanya:
+Mifano hii hutoa suluhisho kamili linalomruhusu mtengenezaji:
 
-- Kujenga na kuendesha ndani: Kuendeleza na kudhibiti seva ya MCP kwenye mashine ya ndani
-- Kusambaza kwa Azure: Kusambaza kwa urahisi kwa wingu kwa amri rahisi ya azd up
-- Kuunganisha kutoka kwa wateja: Kuunganisha kwa seva ya MCP kutoka kwa wateja mbalimbali ikiwa ni pamoja na hali ya wakala wa VS Code's Copilot na zana ya MCP Inspector
+- Kujenga na kuendesha kwa ndani: Kuendeleza na kutatua matatizo ya seva ya MCP kwenye mashine ya ndani
+- Kutangaza kwenye Azure: Kutangaza kwa urahisi kwenye wingu kwa amri rahisi ya azd up
+- Kuunganishwa kutoka kwa wateja: Kuungana na seva ya MCP kutoka kwa wateja mbalimbali ikiwa ni pamoja na hali ya wakala wa Copilot wa VS Code na zana ya MCP Inspector
 
 ### Vipengele Muhimu:
 
-- Usalama kwa muundo: Seva ya MCP inalindwa kwa kutumia funguo na HTTPS
-- Chaguo za uthibitishaji: Inasaidia OAuth kwa kutumia uthibitishaji wa ndani na/au Usimamizi wa API
-- Uisolishaji wa mtandao: Inaruhusu usolishaji wa mtandao kwa kutumia Mitandao ya Kibinafsi ya Azure (VNET)
-- Usanifu usio na seva: Inatumia Azure Functions kwa utekelezaji wa kipimo, unaosababishwa na matukio
-- Maendeleo ya ndani: Usaidizi wa kina wa maendeleo na udhibiti wa ndani
-- Mchakato rahisi wa kusambaza: Mchakato wa kusambaza ulioimarishwa kwa Azure
+- Usalama kwa muundo: Seva ya MCP imehifadhiwa kwa kutumia funguo na HTTPS
+- Chaguzi za uthibitishaji: Inasaidia OAuth kwa kutumia uthibitishaji wa ndani na/au API Management
+- Kutengwa kwa mtandao: Inaruhusu kutengwa kwa mtandao kwa kutumia Azure Virtual Networks (VNET)
+- Muundo usio na seva: Inatumia Azure Functions kwa utekelezaji unaozidi na unaotegemea matukio
+- Maendeleo ya ndani: Msaada kamili wa maendeleo ya ndani na utatuzi wa matatizo
+- Utekelezaji rahisi: Mchakato rahisi wa kutangaza kwenye Azure
 
-Hazina inajumuisha faili zote muhimu za usanidi, msimbo wa chanzo, na ufafanuzi wa miundombinu ili kuanza haraka na utekelezaji wa seva ya MCP tayari kwa uzalishaji.
+Hifadhi hii ina faili zote muhimu za usanidi, msimbo wa chanzo, na maelezo ya miundombinu ili kuanza haraka na utekelezaji wa seva ya MCP inayotumika uzalishaji.
 
-- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Utekelezaji wa sampuli wa MCP kwa kutumia Azure Functions na Python
+- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Mfano wa utekelezaji wa MCP kwa kutumia Azure Functions na Python
 
-- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Utekelezaji wa sampuli wa MCP kwa kutumia Azure Functions na C# .NET
+- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Mfano wa utekelezaji wa MCP kwa kutumia Azure Functions na C# .NET
 
-- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Utekelezaji wa sampuli wa MCP kwa kutumia Azure Functions na Node/TypeScript.
+- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Mfano wa utekelezaji wa MCP kwa kutumia Azure Functions na Node/TypeScript.
 
-## Mambo Muhimu ya Kumbuka
+## Muhimu wa Kumbuka
 
-- SDK za MCP zinatoa zana maalum za lugha kwa kutekeleza suluhisho thabiti za MCP
-- Mchakato wa kudhibiti na kujaribu ni muhimu kwa programu za MCP zinazotegemewa
-- Violezo vya vidokezo vinavyoweza kutumika tena huwezesha mwingiliano thabiti wa AI
-- Mitiririko ya kazi iliyoundwa vizuri inaweza kuandaa kazi ngumu kwa kutumia zana nyingi
-- Kutekeleza suluhisho za MCP kunahitaji kuzingatia usalama, utendaji, na udhibiti wa makosa
+- SDK za MCP hutoa zana maalum kwa lugha za programu kwa ajili ya kutekeleza suluhisho thabiti za MCP
+- Mchakato wa utatuzi na majaribio ni muhimu kwa programu za MCP zenye uaminifu
+- Violezo vya maelekezo vinavyoweza kutumika tena huwezesha mwingiliano thabiti wa AI
+- Mitiririko iliyobuniwa vizuri inaweza kuratibu kazi ngumu kwa kutumia zana nyingi
+- Kutekeleza suluhisho za MCP kunahitaji kuzingatia usalama, utendaji, na utunzaji wa makosa
 
-## Zoezi
+## Zoef
 
-Buni mtiririko wa kazi wa MCP wa vitendo unaoshughulikia tatizo halisi katika uwanja wako:
+Buni mtiririko wa MCP wa vitendo unaoshughulikia tatizo halisi katika eneo lako:
 
 1. Tambua zana 3-4 ambazo zingekuwa muhimu kutatua tatizo hili
-2. Unda mchoro wa mtiririko wa kazi unaoonyesha jinsi zana hizi zinavyoshirikiana
-3. Tekeleza toleo la msingi la moja ya zana kwa kutumia lugha unayopendelea
-4. Unda kiolezo cha vidokezo ambacho kingesaidia modeli kutumia zana yako kwa ufanisi
+2. Tengeneza mchoro wa mtiririko unaoonyesha jinsi zana hizi zinavyoshirikiana
+3. Tekeleza toleo la msingi la moja ya zana hizo kwa lugha unayopendelea
+4. Unda kiolezo cha maelekezo kitakachosaidia mfano kutumia zana yako kwa ufanisi
 
-## Rasilimali za Ziada
+## Rasilimali Zaidi
+
 
 ---
 
-Next: [Mada za Juu](../05-AdvancedTopics/README.md)
+Ifuatayo: [Mada za Juu](../05-AdvancedTopics/README.md)
 
-**Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuelewana. Hati asilia katika lugha yake ya kiasili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya kibinadamu inapendekezwa. Hatuwajibiki kwa maelewano mabaya au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutengwa**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya utafsiri wa AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya mama inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuwajibiki kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

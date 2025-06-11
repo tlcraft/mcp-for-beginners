@@ -1,34 +1,34 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0e1385a3fadf16bacd2f863757bcf5e0",
-  "translation_date": "2025-05-17T13:55:35+00:00",
+  "original_hash": "7919ce2e537f0c435c7c23fa6775b613",
+  "translation_date": "2025-06-11T18:18:56+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "nl"
 }
 -->
 # Praktische Implementatie
 
-Praktische implementatie is waar de kracht van het Model Context Protocol (MCP) tastbaar wordt. Hoewel het begrijpen van de theorie en architectuur achter MCP belangrijk is, komt de echte waarde naar voren wanneer je deze concepten toepast om oplossingen te bouwen, testen en implementeren die echte problemen oplossen. Dit hoofdstuk overbrugt de kloof tussen conceptuele kennis en praktische ontwikkeling, en begeleidt je door het proces van het tot leven brengen van MCP-gebaseerde applicaties.
+Praktische implementatie is waar de kracht van het Model Context Protocol (MCP) tastbaar wordt. Hoewel het belangrijk is om de theorie en architectuur achter MCP te begrijpen, ontstaat de echte waarde wanneer je deze concepten toepast om oplossingen te bouwen, testen en implementeren die echte problemen oplossen. Dit hoofdstuk overbrugt de kloof tussen conceptuele kennis en hands-on ontwikkeling en begeleidt je bij het tot leven brengen van MCP-gebaseerde applicaties.
 
-Of je nu intelligente assistenten ontwikkelt, AI integreert in bedrijfsprocessen, of aangepaste tools voor gegevensverwerking bouwt, MCP biedt een flexibele basis. Het taalonafhankelijke ontwerp en de officiële SDK's voor populaire programmeertalen maken het toegankelijk voor een breed scala aan ontwikkelaars. Door gebruik te maken van deze SDK's kun je snel prototypes maken, itereren en je oplossingen opschalen over verschillende platforms en omgevingen.
+Of je nu intelligente assistenten ontwikkelt, AI integreert in bedrijfsprocessen, of aangepaste tools bouwt voor dataverwerking, MCP biedt een flexibele basis. Het taal-onafhankelijke ontwerp en de officiële SDK's voor populaire programmeertalen maken het toegankelijk voor een breed scala aan ontwikkelaars. Door gebruik te maken van deze SDK's kun je snel prototypen, itereren en je oplossingen opschalen over verschillende platforms en omgevingen.
 
-In de volgende secties vind je praktische voorbeelden, voorbeeldcode en implementatiestrategieën die laten zien hoe je MCP kunt implementeren in C#, Java, TypeScript, JavaScript en Python. Je leert ook hoe je MCP-servers kunt debuggen en testen, API's kunt beheren en oplossingen naar de cloud kunt implementeren met Azure. Deze praktische hulpmiddelen zijn ontworpen om je leerproces te versnellen en je te helpen met vertrouwen robuuste, productieklare MCP-applicaties te bouwen.
+In de volgende secties vind je praktische voorbeelden, voorbeeldcode en implementatiestrategieën die laten zien hoe je MCP kunt toepassen in C#, Java, TypeScript, JavaScript en Python. Je leert ook hoe je MCP-servers debugt en test, API’s beheert en oplossingen in de cloud implementeert met Azure. Deze hands-on bronnen zijn ontworpen om je leerproces te versnellen en je te helpen zelfverzekerd robuuste, productieklare MCP-applicaties te bouwen.
 
 ## Overzicht
 
-Deze les richt zich op praktische aspecten van MCP-implementatie in meerdere programmeertalen. We verkennen hoe je MCP SDK's kunt gebruiken in C#, Java, TypeScript, JavaScript en Python om robuuste applicaties te bouwen, MCP-servers te debuggen en testen, en herbruikbare bronnen, prompts en tools te creëren.
+Deze les richt zich op praktische aspecten van MCP-implementatie in meerdere programmeertalen. We onderzoeken hoe je MCP SDK's gebruikt in C#, Java, TypeScript, JavaScript en Python om robuuste applicaties te bouwen, MCP-servers te debuggen en testen, en herbruikbare resources, prompts en tools te creëren.
 
 ## Leerdoelen
 
 Aan het einde van deze les kun je:
-- MCP-oplossingen implementeren met behulp van officiële SDK's in verschillende programmeertalen
+- MCP-oplossingen implementeren met officiële SDK's in verschillende programmeertalen
 - MCP-servers systematisch debuggen en testen
-- Serverfuncties (Resources, Prompts en Tools) creëren en gebruiken
+- Serverfuncties creëren en gebruiken (Resources, Prompts en Tools)
 - Effectieve MCP-workflows ontwerpen voor complexe taken
 - MCP-implementaties optimaliseren voor prestaties en betrouwbaarheid
 
-## Officiële SDK-bronnen
+## Officiële SDK Resources
 
 Het Model Context Protocol biedt officiële SDK's voor meerdere talen:
 
@@ -40,9 +40,9 @@ Het Model Context Protocol biedt officiële SDK's voor meerdere talen:
 
 ## Werken met MCP SDK's
 
-Deze sectie biedt praktische voorbeelden van MCP-implementatie in meerdere programmeertalen. Je kunt voorbeeldcode vinden in de `samples` directory georganiseerd per taal.
+Deze sectie bevat praktische voorbeelden van MCP-implementaties in verschillende programmeertalen. Je vindt voorbeeldcode in de `samples` map, georganiseerd per taal.
 
-### Beschikbare Voorbeelden
+### Beschikbare voorbeelden
 
 De repository bevat voorbeeldimplementaties in de volgende talen:
 
@@ -54,219 +54,219 @@ De repository bevat voorbeeldimplementaties in de volgende talen:
 
 Elk voorbeeld demonstreert belangrijke MCP-concepten en implementatiepatronen voor die specifieke taal en ecosysteem.
 
-## Kern Server Functies
+## Kernfuncties van de server
 
-MCP-servers kunnen elke combinatie van deze functies implementeren:
+MCP-servers kunnen een combinatie van deze functies implementeren:
 
 ### Resources
-Resources bieden context en gegevens voor de gebruiker of AI-model om te gebruiken:
-- Documentenrepositories
+Resources bieden context en data voor de gebruiker of AI-model om te gebruiken:
+- Documentrepositories
 - Kennisbanken
-- Gestructureerde gegevensbronnen
+- Gestructureerde databronnen
 - Bestandsystemen
 
 ### Prompts
-Prompts zijn gesjabloneerde berichten en workflows voor gebruikers:
-- Vooraf gedefinieerde gesprekssjablonen
-- Geleide interactiepatronen
+Prompts zijn sjablonen voor berichten en workflows voor gebruikers:
+- Vooraf gedefinieerde conversatiesjablonen
+- Begeleide interactiepatronen
 - Gespecialiseerde dialoogstructuren
 
 ### Tools
 Tools zijn functies die het AI-model kan uitvoeren:
-- Hulpprogramma's voor gegevensverwerking
-- Integraties met externe API's
-- Computationele mogelijkheden
+- Hulpmiddelen voor dataverwerking
+- Integraties met externe API’s
+- Rekencapaciteiten
 - Zoekfunctionaliteit
 
-## Voorbeeld Implementaties: C#
+## Voorbeeldimplementaties: C#
 
 De officiële C# SDK-repository bevat verschillende voorbeeldimplementaties die verschillende aspecten van MCP demonstreren:
 
-- **Basis MCP Client**: Eenvoudig voorbeeld dat laat zien hoe je een MCP-client maakt en tools aanroept
-- **Basis MCP Server**: Minimale serverimplementatie met basis toolregistratie
-- **Geavanceerde MCP Server**: Volledig uitgeruste server met toolregistratie, authenticatie en foutafhandeling
-- **ASP.NET Integratie**: Voorbeelden die integratie met ASP.NET Core demonstreren
-- **Tool Implementatiepatronen**: Verschillende patronen voor het implementeren van tools met verschillende complexiteitsniveaus
+- **Basic MCP Client**: Eenvoudig voorbeeld dat laat zien hoe je een MCP-client maakt en tools aanroept
+- **Basic MCP Server**: Minimale serverimplementatie met basis tool-registratie
+- **Advanced MCP Server**: Volledig uitgeruste server met tool-registratie, authenticatie en foutafhandeling
+- **ASP.NET-integratie**: Voorbeelden die integratie met ASP.NET Core laten zien
+- **Tool-implementatiepatronen**: Diverse patronen voor het implementeren van tools met verschillende complexiteitsniveaus
 
-De MCP C# SDK is in preview en API's kunnen veranderen. We zullen deze blog continu bijwerken naarmate de SDK evolueert.
+De MCP C# SDK is in preview en de API’s kunnen veranderen. We blijven deze blog updaten naarmate de SDK zich ontwikkelt.
 
-### Belangrijkste Kenmerken 
+### Belangrijke functies 
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
 
 - Bouw je [eerste MCP Server](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
 
-Voor volledige C# implementatievoorbeelden, bezoek de [officiële C# SDK voorbeeldenrepository](https://github.com/modelcontextprotocol/csharp-sdk)
+Voor volledige C# implementatievoorbeelden, bezoek de [officiële C# SDK voorbeelden repository](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## Voorbeeld Implementatie: Java Implementatie
+## Voorbeeldimplementatie: Java
 
-De Java SDK biedt robuuste MCP-implementatieopties met functies van ondernemingsniveau.
+De Java SDK biedt robuuste MCP-implementatieopties met enterprise-grade functionaliteiten.
 
-### Belangrijkste Kenmerken
+### Belangrijke functies
 
 - Integratie met Spring Framework
 - Sterke typeveiligheid
-- Ondersteuning voor reactieve programmering
+- Ondersteuning voor reactief programmeren
 - Uitgebreide foutafhandeling
 
-Voor een compleet Java implementatievoorbeeld, zie [MCPSample.java](../../../04-PracticalImplementation/samples/java/MCPSample.java) in de voorbeelden directory.
+Voor een volledige Java-implementatie, zie [MCPSample.java](../../../04-PracticalImplementation/samples/java/MCPSample.java) in de samples map.
 
-## Voorbeeld Implementatie: JavaScript Implementatie
+## Voorbeeldimplementatie: JavaScript
 
 De JavaScript SDK biedt een lichte en flexibele aanpak voor MCP-implementatie.
 
-### Belangrijkste Kenmerken
+### Belangrijke functies
 
 - Ondersteuning voor Node.js en browsers
 - Promise-gebaseerde API
-- Eenvoudige integratie met Express en andere frameworks
-- Ondersteuning voor WebSocket voor streaming
+- Gemakkelijke integratie met Express en andere frameworks
+- WebSocket-ondersteuning voor streaming
 
-Voor een compleet JavaScript implementatievoorbeeld, zie [mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js) in de voorbeelden directory.
+Voor een volledige JavaScript-implementatie, zie [mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js) in de samples map.
 
-## Voorbeeld Implementatie: Python Implementatie
+## Voorbeeldimplementatie: Python
 
-De Python SDK biedt een Pythonic aanpak voor MCP-implementatie met uitstekende integraties met ML-frameworks.
+De Python SDK biedt een Pythonic aanpak voor MCP-implementatie met uitstekende integraties voor ML-frameworks.
 
-### Belangrijkste Kenmerken
+### Belangrijke functies
 
-- Ondersteuning voor Async/await met asyncio
+- Async/await ondersteuning met asyncio
 - Integratie met Flask en FastAPI
-- Eenvoudige toolregistratie
+- Eenvoudige tool-registratie
 - Native integratie met populaire ML-bibliotheken
 
-Voor een compleet Python implementatievoorbeeld, zie [mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py) in de voorbeelden directory.
+Voor een volledige Python-implementatie, zie [mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py) in de samples map.
 
-## API beheer 
+## API-beheer 
 
-Azure API Management is een geweldige oplossing voor het beveiligen van MCP-servers. Het idee is om een Azure API Management instantie voor je MCP-server te plaatsen en deze functies te laten afhandelen die je waarschijnlijk wilt, zoals:
+Azure API Management is een uitstekende oplossing om MCP-servers te beveiligen. Het idee is om een Azure API Management instantie voor je MCP-server te plaatsen, die functies afhandelt die je waarschijnlijk nodig hebt, zoals:
 
-- snelheidsbeperking
+- rate limiting
 - tokenbeheer
 - monitoring
 - load balancing
 - beveiliging
 
-### Azure Voorbeeld
+### Azure voorbeeld
 
-Hier is een Azure Voorbeeld dat precies dat doet, namelijk [een MCP-server creëren en beveiligen met Azure API Management](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
+Hier is een Azure voorbeeld dat precies dat doet, namelijk [een MCP-server creëren en beveiligen met Azure API Management](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
 
-Zie hoe de autorisatiestroom plaatsvindt in onderstaande afbeelding:
+Zie hoe de autorisatiestroom verloopt in onderstaande afbeelding:
 
 ![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true) 
 
 In de bovenstaande afbeelding gebeurt het volgende:
 
-- Authenticatie/Autorisatie vindt plaats met Microsoft Entra.
-- Azure API Management fungeert als een gateway en gebruikt beleidsregels om verkeer te sturen en beheren.
+- Authenticatie/Autorisatie vindt plaats via Microsoft Entra.
+- Azure API Management fungeert als gateway en gebruikt policies om verkeer te sturen en te beheren.
 - Azure Monitor registreert alle verzoeken voor verdere analyse.
 
 #### Autorisatiestroom
 
-Laten we de autorisatiestroom meer in detail bekijken:
+Laten we de autorisatiestroom wat gedetailleerder bekijken:
 
 ![Sequence Diagram](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
 
 #### MCP autorisatiespecificatie
 
-Lees meer over de [MCP Autorisatiespecificatie](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
+Lees meer over de [MCP Authorization specificatie](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
 
-## Remote MCP Server implementeren naar Azure
+## Remote MCP Server implementeren op Azure
 
-Laten we eens kijken of we het eerder genoemde voorbeeld kunnen implementeren:
+Laten we kijken of we het eerder genoemde voorbeeld kunnen implementeren:
 
-1. Clone de repo
+1. Clone de repository
 
     ```bash
     git clone https://github.com/Azure-Samples/remote-mcp-apim-functions-python.git
     cd remote-mcp-apim-functions-python
     ```
 
-1. Registreer `Microsoft.App` resource provider.
+2. Registreer `Microsoft.App` resource provider.
     * If you are using Azure CLI, run `az provider register --namespace Microsoft.App --wait`.
-    * If you are using Azure PowerShell, run `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` na enige tijd om te controleren of de registratie is voltooid.
+    * If you are using Azure PowerShell, run `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` en controleer na enige tijd of de registratie is voltooid.
 
-2. Voer dit [azd](https://aka.ms/azd) commando uit om de api management service, function app (met code) en alle andere benodigde Azure resources te voorzien
+3. Voer dit [azd](https://aka.ms/azd) commando uit om de API Management service, function app (met code) en alle andere benodigde Azure resources te provisioneren
 
     ```shell
     azd up
     ```
 
-    Deze commando's moeten alle cloudresources op Azure implementeren
+    Dit commando zou alle cloudresources op Azure moeten implementeren.
 
-### Je server testen met MCP Inspector
+### Test je server met MCP Inspector
 
-1. In een **nieuw terminalvenster**, installeer en voer MCP Inspector uit
+1. Open een **nieuw terminalvenster**, installeer en start MCP Inspector
 
     ```shell
     npx @modelcontextprotocol/inspector
     ```
 
-    Je zou een interface moeten zien die lijkt op:
+    Je zou een interface moeten zien zoals:
 
-    ![Connect to Node inspector](../../../translated_images/connect.126df3a6deef0d2e0850b1a5cf0547c8fc4e2e9e0b354238d0a9dbe7893726fa.nl.png)
+    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.nl.png) 
 
-1. CTRL klik om de MCP Inspector webapp te laden vanaf de URL die door de app wordt weergegeven (bijv. http://127.0.0.1:6274/#resources)
-1. Stel het transporttype in op `SSE`
+2. CTRL-klik om de MCP Inspector webapp te laden vanaf de door de app weergegeven URL (bijv. http://127.0.0.1:6274/#resources)
+3. Stel het transporttype in op `SSE`
 1. Set the URL to your running API Management SSE endpoint displayed after `azd up` en **Verbind**:
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-5. **Lijst Tools**. Klik op een tool en **Voer Tool uit**.  
+5. **List Tools**. Klik op een tool en **Run Tool**.  
 
-Als alle stappen hebben gewerkt, zou je nu verbonden moeten zijn met de MCP-server en heb je een tool kunnen aanroepen.
+Als alle stappen gelukt zijn, ben je nu verbonden met de MCP-server en heb je een tool kunnen aanroepen.
 
-## MCP-servers voor Azure 
+## MCP servers voor Azure 
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Deze set repositories zijn een snelstartsjabloon voor het bouwen en implementeren van aangepaste remote MCP (Model Context Protocol) servers met behulp van Azure Functions met Python, C# .NET of Node/TypeScript. 
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Deze set repositories is een quickstart template voor het bouwen en implementeren van aangepaste remote MCP (Model Context Protocol) servers met Azure Functions in Python, C# .NET of Node/TypeScript.
 
-De voorbeelden bieden een complete oplossing waarmee ontwikkelaars:
+De voorbeelden bieden een complete oplossing waarmee ontwikkelaars kunnen:
 
-- Lokaal kunnen bouwen en uitvoeren: Ontwikkel en debug een MCP-server op een lokale machine
-- Implementeren naar Azure: Eenvoudig naar de cloud implementeren met een eenvoudig azd up commando
-- Verbinden vanuit clients: Verbinden met de MCP-server vanuit verschillende clients, waaronder VS Code's Copilot agent mode en de MCP Inspector tool
+- Lokaal bouwen en draaien: ontwikkel en debug een MCP-server op een lokale machine
+- Implementeren naar Azure: eenvoudig implementeren naar de cloud met een simpel azd up-commando
+- Verbinden vanaf clients: verbinding maken met de MCP-server vanaf diverse clients, inclusief VS Code's Copilot agent modus en de MCP Inspector tool
 
-### Belangrijkste Kenmerken:
+### Belangrijke functies:
 
-- Beveiliging door ontwerp: De MCP-server is beveiligd met sleutels en HTTPS
-- Authenticatie-opties: Ondersteunt OAuth met ingebouwde authenticatie en/of API Management
-- Netwerkisolatie: Mogelijkheid tot netwerkisolatie met Azure Virtual Networks (VNET)
-- Serverloze architectuur: Maakt gebruik van Azure Functions voor schaalbare, gebeurtenisgestuurde uitvoering
-- Lokale ontwikkeling: Uitgebreide ondersteuning voor lokale ontwikkeling en debugging
-- Eenvoudige implementatie: Gestroomlijnd implementatieproces naar Azure
+- Security by design: de MCP-server is beveiligd met sleutels en HTTPS
+- Authenticatie-opties: ondersteunt OAuth via ingebouwde authenticatie en/of API Management
+- Netwerkisolatie: maakt netwerkisolatie mogelijk via Azure Virtual Networks (VNET)
+- Serverless architectuur: maakt gebruik van Azure Functions voor schaalbare, event-gedreven uitvoering
+- Lokale ontwikkeling: uitgebreide ondersteuning voor lokale ontwikkeling en debugging
+- Eenvoudige implementatie: gestroomlijnd implementatieproces naar Azure
 
 De repository bevat alle benodigde configuratiebestanden, broncode en infrastructuurdefinities om snel aan de slag te gaan met een productieklare MCP-serverimplementatie.
 
-- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Voorbeeldimplementatie van MCP met Azure Functions met Python
+- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Voorbeeldimplementatie van MCP met Azure Functions in Python
 
-- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Voorbeeldimplementatie van MCP met Azure Functions met C# .NET
+- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Voorbeeldimplementatie van MCP met Azure Functions in C# .NET
 
-- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Voorbeeldimplementatie van MCP met Azure Functions met Node/TypeScript.
+- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Voorbeeldimplementatie van MCP met Azure Functions in Node/TypeScript.
 
-## Belangrijkste Leerpunten
+## Belangrijkste conclusies
 
-- MCP SDK's bieden taal-specifieke tools voor het implementeren van robuuste MCP-oplossingen
-- Het debuggen en testen proces is cruciaal voor betrouwbare MCP-applicaties
-- Herbruikbare prompt sjablonen maken consistente AI-interacties mogelijk
-- Goed ontworpen workflows kunnen complexe taken orkestreren met behulp van meerdere tools
-- Het implementeren van MCP-oplossingen vereist aandacht voor beveiliging, prestaties en foutafhandeling
+- MCP SDK's bieden taalspecifieke tools voor het implementeren van robuuste MCP-oplossingen
+- Het debuggen en testen is cruciaal voor betrouwbare MCP-applicaties
+- Herbruikbare prompt-sjablonen zorgen voor consistente AI-interacties
+- Goed ontworpen workflows kunnen complexe taken orkestreren met meerdere tools
+- Bij het implementeren van MCP-oplossingen moet rekening worden gehouden met beveiliging, prestaties en foutafhandeling
 
 ## Oefening
 
-Ontwerp een praktische MCP-workflow die een echt probleem in jouw domein aanpakt:
+Ontwerp een praktische MCP-workflow die een probleem uit jouw werkveld oplost:
 
-1. Identificeer 3-4 tools die nuttig zouden zijn voor het oplossen van dit probleem
-2. Maak een workflowdiagram dat laat zien hoe deze tools interageren
-3. Implementeer een basisversie van een van de tools met behulp van jouw voorkeurs taal
-4. Maak een prompt sjabloon die het model zou helpen jouw tool effectief te gebruiken
+1. Identificeer 3-4 tools die nuttig zijn voor het oplossen van dit probleem
+2. Maak een workflowdiagram waarin je laat zien hoe deze tools samenwerken
+3. Implementeer een basisversie van een van de tools in jouw favoriete taal
+4. Maak een prompt-sjabloon dat het model helpt je tool effectief te gebruiken
 
-## Aanvullende Bronnen
+## Aanvullende bronnen
 
 
 ---
 
-Volgende: [Geavanceerde Onderwerpen](../05-AdvancedTopics/README.md)
+Volgende: [Geavanceerde onderwerpen](../05-AdvancedTopics/README.md)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we ons best doen voor nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in zijn oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor belangrijke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

@@ -1,48 +1,48 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0e1385a3fadf16bacd2f863757bcf5e0",
-  "translation_date": "2025-05-17T13:57:28+00:00",
+  "original_hash": "7919ce2e537f0c435c7c23fa6775b613",
+  "translation_date": "2025-06-11T18:21:07+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "id"
 }
 -->
 # Implementasi Praktis
 
-Implementasi praktis adalah tempat kekuatan Model Context Protocol (MCP) menjadi nyata. Meskipun memahami teori dan arsitektur di balik MCP itu penting, nilai sebenarnya muncul ketika Anda menerapkan konsep-konsep ini untuk membangun, menguji, dan menerapkan solusi yang menyelesaikan masalah dunia nyata. Bab ini menjembatani kesenjangan antara pengetahuan konseptual dan pengembangan langsung, membimbing Anda melalui proses menghidupkan aplikasi berbasis MCP.
+Implementasi praktis adalah tempat kekuatan Model Context Protocol (MCP) menjadi nyata. Meskipun memahami teori dan arsitektur di balik MCP penting, nilai sebenarnya muncul saat Anda menerapkan konsep-konsep ini untuk membangun, menguji, dan menerapkan solusi yang menyelesaikan masalah dunia nyata. Bab ini menjembatani kesenjangan antara pengetahuan konseptual dan pengembangan langsung, membimbing Anda melalui proses menghidupkan aplikasi berbasis MCP.
 
-Apakah Anda mengembangkan asisten cerdas, mengintegrasikan AI ke dalam alur kerja bisnis, atau membangun alat khusus untuk pemrosesan data, MCP menyediakan fondasi yang fleksibel. Desainnya yang tidak tergantung bahasa dan SDK resmi untuk bahasa pemrograman populer membuatnya dapat diakses oleh berbagai pengembang. Dengan memanfaatkan SDK ini, Anda dapat dengan cepat membuat prototipe, iterasi, dan skalabilitas solusi Anda di berbagai platform dan lingkungan.
+Apakah Anda mengembangkan asisten cerdas, mengintegrasikan AI ke dalam alur kerja bisnis, atau membangun alat khusus untuk pemrosesan data, MCP menyediakan fondasi yang fleksibel. Desainnya yang tidak bergantung pada bahasa dan SDK resmi untuk bahasa pemrograman populer membuatnya dapat diakses oleh berbagai pengembang. Dengan memanfaatkan SDK ini, Anda dapat dengan cepat membuat prototipe, iterasi, dan mengembangkan solusi Anda di berbagai platform dan lingkungan.
 
-Di bagian berikut, Anda akan menemukan contoh praktis, kode sampel, dan strategi penerapan yang menunjukkan cara mengimplementasikan MCP dalam C#, Java, TypeScript, JavaScript, dan Python. Anda juga akan belajar cara debug dan menguji server MCP Anda, mengelola API, dan menerapkan solusi ke cloud menggunakan Azure. Sumber daya praktis ini dirancang untuk mempercepat pembelajaran Anda dan membantu Anda membangun aplikasi MCP yang kuat dan siap produksi dengan percaya diri.
+Di bagian berikut, Anda akan menemukan contoh praktis, kode sampel, dan strategi penerapan yang menunjukkan cara mengimplementasikan MCP dalam C#, Java, TypeScript, JavaScript, dan Python. Anda juga akan belajar cara debug dan menguji server MCP Anda, mengelola API, dan menerapkan solusi ke cloud menggunakan Azure. Sumber daya langsung ini dirancang untuk mempercepat pembelajaran Anda dan membantu Anda membangun aplikasi MCP yang kuat dan siap produksi dengan percaya diri.
 
-## Gambaran Umum
+## Ikhtisar
 
-Pelajaran ini berfokus pada aspek praktis implementasi MCP di berbagai bahasa pemrograman. Kami akan mengeksplorasi cara menggunakan SDK MCP dalam C#, Java, TypeScript, JavaScript, dan Python untuk membangun aplikasi yang kuat, debug dan menguji server MCP, dan membuat sumber daya yang dapat digunakan kembali, prompt, dan alat.
+Pelajaran ini berfokus pada aspek praktis implementasi MCP di berbagai bahasa pemrograman. Kita akan mengeksplorasi cara menggunakan SDK MCP di C#, Java, TypeScript, JavaScript, dan Python untuk membangun aplikasi yang tangguh, debug dan uji server MCP, serta membuat sumber daya, prompt, dan alat yang dapat digunakan ulang.
 
 ## Tujuan Pembelajaran
 
 Pada akhir pelajaran ini, Anda akan dapat:
-- Mengimplementasikan solusi MCP menggunakan SDK resmi dalam berbagai bahasa pemrograman
-- Debug dan menguji server MCP secara sistematis
-- Membuat dan menggunakan fitur server (Sumber Daya, Prompt, dan Alat)
-- Merancang alur kerja MCP yang efektif untuk tugas yang kompleks
-- Mengoptimalkan implementasi MCP untuk kinerja dan keandalan
+- Mengimplementasikan solusi MCP menggunakan SDK resmi di berbagai bahasa pemrograman
+- Debug dan uji server MCP secara sistematis
+- Membuat dan menggunakan fitur server (Resources, Prompts, dan Tools)
+- Merancang alur kerja MCP yang efektif untuk tugas kompleks
+- Mengoptimalkan implementasi MCP untuk performa dan keandalan
 
 ## Sumber Daya SDK Resmi
 
-Model Context Protocol menawarkan SDK resmi untuk beberapa bahasa:
+Model Context Protocol menawarkan SDK resmi untuk berbagai bahasa:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) 
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
 
 ## Bekerja dengan SDK MCP
 
-Bagian ini menyediakan contoh praktis implementasi MCP di berbagai bahasa pemrograman. Anda dapat menemukan kode sampel di direktori `samples` yang diorganisir berdasarkan bahasa.
+Bagian ini menyediakan contoh praktis implementasi MCP di berbagai bahasa pemrograman. Anda dapat menemukan kode sampel di direktori `samples` yang diorganisasi berdasarkan bahasa.
 
-### Sampel Tersedia
+### Sampel yang Tersedia
 
 Repositori ini mencakup implementasi sampel dalam bahasa berikut:
 
@@ -52,111 +52,111 @@ Repositori ini mencakup implementasi sampel dalam bahasa berikut:
 - JavaScript
 - Python
 
-Setiap sampel menunjukkan konsep utama MCP dan pola implementasi untuk bahasa dan ekosistem tertentu.
+Setiap sampel menunjukkan konsep utama MCP dan pola implementasi untuk bahasa dan ekosistem tersebut.
 
-## Fitur Server Inti
+## Fitur Inti Server
 
 Server MCP dapat mengimplementasikan kombinasi fitur berikut:
 
-### Sumber Daya
-Sumber daya menyediakan konteks dan data untuk digunakan oleh pengguna atau model AI:
+### Resources
+Resources menyediakan konteks dan data untuk digunakan oleh pengguna atau model AI:
 - Repositori dokumen
 - Basis pengetahuan
 - Sumber data terstruktur
-- Sistem file
+- Sistem berkas
 
-### Prompt
-Prompt adalah pesan dan alur kerja yang sudah di template untuk pengguna:
-- Template percakapan yang telah ditentukan sebelumnya
-- Pola interaksi yang dipandu
+### Prompts
+Prompts adalah pesan dan alur kerja yang sudah dipola untuk pengguna:
+- Template percakapan yang telah ditentukan
+- Pola interaksi terpandu
 - Struktur dialog khusus
 
-### Alat
-Alat adalah fungsi untuk dieksekusi oleh model AI:
+### Tools
+Tools adalah fungsi yang dapat dijalankan oleh model AI:
 - Utilitas pemrosesan data
 - Integrasi API eksternal
-- Kemampuan komputasi
+- Kapabilitas komputasi
 - Fungsi pencarian
 
-## Implementasi Sampel: C#
+## Contoh Implementasi: C#
 
-Repositori SDK C# resmi berisi beberapa implementasi sampel yang menunjukkan berbagai aspek MCP:
+Repositori SDK C# resmi berisi beberapa contoh implementasi yang menunjukkan berbagai aspek MCP:
 
-- **Klien MCP Dasar**: Contoh sederhana yang menunjukkan cara membuat klien MCP dan memanggil alat
-- **Server MCP Dasar**: Implementasi server minimal dengan pendaftaran alat dasar
-- **Server MCP Lanjutan**: Server lengkap dengan pendaftaran alat, autentikasi, dan penanganan kesalahan
-- **Integrasi ASP.NET**: Contoh yang menunjukkan integrasi dengan ASP.NET Core
-- **Pola Implementasi Alat**: Berbagai pola untuk mengimplementasikan alat dengan tingkat kompleksitas yang berbeda
+- **Basic MCP Client**: Contoh sederhana cara membuat klien MCP dan memanggil tools
+- **Basic MCP Server**: Implementasi server minimal dengan pendaftaran tool dasar
+- **Advanced MCP Server**: Server lengkap dengan pendaftaran tool, autentikasi, dan penanganan kesalahan
+- **Integrasi ASP.NET**: Contoh integrasi dengan ASP.NET Core
+- **Pola Implementasi Tools**: Berbagai pola untuk mengimplementasikan tools dengan tingkat kompleksitas berbeda
 
-SDK MCP C# sedang dalam pratinjau dan API dapat berubah. Kami akan terus memperbarui blog ini seiring perkembangan SDK.
+SDK MCP C# masih dalam pratinjau dan API mungkin berubah. Kami akan terus memperbarui blog ini seiring perkembangan SDK.
 
 ### Fitur Utama 
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
 
-- Membangun [Server MCP pertama Anda](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
+- Membangun [MCP Server pertama Anda](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
 
-Untuk sampel implementasi C# lengkap, kunjungi [repositori sampel SDK C# resmi](https://github.com/modelcontextprotocol/csharp-sdk)
+Untuk contoh implementasi C# lengkap, kunjungi [repositori sampel SDK C# resmi](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## Implementasi Sampel: Implementasi Java
+## Contoh Implementasi: Java
 
-SDK Java menawarkan opsi implementasi MCP yang kuat dengan fitur kelas perusahaan.
+SDK Java menawarkan opsi implementasi MCP yang kuat dengan fitur kelas enterprise.
 
 ### Fitur Utama
 
-- Integrasi Kerangka Kerja Spring
+- Integrasi Spring Framework
 - Keamanan tipe yang kuat
 - Dukungan pemrograman reaktif
 - Penanganan kesalahan yang komprehensif
 
-Untuk sampel implementasi Java lengkap, lihat [MCPSample.java](../../../04-PracticalImplementation/samples/java/MCPSample.java) di direktori sampel.
+Untuk contoh implementasi Java lengkap, lihat [MCPSample.java](../../../04-PracticalImplementation/samples/java/MCPSample.java) di direktori sampel.
 
-## Implementasi Sampel: Implementasi JavaScript
+## Contoh Implementasi: JavaScript
 
-SDK JavaScript menyediakan pendekatan yang ringan dan fleksibel untuk implementasi MCP.
+SDK JavaScript menyediakan pendekatan ringan dan fleksibel untuk implementasi MCP.
 
 ### Fitur Utama
 
 - Dukungan Node.js dan browser
-- API berbasis janji
-- Integrasi mudah dengan Express dan kerangka kerja lainnya
+- API berbasis Promise
+- Integrasi mudah dengan Express dan framework lain
 - Dukungan WebSocket untuk streaming
 
-Untuk sampel implementasi JavaScript lengkap, lihat [mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js) di direktori sampel.
+Untuk contoh implementasi JavaScript lengkap, lihat [mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js) di direktori sampel.
 
-## Implementasi Sampel: Implementasi Python
+## Contoh Implementasi: Python
 
-SDK Python menawarkan pendekatan Pythonic untuk implementasi MCP dengan integrasi kerangka kerja ML yang sangat baik.
+SDK Python menawarkan pendekatan Pythonik untuk implementasi MCP dengan integrasi framework ML yang sangat baik.
 
 ### Fitur Utama
 
 - Dukungan async/await dengan asyncio
 - Integrasi Flask dan FastAPI
-- Pendaftaran alat yang sederhana
-- Integrasi native dengan pustaka ML populer
+- Pendaftaran tool yang sederhana
+- Integrasi native dengan perpustakaan ML populer
 
-Untuk sampel implementasi Python lengkap, lihat [mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py) di direktori sampel.
+Untuk contoh implementasi Python lengkap, lihat [mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py) di direktori sampel.
 
 ## Manajemen API
 
-Azure API Management adalah jawaban yang bagus untuk bagaimana kita dapat mengamankan server MCP. Ide utamanya adalah menempatkan instance Azure API Management di depan server MCP Anda dan membiarkannya menangani fitur-fitur yang kemungkinan Anda inginkan seperti:
+Azure API Management adalah solusi yang bagus untuk mengamankan server MCP. Ide dasarnya adalah menempatkan instance Azure API Management di depan server MCP Anda dan membiarkannya menangani fitur-fitur yang kemungkinan Anda butuhkan seperti:
 
-- pembatasan tingkat
+- pembatasan kecepatan
 - manajemen token
 - pemantauan
 - penyeimbangan beban
 - keamanan
 
-### Sampel Azure
+### Contoh Azure
 
-Berikut adalah sampel Azure yang melakukan hal tersebut, yaitu [membuat server MCP dan mengamankannya dengan Azure API Management](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
+Berikut adalah contoh Azure yang melakukan hal tersebut, yaitu [membuat MCP Server dan mengamankannya dengan Azure API Management](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
 
-Lihat bagaimana alur otorisasi terjadi pada gambar di bawah ini:
+Lihat bagaimana alur otorisasi terjadi pada gambar di bawah:
 
-![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true)
+![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true) 
 
-Dalam gambar di atas, yang terjadi adalah:
+Pada gambar di atas, hal-hal berikut terjadi:
 
-- Autentikasi/Otorisasi terjadi menggunakan Microsoft Entra.
+- Autentikasi/Otorisasi dilakukan menggunakan Microsoft Entra.
 - Azure API Management bertindak sebagai gateway dan menggunakan kebijakan untuk mengarahkan dan mengelola lalu lintas.
 - Azure Monitor mencatat semua permintaan untuk analisis lebih lanjut.
 
@@ -164,15 +164,15 @@ Dalam gambar di atas, yang terjadi adalah:
 
 Mari kita lihat alur otorisasi lebih detail:
 
-![Diagram Urutan](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
+![Sequence Diagram](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
 
 #### Spesifikasi otorisasi MCP
 
 Pelajari lebih lanjut tentang [spesifikasi Otorisasi MCP](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
 
-## Menerapkan Server MCP Jarak Jauh ke Azure
+## Deploy Remote MCP Server ke Azure
 
-Mari kita lihat apakah kita bisa menerapkan sampel yang kita sebutkan sebelumnya:
+Mari kita lihat apakah kita bisa menerapkan contoh yang disebutkan sebelumnya:
 
 1. Clone repo
 
@@ -183,9 +183,9 @@ Mari kita lihat apakah kita bisa menerapkan sampel yang kita sebutkan sebelumnya
 
 1. Daftarkan `Microsoft.App` resource provider.
     * If you are using Azure CLI, run `az provider register --namespace Microsoft.App --wait`.
-    * If you are using Azure PowerShell, run `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` setelah beberapa waktu untuk memeriksa apakah pendaftaran selesai.
+    * If you are using Azure PowerShell, run `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` setelah beberapa saat untuk memeriksa apakah pendaftaran sudah selesai.
 
-2. Jalankan perintah [azd](https://aka.ms/azd) ini untuk menyediakan layanan manajemen api, aplikasi fungsi (dengan kode) dan semua sumber daya Azure yang diperlukan lainnya
+2. Jalankan perintah [azd](https://aka.ms/azd) ini untuk menyediakan layanan manajemen API, function app (dengan kode) dan semua sumber daya Azure lain yang diperlukan
 
     ```shell
     azd up
@@ -201,71 +201,72 @@ Mari kita lihat apakah kita bisa menerapkan sampel yang kita sebutkan sebelumnya
     npx @modelcontextprotocol/inspector
     ```
 
-    Anda akan melihat antarmuka yang mirip dengan:
+    Anda akan melihat antarmuka seperti:
 
-    ![Connect to Node inspector](../../../translated_images/connect.126df3a6deef0d2e0850b1a5cf0547c8fc4e2e9e0b354238d0a9dbe7893726fa.id.png)
+    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.id.png) 
 
 1. Klik CTRL untuk memuat aplikasi web MCP Inspector dari URL yang ditampilkan oleh aplikasi (misalnya http://127.0.0.1:6274/#resources)
-1. Atur jenis transport ke `SSE`
+1. Atur tipe transport ke `SSE`
 1. Set the URL to your running API Management SSE endpoint displayed after `azd up` dan **Connect**:
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-5. **Daftar Alat**. Klik pada alat dan **Jalankan Alat**.
+5. **Daftar Tools**. Klik pada sebuah tool dan **Run Tool**.  
 
-Jika semua langkah berhasil, Anda sekarang harus terhubung ke server MCP dan Anda telah berhasil memanggil alat.
+Jika semua langkah berhasil, sekarang Anda terhubung ke server MCP dan berhasil memanggil sebuah tool.
 
 ## Server MCP untuk Azure
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Set repositori ini adalah template mulai cepat untuk membangun dan menerapkan server MCP (Model Context Protocol) jarak jauh menggunakan Azure Functions dengan Python, C# .NET atau Node/TypeScript.
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Set repositori ini adalah template cepat untuk membangun dan menerapkan server remote MCP (Model Context Protocol) kustom menggunakan Azure Functions dengan Python, C# .NET, atau Node/TypeScript.
 
 Sampel ini menyediakan solusi lengkap yang memungkinkan pengembang untuk:
 
-- Membangun dan menjalankan secara lokal: Mengembangkan dan debug server MCP di mesin lokal
-- Menerapkan ke Azure: Mudah menerapkan ke cloud dengan perintah azd up sederhana
-- Terhubung dari klien: Terhubung ke server MCP dari berbagai klien termasuk mode agen Copilot VS Code dan alat MCP Inspector
+- Membangun dan menjalankan secara lokal: Kembangkan dan debug server MCP di mesin lokal
+- Deploy ke Azure: Mudah menerapkan ke cloud dengan perintah azd up sederhana
+- Terhubung dari klien: Terhubung ke server MCP dari berbagai klien termasuk mode agen Copilot di VS Code dan alat MCP Inspector
 
 ### Fitur Utama:
 
-- Keamanan menurut desain: Server MCP diamankan menggunakan kunci dan HTTPS
-- Opsi autentikasi: Mendukung OAuth menggunakan autentikasi bawaan dan/atau Manajemen API
-- Isolasi jaringan: Memungkinkan isolasi jaringan menggunakan Jaringan Virtual Azure (VNET)
-- Arsitektur tanpa server: Memanfaatkan Azure Functions untuk eksekusi yang skalabel dan berbasis acara
-- Pengembangan lokal: Dukungan pengembangan dan debugging lokal yang komprehensif
-- Penerapan sederhana: Proses penerapan yang efisien ke Azure
+- Keamanan sejak desain: Server MCP diamankan menggunakan kunci dan HTTPS
+- Opsi autentikasi: Mendukung OAuth dengan autentikasi bawaan dan/atau API Management
+- Isolasi jaringan: Memungkinkan isolasi jaringan menggunakan Azure Virtual Networks (VNET)
+- Arsitektur tanpa server: Memanfaatkan Azure Functions untuk eksekusi yang skalabel dan berbasis event
+- Pengembangan lokal: Dukungan pengembangan lokal dan debugging yang lengkap
+- Deployment sederhana: Proses deployment yang ramping ke Azure
 
-Repositori ini mencakup semua file konfigurasi yang diperlukan, kode sumber, dan definisi infrastruktur untuk memulai implementasi server MCP yang siap produksi dengan cepat.
+Repositori ini mencakup semua file konfigurasi, kode sumber, dan definisi infrastruktur yang diperlukan untuk memulai dengan cepat implementasi server MCP yang siap produksi.
 
-- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Implementasi sampel MCP menggunakan Azure Functions dengan Python
+- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Contoh implementasi MCP menggunakan Azure Functions dengan Python
 
-- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Implementasi sampel MCP menggunakan Azure Functions dengan C# .NET
+- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Contoh implementasi MCP menggunakan Azure Functions dengan C# .NET
 
-- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Implementasi sampel MCP menggunakan Azure Functions dengan Node/TypeScript.
+- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Contoh implementasi MCP menggunakan Azure Functions dengan Node/TypeScript.
 
 ## Poin Penting
 
-- SDK MCP menyediakan alat khusus bahasa untuk mengimplementasikan solusi MCP yang kuat
+- SDK MCP menyediakan alat spesifik bahasa untuk mengimplementasikan solusi MCP yang tangguh
 - Proses debugging dan pengujian sangat penting untuk aplikasi MCP yang andal
-- Template prompt yang dapat digunakan kembali memungkinkan interaksi AI yang konsisten
-- Alur kerja yang dirancang dengan baik dapat mengatur tugas yang kompleks menggunakan beberapa alat
-- Mengimplementasikan solusi MCP memerlukan pertimbangan keamanan, kinerja, dan penanganan kesalahan
+- Template prompt yang dapat digunakan ulang memungkinkan interaksi AI yang konsisten
+- Alur kerja yang dirancang dengan baik dapat mengatur tugas kompleks menggunakan berbagai tools
+- Mengimplementasikan solusi MCP memerlukan pertimbangan keamanan, performa, dan penanganan kesalahan
 
 ## Latihan
 
-Rancang alur kerja MCP praktis yang mengatasi masalah dunia nyata di domain Anda:
+Rancang alur kerja MCP praktis yang menangani masalah dunia nyata di bidang Anda:
 
-1. Identifikasi 3-4 alat yang akan berguna untuk menyelesaikan masalah ini
-2. Buat diagram alur kerja yang menunjukkan bagaimana alat-alat ini berinteraksi
-3. Implementasikan versi dasar dari salah satu alat menggunakan bahasa pilihan Anda
-4. Buat template prompt yang akan membantu model menggunakan alat Anda secara efektif
+1. Identifikasi 3-4 tools yang akan berguna untuk menyelesaikan masalah ini
+2. Buat diagram alur kerja yang menunjukkan bagaimana tools ini berinteraksi
+3. Implementasikan versi dasar dari salah satu tools menggunakan bahasa pilihan Anda
+4. Buat template prompt yang membantu model menggunakan tool Anda secara efektif
 
 ## Sumber Daya Tambahan
 
+
 ---
 
-Berikutnya: [Topik Lanjutan](../05-AdvancedTopics/README.md)
+Selanjutnya: [Topik Lanjutan](../05-AdvancedTopics/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi penting, disarankan untuk menggunakan terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi yang penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.

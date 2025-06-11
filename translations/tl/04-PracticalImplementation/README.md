@@ -1,50 +1,51 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0e1385a3fadf16bacd2f863757bcf5e0",
-  "translation_date": "2025-05-17T13:58:31+00:00",
+  "original_hash": "7919ce2e537f0c435c7c23fa6775b613",
+  "translation_date": "2025-06-11T18:22:09+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "tl"
 }
 -->
-# Praktikal na Pagpapatupad
+# Praktikal nga Pagpatuman
 
-Ang praktikal na pagpapatupad ay kung saan nagiging makabuluhan ang kapangyarihan ng Model Context Protocol (MCP). Bagamat mahalaga ang pag-unawa sa teorya at arkitektura sa likod ng MCP, ang tunay na halaga ay lumilitaw kapag inilalapat mo ang mga konseptong ito upang bumuo, subukan, at i-deploy ang mga solusyong nagtatanggal ng mga totoong problema sa mundo. Ang kabanatang ito ay nag-uugnay sa pagitan ng konseptwal na kaalaman at aktwal na pag-unlad, na ginagabayan ka sa proseso ng pagbuo ng mga aplikasyon na batay sa MCP.
+Ang praktikal nga pagpatuman mao ang lugar diin ang gahum sa Model Context Protocol (MCP) mahimong makita ug masabtan. Samtang importante ang pagsabot sa teyorya ug arkitektura sa MCP, ang tinuod nga bili makita kung imo kining gamiton aron magtukod, mag-test, ug mag-deploy og mga solusyon nga makatubag sa tinuod nga mga problema sa kalibutan. Kini nga kapitulo nagtabang sa pagtabok sa kalainan tali sa konseptwal nga kahibalo ug praktikal nga pag-develop, nga naggiya kanimo sa proseso sa pagdala sa MCP-based nga mga aplikasyon sa kinabuhi.
 
-Kung ikaw ay nagde-develop ng mga intelligent assistants, nagsasama ng AI sa mga workflows ng negosyo, o bumubuo ng mga custom na tools para sa pagproseso ng datos, ang MCP ay nagbibigay ng isang flexible na pundasyon. Ang disenyo nito na hindi nakatali sa anumang wika at mga opisyal na SDKs para sa mga sikat na programming languages ay ginagawa itong accessible sa maraming uri ng developers. Sa pamamagitan ng paggamit ng mga SDKs na ito, maaari mong mabilis na mag-prototype, mag-iterate, at mag-scale ng iyong mga solusyon sa iba't ibang platform at kapaligiran.
+Bisan pa man kung nag-develop ka og intelihenteng mga assistant, nag-integrate og AI sa mga negosyo nga workflow, o nagtukod og custom nga mga himan para sa pagproseso sa datos, ang MCP naghatag og flexible nga pundasyon. Ang iyang language-agnostic nga disenyo ug opisyal nga SDKs para sa mga popular nga programming languages naghimo niini nga accessible sa daghang mga developer. Pinaagi sa paggamit niini nga mga SDK, dali ka makabuhat og prototype, mag-iterate, ug mag-scale sa imong mga solusyon sa lain-laing mga platform ug palibot.
 
-Sa mga sumusunod na seksyon, makikita mo ang mga praktikal na halimbawa, sample code, at mga estratehiya sa deployment na nagpapakita kung paano ipatupad ang MCP sa C#, Java, TypeScript, JavaScript, at Python. Matutunan mo rin kung paano mag-debug at mag-test ng iyong MCP servers, pamahalaan ang APIs, at i-deploy ang mga solusyon sa cloud gamit ang Azure. Ang mga hands-on na resources na ito ay dinisenyo upang pabilisin ang iyong pag-aaral at tulungan kang magtiwala sa pagbuo ng matibay, production-ready na mga MCP applications.
+Sa mosunod nga mga seksyon, makit-an nimo ang mga praktikal nga pananglitan, sample code, ug mga estratehiya sa pag-deploy nga nagpakita kung giunsa pag-implementar ang MCP sa C#, Java, TypeScript, JavaScript, ug Python. Makakat-on usab ka kung giunsa pag-debug ug pag-test ang imong MCP servers, pagdumala sa mga API, ug pag-deploy sa mga solusyon sa cloud gamit ang Azure. Kini nga mga hands-on nga kahimanan gidisenyo aron mapadali ang imong pagkat-on ug matabangan ka nga kumpiyansang magtukod og lig-on, production-ready nga MCP applications.
 
-## Pangkalahatang-ideya
+## Overview
 
-Ang araling ito ay nakatuon sa mga praktikal na aspeto ng pagpapatupad ng MCP sa iba't ibang programming languages. Susuriin natin kung paano gamitin ang MCP SDKs sa C#, Java, TypeScript, JavaScript, at Python upang bumuo ng matibay na mga aplikasyon, mag-debug at mag-test ng MCP servers, at lumikha ng mga reusable resources, prompts, at tools.
+Kini nga leksyon nagpunting sa praktikal nga aspeto sa pagpatuman sa MCP sa daghang programming languages. Atong susihon kung giunsa paggamit ang MCP SDKs sa C#, Java, TypeScript, JavaScript, ug Python aron magtukod og lig-on nga mga aplikasyon, mag-debug ug mag-test sa MCP servers, ug maghimo og reusable nga mga resources, prompts, ug tools.
 
-## Mga Layunin sa Pag-aaral
+## Learning Objectives
 
-Sa pagtatapos ng araling ito, ikaw ay makakaya:
-- Ipatupad ang mga solusyong MCP gamit ang mga opisyal na SDKs sa iba't ibang programming languages
-- Mag-debug at mag-test ng MCP servers nang sistematiko
-- Lumikha at gumamit ng mga tampok ng server (Mga Resources, Prompts, at Tools)
-- Magdisenyo ng mga epektibong workflows ng MCP para sa mga kumplikadong gawain
-- I-optimize ang mga pagpapatupad ng MCP para sa performance at pagiging maaasahan
+Pagkahuman sa leksyon, mahimo nimong:
 
-## Mga Opisyal na SDK Resources
+- Ipatuman ang MCP solutions gamit ang opisyal nga SDKs sa lain-laing programming languages
+- Sistematikong mag-debug ug mag-test sa MCP servers
+- Maghimo ug mogamit sa mga server features (Resources, Prompts, ug Tools)
+- Magdisenyo og epektibong MCP workflows para sa komplikadong mga buluhaton
+- I-optimize ang MCP implementations para sa performance ug kasaligan
 
-Ang Model Context Protocol ay nag-aalok ng mga opisyal na SDKs para sa maraming wika:
+## Official SDK Resources
+
+Ang Model Context Protocol nagtanyag og opisyal nga SDKs para sa daghang mga lengguwahe:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) 
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
 
-## Paggawa gamit ang MCP SDKs
+## Pagtrabaho gamit ang MCP SDKs
 
-Ang seksyong ito ay nagbibigay ng mga praktikal na halimbawa ng pagpapatupad ng MCP sa iba't ibang programming languages. Maaari mong makita ang sample code sa `samples` directory na nakaayos ayon sa wika.
+Kini nga seksyon naghatag og praktikal nga mga pananglitan sa pagpatuman sa MCP sa daghang programming languages. Makita nimo ang sample code sa `samples` nga direktoryo nga gipang-organisar base sa lengguwahe.
 
-### Available na Mga Halimbawa
+### Available Samples
 
-Ang repository ay naglalaman ng mga sample na pagpapatupad sa mga sumusunod na wika:
+Ang repository naglakip og mga sample implementations sa mosunod nga mga lengguwahe:
 
 - C#
 - Java
@@ -52,127 +53,127 @@ Ang repository ay naglalaman ng mga sample na pagpapatupad sa mga sumusunod na w
 - JavaScript
 - Python
 
-Bawat sample ay nagpapakita ng mga pangunahing konsepto ng MCP at mga pattern ng pagpapatupad para sa partikular na wika at ekosistema.
+Ang matag sample nagpakita sa yawe nga mga konsepto sa MCP ug mga pattern sa pagpatuman alang sa partikular nga lengguwahe ug ecosystem.
 
-## Mga Pangunahing Tampok ng Server
+## Core Server Features
 
-Ang MCP servers ay maaaring magpatupad ng anumang kombinasyon ng mga tampok na ito:
+Ang MCP servers makaimplementar sa bisan unsang kombinasyon sa mosunod nga mga features:
 
 ### Resources
-Ang mga Resources ay nagbibigay ng konteksto at datos para sa user o AI model na gamitin:
-- Mga repository ng dokumento
+Ang Resources naghatag og konteksto ug datos para gamiton sa user o AI model:
+- Mga dokumento nga repositoryo
 - Mga knowledge base
 - Mga structured data sources
-- Mga file systems
+- File systems
 
 ### Prompts
-Ang mga Prompts ay mga templated na mensahe at workflows para sa mga gumagamit:
-- Mga pre-defined na template ng pag-uusap
-- Mga guided na pattern ng interaksyon
-- Mga specialized na istruktura ng diyalogo
+Ang Prompts mga templated nga mga mensahe ug workflows para sa mga user:
+- Pre-defined nga mga template sa pakig-istorya
+- Giya nga mga pattern sa interaksyon
+- Espesyal nga mga estruktura sa diyalogo
 
 ### Tools
-Ang mga Tools ay mga function para sa AI model na isagawa:
-- Mga utility para sa pagproseso ng datos
-- Mga integration ng external APIs
-- Mga kakayahan sa computation
-- Mga functionality ng search
+Ang Tools mga function nga ipahigayon sa AI model:
+- Mga gamit para sa pagproseso sa datos
+- Integrasyon sa external nga API
+- Mga computational nga kakayahan
+- Search functionality
 
-## Sample na Mga Pagpapatupad: C#
+## Sample Implementations: C#
 
-Ang opisyal na C# SDK repository ay naglalaman ng ilang sample na pagpapatupad na nagpapakita ng iba't ibang aspeto ng MCP:
+Ang opisyal nga C# SDK repository naglakip og daghang sample implementations nga nagpakita sa lain-laing aspeto sa MCP:
 
-- **Basic MCP Client**: Simpleng halimbawa kung paano lumikha ng MCP client at tawagan ang mga tools
-- **Basic MCP Server**: Minimal na pagpapatupad ng server na may pangunahing tool registration
-- **Advanced MCP Server**: Kumpletong server na may tool registration, authentication, at error handling
-- **ASP.NET Integration**: Mga halimbawa na nagpapakita ng integration sa ASP.NET Core
-- **Tool Implementation Patterns**: Iba't ibang pattern para sa pagpapatupad ng tools na may iba't ibang antas ng kumplikado
+- **Basic MCP Client**: Simpleng pananglitan kung giunsa paghimo og MCP client ug pagtawag sa mga tools
+- **Basic MCP Server**: Minimal nga server implementation nga adunay basic nga pagrehistro sa tools
+- **Advanced MCP Server**: Full-featured nga server nga adunay tool registration, authentication, ug error handling
+- **ASP.NET Integration**: Mga pananglitan nga nagpakita sa integrasyon sa ASP.NET Core
+- **Tool Implementation Patterns**: Nagkalain-laing mga pattern para sa pagpatuman sa mga tools nga adunay lain-laing level sa komplikasyon
 
-Ang MCP C# SDK ay nasa preview at maaaring magbago ang APIs. Patuloy naming ia-update ang blog na ito habang nag-e-evolve ang SDK.
+Ang MCP C# SDK anaa pa sa preview ug ang mga API mahimong mausab. Padayon namong i-update kini nga blog samtang mag-evolve ang SDK.
 
-### Mga Pangunahing Tampok
+### Key Features 
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
 
-- Pagbuo ng iyong [unang MCP Server](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
+- Pagtukod sa imong [unang MCP Server](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
 
-Para sa kumpletong mga sample ng pagpapatupad sa C#, bisitahin ang [opisyal na C# SDK samples repository](https://github.com/modelcontextprotocol/csharp-sdk)
+Para sa kompleto nga mga sample sa C# implementation, bisitaha ang [opisyal nga C# SDK samples repository](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## Sample na Pagpapatupad: Java Implementation
+## Sample implementation: Java Implementation
 
-Ang Java SDK ay nag-aalok ng matibay na mga pagpipilian sa pagpapatupad ng MCP na may mga tampok na pang-enterprise.
+Ang Java SDK nagtanyag og lig-on nga mga kapilian sa pagpatuman sa MCP uban sa enterprise-grade nga mga features.
 
-### Mga Pangunahing Tampok
+### Key Features
 
-- Integrasyon ng Spring Framework
-- Matibay na type safety
+- Integrasyon sa Spring Framework
+- Lig-on nga type safety
 - Suporta sa reactive programming
-- Komprehensibong error handling
+- Komprehensibo nga error handling
 
-Para sa kumpletong sample ng pagpapatupad sa Java, tingnan ang [MCPSample.java](../../../04-PracticalImplementation/samples/java/MCPSample.java) sa samples directory.
+Para sa kompleto nga Java implementation sample, tan-awa ang [MCPSample.java](../../../04-PracticalImplementation/samples/java/MCPSample.java) sa samples nga direktoryo.
 
-## Sample na Pagpapatupad: JavaScript Implementation
+## Sample implementation: JavaScript Implementation
 
-Ang JavaScript SDK ay nagbibigay ng magaan at flexible na paraan sa pagpapatupad ng MCP.
+Ang JavaScript SDK nagtanyag og gaan ug flexible nga pamaagi sa pagpatuman sa MCP.
 
-### Mga Pangunahing Tampok
+### Key Features
 
-- Suporta sa Node.js at browser
-- Promise-based na API
-- Madaling integrasyon sa Express at iba pang frameworks
+- Suporta sa Node.js ug browser
+- Promise-based nga API
+- Sayon nga integrasyon sa Express ug uban pang mga framework
 - Suporta sa WebSocket para sa streaming
 
-Para sa kumpletong sample ng pagpapatupad sa JavaScript, tingnan ang [mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js) sa samples directory.
+Para sa kompleto nga JavaScript implementation sample, tan-awa ang [mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js) sa samples nga direktoryo.
 
-## Sample na Pagpapatupad: Python Implementation
+## Sample implementation: Python Implementation
 
-Ang Python SDK ay nag-aalok ng Pythonic na paraan sa pagpapatupad ng MCP na may mahusay na integrasyon sa mga ML framework.
+Ang Python SDK nagtanyag og Pythonic nga pamaagi sa pagpatuman sa MCP uban sa maayo nga integrasyon sa ML frameworks.
 
-### Mga Pangunahing Tampok
+### Key Features
 
-- Suporta sa Async/await gamit ang asyncio
-- Integrasyon ng Flask at FastAPI
-- Simpleng tool registration
-- Native na integrasyon sa mga sikat na ML libraries
+- Async/await nga suporta gamit ang asyncio
+- Integrasyon sa Flask ug FastAPI
+- Simple nga pagrehistro sa tools
+- Native nga integrasyon sa mga popular nga ML libraries
 
-Para sa kumpletong sample ng pagpapatupad sa Python, tingnan ang [mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py) sa samples directory.
+Para sa kompleto nga Python implementation sample, tan-awa ang [mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py) sa samples nga direktoryo.
 
-## Pamamahala ng API
+## API management 
 
-Ang Azure API Management ay isang mahusay na sagot sa kung paano natin mapapangalagaan ang MCP Servers. Ang ideya ay ilagay ang isang Azure API Management instance sa harap ng iyong MCP Server at hayaan itong pamahalaan ang mga tampok na malamang na gusto mo tulad ng:
+Ang Azure API Management usa ka maayo nga solusyon kung giunsa nato maprotektahan ang MCP Servers. Ang ideya mao ang pagbutang og Azure API Management instance sa atubangan sa imong MCP Server ug pasagdan kini sa pagdumala sa mga feature nga kasagaran nimo gusto sama sa:
 
 - rate limiting
-- pamamahala ng token
+- token management
 - monitoring
 - load balancing
-- seguridad
+- security
 
 ### Azure Sample
 
-Narito ang isang Azure Sample na gumagawa ng eksaktong iyon, ibig sabihin [paglikha ng isang MCP Server at pag-secure nito gamit ang Azure API Management](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
+Aniya ang usa ka Azure Sample nga nagbuhat niini, i.e [paghimo og MCP Server ug pagprotekta niini gamit ang Azure API Management](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
 
-Tingnan kung paano nangyayari ang authorization flow sa imahe sa ibaba:
+Tan-awa kung giunsa ang authorization flow sa mosunod nga hulagway:
 
-![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true)
+![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true) 
 
-Sa naunang imahe, ang mga sumusunod ay nagaganap:
+Sa hulagway sa ibabaw, ang mga mosunod nahitabo:
 
-- Ang Authentication/Authorization ay nangyayari gamit ang Microsoft Entra.
-- Ang Azure API Management ay kumikilos bilang isang gateway at gumagamit ng mga polisiya upang idirekta at pamahalaan ang trapiko.
-- Ang Azure Monitor ay naglo-log ng lahat ng kahilingan para sa karagdagang pagsusuri.
+- Ang Authentication/Authorization gihimo gamit ang Microsoft Entra.
+- Ang Azure API Management naglihok isip gateway ug naggamit og mga polisiya aron idirekta ug dumala ang trapiko.
+- Ang Azure Monitor nag-log sa tanan nga mga request alang sa dugang nga analisis.
 
 #### Authorization flow
 
-Tingnan natin nang mas detalyado ang authorization flow:
+Tan-awon nato og mas detalyado ang authorization flow:
 
 ![Sequence Diagram](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
 
 #### MCP authorization specification
 
-Alamin ang higit pa tungkol sa [MCP Authorization specification](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
+Kat-on pa og dugang bahin sa [MCP Authorization specification](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
 
-## I-deploy ang Remote MCP Server sa Azure
+## Pag-deploy sa Remote MCP Server sa Azure
 
-Tingnan natin kung maaari nating i-deploy ang sample na nabanggit natin kanina:
+Tan-awon nato kung mahimo ba nato i-deploy ang sample nga among gihisgutan sa taas:
 
 1. I-clone ang repo
 
@@ -181,91 +182,92 @@ Tingnan natin kung maaari nating i-deploy ang sample na nabanggit natin kanina:
     cd remote-mcp-apim-functions-python
     ```
 
-1. Irehistro ang `Microsoft.App` resource provider.
+2. I-register ang `Microsoft.App` resource provider.
     * If you are using Azure CLI, run `az provider register --namespace Microsoft.App --wait`.
-    * If you are using Azure PowerShell, run `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` pagkatapos ng ilang oras upang suriin kung kumpleto na ang registration.
+    * If you are using Azure PowerShell, run `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` ug hulata ang pipila ka panahon aron masuta kung nahuman na ang registration.
 
-2. Patakbuhin ang [azd](https://aka.ms/azd) command na ito upang i-provision ang api management service, function app (na may code) at lahat ng iba pang kinakailangang Azure resources
+3. Patakba kini nga [azd](https://aka.ms/azd) nga command aron i-provision ang api management service, function app (uban ang code) ug tanan nga kinahanglanon nga Azure resources
 
     ```shell
     azd up
     ```
 
-    Dapat i-deploy ng mga command na ito ang lahat ng cloud resources sa Azure
+    Kini nga mga command angay mag-deploy sa tanan nga cloud resources sa Azure
 
-### Pagsubok ng iyong server gamit ang MCP Inspector
+### Pagsulay sa imong server gamit ang MCP Inspector
 
-1. Sa isang **bagong terminal window**, i-install at patakbuhin ang MCP Inspector
+1. Sa usa ka **bag-ong terminal window**, i-install ug patakba ang MCP Inspector
 
     ```shell
     npx @modelcontextprotocol/inspector
     ```
 
-    Dapat mong makita ang isang interface na katulad ng:
+    Makita nimo ang interface nga susama niini:
 
-    ![Connect to Node inspector](../../../translated_images/connect.126df3a6deef0d2e0850b1a5cf0547c8fc4e2e9e0b354238d0a9dbe7893726fa.tl.png)
+    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.tl.png) 
 
-1. I-CTRL click upang i-load ang MCP Inspector web app mula sa URL na ipinapakita ng app (hal. http://127.0.0.1:6274/#resources)
-1. Itakda ang transport type sa `SSE`
-1. Set the URL to your running API Management SSE endpoint displayed after `azd up` at **Connect**:
+2. CTRL click aron i-load ang MCP Inspector web app gikan sa URL nga gipakita sa app (pananglitan http://127.0.0.1:6274/#resources)
+3. I-set ang transport type sa `SSE`
+1. Set the URL to your running API Management SSE endpoint displayed after `azd up` ug i-**Connect**:
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-5. **List Tools**. I-click ang isang tool at **Run Tool**.
+5. **List Tools**.  I-klik ang usa ka tool ug i-**Run Tool**.  
 
-Kung lahat ng hakbang ay gumana, dapat ngayon ay nakakonekta ka sa MCP server at nagawa mong tawagan ang isang tool.
+Kung ang tanan nga mga lakang nagmalampuson, karon nakonektar na ka sa MCP server ug nakatawag ka na og tool.
 
-## MCP servers para sa Azure
+## MCP servers para sa Azure 
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Ang set ng mga repositories na ito ay quickstart template para sa pagbuo at pag-deploy ng custom remote MCP (Model Context Protocol) servers gamit ang Azure Functions sa Python, C# .NET o Node/TypeScript.
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Kini nga hugpong sa mga repositoryo mao ang quickstart template para sa pagtukod ug pag-deploy sa custom remote MCP (Model Context Protocol) servers gamit ang Azure Functions sa Python, C# .NET o Node/TypeScript. 
 
-Ang Samples ay nagbibigay ng kumpletong solusyon na nagbibigay-daan sa mga developer na:
+Ang mga Sample naghatag og kompleto nga solusyon nga nagtugot sa mga developer nga:
 
-- Bumuo at patakbuhin nang lokal: Bumuo at mag-debug ng isang MCP server sa lokal na makina
-- I-deploy sa Azure: Madaling i-deploy sa cloud gamit ang isang simpleng azd up command
-- Kumonekta mula sa mga kliyente: Kumonekta sa MCP server mula sa iba't ibang kliyente kabilang ang VS Code's Copilot agent mode at ang MCP Inspector tool
+- Magtukod ug magpadagan lokal: Mag-develop ug mag-debug sa MCP server sa lokal nga makina
+- Mag-deploy sa Azure: Sayon nga pag-deploy sa cloud gamit ang usa ka yano nga azd up command
+- Maka-konektar gikan sa mga kliyente: Maka-konektar sa MCP server gikan sa lain-laing mga kliyente lakip na ang VS Code’s Copilot agent mode ug ang MCP Inspector tool
 
-### Mga Pangunahing Tampok:
+### Key Features:
 
-- Seguridad sa disenyo: Ang MCP server ay secured gamit ang mga keys at HTTPS
-- Mga pagpipilian sa authentication: Sinusuportahan ang OAuth gamit ang built-in auth at/o API Management
-- Network isolation: Pinapayagan ang network isolation gamit ang Azure Virtual Networks (VNET)
-- Serverless architecture: Ginagamit ang Azure Functions para sa scalable, event-driven execution
-- Lokal na pag-unlad: Komprehensibong suporta sa lokal na pag-unlad at pag-debug
-- Simpleng deployment: Streamlined na proseso ng deployment sa Azure
+- Seguridad nga naka-disenyo: Ang MCP server giprotektahan gamit ang mga yawe ug HTTPS
+- Mga opsyon sa authentication: Nagsuporta sa OAuth gamit ang built-in nga auth ug/o API Management
+- Network isolation: Nagatugot sa network isolation gamit ang Azure Virtual Networks (VNET)
+- Serverless architecture: Naggamit sa Azure Functions para sa scalable, event-driven nga pagdagan
+- Lokal nga pag-develop: Komprehensibo nga suporta sa lokal nga pag-develop ug pag-debug
+- Yano nga pag-deploy: Streamlined nga proseso sa pag-deploy sa Azure
 
-Ang repository ay naglalaman ng lahat ng kinakailangang configuration files, source code, at mga infrastructure definitions upang mabilis na makapagsimula sa isang production-ready na MCP server implementation.
+Ang repository naglakip sa tanan nga kinahanglanon nga configuration files, source code, ug infrastructure definitions aron dali ka makasugod sa production-ready nga MCP server implementation.
 
-- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Sample na pagpapatupad ng MCP gamit ang Azure Functions sa Python
+- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Sample nga implementasyon sa MCP gamit ang Azure Functions sa Python
 
-- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Sample na pagpapatupad ng MCP gamit ang Azure Functions sa C# .NET
+- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Sample nga implementasyon sa MCP gamit ang Azure Functions sa C# .NET
 
-- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Sample na pagpapatupad ng MCP gamit ang Azure Functions sa Node/TypeScript.
+- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Sample nga implementasyon sa MCP gamit ang Azure Functions sa Node/TypeScript.
 
-## Mahahalagang Takeaways
+## Mga Pangunang Punto
 
-- Ang MCP SDKs ay nagbibigay ng mga language-specific na tools para sa pagpapatupad ng matibay na mga solusyong MCP
-- Ang proseso ng debugging at testing ay kritikal para sa mga maaasahang aplikasyon ng MCP
-- Ang mga reusable na prompt templates ay nagbibigay-daan sa consistent na AI interactions
-- Ang mahusay na disenyo ng workflows ay maaaring mag-orchestrate ng mga kumplikadong gawain gamit ang maraming tools
-- Ang pagpapatupad ng mga solusyong MCP ay nangangailangan ng konsiderasyon sa seguridad, performance, at error handling
+- Ang MCP SDKs naghatag og mga lengguwahe-specific nga himan para sa pagpatuman sa lig-on nga MCP solutions
+- Importante ang proseso sa pag-debug ug pag-test para sa kasaligan nga MCP applications
+- Ang reusable prompt templates nagpasayon sa konsistent nga AI interactions
+- Ang maayong pagdisenyo sa workflows makapahimo sa pag-organisar sa komplikadong mga buluhaton gamit ang daghang mga tools
+- Ang pagpatuman sa MCP solutions nagkinahanglan og pagtagad sa seguridad, performance, ug error handling
 
 ## Ehersisyo
 
-Magdisenyo ng praktikal na workflow ng MCP na tumutugon sa isang totoong problema sa iyong domain:
+Disenyohi ang usa ka praktikal nga MCP workflow nga makatubag sa tinuod nga problema sa imong domain:
 
-1. Tukuyin ang 3-4 na tools na magiging kapaki-pakinabang para sa paglutas ng problemang ito
-2. Gumawa ng diagram ng workflow na nagpapakita kung paano nag-i-interact ang mga tools na ito
-3. Ipatupad ang isang basic na bersyon ng isa sa mga tools gamit ang iyong paboritong wika
-4. Gumawa ng prompt template na makakatulong sa model na epektibong gamitin ang iyong tool
+1. Ilhan ang 3-4 nga mga tools nga magamit para sa pagsulbad sa problema
+2. Buhata ang workflow diagram nga nagpakita kung giunsa pag-interact ang mga tools
+3. Ipatuman ang basic nga bersyon sa usa sa mga tools gamit ang imong paboritong lengguwahe
+4. Buhata ang prompt template nga makatabang sa modelo nga epektibong gamiton ang imong tool
 
-## Karagdagang Resources
+## Dugang nga mga Kahimanan
+
 
 ---
 
-Susunod: [Mga Advanced na Paksa](../05-AdvancedTopics/README.md)
+Sunod: [Advanced Topics](../05-AdvancedTopics/README.md)
 
-**Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat pinagsisikapan naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga error o hindi pagkaka-ayon. Ang orihinal na dokumento sa kanyang katutubong wika ay dapat ituring na mapagkakatiwalaang pinagmulan. Para sa kritikal na impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Kami ay hindi mananagot para sa anumang hindi pagkakaintindihan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
