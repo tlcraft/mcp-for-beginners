@@ -1,36 +1,36 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0e1385a3fadf16bacd2f863757bcf5e0",
-  "translation_date": "2025-05-17T13:43:45+00:00",
+  "original_hash": "7919ce2e537f0c435c7c23fa6775b613",
+  "translation_date": "2025-06-11T18:01:59+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "mo"
 }
 -->
-# 实际实施
+# Practical Implementation
 
-实际实施是模型上下文协议（MCP）力量变得具体的地方。虽然理解MCP背后的理论和架构很重要，但真正的价值在于应用这些概念来构建、测试和部署解决方案以解决现实世界的问题。本章将桥接概念知识与动手开发之间的差距，引导您通过过程将基于MCP的应用程序带入生活。
+Practical implementation is where the power of the Model Context Protocol (MCP) becomes tangible. While understanding the theory and architecture behind MCP is important, the real value emerges when you apply these concepts to build, test, and deploy solutions that solve real-world problems. This chapter bridges the gap between conceptual knowledge and hands-on development, guiding you through the process of bringing MCP-based applications to life.
 
-无论您是在开发智能助手、将AI集成到业务工作流中，还是构建用于数据处理的定制工具，MCP都提供了一个灵活的基础。它与语言无关的设计和流行编程语言的官方SDK使其对广泛的开发人员来说都很容易访问。通过利用这些SDK，您可以快速原型化、迭代并在不同平台和环境中扩展您的解决方案。
+Whether you are developing intelligent assistants, integrating AI into business workflows, or building custom tools for data processing, MCP provides a flexible foundation. Its language-agnostic design and official SDKs for popular programming languages make it accessible to a wide range of developers. By leveraging these SDKs, you can quickly prototype, iterate, and scale your solutions across different platforms and environments.
 
-在接下来的部分中，您将找到实践示例、示例代码和部署策略，展示如何在C#、Java、TypeScript、JavaScript和Python中实施MCP。您还将学习如何调试和测试您的MCP服务器，管理API，并使用Azure将解决方案部署到云端。这些动手资源旨在加速您的学习，帮助您自信地构建健壮的、生产就绪的MCP应用程序。
+In the following sections, you'll find practical examples, sample code, and deployment strategies that demonstrate how to implement MCP in C#, Java, TypeScript, JavaScript, and Python. You'll also learn how to debug and test your MCP servers, manage APIs, and deploy solutions to the cloud using Azure. These hands-on resources are designed to accelerate your learning and help you confidently build robust, production-ready MCP applications.
 
-## 概述
+## Overview
 
-本课程重点关注MCP在多种编程语言中的实施的实际方面。我们将探讨如何在C#、Java、TypeScript、JavaScript和Python中使用MCP SDK构建稳健的应用程序，调试和测试MCP服务器，以及创建可重用的资源、提示和工具。
+This lesson focuses on practical aspects of MCP implementation across multiple programming languages. We'll explore how to use MCP SDKs in C#, Java, TypeScript, JavaScript, and Python to build robust applications, debug and test MCP servers, and create reusable resources, prompts, and tools.
 
-## 学习目标
+## Learning Objectives
 
-完成本课程后，您将能够：
-- 使用官方SDK在各种编程语言中实施MCP解决方案
-- 系统地调试和测试MCP服务器
-- 创建和使用服务器功能（资源、提示和工具）
-- 为复杂任务设计有效的MCP工作流
-- 优化MCP实施以提高性能和可靠性
+By the end of this lesson, you will be able to:
+- Implement MCP solutions using official SDKs in various programming languages
+- Debug and test MCP servers systematically
+- Create and use server features (Resources, Prompts, and Tools)
+- Design effective MCP workflows for complex tasks
+- Optimize MCP implementations for performance and reliability
 
-## 官方SDK资源
+## Official SDK Resources
 
-模型上下文协议提供了多种语言的官方SDK：
+The Model Context Protocol offers official SDKs for multiple languages:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) 
@@ -38,13 +38,13 @@ CO_OP_TRANSLATOR_METADATA:
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
 
-## 使用MCP SDK
+## Working with MCP SDKs
 
-本节提供了在多种编程语言中实施MCP的实践示例。您可以在`samples`目录中找到按语言组织的示例代码。
+This section provides practical examples of implementing MCP across multiple programming languages. You can find sample code in the `samples` directory organized by language.
 
-### 可用示例
+### Available Samples
 
-仓库包括以下语言的示例实现：
+The repository includes sample implementations in the following languages:
 
 - C#
 - Java
@@ -52,219 +52,225 @@ CO_OP_TRANSLATOR_METADATA:
 - JavaScript
 - Python
 
-每个示例都展示了该特定语言和生态系统的关键MCP概念和实施模式。
+Each sample demonstrates key MCP concepts and implementation patterns for that specific language and ecosystem.
 
-## 核心服务器功能
+## Core Server Features
 
-MCP服务器可以实施这些功能的任意组合：
+MCP servers can implement any combination of these features:
 
-### 资源
-资源为用户或AI模型提供上下文和数据：
-- 文档存储库
-- 知识库
-- 结构化数据源
-- 文件系统
+### Resources
+Resources provide context and data for the user or AI model to use:
+- Document repositories
+- Knowledge bases
+- Structured data sources
+- File systems
 
-### 提示
-提示是为用户提供的模板化消息和工作流：
-- 预定义的对话模板
-- 引导的互动模式
-- 专门的对话结构
+### Prompts
+Prompts are templated messages and workflows for users:
+- Pre-defined conversation templates
+- Guided interaction patterns
+- Specialized dialogue structures
 
-### 工具
-工具是AI模型执行的功能：
-- 数据处理实用程序
-- 外部API集成
-- 计算能力
-- 搜索功能
+### Tools
+Tools are functions for the AI model to execute:
+- Data processing utilities
+- External API integrations
+- Computational capabilities
+- Search functionality
 
-## 示例实施：C#
+## Sample Implementations: C#
 
-官方C# SDK仓库包含几个示例实现，展示了MCP的不同方面：
+The official C# SDK repository contains several sample implementations demonstrating different aspects of MCP:
 
-- **基本MCP客户端**：简单示例展示如何创建MCP客户端并调用工具
-- **基本MCP服务器**：具有基本工具注册的最小服务器实现
-- **高级MCP服务器**：具有工具注册、身份验证和错误处理的完整功能服务器
-- **ASP.NET集成**：展示与ASP.NET Core集成的示例
-- **工具实施模式**：实施不同复杂级别工具的各种模式
+- **Basic MCP Client**: Simple example showing how to create an MCP client and call tools
+- **Basic MCP Server**: Minimal server implementation with basic tool registration
+- **Advanced MCP Server**: Full-featured server with tool registration, authentication, and error handling
+- **ASP.NET Integration**: Examples demonstrating integration with ASP.NET Core
+- **Tool Implementation Patterns**: Various patterns for implementing tools with different complexity levels
 
-MCP C# SDK处于预览阶段，API可能会更改。我们将随着SDK的演变不断更新此博客。
+The MCP C# SDK is in preview and APIs may change. We will continuously update this blog as the SDK evolves.
 
-### 关键功能 
+### Key Features 
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
 
-- 构建您的[第一个MCP服务器](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
+- Building your [first MCP Server](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
 
-有关完整的C#实现示例，请访问[官方C# SDK示例仓库](https://github.com/modelcontextprotocol/csharp-sdk)
+For complete C# implementation samples, visit the [official C# SDK samples repository](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## 示例实施：Java实施
+## Sample implementation: Java Implementation
 
-Java SDK提供了具有企业级功能的稳健MCP实施选项。
+The Java SDK offers robust MCP implementation options with enterprise-grade features.
 
-### 关键功能
+### Key Features
 
-- Spring Framework集成
-- 强类型安全
-- 支持反应式编程
-- 全面的错误处理
+- Spring Framework integration
+- Strong type safety
+- Reactive programming support
+- Comprehensive error handling
 
-有关完整的Java实现示例，请参见samples目录中的[MCPSample.java](../../../04-PracticalImplementation/samples/java/MCPSample.java)。
+For a complete Java implementation sample, see [MCPSample.java](../../../04-PracticalImplementation/samples/java/MCPSample.java) in the samples directory.
 
-## 示例实施：JavaScript实施
+## Sample implementation: JavaScript Implementation
 
-JavaScript SDK提供了一种轻量级和灵活的MCP实施方法。
+The JavaScript SDK provides a lightweight and flexible approach to MCP implementation.
 
-### 关键功能
+### Key Features
 
-- Node.js和浏览器支持
-- 基于Promise的API
-- 与Express和其他框架的轻松集成
-- 支持WebSocket流
+- Node.js and browser support
+- Promise-based API
+- Easy integration with Express and other frameworks
+- WebSocket support for streaming
 
-有关完整的JavaScript实现示例，请参见samples目录中的[mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js)。
+For a complete JavaScript implementation sample, see [mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js) in the samples directory.
 
-## 示例实施：Python实施
+## Sample implementation: Python Implementation
 
-Python SDK提供了一种符合Python风格的MCP实施方法，并具有出色的ML框架集成。
+The Python SDK offers a Pythonic approach to MCP implementation with excellent ML framework integrations.
 
-### 关键功能
+### Key Features
 
-- 使用asyncio支持异步/等待
-- Flask和FastAPI集成
-- 简单的工具注册
-- 与流行的ML库的原生集成
+- Async/await support with asyncio
+- Flask and FastAPI integration
+- Simple tool registration
+- Native integration with popular ML libraries
 
-有关完整的Python实现示例，请参见samples目录中的[mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py)。
+For a complete Python implementation sample, see [mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py) in the samples directory.
 
-## API管理 
+## API management 
 
-Azure API Management是如何保护MCP服务器的绝佳答案。其理念是在您的MCP服务器前面放置一个Azure API Management实例，并让它处理您可能想要的功能，例如：
+Azure API Management is a great answer to how we can secure MCP Servers. The idea is to put an Azure API Management instance in front of your MCP Server and let it handle features you're likely to want like:
 
-- 限速
-- 令牌管理
-- 监控
-- 负载均衡
-- 安全性
+- rate limiting
+- token management
+- monitoring
+- load balancing
+- security
 
-### Azure示例
+### Azure Sample
 
-这是一个Azure示例，正是这样做的，即[创建MCP服务器并使用Azure API Management进行保护](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)。
+Here's an Azure Sample doing exactly that, i.e [creating an MCP Server and securing it with Azure API Management])(https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
 
-查看下面图片中的授权流程是如何进行的：
+See how the authorization flow happens in below image:
 
 ![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true) 
 
-在前面的图片中，发生了以下情况：
+In the preceding image, the following takes place:
 
-- 使用Microsoft Entra进行身份验证/授权。
-- Azure API Management充当网关，并使用策略来引导和管理流量。
-- Azure Monitor记录所有请求以进行进一步分析。
+- Authentication/Authorization takes place using Microsoft Entra.
+- Azure API Management acts as a gateway asnd uses policies to direct and manage traffic.
+- Azure Monitor logs all request for further analysis.
 
-#### 授权流程
+#### Authorization flow
 
-让我们更详细地看看授权流程：
+Let's have a look at the authorization flow more in detail:
 
 ![Sequence Diagram](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
 
-#### MCP授权规范
+#### MCP authorization specification
 
-了解有关[MCP授权规范](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)的更多信息
+Learn more about the [MCP Authorization specification](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
 
-## 部署远程MCP服务器到Azure
+## Deploy Remote MCP Server to Azure
 
-让我们看看我们是否可以部署我们之前提到的示例：
+Let's see if we can deploy the sample we mentioned earlier:
 
-1. 克隆仓库
+1. Clone the repo
 
     ```bash
     git clone https://github.com/Azure-Samples/remote-mcp-apim-functions-python.git
     cd remote-mcp-apim-functions-python
     ```
 
-1. 注册`Microsoft.App` resource provider.
+1. Register `Microsoft.App` resource provider.
     * If you are using Azure CLI, run `az provider register --namespace Microsoft.App --wait`.
-    * If you are using Azure PowerShell, run `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` 一段时间后检查注册是否完成。
+    * If you are using Azure PowerShell, run `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` after some time to check if the registration is complete.
 
-2. 运行此[azd](https://aka.ms/azd)命令来提供API管理服务、函数应用（含代码）和所有其他所需的Azure资源
+2. Run this [azd](https://aka.ms/azd) command to provision the api management service, function app(with code) and all other required Azure resources
 
     ```shell
     azd up
     ```
 
-    此命令应在Azure上部署所有云资源
+    This commands should deploy all the cloud resources on Azure
 
-### 使用MCP Inspector测试您的服务器
+### Testing your server with MCP Inspector
 
-1. 在一个**新终端窗口**中，安装并运行MCP Inspector
+1. In a **new terminal window**, install and run MCP Inspector
 
     ```shell
     npx @modelcontextprotocol/inspector
     ```
 
-    您应该看到一个类似于以下的界面：
+    You should see an interface similar to:
 
-    ![Connect to Node inspector](../../../translated_images/connect.126df3a6deef0d2e0850b1a5cf0547c8fc4e2e9e0b354238d0a9dbe7893726fa.mo.png)
+    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.mo.png) 
 
-1. CTRL点击从应用显示的URL加载MCP Inspector Web应用（例如http://127.0.0.1:6274/#resources）
-1. 将传输类型设置为`SSE`
-1. Set the URL to your running API Management SSE endpoint displayed after `azd up`并**连接**：
+1. CTRL click to load the MCP Inspector web app from the URL displayed by the app (e.g. http://127.0.0.1:6274/#resources)
+1. Set the transport type to `SSE`
+1. Set the URL to your running API Management SSE endpoint displayed after `azd up` and **Connect**:
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-5. **列出工具**。 点击一个工具并**运行工具**。  
+5. **List Tools**.  Click on a tool and **Run Tool**.  
 
-如果所有步骤都成功，您现在应该已连接到MCP服务器，并且您能够调用一个工具。
+If all the steps have worked, you should now be connected to the MCP server and you've been able to call a tool.
 
-## Azure的MCP服务器 
+## MCP servers for Azure 
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)：这组仓库是使用Azure Functions与Python、C# .NET或Node/TypeScript构建和部署自定义远程MCP（模型上下文协议）服务器的快速启动模板。
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): This set of repositories are quickstart template for building and deploying custom remote MCP (Model Context Protocol) servers using Azure Functions with Python, C# .NET or Node/TypeScript. 
 
-样本提供了一个完整的解决方案，允许开发人员：
+The Samples provides a complete solution that allows developers to:
 
-- 本地构建和运行：在本地机器上开发和调试MCP服务器
-- 部署到Azure：使用简单的azd up命令轻松部署到云端
-- 从客户端连接：从各种客户端连接到MCP服务器，包括VS Code的Copilot代理模式和MCP Inspector工具
+- Build and run locally: Develop and debug a MCP server on a local machine
+- Deploy to Azure: Easily deploy to the cloud with a simple azd up command
+- Connect from clients: Connect to the MCP server from various clients including VS Code's Copilot agent mode and the MCP Inspector tool
 
-### 关键功能：
+### Key Features:
 
-- 设计安全性：MCP服务器使用密钥和HTTPS进行保护
-- 身份验证选项：支持使用内置身份验证和/或API管理进行OAuth
-- 网络隔离：允许使用Azure虚拟网络（VNET）进行网络隔离
-- 无服务器架构：利用Azure Functions进行可扩展的事件驱动执行
-- 本地开发：全面的本地开发和调试支持
-- 简单部署：简化的Azure部署过程
+- Security by design: The MCP server is secured using keys and HTTPS
+- Authentication options: Supports OAuth using built-in auth and/or API Management
+- Network isolation: Allows network isolation using Azure Virtual Networks (VNET)
+- Serverless architecture: Leverages Azure Functions for scalable, event-driven execution
+- Local development: Comprehensive local development and debugging support
+- Simple deployment: Streamlined deployment process to Azure
 
-仓库包括所有必要的配置文件、源代码和基础设施定义，以快速开始生产就绪的MCP服务器实施。
+The repository includes all necessary configuration files, source code, and infrastructure definitions to quickly get started with a production-ready MCP server implementation.
 
-- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - 使用Azure Functions和Python实施MCP的示例
+- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Sample implementation of MCP using Azure Functions with Python
 
-- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - 使用Azure Functions和C# .NET实施MCP的示例
+- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Sample implementation of MCP using Azure Functions with C# .NET
 
-- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - 使用Azure Functions和Node/TypeScript实施MCP的示例。
+- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Sample implementation of MCP using Azure Functions with Node/TypeScript.
 
-## 关键要点
+## Key Takeaways
 
-- MCP SDK提供了语言特定的工具用于实施稳健的MCP解决方案
-- 调试和测试过程对于可靠的MCP应用程序至关重要
-- 可重用的提示模板使AI交互一致
-- 设计良好的工作流可以使用多个工具协调复杂任务
-- 实施MCP解决方案需要考虑安全性、性能和错误处理
+- MCP SDKs provide language-specific tools for implementing robust MCP solutions
+- The debugging and testing process is critical for reliable MCP applications
+- Reusable prompt templates enable consistent AI interactions
+- Well-designed workflows can orchestrate complex tasks using multiple tools
+- Implementing MCP solutions requires consideration of security, performance, and error handling
 
-## 练习
+## Exercise
 
-设计一个实用的MCP工作流，以解决您领域中的现实问题：
+Design a practical MCP workflow that addresses a real-world problem in your domain:
 
-1. 确定3-4个对解决此问题有用的工具
-2. 创建一个工作流图，显示这些工具如何交互
-3. 使用您偏爱的语言实施其中一个工具的基本版本
-4. 创建一个提示模板，以帮助模型有效地使用您的工具
+1. Identify 3-4 tools that would be useful for solving this problem
+2. Create a workflow diagram showing how these tools interact
+3. Implement a basic version of one of the tools using your preferred language
+4. Create a prompt template that would help the model effectively use your tool
 
-## 附加资源
+## Additional Resources
+
 
 ---
 
-下一步：[高级主题](../05-AdvancedTopics/README.md)
+Next: [Advanced Topics](../05-AdvancedTopics/README.md)
 
-I'm sorry, but it seems like "mo" is not a recognized language code. Could you please clarify which language you would like the text translated into?
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+If by "mo" you meant a specific language or dialect, please clarify so I can provide the correct translation.

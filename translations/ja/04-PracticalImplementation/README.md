@@ -1,31 +1,31 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0e1385a3fadf16bacd2f863757bcf5e0",
-  "translation_date": "2025-05-16T15:34:06+00:00",
+  "original_hash": "7919ce2e537f0c435c7c23fa6775b613",
+  "translation_date": "2025-06-11T18:04:23+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "ja"
 }
 -->
 # 実践的な実装
 
-実践的な実装は、Model Context Protocol（MCP）の力が具体的に実感できる場です。MCPの理論やアーキテクチャを理解することは重要ですが、実際にこれらの概念を使って現実の問題を解決するソリューションを構築、テスト、展開することで真の価値が生まれます。本章では、概念的な知識と実践的な開発のギャップを埋め、MCPベースのアプリケーションを形にするプロセスを案内します。
+実践的な実装は、Model Context Protocol（MCP）の力を実感できる場です。MCPの理論やアーキテクチャを理解することは重要ですが、実際にこれらの概念を活用して、現実の問題を解決するソリューションを構築、テスト、デプロイすることで真の価値が生まれます。本章では、概念的な知識と実践的な開発のギャップを埋め、MCPベースのアプリケーションを実際に動かすプロセスを案内します。
 
-インテリジェントアシスタントの開発、ビジネスワークフローへのAI統合、データ処理のためのカスタムツール構築など、MCPは柔軟な基盤を提供します。言語に依存しない設計と主要なプログラミング言語向けの公式SDKにより、多様な開発者に利用可能です。これらのSDKを活用することで、さまざまなプラットフォームや環境で迅速にプロトタイプを作成し、反復し、スケールさせることができます。
+インテリジェントアシスタントの開発、ビジネスワークフローへのAI統合、データ処理のためのカスタムツールの構築など、どんな用途であってもMCPは柔軟な基盤を提供します。言語に依存しない設計と主要なプログラミング言語向けの公式SDKにより、幅広い開発者が利用可能です。これらのSDKを活用することで、迅速にプロトタイプを作成し、反復し、異なるプラットフォームや環境でスケールさせることができます。
 
-以下のセクションでは、C#、Java、TypeScript、JavaScript、PythonでのMCP実装例、サンプルコード、展開戦略を紹介します。また、MCPサーバーのデバッグやテスト、API管理、Azureを使ったクラウド展開方法についても学べます。これらの実践的なリソースは学習を加速し、堅牢で本番対応可能なMCPアプリケーションの構築に自信を持って取り組めるよう設計されています。
+以下のセクションでは、C#、Java、TypeScript、JavaScript、PythonでのMCP実装の実例、サンプルコード、デプロイ戦略を紹介します。MCPサーバーのデバッグやテスト、API管理、Azureを使ったクラウドへのデプロイ方法も学べます。これらの実践的なリソースは学習を加速し、堅牢で本番対応のMCPアプリケーションを自信を持って構築できるよう設計されています。
 
 ## 概要
 
-このレッスンでは、複数のプログラミング言語にわたるMCPの実践的な実装に焦点を当てます。C#、Java、TypeScript、JavaScript、PythonのMCP SDKを使って堅牢なアプリケーションを構築し、MCPサーバーのデバッグとテスト、再利用可能なリソース、プロンプト、ツールの作成方法を探ります。
+このレッスンでは、複数のプログラミング言語にわたるMCP実装の実践的な側面に焦点を当てます。C#、Java、TypeScript、JavaScript、PythonのMCP SDKを使って堅牢なアプリケーションを構築し、MCPサーバーのデバッグとテストを行い、再利用可能なリソース、プロンプト、ツールを作成する方法を探ります。
 
 ## 学習目標
 
 このレッスンの終了時には、以下ができるようになります：
-- 公式SDKを使って様々なプログラミング言語でMCPソリューションを実装する
+- 公式SDKを使ってさまざまなプログラミング言語でMCPソリューションを実装する
 - MCPサーバーを体系的にデバッグ・テストする
-- サーバー機能（リソース、プロンプト、ツール）を作成・活用する
-- 複雑なタスク向けに効果的なMCPワークフローを設計する
+- サーバー機能（リソース、プロンプト、ツール）を作成・利用する
+- 複雑なタスクに対応する効果的なMCPワークフローを設計する
 - パフォーマンスと信頼性を考慮したMCP実装を最適化する
 
 ## 公式SDKリソース
@@ -40,7 +40,7 @@ Model Context Protocolは複数の言語向けに公式SDKを提供していま�
 
 ## MCP SDKの活用
 
-このセクションでは、複数言語でのMCP実装の実践例を紹介します。サンプルコードは`samples`ディレクトリ内に言語別に整理されています。
+このセクションでは、複数のプログラミング言語でのMCP実装の実例を紹介します。サンプルコードは`samples`ディレクトリ内に言語別に整理されています。
 
 ### 利用可能なサンプル
 
@@ -52,58 +52,58 @@ Model Context Protocolは複数の言語向けに公式SDKを提供していま�
 - JavaScript
 - Python
 
-各サンプルは、その言語とエコシステムに特化したMCPの主要な概念と実装パターンを示しています。
+それぞれのサンプルは、その言語とエコシステムに特化したMCPの主要概念と実装パターンを示しています。
 
 ## コアサーバー機能
 
 MCPサーバーは以下の機能を組み合わせて実装できます：
 
-### リソース
-リソースはユーザーやAIモデルが利用するコンテキストやデータを提供します：
+### Resources（リソース）
+ユーザーやAIモデルが利用するコンテキストやデータを提供します：
 - ドキュメントリポジトリ
 - ナレッジベース
 - 構造化データソース
 - ファイルシステム
 
-### プロンプト
-プロンプトはユーザー向けのテンプレート化されたメッセージやワークフローです：
+### Prompts（プロンプト）
+ユーザー向けのテンプレート化されたメッセージやワークフローです：
 - 事前定義された会話テンプレート
-- ガイド付きのインタラクションパターン
-- 専門的な対話構造
+- ガイド付きインタラクションパターン
+- 特化した対話構造
 
-### ツール
-ツールはAIモデルが実行する関数です：
+### Tools（ツール）
+AIモデルが実行する機能です：
 - データ処理ユーティリティ
-- 外部API連携
+- 外部API統合
 - 計算機能
 - 検索機能
 
 ## サンプル実装：C#
 
-公式のC# SDKリポジトリには、MCPのさまざまな側面を示す複数のサンプル実装があります：
+公式C# SDKリポジトリには、MCPの様々な側面を示す複数のサンプル実装が含まれています：
 
-- **基本的なMCPクライアント**：MCPクライアントの作成とツール呼び出しの簡単な例
-- **基本的なMCPサーバー**：基本的なツール登録を備えた最小限のサーバー実装
-- **高度なMCPサーバー**：ツール登録、認証、エラーハンドリングを備えたフル機能のサーバー
-- **ASP.NET統合**：ASP.NET Coreとの統合例
-- **ツール実装パターン**：複雑さの異なるツール実装の様々なパターン
+- **Basic MCP Client**：MCPクライアントを作成しツールを呼び出すシンプルな例
+- **Basic MCP Server**：基本的なツール登録を備えた最小限のサーバー実装
+- **Advanced MCP Server**：ツール登録、認証、エラーハンドリングを備えたフル機能サーバー
+- **ASP.NET Integration**：ASP.NET Coreとの統合例
+- **Tool Implementation Patterns**：異なる複雑さのツール実装パターン
 
-C# MCP SDKはプレビュー段階であり、APIは変更される可能性があります。SDKの進化に合わせてこのブログも随時更新します。
+MCP C# SDKはプレビュー段階であり、APIは変更される可能性があります。SDKの進化に伴い、このブログは継続的に更新されます。
 
-### 主要機能
+### 主な特徴
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
 
-- [最初のMCPサーバーの構築](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/)
+- [最初のMCPサーバー構築](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/)
 
-完全なC#実装サンプルは[公式C# SDKサンプルリポジトリ](https://github.com/modelcontextprotocol/csharp-sdk)をご覧ください。
+C#の完全な実装サンプルは[公式C# SDKサンプルリポジトリ](https://github.com/modelcontextprotocol/csharp-sdk)をご覧ください。
 
 ## サンプル実装：Java
 
 Java SDKはエンタープライズグレードの機能を備えた堅牢なMCP実装オプションを提供します。
 
-### 主要機能
+### 主な特徴
 
-- Spring Frameworkとの統合
+- Spring Framework統合
 - 強力な型安全性
 - リアクティブプログラミング対応
 - 包括的なエラーハンドリング
@@ -112,53 +112,53 @@ Java SDKはエンタープライズグレードの機能を備えた堅牢なMCP
 
 ## サンプル実装：JavaScript
 
-JavaScript SDKは軽量で柔軟なMCP実装を提供します。
+JavaScript SDKは軽量で柔軟なMCP実装アプローチを提供します。
 
-### 主要機能
+### 主な特徴
 
-- Node.jsおよびブラウザ対応
+- Node.jsとブラウザ対応
 - PromiseベースのAPI
 - Expressなどのフレームワークとの簡単な統合
-- ストリーミング用WebSocket対応
+- ストリーミング対応のWebSocketサポート
 
-完全なJavaScript実装サンプルは、samplesディレクトリ内の[mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js)をご覧ください。
+完全なJavaScript実装サンプルはsamplesディレクトリ内の[mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js)をご覧ください。
 
 ## サンプル実装：Python
 
-Python SDKはPythonらしいMCP実装を提供し、優れたMLフレームワークとの統合が特徴です。
+Python SDKはPythonらしいアプローチでMCP実装を提供し、優れたMLフレームワーク統合を備えています。
 
-### 主要機能
+### 主な特徴
 
-- asyncioによるAsync/await対応
+- asyncioを使ったasync/awaitサポート
 - FlaskおよびFastAPIとの統合
 - シンプルなツール登録
 - 人気のMLライブラリとのネイティブ統合
 
-完全なPython実装サンプルは、samplesディレクトリ内の[mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py)をご覧ください。
+完全なPython実装サンプルはsamplesディレクトリ内の[mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py)をご覧ください。
 
 ## API管理
 
-Azure API ManagementはMCPサーバーを安全に運用するための優れた手段です。MCPサーバーの前にAzure API Managementインスタンスを配置し、以下のような機能を担わせるアイデアです：
+Azure API ManagementはMCPサーバーのセキュリティを確保する優れた方法です。基本的な考え方は、Azure API ManagementインスタンスをMCPサーバーの前に配置し、以下のような必要な機能を担当させることです：
 
 - レート制限
 - トークン管理
-- 監視
+- モニタリング
 - ロードバランシング
 - セキュリティ
 
 ### Azureサンプル
 
-以下はまさにそれを実現するAzureサンプルです。すなわち、[MCPサーバーを作成しAzure API Managementで保護する](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)。
+こちらはまさにそれを行うAzureサンプル、すなわち「MCPサーバーを作成し、Azure API Managementで保護する」例です：[リンク](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)。
 
-以下の画像で認証フローを確認できます：
+以下の画像で認証フローがどのように行われるか確認できます：
 
 ![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true)
 
-上記の画像で起きていること：
+上記の画像では以下の処理が行われています：
 
-- Microsoft Entraを使った認証／認可が行われる
-- Azure API Managementがゲートウェイとして機能し、ポリシーでトラフィックを制御・管理
-- Azure Monitorがすべてのリクエストをログに記録し、分析に活用
+- Microsoft Entraを使った認証／認可
+- Azure API Managementがゲートウェイとして動作し、ポリシーでトラフィックを管理
+- Azure Monitorがすべてのリクエストをログに記録し、分析に利用
 
 #### 認可フロー
 
@@ -168,7 +168,7 @@ Azure API ManagementはMCPサーバーを安全に運用するための優れた
 
 #### MCP認可仕様
 
-[MCP認可仕様](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)の詳細もご覧ください。
+詳細は[MCP Authorization specification](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)をご覧ください。
 
 ## AzureへのリモートMCPサーバーのデプロイ
 
@@ -183,31 +183,34 @@ Azure API ManagementはMCPサーバーを安全に運用するための優れた
 
 2. `Microsoft.App`プロバイダーを登録し、登録完了を確認
 
-    `` resource provider.
-    * If you are using Azure CLI, run `az provider register --namespace Microsoft.App --wait`.
-    * If you are using Azure PowerShell, run `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState`
+    `az provider register --namespace Microsoft.App --wait`  
+    または  
+    `Register-AzResourceProvider -ProviderNamespace Microsoft.App`  
+    しばらくしてから  
+    `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState`  
+    で状態を確認
 
-3. 次の[azd](https://aka.ms/azd)コマンドでAPI管理サービス、Function App（コード含む）、その他必要なAzureリソースをプロビジョニング
+3. 次の[azd](https://aka.ms/azd)コマンドを実行して、API Managementサービス、Function App（コード付き）、その他必要なAzureリソースをプロビジョニング
 
     ```shell
     azd up
     ```
 
-    これによりAzure上のクラウドリソースがすべてデプロイされます。
+    このコマンドでAzure上にすべてのクラウドリソースがデプロイされます。
 
-### MCP Inspectorでサーバーをテスト
+### MCP Inspectorを使ったサーバーテスト
 
-1. **新しいターミナルウィンドウ**でMCP Inspectorをインストールし実行
+1. **新しいターミナルウィンドウ**でMCP Inspectorをインストールして起動
 
     ```shell
     npx @modelcontextprotocol/inspector
     ```
 
-    以下のようなインターフェースが表示されます：
+    以下のようなインターフェースが表示されるはずです：
 
-    ![Connect to Node inspector](../../../translated_images/connect.9f4ccffc595d24b85ce22579ddf26016b5f21d941d544568c1b9752a51d0a4b1.ja.png)
+    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ja.png)
 
-2. 表示されたURL（例：http://127.0.0.1:6274/#resources）をCTRLクリックしてMCP InspectorのWebアプリを読み込む
+2. アプリが表示するURL（例：http://127.0.0.1:6274/#resources）をCTRLクリックしてMCP Inspectorウェブアプリをロード
 3. トランスポートタイプを`SSE`
 1. Set the URL to your running API Management SSE endpoint displayed after `azd up`に設定し、**Connect**をクリック
 
@@ -215,51 +218,53 @@ Azure API ManagementはMCPサーバーを安全に運用するための優れた
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-5. **List Tools**をクリックし、ツールを選択して**Run Tool**を実行
+5. **List Tools**。ツールをクリックし、**Run Tool**を実行
 
-すべての手順が成功すれば、MCPサーバーに接続され、ツール呼び出しができているはずです。
+すべての手順が成功すれば、MCPサーバーに接続され、ツールを呼び出せたことになります。
 
 ## Azure向けMCPサーバー
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)は、Python、C# .NET、Node/TypeScriptを使ってAzure Functions上にカスタムリモートMCPサーバーを構築・展開するためのクイックスタートテンプレートです。
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)：このリポジトリ群は、Python、C# .NET、Node/TypeScriptを使ってAzure Functions上にカスタムリモートMCP（Model Context Protocol）サーバーを構築・デプロイするためのクイックスタートテンプレートです。
 
-このサンプルは開発者に以下の完全なソリューションを提供します：
+サンプルは開発者に以下を提供します：
 
-- ローカルでの構築・実行：ローカルマシン上でMCPサーバーを開発・デバッグ
-- Azureへの展開：シンプルなazd upコマンドでクラウドへ簡単に展開
-- クライアントからの接続：VS CodeのCopilotエージェントモードやMCP Inspectorツールなど、多様なクライアントからMCPサーバーに接続可能
+- ローカルでのビルドと実行：ローカルマシンでMCPサーバーを開発・デバッグ
+- Azureへのデプロイ：シンプルなazd upコマンドでクラウドへ簡単にデプロイ
+- クライアントからの接続：VS CodeのCopilotエージェントモードやMCP Inspectorツールなど多様なクライアントから接続可能
 
-### 主要機能
+### 主な特徴：
 
 - セキュリティ設計：MCPサーバーはキーとHTTPSで保護
-- 認証オプション：組み込み認証やAPI管理を使ったOAuth対応
-- ネットワーク分離：Azure Virtual Networks（VNET）を利用可能
-- サーバーレスアーキテクチャ：Azure Functionsによるスケーラブルでイベント駆動型の実行
-- ローカル開発：包括的なローカル開発とデバッグサポート
-- 簡単な展開：Azureへのスムーズな展開プロセス
+- 認証オプション：組み込み認証やAPI Managementを使ったOAuth対応
+- ネットワーク分離：Azure Virtual Networks（VNET）によるネットワーク分離が可能
+- サーバーレスアーキテクチャ：Azure Functionsを活用したスケーラブルでイベント駆動型の実行
+- ローカル開発：充実したローカル開発とデバッグサポート
+- 簡単なデプロイ：Azureへのスムーズなデプロイプロセス
 
-このリポジトリには、本番対応可能なMCPサーバー実装を迅速に開始するための設定ファイル、ソースコード、インフラ定義がすべて含まれています。
+リポジトリには、本番対応のMCPサーバー実装を素早く開始するためのすべての設定ファイル、ソースコード、インフラ定義が含まれています。
 
-- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Pythonを使ったAzure Functions上のMCP実装サンプル
-- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - C# .NETを使ったAzure Functions上のMCP実装サンプル
-- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Node/TypeScriptを使ったAzure Functions上のMCP実装サンプル
+- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Azure FunctionsとPythonを使ったMCPのサンプル実装
 
-## 重要ポイント
+- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Azure FunctionsとC# .NETを使ったMCPのサンプル実装
 
-- MCP SDKは言語別に堅牢なMCPソリューションを実装するためのツールを提供
+- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Azure FunctionsとNode/TypeScriptを使ったMCPのサンプル実装
+
+## まとめ
+
+- MCP SDKは言語別のツールを提供し、堅牢なMCPソリューションの実装を支援
 - デバッグとテストは信頼性の高いMCPアプリケーションに不可欠
-- 再利用可能なプロンプトテンプレートにより一貫したAIインタラクションが可能
-- 良く設計されたワークフローは複数のツールを使った複雑なタスクをオーケストレーションできる
+- 再利用可能なプロンプトテンプレートで一貫したAIインタラクションを実現
+- よく設計されたワークフローは複数ツールを使った複雑なタスクをオーケストレーション
 - MCP実装にはセキュリティ、パフォーマンス、エラーハンドリングの考慮が必要
 
 ## 演習
 
-自分の分野の現実的な問題を解決する実践的なMCPワークフローを設計してみましょう：
+あなたのドメインの現実的な問題に対応する実践的なMCPワークフローを設計してください：
 
-1. 問題解決に役立つ3〜4つのツールを特定する
+1. 問題解決に役立つ3〜4のツールを特定する
 2. これらのツールがどのように連携するかを示すワークフローダイアグラムを作成する
-3. 好みの言語でツールの基本的なバージョンを実装する
-4. モデルが効果的にツールを使えるようにするプロンプトテンプレートを作成する
+3. 好みの言語でツールの基本バージョンを実装する
+4. モデルがツールを効果的に使うためのプロンプトテンプレートを作成する
 
 ## 追加リソース
 
@@ -268,5 +273,5 @@ Azure API ManagementはMCPサーバーを安全に運用するための優れた
 
 次へ：[高度なトピック](../05-AdvancedTopics/README.md)
 
-**免責事項**：  
-本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご了承ください。原文の言語による文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+**免責事項**:  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。原文はあくまで正式な情報源としてご利用ください。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
