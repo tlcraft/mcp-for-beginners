@@ -41,7 +41,7 @@ The client uses the Spring AI MCP framework to:
 
 ```
 src/
-└── test/
+└── main/
     └── java/
         └── com/
             └── microsoft/
@@ -77,18 +77,35 @@ Build the project using the Maven wrapper:
 
 ## Running the Client
 
-### Method 1: Using Maven
+There are several ways to run the client:
+
+### Option 1: Run using Maven Exec Plugin (Recommended)
 
 ```cmd
-.\mvnw test-compile exec:java -Dexec.mainClass="com.microsoft.mcp.sample.client.SDKClient" -Dexec.classpathScope="test"
+.\mvnw clean compile exec:java
 ```
 
-### Method 2: Using Java directly
+### Option 2: Run with explicit main class
 
 ```cmd
-.\mvnw test-compile
-java -cp "target/test-classes;target/classes" com.microsoft.mcp.sample.client.SDKClient
+.\mvnw clean compile exec:java -Dexec.mainClass="com.microsoft.mcp.sample.client.SDKClient"
 ```
+
+### Option 3: Build JAR and Run with Classpath
+
+First, build the project and copy dependencies:
+
+```cmd
+.\mvnw clean package dependency:copy-dependencies
+```
+
+Then run with explicit classpath:
+
+```cmd
+java -cp "target\classes;target\dependency\*" com.microsoft.mcp.sample.client.SDKClient
+```
+
+**Note**: Make sure the calculator server is running on `http://localhost:8080` before executing any of these commands.
 
 ## What the Client Does
 
