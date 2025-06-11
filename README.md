@@ -68,6 +68,7 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 | 5.7 | **Scaling** | Learn about scaling MCP servers, including horizontal and vertical scaling strategies, resource optimization, and performance tuning | [Scaling](./05-AdvancedTopics/mcp-scaling/README.md) |
 | 5.8 | **Security** | Secure your MCP Server, including authentication, authorization, and data protection strategies | [Security](./05-AdvancedTopics/mcp-security/README.md) |
 | 5.9 | **Web Search MCP** | Python MCP server and client integrating with SerpAPI for real-time web, news, product search, and Q&A. Demonstrates multi-tool orchestration, external API integration, and robust error handling | [Web Search MCP](./05-AdvancedTopics/web-search-mcp/README.md) |
+| 5.10 | **Realtime Streaming** | Real-time data streaming has become essential in today's data-driven world, where businesses and applications require immediate access to information to make timely decisions.| [Realtime Streaming](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
 | 06 | **Community Contributions** | How to contribute code and docs, collaborating via GitHub, community-driven enhancements and feedback | [Community Contributions](./06-CommunityContributions/README.md) |
 | 07 | **Insights from Early Adoption** | Real-world implementations and what worked, building and deploying MCP-based solutions, trends and future roadmap | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
 | 08 | **Best Practices for MCP** | Performance tuning and optimization, designing fault-tolerant MCP systems, testing and resilience strategies | [Best Practices](./08-BestPractices/README.md) |
@@ -108,6 +109,16 @@ To get the most out of this curriculum, you should have:
 - Basic knowledge of C#, Java, or Python
 - Understanding of client-server model and APIs
 - (Optional) Familiarity with machine learning concepts
+
+## 📚 Study Guide
+
+A comprehensive [Study Guide](./study_guide.md) is available to help you navigate this repository effectively. The guide includes:
+
+- A visual curriculum map showing all topics covered
+- Detailed breakdown of each repository section
+- Guidance on how to use sample projects
+- Recommended learning paths for different skill levels
+- Additional resources to complement your learning journey
 
 ## 🛠️ How to Use This Curriculum Effectively
 
