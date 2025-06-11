@@ -2,7 +2,7 @@
 
 This section consists of several lessons:
 
-- **1 Your first server**, in this first lesson, you will learn how to create your first server and inspect it with the inspector tool, a vauable way to test and debug your server, [to the lesson](/03-GettingStarted/01-first-server/README.md)
+- **1 Your first server**, in this first lesson, you will learn how to create your first server and inspect it with the inspector tool, a valuable way to test and debug your server, [to the lesson](/03-GettingStarted/01-first-server/README.md)
 
 - **2 Client**, in this lesson, you will learn how to write a client that can connect to your server, [to the lesson](/03-GettingStarted/02-client/README.md)
 
