@@ -72,37 +72,13 @@ This dependency provides:
 Build the project using the Maven wrapper:
 
 ```cmd
-.\mvnw clean compile
+.\mvnw clean install
 ```
 
 ## Running the Client
 
-There are several ways to run the client:
-
-### Option 1: Run using Maven Exec Plugin (Recommended)
-
 ```cmd
-.\mvnw clean compile exec:java
-```
-
-### Option 2: Run with explicit main class
-
-```cmd
-.\mvnw clean compile exec:java -Dexec.mainClass="com.microsoft.mcp.sample.client.SDKClient"
-```
-
-### Option 3: Build JAR and Run with Classpath
-
-First, build the project and copy dependencies:
-
-```cmd
-.\mvnw clean package dependency:copy-dependencies
-```
-
-Then run with explicit classpath:
-
-```cmd
-java -cp "target\classes;target\dependency\*" com.microsoft.mcp.sample.client.SDKClient
+java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
 **Note**: Make sure the calculator server is running on `http://localhost:8080` before executing any of these commands.
@@ -181,23 +157,6 @@ If you encounter build errors:
 ```cmd
 .\mvnw clean install -DskipTests
 ```
-
-### Maven Thread Warnings
-You may see warnings about lingering threads at the end of execution:
-```
-[WARNING] thread Thread[#XX,reactor-http-nio-X,5,...] will linger despite being asked to die via interruption
-```
-**Solution**: This is normal for reactive applications using WebFlux and doesn't indicate an error. The application completed successfully.
-
-## Next Steps
-
-After running this client successfully, you can:
-
-1. **Modify the calculations** - Change the input values to test different scenarios
-2. **Add error handling** - Handle division by zero or invalid inputs
-3. **Extend functionality** - Add more complex mathematical operations
-4. **Create a GUI** - Build a graphical interface for the calculator
-5. **Add logging** - Implement proper logging instead of console output
 
 ## Learn More
 
