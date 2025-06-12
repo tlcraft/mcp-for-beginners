@@ -1,100 +1,100 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "68c518dbff8a3b127ed2aa934054c56c",
-  "translation_date": "2025-06-11T16:54:05+00:00",
+  "original_hash": "b41174ac781ebf228b2043cbdfc09105",
+  "translation_date": "2025-06-12T00:13:24+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimestreaming/README.md",
   "language_code": "es"
 }
 -->
-# Protocolo de Contexto de Modelo para Transmisión de Datos en Tiempo Real
+# Protocolo de Contexto de Modelo para Streaming de Datos en Tiempo Real
 
-## Visión General
+## Resumen
 
-La transmisión de datos en tiempo real se ha vuelto esencial en el mundo actual impulsado por datos, donde empresas y aplicaciones requieren acceso inmediato a la información para tomar decisiones oportunas. El Protocolo de Contexto de Modelo (MCP) representa un avance significativo en la optimización de estos procesos de transmisión en tiempo real, mejorando la eficiencia del procesamiento de datos, manteniendo la integridad contextual y elevando el rendimiento general del sistema.
+El streaming de datos en tiempo real se ha vuelto esencial en el mundo actual orientado a los datos, donde empresas y aplicaciones necesitan acceso inmediato a la información para tomar decisiones oportunas. El Protocolo de Contexto de Modelo (MCP) representa un avance significativo en la optimización de estos procesos de streaming en tiempo real, mejorando la eficiencia del procesamiento de datos, manteniendo la integridad contextual y elevando el rendimiento general del sistema.
 
-Este módulo explora cómo MCP transforma la transmisión de datos en tiempo real al proporcionar un enfoque estandarizado para la gestión del contexto entre modelos de IA, plataformas de transmisión y aplicaciones.
+Este módulo explora cómo MCP transforma el streaming de datos en tiempo real al proporcionar un enfoque estandarizado para la gestión del contexto entre modelos de IA, plataformas de streaming y aplicaciones.
 
-## Introducción a la Transmisión de Datos en Tiempo Real
+## Introducción al Streaming de Datos en Tiempo Real
 
-La transmisión de datos en tiempo real es un paradigma tecnológico que permite la transferencia, procesamiento y análisis continuo de datos a medida que se generan, permitiendo que los sistemas reaccionen inmediatamente a nueva información. A diferencia del procesamiento por lotes tradicional que opera sobre conjuntos de datos estáticos, la transmisión procesa datos en movimiento, entregando insights y acciones con mínima latencia.
+El streaming de datos en tiempo real es un paradigma tecnológico que permite la transferencia, procesamiento y análisis continuo de datos a medida que se generan, permitiendo que los sistemas reaccionen inmediatamente a nueva información. A diferencia del procesamiento por lotes tradicional que opera sobre conjuntos de datos estáticos, el streaming procesa datos en movimiento, entregando insights y acciones con latencia mínima.
 
-### Conceptos Clave de la Transmisión de Datos en Tiempo Real:
+### Conceptos Clave del Streaming de Datos en Tiempo Real:
 
 - **Flujo Continuo de Datos**: Los datos se procesan como un flujo continuo e interminable de eventos o registros.
 - **Procesamiento de Baja Latencia**: Los sistemas están diseñados para minimizar el tiempo entre la generación y el procesamiento de datos.
-- **Escalabilidad**: Las arquitecturas de transmisión deben manejar volúmenes y velocidades variables de datos.
+- **Escalabilidad**: Las arquitecturas de streaming deben manejar volúmenes y velocidades variables de datos.
 - **Tolerancia a Fallos**: Los sistemas deben ser resilientes ante fallos para asegurar un flujo de datos ininterrumpido.
-- **Procesamiento con Estado**: Mantener el contexto a través de eventos es crucial para un análisis significativo.
+- **Procesamiento con Estado**: Mantener el contexto entre eventos es crucial para un análisis significativo.
 
-### El Protocolo de Contexto de Modelo y la Transmisión en Tiempo Real
+### El Protocolo de Contexto de Modelo y el Streaming en Tiempo Real
 
-El Protocolo de Contexto de Modelo (MCP) aborda varios desafíos críticos en entornos de transmisión en tiempo real:
+El Protocolo de Contexto de Modelo (MCP) aborda varios desafíos críticos en entornos de streaming en tiempo real:
 
-1. **Continuidad Contextual**: MCP estandariza cómo se mantiene el contexto entre componentes distribuidos de transmisión, asegurando que los modelos de IA y nodos de procesamiento tengan acceso al contexto histórico y ambiental relevante.
+1. **Continuidad Contextual**: MCP estandariza cómo se mantiene el contexto entre componentes distribuidos de streaming, asegurando que los modelos de IA y nodos de procesamiento tengan acceso a contexto histórico y ambiental relevante.
 
-2. **Gestión Eficiente del Estado**: Al proporcionar mecanismos estructurados para la transmisión del contexto, MCP reduce la sobrecarga en la gestión del estado en las canalizaciones de transmisión.
+2. **Gestión Eficiente del Estado**: Al proporcionar mecanismos estructurados para la transmisión de contexto, MCP reduce la sobrecarga en la gestión del estado en las tuberías de streaming.
 
-3. **Interoperabilidad**: MCP crea un lenguaje común para compartir contexto entre diversas tecnologías de transmisión y modelos de IA, permitiendo arquitecturas más flexibles y extensibles.
+3. **Interoperabilidad**: MCP crea un lenguaje común para compartir contexto entre diversas tecnologías de streaming y modelos de IA, permitiendo arquitecturas más flexibles y extensibles.
 
-4. **Contexto Optimizado para Streaming**: Las implementaciones de MCP pueden priorizar qué elementos de contexto son más relevantes para la toma de decisiones en tiempo real, optimizando tanto el rendimiento como la precisión.
+4. **Contexto Optimizado para Streaming**: Las implementaciones de MCP pueden priorizar qué elementos contextuales son más relevantes para la toma de decisiones en tiempo real, optimizando tanto el rendimiento como la precisión.
 
-5. **Procesamiento Adaptativo**: Con una gestión adecuada del contexto a través de MCP, los sistemas de transmisión pueden ajustar dinámicamente el procesamiento basado en condiciones y patrones cambiantes en los datos.
+5. **Procesamiento Adaptativo**: Con una adecuada gestión del contexto a través de MCP, los sistemas de streaming pueden ajustar dinámicamente el procesamiento según las condiciones y patrones cambiantes en los datos.
 
-En aplicaciones modernas que van desde redes de sensores IoT hasta plataformas de comercio financiero, la integración de MCP con tecnologías de transmisión permite un procesamiento más inteligente y consciente del contexto que responde adecuadamente a situaciones complejas y cambiantes en tiempo real.
+En aplicaciones modernas que van desde redes de sensores IoT hasta plataformas financieras de trading, la integración de MCP con tecnologías de streaming permite un procesamiento más inteligente y consciente del contexto, capaz de responder adecuadamente a situaciones complejas y cambiantes en tiempo real.
 
 ## Objetivos de Aprendizaje
 
 Al finalizar esta lección, podrás:
 
-- Comprender los fundamentos de la transmisión de datos en tiempo real y sus desafíos
-- Explicar cómo el Protocolo de Contexto de Modelo (MCP) mejora la transmisión de datos en tiempo real
-- Implementar soluciones de transmisión basadas en MCP usando frameworks populares como Kafka y Pulsar
-- Diseñar y desplegar arquitecturas de transmisión tolerantes a fallos y de alto rendimiento con MCP
-- Aplicar conceptos de MCP en casos de uso de IoT, comercio financiero y análisis impulsado por IA
-- Evaluar tendencias emergentes e innovaciones futuras en tecnologías de transmisión basadas en MCP
+- Comprender los fundamentos del streaming de datos en tiempo real y sus desafíos
+- Explicar cómo el Protocolo de Contexto de Modelo (MCP) mejora el streaming de datos en tiempo real
+- Implementar soluciones de streaming basadas en MCP usando frameworks populares como Kafka y Pulsar
+- Diseñar y desplegar arquitecturas de streaming tolerantes a fallos y de alto rendimiento con MCP
+- Aplicar conceptos de MCP a casos de uso en IoT, trading financiero y análisis impulsado por IA
+- Evaluar tendencias emergentes e innovaciones futuras en tecnologías de streaming basadas en MCP
 
 ### Definición y Relevancia
 
-La transmisión de datos en tiempo real implica la generación, procesamiento y entrega continua de datos con mínima latencia. A diferencia del procesamiento por lotes, donde los datos se recopilan y procesan en grupos, los datos en streaming se procesan incrementalmente a medida que llegan, permitiendo insights y acciones inmediatas.
+El streaming de datos en tiempo real implica la generación, procesamiento y entrega continua de datos con latencia mínima. A diferencia del procesamiento por lotes, donde los datos se recopilan y procesan en grupos, los datos en streaming se procesan incrementalmente a medida que llegan, permitiendo insights y acciones inmediatas.
 
-Características clave de la transmisión de datos en tiempo real incluyen:
+Características clave del streaming de datos en tiempo real incluyen:
 
-- **Baja Latencia**: Procesar y analizar datos en milisegundos a segundos
-- **Flujo Continuo**: Transmisiones ininterrumpidas de datos desde diversas fuentes
-- **Procesamiento Inmediato**: Analizar datos al momento de su llegada en lugar de en lotes
-- **Arquitectura Orientada a Eventos**: Responder a eventos conforme ocurren
+- **Baja Latencia**: Procesamiento y análisis de datos en milisegundos a segundos
+- **Flujo Continuo**: Streams ininterrumpidos de datos desde diversas fuentes
+- **Procesamiento Inmediato**: Análisis de datos conforme llegan, no en lotes
+- **Arquitectura Basada en Eventos**: Respuesta a eventos en el momento en que ocurren
 
-### Desafíos en la Transmisión de Datos Tradicional
+### Desafíos en el Streaming Tradicional de Datos
 
-Los enfoques tradicionales de transmisión de datos enfrentan varias limitaciones:
+Los enfoques tradicionales de streaming enfrentan varias limitaciones:
 
-1. **Pérdida de Contexto**: Dificultad para mantener el contexto entre sistemas distribuidos
+1. **Pérdida de Contexto**: Dificultad para mantener el contexto en sistemas distribuidos
 2. **Problemas de Escalabilidad**: Retos para escalar y manejar datos de alto volumen y velocidad
 3. **Complejidad de Integración**: Problemas de interoperabilidad entre diferentes sistemas
 4. **Gestión de Latencia**: Equilibrar el rendimiento con el tiempo de procesamiento
-5. **Consistencia de Datos**: Asegurar la precisión y completitud de los datos a lo largo del flujo
+5. **Consistencia de Datos**: Asegurar precisión y completitud en el flujo de datos
 
-## Entendiendo el Protocolo de Contexto de Modelo (MCP)
+## Comprendiendo el Protocolo de Contexto de Modelo (MCP)
 
 ### ¿Qué es MCP?
 
-El Protocolo de Contexto de Modelo (MCP) es un protocolo de comunicación estandarizado diseñado para facilitar la interacción eficiente entre modelos de IA y aplicaciones. En el contexto de la transmisión de datos en tiempo real, MCP proporciona un marco para:
+El Protocolo de Contexto de Modelo (MCP) es un protocolo de comunicación estandarizado diseñado para facilitar la interacción eficiente entre modelos de IA y aplicaciones. En el contexto del streaming de datos en tiempo real, MCP proporciona un marco para:
 
-- Preservar el contexto a lo largo de la canalización de datos
-- Estandarizar los formatos de intercambio de datos
+- Preservar el contexto a lo largo de la tubería de datos
+- Estandarizar formatos de intercambio de datos
 - Optimizar la transmisión de grandes conjuntos de datos
 - Mejorar la comunicación entre modelos y entre modelos y aplicaciones
 
 ### Componentes Clave y Arquitectura
 
-La arquitectura MCP para transmisión en tiempo real consta de varios componentes principales:
+La arquitectura MCP para streaming en tiempo real consta de varios componentes esenciales:
 
-1. **Manejadores de Contexto**: Gestionan y mantienen la información contextual a lo largo de la canalización de transmisión
-2. **Procesadores de Stream**: Procesan flujos de datos entrantes usando técnicas conscientes del contexto
-3. **Adaptadores de Protocolo**: Convierten entre diferentes protocolos de transmisión preservando el contexto
-4. **Almacenamiento de Contexto**: Guarda y recupera información contextual de manera eficiente
-5. **Conectores de Streaming**: Se conectan a diversas plataformas de transmisión (Kafka, Pulsar, Kinesis, etc.)
+1. **Manejadores de Contexto**: Gestionan y mantienen la información contextual a lo largo de la tubería de streaming
+2. **Procesadores de Stream**: Procesan flujos de datos entrantes utilizando técnicas conscientes del contexto
+3. **Adaptadores de Protocolo**: Convierten entre diferentes protocolos de streaming preservando el contexto
+4. **Almacenamiento de Contexto**: Guarda y recupera información contextual de forma eficiente
+5. **Conectores de Streaming**: Se conectan a diversas plataformas de streaming (Kafka, Pulsar, Kinesis, etc.)
 
 ```mermaid
 graph TD
@@ -166,97 +166,357 @@ graph TD
 
 ### Cómo MCP Mejora el Manejo de Datos en Tiempo Real
 
-MCP aborda los desafíos tradicionales de streaming mediante:
+MCP aborda los desafíos tradicionales del streaming mediante:
 
-- **Integridad Contextual**: Mantener las relaciones entre puntos de datos a lo largo de toda la canalización
+- **Integridad Contextual**: Mantener relaciones entre puntos de datos a lo largo de toda la tubería
 - **Transmisión Optimizada**: Reducir redundancias en el intercambio de datos mediante gestión inteligente del contexto
-- **Interfaces Estandarizadas**: Proporcionar APIs consistentes para componentes de streaming
-- **Reducción de Latencia**: Minimizar la sobrecarga de procesamiento mediante manejo eficiente del contexto
-- **Escalabilidad Mejorada**: Soportar escalado horizontal preservando el contexto
+- **Interfaces Estandarizadas**: Proveer APIs consistentes para componentes de streaming
+- **Reducción de Latencia**: Minimizar la sobrecarga de procesamiento con manejo eficiente del contexto
+- **Escalabilidad Mejorada**: Soportar escalado horizontal manteniendo el contexto
 
 ## Integración e Implementación
 
-Los sistemas de transmisión de datos en tiempo real requieren un diseño arquitectónico cuidadoso y una implementación que mantenga tanto el rendimiento como la integridad contextual. El Protocolo de Contexto de Modelo ofrece un enfoque estandarizado para integrar modelos de IA y tecnologías de streaming, permitiendo canalizaciones de procesamiento más sofisticadas y conscientes del contexto.
+Los sistemas de streaming de datos en tiempo real requieren un diseño arquitectónico cuidadoso para mantener tanto el rendimiento como la integridad contextual. El Protocolo de Contexto de Modelo ofrece un enfoque estandarizado para integrar modelos de IA y tecnologías de streaming, permitiendo pipelines de procesamiento más sofisticados y conscientes del contexto.
 
 ### Visión General de la Integración de MCP en Arquitecturas de Streaming
 
-Implementar MCP en entornos de transmisión en tiempo real implica varias consideraciones clave:
+Implementar MCP en entornos de streaming en tiempo real implica varias consideraciones clave:
 
-1. **Serialización y Transporte de Contexto**: MCP proporciona mecanismos eficientes para codificar la información contextual dentro de los paquetes de datos de streaming, asegurando que el contexto esencial acompañe los datos a lo largo de la canalización de procesamiento. Esto incluye formatos de serialización estandarizados optimizados para transporte en streaming.
+1. **Serialización y Transporte de Contexto**: MCP proporciona mecanismos eficientes para codificar la información contextual dentro de los paquetes de datos en streaming, asegurando que el contexto esencial acompañe a los datos durante todo el pipeline de procesamiento. Esto incluye formatos de serialización estandarizados optimizados para el transporte en streaming.
 
-2. **Procesamiento Stateful en Streams**: MCP permite un procesamiento con estado más inteligente al mantener una representación consistente del contexto entre nodos de procesamiento. Esto es especialmente valioso en arquitecturas distribuidas donde la gestión del estado es tradicionalmente compleja.
+2. **Procesamiento Stateful de Streams**: MCP habilita un procesamiento con estado más inteligente al mantener una representación consistente del contexto entre nodos de procesamiento. Esto es especialmente valioso en arquitecturas de streaming distribuidas donde la gestión del estado es tradicionalmente compleja.
 
 3. **Tiempo de Evento vs. Tiempo de Procesamiento**: Las implementaciones de MCP en sistemas de streaming deben abordar el desafío común de diferenciar cuándo ocurrieron los eventos y cuándo se procesan. El protocolo puede incorporar contexto temporal que preserve la semántica del tiempo de evento.
 
-4. **Gestión de Backpressure**: Al estandarizar el manejo del contexto, MCP ayuda a gestionar el backpressure en sistemas de streaming, permitiendo que los componentes comuniquen sus capacidades de procesamiento y ajusten el flujo en consecuencia.
+4. **Gestión de Backpressure**: Al estandarizar el manejo del contexto, MCP ayuda a gestionar la presión de retorno en sistemas de streaming, permitiendo que los componentes comuniquen sus capacidades de procesamiento y ajusten el flujo en consecuencia.
 
-5. **Ventanas de Contexto y Agregación**: MCP facilita operaciones de ventana más sofisticadas al proporcionar representaciones estructuradas de contextos temporales y relacionales, permitiendo agregaciones más significativas a través de flujos de eventos.
+5. **Ventanas de Contexto y Agregación**: MCP facilita operaciones de ventana más sofisticadas al proporcionar representaciones estructuradas de contextos temporales y relacionales, habilitando agregaciones más significativas a través de flujos de eventos.
 
-6. **Procesamiento Exactly-Once**: En sistemas de streaming que requieren semánticas exactly-once, MCP puede incorporar metadatos de procesamiento para ayudar a rastrear y verificar el estado del procesamiento entre componentes distribuidos.
+6. **Procesamiento Exactly-Once**: En sistemas de streaming que requieren semánticas de procesamiento exactamente una vez, MCP puede incorporar metadatos de procesamiento para ayudar a rastrear y verificar el estado del procesamiento entre componentes distribuidos.
 
-La implementación de MCP en diversas tecnologías de streaming crea un enfoque unificado para la gestión del contexto, reduciendo la necesidad de código de integración personalizado y mejorando la capacidad del sistema para mantener un contexto significativo mientras los datos fluyen a través de la canalización.
+La implementación de MCP en diversas tecnologías de streaming crea un enfoque unificado para la gestión del contexto, reduciendo la necesidad de código de integración personalizado y mejorando la capacidad del sistema para mantener un contexto significativo mientras los datos fluyen por la tubería.
 
-### MCP en Diversos Frameworks de Transmisión de Datos
+### MCP en Diversos Frameworks de Streaming de Datos
 
-MCP puede integrarse con frameworks populares de streaming, incluyendo:
+Estos ejemplos siguen la especificación actual de MCP que se centra en un protocolo basado en JSON-RPC con mecanismos de transporte distintos. El código demuestra cómo implementar transportes personalizados que integran plataformas de streaming como Kafka y Pulsar manteniendo plena compatibilidad con el protocolo MCP.
+
+Los ejemplos están diseñados para mostrar cómo las plataformas de streaming pueden integrarse con MCP para proporcionar procesamiento de datos en tiempo real mientras preservan la conciencia contextual que es central en MCP. Este enfoque asegura que los ejemplos reflejen con precisión el estado actual de la especificación MCP a junio de 2025.
+
+MCP puede integrarse con frameworks de streaming populares incluyendo:
 
 #### Integración con Apache Kafka
 
 ```python
-from mcp_streaming import MCPKafkaConnector
+import asyncio
+import json
+from typing import Dict, Any, Optional
+from confluent_kafka import Consumer, Producer, KafkaError
+from mcp.client import Client, ClientCapabilities
+from mcp.core.message import JsonRpcMessage
+from mcp.core.transports import Transport
 
-# Initialize MCP Kafka connector
-connector = MCPKafkaConnector(
-    bootstrap_servers='localhost:9092',
-    context_preservation=True
-)
-
-# Create a context-aware consumer
-consumer = connector.create_consumer('input-topic')
-
-# Process streaming data with context
-for message in consumer:
-    context = message.get_context()
-    data = message.get_value()
+# Custom transport class to bridge MCP with Kafka
+class KafkaMCPTransport(Transport):
+    def __init__(self, bootstrap_servers: str, input_topic: str, output_topic: str):
+        self.bootstrap_servers = bootstrap_servers
+        self.input_topic = input_topic
+        self.output_topic = output_topic
+        self.producer = Producer({'bootstrap.servers': bootstrap_servers})
+        self.consumer = Consumer({
+            'bootstrap.servers': bootstrap_servers,
+            'group.id': 'mcp-client-group',
+            'auto.offset.reset': 'earliest'
+        })
+        self.message_queue = asyncio.Queue()
+        self.running = False
+        self.consumer_task = None
+        
+    async def connect(self):
+        """Connect to Kafka and start consuming messages"""
+        self.consumer.subscribe([self.input_topic])
+        self.running = True
+        self.consumer_task = asyncio.create_task(self._consume_messages())
+        return self
+        
+    async def _consume_messages(self):
+        """Background task to consume messages from Kafka and queue them for processing"""
+        while self.running:
+            try:
+                msg = self.consumer.poll(1.0)
+                if msg is None:
+                    await asyncio.sleep(0.1)
+                    continue
+                
+                if msg.error():
+                    if msg.error().code() == KafkaError._PARTITION_EOF:
+                        continue
+                    print(f"Consumer error: {msg.error()}")
+                    continue
+                
+                # Parse the message value as JSON-RPC
+                try:
+                    message_str = msg.value().decode('utf-8')
+                    message_data = json.loads(message_str)
+                    mcp_message = JsonRpcMessage.from_dict(message_data)
+                    await self.message_queue.put(mcp_message)
+                except Exception as e:
+                    print(f"Error parsing message: {e}")
+            except Exception as e:
+                print(f"Error in consumer loop: {e}")
+                await asyncio.sleep(1)
     
-    # Process with context awareness
-    result = process_with_context(data, context)
+    async def read(self) -> Optional[JsonRpcMessage]:
+        """Read the next message from the queue"""
+        try:
+            message = await self.message_queue.get()
+            return message
+        except Exception as e:
+            print(f"Error reading message: {e}")
+            return None
     
-    # Produce output with preserved context
-    connector.produce('output-topic', result, context=context)
+    async def write(self, message: JsonRpcMessage) -> None:
+        """Write a message to the Kafka output topic"""
+        try:
+            message_json = json.dumps(message.to_dict())
+            self.producer.produce(
+                self.output_topic,
+                message_json.encode('utf-8'),
+                callback=self._delivery_report
+            )
+            self.producer.poll(0)  # Trigger callbacks
+        except Exception as e:
+            print(f"Error writing message: {e}")
+    
+    def _delivery_report(self, err, msg):
+        """Kafka producer delivery callback"""
+        if err is not None:
+            print(f'Message delivery failed: {err}')
+        else:
+            print(f'Message delivered to {msg.topic()} [{msg.partition()}]')
+    
+    async def close(self) -> None:
+        """Close the transport"""
+        self.running = False
+        if self.consumer_task:
+            self.consumer_task.cancel()
+            try:
+                await self.consumer_task
+            except asyncio.CancelledError:
+                pass
+        self.consumer.close()
+        self.producer.flush()
+
+# Example usage of the Kafka MCP transport
+async def kafka_mcp_example():
+    # Create MCP client with Kafka transport
+    client = Client(
+        {"name": "kafka-mcp-client", "version": "1.0.0"},
+        ClientCapabilities({})
+    )
+    
+    # Create and connect the Kafka transport
+    transport = KafkaMCPTransport(
+        bootstrap_servers="localhost:9092",
+        input_topic="mcp-responses",
+        output_topic="mcp-requests"
+    )
+    
+    await client.connect(transport)
+    
+    try:
+        # Initialize the MCP session
+        await client.initialize()
+        
+        # Example of executing a tool via MCP
+        response = await client.execute_tool(
+            "process_data",
+            {
+                "data": "sample data",
+                "metadata": {
+                    "source": "sensor-1",
+                    "timestamp": "2025-06-12T10:30:00Z"
+                }
+            }
+        )
+        
+        print(f"Tool execution response: {response}")
+        
+        # Clean shutdown
+        await client.shutdown()
+    finally:
+        await transport.close()
+
+# Run the example
+if __name__ == "__main__":
+    asyncio.run(kafka_mcp_example())
 ```
 
-#### Implementación en Apache Pulsar
+#### Implementación con Apache Pulsar
 
 ```python
-from mcp_streaming import MCPPulsarClient
+import asyncio
+import json
+import pulsar
+from typing import Dict, Any, Optional
+from mcp.core.message import JsonRpcMessage
+from mcp.core.transports import Transport
+from mcp.server import Server, ServerOptions
+from mcp.server.tools import Tool, ToolExecutionContext, ToolMetadata
 
-# Initialize MCP Pulsar client
-client = MCPPulsarClient('pulsar://localhost:6650')
+# Create a custom MCP transport that uses Pulsar
+class PulsarMCPTransport(Transport):
+    def __init__(self, service_url: str, request_topic: str, response_topic: str):
+        self.service_url = service_url
+        self.request_topic = request_topic
+        self.response_topic = response_topic
+        self.client = pulsar.Client(service_url)
+        self.producer = self.client.create_producer(response_topic)
+        self.consumer = self.client.subscribe(
+            request_topic,
+            "mcp-server-subscription",
+            consumer_type=pulsar.ConsumerType.Shared
+        )
+        self.message_queue = asyncio.Queue()
+        self.running = False
+        self.consumer_task = None
+    
+    async def connect(self):
+        """Connect to Pulsar and start consuming messages"""
+        self.running = True
+        self.consumer_task = asyncio.create_task(self._consume_messages())
+        return self
+    
+    async def _consume_messages(self):
+        """Background task to consume messages from Pulsar and queue them for processing"""
+        while self.running:
+            try:
+                # Non-blocking receive with timeout
+                msg = self.consumer.receive(timeout_millis=500)
+                
+                # Process the message
+                try:
+                    message_str = msg.data().decode('utf-8')
+                    message_data = json.loads(message_str)
+                    mcp_message = JsonRpcMessage.from_dict(message_data)
+                    await self.message_queue.put(mcp_message)
+                    
+                    # Acknowledge the message
+                    self.consumer.acknowledge(msg)
+                except Exception as e:
+                    print(f"Error processing message: {e}")
+                    # Negative acknowledge if there was an error
+                    self.consumer.negative_acknowledge(msg)
+            except Exception as e:
+                # Handle timeout or other exceptions
+                await asyncio.sleep(0.1)
+    
+    async def read(self) -> Optional[JsonRpcMessage]:
+        """Read the next message from the queue"""
+        try:
+            message = await self.message_queue.get()
+            return message
+        except Exception as e:
+            print(f"Error reading message: {e}")
+            return None
+    
+    async def write(self, message: JsonRpcMessage) -> None:
+        """Write a message to the Pulsar output topic"""
+        try:
+            message_json = json.dumps(message.to_dict())
+            self.producer.send(message_json.encode('utf-8'))
+        except Exception as e:
+            print(f"Error writing message: {e}")
+    
+    async def close(self) -> None:
+        """Close the transport"""
+        self.running = False
+        if self.consumer_task:
+            self.consumer_task.cancel()
+            try:
+                await self.consumer_task
+            except asyncio.CancelledError:
+                pass
+        self.consumer.close()
+        self.producer.close()
+        self.client.close()
 
-# Subscribe with context awareness
-consumer = client.subscribe('input-topic', 'subscription-name', 
-                           context_enabled=True)
+# Define a sample MCP tool that processes streaming data
+@Tool(
+    name="process_streaming_data",
+    description="Process streaming data with context preservation",
+    metadata=ToolMetadata(
+        required_capabilities=["streaming"]
+    )
+)
+async def process_streaming_data(
+    ctx: ToolExecutionContext,
+    data: str,
+    source: str,
+    priority: str = "medium"
+) -> Dict[str, Any]:
+    """
+    Process streaming data while preserving context
+    
+    Args:
+        ctx: Tool execution context
+        data: The data to process
+        source: The source of the data
+        priority: Priority level (low, medium, high)
+        
+    Returns:
+        Dict containing processed results and context information
+    """
+    # Example processing that leverages MCP context
+    print(f"Processing data from {source} with priority {priority}")
+    
+    # Access conversation context from MCP
+    conversation_id = ctx.conversation_id if hasattr(ctx, 'conversation_id') else "unknown"
+    
+    # Return results with enhanced context
+    return {
+        "processed_data": f"Processed: {data}",
+        "context": {
+            "conversation_id": conversation_id,
+            "source": source,
+            "priority": priority,
+            "processing_timestamp": ctx.get_current_time_iso()
+        }
+    }
 
-# Process messages with context preservation
-while True:
-    message = consumer.receive()
-    context = message.get_context()
+# Example MCP server implementation using Pulsar transport
+async def run_mcp_server_with_pulsar():
+    # Create MCP server
+    server = Server(
+        {"name": "pulsar-mcp-server", "version": "1.0.0"},
+        ServerOptions(
+            capabilities={"streaming": True}
+        )
+    )
     
-    # Process with context
-    result = process_with_context(message.data(), context)
+    # Register our tool
+    server.register_tool(process_streaming_data)
     
-    # Acknowledge the message
-    consumer.acknowledge(message)
+    # Create and connect Pulsar transport
+    transport = PulsarMCPTransport(
+        service_url="pulsar://localhost:6650",
+        request_topic="mcp-requests",
+        response_topic="mcp-responses"
+    )
     
-    # Send result with preserved context
-    producer = client.create_producer('output-topic')
-    producer.send(result, context=context)
+    try:
+        # Start the server with the Pulsar transport
+        await server.run(transport)
+    finally:
+        await transport.close()
+
+# Run the server
+if __name__ == "__main__":
+    asyncio.run(run_mcp_server_with_pulsar())
 ```
 
 ### Mejores Prácticas para el Despliegue
 
-Al implementar MCP para transmisión en tiempo real:
+Al implementar MCP para streaming en tiempo real:
 
 1. **Diseñar para Tolerancia a Fallos**:
    - Implementar manejo adecuado de errores
@@ -264,7 +524,7 @@ Al implementar MCP para transmisión en tiempo real:
    - Diseñar procesadores idempotentes
 
 2. **Optimizar para Rendimiento**:
-   - Configurar tamaños de búfer apropiados
+   - Configurar tamaños de buffer apropiados
    - Usar batching cuando sea adecuado
    - Implementar mecanismos de backpressure
 
@@ -278,14 +538,14 @@ Al implementar MCP para transmisión en tiempo real:
    - Usar autenticación y autorización
    - Aplicar controles de acceso adecuados
 
-### MCP en IoT y Edge Computing
+### MCP en IoT y Computación en el Borde
 
-MCP mejora la transmisión en IoT al:
+MCP mejora el streaming en IoT al:
 
-- Preservar el contexto de dispositivos a lo largo de la canalización de procesamiento
-- Permitir transmisión eficiente de datos desde el edge hacia la nube
-- Soportar análisis en tiempo real de flujos de datos IoT
-- Facilitar la comunicación entre dispositivos con contexto
+- Preservar el contexto de dispositivos a lo largo de la tubería de procesamiento
+- Permitir streaming eficiente de datos desde el borde hacia la nube
+- Soportar análisis en tiempo real sobre flujos de datos IoT
+- Facilitar comunicación dispositivo a dispositivo con contexto
 
 Ejemplo: Redes de Sensores en Ciudades Inteligentes  
 ```
@@ -294,12 +554,12 @@ Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → 
 
 ### Rol en Transacciones Financieras y Trading de Alta Frecuencia
 
-MCP ofrece ventajas significativas para la transmisión de datos financieros:
+MCP ofrece ventajas significativas para el streaming de datos financieros:
 
 - Procesamiento de ultra baja latencia para decisiones de trading
 - Mantener el contexto de transacciones durante todo el procesamiento
 - Soportar procesamiento complejo de eventos con conciencia contextual
-- Garantizar consistencia de datos en sistemas de trading distribuidos
+- Asegurar consistencia de datos en sistemas de trading distribuidos
 
 ### Potenciando el Análisis de Datos Impulsado por IA
 
@@ -310,32 +570,32 @@ MCP abre nuevas posibilidades para el análisis en streaming:
 - Extracción de características consciente del contexto
 - Pipelines de inferencia multi-modelo con contexto preservado
 
-## Tendencias Futuras e Innovaciones
+## Tendencias e Innovaciones Futuras
 
 ### Evolución de MCP en Entornos en Tiempo Real
 
-De cara al futuro, anticipamos que MCP evolucionará para abordar:
+De cara al futuro, se espera que MCP evolucione para abordar:
 
 - **Integración con Computación Cuántica**: Preparación para sistemas de streaming basados en computación cuántica
-- **Procesamiento Nativo en Edge**: Llevar más procesamiento consciente del contexto a dispositivos edge
-- **Gestión Autónoma de Streams**: Canalizaciones de streaming auto-optimizables
+- **Procesamiento Nativo en el Borde**: Desplazar más procesamiento consciente del contexto a dispositivos de borde
+- **Gestión Autónoma de Streams**: Pipelines de streaming que se auto-optimicen
 - **Streaming Federado**: Procesamiento distribuido preservando la privacidad
 
 ### Avances Potenciales en Tecnología
 
-Tecnologías emergentes que moldearán el futuro del streaming con MCP:
+Tecnologías emergentes que moldearán el futuro del streaming MCP:
 
 1. **Protocolos de Streaming Optimizados para IA**: Protocolos personalizados diseñados específicamente para cargas de trabajo de IA
 2. **Integración con Computación Neuromórfica**: Computación inspirada en el cerebro para procesamiento de streams
-3. **Streaming Serverless**: Streaming escalable y orientado a eventos sin gestión de infraestructura
-4. **Almacenamientos de Contexto Distribuidos**: Gestión de contexto globalmente distribuida y altamente consistente
+3. **Streaming Serverless**: Streaming escalable y basado en eventos sin gestión de infraestructura
+4. **Almacenes de Contexto Distribuidos**: Gestión de contexto globalmente distribuida pero altamente consistente
 
 ## Ejercicios Prácticos
 
-### Ejercicio 1: Configuración de una Canalización Básica de Streaming con MCP
+### Ejercicio 1: Configuración de una Tubería de Streaming Básica con MCP
 
 En este ejercicio aprenderás a:  
-- Configurar un entorno básico de streaming con MCP  
+- Configurar un entorno básico de streaming MCP  
 - Implementar manejadores de contexto para procesamiento de streams  
 - Probar y validar la preservación del contexto
 
@@ -343,23 +603,23 @@ En este ejercicio aprenderás a:
 
 Crea una aplicación completa que:  
 - Ingesta datos en streaming usando MCP  
-- Procesa el stream manteniendo el contexto  
+- Procesa el flujo manteniendo el contexto  
 - Visualiza resultados en tiempo real
 
 ### Ejercicio 3: Implementación de Procesamiento Complejo de Eventos con MCP
 
 Ejercicio avanzado que cubre:  
 - Detección de patrones en streams  
-- Correlación contextual a través de múltiples streams  
+- Correlación contextual entre múltiples streams  
 - Generación de eventos complejos con contexto preservado
 
 ## Recursos Adicionales
 
-- [Model Context Protocol Specification](https://github.com/microsoft/model-context-protocol) - Especificación oficial y documentación de MCP  
+- [Model Context Protocol Specification](https://github.com/modelcontextprotocol) - Especificación oficial y documentación de MCP  
 - [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Aprende sobre Kafka para procesamiento de streams  
 - [Apache Pulsar](https://pulsar.apache.org/) - Plataforma unificada de mensajería y streaming  
 - [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - Libro completo sobre arquitecturas de streaming  
-- [Microsoft Azure Event Hubs](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about) - Servicio gestionado de streaming de eventos  
+- [Microsoft Azure Event Hubs](https://learn.microsoft.com/azure/event-hubs/event-hubs-about) - Servicio gestionado de streaming de eventos  
 - [MLflow Documentation](https://mlflow.org/docs/latest/index.html) - Para seguimiento y despliegue de modelos ML  
 - [Real-Time Analytics with Apache Storm](https://storm.apache.org/releases/current/index.html) - Framework para computación en tiempo real  
 - [Flink ML](https://nightlies.apache.org/flink/flink-ml-docs-master/) - Biblioteca de machine learning para Apache Flink  
@@ -369,11 +629,11 @@ Ejercicio avanzado que cubre:
 
 Al completar este módulo, serás capaz de:
 
-- Comprender los fundamentos de la transmisión de datos en tiempo real y sus desafíos  
-- Explicar cómo el Protocolo de Contexto de Modelo (MCP) mejora la transmisión de datos en tiempo real  
+- Comprender los fundamentos del streaming de datos en tiempo real y sus desafíos  
+- Explicar cómo el Protocolo de Contexto de Modelo (MCP) mejora el streaming de datos en tiempo real  
 - Implementar soluciones de streaming basadas en MCP usando frameworks populares como Kafka y Pulsar  
 - Diseñar y desplegar arquitecturas de streaming tolerantes a fallos y de alto rendimiento con MCP  
-- Aplicar conceptos de MCP en casos de uso de IoT, comercio financiero y análisis impulsado por IA  
+- Aplicar conceptos de MCP a casos de uso en IoT, trading financiero y análisis impulsado por IA  
 - Evaluar tendencias emergentes e innovaciones futuras en tecnologías de streaming basadas en MCP
 
 ## Qué sigue
@@ -381,4 +641,4 @@ Al completar este módulo, serás capaz de:
 - [6. Community Contributions](../../06-CommunityContributions/README.md)
 
 **Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea derivada del uso de esta traducción.

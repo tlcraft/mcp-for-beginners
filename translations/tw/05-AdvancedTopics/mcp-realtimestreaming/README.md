@@ -1,100 +1,100 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "68c518dbff8a3b127ed2aa934054c56c",
-  "translation_date": "2025-06-11T17:02:17+00:00",
+  "original_hash": "b41174ac781ebf228b2043cbdfc09105",
+  "translation_date": "2025-06-12T00:19:48+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimestreaming/README.md",
   "language_code": "tw"
 }
 -->
-# 即時資料串流的模型上下文協定
+# Model Context Protocol 用於即時資料串流
 
 ## 概覽
 
-在現今以資料為驅動的世界裡，即時資料串流已成為不可或缺的技術，企業和應用程式需要即時取得資訊以做出快速決策。模型上下文協定（MCP）代表了優化即時串流流程的重要突破，提升資料處理效率、維持上下文完整性，並改善整體系統效能。
+即時資料串流在現今數據驅動的世界中變得不可或缺，企業與應用程式需要即時取得資訊以做出及時決策。Model Context Protocol (MCP) 是優化這些即時串流流程的重要進展，提升資料處理效率、維持上下文完整性，並改善整體系統效能。
 
-本單元探討 MCP 如何透過提供跨 AI 模型、串流平台及應用的標準化上下文管理，改變即時資料串流的運作方式。
+本模組探討 MCP 如何透過提供 AI 模型、串流平台與應用間標準化的上下文管理，改變即時資料串流的運作方式。
 
-## 即時資料串流介紹
+## 即時資料串流簡介
 
-即時資料串流是一種技術模式，允許資料在產生的同時持續傳輸、處理與分析，使系統能立即對新資訊做出反應。與傳統批次處理只針對靜態資料集操作不同，串流是在資料流動中處理，提供低延遲的洞察與行動。
+即時資料串流是一種技術範式，允許資料在產生時持續傳輸、處理與分析，使系統能立即對新資訊做出反應。與傳統批次處理針對靜態資料集不同，串流處理的是動態資料，能以極低延遲提供洞察與行動。
 
 ### 即時資料串流的核心概念：
 
-- **連續資料流**：資料以不斷延續的事件或紀錄串流方式處理。
-- **低延遲處理**：系統設計以縮短資料產生到處理的時間。
-- **可擴展性**：串流架構需能應對資料量與速度的變化。
-- **容錯性**：系統必須具備抗故障能力，確保資料流不中斷。
+- **連續資料流**：資料作為不間斷的事件或紀錄串流進行處理。
+- **低延遲處理**：系統設計以最小化資料產生與處理之間的時間。
+- **可擴充性**：串流架構必須能處理變動的資料量與速度。
+- **容錯能力**：系統需具備抗故障能力，確保持續資料流。
 - **有狀態處理**：跨事件維持上下文對有意義的分析至關重要。
 
-### 模型上下文協定與即時串流
+### Model Context Protocol 與即時串流
 
-模型上下文協定（MCP）解決了即時串流環境中的多項關鍵挑戰：
+Model Context Protocol (MCP) 解決即時串流環境中的多項關鍵挑戰：
 
-1. **上下文連續性**：MCP 標準化分散式串流元件間的上下文維護，確保 AI 模型和處理節點能取得相關的歷史與環境上下文。
+1. **上下文連續性**：MCP 標準化分散式串流元件間的上下文維護，確保 AI 模型與處理節點能取得相關的歷史及環境上下文。
 
-2. **高效狀態管理**：透過結構化的上下文傳輸機制，MCP 降低串流管線中狀態管理的負擔。
+2. **有效的狀態管理**：透過提供結構化的上下文傳輸機制，MCP 降低串流管線中狀態管理的負擔。
 
-3. **互通性**：MCP 建立了串流技術與 AI 模型間共享上下文的通用語言，促進更靈活且可擴充的架構。
+3. **互通性**：MCP 建立多元串流技術與 AI 模型間共享上下文的通用語言，促成更彈性且可擴充的架構。
 
-4. **針對串流優化的上下文**：MCP 實作能優先考量對即時決策最關鍵的上下文元素，兼顧效能與準確性。
+4. **針對串流優化的上下文**：MCP 實作可優先處理對即時決策最相關的上下文元素，兼顧效能與準確性。
 
-5. **適應性處理**：有了 MCP 的上下文管理，串流系統可根據資料中不斷變化的條件和模式動態調整處理流程。
+5. **自適應處理**：透過 MCP 的上下文管理，串流系統能根據資料中演變的條件與模式動態調整處理流程。
 
-從物聯網感測網路到金融交易平台，MCP 與串流技術的結合，促使更智慧且具上下文感知的處理，能即時回應複雜且持續演變的情境。
+從物聯網感測網路到金融交易平台，MCP 與串流技術的整合，使系統能以更智慧且具上下文感知的方式，對複雜且持續演變的情境作出即時回應。
 
 ## 學習目標
 
-完成本課程後，你將能：
+完成本課程後，你將能夠：
 
-- 了解即時資料串流的基本原理與挑戰
-- 解釋模型上下文協定（MCP）如何強化即時資料串流
-- 使用 Kafka 與 Pulsar 等熱門框架實作基於 MCP 的串流解決方案
-- 設計並部署具容錯性與高效能的 MCP 串流架構
+- 理解即時資料串流的基本原理及挑戰
+- 說明 Model Context Protocol (MCP) 如何強化即時資料串流
+- 使用 Kafka、Pulsar 等熱門框架實作基於 MCP 的串流解決方案
+- 設計並部署具容錯性且高效能的 MCP 串流架構
 - 將 MCP 概念應用於物聯網、金融交易及 AI 分析案例
-- 評估 MCP 串流技術的未來趨勢與創新
+- 評估 MCP 串流技術的新興趨勢與未來創新
 
 ### 定義與重要性
 
-即時資料串流涉及資料的持續產生、處理與傳遞，且延遲極低。與批次處理將資料收集後分批處理不同，串流資料隨到隨處理，實現即時洞察與行動。
+即時資料串流指的是資料持續產生、處理與傳遞，且延遲極低。與批次處理一次收集並處理一批資料不同，串流資料是隨著資料到達逐步處理，能即時產生洞察與反應。
 
-即時資料串流的關鍵特性包括：
+即時資料串流的主要特性包括：
 
-- **低延遲**：在毫秒到秒的時間內完成資料處理與分析
+- **低延遲**：在毫秒到秒級時間內處理與分析資料
 - **連續流動**：來自多種來源的不間斷資料串流
-- **即時處理**：資料一到即分析，而非批次方式
-- **事件驅動架構**：根據事件發生即時回應
+- **即時處理**：資料到達即時分析，而非批次處理
+- **事件驅動架構**：對事件發生即時回應
 
 ### 傳統資料串流的挑戰
 
-傳統串流方式面臨多項限制：
+傳統資料串流方法面臨多項限制：
 
-1. **上下文遺失**：難以在分散式系統間維持上下文
-2. **擴展性問題**：難以應付高量且高速的資料
-3. **整合複雜**：系統間互通性不足
-4. **延遲管理**：需在吞吐量與處理時間間取得平衡
-5. **資料一致性**：確保串流中資料的準確與完整
+1. **上下文流失**：難以在分散系統間維持上下文
+2. **可擴充性問題**：難以擴展以處理大量且高速資料
+3. **整合複雜度**：不同系統間互通性不足
+4. **延遲管理**：在吞吐量與處理時間間取得平衡
+5. **資料一致性**：確保資料在串流中準確且完整
 
-## 了解模型上下文協定（MCP）
+## 理解 Model Context Protocol (MCP)
 
-### 什麼是 MCP？
+### MCP 是什麼？
 
-模型上下文協定（MCP）是一套標準化的通訊協定，旨在促進 AI 模型與應用間的高效互動。在即時資料串流領域，MCP 提供了：
+Model Context Protocol (MCP) 是一種標準化的通訊協議，旨在促進 AI 模型與應用間的高效互動。在即時資料串流的背景下，MCP 提供：
 
-- 保留資料管線中的上下文
+- 在整個資料管線中保留上下文
 - 標準化資料交換格式
-- 優化大量資料傳輸
-- 強化模型間及模型與應用間的溝通
+- 優化大量資料的傳輸
+- 強化模型間與模型與應用間的溝通
 
-### 核心元件與架構
+### 核心組件與架構
 
-即時串流的 MCP 架構包含以下主要元件：
+即時串流的 MCP 架構包含以下主要組件：
 
-1. **上下文處理器**：管理並維護串流管線中的上下文資訊
-2. **串流處理器**：使用上下文感知技術處理進入的資料串流
-3. **協定轉換器**：在不同串流協定間轉換並保留上下文
-4. **上下文存儲**：高效存取上下文資訊
-5. **串流連接器**：連接多種串流平台（Kafka、Pulsar、Kinesis 等）
+1. **Context Handlers**：管理並維持串流管線中的上下文資訊
+2. **Stream Processors**：使用上下文感知技術處理進來的資料串流
+3. **Protocol Adapters**：在不同串流協議間轉換並保留上下文
+4. **Context Store**：有效儲存與檢索上下文資訊
+5. **Streaming Connectors**：連接各種串流平台（Kafka、Pulsar、Kinesis 等）
 
 ```mermaid
 graph TD
@@ -164,106 +164,366 @@ graph TD
     class DA,Alerts,DL,API apps
 ```
 
-### MCP 如何提升即時資料處理
+### MCP 如何改善即時資料處理
 
 MCP 透過以下方式解決傳統串流挑戰：
 
-- **上下文完整性**：維持整個管線中資料點間的關聯
-- **優化傳輸**：透過智慧的上下文管理減少資料交換冗餘
+- **上下文完整性**：維持資料點間在整個管線的關聯
+- **優化傳輸**：透過智慧上下文管理降低資料交換冗餘
 - **標準化介面**：為串流元件提供一致的 API
-- **降低延遲**：有效的上下文處理減少處理負擔
-- **強化擴展性**：支援橫向擴展同時保留上下文
+- **降低延遲**：透過有效的上下文處理減少處理負擔
+- **提升可擴充性**：支援橫向擴展同時維持上下文
 
 ## 整合與實作
 
-即時資料串流系統需謹慎設計架構與實作，以兼顧效能與上下文完整性。模型上下文協定提供標準化方案，整合 AI 模型與串流技術，打造更先進且具上下文感知的處理管線。
+即時資料串流系統需謹慎設計架構與實作，以兼顧效能與上下文完整性。Model Context Protocol 提供一套標準化方式整合 AI 模型與串流技術，使得串流管線更具上下文感知與智慧。
 
-### MCP 在串流架構的整合概覽
+### MCP 在串流架構中的整合概覽
 
-在即時串流環境中實作 MCP 時需考慮：
+在即時串流環境實作 MCP 時需考量：
 
-1. **上下文序列化與傳輸**：MCP 提供高效機制，將上下文編碼於串流資料封包中，確保重要上下文隨資料在處理管線中傳遞。包含為串流傳輸優化的標準序列化格式。
+1. **上下文序列化與傳輸**：MCP 提供有效機制，將上下文資訊編碼在串流資料包中，確保關鍵上下文隨資料流動。包含針對串流傳輸優化的標準化序列化格式。
 
-2. **有狀態串流處理**：MCP 透過維持一致的上下文表示，促進更智慧的有狀態處理，特別是在分散式串流架構中，狀態管理向來不易。
+2. **有狀態串流處理**：MCP 透過維持一致的上下文表示，提升有狀態處理智慧，對於分散式串流架構中傳統難以管理的狀態管理尤其重要。
 
-3. **事件時間與處理時間**：MCP 實作須解決事件發生時間與處理時間的區分，協定可納入保存事件時間語意的時間上下文。
+3. **事件時間與處理時間**：MCP 實作需處理事件發生時間與處理時間的區別，協議可包含保留事件時間語意的時間上下文。
 
-4. **背壓管理**：標準化上下文處理助於管理串流系統背壓，使元件能溝通處理能力並調整資料流。
+4. **背壓管理**：標準化上下文處理幫助管理串流系統背壓，使元件能溝通處理能力並調整資料流。
 
-5. **上下文窗口與彙整**：MCP 提供結構化時間與關聯上下文表示，促進更有意義的事件串流彙整與窗口操作。
+5. **上下文視窗與聚合**：MCP 透過提供結構化的時間與關聯上下文表示，促進更有意義的視窗與聚合運算。
 
-6. **精確一次處理**：對需要精確一次語意的串流系統，MCP 可納入處理元資料，協助追蹤並驗證分散式元件的處理狀態。
+6. **Exactly-Once 處理**：在需要精確一次語意的串流系統中，MCP 可包含處理元資料，協助追蹤與驗證分散元件的處理狀態。
 
-MCP 在多種串流技術的實作，建立了統一的上下文管理方法，減少客製化整合程式碼需求，同時提升系統在資料流動中維持有意義上下文的能力。
+MCP 在各種串流技術的實作，創造統一的上下文管理方式，減少客製整合程式碼，同時提升系統維持有意義上下文的能力。
 
-### MCP 在各種資料串流框架的應用
+### MCP 在多種資料串流框架中的應用
 
-MCP 可整合於多種熱門串流框架，包括：
+以下範例依據目前 MCP 規範，採用 JSON-RPC 為基礎協議並搭配不同傳輸機制。程式碼示範如何實作自訂傳輸，整合 Kafka 與 Pulsar 等串流平台，同時完全相容 MCP 協議。
+
+這些範例展示如何將串流平台與 MCP 整合，提供即時資料處理並保留 MCP 核心的上下文感知。此方法確保程式碼範例準確反映 2025 年 6 月的 MCP 規範狀態。
+
+MCP 可整合的熱門串流框架包括：
 
 #### Apache Kafka 整合
 
 ```python
-from mcp_streaming import MCPKafkaConnector
+import asyncio
+import json
+from typing import Dict, Any, Optional
+from confluent_kafka import Consumer, Producer, KafkaError
+from mcp.client import Client, ClientCapabilities
+from mcp.core.message import JsonRpcMessage
+from mcp.core.transports import Transport
 
-# Initialize MCP Kafka connector
-connector = MCPKafkaConnector(
-    bootstrap_servers='localhost:9092',
-    context_preservation=True
-)
-
-# Create a context-aware consumer
-consumer = connector.create_consumer('input-topic')
-
-# Process streaming data with context
-for message in consumer:
-    context = message.get_context()
-    data = message.get_value()
+# Custom transport class to bridge MCP with Kafka
+class KafkaMCPTransport(Transport):
+    def __init__(self, bootstrap_servers: str, input_topic: str, output_topic: str):
+        self.bootstrap_servers = bootstrap_servers
+        self.input_topic = input_topic
+        self.output_topic = output_topic
+        self.producer = Producer({'bootstrap.servers': bootstrap_servers})
+        self.consumer = Consumer({
+            'bootstrap.servers': bootstrap_servers,
+            'group.id': 'mcp-client-group',
+            'auto.offset.reset': 'earliest'
+        })
+        self.message_queue = asyncio.Queue()
+        self.running = False
+        self.consumer_task = None
+        
+    async def connect(self):
+        """Connect to Kafka and start consuming messages"""
+        self.consumer.subscribe([self.input_topic])
+        self.running = True
+        self.consumer_task = asyncio.create_task(self._consume_messages())
+        return self
+        
+    async def _consume_messages(self):
+        """Background task to consume messages from Kafka and queue them for processing"""
+        while self.running:
+            try:
+                msg = self.consumer.poll(1.0)
+                if msg is None:
+                    await asyncio.sleep(0.1)
+                    continue
+                
+                if msg.error():
+                    if msg.error().code() == KafkaError._PARTITION_EOF:
+                        continue
+                    print(f"Consumer error: {msg.error()}")
+                    continue
+                
+                # Parse the message value as JSON-RPC
+                try:
+                    message_str = msg.value().decode('utf-8')
+                    message_data = json.loads(message_str)
+                    mcp_message = JsonRpcMessage.from_dict(message_data)
+                    await self.message_queue.put(mcp_message)
+                except Exception as e:
+                    print(f"Error parsing message: {e}")
+            except Exception as e:
+                print(f"Error in consumer loop: {e}")
+                await asyncio.sleep(1)
     
-    # Process with context awareness
-    result = process_with_context(data, context)
+    async def read(self) -> Optional[JsonRpcMessage]:
+        """Read the next message from the queue"""
+        try:
+            message = await self.message_queue.get()
+            return message
+        except Exception as e:
+            print(f"Error reading message: {e}")
+            return None
     
-    # Produce output with preserved context
-    connector.produce('output-topic', result, context=context)
+    async def write(self, message: JsonRpcMessage) -> None:
+        """Write a message to the Kafka output topic"""
+        try:
+            message_json = json.dumps(message.to_dict())
+            self.producer.produce(
+                self.output_topic,
+                message_json.encode('utf-8'),
+                callback=self._delivery_report
+            )
+            self.producer.poll(0)  # Trigger callbacks
+        except Exception as e:
+            print(f"Error writing message: {e}")
+    
+    def _delivery_report(self, err, msg):
+        """Kafka producer delivery callback"""
+        if err is not None:
+            print(f'Message delivery failed: {err}')
+        else:
+            print(f'Message delivered to {msg.topic()} [{msg.partition()}]')
+    
+    async def close(self) -> None:
+        """Close the transport"""
+        self.running = False
+        if self.consumer_task:
+            self.consumer_task.cancel()
+            try:
+                await self.consumer_task
+            except asyncio.CancelledError:
+                pass
+        self.consumer.close()
+        self.producer.flush()
+
+# Example usage of the Kafka MCP transport
+async def kafka_mcp_example():
+    # Create MCP client with Kafka transport
+    client = Client(
+        {"name": "kafka-mcp-client", "version": "1.0.0"},
+        ClientCapabilities({})
+    )
+    
+    # Create and connect the Kafka transport
+    transport = KafkaMCPTransport(
+        bootstrap_servers="localhost:9092",
+        input_topic="mcp-responses",
+        output_topic="mcp-requests"
+    )
+    
+    await client.connect(transport)
+    
+    try:
+        # Initialize the MCP session
+        await client.initialize()
+        
+        # Example of executing a tool via MCP
+        response = await client.execute_tool(
+            "process_data",
+            {
+                "data": "sample data",
+                "metadata": {
+                    "source": "sensor-1",
+                    "timestamp": "2025-06-12T10:30:00Z"
+                }
+            }
+        )
+        
+        print(f"Tool execution response: {response}")
+        
+        # Clean shutdown
+        await client.shutdown()
+    finally:
+        await transport.close()
+
+# Run the example
+if __name__ == "__main__":
+    asyncio.run(kafka_mcp_example())
 ```
 
 #### Apache Pulsar 實作
 
 ```python
-from mcp_streaming import MCPPulsarClient
+import asyncio
+import json
+import pulsar
+from typing import Dict, Any, Optional
+from mcp.core.message import JsonRpcMessage
+from mcp.core.transports import Transport
+from mcp.server import Server, ServerOptions
+from mcp.server.tools import Tool, ToolExecutionContext, ToolMetadata
 
-# Initialize MCP Pulsar client
-client = MCPPulsarClient('pulsar://localhost:6650')
+# Create a custom MCP transport that uses Pulsar
+class PulsarMCPTransport(Transport):
+    def __init__(self, service_url: str, request_topic: str, response_topic: str):
+        self.service_url = service_url
+        self.request_topic = request_topic
+        self.response_topic = response_topic
+        self.client = pulsar.Client(service_url)
+        self.producer = self.client.create_producer(response_topic)
+        self.consumer = self.client.subscribe(
+            request_topic,
+            "mcp-server-subscription",
+            consumer_type=pulsar.ConsumerType.Shared
+        )
+        self.message_queue = asyncio.Queue()
+        self.running = False
+        self.consumer_task = None
+    
+    async def connect(self):
+        """Connect to Pulsar and start consuming messages"""
+        self.running = True
+        self.consumer_task = asyncio.create_task(self._consume_messages())
+        return self
+    
+    async def _consume_messages(self):
+        """Background task to consume messages from Pulsar and queue them for processing"""
+        while self.running:
+            try:
+                # Non-blocking receive with timeout
+                msg = self.consumer.receive(timeout_millis=500)
+                
+                # Process the message
+                try:
+                    message_str = msg.data().decode('utf-8')
+                    message_data = json.loads(message_str)
+                    mcp_message = JsonRpcMessage.from_dict(message_data)
+                    await self.message_queue.put(mcp_message)
+                    
+                    # Acknowledge the message
+                    self.consumer.acknowledge(msg)
+                except Exception as e:
+                    print(f"Error processing message: {e}")
+                    # Negative acknowledge if there was an error
+                    self.consumer.negative_acknowledge(msg)
+            except Exception as e:
+                # Handle timeout or other exceptions
+                await asyncio.sleep(0.1)
+    
+    async def read(self) -> Optional[JsonRpcMessage]:
+        """Read the next message from the queue"""
+        try:
+            message = await self.message_queue.get()
+            return message
+        except Exception as e:
+            print(f"Error reading message: {e}")
+            return None
+    
+    async def write(self, message: JsonRpcMessage) -> None:
+        """Write a message to the Pulsar output topic"""
+        try:
+            message_json = json.dumps(message.to_dict())
+            self.producer.send(message_json.encode('utf-8'))
+        except Exception as e:
+            print(f"Error writing message: {e}")
+    
+    async def close(self) -> None:
+        """Close the transport"""
+        self.running = False
+        if self.consumer_task:
+            self.consumer_task.cancel()
+            try:
+                await self.consumer_task
+            except asyncio.CancelledError:
+                pass
+        self.consumer.close()
+        self.producer.close()
+        self.client.close()
 
-# Subscribe with context awareness
-consumer = client.subscribe('input-topic', 'subscription-name', 
-                           context_enabled=True)
+# Define a sample MCP tool that processes streaming data
+@Tool(
+    name="process_streaming_data",
+    description="Process streaming data with context preservation",
+    metadata=ToolMetadata(
+        required_capabilities=["streaming"]
+    )
+)
+async def process_streaming_data(
+    ctx: ToolExecutionContext,
+    data: str,
+    source: str,
+    priority: str = "medium"
+) -> Dict[str, Any]:
+    """
+    Process streaming data while preserving context
+    
+    Args:
+        ctx: Tool execution context
+        data: The data to process
+        source: The source of the data
+        priority: Priority level (low, medium, high)
+        
+    Returns:
+        Dict containing processed results and context information
+    """
+    # Example processing that leverages MCP context
+    print(f"Processing data from {source} with priority {priority}")
+    
+    # Access conversation context from MCP
+    conversation_id = ctx.conversation_id if hasattr(ctx, 'conversation_id') else "unknown"
+    
+    # Return results with enhanced context
+    return {
+        "processed_data": f"Processed: {data}",
+        "context": {
+            "conversation_id": conversation_id,
+            "source": source,
+            "priority": priority,
+            "processing_timestamp": ctx.get_current_time_iso()
+        }
+    }
 
-# Process messages with context preservation
-while True:
-    message = consumer.receive()
-    context = message.get_context()
+# Example MCP server implementation using Pulsar transport
+async def run_mcp_server_with_pulsar():
+    # Create MCP server
+    server = Server(
+        {"name": "pulsar-mcp-server", "version": "1.0.0"},
+        ServerOptions(
+            capabilities={"streaming": True}
+        )
+    )
     
-    # Process with context
-    result = process_with_context(message.data(), context)
+    # Register our tool
+    server.register_tool(process_streaming_data)
     
-    # Acknowledge the message
-    consumer.acknowledge(message)
+    # Create and connect Pulsar transport
+    transport = PulsarMCPTransport(
+        service_url="pulsar://localhost:6650",
+        request_topic="mcp-requests",
+        response_topic="mcp-responses"
+    )
     
-    # Send result with preserved context
-    producer = client.create_producer('output-topic')
-    producer.send(result, context=context)
+    try:
+        # Start the server with the Pulsar transport
+        await server.run(transport)
+    finally:
+        await transport.close()
+
+# Run the server
+if __name__ == "__main__":
+    asyncio.run(run_mcp_server_with_pulsar())
 ```
 
-### 部署最佳實踐
+### 部署最佳實務
 
-實作 MCP 於即時串流時，建議：
+實作 MCP 用於即時串流時：
 
 1. **設計容錯機制**：
-   - 適當錯誤處理
-   - 失敗訊息使用死信佇列
+   - 實作適當錯誤處理
+   - 使用死信佇列處理失敗訊息
    - 設計冪等處理器
 
-2. **效能優化**：
+2. **優化效能**：
    - 配置合適的緩衝區大小
    - 適當使用批次處理
    - 實作背壓機制
@@ -276,112 +536,112 @@ while True:
 4. **保障串流安全**：
    - 對敏感資料加密
    - 使用身份驗證與授權
-   - 實施適當存取控制
+   - 實施適當的存取控制
 
 ### MCP 在物聯網與邊緣運算的應用
 
 MCP 強化物聯網串流：
 
-- 保留設備上下文於處理管線中
+- 在處理管線中保留裝置上下文
 - 支援高效的邊緣到雲端資料串流
-- 支援物聯網資料的即時分析
-- 促進設備間具上下文的通訊
+- 支援即時物聯網資料分析
+- 促進具上下文的裝置間通訊
 
 範例：智慧城市感測網路  
 ```
 Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → Automated Responses
 ```
 
-### 在金融交易與高頻交易中的角色
+### 在金融交易與高頻交易的角色
 
-MCP 對金融資料串流帶來重要優勢：
+MCP 為金融資料串流帶來顯著優勢：
 
-- 超低延遲的交易決策處理
-- 維持交易上下文貫穿整個處理流程
+- 極低延遲的交易決策處理
+- 在整個處理過程中維持交易上下文
 - 支援具上下文感知的複雜事件處理
-- 確保分散式交易系統資料一致性
+- 確保分散交易系統間資料一致性
 
 ### 強化 AI 驅動的資料分析
 
-MCP 為串流分析開啟新可能：
+MCP 為串流分析創造新可能：
 
 - 即時模型訓練與推論
-- 從串流資料持續學習
+- 持續從串流資料學習
 - 上下文感知的特徵擷取
-- 保留上下文的多模型推論管線
+- 多模型推論管線並保留上下文
 
 ## 未來趨勢與創新
 
 ### MCP 在即時環境的演進
 
-展望未來，預期 MCP 將朝向：
+展望未來，預期 MCP 將發展以因應：
 
-- **量子運算整合**：為量子基礎串流系統做準備
+- **量子運算整合**：為量子基串流系統做準備
 - **邊緣原生處理**：將更多上下文感知處理移至邊緣裝置
-- **自動化串流管理**：自我優化的串流管線
-- **聯邦串流**：在保護隱私的前提下分散式處理
+- **自主串流管理**：自我優化的串流管線
+- **聯邦串流**：在維護隱私的前提下分散式處理
 
-### 潛在技術進展
+### 技術潛在進展
 
 將塑造 MCP 串流未來的新興技術：
 
-1. **AI 優化串流協定**：專為 AI 工作負載設計的客製協定
-2. **神經形態運算整合**：腦啟發運算用於串流處理
-3. **無伺服器串流**：事件驅動、可擴展且無基礎設施管理的串流
-4. **分散式上下文存儲**：全球分散且高度一致的上下文管理
+1. **AI 優化串流協議**：專為 AI 工作負載設計的客製協議
+2. **神經形態運算整合**：模仿大腦的串流處理運算
+3. **無伺服器串流**：事件驅動且可擴展的無基礎架構管理串流
+4. **分散式上下文儲存**：全球分布且高度一致的上下文管理
 
 ## 實作練習
 
 ### 練習 1：建立基本 MCP 串流管線
 
-本練習將教你如何：
+本練習將學習如何：
 
 - 配置基本 MCP 串流環境
-- 實作串流處理的上下文處理器
-- 測試並驗證上下文保存
+- 實作串流處理的上下文管理器
+- 測試並驗證上下文保留
 
-### 練習 2：打造即時分析儀表板
+### 練習 2：建置即時分析儀表板
 
-建立完整應用：
+建立完整應用程式，能：
 
-- 使用 MCP 攝取串流資料
-- 維持上下文進行串流處理
+- 使用 MCP 接收串流資料
+- 在處理串流時維持上下文
 - 即時視覺化結果
 
-### 練習 3：使用 MCP 實作複雜事件處理
+### 練習 3：用 MCP 實作複雜事件處理
 
 進階練習涵蓋：
 
-- 串流中模式偵測
+- 串流中的模式偵測
 - 多串流間的上下文關聯
-- 產生保留上下文的複雜事件
+- 產生具保留上下文的複雜事件
 
-## 其他資源
+## 參考資源
 
-- [Model Context Protocol Specification](https://github.com/microsoft/model-context-protocol) - 官方 MCP 規範與文件
-- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Kafka 串流處理相關資源
+- [Model Context Protocol Specification](https://github.com/modelcontextprotocol) - 官方 MCP 規範與文件
+- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Kafka 串流處理教學
 - [Apache Pulsar](https://pulsar.apache.org/) - 統一訊息與串流平台
-- [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - 串流架構綜合書籍
-- [Microsoft Azure Event Hubs](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about) - 託管式事件串流服務
+- [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - 串流架構全面指南
+- [Microsoft Azure Event Hubs](https://learn.microsoft.com/azure/event-hubs/event-hubs-about) - 管理式事件串流服務
 - [MLflow Documentation](https://mlflow.org/docs/latest/index.html) - 機器學習模型追蹤與部署
 - [Real-Time Analytics with Apache Storm](https://storm.apache.org/releases/current/index.html) - 即時計算處理框架
-- [Flink ML](https://nightlies.apache.org/flink/flink-ml-docs-master/) - Apache Flink 的機器學習函式庫
-- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - 建立大型語言模型應用
+- [Flink ML](https://nightlies.apache.org/flink/flink-ml-docs-master/) - Apache Flink 機器學習函式庫
+- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - 使用大型語言模型建置應用程式
 
 ## 學習成果
 
-完成本單元後，你將能：
+完成本模組後，你將能：
 
-- 了解即時資料串流的基礎與挑戰
-- 說明模型上下文協定（MCP）如何增強即時串流
-- 使用 Kafka 與 Pulsar 等框架實作 MCP 串流解決方案
-- 設計並部署具容錯性與高效能的 MCP 串流架構
-- 將 MCP 概念應用於物聯網、金融交易及 AI 分析場景
-- 評估 MCP 串流技術的未來趨勢與創新
+- 理解即時資料串流的基本原理及挑戰
+- 說明 Model Context Protocol (MCP) 如何強化即時資料串流
+- 使用 Kafka、Pulsar 等熱門框架實作基於 MCP 的串流解決方案
+- 設計並部署具容錯性且高效能的 MCP 串流架構
+- 將 MCP 概念應用於物聯網、金融交易及 AI 分析案例
+- 評估 MCP 串流技術的新興趨勢與未來創新
 
 ## 下一步
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [6. 社群貢獻](../../06-CommunityContributions/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 所翻譯。雖然我們致力於翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤譯負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於翻譯的準確性，但請注意，自動翻譯可能會包含錯誤或不精確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯所產生之任何誤解或誤譯負責。
