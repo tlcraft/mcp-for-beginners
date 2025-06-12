@@ -199,18 +199,127 @@ dotnet add package Microsoft.Extensions.Hosting
 <details>
 <summary>Java</summary>
 
-Add the following dependency to the *pom.xml* file:
+For Java, create a Spring Boot project:
 
-```java
-# Using Maven
-<dependency>
-    <groupId>io.modelcontextprotocol</groupId>
-    <artifactId>mcp-sdk</artifactId>
-    <version>latest</version>
-</dependency>
+```bash
+curl https://start.spring.io/starter.zip \
+  -d dependencies=web \
+  -d javaVersion=21 \
+  -d type=maven-project \
+  -d groupId=com.example \
+  -d artifactId=calculator-server \
+  -d name=McpServer \
+  -d packageName=com.microsoft.mcp.sample.server \
+  -o calculator-server.zip
+```
 
-# Using Gradle
-implementation 'io.modelcontextprotocol:mcp-sdk:latest'
+Extract the zip file:
+
+```bash
+unzip calculator-server.zip -d calculator-server
+cd calculator-server
+# optional remove the unused test
+rm -rf src/test/java
+```
+
+Add the following complete configuration to your *pom.xml* file:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <!-- Spring Boot parent for dependency management -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.0</version>
+        <relativePath />
+    </parent>
+
+    <!-- Project coordinates -->
+    <groupId>com.example</groupId>
+    <artifactId>calculator-server</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Calculator Server</name>
+    <description>Basic calculator MCP service for beginners</description>
+
+    <!-- Properties -->
+    <properties>
+        <java.version>21</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+    </properties>
+
+    <!-- Spring AI BOM for version management -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- Dependencies -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-mcp-server-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+			      <groupId>org.springframework.boot</groupId>
+			      <artifactId>spring-boot-starter-test</artifactId>
+			      <scope>test</scope>
+		    </dependency>
+    </dependencies>
+
+    <!-- Build configuration -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <release>21</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Repositories for Spring AI snapshots -->
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>
+</project>
 ```
 
 </details>
@@ -235,6 +344,16 @@ Now that you have your SDK installed, let's create a project next:
   python -m venv venv
   venv\Scripts\activate
   ```
+</details>
+
+<details>
+<summary>Java</summary>
+
+```bash
+cd calculator-server
+./mvnw clean install -DskipTests
+```
+
 </details>
 
 ### -3- Create project files
@@ -292,6 +411,13 @@ Create a file *server.py*
 ```sh
 dotnet new console
 ```
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+For Java Spring Boot projects, the project structure is created automatically.
 
 </details>
 
@@ -355,6 +481,289 @@ builder.Services
 await builder.Build().RunAsync();
 
 // add features
+```
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+For Java, create the core server components. First, modify the main application class:
+
+*src/main/java/com/microsoft/mcp/sample/server/McpServerApplication.java*:
+
+```java
+package com.microsoft.mcp.sample.server;
+
+import org.springframework.ai.tool.ToolCallbackProvider;
+import org.springframework.ai.tool.method.MethodToolCallbackProvider;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import com.microsoft.mcp.sample.server.service.CalculatorService;
+
+@SpringBootApplication
+public class McpServerApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(McpServerApplication.class, args);
+    }
+    
+    @Bean
+    public ToolCallbackProvider calculatorTools(CalculatorService calculator) {
+        return MethodToolCallbackProvider.builder().toolObjects(calculator).build();
+    }
+}
+```
+
+Create the calculator service *src/main/java/com/microsoft/mcp/sample/server/service/CalculatorService.java*:
+
+```java
+package com.microsoft.mcp.sample.server.service;
+
+import org.springframework.ai.tool.annotation.Tool;
+import org.springframework.stereotype.Service;
+
+/**
+ * Service for basic calculator operations.
+ * This service provides simple calculator functionality through MCP.
+ */
+@Service
+public class CalculatorService {
+
+    /**
+     * Add two numbers
+     * @param a The first number
+     * @param b The second number
+     * @return The sum of the two numbers
+     */
+    @Tool(description = "Add two numbers together")
+    public String add(double a, double b) {
+        double result = a + b;
+        return formatResult(a, "+", b, result);
+    }
+
+    /**
+     * Subtract one number from another
+     * @param a The number to subtract from
+     * @param b The number to subtract
+     * @return The result of the subtraction
+     */
+    @Tool(description = "Subtract the second number from the first number")
+    public String subtract(double a, double b) {
+        double result = a - b;
+        return formatResult(a, "-", b, result);
+    }
+
+    /**
+     * Multiply two numbers
+     * @param a The first number
+     * @param b The second number
+     * @return The product of the two numbers
+     */
+    @Tool(description = "Multiply two numbers together")
+    public String multiply(double a, double b) {
+        double result = a * b;
+        return formatResult(a, "*", b, result);
+    }
+
+    /**
+     * Divide one number by another
+     * @param a The numerator
+     * @param b The denominator
+     * @return The result of the division
+     */
+    @Tool(description = "Divide the first number by the second number")
+    public String divide(double a, double b) {
+        if (b == 0) {
+            return "Error: Cannot divide by zero";
+        }
+        double result = a / b;
+        return formatResult(a, "/", b, result);
+    }
+
+    /**
+     * Calculate the power of a number
+     * @param base The base number
+     * @param exponent The exponent
+     * @return The result of raising the base to the exponent
+     */
+    @Tool(description = "Calculate the power of a number (base raised to an exponent)")
+    public String power(double base, double exponent) {
+        double result = Math.pow(base, exponent);
+        return formatResult(base, "^", exponent, result);
+    }
+
+    /**
+     * Calculate the square root of a number
+     * @param number The number to find the square root of
+     * @return The square root of the number
+     */
+    @Tool(description = "Calculate the square root of a number")
+    public String squareRoot(double number) {
+        if (number < 0) {
+            return "Error: Cannot calculate square root of a negative number";
+        }
+        double result = Math.sqrt(number);
+        return String.format("√%.2f = %.2f", number, result);
+    }
+
+    /**
+     * Calculate the modulus (remainder) of division
+     * @param a The dividend
+     * @param b The divisor
+     * @return The remainder of the division
+     */
+    @Tool(description = "Calculate the remainder when one number is divided by another")
+    public String modulus(double a, double b) {
+        if (b == 0) {
+            return "Error: Cannot divide by zero";
+        }
+        double result = a % b;
+        return formatResult(a, "%", b, result);
+    }
+
+    /**
+     * Calculate the absolute value of a number
+     * @param number The number to find the absolute value of
+     * @return The absolute value of the number
+     */
+    @Tool(description = "Calculate the absolute value of a number")
+    public String absolute(double number) {
+        double result = Math.abs(number);
+        return String.format("|%.2f| = %.2f", number, result);
+    }
+
+    /**
+     * Get help about available calculator operations
+     * @return Information about available operations
+     */
+    @Tool(description = "Get help about available calculator operations")
+    public String help() {
+        return "Basic Calculator MCP Service\n\n" +
+               "Available operations:\n" +
+               "1. add(a, b) - Adds two numbers\n" +
+               "2. subtract(a, b) - Subtracts the second number from the first\n" +
+               "3. multiply(a, b) - Multiplies two numbers\n" +
+               "4. divide(a, b) - Divides the first number by the second\n" +
+               "5. power(base, exponent) - Raises a number to a power\n" +
+               "6. squareRoot(number) - Calculates the square root\n" + 
+               "7. modulus(a, b) - Calculates the remainder of division\n" +
+               "8. absolute(number) - Calculates the absolute value\n\n" +
+               "Example usage: add(5, 3) will return 5 + 3 = 8";
+    }
+
+    /**
+     * Format the result of a calculation
+     */
+    private String formatResult(double a, String operator, double b, double result) {
+        return String.format("%.2f %s %.2f = %.2f", a, operator, b, result);
+    }
+}
+```
+
+**Optional components for a production-ready service:**
+
+Create a startup configuration *src/main/java/com/microsoft/mcp/sample/server/config/StartupConfig.java*:
+
+```java
+package com.microsoft.mcp.sample.server.config;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class StartupConfig {
+    
+    @Bean
+    public CommandLineRunner startupInfo() {
+        return args -> {
+            System.out.println("\n" + "=".repeat(60));
+            System.out.println("Calculator MCP Server is starting...");
+            System.out.println("SSE endpoint: http://localhost:8080/sse");
+            System.out.println("Health check: http://localhost:8080/actuator/health");
+            System.out.println("=".repeat(60) + "\n");
+        };
+    }
+}
+```
+
+Create a health controller *src/main/java/com/microsoft/mcp/sample/server/controller/HealthController.java*:
+
+```java
+package com.microsoft.mcp.sample.server.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+
+@RestController
+public class HealthController {
+    
+    @GetMapping("/health")
+    public ResponseEntity<Map<String, Object>> healthCheck() {
+        Map<String, Object> response = new HashMap<>();
+        response.put("status", "UP");
+        response.put("timestamp", LocalDateTime.now().toString());
+        response.put("service", "Calculator MCP Server");
+        return ResponseEntity.ok(response);
+    }
+}
+```
+
+Create an exception handler *src/main/java/com/microsoft/mcp/sample/server/exception/GlobalExceptionHandler.java*:
+
+```java
+package com.microsoft.mcp.sample.server.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ErrorResponse> handleIllegalArgumentException(IllegalArgumentException ex) {
+        ErrorResponse error = new ErrorResponse(
+            "Invalid_Input", 
+            "Invalid input parameter: " + ex.getMessage());
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
+    public static class ErrorResponse {
+        private String code;
+        private String message;
+
+        public ErrorResponse(String code, String message) {
+            this.code = code;
+            this.message = message;
+        }
+
+        // Getters
+        public String getCode() { return code; }
+        public String getMessage() { return message; }
+    }
+}
+```
+
+Create a custom banner *src/main/resources/banner.txt*:
+
+```text
+_____      _            _       _             
+ / ____|    | |          | |     | |            
+| |     __ _| | ___ _   _| | __ _| |_ ___  _ __ 
+| |    / _` | |/ __| | | | |/ _` | __/ _ \| '__|
+| |___| (_| | | (__| |_| | | (_| | || (_) | |   
+ \_____\__,_|_|\___|\__,_|_|\__,_|\__\___/|_|   
+                                                
+Calculator MCP Server v1.0
+Spring Boot MCP Application
 ```
 
 </details>
@@ -442,6 +851,13 @@ public static class CalculatorTool
     public static string Add(int a, int b) => $"Sum {a + b}";
 }
 ```
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+The tools have already been created in the previous step.
 
 </details>
 
@@ -559,6 +975,38 @@ public static class CalculatorTool
 
 </details>
 
+<details>
+<summary>Java</summary>
+
+Your complete main application class should look like this:
+
+```java
+// McpServerApplication.java
+package com.microsoft.mcp.sample.server;
+
+import org.springframework.ai.tool.ToolCallbackProvider;
+import org.springframework.ai.tool.method.MethodToolCallbackProvider;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import com.microsoft.mcp.sample.server.service.CalculatorService;
+
+@SpringBootApplication
+public class McpServerApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(McpServerApplication.class, args);
+    }
+    
+    @Bean
+    public ToolCallbackProvider calculatorTools(CalculatorService calculator) {
+        return MethodToolCallbackProvider.builder().toolObjects(calculator).build();
+    }
+}
+```
+
+</details>
+
 ### -7- Test the server
 
 Start the server with the following command:
@@ -585,6 +1033,16 @@ mcp run server.py
 
 ```sh
 dotnet run
+```
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+```bash
+./mvnw clean install -DskipTests
+java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
 </details>
@@ -630,6 +1088,27 @@ npx @modelcontextprotocol/inspector mcp run server.py
 ```sh
 npx @modelcontextprotocol/inspector dotnet run
 ```
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+Ensure you calculator server is running
+The run the inspector:
+
+```cmd
+npx @modelcontextprotocol/inspector
+```
+
+In the inspector web interface:
+1. Select "SSE" as the transport type
+2. Set the URL to: `http://localhost:8080/sse`
+3. Click "Connect"
+
+![Connect](/03-GettingStarted/01-first-server/assets/tool.png)
+
+The  Java server testing section is completed now
 
 </details>
 
