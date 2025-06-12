@@ -463,4 +463,4 @@ flowchart TB
 
 ## What's next
 
-- [Sampling](../mcp-sampling/README.md)
+- [5.6 Sampling](../mcp-sampling/README.md)

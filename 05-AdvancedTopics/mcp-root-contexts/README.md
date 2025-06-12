@@ -662,4 +662,4 @@ Here are some best practices for managing root contexts effectively:
 
 ## What's next
 
-- [Routing](../mcp-routing/README.md)
+- [5.5 Routing](../mcp-routing/README.md)

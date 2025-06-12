@@ -310,4 +310,4 @@ In the preceding code, we've:
 
 ## What's next
 
-- [Multi modality](../mcp-multi-modality/README.md)
+- [5.2 Multi modality](../mcp-multi-modality/README.md)

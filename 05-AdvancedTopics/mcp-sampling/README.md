@@ -575,4 +575,4 @@ In the preceding code we've:
 
 ## What's next
 
-- [Scaling](../mcp-scaling/README.md)
+- [5.7 Scaling](../mcp-scaling/README.md)

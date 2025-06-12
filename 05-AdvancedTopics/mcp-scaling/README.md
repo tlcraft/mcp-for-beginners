@@ -222,4 +222,4 @@ In the preceding code, we have:
 
 ## What's next
 
-- [Security](../mcp-security/README.md)
+- [5.8 Security](../mcp-security/README.md)
