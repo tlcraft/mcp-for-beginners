@@ -28,6 +28,8 @@ A transport mechanism defines how data is exchanged between the client and serve
 
 ## Streaming: Concepts and Motivation
 
+Understanding the fundamental concepts and motivations behind streaming is essential for implementing effective real-time communication systems.
+
 **Streaming** is a technique in network programming that allows data to be sent and received in small, manageable chunks or as a sequence of events, rather than waiting for an entire response to be ready. This is especially useful for:
 
 - Large files or datasets
@@ -47,6 +49,9 @@ A transport mechanism defines how data is exchanged between the client and serve
 ##### Simple Example: HTTP Streaming Server & Client
 
 **Server (Python, using FastAPI and StreamingResponse):**
+<details>
+<summary>Python</summary>
+
 ```python
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
@@ -64,7 +69,12 @@ def stream():
     return StreamingResponse(event_stream(), media_type="text/event-stream")
 ```
 
+</details>
+
 **Client (Python, using requests):**
+<details>
+<summary>Python</summary>
+
 ```python
 import requests
 
@@ -73,6 +83,8 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
         if line:
             print(line.decode())
 ```
+
+</details>
 
 This example demonstrates a server sending a series of messages to the client as they become available, rather than waiting for all messages to be ready.
 
@@ -98,19 +110,19 @@ This example demonstrates a server sending a series of messages to the client as
 
 ### Key Differences Observed
 
-1. **Communication Pattern:**
+- **Communication Pattern:**
    - Classic HTTP streaming: Uses simple chunked transfer encoding to send data in chunks
    - MCP streaming: Uses a structured notification system with JSON-RPC protocol
 
-2. **Message Format:**
+- **Message Format:**
    - Classic HTTP: Plain text chunks with newlines
    - MCP: Structured LoggingMessageNotification objects with metadata
 
-3. **Client Implementation:**
+- **Client Implementation:**
    - Classic HTTP: Simple client that processes streaming responses
    - MCP: More sophisticated client with a message handler to process different types of messages
 
-4. **Progress Updates:**
+- **Progress Updates:**
    - Classic HTTP: The progress is part of the main response stream
    - MCP: Progress is sent via separate notification messages while the main response comes at the end
 
@@ -118,11 +130,11 @@ This example demonstrates a server sending a series of messages to the client as
 
 Based on what we've observed:
 
-1. **For simple streaming needs:** Classic HTTP streaming is simpler to implement and sufficient for basic streaming needs.
+- **For simple streaming needs:** Classic HTTP streaming is simpler to implement and sufficient for basic streaming needs.
 
-2. **For complex, interactive applications:** MCP streaming provides a more structured approach with richer metadata and separation between notifications and final results.
+- **For complex, interactive applications:** MCP streaming provides a more structured approach with richer metadata and separation between notifications and final results.
 
-3. **For AI applications:** MCP's notification system is particularly useful for long-running AI tasks where you want to keep users informed of progress.
+- **For AI applications:** MCP's notification system is particularly useful for long-running AI tasks where you want to keep users informed of progress.
 
 ---
 
@@ -154,6 +166,9 @@ This section demonstrates how to implement real-time notifications in your MCP a
 ### Server-side: Sending Notifications
 To send notifications from your MCP tool, use the context object (usually `ctx`) to call methods like `ctx.info()` or `ctx.log()`. These send messages to the client as the server processes a request.
 
+<details>
+<summary>Python</summary>
+
 ```python
 @mcp.tool(description="A tool that sends progress notifications")
 async def process_files(message: str, ctx: Context) -> TextContent:
@@ -163,8 +178,13 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
+</details>
+
 ### Client-side: Receiving Notifications
 The client must implement a message handler to process and display notifications as they arrive.
+
+<details>
+<summary>Python</summary>
 
 ```python
 async def message_handler(message):
@@ -173,6 +193,8 @@ async def message_handler(message):
     else:
         print("SERVER MESSAGE:", message)
 ```
+
+</details>
 
 To enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications.
 
@@ -247,14 +269,14 @@ This section provides a step-by-step guide to building, running, and understandi
 - The `mcp` Python package (install with `pip install mcp`)
 
 ### Installation & Setup
-1. **Create and activate a virtual environment (recommended):**
+- **Create and activate a virtual environment (recommended):**
    ```pwsh
    python -m venv venv
    .\venv\Scripts\Activate.ps1  # On Windows
    # or
    source venv/bin/activate      # On Linux/macOS
    ```
-2. **Install required dependencies:**
+- **Install required dependencies:**
    ```pwsh
    pip install mcp fastapi uvicorn requests
    ```
@@ -264,27 +286,27 @@ This section provides a step-by-step guide to building, running, and understandi
 - **Client:** [client.py](./client.py)
 
 ### Running the Classic HTTP Streaming Server
-1. Navigate to the solution directory:
+- Navigate to the solution directory:
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
-2. Start the classic HTTP streaming server:
+- Start the classic HTTP streaming server:
    ```pwsh
    python server.py
    ```
-3. The server will start and display:
+- The server will start and display:
    ```
    Starting FastAPI server for classic HTTP streaming...
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
 ### Running the Classic HTTP Streaming Client
-1. Open a new terminal (activate the same virtual environment and directory):
+- Open a new terminal (activate the same virtual environment and directory):
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py
    ```
-2. You should see streamed messages printed sequentially:
+- You should see streamed messages printed sequentially:
    ```
    Running classic HTTP streaming client...
    Connecting to http://localhost:8000/stream with message: hello
@@ -297,27 +319,27 @@ This section provides a step-by-step guide to building, running, and understandi
    ```
 
 ### Running the MCP Streaming Server
-1. Navigate to the solution directory:
+- Navigate to the solution directory:
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
-2. Start the MCP server with the streamable-http transport:
+- Start the MCP server with the streamable-http transport:
    ```pwsh
    python server.py mcp
    ```
-3. The server will start and display:
+- The server will start and display:
    ```
    Starting MCP server with streamable-http transport...
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
 ### Running the MCP Streaming Client
-1. Open a new terminal (activate the same virtual environment and directory):
+- Open a new terminal (activate the same virtual environment and directory):
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. You should see notifications printed in real time as the server processes each item:
+- You should see notifications printed in real time as the server processes each item:
    ```
    Running MCP client...
    Starting client...
@@ -331,10 +353,10 @@ This section provides a step-by-step guide to building, running, and understandi
    ```
 
 ### Key Implementation Steps
-1. **Create the MCP server using FastMCP.**
-2. **Define a tool that processes a list and sends notifications using `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+- **Create the MCP server using FastMCP.**
+- **Define a tool that processes a list and sends notifications using `ctx.info()` or `ctx.log()`.**
+- **Run the server with `transport="streamable-http"`.**
+- **Implement a client with a message handler to display notifications as they arrive.**
 
 ### Code Walkthrough
 - The server uses async functions and the MCP context to send progress updates.
@@ -357,10 +379,10 @@ For applications currently using Server-Sent Events (SSE), migrating to Streamab
 - It is the recommended transport for new MCP applications.
 
 ### Migration Steps
-1. **Update server code** to use `transport="streamable-http"` in `mcp.run()`.
-2. **Update client code** to use `streamablehttp_client` instead of SSE client.
-3. **Implement a message handler** in the client to process notifications.
-4. **Test for compatibility** with existing tools and workflows.
+- **Update server code** to use `transport="streamable-http"` in `mcp.run()`.
+- **Update client code** to use `streamablehttp_client` instead of SSE client.
+- **Implement a message handler** in the client to process notifications.
+- **Test for compatibility** with existing tools and workflows.
 
 ### Maintaining Compatibility
 - You can support both SSE and Streamable HTTP by running both transports on different endpoints.
@@ -395,6 +417,9 @@ Progress notifications are real-time messages sent from the server to the client
 - **On the client:** Implement a message handler that listens for and displays notifications as they arrive. This handler distinguishes between notifications and the final result.
 
 **Server Example:**
+<details>
+<summary>Python</summary>
+
 ```python
 @mcp.tool(description="A tool that sends progress notifications")
 async def process_files(message: str, ctx: Context) -> TextContent:
@@ -404,7 +429,12 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
+</details>
+
 **Client Example:**
+<details>
+<summary>Python</summary>
+
 ```python
 async def message_handler(message):
     if isinstance(message, types.ServerNotification):
@@ -413,15 +443,17 @@ async def message_handler(message):
         print("SERVER MESSAGE:", message)
 ```
 
+</details>
+
 ### Assignment: Build Your Own Streaming MCP App
 
 **Scenario:**
 Build an MCP server and client where the server processes a list of items (e.g., files or documents) and sends a notification for each item processed. The client should display each notification as it arrives.
 
 **Steps:**
-1. Implement a server tool that processes a list and sends notifications for each item.
-2. Implement a client with a message handler to display notifications in real time.
-3. Test your implementation by running both server and client, and observe the notifications.
+- Implement a server tool that processes a list and sends notifications for each item.
+- Implement a client with a message handler to display notifications in real time.
+- Test your implementation by running both server and client, and observe the notifications.
 
 You can use the code samples above as a starting point, or refer to the provided [server.py](./server.py) and [client.py](./client.py) in this chapter for a complete implementation.
 
