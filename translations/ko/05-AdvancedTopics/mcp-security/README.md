@@ -1,44 +1,44 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ba9c96a7c7901faa1d26c8ec7ad56d2c",
-  "translation_date": "2025-06-02T20:11:26+00:00",
+  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
+  "translation_date": "2025-06-12T21:42:17+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "ko"
 }
 -->
-# Security Best Practices
+# 보안 모범 사례
 
-보안은 특히 기업 환경에서 MCP 구현에 있어 매우 중요합니다. 도구와 데이터를 무단 접근, 데이터 유출 및 기타 보안 위협으로부터 보호하는 것이 필수적입니다.
+보안은 특히 기업 환경에서 MCP 구현에 매우 중요합니다. 도구와 데이터가 무단 접근, 데이터 유출 및 기타 보안 위협으로부터 보호되도록 하는 것이 중요합니다.
 
-## Introduction
+## 소개
 
-이번 강의에서는 MCP 구현을 위한 보안 모범 사례를 살펴봅니다. 인증 및 권한 부여, 데이터 보호, 안전한 도구 실행, 데이터 프라이버시 규정 준수에 대해 다룹니다.
+이번 강의에서는 MCP 구현을 위한 보안 모범 사례를 살펴봅니다. 인증 및 권한 부여, 데이터 보호, 안전한 도구 실행, 그리고 데이터 개인정보 보호 규정 준수에 대해 다룹니다.
 
-## Learning Objectives
+## 학습 목표
 
-이 강의를 마치면 다음을 할 수 있습니다:
+이 강의를 마치면 다음을 수행할 수 있습니다:
 
-- MCP 서버에 대해 안전한 인증 및 권한 부여 메커니즘을 구현할 수 있습니다.
-- 암호화와 안전한 저장을 통해 민감한 데이터를 보호할 수 있습니다.
-- 적절한 접근 제어를 통해 도구의 안전한 실행을 보장할 수 있습니다.
-- 데이터 보호와 개인정보 보호 규정 준수를 위한 모범 사례를 적용할 수 있습니다.
+- MCP 서버에 대해 안전한 인증 및 권한 부여 메커니즘을 구현합니다.
+- 암호화와 안전한 저장소를 사용하여 민감한 데이터를 보호합니다.
+- 적절한 접근 제어를 통해 도구의 안전한 실행을 보장합니다.
+- 데이터 보호 및 개인정보 보호 규정 준수를 위한 모범 사례를 적용합니다.
 
-## Authentication and Authorization
+## 인증 및 권한 부여
 
-인증과 권한 부여는 MCP 서버 보안에 필수적입니다. 인증은 "당신은 누구인가요?"라는 질문에 답하고, 권한 부여는 "무엇을 할 수 있나요?"라는 질문에 답합니다.
+인증과 권한 부여는 MCP 서버 보안에 필수적입니다. 인증은 "당신은 누구인가요?"에 대한 답변이고, 권한 부여는 "무엇을 할 수 있나요?"에 대한 답변입니다.
 
-.NET과 Java를 사용하여 MCP 서버에서 안전한 인증 및 권한 부여를 구현하는 예제를 살펴보겠습니다.
+.NET과 Java를 사용해 MCP 서버에서 안전한 인증과 권한 부여를 구현하는 예를 살펴보겠습니다.
 
-### .NET Identity Integration
+### .NET Identity 통합
 
-ASP .NET Core Identity는 사용자 인증 및 권한 관리를 위한 강력한 프레임워크를 제공합니다. 이를 MCP 서버와 통합하여 도구와 리소스에 대한 접근을 보호할 수 있습니다.
+ASP .NET Core Identity는 사용자 인증과 권한 관리를 위한 강력한 프레임워크를 제공합니다. 이를 MCP 서버와 통합해 도구와 리소스에 대한 접근을 보호할 수 있습니다.
 
-ASP.NET Core Identity를 MCP 서버에 통합할 때 이해해야 할 주요 개념은 다음과 같습니다:
+ASP.NET Core Identity를 MCP 서버에 통합할 때 이해해야 할 핵심 개념은 다음과 같습니다:
 
-- **Identity Configuration**: 사용자 역할과 클레임을 설정하여 ASP.NET Core Identity를 구성합니다. 클레임은 사용자의 역할이나 권한과 같은 정보 조각으로, 예를 들어 "Admin" 또는 "User"가 있습니다.
-- **JWT Authentication**: JSON Web Token(JWT)을 사용하여 안전한 API 접근을 구현합니다. JWT는 디지털 서명되어 신뢰할 수 있는 JSON 객체 형태로 정보를 안전하게 전송하는 표준입니다.
-- **Authorization Policies**: 사용자 역할에 기반하여 특정 도구에 대한 접근을 제어하는 정책을 정의합니다. MCP는 사용자 역할과 클레임에 따라 어떤 사용자가 어떤 도구에 접근할 수 있는지 권한 정책으로 결정합니다.
+- **Identity 구성**: 사용자 역할과 클레임을 포함한 ASP.NET Core Identity 설정. 클레임은 사용자에 대한 정보 조각으로, 예를 들어 "Admin"이나 "User" 같은 역할 또는 권한을 의미합니다.
+- **JWT 인증**: 안전한 API 접근을 위한 JSON Web Token(JWT) 사용. JWT는 디지털 서명으로 검증 가능하고 신뢰할 수 있는 JSON 객체 형태로 정보를 안전하게 전달하는 표준입니다.
+- **권한 부여 정책**: 사용자 역할에 따라 특정 도구 접근을 제어하는 정책 정의. MCP는 역할과 클레임에 기반해 어떤 사용자가 어떤 도구에 접근할 수 있는지 결정하는 권한 부여 정책을 사용합니다.
 
 ```csharp
 public class SecureMcpStartup
@@ -112,21 +112,21 @@ public class SecureMcpStartup
 위 코드에서는 다음을 수행했습니다:
 
 - 사용자 관리를 위해 ASP.NET Core Identity를 구성했습니다.
-- 안전한 API 접근을 위해 JWT 인증을 설정했습니다. 발행자, 대상, 서명 키 등 토큰 검증 매개변수를 지정했습니다.
-- 사용자 역할에 따라 도구 접근을 제어하는 권한 정책을 정의했습니다. 예를 들어 "CanUseAdminTools" 정책은 "Admin" 역할을 가진 사용자만 접근할 수 있고, "CanUseBasic" 정책은 인증된 사용자만 접근할 수 있습니다.
-- 특정 권한 요구 사항을 가진 MCP 도구를 등록하여 적절한 역할을 가진 사용자만 접근할 수 있도록 했습니다.
+- 안전한 API 접근을 위해 JWT 인증을 설정했습니다. 발행자, 수신자, 서명 키를 포함한 토큰 검증 매개변수를 지정했습니다.
+- 사용자 역할에 따라 도구 접근을 제어하는 권한 부여 정책을 정의했습니다. 예를 들어 "CanUseAdminTools" 정책은 사용자가 "Admin" 역할을 가져야 하며, "CanUseBasic" 정책은 사용자가 인증된 상태여야 합니다.
+- 적절한 역할을 가진 사용자만 접근할 수 있도록 특정 권한 요구 사항과 함께 MCP 도구를 등록했습니다.
 
-### Java Spring Security Integration
+### Java Spring Security 통합
 
-Java에서는 Spring Security를 사용하여 MCP 서버에 대한 안전한 인증 및 권한 부여를 구현합니다. Spring Security는 Spring 애플리케이션과 원활하게 통합되는 포괄적인 보안 프레임워크입니다.
+Java에서는 Spring Security를 사용해 MCP 서버에 대한 안전한 인증과 권한 부여를 구현합니다. Spring Security는 Spring 애플리케이션과 원활하게 통합되는 포괄적인 보안 프레임워크입니다.
 
 핵심 개념은 다음과 같습니다:
 
-- **Spring Security Configuration**: 인증과 권한 부여를 위한 보안 설정 구성.
-- **OAuth2 Resource Server**: MCP 도구에 대한 안전한 접근을 위해 OAuth2 사용. OAuth2는 제3자 서비스가 액세스 토큰을 교환하여 안전한 API 접근을 가능하게 하는 권한 부여 프레임워크입니다.
-- **Security Interceptors**: 도구 실행 시 접근 제어를 강제하는 보안 인터셉터 구현.
-- **Role-Based Access Control**: 특정 도구와 리소스에 대한 접근을 역할 기반으로 제어.
-- **Security Annotations**: 메서드와 엔드포인트를 보호하기 위한 어노테이션 사용.
+- **Spring Security 구성**: 인증과 권한 부여를 위한 보안 설정.
+- **OAuth2 리소스 서버**: MCP 도구에 대한 안전한 접근을 위한 OAuth2 사용. OAuth2는 제3자 서비스가 액세스 토큰을 교환해 안전한 API 접근을 가능하게 하는 권한 부여 프레임워크입니다.
+- **보안 인터셉터**: 도구 실행 시 접근 제어를 적용하는 보안 인터셉터 구현.
+- **역할 기반 접근 제어**: 특정 도구와 리소스 접근을 역할에 따라 제어.
+- **보안 어노테이션**: 메서드와 엔드포인트를 보호하기 위한 어노테이션 사용.
 
 ```java
 @Configuration
@@ -180,18 +180,18 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 위 코드에서는 다음을 수행했습니다:
 
-- MCP 엔드포인트 보안을 위해 Spring Security를 구성했으며, 도구 탐색은 공개 접근을 허용하고 도구 실행은 인증을 요구하도록 설정했습니다.
+- Spring Security를 구성해 MCP 엔드포인트를 보호하고, 도구 검색은 공개 접근을 허용하되 도구 실행은 인증을 요구하도록 했습니다.
 - MCP 도구에 대한 안전한 접근을 처리하기 위해 OAuth2를 리소스 서버로 사용했습니다.
-- 도구 실행 시 접근 제어를 강제하는 보안 인터셉터를 구현하여, 특정 도구 접근 전 사용자 역할과 권한을 확인했습니다.
-- 사용자 역할에 따라 관리자 도구와 민감 데이터 접근을 제한하는 역할 기반 접근 제어를 정의했습니다.
+- 도구 실행 시 사용자 역할과 권한을 확인하는 보안 인터셉터를 구현해 접근 제어를 적용했습니다.
+- 역할 기반 접근 제어를 정의해 관리자 도구와 민감한 데이터 접근을 사용자 역할에 따라 제한했습니다.
 
-## Data Protection and Privacy
+## 데이터 보호 및 개인정보
 
-데이터 보호는 민감한 정보를 안전하게 처리하는 데 매우 중요합니다. 여기에는 개인 식별 정보(PII), 금융 데이터 및 기타 민감 정보를 무단 접근과 유출로부터 보호하는 것이 포함됩니다.
+데이터 보호는 민감한 정보가 안전하게 처리되도록 보장하는 데 필수적입니다. 여기에는 개인 식별 정보(PII), 금융 데이터, 기타 민감 정보가 무단 접근과 유출로부터 보호되는 것이 포함됩니다.
 
-### Python Data Protection Example
+### Python 데이터 보호 예제
 
-Python에서 암호화와 PII 탐지를 사용하여 데이터 보호를 구현하는 예제를 살펴보겠습니다.
+암호화와 PII 탐지를 사용해 Python에서 데이터 보호를 구현하는 예를 살펴보겠습니다.
 
 ```python
 from mcp_server import McpServer
@@ -332,11 +332,11 @@ class SecureCustomerDataTool(Tool):
 - `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
 - Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
 - Defined a `secure_tool` decorator that wraps tool execution to check for PII, log access, and encrypt sensitive data if required.
-- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool`을 구현하여 민감 데이터를 안전하게 처리하도록 했습니다.
+- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool`을 구현해 민감한 데이터를 안전하게 처리하도록 했습니다.
 
-## What's next
+## 다음 단계
 
-- [Web search](../web-search-mcp/README.md)
+- [5.9 Web search](../web-search-mcp/README.md)
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있음을 유의해 주시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 자료로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해서는 당사가 책임지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역은 오류나 부정확한 부분이 있을 수 있음을 유의해 주시기 바랍니다. 원본 문서는 해당 언어의 원문이 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해서는 당사가 책임지지 않습니다.

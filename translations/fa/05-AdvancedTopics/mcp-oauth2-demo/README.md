@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T18:24:46+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-12T21:58:25+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "fa"
 }
 -->
-# نمونه آزمایشی MCP OAuth2
+# دموی MCP OAuth2
 
-این پروژه یک **برنامه‌ی حداقلی Spring Boot** است که همزمان به عنوان:
+این پروژه یک **اپلیکیشن مینیمال Spring Boot** است که هم به عنوان:
 
-* یک **سرور احراز هویت Spring** (صدور توکن‌های دسترسی JWT از طریق جریان `client_credentials`)، و  
-* یک **سرور منابع** (حفاظت از نقطه انتهایی `/hello` خودش) عمل می‌کند.
+* یک **سرور احراز هویت Spring** (که توکن‌های دسترسی JWT را از طریق جریان `client_credentials` صادر می‌کند)، و  
+* یک **سرور منابع** (که نقطه انتهایی `/hello` خود را محافظت می‌کند) عمل می‌کند.
 
-این پروژه شبیه به تنظیمات نشان داده شده در [پست وبلاگ Spring (2 آوریل 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) است.
+این پروژه مشابه تنظیماتی است که در [پست وبلاگ Spring (2 آوریل 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) نشان داده شده است.
 
 ---
 
@@ -38,7 +38,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 شما می‌توانید پیکربندی امنیتی OAuth2 را با مراحل زیر آزمایش کنید:
 
-### 1. اطمینان از اینکه سرور در حال اجرا و ایمن است
+### 1. بررسی اینکه سرور در حال اجرا و امن است
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-نکته: هدر احراز هویت Basic (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret` است.
+توجه: هدر احراز هویت Basic (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. دسترسی به نقطه انتهایی محافظت شده با استفاده از توکن
+### 3. دسترسی به نقطه انتهایی محافظت‌شده با استفاده از توکن
 
 ```bash
 # Using the saved token
@@ -95,8 +95,8 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-نام دامنه کامل ورودی (ingress FQDN) به عنوان **صادرکننده** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`) شما خواهد بود.
+نام دامنه ورودی (ingress FQDN) به عنوان **issuer** شما تبدیل می‌شود (`https://<fqdn>`).  
+Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
@@ -122,7 +122,7 @@ APIM فایل JWKS را دریافت کرده و هر درخواست را اعت
 
 ## گام بعدی چیست
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 ریشه‌های context](../mcp-root-contexts/README.md)
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نواقصی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا برداشت نادرست ناشی از استفاده از این ترجمه نیستیم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما برای دقت تلاش می‌کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل اشتباهات یا نادرستی‌هایی باشند. سند اصلی به زبان بومی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوء تفاهم یا تفسیر نادرستی که از استفاده از این ترجمه ناشی شود، نیستیم.

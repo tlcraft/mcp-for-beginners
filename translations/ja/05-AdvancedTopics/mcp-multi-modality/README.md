@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d0c02b421d63eeb6b261b245acc42f23",
-  "translation_date": "2025-06-02T20:35:07+00:00",
+  "original_hash": "56238122f67d302188668cd1e0371d5c",
+  "translation_date": "2025-06-12T21:37:16+00:00",
   "source_file": "05-AdvancedTopics/mcp-multi-modality/README.md",
   "language_code": "ja"
 }
@@ -13,9 +13,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### マルチモーダル例：マルチモーダル応答生成
 
-## 次に学ぶこと
+## 次に進む
 
-- [Oauth 2](../mcp-oauth2-demo/README.md)
+- [5.3 Oauth 2](../mcp-oauth2-demo/README.md)
 
-**免責事項**：  
-本書類はAI翻訳サービス「Co-op Translator」（https://github.com/Azure/co-op-translator）を使用して翻訳されています。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文（原言語版）が正式な情報源として優先されるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じたいかなる誤解や解釈の相違についても、当方は責任を負いかねます。
+**免責事項**:  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性を期しておりますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があります。原文の言語によるオリジナル文書を正式な情報源としてご参照ください。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じたいかなる誤解や誤訳についても責任を負いかねます。

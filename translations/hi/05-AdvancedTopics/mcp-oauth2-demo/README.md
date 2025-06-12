@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T18:38:22+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-12T22:07:56+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "hi"
 }
 -->
-# MCP OAuth2 डेमो
+# MCP OAuth2 Demo
 
-यह प्रोजेक्ट एक **मिनिमल Spring Boot एप्लिकेशन** है जो दोनों के रूप में काम करता है:
+यह प्रोजेक्ट एक **मिनिमल Spring Boot एप्लिकेशन** है जो दोनों के रूप में कार्य करता है:
 
 * एक **Spring Authorization Server** (जो `client_credentials` फ्लो के जरिए JWT एक्सेस टोकन जारी करता है), और  
 * एक **Resource Server** (जो अपने `/hello` एंडपॉइंट की सुरक्षा करता है)।
 
-यह [Spring ब्लॉग पोस्ट (2 अप्रैल 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) में दिखाए गए सेटअप की नकल करता है।
+यह [Spring ब्लॉग पोस्ट (2 अप्रैल 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) में दिखाए गए सेटअप का प्रतिबिंब है।
 
 ---
 
-## त्वरित शुरुआत (लोकल)
+## त्वरित शुरुआत (स्थानीय)
 
 ```bash
 # build & run
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## **Azure Container Apps** पर तैनाती
+## **Azure Container Apps** पर तैनात करें
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-इंग्रेस FQDN आपका **issuer** बन जाता है (`https://<fqdn>`).  
+ingress FQDN आपका **issuer** बन जाता है (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`)।
 
 ---
 
-## **Azure API Management** से कनेक्ट करें
+## **Azure API Management** में इंटीग्रेट करें
 
-अपने API में यह इनबाउंड पॉलिसी जोड़ें:
+अपने API में यह inbound पॉलिसी जोड़ें:
 
 ```xml
 <inbound>
@@ -116,13 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM JWKS प्राप्त करेगा और हर अनुरोध को मान्य करेगा।
+APIM JWKS प्राप्त करेगा और हर अनुरोध को वैध करेगा।
 
 ---
 
-## आगे क्या है
+## आगे क्या
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **अस्वीकरण**:  
-यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनूदित किया गया है। जबकि हम सटीकता के लिए प्रयासरत हैं, कृपया ध्यान रखें कि स्वचालित अनुवाद में त्रुटियाँ या अशुद्धियाँ हो सकती हैं। मूल दस्तावेज़ अपनी मूल भाषा में ही प्रामाणिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सिफारिश की जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम उत्तरदायी नहीं हैं।
+यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता के लिए प्रयासरत हैं, कृपया ध्यान दें कि स्वचालित अनुवादों में त्रुटियाँ या असंगतियाँ हो सकती हैं। मूल दस्तावेज़ अपनी मूल भाषा में प्रामाणिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सलाह दी जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम जिम्मेदार नहीं हैं।

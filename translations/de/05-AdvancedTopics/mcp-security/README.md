@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ba9c96a7c7901faa1d26c8ec7ad56d2c",
-  "translation_date": "2025-06-02T20:08:48+00:00",
+  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
+  "translation_date": "2025-06-12T21:54:26+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "de"
 }
 -->
-# Sicherheits-Best Practices
+# Sicherheitsbest Practices
 
-Sicherheit ist entscheidend für MCP-Implementierungen, insbesondere in Unternehmensumgebungen. Es ist wichtig sicherzustellen, dass Werkzeuge und Daten vor unbefugtem Zugriff, Datenlecks und anderen Sicherheitsbedrohungen geschützt sind.
+Sicherheit ist entscheidend für MCP-Implementierungen, besonders in Unternehmensumgebungen. Es ist wichtig, sicherzustellen, dass Werkzeuge und Daten vor unbefugtem Zugriff, Datenlecks und anderen Sicherheitsbedrohungen geschützt sind.
 
 ## Einführung
 
-In dieser Lektion werden wir Sicherheits-Best Practices für MCP-Implementierungen behandeln. Wir besprechen Authentifizierung und Autorisierung, Datenschutz, sichere Ausführung von Werkzeugen sowie die Einhaltung von Datenschutzvorschriften.
+In dieser Lektion werden wir Sicherheitsbest Practices für MCP-Implementierungen untersuchen. Wir behandeln Authentifizierung und Autorisierung, Datenschutz, sichere Ausführung von Werkzeugen und die Einhaltung von Datenschutzbestimmungen.
 
 ## Lernziele
 
@@ -21,7 +21,7 @@ Am Ende dieser Lektion werden Sie in der Lage sein:
 
 - Sichere Authentifizierungs- und Autorisierungsmechanismen für MCP-Server zu implementieren.
 - Sensible Daten durch Verschlüsselung und sichere Speicherung zu schützen.
-- Die sichere Ausführung von Werkzeugen mit geeigneten Zugriffskontrollen sicherzustellen.
+- Die sichere Ausführung von Werkzeugen mit passenden Zugriffskontrollen zu gewährleisten.
 - Best Practices für Datenschutz und Compliance anzuwenden.
 
 ## Authentifizierung und Autorisierung
@@ -34,11 +34,11 @@ Schauen wir uns Beispiele an, wie man sichere Authentifizierung und Autorisierun
 
 ASP .NET Core Identity bietet ein robustes Framework zur Verwaltung von Benutzer-Authentifizierung und -Autorisierung. Wir können es in MCP-Server integrieren, um den Zugriff auf Werkzeuge und Ressourcen abzusichern.
 
-Folgende Kernkonzepte sind wichtig, wenn wir ASP.NET Core Identity mit MCP-Servern verbinden:
+Einige zentrale Konzepte, die wir verstehen müssen, wenn wir ASP.NET Core Identity mit MCP-Servern integrieren, sind:
 
-- **Identity-Konfiguration**: Einrichtung von ASP.NET Core Identity mit Benutzerrollen und Claims. Ein Claim ist eine Information über den Benutzer, wie z. B. seine Rolle oder Berechtigungen, z. B. „Admin“ oder „User“.
-- **JWT-Authentifizierung**: Verwendung von JSON Web Tokens (JWT) für sicheren API-Zugriff. JWT ist ein Standard, um Informationen sicher als JSON-Objekt zwischen Parteien zu übertragen, das durch digitale Signatur verifiziert und vertraut werden kann.
-- **Autorisierungsrichtlinien**: Definition von Richtlinien zur Steuerung des Zugriffs auf bestimmte Werkzeuge basierend auf Benutzerrollen. MCP nutzt Autorisierungsrichtlinien, um zu bestimmen, welche Benutzer auf welche Werkzeuge zugreifen dürfen, basierend auf ihren Rollen und Claims.
+- **Identity-Konfiguration**: Einrichtung von ASP.NET Core Identity mit Benutzerrollen und Claims. Ein Claim ist eine Information über den Benutzer, z. B. seine Rolle oder Berechtigungen wie „Admin“ oder „User“.
+- **JWT-Authentifizierung**: Verwendung von JSON Web Tokens (JWT) für sicheren API-Zugriff. JWT ist ein Standard zur sicheren Übertragung von Informationen zwischen Parteien als JSON-Objekt, das verifiziert und vertraut werden kann, da es digital signiert ist.
+- **Autorisierungsrichtlinien**: Definition von Richtlinien zur Steuerung des Zugriffs auf bestimmte Werkzeuge basierend auf Benutzerrollen. MCP verwendet Autorisierungsrichtlinien, um zu bestimmen, welche Benutzer auf welche Werkzeuge basierend auf ihren Rollen und Claims zugreifen können.
 
 ```csharp
 public class SecureMcpStartup
@@ -112,21 +112,21 @@ public class SecureMcpStartup
 Im obigen Code haben wir:
 
 - ASP.NET Core Identity für die Benutzerverwaltung konfiguriert.
-- JWT-Authentifizierung für sicheren API-Zugriff eingerichtet. Dabei wurden die Token-Validierungsparameter wie Aussteller, Zielgruppe und Signaturschlüssel festgelegt.
-- Autorisierungsrichtlinien definiert, die den Zugriff auf Werkzeuge anhand von Benutzerrollen steuern. Zum Beispiel erfordert die Richtlinie „CanUseAdminTools“, dass der Benutzer die Rolle „Admin“ hat, während „CanUseBasic“ eine Authentifizierung voraussetzt.
-- MCP-Werkzeuge mit spezifischen Autorisierungsanforderungen registriert, um sicherzustellen, dass nur Benutzer mit passenden Rollen Zugriff erhalten.
+- JWT-Authentifizierung für sicheren API-Zugriff eingerichtet. Dabei wurden Token-Validierungsparameter wie Aussteller, Zielgruppe und Signaturschlüssel definiert.
+- Autorisierungsrichtlinien definiert, um den Zugriff auf Werkzeuge basierend auf Benutzerrollen zu steuern. Zum Beispiel erfordert die Richtlinie „CanUseAdminTools“, dass der Benutzer die Rolle „Admin“ hat, während „CanUseBasic“ eine Authentifizierung des Benutzers voraussetzt.
+- MCP-Werkzeuge mit spezifischen Autorisierungsanforderungen registriert, sodass nur Benutzer mit den passenden Rollen Zugriff erhalten.
 
 ### Java Spring Security Integration
 
-Für Java verwenden wir Spring Security, um sichere Authentifizierung und Autorisierung für MCP-Server zu implementieren. Spring Security bietet ein umfassendes Sicherheitsframework, das nahtlos mit Spring-Anwendungen integriert werden kann.
+Für Java verwenden wir Spring Security, um sichere Authentifizierung und Autorisierung für MCP-Server umzusetzen. Spring Security bietet ein umfassendes Sicherheitsframework, das sich nahtlos in Spring-Anwendungen integriert.
 
-Wichtige Konzepte sind:
+Zentrale Konzepte hier sind:
 
 - **Spring Security-Konfiguration**: Einrichtung von Sicherheitskonfigurationen für Authentifizierung und Autorisierung.
-- **OAuth2 Resource Server**: Nutzung von OAuth2 für sicheren Zugriff auf MCP-Werkzeuge. OAuth2 ist ein Autorisierungsrahmen, der Drittanbieterdiensten den Austausch von Zugriffstoken für sicheren API-Zugriff ermöglicht.
-- **Security Interceptors**: Implementierung von Sicherheitsinterzeptoren, um Zugriffskontrollen bei der Ausführung von Werkzeugen durchzusetzen.
-- **Rollenbasierte Zugriffskontrolle**: Verwendung von Rollen zur Steuerung des Zugriffs auf bestimmte Werkzeuge und Ressourcen.
-- **Sicherheits-Annotationen**: Einsatz von Annotationen, um Methoden und Endpunkte abzusichern.
+- **OAuth2 Resource Server**: Verwendung von OAuth2 für sicheren Zugriff auf MCP-Werkzeuge. OAuth2 ist ein Autorisierungsframework, das Drittanbieterdiensten ermöglicht, Zugriffstoken für sicheren API-Zugriff auszutauschen.
+- **Security Interceptors**: Implementierung von Sicherheits-Interceptors, um Zugriffskontrollen bei der Werkzeugausführung durchzusetzen.
+- **Rollenbasierte Zugriffskontrolle**: Verwendung von Rollen zur Steuerung des Zugriffs auf spezifische Werkzeuge und Ressourcen.
+- **Sicherheitsanmerkungen**: Einsatz von Annotationen, um Methoden und Endpunkte abzusichern.
 
 ```java
 @Configuration
@@ -180,16 +180,16 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 Im obigen Code haben wir:
 
-- Spring Security konfiguriert, um MCP-Endpunkte abzusichern, dabei ist die Werkzeugentdeckung öffentlich zugänglich, während für die Ausführung der Werkzeuge eine Authentifizierung erforderlich ist.
-- OAuth2 als Resource Server genutzt, um sicheren Zugriff auf MCP-Werkzeuge zu ermöglichen.
-- Einen Sicherheitsinterzeptor implementiert, der Zugriffskontrollen bei der Ausführung von Werkzeugen durchsetzt und Benutzerrollen sowie Berechtigungen prüft, bevor Zugriff auf bestimmte Werkzeuge gewährt wird.
-- Rollenbasierte Zugriffskontrollen definiert, um den Zugriff auf Admin-Werkzeuge und sensible Daten basierend auf Benutzerrollen einzuschränken.
+- Spring Security konfiguriert, um MCP-Endpunkte abzusichern, öffentlichen Zugriff auf Tool-Discovery zu erlauben und Authentifizierung für die Werkzeugausführung zu verlangen.
+- OAuth2 als Resource Server verwendet, um sicheren Zugriff auf MCP-Werkzeuge zu ermöglichen.
+- Einen Security Interceptor implementiert, der Zugriffskontrollen bei der Werkzeugausführung durchsetzt und Benutzerrollen sowie Berechtigungen prüft, bevor der Zugriff auf bestimmte Werkzeuge erlaubt wird.
+- Rollenbasierte Zugriffskontrolle definiert, um den Zugriff auf Admin-Werkzeuge und den Zugriff auf sensible Daten basierend auf Benutzerrollen einzuschränken.
 
 ## Datenschutz und Privatsphäre
 
-Datenschutz ist entscheidend, um sicherzustellen, dass sensible Informationen sicher behandelt werden. Dazu gehört der Schutz von personenbezogenen Daten (PII), Finanzdaten und anderen sensiblen Informationen vor unbefugtem Zugriff und Datenlecks.
+Datenschutz ist entscheidend, um sicherzustellen, dass sensible Informationen sicher behandelt werden. Dazu gehört der Schutz personenbezogener Daten (PII), Finanzdaten und anderer sensibler Informationen vor unbefugtem Zugriff und Datenlecks.
 
-### Beispiel für Datenschutz in Python
+### Python Beispiel für Datenschutz
 
 Schauen wir uns ein Beispiel an, wie man Datenschutz in Python mit Verschlüsselung und PII-Erkennung umsetzt.
 
@@ -336,7 +336,7 @@ Im obigen Code haben wir:
 
 ## Was kommt als Nächstes
 
-- [Web search](../web-search-mcp/README.md)
+- [5.9 Web search](../web-search-mcp/README.md)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Verwendung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

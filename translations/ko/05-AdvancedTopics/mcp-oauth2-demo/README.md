@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T18:36:39+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-12T21:42:02+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "ko"
 }
 -->
 # MCP OAuth2 데모
 
-이 프로젝트는 **최소한의 Spring Boot 애플리케이션**으로, 다음 두 가지 역할을 합니다:
+이 프로젝트는 **최소한의 Spring Boot 애플리케이션**으로 다음 역할을 합니다:
 
-* **Spring Authorization Server** (`client_credentials` 흐름을 통해 JWT 액세스 토큰 발급), 그리고  
-* **Resource Server** (자신의 `/hello` 엔드포인트 보호).
+* **Spring Authorization Server** (`client_credentials` 플로우를 통해 JWT 액세스 토큰 발급),  
+* 그리고 **Resource Server** (자체 `/hello` 엔드포인트 보호).
 
-[Spring 블로그 게시물(2025년 4월 2일)](https://spring.io/blog/2025/04/02/mcp-server-oauth2)에 소개된 설정을 그대로 반영합니다.
+이는 [Spring 블로그 게시물 (2025년 4월 2일)](https://spring.io/blog/2025/04/02/mcp-server-oauth2)에서 소개된 설정을 그대로 반영합니다.
 
 ---
 
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-참고: Basic 인증 헤더는 (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`).
+참고: Basic 인증 헤더(`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`).
 
 ### 3. 토큰을 사용해 보호된 엔드포인트에 접근
 
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-"Hello from MCP OAuth2 Demo!"라는 성공 응답이 나오면 OAuth2 구성이 올바르게 작동하는 것입니다.
+"Hello from MCP OAuth2 Demo!"라는 성공 응답이 오면 OAuth2 구성이 제대로 작동하고 있음을 의미합니다.
 
 ---
 
@@ -116,13 +116,13 @@ API에 다음 인바운드 정책을 추가하세요:
 </inbound>
 ```
 
-APIM은 JWKS를 가져와 모든 요청을 검증합니다.
+APIM이 JWKS를 가져와 모든 요청을 검증합니다.
 
 ---
 
 ## 다음 단계
 
-- [루트 컨텍스트](../mcp-root-contexts/README.md)
+- [5.4 루트 컨텍스트](../mcp-root-contexts/README.md)
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확한 내용이 포함될 수 있음을 유의하시기 바랍니다. 원본 문서의 원어 버전이 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인한 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있음을 유의하시기 바랍니다. 원본 문서는 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

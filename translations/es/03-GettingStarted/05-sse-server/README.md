@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0a8086dc4bf89448f83e7936db972c42",
-  "translation_date": "2025-05-16T15:16:30+00:00",
+  "original_hash": "3dd2f1e39277c31b0e57e29d165354d6",
+  "translation_date": "2025-06-12T21:50:02+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "es"
 }
@@ -18,15 +18,15 @@ Para crear nuestro servidor, debemos tener en cuenta dos cosas:
 
 ### -1- Crear una instancia del servidor
 
-Para crear nuestro servidor, usamos los mismos tipos que con stdio. Sin embargo, para el transporte, necesitamos elegir SSE.
+Para crear nuestro servidor, usamos los mismos tipos que con stdio. Sin embargo, para el transporte, debemos elegir SSE.
 
 Vamos a añadir las rutas necesarias a continuación.
 
 ### -2- Añadir rutas
 
-Añadamos rutas que manejen la conexión y los mensajes entrantes:
+Agreguemos rutas que manejen la conexión y los mensajes entrantes:
 
-Ahora agreguemos capacidades al servidor.
+Ahora vamos a añadir capacidades al servidor.
 
 ### -3- Añadiendo capacidades al servidor
 
@@ -38,32 +38,32 @@ Genial, tenemos un servidor usando SSE, probémoslo a continuación.
 
 ## Ejercicio: Depurando un Servidor SSE con Inspector
 
-Inspector es una gran herramienta que vimos en una lección anterior [Creando tu primer servidor](/03-GettingStarted/01-first-server/README.md). Veamos si podemos usar el Inspector incluso aquí:
+Inspector es una gran herramienta que vimos en una lección anterior [Creando tu primer servidor](/03-GettingStarted/01-first-server/README.md). Veamos si podemos usar el Inspector aquí también:
 
 ### -1- Ejecutando el inspector
 
-Para ejecutar el inspector, primero debes tener un servidor SSE en funcionamiento, así que hagámoslo a continuación:
+Para ejecutar el inspector, primero debes tener un servidor SSE en funcionamiento, así que hagámoslo ahora:
 
 1. Ejecuta el servidor
 
 1. Ejecuta el inspector
 
     > ![NOTE]
-    > Ejecuta esto en una ventana de terminal separada de donde está corriendo el servidor. También ten en cuenta que necesitas ajustar el comando siguiente para que se adapte a la URL donde tu servidor está corriendo.
+    > Ejecuta esto en una ventana de terminal separada de donde está corriendo el servidor. También ten en cuenta que debes ajustar el comando a continuación para que coincida con la URL donde se ejecuta tu servidor.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Ejecutar el inspector es igual en todos los entornos de ejecución. Observa cómo en lugar de pasar una ruta a nuestro servidor y un comando para iniciar el servidor, en su lugar pasamos la URL donde el servidor está corriendo y también especificamos la ruta `/sse`.
+    Ejecutar el inspector es igual en todos los entornos. Observa cómo en lugar de pasar una ruta a nuestro servidor y un comando para iniciar el servidor, pasamos la URL donde el servidor está corriendo y también especificamos la ruta `/sse`.
 
 ### -2- Probando la herramienta
 
-Conéctate al servidor seleccionando SSE en la lista desplegable y llena el campo de URL donde tu servidor está corriendo, por ejemplo http://localhost:4321/sse. Ahora haz clic en el botón "Connect". Como antes, selecciona listar herramientas, elige una herramienta y proporciona valores de entrada. Deberías ver un resultado como el siguiente:
+Conéctate al servidor seleccionando SSE en la lista desplegable y llena el campo de URL con donde está corriendo tu servidor, por ejemplo http:localhost:4321/sse. Ahora haz clic en el botón "Connect". Como antes, selecciona listar herramientas, elige una herramienta y proporciona valores de entrada. Deberías ver un resultado como el siguiente:
 
-![Servidor SSE corriendo en inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.es.png)
+![Servidor SSE ejecutándose en inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.es.png)
 
-Genial, puedes trabajar con el inspector, veamos cómo trabajar con Visual Studio Code a continuación.
+Genial, puedes trabajar con el inspector, veamos cómo podemos trabajar con Visual Studio Code a continuación.
 
 ## Tarea
 
@@ -77,17 +77,17 @@ Intenta ampliar tu servidor con más capacidades. Consulta [esta página](https:
 
 Los puntos clave de este capítulo son los siguientes:
 
-- SSE es el segundo transporte soportado después de stdio.
-- Para soportar SSE, necesitas gestionar conexiones entrantes y mensajes usando un framework web.
-- Puedes usar tanto Inspector como Visual Studio Code para consumir servidores SSE, igual que con servidores stdio. Nota cómo difiere un poco entre stdio y SSE. Para SSE, necesitas iniciar el servidor por separado y luego ejecutar tu herramienta inspector. Para la herramienta inspector, también hay algunas diferencias en que necesitas especificar la URL.
+- SSE es el segundo tipo de transporte soportado después de stdio.
+- Para soportar SSE, necesitas manejar conexiones entrantes y mensajes usando un framework web.
+- Puedes usar tanto Inspector como Visual Studio Code para consumir servidores SSE, igual que con servidores stdio. Nota cómo difiere un poco entre stdio y SSE. Para SSE, necesitas iniciar el servidor por separado y luego ejecutar la herramienta inspector. Para la herramienta inspector, también hay algunas diferencias en que necesitas especificar la URL.
 
 ## Ejemplos
 
-- [Calculadora Java](../samples/java/calculator/README.md)
-- [Calculadora .Net](../../../../03-GettingStarted/samples/csharp)
-- [Calculadora JavaScript](../samples/javascript/README.md)
-- [Calculadora TypeScript](../samples/typescript/README.md)
-- [Calculadora Python](../../../../03-GettingStarted/samples/python)
+- [Calculadora en Java](../samples/java/calculator/README.md)
+- [Calculadora en .Net](../../../../03-GettingStarted/samples/csharp)
+- [Calculadora en JavaScript](../../../../03-GettingStarted/samples/javascript)
+- [Calculadora en TypeScript](../../../../03-GettingStarted/samples/typescript)
+- [Calculadora en Python](../../../../03-GettingStarted/samples/python)
 
 ## Recursos Adicionales
 
@@ -95,7 +95,7 @@ Los puntos clave de este capítulo son los siguientes:
 
 ## Qué Sigue
 
-- Siguiente: [Introducción al AI Toolkit para VSCode](/03-GettingStarted/06-aitk/README.md)
+- Siguiente: [HTTP Streaming con MCP (HTTP Transmisible)](/03-GettingStarted/06-http-streaming/README.md)
 
-**Aviso Legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas que puedan derivarse del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por un humano. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

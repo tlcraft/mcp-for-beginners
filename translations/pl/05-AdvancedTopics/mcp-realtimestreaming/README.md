@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b41174ac781ebf228b2043cbdfc09105",
-  "translation_date": "2025-06-12T00:31:21+00:00",
+  "original_hash": "195f7287638b77a549acadd96c8f981c",
+  "translation_date": "2025-06-12T22:03:53+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimestreaming/README.md",
   "language_code": "pl"
 }
@@ -11,69 +11,69 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Przegląd
 
-Strumieniowanie danych w czasie rzeczywistym stało się kluczowe we współczesnym świecie opartym na danych, gdzie firmy i aplikacje potrzebują natychmiastowego dostępu do informacji, aby podejmować szybkie decyzje. Model Context Protocol (MCP) stanowi istotny krok naprzód w optymalizacji tych procesów strumieniowania, zwiększając efektywność przetwarzania danych, zachowując integralność kontekstu oraz poprawiając ogólną wydajność systemu.
+Strumieniowanie danych w czasie rzeczywistym stało się niezbędne w dzisiejszym świecie zdominowanym przez dane, gdzie firmy i aplikacje wymagają natychmiastowego dostępu do informacji, aby podejmować szybkie decyzje. Model Context Protocol (MCP) stanowi istotny krok naprzód w optymalizacji tych procesów strumieniowania, zwiększając efektywność przetwarzania danych, zachowując integralność kontekstu oraz poprawiając ogólną wydajność systemu.
 
-Ten moduł pokazuje, jak MCP zmienia strumieniowanie danych w czasie rzeczywistym, oferując ustandaryzowane podejście do zarządzania kontekstem w modelach AI, platformach strumieniowych i aplikacjach.
+Ten moduł przedstawia, jak MCP zmienia strumieniowanie danych w czasie rzeczywistym, oferując ustandaryzowane podejście do zarządzania kontekstem pomiędzy modelami AI, platformami strumieniowymi i aplikacjami.
 
 ## Wprowadzenie do strumieniowania danych w czasie rzeczywistym
 
-Strumieniowanie danych w czasie rzeczywistym to paradygmat technologiczny umożliwiający ciągły transfer, przetwarzanie i analizę danych w momencie ich powstawania, pozwalając systemom natychmiast reagować na nowe informacje. W przeciwieństwie do tradycyjnego przetwarzania wsadowego, które operuje na statycznych zbiorach danych, strumieniowanie przetwarza dane w ruchu, dostarczając wgląd i działania z minimalnym opóźnieniem.
+Strumieniowanie danych w czasie rzeczywistym to paradygmat technologiczny umożliwiający ciągły transfer, przetwarzanie i analizę danych w momencie ich generowania, co pozwala systemom na natychmiastową reakcję na nowe informacje. W przeciwieństwie do tradycyjnego przetwarzania wsadowego, które działa na statycznych zbiorach danych, strumieniowanie przetwarza dane w ruchu, dostarczając wglądy i akcje z minimalnym opóźnieniem.
 
 ### Kluczowe koncepcje strumieniowania danych w czasie rzeczywistym:
 
 - **Ciągły przepływ danych**: Dane są przetwarzane jako nieprzerwany, niekończący się strumień zdarzeń lub rekordów.
-- **Przetwarzanie o niskim opóźnieniu**: Systemy są zaprojektowane tak, by minimalizować czas od generacji danych do ich przetworzenia.
-- **Skalowalność**: Architektury strumieniowe muszą radzić sobie z zmienną ilością i szybkością danych.
-- **Odporność na błędy**: Systemy muszą być odporne na awarie, by zapewnić nieprzerwany przepływ danych.
-- **Przetwarzanie stanowe**: Utrzymanie kontekstu pomiędzy zdarzeniami jest kluczowe dla sensownej analizy.
+- **Przetwarzanie o niskim opóźnieniu**: Systemy są zaprojektowane tak, aby zminimalizować czas pomiędzy generowaniem danych a ich przetwarzaniem.
+- **Skalowalność**: Architektury strumieniowe muszą radzić sobie z zmiennym wolumenem i szybkością danych.
+- **Odporność na błędy**: Systemy muszą być odporne na awarie, aby zapewnić nieprzerwany przepływ danych.
+- **Przetwarzanie ze stanem**: Utrzymanie kontekstu pomiędzy zdarzeniami jest kluczowe dla sensownej analizy.
 
-### Model Context Protocol i strumieniowanie w czasie rzeczywistym
+### Model Context Protocol a strumieniowanie w czasie rzeczywistym
 
-Model Context Protocol (MCP) rozwiązuje kilka kluczowych wyzwań w środowiskach strumieniowania w czasie rzeczywistym:
+Model Context Protocol (MCP) odpowiada na kilka kluczowych wyzwań środowisk strumieniowania w czasie rzeczywistym:
 
-1. **Ciągłość kontekstu**: MCP standaryzuje sposób utrzymywania kontekstu w rozproszonych komponentach strumieniowych, zapewniając, że modele AI i węzły przetwarzające mają dostęp do odpowiedniego kontekstu historycznego i środowiskowego.
+1. **Ciągłość kontekstu**: MCP standaryzuje sposób utrzymywania kontekstu w rozproszonych komponentach strumieniowych, zapewniając modelom AI i węzłom przetwarzającym dostęp do istotnego kontekstu historycznego i środowiskowego.
 
 2. **Efektywne zarządzanie stanem**: Dzięki strukturalnym mechanizmom transmisji kontekstu MCP zmniejsza narzut związany z zarządzaniem stanem w potokach strumieniowych.
 
-3. **Interoperacyjność**: MCP tworzy wspólny język do dzielenia się kontekstem pomiędzy różnymi technologiami strumieniowymi i modelami AI, umożliwiając bardziej elastyczne i rozszerzalne architektury.
+3. **Interoperacyjność**: MCP tworzy wspólny język do dzielenia się kontekstem między różnymi technologiami strumieniowymi i modelami AI, umożliwiając bardziej elastyczne i rozszerzalne architektury.
 
-4. **Kontekst zoptymalizowany pod kątem strumieniowania**: Implementacje MCP mogą priorytetyzować, które elementy kontekstu są najistotniejsze dla podejmowania decyzji w czasie rzeczywistym, optymalizując zarówno wydajność, jak i dokładność.
+4. **Kontekst zoptymalizowany pod strumieniowanie**: Implementacje MCP mogą priorytetowo traktować elementy kontekstu najważniejsze dla podejmowania decyzji w czasie rzeczywistym, optymalizując zarówno wydajność, jak i dokładność.
 
-5. **Adaptacyjne przetwarzanie**: Dzięki odpowiedniemu zarządzaniu kontekstem za pomocą MCP systemy strumieniowe mogą dynamicznie dostosowywać przetwarzanie w oparciu o zmieniające się warunki i wzorce w danych.
+5. **Adaptacyjne przetwarzanie**: Dzięki właściwemu zarządzaniu kontekstem przez MCP systemy strumieniowe mogą dynamicznie dostosowywać przetwarzanie na podstawie zmieniających się warunków i wzorców danych.
 
-We współczesnych aplikacjach, od sieci czujników IoT po platformy handlu finansowego, integracja MCP z technologiami strumieniowymi umożliwia bardziej inteligentne, świadome kontekstu przetwarzanie, które potrafi odpowiednio reagować na złożone, zmieniające się sytuacje w czasie rzeczywistym.
+We współczesnych zastosowaniach, od sieci czujników IoT po platformy handlu finansowego, integracja MCP z technologiami strumieniowymi umożliwia inteligentniejsze, świadome kontekstu przetwarzanie, które potrafi odpowiednio reagować na złożone, ewoluujące sytuacje w czasie rzeczywistym.
 
 ## Cele nauki
 
 Po zakończeniu tej lekcji będziesz potrafił:
 
-- Zrozumieć podstawy strumieniowania danych w czasie rzeczywistym i związane z nim wyzwania
+- Zrozumieć podstawy strumieniowania danych w czasie rzeczywistym oraz związane z nim wyzwania
 - Wyjaśnić, jak Model Context Protocol (MCP) usprawnia strumieniowanie danych w czasie rzeczywistym
-- Implementować rozwiązania strumieniowe oparte na MCP, korzystając z popularnych frameworków takich jak Kafka i Pulsar
-- Projektować i wdrażać odporne na błędy, wysokowydajne architektury strumieniowe z MCP
-- Zastosować koncepcje MCP w przypadkach użycia IoT, handlu finansowego i analiz opartych na AI
-- Ocenić nowe trendy i przyszłe innowacje w technologiach strumieniowania opartych na MCP
+- Implementować rozwiązania strumieniowe oparte na MCP przy użyciu popularnych frameworków, takich jak Kafka i Pulsar
+- Projektować i wdrażać odporne na błędy, wydajne architektury strumieniowe z MCP
+- Zastosować koncepcje MCP w przypadkach użycia IoT, handlu finansowego i analityki napędzanej AI
+- Ocenić nowe trendy i przyszłe innowacje w technologiach strumieniowych opartych na MCP
 
 ### Definicja i znaczenie
 
-Strumieniowanie danych w czasie rzeczywistym polega na ciągłym generowaniu, przetwarzaniu i dostarczaniu danych z minimalnym opóźnieniem. W przeciwieństwie do przetwarzania wsadowego, gdzie dane są zbierane i przetwarzane w grupach, dane strumieniowe są przetwarzane krok po kroku w momencie ich nadejścia, umożliwiając natychmiastowe wnioski i działania.
+Strumieniowanie danych w czasie rzeczywistym polega na ciągłym generowaniu, przetwarzaniu i dostarczaniu danych z minimalnym opóźnieniem. W przeciwieństwie do przetwarzania wsadowego, gdzie dane są zbierane i przetwarzane partiami, dane strumieniowe są przetwarzane inkrementalnie w momencie ich pojawienia się, co umożliwia natychmiastowe wglądy i działania.
 
 Kluczowe cechy strumieniowania danych w czasie rzeczywistym to:
 
 - **Niskie opóźnienie**: Przetwarzanie i analiza danych w ciągu milisekund do sekund
 - **Ciągły przepływ**: Nieprzerwany strumień danych z różnych źródeł
-- **Natychmiastowe przetwarzanie**: Analiza danych w momencie ich nadejścia, a nie wsadowo
-- **Architektura zdarzeniowa**: Reagowanie na zdarzenia w chwili ich wystąpienia
+- **Natychmiastowe przetwarzanie**: Analiza danych w momencie ich pojawienia się, a nie w partiach
+- **Architektura zdarzeniowa**: Reagowanie na zdarzenia w momencie ich wystąpienia
 
 ### Wyzwania w tradycyjnym strumieniowaniu danych
 
 Tradycyjne podejścia do strumieniowania danych napotykają na kilka ograniczeń:
 
 1. **Utrata kontekstu**: Trudności w utrzymaniu kontekstu w rozproszonych systemach
-2. **Problemy ze skalowalnością**: Wyzwania w skalowaniu do obsługi dużych i szybkich strumieni danych
+2. **Problemy ze skalowalnością**: Trudności w skalowaniu do obsługi dużych wolumenów i szybkości danych
 3. **Złożoność integracji**: Problemy z interoperacyjnością między różnymi systemami
-4. **Zarządzanie opóźnieniami**: Równoważenie przepustowości z czasem przetwarzania
-5. **Spójność danych**: Zapewnienie dokładności i kompletności danych w strumieniu
+4. **Zarządzanie opóźnieniami**: Równoważenie przepustowości i czasu przetwarzania
+5. **Spójność danych**: Zapewnienie dokładności i kompletności danych w całym strumieniu
 
 ## Zrozumienie Model Context Protocol (MCP)
 
@@ -83,18 +83,18 @@ Model Context Protocol (MCP) to ustandaryzowany protokół komunikacyjny zaproje
 
 - Zachowania kontekstu w całym potoku danych
 - Standaryzacji formatów wymiany danych
-- Optymalizacji przesyłania dużych zbiorów danych
-- Ulepszania komunikacji między modelami i aplikacjami
+- Optymalizacji transmisji dużych zbiorów danych
+- Ulepszania komunikacji model-model i model-aplikacja
 
 ### Kluczowe komponenty i architektura
 
-Architektura MCP dla strumieniowania w czasie rzeczywistym składa się z kilku podstawowych elementów:
+Architektura MCP dla strumieniowania w czasie rzeczywistym składa się z kilku kluczowych elementów:
 
 1. **Context Handlers**: Zarządzają i utrzymują informacje kontekstowe w całym potoku strumieniowym
-2. **Stream Processors**: Przetwarzają przychodzące strumienie danych, wykorzystując techniki świadome kontekstu
+2. **Stream Processors**: Przetwarzają przychodzące strumienie danych z wykorzystaniem technik świadomych kontekstu
 3. **Protocol Adapters**: Konwertują pomiędzy różnymi protokołami strumieniowymi, zachowując kontekst
-4. **Context Store**: Efektywnie przechowuje i udostępnia informacje kontekstowe
-5. **Streaming Connectors**: Łączą się z różnymi platformami strumieniowymi (Kafka, Pulsar, Kinesis itp.)
+4. **Context Store**: Efektywnie przechowuje i pobiera informacje kontekstowe
+5. **Streaming Connectors**: Łączą się z różnymi platformami strumieniowymi (Kafka, Pulsar, Kinesis itd.)
 
 ```mermaid
 graph TD
@@ -166,41 +166,41 @@ graph TD
 
 ### Jak MCP poprawia obsługę danych w czasie rzeczywistym
 
-MCP rozwiązuje tradycyjne wyzwania strumieniowania poprzez:
+MCP odpowiada na tradycyjne wyzwania strumieniowania poprzez:
 
 - **Integralność kontekstu**: Utrzymywanie powiązań między punktami danych w całym potoku
-- **Optymalizację transmisji**: Redukcję redundancji w wymianie danych dzięki inteligentnemu zarządzaniu kontekstem
+- **Optymalizację transmisji**: Redukcję nadmiarowości w wymianie danych dzięki inteligentnemu zarządzaniu kontekstem
 - **Ustandaryzowane interfejsy**: Zapewnienie spójnych API dla komponentów strumieniowych
-- **Zmniejszenie opóźnień**: Minimalizację narzutu przetwarzania dzięki efektywnemu zarządzaniu kontekstem
-- **Zwiększenie skalowalności**: Wsparcie skalowania poziomego przy zachowaniu kontekstu
+- **Zmniejszenie opóźnień**: Minimalizowanie narzutu przetwarzania dzięki efektywnemu zarządzaniu kontekstem
+- **Zwiększoną skalowalność**: Wsparcie skalowania poziomego przy jednoczesnym zachowaniu kontekstu
 
-## Integracja i implementacja
+## Integracja i wdrożenie
 
-Systemy strumieniowania danych w czasie rzeczywistym wymagają starannego projektowania architektury i implementacji, aby zachować zarówno wydajność, jak i integralność kontekstu. Model Context Protocol oferuje ustandaryzowane podejście do integracji modeli AI i technologii strumieniowych, pozwalając na tworzenie bardziej zaawansowanych, świadomych kontekstu potoków przetwarzania.
+Systemy strumieniowania danych w czasie rzeczywistym wymagają starannego projektowania architektury i wdrożenia, aby zachować zarówno wydajność, jak i integralność kontekstu. Model Context Protocol oferuje ustandaryzowane podejście do integracji modeli AI i technologii strumieniowych, umożliwiając tworzenie bardziej zaawansowanych, świadomych kontekstu potoków przetwarzania.
 
 ### Przegląd integracji MCP w architekturach strumieniowych
 
-Implementacja MCP w środowiskach strumieniowania w czasie rzeczywistym wymaga uwzględnienia kilku kluczowych aspektów:
+Implementacja MCP w środowiskach strumieniowania czasu rzeczywistego wymaga uwzględnienia kilku kluczowych aspektów:
 
-1. **Serializacja i transport kontekstu**: MCP zapewnia efektywne mechanizmy kodowania informacji kontekstowych w pakietach danych strumieniowych, gwarantując, że niezbędny kontekst towarzyszy danym przez cały potok przetwarzania. Obejmuje to ustandaryzowane formaty serializacji zoptymalizowane pod kątem transportu strumieniowego.
+1. **Serializacja i transport kontekstu**: MCP dostarcza efektywne mechanizmy kodowania informacji kontekstowych w pakietach danych strumieniowych, zapewniając, że istotny kontekst podąża za danymi przez cały potok przetwarzania. Obejmuje to ustandaryzowane formaty serializacji zoptymalizowane pod kątem transportu strumieniowego.
 
-2. **Przetwarzanie stanowe strumienia**: MCP umożliwia inteligentniejsze przetwarzanie stanowe, utrzymując spójne reprezentacje kontekstu w węzłach przetwarzających. Jest to szczególnie ważne w rozproszonych architekturach strumieniowych, gdzie zarządzanie stanem bywa wyzwaniem.
+2. **Przetwarzanie strumieniowe ze stanem**: MCP umożliwia bardziej inteligentne przetwarzanie stanowe poprzez utrzymywanie spójnej reprezentacji kontekstu w węzłach przetwarzających. Jest to szczególnie ważne w rozproszonych architekturach strumieniowych, gdzie zarządzanie stanem tradycyjnie stanowi wyzwanie.
 
-3. **Czas zdarzenia vs. czas przetwarzania**: Implementacje MCP muszą rozwiązywać typowy problem rozróżniania momentu wystąpienia zdarzenia od momentu jego przetworzenia. Protokół może zawierać kontekst temporalny zachowujący semantykę czasu zdarzenia.
+3. **Czas zdarzenia vs. czas przetwarzania**: Implementacje MCP w systemach strumieniowych muszą rozwiązywać powszechny problem rozróżnienia, kiedy zdarzenia miały miejsce, a kiedy są przetwarzane. Protokół może zawierać kontekst temporalny, który zachowuje semantykę czasu zdarzenia.
 
-4. **Zarządzanie backpressure**: Standaryzując obsługę kontekstu, MCP pomaga zarządzać backpressure w systemach strumieniowych, pozwalając komponentom komunikować swoje możliwości przetwarzania i odpowiednio dostosowywać przepływ.
+4. **Zarządzanie backpressure**: Standaryzując obsługę kontekstu, MCP pomaga zarządzać backpressure w systemach strumieniowych, pozwalając komponentom komunikować swoje możliwości przetwarzania i dostosowywać przepływ danych.
 
-5. **Okienkowanie i agregacja kontekstu**: MCP ułatwia bardziej zaawansowane operacje okienkowania, dostarczając strukturalne reprezentacje kontekstów czasowych i relacyjnych, umożliwiając bardziej sensowne agregacje na strumieniach zdarzeń.
+5. **Okna czasowe i agregacja kontekstu**: MCP ułatwia bardziej zaawansowane operacje okienkowe, dostarczając strukturalne reprezentacje kontekstów temporalnych i relacyjnych, co umożliwia bardziej znaczące agregacje w strumieniach zdarzeń.
 
-6. **Przetwarzanie dokładnie raz**: W systemach strumieniowych wymagających semantyki dokładnie raz, MCP może integrować metadane przetwarzania pomagające śledzić i weryfikować status przetwarzania w rozproszonych komponentach.
+6. **Przetwarzanie dokładnie raz**: W systemach wymagających semantyki dokładnie raz MCP może zawierać metadane przetwarzania pomagające śledzić i weryfikować status przetwarzania w rozproszonych komponentach.
 
-Implementacja MCP w różnych technologiach strumieniowych tworzy zunifikowane podejście do zarządzania kontekstem, redukując potrzebę pisania dedykowanego kodu integracyjnego i jednocześnie zwiększając zdolność systemu do utrzymania istotnego kontekstu podczas przepływu danych.
+Implementacja MCP w różnych technologiach strumieniowych tworzy zunifikowane podejście do zarządzania kontekstem, redukując potrzebę pisania niestandardowego kodu integracyjnego, a jednocześnie zwiększając zdolność systemu do utrzymania sensownego kontekstu podczas przepływu danych przez potok.
 
-### MCP w różnych frameworkach do strumieniowania danych
+### MCP w różnych frameworkach strumieniowych
 
-Poniższe przykłady opierają się na aktualnej specyfikacji MCP, która skupia się na protokole opartym na JSON-RPC z różnymi mechanizmami transportu. Kod pokazuje, jak można implementować niestandardowe transporty integrujące platformy strumieniowe takie jak Kafka i Pulsar, zachowując pełną kompatybilność z protokołem MCP.
+Przykłady te opierają się na aktualnej specyfikacji MCP, która koncentruje się na protokole opartym na JSON-RPC z różnymi mechanizmami transportu. Kod pokazuje, jak można zaimplementować niestandardowe transporty integrujące platformy strumieniowe, takie jak Kafka i Pulsar, przy pełnej kompatybilności z protokołem MCP.
 
-Przykłady mają na celu pokazanie, jak platformy strumieniowe można połączyć z MCP, aby zapewnić przetwarzanie danych w czasie rzeczywistym, jednocześnie zachowując świadomość kontekstu, która jest kluczowa dla MCP. Podejście to gwarantuje, że przykłady kodu dokładnie odzwierciedlają aktualny stan specyfikacji MCP na czerwiec 2025.
+Przykłady mają na celu pokazanie, jak platformy strumieniowe mogą być integrowane z MCP, aby zapewnić przetwarzanie danych w czasie rzeczywistym przy jednoczesnym zachowaniu świadomości kontekstu, która jest kluczowa dla MCP. Takie podejście gwarantuje, że próbki kodu wiernie odzwierciedlają aktualny stan specyfikacji MCP na czerwiec 2025.
 
 MCP może być integrowany z popularnymi frameworkami strumieniowymi, w tym:
 
@@ -516,17 +516,17 @@ if __name__ == "__main__":
 
 ### Najlepsze praktyki wdrożeniowe
 
-Przy implementacji MCP dla strumieniowania w czasie rzeczywistym:
+Podczas implementacji MCP dla strumieniowania w czasie rzeczywistym:
 
 1. **Projektuj z myślą o odporności na błędy**:
-   - Zaimplementuj właściwą obsługę błędów
+   - Zaimplementuj odpowiednią obsługę błędów
    - Używaj kolejek dead-letter dla nieudanych wiadomości
    - Projektuj procesory idempotentne
 
 2. **Optymalizuj wydajność**:
    - Konfiguruj odpowiednie rozmiary buforów
    - Stosuj batchowanie tam, gdzie to możliwe
-   - Wdrażaj mechanizmy backpressure
+   - Implementuj mechanizmy backpressure
 
 3. **Monitoruj i obserwuj**:
    - Śledź metryki przetwarzania strumienia
@@ -534,60 +534,60 @@ Przy implementacji MCP dla strumieniowania w czasie rzeczywistym:
    - Ustaw alerty na anomalie
 
 4. **Zabezpiecz swoje strumienie**:
-   - Stosuj szyfrowanie dla danych wrażliwych
+   - Zaimplementuj szyfrowanie dla danych wrażliwych
    - Używaj uwierzytelniania i autoryzacji
-   - Wdrażaj odpowiednie kontrole dostępu
+   - Stosuj odpowiednie kontrole dostępu
 
 ### MCP w IoT i Edge Computing
 
-MCP wzmacnia strumieniowanie w IoT poprzez:
+MCP usprawnia strumieniowanie IoT poprzez:
 
 - Zachowanie kontekstu urządzeń w całym potoku przetwarzania
 - Umożliwienie efektywnego strumieniowania danych z edge do chmury
-- Wsparcie analityki czasu rzeczywistego na danych IoT
+- Wsparcie analityki w czasie rzeczywistym na danych IoT
 - Ułatwienie komunikacji urządzenie-urządzenie z zachowaniem kontekstu
 
-Przykład: Sieci czujników w inteligentnych miastach  
+Przykład: Sieci czujników w inteligentnym mieście  
 ```
 Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → Automated Responses
 ```
 
-### Rola w transakcjach finansowych i handlu wysokiej częstotliwości
+### Rola w transakcjach finansowych i handlu wysokich częstotliwości
 
-MCP przynosi istotne korzyści dla strumieniowania danych finansowych:
+MCP oferuje istotne korzyści dla strumieniowania danych finansowych:
 
-- Przetwarzanie o ultra-niskim opóźnieniu dla decyzji handlowych
+- Ultra-niskie opóźnienia w przetwarzaniu decyzji handlowych
 - Zachowanie kontekstu transakcji przez cały proces
-- Wsparcie dla złożonego przetwarzania zdarzeń z uwzględnieniem kontekstu
+- Wsparcie złożonego przetwarzania zdarzeń z uwzględnieniem kontekstu
 - Zapewnienie spójności danych w rozproszonych systemach handlowych
 
-### Wzmacnianie analiz danych opartych na AI
+### Wzmacnianie analityki napędzanej AI
 
 MCP otwiera nowe możliwości dla analityki strumieniowej:
 
-- Trening i inferencja modeli w czasie rzeczywistym
-- Ciągłe uczenie się na podstawie danych strumieniowych
-- Świadome kontekstu wydobywanie cech
-- Potoki inferencji wielomodelowej z zachowanym kontekstem
+- Szkolenie i inferencja modeli w czasie rzeczywistym
+- Ciągłe uczenie się na podstawie strumieni danych
+- Ekstrakcja cech świadoma kontekstu
+- Potoki inferencji wielomodelowej z zachowaniem kontekstu
 
 ## Przyszłe trendy i innowacje
 
 ### Ewolucja MCP w środowiskach czasu rzeczywistego
 
-Patrząc w przyszłość, spodziewamy się rozwoju MCP w kierunku:
+Patrząc w przyszłość, przewidujemy rozwój MCP w kierunku:
 
-- **Integracji z komputerami kwantowymi**: Przygotowanie do systemów strumieniowania opartych na technologii kwantowej
-- **Przetwarzania natywnego na edge**: Przeniesienie większej części świadomego kontekstu przetwarzania na urządzenia brzegowe
-- **Autonomicznego zarządzania strumieniami**: Samooptymalizujące się potoki strumieniowe
-- **Federowanego strumieniowania**: Rozproszone przetwarzanie z zachowaniem prywatności
+- **Integracji z obliczeniami kwantowymi**: Przygotowanie do systemów strumieniowych opartych na technologii kwantowej
+- **Przetwarzania natywnego na edge**: Przeniesienie bardziej świadomego kontekstu przetwarzania na urządzenia brzegowe
+- **Autonomicznego zarządzania strumieniem**: Samooptymalizujące się potoki strumieniowe
+- **Federowanego strumieniowania**: Rozproszone przetwarzanie przy zachowaniu prywatności
 
 ### Potencjalne postępy technologiczne
 
 Nowe technologie, które ukształtują przyszłość strumieniowania MCP:
 
-1. **Protokoły strumieniowe zoptymalizowane pod AI**: Specjalne protokoły dedykowane obciążeniom AI
-2. **Integracja neuromorficzna**: Przetwarzanie strumieni inspirowane pracą mózgu
-3. **Strumieniowanie serverless**: Skalowalne, zdarzeniowe strumieniowanie bez zarządzania infrastrukturą
+1. **Protokóły strumieniowe zoptymalizowane pod AI**: Dedykowane protokoły zaprojektowane specjalnie dla obciążeń AI
+2. **Integracja obliczeń neuromorficznych**: Przetwarzanie strumieni inspirowane działaniem mózgu
+3. **Strumieniowanie bezserwerowe**: Zdarzeniowe, skalowalne strumieniowanie bez zarządzania infrastrukturą
 4. **Rozproszone magazyny kontekstu**: Globalnie rozproszone, a jednocześnie wysoce spójne zarządzanie kontekstem
 
 ## Ćwiczenia praktyczne
@@ -597,18 +597,18 @@ Nowe technologie, które ukształtują przyszłość strumieniowania MCP:
 W tym ćwiczeniu nauczysz się:
 
 - Konfigurować podstawowe środowisko strumieniowe MCP
-- Implementować context handlery do przetwarzania strumienia
+- Implementować context handlers do przetwarzania strumienia
 - Testować i weryfikować zachowanie kontekstu
 
-### Ćwiczenie 2: Budowa dashboardu analityki czasu rzeczywistego
+### Ćwiczenie 2: Budowa dashboardu analitycznego w czasie rzeczywistym
 
 Stwórz kompletną aplikację, która:
 
-- Pobiera dane strumieniowe za pomocą MCP
+- Pobiera dane strumieniowe przy użyciu MCP
 - Przetwarza strumień z zachowaniem kontekstu
 - Wizualizuje wyniki w czasie rzeczywistym
 
-### Ćwiczenie 3: Implementacja złożonego przetwarzania zdarzeń z MCP
+### Ćwiczenie 
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najdokładniejsze, prosimy pamiętać, że tłumaczenia automatyczne mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym powinien być traktowany jako źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczeń AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako wiarygodne źródło. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
