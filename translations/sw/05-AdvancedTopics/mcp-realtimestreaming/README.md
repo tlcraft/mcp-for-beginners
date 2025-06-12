@@ -1,100 +1,100 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "68c518dbff8a3b127ed2aa934054c56c",
-  "translation_date": "2025-06-11T17:26:37+00:00",
+  "original_hash": "b41174ac781ebf228b2043cbdfc09105",
+  "translation_date": "2025-06-12T00:42:37+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimestreaming/README.md",
   "language_code": "sw"
 }
 -->
-# Itifaki ya Muktadha wa Mfano kwa Utoaji wa Data kwa Wakati Halisi
+# Itifaki ya Muktadha wa Mfano kwa Usambazaji wa Data wa Muda Halisi
 
 ## Muhtasari
 
-Utoaji wa data kwa wakati halisi umekuwa muhimu katika dunia ya leo inayotegemea data, ambapo biashara na programu zinahitaji kupata taarifa mara moja kufanya maamuzi ya wakati unaofaa. Itifaki ya Muktadha wa Mfano (MCP) ni maendeleo makubwa katika kuboresha michakato hii ya utoaji wa data kwa wakati halisi, ikiboresha ufanisi wa usindikaji wa data, kuhifadhi muktadha muhimu, na kuboresha utendaji wa mfumo kwa ujumla.
+Usambazaji wa data wa muda halisi umekuwa muhimu katika dunia ya leo inayotegemea data, ambapo biashara na programu zinahitaji kupata taarifa mara moja kufanya maamuzi kwa wakati. Itifaki ya Muktadha wa Mfano (MCP) ni maendeleo makubwa katika kuboresha michakato hii ya usambazaji wa muda halisi, ikiongeza ufanisi wa usindikaji data, kudumisha muktadha muhimu, na kuboresha utendaji wa mfumo kwa ujumla.
 
-Moduli hii inachunguza jinsi MCP inavyobadilisha utoaji wa data kwa wakati halisi kwa kutoa njia ya kawaida ya usimamizi wa muktadha kati ya mifano ya AI, majukwaa ya utoaji, na programu.
+Moduli hii inachunguza jinsi MCP inavyobadilisha usambazaji wa data wa muda halisi kwa kutoa njia iliyopangwa kwa usimamizi wa muktadha kati ya mifano ya AI, majukwaa ya usambazaji, na programu.
 
-## Utangulizi wa Utoaji wa Data kwa Wakati Halisi
+## Utangulizi wa Usambazaji wa Data wa Muda Halisi
 
-Utoaji wa data kwa wakati halisi ni mtindo wa kiteknolojia unaowezesha uhamisho endelevu, usindikaji, na uchambuzi wa data wakati inapotengenezwa, kuruhusu mifumo kujibu mara moja kwa taarifa mpya. Tofauti na usindikaji wa kundi uliozoeleka ambao hufanya kazi na seti za data zisizobadilika, utoaji huu huchakata data iliyo katika mzunguko, ukitoa maarifa na hatua kwa ucheleweshaji mdogo sana.
+Usambazaji wa data wa muda halisi ni mtindo wa kiteknolojia unaowezesha uhamisho endelevu, usindikaji, na uchambuzi wa data inavyozalishwa, kuruhusu mifumo kujibu mara moja kwa taarifa mpya. Tofauti na usindikaji wa kundi unaofanya kazi kwa seti za data zisizobadilika, usambazaji hufanya usindikaji wa data zinazoendelea, kutoa maarifa na hatua kwa kuchelewa kidogo.
 
-### Dhana Muhimu za Utoaji wa Data kwa Wakati Halisi:
+### Misingi ya Usambazaji wa Data wa Muda Halisi:
 
-- **Mtiririko Endelevu wa Data**: Data huchakatwa kama mfululizo wa matukio au rekodi zisizo na mwisho.
-- **Usindikaji wa Ucheleweshaji Mdogo**: Mifumo imeundwa kupunguza muda kati ya utengenezaji na usindikaji wa data.
-- **Uwezo wa Kupanuka**: Miundo ya utoaji inapaswa kushughulikia kiasi na kasi tofauti za data.
-- **Uvumilivu wa Makosa**: Mifumo inahitaji kuwa imara dhidi ya kushindwa ili kuhakikisha mtiririko wa data haukatizwi.
-- **Usindikaji Unaohifadhi Hali**: Kuhifadhi muktadha kati ya matukio ni muhimu kwa uchambuzi wenye maana.
+- **Mtiririko Endelevu wa Data**: Data husindikwa kama mfululizo usioisha wa matukio au rekodi.
+- **Usindikaji wa kuchelewa kidogo**: Mifumo imeundwa kupunguza muda kati ya uzalishaji wa data na usindikaji.
+- **Uwezo wa Kupanua**: Miundo ya usambazaji lazima ishughulikie kiasi na kasi tofauti za data.
+- **Uvumilivu wa Hitilafu**: Mifumo inahitaji kuwa na uwezo wa kuhimili makosa ili kuhakikisha mtiririko wa data haukatikani.
+- **Usindikaji unaoendelea**: Kudumisha muktadha kati ya matukio ni muhimu kwa uchambuzi wenye maana.
 
-### Itifaki ya Muktadha wa Mfano na Utoaji wa Wakati Halisi
+### Itifaki ya Muktadha wa Mfano na Usambazaji wa Muda Halisi
 
-Itifaki ya Muktadha wa Mfano (MCP) inashughulikia changamoto kadhaa muhimu katika mazingira ya utoaji wa wakati halisi:
+Itifaki ya Muktadha wa Mfano (MCP) inashughulikia changamoto kadhaa muhimu katika mazingira ya usambazaji wa muda halisi:
 
-1. **Uendelevu wa Muktadha**: MCP huweka viwango vya jinsi muktadha unavyohifadhiwa kati ya vipengele vya utoaji vilivyoenea, kuhakikisha mifano ya AI na nodi za usindikaji zinapata muktadha wa kihistoria na mazingira unaohitajika.
+1. **Mfuatano wa Muktadha**: MCP huweka viwango vya jinsi muktadha unavyodumishwa kati ya vipengele vilivyoenea vya usambazaji, kuhakikisha mifano ya AI na nodi za usindikaji zina upatikanaji wa muktadha wa kihistoria na wa mazingira unaohitajika.
 
-2. **Usimamizi Bora wa Hali**: Kwa kutoa mbinu za muundo wa usafirishaji wa muktadha, MCP hupunguza mzigo wa usimamizi wa hali katika mitiririko ya utoaji.
+2. **Usimamizi wa Hali Bora**: Kwa kutoa mbinu za muundo kwa ajili ya usafirishaji wa muktadha, MCP hupunguza mzigo wa usimamizi wa hali katika njia za usambazaji.
 
-3. **Ushirikiano wa Teknolojia Mbalimbali**: MCP huunda lugha ya pamoja ya kushirikiana muktadha kati ya teknolojia mbalimbali za utoaji na mifano ya AI, kuwezesha miundo yenye ufanisi na inayoweza kupanuka.
+3. **Ushirikiano wa Teknolojia Mbalimbali**: MCP huunda lugha ya kawaida ya kushirikiana muktadha kati ya teknolojia tofauti za usambazaji na mifano ya AI, kuwezesha miundo yenye kubadilika na kuongezeka.
 
-4. **Muktadha Ulio Boresha kwa Utoaji**: Matumizi ya MCP yanaweza kuipa kipaumbele vipengele vya muktadha vinavyofaa zaidi kwa maamuzi ya wakati halisi, kuboresha utendaji na usahihi.
+4. **Muktadha ulioboreshwa kwa Usambazaji**: Matumizi ya MCP yanaweza kuweka kipaumbele vipengele vya muktadha vinavyofaa zaidi kwa maamuzi ya muda halisi, kuboresha utendaji na usahihi.
 
-5. **Usindikaji Unaobadilika**: Kwa usimamizi mzuri wa muktadha kupitia MCP, mifumo ya utoaji inaweza kubadilisha usindikaji kulingana na hali na mifumo inayobadilika ya data.
+5. **Usindikaji Unaobadilika**: Kwa usimamizi mzuri wa muktadha kupitia MCP, mifumo ya usambazaji inaweza kubadilisha usindikaji kulingana na hali na mifumo inayobadilika ya data.
 
-Katika programu za kisasa kuanzia mitandao ya sensor za IoT hadi majukwaa ya biashara ya fedha, kuunganisha MCP na teknolojia za utoaji kunaruhusu usindikaji mahiri zaidi unaojali muktadha na unaoweza kujibu ipasavyo hali tata zinazoendelea kwa wakati halisi.
+Katika programu za kisasa kuanzia mitandao ya sensa za IoT hadi majukwaa ya biashara ya fedha, ushirikiano wa MCP na teknolojia za usambazaji unaleta usindikaji wenye akili zaidi, unaojua muktadha na unaoweza kujibu kwa usahihi hali changamano zinazobadilika kwa wakati halisi.
 
 ## Malengo ya Kujifunza
 
 Mwisho wa somo hili, utaweza:
 
-- Kuelewa misingi ya utoaji wa data kwa wakati halisi na changamoto zake
-- Kueleza jinsi Itifaki ya Muktadha wa Mfano (MCP) inavyoboresha utoaji wa data kwa wakati halisi
-- Kutekeleza suluhisho za utoaji kwa kutumia MCP kwa kutumia mifumo maarufu kama Kafka na Pulsar
-- Kubuni na kupeleka miundo ya utoaji yenye uvumilivu wa makosa na utendaji wa hali ya juu kwa MCP
-- Kutumia dhana za MCP katika kesi za matumizi za IoT, biashara ya fedha, na uchambuzi unaoendeshwa na AI
-- Kutathmini mwenendo unaojitokeza na ubunifu wa baadaye katika teknolojia za utoaji zinazotumia MCP
+- Kuelewa misingi ya usambazaji wa data wa muda halisi na changamoto zake
+- Kueleza jinsi Itifaki ya Muktadha wa Mfano (MCP) inavyoboresha usambazaji wa data wa muda halisi
+- Kutekeleza suluhisho za usambazaji zenye msingi wa MCP kwa kutumia mifumo maarufu kama Kafka na Pulsar
+- Kubuni na kupeleka miundo ya usambazaji yenye uvumilivu wa makosa na utendaji wa juu kwa MCP
+- Kutumia dhana za MCP kwa matumizi ya IoT, biashara ya fedha, na uchambuzi unaotegemea AI
+- Kutathmini mwelekeo unaoibuka na uvumbuzi wa baadaye katika teknolojia za usambazaji zenye msingi wa MCP
 
 ### Ufafanuzi na Umuhimu
 
-Utoaji wa data kwa wakati halisi unahusisha uzalishaji endelevu, usindikaji, na usambazaji wa data kwa ucheleweshaji mdogo sana. Tofauti na usindikaji wa kundi ambapo data hukusanywa na kusindikwa kwa makundi, data ya utoaji huchakatwa hatua kwa hatua inavyopokelewa, kuruhusu maarifa na hatua mara moja.
+Usambazaji wa data wa muda halisi unahusisha uzalishaji endelevu, usindikaji, na utoaji wa data kwa kuchelewa kidogo. Tofauti na usindikaji wa kundi, ambapo data hukusanywa na kusindikwa kwa vikundi, data za usambazaji husindikwa kwa hatua wakati zinapowasili, kuruhusu maarifa na hatua mara moja.
 
-Sifa kuu za utoaji wa data kwa wakati halisi ni:
+Sifa kuu za usambazaji wa data wa muda halisi ni:
 
-- **Ucheleweshaji Mdogo**: Kusindika na kuchambua data ndani ya milisekunde hadi sekunde
-- **Mtiririko Endelevu**: Mtiririko usioyumba wa data kutoka vyanzo mbalimbali
-- **Usindikaji wa Mara Moja**: Kuchambua data inavyopokelewa badala ya kwa makundi
-- **Miundo Inayotegemea Matukio**: Kujibu matukio yanapotokea
+- **Kuchelewa Kidogo**: Kusindika na kuchambua data ndani ya milisekunde hadi sekunde chache
+- **Mtiririko Endelevu**: Mfululizo usiokatika wa data kutoka vyanzo mbalimbali
+- **Usindikaji wa Mara Moja**: Kuchambua data inavyowasili badala ya kwa vikundi
+- **Miundo ya Matukio**: Kujibu matukio yanapotokea
 
-### Changamoto katika Utoaji wa Data wa Kawaida
+### Changamoto katika Usambazaji wa Data wa Kawaida
 
-Njia za kawaida za utoaji wa data zinakumbwa na vikwazo kadhaa:
+Njia za kawaida za usambazaji wa data zinakumbana na vikwazo kadhaa:
 
-1. **Kupotea kwa Muktadha**: Ugumu wa kuhifadhi muktadha kati ya mifumo iliyosambazwa
-2. **Matatizo ya Kupanuka**: Changamoto za kupanua kushughulikia kiasi kikubwa na kasi ya data
+1. **Kupotea kwa Muktadha**: Ugumu wa kudumisha muktadha kati ya mifumo iliyosambazwa
+2. **Changamoto za Kupanua**: Ugumu wa kupanua ili kushughulikia kiasi kikubwa na kasi kubwa ya data
 3. **Ugumu wa Muunganisho**: Matatizo ya ushirikiano kati ya mifumo tofauti
-4. **Usimamizi wa Ucheleweshaji**: Kuweka usawa kati ya kiwango cha data na muda wa usindikaji
-5. **Ulinganifu wa Data**: Kuhakikisha usahihi na ukamilifu wa data katika mtiririko
+4. **Usimamizi wa Kuchelewa**: Kuweka mizani kati ya kiwango cha maingizo na muda wa usindikaji
+5. **Ulinganifu wa Data**: Kuhakikisha usahihi na ukamilifu wa data katika mfululizo mzima
 
 ## Kuelewa Itifaki ya Muktadha wa Mfano (MCP)
 
 ### MCP ni Nini?
 
-Itifaki ya Muktadha wa Mfano (MCP) ni itifaki ya mawasiliano iliyosanifiwa kusaidia mwingiliano bora kati ya mifano ya AI na programu. Katika muktadha wa utoaji wa data kwa wakati halisi, MCP hutoa mfumo wa:
+Itifaki ya Muktadha wa Mfano (MCP) ni itifaki ya mawasiliano iliyopangwa kusaidia mwingiliano bora kati ya mifano ya AI na programu. Katika muktadha wa usambazaji wa data wa muda halisi, MCP hutoa mfumo wa:
 
-- Kuhifadhi muktadha katika mzunguko mzima wa data
-- Kuweka viwango vya muundo wa kubadilishana data
+- Kuhifadhi muktadha katika njia ya data
+- Kuweka viwango vya kubadilishana data
 - Kuboresha usafirishaji wa seti kubwa za data
 - Kuongeza mawasiliano kati ya mifano na kati ya mfano na programu
 
 ### Vipengele Muhimu na Miundo
 
-Muundo wa MCP kwa utoaji wa wakati halisi unajumuisha vipengele vikuu:
+Miundo ya MCP kwa usambazaji wa muda halisi ina vipengele vikuu vifuatavyo:
 
-1. **Watunzaji wa Muktadha**: Husimamia na kuhifadhi taarifa za muktadha katika mzunguko wa utoaji
-2. **Wasindikaji wa Mtiririko**: Huchakata mitiririko ya data inayokuja kwa kutumia mbinu zinazojali muktadha
-3. **Vibadilishaji vya Itifaki**: Hubadilisha kati ya itifaki tofauti za utoaji huku wakihifadhi muktadha
+1. **Wasimamizi wa Muktadha**: Husimamia na kudumisha taarifa za muktadha katika njia ya usambazaji
+2. **Wasindikaji wa Mfululizo**: Husindika mfululizo wa data unaoingia kwa mbinu zinazojua muktadha
+3. **Mbadalishaji wa Itifaki**: Hubadilisha kati ya itifaki tofauti za usambazaji huku wakidumisha muktadha
 4. **Hifadhi ya Muktadha**: Kuhifadhi na kupata taarifa za muktadha kwa ufanisi
-5. **Vihusishi vya Utoaji**: Kuunganishwa na majukwaa mbalimbali ya utoaji (Kafka, Pulsar, Kinesis, n.k.)
+5. **Viunganishi vya Usambazaji**: Kuunganishwa na majukwaa mbalimbali ya usambazaji (Kafka, Pulsar, Kinesis, nk)
 
 ```mermaid
 graph TD
@@ -164,203 +164,451 @@ graph TD
     class DA,Alerts,DL,API apps
 ```
 
-### Jinsi MCP Inavyoboresha Usindikaji wa Data kwa Wakati Halisi
+### Jinsi MCP Inavyoboresha Usindikaji wa Data wa Muda Halisi
 
-MCP inashughulikia changamoto za utoaji wa kawaida kwa:
+MCP inashughulikia changamoto za usambazaji wa kawaida kwa:
 
-- **Uadilifu wa Muktadha**: Kuhifadhi uhusiano kati ya pointi za data katika mzunguko mzima
-- **Usafirishaji Ulio Boresha**: Kupunguza rudufu katika kubadilishana data kupitia usimamizi mahiri wa muktadha
-- **Kiolesura Kilichosanifiwa**: Kutoa API za kuaminika kwa vipengele vya utoaji
-- **Kupunguza Ucheleweshaji**: Kupunguza mzigo wa usindikaji kupitia usimamizi mzuri wa muktadha
-- **Kupanuka kwa Ufanisi**: Kusaidia upanuzi wa wima huku ukihifadhi muktadha
+- **Uadilifu wa Muktadha**: Kudumisha uhusiano kati ya data katika njia nzima
+- **Usafirishaji Ulioboreshwa**: Kupunguza rudufu katika kubadilishana data kupitia usimamizi wa muktadha wenye akili
+- **Mwingiliano wa Violesura Vilivyopangwa**: Kutoa API thabiti kwa vipengele vya usambazaji
+- **Kuchelewa Kidogo**: Kupunguza mzigo wa usindikaji kupitia usimamizi bora wa muktadha
+- **Uwezo wa Kupanua**: Kusaidia upanuzi wa mlalo huku ukidumisha muktadha
 
-## Muunganisho na Utekelezaji
+## Ushirikiano na Utekelezaji
 
-Mifumo ya utoaji wa data kwa wakati halisi inahitaji muundo makini wa usanifu na utekelezaji ili kuhifadhi utendaji na uadilifu wa muktadha. Itifaki ya Muktadha wa Mfano hutoa njia ya kawaida ya kuunganisha mifano ya AI na teknolojia za utoaji, kuruhusu mitiririko ya usindikaji yenye akili zaidi inayojali muktadha.
+Mifumo ya usambazaji wa data wa muda halisi inahitaji muundo makini na utekelezaji ili kudumisha utendaji na uadilifu wa muktadha. Itifaki ya Muktadha wa Mfano hutoa njia iliyopangwa ya kuunganisha mifano ya AI na teknolojia za usambazaji, kuruhusu njia za usindikaji zenye akili na zenye kujua muktadha.
 
-### Muhtasari wa Muunganisho wa MCP katika Miundo ya Utoaji
+### Muhtasari wa Ushirikiano wa MCP katika Miundo ya Usambazaji
 
-Kutekeleza MCP katika mazingira ya utoaji wa wakati halisi kunahitaji kuzingatia mambo muhimu:
+Kutekeleza MCP katika mazingira ya usambazaji wa muda halisi kunahusisha mambo muhimu yafuatayo:
 
-1. **Usanifishaji na Usafirishaji wa Muktadha**: MCP hutoa mbinu bora za kusanifisha taarifa za muktadha ndani ya vifurushi vya data vya utoaji, kuhakikisha muktadha muhimu unafuata data katika mzunguko wa usindikaji. Hii inajumuisha miundo ya usanifishaji iliyosanifiwa kwa usafirishaji wa utoaji.
+1. **Usanisi na Usafirishaji wa Muktadha**: MCP hutoa mbinu bora za kuweka taarifa za muktadha ndani ya vifurushi vya data vya usambazaji, kuhakikisha muktadha muhimu unafuata data katika njia ya usindikaji. Hii ni pamoja na viwango vya usanisi vilivyoboresha kwa usafirishaji wa usambazaji.
 
-2. **Usindikaji Unaohifadhi Hali**: MCP huwezesha usindikaji mahiri unaohifadhi hali kwa kuhifadhi uwakilishi thabiti wa muktadha kati ya nodi za usindikaji. Hii ni muhimu hasa katika miundo ya utoaji iliyosambazwa ambapo usimamizi wa hali huwa changamoto.
+2. **Usindikaji wa Mfululizo unaojua Hali**: MCP inaruhusu usindikaji wa hali wenye akili zaidi kwa kudumisha uwakilishi thabiti wa muktadha kati ya nodi za usindikaji. Hii ni muhimu hasa katika miundo ya usambazaji iliyosambazwa ambapo usimamizi wa hali ni changamoto.
 
-3. **Wakati wa Tukio dhidi ya Wakati wa Usindikaji**: Matumizi ya MCP katika mifumo ya utoaji yanapaswa kushughulikia changamoto ya kutofautisha wakati tukio lilitokea na wakati linaposhughulikiwa. Itifaki inaweza kujumuisha muktadha wa muda unaohifadhi maana ya wakati wa tukio.
+3. **Muda wa Tukio dhidi ya Muda wa Usindikaji**: Matumizi ya MCP katika mifumo ya usambazaji yanapaswa kushughulikia changamoto ya kutofautisha kati ya wakati tukio lilitokea na wakati linaposindikwa. Itifaki inaweza kujumuisha muktadha wa muda unaohifadhi maana ya muda wa tukio.
 
-4. **Usimamizi wa Shinikizo la Nyuma (Backpressure)**: Kwa kuweka viwango vya usimamizi wa muktadha, MCP husaidia kusimamia shinikizo la nyuma katika mifumo ya utoaji, kuruhusu vipengele kuwasiliana uwezo wao wa usindikaji na kurekebisha mtiririko ipasavyo.
+4. **Usimamizi wa Mzigo wa Kuingiza**: Kwa kuweka viwango vya usimamizi wa muktadha, MCP husaidia kusimamia mzigo wa kuingiza katika mifumo ya usambazaji, kuruhusu vipengele kuwasiliana uwezo wao wa usindikaji na kurekebisha mtiririko ipasavyo.
 
-5. **Udirishaji na Ukusanyaji wa Muktadha**: MCP hurahisisha shughuli za dirisha kwa kutoa uwakilishi wa muundo wa muktadha wa muda na uhusiano, kuwezesha ukusanyaji wenye maana zaidi kati ya mitiririko ya matukio.
+5. **Udirisha wa Muktadha na Ukusanyaji**: MCP hurahisisha operesheni za dirisha zilizo na muundo mzuri wa muktadha wa muda na uhusiano, kuruhusu ukusanyaji wenye maana zaidi kati ya mfululizo wa matukio.
 
-6. **Usindikaji wa Mara-Moja Kabisa**: Katika mifumo ya utoaji inayohitaji semantiki ya mara-moja kabisa, MCP inaweza kujumuisha metadata ya usindikaji kusaidia kufuatilia na kuthibitisha hali ya usindikaji kati ya vipengele vilivyoenea.
+6. **Usindikaji wa Mara-Moja-Kamili**: Katika mifumo ya usambazaji inayohitaji mantiki ya mara-moja-kamili, MCP inaweza kujumuisha metadata ya usindikaji kusaidia kufuatilia na kuthibitisha hali ya usindikaji kati ya vipengele vilivyoenea.
 
-Utekelezaji wa MCP katika teknolojia mbalimbali za utoaji huunda njia moja kwa usimamizi wa muktadha, kupunguza haja ya nambari za muunganisho maalum huku ikiboresha uwezo wa mfumo kuhifadhi muktadha wenye maana wakati data inapita kwenye mzunguko.
+Utekelezaji wa MCP katika teknolojia mbalimbali za usambazaji huunda njia moja kwa usimamizi wa muktadha, kupunguza haja ya msimbo maalum wa muunganisho huku ukiongeza uwezo wa mfumo kudumisha muktadha muhimu wakati data inapopita kwenye njia.
 
-### MCP katika Mifumo Mbalimbali ya Utoaji wa Data
+### MCP katika Mifumo Mbalimbali ya Usambazaji wa Data
 
-MCP inaweza kuunganishwa na mifumo maarufu ya utoaji ikiwemo:
+Mifano hii inafuata maelezo ya MCP ya sasa inayolenga itifaki ya JSON-RPC yenye njia tofauti za usafirishaji. Msimbo unaonyesha jinsi ya kutekeleza njia maalum zinazounganisha majukwaa ya usambazaji kama Kafka na Pulsar huku ukidumisha ulinganifu kamili na itifaki ya MCP.
 
-#### Muunganisho wa Apache Kafka
+Mifano imeundwa kuonyesha jinsi majukwaa ya usambazaji yanavyoweza kuunganishwa na MCP kutoa usindikaji wa data wa muda halisi huku wakihifadhi ufahamu wa muktadha unaojumuishwa na MCP. Njia hii inahakikisha mifano ya msimbo inaonyesha hali ya sasa ya maelezo ya MCP hadi Juni 2025.
+
+MCP inaweza kuunganishwa na mifumo maarufu ya usambazaji ikiwemo:
+
+#### Ushirikiano wa Apache Kafka
 
 ```python
-from mcp_streaming import MCPKafkaConnector
+import asyncio
+import json
+from typing import Dict, Any, Optional
+from confluent_kafka import Consumer, Producer, KafkaError
+from mcp.client import Client, ClientCapabilities
+from mcp.core.message import JsonRpcMessage
+from mcp.core.transports import Transport
 
-# Initialize MCP Kafka connector
-connector = MCPKafkaConnector(
-    bootstrap_servers='localhost:9092',
-    context_preservation=True
-)
-
-# Create a context-aware consumer
-consumer = connector.create_consumer('input-topic')
-
-# Process streaming data with context
-for message in consumer:
-    context = message.get_context()
-    data = message.get_value()
+# Custom transport class to bridge MCP with Kafka
+class KafkaMCPTransport(Transport):
+    def __init__(self, bootstrap_servers: str, input_topic: str, output_topic: str):
+        self.bootstrap_servers = bootstrap_servers
+        self.input_topic = input_topic
+        self.output_topic = output_topic
+        self.producer = Producer({'bootstrap.servers': bootstrap_servers})
+        self.consumer = Consumer({
+            'bootstrap.servers': bootstrap_servers,
+            'group.id': 'mcp-client-group',
+            'auto.offset.reset': 'earliest'
+        })
+        self.message_queue = asyncio.Queue()
+        self.running = False
+        self.consumer_task = None
+        
+    async def connect(self):
+        """Connect to Kafka and start consuming messages"""
+        self.consumer.subscribe([self.input_topic])
+        self.running = True
+        self.consumer_task = asyncio.create_task(self._consume_messages())
+        return self
+        
+    async def _consume_messages(self):
+        """Background task to consume messages from Kafka and queue them for processing"""
+        while self.running:
+            try:
+                msg = self.consumer.poll(1.0)
+                if msg is None:
+                    await asyncio.sleep(0.1)
+                    continue
+                
+                if msg.error():
+                    if msg.error().code() == KafkaError._PARTITION_EOF:
+                        continue
+                    print(f"Consumer error: {msg.error()}")
+                    continue
+                
+                # Parse the message value as JSON-RPC
+                try:
+                    message_str = msg.value().decode('utf-8')
+                    message_data = json.loads(message_str)
+                    mcp_message = JsonRpcMessage.from_dict(message_data)
+                    await self.message_queue.put(mcp_message)
+                except Exception as e:
+                    print(f"Error parsing message: {e}")
+            except Exception as e:
+                print(f"Error in consumer loop: {e}")
+                await asyncio.sleep(1)
     
-    # Process with context awareness
-    result = process_with_context(data, context)
+    async def read(self) -> Optional[JsonRpcMessage]:
+        """Read the next message from the queue"""
+        try:
+            message = await self.message_queue.get()
+            return message
+        except Exception as e:
+            print(f"Error reading message: {e}")
+            return None
     
-    # Produce output with preserved context
-    connector.produce('output-topic', result, context=context)
+    async def write(self, message: JsonRpcMessage) -> None:
+        """Write a message to the Kafka output topic"""
+        try:
+            message_json = json.dumps(message.to_dict())
+            self.producer.produce(
+                self.output_topic,
+                message_json.encode('utf-8'),
+                callback=self._delivery_report
+            )
+            self.producer.poll(0)  # Trigger callbacks
+        except Exception as e:
+            print(f"Error writing message: {e}")
+    
+    def _delivery_report(self, err, msg):
+        """Kafka producer delivery callback"""
+        if err is not None:
+            print(f'Message delivery failed: {err}')
+        else:
+            print(f'Message delivered to {msg.topic()} [{msg.partition()}]')
+    
+    async def close(self) -> None:
+        """Close the transport"""
+        self.running = False
+        if self.consumer_task:
+            self.consumer_task.cancel()
+            try:
+                await self.consumer_task
+            except asyncio.CancelledError:
+                pass
+        self.consumer.close()
+        self.producer.flush()
+
+# Example usage of the Kafka MCP transport
+async def kafka_mcp_example():
+    # Create MCP client with Kafka transport
+    client = Client(
+        {"name": "kafka-mcp-client", "version": "1.0.0"},
+        ClientCapabilities({})
+    )
+    
+    # Create and connect the Kafka transport
+    transport = KafkaMCPTransport(
+        bootstrap_servers="localhost:9092",
+        input_topic="mcp-responses",
+        output_topic="mcp-requests"
+    )
+    
+    await client.connect(transport)
+    
+    try:
+        # Initialize the MCP session
+        await client.initialize()
+        
+        # Example of executing a tool via MCP
+        response = await client.execute_tool(
+            "process_data",
+            {
+                "data": "sample data",
+                "metadata": {
+                    "source": "sensor-1",
+                    "timestamp": "2025-06-12T10:30:00Z"
+                }
+            }
+        )
+        
+        print(f"Tool execution response: {response}")
+        
+        # Clean shutdown
+        await client.shutdown()
+    finally:
+        await transport.close()
+
+# Run the example
+if __name__ == "__main__":
+    asyncio.run(kafka_mcp_example())
 ```
 
 #### Utekelezaji wa Apache Pulsar
 
 ```python
-from mcp_streaming import MCPPulsarClient
+import asyncio
+import json
+import pulsar
+from typing import Dict, Any, Optional
+from mcp.core.message import JsonRpcMessage
+from mcp.core.transports import Transport
+from mcp.server import Server, ServerOptions
+from mcp.server.tools import Tool, ToolExecutionContext, ToolMetadata
 
-# Initialize MCP Pulsar client
-client = MCPPulsarClient('pulsar://localhost:6650')
+# Create a custom MCP transport that uses Pulsar
+class PulsarMCPTransport(Transport):
+    def __init__(self, service_url: str, request_topic: str, response_topic: str):
+        self.service_url = service_url
+        self.request_topic = request_topic
+        self.response_topic = response_topic
+        self.client = pulsar.Client(service_url)
+        self.producer = self.client.create_producer(response_topic)
+        self.consumer = self.client.subscribe(
+            request_topic,
+            "mcp-server-subscription",
+            consumer_type=pulsar.ConsumerType.Shared
+        )
+        self.message_queue = asyncio.Queue()
+        self.running = False
+        self.consumer_task = None
+    
+    async def connect(self):
+        """Connect to Pulsar and start consuming messages"""
+        self.running = True
+        self.consumer_task = asyncio.create_task(self._consume_messages())
+        return self
+    
+    async def _consume_messages(self):
+        """Background task to consume messages from Pulsar and queue them for processing"""
+        while self.running:
+            try:
+                # Non-blocking receive with timeout
+                msg = self.consumer.receive(timeout_millis=500)
+                
+                # Process the message
+                try:
+                    message_str = msg.data().decode('utf-8')
+                    message_data = json.loads(message_str)
+                    mcp_message = JsonRpcMessage.from_dict(message_data)
+                    await self.message_queue.put(mcp_message)
+                    
+                    # Acknowledge the message
+                    self.consumer.acknowledge(msg)
+                except Exception as e:
+                    print(f"Error processing message: {e}")
+                    # Negative acknowledge if there was an error
+                    self.consumer.negative_acknowledge(msg)
+            except Exception as e:
+                # Handle timeout or other exceptions
+                await asyncio.sleep(0.1)
+    
+    async def read(self) -> Optional[JsonRpcMessage]:
+        """Read the next message from the queue"""
+        try:
+            message = await self.message_queue.get()
+            return message
+        except Exception as e:
+            print(f"Error reading message: {e}")
+            return None
+    
+    async def write(self, message: JsonRpcMessage) -> None:
+        """Write a message to the Pulsar output topic"""
+        try:
+            message_json = json.dumps(message.to_dict())
+            self.producer.send(message_json.encode('utf-8'))
+        except Exception as e:
+            print(f"Error writing message: {e}")
+    
+    async def close(self) -> None:
+        """Close the transport"""
+        self.running = False
+        if self.consumer_task:
+            self.consumer_task.cancel()
+            try:
+                await self.consumer_task
+            except asyncio.CancelledError:
+                pass
+        self.consumer.close()
+        self.producer.close()
+        self.client.close()
 
-# Subscribe with context awareness
-consumer = client.subscribe('input-topic', 'subscription-name', 
-                           context_enabled=True)
+# Define a sample MCP tool that processes streaming data
+@Tool(
+    name="process_streaming_data",
+    description="Process streaming data with context preservation",
+    metadata=ToolMetadata(
+        required_capabilities=["streaming"]
+    )
+)
+async def process_streaming_data(
+    ctx: ToolExecutionContext,
+    data: str,
+    source: str,
+    priority: str = "medium"
+) -> Dict[str, Any]:
+    """
+    Process streaming data while preserving context
+    
+    Args:
+        ctx: Tool execution context
+        data: The data to process
+        source: The source of the data
+        priority: Priority level (low, medium, high)
+        
+    Returns:
+        Dict containing processed results and context information
+    """
+    # Example processing that leverages MCP context
+    print(f"Processing data from {source} with priority {priority}")
+    
+    # Access conversation context from MCP
+    conversation_id = ctx.conversation_id if hasattr(ctx, 'conversation_id') else "unknown"
+    
+    # Return results with enhanced context
+    return {
+        "processed_data": f"Processed: {data}",
+        "context": {
+            "conversation_id": conversation_id,
+            "source": source,
+            "priority": priority,
+            "processing_timestamp": ctx.get_current_time_iso()
+        }
+    }
 
-# Process messages with context preservation
-while True:
-    message = consumer.receive()
-    context = message.get_context()
+# Example MCP server implementation using Pulsar transport
+async def run_mcp_server_with_pulsar():
+    # Create MCP server
+    server = Server(
+        {"name": "pulsar-mcp-server", "version": "1.0.0"},
+        ServerOptions(
+            capabilities={"streaming": True}
+        )
+    )
     
-    # Process with context
-    result = process_with_context(message.data(), context)
+    # Register our tool
+    server.register_tool(process_streaming_data)
     
-    # Acknowledge the message
-    consumer.acknowledge(message)
+    # Create and connect Pulsar transport
+    transport = PulsarMCPTransport(
+        service_url="pulsar://localhost:6650",
+        request_topic="mcp-requests",
+        response_topic="mcp-responses"
+    )
     
-    # Send result with preserved context
-    producer = client.create_producer('output-topic')
-    producer.send(result, context=context)
+    try:
+        # Start the server with the Pulsar transport
+        await server.run(transport)
+    finally:
+        await transport.close()
+
+# Run the server
+if __name__ == "__main__":
+    asyncio.run(run_mcp_server_with_pulsar())
 ```
 
-### Mbinu Bora za Utekelezaji
+### Mbinu Bora za Kuweka Kazi
 
-Unapotekeleza MCP kwa utoaji wa wakati halisi:
+Unapotekeleza MCP kwa usambazaji wa muda halisi:
 
-1. **Panga kwa Uvumilivu wa Makosa**:
+1. **Buni kwa Uvumilivu wa Hitilafu**:
    - Tekeleza usimamizi sahihi wa makosa
-   - Tumia foleni za dead-letter kwa ujumbe ulioshindikana
-   - Unda wasindikaji wa idempotent
+   - Tumia safu za barua zisizotumwa kwa ujumbe uliofeli
+   - Buni wasindikaji wasioathiriwa na kuanzishwa mara nyingi
 
 2. **Boresha Utendaji**:
    - Sanidi ukubwa unaofaa wa buffer
    - Tumia kundi la data inapofaa
-   - Tekeleza mbinu za shinikizo la nyuma
+   - Tekeleza mbinu za kudhibiti mzigo wa kuingiza
 
-3. **Fuatilia na Chunguza**:
-   - Rekodi vipimo vya usindikaji wa mitiririko
-   - Fuatilia ueneaji wa muktadha
-   - Weka tahadhari kwa hali zisizo za kawaida
+3. **Fuatilia na Angalia**:
+   - Fuata vipimo vya usindikaji wa mfululizo
+   - Fuatilia usambazaji wa muktadha
+   - Weka tahadhari kwa matukio yasiyo ya kawaida
 
-4. **Linda Mitiririko Yako**:
-   - Tekeleza usimbaji fiche kwa data nyeti
-   - Tumia uthibitishaji na idhini
-   - Tumia udhibiti wa upatikanaji unaofaa
+4. **Linda Mfululizo Wako**:
+   - Tekeleza usimbaji kwa data nyeti
+   - Tumia uthibitishaji na ruhusa
+   - Tumia udhibiti sahihi wa upatikanaji
 
-### MCP katika IoT na Usindikaji wa Edge
+### MCP katika IoT na Kompyuta ya Edge
 
-MCP huboresha utoaji wa IoT kwa:
+MCP huongeza usambazaji wa IoT kwa:
 
-- Kuhifadhi muktadha wa kifaa katika mzunguko wa usindikaji
-- Kuruhusu utoaji wa data kwa ufanisi kutoka Edge hadi Cloud
-- Kusaidia uchambuzi wa wakati halisi wa mitiririko ya data za IoT
+- Kuhifadhi muktadha wa kifaa katika njia ya usindikaji
+- Kuwezesha usambazaji wa data uanzia Edge hadi Cloud kwa ufanisi
+- Kusaidia uchambuzi wa muda halisi wa mfululizo wa data za IoT
 - Kurahisisha mawasiliano kati ya vifaa kwa muktadha
 
-Mfano: Mitandao ya Sensor za Miji Mjini
+Mfano: Mitandao ya Sensor za Miji Mahiri  
 ```
 Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → Automated Responses
 ```
 
-### Nafasi katika Miamala ya Fedha na Biashara ya Kasi ya Juu
+### Nafasi katika Miamala ya Fedha na Biashara ya Muda Mfupi
 
-MCP hutoa faida kubwa kwa utoaji wa data wa kifedha:
+MCP hutoa faida kubwa kwa usambazaji wa data za fedha:
 
-- Usindikaji wa ucheleweshaji mdogo sana kwa maamuzi ya biashara
-- Kuhifadhi muktadha wa miamala katika usindikaji wote
-- Kusaidia usindikaji wa matukio tata kwa uelewa wa muktadha
-- Kuhakikisha ulinganifu wa data katika mifumo ya biashara iliyosambazwa
+- Usindikaji wa kuchelewa kidogo sana kwa maamuzi ya biashara
+- Kudumisha muktadha wa muamala katika usindikaji wote
+- Kusaidia usindikaji wa matukio changamano kwa ufahamu wa muktadha
+- Kuhakikisha ulinganifu wa data kati ya mifumo ya biashara iliyosambazwa
 
-### Kuboresha Uchambuzi wa Data unaoendeshwa na AI
+### Kuongeza Uchambuzi wa Data unaotegemea AI
 
-MCP huunda fursa mpya kwa uchambuzi wa mitiririko:
+MCP huunda fursa mpya kwa uchambuzi wa usambazaji:
 
-- Mafunzo na utambuzi wa modeli kwa wakati halisi
-- Kujifunza endelevu kutoka kwa data ya mitiririko
-- Utoaji wa vipengele vinavyojali muktadha
-- Mitiririko ya utambuzi wa modeli nyingi na muktadha ulihifadhiwa
+- Mafunzo ya modeli na utambuzi wa muda halisi
+- Kujifunza endelevu kutoka kwa data za mfululizo
+- Uvutaji wa sifa unaojua muktadha
+- Mifumo ya utambuzi wa modeli nyingi yenye muktadha uliohifadhiwa
 
-## Mwelekeo na Ubunifu wa Baadaye
+## Mwelekeo wa Baadaye na Uvumbuzi
 
-### Mageuzi ya MCP katika Mazingira ya Wakati Halisi
+### Mageuzi ya MCP katika Mazingira ya Muda Halisi
 
 Tukiangalia mbele, tunatarajia MCP itabadilika kushughulikia:
 
-- **Muunganisho wa Kompyuta ya Quantum**: Kujiandaa kwa mifumo ya utoaji inayotumia quantum
-- **Usindikaji wa Edge-Native**: Kuhamisha usindikaji unaojali muktadha zaidi kwenye vifaa vya Edge
-- **Usimamizi wa Mitiririko wa Kujitegemea**: Mitiririko ya utoaji inayojiboresha yenyewe
-- **Utoaji wa Ushirikiano**: Usindikaji uliosambazwa huku ukihifadhi faragha
+- **Ushirikiano na Kompyuta za Quantum**: Kujiandaa kwa mifumo ya usambazaji inayotumia quantum
+- **Usindikaji wa Asili wa Edge**: Kuhamisha usindikaji wenye ufahamu wa muktadha zaidi kwenye vifaa vya Edge
+- **Usimamizi wa Mfululizo Uliojitegemea**: Njia za usambazaji zinazojiboresha wenyewe
+- **Usambazaji wa Usambazaji**: Usindikaji uliosambazwa huku ukihifadhi faragha
 
-### Maboresho Yanayoweza Kutokea Katika Teknolojia
+### Maendeleo Yanayoweza Kutokea katika Teknolojia
 
-Teknolojia zinazoibuka zitakazoathiri MCP ya baadaye ni:
+Teknolojia zinazoibuka zitakazounda mustakabali wa MCP katika usambazaji:
 
-1. **Itifaki za Utoaji Zilizoboreshwa kwa AI**: Itifaki maalum zilizoundwa kwa mzigo wa AI
-2. **Muunganisho wa Kompyuta ya Neuromorphic**: Kompyuta inayohamasishwa na ubongo kwa usindikaji wa mitiririko
-3. **Utoaji Bila Seva**: Utoaji unaotegemea matukio, unaopanuka bila usimamizi wa miundombinu
-4. **Hifadhi za Muktadha Zilizogawanyika**: Usimamizi wa muktadha ulioenea duniani lakini thabiti
+1. **Itifaki za Usambazaji Zinazoboreshwa kwa AI**: Itifaki maalum zilizoundwa kwa kazi za AI
+2. **Ushirikiano na Kompyuta za Neuromorphic**: Kompyuta zinazofanana na ubongo kwa usindikaji wa mfululizo
+3. **Usambazaji Usio na Seva**: Usambazaji unaoendeshwa na matukio, unaoweza kupanuka bila usimamizi wa miundombinu
+4. **Hifadhi za Muktadha Zilizogawanyika**: Usimamizi wa muktadha uliosambazwa duniani kote lakini wenye uthabiti mkubwa
 
 ## Mazoezi ya Vitendo
 
-### Zoeezi 1: Kuanzisha Mzunguko wa Utoaji wa MCP wa Msingi
+### Zoeezi 1: Kuweka Msingi wa Mfululizo wa MCP
 
 Katika zoezi hili, utajifunza jinsi ya:
-- Kusanidi mazingira ya msingi ya utoaji wa MCP
-- Kutekeleza watunzaji wa muktadha kwa usindikaji wa mitiririko
+- Kusanidi mazingira ya msingi ya usambazaji wa MCP
+- Kutekeleza wasimamizi wa muktadha kwa usindikaji wa mfululizo
 - Kupima na kuthibitisha uhifadhi wa muktadha
 
-### Zoezi 2: Kujenga Dashibodi ya Uchambuzi wa Wakati Halisi
+### Zoeezi 2: Kuunda Dashibodi ya Uchambuzi wa Muda Halisi
 
 Tengeneza programu kamili inayofanya:
-- Kupokea data ya mitiririko kwa kutumia MCP
-- Kusindika mtiririko huku ukihifadhi muktadha
+- Kupokea data za usambazaji kwa kutumia MCP
+- Kusindika mfululizo huku ukidumisha muktadha
 - Kuonyesha matokeo kwa wakati halisi
 
-### Zoezi 3: Kutekeleza Usindikaji wa Matukio Tata kwa MCP
+### Zoeezi 3: Kutekeleza Usindikaji Changamano wa Matukio kwa MCP
 
-Zoezi la juu linalohusu:
-- Ugunduzi wa mifumo katika mitiririko
-- Uhusiano wa muktadha kati ya mitiririko mingi
-- Kutengeneza matukio tata yenye muktadha ulihifadhiwa
+Z
 
-## Rasilimali Zaidi
-
-- [Model Context Protocol Specification](https://github.com/microsoft/model-context-protocol) - Maelezo rasmi ya MCP na nyaraka
-- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Jifunze kuhusu Kafka kwa usindikaji wa mitiririko
-- [Apache Pulsar](https://pulsar.apache.org/) - Jukwaa la ujumbe na utoaji uliojumlishwa
-- [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - Kitabu kamili kuhusu miundo ya utoaji
-- [Microsoft Azure Event Hubs](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about) - Huduma ya usimamizi wa utoaji wa matukio
-- [MLflow Documentation](https://mlflow.org/docs/latest/index.html) - Kwa ufu
-
-**Kasi ya Kuandika**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiasi cha majumuisho**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kasoro. Hati asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatuna wajibu wowote kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "68c518dbff8a3b127ed2aa934054c56c",
-  "translation_date": "2025-06-11T16:56:26+00:00",
+  "original_hash": "b41174ac781ebf228b2043cbdfc09105",
+  "translation_date": "2025-06-12T00:15:14+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimestreaming/README.md",
   "language_code": "ar"
 }
@@ -11,68 +11,68 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## نظرة عامة
 
-أصبح تدفق البيانات في الوقت الحقيقي أمرًا ضروريًا في عالم اليوم الذي يعتمد على البيانات، حيث تحتاج الأعمال والتطبيقات إلى الوصول الفوري إلى المعلومات لاتخاذ قرارات سريعة. يمثل بروتوكول سياق النموذج (MCP) تقدمًا كبيرًا في تحسين عمليات التدفق هذه، مما يعزز كفاءة معالجة البيانات، ويحافظ على سلامة السياق، ويحسن أداء النظام بشكل عام.
+أصبح تدفق البيانات في الوقت الحقيقي أمرًا ضروريًا في عالم اليوم المعتمد على البيانات، حيث تتطلب الشركات والتطبيقات الوصول الفوري إلى المعلومات لاتخاذ قرارات في الوقت المناسب. يمثل بروتوكول سياق النموذج (MCP) تقدمًا كبيرًا في تحسين عمليات التدفق هذه في الوقت الحقيقي، مما يعزز كفاءة معالجة البيانات، ويحافظ على سلامة السياق، ويحسن أداء النظام بشكل عام.
 
-تتناول هذه الوحدة كيف يحول MCP تدفق البيانات في الوقت الحقيقي من خلال توفير نهج موحد لإدارة السياق عبر نماذج الذكاء الاصطناعي، ومنصات التدفق، والتطبيقات.
+يستعرض هذا الوحدة كيف يحول MCP تدفق البيانات في الوقت الحقيقي من خلال توفير نهج موحد لإدارة السياق عبر نماذج الذكاء الاصطناعي، ومنصات التدفق، والتطبيقات.
 
 ## مقدمة في تدفق البيانات في الوقت الحقيقي
 
-تدفق البيانات في الوقت الحقيقي هو نموذج تقني يتيح النقل المستمر، والمعالجة، وتحليل البيانات أثناء توليدها، مما يسمح للأنظمة بالاستجابة الفورية للمعلومات الجديدة. على عكس المعالجة الدُفعية التقليدية التي تعمل على مجموعات بيانات ثابتة، تعالج التدفقات البيانات أثناء تحركها، مقدمة رؤى وإجراءات بأدنى تأخير ممكن.
+يُعد تدفق البيانات في الوقت الحقيقي نموذجًا تقنيًا يتيح النقل والمعالجة والتحليل المستمر للبيانات أثناء توليدها، مما يسمح للأنظمة بالاستجابة الفورية للمعلومات الجديدة. على عكس المعالجة الدُفعية التقليدية التي تعمل على مجموعات بيانات ثابتة، تعالج التدفقات البيانات أثناء تحركها، موفرة رؤى وإجراءات بأقل زمن تأخير ممكن.
 
 ### المفاهيم الأساسية لتدفق البيانات في الوقت الحقيقي:
 
-- **تدفق بيانات مستمر**: تتم معالجة البيانات كسلسلة مستمرة لا تنتهي من الأحداث أو السجلات.
-- **معالجة منخفضة التأخير**: تم تصميم الأنظمة لتقليل الوقت بين توليد البيانات ومعالجتها.
-- **قابلية التوسع**: يجب أن تتعامل هندسة التدفق مع أحجام وسرعات بيانات متغيرة.
-- **تحمل الأخطاء**: تحتاج الأنظمة إلى مقاومة الأعطال لضمان تدفق البيانات دون انقطاع.
-- **المعالجة الحافظة للحالة**: الحفاظ على السياق عبر الأحداث أمر حاسم للتحليل المفيد.
+- **تدفق البيانات المستمر**: تتم معالجة البيانات كتيار مستمر لا ينتهي من الأحداث أو السجلات.
+- **معالجة منخفضة الكمون**: صُممت الأنظمة لتقليل الوقت بين توليد البيانات ومعالجتها.
+- **قابلية التوسع**: يجب أن تتعامل هياكل التدفق مع أحجام وسرعات بيانات متغيرة.
+- **التحمل للأخطاء**: تحتاج الأنظمة إلى الصمود أمام الأعطال لضمان تدفق البيانات دون انقطاع.
+- **المعالجة ذات الحالة**: الحفاظ على السياق عبر الأحداث أمر حاسم للتحليل الهادف.
 
 ### بروتوكول سياق النموذج وتدفق البيانات في الوقت الحقيقي
 
-يتعامل بروتوكول سياق النموذج (MCP) مع عدة تحديات حاسمة في بيئات التدفق في الوقت الحقيقي:
+يعالج بروتوكول سياق النموذج (MCP) عدة تحديات رئيسية في بيئات التدفق في الوقت الحقيقي:
 
-1. **استمرارية السياق**: يقوم MCP بتوحيد كيفية الحفاظ على السياق عبر مكونات التدفق الموزعة، مما يضمن أن نماذج الذكاء الاصطناعي وعقد المعالجة تصل إلى السياق التاريخي والبيئي ذي الصلة.
+1. **استمرارية السياق**: يقوم MCP بتوحيد كيفية الحفاظ على السياق عبر مكونات التدفق الموزعة، مما يضمن وصول نماذج الذكاء الاصطناعي وعقد المعالجة إلى السياق التاريخي والبيئي ذي الصلة.
 
-2. **إدارة الحالة بكفاءة**: من خلال توفير آليات منظمة لنقل السياق، يقلل MCP من عبء إدارة الحالة في خطوط أنابيب التدفق.
+2. **إدارة الحالة الفعالة**: من خلال توفير آليات منظمة لنقل السياق، يقلل MCP من العبء على إدارة الحالة في خطوط أنابيب التدفق.
 
-3. **التشغيل البيني**: يخلق MCP لغة مشتركة لمشاركة السياق بين تقنيات التدفق المتنوعة ونماذج الذكاء الاصطناعي، مما يمكّن من هندسات أكثر مرونة وقابلية للتوسع.
+3. **التشغيل البيني**: يخلق MCP لغة مشتركة لمشاركة السياق بين تقنيات التدفق المختلفة ونماذج الذكاء الاصطناعي، مما يمكّن من هياكل أكثر مرونة وقابلية للتوسع.
 
-4. **السياق المحسن للتدفق**: يمكن لتطبيقات MCP تحديد أولويات لعناصر السياق الأكثر أهمية لاتخاذ القرار في الوقت الحقيقي، مما يحسن الأداء والدقة.
+4. **تحسين السياق للتدفق**: يمكن لتطبيقات MCP أن تعطي أولوية لعناصر السياق الأكثر صلة باتخاذ القرار في الوقت الحقيقي، مما يحسن الأداء والدقة.
 
-5. **المعالجة التكيفية**: بفضل إدارة السياق المناسبة عبر MCP، يمكن لأنظمة التدفق التكيف ديناميكيًا مع ظروف وأنماط البيانات المتغيرة.
+5. **المعالجة التكيفية**: مع الإدارة السليمة للسياق عبر MCP، يمكن لأنظمة التدفق التكيف ديناميكيًا مع المعالجة بناءً على الظروف والأنماط المتغيرة في البيانات.
 
-في التطبيقات الحديثة، بدءًا من شبكات أجهزة الاستشعار في إنترنت الأشياء إلى منصات التداول المالي، يمكّن دمج MCP مع تقنيات التدفق معالجة أكثر ذكاءً ووعيًا بالسياق يمكنها الاستجابة بشكل مناسب للحالات المعقدة والمتطورة في الوقت الحقيقي.
+في التطبيقات الحديثة بدءًا من شبكات أجهزة إنترنت الأشياء وحتى منصات التداول المالي، يتيح دمج MCP مع تقنيات التدفق معالجة أكثر ذكاءً ووعيًا بالسياق يمكنها الاستجابة بشكل مناسب للحالات المعقدة والمتطورة في الوقت الحقيقي.
 
 ## أهداف التعلم
 
-بنهاية هذا الدرس، ستتمكن من:
+بنهاية هذا الدرس، ستكون قادرًا على:
 
 - فهم أساسيات تدفق البيانات في الوقت الحقيقي وتحدياته
 - شرح كيف يعزز بروتوكول سياق النموذج (MCP) تدفق البيانات في الوقت الحقيقي
-- تنفيذ حلول التدفق القائمة على MCP باستخدام أُطُر شائعة مثل Kafka وPulsar
-- تصميم ونشر هندسات تدفق عالية الأداء ومتحملة للأخطاء باستخدام MCP
+- تنفيذ حلول التدفق القائمة على MCP باستخدام أطر عمل شهيرة مثل Kafka وPulsar
+- تصميم ونشر هياكل تدفق عالية الأداء وقابلة للتحمل مع MCP
 - تطبيق مفاهيم MCP على حالات استخدام إنترنت الأشياء، والتداول المالي، والتحليلات المدفوعة بالذكاء الاصطناعي
 - تقييم الاتجاهات الناشئة والابتكارات المستقبلية في تقنيات التدفق القائمة على MCP
 
 ### التعريف والأهمية
 
-يتضمن تدفق البيانات في الوقت الحقيقي التوليد المستمر، والمعالجة، وتسليم البيانات بأقل تأخير ممكن. على عكس المعالجة الدُفعية التي تجمع البيانات وتعالجها دفعات، تتم معالجة بيانات التدفق تدريجيًا عند وصولها، مما يمكّن من الحصول على رؤى وإجراءات فورية.
+يتضمن تدفق البيانات في الوقت الحقيقي توليد البيانات ومعالجتها وتسليمها بشكل مستمر مع أدنى زمن تأخير. على عكس المعالجة الدُفعية التي تجمع البيانات وتعالجها دفعة واحدة، تُعالج بيانات التدفق بشكل تدريجي عند وصولها، مما يتيح رؤى وإجراءات فورية.
 
 الخصائص الرئيسية لتدفق البيانات في الوقت الحقيقي تشمل:
 
-- **انخفاض التأخير**: معالجة وتحليل البيانات خلال ميلي ثانية إلى ثوانٍ
+- **زمن تأخير منخفض**: معالجة وتحليل البيانات خلال ميلي ثانية إلى ثوانٍ
 - **تدفق مستمر**: تدفقات بيانات غير منقطعة من مصادر متعددة
-- **المعالجة الفورية**: تحليل البيانات عند وصولها بدلاً من دفعات
-- **هندسة معتمدة على الأحداث**: الاستجابة للأحداث عند حدوثها
+- **معالجة فورية**: تحليل البيانات عند وصولها بدلاً من دفعات
+- **هيكلية مدفوعة بالأحداث**: الاستجابة للأحداث فور حدوثها
 
-### التحديات في تدفق البيانات التقليدي
+### تحديات في تدفق البيانات التقليدي
 
 تواجه طرق تدفق البيانات التقليدية عدة قيود:
 
-1. **فقدان السياق**: صعوبة الحفاظ على السياق عبر الأنظمة الموزعة
-2. **مشاكل القابلية للتوسع**: تحديات في التوسع للتعامل مع بيانات عالية الحجم والسرعة
+1. **فقدان السياق**: صعوبة الحفاظ على السياق عبر أنظمة موزعة
+2. **مشاكل في القابلية للتوسع**: تحديات في التعامل مع بيانات عالية الحجم والسرعة
 3. **تعقيد التكامل**: مشاكل في التشغيل البيني بين الأنظمة المختلفة
-4. **إدارة التأخير**: موازنة الإنتاجية مع وقت المعالجة
+4. **إدارة الكمون**: موازنة بين معدل النقل ووقت المعالجة
 5. **اتساق البيانات**: ضمان دقة واكتمال البيانات عبر التدفق
 
 ## فهم بروتوكول سياق النموذج (MCP)
@@ -84,9 +84,9 @@ CO_OP_TRANSLATOR_METADATA:
 - الحفاظ على السياق عبر خط أنابيب البيانات
 - توحيد تنسيقات تبادل البيانات
 - تحسين نقل مجموعات البيانات الكبيرة
-- تعزيز التواصل بين النماذج وبعضها وبين النماذج والتطبيقات
+- تعزيز التواصل بين النماذج والتطبيقات
 
-### المكونات الأساسية والهندسة
+### المكونات الأساسية والهندسة المعمارية
 
 تتكون هندسة MCP لتدفق البيانات في الوقت الحقيقي من عدة مكونات رئيسية:
 
@@ -94,7 +94,7 @@ CO_OP_TRANSLATOR_METADATA:
 2. **معالجات التدفق**: تعالج تدفقات البيانات الواردة باستخدام تقنيات واعية للسياق
 3. **محولات البروتوكول**: تحول بين بروتوكولات التدفق المختلفة مع الحفاظ على السياق
 4. **مخزن السياق**: يخزن ويسترجع المعلومات السياقية بكفاءة
-5. **موصلات التدفق**: تتصل بمنصات التدفق المختلفة (Kafka، Pulsar، Kinesis، إلخ)
+5. **موصلات التدفق**: تتصل بمنصات تدفق مختلفة (Kafka، Pulsar، Kinesis، إلخ)
 
 ```mermaid
 graph TD
@@ -166,107 +166,367 @@ graph TD
 
 ### كيف يحسن MCP التعامل مع البيانات في الوقت الحقيقي
 
-يتعامل MCP مع تحديات التدفق التقليدية من خلال:
+يعالج MCP تحديات التدفق التقليدية من خلال:
 
 - **سلامة السياق**: الحفاظ على العلاقات بين نقاط البيانات عبر خط الأنابيب بأكمله
 - **نقل محسن**: تقليل التكرار في تبادل البيانات عبر إدارة ذكية للسياق
 - **واجهات موحدة**: توفير واجهات برمجة تطبيقات متسقة لمكونات التدفق
-- **تقليل التأخير**: تقليل عبء المعالجة من خلال إدارة فعالة للسياق
-- **تعزيز القابلية للتوسع**: دعم التوسع الأفقي مع الحفاظ على السياق
+- **تقليل الكمون**: تقليل عبء المعالجة من خلال إدارة فعالة للسياق
+- **تحسين القابلية للتوسع**: دعم التوسع الأفقي مع الحفاظ على السياق
 
 ## التكامل والتنفيذ
 
-تتطلب أنظمة تدفق البيانات في الوقت الحقيقي تصميمًا معماريًا وتنفيذًا دقيقًا للحفاظ على الأداء وسلامة السياق. يقدم بروتوكول سياق النموذج نهجًا موحدًا لدمج نماذج الذكاء الاصطناعي وتقنيات التدفق، مما يسمح بخطوط أنابيب معالجة أكثر تقدمًا ووعيًا بالسياق.
+تتطلب أنظمة تدفق البيانات في الوقت الحقيقي تصميمًا معماريًا وتنفيذًا دقيقين للحفاظ على الأداء وسلامة السياق. يوفر بروتوكول سياق النموذج نهجًا موحدًا لدمج نماذج الذكاء الاصطناعي وتقنيات التدفق، مما يسمح بخطوط أنابيب معالجة أكثر تطورًا ووعيًا بالسياق.
 
-### نظرة عامة على تكامل MCP في هندسات التدفق
+### نظرة عامة على تكامل MCP في هياكل التدفق
 
 يتضمن تنفيذ MCP في بيئات التدفق في الوقت الحقيقي عدة اعتبارات رئيسية:
 
-1. **تسلسل السياق والنقل**: يوفر MCP آليات فعالة لترميز المعلومات السياقية ضمن حزم بيانات التدفق، مما يضمن تتبع السياق الأساسي مع البيانات طوال خط المعالجة. يشمل ذلك تنسيقات تسلسل موحدة ومحسنة لنقل التدفق.
+1. **تسلسل السياق والنقل**: يوفر MCP آليات فعالة لترميز المعلومات السياقية داخل حزم بيانات التدفق، مما يضمن تتبع السياق الأساسي عبر خط المعالجة. يشمل ذلك تنسيقات تسلسل موحدة ومحسنة لنقل التدفق.
 
-2. **المعالجة الحافظة للحالة**: يمكن MCP من معالجة حافظة للحالة أكثر ذكاءً من خلال الحفاظ على تمثيل سياق متسق عبر عقد المعالجة. وهذا ذو قيمة خاصة في هندسات التدفق الموزعة حيث تكون إدارة الحالة تحديًا تقليديًا.
+2. **المعالجة ذات الحالة للتدفق**: يمكن MCP من معالجة ذات حالة أكثر ذكاءً من خلال الحفاظ على تمثيل سياقي متسق عبر عقد المعالجة. هذا مهم بشكل خاص في هياكل التدفق الموزعة حيث تكون إدارة الحالة تحديًا تقليديًا.
 
-3. **وقت الحدث مقابل وقت المعالجة**: يجب على تطبيقات MCP في أنظمة التدفق معالجة التحدي الشائع المتمثل في التمييز بين وقت وقوع الأحداث ووقت معالجتها. يمكن للبروتوكول دمج سياق زمني يحافظ على دلالات وقت الحدث.
+3. **وقت الحدث مقابل وقت المعالجة**: يجب على تطبيقات MCP في أنظمة التدفق معالجة التحدي الشائع المتمثل في التمييز بين وقت حدوث الأحداث ووقت معالجتها. يمكن للبروتوكول دمج سياق زمني يحافظ على دلالات وقت الحدث.
 
-4. **إدارة ضغط العودة**: من خلال توحيد إدارة السياق، يساعد MCP في إدارة ضغط العودة في أنظمة التدفق، مما يسمح للمكونات بالتواصل عن قدراتها في المعالجة وضبط التدفق وفقًا لذلك.
+4. **إدارة الضغط العكسي**: من خلال توحيد التعامل مع السياق، يساعد MCP في إدارة الضغط العكسي في أنظمة التدفق، مما يسمح للمكونات بالتواصل حول قدراتها على المعالجة وضبط التدفق وفقًا لذلك.
 
-5. **تجزئة وتجميع السياق**: يسهل MCP عمليات التجزئة الأكثر تقدمًا من خلال توفير تمثيلات منظمة للسياقات الزمنية والعلاقات، مما يمكّن من تجميعات أكثر معنى عبر تدفقات الأحداث.
+5. **تقسيم وتجميع السياق**: يسهل MCP عمليات تقسيم أكثر تطورًا من خلال توفير تمثيلات منظمة للسياقات الزمنية والعلاقاتية، مما يمكّن من تجميعات أكثر معنى عبر تدفقات الأحداث.
 
-6. **المعالجة بالضبط مرة واحدة**: في أنظمة التدفق التي تتطلب دلالات معالجة بالضبط مرة واحدة، يمكن لـ MCP دمج بيانات وصفية للمعالجة تساعد في تتبع والتحقق من حالة المعالجة عبر المكونات الموزعة.
+6. **المعالجة الدقيقة مرة واحدة**: في أنظمة التدفق التي تتطلب دلالات "مرة واحدة بالضبط"، يمكن لـ MCP دمج بيانات وصفية للمعالجة للمساعدة في تتبع والتحقق من حالة المعالجة عبر المكونات الموزعة.
 
-يخلق تطبيق MCP عبر تقنيات التدفق المختلفة نهجًا موحدًا لإدارة السياق، مما يقلل الحاجة إلى أكواد تكامل مخصصة ويعزز قدرة النظام على الحفاظ على السياق المعنوي أثناء تدفق البيانات عبر خط الأنابيب.
+يخلق تنفيذ MCP عبر تقنيات التدفق المختلفة نهجًا موحدًا لإدارة السياق، مما يقلل الحاجة إلى كود تكامل مخصص ويعزز قدرة النظام على الحفاظ على سياق ذي معنى أثناء تدفق البيانات عبر خط الأنابيب.
 
-### MCP في أُطُر تدفق البيانات المختلفة
+### MCP في أطر تدفق البيانات المختلفة
 
-يمكن دمج MCP مع أُطُر التدفق الشائعة بما في ذلك:
+تتبع هذه الأمثلة مواصفات MCP الحالية التي تركز على بروتوكول JSON-RPC مع آليات نقل مميزة. يوضح الكود كيفية تنفيذ وسائل نقل مخصصة تدمج منصات التدفق مثل Kafka وPulsar مع الحفاظ على التوافق الكامل مع بروتوكول MCP.
+
+تم تصميم الأمثلة لتوضيح كيفية دمج منصات التدفق مع MCP لتوفير معالجة بيانات في الوقت الحقيقي مع الحفاظ على الوعي السياقي الذي يشكل جوهر MCP. يضمن هذا النهج أن تعكس عينات الكود بدقة حالة مواصفات MCP الحالية حتى يونيو 2025.
+
+يمكن دمج MCP مع أطر التدفق الشائعة بما في ذلك:
 
 #### تكامل Apache Kafka
 
 ```python
-from mcp_streaming import MCPKafkaConnector
+import asyncio
+import json
+from typing import Dict, Any, Optional
+from confluent_kafka import Consumer, Producer, KafkaError
+from mcp.client import Client, ClientCapabilities
+from mcp.core.message import JsonRpcMessage
+from mcp.core.transports import Transport
 
-# Initialize MCP Kafka connector
-connector = MCPKafkaConnector(
-    bootstrap_servers='localhost:9092',
-    context_preservation=True
-)
-
-# Create a context-aware consumer
-consumer = connector.create_consumer('input-topic')
-
-# Process streaming data with context
-for message in consumer:
-    context = message.get_context()
-    data = message.get_value()
+# Custom transport class to bridge MCP with Kafka
+class KafkaMCPTransport(Transport):
+    def __init__(self, bootstrap_servers: str, input_topic: str, output_topic: str):
+        self.bootstrap_servers = bootstrap_servers
+        self.input_topic = input_topic
+        self.output_topic = output_topic
+        self.producer = Producer({'bootstrap.servers': bootstrap_servers})
+        self.consumer = Consumer({
+            'bootstrap.servers': bootstrap_servers,
+            'group.id': 'mcp-client-group',
+            'auto.offset.reset': 'earliest'
+        })
+        self.message_queue = asyncio.Queue()
+        self.running = False
+        self.consumer_task = None
+        
+    async def connect(self):
+        """Connect to Kafka and start consuming messages"""
+        self.consumer.subscribe([self.input_topic])
+        self.running = True
+        self.consumer_task = asyncio.create_task(self._consume_messages())
+        return self
+        
+    async def _consume_messages(self):
+        """Background task to consume messages from Kafka and queue them for processing"""
+        while self.running:
+            try:
+                msg = self.consumer.poll(1.0)
+                if msg is None:
+                    await asyncio.sleep(0.1)
+                    continue
+                
+                if msg.error():
+                    if msg.error().code() == KafkaError._PARTITION_EOF:
+                        continue
+                    print(f"Consumer error: {msg.error()}")
+                    continue
+                
+                # Parse the message value as JSON-RPC
+                try:
+                    message_str = msg.value().decode('utf-8')
+                    message_data = json.loads(message_str)
+                    mcp_message = JsonRpcMessage.from_dict(message_data)
+                    await self.message_queue.put(mcp_message)
+                except Exception as e:
+                    print(f"Error parsing message: {e}")
+            except Exception as e:
+                print(f"Error in consumer loop: {e}")
+                await asyncio.sleep(1)
     
-    # Process with context awareness
-    result = process_with_context(data, context)
+    async def read(self) -> Optional[JsonRpcMessage]:
+        """Read the next message from the queue"""
+        try:
+            message = await self.message_queue.get()
+            return message
+        except Exception as e:
+            print(f"Error reading message: {e}")
+            return None
     
-    # Produce output with preserved context
-    connector.produce('output-topic', result, context=context)
+    async def write(self, message: JsonRpcMessage) -> None:
+        """Write a message to the Kafka output topic"""
+        try:
+            message_json = json.dumps(message.to_dict())
+            self.producer.produce(
+                self.output_topic,
+                message_json.encode('utf-8'),
+                callback=self._delivery_report
+            )
+            self.producer.poll(0)  # Trigger callbacks
+        except Exception as e:
+            print(f"Error writing message: {e}")
+    
+    def _delivery_report(self, err, msg):
+        """Kafka producer delivery callback"""
+        if err is not None:
+            print(f'Message delivery failed: {err}')
+        else:
+            print(f'Message delivered to {msg.topic()} [{msg.partition()}]')
+    
+    async def close(self) -> None:
+        """Close the transport"""
+        self.running = False
+        if self.consumer_task:
+            self.consumer_task.cancel()
+            try:
+                await self.consumer_task
+            except asyncio.CancelledError:
+                pass
+        self.consumer.close()
+        self.producer.flush()
+
+# Example usage of the Kafka MCP transport
+async def kafka_mcp_example():
+    # Create MCP client with Kafka transport
+    client = Client(
+        {"name": "kafka-mcp-client", "version": "1.0.0"},
+        ClientCapabilities({})
+    )
+    
+    # Create and connect the Kafka transport
+    transport = KafkaMCPTransport(
+        bootstrap_servers="localhost:9092",
+        input_topic="mcp-responses",
+        output_topic="mcp-requests"
+    )
+    
+    await client.connect(transport)
+    
+    try:
+        # Initialize the MCP session
+        await client.initialize()
+        
+        # Example of executing a tool via MCP
+        response = await client.execute_tool(
+            "process_data",
+            {
+                "data": "sample data",
+                "metadata": {
+                    "source": "sensor-1",
+                    "timestamp": "2025-06-12T10:30:00Z"
+                }
+            }
+        )
+        
+        print(f"Tool execution response: {response}")
+        
+        # Clean shutdown
+        await client.shutdown()
+    finally:
+        await transport.close()
+
+# Run the example
+if __name__ == "__main__":
+    asyncio.run(kafka_mcp_example())
 ```
 
 #### تنفيذ Apache Pulsar
 
 ```python
-from mcp_streaming import MCPPulsarClient
+import asyncio
+import json
+import pulsar
+from typing import Dict, Any, Optional
+from mcp.core.message import JsonRpcMessage
+from mcp.core.transports import Transport
+from mcp.server import Server, ServerOptions
+from mcp.server.tools import Tool, ToolExecutionContext, ToolMetadata
 
-# Initialize MCP Pulsar client
-client = MCPPulsarClient('pulsar://localhost:6650')
+# Create a custom MCP transport that uses Pulsar
+class PulsarMCPTransport(Transport):
+    def __init__(self, service_url: str, request_topic: str, response_topic: str):
+        self.service_url = service_url
+        self.request_topic = request_topic
+        self.response_topic = response_topic
+        self.client = pulsar.Client(service_url)
+        self.producer = self.client.create_producer(response_topic)
+        self.consumer = self.client.subscribe(
+            request_topic,
+            "mcp-server-subscription",
+            consumer_type=pulsar.ConsumerType.Shared
+        )
+        self.message_queue = asyncio.Queue()
+        self.running = False
+        self.consumer_task = None
+    
+    async def connect(self):
+        """Connect to Pulsar and start consuming messages"""
+        self.running = True
+        self.consumer_task = asyncio.create_task(self._consume_messages())
+        return self
+    
+    async def _consume_messages(self):
+        """Background task to consume messages from Pulsar and queue them for processing"""
+        while self.running:
+            try:
+                # Non-blocking receive with timeout
+                msg = self.consumer.receive(timeout_millis=500)
+                
+                # Process the message
+                try:
+                    message_str = msg.data().decode('utf-8')
+                    message_data = json.loads(message_str)
+                    mcp_message = JsonRpcMessage.from_dict(message_data)
+                    await self.message_queue.put(mcp_message)
+                    
+                    # Acknowledge the message
+                    self.consumer.acknowledge(msg)
+                except Exception as e:
+                    print(f"Error processing message: {e}")
+                    # Negative acknowledge if there was an error
+                    self.consumer.negative_acknowledge(msg)
+            except Exception as e:
+                # Handle timeout or other exceptions
+                await asyncio.sleep(0.1)
+    
+    async def read(self) -> Optional[JsonRpcMessage]:
+        """Read the next message from the queue"""
+        try:
+            message = await self.message_queue.get()
+            return message
+        except Exception as e:
+            print(f"Error reading message: {e}")
+            return None
+    
+    async def write(self, message: JsonRpcMessage) -> None:
+        """Write a message to the Pulsar output topic"""
+        try:
+            message_json = json.dumps(message.to_dict())
+            self.producer.send(message_json.encode('utf-8'))
+        except Exception as e:
+            print(f"Error writing message: {e}")
+    
+    async def close(self) -> None:
+        """Close the transport"""
+        self.running = False
+        if self.consumer_task:
+            self.consumer_task.cancel()
+            try:
+                await self.consumer_task
+            except asyncio.CancelledError:
+                pass
+        self.consumer.close()
+        self.producer.close()
+        self.client.close()
 
-# Subscribe with context awareness
-consumer = client.subscribe('input-topic', 'subscription-name', 
-                           context_enabled=True)
+# Define a sample MCP tool that processes streaming data
+@Tool(
+    name="process_streaming_data",
+    description="Process streaming data with context preservation",
+    metadata=ToolMetadata(
+        required_capabilities=["streaming"]
+    )
+)
+async def process_streaming_data(
+    ctx: ToolExecutionContext,
+    data: str,
+    source: str,
+    priority: str = "medium"
+) -> Dict[str, Any]:
+    """
+    Process streaming data while preserving context
+    
+    Args:
+        ctx: Tool execution context
+        data: The data to process
+        source: The source of the data
+        priority: Priority level (low, medium, high)
+        
+    Returns:
+        Dict containing processed results and context information
+    """
+    # Example processing that leverages MCP context
+    print(f"Processing data from {source} with priority {priority}")
+    
+    # Access conversation context from MCP
+    conversation_id = ctx.conversation_id if hasattr(ctx, 'conversation_id') else "unknown"
+    
+    # Return results with enhanced context
+    return {
+        "processed_data": f"Processed: {data}",
+        "context": {
+            "conversation_id": conversation_id,
+            "source": source,
+            "priority": priority,
+            "processing_timestamp": ctx.get_current_time_iso()
+        }
+    }
 
-# Process messages with context preservation
-while True:
-    message = consumer.receive()
-    context = message.get_context()
+# Example MCP server implementation using Pulsar transport
+async def run_mcp_server_with_pulsar():
+    # Create MCP server
+    server = Server(
+        {"name": "pulsar-mcp-server", "version": "1.0.0"},
+        ServerOptions(
+            capabilities={"streaming": True}
+        )
+    )
     
-    # Process with context
-    result = process_with_context(message.data(), context)
+    # Register our tool
+    server.register_tool(process_streaming_data)
     
-    # Acknowledge the message
-    consumer.acknowledge(message)
+    # Create and connect Pulsar transport
+    transport = PulsarMCPTransport(
+        service_url="pulsar://localhost:6650",
+        request_topic="mcp-requests",
+        response_topic="mcp-responses"
+    )
     
-    # Send result with preserved context
-    producer = client.create_producer('output-topic')
-    producer.send(result, context=context)
+    try:
+        # Start the server with the Pulsar transport
+        await server.run(transport)
+    finally:
+        await transport.close()
+
+# Run the server
+if __name__ == "__main__":
+    asyncio.run(run_mcp_server_with_pulsar())
 ```
 
 ### أفضل الممارسات للنشر
 
-عند تنفيذ MCP للتدفق في الوقت الحقيقي:
+عند تنفيذ MCP لتدفق البيانات في الوقت الحقيقي:
 
 1. **التصميم لتحمل الأخطاء**:
-   - تنفيذ معالجة أخطاء مناسبة
-   - استخدام قوائم الرسائل الميتة للرسائل الفاشلة
-   - تصميم معالجات متكررة الآثار
+   - تنفيذ معالجة الأخطاء بشكل مناسب
+   - استخدام قوائم الرسائل الفاشلة (dead-letter queues)
+   - تصميم معالجات قابلة للتكرار بدون تأثير جانبي
 
-2. **التحسين للأداء**:
-   - ضبط أحجام المخازن المؤقتة المناسبة
+2. **التحسين من أجل الأداء**:
+   - تكوين أحجام المخازن المؤقتة المناسبة
    - استخدام التجميع حيثما كان مناسبًا
-   - تنفيذ آليات ضغط العودة
+   - تنفيذ آليات الضغط العكسي
 
 3. **المراقبة والرصد**:
    - تتبع مقاييس معالجة التدفق
@@ -280,14 +540,14 @@ while True:
 
 ### MCP في إنترنت الأشياء والحوسبة الطرفية
 
-يعزز MCP تدفق إنترنت الأشياء من خلال:
+يعزز MCP تدفق بيانات إنترنت الأشياء من خلال:
 
 - الحفاظ على سياق الجهاز عبر خط المعالجة
-- تمكين تدفق بيانات فعال من الطرف إلى السحابة
+- تمكين تدفق بيانات فعال من الحافة إلى السحابة
 - دعم التحليلات في الوقت الحقيقي على تدفقات بيانات إنترنت الأشياء
-- تسهيل التواصل بين الأجهزة مع الحفاظ على السياق
+- تسهيل الاتصال بين الأجهزة مع الحفاظ على السياق
 
-مثال: شبكات أجهزة استشعار المدن الذكية  
+مثال: شبكات حساسات المدن الذكية  
 ```
 Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → Automated Responses
 ```
@@ -296,9 +556,9 @@ Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → 
 
 يوفر MCP مزايا كبيرة لتدفق البيانات المالية:
 
-- معالجة منخفضة للغاية للتأخير لقرارات التداول
-- الحفاظ على سياق المعاملة طوال المعالجة
-- دعم معالجة الأحداث المعقدة مع الوعي بالسياق
+- معالجة بزمن تأخير منخفض جدًا لاتخاذ قرارات التداول
+- الحفاظ على سياق المعاملات طوال المعالجة
+- دعم معالجة الأحداث المعقدة مع الوعي السياقي
 - ضمان اتساق البيانات عبر أنظمة التداول الموزعة
 
 ### تعزيز تحليلات البيانات المدفوعة بالذكاء الاصطناعي
@@ -307,78 +567,78 @@ Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → 
 
 - تدريب النماذج والاستدلال في الوقت الحقيقي
 - التعلم المستمر من بيانات التدفق
-- استخراج ميزات واعي بالسياق
+- استخراج الميزات بوعي سياقي
 - خطوط أنابيب استدلال متعددة النماذج مع الحفاظ على السياق
 
 ## الاتجاهات والابتكارات المستقبلية
 
-### تطور MCP في البيئات الزمنية الحقيقية
+### تطور MCP في بيئات الوقت الحقيقي
 
-نتوقع في المستقبل تطور MCP لمعالجة:
+نتوقع في المستقبل أن يتطور MCP لمعالجة:
 
-- **تكامل الحوسبة الكمومية**: الاستعداد لأنظمة التدفق القائمة على الكم
-- **المعالجة الأصلية للطرف**: نقل المزيد من المعالجة الواعية للسياق إلى أجهزة الطرف
-- **إدارة التدفق الذاتية**: خطوط أنابيب تدفق ذاتية التحسين
-- **التدفق الموحد**: المعالجة الموزعة مع الحفاظ على الخصوصية
+- **تكامل الحوسبة الكمومية**: الاستعداد لأنظمة التدفق المعتمدة على الحوسبة الكمومية
+- **المعالجة الأصلية على الحافة**: نقل المزيد من المعالجة الواعية للسياق إلى أجهزة الحافة
+- **إدارة التدفق الذاتية**: خطوط أنابيب تدفق ذات تحسين ذاتي
+- **التدفق الفيدرالي**: المعالجة الموزعة مع الحفاظ على الخصوصية
 
 ### التطورات المحتملة في التكنولوجيا
 
-التقنيات الناشئة التي ستشكل مستقبل تدفق MCP:
+التقنيات الناشئة التي ستشكل مستقبل MCP للتدفق:
 
 1. **بروتوكولات تدفق محسنة للذكاء الاصطناعي**: بروتوكولات مخصصة مصممة خصيصًا لأعباء عمل الذكاء الاصطناعي
 2. **تكامل الحوسبة العصبية الشكل**: الحوسبة المستوحاة من الدماغ لمعالجة التدفق
-3. **التدفق بدون خوادم**: تدفق معتمد على الأحداث وقابل للتوسع بدون إدارة البنية التحتية
+3. **التدفق بدون خوادم**: تدفق قائم على الأحداث وقابل للتوسع بدون إدارة بنية تحتية
 4. **مخازن سياق موزعة**: إدارة سياق موزعة عالميًا مع اتساق عالي
 
-## تمارين عملية
+## التمارين العملية
 
 ### التمرين 1: إعداد خط أنابيب تدفق MCP أساسي
 
-في هذا التمرين، ستتعلم كيفية:  
-- تكوين بيئة تدفق MCP أساسية  
-- تنفيذ مديري السياق لمعالجة التدفق  
+في هذا التمرين، ستتعلم كيفية:
+- تكوين بيئة تدفق MCP أساسية
+- تنفيذ مديري السياق لمعالجة التدفق
 - اختبار والتحقق من الحفاظ على السياق
 
 ### التمرين 2: بناء لوحة تحليلات في الوقت الحقيقي
 
-أنشئ تطبيقًا كاملاً يقوم بـ:  
-- استيعاب بيانات التدفق باستخدام MCP  
-- معالجة التدفق مع الحفاظ على السياق  
+أنشئ تطبيقًا كاملاً يقوم بـ:
+- استيعاب بيانات التدفق باستخدام MCP
+- معالجة التدفق مع الحفاظ على السياق
 - عرض النتائج في الوقت الحقيقي
 
 ### التمرين 3: تنفيذ معالجة أحداث معقدة باستخدام MCP
 
-تمرين متقدم يغطي:  
-- اكتشاف الأنماط في التدفقات  
-- الارتباط السياقي عبر تدفقات متعددة  
+تمرين متقدم يشمل:
+- اكتشاف الأنماط في التدفقات
+- الترابط السياقي عبر عدة تدفقات
 - توليد أحداث معقدة مع الحفاظ على السياق
 
 ## موارد إضافية
 
-- [Model Context Protocol Specification](https://github.com/microsoft/model-context-protocol) - المواصفات الرسمية لبروتوكول MCP والوثائق  
-- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - تعلم عن Kafka لمعالجة التدفق  
-- [Apache Pulsar](https://pulsar.apache.org/) - منصة رسائل وتدفق موحدة  
-- [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - كتاب شامل عن هندسات التدفق  
-- [Microsoft Azure Event Hubs](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about) - خدمة تدفق أحداث مُدارة  
-- [MLflow Documentation](https://mlflow.org/docs/latest/index.html) - لتتبع ونشر نماذج التعلم الآلي  
-- [Real-Time Analytics with Apache Storm](https://storm.apache.org/releases/current/index.html) - إطار عمل للمعالجة في الوقت الحقيقي  
-- [Flink ML](https://nightlies.apache.org/flink/flink-ml-docs-master/) - مكتبة تعلم آلي لـ Apache Flink  
-- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - بناء تطبيقات مع نماذج اللغة الكبيرة
+- [Model Context Protocol Specification](https://github.com/modelcontextprotocol) - المواصفات والوثائق الرسمية لـ MCP
+- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - تعرف على Kafka لمعالجة التدفق
+- [Apache Pulsar](https://pulsar.apache.org/) - منصة الرسائل والتدفق الموحدة
+- [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - كتاب شامل عن هياكل التدفق
+- [Microsoft Azure Event Hubs](https://learn.microsoft.com/azure/event-hubs/event-hubs-about) - خدمة تدفق أحداث مُدارة
+- [MLflow Documentation](https://mlflow.org/docs/latest/index.html) - لتتبع ونشر نماذج التعلم الآلي
+- [Real-Time Analytics with Apache Storm](https://storm.apache.org/releases/current/index.html) - إطار معالجة للحوسبة في الوقت الحقيقي
+- [Flink ML](https://nightlies.apache.org/flink/flink-ml-docs-master/) - مكتبة تعلم الآلة لـ Apache Flink
+- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - بناء تطبيقات باستخدام نماذج اللغة الكبيرة
 
-## مخرجات التعلم
+## نتائج التعلم
 
-من خلال إكمال هذه الوحدة، ستتمكن من:
+بعد إكمال هذه الوحدة، ستكون قادرًا على:
 
-- فهم أساسيات تدفق البيانات في الوقت الحقيقي وتحدياته  
-- شرح كيف يعزز بروتوكول سياق النموذج (MCP) تدفق البيانات في الوقت الحقيقي  
-- تنفيذ حلول تدفق قائمة على MCP باستخدام أُطُر شائعة مثل Kafka وPulsar  
-- تصميم ونشر هندسات تدفق عالية الأداء ومتحملة للأخطاء باستخدام MCP  
-- تطبيق مفاهيم MCP على إنترنت الأشياء، والتداول المالي، وتحليلات الذكاء الاصطناعي  
+- فهم أساسيات تدفق البيانات في الوقت الحقيقي وتحدياته
+- شرح كيف يعزز بروتوكول سياق النموذج (MCP) تدفق البيانات في الوقت الحقيقي
+- تنفيذ حلول تدفق قائمة على MCP باستخدام أطر عمل شهيرة مثل Kafka وPulsar
+- تصميم ونشر هياكل تدفق عالية الأداء وقابلة للتحمل مع MCP
+- تطبيق مفاهيم MCP على إنترنت الأشياء، والتداول المالي، وحالات استخدام تحليلات الذكاء الاصطناعي
 - تقييم الاتجاهات الناشئة والابتكارات المستقبلية في تقنيات التدفق القائمة على MCP
 
-## ما التالي
+## ما هو التالي
 
 - [6. مساهمات المجتمع](../../06-CommunityContributions/README.md)
 
 **إخلاء المسؤولية**:  
-تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاستعانة بالترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير خاطئ ناتج عن استخدام هذه الترجمة.
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى جاهدين لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي والمعتمد. بالنسبة للمعلومات الحساسة أو الهامة، يُنصح بالاستعانة بترجمة بشرية محترفة. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.
