@@ -632,4 +632,4 @@ By completing this module, you will be able to:
 
 ## What's next 
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.11 Realtime Search](../mcp-realtimesearch/README.md)

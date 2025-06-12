@@ -475,4 +475,4 @@ if __name__ == "__main__":
 
 ## What's next
 
-- [Oauth 2](../mcp-oauth2-demo/README.md)
+- [5.3 Oauth 2](../mcp-oauth2-demo/README.md)

@@ -30,6 +30,8 @@ By the end of this lesson, you will be able to:
 | [5.8 Security](./mcp-security/README.md) | Security  | Secure your MCP Server |
 | [5.9 Web Search sample](./web-search-mcp/README.md) | Web Search MCP | Python MCP server and client integrating with SerpAPI for real-time web, news, product search, and Q&A. Demonstrates multi-tool orchestration, external API integration, and robust error handling. |
 | [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Streaming  | Real-time data streaming has become essential in today's data-driven world, where businesses and applications require immediate access to information to make timely decisions.|
+| [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Web Search | Real-time web search how MCP transforms real-time web search by providing a standardized approach to context management across AI models, search engines, and applications.| 
+
 ## Additional References
 
 For the most up-to-date information on advanced MCP topics, refer to:
