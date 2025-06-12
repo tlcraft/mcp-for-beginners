@@ -1,44 +1,44 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bc249f8b228953fafca05f94bb572aac",
-  "translation_date": "2025-06-02T19:02:04+00:00",
+  "original_hash": "7a11a5dcf2f9fdf6392f5a4545cf005e",
+  "translation_date": "2025-06-11T15:36:21+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "tr"
 }
 -->
 # Ders: Bir Web Arama MCP Sunucusu Oluşturma
 
-Bu bölüm, dış API’lerle entegre olan, farklı veri tiplerini işleyen, hataları yöneten ve birden fazla aracı düzenleyen gerçek dünya yapay zeka ajanı oluşturmayı gösterir — hepsi üretime hazır bir formatta. Şunları göreceksiniz:
+Bu bölüm, harici API'lerle entegre olan, çeşitli veri türlerini işleyen, hataları yöneten ve birden çok aracı koordine eden gerçek dünya yapay zeka ajanı oluşturmayı gösterir—üretime hazır bir formatta. Şunları göreceksiniz:
 
-- **Kimlik doğrulama gerektiren dış API entegrasyonu**
-- **Birden fazla uç noktadan gelen çeşitli veri türlerinin işlenmesi**
-- **Sağlam hata yönetimi ve kayıt stratejileri**
-- **Tek bir sunucuda çoklu araç düzenlemesi**
+- **Kimlik doğrulama gerektiren harici API entegrasyonu**
+- **Birden çok uç noktadan gelen çeşitli veri türlerinin işlenmesi**
+- **Güçlü hata yönetimi ve kayıt stratejileri**
+- **Tek bir sunucuda çoklu araç koordinasyonu**
 
-Bölüm sonunda, gelişmiş yapay zeka ve LLM destekli uygulamalar için gerekli olan kalıplar ve en iyi uygulamalar hakkında pratik deneyime sahip olacaksınız.
+Bölüm sonunda, gelişmiş yapay zeka ve LLM destekli uygulamalar için gerekli olan kalıplar ve en iyi uygulamalar hakkında pratik deneyim kazanacaksınız.
 
 ## Giriş
 
-Bu derste, SerpAPI kullanarak gerçek zamanlı web verileriyle LLM yeteneklerini genişleten gelişmiş bir MCP sunucusu ve istemcisi nasıl oluşturulur öğreneceksiniz. Bu, güncel bilgilere web üzerinden erişebilen dinamik yapay zeka ajanları geliştirmek için kritik bir beceridir.
+Bu derste, SerpAPI kullanarak gerçek zamanlı web verisiyle LLM yeteneklerini genişleten gelişmiş bir MCP sunucusu ve istemcisi nasıl oluşturulur öğreneceksiniz. Bu, webden güncel bilgilere erişebilen dinamik yapay zeka ajanları geliştirmek için kritik bir beceridir.
 
 ## Öğrenme Hedefleri
 
 Bu dersin sonunda şunları yapabileceksiniz:
 
-- Dış API’leri (örneğin SerpAPI) güvenli şekilde MCP sunucusuna entegre etmek
-- Web, haber, ürün arama ve Soru-Cevap için birden fazla araç uygulamak
-- LLM kullanımı için yapılandırılmış verileri ayrıştırmak ve biçimlendirmek
-- Hataları yönetmek ve API çağrı limitlerini etkili şekilde kontrol etmek
+- Harici API'leri (örneğin SerpAPI) güvenli şekilde bir MCP sunucusuna entegre etmek
+- Web, haber, ürün arama ve Soru-Cevap için birden çok aracı uygulamak
+- Yapılandırılmış verileri LLM kullanımı için ayrıştırmak ve biçimlendirmek
+- Hataları yönetmek ve API hız sınırlarını etkili şekilde kontrol etmek
 - Hem otomatik hem de etkileşimli MCP istemcileri oluşturup test etmek
 
 ## Web Arama MCP Sunucusu
 
-Bu bölüm, Web Arama MCP Sunucusu’nun mimarisini ve özelliklerini tanıtır. FastMCP ve SerpAPI’nin birlikte nasıl kullanıldığını ve LLM yeteneklerini gerçek zamanlı web verisiyle nasıl genişlettiğini göreceksiniz.
+Bu bölüm, Web Arama MCP Sunucusu'nun mimarisini ve özelliklerini tanıtır. FastMCP ve SerpAPI'nin birlikte nasıl kullanıldığını görerek LLM yeteneklerinin gerçek zamanlı web verisiyle nasıl genişletildiğini inceleyeceksiniz.
 
 ### Genel Bakış
 
-Bu uygulama, MCP’nin çeşitli, dış API tabanlı görevleri güvenli ve verimli şekilde yönetme yeteneğini gösteren dört araç içerir:
+Bu uygulama, MCP'nin çeşitli, harici API tabanlı görevleri güvenli ve verimli şekilde yönetme yeteneğini gösteren dört aracı içerir:
 
 - **general_search**: Geniş web sonuçları için
 - **news_search**: Güncel haber başlıkları için
@@ -46,7 +46,7 @@ Bu uygulama, MCP’nin çeşitli, dış API tabanlı görevleri güvenli ve veri
 - **qna**: Soru-cevap parçacıkları için
 
 ### Özellikler
-- **Kod Örnekleri**: Python için dil özelinde kod blokları içerir (kolayca diğer dillere genişletilebilir) ve açıklık için katlanabilir bölümler kullanır
+- **Kod Örnekleri**: Python için (ve kolayca diğer dillere genişletilebilir) dil-spesifik kod blokları içerir; açıklık için katlanabilir bölümler kullanılmıştır
 
 <details>  
 <summary>Python</summary>  
@@ -93,22 +93,22 @@ if __name__ == "__main__":
 ```
 </details>
 
-- **Dış API Entegrasyonu**: API anahtarlarının ve dış isteklerin güvenli yönetimini gösterir
-- **Yapılandırılmış Veri Ayrıştırma**: API yanıtlarını LLM dostu biçimlere dönüştürme yöntemini gösterir
-- **Hata Yönetimi**: Uygun kayıtla sağlam hata yönetimi
-- **Etkileşimli İstemci**: Hem otomatik testleri hem de test için etkileşimli modu içerir
-- **Bağlam Yönetimi**: Kayıt ve istek takibi için MCP Context kullanımı
+- **Harici API Entegrasyonu**: API anahtarlarının ve dış isteklerin güvenli yönetimini gösterir
+- **Yapılandırılmış Veri Ayrıştırma**: API yanıtlarının LLM dostu biçimlere dönüştürülmesini sağlar
+- **Hata Yönetimi**: Uygun kayıt ile sağlam hata yönetimi
+- **Etkileşimli İstemci**: Hem otomatik testler hem de etkileşimli mod içerir
+- **Bağlam Yönetimi**: MCP Bağlamını kullanarak kayıt ve istek takibi yapar
 
 ## Ön Koşullar
 
-Başlamadan önce, ortamınızın doğru şekilde kurulduğundan emin olun. Bu, tüm bağımlılıkların yüklendiğini ve API anahtarlarınızın sorunsuz geliştirme ve test için doğru yapılandırıldığını garantiler.
+Başlamadan önce ortamınızın doğru şekilde ayarlandığından emin olun. Bu, tüm bağımlılıkların yüklendiği ve API anahtarlarınızın sorunsuz geliştirme ve test için doğru yapılandırıldığı anlamına gelir.
 
-- Python 3.8 veya üstü
-- SerpAPI API Anahtarı ([SerpAPI](https://serpapi.com/) adresinden kaydolun - ücretsiz katman mevcut)
+- Python 3.8 veya üzeri
+- SerpAPI API Anahtarı ([SerpAPI](https://serpapi.com/) sitesinden kaydolabilirsiniz - ücretsiz katman mevcut)
 
 ## Kurulum
 
-Ortamınızı kurmak için şu adımları izleyin:
+Ortamınızı kurmak için aşağıdaki adımları izleyin:
 
 1. Bağımlılıkları uv (önerilen) veya pip ile yükleyin:
 
@@ -120,7 +120,7 @@ uv pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-2. Proje kökünde `.env` dosyası oluşturup SerpAPI anahtarınızı ekleyin:
+2. Proje kökünde SerpAPI anahtarınızı içeren bir `.env` dosyası oluşturun:
 
 ```
 SERPAPI_KEY=your_serpapi_key_here
@@ -128,7 +128,7 @@ SERPAPI_KEY=your_serpapi_key_here
 
 ## Kullanım
 
-Web Arama MCP Sunucusu, SerpAPI ile entegre olarak web, haber, ürün arama ve Soru-Cevap araçlarını sunan temel bileşendir. Gelen istekleri yönetir, API çağrılarını yapar, yanıtları ayrıştırır ve yapılandırılmış sonuçları istemciye döner.
+Web Arama MCP Sunucusu, SerpAPI ile entegre olarak web, haber, ürün arama ve Soru-Cevap için araçlar sunan temel bileşendir. Gelen istekleri yönetir, API çağrılarını yapar, yanıtları ayrıştırır ve yapılandırılmış sonuçları istemciye döner.
 
 Tam uygulamayı [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) dosyasında inceleyebilirsiniz.
 
@@ -153,13 +153,13 @@ You can review the full implementation in [`client.py`](../../../../05-AdvancedT
 
 ### İstemciyi Çalıştırma
 
-Otomatik testleri çalıştırmak için (bu sunucuyu otomatik başlatır):
+Otomatik testleri çalıştırmak için (bu işlem sunucuyu otomatik başlatır):
 
 ```bash
 python client.py
 ```
 
-Ya da etkileşimli modda çalıştırmak için:
+Ya da etkileşimli modda çalıştırın:
 
 ```bash
 python client.py --interactive
@@ -167,10 +167,10 @@ python client.py --interactive
 
 ### Farklı Yöntemlerle Test Etme
 
-İhtiyaçlarınıza ve iş akışınıza bağlı olarak, sunucunun sağladığı araçları test etmek ve onlarla etkileşim kurmak için birkaç yol vardır.
+İhtiyaçlarınıza ve iş akışınıza bağlı olarak sunucunun sunduğu araçları test etmek ve etkileşimde bulunmak için çeşitli yollar vardır.
 
-#### MCP Python SDK ile Özel Test Scriptleri Yazma
-Kendi test scriptlerinizi MCP Python SDK kullanarak oluşturabilirsiniz:
+#### MCP Python SDK ile Özel Test Betikleri Yazmak
+Kendi test betiklerinizi MCP Python SDK kullanarak oluşturabilirsiniz:
 
 <details>
 <summary>Python</summary>
@@ -195,27 +195,27 @@ async def test_custom_query():
 ```
 </details>
 
-Bu bağlamda, "test scripti" MCP sunucusuna istemci olarak davranan kendi yazdığınız özel bir Python programı anlamına gelir. Resmi bir birim testi olmaktan çok, bu script sunucuya programatik olarak bağlanmanıza, istediğiniz parametrelerle araçları çağırmanıza ve sonuçları incelemenize olanak tanır. Bu yöntem şunlar için kullanışlıdır:
+Burada "test betiği", MCP sunucusu için istemci olarak işlev gören özel bir Python programı anlamına gelir. Resmi bir birim testi olmaktan ziyade, bu betik sunucuya programatik olarak bağlanmanızı, istediğiniz parametrelerle araçları çağırmanızı ve sonuçları incelemenizi sağlar. Bu yaklaşım şunlar için faydalıdır:
 - Araç çağrılarını prototiplemek ve denemek
 - Sunucunun farklı girdilere nasıl yanıt verdiğini doğrulamak
-- Tekrarlayan araç çağrılarını otomatikleştirmek
-- Kendi iş akışlarınızı veya entegrasyonlarınızı MCP sunucusu üzerinde oluşturmak
+- Tekrarlanan araç çağrılarını otomatikleştirmek
+- MCP sunucusu üzerine kendi iş akışlarınızı veya entegrasyonlarınızı kurmak
 
-Test scriptleriyle yeni sorguları hızlıca deneyebilir, araç davranışlarını debug edebilir veya daha gelişmiş otomasyonlar için başlangıç noktası oluşturabilirsiniz. Aşağıda MCP Python SDK kullanarak böyle bir script oluşturmanın örneği verilmiştir:
+Test betiklerini yeni sorguları hızlıca denemek, araç davranışlarını hata ayıklamak veya daha gelişmiş otomasyonlar için başlangıç noktası olarak kullanabilirsiniz. Aşağıda MCP Python SDK ile böyle bir betiğin nasıl oluşturulacağına dair bir örnek var:
 
 ## Araç Açıklamaları
 
 Sunucu tarafından sağlanan aşağıdaki araçları farklı arama ve sorgu türleri için kullanabilirsiniz. Her aracın parametreleri ve örnek kullanımı aşağıda açıklanmıştır.
 
-Bu bölüm, mevcut her araç ve parametreleri hakkında detaylar sunar.
+Bu bölüm, mevcut her aracın ve parametrelerinin detaylarını sağlar.
 
 ### general_search
 
-Genel bir web araması yapar ve biçimlendirilmiş sonuçlar döner.
+Genel bir web araması yapar ve biçimlendirilmiş sonuçları döner.
 
 **Bu aracı nasıl çağırırsınız:**
 
-`general_search` aracını kendi scriptinizden MCP Python SDK ile veya Inspector ya da etkileşimli istemci modunda kullanabilirsiniz. İşte SDK ile kullanım örneği:
+`general_search` aracını kendi betiğinizden MCP Python SDK kullanarak veya Inspector ya da etkileşimli istemci modunda çağırabilirsiniz. İşte SDK ile bir kod örneği:
 
 <details>
 <summary>Python Örneği</summary>
@@ -240,7 +240,7 @@ async def run_general_search():
 Alternatif olarak, etkileşimli modda `general_search` from the menu and enter your query when prompted.
 
 **Parameters:**
-- `query` (string): Arama sorgusu seçin
+- `query` (string): Arama sorgusunu seçin
 
 **Örnek İstek:**
 
@@ -256,7 +256,7 @@ Bir sorguyla ilgili güncel haber makalelerini arar.
 
 **Bu aracı nasıl çağırırsınız:**
 
-`news_search` aracını kendi scriptinizden MCP Python SDK ile veya Inspector ya da etkileşimli istemci modunda kullanabilirsiniz. İşte SDK ile kullanım örneği:
+`news_search` aracını kendi betiğinizden MCP Python SDK kullanarak veya Inspector ya da etkileşimli istemci modunda çağırabilirsiniz. İşte SDK ile bir kod örneği:
 
 <details>
 <summary>Python Örneği</summary>
@@ -281,7 +281,7 @@ async def run_news_search():
 Alternatif olarak, etkileşimli modda `news_search` from the menu and enter your query when prompted.
 
 **Parameters:**
-- `query` (string): Arama sorgusu seçin
+- `query` (string): Arama sorgusunu seçin
 
 **Örnek İstek:**
 
@@ -293,11 +293,11 @@ Alternatif olarak, etkileşimli modda `news_search` from the menu and enter your
 
 ### product_search
 
-Bir sorguya uygun ürünleri arar.
+Bir sorguya uyan ürünleri arar.
 
 **Bu aracı nasıl çağırırsınız:**
 
-`product_search` aracını kendi scriptinizden MCP Python SDK ile veya Inspector ya da etkileşimli istemci modunda kullanabilirsiniz. İşte SDK ile kullanım örneği:
+`product_search` aracını kendi betiğinizden MCP Python SDK kullanarak veya Inspector ya da etkileşimli istemci modunda çağırabilirsiniz. İşte SDK ile bir kod örneği:
 
 <details>
 <summary>Python Örneği</summary>
@@ -322,7 +322,7 @@ async def run_product_search():
 Alternatif olarak, etkileşimli modda `product_search` from the menu and enter your query when prompted.
 
 **Parameters:**
-- `query` (string): Ürün arama sorgusu seçin
+- `query` (string): Ürün arama sorgusunu seçin
 
 **Örnek İstek:**
 
@@ -334,11 +334,11 @@ Alternatif olarak, etkileşimli modda `product_search` from the menu and enter y
 
 ### qna
 
-Arama motorlarından doğrudan sorulara cevaplar alır.
+Arama motorlarından doğrudan sorulara yanıtlar alır.
 
 **Bu aracı nasıl çağırırsınız:**
 
-`qna` aracını kendi scriptinizden MCP Python SDK ile veya Inspector ya da etkileşimli istemci modunda kullanabilirsiniz. İşte SDK ile kullanım örneği:
+`qna` aracını kendi betiğinizden MCP Python SDK kullanarak veya Inspector ya da etkileşimli istemci modunda çağırabilirsiniz. İşte SDK ile bir kod örneği:
 
 <details>
 <summary>Python Örneği</summary>
@@ -363,7 +363,7 @@ async def run_qna():
 Alternatif olarak, etkileşimli modda `qna` from the menu and enter your question when prompted.
 
 **Parameters:**
-- `question` (string): Cevap aranacak soru seçin
+- `question` (string): Yanıt aranacak soruyu seçin
 
 **Örnek İstek:**
 
@@ -380,7 +380,7 @@ Bu bölüm, sunucu ve istemci uygulamalarına ait kod parçacıkları ve referan
 <details>
 <summary>Python</summary>
 
-Tam uygulama detayları için [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) and [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) dosyasına bakın.
+Tam uygulama detayları için [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) and [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) dosyasına bakabilirsiniz.
 
 ```python
 # Example snippet from server.py:
@@ -390,27 +390,27 @@ import httpx
 ```
 </details>
 
-## Bu Dersteki İleri Düzey Kavramlar
+## Bu Dersteki İleri Konseptler
 
-Başlamadan önce, bu bölüm boyunca karşınıza çıkacak bazı önemli ileri düzey kavramlar şunlardır. Bunları anlamak, takip etmenize yardımcı olacaktır, özellikle bu konulara yeniyseniz:
+Başlamadan önce, bu bölüm boyunca karşınıza çıkacak bazı önemli ileri kavramlar var. Bunları anlamak, ilerlerken size yardımcı olacaktır, hatta yeniler için bile:
 
-- **Çoklu Araç Düzenlemesi**: Bu, bir MCP sunucusu içinde web arama, haber arama, ürün arama ve Soru-Cevap gibi farklı araçların bir arada çalıştırılması demektir. Sunucunuzun sadece tek bir görev değil, çeşitli görevleri yönetmesini sağlar.
-- **API Çağrı Limiti Yönetimi**: Birçok dış API (örneğin SerpAPI) belli bir zaman diliminde yapılabilecek istek sayısını sınırlar. İyi kod, bu limitleri kontrol eder ve limit aşıldığında uygulamanızın bozulmaması için uygun şekilde davranır.
-- **Yapılandırılmış Veri Ayrıştırma**: API yanıtları genellikle karmaşık ve iç içe olabilir. Bu kavram, bu yanıtları LLM’ler veya diğer programlar için temiz, kullanımı kolay formatlara dönüştürmekle ilgilidir.
-- **Hata Kurtarma**: Bazen işler ters gider — örneğin ağ bağlantısı kesilebilir veya API beklenen yanıtı vermez. Hata kurtarma, kodunuzun bu sorunları yönetip faydalı geri bildirim vermesi, çökmeden devam etmesi anlamına gelir.
-- **Parametre Doğrulama**: Bu, araçlarınıza gelen tüm girdilerin doğru ve güvenli olduğunu kontrol etmekle ilgilidir. Varsayılan değerlerin atanması ve türlerin doğrulanması gibi işlemleri içerir; böylece hatalar ve karışıklıklar önlenir.
+- **Çoklu Araç Koordinasyonu**: Bu, bir MCP sunucusunda web arama, haber arama, ürün arama ve Soru-Cevap gibi farklı araçların birlikte çalışması anlamına gelir. Sunucunuzun sadece tek bir görev değil, çeşitli görevleri yönetmesini sağlar.
+- **API Hız Sınırı Yönetimi**: Birçok harici API (örneğin SerpAPI), belirli bir süre içinde yapabileceğiniz istek sayısını sınırlar. İyi kod, bu sınırları kontrol eder ve sınır aşımında uygulamanızın çökmesini engelleyecek şekilde davranır.
+- **Yapılandırılmış Veri Ayrıştırma**: API yanıtları genellikle karmaşık ve iç içe geçmiş olur. Bu kavram, bu yanıtları LLM'ler veya diğer programlar için temiz, kolay kullanılabilir biçimlere dönüştürmeyi ifade eder.
+- **Hata Kurtarma**: Bazen işler ters gider—örneğin ağ bağlantısı kopar veya API beklenmeyen yanıt verir. Hata kurtarma, kodunuzun bu sorunları yönetip kullanışlı geri bildirim vermesini sağlar, çökme yerine.
+- **Parametre Doğrulama**: Bu, araçlarınıza gelen tüm girdilerin doğru ve güvenli olduğunu kontrol etmekle ilgilidir. Varsayılan değerler belirlemek ve tiplerin doğru olmasını sağlamak, hataları ve karışıklıkları önlemeye yardımcı olur.
 
-Bu bölüm, Web Arama MCP Sunucusu ile çalışırken karşılaşabileceğiniz yaygın sorunları teşhis etmenize ve çözmenize yardımcı olacaktır. Hata veya beklenmedik durumla karşılaşırsanız, bu sorun giderme bölümü en yaygın problemler için çözümler sunar. Yardım aramadan önce bu ipuçlarını gözden geçirin — çoğu sorunu hızla çözer.
+Bu bölüm, Web Arama MCP Sunucusu ile çalışırken karşılaşabileceğiniz yaygın sorunları teşhis edip çözmenize yardımcı olacaktır. Hata veya beklenmedik davranışla karşılaşırsanız, bu sorun giderme bölümü en yaygın problemlere çözümler sunar. Yardım aramadan önce bu ipuçlarını inceleyin—çoğu sorunu hızlıca çözer.
 
 ## Sorun Giderme
 
-Web Arama MCP Sunucusu ile çalışırken zaman zaman sorunlar yaşayabilirsiniz — bu, dış API’ler ve yeni araçlarla geliştirme yaparken normaldir. Bu bölüm, en yaygın sorunlara pratik çözümler sunar, böylece hızlıca yolunuza devam edebilirsiniz. Bir hata ile karşılaşırsanız, buradan başlayın: aşağıdaki ipuçları çoğu kullanıcının karşılaştığı sorunları ele alır ve genellikle ekstra yardıma gerek kalmadan probleminizi çözer.
+Web Arama MCP Sunucusu ile çalışırken zaman zaman sorunlar yaşayabilirsiniz—bu, harici API'lerle ve yeni araçlarla geliştirme yaparken normaldir. Bu bölüm, en yaygın sorunlara pratik çözümler sunar, böylece hızlıca yolunuza devam edebilirsiniz. Bir hata ile karşılaşırsanız, buradan başlayın: aşağıdaki ipuçları çoğu kullanıcının karşılaştığı sorunları ele alır ve genellikle ekstra yardıma gerek kalmadan problemi çözer.
 
 ### Yaygın Sorunlar
 
-Aşağıda, kullanıcıların en sık karşılaştığı sorunlar ve bunları çözmek için net açıklamalar ve adımlar yer almaktadır:
+Aşağıda kullanıcıların en sık karşılaştığı sorunlar, açıklamaları ve çözüm adımları yer almaktadır:
 
-1. **.env dosyasında SERPAPI_KEY eksik**
+1. **.env dosyasında SERPAPI_KEY eksikliği**
    - Eğer `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
 
 2. **Module not found errors**
@@ -420,11 +420,11 @@ Aşağıda, kullanıcıların en sık karşılaştığı sorunlar ve bunları ç
    - If you get an error like `Error during client execution`, it often means the client can't connect to the server, or the server isn't running as expected. Double-check that both the client and server are compatible versions, and that `server.py` is present and running in the correct directory. Restarting both the server and client can also help.
 
 4. **SerpAPI errors**
-   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env` dosyasını oluşturduğunuzdan emin olun. Anahtarınız doğruysa ama hata devam ediyorsa, ücretsiz katman kota sınırınız dolmuş olabilir.
+   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env` hatası görüyorsanız, `.env` dosyasını oluşturun ve SerpAPI anahtarınızı ekleyin. Anahtarınız doğruysa ama hata devam ediyorsa, ücretsiz katman kotanızın dolup dolmadığını kontrol edin.
 
-### Debug Modu
+### Hata Ayıklama Modu
 
-Varsayılan olarak, uygulama sadece önemli bilgileri kaydeder. Daha fazla detay görmek (örneğin karmaşık sorunları teşhis etmek için) istiyorsanız, DEBUG modunu etkinleştirebilirsiniz. Bu, uygulamanın her adımı hakkında çok daha fazla bilgi gösterir.
+Varsayılan olarak, uygulama yalnızca önemli bilgileri kaydeder. Daha fazla detay görmek isterseniz (örneğin karmaşık sorunları teşhis etmek için), DEBUG modunu etkinleştirebilirsiniz. Bu mod, uygulamanın attığı her adım hakkında çok daha fazla bilgi gösterir.
 
 **Örnek: Normal Çıktı**
 ```plaintext
@@ -448,7 +448,7 @@ GENERAL_SEARCH RESULTS:
 
 DEBUG modunun HTTP istekleri, yanıtları ve diğer iç detaylar hakkında ekstra satırlar içerdiğine dikkat edin. Bu, sorun giderme için çok faydalı olabilir.
 
-DEBUG modunu etkinleştirmek için `client.py` or `server.py` dosyasının başında kayıt seviyesini DEBUG olarak ayarlayın:
+DEBUG modunu etkinleştirmek için `client.py` or `server.py` dosyasının en üstünde kayıt seviyesini DEBUG olarak ayarlayın:
 
 <details>
 <summary>Python</summary>
@@ -465,9 +465,9 @@ logging.basicConfig(
 
 ---
 
-## Sonraki Adımlar
+## Sırada Ne Var
 
-- [6. Topluluk Katkıları](../../06-CommunityContributions/README.md)
+- [5.10 Gerçek Zamanlı Akış](../mcp-realtimestreaming/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilindeki haliyle yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalar nedeniyle sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilindeki haliyle yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

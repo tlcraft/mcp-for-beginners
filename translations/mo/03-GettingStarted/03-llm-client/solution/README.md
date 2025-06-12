@@ -1,16 +1,18 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9932d8c613363683e40b6215a35a709c",
-  "translation_date": "2025-05-17T10:32:04+00:00",
+  "original_hash": "f58f01197da8a381d70c98317b7e1f1d",
+  "translation_date": "2025-06-11T14:54:19+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/README.md",
   "language_code": "mo"
 }
 -->
-إليك الحلول لكل بيئة تشغيل:
+Voici les solutions pour chaque environnement d'exécution :
 
 - [TypeScript](./typescript/README.md)
 - [Python](./python/README.md)
 - [.NET](./dotnet/README.md)
+- [Java](./java/README.md)
 
-Sure, could you please specify which language "mo" refers to? It could be short for Moldovan, Maori, or another language. Let me know so I can assist you accurately!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
