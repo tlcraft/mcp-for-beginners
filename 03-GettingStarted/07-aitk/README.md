@@ -183,5 +183,4 @@ The takeaways from this chapter is the following:
 - [AI Toolkit docs](https://aka.ms/AIToolkit/doc)
 
 ## What's Next
-
-Next: [Lesson 4 Practical Implementation](/04-PracticalImplementation/README.md)
+- Next: [Testing & Debugging](/03-GettingStarted/08-testing/README.md)
