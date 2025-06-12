@@ -207,7 +207,9 @@ The implementation of MCP across various search technologies creates a unified a
 
 These examples follow the current MCP specification which focuses on a JSON-RPC based protocol with distinct transport mechanisms. The code demonstrates how you can implement custom search integrations while maintaining full compatibility with the MCP protocol.
 
-#### Python Implementation with Generic Search API
+
+<details>
+<summary>Python Implementation with Generic Search API</summary>
 
 ```python
 import asyncio
@@ -371,8 +373,11 @@ if __name__ == "__main__":
     # Run the server with Streamable HTTP transport
     search_server.run(transport="streamable-http")
 ```
+</details> 
 
-#### JavaScript Implementation with Browser-Based Search
+<details>
+<summary>JavaScript Implementation with Browser-Based Search</summary>
+
 
 ```javascript
 // MCP server implementation for web search
@@ -549,6 +554,10 @@ console.log('Search server running at http://localhost:8000/mcp');
 // In a separate process or after server is started
 // connectToSearchServer().catch(console.error);
 ```
+</details> 
+
+
+
 
 ## Code Examples Disclaimer
 
