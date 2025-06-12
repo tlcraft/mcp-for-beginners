@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T18:31:27+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-12T21:28:37+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "hk"
 }
 -->
 # MCP OAuth2 Demo
 
-呢個項目係一個**簡約嘅 Spring Boot 應用程式**，同時擔任：
+呢個項目係一個**最簡Spring Boot應用程式**，同時擔當：
 
-* **Spring 授權伺服器**（透過 `client_credentials` 流程發行 JWT 存取權杖），同時  
-* **資源伺服器**（保護自己嘅 `/hello` 端點）。
+* **Spring授權伺服器**（透過`client_credentials`流程發行JWT存取令牌），同時  
+* **資源伺服器**（保護佢自己嘅`/hello`端點）。
 
-佢模仿咗喺 [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) 入面示範嘅設定。
+佢反映咗喺[Spring blog post (2025年4月2日)](https://spring.io/blog/2025/04/02/mcp-server-oauth2)入面示範嘅設定。
 
 ---
 
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## 測試 OAuth2 配置
+## 測試OAuth2設定
 
-你可以用以下步驟測試 OAuth2 嘅安全配置：
+你可以用以下步驟測試OAuth2安全設定：
 
-### 1. 確認伺服器運行同埋有保護
+### 1. 確認伺服器運行同受保護
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. 用 client credentials 取得存取權杖
+### 2. 用client credentials攞存取令牌
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Note: Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`。
+注意：Basic Authentication標頭係 (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`。
 
-### 3. 用存取權杖存取受保護嘅端點
+### 3. 用令牌存取受保護端點
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-如果收到 "Hello from MCP OAuth2 Demo!" 嘅成功回應，就代表 OAuth2 配置運作正常。
+收到「Hello from MCP OAuth2 Demo!」嘅成功回應就代表OAuth2設定運作正常。
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## 部署到 **Azure Container Apps**
+## 部署到**Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Ingress FQDN 就係你嘅 **issuer** (`https://<fqdn>`).  
+ingress嘅FQDN會變成你嘅**issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`。
 
 ---
 
-## 連接到 **Azure API Management**
+## 連接到**Azure API Management**
 
-將呢個 inbound policy 加入你嘅 API：
+將呢個入站策略加入你嘅API：
 
 ```xml
 <inbound>
@@ -116,13 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM 會自動攞 JWKS 同驗證每個請求。
+APIM會攞JWKS同驗證每個請求。
 
 ---
 
 ## 下一步
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯而成。雖然我哋致力確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件嘅母語版本應視為權威來源。對於重要資料，建議採用專業人工翻譯。我哋對因使用此翻譯而引起嘅任何誤解或錯誤詮釋概不負責。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能存在錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議使用專業人工翻譯。我們不對因使用此翻譯而引致的任何誤解或誤釋承擔責任。

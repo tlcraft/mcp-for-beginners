@@ -1,35 +1,47 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e1cbc99fa7185139ad6d539eca09a2b3",
-  "translation_date": "2025-06-02T20:26:28+00:00",
+  "original_hash": "8311f46a35cf608c9780f39b62c9dc3f",
+  "translation_date": "2025-06-12T22:04:59+00:00",
   "source_file": "05-AdvancedTopics/mcp-root-contexts/README.md",
   "language_code": "pl"
 }
 -->
-## Praktyki zarządzania Root Contexts
+## Przykład: Implementacja Root Context dla analizy finansowej
 
-Oto kilka najlepszych praktyk dotyczących efektywnego zarządzania root contexts:
+W tym przykładzie utworzymy root context dla sesji analizy finansowej, pokazując, jak utrzymać stan podczas wielu interakcji.
 
-- **Twórz skoncentrowane konteksty**: Twórz oddzielne root contexts dla różnych celów rozmowy lub dziedzin, aby zachować przejrzystość.
+## Przykład: Zarządzanie Root Context
 
-- **Ustal polityki wygasania**: Wprowadź zasady archiwizacji lub usuwania starych kontekstów, aby zarządzać przestrzenią dyskową i spełniać wymagania dotyczące przechowywania danych.
+Skuteczne zarządzanie root context jest kluczowe dla utrzymania historii rozmów i stanu. Poniżej znajduje się przykład, jak zaimplementować zarządzanie root context.
 
-- **Przechowuj istotne metadane**: Wykorzystuj metadane kontekstu do zapisywania ważnych informacji o rozmowie, które mogą się przydać później.
+## Root Context dla wieloetapowej pomocy
 
-- **Korzystaj konsekwentnie z identyfikatorów kontekstu**: Po utworzeniu kontekstu, używaj jego ID konsekwentnie we wszystkich powiązanych żądaniach, aby zachować ciągłość.
+W tym przykładzie utworzymy root context dla sesji wieloetapowej pomocy, demonstrując, jak utrzymać stan podczas wielu interakcji.
 
-- **Generuj podsumowania**: Gdy kontekst staje się obszerny, rozważ tworzenie podsumowań, które uchwycą kluczowe informacje, jednocześnie ograniczając rozmiar kontekstu.
+## Najlepsze praktyki dotyczące Root Context
 
-- **Wdrażaj kontrolę dostępu**: W systemach wieloużytkownikowych zapewnij odpowiednie mechanizmy kontroli dostępu, aby chronić prywatność i bezpieczeństwo kontekstów rozmów.
+Oto kilka najlepszych praktyk dotyczących skutecznego zarządzania root context:
 
-- **Radź sobie z ograniczeniami kontekstu**: Bądź świadomy limitów rozmiaru kontekstu i stosuj strategie radzenia sobie z bardzo długimi rozmowami.
+- **Twórz skoncentrowane konteksty**: Twórz oddzielne root context dla różnych celów rozmowy lub dziedzin, aby zachować przejrzystość.
 
-- **Archiwizuj po zakończeniu**: Archiwizuj konteksty po zakończeniu rozmów, aby zwolnić zasoby, jednocześnie zachowując historię konwersacji.
+- **Ustal polityki wygasania**: Wdrażaj polityki archiwizacji lub usuwania starych kontekstów, aby zarządzać miejscem i spełniać wymogi dotyczące przechowywania danych.
+
+- **Przechowuj istotne metadane**: Wykorzystuj metadane kontekstu do zapisywania ważnych informacji o rozmowie, które mogą być przydatne później.
+
+- **Korzystaj konsekwentnie z identyfikatorów kontekstu**: Po utworzeniu kontekstu używaj jego ID konsekwentnie we wszystkich powiązanych żądaniach, aby zachować ciągłość.
+
+- **Generuj podsumowania**: Gdy kontekst staje się duży, rozważ generowanie podsumowań, aby uchwycić kluczowe informacje przy jednoczesnym zarządzaniu rozmiarem kontekstu.
+
+- **Wdrażaj kontrolę dostępu**: W systemach wieloużytkownikowych wprowadź odpowiednie mechanizmy kontroli dostępu, aby zapewnić prywatność i bezpieczeństwo kontekstów rozmów.
+
+- **Radź sobie z ograniczeniami kontekstu**: Miej świadomość ograniczeń rozmiaru kontekstu i stosuj strategie radzenia sobie z bardzo długimi rozmowami.
+
+- **Archiwizuj po zakończeniu**: Archiwizuj konteksty po zakończeniu rozmów, aby zwolnić zasoby, zachowując jednocześnie historię rozmowy.
 
 ## Co dalej
 
-- [Routing](../mcp-routing/README.md)
+- [5.5 Routing](../mcp-routing/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być traktowany jako źródło ostateczne. W przypadku istotnych informacji zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najdokładniejsze, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.

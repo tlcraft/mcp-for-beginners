@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a621fc52c7daec552eb8b3b48c0361dd",
-  "translation_date": "2025-06-02T19:45:28+00:00",
+  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
+  "translation_date": "2025-06-12T22:04:46+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "pl"
 }
 -->
 ## Architektura próbkowania i trasowania w MCP
 
-Próbkowanie jest kluczowym elementem Model Context Protocol (MCP), który pozwala na efektywne przetwarzanie i trasowanie żądań. Polega ono na analizie nadchodzących żądań w celu określenia najbardziej odpowiedniego modelu lub usługi do ich obsługi, na podstawie różnych kryteriów, takich jak typ treści, kontekst użytkownika czy obciążenie systemu.
+Próbkowanie jest kluczowym elementem Model Context Protocol (MCP), który umożliwia efektywne przetwarzanie i trasowanie żądań. Polega na analizie przychodzących żądań w celu określenia najbardziej odpowiedniego modelu lub usługi do ich obsługi, na podstawie różnych kryteriów, takich jak typ treści, kontekst użytkownika czy obciążenie systemu.
 
-Próbkowanie i trasowanie mogą być łączone, tworząc solidną architekturę, która optymalizuje wykorzystanie zasobów i zapewnia wysoką dostępność. Proces próbkowania może służyć do klasyfikacji żądań, podczas gdy trasowanie kieruje je do odpowiednich modeli lub usług.
+Próbkowanie i trasowanie można połączyć, tworząc solidną architekturę, która optymalizuje wykorzystanie zasobów i zapewnia wysoką dostępność. Proces próbkowania może służyć do klasyfikacji żądań, natomiast trasowanie kieruje je do odpowiednich modeli lub usług.
 
 Poniższy diagram ilustruje, jak próbkowanie i trasowanie współpracują w kompleksowej architekturze MCP:
 
@@ -82,7 +82,7 @@ flowchart TB
 
 ## Co dalej
 
-- [Próbkowanie](../mcp-sampling/README.md)
+- [5.6 Sampling](../mcp-sampling/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy uważać za źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o krytycznym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

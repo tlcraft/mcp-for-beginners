@@ -1,44 +1,44 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ba9c96a7c7901faa1d26c8ec7ad56d2c",
-  "translation_date": "2025-06-02T20:08:22+00:00",
+  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
+  "translation_date": "2025-06-12T21:33:00+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "fr"
 }
 -->
 # Meilleures pratiques de sécurité
 
-La sécurité est essentielle pour les implémentations MCP, en particulier dans les environnements d'entreprise. Il est important de garantir que les outils et les données sont protégés contre les accès non autorisés, les violations de données et autres menaces de sécurité.
+La sécurité est essentielle pour les implémentations MCP, surtout dans les environnements d'entreprise. Il est important de garantir que les outils et les données soient protégés contre les accès non autorisés, les fuites de données et autres menaces de sécurité.
 
 ## Introduction
 
-Dans cette leçon, nous allons explorer les meilleures pratiques de sécurité pour les implémentations MCP. Nous aborderons l’authentification et l’autorisation, la protection des données, l’exécution sécurisée des outils et la conformité aux réglementations sur la confidentialité des données.
+Dans cette leçon, nous allons explorer les meilleures pratiques de sécurité pour les implémentations MCP. Nous aborderons l’authentification et l’autorisation, la protection des données, l’exécution sécurisée des outils, ainsi que la conformité aux réglementations sur la confidentialité des données.
 
 ## Objectifs d’apprentissage
 
 À la fin de cette leçon, vous serez capable de :
 
-- Mettre en œuvre des mécanismes sécurisés d’authentification et d’autorisation pour les serveurs MCP.
+- Mettre en place des mécanismes d’authentification et d’autorisation sécurisés pour les serveurs MCP.
 - Protéger les données sensibles grâce au chiffrement et au stockage sécurisé.
 - Assurer l’exécution sécurisée des outils avec des contrôles d’accès appropriés.
-- Appliquer les meilleures pratiques pour la protection des données et la conformité à la confidentialité.
+- Appliquer les meilleures pratiques pour la protection des données et la conformité à la vie privée.
 
 ## Authentification et autorisation
 
-L’authentification et l’autorisation sont indispensables pour sécuriser les serveurs MCP. L’authentification répond à la question « Qui êtes-vous ? » tandis que l’autorisation répond à « Que pouvez-vous faire ? ».
+L’authentification et l’autorisation sont indispensables pour sécuriser les serveurs MCP. L’authentification répond à la question « Qui êtes-vous ? », tandis que l’autorisation répond à « Que pouvez-vous faire ? ».
 
-Voyons des exemples d’implémentation d’une authentification et d’une autorisation sécurisées dans les serveurs MCP avec .NET et Java.
+Voyons des exemples d’implémentation d’authentification et d’autorisation sécurisées dans les serveurs MCP en utilisant .NET et Java.
 
 ### Intégration .NET Identity
 
-ASP .NET Core Identity offre un cadre robuste pour gérer l’authentification et l’autorisation des utilisateurs. Nous pouvons l’intégrer aux serveurs MCP pour sécuriser l’accès aux outils et aux ressources.
+ASP .NET Core Identity offre un cadre solide pour gérer l’authentification et l’autorisation des utilisateurs. Nous pouvons l’intégrer aux serveurs MCP pour sécuriser l’accès aux outils et ressources.
 
 Voici quelques concepts clés à comprendre lors de l’intégration d’ASP.NET Core Identity avec les serveurs MCP :
 
-- **Configuration de l’Identity** : Mise en place d’ASP.NET Core Identity avec les rôles et revendications utilisateurs. Une revendication est une information sur l’utilisateur, comme son rôle ou ses permissions, par exemple « Admin » ou « User ».
-- **Authentification JWT** : Utilisation des JSON Web Tokens (JWT) pour un accès API sécurisé. Le JWT est une norme pour transmettre des informations de manière sécurisée entre parties sous forme d’objet JSON, vérifiable et fiable grâce à une signature numérique.
-- **Politiques d’autorisation** : Définition de politiques pour contrôler l’accès à des outils spécifiques selon les rôles utilisateurs. MCP utilise ces politiques pour déterminer quels utilisateurs peuvent accéder à quels outils en fonction de leurs rôles et revendications.
+- **Configuration de l’identité** : Mise en place d’ASP.NET Core Identity avec les rôles et revendications des utilisateurs. Une revendication est une information concernant l’utilisateur, comme son rôle ou ses permissions, par exemple « Admin » ou « User ».
+- **Authentification JWT** : Utilisation des JSON Web Tokens (JWT) pour un accès API sécurisé. Le JWT est une norme permettant de transmettre des informations de manière sécurisée entre deux parties sous forme d’objet JSON, vérifiable et fiable grâce à une signature numérique.
+- **Politiques d’autorisation** : Définition de politiques pour contrôler l’accès à des outils spécifiques selon les rôles des utilisateurs. MCP utilise ces politiques pour déterminer quels utilisateurs peuvent accéder à quels outils en fonction de leurs rôles et revendications.
 
 ```csharp
 public class SecureMcpStartup
@@ -112,21 +112,21 @@ public class SecureMcpStartup
 Dans le code précédent, nous avons :
 
 - Configuré ASP.NET Core Identity pour la gestion des utilisateurs.
-- Mis en place l’authentification JWT pour un accès API sécurisé. Nous avons spécifié les paramètres de validation du token, notamment l’émetteur, le public et la clé de signature.
-- Défini des politiques d’autorisation pour contrôler l’accès aux outils selon les rôles utilisateurs. Par exemple, la politique « CanUseAdminTools » exige que l’utilisateur ait le rôle « Admin », tandis que la politique « CanUseBasic » demande que l’utilisateur soit authentifié.
+- Mis en place l’authentification JWT pour un accès API sécurisé, en spécifiant les paramètres de validation du token, notamment l’émetteur, le public et la clé de signature.
+- Défini des politiques d’autorisation pour contrôler l’accès aux outils selon les rôles des utilisateurs. Par exemple, la politique « CanUseAdminTools » requiert que l’utilisateur ait le rôle « Admin », tandis que la politique « CanUseBasic » exige que l’utilisateur soit authentifié.
 - Enregistré les outils MCP avec des exigences d’autorisation spécifiques, garantissant que seuls les utilisateurs avec les rôles appropriés peuvent y accéder.
 
 ### Intégration Java Spring Security
 
-Pour Java, nous utiliserons Spring Security afin d’implémenter une authentification et une autorisation sécurisées pour les serveurs MCP. Spring Security fournit un cadre complet qui s’intègre parfaitement aux applications Spring.
+Pour Java, nous utiliserons Spring Security pour implémenter une authentification et une autorisation sécurisées pour les serveurs MCP. Spring Security fournit un cadre de sécurité complet qui s’intègre parfaitement aux applications Spring.
 
 Les concepts clés ici sont :
 
 - **Configuration de Spring Security** : Mise en place des configurations de sécurité pour l’authentification et l’autorisation.
-- **OAuth2 Resource Server** : Utilisation d’OAuth2 pour un accès sécurisé aux outils MCP. OAuth2 est un cadre d’autorisation qui permet aux services tiers d’échanger des jetons d’accès pour un accès API sécurisé.
-- **Intercepteurs de sécurité** : Implémentation d’intercepteurs pour appliquer les contrôles d’accès lors de l’exécution des outils.
-- **Contrôle d’accès basé sur les rôles** : Utilisation des rôles pour restreindre l’accès à certains outils et ressources.
-- **Annotations de sécurité** : Utilisation d’annotations pour sécuriser les méthodes et les points d’entrée.
+- **OAuth2 Resource Server** : Utilisation d’OAuth2 pour un accès sécurisé aux outils MCP. OAuth2 est un cadre d’autorisation permettant aux services tiers d’échanger des jetons d’accès pour un accès API sécurisé.
+- **Intercepteurs de sécurité** : Implémentation d’intercepteurs de sécurité pour appliquer les contrôles d’accès à l’exécution des outils.
+- **Contrôle d’accès basé sur les rôles** : Utilisation des rôles pour contrôler l’accès aux outils et ressources spécifiques.
+- **Annotations de sécurité** : Utilisation d’annotations pour sécuriser les méthodes et points d’accès.
 
 ```java
 @Configuration
@@ -180,18 +180,18 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 Dans le code précédent, nous avons :
 
-- Configuré Spring Security pour sécuriser les points d’entrée MCP, permettant un accès public à la découverte des outils tout en exigeant une authentification pour leur exécution.
-- Utilisé OAuth2 comme serveur de ressources pour gérer l’accès sécurisé aux outils MCP.
-- Mis en place un intercepteur de sécurité pour appliquer les contrôles d’accès lors de l’exécution des outils, en vérifiant les rôles et permissions des utilisateurs avant d’autoriser l’accès à certains outils.
-- Défini un contrôle d’accès basé sur les rôles pour restreindre l’accès aux outils d’administration et aux données sensibles en fonction des rôles des utilisateurs.
+- Configuré Spring Security pour sécuriser les points d’accès MCP, en permettant un accès public à la découverte des outils tout en exigeant une authentification pour l’exécution des outils.
+- Utilisé OAuth2 en tant que resource server pour gérer l’accès sécurisé aux outils MCP.
+- Implémenté un intercepteur de sécurité pour appliquer les contrôles d’accès à l’exécution des outils, vérifiant les rôles et permissions des utilisateurs avant d’autoriser l’accès à des outils spécifiques.
+- Défini un contrôle d’accès basé sur les rôles pour restreindre l’accès aux outils d’administration et aux données sensibles selon les rôles des utilisateurs.
 
 ## Protection des données et confidentialité
 
-La protection des données est essentielle pour garantir que les informations sensibles sont traitées en toute sécurité. Cela inclut la protection des informations personnelles identifiables (PII), des données financières et autres données sensibles contre les accès non autorisés et les violations.
+La protection des données est cruciale pour garantir que les informations sensibles soient traitées de manière sécurisée. Cela inclut la protection des informations personnelles identifiables (PII), des données financières et d’autres informations sensibles contre les accès non autorisés et les fuites.
 
 ### Exemple de protection des données en Python
 
-Examinons un exemple d’implémentation de la protection des données en Python en utilisant le chiffrement et la détection de PII.
+Voyons un exemple d’implémentation de la protection des données en Python utilisant le chiffrement et la détection de PII.
 
 ```python
 from mcp_server import McpServer
@@ -332,11 +332,11 @@ Dans le code précédent, nous avons :
 - Implémenté un `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
 - Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
 - Defined a `secure_tool` decorator that wraps tool execution to check for PII, log access, and encrypt sensitive data if required.
-- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool`) pour garantir la gestion sécurisée des données sensibles.
+- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool`) pour garantir qu’il gère les données sensibles de manière sécurisée.
 
 ## Et ensuite
 
-- [Web search](../web-search-mcp/README.md)
+- [5.9 Web search](../web-search-mcp/README.md)
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue native doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle humaine est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous ne saurions être tenus responsables de tout malentendu ou mauvaise interprétation résultant de l’utilisation de cette traduction.
