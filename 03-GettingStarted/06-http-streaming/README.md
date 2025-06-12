@@ -283,36 +283,48 @@ To enable notifications, ensure your server uses a streaming transport (like `st
 This section provides detailed coverage of Streamable HTTP, the recommended transport mechanism for production MCP deployments, including its architecture, benefits, and implementation details.
 
 ### What is Streamable HTTP?
+
 Streamable HTTP is a transport mechanism in MCP that uses HTTP POST requests and supports streaming notifications (such as progress updates) from the server to the client. It is designed for modern web and cloud environments.
 
 ### How It Works
+
+How it works can be explained like this:
+
 - The client sends a request to the server using HTTP.
 - The server can send notifications (e.g., progress, logs) back to the client while processing the request.
 - The final response is sent when processing is complete.
 
 ### Benefits Over SSE and stdio
+
+The benefits of using Streamable HTTP over classic SSE or stdio are:
+
 - **Better scalability**: Works well with load balancers and cloud deployments.
 - **Stateless and stateful modes**: Supports both, with resumability.
 - **Rich notifications**: Send progress, logs, and other events during processing.
 - **Standard HTTP**: Easier to integrate with existing infrastructure.
 
 ### Implementation Details
+
+Here are some things you should know about the implementation details of Streamable HTTP:
+
 - Uses JSON or SSE for response formats.
 - Requires clients to implement a message handler to process notifications.
 - Supports both synchronous and asynchronous tool execution.
 
 ### Example Use Cases
-- Long-running document processing with progress updates
-- Real-time AI inference with streaming logs
-- Multi-client collaborative tools
 
----
+We've already mentioned some use cases for Streamable HTTP, but here are some more concrete examples:
+
+- Long-running document processing with progress updates.
+- Real-time AI inference with streaming logs.
+- Multi-client collaborative tools.
 
 ## Security Considerations
 
 When implementing MCP servers with HTTP-based transports, security becomes a paramount concern that requires careful attention to multiple attack vectors and protection mechanisms.
 
 ### Overview
+
 Security is critical when exposing MCP servers over HTTP. Streamable HTTP introduces new attack surfaces and requires careful configuration.
 
 ### Key Points
