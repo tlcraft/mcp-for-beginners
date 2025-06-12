@@ -305,9 +305,6 @@ Progress notifications are essential for several reasons:
 
 Here's how you can implement progress notifications in MCP:
 
-<details>
-<summary>Python</summary>
-
 - **On the server:** Use `ctx.info()` or `ctx.log()` to send notifications as each item is processed. This sends a message to the client before the main result is ready.
 - **On the client:** Implement a message handler that listens for and displays notifications as they arrive. This handler distinguishes between notifications and the final result.
 
@@ -457,9 +454,6 @@ Ensure you address the following challenges during migration:
 - Ensuring all clients are updated
 - Handling differences in notification delivery
 
-
-=======
->>>>>>> refs/remotes/origin/copilot/fix-113
 ### Assignment: Build Your Own Streaming MCP App
 
 **Scenario:**
