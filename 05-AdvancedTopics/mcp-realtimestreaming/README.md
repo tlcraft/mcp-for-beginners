@@ -190,109 +190,157 @@ The implementation of MCP across various streaming technologies creates a unifie
 
 ### MCP in Various Data Streaming Frameworks
 
+These examples follow the current MCP specification which focuses on a JSON-RPC based protocol with distinct transport mechanisms. The code demonstrates how you can implement custom transports that integrate streaming platforms like Kafka and Pulsar while maintaining full compatibility with the MCP protocol.
+
+The examples are designed to show how streaming platforms can be integrated with MCP to provide real-time data processing while preserving the contextual awareness that is central to MCP. This approach ensures that the code samples accurately reflect the current state of the MCP specification as of June 2025.
+
 MCP can be integrated with popular streaming frameworks including:
 
 #### Apache Kafka Integration
 
 ```python
 import asyncio
+import json
+from typing import Dict, Any, Optional
 from confluent_kafka import Consumer, Producer, KafkaError
-from mcp.streaming import StreamingContextManager, MCPMessageContext
+from mcp.client import Client, ClientCapabilities
+from mcp.core.message import JsonRpcMessage
+from mcp.core.transports import Transport
 
-# Configuration for Kafka
-kafka_config = {
-    'bootstrap.servers': 'localhost:9092',
-    'group.id': 'mcp-streaming-group',
-    'auto.offset.reset': 'earliest'
-}
-
-# Initialize MCP Streaming Context Manager
-context_manager = StreamingContextManager()
-
-# Producer callback
-def delivery_report(err, msg):
-    if err is not None:
-        print(f'Message delivery failed: {err}')
-    else:
-        print(f'Message delivered to {msg.topic()} [{msg.partition()}]')
-
-async def produce_with_context(topic, data, context):
-    # Create producer
-    producer = Producer(kafka_config)
+# Custom transport class to bridge MCP with Kafka
+class KafkaMCPTransport(Transport):
+    def __init__(self, bootstrap_servers: str, input_topic: str, output_topic: str):
+        self.bootstrap_servers = bootstrap_servers
+        self.input_topic = input_topic
+        self.output_topic = output_topic
+        self.producer = Producer({'bootstrap.servers': bootstrap_servers})
+        self.consumer = Consumer({
+            'bootstrap.servers': bootstrap_servers,
+            'group.id': 'mcp-client-group',
+            'auto.offset.reset': 'earliest'
+        })
+        self.message_queue = asyncio.Queue()
+        self.running = False
+        self.consumer_task = None
+        
+    async def connect(self):
+        """Connect to Kafka and start consuming messages"""
+        self.consumer.subscribe([self.input_topic])
+        self.running = True
+        self.consumer_task = asyncio.create_task(self._consume_messages())
+        return self
+        
+    async def _consume_messages(self):
+        """Background task to consume messages from Kafka and queue them for processing"""
+        while self.running:
+            try:
+                msg = self.consumer.poll(1.0)
+                if msg is None:
+                    await asyncio.sleep(0.1)
+                    continue
+                
+                if msg.error():
+                    if msg.error().code() == KafkaError._PARTITION_EOF:
+                        continue
+                    print(f"Consumer error: {msg.error()}")
+                    continue
+                
+                # Parse the message value as JSON-RPC
+                try:
+                    message_str = msg.value().decode('utf-8')
+                    message_data = json.loads(message_str)
+                    mcp_message = JsonRpcMessage.from_dict(message_data)
+                    await self.message_queue.put(mcp_message)
+                except Exception as e:
+                    print(f"Error parsing message: {e}")
+            except Exception as e:
+                print(f"Error in consumer loop: {e}")
+                await asyncio.sleep(1)
     
-    # Serialize context with data
-    serialized_message = context_manager.serialize_message(data, context)
+    async def read(self) -> Optional[JsonRpcMessage]:
+        """Read the next message from the queue"""
+        try:
+            message = await self.message_queue.get()
+            return message
+        except Exception as e:
+            print(f"Error reading message: {e}")
+            return None
     
-    # Produce message with context
-    producer.produce(
-        topic, 
-        serialized_message, 
-        callback=delivery_report
+    async def write(self, message: JsonRpcMessage) -> None:
+        """Write a message to the Kafka output topic"""
+        try:
+            message_json = json.dumps(message.to_dict())
+            self.producer.produce(
+                self.output_topic,
+                message_json.encode('utf-8'),
+                callback=self._delivery_report
+            )
+            self.producer.poll(0)  # Trigger callbacks
+        except Exception as e:
+            print(f"Error writing message: {e}")
+    
+    def _delivery_report(self, err, msg):
+        """Kafka producer delivery callback"""
+        if err is not None:
+            print(f'Message delivery failed: {err}')
+        else:
+            print(f'Message delivered to {msg.topic()} [{msg.partition()}]')
+    
+    async def close(self) -> None:
+        """Close the transport"""
+        self.running = False
+        if self.consumer_task:
+            self.consumer_task.cancel()
+            try:
+                await self.consumer_task
+            except asyncio.CancelledError:
+                pass
+        self.consumer.close()
+        self.producer.flush()
+
+# Example usage of the Kafka MCP transport
+async def kafka_mcp_example():
+    # Create MCP client with Kafka transport
+    client = Client(
+        {"name": "kafka-mcp-client", "version": "1.0.0"},
+        ClientCapabilities({})
     )
-    producer.flush()
-
-async def consume_with_context(topics):
-    # Create consumer
-    consumer = Consumer(kafka_config)
-    consumer.subscribe(topics)
+    
+    # Create and connect the Kafka transport
+    transport = KafkaMCPTransport(
+        bootstrap_servers="localhost:9092",
+        input_topic="mcp-responses",
+        output_topic="mcp-requests"
+    )
+    
+    await client.connect(transport)
     
     try:
-        while True:
-            msg = consumer.poll(1.0)
-            
-            if msg is None:
-                continue
-            if msg.error():
-                if msg.error().code() == KafkaError._PARTITION_EOF:
-                    continue
-                print(f'Consumer error: {msg.error()}')
-                break
-            
-            # Deserialize message and extract context
-            data, context = context_manager.deserialize_message(msg.value())
-            
-            # Process with context awareness
-            result = await process_with_context(data, context)
-            
-            # Produce result with updated context
-            new_context = context.update({'processing_timestamp': asyncio.get_event_loop().time()})
-            await produce_with_context('output-topic', result, new_context)
-            
-    finally:
-        consumer.close()
-
-async def process_with_context(data, context):
-    # Example processing logic using context
-    print(f"Processing data with context: {context}")
-    # Apply context-aware transformations
-    return f"Processed: {data}"
-
-# Main streaming application
-async def main():
-    # Create sample context
-    initial_context = MCPMessageContext(
-        conversation_id="conv123",
-        metadata={"source": "sensor-1", "priority": "high"}
-    )
-    
-    # Start consumer in background
-    consumer_task = asyncio.create_task(consume_with_context(['input-topic']))
-    
-    # Produce sample messages with context
-    for i in range(5):
-        await produce_with_context(
-            'input-topic',
-            f"Message {i}",
-            initial_context.update({"sequence": i})
+        # Initialize the MCP session
+        await client.initialize()
+        
+        # Example of executing a tool via MCP
+        response = await client.execute_tool(
+            "process_data",
+            {
+                "data": "sample data",
+                "metadata": {
+                    "source": "sensor-1",
+                    "timestamp": "2025-06-12T10:30:00Z"
+                }
+            }
         )
-        await asyncio.sleep(1)
-    
-    # Wait for consumer to process messages
-    await asyncio.sleep(10)
-    consumer_task.cancel()
-    
+        
+        print(f"Tool execution response: {response}")
+        
+        # Clean shutdown
+        await client.shutdown()
+    finally:
+        await transport.close()
+
+# Run the example
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(kafka_mcp_example())
 ```
 
 #### Apache Pulsar Implementation
@@ -301,116 +349,161 @@ if __name__ == "__main__":
 import asyncio
 import json
 import pulsar
-from mcp.streaming import StreamingContextManager, MCPMessageContext
+from typing import Dict, Any, Optional
+from mcp.core.message import JsonRpcMessage
+from mcp.core.transports import Transport
+from mcp.server import Server, ServerOptions
+from mcp.server.tools import Tool, ToolExecutionContext, ToolMetadata
 
-# Initialize MCP Streaming Context Manager
-context_manager = StreamingContextManager()
-
-class MCPPulsarClient:
-    def __init__(self, service_url):
+# Create a custom MCP transport that uses Pulsar
+class PulsarMCPTransport(Transport):
+    def __init__(self, service_url: str, request_topic: str, response_topic: str):
+        self.service_url = service_url
+        self.request_topic = request_topic
+        self.response_topic = response_topic
         self.client = pulsar.Client(service_url)
-        
-    def create_producer(self, topic):
-        return self.client.create_producer(topic)
-    
-    def subscribe(self, topic, subscription_name, context_enabled=True):
-        consumer = self.client.subscribe(
-            topic,
-            subscription_name,
+        self.producer = self.client.create_producer(response_topic)
+        self.consumer = self.client.subscribe(
+            request_topic,
+            "mcp-server-subscription",
             consumer_type=pulsar.ConsumerType.Shared
         )
-        if context_enabled:
-            return MCPPulsarConsumer(consumer, context_manager)
-        return consumer
+        self.message_queue = asyncio.Queue()
+        self.running = False
+        self.consumer_task = None
     
-    def close(self):
+    async def connect(self):
+        """Connect to Pulsar and start consuming messages"""
+        self.running = True
+        self.consumer_task = asyncio.create_task(self._consume_messages())
+        return self
+    
+    async def _consume_messages(self):
+        """Background task to consume messages from Pulsar and queue them for processing"""
+        while self.running:
+            try:
+                # Non-blocking receive with timeout
+                msg = self.consumer.receive(timeout_millis=500)
+                
+                # Process the message
+                try:
+                    message_str = msg.data().decode('utf-8')
+                    message_data = json.loads(message_str)
+                    mcp_message = JsonRpcMessage.from_dict(message_data)
+                    await self.message_queue.put(mcp_message)
+                    
+                    # Acknowledge the message
+                    self.consumer.acknowledge(msg)
+                except Exception as e:
+                    print(f"Error processing message: {e}")
+                    # Negative acknowledge if there was an error
+                    self.consumer.negative_acknowledge(msg)
+            except Exception as e:
+                # Handle timeout or other exceptions
+                await asyncio.sleep(0.1)
+    
+    async def read(self) -> Optional[JsonRpcMessage]:
+        """Read the next message from the queue"""
+        try:
+            message = await self.message_queue.get()
+            return message
+        except Exception as e:
+            print(f"Error reading message: {e}")
+            return None
+    
+    async def write(self, message: JsonRpcMessage) -> None:
+        """Write a message to the Pulsar output topic"""
+        try:
+            message_json = json.dumps(message.to_dict())
+            self.producer.send(message_json.encode('utf-8'))
+        except Exception as e:
+            print(f"Error writing message: {e}")
+    
+    async def close(self) -> None:
+        """Close the transport"""
+        self.running = False
+        if self.consumer_task:
+            self.consumer_task.cancel()
+            try:
+                await self.consumer_task
+            except asyncio.CancelledError:
+                pass
+        self.consumer.close()
+        self.producer.close()
         self.client.close()
 
-class MCPPulsarConsumer:
-    def __init__(self, consumer, context_manager):
-        self.consumer = consumer
-        self.context_manager = context_manager
-        
-    def receive(self, timeout_ms=None):
-        msg = self.consumer.receive(timeout_ms)
-        data, context = self.context_manager.deserialize_message(msg.data())
-        return MCPPulsarMessage(msg, data, context)
+# Define a sample MCP tool that processes streaming data
+@Tool(
+    name="process_streaming_data",
+    description="Process streaming data with context preservation",
+    metadata=ToolMetadata(
+        required_capabilities=["streaming"]
+    )
+)
+async def process_streaming_data(
+    ctx: ToolExecutionContext,
+    data: str,
+    source: str,
+    priority: str = "medium"
+) -> Dict[str, Any]:
+    """
+    Process streaming data while preserving context
     
-    def acknowledge(self, message):
-        self.consumer.acknowledge(message.original_message)
+    Args:
+        ctx: Tool execution context
+        data: The data to process
+        source: The source of the data
+        priority: Priority level (low, medium, high)
         
-    def close(self):
-        self.consumer.close()
+    Returns:
+        Dict containing processed results and context information
+    """
+    # Example processing that leverages MCP context
+    print(f"Processing data from {source} with priority {priority}")
+    
+    # Access conversation context from MCP
+    conversation_id = ctx.conversation_id if hasattr(ctx, 'conversation_id') else "unknown"
+    
+    # Return results with enhanced context
+    return {
+        "processed_data": f"Processed: {data}",
+        "context": {
+            "conversation_id": conversation_id,
+            "source": source,
+            "priority": priority,
+            "processing_timestamp": ctx.get_current_time_iso()
+        }
+    }
 
-class MCPPulsarMessage:
-    def __init__(self, original_message, data, context):
-        self.original_message = original_message
-        self._data = data
-        self._context = context
-        
-    def data(self):
-        return self._data
-    
-    def get_context(self):
-        return self._context
-
-async def pulsar_streaming_example():
-    # Create client
-    client = MCPPulsarClient('pulsar://localhost:6650')
-    
-    # Create context
-    initial_context = MCPMessageContext(
-        conversation_id="pulsar-conv-1",
-        metadata={"source": "sensor-a", "priority": "medium"}
+# Example MCP server implementation using Pulsar transport
+async def run_mcp_server_with_pulsar():
+    # Create MCP server
+    server = Server(
+        {"name": "pulsar-mcp-server", "version": "1.0.0"},
+        ServerOptions(
+            capabilities={"streaming": True}
+        )
     )
     
-    # Create producer
-    producer = client.create_producer('input-topic')
+    # Register our tool
+    server.register_tool(process_streaming_data)
     
-    # Create consumer with context awareness
-    consumer = client.subscribe('input-topic', 'my-subscription', context_enabled=True)
+    # Create and connect Pulsar transport
+    transport = PulsarMCPTransport(
+        service_url="pulsar://localhost:6650",
+        request_topic="mcp-requests",
+        response_topic="mcp-responses"
+    )
     
-    # Send messages with context
-    for i in range(3):
-        message_context = initial_context.update({"sequence": i})
-        serialized_message = context_manager.serialize_message(
-            f"Pulsar message {i}", 
-            message_context
-        )
-        producer.send(serialized_message)
-    
-    # Process messages with context
     try:
-        for i in range(3):
-            msg = consumer.receive(timeout_ms=5000)
-            
-            print(f"Received: {msg.data()}")
-            print(f"Context: {msg.get_context()}")
-            
-            # Process with context
-            result = process_with_context(msg.data(), msg.get_context())
-            
-            # Acknowledge message
-            consumer.acknowledge(msg)
-            
-            # Send result with updated context
-            updated_context = msg.get_context().update({"processed": True})
-            output_producer = client.create_producer('output-topic')
-            output_message = context_manager.serialize_message(result, updated_context)
-            output_producer.send(output_message)
-            
-    except Exception as e:
-        print(f"Error processing messages: {e}")
+        # Start the server with the Pulsar transport
+        await server.run(transport)
     finally:
-        consumer.close()
-        client.close()
+        await transport.close()
 
-def process_with_context(data, context):
-    # Example processing with context
-    return f"Processed [{context.conversation_id}]: {data}"
-
+# Run the server
 if __name__ == "__main__":
-    asyncio.run(pulsar_streaming_example())
+    asyncio.run(run_mcp_server_with_pulsar())
 ```
 
 ### Best Practices for Deployment
