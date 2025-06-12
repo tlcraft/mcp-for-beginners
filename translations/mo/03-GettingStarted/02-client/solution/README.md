@@ -1,15 +1,18 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "30986993c503a34a630e4c0ebd527b03",
-  "translation_date": "2025-05-17T09:52:33+00:00",
+  "original_hash": "accc66cf3ff6a24b00f6ac0e1235644b",
+  "translation_date": "2025-06-11T14:54:07+00:00",
   "source_file": "03-GettingStarted/02-client/solution/README.md",
   "language_code": "mo"
 }
 -->
-यहाँ प्रत्येक रनटाइम के लिए समाधान हैं:
+Voici les solutions pour chaque environnement d'exécution :
 
 - [TypeScript](./typescript/README.md)
 - [Python](./python/README.md)
+- [.NET](../../../../../03-GettingStarted/02-client/solution/dotnet)
+- [Java](./java/README.md)
 
-The term "mo" is not a recognized language code in the ISO 639-1 or ISO 639-3 standards. It could be a typo or an abbreviation for a specific language. If you meant a specific language, please clarify so I can assist you further.
+**Disclaimer**:  
+Thiz documont haz been translaited yusing AI translaition servise [Co-op Translator](https://github.com/Azure/co-op-translator). Whyle we stryve for accurasy, pleze be awair that automaited translaitions may contain errers or inaccuraciez. The orijinal documont in its native langwidge shood be consydered the authoretative sorce. For kritical informashion, profeshonal hyuman translaition is rekomended. We ar not liabel for eny misandurstandings or misinterpretashions arising from the yuse of this translaition.

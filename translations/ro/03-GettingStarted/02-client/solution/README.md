@@ -1,16 +1,18 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "30986993c503a34a630e4c0ebd527b03",
-  "translation_date": "2025-05-17T09:57:59+00:00",
+  "original_hash": "accc66cf3ff6a24b00f6ac0e1235644b",
+  "translation_date": "2025-06-11T16:23:23+00:00",
   "source_file": "03-GettingStarted/02-client/solution/README.md",
   "language_code": "ro"
 }
 -->
-Iată soluțiile pentru fiecare mediu de execuție:
+Iată soluțiile pentru fiecare runtime:
 
 - [TypeScript](./typescript/README.md)
 - [Python](./python/README.md)
+- [.NET](../../../../../03-GettingStarted/02-client/solution/dotnet)
+- [Java](./java/README.md)
 
-**Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui să fie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea umană profesională. Nu suntem responsabili pentru neînțelegerile sau interpretările greșite care decurg din utilizarea acestei traduceri.
+**Declinare a responsabilității**:  
+Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

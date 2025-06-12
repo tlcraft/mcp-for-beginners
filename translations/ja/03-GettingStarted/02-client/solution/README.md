@@ -1,16 +1,18 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "30986993c503a34a630e4c0ebd527b03",
-  "translation_date": "2025-05-16T15:26:40+00:00",
+  "original_hash": "accc66cf3ff6a24b00f6ac0e1235644b",
+  "translation_date": "2025-06-11T15:03:24+00:00",
   "source_file": "03-GettingStarted/02-client/solution/README.md",
   "language_code": "ja"
 }
 -->
-以下は各ランタイムのソリューションです：
+各ランタイムのソリューションはこちらです：
 
 - [TypeScript](./typescript/README.md)
 - [Python](./python/README.md)
+- [.NET](../../../../../03-GettingStarted/02-client/solution/dotnet)
+- [Java](./java/README.md)
 
-**免責事項**：  
-本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。原文の母国語版が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、一切の責任を負いかねます。
+**免責事項**:  
+本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の母国語版が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
