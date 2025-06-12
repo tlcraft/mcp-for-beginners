@@ -195,55 +195,222 @@ MCP can be integrated with popular streaming frameworks including:
 #### Apache Kafka Integration
 
 ```python
-from mcp_streaming import MCPKafkaConnector
+import asyncio
+from confluent_kafka import Consumer, Producer, KafkaError
+from mcp.streaming import StreamingContextManager, MCPMessageContext
 
-# Initialize MCP Kafka connector
-connector = MCPKafkaConnector(
-    bootstrap_servers='localhost:9092',
-    context_preservation=True
-)
+# Configuration for Kafka
+kafka_config = {
+    'bootstrap.servers': 'localhost:9092',
+    'group.id': 'mcp-streaming-group',
+    'auto.offset.reset': 'earliest'
+}
 
-# Create a context-aware consumer
-consumer = connector.create_consumer('input-topic')
+# Initialize MCP Streaming Context Manager
+context_manager = StreamingContextManager()
 
-# Process streaming data with context
-for message in consumer:
-    context = message.get_context()
-    data = message.get_value()
+# Producer callback
+def delivery_report(err, msg):
+    if err is not None:
+        print(f'Message delivery failed: {err}')
+    else:
+        print(f'Message delivered to {msg.topic()} [{msg.partition()}]')
+
+async def produce_with_context(topic, data, context):
+    # Create producer
+    producer = Producer(kafka_config)
     
-    # Process with context awareness
-    result = process_with_context(data, context)
+    # Serialize context with data
+    serialized_message = context_manager.serialize_message(data, context)
     
-    # Produce output with preserved context
-    connector.produce('output-topic', result, context=context)
+    # Produce message with context
+    producer.produce(
+        topic, 
+        serialized_message, 
+        callback=delivery_report
+    )
+    producer.flush()
+
+async def consume_with_context(topics):
+    # Create consumer
+    consumer = Consumer(kafka_config)
+    consumer.subscribe(topics)
+    
+    try:
+        while True:
+            msg = consumer.poll(1.0)
+            
+            if msg is None:
+                continue
+            if msg.error():
+                if msg.error().code() == KafkaError._PARTITION_EOF:
+                    continue
+                print(f'Consumer error: {msg.error()}')
+                break
+            
+            # Deserialize message and extract context
+            data, context = context_manager.deserialize_message(msg.value())
+            
+            # Process with context awareness
+            result = await process_with_context(data, context)
+            
+            # Produce result with updated context
+            new_context = context.update({'processing_timestamp': asyncio.get_event_loop().time()})
+            await produce_with_context('output-topic', result, new_context)
+            
+    finally:
+        consumer.close()
+
+async def process_with_context(data, context):
+    # Example processing logic using context
+    print(f"Processing data with context: {context}")
+    # Apply context-aware transformations
+    return f"Processed: {data}"
+
+# Main streaming application
+async def main():
+    # Create sample context
+    initial_context = MCPMessageContext(
+        conversation_id="conv123",
+        metadata={"source": "sensor-1", "priority": "high"}
+    )
+    
+    # Start consumer in background
+    consumer_task = asyncio.create_task(consume_with_context(['input-topic']))
+    
+    # Produce sample messages with context
+    for i in range(5):
+        await produce_with_context(
+            'input-topic',
+            f"Message {i}",
+            initial_context.update({"sequence": i})
+        )
+        await asyncio.sleep(1)
+    
+    # Wait for consumer to process messages
+    await asyncio.sleep(10)
+    consumer_task.cancel()
+    
+if __name__ == "__main__":
+    asyncio.run(main())
 ```
 
 #### Apache Pulsar Implementation
 
 ```python
-from mcp_streaming import MCPPulsarClient
+import asyncio
+import json
+import pulsar
+from mcp.streaming import StreamingContextManager, MCPMessageContext
 
-# Initialize MCP Pulsar client
-client = MCPPulsarClient('pulsar://localhost:6650')
+# Initialize MCP Streaming Context Manager
+context_manager = StreamingContextManager()
 
-# Subscribe with context awareness
-consumer = client.subscribe('input-topic', 'subscription-name', 
-                           context_enabled=True)
+class MCPPulsarClient:
+    def __init__(self, service_url):
+        self.client = pulsar.Client(service_url)
+        
+    def create_producer(self, topic):
+        return self.client.create_producer(topic)
+    
+    def subscribe(self, topic, subscription_name, context_enabled=True):
+        consumer = self.client.subscribe(
+            topic,
+            subscription_name,
+            consumer_type=pulsar.ConsumerType.Shared
+        )
+        if context_enabled:
+            return MCPPulsarConsumer(consumer, context_manager)
+        return consumer
+    
+    def close(self):
+        self.client.close()
 
-# Process messages with context preservation
-while True:
-    message = consumer.receive()
-    context = message.get_context()
+class MCPPulsarConsumer:
+    def __init__(self, consumer, context_manager):
+        self.consumer = consumer
+        self.context_manager = context_manager
+        
+    def receive(self, timeout_ms=None):
+        msg = self.consumer.receive(timeout_ms)
+        data, context = self.context_manager.deserialize_message(msg.data())
+        return MCPPulsarMessage(msg, data, context)
     
-    # Process with context
-    result = process_with_context(message.data(), context)
+    def acknowledge(self, message):
+        self.consumer.acknowledge(message.original_message)
+        
+    def close(self):
+        self.consumer.close()
+
+class MCPPulsarMessage:
+    def __init__(self, original_message, data, context):
+        self.original_message = original_message
+        self._data = data
+        self._context = context
+        
+    def data(self):
+        return self._data
     
-    # Acknowledge the message
-    consumer.acknowledge(message)
+    def get_context(self):
+        return self._context
+
+async def pulsar_streaming_example():
+    # Create client
+    client = MCPPulsarClient('pulsar://localhost:6650')
     
-    # Send result with preserved context
-    producer = client.create_producer('output-topic')
-    producer.send(result, context=context)
+    # Create context
+    initial_context = MCPMessageContext(
+        conversation_id="pulsar-conv-1",
+        metadata={"source": "sensor-a", "priority": "medium"}
+    )
+    
+    # Create producer
+    producer = client.create_producer('input-topic')
+    
+    # Create consumer with context awareness
+    consumer = client.subscribe('input-topic', 'my-subscription', context_enabled=True)
+    
+    # Send messages with context
+    for i in range(3):
+        message_context = initial_context.update({"sequence": i})
+        serialized_message = context_manager.serialize_message(
+            f"Pulsar message {i}", 
+            message_context
+        )
+        producer.send(serialized_message)
+    
+    # Process messages with context
+    try:
+        for i in range(3):
+            msg = consumer.receive(timeout_ms=5000)
+            
+            print(f"Received: {msg.data()}")
+            print(f"Context: {msg.get_context()}")
+            
+            # Process with context
+            result = process_with_context(msg.data(), msg.get_context())
+            
+            # Acknowledge message
+            consumer.acknowledge(msg)
+            
+            # Send result with updated context
+            updated_context = msg.get_context().update({"processed": True})
+            output_producer = client.create_producer('output-topic')
+            output_message = context_manager.serialize_message(result, updated_context)
+            output_producer.send(output_message)
+            
+    except Exception as e:
+        print(f"Error processing messages: {e}")
+    finally:
+        consumer.close()
+        client.close()
+
+def process_with_context(data, context):
+    # Example processing with context
+    return f"Processed [{context.conversation_id}]: {data}"
+
+if __name__ == "__main__":
+    asyncio.run(pulsar_streaming_example())
 ```
 
 ### Best Practices for Deployment
@@ -348,11 +515,11 @@ Advanced exercise covering:
 
 ## Additional Resources
 
-- [Model Context Protocol Specification](https://github.com/microsoft/model-context-protocol) - Official MCP specification and documentation
+- [Model Context Protocol Specification](https://github.com/modelcontextprotocol) - Official MCP specification and documentation
 - [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Learn about Kafka for stream processing
 - [Apache Pulsar](https://pulsar.apache.org/) - Unified messaging and streaming platform
 - [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - Comprehensive book on streaming architectures
-- [Microsoft Azure Event Hubs](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about) - Managed event streaming service
+- [Microsoft Azure Event Hubs](https://learn.microsoft.com/azure/event-hubs/event-hubs-about) - Managed event streaming service
 - [MLflow Documentation](https://mlflow.org/docs/latest/index.html) - For ML model tracking and deployment
 - [Real-Time Analytics with Apache Storm](https://storm.apache.org/releases/current/index.html) - Processing framework for real-time computation
 - [Flink ML](https://nightlies.apache.org/flink/flink-ml-docs-master/) - Machine learning library for Apache Flink
