@@ -218,7 +218,6 @@ public class LangChain4jClient {
                 .apiKey(System.getenv("GITHUB_TOKEN"))
                 .timeout(Duration.ofSeconds(60))
                 .modelName("gpt-4.1-nano")
-                .timeout(Duration.ofSeconds(60))
                 .build();
 
         // Create MCP transport for connecting to server
