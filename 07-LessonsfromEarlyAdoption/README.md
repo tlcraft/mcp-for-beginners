@@ -326,6 +326,12 @@ The Foundry MCP Playground offers a ready-to-use environment for experimenting w
 **References:**
 - [Foundry MCP Playground GitHub Repository](https://github.com/azure-ai-foundry/foundry-mcp-playground)
 
+### Case Study 9. Microsoft Docs MCP Server - Learning and Skilling 
+The Microsoft Docs MCP Server implements the Model Context Protocol (MCP) server that provides AI assistants with real-time access to official Microsoft documentation. Performs semantic search against Microsoft official technical documentation
+
+**References:**
+- [Microsoft Learn Docs MCP Server](https://github.com/MicrosoftDocs/mcp)
+
 ## Hands-on Projects
 
 ### Project 1: Build a Multi-Provider MCP Server
