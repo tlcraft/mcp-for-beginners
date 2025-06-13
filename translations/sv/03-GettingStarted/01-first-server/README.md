@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d90651bcd1df019768921d531653638a",
-  "translation_date": "2025-06-13T00:01:23+00:00",
+  "original_hash": "bf05718d019040cf0c7d4ccc6d6a1a88",
+  "translation_date": "2025-06-13T06:01:15+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "sv"
 }
@@ -19,9 +19,9 @@ Nu när du har installerat SDK:n, låt oss skapa ett projekt:
 
 Lägg till ett verktyg och en resurs genom att lägga till följande kod: 
 
-### -6 Slutlig kod
+### -6 Slutgiltig kod
 
-Låt oss lägga till den sista koden vi behöver så att servern kan starta: 
+Låt oss lägga till den sista koden som behövs för att servern ska kunna starta: 
 
 ### -7- Testa servern
 
@@ -29,23 +29,23 @@ Starta servern med följande kommando:
 
 ### -8- Kör med inspector
 
-Inspector är ett utmärkt verktyg som kan starta din server och låter dig interagera med den så att du kan testa att allt fungerar. Låt oss starta den:
+Inspector är ett utmärkt verktyg som kan starta upp din server och låta dig interagera med den så att du kan testa att allt fungerar. Låt oss starta den:
 
 > [!NOTE]
-> det kan se annorlunda ut i "command"-fältet eftersom det innehåller kommandot för att köra en server med din specifika runtime/
+> Det kan se annorlunda ut i "command"-fältet eftersom det innehåller kommandot för att köra en server med din specifika runtime/
 
 Du bör se följande användargränssnitt:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sv.png)
 
-1. Anslut till servern genom att välja Connect-knappen  
-   När du har anslutit till servern bör du nu se följande:
+1. Anslut till servern genom att klicka på Connect-knappen  
+   När du ansluter till servern bör du nu se följande:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.sv.png)
 
-2. Välj "Tools" och "listTools", du bör se "Add" dyka upp, välj "Add" och fyll i parameter-värdena.
+2. Välj "Tools" och "listTools", du bör se "Add" dyka upp, välj "Add" och fyll i parametervärdena.
 
-   Du bör se följande svar, dvs ett resultat från "add"-verktyget:
+   Du bör se följande svar, alltså ett resultat från "add"-verktyget:
 
    ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.sv.png)
 
@@ -90,13 +90,13 @@ Skapa en enkel MCP-server med ett verktyg du väljer:
 
 ## Ytterligare resurser
 
-- [Bygg agenter med Model Context Protocol på Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [Fjärr-MCP med Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Vad händer härnäst
 
-Nästa: [Kom igång med MCP-klienter](/03-GettingStarted/02-client/README.md)
+Nästa: [Getting Started with MCP Clients](/03-GettingStarted/02-client/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, var vänlig uppmärksam på att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
