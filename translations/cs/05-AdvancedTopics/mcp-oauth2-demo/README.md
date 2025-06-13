@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T19:29:11+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-13T00:56:41+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "cs"
 }
@@ -12,7 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 This project is a **minimal Spring Boot application** that functions as both:
 
 * a **Spring Authorization Server** (issuing JWT access tokens via the `client_credentials` flow), and  
-* a **Resource Server** (protecting its own `/hello` endpoint).
+* a **Resource Server** (securing its own `/hello` endpoint).
 
 It replicates the setup shown in the [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
@@ -36,16 +36,16 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Testing the OAuth2 Configuration
 
-You can test the OAuth2 security configuration by following these steps:
+You can verify the OAuth2 security setup by following these steps:
 
-### 1. Verify the server is running and secured
+### 1. Confirm the server is running and secured
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Get an access token using client credentials
+### 2. Obtain an access token using client credentials
 
 ```bash
 # Get and extract the full token response
@@ -63,7 +63,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
 
 Note: The Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Access the protected endpoint using the token
+### 3. Use the token to access the protected endpoint
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-A successful response with "Hello from MCP OAuth2 Demo!" confirms that the OAuth2 setup is working properly.
+A successful response with "Hello from MCP OAuth2 Demo!" indicates that the OAuth2 setup is functioning properly.
 
 ---
 
@@ -116,13 +116,13 @@ Add this inbound policy to your API:
 </inbound>
 ```
 
-APIM will retrieve the JWKS and validate every request.
+APIM will retrieve the JWKS and validate every incoming request.
 
 ---
 
 ## What's next
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakákoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo chybné výklady vyplývající z použití tohoto překladu.

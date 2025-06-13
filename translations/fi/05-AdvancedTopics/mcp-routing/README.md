@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a621fc52c7daec552eb8b3b48c0361dd",
-  "translation_date": "2025-06-02T19:47:06+00:00",
+  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
+  "translation_date": "2025-06-13T00:16:28+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "fi"
 }
 -->
-## Näytteenotto ja reititys MCP:ssä
+## Näytteiden ottaminen ja reititys MCP:ssä
 
-Näytteenotto on keskeinen osa Model Context Protocolia (MCP), joka mahdollistaa tehokkaan pyyntöjen käsittelyn ja reitityksen. Se sisältää saapuvien pyyntöjen analysoinnin sopivimman mallin tai palvelun valitsemiseksi, perustuen erilaisiin kriteereihin kuten sisällön tyyppiin, käyttäjän kontekstiin ja järjestelmän kuormitukseen.
+Näytteiden ottaminen on keskeinen osa Model Context Protocolia (MCP), joka mahdollistaa tehokkaan pyyntöjen käsittelyn ja reitityksen. Se sisältää saapuvien pyyntöjen analysoinnin, jotta voidaan määrittää sopivin malli tai palvelu niiden käsittelyyn eri kriteerien, kuten sisältötyypin, käyttäjäkontekstin ja järjestelmän kuormituksen perusteella.
 
-Näytteenotto ja reititys voidaan yhdistää luomaan vankka arkkitehtuuri, joka optimoi resurssien käytön ja varmistaa korkean käytettävyyden. Näytteenottoprosessia voidaan käyttää pyyntöjen luokitteluun, kun taas reititys ohjaa ne sopiville malleille tai palveluille.
+Näytteiden ottaminen ja reititys voidaan yhdistää luomaan vankka arkkitehtuuri, joka optimoi resurssien käytön ja varmistaa korkean käytettävyyden. Näytteiden ottamisprosessia voidaan käyttää pyyntöjen luokitteluun, kun taas reititys ohjaa ne sopiville malleille tai palveluille.
 
-Alla oleva kaavio havainnollistaa, miten näytteenotto ja reititys toimivat yhdessä kattavassa MCP-arkkitehtuurissa:
+Alla oleva kaavio havainnollistaa, miten näytteiden ottaminen ja reititys toimivat yhdessä kattavassa MCP-arkkitehtuurissa:
 
 ```mermaid
 flowchart TB
@@ -82,7 +82,7 @@ flowchart TB
 
 ## Mitä seuraavaksi
 
-- [Näytteenotto](../mcp-sampling/README.md)
+- [5.6 Näytteiden ottaminen](../mcp-sampling/README.md)
 
-**Vastuuvapauslauseke:**  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulee pitää auktoritatiivisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa mahdollisista väärinymmärryksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+**Vastuuvapauslauseke**:  
+Tämä asiakirja on käännetty käyttäen tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä tulee pitää ensisijaisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.

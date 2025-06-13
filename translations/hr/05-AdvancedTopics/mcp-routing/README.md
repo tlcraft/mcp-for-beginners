@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a621fc52c7daec552eb8b3b48c0361dd",
-  "translation_date": "2025-06-02T19:50:05+00:00",
+  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
+  "translation_date": "2025-06-13T01:22:12+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "hr"
 }
 -->
 ## Uzorkovanje i usmjeravanje u MCP-u
 
-Uzorkovanje je ključna komponenta Model Context Protocola (MCP) koja omogućava učinkovitu obradu i usmjeravanje zahtjeva. To uključuje analizu dolaznih zahtjeva kako bi se odredio najprikladniji model ili usluga za njihovu obradu, na temelju različitih kriterija poput vrste sadržaja, korisničkog konteksta i opterećenja sustava.
+Uzorkovanje je ključna komponenta Model Context Protocola (MCP) koja omogućuje učinkovitu obradu i usmjeravanje zahtjeva. To uključuje analizu dolaznih zahtjeva kako bi se odredio najprikladniji model ili usluga za njihovo rukovanje, na temelju različitih kriterija kao što su tip sadržaja, kontekst korisnika i opterećenje sustava.
 
-Uzorkovanje i usmjeravanje mogu se kombinirati kako bi se stvorila robusna arhitektura koja optimizira korištenje resursa i osigurava visoku dostupnost. Proces uzorkovanja može se koristiti za klasifikaciju zahtjeva, dok ih usmjeravanje vodi prema odgovarajućim modelima ili uslugama.
+Uzorkovanje i usmjeravanje mogu se kombinirati za stvaranje robusne arhitekture koja optimizira korištenje resursa i osigurava visoku dostupnost. Proces uzorkovanja može se koristiti za klasifikaciju zahtjeva, dok ih usmjeravanje usmjerava prema odgovarajućim modelima ili uslugama.
 
-Dijagram ispod prikazuje kako uzorkovanje i usmjeravanje rade zajedno u sveobuhvatnoj MCP arhitekturi:
+Slika ispod ilustrira kako uzorkovanje i usmjeravanje zajedno funkcioniraju u sveobuhvatnoj MCP arhitekturi:
 
 ```mermaid
 flowchart TB
@@ -82,7 +82,7 @@ flowchart TB
 
 ## Što slijedi
 
-- [Sampling](../mcp-sampling/README.md)
+- [5.6 Uzorkovanje](../mcp-sampling/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument preveden je korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba se smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument preveden je korištenjem AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba se smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Nismo odgovorni za bilo kakva nesporazumevanja ili kriva tumačenja koja proizlaze iz korištenja ovog prijevoda.

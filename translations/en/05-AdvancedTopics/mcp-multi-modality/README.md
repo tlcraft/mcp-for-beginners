@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d0c02b421d63eeb6b261b245acc42f23",
-  "translation_date": "2025-06-02T20:33:13+00:00",
+  "original_hash": "56238122f67d302188668cd1e0371d5c",
+  "translation_date": "2025-06-12T22:55:46+00:00",
   "source_file": "05-AdvancedTopics/mcp-multi-modality/README.md",
   "language_code": "en"
 }
@@ -15,7 +15,7 @@ Audio processing is another common modality in multi-modal applications. Below i
 
 ## What's next
 
-- [Oauth 2](../mcp-oauth2-demo/README.md)
+- [5.3 Oauth 2](../mcp-oauth2-demo/README.md)
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

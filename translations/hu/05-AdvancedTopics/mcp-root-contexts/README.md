@@ -1,47 +1,47 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e1cbc99fa7185139ad6d539eca09a2b3",
-  "translation_date": "2025-06-02T20:30:48+00:00",
+  "original_hash": "8311f46a35cf608c9780f39b62c9dc3f",
+  "translation_date": "2025-06-13T00:53:50+00:00",
   "source_file": "05-AdvancedTopics/mcp-root-contexts/README.md",
   "language_code": "hu"
 }
 -->
 ## Példa: Root Context megvalósítása pénzügyi elemzéshez
 
-Ebben a példában létrehozunk egy root context-et egy pénzügyi elemzési munkamenethez, bemutatva, hogyan lehet több interakción keresztül fenntartani az állapotot.
+Ebben a példában létrehozunk egy root contextet egy pénzügyi elemzési munkamenethez, bemutatva, hogyan tartható fenn az állapot több interakció során.
 
 ## Példa: Root Context kezelése
 
-A root context-ek hatékony kezelése kulcsfontosságú a beszélgetési előzmények és állapot megőrzéséhez. Az alábbiakban egy példát mutatunk be a root context kezelésének megvalósítására.
+A root contextek hatékony kezelése kulcsfontosságú a beszélgetési előzmények és az állapot megőrzéséhez. Az alábbi példa bemutatja, hogyan valósítható meg a root context kezelés.
 
 ## Root Context többfordulós segítségnyújtáshoz
 
-Ebben a példában létrehozunk egy root context-et egy többfordulós segítségnyújtási munkamenethez, bemutatva, hogyan lehet több interakción keresztül fenntartani az állapotot.
+Ebben a példában létrehozunk egy root contextet egy többfordulós segítségnyújtási munkamenethez, bemutatva, hogyan tartható fenn az állapot több interakció során.
 
-## Root Context kezelési bevált gyakorlatok
+## Root Context legjobb gyakorlatok
 
-Íme néhány bevált gyakorlat a root context-ek hatékony kezeléséhez:
+Íme néhány bevált módszer a root contextek hatékony kezeléséhez:
 
-- **Készíts fókuszált context-eket**: Hozz létre külön root context-eket különböző beszélgetési célokra vagy témakörökre a tisztánlátás érdekében.
+- **Fókuszált contextek létrehozása**: Hozz létre külön root contexteket különböző beszélgetési célokra vagy területekre, hogy megőrizd az áttekinthetőséget.
 
-- **Állíts be lejárati szabályokat**: Valósíts meg szabályokat az elavult context-ek archiválására vagy törlésére a tárolás kezelése és az adatmegőrzési előírások betartása érdekében.
+- **Lejárati szabályok beállítása**: Alkalmazz szabályokat a régi contextek archiválására vagy törlésére a tárolás kezelése és az adatmegőrzési szabályok betartása érdekében.
 
-- **Tárold a releváns metaadatokat**: Használd a context metaadatait fontos információk tárolására a beszélgetésről, amelyek később hasznosak lehetnek.
+- **Fontos metaadatok tárolása**: Használd a context metaadatait, hogy eltárold a beszélgetéssel kapcsolatos lényeges információkat, amelyek később hasznosak lehetnek.
 
-- **Használd következetesen a context ID-kat**: Miután egy context létrejött, használd annak azonosítóját következetesen minden kapcsolódó kéréshez a folytonosság megőrzése érdekében.
+- **Context ID-k következetes használata**: Ha egy context létrejött, használd annak azonosítóját következetesen minden kapcsolódó kérésnél a folytonosság megőrzése érdekében.
 
-- **Készíts összefoglalókat**: Ha egy context túl nagyra nő, érdemes összefoglalókat készíteni, hogy a lényeges információkat megőrizd és közben kezelhető maradjon a context mérete.
+- **Összefoglalók készítése**: Ha egy context túl nagyra nő, érdemes összefoglalókat készíteni, hogy megőrizd a lényeges információkat, miközben kezelted a context méretét.
 
-- **Valósíts meg hozzáférés-ellenőrzést**: Többfelhasználós rendszerek esetén gondoskodj megfelelő hozzáférés-ellenőrzésről a beszélgetési context-ek adatvédelme és biztonsága érdekében.
+- **Hozzáférés-szabályozás megvalósítása**: Többfelhasználós rendszerekben biztosíts megfelelő hozzáférés-szabályozást a beszélgetési contextek adatvédelme és biztonsága érdekében.
 
-- **Kezeld a context korlátait**: Légy tisztában a context méretkorlátokkal, és dolgozz ki stratégiákat a nagyon hosszú beszélgetések kezelésére.
+- **Context korlátok kezelése**: Ismerd a context méretkorlátait, és dolgozz ki stratégiákat a nagyon hosszú beszélgetések kezelésére.
 
-- **Archiválj a beszélgetés befejezésekor**: Archiváld a context-eket, amikor a beszélgetés lezárult, hogy felszabadítsd az erőforrásokat, miközben megőrzöd a beszélgetési előzményeket.
+- **Archiválás a befejezés után**: Archiváld a contexteket, amikor a beszélgetések lezárultak, hogy felszabadítsd az erőforrásokat, miközben megőrzöd a beszélgetési előzményeket.
 
 ## Mi következik
 
-- [Routing](../mcp-routing/README.md)
+- [5.5 Routing](../mcp-routing/README.md)
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár az pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy félreértelmezésekért.
+Ez a dokumentum az AI fordítószolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

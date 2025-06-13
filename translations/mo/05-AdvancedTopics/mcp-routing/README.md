@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a621fc52c7daec552eb8b3b48c0361dd",
-  "translation_date": "2025-06-02T19:42:44+00:00",
+  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
+  "translation_date": "2025-06-12T23:14:26+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "mo"
 }
 -->
 ## Sampling and Routing Architecture in MCP
 
-Sampling cu a component esențial dal Model Context Protocol (MCP) che permete un procesament eficient dai cerchi e routing. Aceasta implichează analizarea cerchilor intrant per determinar el model o serviciul cel mai potrivit per gestil, bazânduse pe diverse criterii cum ar fi tipul de conținut, contextul utilizatorului și încărcarea sistemului.
+Sampling este un component critic al Model Context Protocol (MCP) care permite procesarea și rutarea eficientă a cererilor. Aceasta implică analiza cererilor primite pentru a determina modelul sau serviciul cel mai potrivit pentru a le gestiona, bazându-se pe diverse criterii precum tipul conținutului, contextul utilizatorului și încărcarea sistemului.
 
-Sampling și routing se pot combina per crea o arhitectură robustă ce optimizează utilizarea resurselor și asigură o disponibilitate înaltă. Procesul de sampling poate fi folosit per clasifica cerchile, în timp ce routingul le direcționează către modelele sau serviciile potrivite.
+Sampling-ul și rutarea pot fi combinate pentru a crea o arhitectură robustă care optimizează utilizarea resurselor și asigură disponibilitate ridicată. Procesul de sampling poate fi folosit pentru clasificarea cererilor, în timp ce rutarea le direcționează către modelele sau serviciile potrivite.
 
-Diagrama de mai jos ilustrează cum samplingul și routingul lucrează împreună într-o arhitectură MCP cuprinzătoare:
+Diagrama de mai jos ilustrează cum sampling-ul și rutarea funcționează împreună într-o arhitectură MCP cuprinzătoare:
 
 ```mermaid
 flowchart TB
@@ -80,13 +80,13 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Ce urmează
+## What's next
 
-- [Sampling](../mcp-sampling/README.md)
+- [5.6 Sampling](../mcp-sampling/README.md)
 
 **Disclaimer**:  
 This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
 
 ---
 
-Could you please clarify what language or dialect "mo" refers to? There are multiple possibilities, and I want to ensure I provide the correct translation.
+(Note: "mo" language code is ambiguous or unspecified. If you meant a specific language or dialect, please clarify so I can provide an accurate translation.)

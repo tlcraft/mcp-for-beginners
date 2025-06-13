@@ -1,44 +1,44 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ba9c96a7c7901faa1d26c8ec7ad56d2c",
-  "translation_date": "2025-06-02T20:16:05+00:00",
+  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
+  "translation_date": "2025-06-13T00:15:16+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "fi"
 }
 -->
 # Security Best Practices
 
-Turvallisuus on ratkaisevan tärkeää MCP-toteutuksissa, erityisesti yritysympäristöissä. On tärkeää varmistaa, että työkalut ja tiedot ovat suojattuja luvattomalta käytöltä, tietomurroilta ja muilta turvallisuusuhkilta.
+Tietoturva on ratkaisevan tärkeää MCP-ratkaisuissa, erityisesti yritysympäristöissä. On tärkeää varmistaa, että työkalut ja data ovat suojattuja luvattomalta pääsyltä, tietomurroilta ja muilta tietoturvauhilta.
 
 ## Introduction
 
-Tässä oppitunnissa käsittelemme turvallisuuden parhaita käytäntöjä MCP-toteutuksissa. Käymme läpi todennuksen ja valtuutuksen, tietosuojaa, työkalujen turvallista suorittamista sekä tietosuojasäädösten noudattamista.
+Tässä oppitunnissa käsittelemme MCP-ratkaisujen tietoturvan parhaita käytäntöjä. Käymme läpi tunnistautumisen ja valtuutuksen, datan suojauksen, työkalujen turvallisen suorittamisen sekä tietosuoja-asetusten noudattamisen.
 
 ## Learning Objectives
 
-Oppitunnin lopussa osaat:
+Oppitunnin lopuksi osaat:
 
-- Toteuttaa turvalliset todennus- ja valtuutusmekanismit MCP-palvelimille.
-- Suojata arkaluonteiset tiedot salauksen ja turvallisen tallennuksen avulla.
-- Varmistaa työkalujen turvallisen suorittamisen asianmukaisin käyttöoikeuksin.
-- Soveltaa parhaita käytäntöjä tietosuojan ja yksityisyyden suojaamiseksi.
+- Toteuttaa turvalliset tunnistautumis- ja valtuutusmekanismit MCP-palvelimille.
+- Suojata arkaluonteiset tiedot salauksella ja turvallisella tallennuksella.
+- Varmistaa työkalujen turvallisen suorittamisen asianmukaisilla käyttöoikeuksilla.
+- Soveltaa parhaita käytäntöjä tietosuojaan ja yksityisyyden suojaan.
 
 ## Authentication and Authorization
 
-Todennus ja valtuutus ovat olennaisia MCP-palvelimien suojaamisessa. Todennus vastaa kysymykseen "Kuka sinä olet?" ja valtuutus kysymykseen "Mitä voit tehdä?".
+Tunnistautuminen ja valtuutus ovat olennaisia MCP-palvelimien suojaamiseksi. Tunnistautuminen vastaa kysymykseen "Kuka olet?" ja valtuutus kysymykseen "Mitä voit tehdä?".
 
-Tarkastellaan esimerkkejä siitä, miten toteuttaa turvallinen todennus ja valtuutus MCP-palvelimissa käyttäen .NET:iä ja Javaa.
+Tarkastellaan esimerkkejä siitä, miten toteuttaa turvallinen tunnistautuminen ja valtuutus MCP-palvelimilla .NET- ja Java-ympäristöissä.
 
 ### .NET Identity Integration
 
-ASP .NET Core Identity tarjoaa vankan kehikon käyttäjien todennuksen ja valtuutuksen hallintaan. Voimme integroida sen MCP-palvelimiin työkalujen ja resurssien suojaksi.
+ASP .NET Core Identity tarjoaa vankan kehyksen käyttäjien tunnistautumisen ja valtuutuksen hallintaan. Voimme integroida sen MCP-palvelimiin työkalujen ja resurssien suojaamiseksi.
 
-Tässä integraatiossa on muutamia keskeisiä käsitteitä, jotka on hyvä ymmärtää:
+Kun integroimme ASP.NET Core Identityä MCP-palvelimiin, on hyvä ymmärtää seuraavat keskeiset käsitteet:
 
-- **Identity Configuration**: ASP.NET Core Identityn määrittäminen käyttäjärooleineen ja -väitteineen. Väite on käyttäjää koskeva tieto, kuten rooli tai käyttöoikeus, esimerkiksi "Admin" tai "User".
-- **JWT Authentication**: JSON Web Tokenien (JWT) käyttö turvalliseen API-käyttöön. JWT on standardi tiedon turvalliseen siirtämiseen osapuolten välillä JSON-objektina, joka voidaan vahvistaa ja johon voidaan luottaa, koska se on digitaalisesti allekirjoitettu.
-- **Authorization Policies**: Politiikkojen määrittely, joilla hallitaan pääsyä tiettyihin työkaluihin käyttäjäroolien perusteella. MCP käyttää valtuutuspolitiikkoja määrittäessään, ketkä käyttäjät pääsevät käsiksi mihinkin työkaluihin rooliensa ja väitteidensä mukaan.
+- **Identity Configuration**: ASP.NET Core Identityn määrittäminen käyttäjärooleineen ja -väittäminensä. Väittämä on tieto käyttäjästä, kuten hänen roolinsa tai käyttöoikeutensa, esimerkiksi "Admin" tai "User".
+- **JWT Authentication**: JSON Web Tokenien (JWT) käyttö turvalliseen API-pääsyyn. JWT on standardi, jolla välitetään tietoa osapuolten välillä JSON-objektina, ja se voidaan varmentaa digitaalisen allekirjoituksen avulla.
+- **Authorization Policies**: Politiikkojen määrittely, joilla ohjataan pääsyä tiettyihin työkaluihin käyttäjäroolien perusteella. MCP käyttää valtuutuspolitiikkoja määrittämään, ketkä käyttäjät pääsevät mihinkin työkaluihin rooliensa ja väittämiensä perusteella.
 
 ```csharp
 public class SecureMcpStartup
@@ -111,22 +111,22 @@ public class SecureMcpStartup
 
 Edellisessä koodissa olemme:
 
-- Määrittäneet ASP.NET Core Identityn käyttäjähallintaan.
-- Asettaneet JWT-todennuksen turvallista API-käyttöä varten. Määrittelimme tokenin validointiparametrit, kuten julkaisijan, kohdeyleisön ja allekirjoitusavaimen.
-- Määritelleet valtuutuspolitiikat työkalujen käyttöoikeuksien hallintaan käyttäjäroolien perusteella. Esimerkiksi "CanUseAdminTools" -politiikka vaatii käyttäjältä "Admin"-roolin, kun taas "CanUseBasic" -politiikka edellyttää käyttäjän olevan todennettu.
-- Rekisteröineet MCP-työkalut tiettyjen valtuutusvaatimusten kanssa varmistaen, että vain oikeilla rooleilla varustetut käyttäjät pääsevät niihin käsiksi.
+- Määrittäneet ASP.NET Core Identityn käyttäjien hallintaan.
+- Ottaneet käyttöön JWT-tunnistautumisen turvallista API-pääsyä varten. Määrittelimme tokenin vahvistusparametrit, kuten julkaisijan, vastaanottajan ja allekirjoitusavaimen.
+- Määrittäneet valtuutuspolitiikat työkalujen käyttöoikeuksien hallintaan käyttäjäroolien perusteella. Esimerkiksi "CanUseAdminTools" -politiikka vaatii käyttäjältä "Admin"-roolin, kun taas "CanUseBasic" edellyttää käyttäjän olevan tunnistautunut.
+- Rekisteröineet MCP-työkalut tietyillä valtuutusvaatimuksilla varmistaaksemme, että vain oikeilla rooleilla varustetut käyttäjät pääsevät niihin käsiksi.
 
 ### Java Spring Security Integration
 
-Javassa käytämme Spring Securityä toteuttamaan turvallisen todennuksen ja valtuutuksen MCP-palvelimille. Spring Security tarjoaa kattavan turvallisuuskehyksen, joka integroituu saumattomasti Spring-sovelluksiin.
+Java-ympäristössä käytämme Spring Securityä toteuttamaan turvallisen tunnistautumisen ja valtuutuksen MCP-palvelimille. Spring Security tarjoaa kattavan tietoturvakehyksen, joka integroituu saumattomasti Spring-sovelluksiin.
 
-Keskeiset käsitteet ovat:
+Keskeiset käsitteet tässä ovat:
 
-- **Spring Security Configuration**: Turvallisuusasetusten määrittäminen todennusta ja valtuutusta varten.
-- **OAuth2 Resource Server**: OAuth2:n käyttö turvalliseen pääsyyn MCP-työkaluihin. OAuth2 on valtuutuskehys, jonka avulla kolmannen osapuolen palvelut voivat vaihtaa käyttöoikeustokeneita turvallista API-käyttöä varten.
-- **Security Interceptors**: Turvainterseptorien toteutus pääsynvalvonnan varmistamiseksi työkalujen suorituksessa.
-- **Role-Based Access Control**: Roolipohjainen pääsynhallinta tiettyihin työkaluihin ja resursseihin.
-- **Security Annotations**: Annotaatiot metodien ja päätepisteiden suojaamiseen.
+- **Spring Security Configuration**: Turvallisuusasetusten määrittäminen tunnistautumista ja valtuutusta varten.
+- **OAuth2 Resource Server**: OAuth2:n käyttö turvalliseen pääsyyn MCP-työkaluihin. OAuth2 on valtuutuskehys, joka mahdollistaa kolmansien osapuolien vaihtavan käyttöoikeustunnuksia turvallista API-pääsyä varten.
+- **Security Interceptors**: Turvainterseptorien toteutus, joilla valvotaan pääsyä työkalujen suorittamiseen.
+- **Role-Based Access Control**: Roolipohjainen pääsynhallinta, jolla rajoitetaan pääsyä tiettyihin työkaluihin ja resursseihin.
+- **Security Annotations**: Annotaatiot, joilla turvataan metodit ja päätepisteet.
 
 ```java
 @Configuration
@@ -180,18 +180,18 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 Edellisessä koodissa olemme:
 
-- Määrittäneet Spring Securityn suojaamaan MCP-päätepisteitä, sallien työkalujen löytymisen julkisesti, mutta vaatimalla todennuksen työkalujen suorittamiseen.
-- Käyttäneet OAuth2:ta resurssipalvelimena MCP-työkalujen turvallisen käytön hallintaan.
-- Toteuttaneet turvainterseptorin pääsynvalvonnan varmistamiseksi työkalujen suorittamisessa, tarkistaen käyttäjäroolit ja käyttöoikeudet ennen pääsyn myöntämistä tiettyihin työkaluihin.
-- Määritelleet roolipohjaisen pääsynhallinnan rajoittamaan pääsyä ylläpitäjätyökaluihin ja arkaluonteisiin tietoihin käyttäjäroolien perusteella.
+- Määrittäneet Spring Securityn suojaamaan MCP-päätepisteitä siten, että työkalujen löytäminen on julkista, mutta työkalujen suorittaminen vaatii tunnistautumisen.
+- Käyttäneet OAuth2:ta resurssipalvelimena MCP-työkalujen turvalliseen käyttöön.
+- Toteuttaneet turvainterseptorin, joka valvoo pääsyä työkalujen suorittamiseen tarkistamalla käyttäjäroolit ja -oikeudet ennen pääsyn myöntämistä.
+- Määrittäneet roolipohjaisen pääsynhallinnan rajoittamaan pääsyä ylläpitäjätyökaluihin ja arkaluonteisiin tietoihin käyttäjäroolien perusteella.
 
 ## Data Protection and Privacy
 
-Tietosuoja on välttämätöntä sen varmistamiseksi, että arkaluonteisia tietoja käsitellään turvallisesti. Tämä koskee henkilötunnistettavia tietoja (PII), taloudellisia tietoja ja muita arkaluonteisia tietoja, joita on suojattava luvattomalta käytöltä ja tietomurroilta.
+Datan suojaus on tärkeää, jotta arkaluonteiset tiedot käsitellään turvallisesti. Tämä koskee henkilökohtaisesti tunnistettavia tietoja (PII), taloustietoja ja muita arkaluonteisia tietoja, jotka on suojattava luvattomalta pääsyltä ja tietomurroilta.
 
 ### Python Data Protection Example
 
-Tarkastellaan esimerkkiä tietosuojan toteuttamisesta Pythonilla salauksen ja PII-tunnistuksen avulla.
+Tarkastellaan esimerkkiä datan suojauksesta Pythonilla käyttäen salausta ja PII-tunnistusta.
 
 ```python
 from mcp_server import McpServer
@@ -332,11 +332,11 @@ Edellisessä koodissa olemme:
 - Toteuttaneet `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
 - Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
 - Defined a `secure_tool` decorator that wraps tool execution to check for PII, log access, and encrypt sensitive data if required.
-- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool` varmistaaksemme, että se käsittelee arkaluonteisia tietoja turvallisesti.
+- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool` varmistaaksemme, että arkaluonteiset tiedot käsitellään turvallisesti.
 
 ## What's next
 
-- [Web search](../web-search-mcp/README.md)
+- [5.9 Web search](../web-search-mcp/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää ensisijaisena ja luotettavana lähteenä. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä mahdollisesti aiheutuvista väärinymmärryksistä tai tulkinnoista.

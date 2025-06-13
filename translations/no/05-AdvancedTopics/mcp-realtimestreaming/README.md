@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b41174ac781ebf228b2043cbdfc09105",
-  "translation_date": "2025-06-12T00:36:58+00:00",
+  "original_hash": "195f7287638b77a549acadd96c8f981c",
+  "translation_date": "2025-06-13T00:11:10+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimestreaming/README.md",
   "language_code": "no"
 }
@@ -11,90 +11,90 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Oversikt
 
-Sanntids datastrømming har blitt avgjørende i dagens datadrevne verden, hvor bedrifter og applikasjoner trenger umiddelbar tilgang til informasjon for å ta raske beslutninger. Modellkontekstprotokollen (MCP) representerer et betydelig fremskritt i optimaliseringen av disse sanntidsstrømmene, ved å forbedre databehandlings-effektiviteten, opprettholde kontekstuell integritet og øke den totale systemytelsen.
+Sanntids datastrømming har blitt essensielt i dagens datadrevne verden, hvor bedrifter og applikasjoner krever umiddelbar tilgang til informasjon for å kunne ta raske beslutninger. Modellkontekstprotokollen (MCP) representerer et viktig fremskritt i å optimalisere disse sanntidsstrømmene, ved å forbedre databehandlingseffektiviteten, opprettholde kontekstuell integritet og øke den totale systemytelsen.
 
-Denne modulen utforsker hvordan MCP forvandler sanntids datastrømming ved å tilby en standardisert tilnærming til kontekststyring på tvers av AI-modeller, strømmeplattformer og applikasjoner.
+Denne modulen utforsker hvordan MCP forvandler sanntids datastrømming ved å tilby en standardisert tilnærming til kontekststyring på tvers av AI-modeller, strømmingsplattformer og applikasjoner.
 
-## Innføring i sanntids datastrømming
+## Introduksjon til sanntids datastrømming
 
-Sanntids datastrømming er et teknologisk paradigme som muliggjør kontinuerlig overføring, behandling og analyse av data mens de genereres, slik at systemer kan reagere umiddelbart på ny informasjon. I motsetning til tradisjonell batch-behandling som opererer på statiske datasett, behandler streaming data i bevegelse, og leverer innsikt og handlinger med minimal forsinkelse.
+Sanntids datastrømming er et teknologisk paradigme som muliggjør kontinuerlig overføring, behandling og analyse av data mens de genereres, slik at systemer kan reagere umiddelbart på ny informasjon. I motsetning til tradisjonell batchbehandling som opererer på statiske datasett, behandles data i bevegelse, og gir innsikt og handlinger med minimal forsinkelse.
 
-### Kjernebegreper for sanntids datastrømming:
+### Kjerneprinsipper for sanntids datastrømming:
 
-- **Kontinuerlig dataflyt**: Data behandles som en kontinuerlig, uavbrutt strøm av hendelser eller poster.
-- **Lav latensbehandling**: Systemer er designet for å minimere tiden mellom datagenerering og behandling.
-- **Skalerbarhet**: Streamingarkitekturer må håndtere varierende datavolumer og hastigheter.
-- **Feiltoleranse**: Systemer må være robuste mot feil for å sikre uavbrutt dataflyt.
-- **Stateful behandling**: Å opprettholde kontekst på tvers av hendelser er avgjørende for meningsfull analyse.
+- **Kontinuerlig dataflyt**: Data behandles som en uavbrutt, evigvarende strøm av hendelser eller poster.
+- **Lav latens i behandling**: Systemer er designet for å minimere tiden mellom datagenerering og behandling.
+- **Skalerbarhet**: Strømmingsarkitekturer må håndtere variabel datamengde og hastighet.
+- **Feiltoleranse**: Systemene må være robuste mot feil for å sikre uavbrutt dataflyt.
+- **Tilstandshåndtering**: Det er avgjørende å opprettholde kontekst over hendelser for meningsfull analyse.
 
-### Modellkontekstprotokollen og sanntids streaming
+### Modellkontekstprotokollen og sanntidsstrømming
 
-Modellkontekstprotokollen (MCP) løser flere kritiske utfordringer i sanntids streamingmiljøer:
+Modellkontekstprotokollen (MCP) løser flere viktige utfordringer i sanntids strømmingsmiljøer:
 
-1. **Kontekstuell kontinuitet**: MCP standardiserer hvordan kontekst opprettholdes på tvers av distribuerte strømme-komponenter, slik at AI-modeller og behandlingsnoder har tilgang til relevant historisk og miljømessig kontekst.
+1. **Kontekstuelt kontinuitet**: MCP standardiserer hvordan kontekst opprettholdes på tvers av distribuerte strømmingskomponenter, og sikrer at AI-modeller og behandlingsnoder har tilgang til relevant historisk og miljømessig kontekst.
 
-2. **Effektiv tilstandshåndtering**: Ved å tilby strukturerte mekanismer for kontekstoverføring, reduserer MCP overhead knyttet til tilstandshåndtering i streaming-pipelines.
+2. **Effektiv tilstandshåndtering**: Ved å tilby strukturerte mekanismer for kontekstoverføring reduserer MCP belastningen ved tilstandshåndtering i strømmingsrørledninger.
 
-3. **Interoperabilitet**: MCP skaper et felles språk for kontekstdeling mellom ulike streamingteknologier og AI-modeller, noe som muliggjør mer fleksible og utvidbare arkitekturer.
+3. **Interoperabilitet**: MCP skaper et felles språk for kontekstdeling mellom ulike strømmingsteknologier og AI-modeller, noe som muliggjør mer fleksible og utvidbare arkitekturer.
 
-4. **Streaming-optimalisert kontekst**: MCP-implementasjoner kan prioritere hvilke kontekstelementer som er mest relevante for sanntids beslutningstaking, og optimalisere både ytelse og nøyaktighet.
+4. **Strømmingsoptimalisert kontekst**: MCP-implementasjoner kan prioritere hvilke kontekstelementer som er mest relevante for sanntids beslutningstaking, og optimaliserer både ytelse og nøyaktighet.
 
-5. **Adaptiv behandling**: Med riktig kontekststyring gjennom MCP kan streamingsystemer dynamisk justere behandlingen basert på endrende forhold og mønstre i dataene.
+5. **Adaptiv behandling**: Med riktig kontekststyring via MCP kan strømmingssystemer dynamisk justere behandlingen basert på endrede forhold og mønstre i dataene.
 
-I moderne applikasjoner, fra IoT-sensornettverk til finansielle handelsplattformer, muliggjør integrasjonen av MCP med streamingteknologier mer intelligent, kontekstbevisst behandling som kan reagere hensiktsmessig på komplekse og dynamiske situasjoner i sanntid.
+I moderne applikasjoner, fra IoT-sensornettverk til finansielle handelsplattformer, muliggjør integrering av MCP med strømmingsteknologier mer intelligent, kontekstbevisst behandling som kan reagere hensiktsmessig på komplekse, dynamiske situasjoner i sanntid.
 
 ## Læringsmål
 
 Etter denne leksjonen skal du kunne:
 
-- Forstå grunnleggende prinsipper for sanntids datastrømming og utfordringene knyttet til det
+- Forstå grunnprinsippene for sanntids datastrømming og tilhørende utfordringer
 - Forklare hvordan Modellkontekstprotokollen (MCP) forbedrer sanntids datastrømming
-- Implementere MCP-baserte streamingløsninger ved hjelp av populære rammeverk som Kafka og Pulsar
-- Designe og distribuere feiltolerante, høyytelses streamingarkitekturer med MCP
+- Implementere MCP-baserte strømmingsløsninger ved bruk av populære rammeverk som Kafka og Pulsar
+- Designe og distribuere feiltolerante, høyytelses strømmingsarkitekturer med MCP
 - Anvende MCP-konsepter på IoT, finanshandel og AI-drevne analysebrukstilfeller
-- Vurdere nye trender og fremtidige innovasjoner innen MCP-baserte streamingteknologier
+- Vurdere nye trender og fremtidige innovasjoner innen MCP-baserte strømmingsteknologier
 
 ### Definisjon og betydning
 
-Sanntids datastrømming innebærer kontinuerlig generering, behandling og levering av data med minimal forsinkelse. I motsetning til batch-behandling, hvor data samles og behandles i grupper, behandles streamingdata inkrementelt etter hvert som de kommer inn, noe som muliggjør umiddelbar innsikt og handling.
+Sanntids datastrømming innebærer kontinuerlig generering, behandling og levering av data med minimal forsinkelse. I motsetning til batchbehandling, hvor data samles og behandles i grupper, behandles strømmende data inkrementelt etter hvert som de kommer inn, noe som muliggjør umiddelbar innsikt og handling.
 
-Viktige kjennetegn ved sanntids datastrømming inkluderer:
+Nøkkeltrekk ved sanntids datastrømming inkluderer:
 
 - **Lav latens**: Behandling og analyse av data innen millisekunder til sekunder
-- **Kontinuerlig flyt**: Uavbrutte datastrømmer fra ulike kilder
-- **Umiddelbar behandling**: Analyse av data ved ankomst i stedet for i batch
-- **Hendelsesdrevet arkitektur**: Respons på hendelser i det de skjer
+- **Kontinuerlig flyt**: Uavbrutte datastreams fra ulike kilder
+- **Umiddelbar behandling**: Analyse av data ved ankomst, ikke i batch
+- **Hendelsesdrevet arkitektur**: Reaksjon på hendelser i det de skjer
 
 ### Utfordringer i tradisjonell datastrømming
 
 Tradisjonelle tilnærminger til datastrømming møter flere begrensninger:
 
-1. **Kontekstkaps**: Vanskeligheter med å opprettholde kontekst på tvers av distribuerte systemer
-2. **Skalerbarhetsproblemer**: Utfordringer med å håndtere høyt volum og høy hastighet på data
+1. **Konteksttap**: Vanskeligheter med å opprettholde kontekst på tvers av distribuerte systemer
+2. **Skalerbarhetsproblemer**: Utfordringer med å håndtere høye volumer og hastigheter
 3. **Integrasjonskompleksitet**: Problemer med interoperabilitet mellom ulike systemer
-4. **Latensstyring**: Balansering mellom gjennomstrømning og behandlingstid
-5. **Datakonsistens**: Sikre nøyaktighet og fullstendighet i data gjennom hele strømmen
+4. **Latenshåndtering**: Balansering mellom gjennomstrømning og behandlingstid
+5. **Datakonsistens**: Sikring av nøyaktighet og fullstendighet i dataflyten
 
-## Forståelse av Modellkontekstprotokollen (MCP)
+## Forstå Modellkontekstprotokollen (MCP)
 
 ### Hva er MCP?
 
-Modellkontekstprotokollen (MCP) er en standardisert kommunikasjonsprotokoll designet for å muliggjøre effektiv samhandling mellom AI-modeller og applikasjoner. I sammenheng med sanntids datastrømming tilbyr MCP en ramme for:
+Modellkontekstprotokollen (MCP) er en standardisert kommunikasjonsprotokoll designet for å legge til rette for effektiv interaksjon mellom AI-modeller og applikasjoner. I sanntids datastrømming gir MCP en ramme for:
 
 - Å bevare kontekst gjennom hele datapipelinen
-- Standardisering av datautvekslingsformater
-- Optimalisering av overføring av store datasett
-- Forbedret kommunikasjon mellom modell til modell og modell til applikasjon
+- Standardisere datautvekslingsformater
+- Optimalisere overføring av store datasett
+- Forbedre kommunikasjonen mellom modell-til-modell og modell-til-applikasjon
 
 ### Kjernekomponenter og arkitektur
 
-MCP-arkitektur for sanntids streaming består av flere nøkkelkomponenter:
+MCP-arkitekturen for sanntidsstrømming består av flere viktige komponenter:
 
-1. **Kontekstbehandlere**: Administrerer og opprettholder kontekstuell informasjon gjennom streaming-pipelinen
-2. **Strømprosessorer**: Behandler innkommende datastrømmer ved hjelp av kontekstbevisste teknikker
-3. **Protokolladaptere**: Konverterer mellom ulike streamingprotokoller samtidig som kontekst bevares
-4. **Kontekstlager**: Effektiv lagring og henting av kontekstuell informasjon
-5. **Streamingtilkoblinger**: Koblinger til ulike streamingplattformer (Kafka, Pulsar, Kinesis osv.)
+1. **Kontekstbehandlere**: Håndterer og opprettholder kontekstuell informasjon gjennom strømmingspipen
+2. **Strømmingsprosessorer**: Behandler innkommende datastrømmer med kontekstbevisste metoder
+3. **Protokolladaptere**: Konverterer mellom ulike strømmingsprotokoller samtidig som kontekst bevares
+4. **Kontekstlagring**: Effektiv lagring og henting av kontekstuell informasjon
+5. **Strømmingskoblinger**: Kobler til ulike strømmingsplattformer (Kafka, Pulsar, Kinesis osv.)
 
 ```mermaid
 graph TD
@@ -164,45 +164,45 @@ graph TD
     class DA,Alerts,DL,API apps
 ```
 
-### Hvordan MCP forbedrer sanntids datahåndtering
+### Hvordan MCP forbedrer sanntids databehandling
 
-MCP løser tradisjonelle streamingutfordringer ved å tilby:
+MCP løser tradisjonelle strømmingsutfordringer gjennom:
 
-- **Kontekstuell integritet**: Opprettholde relasjoner mellom datapunkter gjennom hele pipelinen
-- **Optimalisert overføring**: Redusere duplisering i datautveksling gjennom intelligent kontekststyring
-- **Standardiserte grensesnitt**: Tilby konsistente API-er for streamingkomponenter
-- **Redusert latens**: Minimere behandlingskostnader gjennom effektiv kontekstbehandling
-- **Forbedret skalerbarhet**: Støtte horisontal skalering samtidig som kontekst bevares
+- **Kontekstuell integritet**: Opprettholder relasjoner mellom datapunkter gjennom hele pipelinen
+- **Optimalisert overføring**: Reduserer duplisering i datautveksling gjennom intelligent kontekststyring
+- **Standardiserte grensesnitt**: Tilbyr konsistente API-er for strømmingskomponenter
+- **Redusert latens**: Minimerer behandlingskostnader med effektiv kontekstbehandling
+- **Forbedret skalerbarhet**: Støtter horisontal skalering samtidig som kontekst bevares
 
 ## Integrasjon og implementering
 
-Sanntids datastrømmingssystemer krever nøye arkitektonisk design og implementering for å opprettholde både ytelse og kontekstuell integritet. Modellkontekstprotokollen tilbyr en standardisert tilnærming for integrasjon av AI-modeller og streamingteknologier, som muliggjør mer avanserte, kontekstbevisste behandlingspipelines.
+Sanntids datastrømmingssystemer krever nøye arkitektonisk design og implementering for å opprettholde både ytelse og kontekstuell integritet. Modellkontekstprotokollen tilbyr en standardisert tilnærming for å integrere AI-modeller og strømmingsteknologier, noe som muliggjør mer avanserte, kontekstbevisste behandlingsrørledninger.
 
-### Oversikt over MCP-integrasjon i streamingarkitekturer
+### Oversikt over MCP-integrasjon i strømmingsarkitekturer
 
-Implementering av MCP i sanntids streamingmiljøer involverer flere viktige hensyn:
+Implementering av MCP i sanntids strømmingsmiljøer involverer flere viktige hensyn:
 
-1. **Kontekstserialisering og transport**: MCP tilbyr effektive mekanismer for koding av kontekstuell informasjon i streaming datapakker, slik at essensiell kontekst følger dataene gjennom hele behandlingsrøret. Dette inkluderer standardiserte serialiseringsformater optimalisert for streamingtransport.
+1. **Kontekstserialisering og transport**: MCP tilbyr effektive mekanismer for å kode kontekstuell informasjon i strømmingsdatapakker, slik at essensiell kontekst følger data gjennom hele behandlingsrøret. Dette inkluderer standardiserte serialiseringsformater optimalisert for strømmingstransport.
 
-2. **Stateful strømbehandling**: MCP muliggjør mer intelligent stateful behandling ved å opprettholde konsistent kontekstrepresentasjon på tvers av behandlingsnoder. Dette er særlig verdifullt i distribuerte streamingarkitekturer der tilstandshåndtering tradisjonelt er utfordrende.
+2. **Tilstandshåndtering i strømmen**: MCP muliggjør mer intelligent tilstandshåndtering ved å opprettholde konsistent kontekstrepresentasjon på tvers av behandlingsnoder. Dette er spesielt verdifullt i distribuerte strømmingsarkitekturer hvor tilstandsstyring tradisjonelt er utfordrende.
 
-3. **Event-tid vs. behandlingstid**: MCP-implementasjoner i streaming må håndtere utfordringen med å skille mellom når hendelser skjedde og når de behandles. Protokollen kan inkludere tidsmessig kontekst som bevarer event-tid-semantikk.
+3. **Hendelsestid vs. behandlingstid**: MCP-implementasjoner må håndtere utfordringen med å skille mellom når hendelser inntraff og når de behandles. Protokollen kan inkludere tidsmessig kontekst som bevarer hendelsestidens semantikk.
 
-4. **Backpressure-håndtering**: Ved å standardisere kontekstbehandling hjelper MCP med å håndtere backpressure i streaming, slik at komponenter kan kommunisere sin behandlingskapasitet og justere dataflyten deretter.
+4. **Backpressure-håndtering**: Ved å standardisere kontekstbehandling hjelper MCP med å håndtere backpressure i strømmingssystemer, slik at komponenter kan kommunisere sine behandlingskapasiteter og justere dataflyten deretter.
 
-5. **Kontekstvinduer og aggregering**: MCP muliggjør mer avanserte vindusoperasjoner ved å tilby strukturerte representasjoner av tids- og relasjonskontekster, som gir mer meningsfulle aggregeringer på tvers av hendelsesstrømmer.
+5. **Kontekstvinduing og aggregering**: MCP legger til rette for mer avanserte vindusoperasjoner ved å tilby strukturerte representasjoner av tidsmessig og relasjonell kontekst, noe som muliggjør mer meningsfulle aggregeringer over hendelsesstrømmer.
 
-6. **Eksakt-én-gang behandling**: I streaming-systemer som krever eksakt-én-gang semantikk, kan MCP inkludere behandlingsmetadata for å hjelpe med sporing og verifisering av behandlingstilstand på tvers av distribuerte komponenter.
+6. **Eksakt-en-gang-behandling**: I systemer som krever eksakt-en-gang-semantikk, kan MCP inkorporere behandlingsmetadata for å spore og verifisere behandlingsstatus på tvers av distribuerte komponenter.
 
-Implementeringen av MCP på tvers av ulike streamingteknologier skaper en enhetlig tilnærming til kontekststyring, reduserer behovet for skreddersydd integrasjonskode samtidig som systemets evne til å opprettholde meningsfull kontekst under dataflyt forbedres.
+Implementeringen av MCP på tvers av ulike strømmingsteknologier skaper en enhetlig tilnærming til kontekststyring, reduserer behovet for spesialtilpasset integrasjonskode samtidig som systemets evne til å bevare meningsfull kontekst gjennom dataflyten styrkes.
 
 ### MCP i ulike datastrømmingsrammeverk
 
-Disse eksemplene følger gjeldende MCP-spesifikasjon som fokuserer på en JSON-RPC-basert protokoll med distinkte transportmekanismer. Koden viser hvordan du kan implementere egendefinerte transportlag som integrerer streamingplattformer som Kafka og Pulsar, samtidig som full kompatibilitet med MCP-protokollen opprettholdes.
+Disse eksemplene følger den nåværende MCP-spesifikasjonen som fokuserer på en JSON-RPC-basert protokoll med ulike transportmekanismer. Koden viser hvordan du kan implementere egendefinerte transportlag som integrerer strømmingsplattformer som Kafka og Pulsar, samtidig som full kompatibilitet med MCP-protokollen opprettholdes.
 
-Eksemplene er laget for å vise hvordan streamingplattformer kan integreres med MCP for å tilby sanntids databehandling samtidig som den kontekstbevisste kjernen i MCP bevares. Denne tilnærmingen sikrer at kodeeksemplene nøyaktig reflekterer gjeldende MCP-spesifikasjon per juni 2025.
+Eksemplene er designet for å vise hvordan strømmingsplattformer kan integreres med MCP for å tilby sanntids databehandling samtidig som den kontekstbevisste kjernen i MCP ivaretas. Denne tilnærmingen sikrer at kodeeksemplene nøyaktig reflekterer den nåværende statusen for MCP-spesifikasjonen per juni 2025.
 
-MCP kan integreres med populære streamingrammeverk som:
+MCP kan integreres med populære strømmingsrammeverk, inkludert:
 
 #### Apache Kafka-integrasjon
 
@@ -516,24 +516,24 @@ if __name__ == "__main__":
 
 ### Beste praksis for distribusjon
 
-Ved implementering av MCP for sanntids streaming:
+Når du implementerer MCP for sanntidsstrømming:
 
 1. **Design for feiltoleranse**:
-   - Implementer korrekt feilhåndtering
+   - Implementer god feilhåndtering
    - Bruk dead-letter køer for mislykkede meldinger
    - Design idempotente prosessorer
 
 2. **Optimaliser for ytelse**:
-   - Konfigurer passende buffere
-   - Bruk batch-behandling der det er hensiktsmessig
+   - Konfigurer passende bufferstørrelser
+   - Bruk batching der det er hensiktsmessig
    - Implementer backpressure-mekanismer
 
 3. **Overvåk og observer**:
-   - Følg med på strømprosesserings-metrikker
-   - Overvåk kontekstspredning
-   - Sett opp varsler for avvik
+   - Følg med på strømmingsbehandlingsmetrikker
+   - Overvåk kontekstpropagering
+   - Sett opp varsler ved avvik
 
-4. **Sikre strømmer**:
+4. **Sikre strømningene dine**:
    - Krypter sensitiv data
    - Bruk autentisering og autorisasjon
    - Anvend riktige tilgangskontroller
@@ -543,11 +543,11 @@ Ved implementering av MCP for sanntids streaming:
 MCP forbedrer IoT-strømming ved å:
 
 - Bevare enhetskontekst gjennom hele behandlingsrøret
-- Muliggjøre effektiv edge-til-cloud datastrømming
+- Legge til rette for effektiv edge-til-sky datastrømming
 - Støtte sanntidsanalyse av IoT-datastrømmer
-- Legge til rette for enhet-til-enhet kommunikasjon med kontekst
+- Tilrettelegge for enhet-til-enhet kommunikasjon med kontekst
 
-Eksempel: Smarte by-sensornettverk  
+Eksempel: Smarte bysensornettverk  
 ```
 Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → Automated Responses
 ```
@@ -556,53 +556,53 @@ Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → 
 
 MCP gir betydelige fordeler for finansielle datastrømmer:
 
-- Ekstremt lav latens i behandlingen av handelsbeslutninger
-- Opprettholdelse av transaksjonskontekst gjennom hele prosessen
-- Støtte for kompleks hendelsesbehandling med kontekstbevissthet
-- Sikring av datakonsistens på tvers av distribuerte handelssystemer
+- Ekstremt lav latens i beslutningsprosesser for handel
+- Opprettholder transaksjonskontekst gjennom hele behandlingen
+- Støtter kompleks hendelsesbehandling med kontekstbevissthet
+- Sikrer datakonsistens på tvers av distribuerte handelssystemer
 
-### Forbedring av AI-drevet dataanalyse
+### Forbedring av AI-drevne dataanalyser
 
-MCP åpner nye muligheter for streaminganalyse:
+MCP åpner nye muligheter for strømmingsanalyse:
 
 - Sanntidstrening og inferens av modeller
 - Kontinuerlig læring fra datastrømmer
-- Kontekstbevisst funksjonsutvinning
-- Flere modell-inferens-pipelines med bevart kontekst
+- Kontekstbevisst funksjonsekstraksjon
+- Flermodells inferensrørledninger med bevart kontekst
 
 ## Fremtidige trender og innovasjoner
 
 ### Utvikling av MCP i sanntidsmiljøer
 
-Fremover forventer vi at MCP vil utvikle seg for å møte:
+Fremover forventes MCP å utvikle seg for å håndtere:
 
-- **Integrasjon med kvanteberegning**: Forberede streaming-systemer basert på kvante-teknologi
+- **Integrasjon med kvanteberegning**: Forberede for kvantebaserte strømmingssystemer
 - **Edge-native behandling**: Flytte mer kontekstbevisst behandling til edge-enheter
-- **Autonom strømstyring**: Selvoptimaliserende streaming-pipelines
-- **Federert streaming**: Distribuert behandling samtidig som personvern ivaretas
+- **Autonom strømmingsstyring**: Selvoptimaliserende strømmingsrørledninger
+- **Føderert strømming**: Distribuert behandling med ivaretatt personvern
 
 ### Potensielle teknologiske fremskritt
 
-Nye teknologier som vil forme fremtidens MCP-streaming:
+Fremvoksende teknologier som vil forme MCP-strømmingens fremtid:
 
-1. **AI-optimaliserte streamingprotokoller**: Skreddersydde protokoller for AI-arbeidsmengder
-2. **Nevromorfisk beregning**: Hjerneinspirert databehandling for strømprosessering
-3. **Serverløs streaming**: Hendelsesdrevet, skalerbar streaming uten infrastrukturadministrasjon
-4. **Distribuerte kontekstlagre**: Globalt distribuerte, men svært konsistente kontekststyringsløsninger
+1. **AI-optimaliserte strømmingsprotokoller**: Skreddersydde protokoller spesielt for AI-arbeidsmengder
+2. **Neuromorfisk databehandling**: Hjerneinspirert databehandling for strømmingsprosessering
+3. **Serverløs strømming**: Hendelsesdrevet, skalerbar strømming uten infrastrukturhåndtering
+4. **Distribuerte kontekstlagre**: Globalt distribuerte, men svært konsistente kontekststyringssystemer
 
 ## Praktiske øvelser
 
-### Øvelse 1: Sette opp en grunnleggende MCP streamingpipeline
+### Øvelse 1: Sette opp en grunnleggende MCP-strømmingspipeline
 
 I denne øvelsen lærer du å:
-- Konfigurere et grunnleggende MCP streamingmiljø
-- Implementere kontekstbehandlere for strømprosessering
-- Teste og validere kontekstbevaring
+- Konfigurere et grunnleggende MCP-strømmingsmiljø
+- Implementere kontekstbehandlere for strømmingsbehandling
+- Teste og verifisere kontekstbevaring
 
-### Øvelse 2: Bygge et sanntids analyse-dashboard
+### Øvelse 2: Bygge et sanntidsanalyse-dashboard
 
 Lag en komplett applikasjon som:
-- Tar imot datastrømmer ved hjelp av MCP
+- Inntar datastrømmer via MCP
 - Behandler strømmen samtidig som kontekst opprettholdes
 - Visualiserer resultater i sanntid
 
@@ -616,29 +616,25 @@ Avansert øvelse som dekker:
 ## Ekstra ressurser
 
 - [Model Context Protocol Specification](https://github.com/modelcontextprotocol) - Offisiell MCP-spesifikasjon og dokumentasjon
-- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Lær om Kafka for strømmebehandling
-- [Apache Pulsar](https://pulsar.apache.org/) - Enhetlig meldings- og streamingplattform
-- [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - Omfattende bok om streamingarkitekturer
-- [Microsoft Azure Event Hubs](https://learn.microsoft.com/azure/event-hubs/event-hubs-about) - Administrert event streaming-tjeneste
+- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Lær om Kafka for strømmingsbehandling
+- [Apache Pulsar](https://pulsar.apache.org/) - Unified meldings- og strømmingsplattform
+- [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - Omfattende bok om strømmingsarkitekturer
+- [Microsoft Azure Event Hubs](https://learn.microsoft.com/azure/event-hubs/event-hubs-about) - Administrert eventstrømmingstjeneste
 - [MLflow Documentation](https://mlflow.org/docs/latest/index.html) - For ML-modellsporing og distribusjon
 - [Real-Time Analytics with Apache Storm](https://storm.apache.org/releases/current/index.html) - Behandlingsrammeverk for sanntidsberegning
 - [Flink ML](https://nightlies.apache.org/flink/flink-ml-docs-master/) - Maskinlæringsbibliotek for Apache Flink
-- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Bygge applikasjoner med LLM-er
+- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Bygge applikasjoner med LLMs
 
-## Læringsutbytte
+## Læringsresultater
 
 Ved å fullføre denne modulen vil du kunne:
 
-- Forstå grunnleggende prinsipper for sanntids datastrømming og tilhørende utfordringer
+- Forstå grunnprinsippene for sanntids datastrømming og tilhørende utfordringer
 - Forklare hvordan Modellkontekstprotokollen (MCP) forbedrer sanntids datastrømming
-- Implementere MCP-baserte streamingløsninger ved bruk av populære rammeverk som Kafka og Pulsar
-- Designe og distribuere feiltolerante, høyytelses streamingarkitekturer med MCP
-- Anvende MCP-konsepter i IoT, finanshandel og AI-drevne analysebrukstilfeller
-- Vurdere nye trender og fremtidige innovasjoner innen MCP-baserte streamingteknologier
-
-## Hva nå
-
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- Implementere MCP-baserte strømmingsløsninger ved bruk av populære rammeverk som Kafka og Pulsar
+- Designe og distribuere feiltolerante, høyytelses strømmingsarkitekturer med MCP
+- Anvende MCP-konsepter på IoT, finanshandel og AI-drevne analysebrukstilfeller
+- Vurdere nye trender og fremtidige innovasjoner innen MCP-baser
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår fra bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår fra bruk av denne oversettelsen.

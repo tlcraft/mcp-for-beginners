@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b41174ac781ebf228b2043cbdfc09105",
-  "translation_date": "2025-06-12T00:18:46+00:00",
+  "original_hash": "195f7287638b77a549acadd96c8f981c",
+  "translation_date": "2025-06-12T23:13:45+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimestreaming/README.md",
   "language_code": "mo"
 }
@@ -641,11 +641,11 @@ By completing this module, you will be able to:
 
 ## What's next 
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.11 Realtime Search](../mcp-realtimesearch/README.md)
 
 **Disclaimer**:  
 This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
 
 ---
 
-Could you please clarify what language or code "mo" refers to? There are several possibilities (e.g., Moldovan, a fictional language, a code), and I want to ensure I provide the correct translation.
+If by "mo" you mean a specific language or code, could you please clarify which language or dialect "mo" refers to? This will help me provide the correct translation.

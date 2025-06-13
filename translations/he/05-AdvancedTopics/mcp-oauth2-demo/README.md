@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T19:16:40+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-13T00:23:39+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "he"
 }
 -->
 # הדגמת MCP OAuth2
 
-הפרויקט הזה הוא **אפליקציית Spring Boot מינימלית** שפועלת גם בתור:
+הפרויקט הזה הוא **אפליקציית Spring Boot מינימלית** שפועלת בתור גם:
 
-* **שרת הרשאות Spring** (מנפיק אסימוני גישה JWT דרך הזרימה `client_credentials`), וגם  
-* **שרת משאבים** (מגן על נקודת הקצה שלו `/hello`).
+* **שרת הרשאות Spring** (המנפיק אסימוני גישה JWT דרך הזרם `client_credentials`), וגם  
+* **שרת משאבים** (המגן על נקודת הקצה שלו `/hello`).
 
-זה משקף את ההגדרה המוצגת ב-[פוסט הבלוג של Spring (2 באפריל 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+הוא משקף את ההגדרה שמוצגת ב-[פוסט הבלוג של Spring (2 באפריל 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,9 +36,9 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## בדיקת תצורת OAuth2
 
-ניתן לבדוק את תצורת האבטחה של OAuth2 עם השלבים הבאים:
+ניתן לבדוק את תצורת האבטחה של OAuth2 באמצעות השלבים הבאים:
 
-### 1. ודא שהשרת פועל ומאובטח
+### 1. וודא שהשרת פועל ומאובטח
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-[!NOTE] כותרת ה-Basic Authentication היא (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+[!NOTE] כותרת האימות הבסיסית (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
 ### 3. גש לנקודת הקצה המוגנת באמצעות האסימון
 
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-שם המארח (FQDN) של ה-ingress יהפוך ל-**issuer** שלך (`https://<fqdn>`).  
+שם המארח המלא של ה-ingress הופך ל**המנפיק שלך** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
 ## חיבור ל-**Azure API Management**
 
-הוסף מדיניות זו ל-API שלך:
+הוסף מדיניות נכנסת זו ל-API שלך:
 
 ```xml
 <inbound>
@@ -116,13 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM ימשוך את ה-JWKS ויוודא כל בקשה.
+APIM ימשוך את JWKS ויוודא כל בקשה.
 
 ---
 
 ## מה הלאה
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש להיות מודעים לכך שתרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. יש להתייחס למסמך המקורי בשפת המקור כמקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי הבנה או פרשנות שגויה הנובעים משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפתו המקורית הוא המקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי אנושי. אנו לא נושאים באחריות על כל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

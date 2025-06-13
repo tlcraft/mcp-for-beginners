@@ -1,27 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b0de03f7a3ff0204d8356bc61325c459",
-  "translation_date": "2025-06-02T20:05:06+00:00",
+  "original_hash": "3cb0da3badd51d73ab78ebade2827d98",
+  "translation_date": "2025-06-13T00:16:16+00:00",
   "source_file": "05-AdvancedTopics/mcp-sampling/README.md",
   "language_code": "fi"
 }
 -->
 ## Deterministinen otanta
 
-Sovelluksissa, jotka vaativat johdonmukaisia tuloksia, deterministinen otanta takaa toistettavat lopputulokset. Tämä saavutetaan käyttämällä kiinteää satunnaissiementä ja asettamalla lämpötila nollaan.
+Sovelluksissa, joissa tarvitaan johdonmukaisia tuloksia, deterministinen otanta takaa toistettavat tulokset. Tämä saavutetaan käyttämällä kiinteää satunnaissiementä ja asettamalla lämpötila nollaan.
 
-Tarkastellaan alla olevaa esimerkkitoteutusta, joka havainnollistaa determinististä otantaa eri ohjelmointikielillä.
+Katsotaan alla olevaa esimerkkitoteutusta, joka havainnollistaa determinististä otantaa eri ohjelmointikielillä.
 
-## Dynaaminen otantakonfiguraatio
+## Dynaaminen otanta-asetusten säätö
 
-Älykäs otanta mukauttaa parametreja kunkin pyynnön kontekstin ja vaatimusten mukaan. Tämä tarkoittaa parametrien, kuten lämpötilan, top_p:n ja rangaistusten, dynaamista säätämistä tehtävätyypin, käyttäjäasetusten tai aiemman suorituskyvyn perusteella.
+Älykäs otanta mukauttaa parametreja kontekstin ja kunkin pyynnön vaatimusten mukaan. Tämä tarkoittaa parametrien, kuten lämpötilan, top_p:n ja rangaistusten, dynaamista säätämistä tehtävätyypin, käyttäjäasetusten tai aiemman suorituskyvyn perusteella.
 
 Katsotaan, miten dynaaminen otanta toteutetaan eri ohjelmointikielillä.
 
 ## Mitä seuraavaksi
 
-- [Skaalaus](../mcp-scaling/README.md)
+- [5.7 Skaalaus](../mcp-scaling/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, ole hyvä ja huomioi, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä on katsottava viralliseksi lähteeksi. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.

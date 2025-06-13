@@ -1,100 +1,100 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b41174ac781ebf228b2043cbdfc09105",
-  "translation_date": "2025-06-12T00:46:57+00:00",
+  "original_hash": "195f7287638b77a549acadd96c8f981c",
+  "translation_date": "2025-06-13T01:02:18+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimestreaming/README.md",
   "language_code": "sk"
 }
 -->
-# Protokol kontextu modelu pre streamovanie dát v reálnom čase
+# Protokol Modelového Kontextu pre Prúdové Spracovanie Dát v Reálnom Čase
 
 ## Prehľad
 
-Streamovanie dát v reálnom čase sa stalo nevyhnutnosťou v dnešnom svete orientovanom na dáta, kde podniky a aplikácie potrebujú okamžitý prístup k informáciám na prijímanie včasných rozhodnutí. Protokol kontextu modelu (MCP) predstavuje významný pokrok v optimalizácii týchto procesov streamovania v reálnom čase, zlepšuje efektivitu spracovania dát, zachováva kontextovú integritu a zvyšuje celkový výkon systému.
+Prúdové spracovanie dát v reálnom čase sa stalo nevyhnutným v dnešnom svete orientovanom na dáta, kde podniky a aplikácie potrebujú okamžitý prístup k informáciám na včasné rozhodovanie. Protokol Modelového Kontextu (MCP) predstavuje významný posun v optimalizácii týchto prúdových procesov, zvyšuje efektivitu spracovania dát, zachováva kontextovú integritu a zlepšuje celkový výkon systému.
 
-Tento modul skúma, ako MCP transformuje streamovanie dát v reálnom čase tým, že poskytuje štandardizovaný prístup k správe kontextu naprieč AI modelmi, streamovacími platformami a aplikáciami.
+Tento modul skúma, ako MCP transformuje prúdové spracovanie dát v reálnom čase poskytovaním štandardizovaného prístupu k správe kontextu medzi AI modelmi, prúdovými platformami a aplikáciami.
 
-## Úvod do streamovania dát v reálnom čase
+## Úvod do Prúdového Spracovania Dát v Reálnom Čase
 
-Streamovanie dát v reálnom čase je technologický prístup, ktorý umožňuje kontinuálny prenos, spracovanie a analýzu dát počas ich generovania, čo umožňuje systémom okamžite reagovať na nové informácie. Na rozdiel od tradičného dávkového spracovania, ktoré pracuje so statickými súbormi dát, streamovanie spracováva dáta počas ich prúdenia a poskytuje poznatky a akcie s minimálnou latenciou.
+Prúdové spracovanie dát v reálnom čase je technologický koncept, ktorý umožňuje nepretržitý prenos, spracovanie a analýzu dát počas ich generovania, čo umožňuje systémom okamžite reagovať na nové informácie. Na rozdiel od tradičného dávkového spracovania, ktoré pracuje so statickými súbormi dát, prúdové spracovanie spracúva dáta za behu a poskytuje poznatky a akcie s minimálnou latenciou.
 
-### Základné pojmy streamovania dát v reálnom čase:
+### Kľúčové Koncepty Prúdového Spracovania Dát v Reálnom Čase:
 
-- **Kontinuálny tok dát**: Dáta sa spracovávajú ako nepretržitý, nikdy nekončiaci prúd udalostí alebo záznamov.
-- **Nízka latencia spracovania**: Systémy sú navrhnuté tak, aby minimalizovali čas medzi generovaním dát a ich spracovaním.
-- **Škálovateľnosť**: Architektúry streamovania musia zvládať variabilné objemy a rýchlosti dát.
-- **Odolnosť voči chybám**: Systémy musia byť odolné voči zlyhaniam, aby zabezpečili nepretržitý tok dát.
-- **Spracovanie so stavom**: Udržiavanie kontextu naprieč udalosťami je kľúčové pre zmysluplnú analýzu.
+- **Neustály Tok Dát**: Dáta sa spracovávajú ako kontinuálny, nikdy nekončiaci tok udalostí alebo záznamov.
+- **Nízka Latencia Spracovania**: Systémy sú navrhnuté tak, aby minimalizovali čas medzi generovaním a spracovaním dát.
+- **Škálovateľnosť**: Prúdové architektúry musia zvládať variabilné objemy a rýchlosti dát.
+- **Odolnosť voči Chybám**: Systémy musia byť schopné odolať poruchám, aby zabezpečili nepretržitý tok dát.
+- **Stavové Spracovanie**: Udržiavanie kontextu medzi udalosťami je kľúčové pre zmysluplnú analýzu.
 
-### Protokol kontextu modelu a streamovanie v reálnom čase
+### Protokol Modelového Kontextu a Prúdové Spracovanie
 
-Protokol kontextu modelu (MCP) rieši niekoľko kritických výziev v prostredí streamovania v reálnom čase:
+Protokol Modelového Kontextu (MCP) rieši niekoľko zásadných výziev v prostredí prúdového spracovania:
 
-1. **Kontextová kontinuita**: MCP štandardizuje spôsob, akým sa kontext udržiava naprieč distribuovanými streamovacími komponentmi, čím zabezpečuje, že AI modely a spracovateľské uzly majú prístup k relevantnému historickému a environmentálnemu kontextu.
+1. **Kontinuita Kontextu**: MCP štandardizuje spôsob, akým sa kontext udržiava naprieč distribuovanými prúdovými komponentmi, zabezpečujúc, že AI modely a spracovateľské uzly majú prístup k relevantnému historickému a environmentálnemu kontextu.
 
-2. **Efektívna správa stavu**: Poskytovaním štruktúrovaných mechanizmov pre prenos kontextu MCP znižuje režijné náklady správy stavu v streamovacích pipeline.
+2. **Efektívna Správa Stavov**: Poskytovaním štruktúrovaných mechanizmov pre prenos kontextu MCP znižuje náklady na správu stavov v prúdových pipeline.
 
-3. **Interoperabilita**: MCP vytvára spoločný jazyk pre zdieľanie kontextu medzi rôznymi streamovacími technológiami a AI modelmi, čo umožňuje flexibilnejšie a rozšíriteľnejšie architektúry.
+3. **Interoperabilita**: MCP vytvára spoločný jazyk pre zdieľanie kontextu medzi rôznymi prúdovými technológiami a AI modelmi, čo umožňuje flexibilnejšie a rozšíriteľnejšie architektúry.
 
-4. **Kontext optimalizovaný pre streamovanie**: Implementácie MCP môžu uprednostniť, ktoré prvky kontextu sú najrelevantnejšie pre rozhodovanie v reálnom čase, čím sa optimalizuje výkon aj presnosť.
+4. **Kontext Optimalizovaný pre Prúdové Spracovanie**: Implementácie MCP môžu uprednostniť tie prvky kontextu, ktoré sú najrelevantnejšie pre rozhodovanie v reálnom čase, optimalizujúc výkon aj presnosť.
 
-5. **Adaptívne spracovanie**: Vďaka správnej správe kontextu prostredníctvom MCP môžu streamovacie systémy dynamicky prispôsobovať spracovanie na základe vyvíjajúcich sa podmienok a vzorov v dátach.
+5. **Adaptívne Spracovanie**: Vďaka správnemu manažmentu kontextu cez MCP môžu prúdové systémy dynamicky upravovať spracovanie na základe meniaceho sa stavu a vzorcov v dátach.
 
-V moderných aplikáciách od IoT senzorových sietí po finančné obchodné platformy umožňuje integrácia MCP so streamovacími technológiami inteligentnejšie, kontextovo uvedomelé spracovanie, ktoré dokáže adekvátne reagovať na komplexné a menlivé situácie v reálnom čase.
+V moderných aplikáciách, od IoT senzorových sietí po finančné obchodné platformy, integrácia MCP s prúdovými technológiami umožňuje inteligentnejšie, kontextovo uvedomelé spracovanie, ktoré dokáže adekvátne reagovať na komplexné, vyvíjajúce sa situácie v reálnom čase.
 
-## Ciele učenia
+## Výukové Ciele
 
-Na konci tejto lekcie budete schopní:
+Po absolvovaní tejto lekcie budete schopní:
 
-- Pochopiť základy streamovania dát v reálnom čase a jeho výzvy
-- Vysvetliť, ako Protokol kontextu modelu (MCP) zlepšuje streamovanie dát v reálnom čase
-- Implementovať riešenia streamovania založené na MCP pomocou populárnych frameworkov ako Kafka a Pulsar
-- Navrhnúť a nasadiť odolné a vysoko výkonné streamovacie architektúry s MCP
-- Aplikovať koncepty MCP v prípadoch použitia IoT, finančného obchodovania a analytiky riadenej AI
-- Vyhodnotiť vznikajúce trendy a budúce inovácie v technológiách streamovania založených na MCP
+- Pochopiť základy prúdového spracovania dát v reálnom čase a jeho výzvy
+- Vysvetliť, ako Protokol Modelového Kontextu (MCP) zlepšuje prúdové spracovanie dát
+- Implementovať riešenia prúdového spracovania založené na MCP pomocou populárnych frameworkov ako Kafka a Pulsar
+- Navrhnúť a nasadiť odolné a vysoko výkonné prúdové architektúry s MCP
+- Aplikovať koncepty MCP na prípady použitia v IoT, finančnom obchodovaní a analytike riadenej AI
+- Hodnotiť nové trendy a budúce inovácie v technológiách prúdového spracovania založených na MCP
 
-### Definícia a význam
+### Definícia a Význam
 
-Streamovanie dát v reálnom čase zahŕňa kontinuálnu generáciu, spracovanie a doručovanie dát s minimálnou latenciou. Na rozdiel od dávkového spracovania, kde sa dáta zhromažďujú a spracovávajú v skupinách, sa streamované dáta spracovávajú postupne, hneď ako prichádzajú, čo umožňuje okamžité poznatky a reakcie.
+Prúdové spracovanie dát v reálnom čase zahŕňa nepretržitú generáciu, spracovanie a doručovanie dát s minimálnou latenciou. Na rozdiel od dávkového spracovania, kde sa dáta zhromažďujú a spracovávajú v skupinách, prúdové dáta sa spracovávajú priebežne po ich príchode, čo umožňuje okamžité poznatky a reakcie.
 
-Kľúčové charakteristiky streamovania dát v reálnom čase zahŕňajú:
+Kľúčové vlastnosti prúdového spracovania dát v reálnom čase zahŕňajú:
 
-- **Nízka latencia**: Spracovanie a analýza dát v priebehu milisekúnd až sekúnd
-- **Kontinuálny tok**: Neprerušené prúdy dát z rôznych zdrojov
-- **Okamžité spracovanie**: Analýza dát ihneď po ich príchode, nie v dávkach
-- **Architektúra riadená udalosťami**: Reakcia na udalosti v okamihu ich výskytu
+- **Nízka Latencia**: Spracovanie a analýza dát v priebehu milisekúnd až sekúnd
+- **Nepretržitý Tok**: Neustále prúdy dát z rôznych zdrojov
+- **Okamžité Spracovanie**: Analýza dát ihneď po ich príchode, nie v dávkach
+- **Architektúra Riadená Udalosťami**: Reakcia na udalosti v čase ich výskytu
 
-### Výzvy v tradičnom streamovaní dát
+### Výzvy v Tradičnom Prúdovom Spracovaní
 
-Tradičné prístupy k streamovaniu dát čelia viacerým obmedzeniam:
+Tradičné prístupy k prúdovému spracovaniu čelia niekoľkým obmedzeniam:
 
-1. **Strata kontextu**: Problémy s udržiavaním kontextu naprieč distribuovanými systémami
-2. **Problémy so škálovateľnosťou**: Ťažkosti so škálovaním na vysoké objemy a rýchlosti dát
-3. **Komplexná integrácia**: Problémy s interoperabilitou medzi rôznymi systémami
-4. **Správa latencie**: Vyváženie priepustnosti a času spracovania
-5. **Konzistencia dát**: Zabezpečenie presnosti a úplnosti dát v celom prúde
+1. **Strata Kontextu**: Ťažkosti s udržiavaním kontextu naprieč distribuovanými systémami
+2. **Problémy so Škálovateľnosťou**: Výzvy pri škálovaní na vysoký objem a rýchlosť dát
+3. **Zložitosť Integrácie**: Problémy s interoperabilitou medzi rôznymi systémami
+4. **Riadenie Latencie**: Vyvažovanie priepustnosti a času spracovania
+5. **Konzistencia Dát**: Zabezpečenie presnosti a úplnosti dát v celom toku
 
-## Pochopenie Protokolu kontextu modelu (MCP)
+## Pochopenie Protokolu Modelového Kontextu (MCP)
 
 ### Čo je MCP?
 
-Protokol kontextu modelu (MCP) je štandardizovaný komunikačný protokol navrhnutý na efektívnu interakciu medzi AI modelmi a aplikáciami. V kontexte streamovania dát v reálnom čase poskytuje MCP rámec pre:
+Protokol Modelového Kontextu (MCP) je štandardizovaný komunikačný protokol navrhnutý na efektívnu interakciu medzi AI modelmi a aplikáciami. V kontexte prúdového spracovania dát v reálnom čase poskytuje MCP rámec pre:
 
 - Zachovanie kontextu počas celého dátového pipeline
 - Štandardizáciu formátov výmeny dát
-- Optimalizáciu prenosu veľkých datasetov
+- Optimalizáciu prenosu veľkých dátových súborov
 - Zlepšenie komunikácie medzi modelmi a medzi modelmi a aplikáciami
 
-### Základné komponenty a architektúra
+### Základné Komponenty a Architektúra
 
-Architektúra MCP pre streamovanie v reálnom čase pozostáva z niekoľkých kľúčových komponentov:
+Architektúra MCP pre prúdové spracovanie zahŕňa niekoľko kľúčových komponentov:
 
-1. **Správci kontextu**: Spravujú a udržiavajú kontextové informácie v celom streamovacom pipeline
-2. **Streamovacie procesory**: Spracovávajú prichádzajúce dátové prúdy s využitím kontextovo uvedomelých techník
-3. **Protokolové adaptéry**: Konvertujú medzi rôznymi streamovacími protokolmi pri zachovaní kontextu
-4. **Úložisko kontextu**: Efektívne ukladá a získava kontextové informácie
-5. **Streamovacie konektory**: Pripájajú sa k rôznym streamovacím platformám (Kafka, Pulsar, Kinesis a pod.)
+1. **Správcovia Kontextu**: Riadia a udržiavajú kontextové informácie v celom prúdovom pipeline
+2. **Prúdové Procesory**: Spracovávajú prichádzajúce dátové toky pomocou techník uvedomelých o kontexte
+3. **Protokolové Adaptéry**: Konvertujú medzi rôznymi prúdovými protokolmi pri zachovaní kontextu
+4. **Úložisko Kontextu**: Efektívne ukladá a načítava kontextové informácie
+5. **Prúdové Konektory**: Pripájajú sa k rôznym prúdovým platformám (Kafka, Pulsar, Kinesis a pod.)
 
 ```mermaid
 graph TD
@@ -164,45 +164,45 @@ graph TD
     class DA,Alerts,DL,API apps
 ```
 
-### Ako MCP zlepšuje spracovanie dát v reálnom čase
+### Ako MCP Zlepšuje Spracovanie Dát v Reálnom Čase
 
-MCP rieši tradičné výzvy streamovania prostredníctvom:
+MCP rieši tradičné výzvy prúdového spracovania prostredníctvom:
 
-- **Kontextovej integrity**: Udržiavanie vzťahov medzi dátovými bodmi v celom pipeline
-- **Optimalizovaného prenosu**: Znižovanie redundancie vo výmene dát inteligentnou správou kontextu
-- **Štandardizovaných rozhraní**: Poskytovanie konzistentných API pre streamovacie komponenty
-- **Zníženej latencie**: Minimalizovanie režijných nákladov spracovania efektívnym nakladaním s kontextom
-- **Zlepšenej škálovateľnosti**: Podpora horizontálneho škálovania pri zachovaní kontextu
+- **Kontextovej Integrality**: Udržiavanie vzťahov medzi dátovými bodmi v celom pipeline
+- **Optimalizovaného Prenosu**: Znižovanie redundancie vo výmene dát inteligentným manažmentom kontextu
+- **Štandardizovaných Rozhraní**: Poskytovanie konzistentných API pre prúdové komponenty
+- **Zníženej Latencie**: Minimalizovanie režijných nákladov spracovania efektívnym spracovaním kontextu
+- **Zvýšenej Škálovateľnosti**: Podpora horizontálneho škálovania pri zachovaní kontextu
 
-## Integrácia a implementácia
+## Integrácia a Implementácia
 
-Streamovacie systémy v reálnom čase vyžadujú starostlivý návrh architektúry a implementáciu, aby sa zachoval výkon aj kontextová integrita. Protokol kontextu modelu ponúka štandardizovaný prístup k integrácii AI modelov a streamovacích technológií, čo umožňuje sofistikovanejšie, kontextovo uvedomelé spracovanie pipeline.
+Systémy prúdového spracovania dát v reálnom čase vyžadujú dôkladný architektonický návrh a implementáciu na zachovanie výkonu aj kontextovej integrity. Protokol Modelového Kontextu ponúka štandardizovaný prístup k integrácii AI modelov a prúdových technológií, čo umožňuje sofistikovanejšie, kontextovo uvedomelé spracovateľské pipeline.
 
-### Prehľad integrácie MCP v streamovacích architektúrach
+### Prehľad Integrácie MCP v Prúdových Architektúrach
 
-Implementácia MCP v prostredí streamovania v reálnom čase zahŕňa niekoľko dôležitých aspektov:
+Implementácia MCP v prostredí prúdového spracovania zahŕňa niekoľko kľúčových aspektov:
 
-1. **Serializácia a prenos kontextu**: MCP poskytuje efektívne mechanizmy na kódovanie kontextových informácií v dátových paketoch streamu, čím zabezpečuje, že kľúčový kontext sprevádza dáta počas celého spracovania. To zahŕňa štandardizované serializačné formáty optimalizované pre streamovací prenos.
+1. **Serializácia a Prenos Kontextu**: MCP poskytuje efektívne mechanizmy na kódovanie kontextových informácií v rámci dátových paketov prúdu, zabezpečujúc, že nevyhnutný kontext sprevádza dáta počas celého spracovania. Zahŕňa štandardizované serializačné formáty optimalizované pre prúdový prenos.
 
-2. **Spracovanie so stavom**: MCP umožňuje inteligentnejšie spracovanie so stavom udržiavaním konzistentnej reprezentácie kontextu naprieč spracovateľskými uzlami. Toto je obzvlášť cenné v distribuovaných streamovacích architektúrach, kde je správa stavu tradične náročná.
+2. **Stavové Prúdové Spracovanie**: MCP umožňuje inteligentnejšie stavové spracovanie udržiavaním konzistentnej reprezentácie kontextu naprieč spracovateľskými uzlami. Toto je obzvlášť cenné v distribuovaných prúdových architektúrach, kde je správa stavov tradične náročná.
 
-3. **Čas udalosti vs. čas spracovania**: Implementácie MCP musia riešiť bežný problém rozlíšenia, kedy udalosti nastali a kedy sú spracované. Protokol môže začleniť časový kontext, ktorý zachováva sémantiku času udalosti.
+3. **Čas Udalosti vs. Čas Spracovania**: Implementácie MCP musia riešiť bežnú výzvu rozlíšenia, kedy udalosť nastala a kedy je spracovaná. Protokol môže začleniť časový kontext, ktorý zachováva sémantiku času udalosti.
 
-4. **Správa spätného tlaku (backpressure)**: Štandardizáciou správy kontextu MCP pomáha riadiť spätný tlak v streamovacích systémoch, umožňujúc komponentom komunikovať svoje spracovateľské kapacity a podľa toho prispôsobovať tok dát.
+4. **Riadenie Spätného Tlaku (Backpressure)**: Štandardizáciou správy kontextu MCP pomáha riadiť spätný tlak v prúdových systémoch, umožňujúc komponentom komunikovať svoje spracovateľské kapacity a podľa toho upravovať tok.
 
-5. **Okno kontextu a agregácia**: MCP podporuje sofistikovanejšie operácie okien poskytovaním štruktúrovaných reprezentácií časového a vzťahového kontextu, čo umožňuje zmysluplnejšie agregácie naprieč prúdmi udalostí.
+5. **Kontextové Okno a Agregácia**: MCP umožňuje sofistikovanejšie operácie okien a agregácií poskytovaním štruktúrovaných reprezentácií časových a vzťahových kontextov, čo umožňuje zmysluplnejšie agregácie naprieč prúdmi udalostí.
 
-6. **Presné spracovanie raz (exactly-once)**: V streamovacích systémoch vyžadujúcich presné spracovanie raz môže MCP začleniť metadáta spracovania na sledovanie a overovanie stavu spracovania naprieč distribuovanými komponentmi.
+6. **Presne Raz Spracovanie (Exactly-Once Processing)**: V prúdových systémoch vyžadujúcich presne raz sémantiku môže MCP zahrnúť spracovateľské metadáta na sledovanie a overovanie stavu spracovania naprieč distribuovanými komponentmi.
 
-Implementácia MCP naprieč rôznymi streamovacími technológiami vytvára jednotný prístup k správe kontextu, znižuje potrebu vlastného integračného kódu a zároveň zlepšuje schopnosť systému udržiavať zmysluplný kontext počas toku dát pipeline.
+Implementácia MCP naprieč rôznymi prúdovými technológiami vytvára jednotný prístup k správe kontextu, znižuje potrebu vlastného integračného kódu a zároveň zvyšuje schopnosť systému udržiavať zmysluplný kontext počas toku dát pipeline.
 
-### MCP v rôznych frameworkoch pre streamovanie dát
+### MCP v Rôznych Prúdových Frameworkoch
 
-Tieto príklady vychádzajú z aktuálnej špecifikácie MCP, ktorá sa zameriava na protokol založený na JSON-RPC s rôznymi transportnými mechanizmami. Kód demonštruje, ako môžete implementovať vlastné transporty integrujúce streamovacie platformy ako Kafka a Pulsar, pričom zachovávajú plnú kompatibilitu s protokolom MCP.
+Tieto príklady vychádzajú zo súčasnej špecifikácie MCP, ktorá sa zameriava na protokol založený na JSON-RPC s rôznymi transportnými mechanizmami. Kód demonštruje, ako možno implementovať vlastné transporty, ktoré integrujú prúdové platformy ako Kafka a Pulsar pri zachovaní plnej kompatibility s protokolom MCP.
 
-Príklady ukazujú, ako možno streamovacie platformy spojiť s MCP na zabezpečenie spracovania dát v reálnom čase pri zachovaní kontextového povedomia, ktoré je pre MCP zásadné. Tento prístup zabezpečuje, že ukážky kódu presne odrážajú aktuálny stav špecifikácie MCP k júnu 2025.
+Príklady ukazujú, ako možno prúdové platformy integrovať s MCP na zabezpečenie spracovania dát v reálnom čase pri zachovaní kontextovej informovanosti, ktorá je pre MCP kľúčová. Tento prístup zabezpečuje, že ukážky kódu presne odrážajú aktuálny stav špecifikácie MCP k júnu 2025.
 
-MCP možno integrovať s populárnymi streamovacími frameworkmi vrátane:
+MCP možno integrovať s populárnymi prúdovými frameworkmi vrátane:
 
 #### Integrácia Apache Kafka
 
@@ -514,103 +514,92 @@ if __name__ == "__main__":
     asyncio.run(run_mcp_server_with_pulsar())
 ```
 
-### Najlepšie praktiky nasadenia
+### Najlepšie Praktiky pre Nasadenie
 
-Pri implementácii MCP pre streamovanie v reálnom čase:
+Pri implementácii MCP pre prúdové spracovanie:
 
-1. **Návrh pre odolnosť voči chybám**:
-   - Implementujte správu chýb
-   - Používajte dead-letter fronty pre neúspešné správy
+1. **Navrhnite pre Odolnosť voči Chybám**:
+   - Implementujte správne spracovanie chýb
+   - Používajte dead-letter queue pre správy, ktoré zlyhajú
    - Navrhujte idempotentné procesory
 
-2. **Optimalizácia výkonu**:
+2. **Optimalizujte Výkon**:
    - Konfigurujte vhodné veľkosti bufferov
-   - Používajte dávkovanie tam, kde je vhodné
+   - Používajte dávkovanie tam, kde je to vhodné
    - Implementujte mechanizmy spätného tlaku
 
-3. **Monitorovanie a pozorovanie**:
+3. **Monitorujte a Sledujte**:
    - Sledujte metriky spracovania prúdov
-   - Monitorujte propagáciu kontextu
+   - Monitorujte šírenie kontextu
    - Nastavte upozornenia na anomálie
 
-4. **Zabezpečenie prúdov**:
+4. **Zabezpečte Svoje Prúdy**:
    - Implementujte šifrovanie citlivých dát
    - Používajte autentifikáciu a autorizáciu
-   - Aplikujte správnu kontrolu prístupu
+   - Aplikujte vhodné prístupové kontroly
 
-### MCP v IoT a edge computingu
+### MCP v IoT a Edge Computingu
 
-MCP zlepšuje streamovanie IoT tým, že:
+MCP zlepšuje IoT prúdové spracovanie tým, že:
 
-- Zachováva kontext zariadení v celom spracovacom pipeline
-- Umožňuje efektívne streamovanie dát z edge do cloudu
-- Podporuje analýzy v reálnom čase na IoT dátových prúdoch
-- Uľahčuje komunikáciu zariadenie-zariadenie s kontextom
+- Zachováva kontext zariadení naprieč spracovateľským pipeline
+- Umožňuje efektívne prúdové spracovanie dát z edge do cloudu
+- Podporuje analytiku v reálnom čase na IoT dátových tokoch
+- Uľahčuje komunikáciu medzi zariadeniami s kontextom
 
 Príklad: Senzorové siete inteligentných miest  
 ```
 Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → Automated Responses
 ```
 
-### Úloha vo finančných transakciách a vysokofrekvenčnom obchodovaní
+### Úloha vo Finančných Transakciách a Vysokofrekvenčnom Obchodovaní
 
-MCP prináša významné výhody pre finančné streamovanie dát:
+MCP prináša významné výhody pre finančné prúdové spracovanie:
 
-- Ultra nízke latencie spracovania pre obchodné rozhodnutia
+- Ultra-nízka latencia spracovania pre obchodné rozhodnutia
 - Zachovanie kontextu transakcií počas spracovania
-- Podpora komplexného spracovania udalostí s kontextovým povedomím
+- Podpora komplexného spracovania udalostí s kontextovým uvedomením
 - Zabezpečenie konzistencie dát naprieč distribuovanými obchodnými systémami
 
-### Zlepšenie analytiky riadenej AI
+### Zlepšenie Analytiky Riadené AI
 
-MCP otvára nové možnosti pre streamovaciu analytiku:
+MCP otvára nové možnosti pre prúdovú analytiku:
 
 - Tréning a inferencia modelov v reálnom čase
-- Kontinuálne učenie zo streamovaných dát
-- Kontextovo uvedomelé extrahovanie vlastností
+- Neustále učenie sa z prúdových dát
+- Kontextovo uvedomené extrahovanie vlastností
 - Pipelines s viacerými modelmi pri zachovaní kontextu
 
-## Budúce trendy a inovácie
+## Budúce Trendy a Inovácie
 
-### Vývoj MCP v prostredí reálneho času
+### Vývoj MCP v Prostredí Reálneho Času
 
-Do budúcnosti očakávame, že MCP sa bude vyvíjať s cieľom riešiť:
+Do budúcnosti očakávame, že MCP bude vyvíjaný tak, aby riešil:
 
-- **Integráciu kvantového počítania**: Príprava na streamovacie systémy založené na kvantovej technológii
-- **Edge-native spracovanie**: Presun väčšiny kontextovo uvedomelého spracovania na edge zariadenia
-- **Autonómna správa streamov**: Samooptimalizujúce sa streamovacie pipeline
-- **Federované streamovanie**: Distribuované spracovanie pri zachovaní súkromia
+- **Integráciu Kvantového Počítača**: Príprava na kvantové prúdové systémy
+- **Edge-Natívne Spracovanie**: Presun viac kontextovo uvedomelého spracovania na edge zariadenia
+- **Autonómnu Správu Prúdov**: Samooptimalizujúce sa prúdové pipeline
+- **Federované Prúdové Spracovanie**: Distribuované spracovanie pri zachovaní súkromia
 
-### Potenciálne technologické pokroky
+### Potenciálne Technologické Pokroky
 
-Vznikajúce technológie, ktoré ovplyvnia budúcnosť streamovania MCP:
+Nové technológie, ktoré ovplyvnia budúcnosť MCP prúdov:
 
-1. **AI-optimalizované streamovacie protokoly**: Vlastné protokoly špecificky navrhnuté pre AI pracovné zaťaženia
-2. **Integrácia neuromorfných počítačov**: Mozgom inšpirované počítače pre spracovanie prúdov
-3. **Serverless streamovanie**: Udalosťami riadené, škálovateľné streamovanie bez správy infraštruktúry
-4. **Distribuované úložiská kontextu**: Globálne distribuované, no vysoko konzistentné spravovanie kontextu
+1. **AI-Optimalizované Prúdové Protokoly**: Vlastné protokoly navrhnuté špeciálne pre AI záťaže
+2. **Integrácia Neuromorfných Počítačov**: Mozgom inšpirované spracovanie prúdov
+3. **Serverless Prúdové Spracovanie**: Udalosťami riadené, škálovateľné spracovanie bez správy infraštruktúry
+4. **Distribuované Úložiská Kontextu**: Globálne distribuovaná, no vysoko konzistentná správa kontextu
 
-## Praktické cvičenia
+## Praktické Cvičenia
 
-### Cvičenie 1: Nastavenie základného MCP streamovacieho pipeline
+### Cvičenie 1: Nastavenie Základného MCP Prúdového Pipeline
 
 V tomto cvičení sa naučíte:
+- Konfigurovať základné MCP prúdové prostredie
+- Implementovať správcov kontextu pre spracovanie prúdov
+- Testovať a overiť zachovanie kontextu
 
-- Konfigurovať základné MCP streamovacie prostredie
-- Implementovať správu kontextu pre spracovanie prúdu
-- Testovať a overovať zachovanie kontextu
+### Cvičenie 2: Vytvorenie Dashboardu Pre Analytiku v
 
-### Cvičenie 2: Vytvorenie dashboardu pre analytiku v reálnom čase
-
-Vytvorte kompletnú aplikáciu, ktorá:
-
-- Prijíma streamované dáta pomocou MCP
-- Spracováva prúd pri zachovaní kontextu
-- Vizualizuje výsledky v reálnom čase
-
-### Cvičenie 3: Implementácia komplexného spracovania udalostí s MCP
-
-Pokročilé cvičenie
-
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, berte prosím na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

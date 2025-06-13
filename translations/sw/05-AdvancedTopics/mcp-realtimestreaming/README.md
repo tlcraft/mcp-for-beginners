@@ -1,100 +1,100 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b41174ac781ebf228b2043cbdfc09105",
-  "translation_date": "2025-06-12T00:42:37+00:00",
+  "original_hash": "195f7287638b77a549acadd96c8f981c",
+  "translation_date": "2025-06-13T00:46:56+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimestreaming/README.md",
   "language_code": "sw"
 }
 -->
-# Itifaki ya Muktadha wa Mfano kwa Usambazaji wa Data wa Muda Halisi
+# Itifaki ya Muktadha wa Mfano kwa Usambazaji wa Data kwa Wakati Halisi
 
 ## Muhtasari
 
-Usambazaji wa data wa muda halisi umekuwa muhimu katika dunia ya leo inayotegemea data, ambapo biashara na programu zinahitaji kupata taarifa mara moja kufanya maamuzi kwa wakati. Itifaki ya Muktadha wa Mfano (MCP) ni maendeleo makubwa katika kuboresha michakato hii ya usambazaji wa muda halisi, ikiongeza ufanisi wa usindikaji data, kudumisha muktadha muhimu, na kuboresha utendaji wa mfumo kwa ujumla.
+Usambazaji wa data kwa wakati halisi umekuwa muhimu katika dunia ya leo inayotegemea data, ambapo biashara na programu zinahitaji kupata taarifa mara moja ili kufanya maamuzi ya wakati muafaka. Itifaki ya Muktadha wa Mfano (MCP) inawakilisha maendeleo makubwa katika kuboresha michakato hii ya usambazaji wa wakati halisi, ikiboresha ufanisi wa usindikaji data, kudumisha muktadha unaofaa, na kuongeza utendaji wa jumla wa mfumo.
 
-Moduli hii inachunguza jinsi MCP inavyobadilisha usambazaji wa data wa muda halisi kwa kutoa njia iliyopangwa kwa usimamizi wa muktadha kati ya mifano ya AI, majukwaa ya usambazaji, na programu.
+Moduli hii inachunguza jinsi MCP inavyobadilisha usambazaji wa data kwa wakati halisi kwa kutoa njia iliyosanifiwa ya usimamizi wa muktadha kati ya mifano ya AI, majukwaa ya usambazaji, na programu.
 
-## Utangulizi wa Usambazaji wa Data wa Muda Halisi
+## Utangulizi wa Usambazaji wa Data kwa Wakati Halisi
 
-Usambazaji wa data wa muda halisi ni mtindo wa kiteknolojia unaowezesha uhamisho endelevu, usindikaji, na uchambuzi wa data inavyozalishwa, kuruhusu mifumo kujibu mara moja kwa taarifa mpya. Tofauti na usindikaji wa kundi unaofanya kazi kwa seti za data zisizobadilika, usambazaji hufanya usindikaji wa data zinazoendelea, kutoa maarifa na hatua kwa kuchelewa kidogo.
+Usambazaji wa data kwa wakati halisi ni mtindo wa kiteknolojia unaowezesha uhamisho endelevu, usindikaji, na uchambuzi wa data wakati inapotengenezwa, kuruhusu mifumo kutoa majibu mara moja kwa taarifa mpya. Tofauti na usindikaji wa kundi unaofanya kazi kwenye seti za data zisizobadilika, usambazaji hufanya usindikaji wa data zinazoendelea, ukitoa maarifa na hatua kwa ucheleweshaji mdogo.
 
-### Misingi ya Usambazaji wa Data wa Muda Halisi:
+### Dhana Muhimu za Usambazaji wa Data kwa Wakati Halisi:
 
-- **Mtiririko Endelevu wa Data**: Data husindikwa kama mfululizo usioisha wa matukio au rekodi.
-- **Usindikaji wa kuchelewa kidogo**: Mifumo imeundwa kupunguza muda kati ya uzalishaji wa data na usindikaji.
-- **Uwezo wa Kupanua**: Miundo ya usambazaji lazima ishughulikie kiasi na kasi tofauti za data.
-- **Uvumilivu wa Hitilafu**: Mifumo inahitaji kuwa na uwezo wa kuhimili makosa ili kuhakikisha mtiririko wa data haukatikani.
-- **Usindikaji unaoendelea**: Kudumisha muktadha kati ya matukio ni muhimu kwa uchambuzi wenye maana.
+- **Mtiririko Endelevu wa Data**: Data husindika kama mfululizo wa matukio au rekodi usioisha.
+- **Usindikaji wa Ucheleweshaji Chini**: Mifumo imeundwa kupunguza muda kati ya uzalishaji wa data na usindikaji wake.
+- **Uwezo wa Kupanuka**: Miundo ya usambazaji lazima idhibiti kiasi na kasi tofauti za data.
+- **Uvumilivu wa Makosa**: Mifumo inahitaji kuwa na uwezo wa kuhimili makosa ili kuhakikisha mtiririko wa data haukatiki.
+- **Usindikaji unaozingatia Hali**: Kudumisha muktadha kati ya matukio ni muhimu kwa uchambuzi wenye maana.
 
-### Itifaki ya Muktadha wa Mfano na Usambazaji wa Muda Halisi
+### Itifaki ya Muktadha wa Mfano na Usambazaji wa Wakati Halisi
 
-Itifaki ya Muktadha wa Mfano (MCP) inashughulikia changamoto kadhaa muhimu katika mazingira ya usambazaji wa muda halisi:
+Itifaki ya Muktadha wa Mfano (MCP) inashughulikia changamoto kadhaa muhimu katika mazingira ya usambazaji wa wakati halisi:
 
-1. **Mfuatano wa Muktadha**: MCP huweka viwango vya jinsi muktadha unavyodumishwa kati ya vipengele vilivyoenea vya usambazaji, kuhakikisha mifano ya AI na nodi za usindikaji zina upatikanaji wa muktadha wa kihistoria na wa mazingira unaohitajika.
+1. **Mfuatano wa Muktadha**: MCP inasanifisha jinsi muktadha unavyodumishwa kati ya vipengele vya usambazaji vilivyogawanyika, kuhakikisha mifano ya AI na nodi za usindikaji zinapata muktadha wa kihistoria na mazingira unaofaa.
 
-2. **Usimamizi wa Hali Bora**: Kwa kutoa mbinu za muundo kwa ajili ya usafirishaji wa muktadha, MCP hupunguza mzigo wa usimamizi wa hali katika njia za usambazaji.
+2. **Usimamizi Bora wa Hali**: Kwa kutoa mbinu zilizopangwa za usafirishaji wa muktadha, MCP inapunguza mzigo wa usimamizi wa hali katika njia za usambazaji.
 
-3. **Ushirikiano wa Teknolojia Mbalimbali**: MCP huunda lugha ya kawaida ya kushirikiana muktadha kati ya teknolojia tofauti za usambazaji na mifano ya AI, kuwezesha miundo yenye kubadilika na kuongezeka.
+3. **Ushirikiano wa Teknolojia Mbalimbali**: MCP huunda lugha ya pamoja ya kushirikiana muktadha kati ya teknolojia tofauti za usambazaji na mifano ya AI, kuwezesha miundo inayobadilika na inayoweza kupanuka.
 
-4. **Muktadha ulioboreshwa kwa Usambazaji**: Matumizi ya MCP yanaweza kuweka kipaumbele vipengele vya muktadha vinavyofaa zaidi kwa maamuzi ya muda halisi, kuboresha utendaji na usahihi.
+4. **Muktadha Uliyoboreshwa kwa Usambazaji**: Matumizi ya MCP yanaweza kuipa kipaumbele vipengele vya muktadha vinavyohitajika zaidi kwa maamuzi ya wakati halisi, kuboresha utendaji na usahihi.
 
-5. **Usindikaji Unaobadilika**: Kwa usimamizi mzuri wa muktadha kupitia MCP, mifumo ya usambazaji inaweza kubadilisha usindikaji kulingana na hali na mifumo inayobadilika ya data.
+5. **Usindikaji Unaobadilika**: Kwa usimamizi mzuri wa muktadha kupitia MCP, mifumo ya usambazaji inaweza kubadilisha usindikaji wake kulingana na hali na mifumo inayobadilika ya data.
 
-Katika programu za kisasa kuanzia mitandao ya sensa za IoT hadi majukwaa ya biashara ya fedha, ushirikiano wa MCP na teknolojia za usambazaji unaleta usindikaji wenye akili zaidi, unaojua muktadha na unaoweza kujibu kwa usahihi hali changamano zinazobadilika kwa wakati halisi.
+Katika programu za kisasa kuanzia mitandao ya sensa za IoT hadi majukwaa ya biashara ya fedha, ushirikiano wa MCP na teknolojia za usambazaji unaruhusu usindikaji wenye akili zaidi, unaotambua muktadha, unaoweza kutoa majibu sahihi kwa hali tata zinazobadilika kwa wakati halisi.
 
 ## Malengo ya Kujifunza
 
 Mwisho wa somo hili, utaweza:
 
-- Kuelewa misingi ya usambazaji wa data wa muda halisi na changamoto zake
-- Kueleza jinsi Itifaki ya Muktadha wa Mfano (MCP) inavyoboresha usambazaji wa data wa muda halisi
+- Kuelewa misingi ya usambazaji wa data kwa wakati halisi na changamoto zake
+- Kueleza jinsi Itifaki ya Muktadha wa Mfano (MCP) inavyoboreshwa usambazaji wa data kwa wakati halisi
 - Kutekeleza suluhisho za usambazaji zenye msingi wa MCP kwa kutumia mifumo maarufu kama Kafka na Pulsar
 - Kubuni na kupeleka miundo ya usambazaji yenye uvumilivu wa makosa na utendaji wa juu kwa MCP
-- Kutumia dhana za MCP kwa matumizi ya IoT, biashara ya fedha, na uchambuzi unaotegemea AI
-- Kutathmini mwelekeo unaoibuka na uvumbuzi wa baadaye katika teknolojia za usambazaji zenye msingi wa MCP
+- Kutumia dhana za MCP katika matumizi ya IoT, biashara ya fedha, na uchambuzi unaotegemea AI
+- Kutathmini mwenendo wa sasa na uvumbuzi wa baadaye katika teknolojia za usambazaji zenye msingi wa MCP
 
 ### Ufafanuzi na Umuhimu
 
-Usambazaji wa data wa muda halisi unahusisha uzalishaji endelevu, usindikaji, na utoaji wa data kwa kuchelewa kidogo. Tofauti na usindikaji wa kundi, ambapo data hukusanywa na kusindikwa kwa vikundi, data za usambazaji husindikwa kwa hatua wakati zinapowasili, kuruhusu maarifa na hatua mara moja.
+Usambazaji wa data kwa wakati halisi unahusisha uzalishaji, usindikaji, na utoaji wa data kwa ucheleweshaji mdogo. Tofauti na usindikaji wa kundi ambapo data hukusanywa na kusindika kwa makundi, data za usambazaji husindika hatua kwa hatua zinapofika, kuruhusu maarifa na hatua za papo hapo.
 
-Sifa kuu za usambazaji wa data wa muda halisi ni:
+Sifa kuu za usambazaji wa data kwa wakati halisi ni:
 
-- **Kuchelewa Kidogo**: Kusindika na kuchambua data ndani ya milisekunde hadi sekunde chache
+- **Ucheleweshaji Mdogo**: Kusindika na kuchambua data ndani ya millisekunde hadi sekunde
 - **Mtiririko Endelevu**: Mfululizo usiokatika wa data kutoka vyanzo mbalimbali
-- **Usindikaji wa Mara Moja**: Kuchambua data inavyowasili badala ya kwa vikundi
-- **Miundo ya Matukio**: Kujibu matukio yanapotokea
+- **Usindikaji wa Mara Moja**: Kuchambua data inavyofika badala ya kwa makundi
+- **Mimkakati Inayotegemea Matukio**: Kujibu matukio yanapotokea
 
 ### Changamoto katika Usambazaji wa Data wa Kawaida
 
 Njia za kawaida za usambazaji wa data zinakumbana na vikwazo kadhaa:
 
-1. **Kupotea kwa Muktadha**: Ugumu wa kudumisha muktadha kati ya mifumo iliyosambazwa
-2. **Changamoto za Kupanua**: Ugumu wa kupanua ili kushughulikia kiasi kikubwa na kasi kubwa ya data
-3. **Ugumu wa Muunganisho**: Matatizo ya ushirikiano kati ya mifumo tofauti
-4. **Usimamizi wa Kuchelewa**: Kuweka mizani kati ya kiwango cha maingizo na muda wa usindikaji
-5. **Ulinganifu wa Data**: Kuhakikisha usahihi na ukamilifu wa data katika mfululizo mzima
+1. **Kupotea kwa Muktadha**: Ugumu wa kudumisha muktadha kati ya mifumo iliyogawanyika
+2. **Masuala ya Kupanuka**: Changamoto za kupanua mifumo kushughulikia data nyingi na kasi kubwa
+3. **Ugumu wa Ushirikiano**: Matatizo ya kuunganisha mifumo tofauti
+4. **Usimamizi wa Ucheleweshaji**: Kuweka uwiano kati ya uwezo wa kupokea data na muda wa usindikaji
+5. **Ulinganifu wa Data**: Kuhakikisha usahihi na ukamilifu wa data katika mtiririko mzima
 
 ## Kuelewa Itifaki ya Muktadha wa Mfano (MCP)
 
 ### MCP ni Nini?
 
-Itifaki ya Muktadha wa Mfano (MCP) ni itifaki ya mawasiliano iliyopangwa kusaidia mwingiliano bora kati ya mifano ya AI na programu. Katika muktadha wa usambazaji wa data wa muda halisi, MCP hutoa mfumo wa:
+Itifaki ya Muktadha wa Mfano (MCP) ni itifaki ya mawasiliano iliyosanifiwa iliyoundwa kuwezesha mwingiliano bora kati ya mifano ya AI na programu. Katika muktadha wa usambazaji wa data kwa wakati halisi, MCP hutoa mfumo wa:
 
 - Kuhifadhi muktadha katika njia ya data
-- Kuweka viwango vya kubadilishana data
+- Kusanifisha miundo ya kubadilishana data
 - Kuboresha usafirishaji wa seti kubwa za data
 - Kuongeza mawasiliano kati ya mifano na kati ya mfano na programu
 
-### Vipengele Muhimu na Miundo
+### Vipengele Muhimu na Muundo
 
-Miundo ya MCP kwa usambazaji wa muda halisi ina vipengele vikuu vifuatavyo:
+Muundo wa MCP kwa usambazaji wa wakati halisi unajumuisha vipengele muhimu vifuatavyo:
 
 1. **Wasimamizi wa Muktadha**: Husimamia na kudumisha taarifa za muktadha katika njia ya usambazaji
-2. **Wasindikaji wa Mfululizo**: Husindika mfululizo wa data unaoingia kwa mbinu zinazojua muktadha
-3. **Mbadalishaji wa Itifaki**: Hubadilisha kati ya itifaki tofauti za usambazaji huku wakidumisha muktadha
+2. **Wasindikaji wa Mtiririko**: Husindika mtiririko wa data unaoingia kwa kutumia mbinu zinazotambua muktadha
+3. **Vibadilishaji vya Itifaki**: Hubadilisha kati ya itifaki tofauti za usambazaji huku wakihifadhi muktadha
 4. **Hifadhi ya Muktadha**: Kuhifadhi na kupata taarifa za muktadha kwa ufanisi
-5. **Viunganishi vya Usambazaji**: Kuunganishwa na majukwaa mbalimbali ya usambazaji (Kafka, Pulsar, Kinesis, nk)
+5. **Vihusishi vya Usambazaji**: Kuunganisha na majukwaa mbalimbali ya usambazaji (Kafka, Pulsar, Kinesis, n.k.)
 
 ```mermaid
 graph TD
@@ -164,43 +164,43 @@ graph TD
     class DA,Alerts,DL,API apps
 ```
 
-### Jinsi MCP Inavyoboresha Usindikaji wa Data wa Muda Halisi
+### MCP Inavyoboresha Usimamizi wa Data kwa Wakati Halisi
 
 MCP inashughulikia changamoto za usambazaji wa kawaida kwa:
 
-- **Uadilifu wa Muktadha**: Kudumisha uhusiano kati ya data katika njia nzima
+- **Uadilifu wa Muktadha**: Kudumisha uhusiano kati ya pointi za data katika njia nzima
 - **Usafirishaji Ulioboreshwa**: Kupunguza rudufu katika kubadilishana data kupitia usimamizi wa muktadha wenye akili
-- **Mwingiliano wa Violesura Vilivyopangwa**: Kutoa API thabiti kwa vipengele vya usambazaji
-- **Kuchelewa Kidogo**: Kupunguza mzigo wa usindikaji kupitia usimamizi bora wa muktadha
-- **Uwezo wa Kupanua**: Kusaidia upanuzi wa mlalo huku ukidumisha muktadha
+- **Mawasiliano Sanifu**: Kutoa API thabiti kwa vipengele vya usambazaji
+- **Kupunguza Ucheleweshaji**: Kupunguza mzigo wa usindikaji kupitia usimamizi bora wa muktadha
+- **Kupanuka Bora**: Kusaidia kupanua kwa usawa huku muktadha ukidumishwa
 
 ## Ushirikiano na Utekelezaji
 
-Mifumo ya usambazaji wa data wa muda halisi inahitaji muundo makini na utekelezaji ili kudumisha utendaji na uadilifu wa muktadha. Itifaki ya Muktadha wa Mfano hutoa njia iliyopangwa ya kuunganisha mifano ya AI na teknolojia za usambazaji, kuruhusu njia za usindikaji zenye akili na zenye kujua muktadha.
+Mifumo ya usambazaji wa data kwa wakati halisi inahitaji muundo makini wa usanifu na utekelezaji ili kudumisha utendaji na uadilifu wa muktadha. Itifaki ya Muktadha wa Mfano inatoa njia iliyosanifiwa ya kuunganisha mifano ya AI na teknolojia za usambazaji, kuruhusu njia za usindikaji zenye akili na zinazotambua muktadha.
 
 ### Muhtasari wa Ushirikiano wa MCP katika Miundo ya Usambazaji
 
-Kutekeleza MCP katika mazingira ya usambazaji wa muda halisi kunahusisha mambo muhimu yafuatayo:
+Kutumia MCP katika mazingira ya usambazaji wa wakati halisi kunahitaji mambo yafuatayo:
 
-1. **Usanisi na Usafirishaji wa Muktadha**: MCP hutoa mbinu bora za kuweka taarifa za muktadha ndani ya vifurushi vya data vya usambazaji, kuhakikisha muktadha muhimu unafuata data katika njia ya usindikaji. Hii ni pamoja na viwango vya usanisi vilivyoboresha kwa usafirishaji wa usambazaji.
+1. **Uthibitishaji na Usafirishaji wa Muktadha**: MCP hutoa mbinu bora za kuficha taarifa za muktadha ndani ya vifurushi vya data vinavyosambazwa, kuhakikisha muktadha muhimu unaambatana na data katika njia ya usindikaji. Hii ni pamoja na miundo ya uthibitishaji iliyosanifiwa iliyoboreshwa kwa usafirishaji wa usambazaji.
 
-2. **Usindikaji wa Mfululizo unaojua Hali**: MCP inaruhusu usindikaji wa hali wenye akili zaidi kwa kudumisha uwakilishi thabiti wa muktadha kati ya nodi za usindikaji. Hii ni muhimu hasa katika miundo ya usambazaji iliyosambazwa ambapo usimamizi wa hali ni changamoto.
+2. **Usindikaji wa Mtiririko Unaodumisha Hali**: MCP inaruhusu usindikaji bora unaodumisha hali kwa kudumisha uwakilishi thabiti wa muktadha kati ya nodi za usindikaji. Hii ni muhimu hasa katika miundo ya usambazaji iliyogawanyika ambapo usimamizi wa hali huwa changamoto.
 
-3. **Muda wa Tukio dhidi ya Muda wa Usindikaji**: Matumizi ya MCP katika mifumo ya usambazaji yanapaswa kushughulikia changamoto ya kutofautisha kati ya wakati tukio lilitokea na wakati linaposindikwa. Itifaki inaweza kujumuisha muktadha wa muda unaohifadhi maana ya muda wa tukio.
+3. **Muda wa Tukio dhidi ya Muda wa Usindikaji**: Matumizi ya MCP katika mifumo ya usambazaji yanapaswa kushughulikia changamoto ya tofauti kati ya wakati tukio lilipotokea na wakati linaposhughulikiwa. Itifaki inaweza kujumuisha muktadha wa muda unaohifadhi maana ya wakati wa tukio.
 
-4. **Usimamizi wa Mzigo wa Kuingiza**: Kwa kuweka viwango vya usimamizi wa muktadha, MCP husaidia kusimamia mzigo wa kuingiza katika mifumo ya usambazaji, kuruhusu vipengele kuwasiliana uwezo wao wa usindikaji na kurekebisha mtiririko ipasavyo.
+4. **Usimamizi wa Mzigo wa Kurejesha**: Kwa kusanifisha usimamizi wa muktadha, MCP husaidia kudhibiti mzigo wa kurejesha katika mifumo ya usambazaji, kuruhusu vipengele kuwasiliana uwezo wao wa usindikaji na kurekebisha mtiririko ipasavyo.
 
-5. **Udirisha wa Muktadha na Ukusanyaji**: MCP hurahisisha operesheni za dirisha zilizo na muundo mzuri wa muktadha wa muda na uhusiano, kuruhusu ukusanyaji wenye maana zaidi kati ya mfululizo wa matukio.
+5. **Dirisha la Muktadha na Muhtasari**: MCP inarahisisha operesheni za dirisha zenye ufanisi zaidi kwa kutoa uwakilishi wa muktadha wa muda na uhusiano, kuruhusu muhtasari wenye maana zaidi kati ya mitiririko ya matukio.
 
-6. **Usindikaji wa Mara-Moja-Kamili**: Katika mifumo ya usambazaji inayohitaji mantiki ya mara-moja-kamili, MCP inaweza kujumuisha metadata ya usindikaji kusaidia kufuatilia na kuthibitisha hali ya usindikaji kati ya vipengele vilivyoenea.
+6. **Usindikaji wa Mara-Moja-Kamili**: Katika mifumo ya usambazaji inayohitaji semantiki ya mara-moja-kamili, MCP inaweza kujumuisha metadata ya usindikaji kusaidia kufuatilia na kuthibitisha hali ya usindikaji kati ya vipengele vilivyoenea.
 
-Utekelezaji wa MCP katika teknolojia mbalimbali za usambazaji huunda njia moja kwa usimamizi wa muktadha, kupunguza haja ya msimbo maalum wa muunganisho huku ukiongeza uwezo wa mfumo kudumisha muktadha muhimu wakati data inapopita kwenye njia.
+Utekelezaji wa MCP katika teknolojia mbalimbali za usambazaji unaunda njia moja ya usimamizi wa muktadha, kupunguza hitaji la msimbo wa ushirikiano maalum huku ukiongeza uwezo wa mfumo kudumisha muktadha wenye maana wakati data inapopita katika njia.
 
 ### MCP katika Mifumo Mbalimbali ya Usambazaji wa Data
 
-Mifano hii inafuata maelezo ya MCP ya sasa inayolenga itifaki ya JSON-RPC yenye njia tofauti za usafirishaji. Msimbo unaonyesha jinsi ya kutekeleza njia maalum zinazounganisha majukwaa ya usambazaji kama Kafka na Pulsar huku ukidumisha ulinganifu kamili na itifaki ya MCP.
+Mifano hii inafuata maelekezo ya sasa ya MCP ambayo yanazingatia itifaki ya JSON-RPC yenye mbinu tofauti za usafirishaji. Msimbo unaonyesha jinsi unaweza kutekeleza usafirishaji maalum unaounganisha majukwaa ya usambazaji kama Kafka na Pulsar huku ukidumisha ulinganifu kamili na itifaki ya MCP.
 
-Mifano imeundwa kuonyesha jinsi majukwaa ya usambazaji yanavyoweza kuunganishwa na MCP kutoa usindikaji wa data wa muda halisi huku wakihifadhi ufahamu wa muktadha unaojumuishwa na MCP. Njia hii inahakikisha mifano ya msimbo inaonyesha hali ya sasa ya maelezo ya MCP hadi Juni 2025.
+Mifano imeundwa kuonyesha jinsi majukwaa ya usambazaji yanavyoweza kuunganishwa na MCP kutoa usindikaji wa data kwa wakati halisi huku wakidumisha ufahamu wa muktadha unaojikita katika MCP. Njia hii inahakikisha kuwa sampuli za msimbo zinaonyesha hali halisi ya maelezo ya MCP hadi Juni 2025.
 
 MCP inaweza kuunganishwa na mifumo maarufu ya usambazaji ikiwemo:
 
@@ -514,101 +514,97 @@ if __name__ == "__main__":
     asyncio.run(run_mcp_server_with_pulsar())
 ```
 
-### Mbinu Bora za Kuweka Kazi
+### Mbinu Bora za Utekelezaji
 
-Unapotekeleza MCP kwa usambazaji wa muda halisi:
+Unapotekeleza MCP kwa usambazaji wa wakati halisi:
 
-1. **Buni kwa Uvumilivu wa Hitilafu**:
-   - Tekeleza usimamizi sahihi wa makosa
-   - Tumia safu za barua zisizotumwa kwa ujumbe uliofeli
-   - Buni wasindikaji wasioathiriwa na kuanzishwa mara nyingi
+1. **Buni kwa Uvumilivu wa Makosa**:
+   - Tekeleza utambuzi sahihi wa makosa
+   - Tumia foleni za ujumbe zilizoshindwa (dead-letter queues)
+   - Buni wasindikaji wa idempotent
 
 2. **Boresha Utendaji**:
-   - Sanidi ukubwa unaofaa wa buffer
-   - Tumia kundi la data inapofaa
-   - Tekeleza mbinu za kudhibiti mzigo wa kuingiza
+   - Sanidi ukubwa wa buffer unaofaa
+   - Tumia makundi ya data inapofaa
+   - Tekeleza mbinu za kudhibiti mzigo wa kurejesha
 
 3. **Fuatilia na Angalia**:
-   - Fuata vipimo vya usindikaji wa mfululizo
-   - Fuatilia usambazaji wa muktadha
-   - Weka tahadhari kwa matukio yasiyo ya kawaida
+   - Rekodi vipimo vya usindikaji wa mtiririko
+   - Angalia usambazaji wa muktadha
+   - Weka arifa kwa matukio yasiyo ya kawaida
 
-4. **Linda Mfululizo Wako**:
-   - Tekeleza usimbaji kwa data nyeti
-   - Tumia uthibitishaji na ruhusa
+4. **Linda Mitiririko Yako**:
+   - Tekeleza usimbaji fiche kwa data nyeti
+   - Tumia uthibitishaji na idhini
    - Tumia udhibiti sahihi wa upatikanaji
 
-### MCP katika IoT na Kompyuta ya Edge
+### MCP katika IoT na Edge Computing
 
-MCP huongeza usambazaji wa IoT kwa:
+MCP huongeza thamani katika usambazaji wa IoT kwa:
 
-- Kuhifadhi muktadha wa kifaa katika njia ya usindikaji
-- Kuwezesha usambazaji wa data uanzia Edge hadi Cloud kwa ufanisi
-- Kusaidia uchambuzi wa muda halisi wa mfululizo wa data za IoT
-- Kurahisisha mawasiliano kati ya vifaa kwa muktadha
+- Kudumisha muktadha wa kifaa katika njia ya usindikaji
+- Kuwezesha usambazaji wa data kwa ufanisi kutoka edge hadi wingu
+- Kusaidia uchambuzi wa wakati halisi wa data za IoT
+- Kurahisisha mawasiliano ya kifaa kwa kifaa kwa kutumia muktadha
 
-Mfano: Mitandao ya Sensor za Miji Mahiri  
+Mfano: Mitandao ya Sensor za Mji Mwerevu  
 ```
 Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → Automated Responses
 ```
 
-### Nafasi katika Miamala ya Fedha na Biashara ya Muda Mfupi
+### Nafasi Katika Miamala ya Fedha na Biashara ya Kiasi Kikubwa
 
 MCP hutoa faida kubwa kwa usambazaji wa data za fedha:
 
-- Usindikaji wa kuchelewa kidogo sana kwa maamuzi ya biashara
-- Kudumisha muktadha wa muamala katika usindikaji wote
-- Kusaidia usindikaji wa matukio changamano kwa ufahamu wa muktadha
-- Kuhakikisha ulinganifu wa data kati ya mifumo ya biashara iliyosambazwa
+- Usindikaji wa ucheleweshaji mdogo sana kwa maamuzi ya biashara
+- Kudumisha muktadha wa miamala katika usindikaji mzima
+- Kusaidia usindikaji wa matukio tata kwa ufahamu wa muktadha
+- Kuhakikisha ulinganifu wa data katika mifumo ya biashara iliyogawanyika
 
-### Kuongeza Uchambuzi wa Data unaotegemea AI
+### Kuongeza Thamani kwa Uchambuzi wa Data unaotegemea AI
 
 MCP huunda fursa mpya kwa uchambuzi wa usambazaji:
 
-- Mafunzo ya modeli na utambuzi wa muda halisi
-- Kujifunza endelevu kutoka kwa data za mfululizo
-- Uvutaji wa sifa unaojua muktadha
-- Mifumo ya utambuzi wa modeli nyingi yenye muktadha uliohifadhiwa
+- Mafunzo na utabiri wa mifano kwa wakati halisi
+- Kujifunza endelevu kutoka kwa data za usambazaji
+- Utoaji wa vipengele vinavyozingatia muktadha
+- Mipangilio ya utabiri wa mifano mingi yenye muktadha uliodumishwa
 
 ## Mwelekeo wa Baadaye na Uvumbuzi
 
-### Mageuzi ya MCP katika Mazingira ya Muda Halisi
+### Mageuzi ya MCP katika Mazingira ya Wakati Halisi
 
-Tukiangalia mbele, tunatarajia MCP itabadilika kushughulikia:
+Katika siku zijazo, tunatarajia MCP itabadilika kushughulikia:
 
 - **Ushirikiano na Kompyuta za Quantum**: Kujiandaa kwa mifumo ya usambazaji inayotumia quantum
-- **Usindikaji wa Asili wa Edge**: Kuhamisha usindikaji wenye ufahamu wa muktadha zaidi kwenye vifaa vya Edge
-- **Usimamizi wa Mfululizo Uliojitegemea**: Njia za usambazaji zinazojiboresha wenyewe
-- **Usambazaji wa Usambazaji**: Usindikaji uliosambazwa huku ukihifadhi faragha
+- **Usindikaji wa Edge-Native**: Kuhamisha usindikaji unaotambua muktadha zaidi kwenye vifaa vya edge
+- **Usimamizi wa Mtiririko Unaojitegemea**: Mifumo ya usambazaji inayojirekebisha yenyewe
+- **Usambazaji wa Federated**: Usindikaji uliogawanyika huku ukihifadhi faragha
 
-### Maendeleo Yanayoweza Kutokea katika Teknolojia
+### Maendeleo Yanayoweza Kutokea Katika Teknolojia
 
-Teknolojia zinazoibuka zitakazounda mustakabali wa MCP katika usambazaji:
+Teknolojia zinazokuja zitakazoathiri MCP ya usambazaji ni:
 
-1. **Itifaki za Usambazaji Zinazoboreshwa kwa AI**: Itifaki maalum zilizoundwa kwa kazi za AI
-2. **Ushirikiano na Kompyuta za Neuromorphic**: Kompyuta zinazofanana na ubongo kwa usindikaji wa mfululizo
-3. **Usambazaji Usio na Seva**: Usambazaji unaoendeshwa na matukio, unaoweza kupanuka bila usimamizi wa miundombinu
-4. **Hifadhi za Muktadha Zilizogawanyika**: Usimamizi wa muktadha uliosambazwa duniani kote lakini wenye uthabiti mkubwa
+1. **Itifaki za Usambazaji Zilizoboreshwa kwa AI**: Itifaki maalum kwa mzigo wa kazi wa AI
+2. **Ushirikiano wa Kompyuta za Neuromorphic**: Kompyuta zinazotegemea ubongo wa binadamu kwa usindikaji wa mtiririko
+3. **Usambazaji Usio na Server**: Usambazaji unaotegemea matukio, unaopanuka bila usimamizi wa miundombinu
+4. **Hifadhi za Muktadha Zilizogawanyika**: Usimamizi wa muktadha uliosambazwa duniani kote lakini thabiti
 
 ## Mazoezi ya Vitendo
 
-### Zoeezi 1: Kuweka Msingi wa Mfululizo wa MCP
+### Zoefzi 1: Kuanzisha Mstari wa Usambazaji wa MCP wa Msingi
 
-Katika zoezi hili, utajifunza jinsi ya:
-- Kusanidi mazingira ya msingi ya usambazaji wa MCP
-- Kutekeleza wasimamizi wa muktadha kwa usindikaji wa mfululizo
+Katika zoefzi hili, utajifunza jinsi ya:
+- Kusanidi mazingira ya usambazaji wa MCP wa msingi
+- Kutekeleza wasimamizi wa muktadha kwa usindikaji wa mtiririko
 - Kupima na kuthibitisha uhifadhi wa muktadha
 
-### Zoeezi 2: Kuunda Dashibodi ya Uchambuzi wa Muda Halisi
+### Zoefzi 2: Kujenga Dashibodi ya Uchambuzi wa Wakati Halisi
 
-Tengeneza programu kamili inayofanya:
+Tengeneza programu kamili inayoweza:
 - Kupokea data za usambazaji kwa kutumia MCP
-- Kusindika mfululizo huku ukidumisha muktadha
-- Kuonyesha matokeo kwa wakati halisi
+- Kusindika mtiririko huku muktadha ukidumishwa
+- Kuonyesha matokeo kwa wakati hal
 
-### Zoeezi 3: Kutekeleza Usindikaji Changamano wa Matukio kwa MCP
-
-Z
-
-**Kiasi cha majumuisho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kasoro. Hati asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatuna wajibu wowote kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kasi ya Majukumu**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu na ya binadamu inapendekezwa. Hatuna dhamana kwa kutokuelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

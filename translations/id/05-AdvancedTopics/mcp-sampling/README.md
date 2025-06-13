@@ -1,27 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b0de03f7a3ff0204d8356bc61325c459",
-  "translation_date": "2025-06-02T20:05:50+00:00",
+  "original_hash": "3cb0da3badd51d73ab78ebade2827d98",
+  "translation_date": "2025-06-13T00:33:32+00:00",
   "source_file": "05-AdvancedTopics/mcp-sampling/README.md",
   "language_code": "id"
 }
 -->
-## Sampling Deterministik
+## Pengambilan Sampel Deterministik
 
-Untuk aplikasi yang membutuhkan output yang konsisten, sampling deterministik memastikan hasil yang dapat direproduksi. Caranya adalah dengan menggunakan seed acak tetap dan mengatur temperature ke nol.
+Untuk aplikasi yang memerlukan keluaran yang konsisten, pengambilan sampel deterministik memastikan hasil yang dapat direproduksi. Cara kerjanya adalah dengan menggunakan seed acak tetap dan mengatur temperature ke nol.
 
-Mari kita lihat contoh implementasi di bawah ini untuk mendemonstrasikan sampling deterministik dalam berbagai bahasa pemrograman.
+Mari kita lihat contoh implementasi di bawah ini untuk mendemonstrasikan pengambilan sampel deterministik dalam berbagai bahasa pemrograman.
 
-## Konfigurasi Sampling Dinamis
+## Konfigurasi Pengambilan Sampel Dinamis
 
-Sampling cerdas menyesuaikan parameter berdasarkan konteks dan kebutuhan setiap permintaan. Artinya, secara dinamis mengatur parameter seperti temperature, top_p, dan penalti berdasarkan jenis tugas, preferensi pengguna, atau kinerja historis.
+Pengambilan sampel cerdas menyesuaikan parameter berdasarkan konteks dan kebutuhan setiap permintaan. Artinya, secara dinamis mengatur parameter seperti temperature, top_p, dan penalti berdasarkan jenis tugas, preferensi pengguna, atau performa historis.
 
-Mari kita lihat cara mengimplementasikan sampling dinamis dalam berbagai bahasa pemrograman.
+Mari kita lihat cara mengimplementasikan pengambilan sampel dinamis dalam berbagai bahasa pemrograman.
 
-## Selanjutnya
+## Apa Selanjutnya
 
-- [Scaling](../mcp-scaling/README.md)
+- [5.7 Scaling](../mcp-scaling/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.

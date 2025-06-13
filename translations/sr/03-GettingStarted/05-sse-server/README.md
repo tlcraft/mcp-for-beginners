@@ -1,101 +1,101 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0a8086dc4bf89448f83e7936db972c42",
-  "translation_date": "2025-05-17T11:44:25+00:00",
+  "original_hash": "3dd2f1e39277c31b0e57e29d165354d6",
+  "translation_date": "2025-06-13T01:15:53+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "sr"
 }
 -->
-Sada kada znamo malo više o SSE-u, hajde da sledeće izgradimo SSE server.
+Сада када знамо нешто више о SSE-у, хајде да направимо SSE сервер.
 
-## Vežba: Kreiranje SSE servera
+## Вежба: Креирање SSE сервера
 
-Da bismo kreirali naš server, potrebno je da imamo na umu dve stvari:
+Да бисмо направили наш сервер, морамо имати у виду две ствари:
 
-- Potrebno je da koristimo veb server za izlaganje krajnjih tačaka za konekciju i poruke.
-- Izgradite naš server kao što to obično radimo sa alatima, resursima i upitima kada koristimo stdio.
+- Потребно је користити веб сервер да бисмо изложили крајње тачке за конекцију и поруке.
+- Направити сервер као и обично, са алатима, ресурсима и упитима као када смо користили stdio.
 
-### -1- Kreiranje instance servera
+### -1- Креирање инстанце сервера
 
-Da bismo kreirali naš server, koristimo iste tipove kao kod stdio. Međutim, za transport, potrebno je da izaberemo SSE.
+За креирање сервера користимо исте типове као и са stdio. Међутим, за транспорт морамо изабрати SSE.
 
-Dodajmo potrebne rute sledeće.
+Хајде сада да додамо потребне руте.
 
-### -2- Dodavanje ruta
+### -2- Додавање рута
 
-Dodajmo sledeće rute koje će obrađivati konekciju i dolazne poruke:
+Додајмо руте које рукују конекцијом и долазним порукама:
 
-Dodajmo sposobnosti serveru sledeće.
+Хајде сада да додамо могућности серверу.
 
-### -3- Dodavanje sposobnosti servera
+### -3- Додавање могућности серверу
 
-Sada kada smo definisali sve specifično za SSE, hajde da dodamo sposobnosti serveru kao što su alati, upiti i resursi.
+Сада када смо дефинисали све што је специфично за SSE, додајмо могућности серверу као што су алати, упити и ресурси.
 
-Vaš kompletan kod bi trebalo da izgleda ovako:
+Ваш цео код треба да изгледа овако:
 
-Odlično, imamo server koji koristi SSE, hajde da ga isprobamo sledeće.
+Сјајно, имамо сервер који користи SSE, хајде да га испробамо.
 
-## Vežba: Debugovanje SSE servera sa Inspectorom
+## Вежба: Дебаговање SSE сервера помоћу Inspector-а
 
-Inspector je odličan alat koji smo videli u prethodnoj lekciji [Kreiranje vašeg prvog servera](/03-GettingStarted/01-first-server/README.md). Hajde da vidimo da li možemo koristiti Inspector čak i ovde:
+Inspector је одличан алат који смо видели у претходној лекцији [Креирање првог сервера](/03-GettingStarted/01-first-server/README.md). Хајде да видимо да ли можемо користити Inspector и овде:
 
-### -1- Pokretanje inspectora
+### -1- Покретање Inspector-а
 
-Da biste pokrenuli inspector, prvo morate imati pokrenut SSE server, pa hajde da to uradimo sledeće:
+Да бисте покренули Inspector, прво морате имати покренут SSE сервер, па хајде то сада урадимо:
 
-1. Pokrenite server
+1. Покрените сервер
 
-1. Pokrenite inspector
+1. Покрените Inspector
 
     > ![NOTE]
-    > Pokrenite ovo u zasebnom terminalskom prozoru od onog u kojem server radi. Takođe imajte na umu da morate prilagoditi donju komandu da odgovara URL-u na kojem vaš server radi.
+    > Покрените ово у посебном терминал прозору од оног у коме је сервер покренут. Такође, имајте у виду да морате прилагодити команду испод тако да одговара URL-у на којем ваш сервер ради.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Pokretanje inspectora izgleda isto u svim runtime okruženjima. Obratite pažnju kako umesto da prosleđujemo putanju do našeg servera i komandu za pokretanje servera, mi umesto toga prosleđujemo URL na kojem server radi i takođe navodimo rutu `/sse`.
+Покретање Inspector-а изгледа исто у свим окружењима. Обратите пажњу да уместо да прослеђујемо пут до нашег сервера и команду за покретање сервера, ми прослеђујемо URL где сервер ради и такође назначавамо руту `/sse`.
 
-### -2- Isprobavanje alata
+### -2- Испробавање алата
 
-Povežite server odabirom SSE u padajućem meniju i popunite polje za URL gde vaš server radi, na primer http:localhost:4321/sse. Sada kliknite na dugme "Connect". Kao i pre, izaberite da listate alate, izaberite alat i unesite ulazne vrednosti. Trebalo bi da vidite rezultat kao ispod:
+Повежите сервер тако што ћете у падајућем менију изабрати SSE и унети URL где ваш сервер ради, на пример http:localhost:4321/sse. Затим кликните на дугме "Connect". Као и раније, изаберите да листате алате, изаберите алат и унесите улазне вредности. Требало би да видите резултат као на слици испод:
 
-![SSE Server running in inspector](../../../../translated_images/sse-inspector.12861eb95abecbfc82610f480b55901524fed1a6aca025bb948e09e882c48428.sr.png)
+![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.sr.png)
 
-Odlično, možete raditi sa inspectorom, hajde da vidimo kako možemo raditi sa Visual Studio Code sledeće.
+Сјајно, успели сте да радите са Inspector-ом, хајде да видимо како да радимо са Visual Studio Code-ом.
 
-## Zadatak
+## Задатак
 
-Pokušajte da izgradite svoj server sa više sposobnosti. Pogledajte [ovu stranicu](https://api.chucknorris.io/) da, na primer, dodate alat koji poziva API, vi odlučujete kako bi server trebalo da izgleda. Zabavite se :)
+Покушајте да проширите свој сервер са више могућности. Погледајте [ову страницу](https://api.chucknorris.io/) да, на пример, додате алат који позива неки API, ви одлучујете како сервер треба да изгледа. Забавите се :)
 
-## Rešenje
+## Решење
 
-[Rešenje](./solution/README.md) Evo mogućeg rešenja sa radnim kodom.
+[Решење](./solution/README.md) Ево могућег решења са радним кодом.
 
-## Ključne tačke
+## Кључне поуке
 
-Ključne tačke iz ovog poglavlja su sledeće:
+Кључне поуке из овог поглавља су следеће:
 
-- SSE je drugi podržani transport pored stdio.
-- Da biste podržali SSE, potrebno je da upravljate dolaznim konekcijama i porukama koristeći veb okvir.
-- Možete koristiti i Inspector i Visual Studio Code za konzumiranje SSE servera, baš kao i stdio servera. Obratite pažnju kako se malo razlikuje između stdio i SSE. Za SSE, potrebno je da zasebno pokrenete server i zatim pokrenete vaš inspector alat. Za inspector alat, takođe postoje neke razlike u tome što je potrebno da navedete URL.
+- SSE је други подржани тип транспорта поред stdio.
+- Да бисте подржали SSE, потребно је да управљате долазним конекцијама и порукама користећи веб фрејмворк.
+- Можете користити и Inspector и Visual Studio Code за коришћење SSE сервера, као и за stdio сервере. Обратите пажњу на разлике између stdio и SSE. За SSE морате посебно покренути сервер, а затим покренути алат Inspector. За Inspector постоје и неке разлике у томе што морате назначити URL.
 
-## Primeri
+## Примери
 
-- [Java Kalkulator](../samples/java/calculator/README.md)
-- [.Net Kalkulator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Kalkulator](../samples/javascript/README.md)
-- [TypeScript Kalkulator](../samples/typescript/README.md)
-- [Python Kalkulator](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Dodatni resursi
+## Додатни ресурси
 
 - [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 
-## Šta je sledeće
+## Шта следи
 
-- Sledeće: [Početak rada sa AI Toolkit za VSCode](/03-GettingStarted/06-aitk/README.md)
+- Следеће: [HTTP стриминг са MCP (Streamable HTTP)](/03-GettingStarted/06-http-streaming/README.md)
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо ка тачности, молимо вас да будете свесни да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати меродавним извором. За критичне информације, препоручује се професионални људски превод. Не сносимо одговорност за било каква неспоразума или погрешна тумачења која проистекну из употребе овог превода.
+Овај документ је преведен помоћу AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било какве неспоразуме или погрешне тумачења настала коришћењем овог превода.

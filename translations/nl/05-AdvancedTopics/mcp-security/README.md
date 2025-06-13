@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ba9c96a7c7901faa1d26c8ec7ad56d2c",
-  "translation_date": "2025-06-02T20:16:23+00:00",
+  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
+  "translation_date": "2025-06-13T00:19:34+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "nl"
 }
 -->
 # Beveiligingsrichtlijnen
 
-Beveiliging is cruciaal voor MCP-implementaties, vooral in zakelijke omgevingen. Het is belangrijk om ervoor te zorgen dat tools en gegevens beschermd zijn tegen ongeautoriseerde toegang, datalekken en andere beveiligingsbedreigingen.
+Beveiliging is cruciaal voor MCP-implementaties, vooral in bedrijfsomgevingen. Het is belangrijk om ervoor te zorgen dat tools en gegevens beschermd zijn tegen ongeautoriseerde toegang, datalekken en andere beveiligingsbedreigingen.
 
 ## Introductie
 
-In deze les behandelen we de beste beveiligingspraktijken voor MCP-implementaties. We bespreken authenticatie en autorisatie, gegevensbescherming, veilige uitvoering van tools en naleving van privacywetgeving.
+In deze les bespreken we de beste beveiligingspraktijken voor MCP-implementaties. We behandelen authenticatie en autorisatie, gegevensbescherming, veilige uitvoering van tools en naleving van privacyregels.
 
 ## Leerdoelen
 
@@ -21,8 +21,8 @@ Aan het einde van deze les kun je:
 
 - Veilige authenticatie- en autorisatiemechanismen implementeren voor MCP-servers.
 - Gevoelige gegevens beschermen met encryptie en veilige opslag.
-- Veilige uitvoering van tools waarborgen met de juiste toegangscontroles.
-- Beste praktijken toepassen voor gegevensbescherming en privacy-compliance.
+- Veilige uitvoering van tools waarborgen met juiste toegangscontroles.
+- Beste praktijken toepassen voor gegevensbescherming en privacy-naleving.
 
 ## Authenticatie en Autorisatie
 
@@ -32,13 +32,13 @@ Laten we voorbeelden bekijken van hoe je veilige authenticatie en autorisatie ku
 
 ### .NET Identity Integratie
 
-ASP .NET Core Identity biedt een robuust framework voor het beheren van gebruikersauthenticatie en -autorisatie. We kunnen dit integreren met MCP-servers om de toegang tot tools en resources te beveiligen.
+ASP .NET Core Identity biedt een krachtig framework voor het beheren van gebruikersauthenticatie en -autorisatie. We kunnen dit integreren met MCP-servers om de toegang tot tools en resources te beveiligen.
 
-Er zijn enkele kernconcepten die we moeten begrijpen bij het integreren van ASP.NET Core Identity met MCP-servers, namelijk:
+Er zijn een paar kernconcepten die we moeten begrijpen bij het integreren van ASP.NET Core Identity met MCP-servers, namelijk:
 
-- **Identity Configuratie**: Het opzetten van ASP.NET Core Identity met gebruikersrollen en claims. Een claim is een stukje informatie over de gebruiker, zoals hun rol of permissies, bijvoorbeeld "Admin" of "User".
-- **JWT Authenticatie**: Het gebruik van JSON Web Tokens (JWT) voor veilige API-toegang. JWT is een standaard voor het veilig overdragen van informatie tussen partijen als een JSON-object, dat geverifieerd en vertrouwd kan worden omdat het digitaal ondertekend is.
-- **Autorisatiebeleid**: Het definiëren van beleid om toegang tot specifieke tools te regelen op basis van gebruikersrollen. MCP gebruikt autorisatiebeleid om te bepalen welke gebruikers toegang hebben tot welke tools op basis van hun rollen en claims.
+- **Identity Configuratie**: Het instellen van ASP.NET Core Identity met gebruikersrollen en claims. Een claim is een stukje informatie over de gebruiker, zoals hun rol of permissies, bijvoorbeeld "Admin" of "User".
+- **JWT Authenticatie**: Het gebruik van JSON Web Tokens (JWT) voor veilige API-toegang. JWT is een standaard voor het veilig overdragen van informatie tussen partijen als een JSON-object, dat geverifieerd en vertrouwd kan worden omdat het digitaal is ondertekend.
+- **Autorisatiebeleid**: Het definiëren van beleid om de toegang tot specifieke tools te regelen op basis van gebruikersrollen. MCP gebruikt autorisatiebeleid om te bepalen welke gebruikers toegang hebben tot welke tools, gebaseerd op hun rollen en claims.
 
 ```csharp
 public class SecureMcpStartup
@@ -109,23 +109,23 @@ public class SecureMcpStartup
 }
 ```
 
-In de bovenstaande code hebben we:
+In bovenstaande code hebben we:
 
 - ASP.NET Core Identity geconfigureerd voor gebruikersbeheer.
-- JWT-authenticatie opgezet voor veilige API-toegang. We specificeerden de tokenvalidatieparameters, waaronder de issuer, audience en signing key.
-- Autorisatiebeleid gedefinieerd om de toegang tot tools te regelen op basis van gebruikersrollen. Bijvoorbeeld, het "CanUseAdminTools"-beleid vereist dat de gebruiker de rol "Admin" heeft, terwijl het "CanUseBasic"-beleid vereist dat de gebruiker geauthenticeerd is.
+- JWT-authenticatie opgezet voor veilige API-toegang. We hebben de tokenvalidatieparameters gespecificeerd, inclusief de issuer, audience en signing key.
+- Autorisatiebeleid gedefinieerd om de toegang tot tools te regelen op basis van gebruikersrollen. Bijvoorbeeld het beleid "CanUseAdminTools" vereist dat de gebruiker de rol "Admin" heeft, terwijl het beleid "CanUseBasic" vereist dat de gebruiker geauthenticeerd is.
 - MCP-tools geregistreerd met specifieke autorisatievereisten, zodat alleen gebruikers met de juiste rollen toegang krijgen.
 
 ### Java Spring Security Integratie
 
 Voor Java gebruiken we Spring Security om veilige authenticatie en autorisatie voor MCP-servers te implementeren. Spring Security biedt een uitgebreid beveiligingsframework dat naadloos integreert met Spring-applicaties.
 
-Kernconcepten zijn hier:
+De kernconcepten hier zijn:
 
 - **Spring Security Configuratie**: Het instellen van beveiligingsconfiguraties voor authenticatie en autorisatie.
-- **OAuth2 Resource Server**: Het gebruik van OAuth2 voor veilige toegang tot MCP-tools. OAuth2 is een autorisatieframework waarmee externe services toegangstokens kunnen uitwisselen voor veilige API-toegang.
-- **Security Interceptors**: Het implementeren van beveiligingsinterceptors om toegangscontroles op tool-uitvoering af te dwingen.
-- **Role-Based Access Control**: Het gebruik van rollen om toegang tot specifieke tools en resources te beheren.
+- **OAuth2 Resource Server**: Het gebruik van OAuth2 voor veilige toegang tot MCP-tools. OAuth2 is een autorisatieframework dat derde partijen toestaat om toegangstokens uit te wisselen voor veilige API-toegang.
+- **Security Interceptors**: Het implementeren van beveiligingsinterceptors om toegangscontroles op tooluitvoering af te dwingen.
+- **Role-Based Access Control**: Het gebruik van rollen om toegang tot specifieke tools en resources te regelen.
 - **Security Annotaties**: Het gebruik van annotaties om methoden en endpoints te beveiligen.
 
 ```java
@@ -178,18 +178,18 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 }
 ```
 
-In de bovenstaande code hebben we:
+In bovenstaande code hebben we:
 
-- Spring Security geconfigureerd om MCP-endpoints te beveiligen, waarbij openbare toegang tot tool discovery is toegestaan en authenticatie vereist is voor tool-uitvoering.
+- Spring Security geconfigureerd om MCP-endpoints te beveiligen, waarbij publieke toegang tot tooldiscovery is toegestaan, maar authenticatie vereist is voor tooluitvoering.
 - OAuth2 gebruikt als resource server om veilige toegang tot MCP-tools te regelen.
-- Een security interceptor geïmplementeerd om toegangscontroles op tool-uitvoering af te dwingen, waarbij gebruikersrollen en permissies worden gecontroleerd voordat toegang tot specifieke tools wordt verleend.
+- Een beveiligingsinterceptor geïmplementeerd om toegangscontroles op tooluitvoering af te dwingen, waarbij gebruikersrollen en permissies worden gecontroleerd voordat toegang wordt verleend tot specifieke tools.
 - Role-based access control gedefinieerd om de toegang tot admin-tools en gevoelige data te beperken op basis van gebruikersrollen.
 
 ## Gegevensbescherming en Privacy
 
-Gegevensbescherming is essentieel om ervoor te zorgen dat gevoelige informatie veilig wordt behandeld. Dit omvat het beschermen van persoonlijk identificeerbare informatie (PII), financiële gegevens en andere gevoelige informatie tegen ongeautoriseerde toegang en lekken.
+Gegevensbescherming is essentieel om ervoor te zorgen dat gevoelige informatie veilig wordt behandeld. Dit omvat het beschermen van persoonlijk identificeerbare informatie (PII), financiële gegevens en andere gevoelige informatie tegen ongeautoriseerde toegang en datalekken.
 
-### Python Voorbeeld Gegevensbescherming
+### Voorbeeld Gegevensbescherming in Python
 
 Laten we een voorbeeld bekijken van hoe je gegevensbescherming kunt implementeren in Python met encryptie en PII-detectie.
 
@@ -327,16 +327,16 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-In de bovenstaande code hebben we:
+In bovenstaande code hebben we:
 
 - Een `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
 - Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
 - Defined a `secure_tool` decorator that wraps tool execution to check for PII, log access, and encrypt sensitive data if required.
-- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool` geïmplementeerd om te waarborgen dat gevoelige data veilig wordt verwerkt.
+- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool` geïmplementeerd om te zorgen dat gevoelige gegevens veilig worden verwerkt.
 
-## Wat nu?
+## Wat volgt
 
-- [Web search](../web-search-mcp/README.md)
+- [5.9 Web search](../web-search-mcp/README.md)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

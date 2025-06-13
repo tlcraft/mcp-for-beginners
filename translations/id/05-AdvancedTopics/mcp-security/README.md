@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ba9c96a7c7901faa1d26c8ec7ad56d2c",
-  "translation_date": "2025-06-02T20:17:06+00:00",
+  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
+  "translation_date": "2025-06-13T00:32:42+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "id"
 }
@@ -13,7 +13,7 @@ Keamanan sangat penting untuk implementasi MCP, terutama di lingkungan perusahaa
 
 ## Pendahuluan
 
-Dalam pelajaran ini, kita akan membahas praktik terbaik keamanan untuk implementasi MCP. Kita akan membahas otentikasi dan otorisasi, perlindungan data, eksekusi alat yang aman, dan kepatuhan terhadap regulasi privasi data.
+Dalam pelajaran ini, kita akan membahas praktik terbaik keamanan untuk implementasi MCP. Kita akan membahas otentikasi dan otorisasi, perlindungan data, eksekusi alat yang aman, serta kepatuhan terhadap peraturan privasi data.
 
 ## Tujuan Pembelajaran
 
@@ -26,19 +26,19 @@ Pada akhir pelajaran ini, Anda akan mampu:
 
 ## Otentikasi dan Otorisasi
 
-Otentikasi dan otorisasi sangat penting untuk mengamankan server MCP. Otentikasi menjawab pertanyaan "Siapa Anda?" sedangkan otorisasi menjawab "Apa yang bisa Anda lakukan?".
+Otentikasi dan otorisasi sangat penting untuk mengamankan server MCP. Otentikasi menjawab pertanyaan "Siapa Anda?" sementara otorisasi menjawab "Apa yang bisa Anda lakukan?".
 
-Mari kita lihat contoh bagaimana menerapkan otentikasi dan otorisasi yang aman di server MCP menggunakan .NET dan Java.
+Mari kita lihat contoh bagaimana menerapkan otentikasi dan otorisasi yang aman pada server MCP menggunakan .NET dan Java.
 
-### Integrasi .NET Identity
+### Integrasi Identitas .NET
 
-ASP .NET Core Identity menyediakan kerangka kerja yang kuat untuk mengelola otentikasi dan otorisasi pengguna. Kita bisa mengintegrasikannya dengan server MCP untuk mengamankan akses ke alat dan sumber daya.
+ASP .NET Core Identity menyediakan kerangka kerja yang kuat untuk mengelola otentikasi dan otorisasi pengguna. Kita dapat mengintegrasikannya dengan server MCP untuk mengamankan akses ke alat dan sumber daya.
 
 Ada beberapa konsep inti yang perlu kita pahami saat mengintegrasikan ASP.NET Core Identity dengan server MCP, yaitu:
 
 - **Konfigurasi Identity**: Menyiapkan ASP.NET Core Identity dengan peran dan klaim pengguna. Klaim adalah informasi tentang pengguna, seperti peran atau izin mereka, misalnya "Admin" atau "User".
-- **Otentikasi JWT**: Menggunakan JSON Web Tokens (JWT) untuk akses API yang aman. JWT adalah standar untuk mengirim informasi secara aman antar pihak dalam bentuk objek JSON, yang dapat diverifikasi dan dipercaya karena ditandatangani secara digital.
-- **Kebijakan Otorisasi**: Mendefinisikan kebijakan untuk mengontrol akses ke alat tertentu berdasarkan peran pengguna. MCP menggunakan kebijakan otorisasi untuk menentukan pengguna mana yang dapat mengakses alat mana berdasarkan peran dan klaim mereka.
+- **Otentikasi JWT**: Menggunakan JSON Web Tokens (JWT) untuk akses API yang aman. JWT adalah standar untuk mengirim informasi secara aman antar pihak sebagai objek JSON, yang dapat diverifikasi dan dipercaya karena ditandatangani secara digital.
+- **Kebijakan Otorisasi**: Mendefinisikan kebijakan untuk mengontrol akses ke alat tertentu berdasarkan peran pengguna. MCP menggunakan kebijakan otorisasi untuk menentukan pengguna mana yang dapat mengakses alat berdasarkan peran dan klaim mereka.
 
 ```csharp
 public class SecureMcpStartup
@@ -109,21 +109,21 @@ public class SecureMcpStartup
 }
 ```
 
-Dalam kode sebelumnya, kita telah:
+Dalam kode di atas, kita telah:
 
 - Mengonfigurasi ASP.NET Core Identity untuk manajemen pengguna.
-- Menyiapkan otentikasi JWT untuk akses API yang aman. Kita menentukan parameter validasi token, termasuk penerbit, audiens, dan kunci penandatanganan.
+- Menyiapkan otentikasi JWT untuk akses API yang aman. Kita menentukan parameter validasi token, termasuk issuer, audience, dan signing key.
 - Mendefinisikan kebijakan otorisasi untuk mengontrol akses ke alat berdasarkan peran pengguna. Misalnya, kebijakan "CanUseAdminTools" mengharuskan pengguna memiliki peran "Admin", sedangkan kebijakan "CanUseBasic" mengharuskan pengguna sudah terotentikasi.
 - Mendaftarkan alat MCP dengan persyaratan otorisasi spesifik, memastikan hanya pengguna dengan peran yang sesuai yang dapat mengaksesnya.
 
 ### Integrasi Java Spring Security
 
-Untuk Java, kita akan menggunakan Spring Security untuk menerapkan otentikasi dan otorisasi yang aman pada server MCP. Spring Security menyediakan kerangka keamanan komprehensif yang terintegrasi mulus dengan aplikasi Spring.
+Untuk Java, kita akan menggunakan Spring Security untuk menerapkan otentikasi dan otorisasi yang aman pada server MCP. Spring Security menyediakan kerangka kerja keamanan yang komprehensif dan terintegrasi mulus dengan aplikasi Spring.
 
 Konsep inti di sini adalah:
 
 - **Konfigurasi Spring Security**: Menyiapkan konfigurasi keamanan untuk otentikasi dan otorisasi.
-- **OAuth2 Resource Server**: Menggunakan OAuth2 untuk akses aman ke alat MCP. OAuth2 adalah kerangka otorisasi yang memungkinkan layanan pihak ketiga menukar token akses untuk akses API yang aman.
+- **OAuth2 Resource Server**: Menggunakan OAuth2 untuk akses aman ke alat MCP. OAuth2 adalah kerangka kerja otorisasi yang memungkinkan layanan pihak ketiga menukar token akses untuk akses API yang aman.
 - **Interceptor Keamanan**: Menerapkan interceptor keamanan untuk menegakkan kontrol akses pada eksekusi alat.
 - **Kontrol Akses Berbasis Peran**: Menggunakan peran untuk mengontrol akses ke alat dan sumber daya tertentu.
 - **Anotasi Keamanan**: Menggunakan anotasi untuk mengamankan metode dan endpoint.
@@ -178,7 +178,7 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 }
 ```
 
-Dalam kode sebelumnya, kita telah:
+Dalam kode di atas, kita telah:
 
 - Mengonfigurasi Spring Security untuk mengamankan endpoint MCP, memungkinkan akses publik untuk penemuan alat sambil mengharuskan otentikasi untuk eksekusi alat.
 - Menggunakan OAuth2 sebagai resource server untuk menangani akses aman ke alat MCP.
@@ -187,7 +187,7 @@ Dalam kode sebelumnya, kita telah:
 
 ## Perlindungan Data dan Privasi
 
-Perlindungan data sangat penting untuk memastikan bahwa informasi sensitif ditangani dengan aman. Ini termasuk melindungi informasi identitas pribadi (PII), data keuangan, dan informasi sensitif lainnya dari akses tidak sah dan kebocoran.
+Perlindungan data sangat penting untuk memastikan bahwa informasi sensitif ditangani dengan aman. Ini termasuk melindungi informasi pribadi yang dapat diidentifikasi (PII), data keuangan, dan informasi sensitif lainnya dari akses tidak sah dan kebocoran.
 
 ### Contoh Perlindungan Data Python
 
@@ -327,7 +327,7 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-Dalam kode sebelumnya, kita telah:
+Dalam kode di atas, kita telah:
 
 - Menerapkan `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
 - Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
@@ -336,7 +336,7 @@ Dalam kode sebelumnya, kita telah:
 
 ## Selanjutnya
 
-- [Web search](../web-search-mcp/README.md)
+- [5.9 Web search](../web-search-mcp/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.

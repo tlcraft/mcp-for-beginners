@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ba9c96a7c7901faa1d26c8ec7ad56d2c",
-  "translation_date": "2025-06-02T20:15:37+00:00",
+  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
+  "translation_date": "2025-06-13T00:06:44+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "da"
 }
 -->
 # Security Best Practices
 
-Sikkerhed er afgørende for MCP-implementeringer, især i virksomhedsindstillinger. Det er vigtigt at sikre, at værktøjer og data er beskyttet mod uautoriseret adgang, databrud og andre sikkerhedstrusler.
+Sikkerhed er afgørende for MCP-implementeringer, især i virksomhedsmiljøer. Det er vigtigt at sikre, at værktøjer og data er beskyttet mod uautoriseret adgang, databrud og andre sikkerhedstrusler.
 
 ## Introduction
 
@@ -21,7 +21,7 @@ Ved slutningen af denne lektion vil du kunne:
 
 - Implementere sikre autentificerings- og autorisationsmekanismer for MCP-servere.
 - Beskytte følsomme data ved hjælp af kryptering og sikker lagring.
-- Sikre sikker udførelse af værktøjer med passende adgangskontrol.
+- Sikre sikker udførelse af værktøjer med korrekte adgangskontroller.
 - Anvende bedste praksis for databeskyttelse og overholdelse af privatlivsregler.
 
 ## Authentication and Authorization
@@ -32,13 +32,13 @@ Lad os se på eksempler på, hvordan man implementerer sikker autentificering og
 
 ### .NET Identity Integration
 
-ASP .NET Core Identity tilbyder en solid ramme til håndtering af brugerautentificering og autorisation. Vi kan integrere det med MCP-servere for at sikre adgang til værktøjer og ressourcer.
+ASP .NET Core Identity tilbyder et robust framework til håndtering af brugerautentificering og autorisation. Vi kan integrere det med MCP-servere for at sikre adgang til værktøjer og ressourcer.
 
 Der er nogle centrale begreber, vi skal forstå, når vi integrerer ASP.NET Core Identity med MCP-servere, nemlig:
 
-- **Identity Configuration**: Opsætning af ASP.NET Core Identity med brugerroller og claims. Et claim er en oplysning om brugeren, som fx deres rolle eller tilladelser, for eksempel "Admin" eller "User".
-- **JWT Authentication**: Brug af JSON Web Tokens (JWT) til sikker API-adgang. JWT er en standard til sikkert at overføre information mellem parter som et JSON-objekt, som kan verificeres og stoles på, fordi det er digitalt signeret.
-- **Authorization Policies**: Definering af politikker til at styre adgang til specifikke værktøjer baseret på brugerroller. MCP bruger autorisationspolitikker til at afgøre, hvilke brugere der kan få adgang til hvilke værktøjer baseret på deres roller og claims.
+- **Identity Configuration**: Opsætning af ASP.NET Core Identity med brugerroller og claims. Et claim er en oplysning om brugeren, såsom deres rolle eller tilladelser, for eksempel "Admin" eller "User".
+- **JWT Authentication**: Brug af JSON Web Tokens (JWT) til sikker API-adgang. JWT er en standard til sikker overførsel af information mellem parter som et JSON-objekt, som kan verificeres og stoles på, fordi det er digitalt signeret.
+- **Authorization Policies**: Definering af politikker for at kontrollere adgang til specifikke værktøjer baseret på brugerroller. MCP bruger autorisationspolitikker til at afgøre, hvilke brugere der kan få adgang til hvilke værktøjer baseret på deres roller og claims.
 
 ```csharp
 public class SecureMcpStartup
@@ -109,24 +109,24 @@ public class SecureMcpStartup
 }
 ```
 
-I koden ovenfor har vi:
+I den foregående kode har vi:
 
 - Konfigureret ASP.NET Core Identity til brugerstyring.
-- Opsat JWT-autentificering for sikker API-adgang. Vi specificerede token-valideringsparametre, herunder issuer, audience og signeringsnøgle.
-- Defineret autorisationspolitikker for at styre adgang til værktøjer baseret på brugerroller. For eksempel kræver "CanUseAdminTools"-politikken, at brugeren har rollen "Admin", mens "CanUseBasic"-politikken kræver, at brugeren er autentificeret.
-- Registreret MCP-værktøjer med specifikke autorisationskrav, så kun brugere med de rette roller kan få adgang til dem.
+- Opsat JWT-autentificering for sikker API-adgang. Vi specificerede tokenvalideringsparametre, herunder issuer, audience og signeringsnøgle.
+- Defineret autorisationspolitikker for at kontrollere adgang til værktøjer baseret på brugerroller. For eksempel kræver "CanUseAdminTools"-politikken, at brugeren har "Admin"-rollen, mens "CanUseBasic"-politikken kræver, at brugeren er autentificeret.
+- Registreret MCP-værktøjer med specifikke autorisationskrav, så kun brugere med passende roller kan få adgang til dem.
 
 ### Java Spring Security Integration
 
-For Java bruger vi Spring Security til at implementere sikker autentificering og autorisation for MCP-servere. Spring Security tilbyder en omfattende sikkerhedsramme, der integreres problemfrit med Spring-applikationer.
+For Java bruger vi Spring Security til at implementere sikker autentificering og autorisation for MCP-servere. Spring Security tilbyder et omfattende sikkerhedsframework, der integreres problemfrit med Spring-applikationer.
 
 Kernebegreber her er:
 
-- **Spring Security Configuration**: Opsætning af sikkerhedskonfigurationer til autentificering og autorisation.
-- **OAuth2 Resource Server**: Brug af OAuth2 til sikker adgang til MCP-værktøjer. OAuth2 er en autorisationsramme, der tillader tredjepartstjenester at udveksle adgangstokens for sikker API-adgang.
-- **Security Interceptors**: Implementering af sikkerhedsinterceptorer for at håndhæve adgangskontrol ved værktøjsudførelse.
+- **Spring Security Configuration**: Opsætning af sikkerhedskonfigurationer for autentificering og autorisation.
+- **OAuth2 Resource Server**: Brug af OAuth2 til sikker adgang til MCP-værktøjer. OAuth2 er et autorisationsframework, der tillader tredjepartstjenester at udveksle adgangstokens for sikker API-adgang.
+- **Security Interceptors**: Implementering af sikkerhedsinterceptorer for at håndhæve adgangskontroller ved værktøjsudførelse.
 - **Role-Based Access Control**: Brug af roller til at styre adgang til specifikke værktøjer og ressourcer.
-- **Security Annotations**: Brug af annoteringer til at sikre metoder og endpoints.
+- **Security Annotations**: Brug af annotationer til at sikre metoder og endpoints.
 
 ```java
 @Configuration
@@ -178,11 +178,11 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 }
 ```
 
-I koden ovenfor har vi:
+I den foregående kode har vi:
 
-- Konfigureret Spring Security til at sikre MCP-endpoints, så der er offentlig adgang til værktøjsopdagelse, mens autentificering kræves for værktøjsudførelse.
-- Brug OAuth2 som resource server til at håndtere sikker adgang til MCP-værktøjer.
-- Implementeret en sikkerhedsinterceptor for at håndhæve adgangskontrol ved værktøjsudførelse ved at tjekke brugerroller og tilladelser, før adgang til specifikke værktøjer gives.
+- Konfigureret Spring Security til at sikre MCP-endpoints, hvor værktøjsopdagelse er offentligt tilgængelig, mens autentificering kræves for værktøjsudførelse.
+- Brugte OAuth2 som resource server til at håndtere sikker adgang til MCP-værktøjer.
+- Implementeret en sikkerhedsinterceptor til at håndhæve adgangskontroller ved værktøjsudførelse, hvor brugerroller og tilladelser tjekkes, før adgang til specifikke værktøjer gives.
 - Defineret rollebaseret adgangskontrol for at begrænse adgang til admin-værktøjer og adgang til følsomme data baseret på brugerroller.
 
 ## Data Protection and Privacy
@@ -327,7 +327,7 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-I koden ovenfor har vi:
+I den foregående kode har vi:
 
 - Implementeret en `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
 - Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
@@ -336,7 +336,7 @@ I koden ovenfor har vi:
 
 ## What's next
 
-- [Web search](../web-search-mcp/README.md)
+- [5.9 Web search](../web-search-mcp/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.

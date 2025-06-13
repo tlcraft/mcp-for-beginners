@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b41174ac781ebf228b2043cbdfc09105",
-  "translation_date": "2025-06-12T00:41:22+00:00",
+  "original_hash": "195f7287638b77a549acadd96c8f981c",
+  "translation_date": "2025-06-13T00:41:26+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimestreaming/README.md",
   "language_code": "tl"
 }
@@ -11,88 +11,88 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Pangkalahatang-ideya
 
-Ang real-time data streaming ay naging mahalaga sa mundo ngayon na puno ng datos, kung saan ang mga negosyo at aplikasyon ay nangangailangan ng agarang access sa impormasyon upang makagawa ng napapanahong desisyon. Ang Model Context Protocol (MCP) ay isang makabuluhang hakbang sa pagpapahusay ng mga prosesong ito ng real-time streaming, na nagpapabuti sa kahusayan ng pagproseso ng datos, pagpapanatili ng kontekstwal na integridad, at pagpapahusay ng pangkalahatang performance ng sistema.
+Ang real-time data streaming ay naging mahalaga sa makabagong mundo na pinapalakad ng datos, kung saan kailangan ng mga negosyo at aplikasyon ng agarang access sa impormasyon upang makagawa ng napapanahong mga desisyon. Ang Model Context Protocol (MCP) ay isang malaking hakbang sa pag-optimize ng mga prosesong ito ng real-time streaming, pinapahusay ang kahusayan sa pagproseso ng datos, pinananatili ang integridad ng konteksto, at pinapabuti ang kabuuang pagganap ng sistema.
 
-Tinutuklas ng module na ito kung paano binabago ng MCP ang real-time data streaming sa pamamagitan ng pagbibigay ng standardisadong paraan ng pamamahala ng konteksto sa pagitan ng mga AI model, streaming platform, at mga aplikasyon.
+Tinutuklas ng modyul na ito kung paano binabago ng MCP ang real-time data streaming sa pamamagitan ng pagbibigay ng isang standard na paraan ng pamamahala ng konteksto sa pagitan ng mga AI models, streaming platforms, at mga aplikasyon.
 
 ## Panimula sa Real-Time Data Streaming
 
-Ang real-time data streaming ay isang teknolohikal na paradigma na nagpapahintulot sa tuloy-tuloy na paglilipat, pagproseso, at pagsusuri ng datos habang ito ay nalilikha, na nagbibigay-daan sa mga sistema na agad tumugon sa bagong impormasyon. Hindi tulad ng tradisyunal na batch processing na gumagana sa mga static na dataset, ang streaming ay nagpoproseso ng datos habang ito ay dumadaloy, nagbibigay ng mga insight at aksyon na may napakababang pagkaantala.
+Ang real-time data streaming ay isang teknolohikal na pamamaraan na nagpapahintulot sa tuloy-tuloy na paglipat, pagproseso, at pagsusuri ng datos habang ito ay nililikha, kaya't agad makakareact ang mga sistema sa bagong impormasyon. Hindi tulad ng tradisyunal na batch processing na gumagana sa mga static na dataset, pinoproseso ng streaming ang datos habang ito ay dumadaloy, nagbibigay ng mga insight at aksyon na may napakababang pagkaantala.
 
 ### Pangunahing Konsepto ng Real-Time Data Streaming:
 
-- **Tuloy-tuloy na Daloy ng Datos**: Ang datos ay pinoproseso bilang tuloy-tuloy at walang katapusang stream ng mga kaganapan o tala.
-- **Mababang Latency sa Pagproseso**: Ang mga sistema ay dinisenyo upang mabawasan ang oras mula sa paglikha ng datos hanggang sa pagproseso nito.
-- **Scalability**: Kailangang kayanin ng mga streaming arkitektura ang pabago-bagong dami at bilis ng datos.
-- **Fault Tolerance**: Dapat matibay ang sistema laban sa mga pagkabigo upang matiyak ang tuloy-tuloy na daloy ng datos.
-- **Stateful Processing**: Mahalaga ang pagpapanatili ng konteksto sa pagitan ng mga kaganapan para sa makahulugang pagsusuri.
+- **Tuloy-tuloy na Daloy ng Datos**: Pinoproseso ang datos bilang isang tuloy-tuloy at walang katapusang daloy ng mga kaganapan o tala.
+- **Mababang Latency na Pagproseso**: Dinisenyo ang mga sistema upang mabawasan ang oras mula sa paglikha hanggang sa pagproseso ng datos.
+- **Scalability**: Kailangang kayanin ng mga streaming architecture ang pabago-bagong dami at bilis ng datos.
+- **Fault Tolerance**: Kailangang matibay ang sistema laban sa mga pagkakamali upang mapanatili ang tuloy-tuloy na daloy ng datos.
+- **Stateful Processing**: Mahalaga ang pagpapanatili ng konteksto sa pagitan ng mga kaganapan para sa makabuluhang pagsusuri.
 
 ### Ang Model Context Protocol at Real-Time Streaming
 
-Tinatalakay ng Model Context Protocol (MCP) ang ilang mahahalagang hamon sa mga real-time streaming na kapaligiran:
+Tinatalakay ng Model Context Protocol (MCP) ang ilang mahahalagang hamon sa mga real-time streaming environment:
 
-1. **Pagpapatuloy ng Konteksto**: Iniaayos ng MCP kung paano pinananatili ang konteksto sa iba't ibang bahagi ng streaming, na tinitiyak na may access ang mga AI model at processing nodes sa mahalagang kasaysayan at kapaligirang konteksto.
+1. **Pagpapatuloy ng Konteksto**: Ipinapantay ng MCP kung paano pinananatili ang konteksto sa mga distributed streaming components, tinitiyak na may access ang mga AI models at processing nodes sa mahalagang kasaysayan at pangkapaligirang konteksto.
 
-2. **Mahusay na Pamamahala ng Estado**: Sa pamamagitan ng pagbibigay ng istrukturadong mekanismo para sa paghahatid ng konteksto, binabawasan ng MCP ang overhead sa pamamahala ng estado sa mga streaming pipeline.
+2. **Epektibong Pamamahala ng Estado**: Sa pamamagitan ng pagbibigay ng istrukturadong mekanismo para sa pagpapadala ng konteksto, binabawasan ng MCP ang overhead ng pamamahala ng estado sa mga streaming pipeline.
 
-3. **Interoperability**: Lumilikha ang MCP ng karaniwang wika para sa pagbabahagi ng konteksto sa pagitan ng iba't ibang streaming teknolohiya at AI model, na nagbibigay-daan sa mas flexible at extensible na arkitektura.
+3. **Interoperability**: Lumilikha ang MCP ng isang karaniwang wika para sa pagbabahagi ng konteksto sa pagitan ng iba't ibang streaming teknolohiya at AI models, na nagpapahintulot ng mas flexible at pinalawak na mga arkitektura.
 
-4. **Streaming-Optimized na Konteksto**: Maaaring unahin ng mga implementasyon ng MCP kung alin sa mga elemento ng konteksto ang pinakamahalaga para sa real-time na pagdedesisyon, na nag-ooptimize sa performance at katumpakan.
+4. **Streaming-Optimized na Konteksto**: Maaaring unahin ng mga implementasyon ng MCP kung alin sa mga elemento ng konteksto ang pinaka-mahalaga para sa real-time na paggawa ng desisyon, na nag-o-optimize para sa parehong pagganap at katumpakan.
 
-5. **Adaptive Processing**: Sa tamang pamamahala ng konteksto gamit ang MCP, maaaring dynamic na i-adjust ng mga streaming system ang pagproseso batay sa nagbabagong kondisyon at pattern sa datos.
+5. **Adaptive Processing**: Sa wastong pamamahala ng konteksto gamit ang MCP, maaaring dynamic na i-adjust ng mga streaming system ang pagproseso batay sa nagbabagong kondisyon at pattern ng datos.
 
-Sa mga modernong aplikasyon mula sa IoT sensor networks hanggang sa financial trading platforms, ang integrasyon ng MCP sa streaming teknolohiya ay nagpapahintulot ng mas matalino, konteksto-may malay na pagproseso na kayang tumugon nang angkop sa mga komplikado at pabago-bagong sitwasyon sa real time.
+Sa mga makabagong aplikasyon mula sa IoT sensor networks hanggang sa financial trading platforms, ang pagsasama ng MCP sa mga streaming teknolohiya ay nagbibigay-daan sa mas matalino, konteksto-napapansin na pagproseso na kayang tumugon nang naaayon sa mga komplikado at nagbabagong sitwasyon sa real time.
 
 ## Mga Layunin sa Pagkatuto
 
 Sa pagtatapos ng araling ito, magagawa mong:
 
-- Maunawaan ang mga batayan ng real-time data streaming at ang mga hamon nito
+- Maunawaan ang mga pundasyon ng real-time data streaming at ang mga hamon nito
 - Ipaliwanag kung paano pinapahusay ng Model Context Protocol (MCP) ang real-time data streaming
-- Magpatupad ng mga solusyon sa streaming gamit ang MCP gamit ang mga kilalang framework tulad ng Kafka at Pulsar
-- Magdisenyo at mag-deploy ng fault-tolerant at mataas na performance na streaming arkitektura gamit ang MCP
-- Ilapat ang mga konsepto ng MCP sa mga use case tulad ng IoT, financial trading, at AI-driven analytics
-- Suriin ang mga bagong uso at mga hinaharap na inobasyon sa MCP-based streaming teknolohiya
+- Magpatupad ng MCP-based streaming solutions gamit ang mga kilalang framework tulad ng Kafka at Pulsar
+- Magdisenyo at mag-deploy ng fault-tolerant, mataas na pagganap na streaming architecture gamit ang MCP
+- I-apply ang mga konsepto ng MCP sa IoT, financial trading, at AI-driven analytics na mga kaso
+- Suriin ang mga umuusbong na trend at mga inobasyon sa hinaharap sa MCP-based streaming technologies
 
 ### Kahulugan at Kahalagahan
 
-Ang real-time data streaming ay tumutukoy sa tuloy-tuloy na paglikha, pagproseso, at paghahatid ng datos na may napakababang pagkaantala. Hindi tulad ng batch processing na kinokolekta at pinoproseso ang datos nang sabay-sabay, ang streaming data ay pinoproseso nang paunti-unti habang dumarating ito, na nagbibigay-daan sa agarang insight at aksyon.
+Ang real-time data streaming ay kinapapalooban ng tuloy-tuloy na paglikha, pagproseso, at paghahatid ng datos na may napakababang latency. Hindi tulad ng batch processing na nagtitipon at nagpoproseso ng datos nang sabay-sabay, pinoproseso ang streaming data nang paunti-unti habang dumarating, na nagbibigay-daan sa agarang insight at aksyon.
 
 Mga pangunahing katangian ng real-time data streaming:
 
-- **Mababang Latency**: Pagproseso at pagsusuri ng datos sa loob ng millisecond hanggang segundo
-- **Tuloy-tuloy na Daloy**: Hindi napuputol na stream ng datos mula sa iba't ibang pinagmulan
-- **Agarang Pagproseso**: Pagsusuri ng datos habang ito ay dumarating, hindi sa batch
+- **Mababang Latency**: Pagproseso at pagsusuri ng datos sa loob ng milliseconds hanggang segundo
+- **Tuloy-tuloy na Daloy**: Hindi napuputol na daloy ng datos mula sa iba't ibang pinagmulan
+- **Agarang Pagproseso**: Pagsusuri ng datos habang dumarating, hindi pa sa batches
 - **Event-Driven Architecture**: Pagtugon sa mga kaganapan habang nangyayari
 
 ### Mga Hamon sa Tradisyunal na Data Streaming
 
-Ang tradisyunal na paraan ng data streaming ay may ilang limitasyon:
+Nahaharap ang tradisyunal na mga pamamaraan sa streaming sa ilang mga limitasyon:
 
-1. **Pagkawala ng Konteksto**: Hirap panatilihin ang konteksto sa mga distributed na sistema
-2. **Mga Isyu sa Scalability**: Hamon sa pag-scale upang kayanin ang mataas na dami at bilis ng datos
-3. **Kumplikadong Integrasyon**: Problema sa interoperability sa pagitan ng iba't ibang sistema
+1. **Pagkawala ng Konteksto**: Hirap panatilihin ang konteksto sa mga distributed system
+2. **Mga Isyu sa Scalability**: Hamon sa pag-scale para hawakan ang mataas na dami at bilis ng datos
+3. **Kompleksidad sa Integrasyon**: Problema sa interoperability sa pagitan ng iba't ibang sistema
 4. **Pamamahala ng Latency**: Pagbabalanse ng throughput at oras ng pagproseso
-5. **Konsistensi ng Datos**: Pagtiyak ng katumpakan at kumpletong datos sa buong stream
+5. **Konsistensi ng Datos**: Pagtitiyak ng katumpakan at kumpletong datos sa buong stream
 
 ## Pag-unawa sa Model Context Protocol (MCP)
 
 ### Ano ang MCP?
 
-Ang Model Context Protocol (MCP) ay isang standardisadong protocol ng komunikasyon na dinisenyo upang mapadali ang epektibong interaksyon sa pagitan ng mga AI model at aplikasyon. Sa konteksto ng real-time data streaming, nagbibigay ang MCP ng balangkas para sa:
+Ang Model Context Protocol (MCP) ay isang standardisadong komunikasyon na protocol na idinisenyo upang mapadali ang epektibong interaksyon sa pagitan ng AI models at mga aplikasyon. Sa konteksto ng real-time data streaming, nagbibigay ang MCP ng balangkas para sa:
 
 - Pagpapanatili ng konteksto sa buong data pipeline
-- Standardisasyon ng mga format ng pagpapalitan ng datos
-- Pag-optimize sa paghahatid ng malalaking dataset
+- Standardisasyon ng mga format ng palitan ng datos
+- Pag-optimize ng pagpapadala ng malalaking dataset
 - Pagpapahusay ng komunikasyon mula model-to-model at model-to-application
 
-### Pangunahing Bahagi at Arkitektura
+### Pangunahing Komponent at Arkitektura
 
-Binubuo ang MCP arkitektura para sa real-time streaming ng ilang mahahalagang bahagi:
+Binubuo ang MCP architecture para sa real-time streaming ng mga sumusunod na pangunahing bahagi:
 
-1. **Context Handlers**: Namamahala at nagpapanatili ng kontekstwal na impormasyon sa buong streaming pipeline
-2. **Stream Processors**: Nagpoproseso ng papasok na data streams gamit ang mga teknik na may kontekstwal na kamalayan
-3. **Protocol Adapters**: Nagko-convert sa pagitan ng iba't ibang streaming protocol habang pinapanatili ang konteksto
+1. **Context Handlers**: Nangangasiwa at nagpapanatili ng kontekstwal na impormasyon sa buong streaming pipeline
+2. **Stream Processors**: Nagpoproseso ng mga papasok na data stream gamit ang mga teknik na may kamalayan sa konteksto
+3. **Protocol Adapters**: Nagko-convert sa pagitan ng iba't ibang streaming protocol habang pinananatili ang konteksto
 4. **Context Store**: Epektibong nag-iimbak at kumukuha ng kontekstwal na impormasyon
 5. **Streaming Connectors**: Kumokonekta sa iba't ibang streaming platform (Kafka, Pulsar, Kinesis, atbp.)
 
@@ -164,45 +164,45 @@ graph TD
     class DA,Alerts,DL,API apps
 ```
 
-### Paano Pinapabuti ng MCP ang Real-Time Data Handling
+### Paano Pinapahusay ng MCP ang Real-Time Data Handling
 
-Nilalabanan ng MCP ang mga tradisyunal na hamon sa streaming sa pamamagitan ng:
+Tinatalakay ng MCP ang mga tradisyunal na hamon sa streaming sa pamamagitan ng:
 
-- **Integridad ng Konteksto**: Pinapanatili ang ugnayan ng mga punto ng datos sa buong pipeline
-- **Na-optimize na Paghahatid**: Binabawasan ang pag-uulit sa pagpapalitan ng datos gamit ang matalinong pamamahala ng konteksto
+- **Integridad ng Konteksto**: Pinananatili ang ugnayan ng mga datos sa buong pipeline
+- **Optimizadong Pagpapadala**: Binabawasan ang pag-uulit sa palitan ng datos gamit ang matalinong pamamahala ng konteksto
 - **Standardisadong Interface**: Nagbibigay ng pare-parehong API para sa mga streaming component
-- **Pinababang Latency**: Minimina ang overhead sa pagproseso sa pamamagitan ng epektibong paghawak ng konteksto
-- **Pinahusay na Scalability**: Sinusuportahan ang horizontal scaling habang pinapanatili ang konteksto
+- **Pinababang Latency**: Pinapaliit ang overhead sa pagproseso gamit ang epektibong pamamahala ng konteksto
+- **Pinahusay na Scalability**: Sinusuportahan ang horizontal scaling habang pinananatili ang konteksto
 
 ## Integrasyon at Implementasyon
 
-Ang mga real-time data streaming system ay nangangailangan ng maingat na disenyo ng arkitektura at implementasyon upang mapanatili ang parehong performance at kontekstwal na integridad. Nagbibigay ang Model Context Protocol ng standardisadong paraan para sa integrasyon ng mga AI model at streaming teknolohiya, na nagpapahintulot ng mas sopistikadong, konteksto-may malay na mga pipeline ng pagproseso.
+Kailangang maingat ang disenyo at implementasyon ng mga real-time data streaming system upang mapanatili ang parehong pagganap at integridad ng konteksto. Nagbibigay ang Model Context Protocol ng standardisadong paraan upang isama ang AI models at streaming teknolohiya, na nagpapahintulot ng mas sopistikadong, konteksto-napapansin na mga pipeline ng pagproseso.
 
-### Pangkalahatang-ideya ng MCP Integration sa Streaming Arkitektura
+### Pangkalahatang-ideya ng MCP Integrasyon sa Streaming Architecture
 
-Ang pagpapatupad ng MCP sa real-time streaming na kapaligiran ay may ilang mahahalagang konsiderasyon:
+Kasama sa implementasyon ng MCP sa mga real-time streaming environment ang ilang mahahalagang konsiderasyon:
 
-1. **Context Serialization at Transport**: Nagbibigay ang MCP ng epektibong mekanismo para sa encoding ng kontekstwal na impormasyon sa loob ng streaming data packet, na tinitiyak na ang mahalagang konteksto ay sumusunod sa datos sa buong pipeline ng pagproseso. Kasama dito ang standardisadong serialization format na optimized para sa streaming transport.
+1. **Context Serialization at Transport**: Nagbibigay ang MCP ng epektibong mekanismo para sa pag-encode ng kontekstwal na impormasyon sa loob ng mga streaming data packet, tinitiyak na ang mahalagang konteksto ay sumusunod sa datos sa buong pipeline ng pagproseso. Kasama dito ang mga standardisadong serialization format na na-optimize para sa streaming transport.
 
-2. **Stateful Stream Processing**: Pinapahintulutan ng MCP ang mas matalinong stateful processing sa pamamagitan ng pagpapanatili ng consistent na representasyon ng konteksto sa iba't ibang processing nodes. Mahalaga ito lalo na sa mga distributed streaming arkitektura kung saan tradisyunal na mahirap ang pamamahala ng estado.
+2. **Stateful Stream Processing**: Pinapagana ng MCP ang mas matalinong stateful processing sa pamamagitan ng pagpapanatili ng pare-parehong representasyon ng konteksto sa mga processing node. Mahalaga ito sa mga distributed streaming architecture kung saan tradisyunal na mahirap ang pamamahala ng estado.
 
-3. **Event-Time kumpara sa Processing-Time**: Dapat tugunan ng mga implementasyon ng MCP sa streaming system ang karaniwang hamon ng pagkakaiba ng oras kung kailan naganap ang mga kaganapan at kung kailan ito pinoproseso. Maaaring isama ng protocol ang temporal na konteksto na nagpapanatili ng event time semantics.
+3. **Event-Time kumpara sa Processing-Time**: Kailangang tugunan ng mga implementasyon ng MCP sa streaming system ang karaniwang hamon ng pagkakaiba ng oras kung kailan naganap ang mga kaganapan at kung kailan ito pinoproseso. Maaaring isama ng protocol ang temporal na konteksto na nagpapanatili ng event time semantics.
 
-4. **Pamamahala ng Backpressure**: Sa pamamagitan ng standardisadong paghawak ng konteksto, tinutulungan ng MCP ang pamamahala ng backpressure sa streaming system, na nagpapahintulot sa mga bahagi na iparating ang kanilang kakayahan sa pagproseso at i-adjust ang daloy nang naaayon.
+4. **Pamamahala ng Backpressure**: Sa pamamagitan ng standardisadong pamamahala ng konteksto, tumutulong ang MCP sa pag-manage ng backpressure sa streaming system, na nagpapahintulot sa mga component na ipahayag ang kanilang kakayahan sa pagproseso at i-adjust ang daloy nang naaayon.
 
-5. **Context Windowing at Aggregation**: Pinapadali ng MCP ang mas sopistikadong windowing operation sa pamamagitan ng pagbibigay ng istrukturadong representasyon ng temporal at relational na konteksto, na nagpapahintulot ng mas makahulugang aggregation sa mga event stream.
+5. **Context Windowing at Aggregation**: Pinapadali ng MCP ang mas sopistikadong windowing operation sa pamamagitan ng pagbibigay ng istrukturadong representasyon ng temporal at relational na konteksto, na nagpapahintulot ng mas makabuluhang aggregation sa mga event stream.
 
-6. **Exactly-Once Processing**: Sa mga streaming system na nangangailangan ng exactly-once semantics, maaaring isama ng MCP ang processing metadata upang makatulong sa pagsubaybay at pagpapatunay ng status ng pagproseso sa mga distributed na bahagi.
+6. **Exactly-Once Processing**: Sa mga streaming system na nangangailangan ng exactly-once semantics, maaaring isama ng MCP ang processing metadata upang makatulong sa pagsubaybay at pagpapatunay ng status ng pagproseso sa mga distributed na component.
 
-Ang implementasyon ng MCP sa iba't ibang streaming teknolohiya ay lumilikha ng pinag-isang paraan sa pamamahala ng konteksto, na nagpapabawas sa pangangailangan ng custom integration code habang pinapalakas ang kakayahan ng sistema na mapanatili ang makahulugang konteksto habang dumadaloy ang datos sa pipeline.
+Ang implementasyon ng MCP sa iba't ibang streaming teknolohiya ay lumilikha ng pinag-isang paraan ng pamamahala ng konteksto, na nagpapababa ng pangangailangan para sa custom integration code habang pinapalakas ang kakayahan ng sistema na mapanatili ang makabuluhang konteksto habang dumadaloy ang datos sa pipeline.
 
 ### MCP sa Iba't Ibang Data Streaming Framework
 
-Ang mga halimbawa ay sumusunod sa kasalukuyang MCP specification na nakatuon sa JSON-RPC based na protocol na may iba't ibang transport mechanism. Ipinapakita ng code kung paano magpatupad ng custom transports na nag-iintegrate ng streaming platform tulad ng Kafka at Pulsar habang pinapanatili ang buong compatibility sa MCP protocol.
+Ang mga halimbawang ito ay sumusunod sa kasalukuyang MCP specification na nakatuon sa isang JSON-RPC based na protocol na may magkakaibang mekanismo ng transport. Ipinapakita ng code kung paano magpatupad ng custom transport na nagsasama ng mga streaming platform tulad ng Kafka at Pulsar habang pinananatili ang buong compatibility sa MCP protocol.
 
-Dinisenyo ang mga halimbawa upang ipakita kung paano maaaring i-integrate ang mga streaming platform sa MCP upang magbigay ng real-time data processing habang pinapanatili ang kontekstwal na kamalayan na sentro ng MCP. Tinitiyak ng pamamaraang ito na ang mga sample code ay tumpak na nagrereplekta ng kasalukuyang estado ng MCP specification hanggang Hunyo 2025.
+Dinisenyo ang mga halimbawa upang ipakita kung paano maaaring isama ang mga streaming platform sa MCP upang magbigay ng real-time na pagproseso ng datos habang pinapanatili ang kontekstwal na kamalayan na sentro sa MCP. Tinitiyak ng pamamaraang ito na ang mga code sample ay tumpak na sumasalamin sa kasalukuyang estado ng MCP specification hanggang Hunyo 2025.
 
-Maaaring i-integrate ang MCP sa mga kilalang streaming framework kabilang ang:
+Maaaring isama ang MCP sa mga kilalang streaming framework kabilang ang:
 
 #### Apache Kafka Integration
 
@@ -516,36 +516,36 @@ if __name__ == "__main__":
 
 ### Mga Pinakamahusay na Praktis para sa Deployment
 
-Kapag nag-implementa ng MCP para sa real-time streaming:
+Kapag nag-implement ng MCP para sa real-time streaming:
 
 1. **Disenyo para sa Fault Tolerance**:
-   - Magpatupad ng wastong error handling
+   - Magpatupad ng tamang error handling
    - Gumamit ng dead-letter queues para sa mga nabigong mensahe
-   - Magdisenyo ng idempotent na mga processor
+   - Magdisenyo ng idempotent processors
 
-2. **I-optimize para sa Performance**:
-   - I-configure ang tamang laki ng buffer
-   - Gumamit ng batching kung angkop
-   - Magpatupad ng mga mekanismo para sa backpressure
+2. **I-optimize para sa Pagganap**:
+   - I-configure ang angkop na laki ng buffer
+   - Gumamit ng batching kung naaangkop
+   - Magpatupad ng backpressure mechanisms
 
 3. **Mag-monitor at Mag-obserba**:
    - Subaybayan ang mga metric ng stream processing
    - I-monitor ang propagation ng konteksto
-   - Mag-set up ng alerto para sa mga anomaly
+   - Mag-set up ng alert para sa mga anomalya
 
-4. **Siguraduhin ang Seguridad ng Iyong Streams**:
+4. **Siguraduhin ang Seguridad ng Iyong Stream**:
    - Magpatupad ng encryption para sa sensitibong datos
    - Gumamit ng authentication at authorization
-   - Mag-apply ng tamang access control
+   - I-apply ang tamang access controls
 
 ### MCP sa IoT at Edge Computing
 
-Pinapahusay ng MCP ang IoT streaming sa pamamagitan ng:
+Pinapalakas ng MCP ang IoT streaming sa pamamagitan ng:
 
 - Pagpapanatili ng konteksto ng device sa buong pipeline ng pagproseso
 - Pagpapahintulot ng epektibong edge-to-cloud data streaming
 - Pagsuporta sa real-time analytics sa IoT data stream
-- Pagpapadali ng komunikasyon mula device-to-device gamit ang konteksto
+- Pagpapadali ng device-to-device communication na may konteksto
 
 Halimbawa: Smart City Sensor Networks  
 ```
@@ -554,87 +554,88 @@ Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → 
 
 ### Papel sa Financial Transactions at High-Frequency Trading
 
-Nagbibigay ang MCP ng mahahalagang benepisyo para sa financial data streaming:
+Nagbibigay ang MCP ng malalaking benepisyo para sa financial data streaming:
 
-- Napakababang latency sa pagproseso para sa mga trading decision
-- Pagpapanatili ng konteksto ng transaksyon sa buong proseso
+- Ultra-low latency na pagproseso para sa mga trading decision
+- Pagpapanatili ng transaction context sa buong proseso
 - Pagsuporta sa complex event processing na may kontekstwal na kamalayan
-- Pagtiyak ng konsistensi ng datos sa mga distributed trading system
+- Pagtitiyak ng data consistency sa mga distributed trading system
 
-### Pagpapahusay sa AI-Driven Data Analytics
+### Pagpapahusay ng AI-Driven Data Analytics
 
-Lumilikha ang MCP ng bagong mga posibilidad para sa streaming analytics:
+Lumilikha ang MCP ng mga bagong posibilidad para sa streaming analytics:
 
-- Real-time na pagsasanay at inference ng modelo
+- Real-time na training at inference ng modelo
 - Tuloy-tuloy na pagkatuto mula sa streaming data
-- Konteksto-may malay na feature extraction
+- Context-aware na feature extraction
 - Multi-model inference pipeline na may pinananatiling konteksto
 
-## Mga Hinaharap na Uso at Inobasyon
+## Mga Hinaharap na Trend at Inobasyon
 
-### Ebolusyon ng MCP sa Real-Time na Kapaligiran
+### Ebolusyon ng MCP sa Real-Time Environment
 
-Sa hinaharap, inaasahan nating mag-evolve ang MCP upang tugunan ang:
+Sa hinaharap, inaasahan nating lalago ang MCP upang tugunan ang:
 
 - **Integrasyon ng Quantum Computing**: Paghahanda para sa quantum-based streaming system
-- **Edge-Native Processing**: Paglilipat ng mas maraming konteksto-may malay na pagproseso sa mga edge device
+- **Edge-Native Processing**: Ilipat ang mas maraming konteksto-napapansing pagproseso sa mga edge device
 - **Autonomous Stream Management**: Mga streaming pipeline na self-optimizing
-- **Federated Streaming**: Distributed processing habang pinapanatili ang privacy
+- **Federated Streaming**: Distributed na pagproseso habang pinananatili ang privacy
 
-### Mga Posibleng Pagsulong sa Teknolohiya
+### Mga Posibleng Pag-unlad sa Teknolohiya
 
 Mga umuusbong na teknolohiya na huhubog sa hinaharap ng MCP streaming:
 
-1. **AI-Optimized Streaming Protocols**: Mga custom protocol na disenyo para sa AI workloads
+1. **AI-Optimized Streaming Protocols**: Mga custom na protocol na idinisenyo para sa AI workload
 2. **Neuromorphic Computing Integration**: Brain-inspired computing para sa stream processing
-3. **Serverless Streaming**: Event-driven, scalable streaming na walang infrastructure management
-4. **Distributed Context Stores**: Global na distributed ngunit highly consistent na pamamahala ng konteksto
+3. **Serverless Streaming**: Event-driven, scalable streaming na walang pamamahala ng imprastraktura
+4. **Distributed Context Stores**: Globally distributed ngunit mataas ang consistency na pamamahala ng konteksto
 
 ## Mga Hands-On na Ehersisyo
 
-### Ehersisyo 1: Pag-setup ng Basic MCP Streaming Pipeline
+### Ehersisyo 1: Pag-set Up ng Basic MCP Streaming Pipeline
 
 Sa ehersisyong ito, matututuhan mo kung paano:
 
-- I-configure ang basic MCP streaming environment
+- I-configure ang isang basic MCP streaming environment
 - Magpatupad ng context handlers para sa stream processing
-- Subukan at i-validate ang pagpapanatili ng konteksto
+- Subukan at patunayan ang pagpapanatili ng konteksto
 
 ### Ehersisyo 2: Paggawa ng Real-Time Analytics Dashboard
 
-Gumawa ng kompletong aplikasyon na:
+Gumawa ng isang kumpletong aplikasyon na:
 
-- Nangongolekta ng streaming data gamit ang MCP
+- Kumukuha ng streaming data gamit ang MCP
 - Pinoproseso ang stream habang pinananatili ang konteksto
-- Nagpapakita ng resulta nang real-time
+- Nagpapakita ng mga resulta sa real-time
 
-### Ehersisyo 3: Pagpapatupad ng Complex Event Processing gamit ang MCP
+### Ehersisyo 3: Pag-implement ng Complex Event Processing gamit ang MCP
 
 Advanced na ehersisyo na sumasaklaw sa:
 
-- Pagtuklas ng pattern sa mga stream
-- Koneksyon ng konteksto sa iba't ibang stream
-- Pagbuo ng complex event na may pinananatiling konteksto
+- Pag-detect ng pattern sa mga stream
+- Kontekstwal na korelasyon sa pagitan ng maraming stream
+- Pagbuo ng mga complex event na may pinananatiling konteksto
 
-## Karagdagang Mga Mapagkukunan
+## Karagdagang Mga Sanggunian
 
 - [Model Context Protocol Specification](https://github.com/modelcontextprotocol) - Opisyal na MCP specification at dokumentasyon
-- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Matuto tungkol sa Kafka para sa stream processing
+- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Alamin ang tungkol sa Kafka para sa stream processing
 - [Apache Pulsar](https://pulsar.apache.org/) - Pinagsamang messaging at streaming platform
-- [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - Komprehensibong libro tungkol sa streaming arkitektura
+- [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - Komprehensibong libro tungkol sa streaming architecture
 - [Microsoft Azure Event Hubs](https://learn.microsoft.com/azure/event-hubs/event-hubs-about) - Managed event streaming service
 - [MLflow Documentation](https://mlflow.org/docs/latest/index.html) - Para sa ML model tracking at deployment
-- [Real-Time Analytics with Apache Storm](https://storm.apache.org/releases/current/index.html) - Framework para sa real-time computation
+- [Real-Time Analytics with Apache Storm](https://storm.apache.org/releases/current/index.html) - Framework para sa real-time na komputasyon
 - [Flink ML](https://nightlies.apache.org/flink/flink-ml-docs-master/) - Machine learning library para sa Apache Flink
-- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Paggawa ng aplikasyon gamit ang LLMs
+- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Paggawa ng mga aplikasyon gamit ang LLMs
 
-## Mga Kinalabasan ng Pagkatuto
+## Mga Resulta ng Pagkatuto
 
-Sa pagtatapos ng module na ito, magagawa mong:
+Sa pagtatapos ng modyul na ito, magagawa mong:
 
-- Maunawaan ang mga batayan ng real-time data streaming at ang mga hamon nito
+- Maunawaan ang mga pundasyon ng real-time data streaming at ang mga hamon nito
 - Ipaliwanag kung paano pinapahusay ng Model Context Protocol (MCP) ang real-time data streaming
-- Magpatupad ng mga solusyon sa streaming gamit ang MCP gamit ang mga kilalang framework tulad
+- Magpatupad ng MCP-based streaming solution gamit ang mga kilalang framework tulad ng Kafka at Pulsar
+- Magdisenyo at mag-de
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang serbisyong AI na pagsasalin [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o kamalian. Ang orihinal na dokumento sa kanyang orihinal na wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaintindihan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

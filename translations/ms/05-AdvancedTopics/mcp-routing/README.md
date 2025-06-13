@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a621fc52c7daec552eb8b3b48c0361dd",
-  "translation_date": "2025-06-02T19:48:07+00:00",
+  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
+  "translation_date": "2025-06-13T00:37:52+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "ms"
 }
 -->
-## Схема выборки и маршрутизации в MCP
+## MCP-ում նմուշառում և երթուղավորումի ճարտարապետություն
 
-Выборка — это ключевой элемент Model Context Protocol (MCP), который позволяет эффективно обрабатывать и маршрутизировать запросы. Она включает анализ входящих запросов для определения наиболее подходящей модели или сервиса для их обработки на основе различных критериев, таких как тип содержимого, контекст пользователя и нагрузка на систему.
+Նմուշարումը Model Context Protocol (MCP)-ի կարևոր բաղադրիչ է, որը հնարավորություն է տալիս արդյունավետ մշակել և երթուղավորել հարցումները: Այն ներառում է ներթափանցող հարցումների վերլուծություն՝ որոշելու համար ամենահարմար մոդելը կամ ծառայությունը, որը կկառավարի դրանք՝ հիմնվելով տարբեր չափանիշների վրա, ինչպիսիք են բովանդակության տեսակը, օգտվողի կոնտեքստը և համակարգի բեռնվածությունը:
 
-Выборка и маршрутизация могут сочетаться для создания надежной архитектуры, оптимизирующей использование ресурсов и обеспечивающей высокую доступность. Процесс выборки используется для классификации запросов, а маршрутизация направляет их к соответствующим моделям или сервисам.
+Նմուշարումը և երթուղավորումը կարող են համատեղ օգտագործվել՝ ստեղծելով ամուր ճարտարապետություն, որը օպտիմալացնում է ռեսուրսների օգտագործումը և ապահովում բարձր հասանելիություն: Նմուշարումն օգտագործվում է հարցումների դասակարգման համար, իսկ երթուղավորումը ուղղորդում է դրանք համապատասխան մոդելներին կամ ծառայություններին:
 
-На диаграмме ниже показано, как выборка и маршрутизация взаимодействуют в комплексной архитектуре MCP:
+Ստորև ներկայացված է դիագրամ, որը ցույց է տալիս, թե ինչպես են նմուշարումն ու երթուղավորումը միասին աշխատում MCP-ի համապարփակ ճարտարապետության մեջ:
 
 ```mermaid
 flowchart TB
@@ -80,9 +80,9 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Что дальше
+## Ի՞նչ է հաջորդը
 
-- [Sampling](../mcp-sampling/README.md)
+- [5.6 Նմուշառում](../mcp-sampling/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

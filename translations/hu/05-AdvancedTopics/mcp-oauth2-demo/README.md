@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T19:27:20+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-13T00:51:24+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "hu"
 }
@@ -11,14 +11,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ez a projekt egy **minimális Spring Boot alkalmazás**, amely egyszerre működik:
 
-* mint **Spring Authorization Server** (JWT hozzáférési tokeneket bocsát ki a `client_credentials` folyamat segítségével), és  
-* mint **Resource Server** (védi a saját `/hello` végpontját).
+* **Spring Authorization Server-ként** (JWT hozzáférési tokeneket bocsát ki a `client_credentials` folyamat segítségével), és  
+* **Resource Server-ként** (védi a saját `/hello` végpontját).
 
-Ez a beállítás megegyezik a [Spring blogbejegyzésben (2025. április 2.)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) bemutatottal.
+Ez a beállítás megfelel a [Spring blogbejegyzésben (2025. április 2.)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) bemutatottnak.
 
 ---
 
-## Gyors indítás (helyi)
+## Gyors kezdés (helyi)
 
 ```bash
 # build & run
@@ -38,14 +38,14 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 Az OAuth2 biztonsági beállításokat a következő lépésekkel tesztelheted:
 
-### 1. Ellenőrizd, hogy a szerver fut és védett
+### 1. Ellenőrizd, hogy a szerver fut és biztonságos
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Szerezz hozzáférési tokent kliens hitelesítő adatokkal
+### 2. Szerezz hozzáférési tokent kliens-hitelesítéssel
 
 ```bash
 # Get and extract the full token response
@@ -63,7 +63,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
 
 Megjegyzés: A Basic Authentication fejléc (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Érd el a védett végpontot a tokennel
+### 3. Használd a tokent a védett végpont eléréséhez
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Ha sikeres választ kapsz "Hello from MCP OAuth2 Demo!" üzenettel, az azt jelenti, hogy az OAuth2 konfiguráció helyesen működik.
+Ha a válaszban megjelenik a "Hello from MCP OAuth2 Demo!", az azt jelenti, hogy az OAuth2 konfiguráció helyesen működik.
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Telepítés **Azure Container Apps**-be
+## Telepítés **Azure Container Apps** szolgáltatásba
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -100,7 +100,7 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 ---
 
-## Integráció **Azure API Management**-be
+## Integráció az **Azure API Management**-be
 
 Add hozzá ezt a bejövő szabályt az API-dhoz:
 
@@ -116,13 +116,13 @@ Add hozzá ezt a bejövő szabályt az API-dhoz:
 </inbound>
 ```
 
-Az APIM lekéri a JWKS-t és érvényesíti az összes kérést.
+Az APIM lekéri a JWKS-t és minden kérést érvényesít.
 
 ---
 
-## Mi következik ezután
+## Mi a következő lépés
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
-**Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből eredő félreértésekért vagy téves értelmezésekért.
+**Nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk pontos fordítást biztosítani, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.

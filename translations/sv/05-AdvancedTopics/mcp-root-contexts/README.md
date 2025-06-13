@@ -1,35 +1,43 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e1cbc99fa7185139ad6d539eca09a2b3",
-  "translation_date": "2025-06-02T20:27:48+00:00",
+  "original_hash": "8311f46a35cf608c9780f39b62c9dc3f",
+  "translation_date": "2025-06-13T00:03:50+00:00",
   "source_file": "05-AdvancedTopics/mcp-root-contexts/README.md",
   "language_code": "sv"
 }
 -->
-## Root Context Bästa Praxis
+## Exempel: Hantering av Root Context
 
-Här är några bästa praxis för att effektivt hantera root contexts:
+Att hantera root contexts effektivt är avgörande för att bevara konversationshistorik och tillstånd. Nedan följer ett exempel på hur man implementerar hantering av root contexts.
 
-- **Skapa Fokuserade Contexts**: Skapa separata root contexts för olika samtalsändamål eller domäner för att behålla tydlighet.
+## Root Context för flerstegsassistans
 
-- **Sätt Utgångspolicys**: Implementera policys för att arkivera eller ta bort gamla contexts för att hantera lagring och följa datalagringsregler.
+I detta exempel skapar vi en root context för en session med flerstegsassistans, där vi visar hur man bevarar tillstånd över flera interaktioner.
 
-- **Spara Relevant Metadata**: Använd context metadata för att lagra viktig information om samtalet som kan vara användbar senare.
+## Bästa praxis för Root Context
 
-- **Använd Context IDs Konsekvent**: När en context har skapats, använd dess ID konsekvent för alla relaterade förfrågningar för att behålla kontinuitet.
+Här är några rekommendationer för att hantera root contexts på ett effektivt sätt:
 
-- **Generera Sammanfattningar**: När en context blir stor, överväg att skapa sammanfattningar för att fånga väsentlig information samtidigt som contextens storlek hanteras.
+- **Skapa fokuserade contexts**: Skapa separata root contexts för olika konversationsändamål eller domäner för att behålla tydlighet.
 
-- **Implementera Åtkomstkontroll**: För system med flera användare, implementera korrekt åtkomstkontroll för att säkerställa sekretess och säkerhet för samtalscontexts.
+- **Sätt utgångspolicys**: Implementera policys för att arkivera eller ta bort gamla contexts för att hantera lagring och följa regler för datalagring.
 
-- **Hantera Context Begränsningar**: Var medveten om begränsningar i contextstorlek och implementera strategier för att hantera mycket långa samtal.
+- **Spara relevant metadata**: Använd context-metadata för att lagra viktig information om konversationen som kan vara användbar senare.
 
-- **Arkivera När Klart**: Arkivera contexts när samtalen är avslutade för att frigöra resurser samtidigt som samtalshistoriken bevaras.
+- **Använd context-ID:n konsekvent**: När en context är skapad, använd dess ID konsekvent för alla relaterade förfrågningar för att bibehålla kontinuitet.
+
+- **Generera sammanfattningar**: När en context växer sig stor, överväg att skapa sammanfattningar för att fånga viktig information samtidigt som context-storleken hålls hanterbar.
+
+- **Implementera åtkomstkontroll**: För system med flera användare, implementera lämpliga åtkomstkontroller för att säkerställa sekretess och säkerhet för konversationscontexts.
+
+- **Hantera begränsningar i context-storlek**: Var medveten om begränsningar i context-storlek och implementera strategier för att hantera mycket långa konversationer.
+
+- **Arkivera när klart**: Arkivera contexts när konversationerna är avslutade för att frigöra resurser samtidigt som konversationshistoriken bevaras.
 
 ## Vad händer härnäst
 
-- [Routing](../mcp-routing/README.md)
+- [5.5 Routing](../mcp-routing/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, var vänlig observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, var god observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

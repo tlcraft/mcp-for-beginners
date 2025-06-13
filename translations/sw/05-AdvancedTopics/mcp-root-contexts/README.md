@@ -1,47 +1,47 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e1cbc99fa7185139ad6d539eca09a2b3",
-  "translation_date": "2025-06-02T20:30:24+00:00",
+  "original_hash": "8311f46a35cf608c9780f39b62c9dc3f",
+  "translation_date": "2025-06-13T00:48:05+00:00",
   "source_file": "05-AdvancedTopics/mcp-root-contexts/README.md",
   "language_code": "sw"
 }
 -->
-## Mfano: Utekelezaji wa Muktadha wa Msingi kwa uchambuzi wa kifedha
+## Mfano: Utekelezaji wa Root Context kwa uchambuzi wa fedha
 
-Katika mfano huu, tutaunda muktadha wa msingi kwa ajili ya kikao cha uchambuzi wa kifedha, tukionyesha jinsi ya kudumisha hali kupitia mwingiliano mbalimbali.
+Katika mfano huu, tutaunda root context kwa ajili ya kikao cha uchambuzi wa fedha, tukionyesha jinsi ya kuhifadhi hali kupitia mwingiliano kadhaa.
 
-## Mfano: Usimamizi wa Muktadha wa Msingi
+## Mfano: Usimamizi wa Root Context
 
-Kusimamia muktadha wa msingi kwa ufanisi ni muhimu kwa kudumisha historia ya mazungumzo na hali. Hapa chini ni mfano wa jinsi ya kutekeleza usimamizi wa muktadha wa msingi.
+Kusimamia root contexts kwa ufanisi ni muhimu kwa kuhifadhi historia ya mazungumzo na hali. Hapa chini ni mfano wa jinsi ya kutekeleza usimamizi wa root context.
 
-## Muktadha wa Msingi kwa Msaada wa Mzunguko Mbalimbali
+## Root Context kwa Msaada wa Mizunguko Nyingi
 
-Katika mfano huu, tutaunda muktadha wa msingi kwa ajili ya kikao cha msaada wa mzunguko mbalimbali, tukionyesha jinsi ya kudumisha hali kupitia mwingiliano mbalimbali.
+Katika mfano huu, tutaunda root context kwa ajili ya kikao cha msaada wa mizunguko mingi, tukionyesha jinsi ya kuhifadhi hali kupitia mwingiliano kadhaa.
 
-## Mbinu Bora za Muktadha wa Msingi
+## Mbinu Bora za Root Context
 
-Hapa kuna mbinu bora za kusimamia muktadha wa msingi kwa ufanisi:
+Hapa kuna mbinu bora za kusimamia root contexts kwa ufanisi:
 
-- **Tengeneza Muktadha Ulioelekezwa**: Tengeneza muktadha tofauti wa msingi kwa madhumuni au nyanja tofauti za mazungumzo ili kudumisha uwazi.
+- **Tengeneza Contexts Zenye Lengo**: Tengeneza root contexts tofauti kwa madhumuni au maeneo tofauti ya mazungumzo ili kudumisha uwazi.
 
-- **Weka Sera za Kumalizika**: Tekeleza sera za kuhifadhi au kufuta muktadha wa zamani ili kusimamia hifadhi na kuzingatia sera za uhifadhi wa data.
+- **Weka Sera za Kumalizika kwa Muda**: Tekeleza sera za kuhifadhi au kufuta contexts za zamani ili kusimamia hifadhi na kuzingatia sera za uhifadhi wa data.
 
-- **Hifadhi Metadata Muhimu**: Tumia metadata ya muktadha kuhifadhi taarifa muhimu kuhusu mazungumzo ambayo inaweza kuwa na faida baadaye.
+- **Hifadhi Metadata Muhimu**: Tumia metadata ya context kuhifadhi taarifa muhimu kuhusu mazungumzo ambayo inaweza kuwa na faida baadaye.
 
-- **Tumia Vitambulisho vya Muktadha kwa Ulinganifu**: Mara muktadha unapoundwa, tumia ID yake kwa ulinganifu kwa maombi yote yanayohusiana ili kudumisha muendelezo.
+- **Tumia IDs za Context kwa Uthabiti**: Mara context inapoundwa, tumia ID yake kwa uthabiti kwa maombi yote yanayohusiana ili kudumisha mfululizo.
 
-- **Tengeneza Muhtasari**: Wakati muktadha unakuwa mkubwa, fikiria kutengeneza muhtasari ili kunasa taarifa muhimu huku ukisimamia ukubwa wa muktadha.
+- **Tengeneza Muhtasari**: Wakati context inapoendelea kukua, fikiria kutengeneza muhtasari wa taarifa muhimu ili kudhibiti ukubwa wa context.
 
-- **Tekeleza Udhibiti wa Ufikiaji**: Kwa mifumo ya watumiaji wengi, tekeleza udhibiti mzuri wa ufikiaji kuhakikisha faragha na usalama wa muktadha wa mazungumzo.
+- **Tekeleza Udhibiti wa Upatikanaji**: Kwa mifumo ya watumiaji wengi, tekeleza udhibiti sahihi wa upatikanaji kuhakikisha faragha na usalama wa contexts za mazungumzo.
 
-- **Shughulikia Mipaka ya Muktadha**: Fahamu mipaka ya ukubwa wa muktadha na tekeleza mikakati ya kushughulikia mazungumzo marefu sana.
+- **Shughulikia Mipaka ya Context**: Fahamu mipaka ya ukubwa wa context na tekeleza mikakati ya kushughulikia mazungumzo marefu sana.
 
-- **Hifadhi Muktadha Unapokamilika**: Hifadhi muktadha wakati mazungumzo yanapokamilika ili kuachilia rasilimali huku ukihifadhi historia ya mazungumzo.
+- **Hifadhi Context Baada ya Kumalizika**: Hifadhi contexts wakati mazungumzo yanapokamilika ili kuachilia rasilimali huku ukihifadhi historia ya mazungumzo.
 
-## Nini Kifuatacho
+## Kile kinachofuata
 
-- [Routing](../mcp-routing/README.md)
+- [5.5 Routing](../mcp-routing/README.md)
 
-**Kifungu cha majibu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za moja kwa moja zinaweza kuwa na makosa au upungufu wa usahihi. Hati asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inashauriwa. Hatubebwi dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiasi cha maelezo ya kukataa**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kuwa tafsiri za moja kwa moja zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna wajibu kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

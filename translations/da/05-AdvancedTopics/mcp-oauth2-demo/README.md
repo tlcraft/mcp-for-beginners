@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T19:09:40+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-13T00:06:26+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "da"
 }
@@ -11,10 +11,10 @@ CO_OP_TRANSLATOR_METADATA:
 
 Dette projekt er en **minimal Spring Boot-applikation**, der fungerer som både:
 
-* en **Spring Authorization Server** (udsteder JWT-adgangstokens via `client_credentials` flowet), og  
+* en **Spring Authorization Server** (udsteder JWT adgangstokens via `client_credentials` flowet), og  
 * en **Resource Server** (beskytter sin egen `/hello` endpoint).
 
-Det spejler opsætningen vist i [Spring blogindlægget (2. apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Det spejler opsætningen vist i [Spring blogindlægget (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -45,7 +45,7 @@ Du kan teste OAuth2-sikkerhedskonfigurationen med følgende trin:
 curl -v http://localhost:8081/
 ```
 
-### 2. Hent et adgangstoken ved hjælp af client credentials
+### 2. Få et adgangstoken ved hjælp af client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Note: Basic Authentication-headeren (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Note: Basic Authentication headeren (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
 ### 3. Få adgang til den beskyttede endpoint ved hjælp af tokenet
 
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Et succesfuldt svar med "Hello from MCP OAuth2 Demo!" bekræfter, at OAuth2-konfigurationen fungerer korrekt.
+Et vellykket svar med "Hello from MCP OAuth2 Demo!" bekræfter, at OAuth2-konfigurationen fungerer korrekt.
 
 ---
 
@@ -116,13 +116,13 @@ Tilføj denne inbound policy til din API:
 </inbound>
 ```
 
-APIM vil hente JWKS og validere hver anmodning.
+APIM henter JWKS og validerer hver anmodning.
 
 ---
 
-## Hvad er næste skridt
+## Hvad er det næste
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

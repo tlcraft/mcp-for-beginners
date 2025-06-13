@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T19:05:58+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-12T23:57:12+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "th"
 }
@@ -11,10 +11,10 @@ CO_OP_TRANSLATOR_METADATA:
 
 โปรเจกต์นี้เป็น **แอปพลิเคชัน Spring Boot ขนาดเล็ก** ที่ทำหน้าที่ทั้ง:
 
-* เป็น **Spring Authorization Server** (ออกโทเค็น JWT ผ่าน flow `client_credentials`), และ  
-* เป็น **Resource Server** (ปกป้อง endpoint ของตัวเอง `/hello`)
+* เป็น **Spring Authorization Server** (ออก JWT access token ผ่าน flow `client_credentials`), และ  
+* เป็น **Resource Server** (ปกป้อง endpoint `/hello` ของตัวเอง)
 
-การตั้งค่านี้สะท้อนตามที่แสดงใน [บล็อกของ Spring (2 เม.ย. 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2)
+ซึ่งเหมือนกับการตั้งค่าที่แสดงใน [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2)
 
 ---
 
@@ -34,11 +34,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## ทดสอบการตั้งค่า OAuth2
+## การทดสอบการตั้งค่า OAuth2
 
-คุณสามารถทดสอบการตั้งค่าความปลอดภัย OAuth2 ได้ตามขั้นตอนต่อไปนี้:
+คุณสามารถทดสอบการตั้งค่าความปลอดภัย OAuth2 ด้วยขั้นตอนดังนี้:
 
-### 1. ตรวจสอบว่าเซิร์ฟเวอร์กำลังทำงานและปลอดภัย
+### 1. ตรวจสอบว่าเซิร์ฟเวอร์กำลังทำงานและมีการป้องกัน
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-หมายเหตุ: ส่วนหัว Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`
+หมายเหตุ: Header Basic Authentication คือ (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`
 
 ### 3. เข้าถึง endpoint ที่ถูกป้องกันโดยใช้ token
 
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-หากได้รับการตอบกลับสำเร็จพร้อมข้อความ "Hello from MCP OAuth2 Demo!" แสดงว่าการตั้งค่า OAuth2 ทำงานถูกต้อง
+ถ้าตอบกลับสำเร็จด้วยข้อความ "Hello from MCP OAuth2 Demo!" แสดงว่าการตั้งค่า OAuth2 ทำงานถูกต้อง
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## การนำไปใช้กับ **Azure Container Apps**
+## การดีพลอยไปยัง **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,12 +95,12 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-FQDN ของ ingress จะกลายเป็น **issuer** ของคุณ (`https://<fqdn>`).  
+Ingress FQDN จะกลายเป็น **issuer** ของคุณ (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`)
 
 ---
 
-## เชื่อมต่อกับ **Azure API Management**
+## การเชื่อมต่อกับ **Azure API Management**
 
 เพิ่มนโยบาย inbound นี้ไปยัง API ของคุณ:
 
@@ -116,13 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM จะดึง JWKS และตรวจสอบคำขอทุกครั้ง
+APIM จะดึง JWKS และตรวจสอบความถูกต้องของทุกคำขอ
 
 ---
 
-## ต่อไปทำอะไรดี
+## ต่อไปคืออะไร
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้การแปลมีความถูกต้อง โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่แม่นยำ เอกสารต้นฉบับในภาษาต้นทางควรถูกพิจารณาเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยมนุษย์มืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความที่ผิดพลาดใด ๆ ที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาด้วย AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้มีความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความคลาดเคลื่อนได้ เอกสารต้นฉบับในภาษาดั้งเดิมถือเป็นแหล่งข้อมูลที่ถูกต้องและเชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญด้านภาษามนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดจากการใช้การแปลนี้

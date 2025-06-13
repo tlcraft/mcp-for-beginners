@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T19:34:47+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-13T01:11:14+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "bg"
 }
@@ -11,10 +11,10 @@ CO_OP_TRANSLATOR_METADATA:
 
 Този проект е **минимално Spring Boot приложение**, което изпълнява ролята както на:
 
-* **Spring Authorization Server** (издава JWT достъпни токени чрез `client_credentials` flow), така и  
+* **Spring Authorization Server** (издава JWT access токени чрез `client_credentials` потока), така и  
 * **Resource Server** (защитава собствената си `/hello` крайна точка).
 
-Той отразява конфигурацията, показана в [Spring блог поста (2 април 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Той отразява конфигурацията, показана в [Spring блог публикацията (2 април 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -45,7 +45,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -v http://localhost:8081/
 ```
 
-### 2. Вземете достъпен токен с помощта на клиентски данни
+### 2. Вземете access токен чрез client credentials
 
 ```bash
 # Get and extract the full token response
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Разгръщане в **Azure Container Apps**
+## Деплой в **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -102,7 +102,7 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 ## Свързване с **Azure API Management**
 
-Добавете тази входяща политика към вашето API:
+Добавете тази inbound политика към вашето API:
 
 ```xml
 <inbound>
@@ -122,7 +122,7 @@ APIM ще изтегли JWKS и ще валидира всяка заявка.
 
 ## Какво следва
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Отказ от отговорност**:  
-Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или погрешни тълкувания, произтичащи от използването на този превод.
+Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия оригинален език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или неправилни тълкувания, произтичащи от използването на този превод.

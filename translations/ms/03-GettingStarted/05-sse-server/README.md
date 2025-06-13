@@ -1,87 +1,97 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0a8086dc4bf89448f83e7936db972c42",
-  "translation_date": "2025-05-17T11:40:22+00:00",
+  "original_hash": "3dd2f1e39277c31b0e57e29d165354d6",
+  "translation_date": "2025-06-13T00:36:08+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "ms"
 }
 -->
-Sekarang kita sudah tahu lebih lanjut tentang SSE, mari kita bina pelayan SSE seterusnya.
+ഇപ്പോൾ നമുക്ക് SSE കുറിച്ച് കുറച്ച് കൂടി അറിയാമെങ്കിൽ, അടുത്തതായി ഒരു SSE സെർവർ നിർമ്മിക്കാം.
 
-## Latihan: Mencipta Pelayan SSE
+## അഭ്യാസം: ഒരു SSE സെർവർ സൃഷ്ടിക്കൽ
 
-Untuk mencipta pelayan kita, kita perlu ingat dua perkara:
+നമ്മുടെ സെർവർ സൃഷ്ടിക്കാൻ, രണ്ട് കാര്യങ്ങൾ മനസ്സിൽ വെക്കണം:
 
-- Kita perlu menggunakan pelayan web untuk mendedahkan titik akhir untuk sambungan dan mesej.
-- Bina pelayan kita seperti biasa dengan alat, sumber dan arahan seperti ketika kita menggunakan stdio.
+- കണക്ഷനും സന്ദേശങ്ങളും എക്സ്പോസ് ചെയ്യാൻ വെബ് സെർവർ ഉപയോഗിക്കണം.
+- stdio ഉപയോഗിച്ചപ്പോലെ ടൂൾസ്, റിസോഴ്സുകൾ, പ്രോംപ്റ്റുകൾ ഉപയോഗിച്ച് സെർവർ നിർമ്മിക്കണം.
 
-### -1- Cipta instans pelayan
+### -1- സെർവർ ഇൻസ്റ്റൻസ് സൃഷ്ടിക്കുക
 
-Untuk mencipta pelayan kita, kita gunakan jenis yang sama seperti dengan stdio. Walau bagaimanapun, untuk pengangkutan, kita perlu memilih SSE.
+സെർവർ സൃഷ്ടിക്കാൻ, stdio ഉപയോഗിച്ച പോലെ തന്നെ ടൈപ്പുകൾ ഉപയോഗിക്കുന്നു. എന്നാൽ, ട്രാൻസ്പോർട്ടായി SSE തിരഞ്ഞെടുക്കണം.
 
-Mari kita tambah laluan yang diperlukan seterusnya.
+---
 
-### -2- Tambah laluan
+അടുത്തതായി ആവശ്യമായ റൂട്ടുകൾ ചേർക്കാം.
 
-Mari kita tambah laluan seterusnya yang mengendalikan sambungan dan mesej masuk:
+### -2- റൂട്ടുകൾ ചേർക്കുക
 
-Mari kita tambah keupayaan kepada pelayan seterusnya.
+കണക്ഷനും വരുന്ന സന്ദേശങ്ങളും കൈകാര്യം ചെയ്യുന്ന റൂട്ടുകൾ ചേർക്കാം:
 
-### -3- Menambah keupayaan pelayan
+---
 
-Sekarang kita telah mendefinisikan segala yang khusus kepada SSE, mari kita tambah keupayaan pelayan seperti alat, arahan dan sumber.
+ഇപ്പോൾ സെർവറിന് ശേഷിക്കുന്ന കഴിവുകൾ ചേർക്കാം.
 
-Kod penuh anda seharusnya kelihatan seperti ini:
+### -3- സെർവർ കഴിവുകൾ ചേർക്കൽ
 
-Bagus, kita ada pelayan menggunakan SSE, mari kita cuba seterusnya.
+SSE-യുമായി ബന്ധപ്പെട്ട എല്ലാം നിർവചിച്ചതിനുശേഷം, ടൂൾസ്, പ്രോംപ്റ്റുകൾ, റിസോഴ്സുകൾ പോലുള്ള സെർവർ കഴിവുകൾ ചേർക്കാം.
 
-## Latihan: Menyahpepijat Pelayan SSE dengan Inspector
+---
 
-Inspector adalah alat yang hebat yang kita lihat dalam pelajaran sebelumnya [Mencipta pelayan pertama anda](/03-GettingStarted/01-first-server/README.md). Mari kita lihat jika kita boleh menggunakan Inspector di sini juga:
+നിങ്ങളുടെ പൂർണ്ണ കോഡ് ഇങ്ങനെ കാണണം:
 
-### -1- Menjalankan inspector
+---
 
-Untuk menjalankan inspector, anda mesti mempunyai pelayan SSE yang berjalan terlebih dahulu, jadi mari kita lakukan itu seterusnya:
+സൂപ്പർ, നമുക്ക് SSE ഉപയോഗിക്കുന്ന ഒരു സെർവർ ഉണ്ടായി, ഇനി അത് പരീക്ഷിക്കാം.
 
-1. Jalankan pelayan
+## അഭ്യാസം: Inspector ഉപയോഗിച്ച് SSE സെർവർ ഡീബഗ് ചെയ്യൽ
 
-1. Jalankan inspector
+Inspector ഒരു മികച്ച ടൂൾ ആണ്, ഇത് നാം മുമ്പത്തെ പാഠത്തിൽ [Creating your first server](/03-GettingStarted/01-first-server/README.md) കണ്ടിട്ടുണ്ട്. ഇതെന്തെന്ന് നോക്കാം, ഇവിടെ ഉപയോഗിക്കാമോ:
+
+### -1- Inspector പ്രവർത്തിപ്പിക്കൽ
+
+Inspector പ്രവർത്തിപ്പിക്കാൻ, ആദ്യം ഒരു SSE സെർവർ പ്രവർത്തിക്കണം, അതിനാൽ അത് പ്രവർത്തിപ്പിക്കാം:
+
+1. സെർവർ റൺ ചെയ്യുക
+
+---
+
+1. Inspector റൺ ചെയ്യുക
 
     > ![NOTE]
-    > Jalankan ini dalam tetingkap terminal yang berasingan dari pelayan yang sedang berjalan. Juga perhatikan, anda perlu menyesuaikan arahan di bawah agar sesuai dengan URL di mana pelayan anda berjalan.
+    > സെർവർ പ്രവർത്തിക്കുന്ന ടെർമിനലിനേക്കാൾ വേറിട്ട ഒരു ടെർമിനൽ വിൻഡോയിൽ ഇത് റൺ ചെയ്യുക. കൂടാതെ, താഴെയുള്ള കമാൻഡ് നിങ്ങളുടെ സെർവർ പ്രവർത്തിക്കുന്ന URL-നുസരിച്ച് ക്രമീകരിക്കേണ്ടതുണ്ട്.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Menjalankan inspector kelihatan sama dalam semua runtime. Perhatikan bagaimana kita, bukannya menghantar laluan ke pelayan kita dan arahan untuk memulakan pelayan, kita menghantar URL di mana pelayan sedang berjalan dan kita juga menetapkan laluan `/sse`.
+    എല്ലാ റൺടൈമുകളിലും Inspector പ്രവർത്തനം ഒരുപോലെയാണ്. സെർവർ ആരംഭിക്കാൻ പാതയും കമാൻഡും പാസാക്കുന്നതിനുപകരം, സെർവർ പ്രവർത്തിക്കുന്ന URL-യും `/sse` റൂട്ടും നൽകുന്നത് ശ്രദ്ധിക്കുക.
 
-### -2- Mencuba alat
+### -2- ടൂൾ പരീക്ഷിക്കൽ
 
-Sambungkan pelayan dengan memilih SSE dalam droplist dan isikan medan URL di mana pelayan anda sedang berjalan, sebagai contoh http:localhost:4321/sse. Sekarang klik butang "Connect". Seperti sebelum ini, pilih untuk menyenaraikan alat, pilih alat dan berikan nilai input. Anda seharusnya melihat hasil seperti di bawah:
+SSE തിരഞ്ഞെടുക്കുക, സെർവർ പ്രവർത്തിക്കുന്ന URL ഫീൽഡിൽ, ഉദാഹരണത്തിന് http:localhost:4321/sse നൽകുക. "Connect" ബട്ടൺ അമർത്തുക. മുൻപുപോലെ, ടൂൾ ലിസ്റ്റ് ചെയ്യുക, ഒരു ടൂൾ തിരഞ്ഞെടുക്കുക, ഇൻപുട്ട് നൽകുക. താഴെയുള്ള പോലെ ഫലം കാണണം:
 
-![Pelayan SSE berjalan dalam inspector](../../../../translated_images/sse-inspector.12861eb95abecbfc82610f480b55901524fed1a6aca025bb948e09e882c48428.ms.png)
+![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.ms.png)
 
-Bagus, anda boleh bekerja dengan inspector, mari kita lihat bagaimana kita boleh bekerja dengan Visual Studio Code seterusnya.
+സുപ്രഭാതം, Inspector ഉപയോഗിക്കാൻ കഴിയുന്നു, ഇനി Visual Studio Code-ൽ എങ്ങനെ പ്രവർത്തിക്കാമെന്ന് നോക്കാം.
 
-## Tugasan
+## അസൈൻമെന്റ്
 
-Cuba bina pelayan anda dengan lebih banyak keupayaan. Lihat [halaman ini](https://api.chucknorris.io/) untuk sebagai contoh menambah alat yang memanggil API, anda tentukan bagaimana pelayan sepatutnya kelihatan. Selamat berseronok :)
+നിങ്ങളുടെ സെർവർ കൂടുതൽ കഴിവുകൾ കൊണ്ട് വികസിപ്പിക്കാൻ ശ്രമിക്കുക. ഉദാഹരണത്തിന്, [ഈ പേജ്](https://api.chucknorris.io/) സന്ദർശിച്ച് ഒരു API വിളിക്കുന്ന ടൂൾ ചേർക്കാം, സെർവർ എങ്ങനെ കാണണം നിങ്ങൾ തീരുമാനിക്കുക. സന്തോഷത്തോടെ പ്രവർത്തിക്കൂ :)
 
-## Penyelesaian
+## പരിഹാരം
 
-[Penyelesaian](./solution/README.md) Berikut adalah penyelesaian yang mungkin dengan kod yang berfungsi.
+[പരിഹാരം](./solution/README.md) പ്രവർത്തനക്ഷമമായ കോഡോടെ ഒരു സാധ്യത പരിഹാരമാണ്.
 
-## Poin Penting
+## പ്രധാന സാരാംശങ്ങൾ
 
-Poin penting dari bab ini adalah seperti berikut:
+ഈ അധ്യായത്തിലെ പ്രധാന സാരാംശങ്ങൾ:
 
-- SSE adalah jenis pengangkutan kedua yang disokong selain stdio.
-- Untuk menyokong SSE, anda perlu menguruskan sambungan masuk dan mesej menggunakan kerangka web.
-- Anda boleh menggunakan kedua-dua Inspector dan Visual Studio Code untuk menggunakan pelayan SSE, sama seperti pelayan stdio. Perhatikan bagaimana ia sedikit berbeza antara stdio dan SSE. Untuk SSE, anda perlu memulakan pelayan secara berasingan dan kemudian menjalankan alat inspector anda. Untuk alat inspector, terdapat juga beberapa perbezaan di mana anda perlu menetapkan URL.
+- SSE stdio-യ്ക്ക് പുറമേ രണ്ടാമത്തെ പിന്തുണയുള്ള ട്രാൻസ്പോർട്ട് ആണ്.
+- SSE പിന്തുണയ്ക്കാൻ, വെബ് ഫ്രെയിംവർക്കിൽ കണക്ഷനുകളും സന്ദേശങ്ങളും കൈകാര്യം ചെയ്യണം.
+- Inspector-യും Visual Studio Code-ഉം SSE സെർവർ ഉപയോഗിക്കാൻ കഴിയും, stdio സെർവറുകളുപോലെ. stdio-യുമായി SSE-യുടെ വ്യത്യാസം ശ്രദ്ധിക്കുക. SSE-യിൽ, സെർവർ സ്വതന്ത്രമായി ആരംഭിച്ച് Inspector ടൂൾ റൺ ചെയ്യണം. Inspector ടൂളിൽ URL നിർദ്ദേശിക്കേണ്ടതും ഉണ്ട്.
 
-## Contoh
+## സാമ്പിളുകൾ
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
@@ -89,13 +99,13 @@ Poin penting dari bab ini adalah seperti berikut:
 - [TypeScript Calculator](../samples/typescript/README.md)
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Sumber Tambahan
+## അധിക സ്രോതസ്സുകൾ
 
 - [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 
-## Apa Seterusnya
+## അടുത്തത്
 
-- Seterusnya: [Memulakan dengan AI Toolkit untuk VSCode](/03-GettingStarted/06-aitk/README.md)
+- അടുത്തത്: [HTTP Streaming with MCP (Streamable HTTP)](/03-GettingStarted/06-http-streaming/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

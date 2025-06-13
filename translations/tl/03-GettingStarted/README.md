@@ -1,84 +1,86 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f77fa364511cb670d6262d119d56f562",
-  "translation_date": "2025-06-11T09:14:26+00:00",
+  "original_hash": "9191921de355cd9c8f46ebe21bdd52fd",
+  "translation_date": "2025-06-13T00:39:24+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "tl"
 }
 -->
 ## Getting Started  
 
-Itong bahagi ay binubuo ng ilang mga aralin:
+Ini nga seksyon may ara sang pila ka mga leksyon:
 
-- **1 Your first server**, sa unang araling ito, matututuhan mo kung paano gumawa ng iyong unang server at suriin ito gamit ang inspector tool, isang mahalagang paraan para subukan at i-debug ang iyong server, [to the lesson](/03-GettingStarted/01-first-server/README.md)
+- **1 Your first server**, sa sini nga una nga leksyon, matun-an mo kon paano maghimo sang imo una nga server kag inspeksyonan ini gamit ang inspector tool, isa ka importante nga paagi para magtest kag mag-debug sang imo server, [to the lesson](/03-GettingStarted/01-first-server/README.md)
 
-- **2 Client**, sa araling ito, matututuhan mo kung paano sumulat ng client na kayang kumonekta sa iyong server, [to the lesson](/03-GettingStarted/02-client/README.md)
+- **2 Client**, sa sini nga leksyon, matun-an mo kon paano magsulat sang client nga makakonekta sa imo server, [to the lesson](/03-GettingStarted/02-client/README.md)
 
-- **3 Client with LLM**, mas magandang paraan ng pagsulat ng client ay sa pamamagitan ng pagdagdag ng LLM dito para ito ay "makipagnegosasyon" sa iyong server kung ano ang gagawin, [to the lesson](/03-GettingStarted/03-llm-client/README.md)
+- **3 Client with LLM**, mas maayo nga paagi sang pagsulat sang client amo ang pagdugang sang LLM para makapang-"negotiate" ini sa imo server kon ano ang himuon, [to the lesson](/03-GettingStarted/03-llm-client/README.md)
 
-- **4 Consuming a server GitHub Copilot Agent mode in Visual Studio Code**. Dito, tinitingnan natin kung paano patakbuhin ang ating MCP Server mula mismo sa Visual Studio Code, [to the lesson](/03-GettingStarted/04-vscode/README.md)
+- **4 Consuming a server GitHub Copilot Agent mode in Visual Studio Code**. Diri, ginatan-aw naton kon paano patakbon ang aton MCP Server halin sa sulod sang Visual Studio Code, [to the lesson](/03-GettingStarted/04-vscode/README.md)
 
-- **5 Consuming from a SSE (Server Sent Events)** SSE ay isang standard para sa server-to-client streaming, na nagpapahintulot sa mga server na mag-push ng real-time updates sa mga client gamit ang HTTP [to the lesson](/03-GettingStarted/05-sse-server/README.md)
+- **5 Consuming from a SSE (Server Sent Events)** SSE isa ka standard para sa server-to-client streaming, nga nagahatag kahigayunan sa mga server nga magpadala sang real-time updates sa mga client paagi sa HTTP [to the lesson](/03-GettingStarted/05-sse-server/README.md)
 
-- **6 Utilising AI Toolkit for VSCode** para gamitin at subukan ang iyong MCP Clients at Servers [to the lesson](/03-GettingStarted/06-aitk/README.md)
+- **6 HTTP Streaming with MCP (Streamable HTTP)**. Tun-i ang modern nga HTTP streaming, progress notifications, kag kon paano mag-implementar sang scalable, real-time MCP servers kag clients gamit ang Streamable HTTP. [to the lesson](/03-GettingStarted/06-http-streaming/README.md)
 
-- **7 Testing**. Dito ay tututok tayo kung paano natin masusubukan ang ating server at client sa iba't ibang paraan, [to the lesson](/03-GettingStarted/07-testing/README.md)
+- **7 Utilising AI Toolkit for VSCode** para magamit kag matest ang imo MCP Clients kag Servers [to the lesson](/03-GettingStarted/07-aitk/README.md)
 
-- **8 Deployment**. Tatalakayin sa kabanatang ito ang iba't ibang paraan ng pag-deploy ng iyong MCP solutions, [to the lesson](/03-GettingStarted/08-deployment/README.md)
+- **8 Testing**. Diri magatutok kita kon paano naton matest ang aton server kag client sa lain-lain nga mga paagi, [to the lesson](/03-GettingStarted/08-testing/README.md)
+
+- **9 Deployment**. Ini nga kapitulo magatan-aw sang lain-lain nga mga paagi sa pagdeploy sang imo MCP solutions, [to the lesson](/03-GettingStarted/09-deployment/README.md)
 
 
-Ang Model Context Protocol (MCP) ay isang open protocol na nag-standardize kung paano nagbibigay ng context ang mga aplikasyon sa LLMs. Isipin ang MCP bilang isang USB-C port para sa mga AI application - nagbibigay ito ng standardized na paraan para ikonekta ang AI models sa iba't ibang data sources at tools.
+Ang Model Context Protocol (MCP) isa ka bukas nga protocol nga naga-standardize kon paano ang mga aplikasyon naga-provide sang context sa LLMs. Pwede mo isipon ang MCP pareho sang USB-C port para sa AI applications - nagahatag ini sang standard nga paagi para makakonek ang AI models sa lain-lain nga data sources kag tools.
 
 ## Learning Objectives
 
-Sa pagtatapos ng araling ito, magagawa mo nang:
+Pagkatapos sini nga leksyon, mahimo mo na:
 
-- Mag-setup ng development environments para sa MCP gamit ang C#, Java, Python, TypeScript, at JavaScript
-- Gumawa at mag-deploy ng basic MCP servers na may custom na features (resources, prompts, at tools)
-- Lumikha ng host applications na nakakonekta sa MCP servers
-- Mag-test at mag-debug ng mga implementasyon ng MCP
-- Maunawaan ang mga karaniwang hamon sa setup at ang mga solusyon dito
-- Ikonekta ang iyong MCP implementasyon sa mga kilalang LLM services
+- I-setup ang development environments para sa MCP gamit ang C#, Java, Python, TypeScript, kag JavaScript
+- Maghimo kag magdeploy sang basic nga MCP servers nga may custom features (resources, prompts, kag tools)
+- Maghimo sang host applications nga makakonek sa MCP servers
+- Magtest kag mag-debug sang MCP implementations
+- Masabtan ang mga komon nga problema sa setup kag ang ila mga solusyon
+- Makakonek ang imo MCP implementations sa mga popular nga LLM services
 
 ## Setting Up Your MCP Environment
 
-Bago ka magsimulang magtrabaho gamit ang MCP, mahalagang ihanda ang iyong development environment at maintindihan ang basic na workflow. Gabay ka ng bahaging ito sa mga unang hakbang para masiguro ang maayos na pagsisimula sa MCP.
+Antes ka magsugod gamit ang MCP, importante nga i-prepare ang imo development environment kag masabtan ang basic nga workflow. Ini nga seksyon magagiyahan ka sa mga unang nga mga steps para masiguro nga hapsay ang imo pagsugod gamit ang MCP.
 
 ### Prerequisites
 
-Bago sumabak sa MCP development, siguraduhing mayroon kang:
+Antes ka mag-umpisa sa MCP development, siguruha nga may ara ka sang:
 
-- **Development Environment**: Para sa napiling wika (C#, Java, Python, TypeScript, o JavaScript)
-- **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm, o anumang modernong code editor
+- **Development Environment**: Para sa imo napili nga language (C#, Java, Python, TypeScript, o JavaScript)
+- **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm, o bisan ano nga moderno nga code editor
 - **Package Managers**: NuGet, Maven/Gradle, pip, o npm/yarn
-- **API Keys**: Para sa anumang AI services na balak mong gamitin sa iyong host applications
+- **API Keys**: Para sa bisan ano nga AI services nga plano mo gamiton sa imo host applications
 
 
 ### Official SDKs
 
-Sa mga susunod na kabanata makikita mo ang mga solusyong ginawa gamit ang Python, TypeScript, Java at .NET. Narito ang lahat ng opisyal na suportadong SDKs.
+Sa masunod nga mga kapitulo makit-an mo ang mga solusyon nga ginbuhat gamit ang Python, TypeScript, Java kag .NET. Ari diri ang tanan nga opisyal nga ginasuportahan nga SDKs.
 
-Nagbibigay ang MCP ng opisyal na SDKs para sa iba't ibang wika:
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Pinapanatili sa pakikipagtulungan sa Microsoft
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Pinapanatili sa pakikipagtulungan sa Spring AI
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Ang opisyal na TypeScript na implementasyon
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Ang opisyal na Python na implementasyon
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Ang opisyal na Kotlin na implementasyon
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Pinapanatili sa pakikipagtulungan sa Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Ang opisyal na Rust na implementasyon
+Nagahatag ang MCP sang opisyal nga SDKs para sa madamo nga mga language:
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Ginamanage upod ang Microsoft
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Ginamanage upod ang Spring AI
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Opisyal nga TypeScript implementation
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Opisyal nga Python implementation
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Opisyal nga Kotlin implementation
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Ginamanage upod ang Loopwork AI
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Opisyal nga Rust implementation
 
 ## Key Takeaways
 
-- Madaling mag-setup ng MCP development environment gamit ang mga language-specific SDKs
-- Ang paggawa ng MCP servers ay nangangailangan ng paglikha at pagrerehistro ng mga tools na may malinaw na schemas
-- Ang MCP clients ay kumokonekta sa mga servers at models para magamit ang mga pinalawak na kakayahan
-- Mahalaga ang testing at debugging para sa maaasahang implementasyon ng MCP
-- May iba't ibang deployment options mula sa lokal na development hanggang sa cloud-based solutions
+- Hapos lang mag-setup sang MCP development environment gamit ang language-specific SDKs
+- Ang paghimo sang MCP servers nagalakip sang pag-create kag pag-register sang tools nga may klaro nga schemas
+- Ang MCP clients nagakonek sa servers kag models para magamit ang mas lapad nga capabilities
+- Importante ang testing kag debugging para sa kasaligan nga MCP implementations
+- May ara sang lain-lain nga deployment options halin sa local development tubtob sa cloud-based nga solusyon
 
 ## Practicing
 
-Mayroon kaming mga sample na nagsisilbing karagdagan sa mga exercises na makikita mo sa lahat ng kabanata sa bahaging ito. Bukod dito, bawat kabanata ay may sariling exercises at assignments
+May ara kita sang mga samples nga nagakumpleto sa mga exercises nga imo makita sa tanan nga kapitulo sa sini nga seksyon. Dugang pa, ang kada kapitulo may ara man kaugalingon nga exercises kag assignments
 
 - [Java Calculator](./samples/java/calculator/README.md)
 - [.Net Calculator](../../../03-GettingStarted/samples/csharp)
@@ -94,7 +96,7 @@ Mayroon kaming mga sample na nagsisilbing karagdagan sa mga exercises na makikit
 
 ## What's next
 
-Next: [Creating your first MCP Server](/03-GettingStarted/01-first-server/README.md)
+Sunod: [Creating your first MCP Server](/03-GettingStarted/01-first-server/README.md)
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagaman nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T19:21:49+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-13T00:36:41+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "ms"
 }
 -->
 # MCP OAuth2 Demo
 
-This project is a **minimal Spring Boot application** that serves as both:
+Este proyecto es una **aplicación mínima de Spring Boot** que funciona como:
 
-* a **Spring Authorization Server** (issuing JWT access tokens via the `client_credentials` flow), and  
-* a **Resource Server** (securing its own `/hello` endpoint).
+* un **Spring Authorization Server** (emitiendo tokens de acceso JWT mediante el flujo `client_credentials`), y  
+* un **Resource Server** (protegiendo su propio endpoint `/hello`).
 
-It replicates the setup shown in the [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Refleja la configuración mostrada en el [post del blog de Spring (2 Abr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
-## Quick start (local)
+## Inicio rápido (local)
 
 ```bash
 # build & run
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Testing the OAuth2 Configuration
+## Probando la configuración OAuth2
 
-You can verify the OAuth2 security setup with the following steps:
+Puedes probar la configuración de seguridad OAuth2 con los siguientes pasos:
 
-### 1. Confirm the server is running and secured
+### 1. Verifica que el servidor esté funcionando y seguro
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Obtain an access token using client credentials
+### 2. Obtén un token de acceso usando client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Note: The Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Nota: El encabezado de autenticación Basic (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Use the token to access the protected endpoint
+### 3. Accede al endpoint protegido usando el token
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-A successful response showing "Hello from MCP OAuth2 Demo!" indicates the OAuth2 setup is functioning properly.
+Una respuesta exitosa con "Hello from MCP OAuth2 Demo!" confirma que la configuración OAuth2 está funcionando correctamente.
 
 ---
 
-## Container build
+## Construcción del contenedor
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Deploy to **Azure Container Apps**
+## Despliegue en **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-The ingress FQDN becomes your **issuer** (`https://<fqdn>`).  
+El FQDN de ingreso se convierte en tu **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
-## Wire into **Azure API Management**
+## Integración con **Azure API Management**
 
-Add this inbound policy to your API:
+Agrega esta política de entrada a tu API:
 
 ```xml
 <inbound>
@@ -116,13 +116,13 @@ Add this inbound policy to your API:
 </inbound>
 ```
 
-APIM will retrieve the JWKS and validate each request.
+APIM obtendrá el JWKS y validará cada solicitud.
 
 ---
 
-## What's next
+## Qué sigue
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

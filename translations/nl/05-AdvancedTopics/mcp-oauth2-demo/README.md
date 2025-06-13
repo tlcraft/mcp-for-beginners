@@ -1,24 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T19:14:54+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-13T00:19:19+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "nl"
 }
 -->
 # MCP OAuth2 Demo
 
-Dit project is een **minimale Spring Boot applicatie** die zowel fungeert als:
+Dit project is een **minimalistische Spring Boot applicatie** die zowel fungeert als:
 
-* een **Spring Authorization Server** (die JWT access tokens uitgeeft via de `client_credentials` flow), en  
+* een **Spring Authorization Server** (die JWT toegangstokens uitgeeft via de `client_credentials` flow), en  
 * een **Resource Server** (die zijn eigen `/hello` endpoint beschermt).
 
-Het weerspiegelt de opzet zoals beschreven in de [Spring blog post (2 apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Het weerspiegelt de opzet zoals beschreven in de [Spring blogpost (2 apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
-## Snel starten (lokaal)
+## Snel aan de slag (lokaal)
 
 ```bash
 # build & run
@@ -34,9 +34,9 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## OAuth2 configuratie testen
+## Testen van de OAuth2-configuratie
 
-Je kunt de OAuth2 beveiligingsconfiguratie testen met de volgende stappen:
+Je kunt de OAuth2-beveiligingsconfiguratie testen met de volgende stappen:
 
 ### 1. Controleer of de server draait en beveiligd is
 
@@ -45,7 +45,7 @@ Je kunt de OAuth2 beveiligingsconfiguratie testen met de volgende stappen:
 curl -v http://localhost:8081/
 ```
 
-### 2. Verkrijg een access token met client credentials
+### 2. Verkrijg een toegangstoken met client credentials
 
 ```bash
 # Get and extract the full token response
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Een succesvolle reactie met "Hello from MCP OAuth2 Demo!" bevestigt dat de OAuth2 configuratie correct werkt.
+Een succesvolle reactie met "Hello from MCP OAuth2 Demo!" bevestigt dat de OAuth2-configuratie correct werkt.
 
 ---
 
-## Container build
+## Container bouwen
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Deploy naar **Azure Container Apps**
+## Deployen naar **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -120,9 +120,9 @@ APIM haalt de JWKS op en valideert elke aanvraag.
 
 ---
 
-## Wat nu
+## Wat nu?
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor belangrijke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal dient als de gezaghebbende bron te worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

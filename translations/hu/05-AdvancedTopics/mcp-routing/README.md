@@ -1,19 +1,35 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a621fc52c7daec552eb8b3b48c0361dd",
-  "translation_date": "2025-06-02T19:48:42+00:00",
+  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
+  "translation_date": "2025-06-13T00:53:32+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "hu"
 }
 -->
-## Mintavételezés és irányítási architektúra az MCP-ben
+## Intelligens terheléselosztás
 
-A mintavételezés a Model Context Protocol (MCP) kulcsfontosságú eleme, amely lehetővé teszi a hatékony kérésfeldolgozást és irányítást. Ez magában foglalja a beérkező kérések elemzését annak érdekében, hogy meghatározza, melyik modell vagy szolgáltatás a legmegfelelőbb a kezelésükre, különböző szempontok alapján, mint például a tartalom típusa, a felhasználói kontextus és a rendszer terheltsége.
+A terheléselosztás optimalizálja az erőforrások kihasználtságát, és biztosítja az MCP szolgáltatások magas rendelkezésre állását. Többféle módszer létezik a terheléselosztás megvalósítására, például körkörös (round-robin), súlyozott válaszidő vagy tartalomérzékeny stratégiák.
 
-A mintavételezés és az irányítás kombinálható egy robusztus architektúra létrehozására, amely optimalizálja az erőforrások kihasználtságát és biztosítja a magas rendelkezésre állást. A mintavételi folyamat segítségével a kérések osztályozhatók, míg az irányítás a megfelelő modellekhez vagy szolgáltatásokhoz irányítja őket.
+Nézzük meg az alábbi példát, amely a következő stratégiákat alkalmazza:
 
-Az alábbi ábra bemutatja, hogyan működnek együtt a mintavételezés és az irányítás egy átfogó MCP architektúrában:
+- **Körkörös (Round Robin)**: Egyenletesen osztja el a kéréseket az elérhető szerverek között.
+- **Súlyozott válaszidő (Weighted Response Time)**: A szerverek átlagos válaszideje alapján irányítja a kéréseket.
+- **Tartalomérzékeny (Content-Aware)**: A kérés tartalma alapján speciális szerverekhez irányítja a kéréseket.
+
+## Dinamikus eszközirányítás
+
+Az eszközirányítás biztosítja, hogy az eszközhívások a kontextus alapján a legmegfelelőbb szolgáltatáshoz kerüljenek. Például egy időjárás-eszköz hívását a felhasználó helyzete alapján regionális végpontra kell irányítani, vagy egy számológép eszköznek egy adott API verziót kell használnia.
+
+Nézzünk meg egy példát, amely bemutatja a dinamikus eszközirányítást kérés elemzés, regionális végpontok és verziókezelés alapján.
+
+## Mintavétel és irányítási architektúra az MCP-ben
+
+A mintavétel a Model Context Protocol (MCP) egyik kulcsfontosságú eleme, amely lehetővé teszi a hatékony kérésfeldolgozást és irányítást. Ez magában foglalja a bejövő kérések elemzését annak érdekében, hogy meghatározza, melyik modell vagy szolgáltatás a legalkalmasabb azok kezelésére, különböző szempontok, például tartalomtípus, felhasználói kontextus és rendszerterhelés alapján.
+
+A mintavétel és az irányítás kombinálásával robusztus architektúra hozható létre, amely optimalizálja az erőforrások kihasználtságát és biztosítja a magas rendelkezésre állást. A mintavételi folyamat a kérések osztályozására használható, míg az irányítás a megfelelő modellekhez vagy szolgáltatásokhoz irányítja azokat.
+
+Az alábbi ábra bemutatja, hogyan működnek együtt a mintavétel és az irányítás egy átfogó MCP architektúrában:
 
 ```mermaid
 flowchart TB
@@ -82,7 +98,7 @@ flowchart TB
 
 ## Mi következik
 
-- [Sampling](../mcp-sampling/README.md)
+- [5.6 Mintavétel](../mcp-sampling/README.md)
 
-**Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+**Nyilatkozat**:  
+Ez a dokumentum az AI fordítószolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén szakmai emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
