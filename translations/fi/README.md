@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "26ab12045ee411ab7ad0eb0b1b7b1cbb",
-  "translation_date": "2025-06-13T00:12:41+00:00",
+  "original_hash": "a3b97186cd9162b9fe9b90261e63e32d",
+  "translation_date": "2025-06-13T14:17:19+00:00",
   "source_file": "README.md",
   "language_code": "fi"
 }
@@ -23,8 +23,8 @@ CO_OP_TRANSLATOR_METADATA:
 
 
 Seuraa näitä ohjeita aloittaaksesi näiden resurssien käytön:
-1. **Forkkaa repositorio**: Klikkaa [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
-2. **Kloonaa repositorio**: `git clone https://github.com/microsoft/mcp-for-beginners.git`
+1. **Forkkaa arkisto**: Klikkaa [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
+2. **Kloonaa arkisto**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
 3. [**Liity Azure AI Foundry Discordiin ja tapaa asiantuntijoita sekä muita kehittäjiä**](https://discord.com/invite/ByRwuEEgH4)
 
 
@@ -32,15 +32,15 @@ Seuraa näitä ohjeita aloittaaksesi näiden resurssien käytön:
 
 #### Tuettu GitHub Actionin kautta (automaattinen ja aina ajan tasalla)
 
-# 🚀 Model Context Protocol (MCP) Aloittelijoille
+# 🚀 Model Context Protocol (MCP) Opetussuunnitelma Aloittelijoille
 
-## **Opiskele MCP:tä käytännön koodiesimerkkien avulla C#, Java, JavaScript, Python ja TypeScript -kielillä**
+## **Opi MCP käytännön koodiesimerkkien avulla C#:ssa, Javassa, JavaScriptissä, Pythonissa ja TypeScriptissä**
 
-## 🧠 Yleiskatsaus Model Context Protocol -opintokokonaisuuteen
+## 🧠 Yleiskatsaus Model Context Protocol -opetussuunnitelmaan
 
-**Model Context Protocol (MCP)** on huipputason kehys, joka on suunniteltu vakioimaan vuorovaikutukset AI-mallien ja asiakasohjelmistojen välillä. Tämä avoimen lähdekoodin opintokokonaisuus tarjoaa jäsennellyn oppimispolun, joka sisältää käytännön koodiesimerkkejä ja todellisia käyttötapauksia suosituilla ohjelmointikielillä, kuten C#, Java, JavaScript, TypeScript ja Python.
+**Model Context Protocol (MCP)** on edistyksellinen kehys, jonka tarkoituksena on standardoida vuorovaikutus AI-mallien ja asiakasohjelmien välillä. Tämä avoimen lähdekoodin opetussuunnitelma tarjoaa jäsennellyn oppimispolun, joka sisältää käytännön koodiesimerkkejä ja todellisia käyttötapauksia suosituilla ohjelmointikielillä, kuten C#, Java, JavaScript, TypeScript ja Python.
 
-Oletpa sitten AI-kehittäjä, järjestelmäarkkitehti tai ohjelmistoinsinööri, tämä opas on kattava resurssi MCP:n perusteiden ja toteutusstrategioiden hallintaan.
+Olitpa sitten AI-kehittäjä, järjestelmäarkkitehti tai ohjelmistosuunnittelija, tämä opas on kattava resurssi MCP:n perusteiden ja toteutusstrategioiden hallintaan.
 
 ## 🔗 Viralliset MCP-resurssit
 
@@ -48,40 +48,41 @@ Oletpa sitten AI-kehittäjä, järjestelmäarkkitehti tai ohjelmistoinsinööri,
 - 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protokollan arkkitehtuuri ja tekniset viitteet  
 - 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Avoimen lähdekoodin SDK:t, työkalut ja koodiesimerkit  
 
-## 🧭 MCP-opintokokonaisuuden rakenne
+## 🧭 MCP-opetussuunnitelman kokonaisrakenne
 
 | Ch | Otsikko | Kuvaus | Linkki |
 |--|--|--|--|
-| 00 | **Johdanto MCP:hen** | Yleiskatsaus Model Context Protocoliin ja sen merkitykseen AI-putkistoissa, mukaan lukien mitä MCP on, miksi standardisointi on tärkeää sekä käytännön käyttötapaukset ja hyödyt | [Johdanto](./00-Introduction/README.md) |
-| 01 | **Keskeiset käsitteet selitettynä** | Syvällinen katsaus MCP:n keskeisiin käsitteisiin, kuten asiakas-palvelin-arkkitehtuuriin, protokollan tärkeisiin osiin ja viestintämalleihin | [Keskeiset käsitteet](./01-CoreConcepts/README.md) |
-| 02 | **Turvallisuus MCP:ssä** | Turvauhkien tunnistaminen MCP-pohjaisissa järjestelmissä, menetelmät ja parhaat käytännöt toteutusten suojaamiseen | [Turvallisuus](/02-Security/README.md) |
-| 03 | **Aloita MCP:n kanssa** | Ympäristön asennus ja konfigurointi, perus MCP-palvelinten ja -asiakkaiden luominen, MCP:n integrointi olemassa oleviin sovelluksiin | [Aloita](./03-GettingStarted/README.md) |
+| 00 | **Johdanto MCP:hen** | Yleiskatsaus Model Context Protocoliin ja sen merkitykseen AI-putkistoissa, mukaan lukien mitä MCP on, miksi standardisointi on tärkeää sekä käytännön esimerkit ja hyödyt | [Johdanto](./00-Introduction/README.md) |
+| 01 | **Keskeiset käsitteet selitettynä** | Syvällinen katsaus MCP:n keskeisiin käsitteisiin, kuten asiakas-palvelin-arkkitehtuuriin, protokollan tärkeimpiin osiin ja viestintämalleihin | [Keskeiset käsitteet](./01-CoreConcepts/README.md) |
+| 02 | **Turvallisuus MCP:ssä** | Turvauhkien tunnistaminen MCP-pohjaisissa järjestelmissä, tekniikat ja parhaat käytännöt turvallisen toteutuksen varmistamiseksi | [Turvallisuus](./02-Security/README.md) |
+| 03 | **MCP:n käyttöönotto** | Ympäristön asennus ja konfigurointi, perus MCP-palvelinten ja -asiakkaiden luominen, MCP:n integrointi olemassa oleviin sovelluksiin | [Käyttöönotto](./03-GettingStarted/README.md) |
 | 3.1 | **Ensimmäinen palvelin** | Peruspalvelimen pystyttäminen MCP-protokollalla, palvelin-asiakas-vuorovaikutuksen ymmärtäminen ja palvelimen testaaminen | [Ensimmäinen palvelin](./03-GettingStarted/01-first-server/README.md) |
-| 3.2 | **Ensimmäinen asiakas**  | Perusasiakkaan pystyttäminen MCP-protokollalla, asiakas-palvelin-vuorovaikutuksen ymmärtäminen ja asiakkaan testaaminen | [Ensimmäinen asiakas](./03-GettingStarted/02-client/README.md) |
-| 3.3 | **Asiakas LLM:n kanssa**  | Asiakkaan pystyttäminen MCP-protokollalla käyttäen suurta kielimallia (LLM) | [Asiakas LLM:n kanssa](./03-GettingStarted/03-llm-client/README.md) |
-| 3.4 | **Palvelimen käyttäminen Visual Studio Codella** | Visual Studio Coden konfigurointi MCP-protokollaa käyttävien palvelimien kuluttamiseen | [Palvelimen käyttäminen Visual Studio Codella](./03-GettingStarted/04-vscode/README.md) |
-| 3.5 | **Palvelimen luominen SSE:n avulla** | SSE:n avulla palvelin saadaan julkistettua internetiin. Tämä osio opastaa palvelimen luomisessa SSE:n avulla | [Palvelimen luominen SSE:llä](./03-GettingStarted/05-sse-server/README.md) |
-| 3.6 | **AI Toolkitin käyttö** | AI Toolkit on erinomainen työkalu, joka auttaa hallitsemaan AI- ja MCP-työnkulkuasi | [AI Toolkitin käyttö](./03-GettingStarted/06-aitk/README.md) |
-| 3.7 | **Palvelimen testaaminen** | Testaus on tärkeä osa kehitysprosessia. Tässä osiossa opit käyttämään useita eri testausvälineitä | [Palvelimen testaaminen](./03-GettingStarted/07-testing/README.md) |
-| 3.8 | **Palvelimen käyttöönotto** | Miten siirryt paikallisesta kehityksestä tuotantoon? Tämä osio opastaa palvelimen kehittämisessä ja käyttöönotossa | [Palvelimen käyttöönotto](./03-GettingStarted/08-deployment/README.md) |
-| 04 | **Käytännön toteutus** | SDK:iden käyttö eri kielillä, virheenkorjaus, testaus ja validointi, uudelleenkäytettävien prompt-pohjien ja työnkulkujen luominen | [Käytännön toteutus](./04-PracticalImplementation/README.md) |
+| 3.2 | **Ensimmäinen asiakas** | Perusasiakkaan pystyttäminen MCP-protokollalla, asiakas-palvelin-vuorovaikutuksen ymmärtäminen ja asiakkaan testaaminen | [Ensimmäinen asiakas](./03-GettingStarted/02-client/README.md) |
+| 3.3 | **Asiakas LLM:n kanssa** | Asiakkaan luominen MCP-protokollalla, jossa käytetään suurta kielimallia (LLM) | [Asiakas LLM:n kanssa](./03-GettingStarted/03-llm-client/README.md) |
+| 3.4 | **Palvelimen käyttäminen Visual Studio Codella** | Visual Studio Coden asetukset MCP-protokollaa käyttäville palvelimille | [Palvelimen käyttäminen Visual Studio Codella](./03-GettingStarted/04-vscode/README.md) |
+| 3.5 | **Palvelimen luominen SSE:n avulla** | SSE:n avulla palvelimen avaaminen internetiin. Tämä osio auttaa sinua luomaan palvelimen SSE:n avulla | [Palvelimen luominen SSE:llä](./03-GettingStarted/05-sse-server/README.md) |
+| 3.6 | **HTTP-suoratoisto** | Opettele toteuttamaan HTTP-suoratoistoa reaaliaikaiseen tiedonsiirtoon asiakkaiden ja MCP-palvelinten välillä | [HTTP-suoratoisto](./03-GettingStarted/06-http-streaming/README.md) |
+| 3.7 | **AI Toolkitin käyttö** | AI Toolkit on erinomainen työkalu, joka auttaa hallitsemaan AI- ja MCP-työnkulkuasi | [AI Toolkitin käyttö](./03-GettingStarted/07-aitk/README.md) |
+| 3.8 | **Palvelimen testaaminen** | Testaus on tärkeä osa kehitysprosessia. Tämä osio auttaa sinua testaamaan useilla eri työkaluilla | [Palvelimen testaaminen](./03-GettingStarted/08-testing/README.md) |
+| 3.9 | **Palvelimen käyttöönotto** | Miten siirryt paikallisesta kehityksestä tuotantoon? Tämä osio opastaa palvelimen kehittämisessä ja käyttöönotossa | [Palvelimen käyttöönotto](./03-GettingStarted/09-deployment/README.md) |
+| 04 | **Käytännön toteutus** | SDK:iden käyttö eri kielillä, virheenkorjaus, testaus ja validointi, uudelleenkäytettävien prompt-mallien ja työnkulkujen luominen | [Käytännön toteutus](./04-PracticalImplementation/README.md) |
 | 05 | **Edistyneet MCP-aiheet** | Monimodaaliset AI-työnkulut ja laajennettavuus, turvalliset skaalausstrategiat, MCP yritysympäristöissä | [Edistyneet aiheet](./05-AdvancedTopics/README.md) |
-| 5.1 | **MCP:n integrointi Azureen** | Näyttää integraation Azureen | [MCP Azure-integraatio](./05-AdvancedTopics/mcp-integration/README.md) |
-| 5.2 | **Monimodaalisuus** | Kuinka työskennellä eri modaliteettien, kuten kuvien kanssa | [Monimodaalisuus](./05-AdvancedTopics/mcp-multi-modality/README.md) |
-| 5.3 | **MCP OAuth2 -demo** | Minimikehys Spring Boot -sovelluksesta, joka näyttää OAuth2:n MCP:n kanssa, sekä Authorization- että Resource Serverinä. Demonstroi turvallista tokenin myöntämistä, suojattuja päätepisteitä, Azure Container Apps -käyttöönottoa ja API Management -integraatiota | [MCP OAuth2 -demo](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
-| 5.4 | **Root Contexts** | Lisätietoa root contextista ja sen toteuttamisesta | [Root Contexts](./05-AdvancedTopics/mcp-root-contexts/README.md) |
-| 5.5 | **Reititys** | Eri reititystyypit | [Reititys](./05-AdvancedTopics/mcp-routing/README.md) |
-| 5.6 | **Näytteenotto** | Kuinka työskennellä näytteenoton kanssa | [Näytteenotto](./05-AdvancedTopics/mcp-sampling/README.md) |
-| 5.7 | **Skaalaus** | MCP-palvelinten skaalaus, mukaan lukien vaakasuora ja pystysuora skaalaus, resurssien optimointi ja suorituskyvyn hienosäätö | [Skaalaus](./05-AdvancedTopics/mcp-scaling/README.md) |
-| 5.8 | **Turvallisuus** | MCP-palvelimen suojaaminen, mukaan lukien autentikointi, valtuutus ja datan suojausstrategiat | [Turvallisuus](./05-AdvancedTopics/mcp-security/README.md) |
-| 5.9 | **Web-haku MCP:llä** | Python MCP -palvelin ja asiakas, jotka integroivat SerpAPI:n reaaliaikaiseen web-, uutis-, tuotehakuun ja Q&A-toimintoihin. Demonstroi monityökalujen orkestrointia, ulkoisten API:en integraatiota ja vankkaa virheenkäsittelyä | [Web-haku MCP](./05-AdvancedTopics/web-search-mcp/README.md) |
-| 5.10 | **Reaaliaikainen suoratoisto** | Reaaliaikainen datan suoratoisto on nykyajan dataohjautuvassa maailmassa välttämätöntä, kun yritykset ja sovellukset tarvitsevat välitöntä pääsyä tietoihin tehdäkseen oikea-aikaisia päätöksiä | [Reaaliaikainen suoratoisto](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
-| 5.11 | **Reaaliaikainen web-haku** | Kuinka MCP muuttaa reaaliaikaista web-hakua tarjoamalla vakioidun lähestymistavan kontekstinhallintaan AI-mallien, hakukoneiden ja sovellusten välillä | [Reaaliaikainen web-haku](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
-| 06 | **Yhteisön panokset** | Kuinka osallistua koodin ja dokumentaation tekemiseen, yhteistyö GitHubissa, yhteisölähtöiset parannukset ja palaute | [Yhteisön panokset](./06-CommunityContributions/README.md) |
-| 07 | **Oppeja varhaisesta käyttöönotosta** | Käytännön toteutukset ja toimineet ratkaisut, MCP-pohjaisten ratkaisujen rakentaminen ja käyttöönotto, trendit ja tulevaisuuden tiekartta | [Oppeja](./07-LessonsFromEarlyAdoption/README.md)
-| 08 | **Parhaat käytännöt MCP:lle** | Suorituskyvyn viritys ja optimointi, vikasietoisien MCP-järjestelmien suunnittelu, testaus- ja kestävyyden varmistamisstrategiat | [Best Practices](./08-BestPractices/README.md) |
-| 09 | **MCP-tapaustutkimukset** | Syvällisiä katsauksia MCP-ratkaisujen arkkitehtuureihin, käyttöönoton mallipohjiin ja integraatiovinkkeihin, selitettyjä kaavioita ja projektikierroksia | [Case Studies](./09-CaseStudy/README.md) |
-| 10 | **AI-työnkulkujen tehostaminen: MCP-palvelimen rakentaminen AI Toolkitin avulla** | Kattava käytännön työpaja, jossa yhdistetään MCP ja Microsoftin AI Toolkit VS Codeen. Opit rakentamaan älykkäitä sovelluksia, jotka yhdistävät AI-mallit todellisiin työkaluihin käytännön moduulien kautta, jotka käsittelevät perusteita, räätälöityä palvelinkehitystä ja tuotantoon siirtymisen strategioita. | [Hands On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
+| 5.1 | **MCP:n integrointi Azureen** | Näyttää integroinnin Azureen | [MCP Azure -integrointi](./05-AdvancedTopics/mcp-integration/README.md) |
+| 5.2 | **Monimodaalisuus** | Näyttää miten työskennellä eri modaliteettien, kuten kuvien kanssa | [Monimodaalisuus](./05-AdvancedTopics/mcp-multi-modality/README.md) |
+| 5.3 | **MCP OAuth2 Demo** | Minimipitkä Spring Boot -sovellus, joka näyttää OAuth2:n MCP:n kanssa sekä valtuutus- että resurssipalvelimena. Demonstroi turvallista tokenin myöntämistä, suojattuja päätepisteitä, Azure Container Apps -käyttöönottoa ja API Management -integraatiota | [MCP OAuth2 Demo](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
+| 5.4 | **Root Contexts** | Opettele lisää root contextista ja sen toteuttamisesta | [Root Contexts](./05-AdvancedTopics/mcp-root-contexts/README.md) |
+| 5.5 | **Reititys** | Opettele erilaiset reititystyypit | [Reititys](./05-AdvancedTopics/mcp-routing/README.md) |
+| 5.6 | **Näytteenotto** | Opettele työskentelemään näytteenoton kanssa | [Näytteenotto](./05-AdvancedTopics/mcp-sampling/README.md) |
+| 5.7 | **Skaalaus** | Opettele MCP-palvelinten skaalaamista, mukaan lukien horisontaaliset ja vertikaaliset skaalausstrategiat, resurssien optimointi ja suorituskyvyn hienosäätö | [Skaalaus](./05-AdvancedTopics/mcp-scaling/README.md) |
+| 5.8 | **Turvallisuus** | Suojaa MCP-palvelimesi, mukaan lukien autentikointi, valtuutus ja datan suojausstrategiat | [Turvallisuus](./05-AdvancedTopics/mcp-security/README.md) |
+| 5.9 | **Web-haku MCP:llä** | Python MCP -palvelin ja asiakas, jotka integroivat SerpAPI:n reaaliaikaiseen web-, uutis-, tuotehakuun ja kysymyksiin & vastauksiin. Demonstroi monityökalun orkestrointia, ulkoisten API:en integraatiota ja vahvaa virheenkäsittelyä | [Web-haku MCP](./05-AdvancedTopics/web-search-mcp/README.md) |
+| 5.10 | **Reaaliaikainen suoratoisto** | Reaaliaikainen tiedonsuoratoisto on nykypäivän datalähtöisessä maailmassa välttämätöntä, kun yritykset ja sovellukset tarvitsevat välitöntä pääsyä tietoon tehdäksensä oikea-aikaisia päätöksiä | [Reaaliaikainen suoratoisto](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
+| 5.11 | **Reaaliaikainen web-haku** | Miten MCP muuttaa reaaliaikaista web-hakua tarjoamalla standardoidun lähestymistavan kontekstinhallintaan AI-mallien, hakukoneiden ja sovellusten välillä | [Reaaliaikainen web-haku](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
+| 06 | **Yhteisön panokset** | Kuinka osallistua koodin ja dokumentaation kehittämiseen, yhteistyö GitHubissa, yhteisölähtöiset parannukset ja palaute | [Yhteisön panokset](./06-CommunityContributions/README.md) |
+| 07 | **Oivalluksia varhaisesta käyttöönotosta** | Käytännön toteutuksia ja toimineita ratkaisuja, MCP-pohjaisten ratkaisujen rakentaminen ja käyttöönotto, trendit ja tulevaisuuden tiekartta | [Insights](./07-LessonsFromEarlyAdoption/README.md) |
+| 08 | **Parhaat käytännöt MCP:lle** | Suorituskyvyn viritys ja optimointi, vikankestävien MCP-järjestelmien suunnittelu, testaus- ja palautumisen strategiat | [Best Practices](./08-BestPractices/README.md) |
+| 09 | **MCP-tapaustutkimukset** | Syväsukelluksia MCP-ratkaisuarkkitehtuureihin, käyttöönoton suunnitelmiin ja integraatiovinkkeihin, selitetyt kaaviot ja projektien läpikäynnit | [Case Studies](./09-CaseStudy/README.md) |
+| 10 | **AI-työnkulkujen virtaviivaistaminen: MCP-palvelimen rakentaminen AI Toolkitin avulla** | Kattava käytännön työpaja, jossa yhdistetään MCP Microsoftin AI Toolkitin kanssa VS Codessa. Opit rakentamaan älykkäitä sovelluksia, jotka yhdistävät AI-mallit todellisiin työkaluihin käytännön moduulien kautta, jotka kattavat perusteet, mukautetun palvelinkehityksen ja tuotantoon käyttöönoton strategiat. | [Hands On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
 
 ## Esimerkkiprojektit
 
@@ -97,7 +98,7 @@ Oletpa sitten AI-kehittäjä, järjestelmäarkkitehti tai ohjelmistoinsinööri,
 
 </details>
 
-### 💡 MCP-edistyneet laskinprojektit:
+### 💡 MCP-edistynyt laskinprojektit:
 <details>
   <summary><strong>Tutustu edistyneisiin esimerkkeihin</strong></summary>
 
@@ -109,50 +110,48 @@ Oletpa sitten AI-kehittäjä, järjestelmäarkkitehti tai ohjelmistoinsinööri,
 
 </details>
 
+## 🎯 MCP:n oppimisen edellytykset
 
-## 🎯 MCP:n oppimisen ennakkovaatimukset
+Jotta saat tästä oppimateriaalista parhaan hyödyn, sinulla tulisi olla:
 
-Saadaksesi tästä oppimateriaalista parhaan hyödyn, sinulla tulisi olla:
+- Perustiedot C#:stä, Javasta tai Pythonista  
+- Ymmärrys asiakas-palvelin-mallista ja API:sta  
+- (Valinnainen) Tuntemus koneoppimisen peruskäsitteistä  
 
-- Perustiedot C#:stä, Javasta tai Pythonista
-- Ymmärrys asiakas-palvelin -mallista ja API:sta
-- (Valinnainen) Tutustuminen koneoppimisen käsitteisiin
+## 📚 Opas
 
-## 📚 Opas opiskeluun
+Laaja [Opas](./study_guide.md) on saatavilla auttamaan sinua navigoimaan tässä repossa tehokkaasti. Opas sisältää:
 
-Laaja [Opas opiskeluun](./study_guide.md) auttaa sinua liikkumaan tässä repossa tehokkaasti. Opas sisältää:
-
-- Visuaalisen opetussuunnitelmakartan kaikista aiheista
-- Yksityiskohtaisen erittelyn repossa käsitellyistä osioista
-- Ohjeet esimerkkiprojektien käyttöön
-- Suositellut oppimispolut eri taitotasoille
-- Lisäresursseja oppimismatkan tueksi
+- Visuaalisen opetussuunnitelmakartan, jossa kaikki käsitellyt aiheet  
+- Yksityiskohtaisen jaon repositorion osioista  
+- Ohjeita esimerkkiprojektien käyttöön  
+- Suositeltuja oppimispolkuja eri taitotasoille  
+- Lisäresursseja oppimismatkasi tueksi  
 
 ## 🛠️ Kuinka käyttää tätä opetussuunnitelmaa tehokkaasti
 
 Jokainen tämän oppaan oppitunti sisältää:
 
-1. Selkeät selitykset MCP-käsitteistä  
+1. Selkeät selitykset MCP-konsepteista  
 2. Live-koodiesimerkkejä useilla kielillä  
-3. Harjoituksia oikeiden MCP-sovellusten rakentamiseen  
+3. Harjoituksia todellisten MCP-sovellusten rakentamiseen  
 4. Lisäresursseja edistyneille oppijoille  
 
 ## 📜 Lisenssitiedot
 
-Tämä sisältö on lisensoitu **MIT-lisenssillä**. Ehdot ja käyttöoikeudet löydät tiedostosta [LICENSE](../../LICENSE).
+Tämä sisältö on lisensoitu **MIT-lisenssillä**. Ehdot ja vaatimukset löydät tiedostosta [LICENSE](../../LICENSE).
 
 ## 🤝 Osallistumisohjeet
 
-Tämä projekti ottaa mielellään vastaan panoksia ja ehdotuksia. Useimmat panokset edellyttävät, että hyväksyt
-Contributor License Agreementin (CLA), jossa vahvistat oikeutesi ja myönnät meille oikeudet käyttää panostasi. Lisätietoja löytyy osoitteesta <https://cla.opensource.microsoft.com>.
+Tämä projekti toivottaa tervetulleeksi osallistumiset ja ehdotukset. Useimmat osallistumiset edellyttävät, että hyväksyt
+Contributor License Agreementin (CLA), jossa vahvistat oikeutesi ja suostumuksesi antaa meille oikeudet käyttää panostasi. Lisätietoja löydät osoitteesta <https://cla.opensource.microsoft.com>.
 
-Kun lähetät pull requestin, CLA-botti arvioi automaattisesti, tarvitseeko sinun toimittaa CLA ja merkitsee PR:n asianmukaisesti (esim. tilantarkistus, kommentti). Noudata vain botin ohjeita. Tämä riittää tekemään vain kerran kaikissa CLA:a käyttävissä repossa.
+Kun lähetät pull requestin, CLA-botti arvioi automaattisesti, tarvitsetko CLA:n ja merkitsee PR:n asianmukaisesti (esim. statustarkistus, kommentti). Noudata vain botin antamia ohjeita. Tämä toimenpide tarvitsee tehdä vain kerran kaikissa CLA:ta käyttävissä repokokonaisuuksissa.
 
-Tämä projekti on ottanut käyttöön [Microsoft Open Source Code of Conductin](https://opensource.microsoft.com/codeofconduct/).
-Lisätietoja löytyy [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) -sivulta tai ota yhteyttä osoitteeseen [opencode@microsoft.com](mailto:opencode@microsoft.com) lisäkysymyksiä tai kommentteja varten.
+Tämä projekti on omaksunut [Microsoftin avoimen lähdekoodin käytöskoodin](https://opensource.microsoft.com/codeofconduct/). Lisätietoja löydät [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) -sivulta tai ota yhteyttä osoitteeseen [opencode@microsoft.com](mailto:opencode@microsoft.com) lisäkysymyksiä tai kommentteja varten.
 
 ## 🎒 Muut kurssit
-Tiimimme tarjoaa myös muita kursseja! Tutustu:
+Tiimimme tuottaa myös muita kursseja! Tutustu:
 
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
@@ -170,12 +169,12 @@ Tiimimme tarjoaa myös muita kursseja! Tutustu:
 - [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 
-## ™️ Tavaramerkki-ilmoitus
+## ™️ Tavaramerkkitiedote
 
 Tämä projekti saattaa sisältää tavaramerkkejä tai logoja projekteihin, tuotteisiin tai palveluihin liittyen. Microsoftin tavaramerkkien tai logojen luvallinen käyttö edellyttää ja noudattaa
 [Microsoftin tavaramerkki- ja brändiohjeita](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Microsoftin tavaramerkkien tai logojen käyttö tässä projektin muokatuissa versioissa ei saa aiheuttaa sekaannusta tai antaa vaikutelmaa Microsoftin sponsoroimasta.
-Kolmansien osapuolien tavaramerkkien tai logojen käyttö on näiden osapuolien sääntöjen alaista.
+Microsoftin tavaramerkkien tai logojen käyttö tämän projektin muokatuissa versioissa ei saa aiheuttaa sekaannusta eikä antaa vaikutelmaa Microsoftin sponsoroinnista.
+Kolmansien osapuolten tavaramerkkien tai logojen käyttö on kyseisten osapuolten sääntöjen alaista.
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, ole hyvä ja huomioi, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulee pitää auktoritatiivisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa mahdollisista väärinymmärryksistä tai tulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, ota huomioon, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää auktoritatiivisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa mahdollisista väärinymmärryksistä tai tulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
