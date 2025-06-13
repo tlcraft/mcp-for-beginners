@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3dd2f1e39277c31b0e57e29d165354d6",
-  "translation_date": "2025-06-12T21:32:20+00:00",
+  "original_hash": "64645691bf0985f1760b948123edf269",
+  "translation_date": "2025-06-13T10:39:49+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "fr"
 }
@@ -11,30 +11,30 @@ Maintenant que nous en savons un peu plus sur SSE, construisons un serveur SSE.
 
 ## Exercice : Créer un serveur SSE
 
-Pour créer notre serveur, il faut garder deux choses à l’esprit :
+Pour créer notre serveur, nous devons garder deux choses à l'esprit :
 
-- Utiliser un serveur web pour exposer des points de terminaison pour la connexion et les messages.
-- Construire notre serveur comme d’habitude avec les outils, ressources et invites que nous utilisions avec stdio.
+- Nous devons utiliser un serveur web pour exposer des points de connexion et de messages.
+- Construire notre serveur comme nous le faisons habituellement avec des outils, des ressources et des invites lorsque nous utilisions stdio.
 
 ### -1- Créer une instance de serveur
 
-Pour créer notre serveur, nous utilisons les mêmes types qu’avec stdio. Cependant, pour le transport, il faut choisir SSE.
+Pour créer notre serveur, nous utilisons les mêmes types qu'avec stdio. Cependant, pour le transport, nous devons choisir SSE.
 
 ---
 
-Passons maintenant à l’ajout des routes nécessaires.
+Ajoutons maintenant les routes nécessaires.
 
 ### -2- Ajouter des routes
 
-Ajoutons des routes qui gèrent la connexion et les messages entrants :
+Ajoutons les routes qui gèrent la connexion et les messages entrants :
 
 ---
 
-Ajoutons ensuite des fonctionnalités au serveur.
+Ajoutons maintenant des fonctionnalités au serveur.
 
-### -3- Ajouter des capacités au serveur
+### -3- Ajouter des fonctionnalités au serveur
 
-Maintenant que tout ce qui est spécifique à SSE est défini, ajoutons des fonctionnalités serveur comme des outils, des invites et des ressources.
+Maintenant que nous avons défini tout ce qui est spécifique à SSE, ajoutons des fonctionnalités au serveur comme des outils, des invites et des ressources.
 
 ---
 
@@ -46,38 +46,38 @@ Super, nous avons un serveur utilisant SSE, testons-le maintenant.
 
 ## Exercice : Déboguer un serveur SSE avec Inspector
 
-Inspector est un excellent outil que nous avons vu dans une leçon précédente [Créer votre premier serveur](/03-GettingStarted/01-first-server/README.md). Voyons si nous pouvons utiliser Inspector ici aussi :
+Inspector est un excellent outil que nous avons vu dans une leçon précédente [Créer votre premier serveur](/03-GettingStarted/01-first-server/README.md). Voyons si nous pouvons l'utiliser ici aussi :
 
-### -1- Lancer Inspector
+### -1- Lancer l'inspecteur
 
-Pour lancer Inspector, vous devez d’abord avoir un serveur SSE en fonctionnement, faisons cela maintenant :
+Pour lancer l'inspecteur, vous devez d'abord avoir un serveur SSE en fonctionnement, faisons cela maintenant :
 
-1. Démarrer le serveur
+1. Démarrez le serveur
 
 ---
 
-1. Lancer Inspector
+1. Lancez l'inspecteur
 
     > ![NOTE]
-    > Exécutez cette commande dans une fenêtre de terminal différente de celle où tourne le serveur. Notez également que vous devez adapter la commande ci-dessous à l’URL où votre serveur est hébergé.
+    > Exécutez ceci dans une fenêtre de terminal différente de celle où le serveur tourne. Notez également que vous devez ajuster la commande ci-dessous pour correspondre à l'URL où votre serveur est hébergé.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Lancer Inspector est identique dans tous les environnements d’exécution. Notez qu’au lieu de passer un chemin vers notre serveur et une commande pour le démarrer, on passe ici l’URL où tourne le serveur et on spécifie aussi la route `/sse`.
+    L'exécution de l'inspecteur est la même dans tous les environnements. Notez qu'au lieu de passer un chemin vers notre serveur et une commande pour démarrer le serveur, nous passons l'URL où le serveur tourne et nous spécifions également la route `/sse`.
 
-### -2- Tester l’outil
+### -2- Tester l'outil
 
-Connectez-vous au serveur en sélectionnant SSE dans la liste déroulante et renseignez l’URL où votre serveur est actif, par exemple http://localhost:4321/sse. Cliquez ensuite sur le bouton "Connect". Comme précédemment, choisissez de lister les outils, sélectionnez un outil et fournissez les valeurs d’entrée. Vous devriez voir un résultat similaire à l’image ci-dessous :
+Connectez le serveur en sélectionnant SSE dans la liste déroulante et remplissez le champ URL avec l'adresse où votre serveur tourne, par exemple http://localhost:4321/sse. Cliquez ensuite sur le bouton "Connect". Comme précédemment, choisissez de lister les outils, sélectionnez un outil et fournissez des valeurs d'entrée. Vous devriez voir un résultat comme ci-dessous :
 
-![Serveur SSE fonctionnant dans Inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.fr.png)
+![Serveur SSE en fonctionnement dans l'inspecteur](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.fr.png)
 
-Parfait, vous pouvez utiliser Inspector, voyons maintenant comment travailler avec Visual Studio Code.
+Super, vous pouvez utiliser l'inspecteur, voyons maintenant comment travailler avec Visual Studio Code.
 
 ## Travail à faire
 
-Essayez d’enrichir votre serveur avec plus de fonctionnalités. Consultez [cette page](https://api.chucknorris.io/) pour, par exemple, ajouter un outil qui appelle une API. C’est vous qui décidez de l’aspect que doit avoir le serveur. Amusez-vous bien :)
+Essayez d'ajouter plus de fonctionnalités à votre serveur. Consultez [cette page](https://api.chucknorris.io/) pour, par exemple, ajouter un outil qui appelle une API, vous décidez de ce à quoi le serveur doit ressembler. Amusez-vous bien :)
 
 ## Solution
 
@@ -85,11 +85,11 @@ Essayez d’enrichir votre serveur avec plus de fonctionnalités. Consultez [cet
 
 ## Points clés à retenir
 
-Voici les points essentiels de ce chapitre :
+Voici les points clés de ce chapitre :
 
-- SSE est le second type de transport supporté après stdio.
-- Pour supporter SSE, il faut gérer les connexions entrantes et les messages via un framework web.
-- Vous pouvez utiliser à la fois Inspector et Visual Studio Code pour consommer un serveur SSE, tout comme pour les serveurs stdio. Notez cependant quelques différences entre stdio et SSE. Pour SSE, il faut démarrer le serveur séparément puis lancer l’outil Inspector. Pour Inspector, il y a aussi des différences, notamment qu’il faut spécifier l’URL.
+- SSE est le deuxième type de transport supporté après stdio.
+- Pour supporter SSE, vous devez gérer les connexions entrantes et les messages en utilisant un framework web.
+- Vous pouvez utiliser à la fois Inspector et Visual Studio Code pour consommer un serveur SSE, tout comme les serveurs stdio. Notez cependant une légère différence entre stdio et SSE. Pour SSE, vous devez démarrer le serveur séparément puis lancer votre outil d'inspection. Pour l'outil Inspector, il y a aussi quelques différences, notamment la nécessité de spécifier l'URL.
 
 ## Exemples
 
@@ -103,9 +103,9 @@ Voici les points essentiels de ce chapitre :
 
 - [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 
-## Et ensuite
+## Et après ?
 
 - Suivant : [Streaming HTTP avec MCP (HTTP Streamable)](/03-GettingStarted/06-http-streaming/README.md)
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous ne sommes pas responsables des malentendus ou des erreurs d’interprétation résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue native doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l'utilisation de cette traduction.

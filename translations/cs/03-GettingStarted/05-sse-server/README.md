@@ -1,85 +1,93 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3dd2f1e39277c31b0e57e29d165354d6",
-  "translation_date": "2025-06-13T00:56:13+00:00",
+  "original_hash": "64645691bf0985f1760b948123edf269",
+  "translation_date": "2025-06-13T10:56:41+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "cs"
 }
 -->
-Teď, když už o SSE víme trochu víc, pojďme si vytvořit SSE server.
+Nyní, když už víme trochu více o SSE, pojďme si postavit SSE server.
 
 ## Cvičení: Vytvoření SSE serveru
 
-Při tvorbě serveru je potřeba mít na paměti dvě věci:
+Pro vytvoření našeho serveru je potřeba mít na paměti dvě věci:
 
-- Potřebujeme použít webový server, který vystaví endpointy pro připojení a zprávy.
-- Server postavíme stejně jako obvykle s nástroji, zdroji a výzvami, jak jsme to dělali se stdio.
+- Potřebujeme použít webový server, který zpřístupní endpointy pro připojení a zprávy.
+- Server postavíme stejně jako obvykle s nástroji, zdroji a výzvami, které jsme používali u stdio.
 
 ### -1- Vytvoření instance serveru
 
 Pro vytvoření serveru použijeme stejné typy jako u stdio. Pro transport však musíme zvolit SSE.
 
-Pojďme teď přidat potřebné routy.
+---
+
+Pojďme přidat potřebné routy.
 
 ### -2- Přidání rout
 
-Přidáme routy, které budou zpracovávat připojení a příchozí zprávy:
+Přidejme routy, které budou zpracovávat připojení a příchozí zprávy:
 
-Dále přidáme schopnosti serveru.
+---
+
+Nyní přidáme schopnosti serveru.
 
 ### -3- Přidání schopností serveru
 
-Teď, když máme definované vše specifické pro SSE, přidáme schopnosti serveru jako nástroje, výzvy a zdroje.
+Jakmile máme definováno vše specifické pro SSE, přidáme schopnosti serveru, jako jsou nástroje, výzvy a zdroje.
 
-Celý kód by měl vypadat takto:
+---
 
-Skvěle, máme server používající SSE, pojďme si ho teď vyzkoušet.
+Váš kompletní kód by měl vypadat takto:
+
+---
+
+Skvěle, máme server používající SSE, pojďme si ho vyzkoušet.
 
 ## Cvičení: Ladění SSE serveru pomocí Inspectoru
 
-Inspector je skvělý nástroj, který jsme viděli v předchozí lekci [Creating your first server](/03-GettingStarted/01-first-server/README.md). Podíváme se, jestli ho můžeme použít i tady:
+Inspector je skvělý nástroj, který jsme viděli v předchozí lekci [Creating your first server](/03-GettingStarted/01-first-server/README.md). Podívejme se, jestli ho můžeme použít i zde:
 
-### -1- Spuštění inspectoru
+### -1- Spuštění Inspectoru
 
-Nejdříve musíte mít spuštěný SSE server, takže to uděláme:
+Pro spuštění Inspectoru musíte mít nejprve běžící SSE server, pojďme ho tedy spustit:
 
 1. Spusťte server
 
-1. Spusťte inspector
+1. Spusťte Inspector
 
-    > [!NOTE]
-    > Tento příkaz spusťte v jiném terminálu, než kde běží server. Také si upravte příkaz tak, aby odpovídal URL, kde váš server běží.
+    > ![NOTE]
+    > Tento příkaz spusťte v samostatném terminálovém okně, než ve kterém běží server. Také nezapomeňte upravit příkaz podle URL, kde váš server běží.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-Spuštění inspectoru vypadá stejně ve všech runtimech. Všimněte si, že místo předání cesty k serveru a příkazu pro jeho spuštění předáváme URL, kde server běží, a specifikujeme routu `/sse`.
+Spuštění Inspectoru vypadá stejně ve všech runtimech. Všimněte si, že místo předávání cesty k serveru a příkazu pro jeho spuštění předáváme URL, kde server běží, a také specifikujeme routu `/sse`.
 
 ### -2- Vyzkoušení nástroje
 
-Připojte se k serveru výběrem SSE v rozbalovacím seznamu a vyplňte URL, kde váš server běží, například http://localhost:4321/sse. Pak klikněte na tlačítko „Connect“. Stejně jako dříve vyberte seznam nástrojů, vyberte nástroj a zadejte vstupní hodnoty. Výsledek by měl vypadat takto:
+Připojte se k serveru výběrem SSE v rozbalovacím seznamu a vyplňte pole URL, kde váš server běží, například http://localhost:4321/sse. Poté klikněte na tlačítko "Connect". Stejně jako dříve vyberte nástroje, zadejte vstupní hodnoty a měli byste vidět výsledek jako na obrázku níže:
 
 ![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.cs.png)
 
-Skvěle, umíte pracovat s inspector, pojďme se podívat, jak pracovat s Visual Studio Code.
+Skvěle, můžete pracovat s Inspector nástrojem, pojďme se teď podívat, jak pracovat s Visual Studio Code.
 
 ## Zadání
 
-Zkuste rozšířit server o další schopnosti. Podívejte se na [tuto stránku](https://api.chucknorris.io/) a například přidejte nástroj, který volá API, jak si server představíte, je na vás. Bavte se :)
+Zkuste rozšířit váš server o další schopnosti. Podívejte se na [tuto stránku](https://api.chucknorris.io/), kde můžete například přidat nástroj, který volá API, rozhodněte sami, jak by měl server vypadat. Bavte se :)
 
 ## Řešení
 
 [Řešení](./solution/README.md) Zde je možné řešení s funkčním kódem.
 
-## Klíčové body
+## Hlavní poznatky
 
-Z této kapitoly si odnesete následující:
+Hlavní poznatky z této kapitoly jsou:
 
-- SSE je druhý podporovaný transport vedle stdio.
+- SSE je druhý podporovaný typ transportu vedle stdio.
 - Pro podporu SSE musíte spravovat příchozí připojení a zprávy pomocí webového frameworku.
-- SSE server můžete spotřebovávat jak pomocí Inspectoru, tak Visual Studio Code, stejně jako stdio servery. Všimněte si ale rozdílů mezi stdio a SSE. U SSE je potřeba server spustit zvlášť a pak spustit inspector. U inspectoru je také rozdíl v tom, že musíte specifikovat URL.
+- K práci se SSE serverem můžete použít jak Inspector, tak Visual Studio Code, stejně jako u stdio serverů. Všimněte si, že mezi stdio a SSE jsou malé rozdíly. U SSE musíte server spustit samostatně a poté spustit Inspector. U Inspectoru je také rozdíl v tom, že musíte specifikovat URL.
 
 ## Ukázky
 
@@ -93,9 +101,9 @@ Z této kapitoly si odnesete následující:
 
 - [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 
-## Co bude dál
+## Co dál
 
 - Další: [HTTP Streaming with MCP (Streamable HTTP)](/03-GettingStarted/06-http-streaming/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo chybné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
