@@ -1,105 +1,103 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3dd2f1e39277c31b0e57e29d165354d6",
-  "translation_date": "2025-06-12T23:12:18+00:00",
+  "original_hash": "64645691bf0985f1760b948123edf269",
+  "translation_date": "2025-06-13T10:43:27+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "mo"
 }
 -->
-Acum că știm puțin mai multe despre SSE, să construim următorul un server SSE.
+Nauz saññi SSE a buste, leñu defar SSE server benn ci kaw.
 
-## Exercițiu: Crearea unui server SSE
+## Jàngalekat: Defar SSE Server
 
-Pentru a crea serverul nostru, trebuie să avem în vedere două lucruri:
+Ngir defar server bii, ñu am nañu ci xel ñetti bëgg:
 
-- Trebuie să folosim un server web pentru a expune endpoint-uri pentru conexiune și mesaje.
-- Construim serverul așa cum facem de obicei, folosind unelte, resurse și prompturi, așa cum făceam cu stdio.
+- Ñu am nañu web server ngir jëfandikoo endpoints ngir jàppale ak messages.
+- Defal server bii ni ñu defar ci tool yi, resources ak prompts bi ñu jëfandikoo ci jamono ju ñu jàppante ak stdio.
 
-### -1- Crearea unei instanțe de server
+### -1- Defar instance server
 
-Pentru a crea serverul, folosim aceleași tipuri ca la stdio. Totuși, pentru transport, trebuie să alegem SSE.
+Ngir defar server bii, nu jëfandikoo lu mel ni ci stdio. Waaye, ngir transport, nu jëfandikoo SSE.
 
-Să adăugăm următor rutele necesare.
+Jëfandikoo SSE.
 
-### -2- Adăugarea rutelor
+### -2- Jëfandikoo routes
 
-Să adăugăm rute care să gestioneze conexiunea și mesajele primite:
+Jëfandikoo routes yu jàppale ci connection ak messages yu gën a am solo:
 
-Să adăugăm acum capabilități serverului.
+### -3- Jëfandikoo capabilties ci server
 
-### -3- Adăugarea capabilităților serverului
+Bii ngay am SSE ci diggante, jëfandikoo capabilties ci server ni tools, prompts ak resources.
 
-Acum că am definit tot ce ține de SSE, să adăugăm capabilități serverului, cum ar fi unelte, prompturi și resurse.
+Code bi ngay am itam dina mel ni lu ëpp solo:
 
-Codul complet ar trebui să arate astfel:
+Jàmm rekk, amna SSE server, ñu jàngal ci defar.
 
-Minunat, avem un server care folosește SSE, să-l testăm acum.
+## Jàngalekat: Jàppale SSE Server ak Inspector
 
-## Exercițiu: Debugging unui server SSE cu Inspector
+Inspector mooy tool bu baax, nu gis ci jàngalekat bu njëkk [Defar server bu njëkk](/03-GettingStarted/01-first-server/README.md). Naka nu jëfandikoo Inspector ci SSE server bii:
 
-Inspector este un instrument grozav pe care l-am văzut într-o lecție anterioară [Crearea primului server](/03-GettingStarted/01-first-server/README.md). Să vedem dacă îl putem folosi și aici:
+### -1- Jàppale inspector
 
-### -1- Pornirea inspectorului
+Ngir jàppale inspector, ci kanam server SSE am nañu. Jàmm, defal li ci kanam:
 
-Pentru a porni inspectorul, trebuie mai întâi să ai un server SSE pornit, așa că să facem asta:
+1. Jàppale server
 
-1. Pornește serverul
-
-1. Pornește inspectorul
+1. Jàppale inspector
 
     > ![NOTE]
-    > Rulează această comandă într-un terminal diferit față de cel în care rulează serverul. De asemenea, trebuie să adaptezi comanda de mai jos pentru URL-ul la care serverul tău rulează.
+    > Jàppale ci window terminal bu bari ci kanam server bi. Jàmm, am nañu defar ci command bi ngir jàppale server bi ci URL bi server bi am.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Pornirea inspectorului arată la fel în toate mediile de execuție. Observă că în loc să indicăm calea către server și o comandă pentru pornirea serverului, indicăm URL-ul unde serverul rulează și specificăm ruta `/sse`.
+    Jàppale inspector mooy ni ci runtime yu nekk. Xam ne ñu amul jafe-jafe ci wàllu ci jëfandikoo path ngir jàppale server bi, nu jëfandikoo URL bi server bi am ak nu jëfandikoo route `/sse`.
 
-### -2- Testarea uneltei
+### -2- Jàppale tool bi
 
-Conectează serverul selectând SSE din lista derulantă și completează câmpul URL cu adresa unde serverul tău rulează, de exemplu http:localhost:4321/sse. Apoi apasă butonul "Connect". Ca înainte, selectează să listezi uneltele, alege o unealtă și oferă valorile de input. Ar trebui să vezi un rezultat ca cel de mai jos:
+Jàppale server bi ngir jàppale SSE ci droplist bi, te jëfandikoo url bi server bi am, ni http:localhost:4321/sse. Jàppale button bi "Connect". Ni ci kanam, jëfandikoo list tools, jëfandikoo tool ak jëfandikoo input values. Ñu gis li ci nekk ci suuf bii:
 
-![Server SSE rulând în inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.mo.png)
+![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.mo.png)
 
-Minunat, poți lucra cu inspectorul, să vedem acum cum putem folosi Visual Studio Code.
+Jàmm, nga am SSE server, jàngal naka nu jëfandikoo Visual Studio Code ci kanam.
 
-## Temă
+## Jàmm
 
-Încearcă să extinzi serverul cu mai multe capabilități. Vezi [această pagină](https://api.chucknorris.io/) pentru a adăuga, de exemplu, o unealtă care apelează un API, tu decizi cum ar trebui să arate serverul. Distracție plăcută :)
+Jàppale defar server bi ak capabilties yu bari. Jàng ci [bii](https://api.chucknorris.io/) ngir jëfandikoo tool bu jëfandikoo API, nga xam ni server bi dina am lu mel ni. Am na jàmm :)
 
-## Soluție
+## Jàmm ci bopp
 
-[Soluție](./solution/README.md) Iată o posibilă soluție cu cod funcțional.
+[Jàmm ci bopp](./solution/README.md) Bii moo tax server bi jëfandikoo code bu am solo.
 
-## Aspecte importante
+## Li muy wone
 
-Aspectele importante din acest capitol sunt:
+Li nu jàng ci biir chapter bii:
 
-- SSE este al doilea tip de transport suportat după stdio.
-- Pentru a susține SSE, trebuie să gestionezi conexiunile și mesajele primite folosind un framework web.
-- Poți folosi atât Inspector cât și Visual Studio Code pentru a consuma serverul SSE, la fel ca pentru serverele stdio. Observă diferențele dintre stdio și SSE. Pentru SSE, trebuie să pornești serverul separat și apoi să rulezi unealta inspector. De asemenea, pentru unealta inspector trebuie să specifici URL-ul.
+- SSE mooy transport bu ñetti bu am ci kaw stdio.
+- Ngir jëfandikoo SSE, nga am nañu jàppale ci incoming connections ak messages ci web framework.
+- Nga jëfandikoo Inspector ak Visual Studio Code ngir jàppale SSE server, ni ci stdio servers. Xam ne am nañu ndigal yu am solo ci wàllu ci stdio ak SSE. Ngir SSE, nga am nañu defar server bi ci kanam te jàppale inspector tool bi. Ci inspector tool bi, am nañu ndigal yu am solo ngir jëfandikoo URL bi.
 
-## Exemple
+## Samples 
 
-- [Calculator Java](../samples/java/calculator/README.md)
-- [Calculator .Net](../../../../03-GettingStarted/samples/csharp)
-- [Calculator JavaScript](../../../../03-GettingStarted/samples/javascript)
-- [Calculator TypeScript](../../../../03-GettingStarted/samples/typescript)
-- [Calculator Python](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python) 
 
-## Resurse suplimentare
+## Resources yu bari
 
 - [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 
-## Ce urmează
+## Li ngay defar ci kanam
 
-- Următorul: [Streaming HTTP cu MCP (Streamable HTTP)](/03-GettingStarted/06-http-streaming/README.md)
+- Li ngay defar ci kanam: [HTTP Streaming with MCP (Streamable HTTP)](/03-GettingStarted/06-http-streaming/README.md)
 
 **Disclaimer**:  
 This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
 
 ---
 
-(Note: "mo" is not a recognized language code or language name in my training data. Could you please clarify which language you mean by "mo"? For example, "mo" might refer to Moldovan, but Moldovan is essentially Romanian. If you meant something else, please specify.)
+If by "mo" you meant a specific language or code, please clarify so I can provide the correct translation.
