@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9d80e2a99a9aea8d8226253e6baf4c8c",
-  "translation_date": "2025-06-06T17:52:44+00:00",
+  "original_hash": "bc3ae5af5973160abba9976cb5a4704c",
+  "translation_date": "2025-06-13T11:24:32+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "en"
 }
@@ -17,17 +17,17 @@ Now we will connect to the server and ask for its capabilities:
 
 The next step after listing server capabilities is to convert them into a format that the LLM understands. Once we do that, we can provide these capabilities as tools to our LLM.
 
-Great, we're now set up to handle user requests, so let's tackle that next.
+Great, we're now set up to handle user requests, so let's move on to that.
 
 ### -4- Handle user prompt request
 
-In this part of the code, we will handle user requests.
+In this part of the code, we will manage user requests.
 
 Great, you did it!
 
 ## Assignment
 
-Take the code from the exercise and expand the server with some additional tools. Then create a client with an LLM, like in the exercise, and test it out with different prompts to ensure all your server tools are called dynamically. This way of building a client means the end user will have a great experience, as they can use natural language prompts instead of exact client commands and remain unaware of any MCP server being called.
+Take the code from the exercise and expand the server by adding more tools. Then create a client with an LLM, like in the exercise, and test it with different prompts to ensure all your server tools are called dynamically. This approach to building a client ensures the end user has a great experience, as they can use natural language prompts instead of exact client commands and won’t need to know about any MCP server being called.
 
 ## Solution 
 

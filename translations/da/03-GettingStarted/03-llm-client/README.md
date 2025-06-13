@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9d80e2a99a9aea8d8226253e6baf4c8c",
-  "translation_date": "2025-06-06T18:29:39+00:00",
+  "original_hash": "bc3ae5af5973160abba9976cb5a4704c",
+  "translation_date": "2025-06-13T11:32:21+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "da"
 }
 -->
-Fantastisk, til vores næste trin, lad os liste kapabiliteterne på serveren.
+Fantastisk, til næste trin skal vi liste kapabiliteterne på serveren.
 
-### -2 Liste serverkapabiliteter
+### -2 List serverkapabiliteter
 
-Nu vil vi forbinde til serveren og bede om dens kapabiliteter:
+Nu vil vi oprette forbindelse til serveren og bede om dens kapabiliteter:
 
 ### -3- Konverter serverkapabiliteter til LLM-værktøjer
 
-Næste skridt efter at have listet serverkapabiliteter er at konvertere dem til et format, som LLM forstår. Når vi gør det, kan vi tilbyde disse kapabiliteter som værktøjer til vores LLM.
+Næste skridt efter at have listet serverkapabiliteterne er at konvertere dem til et format, som LLM forstår. Når vi har gjort det, kan vi give disse kapabiliteter som værktøjer til vores LLM.
 
 Fantastisk, vi er nu klar til at håndtere brugerforespørgsler, så lad os tage fat på det næste.
 
@@ -23,11 +23,11 @@ Fantastisk, vi er nu klar til at håndtere brugerforespørgsler, så lad os tage
 
 I denne del af koden vil vi håndtere brugerforespørgsler.
 
-Fantastisk, du klarede det!
+Fantastisk, det klarede du!
 
 ## Opgave
 
-Tag koden fra øvelsen og byg serveren ud med flere værktøjer. Opret derefter en klient med en LLM, som i øvelsen, og test den med forskellige prompts for at sikre, at alle dine serverværktøjer bliver kaldt dynamisk. Denne måde at bygge en klient på betyder, at slutbrugeren får en god brugeroplevelse, da de kan bruge prompts i stedet for præcise klientkommandoer og ikke behøver at være opmærksomme på, at en MCP-server bliver kaldt.
+Tag koden fra øvelsen og udbyg serveren med flere værktøjer. Opret derefter en klient med en LLM, som i øvelsen, og test den med forskellige prompts for at sikre, at alle dine serverværktøjer bliver kaldt dynamisk. Denne måde at bygge en klient på betyder, at slutbrugeren får en fremragende brugeroplevelse, da de kan bruge prompts i stedet for præcise klientkommandoer og ikke behøver at være opmærksomme på, at der kaldes en MCP-server.
 
 ## Løsning
 
@@ -35,7 +35,7 @@ Tag koden fra øvelsen og byg serveren ud med flere værktøjer. Opret derefter 
 
 ## Vigtige pointer
 
-- At tilføje en LLM til din klient giver en bedre måde for brugere at interagere med MCP-servere.
+- At tilføje en LLM til din klient giver en bedre måde for brugere at interagere med MCP-servere på.
 - Du skal konvertere MCP-serverens svar til noget, som LLM kan forstå.
 
 ## Eksempler
@@ -50,7 +50,7 @@ Tag koden fra øvelsen og byg serveren ud med flere værktøjer. Opret derefter 
 
 ## Hvad er det næste
 
-- Næste: [Brug af en server med Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
+- Næste: [Forbrug af en server ved brug af Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.

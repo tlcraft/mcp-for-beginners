@@ -1,25 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9d80e2a99a9aea8d8226253e6baf4c8c",
-  "translation_date": "2025-06-06T18:31:08+00:00",
+  "original_hash": "bc3ae5af5973160abba9976cb5a4704c",
+  "translation_date": "2025-06-13T11:32:38+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "no"
 }
 -->
-Flott, for vårt neste steg, la oss liste opp kapasitetene på serveren.
+Flott, for neste steg la oss liste opp kapasitetene på serveren.
 
 ### -2 List serverkapasiteter
 
-Nå skal vi koble til serveren og spørre om dens kapasiteter:
+Nå skal vi koble til serveren og be om dens kapasiteter:
 
 ### -3- Konverter serverkapasiteter til LLM-verktøy
 
-Neste steg etter å ha listet serverkapasitetene er å konvertere dem til et format som LLM forstår. Når vi har gjort det, kan vi tilby disse kapasitetene som verktøy til vår LLM.
+Neste steg etter å ha listet opp serverkapasitetene er å konvertere dem til et format som LLM forstår. Når vi gjør det, kan vi tilby disse kapasitetene som verktøy til LLM-en vår.
 
-Flott, nå er vi klare til å håndtere brukerforespørsler, så la oss ta for oss det neste.
+Flott, nå er vi klare til å håndtere brukerforespørsler, så la oss ta tak i det neste.
 
-### -4- Håndter brukerforespørsel
+### -4- Håndter brukerprompt-forespørsel
 
 I denne delen av koden skal vi håndtere brukerforespørsler.
 
@@ -27,30 +27,30 @@ Flott, du klarte det!
 
 ## Oppgave
 
-Ta koden fra øvelsen og bygg ut serveren med flere verktøy. Deretter lager du en klient med en LLM, som i øvelsen, og tester den med ulike prompt for å sikre at alle serververktøyene dine blir kalt dynamisk. Denne måten å bygge en klient på gir sluttbrukeren en god brukeropplevelse, siden de kan bruke naturlige språk-prompt i stedet for eksakte klientkommandoer, uten å være klar over at en MCP-server blir kalt.
+Ta koden fra øvelsen og bygg ut serveren med flere verktøy. Lag deretter en klient med en LLM, som i øvelsen, og test det med ulike prompts for å sikre at alle serververktøyene dine blir kalt dynamisk. Denne måten å bygge en klient på gir sluttbrukeren en god brukeropplevelse, siden de kan bruke naturlige språk-prompt i stedet for eksakte klientkommandoer, og de trenger ikke være klar over at en MCP-server blir kalt.
 
 ## Løsning
 
-[Løsning](/03-GettingStarted/03-llm-client/solution/README.md)
+[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
 ## Viktige punkter
 
-- Å legge til en LLM i klienten din gir en bedre måte for brukere å samhandle med MCP-servere på.
-- Du må konvertere MCP-serverens respons til noe LLM kan forstå.
+- Å legge til en LLM i klienten gir en bedre måte for brukere å interagere med MCP-servere på.
+- Du må konvertere MCP-serverens respons til noe LLM-en kan forstå.
 
 ## Eksempler
 
-- [Java Kalkulator](../samples/java/calculator/README.md)
-- [.Net Kalkulator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Kalkulator](../samples/javascript/README.md)
-- [TypeScript Kalkulator](../samples/typescript/README.md)
-- [Python Kalkulator](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## Ekstra ressurser
 
-## Hva kommer nå
+## Hva nå
 
-- Neste: [Konsumere en server med Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
+- Neste: [Bruke en server med Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk skal betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår fra bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

@@ -1,50 +1,56 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9d80e2a99a9aea8d8226253e6baf4c8c",
-  "translation_date": "2025-06-06T18:03:13+00:00",
+  "original_hash": "bc3ae5af5973160abba9976cb5a4704c",
+  "translation_date": "2025-06-13T11:26:57+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "mo"
 }
 -->
-### -2 List server capabilities
+Great, foar ús folgjende stap, lit ús de mooglikheden op 'e server opsomje.
 
-Le nun k connecté au server et demandé so capacité: 
+### -2 List server mooglikheden
 
-### -3- Convert server capabilities to LLM tools
+No sille wy ferbine mei de server en freegje nei syn mooglikheden:
 
-Étape suivante après avoir listé les capacités du serveur est de les convertir dans un format que le LLM comprend. Une fois fait, on peut fournir ces capacités comme outils à notre LLM.
+### -3- Konvertearje server mooglikheden nei LLM ark
 
-### -4- Handle user prompt request
+De folgjende stap nei it opsommen fan server mooglikheden is om se om te setten yn in formaat dat it LLM begrypet. As wy dat dogge, kinne wy dizze mooglikheden as ark oan ús LLM leverje.
 
-Dans cette partie du code, on va gérer les requêtes utilisateur.
+Great, wy binne no klear om brûkersfersiken ôf te hanneljen, dus lit ús dat no oanpakke.
 
-## Assignment
+### -4- Hannelje brûkersprompt fersyk ôf
 
-Prends le code de l’exercice et développe le serveur avec plus d’outils. Ensuite, crée un client avec un LLM, comme dans l’exercice, et teste-le avec différents prompts pour t’assurer que tous les outils du serveur sont appelés dynamiquement. Cette manière de construire un client offre une excellente expérience utilisateur puisque l’utilisateur peut utiliser des prompts au lieu de commandes client exactes, sans se soucier qu’un serveur MCP soit appelé.
+Yn dit diel fan de koade sille wy brûkersfersiken ôfhannele.
 
-## Solution 
+Great, do hast it dien!
 
-[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
+## Oefening
 
-## Key Takeaways
+Nim de koade út de oefening en bou de server út mei wat mear ark. Dan meitsje in kliïnt mei in LLM, lykas yn de oefening, en test it mei ferskate prompts om der wis fan te wêzen dat al dyn server ark dynamysk oproppe wurde. Dizze wize fan in kliïnt bouwen betsjut dat de einbrûker in geweldige brûkersûnderfining hat, om't se prompts brûke kinne yn stee fan krekte kliïnt kommando's, en se net bewust binne fan in MCP server dy't oproppen wurdt.
 
-- Ajouter un LLM à ton client offre une meilleure façon pour les utilisateurs d’interagir avec les serveurs MCP.
-- Il faut convertir la réponse du serveur MCP en quelque chose que le LLM peut comprendre.
+## Oplossing
 
-## Samples 
+[Oplossing](/03-GettingStarted/03-llm-client/solution/README.md)
+
+## Haadpunten
+
+- It tafoegjen fan in LLM oan dyn kliïnt biedt in bettere manier foar brûkers om mei MCP Servers te ynteraksjen.
+- Jo moatte de MCP Server antwurd konvertearje nei wat it LLM begripe kin.
+
+## Samples
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
 - [JavaScript Calculator](../samples/javascript/README.md)
 - [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python) 
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Additional Resources
+## Ek boarnen
 
-## What's Next
+## Wat is de folgjende stap
 
-- Suivant : [Consommer un serveur avec Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
+- Folgjende: [In server brûke mei Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
 
 **Disclaimer**:  
 This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

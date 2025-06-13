@@ -1,61 +1,56 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9d80e2a99a9aea8d8226253e6baf4c8c",
-  "translation_date": "2025-06-06T18:38:50+00:00",
+  "original_hash": "bc3ae5af5973160abba9976cb5a4704c",
+  "translation_date": "2025-06-13T11:34:32+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "ms"
 }
 -->
-# Ստեղծել հաճախորդ LLM-ով
+عالی، برای مرحله بعدی، بیایید قابلیت‌های سرور را فهرست کنیم.
 
-Մինչ այս you've տեսել, թե ինչպես ստեղծել սերվեր և հաճախորդ: Հաճախորդը կարող էր բացահայտ կանչել սերվերը՝ ցուցակելու իր գործիքները, ռեսուրսները և հրահանգները: Բայց սա շատ պրակտիկ չէ: Ձեր օգտագործողը ապրում է գործակալային դարում և ակնկալում է օգտագործել հրահանգներ և հաղորդակցվել LLM-ի հետ դրա համար: Իր օգտագործողի համար չի կարևոր, թե դուք օգտագործում եք MCP կամ ոչ ձեր կարողությունները պահելու համար, բայց նրանք ակնկալում են բնական լեզվով հաղորդակցվել: Ուրեմն ինչպես լուծել սա: Պատասխանը կայանում է հաճախորդին ավելացնել LLM:
+### -2 فهرست کردن قابلیت‌های سرور
 
-## Հատկություններ
+حالا به سرور متصل می‌شویم و قابلیت‌های آن را درخواست می‌کنیم:
 
-Այս դասում կենտրոնանում ենք հաճախորդին LLM ավելացնելու վրա և ցույց տալիս, թե ինչպես սա ավելի լավ փորձառություն է ապահովում օգտագործողի համար:
+### -3 تبدیل قابلیت‌های سرور به ابزارهای LLM
 
-## Ուսումնական նպատակներ
+گام بعدی پس از فهرست کردن قابلیت‌های سرور، تبدیل آنها به فرمتی است که LLM بتواند بفهمد. وقتی این کار را انجام دادیم، می‌توانیم این قابلیت‌ها را به عنوان ابزار به LLM خود ارائه دهیم.
 
-Դասի վերջում դուք կկարողանաք՝
+عالی، حالا آماده‌ایم تا درخواست‌های کاربر را مدیریت کنیم، پس بیایید این قسمت را پیاده‌سازی کنیم.
 
-- Ստեղծել հաճախորդ LLM-ով։
-- Անհատականորեն հաղորդակցվել MCP սերվերի հետ LLM-ի միջոցով։
-- Ապահովել ավելի լավ վերջնական օգտագործողի փորձառություն հաճախորդի կողմից։
+### -4 مدیریت درخواست پرامپت کاربر
 
-## Մեթոդաբանություն
+در این بخش از کد، درخواست‌های کاربر را مدیریت خواهیم کرد.
 
-Փորձենք հասկանալ մոտեցումը, որը պետք է ձեռնարկենք: LLM ավելացնելը թվում է պարզ, բայց արդյոք մենք իրականում դա կանենք:
+عالی، انجامش دادی!
 
-Ահա թե ինչպես հաճախորդը կհաղորդակցվի սերվերի հետ.
+## تمرین
 
-1. Կապ հաստատել սերվերի հետ։
+کد تمرین را بردار و سرور را با ابزارهای بیشتری توسعه بده. سپس یک کلاینت با LLM بساز، مانند تمرین، و آن را با پرامپت‌های مختلف تست کن تا مطمئن شوی تمام ابزارهای سرور به صورت داینامیک فراخوانی می‌شوند. این روش ساخت کلاینت باعث می‌شود تجربه کاربری بسیار بهتری داشته باشی، چون کاربران می‌توانند با استفاده از پرامپت‌ها به جای دستورات دقیق کلاینت، تعامل کنند و از وجود هر سرور MCP بی‌خبر باشند.
 
-2. Ցուցակել կարողությունները, հրահանգները, ռեսուրսները և գործիքները, և պահպանել նրանց սխեման։
+## راه حل
 
-3. Ավելացնել LLM և փոխանցել պահպանված կարողությունները և սխեման այն ձևաչափով, որը LLM-ը հասկանում է։
+[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
-4. Վերահսկել օգտագործողի հրահանգը՝ փոխանցելով այն LLM-ին միասին հաճախորդի կողմից ցուցակված գործիքների հետ։
+## نکات کلیدی
 
-Հիանալի, հիմա, երբ հասկանում ենք, թե ինչպես կարելի է դա անել բարձր մակարդակով, փորձենք դա ստորև ներկայացված վարժությունում։
+- افزودن LLM به کلاینت شما راه بهتری برای تعامل کاربران با سرورهای MCP فراهم می‌کند.
+- باید پاسخ سرور MCP را به فرمتی تبدیل کنید که LLM بتواند آن را درک کند.
 
-## Վարժություն՝ Ստեղծել հաճախորդ LLM-ով
+## نمونه‌ها
 
-Այս վարժությունում մենք կսովորենք հաճախորդին LLM ավելացնել։
+- [ماشین حساب جاوا](../samples/java/calculator/README.md)
+- [ماشین حساب .Net](../../../../03-GettingStarted/samples/csharp)
+- [ماشین حساب جاوااسکریپت](../samples/javascript/README.md)
+- [ماشین حساب تایپ‌اسکریپت](../samples/typescript/README.md)
+- [ماشین حساب پایتون](../../../../03-GettingStarted/samples/python)
 
-## Ավտորիզացիա GitHub Personal Access Token-ով
+## منابع اضافی
 
-GitHub տոկեն ստեղծելը պարզ գործընթաց է: Ահա ինչպես կարող եք դա անել.
+## مرحله بعد
 
-- Մուտք գործեք GitHub-ի կարգավորումները՝ սեղմելով պրոֆիլի նկարի վրա վերև աջ անկյունում և ընտրելով Settings։
-- Նավարկեք Developer Settings բաժին՝ ներքև սքրոլլ անելով և սեղմելով Developer Settings։
-- Ընտրեք Personal Access Tokens՝ սեղմելով Personal access tokens և հետո Generate new token։
-- Կարգավորեք ձեր տոկենը՝ ավելացնելով նշում, սահմանելով ժամկետ և ընտրելով անհրաժեշտ scopes (թույլտվություններ)։
-- Ստեղծեք և պատճենեք տոկենը՝ սեղմելով Generate token, և համոզվեք, որ այն անմիջապես պատճենեք, քանի որ այն այլևս չի երևա։
-
-### -1- Կապ հաստատել սերվերի հետ
-
-Առաջին հերթին ստեղծենք մեր հաճախորդը։
+- مرحله بعد: [استفاده از سرور با Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
