@@ -1,92 +1,67 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "4d3415b9d2bf58bc69be07f945a69e07",
-  "translation_date": "2025-05-20T23:38:35+00:00",
+  "original_hash": "23899e82d806f25e5e46e89aab564dca",
+  "translation_date": "2025-06-13T21:25:59+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "tr"
 }
 -->
-# Vaka İncelemesi: Azure AI Seyahat Acenteleri – Referans Uygulaması
+# MCP Uygulamada: Gerçek Dünya Vaka İncelemeleri
+
+Model Context Protocol (MCP), yapay zeka uygulamalarının veri, araçlar ve hizmetlerle etkileşim şeklini dönüştürüyor. Bu bölüm, MCP'nin çeşitli kurumsal senaryolarda pratik uygulamalarını gösteren gerçek dünya vaka incelemelerini sunmaktadır.
 
 ## Genel Bakış
 
-[Azure AI Seyahat Acenteleri](https://github.com/Azure-Samples/azure-ai-travel-agents), Microsoft tarafından geliştirilen kapsamlı bir referans çözüm olup, Model Context Protocol (MCP), Azure OpenAI ve Azure AI Search kullanarak çoklu ajanlı, yapay zeka destekli bir seyahat planlama uygulamasının nasıl oluşturulacağını gösterir. Bu proje, birden fazla yapay zeka ajanının koordinasyonu, kurumsal verilerin entegrasyonu ve gerçek dünya senaryoları için güvenli, genişletilebilir bir platform sağlama konusundaki en iyi uygulamaları sergiler.
+Bu bölüm, MCP uygulamalarına dair somut örnekler sunarak organizasyonların bu protokolü karmaşık iş sorunlarını çözmek için nasıl kullandığını vurgular. Bu vaka incelemelerini inceleyerek, MCP'nin gerçek dünya senaryolarındaki çok yönlülüğü, ölçeklenebilirliği ve pratik faydaları hakkında bilgi edineceksiniz.
 
-## Temel Özellikler
-- **Çoklu Ajan Koordinasyonu:** MCP kullanarak, karmaşık seyahat planlama görevlerini yerine getirmek için iş birliği yapan uzmanlaşmış ajanları (örneğin, uçuş, otel ve güzergah ajanları) koordine eder.
-- **Kurumsal Veri Entegrasyonu:** Seyahat önerileri için güncel ve ilgili bilgileri sağlamak amacıyla Azure AI Search ve diğer kurumsal veri kaynaklarına bağlanır.
-- **Güvenli, Ölçeklenebilir Mimari:** Kimlik doğrulama, yetkilendirme ve ölçeklenebilir dağıtım için Azure servislerinden yararlanır ve kurumsal güvenlik en iyi uygulamalarını takip eder.
-- **Genişletilebilir Araçlar:** Yeniden kullanılabilir MCP araçları ve istem şablonları uygular, böylece yeni alanlara veya iş gereksinimlerine hızlı uyum sağlar.
-- **Kullanıcı Deneyimi:** Kullanıcıların Azure OpenAI ve MCP tarafından desteklenen seyahat acenteleriyle sohbet ederek etkileşim kurmasını sağlayan bir arayüz sunar.
+## Temel Öğrenme Hedefleri
 
-## Mimari
-![Architecture](https://raw.githubusercontent.com/Azure-Samples/azure-ai-travel-agents/main/docs/ai-travel-agents-architecture-diagram.png)
+Bu vaka incelemelerini keşfederek:
 
-### Mimari Diyagram Açıklaması
+- MCP'nin belirli iş problemlerini çözmek için nasıl uygulanabileceğini anlayacaksınız
+- Farklı entegrasyon desenleri ve mimari yaklaşımlar hakkında bilgi sahibi olacaksınız
+- Kurumsal ortamlarda MCP uygulamak için en iyi uygulamaları tanıyacaksınız
+- Gerçek dünya uygulamalarında karşılaşılan zorluklar ve çözümler hakkında içgörü kazanacaksınız
+- Kendi projelerinizde benzer desenleri uygulama fırsatlarını belirleyeceksiniz
 
-Azure AI Seyahat Acenteleri çözümü, çoklu yapay zeka ajanlarının ve kurumsal veri kaynaklarının modüler, ölçeklenebilir ve güvenli entegrasyonu için tasarlanmıştır. Ana bileşenler ve veri akışı şu şekildedir:
+## Öne Çıkan Vaka İncelemeleri
 
-- **Kullanıcı Arayüzü:** Kullanıcılar, bir web sohbeti veya Teams botu gibi konuşma tabanlı bir arayüz üzerinden sisteme sorgular gönderir ve seyahat önerileri alır.
-- **MCP Sunucusu:** Kullanıcı girdisini alan, bağlamı yöneten ve Model Context Protocol aracılığıyla uzmanlaşmış ajanların (örneğin FlightAgent, HotelAgent, ItineraryAgent) işlemlerini koordine eden merkezi düzenleyicidir.
-- **Yapay Zeka Ajanları:** Her ajan belirli bir alandan (uçuşlar, oteller, güzergahlar) sorumludur ve MCP aracı olarak uygulanmıştır. Ajanlar, istekleri işlemek ve yanıtlar oluşturmak için istem şablonları ve mantık kullanır.
-- **Azure OpenAI Hizmeti:** Gelişmiş doğal dil anlama ve üretim sağlar, ajanların kullanıcı niyetini yorumlamasına ve sohbet diliyle yanıt vermesine olanak tanır.
-- **Azure AI Search & Kurumsal Veri:** Ajanlar, uçuşlar, oteller ve seyahat seçenekleri hakkında güncel bilgileri almak için Azure AI Search ve diğer kurumsal veri kaynaklarına sorgu yapar.
-- **Kimlik Doğrulama & Güvenlik:** Microsoft Entra ID ile güvenli kimlik doğrulama sağlar ve tüm kaynaklar için en az ayrıcalık erişim kontrolleri uygular.
-- **Dağıtım:** Azure Container Apps üzerinde dağıtım için tasarlanmıştır; bu sayede ölçeklenebilirlik, izleme ve operasyonel verimlilik sağlanır.
+### 1. [Azure AI Seyahat Acenteleri – Referans Uygulama](./travelagentsample.md)
 
-Bu mimari, çoklu yapay zeka ajanlarının sorunsuz koordinasyonunu, kurumsal veri ile güvenli entegrasyonu ve alan spesifik yapay zeka çözümleri oluşturmak için sağlam, genişletilebilir bir platform sunar.
+Bu vaka incelemesi, MCP, Azure OpenAI ve Azure AI Search kullanarak çoklu ajanlı, yapay zeka destekli seyahat planlama uygulaması oluşturmayı gösteren Microsoft’un kapsamlı referans çözümünü inceliyor. Proje şunları sergiliyor:
 
-## Mimari Diyagramın Adım Adım Açıklaması
-Büyük bir seyahat planladığınızı ve her detayıyla ilgilenen uzman bir ekip olduğunu hayal edin. Azure AI Seyahat Acenteleri sistemi benzer şekilde çalışır; her biri özel bir göreve sahip farklı parçalar (ekip üyeleri gibi) vardır. İşte nasıl bir araya geldikleri:
+- MCP üzerinden çoklu ajan orkestrasyonu
+- Azure AI Search ile kurumsal veri entegrasyonu
+- Azure hizmetleri kullanılarak güvenli, ölçeklenebilir mimari
+- Yeniden kullanılabilir MCP bileşenleri ile genişletilebilir araçlar
+- Azure OpenAI destekli konuşmaya dayalı kullanıcı deneyimi
 
-### Kullanıcı Arayüzü (UI):
-Bunu seyahat acentenizin ön masası gibi düşünün. Siz (kullanıcı) burada “Paris’e uçuş bul” gibi sorular sorar veya isteklerde bulunursunuz. Bu, bir web sitesindeki sohbet penceresi veya bir mesajlaşma uygulaması olabilir.
+Mimari ve uygulama detayları, MCP’yi koordinasyon katmanı olarak kullanan karmaşık çoklu ajan sistemleri inşa etme konusunda değerli bilgiler sunuyor.
 
-### MCP Sunucusu (Koordinatör):
-MCP Sunucusu, ön masada isteğinizi dinleyen ve hangi uzmanın hangi kısmı halledeceğine karar veren yönetici gibidir. Sohbetinizi takip eder ve her şeyin sorunsuz ilerlemesini sağlar.
+### 2. [YouTube Verilerinden Azure DevOps Öğelerini Güncelleme](./UpdateADOItemsFromYT.md)
 
-### Yapay Zeka Ajanları (Uzman Asistanlar):
-Her ajan belirli bir konuda uzmandır—biri uçuşlar hakkında, diğeri oteller hakkında, bir diğeri de güzergah planlaması hakkında bilgi sahibidir. Seyahat isteğinizi MCP Sunucusu ilgili ajan(lar)a iletir. Bu ajanlar bilgilerini ve araçlarını kullanarak sizin için en iyi seçenekleri bulur.
+Bu vaka incelemesi, MCP’nin iş akışı süreçlerini otomatikleştirmek için pratik bir uygulamasını gösteriyor. MCP araçlarının nasıl kullanılabileceğini ortaya koyuyor:
 
-### Azure OpenAI Hizmeti (Dil Uzmanı):
-Bu, ne şekilde ifade ederseniz edin tam olarak ne istediğinizi anlayan bir dil uzmanı gibidir. Ajanların isteklerinizi anlamasına ve doğal, sohbet dilinde yanıt vermesine yardımcı olur.
+- Çevrimiçi platformlardan (YouTube) veri çekmek
+- Azure DevOps sistemlerindeki iş öğelerini güncellemek
+- Tekrarlanabilir otomasyon iş akışları oluşturmak
+- Farklı sistemler arasında veri entegrasyonu sağlamak
 
-### Azure AI Search & Kurumsal Veri (Bilgi Kütüphanesi):
-Devasa, güncel bir kütüphane düşünün; içinde uçuş programları, otel müsaitlikleri ve daha fazlası vardır. Ajanlar bu kütüphanede arama yaparak size en doğru yanıtları getirir.
+Bu örnek, nispeten basit MCP uygulamalarının rutin görevleri otomatikleştirerek ve sistemler arası veri tutarlılığını artırarak önemli verimlilik artışları sağlayabileceğini gösteriyor.
 
-### Kimlik Doğrulama & Güvenlik (Güvenlik Görevlisi):
-Bir güvenlik görevlisinin belirli alanlara kimlerin girebileceğini kontrol etmesi gibi, bu bölüm sadece yetkili kişilerin ve ajanların hassas bilgilere erişmesini sağlar. Verilerinizi güvende ve gizli tutar.
+## Sonuç
 
-### Azure Container Apps Üzerinde Dağıtım (Bina):
-Tüm bu asistanlar ve araçlar, güvenli ve ölçeklenebilir bir bina (bulut) içinde birlikte çalışır. Bu, sistemin aynı anda çok sayıda kullanıcıyı destekleyebilmesini ve her zaman erişilebilir olmasını sağlar.
+Bu vaka incelemeleri, Model Context Protocol’ün gerçek dünya senaryolarındaki çok yönlülüğünü ve pratik uygulamalarını vurguluyor. Karmaşık çoklu ajan sistemlerinden hedeflenmiş otomasyon iş akışlarına kadar MCP, yapay zeka sistemlerini ihtiyaç duydukları araçlar ve verilerle bağlamanın standart bir yolunu sunuyor.
 
-## Hepsi Birlikte Nasıl Çalışır:
+Bu uygulamaları inceleyerek, kendi MCP projelerinizde kullanabileceğiniz mimari desenler, uygulama stratejileri ve en iyi uygulamalar hakkında bilgi edinebilirsiniz. Örnekler, MCP’nin sadece teorik bir çerçeve olmadığını, gerçek iş problemlerine pratik bir çözüm sunduğunu gösteriyor.
 
-Ön masada (UI) bir soru sorarak başlarsınız.  
-Yönetici (MCP Sunucusu), hangi uzmanın (ajanın) size yardımcı olacağını belirler.  
-Uzman, isteğinizi anlamak için dil uzmanını (OpenAI) ve en iyi yanıtı bulmak için kütüphaneyi (AI Search) kullanır.  
-Güvenlik görevlisi (Kimlik Doğrulama), her şeyin güvenli olduğundan emin olur.  
-Tüm bunlar güvenilir, ölçeklenebilir bir binada (Azure Container Apps) gerçekleşir, böylece deneyiminiz sorunsuz ve güvenli olur.  
-Bu ekip çalışması sayesinde sistem, uzman seyahat acenteleri gibi hızlı ve güvenli bir şekilde seyahatinizi planlamanıza yardımcı olur!
+## Ek Kaynaklar
 
-## Teknik Uygulama
-- **MCP Sunucusu:** Çekirdek koordinasyon mantığını barındırır, ajan araçlarını açığa çıkarır ve çok adımlı seyahat planlama iş akışları için bağlamı yönetir.
-- **Ajanlar:** Her ajan (örneğin FlightAgent, HotelAgent), kendi istem şablonları ve mantığıyla MCP aracı olarak uygulanmıştır.
-- **Azure Entegrasyonu:** Doğal dil anlama için Azure OpenAI ve veri erişimi için Azure AI Search kullanılır.
-- **Güvenlik:** Microsoft Entra ID ile kimlik doğrulama entegre edilmiştir ve tüm kaynaklar için en az ayrıcalık erişim kontrolleri uygulanır.
-- **Dağıtım:** Ölçeklenebilirlik ve operasyonel verimlilik için Azure Container Apps üzerinde dağıtımı destekler.
-
-## Sonuçlar ve Etki
-- MCP’nin gerçek dünya, üretim kalitesinde bir senaryoda çoklu yapay zeka ajanlarını koordine etmek için nasıl kullanılabileceğini gösterir.
-- Ajan koordinasyonu, veri entegrasyonu ve güvenli dağıtım için yeniden kullanılabilir kalıplar sunarak çözüm geliştirmeyi hızlandırır.
-- MCP ve Azure servislerini kullanarak alan spesifik, yapay zeka destekli uygulamalar geliştirmek için bir şablon görevi görür.
-
-## Referanslar
 - [Azure AI Travel Agents GitHub Deposu](https://github.com/Azure-Samples/azure-ai-travel-agents)
-- [Azure OpenAI Hizmeti](https://azure.microsoft.com/en-us/products/ai-services/openai-service/)
-- [Azure AI Search](https://azure.microsoft.com/en-us/products/ai-services/ai-search/)
-- [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
+- [Azure DevOps MCP Aracı](https://github.com/microsoft/azure-devops-mcp)
+- [Playwright MCP Aracı](https://github.com/microsoft/playwright-mcp)
+- [MCP Topluluk Örnekleri](https://github.com/microsoft/mcp)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda oluşabilecek yanlış anlamalar veya yorum farklılıklarından sorumlu değiliz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı nedeniyle oluşabilecek herhangi bir yanlış anlama veya yorum hatasından sorumlu değiliz.
