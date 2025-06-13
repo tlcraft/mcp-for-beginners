@@ -1,103 +1,83 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a9c3ca25df37dbb4c1518174fc415ce1",
-  "translation_date": "2025-05-17T09:46:17+00:00",
+  "original_hash": "a0acf3093691b1cfcc008a8c6648ea26",
+  "translation_date": "2025-06-13T06:50:52+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "sw"
 }
 -->
-# Kuunda Mteja
+Katika msimbo uliotangulia tulifanya yafuatayo:
 
-Wateja ni programu maalum au maandiko yanayowasiliana moja kwa moja na MCP Server ili kuomba rasilimali, zana, na maelekezo. Tofauti na kutumia zana ya kukagua, ambayo hutoa kiolesura cha picha kwa kuingiliana na seva, kuandika mteja wako mwenyewe huruhusu mwingiliano wa kimitambo na uliojiendesha. Hii inawawezesha watengenezaji kuunganisha uwezo wa MCP katika mikondo yao ya kazi, kujiendesha kazi, na kujenga suluhisho maalum kwa mahitaji maalum.
+- Kuleta maktaba
+- Kuunda mfano wa client na kuunganisha kwa kutumia stdio kama njia ya usafirishaji.
+- Orodhesha prompts, rasilimali na zana na kuzitekeleza zote.
 
-## Muhtasari
+Hapo una client inayoweza kuzungumza na MCP Server.
 
-Somo hili linaanzisha dhana ya wateja ndani ya mfumo wa Model Context Protocol (MCP). Utajifunza jinsi ya kuandika mteja wako mwenyewe na kuunganisha na MCP Server.
+Tuchukue muda wetu katika sehemu ya zoezi ijayo kuelezea kila kipande cha msimbo na kueleza kinachoendelea.
 
-## Malengo ya Kujifunza
+## Zoezi: Kuandika client
 
-Mwisho wa somo hili, utaweza:
+Kama ilivyoelezwa hapo juu, tuchukue muda kuelezea msimbo, na kwa njia yoyote unaweza kuandika msimbo pamoja nasi ikiwa unataka.
 
-- Kuelewa kile mteja anaweza kufanya.
-- Kuandika mteja wako mwenyewe.
-- Kuunganisha na kujaribu mteja na seva ya MCP kuhakikisha inafanya kazi kama inavyotarajiwa.
+### -1- Kuleta maktaba
 
-## Ni nini kinahitajika katika kuandika mteja?
+Tulete maktaba tunazohitaji, tutahitaji marejeleo kwa client na kwa itifaki ya usafirishaji tuliyochagua, stdio. stdio ni itifaki kwa vitu vinavyokusudiwa kuendeshwa kwenye mashine yako ya ndani. SSE ni itifaki nyingine ya usafirishaji tutakayoionyesha katika sura zijazo lakini hiyo ni chaguo lako jingine. Kwa sasa, tuendelee na stdio.
 
-Kuandika mteja, utahitaji kufanya yafuatayo:
+---
 
-- **Ingiza maktaba sahihi**. Utatumia maktaba ile ile kama hapo awali, lakini miundo tofauti.
-- **Fanya mfano wa mteja**. Hii itahusisha kuunda mfano wa mteja na kuunganisha na njia ya usafirishaji iliyochaguliwa.
-- **Amua ni rasilimali gani za kuorodhesha**. Seva yako ya MCP inakuja na rasilimali, zana na maelekezo, unahitaji kuamua ni ipi ya kuorodhesha.
-- **Unganisha mteja na programu ya mwenyeji**. Mara unapoelewa uwezo wa seva unahitaji kuunganisha hii kwenye programu ya mwenyeji ili kwamba kama mtumiaji akiandika maelekezo au amri nyingine, kipengele kinacholingana cha seva kinaitwa.
+Tuendelee na kuanzisha.
 
-Sasa kwa kuwa tunaelewa kwa ujumla tunachotaka kufanya, hebu tuangalie mfano ufuatao.
+### -2- Kuanzisha client na usafirishaji
 
-### Mfano wa mteja
+Tutahitaji kuunda mfano wa usafirishaji na wa client wetu: 
 
-Hebu tuangalie mteja huyu wa mfano:
-Umefundishwa kwa data hadi Oktoba 2023.
+---
 
-Katika msimbo uliotangulia tuna:
+### -3- Kurodhesha vipengele vya server
 
-- Kuagiza maktaba
-- Kuunda mfano wa mteja na kuunganisha kwa kutumia stdio kwa usafirishaji.
-- Orodhesha maelekezo, rasilimali na zana na kuzitekeleza zote.
+Sasa, tuna client inayoweza kuungana ikiwa programu itaendeshwa. Hata hivyo, haionyeshi vipengele vyake hivyo tufanye hivyo sasa:
 
-Hapo unayo, mteja anayeweza kuzungumza na MCP Server.
+---
 
-Hebu tuchukue muda wetu katika sehemu inayofuata ya mazoezi na kuvunja kila kipande cha msimbo na kueleza kinachoendelea.
+Nzuri, sasa tumeshapata vipengele vyote. Sasa swali ni lini tutavitumia? Client hii ni rahisi sana, rahisi kwa maana kwamba tutahitaji kuitisha vipengele waziwazi tunapotaka. Katika sura inayofuata, tutaunda client ya hali ya juu zaidi inayopata upatikanaji wa mfano wake mkubwa wa lugha, LLM. Kwa sasa, tuone jinsi ya kuitisha vipengele kwenye server:
 
-## Zoezi: Kuandika mteja
+### -4- Kuitisha vipengele
 
-Kama ilivyosemwa hapo juu, hebu tuchukue muda wetu kuelezea msimbo, na bila shaka andika pamoja ikiwa unataka.
+Ili kuitisha vipengele tunahitaji kuhakikisha tunaeleza hoja sahihi na katika baadhi ya matukio jina la kile tunachojaribu kuitisha.
 
-### -1- Kuagiza maktaba
+---
 
-Hebu tuagize maktaba tunazohitaji, tutahitaji marejeleo kwa mteja na kwa itifaki ya usafirishaji iliyochaguliwa, stdio. stdio ni itifaki kwa vitu vilivyokusudiwa kuendeshwa kwenye mashine yako ya ndani. SSE ni itifaki nyingine ya usafirishaji tutakayoonyesha katika sura zijazo lakini hiyo ndiyo chaguo lako lingine. Kwa sasa ingawa, tuendelee na stdio.
+### -5- Kuendesha client
 
-Hebu tuendelee na uundaji.
+Ili kuendesha client, andika amri ifuatayo kwenye terminal:
 
-### -2- Kuunda mteja na usafirishaji
+---
 
-Tutahitaji kuunda mfano wa usafirishaji na ule wa mteja wetu:
+## Kazi ya Nyumbani
 
-### -3- Kuorodhesha vipengele vya seva
+Katika kazi hii ya nyumbani, utatumia kile ulichojifunza katika kuunda client lakini tengeneza client yako mwenyewe.
 
-Sasa, tuna mteja ambaye anaweza kuunganishwa ikiwa programu itaendeshwa. Hata hivyo, haijaorodhesha vipengele vyake kwa hivyo hebu tufanye hivyo sasa:
+Hapa kuna server unayoweza kutumia ambayo unahitaji kuitisha kupitia msimbo wako wa client, jaribu kuongeza vipengele zaidi kwenye server ili kuifanya iwe ya kuvutia zaidi.
 
-Vizuri, sasa tumekamata vipengele vyote. Sasa swali ni lini tunavitumia? Kweli, mteja huyu ni rahisi sana, rahisi kwa maana kwamba tutahitaji kuita vipengele waziwazi tunapovihitaji. Katika sura inayofuata, tutaunda mteja wa hali ya juu zaidi ambaye ana ufikiaji wa mfano wake mkubwa wa lugha, LLM. Kwa sasa ingawa, hebu tuone jinsi tunavyoweza kuita vipengele kwenye seva:
-
-### -4- Kuita vipengele
-
-Kuita vipengele tunahitaji kuhakikisha tunabainisha hoja sahihi na katika baadhi ya matukio jina la kile tunachojaribu kuita.
-
-### -5- Kuendesha mteja
-
-Kuendesha mteja, andika amri ifuatayo katika terminal:
-
-## Kazi
-
-Katika kazi hii, utatumia kile ulichojifunza katika kuunda mteja lakini kuunda mteja wako mwenyewe.
-
-Hapa kuna seva unayoweza kutumia ambayo unahitaji kuiita kupitia msimbo wa mteja wako, angalia ikiwa unaweza kuongeza vipengele zaidi kwenye seva ili iwe ya kuvutia zaidi.
+---
 
 ## Suluhisho
 
 [Suluhisho](./solution/README.md)
 
-## Mambo Muhimu
+## Muhimu Kumbukumbu
 
-Mambo muhimu kwa sura hii kuhusu wateja ni yafuatayo:
+Muhimu kumbukumbu kwa sura hii kuhusu clients ni yafuatayo:
 
-- Inaweza kutumika kugundua na kuita vipengele kwenye seva.
-- Inaweza kuanzisha seva wakati inapoanza yenyewe (kama katika sura hii) lakini wateja wanaweza pia kuunganishwa na seva zinazoendelea.
-- Ni njia nzuri ya kujaribu uwezo wa seva karibu na mbadala kama vile Inspector kama ilivyoelezwa katika sura iliyotangulia.
+- Inaweza kutumika kugundua na kuitisha vipengele kwenye server.
+- Inaweza kuanzisha server wakati inajiendesha (kama ilivyo katika sura hii) lakini clients pia zinaweza kuungana na server zinazotumika tayari.
+- Ni njia nzuri ya kujaribu uwezo wa server kando na mbadala kama Inspector ilivyoelezwa katika sura iliyopita.
 
-## Rasilimali za Ziada
+## Rasilimali Zaidi
 
-- [Kujenga wateja katika MCP](https://modelcontextprotocol.io/quickstart/client)
+- [Kujenga clients katika MCP](https://modelcontextprotocol.io/quickstart/client)
 
 ## Sampuli
 
@@ -107,9 +87,9 @@ Mambo muhimu kwa sura hii kuhusu wateja ni yafuatayo:
 - [TypeScript Calculator](../samples/typescript/README.md)
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Kinachofuata
+## Nini Kinachofuata
 
-- Kinachofuata: [Kuunda mteja na LLM](/03-GettingStarted/03-llm-client/README.md)
+- Ifuatayo: [Kuunda client na LLM](/03-GettingStarted/03-llm-client/README.md)
 
-**Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya kiasili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya kibinadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kasi ya Kukataa**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kasoro. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatubebwi na dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

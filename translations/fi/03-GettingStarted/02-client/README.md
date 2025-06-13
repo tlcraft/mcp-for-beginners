@@ -1,87 +1,55 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a9c3ca25df37dbb4c1518174fc415ce1",
-  "translation_date": "2025-05-17T09:42:10+00:00",
+  "original_hash": "a0acf3093691b1cfcc008a8c6648ea26",
+  "translation_date": "2025-06-13T06:47:59+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "fi"
 }
 -->
-# Asiakkaan luominen
+Edellisessä koodissa me:
 
-Asiakkaat ovat mukautettuja sovelluksia tai skriptejä, jotka kommunikoivat suoraan MCP-palvelimen kanssa pyytääkseen resursseja, työkaluja ja kehotteita. Toisin kuin tarkastustyökalun käyttäminen, joka tarjoaa graafisen käyttöliittymän palvelimen kanssa vuorovaikutukseen, oman asiakkaan kirjoittaminen mahdollistaa ohjelmallisen ja automatisoidun vuorovaikutuksen. Tämä mahdollistaa kehittäjille MCP-ominaisuuksien integroinnin omiin työnkulkuihin, tehtävien automatisoinnin ja mukautettujen ratkaisujen rakentamisen erityisiin tarpeisiin.
+- Tuodaan kirjastot
+- Luodaan client-instanssi ja yhdistetään se stdio-siirtoprotokollan kautta.
+- Listataan kehotteet, resurssit ja työkalut ja kutsutaan niitä kaikkia.
 
-## Yleiskatsaus
+Siinä se, client, joka pystyy kommunikoimaan MCP-palvelimen kanssa.
 
-Tämä oppitunti esittelee asiakkaiden käsitteen Model Context Protocol (MCP) -ekosysteemissä. Opit kirjoittamaan oman asiakkaasi ja yhdistämään sen MCP-palvelimeen.
+Käydään seuraavassa harjoitustehtävässä rauhassa läpi jokainen koodinpätkä ja selitetään, mitä tapahtuu.
 
-## Oppimistavoitteet
+## Harjoitus: Clientin kirjoittaminen
 
-Tämän oppitunnin lopussa pystyt:
+Kuten sanottu, käytetään aikaa koodin selittämiseen, ja voit toki koodata mukana halutessasi.
 
-- Ymmärtämään, mitä asiakas voi tehdä.
-- Kirjoittamaan oman asiakkaasi.
-- Yhdistämään ja testaamaan asiakkaan MCP-palvelimen kanssa varmistaaksesi, että jälkimmäinen toimii odotetusti.
+### -1- Kirjastojen tuonti
 
-## Mitä asiakkaan kirjoittamiseen tarvitaan?
+Tuodaan tarvittavat kirjastot, tarvitsemme viitteet clientiin ja valitsemaamme siirtoprotokollaan, stdio:hon. stdio on protokolla paikallisella koneella ajettaville asioille. SSE on toinen siirtoprotokolla, jota esitellään tulevissa luvuissa, mutta se on toinen vaihtoehtosi. Nyt jatketaan kuitenkin stdio:n kanssa.
 
-Asiakkaan kirjoittamiseen tarvitset seuraavat vaiheet:
+Siirrytään instansiointiin.
 
-- **Tuoda oikeat kirjastot**. Käytät samaa kirjastoa kuin aiemmin, mutta eri rakenteita.
-- **Asiakkaan luominen**. Tämä sisältää asiakasinstanssin luomisen ja sen yhdistämisen valittuun kuljetusmenetelmään.
-- **Päättää, mitä resursseja listataan**. MCP-palvelimesi tarjoaa resursseja, työkaluja ja kehotteita, sinun on päätettävä, mitkä niistä listataan.
-- **Asiakkaan integroiminen isäntäsovellukseen**. Kun tiedät palvelimen ominaisuudet, sinun on integroitava tämä isäntäsovellukseesi niin, että jos käyttäjä kirjoittaa kehotteen tai muun komennon, vastaava palvelimen ominaisuus käynnistyy.
+### -2- Clientin ja siirron instansiointi
 
-Nyt kun ymmärrämme yleisellä tasolla, mitä olemme tekemässä, katsotaan seuraavaksi esimerkkiä.
-
-### Esimerkkiasiakas
-
-Tarkastellaan tätä esimerkkiasiakasta:
-Sinut on koulutettu tietoihin lokakuuhun 2023 asti.
-
-Edellisessä koodissa teemme:
-
-- Tuomme kirjastot
-- Luomme asiakkaan instanssin ja yhdistämme sen käyttämällä stdio:ta kuljetukseen.
-- Listaamme kehotteet, resurssit ja työkalut ja kutsumme ne kaikki.
-
-Siinä se, asiakas, joka voi kommunikoida MCP-palvelimen kanssa.
-
-Käydään seuraavassa harjoitusosiossa ajan kanssa läpi jokainen koodinpätkä ja selitetään, mitä tapahtuu.
-
-## Harjoitus: Asiakkaan kirjoittaminen
-
-Kuten sanottu, käydään ajan kanssa läpi koodi, ja voit koodata mukana, jos haluat.
-
-### -1- Kirjastojen tuominen
-
-Tuodaan tarvittavat kirjastot, tarvitsemme viittaukset asiakkaaseen ja valitsemaamme kuljetusprotokollaan, stdio:hon. stdio on protokolla asioille, jotka on tarkoitettu toimimaan paikallisella koneellasi. SSE on toinen kuljetusprotokolla, jota esittelemme tulevissa luvuissa, mutta se on toinen vaihtoehtosi. Nyt kuitenkin jatketaan stdio:lla.
-
-Siirrytään asiakkaan ja kuljetuksen luomiseen.
-
-### -2- Asiakkaan ja kuljetuksen luominen
-
-Meidän on luotava kuljetuksen ja asiakkaamme instanssi:
+Meidän täytyy luoda instanssit siirrolle ja clientille: 
 
 ### -3- Palvelimen ominaisuuksien listaaminen
 
-Nyt meillä on asiakas, joka voi yhdistää, jos ohjelma suoritetaan. Kuitenkaan se ei vielä listaa ominaisuuksiaan, joten tehdään se seuraavaksi:
+Nyt meillä on client, joka voi yhdistyä, jos ohjelma ajetaan. Se ei kuitenkaan vielä listaa ominaisuuksiaan, tehdään se seuraavaksi:
 
-Hienoa, nyt olemme tallentaneet kaikki ominaisuudet. Kysymys kuuluu, milloin käytämme niitä? No, tämä asiakas on melko yksinkertainen, yksinkertainen siinä mielessä, että meidän on kutsuttava ominaisuudet nimenomaan silloin, kun haluamme niitä. Seuraavassa luvussa luomme kehittyneemmän asiakkaan, jolla on pääsy omaan suuren kielen malliin, LLM. Nyt kuitenkin katsotaan, miten voimme kutsua ominaisuuksia palvelimella:
+Hienoa, nyt olemme saaneet kaikki ominaisuudet talteen. Kysymys kuuluu, milloin niitä käytetään? Tämä client on melko yksinkertainen, eli ominaisuuksia täytyy kutsua nimenomaan silloin kun haluamme niitä käyttää. Seuraavassa luvussa luomme kehittyneemmän clientin, jolla on oma suuri kielimalli (LLM). Nyt kuitenkin katsotaan, miten ominaisuuksia voidaan kutsua palvelimella:
 
 ### -4- Ominaisuuksien kutsuminen
 
-Ominaisuuksien kutsumiseksi meidän on varmistettava, että määritämme oikeat argumentit ja joissakin tapauksissa sen, mitä yritämme kutsua.
+Ominaisuuksia kutsuttaessa täytyy varmistaa, että annamme oikeat argumentit ja joissakin tapauksissa myös kutsuttavan kohteen nimen.
 
-### -5- Asiakkaan suorittaminen
+### -5- Clientin ajaminen
 
-Asiakkaan suorittamiseksi kirjoita seuraava komento terminaaliin:
+Ajaaksesi clientin, kirjoita terminaaliin seuraava komento:
 
 ## Tehtävä
 
-Tässä tehtävässä käytät oppimaasi luodaksesi oman asiakkaan.
+Tässä tehtävässä käytät oppimaasi clientin luomiseen, mutta luot oman clientin.
 
-Tässä on palvelin, jota voit käyttää ja johon sinun on soitettava asiakaskoodisi kautta, katso, voitko lisätä palvelimelle lisää ominaisuuksia tehdäksesi siitä mielenkiintoisemman.
+Tässä on palvelin, jota voit käyttää ja johon sinun tulee kutsua client-koodisi kautta. Yritä lisätä palvelimeen lisää ominaisuuksia, jotta siitä tulee mielenkiintoisempi.
 
 ## Ratkaisu
 
@@ -89,15 +57,15 @@ Tässä on palvelin, jota voit käyttää ja johon sinun on soitettava asiakasko
 
 ## Keskeiset opit
 
-Tämän luvun keskeiset opit asiakkaista ovat seuraavat:
+Tämän luvun keskeiset opit clientistä ovat seuraavat:
 
-- Voidaan käyttää sekä palvelimen ominaisuuksien löytämiseen että niiden kutsumiseen.
-- Voi käynnistää palvelimen samalla kun se käynnistyy itse (kuten tässä luvussa), mutta asiakkaat voivat myös yhdistää käynnissä oleviin palvelimiin.
-- On loistava tapa testata palvelimen ominaisuuksia vaihtoehtojen, kuten Tarkastajan, rinnalla, kuten edellisessä luvussa kuvattiin.
+- Clientilla voi sekä löytää että kutsua palvelimen ominaisuuksia.
+- Client voi käynnistää palvelimen itse (kuten tässä luvussa), mutta clientit voivat myös yhdistää jo käynnissä oleviin palvelimiin.
+- Client on erinomainen tapa testata palvelimen toimintoja rinnakkain vaihtoehtoihin kuten Inspector-työkaluun, joka esiteltiin edellisessä luvussa.
 
 ## Lisäresurssit
 
-- [Asiakkaiden rakentaminen MCP:ssä](https://modelcontextprotocol.io/quickstart/client)
+- [Clienttien rakentaminen MCP:ssä](https://modelcontextprotocol.io/quickstart/client)
 
 ## Esimerkit
 
@@ -109,7 +77,7 @@ Tämän luvun keskeiset opit asiakkaista ovat seuraavat:
 
 ## Mitä seuraavaksi
 
-- Seuraavaksi: [Asiakkaan luominen LLM:n kanssa](/03-GettingStarted/03-llm-client/README.md)
+- Seuraavaksi: [Clientin luominen LLM:n kanssa](/03-GettingStarted/03-llm-client/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä AI-käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, on hyvä olla tietoinen siitä, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää auktoritatiivisena lähteenä. Kriittisen tiedon kohdalla suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinkäsityksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä tulee katsoa viralliseksi lähteeksi. Tärkeissä asioissa suositellaan ammattilaisen tekemää ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.
