@@ -124,7 +124,8 @@ To create our server, we use the same types as with stdio. However, for the tran
 <summary>Typescript</summary>
 
 ```typescript
-import express, { Request, Response } from "express";
+import { Request, Response } from "express";
+import * as express from "express";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
@@ -316,21 +317,23 @@ Your full code should look like so:
 
 ```typescript
 // server-sse.ts
-import express, { Request, Response } from "express";
+import { Request, Response } from "express";
+import * as express from "express";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
-import { z } from "zod";
 
 // Create an MCP server
 const server = new McpServer({
   name: "example-server",
-  version: "1.0.0"
+  version: "1.0.0",
 });
 
-app = express();
+const app = express();
+
+const transports: { [sessionId: string]: SSEServerTransport } = {};
 
 app.get("/sse", async (_: Request, res: Response) => {
-  const transport = new SSEServerTransport('/messages', res);
+  const transport = new SSEServerTransport("/messages", res);
   transports[transport.sessionId] = transport;
   res.on("close", () => {
     delete transports[transport.sessionId];
@@ -338,31 +341,29 @@ app.get("/sse", async (_: Request, res: Response) => {
   await server.connect(transport);
 });
 
-app.get("/messages", async (req: Request, res: Response) => {
+app.post("/messages", async (req: Request, res: Response) => {
   const sessionId = req.query.sessionId as string;
   const transport = transports[sessionId];
   if (transport) {
     await transport.handlePostMessage(req, res);
   } else {
-    res.status(400).send('No transport found for sessionId');
+    res.status(400).send("No transport found for sessionId");
   }
 });
 
-app.tool("random-joke", "A joke returned by the chuck norris api", {},
-  async () => {
-    const response = await fetch("https://api.chucknorris.io/jokes/random");
-    const data = await response.json();
+server.tool("random-joke", "A joke returned by the chuck norris api", {}, async () => {
+  const response = await fetch("https://api.chucknorris.io/jokes/random");
+  const data = await response.json();
 
-    return {
-      content: [
-        {
-          type: "text",
-          text: data.value
-        }
-      ]
-    };
-  }
-);
+  return {
+    content: [
+      {
+        type: "text",
+        text: data.value,
+      },
+    ],
+  };
+});
 
 app.listen(3001);
 ```
