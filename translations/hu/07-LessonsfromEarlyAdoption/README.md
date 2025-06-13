@@ -1,35 +1,35 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "296d5c8913271ef3bd696fd46d998711",
-  "translation_date": "2025-05-20T22:18:53+00:00",
+  "original_hash": "26d41919cb423a87e067a3da8334e44a",
+  "translation_date": "2025-06-13T17:32:43+00:00",
   "source_file": "07-LessonsfromEarlyAdoption/README.md",
   "language_code": "hu"
 }
 -->
-# Korai alkalmazók tapasztalatai
+# Korai Felhasználóktól Tanultak
 
 ## Áttekintés
 
-Ez a lecke azt vizsgálja, hogyan használták a korai alkalmazók a Model Context Protocolt (MCP) valós problémák megoldására és az innováció előmozdítására különböző iparágakban. Részletes esettanulmányokon és gyakorlati projektek révén megismerheted, miként teszi lehetővé az MCP a szabványosított, biztonságos és skálázható MI-integrációt—összekapcsolva a nagynyelvű modelleket, eszközöket és vállalati adatokat egy egységes keretrendszerben. Gyakorlati tapasztalatot szerezhetsz MCP-alapú megoldások tervezésében és építésében, megtanulhatod a bevált megvalósítási mintákat, valamint a legjobb gyakorlatokat a MCP éles környezetben történő alkalmazásához. A lecke kitér a felmerülő trendekre, jövőbeli irányokra és nyílt forráskódú erőforrásokra, hogy naprakész maradj az MCP technológia és annak fejlődő ökoszisztémája terén.
+Ebben a leckében azt vizsgáljuk, hogyan használták a korai felhasználók a Model Context Protocol-t (MCP) valós problémák megoldására és az innováció előmozdítására különböző iparágakban. Részletes esettanulmányokon és gyakorlati projektek segítségével bemutatjuk, hogyan teszi lehetővé az MCP a szabványosított, biztonságos és skálázható AI integrációt — összekapcsolva a nagy nyelvi modelleket, eszközöket és vállalati adatokat egy egységes keretrendszerben. Gyakorlati tapasztalatot szerezhetsz MCP-alapú megoldások tervezésében és építésében, megismerheted a bevált megvalósítási mintákat, valamint a legjobb gyakorlatokat az MCP éles környezetben történő alkalmazásához. A lecke kiemeli az új trendeket, jövőbeli irányokat és nyílt forráskódú erőforrásokat, hogy naprakész maradj az MCP technológiában és annak folyamatosan fejlődő ökoszisztémájában.
 
 ## Tanulási célok
 
-- Valós MCP-megvalósítások elemzése különböző iparágakban  
-- Teljes MCP-alapú alkalmazások tervezése és fejlesztése  
-- Az MCP technológia felmerülő trendjeinek és jövőbeli irányainak feltérképezése  
-- Legjobb gyakorlatok alkalmazása valós fejlesztési helyzetekben  
+- Valós MCP megvalósítások elemzése különböző iparágakban
+- Teljes MCP-alapú alkalmazások tervezése és fejlesztése
+- Az MCP technológia új trendjeinek és jövőbeli irányainak feltérképezése
+- Legjobb gyakorlatok alkalmazása valós fejlesztési helyzetekben
 
-## Valós MCP-megvalósítások
+## Valós MCP megvalósítások
 
-### Esettanulmány 1: Vállalati ügyféltámogatás automatizálása
+### Esettanulmány 1: Vállalati ügyfélszolgálat automatizálása
 
-Egy multinacionális vállalat MCP-alapú megoldást vezetett be az MI-interakciók szabványosítására az ügyfélszolgálati rendszereikben. Ennek eredményeként:
+Egy multinacionális vállalat MCP-alapú megoldást vezetett be az AI-interakciók szabványosítására ügyfélszolgálati rendszereikben. Ez lehetővé tette számukra, hogy:
 
-- Egységes felületet hoztak létre több LLM szolgáltató számára  
-- Egységes promptkezelést biztosítottak az osztályok között  
-- Erős biztonsági és megfelelőségi kontrollokat vezettek be  
-- Könnyen váltottak a különböző MI-modellek között az adott igények szerint  
+- Egységes felületet hozzanak létre több LLM szolgáltató számára
+- Konzisztens promptkezelést tartsanak fenn osztályok között
+- Erős biztonsági és megfelelőségi kontrollokat alkalmazzanak
+- Könnyen váltsanak különböző AI modellek között az igények szerint
 
 **Technikai megvalósítás:**  
 ```python
@@ -92,16 +92,16 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-**Eredmények:** 30%-os költségcsökkenés a modellek terén, 45%-os válaszkonzisztencia javulás, és fokozott megfelelőség a globális működésben.
+**Eredmények:** 30%-os költségcsökkenés a modelleknél, 45%-os válaszkövetkezetesség javulás, valamint fokozott megfelelőség a globális működés során.
 
 ### Esettanulmány 2: Egészségügyi diagnosztikai asszisztens
 
-Egy egészségügyi szolgáltató MCP-infrastruktúrát fejlesztett ki, hogy több speciális orvosi MI-modellt integráljon, miközben érzékeny betegadatokat védett:
+Egy egészségügyi szolgáltató MCP infrastruktúrát fejlesztett ki több speciális orvosi AI modell integrálására, miközben biztosította a betegadatok védelmét:
 
-- Zökkenőmentes váltás általános és szakosított orvosi modellek között  
-- Szigorú adatvédelmi kontrollok és auditnaplók  
-- Integráció a meglévő Elektronikus Egészségügyi Nyilvántartó (EHR) rendszerekkel  
-- Egységes prompttervezés az orvosi terminológia számára  
+- Zökkenőmentes váltás általános és speciális orvosi modellek között
+- Szigorú adatvédelmi szabályozás és auditálási nyomvonalak
+- Integráció a meglévő Elektronikus Egészségügyi Nyilvántartó (EHR) rendszerekkel
+- Egységes prompttervezés az orvosi terminológia számára
 
 **Technikai megvalósítás:**  
 ```csharp
@@ -168,16 +168,16 @@ public class DiagnosticAssistant
 }
 ```
 
-**Eredmények:** Javultak az orvosi diagnosztikai javaslatok, miközben teljes HIPAA megfelelőség fennmaradt, és jelentősen csökkent a rendszerek közötti kontextusváltás.
+**Eredmények:** Javultak az orvosok számára adott diagnosztikai javaslatok, teljes HIPAA megfelelőség mellett, és jelentős csökkenés a rendszerközi kontextusváltásban.
 
 ### Esettanulmány 3: Pénzügyi szolgáltatások kockázatelemzése
 
-Egy pénzügyi intézmény MCP-t vezetett be, hogy szabványosítsa a kockázatelemzési folyamatait különböző osztályokon:
+Egy pénzügyi intézmény MCP-t vezetett be kockázatelemzési folyamataik szabványosítására különböző osztályok között:
 
-- Egységes felületet hoztak létre hitelkockázat, csalásfelderítés és befektetési kockázat modellekhez  
-- Szigorú hozzáférés-vezérlést és modellverzió-kezelést alkalmaztak  
-- Biztosították az összes MI-ajánlás auditálhatóságát  
-- Egységes adatformátumot tartottak fenn a különböző rendszerek között  
+- Egységes felület létrehozása hitelkockázat, csalásfelderítés és befektetési kockázat modellekhez
+- Szigorú hozzáférés-szabályozás és modell verziókezelés bevezetése
+- Minden AI ajánlás auditálhatóságának biztosítása
+- Konzisztens adatformátum fenntartása a különböző rendszerek között
 
 **Technikai megvalósítás:**  
 ```java
@@ -210,16 +210,16 @@ public class FinancialRiskMCPServer {
 }
 ```
 
-**Eredmények:** Javult a szabályozói megfelelés, 40%-kal gyorsabb modellbevezetési ciklusok, és jobb kockázatértékelési konzisztencia az osztályok között.
+**Eredmények:** Fokozott szabályozói megfelelőség, 40%-kal gyorsabb modellbevezetési ciklusok, és javult kockázatértékelési következetesség az osztályok között.
 
-### Esettanulmány 4: Microsoft Playwright MCP szerver böngésző-automatizáláshoz
+### Esettanulmány 4: Microsoft Playwright MCP szerver böngésző automatizáláshoz
 
-A Microsoft fejlesztette a [Playwright MCP szervert](https://github.com/microsoft/playwright-mcp), amely lehetővé teszi a biztonságos, szabványosított böngésző-automatizálást a Model Context Protocolon keresztül. Ez a megoldás lehetővé teszi, hogy MI-ügynökök és LLM-ek szabályozott, auditálható és bővíthető módon kommunikáljanak a webböngészőkkel, támogatva például az automatikus webes tesztelést, adatkinyerést és end-to-end munkafolyamatokat.
+A Microsoft kifejlesztette a [Playwright MCP szervert](https://github.com/microsoft/playwright-mcp), amely biztonságos, szabványosított böngésző automatizálást tesz lehetővé a Model Context Protocol használatával. Ez a megoldás lehetővé teszi AI ügynökök és LLM-ek számára, hogy kontrollált, auditálható és bővíthető módon lépjenek interakcióba webböngészőkkel – támogatva például az automatizált webes tesztelést, adatkinyerést és end-to-end munkafolyamatokat.
 
-- Böngésző-automatizálási funkciók (navigáció, űrlapkitöltés, képernyőkép készítés stb.) MCP eszközként való elérhetősége  
-- Szigorú hozzáférés-vezérlés és sandbox környezet az illetéktelen műveletek megakadályozására  
-- Részletes auditnaplók minden böngésző-interakcióról  
-- Integráció támogatása Azure OpenAI-val és más LLM szolgáltatókkal az ügynökvezérelt automatizáláshoz  
+- Böngésző automatizálási funkciók (navigáció, űrlapkitöltés, képernyőkép készítés stb.) MCP eszközként való elérhetővé tétele
+- Szigorú hozzáférés-szabályozás és sandbox alkalmazása az illetéktelen műveletek megakadályozására
+- Részletes audit naplók biztosítása minden böngésző-interakcióról
+- Integráció támogatása Azure OpenAI-val és más LLM szolgáltatókkal az ügynök alapú automatizáláshoz
 
 **Technikai megvalósítás:**  
 ```typescript
@@ -257,23 +257,23 @@ server.listen(8080);
 ```
 
 **Eredmények:**  
-- Biztonságos, programozott böngésző-automatizálás AI-ügynökök és LLM-ek számára  
-- Csökkentett manuális tesztelési erőfeszítés és javított tesztlefedettség webalkalmazások esetén  
-- Újrahasznosítható, bővíthető keretrendszer a böngészőalapú eszközintegrációhoz vállalati környezetben  
+- Biztonságos, programozott böngésző automatizálás AI ügynökök és LLM-ek számára  
+- Csökkentett kézi tesztelési igény és javított tesztlefedettség webalkalmazásoknál  
+- Újrahasznosítható, bővíthető keretrendszer böngésző alapú eszközintegrációhoz vállalati környezetben
 
 **Hivatkozások:**  
 - [Playwright MCP Server GitHub tárhely](https://github.com/microsoft/playwright-mcp)  
-- [Microsoft AI és automatizációs megoldások](https://azure.microsoft.com/en-us/products/ai-services/)
+- [Microsoft AI és Automatizálási Megoldások](https://azure.microsoft.com/en-us/products/ai-services/)
 
 ### Esettanulmány 5: Azure MCP – Vállalati szintű Model Context Protocol szolgáltatásként
 
-Az Azure MCP ([https://aka.ms/azmcp](https://aka.ms/azmcp)) a Microsoft által kezelt, vállalati szintű Model Context Protocol megvalósítás, amely skálázható, biztonságos és megfelelőségi MCP szerver szolgáltatást nyújt felhőben. Az Azure MCP lehetővé teszi a szervezetek számára, hogy gyorsan telepítsék, kezeljék és integrálják az MCP szervereket az Azure MI-, adat- és biztonsági szolgáltatásaival, csökkentve az üzemeltetési terheket és gyorsítva az MI bevezetését.
+Az Azure MCP ([https://aka.ms/azmcp](https://aka.ms/azmcp)) a Microsoft által menedzselt, vállalati szintű Model Context Protocol megvalósítás, amely skálázható, biztonságos és megfelelőségi szempontból megbízható MCP szerver képességeket kínál felhőszolgáltatásként. Az Azure MCP lehetővé teszi a szervezetek számára, hogy gyorsan telepítsék, kezeljék és integrálják az MCP szervereket az Azure AI, adat- és biztonsági szolgáltatásokkal, csökkentve az üzemeltetési terheket és felgyorsítva az AI alkalmazását.
 
 - Teljesen menedzselt MCP szerver hoszting beépített skálázással, monitorozással és biztonsággal  
-- Natív integráció az Azure OpenAI-val, Azure AI Search-sel és más Azure szolgáltatásokkal  
+- Natív integráció Azure OpenAI, Azure AI Search és más Azure szolgáltatásokkal  
 - Vállalati hitelesítés és jogosultságkezelés Microsoft Entra ID-n keresztül  
-- Egyedi eszközök, prompt sablonok és erőforrás-kapcsolók támogatása  
-- Megfelelés vállalati biztonsági és szabályozási követelményeknek  
+- Egyedi eszközök, prompt sablonok és erőforrás csatlakozók támogatása  
+- Megfelelőség vállalati biztonsági és szabályozási követelményekkel
 
 **Technikai megvalósítás:**  
 ```yaml
@@ -302,123 +302,124 @@ spec:
 ```
 
 **Eredmények:**  
-- Rövidebb idő az érték eléréséhez vállalati MI projektek esetén egy kész, megfelelőségi MCP szerver platformmal  
-- Egyszerűbb integráció LLM-ekkel, eszközökkel és vállalati adatforrásokkal  
-- Fokozott biztonság, megfigyelhetőség és üzemeltetési hatékonyság MCP terhelések esetén  
+- Csökkentett értékteremtési idő vállalati AI projektek esetén egy kész, megfelelőségi szempontból biztos MCP szerver platformmal  
+- Egyszerűsített LLM-ek, eszközök és vállalati adatforrások integrációja  
+- Fokozott biztonság, megfigyelhetőség és működési hatékonyság MCP terhelések esetén
 
 **Hivatkozások:**  
-- [Azure MCP dokumentáció](https://aka.ms/azmcp)  
-- [Azure AI szolgáltatások](https://azure.microsoft.com/en-us/products/ai-services/)
+- [Azure MCP Dokumentáció](https://aka.ms/azmcp)  
+- [Azure AI Szolgáltatások](https://azure.microsoft.com/en-us/products/ai-services/)
 
 ## Esettanulmány 6: NLWeb
 
-Az MCP (Model Context Protocol) egy feljövő protokoll chatbotok és MI asszisztensek eszközökkel való interakciójához. Minden NLWeb példány egyben MCP szerver is, amely egy alapvető metódust, az ask-et támogatja, amellyel természetes nyelven lehet kérdéseket feltenni egy weboldalnak. A visszakapott válasz a schema.org szabványt használja, amely egy széles körben használt webadat-leíró szókincs. Egyszerűen fogalmazva, az MCP az NLWeb-hez hasonló, ahogy az Http a HTML-hez. Az NLWeb ötvözi a protokollokat, a Schema.org formátumokat és mintakódokat, hogy a weboldalak gyorsan létrehozhassák ezeket a végpontokat, előnyöket biztosítva az embereknek beszélgető felületeken keresztül, és gépeknek természetes ügynök-ügynök interakcióval.
+Az MCP (Model Context Protocol) egy új protokoll chatbotok és AI asszisztensek számára, hogy eszközökkel lépjenek kapcsolatba. Minden NLWeb példány egyben MCP szerver is, amely egyetlen alapvető metódust támogat, az ask-et, amellyel természetes nyelven kérdezhetünk meg egy weboldalt. A visszakapott válasz a schema.org formátumot használja, amely egy széles körben elfogadott webes adatleíró szókincs. Nagyjából az MCP az NLWeb-hez olyan, mint az Http a HTML-hez. Az NLWeb protokollokat, schema.org formátumokat és mintakódokat egyesít, hogy a webhelyek gyorsan létrehozhassák ezeket a végpontokat, előnyöket biztosítva az embereknek beszélgetős felületeken, és gépeknek természetes ügynök-ügynök interakcióban.
 
 Az NLWeb két különálló komponensből áll:  
-- Egy egyszerű protokoll, amellyel természetes nyelven lehet interfészt biztosítani egy weboldal számára, és egy formátum, amely json-t és schema.org-ot használ a válaszokhoz. Részletekért lásd a REST API dokumentációt.  
-- Egy egyszerű megvalósítás, amely a meglévő jelöléseket használja, olyan oldalak számára, amelyek elemek listájaként (termékek, receptek, látnivalók, értékelések stb.) absztrahálhatók. Egy készlet felhasználói felület widgettel együtt az oldalak könnyen biztosíthatnak beszélgető interfészeket tartalmaikhoz. Részletekért lásd a Life of a chat query dokumentációt.
+- Egy egyszerű protokoll a természetes nyelvű webhely interfészhez és egy formátum, amely json-t és schema.org-ot használ a válaszhoz. Részletek a REST API dokumentációban.  
+- Egy egyszerű megvalósítás, amely a meglévő markupot használja, olyan webhelyekhez, amelyeket elemek listájaként lehet absztrahálni (termékek, receptek, látnivalók, értékelések stb.). Felhasználói felület widgetekkel együtt könnyen biztosítható beszélgetős felület a tartalomhoz. Részletek a Life of a chat query dokumentációban.
 
 **Hivatkozások:**  
-- [Azure MCP dokumentáció](https://aka.ms/azmcp)  
+- [Azure MCP Dokumentáció](https://aka.ms/azmcp)  
 - [NLWeb](https://github.com/microsoft/NlWeb)
 
-### Esettanulmány 7: MCP a Foundry számára – Azure AI ügynökök integrálása
+### Esettanulmány 7: MCP a Foundry-hoz – Azure AI Ügynökök Integrálása
 
-Az Azure AI Foundry MCP szerverek bemutatják, hogyan használható az MCP AI ügynökök és munkafolyamatok irányítására és kezelésére vállalati környezetben. Az MCP integrációja az Azure AI Foundry-val lehetővé teszi az ügynökinterakciók szabványosítását, a Foundry munkafolyamat-kezelésének kihasználását, valamint a biztonságos, skálázható telepítést. Ez a megközelítés gyors prototípus-készítést, robosztus monitorozást és zökkenőmentes integrációt tesz lehetővé az Azure AI szolgáltatásokkal, támogatva fejlett forgatókönyveket, mint például tudásmenedzsment és ügynökértékelés. A fejlesztők egységes felületet kapnak az ügynökcsövek építéséhez, telepítéséhez és monitorozásához, míg az IT csapatok javított biztonságot, megfelelést és üzemeltetési hatékonyságot élveznek. A megoldás ideális vállalatok számára, amelyek gyorsítani szeretnék az MI bevezetését és kontrollt kívánnak gyakorolni a komplex ügynökvezérelt folyamatok felett.
+Az Azure AI Foundry MCP szerverek bemutatják, hogyan lehet MCP-t használni AI ügynökök és munkafolyamatok irányítására és kezelésére vállalati környezetben. Az MCP integrációja az Azure AI Foundry-val lehetővé teszi az ügynökök interakcióinak szabványosítását, a Foundry munkafolyamat-kezelésének kihasználását, valamint a biztonságos és skálázható telepítést. Ez a megközelítés gyors prototípus-készítést, robusztus monitorozást és zökkenőmentes integrációt biztosít az Azure AI szolgáltatásokkal, támogatva olyan fejlett forgatókönyveket, mint a tudásmenedzsment és az ügynökértékelés. A fejlesztők egységes felületet kapnak az ügynöki pipeline-ok építéséhez, telepítéséhez és monitorozásához, míg az IT csapatok javított biztonságot, megfelelőséget és működési hatékonyságot élvezhetnek. A megoldás ideális azoknak a vállalatoknak, amelyek gyorsítani szeretnék az AI bevezetését és kontroll alatt tartani a komplex, ügynök által vezérelt folyamatokat.
 
 **Hivatkozások:**  
 - [MCP Foundry GitHub tárhely](https://github.com/azure-ai-foundry/mcp-foundry)  
-- [Azure AI ügynökök MCP-vel való integrálása (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
+- [Azure AI Ügynökök Integrálása MCP-vel (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
 
-### Esettanulmány 8: Foundry MCP Playground – Kísérletezés és prototípus-készítés
+### Esettanulmány 8: Foundry MCP Playground – Kísérletezés és Prototípus készítés
 
-A Foundry MCP Playground egy azonnal használható környezet MCP szerverekkel és Azure AI Foundry integrációkkal való kísérletezéshez. A fejlesztők gyorsan prototípust készíthetnek, tesztelhetnek és értékelhetnek MI modelleket és ügynökmunkafolyamatokat az Azure AI Foundry Katalógus és Laborok erőforrásaival. A playground egyszerűsíti a beállítást, mintaprojekteket kínál és támogatja az együttműködésen alapuló fejlesztést, megkönnyítve a legjobb gyakorlatok és új forgatókönyvek felfedezését minimális ráfordítással. Különösen hasznos csapatok számára, akik ötleteket szeretnének validálni, kísérleteket megosztani és gyorsan tanulni anélkül, hogy bonyolult infrastruktúrát kellene kiépíteniük. A belépési korlát csökkentésével elősegíti az innovációt és a közösségi hozzájárulásokat az MCP és Azure AI Foundry ökoszisztémában.
+A Foundry MCP Playground egy kész környezetet kínál MCP szerverekkel és Azure AI Foundry integrációkkal való kísérletezéshez. A fejlesztők gyorsan prototípust készíthetnek, tesztelhetnek és értékelhetnek AI modelleket és ügynök munkafolyamatokat az Azure AI Foundry Katalógus és Labor erőforrásai segítségével. A playground leegyszerűsíti a beállítást, mintaprojekteket kínál és támogatja az együttműködésen alapuló fejlesztést, így könnyű felfedezni a legjobb gyakorlatokat és új forgatókönyveket minimális ráfordítással. Különösen hasznos csapatok számára, amelyek ötleteket szeretnének validálni, megosztani kísérleteket, és gyorsítani a tanulást bonyolult infrastruktúra nélkül. A belépési küszöb csökkentésével elősegíti az innovációt és a közösségi hozzájárulásokat az MCP és az Azure AI Foundry ökoszisztémában.
 
 **Hivatkozások:**  
 - [Foundry MCP Playground GitHub tárhely](https://github.com/azure-ai-foundry/foundry-mcp-playground)
 
-## Gyakorlati projektek
+### Esettanulmány 9: Microsoft Docs MCP Server – Tanulás és Készségfejlesztés
 
-### Projekt 1: Több szolgáltatót támogató MCP szerver építése
+A Microsoft Docs MCP Server megvalósítja a Model Context Protocol szervert, amely valós idejű hozzáférést biztosít AI asszisztenseknek a hivatalos Microsoft dokumentációhoz. Szemantikus keresést végez a Microsoft hivatalos műszaki dokumentációjában.
 
-**Cél:** Olyan MCP szerver létrehozása, amely képes kéréseket több MI modell szolgáltatóhoz irányítani meghatározott kritériumok alapján.
+**Hivatkozások:**  
+- [Microsoft Learn Docs MCP Server](https://github.com/MicrosoftDocs/mcp)
+
+## Gyakorlati Projektek
+
+### Projekt 1: Többszolgáltatós MCP szerver építése
+
+**Cél:** Olyan MCP szerver létrehozása, amely képes több AI modell szolgáltatóhoz irányítani a kéréseket meghatározott kritériumok alapján.
 
 **Követelmények:**  
 - Legalább három különböző modell szolgáltató támogatása (pl. OpenAI, Anthropic, helyi modellek)  
-- Kérések metaadatai alapján működő irányító mechanizmus  
-- Konfigurációs rendszer a szolgáltatói hitelesítő adatok kezelésére  
-- Gyorsítótárazás a teljesítmény és költségek optimalizálásához  
-- Egyszerű műszerfal a használat nyomon követésére  
+- Routing mechanizmus megvalósítása a kérés metaadatai alapján  
+- Konfigurációs rendszer létrehozása a szolgáltatói hitelesítő adatok kezelésére  
+- Gyorsítótárazás a teljesítmény és költségek optimalizálására  
+- Egyszerű műszerfal a használat nyomon követésére
 
 **Megvalósítás lépései:**  
 1. Alap MCP szerver infrastruktúra felállítása  
-2. Szolgáltató adapterek implementálása minden MI modell szolgáltatóhoz  
-3. Irányítási logika létrehozása a kérés attribútumai alapján  
+2. Szolgáltató adapterek megvalósítása minden AI modell szolgáltatóhoz  
+3. Routing logika létrehozása a kérés attribútumai alapján  
 4. Gyorsítótárazási mechanizmusok hozzáadása gyakori kérésekhez  
 5. Monitorozó műszerfal fejlesztése  
-6. Tesztelés különböző kérésmintákkal  
+6. Tesztelés különböző kérésmintákkal
 
-**Technológiák:** Python (.NET/Java/Python a preferenciád szerint), Redis gyorsítótárazáshoz, egyszerű webes keretrendszer a műszerfalhoz.
+**Technológiák:** Választható Python (.NET/Java/Python preferenciád szerint), Redis gyorsítótárazáshoz, és egyszerű webes keretrendszer a műszerfalhoz.
 
 ### Projekt 2: Vállalati promptkezelő rendszer
 
-**Cél:** MCP-alapú rendszer fejlesztése prompt sablonok kezelésére, verziózására és telepítésére szervezeti szinten.
+**Cél:** MCP-alapú rendszer fejlesztése prompt sablonok kezelésére, verziózására és telepítésére egy szervezeten belül.
 
 **Követelmények:**  
 - Központosított prompt sablon tár létrehozása  
 - Verziózás és jóváhagyási munkafolyamatok megvalósítása  
-- Sablon tesztelési lehetőségek mintabemenetekkel  
-- Szerepalapú hozzáférés-vezérlés  
-- API a sablonok lekérésére és telepítésére  
+- Sablontesztelési lehetőségek fejlesztése mintabemenetekkel  
+- Szerepalapú hozzáférés-szabályozás  
+- API készítése sablonok lekérésére és telepítésére
 
 **Megvalósítás lépései:**  
-1. Adatbázis séma tervezése sablonok tárolásához  
-2. Alap API létrehozása sablon CRUD műveletekhez  
-3. Verziózási rendszer megvalósítása  
+1. Adatbázis séma tervezése a sablonok tárolásához  
+2. Alap API készítése a sablon CRUD műveletekhez  
+3. Verziókezelő rendszer megvalósítása  
 4. Jóváhagyási munkafolyamat fejlesztése  
-5. Tesztelési keretrendszer kiépítése  
-6. Egyszerű webes felület készítése a kezeléshez  
-7. Integráció MCP szerverrel  
+5. Tesztelési keretrendszer kidolgozása  
+6. Egyszerű webes felület létrehozása a kezeléshez  
+7. Integráció MCP szerverrel
 
-**Technológiák:** Tetszőleges backend keretrendszer, SQL vagy NoSQL adatbázis, frontend keretrendszer a kezelőfelülethez.
+**Technológiák:** Választható backend keretrendszer, SQL vagy NoSQL adatbázis, valamint frontend keretrendszer a kezelőfelülethez.
 
 ### Projekt 3: MCP-alapú tartalomgeneráló platform
 
-**Cél:** Olyan tartalomgeneráló platform építése, amely az MCP-t használva konzisztens eredményeket biztosít különböző tartalomtípusok esetén.
+**Cél:** Olyan tartalomgeneráló platform fejlesztése, amely MCP segítségével következetes eredményeket nyújt különböző tartalomtípusokhoz.
 
 **Követelmények:**  
-- Több tartalomformátum támogatása (blogbejegyzések, közösségi média, marketing szöveg)  
+- Több tartalomformátum támogatása (blogbejegyzések, közösségi média, marketing szövegek)  
 - Sablonalapú generálás testreszabási lehetőségekkel  
-- Tartalom átnézési és visszacsatolási rendszer  
-- Tartalom teljesítménymutatók nyomon követése  
-- Tartalom verziózás és iteráció támogatása  
-
-**Megvalósítás lépései:**  
-1. MCP kliens infrastruktúra felállítása  
-2. Sablonok létrehozása különböző tartalomtípusokhoz  
-3. Tartalomgenerálási folyamat kiépítése  
-4. Átné
+- Tartalomellenőrző és visszajelző rendszer  
+- Teljesítménymutatók
+- [MCP Közösség és Dokumentáció](https://modelcontextprotocol.io/introduction)
 - [Azure MCP Dokumentáció](https://aka.ms/azmcp)
-- [Playwright MCP Server GitHub Tároló](https://github.com/microsoft/playwright-mcp)
+- [Playwright MCP Server GitHub tárhely](https://github.com/microsoft/playwright-mcp)
 - [Files MCP Server (OneDrive)](https://github.com/microsoft/files-mcp-server)
 - [Azure-Samples MCP](https://github.com/Azure-Samples/mcp)
-- [MCP Auth Szerverek (Azure-Samples)](https://github.com/Azure-Samples/mcp-auth-servers)
-- [Távoli MCP Funkciók (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions)
-- [Távoli MCP Funkciók Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-python)
-- [Távoli MCP Funkciók .NET (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)
-- [Távoli MCP Funkciók TypeScript (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-typescript)
-- [Távoli MCP APIM Funkciók Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
+- [MCP Auth szerverek (Azure-Samples)](https://github.com/Azure-Samples/mcp-auth-servers)
+- [Távoli MCP függvények (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions)
+- [Távoli MCP Python függvények (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-python)
+- [Távoli MCP .NET függvények (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)
+- [Távoli MCP TypeScript függvények (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-typescript)
+- [Távoli MCP APIM Python függvények (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
 - [AI-Gateway (Azure-Samples)](https://github.com/Azure-Samples/AI-Gateway)
-- [Microsoft AI és Automatizálási Megoldások](https://azure.microsoft.com/en-us/products/ai-services/)
+- [Microsoft AI és Automatizációs megoldások](https://azure.microsoft.com/en-us/products/ai-services/)
 
 ## Gyakorlatok
 
 1. Elemezzen meg egy esettanulmányt, és javasoljon egy alternatív megvalósítási módot.
 2. Válasszon ki egy projektötletet, és készítsen részletes műszaki specifikációt.
-3. Kutasson egy olyan iparágat, amely nem szerepel az esettanulmányok között, és vázolja fel, hogyan kezelhetné az MCP az adott iparág specifikus kihívásait.
-4. Vizsgáljon meg egy jövőbeli irányt, és alkosson egy koncepciót egy új MCP bővítményhez, amely támogatná azt.
+3. Kutasson egy iparágat, amely nem szerepel az esettanulmányok között, és vázolja fel, hogyan kezelhetné az MCP az adott terület speciális kihívásait.
+4. Vizsgáljon meg egy jövőbeli irányt, és dolgozzon ki egy koncepciót egy új MCP kiterjesztésre, amely támogatja azt.
 
 Következő: [Legjobb gyakorlatok](../08-BestPractices/README.md)
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén szakmai emberi fordítást javasolunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk pontos fordítást nyújtani, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
