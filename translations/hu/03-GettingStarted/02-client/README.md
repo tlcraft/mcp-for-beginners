@@ -1,115 +1,83 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a9c3ca25df37dbb4c1518174fc415ce1",
-  "translation_date": "2025-05-17T09:47:00+00:00",
+  "original_hash": "a0acf3093691b1cfcc008a8c6648ea26",
+  "translation_date": "2025-06-13T06:51:21+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "hu"
 }
 -->
-# Ügyfél létrehozása
-
-Az ügyfelek egyedi alkalmazások vagy szkriptek, amelyek közvetlenül kommunikálnak egy MCP szerverrel, hogy erőforrásokat, eszközöket és utasításokat kérjenek. Ellentétben az inspector eszköz használatával, amely grafikus felületet biztosít a szerverrel való interakcióhoz, saját ügyfél írása lehetővé teszi a programozott és automatizált interakciókat. Ez lehetővé teszi a fejlesztők számára, hogy integrálják az MCP képességeit saját munkafolyamataikba, automatizálják a feladatokat, és egyedi megoldásokat építsenek, amelyek megfelelnek a specifikus igényeknek.
-
-## Áttekintés
-
-Ez a lecke bevezetést nyújt az ügyfelek fogalmába a Model Context Protocol (MCP) ökoszisztémában. Megtanulod, hogyan írj saját ügyfelet, és hogyan csatlakoztasd egy MCP szerverhez.
-
-## Tanulási célok
-
-A lecke végére képes leszel:
-
-- Megérteni, mit tehet egy ügyfél.
-- Saját ügyfelet írni.
-- Csatlakoztatni és tesztelni az ügyfelet egy MCP szerverrel, hogy biztosítsd, hogy az utóbbi megfelelően működik.
-
-## Mi szükséges az ügyfél írásához?
-
-Ügyfél írásához a következőket kell megtenned:
-
-- **Importáld a megfelelő könyvtárakat**. Ugyanazt a könyvtárat fogod használni, mint korábban, csak más konstrukciókat.
-- **Ügyfél példány létrehozása**. Ez magában foglalja egy ügyfél példány létrehozását és annak csatlakoztatását a kiválasztott szállítási módszerhez.
-- **Dönts arról, hogy milyen erőforrásokat sorolj fel**. Az MCP szervered rendelkezik erőforrásokkal, eszközökkel és utasításokkal, el kell döntened, melyiket sorolod fel.
-- **Integráld az ügyfelet egy host alkalmazásba**. Ha már tudod a szerver képességeit, integrálnod kell ezt a host alkalmazásodba, hogy ha a felhasználó begépel egy utasítást vagy más parancsot, a megfelelő szerver funkciót lehessen hívni.
-
-Most, hogy magas szinten megértettük, mit fogunk csinálni, nézzünk meg egy példát.
-
-### Egy példa ügyfél
-
-Nézzük meg ezt a példát:
-Te október 2023-ig terjedő adatokon vagy kiképezve.
-
 A fenti kódban:
 
-- Importáljuk a könyvtárakat
-- Létrehozunk egy ügyfél példányt, és csatlakoztatjuk stdio használatával a szállításhoz.
-- Felsoroljuk az utasításokat, erőforrásokat és eszközöket, és mindet meghívjuk.
+- Importáltuk a könyvtárakat
+- Létrehoztunk egy kliens példányt, és stdio segítségével csatlakoztattuk a szállításhoz.
+- Felsoroltuk a promptokat, erőforrásokat és eszközöket, majd mindet meghívtuk.
 
-Ott van, egy ügyfél, amely képes kommunikálni egy MCP szerverrel.
+Így tehát van egy kliensünk, amely képes kommunikálni egy MCP szerverrel.
 
-Szánjunk időt a következő gyakorlati részben, és bontsuk le az egyes kódrészleteket, hogy megmagyarázzuk, mi történik.
+Most a következő gyakorlati részben lépésről lépésre átvesszük az egyes kódrészleteket, és elmagyarázzuk, mi történik pontosan.
 
-## Gyakorlat: Ügyfél írása
+## Gyakorlat: Kliens írása
 
-Ahogy fentebb említettük, szánjunk időt a kód magyarázatára, és ha szeretnéd, kódolj velünk.
+Ahogy fent említettük, szánjunk időt a kód magyarázatára, és természetesen nyugodtan kódolj is velünk.
 
-### -1- Importáld a könyvtárakat
+### -1- Könyvtárak importálása
 
-Importáljuk a szükséges könyvtárakat, szükségünk lesz hivatkozásokra egy ügyfélhez és a választott szállítási protokollhoz, stdio. A stdio egy protokoll olyan dolgokhoz, amelyek a helyi gépeden futnak. Az SSE egy másik szállítási protokoll, amelyet a későbbi fejezetekben mutatunk be, de ez a másik opció. Egyelőre azonban folytassuk a stdio-val.
+Importáljuk a szükséges könyvtárakat, szükségünk lesz hivatkozásokra a klienshez és a választott szállítási protokollhoz, ami jelen esetben stdio. Az stdio egy olyan protokoll, ami helyi gépen futó folyamatokhoz való. Az SSE egy másik szállítási protokoll, amit a későbbi fejezetekben mutatunk be, ez a másik lehetőséged. Most azonban folytassuk az stdio-val.
 
-Lépjünk tovább a példányosításra.
+Haladjunk tovább az példányosításhoz.
 
-### -2- Ügyfél és szállítás példányosítása
+### -2- Kliens és szállítás példányosítása
 
-Létre kell hoznunk a szállítás és az ügyfél példányát:
+Létre kell hoznunk egy példányt a szállításból, és egyet a kliensből: 
 
-### -3- A szerver funkcióinak felsorolása
+### -3- A szerver funkcióinak listázása
 
-Most van egy ügyfelünk, amely képes csatlakozni, ha a program fut. Azonban nem sorolja fel a funkcióit, így tegyük meg ezt:
+Most már van egy kliensünk, ami csatlakozni tud, ha a programot futtatjuk. Azonban még nem listázza a funkcióit, ezt most pótoljuk:
 
-Nagyszerű, most már rögzítettük az összes funkciót. Most az a kérdés, mikor használjuk őket? Nos, ez az ügyfél elég egyszerű, egyszerű abban az értelemben, hogy explicit módon kell meghívnunk a funkciókat, amikor szükségünk van rájuk. A következő fejezetben létrehozunk egy fejlettebb ügyfelet, amely hozzáfér saját nagynyelvi modelljéhez, LLM-hez. Egyelőre azonban nézzük meg, hogyan hívhatjuk meg a funkciókat a szerveren:
+Remek, most már megkaptuk az összes funkciót. De mikor használjuk ezeket? Ez a kliens elég egyszerű, ami azt jelenti, hogy explicit módon kell meghívnunk a funkciókat, amikor szükségünk van rájuk. A következő fejezetben egy fejlettebb klienst fogunk létrehozni, amely saját nagy nyelvi modellel (LLM) rendelkezik. Addig nézzük meg, hogyan hívhatjuk meg a szerver funkcióit:
 
 ### -4- Funkciók meghívása
 
-A funkciók meghívásához biztosítanunk kell, hogy megadjuk a megfelelő argumentumokat, és néhány esetben azt, amit megpróbálunk meghívni.
+A funkciók meghívásához meg kell győződnünk arról, hogy a megfelelő argumentumokat adjuk meg, és bizonyos esetekben a meghívni kívánt elem nevét is.
 
-### -5- Az ügyfél futtatása
+### -5- A kliens futtatása
 
-Az ügyfél futtatásához írd be a következő parancsot a terminálba:
+A kliens futtatásához írd be a következő parancsot a terminálba:
 
 ## Feladat
 
-Ebben a feladatban a tanultakat használva saját ügyfelet hozol létre.
+Ebben a feladatban a tanultak alapján készítsd el saját kliensedet.
 
-Itt van egy szerver, amelyet használhatsz, és amelyet meg kell hívnod az ügyfélkódoddal, nézd meg, hogy tudsz-e több funkciót hozzáadni a szerverhez, hogy érdekesebbé tedd.
+Itt egy szerver, amit használhatsz, és amelyhez a kliensed kódján keresztül kell csatlakoznod. Próbálj meg több funkciót hozzáadni a szerverhez, hogy érdekesebbé tedd.
 
 ## Megoldás
 
-[Megoldás](./solution/README.md)
+[Solution](./solution/README.md)
 
 ## Főbb tanulságok
 
-A fejezet főbb tanulságai az ügyfelekről a következők:
+A fejezet főbb tanulságai a kliensekről:
 
-- Használhatók mind a szerver funkcióinak felfedezésére, mind meghívására.
-- Képesek elindítani egy szervert, miközben maguk is elindulnak (mint ebben a fejezetben), de az ügyfelek csatlakozhatnak futó szerverekhez is.
-- Nagyszerű módja a szerver képességeinek tesztelésének, alternatívaként az Inspector mellett, ahogy azt az előző fejezetben leírtuk.
+- Használhatók a szerver funkcióinak felfedezésére és meghívására egyaránt.
+- Elindíthatnak egy szervert, miközben maguk is elindulnak (ahogy ebben a fejezetben), de a kliensek futó szerverekhez is csatlakozhatnak.
+- Remek módja a szerver képességeinek tesztelésére, alternatívaként az Inspectorhoz, ahogy az előző fejezetben bemutattuk.
 
 ## További források
 
-- [Ügyfelek építése MCP-ben](https://modelcontextprotocol.io/quickstart/client)
+- [Kliens építése MCP-ben](https://modelcontextprotocol.io/quickstart/client)
 
 ## Minták
 
-- [Java Kalkulátor](../samples/java/calculator/README.md)
-- [.Net Kalkulátor](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Kalkulátor](../samples/javascript/README.md)
-- [TypeScript Kalkulátor](../samples/typescript/README.md)
-- [Python Kalkulátor](../../../../03-GettingStarted/samples/python)
+- [Java Számológép](../samples/java/calculator/README.md)
+- [.Net Számológép](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Számológép](../samples/javascript/README.md)
+- [TypeScript Számológép](../samples/typescript/README.md)
+- [Python Számológép](../../../../03-GettingStarted/samples/python)
 
 ## Mi következik
 
-- Következő: [Ügyfél létrehozása LLM-mel](/03-GettingStarted/03-llm-client/README.md)
+- Következő: [Kliens létrehozása LLM-mel](/03-GettingStarted/03-llm-client/README.md)
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot a [Co-op Translator](https://github.com/Azure/co-op-translator) mesterséges intelligencia fordítószolgáltatás segítségével fordítottuk le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentumot annak eredeti nyelvén kell tekinteni a hiteles forrásnak. Kritikus információk esetén javasolt a professzionális emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum anyanyelvű változatát kell tekinteni a hiteles forrásnak. Kritikus információk esetén szakmai emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből eredő félreértésekért vagy téves értelmezésekért.
