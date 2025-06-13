@@ -25,7 +25,7 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-    
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -35,7 +35,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-         </dependencies>
+        </dependencies>
     </dependencyManagement>
 
     <dependencies>
@@ -75,7 +75,8 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>            <plugin>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
