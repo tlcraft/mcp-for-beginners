@@ -131,6 +131,24 @@ using ModelContextProtocol.Protocol.Transport;
 
 </details>
 
+<details>
+<summary>Java</summary>
+
+For Java, you'll create a client that connects to the MCP server from the previous exercise. Using the same Java Spring Boot project structure from [Getting Started with MCP Server](../01-first-server/solution/java), create a new Java class called `SDKClient` in the `src/main/java/com/microsoft/mcp/sample/client/` folder and add the following imports:
+
+```java
+import java.util.Map;
+import org.springframework.web.reactive.function.client.WebClient;
+import io.modelcontextprotocol.client.McpClient;
+import io.modelcontextprotocol.client.transport.WebFluxSseClientTransport;
+import io.modelcontextprotocol.spec.McpClientTransport;
+import io.modelcontextprotocol.spec.McpSchema.CallToolRequest;
+import io.modelcontextprotocol.spec.McpSchema.CallToolResult;
+import io.modelcontextprotocol.spec.McpSchema.ListToolsResult;
+```
+
+</details>
+
 Let's move on to instantiation.
 
 ### -2- Instantiating client and transport
@@ -261,6 +279,41 @@ Note, in "Arguments", you can either point to the *.csproj* or to the executable
 
 </details>
 
+<details>
+<summary>Java</summary>
+
+```java
+public class SDKClient {
+    
+    public static void main(String[] args) {
+        var transport = new WebFluxSseClientTransport(WebClient.builder().baseUrl("http://localhost:8080"));
+        new SDKClient(transport).run();
+    }
+    
+    private final McpClientTransport transport;
+
+    public SDKClient(McpClientTransport transport) {
+        this.transport = transport;
+    }
+
+    public void run() {
+        var client = McpClient.sync(this.transport).build();
+        client.initialize();
+        
+        // Your client logic goes here
+    }
+}
+```
+
+In the preceding code we've:
+
+- Created a main method that sets up an SSE transport pointing to `http://localhost:8080` where our MCP server will be running.
+- Created a client class that takes the transport as a constructor parameter.
+- In the `run` method, we create a synchronous MCP client using the transport and initialize the connection.
+- Used SSE (Server-Sent Events) transport which is suitable for HTTP-based communication with Java Spring Boot MCP servers.
+
+</details>
+
 ### -3- Listing the server features
 
 Now, we have a client that can connect to should the program be run. However, it doesn't actually list its features so let's do that next:
@@ -313,6 +366,26 @@ foreach (var tool in await client.ListToolsAsync())
 ```
 
 Above is an example how we can list the tools on the server. For each tool, we then print out its name.
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+```java
+// List and demonstrate tools
+ListToolsResult toolsList = client.listTools();
+System.out.println("Available Tools = " + toolsList);
+
+// You can also ping the server to verify connection
+client.ping();
+```
+
+In the preceding code we've:
+
+- Called `listTools()` to get all available tools from the MCP server.
+- Used `ping()` to verify that the connection to the server is working.
+- The `ListToolsResult` contains information about all tools including their names, descriptions, and input schemas.
 
 </details>
 
@@ -452,6 +525,36 @@ In the preceding code, we've:
 
 </details>
 
+<details>
+<summary>Java</summary>
+
+```java
+// Call various calculator tools
+CallToolResult resultAdd = client.callTool(new CallToolRequest("add", Map.of("a", 5.0, "b", 3.0)));
+System.out.println("Add Result = " + resultAdd);
+
+CallToolResult resultSubtract = client.callTool(new CallToolRequest("subtract", Map.of("a", 10.0, "b", 4.0)));
+System.out.println("Subtract Result = " + resultSubtract);
+
+CallToolResult resultMultiply = client.callTool(new CallToolRequest("multiply", Map.of("a", 6.0, "b", 7.0)));
+System.out.println("Multiply Result = " + resultMultiply);
+
+CallToolResult resultDivide = client.callTool(new CallToolRequest("divide", Map.of("a", 20.0, "b", 4.0)));
+System.out.println("Divide Result = " + resultDivide);
+
+CallToolResult resultHelp = client.callTool(new CallToolRequest("help", Map.of()));
+System.out.println("Help = " + resultHelp);
+```
+
+In the preceding code we've:
+
+- Called multiple calculator tools using `callTool()` method with `CallToolRequest` objects.
+- Each tool call specifies the tool name and a `Map` of arguments required by that tool.
+- The server tools expect specific parameter names (like "a", "b" for mathematical operations).
+- Results are returned as `CallToolResult` objects containing the response from the server.
+
+</details>
+
 ### -5- Run the client
 
 To run the client, type the following command in the terminal:
@@ -487,6 +590,32 @@ python client.py
 
 ```sh
 dotnet run
+```
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+First, ensure your MCP server is running on `http://localhost:8080`. Then run the client:
+
+```bash
+# Build you project
+./mvnw clean compile
+
+# Run the client
+./mvnw exec:java -Dexec.mainClass="com.microsoft.mcp.sample.client.SDKClient"
+```
+
+Alternatively, you can run the complete client project provided in the solution folder `03-GettingStarted\02-client\solution\java`:
+
+```bash
+# Navigate to the solution directory
+cd 03-GettingStarted/02-client/solution/java
+
+# Build and run the JAR
+./mvnw clean package
+java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
 </details>
