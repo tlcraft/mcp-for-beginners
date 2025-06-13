@@ -154,6 +154,100 @@ await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 
 </details>
 
+<details>
+<summary>Java</summary>
+
+First, you'll need to add the LangChain4j dependencies to your `pom.xml` file. Add these dependencies to enable MCP integration and GitHub Models support:
+
+```xml
+<properties>
+    <langchain4j.version>1.0.0-beta3</langchain4j.version>
+</properties>
+
+<dependencies>
+    <!-- LangChain4j MCP Integration -->
+    <dependency>
+        <groupId>dev.langchain4j</groupId>
+        <artifactId>langchain4j-mcp</artifactId>
+        <version>${langchain4j.version}</version>
+    </dependency>
+    
+    <!-- OpenAI Official API Client -->
+    <dependency>
+        <groupId>dev.langchain4j</groupId>
+        <artifactId>langchain4j-open-ai-official</artifactId>
+        <version>${langchain4j.version}</version>
+    </dependency>
+    
+    <!-- GitHub Models Support -->
+    <dependency>
+        <groupId>dev.langchain4j</groupId>
+        <artifactId>langchain4j-github-models</artifactId>
+        <version>${langchain4j.version}</version>
+    </dependency>
+    
+    <!-- Spring Boot Starter (optional, for production apps) -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+</dependencies>
+```
+
+Then create your Java client class:
+
+```java
+import dev.langchain4j.mcp.McpToolProvider;
+import dev.langchain4j.mcp.client.DefaultMcpClient;
+import dev.langchain4j.mcp.client.McpClient;
+import dev.langchain4j.mcp.client.transport.McpTransport;
+import dev.langchain4j.mcp.client.transport.http.HttpMcpTransport;
+import dev.langchain4j.model.chat.ChatLanguageModel;
+import dev.langchain4j.model.openaiofficial.OpenAiOfficialChatModel;
+import dev.langchain4j.service.AiServices;
+import dev.langchain4j.service.tool.ToolProvider;
+
+import java.time.Duration;
+import java.util.List;
+
+public class LangChain4jClient {
+    
+    public static void main(String[] args) throws Exception {        // Configure the LLM to use GitHub Models
+        ChatLanguageModel model = OpenAiOfficialChatModel.builder()
+                .isGitHubModels(true)
+                .apiKey(System.getenv("GITHUB_TOKEN"))
+                .timeout(Duration.ofSeconds(60))
+                .modelName("gpt-4.1-nano")
+                .timeout(Duration.ofSeconds(60))
+                .build();
+
+        // Create MCP transport for connecting to server
+        McpTransport transport = new HttpMcpTransport.Builder()
+                .sseUrl("http://localhost:8080/sse")
+                .timeout(Duration.ofSeconds(60))
+                .logRequests(true)
+                .logResponses(true)
+                .build();
+
+        // Create MCP client
+        McpClient mcpClient = new DefaultMcpClient.Builder()
+                .transport(transport)
+                .build();
+    }
+}
+```
+
+In the preceding code we've:
+
+- **Added LangChain4j dependencies**: Required for MCP integration, OpenAI official client, and GitHub Models support
+- **Imported the LangChain4j libraries**: For MCP integration and OpenAI chat model functionality
+- **Created a `ChatLanguageModel`**: Configured to use GitHub Models with your GitHub token
+- **Set up HTTP transport**: Using Server-Sent Events (SSE) to connect to the MCP server
+- **Created an MCP client**: That will handle communication with the server
+- **Used LangChain4j's built-in MCP support**: Which simplifies integration between LLMs and MCP servers
+
+</details>
+
 
 Great, for our next step, let's list the capbilities on the server.
 
@@ -240,6 +334,29 @@ In the preceding code we've:
 
 - Listed the tools available on the MCP Server
 - For each tool, listed name, description and its schema. The latter is something we will use to call the tools shortly.
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+```java
+// Create a tool provider that automatically discovers MCP tools
+ToolProvider toolProvider = McpToolProvider.builder()
+        .mcpClients(List.of(mcpClient))
+        .build();
+
+// The MCP tool provider automatically handles:
+// - Listing available tools from the MCP server
+// - Converting MCP tool schemas to LangChain4j format
+// - Managing tool execution and responses
+```
+
+In the preceding code we've:
+
+- Created a `McpToolProvider` that automatically discovers and registers all tools from the MCP server
+- The tool provider handles the conversion between MCP tool schemas and LangChain4j's tool format internally
+- This approach abstracts away the manual tool listing and conversion process
 
 </details>
 
@@ -397,9 +514,7 @@ Next step after listing server capabilities is to convert them into a format tha
 
         return toolDefinitions;
     }
-    ```
-
-    In the preceding code, we've:
+    ```    In the preceding code, we've:
 
     - Update the function to convert the MCP tool response to an LLm tool. Let's highlight the code we added:
 
@@ -413,6 +528,31 @@ Next step after listing server capabilities is to convert them into a format tha
         ```
 
         The input schema is part of the tool response but on the "properties" attribute, so we need to extract. Furthermore, we now call `ConvertFrom` with the tool details. Now we've done the heavy lifting, let's see how it call comes together as we handle a user prompt next.
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+```java
+// Create a Bot interface for natural language interaction
+public interface Bot {
+    String chat(String prompt);
+}
+
+// Configure the AI service with LLM and MCP tools
+Bot bot = AiServices.builder(Bot.class)
+        .chatLanguageModel(model)
+        .toolProvider(toolProvider)
+        .build();
+```
+
+In the preceding code we've:
+
+- Defined a simple `Bot` interface for natural language interactions
+- Used LangChain4j's `AiServices` to automatically bind the LLM with the MCP tool provider
+- The framework automatically handles tool schema conversion and function calling behind the scenes
+- This approach eliminates manual tool conversion - LangChain4j handles all the complexity of converting MCP tools to LLM-compatible format
 
 </details>
 
@@ -951,6 +1091,86 @@ for (int i = 0; i < response.ToolCalls.Count; i++)
 
 // 5. Print the generic response
 Console.WriteLine($"Assistant response: {content}");
+```
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+```java
+try {
+    // Execute natural language requests that automatically use MCP tools
+    String response = bot.chat("Calculate the sum of 24.5 and 17.3 using the calculator service");
+    System.out.println(response);
+
+    response = bot.chat("What's the square root of 144?");
+    System.out.println(response);
+
+    response = bot.chat("Show me the help for the calculator service");
+    System.out.println(response);
+} finally {
+    mcpClient.close();
+}
+```
+
+In the preceding code we've:
+
+- Used simple natural language prompts to interact with the MCP server tools
+- The LangChain4j framework automatically handles:
+  - Converting user prompts to tool calls when needed
+  - Calling the appropriate MCP tools based on the LLM's decision
+  - Managing the conversation flow between the LLM and MCP server
+- The `bot.chat()` method returns natural language responses that may include results from MCP tool executions
+- This approach provides a seamless user experience where users don't need to know about the underlying MCP implementation
+
+Complete code example:
+
+```java
+public class LangChain4jClient {
+    
+    public static void main(String[] args) throws Exception {        ChatLanguageModel model = OpenAiOfficialChatModel.builder()
+                .isGitHubModels(true)
+                .apiKey(System.getenv("GITHUB_TOKEN"))
+                .timeout(Duration.ofSeconds(60))
+                .modelName("gpt-4.1-nano")
+                .timeout(Duration.ofSeconds(60))
+                .build();
+
+        McpTransport transport = new HttpMcpTransport.Builder()
+                .sseUrl("http://localhost:8080/sse")
+                .timeout(Duration.ofSeconds(60))
+                .logRequests(true)
+                .logResponses(true)
+                .build();
+
+        McpClient mcpClient = new DefaultMcpClient.Builder()
+                .transport(transport)
+                .build();
+
+        ToolProvider toolProvider = McpToolProvider.builder()
+                .mcpClients(List.of(mcpClient))
+                .build();
+
+        Bot bot = AiServices.builder(Bot.class)
+                .chatLanguageModel(model)
+                .toolProvider(toolProvider)
+                .build();
+
+        try {
+            String response = bot.chat("Calculate the sum of 24.5 and 17.3 using the calculator service");
+            System.out.println(response);
+
+            response = bot.chat("What's the square root of 144?");
+            System.out.println(response);
+
+            response = bot.chat("Show me the help for the calculator service");
+            System.out.println(response);
+        } finally {
+            mcpClient.close();
+        }
+    }
+}
 ```
 
 </details>
