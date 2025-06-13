@@ -1,103 +1,69 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a9c3ca25df37dbb4c1518174fc415ce1",
-  "translation_date": "2025-05-17T09:45:41+00:00",
+  "original_hash": "a0acf3093691b1cfcc008a8c6648ea26",
+  "translation_date": "2025-06-13T06:50:26+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "tl"
 }
 -->
-# Paglikha ng kliyente
+Sa naunang code ginawa natin ang mga sumusunod:
 
-Ang mga kliyente ay mga custom na aplikasyon o script na direktang nakikipag-ugnayan sa isang MCP Server upang humiling ng mga mapagkukunan, kasangkapan, at mga prompt. Hindi tulad ng paggamit ng inspector tool, na nagbibigay ng graphical interface para makipag-ugnayan sa server, ang pagsusulat ng sarili mong kliyente ay nagbibigay-daan para sa programmatic at automated na pakikipag-ugnayan. Ito ay nagpapahintulot sa mga developer na isama ang mga kakayahan ng MCP sa kanilang sariling mga workflow, awtomatikong gawin ang mga gawain, at bumuo ng mga custom na solusyon na iniakma para sa mga tiyak na pangangailangan.
+- In-import ang mga libraries
+- Gumawa ng instance ng client at ikinonekta ito gamit ang stdio bilang transport.
+- Nilista ang prompts, resources, at tools at tinawag ang mga ito lahat.
 
-## Pangkalahatang-ideya
+Ayan, may client ka na na kayang makipag-usap sa isang MCP Server.
 
-Ipinapakilala ng araling ito ang konsepto ng mga kliyente sa loob ng Model Context Protocol (MCP) ecosystem. Matutunan mo kung paano sumulat ng sarili mong kliyente at ikonekta ito sa isang MCP Server.
+Maglalaan tayo ng oras sa susunod na bahagi ng ehersisyo para himayin ang bawat bahagi ng code at ipaliwanag kung ano ang nangyayari.
 
-## Mga Layunin sa Pagkatuto
+## Ehersisyo: Pagsusulat ng client
 
-Sa pagtatapos ng araling ito, magagawa mong:
+Gaya ng sinabi kanina, maglalaan tayo ng oras sa pagpapaliwanag ng code, at kung gusto mo, sabayan mo rin ng pag-code.
 
-- Maunawaan kung ano ang magagawa ng isang kliyente.
-- Sumulat ng sarili mong kliyente.
-- Ikonekta at subukan ang kliyente sa isang MCP server upang matiyak na gumagana ito ayon sa inaasahan.
+### -1- Pag-import ng mga library
 
-## Ano ang kailangan sa pagsusulat ng kliyente?
+I-import natin ang mga kailangang library, kakailanganin natin ng mga reference sa client at sa napiling transport protocol, ang stdio. Ang stdio ay isang protocol para sa mga bagay na tatakbo sa iyong lokal na makina. Ang SSE ay isa pang transport protocol na ipapakita natin sa mga susunod na kabanata ngunit ito ang isa pang opsyon mo. Sa ngayon, magpapatuloy tayo gamit ang stdio.
 
-Upang sumulat ng kliyente, kakailanganin mong gawin ang mga sumusunod:
+### -2- Pag-instansya ng client at transport
 
-- **I-import ang tamang mga library**. Gagamitin mo ang parehong library tulad ng dati, ngunit ibang mga constructs.
-- **I-instantiate ang isang kliyente**. Kabilang dito ang paglikha ng isang client instance at ikonekta ito sa napiling paraan ng transportasyon.
-- **Magpasya kung aling mga mapagkukunan ang ililista**. Ang iyong MCP server ay may mga mapagkukunan, kasangkapan at mga prompt, kailangan mong magpasya kung alin ang ililista.
-- **Isama ang kliyente sa isang host application**. Kapag alam mo na ang mga kakayahan ng server, kailangan mong isama ito sa iyong host application upang kapag ang isang user ay nag-type ng isang prompt o ibang command, ang kaukulang tampok ng server ay ma-invoke.
-
-Ngayon na nauunawaan natin sa mataas na antas kung ano ang ating gagawin, tingnan natin ang isang halimbawa sa susunod.
-
-### Isang halimbawa ng kliyente
-
-Tingnan natin ang halimbawang kliyente na ito:
-Ikaw ay sinanay sa data hanggang Oktubre 2023.
-
-Sa nakaraang code, ginawa natin:
-
-- I-import ang mga library
-- Lumikha ng isang instance ng kliyente at ikonekta ito gamit ang stdio para sa transportasyon.
-- Ililista ang mga prompt, mapagkukunan at kasangkapan at i-invoke ang lahat ng mga ito.
-
-Ayan na, isang kliyente na maaaring makipag-usap sa isang MCP Server.
-
-Maglaan tayo ng oras sa susunod na seksyon ng ehersisyo at hatiin ang bawat code snippet at ipaliwanag kung ano ang nangyayari.
-
-## Ehersisyo: Pagsusulat ng kliyente
-
-Tulad ng sinabi sa itaas, maglaan tayo ng oras sa pagpapaliwanag ng code, at kung nais mo, maaari kang mag-code kasabay nito.
-
-### -1- I-import ang mga library
-
-I-import natin ang mga library na kailangan natin, kakailanganin natin ng mga reference sa isang kliyente at sa napiling transport protocol, stdio. Ang stdio ay isang protocol para sa mga bagay na dapat tumakbo sa iyong lokal na makina. Ang SSE ay isa pang transport protocol na ipapakita namin sa mga susunod na kabanata ngunit iyon ang iyong iba pang opsyon. Sa ngayon, ipagpatuloy natin ang stdio.
-
-Magpatuloy tayo sa pag-i-instantiate.
-
-### -2- Pag-i-instantiate ng kliyente at transportasyon
-
-Kakailanganin nating lumikha ng isang instance ng transportasyon at ng ating kliyente:
+Kailangan nating gumawa ng instance ng transport at ng client natin:
 
 ### -3- Paglilista ng mga tampok ng server
 
-Ngayon, mayroon tayong kliyente na maaaring kumonekta kapag pinatakbo ang programa. Gayunpaman, hindi nito aktwal na inililista ang mga tampok nito kaya gawin natin iyon sa susunod:
+Ngayon, may client na tayo na kayang kumonekta kapag pinaandar ang programa. Ngunit hindi pa nito nililista ang mga tampok nito kaya gawin natin iyon ngayon:
 
-Mahusay, ngayon na natin nakapture ang lahat ng mga tampok. Ngayon ang tanong ay kailan natin gagamitin ang mga ito? Well, ang kliyenteng ito ay medyo simple, simple sa kahulugan na kakailanganin nating tawagin ang mga tampok kapag gusto natin ang mga ito. Sa susunod na kabanata, lilikha tayo ng mas advanced na kliyente na may access sa sarili nitong malaking language model, LLM. Sa ngayon, tingnan natin kung paano natin ma-i-invoke ang mga tampok sa server:
+Maganda, nakuha na natin lahat ng mga tampok. Ngayon, kailan ba natin ito gagamitin? Ang client na ito ay medyo simple, ibig sabihin kailangan nating tawagin nang tahasan ang mga tampok kapag gusto natin silang gamitin. Sa susunod na kabanata, gagawa tayo ng mas advanced na client na may access sa sarili nitong malaking language model, LLM. Sa ngayon, tingnan muna natin kung paano tawagin ang mga tampok sa server:
 
-### -4- I-invoke ang mga tampok
+### -4- Pagtawag sa mga tampok
 
-Upang i-invoke ang mga tampok, kailangan nating tiyakin na tinutukoy natin ang tamang mga argumento at sa ilang mga kaso ang pangalan ng kung ano ang ating sinusubukang i-invoke.
+Para tawagin ang mga tampok, kailangan nating siguraduhin na tama ang mga argumentong ibibigay at sa ilang kaso, ang pangalan ng tinatawag natin.
 
-### -5- Patakbuhin ang kliyente
+### -5- Pagpapatakbo ng client
 
-Upang patakbuhin ang kliyente, i-type ang sumusunod na command sa terminal:
+Para patakbuhin ang client, i-type ang sumusunod na utos sa terminal:
 
-## Takdang Aralin
+## Assignment
 
-Sa takdang araling ito, gagamitin mo ang iyong natutunan sa paglikha ng kliyente ngunit lumikha ng sarili mong kliyente.
+Sa assignment na ito, gagamitin mo ang mga natutunan mo sa paggawa ng client pero gagawa ka ng sarili mong client.
 
-Narito ang isang server na maaari mong gamitin na kailangan mong tawagan sa pamamagitan ng iyong client code, tingnan kung maaari kang magdagdag ng higit pang mga tampok sa server upang gawin itong mas kawili-wili.
+Narito ang isang server na maaari mong gamitin na kailangang tawagin gamit ang iyong client code, subukan mong magdagdag ng mas maraming tampok sa server para maging mas interesante ito.
 
-## Solusyon
+## Solution
 
-[Solusyon](./solution/README.md)
+[Solution](./solution/README.md)
 
-## Mahahalagang Punto
+## Mga Pangunahing Natutunan
 
-Ang mahahalagang punto para sa kabanatang ito tungkol sa mga kliyente ay ang mga sumusunod:
+Ang mga pangunahing natutunan sa kabanatang ito tungkol sa mga client ay:
 
-- Maaaring gamitin upang parehong tuklasin at i-invoke ang mga tampok sa server.
-- Maaaring magsimula ng server habang ito mismo ay nagsisimula (tulad ng sa kabanatang ito) ngunit ang mga kliyente ay maaaring kumonekta sa mga tumatakbong server din.
-- Isang mahusay na paraan upang subukan ang mga kakayahan ng server kasunod ng mga alternatibo tulad ng Inspector na inilarawan sa nakaraang kabanata.
+- Maaaring gamitin upang tuklasin at tawagin ang mga tampok sa server.
+- Maaaring mag-umpisa ng server habang nagsisimula rin ang client (gaya ng sa kabanatang ito) pero maaari ring kumonekta ang client sa mga tumatakbong server.
+- Isang mahusay na paraan upang subukan ang kakayahan ng server katabi ng mga alternatibo tulad ng Inspector na ipinaliwanag sa nakaraang kabanata.
 
-## Karagdagang Mga Mapagkukunan
+## Karagdagang Mga Sanggunian
 
-- [Pagbuo ng mga kliyente sa MCP](https://modelcontextprotocol.io/quickstart/client)
+- [Pagbuo ng mga client sa MCP](https://modelcontextprotocol.io/quickstart/client)
 
 ## Mga Halimbawa
 
@@ -109,7 +75,7 @@ Ang mahahalagang punto para sa kabanatang ito tungkol sa mga kliyente ay ang mga
 
 ## Ano ang Susunod
 
-- Susunod: [Paglikha ng kliyente na may LLM](/03-GettingStarted/03-llm-client/README.md)
+- Susunod: [Paggawa ng client gamit ang LLM](/03-GettingStarted/03-llm-client/README.md)
 
-**Pagtatatuwa**:  
-Ang dokumentong ito ay isinalin gamit ang serbisyo ng AI na pagsasalin [Co-op Translator](https://github.com/Azure/co-op-translator). Habang nagsusumikap kami para sa katumpakan, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga error o hindi pagkakatumpak. Ang orihinal na dokumento sa kanyang katutubong wika ay dapat ituring na mapagkakatiwalaang pinagmulan. Para sa kritikal na impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot para sa anumang hindi pagkakaintindihan o maling interpretasyon na nagmumula sa paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o kamalian. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
