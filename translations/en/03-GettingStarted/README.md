@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f77fa364511cb670d6262d119d56f562",
-  "translation_date": "2025-06-11T08:58:14+00:00",
+  "original_hash": "9191921de355cd9c8f46ebe21bdd52fd",
+  "translation_date": "2025-06-12T22:54:30+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "en"
 }
@@ -11,24 +11,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 This section includes several lessons:
 
-- **1 Your first server**: In this first lesson, you’ll learn how to create your first server and inspect it using the inspector tool, a useful way to test and debug your server, [to the lesson](/03-GettingStarted/01-first-server/README.md)
+- **1 Your first server**: In this first lesson, you'll learn how to create your first server and inspect it using the inspector tool, a useful way to test and debug your server, [to the lesson](/03-GettingStarted/01-first-server/README.md)
 
-- **2 Client**: In this lesson, you’ll learn how to write a client that can connect to your server, [to the lesson](/03-GettingStarted/02-client/README.md)
+- **2 Client**: In this lesson, you'll learn how to write a client that can connect to your server, [to the lesson](/03-GettingStarted/02-client/README.md)
 
-- **3 Client with LLM**: An even better way to write a client is by adding an LLM so it can "negotiate" with your server about what to do, [to the lesson](/03-GettingStarted/03-llm-client/README.md)
+- **3 Client with LLM**: An even better way to write a client is by adding an LLM so it can "negotiate" with your server on what to do, [to the lesson](/03-GettingStarted/03-llm-client/README.md)
 
 - **4 Consuming a server GitHub Copilot Agent mode in Visual Studio Code**: Here, we look at running our MCP Server from within Visual Studio Code, [to the lesson](/03-GettingStarted/04-vscode/README.md)
 
-- **5 Consuming from SSE (Server Sent Events)**: SSE is a standard for server-to-client streaming, allowing servers to push real-time updates to clients over HTTP, [to the lesson](/03-GettingStarted/05-sse-server/README.md)
+- **5 Consuming from SSE (Server Sent Events)**: SSE is a standard for server-to-client streaming, allowing servers to push real-time updates to clients over HTTP [to the lesson](/03-GettingStarted/05-sse-server/README.md)
 
-- **6 Utilizing AI Toolkit for VSCode**: To consume and test your MCP Clients and Servers, [to the lesson](/03-GettingStarted/06-aitk/README.md)
+- **6 HTTP Streaming with MCP (Streamable HTTP)**: Learn about modern HTTP streaming, progress notifications, and how to implement scalable, real-time MCP servers and clients using Streamable HTTP. [to the lesson](/03-GettingStarted/06-http-streaming/README.md)
 
-- **7 Testing**: Here we focus especially on how to test our server and client in various ways, [to the lesson](/03-GettingStarted/07-testing/README.md)
+- **7 Utilizing AI Toolkit for VSCode** to consume and test your MCP Clients and Servers [to the lesson](/03-GettingStarted/07-aitk/README.md)
 
-- **8 Deployment**: This chapter covers different methods for deploying your MCP solutions, [to the lesson](/03-GettingStarted/08-deployment/README.md)
+- **8 Testing**: Here we focus especially on how to test our server and client in different ways, [to the lesson](/03-GettingStarted/08-testing/README.md)
+
+- **9 Deployment**: This chapter covers different ways of deploying your MCP solutions, [to the lesson](/03-GettingStarted/09-deployment/README.md)
 
 
-The Model Context Protocol (MCP) is an open protocol that standardizes how applications provide context to LLMs. Think of MCP like a USB-C port for AI applications – it offers a standardized way to connect AI models to different data sources and tools.
+The Model Context Protocol (MCP) is an open protocol that standardizes how applications provide context to LLMs. Think of MCP like a USB-C port for AI applications—it offers a standardized way to connect AI models to various data sources and tools.
 
 ## Learning Objectives
 

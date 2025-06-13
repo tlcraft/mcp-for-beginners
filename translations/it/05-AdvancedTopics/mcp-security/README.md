@@ -1,44 +1,44 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ba9c96a7c7901faa1d26c8ec7ad56d2c",
-  "translation_date": "2025-06-02T20:13:37+00:00",
+  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
+  "translation_date": "2025-06-12T23:43:03+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "it"
 }
 -->
-# Best practice di sicurezza
+# Pratiche di Sicurezza Consigliate
 
-La sicurezza è fondamentale per le implementazioni MCP, specialmente negli ambienti enterprise. È importante garantire che strumenti e dati siano protetti da accessi non autorizzati, violazioni dei dati e altre minacce alla sicurezza.
+La sicurezza è fondamentale per le implementazioni MCP, soprattutto in ambienti aziendali. È importante garantire che strumenti e dati siano protetti da accessi non autorizzati, violazioni dei dati e altre minacce alla sicurezza.
 
 ## Introduzione
 
-In questa lezione esploreremo le best practice di sicurezza per le implementazioni MCP. Tratteremo autenticazione e autorizzazione, protezione dei dati, esecuzione sicura degli strumenti e conformità alle normative sulla privacy dei dati.
+In questa lezione, esploreremo le migliori pratiche di sicurezza per le implementazioni MCP. Tratteremo autenticazione e autorizzazione, protezione dei dati, esecuzione sicura degli strumenti e conformità alle normative sulla privacy dei dati.
 
-## Obiettivi di apprendimento
+## Obiettivi di Apprendimento
 
 Al termine di questa lezione, sarai in grado di:
 
 - Implementare meccanismi sicuri di autenticazione e autorizzazione per i server MCP.
 - Proteggere i dati sensibili utilizzando crittografia e archiviazione sicura.
 - Garantire l’esecuzione sicura degli strumenti con controlli di accesso appropriati.
-- Applicare le best practice per la protezione dei dati e la conformità alla privacy.
+- Applicare le migliori pratiche per la protezione dei dati e la conformità alla privacy.
 
-## Autenticazione e autorizzazione
+## Autenticazione e Autorizzazione
 
-Autenticazione e autorizzazione sono essenziali per la sicurezza dei server MCP. L’autenticazione risponde alla domanda "Chi sei?" mentre l’autorizzazione risponde a "Cosa puoi fare?".
+Autenticazione e autorizzazione sono essenziali per mettere in sicurezza i server MCP. L’autenticazione risponde alla domanda "Chi sei?" mentre l’autorizzazione risponde a "Cosa puoi fare?".
 
 Vediamo esempi di come implementare autenticazione e autorizzazione sicure nei server MCP usando .NET e Java.
 
 ### Integrazione .NET Identity
 
-ASP .NET Core Identity offre un framework solido per gestire autenticazione e autorizzazione degli utenti. Possiamo integrarlo con i server MCP per proteggere l’accesso a strumenti e risorse.
+ASP .NET Core Identity fornisce un framework solido per la gestione dell’autenticazione e dell’autorizzazione degli utenti. Possiamo integrarlo con i server MCP per proteggere l’accesso a strumenti e risorse.
 
-Ci sono alcuni concetti chiave da comprendere nell’integrare ASP.NET Core Identity con i server MCP, in particolare:
+Ci sono alcuni concetti chiave da comprendere quando si integra ASP.NET Core Identity con i server MCP, nello specifico:
 
-- **Configurazione di Identity**: Configurare ASP.NET Core Identity con ruoli e claim degli utenti. Un claim è un’informazione sull’utente, come il suo ruolo o permessi, ad esempio "Admin" o "User".
-- **Autenticazione JWT**: Utilizzare JSON Web Tokens (JWT) per l’accesso sicuro alle API. JWT è uno standard per trasmettere in modo sicuro informazioni tra le parti come oggetto JSON, verificabile e affidabile perché firmato digitalmente.
-- **Policy di autorizzazione**: Definire policy per controllare l’accesso a specifici strumenti in base ai ruoli degli utenti. MCP utilizza policy di autorizzazione per determinare quali utenti possono accedere a quali strumenti in base a ruoli e claim.
+- **Configurazione Identity**: Configurare ASP.NET Core Identity con ruoli utente e claims. Un claim è un’informazione sull’utente, come il suo ruolo o permessi, ad esempio "Admin" o "User".
+- **Autenticazione JWT**: Usare JSON Web Tokens (JWT) per un accesso API sicuro. JWT è uno standard per trasmettere informazioni in modo sicuro tra le parti come oggetto JSON, che può essere verificato e considerato affidabile perché firmato digitalmente.
+- **Policy di Autorizzazione**: Definire policy per controllare l’accesso a strumenti specifici basate sui ruoli utente. MCP utilizza queste policy per determinare quali utenti possono accedere a quali strumenti in base a ruoli e claims.
 
 ```csharp
 public class SecureMcpStartup
@@ -111,22 +111,22 @@ public class SecureMcpStartup
 
 Nel codice precedente abbiamo:
 
-- Configurato ASP.NET Core Identity per la gestione degli utenti.
-- Impostato l’autenticazione JWT per un accesso sicuro alle API. Abbiamo specificato i parametri di validazione del token, inclusi issuer, audience e chiave di firma.
-- Definito policy di autorizzazione per controllare l’accesso agli strumenti in base ai ruoli degli utenti. Ad esempio, la policy "CanUseAdminTools" richiede che l’utente abbia il ruolo "Admin", mentre la policy "CanUseBasic" richiede che l’utente sia autenticato.
-- Registrato gli strumenti MCP con requisiti di autorizzazione specifici, garantendo che solo gli utenti con i ruoli appropriati possano accedervi.
+- Configurato ASP.NET Core Identity per la gestione utenti.
+- Impostato l’autenticazione JWT per un accesso API sicuro, specificando i parametri di validazione del token, inclusi issuer, audience e chiave di firma.
+- Definito policy di autorizzazione per controllare l’accesso agli strumenti in base ai ruoli. Per esempio, la policy "CanUseAdminTools" richiede il ruolo "Admin", mentre "CanUseBasic" richiede che l’utente sia autenticato.
+- Registrato gli strumenti MCP con requisiti di autorizzazione specifici, assicurando che solo gli utenti con i ruoli appropriati possano accedervi.
 
 ### Integrazione Java Spring Security
 
-Per Java utilizzeremo Spring Security per implementare autenticazione e autorizzazione sicure per i server MCP. Spring Security fornisce un framework di sicurezza completo che si integra perfettamente con le applicazioni Spring.
+Per Java, utilizzeremo Spring Security per implementare autenticazione e autorizzazione sicure per i server MCP. Spring Security offre un framework completo che si integra perfettamente con le applicazioni Spring.
 
 I concetti chiave sono:
 
-- **Configurazione di Spring Security**: Impostare configurazioni di sicurezza per autenticazione e autorizzazione.
-- **OAuth2 Resource Server**: Utilizzare OAuth2 per l’accesso sicuro agli strumenti MCP. OAuth2 è un framework di autorizzazione che consente a servizi terzi di scambiare token di accesso per un accesso API sicuro.
-- **Interceptor di sicurezza**: Implementare interceptor di sicurezza per applicare controlli di accesso durante l’esecuzione degli strumenti.
-- **Controllo di accesso basato sui ruoli**: Usare i ruoli per limitare l’accesso a specifici strumenti e risorse.
-- **Annotazioni di sicurezza**: Utilizzare annotazioni per proteggere metodi ed endpoint.
+- **Configurazione Spring Security**: Impostare le configurazioni di sicurezza per autenticazione e autorizzazione.
+- **OAuth2 Resource Server**: Usare OAuth2 per un accesso sicuro agli strumenti MCP. OAuth2 è un framework di autorizzazione che permette a servizi terzi di scambiare token di accesso per un accesso API sicuro.
+- **Interceptor di Sicurezza**: Implementare interceptor di sicurezza per far rispettare i controlli di accesso durante l’esecuzione degli strumenti.
+- **Controllo Accesso Basato su Ruoli**: Usare i ruoli per controllare l’accesso a strumenti e risorse specifiche.
+- **Annotazioni di Sicurezza**: Usare annotazioni per mettere in sicurezza metodi ed endpoint.
 
 ```java
 @Configuration
@@ -180,18 +180,18 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 Nel codice precedente abbiamo:
 
-- Configurato Spring Security per proteggere gli endpoint MCP, consentendo accesso pubblico alla scoperta degli strumenti e richiedendo autenticazione per l’esecuzione degli strumenti.
+- Configurato Spring Security per mettere in sicurezza gli endpoint MCP, permettendo accesso pubblico alla scoperta degli strumenti ma richiedendo autenticazione per l’esecuzione.
 - Usato OAuth2 come resource server per gestire l’accesso sicuro agli strumenti MCP.
-- Implementato un interceptor di sicurezza per applicare controlli di accesso durante l’esecuzione degli strumenti, verificando ruoli e permessi degli utenti prima di consentire l’accesso a specifici strumenti.
-- Definito un controllo di accesso basato sui ruoli per limitare l’accesso agli strumenti amministrativi e ai dati sensibili in base ai ruoli degli utenti.
+- Implementato un interceptor di sicurezza per far rispettare i controlli di accesso durante l’esecuzione degli strumenti, verificando ruoli e permessi prima di consentire l’accesso a strumenti specifici.
+- Definito il controllo accesso basato su ruoli per limitare l’accesso agli strumenti admin e ai dati sensibili in base ai ruoli utente.
 
-## Protezione dei dati e privacy
+## Protezione dei Dati e Privacy
 
 La protezione dei dati è fondamentale per garantire che le informazioni sensibili siano gestite in modo sicuro. Questo include la protezione delle informazioni personali identificabili (PII), dati finanziari e altre informazioni sensibili da accessi non autorizzati e violazioni.
 
-### Esempio di protezione dati in Python
+### Esempio di Protezione Dati in Python
 
-Vediamo un esempio di come implementare la protezione dei dati in Python utilizzando crittografia e rilevamento PII.
+Vediamo un esempio di come implementare la protezione dei dati in Python usando crittografia e rilevamento PII.
 
 ```python
 from mcp_server import McpServer
@@ -336,7 +336,7 @@ Nel codice precedente abbiamo:
 
 ## Cosa fare dopo
 
-- [Web search](../web-search-mcp/README.md)
+- [5.9 Web search](../web-search-mcp/README.md)
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale effettuata da un essere umano. Non ci assumiamo alcuna responsabilità per eventuali fraintendimenti o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

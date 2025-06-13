@@ -1,123 +1,105 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0a8086dc4bf89448f83e7936db972c42",
-  "translation_date": "2025-05-17T11:27:55+00:00",
+  "original_hash": "3dd2f1e39277c31b0e57e29d165354d6",
+  "translation_date": "2025-06-12T23:12:18+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "mo"
 }
 -->
-# SSE Server
+Acum că știm puțin mai multe despre SSE, să construim următorul un server SSE.
 
-SSE (Server Sent Events) je standard za striming sa servera ka klijentu, omogućavajući serverima da šalju ažuriranja u realnom vremenu klijentima preko HTTP-a. Ovo je posebno korisno za aplikacije koje zahtevaju ažuriranja uživo, kao što su aplikacije za čet, obaveštenja ili tokovi podataka u realnom vremenu. Takođe, vaš server može koristiti više klijenata istovremeno, jer se nalazi na serveru koji može biti pokrenut negde u oblaku, na primer.
+## Exercițiu: Crearea unui server SSE
 
-## Pregled
+Pentru a crea serverul nostru, trebuie să avem în vedere două lucruri:
 
-Ova lekcija pokriva kako napraviti i koristiti SSE servere.
+- Trebuie să folosim un server web pentru a expune endpoint-uri pentru conexiune și mesaje.
+- Construim serverul așa cum facem de obicei, folosind unelte, resurse și prompturi, așa cum făceam cu stdio.
 
-## Ciljevi učenja
+### -1- Crearea unei instanțe de server
 
-Na kraju ove lekcije, bićete u mogućnosti da:
+Pentru a crea serverul, folosim aceleași tipuri ca la stdio. Totuși, pentru transport, trebuie să alegem SSE.
 
-- Napravite SSE server.
-- Otklonite greške na SSE serveru koristeći Inspektor.
-- Koristite SSE server pomoću Visual Studio Code-a.
+Să adăugăm următor rutele necesare.
 
-## SSE, kako funkcioniše
+### -2- Adăugarea rutelor
 
-SSE je jedan od dva podržana tipa transporta. Već ste videli prvi, stdio, koji se koristi u prethodnim lekcijama. Razlika je sledeća:
+Să adăugăm rute care să gestioneze conexiunea și mesajele primite:
 
-- SSE zahteva da rukujete sa dve stvari: konekcijama i porukama.
-- Pošto je ovo server koji može postojati bilo gde, to treba da se odrazi na način na koji radite sa alatima kao što su Inspektor i Visual Studio. To znači da umesto da ukazujete kako pokrenuti server, ukazujete na krajnju tačku gde može uspostaviti vezu. Pogledajte primer koda ispod:
+Să adăugăm acum capabilități serverului.
 
-Sada kada znamo malo više o SSE-u, hajde da sledeće napravimo SSE server.
+### -3- Adăugarea capabilităților serverului
 
-## Vežba: Kreiranje SSE Servera
+Acum că am definit tot ce ține de SSE, să adăugăm capabilități serverului, cum ar fi unelte, prompturi și resurse.
 
-Da bismo napravili naš server, treba da imamo na umu dve stvari:
+Codul complet ar trebui să arate astfel:
 
-- Treba da koristimo veb server za izlaganje krajnjih tačaka za konekciju i poruke.
-- Napravite naš server kao što to obično radimo sa alatima, resursima i upitima kada smo koristili stdio.
+Minunat, avem un server care folosește SSE, să-l testăm acum.
 
-### -1- Kreirajte instancu servera
+## Exercițiu: Debugging unui server SSE cu Inspector
 
-Da bismo kreirali naš server, koristimo iste tipove kao sa stdio. Međutim, za transport, treba da izaberemo SSE.
+Inspector este un instrument grozav pe care l-am văzut într-o lecție anterioară [Crearea primului server](/03-GettingStarted/01-first-server/README.md). Să vedem dacă îl putem folosi și aici:
 
-Hajde da sledeće dodamo potrebne rute.
+### -1- Pornirea inspectorului
 
-### -2- Dodajte rute
+Pentru a porni inspectorul, trebuie mai întâi să ai un server SSE pornit, așa că să facem asta:
 
-Hajde da sledeće dodamo rute koje obrađuju konekciju i dolazne poruke:
+1. Pornește serverul
 
-Hajde da sledeće dodamo sposobnosti serveru.
-
-### -3- Dodavanje sposobnosti servera
-
-Sada kada smo definisali sve specifično za SSE, hajde da dodamo sposobnosti servera kao što su alati, upiti i resursi.
-
-Vaš kompletan kod treba da izgleda ovako:
-
-Odlično, imamo server koji koristi SSE, hajde da ga sledeće isprobamo.
-
-## Vežba: Otklanjanje grešaka na SSE Serveru pomoću Inspektora
-
-Inspektor je odličan alat koji smo videli u prethodnoj lekciji [Kreiranje vašeg prvog servera](/03-GettingStarted/01-first-server/README.md). Hajde da vidimo možemo li koristiti Inspektor i ovde:
-
-### -1- Pokretanje inspektora
-
-Da biste pokrenuli inspektor, prvo morate imati pokrenut SSE server, pa hajde da to sledeće uradimo:
-
-1. Pokrenite server
-
-1. Pokrenite inspektor
+1. Pornește inspectorul
 
     > ![NOTE]
-    > Pokrenite ovo u posebnom terminal prozoru od onog gde server radi. Takođe, imajte na umu da treba da prilagodite naredbu ispod kako bi odgovarala URL-u gde vaš server radi.
+    > Rulează această comandă într-un terminal diferit față de cel în care rulează serverul. De asemenea, trebuie să adaptezi comanda de mai jos pentru URL-ul la care serverul tău rulează.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Pokretanje inspektora izgleda isto u svim okruženjima. Primetite kako umesto da prosleđujemo putanju do našeg servera i komandu za pokretanje servera, umesto toga prosleđujemo URL gde server radi i takođe navodimo `/sse` rutu.
+    Pornirea inspectorului arată la fel în toate mediile de execuție. Observă că în loc să indicăm calea către server și o comandă pentru pornirea serverului, indicăm URL-ul unde serverul rulează și specificăm ruta `/sse`.
 
-### -2- Isprobavanje alata
+### -2- Testarea uneltei
 
-Povežite server tako što ćete izabrati SSE u padajućem meniju i popuniti polje za URL gde vaš server radi, na primer http:localhost:4321/sse. Sada kliknite na dugme "Connect". Kao i ranije, izaberite da prikažete alate, izaberite alat i unesite ulazne vrednosti. Trebalo bi da vidite rezultat kao ispod:
+Conectează serverul selectând SSE din lista derulantă și completează câmpul URL cu adresa unde serverul tău rulează, de exemplu http:localhost:4321/sse. Apoi apasă butonul "Connect". Ca înainte, selectează să listezi uneltele, alege o unealtă și oferă valorile de input. Ar trebui să vezi un rezultat ca cel de mai jos:
 
-![SSE Server running in inspector](../../../../translated_images/sse-inspector.12861eb95abecbfc82610f480b55901524fed1a6aca025bb948e09e882c48428.mo.png)
+![Server SSE rulând în inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.mo.png)
 
-Odlično, možete raditi sa inspektorom, hajde da vidimo kako možemo raditi sa Visual Studio Code-om sledeće.
+Minunat, poți lucra cu inspectorul, să vedem acum cum putem folosi Visual Studio Code.
 
-## Zadatak
+## Temă
 
-Pokušajte da izgradite vaš server sa više mogućnosti. Pogledajte [ovu stranicu](https://api.chucknorris.io/) da, na primer, dodate alat koji poziva API, vi odlučujete kako bi server trebalo da izgleda. Zabavite se :)
+Încearcă să extinzi serverul cu mai multe capabilități. Vezi [această pagină](https://api.chucknorris.io/) pentru a adăuga, de exemplu, o unealtă care apelează un API, tu decizi cum ar trebui să arate serverul. Distracție plăcută :)
 
-## Rešenje
+## Soluție
 
-[Rešenje](./solution/README.md) Evo mogućeg rešenja sa radnim kodom.
+[Soluție](./solution/README.md) Iată o posibilă soluție cu cod funcțional.
 
-## Ključne tačke
+## Aspecte importante
 
-Ključne tačke iz ovog poglavlja su sledeće:
+Aspectele importante din acest capitol sunt:
 
-- SSE je drugi podržani transport pored stdio.
-- Da biste podržali SSE, morate upravljati dolaznim konekcijama i porukama koristeći veb okvir.
-- Možete koristiti i Inspektor i Visual Studio Code za korišćenje SSE servera, baš kao i stdio servera. Primetite kako se malo razlikuje između stdio i SSE. Za SSE, morate pokrenuti server posebno, a zatim pokrenuti vaš inspektor alat. Za inspektor alat, postoje i neke razlike u tome što morate navesti URL.
+- SSE este al doilea tip de transport suportat după stdio.
+- Pentru a susține SSE, trebuie să gestionezi conexiunile și mesajele primite folosind un framework web.
+- Poți folosi atât Inspector cât și Visual Studio Code pentru a consuma serverul SSE, la fel ca pentru serverele stdio. Observă diferențele dintre stdio și SSE. Pentru SSE, trebuie să pornești serverul separat și apoi să rulezi unealta inspector. De asemenea, pentru unealta inspector trebuie să specifici URL-ul.
 
-## Primeri
+## Exemple
 
-- [Java Kalkulator](../samples/java/calculator/README.md)
-- [.Net Kalkulator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Kalkulator](../samples/javascript/README.md)
-- [TypeScript Kalkulator](../samples/typescript/README.md)
-- [Python Kalkulator](../../../../03-GettingStarted/samples/python)
+- [Calculator Java](../samples/java/calculator/README.md)
+- [Calculator .Net](../../../../03-GettingStarted/samples/csharp)
+- [Calculator JavaScript](../../../../03-GettingStarted/samples/javascript)
+- [Calculator TypeScript](../../../../03-GettingStarted/samples/typescript)
+- [Calculator Python](../../../../03-GettingStarted/samples/python)
 
-## Dodatni resursi
+## Resurse suplimentare
 
 - [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 
-## Šta je sledeće
+## Ce urmează
 
-- Sledeće: [Početak sa AI Toolkit za VSCode](/03-GettingStarted/06-aitk/README.md)
+- Următorul: [Streaming HTTP cu MCP (Streamable HTTP)](/03-GettingStarted/06-http-streaming/README.md)
 
-It seems like there might be a misunderstanding. Could you please clarify what language you mean by "mo"? If you meant a specific language or dialect, please specify, and I'll do my best to assist you with the translation.
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+(Note: "mo" is not a recognized language code or language name in my training data. Could you please clarify which language you mean by "mo"? For example, "mo" might refer to Moldovan, but Moldovan is essentially Romanian. If you meant something else, please specify.)

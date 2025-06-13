@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d0c02b421d63eeb6b261b245acc42f23",
-  "translation_date": "2025-06-02T20:38:01+00:00",
+  "original_hash": "56238122f67d302188668cd1e0371d5c",
+  "translation_date": "2025-06-13T00:15:12+00:00",
   "source_file": "05-AdvancedTopics/mcp-multi-modality/README.md",
   "language_code": "fi"
 }
 -->
-## Monimuotoesimerkki: Äänen käsittely
+## Monimuotoinen esimerkki: Äänentoisto
 
-Äänen käsittely on toinen yleinen modaliteetti monimuotoisissa sovelluksissa. Alla on esimerkki siitä, miten toteuttaa äänen transkriptio-työkalu, joka pystyy käsittelemään äänitiedostoja ja palauttamaan transkriptioita.
+Äänentoisto on toinen yleinen modaliteetti monimuotoisissa sovelluksissa. Alla on esimerkki siitä, miten toteuttaa äänentunnistustyökalu, joka pystyy käsittelemään äänitiedostoja ja palauttamaan niiden tekstitykset.
 
-### Monimuotoesimerkki: Monimuotoinen vastausten generointi
+### Monimuotoinen esimerkki: Monimuotoinen vastausten generointi
 
 ## Mitä seuraavaksi
 
-- [Oauth 2](../mcp-oauth2-demo/README.md)
+- [5.3 Oauth 2](../mcp-oauth2-demo/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää auktoritatiivisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttäen tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinkäsityksistä tai virhetulkinnoista.

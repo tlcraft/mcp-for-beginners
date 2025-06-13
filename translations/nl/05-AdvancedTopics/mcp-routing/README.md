@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a621fc52c7daec552eb8b3b48c0361dd",
-  "translation_date": "2025-06-02T19:47:18+00:00",
+  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
+  "translation_date": "2025-06-13T00:20:44+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "nl"
 }
 -->
 ## Sampling en Routing Architectuur in MCP
 
-Sampling is een cruciaal onderdeel van het Model Context Protocol (MCP) dat efficiënte verwerking en routering van verzoeken mogelijk maakt. Het houdt in dat binnenkomende verzoeken worden geanalyseerd om te bepalen welk model of welke dienst het meest geschikt is om ze af te handelen, op basis van verschillende criteria zoals het type inhoud, gebruikerscontext en systeembelasting.
+Sampling is een cruciaal onderdeel van het Model Context Protocol (MCP) dat zorgt voor efficiënte verwerking en routering van verzoeken. Het houdt in dat binnenkomende verzoeken worden geanalyseerd om te bepalen welk model of welke service het meest geschikt is om ze af te handelen, op basis van verschillende criteria zoals het type inhoud, gebruikerscontext en systeembelasting.
 
-Sampling en routing kunnen worden gecombineerd om een robuuste architectuur te creëren die het gebruik van middelen optimaliseert en hoge beschikbaarheid garandeert. Het samplingproces kan worden gebruikt om verzoeken te classificeren, terwijl routing deze naar de juiste modellen of diensten leidt.
+Sampling en routing kunnen worden gecombineerd om een robuuste architectuur te creëren die het gebruik van middelen optimaliseert en hoge beschikbaarheid garandeert. Het samplingproces kan worden gebruikt om verzoeken te classificeren, terwijl routing ze naar de juiste modellen of services leidt.
 
-De onderstaande afbeelding illustreert hoe sampling en routing samenwerken binnen een uitgebreide MCP-architectuur:
+De onderstaande afbeelding illustreert hoe sampling en routing samenwerken in een uitgebreide MCP-architectuur:
 
 ```mermaid
 flowchart TB
@@ -80,9 +80,9 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Wat volgt
+## Wat volgt hierna
 
-- [Sampling](../mcp-sampling/README.md)
+- [5.6 Sampling](../mcp-sampling/README.md)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal geldt als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T19:13:08+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-13T00:14:59+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "fi"
 }
 -->
 # MCP OAuth2 Demo
 
-Tämä projekti on **minimalistinen Spring Boot -sovellus**, joka toimii sekä:
+Tämä projekti on **minimaalinen Spring Boot -sovellus**, joka toimii sekä:
 
 * **Spring Authorization Serverina** (joka myöntää JWT-pääsytunnuksia `client_credentials`-prosessin kautta), että  
-* **Resource Serverina** (suojaa oman `/hello`-päätepisteensä).
+* **Resource Serverina** (suojaamassa omaa `/hello`-päätepistettään).
 
-Se vastaa asetusta, joka on esitelty [Springin blogikirjoituksessa (2.4.2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Se jäljittelee asetusta, joka on esitelty [Springin blogikirjoituksessa (2.4.2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,7 +36,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## OAuth2-määrityksen testaaminen
 
-Voit testata OAuth2-turvamääritystä seuraavilla vaiheilla:
+Voit testata OAuth2-turvallisuusasetuksia seuraavasti:
 
 ### 1. Varmista, että palvelin on käynnissä ja suojattu
 
@@ -45,7 +45,7 @@ Voit testata OAuth2-turvamääritystä seuraavilla vaiheilla:
 curl -v http://localhost:8081/
 ```
 
-### 2. Hanki pääsytunnus käyttäen client credentials -tunnistusta
+### 2. Hanki pääsytunnus client credentials -menetelmällä
 
 ```bash
 # Get and extract the full token response
@@ -63,7 +63,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
 
 Huomautus: Basic Authentication -otsake (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Käytä suojattua päätepistettä tunnuksella
+### 3. Käytä suojaettua päätepistettä tunnuksella
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Onnistunut vastaus, jossa lukee "Hello from MCP OAuth2 Demo!", vahvistaa, että OAuth2-määritys toimii oikein.
+Onnistunut vastaus "Hello from MCP OAuth2 Demo!" vahvistaa, että OAuth2-määritys toimii oikein.
 
 ---
 
@@ -100,7 +100,7 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 ---
 
-## Integrointi **Azure API Managementiin**
+## Yhdistäminen **Azure API Managementiin**
 
 Lisää tämä inbound-politiikka API:si:
 
@@ -122,7 +122,7 @@ APIM hakee JWKS:n ja validoi jokaisen pyynnön.
 
 ## Mitä seuraavaksi
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
-**Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.
+**Vastuuvapauslauseke:**  
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, ole hyvä ja huomioi, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja omalla kielellään tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.

@@ -1,73 +1,73 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0a8086dc4bf89448f83e7936db972c42",
-  "translation_date": "2025-05-17T11:42:57+00:00",
+  "original_hash": "3dd2f1e39277c31b0e57e29d165354d6",
+  "translation_date": "2025-06-13T01:00:35+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "sk"
 }
 -->
-Teraz, keď vieme o SSE trochu viac, poďme si vytvoriť SSE server.
+Teraz, keď už vieme trochu viac o SSE, postavme si ďalší SSE server.
 
 ## Cvičenie: Vytvorenie SSE servera
 
-Pri vytváraní nášho servera musíme mať na pamäti dve veci:
+Na vytvorenie nášho servera musíme mať na pamäti dve veci:
 
-- Musíme použiť webový server na sprístupnenie koncových bodov pre pripojenie a správy.
-- Vytvorte náš server tak, ako to bežne robíme s nástrojmi, zdrojmi a výzvami, keď sme používali stdio.
+- Potrebujeme použiť webový server na sprístupnenie endpointov pre pripojenie a správy.
+- Server postavíme ako zvyčajne, s nástrojmi, zdrojmi a promptami, ako sme to robili pri stdio.
 
-### -1- Vytvorte inštanciu servera
+### -1- Vytvorenie inštancie servera
 
-Na vytvorenie nášho servera používame rovnaké typy ako so stdio. Avšak pre transport musíme zvoliť SSE.
+Na vytvorenie servera použijeme rovnaké typy ako pri stdio. Avšak pre transport musíme zvoliť SSE.
 
-Poďme pridať potrebné trasy ďalej.
+Pridajme teraz potrebné routy.
 
-### -2- Pridajte trasy
+### -2- Pridanie rout
 
-Poďme pridať trasy, ktoré spracovávajú pripojenie a prichádzajúce správy:
+Pridajme routy, ktoré budú spracovávať pripojenie a prichádzajúce správy:
 
-Poďme pridať schopnosti servera ďalej.
+Pridajme teraz schopnosti servera.
 
-### -3- Pridanie schopností servera
+### -3- Pridanie schopností serveru
 
-Teraz, keď máme všetko špecifické pre SSE definované, pridajme schopnosti servera ako nástroje, výzvy a zdroje.
+Keď už máme všetko špecifické pre SSE definované, pridajme schopnosti servera ako nástroje, prompt a zdroje.
 
-Váš kompletný kód by mal vyzerať takto:
+Celý kód by mal vyzerať takto:
 
-Skvelé, máme server používajúci SSE, poďme ho vyskúšať ďalej.
+Skvelé, máme server používajúci SSE, poďme si ho vyskúšať.
 
-## Cvičenie: Ladenie SSE servera pomocou Inspectoru
+## Cvičenie: Ladenie SSE servera pomocou Inspector
 
-Inspector je skvelý nástroj, ktorý sme videli v predchádzajúcej lekcii [Vytvorenie vášho prvého servera](/03-GettingStarted/01-first-server/README.md). Pozrime sa, či môžeme použiť Inspector aj tu:
+Inspector je skvelý nástroj, ktorý sme videli v predchádzajúcej lekcii [Creating your first server](/03-GettingStarted/01-first-server/README.md). Pozrime sa, či ho môžeme použiť aj tu:
 
-### -1- Spustenie inspectoru
+### -1- Spustenie inspektora
 
-Aby ste spustili inspector, musíte mať najprv spustený SSE server, takže to urobme ďalej:
+Na spustenie inspektora musíte mať najskôr spustený SSE server, tak to spravme:
 
 1. Spustite server
 
-1. Spustite inspector
+1. Spustite inspektora
 
     > ![NOTE]
-    > Spustite to v samostatnom terminálovom okne, než v ktorom beží server. Tiež si všimnite, že potrebujete upraviť nižšie uvedený príkaz, aby zodpovedal URL, kde beží váš server.
+    > Spustite ho v inom terminálovom okne ako server. Tiež si všimnite, že príkaz nižšie musíte upraviť podľa URL, na ktorej váš server beží.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Spustenie inspectoru vyzerá rovnako vo všetkých runtime prostrediach. Všimnite si, ako namiesto cesty k nášmu serveru a príkazu na spustenie servera namiesto toho zadávame URL, kde server beží, a tiež špecifikujeme trasu `/sse`.
+Spustenie inspektora vyzerá rovnako vo všetkých runtime prostrediach. Všimnite si, že namiesto zadania cesty k serveru a príkazu na jeho spustenie zadávame URL, kde server beží, a tiež špecifikujeme `/sse` routu.
 
 ### -2- Vyskúšanie nástroja
 
-Pripojte server výberom SSE v rozbaľovacom zozname a vyplňte pole url, kde váš server beží, napríklad http:localhost:4321/sse. Teraz kliknite na tlačidlo "Connect". Ako predtým, vyberte zoznam nástrojov, vyberte nástroj a zadajte vstupné hodnoty. Mali by ste vidieť výsledok ako nižšie:
+Pripojte sa k serveru výberom SSE v rozbaľovacom zozname a vyplňte pole URL, kde váš server beží, napríklad http://localhost:4321/sse. Potom kliknite na tlačidlo "Connect". Ako predtým, vyberte zoznam nástrojov, zvoľte nástroj a zadajte vstupné hodnoty. Mali by ste vidieť výsledok ako na obrázku nižšie:
 
-![SSE Server bežiaci v inspectoru](../../../../translated_images/sse-inspector.12861eb95abecbfc82610f480b55901524fed1a6aca025bb948e09e882c48428.sk.png)
+![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.sk.png)
 
-Skvelé, môžete pracovať s inspectorom, pozrime sa, ako môžeme pracovať s Visual Studio Code ďalej.
+Skvelé, dokážete pracovať s inspektorom, poďme sa pozrieť, ako pracovať s Visual Studio Code.
 
 ## Zadanie
 
-Skúste rozšíriť svoj server o ďalšie schopnosti. Pozrite si [túto stránku](https://api.chucknorris.io/), aby ste napríklad pridali nástroj, ktorý volá API, rozhodnite sa, ako by mal server vyzerať. Bavte sa :)
+Skúste rozšíriť svoj server o ďalšie schopnosti. Pozrite si [túto stránku](https://api.chucknorris.io/), kde napríklad môžete pridať nástroj, ktorý volá API, vy rozhodnete, ako bude server vyzerať. Bavte sa :)
 
 ## Riešenie
 
@@ -75,27 +75,27 @@ Skúste rozšíriť svoj server o ďalšie schopnosti. Pozrite si [túto stránk
 
 ## Kľúčové poznatky
 
-Kľúčové poznatky z tejto kapitoly sú nasledovné:
+Z tohto kapitolu si odnášame:
 
-- SSE je druhý podporovaný transport vedľa stdio.
-- Na podporu SSE musíte spravovať prichádzajúce pripojenia a správy pomocou webového rámca.
-- Môžete použiť ako Inspector, tak Visual Studio Code na spotrebu SSE servera, rovnako ako stdio servery. Všimnite si, ako sa to trochu líši medzi stdio a SSE. Pre SSE potrebujete spustiť server samostatne a potom spustiť váš inspector nástroj. Pre inspector nástroj sú tiež nejaké rozdiely v tom, že musíte špecifikovať URL.
+- SSE je druhý podporovaný typ transportu vedľa stdio.
+- Na podporu SSE musíte spravovať prichádzajúce pripojenia a správy pomocou webového frameworku.
+- Na konzumáciu SSE servera môžete použiť Inspector aj Visual Studio Code, rovnako ako pri stdio serveroch. Všimnite si, že sa trochu líši spôsob práce medzi stdio a SSE. Pri SSE musíte server spustiť samostatne a potom spustiť nástroj inspektora. Pre inspektora je tiež potrebné špecifikovať URL.
 
-## Príklady
+## Ukážky
 
-- [Java Kalkulačka](../samples/java/calculator/README.md)
-- [.Net Kalkulačka](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Kalkulačka](../samples/javascript/README.md)
-- [TypeScript Kalkulačka](../samples/typescript/README.md)
-- [Python Kalkulačka](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Ďalšie zdroje
+## Dodatočné zdroje
 
 - [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 
-## Čo ďalej
+## Čo bude ďalej
 
-- Ďalej: [Začíname s AI Toolkit pre VSCode](/03-GettingStarted/06-aitk/README.md)
+- Ďalej: [HTTP Streaming with MCP (Streamable HTTP)](/03-GettingStarted/06-http-streaming/README.md)
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou AI prekladovej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, uvedomte si, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne interpretácie vzniknuté použitím tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, berte na vedomie, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.

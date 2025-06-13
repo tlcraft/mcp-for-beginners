@@ -1,20 +1,22 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T19:01:53+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-12T23:47:04+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "tr"
 }
 -->
 # MCP OAuth2 Demo
 
-Bu proje, hem şunları yapan **minimal bir Spring Boot uygulamasıdır**:
+Bu proje, hem:
 
-* **Spring Authorization Server** (JWT erişim tokenlarını `client_credentials` akışı ile veren), ve  
-* **Resource Server** (kendi `/hello` uç noktasını koruyan).
+* **Spring Authorization Server** (JWT erişim tokenlarını `client_credentials` akışı ile veren), hem de  
+* kendi `/hello` uç noktasını koruyan bir **Resource Server** olan  
 
-[Spring blog yazısında (2 Nis 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) gösterilen yapı ile aynıdır.
+**minimal bir Spring Boot uygulamasıdır**.
+
+[Spring blog yazısında (2 Nis 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) gösterilen yapılandırmayı yansıtır.
 
 ---
 
@@ -38,7 +40,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 OAuth2 güvenlik yapılandırmasını aşağıdaki adımlarla test edebilirsiniz:
 
-### 1. Sunucunun çalıştığını ve korunduğunu doğrulayın
+### 1. Sunucunun çalıştığını ve güvenli olduğunu doğrulayın
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
@@ -61,9 +63,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Not: Basic Authentication başlığı (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Not: Basic Authentication başlığı (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`).
 
-### 3. Token kullanarak korumalı uç noktaya erişin
+### 3. Token ile korunan uç noktaya erişin
 
 ```bash
 # Using the saved token
@@ -73,7 +75,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-"Hello from MCP OAuth2 Demo!" içeren başarılı bir yanıt, OAuth2 yapılandırmasının doğru çalıştığını gösterir.
+"Hello from MCP OAuth2 Demo!" mesajı ile başarılı bir yanıt, OAuth2 yapılandırmasının doğru çalıştığını gösterir.
 
 ---
 
@@ -96,13 +98,13 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 Ingress FQDN, sizin **issuer** adresiniz olur (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`).
 
 ---
 
 ## **Azure API Management** ile entegrasyon
 
-API’nize bu inbound policy’yi ekleyin:
+API'nize aşağıdaki inbound policy'i ekleyin:
 
 ```xml
 <inbound>
@@ -116,13 +118,13 @@ API’nize bu inbound policy’yi ekleyin:
 </inbound>
 ```
 
-APIM JWKS’yi alır ve her isteği doğrular.
+APIM, JWKS'i alacak ve her isteği doğrulayacaktır.
 
 ---
 
 ## Sonraki adımlar
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Feragatname**:  
-Bu belge, [Co-op Translator](https://github.com/Azure/co-op-translator) adlı yapay zeka çeviri hizmeti kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek herhangi bir yanlış anlama veya yanlış yorumdan sorumlu değiliz.

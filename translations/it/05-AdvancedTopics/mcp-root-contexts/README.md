@@ -1,47 +1,47 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e1cbc99fa7185139ad6d539eca09a2b3",
-  "translation_date": "2025-06-02T20:26:08+00:00",
+  "original_hash": "8311f46a35cf608c9780f39b62c9dc3f",
+  "translation_date": "2025-06-12T23:44:24+00:00",
   "source_file": "05-AdvancedTopics/mcp-root-contexts/README.md",
   "language_code": "it"
 }
 -->
-## Esempio: Implementazione del Root Context per l'analisi finanziaria
+## דוגמה: יישום Root Context לניתוח פיננסי
 
-In questo esempio, creeremo un root context per una sessione di analisi finanziaria, mostrando come mantenere lo stato attraverso molteplici interazioni.
+בדוגמה זו, ניצור root context עבור סשן ניתוח פיננסי, ונציג כיצד לשמור על מצב לאורך מספר אינטראקציות.
 
-## Esempio: Gestione del Root Context
+## דוגמה: ניהול Root Context
 
-Gestire efficacemente i root context è fondamentale per mantenere la cronologia delle conversazioni e lo stato. Di seguito un esempio di come implementare la gestione del root context.
+ניהול Root Context בצורה יעילה הוא קריטי לשמירה על היסטוריית שיחה ומצב. להלן דוגמה לאופן יישום ניהול Root Context.
 
-## Root Context per Assistenza Multi-Turno
+## Root Context לסיוע רב-סבבי
 
-In questo esempio, creeremo un root context per una sessione di assistenza multi-turno, dimostrando come mantenere lo stato attraverso molteplici interazioni.
+בדוגמה זו, ניצור root context עבור סשן סיוע רב-סבבי, ונציג כיצד לשמור על מצב לאורך מספר אינטראקציות.
 
-## Best Practice per il Root Context
+## שיטות עבודה מומלצות ל-Root Context
 
-Ecco alcune best practice per gestire efficacemente i root context:
+להלן כמה שיטות עבודה מומלצות לניהול Root Context בצורה יעילה:
 
-- **Crea Contesti Mirati**: Crea root context separati per diversi scopi o domini di conversazione per mantenere chiarezza.
+- **יצירת הקשרים ממוקדים**: צרו root contexts נפרדים למטרות שיחה או תחומים שונים כדי לשמור על בהירות.
 
-- **Imposta Politiche di Scadenza**: Implementa politiche per archiviare o eliminare i contesti obsoleti, gestendo lo spazio di archiviazione e rispettando le politiche di conservazione dei dati.
+- **קביעת מדיניות תפוגה**: יישמו מדיניות לארכוב או מחיקת הקשרים ישנים כדי לנהל את האחסון ולעמוד במדיניות שמירת נתונים.
 
-- **Memorizza Metadata Rilevanti**: Usa i metadata del contesto per conservare informazioni importanti sulla conversazione che potrebbero essere utili in seguito.
+- **אחסון מטא-נתונים רלוונטיים**: השתמשו במטא-נתוני הקשר לאחסון מידע חשוב על השיחה שעשוי להיות שימושי בהמשך.
 
-- **Usa Consistentemente gli ID dei Contesti**: Una volta creato un contesto, usa il suo ID in modo coerente per tutte le richieste correlate per mantenere la continuità.
+- **שימוש עקבי ב-Context IDs**: לאחר יצירת הקשר, השתמשו ב-ID שלו בעקביות בכל הבקשות הקשורות כדי לשמור על רציפות.
 
-- **Genera Sommari**: Quando un contesto diventa troppo grande, considera di generare sommari per catturare le informazioni essenziali e gestire la dimensione del contesto.
+- **יצירת סיכומים**: כאשר הקשר גדל, שקלו ליצור סיכומים שיתפסו מידע חיוני תוך ניהול גודל הקשר.
 
-- **Implementa Controlli di Accesso**: Per sistemi multi-utente, implementa controlli di accesso adeguati per garantire la privacy e la sicurezza dei contesti di conversazione.
+- **יישום בקרת גישה**: במערכות רב-משתמשיות, יישמו בקרות גישה מתאימות להבטחת פרטיות וביטחון הקשרים.
 
-- **Gestisci le Limitazioni del Contesto**: Sii consapevole delle limitazioni di dimensione del contesto e adotta strategie per gestire conversazioni molto lunghe.
+- **התמודדות עם מגבלות הקשר**: היו מודעים למגבלות גודל הקשר ויישמו אסטרטגיות לטיפול בשיחות ארוכות במיוחד.
 
-- **Archivia al Termine**: Archivia i contesti quando le conversazioni sono concluse per liberare risorse preservando la cronologia della conversazione.
+- **ארכוב עם סיום השיחה**: ארכיבו את הקשרים כאשר השיחות מסתיימות כדי לשחרר משאבים תוך שמירה על היסטוריית השיחה.
 
-## Cosa fare dopo
+## מה הלאה
 
-- [Routing](../mcp-routing/README.md)
+- [5.5 ניתוב](../mcp-routing/README.md)
 
-**Avvertenza**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua madre deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali incomprensioni o interpretazioni errate derivanti dall’uso di questa traduzione.
+**Disclaimer**:  
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un essere umano. Non siamo responsabili per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

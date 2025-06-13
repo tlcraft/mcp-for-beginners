@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T18:21:08+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-12T22:59:15+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "ru"
 }
 -->
 # MCP OAuth2 Demo
 
-Этот проект — **минимальное Spring Boot приложение**, которое выполняет обе функции:
+Этот проект — **минимальное Spring Boot приложение**, которое выполняет роль:
 
-* **Spring Authorization Server** (выдаёт JWT access токены через `client_credentials` flow), и  
-* **Resource Server** (защищает собственный `/hello` endpoint).
+* **Spring Authorization Server** (выдающего JWT access токены через `client_credentials` flow), и  
+* **Resource Server** (защищающего собственный `/hello` endpoint).
 
-Он повторяет конфигурацию, показанную в [посте в блоге Spring (2 апр 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Он повторяет настройку, показанную в [посте в блоге Spring (2 апреля 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,7 +36,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Тестирование конфигурации OAuth2
 
-Вы можете проверить настройки безопасности OAuth2 следующими шагами:
+Вы можете проверить настройку безопасности OAuth2, выполнив следующие шаги:
 
 ### 1. Убедитесь, что сервер запущен и защищён
 
@@ -45,7 +45,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -v http://localhost:8081/
 ```
 
-### 2. Получите access token с помощью client credentials
+### 2. Получите access токен с помощью client credentials
 
 ```bash
 # Get and extract the full token response
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Успешный ответ с сообщением "Hello from MCP OAuth2 Demo!" подтверждает, что конфигурация OAuth2 работает корректно.
+Успешный ответ с сообщением "Hello from MCP OAuth2 Demo!" подтверждает корректную работу конфигурации OAuth2.
 
 ---
 
@@ -95,7 +95,7 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-FQDN входящего трафика становится вашим **issuer** (`https://<fqdn>`).  
+FQDN ingress становится вашим **issuer** (`https://<fqdn>`).  
 Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
@@ -116,13 +116,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM будет получать JWKS и проверять каждый запрос.
+APIM получит JWKS и будет проверять каждый запрос.
 
 ---
 
 ## Что дальше
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Отказ от ответственности**:  
-Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, просим учитывать, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется использовать профессиональный перевод, выполненный человеком. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.
+Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия обеспечить точность, имейте в виду, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется использовать профессиональный перевод, выполненный человеком. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.

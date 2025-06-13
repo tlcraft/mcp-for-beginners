@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f77fa364511cb670d6262d119d56f562",
-  "translation_date": "2025-06-11T09:02:17+00:00",
+  "original_hash": "9191921de355cd9c8f46ebe21bdd52fd",
+  "translation_date": "2025-06-12T23:11:11+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "mo"
 }
@@ -21,11 +21,13 @@ This section consists of several lessons:
 
 - **5 Consuming from a SSE (Server Sent Events)** SSE is a standard for server-to-client streaming, allowing servers to push real-time updates to clients over HTTP [to the lesson](/03-GettingStarted/05-sse-server/README.md)
 
-- **6 Utilising AI Toolkit for VSCode** to consume and test your MCP Clients and Servers [to the lesson](/03-GettingStarted/06-aitk/README.md)
+- **6 HTTP Streaming with MCP (Streamable HTTP)**. Learn about modern HTTP streaming, progress notifications, and how to implement scalable, real-time MCP servers and clients using Streamable HTTP. [to the lesson](/03-GettingStarted/06-http-streaming/README.md)
 
-- **7 Testing**. Here we will focus especially how we can test out our server and client in different ways, [to the lesson](/03-GettingStarted/07-testing/README.md)
+- **7 Utilising AI Toolkit for VSCode** to consume and test your MCP Clients and Servers [to the lesson](/03-GettingStarted/07-aitk/README.md)
 
-- **8 Deployment**. This chapter will look at different ways of deploying your MCP solutions, [to the lesson](/03-GettingStarted/08-deployment/README.md)
+- **8 Testing**. Here we will focus especially how we can test out our server and client in different ways, [to the lesson](/03-GettingStarted/08-testing/README.md)
+
+- **9 Deployment**. This chapter will look at different ways of deploying your MCP solutions, [to the lesson](/03-GettingStarted/09-deployment/README.md)
 
 
 The Model Context Protocol (MCP) is an open protocol that standardizes how applications provide context to LLMs. Think of MCP like a USB-C port for AI applications - it provides a standardized way to connect AI models to different data sources and tools.
@@ -101,4 +103,4 @@ This document has been translated using AI translation service [Co-op Translator
 
 ---
 
-Could you please clarify what you mean by "mo"? Are you referring to a specific language or dialect? If you provide more details, I’ll be happy to assist with the translation.
+(Note: "mo" is not a recognized language code or standard language name. Could you please specify which language or dialect "mo" refers to? This will help me provide an accurate translation.)

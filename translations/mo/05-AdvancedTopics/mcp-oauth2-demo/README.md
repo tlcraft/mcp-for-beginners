@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T18:29:57+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-12T23:12:54+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "mo"
 }
@@ -38,14 +38,14 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 Puedes probar la configuración de seguridad OAuth2 con los siguientes pasos:
 
-### 1. Verifica que el servidor esté en funcionamiento y seguro
+### 1. Verifica que el servidor esté en ejecución y seguro
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Obtén un token de acceso usando las credenciales del cliente
+### 2. Obtén un token de acceso usando credenciales de cliente
 
 ```bash
 # Get and extract the full token response
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Una respuesta exitosa con "Hello from MCP OAuth2 Demo!" confirma que la configuración de OAuth2 funciona correctamente.
+Una respuesta exitosa con "Hello from MCP OAuth2 Demo!" confirma que la configuración OAuth2 está funcionando correctamente.
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Despliegue en **Azure Container Apps**
+## Desplegar en **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -100,7 +100,7 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 ---
 
-## Integración con **Azure API Management**
+## Integrar con **Azure API Management**
 
 Agrega esta política de entrada a tu API:
 
@@ -122,7 +122,7 @@ APIM obtendrá el JWKS y validará cada solicitud.
 
 ## Qué sigue
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Disclaimer**:  
-Dis dokyumen it transletid yusng AI transleyshon sarvis [Co-op Translator](https://github.com/Azure/co-op-translator). Wai wi strav for akyuras, plis bi aware dat otomaytid transleyshons me bi kontening erors or inakyerasees. Di orijinal dokyumen in its neitiv langwij shud bi konsidrd di autoritativ sors. For kritikal informeyshon, profeshonal hyuman transleyshon is rekomended. Wi ar not laybl for eni misunderstandingz or misinterpretations arising from di yus of dis transleyshon.
+Thiz dokyument haz bin translaited yusing AI translaition serviz [Co-op Translator](https://github.com/Azure/co-op-translator). Whil wi striv for akyurasi, pleez bi aware that otomaytid translaitions may contain erors or inakyeraseez. Thuh orijinal dokyument in its naytiv langwaj shud bi konsidird thuh authorityv sors. For kritikall informayshun, profeshunal hyuman translaition iz rekomended. Wi ar not layabul for enny misundurstandings or misinterpretayshuns arising from thuh yus of this translaition.

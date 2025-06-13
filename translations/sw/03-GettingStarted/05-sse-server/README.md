@@ -1,85 +1,85 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0a8086dc4bf89448f83e7936db972c42",
-  "translation_date": "2025-05-17T11:41:19+00:00",
+  "original_hash": "3dd2f1e39277c31b0e57e29d165354d6",
+  "translation_date": "2025-06-13T00:44:59+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "sw"
 }
 -->
-Sasa tunajua kidogo zaidi kuhusu SSE, hebu tujenge seva ya SSE.
+Sasa tunajua kidogo zaidi kuhusu SSE, hebu tujenge server ya SSE sasa.
 
-## Zoezi: Kuunda Seva ya SSE
+## Zoef: Kuunda Server ya SSE
 
-Ili kuunda seva yetu, tunahitaji kuzingatia mambo mawili:
+Ili kuunda server yetu, tunapaswa kuzingatia mambo mawili:
 
-- Tunahitaji kutumia seva ya wavuti ili kufichua njia za kuunganisha na ujumbe.
-- Jenga seva yetu kama tunavyofanya kawaida kwa kutumia zana, rasilimali na maelekezo tulipokuwa tunatumia stdio.
+- Tunahitaji kutumia web server kufungua endpoints za connection na messages.
+- Tujenge server yetu kama kawaida tunavyofanya na tools, resources na prompts tulipokuwa tunatumia stdio.
 
-### -1- Unda mfano wa seva
+### -1- Unda instance ya server
 
-Ili kuunda seva yetu, tunatumia aina zilezile kama tulivyofanya na stdio. Hata hivyo, kwa usafiri, tunahitaji kuchagua SSE.
+Ili kuunda server yetu, tunatumia types zile zile kama stdio. Hata hivyo, kwa transport, tunapaswa kuchagua SSE.
 
-Hebu tuongeze njia zinazohitajika.
+Hebu tuongeze routes zinazohitajika sasa.
 
-### -2- Ongeza njia
+### -2- Ongeza routes
 
-Hebu tuongeze njia zinazoshughulikia muunganisho na ujumbe unaoingia:
+Tuweke routes zinazoshughulikia connection na messages zinazoingia:
 
-Hebu tuongeze uwezo kwenye seva.
+Sasa ongeza uwezo kwa server.
 
-### -3- Kuongeza uwezo wa seva
+### -3- Kuongeza uwezo wa server
 
-Sasa kwa kuwa tumefafanua kila kitu kinachohusiana na SSE, hebu tuongeze uwezo wa seva kama zana, maelekezo na rasilimali.
+Sasa tunapokuwa tumebainisha kila kitu maalum cha SSE, ongeza uwezo wa server kama tools, prompts na resources.
 
-Nambari yako kamili inapaswa kuonekana kama hivi:
+Msimbo wako mzima unapaswa kuonekana hivi:
 
-Vizuri, tuna seva inayotumia SSE, hebu tuijaribu.
+Nzuri, tuna server inayotumia SSE, hebu tujaribu sasa.
 
-## Zoezi: Kusafisha Seva ya SSE na Inspector
+## Zoef: Kurekebisha Server ya SSE kwa kutumia Inspector
 
-Inspector ni zana nzuri tuliyoona katika somo la awali [Kuunda seva yako ya kwanza](/03-GettingStarted/01-first-server/README.md). Hebu tuone kama tunaweza kutumia Inspector hata hapa:
+Inspector ni zana nzuri tuliyoiona katika somo la awali [Kuunda server yako ya kwanza](/03-GettingStarted/01-first-server/README.md). Hebu tuone kama tunaweza kutumia Inspector hapa pia:
 
 ### -1- Kuendesha inspector
 
-Ili kuendesha inspector, lazima kwanza uwe na seva ya SSE inayoendesha, kwa hivyo hebu tufanye hivyo:
+Ili kuendesha inspector, lazima kwanza uwe na server ya SSE inayoendesha, basi tufanye hivyo sasa:
 
-1. Endesha seva
+1. Endesha server
 
 1. Endesha inspector
 
     > ![NOTE]
-    > Endesha hii kwenye dirisha tofauti la terminal kuliko ile seva inayoendesha. Pia kumbuka, unahitaji kurekebisha amri iliyo chini ili kuendana na URL ambapo seva yako inaendesha.
+    > Endesha hii katika dirisha tofauti la terminal na ile server inayoendesha. Pia kumbuka, unahitaji kubadilisha amri hapa chini ili ifae URL ambapo server yako inafanya kazi.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Kuendesha inspector kunaonekana sawa katika mazingira yote. Angalia jinsi badala ya kupitisha njia ya seva yetu na amri ya kuanza seva tunapitisha URL ambapo seva inaendesha na pia tunabainisha njia ya `/sse`.
+Kuendesha inspector ni sawa katika runtimes zote. Angalia jinsi badala ya kupeleka path ya server yetu na amri ya kuanzisha server, tunapeleka URL ambapo server inafanya kazi na pia tunaeleza route ya `/sse`.
 
-### -2- Kujaribu zana
+### -2- Kuangalia zana
 
-Unganisha seva kwa kuchagua SSE katika droplist na kujaza uwanja wa URL ambapo seva yako inaendesha, kwa mfano http:localhost:4321/sse. Sasa bonyeza kitufe cha "Connect". Kama awali, chagua kuorodhesha zana, chagua zana na toa thamani za pembejeo. Unapaswa kuona matokeo kama yafuatayo:
+Unganisha server kwa kuchagua SSE kwenye droplist na jaza sehemu ya url ambapo server yako inafanya kazi, kwa mfano http:localhost:4321/sse. Sasa bonyeza kitufe cha "Connect". Kama awali, chagua kuorodhesha tools, chagua tool na toa thamani za input. Utapata matokeo kama ifuatavyo:
 
-![Seva ya SSE inayoendesha katika inspector](../../../../translated_images/sse-inspector.12861eb95abecbfc82610f480b55901524fed1a6aca025bb948e09e882c48428.sw.png)
+![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.sw.png)
 
-Vizuri, unaweza kufanya kazi na inspector, hebu tuone jinsi tunavyoweza kufanya kazi na Visual Studio Code.
+Nzuri, unaweza kutumia inspector, hebu tuone jinsi ya kutumia Visual Studio Code sasa.
 
-## Kazi
+## Kazi ya Nyumbani
 
-Jaribu kujenga seva yako na uwezo zaidi. Angalia [ukurasa huu](https://api.chucknorris.io/) ili kwa mfano kuongeza zana inayopiga API, wewe amua seva inapaswa kuonekana vipi. Furahia :)
+Jaribu kuendeleza server yako na uwezo zaidi. Angalia [ukurasa huu](https://api.chucknorris.io/) kuongeza mfano tool inayopiga API, wewe uamue server ijeje. Furahia :)
 
 ## Suluhisho
 
-[Suluhisho](./solution/README.md) Hapa kuna suluhisho linalowezekana na nambari inayofanya kazi.
+[Suluhisho](./solution/README.md) Hapa kuna suluhisho linalowezekana na msimbo unaofanya kazi.
 
-## Mambo Muhimu
+## Muhimu Kumbuka
 
-Mambo muhimu kutoka sura hii ni kama ifuatavyo:
+Mambo muhimu kutoka sura hii ni:
 
-- SSE ni usafiri wa pili unaoungwa mkono baada ya stdio.
-- Ili kusaidia SSE, unahitaji kudhibiti miunganisho inayoingia na ujumbe kwa kutumia mfumo wa wavuti.
-- Unaweza kutumia Inspector na Visual Studio Code ili kutumia seva ya SSE, kama seva za stdio. Angalia jinsi inavyotofautiana kidogo kati ya stdio na SSE. Kwa SSE, unahitaji kuanzisha seva kando na kisha kuendesha zana yako ya inspector. Kwa zana ya inspector, kuna tofauti katika kwamba unahitaji kubainisha URL.
+- SSE ni transport ya pili inayounga mkono baada ya stdio.
+- Ili kuunga mkono SSE, unahitaji kusimamia connections na messages zinazoingia kwa kutumia web framework.
+- Unaweza kutumia Inspector na Visual Studio Code kula server ya SSE, kama servers za stdio. Angalia tofauti kidogo kati ya stdio na SSE. Kwa SSE, unahitaji kuanzisha server tofauti kisha kuendesha zana ya inspector. Kwa zana ya inspector, pia kuna tofauti kidogo kwa kuwa unahitaji kueleza URL.
 
 ## Sampuli
 
@@ -89,13 +89,13 @@ Mambo muhimu kutoka sura hii ni kama ifuatavyo:
 - [TypeScript Calculator](../samples/typescript/README.md)
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Rasilimali za Ziada
+## Rasilimali Zaidi
 
 - [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 
-## Kinachofuata
+## Nini Kifuatacho
 
-- Kinachofuata: [Kuanza na AI Toolkit kwa VSCode](/03-GettingStarted/06-aitk/README.md)
+- Ifuatayo: [HTTP Streaming na MCP (Streamable HTTP)](/03-GettingStarted/06-http-streaming/README.md)
 
-**Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kenyata ya Msamaha**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya mama inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu na ya binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

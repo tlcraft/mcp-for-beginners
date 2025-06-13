@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a621fc52c7daec552eb8b3b48c0361dd",
-  "translation_date": "2025-06-02T19:46:27+00:00",
+  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
+  "translation_date": "2025-06-13T00:03:37+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "sv"
 }
 -->
-## Sampling och routingarkitektur i MCP
+## Provtagning och routingarkitektur i MCP
 
-Sampling är en viktig del av Model Context Protocol (MCP) som möjliggör effektiv bearbetning och dirigering av förfrågningar. Det innebär att analysera inkommande förfrågningar för att avgöra vilken modell eller tjänst som är mest lämplig att hantera dem, baserat på olika kriterier som innehållstyp, användarkontext och systembelastning.
+Provtagning är en viktig del av Model Context Protocol (MCP) som möjliggör effektiv hantering och routing av förfrågningar. Det innebär att analysera inkommande förfrågningar för att avgöra vilken modell eller tjänst som är mest lämplig att hantera dem, baserat på olika kriterier som innehållstyp, användarkontext och systembelastning.
 
-Sampling och routing kan kombineras för att skapa en robust arkitektur som optimerar resursanvändningen och säkerställer hög tillgänglighet. Samplingsprocessen kan användas för att klassificera förfrågningar, medan routing styr dem till rätt modeller eller tjänster.
+Provtagning och routing kan kombineras för att skapa en robust arkitektur som optimerar resursanvändningen och säkerställer hög tillgänglighet. Provtagningen kan användas för att klassificera förfrågningar, medan routingen dirigerar dem till rätt modeller eller tjänster.
 
-Diagrammet nedan visar hur sampling och routing fungerar tillsammans i en heltäckande MCP-arkitektur:
+Diagrammet nedan visar hur provtagning och routing samverkar i en omfattande MCP-arkitektur:
 
 ```mermaid
 flowchart TB
@@ -82,7 +82,7 @@ flowchart TB
 
 ## Vad händer härnäst
 
-- [Sampling](../mcp-sampling/README.md)
+- [5.6 Sampling](../mcp-sampling/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen var medveten om att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.

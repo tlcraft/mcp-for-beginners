@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ba9c96a7c7901faa1d26c8ec7ad56d2c",
-  "translation_date": "2025-06-02T20:13:25+00:00",
+  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
+  "translation_date": "2025-06-12T23:39:03+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "br"
 }
@@ -120,7 +120,6 @@ In the preceding code, we have:
 
 For Java, we will use Spring Security to implement secure authentication and authorization for MCP servers. Spring Security provides a comprehensive security framework that integrates seamlessly with Spring applications.
 
-
 Core concepts here are:
 
 - **Spring Security Configuration**: Setting up security configurations for authentication and authorization.
@@ -128,7 +127,6 @@ Core concepts here are:
 - **Security Interceptors**: Implementing security interceptors to enforce access controls on tool execution.
 - **Role-Based Access Control**: Using roles to control access to specific tools and resources.
 - **Security Annotations**: Using annotations to secure methods and endpoints.
-
 
 ```java
 @Configuration
@@ -338,7 +336,7 @@ In the preceding code, we have:
 
 ## What's next
 
-- [Web search](../web-search-mcp/README.md)
+- [5.9 Web search](../web-search-mcp/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

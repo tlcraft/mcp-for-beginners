@@ -1,25 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f1262ab21f5ebbe1003fb0114c7ca545",
-  "translation_date": "2025-06-02T20:47:20+00:00",
+  "original_hash": "33daea2e41ef7635cf13c41d6a3ea773",
+  "translation_date": "2025-06-13T00:48:19+00:00",
   "source_file": "05-AdvancedTopics/mcp-integration/README.md",
   "language_code": "sw"
 }
 -->
-## Microsoft AI Foundry Integration
+## Kuunganishwa kwa MCP na Azure ML
 
-Azure AI Foundry hutoa jukwaa la kujenga na kupeleka mawakala wa AI. Kuunganisha MCP na AI Foundry kunakuwezesha kutumia uwezo wake huku ukidumisha unyumbufu wa MCP.
+Kuunganisha MCP na Azure Machine Learning (ML) kunakuwezesha kutumia uwezo mkubwa wa ML wa Azure huku ukidumisha ufanisi wa MCP. Muunganiko huu unaweza kutumika kutekeleza mitiririko ya ML, kusajili mifano kama zana, na kusimamia rasilimali za kompyuta.
 
-Katika msimbo ulio hapa chini, tunatengeneza muunganisho wa Wakala unaoshughulikia maombi na kusimamia simu za zana kwa kutumia MCP.
+## Nini kinachofuata
 
-## Integrating MCP with Azure ML
+- [5.2 Multi modality](../mcp-multi-modality/README.md)
 
-Kuunganisha MCP na Azure Machine Learning (ML) kunakuwezesha kutumia uwezo mkubwa wa ML wa Azure huku ukidumisha unyumbufu wa MCP. Muunganisho huu unaweza kutumika kutekeleza mitiririko ya ML, kusajili mifano kama zana, na kusimamia rasilimali za kompyuta.
-
-## What's next
-
-- [Multi modality](../mcp-multi-modality/README.md)
-
-**Kiarifu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upotovu wa maana. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha uhakika. Kwa taarifa muhimu, tafsiri ya kitaalamu na ya binadamu inapendekezwa. Hatubebei lawama kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Angalizo**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za moja kwa moja zinaweza kuwa na makosa au kasoro. Hati ya awali katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu na ya binadamu inapendekezwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

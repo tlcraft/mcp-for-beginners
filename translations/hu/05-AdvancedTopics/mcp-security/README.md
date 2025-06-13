@@ -1,44 +1,44 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ba9c96a7c7901faa1d26c8ec7ad56d2c",
-  "translation_date": "2025-06-02T20:18:04+00:00",
+  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
+  "translation_date": "2025-06-13T00:51:42+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "hu"
 }
 -->
 # Biztonsági legjobb gyakorlatok
 
-A biztonság kulcsfontosságú az MCP megvalósításoknál, különösen vállalati környezetben. Fontos biztosítani, hogy az eszközök és az adatok védve legyenek illetéktelen hozzáférés, adatlopás és egyéb biztonsági fenyegetések ellen.
+A biztonság kiemelten fontos az MCP megvalósítások esetében, különösen vállalati környezetben. Fontos biztosítani, hogy az eszközök és az adatok védve legyenek illetéktelen hozzáférés, adatlopás és egyéb biztonsági fenyegetések ellen.
 
 ## Bevezetés
 
-Ebben a leckében áttekintjük az MCP megvalósítások biztonsági legjobb gyakorlatait. Foglalkozunk az autentikációval és autorizációval, az adatok védelmével, az eszközök biztonságos futtatásával, valamint az adatvédelmi előírásoknak való megfeleléssel.
+Ebben a leckében áttekintjük az MCP megvalósítások biztonsági legjobb gyakorlatait. Foglalkozunk az autentikációval és jogosultságkezeléssel, az adatvédelemmel, az eszközök biztonságos futtatásával, valamint az adatvédelmi szabályozásoknak való megfeleléssel.
 
 ## Tanulási célok
 
 A lecke végére képes leszel:
 
-- Biztonságos autentikációs és autorizációs mechanizmusokat megvalósítani MCP szerverekhez.
+- Biztonságos autentikációs és jogosultságkezelési mechanizmusokat megvalósítani MCP szerverek számára.
 - Érzékeny adatokat titkosítással és biztonságos tárolással védeni.
 - Biztosítani az eszközök biztonságos futtatását megfelelő hozzáférés-ellenőrzéssel.
-- Alkalmazni az adatvédelem és adatvédelmi megfelelés legjobb gyakorlatait.
+- Alkalmazni a legjobb gyakorlatokat az adatvédelem és az adatvédelmi megfelelés terén.
 
-## Autentikáció és autorizáció
+## Autentikáció és jogosultságkezelés
 
-Az autentikáció és autorizáció alapvető az MCP szerverek védelméhez. Az autentikáció arra ad választ, hogy „Ki vagy?”, míg az autorizáció arra, hogy „Mit tehetsz?”.
+Az autentikáció és a jogosultságkezelés elengedhetetlen az MCP szerverek biztonságához. Az autentikáció arra a kérdésre válaszol, hogy „Ki vagy?”, míg a jogosultságkezelés arra, hogy „Mit tehetsz?”.
 
-Nézzünk példákat arra, hogyan lehet biztonságos autentikációt és autorizációt megvalósítani MCP szervereken .NET és Java használatával.
+Nézzünk példákat arra, hogyan lehet biztonságos autentikációt és jogosultságkezelést megvalósítani MCP szervereken .NET és Java környezetben.
 
 ### .NET Identity integráció
 
-Az ASP .NET Core Identity egy erős keretrendszer a felhasználói autentikáció és autorizáció kezelésére. Integrálhatjuk az MCP szerverekkel, hogy védjük az eszközökhöz és erőforrásokhoz való hozzáférést.
+Az ASP .NET Core Identity egy erős keretrendszer a felhasználói autentikáció és jogosultságkezelés kezelésére. Integrálhatjuk az MCP szerverekkel az eszközökhöz és erőforrásokhoz való hozzáférés védelmére.
 
 Néhány alapvető fogalom, amit értenünk kell az ASP.NET Core Identity MCP szerverekkel való integrálásakor:
 
-- **Identity konfiguráció**: ASP.NET Core Identity beállítása felhasználói szerepkörökkel és jogosultságokkal. Egy jogosultság egy adott információ a felhasználóról, például a szerepköre vagy engedélyei, például „Admin” vagy „User”.
-- **JWT autentikáció**: JSON Web Tokenek (JWT) használata a biztonságos API-hozzáféréshez. A JWT egy szabvány az információ biztonságos továbbítására JSON objektumként, amely digitálisan aláírt, így ellenőrizhető és megbízható.
-- **Autorizációs szabályok**: Szabályok definiálása a hozzáférés szabályozására adott eszközökhöz felhasználói szerepkörök alapján. Az MCP autorizációs szabályokat használ, hogy eldöntse, mely felhasználók férhetnek hozzá mely eszközökhöz szerepkörük és jogosultságaik alapján.
+- **Identity konfiguráció**: ASP.NET Core Identity beállítása felhasználói szerepkörökkel és jogosultságokkal. Egy jogosultság (claim) egy információ a felhasználóról, például a szerepe vagy engedélyei, például „Admin” vagy „User”.
+- **JWT autentikáció**: JSON Web Tokenek (JWT) használata a biztonságos API-hozzáféréshez. A JWT egy szabvány az információk biztonságos továbbítására JSON objektumként, amely digitális aláírással igazolható és megbízható.
+- **Jogosultságkezelési szabályzatok**: Szabályzatok definiálása a hozzáférés vezérlésére az eszközökhöz felhasználói szerepkörök alapján. Az MCP jogosultságkezelési szabályzatokat használ annak meghatározására, hogy mely felhasználók férhetnek hozzá mely eszközökhöz a szerepköreik és jogosultságaik alapján.
 
 ```csharp
 public class SecureMcpStartup
@@ -112,21 +112,21 @@ public class SecureMcpStartup
 Az előző kódban:
 
 - Beállítottuk az ASP.NET Core Identity-t a felhasználókezeléshez.
-- Konfiguráltuk a JWT autentikációt a biztonságos API-hozzáféréshez. Meghatároztuk a token érvényesítési paramétereit, beleértve a kibocsátót, a közönséget és az aláíró kulcsot.
-- Meghatároztuk az autorizációs szabályokat az eszközökhöz való hozzáférés szabályozására felhasználói szerepkörök alapján. Például a „CanUseAdminTools” szabály megköveteli, hogy a felhasználónak „Admin” szerepköre legyen, míg a „CanUseBasic” szabály csak hitelesített felhasználókat engedélyez.
-- Regisztráltuk az MCP eszközöket specifikus autorizációs követelményekkel, biztosítva, hogy csak a megfelelő szerepkörrel rendelkező felhasználók férhessenek hozzájuk.
+- Konfiguráltuk a JWT autentikációt a biztonságos API-hozzáféréshez, megadtuk a token érvényesítési paramétereket, beleértve a kibocsátót, a közönséget és az aláírási kulcsot.
+- Meghatároztunk jogosultságkezelési szabályzatokat az eszközökhöz való hozzáférés szabályozására felhasználói szerepkörök alapján. Például a „CanUseAdminTools” szabályzat megköveteli az „Admin” szerepkört, míg a „CanUseBasic” szabályzat csak hitelesített felhasználók számára engedélyezi a hozzáférést.
+- Regisztráltuk az MCP eszközöket specifikus jogosultsági követelményekkel, így csak az arra jogosult felhasználók férhetnek hozzájuk.
 
 ### Java Spring Security integráció
 
-Java esetén a Spring Security-t használjuk a biztonságos autentikáció és autorizáció megvalósításához MCP szervereken. A Spring Security egy átfogó biztonsági keretrendszer, amely zökkenőmentesen integrálható Spring alkalmazásokkal.
+Java esetén a Spring Security-t használjuk a biztonságos autentikáció és jogosultságkezelés megvalósítására MCP szervereknél. A Spring Security egy átfogó biztonsági keretrendszer, amely zökkenőmentesen integrálódik Spring alkalmazásokkal.
 
-Az alapvető fogalmak:
+Az alapvető fogalmak itt:
 
-- **Spring Security konfiguráció**: Biztonsági beállítások konfigurálása autentikációhoz és autorizációhoz.
-- **OAuth2 erőforrás szerver**: OAuth2 használata az MCP eszközökhöz való biztonságos hozzáféréshez. Az OAuth2 egy autorizációs keretrendszer, amely lehetővé teszi harmadik fél szolgáltatások számára, hogy hozzáférési tokeneket cseréljenek biztonságos API-hozzáféréshez.
-- **Biztonsági interceptors**: Biztonsági interceptors alkalmazása az eszközök futtatásának hozzáférés-ellenőrzéséhez.
+- **Spring Security konfiguráció**: Biztonsági beállítások konfigurálása autentikációhoz és jogosultságkezeléshez.
+- **OAuth2 erőforrás-szerver**: OAuth2 használata az MCP eszközökhöz való biztonságos hozzáféréshez. Az OAuth2 egy jogosultságkezelési keretrendszer, amely lehetővé teszi harmadik fél szolgáltatások számára az elérési tokenek cseréjét biztonságos API-hozzáféréshez.
+- **Biztonsági interceptors**: Biztonsági interceptors megvalósítása a hozzáférés-ellenőrzés érvényesítésére az eszközök futtatásakor.
 - **Szerepkör alapú hozzáférés-vezérlés**: Szerepkörök használata az adott eszközökhöz és erőforrásokhoz való hozzáférés szabályozására.
-- **Biztonsági annotációk**: Annotációk használata metódusok és végpontok védelmére.
+- **Biztonsági annotációk**: Annotációk használata a metódusok és végpontok védelmére.
 
 ```java
 @Configuration
@@ -180,14 +180,14 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 Az előző kódban:
 
-- Beállítottuk a Spring Security-t az MCP végpontok védelmére, lehetővé téve az eszközfelismerést nyilvánosan, miközben az eszközök futtatásához hitelesítést követelünk meg.
-- OAuth2 erőforrás szerverként használtuk az MCP eszközökhöz való biztonságos hozzáférés kezelésére.
-- Megvalósítottunk egy biztonsági interceptort, amely ellenőrzi a felhasználói szerepköröket és jogosultságokat az eszközök futtatásának engedélyezése előtt.
-- Meghatároztuk a szerepkör alapú hozzáférés-vezérlést, hogy korlátozzuk az adminisztrátori eszközökhöz és érzékeny adatokhoz való hozzáférést a felhasználói szerepkörök alapján.
+- Beállítottuk a Spring Security-t az MCP végpontok védelmére, engedélyezve az eszközök felfedezéséhez a nyilvános hozzáférést, miközben az eszközök futtatásához hitelesítést követelünk meg.
+- OAuth2-t használtunk erőforrás-szerverként az MCP eszközökhöz való biztonságos hozzáférés kezelésére.
+- Megvalósítottunk egy biztonsági interceptort az eszközök futtatásának hozzáférés-ellenőrzésére, amely ellenőrzi a felhasználói szerepköröket és jogosultságokat, mielőtt engedélyezné a hozzáférést.
+- Meghatároztunk szerepkör alapú hozzáférés-vezérlést, amely korlátozza az adminisztrátori eszközök és érzékeny adatok elérését a felhasználói szerepkörök alapján.
 
 ## Adatvédelem és adatbiztonság
 
-Az adatvédelem elengedhetetlen annak biztosításához, hogy az érzékeny információkat biztonságosan kezeljük. Ez magában foglalja a személyes azonosításra alkalmas információk (PII), pénzügyi adatok és egyéb érzékeny adatok védelmét az illetéktelen hozzáférés és adatlopás ellen.
+Az adatvédelem kulcsfontosságú annak biztosításához, hogy az érzékeny információk biztonságosan legyenek kezelve. Ez magában foglalja a személyes azonosításra alkalmas adatok (PII), pénzügyi adatok és egyéb érzékeny információk védelmét az illetéktelen hozzáférés és adatlopás ellen.
 
 ### Python adatvédelmi példa
 
@@ -332,11 +332,11 @@ Az előző kódban:
 - Megvalósítottunk egy `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
 - Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
 - Defined a `secure_tool` decorator that wraps tool execution to check for PII, log access, and encrypt sensitive data if required.
-- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool`-t, hogy biztosítsuk az érzékeny adatok biztonságos kezelését.
+- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool`) osztályt, amely biztosítja az érzékeny adatok biztonságos kezelését.
 
 ## Mi következik
 
-- [Web search](../web-search-mcp/README.md)
+- [5.9 Web search](../web-search-mcp/README.md)
 
-**Nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk pontos fordítást nyújtani, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+**Jogi nyilatkozat**:  
+Ezt a dokumentumot az AI fordító szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum a saját nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.

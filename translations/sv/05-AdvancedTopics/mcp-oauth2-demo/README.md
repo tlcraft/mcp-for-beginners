@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T19:07:52+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-13T00:02:15+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "sv"
 }
@@ -14,7 +14,7 @@ Det här projektet är en **minimal Spring Boot-applikation** som fungerar både
 * en **Spring Authorization Server** (utfärdar JWT-access tokens via `client_credentials`-flödet), och  
 * en **Resource Server** (skyddar sin egen `/hello`-endpoint).
 
-Den speglar upplägget som visas i [Spring blogginlägget (2 apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Det speglar upplägget som visas i [Spring-blogginlägget (2 apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -38,14 +38,14 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 Du kan testa OAuth2-säkerhetskonfigurationen med följande steg:
 
-### 1. Verifiera att servern körs och är säkrad
+### 1. Kontrollera att servern körs och är säkrad
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Hämta en access token med client credentials
+### 2. Hämta en access token med klientuppgifter
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Note: Basic Authentication-headern (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Notera: Basic Authentication-headern (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Använd token för att komma åt den skyddade endpointen
+### 3. Använd token för att nå den skyddade endpointen
 
 ```bash
 # Using the saved token
@@ -100,9 +100,9 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 ---
 
-## Koppla till **Azure API Management**
+## Integrera med **Azure API Management**
 
-Lägg till denna inbound-policy till din API:
+Lägg till denna inbound policy i din API:
 
 ```xml
 <inbound>
@@ -122,7 +122,7 @@ APIM hämtar JWKS och validerar varje förfrågan.
 
 ## Vad händer härnäst
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål ska betraktas som den auktoritativa källan. För viktig information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen var medveten om att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår från användningen av denna översättning.

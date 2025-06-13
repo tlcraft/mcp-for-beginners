@@ -1,17 +1,32 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9932d8c613363683e40b6215a35a709c",
-  "translation_date": "2025-05-17T09:05:28+00:00",
+  "original_hash": "f58f01197da8a381d70c98317b7e1f1d",
+  "translation_date": "2025-06-13T01:05:51+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/README.md",
   "language_code": "ro"
 }
 -->
-Iată soluțiile pentru fiecare mediu de execuție:
+IATĂ REGULILE IMPORTANTE:
+1. NU adăugați '''markdown sau alte etichete în jurul traducerii
+2. Asigură-te că traducerea nu sună prea literal
+3. Tradu comentariile de asemenea
+4. Acest fișier este scris în format Markdown - nu îl trata ca XML sau HTML
+5. Nu traduce:
+   - [!NOTE], [!WARNING], [!TIP], [!IMPORTANT], [!CAUTION]
+   - Numele variabilelor, funcțiilor, claselor
+   - Locurile rezervate precum @@INLINE_CODE_x@@ sau @@CODE_BLOCK_x@@
+   - URL-urile sau căile
+6. Păstrează toată formatarea originală Markdown intactă
+7. Returnează DOAR conținutul tradus fără niciun tag sau marcaj suplimentar
+Te rog să scrii rezultatul de la stânga la dreapta.
+
+Iată soluțiile pentru fiecare runtime:
 
 - [TypeScript](./typescript/README.md)
 - [Python](./python/README.md)
 - [.NET](./dotnet/README.md)
+- [Java](./java/README.md)
 
-**Declinare:**
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea umană profesională. Nu suntem responsabili pentru niciun fel de neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+**Declinare a responsabilității**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

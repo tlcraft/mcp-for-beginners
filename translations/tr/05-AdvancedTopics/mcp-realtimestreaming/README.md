@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b41174ac781ebf228b2043cbdfc09105",
-  "translation_date": "2025-06-12T00:32:06+00:00",
+  "original_hash": "195f7287638b77a549acadd96c8f981c",
+  "translation_date": "2025-06-12T23:47:34+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimestreaming/README.md",
   "language_code": "tr"
 }
@@ -11,75 +11,75 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Genel Bakış
 
-Gerçek zamanlı veri akışı, işletmelerin ve uygulamaların zamanında kararlar alabilmek için bilgilere anında erişim gerektirdiği günümüz veri odaklı dünyasında vazgeçilmez hale gelmiştir. Model Context Protokolü (MCP), bu gerçek zamanlı akış süreçlerini optimize etmede önemli bir gelişmeyi temsil eder; veri işleme verimliliğini artırır, bağlamsal bütünlüğü korur ve genel sistem performansını iyileştirir.
+Gerçek zamanlı veri akışı, işletmelerin ve uygulamaların zamanında kararlar alabilmek için bilgilere anında erişim gerektirdiği günümüz veri odaklı dünyasında vazgeçilmez hale gelmiştir. Model Context Protokolü (MCP), bu gerçek zamanlı akış süreçlerini optimize etmede önemli bir ilerlemeyi temsil eder; veri işleme verimliliğini artırır, bağlamsal bütünlüğü korur ve genel sistem performansını iyileştirir.
 
 Bu modül, MCP'nin AI modelleri, akış platformları ve uygulamalar arasında bağlam yönetimi için standart bir yaklaşım sunarak gerçek zamanlı veri akışını nasıl dönüştürdüğünü inceler.
 
 ## Gerçek Zamanlı Veri Akışına Giriş
 
-Gerçek zamanlı veri akışı, verinin üretildiği anda sürekli olarak aktarılmasını, işlenmesini ve analiz edilmesini sağlayan teknolojik bir paradigma olup, sistemlerin yeni bilgilere anında tepki vermesine olanak tanır. Statik veri setleri üzerinde çalışan geleneksel toplu işlemeye kıyasla, akış veriyi hareket halindeyken işler ve minimum gecikmeyle içgörüler ve aksiyonlar sunar.
+Gerçek zamanlı veri akışı, verilerin oluşturuldukça sürekli olarak aktarılması, işlenmesi ve analiz edilmesini sağlayan teknolojik bir paradigma olup, sistemlerin yeni bilgilere anında tepki vermesine olanak tanır. Statik veri kümeleri üzerinde çalışan geleneksel toplu işlemden farklı olarak, akış verileri hareket halindeyken işlenir ve minimum gecikmeyle içgörü ve eylemler sunar.
 
 ### Gerçek Zamanlı Veri Akışının Temel Kavramları:
 
-- **Sürekli Veri Akışı**: Veri, kesintisiz ve sonu olmayan bir olay veya kayıt akışı olarak işlenir.
-- **Düşük Gecikmeli İşleme**: Sistemler, veri üretimi ile işlenmesi arasındaki süreyi en aza indirecek şekilde tasarlanır.
-- **Ölçeklenebilirlik**: Akış mimarileri değişken veri hacmi ve hızını yönetebilmelidir.
-- **Hata Toleransı**: Sistemler, kesintisiz veri akışını sağlamak için arızalara karşı dayanıklı olmalıdır.
-- **Durumlu İşleme**: Olaylar arasında bağlamın korunması anlamlı analiz için kritiktir.
+- **Sürekli Veri Akışı**: Veriler, kesintisiz ve sonu olmayan olaylar veya kayıtlar akışı olarak işlenir.
+- **Düşük Gecikmeli İşlem**: Sistemler, veri oluşturulması ile işlenmesi arasındaki zamanı en aza indirecek şekilde tasarlanır.
+- **Ölçeklenebilirlik**: Akış mimarileri, değişken veri hacmi ve hızını yönetebilmelidir.
+- **Hata Toleransı**: Sistemler, veri akışının kesintisiz devamını sağlamak için arızalara karşı dayanıklı olmalıdır.
+- **Durum Bilgisiyle İşleme**: Olaylar arasında bağlamın korunması, anlamlı analiz için kritiktir.
 
 ### Model Context Protokolü ve Gerçek Zamanlı Akış
 
-Model Context Protokolü (MCP), gerçek zamanlı akış ortamlarında karşılaşılan birkaç kritik sorunu ele alır:
+Model Context Protokolü (MCP), gerçek zamanlı akış ortamlarında karşılaşılan kritik bazı zorlukları ele alır:
 
-1. **Bağlamsal Süreklilik**: MCP, bağlamın dağıtık akış bileşenleri arasında nasıl korunduğunu standartlaştırır; böylece AI modelleri ve işlem düğümleri ilgili geçmiş ve çevresel bağlama erişebilir.
+1. **Bağlamsal Süreklilik**: MCP, bağlamın dağıtık akış bileşenleri arasında nasıl korunduğunu standartlaştırır ve AI modelleri ile işlem düğümlerinin ilgili geçmiş ve çevresel bağlama erişimini sağlar.
 
-2. **Verimli Durum Yönetimi**: MCP, bağlam iletimi için yapılandırılmış mekanizmalar sunarak akış hatlarındaki durum yönetimi yükünü azaltır.
+2. **Verimli Durum Yönetimi**: Bağlam iletimi için yapılandırılmış mekanizmalar sağlayarak, MCP akış boru hatlarındaki durum yönetimi yükünü azaltır.
 
-3. **Birlikte Çalışabilirlik**: MCP, farklı akış teknolojileri ve AI modelleri arasında bağlam paylaşımı için ortak bir dil oluşturur; daha esnek ve genişletilebilir mimariler sağlar.
+3. **Birlikte Çalışabilirlik**: MCP, farklı akış teknolojileri ve AI modelleri arasında bağlam paylaşımı için ortak bir dil oluşturarak daha esnek ve genişletilebilir mimariler sağlar.
 
-4. **Akışa Optimizasyonlu Bağlam**: MCP uygulamaları, gerçek zamanlı karar verme için en alakalı bağlam öğelerini önceliklendirebilir; performans ve doğruluk için optimize eder.
+4. **Akışa Optimizasyonlu Bağlam**: MCP uygulamaları, gerçek zamanlı karar verme için en alakalı bağlam öğelerini önceliklendirebilir, böylece hem performans hem de doğruluk optimize edilir.
 
-5. **Uyarlanabilir İşleme**: MCP aracılığıyla doğru bağlam yönetimi ile akış sistemleri, verideki değişen koşullara ve desenlere göre dinamik olarak işleme ayarlaması yapabilir.
+5. **Uyarlanabilir İşleme**: MCP aracılığıyla doğru bağlam yönetimi ile akış sistemleri, verideki değişen koşullar ve kalıplara göre dinamik olarak işlem ayarlayabilir.
 
-IoT sensör ağlarından finansal ticaret platformlarına kadar modern uygulamalarda, MCP’nin akış teknolojileriyle entegrasyonu, karmaşık ve gelişen durumlara gerçek zamanlı uygun şekilde yanıt verebilen daha akıllı, bağlam farkındalıklı işlemleri mümkün kılar.
+Nesnelerin İnterneti (IoT) sensör ağlarından finansal ticaret platformlarına kadar modern uygulamalarda, MCP’nin akış teknolojileriyle entegrasyonu, karmaşık ve gelişen durumlara gerçek zamanlı uygun şekilde yanıt verebilen daha akıllı, bağlam farkındalıklı işlemleri mümkün kılar.
 
 ## Öğrenme Hedefleri
 
 Bu dersin sonunda şunları yapabileceksiniz:
 
 - Gerçek zamanlı veri akışının temellerini ve zorluklarını anlamak
-- Model Context Protokolü (MCP)’nün gerçek zamanlı veri akışını nasıl geliştirdiğini açıklamak
+- Model Context Protokolü'nün (MCP) gerçek zamanlı veri akışını nasıl geliştirdiğini açıklamak
 - Kafka ve Pulsar gibi popüler çerçeveler kullanarak MCP tabanlı akış çözümleri uygulamak
 - MCP ile hata toleranslı, yüksek performanslı akış mimarileri tasarlamak ve dağıtmak
 - MCP kavramlarını IoT, finansal ticaret ve AI destekli analiz kullanım senaryolarına uygulamak
-- MCP tabanlı akış teknolojilerindeki gelişen trendleri ve gelecekteki yenilikleri değerlendirmek
+- MCP tabanlı akış teknolojilerindeki yeni trendleri ve gelecekteki yenilikleri değerlendirmek
 
 ### Tanım ve Önemi
 
-Gerçek zamanlı veri akışı, verinin minimum gecikmeyle sürekli üretilmesi, işlenmesi ve teslim edilmesini kapsar. Verinin gruplar halinde toplandığı ve işlendiği toplu işleme yönteminin aksine, akış verisi geldiği anda kademeli olarak işlenir; bu da anlık içgörüler ve aksiyonlar sağlar.
+Gerçek zamanlı veri akışı, verilerin minimum gecikmeyle sürekli olarak oluşturulması, işlenmesi ve iletilmesini içerir. Verilerin toplu olarak toplanıp işlendiği toplu işleme yönteminden farklı olarak, akış verileri geldikçe kademeli olarak işlenir ve anında içgörüler ve eylemler sağlar.
 
 Gerçek zamanlı veri akışının temel özellikleri şunlardır:
 
-- **Düşük Gecikme**: Veriyi milisaniyelerden saniyelere kadar işleyip analiz etmek
+- **Düşük Gecikme**: Verilerin milisaniyeler ila saniyeler içinde işlenmesi ve analiz edilmesi
 - **Sürekli Akış**: Çeşitli kaynaklardan kesintisiz veri akışı
-- **Anında İşleme**: Veriyi toplu değil, geldiği anda analiz etmek
-- **Olay Tabanlı Mimari**: Olaylar gerçekleştiği anda tepki vermek
+- **Anında İşleme**: Verilerin toplu değil, geldikçe analiz edilmesi
+- **Olay Tabanlı Mimari**: Olaylar gerçekleştiği anda yanıt verilmesi
 
 ### Geleneksel Veri Akışındaki Zorluklar
 
-Geleneksel veri akışı yaklaşımları birkaç sınırlamayla karşılaşır:
+Geleneksel veri akış yöntemleri çeşitli sınırlamalarla karşılaşır:
 
-1. **Bağlam Kaybı**: Dağıtık sistemler arasında bağlamın korunmasında zorluk
-2. **Ölçeklenebilirlik Sorunları**: Yüksek hacimli ve hızlı veriyi yönetmede güçlük
+1. **Bağlam Kaybı**: Dağıtık sistemler arasında bağlamı korumada zorluk
+2. **Ölçeklenebilirlik Sorunları**: Yüksek hacimli ve hızlı verileri yönetmede güçlükler
 3. **Entegrasyon Karmaşıklığı**: Farklı sistemler arasında birlikte çalışabilirlik problemleri
 4. **Gecikme Yönetimi**: İşlem süresi ile veri akışı dengesi
-5. **Veri Tutarlılığı**: Akış boyunca veri doğruluğu ve tamlığının sağlanması
+5. **Veri Tutarlılığı**: Akış boyunca veri doğruluğu ve eksiksizliğinin sağlanması
 
-## Model Context Protokolü (MCP) Anlama
+## Model Context Protokolünü (MCP) Anlamak
 
 ### MCP Nedir?
 
-Model Context Protokolü (MCP), AI modelleri ve uygulamalar arasında verimli etkileşimi kolaylaştırmak için tasarlanmış standart bir iletişim protokolüdür. Gerçek zamanlı veri akışı bağlamında MCP, aşağıdaki çerçeveyi sağlar:
+Model Context Protokolü (MCP), AI modelleri ve uygulamalar arasında verimli etkileşimi kolaylaştırmak için tasarlanmış standart bir iletişim protokolüdür. Gerçek zamanlı veri akışı bağlamında MCP, şunları sağlar:
 
 - Veri hattı boyunca bağlamın korunması
 - Veri değişim formatlarının standartlaştırılması
@@ -88,12 +88,12 @@ Model Context Protokolü (MCP), AI modelleri ve uygulamalar arasında verimli et
 
 ### Temel Bileşenler ve Mimari
 
-Gerçek zamanlı akış için MCP mimarisi birkaç önemli bileşenden oluşur:
+Gerçek zamanlı akış için MCP mimarisi birkaç temel bileşenden oluşur:
 
 1. **Bağlam Yöneticileri**: Akış hattı boyunca bağlamsal bilgiyi yönetir ve korur
 2. **Akış İşleyicileri**: Bağlam farkındalıklı tekniklerle gelen veri akışlarını işler
 3. **Protokol Adaptörleri**: Farklı akış protokolleri arasında bağlamı koruyarak dönüşüm yapar
-4. **Bağlam Deposu**: Bağlamsal bilgiyi verimli şekilde depolar ve erişir
+4. **Bağlam Deposu**: Bağlamsal bilgiyi verimli şekilde saklar ve geri alır
 5. **Akış Bağlayıcıları**: Kafka, Pulsar, Kinesis gibi çeşitli akış platformlarına bağlanır
 
 ```mermaid
@@ -164,43 +164,43 @@ graph TD
     class DA,Alerts,DL,API apps
 ```
 
-### MCP Gerçek Zamanlı Veri İşlemeyi Nasıl Geliştirir?
+### MCP Gerçek Zamanlı Veri İşlemeyi Nasıl İyileştirir?
 
 MCP, geleneksel akış zorluklarını şu yollarla çözer:
 
-- **Bağlamsal Bütünlük**: Veri noktaları arasındaki ilişkileri tüm hat boyunca korur
-- **Optimum İletim**: Akıllı bağlam yönetimi ile veri değişimindeki gereksiz tekrarları azaltır
-- **Standart Arayüzler**: Akış bileşenleri için tutarlı API’ler sunar
-- **Azaltılmış Gecikme**: Verimli bağlam işleme ile işlem yükünü minimize eder
-- **Gelişmiş Ölçeklenebilirlik**: Bağlamı koruyarak yatay ölçeklemeyi destekler
+- **Bağlamsal Bütünlük**: Veri noktaları arasındaki ilişkilerin tüm işlem hattı boyunca korunması
+- **Optimum İletim**: Akıllı bağlam yönetimi ile veri değişiminde gereksiz tekrarların azaltılması
+- **Standart Arayüzler**: Akış bileşenleri için tutarlı API'ler sunulması
+- **Azaltılmış Gecikme**: Verimli bağlam işleme ile işlem yükünün en aza indirilmesi
+- **Gelişmiş Ölçeklenebilirlik**: Bağlam korunurken yatay ölçeklemeyi desteklemesi
 
 ## Entegrasyon ve Uygulama
 
-Gerçek zamanlı veri akış sistemleri, hem performans hem de bağlamsal bütünlüğü korumak için dikkatli mimari tasarım ve uygulama gerektirir. Model Context Protokolü, AI modelleri ve akış teknolojilerinin entegrasyonunda standart bir yaklaşım sunarak daha sofistike, bağlam farkındalıklı işlem hatları oluşturulmasını sağlar.
+Gerçek zamanlı veri akış sistemleri, hem performans hem de bağlamsal bütünlüğü korumak için dikkatli mimari tasarım ve uygulama gerektirir. Model Context Protokolü, AI modelleri ve akış teknolojilerini entegre etmek için standart bir yaklaşım sunarak daha gelişmiş, bağlam farkındalıklı işleme hatları oluşturulmasına olanak tanır.
 
 ### Akış Mimarilerinde MCP Entegrasyonuna Genel Bakış
 
-Gerçek zamanlı akış ortamlarında MCP uygulaması birkaç önemli hususu içerir:
+Gerçek zamanlı akış ortamlarında MCP uygulaması birkaç önemli noktayı içerir:
 
-1. **Bağlam Serileştirme ve Taşıma**: MCP, bağlamsal bilgiyi akış veri paketlerine kodlamak için verimli mekanizmalar sunar; böylece kritik bağlam, işlem hattı boyunca veriyle birlikte taşınır. Bu, akış taşıma için optimize edilmiş standart serileştirme formatlarını kapsar.
+1. **Bağlam Serileştirme ve Taşıma**: MCP, bağlamsal bilgilerin akış veri paketleri içinde kodlanması için etkili mekanizmalar sağlar ve böylece önemli bağlamın veri işleme hattı boyunca takip edilmesini garanti eder. Bu, akış taşımaya optimize edilmiş standart serileştirme formatlarını içerir.
 
-2. **Durumlu Akış İşleme**: MCP, işlem düğümleri arasında tutarlı bağlam temsili sağlayarak daha akıllı durumlu işleme mümkün kılar. Bu, durum yönetiminin geleneksel olarak zor olduğu dağıtık akış mimarilerinde özellikle değerlidir.
+2. **Durum Bilgili Akış İşleme**: MCP, işleme düğümleri arasında tutarlı bağlam temsili sağlayarak daha akıllı durum bilgili işlemlere imkan tanır. Bu, durum yönetiminin geleneksel olarak zor olduğu dağıtık akış mimarilerinde özellikle değerlidir.
 
-3. **Olay Zamanı ve İşlem Zamanı**: MCP uygulamaları, olayların ne zaman gerçekleştiği ile ne zaman işlendiği arasındaki farkı ele almalıdır. Protokol, olay zamanı anlamını koruyan zamansal bağlamı içerebilir.
+3. **Olay Zamanı ve İşlem Zamanı**: MCP uygulamaları, olayların ne zaman gerçekleştiği ile ne zaman işlendiği arasındaki farkı ele almak zorundadır. Protokol, olay zamanı anlamını koruyan zamansal bağlamı içerebilir.
 
-4. **Backpressure Yönetimi**: MCP, bağlam yönetimini standartlaştırarak akış sistemlerinde backpressure’ı yönetmeye yardımcı olur; bileşenlerin işlem kapasitelerini iletişim kurup akışı buna göre ayarlamasını sağlar.
+4. **Geri Basınç Yönetimi**: Bağlam yönetimini standartlaştırarak MCP, akış sistemlerinde geri basıncın yönetilmesine yardımcı olur; bileşenlerin işlem kapasitelerini iletip akış hızını ayarlamalarını sağlar.
 
-5. **Bağlam Penceresi ve Toplama**: MCP, zamansal ve ilişkisel bağlamların yapılandırılmış temsillerini sağlayarak daha anlamlı toplamalara olanak tanıyan gelişmiş pencereleme işlemlerini destekler.
+5. **Bağlam Penceresi ve Toplama**: MCP, zamansal ve ilişkisel bağlamların yapılandırılmış temsillerini sağlayarak daha anlamlı toplama işlemlerine olanak tanır.
 
-6. **Tam-İşleme (Exactly-Once) İşlemi**: Tam-işleme semantiği gerektiren akış sistemlerinde, MCP işleme durumunu izlemek ve doğrulamak için işlem meta verisini dahil edebilir.
+6. **Tam-İşlem (Exactly-Once) İşleme**: Tam-işlem semantiği gerektiren akış sistemlerinde MCP, işleme durumunu izlemeye ve doğrulamaya yardımcı olacak işlem meta verilerini içerebilir.
 
-MCP’nin çeşitli akış teknolojileri genelinde uygulanması, bağlam yönetiminde birleşik bir yaklaşım yaratır; özel entegrasyon kodu ihtiyacını azaltırken, verinin işlem hattı boyunca anlamlı bağlamını koruma yeteneğini artırır.
+MCP’nin çeşitli akış teknolojilerinde uygulanması, bağlam yönetimi için birleşik bir yaklaşım sunar; özel entegrasyon kodu ihtiyacını azaltırken veri hattı boyunca anlamlı bağlamın korunmasını güçlendirir.
 
 ### Farklı Veri Akış Çerçevelerinde MCP
 
-Bu örnekler, JSON-RPC tabanlı protokolü ve farklı taşıma mekanizmalarını içeren mevcut MCP spesifikasyonuna uygundur. Kod, Kafka ve Pulsar gibi akış platformlarının MCP protokolü ile tam uyumluluğu koruyarak nasıl özel taşıyıcılar olarak uygulanabileceğini gösterir.
+Aşağıdaki örnekler, JSON-RPC tabanlı protokol ve farklı taşıma mekanizmalarını içeren mevcut MCP spesifikasyonunu takip eder. Kod, Kafka ve Pulsar gibi akış platformlarının MCP protokolü ile tam uyumluluk içinde nasıl entegre edilebileceğini gösterir.
 
-Örnekler, akış platformlarının MCP ile entegre edilerek gerçek zamanlı veri işleme sağlarken MCP’nin merkezindeki bağlamsal farkındalığı koruyabileceğini göstermeyi amaçlar. Bu yaklaşım, Haziran 2025 itibarıyla MCP spesifikasyonunun güncel durumunu doğru yansıtır.
+Örnekler, MCP’nin merkezinde yer alan bağlamsal farkındalığı koruyarak gerçek zamanlı veri işleme sağlamak için akış platformlarının MCP ile nasıl entegre edilebileceğini göstermeye yöneliktir. Bu yaklaşım, kod örneklerinin Haziran 2025 itibarıyla MCP spesifikasyonunun güncel durumunu doğru yansıtmasını sağlar.
 
 MCP, popüler akış çerçeveleriyle entegre edilebilir:
 
@@ -514,37 +514,37 @@ if __name__ == "__main__":
     asyncio.run(run_mcp_server_with_pulsar())
 ```
 
-### Dağıtım İçin En İyi Uygulamalar
+### Dağıtım için En İyi Uygulamalar
 
-MCP ile gerçek zamanlı akış uygularken:
+Gerçek zamanlı akış için MCP uygularken:
 
-1. **Hata Toleransı İçin Tasarla**:
-   - Uygun hata yönetimi uygula
-   - Başarısız mesajlar için dead-letter kuyrukları kullan
-   - İdempotent işlemciler tasarla
+1. **Hata Toleransı için Tasarlayın**:
+   - Uygun hata yönetimi uygulayın
+   - Başarısız mesajlar için dead-letter kuyrukları kullanın
+   - İdempotent işlemciler tasarlayın
 
-2. **Performans İçin Optimize Et**:
-   - Uygun tampon boyutlarını yapılandır
-   - Gerekli yerlerde toplu işlem kullan
-   - Backpressure mekanizmalarını uygula
+2. **Performans için Optimize Edin**:
+   - Uygun tampon boyutları yapılandırın
+   - Uygun yerlerde toplu işlem kullanın
+   - Geri basınç mekanizmalarını uygulayın
 
-3. **İzle ve Gözlemle**:
-   - Akış işleme metriklerini takip et
-   - Bağlam yayılımını izle
-   - Anormallikler için uyarılar kur
+3. **İzleme ve Gözlemleyin**:
+   - Akış işleme metriklerini takip edin
+   - Bağlam yayılımını izleyin
+   - Anormallikler için uyarılar kurun
 
-4. **Akışlarını Güvende Tut**:
-   - Hassas veriler için şifreleme uygula
-   - Kimlik doğrulama ve yetkilendirme kullan
-   - Uygun erişim kontrolleri uygula
+4. **Akışlarınızı Güvenceye Alın**:
+   - Hassas veriler için şifreleme uygulayın
+   - Kimlik doğrulama ve yetkilendirme kullanın
+   - Uygun erişim kontrolleri uygulayın
 
 ### MCP’nin IoT ve Edge Bilişimdeki Rolü
 
-MCP, IoT akışını şu şekillerde geliştirir:
+MCP, IoT akışlarını şu şekillerde geliştirir:
 
 - İşlem hattı boyunca cihaz bağlamını korur
-- Verimli edge-to-cloud veri akışını mümkün kılar
-- IoT veri akışlarında gerçek zamanlı analizleri destekler
+- Edge’den buluta verimli veri akışı sağlar
+- IoT veri akışlarında gerçek zamanlı analiz destekler
 - Bağlam ile cihazlar arası iletişimi kolaylaştırır
 
 Örnek: Akıllı Şehir Sensör Ağları  
@@ -552,93 +552,89 @@ MCP, IoT akışını şu şekillerde geliştirir:
 Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → Automated Responses
 ```
 
-### Finansal İşlemler ve Yüksek Frekanslı Ticarette MCP’nin Rolü
+### Finansal İşlemler ve Yüksek Frekanslı Ticaretteki Rolü
 
-MCP, finansal veri akışında önemli avantajlar sunar:
+MCP, finansal veri akışında önemli avantajlar sağlar:
 
 - Ticaret kararları için ultra düşük gecikmeli işlem
-- İşlem bağlamını tüm işleme boyunca koruma
-- Bağlam farkındalıklı karmaşık olay işleme desteği
-- Dağıtık ticaret sistemlerinde veri tutarlılığını sağlama
+- İşlem bağlamının işleme boyunca korunması
+- Bağlamsal farkındalıkla karmaşık olay işleme desteği
+- Dağıtık ticaret sistemlerinde veri tutarlılığının sağlanması
 
 ### AI Destekli Veri Analizini Geliştirme
 
 MCP, akış analizinde yeni olanaklar yaratır:
 
 - Gerçek zamanlı model eğitimi ve çıkarımı
-- Akış verisinden sürekli öğrenme
+- Akış verilerinden sürekli öğrenme
 - Bağlam farkındalıklı özellik çıkarımı
-- Korunan bağlam ile çoklu model çıkarım hatları
+- Korunan bağlamla çoklu model çıkarım boru hatları
 
 ## Gelecek Trendler ve Yenilikler
 
 ### Gerçek Zamanlı Ortamlarda MCP’nin Evrimi
 
-İleriye baktığımızda MCP’nin şu alanlarda gelişmesini bekliyoruz:
+İleriye dönük olarak MCP’nin şu alanlarda gelişmesini bekliyoruz:
 
 - **Kuantum Bilişim Entegrasyonu**: Kuantum tabanlı akış sistemlerine hazırlık
 - **Edge-Native İşleme**: Daha fazla bağlam farkındalıklı işlemin uç cihazlara taşınması
 - **Otonom Akış Yönetimi**: Kendi kendini optimize eden akış hatları
 - **Federated Streaming**: Gizliliği koruyarak dağıtık işlem
 
-### Teknolojide Muhtemel İlerlemeler
+### Teknolojide Olası İlerlemeler
 
-MCP akışlarının geleceğini şekillendirecek yeni teknolojiler:
+MCP akışlarının geleceğini şekillendirecek ortaya çıkan teknolojiler:
 
-1. **AI-Optimizasyonlu Akış Protokolleri**: AI iş yükleri için özel protokoller
-2. **Nöromorfik Bilişim Entegrasyonu**: Beyin esinli hesaplama ile akış işleme
-3. **Serverless Streaming**: Altyapı yönetimi olmadan olay tabanlı, ölçeklenebilir akış
-4. **Dağıtık Bağlam Depoları**: Küresel çapta dağıtılmış ama yüksek tutarlılıkta bağlam yönetimi
+1. **AI-Optimizasyonlu Akış Protokolleri**: AI iş yüklerine özel protokoller
+2. **Nöromorfik Bilişim Entegrasyonu**: Beyin ilhamlı akış işleme
+3. **Sunucusuz Akış**: Altyapı yönetimi olmadan olay tabanlı, ölçeklenebilir akış
+4. **Dağıtık Bağlam Depoları**: Küresel ölçekte dağıtılmış ama yüksek tutarlılıkta bağlam yönetimi
 
 ## Uygulamalı Alıştırmalar
 
-### Alıştırma 1: Temel Bir MCP Akış Hattı Kurulumu
+### Alıştırma 1: Temel MCP Akış Boru Hattı Kurulumu
 
 Bu alıştırmada şunları öğreneceksiniz:  
-- Temel bir MCP akış ortamı yapılandırmak  
-- Akış işlemesi için bağlam yöneticileri uygulamak  
-- Bağlam korumasını test etmek ve doğrulamak
+- Temel bir MCP akış ortamı yapılandırma  
+- Akış işlemleri için bağlam yöneticileri uygulama  
+- Bağlam korumanın test edilmesi ve doğrulanması  
 
-### Alıştırma 2: Gerçek Zamanlı Analitik Panosu Oluşturma
+### Alıştırma 2: Gerçek Zamanlı Analitik Gösterge Tablosu Oluşturma
 
 Tam bir uygulama geliştirin:  
 - MCP kullanarak akış verisi alma  
-- Bağlamı koruyarak akışı işleme  
-- Sonuçları gerçek zamanlı görselleştirme
+- Akışı bağlamı koruyarak işleme  
+- Sonuçları gerçek zamanlı görselleştirme  
 
-### Alıştırma 3: MCP ile Karmaşık Olay İşleme Uygulaması
+### Alıştırma 3: MCP ile Karmaşık Olay İşleme Uygulama
 
 İleri seviye alıştırma:  
 - Akışlarda desen tespiti  
-- Birden fazla akış arasında bağlamsal korelasyon  
-- Korunan bağlam ile karmaşık olaylar oluşturma
+- Birden çok akış arasında bağlamsal korelasyon  
+- Korunan bağlamla karmaşık olaylar üretme  
 
 ## Ek Kaynaklar
 
 - [Model Context Protocol Specification](https://github.com/modelcontextprotocol) - Resmi MCP spesifikasyonu ve dokümantasyonu  
-- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Kafka hakkında bilgi edinmek için  
+- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Kafka hakkında akış işleme bilgisi  
 - [Apache Pulsar](https://pulsar.apache.org/) - Birleşik mesajlaşma ve akış platformu  
 - [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - Akış mimarileri üzerine kapsamlı kitap  
 - [Microsoft Azure Event Hubs](https://learn.microsoft.com/azure/event-hubs/event-hubs-about) - Yönetilen olay akışı servisi  
 - [MLflow Documentation](https://mlflow.org/docs/latest/index.html) - ML model takibi ve dağıtımı için  
-- [Real-Time Analytics with Apache Storm](https://storm.apache.org/releases/current/index.html) - Gerçek zamanlı hesaplama çerçevesi  
+- [Real-Time Analytics with Apache Storm](https://storm.apache.org/releases/current/index.html) - Gerçek zamanlı hesaplama için işlem çerçevesi  
 - [Flink ML](https://nightlies.apache.org/flink/flink-ml-docs-master/) - Apache Flink için makine öğrenimi kütüphanesi  
-- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - LLM ile uygulama geliştirme
+- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - LLM’lerle uygulama geliştirme  
 
 ## Öğrenme Çıktıları
 
-Bu modülü tamamlayarak şunları yapabileceksiniz:
+Bu modülü tamamladıktan sonra:
 
-- Gerçek zamanlı veri akışının temellerini ve zorluklarını anlamak  
-- Model Context Protokolü (MCP)’nün gerçek zamanlı veri akışını nasıl geliştirdiğini açıklamak  
-- Kafka ve Pulsar gibi popüler çerçevelerle MCP tabanlı akış çözümleri uygulamak  
-- MCP ile hata toleranslı, yüksek performanslı akış mimarileri tasarlamak ve dağıtmak  
-- MCP kavramlarını IoT, finansal ticaret ve AI destekli analiz senaryolarına uygulamak  
-- MCP tabanlı akış teknolojilerindeki yeni trendleri ve gelecekteki yenilikleri değerlendirmek
-
-## Sonraki Adım
-
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- Gerçek zamanlı veri akışının temellerini ve zorluklarını anlayabileceksiniz  
+- Model Context Protokolü'nün (MCP) gerçek zamanlı veri akışını nasıl geliştirdiğini açıklayabileceksiniz  
+- Kafka ve Pulsar gibi popüler çerçevelerle MCP tabanlı akış çözümleri uygulayabileceksiniz  
+- MCP ile hata toleranslı, yüksek performanslı akış mimarileri tasarlayıp dağıtabileceksiniz  
+- MCP kavramlarını IoT, finansal ticaret ve AI destekli analiz senaryolarına uygulayabileceksiniz  
+- MCP tabanlı akış teknolojilerindeki yeni trendleri
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorumlamalardan sorumlu değiliz.

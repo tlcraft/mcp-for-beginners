@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T19:38:36+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-13T01:20:46+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "hr"
 }
 -->
 # MCP OAuth2 Demo
 
-Ovaj projekt je **minimalna Spring Boot aplikacija** koja funkcionira kao:
+Ovaj projekt je **minimalna Spring Boot aplikacija** koja djeluje kao:
 
-* **Spring Authorization Server** (izdaje JWT pristupne tokene putem `client_credentials` protoka), i  
-* **Resource Server** (štiti vlastitu `/hello` krajnju točku).
+* **Spring Authorization Server** (izdaje JWT pristupne tokene putem `client_credentials` toka), i  
+* **Resource Server** (štiti vlastiti `/hello` endpoint).
 
-Oponaša postavke prikazane u [Spring blog postu (2. travnja 2025.)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Ona prati postavke prikazane u [Spring blog postu (2. travnja 2025.)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,7 +36,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Testiranje OAuth2 konfiguracije
 
-OAuth2 sigurnosnu konfiguraciju možete testirati slijedećim koracima:
+OAuth2 sigurnosnu konfiguraciju možete testirati sljedećim koracima:
 
 ### 1. Provjerite je li server pokrenut i zaštićen
 
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Napomena: Basic Authentication zaglavlje (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Napomena: Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Pristupite zaštićenoj krajnjoj točki koristeći token
+### 3. Pristupite zaštićenom endpointu koristeći token
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Uspješan odgovor s "Hello from MCP OAuth2 Demo!" potvrđuje da OAuth2 konfiguracija ispravno radi.
+Uspješan odgovor s "Hello from MCP OAuth2 Demo!" potvrđuje da OAuth2 konfiguracija radi ispravno.
 
 ---
 
-## Izgradnja kontejnera
+## Izgradnja containera
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -100,9 +100,9 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 ---
 
-## Integracija u **Azure API Management**
+## Povezivanje s **Azure API Management**
 
-Dodajte ovu inbound politiku u vaš API:
+Dodajte ovu inbound politiku svojem API-ju:
 
 ```xml
 <inbound>
@@ -120,9 +120,9 @@ APIM će dohvatiti JWKS i validirati svaki zahtjev.
 
 ---
 
-## Što dalje
+## Što slijedi
 
-- [Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj je dokument preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument preveden je pomoću AI usluge za prijevod [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za važne informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

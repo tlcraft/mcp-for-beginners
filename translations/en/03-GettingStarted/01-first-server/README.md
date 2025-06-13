@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "262e6e510f0c3fe1e36180eadcd67c33",
-  "translation_date": "2025-06-02T17:15:01+00:00",
+  "original_hash": "d90651bcd1df019768921d531653638a",
+  "translation_date": "2025-06-12T22:54:53+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "en"
 }
@@ -29,10 +29,10 @@ Start the server with the following command:
 
 ### -8- Run using the inspector
 
-The inspector is a fantastic tool that can launch your server and lets you interact with it to verify that it works. Let's get it started:
+The inspector is a great tool that can launch your server and let you interact with it to verify it works. Let’s get it started:
 
 > [!NOTE]
-> The command shown in the "command" field may look different since it contains the command to run the server with your specific runtime.
+> The command shown might look different in the "command" field as it contains the command specific to your runtime.
 
 You should see the following user interface:
 
@@ -45,7 +45,7 @@ You should see the following user interface:
 
 2. Select "Tools" and then "listTools". You should see "Add" appear. Click "Add" and fill in the parameter values.
 
-   You should get a response like this, showing the result from the "add" tool:
+   You should get the following response, which is the result from the "add" tool:
 
    ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.en.png)
 
@@ -53,36 +53,36 @@ Congratulations, you’ve successfully created and run your first server!
 
 ### Official SDKs
 
-MCP offers official SDKs for multiple languages:
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Maintained in collaboration with Microsoft
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Maintained in collaboration with Spring AI
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - The official TypeScript implementation
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - The official Python implementation
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - The official Kotlin implementation
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Maintained in collaboration with Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - The official Rust implementation
+MCP offers official SDKs for several languages:  
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Maintained in collaboration with Microsoft  
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Maintained in collaboration with Spring AI  
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - The official TypeScript implementation  
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - The official Python implementation  
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - The official Kotlin implementation  
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Maintained in collaboration with Loopwork AI  
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - The official Rust implementation  
 
 ## Key Takeaways
 
-- Setting up an MCP development environment is easy with language-specific SDKs
-- Building MCP servers involves creating and registering tools with well-defined schemas
-- Testing and debugging are crucial for building reliable MCP implementations
+- Setting up an MCP development environment is simple with language-specific SDKs  
+- Building MCP servers involves creating and registering tools with clear schemas  
+- Testing and debugging are critical for reliable MCP implementations  
 
 ## Samples
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)  
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
+- [JavaScript Calculator](../samples/javascript/README.md)  
+- [TypeScript Calculator](../samples/typescript/README.md)  
+- [Python Calculator](../../../../03-GettingStarted/samples/python)  
 
 ## Assignment
 
-Create a simple MCP server with a tool of your choice:
-1. Implement the tool in your preferred language (.NET, Java, Python, or JavaScript).
-2. Define input parameters and return values.
-3. Run the inspector tool to verify the server works as expected.
-4. Test the implementation with various inputs.
+Create a simple MCP server with a tool of your choice:  
+1. Implement the tool in your preferred language (.NET, Java, Python, or JavaScript).  
+2. Define input parameters and return values.  
+3. Run the inspector tool to verify the server works as expected.  
+4. Test the implementation with various inputs.  
 
 ## Solution
 
@@ -90,9 +90,9 @@ Create a simple MCP server with a tool of your choice:
 
 ## Additional Resources
 
-- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
-- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
+- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
 
 ## What's next
 

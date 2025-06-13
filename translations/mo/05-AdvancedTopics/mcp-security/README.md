@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ba9c96a7c7901faa1d26c8ec7ad56d2c",
-  "translation_date": "2025-06-02T20:10:28+00:00",
+  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
+  "translation_date": "2025-06-12T23:13:10+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "mo"
 }
@@ -336,7 +336,11 @@ In the preceding code, we have:
 
 ## What's next
 
-- [Web search](../web-search-mcp/README.md)
+- [5.9 Web search](../web-search-mcp/README.md)
 
 **Disclaimer**:  
-Dis document ha bin transleit yusim AI transleit sarvis [Co-op Translator](https://github.com/Azure/co-op-translator). Taem mifala traim mekem i stret, plis save se ol transleit we wanpela masin i mekim inap gat ol rong o ol samting we i no stret. Ol original dokumen long enpela lanwis em i stap olsem trupela soes. Long ol impoten samting, em gutpela long yusim transleit we wanpela profesonal manmeri i mekim. Mifala no gat risponsibiliti long ol misangarap o ol rong tingting we i kamap long yusim dispela transleit.
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+Could you please clarify what language "mo" refers to? There are multiple possibilities (e.g., Moldovan, a code for a language, or something else). This will help me provide the correct translation.

@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a621fc52c7daec552eb8b3b48c0361dd",
-  "translation_date": "2025-06-02T19:41:02+00:00",
+  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
+  "translation_date": "2025-06-12T22:56:37+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "en"
 }
 -->
 ## Sampling and Routing Architecture in MCP
 
-Sampling is a key part of the Model Context Protocol (MCP) that enables efficient processing and routing of requests. It involves examining incoming requests to decide which model or service is best suited to handle them, based on factors like content type, user context, and system load.
+Sampling is a key part of the Model Context Protocol (MCP) that enables efficient processing and routing of requests. It involves analyzing incoming requests to identify the best model or service to handle them, based on factors like content type, user context, and system load.
 
-By combining sampling and routing, you can build a robust architecture that maximizes resource use and ensures high availability. Sampling helps classify requests, while routing sends them to the right models or services.
+By combining sampling and routing, you can build a robust architecture that maximizes resource use and ensures high availability. Sampling helps classify requests, while routing directs them to the right models or services.
 
 The diagram below shows how sampling and routing work together in a complete MCP architecture:
 
@@ -82,7 +82,7 @@ flowchart TB
 
 ## What's next
 
-- [Sampling](../mcp-sampling/README.md)
+- [5.6 Sampling](../mcp-sampling/README.md)
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

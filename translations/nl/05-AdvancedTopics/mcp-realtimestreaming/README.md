@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b41174ac781ebf228b2043cbdfc09105",
-  "translation_date": "2025-06-12T00:38:20+00:00",
+  "original_hash": "195f7287638b77a549acadd96c8f981c",
+  "translation_date": "2025-06-13T00:19:46+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimestreaming/README.md",
   "language_code": "nl"
 }
@@ -11,37 +11,37 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Overzicht
 
-Real-time data streaming is tegenwoordig onmisbaar in een wereld die steeds meer data-gedreven is, waarbij bedrijven en applicaties directe toegang tot informatie nodig hebben om tijdig beslissingen te kunnen nemen. Het Model Context Protocol (MCP) vormt een belangrijke stap vooruit in het optimaliseren van deze real-time streamingprocessen, door de efficiëntie van dataverwerking te verbeteren, de contextuele integriteit te waarborgen en de algehele systeemprestaties te verhogen.
+Real-time data streaming is tegenwoordig essentieel in een wereld die steeds meer door data wordt aangedreven, waarbij bedrijven en applicaties directe toegang tot informatie nodig hebben om tijdig beslissingen te kunnen nemen. Het Model Context Protocol (MCP) vormt een belangrijke stap voorwaarts in het optimaliseren van deze real-time streamingprocessen, door de efficiëntie van dataverwerking te verbeteren, de contextuele integriteit te waarborgen en de algehele systeemprestaties te verhogen.
 
-Deze module onderzoekt hoe MCP real-time data streaming transformeert door een gestandaardiseerde aanpak te bieden voor contextbeheer tussen AI-modellen, streamingplatformen en applicaties.
+In deze module wordt onderzocht hoe MCP real-time data streaming transformeert door een gestandaardiseerde aanpak te bieden voor contextbeheer tussen AI-modellen, streamingplatforms en applicaties.
 
 ## Introductie tot Real-Time Data Streaming
 
-Real-time data streaming is een technologisch paradigma dat continue overdracht, verwerking en analyse van data mogelijk maakt zodra deze wordt gegenereerd, waardoor systemen direct kunnen reageren op nieuwe informatie. In tegenstelling tot traditionele batchverwerking, die werkt met statische datasets, verwerkt streaming data in beweging en levert inzichten en acties met minimale vertraging.
+Real-time data streaming is een technologische benadering die continue overdracht, verwerking en analyse van data mogelijk maakt zodra deze wordt gegenereerd, waardoor systemen direct kunnen reageren op nieuwe informatie. In tegenstelling tot traditionele batchverwerking, die werkt met statische datasets, verwerkt streaming data terwijl deze binnenkomt, wat inzichten en acties met minimale vertraging oplevert.
 
-### Kernbegrippen van Real-Time Data Streaming:
+### Kernconcepten van Real-Time Data Streaming:
 
-- **Continue Datastroom**: Data wordt verwerkt als een onafgebroken, nooit eindigende stroom van gebeurtenissen of records.
-- **Lage Latentie Verwerking**: Systemen zijn ontworpen om de tijd tussen datageneratie en verwerking te minimaliseren.
-- **Schaalbaarheid**: Streamingarchitecturen moeten variabele datavolumes en -snelheden aankunnen.
-- **Fouttolerantie**: Systemen moeten veerkrachtig zijn tegen storingen om ononderbroken datastromen te garanderen.
+- **Continue Dataflow**: Data wordt verwerkt als een ononderbroken stroom van gebeurtenissen of records.
+- **Lage Latentie Verwerking**: Systemen zijn ontworpen om de tijd tussen datageneratie en verwerking zo kort mogelijk te houden.
+- **Schaalbaarheid**: Streamingarchitecturen moeten omgaan met variabele datavolumes en -snelheden.
+- **Fouttolerantie**: Systemen moeten bestand zijn tegen storingen om een ononderbroken datastroom te garanderen.
 - **Stateful Verwerking**: Het behouden van context over gebeurtenissen heen is cruciaal voor zinvolle analyses.
 
 ### Het Model Context Protocol en Real-Time Streaming
 
 Het Model Context Protocol (MCP) pakt verschillende belangrijke uitdagingen aan in real-time streamingomgevingen:
 
-1. **Contextuele Continuïteit**: MCP standaardiseert hoe context wordt behouden over gedistribueerde streamingcomponenten, zodat AI-modellen en verwerkingsknooppunten toegang hebben tot relevante historische en omgevingscontext.
+1. **Contextuele Continuïteit**: MCP standaardiseert hoe context wordt behouden over gedistribueerde streamingcomponenten, zodat AI-modellen en verwerkingsnodes toegang hebben tot relevante historische en omgevingscontext.
 
-2. **Efficiënt State Management**: Door gestructureerde mechanismen voor contextoverdracht te bieden, vermindert MCP de overhead van statebeheer in streamingpipelines.
+2. **Efficiënt State Management**: Door gestructureerde mechanismen voor contextoverdracht te bieden, vermindert MCP de overhead van statebeheer in streaming pipelines.
 
-3. **Interoperabiliteit**: MCP creëert een gemeenschappelijke taal voor contextdeling tussen verschillende streamingtechnologieën en AI-modellen, wat flexibele en uitbreidbare architecturen mogelijk maakt.
+3. **Interoperabiliteit**: MCP creëert een gemeenschappelijke taal voor contextdeling tussen diverse streamingtechnologieën en AI-modellen, wat flexibelere en uitbreidbare architecturen mogelijk maakt.
 
 4. **Streaming-Geoptimaliseerde Context**: MCP-implementaties kunnen prioriteren welke contextelementen het meest relevant zijn voor realtime besluitvorming, met optimalisatie voor zowel prestaties als nauwkeurigheid.
 
-5. **Adaptieve Verwerking**: Met goed contextbeheer via MCP kunnen streamingsystemen dynamisch hun verwerking aanpassen op basis van veranderende omstandigheden en patronen in de data.
+5. **Adaptieve Verwerking**: Met goed contextbeheer via MCP kunnen streaming systemen hun verwerking dynamisch aanpassen aan veranderende omstandigheden en patronen in de data.
 
-In moderne toepassingen, van IoT-sensornetwerken tot financiële handelsplatformen, maakt de integratie van MCP met streamingtechnologieën intelligentere, contextbewuste verwerking mogelijk die adequaat kan reageren op complexe, evoluerende situaties in real time.
+In moderne toepassingen, van IoT-sensornetwerken tot financiële handelsplatformen, maakt de integratie van MCP met streamingtechnologieën intelligentere, contextbewuste verwerking mogelijk die adequaat kan reageren op complexe en veranderende situaties in real time.
 
 ## Leerdoelen
 
@@ -51,50 +51,50 @@ Aan het einde van deze les kun je:
 - Uitleggen hoe het Model Context Protocol (MCP) real-time data streaming verbetert
 - MCP-gebaseerde streamingoplossingen implementeren met populaire frameworks zoals Kafka en Pulsar
 - Fouttolerante, hoogpresterende streamingarchitecturen ontwerpen en implementeren met MCP
-- MCP-concepten toepassen op use cases in IoT, financiële handel en AI-gedreven analytics
+- MCP-concepten toepassen op IoT-, financiële handels- en AI-gedreven analysetoepassingen
 - Opkomende trends en toekomstige innovaties in MCP-gebaseerde streamingtechnologieën evalueren
 
 ### Definitie en Belang
 
-Real-time data streaming omvat het continu genereren, verwerken en leveren van data met minimale vertraging. In tegenstelling tot batchverwerking, waarbij data wordt verzameld en in groepen verwerkt, wordt streamingdata stapsgewijs verwerkt zodra het binnenkomt, wat directe inzichten en acties mogelijk maakt.
+Real-time data streaming houdt in dat data continu wordt gegenereerd, verwerkt en geleverd met minimale vertraging. In tegenstelling tot batchverwerking, waarbij data in groepen wordt verzameld en verwerkt, wordt streamingdata stapsgewijs verwerkt zodra het binnenkomt, wat onmiddellijke inzichten en acties mogelijk maakt.
 
 Belangrijke kenmerken van real-time data streaming zijn:
 
-- **Lage Latentie**: Data verwerken en analyseren binnen milliseconden tot seconden
-- **Continue Stroom**: Ononderbroken datastromen vanuit verschillende bronnen
-- **Directe Verwerking**: Data analyseren zodra het binnenkomt, niet in batches
-- **Event-Driven Architectuur**: Reageren op gebeurtenissen zodra ze plaatsvinden
+- **Lage Latentie**: Data wordt binnen milliseconden tot seconden verwerkt en geanalyseerd
+- **Continue Stroom**: Ononderbroken datastromen van diverse bronnen
+- **Onmiddellijke Verwerking**: Data wordt geanalyseerd zodra het binnenkomt, niet in batches
+- **Event-Driven Architectuur**: Reactie op gebeurtenissen zodra deze plaatsvinden
 
-### Uitdagingen in Traditionele Data Streaming
+### Uitdagingen bij Traditionele Data Streaming
 
-Traditionele benaderingen van data streaming kennen diverse beperkingen:
+Traditionele streamingmethoden kennen verschillende beperkingen:
 
 1. **Contextverlies**: Moeilijkheden bij het behouden van context over gedistribueerde systemen heen
-2. **Schaalbaarheidsproblemen**: Uitdagingen bij het opschalen voor hoge volumes en snelheden
+2. **Schaalbaarheidsproblemen**: Moeilijkheden bij het opschalen voor hoge volumes en snelheden van data
 3. **Integratiecomplexiteit**: Problemen met interoperabiliteit tussen verschillende systemen
-4. **Latentiebeheer**: Balanceren tussen doorvoersnelheid en verwerkingstijd
-5. **Dataconsistentie**: Zekerstellen van nauwkeurigheid en volledigheid van data over de gehele stroom
+4. **Latentiebeheer**: Balanceren tussen doorvoer en verwerkingstijd
+5. **Dataconsistentie**: Waarborgen van nauwkeurigheid en volledigheid van data over de hele stroom
 
-## Begrip van het Model Context Protocol (MCP)
+## Begrip van Model Context Protocol (MCP)
 
 ### Wat is MCP?
 
-Het Model Context Protocol (MCP) is een gestandaardiseerd communicatieprotocol dat is ontworpen om efficiënte interactie tussen AI-modellen en applicaties te faciliteren. In de context van real-time data streaming biedt MCP een raamwerk voor:
+Het Model Context Protocol (MCP) is een gestandaardiseerd communicatieprotocol dat efficiënte interactie tussen AI-modellen en applicaties mogelijk maakt. In de context van real-time data streaming biedt MCP een raamwerk voor:
 
-- Het behouden van context gedurende de hele datastroom
+- Het behouden van context door de hele datapijplijn heen
 - Het standaardiseren van data-uitwisselingsformaten
 - Het optimaliseren van de overdracht van grote datasets
-- Het verbeteren van communicatie tussen model-naar-model en model-naar-applicatie
+- Het verbeteren van communicatie tussen model-to-model en model-to-applicatie
 
 ### Kerncomponenten en Architectuur
 
 De MCP-architectuur voor real-time streaming bestaat uit verschillende belangrijke componenten:
 
-1. **Context Handlers**: Beheren en onderhouden contextuele informatie over de streamingpipeline
-2. **Stream Processors**: Verwerken inkomende datastromen met contextbewuste technieken
+1. **Context Handlers**: Beheren en onderhouden contextuele informatie door de streaming pipeline
+2. **Stream Processors**: Verwerken binnenkomende datastromen met contextbewuste technieken
 3. **Protocol Adapters**: Converteren tussen verschillende streamingprotocollen terwijl context behouden blijft
 4. **Context Store**: Efficiënt opslaan en ophalen van contextuele informatie
-5. **Streaming Connectors**: Verbinden met diverse streamingplatformen (Kafka, Pulsar, Kinesis, enz.)
+5. **Streaming Connectors**: Verbinden met diverse streamingplatforms (Kafka, Pulsar, Kinesis, enz.)
 
 ```mermaid
 graph TD
@@ -164,45 +164,45 @@ graph TD
     class DA,Alerts,DL,API apps
 ```
 
-### Hoe MCP Real-Time Data Verwerking Verbeterd
+### Hoe MCP de Real-Time Data Verwerking Verbeterd
 
 MCP pakt traditionele streaminguitdagingen aan door:
 
-- **Contextuele Integriteit**: Relaties tussen datapunten behouden over de hele pipeline
-- **Geoptimaliseerde Overdracht**: Redundantie in data-uitwisseling verminderen via intelligent contextbeheer
-- **Gestandaardiseerde Interfaces**: Consistente API’s bieden voor streamingcomponenten
-- **Verminderde Latentie**: Verwerkingskosten minimaliseren door efficiënte contextafhandeling
-- **Verbeterde Schaalbaarheid**: Horizontaal schalen ondersteunen terwijl context behouden blijft
+- **Contextuele Integriteit**: Het behouden van relaties tussen datapoints over de hele pijplijn
+- **Geoptimaliseerde Overdracht**: Verminderen van redundantie in data-uitwisseling door intelligent contextbeheer
+- **Gestandaardiseerde Interfaces**: Bieden van consistente API’s voor streamingcomponenten
+- **Verminderde Latentie**: Minimaliseren van verwerkingsbelasting door efficiënt contextbeheer
+- **Verbeterde Schaaltbaarheid**: Ondersteunen van horizontale schaalbaarheid terwijl context behouden blijft
 
 ## Integratie en Implementatie
 
-Real-time datastreamingsystemen vereisen een zorgvuldige architecturale opzet en implementatie om zowel prestaties als contextuele integriteit te waarborgen. Het Model Context Protocol biedt een gestandaardiseerde aanpak voor het integreren van AI-modellen en streamingtechnologieën, wat meer geavanceerde, contextbewuste verwerkingspipelines mogelijk maakt.
+Real-time data streaming systemen vereisen een zorgvuldige architecturale aanpak en implementatie om zowel prestaties als contextuele integriteit te waarborgen. Het Model Context Protocol biedt een gestandaardiseerde manier om AI-modellen en streamingtechnologieën te integreren, wat geavanceerdere, contextbewuste verwerkingspipelines mogelijk maakt.
 
-### Overzicht van MCP-integratie in Streamingarchitecturen
+### Overzicht van MCP-integratie in Streaming Architecturen
 
-Het implementeren van MCP in real-time streamingomgevingen omvat diverse belangrijke aandachtspunten:
+Het implementeren van MCP in real-time streamingomgevingen omvat verschillende belangrijke aandachtspunten:
 
-1. **Contextserialisatie en Transport**: MCP biedt efficiënte mechanismen voor het coderen van contextuele informatie binnen streamingdatapakketten, zodat essentiële context de data door de verwerkingspipeline volgt. Dit omvat gestandaardiseerde serialisatieformaten die geoptimaliseerd zijn voor streamingtransport.
+1. **Contextserialisatie en Transport**: MCP biedt efficiënte mechanismen om contextuele informatie te coderen binnen streamingdatapakketten, zodat essentiële context de data door de hele pijplijn volgt. Dit omvat gestandaardiseerde serialisatieformaten die geoptimaliseerd zijn voor streamingtransport.
 
-2. **Stateful Stream Processing**: MCP maakt intelligentere stateful verwerking mogelijk door consistente contextrepresentatie te behouden over verwerkingsknooppunten. Dit is vooral waardevol in gedistribueerde streamingarchitecturen waar statebeheer traditioneel lastig is.
+2. **Stateful Stream Processing**: MCP maakt intelligentere stateful verwerking mogelijk door consistente contextrepresentatie over verwerkingsnodes te behouden. Dit is vooral waardevol in gedistribueerde streamingarchitecturen waar statebeheer traditioneel lastig is.
 
-3. **Event-Tijd versus Verwerkingstijd**: MCP-implementaties in streaming systemen moeten het veelvoorkomende probleem aanpakken van het onderscheid tussen wanneer gebeurtenissen plaatsvonden en wanneer ze worden verwerkt. Het protocol kan temporele context bevatten die event-tijdsemantiek behoudt.
+3. **Event-Tijd vs. Verwerkingstijd**: MCP-implementaties in streaming systemen moeten het onderscheid maken tussen wanneer gebeurtenissen plaatsvonden en wanneer ze worden verwerkt. Het protocol kan temporele context bevatten die event-time semantiek bewaart.
 
-4. **Backpressure Management**: Door contextafhandeling te standaardiseren helpt MCP bij het beheren van backpressure in streamingsystemen, waardoor componenten hun verwerkingscapaciteit kunnen communiceren en de datastroom hierop kunnen aanpassen.
+4. **Backpressure Management**: Door contextbeheer te standaardiseren helpt MCP bij het managen van backpressure in streaming systemen, waardoor componenten hun verwerkingscapaciteit kunnen communiceren en de datastroom kunnen aanpassen.
 
-5. **Context Windowing en Aggregatie**: MCP faciliteert geavanceerdere windowingoperaties door gestructureerde representaties van temporele en relationele context te bieden, wat zinvollere aggregaties over gebeurtenisstromen mogelijk maakt.
+5. **Context Windowing en Aggregatie**: MCP faciliteert geavanceerdere windowing-operaties door gestructureerde representaties van temporele en relationele context te bieden, wat zinvolle aggregaties over eventstromen mogelijk maakt.
 
-6. **Exactly-Once Verwerking**: In streamingsystemen die exactly-once semantiek vereisen, kan MCP verwerkingsmetadata bevatten om de verwerkingsstatus over gedistribueerde componenten te volgen en te verifiëren.
+6. **Exactly-Once Processing**: In streaming systemen die exactly-once semantiek vereisen, kan MCP verwerkingsmetadata bevatten om de verwerkingsstatus over gedistribueerde componenten te volgen en te verifiëren.
 
-De implementatie van MCP in diverse streamingtechnologieën creëert een uniforme aanpak voor contextbeheer, vermindert de noodzaak voor maatwerk integratiecode en versterkt het vermogen van het systeem om betekenisvolle context te behouden terwijl data door de pipeline stroomt.
+De implementatie van MCP over verschillende streamingtechnologieën creëert een uniforme aanpak voor contextbeheer, vermindert de noodzaak voor maatwerk integratiecode en versterkt het vermogen van het systeem om betekenisvolle context te behouden terwijl data door de pijplijn stroomt.
 
 ### MCP in Diverse Data Streaming Frameworks
 
-Deze voorbeelden volgen de huidige MCP-specificatie die zich richt op een JSON-RPC-gebaseerd protocol met verschillende transportmechanismen. De code laat zien hoe je aangepaste transports kunt implementeren die streamingplatformen zoals Kafka en Pulsar integreren, terwijl volledige compatibiliteit met het MCP-protocol behouden blijft.
+Deze voorbeelden volgen de huidige MCP-specificatie die zich richt op een JSON-RPC gebaseerd protocol met verschillende transportmechanismen. De code laat zien hoe je aangepaste transports kunt implementeren die streamingplatforms zoals Kafka en Pulsar integreren, terwijl volledige compatibiliteit met het MCP-protocol behouden blijft.
 
-De voorbeelden zijn ontworpen om te tonen hoe streamingplatformen geïntegreerd kunnen worden met MCP om real-time dataverwerking te bieden, terwijl de contextuele awareness die centraal staat in MCP behouden blijft. Deze aanpak zorgt ervoor dat de codesamples de actuele stand van de MCP-specificatie weergeven per juni 2025.
+De voorbeelden zijn bedoeld om te laten zien hoe streamingplatforms met MCP geïntegreerd kunnen worden voor real-time dataverwerking, terwijl de contextuele bewustwording die centraal staat in MCP behouden blijft. Deze aanpak zorgt ervoor dat de codevoorbeelden nauwkeurig de huidige stand van de MCP-specificatie per juni 2025 weerspiegelen.
 
-MCP kan geïntegreerd worden met populaire streamingframeworks, waaronder:
+MCP kan geïntegreerd worden met populaire streaming frameworks zoals:
 
 #### Apache Kafka Integratie
 
@@ -519,35 +519,35 @@ if __name__ == "__main__":
 Bij het implementeren van MCP voor real-time streaming:
 
 1. **Ontwerp voor Fouttolerantie**:
-   - Implementeer correcte foutafhandeling
+   - Implementeer goede foutafhandeling
    - Gebruik dead-letter queues voor mislukte berichten
    - Ontwerp idempotente processors
 
 2. **Optimaliseer voor Prestaties**:
-   - Stel geschikte bufferformaten in
-   - Gebruik batching waar mogelijk
+   - Stel geschikte buffergroottes in
+   - Gebruik batching waar passend
    - Implementeer backpressure-mechanismen
 
 3. **Monitor en Observeer**:
    - Volg metrics van streamverwerking
-   - Monitor contextpropagatie
-   - Stel alerts in voor afwijkingen
+   - Houd contextpropagatie in de gaten
+   - Stel waarschuwingen in voor afwijkingen
 
 4. **Beveilig je Streams**:
    - Implementeer encryptie voor gevoelige data
    - Gebruik authenticatie en autorisatie
-   - Pas passende toegangscontroles toe
+   - Pas juiste toegangscontrole toe
 
 ### MCP in IoT en Edge Computing
 
 MCP verbetert IoT-streaming door:
 
-- Het behouden van apparaatcontext over de verwerkingspipeline
-- Efficiënte edge-to-cloud datastreaming mogelijk te maken
-- Real-time analytics op IoT-datastreams te ondersteunen
+- Het behouden van device-context door de verwerkingspijplijn heen
+- Efficiënte edge-to-cloud data streaming mogelijk te maken
+- Real-time analytics op IoT-datastromen te ondersteunen
 - Device-to-device communicatie met context te faciliteren
 
-Voorbeeld: Smart City Sensor Networks  
+Voorbeeld: Smart City Sensor Netwerken  
 ```
 Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → Automated Responses
 ```
@@ -557,16 +557,16 @@ Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → 
 MCP biedt aanzienlijke voordelen voor financiële datastreaming:
 
 - Ultra-lage latentie verwerking voor handelsbeslissingen
-- Behoud van transactcontext gedurende de verwerking
-- Ondersteuning van complexe event processing met contextuele awareness
-- Zekerstellen van dataconsistentie over gedistribueerde handelssystemen
+- Behoud van transactiecontext gedurende de verwerking
+- Ondersteuning van complexe eventverwerking met contextbewustzijn
+- Waarborgen van dataconsistentie over gedistribueerde handelssystemen
 
-### Verbetering van AI-gedreven Data Analytics
+### Verbetering van AI-gedreven Data-analyse
 
 MCP opent nieuwe mogelijkheden voor streaming analytics:
 
 - Real-time modeltraining en inferentie
-- Continue leerprocessen van streamingdata
+- Continu leren van streamingdata
 - Contextbewuste feature-extractie
 - Multi-model inferentie pipelines met behouden context
 
@@ -574,23 +574,23 @@ MCP opent nieuwe mogelijkheden voor streaming analytics:
 
 ### Evolutie van MCP in Real-Time Omgevingen
 
-Vooruitkijkend verwachten we dat MCP zich zal ontwikkelen om:
+Vooruitkijkend verwachten we dat MCP zich ontwikkelt om:
 
-- **Quantum Computing Integratie**: Voorbereiden op quantum-gebaseerde streamingsystemen
-- **Edge-Native Verwerking**: Meer contextbewuste verwerking verplaatsen naar edge-apparaten
-- **Autonoom Streambeheer**: Zelfoptimaliserende streamingpipelines
-- **Gefedereerde Streaming**: Gedistribueerde verwerking met behoud van privacy
+- **Integratie met Quantum Computing**: Voorbereiden op quantum-gebaseerde streamingsystemen
+- **Edge-Native Verwerking**: Meer contextbewuste verwerking naar edge devices verplaatsen
+- **Autonoom Streambeheer**: Zelfoptimaliserende streaming pipelines
+- **Federated Streaming**: Gedistribueerde verwerking met behoud van privacy
 
-### Potentiële Technologische Vooruitgang
+### Potentiële Technologische Ontwikkelingen
 
-Opkomende technologieën die de toekomst van MCP-streaming zullen vormgeven:
+Opkomende technologieën die de toekomst van MCP-streaming zullen vormen:
 
-1. **AI-Geoptimaliseerde Streamingprotocollen**: Maatwerkprotocollen specifiek voor AI-workloads
+1. **AI-Geoptimaliseerde Streamingprotocollen**: Maatwerkprotocollen speciaal ontworpen voor AI workloads
 2. **Neuromorfe Computing Integratie**: Hersengeïnspireerde computing voor streamverwerking
-3. **Serverless Streaming**: Event-gedreven, schaalbare streaming zonder infrastructuurbeheer
-4. **Gedistribueerde Context Stores**: Globaal verspreid maar zeer consistente contextbeheer
+3. **Serverless Streaming**: Event-driven, schaalbare streaming zonder infrastructuurbeheer
+4. **Gedistribueerde Context Stores**: Wereldwijd verspreid maar zeer consistente contextbeheer
 
-## Praktijkoefeningen
+## Praktische Oefeningen
 
 ### Oefening 1: Opzetten van een Basis MCP Streaming Pipeline
 
@@ -604,8 +604,8 @@ In deze oefening leer je hoe je:
 
 Maak een complete applicatie die:
 
-- Streamingdata binnenhaalt met MCP
-- De stroom verwerkt terwijl context behouden blijft
+- Streamingdata binnenhaalt via MCP
+- De stream verwerkt met behoud van context
 - Resultaten in real-time visualiseert
 
 ### Oefening 3: Implementeren van Complex Event Processing met MCP
@@ -618,15 +618,15 @@ Geavanceerde oefening die behandelt:
 
 ## Aanvullende Bronnen
 
-- [Model Context Protocol Specification](https://github.com/modelcontextprotocol) - Officiële MCP-specificatie en documentatie  
-- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Leer over Kafka voor streamverwerking  
-- [Apache Pulsar](https://pulsar.apache.org/) - Geünificeerde messaging- en streamingplatform  
-- [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - Uitgebreid boek over streamingarchitecturen  
-- [Microsoft Azure Event Hubs](https://learn.microsoft.com/azure/event-hubs/event-hubs-about) - Beheerde event streamingdienst  
-- [MLflow Documentation](https://mlflow.org/docs/latest/index.html) - Voor ML modeltracking en deployment  
-- [Real-Time Analytics with Apache Storm](https://storm.apache.org/releases/current/index.html) - Verwerkingsframework voor real-time berekeningen  
-- [Flink ML](https://nightlies.apache.org/flink/flink-ml-docs-master/) - Machine learning bibliotheek voor Apache Flink  
-- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Applicaties bouwen met LLMs  
+- [Model Context Protocol Specification](https://github.com/modelcontextprotocol) - Officiële MCP-specificatie en documentatie
+- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Leer over Kafka voor streamverwerking
+- [Apache Pulsar](https://pulsar.apache.org/) - Geünificeerd messaging- en streamingplatform
+- [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - Uitgebreid boek over streamingarchitecturen
+- [Microsoft Azure Event Hubs](https://learn.microsoft.com/azure/event-hubs/event-hubs-about) - Beheerde event streaming service
+- [MLflow Documentation](https://mlflow.org/docs/latest/index.html) - Voor ML model tracking en deployment
+- [Real-Time Analytics with Apache Storm](https://storm.apache.org/releases/current/index.html) - Verwerkingsframework voor real-time berekeningen
+- [Flink ML](https://nightlies.apache.org/flink/flink-ml-docs-master/) - Machine learning bibliotheek voor Apache Flink
+- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Applicaties bouwen met LLMs
 
 ## Leerresultaten
 
@@ -636,12 +636,12 @@ Na het voltooien van deze module kun je:
 - Uitleggen hoe het Model Context Protocol (MCP) real-time data streaming verbetert
 - MCP-gebaseerde streamingoplossingen implementeren met populaire frameworks zoals Kafka en Pulsar
 - Fouttolerante, hoogpresterende streamingarchitecturen ontwerpen en implementeren met MCP
-- MCP-concepten toepassen op use cases in IoT, financiële handel en AI-gedreven analytics
+- MCP-concepten toepassen op IoT-, financiële handels- en AI-gedreven analysetoepassingen
 - Opkomende trends en toekomstige innovaties in MCP-gebaseerde streamingtechnologieën evalueren
 
 ## Wat nu?
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.11 Realtime Search](../mcp-realtimesearch/README.md)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor belangrijke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b41174ac781ebf228b2043cbdfc09105",
-  "translation_date": "2025-06-12T00:44:24+00:00",
+  "original_hash": "195f7287638b77a549acadd96c8f981c",
+  "translation_date": "2025-06-13T00:52:37+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimestreaming/README.md",
   "language_code": "hu"
 }
@@ -11,37 +11,37 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Áttekintés
 
-A valós idejű adatfolyamok napjaink adatközpontú világában elengedhetetlenné váltak, ahol a vállalatok és alkalmazások azonnali hozzáférést igényelnek az információkhoz a gyors döntéshozatal érdekében. A Model Context Protocol (MCP) jelentős előrelépést képvisel ezen valós idejű streaming folyamatok optimalizálásában, javítva az adatfeldolgozás hatékonyságát, megőrizve a kontextuális integritást, és növelve az egész rendszer teljesítményét.
+A valós idejű adatfolyamok mára elengedhetetlenek a mai, adatközpontú világban, ahol a vállalatoknak és alkalmazásoknak azonnali hozzáférésre van szükségük az információkhoz a gyors döntéshozatal érdekében. A Model Context Protocol (MCP) jelentős előrelépést jelent ezeknek a valós idejű adatfolyamoknak az optimalizálásában, javítva az adatfeldolgozás hatékonyságát, megőrizve a kontextuális integritást és növelve az egész rendszer teljesítményét.
 
-Ez a modul bemutatja, hogyan alakítja át az MCP a valós idejű adatfolyamokat azáltal, hogy egységes megközelítést kínál a kontextuskezelésre AI modellek, streaming platformok és alkalmazások között.
+Ez a modul bemutatja, hogyan alakítja át az MCP a valós idejű adatfolyamokat azáltal, hogy szabványosított megközelítést kínál a kontextuskezeléshez AI modellek, adatfolyam-platformok és alkalmazások között.
 
 ## Bevezetés a valós idejű adatfolyamokba
 
-A valós idejű adatfolyam egy technológiai paradigma, amely lehetővé teszi az adatok folyamatos átvitelét, feldolgozását és elemzését az adatok keletkezésekor, így a rendszerek azonnal reagálhatnak az új információkra. Ellentétben a hagyományos, statikus adathalmazokon alapuló kötegelt feldolgozással, a streaming folyamatosan mozgásban lévő adatokat dolgoz fel, minimális késleltetéssel nyújtva betekintést és műveleteket.
+A valós idejű adatfolyam-technológia lehetővé teszi az adatok folyamatos továbbítását, feldolgozását és elemzését az adatok keletkezésének pillanatában, így a rendszerek azonnal reagálhatnak az új információkra. Ellentétben a hagyományos, statikus adatállományokon végzett kötegelt feldolgozással, az adatfolyam feldolgozás mozgó adatokat kezel, minimális késleltetéssel szolgáltatva betekintéseket és műveleteket.
 
-### A valós idejű adatfolyamok alapvető fogalmai:
+### A valós idejű adatfolyam alapfogalmai:
 
 - **Folyamatos adatáramlás**: Az adatok események vagy rekordok végtelen folyamaként kerülnek feldolgozásra.
-- **Alacsony késleltetésű feldolgozás**: A rendszerek úgy vannak tervezve, hogy minimalizálják az adat keletkezése és feldolgozása közötti időt.
-- **Skálázhatóság**: A streaming architektúráknak változó adatvolumeneket és sebességeket kell kezelniük.
-- **Hibatűrés**: A rendszereknek ellenállónak kell lenniük a hibákkal szemben az adatfolyam megszakításának elkerülése érdekében.
+- **Alacsony késleltetésű feldolgozás**: A rendszerek úgy vannak tervezve, hogy minimalizálják az adat keletkezése és feldolgozása közti időt.
+- **Skálázhatóság**: Az adatfolyam-architektúráknak képesnek kell lenniük változó adatvolumen és sebesség kezelésére.
+- **Hibatűrés**: A rendszereknek ellenállónak kell lenniük a hibákkal szemben az adatfolyam megszakítás nélküli fenntartásához.
 - **Állapotmegőrző feldolgozás**: A kontextus fenntartása az események között elengedhetetlen a releváns elemzéshez.
 
-### A Model Context Protocol és a valós idejű streaming
+### A Model Context Protocol és a valós idejű adatfolyamok
 
-A Model Context Protocol (MCP) több kulcsfontosságú kihívást kezel a valós idejű streaming környezetekben:
+A Model Context Protocol (MCP) több kulcsfontosságú kihívást old meg a valós idejű adatfolyam-környezetekben:
 
-1. **Kontextuális folytonosság**: Az MCP egységesíti, hogyan őrződik meg a kontextus a különböző, elosztott streaming komponensek között, biztosítva, hogy az AI modellek és feldolgozó csomópontok hozzáférjenek a releváns történelmi és környezeti információkhoz.
+1. **Kontextuális folytonosság**: Az MCP szabványosítja, hogyan őrizzük meg a kontextust az elosztott adatfolyam-összetevők között, biztosítva, hogy az AI modellek és feldolgozó csomópontok hozzáférjenek a releváns történeti és környezeti információkhoz.
 
-2. **Hatékony állapotkezelés**: Strukturált mechanizmusokat nyújtva a kontextus továbbítására, az MCP csökkenti az állapotkezelés terheit a streaming csővezetékekben.
+2. **Hatékony állapotkezelés**: Strukturált mechanizmusokat kínálva a kontextus továbbítására, az MCP csökkenti az állapotkezelés overhead-jét az adatfolyam-pipeline-okban.
 
-3. **Interoperabilitás**: Közös nyelvet teremt a különböző streaming technológiák és AI modellek közötti kontextusmegosztáshoz, rugalmasabb és bővíthetőbb architektúrákat lehetővé téve.
+3. **Interoperabilitás**: Közös nyelvet teremt a különböző adatfolyam-technológiák és AI modellek közti kontextusmegosztáshoz, lehetővé téve rugalmasabb és bővíthetőbb architektúrák kialakítását.
 
-4. **Streamingre optimalizált kontextus**: Az MCP megvalósítások képesek priorizálni, hogy mely kontextuselemek a legfontosabbak a valós idejű döntéshozatalhoz, optimalizálva a teljesítményt és a pontosságot.
+4. **Adatfolyamra optimalizált kontextus**: Az MCP implementációk képesek priorizálni, mely kontextuselemek a legfontosabbak a valós idejű döntéshozatalhoz, optimalizálva a teljesítményt és pontosságot.
 
-5. **Adaptív feldolgozás**: Megfelelő kontextuskezeléssel az MCP-n keresztül a streaming rendszerek dinamikusan igazíthatják a feldolgozást az adatok változó körülményeihez és mintáihoz.
+5. **Adaptív feldolgozás**: Megfelelő kontextuskezeléssel az MCP-n keresztül az adatfolyam-rendszerek dinamikusan tudják módosítani a feldolgozást az adatokban bekövetkező változások és mintázatok alapján.
 
-A modern alkalmazásokban, az IoT szenzorhálózatoktól a pénzügyi kereskedési platformokig, az MCP integrációja a streaming technológiákkal intelligensebb, kontextusérzékeny feldolgozást tesz lehetővé, amely valós időben képes megfelelően reagálni a bonyolult, változó helyzetekre.
+A modern alkalmazásokban, az IoT szenzorhálózatoktól a pénzügyi kereskedési platformokig, az MCP integrációja az adatfolyam-technológiákkal intelligensebb, kontextusérzékeny feldolgozást tesz lehetővé, amely valós időben reagálhat összetett, folyamatosan változó helyzetekre.
 
 ## Tanulási célok
 
@@ -49,52 +49,52 @@ A lecke végére képes leszel:
 
 - Megérteni a valós idejű adatfolyamok alapjait és kihívásait
 - Elmagyarázni, hogyan javítja a Model Context Protocol (MCP) a valós idejű adatfolyamokat
-- Megvalósítani MCP-alapú streaming megoldásokat népszerű keretrendszerek, mint a Kafka és Pulsar segítségével
-- Tervezni és üzembe helyezni hibatűrő, nagy teljesítményű streaming architektúrákat MCP-vel
-- Alkalmazni az MCP koncepciókat IoT, pénzügyi kereskedés és AI-alapú elemzések területén
-- Értékelni az MCP-alapú streaming technológiák fejlődő trendjeit és jövőbeli innovációit
+- MCP-alapú adatfolyam-megoldásokat megvalósítani népszerű keretrendszerekben, mint a Kafka és Pulsar
+- Tervezni és üzembe helyezni hibatűrő, nagy teljesítményű adatfolyam-architektúrákat MCP-vel
+- Alkalmazni az MCP koncepciókat IoT, pénzügyi kereskedés és AI-alapú analitika területein
+- Értékelni az MCP-alapú adatfolyam-technológiák jövőbeli trendjeit és innovációit
 
 ### Meghatározás és jelentőség
 
-A valós idejű adatfolyam folyamatos adatgenerálást, feldolgozást és továbbítást jelent minimális késleltetéssel. Ellentétben a kötegelt feldolgozással, ahol az adatokat csoportokban gyűjtik és dolgozzák fel, a streaming adatokat érkezésük szerint fokozatosan dolgozzák fel, lehetővé téve az azonnali betekintést és beavatkozást.
+A valós idejű adatfolyam azt jelenti, hogy az adatok folyamatosan keletkeznek, feldolgozásra és továbbításra kerülnek minimális késleltetéssel. Ellentétben a kötegelt feldolgozással, ahol az adatokat csoportosan gyűjtik és dolgozzák fel, az adatfolyamok esetében az adatokat azonnal, apránként dolgozzák fel, így azonnali betekintések és műveletek válhatnak lehetővé.
 
 A valós idejű adatfolyam fő jellemzői:
 
-- **Alacsony késleltetés**: Az adatok feldolgozása és elemzése milliszekundumok vagy másodpercek alatt
+- **Alacsony késleltetés**: Az adatok feldolgozása és elemzése milliszekundumoktól másodpercekig
 - **Folyamatos áramlás**: Megszakítás nélküli adatfolyamok különböző forrásokból
-- **Azonnali feldolgozás**: Az adatok érkezésük szerint történő elemzése, nem kötegelt módon
-- **Eseményvezérelt architektúra**: Az események bekövetkezése szerinti reagálás
+- **Azonnali feldolgozás**: Az adatok érkezésük pillanatában történő elemzése, nem kötegekben
+- **Eseményvezérelt architektúra**: Az eseményekre azonnal reagáló rendszer
 
-### Hagyományos adatfolyamok kihívásai
+### Hagyományos adatfolyam-kihívások
 
-A hagyományos adatfolyam-kezelés több korlátozással küzd:
+A hagyományos adatfolyam-megoldások több korláttal küzdenek:
 
-1. **Kontextusvesztés**: Nehézségek a kontextus fenntartásában elosztott rendszerek között
-2. **Skálázási problémák**: Nehézségek a nagy mennyiségű, gyors adat kezelésében
-3. **Integrációs komplexitás**: Különböző rendszerek közötti interoperabilitási problémák
-4. **Késleltetés kezelése**: Az átbocsátóképesség és a feldolgozási idő egyensúlyának megtalálása
-5. **Adatkonzisztencia**: Az adatok pontosságának és teljességének biztosítása az egész adatfolyamban
+1. **Kontextusvesztés**: Nehézségek a kontextus megőrzésében elosztott rendszerek között
+2. **Skálázási problémák**: Nehézségek a nagy volumenű és nagy sebességű adatok kezelésében
+3. **Integrációs bonyodalmak**: Különböző rendszerek közötti interoperabilitás nehézségei
+4. **Késleltetés kezelése**: A feldolgozási idő és átbocsátóképesség egyensúlyának megteremtése
+5. **Adatkonzisztencia**: Az adatpontosság és teljesség biztosítása az egész adatfolyamon át
 
 ## A Model Context Protocol (MCP) megértése
 
 ### Mi az MCP?
 
-A Model Context Protocol (MCP) egy szabványosított kommunikációs protokoll, amely hatékony együttműködést tesz lehetővé AI modellek és alkalmazások között. A valós idejű adatfolyamok kontextusában az MCP keretet biztosít:
+A Model Context Protocol (MCP) egy szabványosított kommunikációs protokoll, amely hatékony interakciót tesz lehetővé AI modellek és alkalmazások között. A valós idejű adatfolyamok területén az MCP keretrendszert biztosít a következőkhöz:
 
-- A kontextus megőrzésére az adatcsővezeték teljes hosszában
-- Az adatcsere formátumok egységesítésére
-- Nagy adathalmazok továbbításának optimalizálására
-- Modell-model és modell-alkalmazás közötti kommunikáció javítására
+- A kontextus megőrzése az egész adatfeldolgozási folyamat során
+- Az adatcsereformátumok szabványosítása
+- Nagy adathalmazok továbbításának optimalizálása
+- Modell-modell és modell-alkalmazás közti kommunikáció javítása
 
-### Alapvető komponensek és architektúra
+### Főbb komponensek és architektúra
 
-Az MCP architektúra valós idejű streaminghez több kulcselemből áll:
+Az MCP valós idejű adatfolyamokra tervezett architektúrája több kulcsfontosságú elemből áll:
 
-1. **Context Handlers**: A kontextuális információk kezelése és fenntartása a streaming csővezetékben
-2. **Stream Processors**: Kontextusérzékeny technikákkal dolgozzák fel az érkező adatfolyamokat
-3. **Protocol Adapters**: Különböző streaming protokollok közötti átalakítás kontextusmegőrzéssel
-4. **Context Store**: Hatékony kontextusadat-tárolás és lekérés
-5. **Streaming Connectors**: Kapcsolódás különböző streaming platformokhoz (Kafka, Pulsar, Kinesis stb.)
+1. **Context Handlers**: Kezelik és fenntartják a kontextuális információkat az adatfolyam-pipeline során
+2. **Stream Processors**: Kontextusérzékeny módszerekkel dolgozzák fel a beérkező adatfolyamokat
+3. **Protocol Adapters**: Átalakítják a különböző adatfolyam-protokollokat miközben megőrzik a kontextust
+4. **Context Store**: Hatékonyan tárolja és hívja elő a kontextuális adatokat
+5. **Streaming Connectors**: Kapcsolódnak különböző adatfolyam-platformokhoz (Kafka, Pulsar, Kinesis stb.)
 
 ```mermaid
 graph TD
@@ -166,43 +166,43 @@ graph TD
 
 ### Hogyan javítja az MCP a valós idejű adatkezelést
 
-Az MCP a hagyományos streaming kihívásokat a következő módokon kezeli:
+Az MCP a hagyományos adatfolyam-kihívásokat az alábbi módokon kezeli:
 
-- **Kontextuális integritás**: Fenntartja az adatpontok közötti kapcsolatokat az egész adatcsővezetékben
-- **Optimalizált továbbítás**: Csökkenti az adatcsere redundanciáját intelligens kontextuskezeléssel
-- **Szabványosított interfészek**: Egységes API-kat biztosít a streaming komponensek számára
-- **Csökkentett késleltetés**: Minimalizálja a feldolgozási többletterhet hatékony kontextuskezeléssel
-- **Növelt skálázhatóság**: Támogatja a horizontális skálázást a kontextus megőrzése mellett
+- **Kontextuális integritás**: Megőrzi az adatok közti kapcsolatokat az egész feldolgozási láncon át
+- **Optimalizált továbbítás**: Csökkenti az adatismétlést intelligens kontextuskezeléssel
+- **Szabványos interfészek**: Egységes API-kat biztosít az adatfolyam-összetevők számára
+- **Csökkentett késleltetés**: Minimalizálja a feldolgozási overhead-et hatékony kontextuskezeléssel
+- **Fokozott skálázhatóság**: Támogatja a vízszintes skálázást a kontextus megőrzése mellett
 
 ## Integráció és megvalósítás
 
-A valós idejű adatfolyam rendszerek gondos architektúra-tervezést és megvalósítást igényelnek a teljesítmény és a kontextuális integritás megőrzése érdekében. A Model Context Protocol egységes megközelítést kínál AI modellek és streaming technológiák integrációjára, lehetővé téve kifinomultabb, kontextusérzékeny feldolgozó csővezetékek létrehozását.
+A valós idejű adatfolyam-rendszerek gondos architekturális tervezést és kivitelezést igényelnek a teljesítmény és a kontextuális integritás fenntartásához. A Model Context Protocol szabványosított megközelítést kínál AI modellek és adatfolyam-technológiák integrálására, lehetővé téve kifinomultabb, kontextusérzékeny feldolgozó pipeline-ok kialakítását.
 
-### MCP integráció áttekintése streaming architektúrákban
+### MCP integráció áttekintése adatfolyam-architektúrákban
 
-Az MCP megvalósítása valós idejű streaming környezetekben több fontos szempontot foglal magában:
+Az MCP valós idejű adatfolyamokban történő alkalmazásakor több fontos szempontot kell figyelembe venni:
 
-1. **Kontextus szerializálása és továbbítása**: Az MCP hatékony mechanizmusokat biztosít a kontextuális információk kódolására az adatcsomagokban, így a lényeges kontextus végigkíséri az adatot a feldolgozás során. Ez magában foglalja a streaminghez optimalizált, szabványosított szerializációs formátumokat.
+1. **Kontextus szerializáció és szállítás**: Az MCP hatékony mechanizmusokat kínál a kontextuális információk kódolására az adatfolyam csomagokban, biztosítva, hogy a lényeges kontextus végigkövesse az adatot a feldolgozás során. Ez magában foglalja a streaming szállításra optimalizált szabványos szerializációs formátumokat.
 
-2. **Állapotmegőrző stream feldolgozás**: Az MCP támogatja az intelligensebb állapotmegőrző feldolgozást azáltal, hogy egységes kontextusábrázolást tart fenn a feldolgozó csomópontok között. Ez különösen értékes az elosztott streaming architektúrákban, ahol az állapotkezelés hagyományosan nehézséget jelent.
+2. **Állapotmegőrző adatfolyam-feldolgozás**: Az MCP lehetővé teszi az intelligensebb, állapotmegőrző feldolgozást azáltal, hogy egységes kontextusábrázolást tart fenn a feldolgozó csomópontok között. Ez különösen fontos elosztott adatfolyam-architektúrákban, ahol az állapotkezelés hagyományosan kihívást jelent.
 
-3. **Eseményidő és feldolgozási idő megkülönböztetése**: Az MCP megvalósításoknak kezelniük kell azt a kihívást, hogy megkülönböztessék, mikor történt egy esemény, és mikor dolgozzák fel azt. A protokoll képes beépíteni az eseményidő kontextust, amely megőrzi az események időbeli jelentését.
+3. **Eseményidő vs. feldolgozási idő**: Az MCP implementációknak kezelniük kell az esemény bekövetkezésének és feldolgozásának időpontja közti különbséget. A protokoll képes időbeli kontextust is tartalmazni, megőrizve az eseményidő szemantikáját.
 
-4. **Backpressure kezelés**: Az egységes kontextuskezeléssel az MCP segíti a backpressure menedzsmentet a streaming rendszerekben, lehetővé téve a komponensek számára, hogy kommunikálják feldolgozási kapacitásukat és ennek megfelelően állítsák a forgalmat.
+4. **Backpressure kezelés**: A kontextuskezelés szabványosításával az MCP segít kezelni a backpressure-t az adatfolyam-rendszerekben, lehetővé téve az összetevők számára, hogy kommunikálják feldolgozási kapacitásukat és ennek megfelelően szabályozzák az adatáramlást.
 
-5. **Kontextus ablakolás és aggregáció**: Az MCP lehetővé teszi a kifinomultabb ablakolási műveleteket az időbeli és relációs kontextus strukturált ábrázolásával, így értelmesebb aggregációk végezhetők az eseményfolyamokon.
+5. **Kontextusablakok és aggregáció**: Az MCP támogatja az összetettebb ablakműveleteket, strukturált időbeli és relációs kontextusábrázolásokat biztosítva, amelyek lehetővé teszik az eseményfolyamok értelmesebb aggregálását.
 
-6. **Pontosan egyszeri feldolgozás**: Az olyan streaming rendszerekben, amelyek pontosan egyszeri feldolgozási szemantikát igényelnek, az MCP képes feldolgozási metaadatokat beépíteni a feldolgozási állapot nyomon követésére és ellenőrzésére az elosztott komponensek között.
+6. **Pontosan egyszeri feldolgozás**: Olyan adatfolyam-rendszerekben, amelyek pontosan egyszeri feldolgozást igényelnek, az MCP képes feldolgozási metaadatokat is tartalmazni, amelyek segítik a feldolgozási állapot nyomon követését és ellenőrzését az elosztott komponensek között.
 
-Az MCP különböző streaming technológiákban történő alkalmazása egységes kontextuskezelést hoz létre, csökkentve az egyedi integrációs kódok szükségességét, miközben javítja a rendszer képességét a releváns kontextus megőrzésére az adatfolyam során.
+Az MCP különböző adatfolyam-technológiákra való kiterjesztése egységes kontextuskezelési megközelítést hoz létre, csökkentve az egyedi integrációs kódok szükségességét, miközben növeli a rendszer képességét a releváns kontextus megőrzésére az adatfolyam feldolgozása során.
 
 ### MCP különböző adatfolyam-keretrendszerekben
 
-Az alábbi példák az aktuális MCP specifikáción alapulnak, amely egy JSON-RPC alapú protokollt használ eltérő továbbítási mechanizmusokkal. A kód bemutatja, hogyan valósíthatók meg egyedi átviteli megoldások, amelyek integrálják a Kafka és Pulsar streaming platformokat, miközben teljes kompatibilitást biztosítanak az MCP protokollal.
+Az alábbi példák az aktuális MCP specifikációt követik, amely egy JSON-RPC alapú protokollra épül, különböző szállítási mechanizmusokkal. A kód bemutatja, hogyan lehet egyedi szállítókat megvalósítani, amelyek integrálják a Kafka és Pulsar adatfolyam-platformokat, miközben teljes kompatibilitást tartanak fenn az MCP protokollal.
 
-A példák célja, hogy megmutassák, miként lehet a streaming platformokat MCP-vel összekapcsolni valós idejű adatfeldolgozás érdekében, miközben megőrzik az MCP központi kontextusérzékenységét. Ez az eljárás biztosítja, hogy a kódminták pontosan tükrözzék az MCP specifikáció aktuális állapotát 2025 júniusában.
+A példák célja megmutatni, hogyan lehet az adatfolyam-platformokat MCP-vel összekapcsolni valós idejű adatfeldolgozás érdekében, miközben megőrzik a MCP központi kontextusérzékenységét. Ez biztosítja, hogy a kódminták pontosan tükrözzék az MCP specifikáció 2025 júniusi állapotát.
 
-Az MCP integrálható népszerű streaming keretrendszerekbe, többek között:
+Az MCP integrálható népszerű adatfolyam-keretrendszerekbe, többek között:
 
 #### Apache Kafka integráció
 
@@ -514,74 +514,69 @@ if __name__ == "__main__":
     asyncio.run(run_mcp_server_with_pulsar())
 ```
 
-### Telepítési legjobb gyakorlatok
+### Telepítési bevált gyakorlatok
 
-MCP valós idejű streaminghez történő megvalósításakor:
+MCP valós idejű adatfolyamokhoz történő bevezetésekor:
 
-1. **Hibatűrés tervezése**:
-   - Megfelelő hibakezelés alkalmazása
-   - Dead-letter queue használata sikertelen üzenetekhez
+1. **Tervezés hibatűrésre**:
+   - Megfelelő hibakezelés megvalósítása
+   - Hibás üzenetekhez dead-letter queue használata
    - Idempotens feldolgozók tervezése
 
 2. **Teljesítmény optimalizálása**:
    - Megfelelő puffer méretek beállítása
-   - Kötetek alkalmazása, ahol indokolt
-   - Backpressure mechanizmusok bevezetése
+   - Kötegelt feldolgozás alkalmazása, ahol indokolt
+   - Backpressure mechanizmusok implementálása
 
-3. **Monitorozás és megfigyelés**:
-   - Streaming feldolgozási metrikák nyomon követése
-   - Kontextus terjedésének figyelése
+3. **Megfigyelés és monitorozás**:
+   - Adatfolyam-feldolgozási metrikák követése
+   - Kontextus terjedésének monitorozása
    - Anomáliákra figyelmeztető riasztások beállítása
 
-4. **Áramlások biztonságossá tétele**:
-   - Titkosítás alkalmazása érzékeny adatokra
-   - Hitelesítés és jogosultságkezelés használata
-   - Megfelelő hozzáférés-szabályozás érvényesítése
+4. **Adatfolyamok biztonságosítása**:
+   - Érzékeny adatok titkosítása
+   - Hitelesítés és jogosultságkezelés alkalmazása
+   - Megfelelő hozzáférés-szabályozás
 
-### MCP az IoT és edge computing területén
+### MCP az IoT és Edge Computing területén
 
-Az MCP javítja az IoT streaminget az alábbi módokon:
+Az MCP javítja az IoT adatfolyamokat az alábbi módokon:
 
-- Eszközkontextus megőrzése a feldolgozó csővezetékben
-- Hatékony edge-to-cloud adatfolyam támogatása
-- Valós idejű elemzések lehetővé tétele IoT adatfolyamokon
-- Eszközök közötti kommunikáció kontextussal
+- Az eszközök kontextusának megőrzése a feldolgozási pipeline során
+- Hatékony adatfolyam biztosítása az edge és a felhő között
+- Valós idejű analitika támogatása IoT adatfolyamokon
+- Eszközök közti kommunikáció kontextusmegőrzéssel
 
 Példa: Okos városi szenzorhálózatok  
 ```
 Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → Automated Responses
 ```
 
-### Szerepe pénzügyi tranzakciókban és nagyfrekvenciás kereskedésben
+### Szerepe a pénzügyi tranzakciókban és nagyfrekvenciás kereskedésben
 
-Az MCP jelentős előnyöket kínál pénzügyi adatfolyamokhoz:
+Az MCP jelentős előnyöket nyújt a pénzügyi adatfolyamokban:
 
-- Ultra-alacsony késleltetésű feldolgozás kereskedési döntésekhez
-- Tranzakciós kontextus fenntartása a feldolgozás során
-- Komplex eseményfeldolgozás támogatása kontextusérzékenységgel
+- Ultra-alacsony késleltetésű feldolgozás a kereskedési döntésekhez
+- A tranzakciós kontextus megőrzése a feldolgozás során
+- Összetett eseményfeldolgozás támogatása kontextusérzékenyen
 - Adatkonzisztencia biztosítása elosztott kereskedési rendszerek között
 
-### AI-alapú adat-elemzések fejlesztése
+### AI-alapú adatanalitika fejlesztése
 
-Az MCP új lehetőségeket teremt a streaming elemzések terén:
+Az MCP új lehetőségeket teremt az adatfolyam-analitikában:
 
 - Valós idejű modelltréning és következtetés
-- Folyamatos tanulás streaming adatból
-- Kontextusérzékeny jellemzőkinyerés
-- Többmodellből álló következtetési csővezetékek kontextusmegőrzéssel
+- Folyamatos tanulás adatfolyamokból
+- Kontextusérzékeny jellemzők kinyerése
+- Többmodellű következtetési pipeline-ok megőrzött kontextussal
 
 ## Jövőbeli trendek és innovációk
 
 ### MCP fejlődése valós idejű környezetekben
 
-A jövőben az MCP várhatóan foglalkozik:
+Előre tekintve várható, hogy az MCP az alábbi területeken fejlődik tovább:
 
-- **Kvantumszámítástechnika integrációja**: Felkészülés kvantumalapú streaming rendszerekre
-- **Edge-native feldolgozás**: Több kontextusérzékeny feldolgozás az élő eszközökön
-- **Autonóm stream menedzsment**: Önszabályozó streaming csővezetékek
-- **Federált streaming**: Elosztott feldolgozás adatvédelmet megőrizve
+- **Kvantumszámítás integrációja**: Felkészülés kvantum-alapú adatfolyam-rendszerek
 
-### Technológiai fejlődés lehetősége
-
-**Nyilatkozat:**  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+**Nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

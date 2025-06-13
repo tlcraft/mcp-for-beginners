@@ -1,27 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9730a53698bf9df8166d0080a8d5b61f",
-  "translation_date": "2025-06-02T19:54:23+00:00",
+  "original_hash": "cd973a4e381337c6a3ac2443e7548e63",
+  "translation_date": "2025-06-12T23:44:47+00:00",
   "source_file": "05-AdvancedTopics/mcp-scaling/README.md",
   "language_code": "it"
 }
 -->
-## مقیاس‌پذیری عمودی و بهینه‌سازی منابع
+## معماری توزیع شده
 
-مقیاس‌پذیری عمودی بر بهینه‌سازی یک نمونه سرور MCP تمرکز دارد تا بتواند درخواست‌های بیشتری را به‌طور کارآمد مدیریت کند. این کار با تنظیم دقیق پیکربندی‌ها، استفاده از الگوریتم‌های بهینه و مدیریت مؤثر منابع انجام می‌شود. به‌عنوان مثال، می‌توانید تنظیمات thread pool، زمان‌ انتظار درخواست‌ها و محدودیت‌های حافظه را برای بهبود عملکرد تغییر دهید.
+معماری‌های توزیع شده شامل چندین گره MCP هستند که با هم همکاری می‌کنند تا درخواست‌ها را پردازش کنند، منابع را به اشتراک بگذارند و افزونگی فراهم کنند. این رویکرد با اجازه دادن به گره‌ها برای ارتباط و هماهنگی از طریق یک سیستم توزیع شده، مقیاس‌پذیری و تحمل خطا را افزایش می‌دهد.
 
-بیایید نگاهی به نمونه‌ای بیندازیم که چگونه می‌توان یک سرور MCP را برای مقیاس‌پذیری عمودی و مدیریت منابع بهینه کرد.
+بیایید به مثالی از نحوه پیاده‌سازی معماری سرور MCP توزیع شده با استفاده از Redis برای هماهنگی نگاهی بیندازیم.
 
-## معماری توزیع‌شده
+## مرحله بعدی چیست
 
-معماری‌های توزیع‌شده شامل چندین گره MCP است که با هم کار می‌کنند تا درخواست‌ها را مدیریت کنند، منابع را به اشتراک بگذارند و افزونگی فراهم کنند. این رویکرد با اجازه دادن به گره‌ها برای ارتباط و هماهنگی از طریق یک سیستم توزیع‌شده، مقیاس‌پذیری و تحمل خطا را افزایش می‌دهد.
+- [5.8 امنیت](../mcp-security/README.md)
 
-بیایید نمونه‌ای را بررسی کنیم که چگونه می‌توان معماری سرور MCP توزیع‌شده را با استفاده از Redis برای هماهنگی پیاده‌سازی کرد.
-
-## مرحله بعد
-
-- [Security](../mcp-security/README.md)
-
-**Avvertenza**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali fraintendimenti o interpretazioni errate derivanti dall’uso di questa traduzione.
+**Disclaimer**:  
+Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

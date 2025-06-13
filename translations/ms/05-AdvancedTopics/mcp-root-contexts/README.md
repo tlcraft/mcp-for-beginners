@@ -1,47 +1,47 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e1cbc99fa7185139ad6d539eca09a2b3",
-  "translation_date": "2025-06-02T20:29:50+00:00",
+  "original_hash": "8311f46a35cf608c9780f39b62c9dc3f",
+  "translation_date": "2025-06-13T00:38:07+00:00",
   "source_file": "05-AdvancedTopics/mcp-root-contexts/README.md",
   "language_code": "ms"
 }
 -->
-## Example: Root Context Implementation for financial analysis
+## مثال: تنفيذ الجذر السياقي للتحليل المالي
 
-In this example, we will create a root context for a financial analysis session, demonstrating how to maintain state across multiple interactions.
+في هذا المثال، سنقوم بإنشاء جذر سياقي لجلسة تحليل مالي، موضحين كيفية الحفاظ على الحالة عبر تفاعلات متعددة.
 
-## Example: Root Context Management
+## مثال: إدارة الجذر السياقي
 
-Managing root contexts effectively is crucial for maintaining conversation history and state. Below is an example of how to implement root context management.
+إدارة الجذور السياقية بشكل فعال أمر حاسم للحفاظ على سجل المحادثة والحالة. فيما يلي مثال على كيفية تنفيذ إدارة الجذر السياقي.
 
-## Root Context for Multi-Turn Assistance
+## الجذر السياقي للمساعدة متعددة الأدوار
 
-In this example, we will create a root context for a multi-turn assistance session, demonstrating how to maintain state across multiple interactions.
+في هذا المثال، سنقوم بإنشاء جذر سياقي لجلسة مساعدة متعددة الأدوار، موضحين كيفية الحفاظ على الحالة عبر تفاعلات متعددة.
 
-## Root Context Best Practices
+## أفضل الممارسات للجذر السياقي
 
-Here are some best practices for managing root contexts effectively:
+فيما يلي بعض أفضل الممارسات لإدارة الجذور السياقية بفعالية:
 
-- **Create Focused Contexts**: Create separate root contexts for different conversation purposes or domains to maintain clarity.
+- **إنشاء جذور سياقية مركزة**: أنشئ جذورًا سياقية منفصلة لأغراض أو مجالات محادثة مختلفة للحفاظ على الوضوح.
 
-- **Set Expiration Policies**: Implement policies to archive or delete old contexts to manage storage and comply with data retention policies.
+- **تحديد سياسات انتهاء الصلاحية**: نفذ سياسات لأرشفة أو حذف الجذور القديمة لإدارة التخزين والامتثال لسياسات الاحتفاظ بالبيانات.
 
-- **Store Relevant Metadata**: Use context metadata to store important information about the conversation that might be useful later.
+- **تخزين البيانات الوصفية ذات الصلة**: استخدم بيانات وصفية للسياق لتخزين معلومات مهمة عن المحادثة قد تكون مفيدة لاحقًا.
 
-- **Use Context IDs Consistently**: Once a context is created, use its ID consistently for all related requests to maintain continuity.
+- **استخدام معرفات السياق بشكل متسق**: بمجرد إنشاء السياق، استخدم معرفه باستمرار لجميع الطلبات المتعلقة للحفاظ على الاستمرارية.
 
-- **Generate Summaries**: When a context grows large, consider generating summaries to capture essential information while managing context size.
+- **توليد ملخصات**: عندما يكبر السياق، فكر في توليد ملخصات لالتقاط المعلومات الأساسية مع إدارة حجم السياق.
 
-- **Implement Access Control**: For multi-user systems, implement proper access controls to ensure privacy and security of conversation contexts.
+- **تنفيذ ضوابط الوصول**: في الأنظمة متعددة المستخدمين، نفذ ضوابط وصول مناسبة لضمان خصوصية وأمان سياقات المحادثة.
 
-- **Handle Context Limitations**: Be aware of context size limitations and implement strategies for handling very long conversations.
+- **التعامل مع قيود السياق**: كن على دراية بقيود حجم السياق ونفذ استراتيجيات للتعامل مع المحادثات الطويلة جدًا.
 
-- **Archive When Complete**: Archive contexts when conversations are complete to free resources while preserving the conversation history.
+- **الأرشفة عند الانتهاء**: أرشف السياقات عند اكتمال المحادثات لتحرير الموارد مع الحفاظ على سجل المحادثة.
 
-## What's next
+## التالي
 
-- [Routing](../mcp-routing/README.md)
+- [5.5 التوجيه](../mcp-routing/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat kritikal, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

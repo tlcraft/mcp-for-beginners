@@ -1,17 +1,33 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a621fc52c7daec552eb8b3b48c0361dd",
-  "translation_date": "2025-06-02T19:49:14+00:00",
+  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
+  "translation_date": "2025-06-13T01:03:16+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "sk"
 }
 -->
+## Inteligentné vyvažovanie záťaže
+
+Vyvažovanie záťaže optimalizuje využitie zdrojov a zabezpečuje vysokú dostupnosť služieb MCP. Existuje niekoľko spôsobov, ako implementovať vyvažovanie záťaže, napríklad round-robin, vážený čas odozvy alebo stratégie založené na obsahu.
+
+Pozrime sa na príklad implementácie, ktorý používa nasledujúce stratégie:
+
+- **Round Robin**: Rovnomerne rozdeľuje požiadavky medzi dostupné servery.
+- **Vážený čas odozvy**: Smeruje požiadavky na servery na základe ich priemerného času odozvy.
+- **Content-Aware**: Smeruje požiadavky na špecializované servery podľa obsahu požiadavky.
+
+## Dynamické smerovanie nástrojov
+
+Smerovanie nástrojov zabezpečuje, že volania nástrojov sú nasmerované na najvhodnejšiu službu podľa kontextu. Napríklad volanie nástroja na počasie môže byť nasmerované na regionálny koncový bod podľa polohy používateľa, alebo nástroj kalkulačky môže potrebovať použiť konkrétnu verziu API.
+
+Pozrime sa na príklad implementácie, ktorý demonštruje dynamické smerovanie nástrojov na základe analýzy požiadaviek, regionálnych koncových bodov a podpory verzií.
+
 ## Architektúra vzorkovania a smerovania v MCP
 
-Vzorkovanie je kľúčovou súčasťou Model Context Protocol (MCP), ktorá umožňuje efektívne spracovanie a smerovanie požiadaviek. Zahŕňa analýzu prichádzajúcich požiadaviek s cieľom určiť najvhodnejší model alebo službu na ich spracovanie, na základe rôznych kritérií, ako je typ obsahu, používateľský kontext a zaťaženie systému.
+Vzorkovanie je kľúčovou súčasťou Model Context Protocol (MCP), ktorá umožňuje efektívne spracovanie a smerovanie požiadaviek. Zahŕňa analýzu prichádzajúcich požiadaviek na určenie najvhodnejšieho modelu alebo služby, ktoré ich spracujú, na základe rôznych kritérií, ako je typ obsahu, kontext používateľa a záťaž systému.
 
-Vzorkovanie a smerovanie je možné skombinovať na vytvorenie robustnej architektúry, ktorá optimalizuje využitie zdrojov a zabezpečuje vysokú dostupnosť. Proces vzorkovania môže slúžiť na klasifikáciu požiadaviek, zatiaľ čo smerovanie ich nasmeruje na príslušné modely alebo služby.
+Vzorkovanie a smerovanie môžu byť kombinované na vytvorenie robustnej architektúry, ktorá optimalizuje využitie zdrojov a zabezpečuje vysokú dostupnosť. Proces vzorkovania môže byť použitý na klasifikáciu požiadaviek, zatiaľ čo smerovanie ich nasmeruje na príslušné modely alebo služby.
 
 Nižšie uvedený diagram ilustruje, ako vzorkovanie a smerovanie spolupracujú v komplexnej architektúre MCP:
 
@@ -80,9 +96,9 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Čo nasleduje
+## Čo bude ďalej
 
-- [Sampling](../mcp-sampling/README.md)
+- [5.6 Sampling](../mcp-sampling/README.md)
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, berte na vedomie, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

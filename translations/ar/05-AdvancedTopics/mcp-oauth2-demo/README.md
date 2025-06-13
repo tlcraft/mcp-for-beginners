@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2d6413f234258f6bbc8189c463e510ee",
-  "translation_date": "2025-06-02T18:22:52+00:00",
+  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
+  "translation_date": "2025-06-12T23:03:27+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "ar"
 }
@@ -38,7 +38,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 يمكنك اختبار تكوين أمان OAuth2 بالخطوات التالية:
 
-### 1. تحقق من تشغيل الخادم وتأمينه
+### 1. تحقق من أن الخادم يعمل ومؤمن
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-الاستجابة الناجحة مع "مرحبًا من عرض MCP OAuth2!" تؤكد أن تكوين OAuth2 يعمل بشكل صحيح.
+استجابة ناجحة مع "مرحبًا من عرض MCP OAuth2!" تؤكد أن تكوين OAuth2 يعمل بشكل صحيح.
 
 ---
 
@@ -86,14 +86,14 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## النشر إلى **تطبيقات الحاويات في Azure**
+## النشر إلى **تطبيقات الحاوية Azure**
 
-يصبح اسم المجال الكامل للوصول هو **المُصدر** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`).
+يصبح اسم المجال الكامل للولوج هو **المُصدر** الخاص بك (`https://<fqdn>`).  
+Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
-## الربط مع **إدارة API في Azure**
+## الربط مع **إدارة API الخاصة بـ Azure**
 
 أضف سياسة الدخول هذه إلى واجهة برمجة التطبيقات الخاصة بك:
 
@@ -109,13 +109,13 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-ستقوم APIM بجلب JWKS والتحقق من كل طلب.
+سيقوم APIM بجلب JWKS والتحقق من صحة كل طلب.
 
 ---
 
-## ما هو التالي
+## ما التالي
 
-- [الجذور السياقية](../mcp-root-contexts/README.md)
+- [5.4 سياقات الجذر](../mcp-root-contexts/README.md)
 
-**تنويه**:  
-تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي والمعتمد. للمعلومات الحساسة أو الهامة، يُنصح بالاستعانة بترجمة بشرية محترفة. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.
+**إخلاء مسؤولية**:  
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

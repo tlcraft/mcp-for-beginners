@@ -1,44 +1,44 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ba9c96a7c7901faa1d26c8ec7ad56d2c",
-  "translation_date": "2025-06-02T20:18:53+00:00",
+  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
+  "translation_date": "2025-06-13T01:06:52+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "ro"
 }
 -->
-# Practici Optime de Securitate
+# Cele mai bune practici de securitate
 
-Securitatea este esențială pentru implementările MCP, în special în mediile enterprise. Este important să ne asigurăm că uneltele și datele sunt protejate împotriva accesului neautorizat, breșelor de securitate și altor amenințări.
+Securitatea este esențială pentru implementările MCP, în special în mediile enterprise. Este important să ne asigurăm că instrumentele și datele sunt protejate împotriva accesului neautorizat, scurgerilor de date și altor amenințări de securitate.
 
 ## Introducere
 
-În această lecție, vom explora cele mai bune practici de securitate pentru implementările MCP. Vom acoperi autentificarea și autorizarea, protecția datelor, execuția sigură a uneltelor și conformitatea cu reglementările privind confidențialitatea datelor.
+În această lecție, vom explora cele mai bune practici de securitate pentru implementările MCP. Vom acoperi autentificarea și autorizarea, protecția datelor, execuția sigură a instrumentelor și conformitatea cu reglementările privind confidențialitatea datelor.
 
-## Obiective de Învățare
+## Obiective de învățare
 
 La finalul acestei lecții, vei putea:
 
 - Implementa mecanisme sigure de autentificare și autorizare pentru serverele MCP.
-- Proteja datele sensibile folosind criptarea și stocarea securizată.
-- Asigura execuția sigură a uneltelor cu controale adecvate de acces.
+- Proteja datele sensibile folosind criptarea și stocarea sigură.
+- Asigura execuția sigură a instrumentelor cu controale adecvate de acces.
 - Aplica cele mai bune practici pentru protecția datelor și conformitatea cu reglementările privind confidențialitatea.
 
-## Autentificare și Autorizare
+## Autentificare și autorizare
 
-Autentificarea și autorizarea sunt esențiale pentru securizarea serverelor MCP. Autentificarea răspunde la întrebarea „Cine ești?” în timp ce autorizarea răspunde la „Ce poți face?”.
+Autentificarea și autorizarea sunt esențiale pentru securizarea serverelor MCP. Autentificarea răspunde la întrebarea „Cine ești?”, în timp ce autorizarea răspunde la „Ce poți face?”.
 
-Să vedem exemple de implementare a autentificării și autorizării sigure în serverele MCP folosind .NET și Java.
+Să vedem exemple despre cum să implementăm autentificarea și autorizarea sigură în serverele MCP folosind .NET și Java.
 
 ### Integrarea .NET Identity
 
-ASP .NET Core Identity oferă un cadru solid pentru gestionarea autentificării și autorizării utilizatorilor. Putem integra acest sistem cu serverele MCP pentru a securiza accesul la unelte și resurse.
+ASP .NET Core Identity oferă un cadru robust pentru gestionarea autentificării și autorizării utilizatorilor. Îl putem integra cu serverele MCP pentru a securiza accesul la instrumente și resurse.
 
-Există câteva concepte cheie pe care trebuie să le înțelegem când integrăm ASP.NET Core Identity cu serverele MCP, și anume:
+Există câteva concepte de bază pe care trebuie să le înțelegem când integrăm ASP.NET Core Identity cu serverele MCP, și anume:
 
-- **Configurarea Identity**: Setarea ASP.NET Core Identity cu roluri și revendicări ale utilizatorilor. O revendicare este o informație despre utilizator, cum ar fi rolul sau permisiunile sale, de exemplu „Admin” sau „User”.
-- **Autentificare JWT**: Folosirea JSON Web Tokens (JWT) pentru acces API securizat. JWT este un standard pentru transmiterea sigură a informațiilor între părți sub forma unui obiect JSON, care poate fi verificat și este de încredere deoarece este semnat digital.
-- **Politici de Autorizare**: Definirea unor politici pentru controlul accesului la unelte specifice pe baza rolurilor utilizatorilor. MCP folosește politici de autorizare pentru a determina ce utilizatori pot accesa ce unelte în funcție de rolurile și revendicările lor.
+- **Configurarea Identity**: Configurarea ASP.NET Core Identity cu roluri și revendicări ale utilizatorilor. O revendicare este o informație despre utilizator, cum ar fi rolul sau permisiunile sale, de exemplu „Admin” sau „User”.
+- **Autentificare JWT**: Utilizarea JSON Web Tokens (JWT) pentru acces API securizat. JWT este un standard pentru transmiterea sigură a informațiilor între părți sub formă de obiect JSON, care poate fi verificat și de încredere deoarece este semnat digital.
+- **Politici de autorizare**: Definirea politicilor pentru a controla accesul la instrumente specifice pe baza rolurilor utilizatorilor. MCP folosește politici de autorizare pentru a determina ce utilizatori pot accesa ce instrumente în funcție de rolurile și revendicările lor.
 
 ```csharp
 public class SecureMcpStartup
@@ -112,21 +112,21 @@ public class SecureMcpStartup
 În codul de mai sus, am:
 
 - Configurat ASP.NET Core Identity pentru gestionarea utilizatorilor.
-- Setat autentificarea JWT pentru acces API securizat. Am specificat parametrii de validare a token-ului, inclusiv emițătorul, audiența și cheia de semnare.
-- Definit politici de autorizare pentru controlul accesului la unelte pe baza rolurilor utilizatorilor. De exemplu, politica „CanUseAdminTools” cere ca utilizatorul să aibă rolul „Admin”, iar politica „CanUseBasic” necesită ca utilizatorul să fie autentificat.
-- Înregistrat uneltele MCP cu cerințe specifice de autorizare, asigurându-ne că doar utilizatorii cu rolurile potrivite pot accesa respectivele unelte.
+- Setat autentificarea JWT pentru acces API securizat. Am specificat parametrii de validare a token-ului, inclusiv emitentul, audiența și cheia de semnare.
+- Definit politici de autorizare pentru controlul accesului la instrumente pe baza rolurilor utilizatorilor. De exemplu, politica „CanUseAdminTools” necesită ca utilizatorul să aibă rolul „Admin”, în timp ce politica „CanUseBasic” necesită ca utilizatorul să fie autentificat.
+- Înregistrat instrumentele MCP cu cerințe specifice de autorizare, asigurându-ne că doar utilizatorii cu rolurile potrivite pot accesa aceste instrumente.
 
 ### Integrarea Java Spring Security
 
-Pentru Java, vom folosi Spring Security pentru a implementa autentificarea și autorizarea sigură pentru serverele MCP. Spring Security oferă un cadru complet de securitate care se integrează perfect cu aplicațiile Spring.
+Pentru Java, vom folosi Spring Security pentru a implementa autentificarea și autorizarea sigură pentru serverele MCP. Spring Security oferă un cadru de securitate cuprinzător, care se integrează perfect cu aplicațiile Spring.
 
-Conceptele cheie aici sunt:
+Conceptele de bază aici sunt:
 
 - **Configurarea Spring Security**: Setarea configurațiilor de securitate pentru autentificare și autorizare.
-- **OAuth2 Resource Server**: Folosirea OAuth2 pentru acces securizat la uneltele MCP. OAuth2 este un cadru de autorizare care permite serviciilor terțe să schimbe token-uri de acces pentru acces API securizat.
-- **Interceptori de Securitate**: Implementarea interceptorilor de securitate pentru a aplica controale de acces asupra execuției uneltelor.
-- **Controlul Accesului Bazat pe Roluri**: Folosirea rolurilor pentru a controla accesul la unelte și resurse specifice.
-- **Anotări de Securitate**: Folosirea anotărilor pentru a securiza metode și endpoint-uri.
+- **OAuth2 Resource Server**: Utilizarea OAuth2 pentru acces securizat la instrumentele MCP. OAuth2 este un cadru de autorizare care permite serviciilor terțe să schimbe token-uri de acces pentru acces API securizat.
+- **Interceptori de securitate**: Implementarea interceptorilor de securitate pentru a impune controale de acces la execuția instrumentelor.
+- **Controlul accesului bazat pe roluri**: Folosirea rolurilor pentru a controla accesul la instrumente și resurse specifice.
+- **Anotări de securitate**: Folosirea anotărilor pentru a securiza metodele și endpoint-urile.
 
 ```java
 @Configuration
@@ -180,18 +180,18 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 În codul de mai sus, am:
 
-- Configurat Spring Security pentru a securiza endpoint-urile MCP, permițând acces public la descoperirea uneltelor și solicitând autentificare pentru execuția uneltelor.
-- Folosit OAuth2 ca resource server pentru a gestiona accesul securizat la uneltele MCP.
-- Implementat un interceptor de securitate pentru a aplica controale de acces asupra execuției uneltelor, verificând rolurile și permisiunile utilizatorilor înainte de a permite accesul la unelte specifice.
-- Definit controlul accesului bazat pe roluri pentru a restricționa accesul la uneltele de administrare și accesul la date sensibile în funcție de rolurile utilizatorilor.
+- Configurat Spring Security pentru a securiza endpoint-urile MCP, permițând acces public la descoperirea instrumentelor, în timp ce cerem autentificare pentru execuția instrumentelor.
+- Folosit OAuth2 ca server de resurse pentru a gestiona accesul securizat la instrumentele MCP.
+- Implementat un interceptor de securitate pentru a impune controale de acces la execuția instrumentelor, verificând rolurile și permisiunile utilizatorilor înainte de a permite accesul la instrumente specifice.
+- Definit controlul accesului bazat pe roluri pentru a restricționa accesul la instrumentele de administrare și accesul la date sensibile în funcție de rolurile utilizatorilor.
 
-## Protecția Datelor și Confidențialitatea
+## Protecția datelor și confidențialitatea
 
-Protecția datelor este crucială pentru a asigura că informațiile sensibile sunt gestionate în mod sigur. Aceasta include protejarea informațiilor personale identificabile (PII), a datelor financiare și a altor informații sensibile împotriva accesului neautorizat și a breșelor.
+Protecția datelor este crucială pentru a ne asigura că informațiile sensibile sunt gestionate în siguranță. Aceasta include protejarea informațiilor personale identificabile (PII), a datelor financiare și a altor informații sensibile împotriva accesului neautorizat și a scurgerilor.
 
-### Exemplu de Protecție a Datelor în Python
+### Exemplu de protecție a datelor în Python
 
-Să vedem un exemplu de implementare a protecției datelor în Python folosind criptarea și detectarea PII.
+Să vedem un exemplu despre cum să implementăm protecția datelor în Python folosind criptarea și detectarea PII.
 
 ```python
 from mcp_server import McpServer
@@ -336,7 +336,7 @@ class SecureCustomerDataTool(Tool):
 
 ## Ce urmează
 
-- [Web search](../web-search-mcp/README.md)
+- [5.9 Web search](../web-search-mcp/README.md)
 
 **Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea în urma utilizării acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

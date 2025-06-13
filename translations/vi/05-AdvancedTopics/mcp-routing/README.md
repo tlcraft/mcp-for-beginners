@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a621fc52c7daec552eb8b3b48c0361dd",
-  "translation_date": "2025-06-02T19:47:45+00:00",
+  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
+  "translation_date": "2025-06-13T00:29:34+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "vi"
 }
 -->
 ## Kiến trúc Lấy mẫu và Định tuyến trong MCP
 
-Lấy mẫu là một thành phần quan trọng của Model Context Protocol (MCP) cho phép xử lý và định tuyến yêu cầu hiệu quả. Nó bao gồm việc phân tích các yêu cầu đến để xác định mô hình hoặc dịch vụ phù hợp nhất để xử lý chúng, dựa trên các tiêu chí khác nhau như loại nội dung, ngữ cảnh người dùng và tải hệ thống.
+Lấy mẫu là một thành phần quan trọng của Model Context Protocol (MCP) giúp xử lý và định tuyến yêu cầu một cách hiệu quả. Quá trình này bao gồm việc phân tích các yêu cầu đến để xác định mô hình hoặc dịch vụ phù hợp nhất để xử lý, dựa trên các tiêu chí như loại nội dung, ngữ cảnh người dùng và tải hệ thống.
 
-Lấy mẫu và định tuyến có thể được kết hợp để tạo ra một kiến trúc mạnh mẽ, tối ưu hóa việc sử dụng tài nguyên và đảm bảo tính khả dụng cao. Quá trình lấy mẫu có thể được sử dụng để phân loại yêu cầu, trong khi định tuyến sẽ chuyển hướng chúng đến các mô hình hoặc dịch vụ phù hợp.
+Lấy mẫu và định tuyến có thể được kết hợp để tạo ra một kiến trúc vững chắc, tối ưu hóa việc sử dụng tài nguyên và đảm bảo tính sẵn sàng cao. Quá trình lấy mẫu có thể được sử dụng để phân loại các yêu cầu, trong khi định tuyến sẽ chuyển chúng đến các mô hình hoặc dịch vụ thích hợp.
 
-Sơ đồ dưới đây minh họa cách lấy mẫu và định tuyến hoạt động cùng nhau trong một kiến trúc MCP toàn diện:
+Sơ đồ dưới đây minh họa cách lấy mẫu và định tuyến phối hợp trong một kiến trúc MCP toàn diện:
 
 ```mermaid
 flowchart TB
@@ -80,9 +80,9 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Tiếp theo là gì
+## Bước tiếp theo
 
-- [Lấy mẫu](../mcp-sampling/README.md)
+- [5.6 Sampling](../mcp-sampling/README.md)
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được xem là nguồn chính xác và đáng tin cậy. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

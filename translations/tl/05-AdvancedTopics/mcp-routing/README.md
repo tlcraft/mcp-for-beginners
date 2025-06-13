@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a621fc52c7daec552eb8b3b48c0361dd",
-  "translation_date": "2025-06-02T19:48:18+00:00",
+  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
+  "translation_date": "2025-06-13T00:42:18+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "tl"
 }
 -->
-## Sampling at Routing Architecture sa MCP
+## Sampling at Arkitektura ng Routing sa MCP
 
-Ang sampling ay isang mahalagang bahagi ng Model Context Protocol (MCP) na nagpapahintulot sa epektibong pagproseso at pag-route ng mga kahilingan. Kabilang dito ang pagsusuri sa mga papasok na kahilingan upang matukoy ang pinakaangkop na modelo o serbisyo na hahawak nito, batay sa iba't ibang pamantayan tulad ng uri ng nilalaman, konteksto ng gumagamit, at kalagayan ng sistema.
+Ang sampling ay isang mahalagang bahagi ng Model Context Protocol (MCP) na nagpapahintulot ng epektibong pagproseso at routing ng mga kahilingan. Kasama rito ang pagsusuri sa mga papasok na kahilingan upang matukoy ang pinakaangkop na modelo o serbisyo na hahawak nito, batay sa iba't ibang pamantayan tulad ng uri ng nilalaman, konteksto ng gumagamit, at load ng sistema.
 
-Maaaring pagsamahin ang sampling at routing upang makabuo ng matatag na arkitektura na nag-ooptimize ng paggamit ng mga resources at nagsisiguro ng mataas na availability. Ang proseso ng sampling ay maaaring gamitin upang i-klasipika ang mga kahilingan, habang ang routing ay nagdidirekta sa mga ito sa angkop na mga modelo o serbisyo.
+Maaaring pagsamahin ang sampling at routing upang makabuo ng matibay na arkitektura na nag-ooptimize ng paggamit ng mga yaman at nagsisiguro ng mataas na availability. Ang proseso ng sampling ay maaaring gamitin upang iklasipika ang mga kahilingan, habang ang routing naman ang nagtuturo sa mga ito sa angkop na mga modelo o serbisyo.
 
-Ipinapakita ng diagram sa ibaba kung paano nagtutulungan ang sampling at routing sa isang komprehensibong arkitektura ng MCP:
+Ipinapakita sa diagram sa ibaba kung paano nagtutulungan ang sampling at routing sa isang komprehensibong arkitektura ng MCP:
 
 ```mermaid
 flowchart TB
@@ -82,7 +82,7 @@ flowchart TB
 
 ## Ano ang susunod
 
-- [Sampling](../mcp-sampling/README.md)
+- [5.6 Sampling](../mcp-sampling/README.md)
 
-**Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+**Paunawa**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami na maging tumpak, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

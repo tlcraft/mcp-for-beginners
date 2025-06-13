@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a621fc52c7daec552eb8b3b48c0361dd",
-  "translation_date": "2025-06-02T19:49:25+00:00",
+  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
+  "translation_date": "2025-06-13T01:07:55+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "ro"
 }
 -->
-## Arhitectura de Eșantionare și Rutare în MCP
+## Eșantionare și Arhitectură de Rutare în MCP
 
-Eșantionarea este o componentă esențială a Model Context Protocol (MCP) care permite procesarea și rutarea eficientă a cererilor. Aceasta implică analizarea cererilor primite pentru a determina modelul sau serviciul cel mai potrivit pentru a le gestiona, pe baza unor criterii variate, cum ar fi tipul de conținut, contextul utilizatorului și încărcarea sistemului.
+Eșantionarea este o componentă esențială a Model Context Protocol (MCP) care permite procesarea eficientă a cererilor și rutarea acestora. Aceasta implică analiza cererilor primite pentru a determina cel mai potrivit model sau serviciu care să le gestioneze, bazându-se pe diverse criterii precum tipul de conținut, contextul utilizatorului și încărcarea sistemului.
 
-Eșantionarea și rutarea pot fi combinate pentru a crea o arhitectură robustă care optimizează utilizarea resurselor și asigură disponibilitate ridicată. Procesul de eșantionare poate fi folosit pentru clasificarea cererilor, în timp ce rutarea le direcționează către modelele sau serviciile potrivite.
+Eșantionarea și rutarea pot fi combinate pentru a crea o arhitectură robustă care optimizează utilizarea resurselor și asigură o disponibilitate ridicată. Procesul de eșantionare poate fi folosit pentru a clasifica cererile, în timp ce rutarea le direcționează către modelele sau serviciile corespunzătoare.
 
-Diagrama de mai jos ilustrează modul în care eșantionarea și rutarea funcționează împreună într-o arhitectură MCP cuprinzătoare:
+Diagrama de mai jos ilustrează modul în care eșantionarea și rutarea lucrează împreună într-o arhitectură cuprinzătoare MCP:
 
 ```mermaid
 flowchart TB
@@ -82,7 +82,7 @@ flowchart TB
 
 ## Ce urmează
 
-- [Sampling](../mcp-sampling/README.md)
+- [5.6 Eșantionare](../mcp-sampling/README.md)
 
 **Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
