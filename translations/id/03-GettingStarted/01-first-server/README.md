@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d90651bcd1df019768921d531653638a",
-  "translation_date": "2025-06-13T00:31:34+00:00",
+  "original_hash": "bf05718d019040cf0c7d4ccc6d6a1a88",
+  "translation_date": "2025-06-13T06:04:27+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "id"
 }
 -->
-### -2- Membuat proyek
+### -2- Buat proyek
 
-Sekarang setelah Anda menginstal SDK, mari buat proyek berikutnya:
+Sekarang setelah SDK Anda terpasang, mari buat proyek berikutnya:
 
-### -3- Membuat file proyek
+### -3- Buat file proyek
 
-### -4- Membuat kode server
+### -4- Buat kode server
 
 ### -5- Menambahkan tool dan resource
 
@@ -23,23 +23,23 @@ Tambahkan tool dan resource dengan menambahkan kode berikut:
 
 Mari tambahkan kode terakhir yang kita butuhkan agar server bisa dijalankan:
 
-### -7- Menguji server
+### -7- Uji server
 
 Jalankan server dengan perintah berikut:
 
-### -8- Menjalankan menggunakan inspector
+### -8- Jalankan menggunakan inspector
 
-Inspector adalah alat yang sangat berguna yang dapat menjalankan server Anda dan memungkinkan Anda berinteraksi dengannya sehingga Anda dapat menguji apakah server berfungsi. Mari kita jalankan:
+Inspector adalah alat hebat yang bisa memulai server Anda dan memungkinkan Anda berinteraksi dengannya sehingga Anda bisa menguji apakah server berfungsi. Mari jalankan:
 
 > [!NOTE]
-> mungkin terlihat berbeda di bidang "command" karena berisi perintah untuk menjalankan server dengan runtime spesifik Anda
+> tampilannya mungkin berbeda di kolom "command" karena berisi perintah untuk menjalankan server dengan runtime spesifik Anda
 
 Anda akan melihat antarmuka pengguna berikut:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.id.png)
 
 1. Hubungkan ke server dengan memilih tombol Connect  
-   Setelah Anda terhubung ke server, Anda akan melihat tampilan berikut:
+   Setelah terhubung ke server, Anda akan melihat tampilan berikut:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.id.png)
 
@@ -49,7 +49,7 @@ Anda akan melihat antarmuka pengguna berikut:
 
    ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.id.png)
 
-Selamat, Anda telah berhasil membuat dan menjalankan server pertama Anda!
+Selamat, Anda berhasil membuat dan menjalankan server pertama Anda!
 
 ### SDK Resmi
 
@@ -64,7 +64,7 @@ MCP menyediakan SDK resmi untuk berbagai bahasa:
 
 ## Poin Penting
 
-- Menyiapkan lingkungan pengembangan MCP mudah dengan SDK spesifik bahasa
+- Menyiapkan lingkungan pengembangan MCP cukup mudah dengan SDK spesifik bahasa
 - Membangun server MCP melibatkan pembuatan dan pendaftaran tool dengan skema yang jelas
 - Pengujian dan debugging sangat penting untuk implementasi MCP yang andal
 
@@ -79,9 +79,9 @@ MCP menyediakan SDK resmi untuk berbagai bahasa:
 ## Tugas
 
 Buat server MCP sederhana dengan tool pilihan Anda:
-1. Implementasikan tool tersebut dalam bahasa favorit Anda (.NET, Java, Python, atau JavaScript).
+1. Implementasikan tool dalam bahasa favorit Anda (.NET, Java, Python, atau JavaScript).
 2. Definisikan parameter input dan nilai kembalian.
-3. Jalankan alat inspector untuk memastikan server berjalan sesuai harapan.
+3. Jalankan alat inspector untuk memastikan server berfungsi sesuai harapan.
 4. Uji implementasi dengan berbagai input.
 
 ## Solusi
@@ -91,12 +91,12 @@ Buat server MCP sederhana dengan tool pilihan Anda:
 ## Sumber Tambahan
 
 - [Membangun Agen menggunakan Model Context Protocol di Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [MCP Remote dengan Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [Remote MCP dengan Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Selanjutnya
 
-Selanjutnya: [Memulai dengan Klien MCP](/03-GettingStarted/02-client/README.md)
+Berikutnya: [Memulai dengan MCP Clients](/03-GettingStarted/02-client/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.

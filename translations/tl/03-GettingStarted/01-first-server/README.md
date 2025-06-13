@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d90651bcd1df019768921d531653638a",
-  "translation_date": "2025-06-13T00:39:55+00:00",
+  "original_hash": "bf05718d019040cf0c7d4ccc6d6a1a88",
+  "translation_date": "2025-06-13T06:05:19+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "tl"
 }
 -->
 ### -2- Gumawa ng proyekto
 
-Ngayon na na-install mo na ang iyong SDK, gawin natin ang proyekto sa susunod:
+Ngayon na na-install mo na ang SDK mo, gumawa tayo ng proyekto: 
 
 ### -3- Gumawa ng mga file ng proyekto
 
@@ -17,9 +17,9 @@ Ngayon na na-install mo na ang iyong SDK, gawin natin ang proyekto sa susunod:
 
 ### -5- Magdagdag ng tool at resource
 
-Magdagdag ng tool at resource sa pamamagitan ng pagdagdag ng sumusunod na code:
+Magdagdag ng tool at resource sa pamamagitan ng paglalagay ng sumusunod na code:
 
-### -6- Pangwakas na code
+### -6 Panghuling code
 
 Idagdag natin ang huling code na kailangan para makapagsimula ang server:
 
@@ -29,7 +29,7 @@ Simulan ang server gamit ang sumusunod na utos:
 
 ### -8- Patakbuhin gamit ang inspector
 
-Ang inspector ay isang mahusay na tool na maaaring magsimula ng iyong server at payagan kang makipag-ugnayan dito para masubukan mong gumagana ito. Simulan natin ito:
+Ang inspector ay isang mahusay na tool na makakapagsimula ng iyong server at magpapahintulot sa iyo na makipag-ugnayan dito para masubukan kung gumagana ito. Simulan natin ito:
 
 > [!NOTE]
 > maaaring mag-iba ang hitsura nito sa "command" field dahil naglalaman ito ng utos para patakbuhin ang server gamit ang iyong partikular na runtime/
@@ -45,28 +45,28 @@ Makikita mo ang sumusunod na user interface:
 
 2. Piliin ang "Tools" at "listTools", makikita mo ang "Add" na lalabas, piliin ang "Add" at punan ang mga halaga ng parameter.
 
-  Makikita mo ang sumusunod na tugon, ibig sabihin ay resulta mula sa "add" na tool:
+  Makikita mo ang sumusunod na tugon, ibig sabihin ay resulta mula sa "add" tool:
 
   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.tl.png)
 
-Congrats, nagawa at napatakbo mo na ang iyong unang server!
+Congrats, nagawa mo nang likhain at patakbuhin ang iyong unang server!
 
-### Opisyal na mga SDK
+### Opisyal na SDKs
 
-Nagbibigay ang MCP ng opisyal na mga SDK para sa iba't ibang wika:
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Pinapanatili sa pakikipagtulungan sa Microsoft
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Pinapanatili sa pakikipagtulungan sa Spring AI
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Ang opisyal na implementasyon ng TypeScript
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Ang opisyal na implementasyon ng Python
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Ang opisyal na implementasyon ng Kotlin
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Pinapanatili sa pakikipagtulungan sa Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Ang opisyal na implementasyon ng Rust
+Nagbibigay ang MCP ng opisyal na SDKs para sa iba't ibang wika:
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Pinapanatili kasama ang Microsoft
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Pinapanatili kasama ang Spring AI
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Opisyal na implementasyon ng TypeScript
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Opisyal na implementasyon ng Python
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Opisyal na implementasyon ng Kotlin
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Pinapanatili kasama ang Loopwork AI
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Opisyal na implementasyon ng Rust
 
-## Mga Mahahalagang Punto
+## Mahahalagang Punto
 
-- Madaling mag-set up ng MCP development environment gamit ang mga SDK na naka-focus sa wika
-- Ang paggawa ng MCP servers ay nangangailangan ng paglikha at pagrerehistro ng mga tool na may malinaw na mga schema
-- Mahalagang magsagawa ng testing at debugging para sa maaasahang implementasyon ng MCP
+- Madaling mag-setup ng MCP development environment gamit ang mga SDK na nakatuon sa partikular na wika
+- Ang paggawa ng MCP servers ay nangangailangan ng paglikha at pagrerehistro ng mga tools na may malinaw na mga schema
+- Mahalaga ang pagsubok at pag-debug para sa maaasahang implementasyon ng MCP
 
 ## Mga Halimbawa
 
@@ -79,10 +79,10 @@ Nagbibigay ang MCP ng opisyal na mga SDK para sa iba't ibang wika:
 ## Takdang-Aralin
 
 Gumawa ng simpleng MCP server na may tool na iyong pipiliin:
-1. I-implementa ang tool sa iyong gustong wika (.NET, Java, Python, o JavaScript).
-2. Tukuyin ang mga input parameter at return values.
+1. I-implementa ang tool sa iyong paboritong wika (.NET, Java, Python, o JavaScript).
+2. Tukuyin ang mga input parameter at mga return value.
 3. Patakbuhin ang inspector tool upang matiyak na gumagana ang server ayon sa inaasahan.
-4. Subukan ang implementasyon gamit ang iba't ibang input.
+4. Subukan ang implementasyon gamit ang iba't ibang inputs.
 
 ## Solusyon
 
@@ -96,7 +96,7 @@ Gumawa ng simpleng MCP server na may tool na iyong pipiliin:
 
 ## Ano ang susunod
 
-Susunod: [Pagsisimula sa MCP Clients](/03-GettingStarted/02-client/README.md)
+Susunod: [Panimula sa MCP Clients](/03-GettingStarted/02-client/README.md)
 
-**Pagtatanggol**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+**Pagtatapat**:  
+Ang dokumentong ito ay isinalin gamit ang serbisyong AI na pagsasalin [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na nagmumula sa paggamit ng pagsasaling ito.
