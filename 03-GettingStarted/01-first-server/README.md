@@ -1108,7 +1108,10 @@ In the inspector web interface:
 
 ![Connect](/03-GettingStarted/01-first-server/assets/tool.png)
 
-The  Java server testing section is completed now
+**You're now connected to the server** 
+**The Java server testing section is completed now**
+
+The next section it's about interacting with the server.
 
 </details>
 
