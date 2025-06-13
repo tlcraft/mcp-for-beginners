@@ -54,9 +54,10 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 | 3.3 | **Client with LLM**  | Setting up a client using the MCP protocol with a Large Language Model (LLM) | [Client with LLM](./03-GettingStarted/03-llm-client/README.md) |
 | 3.4 | **Consuming a server with Visual Studio Code** | Setting up Visual Studio Code to consume servers using the MCP protocol | [Consuming a server with Visual Studio Code](./03-GettingStarted/04-vscode/README.md) |
 | 3.5 | **Creating a server using SSE** | SSE helps us expose a server to the internet. This section will help you create a server using SSE | [Creating a server using SSE](./03-GettingStarted/05-sse-server/README.md) |
-| 3.6 | **Use AI Toolkit** | AI toolkit is a great tool that will help you manage your AI and MCP workflow. | [Use AI Toolkit](./03-GettingStarted/06-aitk/README.md) |
-| 3.7 | **Testing your server** | Testing is an important part of the development process. This section will help you test use several different tools. | [Testing your server](./03-GettingStarted/07-testing/README.md) |
-| 3.8 | **Deploy your server** | How do you go from local development to production? This section will help you develop and deploy your server. | [Deploy your server](./03-GettingStarted/08-deployment/README.md) |
+| 3.6 | **HTTP Streaming** | Learn how to implement HTTP streaming for real-time data transfer between clients and MCP servers | [HTTP Streaming](./03-GettingStarted/06-http-streaming/README.md) |
+| 3.7 | **Use AI Toolkit** | AI toolkit is a great tool that will help you manage your AI and MCP workflow. | [Use AI Toolkit](./03-GettingStarted/07-aitk/README.md) |
+| 3.8 | **Testing your server** | Testing is an important part of the development process. This section will help you test use several different tools. | [Testing your server](./03-GettingStarted/08-testing/README.md) |
+| 3.9 | **Deploy your server** | How do you go from local development to production? This section will help you develop and deploy your server. | [Deploy your server](./03-GettingStarted/09-deployment/README.md) |
 | 04 | **Practical Implementation** | Using SDKs across different languages, debugging, testing, and validation, crafting reusable prompt templates and workflows | [Practical Implementation](./04-PracticalImplementation/README.md) |
 | 05 | **Advanced Topics in MCP** | Multi-modal AI workflows and extensibility, secure scaling strategies, MCP in enterprise ecosystems | [Advanced Topics](./05-AdvancedTopics/README.md) |
 | 5.1 | **MCP Integration with Azure** | Shows integration with Azure | [MCP Azure integration](./05-AdvancedTopics/mcp-integration/README.md) |
