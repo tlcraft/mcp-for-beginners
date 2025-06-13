@@ -1,92 +1,67 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "4d3415b9d2bf58bc69be07f945a69e07",
-  "translation_date": "2025-05-20T23:39:53+00:00",
+  "original_hash": "23899e82d806f25e5e46e89aab564dca",
+  "translation_date": "2025-06-13T21:26:52+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "da"
 }
 -->
-# Case Study: Azure AI Travel Agents – Reference Implementation
+# MCP i praksis: Virkelige casestudier
+
+Model Context Protocol (MCP) ændrer måden, AI-applikationer interagerer med data, værktøjer og tjenester på. Dette afsnit præsenterer virkelige casestudier, der viser praktiske anvendelser af MCP i forskellige erhvervsscenarier.
 
 ## Oversigt
 
-[Azure AI Travel Agents](https://github.com/Azure-Samples/azure-ai-travel-agents) er en omfattende referencesolution udviklet af Microsoft, som viser, hvordan man bygger en multi-agent, AI-drevet rejseplanlægningsapplikation ved hjælp af Model Context Protocol (MCP), Azure OpenAI og Azure AI Search. Projektet demonstrerer bedste praksis for orkestrering af flere AI-agenter, integration af virksomhedens data og levering af en sikker, udvidelsesvenlig platform til virkelige scenarier.
+Dette afsnit fremviser konkrete eksempler på MCP-implementeringer og understreger, hvordan organisationer udnytter denne protokol til at løse komplekse forretningsudfordringer. Ved at gennemgå disse casestudier får du indsigt i MCP’s alsidighed, skalerbarhed og praktiske fordele i virkelige situationer.
 
-## Nøglefunktioner
-- **Multi-Agent Orkestrering:** Anvender MCP til at koordinere specialiserede agenter (f.eks. flight-, hotel- og rejseplanlægningsagenter), som samarbejder om at løse komplekse rejseplanlægningsopgaver.
-- **Integration af Virksomhedsdata:** Forbinder til Azure AI Search og andre virksomhedskilder for at levere opdaterede og relevante oplysninger til rejseanbefalinger.
-- **Sikker og Skalerbar Arkitektur:** Udnytter Azure-tjenester til autentificering, autorisation og skalerbar implementering, i overensstemmelse med virksomhedens sikkerhedspraksis.
-- **Udvidelsesvenlige Værktøjer:** Implementerer genanvendelige MCP-værktøjer og promptskabeloner, der muliggør hurtig tilpasning til nye domæner eller forretningsbehov.
-- **Brugeroplevelse:** Tilbyder en samtalegrænseflade, hvor brugere kan interagere med rejseagenternes AI, drevet af Azure OpenAI og MCP.
+## Centrale læringsmål
 
-## Arkitektur
-![Architecture](https://raw.githubusercontent.com/Azure-Samples/azure-ai-travel-agents/main/docs/ai-travel-agents-architecture-diagram.png)
+Ved at udforske disse casestudier vil du:
 
-### Beskrivelse af Arkitekturdiagrammet
+- Forstå hvordan MCP kan anvendes til at løse specifikke forretningsproblemer  
+- Lære om forskellige integrationsmønstre og arkitektoniske tilgange  
+- Genkende bedste praksis for implementering af MCP i erhvervsmiljøer  
+- Få indsigt i de udfordringer og løsninger, der opstår i virkelige implementeringer  
+- Identificere muligheder for at anvende lignende mønstre i dine egne projekter  
 
-Azure AI Travel Agents-løsningen er designet med modularitet, skalerbarhed og sikker integration af flere AI-agenter og virksomhedskilder for øje. Hovedkomponenterne og dataflowet er som følger:
+## Fremhævede casestudier
 
-- **Brugergrænseflade:** Brugere interagerer med systemet via en samtalegrænseflade (f.eks. en webchat eller Teams-bot), som sender brugerforespørgsler og modtager rejseanbefalinger.
-- **MCP Server:** Fungerer som central orkestrator, modtager brugerinput, håndterer kontekst og koordinerer handlinger mellem specialiserede agenter (f.eks. FlightAgent, HotelAgent, ItineraryAgent) via Model Context Protocol.
-- **AI-agenter:** Hver agent har ansvar for et specifikt område (fly, hoteller, rejseplaner) og er implementeret som et MCP-værktøj. Agenterne bruger promptskabeloner og logik til at behandle forespørgsler og generere svar.
-- **Azure OpenAI Service:** Leverer avanceret naturlig sprogforståelse og generering, så agenter kan fortolke brugerens intention og skabe samtalebaserede svar.
-- **Azure AI Search & Virksomhedsdata:** Agenter henter opdaterede oplysninger om fly, hoteller og rejsemuligheder fra Azure AI Search og andre virksomhedskilder.
-- **Autentificering & Sikkerhed:** Integreres med Microsoft Entra ID for sikker autentificering og anvender mindst-privilegium adgangskontrol på alle ressourcer.
-- **Implementering:** Designet til implementering på Azure Container Apps, hvilket sikrer skalerbarhed, overvågning og effektiv drift.
+### 1. [Azure AI Travel Agents – Reference Implementation](./travelagentsample.md)
 
-Denne arkitektur muliggør gnidningsfri orkestrering af flere AI-agenter, sikker integration med virksomhedens data og en robust, udvidelsesvenlig platform til at bygge domænespecifikke AI-løsninger.
+Dette casestudie undersøger Microsofts omfattende referencesolution, der viser, hvordan man bygger en multi-agent, AI-drevet rejseplanlægningsapplikation ved hjælp af MCP, Azure OpenAI og Azure AI Search. Projektet fremhæver:
 
-## Trin-for-trin Forklaring af Arkitekturdiagrammet
-Forestil dig, at du planlægger en stor rejse og har et team af eksperthjælpere, der assisterer med alle detaljer. Azure AI Travel Agents-systemet fungerer på samme måde ved at bruge forskellige dele (som teammedlemmer), der hver har en særlig rolle. Her er hvordan det hele hænger sammen:
+- Multi-agent orkestrering gennem MCP  
+- Enterprise data integration med Azure AI Search  
+- Sikker og skalerbar arkitektur ved brug af Azure-tjenester  
+- Udvideligt værktøjssæt med genanvendelige MCP-komponenter  
+- Samtalebaseret brugeroplevelse drevet af Azure OpenAI  
 
-### Brugergrænseflade (UI):
-Tænk på dette som rejseagentens reception. Det er her, du (brugeren) stiller spørgsmål eller fremsætter ønsker, som "Find mig en flybillet til Paris." Det kan være et chatvindue på en hjemmeside eller en beskedapp.
+Arkitekturen og implementeringsdetaljerne giver værdifuld indsigt i opbygning af komplekse multi-agent systemer med MCP som koordineringslag.
 
-### MCP Server (Koordinatoren):
-MCP Serveren er som lederen, der lytter til din forespørgsel ved receptionen og beslutter, hvilken specialist der skal håndtere hver del. Den holder styr på samtalen og sikrer, at alt kører glat.
+### 2. [Updating Azure DevOps Items from YouTube Data](./UpdateADOItemsFromYT.md)
 
-### AI-agenter (Specialistassistenter):
-Hver agent er ekspert inden for et bestemt område – en ved alt om fly, en anden om hoteller, og en tredje om rejseplanlægning. Når du beder om en rejse, sender MCP Serveren din forespørgsel til den eller de rette agenter. Disse agenter bruger deres viden og værktøjer til at finde de bedste muligheder for dig.
+Dette casestudie viser en praktisk anvendelse af MCP til automatisering af arbejdsprocesser. Det demonstrerer, hvordan MCP-værktøjer kan bruges til at:
 
-### Azure OpenAI Service (Sprogeksperten):
-Dette er som at have en sprogkyndig, der forstår præcis, hvad du spørger om, uanset hvordan du formulerer dig. Den hjælper agenterne med at forstå dine forespørgsler og svare i naturligt, samtalebaseret sprog.
+- Udtrække data fra onlineplatforme (YouTube)  
+- Opdatere arbejdsopgaver i Azure DevOps-systemer  
+- Oprette gentagelige automatiseringsarbejdsgange  
+- Integrere data på tværs af forskellige systemer  
 
-### Azure AI Search & Virksomhedsdata (Informationsbiblioteket):
-Forestil dig et stort, opdateret bibliotek med al den nyeste rejseinformation – flytider, hoteltilgængelighed og meget mere. Agenterne søger i dette bibliotek for at finde de mest præcise svar til dig.
+Eksemplet illustrerer, hvordan selv relativt simple MCP-implementeringer kan give betydelige effektivitetsgevinster ved at automatisere rutineopgaver og forbedre datakonsistens på tværs af systemer.
 
-### Autentificering & Sikkerhed (Sikkerhedsvagten):
-Ligesom en sikkerhedsvagt kontrollerer, hvem der må komme ind i bestemte områder, sikrer denne del, at kun autoriserede personer og agenter har adgang til følsomme oplysninger. Den beskytter dine data og privatliv.
+## Konklusion
 
-### Implementering på Azure Container Apps (Bygningen):
-Alle disse assistenter og værktøjer arbejder sammen inden for en sikker, skalerbar bygning (skyen). Det betyder, at systemet kan håndtere mange brugere samtidig og altid er tilgængeligt, når du har brug for det.
+Disse casestudier fremhæver Model Context Protocols alsidighed og praktiske anvendelser i virkelige scenarier. Fra komplekse multi-agent systemer til målrettede automatiseringsarbejdsgange tilbyder MCP en standardiseret måde at forbinde AI-systemer med de værktøjer og data, de har brug for, for at skabe værdi.
 
-## Hvordan det hele fungerer sammen:
+Ved at studere disse implementeringer kan du få indsigt i arkitekturmønstre, implementeringsstrategier og bedste praksis, som kan anvendes i dine egne MCP-projekter. Eksemplerne viser, at MCP ikke blot er en teoretisk ramme, men en praktisk løsning på reelle forretningsudfordringer.
 
-Du starter med at stille et spørgsmål ved receptionen (UI).
-Lederen (MCP Server) finder ud af, hvilken specialist (agent) der kan hjælpe dig.
-Specialisten bruger sprogkyndigen (OpenAI) til at forstå din forespørgsel og biblioteket (AI Search) til at finde det bedste svar.
-Sikkerhedsvagten (Autentificering) sørger for, at alt foregår sikkert.
-Alt dette sker inde i en pålidelig, skalerbar bygning (Azure Container Apps), så din oplevelse er smidig og sikker.
-Dette samarbejde gør det muligt for systemet hurtigt og sikkert at hjælpe dig med at planlægge din rejse, ligesom et team af ekspertrejseagenter, der arbejder sammen på et moderne kontor!
+## Yderligere ressourcer
 
-## Teknisk Implementering
-- **MCP Server:** Værtsfunktioner for kerneorkestreringslogikken, eksponerer agentværktøjer og håndterer kontekst til flerstegs rejseplanlægningsarbejdsgange.
-- **Agenter:** Hver agent (f.eks. FlightAgent, HotelAgent) er implementeret som et MCP-værktøj med egne promptskabeloner og logik.
-- **Azure Integration:** Bruger Azure OpenAI til naturlig sprogforståelse og Azure AI Search til datahentning.
-- **Sikkerhed:** Integreres med Microsoft Entra ID til autentificering og anvender mindst-privilegium adgangskontrol på alle ressourcer.
-- **Implementering:** Understøtter implementering på Azure Container Apps for skalerbarhed og effektiv drift.
-
-## Resultater og Effekt
-- Demonstrerer, hvordan MCP kan bruges til at orkestrere flere AI-agenter i et virkeligt, produktionsklart scenarie.
-- Fremskynder udvikling af løsninger ved at tilbyde genanvendelige mønstre til agentkoordinering, dataintegration og sikker implementering.
-- Tjener som en skabelon til at bygge domænespecifikke, AI-drevne applikationer ved brug af MCP og Azure-tjenester.
-
-## Referencer
-- [Azure AI Travel Agents GitHub Repository](https://github.com/Azure-Samples/azure-ai-travel-agents)
-- [Azure OpenAI Service](https://azure.microsoft.com/en-us/products/ai-services/openai-service/)
-- [Azure AI Search](https://azure.microsoft.com/en-us/products/ai-services/ai-search/)
-- [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
+- [Azure AI Travel Agents GitHub Repository](https://github.com/Azure-Samples/azure-ai-travel-agents)  
+- [Azure DevOps MCP Tool](https://github.com/microsoft/azure-devops-mcp)  
+- [Playwright MCP Tool](https://github.com/microsoft/playwright-mcp)  
+- [MCP Community Examples](https://github.com/microsoft/mcp)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
