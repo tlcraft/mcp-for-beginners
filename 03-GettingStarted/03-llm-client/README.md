@@ -483,7 +483,7 @@ Next step after listing server capabilities is to convert them into a format tha
     In the preceding code we've:
 
     - Created a function `ConvertFrom` that takes, name, description and input schema.
-    - Defined functionality that creates a FunctionDefinition that gets passed to a ChatCompletionsDefinition. The latter is something the LLM can understant.
+    - Defined functionality that creates a FunctionDefinition that gets passed to a ChatCompletionsDefinition. The latter is something the LLM can understand.
 
 1. Let's see how we can update some existing code to take advantage of this function above:
 
