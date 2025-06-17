@@ -1,74 +1,74 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eda412c63b61335a047f39c44d1b55bc",
-  "translation_date": "2025-06-13T01:50:17+00:00",
+  "original_hash": "1015443af8119fb019c152bca90fb293",
+  "translation_date": "2025-06-17T22:23:22+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "sw"
 }
 -->
-# HTTPS Streaming with Model Context Protocol (MCP)
+# Uchezaji wa HTTPS kwa Protokoli ya Muktadha wa Mfano (MCP)
 
-Sura hii inatoa mwongozo kamili wa kutekeleza usambazaji salama, unaoweza kupanuka, na wa wakati halisi kwa kutumia Model Context Protocol (MCP) kupitia HTTPS. Inajumuisha sababu za usambazaji, njia za usafirishaji zinazopatikana, jinsi ya kutekeleza HTTP inayoweza kusambazwa ndani ya MCP, mbinu bora za usalama, mabadiliko kutoka SSE, na mwongozo wa vitendo wa kujenga programu zako za MCP zinazoweza kusambazwa.
+Sura hii inatoa mwongozo kamili wa kutekeleza uchezaji salama, unaoweza kupanuka, na wa wakati halisi kwa kutumia Protokoli ya Muktadha wa Mfano (MCP) kwa kutumia HTTPS. Inajumuisha sababu za uchezaji, mifumo ya usafirishaji inayopatikana, jinsi ya kutekeleza HTTP inayoweza kuchezwa katika MCP, mbinu bora za usalama, uhamisho kutoka SSE, na mwongozo wa vitendo wa kujenga programu zako za MCP zinazocheza.
 
-## Njia za Usafirishaji na Usambazaji katika MCP
+## Mifumo ya Usafirishaji na Uchezaji katika MCP
 
-Sehemu hii inachunguza njia tofauti za usafirishaji zinazopatikana ndani ya MCP na jukumu lao katika kuwezesha uwezo wa usambazaji kwa mawasiliano ya wakati halisi kati ya wateja na seva.
+Sehemu hii inachunguza mifumo tofauti ya usafirishaji inayopatikana katika MCP na nafasi yake katika kuwezesha uwezo wa uchezaji kwa mawasiliano ya wakati halisi kati ya wateja na seva.
 
-### Njia ya Usafirishaji ni Nini?
+### Nini maana ya Mfumo wa Usafirishaji?
 
-Njia ya usafirishaji inaelezea jinsi data inavyobadilishana kati ya mteja na seva. MCP inaunga mkono aina mbalimbali za usafirishaji ili kufaa mazingira na mahitaji tofauti:
+Mfumo wa usafirishaji unaeleza jinsi data inavyobadilishana kati ya mteja na seva. MCP inaunga mkono aina mbalimbali za usafirishaji ili kufaa mazingira na mahitaji tofauti:
 
-- **stdio**: Ingizo/Output ya kawaida, inayofaa kwa zana za eneo la kazi na za CLI. Rahisi lakini haitafaa kwa wavuti au wingu.
-- **SSE (Server-Sent Events)**: Inaruhusu seva kusukuma masasisho ya wakati halisi kwa wateja kupitia HTTP. Inafaa kwa UI za wavuti, lakini ina mipaka ya upanuzi na kubadilika.
-- **Streamable HTTP**: Usafirishaji wa kisasa unaotegemea HTTP, unaounga mkono arifa na upanuzi bora. Inapendekezwa kwa hali nyingi za uzalishaji na wingu.
+- **stdio**: Ingizo/tokwa la kawaida, linafaa kwa zana za eneo la kazi na zile zinazotumia CLI. Rahisi lakini halifai kwa wavuti au wingu.
+- **SSE (Server-Sent Events)**: Inaruhusu seva kusukuma masasisho ya wakati halisi kwa wateja kupitia HTTP. Inafaa kwa interface za wavuti, lakini ina mipaka katika upanuzi na kubadilika.
+- **Streamable HTTP**: Usafirishaji wa kisasa wa uchezaji unaotegemea HTTP, unaounga mkono taarifa na upanuzi bora. Inapendekezwa kwa hali nyingi za uzalishaji na wingu.
 
-### Jedwali la Ulinganisho
+### Jedwali la Mlinganifu
 
-Tazama jedwali la ulinganisho hapa chini kuelewa tofauti kati ya njia hizi za usafirishaji:
+Angalia jedwali la mlinganifu hapa chini kuelewa tofauti kati ya mifumo hii ya usafirishaji:
 
-| Usafirishaji     | Masasisho ya Wakati Halisi | Usambazaji | Upanuzi | Matumizi                    |
-|------------------|----------------------------|------------|---------|-----------------------------|
-| stdio            | Hapana                     | Hapana     | Chini   | Zana za eneo la kazi za CLI |
-| SSE              | Ndiyo                      | Ndiyo      | Kati    | Wavuti, masasisho ya wakati halisi |
-| Streamable HTTP  | Ndiyo                      | Ndiyo      | Juu     | Wingu, wateja wengi         |
+| Usafirishaji     | Masasisho ya Wakati Halisi | Uchezaji | Upanuzi | Matumizi                   |
+|------------------|----------------------------|----------|---------|----------------------------|
+| stdio            | Hapana                     | Hapana   | Chini   | Zana za eneo la kazi CLI   |
+| SSE              | Ndiyo                      | Ndiyo    | Kati    | Wavuti, masasisho ya wakati halisi |
+| Streamable HTTP  | Ndiyo                      | Ndiyo    | Juu     | Wingu, wateja wengi        |
 
-> **Tip:** Kuchagua njia sahihi ya usafirishaji huathiri utendaji, upanuzi, na uzoefu wa mtumiaji. **Streamable HTTP** inapendekezwa kwa programu za kisasa, zinazoweza kupanuka, na zenye maandalizi ya wingu.
+> **Tip:** Kuchagua usafirishaji sahihi huathiri utendaji, upanuzi, na uzoefu wa mtumiaji. **Streamable HTTP** inapendekezwa kwa programu za kisasa, zinazopanuka, na zinazofaa kwa wingu.
 
-Tambua njia za usafirishaji stdio na SSE ulizojifunza katika sura zilizopita na jinsi Streamable HTTP inavyofunikwa katika sura hii.
+Tambua mifumo ya usafirishaji stdio na SSE ulioonyeshwa katika sura zilizopita na jinsi Streamable HTTP inavyoshughulikiwa katika sura hii.
 
-## Usambazaji: Dhana na Sababu
+## Uchezaji: Dhana na Sababu
 
-Kuelewa dhana za msingi na sababu za usambazaji ni muhimu kwa kutekeleza mifumo madhubuti ya mawasiliano ya wakati halisi.
+Kuelewa dhana za msingi na sababu za uchezaji ni muhimu kwa kutekeleza mifumo madhubuti ya mawasiliano ya wakati halisi.
 
-**Usambazaji** ni mbinu katika programu za mtandao inayoruhusu data kutumwa na kupokelewa vipande vidogo vinavyoweza kudhibitiwa au kama mlolongo wa matukio, badala ya kusubiri jibu lote liwe tayari. Hii ni muhimu hasa kwa:
+**Uchezaji** ni mbinu katika programu za mtandao inayoruhusu data kutumwa na kupokelewa kwa vipande vidogo vinavyoweza kudhibitiwa au kama mfululizo wa matukio, badala ya kusubiri majibu yote kuwa tayari. Hii ni muhimu hasa kwa:
 
 - Faili kubwa au seti za data.
 - Masasisho ya wakati halisi (mfano, mazungumzo, vipimo vya maendeleo).
-- Hisabati za muda mrefu ambapo unataka kumjulisha mtumiaji.
+- Hesabu za muda mrefu ambapo unataka mtumiaji afahamishwe mara kwa mara.
 
-Hapa ni mambo unayopaswa kuyajua kuhusu usambazaji kwa kiwango cha juu:
+Hapa ni mambo muhimu unayopaswa kuyajua kuhusu uchezaji kwa kiwango cha juu:
 
-- Data hutolewa hatua kwa hatua, si yote mara moja.
+- Data hutolewa kwa hatua, si mara moja.
 - Mteja anaweza kushughulikia data anapopokea.
-- Hupunguza ucheleweshaji unaohisiwa na kuboresha uzoefu wa mtumiaji.
+- Hupunguza ucheleweshaji unaoonekana na kuboresha uzoefu wa mtumiaji.
 
-### Kwa Nini Utumie Usambazaji?
+### Kwa nini tumia uchezaji?
 
-Sababu za kutumia usambazaji ni kama ifuatavyo:
+Sababu za kutumia uchezaji ni zifuatazo:
 
-- Watumiaji hupokea mrejesho mara moja, si tu mwishoni
-- Huwezesha programu za wakati halisi na UI zinazojibu haraka
+- Watumiaji wanapata mrejesho mara moja, si tu mwishoni
+- Huwezesha programu za wakati halisi na interface zinazojibu haraka
 - Matumizi bora ya rasilimali za mtandao na kompyuta
 
-### Mfano Rahisi: Seva na Mteja wa HTTP Streaming
+### Mfano Rahisi: Seva na Mteja wa Uchezaji wa HTTP
 
-Hapa kuna mfano rahisi wa jinsi usambazaji unavyoweza kutekelezwa:
+Hapa kuna mfano rahisi wa jinsi uchezaji unavyoweza kutekelezwa:
 
 <details>
 <summary>Python</summary>
 
-**Seva (Python, kutumia FastAPI na StreamingResponse):**
+**Seva (Python, ikitumia FastAPI na StreamingResponse):**
 <details>
 <summary>Python</summary>
 
@@ -91,7 +91,7 @@ def stream():
 
 </details>
 
-**Mteja (Python, kutumia requests):**
+**Mteja (Python, ikitumia requests):**
 <details>
 <summary>Python</summary>
 
@@ -106,14 +106,14 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-Mfano huu unaonyesha seva ikituma mfululizo wa ujumbe kwa mteja anapopatikana, badala ya kusubiri ujumbe wote uwe tayari.
+Mfano huu unaonyesha seva ikituma mfululizo wa ujumbe kwa mteja anapopatikana, badala ya kusubiri ujumbe wote kuwa tayari.
 
 **Jinsi inavyofanya kazi:**
-- Seva hutuma kila ujumbe anapokuwa tayari.
-- Mteja hupokea na kuchapisha kila kipande anapokipokea.
+- Seva hutuma kila ujumbe linapokuwa tayari.
+- Mteja anapokea na kuchapisha kila kipande anapopokea.
 
 **Mahitaji:**
-- Seva lazima itumie jibu la usambazaji (mfano, `StreamingResponse` in FastAPI).
+- Seva inapaswa kutumia majibu ya uchezaji (mfano, `StreamingResponse` in FastAPI).
 - The client must process the response as a stream (`stream=True` in requests).
 - Content-Type is usually `text/event-stream` or `application/octet-stream`.
 
@@ -152,35 +152,35 @@ Additionally, here are some key differences:
 
 ### Recommendations
 
-There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream`) badala ya kuchagua usambazaji kupitia MCP.
+There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream`) badala ya kuchagua uchezaji kupitia MCP.
 
-- **Kwa mahitaji rahisi ya usambazaji:** Usambazaji wa HTTP wa kawaida ni rahisi kutekeleza na unatosha kwa mahitaji ya msingi.
+- **Kwa mahitaji rahisi ya uchezaji:** Uchezaji wa HTTP wa kawaida ni rahisi kutekeleza na unatosha kwa mahitaji ya msingi.
 
-- **Kwa programu tata na za mwingiliano:** Usambazaji wa MCP hutoa mbinu iliyo na muundo zaidi na metadata tajiri pamoja na utofauti kati ya arifa na matokeo ya mwisho.
+- **Kwa programu tata na za mwingiliano:** Uchezaji wa MCP hutoa njia yenye muundo zaidi yenye metadata tajiri na utofauti kati ya taarifa na matokeo ya mwisho.
 
-- **Kwa programu za AI:** Mfumo wa arifa wa MCP ni muhimu hasa kwa kazi za AI zinazochukua muda mrefu ambapo unataka kuwajulisha watumiaji maendeleo.
+- **Kwa programu za AI:** Mfumo wa taarifa wa MCP ni muhimu hasa kwa kazi za AI za muda mrefu ambapo unataka kuwajulisha watumiaji maendeleo.
 
-## Usambazaji katika MCP
+## Uchezaji katika MCP
 
-Sasa, umeona mapendekezo na ulinganisho kuhusu tofauti kati ya usambazaji wa kawaida na ule wa MCP. Hebu tuchambue kwa kina jinsi unavyoweza kutumia usambazaji ndani ya MCP.
+Sawa, umeona mapendekezo na mlinganisho kuhusu tofauti kati ya uchezaji wa kawaida na uchezaji katika MCP. Hebu tuchunguze kwa undani jinsi unavyoweza kutumia uchezaji katika MCP.
 
-Kuelewa jinsi usambazaji unavyofanya kazi ndani ya mfumo wa MCP ni muhimu kwa kujenga programu zinazojibu na kutoa mrejesho wa wakati halisi kwa watumiaji wakati wa shughuli za muda mrefu.
+Kuelewa jinsi uchezaji unavyofanya kazi ndani ya mfumo wa MCP ni muhimu kwa kujenga programu zinazojibu haraka na kutoa mrejesho wa wakati halisi kwa watumiaji wakati wa shughuli za muda mrefu.
 
-Katika MCP, usambazaji siyo kutuma jibu kuu vipande vipande, bali kutuma **arifa** kwa mteja wakati zana inashughulikia ombi. Arifa hizi zinaweza kujumuisha masasisho ya maendeleo, kumbukumbu, au matukio mengine.
+Katika MCP, uchezaji sio kutuma jibu kuu kwa vipande, bali ni kutuma **taarifa** kwa mteja wakati zana inashughulikia ombi. Taarifa hizi zinaweza kujumuisha masasisho ya maendeleo, kumbukumbu, au matukio mengine.
 
-### Jinsi Inavyofanya Kazi
+### Jinsi inavyofanya kazi
 
-Matokeo makuu bado hutumwa kama jibu moja. Hata hivyo, arifa zinaweza kutumwa kama ujumbe tofauti wakati wa usindikaji na hivyo kusasisha mteja kwa wakati halisi. Mteja lazima aweze kushughulikia na kuonyesha arifa hizi.
+Matokeo makuu bado hutumwa kama jibu moja. Hata hivyo, taarifa zinaweza kutumwa kama ujumbe tofauti wakati wa usindikaji na hivyo kusasisha mteja kwa wakati halisi. Mteja lazima aweze kushughulikia na kuonyesha taarifa hizi.
 
-## Arifa ni Nini?
+## Nini maana ya Taarifa?
 
-Tulizungumza kuhusu "Arifa", maana yake ni nini katika muktadha wa MCP?
+Tulisema "Taarifa", maana yake ni nini katika muktadha wa MCP?
 
-Arifa ni ujumbe unaotumwa kutoka seva kwenda kwa mteja kuarifu kuhusu maendeleo, hali, au matukio mengine wakati wa shughuli za muda mrefu. Arifa huongeza uwazi na uzoefu wa mtumiaji.
+Taarifa ni ujumbe unaotumwa kutoka seva kwenda kwa mteja ili kumjulisha kuhusu maendeleo, hali, au matukio mengine wakati wa operesheni ya muda mrefu. Taarifa huboresha uwazi na uzoefu wa mtumiaji.
 
-Kwa mfano, mteja anapaswa kutuma arifa mara tu makubaliano ya awali na seva yametimizwa.
+Kwa mfano, mteja anapaswa kutuma taarifa mara baada ya mkutano wa awali na seva kufanyika.
 
-Arifa inaonekana kama ujumbe wa JSON kama ifuatavyo:
+Taarifa inaonekana kama ujumbe wa JSON kama ifuatavyo:
 
 ```json
 {
@@ -192,9 +192,9 @@ Arifa inaonekana kama ujumbe wa JSON kama ifuatavyo:
 }
 ```
 
-Arifa zinahusiana na mada ndani ya MCP inayojulikana kama ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
+Taarifa zinahusiana na mada katika MCP inayojulikana kama ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
 
-Ili logging ifanye kazi, seva inahitaji kuizima kama kipengele/uwezo kama ifuatavyo:
+Ili kufanikisha uandishi wa kumbukumbu, seva inahitaji kuwezesha kipengele hiki kama sifa/kifaa kama ifuatavyo:
 
 ```json
 {
@@ -205,28 +205,28 @@ Ili logging ifanye kazi, seva inahitaji kuizima kama kipengele/uwezo kama ifuata
 ```
 
 > [!NOTE]
-> Kulingana na SDK inayotumika, logging inaweza kuwa imewezeshwa kwa chaguo-msingi, au unaweza kuhitaji kuiwezesha waziwazi katika usanidi wa seva yako.
+> Kutegemea SDK inayotumika, uandishi wa kumbukumbu unaweza kuwa umewezeshwa kwa chaguo-msingi, au unaweza kuhitaji kuuwezesha waziwazi katika usanidi wa seva yako.
 
-Kuna aina mbalimbali za arifa:
+Kuna aina tofauti za taarifa:
 
-| Kiwango   | Maelezo                       | Mfano wa Matumizi             |
-|-----------|-------------------------------|-------------------------------|
-| debug     | Taarifa za kina za ufuatiliaji | Ingizo/matokeo ya kazi za kazi |
-| info      | Ujumbe wa taarifa za jumla     | Masasisho ya maendeleo ya operesheni |
-| notice    | Matukio ya kawaida lakini muhimu | Mabadiliko ya usanidi          |
-| warning   | Hali za onyo                   | Matumizi ya vipengele vilivyotangazwa kuwa havitumiki |
-| error     | Hali za makosa                | Kushindwa kwa operesheni       |
-| critical  | Hali za hatari kubwa          | Kushindwa kwa vipengele vya mfumo |
-| alert     | Hatua ya haraka inahitajika   | Ugundaji wa uharibifu wa data  |
-| emergency | Mfumo hauwezi kutumika         | Kushindwa kabisa kwa mfumo    |
+| Kiwango    | Maelezo                      | Mfano wa Matumizi             |
+|------------|------------------------------|------------------------------|
+| debug      | Maelezo ya kina ya utambuzi   | Mambo ya kuingia/kuondoka kwenye kazi |
+| info       | Ujumbe wa taarifa za jumla    | Masasisho ya maendeleo ya operesheni  |
+| notice     | Matukio ya kawaida lakini muhimu | Mabadiliko ya usanidi         |
+| warning    | Hali za onyo                  | Matumizi ya kipengele kilichokatwa |
+| error      | Hali za makosa               | Kushindwa kwa operesheni      |
+| critical   | Hali za dharura              | Kushindwa kwa sehemu ya mfumo |
+| alert      | Hatua lazima zichukuliwe mara moja | Kugunduliwa kwa uharibifu wa data |
+| emergency  | Mfumo hauwezi kutumika        | Kushindwa kabisa kwa mfumo   |
 
-## Kutekeleza Arifa katika MCP
+## Kutekeleza Taarifa katika MCP
 
-Ili kutekeleza arifa katika MCP, unahitaji kuandaa pande zote za seva na mteja kushughulikia masasisho ya wakati halisi. Hii inaruhusu programu yako kutoa mrejesho wa papo hapo kwa watumiaji wakati wa shughuli za muda mrefu.
+Ili kutekeleza taarifa katika MCP, unahitaji kuandaa pande zote za seva na mteja kushughulikia masasisho ya wakati halisi. Hii inaruhusu programu yako kutoa mrejesho wa papo hapo kwa watumiaji wakati wa shughuli za muda mrefu.
 
-### Seva: Kutuma Arifa
+### Seva: Kutuma Taarifa
 
-Tuanze na upande wa seva. Katika MCP, unaeleza zana zinazoweza kutuma arifa wakati zinashughulikia maombi. Seva hutumia kitu cha muktadha (kawaida `ctx`) kutuma ujumbe kwa mteja.
+Tuanze na upande wa seva. Katika MCP, unaeleza zana zinazoweza kutuma taarifa wakati wa kushughulikia maombi. Seva hutumia kitu cha muktadha (kawaida `ctx`) kutuma ujumbe kwa mteja.
 
 <details>
 <summary>Python</summary>
@@ -255,9 +255,9 @@ mcp.run(transport="streamable-http")
 
 </details>
 
-### Mteja: Kupokea Arifa
+### Mteja: Kupokea Taarifa
 
-Mteja lazima atekeleze mshughulikiaji wa ujumbe ili kushughulikia na kuonyesha arifa anazopokea.
+Mteja lazima aweke utekelezaji wa mpokeaji wa ujumbe kushughulikia na kuonyesha taarifa zinapofika.
 
 <details>
 <summary>Python</summary>
@@ -281,13 +281,13 @@ Katika msimbo uliotangulia, `message_handler` function checks if the incoming me
 
 </details>
 
-To enable notifications, ensure your server uses a streaming transport (like `streamable-http`) na mteja wako hutekeleza mshughulikiaji wa ujumbe kushughulikia arifa.
+To enable notifications, ensure your server uses a streaming transport (like `streamable-http`) na mteja wako anatekeleza mpokeaji wa ujumbe kushughulikia taarifa.
 
-## Arifa za Maendeleo & Mifano
+## Taarifa za Maendeleo na Matukio
 
-Sehemu hii inaelezea dhana ya arifa za maendeleo katika MCP, kwa nini ni muhimu, na jinsi ya kuzitekeleza kwa kutumia Streamable HTTP. Pia utapata zoezi la vitendo kusaidia kuelewa.
+Sehemu hii inaelezea dhana ya taarifa za maendeleo katika MCP, kwanini ni muhimu, na jinsi ya kuzitekeleza kwa kutumia Streamable HTTP. Pia utapata zoezi la vitendo kuthibitisha uelewa wako.
 
-Arifa za maendeleo ni ujumbe wa wakati halisi unaotumwa kutoka seva kwenda kwa mteja wakati wa shughuli za muda mrefu. Badala ya kusubiri mchakato mzima ukamilike, seva inaendelea kumjulisha mteja kuhusu hali ya sasa. Hii huongeza uwazi, uzoefu wa mtumiaji, na kurahisisha ufuatiliaji.
+Taarifa za maendeleo ni ujumbe wa wakati halisi unaotumwa kutoka seva kwenda kwa mteja wakati wa shughuli za muda mrefu. Badala ya kusubiri mchakato mzima kumalizika, seva inaendelea kuwajulisha wateja kuhusu hali ya sasa. Hii huboresha uwazi, uzoefu wa mtumiaji, na kurahisisha utambuzi wa matatizo.
 
 **Mfano:**
 
@@ -300,20 +300,20 @@ Arifa za maendeleo ni ujumbe wa wakati halisi unaotumwa kutoka seva kwenda kwa m
 
 ```
 
-### Kwa Nini Utumie Arifa za Maendeleo?
+### Kwa nini tumia Taarifa za Maendeleo?
 
-Arifa za maendeleo ni muhimu kwa sababu kadhaa:
+Taarifa za maendeleo ni muhimu kwa sababu kadhaa:
 
 - **Uzoefu bora wa mtumiaji:** Watumiaji wanaona masasisho wanapofanya kazi, si tu mwishoni.
-- **Mrejesho wa wakati halisi:** Wateja wanaweza kuonyesha vipimo vya maendeleo au kumbukumbu, na kufanya programu ionekane ya haraka.
-- **Kufanya ufuatiliaji na uchunguzi kuwa rahisi:** Waendelezaji na watumiaji wanaweza kuona sehemu inayochelewa au kushindwa.
+- **Mrejesho wa wakati halisi:** Wateja wanaweza kuonyesha vipimo vya maendeleo au kumbukumbu, kufanya programu ionekane inayojibu.
+- **Rahisi kutambua matatizo na kufuatilia:** Waendelezaji na watumiaji wanaweza kuona sehemu gani ya mchakato inaweza kuwa polepole au imekwama.
 
-### Jinsi ya Kutekeleza Arifa za Maendeleo
+### Jinsi ya Kutekeleza Taarifa za Maendeleo
 
-Hapa ni jinsi unavyoweza kutekeleza arifa za maendeleo katika MCP:
+Hapa ni jinsi unavyoweza kutekeleza taarifa za maendeleo katika MCP:
 
-- **Seva:** Tumia `ctx.info()` or `ctx.log()` kutuma arifa kila kipengele kinaposhughulikiwa. Hii hutuma ujumbe kwa mteja kabla ya matokeo makuu kuwa tayari.
-- **Mteja:** Tekeleza mshughulikiaji wa ujumbe unaosikiliza na kuonyesha arifa anazopokea. Mshughulikiaji huyu hutofautisha kati ya arifa na matokeo ya mwisho.
+- **Kwenye seva:** Tumia `ctx.info()` or `ctx.log()` kutuma taarifa kila kipengele kinaposhughulikiwa. Hii hutuma ujumbe kwa mteja kabla ya matokeo kuu kuwa tayari.
+- **Kwenye mteja:** Tekeleza mpokeaji wa ujumbe unaosikiliza na kuonyesha taarifa zinapofika. Mpokeaji huyu hutofautisha kati ya taarifa na matokeo ya mwisho.
 
 **Mfano wa Seva:**
 
@@ -346,16 +346,16 @@ async def message_handler(message):
 
 </details>
 
-## Mambo ya Usalama
+## Masuala ya Usalama
 
-Unapotekeleza seva za MCP kwa kutumia usafirishaji wa HTTP, usalama unakuwa jambo la msingi linalohitaji umakini mkubwa dhidi ya aina mbalimbali za mashambulizi na mbinu za ulinzi.
+Unapotekeleza seva za MCP kwa usafirishaji wa HTTP, usalama unakuwa jambo la msingi linalohitaji umakini mkubwa kwa njia mbalimbali za mashambulizi na mbinu za ulinzi.
 
 ### Muhtasari
 
-Usalama ni muhimu sana wakati seva za MCP zinapowekwa wazi kupitia HTTP. Streamable HTTP huleta maeneo mapya ya mashambulizi na inahitaji usanidi makini.
+Usalama ni muhimu unapoonyesha seva za MCP kupitia HTTP. Streamable HTTP inaleta maeneo mapya ya mashambulizi na inahitaji usanidi makini.
 
 ### Vidokezo Muhimu
-- **Uthibitishaji wa kichwa cha Origin**: Daima hakikisha `Origin` header to prevent DNS rebinding attacks.
+- **Uthibitishaji wa Kichwa cha Origin**: Daima thibitisha `Origin` header to prevent DNS rebinding attacks.
 - **Localhost Binding**: For local development, bind servers to `localhost` to avoid exposing them to the public internet.
 - **Authentication**: Implement authentication (e.g., API keys, OAuth) for production deployments.
 - **CORS**: Configure Cross-Origin Resource Sharing (CORS) policies to restrict access.
@@ -444,52 +444,52 @@ Here's how you can migrate from SSE to Streamable HTTP in your MCP applications:
 
 1. **Update server code** to use `transport="streamable-http"` in `mcp.run()`.
 2. **Update client code** to use `streamablehttp_client` badala ya mteja wa SSE.
-3. **Tekeleza mshughulikiaji wa ujumbe** katika mteja kushughulikia arifa.
-4. **Fanya majaribio ya ulinganifu** na zana na njia za kazi zilizopo.
+3. **Tekeleza mpokeaji wa ujumbe** katika mteja kushughulikia taarifa.
+4. **Jaribu ushirikiano** na zana na njia za kazi zilizopo.
 
-### Kudumisha Ulinganifu
+### Kudumisha Ushirikiano
 
-Inashauriwa kudumisha ulinganifu na wateja wa SSE waliopo wakati wa mchakato wa mabadiliko. Hapa kuna mikakati:
+Inapendekezwa kudumisha ushirikiano na wateja wa SSE waliopo wakati wa mchakato wa uhamisho. Hapa kuna mikakati:
 
-- Unaweza kuunga mkono SSE na Streamable HTTP kwa kuendesha usafirishaji wote kwenye sehemu tofauti.
-- Polepole hamisha wateja kwenye usafirishaji mpya.
+- Unaweza kuunga mkono SSE na Streamable HTTP kwa kuendesha mifumo yote miwili kwenye anwani tofauti.
+- Polepole hamisha wateja kwenda kwenye usafirishaji mpya.
 
 ### Changamoto
 
-Hakikisha unashughulikia changamoto zifuatazo wakati wa mabadiliko:
+Hakikisha unashughulikia changamoto zifuatazo wakati wa uhamisho:
 
-- Kuhakikisha wateja wote wameboreshwa
-- Kushughulikia tofauti katika utoaji wa arifa
+- Kuhakikisha wateja wote wanapokea masasisho
+- Kushughulikia tofauti katika utoaji wa taarifa
 
-### Zoeezi: Jenga Programu Yako ya MCP Inayoweza Kusambazwa
+### Zozi: Jenga Programu Yako ya Uchezaji ya MCP
 
 **Hali:**
-Jenga seva na mteja wa MCP ambapo seva inashughulikia orodha ya vitu (mfano, faili au nyaraka) na kutuma arifa kwa kila kipengele kinachoshughulikiwa. Mteja aonyeshe kila arifa anapopokea.
+Jenga seva na mteja wa MCP ambapo seva inashughulikia orodha ya vitu (mfano, faili au nyaraka) na kutuma taarifa kwa kila kipengele kinachoshughulikiwa. Mteja anapaswa kuonyesha kila taarifa inaporudi.
 
 **Hatua:**
 
-1. Tekeleza zana ya seva inayoshughulikia orodha na kutuma arifa kwa kila kipengele.
-2. Tekeleza mteja mwenye mshughulikiaji wa ujumbe kuonyesha arifa kwa wakati halisi.
-3. Jaribu utekelezaji wako kwa kuendesha seva na mteja, kisha angalia arifa.
+1. Tekeleza zana ya seva inayoshughulikia orodha na kutuma taarifa kwa kila kipengele.
+2. Tekeleza mteja mwenye mpokeaji wa ujumbe kuonyesha taarifa kwa wakati halisi.
+3. Jaribu utekelezaji wako kwa kuendesha seva na mteja, kisha angalia taarifa zinazoonekana.
 
 [Solution](./solution/README.md)
 
-## Kusoma Zaidi & Hatua Zifuatazo
+## Kusoma Zaidi na Nini Kifuatacho?
 
-Ili kuendelea na safari yako na MCP streaming na kupanua maarifa yako, sehemu hii inatoa rasilimali za ziada na mapendekezo ya hatua zinazofuata za kujenga programu za hali ya juu zaidi.
+Ili kuendelea na safari yako na uchezaji wa MCP na kuongeza maarifa yako, sehemu hii inatoa rasilimali za ziada na hatua zinazopendekezwa za kujenga programu za hali ya juu zaidi.
 
 ### Kusoma Zaidi
 
-- [Microsoft: Utangulizi wa HTTP Streaming](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
-- [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
+- [Microsoft: Utangulizi wa Uchezaji wa HTTP](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
+- [Microsoft: Matukio Yanayotumwa na Seva (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
 - [Microsoft: CORS katika ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
-- [Python requests: Maombi ya Usambazaji](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
+- [Python requests: Maombi ya Uchezaji](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
 
-### Hatua Zifuatazo
+### Nini Kifuatacho?
 
-- Jaribu kujenga zana za MCP za hali ya juu zinazotumia usambazaji kwa uchambuzi wa wakati halisi, mazungumzo, au uhariri wa pamoja.
-- Chunguza kuunganisha MCP streaming na mifumo ya mbele (React, Vue, n.k.) kwa masasisho ya moja kwa moja ya UI.
+- Jaribu kujenga zana za MCP za hali ya juu zinazotumia uchezaji kwa uchambuzi wa wakati halisi, mazungumzo, au uhariri wa pamoja.
+- Chunguza kuunganisha uchezaji wa MCP na mifumo ya mbele (React, Vue, nk) kwa masasisho ya moja kwa moja ya UI.
 - Ifuatayo: [Kutumia AI Toolkit kwa VSCode](../07-aitk/README.md)
 
-**Kisahafu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kasoro. Nyaraka asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na watu inashauriwa. Hatubebeki dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Tangazo la Hukumu**:  
+Nyaraka hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Nyaraka asilia katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo halali. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatubebwi dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
