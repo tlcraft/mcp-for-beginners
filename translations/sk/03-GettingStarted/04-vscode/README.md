@@ -1,116 +1,116 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c37fabfbc0dcbc9a4afb6d17e7d3be9f",
-  "translation_date": "2025-05-17T11:15:12+00:00",
+  "original_hash": "0eb9557780cd0a2551cdb8a16c886b51",
+  "translation_date": "2025-06-17T16:10:42+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "sk"
 }
 -->
-Poďme sa v nasledujúcich častiach podrobnejšie pozrieť na to, ako používame vizuálne rozhranie.
+Poďme sa v nasledujúcich častiach viac venovať používaniu vizuálneho rozhrania.
 
 ## Prístup
 
-Tu je, ako by sme mali pristupovať k tomuto procesu na vysokej úrovni:
+Takto by sme mali k tomu na vysokej úrovni pristupovať:
 
-- Nakonfigurovať súbor na nájdenie nášho MCP Servera.
-- Spustiť/Pripojiť sa k danému serveru, aby sme videli zoznam jeho schopností.
-- Využiť tieto schopnosti prostredníctvom chatového rozhrania GitHub Copilot.
+- Nakonfigurovať súbor na nájdenie nášho MCP servera.
+- Spustiť/pripojiť sa k uvedenému serveru, aby sme získali zoznam jeho schopností.
+- Používať tieto schopnosti prostredníctvom rozhrania GitHub Copilot Chat.
 
-Skvelé, teraz keď rozumieme tomuto procesu, poďme skúsiť použiť MCP Server prostredníctvom Visual Studio Code pomocou cvičenia.
+Skvelé, teraz keď rozumieme postupu, poďme si vyskúšať použitie MCP servera vo Visual Studio Code prostredníctvom cvičenia.
 
-## Cvičenie: Spotreba servera
+## Cvičenie: Použitie servera
 
-V tomto cvičení nakonfigurujeme Visual Studio Code tak, aby našlo váš MCP server, aby ho bolo možné použiť prostredníctvom chatového rozhrania GitHub Copilot.
+V tomto cvičení nakonfigurujeme Visual Studio Code tak, aby našlo váš MCP server a mohlo ho používať prostredníctvom rozhrania GitHub Copilot Chat.
 
-### -0- Predkrok, povoliť objavovanie MCP Serverov
+### -0- Predkrok, povolenie zisťovania MCP serverov
 
-Možno budete musieť povoliť objavovanie MCP Serverov.
+Možno budete musieť povoliť zisťovanie MCP serverov.
 
-1. Choďte na `File -> Preferences -> Settings` in Visual Studio Code.
+1. Choďte do `File -> Preferences -> Settings` in Visual Studio Code.
 
 1. Search for "MCP" and enable `chat.mcp.discovery.enabled` v súbore settings.json.
 
-### -1- Vytvoriť konfiguračný súbor
+### -1- Vytvorenie konfiguračného súboru
 
-Začnite vytvorením konfiguračného súboru v koreňovom adresári vášho projektu, budete potrebovať súbor s názvom MCP.json a umiestniť ho do priečinka s názvom .vscode. Malo by to vyzerať takto:
+Začnite vytvorením konfiguračného súboru v koreňovom adresári vášho projektu. Potrebujete súbor s názvom MCP.json, ktorý umiestnite do priečinka .vscode. Mal by vyzerať takto:
 
 ```text
 .vscode
 |-- mcp.json
 ```
 
-Ďalej sa pozrime, ako môžeme pridať záznam servera.
+Ďalej si ukážeme, ako pridať záznam o serveri.
 
-### -2- Nakonfigurovať server
+### -2- Konfigurácia servera
 
-Pridajte nasledujúci obsah do súboru *mcp.json*:
+Pridajte nasledujúci obsah do *mcp.json*:
 
 ```json
 {
     "inputs": [],
     "servers": {
        "hello-mcp": {
-           "command": "cmd",
+           "command": "node",
            "args": [
-               "/c", "node", "<absolute path>\\build\\index.js"
+               "build/index.js"
            ]
        }
     }
 }
 ```
 
-Tu je jednoduchý príklad, ako spustiť server napísaný v Node.js, pre iné runtime prostredia určte správny príkaz na spustenie servera pomocou `command` and `args`.
+Vyššie je jednoduchý príklad, ako spustiť server napísaný v Node.js, pre iné runtime prostredia uveďte správny príkaz na spustenie servera pomocou `command` and `args`.
 
-### -3- Spustiť server
+### -3- Spustenie servera
 
-Teraz, keď ste pridali záznam, poďme spustiť server:
+Keď ste pridali záznam, poďme server spustiť:
 
-1. Nájdite svoj záznam v *mcp.json* a uistite sa, že nájdete ikonu "play":
+1. Nájdite svoj záznam v *mcp.json* a uistite sa, že vidíte ikonu "play":
 
-  ![Spustenie servera vo Visual Studio Code](../../../../translated_images/vscode-start-server.c7f1132263a8ce789fa7f436eb3df7e36199ebf863f1a8205bfc4483c9e40924.sk.png)  
+  ![Spustenie servera vo Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.sk.png)  
 
-1. Kliknite na ikonu "play", mali by ste vidieť, že ikona nástrojov v chatovom rozhraní GitHub Copilot zvyšuje počet dostupných nástrojov. Ak kliknete na túto ikonu nástrojov, uvidíte zoznam registrovaných nástrojov. Môžete zaškrtnúť/odškrtnúť každý nástroj v závislosti na tom, či chcete, aby GitHub Copilot ich používal ako kontext:
+1. Kliknite na ikonu "play", mali by ste vidieť, že ikona nástrojov v GitHub Copilot Chat sa zvýši o počet dostupných nástrojov. Ak kliknete na túto ikonu nástrojov, zobrazí sa vám zoznam registrovaných nástrojov. Môžete jednotlivé nástroje zaškrtnúť alebo odškrtnúť podľa toho, či chcete, aby ich GitHub Copilot používal ako kontext:
 
-  ![Spustenie servera vo Visual Studio Code](../../../../translated_images/vscode-tool.ce37be05a56b9af258f882c161dbf35e23ac885b08ee5f5ee643097653b135b8.sk.png)
+  ![Spustenie servera vo Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.sk.png)
 
-1. Na spustenie nástroja napíšte výzvu, o ktorej viete, že zodpovedá popisu jedného z vašich nástrojov, napríklad výzva ako "pridať 22 k 1":
+1. Na spustenie nástroja napíšte prompt, o ktorom viete, že zodpovedá popisu niektorého z vašich nástrojov, napríklad prompt "add 22 to 1":
 
-  ![Spustenie nástroja z GitHub Copilot](../../../../translated_images/vscode-agent.7f56a5ce3cef334adfe737514a7e8ac9384fa4161dd4df14bd3ddc9cd1a154f4.sk.png)
+  ![Spustenie nástroja z GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.sk.png)
 
-  Mali by ste vidieť odpoveď hovoriacu 23.
+  Mali by ste vidieť odpoveď s výsledkom 23.
 
-## Úloha
+## Zadanie
 
-Skúste pridať záznam servera do vášho súboru *mcp.json* a uistite sa, že môžete spustiť/zastaviť server. Uistite sa tiež, že môžete komunikovať s nástrojmi na vašom serveri prostredníctvom chatového rozhrania GitHub Copilot.
+Skúste pridať záznam o serveri do svojho súboru *mcp.json* a overte, či môžete server spustiť a zastaviť. Tiež sa uistite, že môžete komunikovať s nástrojmi na vašom serveri cez rozhranie GitHub Copilot Chat.
 
 ## Riešenie
 
 [Riešenie](./solution/README.md)
 
-## Kľúčové poznatky
+## Kľúčové body
 
-Kľúčové poznatky z tejto kapitoly sú nasledujúce:
+Z tohto kapitoly si odnesiete nasledovné:
 
-- Visual Studio Code je skvelý klient, ktorý vám umožňuje spotrebovať niekoľko MCP Serverov a ich nástroje.
-- Chatové rozhranie GitHub Copilot je spôsob, ako komunikovať so servermi.
-- Môžete vyzvať používateľa na zadanie vstupov, ako sú API kľúče, ktoré môžu byť odovzdané MCP Serveru pri konfigurácii záznamu servera v súbore *mcp.json*.
+- Visual Studio Code je skvelý klient, ktorý vám umožní používať viaceré MCP servery a ich nástroje.
+- Rozhranie GitHub Copilot Chat je spôsob, ako komunikovať so servermi.
+- Môžete požiadať používateľa o vstupy, napríklad API kľúče, ktoré sa môžu odovzdať MCP serveru pri konfigurácii záznamu servera v súbore *mcp.json*.
 
-## Príklady
+## Ukážky
 
 - [Java Kalkulačka](../samples/java/calculator/README.md)
 - [.Net Kalkulačka](../../../../03-GettingStarted/samples/csharp)
 - [JavaScript Kalkulačka](../samples/javascript/README.md)
 - [TypeScript Kalkulačka](../samples/typescript/README.md)
-- [Python Kalkulačka](../../../../03-GettingStarted/samples/python) 
+- [Python Kalkulačka](../../../../03-GettingStarted/samples/python)
 
-## Ďalšie zdroje
+## Dodatočné zdroje
 
-- [Dokumentácia Visual Studio](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
+- [Visual Studio dokumentácia](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
-## Čo ďalej
+## Čo nasleduje
 
-- Ďalej: [Vytváranie SSE Servera](/03-GettingStarted/05-sse-server/README.md)
+- Ďalej: [Vytvorenie SSE servera](/03-GettingStarted/05-sse-server/README.md)
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, uvedomte si, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho pôvodnom jazyku by sa mal považovať za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, vezmite prosím na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

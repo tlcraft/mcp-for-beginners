@@ -1,52 +1,52 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "96e08a8c1049dab757deb64cce4ea1e8",
-  "translation_date": "2025-05-17T11:22:11+00:00",
+  "original_hash": "a91ca54debdfb015649e4786545694b3",
+  "translation_date": "2025-06-17T15:57:02+00:00",
   "source_file": "03-GettingStarted/04-vscode/solution/README.md",
   "language_code": "nl"
 }
 -->
-# Het voorbeeld uitvoeren
+# De sample uitvoeren
 
-Hier gaan we ervan uit dat je al werkende servercode hebt. Zoek een server uit een van de eerdere hoofdstukken.
+Hier gaan we ervan uit dat je al een werkende servercode hebt. Zoek een server op uit een van de eerdere hoofdstukken.
 
 ## Stel mcp.json in
 
 Hier is een bestand dat je als referentie gebruikt, [mcp.json](../../../../../03-GettingStarted/04-vscode/solution/mcp.json).
 
-Wijzig de serververmelding indien nodig om het absolute pad naar je server aan te geven, inclusief het volledige benodigde commando om uit te voeren.
+Pas de serververmelding aan waar nodig om het absolute pad naar je server aan te geven, inclusief het volledige commando dat nodig is om te draaien.
 
-In het voorbeeldbestand dat hierboven is genoemd, ziet de serververmelding er als volgt uit:
+In het voorbeeldbestand hierboven ziet de serververmelding er als volgt uit:
 
 ```json
 "hello-mcp": {
-    "command": "cmd",
+    "command": "node",
     "args": [
-        "/c", "node", "<absolute path>\\build\\index.js"
+        "build/index.js"
     ]
 }
 ```
 
-Dit komt overeen met het uitvoeren van een commando zoals: `cmd /c node <absolute path>\\build\index.js`. 
+Dit komt overeen met het uitvoeren van een commando zoals: `node build/index.js`.
 
 - Change this server entry to fit where your server file is located or to what's needed to startup your server depending on your chosen runtime and server location.
 
 ## Consume the features in the server
 
-- Click the `play` icon, once you've added *mcp.json* to *./vscode* folder, 
+- Click the `play` icon, once you've added *mcp.json* to *./vscode* folder,
 
     Observe the tooling icon change to increase the number of available tools. Tooling icon is located right above the chat field in GitHub Copilot.
 
 ## Run a tool
 
-- Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add` typ iets zoals "voeg 3 toe aan 20".
+- Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add` typ iets als "add 3 to 20".
 
-    Je zou een hulpmiddel boven het chattekstvak moeten zien dat aangeeft dat je het hulpmiddel moet selecteren om uit te voeren, zoals in deze afbeelding:
+    Je zou een tool boven het chattekstvak moeten zien verschijnen die aangeeft dat je de tool kunt selecteren om deze uit te voeren, zoals in deze afbeelding:
 
-    ![VS Code dat aangeeft een hulpmiddel te willen uitvoeren](../../../../../translated_images/vscode-agent.7f56a5ce3cef334adfe737514a7e8ac9384fa4161dd4df14bd3ddc9cd1a154f4.nl.png)
+    ![VS Code geeft aan dat het een tool wil uitvoeren](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.nl.png)
 
-    Het selecteren van het hulpmiddel zou een numeriek resultaat moeten opleveren dat "23" zegt als je prompt was zoals we eerder noemden.
+    Het selecteren van de tool zou een numeriek resultaat moeten opleveren met "23" als je prompt was zoals eerder genoemd.
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, willen we u erop wijzen dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in zijn oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of misinterpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal geldt als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

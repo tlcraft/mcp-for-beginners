@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c37fabfbc0dcbc9a4afb6d17e7d3be9f",
-  "translation_date": "2025-05-29T20:23:32+00:00",
+  "original_hash": "0eb9557780cd0a2551cdb8a16c886b51",
+  "translation_date": "2025-06-17T15:40:58+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "br"
 }
@@ -15,19 +15,19 @@ Aqui está como precisamos abordar isso em um nível geral:
 
 - Configurar um arquivo para localizar nosso MCP Server.
 - Iniciar/Conectar ao servidor para que ele liste suas capacidades.
-- Usar essas capacidades através da interface de chat do GitHub Copilot.
+- Usar essas capacidades através da interface do GitHub Copilot Chat.
 
-Ótimo, agora que entendemos o fluxo, vamos tentar usar um MCP Server pelo Visual Studio Code através de um exercício.
+Ótimo, agora que entendemos o fluxo, vamos tentar usar um MCP Server através do Visual Studio Code com um exercício.
 
 ## Exercício: Consumindo um servidor
 
-Neste exercício, vamos configurar o Visual Studio Code para localizar seu MCP Server para que ele possa ser usado na interface de chat do GitHub Copilot.
+Neste exercício, vamos configurar o Visual Studio Code para localizar seu MCP server para que ele possa ser usado na interface do GitHub Copilot Chat.
 
 ### -0- Passo prévio, habilitar descoberta do MCP Server
 
 Você pode precisar habilitar a descoberta dos MCP Servers.
 
-1. Vá em `File -> Preferences -> Settings` in Visual Studio Code.
+1. Vá para `File -> Preferences -> Settings` in Visual Studio Code.
 
 1. Search for "MCP" and enable `chat.mcp.discovery.enabled` no arquivo settings.json.
 
@@ -40,7 +40,7 @@ Comece criando um arquivo de configuração na raiz do seu projeto, você precis
 |-- mcp.json
 ```
 
-Agora, vamos ver como adicionar uma entrada de servidor.
+Em seguida, vamos ver como adicionar uma entrada de servidor.
 
 ### -2- Configurar um servidor
 
@@ -51,26 +51,26 @@ Adicione o seguinte conteúdo ao *mcp.json*:
     "inputs": [],
     "servers": {
        "hello-mcp": {
-           "command": "cmd",
+           "command": "node",
            "args": [
-               "/c", "node", "<absolute path>\\build\\index.js"
+               "build/index.js"
            ]
        }
     }
 }
 ```
 
-Acima há um exemplo simples de como iniciar um servidor escrito em Node.js; para outras linguagens, indique o comando correto para iniciar o servidor usando `command` and `args`.
+Aqui está um exemplo simples de como iniciar um servidor escrito em Node.js, para outras plataformas indique o comando correto para iniciar o servidor usando `command` and `args`.
 
 ### -3- Iniciar o servidor
 
 Agora que você adicionou uma entrada, vamos iniciar o servidor:
 
-1. Localize sua entrada em *mcp.json* e certifique-se de encontrar o ícone de "play":
+1. Localize sua entrada no *mcp.json* e certifique-se de encontrar o ícone de "play":
 
   ![Iniciando servidor no Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.br.png)  
 
-2. Clique no ícone de "play", você verá o ícone de ferramentas no chat do GitHub Copilot aumentar o número de ferramentas disponíveis. Se clicar nesse ícone, verá a lista de ferramentas registradas. Você pode marcar/desmarcar cada ferramenta dependendo se deseja que o GitHub Copilot as use como contexto:
+2. Clique no ícone "play", você deve ver o ícone de ferramentas no GitHub Copilot Chat aumentar o número de ferramentas disponíveis. Se clicar nesse ícone de ferramentas, verá uma lista das ferramentas registradas. Você pode marcar/desmarcar cada ferramenta dependendo se quiser que o GitHub Copilot as use como contexto:
 
   ![Iniciando servidor no Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.br.png)
 
@@ -82,35 +82,35 @@ Agora que você adicionou uma entrada, vamos iniciar o servidor:
 
 ## Tarefa
 
-Tente adicionar uma entrada de servidor no seu arquivo *mcp.json* e certifique-se de que pode iniciar/parar o servidor. Também garanta que consiga se comunicar com as ferramentas no seu servidor via interface de chat do GitHub Copilot.
+Tente adicionar uma entrada de servidor ao seu arquivo *mcp.json* e certifique-se de que pode iniciar/parar o servidor. Também verifique se consegue se comunicar com as ferramentas do seu servidor via interface do GitHub Copilot Chat.
 
 ## Solução
 
 [Solution](./solution/README.md)
 
-## Principais aprendizados
+## Principais Lições
 
-Os principais aprendizados deste capítulo são:
+As lições principais deste capítulo são:
 
-- Visual Studio Code é um ótimo cliente que permite consumir vários MCP Servers e suas ferramentas.
-- A interface de chat do GitHub Copilot é como você interage com os servidores.
-- Você pode solicitar ao usuário entradas como chaves de API que podem ser passadas ao MCP Server ao configurar a entrada do servidor no arquivo *mcp.json*.
+- O Visual Studio Code é um excelente cliente que permite consumir vários MCP Servers e suas ferramentas.
+- A interface do GitHub Copilot Chat é como você interage com os servidores.
+- Você pode solicitar ao usuário entradas como chaves de API que podem ser passadas para o MCP Server ao configurar a entrada do servidor no arquivo *mcp.json*.
 
 ## Exemplos
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Calculadora Java](../samples/java/calculator/README.md)
+- [Calculadora .Net](../../../../03-GettingStarted/samples/csharp)
+- [Calculadora JavaScript](../samples/javascript/README.md)
+- [Calculadora TypeScript](../samples/typescript/README.md)
+- [Calculadora Python](../../../../03-GettingStarted/samples/python)
 
-## Recursos adicionais
+## Recursos Adicionais
 
-- [Visual Studio docs](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
+- [Documentação do Visual Studio](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
 ## O que vem a seguir
 
 - Próximo: [Criando um SSE Server](/03-GettingStarted/05-sse-server/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.

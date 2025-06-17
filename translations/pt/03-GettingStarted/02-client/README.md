@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a0acf3093691b1cfcc008a8c6648ea26",
-  "translation_date": "2025-06-13T06:43:30+00:00",
+  "original_hash": "2342baa570312086fc19edcf41320250",
+  "translation_date": "2025-06-17T15:39:14+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "pt"
 }
@@ -10,74 +10,74 @@ CO_OP_TRANSLATOR_METADATA:
 No código anterior nós:
 
 - Importamos as bibliotecas
-- Criamos uma instância de um cliente e conectamos usando stdio para transporte.
-- Listamos prompts, recursos e ferramentas e os invocamos todos.
+- Criámos uma instância de um cliente e ligámo-lo usando stdio para transporte.
+- Listámos prompts, recursos e ferramentas e invocámo-los todos.
 
-Aí está, um cliente que pode se comunicar com um MCP Server.
+E está feito, um cliente que pode comunicar com um Servidor MCP.
 
-Vamos dedicar um tempo na próxima seção de exercícios para analisar cada trecho de código e explicar o que está acontecendo.
+Vamos dedicar algum tempo na próxima secção de exercícios para analisar cada trecho de código e explicar o que está a acontecer.
 
-## Exercício: Escrevendo um cliente
+## Exercício: Escrever um cliente
 
-Como dito acima, vamos dedicar um tempo para explicar o código, e fique à vontade para programar junto se quiser.
+Como mencionado acima, vamos demorar o tempo necessário a explicar o código e, claro, codifique juntamente se quiser.
 
-### -1- Importando as bibliotecas
+### -1- Importar as bibliotecas
 
-Vamos importar as bibliotecas que precisamos, precisaremos de referências para um cliente e para o protocolo de transporte escolhido, stdio. stdio é um protocolo para coisas que devem rodar na sua máquina local. SSE é outro protocolo de transporte que mostraremos em capítulos futuros, mas essa é a outra opção. Por enquanto, vamos continuar com stdio.
+Vamos importar as bibliotecas de que precisamos, precisamos de referências a um cliente e ao protocolo de transporte escolhido, stdio. stdio é um protocolo para coisas que se destinam a correr na sua máquina local. SSE é outro protocolo de transporte que mostraremos em capítulos futuros, mas essa é a sua outra opção. Por agora, vamos continuar com stdio.
 
-Vamos passar para a instanciação.
+Vamos avançar para a instanciação.
 
-### -2- Instanciando cliente e transporte
+### -2- Instanciar cliente e transporte
 
-Precisaremos criar uma instância do transporte e uma do nosso cliente:
+Vamos precisar criar uma instância do transporte e outra do nosso cliente:
 
-### -3- Listando as funcionalidades do servidor
+### -3- Listar as funcionalidades do servidor
 
-Agora temos um cliente que pode se conectar caso o programa seja executado. No entanto, ele não lista suas funcionalidades, então vamos fazer isso a seguir:
+Agora, temos um cliente que pode conectar-se quando o programa for executado. No entanto, ele não lista realmente as suas funcionalidades, então vamos fazer isso a seguir:
 
-Ótimo, agora capturamos todas as funcionalidades. Agora a pergunta é: quando usamos elas? Bem, esse cliente é bem simples, simples no sentido de que precisaremos chamar explicitamente as funcionalidades quando quisermos. No próximo capítulo, criaremos um cliente mais avançado que terá acesso ao seu próprio modelo de linguagem grande, LLM. Por enquanto, vamos ver como podemos invocar as funcionalidades no servidor:
+Ótimo, agora capturámos todas as funcionalidades. Agora a questão é: quando é que as usamos? Bem, este cliente é bastante simples, simples no sentido de que precisaremos de chamar explicitamente as funcionalidades quando as quisermos. No próximo capítulo, vamos criar um cliente mais avançado que tem acesso ao seu próprio modelo de linguagem grande, LLM. Por agora, vamos ver como podemos invocar as funcionalidades no servidor:
 
-### -4- Invocando funcionalidades
+### -4- Invocar funcionalidades
 
-Para invocar as funcionalidades, precisamos garantir que especificamos os argumentos corretos e, em alguns casos, o nome do que estamos tentando invocar.
+Para invocar as funcionalidades, precisamos garantir que especificamos os argumentos corretos e, em alguns casos, o nome do que estamos a tentar invocar.
 
-### -5- Executando o cliente
+### -5- Executar o cliente
 
 Para executar o cliente, digite o seguinte comando no terminal:
 
 ## Tarefa
 
-Nesta tarefa, você usará o que aprendeu para criar um cliente, mas crie um cliente próprio.
+Nesta tarefa, vai usar o que aprendeu sobre criar um cliente, mas criar um cliente seu próprio.
 
-Aqui está um servidor que você pode usar e que precisa ser chamado pelo seu código cliente, veja se consegue adicionar mais funcionalidades ao servidor para torná-lo mais interessante.
+Aqui está um servidor que pode usar e que precisa de chamar através do código do seu cliente, veja se consegue adicionar mais funcionalidades ao servidor para o tornar mais interessante.
 
 ## Solução
 
 [Solução](./solution/README.md)
 
-## Principais Lições
+## Principais Conclusões
 
-Os principais pontos deste capítulo sobre clientes são:
+As principais conclusões deste capítulo sobre clientes são as seguintes:
 
-- Podem ser usados tanto para descobrir quanto para invocar funcionalidades no servidor.
-- Podem iniciar um servidor enquanto se iniciam (como neste capítulo), mas clientes também podem se conectar a servidores já em execução.
-- São uma ótima forma de testar as capacidades do servidor além de alternativas como o Inspector, conforme descrito no capítulo anterior.
+- Podem ser usados tanto para descobrir como para invocar funcionalidades no servidor.
+- Podem iniciar um servidor enquanto se iniciam a si próprios (como neste capítulo), mas os clientes também podem conectar-se a servidores já em execução.
+- São uma ótima forma de testar as capacidades do servidor ao lado de alternativas como o Inspector, conforme descrito no capítulo anterior.
 
 ## Recursos Adicionais
 
-- [Construindo clientes em MCP](https://modelcontextprotocol.io/quickstart/client)
+- [Construir clientes em MCP](https://modelcontextprotocol.io/quickstart/client)
 
-## Exemplos
+## Exemplos 
 
 - [Calculadora em Java](../samples/java/calculator/README.md)
-- [Calculadora em .Net](../../../../03-GettingStarted/samples/csharp)
+- [Calculadora .Net](../../../../03-GettingStarted/samples/csharp)
 - [Calculadora em JavaScript](../samples/javascript/README.md)
 - [Calculadora em TypeScript](../samples/typescript/README.md)
-- [Calculadora em Python](../../../../03-GettingStarted/samples/python)
+- [Calculadora em Python](../../../../03-GettingStarted/samples/python) 
 
 ## O que vem a seguir
 
-- Próximo: [Criando um cliente com um LLM](/03-GettingStarted/03-llm-client/README.md)
+- A seguir: [Criar um cliente com um LLM](/03-GettingStarted/03-llm-client/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a0acf3093691b1cfcc008a8c6648ea26",
-  "translation_date": "2025-06-13T06:36:16+00:00",
+  "original_hash": "2342baa570312086fc19edcf41320250",
+  "translation_date": "2025-06-17T15:09:30+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "es"
 }
@@ -10,36 +10,36 @@ CO_OP_TRANSLATOR_METADATA:
 En el código anterior nosotros:
 
 - Importamos las librerías
-- Creamos una instancia de un cliente y lo conectamos usando stdio como transporte.
-- Listamos los prompts, recursos y herramientas e invocamos todos.
+- Creamos una instancia de un cliente y la conectamos usando stdio como transporte.
+- Listamos prompts, recursos y herramientas e invocamos todos.
 
 Ahí lo tienes, un cliente que puede comunicarse con un servidor MCP.
 
-Tomémonos nuestro tiempo en la siguiente sección de ejercicios para desglosar cada fragmento de código y explicar qué está sucediendo.
+Tomémonos nuestro tiempo en la siguiente sección de ejercicios para desglosar cada fragmento de código y explicar qué está pasando.
 
 ## Ejercicio: Escribiendo un cliente
 
-Como se dijo antes, tomémonos nuestro tiempo explicando el código, y por supuesto, si quieres, puedes programar junto con nosotros.
+Como se dijo antes, vamos a tomarnos nuestro tiempo explicando el código, y por supuesto, si quieres, puedes programar junto con nosotros.
 
 ### -1- Importar las librerías
 
-Importemos las librerías que necesitamos, necesitaremos referencias a un cliente y a nuestro protocolo de transporte elegido, stdio. stdio es un protocolo para cosas que se ejecutan en tu máquina local. SSE es otro protocolo de transporte que mostraremos en capítulos futuros, pero esa es tu otra opción. Por ahora, sin embargo, continuemos con stdio.
+Importemos las librerías que necesitamos, necesitaremos referencias a un cliente y a nuestro protocolo de transporte elegido, stdio. stdio es un protocolo para cosas que se ejecutan en tu máquina local. SSE es otro protocolo de transporte que mostraremos en capítulos futuros, pero esa es tu otra opción. Por ahora, continuemos con stdio.
 
-Pasemos ahora a la instanciación.
+Pasemos a la instanciación.
 
 ### -2- Instanciando cliente y transporte
 
 Necesitaremos crear una instancia del transporte y otra de nuestro cliente:
 
-### -3- Listando las características del servidor
+### -3- Listando las funcionalidades del servidor
 
-Ahora tenemos un cliente que puede conectarse cuando se ejecute el programa. Sin embargo, aún no lista sus características, así que hagámoslo a continuación:
+Ahora, tenemos un cliente que puede conectarse cuando se ejecute el programa. Sin embargo, no lista sus funcionalidades, así que hagámoslo a continuación:
 
-Genial, ahora hemos capturado todas las características. Ahora la pregunta es, ¿cuándo las usamos? Bueno, este cliente es bastante simple, simple en el sentido de que necesitaremos llamar explícitamente a las características cuando las queramos. En el próximo capítulo, crearemos un cliente más avanzado que tendrá acceso a su propio modelo de lenguaje grande, LLM. Por ahora, veamos cómo podemos invocar las características en el servidor:
+Genial, ahora hemos capturado todas las funcionalidades. Ahora la pregunta es, ¿cuándo las usamos? Bueno, este cliente es bastante simple, simple en el sentido de que necesitaremos llamar explícitamente a las funcionalidades cuando las queramos. En el siguiente capítulo, crearemos un cliente más avanzado que tendrá acceso a su propio modelo de lenguaje grande, LLM. Por ahora, veamos cómo podemos invocar las funcionalidades en el servidor:
 
-### -4- Invocar características
+### -4- Invocar funcionalidades
 
-Para invocar las características necesitamos asegurarnos de especificar los argumentos correctos y en algunos casos el nombre de lo que estamos intentando invocar.
+Para invocar las funcionalidades necesitamos asegurarnos de especificar los argumentos correctos y, en algunos casos, el nombre de lo que estamos intentando invocar.
 
 ### -5- Ejecutar el cliente
 
@@ -47,9 +47,9 @@ Para ejecutar el cliente, escribe el siguiente comando en la terminal:
 
 ## Tarea
 
-En esta tarea, usarás lo que has aprendido para crear un cliente, pero crearás uno propio.
+En esta tarea, usarás lo que has aprendido para crear un cliente, pero crea un cliente propio.
 
-Aquí tienes un servidor que puedes usar y al que necesitas llamar a través de tu código cliente, intenta agregar más características al servidor para hacerlo más interesante.
+Aquí tienes un servidor que puedes usar y al que necesitas llamar mediante el código de tu cliente, intenta añadir más funcionalidades al servidor para hacerlo más interesante.
 
 ## Solución
 
@@ -59,8 +59,8 @@ Aquí tienes un servidor que puedes usar y al que necesitas llamar a través de 
 
 Los puntos clave de este capítulo sobre clientes son los siguientes:
 
-- Pueden usarse tanto para descubrir como para invocar características en el servidor.
-- Pueden iniciar un servidor mientras se inician a sí mismos (como en este capítulo), pero los clientes también pueden conectarse a servidores en ejecución.
+- Pueden usarse tanto para descubrir como para invocar funcionalidades en el servidor.
+- Pueden iniciar un servidor mientras se inician ellos mismos (como en este capítulo), pero los clientes también pueden conectarse a servidores ya en ejecución.
 - Son una excelente manera de probar las capacidades del servidor junto con alternativas como el Inspector, como se describió en el capítulo anterior.
 
 ## Recursos adicionales
@@ -79,5 +79,5 @@ Los puntos clave de este capítulo sobre clientes son los siguientes:
 
 - Siguiente: [Creando un cliente con un LLM](/03-GettingStarted/03-llm-client/README.md)
 
-**Aviso Legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

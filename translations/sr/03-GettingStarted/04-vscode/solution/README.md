@@ -1,52 +1,52 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "96e08a8c1049dab757deb64cce4ea1e8",
-  "translation_date": "2025-05-17T11:24:22+00:00",
+  "original_hash": "a91ca54debdfb015649e4786545694b3",
+  "translation_date": "2025-06-17T16:15:54+00:00",
   "source_file": "03-GettingStarted/04-vscode/solution/README.md",
   "language_code": "sr"
 }
 -->
-# Pokretanje primera
+# Покретање примера
 
-Ovde pretpostavljamo da već imate radni kod servera. Molimo vas da pronađete server iz jednog od prethodnih poglavlja.
+Овде претпостављамо да већ имате радни серверски код. Молимо пронађите сервер из једног од претходних поглавља.
 
-## Podešavanje mcp.json
+## Подешавање mcp.json
 
-Evo fajla koji koristite kao referencu, [mcp.json](../../../../../03-GettingStarted/04-vscode/solution/mcp.json). 
+Ево датотеке коју користите као референцу, [mcp.json](../../../../../03-GettingStarted/04-vscode/solution/mcp.json).
 
-Izmenite unos za server po potrebi da ukažete na apsolutnu putanju do vašeg servera, uključujući potrebnu punu komandu za pokretanje.
+Промените унос за сервер по потреби тако да указује на апсолутну путању до вашег сервера укључујући потребну целу команду за покретање.
 
-U primer fajlu na koji smo se gore pozvali, unos za server izgleda ovako:
+У пример датотеци која је наведена изнад, унос за сервер изгледа овако:
 
 ```json
 "hello-mcp": {
-    "command": "cmd",
+    "command": "node",
     "args": [
-        "/c", "node", "<absolute path>\\build\\index.js"
+        "build/index.js"
     ]
 }
 ```
 
-Ovo odgovara pokretanju komande kao što je ova: `cmd /c node <absolute path>\\build\index.js`. 
+Ово одговара покретању команде као што је: `node build/index.js`.
 
 - Change this server entry to fit where your server file is located or to what's needed to startup your server depending on your chosen runtime and server location.
 
 ## Consume the features in the server
 
-- Click the `play` icon, once you've added *mcp.json* to *./vscode* folder, 
+- Click the `play` icon, once you've added *mcp.json* to *./vscode* folder,
 
     Observe the tooling icon change to increase the number of available tools. Tooling icon is located right above the chat field in GitHub Copilot.
 
 ## Run a tool
 
-- Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add` unesite nešto poput "dodaj 3 na 20".
+- Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add` укуцајте нешто као „add 3 to 20“.
 
-    Trebalo bi da vidite alat koji se pojavljuje iznad polja za tekst za ćaskanje, što ukazuje da treba da izaberete da pokrenete alat kao na ovoj slici:
+    Требало би да видите алат који се појављује изнад поља за текст у чету, што вам указује да изаберете покретање алата као на овој слици:
 
-    ![VS Code pokazuje da želi da pokrene alat](../../../../../translated_images/vscode-agent.7f56a5ce3cef334adfe737514a7e8ac9384fa4161dd4df14bd3ddc9cd1a154f4.sr.png)
+    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.sr.png)
 
-    Izbor alata bi trebalo da proizvede numerički rezultat koji kaže "23" ako je vaš unos bio kao što smo prethodno pomenuli.
+    Избор алата треба да да бројчани резултат „23“ ако је ваш упит био као што смо раније навели.
 
-**Одрицање од одговорности**:  
-Овај документ је преведен коришћењем услуге вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо тачности, молимо вас да будете свесни да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати меродавним извором. За критичне информације, препоручује се професионални превод од стране људи. Не сносимо одговорност за било каква неспоразумевања или погрешна тумачења која произилазе из коришћења овог превода.
+**Одрицање одговорности**:  
+Овај документ је преведен помоћу АИ сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, имајте у виду да аутоматизовани преводи могу садржати грешке или нетачности. Изворни документ на оригиналном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било какве неспоразуме или погрешна тумачења која произилазе из коришћења овог превода.

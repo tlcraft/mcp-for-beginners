@@ -1,116 +1,116 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c37fabfbc0dcbc9a4afb6d17e7d3be9f",
-  "translation_date": "2025-05-17T11:15:43+00:00",
+  "original_hash": "0eb9557780cd0a2551cdb8a16c886b51",
+  "translation_date": "2025-06-17T16:12:19+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "ro"
 }
 -->
-Să discutăm mai multe despre cum folosim interfața vizuală în secțiunile următoare.
+Să discutăm mai mult despre cum folosim interfața vizuală în secțiunile următoare.
 
 ## Abordare
 
-Iată cum trebuie să abordăm acest lucru la un nivel înalt:
+Iată cum trebuie să abordăm acest proces la nivel general:
 
-- Configurați un fișier pentru a găsi Serverul MCP.
-- Porniți/Conectați-vă la serverul respectiv pentru a-i lista capabilitățile.
-- Utilizați capabilitățile respective prin interfața de chat GitHub Copilot.
+- Configurăm un fișier pentru a găsi MCP Server-ul nostru.
+- Pornim/Conectăm la serverul respectiv pentru a-i lista capabilitățile.
+- Folosim aceste capabilități prin interfața GitHub Copilot Chat.
 
-Grozav, acum că înțelegem fluxul, să încercăm să folosim un Server MCP prin Visual Studio Code printr-un exercițiu.
+Perfect, acum că înțelegem fluxul, să încercăm să folosim un MCP Server prin Visual Studio Code într-un exercițiu.
 
-## Exercițiu: Consumul unui server
+## Exercițiu: Consumarea unui server
 
-În acest exercițiu, vom configura Visual Studio Code pentru a găsi serverul tău MCP astfel încât să poată fi utilizat din interfața de chat GitHub Copilot.
+În acest exercițiu, vom configura Visual Studio Code să găsească MCP server-ul tău astfel încât să poată fi folosit din interfața GitHub Copilot Chat.
 
-### -0- Prepas, activare descoperire Server MCP
+### -0- Pas preliminar, activarea descoperirii MCP Server
 
-Poate fi necesar să activați descoperirea serverelor MCP.
+Este posibil să fie nevoie să activezi descoperirea MCP Server-elor.
 
-1. Accesați `File -> Preferences -> Settings` in Visual Studio Code.
+1. Mergi la `File -> Preferences -> Settings` in Visual Studio Code.
 
 1. Search for "MCP" and enable `chat.mcp.discovery.enabled` în fișierul settings.json.
 
-### -1- Creați fișierul de configurare
+### -1- Crearea fișierului de configurare
 
-Începeți prin crearea unui fișier de configurare în rădăcina proiectului, veți avea nevoie de un fișier numit MCP.json și să îl plasați într-un folder numit .vscode. Ar trebui să arate astfel:
+Începe prin a crea un fișier de configurare în rădăcina proiectului tău, vei avea nevoie de un fișier numit MCP.json pe care să-l plasezi într-un folder numit .vscode. Ar trebui să arate astfel:
 
 ```text
 .vscode
 |-- mcp.json
 ```
 
-În continuare, să vedem cum putem adăuga o intrare de server.
+Următorul pas este să vedem cum putem adăuga o intrare pentru server.
 
-### -2- Configurați un server
+### -2- Configurarea unui server
 
-Adăugați următorul conținut în *mcp.json*:
+Adaugă următorul conținut în *mcp.json*:
 
 ```json
 {
     "inputs": [],
     "servers": {
        "hello-mcp": {
-           "command": "cmd",
+           "command": "node",
            "args": [
-               "/c", "node", "<absolute path>\\build\\index.js"
+               "build/index.js"
            ]
        }
     }
 }
 ```
 
-Iată un exemplu simplu de cum să porniți un server scris în Node.js, pentru alte medii de execuție indicați comanda corectă pentru pornirea serverului folosind `command` and `args`.
+Mai sus este un exemplu simplu despre cum să pornești un server scris în Node.js, pentru alte medii de rulare indică comanda corectă pentru pornirea serverului folosind `command` and `args`.
 
-### -3- Porniți serverul
+### -3- Pornirea serverului
 
-Acum că ați adăugat o intrare, să pornim serverul:
+Acum că ai adăugat o intrare, hai să pornim serverul:
 
-1. Localizați intrarea în *mcp.json* și asigurați-vă că găsiți pictograma "play":
+1. Găsește intrarea ta în *mcp.json* și asigură-te că vezi pictograma "play":
 
-  ![Pornirea serverului în Visual Studio Code](../../../../translated_images/vscode-start-server.c7f1132263a8ce789fa7f436eb3df7e36199ebf863f1a8205bfc4483c9e40924.ro.png)  
+  ![Pornirea serverului în Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.ro.png)  
 
-1. Faceți clic pe pictograma "play", ar trebui să vedeți pictograma de unelte în chat-ul GitHub Copilot crescând numărul de unelte disponibile. Dacă faceți clic pe pictograma de unelte, veți vedea o listă de unelte înregistrate. Puteți bifa/debifa fiecare unealtă în funcție de dorința de a permite GitHub Copilot să le folosească ca context:
+1. Apasă pe pictograma "play", ar trebui să vezi că pictograma pentru unelte din GitHub Copilot Chat crește numărul de unelte disponibile. Dacă apeși pe această pictogramă, vei vedea o listă cu uneltele înregistrate. Poți bifa/debifa fiecare unealtă în funcție de faptul dacă vrei ca GitHub Copilot să le folosească ca context:
 
-  ![Pornirea serverului în Visual Studio Code](../../../../translated_images/vscode-tool.ce37be05a56b9af258f882c161dbf35e23ac885b08ee5f5ee643097653b135b8.ro.png)
+  ![Pornirea serverului în Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.ro.png)
 
-1. Pentru a rula o unealtă, tastați un prompt despre care știți că se potrivește cu descrierea uneia dintre uneltele voastre, de exemplu un prompt ca "add 22 to 1":
+1. Pentru a rula o unealtă, scrie un prompt despre care știi că se potrivește descrierii uneia dintre uneltele tale, de exemplu un prompt de genul "add 22 to 1":
 
-  ![Rularea unei unelte din GitHub Copilot](../../../../translated_images/vscode-agent.7f56a5ce3cef334adfe737514a7e8ac9384fa4161dd4df14bd3ddc9cd1a154f4.ro.png)
+  ![Rularea unei unelte din GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.ro.png)
 
-  Ar trebui să vedeți un răspuns spunând 23.
+  Ar trebui să vezi un răspuns care spune 23.
 
 ## Temă
 
-Încercați să adăugați o intrare de server în fișierul *mcp.json* și asigurați-vă că puteți porni/opri serverul. Asigurați-vă că puteți comunica și cu uneltele de pe serverul vostru prin interfața de chat GitHub Copilot.
+Încearcă să adaugi o intrare pentru server în fișierul tău *mcp.json* și asigură-te că poți porni/opri serverul. De asemenea, verifică dacă poți comunica cu uneltele de pe server prin interfața GitHub Copilot Chat.
 
 ## Soluție
 
 [Soluție](./solution/README.md)
 
-## Concluzii
+## Aspecte importante
 
-Concluziile din acest capitol sunt următoarele:
+Aspectele importante din acest capitol sunt următoarele:
 
-- Visual Studio Code este un client excelent care vă permite să consumați mai multe Servere MCP și uneltele lor.
-- Interfața de chat GitHub Copilot este modul în care interacționați cu serverele.
-- Puteți solicita utilizatorului să introducă date precum chei API care pot fi transmise Serverului MCP la configurarea intrării serverului în fișierul *mcp.json*.
+- Visual Studio Code este un client excelent care îți permite să consumi mai mulți MCP Serveri și uneltele lor.
+- Interfața GitHub Copilot Chat este modul prin care interacționezi cu serverele.
+- Poți solicita utilizatorului să introducă date precum chei API care pot fi transmise MCP Server-ului atunci când configurezi intrarea serverului în fișierul *mcp.json*.
 
 ## Exemple
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python) 
+- [Calculator Java](../samples/java/calculator/README.md)
+- [Calculator .Net](../../../../03-GettingStarted/samples/csharp)
+- [Calculator JavaScript](../samples/javascript/README.md)
+- [Calculator TypeScript](../samples/typescript/README.md)
+- [Calculator Python](../../../../03-GettingStarted/samples/python)
 
 ## Resurse suplimentare
 
-- [Documentația Visual Studio](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
+- [Documentație Visual Studio](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
 ## Ce urmează
 
-- Următorul: [Crearea unui SSE Server](/03-GettingStarted/05-sse-server/README.md)
+- Următorul pas: [Crearea unui server SSE](/03-GettingStarted/05-sse-server/README.md)
 
-**Declinarea responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională umană. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un traducător uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot rezulta din utilizarea acestei traduceri.

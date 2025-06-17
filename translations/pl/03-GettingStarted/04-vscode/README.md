@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c37fabfbc0dcbc9a4afb6d17e7d3be9f",
-  "translation_date": "2025-05-16T15:15:23+00:00",
+  "original_hash": "0eb9557780cd0a2551cdb8a16c886b51",
+  "translation_date": "2025-06-17T15:44:36+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "pl"
 }
@@ -11,17 +11,17 @@ Porozmawiajmy więcej o tym, jak korzystać z interfejsu wizualnego w kolejnych 
 
 ## Podejście
 
-Oto, jak powinniśmy to ogólnie podejść:
+Oto jak powinniśmy to podejść na wysokim poziomie:
 
 - Skonfigurować plik, aby znaleźć nasz MCP Server.
 - Uruchomić/połączyć się z tym serwerem, aby wyświetlić jego możliwości.
-- Korzystać z tych możliwości przez interfejs czatu GitHub Copilot.
+- Korzystać z tych możliwości za pośrednictwem interfejsu GitHub Copilot Chat.
 
-Świetnie, teraz gdy rozumiemy ten proces, spróbujmy użyć MCP Servera w Visual Studio Code podczas ćwiczenia.
+Świetnie, teraz gdy rozumiemy cały proces, spróbujmy użyć MCP Servera przez Visual Studio Code w ramach ćwiczenia.
 
-## Ćwiczenie: Korzystanie z serwera
+## Ćwiczenie: Konsumpcja serwera
 
-W tym ćwiczeniu skonfigurujemy Visual Studio Code, aby znalazł twój MCP Server i można go było używać z poziomu interfejsu czatu GitHub Copilot.
+W tym ćwiczeniu skonfigurujemy Visual Studio Code, aby znalazł Twój MCP server, dzięki czemu będzie można z niego korzystać z poziomu interfejsu GitHub Copilot Chat.
 
 ### -0- Krok wstępny, włącz wykrywanie MCP Serverów
 
@@ -33,7 +33,7 @@ Może być konieczne włączenie wykrywania MCP Serverów.
 
 ### -1- Utwórz plik konfiguracyjny
 
-Zacznij od utworzenia pliku konfiguracyjnego w katalogu głównym projektu, potrzebujesz pliku o nazwie MCP.json umieszczonego w folderze .vscode. Powinien wyglądać tak:
+Zacznij od utworzenia pliku konfiguracyjnego w katalogu głównym projektu, potrzebujesz pliku o nazwie MCP.json, który umieścisz w folderze .vscode. Powinien wyglądać mniej więcej tak:
 
 ```text
 .vscode
@@ -51,16 +51,16 @@ Dodaj następującą zawartość do *mcp.json*:
     "inputs": [],
     "servers": {
        "hello-mcp": {
-           "command": "cmd",
+           "command": "node",
            "args": [
-               "/c", "node", "<absolute path>\\build\\index.js"
+               "build/index.js"
            ]
        }
     }
 }
 ```
 
-Powyżej znajduje się prosty przykład uruchomienia serwera napisanego w Node.js, dla innych środowisk wskaż odpowiednią komendę do uruchomienia serwera, używając `command` and `args`.
+Powyżej znajduje się prosty przykład uruchomienia serwera napisanego w Node.js, dla innych środowisk uruchomieniowych wskaż odpowiednią komendę do uruchomienia serwera, używając `command` and `args`.
 
 ### -3- Uruchom serwer
 
@@ -68,32 +68,32 @@ Teraz, gdy dodałeś wpis, uruchom serwer:
 
 1. Znajdź swój wpis w *mcp.json* i upewnij się, że widzisz ikonę „play”:
 
-  ![Uruchamianie serwera w Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.pl.png)
+  ![Uruchamianie serwera w Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.pl.png)  
 
-2. Kliknij ikonę „play”, powinieneś zobaczyć, że ikona narzędzi w czacie GitHub Copilot zwiększa liczbę dostępnych narzędzi. Po kliknięciu tej ikony zobaczysz listę zarejestrowanych narzędzi. Możesz zaznaczać lub odznaczać każde narzędzie, w zależności od tego, czy chcesz, aby GitHub Copilot używał ich jako kontekstu:
+1. Kliknij ikonę „play”, powinieneś zobaczyć, że ikona narzędzi w GitHub Copilot Chat zwiększa liczbę dostępnych narzędzi. Jeśli klikniesz tę ikonę narzędzi, zobaczysz listę zarejestrowanych narzędzi. Możesz zaznaczać/odznaczać każde narzędzie, w zależności od tego, czy chcesz, aby GitHub Copilot używał ich jako kontekstu:
 
-  ![Narzędzia w Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.pl.png)
+  ![Uruchamianie serwera w Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.pl.png)
 
-3. Aby uruchomić narzędzie, wpisz zapytanie, które odpowiada opisowi jednego z twoich narzędzi, na przykład „add 22 to 1”:
+1. Aby uruchomić narzędzie, wpisz prompt, który pasuje do opisu jednego z Twoich narzędzi, na przykład taki: „dodaj 22 do 1”:
 
   ![Uruchamianie narzędzia z GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.pl.png)
 
-  Powinieneś zobaczyć odpowiedź: 23.
+  Powinieneś zobaczyć odpowiedź z wynikiem 23.
 
 ## Zadanie
 
-Spróbuj dodać wpis serwera do swojego pliku *mcp.json* i upewnij się, że możesz uruchamiać i zatrzymywać serwer. Sprawdź także, czy możesz komunikować się z narzędziami na swoim serwerze przez interfejs czatu GitHub Copilot.
+Spróbuj dodać wpis serwera do swojego pliku *mcp.json* i upewnij się, że możesz uruchamiać/zatrzymywać serwer. Upewnij się również, że możesz komunikować się z narzędziami na swoim serwerze za pośrednictwem interfejsu GitHub Copilot Chat.
 
 ## Rozwiązanie
 
 [Solution](./solution/README.md)
 
-## Najważniejsze wnioski
+## Kluczowe wnioski
 
-Najważniejsze punkty z tego rozdziału to:
+Najważniejsze wnioski z tego rozdziału to:
 
 - Visual Studio Code to świetny klient, który pozwala korzystać z wielu MCP Serverów i ich narzędzi.
-- Interfejs czatu GitHub Copilot to sposób, w jaki wchodzisz w interakcję z serwerami.
+- Interfejs GitHub Copilot Chat to sposób, w jaki wchodzisz w interakcję z serwerami.
 - Możesz prosić użytkownika o dane wejściowe, takie jak klucze API, które można przekazać do MCP Servera podczas konfigurowania wpisu serwera w pliku *mcp.json*.
 
 ## Przykłady
@@ -110,7 +110,7 @@ Najważniejsze punkty z tego rozdziału to:
 
 ## Co dalej
 
-- Następny temat: [Tworzenie serwera SSE](/03-GettingStarted/05-sse-server/README.md)
+- Dalej: [Tworzenie serwera SSE](/03-GettingStarted/05-sse-server/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego języku źródłowym powinien być uznawany za źródło wiarygodne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym powinien być traktowany jako źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

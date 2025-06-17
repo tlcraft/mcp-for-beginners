@@ -1,49 +1,48 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c37fabfbc0dcbc9a4afb6d17e7d3be9f",
-  "translation_date": "2025-05-17T11:12:28+00:00",
+  "original_hash": "0eb9557780cd0a2551cdb8a16c886b51",
+  "translation_date": "2025-06-17T16:01:21+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "id"
 }
 -->
-Mari kita bahas lebih lanjut tentang bagaimana kita menggunakan antarmuka visual di bagian selanjutnya.
+Mari kita bahas lebih lanjut tentang cara menggunakan antarmuka visual di bagian berikutnya.
 
+## Pendekatan
 
-## Pendekatan 
+Berikut cara kita perlu mendekati ini secara garis besar:
 
-Berikut adalah cara kita mendekati ini pada tingkat tinggi:
+- Konfigurasikan sebuah file untuk menemukan MCP Server kita.
+- Mulai / Sambungkan ke server tersebut agar dapat menampilkan kemampuannya.
+- Gunakan kemampuan tersebut melalui antarmuka GitHub Copilot Chat.
 
-- Konfigurasi file untuk menemukan MCP Server kita.
-- Memulai/Menghubungkan ke server tersebut untuk melihat daftar kemampuannya.
-- Menggunakan kemampuan tersebut melalui antarmuka obrolan GitHub Copilot.
-
-Bagus, sekarang kita memahami alurnya, mari kita coba menggunakan MCP Server melalui Visual Studio Code melalui sebuah latihan.
+Bagus, sekarang setelah kita memahami alurnya, mari kita coba gunakan MCP Server melalui Visual Studio Code lewat sebuah latihan.
 
 ## Latihan: Menggunakan server
 
-Dalam latihan ini, kita akan mengonfigurasi Visual Studio Code untuk menemukan MCP server Anda sehingga dapat digunakan dari antarmuka obrolan GitHub Copilot.
+Dalam latihan ini, kita akan mengonfigurasi Visual Studio Code agar dapat menemukan MCP server Anda sehingga bisa digunakan dari antarmuka GitHub Copilot Chat.
 
 ### -0- Langkah awal, aktifkan penemuan MCP Server
 
-Anda mungkin perlu mengaktifkan penemuan MCP Servers.
+Anda mungkin perlu mengaktifkan penemuan MCP Server.
 
-1. Pergi ke `File -> Preferences -> Settings` in Visual Studio Code.
+1. Buka `File -> Preferences -> Settings` in Visual Studio Code.
 
 1. Search for "MCP" and enable `chat.mcp.discovery.enabled` di file settings.json.
 
 ### -1- Buat file konfigurasi
 
-Mulailah dengan membuat file konfigurasi di root proyek Anda, Anda akan memerlukan file bernama MCP.json dan menempatkannya di folder bernama .vscode. Seharusnya terlihat seperti ini:
+Mulailah dengan membuat file konfigurasi di root proyek Anda, Anda memerlukan file bernama MCP.json dan meletakkannya di folder bernama .vscode. Isinya harus seperti ini:
 
 ```text
 .vscode
 |-- mcp.json
 ```
 
-Selanjutnya, mari kita lihat bagaimana kita dapat menambahkan entri server.
+Selanjutnya, mari lihat bagaimana menambahkan entri server.
 
-### -2- Konfigurasi server
+### -2- Konfigurasikan server
 
 Tambahkan konten berikut ke *mcp.json*:
 
@@ -52,60 +51,60 @@ Tambahkan konten berikut ke *mcp.json*:
     "inputs": [],
     "servers": {
        "hello-mcp": {
-           "command": "cmd",
+           "command": "node",
            "args": [
-               "/c", "node", "<absolute path>\\build\\index.js"
+               "build/index.js"
            ]
        }
     }
 }
 ```
 
-Berikut adalah contoh sederhana bagaimana memulai server yang ditulis dalam Node.js, untuk runtime lainnya tunjukkan perintah yang tepat untuk memulai server menggunakan `command` and `args`.
+Di atas adalah contoh sederhana bagaimana memulai server yang ditulis dengan Node.js, untuk runtime lain tunjukkan perintah yang tepat untuk memulai server menggunakan `command` and `args`.
 
-### -3- Memulai server
+### -3- Mulai server
 
-Sekarang setelah Anda menambahkan entri, mari kita mulai server:
+Sekarang setelah Anda menambahkan entri, mari mulai servernya:
 
 1. Temukan entri Anda di *mcp.json* dan pastikan Anda menemukan ikon "play":
 
-  ![Memulai server di Visual Studio Code](../../../../translated_images/vscode-start-server.c7f1132263a8ce789fa7f436eb3df7e36199ebf863f1a8205bfc4483c9e40924.id.png)  
+  ![Memulai server di Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.id.png)  
 
-1. Klik ikon "play", Anda harus melihat ikon alat di obrolan GitHub Copilot meningkatkan jumlah alat yang tersedia. Jika Anda mengklik ikon alat tersebut, Anda akan melihat daftar alat yang terdaftar. Anda dapat mencentang/menyilang setiap alat tergantung apakah Anda ingin GitHub Copilot menggunakannya sebagai konteks: 
+1. Klik ikon "play", Anda harus melihat ikon alat di GitHub Copilot Chat bertambah jumlah alat yang tersedia. Jika Anda klik ikon alat tersebut, Anda akan melihat daftar alat yang terdaftar. Anda dapat mencentang/menghapus centang setiap alat tergantung apakah Anda ingin GitHub Copilot menggunakannya sebagai konteks:
 
-  ![Memulai server di Visual Studio Code](../../../../translated_images/vscode-tool.ce37be05a56b9af258f882c161dbf35e23ac885b08ee5f5ee643097653b135b8.id.png)
+  ![Memulai server di Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.id.png)
 
-1. Untuk menjalankan alat, ketikkan prompt yang Anda tahu akan sesuai dengan deskripsi salah satu alat Anda, misalnya prompt seperti ini "tambahkan 22 ke 1":
+1. Untuk menjalankan sebuah alat, ketikkan prompt yang Anda tahu akan cocok dengan deskripsi salah satu alat Anda, misalnya prompt seperti ini "add 22 to 1":
 
-  ![Menjalankan alat dari GitHub Copilot](../../../../translated_images/vscode-agent.7f56a5ce3cef334adfe737514a7e8ac9384fa4161dd4df14bd3ddc9cd1a154f4.id.png)
+  ![Menjalankan alat dari GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.id.png)
 
-  Anda harus melihat respons mengatakan 23.
+  Anda harus melihat respons yang mengatakan 23.
 
 ## Tugas
 
-Coba tambahkan entri server ke file *mcp.json* Anda dan pastikan Anda dapat memulai/menghentikan server. Pastikan Anda juga dapat berkomunikasi dengan alat di server Anda melalui antarmuka obrolan GitHub Copilot.
+Cobalah menambahkan entri server ke file *mcp.json* Anda dan pastikan Anda bisa memulai/menghentikan server. Pastikan juga Anda dapat berkomunikasi dengan alat di server Anda melalui antarmuka GitHub Copilot Chat.
 
 ## Solusi
 
 [Solusi](./solution/README.md)
 
-## Kesimpulan Penting
+## Poin Penting
 
-Kesimpulan dari bab ini adalah sebagai berikut:
+Poin penting dari bab ini adalah sebagai berikut:
 
-- Visual Studio Code adalah klien yang hebat yang memungkinkan Anda menggunakan beberapa MCP Servers dan alat mereka.
-- Antarmuka obrolan GitHub Copilot adalah cara Anda berinteraksi dengan server.
-- Anda dapat meminta pengguna untuk memasukkan seperti kunci API yang dapat diteruskan ke MCP Server saat mengonfigurasi entri server di file *mcp.json*.
+- Visual Studio Code adalah klien hebat yang memungkinkan Anda menggunakan beberapa MCP Server dan alat-alatnya.
+- Antarmuka GitHub Copilot Chat adalah cara Anda berinteraksi dengan server.
+- Anda dapat meminta input dari pengguna seperti API key yang dapat diteruskan ke MCP Server saat mengonfigurasi entri server di file *mcp.json*.
 
-## Contoh 
+## Contoh
 
-- [Kalkulator Java](../samples/java/calculator/README.md)
-- [Kalkulator .Net](../../../../03-GettingStarted/samples/csharp)
-- [Kalkulator JavaScript](../samples/javascript/README.md)
-- [Kalkulator TypeScript](../samples/typescript/README.md)
-- [Kalkulator Python](../../../../03-GettingStarted/samples/python) 
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Sumber Daya Tambahan
+## Sumber Tambahan
 
 - [Dokumentasi Visual Studio](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
@@ -114,4 +113,4 @@ Kesimpulan dari bab ini adalah sebagai berikut:
 - Selanjutnya: [Membuat SSE Server](/03-GettingStarted/05-sse-server/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk mencapai ketepatan, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang penting, disarankan untuk menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.

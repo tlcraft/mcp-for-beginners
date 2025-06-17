@@ -1,29 +1,29 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c37fabfbc0dcbc9a4afb6d17e7d3be9f",
-  "translation_date": "2025-05-17T11:17:14+00:00",
+  "original_hash": "0eb9557780cd0a2551cdb8a16c886b51",
+  "translation_date": "2025-06-17T16:17:09+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "hr"
 }
 -->
-Razgovarajmo više o korištenju vizualnog sučelja u sljedećim odjeljcima.
+Razgovarajmo više o tome kako koristimo vizualno sučelje u sljedećim odjeljcima.
 
 ## Pristup
 
-Evo kako trebamo pristupiti ovome na visokoj razini:
+Evo kako trebamo pristupiti ovom problemu na visokoj razini:
 
-- Konfigurirajte datoteku za pronalaženje našeg MCP Servera.
-- Pokrenite/Povežite se s navedenim serverom kako biste dobili popis njegovih mogućnosti.
-- Koristite navedene mogućnosti kroz sučelje za razgovor GitHub Copilota.
+- Konfigurirati datoteku za pronalazak našeg MCP Servera.
+- Pokrenuti/Povezati se s navedenim serverom da bismo dobili popis njegovih mogućnosti.
+- Koristiti te mogućnosti putem GitHub Copilot Chat sučelja.
 
-Odlično, sada kada razumijemo tok, pokušajmo koristiti MCP Server kroz Visual Studio Code putem vježbe.
+Odlično, sada kada razumijemo tijek, pokušajmo koristiti MCP Server kroz Visual Studio Code kroz jedan zadatak.
 
-## Vježba: Korištenje servera
+## Zadatak: Korištenje servera
 
-U ovoj vježbi ćemo konfigurirati Visual Studio Code da pronađe vaš MCP server kako bi ga se moglo koristiti kroz sučelje za razgovor GitHub Copilota.
+U ovom zadatku konfigurirat ćemo Visual Studio Code da pronađe vaš MCP server kako bi se mogao koristiti iz GitHub Copilot Chat sučelja.
 
-### -0- Predkorak, omogućite otkrivanje MCP Servera
+### -0- Pripremni korak, omogućite otkrivanje MCP Servera
 
 Možda ćete trebati omogućiti otkrivanje MCP Servera.
 
@@ -33,7 +33,7 @@ Možda ćete trebati omogućiti otkrivanje MCP Servera.
 
 ### -1- Kreirajte konfiguracijsku datoteku
 
-Počnite s kreiranjem konfiguracijske datoteke u korijenu vašeg projekta, trebat će vam datoteka nazvana MCP.json koju ćete staviti u mapu nazvanu .vscode. Trebala bi izgledati ovako:
+Započnite kreiranjem konfiguracijske datoteke u korijenu vašeg projekta, trebate datoteku nazvanu MCP.json koju ćete smjestiti u mapu nazvanu .vscode. Trebala bi izgledati ovako:
 
 ```text
 .vscode
@@ -51,66 +51,66 @@ Dodajte sljedeći sadržaj u *mcp.json*:
     "inputs": [],
     "servers": {
        "hello-mcp": {
-           "command": "cmd",
+           "command": "node",
            "args": [
-               "/c", "node", "<absolute path>\\build\\index.js"
+               "build/index.js"
            ]
        }
     }
 }
 ```
 
-Evo jednostavnog primjera kako pokrenuti server napisan u Node.js, za druge runtime-e navedite odgovarajuću naredbu za pokretanje servera koristeći `command` and `args`.
+Gore je jednostavan primjer kako pokrenuti server napisan u Node.js, za druge runtime okoline navedite odgovarajuću naredbu za pokretanje servera koristeći `command` and `args`.
 
 ### -3- Pokrenite server
 
 Sada kada ste dodali unos, pokrenimo server:
 
-1. Pronađite svoj unos u *mcp.json* i provjerite jeste li pronašli ikonu "play":
+1. Pronađite svoj unos u *mcp.json* i provjerite imate li ikonu "play":
 
-  ![Pokretanje servera u Visual Studio Code](../../../../translated_images/vscode-start-server.c7f1132263a8ce789fa7f436eb3df7e36199ebf863f1a8205bfc4483c9e40924.hr.png)  
+  ![Pokretanje servera u Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.hr.png)  
 
-1. Kliknite ikonu "play", trebali biste vidjeti da se broj dostupnih alata u GitHub Copilot sučelju povećava. Ako kliknete na navedenu ikonu alata, vidjet ćete popis registriranih alata. Možete označiti/odznačiti svaki alat ovisno o tome želite li da GitHub Copilot koristi njih kao kontekst:
+2. Kliknite na ikonu "play", trebali biste vidjeti da se ikona alata u GitHub Copilot Chat sučelju poveća broj dostupnih alata. Ako kliknete na tu ikonu alata, vidjet ćete popis registriranih alata. Možete označiti/odznačiti svaki alat ovisno želite li da ih GitHub Copilot koristi kao kontekst:
 
-  ![Pokretanje servera u Visual Studio Code](../../../../translated_images/vscode-tool.ce37be05a56b9af258f882c161dbf35e23ac885b08ee5f5ee643097653b135b8.hr.png)
+  ![Pokretanje servera u Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.hr.png)
 
-1. Za pokretanje alata, upišite prompt koji znate da će odgovarati opisu jednog od vaših alata, na primjer prompt poput "dodaj 22 na 1":
+3. Da biste pokrenuli alat, upišite upit za koji znate da će odgovarati opisu jednog od vaših alata, na primjer upit poput "add 22 to 1":
 
-  ![Pokretanje alata iz GitHub Copilot](../../../../translated_images/vscode-agent.7f56a5ce3cef334adfe737514a7e8ac9384fa4161dd4df14bd3ddc9cd1a154f4.hr.png)
+  ![Pokretanje alata iz GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.hr.png)
 
-  Trebali biste vidjeti odgovor koji kaže 23.
+  Trebali biste vidjeti odgovor s brojem 23.
 
-## Zadatak
+## Zadatak za vježbu
 
-Pokušajte dodati unos servera u vašu *mcp.json* datoteku i provjerite možete li pokrenuti/zaustaviti server. Provjerite možete li također komunicirati s alatima na vašem serveru putem sučelja za razgovor GitHub Copilota.
+Pokušajte dodati unos servera u vašu *mcp.json* datoteku i provjerite možete li pokrenuti/zaustaviti server. Također provjerite možete li komunicirati s alatima na vašem serveru putem GitHub Copilot Chat sučelja.
 
 ## Rješenje
 
 [Rješenje](./solution/README.md)
 
-## Ključne točke
+## Ključni zaključci
 
-Ključne točke iz ovog poglavlja su sljedeće:
+Zaključci iz ovog poglavlja su sljedeći:
 
-- Visual Studio Code je izvrstan klijent koji vam omogućuje korištenje nekoliko MCP Servera i njihovih alata.
-- Sučelje za razgovor GitHub Copilota je način na koji komunicirate sa serverima.
-- Možete zatražiti od korisnika unose poput API ključeva koji se mogu prenijeti na MCP Server prilikom konfiguriranja unosa servera u *mcp.json* datoteci.
+- Visual Studio Code je odličan klijent koji vam omogućuje korištenje više MCP Servera i njihovih alata.
+- GitHub Copilot Chat sučelje je način na koji komunicirate sa serverima.
+- Možete tražiti od korisnika unos poput API ključeva koje je moguće proslijediti MCP Serveru prilikom konfiguracije unosa servera u *mcp.json* datoteci.
 
 ## Primjeri
 
-- [Java Kalkulator](../samples/java/calculator/README.md)
-- [.Net Kalkulator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Kalkulator](../samples/javascript/README.md)
-- [TypeScript Kalkulator](../samples/typescript/README.md)
-- [Python Kalkulator](../../../../03-GettingStarted/samples/python) 
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## Dodatni resursi
 
 - [Visual Studio dokumentacija](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
-## Što je sljedeće
+## Što slijedi
 
 - Sljedeće: [Kreiranje SSE Servera](/03-GettingStarted/05-sse-server/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge prevođenja [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo preciznosti, molimo vas da budete svjesni da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne odgovaramo za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj je dokument preveden pomoću AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

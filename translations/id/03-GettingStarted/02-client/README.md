@@ -1,65 +1,65 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a0acf3093691b1cfcc008a8c6648ea26",
-  "translation_date": "2025-06-13T06:49:33+00:00",
+  "original_hash": "2342baa570312086fc19edcf41320250",
+  "translation_date": "2025-06-17T16:01:01+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "id"
 }
 -->
-Dalam kode sebelumnya kami:
+Dalam kode sebelumnya kita:
 
-- Mengimpor pustaka
-- Membuat instance client dan menghubungkannya menggunakan stdio untuk transportasi.
-- Mendaftar prompt, sumber daya, dan alat serta memanggil semuanya.
+- Mengimpor perpustakaan
+- Membuat instance klien dan menghubungkannya menggunakan stdio sebagai transport.
+- Mendaftar prompt, sumber daya, dan alat, lalu memanggil semuanya.
 
-Itulah dia, sebuah client yang dapat berkomunikasi dengan MCP Server.
+Itu dia, sebuah klien yang dapat berkomunikasi dengan MCP Server.
 
-Mari kita luangkan waktu pada bagian latihan berikutnya untuk membedah setiap potongan kode dan menjelaskan apa yang sedang terjadi.
+Mari kita luangkan waktu di bagian latihan berikutnya untuk membahas setiap potongan kode dan menjelaskan apa yang terjadi.
 
-## Latihan: Menulis client
+## Latihan: Menulis klien
 
-Seperti yang sudah disebutkan, mari kita luangkan waktu untuk menjelaskan kodenya, dan tentu saja kamu boleh mengikuti dengan mengetik kodenya juga jika ingin.
+Seperti yang sudah disebutkan, mari kita luangkan waktu untuk menjelaskan kode ini, dan silakan mengikuti sambil mengetik jika kamu mau.
 
-### -1- Mengimpor pustaka
+### -1- Mengimpor perpustakaan
 
-Mari kita impor pustaka yang kita butuhkan, kita akan memerlukan referensi ke client dan ke protokol transportasi yang kita pilih, yaitu stdio. stdio adalah protokol untuk hal-hal yang dijalankan di mesin lokal kamu. SSE adalah protokol transportasi lain yang akan kita tunjukkan di bab-bab berikutnya, tapi itu adalah opsi lain kamu. Untuk sekarang, mari kita lanjutkan dengan stdio.
+Mari kita impor perpustakaan yang kita butuhkan, kita akan membutuhkan referensi ke klien dan protokol transport yang kita pilih, yaitu stdio. stdio adalah protokol untuk hal-hal yang dijalankan di mesin lokalmu. SSE adalah protokol transport lain yang akan kita tunjukkan di bab-bab berikutnya, tapi itu adalah opsi lainnya. Untuk sekarang, mari lanjutkan dengan stdio.
 
 ---
 
 Mari kita lanjut ke instansiasi.
 
-### -2- Menginstansiasi client dan transportasi
+### -2- Menginstansiasi klien dan transport
 
-Kita perlu membuat instance dari transportasi dan juga dari client kita:
+Kita perlu membuat instance dari transport dan juga dari klien kita:
 
 ---
 
 ### -3- Mendaftar fitur server
 
-Sekarang, kita sudah punya client yang bisa terhubung saat program dijalankan. Namun, client ini belum benar-benar menampilkan fitur-fiturnya, jadi mari kita lakukan itu sekarang:
+Sekarang, kita sudah memiliki klien yang bisa terhubung ketika program dijalankan. Namun, klien ini belum benar-benar mendaftar fiturnya, jadi mari kita lakukan itu selanjutnya:
 
 ---
 
-Bagus, sekarang kita sudah menangkap semua fitur. Sekarang pertanyaannya, kapan kita menggunakannya? Nah, client ini cukup sederhana, sederhana dalam arti kita harus memanggil fitur-fitur tersebut secara eksplisit saat membutuhkannya. Di bab berikutnya, kita akan membuat client yang lebih canggih yang memiliki akses ke model bahasa besar miliknya sendiri, LLM. Tapi untuk sekarang, mari kita lihat bagaimana kita bisa memanggil fitur-fitur di server:
+Bagus, sekarang kita sudah menangkap semua fitur. Sekarang pertanyaannya, kapan kita menggunakannya? Klien ini cukup sederhana, maksudnya kita harus secara eksplisit memanggil fitur-fitur tersebut saat kita membutuhkannya. Di bab berikutnya, kita akan membuat klien yang lebih canggih yang memiliki akses ke model bahasa besar (LLM) miliknya sendiri. Untuk sekarang, mari kita lihat bagaimana kita bisa memanggil fitur-fitur pada server:
 
 ### -4- Memanggil fitur
 
-Untuk memanggil fitur, kita harus memastikan kita memberikan argumen yang benar dan dalam beberapa kasus nama dari apa yang ingin kita panggil.
+Untuk memanggil fitur, kita perlu memastikan kita menyertakan argumen yang benar dan dalam beberapa kasus nama dari apa yang ingin kita panggil.
 
 ---
 
-### -5- Menjalankan client
+### -5- Menjalankan klien
 
-Untuk menjalankan client, ketik perintah berikut di terminal:
+Untuk menjalankan klien, ketik perintah berikut di terminal:
 
 ---
 
 ## Tugas
 
-Dalam tugas ini, kamu akan menggunakan apa yang sudah kamu pelajari dalam membuat client, tetapi membuat client versi kamu sendiri.
+Dalam tugas ini, kamu akan menggunakan apa yang telah kamu pelajari dalam membuat klien, tetapi buatlah klienmu sendiri.
 
-Berikut adalah server yang bisa kamu gunakan dan harus kamu panggil melalui kode client kamu, coba tambahkan lebih banyak fitur ke server agar lebih menarik.
+Berikut adalah server yang dapat kamu gunakan yang harus kamu panggil melalui kode klienmu, lihat apakah kamu bisa menambahkan lebih banyak fitur ke server agar menjadi lebih menarik.
 
 ---
 
@@ -69,27 +69,27 @@ Berikut adalah server yang bisa kamu gunakan dan harus kamu panggil melalui kode
 
 ## Poin Penting
 
-Poin penting dari bab ini mengenai client adalah sebagai berikut:
+Poin penting dari bab ini tentang klien adalah sebagai berikut:
 
-- Dapat digunakan untuk menemukan dan memanggil fitur di server.
-- Dapat memulai server saat client juga mulai (seperti di bab ini) tapi client juga bisa terhubung ke server yang sudah berjalan.
-- Merupakan cara yang bagus untuk menguji kemampuan server selain alternatif seperti Inspector yang sudah dijelaskan di bab sebelumnya.
+- Dapat digunakan untuk menemukan dan memanggil fitur-fitur pada server.
+- Dapat memulai server sekaligus menjalankan dirinya sendiri (seperti di bab ini), tetapi klien juga bisa terhubung ke server yang sudah berjalan.
+- Merupakan cara yang bagus untuk menguji kemampuan server selain menggunakan alternatif seperti Inspector yang telah dijelaskan di bab sebelumnya.
 
 ## Sumber Tambahan
 
-- [Membangun client di MCP](https://modelcontextprotocol.io/quickstart/client)
+- [Membangun klien di MCP](https://modelcontextprotocol.io/quickstart/client)
 
-## Contoh 
+## Contoh
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
 - [JavaScript Calculator](../samples/javascript/README.md)
 - [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python) 
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## Selanjutnya
 
-- Selanjutnya: [Membuat client dengan LLM](/03-GettingStarted/03-llm-client/README.md)
+- Selanjutnya: [Membuat klien dengan LLM](/03-GettingStarted/03-llm-client/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi yang penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

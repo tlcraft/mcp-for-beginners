@@ -1,46 +1,46 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c37fabfbc0dcbc9a4afb6d17e7d3be9f",
-  "translation_date": "2025-05-17T11:11:33+00:00",
+  "original_hash": "0eb9557780cd0a2551cdb8a16c886b51",
+  "translation_date": "2025-06-17T15:58:21+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "he"
 }
 -->
-בואו נדבר יותר על איך להשתמש בממשק הוויזואלי בחלקים הבאים.
+בוא נדבר יותר על איך להשתמש בממשק הוויזואלי בסעיפים הבאים.
 
 ## גישה
 
-הנה איך שאנחנו צריכים לגשת לזה ברמה גבוהה:
+ככה צריך לגשת לזה ברמה גבוהה:
 
-- להגדיר קובץ כדי למצוא את ה-MCP Server שלנו.
-- להפעיל/להתחבר לשרת המדובר כדי לראות את היכולות שלו.
-- להשתמש ביכולות המדוברות דרך ממשק הצ'אט של GitHub Copilot.
+- להגדיר קובץ שימצא את שרת ה-MCP שלנו.
+- להפעיל/להתחבר לשרת המדובר כדי לקבל ממנו את רשימת היכולות שלו.
+- להשתמש ביכולות האלו דרך ממשק השיחה של GitHub Copilot.
 
-מעולה, עכשיו כשאנחנו מבינים את הזרימה, בואו ננסה להשתמש ב-MCP Server דרך Visual Studio Code בתרגיל.
+מצוין, עכשיו כשאנחנו מבינים את הזרימה, בוא ננסה להשתמש בשרת MCP דרך Visual Studio Code באמצעות תרגיל.
 
-## תרגיל: שימוש בשרת
+## תרגיל: צריכת שרת
 
-בתרגיל זה, נגדיר את Visual Studio Code כדי למצוא את ה-MCP server שלך כך שהוא יוכל לשמש מממשק הצ'אט של GitHub Copilot.
+בתרגיל זה, נגדיר את Visual Studio Code כדי שימצא את שרת ה-MCP שלך כך שיוכל לשמש דרך ממשק השיחה של GitHub Copilot.
 
-### -0- שלב מקדים, לאפשר גילוי MCP Server
+### -0- שלב מקדים, הפעלת גילוי שרתי MCP
 
-ייתכן שתצטרך לאפשר גילוי של MCP Servers.
+יתכן שתצטרך להפעיל את גילוי שרתי MCP.
 
-1. עבור ל- `File -> Preferences -> Settings` in Visual Studio Code.
+1. עבור אל `File -> Preferences -> Settings` in Visual Studio Code.
 
 1. Search for "MCP" and enable `chat.mcp.discovery.enabled` בקובץ settings.json.
 
-### -1- צור קובץ תצורה
+### -1- יצירת קובץ קונפיגורציה
 
-התחל ביצירת קובץ תצורה בשורש הפרויקט שלך, תצטרך קובץ בשם MCP.json ולהניח אותו בתיקייה בשם .vscode. זה אמור להיראות כך:
+התחל ביצירת קובץ קונפיגורציה בשורש הפרויקט שלך, תזדקק לקובץ בשם MCP.json ולמקם אותו בתיקייה בשם .vscode. הוא אמור להיראות כך:
 
 ```text
 .vscode
 |-- mcp.json
 ```
 
-הבא, נראה איך אפשר להוסיף רשומת שרת.
+עכשיו, בוא נראה איך להוסיף רשומת שרת.
 
 ### -2- הגדרת שרת
 
@@ -51,38 +51,38 @@ CO_OP_TRANSLATOR_METADATA:
     "inputs": [],
     "servers": {
        "hello-mcp": {
-           "command": "cmd",
+           "command": "node",
            "args": [
-               "/c", "node", "<absolute path>\\build\\index.js"
+               "build/index.js"
            ]
        }
     }
 }
 ```
 
-הנה דוגמה פשוטה למעלה כיצד להתחיל שרת שנכתב ב-Node.js, עבור ריצות אחרות ציין את הפקודה המתאימה להתחלת השרת באמצעות `command` and `args`.
+הנה דוגמה פשוטה איך להפעיל שרת שנכתב ב-Node.js, עבור סביבות ריצה אחרות ציין את הפקודה הנכונה להפעלת השרת באמצעות `command` and `args`.
 
 ### -3- הפעלת השרת
 
 עכשיו כשהוספת רשומה, בוא נתחיל את השרת:
 
-1. אתר את הרשומה שלך ב-*mcp.json* וודא שאתה מוצא את האייקון "play":
+1. אתר את הרשומה שלך ב-*mcp.json* וודא שאתה רואה את סמל "הפעלה":
 
-  ![Starting server in Visual Studio Code](../../../../translated_images/vscode-start-server.c7f1132263a8ce789fa7f436eb3df7e36199ebf863f1a8205bfc4483c9e40924.he.png)  
+  ![הפעלת שרת ב-Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.he.png)  
 
-1. לחץ על האייקון "play", אתה אמור לראות את אייקון הכלים בצ'אט של GitHub Copilot מגדיל את מספר הכלים הזמינים. אם תלחץ על אייקון הכלים המדובר, תראה רשימה של כלים רשומים. תוכל לסמן/לבטל כל כלי בהתאם אם אתה רוצה ש-GitHub Copilot ישתמש בהם כהקשר:
+1. לחץ על סמל "הפעלה", אמור להראות שסמל הכלים בממשק השיחה של GitHub Copilot מראה על מספר כלים זמינים. אם תלחץ על סמל הכלים, תראה רשימה של כלים רשומים. תוכל לסמן או להסיר סימון לכל כלי לפי אם ברצונך ש-GitHub Copilot ישתמש בהם כהקשר:
 
-  ![Starting server in Visual Studio Code](../../../../translated_images/vscode-tool.ce37be05a56b9af258f882c161dbf35e23ac885b08ee5f5ee643097653b135b8.he.png)
+  ![הפעלת שרת ב-Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.he.png)
 
-1. כדי להפעיל כלי, הקלד הנחיה שאתה יודע שתתאים לתיאור של אחד מהכלים שלך, לדוגמה הנחיה כזו "add 22 to 1":
+1. כדי להפעיל כלי, הקלד פקודה שאתה יודע שתתאים לתיאור של אחד מהכלים שלך, לדוגמה פקודה כמו "add 22 to 1":
 
-  ![Running a tool from GitHub Copilot](../../../../translated_images/vscode-agent.7f56a5ce3cef334adfe737514a7e8ac9384fa4161dd4df14bd3ddc9cd1a154f4.he.png)
+  ![הרצת כלי מ-GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.he.png)
 
-  אתה אמור לראות תגובה שאומרת 23.
+  אמור להופיע תגובה שאומרת 23.
 
 ## משימה
 
-נסה להוסיף רשומת שרת לקובץ *mcp.json* שלך וודא שאתה יכול להפעיל/לעצור את השרת. וודא שאתה גם יכול לתקשר עם הכלים בשרת שלך דרך ממשק הצ'אט של GitHub Copilot.
+נסה להוסיף רשומת שרת לקובץ *mcp.json* שלך וודא שאתה יכול להפעיל/לכבות את השרת. וודא גם שאתה יכול לתקשר עם הכלים בשרת שלך דרך ממשק השיחה של GitHub Copilot.
 
 ## פתרון
 
@@ -90,27 +90,27 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## נקודות מפתח
 
-הנקודות המפתח מהפרק הזה הן:
+הנקודות החשובות מהפרק הזה הן:
 
-- Visual Studio Code הוא לקוח נהדר שמאפשר לך להשתמש בכמה MCP Servers וכליהם.
-- ממשק הצ'אט של GitHub Copilot הוא איך שאתה מתקשר עם השרתים.
-- אתה יכול להנחות את המשתמש להזין נתונים כמו מפתחות API שניתן להעביר ל-MCP Server כאשר מגדירים את רשומת השרת בקובץ *mcp.json*.
+- Visual Studio Code הוא לקוח מצוין שמאפשר לך לצרוך מספר שרתי MCP וכלים שלהם.
+- ממשק השיחה של GitHub Copilot הוא איך אתה מתקשר עם השרתים.
+- אתה יכול לבקש מהמשתמש להזין פרטים כמו מפתחות API שניתן להעביר לשרת ה-MCP בעת הגדרת רשומת השרת בקובץ *mcp.json*.
 
 ## דוגמאות
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python) 
+- [מחשבון ב-Java](../samples/java/calculator/README.md)
+- [מחשבון ב-.Net](../../../../03-GettingStarted/samples/csharp)
+- [מחשבון ב-JavaScript](../samples/javascript/README.md)
+- [מחשבון ב-TypeScript](../samples/typescript/README.md)
+- [מחשבון ב-Python](../../../../03-GettingStarted/samples/python)
 
 ## משאבים נוספים
 
-- [Visual Studio docs](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
+- [מסמכי Visual Studio](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
 ## מה הלאה
 
-- הבא: [יצירת SSE Server](/03-GettingStarted/05-sse-server/README.md)
+- הבא: [יצירת שרת SSE](/03-GettingStarted/05-sse-server/README.md)
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש להיות מודעים לכך שתרגומים אוטומטיים עשויים להכיל טעויות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי אדם. אנו לא אחראים לכל אי הבנות או פירושים שגויים הנובעים מהשימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. יש להתייחס למסמך המקורי בשפתו כאל המקור הסמכותי. עבור מידע קריטי מומלץ להיעזר בתרגום מקצועי שנעשה על ידי אדם. אנו לא אחראים לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
