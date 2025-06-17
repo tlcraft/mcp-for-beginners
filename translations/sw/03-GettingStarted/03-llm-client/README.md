@@ -1,23 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bc3ae5af5973160abba9976cb5a4704c",
-  "translation_date": "2025-06-13T11:35:03+00:00",
+  "original_hash": "904b689eda5a68cbafe656d53f9787c7",
+  "translation_date": "2025-06-17T18:52:01+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "sw"
 }
 -->
-Nzuri, kwa hatua yetu inayofuata, hebu orodhesha uwezo uliopo kwenye server.
+Nzuri, kwa hatua yetu inayofuata, hebu tutae uwezo kwenye seva.
 
-### -2 Orodhesha uwezo wa server
+### -2 Orodhesha uwezo wa seva
 
-Sasa tutaungana na server na kuomba uwezo wake: 
+Sasa tutaunganishwa na seva na kuomba uwezo wake:
 
-### -3 Badilisha uwezo wa server kuwa zana za LLM
+### -3 Badilisha uwezo wa seva kuwa zana za LLM
 
-Hatua inayofuata baada ya kuorodhesha uwezo wa server ni kubadilisha kuwa muundo unaoeleweka na LLM. Mara tu tutakapofanya hivyo, tunaweza kutoa uwezo huu kama zana kwa LLM yetu.
+Hatua inayofuata baada ya kuorodhesha uwezo wa seva ni kubadilisha kuwa muundo unaoeleweka na LLM. Mara tu tunapofanya hivyo, tunaweza kutoa uwezo huu kama zana kwa LLM yetu.
 
-Nzuri, sasa tumejiandaa kushughulikia maombi ya mtumiaji, hivyo hebu tukabiliane na hilo.
+Nzuri, sasa tumejipanga kushughulikia maombi ya mtumiaji, hivyo hebu tushughulikie hilo sasa.
 
 ### -4 Shughulikia ombi la mtumiaji
 
@@ -25,32 +25,32 @@ Katika sehemu hii ya msimbo, tutashughulikia maombi ya mtumiaji.
 
 Nzuri, umefanya kazi nzuri!
 
-## Kazi ya Nyumbani
+## Kazi
 
-Chukua msimbo kutoka kwenye zoezi na tengeneza server yenye zana zaidi. Kisha tengeneza client yenye LLM, kama ilivyo kwenye zoezi, na jaribu na maelekezo tofauti kuhakikisha zana zote za server zinaitwa kwa njia ya mabadiliko. Njia hii ya kujenga client inamaanisha mtumiaji wa mwisho atapata uzoefu mzuri kwani wanaweza kutumia maelekezo ya lugha asilia badala ya amri za client kamili, na hawatahitaji kujua kama MCP server inaitwa.
+Chukua msimbo kutoka mazoezini na tengeneza seva yenye zana zaidi. Kisha tengeneza mteja mwenye LLM, kama ilivyo kwenye mazoezi, na ujaribu na maelekezo tofauti ili kuhakikisha zana zote za seva zinaitwa kwa njia ya mabadiliko. Njia hii ya kujenga mteja inamaanisha mtumiaji wa mwisho atakuwa na uzoefu mzuri wa mtumiaji kwani wanaweza kutumia maelekezo, badala ya amri za mteja za moja kwa moja, na hawatajua kama seva ya MCP inaitwa.
 
 ## Suluhisho
 
 [Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## Muhimu Kumbuka
+## Muhimu Kutoka
 
-- Kuongeza LLM kwenye client yako kunatoa njia bora kwa watumiaji kuingiliana na MCP Servers.
-- Unahitaji kubadilisha majibu ya MCP Server kuwa kitu ambacho LLM inaweza kuelewa.
+- Kuongeza LLM kwa mteja wako kunatoa njia bora kwa watumiaji kuingiliana na Seva za MCP.
+- Unahitaji kubadilisha majibu ya Seva ya MCP kuwa kitu ambacho LLM inaweza kuelewa.
 
 ## Sampuli
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Kalkuleta ya Java](../samples/java/calculator/README.md)
+- [Kalkuleta ya .Net](../../../../03-GettingStarted/samples/csharp)
+- [Kalkuleta ya JavaScript](../samples/javascript/README.md)
+- [Kalkuleta ya TypeScript](../samples/typescript/README.md)
+- [Kalkuleta ya Python](../../../../03-GettingStarted/samples/python)
 
 ## Rasilimali Zaidi
 
-## Nini Kifuatacho
+## Ifuatayo
 
-- Ifuatayo: [Kutumia server kwa kutumia Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
+- Ifuatayo: [Kutumia seva kwa kutumia Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
 
-**Kang’amuzi**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya utafsiri wa AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatubeba dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kumbusho**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kasoro. Hati asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

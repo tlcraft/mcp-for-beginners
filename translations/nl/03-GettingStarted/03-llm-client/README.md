@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bc3ae5af5973160abba9976cb5a4704c",
-  "translation_date": "2025-06-13T11:33:24+00:00",
+  "original_hash": "904b689eda5a68cbafe656d53f9787c7",
+  "translation_date": "2025-06-17T18:50:40+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "nl"
 }
@@ -11,15 +11,15 @@ Geweldig, voor onze volgende stap gaan we de mogelijkheden op de server opvragen
 
 ### -2 Mogelijkheden van de server opvragen
 
-Nu verbinden we met de server en vragen we naar zijn mogelijkheden:
+Nu gaan we verbinding maken met de server en vragen naar de beschikbare mogelijkheden:
 
-### -3 Servermogelijkheden omzetten naar LLM-tools
+### -3- Servermogelijkheden omzetten naar LLM-tools
 
-De volgende stap na het opvragen van de servermogelijkheden is om deze om te zetten naar een formaat dat het LLM begrijpt. Zodra we dat gedaan hebben, kunnen we deze mogelijkheden als tools aan ons LLM aanbieden.
+De volgende stap nadat we de servermogelijkheden hebben opgevraagd, is deze omzetten naar een formaat dat het LLM begrijpt. Zodra we dat gedaan hebben, kunnen we deze mogelijkheden als tools aan ons LLM aanbieden.
 
-Geweldig, we zijn nu klaar om gebruikersverzoeken te verwerken, dus laten we dat als volgende aanpakken.
+Geweldig, we zijn nu klaar om gebruikersverzoeken af te handelen, dus laten we dat als volgende aanpakken.
 
-### -4 Verwerken van gebruikersprompt
+### -4- Gebruikersprompt afhandelen
 
 In dit deel van de code gaan we gebruikersverzoeken afhandelen.
 
@@ -27,16 +27,16 @@ Geweldig, je hebt het gedaan!
 
 ## Opdracht
 
-Neem de code uit de oefening en breid de server uit met meer tools. Maak daarna een client met een LLM, zoals in de oefening, en test het met verschillende prompts om zeker te zijn dat alle servertools dynamisch worden aangeroepen. Deze manier van een client bouwen zorgt voor een uitstekende gebruikerservaring, omdat gebruikers prompts kunnen gebruiken in plaats van exacte clientcommando's, zonder dat ze merken dat er een MCP-server wordt aangesproken.
+Neem de code uit de oefening en breid de server uit met meer tools. Maak daarna een client met een LLM, zoals in de oefening, en test deze met verschillende prompts om te zorgen dat alle servertools dynamisch worden aangeroepen. Deze manier van het bouwen van een client zorgt voor een geweldige gebruikerservaring, omdat gebruikers prompts kunnen gebruiken in plaats van exacte clientcommando’s, zonder dat ze merken dat er een MCP-server wordt aangeroepen.
 
 ## Oplossing
 
 [Oplossing](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## Belangrijkste punten
+## Belangrijke punten
 
 - Het toevoegen van een LLM aan je client zorgt voor een betere manier voor gebruikers om met MCP-servers te communiceren.
-- Je moet de reactie van de MCP-server omzetten naar iets wat het LLM kan begrijpen.
+- Je moet de reactie van de MCP-server omzetten naar iets dat het LLM kan begrijpen.
 
 ## Voorbeelden
 
@@ -48,9 +48,9 @@ Neem de code uit de oefening en breid de server uit met meer tools. Maak daarna 
 
 ## Extra bronnen
 
-## Wat volgt
+## Wat is de volgende stap
 
 - Volgende: [Een server gebruiken met Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal geldt als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

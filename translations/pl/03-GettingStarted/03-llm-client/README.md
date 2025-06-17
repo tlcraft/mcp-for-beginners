@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bc3ae5af5973160abba9976cb5a4704c",
-  "translation_date": "2025-06-13T11:30:49+00:00",
+  "original_hash": "904b689eda5a68cbafe656d53f9787c7",
+  "translation_date": "2025-06-17T18:48:49+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "pl"
 }
@@ -11,29 +11,29 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### -2 Wypisz możliwości serwera
 
-Teraz połączymy się z serwerem i poprosimy o jego możliwości:
+Teraz połączymy się z serwerem i zapytamy o jego możliwości: 
 
 ### -3- Konwersja możliwości serwera na narzędzia LLM
 
-Kolejnym krokiem po wypisaniu możliwości serwera jest przekształcenie ich na format zrozumiały dla LLM. Gdy to zrobimy, możemy udostępnić te możliwości jako narzędzia dla naszego LLM.
+Kolejnym krokiem po wypisaniu możliwości serwera jest przekształcenie ich do formatu, który rozumie LLM. Gdy to zrobimy, możemy udostępnić te możliwości jako narzędzia dla naszego LLM.
 
-Świetnie, jesteśmy gotowi, by obsłużyć zapytania użytkownika, więc zajmijmy się tym teraz.
+Świetnie, teraz jesteśmy gotowi obsłużyć żądania użytkownika, zajmijmy się tym.
 
-### -4- Obsługa zapytania użytkownika
+### -4- Obsługa zapytań użytkownika
 
-W tej części kodu zajmiemy się obsługą zapytań użytkownika.
+W tej części kodu będziemy obsługiwać zapytania użytkownika.
 
 Świetnie, udało się!
 
 ## Zadanie
 
-Weź kod z ćwiczenia i rozbuduj serwer o więcej narzędzi. Następnie stwórz klienta z LLM, tak jak w ćwiczeniu, i przetestuj go różnymi promptami, aby upewnić się, że wszystkie narzędzia serwera są wywoływane dynamicznie. Taki sposób tworzenia klienta zapewnia doskonałe doświadczenie użytkownika końcowego, ponieważ może on korzystać z promptów zamiast dokładnych poleceń klienta i nie musi wiedzieć o wywołaniach serwera MCP.
+Weź kod z ćwiczenia i rozbuduj serwer o więcej narzędzi. Następnie stwórz klienta z LLM, tak jak w ćwiczeniu, i przetestuj go z różnymi promptami, aby upewnić się, że wszystkie narzędzia serwera są wywoływane dynamicznie. Taki sposób budowania klienta zapewnia użytkownikowi końcowemu świetne doświadczenie, ponieważ może korzystać z promptów zamiast dokładnych poleceń klienta i nie musi wiedzieć o wywołaniach serwera MCP.
 
 ## Rozwiązanie
 
 [Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## Kluczowe wnioski
+## Najważniejsze wnioski
 
 - Dodanie LLM do klienta zapewnia lepszy sposób interakcji użytkowników z serwerami MCP.
 - Musisz przekształcić odpowiedź serwera MCP na format zrozumiały dla LLM.
@@ -50,7 +50,7 @@ Weź kod z ćwiczenia i rozbuduj serwer o więcej narzędzi. Następnie stwórz 
 
 ## Co dalej
 
-- Następne: [Korzystanie z serwera za pomocą Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
+- Następny temat: [Korzystanie z serwera za pomocą Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być traktowany jako źródło autorytatywne. W przypadku informacji o krytycznym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
