@@ -96,7 +96,7 @@ As said above, let's take our time explaining the code, and by all means code al
 
 ### -1- Import the libraries
 
-Let's import the libraries we need, we will need references to a client and to our chosen transport protocol, stdio. stdio is a protcol for things meant to run on your local machine. SSE is another transport protocol we will show in future chapters but that's your other option. For now though, let's continue with stdio. 
+Let's import the libraries we need, we will need references to a client and to our chosen transport protocol, stdio. stdio is a protocol for things meant to run on your local machine. SSE is another transport protocol we will show in future chapters but that's your other option. For now though, let's continue with stdio. 
 
 <details>
 <summary>TypeScript</summary>
