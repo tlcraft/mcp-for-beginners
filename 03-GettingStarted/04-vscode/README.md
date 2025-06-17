@@ -109,7 +109,7 @@ Now that you've added an entry, let's start the server:
 
 ## Assignment
 
-Try adding a server entry to you *mcp.json* file and make sure you can start/stop the server. Make sure you can also communicate with the tools on your server via GitHub Copilot Chat interface.
+Try adding a server entry to your *mcp.json* file and make sure you can start/stop the server. Make sure you can also communicate with the tools on your server via GitHub Copilot Chat interface.
 
 ## Solution
 
