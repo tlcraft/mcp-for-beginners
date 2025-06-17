@@ -161,7 +161,7 @@ In MCP, streaming is not about sending the main response in chunks, but about se
 
 ### How it works
 
-The main result is still sent as a single response.However, notfications can be sent as separate messages during processing and thereby update the client in real time. The client must be able to handle and display these notifications.
+The main result is still sent as a single response. However, notfications can be sent as separate messages during processing and thereby update the client in real time. The client must be able to handle and display these notifications.
 
 ## What is a Notification?
 

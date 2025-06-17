@@ -4,7 +4,7 @@ SSE (Server Sent Events) is a standard for server-to-client streaming, allowing 
 
 ## Overview
 
-This lesson covers ow to build and consume SSE Servers.
+This lesson covers how to build and consume SSE Servers.
 
 ## Learning Objectives
 
@@ -19,8 +19,8 @@ By the end of this lesson, you will be able to:
 
 SSE is one of two supported transport types. You've already seen the first one stdio being used in previous lessons. The difference is the following:
 
-- SSE needs you to handle two things connection and messages.
-- As this is a server that can live anywhere, you need that to reflect in how you work with tools like the Inspector and Visual Studio. What that means is that instead of pointing out how to start the server, you instead point to the endpoint where it can establish a connection. See below example code:
+- SSE needs you to handle two things; connection and messages.
+- As this is a server that can live anywhere, you need that to reflect in how you work with tools like the Inspector and Visual Studio Code. What that means is that instead of pointing out how to start the server, you instead point to the endpoint where it can establish a connection. See below example code:
 
 
     <details>
@@ -125,7 +125,7 @@ To create our server, we use the same types as with stdio. However, for the tran
 
 ```typescript
 import { Request, Response } from "express";
-import * as express from "express";
+import express from "express";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
@@ -142,7 +142,7 @@ const transports: {[sessionId: string]: SSEServerTransport} = {};
 In the preceding code we've:
 
 - Created a server instance.
-- Defined an using the web framework express.
+- Defined an app using the web framework express.
 - Created a transports variable that we will use to store incoming connections.
 
 </details>
@@ -318,7 +318,7 @@ Your full code should look like so:
 ```typescript
 // server-sse.ts
 import { Request, Response } from "express";
-import * as express from "express";
+import express from "express";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
@@ -517,7 +517,7 @@ Great, you're able to work with the inspector, let's see how we can work with Vi
 
 ## Assignment
 
-Try building out your server with more capabilities. See [this page](https://api.chucknorris.io/) to for example add a tool that calls an API, you decide what the server should look like.  Have fun :)
+Try building out your server with more capabilities. See [this page](https://api.chucknorris.io/) to, for example, add a tool that calls an API. You decide what the server should look like.  Have fun :)
 
 ## Solution
 
@@ -525,11 +525,11 @@ Try building out your server with more capabilities. See [this page](https://api
 
 ## Key Takeaways
 
-The takeaways from this chapter is the following:
+The key takeaways from this chapter are the following:
 
 - SSE is the second supported transport next to stdio.
 - To support SSE, you need to manage incoming connections and messages using a web framework.
-- You can use both Inspector and Visual Studio Code to consume SSE server, just like stdio servers. Note how it differs a little between stdio and SSE. For SSE, you need to start up the server separately and then run your inspector tool. For the inspector tool, there's also some differences in that you need to specify the URL. 
+- You can use both Inspector and Visual Studio Code to consume an SSE server, just like stdio servers. Note how it differs a little between stdio and SSE. For SSE, you need to start up the server separately and then run your inspector tool. For the inspector tool, there's also some differences in that you need to specify the URL. 
 
 ## Samples 
 
