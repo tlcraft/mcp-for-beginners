@@ -517,7 +517,7 @@ Great, you're able to work with the inspector, let's see how we can work with Vi
 
 ## Assignment
 
-Try building out your server with more capabilities. See [this page](https://api.chucknorris.io/) to, for example, add a tool that calls an API. You decide what the server should look like.  Have fun :)
+Try building out your server with more capabilities. See [this page](https://api.chucknorris.io/) to, for example, add a tool that calls an API. You decide what the server should look like. Have fun :)
 
 ## Solution
 
