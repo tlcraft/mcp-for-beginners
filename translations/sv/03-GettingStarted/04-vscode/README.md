@@ -1,35 +1,35 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c37fabfbc0dcbc9a4afb6d17e7d3be9f",
-  "translation_date": "2025-05-17T11:09:16+00:00",
+  "original_hash": "0eb9557780cd0a2551cdb8a16c886b51",
+  "translation_date": "2025-06-17T15:51:04+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "sv"
 }
 -->
-Låt oss prata mer om hur vi använder det visuella gränssnittet i de kommande avsnitten.
+Låt oss prata mer om hur vi använder det visuella gränssnittet i nästa avsnitt.
 
 ## Tillvägagångssätt
 
-Här är hur vi behöver närma oss detta på en hög nivå:
+Så här behöver vi gå tillväga på en övergripande nivå:
 
 - Konfigurera en fil för att hitta vår MCP-server.
-- Starta/Anslut till servern för att få den att lista sina funktioner.
-- Använd dessa funktioner genom GitHub Copilots chattgränssnitt.
+- Starta/ansluta till nämnda server för att få en lista över dess funktioner.
+- Använda dessa funktioner via GitHub Copilot Chat-gränssnittet.
 
-Bra, nu när vi förstår flödet, låt oss försöka använda en MCP-server genom Visual Studio Code genom en övning.
+Bra, nu när vi förstår flödet, låt oss försöka använda en MCP-server genom Visual Studio Code i en övning.
 
-## Övning: Konsumera en server
+## Övning: Använda en server
 
-I denna övning kommer vi att konfigurera Visual Studio Code för att hitta din MCP-server så att den kan användas från GitHub Copilots chattgränssnitt.
+I denna övning ska vi konfigurera Visual Studio Code för att hitta din MCP-server så att den kan användas från GitHub Copilot Chat-gränssnittet.
 
-### -0- Försteg, aktivera upptäckten av MCP-server
+### -0- Förberedelse, aktivera upptäckt av MCP-server
 
-Du kan behöva aktivera upptäckten av MCP-servrar.
+Du kan behöva aktivera upptäckt av MCP-servrar.
 
 1. Gå till `File -> Preferences -> Settings` in Visual Studio Code.
 
-1. Search for "MCP" and enable `chat.mcp.discovery.enabled` i settings.json-filen.
+1. Search for "MCP" and enable `chat.mcp.discovery.enabled` i filen settings.json.
 
 ### -1- Skapa konfigurationsfil
 
@@ -51,66 +51,66 @@ Lägg till följande innehåll i *mcp.json*:
     "inputs": [],
     "servers": {
        "hello-mcp": {
-           "command": "cmd",
+           "command": "node",
            "args": [
-               "/c", "node", "<absolute path>\\build\\index.js"
+               "build/index.js"
            ]
        }
     }
 }
 ```
 
-Här är ett enkelt exempel ovan på hur man startar en server skriven i Node.js, för andra runtime-miljöer ange rätt kommando för att starta servern med `command` and `args`.
+Ovan är ett enkelt exempel på hur man startar en server skriven i Node.js, för andra körmiljöer anger du rätt kommando för att starta servern med `command` and `args`.
 
 ### -3- Starta servern
 
 Nu när du har lagt till en post, låt oss starta servern:
 
-1. Hitta din post i *mcp.json* och se till att du hittar "spela"-ikonen:
+1. Hitta din post i *mcp.json* och se till att du hittar "play"-ikonen:
 
-  ![Starta server i Visual Studio Code](../../../../translated_images/vscode-start-server.c7f1132263a8ce789fa7f436eb3df7e36199ebf863f1a8205bfc4483c9e40924.sv.png)  
+  ![Starta server i Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.sv.png)  
 
-1. Klicka på "spela"-ikonen, du bör se verktygsikonen i GitHub Copilot chat öka antalet tillgängliga verktyg. Om du klickar på den verktygsikonen, kommer du att se en lista över registrerade verktyg. Du kan markera/avmarkera varje verktyg beroende på om du vill att GitHub Copilot ska använda dem som kontext: 
+1. Klicka på "play"-ikonen, du bör se att verktygsikonen i GitHub Copilot Chat ökar antalet tillgängliga verktyg. Om du klickar på denna verktygsikon ser du en lista över registrerade verktyg. Du kan markera/avmarkera varje verktyg beroende på om du vill att GitHub Copilot ska använda dem som kontext:
 
-  ![Starta server i Visual Studio Code](../../../../translated_images/vscode-tool.ce37be05a56b9af258f882c161dbf35e23ac885b08ee5f5ee643097653b135b8.sv.png)
+  ![Starta server i Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.sv.png)
 
-1. För att köra ett verktyg, skriv en prompt som du vet kommer att matcha beskrivningen av ett av dina verktyg, till exempel en prompt som "lägg till 22 till 1":
+1. För att köra ett verktyg, skriv en prompt som du vet matchar beskrivningen av ett av dina verktyg, till exempel en prompt som "add 22 to 1":
 
-  ![Köra ett verktyg från GitHub Copilot](../../../../translated_images/vscode-agent.7f56a5ce3cef334adfe737514a7e8ac9384fa4161dd4df14bd3ddc9cd1a154f4.sv.png)
+  ![Köra ett verktyg från GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.sv.png)
 
   Du bör se ett svar som säger 23.
 
 ## Uppgift
 
-Försök lägga till en serverpost till din *mcp.json*-fil och se till att du kan starta/stoppa servern. Se till att du också kan kommunicera med verktygen på din server via GitHub Copilots chattgränssnitt.
+Försök lägga till en serverpost i din *mcp.json*-fil och se till att du kan starta/stoppa servern. Säkerställ också att du kan kommunicera med verktygen på din server via GitHub Copilot Chat-gränssnittet.
 
 ## Lösning
 
 [Lösning](./solution/README.md)
 
-## Viktiga punkter
+## Viktiga insikter
 
-De viktiga punkterna från detta kapitel är följande:
+De viktigaste insikterna från detta kapitel är följande:
 
-- Visual Studio Code är en utmärkt klient som låter dig konsumera flera MCP-servrar och deras verktyg.
-- GitHub Copilots chattgränssnitt är hur du interagerar med servrarna.
-- Du kan be användaren om inmatningar som API-nycklar som kan skickas till MCP-servern när du konfigurerar serverposten i *mcp.json*-filen.
+- Visual Studio Code är en utmärkt klient som låter dig använda flera MCP-servrar och deras verktyg.
+- GitHub Copilot Chat-gränssnittet är hur du interagerar med servrarna.
+- Du kan be användaren om indata som API-nycklar som kan skickas till MCP-servern när du konfigurerar serverposten i *mcp.json*-filen.
 
 ## Exempel
 
-- [Java Kalkylator](../samples/java/calculator/README.md)
-- [.Net Kalkylator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Kalkylator](../samples/javascript/README.md)
-- [TypeScript Kalkylator](../samples/typescript/README.md)
-- [Python Kalkylator](../../../../03-GettingStarted/samples/python) 
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## Ytterligare resurser
 
-- [Visual Studio-dokumentation](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
+- [Visual Studio docs](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
-## Vad kommer härnäst
+## Vad är nästa steg
 
 - Nästa: [Skapa en SSE-server](/03-GettingStarted/05-sse-server/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Vi strävar efter noggrannhet, men var medveten om att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungsspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller misstolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, var vänlig observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.

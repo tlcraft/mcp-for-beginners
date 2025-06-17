@@ -1,40 +1,40 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "96e08a8c1049dab757deb64cce4ea1e8",
-  "translation_date": "2025-05-17T11:22:48+00:00",
+  "original_hash": "a91ca54debdfb015649e4786545694b3",
+  "translation_date": "2025-06-17T16:03:01+00:00",
   "source_file": "03-GettingStarted/04-vscode/solution/README.md",
   "language_code": "ms"
 }
 -->
-# Menjalankan sampel
+# Menjalankan contoh
 
-Di sini kita anggap anda sudah memiliki kode server yang berfungsi. Sila cari server dari salah satu bab terdahulu.
+Di sini kita anggap anda sudah mempunyai kod server yang berfungsi. Sila cari server daripada salah satu bab sebelumnya.
 
-## Menyediakan mcp.json
+## Sediakan mcp.json
 
-Berikut adalah fail yang anda gunakan untuk rujukan, [mcp.json](../../../../../03-GettingStarted/04-vscode/solution/mcp.json).
+Berikut adalah fail yang anda boleh jadikan rujukan, [mcp.json](../../../../../03-GettingStarted/04-vscode/solution/mcp.json).
 
-Ubah entri server seperti yang diperlukan untuk menunjukkan jalan mutlak ke server anda termasuk perintah penuh yang diperlukan untuk dijalankan.
+Tukar entri server mengikut keperluan untuk menunjukkan laluan mutlak ke server anda termasuk arahan penuh yang diperlukan untuk menjalankannya.
 
-Dalam fail contoh yang dirujuk di atas, entri server kelihatan seperti ini:
+Dalam fail contoh yang dirujuk tadi, entri server kelihatan seperti berikut:
 
 ```json
 "hello-mcp": {
-    "command": "cmd",
+    "command": "node",
     "args": [
-        "/c", "node", "<absolute path>\\build\\index.js"
+        "build/index.js"
     ]
 }
 ```
 
-Ini sepadan dengan menjalankan perintah seperti ini: `cmd /c node <absolute path>\\build\index.js`. 
+Ini bersamaan dengan menjalankan arahan seperti ini: `node build/index.js`.
 
 - Change this server entry to fit where your server file is located or to what's needed to startup your server depending on your chosen runtime and server location.
 
 ## Consume the features in the server
 
-- Click the `play` icon, once you've added *mcp.json* to *./vscode* folder, 
+- Click the `play` icon, once you've added *mcp.json* to *./vscode* folder,
 
     Observe the tooling icon change to increase the number of available tools. Tooling icon is located right above the chat field in GitHub Copilot.
 
@@ -42,11 +42,11 @@ Ini sepadan dengan menjalankan perintah seperti ini: `cmd /c node <absolute path
 
 - Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add` taip sesuatu seperti "add 3 to 20".
 
-Anda seharusnya melihat alat dipaparkan di atas kotak teks chat yang menunjukkan untuk anda memilih untuk menjalankan alat seperti dalam visual ini:
+    Anda sepatutnya melihat alat dipaparkan di atas kotak teks sembang yang menunjukkan anda boleh memilih untuk menjalankan alat tersebut seperti dalam visual ini:
 
-![VS Code menunjukkan ingin menjalankan alat](../../../../../translated_images/vscode-agent.7f56a5ce3cef334adfe737514a7e8ac9384fa4161dd4df14bd3ddc9cd1a154f4.ms.png)
+    ![VS Code menunjukkan ia ingin menjalankan alat](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.ms.png)
 
-Memilih alat tersebut seharusnya menghasilkan keputusan angka mengatakan "23" jika arahan anda seperti yang kami sebutkan sebelumnya.
+    Memilih alat tersebut sepatutnya menghasilkan keputusan nombor yang mengatakan "23" jika arahan anda seperti yang kami nyatakan sebelum ini.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

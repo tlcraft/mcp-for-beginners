@@ -1,55 +1,55 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a0acf3093691b1cfcc008a8c6648ea26",
-  "translation_date": "2025-06-13T06:51:51+00:00",
+  "original_hash": "2342baa570312086fc19edcf41320250",
+  "translation_date": "2025-06-17T16:08:44+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "cs"
 }
 -->
-V předchozím kódu jsme:
+Ve výše uvedeném kódu jsme:
 
 - Importovali knihovny
 - Vytvořili instanci klienta a připojili ji pomocí stdio jako transportu.
-- Vypsali výzvy, zdroje a nástroje a všechny je vyvolali.
+- Vypsali prompty, zdroje a nástroje a všechny je vyvolali.
 
-A máte to, klient, který dokáže komunikovat s MCP Serverem.
+Máte tedy klienta, který dokáže komunikovat s MCP serverem.
 
-V další cvičné části si dáme čas a rozebereme každý kódový úryvek a vysvětlíme, co se děje.
+V další cvičné části si kód podrobně rozebereme a vysvětlíme, co se děje.
 
 ## Cvičení: Psání klienta
 
-Jak už bylo řečeno, pojďme si kód podrobně vysvětlit a klidně kódujte s námi.
+Jak bylo řečeno výše, pojďme si na vysvětlení kódu dát čas, a klidně kódujte spolu s námi, pokud chcete.
 
 ### -1- Import knihoven
 
-Naimportujeme knihovny, které potřebujeme, budeme potřebovat odkazy na klienta a na náš zvolený transportní protokol, stdio. stdio je protokol pro věci, které mají běžet na vašem lokálním počítači. SSE je další transportní protokol, který ukážeme v budoucích kapitolách, ale to je vaše další možnost. Prozatím ale pokračujeme se stdio.
+Naimportujme knihovny, které potřebujeme, budeme potřebovat reference na klienta a na zvolený transportní protokol, stdio. stdio je protokol určený pro věci, které mají běžet na vašem lokálním počítači. SSE je další transportní protokol, který ukážeme v budoucích kapitolách, ale to je vaše další možnost. Prozatím však pokračujme se stdio.
 
 Přejděme k instanciaci.
 
 ### -2- Instanciace klienta a transportu
 
-Budeme potřebovat vytvořit instanci transportu a také instanci našeho klienta:
+Budeme potřebovat vytvořit instanci transportu a také naši instanci klienta:
 
 ### -3- Výpis funkcí serveru
 
-Teď máme klienta, který se může připojit, pokud se program spustí. Nicméně zatím nevypisuje své funkce, tak to udělejme:
+Nyní máme klienta, který se může připojit, pokud se program spustí. Nicméně zatím nevypisuje jeho funkce, pojďme to tedy udělat:
 
-Výborně, teď jsme zachytili všechny funkce. Otázka je, kdy je použijeme? Tento klient je docela jednoduchý, jednoduchý v tom smyslu, že funkce musíme explicitně volat, když je chceme použít. V další kapitole vytvoříme pokročilejšího klienta, který bude mít přístup ke svému vlastnímu velkému jazykovému modelu (LLM). Prozatím si ale ukážeme, jak můžeme funkce na serveru vyvolat:
+Skvělé, teď jsme zachytili všechny funkce. Otázka zní, kdy je použít? Tento klient je docela jednoduchý, jednoduchý v tom smyslu, že funkce musíme explicitně vyvolat, když je chceme použít. V další kapitole vytvoříme pokročilejšího klienta, který bude mít přístup ke svému vlastnímu velkému jazykovému modelu (LLM). Prozatím si ale ukažme, jak funkce na serveru vyvolat:
 
 ### -4- Vyvolání funkcí
 
-K vyvolání funkcí musíme zajistit, že zadáme správné argumenty a v některých případech i název toho, co chceme vyvolat.
+Pro vyvolání funkcí musíme zajistit správné zadání argumentů a v některých případech i názvu toho, co se snažíme spustit.
 
 ### -5- Spuštění klienta
 
-Pro spuštění klienta napište v terminálu následující příkaz:
+Pro spuštění klienta zadejte v terminálu následující příkaz:
 
 ## Zadání
 
-V tomto zadání použijete to, co jste se naučili při vytváření klienta, a vytvoříte si vlastního klienta.
+V tomto zadání využijete to, co jste se naučili o tvorbě klienta, a vytvoříte si vlastního klienta.
 
-Zde je server, který můžete použít a ke kterému se musíte připojit pomocí svého klientského kódu. Zkuste přidat více funkcí na server, aby byl zajímavější.
+Zde je server, který můžete použít a který musíte volat přes svůj klientský kód. Zkuste přidat na server více funkcí, aby byl zajímavější.
 
 ## Řešení
 
@@ -57,15 +57,15 @@ Zde je server, který můžete použít a ke kterému se musíte připojit pomoc
 
 ## Hlavní poznatky
 
-Hlavní poznatky této kapitoly o klientech jsou:
+Hlavní poznatky této kapitoly o klientech jsou následující:
 
-- Lze je použít jak k objevování, tak k vyvolávání funkcí na serveru.
-- Mohou spustit server současně se svým startem (jako v této kapitole), ale klienti se mohou také připojovat k již běžícím serverům.
-- Jsou skvělým způsobem, jak otestovat schopnosti serveru vedle alternativ jako Inspector, jak bylo popsáno v předchozí kapitole.
+- Klienti lze použít jak k objevování, tak k vyvolávání funkcí na serveru.
+- Klient může spustit server zároveň se svým spuštěním (jako v této kapitole), ale klienti se mohou připojit i k již běžícím serverům.
+- Je to skvělý způsob, jak otestovat schopnosti serveru vedle alternativ, jako je Inspector, jak bylo popsáno v předchozí kapitole.
 
 ## Další zdroje
 
-- [Vytváření klientů v MCP](https://modelcontextprotocol.io/quickstart/client)
+- [Tvorba klientů v MCP](https://modelcontextprotocol.io/quickstart/client)
 
 ## Ukázky
 
@@ -75,9 +75,9 @@ Hlavní poznatky této kapitoly o klientech jsou:
 - [TypeScript Kalkulačka](../samples/typescript/README.md)
 - [Python Kalkulačka](../../../../03-GettingStarted/samples/python)
 
-## Co dál
+## Co bude dál
 
-- Další: [Vytváření klienta s LLM](/03-GettingStarted/03-llm-client/README.md)
+- Další: [Vytvoření klienta s LLM](/03-GettingStarted/03-llm-client/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro zásadní informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vzniklé použitím tohoto překladu.

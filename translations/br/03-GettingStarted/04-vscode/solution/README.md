@@ -1,52 +1,52 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "96e08a8c1049dab757deb64cce4ea1e8",
-  "translation_date": "2025-05-29T20:23:41+00:00",
+  "original_hash": "a91ca54debdfb015649e4786545694b3",
+  "translation_date": "2025-06-17T15:41:08+00:00",
   "source_file": "03-GettingStarted/04-vscode/solution/README.md",
   "language_code": "br"
 }
 -->
-# Running the sample
+# Executando o exemplo
 
-Here we assume you already have a working server code. Please locate a server from one of the earlier chapters.
+Aqui assumimos que você já tem um código de servidor funcionando. Por favor, localize um servidor de um dos capítulos anteriores.
 
-## Set up mcp.json
+## Configurando o mcp.json
 
-Here's a file you use for reference, [mcp.json](../../../../../03-GettingStarted/04-vscode/solution/mcp.json).
+Aqui está um arquivo que você pode usar como referência, [mcp.json](../../../../../03-GettingStarted/04-vscode/solution/mcp.json).
 
-Change the server entry as needed to point out the absolute path to your server including the needed full command to run.
+Altere a entrada do servidor conforme necessário para indicar o caminho absoluto do seu servidor, incluindo o comando completo necessário para executar.
 
-In the example file referred above the server entry looks like so:
+No arquivo de exemplo mencionado acima, a entrada do servidor é assim:
 
 ```json
 "hello-mcp": {
-    "command": "cmd",
+    "command": "node",
     "args": [
-        "/c", "node", "<absolute path>\\build\\index.js"
+        "build/index.js"
     ]
 }
 ```
 
-This corresponds to running a command like so: `cmd /c node <absolute path>\\build\index.js`. 
+Isso corresponde a executar um comando como: `node build/index.js`.
 
 - Change this server entry to fit where your server file is located or to what's needed to startup your server depending on your chosen runtime and server location.
 
 ## Consume the features in the server
 
-- Click the `play` icon, once you've added *mcp.json* to *./vscode* folder, 
+- Click the `play` icon, once you've added *mcp.json* to *./vscode* folder,
 
     Observe the tooling icon change to increase the number of available tools. Tooling icon is located right above the chat field in GitHub Copilot.
 
 ## Run a tool
 
-- Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add` type something like "add 3 to 20".
+- Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add` digite algo como "add 3 to 20".
 
-    You should see a tool being presented above the chat text box indicating for you to select to run the tool like in this visual:
+    Você deverá ver uma ferramenta sendo apresentada acima da caixa de texto do chat, indicando que você pode selecioná-la para executar a ferramenta, como nesta imagem:
 
-    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.br.png)
+    ![VS Code indicando que quer executar uma ferramenta](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.br.png)
 
-    Selecting the tool should produce a numeric result saying "23" if your prompt was like we mentioned previously.
+    Selecionar a ferramenta deve produzir um resultado numérico dizendo "23" se seu prompt foi como mencionamos anteriormente.
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.

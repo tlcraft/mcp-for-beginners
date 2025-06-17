@@ -1,116 +1,116 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c37fabfbc0dcbc9a4afb6d17e7d3be9f",
-  "translation_date": "2025-05-17T11:16:48+00:00",
+  "original_hash": "0eb9557780cd0a2551cdb8a16c886b51",
+  "translation_date": "2025-06-17T16:15:43+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "sr"
 }
 -->
-Hajde da pričamo više o tome kako koristimo vizuelni interfejs u narednim sekcijama.
+Хајде даље да причамо о томе како користимо визуелни интерфејс у следећим одељцима.
 
-## Pristup
+## Приступ
 
-Evo kako treba da pristupimo ovome na visokom nivou:
+Ево како треба да приступимо овоме на високом нивоу:
 
-- Konfigurišemo fajl da pronađemo naš MCP Server.
-- Pokrenemo/Povežemo se sa tim serverom da bismo videli listu njegovih mogućnosti.
-- Koristimo te mogućnosti kroz GitHub Copilotov interfejs za ćaskanje.
+- Конфигурисати фајл који ће пронаћи наш MCP сервер.
+- Покренути/Повезати се на тај сервер да би се приказале његове могућности.
+- Користити те могућности кроз GitHub Copilot Chat интерфејс.
 
-Odlično, sada kada razumemo tok, hajde da pokušamo da koristimo MCP Server kroz Visual Studio Code kroz vežbu.
+Одлично, сада када разумемо ток, хајде да пробамо да користимо MCP сервер преко Visual Studio Code-а кроз један задатак.
 
-## Vežba: Konsumiranje servera
+## Вежба: Коришћење сервера
 
-U ovoj vežbi ćemo konfigurisati Visual Studio Code da pronađe vaš MCP server kako bi mogao da se koristi iz GitHub Copilotovog interfejsa za ćaskanje.
+У овој вежби ћемо конфигурисати Visual Studio Code да пронађе ваш MCP сервер како би могао да се користи из GitHub Copilot Chat интерфејса.
 
-### -0- Prekorak, omogućite otkrivanje MCP Servera
+### -0- Претходни корак, омогућити откривање MCP сервера
 
-Možda ćete morati da omogućite otkrivanje MCP Servera.
+Можда ћете морати да омогућите откривање MCP сервера.
 
-1. Idite na `File -> Preferences -> Settings` in Visual Studio Code.
+1. Идите на `File -> Preferences -> Settings` in Visual Studio Code.
 
-1. Search for "MCP" and enable `chat.mcp.discovery.enabled` u fajlu settings.json.
+1. Search for "MCP" and enable `chat.mcp.discovery.enabled` у фајлу settings.json.
 
-### -1- Kreirajte konfiguracioni fajl
+### -1- Креирање конфигурационог фајла
 
-Počnite kreiranjem konfiguracionog fajla u korenu vašeg projekta, trebaće vam fajl nazvan MCP.json i da ga postavite u folder nazvan .vscode. Trebalo bi da izgleda ovako:
+Почните тако што ћете креирати конфигурациони фајл у корену вашег пројекта, потребан вам је фајл који се зове MCP.json и који треба да се налази у фасцикли .vscode. Требало би да изгледа овако:
 
 ```text
 .vscode
 |-- mcp.json
 ```
 
-Zatim, hajde da vidimo kako možemo dodati unos servera.
+Сада да видимо како можемо додати запис о серверу.
 
-### -2- Konfigurišite server
+### -2- Конфигурисање сервера
 
-Dodajte sledeći sadržaj u *mcp.json*:
+Додајте следећи садржај у *mcp.json*:
 
 ```json
 {
     "inputs": [],
     "servers": {
        "hello-mcp": {
-           "command": "cmd",
+           "command": "node",
            "args": [
-               "/c", "node", "<absolute path>\\build\\index.js"
+               "build/index.js"
            ]
        }
     }
 }
 ```
 
-Evo jednostavnog primera kako pokrenuti server napisan u Node.js, za druge okruženja navedite odgovarajuću komandu za pokretanje servera koristeći `command` and `args`.
+Горе је једноставан пример како покренути сервер написан у Node.js, за друге runtime-ове наведите одговарајућу команду за покретање сервера користећи `command` and `args`.
 
-### -3- Pokrenite server
+### -3- Покретање сервера
 
-Sada kada ste dodali unos, hajde da pokrenemo server:
+Сада када сте додали запис, хајде да покренемо сервер:
 
-1. Pronađite svoj unos u *mcp.json* i uverite se da vidite ikonu "play":
+1. Пронађите свој запис у *mcp.json* и уверите се да видите икону "play":
 
-  ![Pokretanje servera u Visual Studio Code](../../../../translated_images/vscode-start-server.c7f1132263a8ce789fa7f436eb3df7e36199ebf863f1a8205bfc4483c9e40924.sr.png)  
+  ![Покретање сервера у Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.sr.png)  
 
-1. Kliknite na ikonu "play", trebalo bi da vidite da se ikona alata u GitHub Copilotovom ćaskanju povećava broj dostupnih alata. Ako kliknete na tu ikonu alata, videćete listu registrovanih alata. Možete označiti/odznačiti svaki alat u zavisnosti od toga da li želite da GitHub Copilot koristi njih kao kontekst:
+1. Кликните на икону "play", требало би да видите како се број доступних алата повећава у икони алата у GitHub Copilot Chat-у. Ако кликнете на ту икону алата, видећете листу регистрованих алата. Можете означити или опозвати означавање сваког алата у зависности од тога да ли желите да GitHub Copilot користи те алате као контекст:
 
-  ![Pokretanje servera u Visual Studio Code](../../../../translated_images/vscode-tool.ce37be05a56b9af258f882c161dbf35e23ac885b08ee5f5ee643097653b135b8.sr.png)
+  ![Покретање сервера у Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.sr.png)
 
-1. Da pokrenete alat, unesite prompt za koji znate da će odgovarati opisu jednog od vaših alata, na primer prompt poput "dodaj 22 na 1":
+1. Да бисте покренули алат, унесите упит који знате да ће одговарати опису неког од ваших алата, на пример упит као што је "add 22 to 1":
 
-  ![Pokretanje alata iz GitHub Copilota](../../../../translated_images/vscode-agent.7f56a5ce3cef334adfe737514a7e8ac9384fa4161dd4df14bd3ddc9cd1a154f4.sr.png)
+  ![Покретање алата из GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.sr.png)
 
-  Trebalo bi da vidite odgovor koji kaže 23.
+  Требало би да видите одговор који каже 23.
 
-## Zadatak
+## Задатак
 
-Pokušajte dodati unos servera u vaš *mcp.json* fajl i uverite se da možete pokrenuti/zaustaviti server. Uverite se da možete komunicirati sa alatima na vašem serveru preko GitHub Copilotovog interfejsa za ćaskanje.
+Пробајте да додате запис о серверу у ваш *mcp.json* фајл и уверите се да можете да покренете/зауставите сервер. Такође проверите да ли можете да комуницирате са алатима на вашем серверу преко GitHub Copilot Chat интерфејса.
 
-## Rešenje
+## Решење
 
-[Rešenje](./solution/README.md)
+[Решење](./solution/README.md)
 
-## Ključne tačke
+## Кључне поуке
 
-Ključne tačke iz ovog poglavlja su sledeće:
+Кључне поуке из овог поглавља су следеће:
 
-- Visual Studio Code je odličan klijent koji vam omogućava da koristite nekoliko MCP Servera i njihovih alata.
-- GitHub Copilotov interfejs za ćaskanje je način na koji komunicirate sa serverima.
-- Možete tražiti od korisnika unos kao što su API ključevi koji se mogu proslediti MCP Serveru prilikom konfigurisanja unosa servera u *mcp.json* fajlu.
+- Visual Studio Code је одличан клијент који вам омогућава да користите више MCP сервера и њихове алате.
+- GitHub Copilot Chat интерфејс је начин на који комуницирате са серверима.
+- Можете тражити унос од корисника као што су API кључеви који се могу проследити MCP серверу приликом конфигурисања записа о серверу у *mcp.json* фајлу.
 
-## Primeri
+## Примери
 
-- [Java Kalkulator](../samples/java/calculator/README.md)
-- [.Net Kalkulator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Kalkulator](../samples/javascript/README.md)
-- [TypeScript Kalkulator](../samples/typescript/README.md)
-- [Python Kalkulator](../../../../03-GettingStarted/samples/python) 
+- [Java Калкулатор](../samples/java/calculator/README.md)
+- [.Net Калкулатор](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Калкулатор](../samples/javascript/README.md)
+- [TypeScript Калкулатор](../samples/typescript/README.md)
+- [Python Калкулатор](../../../../03-GettingStarted/samples/python)
 
-## Dodatni resursi
+## Додатни ресурси
 
-- [Visual Studio dokumentacija](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
+- [Visual Studio документација](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
-## Šta je sledeće
+## Шта следи
 
-- Sledeće: [Kreiranje SSE Servera](/03-GettingStarted/05-sse-server/README.md)
+- Следеће: [Креирање SSE сервера](/03-GettingStarted/05-sse-server/README.md)
 
-**Одрицање од одговорности**:  
-Овај документ је преведен коришћењем услуге вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо тачности, молимо вас да будете свесни да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитативним извором. За критичне информације, препоручује се професионални превод од стране људи. Не сносимо одговорност за било каква неразумевања или погрешна тумачења која проистичу из употребе овог превода.
+**Одрицање одговорности**:  
+Овај документ је преведен помоћу AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

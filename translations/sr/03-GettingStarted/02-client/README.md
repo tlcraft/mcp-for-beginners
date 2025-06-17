@@ -1,83 +1,83 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a0acf3093691b1cfcc008a8c6648ea26",
-  "translation_date": "2025-06-13T06:53:42+00:00",
+  "original_hash": "2342baa570312086fc19edcf41320250",
+  "translation_date": "2025-06-17T16:15:21+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "sr"
 }
 -->
-U prethodnom kodu smo:
+У претходном коду смо:
 
-- Uvezli biblioteke
-- Kreirali instancu klijenta i povezali je koristeći stdio kao transport.
-- Izlistali promptove, resurse i alate i pozvali ih sve.
+- Увезли библиотеке
+- Креирали инстанцу клијента и повезали је користећи stdio за транспорт.
+- Навели упите, ресурсе и алате и позвали их све.
 
-Eto, imate klijenta koji može da komunicira sa MCP Serverom.
+Ето га, клијент који може да комуницира са MCP сервером.
 
-U sledećem delu vežbe ćemo polako razložiti svaki deo koda i objasniti šta se dešava.
+Узмимо мало времена у наредном делу вежбе и разложимо сваки део кода и објаснимо шта се дешава.
 
-## Vežba: Pisanje klijenta
+## Вежба: Писање клијента
 
-Kao što je rečeno, hajde da polako objasnimo kod, i slobodno kodirajte zajedno ako želite.
+Као што је речено горе, узмимо време да објаснимо код, и слободно пратите ако желите.
 
-### -1- Uvoz biblioteka
+### -1- Увоз библиотека
 
-Uvešćemo biblioteke koje su nam potrebne, biće nam potrebne reference na klijenta i na izabrani transportni protokol, stdio. stdio je protokol za stvari koje treba da rade na vašem lokalnom računaru. SSE je drugi transportni protokol koji ćemo pokazati u budućim poglavljima, ali to je vaša druga opcija. Za sada, nastavimo sa stdio.
+Увезимо библиотеке које нам требају, потребне су нам референце за клијента и за наш изабрани транспортни протокол, stdio. stdio је протокол за ствари које се покрећу на вашем локалном рачунару. SSE је други транспортни протокол који ћемо показати у будућим поглављима, али то је ваша друга опција. За сада, наставимо са stdio.
 
-Hajde da pređemo na instanciranje.
+Хајде да пређемо на иницијализацију.
 
-### -2- Instanciranje klijenta i transporta
+### -2- Иницијализација клијента и транспорта
 
-Trebaće nam da kreiramo instancu transporta i instancu našeg klijenta:
+Потребно је да креирамо инстанцу транспорта и инстанцу нашег клијента:
 
-### -3- Izlistavanje funkcija servera
+### -3- Листирање функција сервера
 
-Sada imamo klijenta koji može da se poveže ako se program pokrene. Međutim, on zapravo ne izlistava njegove funkcije, pa hajde to sada da uradimo:
+Сада имамо клијента који може да се повеже када се програм покрене. Међутим, он заправо не приказује своје функције, па хајде да то урадимо следеће:
 
-Sjajno, sada smo uhvatili sve funkcije. Sada se postavlja pitanje kada ih koristimo? Pa, ovaj klijent je prilično jednostavan, u smislu da ćemo morati eksplicitno da pozovemo funkcije kada ih želimo. U sledećem poglavlju kreiraćemo naprednijeg klijenta koji ima pristup sopstvenom velikom jezičkom modelu, LLM. Za sada, hajde da vidimo kako možemo pozvati funkcije na serveru:
+Одлично, сада смо добили све функције. Сада је питање када их користити? Па, овај клијент је прилично једноставан, у смислу да ћемо морати експлицитно да позивамо функције када нам затребају. У наредном поглављу направићемо напреднијег клијента који има приступ свом великом језичком моделу, LLM. За сада, хајде да видимо како можемо позвати функције на серверу:
 
-### -4- Pozivanje funkcija
+### -4- Позивање функција
 
-Da bismo pozvali funkcije, moramo biti sigurni da navodimo ispravne argumente i u nekim slučajevima ime onoga što pokušavamo da pozovemo.
+Да бисмо позвали функције, морамо да обезбедимо исправне аргументе и у неким случајевима име онога што покушавамо да позовемо.
 
-### -5- Pokretanje klijenta
+### -5- Покретање клијента
 
-Da biste pokrenuli klijenta, otkucajte sledeću komandu u terminalu:
+Да покренете клијента, укуцајте следећу команду у терминалу:
 
-## Zadatak
+## Задатак
 
-U ovom zadatku koristićete ono što ste naučili o kreiranju klijenta, ali napravite svog klijenta.
+У овом задатку користићете оно што сте научили о креирању клијента, али ћете направити свог клијента.
 
-Evo servera koji možete koristiti, a koji treba da pozovete putem koda svog klijenta, vidite da li možete dodati više funkcija serveru da bi bio zanimljiviji.
+Ево сервера који можете користити и коме треба приступити преко вашег клијент кода, видите да ли можете додати више функција серверу да га учините занимљивијим.
 
-## Rešenje
+## Решење
 
-[Rešenje](./solution/README.md)
+[Решење](./solution/README.md)
 
-## Ključni zaključci
+## Главне поуке
 
-Ključni zaključci za ovo poglavlje u vezi sa klijentima su sledeći:
+Главне поуке овог поглавља о клијентима су следеће:
 
-- Mogu se koristiti i za otkrivanje i za pozivanje funkcija na serveru.
-- Mogu pokrenuti server dok sami počinju (kao u ovom poglavlju), ali klijenti se mogu povezati i na već pokrenute servere.
-- Odličan su način da se testiraju mogućnosti servera pored alternativa kao što je Inspector, kako je opisano u prethodnom poglavlju.
+- Могу се користити и за откривање и за позивање функција на серверу.
+- Могу покренути сервер док сами почињу (као у овом поглављу), али клијенти могу и да се повежу на већ покренуте сервере.
+- Одличан су начин да тестирате могућности сервера поред алтернатива као што је Инспектор, како је описано у претходном поглављу.
 
-## Dodatni resursi
+## Додатни ресурси
 
-- [Pravljenje klijenata u MCP](https://modelcontextprotocol.io/quickstart/client)
+- [Прављење клијената у MCP](https://modelcontextprotocol.io/quickstart/client)
 
-## Primeri
+## Примери
 
-- [Java Kalkulator](../samples/java/calculator/README.md)
-- [.Net Kalkulator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Kalkulator](../samples/javascript/README.md)
-- [TypeScript Kalkulator](../samples/typescript/README.md)
-- [Python Kalkulator](../../../../03-GettingStarted/samples/python)
+- [Java калкулатор](../samples/java/calculator/README.md)
+- [.Net калкулатор](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript калкулатор](../samples/javascript/README.md)
+- [TypeScript калкулатор](../samples/typescript/README.md)
+- [Python калкулатор](../../../../03-GettingStarted/samples/python)
 
-## Šta sledi
+## Шта следи
 
-- Sledeće: [Kreiranje klijenta sa LLM-om](/03-GettingStarted/03-llm-client/README.md)
+- Следеће: [Креирање клијента са LLM](/03-GettingStarted/03-llm-client/README.md)
 
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korišćenjem AI prevodilačke usluge [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo tačnosti, imajte na umu da automatski prevodi mogu sadržati greške ili netačnosti. Originalni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prevod. Ne snosimo odgovornost za bilo kakva nesporazumevanja ili pogrešna tumačenja nastala korišćenjem ovog prevoda.
+**Одрицање од одговорности**:  
+Овај документ је преведен помоћу AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне тумачења настала коришћењем овог превода.

@@ -1,52 +1,52 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "96e08a8c1049dab757deb64cce4ea1e8",
-  "translation_date": "2025-05-17T11:19:41+00:00",
+  "original_hash": "a91ca54debdfb015649e4786545694b3",
+  "translation_date": "2025-06-17T15:33:55+00:00",
   "source_file": "03-GettingStarted/04-vscode/solution/README.md",
   "language_code": "mr"
 }
 -->
 # नमुना चालवणे
 
-येथे आम्ही गृहित धरतो की तुमच्याकडे आधीपासून कार्यरत सर्व्हर कोड आहे. कृपया आधीच्या अध्यायांमधून एक सर्व्हर शोधा.
+येथे आपण गृहित धरतो की तुमच्याकडे आधीच एक कार्यरत सर्व्हर कोड आहे. कृपया आधीच्या अध्यायांमधील कोणत्याही सर्व्हरचा शोध घ्या.
 
 ## mcp.json सेट करा
 
-हा एक संदर्भासाठी वापरण्याचा फाइल आहे, [mcp.json](../../../../../03-GettingStarted/04-vscode/solution/mcp.json).
+हे एक संदर्भासाठी वापरायचे फाइल आहे, [mcp.json](../../../../../03-GettingStarted/04-vscode/solution/mcp.json).
 
-सर्व्हर एंट्री आवश्यकतेनुसार बदला, ज्यामध्ये सर्व्हर चालविण्यासाठी आवश्यक पूर्ण आदेशांसह तुमच्या सर्व्हरचा पूर्ण पथ दर्शविला आहे.
+तुमच्या सर्व्हरकडे पूर्ण मार्ग आणि आवश्यक संपूर्ण आदेश दाखवण्यासाठी सर्व्हर एंट्री आवश्यकतेनुसार बदला.
 
-वरील उदाहरण फाइलमध्ये सर्व्हर एंट्री अशी दिसते:
+वरील उदाहरण फाइलमध्ये सर्व्हर एंट्री असे दिसते:
 
 ```json
 "hello-mcp": {
-    "command": "cmd",
+    "command": "node",
     "args": [
-        "/c", "node", "<absolute path>\\build\\index.js"
+        "build/index.js"
     ]
 }
 ```
 
-हे अशा प्रकारे आदेश चालविण्यासाठी सुसंगत आहे: `cmd /c node <absolute path>\\build\index.js`. 
+हे खालीलप्रमाणे आदेश चालवण्याशी जुळते: `node build/index.js`.
 
 - Change this server entry to fit where your server file is located or to what's needed to startup your server depending on your chosen runtime and server location.
 
 ## Consume the features in the server
 
-- Click the `play` icon, once you've added *mcp.json* to *./vscode* folder, 
+- Click the `play` icon, once you've added *mcp.json* to *./vscode* folder,
 
     Observe the tooling icon change to increase the number of available tools. Tooling icon is located right above the chat field in GitHub Copilot.
 
 ## Run a tool
 
-- Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add` असे काहीतरी टाइप करा "3 ला 20 मध्ये जोडा".
+- Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add` काहीतरी असं लिहा "add 3 to 20".
 
-    तुम्हाला चॅट टेक्स्ट बॉक्सच्या वर एक साधन सादर केलेले दिसेल, जे तुम्हाला साधन चालविण्यासाठी निवडण्याचे निर्देश देते, जसे की या दृश्यात:
+    तुम्हाला चॅट टेक्स्ट बॉक्सच्या वर एक टूल दिसेल जे तुम्हाला टूल चालवण्यासाठी निवडण्यास सांगेल, जसं या दृश्यात आहे:
 
-    ![VS Code हे दर्शवित आहे की त्याला एक साधन चालवायचे आहे](../../../../../translated_images/vscode-agent.7f56a5ce3cef334adfe737514a7e8ac9384fa4161dd4df14bd3ddc9cd1a154f4.mr.png)
+    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.mr.png)
 
-    साधन निवडल्यास संख्यात्मक परिणाम "23" असे सांगेल, जर तुमचा प्रॉम्प्ट जसा आम्ही आधी सांगितला होता तसा असेल.
+    टूल निवडल्यानंतर जर तुमचा प्रॉम्प्ट वरीलप्रमाणे असेल तर "23" असा संख्यात्मक निकाल दिसेल.
 
-**अस्वीकृती**:
-हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी कृपया लक्षात ठेवा की स्वयंचलित अनुवादात चुका किंवा अचूकतेचा अभाव असू शकतो. मूळ भाषेतील दस्तऐवज हा प्राधिकृत स्रोत मानला पाहिजे. महत्त्वपूर्ण माहितीसाठी, व्यावसायिक मानवी अनुवादाची शिफारस केली जाते. या भाषांतराचा वापर करून उद्भवणाऱ्या कोणत्याही गैरसमज किंवा चुकीच्या अर्थासाठी आम्ही जबाबदार नाही.
+**अस्वीकरण**:  
+हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) चा वापर करून भाषांतरित करण्यात आला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित भाषांतरांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाची माहिती असल्यास, व्यावसायिक मानवी भाषांतर करण्याचा सल्ला दिला जातो. या भाषांतराच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थ लावण्याबद्दल आम्ही जबाबदार नाही.

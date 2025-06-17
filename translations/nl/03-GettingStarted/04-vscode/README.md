@@ -1,48 +1,48 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c37fabfbc0dcbc9a4afb6d17e7d3be9f",
-  "translation_date": "2025-05-17T11:11:07+00:00",
+  "original_hash": "0eb9557780cd0a2551cdb8a16c886b51",
+  "translation_date": "2025-06-17T15:56:51+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "nl"
 }
 -->
-Laten we het in de volgende secties hebben over hoe we de visuele interface gebruiken.
+Laten we in de volgende secties dieper ingaan op het gebruik van de visuele interface.
 
 ## Aanpak
 
-Hier is hoe we dit op hoog niveau moeten benaderen:
+Dit is hoe we dit op hoofdlijnen moeten aanpakken:
 
 - Configureer een bestand om onze MCP Server te vinden.
-- Start/Verbind met genoemde server om zijn mogelijkheden te laten weergeven.
-- Gebruik de genoemde mogelijkheden via de chatinterface van GitHub Copilot.
+- Start/maak verbinding met de genoemde server om een lijst met mogelijkheden te krijgen.
+- Gebruik deze mogelijkheden via de GitHub Copilot Chat interface.
 
-Geweldig, nu we de flow begrijpen, laten we proberen een MCP Server te gebruiken via Visual Studio Code door middel van een oefening.
+Goed, nu we de flow begrijpen, laten we een MCP Server proberen te gebruiken via Visual Studio Code met een oefening.
 
 ## Oefening: Een server gebruiken
 
-In deze oefening zullen we Visual Studio Code configureren om je MCP server te vinden zodat deze kan worden gebruikt vanuit de chatinterface van GitHub Copilot.
+In deze oefening configureren we Visual Studio Code om jouw MCP server te vinden zodat deze gebruikt kan worden vanuit de GitHub Copilot Chat interface.
 
-### -0- Voorstap, ontdekking van MCP Server inschakelen
+### -0- Voorbereiding, MCP Server ontdekking inschakelen
 
-Je moet mogelijk de ontdekking van MCP Servers inschakelen.
+Het kan zijn dat je het ontdekken van MCP Servers moet inschakelen.
 
-1. Ga naar `File -> Preferences -> Settings` in Visual Studio Code.
+1. Ga naar `File -> Preferences -> Settings` en zoek naar `` in Visual Studio Code.
 
 1. Search for "MCP" and enable `chat.mcp.discovery.enabled` in het settings.json bestand.
 
-### -1- Maak configuratiebestand
+### -1- Configuratiebestand aanmaken
 
-Begin met het maken van een configuratiebestand in de hoofdmap van je project, je hebt een bestand genaamd MCP.json nodig en plaats het in een map genaamd .vscode. Het zou er als volgt uit moeten zien:
+Begin met het aanmaken van een configuratiebestand in de root van je project. Je hebt een bestand nodig genaamd MCP.json dat je plaatst in een map genaamd .vscode. Het zou er ongeveer zo uit moeten zien:
 
 ```text
 .vscode
 |-- mcp.json
 ```
 
-Laten we nu kijken hoe we een serververmelding kunnen toevoegen.
+Vervolgens bekijken we hoe je een server kunt toevoegen.
 
-### -2- Configureer een server
+### -2- Server configureren
 
 Voeg de volgende inhoud toe aan *mcp.json*:
 
@@ -51,66 +51,66 @@ Voeg de volgende inhoud toe aan *mcp.json*:
     "inputs": [],
     "servers": {
        "hello-mcp": {
-           "command": "cmd",
+           "command": "node",
            "args": [
-               "/c", "node", "<absolute path>\\build\\index.js"
+               "build/index.js"
            ]
        }
     }
 }
 ```
 
-Hierboven is een eenvoudig voorbeeld van hoe je een server start geschreven in Node.js, voor andere runtimes wijs je de juiste opdracht aan voor het starten van de server met behulp van `command` and `args`.
+Hierboven zie je een eenvoudig voorbeeld van hoe je een server start die in Node.js is geschreven. Voor andere runtimes geef je het juiste commando aan om de server te starten met `command` and `args`.
 
-### -3- Start de server
+### -3- Server starten
 
-Nu je een vermelding hebt toegevoegd, laten we de server starten:
+Nu je een invoer hebt toegevoegd, starten we de server:
 
-1. Zoek je vermelding in *mcp.json* en zorg ervoor dat je het "play" icoon vindt:
+1. Zoek je invoer in *mcp.json* en zorg dat je het "play"-icoon ziet:
 
-  ![Server starten in Visual Studio Code](../../../../translated_images/vscode-start-server.c7f1132263a8ce789fa7f436eb3df7e36199ebf863f1a8205bfc4483c9e40924.nl.png)  
+  ![Server starten in Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.nl.png)  
 
-1. Klik op het "play" icoon, je zou moeten zien dat het gereedschapsicoon in de GitHub Copilot chat het aantal beschikbare gereedschappen verhoogt. Als je op het genoemde gereedschapsicoon klikt, zie je een lijst van geregistreerde gereedschappen. Je kunt elk gereedschap aanvinken/uitvinken afhankelijk of je wilt dat GitHub Copilot ze als context gebruikt:
+2. Klik op het "play"-icoon, je zou moeten zien dat het tools-icoon in GitHub Copilot Chat het aantal beschikbare tools vergroot. Klik je op dit tools-icoon, dan zie je een lijst met geregistreerde tools. Je kunt per tool aanvinken of afvinken of je wilt dat GitHub Copilot deze gebruikt als context:
 
-  ![Server starten in Visual Studio Code](../../../../translated_images/vscode-tool.ce37be05a56b9af258f882c161dbf35e23ac885b08ee5f5ee643097653b135b8.nl.png)
+  ![Server starten in Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.nl.png)
 
-1. Om een gereedschap te gebruiken, typ je een prompt waarvan je weet dat deze overeenkomt met de beschrijving van een van je gereedschappen, bijvoorbeeld een prompt zoals "voeg 22 toe aan 1":
+3. Om een tool te gebruiken, typ je een prompt waarvan je weet dat die overeenkomt met de beschrijving van een van je tools, bijvoorbeeld een prompt als "add 22 to 1":
 
-  ![Een gereedschap gebruiken vanuit GitHub Copilot](../../../../translated_images/vscode-agent.7f56a5ce3cef334adfe737514a7e8ac9384fa4161dd4df14bd3ddc9cd1a154f4.nl.png)
+  ![Een tool gebruiken vanuit GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.nl.png)
 
-  Je zou een antwoord moeten zien dat 23 zegt.
+  Je zou een antwoord moeten zien met het getal 23.
 
 ## Opdracht
 
-Probeer een serververmelding toe te voegen aan je *mcp.json* bestand en zorg ervoor dat je de server kunt starten/stoppen. Zorg ervoor dat je ook kunt communiceren met de gereedschappen op je server via de chatinterface van GitHub Copilot.
+Probeer een serverinvoer toe te voegen aan je *mcp.json* bestand en zorg dat je de server kunt starten en stoppen. Zorg er ook voor dat je via de GitHub Copilot Chat interface kunt communiceren met de tools op je server.
 
 ## Oplossing
 
 [Oplossing](./solution/README.md)
 
-## Belangrijkste Leerpunten
+## Belangrijkste punten
 
-De belangrijkste leerpunten van dit hoofdstuk zijn de volgende:
+De belangrijkste punten uit dit hoofdstuk zijn:
 
-- Visual Studio Code is een geweldige client die je in staat stelt om verschillende MCP Servers en hun gereedschappen te gebruiken.
-- De chatinterface van GitHub Copilot is hoe je met de servers communiceert.
-- Je kunt de gebruiker vragen om invoer zoals API-sleutels die kunnen worden doorgegeven aan de MCP Server bij het configureren van de serververmelding in het *mcp.json* bestand.
+- Visual Studio Code is een uitstekende client waarmee je meerdere MCP Servers en hun tools kunt gebruiken.
+- De GitHub Copilot Chat interface is de manier waarop je met de servers communiceert.
+- Je kunt gebruikers om invoer vragen, zoals API-sleutels, die meegegeven kunnen worden aan de MCP Server bij het configureren van de serverinvoer in het *mcp.json* bestand.
 
 ## Voorbeelden
 
-- [Java Rekenmachine](../samples/java/calculator/README.md)
-- [.Net Rekenmachine](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Rekenmachine](../samples/javascript/README.md)
-- [TypeScript Rekenmachine](../samples/typescript/README.md)
-- [Python Rekenmachine](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Aanvullende Bronnen
+## Extra bronnen
 
 - [Visual Studio docs](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
-## Wat Nu
+## Wat volgt hierna
 
 - Volgende: [Een SSE Server maken](/03-GettingStarted/05-sse-server/README.md)
 
-**Disclaimer**:
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we ons best doen voor nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in zijn oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+**Disclaimer**:  
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel wij streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal geldt als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

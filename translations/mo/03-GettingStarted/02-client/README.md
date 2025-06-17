@@ -1,81 +1,29 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a0acf3093691b1cfcc008a8c6648ea26",
-  "translation_date": "2025-06-13T06:39:01+00:00",
+  "original_hash": "2342baa570312086fc19edcf41320250",
+  "translation_date": "2025-06-17T15:20:10+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "mo"
 }
 -->
-Katika msimbo uliotangulia tulifanya:
+在前面的程式碼中，我們：
 
-- Kuleta maktaba
-- Kuunda mfano wa client na kuunganisha kwa kutumia stdio kama njia ya usafirishaji.
-- Orodhesha prompts, rasilimali na zana na kuzitumia zote.
+- 匯入了所需的函式庫
+- 建立了一個客戶端實例，並使用 stdio 作為傳輸方式連接它。
+- 列出了提示、資源和工具，並且全部呼叫執行。
 
-Hapo unayo, client inayoweza kuwasiliana na MCP Server.
+這樣就完成了一個能夠與 MCP Server 通訊的客戶端。
 
-Tuchukue muda wetu katika sehemu inayofuata ya mazoezi na kugawanya kila kipande cha msimbo na kuelezea kinachotokea.
+接下來的練習部分，我們會花時間逐段拆解程式碼並解釋其運作原理。
 
-## Mazoezi: Kuandika client
+## 練習：撰寫客戶端
 
-Kama ilivyosemwa hapo juu, tuchukue muda wetu kuelezea msimbo, na bila shaka andika pamoja nasi kama unataka.
+如前所述，讓我們慢慢來解釋程式碼，如果願意也可以跟著一起寫。
 
-### -1- Kuleta maktaba
+### -1- 匯入函式庫
 
-Tulete maktaba tunazohitaji, tutahitaji marejeleo ya client na ya itifaki ya usafirishaji tuliyochagua, stdio. stdio ni itifaki kwa vitu vinavyokusudiwa kuendesha kwenye mashine yako ya ndani. SSE ni itifaki nyingine ya usafirishaji tutakayoonyesha katika sura zijazo lakini hiyo ni chaguo lako jingine. Kwa sasa, tuendelee na stdio.
+先匯入我們需要的函式庫，我們會需要用到客戶端以及我們選擇的傳輸協定 stdio。stdio 是一種適合在本機執行的協定。SSE 是另一種傳輸協定，我們會在後面的章節介紹，但目前先使用 stdio。
 
-### -2- Kuanzisha client na usafirishaji
-
-Tutahitaji kuunda mfano wa usafirishaji na huo wa client wetu:
-
-### -3- Kurodha vipengele vya server
-
-Sasa, tuna client inayoweza kuungana ikiwa programu itaendeshwa. Hata hivyo, haionyeshi vipengele vyake, basi tufanye hivyo sasa:
-
-Sawa, sasa tumechukua vipengele vyote. Sasa swali ni lini tunavitumia? Hii client ni rahisi sana, rahisi kwa maana kwamba tutahitaji kuitisha vipengele moja kwa moja tunapotaka. Katika sura inayofuata, tutaunda client iliyo na uwezo wa kupata lugha yake kubwa ya mfano, LLM. Kwa sasa, tuone jinsi ya kuitisha vipengele kwenye server:
-
-### -4- Kuitisha vipengele
-
-Ili kuitisha vipengele tunahitaji kuhakikisha tunabainisha hoja sahihi na katika baadhi ya kesi jina la kile tunachojaribu kuitisha.
-
-### -5- Kuendesha client
-
-Ili kuendesha client, andika amri ifuatayo kwenye terminal:
-
-## Kazi ya Nyumbani
-
-Katika kazi hii ya nyumbani, utatumia kile ulichojifunza katika kuunda client lakini utaunda client yako mwenyewe.
-
-Hapa kuna server unayoweza kutumia ambayo unahitaji kuitisha kupitia msimbo wako wa client, angalia kama unaweza kuongeza vipengele zaidi kwenye server ili kuifanya iwe ya kuvutia zaidi.
-
-## Suluhisho
-
-[Suluhisho](./solution/README.md)
-
-## Muhimu Kuu
-
-Muhimu kuu wa sura hii kuhusu clients ni yafuatayo:
-
-- Inaweza kutumika kugundua na kuitisha vipengele kwenye server.
-- Inaweza kuanzisha server wakati inapoanzisha yenyewe (kama ilivyo katika sura hii) lakini clients pia zinaweza kuungana na server zinazotendeka.
-- Ni njia nzuri ya kujaribu uwezo wa server kando na mbadala kama Inspector ilivyoelezwa katika sura iliyopita.
-
-## Rasilimali Zaidi
-
-- [Kujenga clients katika MCP](https://modelcontextprotocol.io/quickstart/client)
-
-## Sampuli
-
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
-
-## Nini Kifuatacho
-
-- Ifuatayo: [Kuunda client na LLM](/03-GettingStarted/03-llm-client/README.md)
-
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 所翻譯。雖然我們致力於翻譯準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤譯承擔責任。
