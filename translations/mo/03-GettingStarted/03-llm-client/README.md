@@ -1,56 +1,56 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bc3ae5af5973160abba9976cb5a4704c",
-  "translation_date": "2025-06-13T11:26:57+00:00",
+  "original_hash": "904b689eda5a68cbafe656d53f9787c7",
+  "translation_date": "2025-06-17T18:45:39+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "mo"
 }
 -->
-Great, foar ús folgjende stap, lit ús de mooglikheden op 'e server opsomje.
+太好了，接下來我們來列出伺服器上的功能。
 
-### -2 List server mooglikheden
+### -2 列出伺服器功能
 
-No sille wy ferbine mei de server en freegje nei syn mooglikheden:
+現在我們將連接到伺服器並請求它的功能：
 
-### -3- Konvertearje server mooglikheden nei LLM ark
+### -3- 將伺服器功能轉換為 LLM 工具
 
-De folgjende stap nei it opsommen fan server mooglikheden is om se om te setten yn in formaat dat it LLM begrypet. As wy dat dogge, kinne wy dizze mooglikheden as ark oan ús LLM leverje.
+列出伺服器功能後的下一步是將它們轉換成 LLM 能理解的格式。完成後，我們可以把這些功能作為工具提供給 LLM。
 
-Great, wy binne no klear om brûkersfersiken ôf te hanneljen, dus lit ús dat no oanpakke.
+太好了，我們還沒有準備好處理使用者請求，接下來就來解決這個問題。
 
-### -4- Hannelje brûkersprompt fersyk ôf
+### -4- 處理使用者提示請求
 
-Yn dit diel fan de koade sille wy brûkersfersiken ôfhannele.
+在這段程式碼中，我們將處理使用者的請求。
 
-Great, do hast it dien!
+太棒了，你完成了！
 
-## Oefening
+## 作業
 
-Nim de koade út de oefening en bou de server út mei wat mear ark. Dan meitsje in kliïnt mei in LLM, lykas yn de oefening, en test it mei ferskate prompts om der wis fan te wêzen dat al dyn server ark dynamysk oproppe wurde. Dizze wize fan in kliïnt bouwen betsjut dat de einbrûker in geweldige brûkersûnderfining hat, om't se prompts brûke kinne yn stee fan krekte kliïnt kommando's, en se net bewust binne fan in MCP server dy't oproppen wurdt.
+從練習中的程式碼出發，為伺服器新增更多工具。然後像練習中一樣建立一個帶有 LLM 的客戶端，並用不同的提示測試，確保所有伺服器工具都能動態被呼叫。這種建立客戶端的方式能帶給最終使用者良好的使用體驗，因為他們可以用自然語言提示，而不必使用精確的客戶端指令，且不會察覺到背後有 MCP 伺服器被呼叫。
 
-## Oplossing
+## 解答
 
-[Oplossing](/03-GettingStarted/03-llm-client/solution/README.md)
+[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## Haadpunten
+## 重要重點
 
-- It tafoegjen fan in LLM oan dyn kliïnt biedt in bettere manier foar brûkers om mei MCP Servers te ynteraksjen.
-- Jo moatte de MCP Server antwurd konvertearje nei wat it LLM begripe kin.
+- 為客戶端加入 LLM，能讓使用者與 MCP 伺服器互動的方式更友善。
+- 你需要將 MCP 伺服器的回應轉換成 LLM 能理解的格式。
 
-## Samples
+## 範例
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Java 計算機](../samples/java/calculator/README.md)
+- [.Net 計算機](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript 計算機](../samples/javascript/README.md)
+- [TypeScript 計算機](../samples/typescript/README.md)
+- [Python 計算機](../../../../03-GettingStarted/samples/python)
 
-## Ek boarnen
+## 額外資源
 
-## Wat is de folgjende stap
+## 接下來
 
-- Folgjende: [In server brûke mei Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
+- 下一步：[使用 Visual Studio Code 消費伺服器](/03-GettingStarted/04-vscode/README.md)
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用此翻譯所引起的任何誤解或誤釋負責。

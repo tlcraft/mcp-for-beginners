@@ -1,25 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bc3ae5af5973160abba9976cb5a4704c",
-  "translation_date": "2025-06-13T11:32:56+00:00",
+  "original_hash": "904b689eda5a68cbafe656d53f9787c7",
+  "translation_date": "2025-06-17T18:50:27+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "fi"
 }
 -->
-Hienoa, seuraavaksi listataan palvelimen kyvyt.
+Hienoa, seuraavaksi listataan palvelimen ominaisuudet.
 
-### -2 Listaa palvelimen kyvyt
+### -2 Listaa palvelimen ominaisuudet
 
-Yhdistämme nyt palvelimeen ja kysymme sen kyvyt:
+Yhdistämme nyt palvelimeen ja pyydämme sen ominaisuudet: 
 
-### -3- Muunna palvelimen kyvyt LLM-työkaluiksi
+### -3- Muunna palvelimen ominaisuudet LLM-työkaluiksi
 
-Seuraava vaihe palvelimen kykyjen listaamisen jälkeen on muuntaa ne LLM:n ymmärtämään muotoon. Kun olemme tehneet tämän, voimme tarjota nämä kyvyt työkaluina LLM:lle.
+Seuraava askel palvelimen ominaisuuksien listaamisen jälkeen on muuntaa ne muotoon, jonka LLM ymmärtää. Kun olemme tehneet tämän, voimme tarjota nämä ominaisuudet LLM:n työkaluina.
 
-Hienoa, nyt olemme valmiita käsittelemään käyttäjän pyyntöjä, joten otetaan se seuraavaksi käsittelyyn.
+Hienoa, olemme valmiita käsittelemään käyttäjän pyyntöjä, joten otetaan se seuraavaksi käsittelyyn.
 
-### -4- Käsittele käyttäjän kehotteet
+### -4- Käsittele käyttäjän pyyntö
 
 Tässä koodin osassa käsittelemme käyttäjän pyyntöjä.
 
@@ -27,7 +27,7 @@ Hienoa, onnistuit!
 
 ## Tehtävä
 
-Ota harjoituksen koodi ja laajenna palvelinta lisäämällä siihen lisää työkaluja. Luo sitten asiakas, jossa on LLM, kuten harjoituksessa, ja testaa sitä erilaisilla kehotteilla varmistaaksesi, että kaikki palvelimen työkalut kutsutaan dynaamisesti. Tällä tavalla rakennettu asiakas tarjoaa loppukäyttäjälle erinomaisen käyttökokemuksen, sillä he voivat käyttää kehotteita tarkkojen asiakaskomentojen sijaan eivätkä edes huomaa, että MCP-palvelinta kutsutaan.
+Ota harjoituksen koodi ja laajenna palvelinta lisäämällä siihen lisää työkaluja. Luo sitten asiakas LLM:n kanssa, kuten harjoituksessa, ja testaa sitä erilaisilla kehotteilla varmistaaksesi, että kaikki palvelimen työkalut kutsutaan dynaamisesti. Tällä tavalla rakennettu asiakas tarjoaa loppukäyttäjälle erinomaisen käyttökokemuksen, sillä he voivat käyttää kehotteita tarkkojen asiakaskomentojen sijaan eivätkä huomaa MCP-palvelimen kutsumista.
 
 ## Ratkaisu
 
@@ -35,22 +35,22 @@ Ota harjoituksen koodi ja laajenna palvelinta lisäämällä siihen lisää työ
 
 ## Tärkeimmät opit
 
-- LLM:n lisääminen asiakkaaseen tarjoaa käyttäjille paremman tavan olla vuorovaikutuksessa MCP-palvelinten kanssa.
-- MCP-palvelimen vastaus täytyy muuntaa LLM:n ymmärtämään muotoon.
+- LLM:n lisääminen asiakkaaseen tarjoaa paremman tavan käyttäjien vuorovaikutukseen MCP-palvelimien kanssa.
+- MCP-palvelimen vastaus täytyy muuntaa muotoon, jonka LLM ymmärtää.
 
 ## Esimerkit
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Java-laskin](../samples/java/calculator/README.md)
+- [.Net-laskin](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript-laskin](../samples/javascript/README.md)
+- [TypeScript-laskin](../samples/typescript/README.md)
+- [Python-laskin](../../../../03-GettingStarted/samples/python)
 
 ## Lisäresurssit
 
-## Seuraavaksi
+## Mitä seuraavaksi
 
-- Seuraava: [Palvelimen käyttäminen Visual Studio Codella](/03-GettingStarted/04-vscode/README.md)
+- Seuraavaksi: [Palvelimen käyttö Visual Studio Codella](/03-GettingStarted/04-vscode/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinkäsityksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty tekoälypohjaisella käännöspalvelulla [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä on virallinen lähde. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

@@ -1,56 +1,56 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bc3ae5af5973160abba9976cb5a4704c",
-  "translation_date": "2025-06-13T11:35:59+00:00",
+  "original_hash": "904b689eda5a68cbafe656d53f9787c7",
+  "translation_date": "2025-06-17T18:52:42+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "sk"
 }
 -->
-Skvelé, v ďalšom kroku si vylistujeme schopnosti na serveri.
+Skvelé, pre náš ďalší krok si zobrazme schopnosti na serveri.
 
-### -2 Zoznam schopností servera
+### -2 Zobraziť schopnosti servera
 
-Teraz sa pripojíme k serveru a vyžiadať jeho schopnosti:
+Teraz sa pripojíme k serveru a požiadame o jeho schopnosti:
 
-### -3- Konvertovanie schopností servera na nástroje pre LLM
+### -3- Konvertovať schopnosti servera na nástroje LLM
 
-Ďalším krokom po vylistovaní schopností servera je ich prevod do formátu, ktorý LLM rozumie. Keď to urobíme, môžeme tieto schopnosti poskytnúť ako nástroje nášmu LLM.
+Ďalším krokom po zobrazení schopností servera je ich konverzia do formátu, ktorému LLM rozumie. Keď to urobíme, môžeme tieto schopnosti poskytnúť ako nástroje nášmu LLM.
 
-Skvelé, teraz sme pripravení spracovávať požiadavky používateľa, tak sa do toho pustíme.
+Skvelé, sme pripravení spracovať požiadavky používateľa, tak sa do toho pustíme.
 
-### -4- Spracovanie požiadavky používateľa
+### -4- Spracovať požiadavku používateľa
 
 V tejto časti kódu budeme spracovávať požiadavky používateľa.
 
-Skvelé, podarilo sa ti to!
+Skvelé, podarilo sa vám to!
 
 ## Zadanie
 
-Použi kód z cvičenia a rozšír server o ďalšie nástroje. Potom vytvor klienta s LLM, ako v cvičení, a otestuj ho s rôznymi promptmi, aby si sa uistil, že všetky nástroje na serveri sa volajú dynamicky. Tento spôsob tvorby klienta znamená, že koncový používateľ bude mať skvelý zážitok, pretože môže používať prompty namiesto presných príkazov klienta a nebude si musieť všímať, že sa volá MCP server.
+Použite kód z cvičenia a rozšírte server o ďalšie nástroje. Potom vytvorte klienta s LLM, ako v cvičení, a otestujte ho s rôznymi promptami, aby ste sa uistili, že všetky nástroje servera sa dynamicky volajú. Tento spôsob tvorby klienta zabezpečí, že koncový používateľ bude mať skvelý používateľský zážitok, pretože bude môcť používať prompty namiesto presných príkazov klienta a nebude si musieť všímať volanie MCP servera.
 
 ## Riešenie
 
-[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
+[Riešenie](/03-GettingStarted/03-llm-client/solution/README.md)
 
 ## Kľúčové poznatky
 
-- Pridanie LLM do klienta poskytuje lepší spôsob, ako môžu používatelia komunikovať s MCP servermi.
-- Je potrebné previesť odpoveď MCP servera do formátu, ktorému LLM rozumie.
+- Pridanie LLM do vášho klienta poskytuje lepší spôsob, ako môžu používatelia komunikovať s MCP servermi.
+- Musíte konvertovať odpoveď MCP servera do formátu, ktorému LLM rozumie.
 
 ## Ukážky
 
-- [Java Kalkulačka](../samples/java/calculator/README.md)
-- [.Net Kalkulačka](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Kalkulačka](../samples/javascript/README.md)
-- [TypeScript Kalkulačka](../samples/typescript/README.md)
-- [Python Kalkulačka](../../../../03-GettingStarted/samples/python)
+- [Java kalkulačka](../samples/java/calculator/README.md)
+- [.Net kalkulačka](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript kalkulačka](../samples/javascript/README.md)
+- [TypeScript kalkulačka](../samples/typescript/README.md)
+- [Python kalkulačka](../../../../03-GettingStarted/samples/python)
 
 ## Dodatočné zdroje
 
-## Čo ďalej
+## Čo bude ďalej
 
 - Ďalej: [Použitie servera vo Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
 
 **Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, vezmite prosím na vedomie, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.

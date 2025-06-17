@@ -1,39 +1,39 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bc3ae5af5973160abba9976cb5a4704c",
-  "translation_date": "2025-06-13T11:31:08+00:00",
+  "original_hash": "904b689eda5a68cbafe656d53f9787c7",
+  "translation_date": "2025-06-17T18:49:03+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "tr"
 }
 -->
-Harika, bir sonraki adımımız olarak sunucudaki yetenekleri listeleyelim.
+Harika, bir sonraki adımımız olarak, sunucudaki yetenekleri listeleyelim.
 
-### -2 Sunucu yeteneklerini listeleme
+### -2 Sunucu yeteneklerini listele
 
 Şimdi sunucuya bağlanacağız ve yeteneklerini isteyeceğiz:
 
-### -3- Sunucu yeteneklerini LLM araçlarına dönüştürme
+### -3- Sunucu yeteneklerini LLM araçlarına dönüştür
 
-Sunucu yeteneklerini listeledikten sonraki adım, bunları LLM'nin anlayacağı bir formata dönüştürmektir. Bunu yaptıktan sonra, bu yetenekleri LLM'imize araçlar olarak sağlayabiliriz.
+Sunucu yeteneklerini listeledikten sonraki adım, bunları LLM'nin anlayabileceği bir formata dönüştürmektir. Bunu yaptıktan sonra, bu yetenekleri LLM'mize araçlar olarak sunabiliriz.
 
-Harika, şimdi kullanıcı isteklerini işlemek için hazırız, o zaman ona geçelim.
+Harika, kullanıcı isteklerini işlemek için henüz hazır değiliz, o halde şimdi buna geçelim.
 
-### -4- Kullanıcı istemi isteğini işleme
+### -4- Kullanıcı istemi isteğini işle
 
-Kodun bu kısmında, kullanıcı isteklerini işleyeceğiz.
+Kodun bu kısmında kullanıcı isteklerini işleyeceğiz.
 
 Harika, başardınız!
 
 ## Ödev
 
-Egzersizdeki kodu alarak sunucuyu birkaç araçla genişletin. Ardından egzersizde olduğu gibi bir LLM ile bir istemci oluşturun ve tüm sunucu araçlarınızın dinamik olarak çağrıldığından emin olmak için farklı istemlerle test edin. Bu şekilde bir istemci oluşturmak, son kullanıcının tam istemci komutları yerine istemleri kullanabilmesini ve herhangi bir MCP sunucusunun çağrıldığının farkında olmamasını sağlayarak harika bir kullanıcı deneyimi sunar.
+Egzersizdeki kodu alın ve sunucuyu daha fazla araçla geliştirin. Sonra egzersizdeki gibi bir LLM ile bir istemci oluşturun ve tüm sunucu araçlarınızın dinamik olarak çağrıldığından emin olmak için farklı istemlerle test edin. Bu şekilde bir istemci oluşturmak, son kullanıcının tam istemci komutları yerine istemleri kullanabilmesini sağlar ve herhangi bir MCP sunucusunun çağrıldığını fark etmeden mükemmel bir kullanıcı deneyimi yaşamasını sağlar.
 
 ## Çözüm
 
 [Çözüm](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## Önemli Noktalar
+## Temel Çıkarımlar
 
 - İstemcinize bir LLM eklemek, kullanıcıların MCP Sunucuları ile etkileşim kurmasının daha iyi bir yolunu sağlar.
 - MCP Sunucu yanıtını LLM'nin anlayabileceği bir şeye dönüştürmeniz gerekir.
@@ -48,9 +48,9 @@ Egzersizdeki kodu alarak sunucuyu birkaç araçla genişletin. Ardından egzersi
 
 ## Ek Kaynaklar
 
-## Sırada Ne Var
+## Sonraki Adım
 
-- Sonraki: [Visual Studio Code kullanarak sunucu tüketme](/03-GettingStarted/04-vscode/README.md)
+- Sonraki: [Visual Studio Code kullanarak bir sunucu tüketmek](/03-GettingStarted/04-vscode/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı nedeniyle oluşabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum farklılıklarından sorumlu değiliz.

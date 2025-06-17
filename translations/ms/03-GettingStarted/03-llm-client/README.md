@@ -1,56 +1,56 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bc3ae5af5973160abba9976cb5a4704c",
-  "translation_date": "2025-06-13T11:34:32+00:00",
+  "original_hash": "904b689eda5a68cbafe656d53f9787c7",
+  "translation_date": "2025-06-17T18:51:32+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "ms"
 }
 -->
-عالی، برای مرحله بعدی، بیایید قابلیت‌های سرور را فهرست کنیم.
+Hebat, untuk langkah seterusnya, mari kita senaraikan keupayaan pada pelayan.
 
-### -2 فهرست کردن قابلیت‌های سرور
+### -2 Senaraikan keupayaan pelayan
 
-حالا به سرور متصل می‌شویم و قابلیت‌های آن را درخواست می‌کنیم:
+Sekarang kita akan menyambung ke pelayan dan meminta keupayaannya:
 
-### -3 تبدیل قابلیت‌های سرور به ابزارهای LLM
+### -3- Tukar keupayaan pelayan kepada alat LLM
 
-گام بعدی پس از فهرست کردن قابلیت‌های سرور، تبدیل آنها به فرمتی است که LLM بتواند بفهمد. وقتی این کار را انجام دادیم، می‌توانیم این قابلیت‌ها را به عنوان ابزار به LLM خود ارائه دهیم.
+Langkah seterusnya selepas menyenaraikan keupayaan pelayan ialah menukarnya ke dalam format yang difahami oleh LLM. Setelah kita lakukan itu, kita boleh menyediakan keupayaan ini sebagai alat kepada LLM kita.
 
-عالی، حالا آماده‌ایم تا درخواست‌های کاربر را مدیریت کنیم، پس بیایید این قسمت را پیاده‌سازی کنیم.
+Hebat, kita sudah bersedia untuk mengendalikan sebarang permintaan pengguna, jadi mari kita atasi perkara itu seterusnya.
 
-### -4 مدیریت درخواست پرامپت کاربر
+### -4- Mengendalikan permintaan prompt pengguna
 
-در این بخش از کد، درخواست‌های کاربر را مدیریت خواهیم کرد.
+Dalam bahagian kod ini, kita akan mengendalikan permintaan pengguna.
 
-عالی، انجامش دادی!
+Hebat, anda berjaya!
 
-## تمرین
+## Tugasan
 
-کد تمرین را بردار و سرور را با ابزارهای بیشتری توسعه بده. سپس یک کلاینت با LLM بساز، مانند تمرین، و آن را با پرامپت‌های مختلف تست کن تا مطمئن شوی تمام ابزارهای سرور به صورت داینامیک فراخوانی می‌شوند. این روش ساخت کلاینت باعث می‌شود تجربه کاربری بسیار بهتری داشته باشی، چون کاربران می‌توانند با استفاده از پرامپت‌ها به جای دستورات دقیق کلاینت، تعامل کنند و از وجود هر سرور MCP بی‌خبر باشند.
+Ambil kod dari latihan dan bina pelayan dengan beberapa alat tambahan. Kemudian buat klien dengan LLM, seperti dalam latihan, dan uji dengan pelbagai prompt untuk memastikan semua alat pelayan anda dipanggil secara dinamik. Cara membina klien seperti ini bermakna pengguna akhir akan mendapat pengalaman pengguna yang hebat kerana mereka boleh menggunakan prompt, bukannya arahan klien yang tepat, dan tidak perlu tahu tentang mana-mana pelayan MCP yang dipanggil.
 
-## راه حل
+## Penyelesaian 
 
 [Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## نکات کلیدی
+## Perkara Penting
 
-- افزودن LLM به کلاینت شما راه بهتری برای تعامل کاربران با سرورهای MCP فراهم می‌کند.
-- باید پاسخ سرور MCP را به فرمتی تبدیل کنید که LLM بتواند آن را درک کند.
+- Menambah LLM ke klien anda menyediakan cara yang lebih baik untuk pengguna berinteraksi dengan Pelayan MCP.
+- Anda perlu menukar respons Pelayan MCP kepada sesuatu yang boleh difahami oleh LLM.
 
-## نمونه‌ها
+## Contoh 
 
-- [ماشین حساب جاوا](../samples/java/calculator/README.md)
-- [ماشین حساب .Net](../../../../03-GettingStarted/samples/csharp)
-- [ماشین حساب جاوااسکریپت](../samples/javascript/README.md)
-- [ماشین حساب تایپ‌اسکریپت](../samples/typescript/README.md)
-- [ماشین حساب پایتون](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python) 
 
-## منابع اضافی
+## Sumber Tambahan
 
-## مرحله بعد
+## Apa Seterusnya
 
-- مرحله بعد: [استفاده از سرور با Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
+- Seterusnya: [Menggunakan pelayan dengan Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
