@@ -36,20 +36,19 @@ You can control your MCP server in two different ways:
 
 Let's talk more about how we use the visual interface in the next sections.
 
-
-## Approach 
+## Approach
 
 Here's how we need to approach this at high level:
 
 - Configure a file to find our MCP Server.
 - Start up/Connect to said server to have it list its capabilities.
-- Use said capabilities through GitHub Copilots chat interface.
+- Use said capabilities through GitHub Copilot Chat interface.
 
 Great, now that we understand the flow, let's try use an MCP Server through Visual Studio Code through an exercise.
 
 ## Exercise: Consuming a server
 
-In this exercise, we will configure Visual Studio Code to find your MCP server so that it can be used from GitHub Copilots chat interface.
+In this exercise, we will configure Visual Studio Code to find your MCP server so that it can be used from GitHub Copilot Chat interface.
 
 ### -0- Prestep, enable MCP Server discovery
 
@@ -79,9 +78,9 @@ Add the following content to *mcp.json*:
     "inputs": [],
     "servers": {
        "hello-mcp": {
-           "command": "cmd",
+           "command": "node",
            "args": [
-               "/c", "node", "<absolute path>\\build\\index.js"
+               "build/index.js"
            ]
        }
     }
@@ -98,11 +97,11 @@ Now that you've added an entry, let's start the server:
 
   ![Starting server in Visual Studio Code](./assets/vscode-start-server.png)  
 
-1. Click the "play" icon, you should see the tools icon in the GitHun Copilot chat increase the number of available tools. If you click said tools icon, you will see a list of registered tools. You can check/uncheck each tool depending if you want GitHub Copilot to use them as context: 
+1. Click the "play" icon, you should see the tools icon in the GitHub Copilot Chat increase the number of available tools. If you click said tools icon, you will see a list of registered tools. You can check/uncheck each tool depending if you want GitHub Copilot to use them as context:
 
   ![Starting server in Visual Studio Code](./assets/vscode-tool.png)
 
-1. Ton run a tool, type a prompt that you know will match the description of one of your tools, for example a prompt like so "add 22 to 1":
+1. To run a tool, type a prompt that you know will match the description of one of your tools, for example a prompt like so "add 22 to 1":
 
   ![Running a tool from GitHub Copilot](./assets/vscode-agent.png)
 
@@ -110,7 +109,7 @@ Now that you've added an entry, let's start the server:
 
 ## Assignment
 
-Try adding a server entry to you *mcp.json* file and make sure you can start/stop the server. Make sure you can also communicate with the tools on your server via GitHub Copilots chat interface.
+Try adding a server entry to you *mcp.json* file and make sure you can start/stop the server. Make sure you can also communicate with the tools on your server via GitHub Copilot Chat interface.
 
 ## Solution
 
@@ -121,16 +120,16 @@ Try adding a server entry to you *mcp.json* file and make sure you can start/sto
 The takeaways from this chapter is the following:
 
 - Visual Studio Code is a great client that lets you consume several MCP Servers and their tools.
-- GitHub Copilots chat interface is how you interact with the servers.
+- GitHub Copilot Chat interface is how you interact with the servers.
 - You can prompt the user for inputs like API keys that can be passed to the MCP Server when configuring the server entry in *mcp.json* file.
 
-## Samples 
+## Samples
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../samples/csharp/)
 - [JavaScript Calculator](../samples/javascript/README.md)
 - [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../samples/python/) 
+- [Python Calculator](../samples/python/)
 
 ## Additional Resources
 
@@ -139,5 +138,3 @@ The takeaways from this chapter is the following:
 ## What's Next
 
 - Next: [Creating an SSE Server](/03-GettingStarted/05-sse-server/README.md)
-
-
