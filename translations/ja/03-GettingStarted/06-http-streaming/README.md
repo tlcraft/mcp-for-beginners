@@ -1,74 +1,74 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1015443af8119fb019c152bca90fb293",
-  "translation_date": "2025-06-17T21:59:47+00:00",
+  "original_hash": "3eaf38ffe0638867045ec6664908333c",
+  "translation_date": "2025-06-18T08:46:22+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "ja"
 }
 -->
 # HTTPS ストリーミングと Model Context Protocol (MCP)
 
-この章では、HTTPS を使った Model Context Protocol (MCP) による安全でスケーラブル、かつリアルタイムなストリーミングの実装方法を詳しく解説します。ストリーミングの動機、利用可能なトランスポートメカニズム、MCP におけるストリーミング可能な HTTP の実装方法、セキュリティのベストプラクティス、SSE からの移行、そして独自のストリーミング MCP アプリケーション構築の実践的なガイドを扱います。
+本章では、HTTPS を使った Model Context Protocol (MCP) による安全でスケーラブルなリアルタイムストリーミングの実装方法を詳しく解説します。ストリーミングの背景、利用可能なトランスポート機構、MCP でのストリーム可能な HTTP の実装方法、セキュリティのベストプラクティス、SSE からの移行、そして実践的な MCP ストリーミングアプリケーション構築の手引きを含みます。
 
-## MCP におけるトランスポートメカニズムとストリーミング
+## MCP におけるトランスポート機構とストリーミング
 
-このセクションでは、MCP で利用可能なさまざまなトランスポートメカニズムと、それらがクライアントとサーバー間のリアルタイム通信におけるストリーミング機能をどのように実現しているかを説明します。
+このセクションでは、MCP で利用可能な様々なトランスポート機構と、それらがクライアントとサーバー間のリアルタイム通信におけるストリーミング機能をどのように実現するかを解説します。
 
-### トランスポートメカニズムとは？
+### トランスポート機構とは？
 
-トランスポートメカニズムは、クライアントとサーバー間でデータを交換する方法を定義します。MCP は異なる環境や要件に対応するために複数のトランスポートタイプをサポートしています：
+トランスポート機構は、クライアントとサーバー間でデータをどのようにやり取りするかを定義します。MCP は環境や要件に応じて複数のトランスポートタイプをサポートしています：
 
-- **stdio**: 標準入力/出力。ローカルや CLI ベースのツールに適しています。シンプルですが、ウェブやクラウドには不向きです。
-- **SSE (Server-Sent Events)**: サーバーが HTTP を介してクライアントにリアルタイム更新をプッシュする仕組み。ウェブ UI に適していますが、スケーラビリティや柔軟性に制限があります。
-- **Streamable HTTP**: 通知やより良いスケーラビリティをサポートする最新の HTTP ベースのストリーミングトランスポート。ほとんどの本番環境やクラウドシナリオで推奨されます。
+- **stdio**: 標準入出力。ローカルや CLI ベースのツールに適しています。シンプルですが、Web やクラウド環境には不向きです。
+- **SSE (Server-Sent Events)**: サーバーが HTTP 経由でクライアントにリアルタイム更新をプッシュできます。Web UI に適していますが、スケーラビリティや柔軟性には制限があります。
+- **Streamable HTTP**: 最新の HTTP ベースのストリーミングトランスポートで、通知機能や優れたスケーラビリティを備えています。ほとんどの本番環境やクラウドシナリオで推奨されます。
 
 ### 比較表
 
-以下の比較表で各トランスポートメカニズムの違いを確認してください：
+以下の比較表で各トランスポート機構の違いを確認してください：
 
-| トランスポート     | リアルタイム更新 | ストリーミング | スケーラビリティ | 利用ケース               |
-|-------------------|------------------|---------------|-----------------|-------------------------|
-| stdio             | いいえ           | いいえ        | 低              | ローカル CLI ツール      |
-| SSE               | はい             | はい          | 中              | ウェブ、リアルタイム更新 |
-| Streamable HTTP   | はい             | はい          | 高              | クラウド、マルチクライアント |
+| トランスポート       | リアルタイム更新 | ストリーミング | スケーラビリティ | 利用ケース                 |
+|---------------------|------------------|----------------|------------------|----------------------------|
+| stdio               | なし             | なし           | 低               | ローカル CLI ツール        |
+| SSE                 | あり             | あり           | 中               | Web、リアルタイム更新      |
+| Streamable HTTP      | あり             | あり           | 高               | クラウド、多クライアント   |
 
-> **Tip:** 適切なトランスポートを選ぶことは、パフォーマンス、スケーラビリティ、ユーザー体験に大きく影響します。モダンでスケーラブル、クラウド対応のアプリケーションには **Streamable HTTP** を推奨します。
+> **Tip:** 適切なトランスポートを選ぶことはパフォーマンス、スケーラビリティ、ユーザー体験に大きく影響します。**Streamable HTTP** は現代的でスケーラブル、クラウド対応アプリケーションに推奨されます。
 
-前章で紹介した stdio と SSE のトランスポートと比べ、本章で扱うのは Streamable HTTP です。
+前章で紹介した stdio と SSE のトランスポートに加え、本章では Streamable HTTP を取り扱います。
 
-## ストリーミング：概念と動機
+## ストリーミング：基本概念と動機
 
-ストリーミングの基本的な概念と動機を理解することは、効果的なリアルタイム通信システムを実装するうえで不可欠です。
+ストリーミングの基本概念とその背景を理解することは、効果的なリアルタイム通信システムを実装する上で重要です。
 
-**ストリーミング** は、ネットワークプログラミングの技術で、全体の応答が準備されるのを待つのではなく、小さく扱いやすいチャンクやイベントの連続としてデータを送受信することを可能にします。特に以下のような場合に有効です：
+**ストリーミング**とは、ネットワークプログラミングにおいて、レスポンス全体を待つのではなく、小さなチャンクやイベントの連続としてデータを送受信する手法です。以下のような場合に特に有用です：
 
-- 大きなファイルやデータセット
+- 大きなファイルやデータセットの転送
 - リアルタイム更新（例：チャット、進捗バー）
-- ユーザーに情報を提供し続けたい長時間の計算処理
+- 長時間かかる計算処理でユーザーに状況を知らせたい場合
 
-ストリーミングのポイントは以下の通りです：
+高レベルでのストリーミングのポイントは：
 
-- データは一度にすべてではなく段階的に届けられる
-- クライアントは到着したデータを逐次処理できる
-- 体感レイテンシが減り、ユーザー体験が向上する
+- データが一度にではなく段階的に送られる
+- クライアントは到着したデータを随時処理できる
+- レイテンシの低減とユーザー体験の向上に寄与する
 
 ### なぜストリーミングを使うのか？
 
 ストリーミングを使う理由は以下の通りです：
 
-- ユーザーが処理の途中からフィードバックを受け取れる
-- リアルタイムアプリケーションや応答性の高い UI を実現できる
-- ネットワークや計算リソースの効率的な利用が可能になる
+- ユーザーが処理の完了を待たずに即座にフィードバックを得られる
+- リアルタイムアプリや応答性の高い UI を実現できる
+- ネットワークや計算資源の効率的な利用が可能になる
 
-### 簡単な例：HTTP ストリーミングサーバー＆クライアント
+### 簡単な例：HTTP ストリーミングサーバーとクライアント
 
 ストリーミングの実装例を示します：
 
 <details>
 <summary>Python</summary>
 
-**サーバー (Python、FastAPI と StreamingResponse を使用):**
+**サーバー (Python, FastAPI と StreamingResponse 使用):**
 <details>
 <summary>Python</summary>
 
@@ -91,7 +91,7 @@ def stream():
 
 </details>
 
-**クライアント (Python、requests を使用):**
+**クライアント (Python, requests 使用):**
 <details>
 <summary>Python</summary>
 
@@ -106,16 +106,91 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-この例では、サーバーがすべてのメッセージが揃うのを待つのではなく、準備できたメッセージを順次クライアントに送信しています。
+この例では、サーバーがすべてのメッセージが準備できるのを待つのではなく、メッセージが利用可能になり次第クライアントに送信しています。
 
 **仕組み:**
-- サーバーはメッセージが準備でき次第それを逐次返す
-- クライアントは到着したチャンクを受け取り表示する
+- サーバーはメッセージが準備でき次第逐次返します。
+- クライアントは到着したチャンクを受け取って表示します。
 
-**要件:**
-- サーバーはストリーミングレスポンスを使う必要があります（例：`StreamingResponse` in FastAPI).
+**必要条件:**
+- サーバーは StreamingResponse のようなストリーミングレスポンスを使用する必要があります（例：`StreamingResponse` in FastAPI).
 - The client must process the response as a stream (`stream=True` in requests).
-- Content-Type is usually `text/event-stream` or `application/octet-stream`.
+- Content-Type is usually `text/event-stream` or `application/octet-stream`）。
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+**サーバー (Java, Spring Boot と Server-Sent Events 使用):**
+
+```java
+@RestController
+public class CalculatorController {
+
+    @GetMapping(value = "/calculate", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<ServerSentEvent<String>> calculate(@RequestParam double a,
+                                                   @RequestParam double b,
+                                                   @RequestParam String op) {
+        
+        double result;
+        switch (op) {
+            case "add": result = a + b; break;
+            case "sub": result = a - b; break;
+            case "mul": result = a * b; break;
+            case "div": result = b != 0 ? a / b : Double.NaN; break;
+            default: result = Double.NaN;
+        }
+
+        return Flux.<ServerSentEvent<String>>just(
+                    ServerSentEvent.<String>builder()
+                        .event("info")
+                        .data("Calculating: " + a + " " + op + " " + b)
+                        .build(),
+                    ServerSentEvent.<String>builder()
+                        .event("result")
+                        .data(String.valueOf(result))
+                        .build()
+                )
+                .delayElements(Duration.ofSeconds(1));
+    }
+}
+```
+
+**クライアント (Java, Spring WebFlux WebClient 使用):**
+
+```java
+@SpringBootApplication
+public class CalculatorClientApplication implements CommandLineRunner {
+
+    private final WebClient client = WebClient.builder()
+            .baseUrl("http://localhost:8080")
+            .build();
+
+    @Override
+    public void run(String... args) {
+        client.get()
+                .uri(uriBuilder -> uriBuilder
+                        .path("/calculate")
+                        .queryParam("a", 7)
+                        .queryParam("b", 5)
+                        .queryParam("op", "mul")
+                        .build())
+                .accept(MediaType.TEXT_EVENT_STREAM)
+                .retrieve()
+                .bodyToFlux(String.class)
+                .doOnNext(System.out::println)
+                .blockLast();
+    }
+}
+```
+
+**Java 実装ノート:**
+- Spring Boot のリアクティブスタックを利用し、`Flux` for streaming
+- `ServerSentEvent` provides structured event streaming with event types
+- `WebClient` with `bodyToFlux()` enables reactive streaming consumption
+- `delayElements()` simulates processing time between events
+- Events can have types (`info`, `result`) for better client handling
 
 </details>
 
@@ -152,35 +227,32 @@ Additionally, here are some key differences:
 
 ### Recommendations
 
-There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream`）。MCP でのストリーミング選択とは異なります。
-
-- **シンプルなストリーミングには:** 従来の HTTP ストリーミングの方が実装が簡単で基本的なニーズには十分です。
-
-- **複雑でインタラクティブなアプリケーションには:** MCP ストリーミングは通知と最終結果を分離し、より豊富なメタデータを持つ構造化されたアプローチを提供します。
-
-- **AI アプリケーション向けには:** MCP の通知システムは、長時間かかる AI タスクの進捗をユーザーに知らせるのに特に有用です。
+There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream` を活用しています。
+- 単純なストリーミングにはクラシックな HTTP ストリーミングが実装しやすく十分です。
+- 複雑でインタラクティブなアプリケーションには、通知と最終結果を分離し、豊富なメタデータを扱える MCP ストリーミングが適しています。
+- AI アプリケーションには、長時間処理の進捗を通知できる MCP の通知システムが特に有用です。
 
 ## MCP におけるストリーミング
 
-これまでにクラシックなストリーミングと MCP ストリーミングの違いについての推奨事項や比較を見てきました。ここからは MCP でのストリーミングの具体的な活用方法を詳しく解説します。
+これまでの比較や推奨を踏まえ、MCP におけるストリーミングの具体的な活用方法を見ていきましょう。
 
-MCP フレームワーク内でストリーミングがどのように機能するかを理解することは、長時間の処理中にユーザーへリアルタイムでフィードバックを提供する応答性の高いアプリケーションを構築するうえで重要です。
+MCP フレームワーク内でストリーミングがどのように機能するかを理解することは、長時間かかる処理中にユーザーにリアルタイムでフィードバックを提供するレスポンシブなアプリケーション構築に不可欠です。
 
-MCP におけるストリーミングは、メインのレスポンスをチャンクで送るのではなく、ツールがリクエストを処理している間にクライアントへ **通知** を送る仕組みです。通知は進捗更新やログ、その他のイベントを含みます。
+MCP では、メインのレスポンスをチャンクで送るのではなく、ツールがリクエストを処理している間にクライアントへ **通知** を送る形でストリーミングを実現します。通知は進捗更新やログ、その他のイベントを含むことができます。
 
-### 仕組み
+### 動作の仕組み
 
-メインの結果は単一のレスポンスとして送られますが、処理中に通知が別メッセージとして送られ、クライアントはそれをリアルタイムで受け取り表示します。クライアントはこれらの通知を扱える必要があります。
+メインの結果は依然として単一のレスポンスとして送られますが、処理中に通知を別メッセージとして送ることでクライアントをリアルタイムに更新します。クライアントはこれらの通知を処理して表示できる必要があります。
 
-## 通知とは？
+## 通知とは何か？
 
-「通知」とは MCP の文脈で何を意味するのでしょうか？
+「通知」とは MCP の文脈で何を指すのでしょうか？
 
-通知とは、長時間の処理中に進捗や状態、その他のイベントをサーバーからクライアントに知らせるメッセージです。通知は透明性とユーザー体験を向上させます。
+通知とは、長時間の処理中に進捗や状態、その他のイベントをサーバーからクライアントに知らせるためのメッセージです。通知は透明性を高め、ユーザー体験を向上させます。
 
-例えば、クライアントはサーバーとの初期ハンドシェイクが完了した際に通知を送ることが求められます。
+例えば、クライアントはサーバーとの初期ハンドシェイクが完了した際に通知を送ることが想定されています。
 
-通知は以下のような JSON メッセージの形をとります：
+通知は以下のような JSON メッセージ形式です：
 
 ```json
 {
@@ -192,9 +264,9 @@ MCP におけるストリーミングは、メインのレスポンスをチャ�
 }
 ```
 
-通知は MCP 内の「[Logging](https://modelcontextprotocol.io/specification/draft/server/utilities/logging)」というトピックに属します。
+通知は MCP のトピックの一つである ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging) に属します。
 
-ログ機能を動作させるには、サーバー側で以下のように機能/能力として有効化する必要があります：
+ログ機能を有効にするには、サーバー側で以下のように機能を有効化する必要があります：
 
 ```json
 {
@@ -205,28 +277,28 @@ MCP におけるストリーミングは、メインのレスポンスをチャ�
 ```
 
 > [!NOTE]
-> 使用する SDK によっては、ログ機能がデフォルトで有効になっている場合や、サーバー設定で明示的に有効化が必要な場合があります。
+> 使用する SDK によっては、ログ機能がデフォルトで有効になっている場合もあれば、サーバー設定で明示的に有効化が必要な場合もあります。
 
-通知にはさまざまなレベルがあります：
+通知には以下の種類があります：
 
-| レベル      | 説明                         | 使用例                      |
-|-------------|------------------------------|-----------------------------|
-| debug       | 詳細なデバッグ情報           | 関数の開始・終了ポイント     |
-| info        | 一般的な情報メッセージ       | 処理の進捗更新              |
-| notice      | 通常だが重要なイベント       | 設定変更                    |
-| warning     | 警告状態                     | 非推奨機能の使用            |
-| error       | エラー状態                   | 処理の失敗                  |
-| critical    | 重大な状態                   | システムコンポーネントの障害 |
-| alert       | 直ちに対応が必要な状態       | データ破損の検出            |
-| emergency   | システムが使用不能な状態     | システム全体の障害          |
+| レベル       | 説明                           | 使用例                        |
+|--------------|--------------------------------|-------------------------------|
+| debug        | 詳細なデバッグ情報             | 関数の開始/終了ポイント       |
+| info         | 一般的な情報メッセージ         | 処理の進捗更新                |
+| notice       | 通常だが重要なイベント         | 設定変更                      |
+| warning      | 警告条件                      | 非推奨機能の使用              |
+| error        | エラー条件                    | 処理の失敗                    |
+| critical     | 重大な条件                    | システムコンポーネントの故障  |
+| alert        | 直ちに対応が必要な事象         | データ破損の検出              |
+| emergency    | システムが使用不能な状態       | 完全なシステム障害            |
 
-## MCP における通知の実装
+## MCP での通知の実装
 
-MCP で通知を実装するには、サーバーとクライアントの両方でリアルタイム更新を扱えるように設定する必要があります。これにより、長時間の処理中でもユーザーに即時のフィードバックを提供できます。
+MCP で通知を実装するには、サーバー側とクライアント側の両方でリアルタイム更新を扱えるようにセットアップする必要があります。これにより、長時間処理中にユーザーへ即時フィードバックを提供できます。
 
 ### サーバー側：通知の送信
 
-まずサーバー側から。MCP では、リクエスト処理中に通知を送信できるツールを定義します。サーバーは通常 `ctx` と呼ばれるコンテキストオブジェクトを使い、クライアントへメッセージを送ります。
+まずサーバー側です。MCP では、リクエスト処理中に通知を送信できるツールを定義します。サーバーは通常 `ctx` と呼ばれるコンテキストオブジェクトを使ってクライアントにメッセージを送ります。
 
 <details>
 <summary>Python</summary>
@@ -243,11 +315,11 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-前述の例では、`process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
+上記例では、`process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
 
 </details>
 
-Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http` トランスポートを使っています：
+Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http` トランスポートを使用しています：
 
 ```python
 mcp.run(transport="streamable-http")
@@ -255,9 +327,41 @@ mcp.run(transport="streamable-http")
 
 </details>
 
+<details>
+<summary>.NET</summary>
+
+```csharp
+[Tool("A tool that sends progress notifications")]
+public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
+{
+    await ctx.Info("Processing file 1/3...");
+    await ctx.Info("Processing file 2/3...");
+    await ctx.Info("Processing file 3/3...");
+    return new TextContent
+    {
+        Type = "text",
+        Text = $"Done: {message}"
+    };
+}
+```
+
+この .NET の例では、`ProcessFiles` tool is decorated with the `Tool` attribute and sends three notifications to the client as it processes each file. The `ctx.Info()` メソッドを使って情報メッセージを送信しています。
+
+.NET MCP サーバーで通知を有効にするには、ストリーミングトランスポートを使用していることを確認してください：
+
+```csharp
+var builder = McpBuilder.Create();
+await builder
+    .UseStreamableHttp() // Enable streamable HTTP transport
+    .Build()
+    .RunAsync();
+```
+
+</details>
+
 ### クライアント側：通知の受信
 
-クライアントは通知を受け取り処理・表示するためのメッセージハンドラーを実装する必要があります。
+クライアント側では、到着した通知を処理し表示するメッセージハンドラを実装する必要があります。
 
 <details>
 <summary>Python</summary>
@@ -277,19 +381,53 @@ async with ClientSession(
 ) as session:
 ```
 
-上記コードでは、`message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` to handle incoming notifications.
+上記コードでは、`message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` が通知を処理しています。
 
 </details>
 
-To enable notifications, ensure your server uses a streaming transport (like `streamable-http` を用い、クライアント側で通知処理を行っています。
+<details>
+<summary>.NET</summary>
 
-## 進捗通知とシナリオ
+```csharp
+// Define a message handler
+void MessageHandler(IJsonRpcMessage message)
+{
+    if (message is ServerNotification notification)
+    {
+        Console.WriteLine($"NOTIFICATION: {notification}");
+    }
+    else
+    {
+        Console.WriteLine($"SERVER MESSAGE: {message}");
+    }
+}
 
-このセクションでは、MCP における進捗通知の概念、その重要性、Streamable HTTP を使った実装方法を説明します。理解を深めるための課題も用意しています。
+// Create and use a client session with the message handler
+var clientOptions = new ClientSessionOptions
+{
+    MessageHandler = MessageHandler,
+    LoggingCallback = (level, message) => Console.WriteLine($"[{level}] {message}")
+};
 
-進捗通知とは、長時間の処理中にサーバーからクライアントへリアルタイムに送られるメッセージです。処理の完了を待つのではなく、現在の状態を逐次伝えることで透明性を高め、ユーザー体験を向上させ、デバッグも容易にします。
+using var client = new ClientSession(readStream, writeStream, clientOptions);
+await client.InitializeAsync();
 
-**例:**
+// Now the client will process notifications through the MessageHandler
+```
+
+この .NET の例では、`MessageHandler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. The `ClientSession` is initialized with the message handler via the `ClientSessionOptions`.
+
+</details>
+
+To enable notifications, ensure your server uses a streaming transport (like `streamable-http` を使用し、クライアントが通知を処理しています。
+
+## 進捗通知とユースケース
+
+このセクションでは、MCP における進捗通知の概念、重要性、Streamable HTTP を使った実装方法を解説し、理解を深めるための課題も用意しています。
+
+進捗通知は、長時間の処理中にサーバーからクライアントへリアルタイムで送られるメッセージです。処理完了を待つのではなく、現在の状態を継続的に知らせることで、透明性やユーザー体験が向上し、デバッグも容易になります。
+
+**例：**
 
 ```text
 
@@ -304,16 +442,16 @@ To enable notifications, ensure your server uses a streaming transport (like `st
 
 進捗通知が重要な理由は以下の通りです：
 
-- **ユーザー体験の向上:** 処理が進むにつれて更新が見えるため、ユーザーは待ち時間を感じにくくなる
-- **リアルタイムフィードバック:** クライアントは進捗バーやログを表示でき、アプリが応答している印象を与える
-- **デバッグや監視が容易に:** 開発者やユーザーが処理の遅延や停止箇所を特定しやすくなる
+- **ユーザー体験の向上:** ユーザーは処理の進行状況をリアルタイムで確認できる。
+- **リアルタイムフィードバック:** クライアントは進捗バーやログを表示し、アプリの応答性を高める。
+- **デバッグ・監視の容易化:** 開発者やユーザーは処理の遅延や停止箇所を把握しやすくなる。
 
 ### 進捗通知の実装方法
 
-MCP で進捗通知を実装するには以下のようにします：
+MCP での進捗通知実装方法は以下の通りです：
 
-- **サーバー側:** 各アイテム処理時に `ctx.info()` or `ctx.log()` を使って通知を送る。メイン結果が準備できる前にクライアントにメッセージを送信する。
-- **クライアント側:** 通知を受け取って表示するメッセージハンドラーを実装する。通知と最終結果を区別して処理する。
+- **サーバー側:** `ctx.info()` or `ctx.log()` を使い、各アイテム処理時に通知を送信。これによりメインの結果が準備される前にクライアントへメッセージが届く。
+- **クライアント側:** 到着した通知を受け取り表示するメッセージハンドラを実装。通知と最終結果を区別して処理する。
 
 **サーバー例:**
 
@@ -346,16 +484,16 @@ async def message_handler(message):
 
 </details>
 
-## セキュリティ上の考慮点
+## セキュリティ考慮事項
 
-HTTP ベースのトランスポートで MCP サーバーを実装する際は、複数の攻撃ベクトルや保護機構に注意を払う必要があり、セキュリティは非常に重要です。
+HTTP ベースのトランスポートで MCP サーバーを実装する際は、複数の攻撃ベクトルや防御策に注意を払い、セキュリティを最優先する必要があります。
 
 ### 概要
 
-MCP サーバーを HTTP で公開する場合、Streamable HTTP は新たな攻撃面を生み出すため、慎重な設定が求められます。
+HTTP 経由で MCP サーバーを公開する場合、Streamable HTTP は新たな攻撃面を持つため、慎重な設定が求められます。
 
 ### 重要ポイント
-- **Origin ヘッダーの検証**: `Origin` header to prevent DNS rebinding attacks.
+- **Origin ヘッダー検証:** 常に `Origin` header to prevent DNS rebinding attacks.
 - **Localhost Binding**: For local development, bind servers to `localhost` to avoid exposing them to the public internet.
 - **Authentication**: Implement authentication (e.g., API keys, OAuth) for production deployments.
 - **CORS**: Configure Cross-Origin Resource Sharing (CORS) policies to restrict access.
@@ -443,52 +581,45 @@ There are two compelling reasons to upgrade from SSE to Streamable HTTP:
 Here's how you can migrate from SSE to Streamable HTTP in your MCP applications:
 
 1. **Update server code** to use `transport="streamable-http"` in `mcp.run()`.
-2. **Update client code** to use `streamablehttp_client` を SSE クライアントではなく検証すること。
-3. **クライアント側にメッセージハンドラーを実装し**、通知を処理する。
-4. **既存ツールやワークフローとの互換性をテストする**。
+2. **Update client code** to use `streamablehttp_client` を使い SSE クライアントではなく検証してください。
+3. **クライアントにメッセージハンドラを実装**し、通知を処理する。
+4. **既存ツールやワークフローとの互換性をテスト**する。
 
 ### 互換性の維持
 
-移行プロセス中は既存の SSE クライアントとの互換性を保つことが推奨されます。以下のような方法があります：
+移行期間中は既存の SSE クライアントとの互換性を保つことが推奨されます。戦略例：
 
-- SSE と Streamable HTTP の両方を異なるエンドポイントで同時にサポートする
-- クライアントを段階的に新しいトランスポートへ移行する
+- SSE と Streamable HTTP の両方を異なるエンドポイントでサポートする。
+- クライアントを段階的に新トランスポートへ移行する。
 
 ### 課題
 
-移行時には以下の課題に対応してください：
+移行にあたっては以下の課題に注意してください：
 
 - すべてのクライアントが更新されていることを保証する
-- 通知の配信方法の違いを扱う
+- 通知配信の違いを扱う
 
-### 課題：自分だけのストリーミング MCP アプリを作ろう
+### 課題：自分のストリーミング MCP アプリを作ろう
 
 **シナリオ:**
-サーバーがアイテムのリスト（例：ファイルやドキュメント）を処理し、処理が完了するたびに通知を送る MCP サーバーとクライアントを作成してください。クライアントは通知を受け取るとすぐに表示します。
+サーバーがアイテム（例：ファイルやドキュメント）のリストを処理し、処理完了ごとに通知を送信する MCP サーバーとクライアントを作成してください。クライアントは通知を受け取り次第表示します。
 
 **手順:**
 
-1. リストを処理し、各アイテムの処理ごとに通知を送るサーバーツールを実装する。
-2. 通知をリアルタイムで表示するメッセージハンドラーを持つクライアントを実装する。
-3. サーバーとクライアントを実行し、通知が届く様子を確認する。
+1. リストを処理し、各アイテムの処理時に通知を送るサーバーツールを実装する。
+2. 通知をリアルタイムで表示するメッセージハンドラを備えたクライアントを実装する。
+3. サーバーとクライアントを動作させ、通知が適切に届くか確認する。
 
 [Solution](./solution/README.md)
 
-## さらに学ぶ & 次のステップ
+## さらなる学習と次のステップ
 
-MCP ストリーミングの学習を続け、より高度なアプリケーション構築へ進むために、以下の追加リソースと次のステップを紹介します。
+MCP ストリーミングの理解を深め、より高度なアプリケーション構築に役立つ追加リソースと次のステップを紹介します。
 
-### さらに学ぶ
+### さらなる学習
 
-- [Microsoft: Introduction to HTTP Streaming](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
-- [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
-- [Microsoft: CORS in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
-- [Python requests: Streaming Requests](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
-
-### 次のステップ
-
-- ストリーミングを活用したリアルタイム分析、チャット、共同編集などの高度な MCP ツールを作成してみましょう。
-- MCP ストリーミングをフロントエンドフレームワーク（React、Vue など）と統合し、ライブ UI 更新を実
+- [Microsoft: HTTP ストリーミング入門](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
+- [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430
 
 **免責事項**：  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性の確保に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨いたします。本翻訳の利用により生じたいかなる誤解や解釈の相違についても、一切の責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期していますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。

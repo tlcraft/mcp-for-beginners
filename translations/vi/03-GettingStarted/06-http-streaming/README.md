@@ -1,55 +1,55 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1015443af8119fb019c152bca90fb293",
-  "translation_date": "2025-06-17T22:20:09+00:00",
+  "original_hash": "3eaf38ffe0638867045ec6664908333c",
+  "translation_date": "2025-06-18T09:19:37+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "vi"
 }
 -->
 # HTTPS Streaming với Model Context Protocol (MCP)
 
-Chương này cung cấp hướng dẫn toàn diện về cách triển khai streaming an toàn, có khả năng mở rộng và thời gian thực với Model Context Protocol (MCP) sử dụng HTTPS. Nội dung bao gồm động lực cho việc streaming, các cơ chế truyền tải hiện có, cách triển khai HTTP có khả năng streaming trong MCP, các thực hành bảo mật tốt nhất, di chuyển từ SSE, và hướng dẫn thực tiễn để xây dựng ứng dụng streaming MCP của riêng bạn.
+Chương này cung cấp hướng dẫn toàn diện về cách triển khai streaming an toàn, mở rộng và thời gian thực với Model Context Protocol (MCP) sử dụng HTTPS. Nội dung bao gồm động lực cho streaming, các cơ chế truyền tải có sẵn, cách triển khai HTTP có thể stream trong MCP, các thực hành bảo mật tốt nhất, chuyển đổi từ SSE và hướng dẫn thực tiễn để xây dựng ứng dụng MCP streaming của riêng bạn.
 
-## Cơ chế Truyền tải và Streaming trong MCP
+## Cơ chế truyền tải và Streaming trong MCP
 
-Phần này khám phá các cơ chế truyền tải khác nhau có trong MCP và vai trò của chúng trong việc cho phép khả năng streaming để giao tiếp thời gian thực giữa client và server.
+Phần này khám phá các cơ chế truyền tải khác nhau trong MCP và vai trò của chúng trong việc cho phép khả năng streaming để giao tiếp thời gian thực giữa client và server.
 
-### Cơ chế Truyền tải là gì?
+### Cơ chế truyền tải là gì?
 
 Cơ chế truyền tải xác định cách dữ liệu được trao đổi giữa client và server. MCP hỗ trợ nhiều loại truyền tải để phù hợp với các môi trường và yêu cầu khác nhau:
 
-- **stdio**: Đầu vào/đầu ra chuẩn, phù hợp với các công cụ cục bộ và dựa trên CLI. Đơn giản nhưng không phù hợp với web hoặc đám mây.
-- **SSE (Server-Sent Events)**: Cho phép server đẩy cập nhật thời gian thực tới client qua HTTP. Tốt cho giao diện web, nhưng hạn chế về khả năng mở rộng và linh hoạt.
-- **Streamable HTTP**: Cơ chế truyền tải dựa trên HTTP hiện đại, hỗ trợ thông báo và khả năng mở rộng tốt hơn. Được khuyến nghị cho hầu hết các trường hợp sản xuất và đám mây.
+- **stdio**: Đầu vào/đầu ra chuẩn, phù hợp cho công cụ chạy trên máy cục bộ và CLI. Đơn giản nhưng không phù hợp cho web hoặc đám mây.
+- **SSE (Server-Sent Events)**: Cho phép server đẩy các cập nhật thời gian thực đến client qua HTTP. Tốt cho giao diện web, nhưng hạn chế về khả năng mở rộng và linh hoạt.
+- **Streamable HTTP**: Cơ chế truyền tải streaming dựa trên HTTP hiện đại, hỗ trợ thông báo và khả năng mở rộng tốt hơn. Được khuyến nghị cho hầu hết các kịch bản sản xuất và đám mây.
 
-### Bảng So sánh
+### Bảng so sánh
 
-Hãy xem bảng so sánh dưới đây để hiểu sự khác biệt giữa các cơ chế truyền tải này:
+Xem bảng so sánh dưới đây để hiểu sự khác biệt giữa các cơ chế truyền tải này:
 
-| Truyền tải       | Cập nhật thời gian thực | Streaming | Khả năng mở rộng | Trường hợp sử dụng      |
-|------------------|------------------------|-----------|------------------|-------------------------|
-| stdio            | Không                  | Không     | Thấp             | Công cụ CLI cục bộ      |
+| Truyền tải       | Cập nhật thời gian thực | Streaming | Khả năng mở rộng | Trường hợp sử dụng         |
+|------------------|------------------------|-----------|------------------|---------------------------|
+| stdio            | Không                  | Không     | Thấp             | Công cụ CLI cục bộ        |
 | SSE              | Có                     | Có        | Trung bình       | Web, cập nhật thời gian thực |
-| Streamable HTTP  | Có                     | Có        | Cao              | Đám mây, đa client      |
+| Streamable HTTP  | Có                     | Có        | Cao              | Đám mây, đa client        |
 
-> **Tip:** Việc chọn cơ chế truyền tải phù hợp ảnh hưởng đến hiệu năng, khả năng mở rộng và trải nghiệm người dùng. **Streamable HTTP** được khuyến nghị cho các ứng dụng hiện đại, có khả năng mở rộng và sẵn sàng cho đám mây.
+> **Tip:** Lựa chọn cơ chế truyền tải phù hợp ảnh hưởng đến hiệu năng, khả năng mở rộng và trải nghiệm người dùng. **Streamable HTTP** được khuyến nghị cho các ứng dụng hiện đại, có khả năng mở rộng và sẵn sàng cho đám mây.
 
-Lưu ý các cơ chế truyền tải stdio và SSE đã được giới thiệu trong các chương trước và Streamable HTTP là cơ chế truyền tải được đề cập trong chương này.
+Lưu ý các cơ chế truyền tải stdio và SSE đã được đề cập trong các chương trước và streamable HTTP là cơ chế truyền tải được trình bày trong chương này.
 
 ## Streaming: Khái niệm và Động lực
 
-Hiểu các khái niệm cơ bản và động lực phía sau streaming là điều cần thiết để triển khai hệ thống giao tiếp thời gian thực hiệu quả.
+Hiểu được các khái niệm cơ bản và động lực đằng sau streaming là điều cần thiết để triển khai hệ thống giao tiếp thời gian thực hiệu quả.
 
-**Streaming** là kỹ thuật trong lập trình mạng cho phép dữ liệu được gửi và nhận theo từng phần nhỏ, dễ quản lý hoặc theo chuỗi sự kiện, thay vì phải đợi toàn bộ phản hồi hoàn chỉnh. Điều này đặc biệt hữu ích cho:
+**Streaming** là kỹ thuật trong lập trình mạng cho phép dữ liệu được gửi và nhận theo từng phần nhỏ, dễ quản lý hoặc theo chuỗi sự kiện, thay vì phải chờ toàn bộ phản hồi sẵn sàng. Điều này đặc biệt hữu ích cho:
 
 - Các tập tin hoặc bộ dữ liệu lớn.
 - Cập nhật thời gian thực (ví dụ: chat, thanh tiến trình).
-- Các tính toán kéo dài mà bạn muốn giữ người dùng được thông báo.
+- Các phép tính lâu dài cần thông báo tiến độ cho người dùng.
 
-Dưới đây là những điều bạn cần biết về streaming ở cấp độ tổng quan:
+Dưới đây là những điểm bạn cần biết về streaming ở mức tổng quan:
 
-- Dữ liệu được truyền dần dần, không phải một lần.
+- Dữ liệu được gửi dần dần, không phải tất cả cùng lúc.
 - Client có thể xử lý dữ liệu ngay khi nhận được.
 - Giảm độ trễ cảm nhận và cải thiện trải nghiệm người dùng.
 
@@ -57,9 +57,9 @@ Dưới đây là những điều bạn cần biết về streaming ở cấp đ
 
 Các lý do sử dụng streaming bao gồm:
 
-- Người dùng nhận được phản hồi ngay lập tức, không chỉ khi kết thúc.
-- Cho phép các ứng dụng thời gian thực và giao diện người dùng phản hồi nhanh.
-- Sử dụng hiệu quả hơn tài nguyên mạng và tính toán.
+- Người dùng nhận phản hồi ngay lập tức, không chỉ khi kết thúc.
+- Cho phép ứng dụng thời gian thực và giao diện người dùng phản hồi nhanh.
+- Sử dụng tài nguyên mạng và tính toán hiệu quả hơn.
 
 ### Ví dụ đơn giản: Server & Client HTTP Streaming
 
@@ -68,7 +68,7 @@ Dưới đây là ví dụ đơn giản về cách triển khai streaming:
 <details>
 <summary>Python</summary>
 
-**Server (Python, sử dụng FastAPI và StreamingResponse):**
+**Server (Python, dùng FastAPI và StreamingResponse):**
 <details>
 <summary>Python</summary>
 
@@ -91,7 +91,7 @@ def stream():
 
 </details>
 
-**Client (Python, sử dụng requests):**
+**Client (Python, dùng requests):**
 <details>
 <summary>Python</summary>
 
@@ -106,16 +106,91 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-Ví dụ này minh họa server gửi một chuỗi thông điệp tới client khi chúng sẵn sàng, thay vì đợi tất cả các thông điệp hoàn chỉnh.
+Ví dụ này minh họa server gửi một chuỗi tin nhắn đến client ngay khi chúng sẵn sàng, thay vì đợi tất cả tin nhắn hoàn tất.
 
 **Cách hoạt động:**
-- Server phát từng thông điệp khi nó sẵn sàng.
-- Client nhận và in từng phần dữ liệu khi nó tới.
+- Server phát từng tin nhắn khi nó sẵn sàng.
+- Client nhận và in từng phần dữ liệu khi đến.
 
 **Yêu cầu:**
-- Server phải sử dụng phản hồi streaming (ví dụ: `StreamingResponse` in FastAPI).
+- Server phải sử dụng phản hồi streaming (ví dụ `StreamingResponse` in FastAPI).
 - The client must process the response as a stream (`stream=True` in requests).
-- Content-Type is usually `text/event-stream` or `application/octet-stream`.
+- Content-Type is usually `text/event-stream` or `application/octet-stream`).
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+**Server (Java, dùng Spring Boot và Server-Sent Events):**
+
+```java
+@RestController
+public class CalculatorController {
+
+    @GetMapping(value = "/calculate", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<ServerSentEvent<String>> calculate(@RequestParam double a,
+                                                   @RequestParam double b,
+                                                   @RequestParam String op) {
+        
+        double result;
+        switch (op) {
+            case "add": result = a + b; break;
+            case "sub": result = a - b; break;
+            case "mul": result = a * b; break;
+            case "div": result = b != 0 ? a / b : Double.NaN; break;
+            default: result = Double.NaN;
+        }
+
+        return Flux.<ServerSentEvent<String>>just(
+                    ServerSentEvent.<String>builder()
+                        .event("info")
+                        .data("Calculating: " + a + " " + op + " " + b)
+                        .build(),
+                    ServerSentEvent.<String>builder()
+                        .event("result")
+                        .data(String.valueOf(result))
+                        .build()
+                )
+                .delayElements(Duration.ofSeconds(1));
+    }
+}
+```
+
+**Client (Java, dùng Spring WebFlux WebClient):**
+
+```java
+@SpringBootApplication
+public class CalculatorClientApplication implements CommandLineRunner {
+
+    private final WebClient client = WebClient.builder()
+            .baseUrl("http://localhost:8080")
+            .build();
+
+    @Override
+    public void run(String... args) {
+        client.get()
+                .uri(uriBuilder -> uriBuilder
+                        .path("/calculate")
+                        .queryParam("a", 7)
+                        .queryParam("b", 5)
+                        .queryParam("op", "mul")
+                        .build())
+                .accept(MediaType.TEXT_EVENT_STREAM)
+                .retrieve()
+                .bodyToFlux(String.class)
+                .doOnNext(System.out::println)
+                .blockLast();
+    }
+}
+```
+
+**Ghi chú triển khai Java:**
+- Sử dụng reactive stack của Spring Boot với `Flux` for streaming
+- `ServerSentEvent` provides structured event streaming with event types
+- `WebClient` with `bodyToFlux()` enables reactive streaming consumption
+- `delayElements()` simulates processing time between events
+- Events can have types (`info`, `result`) for better client handling
 
 </details>
 
@@ -152,21 +227,21 @@ Additionally, here are some key differences:
 
 ### Recommendations
 
-There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream`) thay vì chọn streaming qua MCP.
+There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream`) so với chọn streaming qua MCP.
 
-- **Đối với nhu cầu streaming đơn giản:** Streaming HTTP truyền thống dễ triển khai và đủ dùng cho các nhu cầu cơ bản.
+- **Với nhu cầu streaming đơn giản:** Streaming HTTP cổ điển dễ triển khai và đủ dùng cho các nhu cầu cơ bản.
 
-- **Đối với ứng dụng phức tạp, tương tác:** Streaming MCP cung cấp cách tiếp cận có cấu trúc hơn với metadata phong phú và phân tách giữa thông báo và kết quả cuối cùng.
+- **Với ứng dụng phức tạp, tương tác:** Streaming MCP cung cấp cách tiếp cận có cấu trúc hơn với metadata phong phú và phân tách giữa thông báo và kết quả cuối cùng.
 
-- **Đối với ứng dụng AI:** Hệ thống thông báo của MCP rất hữu ích cho các tác vụ AI chạy lâu, giúp người dùng được cập nhật tiến trình.
+- **Với ứng dụng AI:** Hệ thống thông báo của MCP đặc biệt hữu ích cho các tác vụ AI lâu dài, giúp người dùng được cập nhật tiến độ.
 
 ## Streaming trong MCP
 
-Bạn đã thấy một số khuyến nghị và so sánh về sự khác biệt giữa streaming truyền thống và streaming trong MCP. Bây giờ hãy đi sâu vào chi tiết cách bạn có thể tận dụng streaming trong MCP.
+Bạn đã thấy một số khuyến nghị và so sánh về sự khác biệt giữa streaming cổ điển và streaming trong MCP. Bây giờ hãy đi sâu vào chi tiết cách bạn có thể tận dụng streaming trong MCP.
 
-Hiểu cách streaming hoạt động trong khung MCP là rất quan trọng để xây dựng ứng dụng phản hồi nhanh, cung cấp phản hồi thời gian thực cho người dùng trong các tác vụ chạy lâu.
+Hiểu cách streaming hoạt động trong khung MCP là điều cần thiết để xây dựng ứng dụng phản hồi nhanh, cung cấp phản hồi thời gian thực cho người dùng trong các thao tác chạy lâu.
 
-Trong MCP, streaming không phải là gửi phản hồi chính theo từng phần, mà là gửi **thông báo** tới client trong khi công cụ đang xử lý yêu cầu. Các thông báo này có thể bao gồm cập nhật tiến trình, nhật ký hoặc các sự kiện khác.
+Trong MCP, streaming không phải là gửi phản hồi chính theo từng phần, mà là gửi **thông báo** đến client trong khi công cụ đang xử lý yêu cầu. Các thông báo này có thể bao gồm cập nhật tiến độ, nhật ký hoặc các sự kiện khác.
 
 ### Cách hoạt động
 
@@ -174,13 +249,13 @@ Kết quả chính vẫn được gửi dưới dạng một phản hồi duy nh
 
 ## Thông báo là gì?
 
-Chúng ta đã nói đến "Thông báo", vậy nó có ý nghĩa gì trong ngữ cảnh MCP?
+Chúng ta đã nói về “Thông báo”, vậy nó có nghĩa gì trong ngữ cảnh MCP?
 
-Thông báo là tin nhắn gửi từ server đến client để thông báo về tiến trình, trạng thái hoặc các sự kiện khác trong quá trình thực hiện tác vụ dài. Thông báo giúp tăng tính minh bạch và cải thiện trải nghiệm người dùng.
+Thông báo là một tin nhắn được gửi từ server đến client để thông báo về tiến độ, trạng thái hoặc các sự kiện khác trong quá trình thực hiện thao tác lâu dài. Thông báo giúp tăng tính minh bạch và cải thiện trải nghiệm người dùng.
 
-Ví dụ, client sẽ gửi một thông báo khi quá trình bắt tay (handshake) ban đầu với server đã hoàn thành.
+Ví dụ, client sẽ gửi một thông báo khi quá trình bắt tay ban đầu với server đã hoàn tất.
 
-Thông báo có dạng tin nhắn JSON như sau:
+Một thông báo trông như sau dưới dạng tin nhắn JSON:
 
 ```json
 {
@@ -194,7 +269,7 @@ Thông báo có dạng tin nhắn JSON như sau:
 
 Thông báo thuộc về một chủ đề trong MCP gọi là ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
 
-Để kích hoạt logging, server cần bật tính năng này như sau:
+Để bật logging, server cần kích hoạt tính năng này như sau:
 
 ```json
 {
@@ -205,28 +280,28 @@ Thông báo thuộc về một chủ đề trong MCP gọi là ["Logging"](https
 ```
 
 > [!NOTE]
-> Tùy thuộc vào SDK sử dụng, logging có thể được bật mặc định hoặc bạn cần bật rõ ràng trong cấu hình server.
+> Tùy thuộc SDK được sử dụng, logging có thể được bật mặc định hoặc bạn cần bật rõ ràng trong cấu hình server.
 
-Có nhiều loại thông báo khác nhau:
+Có các loại thông báo khác nhau:
 
-| Mức độ    | Mô tả                         | Ví dụ sử dụng                  |
-|-----------|-------------------------------|-------------------------------|
-| debug     | Thông tin gỡ lỗi chi tiết      | Điểm vào/ra của hàm            |
-| info      | Thông tin chung                | Cập nhật tiến trình hoạt động  |
+| Mức độ    | Mô tả                         | Ví dụ sử dụng               |
+|-----------|-------------------------------|----------------------------|
+| debug     | Thông tin gỡ lỗi chi tiết      | Điểm vào/ra hàm            |
+| info      | Thông tin tổng quát            | Cập nhật tiến độ thao tác   |
 | notice    | Sự kiện bình thường nhưng quan trọng | Thay đổi cấu hình          |
-| warning   | Cảnh báo                      | Sử dụng tính năng đã lỗi thời  |
-| error     | Lỗi                          | Thất bại trong hoạt động       |
-| critical  | Lỗi nghiêm trọng              | Lỗi thành phần hệ thống        |
-| alert     | Cần hành động ngay lập tức    | Phát hiện hỏng dữ liệu         |
-| emergency | Hệ thống không sử dụng được   | Hỏng hoàn toàn hệ thống        |
+| warning   | Điều kiện cảnh báo             | Sử dụng tính năng đã lỗi thời |
+| error     | Lỗi xảy ra                    | Thao tác thất bại          |
+| critical  | Lỗi nghiêm trọng              | Lỗi thành phần hệ thống    |
+| alert     | Cần hành động ngay lập tức     | Phát hiện lỗi dữ liệu       |
+| emergency | Hệ thống không thể sử dụng    | Hỏng hoàn toàn hệ thống    |
 
 ## Triển khai Thông báo trong MCP
 
-Để triển khai thông báo trong MCP, bạn cần thiết lập cả phía server và client để xử lý cập nhật thời gian thực. Điều này cho phép ứng dụng của bạn cung cấp phản hồi ngay lập tức cho người dùng trong các tác vụ chạy lâu.
+Để triển khai thông báo trong MCP, bạn cần thiết lập cả phía server và client để xử lý cập nhật thời gian thực. Điều này cho phép ứng dụng của bạn cung cấp phản hồi ngay lập tức cho người dùng trong các thao tác chạy lâu.
 
 ### Phía server: Gửi Thông báo
 
-Bắt đầu với phía server. Trong MCP, bạn định nghĩa các công cụ có thể gửi thông báo trong khi xử lý yêu cầu. Server sử dụng đối tượng context (thường là `ctx`) để gửi tin nhắn tới client.
+Bắt đầu với phía server. Trong MCP, bạn định nghĩa các công cụ có thể gửi thông báo trong khi xử lý yêu cầu. Server sử dụng đối tượng context (thường là `ctx`) để gửi tin nhắn đến client.
 
 <details>
 <summary>Python</summary>
@@ -243,11 +318,11 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-Trong ví dụ trên, `process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
+Trong ví dụ trên, phương thức `process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
 
 </details>
 
-Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http` truyền tải:
+Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http` được sử dụng:
 
 ```python
 mcp.run(transport="streamable-http")
@@ -255,9 +330,41 @@ mcp.run(transport="streamable-http")
 
 </details>
 
+<details>
+<summary>.NET</summary>
+
+```csharp
+[Tool("A tool that sends progress notifications")]
+public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
+{
+    await ctx.Info("Processing file 1/3...");
+    await ctx.Info("Processing file 2/3...");
+    await ctx.Info("Processing file 3/3...");
+    return new TextContent
+    {
+        Type = "text",
+        Text = $"Done: {message}"
+    };
+}
+```
+
+Trong ví dụ .NET này, phương thức `ProcessFiles` tool is decorated with the `Tool` attribute and sends three notifications to the client as it processes each file. The `ctx.Info()` được dùng để gửi các tin nhắn thông tin.
+
+Để bật thông báo trong server MCP .NET, đảm bảo bạn đang sử dụng cơ chế truyền tải streaming:
+
+```csharp
+var builder = McpBuilder.Create();
+await builder
+    .UseStreamableHttp() // Enable streamable HTTP transport
+    .Build()
+    .RunAsync();
+```
+
+</details>
+
 ### Phía client: Nhận Thông báo
 
-Client phải triển khai bộ xử lý tin nhắn để xử lý và hiển thị các thông báo khi chúng tới.
+Client phải triển khai trình xử lý tin nhắn để xử lý và hiển thị các thông báo khi chúng đến.
 
 <details>
 <summary>Python</summary>
@@ -277,17 +384,51 @@ async with ClientSession(
 ) as session:
 ```
 
-Trong đoạn mã trên, `message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` to handle incoming notifications.
+Trong đoạn mã trên, `message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` được dùng để xử lý các thông báo đến.
 
 </details>
 
-To enable notifications, ensure your server uses a streaming transport (like `streamable-http`) và client của bạn triển khai bộ xử lý tin nhắn để xử lý thông báo.
+<details>
+<summary>.NET</summary>
 
-## Thông báo Tiến trình & Các Tình huống
+```csharp
+// Define a message handler
+void MessageHandler(IJsonRpcMessage message)
+{
+    if (message is ServerNotification notification)
+    {
+        Console.WriteLine($"NOTIFICATION: {notification}");
+    }
+    else
+    {
+        Console.WriteLine($"SERVER MESSAGE: {message}");
+    }
+}
 
-Phần này giải thích khái niệm thông báo tiến trình trong MCP, tại sao chúng quan trọng và cách triển khai chúng sử dụng Streamable HTTP. Bạn cũng sẽ tìm thấy một bài tập thực hành để củng cố kiến thức.
+// Create and use a client session with the message handler
+var clientOptions = new ClientSessionOptions
+{
+    MessageHandler = MessageHandler,
+    LoggingCallback = (level, message) => Console.WriteLine($"[{level}] {message}")
+};
 
-Thông báo tiến trình là các tin nhắn thời gian thực gửi từ server đến client trong các tác vụ chạy lâu. Thay vì đợi toàn bộ quá trình kết thúc, server liên tục cập nhật trạng thái hiện tại cho client. Điều này cải thiện tính minh bạch, trải nghiệm người dùng và giúp dễ dàng gỡ lỗi hơn.
+using var client = new ClientSession(readStream, writeStream, clientOptions);
+await client.InitializeAsync();
+
+// Now the client will process notifications through the MessageHandler
+```
+
+Trong ví dụ .NET này, `MessageHandler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. The `ClientSession` is initialized with the message handler via the `ClientSessionOptions`.
+
+</details>
+
+To enable notifications, ensure your server uses a streaming transport (like `streamable-http`) và client của bạn triển khai trình xử lý tin nhắn để xử lý thông báo.
+
+## Thông báo tiến độ & Các kịch bản
+
+Phần này giải thích khái niệm thông báo tiến độ trong MCP, tại sao chúng quan trọng và cách triển khai chúng bằng Streamable HTTP. Bạn cũng sẽ tìm thấy bài tập thực hành để củng cố kiến thức.
+
+Thông báo tiến độ là các tin nhắn thời gian thực được gửi từ server đến client trong quá trình thực hiện thao tác lâu dài. Thay vì chờ quá trình hoàn tất, server liên tục cập nhật trạng thái hiện tại cho client. Điều này tăng tính minh bạch, cải thiện trải nghiệm người dùng và giúp việc gỡ lỗi dễ dàng hơn.
 
 **Ví dụ:**
 
@@ -300,22 +441,22 @@ Thông báo tiến trình là các tin nhắn thời gian thực gửi từ serv
 
 ```
 
-### Tại sao dùng Thông báo Tiến trình?
+### Tại sao sử dụng thông báo tiến độ?
 
-Thông báo tiến trình quan trọng vì nhiều lý do:
+Thông báo tiến độ quan trọng vì một số lý do sau:
 
-- **Trải nghiệm người dùng tốt hơn:** Người dùng thấy cập nhật khi công việc đang tiến triển, không chỉ khi kết thúc.
-- **Phản hồi thời gian thực:** Client có thể hiển thị thanh tiến trình hoặc nhật ký, làm cho ứng dụng cảm giác phản hồi nhanh.
-- **Dễ gỡ lỗi và giám sát:** Nhà phát triển và người dùng có thể biết được điểm nào trong quá trình có thể chậm hoặc bị kẹt.
+- **Trải nghiệm người dùng tốt hơn:** Người dùng thấy được cập nhật trong quá trình xử lý, không chỉ khi kết thúc.
+- **Phản hồi thời gian thực:** Client có thể hiển thị thanh tiến trình hoặc nhật ký, giúp ứng dụng cảm giác phản hồi nhanh.
+- **Dễ dàng gỡ lỗi và giám sát:** Nhà phát triển và người dùng có thể thấy quá trình đang bị chậm hoặc bị kẹt ở đâu.
 
-### Cách triển khai Thông báo Tiến trình
+### Cách triển khai thông báo tiến độ
 
-Dưới đây là cách bạn có thể triển khai thông báo tiến trình trong MCP:
+Cách bạn có thể triển khai thông báo tiến độ trong MCP:
 
-- **Ở phía server:** Dùng `ctx.info()` or `ctx.log()` để gửi thông báo khi từng mục được xử lý. Điều này gửi tin nhắn tới client trước khi kết quả chính sẵn sàng.
-- **Ở phía client:** Triển khai bộ xử lý tin nhắn lắng nghe và hiển thị thông báo khi chúng tới. Bộ xử lý này phân biệt giữa thông báo và kết quả cuối cùng.
+- **Phía server:** Dùng `ctx.info()` or `ctx.log()` để gửi thông báo khi mỗi mục được xử lý. Điều này gửi tin nhắn đến client trước khi kết quả chính sẵn sàng.
+- **Phía client:** Triển khai trình xử lý tin nhắn lắng nghe và hiển thị thông báo khi chúng đến. Trình xử lý này phân biệt giữa thông báo và kết quả cuối cùng.
 
-**Ví dụ Server:**
+**Ví dụ server:**
 
 <details>
 <summary>Python</summary>
@@ -331,7 +472,7 @@ async def process_files(message: str, ctx: Context) -> TextContent:
 
 </details>
 
-**Ví dụ Client:**
+**Ví dụ client:**
 
 <details>
 <summary>Python</summary>
@@ -346,150 +487,64 @@ async def message_handler(message):
 
 </details>
 
-## Các Xem Xét về Bảo mật
+## Các lưu ý về Bảo mật
 
-Khi triển khai các server MCP với các cơ chế truyền tải dựa trên HTTP, bảo mật trở thành mối quan tâm hàng đầu cần chú ý đến nhiều vectơ tấn công và cơ chế bảo vệ.
+Khi triển khai server MCP với các cơ chế truyền tải dựa trên HTTP, bảo mật trở thành mối quan tâm hàng đầu đòi hỏi chú ý kỹ lưỡng đến nhiều vectơ tấn công và cơ chế bảo vệ.
 
 ### Tổng quan
 
-Bảo mật rất quan trọng khi mở các server MCP qua HTTP. Streamable HTTP tạo ra các bề mặt tấn công mới và cần cấu hình cẩn thận.
+Bảo mật là rất quan trọng khi mở server MCP qua HTTP. Streamable HTTP tạo ra các bề mặt tấn công mới và cần được cấu hình cẩn thận.
 
 ### Các điểm chính
-- **Xác thực Header Origin**: Luôn xác thực `Origin` header to prevent DNS rebinding attacks.
-- **Localhost Binding**: For local development, bind servers to `localhost` to avoid exposing them to the public internet.
-- **Authentication**: Implement authentication (e.g., API keys, OAuth) for production deployments.
-- **CORS**: Configure Cross-Origin Resource Sharing (CORS) policies to restrict access.
-- **HTTPS**: Use HTTPS in production to encrypt traffic.
+- **Xác thực Origin Header**: Luôn xác thực trường `Origin` để ngăn chặn các truy cập không hợp lệ.
+- **Sử dụng HTTPS**: Đảm bảo kết nối được mã hóa và an toàn.
+- **Cấu hình CORS chính xác**: Giới hạn các nguồn được phép truy cập tài nguyên.
+- **Xác thực và phân quyền**: Kiểm soát truy cập đến server và dữ liệu.
+- **Theo dõi và ghi nhật ký**: Giám sát các hoạt động bất thường và tấn công tiềm ẩn.
 
-### Best Practices
-- Never trust incoming requests without validation.
-- Log and monitor all access and errors.
-- Regularly update dependencies to patch security vulnerabilities.
+### Duy trì tương thích
 
-### Challenges
-- Balancing security with ease of development
-- Ensuring compatibility with various client environments
+Khuyến nghị duy trì tương thích với các client SSE hiện có trong quá trình chuyển đổi. Một số chiến lược:
 
-
-## Upgrading from SSE to Streamable HTTP
-
-For applications currently using Server-Sent Events (SSE), migrating to Streamable HTTP provides enhanced capabilities and better long-term sustainability for your MCP implementations.
-
-### Why Upgrade?
-- Streamable HTTP offers better scalability, compatibility, and richer notification support than SSE.
-- It is the recommended transport for new MCP applications.
-
-### Migration Steps
-- **Update server code** to use `transport="streamable-http"` in `mcp.run()`.
-- **Update client code** to use `streamablehttp_client` instead of SSE client.
-- **Implement a message handler** in the client to process notifications.
-- **Test for compatibility** with existing tools and workflows.
-
-### Maintaining Compatibility
-- You can support both SSE and Streamable HTTP by running both transports on different endpoints.
-- Gradually migrate clients to the new transport.
-
-### Challenges
-- Ensuring all clients are updated
-- Handling differences in notification delivery
-
-## Security Considerations
-
-Security should be a top priority when implementing any server, especially when using HTTP-based transports like Streamable HTTP in MCP. 
-
-When implementing MCP servers with HTTP-based transports, security becomes a paramount concern that requires careful attention to multiple attack vectors and protection mechanisms.
-
-### Overview
-
-Security is critical when exposing MCP servers over HTTP. Streamable HTTP introduces new attack surfaces and requires careful configuration.
-
-Here are some key security considerations:
-
-- **Origin Header Validation**: Always validate the `Origin` header to prevent DNS rebinding attacks.
-- **Localhost Binding**: For local development, bind servers to `localhost` to avoid exposing them to the public internet.
-- **Authentication**: Implement authentication (e.g., API keys, OAuth) for production deployments.
-- **CORS**: Configure Cross-Origin Resource Sharing (CORS) policies to restrict access.
-- **HTTPS**: Use HTTPS in production to encrypt traffic.
-
-### Best Practices
-
-Additionally, here are some best practices to follow when implementing security in your MCP streaming server:
-
-- Never trust incoming requests without validation.
-- Log and monitor all access and errors.
-- Regularly update dependencies to patch security vulnerabilities.
-
-### Challenges
-
-You will face some challenges when implementing security in MCP streaming servers:
-
-- Balancing security with ease of development
-- Ensuring compatibility with various client environments
-
-
-## Upgrading from SSE to Streamable HTTP
-
-For applications currently using Server-Sent Events (SSE), migrating to Streamable HTTP provides enhanced capabilities and better long-term sustainability for your MCP implementations.
-
-### Why Upgrade?
-
-There are two compelling reasons to upgrade from SSE to Streamable HTTP:
-
-- Streamable HTTP offers better scalability, compatibility, and richer notification support than SSE.
-- It is the recommended transport for new MCP applications.
-
-### Migration Steps
-
-Here's how you can migrate from SSE to Streamable HTTP in your MCP applications:
-
-1. **Update server code** to use `transport="streamable-http"` in `mcp.run()`.
-2. **Update client code** to use `streamablehttp_client` thay vì client SSE.
-3. **Triển khai bộ xử lý tin nhắn** ở client để xử lý thông báo.
-4. **Kiểm tra tính tương thích** với các công cụ và quy trình hiện có.
-
-### Duy trì Tính tương thích
-
-Khuyến nghị duy trì tương thích với các client SSE hiện có trong quá trình di chuyển. Các chiến lược gồm:
-
-- Bạn có thể hỗ trợ cả SSE và Streamable HTTP bằng cách chạy cả hai cơ chế trên các endpoint khác nhau.
-- Di chuyển dần dần client sang cơ chế truyền tải mới.
+- Hỗ trợ cả SSE và Streamable HTTP bằng cách chạy hai cơ chế truyền tải trên các endpoint khác nhau.
+- Di chuyển dần dần các client sang cơ chế truyền tải mới.
 
 ### Thách thức
 
-Hãy đảm bảo bạn giải quyết các thách thức sau trong quá trình di chuyển:
+Cần giải quyết các thách thức sau trong quá trình chuyển đổi:
 
-- Đảm bảo tất cả client được cập nhật
-- Xử lý sự khác biệt trong việc gửi thông báo
+- Đảm bảo tất cả client được cập nhật.
+- Xử lý sự khác biệt trong việc gửi và nhận thông báo.
 
-### Bài tập: Xây dựng Ứng dụng Streaming MCP của riêng bạn
+### Bài tập: Xây dựng ứng dụng MCP streaming của riêng bạn
 
 **Kịch bản:**
-Xây dựng một server và client MCP, trong đó server xử lý danh sách các mục (ví dụ: file hoặc tài liệu) và gửi một thông báo cho mỗi mục đã xử lý. Client hiển thị từng thông báo khi nó đến.
+Xây dựng server và client MCP trong đó server xử lý một danh sách các mục (ví dụ: tập tin hoặc tài liệu) và gửi một thông báo cho mỗi mục được xử lý. Client sẽ hiển thị từng thông báo ngay khi nhận được.
 
 **Các bước:**
 
-1. Triển khai công cụ server xử lý danh sách và gửi thông báo cho từng mục.
-2. Triển khai client với bộ xử lý tin nhắn để hiển thị thông báo theo thời gian thực.
-3. Kiểm tra triển khai bằng cách chạy cả server và client, quan sát các thông báo.
+1. Triển khai công cụ server xử lý danh sách và gửi thông báo cho mỗi mục.
+2. Triển khai client với trình xử lý tin nhắn để hiển thị thông báo thời gian thực.
+3. Kiểm tra bằng cách chạy đồng thời server và client, quan sát các thông báo.
 
 [Solution](./solution/README.md)
 
-## Đọc thêm & Tiếp theo?
+## Tài liệu tham khảo & Bước tiếp theo?
 
-Để tiếp tục hành trình với streaming MCP và mở rộng kiến thức, phần này cung cấp các tài nguyên bổ sung và các bước tiếp theo gợi ý để xây dựng các ứng dụng nâng cao hơn.
+Để tiếp tục hành trình với MCP streaming và mở rộng kiến thức, phần này cung cấp thêm tài nguyên và gợi ý các bước tiếp theo để xây dựng ứng dụng nâng cao hơn.
 
-### Đọc thêm
+### Tài liệu tham khảo
 
 - [Microsoft: Giới thiệu về HTTP Streaming](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
 - [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
 - [Microsoft: CORS trong ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
 - [Python requests: Streaming Requests](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
 
-### Tiếp theo?
+### Bước tiếp theo?
 
-- Thử xây dựng các công cụ MCP nâng cao hơn sử dụng streaming cho phân tích thời gian thực, chat hoặc chỉnh sửa hợp tác.
-- Khám phá tích hợp streaming MCP với các framework frontend (React, Vue, v.v.) để cập nhật giao diện người dùng trực tiếp.
+- Thử xây dựng các công cụ MCP nâng cao hơn sử dụng streaming cho phân tích thời gian thực, chat hoặc chỉnh sửa cộng tác.
+- Khám phá tích hợp MCP streaming với các framework frontend (React, Vue, v.v.) để cập nhật giao diện người dùng trực tiếp.
 - Tiếp theo: [Sử dụng AI Toolkit cho VSCode](../07-aitk/README.md)
 
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi nỗ lực đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn tham khảo chính xác nhất. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm đối với bất kỳ sự hiểu nhầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được xem là nguồn chính xác và có thẩm quyền. Đối với những thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu nhầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
