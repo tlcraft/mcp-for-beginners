@@ -10,7 +10,7 @@ namespace Calculator.Tools;
 /// that can perform basic arithmetic operations (add, subtract, multiply, divide).
 /// </summary>
 [McpServerToolType]
-public class McpCalculatorServer
+public class CalculatorTool
 {
     [McpServerTool, Description("Calculates the sum of two numbers")]
     public double Add(double numberA, double numberB)
@@ -59,7 +59,7 @@ public class McpCalculatorServer
     }
     
     // Helper method to efficiently check if a number is prime
-    private bool IsPrime(long number)
+    private static bool IsPrime(long number)
     {
         if (number <= 1) return false;
         if (number <= 3) return true;
