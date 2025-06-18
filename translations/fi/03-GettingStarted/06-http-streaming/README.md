@@ -1,65 +1,65 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eda412c63b61335a047f39c44d1b55bc",
-  "translation_date": "2025-06-13T01:45:39+00:00",
+  "original_hash": "1015443af8119fb019c152bca90fb293",
+  "translation_date": "2025-06-17T22:16:56+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "fi"
 }
 -->
-# HTTPS-suoratoisto Model Context Protocolilla (MCP)
+# HTTPS-suoratoisto Model Context Protocolin (MCP) kanssa
 
-Tässä luvussa annetaan kattava opas turvallisen, skaalautuvan ja reaaliaikaisen suoratoiston toteuttamiseen Model Context Protocolin (MCP) avulla HTTPS:n yli. Käsitellään suoratoiston taustaa, käytettävissä olevia siirtomekanismeja, suoratoistettavan HTTP:n toteutusta MCP:ssä, turvallisuusohjeita, siirtymistä SSE:stä sekä käytännön ohjeita oman suoratoistavan MCP-sovelluksen rakentamiseen.
+Tässä luvussa annetaan kattava opas turvallisen, skaalautuvan ja reaaliaikaisen suoratoiston toteuttamiseen Model Context Protocolin (MCP) avulla HTTPS:n yli. Käsitellään suoratoiston taustaa, käytettävissä olevia siirtomekanismeja, streamattavan HTTP:n toteutusta MCP:ssä, turvallisuusohjeita, siirtymistä SSE:stä sekä käytännön ohjeita omien suoratoistavien MCP-sovellusten rakentamiseen.
 
 ## Siirtomekanismit ja suoratoisto MCP:ssä
 
-Tässä osiossa tarkastellaan MCP:ssä käytettävissä olevia eri siirtomekanismeja ja niiden roolia suoratoistomahdollisuuksien tarjoamisessa reaaliaikaiseen viestintään asiakkaiden ja palvelimien välillä.
+Tässä osiossa tarkastellaan MCP:ssä käytettävissä olevia erilaisia siirtomekanismeja ja niiden roolia suoratoisto-ominaisuuksien mahdollistamisessa reaaliaikaiseen viestintään asiakkaiden ja palvelimien välillä.
 
 ### Mikä on siirtomekanismi?
 
-Siirtomekanismi määrittelee, miten dataa vaihdetaan asiakkaan ja palvelimen välillä. MCP tukee useita siirtotyyppejä erilaisiin ympäristöihin ja tarpeisiin:
+Siirtomekanismi määrittelee, miten data vaihtuu asiakkaan ja palvelimen välillä. MCP tukee useita siirtotyyppejä erilaisiin ympäristöihin ja tarpeisiin:
 
-- **stdio**: Standardisyöte/-tulo, sopii paikallisiin ja komentorivityökaluihin. Yksinkertainen, mutta ei sovellu web- tai pilviympäristöihin.
-- **SSE (Server-Sent Events)**: Palvelimet voivat työntää reaaliaikaisia päivityksiä asiakkaille HTTP:n yli. Hyvä web-käyttöliittymiin, mutta skaalautuvuus ja joustavuus ovat rajallisia.
-- **Streamable HTTP**: Moderni HTTP-pohjainen suoratoistomekanismi, tukee ilmoituksia ja parempaa skaalautuvuutta. Suositeltava useimpiin tuotanto- ja pilvikäyttöihin.
+- **stdio**: Standard input/output, sopii paikallisiin ja komentorivityökaluihin. Yksinkertainen, mutta ei sovellu web- tai pilviympäristöihin.
+- **SSE (Server-Sent Events)**: Mahdollistaa palvelimen työntää reaaliaikaisia päivityksiä asiakkaille HTTP:n yli. Hyvä web-käyttöliittymiin, mutta rajallinen skaalautuvuuden ja joustavuuden osalta.
+- **Streamable HTTP**: Moderni HTTP-pohjainen suoratoistosiirto, tukee ilmoituksia ja parempaa skaalautuvuutta. Suositeltava useimpiin tuotanto- ja pilvitilanteisiin.
 
 ### Vertailutaulukko
 
-Tarkastele alla olevaa vertailutaulukkoa ymmärtääksesi näiden siirtomekanismien erot:
+Katso alla oleva vertailutaulukko ymmärtääksesi näiden siirtomekanismien erot:
 
-| Siirto            | Reaaliaikaiset päivitykset | Suoratoisto | Skaalautuvuus | Käyttötarkoitus           |
-|-------------------|----------------------------|-------------|---------------|--------------------------|
-| stdio             | Ei                         | Ei          | Matala        | Paikalliset komentorivityökalut |
+| Siirto            | Reaaliaikaiset päivitykset | Suoratoisto | Skaalautuvuus | Käyttötarkoitus          |
+|-------------------|----------------------------|-------------|---------------|-------------------------|
+| stdio             | Ei                         | Ei          | Matala        | Paikalliset CLI-työkalut|
 | SSE               | Kyllä                      | Kyllä       | Keskitaso     | Web, reaaliaikaiset päivitykset |
-| Streamable HTTP   | Kyllä                      | Kyllä       | Korkea        | Pilvi, moniasiakasympäristöt |
+| Streamable HTTP   | Kyllä                      | Kyllä       | Korkea        | Pilvi, moniasiakas       |
 
-> **Vinkki:** Oikean siirtomekanismin valinta vaikuttaa suorituskykyyn, skaalautuvuuteen ja käyttökokemukseen. **Streamable HTTP** on suositeltava nykyaikaisiin, skaalautuviin ja pilvivalmiisiin sovelluksiin.
+> **Vinkki:** Oikean siirtomekanismin valinta vaikuttaa suorituskykyyn, skaalautuvuuteen ja käyttökokemukseen. **Streamable HTTP** on suositeltava nykyaikaisiin, skaalautuviin ja pilviyhteensopiviin sovelluksiin.
 
-Huomaa aiemmissa luvuissa esitellyt stdio- ja SSE-siirrot sekä tässä luvussa käsitelty streamable HTTP -siirto.
+Huomaa edellisissä luvuissa esitellyt stdio ja SSE siirtomekanismit sekä se, että tässä luvussa käsitellään streamable HTTP -siirtoa.
 
-## Suoratoisto: käsitteet ja motivaatio
+## Suoratoisto: käsitteet ja tausta
 
-Suoratoiston peruskäsitteiden ja motiivien ymmärtäminen on olennaista tehokkaiden reaaliaikaisten viestintäjärjestelmien toteuttamiseksi.
+Peruskäsitteiden ja suoratoiston taustan ymmärtäminen on olennaista tehokkaiden reaaliaikaisten viestintäjärjestelmien toteuttamiseksi.
 
-**Suoratoisto** on verkkosovellusohjelmoinnissa käytetty tekniikka, jossa dataa lähetetään ja vastaanotetaan pienissä, hallittavissa osissa tai tapahtumina sarjana sen sijaan, että odotettaisiin koko vastauksen valmistumista. Tämä on erityisen hyödyllistä:
+**Suoratoisto** on verkko-ohjelmoinnin tekniikka, jossa dataa lähetetään ja vastaanotetaan pieninä, hallittavina paloina tai tapahtumina sen sijaan, että odotettaisiin koko vastauksen valmistumista. Tämä on erityisen hyödyllistä:
 
 - Suurten tiedostojen tai tietoaineistojen käsittelyssä.
-- Reaaliaikaisissa päivityksissä (esim. chat, etenemispalkit).
-- Pitkään kestävissä laskutoimituksissa, joissa käyttäjää halutaan pitää ajan tasalla.
+- Reaaliaikaisissa päivityksissä (esim. chat, edistymispalkit).
+- Pitkäkestoisissa laskutoimituksissa, joissa käyttäjälle halutaan antaa jatkuvaa tietoa.
 
 Tässä tärkeimmät asiat suoratoistosta yleisellä tasolla:
 
-- Data toimitetaan asteittain, ei kerralla.
+- Data toimitetaan vaiheittain, ei kerralla.
 - Asiakas voi käsitellä dataa sitä mukaa kun se saapuu.
 - Vähentää koettua viivettä ja parantaa käyttökokemusta.
 
 ### Miksi käyttää suoratoistoa?
 
-Suoratoiston käyttämisen syyt ovat seuraavat:
+Suoratoiston käytön syyt ovat seuraavat:
 
-- Käyttäjä saa palautetta heti, ei vasta lopussa.
-- Mahdollistaa reaaliaikaiset sovellukset ja reagoivat käyttöliittymät.
-- Tehokkaampi verkon ja laskentaresurssien käyttö.
+- Käyttäjät saavat palautetta välittömästi, eivät vain lopussa
+- Mahdollistaa reaaliaikaiset sovellukset ja responsiiviset käyttöliittymät
+- Tehokkaampi verkon ja laskentaresurssien käyttö
 
 ### Yksinkertainen esimerkki: HTTP-suoratoistopalvelin ja asiakas
 
@@ -91,7 +91,7 @@ def stream():
 
 </details>
 
-**Asiakas (Python, requests-kirjasto):**
+**Asiakas (Python, requests):**
 <details>
 <summary>Python</summary>
 
@@ -106,13 +106,13 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-Tässä esimerkissä palvelin lähettää sarjan viestejä asiakkaalle sitä mukaa kun ne ovat valmiita, sen sijaan että odotettaisiin kaikkien viestien valmistumista.
+Tässä esimerkissä palvelin lähettää sarjan viestejä asiakkaalle sitä mukaa kun ne valmistuvat sen sijaan, että odottaisi kaikkien viestien valmistumista.
 
-**Toimintaperiaate:**
-- Palvelin tuottaa jokaisen viestin heti kun se on valmis.
-- Asiakas vastaanottaa ja tulostaa jokaisen osan sitä mukaa kun se saapuu.
+**Miten se toimii:**
+- Palvelin tuottaa jokaisen viestin sitä mukaa kun se on valmis.
+- Asiakas vastaanottaa ja tulostaa jokaisen palan sitä mukaa kun se saapuu.
 
-**Vaadittavaa:**
+**Vaadittavat asiat:**
 - Palvelimen tulee käyttää suoratoistovastausta (esim. `StreamingResponse` in FastAPI).
 - The client must process the response as a stream (`stream=True` in requests).
 - Content-Type is usually `text/event-stream` or `application/octet-stream`.
@@ -152,33 +152,33 @@ Additionally, here are some key differences:
 
 ### Recommendations
 
-There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream`) eikä valita suoratoistoa MCP:n kautta.
+There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream`) sen sijaan, että valitsee suoratoiston MCP:n kautta.
 
-- **Yksinkertaisiin suoratoistotarpeisiin:** Perinteinen HTTP-suoratoisto on helpompi toteuttaa ja riittää perustoimintoihin.
+- **Yksinkertaisiin suoratoistotarpeisiin:** Klassinen HTTP-suoratoisto on helpompi toteuttaa ja riittää peruskäyttöön.
 
-- **Monimutkaisiin, vuorovaikutteisiin sovelluksiin:** MCP-suoratoisto tarjoaa rakenteellisemman lähestymistavan, jossa on rikkaampaa metatietoa sekä ilmoitusten ja lopputulosten erottelu.
+- **Monimutkaisiin, interaktiivisiin sovelluksiin:** MCP-suoratoisto tarjoaa rakenteellisemman lähestymistavan, jossa on rikkaampi metadata ja erottelu ilmoitusten ja lopullisten tulosten välillä.
 
-- **AI-sovelluksiin:** MCP:n ilmoitusjärjestelmä on erityisen hyödyllinen pitkissä tekoälytehtävissä, joissa käyttäjälle halutaan välittää etenemispäivityksiä.
+- **AI-sovelluksiin:** MCP:n ilmoitusjärjestelmä on erityisen hyödyllinen pitkäkestoisissa tekoälytehtävissä, joissa halutaan pitää käyttäjät ajan tasalla edistymisestä.
 
 ## Suoratoisto MCP:ssä
 
-Olet nähnyt suosituksia ja vertailuja perinteisen suoratoiston ja MCP-suoratoiston välillä. Käydään nyt tarkemmin läpi, miten voit hyödyntää suoratoistoa MCP:ssä.
+Olet nähnyt tähän mennessä suosituksia ja vertailuja klassisen suoratoiston ja MCP-suoratoiston välillä. Tarkastellaan nyt tarkemmin, miten suoratoistoa voi hyödyntää MCP:ssä.
 
-Suoratoiston toimintatavan ymmärtäminen MCP-kehyksessä on tärkeää, jotta voit rakentaa reagoivia sovelluksia, jotka tarjoavat reaaliaikaista palautetta käyttäjille pitkien operaatioiden aikana.
+MCP-kehyksen sisällä suoratoiston ymmärtäminen on tärkeää, jotta voi rakentaa responsiivisia sovelluksia, jotka tarjoavat reaaliaikaista palautetta käyttäjille pitkäkestoisten operaatioiden aikana.
 
-MCP:ssä suoratoisto ei tarkoita päävastauksen lähettämistä paloissa, vaan **ilmoitusten** lähettämistä asiakkaalle työkalun käsitellessä pyyntöä. Nämä ilmoitukset voivat sisältää etenemispäivityksiä, lokitietoja tai muita tapahtumia.
+MCP:ssä suoratoisto ei tarkoita päävastauksen lähettämistä paloissa, vaan **ilmoitusten** lähettämistä asiakkaalle työkalun käsitellessä pyyntöä. Nämä ilmoitukset voivat sisältää edistymispäivityksiä, lokeja tai muita tapahtumia.
 
 ### Miten se toimii
 
-Pääasiallinen tulos lähetetään edelleen yhtenä vastauksena. Ilmoitukset sen sijaan voidaan lähettää erillisinä viesteinä prosessoinnin aikana, jolloin asiakas saa päivityksiä reaaliajassa. Asiakkaan tulee osata käsitellä ja näyttää nämä ilmoitukset.
+Pääasiallinen tulos lähetetään yhä yhtenä vastauksena. Ilmoituksia voidaan kuitenkin lähettää erillisinä viesteinä käsittelyn aikana, jolloin asiakas saa päivityksiä reaaliajassa. Asiakkaan on kyettävä käsittelemään ja näyttämään nämä ilmoitukset.
 
 ## Mikä on ilmoitus?
 
-Käytimme termiä "ilmoitus" – mitä se tarkoittaa MCP:n yhteydessä?
+Käytimme termiä "ilmoitus", mutta mitä se tarkoittaa MCP:n yhteydessä?
 
-Ilmoitus on palvelimen lähettämä viesti asiakkaalle, joka kertoo etenemisestä, tilasta tai muista tapahtumista pitkän prosessin aikana. Ilmoitukset parantavat läpinäkyvyyttä ja käyttökokemusta.
+Ilmoitus on palvelimen lähettämä viesti asiakkaalle, joka tiedottaa edistymisestä, tilasta tai muista tapahtumista pitkäkestoisen operaation aikana. Ilmoitukset lisäävät läpinäkyvyyttä ja parantavat käyttökokemusta.
 
-Esimerkiksi asiakas voi lähettää ilmoituksen heti, kun aloitusyhteys palvelimeen on muodostettu.
+Esimerkiksi asiakkaan tulee lähettää ilmoitus, kun alkuperäinen yhteyden muodostus palvelimeen on tehty.
 
 Ilmoitus näyttää JSON-viestiltä seuraavasti:
 
@@ -192,9 +192,9 @@ Ilmoitus näyttää JSON-viestiltä seuraavasti:
 }
 ```
 
-Ilmoitukset kuuluvat MCP:n aihealueeseen nimeltä ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
+Ilmoitukset kuuluvat MCP:n aiheeseen, jota kutsutaan ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
 
-Lokituksen toimimiseksi palvelimen täytyy ottaa se käyttöön ominaisuutena/kyvykkyytenä näin:
+Jotta lokitus toimisi, palvelimen täytyy ottaa se käyttöön ominaisuutena/kyvykkyytenä seuraavasti:
 
 ```json
 {
@@ -205,28 +205,28 @@ Lokituksen toimimiseksi palvelimen täytyy ottaa se käyttöön ominaisuutena/ky
 ```
 
 > [!NOTE]
-> Käytetystä SDK:sta riippuen lokitus voi olla oletuksena päällä tai se pitää ottaa erikseen käyttöön palvelimen asetuksissa.
+> Käytetystä SDK:sta riippuen lokitus saattaa olla oletuksena päällä tai se pitää erikseen ottaa käyttöön palvelimen asetuksissa.
 
-Ilmoituksia on useita tyyppejä:
+Ilmoituksia on eri tasoja:
 
-| Taso       | Kuvaus                        | Esimerkkikäyttö                |
-|------------|------------------------------|-------------------------------|
-| debug      | Yksityiskohtainen virheenkorjaustieto | Funktioiden sisään-/ulosmenot  |
-| info       | Yleiset informatiiviset viestit | Toiminnon etenemispäivitykset  |
-| notice     | Normaaleja, mutta merkittäviä tapahtumia | Konfiguraatiomuutokset         |
-| warning    | Varoitustilanteet             | Käytöstä poistettujen ominaisuuksien käyttö |
-| error      | Virhetilanteet               | Toimintojen epäonnistumiset    |
-| critical   | Kriittiset tilanteet          | Järjestelmän osien vikatilanteet |
-| alert      | Toimenpiteitä vaativa välitön tilanne | Tiedon korruptio havaittu      |
-| emergency  | Järjestelmä käyttökelvoton   | Täydellinen järjestelmän kaatuminen |
+| Taso      | Kuvaus                         | Esimerkkikäyttö               |
+|-----------|--------------------------------|------------------------------|
+| debug     | Yksityiskohtaiset virheenkorjaustiedot | Funktioiden sisään-/uloskäynnit |
+| info      | Yleiset informatiiviset viestit | Toiminnon edistymispäivitykset |
+| notice    | Normaaleja mutta merkittäviä tapahtumia | Konfiguraatiomuutokset       |
+| warning   | Varoitustilanteita             | Vanhentuneen ominaisuuden käyttö |
+| error     | Virhetilanteita                | Toiminnon epäonnistumiset     |
+| critical  | Kriittisiä tiloja              | Järjestelmäkomponenttien virheet |
+| alert     | Välitöntä toimintaa vaativa tilanne | Tiedon korruptio havaittu    |
+| emergency | Järjestelmä ei käytettävissä   | Täydellinen järjestelmävika  |
 
 ## Ilmoitusten toteutus MCP:ssä
 
-Ilmoitusten toteuttamiseksi MCP:ssä sinun tulee valmistella sekä palvelin- että asiakaspuolet käsittelemään reaaliaikaisia päivityksiä. Näin sovelluksesi voi antaa välitöntä palautetta käyttäjälle pitkien operaatioiden aikana.
+Ilmoitusten toteuttamiseksi MCP:ssä on asetettava sekä palvelin- että asiakaspuolet käsittelemään reaaliaikaisia päivityksiä. Tämä mahdollistaa sovelluksellesi välittömän palautteen antamisen käyttäjille pitkäkestoisten operaatioiden aikana.
 
 ### Palvelinpuoli: Ilmoitusten lähettäminen
 
-Aloitetaan palvelinpuolelta. MCP:ssä määrittelet työkaluja, jotka voivat lähettää ilmoituksia käsitellessään pyyntöjä. Palvelin käyttää kontekstioliota (yleensä `ctx`) lähettääkseen viestejä asiakkaalle.
+Aloitetaan palvelinpuolelta. MCP:ssä määritellään työkaluja, jotka voivat lähettää ilmoituksia pyynnön käsittelyn aikana. Palvelin käyttää konteksti-oliota (yleensä `ctx`) viestien lähettämiseen asiakkaalle.
 
 <details>
 <summary>Python</summary>
@@ -247,7 +247,7 @@ Edellisessä esimerkissä `process_files` tool sends three notifications to the 
 
 </details>
 
-Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http` -siirrossa:
+Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http` siirrossa:
 
 ```python
 mcp.run(transport="streamable-http")
@@ -257,7 +257,7 @@ mcp.run(transport="streamable-http")
 
 ### Asiakaspuoli: Ilmoitusten vastaanottaminen
 
-Asiakkaan täytyy toteuttaa viestinkäsittelijä, joka käsittelee ja näyttää ilmoitukset sitä mukaa kun ne saapuvat.
+Asiakkaan on toteutettava viestinkäsittelijä, joka prosessoi ja näyttää ilmoitukset sitä mukaa kun ne saapuvat.
 
 <details>
 <summary>Python</summary>
@@ -281,13 +281,13 @@ Edellisessä koodissa `message_handler` function checks if the incoming message 
 
 </details>
 
-To enable notifications, ensure your server uses a streaming transport (like `streamable-http`) ja asiakkaasi toteuttaa viestinkäsittelijän ilmoitusten käsittelyyn.
+To enable notifications, ensure your server uses a streaming transport (like `streamable-http` ja asiakas toteuttaa viestinkäsittelijän ilmoitusten prosessointiin.
 
-## Etenemisilmoitukset ja käyttötapaukset
+## Edistymisilmoitukset ja käyttötapaukset
 
-Tässä osiossa selitetään etenemisilmoitusten käsite MCP:ssä, miksi ne ovat tärkeitä ja miten ne toteutetaan Streamable HTTP:n avulla. Löydät myös käytännön harjoituksen ymmärryksesi vahvistamiseksi.
+Tässä osiossa selitetään edistymisilmoitusten käsite MCP:ssä, miksi ne ovat tärkeitä ja miten ne toteutetaan Streamable HTTP:n avulla. Lisäksi mukana on käytännön harjoitus ymmärryksen vahvistamiseksi.
 
-Etenemisilmoitukset ovat reaaliaikaisia viestejä, joita palvelin lähettää asiakkaalle pitkien operaatioiden aikana. Sen sijaan että odotettaisiin koko prosessin valmistumista, palvelin pitää asiakkaan ajan tasalla nykytilanteesta. Tämä parantaa läpinäkyvyyttä, käyttökokemusta ja helpottaa virheiden jäljittämistä.
+Edistymisilmoitukset ovat reaaliaikaisia viestejä, joita palvelin lähettää asiakkaalle pitkäkestoisten operaatioiden aikana. Sen sijaan, että odotettaisiin koko prosessin valmistumista, palvelin pitää asiakkaan ajan tasalla nykytilanteesta. Tämä parantaa läpinäkyvyyttä, käyttökokemusta ja helpottaa virheiden etsintää.
 
 **Esimerkki:**
 
@@ -300,22 +300,22 @@ Etenemisilmoitukset ovat reaaliaikaisia viestejä, joita palvelin lähettää as
 
 ```
 
-### Miksi käyttää etenemisilmoituksia?
+### Miksi käyttää edistymisilmoituksia?
 
-Etenemisilmoitukset ovat tärkeitä useista syistä:
+Edistymisilmoitukset ovat tärkeitä monesta syystä:
 
-- **Parempi käyttökokemus:** Käyttäjät näkevät päivitykset työn edetessä, eivät vain lopussa.
-- **Reaaliaikainen palaute:** Asiakkaat voivat näyttää etenemispalkkeja tai lokeja, mikä tekee sovelluksesta reagoivan.
-- **Helpompi virheiden seuranta ja valvonta:** Kehittäjät ja käyttäjät näkevät missä vaiheessa prosessi saattaa hidastua tai jumittua.
+- **Parempi käyttökokemus:** Käyttäjät näkevät päivityksiä työn edetessä, eivät vain lopussa.
+- **Reaaliaikainen palaute:** Asiakkaat voivat näyttää edistymispalkkeja tai lokiviestejä, mikä tekee sovelluksesta responsiivisen.
+- **Helpompi virheiden etsintä ja seuranta:** Kehittäjät ja käyttäjät näkevät, missä vaiheessa prosessi saattaa hidastua tai jumiutua.
 
-### Miten toteuttaa etenemisilmoitukset
+### Miten toteuttaa edistymisilmoitukset
 
-Näin voit toteuttaa etenemisilmoitukset MCP:ssä:
+Näin voit toteuttaa edistymisilmoitukset MCP:ssä:
 
-- **Palvelimella:** Käytä `ctx.info()` or `ctx.log()` lähettääksesi ilmoituksia sitä mukaa kun kukin kohde käsitellään. Tämä lähettää viestin asiakkaalle ennen päävastauksen valmistumista.
-- **Asiakkaalla:** Toteuta viestinkäsittelijä, joka kuuntelee ja näyttää ilmoitukset saapuessaan. Tämä käsittelijä erottaa ilmoitukset ja lopullisen tuloksen.
+- **Palvelimella:** Käytä `ctx.info()` or `ctx.log()` lähettääksesi ilmoituksia sitä mukaa kun kohteita käsitellään. Tämä lähettää viestin asiakkaalle ennen lopullisen tuloksen valmistumista.
+- **Asiakkaalla:** Toteuta viestinkäsittelijä, joka kuuntelee ja näyttää ilmoitukset sitä mukaa kun ne saapuvat. Käsittelijä erottaa ilmoitukset lopullisesta tuloksesta.
 
-**Palvelinesimerkki:**
+**Palvelin-esimerkki:**
 
 <details>
 <summary>Python</summary>
@@ -348,14 +348,14 @@ async def message_handler(message):
 
 ## Turvallisuusnäkökohdat
 
-Kun toteutat MCP-palvelimia HTTP-pohjaisilla siirroilla, turvallisuus on ensiarvoisen tärkeää ja vaatii huolellista huomiointia moniin hyökkäysvektoreihin ja suojausmekanismeihin.
+MCP-palvelimien toteuttamisessa HTTP-pohjaisten siirtojen kanssa turvallisuus on ensiarvoisen tärkeää ja vaatii huolellista huomiointia useiden hyökkäysvektorien ja suojamekanismien osalta.
 
 ### Yleiskatsaus
 
-Turvallisuus on kriittistä MCP-palvelimia HTTP:n yli tarjottaessa. Streamable HTTP tuo uusia hyökkäyspintoja ja vaatii tarkkaa konfigurointia.
+Turvallisuus on kriittinen tekijä, kun MCP-palvelimet altistetaan HTTP:n yli. Streamable HTTP avaa uusia hyökkäyspintoja ja vaatii huolellisen konfiguroinnin.
 
-### Keskeiset kohdat
-- **Origin-otsikon tarkistus:** Tarkista aina `Origin` header to prevent DNS rebinding attacks.
+### Keskeiset asiat
+- **Origin-headerin validointi**: Tarkista aina `Origin` header to prevent DNS rebinding attacks.
 - **Localhost Binding**: For local development, bind servers to `localhost` to avoid exposing them to the public internet.
 - **Authentication**: Implement authentication (e.g., API keys, OAuth) for production deployments.
 - **CORS**: Configure Cross-Origin Resource Sharing (CORS) policies to restrict access.
@@ -444,52 +444,52 @@ Here's how you can migrate from SSE to Streamable HTTP in your MCP applications:
 
 1. **Update server code** to use `transport="streamable-http"` in `mcp.run()`.
 2. **Update client code** to use `streamablehttp_client` SSE-asiakkaan sijaan.
-3. **Toteuta viestinkäsittelijä** asiakkaalle ilmoitusten käsittelyä varten.
+3. **Toteuta viestinkäsittelijä** asiakkaalle ilmoitusten käsittelyyn.
 4. **Testaa yhteensopivuus** olemassa olevien työkalujen ja työnkulkujen kanssa.
 
 ### Yhteensopivuuden ylläpito
 
-Suositellaan ylläpitämään yhteensopivuus nykyisten SSE-asiakkaiden kanssa siirtymävaiheen ajan. Tässä joitakin strategioita:
+On suositeltavaa ylläpitää yhteensopivuutta olemassa olevien SSE-asiakkaiden kanssa siirtymävaiheen aikana. Tässä muutamia strategioita:
 
 - Voit tukea sekä SSE:tä että Streamable HTTP:ta ajamalla molempia eri päätepisteissä.
-- Siirrä asiakkaita vähitellen uuteen siirtotapaan.
+- Siirrä asiakkaita asteittain uuteen siirtotapaan.
 
 ### Haasteet
 
-Varmista, että otat huomioon seuraavat haasteet siirtymävaiheessa:
+Huolehdi seuraavista haasteista siirtymän aikana:
 
 - Kaikkien asiakkaiden päivittäminen
-- Ilmoitusten toimituksen eroavaisuuksien hallinta
+- Erojen hallinta ilmoitusten toimituksessa
 
 ### Harjoitus: Rakenna oma suoratoistava MCP-sovellus
 
 **Tilanne:**
-Rakenna MCP-palvelin ja asiakas, jossa palvelin käsittelee listan kohteita (esim. tiedostoja tai dokumentteja) ja lähettää ilmoituksen jokaisen käsitellyn kohteen jälkeen. Asiakkaan tulee näyttää ilmoitukset sitä mukaa kun ne saapuvat.
+Rakenna MCP-palvelin ja asiakas, jossa palvelin käsittelee listan kohteita (esim. tiedostoja tai dokumentteja) ja lähettää ilmoituksen jokaisen käsitellyn kohteen jälkeen. Asiakkaan tulee näyttää jokainen ilmoitus sitä mukaa kun se saapuu.
 
 **Vaiheet:**
 
 1. Toteuta palvelintyökalu, joka käsittelee listan ja lähettää ilmoituksia jokaisesta kohteesta.
-2. Toteuta asiakas, jossa on viestinkäsittelijä ilmoitusten reaaliaikaista näyttämistä varten.
+2. Toteuta asiakas, jolla on viestinkäsittelijä ilmoitusten reaaliaikaiseen näyttämiseen.
 3. Testaa toteutustasi ajamalla sekä palvelin että asiakas ja seuraa ilmoituksia.
 
 [Ratkaisu](./solution/README.md)
 
 ## Lisälukemista & Mitä seuraavaksi?
 
-Jatka MCP-suoratoiston opiskelua ja laajenna osaamistasi tämän osion tarjoamien lisäresurssien ja suositeltujen seuraavien askelten avulla kehittyneempien sovellusten rakentamiseksi.
+Jatka matkaasi MCP-suoratoiston parissa ja laajenna osaamistasi tämän osion tarjoamien lisäresurssien ja ehdotettujen seuraavien askelten avulla edistyneempien sovellusten rakentamiseksi.
 
 ### Lisälukemista
 
 - [Microsoft: Johdatus HTTP-suoratoistoon](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
 - [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
-- [Microsoft: CORS ASP.NET Core -sovelluksissa](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
-- [Python requests: Streaming Requests](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
+- [Microsoft: CORS ASP.NET Core:ssa](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
+- [Python requests: Suoratoistopyynnöt](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
 
 ### Mitä seuraavaksi?
 
-- Kokeile rakentaa kehittyneempiä MCP-työkaluja, jotka käyttävät suoratoistoa reaaliaikaiseen analytiikkaan, chattiin tai yhteismuokkaukseen.
-- Tutki MCP-suoratoiston yhdistämistä frontend-kehyksiin (React, Vue jne.) live-käyttöliittymäpäivityksiä varten.
+- Kokeile rakentaa edistyneempiä MCP-työkaluja, jotka käyttävät suoratoistoa reaaliaikaisessa analytiikassa, chatissa tai yhteismuokkauksessa.
+- Tutustu MCP-suoratoiston integrointiin frontend-kehyksiin (React, Vue jne.) live-käyttöliittymäpäivityksiä varten.
 - Seuraavaksi: [AI Toolkitin hyödyntäminen VSCode:ssa](../07-aitk/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä on pidettävä virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa mahdollisista väärinymmärryksistä tai tulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää ensisijaisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinkäsityksistä tai virhetulkinnoista.

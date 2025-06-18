@@ -1,73 +1,73 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "64645691bf0985f1760b948123edf269",
-  "translation_date": "2025-06-13T10:55:47+00:00",
+  "original_hash": "1681ca3633aeb49ee03766abdbb94a93",
+  "translation_date": "2025-06-17T22:23:58+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "sw"
 }
 -->
-Sasa tunapojua kidogo zaidi kuhusu SSE, hebu tujenge server ya SSE sasa.
+Sasa tunapojua kidogo zaidi kuhusu SSE, hebu tujenge seva ya SSE.
 
-## Zoefu: Kuunda Server ya SSE
+## Zoef: Kuunda Seva ya SSE
 
-Ili kuunda server yetu, tunahitaji kuzingatia mambo mawili:
+Ili kuunda seva yetu, tunahitaji kumbuka mambo mawili:
 
-- Tunahitaji kutumia web server kufungua endpoints za muunganisho na ujumbe.
-- Jenga server yetu kama kawaida tunavyofanya kwa kutumia zana, rasilimali na maelekezo tulipokuwa tunatumia stdio.
+- Tunahitaji kutumia seva ya wavuti kufungua njia za kuunganishwa na ujumbe.
+- Jenga seva yetu kama kawaida tunavyofanya kwa kutumia zana, rasilimali na maelekezo tulipokuwa tunatumia stdio.
 
-### -1- Unda mfano wa server
+### -1- Tengeneza mfano wa seva
 
-Ili kuunda server yetu, tunatumia aina sawa na ile ya stdio. Hata hivyo, kwa usafirishaji, tunahitaji kuchagua SSE.
+Ili kuunda seva yetu, tunatumia aina zile zile kama kwa stdio. Hata hivyo, kwa usafirishaji, tunahitaji kuchagua SSE.
 
 Hebu tuongeze njia zinazohitajika sasa.
 
 ### -2- Ongeza njia
 
-Hebu tuongeze njia zinazoshughulikia muunganisho na ujumbe unaokuja:
+Tuongeze njia zinazoshughulikia muunganisho na ujumbe unaokuja:
 
-Sasa tuongeze uwezo kwa server.
+Hebu tuongeze uwezo kwa seva sasa.
 
-### -3- Kuongeza uwezo wa server
+### -3- Kuongeza uwezo wa seva
 
-Sasa tumeeleza kila kitu maalum kwa SSE, tuongeze uwezo wa server kama zana, maelekezo na rasilimali.
+Sasa tunapokuwa tumedefine kila kitu kinachohusiana na SSE, tuongeze uwezo wa seva kama zana, maelekezo na rasilimali.
 
-Msimbo wako mzima unapaswa kuonekana kama ifuatavyo:
+Msimbo wako kamili unapaswa kuonekana kama huu:
 
-Nzuri, tuna server inayotumia SSE, hebu tuijaribu sasa.
+Nzuri, tuna seva inayotumia SSE, hebu tujaribu sasa.
 
-## Zoefu: Kurekebisha Server ya SSE kwa kutumia Inspector
+## Zoef: Kufuatilia kosa la Seva ya SSE kwa Inspector
 
-Inspector ni zana nzuri tuliyoiona katika somo la awali [Kuunda server yako ya kwanza](/03-GettingStarted/01-first-server/README.md). Hebu tazame kama tunaweza kutumia Inspector hata hapa:
+Inspector ni zana nzuri tuliyoiona katika somo la awali [Kuunda seva yako ya kwanza](/03-GettingStarted/01-first-server/README.md). Hebu tuone kama tunaweza kutumia Inspector hata hapa:
 
 ### -1- Kuendesha inspector
 
-Ili kuendesha inspector, kwanza lazima uwe na server ya SSE inayoendesha, kwa hiyo hebu tufanye hivyo sasa:
+Ili kuendesha inspector, kwanza lazima seva ya SSE iwe inafanya kazi, kwa hiyo hebu fanya hivyo sasa:
 
-1. Endesha server
+1. Endesha seva
 
 1. Endesha inspector
 
     > ![NOTE]
-    > Endesha hii kwenye dirisha tofauti la terminal tofauti na ile server inayoendesha. Pia kumbuka, unahitaji kurekebisha amri ifuatayo ili iendane na URL ambapo server yako inaendesha.
+    > Endesha hii katika dirisha tofauti la terminal kuliko ile seva inayoendesha. Pia kumbuka, unahitaji kurekebisha amri iliyo chini ili ifanane na URL ambapo seva yako inaendesha.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-Kuendesha inspector kunaonekana sawa katika mazingira yote ya runtime. Angalia jinsi badala ya kupitisha njia ya server yetu na amri ya kuanzisha server tunapita URL ambapo server inaendesha na pia tunabainisha njia `/sse`.
+    Kuendesha inspector kunaonekana sawa katika mazingira yote ya utekelezaji. Angalia jinsi badala ya kutoa njia ya seva yetu na amri ya kuanzisha seva tunatoa URL ambapo seva inaendesha na pia tunabainisha njia `/sse`.
 
-### -2- Kuijaribu zana
+### -2- Kuangalia zana
 
-Unganisha server kwa kuchagua SSE kwenye droplist na jaza sehemu ya url ambapo server yako inaendesha, kwa mfano http:localhost:4321/sse. Sasa bonyeza kitufe cha "Connect". Kama awali, chagua kuorodhesha zana, chagua zana na toa maingizo. Unapaswa kuona matokeo kama ifuatavyo:
+Unganisha seva kwa kuchagua SSE kwenye orodha ya kushuka na jaza sehemu ya url ambapo seva yako inaendesha, kwa mfano http:localhost:4321/sse. Sasa bonyeza kitufe cha "Connect". Kama awali, chagua kuorodhesha zana, chagua zana na toa thamani za ingizo. Unapaswa kuona matokeo kama ifuatavyo:
 
-![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.sw.png)
+![Seva ya SSE ikifanya kazi katika inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.sw.png)
 
-Nzuri, unaweza kutumia inspector, hebu tazame jinsi tunavyoweza kutumia Visual Studio Code sasa.
+Nzuri, unaweza kufanya kazi na inspector, hebu tuone jinsi ya kufanya kazi na Visual Studio Code sasa.
 
 ## Kazi ya Nyumbani
 
-Jaribu kuendeleza server yako na uwezo zaidi. Tazama [ukurasa huu](https://api.chucknorris.io/) kwa mfano kuongeza zana inayopiga API, wewe uamuzi server itakuwaje. Furahia :)
+Jaribu kujenga seva yako na uwezo zaidi. Angalia [ukurasa huu](https://api.chucknorris.io/) kuongeza, kwa mfano, zana inayopiga API. Uamuzi ni wako jinsi seva inavyopaswa kuonekana. Furahia :)
 
 ## Suluhisho
 
@@ -75,19 +75,19 @@ Jaribu kuendeleza server yako na uwezo zaidi. Tazama [ukurasa huu](https://api.c
 
 ## Muhimu Kumbuka
 
-Mambo muhimu kutoka sura hii ni yafuatayo:
+Mambo muhimu ya kukumbuka kutoka sura hii ni yafuatayo:
 
-- SSE ni usafirishaji wa pili unaoungwa mkono baada ya stdio.
-- Kuunga mkono SSE, unahitaji kusimamia muunganisho unaoingia na ujumbe kwa kutumia fremu ya wavuti.
-- Unaweza kutumia Inspector na Visual Studio Code kutumia server ya SSE, kama vile server za stdio. Angalia jinsi inavyotofautiana kidogo kati ya stdio na SSE. Kwa SSE, unahitaji kuanzisha server kando kisha kuendesha zana yako ya inspector. Kwa zana ya inspector, pia kuna tofauti kidogo kwa kuwa unahitaji kubainisha URL.
+- SSE ni aina ya pili ya usafirishaji inayoungwa mkono baada ya stdio.
+- Ili kuunga mkono SSE, unahitaji kusimamia miunganisho na ujumbe unaokuja kwa kutumia mfumo wa wavuti.
+- Unaweza kutumia Inspector na Visual Studio Code kula seva ya SSE, kama vile seva za stdio. Angalia jinsi inavyotofautiana kidogo kati ya stdio na SSE. Kwa SSE, unahitaji kuanzisha seva kando na kisha kuendesha zana yako ya inspector. Kwa zana ya inspector, pia kuna tofauti kidogo kwamba unahitaji kubainisha URL.
 
-## Sampuli 
+## Sampuli
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python) 
+- [Kalkuleta ya Java](../samples/java/calculator/README.md)
+- [Kalkuleta ya .Net](../../../../03-GettingStarted/samples/csharp)
+- [Kalkuleta ya JavaScript](../samples/javascript/README.md)
+- [Kalkuleta ya TypeScript](../samples/typescript/README.md)
+- [Kalkuleta ya Python](../../../../03-GettingStarted/samples/python)
 
 ## Rasilimali Zaidi
 
@@ -95,7 +95,7 @@ Mambo muhimu kutoka sura hii ni yafuatayo:
 
 ## Nini Kifuatacho
 
-- Ifuatayo: [HTTP Streaming with MCP (Streamable HTTP)](/03-GettingStarted/06-http-streaming/README.md)
+- Ifuatayo: [HTTP Streaming na MCP (Streamable HTTP)](/03-GettingStarted/06-http-streaming/README.md)
 
-**Kasi ya kutolewa taarifa**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kasoro. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kengele ya Kutolea Maelezo**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
