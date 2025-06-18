@@ -1,74 +1,74 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1015443af8119fb019c152bca90fb293",
-  "translation_date": "2025-06-17T22:33:23+00:00",
+  "original_hash": "3eaf38ffe0638867045ec6664908333c",
+  "translation_date": "2025-06-18T09:38:42+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "my"
 }
 -->
 # HTTPS Streaming with Model Context Protocol (MCP)
 
-ဤအခန်းတွင် HTTPS ကိုအသုံးပြု၍ Model Context Protocol (MCP) ဖြင့် လုံခြုံပြီး၊ တိုးချဲ့နိုင်ပြီး၊ အချိန်နှင့်တပြေးညီ သွားလာနိုင်သော streaming ကို အကောင်အထည်ဖော်နည်းကို လမ်းညွှန်ပြထားသည်။ Streaming ကိုအသုံးပြုရန် ရည်ရွယ်ချက်၊ ရရှိနိုင်သော သယ်ယူပို့ဆောင်မှုနည်းလမ်းများ၊ MCP တွင် streamable HTTP ကို မည်သို့ အကောင်အထည်ဖော်မည်၊ လုံခြုံရေးဆိုင်ရာ အကောင်းဆုံး လေ့လာချက်များ၊ SSE မှ မိုက်ဂရိတ်လုပ်ခြင်း၊ သင်၏ကိုယ်ပိုင် streaming MCP အက်ပလီကေးရှင်းများ ဖန်တီးရန် လက်တွေ့ လမ်းညွှန်ချက်များ ပါဝင်သည်။
+ဤအခန်းတွင် HTTPS ကို အသုံးပြု၍ Model Context Protocol (MCP) ဖြင့် လုံခြုံပြီး၊ တိုးချဲ့နိုင်သော၊ အချိန်နောက်ကျခြင်းမရှိသော streaming ကို အကောင်အထည်ဖော်နည်းများအား လက်တွေ့ ညွှန်ပြထားသည်။ Streaming ကို အသုံးပြုရခြင်းရဲ့ အကြောင်းရင်း၊ ရရှိနိုင်သော သယ်ယူပို့ဆောင်မှုနည်းလမ်းများ၊ MCP တွင် streamable HTTP ကို အကောင်အထည်ဖော်နည်း၊ လုံခြုံရေးအကောင်းဆုံးလုပ်ထုံးလုပ်နည်းများ၊ SSE မှ ပြောင်းရွှေ့ခြင်း၊ သင့်ကိုယ်ပိုင် streaming MCP အက်ပလီကေးရှင်းများ ဖန်တီးရာတွင် လိုအပ်သော လမ်းညွှန်ချက်များကို ပါဝင်ဖော်ပြထားသည်။
 
 ## Transport Mechanisms and Streaming in MCP
 
-ဤအပိုင်းတွင် MCP တွင် ရရှိနိုင်သည့် သယ်ယူပို့ဆောင်မှုနည်းလမ်းများကို ရှာဖွေပြီး၊ client နှင့် server များအကြား အချိန်နှင့်တပြေးညီ ဆက်သွယ်မှုအတွက် streaming အင်အားများ ဖန်တီးပေးသည့် အခန်းကဏ္ဍကို ရှင်းပြသည်။
+ဤအပိုင်းတွင် MCP တွင် ရရှိနိုင်သော သယ်ယူပို့ဆောင်မှုနည်းလမ်းအမျိုးမျိုးနှင့် ၎င်းတို့၏ client နှင့် server အကြား အချိန်နောက်ကျမှုမရှိသော ဆက်သွယ်မှုများအတွက် streaming လုပ်ဆောင်နိုင်စွမ်းများ ဖော်ဆောင်ပေးသည့် အခန်းကဏ္ဍကို လေ့လာရှုကြမည်။
 
-### သယ်ယူပို့ဆောင်မှုနည်းလမ်း란?
+### Transport Mechanism ဆိုတာဘာလဲ?
 
-သယ်ယူပို့ဆောင်မှုနည်းလမ်းဆိုသည်မှာ client နှင့် server အကြား ဒေတာကို မည်သို့ လဲလှယ်ပေးမည်ကို သတ်မှတ်သည်။ MCP သည် ပတ်ဝန်းကျင်နှင့် လိုအပ်ချက်များအလိုက် မတူညီသည့် သယ်ယူပို့ဆောင်မှုအမျိုးအစားများကို ထောက်ခံသည်-
+Transport mechanism ဆိုသည်မှာ client နှင့် server အကြား ဒေတာလဲလှယ်မှုကို ဘယ်လို ပြုလုပ်မည်ဆိုသည်ကို သတ်မှတ်သည်။ MCP သည် ပတ်ဝန်းကျင်နှင့် လိုအပ်ချက်အမျိုးမျိုးအတွက် သင့်တော်သော သယ်ယူပို့ဆောင်မှုအမျိုးအစားများစွာကို ထောက်ပံ့ပေးသည်-
 
-- **stdio**: အခြေခံ input/output ဖြစ်ပြီး ဒေသတွင်း CLI ကိရိယာများအတွက် သင့်တော်သည်။ ရိုးရှင်းသော်လည်း web သို့မဟုတ် cloud အတွက် မသင့်တော်ပါ။
-- **SSE (Server-Sent Events)**: server မှ client သို့ HTTP ဖြင့် အချိန်နှင့်တပြေးညီ update များ ပို့နိုင်သည်။ web UI များအတွက် ကောင်းမွန်သော်လည်း တိုးချဲ့နိုင်မှုနှင့် လွယ်ကူမှုတွင် ကန့်သတ်ချက်ရှိသည်။
-- **Streamable HTTP**: ခေတ်မီ HTTP အခြေခံ streaming သယ်ယူပို့ဆောင်မှုဖြစ်ပြီး အသိပေးချက်များနှင့် တိုးချဲ့နိုင်မှု ကောင်းမွန်သည်။ ထုတ်လုပ်မှုနှင့် cloud ပတ်ဝန်းကျင်များအတွက် အကြံပြုသည်။
+- **stdio**: standard input/output ဖြစ်ပြီး ဒေသတွင်းနှင့် CLI အခြေပြုကိရိယာများအတွက် သင့်တော်သည်။ ရိုးရှင်းသော်လည်း web သို့မဟုတ် cloud အတွက် မသင့်တော်ပါ။
+- **SSE (Server-Sent Events)**: server များမှ client များသို့ HTTP အပေါ်မှ အချိန်နောက်ကျမှုမရှိသော အပ်ဒိတ်များကို ပို့နိုင်သည်။ web UI များအတွက် ကောင်းမွန်သော်လည်း တိုးချဲ့နိုင်မှုနှင့် လွယ်ကူမှုမှာ ကန့်သတ်ချက်ရှိသည်။
+- **Streamable HTTP**: ခေတ်မီသော HTTP အခြေပြု streaming သယ်ယူပို့ဆောင်မှုဖြစ်ပြီး အသိပေးချက်များနှင့် တိုးချဲ့နိုင်မှုကောင်းမွန်မှုများ ပံ့ပိုးပေးသည်။ ထုတ်လုပ်မှုနှင့် cloud ပတ်ဝန်းကျင်များအတွက် အကြံပြုသည်။
 
 ### နှိုင်းယှဉ်ဇယား
 
-အောက်ပါ ဇယားတွင် သယ်ယူပို့ဆောင်မှုနည်းလမ်းများအကြား ကွာခြားချက်များကို ကြည့်ရှုနိုင်သည်-
+အောက်ပါ ဇယားတွင် သယ်ယူပို့ဆောင်မှုနည်းလမ်းများ၏ ကွာခြားချက်များကို နားလည်နိုင်ရန် ဖော်ပြထားသည်-
 
-| သယ်ယူပို့ဆောင်မှု | အချိန်နှင့်တပြေးညီ Update များ | Streaming | တိုးချဲ့နိုင်မှု | အသုံးပြုမှုကိစ္စ           |
-|-------------------|-------------------------------|-----------|----------------|----------------------------|
-| stdio             | မဟုတ်ပါ                      | မဟုတ်ပါ  | နည်းပါးသည်   | ဒေသတွင်း CLI ကိရိယာများ  |
-| SSE               | ဟုတ်သည်                      | ဟုတ်သည်  | အလယ်အလတ်      | Web, အချိန်နှင့်တပြေးညီ Update များ |
-| Streamable HTTP    | ဟုတ်သည်                      | ဟုတ်သည်  | မြင့်မားသည်    | Cloud, multi-client        |
+| Transport         | Real-time Updates | Streaming | Scalability | Use Case                |
+|-------------------|------------------|-----------|-------------|-------------------------|
+| stdio             | မဟုတ်ပါ         | မဟုတ်ပါ  | နည်းပါးသည်  | ဒေသတွင်း CLI ကိရိယာများ |
+| SSE               | ဟုတ်သည်          | ဟုတ်သည်   | အလယ်အလတ်    | web၊ အချိန်နောက်ကျမှုမရှိသော အပ်ဒိတ်များ |
+| Streamable HTTP   | ဟုတ်သည်          | ဟုတ်သည်   | မြင့်မားသည်  | cloud၊ client များစွာ |
 
-> **Tip:** သင့်တော်သော သယ်ယူပို့ဆောင်မှုကို ရွေးချယ်ခြင်းသည် စွမ်းဆောင်ရည်၊ တိုးချဲ့နိုင်မှုနှင့် အသုံးပြုသူအတွေ့အကြုံကို ထိခိုက်စေသည်။ **Streamable HTTP** ကို ခေတ်မီ၊ တိုးချဲ့နိုင်ပြီး cloud အဆင်သင့် အက်ပလီကေးရှင်းများအတွက် အကြံပြုသည်။
+> **Tip:** သင့်တော်သော သယ်ယူပို့ဆောင်မှုကို ရွေးချယ်ခြင်းသည် စွမ်းဆောင်ရည်၊ တိုးချဲ့နိုင်မှုနှင့် အသုံးပြုသူ အတွေ့အကြုံကို ထိခိုက်စေသည်။ ခေတ်မီ၊ တိုးချဲ့နိုင်ပြီး cloud သင့်လျော်သော အက်ပလီကေးရှင်းများအတွက် **Streamable HTTP** ကို အကြံပြုပါသည်။
 
-ယခင်အခန်းများတွင် ပြသခဲ့သည့် stdio နှင့် SSE သယ်ယူပို့ဆောင်မှုများနှင့် ယခုအခန်းတွင် ဖော်ပြထားသည့် streamable HTTP သယ်ယူပို့ဆောင်မှုကို သတိပြုကြည့်ပါ။
+ယခင်အခန်းများတွင် ပြသခဲ့သော stdio နှင့် SSE သယ်ယူပို့ဆောင်မှုများနှင့် ယခုအခန်းတွင် ဖော်ပြထားသော streamable HTTP သယ်ယူပို့ဆောင်မှုကို သတိပြုကြပါ။
 
-## Streaming: အကြောင်းအရာနှင့် ရည်ရွယ်ချက်
+## Streaming: Concepts and Motivation
 
-Streaming ၏ အခြေခံအယူအဆများနှင့် ရည်ရွယ်ချက်များကို နားလည်ခြင်းသည် အချိန်နှင့်တပြေးညီ ဆက်သွယ်မှုစနစ်များကို ထိရောက်စွာ တည်ဆောက်ရာတွင် အရေးကြီးသည်။
+Streaming ၏ အခြေခံသဘောတရားများနှင့် အကြောင်းရင်းများကို နားလည်ခြင်းသည် အချိန်နောက်ကျမှုမရှိသော ဆက်သွယ်မှုစနစ်များကို ထိရောက်စွာ တည်ဆောက်ရာတွင် အရေးကြီးသည်။
 
-**Streaming** ဆိုသည်မှာ network programming တွင် ဒေတာကို တစ်ပြိုင်နက်တည်း ပြီးစီးရန် မစောင့်ဘဲ၊ အစိတ်အပိုင်းများ သို့မဟုတ် ဖြစ်ရပ်များစဉ်လိုက် အဖြစ် ပို့ဆောင်နိုင်သည့် နည်းလမ်းဖြစ်သည်။ ၎င်းသည် အထူးသဖြင့်-
+**Streaming** သည် network programming တွင် ဒေတာများကို တစ်ပြိုင်နက်တည်း ပြီးပြည့်စုံသော တုံ့ပြန်ချက်အတွက် မစောင့်ပဲ၊ သေးငယ်ပြီး စီမံနိုင်သော အပိုင်းအစများ သို့မဟုတ် ဖြစ်ရပ်စဉ်များ အဆက်မပြတ် ပို့ဆောင်ခြင်းနည်းလမ်းဖြစ်သည်။ ၎င်းသည် အထူးသဖြင့် အောက်ပါအရာများအတွက် အသုံးဝင်သည်-
 
-- ဖိုင်ကြီးများ သို့မဟုတ် ဒေတာစုစည်းမှုများ။
-- အချိန်နှင့်တပြေးညီ update များ (ဥပမာ၊ စကားပြော, progress bar များ)။
-- အချိန်ကြာရှည် တာဝန်များတွင် အသုံးပြုသူအား အဆက်မပြတ် သတင်းပေးရန်။
+- ဖိုင်များ သို့မဟုတ် ဒေတာစုစည်းမှုကြီးများ။
+- အချိန်နောက်ကျမှုမရှိသော အပ်ဒိတ်များ (ဥပမာ - စကားပြော, တိုးတက်မှု ဘားများ)။
+- ကြာရှည်သည့် တွက်ချက်မှုများတွင် အသုံးပြုသူကို အဆက်မပြတ် သတင်းပေးရန်။
 
-Streaming ၏ အထွေထွေ သိထားသင့်သော အချက်များ-
+Streaming အကြောင်းအရာကို အထွေထွေသိရှိရန်-
 
-- ဒေတာကို တဖြည်းဖြည်း ပေးပို့သည်၊ တပြိုင်နက်တည်း မပေးပို့ပါ။
-- Client သည် ရောက်ရှိလာသည့် ဒေတာကို ချက်ချင်း လုပ်ဆောင်နိုင်သည်။
-- လျင်မြန်မှုခံစားမှု လျော့နည်းကာ အသုံးပြုသူအတွေ့အကြုံ တိုးတက်စေသည်။
+- ဒေတာများကို တစ်ပြိုင်နက်တည်း မပို့ပဲ တဖြည်းဖြည်းပို့သည်။
+- client သည် ဒေတာရောက်ရှိသလို ကိုင်တွယ်နိုင်သည်။
+- အချိန်နောက်ကျမှုခံစားမှု လျော့နည်းပြီး အသုံးပြုသူ အတွေ့အကြုံကောင်းမွန်စေသည်။
 
-### Streaming ကို မည်သို့အသုံးပြုသင့်သနည်း?
+### Streaming ကို ဘာကြောင့် အသုံးပြုသနည်း?
 
-Streaming ကို အသုံးပြုရခြင်း၏ အကြောင်းအရင်းများမှာ-
+Streaming အသုံးပြုရခြင်း၏ အကြောင်းရင်းများမှာ-
 
-- အသုံးပြုသူများ သတင်းအချက်အလက်ကို ချက်ချင်း ရရှိနိုင်သည်၊ နောက်ဆုံးတွင်သာ မဟုတ်ပါ။
-- အချိန်နှင့်တပြေးညီ အက်ပလီကေးရှင်းများနှင့် တုံ့ပြန်မှုရှိသော UI များ ဖန်တီးနိုင်သည်။
-- ကွန်ယက်နှင့် ကွန်ပျူတာစွမ်းအားကို ပိုမို ထိရောက်စွာ အသုံးပြုနိုင်သည်။
+- အသုံးပြုသူများသည် အဆုံးသတ်မီ မဟုတ်ဘဲ ချက်ချင်းတုံ့ပြန်မှုရရှိသည်။
+- အချိန်နောက်ကျမှုမရှိသော အက်ပလီကေးရှင်းများနှင့် တုံ့ပြန်မှုမြန်သော UI များ ဖန်တီးနိုင်သည်။
+- ကွန်ရက်နှင့် ကွန်ပျူတာ အရင်းအမြစ်များကို ထိရောက်စွာ အသုံးပြုနိုင်သည်။
 
-### ရိုးရှင်းသော ဥပမာ: HTTP Streaming Server & Client
+### ရိုးရှင်းသော ဥပမာ - HTTP Streaming Server & Client
 
-Streaming ကို မည်သို့ အကောင်အထည်ဖော်နိုင်သည်ဆိုသော ရိုးရှင်းသော ဥပမာ-
+Streaming ကို အကောင်အထည်ဖော်နိုင်ပုံ ရိုးရှင်းစွာ ဖော်ပြထားသည်-
 
 <details>
 <summary>Python</summary>
 
-**Server (Python, FastAPI နှင့် StreamingResponse အသုံးပြု):**
+**Server (Python, FastAPI နှင့် StreamingResponse အသုံးပြု၍):**
 <details>
 <summary>Python</summary>
 
@@ -91,7 +91,7 @@ def stream():
 
 </details>
 
-**Client (Python, requests အသုံးပြု):**
+**Client (Python, requests အသုံးပြု၍):**
 <details>
 <summary>Python</summary>
 
@@ -106,16 +106,91 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-ဤဥပမာတွင် server သည် မက်ဆေ့ချ်များအားလုံး ပြီးစီးရန် မစောင့်ဘဲ အသစ်ရရှိသည့် မက်ဆေ့ချ်တစ်ခုချင်း ပို့ပေးသည်။
+ဤဥပမာတွင် server သည် စာတိုများစွာကို ပြင်ဆင်ပြီး client သို့ တစ်ခုချင်းစီ ပို့ပေးသည်။ စာတိုအားလုံး ပြင်ဆင်ပြီးမှ မစောင့်ဘဲဖြစ်သည်။
 
-**လုပ်ဆောင်ပုံ:**
-- Server သည် မက်ဆေ့ချ်တစ်ခုချင်း အသင့်ရှိသလို ပေးပို့သည်။
-- Client သည် ရောက်ရှိလာသည့် အစိတ်အပိုင်းကို လက်ခံ၍ မျက်နှာပြင်တွင် ပြသသည်။
+**အလုပ်လုပ်ပုံ:**
+- server သည် စာတိုတစ်ခုချင်းစီ ပြင်ဆင်ပြီးတိုင်း ပေးပို့သည်။
+- client သည် စာတိုများ ရောက်ရှိသလို လက်ခံပြီး ပုံနှိပ်ပြသည်။
 
 **လိုအပ်ချက်များ:**
-- Server သည် streaming response (ဥပမာ၊ `StreamingResponse` in FastAPI).
+- server သည် streaming response (ဥပမာ `StreamingResponse` in FastAPI).
 - The client must process the response as a stream (`stream=True` in requests).
-- Content-Type is usually `text/event-stream` or `application/octet-stream`.
+- Content-Type is usually `text/event-stream` or `application/octet-stream`) ကို အသုံးပြုရမည်။
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+**Server (Java, Spring Boot နှင့် Server-Sent Events အသုံးပြု၍):**
+
+```java
+@RestController
+public class CalculatorController {
+
+    @GetMapping(value = "/calculate", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<ServerSentEvent<String>> calculate(@RequestParam double a,
+                                                   @RequestParam double b,
+                                                   @RequestParam String op) {
+        
+        double result;
+        switch (op) {
+            case "add": result = a + b; break;
+            case "sub": result = a - b; break;
+            case "mul": result = a * b; break;
+            case "div": result = b != 0 ? a / b : Double.NaN; break;
+            default: result = Double.NaN;
+        }
+
+        return Flux.<ServerSentEvent<String>>just(
+                    ServerSentEvent.<String>builder()
+                        .event("info")
+                        .data("Calculating: " + a + " " + op + " " + b)
+                        .build(),
+                    ServerSentEvent.<String>builder()
+                        .event("result")
+                        .data(String.valueOf(result))
+                        .build()
+                )
+                .delayElements(Duration.ofSeconds(1));
+    }
+}
+```
+
+**Client (Java, Spring WebFlux WebClient အသုံးပြု၍):**
+
+```java
+@SpringBootApplication
+public class CalculatorClientApplication implements CommandLineRunner {
+
+    private final WebClient client = WebClient.builder()
+            .baseUrl("http://localhost:8080")
+            .build();
+
+    @Override
+    public void run(String... args) {
+        client.get()
+                .uri(uriBuilder -> uriBuilder
+                        .path("/calculate")
+                        .queryParam("a", 7)
+                        .queryParam("b", 5)
+                        .queryParam("op", "mul")
+                        .build())
+                .accept(MediaType.TEXT_EVENT_STREAM)
+                .retrieve()
+                .bodyToFlux(String.class)
+                .doOnNext(System.out::println)
+                .blockLast();
+    }
+}
+```
+
+**Java အကောင်အထည်ဖော်ချက်မှတ်စုများ:**
+- Spring Boot ၏ reactive stack ကို အသုံးပြု၍ `Flux` for streaming
+- `ServerSentEvent` provides structured event streaming with event types
+- `WebClient` with `bodyToFlux()` enables reactive streaming consumption
+- `delayElements()` simulates processing time between events
+- Events can have types (`info`, `result`) for better client handling
 
 </details>
 
@@ -152,32 +227,36 @@ Additionally, here are some key differences:
 
 ### Recommendations
 
-There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream`) ကို အသုံးပြုရမည်။
-- **ရိုးရှင်းသော streaming လိုအပ်ချက်များအတွက်:** ရိုးရှင်းသော HTTP streaming ကို အသုံးပြုခြင်း ပိုလွယ်ကူပြီး လုံလောက်သည်။
-- **ရှုပ်ထွေးပြီး အပြန်အလှန် တုံ့ပြန်မှုရှိသော အက်ပလီကေးရှင်းများအတွက်:** MCP streaming သည် အသေးစိတ် metadata များနှင့် အသိပေးချက်များ၊ နောက်ဆုံးရလဒ်များကို ခွဲခြားပေးသည့် ပိုမိုစနစ်တကျသော နည်းလမ်းဖြစ်သည်။
-- **AI အက်ပလီကေးရှင်းများအတွက်:** MCP ၏ အသိပေးစနစ်သည် ရှည်လျားသော AI လုပ်ငန်းများတွင် အသုံးပြုသူအား တိုးတက်မှုအခြေအနေများကို သိရှိနိုင်စေရန် အထူးအသုံးဝင်သည်။
+There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream` တို့ဖြင့် streaming ကို ဆောင်ရွက်သည်။
+- MCP မှ streaming ကို ရွေးချယ်ခြင်းနှင့် နှိုင်းယှဉ်၍ အလုပ်လုပ်ပုံကွာခြားသည်။
 
-## MCP တွင် Streaming
+- **ရိုးရှင်းသော streaming လိုအပ်ချက်များအတွက်:** Classic HTTP streaming သည် ပိုမိုရိုးရှင်းပြီး မူလ streaming လိုအပ်ချက်များအတွက် လုံလောက်သည်။
 
-ယခုအထိ ရိုးရာ streaming နှင့် MCP streaming တို့၏ ကွာခြားချက်များကို ကြည့်ရှုခဲ့ပြီးဖြစ်သည်။ MCP တွင် streaming ကို မည်သို့အသုံးချရမည်ကို အသေးစိတ် ဖော်ပြမည်။
+- **ရှုပ်ထွေးပြီး အပြန်အလှန်ဆက်သွယ်မှုများရှိသော အက်ပလီကေးရှင်းများအတွက်:** MCP streaming သည် အသေးစိတ် metadata များနှင့် အသိပေးချက်များနှင့် နောက်ဆုံးရလဒ်များကို ခွဲခြားပေးသည့် ပိုမိုစနစ်တကျသော နည်းလမ်းဖြစ်သည်။
 
-MCP ဖရိမ်းဝတ်အတွင်း streaming ၏ လုပ်ဆောင်ပုံကို နားလည်ခြင်းသည် ရှည်လျားသော လုပ်ငန်းစဉ်များတွင် အသုံးပြုသူအား အချိန်နှင့်တပြေးညီ တုံ့ပြန်ချက် ပေးနိုင်သော အက်ပလီကေးရှင်းများ ဖန်တီးရာတွင် အရေးကြီးသည်။
+- **AI အက်ပလီကေးရှင်းများအတွက်:** MCP ၏ အသိပေးစနစ်သည် ကြာရှည်ဆက်လက် ဆောင်ရွက်နေသည့် AI အလုပ်များတွင် အသုံးပြုသူအား တိုးတက်မှုအခြေအနေများကို သတင်းပေးရန် အထူးအသုံးဝင်သည်။
 
-MCP တွင် streaming ဆိုသည်မှာ မူလတုံ့ပြန်ချက်ကို အစိတ်အပိုင်းဖြင့် ပို့ခြင်းမဟုတ်ပဲ၊ ကိရိယာတစ်ခုသည် တောင်းဆိုမှုကို လုပ်ဆောင်နေစဉ်တွင် client သို့ **အသိပေးချက်များ** ပို့ခြင်းဖြစ်သည်။ ၎င်းအသိပေးချက်များတွင် တိုးတက်မှု အချက်အလက်များ၊ မှတ်တမ်းများ သို့မဟုတ် အခြားဖြစ်ရပ်များ ပါဝင်နိုင်သည်။
+## Streaming in MCP
 
-### လုပ်ဆောင်ပုံ
+ယခုအထိ classical streaming နှင့် MCP streaming ၏ ကွာခြားချက်များနှင့် အကြံပြုချက်များကို ကြည့်ရှုခဲ့ပါပြီ။ ယခု MCP တွင် streaming ကို မည်သို့ အသုံးချနိုင်သည်ကို အသေးစိတ် ရှင်းပြမည်။
 
-မူလရလဒ်ကို တစ်ခုတည်းသော တုံ့ပြန်ချက်အဖြစ် ပေးပို့သည်။ သို့သော် တိုးတက်မှု အသိပေးချက်များကို လုပ်ငန်းစဉ်အတွင်း သီးခြား မက်ဆေ့ချ်များအဖြစ် ပို့နိုင်ပြီး client ကို အချိန်နှင့်တပြေးညီ update ပေးနိုင်သည်။ Client သည် ဤအသိပေးချက်များကို ကိုင်တွယ် ပြသနိုင်ရမည်။
+MCP စနစ်အတွင်း streaming ၏ အလုပ်လုပ်ပုံကို နားလည်ခြင်းသည် ကြာရှည်ဆောင်ရွက်နေစဉ် အသုံးပြုသူအား အချိန်နောက်ကျမှုမရှိသော တုံ့ပြန်မှုများ ပေးနိုင်သော အက်ပလီကေးရှင်းများ ဖန်တီးရာတွင် အရေးကြီးသည်။
 
-## အသိပေးချက်ဆိုတာဘာလဲ?
+MCP တွင် streaming သည် အဓိက တုံ့ပြန်ချက်ကို အပိုင်းအစများဖြင့် ပို့ခြင်းမဟုတ်ပဲ၊ တူညီသော အချိန်တွင် ကိရိယာတစ်ခုက တောင်းဆိုချက်ကို လုပ်ဆောင်နေစဉ် client သို့ **အသိပေးချက်များ** ပို့ခြင်းဖြစ်သည်။ ၎င်းအသိပေးချက်များတွင် တိုးတက်မှု အပ်ဒိတ်များ၊ မှတ်တမ်းများ သို့မဟုတ် အခြား ဖြစ်ရပ်များ ပါဝင်နိုင်သည်။
 
-"အသိပေးချက်" ဟု ဆိုလိုသည်မှာ MCP အတွင်း ဘာကို ဆိုလိုသနည်း?
+### အလုပ်လုပ်ပုံ
 
-အသိပေးချက်ဆိုသည်မှာ server မှ client သို့ ရှည်လျားသော လုပ်ငန်းစဉ်တစ်ခုအတွင်း တိုးတက်မှု၊ အခြေအနေ သို့မဟုတ် အခြားဖြစ်ရပ်များအကြောင်း သတင်းပို့သည့် မက်ဆေ့ချ်ဖြစ်သည်။ အသိပေးချက်များက တိကျမှန်ကန်မှုနှင့် အသုံးပြုသူအတွေ့အကြုံ တိုးတက်စေသည်။
+အဓိကရလဒ်ကို တစ်ခုတည်းသော တုံ့ပြန်ချက်အဖြစ် ပေးပို့သည်။ သို့သော် processing ဖြစ်စဉ်အတွင်း အသိပေးချက်များကို သီးခြားစာတိုများအဖြစ် ပို့နိုင်ပြီး client ကို အချိန်နောက်ကျမှုမရှိစွာ update ပြုလုပ်ပေးသည်။ client သည် ဤအသိပေးချက်များကို ကိုင်တွယ်ပြီး ပြသနိုင်ရမည်။
 
-ဥပမာအားဖြင့် client သည် server နှင့် ပထမဆုံး handshake ပြီးဆုံးသည့်အခါ အသိပေးချက် တစ်ခု ပို့ရန် ရှိသည်။
+## Notification ဆိုတာဘာလဲ?
 
-အသိပေးချက်သည် JSON မက်ဆေ့ချ်အဖြစ် အောက်ပါပုံစံရှိသည်-
+ကျွန်ုပ်တို့ "Notification" ဟု ဆိုခဲ့သည်။ MCP အတွင်း၌ ၎င်းသည် ဘာကို ဆိုလိုသနည်း?
+
+Notification သည် server မှ client သို့ ကြာရှည်ဆောင်ရွက်နေသော လုပ်ငန်းစဉ်တစ်ခုအတွင်း တိုးတက်မှု၊ အခြေအနေ သို့မဟုတ် အခြားဖြစ်ရပ်များကို အသိပေးရန် ပို့သော စာတိုဖြစ်သည်။ Notification များသည် ထင်မြင်နိုင်မှုကို တိုးတက်စေပြီး အသုံးပြုသူ အတွေ့အကြုံကို မြှင့်တင်ပေးသည်။
+
+ဥပမာအားဖြင့် client သည် server နှင့် အစပျိုးချိတ်ဆက်မှု ပြုလုပ်ပြီးနောက် Notification တစ်ခု ပို့ရမည်ဖြစ်သည်။
+
+Notification သည် JSON စာတိုအဖြစ် အောက်ပါပုံစံဖြစ်သည်-
 
 ```json
 {
@@ -189,9 +268,9 @@ MCP တွင် streaming ဆိုသည်မှာ မူလတုံ့ပ�
 }
 ```
 
-အသိပေးချက်များသည် MCP ၏ ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging) ဟူသော topic နှင့် ဆက်စပ်သည်။
+Notification များသည် MCP ၏ ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging) ဟူသော ခေါင်းစဉ်တစ်ခုတွင် ပါဝင်သည်။
 
-logging ကို အလုပ်လုပ်စေရန် server သည် အောက်ပါအတိုင်း feature/capability အဖြစ် ဖွင့်ထားရမည်-
+Logging ကို အလုပ်လုပ်စေရန် server သည် ၎င်းကို feature/capability အဖြစ် ဖွင့်ထားရမည်-
 
 ```json
 {
@@ -202,28 +281,28 @@ logging ကို အလုပ်လုပ်စေရန် server သည် �
 ```
 
 > [!NOTE]
-> အသုံးပြုသော SDK အလိုက် logging ကို ပုံမှန်အားဖြင့် ဖွင့်ထားနိုင်သော်လည်း server configuration တွင် တိတိကျကျ ဖွင့်ရန် လိုအပ်နိုင်သည်။
+> သုံးနေသော SDK အပေါ် မူတည်၍ logging သည် ပုံမှန်အားဖြင့် ဖွင့်ထားနိုင်သည်၊ သို့မဟုတ် server configuration တွင် သင့်တော်စွာ ဖွင့်ရပါမည်။
 
-အသိပေးချက်အမျိုးအစားများမှာ-
+Notification များအမျိုးအစားများ-
 
-| အဆင့်      | ဖော်ပြချက်                      | ဥပမာ အသုံးပြုမှု                |
-|------------|-------------------------------|---------------------------------|
-| debug      | အသေးစိတ် debug အချက်အလက်များ   | function ဝင်/ထွက် နေရာများ     |
-| info       | အထွေထွေ သတင်းအချက်အလက်များ | လုပ်ငန်းတိုးတက်မှု update များ  |
-| notice     | ပုံမှန် သို့သော် အရေးကြီးဖြစ်ရပ်များ | configuration ပြောင်းလဲမှုများ   |
-| warning    | သတိပေး အခြေအနေများ           | အသုံးမပြုသင့်သော feature များ  |
-| error      | အမှားအခြေအနေများ              | လုပ်ငန်းပျက်ကွက်မှုများ         |
-| critical   | အရေးပေါ် အခြေအနေများ          | စနစ်အစိတ်အပိုင်းပျက်စီးမှုများ  |
-| alert      | ချက်ချင်း လုပ်ဆောင်ရမည့်အခြေအနေ | ဒေတာပျက်စီးမှုတွေ့ရှိခြင်း     |
-| emergency  | စနစ်အသုံးမပြုနိုင်သောအခြေအနေ | စနစ်အပြည့်အဝ ပျက်စီးမှု         |
+| Level     | ဖော်ပြချက်                    | ဥပမာ အသုံးပြုမှု              |
+|-----------|-------------------------------|---------------------------------|
+| debug     | အသေးစိတ် debugging အချက်အလက်များ | function ဝင်/ထွက်နေရာများ       |
+| info      | အထွေထွေ သတင်းအချက်အလက်များ    | လုပ်ငန်းတိုးတက်မှု အပ်ဒိတ်များ     |
+| notice    | သာမာန် သို့မဟုတ် အရေးကြီးဖြစ်ရပ်များ | စနစ်ပြင်ဆင်မှုများ               |
+| warning   | သတိပေး အခြေအနေများ              | အဟောင်း features အသုံးပြုမှု      |
+| error     | အမှားအခြေအနေများ                 | လုပ်ငန်းကျရှုံးမှုများ             |
+| critical  | အရေးပေါ် အခြေအနေများ             | စနစ်အစိတ်အပိုင်း မအောင်မြင်မှုများ  |
+| alert     | ချက်ချင်း လုပ်ဆောင်ရမည့် အရေးပေါ်    | ဒေတာပျက်စီးမှုတွေ့ရှိမှု          |
+| emergency | စနစ် အသုံးမပြုနိုင်ခြင်း           | စနစ်လုံးဝ ပျက်စီးမှု               |
 
-## MCP တွင် အသိပေးချက်များ အကောင်အထည်ဖော်ခြင်း
+## MCP တွင် Notification များ အကောင်အထည်ဖော်ခြင်း
 
-MCP တွင် အသိပေးချက်များ အကောင်အထည်ဖော်ရန် server နှင့် client နှစ်ဖက်လုံးတွင် အချိန်နှင့်တပြေးညီ update များကို ကိုင်တွယ်နိုင်ရန် ပြင်ဆင်ရမည်။ ၎င်းက သင့်အက်ပလီကေးရှင်းအား ရှည်လျားသော လုပ်ငန်းများတွင် အသုံးပြုသူအား ချက်ချင်း တုံ့ပြန်ချက်ပေးနိုင်စေသည်။
+MCP တွင် notification များကို အကောင်အထည်ဖော်ရန် server နှင့် client နှစ်ဖက်စလုံးတွင် အချိန်နောက်ကျမှုမရှိသော အပ်ဒိတ်များကို ကိုင်တွယ်နိုင်ရန် ပြင်ဆင်ရမည်။ ၎င်းသည် ကြာရှည်ဆောင်ရွက်နေစဉ် အသုံးပြုသူအား ချက်ချင်းတုံ့ပြန်မှု ပေးနိုင်စေသည်။
 
-### Server ဘက်: အသိပေးချက် ပို့ခြင်း
+### Server ဘက် - Notification ပို့ခြင်း
 
-Server ဘက်မှစလိုက်ပါ။ MCP တွင် tool များကို တောင်းဆိုမှုများကို လုပ်ဆောင်စဉ် အသိပေးချက်များ ပို့နိုင်ရန် သတ်မှတ်သည်။ Server သည် context object (ပုံမှန်အားဖြင့် `ctx`) ကို အသုံးပြု၍ client သို့ မက်ဆေ့ချ်များ ပို့သည်။
+server ဘက်မှ စတင်မည်။ MCP တွင် request များကို လုပ်ဆောင်စဉ် notification ပို့နိုင်သော tools များကို သတ်မှတ်သည်။ server သည် context object (အများအားဖြင့် `ctx`) ကို အသုံးပြု၍ client သို့ စာတိုများ ပို့သည်။
 
 <details>
 <summary>Python</summary>
@@ -240,11 +319,11 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-ဥပမာတွင် `process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
+အထက်ပါ ဥပမာတွင် `process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
 
 </details>
 
-Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http` သယ်ယူပို့ဆောင်မှုကို အသုံးပြုသည်-
+Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http` သယ်ယူပို့ဆောင်မှုကို အသုံးပြုထားသည်-
 
 ```python
 mcp.run(transport="streamable-http")
@@ -252,9 +331,41 @@ mcp.run(transport="streamable-http")
 
 </details>
 
-### Client ဘက်: အသိပေးချက် လက်ခံခြင်း
+<details>
+<summary>.NET</summary>
 
-Client သည် အသိပေးချက်များ လက်ခံ၍ ပြသနိုင်ရန် message handler ကို အကောင်အထည်ဖော်ရမည်။
+```csharp
+[Tool("A tool that sends progress notifications")]
+public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
+{
+    await ctx.Info("Processing file 1/3...");
+    await ctx.Info("Processing file 2/3...");
+    await ctx.Info("Processing file 3/3...");
+    return new TextContent
+    {
+        Type = "text",
+        Text = $"Done: {message}"
+    };
+}
+```
+
+ဤ .NET ဥပမာတွင် `ProcessFiles` tool is decorated with the `Tool` attribute and sends three notifications to the client as it processes each file. The `ctx.Info()` ကို အသုံးပြု၍ သတင်းအချက်အလက်များ ပို့သည်။
+
+သင့် .NET MCP server တွင် notification များဖွင့်ရန် streaming transport ကို သုံးပါ-
+
+```csharp
+var builder = McpBuilder.Create();
+await builder
+    .UseStreamableHttp() // Enable streamable HTTP transport
+    .Build()
+    .RunAsync();
+```
+
+</details>
+
+### Client ဘက် - Notification လက်ခံခြင်း
+
+client သည် notification များ ရောက်ရှိသလို ကိုင်တွယ်ပြသနိုင်ရန် message handler တစ်ခု ထည့်သွင်းရမည်။
 
 <details>
 <summary>Python</summary>
@@ -274,36 +385,51 @@ async with ClientSession(
 ) as session:
 ```
 
-အထက်ပါ ကုဒ်တွင် `message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` to handle incoming notifications.
+အထက်ပါ ကုဒ်တွင် `message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` သည် လက်ခံလာသော notification များကို ကိုင်တွယ်သည်။
 
 </details>
 
-To enable notifications, ensure your server uses a streaming transport (like `streamable-http` ကို အသုံးပြုပြီး client သည် အသိပေးချက်များကို ကိုင်တွယ်သည်။
+<details>
+<summary>.NET</summary>
 
-## တိုးတက်မှု အသိပေးချက်များနှင့် သုံးစွဲမှုအခြေအနေများ
+```csharp
+// Define a message handler
+void MessageHandler(IJsonRpcMessage message)
+{
+    if (message is ServerNotification notification)
+    {
+        Console.WriteLine($"NOTIFICATION: {notification}");
+    }
+    else
+    {
+        Console.WriteLine($"SERVER MESSAGE: {message}");
+    }
+}
 
-ဤအပိုင်းတွင် MCP တွင် တိုးတက်မှု အသိပေးချက်များ၏ အဓိပ္ပါယ်၊ အရေးကြီးမှုနှင့် Streamable HTTP ဖြင့် မည်သို့ အကောင်အထည်ဖော်မည်ကို ရှင်းပြသည်။ သင်၏ နားလည်မှုကို အတည်ပြုရန် လက်တွေ့ လေ့ကျင့်ခန်းလည်း ပါဝင်သည်။
+// Create and use a client session with the message handler
+var clientOptions = new ClientSessionOptions
+{
+    MessageHandler = MessageHandler,
+    LoggingCallback = (level, message) => Console.WriteLine($"[{level}] {message}")
+};
 
-တိုးတက်မှု အသိပေးချက်များသည် ရှည်လျားသော လုပ်ငန်းစဉ်များအတွင်း server မှ client သို့ အချိန်နှင့်တပြေးညီ ပို့သော မက်ဆေ့ချ်များဖြစ်သည်။ လုပ်ငန်းစဉ် ပြီးဆုံးရန် မစောင့်ဘဲ လက်ရှိအခြေအနေကို client သို့ အသိပေးခြင်းဖြင့် တိကျမှန်ကန်မှု၊ အသုံးပြုသူအတွေ့အကြုံ တိုးတက်စေပြီး debugging ကိုလည်း လွယ်ကူစေသည်။
+using var client = new ClientSession(readStream, writeStream, clientOptions);
+await client.InitializeAsync();
 
-**ဥပမာ:**
-
-```text
-
-"Processing document 1/10"
-"Processing document 2/10"
-...
-"Processing complete!"
-
+// Now the client will process notifications through the MessageHandler
 ```
 
-### တိုးတက်မှု အသိပေးချက်များကို မည်သို့အသုံးပြုသနည်း?
+ဤ .NET ဥပမာတွင် `MessageHandler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. The `ClientSession` is initialized with the message handler via the `ClientSessionOptions`.
 
-တိုးတက်မှု အသိပေးချက်များ အရေးကြီးသော အချက်များမှာ-
+</details>
 
-- **အသုံးပြုသူအတွေ့အကြုံ ကောင်းမွန်စေခြင်း:** လုပ်ငန်းတိုးတက်မှုကို အချိန်နှင့်တပြေးညီ မြင်တွေ့နိုင်သည်။
-- **အချိန်နှင့်တပြေးညီ တုံ့ပြန်ချက်:** Client များ progress bar သို့မဟုတ် မှတ်တမ်းများ ပြသနိုင်ပြီး အက်ပလီကေးရှင်း တုံ့ပြန်မှုရှိစေသည်။
-- **debugging နှင့် စောင့်ကြည့်မှု လွယ်ကူစေခြင်း:** developer များနှင့် အသုံးပြုသူများ လုပ်ငန်းတစ်ခုမှာ ဘယ်နေရာမှာ နှေးကွေးသလဲ သို့မဟုတ် ရပ်တန့်သွ
+To enable notifications, ensure your server uses a streaming transport (like `streamable-http` အသုံးပြု၍ client သည် notification များကို ကိုင်တွယ်သည်။
 
-**ကန့်သတ်ချက်**  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှုဖြစ်သော [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ တိကျမှန်ကန်မှုအတွက် ကြိုးပမ်းဆောင်ရွက်ထားသော်လည်း၊ စက်မှုဘာသာပြန်ခြင်းအတွက် အမှားများ သို့မဟုတ် မှားယွင်းမှုများ ရှိနိုင်ကြောင်း သတိပြုပါရန် လိုအပ်ပါသည်။ မူလစာရွက်စာတမ်းကို မူရင်းဘာသာဖြင့်သာ အတည်ပြုရမည့်အချက်အလက်အဖြစ် ထည့်သွင်းစဉ်းစားသင့်ပါသည်။ အရေးကြီးသောအချက်အလက်များအတွက် သင့်တော်သော လူ့ဘာသာပြန်ပညာရှင်၏ ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းကြောင့် ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+## Progress Notifications & Scenarios
+
+ဤအပိုင်းတွင် MCP တွင် progress notification ဆိုသည့် အကြောင်းအရာ၊ ၎င်း၏ အရေးကြီးမှုနှင့် Streamable HTTP ဖြင့် မည်သို့ အကောင်အထည်ဖော်ရမည်ကို ဖော်ပြထားသည်။ သင်၏ နားလည်မှုကို ခိုင်မာစေရန် လက်တွေ့ လေ့ကျင့်ခန်းလည်း ပါဝင်သည်။
+
+Progress notification များသည် ကြာရှည်ဆောင်ရွက်နေစဉ် server မှ client သို့ အချိန်နောက်ကျမှုမရှိစွာ ပို့သော စ
+
+**အကြောင်းကြားချက်**  
+ဤစာတမ်းကို AI ဘာသာပြန်မှု ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ တိကျမှန်ကန်မှုအတွက် ကြိုးစားပေမယ့်၊ အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန်။ မူလစာတမ်းကို မူရင်းဘာသာဖြင့်သာ တရားဝင်အရင်းအမြစ်အဖြစ်ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် ပရော်ဖက်ရှင်နယ် လူသား ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းကြောင့် ဖြစ်ပေါ်လာနိုင်သည့် မတိကျမှုများ သို့မဟုတ် နားမလည်မှုများအတွက် ကျွန်ုပ်တို့တာဝန်မယူပါ။

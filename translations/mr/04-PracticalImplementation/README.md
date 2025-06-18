@@ -1,36 +1,36 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7919ce2e537f0c435c7c23fa6775b613",
-  "translation_date": "2025-06-11T18:08:32+00:00",
+  "original_hash": "d88dbf928fa0f159b82312e9a6757ba0",
+  "translation_date": "2025-06-18T08:54:01+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "mr"
 }
 -->
-# Practical Implementation
+# व्यावहारिक अंमलबजावणी
 
-Practical implementation is where the power of the Model Context Protocol (MCP) becomes real. While understanding the theory and architecture behind MCP is important, the true value appears when you use these concepts to build, test, and deploy solutions that address real-world challenges. This chapter connects the dots between theoretical knowledge and hands-on development, guiding you through the process of bringing MCP-based applications to life.
+व्यावहारिक अंमलबजावणी म्हणजे Model Context Protocol (MCP) ची ताकद प्रत्यक्षात अनुभवण्याचा भाग आहे. MCP च्या सिद्धांत आणि आर्किटेक्चर समजून घेणे महत्त्वाचे असले तरी, खऱ्या मूल्याची ओळख तेव्हा होते जेव्हा आपण या संकल्पनांचा वापर करून वास्तविक समस्यांसाठी उपाय तयार करतो, चाचणी करतो आणि तैनात करतो. हा अध्याय संकल्पनात्मक ज्ञान आणि प्रत्यक्ष विकास यांच्यातील अंतर कमी करतो, आणि MCP आधारित अनुप्रयोग तयार करण्याच्या प्रक्रियेत मार्गदर्शन करतो.
 
-Whether you are creating intelligent assistants, integrating AI into business workflows, or building custom data processing tools, MCP offers a flexible foundation. Its language-neutral design and official SDKs for popular programming languages make it accessible to many developers. By using these SDKs, you can quickly prototype, iterate, and scale your solutions across various platforms and environments.
+आपण बुद्धिमान सहाय्यक विकसित करत असाल, व्यवसाय प्रक्रियेत AI समाकलित करत असाल किंवा डेटा प्रक्रियेसाठी सानुकूल साधने तयार करत असाल, MCP लवचिक पाया पुरवतो. याचा भाषा-स्वतंत्र डिझाइन आणि लोकप्रिय प्रोग्रामिंग भाषांसाठी अधिकृत SDKs मुळे अनेक विकासकांना हे सहज उपलब्ध होते. या SDKs चा उपयोग करून आपण वेगाने प्रोटोटाइप तयार करू शकता, पुनरावृत्ती करू शकता आणि विविध प्लॅटफॉर्म आणि वातावरणांवर आपले उपाय स्केल करू शकता.
 
-In the following sections, you’ll find practical examples, sample code, and deployment strategies that show how to implement MCP in C#, Java, TypeScript, JavaScript, and Python. You’ll also learn how to debug and test your MCP servers, manage APIs, and deploy solutions to the cloud with Azure. These hands-on resources are designed to speed up your learning and help you confidently build robust, production-ready MCP applications.
+खालील विभागांमध्ये आपण C#, Java, TypeScript, JavaScript, आणि Python मध्ये MCP कसे अंमलात आणायचे याचे व्यावहारिक उदाहरणे, नमुना कोड आणि तैनाती धोरणे पाहाल. तसेच MCP सर्व्हर्स डिबग आणि टेस्ट कसे करायचे, API व्यवस्थापन कसे करायचे, आणि Azure वापरून क्लाउडवर उपाय कसे तैनात करायचे हे शिकाल. हे प्रत्यक्ष संसाधने आपल्या शिकण्याच्या प्रक्रियेला वेग देण्यासाठी आणि आत्मविश्वासाने मजबूत, उत्पादनासाठी तयार MCP अनुप्रयोग तयार करण्यासाठी डिझाइन केलेले आहेत.
 
-## Overview
+## आढावा
 
-This lesson focuses on practical aspects of implementing MCP across multiple programming languages. We’ll explore how to use MCP SDKs in C#, Java, TypeScript, JavaScript, and Python to build solid applications, debug and test MCP servers, and create reusable resources, prompts, and tools.
+हा धडा MCP अंमलबजावणीच्या व्यावहारिक पैलूंवर लक्ष केंद्रित करतो, अनेक प्रोग्रामिंग भाषांमध्ये. आपण C#, Java, TypeScript, JavaScript, आणि Python मध्ये MCP SDKs कसे वापरायचे, MCP सर्व्हर्स कसे डिबग आणि टेस्ट करायचे, तसेच पुनर्वापर करता येणारे संसाधने, प्रॉम्प्ट्स आणि साधने कशी तयार करायची हे पाहू.
 
-## Learning Objectives
+## शिकण्याचे उद्दिष्ट
 
-By the end of this lesson, you will be able to:
-- Implement MCP solutions using official SDKs in different programming languages
-- Debug and test MCP servers methodically
-- Create and use server features (Resources, Prompts, and Tools)
-- Design effective MCP workflows for complex tasks
-- Optimize MCP implementations for performance and reliability
+या धड्याच्या शेवटी, आपण सक्षम असाल:
+- विविध प्रोग्रामिंग भाषांमध्ये अधिकृत SDKs वापरून MCP उपाय अंमलात आणणे
+- MCP सर्व्हर्सचे सुसंगतपणे डिबग आणि टेस्ट करणे
+- सर्व्हर वैशिष्ट्ये (Resources, Prompts, आणि Tools) तयार करणे आणि वापरणे
+- गुंतागुंतीच्या कामांसाठी प्रभावी MCP वर्कफ्लो डिझाइन करणे
+- कार्यक्षमता आणि विश्वासार्हतेसाठी MCP अंमलबजावणीचे ऑप्टिमायझेशन करणे
 
-## Official SDK Resources
+## अधिकृत SDK संसाधने
 
-The Model Context Protocol provides official SDKs for several languages:
+Model Context Protocol अनेक भाषांसाठी अधिकृत SDKs पुरवतो:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) 
@@ -38,235 +38,237 @@ The Model Context Protocol provides official SDKs for several languages:
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
 
-## Working with MCP SDKs
+## MCP SDKs सह काम करणे
 
-This section offers practical examples of implementing MCP across multiple programming languages. You can find sample code in the `samples` directory, organized by language.
+हा विभाग अनेक प्रोग्रामिंग भाषांमध्ये MCP अंमलबजावणीचे व्यावहारिक उदाहरणे देतो. आपण `samples` निर्देशिकेत भाषानुसार वर्गीकृत नमुना कोड पाहू शकता.
 
-### Available Samples
+### उपलब्ध नमुने
 
-The repository includes sample implementations in these languages:
+रिपॉझिटरीमध्ये खालील भाषांमध्ये [नमुना अंमलबजावणी](../../../04-PracticalImplementation/samples) समाविष्ट आहेत:
 
-- C#
-- Java
-- TypeScript
-- JavaScript
-- Python
+- [C#](./samples/csharp/README.md)
+- [Java](./samples/java/containerapp/README.md)
+- [TypeScript](./samples/typescript/README.md)
+- [JavaScript](./samples/javascript/README.md)
+- [Python](./samples/python/README.md)
 
-Each sample demonstrates key MCP concepts and implementation patterns specific to that language and ecosystem.
+प्रत्येक नमुना त्या विशिष्ट भाषा आणि परिसंस्थेसाठी MCP च्या मुख्य संकल्पना आणि अंमलबजावणी पद्धती दाखवतो.
 
-## Core Server Features
+## मुख्य सर्व्हर वैशिष्ट्ये
 
-MCP servers can implement any combination of these features:
+MCP सर्व्हर खालील कोणत्याही वैशिष्ट्यांचे संयोजन अंमलात आणू शकतात:
 
 ### Resources  
-Resources provide context and data for the user or AI model to use:  
-- Document repositories  
-- Knowledge bases  
-- Structured data sources  
-- File systems  
+Resources वापरकर्त्याला किंवा AI मॉडेलला संदर्भ आणि डेटा पुरवतात:
+- दस्तऐवज संच
+- ज्ञान आधार
+- संरचित डेटा स्रोत
+- फाइल सिस्टम
 
 ### Prompts  
-Prompts are templated messages and workflows for users:  
-- Pre-defined conversation templates  
-- Guided interaction patterns  
-- Specialized dialogue structures  
+Prompts वापरकर्त्यांसाठी टेम्प्लेटेड संदेश आणि वर्कफ्लो असतात:
+- पूर्वनिर्धारित संभाषण टेम्प्लेट्स
+- मार्गदर्शित संवाद नमुने
+- विशेष संवाद रचना
 
 ### Tools  
-Tools are functions the AI model can execute:  
-- Data processing utilities  
-- External API integrations  
-- Computational capabilities  
-- Search functionality  
+Tools AI मॉडेलला चालवायच्या फंक्शन्स आहेत:
+- डेटा प्रक्रिया उपयोगी साधने
+- बाह्य API समाकलन
+- संगणकीय क्षमता
+- शोध कार्यक्षमता
 
-## Sample Implementations: C#
+## नमुना अंमलबजावणी: C#
 
-The official C# SDK repository contains several sample implementations demonstrating different aspects of MCP:
+अधिकृत C# SDK रिपॉझिटरीमध्ये MCP च्या विविध पैलूंचे नमुना अंमलबजावणी समाविष्ट आहेत:
 
-- **Basic MCP Client**: Simple example showing how to create an MCP client and call tools  
-- **Basic MCP Server**: Minimal server implementation with basic tool registration  
-- **Advanced MCP Server**: Full-featured server with tool registration, authentication, and error handling  
-- **ASP.NET Integration**: Examples showing integration with ASP.NET Core  
-- **Tool Implementation Patterns**: Various patterns for implementing tools with different complexity levels  
+- **Basic MCP Client**: MCP क्लायंट कसा तयार करायचा आणि टूल्स कसे कॉल करायचे याचे सोपे उदाहरण
+- **Basic MCP Server**: मूलभूत टूल नोंदणीसह सर्वात कमी सर्व्हर अंमलबजावणी
+- **Advanced MCP Server**: टूल नोंदणी, प्रमाणीकरण आणि त्रुटी हाताळणीसह पूर्ण वैशिष्ट्यांचा सर्व्हर
+- **ASP.NET Integration**: ASP.NET Core सह समाकलन दाखवणारे उदाहरण
+- **Tool Implementation Patterns**: विविध जटिलतेच्या टूल्स अंमलबजावणीसाठी विविध नमुना पद्धती
 
-The MCP C# SDK is in preview and APIs may change. We will keep updating this blog as the SDK evolves.
+MCP C# SDK अजून प्रिव्ह्यूमध्ये आहे आणि API मध्ये बदल होऊ शकतात. SDK विकसित होत असल्याने हा ब्लॉग सतत अपडेट केला जाईल.
 
-### Key Features  
+### मुख्य वैशिष्ट्ये  
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
 
-- Building your [first MCP Server](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
+- आपला [पहिला MCP Server](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/) तयार करणे.
 
-For complete C# implementation samples, visit the [official C# SDK samples repository](https://github.com/modelcontextprotocol/csharp-sdk)
+पूर्ण C# अंमलबजावणी नमुन्यांसाठी, [अधिकृत C# SDK नमुना रिपॉझिटरी](https://github.com/modelcontextprotocol/csharp-sdk) भेट द्या.
 
-## Sample implementation: Java Implementation
+## नमुना अंमलबजावणी: Java अंमलबजावणी
 
-The Java SDK offers strong MCP implementation options with enterprise-grade features.
+Java SDK मध्ये उद्योजक-स्तरीय वैशिष्ट्यांसह मजबूत MCP अंमलबजावणी पर्याय आहेत.
 
-### Key Features
+### मुख्य वैशिष्ट्ये
 
-- Spring Framework integration  
-- Strong type safety  
-- Reactive programming support  
-- Comprehensive error handling  
+- Spring Framework समाकलन
+- मजबूत टाइप सुरक्षा
+- प्रतिक्रियाशील प्रोग्रामिंग समर्थन
+- सर्वसमावेशक त्रुटी हाताळणी
 
-For a complete Java implementation sample, see [MCPSample.java](../../../04-PracticalImplementation/samples/java/MCPSample.java) in the samples directory.
+पूर्ण Java अंमलबजावणी नमुन्यासाठी, नमुना निर्देशिकेतील [MCPSample.java](../../../04-PracticalImplementation/samples/java/MCPSample.java) पहा.
 
-## Sample implementation: JavaScript Implementation
+## नमुना अंमलबजावणी: JavaScript अंमलबजावणी
 
-The JavaScript SDK provides a lightweight and flexible approach to MCP implementation.
+JavaScript SDK MCP अंमलबजावणीसाठी हलके आणि लवचिक दृष्टिकोन प्रदान करतो.
 
-### Key Features
+### मुख्य वैशिष्ट्ये
 
-- Node.js and browser support  
-- Promise-based API  
-- Easy integration with Express and other frameworks  
-- WebSocket support for streaming  
+- Node.js आणि ब्राउझर समर्थन
+- Promise-आधारित API
+- Express आणि इतर फ्रेमवर्कसह सुलभ समाकलन
+- स्ट्रीमिंगसाठी WebSocket समर्थन
 
-For a complete JavaScript implementation sample, see [mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js) in the samples directory.
+पूर्ण JavaScript अंमलबजावणी नमुन्यासाठी, नमुना निर्देशिकेतील [mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js) पहा.
 
-## Sample implementation: Python Implementation
+## नमुना अंमलबजावणी: Python अंमलबजावणी
 
-The Python SDK offers a Pythonic approach to MCP implementation with excellent ML framework integrations.
+Python SDK उत्कृष्ट ML फ्रेमवर्क समाकलनांसह Python-शैलीतील MCP अंमलबजावणी देते.
 
-### Key Features
+### मुख्य वैशिष्ट्ये
 
-- Async/await support with asyncio  
-- Flask and FastAPI integration  
-- Simple tool registration  
-- Native integration with popular ML libraries  
+- asyncio सह Async/await समर्थन
+- Flask आणि FastAPI समाकलन
+- सोपी टूल नोंदणी
+- लोकप्रिय ML लायब्ररींसह नैसर्गिक समाकलन
 
-For a complete Python implementation sample, see [mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py) in the samples directory.
+पूर्ण Python अंमलबजावणी नमुन्यासाठी, नमुना निर्देशिकेतील [mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py) पहा.
 
-## API management 
+## API व्यवस्थापन
 
-Azure API Management is a great solution for securing MCP Servers. The idea is to place an Azure API Management instance in front of your MCP Server and let it handle features you’ll likely need such as:
+Azure API Management हे MCP सर्व्हर्स सुरक्षित कसे करायचे याचे उत्तम उत्तर आहे. कल्पना अशी की आपण आपल्या MCP सर्व्हरच्या पुढे Azure API Management इन्स्टन्स ठेवता आणि ते खालील सारख्या वैशिष्ट्ये हाताळते:
 
-- rate limiting  
-- token management  
-- monitoring  
-- load balancing  
-- security  
+- दर मर्यादा (rate limiting)
+- टोकन व्यवस्थापन
+- निरीक्षण (monitoring)
+- लोड बॅलन्सिंग
+- सुरक्षा
 
-### Azure Sample
+### Azure नमुना
 
-Here’s an Azure Sample doing exactly that, i.e. [creating an MCP Server and securing it with Azure API Management](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
+येथे एक Azure नमुना आहे जो अगदी तसेच करतो, म्हणजे [MCP Server तयार करणे आणि Azure API Management ने सुरक्षित करणे](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
 
-See how the authorization flow works in the image below:
+खालील प्रतिमेत प्राधिकरण प्रवाह कसा होतो ते पहा:
 
-![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true) 
+![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true)
 
-In the image above, the following happens:
+वरील प्रतिमेत खालील प्रक्रिया घडते:
 
-- Authentication/Authorization occurs using Microsoft Entra.  
-- Azure API Management acts as a gateway and uses policies to route and manage traffic.  
-- Azure Monitor logs all requests for further analysis.  
+- प्रमाणीकरण/प्राधिकरण Microsoft Entra वापरून होते.
+- Azure API Management गेटवे म्हणून कार्य करते आणि ट्रॅफिक नियंत्रित करण्यासाठी धोरणे वापरते.
+- Azure Monitor पुढील विश्लेषणासाठी सर्व विनंत्या लॉग करतो.
 
-#### Authorization flow
+#### प्राधिकरण प्रवाह
 
-Let’s take a closer look at the authorization flow:
+प्राधिकरण प्रवाह अधिक तपशीलवार पाहूया:
 
 ![Sequence Diagram](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
 
-#### MCP authorization specification
+#### MCP प्राधिकरण तपशील
 
-Learn more about the [MCP Authorization specification](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
+अधिक जाणून घेण्यासाठी [MCP Authorization specification](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow) पहा.
 
-## Deploy Remote MCP Server to Azure
+## Remote MCP Server Azure वर तैनात करणे
 
-Let’s see how to deploy the sample we mentioned earlier:
+आता आपण पूर्वी नमूद केलेला नमुना तैनात करू शकतो का ते पाहू:
 
-1. Clone the repo
+1. रिपॉझिटरी क्लोन करा
 
     ```bash
     git clone https://github.com/Azure-Samples/remote-mcp-apim-functions-python.git
     cd remote-mcp-apim-functions-python
     ```
 
-2. Register `Microsoft.App`` resource provider.
-    * If you are using Azure CLI, run `az provider register --namespace Microsoft.App --wait`.
-    * If you are using Azure PowerShell, run `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` and check after some time if the registration is complete.
+2. `Microsoft.App` नोंदणी करा:
 
-3. Run this [azd](https://aka.ms/azd) command to provision the API management service, function app (with code), and all other required Azure resources
+    ` resource provider.
+    * If you are using Azure CLI, run `az provider register --namespace Microsoft.App --wait`.
+    * If you are using Azure PowerShell, run `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run ` (काही वेळानंतर नोंदणी पूर्ण झाली आहे का ते तपासण्यासाठी)
+
+3. या [azd](https://aka.ms/azd) कमांडचा वापर करून API Management सेवा, Function App (कोडसह) आणि इतर आवश्यक Azure संसाधने तयार करा:
 
     ```shell
     azd up
     ```
 
-    This command will deploy all the cloud resources on Azure.
+    या कमांडने Azure वर सर्व क्लाउड संसाधने तैनात केली पाहिजेत.
 
-### Testing your server with MCP Inspector
+### MCP Inspector वापरून आपला सर्व्हर टेस्ट करणे
 
-1. In a **new terminal window**, install and run MCP Inspector
+1. **नवीन टर्मिनल विंडोमध्ये**, MCP Inspector इन्स्टॉल करा आणि चालवा:
 
     ```shell
     npx @modelcontextprotocol/inspector
     ```
 
-    You should see an interface like this:
+    आपल्याला खालीलप्रमाणे इंटरफेस दिसेल:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.mr.png) 
+    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.mr.png)
 
-2. CTRL-click to load the MCP Inspector web app from the URL displayed by the app (e.g. http://127.0.0.1:6274/#resources)  
-3. Set the transport type to `SSE``
-1. Set the URL to your running API Management SSE endpoint displayed after `azd up` and **Connect**:
+2. CTRL क्लिक करून MCP Inspector वेब अॅप त्या URL वरून लोड करा (उदा. http://127.0.0.1:6274/#resources)
+3. ट्रान्सपोर्ट प्रकार `SSE`
+1. Set the URL to your running API Management SSE endpoint displayed after `azd up` सेट करा आणि **Connect** करा:
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-5. **List Tools**. Click on a tool and **Run Tool**.  
+5. **List Tools**. एखाद्या टूलवर क्लिक करा आणि **Run Tool** करा.
 
-If everything went well, you should now be connected to the MCP server and able to call a tool.
+जर सर्व पावले यशस्वी झाली, तर आपण आता MCP सर्व्हरशी जोडलेले आहात आणि टूल कॉल करू शकलात.
 
-## MCP servers for Azure 
+## Azure साठी MCP सर्व्हर्स
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): This set of repositories provides quickstart templates for building and deploying custom remote MCP (Model Context Protocol) servers using Azure Functions with Python, C# .NET, or Node/TypeScript.
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): या रिपॉझिटरी सेटमध्ये Azure Functions वापरून Python, C# .NET किंवा Node/TypeScript सह सानुकूल Remote MCP (Model Context Protocol) सर्व्हर्स तयार करण्यासाठी जलद प्रारंभ टेम्प्लेट आहेत.
 
-The samples offer a complete solution allowing developers to:
+हे नमुने विकसितकर्त्यांना संपूर्ण समाधान देतात जे त्यांना परवानगी देतात:
 
-- Build and run locally: Develop and debug an MCP server on your local machine  
-- Deploy to Azure: Easily deploy to the cloud with a simple azd up command  
-- Connect from clients: Connect to the MCP server from various clients, including VS Code’s Copilot agent mode and the MCP Inspector tool  
+- स्थानिकपणे तयार आणि चालवा: स्थानिक मशीनवर MCP सर्व्हर विकसित आणि डिबग करा
+- Azure वर तैनात करा: सोप्या azd up कमांडने क्लाउडवर सहज तैनात करा
+- क्लायंट्स कडून कनेक्ट करा: VS Code च्या Copilot एजंट मोड आणि MCP Inspector टूलसह विविध क्लायंट्सकडून MCP सर्व्हरशी कनेक्ट व्हा
 
-### Key Features:
+### मुख्य वैशिष्ट्ये:
 
-- Security by design: The MCP server is secured using keys and HTTPS  
-- Authentication options: Supports OAuth with built-in auth and/or API Management  
-- Network isolation: Enables network isolation using Azure Virtual Networks (VNET)  
-- Serverless architecture: Uses Azure Functions for scalable, event-driven execution  
-- Local development: Full support for local development and debugging  
-- Simple deployment: Streamlined deployment process to Azure  
+- सुरक्षेची रचना: MCP सर्व्हर कीज आणि HTTPS वापरून सुरक्षित केला आहे
+- प्रमाणीकरण पर्याय: अंगभूत प्रमाणीकरण आणि/किंवा API Management वापरून OAuth समर्थन
+- नेटवर्क पृथक्करण: Azure Virtual Networks (VNET) वापरून नेटवर्क पृथक्करण सक्षम करते
+- सर्व्हरलेस आर्किटेक्चर: स्केलेबल, इव्हेंट-चालित अंमलबजावणीसाठी Azure Functions वापरते
+- स्थानिक विकास: व्यापक स्थानिक विकास आणि डिबगिंग समर्थन
+- सोपी तैनाती: Azure वर तैनातीसाठी सुलभ प्रक्रिया
 
-The repository includes all necessary configuration files, source code, and infrastructure definitions to get started quickly with a production-ready MCP server implementation.
+रिपॉझिटरीमध्ये सर्व आवश्यक कॉन्फिगरेशन फाइल्स, स्त्रोत कोड आणि इन्फ्रास्ट्रक्चर परिभाषा आहेत ज्यामुळे उत्पादनासाठी तयार MCP सर्व्हर अंमलबजावणी जलद सुरू करता येते.
 
-- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Sample MCP implementation using Azure Functions with Python
+- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Azure Functions वापरून Python मध्ये MCP चे नमुना अंमलबजावणी
 
-- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Sample MCP implementation using Azure Functions with C# .NET
+- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Azure Functions वापरून C# .NET मध्ये MCP चे नमुना अंमलबजावणी
 
-- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Sample MCP implementation using Azure Functions with Node/TypeScript.
+- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Azure Functions वापरून Node/TypeScript मध्ये MCP चे नमुना अंमलबजावणी
 
-## Key Takeaways
+## मुख्य मुद्दे
 
-- MCP SDKs provide language-specific tools for building robust MCP solutions  
-- Debugging and testing are critical for reliable MCP applications  
-- Reusable prompt templates ensure consistent AI interactions  
-- Well-designed workflows can coordinate complex tasks using multiple tools  
-- Implementing MCP solutions requires attention to security, performance, and error handling  
+- MCP SDKs भाषा-विशिष्ट साधने पुरवतात ज्याद्वारे मजबूत MCP उपाय अंमलात आणता येतात
+- डिबगिंग आणि टेस्टिंग प्रक्रिया विश्वासार्ह MCP अनुप्रयोगांसाठी अत्यंत महत्त्वाची आहे
+- पुनर्वापर करता येणाऱ्या प्रॉम्प्ट टेम्प्लेट्समुळे AI संवाद सातत्यपूर्ण होतात
+- चांगल्या डिझाइन केलेल्या वर्कफ्लोने अनेक टूल्स वापरून गुंतागुंतीचे काम सहज हाताळता येतात
+- MCP उपाय अंमलात आणताना सुरक्षा, कार्यक्षमता आणि त्रुटी हाताळणीचा विचार करणे आवश्यक आहे
 
-## Exercise
+## सराव
 
-Design a practical MCP workflow that solves a real-world problem in your field:
+आपल्या क्षेत्रातील वास्तविक समस्येवर लक्ष केंद्रित करणारा व्यावहारिक MCP वर्कफ्लो डिझाइन करा:
 
-1. Identify 3-4 tools that would help solve this problem  
-2. Create a workflow diagram showing how these tools interact  
-3. Implement a basic version of one tool using your preferred language  
-4. Create a prompt template to help the model effectively use your tool  
+1. या समस्येचे निराकरण करण्यासाठी उपयुक्त 3-4 टूल्स ओळखा
+2. या टूल्स कसे परस्परसंवाद करतात हे दाखवणारा वर्कफ्लो आरेख तयार करा
+3. आपल्या पसंतीच्या भाषेत एक टूलचा प्राथमिक आवृत्ती तयार करा
+4. मॉडेलला आपले टूल प्रभावीपणे वापरण्यास मदत करणारा प्रॉम्प्ट टेम्प्लेट तयार करा
 
-## Additional Resources
+## अतिरिक्त संसाधने
 
 
 ---
 
-Next: [Advanced Topics](../05-AdvancedTopics/README.md)
+पुढील: [Advanced Topics](../05-AdvancedTopics/README.md)
 
 **अस्वीकरण**:  
-हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून भाषांतरित केला आहे. आम्ही अचूकतेसाठी प्रयत्न करतो, तरी कृपया लक्षात घ्या की स्वयंचलित भाषांतरांमध्ये चुका किंवा अचूकतेचा अभाव असू शकतो. मूळ दस्तऐवज त्याच्या मूळ भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी भाषांतर शिफारस केली जाते. या भाषांतराच्या वापरामुळे उद्भवलेल्या कोणत्याही गैरसमजुतींसाठी किंवा चुकीच्या अर्थसाधनेसाठी आम्ही जबाबदार नाही.
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्न करतो, तरी कृपया लक्षात ठेवा की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला पाहिजे. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवादाची शिफारस केली जाते. या अनुवादाच्या वापरामुळे होणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थव्यवस्थेसाठी आम्ही जबाबदार नाही.

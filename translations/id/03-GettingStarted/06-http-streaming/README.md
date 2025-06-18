@@ -1,53 +1,53 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1015443af8119fb019c152bca90fb293",
-  "translation_date": "2025-06-17T22:20:52+00:00",
+  "original_hash": "3eaf38ffe0638867045ec6664908333c",
+  "translation_date": "2025-06-18T09:21:09+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "id"
 }
 -->
 # HTTPS Streaming dengan Model Context Protocol (MCP)
 
-Bab ini memberikan panduan lengkap untuk mengimplementasikan streaming yang aman, skalabel, dan real-time dengan Model Context Protocol (MCP) menggunakan HTTPS. Materi mencakup motivasi untuk streaming, mekanisme transport yang tersedia, cara mengimplementasikan HTTP yang dapat di-stream dalam MCP, praktik keamanan terbaik, migrasi dari SSE, serta panduan praktis untuk membangun aplikasi streaming MCP Anda sendiri.
+Bab ini memberikan panduan lengkap untuk mengimplementasikan streaming yang aman, skalabel, dan real-time dengan Model Context Protocol (MCP) menggunakan HTTPS. Materi meliputi motivasi streaming, mekanisme transport yang tersedia, cara mengimplementasikan HTTP yang dapat distreaming dalam MCP, praktik keamanan terbaik, migrasi dari SSE, dan panduan praktis untuk membangun aplikasi streaming MCP Anda sendiri.
 
 ## Mekanisme Transport dan Streaming dalam MCP
 
-Bagian ini membahas berbagai mekanisme transport yang tersedia dalam MCP dan perannya dalam memungkinkan kemampuan streaming untuk komunikasi real-time antara klien dan server.
+Bagian ini membahas berbagai mekanisme transport yang tersedia di MCP dan perannya dalam memungkinkan kemampuan streaming untuk komunikasi real-time antara klien dan server.
 
 ### Apa itu Mekanisme Transport?
 
-Mekanisme transport mendefinisikan bagaimana data dipertukarkan antara klien dan server. MCP mendukung beberapa jenis transport untuk menyesuaikan dengan lingkungan dan kebutuhan yang berbeda:
+Mekanisme transport mendefinisikan bagaimana data dipertukarkan antara klien dan server. MCP mendukung beberapa jenis transport untuk menyesuaikan dengan berbagai lingkungan dan kebutuhan:
 
 - **stdio**: Input/output standar, cocok untuk alat lokal dan berbasis CLI. Sederhana tapi tidak cocok untuk web atau cloud.
-- **SSE (Server-Sent Events)**: Memungkinkan server mengirim pembaruan real-time ke klien melalui HTTP. Baik untuk UI web, namun terbatas dalam skalabilitas dan fleksibilitas.
-- **Streamable HTTP**: Transport streaming berbasis HTTP modern, mendukung notifikasi dan skalabilitas lebih baik. Direkomendasikan untuk sebagian besar skenario produksi dan cloud.
+- **SSE (Server-Sent Events)**: Memungkinkan server mendorong pembaruan real-time ke klien melalui HTTP. Bagus untuk UI web, tapi terbatas dalam skalabilitas dan fleksibilitas.
+- **Streamable HTTP**: Transport streaming berbasis HTTP modern, mendukung notifikasi dan skalabilitas yang lebih baik. Direkomendasikan untuk sebagian besar skenario produksi dan cloud.
 
 ### Tabel Perbandingan
 
 Lihat tabel perbandingan berikut untuk memahami perbedaan antara mekanisme transport ini:
 
-| Transport         | Pembaruan Real-time | Streaming | Skalabilitas | Kasus Penggunaan          |
-|-------------------|--------------------|-----------|--------------|--------------------------|
-| stdio             | Tidak              | Tidak     | Rendah       | Alat CLI lokal           |
-| SSE               | Ya                 | Ya        | Sedang       | Web, pembaruan real-time |
-| Streamable HTTP   | Ya                 | Ya        | Tinggi       | Cloud, multi-klien       |
+| Transport         | Pembaruan Real-time | Streaming | Skalabilitas | Kasus Penggunaan        |
+|-------------------|--------------------|-----------|--------------|------------------------|
+| stdio             | Tidak              | Tidak     | Rendah       | Alat CLI lokal         |
+| SSE               | Ya                 | Ya        | Sedang       | Web, pembaruan real-time|
+| Streamable HTTP   | Ya                 | Ya        | Tinggi       | Cloud, multi-klien     |
 
-> **Tip:** Memilih transport yang tepat memengaruhi performa, skalabilitas, dan pengalaman pengguna. **Streamable HTTP** direkomendasikan untuk aplikasi modern, skalabel, dan siap cloud.
+> **Tip:** Memilih transport yang tepat memengaruhi performa, skalabilitas, dan pengalaman pengguna. **Streamable HTTP** direkomendasikan untuk aplikasi modern yang skalabel dan siap cloud.
 
-Perhatikan mekanisme transport stdio dan SSE yang telah Anda lihat di bab sebelumnya dan bagaimana streamable HTTP adalah transport yang dibahas dalam bab ini.
+Perhatikan transport stdio dan SSE yang sudah Anda lihat di bab sebelumnya dan bagaimana streamable HTTP adalah transport yang dibahas dalam bab ini.
 
 ## Streaming: Konsep dan Motivasi
 
 Memahami konsep dasar dan motivasi di balik streaming sangat penting untuk mengimplementasikan sistem komunikasi real-time yang efektif.
 
-**Streaming** adalah teknik dalam pemrograman jaringan yang memungkinkan data dikirim dan diterima dalam potongan kecil yang dapat dikelola atau sebagai rangkaian peristiwa, bukan menunggu seluruh respons siap. Ini sangat berguna untuk:
+**Streaming** adalah teknik dalam pemrograman jaringan yang memungkinkan data dikirim dan diterima dalam potongan kecil yang mudah diatur atau sebagai rangkaian peristiwa, bukan menunggu seluruh respons siap. Ini sangat berguna untuk:
 
 - File atau dataset besar.
 - Pembaruan real-time (misalnya, chat, progress bar).
-- Perhitungan yang berjalan lama di mana Anda ingin terus memberi tahu pengguna.
+- Komputasi jangka panjang di mana Anda ingin terus memberi tahu pengguna.
 
-Berikut hal yang perlu Anda ketahui tentang streaming secara garis besar:
+Berikut hal penting yang perlu Anda ketahui tentang streaming secara umum:
 
 - Data dikirim secara bertahap, tidak sekaligus.
 - Klien dapat memproses data saat tiba.
@@ -59,7 +59,7 @@ Alasan menggunakan streaming adalah sebagai berikut:
 
 - Pengguna mendapatkan umpan balik segera, bukan hanya di akhir.
 - Memungkinkan aplikasi real-time dan UI yang responsif.
-- Penggunaan sumber daya jaringan dan komputasi yang lebih efisien.
+- Penggunaan sumber daya jaringan dan komputasi lebih efisien.
 
 ### Contoh Sederhana: Server & Klien HTTP Streaming
 
@@ -106,16 +106,91 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-Contoh ini menunjukkan server mengirim serangkaian pesan ke klien saat pesan tersedia, bukan menunggu semua pesan siap.
+Contoh ini menunjukkan server mengirimkan serangkaian pesan ke klien saat pesan tersebut tersedia, bukan menunggu semua pesan siap.
 
 **Cara kerjanya:**
-- Server mengirim setiap pesan saat sudah siap.
+- Server mengirimkan setiap pesan saat sudah siap.
 - Klien menerima dan mencetak setiap potongan data saat tiba.
 
 **Persyaratan:**
-- Server harus menggunakan response streaming (misalnya, `StreamingResponse` in FastAPI).
+- Server harus menggunakan respons streaming (misalnya, `StreamingResponse` in FastAPI).
 - The client must process the response as a stream (`stream=True` in requests).
 - Content-Type is usually `text/event-stream` or `application/octet-stream`.
+
+</details>
+
+<details>
+<summary>Java</summary>
+
+**Server (Java, menggunakan Spring Boot dan Server-Sent Events):**
+
+```java
+@RestController
+public class CalculatorController {
+
+    @GetMapping(value = "/calculate", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<ServerSentEvent<String>> calculate(@RequestParam double a,
+                                                   @RequestParam double b,
+                                                   @RequestParam String op) {
+        
+        double result;
+        switch (op) {
+            case "add": result = a + b; break;
+            case "sub": result = a - b; break;
+            case "mul": result = a * b; break;
+            case "div": result = b != 0 ? a / b : Double.NaN; break;
+            default: result = Double.NaN;
+        }
+
+        return Flux.<ServerSentEvent<String>>just(
+                    ServerSentEvent.<String>builder()
+                        .event("info")
+                        .data("Calculating: " + a + " " + op + " " + b)
+                        .build(),
+                    ServerSentEvent.<String>builder()
+                        .event("result")
+                        .data(String.valueOf(result))
+                        .build()
+                )
+                .delayElements(Duration.ofSeconds(1));
+    }
+}
+```
+
+**Klien (Java, menggunakan Spring WebFlux WebClient):**
+
+```java
+@SpringBootApplication
+public class CalculatorClientApplication implements CommandLineRunner {
+
+    private final WebClient client = WebClient.builder()
+            .baseUrl("http://localhost:8080")
+            .build();
+
+    @Override
+    public void run(String... args) {
+        client.get()
+                .uri(uriBuilder -> uriBuilder
+                        .path("/calculate")
+                        .queryParam("a", 7)
+                        .queryParam("b", 5)
+                        .queryParam("op", "mul")
+                        .build())
+                .accept(MediaType.TEXT_EVENT_STREAM)
+                .retrieve()
+                .bodyToFlux(String.class)
+                .doOnNext(System.out::println)
+                .blockLast();
+    }
+}
+```
+
+**Catatan Implementasi Java:**
+- Menggunakan stack reaktif Spring Boot dengan `Flux` for streaming
+- `ServerSentEvent` provides structured event streaming with event types
+- `WebClient` with `bodyToFlux()` enables reactive streaming consumption
+- `delayElements()` simulates processing time between events
+- Events can have types (`info`, `result`) for better client handling
 
 </details>
 
@@ -156,29 +231,29 @@ There are some things we recommend when it comes to choosing between implementin
 
 - **Untuk kebutuhan streaming sederhana:** Streaming HTTP klasik lebih mudah diimplementasikan dan cukup untuk kebutuhan streaming dasar.
 
-- **Untuk aplikasi kompleks dan interaktif:** Streaming MCP menyediakan pendekatan yang lebih terstruktur dengan metadata yang lebih kaya dan pemisahan antara notifikasi dan hasil akhir.
+- **Untuk aplikasi kompleks dan interaktif:** Streaming MCP memberikan pendekatan yang lebih terstruktur dengan metadata yang lebih kaya dan pemisahan antara notifikasi dan hasil akhir.
 
-- **Untuk aplikasi AI:** Sistem notifikasi MCP sangat berguna untuk tugas AI yang berjalan lama di mana Anda ingin terus memberi tahu pengguna tentang kemajuan.
+- **Untuk aplikasi AI:** Sistem notifikasi MCP sangat berguna untuk tugas AI yang berjalan lama dimana Anda ingin terus memberi tahu pengguna tentang kemajuan.
 
 ## Streaming dalam MCP
 
-Baik, Anda sudah melihat beberapa rekomendasi dan perbandingan tentang perbedaan antara streaming klasik dan streaming dalam MCP. Mari kita bahas secara rinci bagaimana Anda dapat memanfaatkan streaming dalam MCP.
+Baik, Anda sudah melihat beberapa rekomendasi dan perbandingan sejauh ini tentang perbedaan antara streaming klasik dan streaming dalam MCP. Mari kita bahas secara detail bagaimana Anda bisa memanfaatkan streaming dalam MCP.
 
-Memahami bagaimana streaming bekerja dalam kerangka MCP penting untuk membangun aplikasi yang responsif yang memberikan umpan balik real-time kepada pengguna selama operasi yang berjalan lama.
+Memahami bagaimana streaming bekerja dalam kerangka MCP sangat penting untuk membangun aplikasi responsif yang memberikan umpan balik real-time kepada pengguna selama operasi yang berjalan lama.
 
-Dalam MCP, streaming bukan tentang mengirim respons utama dalam potongan, melainkan mengirim **notifikasi** ke klien saat sebuah alat memproses permintaan. Notifikasi ini bisa berupa pembaruan kemajuan, log, atau peristiwa lainnya.
+Dalam MCP, streaming bukan tentang mengirim respons utama secara bertahap, melainkan mengirim **notifikasi** ke klien saat sebuah tool memproses permintaan. Notifikasi ini bisa berupa pembaruan kemajuan, log, atau peristiwa lainnya.
 
 ### Cara kerjanya
 
-Hasil utama tetap dikirim sebagai satu respons tunggal. Namun, notifikasi dapat dikirim sebagai pesan terpisah selama pemrosesan sehingga memperbarui klien secara real-time. Klien harus mampu menangani dan menampilkan notifikasi ini.
+Hasil utama tetap dikirim sebagai satu respons tunggal. Namun, notifikasi dapat dikirim sebagai pesan terpisah selama pemrosesan dan dengan demikian memperbarui klien secara real time. Klien harus dapat menangani dan menampilkan notifikasi ini.
 
 ## Apa itu Notifikasi?
 
-Kita sudah menyebut "Notifikasi", apa artinya dalam konteks MCP?
+Kita menyebut "Notifikasi", apa maksudnya dalam konteks MCP?
 
-Notifikasi adalah pesan yang dikirim dari server ke klien untuk menginformasikan tentang kemajuan, status, atau peristiwa lain selama operasi yang berjalan lama. Notifikasi meningkatkan transparansi dan pengalaman pengguna.
+Notifikasi adalah pesan yang dikirim dari server ke klien untuk memberi tahu tentang kemajuan, status, atau peristiwa lain selama operasi yang berjalan lama. Notifikasi meningkatkan transparansi dan pengalaman pengguna.
 
-Contohnya, klien diharapkan mengirim notifikasi setelah handshake awal dengan server selesai.
+Misalnya, klien diharapkan mengirim notifikasi setelah handshake awal dengan server selesai.
 
 Notifikasi terlihat seperti pesan JSON berikut:
 
@@ -192,9 +267,9 @@ Notifikasi terlihat seperti pesan JSON berikut:
 }
 ```
 
-Notifikasi termasuk dalam topik MCP yang disebut ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
+Notifikasi termasuk dalam topik di MCP yang disebut ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
 
-Untuk mengaktifkan logging, server perlu mengaktifkannya sebagai fitur/kapabilitas seperti berikut:
+Untuk mengaktifkan logging, server perlu mengaktifkannya sebagai fitur/kemampuan seperti berikut:
 
 ```json
 {
@@ -205,28 +280,28 @@ Untuk mengaktifkan logging, server perlu mengaktifkannya sebagai fitur/kapabilit
 ```
 
 > [!NOTE]
-> Tergantung pada SDK yang digunakan, logging mungkin sudah diaktifkan secara default, atau Anda mungkin perlu mengaktifkannya secara eksplisit dalam konfigurasi server Anda.
+> Tergantung SDK yang digunakan, logging mungkin sudah aktif secara default, atau Anda mungkin perlu mengaktifkannya secara eksplisit dalam konfigurasi server Anda.
 
 Ada berbagai jenis notifikasi:
 
-| Level     | Deskripsi                     | Contoh Kasus Penggunaan          |
-|-----------|-------------------------------|---------------------------------|
-| debug     | Informasi debugging rinci      | Titik masuk/keluar fungsi        |
-| info      | Pesan informasi umum           | Pembaruan kemajuan operasi       |
-| notice    | Peristiwa normal tapi penting  | Perubahan konfigurasi            |
-| warning   | Kondisi peringatan             | Penggunaan fitur yang usang      |
-| error     | Kondisi kesalahan             | Kegagalan operasi                |
-| critical  | Kondisi kritis                | Kegagalan komponen sistem        |
-| alert     | Tindakan harus segera diambil | Terjadi kerusakan data           |
-| emergency | Sistem tidak dapat digunakan  | Kegagalan sistem total           |
+| Level     | Deskripsi                      | Contoh Kasus Penggunaan        |
+|-----------|-------------------------------|-------------------------------|
+| debug     | Informasi debugging detail     | Titik masuk/keluar fungsi      |
+| info      | Pesan informasi umum           | Pembaruan kemajuan operasi     |
+| notice    | Peristiwa normal tapi penting  | Perubahan konfigurasi          |
+| warning   | Kondisi peringatan             | Penggunaan fitur yang deprecated|
+| error     | Kondisi kesalahan             | Kegagalan operasi              |
+| critical  | Kondisi kritis                 | Kegagalan komponen sistem      |
+| alert     | Tindakan harus segera diambil | Terdeteksi korupsi data        |
+| emergency | Sistem tidak dapat digunakan   | Kegagalan sistem total         |
 
 ## Mengimplementasikan Notifikasi dalam MCP
 
-Untuk mengimplementasikan notifikasi dalam MCP, Anda perlu menyiapkan sisi server dan klien untuk menangani pembaruan real-time. Ini memungkinkan aplikasi Anda memberikan umpan balik segera kepada pengguna selama operasi yang berjalan lama.
+Untuk mengimplementasikan notifikasi dalam MCP, Anda perlu menyiapkan sisi server dan klien agar dapat menangani pembaruan real-time. Ini memungkinkan aplikasi Anda memberikan umpan balik langsung kepada pengguna selama operasi yang berjalan lama.
 
 ### Sisi Server: Mengirim Notifikasi
 
-Mari mulai dari sisi server. Dalam MCP, Anda mendefinisikan alat yang dapat mengirim notifikasi saat memproses permintaan. Server menggunakan objek konteks (biasanya `ctx`) untuk mengirim pesan ke klien.
+Mari mulai dengan sisi server. Dalam MCP, Anda mendefinisikan tool yang dapat mengirim notifikasi saat memproses permintaan. Server menggunakan objek konteks (biasanya `ctx`) untuk mengirim pesan ke klien.
 
 <details>
 <summary>Python</summary>
@@ -243,7 +318,7 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-Dalam contoh sebelumnya, fungsi `process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
+Dalam contoh sebelumnya, metode `process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
 
 </details>
 
@@ -251,6 +326,38 @@ Additionally, to enable notifications, ensure your server uses a streaming trans
 
 ```python
 mcp.run(transport="streamable-http")
+```
+
+</details>
+
+<details>
+<summary>.NET</summary>
+
+```csharp
+[Tool("A tool that sends progress notifications")]
+public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
+{
+    await ctx.Info("Processing file 1/3...");
+    await ctx.Info("Processing file 2/3...");
+    await ctx.Info("Processing file 3/3...");
+    return new TextContent
+    {
+        Type = "text",
+        Text = $"Done: {message}"
+    };
+}
+```
+
+Dalam contoh .NET ini, metode `ProcessFiles` tool is decorated with the `Tool` attribute and sends three notifications to the client as it processes each file. The `ctx.Info()` digunakan untuk mengirim pesan informasi.
+
+Untuk mengaktifkan notifikasi di server MCP .NET Anda, pastikan menggunakan transport streaming:
+
+```csharp
+var builder = McpBuilder.Create();
+await builder
+    .UseStreamableHttp() // Enable streamable HTTP transport
+    .Build()
+    .RunAsync();
 ```
 
 </details>
@@ -277,7 +384,41 @@ async with ClientSession(
 ) as session:
 ```
 
-Dalam kode sebelumnya, fungsi `message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` to handle incoming notifications.
+Dalam kode sebelumnya, `message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` digunakan untuk menangani notifikasi masuk.
+
+</details>
+
+<details>
+<summary>.NET</summary>
+
+```csharp
+// Define a message handler
+void MessageHandler(IJsonRpcMessage message)
+{
+    if (message is ServerNotification notification)
+    {
+        Console.WriteLine($"NOTIFICATION: {notification}");
+    }
+    else
+    {
+        Console.WriteLine($"SERVER MESSAGE: {message}");
+    }
+}
+
+// Create and use a client session with the message handler
+var clientOptions = new ClientSessionOptions
+{
+    MessageHandler = MessageHandler,
+    LoggingCallback = (level, message) => Console.WriteLine($"[{level}] {message}")
+};
+
+using var client = new ClientSession(readStream, writeStream, clientOptions);
+await client.InitializeAsync();
+
+// Now the client will process notifications through the MessageHandler
+```
+
+Dalam contoh .NET ini, `MessageHandler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. The `ClientSession` is initialized with the message handler via the `ClientSessionOptions`.
 
 </details>
 
@@ -285,9 +426,9 @@ To enable notifications, ensure your server uses a streaming transport (like `st
 
 ## Notifikasi Kemajuan & Skenario
 
-Bagian ini menjelaskan konsep notifikasi kemajuan dalam MCP, mengapa penting, dan cara mengimplementasikannya menggunakan Streamable HTTP. Anda juga akan menemukan tugas praktis untuk memperkuat pemahaman Anda.
+Bagian ini menjelaskan konsep notifikasi kemajuan dalam MCP, mengapa penting, dan cara mengimplementasikannya menggunakan Streamable HTTP. Anda juga akan menemukan tugas praktis untuk memperkuat pemahaman.
 
-Notifikasi kemajuan adalah pesan real-time yang dikirim dari server ke klien selama operasi yang berjalan lama. Alih-alih menunggu seluruh proses selesai, server terus memberi tahu klien tentang status terkini. Ini meningkatkan transparansi, pengalaman pengguna, dan mempermudah debugging.
+Notifikasi kemajuan adalah pesan real-time yang dikirim dari server ke klien selama operasi yang berjalan lama. Alih-alih menunggu proses selesai, server terus memperbarui klien tentang status terkini. Ini meningkatkan transparansi, pengalaman pengguna, dan memudahkan debugging.
 
 **Contoh:**
 
@@ -304,13 +445,13 @@ Notifikasi kemajuan adalah pesan real-time yang dikirim dari server ke klien sel
 
 Notifikasi kemajuan penting karena beberapa alasan:
 
-- **Pengalaman pengguna yang lebih baik:** Pengguna melihat pembaruan saat pekerjaan berlangsung, bukan hanya di akhir.
+- **Pengalaman pengguna lebih baik:** Pengguna melihat pembaruan saat pekerjaan berlangsung, bukan hanya di akhir.
 - **Umpan balik real-time:** Klien dapat menampilkan progress bar atau log, membuat aplikasi terasa responsif.
-- **Mempermudah debugging dan pemantauan:** Pengembang dan pengguna dapat melihat di mana proses mungkin lambat atau terhenti.
+- **Memudahkan debugging dan pemantauan:** Pengembang dan pengguna dapat melihat di mana proses mungkin lambat atau terhenti.
 
 ### Cara Mengimplementasikan Notifikasi Kemajuan
 
-Berikut cara mengimplementasikan notifikasi kemajuan dalam MCP:
+Berikut cara mengimplementasikan notifikasi kemajuan di MCP:
 
 - **Di server:** Gunakan `ctx.info()` or `ctx.log()` untuk mengirim notifikasi saat setiap item diproses. Ini mengirim pesan ke klien sebelum hasil utama siap.
 - **Di klien:** Implementasikan handler pesan yang mendengarkan dan menampilkan notifikasi saat tiba. Handler ini membedakan antara notifikasi dan hasil akhir.
@@ -348,11 +489,11 @@ async def message_handler(message):
 
 ## Pertimbangan Keamanan
 
-Saat mengimplementasikan server MCP dengan transport berbasis HTTP, keamanan menjadi perhatian utama yang membutuhkan perhatian cermat terhadap berbagai vektor serangan dan mekanisme perlindungan.
+Saat mengimplementasikan server MCP dengan transport berbasis HTTP, keamanan menjadi perhatian utama yang memerlukan perhatian cermat terhadap berbagai vektor serangan dan mekanisme perlindungan.
 
 ### Gambaran Umum
 
-Keamanan sangat penting saat mengekspos server MCP melalui HTTP. Streamable HTTP memperkenalkan permukaan serangan baru dan membutuhkan konfigurasi yang cermat.
+Keamanan sangat penting saat mengekspos server MCP melalui HTTP. Streamable HTTP memperkenalkan permukaan serangan baru dan memerlukan konfigurasi yang hati-hati.
 
 ### Poin Penting
 - **Validasi Header Origin**: Selalu validasi `Origin` header to prevent DNS rebinding attacks.
@@ -447,11 +588,11 @@ Here's how you can migrate from SSE to Streamable HTTP in your MCP applications:
 3. **Implementasikan handler pesan** di klien untuk memproses notifikasi.
 4. **Uji kompatibilitas** dengan alat dan alur kerja yang ada.
 
-### Menjaga Kompatibilitas
+### Mempertahankan Kompatibilitas
 
-Disarankan untuk menjaga kompatibilitas dengan klien SSE yang sudah ada selama proses migrasi. Berikut beberapa strategi:
+Disarankan untuk mempertahankan kompatibilitas dengan klien SSE yang sudah ada selama proses migrasi. Berikut beberapa strategi:
 
-- Anda dapat mendukung kedua transport SSE dan Streamable HTTP dengan menjalankan kedua transport pada endpoint yang berbeda.
+- Anda dapat mendukung kedua transport SSE dan Streamable HTTP dengan menjalankan keduanya pada endpoint berbeda.
 - Migrasi klien secara bertahap ke transport baru.
 
 ### Tantangan
@@ -464,32 +605,32 @@ Pastikan Anda mengatasi tantangan berikut selama migrasi:
 ### Tugas: Bangun Aplikasi Streaming MCP Anda Sendiri
 
 **Skenario:**
-Buat server dan klien MCP di mana server memproses daftar item (misalnya, file atau dokumen) dan mengirim notifikasi untuk setiap item yang diproses. Klien harus menampilkan setiap notifikasi saat tiba.
+Bangun server dan klien MCP di mana server memproses daftar item (misalnya, file atau dokumen) dan mengirim notifikasi untuk setiap item yang diproses. Klien harus menampilkan setiap notifikasi saat tiba.
 
 **Langkah-langkah:**
 
-1. Implementasikan alat server yang memproses daftar dan mengirim notifikasi untuk setiap item.
+1. Implementasikan tool server yang memproses daftar dan mengirim notifikasi untuk setiap item.
 2. Implementasikan klien dengan handler pesan untuk menampilkan notifikasi secara real-time.
-3. Uji implementasi Anda dengan menjalankan server dan klien, lalu amati notifikasi yang muncul.
+3. Uji implementasi Anda dengan menjalankan server dan klien, dan amati notifikasi yang muncul.
 
-[Solusi](./solution/README.md)
+[Solution](./solution/README.md)
 
-## Bacaan Lanjutan & Langkah Selanjutnya
+## Bacaan Lanjutan & Langkah Selanjutnya?
 
-Untuk melanjutkan perjalanan Anda dengan streaming MCP dan memperluas pengetahuan, bagian ini menyediakan sumber daya tambahan dan langkah yang disarankan untuk membangun aplikasi yang lebih maju.
+Untuk melanjutkan perjalanan Anda dengan streaming MCP dan memperluas pengetahuan, bagian ini menyediakan sumber daya tambahan dan langkah yang disarankan untuk membangun aplikasi yang lebih canggih.
 
 ### Bacaan Lanjutan
 
-- [Microsoft: Pengantar HTTP Streaming](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
+- [Microsoft: Pengenalan HTTP Streaming](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
 - [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
 - [Microsoft: CORS di ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
 - [Python requests: Streaming Requests](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
 
-### Langkah Selanjutnya
+### Langkah Selanjutnya?
 
-- Cobalah membangun alat MCP yang lebih maju yang menggunakan streaming untuk analitik real-time, chat, atau pengeditan kolaboratif.
+- Coba bangun tool MCP yang lebih canggih yang menggunakan streaming untuk analitik real-time, chat, atau pengeditan kolaboratif.
 - Jelajahi integrasi streaming MCP dengan framework frontend (React, Vue, dll.) untuk pembaruan UI secara langsung.
 - Selanjutnya: [Memanfaatkan AI Toolkit untuk VSCode](../07-aitk/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.

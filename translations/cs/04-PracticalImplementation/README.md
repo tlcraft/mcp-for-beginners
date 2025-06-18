@@ -1,272 +1,273 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7919ce2e537f0c435c7c23fa6775b613",
-  "translation_date": "2025-06-11T18:25:34+00:00",
+  "original_hash": "d88dbf928fa0f159b82312e9a6757ba0",
+  "translation_date": "2025-06-18T09:28:45+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "cs"
 }
 -->
-# Practical Implementation
+# Praktická implementace
 
-Practical implementation is where the power of the Model Context Protocol (MCP) becomes tangible. While understanding the theory and architecture behind MCP is important, the real value emerges when you apply these concepts to build, test, and deploy solutions that solve real-world problems. This chapter bridges the gap between conceptual knowledge and hands-on development, guiding you through the process of bringing MCP-based applications to life.
+Praktická implementace je moment, kdy se síla Model Context Protocolu (MCP) stává hmatatelnou. I když je důležité rozumět teorii a architektuře MCP, skutečná hodnota se projeví, když tyto koncepty použijete k vytváření, testování a nasazení řešení, která řeší reálné problémy. Tato kapitola překlenuje propast mezi konceptuálními znalostmi a praktickým vývojem a provede vás procesem oživení aplikací založených na MCP.
 
-Whether you are developing intelligent assistants, integrating AI into business workflows, or building custom tools for data processing, MCP provides a flexible foundation. Its language-agnostic design and official SDKs for popular programming languages make it accessible to a wide range of developers. By leveraging these SDKs, you can quickly prototype, iterate, and scale your solutions across different platforms and environments.
+Ať už vyvíjíte inteligentní asistenty, integrujete AI do podnikových pracovních toků nebo vytváříte vlastní nástroje pro zpracování dat, MCP poskytuje flexibilní základ. Jeho jazykově nezávislý design a oficiální SDK pro populární programovací jazyky zpřístupňují MCP širokému spektru vývojářů. Využitím těchto SDK můžete rychle prototypovat, iterovat a škálovat svá řešení napříč různými platformami a prostředími.
 
-In the following sections, you'll find practical examples, sample code, and deployment strategies that demonstrate how to implement MCP in C#, Java, TypeScript, JavaScript, and Python. You'll also learn how to debug and test your MCP servers, manage APIs, and deploy solutions to the cloud using Azure. These hands-on resources are designed to accelerate your learning and help you confidently build robust, production-ready MCP applications.
+V následujících sekcích najdete praktické příklady, ukázkový kód a strategie nasazení, které ukazují, jak implementovat MCP v C#, Java, TypeScriptu, JavaScriptu a Pythonu. Naučíte se také, jak ladit a testovat MCP servery, spravovat API a nasazovat řešení do cloudu pomocí Azure. Tyto praktické zdroje jsou navrženy tak, aby urychlily vaše učení a pomohly vám sebevědomě vytvářet robustní, produkčně připravené MCP aplikace.
 
-## Overview
+## Přehled
 
-This lesson focuses on practical aspects of MCP implementation across multiple programming languages. We'll explore how to use MCP SDKs in C#, Java, TypeScript, JavaScript, and Python to build robust applications, debug and test MCP servers, and create reusable resources, prompts, and tools.
+Tato lekce se zaměřuje na praktické aspekty implementace MCP v různých programovacích jazycích. Prozkoumáme, jak používat MCP SDK v C#, Java, TypeScriptu, JavaScriptu a Pythonu k vytváření robustních aplikací, ladění a testování MCP serverů a tvorbě znovupoužitelných zdrojů, promptů a nástrojů.
 
-## Learning Objectives
+## Cíle učení
 
-By the end of this lesson, you will be able to:
-- Implement MCP solutions using official SDKs in various programming languages
-- Debug and test MCP servers systematically
-- Create and use server features (Resources, Prompts, and Tools)
-- Design effective MCP workflows for complex tasks
-- Optimize MCP implementations for performance and reliability
+Na konci této lekce budete schopni:
+- Implementovat MCP řešení pomocí oficiálních SDK v různých programovacích jazycích
+- Systematicky ladit a testovat MCP servery
+- Vytvářet a používat serverové funkce (Resources, Prompts a Tools)
+- Navrhovat efektivní MCP pracovní toky pro složité úkoly
+- Optimalizovat implementace MCP pro výkon a spolehlivost
 
-## Official SDK Resources
+## Oficiální SDK zdroje
 
-The Model Context Protocol offers official SDKs for multiple languages:
+Model Context Protocol nabízí oficiální SDK pro více jazyků:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) 
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
 
-## Working with MCP SDKs
+## Práce s MCP SDK
 
-This section provides practical examples of implementing MCP across multiple programming languages. You can find sample code in the `samples` directory organized by language.
+Tato sekce poskytuje praktické příklady implementace MCP v různých programovacích jazycích. Ukázkový kód najdete ve složce `samples` uspořádaný podle jazyka.
 
-### Available Samples
+### Dostupné ukázky
 
-The repository includes sample implementations in the following languages:
+Repozitář obsahuje [ukázkové implementace](../../../04-PracticalImplementation/samples) v následujících jazycích:
 
-- C#
-- Java
-- TypeScript
-- JavaScript
-- Python
+- [C#](./samples/csharp/README.md)
+- [Java](./samples/java/containerapp/README.md)
+- [TypeScript](./samples/typescript/README.md)
+- [JavaScript](./samples/javascript/README.md)
+- [Python](./samples/python/README.md)
 
-Each sample demonstrates key MCP concepts and implementation patterns for that specific language and ecosystem.
+Každá ukázka demonstruje klíčové koncepty MCP a vzory implementace pro daný jazyk a ekosystém.
 
-## Core Server Features
+## Základní funkce serveru
 
-MCP servers can implement any combination of these features:
+MCP servery mohou implementovat libovolnou kombinaci těchto funkcí:
 
-### Resources
-Resources provide context and data for the user or AI model to use:
-- Document repositories
-- Knowledge bases
-- Structured data sources
-- File systems
+### Resources  
+Resources poskytují kontext a data pro uživatele nebo AI model:  
+- Repozitáře dokumentů  
+- Znalostní báze  
+- Strukturované zdrojové datové sady  
+- Souborové systémy  
 
-### Prompts
-Prompts are templated messages and workflows for users:
-- Pre-defined conversation templates
-- Guided interaction patterns
-- Specialized dialogue structures
+### Prompts  
+Prompts jsou šablonované zprávy a pracovní toky pro uživatele:  
+- Předdefinované šablony konverzací  
+- Řízené vzory interakce  
+- Specializované dialogové struktury  
 
-### Tools
-Tools are functions for the AI model to execute:
-- Data processing utilities
-- External API integrations
-- Computational capabilities
-- Search functionality
+### Tools  
+Tools jsou funkce, které AI model může vykonávat:  
+- Nástroje pro zpracování dat  
+- Integrace s externími API  
+- Výpočetní schopnosti  
+- Vyhledávací funkce  
 
-## Sample Implementations: C#
+## Ukázkové implementace: C#
 
-The official C# SDK repository contains several sample implementations demonstrating different aspects of MCP:
+Oficiální repozitář C# SDK obsahuje několik ukázkových implementací, které demonstrují různé aspekty MCP:
 
-- **Basic MCP Client**: Simple example showing how to create an MCP client and call tools
-- **Basic MCP Server**: Minimal server implementation with basic tool registration
-- **Advanced MCP Server**: Full-featured server with tool registration, authentication, and error handling
-- **ASP.NET Integration**: Examples demonstrating integration with ASP.NET Core
-- **Tool Implementation Patterns**: Various patterns for implementing tools with different complexity levels
+- **Základní MCP klient**: Jednoduchý příklad, jak vytvořit MCP klienta a volat nástroje  
+- **Základní MCP server**: Minimální implementace serveru s registrací základních nástrojů  
+- **Pokročilý MCP server**: Plnohodnotný server s registrací nástrojů, autentizací a zpracováním chyb  
+- **Integrace s ASP.NET**: Příklady integrace s ASP.NET Core  
+- **Vzory implementace nástrojů**: Různé vzory implementace nástrojů s různou úrovní složitosti  
 
-The MCP C# SDK is in preview and APIs may change. We will continuously update this blog as the SDK evolves.
+MCP C# SDK je ve fázi preview a API se mohou měnit. Tento blog budeme průběžně aktualizovat podle vývoje SDK.
 
-### Key Features 
-- [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
+### Klíčové funkce  
+- [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)  
+- Vytvoření vašeho [prvního MCP serveru](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).  
 
-- Building your [first MCP Server](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
+Pro kompletní ukázky implementace v C# navštivte [oficiální repozitář C# SDK](https://github.com/modelcontextprotocol/csharp-sdk).
 
-For complete C# implementation samples, visit the [official C# SDK samples repository](https://github.com/modelcontextprotocol/csharp-sdk)
+## Ukázková implementace: Java
 
-## Sample implementation: Java Implementation
+Java SDK nabízí robustní možnosti implementace MCP s funkcemi na úrovni podniku.
 
-The Java SDK offers robust MCP implementation options with enterprise-grade features.
+### Klíčové funkce
 
-### Key Features
+- Integrace se Spring Frameworkem  
+- Silná typová bezpečnost  
+- Podpora reaktivního programování  
+- Komplexní zpracování chyb  
 
-- Spring Framework integration
-- Strong type safety
-- Reactive programming support
-- Comprehensive error handling
+Pro kompletní ukázkovou implementaci v Javě se podívejte na [MCPSample.java](../../../04-PracticalImplementation/samples/java/MCPSample.java) ve složce s ukázkami.
 
-For a complete Java implementation sample, see [MCPSample.java](../../../04-PracticalImplementation/samples/java/MCPSample.java) in the samples directory.
+## Ukázková implementace: JavaScript
 
-## Sample implementation: JavaScript Implementation
+JavaScript SDK poskytuje lehký a flexibilní přístup k implementaci MCP.
 
-The JavaScript SDK provides a lightweight and flexible approach to MCP implementation.
+### Klíčové funkce
 
-### Key Features
+- Podpora Node.js i prohlížeče  
+- API založené na Promise  
+- Snadná integrace s Express a dalšími frameworky  
+- Podpora WebSocket pro streamování  
 
-- Node.js and browser support
-- Promise-based API
-- Easy integration with Express and other frameworks
-- WebSocket support for streaming
+Pro kompletní ukázkovou implementaci v JavaScriptu se podívejte na [mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js) ve složce s ukázkami.
 
-For a complete JavaScript implementation sample, see [mcp_sample.js](../../../04-PracticalImplementation/samples/javascript/mcp_sample.js) in the samples directory.
+## Ukázková implementace: Python
 
-## Sample implementation: Python Implementation
+Python SDK nabízí pythonický přístup k implementaci MCP s výbornou integrací s ML frameworky.
 
-The Python SDK offers a Pythonic approach to MCP implementation with excellent ML framework integrations.
+### Klíčové funkce
 
-### Key Features
+- Podpora async/await s asyncio  
+- Integrace s Flask a FastAPI  
+- Jednoduchá registrace nástrojů  
+- Nativní integrace s populárními ML knihovnami  
 
-- Async/await support with asyncio
-- Flask and FastAPI integration
-- Simple tool registration
-- Native integration with popular ML libraries
+Pro kompletní ukázkovou implementaci v Pythonu se podívejte na [mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py) ve složce s ukázkami.
 
-For a complete Python implementation sample, see [mcp_sample.py](../../../04-PracticalImplementation/samples/python/mcp_sample.py) in the samples directory.
+## Správa API
 
-## API management 
+Azure API Management je skvělým řešením, jak zabezpečit MCP servery. Myšlenka je umístit instanci Azure API Management před váš MCP server a nechat ji spravovat funkce, které pravděpodobně budete chtít, jako jsou:
 
-Azure API Management is a great answer to how we can secure MCP Servers. The idea is to put an Azure API Management instance in front of your MCP Server and let it handle features you're likely to want like:
+- omezení rychlosti (rate limiting)  
+- správa tokenů  
+- monitorování  
+- vyvažování zátěže  
+- zabezpečení  
 
-- rate limiting
-- token management
-- monitoring
-- load balancing
-- security
+### Azure ukázka
 
-### Azure Sample
+Zde je Azure ukázka, která přesně toto dělá, tedy [vytváří MCP server a zabezpečuje ho pomocí Azure API Management](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
 
-Here's an Azure Sample doing exactly that, i.e [creating an MCP Server and securing it with Azure API Management])(https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
-
-See how the authorization flow happens in below image:
+Podívejte se, jak probíhá autorizační tok na následujícím obrázku:
 
 ![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true) 
 
-In the preceding image, the following takes place:
+Na předchozím obrázku probíhá:
 
-- Authentication/Authorization takes place using Microsoft Entra.
-- Azure API Management acts as a gateway asnd uses policies to direct and manage traffic.
-- Azure Monitor logs all request for further analysis.
+- Autentizace/autorizace pomocí Microsoft Entra.  
+- Azure API Management funguje jako brána a používá politiky pro směrování a správu provozu.  
+- Azure Monitor zaznamenává všechny požadavky pro další analýzu.  
 
-#### Authorization flow
+#### Autorizační tok
 
-Let's have a look at the authorization flow more in detail:
+Podívejme se podrobněji na autorizační tok:
 
-![Sequence Diagram](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
+![Sekvenční diagram](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
 
-#### MCP authorization specification
+#### Specifikace autorizace MCP
 
-Learn more about the [MCP Authorization specification](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
+Více informací o [specifikaci autorizace MCP](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
 
-## Deploy Remote MCP Server to Azure
+## Nasazení vzdáleného MCP serveru do Azure
 
-Let's see if we can deploy the sample we mentioned earlier:
+Podívejme se, zda můžeme nasadit výše zmíněnou ukázku:
 
-1. Clone the repo
+1. Naklonujte repozitář
 
     ```bash
     git clone https://github.com/Azure-Samples/remote-mcp-apim-functions-python.git
     cd remote-mcp-apim-functions-python
     ```
 
-1. Register `Microsoft.App` resource provider.
+2. Zaregistrujte `Microsoft.App`  
+   ` resource provider.
     * If you are using Azure CLI, run `az provider register --namespace Microsoft.App --wait`.
-    * If you are using Azure PowerShell, run `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` after some time to check if the registration is complete.
+    * If you are using Azure PowerShell, run `  
+   nebo  
+   Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run `  
+   a po chvíli zkontrolujte, zda je registrace dokončena příkazem (Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState.
 
-2. Run this [azd](https://aka.ms/azd) command to provision the api management service, function app(with code) and all other required Azure resources
+3. Spusťte tento příkaz [azd](https://aka.ms/azd) pro vytvoření služby API management, funkční aplikace (s kódem) a všech dalších potřebných Azure zdrojů
 
     ```shell
     azd up
     ```
 
-    This commands should deploy all the cloud resources on Azure
+    Tento příkaz by měl nasadit všechny cloudové zdroje na Azure.
 
-### Testing your server with MCP Inspector
+### Testování serveru pomocí MCP Inspectoru
 
-1. In a **new terminal window**, install and run MCP Inspector
+1. V **novém terminálovém okně** nainstalujte a spusťte MCP Inspector
 
     ```shell
     npx @modelcontextprotocol/inspector
     ```
 
-    You should see an interface similar to:
+    Měli byste vidět rozhraní podobné tomuto:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.cs.png) 
+    ![Připojení k Node inspectoru](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.cs.png) 
 
-1. CTRL click to load the MCP Inspector web app from the URL displayed by the app (e.g. http://127.0.0.1:6274/#resources)
-1. Set the transport type to `SSE`
-1. Set the URL to your running API Management SSE endpoint displayed after `azd up` and **Connect**:
+2. CTRL klikněte pro načtení webové aplikace MCP Inspector z URL zobrazené aplikací (např. http://127.0.0.1:6274/#resources)  
+3. Nastavte typ přenosu na `SSE`
+1. Set the URL to your running API Management SSE endpoint displayed after `azd up` a klikněte na **Connect**:
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-5. **List Tools**.  Click on a tool and **Run Tool**.  
+5. **Vypsat nástroje**. Klikněte na nástroj a zvolte **Run Tool**.  
 
-If all the steps have worked, you should now be connected to the MCP server and you've been able to call a tool.
+Pokud vše proběhlo správně, nyní byste měli být připojeni k MCP serveru a mohli jste volat nástroj.
 
-## MCP servers for Azure 
+## MCP servery pro Azure
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): This set of repositories are quickstart template for building and deploying custom remote MCP (Model Context Protocol) servers using Azure Functions with Python, C# .NET or Node/TypeScript. 
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Tato sada repozitářů je rychlý startovací šablonou pro vytváření a nasazení vlastních vzdálených MCP (Model Context Protocol) serverů pomocí Azure Functions s Pythonem, C# .NET nebo Node/TypeScript.
 
-The Samples provides a complete solution that allows developers to:
+Ukázky poskytují kompletní řešení, které vývojářům umožňuje:
 
-- Build and run locally: Develop and debug a MCP server on a local machine
-- Deploy to Azure: Easily deploy to the cloud with a simple azd up command
-- Connect from clients: Connect to the MCP server from various clients including VS Code's Copilot agent mode and the MCP Inspector tool
+- Lokální vývoj a běh: Vyvíjet a ladit MCP server na lokálním počítači  
+- Nasazení do Azure: Jednoduché nasazení do cloudu pomocí příkazu azd up  
+- Připojení z klientů: Připojit se k MCP serveru z různých klientů včetně režimu agenta Copilot ve VS Code a nástroje MCP Inspector  
 
-### Key Features:
+### Klíčové vlastnosti:
 
-- Security by design: The MCP server is secured using keys and HTTPS
-- Authentication options: Supports OAuth using built-in auth and/or API Management
-- Network isolation: Allows network isolation using Azure Virtual Networks (VNET)
-- Serverless architecture: Leverages Azure Functions for scalable, event-driven execution
-- Local development: Comprehensive local development and debugging support
-- Simple deployment: Streamlined deployment process to Azure
+- Bezpečnost navržená od začátku: MCP server je zabezpečen pomocí klíčů a HTTPS  
+- Možnosti autentizace: Podpora OAuth pomocí vestavěné autentizace a/nebo API Managementu  
+- Izolace sítě: Umožňuje síťovou izolaci pomocí Azure Virtual Networks (VNET)  
+- Serverless architektura: Využívá Azure Functions pro škálovatelný, událostmi řízený běh  
+- Lokální vývoj: Komplexní podpora lokálního vývoje a ladění  
+- Jednoduché nasazení: Zjednodušený proces nasazení do Azure  
 
-The repository includes all necessary configuration files, source code, and infrastructure definitions to quickly get started with a production-ready MCP server implementation.
+Repozitář obsahuje všechny potřebné konfigurační soubory, zdrojový kód a definice infrastruktury pro rychlý start s produkčně připravenou implementací MCP serveru.
 
-- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Sample implementation of MCP using Azure Functions with Python
+- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) – Ukázková implementace MCP pomocí Azure Functions s Pythonem  
+- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) – Ukázková implementace MCP pomocí Azure Functions s C# .NET  
+- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) – Ukázková implementace MCP pomocí Azure Functions s Node/TypeScript  
 
-- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Sample implementation of MCP using Azure Functions with C# .NET
+## Hlavní poznatky
 
-- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Sample implementation of MCP using Azure Functions with Node/TypeScript.
+- MCP SDK poskytují jazykově specifické nástroje pro implementaci robustních MCP řešení  
+- Proces ladění a testování je klíčový pro spolehlivé MCP aplikace  
+- Znovupoužitelné šablony promptů umožňují konzistentní AI interakce  
+- Dobře navržené pracovní toky mohou orchestrálně řídit složité úkoly s využitím více nástrojů  
+- Implementace MCP řešení vyžaduje zvážení bezpečnosti, výkonu a zpracování chyb  
 
-## Key Takeaways
+## Cvičení
 
-- MCP SDKs provide language-specific tools for implementing robust MCP solutions
-- The debugging and testing process is critical for reliable MCP applications
-- Reusable prompt templates enable consistent AI interactions
-- Well-designed workflows can orchestrate complex tasks using multiple tools
-- Implementing MCP solutions requires consideration of security, performance, and error handling
+Navrhněte praktický MCP pracovní tok, který řeší reálný problém ve vašem oboru:
 
-## Exercise
+1. Identifikujte 3-4 nástroje, které by byly užitečné pro řešení tohoto problému  
+2. Vytvořte diagram pracovního toku ukazující, jak tyto nástroje spolupracují  
+3. Implementujte základní verzi jednoho z nástrojů ve vámi preferovaném jazyce  
+4. Vytvořte šablonu promptu, která pomůže modelu efektivně využít váš nástroj  
 
-Design a practical MCP workflow that addresses a real-world problem in your domain:
-
-1. Identify 3-4 tools that would be useful for solving this problem
-2. Create a workflow diagram showing how these tools interact
-3. Implement a basic version of one of the tools using your preferred language
-4. Create a prompt template that would help the model effectively use your tool
-
-## Additional Resources
+## Další zdroje
 
 
 ---
 
-Next: [Advanced Topics](../05-AdvancedTopics/README.md)
+Další: [Pokročilá témata](../05-AdvancedTopics/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro zásadní informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
