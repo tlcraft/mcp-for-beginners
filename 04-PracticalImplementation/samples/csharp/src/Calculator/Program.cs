@@ -8,14 +8,16 @@ builder.Logging.AddConsole(consoleLogOptions =>
 });
 
 builder.Services
-	.AddMcpServer()
-		.WithTools<McpCalculatorServer>()
-		.WithHttpTransport();
+	   .AddMcpServer()
+	   .WithHttpTransport(o => o.Stateless = true)
+	   .WithTools<CalculatorTool>();
 
 builder.AddServiceDefaults();
 
 var app = builder.Build();
 
-app.MapMcp();
+app.MapDefaultEndpoints();
+
+app.MapMcp("/mcp");
 
 app.Run();
