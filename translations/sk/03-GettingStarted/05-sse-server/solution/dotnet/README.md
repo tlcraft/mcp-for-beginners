@@ -1,29 +1,29 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-17T11:58:39+00:00",
+  "original_hash": "2a58caa6e11faa09470b7f81e6729652",
+  "translation_date": "2025-06-18T06:07:45+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "sk"
 }
 -->
-# Spustenie tejto ukážky
+# Spustenie tohto príkladu
 
-## -1- Nainštalujte závislosti
+## -1- Inštalácia závislostí
+
+```bash
+dotnet restore
+```
+
+## -2- Spustenie príkladu
 
 ```bash
 dotnet run
 ```
 
-## -2- Spustite ukážku
+## -3- Testovanie príkladu
 
-```bash
-dotnet run
-```
-
-## -3- Otestujte ukážku
-
-Predtým, než spustíte nižšie uvedené, otvorte samostatný terminál (uistite sa, že server stále beží).
+Pred spustením nižšie uvedeného príkazu otvorte samostatný terminál (uistite sa, že server stále beží).
 
 Keď server beží v jednom termináli, otvorte ďalší terminál a spustite nasledujúci príkaz:
 
@@ -31,22 +31,24 @@ Keď server beží v jednom termináli, otvorte ďalší terminál a spustite na
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Toto by malo spustiť webový server s vizuálnym rozhraním, ktoré vám umožní testovať ukážku.
+Tým sa spustí webový server s vizuálnym rozhraním, ktoré vám umožní otestovať príklad.
 
-Keď je server pripojený:
+> Uistite sa, že ako typ prenosu je zvolený **SSE** a URL je `http://localhost:3001/sse`.
 
-- skúste zobraziť zoznam nástrojov a spustite `add` s argumentmi 2 a 4, mali by ste vidieť výsledok 6.
-- choďte na zdroje a šablónu zdroja a zavolajte "greeting", zadajte meno a mali by ste vidieť pozdrav s menom, ktoré ste poskytli.
+Once the server is connected: 
+
+- try listing tools and run `add`, s argumentmi 2 a 4 by ste mali vidieť výsledok 6.
+- prejdite na resources a resource template a zavolajte "greeting", zadajte meno a mali by ste vidieť pozdrav s menom, ktoré ste zadali.
 
 ### Testovanie v režime CLI
 
-Môžete ho spustiť priamo v režime CLI spustením nasledujúceho príkazu:
+Môžete ho spustiť priamo v režime CLI pomocou nasledujúceho príkazu:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Tým sa zobrazí zoznam všetkých nástrojov dostupných na serveri. Mali by ste vidieť nasledujúci výstup:
+Tým sa zobrazia všetky nástroje dostupné na serveri. Mali by ste vidieť nasledovný výstup:
 
 ```text
 {
@@ -78,13 +80,13 @@ Tým sa zobrazí zoznam všetkých nástrojov dostupných na serveri. Mali by st
 }
 ```
 
-Na vyvolanie nástroja napíšte:
+Ak chcete vyvolať nástroj, zadajte:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Mali by ste vidieť nasledujúci výstup:
+Mali by ste vidieť nasledovný výstup:
 
 ```text
 {
@@ -98,9 +100,9 @@ Mali by ste vidieť nasledujúci výstup:
 }
 ```
 
-> [!TIP]
-> Zvyčajne je oveľa rýchlejšie spustiť inšpektor v režime CLI než v prehliadači.
-> Viac o inšpektore si môžete prečítať [tu](https://github.com/modelcontextprotocol/inspector).
+> ![!TIP]
+> Zvyčajne je oveľa rýchlejšie spustiť inspector v režime CLI ako v prehliadači.
+> Viac o inspectore si prečítate [tu](https://github.com/modelcontextprotocol/inspector).
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou AI prekladovej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, upozorňujeme, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho pôvodnom jazyku by sa mal považovať za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nezodpovedáme za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, majte prosím na pamäti, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.

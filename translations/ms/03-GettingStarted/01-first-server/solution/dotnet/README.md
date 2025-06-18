@@ -1,29 +1,28 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1954cd45a2563dfea43bfe48cccb0c8",
-  "translation_date": "2025-05-17T09:11:15+00:00",
+  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
+  "translation_date": "2025-06-18T06:04:56+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "ms"
 }
 -->
-# Menjalankan sampel ini
+# Menjalankan contoh ini
 
-## -1- Pasang keperluan
+## -1- Pasang kebergantungan
 
 ```bash
-dotnet add package ModelContextProtocol --prerelease
-# Add the .NET Hosting NuGet package
-dotnet add package Microsoft.Extensions.Hosting
+dotnet restore
 ```
 
-## -3- Jalankan sampel
+## -3- Jalankan contoh
+
 
 ```bash
 dotnet run
 ```
 
-## -4- Uji sampel
+## -4- Uji contoh
 
 Dengan pelayan berjalan di satu terminal, buka terminal lain dan jalankan arahan berikut:
 
@@ -31,12 +30,12 @@ Dengan pelayan berjalan di satu terminal, buka terminal lain dan jalankan arahan
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-Ini sepatutnya memulakan pelayan web dengan antara muka visual yang membolehkan anda menguji sampel.
+Ini akan memulakan pelayan web dengan antara muka visual yang membolehkan anda menguji contoh tersebut.
 
 Setelah pelayan disambungkan:
 
-- cuba senaraikan alat dan jalankan `add`, dengan argumen 2 dan 4, anda sepatutnya melihat 6 dalam hasilnya.
-- pergi ke sumber dan templat sumber dan panggil "greeting", taip nama dan anda sepatutnya melihat ucapan dengan nama yang anda berikan.
+- cuba senaraikan alat dan jalankan `add`, dengan argumen 2 dan 4, anda sepatutnya melihat 6 sebagai hasilnya.
+- pergi ke resources dan resource template dan panggil "greeting", taipkan nama dan anda sepatutnya melihat ucapan dengan nama yang anda berikan.
 
 ### Ujian dalam mod CLI
 
@@ -46,7 +45,7 @@ Anda boleh melancarkannya terus dalam mod CLI dengan menjalankan arahan berikut:
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-Ini akan menyenaraikan semua alat yang tersedia dalam pelayan. Anda sepatutnya melihat output berikut:
+Ini akan menyenaraikan semua alat yang tersedia di pelayan. Anda sepatutnya melihat output berikut:
 
 ```text
 {
@@ -97,8 +96,8 @@ Anda sepatutnya melihat output berikut:
 ```
 
 > ![!TIP]
-> Biasanya lebih pantas untuk menjalankan ispektor dalam mod CLI berbanding dalam pelayar.
-> Baca lebih lanjut tentang ispektor [di sini](https://github.com/modelcontextprotocol/inspector).
+> Biasanya lebih cepat menjalankan inspector dalam mod CLI berbanding dalam pelayar.
+> Baca lebih lanjut tentang inspector [di sini](https://github.com/modelcontextprotocol/inspector).
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

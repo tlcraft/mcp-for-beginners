@@ -1,23 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T13:01:36+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T06:02:30+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "nl"
 }
 -->
-# Basis Rekenmachine MCP Dienst
+# Basisrekenmachine MCP Service
 
-Deze dienst biedt basisrekenmachinefuncties via het Model Context Protocol (MCP). Het is ontworpen als een eenvoudig voorbeeld voor beginners die leren over MCP-implementaties.
+Deze service biedt basisrekenkundige bewerkingen via het Model Context Protocol (MCP). Het is ontworpen als een eenvoudig voorbeeld voor beginners die MCP-implementaties leren.
 
 Voor meer informatie, zie [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## Functies
+## Functionaliteiten
 
-Deze rekenmachinedienst biedt de volgende mogelijkheden:
+Deze rekenmachineservice biedt de volgende mogelijkheden:
 
-1. **Basis Rekenkundige Bewerkingen**:
+1. **Basisrekenkundige bewerkingen**:
    - Optellen van twee getallen
    - Aftrekken van een getal van een ander
    - Vermenigvuldigen van twee getallen
@@ -27,30 +27,38 @@ Deze rekenmachinedienst biedt de volgende mogelijkheden:
   
 ## Configuratie
 
-1. **Configureer MCP Servers**:
+1. **Configureer MCP-servers**:
    - Open je werkruimte in VS Code.
-   - Maak een `.vscode/mcp.json` bestand in je werkruimte map om MCP servers te configureren. Voorbeeldconfiguratie:
-     ```json
+   - Maak een `.vscode/mcp.json` bestand aan in je werkmap om MCP-servers te configureren. Voorbeeldconfiguratie:
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-   - Vervang het pad door het pad naar je project. Het pad moet absoluut zijn en niet relatief ten opzichte van de werkruimte map. (Voorbeeld: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## Gebruik van de Dienst
+   - Je wordt gevraagd de root van de GitHub-repository in te voeren, deze kan worden opgehaald met het commando `git rev-parse --show-toplevel`.
 
-De dienst biedt de volgende API-eindpunten aan via het MCP-protocol:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,18 +86,18 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` met je Docker Hub gebruikersnaam):
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` met je Docker Hub-gebruikersnaam):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. Nadat de image is gebouwd, laten we deze uploaden naar Docker Hub. Voer het volgende commando uit:
+1. Nadat de image is gebouwd, uploaden we deze naar Docker Hub. Voer het volgende commando uit:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Gebruik de Gedockeriseerde Versie
+## Gebruik de Docker-versie
 
-1. In het `.vscode/mcp.json` bestand, vervang de serverconfiguratie door het volgende:
+1. Vervang in het `.vscode/mcp.json` bestand de serverconfiguratie door het volgende:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -107,7 +115,7 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {` is, en net zoals eerder kun je de rekenmachinedienst vragen om wat wiskunde voor je te doen.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {` is, en net als eerder kun je de rekenmachineservice vragen wat wiskunde voor je te doen.
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertaaldienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we ons inzetten voor nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in zijn oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

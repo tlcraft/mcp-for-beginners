@@ -1,52 +1,54 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-17T11:53:41+00:00",
+  "original_hash": "2a58caa6e11faa09470b7f81e6729652",
+  "translation_date": "2025-06-18T05:50:30+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "mo"
 }
 -->
-# تشغيل هذا النموذج
+# 執行此範例
 
-## -1- تثبيت التبعيات
+## -1- 安裝相依套件
+
+```bash
+dotnet restore
+```
+
+## -2- 執行範例
 
 ```bash
 dotnet run
 ```
 
-## -2- تشغيل النموذج
+## -3- 測試範例
 
-```bash
-dotnet run
-```
+在執行以下指令前，請先開啟另一個終端機（確保伺服器仍在運行中）。
 
-## -3- اختبار النموذج
-
-ابدأ نافذة طرفية منفصلة قبل تشغيل ما يلي (تأكد من أن الخادم لا يزال يعمل).
-
-مع تشغيل الخادم في نافذة طرفية واحدة، افتح نافذة طرفية أخرى وشغل الأمر التالي:
+當伺服器在一個終端機運行時，開啟另一個終端機並執行以下指令：
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-يجب أن يبدأ هذا خادم ويب بواجهة بصرية تتيح لك اختبار النموذج.
+這將啟動一個帶有視覺介面的網頁伺服器，讓你可以測試範例。
 
-بمجرد اتصال الخادم:
+> 確認已選擇 **SSE** 作為傳輸類型，且 URL 是 `http://localhost:3001/sse`.
 
-- حاول سرد الأدوات وتشغيل `add`، مع المعطيات 2 و4، يجب أن ترى 6 في النتيجة.
-- انتقل إلى الموارد وقالب الموارد وادعُ "greeting"، اكتب اسمًا ويجب أن ترى تحية بالاسم الذي قدمته.
+Once the server is connected: 
 
-### اختبار في وضع CLI
+- try listing tools and run `add`，並帶入參數 2 和 4，結果應該會顯示 6。
+- 前往 resources 和 resource template，呼叫 "greeting"，輸入一個名稱，你應該會看到帶有你輸入名稱的問候語。
 
-يمكنك تشغيله مباشرة في وضع CLI عبر تشغيل الأمر التالي:
+### 在 CLI 模式下測試
+
+你可以直接透過執行以下指令啟動 CLI 模式：
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-سيقوم هذا بسرد جميع الأدوات المتاحة في الخادم. يجب أن ترى النتيجة التالية:
+這會列出伺服器中所有可用的工具。你應該會看到以下輸出：
 
 ```text
 {
@@ -78,13 +80,13 @@ npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/l
 }
 ```
 
-للدعوة إلى أداة، اكتب:
+要呼叫一個工具，請輸入：
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-يجب أن ترى النتيجة التالية:
+你應該會看到以下輸出：
 
 ```text
 {
@@ -99,7 +101,8 @@ npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/c
 ```
 
 > ![!TIP]
-> عادة ما يكون أسرع بكثير تشغيل المفتش في وضع CLI بدلاً من المتصفح.
-> اقرأ المزيد عن المفتش [هنا](https://github.com/modelcontextprotocol/inspector).
+> 在 CLI 模式下執行 inspector 通常比在瀏覽器中快得多。
+> 更多關於 inspector 的資訊請參考 [這裡](https://github.com/modelcontextprotocol/inspector)。
 
-I'm sorry, but I am not familiar with the language "mo." Could you please specify which language you would like the text to be translated into?
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們對因使用本翻譯所引起之任何誤解或誤譯不負任何責任。

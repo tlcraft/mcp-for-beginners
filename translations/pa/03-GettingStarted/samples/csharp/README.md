@@ -1,56 +1,64 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T12:59:28+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T05:55:31+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "pa"
 }
 -->
-# ਬੇਸਿਕ ਕੈਲਕੂਲੇਟਰ MCP ਸੇਵਾ
+# ਬੇਸਿਕ ਕੈਲਕੁਲੇਟਰ MCP ਸਰਵਿਸ
 
-ਇਹ ਸੇਵਾ ਮਾਡਲ ਕਾਂਟੈਕਸਟ ਪ੍ਰੋਟੋਕੋਲ (MCP) ਰਾਹੀਂ ਬੇਸਿਕ ਕੈਲਕੂਲੇਟਰ ਓਪਰੇਸ਼ਨ ਪ੍ਰਦਾਨ ਕਰਦੀ ਹੈ। ਇਹ MCP ਅਮਲਾਂ ਬਾਰੇ ਸਿੱਖਣ ਵਾਲੇ ਸ਼ੁਰੂਆਤੀ ਵਿਦਿਆਰਥੀਆਂ ਲਈ ਇੱਕ ਸਧਾਰਨ ਉਦਾਹਰਨ ਵਜੋਂ ਤਿਆਰ ਕੀਤਾ ਗਿਆ ਹੈ।
+ਇਹ ਸਰਵਿਸ ਮਾਡਲ ਕਾਂਟੈਕਸਟ ਪ੍ਰੋਟੋਕੋਲ (MCP) ਰਾਹੀਂ ਬੇਸਿਕ ਕੈਲਕੁਲੇਟਰ ਓਪਰੇਸ਼ਨ ਪ੍ਰਦਾਨ ਕਰਦੀ ਹੈ। ਇਹ MCP ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ ਬਾਰੇ ਸਿੱਖਣ ਵਾਲੇ ਸ਼ੁਰੂਆਤੀ ਲਈ ਇੱਕ ਸਧਾਰਣ ਉਦਾਹਰਨ ਵਜੋਂ ਬਣਾਈ ਗਈ ਹੈ।
 
-ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ, [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) ਦੇਖੋ
+ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਲਈ ਵੇਖੋ [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ
+## ਫੀਚਰ
 
-ਇਹ ਕੈਲਕੂਲੇਟਰ ਸੇਵਾ ਹੇਠਾਂ ਦਿੱਤੀਆਂ ਸਮਰੱਥਾਵਾਂ ਪ੍ਰਦਾਨ ਕਰਦੀ ਹੈ:
+ਇਹ ਕੈਲਕੁਲੇਟਰ ਸਰਵਿਸ ਹੇਠ ਲਿਖੀਆਂ ਸਮਰੱਥਾਵਾਂ ਦਿੰਦੀ ਹੈ:
 
-1. **ਮੂਲ ਗਣਿਤਕ ਕਾਰਜ**:
-   - ਦੋ ਨੰਬਰਾਂ ਦੀ ਜੋੜ
-   - ਇੱਕ ਨੰਬਰ ਨੂੰ ਦੂਜੇ ਤੋਂ ਘਟਾਉਣਾ
-   - ਦੋ ਨੰਬਰਾਂ ਦਾ ਗੁਣਾ
-   - ਇੱਕ ਨੰਬਰ ਨੂੰ ਦੂਜੇ ਨਾਲ ਵੰਡਣਾ (ਜ਼ੀਰੋ ਡਿਵੀਜ਼ਨ ਚੈਕ ਨਾਲ)
+1. **ਬੁਨਿਆਦੀ ਅੰਕਗਣਿਤੀ ਓਪਰੇਸ਼ਨ**:
+   - ਦੋ ਨੰਬਰਾਂ ਦਾ ਜੋੜ
+   - ਇੱਕ ਨੰਬਰ ਵਿੱਚੋਂ ਦੂਸਰੇ ਦਾ ਘਟਾਅ
+   - ਦੋ ਨੰਬਰਾਂ ਦੀ ਗੁਣਾ
+   - ਇੱਕ ਨੰਬਰ ਨੂੰ ਦੂਸਰੇ ਨਾਲ ਭਾਗ ਦੇਣਾ (ਜ਼ੀਰੋ ਡਿਵੀਜ਼ਨ ਚੈੱਕ ਸਮੇਤ)
 
 ## `stdio` ਕਿਸਮ ਦੀ ਵਰਤੋਂ
 
 ## ਸੰਰਚਨਾ
 
-1. **MCP ਸਰਵਰਾਂ ਨੂੰ ਸੰਰਚਿਤ ਕਰੋ**:
-   - ਆਪਣੇ ਵਰਕਸਪੇਸ ਨੂੰ VS ਕੋਡ ਵਿੱਚ ਖੋਲ੍ਹੋ।
-   - ਆਪਣੇ ਵਰਕਸਪੇਸ ਫੋਲਡਰ ਵਿੱਚ ਇੱਕ `.vscode/mcp.json` ਫਾਈਲ ਬਣਾਓ MCP ਸਰਵਰਾਂ ਨੂੰ ਸੰਰਚਿਤ ਕਰਨ ਲਈ। ਉਦਾਹਰਨ ਸੰਰਚਨਾ:
-     ```json
+1. **MCP ਸਰਵਰਾਂ ਦੀ ਸੰਰਚਨਾ ਕਰੋ**:
+   - VS Code ਵਿੱਚ ਆਪਣਾ ਵਰਕਸਪੇਸ ਖੋਲ੍ਹੋ।
+   - MCP ਸਰਵਰਾਂ ਨੂੰ ਸੰਰਚਿਤ ਕਰਨ ਲਈ ਆਪਣੇ ਵਰਕਸਪੇਸ ਫੋਲਡਰ ਵਿੱਚ `.vscode/mcp.json` ਫਾਇਲ ਬਣਾਓ। ਉਦਾਹਰਨ ਸੰਰਚਨਾ:
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-	- ਮਾਰਗ ਨੂੰ ਆਪਣੇ ਪ੍ਰਾਜੈਕਟ ਦੇ ਮਾਰਗ ਨਾਲ ਬਦਲੋ। ਮਾਰਗ ਸਧਾਰਨ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ ਅਤੇ ਵਰਕਸਪੇਸ ਫੋਲਡਰ ਨਾਲ ਸਬੰਧਤ ਨਹੀਂ। (ਉਦਾਹਰਨ: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## ਸੇਵਾ ਦੀ ਵਰਤੋਂ
+   - ਤੁਹਾਨੂੰ GitHub ਰਿਪੋਜ਼ਟਰੀ ਰੂਟ ਦਰਜ ਕਰਨ ਲਈ ਕਿਹਾ ਜਾਵੇਗਾ, ਜੋ ਕਮਾਂਡ `git rev-parse --show-toplevel` ਰਾਹੀਂ ਪ੍ਰਾਪਤ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ। (ਆਪਣੇ Docker Hub ਯੂਜ਼ਰਨੇਮ ਨਾਲ ``.
 
-ਸੇਵਾ MCP ਪ੍ਰੋਟੋਕੋਲ ਰਾਹੀਂ ਹੇਠਾਂ ਦਿੱਤੇ API ਐਂਡਪੋਇੰਟਸ ਨੂੰ ਉਜਾਗਰ ਕਰਦੀ ਹੈ:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,18 +86,18 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` ਆਪਣੇ ਡੋਕਰ ਹਬ ਯੂਜ਼ਰਨੇਮ ਨਾਲ):
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` ਵਰਤੋਂ):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. ਇਮੇਜ ਬਣਨ ਦੇ ਬਾਅਦ, ਚਲੋ ਇਸਨੂੰ ਡੋਕਰ ਹਬ 'ਤੇ ਅੱਪਲੋਡ ਕਰੀਏ। ਹੇਠਾਂ ਦਿੱਤਾ ਕਮਾਂਡ ਚਲਾਓ:
+1. ਇਮੇਜ ਬਣ ਜਾਣ ਤੋਂ ਬਾਅਦ, ਆਓ ਇਸ ਨੂੰ Docker Hub 'ਤੇ ਅਪਲੋਡ ਕਰੀਏ। ਹੇਠਾਂ ਦਿੱਤੀ ਕਮਾਂਡ ਚਲਾਓ:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
 ## ਡੋਕਰਾਈਜ਼ਡ ਵਰਜਨ ਦੀ ਵਰਤੋਂ
 
-1. `.vscode/mcp.json` ਫਾਈਲ ਵਿੱਚ, ਸਰਵਰ ਸੰਰਚਨਾ ਨੂੰ ਹੇਠਾਂ ਦਿੱਤੇ ਨਾਲ ਬਦਲੋ:
+1. `.vscode/mcp.json` ਫਾਇਲ ਵਿੱਚ ਸਰਵਰ ਸੰਰਚਨਾ ਨੂੰ ਹੇਠ ਲਿਖੇ ਨਾਲ ਬਦਲੋ:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -103,11 +111,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   ਸੰਰਚਨਾ ਨੂੰ ਦੇਖਦੇ ਹੋਏ, ਤੁਸੀਂ ਦੇਖ ਸਕਦੇ ਹੋ ਕਿ ਕਮਾਂਡ `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   ਸੰਰਚਨਾ ਵੇਖ ਕੇ, ਤੁਸੀਂ ਦੇਖ ਸਕਦੇ ਹੋ ਕਿ ਕਮਾਂਡ ਹੈ `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {` ਹੈ, ਅਤੇ ਜਿਵੇਂ ਕਿ ਪਹਿਲਾਂ ਵੀ ਤੁਸੀਂ ਕੈਲਕੂਲੇਟਰ ਸੇਵਾ ਨੂੰ ਤੁਹਾਡੇ ਲਈ ਕੁਝ ਗਣਿਤ ਕਰਨ ਲਈ ਪੁੱਛ ਸਕਦੇ ਹੋ।
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, ਅਤੇ ਪਹਿਲਾਂ ਵਾਂਗ ਹੀ ਤੁਸੀਂ ਕੈਲਕੁਲੇਟਰ ਸਰਵਿਸ ਨੂੰ ਕੁਝ ਗਣਿਤ ਕਰਨ ਲਈ ਕਹਿ ਸਕਦੇ ਹੋ।
 
-**ਅਸਵੀਕਤੀ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਹਾਲਾਂਕਿ ਅਸੀਂ ਸਹੀ ਹੋਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਵਿੱਚ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸੁਣੀਆਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਇਸਦੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਮੂਲ ਦਸਤਾਵੇਜ਼ ਨੂੰ ਅਧਿਕਾਰਤ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੇ ਪ੍ਰਯੋਗ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਗਲਤ ਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+**ਅਸਵੀਕਾਰੋਕਤ**:  
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਅਤ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਆਟੋਮੈਟਿਕ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਹੀਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਹੀ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਜਰੂਰੀ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੇ ਇਸਤੇਮਾਲ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੀਆਂ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀਆਂ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆਵਾਂ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।

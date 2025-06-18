@@ -1,21 +1,34 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-17T10:39:18+00:00",
+  "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
+  "translation_date": "2025-06-18T05:51:08+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "hk"
 }
 -->
 # 執行此範例
 
-## 安裝庫
+> [!NOTE]
+> 此範例假設你正在使用 GitHub Codespaces 實例。如果你想在本地執行，需在 GitHub 上設定個人存取權杖 (PAT)。
+>
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```
+>
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```
+
+## 安裝函式庫
 
 ```sh
 dotnet restore
 ```
 
-應該安裝以下庫：Azure AI Inference、Azure Identity、Microsoft.Extension、Model.Hosting、ModelContextProtcol 
+應該會安裝以下函式庫：Azure AI Inference、Azure Identity、Microsoft.Extension、Model.Hosting、ModelContextProtcol
 
 ## 執行
 
@@ -23,7 +36,7 @@ dotnet restore
 dotnet run
 ```
 
-您應該看到類似以下的輸出：
+你應該會看到類似以下的輸出：
 
 ```text
 Setting up stdio transport
@@ -38,8 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-大部分輸出只是調試信息，但重要的是您正在從 MCP 伺服器列出工具，將它們轉換為 LLM 工具，最後得到 MCP 客戶端響應 "Sum 6"。
+大部分輸出都是除錯訊息，但重點是你正在從 MCP Server 列出工具，將它們轉換成 LLM 工具，最後會得到 MCP 用戶端回應「Sum 6」。
 
-**免責聲明**：
-
-此文件是使用AI翻譯服務[Co-op Translator](https://github.com/Azure/co-op-translator)翻譯的。雖然我們努力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始語言的文件應被視為權威來源。對於關鍵信息，建議尋求專業的人力翻譯。我們對使用此翻譯所產生的任何誤解或誤釋不承擔責任。
+**免責聲明**：  
+本文件乃使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。本公司對因使用本翻譯而產生的任何誤解或誤譯概不負責。

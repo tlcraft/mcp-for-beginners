@@ -1,16 +1,26 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-16T14:58:38+00:00",
+  "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
+  "translation_date": "2025-06-18T05:46:40+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "es"
 }
 -->
-# Ejecuta este ejemplo
+# Ejecutar este ejemplo
 
 > [!NOTE]
-> Este ejemplo asume que estás usando una instancia de GitHub Codespaces. Si quieres ejecutarlo localmente, necesitas configurar un token de acceso personal en GitHub.
+> Este ejemplo asume que estás usando una instancia de GitHub Codespaces. Si quieres ejecutarlo localmente, necesitas configurar un token de acceso personal (PAT) en GitHub.
+>
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```
+>
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```
 
 ## Instalar librerías
 
@@ -18,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-Deberías instalar las siguientes librerías: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol 
+Deberías instalar las siguientes librerías: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
 ## Ejecutar
 
@@ -44,4 +54,4 @@ Sum 6
 Gran parte de la salida es solo para depuración, pero lo importante es que estás listando herramientas desde el MCP Server, las conviertes en herramientas LLM y terminas con una respuesta del cliente MCP que dice "Sum 6".
 
 **Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por un humano. No nos hacemos responsables de ningún malentendido o interpretación errónea derivada del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea derivada del uso de esta traducción.

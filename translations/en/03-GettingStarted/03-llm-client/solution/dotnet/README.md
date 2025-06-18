@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-17T10:38:13+00:00",
+  "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
+  "translation_date": "2025-06-18T05:45:36+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "en"
 }
@@ -10,7 +10,17 @@ CO_OP_TRANSLATOR_METADATA:
 # Run this sample
 
 > [!NOTE]
-> This sample assumes you're using a GitHub Codespaces instance. If you want to run this locally, you need to set up a personal access token on GitHub.
+> This sample assumes you're using a GitHub Codespaces instance. If you want to run this locally, you need to set up a personal access token (PAT) on GitHub.
+>
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```
+>
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```
 
 ## Install libraries
 
@@ -18,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-Should install the following libraries: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol 
+This will install the following libraries: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtocol 
 
 ## Run
 
@@ -26,7 +36,7 @@ Should install the following libraries: Azure AI Inference, Azure Identity, Micr
 dotnet run
 ```
 
-You should see an output similar to:
+You should see output similar to:
 
 ```text
 Setting up stdio transport
@@ -41,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-A lot of the output is just debugging, but what's important is that you are listing tools from the MCP Server, turning those into LLM tools, and you end up with an MCP client response "Sum 6".
+Much of the output is just debugging information, but the important part is that you are listing tools from the MCP Server, converting those into LLM tools, and you end up with an MCP client response "Sum 6".
 
 **Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

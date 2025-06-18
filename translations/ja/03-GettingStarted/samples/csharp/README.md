@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-16T15:05:00+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T05:51:47+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "ja"
 }
 -->
 # Basic Calculator MCP Service
 
-このサービスは、Model Context Protocol (MCP) を通じて基本的な計算機能を提供します。MCPの実装を学ぶ初心者向けのシンプルな例として設計されています。
+このサービスは、Model Context Protocol（MCP）を通じて基本的な計算機能を提供します。MCPの実装を学ぶ初心者向けのシンプルな例として設計されています。
 
-詳細については、[C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) をご覧ください。
+詳細は[C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)をご覧ください。
 
 ## Features
 
@@ -19,9 +19,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **基本的な算術演算**：
    - 2つの数値の加算
-   - 1つの数値から別の数値を減算
+   - 1つの数値から別の数値の減算
    - 2つの数値の乗算
-   - 1つの数値を別の数値で除算（ゼロ除算のチェックあり）
+   - 1つの数値を別の数値で除算（ゼロ除算のチェック付き）
 
 ## Using `stdio` Type
 
@@ -29,28 +29,36 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **MCPサーバーの設定**：
    - VS Codeでワークスペースを開きます。
-   - ワークスペースフォルダーに `.vscode/mcp.json` ファイルを作成し、MCPサーバーを設定します。設定例：
-     ```json
+   - ワークスペースフォルダ内に`.vscode/mcp.json`ファイルを作成し、MCPサーバーを設定します。設定例：
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-	- パスはプロジェクトのパスに置き換えてください。パスは絶対パスで、ワークスペースフォルダーからの相対パスではありません。（例：D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj）
+
+   - GitHubリポジトリのルートを入力するよう求められます。これはコマンド `git rev-parse --show-toplevel`.
 
 ## Using the Service
 
-このサービスはMCPプロトコルを通じて以下のAPIエンドポイントを公開しています：
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,18 +86,18 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>`（あなたのDocker Hubのユーザー名）：
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` から取得できます（<YOUR-DOCKER-USERNAME>はDocker Hubのユーザー名に置き換えてください）：
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. イメージがビルドされたら、Docker Hubにアップロードしましょう。次のコマンドを実行します：
+1. イメージのビルドが完了したら、Docker Hubにアップロードしましょう。以下のコマンドを実行します：
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Use the Dockerized Version
+## Docker化されたバージョンの利用
 
-1. `.vscode/mcp.json` ファイル内のサーバー設定を以下のように置き換えます：
+1. `.vscode/mcp.json`ファイル内で、サーバーの設定を以下のように置き換えます：
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -109,5 +117,5 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 Start the MCP Server by clicking the little Start button above `"mcp-calc": {` となっており、前と同様に計算機サービスに計算を依頼できます。
 
-**免責事項**:  
-本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性の確保に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。原文の言語による文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用に起因する誤解や誤訳について、一切の責任を負いかねます。
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。原文の言語によるオリジナル文書が正式な情報源とみなされます。重要な情報については、専門の人間翻訳をご利用いただくことを推奨します。本翻訳の使用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

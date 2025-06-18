@@ -1,18 +1,18 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-17T11:58:11+00:00",
+  "original_hash": "2a58caa6e11faa09470b7f81e6729652",
+  "translation_date": "2025-06-18T06:06:06+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "sw"
 }
 -->
 # Kuendesha sampuli hii
 
-## -1- Sakinisha mahitaji
+## -1- Sakinisha utegemezi
 
 ```bash
-dotnet run
+dotnet restore
 ```
 
 ## -2- Endesha sampuli
@@ -23,30 +23,32 @@ dotnet run
 
 ## -3- Jaribu sampuli
 
-Anzisha terminal tofauti kabla ya kuendesha yaliyo chini (hakikisha seva bado inaendelea).
+Anzisha terminali tofauti kabla ya kuendesha ifuatayo (hakikisha server bado inaendelea kuendesha).
 
-Na seva ikiendelea kwenye terminal moja, fungua terminal nyingine na endesha amri ifuatayo:
+Wakati server iko hai kwenye terminali moja, fungua terminali nyingine na endesha amri ifuatayo:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Hii inapaswa kuanzisha seva ya wavuti yenye kiolesura cha kuona kinachokuruhusu kujaribu sampuli.
+Hii inapaswa kuanzisha server ya wavuti yenye kiolesura cha kuona kinachokuwezesha kujaribu sampuli.
 
-Mara seva inapounganishwa:
+> Hakikisha kuwa **SSE** imechaguliwa kama aina ya usafirishaji, na URL ni `http://localhost:3001/sse`.
 
-- jaribu kuorodhesha zana na endesha `add`, ukiwa na args 2 na 4, unapaswa kuona 6 katika matokeo.
-- nenda kwenye rasilimali na template ya rasilimali na uite "greeting", andika jina na unapaswa kuona salamu na jina ulilotoa.
+Once the server is connected: 
 
-### Kujaribu katika hali ya CLI
+- try listing tools and run `add`, ukiweka vigezo 2 na 4, utapata 6 kama matokeo.
+- nenda kwenye resources na resource template kisha itaje "greeting", andika jina na utaona salamu yenye jina ulilotoa.
 
-Unaweza kuianzisha moja kwa moja katika hali ya CLI kwa kuendesha amri ifuatayo:
+### Kupima kwa njia ya CLI
+
+Unaweza kuanzisha moja kwa moja kwa njia ya CLI kwa kuendesha amri ifuatayo:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Hii itaorodhesha zana zote zinazopatikana kwenye seva. Unapaswa kuona matokeo yafuatayo:
+Hii itaonyesha orodha ya zana zote zinazopatikana kwenye server. Utapata matokeo yafuatayo:
 
 ```text
 {
@@ -78,13 +80,13 @@ Hii itaorodhesha zana zote zinazopatikana kwenye seva. Unapaswa kuona matokeo ya
 }
 ```
 
-Kuita zana andika:
+Ili kuitisha zana, andika:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Unapaswa kuona matokeo yafuatayo:
+Utapata matokeo yafuatayo:
 
 ```text
 {
@@ -99,8 +101,8 @@ Unapaswa kuona matokeo yafuatayo:
 ```
 
 > ![!TIP]
-> Kwa kawaida ni haraka zaidi kuendesha ispector katika hali ya CLI kuliko kwenye kivinjari.
-> Soma zaidi kuhusu ispector [hapa](https://github.com/modelcontextprotocol/inspector).
+> Kwa kawaida ni haraka zaidi kuendesha inspector kwa njia ya CLI kuliko kwenye kivinjari.
+> Soma zaidi kuhusu inspector [hapa](https://github.com/modelcontextprotocol/inspector).
 
-**Kanusho**: 
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa habari muhimu, tafsiri ya kibinadamu ya kitaalamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Msamaha**:  
+Nyaraka hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Nyaraka ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubeba dhamana kwa kutoelewana au tafsiri potofu zitokanazo na matumizi ya tafsiri hii.

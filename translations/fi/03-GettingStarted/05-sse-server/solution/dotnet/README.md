@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-17T11:56:50+00:00",
+  "original_hash": "2a58caa6e11faa09470b7f81e6729652",
+  "translation_date": "2025-06-18T06:02:20+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "fi"
 }
@@ -12,7 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## -1- Asenna riippuvuudet
 
 ```bash
-dotnet run
+dotnet restore
 ```
 
 ## -2- Suorita esimerkki
@@ -23,30 +23,32 @@ dotnet run
 
 ## -3- Testaa esimerkki
 
-Avaa erillinen pääte ennen kuin suoritat alla olevan (varmista, että palvelin on yhä käynnissä).
+Avaa erillinen terminaali ennen alla olevan komennon suorittamista (varmista, että palvelin on edelleen käynnissä).
 
-Kun palvelin on käynnissä yhdessä päätteessä, avaa toinen pääte ja suorita seuraava komento:
+Kun palvelin on käynnissä yhdessä terminaalissa, avaa toinen terminaali ja suorita seuraava komento:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Tämän pitäisi käynnistää verkkopalvelin visuaalisella käyttöliittymällä, joka mahdollistaa esimerkin testaamisen.
+Tämän pitäisi käynnistää web-palvelin, jossa on visuaalinen käyttöliittymä, jonka avulla voit testata esimerkkiä.
 
-Kun palvelin on yhdistetty:
+> Varmista, että **SSE** on valittuna siirtotyyppinä, ja URL on `http://localhost:3001/sse`.
 
-- kokeile listata työkalut ja suorittaa `add` käyttäen argumentteina 2 ja 4, tuloksena pitäisi olla 6.
-- mene resursseihin ja resurssipohjaan ja kutsu "greeting", kirjoita nimi ja sinun pitäisi nähdä tervehdys antamallasi nimellä.
+Once the server is connected: 
 
-### Testaus CLI-tilassa
+- try listing tools and run `add`. Kun argumentit ovat 2 ja 4, näet tuloksena 6.
+- mene resources- ja resource template -kohtiin ja kutsu "greeting", kirjoita nimi ja näet tervehdyksen antamallasi nimellä.
 
-Voit käynnistää sen suoraan CLI-tilassa suorittamalla seuraavan komennon:
+### Testaus komentorivillä
+
+Voit käynnistää sen suoraan komentorivitilassa suorittamalla seuraavan komennon:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Tämä listaa kaikki palvelimella käytettävissä olevat työkalut. Sinun pitäisi nähdä seuraava tulos:
+Tämä listaa kaikki palvelimella saatavilla olevat työkalut. Näet seuraavan tulosteen:
 
 ```text
 {
@@ -78,13 +80,13 @@ Tämä listaa kaikki palvelimella käytettävissä olevat työkalut. Sinun pitä
 }
 ```
 
-Käyttääksesi työkalua kirjoita:
+Työkalun kutsumiseksi kirjoita:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Sinun pitäisi nähdä seuraava tulos:
+Näet seuraavan tulosteen:
 
 ```text
 {
@@ -99,8 +101,8 @@ Sinun pitäisi nähdä seuraava tulos:
 ```
 
 > ![!TIP]
-> On yleensä paljon nopeampaa suorittaa ispector CLI-tilassa kuin selaimessa.
-> Lue lisää ispectorista [täältä](https://github.com/modelcontextprotocol/inspector).
+> On yleensä paljon nopeampaa käyttää inspector-työkalua komentoriviltä kuin selaimessa.
+> Lue lisää inspectorista [täältä](https://github.com/modelcontextprotocol/inspector).
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttäen tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon kohdalla suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinkäsityksistä tai virheellisistä tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä on virallinen lähde. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinkäsityksistä tai virhetulkinnoista.

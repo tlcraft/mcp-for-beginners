@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-17T10:44:07+00:00",
+  "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
+  "translation_date": "2025-06-18T06:07:51+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "sk"
 }
@@ -10,7 +10,17 @@ CO_OP_TRANSLATOR_METADATA:
 # Spustite tento príklad
 
 > [!NOTE]
-> Tento príklad predpokladá, že používate inštanciu GitHub Codespaces. Ak ho chcete spustiť lokálne, musíte si nastaviť osobný prístupový token na GitHube.
+> Tento príklad predpokladá, že používate inštanciu GitHub Codespaces. Ak chcete spustiť tento príklad lokálne, musíte si na GitHub nastaviť osobný prístupový token (PAT).
+>
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```
+>
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```
 
 ## Inštalácia knižníc
 
@@ -18,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-Mali by ste nainštalovať nasledujúce knižnice: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtocol
+Mali by sa nainštalovať nasledujúce knižnice: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
 ## Spustenie
 
@@ -41,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Veľa z výstupu je len ladenie, ale dôležité je, že vypisujete nástroje zo servera MCP, premeníte ich na nástroje LLM a skončíte s odpoveďou klienta MCP "Sum 6".
+Veľa z výstupu slúži len na ladenie, ale dôležité je, že vypisujete nástroje zo servera MCP, prevádzate ich na LLM nástroje a nakoniec získate odpoveď klienta MCP „Sum 6“.
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, vezmite prosím na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nezodpovedáme za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Zrieknutie sa zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, majte prosím na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

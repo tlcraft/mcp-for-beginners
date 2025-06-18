@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T13:00:28+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T05:59:15+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "el"
 }
 -->
-# Βασική Υπηρεσία Υπολογιστή MCP
+# Υπηρεσία Βασικού Υπολογιστή MCP
 
-Αυτή η υπηρεσία παρέχει βασικές λειτουργίες υπολογιστή μέσω του Πρωτοκόλλου Πλαισίου Μοντέλου (MCP). Έχει σχεδιαστεί ως ένα απλό παράδειγμα για αρχάριους που μαθαίνουν για τις υλοποιήσεις MCP.
+Αυτή η υπηρεσία παρέχει βασικές λειτουργίες αριθμομηχανής μέσω του Model Context Protocol (MCP). Έχει σχεδιαστεί ως απλό παράδειγμα για αρχάριους που μαθαίνουν για υλοποιήσεις MCP.
 
 Για περισσότερες πληροφορίες, δείτε το [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
 ## Χαρακτηριστικά
 
-Αυτή η υπηρεσία υπολογιστή προσφέρει τις ακόλουθες δυνατότητες:
+Αυτή η υπηρεσία αριθμομηχανής προσφέρει τις εξής δυνατότητες:
 
 1. **Βασικές Αριθμητικές Λειτουργίες**:
    - Πρόσθεση δύο αριθμών
@@ -23,34 +23,42 @@ CO_OP_TRANSLATOR_METADATA:
    - Πολλαπλασιασμός δύο αριθμών
    - Διαίρεση ενός αριθμού με έναν άλλο (με έλεγχο διαίρεσης με το μηδέν)
 
-## Χρήση `stdio` Τύπου
+## Χρήση του `stdio` Τύπου
 
-## Ρύθμιση
+## Διαμόρφωση
 
-1. **Ρυθμίστε τους Διακομιστές MCP**:
-   - Ανοίξτε το χώρο εργασίας σας στο VS Code.
-   - Δημιουργήστε ένα αρχείο `.vscode/mcp.json` στο φάκελο του χώρου εργασίας σας για να ρυθμίσετε τους διακομιστές MCP. Παράδειγμα ρύθμισης:
-     ```json
+1. **Διαμόρφωση MCP Servers**:
+   - Ανοίξτε τον χώρο εργασίας σας στο VS Code.
+   - Δημιουργήστε ένα αρχείο `.vscode/mcp.json` στον φάκελο του χώρου εργασίας σας για να διαμορφώσετε τους MCP servers. Παράδειγμα διαμόρφωσης:
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-	- Αντικαταστήστε το μονοπάτι με το μονοπάτι του έργου σας. Το μονοπάτι πρέπει να είναι απόλυτο και όχι σχετικό με το φάκελο του χώρου εργασίας. (Παράδειγμα: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## Χρήση της Υπηρεσίας
+   - Θα σας ζητηθεί να εισάγετε το ριζικό αποθετήριο GitHub, το οποίο μπορείτε να βρείτε με την εντολή `git rev-parse --show-toplevel`.
 
-Η υπηρεσία εκθέτει τα ακόλουθα σημεία API μέσω του πρωτοκόλλου MCP:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -81,15 +89,15 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` με το όνομα χρήστη σας στο Docker Hub):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
-   ``` 
-1. Αφού δημιουργηθεί η εικόνα, ας την ανεβάσουμε στο Docker Hub. Εκτελέστε την ακόλουθη εντολή:
+   ```  
+1. Αφού δημιουργηθεί το image, ας το ανεβάσουμε στο Docker Hub. Εκτελέστε την παρακάτω εντολή:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Χρήση της Έκδοσης σε Docker
+## Χρήση της Dockerized Έκδοσης
 
-1. Στο αρχείο `.vscode/mcp.json`, αντικαταστήστε τη ρύθμιση του διακομιστή με την ακόλουθη:
+1. Στο αρχείο `.vscode/mcp.json`, αντικαταστήστε τη διαμόρφωση του server με την εξής:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -103,11 +111,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Βλέποντας τη ρύθμιση, μπορείτε να δείτε ότι η εντολή είναι `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Κοιτώντας τη διαμόρφωση, μπορείτε να δείτε ότι η εντολή είναι `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, και όπως και πριν μπορείτε να ζητήσετε από την υπηρεσία υπολογιστή να κάνει μερικά μαθηματικά για εσάς.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, και όπως πριν, μπορείτε να ζητήσετε από την υπηρεσία αριθμομηχανής να κάνει κάποιους υπολογισμούς για εσάς.
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να γνωρίζετε ότι οι αυτοματοποιημένες μεταφράσεις μπορεί να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν είμαστε υπεύθυνοι για τυχόν παρανοήσεις ή παρερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρότι επιδιώκουμε ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν σφάλματα ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η επίσημη πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

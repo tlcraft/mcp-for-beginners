@@ -1,56 +1,64 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T12:58:28+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T05:51:13+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "tw"
 }
 -->
 # 基本計算機 MCP 服務
 
-此服務透過模型上下文協議（MCP）提供基本的計算機操作。它被設計為一個簡單的範例，供初學者學習 MCP 實作。
+此服務透過 Model Context Protocol (MCP) 提供基本的計算機運算功能。它設計為一個簡單範例，適合初學者了解 MCP 的實作方式。
 
-欲了解更多資訊，請參閱 [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+欲了解更多資訊，請參考 [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## 功能
+## 功能特色
 
-這個計算機服務提供以下功能：
+此計算機服務提供以下功能：
 
 1. **基本算術運算**：
-   - 兩個數字的加法
-   - 一個數字減去另一個數字
-   - 兩個數字的乘法
-   - 一個數字除以另一個數字（包含除零檢查）
+   - 兩數相加
+   - 一數減去另一數
+   - 兩數相乘
+   - 一數除以另一數（含除以零的檢查）
 
 ## 使用 `stdio` 類型
 
-## 配置
+## 設定說明
 
-1. **配置 MCP 伺服器**：
-   - 在 VS Code 中打開你的工作區。
-   - 在工作區資料夾中創建一個 `.vscode/mcp.json` 文件以配置 MCP 伺服器。範例配置：
-     ```json
+1. **設定 MCP 伺服器**：
+   - 在 VS Code 中開啟您的工作區。
+   - 在工作區資料夾中建立 `.vscode/mcp.json` 檔案來設定 MCP 伺服器。範例設定如下：
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-   - 將路徑替換為你的專案路徑。路徑應為絕對路徑，而非相對於工作區資料夾的路徑。（範例：D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj）
 
-## 使用服務
+   - 系統會要求您輸入 GitHub 儲存庫根目錄，您可透過指令 `git rev-parse --show-toplevel` 取得`.
 
-服務透過 MCP 協議提供以下 API 端點：
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,18 +86,18 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` 用你的 Docker Hub 使用者名稱替換：
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>`，將 `<YOUR-DOCKER-USERNAME>` 替換成您的 Docker Hub 使用者名稱：
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. 建立映像後，讓我們將其上傳到 Docker Hub。執行以下命令：
+1. 映像檔建立完成後，接著將其上傳到 Docker Hub。請執行以下指令：
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## 使用 Docker 化版本
+## 使用 Docker 版本
 
-1. 在 `.vscode/mcp.json` 文件中，用以下配置替換伺服器配置：
+1. 在 `.vscode/mcp.json` 檔案中，將伺服器設定替換為以下內容：
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -103,11 +111,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   查看配置，你可以看到命令是 `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   從設定內容可以看到，指令為 `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`，如同之前一樣，你可以要求計算機服務為你進行一些數學計算。
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`，和之前一樣，您可以請計算機服務幫您進行數學運算。
 
-**免責聲明**：
-本文檔已使用AI翻譯服務[Co-op Translator](https://github.com/Azure/co-op-translator)進行翻譯。儘管我們努力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始語言的文件應被視為權威來源。對於重要信息，建議尋求專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或誤讀不承擔責任。
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯所引起的任何誤解或誤譯承擔責任。

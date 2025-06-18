@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-16T15:21:19+00:00",
+  "original_hash": "2a58caa6e11faa09470b7f81e6729652",
+  "translation_date": "2025-06-18T05:49:58+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "zh"
 }
@@ -12,7 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## -1- 安装依赖
 
 ```bash
-dotnet run
+dotnet restore
 ```
 
 ## -2- 运行示例
@@ -23,30 +23,32 @@ dotnet run
 
 ## -3- 测试示例
 
-在运行以下命令前，请先打开一个新的终端（确保服务器仍在运行）。
+在运行以下命令之前，请先打开一个单独的终端（确保服务器仍在运行）。
 
-服务器在一个终端运行时，打开另一个终端并运行以下命令：
+在一个终端运行服务器的同时，打开另一个终端并运行以下命令：
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-这将启动一个带有可视界面的网页服务器，方便你测试示例。
+这将启动一个带有可视化界面的网页服务器，方便你测试示例。
 
-服务器连接成功后：
+> 确保传输类型选择的是 **SSE**，且 URL 为 `http://localhost:3001/sse`.
 
-- 尝试列出工具并运行 `add`，参数为 2 和 4，结果应显示 6。
-- 进入 resources 和 resource template，调用 "greeting"，输入一个名字，你将看到带有该名字的问候语。
+Once the server is connected: 
+
+- try listing tools and run `add`，参数为 2 和 4，结果应该显示为 6。  
+> - 进入 resources 和 resource template，调用 "greeting"，输入一个名字，你应该会看到带有你输入名字的问候语。
 
 ### 在 CLI 模式下测试
 
-你可以通过运行以下命令直接启动 CLI 模式：
+你可以通过运行以下命令直接以 CLI 模式启动：
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-这会列出服务器中所有可用的工具。你应该看到如下输出：
+这会列出服务器上所有可用的工具。你应该会看到如下输出：
 
 ```text
 {
@@ -78,13 +80,13 @@ npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/l
 }
 ```
 
-调用工具时输入：
+要调用某个工具，请输入：
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-你应该看到如下输出：
+你应该会看到如下输出：
 
 ```text
 {
@@ -98,9 +100,9 @@ npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/c
 }
 ```
 
-> ![!TIP]
-> 在 CLI 模式下运行 inspector 通常比在浏览器中快得多。
-> 更多关于 inspector 的信息请查看[这里](https://github.com/modelcontextprotocol/inspector)。
+> ![!TIP]  
+> 在 CLI 模式下运行 inspector 通常比在浏览器中更快。  
+> 在这里了解更多关于 inspector 的信息：[here](https://github.com/modelcontextprotocol/inspector)。
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们力求准确，但请注意自动翻译可能存在错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。我们不对因使用本翻译而产生的任何误解或误释承担责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。

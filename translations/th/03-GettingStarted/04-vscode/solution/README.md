@@ -1,34 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a91ca54debdfb015649e4786545694b3",
-  "translation_date": "2025-06-17T15:49:50+00:00",
+  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
+  "translation_date": "2025-06-18T06:00:04+00:00",
   "source_file": "03-GettingStarted/04-vscode/solution/README.md",
   "language_code": "th"
 }
 -->
-# การรันตัวอย่าง
-
-ที่นี่เราสมมติว่าคุณมีโค้ดเซิร์ฟเวอร์ที่ทำงานได้แล้ว กรุณาหาเซิร์ฟเวอร์จากบทก่อนหน้านี้
-
-## การตั้งค่า mcp.json
-
-นี่คือไฟล์ที่คุณใช้เป็นข้อมูลอ้างอิง [mcp.json](../../../../../03-GettingStarted/04-vscode/solution/mcp.json)
-
-แก้ไขส่วนเซิร์ฟเวอร์ตามความเหมาะสมเพื่อชี้ไปยังเส้นทางแบบสมบูรณ์ของเซิร์ฟเวอร์ของคุณ รวมถึงคำสั่งเต็มที่จำเป็นต้องใช้ในการรัน
-
-ในไฟล์ตัวอย่างที่กล่าวถึงข้างต้น ส่วนเซิร์ฟเวอร์จะมีลักษณะดังนี้:
-
-```json
-"hello-mcp": {
-    "command": "node",
-    "args": [
-        "build/index.js"
-    ]
-}
-```
-
-ซึ่งสอดคล้องกับการรันคำสั่งแบบนี้: `node build/index.js`.
+ซึ่งหมายถึงการรันคำสั่งประมาณนี้: `node build/index.js`.
 
 - Change this server entry to fit where your server file is located or to what's needed to startup your server depending on your chosen runtime and server location.
 
@@ -40,13 +19,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Run a tool
 
-- Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add` พิมพ์อะไรบางอย่างเช่น "add 3 to 20"
+- Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add` พิมพ์ข้อความเช่น "add 3 to 20"
 
-    คุณจะเห็นเครื่องมือแสดงขึ้นเหนือกล่องข้อความแชทเพื่อให้คุณเลือกใช้เครื่องมือนั้นเหมือนในภาพนี้:
+    คุณจะเห็นเครื่องมือแสดงขึ้นเหนือกล่องข้อความแชทเพื่อให้คุณเลือกใช้งานเครื่องมือดังภาพนี้:
 
-    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.th.png)
+    ![VS Code แสดงว่าต้องการรันเครื่องมือ](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.th.png)
 
-    การเลือกเครื่องมือนี้ควรแสดงผลลัพธ์เป็นตัวเลขว่า "23" หากคำสั่งของคุณเหมือนที่เราได้กล่าวไว้ก่อนหน้านี้
+    การเลือกเครื่องมือจะให้ผลลัพธ์เป็นตัวเลข "23" หากข้อความที่คุณพิมพ์เหมือนที่เรากล่าวไว้ข้างต้น
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาด้วย AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ แนะนำให้ใช้บริการแปลโดยมนุษย์มืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่แม่นยำ เอกสารต้นฉบับในภาษาต้นทางควรถูกพิจารณาเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ แนะนำให้ใช้บริการแปลโดยมนุษย์มืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใดๆ ที่เกิดจากการใช้การแปลนี้

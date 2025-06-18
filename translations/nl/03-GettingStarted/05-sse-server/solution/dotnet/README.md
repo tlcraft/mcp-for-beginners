@@ -1,52 +1,54 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-17T11:57:05+00:00",
+  "original_hash": "2a58caa6e11faa09470b7f81e6729652",
+  "translation_date": "2025-06-18T06:02:50+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "nl"
 }
 -->
-# Dit voorbeeld uitvoeren
+# Deze sample uitvoeren
 
-## -1- Installeer de afhankelijkheden
+## -1- Installeer de dependencies
+
+```bash
+dotnet restore
+```
+
+## -2- Voer de sample uit
 
 ```bash
 dotnet run
 ```
 
-## -2- Voer het voorbeeld uit
+## -3- Test de sample
 
-```bash
-dotnet run
-```
+Start een aparte terminal voordat je onderstaande opdracht uitvoert (zorg dat de server nog draait).
 
-## -3- Test het voorbeeld
-
-Start een aparte terminal voordat je het onderstaande uitvoert (zorg ervoor dat de server nog steeds actief is).
-
-Met de server draaiend in één terminal, open een andere terminal en voer de volgende opdracht uit:
+Met de server draaiend in één terminal, open je een andere terminal en voer je het volgende commando uit:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Dit zou een webserver moeten starten met een visuele interface waarmee je het voorbeeld kunt testen.
+Dit zou een webserver moeten starten met een visuele interface waarmee je de sample kunt testen.
 
-Zodra de server is verbonden:
+> Zorg ervoor dat **SSE** is geselecteerd als het transporttype, en dat de URL `http://localhost:3001/sse`.
 
-- probeer tools op te sommen en voer `add` uit, met argumenten 2 en 4, je zou 6 in het resultaat moeten zien.
-- ga naar resources en resourcetemplate en roep "greeting" aan, typ een naam in en je zou een begroeting moeten zien met de naam die je hebt opgegeven.
+Once the server is connected: 
+
+- try listing tools and run `add` is, met argumenten 2 en 4, dan zou je 6 als resultaat moeten zien.
+- ga naar resources en resource template en roep "greeting" aan, typ een naam in en je zou een begroeting met de opgegeven naam moeten zien.
 
 ### Testen in CLI-modus
 
-Je kunt het direct in CLI-modus starten door de volgende opdracht uit te voeren:
+Je kunt het ook direct in CLI-modus starten door het volgende commando uit te voeren:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Dit zal alle beschikbare tools in de server weergeven. Je zou de volgende output moeten zien:
+Dit zal alle beschikbare tools op de server weergeven. Je zou de volgende output moeten zien:
 
 ```text
 {
@@ -100,7 +102,7 @@ Je zou de volgende output moeten zien:
 
 > ![!TIP]
 > Het is meestal veel sneller om de inspector in CLI-modus te draaien dan in de browser.
-> Lees hier meer over de inspector [hier](https://github.com/modelcontextprotocol/inspector).
+> Lees meer over de inspector [hier](https://github.com/modelcontextprotocol/inspector).
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in zijn oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of misinterpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-17T10:41:51+00:00",
+  "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
+  "translation_date": "2025-06-18T06:01:22+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "da"
 }
@@ -10,7 +10,17 @@ CO_OP_TRANSLATOR_METADATA:
 # Kør dette eksempel
 
 > [!NOTE]
-> Dette eksempel antager, at du bruger en GitHub Codespaces-instans. Hvis du vil køre det lokalt, skal du opsætte en personlig adgangstoken på GitHub.
+> Dette eksempel forudsætter, at du bruger en GitHub Codespaces-instans. Hvis du vil køre det lokalt, skal du oprette et personligt adgangstoken (PAT) på GitHub.
+>
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```
+>
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```
 
 ## Installer biblioteker
 
@@ -18,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-Skal installere følgende biblioteker: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
+Bør installere følgende biblioteker: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
 ## Kør
 
@@ -26,7 +36,7 @@ Skal installere følgende biblioteker: Azure AI Inference, Azure Identity, Micro
 dotnet run
 ```
 
-Du bør se en output, der ligner:
+Du burde se en output, der ligner:
 
 ```text
 Setting up stdio transport
@@ -41,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Meget af outputtet er blot fejlsøgning, men det vigtige er, at du lister værktøjer fra MCP-serveren, omdanner dem til LLM-værktøjer, og du ender med et MCP-klientrespons "Sum 6".
+Meget af outputtet er bare debugging, men det vigtige er, at du lister værktøjer fra MCP Server, omdanner dem til LLM-værktøjer, og ender med et MCP-klient svar "Sum 6".
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der måtte opstå ved brug af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiske oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.

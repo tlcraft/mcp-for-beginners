@@ -1,53 +1,50 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1954cd45a2563dfea43bfe48cccb0c8",
-  "translation_date": "2025-05-27T16:21:51+00:00",
+  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
+  "translation_date": "2025-06-18T06:07:06+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "cs"
 }
 -->
-# Running this sample
+# Spuštění tohoto příkladu
 
-## -1- Install the dependencies
+## -1- Nainstalujte závislosti
 
 ```bash
-dotnet add package ModelContextProtocol --prerelease
-# Add the .NET Hosting NuGet package
-dotnet add package Microsoft.Extensions.Hosting
+dotnet restore
 ```
 
-## -3- Run the sample
-
+## -3- Spusťte příklad
 
 ```bash
 dotnet run
 ```
 
-## -4- Test the sample
+## -4- Otestujte příklad
 
-With the server running in one terminal, open another terminal and run the following command:
+S běžícím serverem v jednom terminálu otevřete další terminál a spusťte následující příkaz:
 
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-This should start a web server with a visual interface allowing you to test the sample.
+Tím by se měl spustit webový server s vizuálním rozhraním, které vám umožní příklad otestovat.
 
-Once the server is connected: 
+Jakmile je server připojen:
 
-- try listing tools and run `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- zkuste vypsat nástroje a spusťte `add` s argumenty 2 a 4, v výsledku byste měli vidět 6.
+- přejděte do sekce resources a resource template a zavolejte "greeting", zadejte jméno a měli byste vidět pozdrav s vámi zadaným jménem.
 
-### Testing in CLI mode
+### Testování v režimu CLI
 
-You can launch it directly in CLI mode by running the following command:
+Můžete jej spustit přímo v režimu CLI pomocí následujícího příkazu:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-This will list all the tools available in the server. You should see the following output:
+Tím se vypíšou všechny nástroje dostupné na serveru. Měli byste vidět následující výstup:
 
 ```text
 {
@@ -77,13 +74,13 @@ This will list all the tools available in the server. You should see the followi
 }
 ```
 
-To invoke a tool type:
+Pro vyvolání nástroje zadejte:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-name Add --tool-arg a=1 --tool-arg b=2
 ```
 
-You should see the following output:
+Měli byste vidět následující výstup:
 
 ```text
 {
@@ -98,8 +95,8 @@ You should see the following output:
 ```
 
 > ![!TIP]
-> Обычно запуск инспектора в CLI режиме работает значительно быстрее, чем в браузере.
-> Подробнее об инспекторе можно прочитать [здесь](https://github.com/modelcontextprotocol/inspector).
+> Obvykle je rychlejší spustit inspector v režimu CLI než v prohlížeči.
+> Více o inspectoru si přečtěte [zde](https://github.com/modelcontextprotocol/inspector).
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho rodném jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo chybné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje využít profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo chybné výklady vyplývající z použití tohoto překladu.

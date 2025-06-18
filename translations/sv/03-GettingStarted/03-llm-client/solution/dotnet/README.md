@@ -1,16 +1,26 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-17T10:41:36+00:00",
+  "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
+  "translation_date": "2025-06-18T06:00:50+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "sv"
 }
 -->
-# Kör det här exemplet
+# Kör detta exempel
 
 > [!NOTE]
-> Det här exemplet förutsätter att du använder en GitHub Codespaces-instans. Om du vill köra detta lokalt behöver du ställa in ett personligt åtkomsttoken på GitHub.
+> Detta exempel förutsätter att du använder en GitHub Codespaces-instans. Om du vill köra detta lokalt behöver du skapa en personlig åtkomsttoken (PAT) på GitHub.
+>
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```
+>
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```
 
 ## Installera bibliotek
 
@@ -26,7 +36,7 @@ Bör installera följande bibliotek: Azure AI Inference, Azure Identity, Microso
 dotnet run
 ```
 
-Du bör se en output som liknar:
+Du bör se en utdata som liknar:
 
 ```text
 Setting up stdio transport
@@ -41,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-En stor del av outputen är bara felsökning, men det viktiga är att du listar verktyg från MCP-servern, omvandlar dem till LLM-verktyg och slutar med ett MCP-klientrespons "Sum 6".
+Mycket av utdata är bara för felsökning, men det viktiga är att du listar verktyg från MCP Server, omvandlar dem till LLM-verktyg och får ett MCP-klient svar "Sum 6".
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Vi strävar efter noggrannhet, men var medveten om att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller misstolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen var medveten om att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål ska betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår från användningen av denna översättning.

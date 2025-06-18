@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T13:01:10+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T06:01:27+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "no"
 }
 -->
-# Grunnleggende Kalkulator MCP-tjeneste
+# Basic Calculator MCP Service
 
-Denne tjenesten tilbyr grunnleggende kalkulatoroperasjoner gjennom Model Context Protocol (MCP). Den er designet som et enkelt eksempel for nybegynnere som lærer om MCP-implementeringer.
+Denne tjenesten tilbyr grunnleggende kalkulatoroperasjoner gjennom Model Context Protocol (MCP). Den er laget som et enkelt eksempel for nybegynnere som lærer om MCP-implementasjoner.
 
 For mer informasjon, se [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
@@ -21,36 +21,44 @@ Denne kalkulatortjenesten tilbyr følgende muligheter:
    - Addisjon av to tall
    - Subtraksjon av ett tall fra et annet
    - Multiplikasjon av to tall
-   - Divisjon av ett tall med et annet (med sjekk for null-divisjon)
+   - Divisjon av ett tall med et annet (med sjekk for divisjon med null)
 
 ## Bruke `stdio` Type
-
+  
 ## Konfigurasjon
 
 1. **Konfigurer MCP-servere**:
    - Åpne arbeidsområdet ditt i VS Code.
-   - Opprett en `.vscode/mcp.json`-fil i arbeidsområde-mappen for å konfigurere MCP-servere. Eksempelkonfigurasjon:
-     ```json
+   - Opprett en `.vscode/mcp.json` fil i arbeidsområdet ditt for å konfigurere MCP-servere. Eksempel på konfigurasjon:
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-   - Erstatt stien med stien til prosjektet ditt. Stien skal være absolutt og ikke relativ til arbeidsområde-mappen. (Eksempel: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## Bruke Tjenesten
+   - Du vil bli bedt om å oppgi roten til GitHub-repositoriet, som kan hentes med kommandoen, `git rev-parse --show-toplevel`.
 
-Tjenesten eksponerer følgende API-endepunkter gjennom MCP-protokollen:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -82,14 +90,14 @@ The previous soultion is great when you have the .NET SDK installed, and all the
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. Etter at bildet er bygget, la oss laste det opp til Docker Hub. Kjør følgende kommando:
+1. Etter at imaget er bygget, laster vi det opp til Docker Hub. Kjør følgende kommando:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
 ## Bruk den Dockeriserte Versjonen
 
-1. I `.vscode/mcp.json`-filen, erstatt serverkonfigurasjonen med følgende:
+1. I `.vscode/mcp.json` filen, erstatt serverkonfigurasjonen med følgende:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -103,10 +111,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Ser du på konfigurasjonen, kan du se at kommandoen er `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Når du ser på konfigurasjonen, kan du se at kommandoen er `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, og som før kan du be kalkulatortjenesten om å utføre noen beregninger for deg.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, og akkurat som før kan du be kalkulatortjenesten om å gjøre noen beregninger for deg.
 
-I'm sorry, but it seems there is a misunderstanding. Could you clarify what language you want the text translated into by "no"?
+**Ansvarsfraskrivelse**:  
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på dets opprinnelige språk skal betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår som følge av bruk av denne oversettelsen.

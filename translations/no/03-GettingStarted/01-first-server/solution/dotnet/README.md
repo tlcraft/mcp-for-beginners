@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1954cd45a2563dfea43bfe48cccb0c8",
-  "translation_date": "2025-05-17T09:10:10+00:00",
+  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
+  "translation_date": "2025-06-18T06:01:42+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "no"
 }
@@ -12,9 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## -1- Installer avhengighetene
 
 ```bash
-dotnet add package ModelContextProtocol --prerelease
-# Add the .NET Hosting NuGet package
-dotnet add package Microsoft.Extensions.Hosting
+dotnet restore
 ```
 
 ## -3- Kjør eksempelet
@@ -35,8 +33,8 @@ Dette skal starte en webserver med et visuelt grensesnitt som lar deg teste ekse
 
 Når serveren er tilkoblet:
 
-- prøv å liste verktøyene og kjør `add` med argumentene 2 og 4, du skal se 6 i resultatet.
-- gå til ressurser og ressursmal og kall "greeting", skriv inn et navn, og du skal se en hilsen med navnet du oppga.
+- prøv å liste verktøy og kjør `add` med argumentene 2 og 4, du skal se 6 i resultatet.
+- gå til resources og resource template og kall "greeting", skriv inn et navn, og du skal se en hilsen med navnet du oppga.
 
 ### Testing i CLI-modus
 
@@ -46,7 +44,7 @@ Du kan starte det direkte i CLI-modus ved å kjøre følgende kommando:
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-Dette vil liste alle verktøyene tilgjengelige på serveren. Du skal se følgende utdata:
+Dette vil liste alle verktøyene som er tilgjengelige på serveren. Du skal se følgende output:
 
 ```text
 {
@@ -76,13 +74,13 @@ Dette vil liste alle verktøyene tilgjengelige på serveren. Du skal se følgend
 }
 ```
 
-For å bruke et verktøy, skriv:
+For å kalle et verktøy, skriv:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-name Add --tool-arg a=1 --tool-arg b=2
 ```
 
-Du skal se følgende utdata:
+Du skal se følgende output:
 
 ```text
 {
@@ -97,8 +95,8 @@ Du skal se følgende utdata:
 ```
 
 > ![!TIP]
-> Det er vanligvis mye raskere å kjøre inspiseren i CLI-modus enn i nettleseren.
-> Les mer om inspiseren [her](https://github.com/modelcontextprotocol/inspector).
+> Det er vanligvis mye raskere å kjøre inspektøren i CLI-modus enn i nettleseren.
+> Les mer om inspektøren [her](https://github.com/modelcontextprotocol/inspector).
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet har blitt oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Vi streber etter nøyaktighet, men vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

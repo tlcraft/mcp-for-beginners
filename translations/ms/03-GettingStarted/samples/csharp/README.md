@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T13:02:20+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T06:04:41+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "ms"
 }
 -->
 # Perkhidmatan Kalkulator Asas MCP
 
-Perkhidmatan ini menyediakan operasi kalkulator asas melalui Protokol Konteks Model (MCP). Ia direka sebagai contoh mudah untuk pemula yang belajar tentang pelaksanaan MCP.
+Perkhidmatan ini menyediakan operasi kalkulator asas melalui Model Context Protocol (MCP). Ia direka sebagai contoh mudah untuk pemula yang belajar tentang pelaksanaan MCP.
 
 Untuk maklumat lanjut, lihat [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
@@ -19,38 +19,46 @@ Perkhidmatan kalkulator ini menawarkan keupayaan berikut:
 
 1. **Operasi Aritmetik Asas**:
    - Penambahan dua nombor
-   - Penolakan satu nombor daripada nombor lain
+   - Penolakan satu nombor dari nombor lain
    - Pendaraban dua nombor
-   - Pembahagian satu nombor dengan nombor lain (dengan pemeriksaan pembahagian sifar)
+   - Pembahagian satu nombor dengan nombor lain (dengan semakan pembahagian dengan sifar)
 
 ## Menggunakan `stdio` Jenis
 
 ## Konfigurasi
 
-1. **Konfigurasi Pelayan MCP**:
+1. **Konfigurasikan Pelayan MCP**:
    - Buka ruang kerja anda dalam VS Code.
    - Buat fail `.vscode/mcp.json` dalam folder ruang kerja anda untuk mengkonfigurasi pelayan MCP. Contoh konfigurasi:
-     ```json
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-   - Gantikan laluan dengan laluan ke projek anda. Laluan tersebut haruslah mutlak dan bukan relatif kepada folder ruang kerja. (Contoh: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## Menggunakan Perkhidmatan
+   - Anda akan diminta untuk memasukkan akar repositori GitHub, yang boleh diperoleh dari arahan, `git rev-parse --show-toplevel`.
 
-Perkhidmatan ini mendedahkan titik akhir API berikut melalui protokol MCP:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -82,12 +90,12 @@ The previous soultion is great when you have the .NET SDK installed, and all the
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. Selepas imej dibina, mari kita muat naiknya ke Docker Hub. Jalankan arahan berikut:
+1. Selepas imej dibina, mari muat naik ke Docker Hub. Jalankan arahan berikut:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Menggunakan Versi Docker
+## Gunakan Versi Dockerized
 
 1. Dalam fail `.vscode/mcp.json`, gantikan konfigurasi pelayan dengan yang berikut:
    ```json
@@ -103,11 +111,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Melihat kepada konfigurasi, anda boleh melihat bahawa arahan tersebut adalah `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Melihat konfigurasi, anda boleh lihat bahawa arahan adalah `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
 Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, dan seperti sebelumnya anda boleh meminta perkhidmatan kalkulator untuk melakukan beberapa pengiraan untuk anda.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

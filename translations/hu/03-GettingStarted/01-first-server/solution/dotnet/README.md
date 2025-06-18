@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1954cd45a2563dfea43bfe48cccb0c8",
-  "translation_date": "2025-05-17T09:11:55+00:00",
+  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
+  "translation_date": "2025-06-18T06:06:34+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "hu"
 }
@@ -12,9 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## -1- Telepítsd a függőségeket
 
 ```bash
-dotnet add package ModelContextProtocol --prerelease
-# Add the .NET Hosting NuGet package
-dotnet add package Microsoft.Extensions.Hosting
+dotnet restore
 ```
 
 ## -3- Futtasd a mintát
@@ -25,28 +23,28 @@ dotnet run
 
 ## -4- Teszteld a mintát
 
-Amikor a szerver fut az egyik terminálban, nyiss meg egy másik terminált, és futtasd a következő parancsot:
+Amíg a szerver fut az egyik terminálon, nyiss meg egy másik terminált, és futtasd a következő parancsot:
 
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-Ez elindít egy webszervert vizuális felülettel, amely lehetővé teszi a minta tesztelését.
+Ez elindít egy webes szervert vizuális felülettel, amely lehetővé teszi a minta tesztelését.
 
 Miután a szerver csatlakozott:
 
-- próbáld meg listázni az eszközöket és futtatni az `add`-ot, 2 és 4 argumentummal, a 6-ot kell látnod eredményként.
-- menj az erőforrásokhoz és az erőforrás sablonhoz, hívd meg a "greeting"-et, írj be egy nevet, és látni fogsz egy üdvözlést az általad megadott névvel.
+- próbáld meg listázni az eszközöket, majd futtasd az `add` parancsot a 2 és 4 argumentumokkal, az eredménynek 6-nak kell lennie.
+- menj a resources és resource template részhez, hívd meg a "greeting" funkciót, írj be egy nevet, és egy névre szóló üdvözletet kell kapnod.
 
 ### Tesztelés CLI módban
 
-Közvetlenül CLI módban indíthatod el a következő parancs futtatásával:
+Közvetlenül CLI módban is elindíthatod a következő parancs futtatásával:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-Ez felsorolja az összes eszközt, amely elérhető a szerveren. A következő kimenetet kell látnod:
+Ez kilistázza a szerveren elérhető összes eszközt. A következő kimenetet kell látnod:
 
 ```text
 {
@@ -97,8 +95,8 @@ A következő kimenetet kell látnod:
 ```
 
 > ![!TIP]
-> Általában sokkal gyorsabb CLI módban futtatni az inspektort, mint a böngészőben.
-> További információ az inspektorról [itt](https://github.com/modelcontextprotocol/inspector).
+> Általában sokkal gyorsabb az inspector futtatása CLI módban, mint a böngészőben.
+> Olvass többet az inspector-ról [itt](https://github.com/modelcontextprotocol/inspector).
 
-**Felelősség kizárása**:  
-Ezt a dokumentumot az AI fordítási szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén ajánlott a professzionális emberi fordítás. Nem vállalunk felelősséget semmilyen félreértésért vagy félremagyarázásért, amely a fordítás használatából ered.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum anyanyelvű változata tekintendő hivatalos forrásnak. Fontos információk esetén profi emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.

@@ -1,56 +1,64 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T12:59:07+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T05:54:10+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "mr"
 }
 -->
 # बेसिक कॅल्क्युलेटर MCP सेवा
 
-ही सेवा मॉडेल कॉन्टेक्स्ट प्रोटोकॉल (MCP) द्वारे बेसिक कॅल्क्युलेटर ऑपरेशन्स प्रदान करते. MCP अंमलबजावणी शिकणाऱ्या नवशिक्यांसाठी हे एक सोपे उदाहरण म्हणून डिझाइन केले आहे.
+ही सेवा Model Context Protocol (MCP) द्वारे बेसिक कॅल्क्युलेटर ऑपरेशन्स प्रदान करते. ही सेवा MCP अंमलबजावणी शिकणाऱ्या नवशिक्यांसाठी एक सोपं उदाहरण म्हणून तयार करण्यात आली आहे.
 
-अधिक माहितीसाठी, [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) पहा.
+अधिक माहितीसाठी, पहा [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
 ## वैशिष्ट्ये
 
-या कॅल्क्युलेटर सेवेमध्ये खालील क्षमता आहेत:
+ही कॅल्क्युलेटर सेवा खालील क्षमता देते:
 
-1. **मूलभूत अंकगणितीय ऑपरेशन्स**:
+1. **मूलभूत अंकगणित ऑपरेशन्स**:
    - दोन संख्यांची बेरीज
-   - एका संख्येचा दुसऱ्या संख्येतून वजाबाकी
-   - दोन संख्यांचा गुणाकार
-   - एका संख्येचा दुसऱ्या संख्येने भागाकार (शून्य विभागणी तपासणीसह)
+   - एका संख्येतून दुसरी संख्या वजा करणे
+   - दोन संख्यांची गुणाकार
+   - एका संख्येचे दुसऱ्या संख्येने भागाकार (शून्याने भाग देण्याची तपासणी सह)
 
 ## `stdio` प्रकार वापरणे
-
+  
 ## कॉन्फिगरेशन
 
 1. **MCP सर्व्हर्स कॉन्फिगर करा**:
-   - VS Code मध्ये आपले कार्यक्षेत्र उघडा.
-   - MCP सर्व्हर्स कॉन्फिगर करण्यासाठी आपल्या कार्यक्षेत्र फोल्डरमध्ये `.vscode/mcp.json` फाइल तयार करा. उदाहरण कॉन्फिगरेशन:
-     ```json
+   - तुमचं वर्कस्पेस VS Code मध्ये उघडा.
+   - तुमच्या वर्कस्पेस फोल्डरमध्ये MCP सर्व्हर्स कॉन्फिगर करण्यासाठी `.vscode/mcp.json` फाइल तयार करा. उदाहरण कॉन्फिगरेशन:
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-   - मार्ग आपल्या प्रोजेक्टच्या मार्गाने बदला. मार्ग पूर्ण असावा आणि कार्यक्षेत्र फोल्डरच्या तुलनेत सापेक्ष नसावा. (उदाहरण: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## सेवा वापरणे
+   - तुम्हाला GitHub रिपॉझिटरी रूट टाकायला सांगितलं जाईल, जे कमांड `git rev-parse --show-toplevel`.
 
-सेवा MCP प्रोटोकॉलद्वारे खालील API एन्डपॉइंट्स उघडते:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,16 +86,16 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` आपल्या Docker Hub वापरकर्तानावासह):
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` वापरून मिळवता येऊ शकते (तुमच्या Docker Hub वापरकर्तानावासह):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. प्रतिमा तयार झाल्यानंतर, चला ती Docker Hub वर अपलोड करूया. खालील आदेश चालवा:
+1. इमेज तयार झाल्यानंतर, ती Docker Hub वर अपलोड करूया. खालील कमांड चालवा:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## डॉकरीकृत आवृत्ती वापरा
+## Dockerized आवृत्ती वापरा
 
 1. `.vscode/mcp.json` फाइलमध्ये, सर्व्हर कॉन्फिगरेशन खालीलप्रमाणे बदला:
    ```json
@@ -103,11 +111,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   कॉन्फिगरेशन पाहून, आपण पाहू शकता की आदेश `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   कॉन्फिगरेशन पाहता, कमांड `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {` आहे, आणि अगदी पूर्वीप्रमाणे आपण कॅल्क्युलेटर सेवेला काही गणित करण्यासाठी विचारू शकता.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {` आहे, आणि अगदी पूर्वीप्रमाणे तुम्ही कॅल्क्युलेटर सेवेला गणिती गणना करण्यासाठी विचारू शकता.
 
 **अस्वीकरण**:  
-हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात ठेवा की स्वयंचलित भाषांतरात त्रुटी किंवा अपूर्णता असू शकते. मूळ भाषेतील दस्तऐवज हा प्रामाणिक स्रोत म्हणून विचारात घ्यावा. गंभीर माहिती साठी, व्यावसायिक मानवी भाषांतराची शिफारस केली जाते. या भाषांतराच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गैरसमज किंवा चुकीच्या अर्थाबद्दल आम्ही जबाबदार नाही.
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्न करतो, परंतु कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेचा अभाव असू शकतो. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाची माहिती असल्यास, व्यावसायिक मानवी अनुवाद करणे शिफारसीय आहे. या अनुवादाच्या वापरामुळे होणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.

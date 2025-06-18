@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1954cd45a2563dfea43bfe48cccb0c8",
-  "translation_date": "2025-05-17T09:13:02+00:00",
+  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
+  "translation_date": "2025-06-18T06:09:58+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "hr"
 }
@@ -12,12 +12,11 @@ CO_OP_TRANSLATOR_METADATA:
 ## -1- Instalirajte ovisnosti
 
 ```bash
-dotnet add package ModelContextProtocol --prerelease
-# Add the .NET Hosting NuGet package
-dotnet add package Microsoft.Extensions.Hosting
+dotnet restore
 ```
 
 ## -3- Pokrenite primjer
+
 
 ```bash
 dotnet run
@@ -35,8 +34,8 @@ Ovo bi trebalo pokrenuti web server s vizualnim sučeljem koje vam omogućuje te
 
 Kada se server poveže:
 
-- pokušajte navesti alate i pokrenuti `add`, s argumentima 2 i 4, trebali biste vidjeti 6 u rezultatu.
-- idite na resurse i predložak resursa i pozovite "greeting", unesite ime i trebali biste vidjeti pozdrav s imenom koje ste unijeli.
+- pokušajte prikazati popis alata i pokrenite `add` s argumentima 2 i 4, trebali biste vidjeti rezultat 6.
+- idite na resources i resource template te pozovite "greeting", upišite ime i trebali biste vidjeti pozdrav s imenom koje ste unijeli.
 
 ### Testiranje u CLI načinu
 
@@ -46,7 +45,7 @@ Možete ga pokrenuti izravno u CLI načinu pokretanjem sljedeće naredbe:
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-Ovo će navesti sve alate dostupne na serveru. Trebali biste vidjeti sljedeći ispis:
+Ovo će prikazati sve alate dostupne na serveru. Trebali biste vidjeti sljedeći izlaz:
 
 ```text
 {
@@ -82,7 +81,7 @@ Za pozivanje alata upišite:
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-name Add --tool-arg a=1 --tool-arg b=2
 ```
 
-Trebali biste vidjeti sljedeći ispis:
+Trebali biste vidjeti sljedeći izlaz:
 
 ```text
 {
@@ -97,8 +96,8 @@ Trebali biste vidjeti sljedeći ispis:
 ```
 
 > ![!TIP]
-> Obično je puno brže pokrenuti ispektor u CLI načinu nego u pregledniku.
-> Pročitajte više o ispektoru [ovdje](https://github.com/modelcontextprotocol/inspector).
+> Obično je puno brže pokrenuti inspector u CLI načinu nego u pregledniku.
+> Više o inspectoru pročitajte [ovdje](https://github.com/modelcontextprotocol/inspector).
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge prevođenja [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo ka točnosti, molimo vas da budete svjesni da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na njegovom izvornom jeziku treba smatrati mjerodavnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne odgovaramo za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prijevod [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za važne informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazumevanja ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

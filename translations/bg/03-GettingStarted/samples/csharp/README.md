@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T13:03:42+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T06:08:35+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "bg"
 }
 -->
-# Основна MCP услуга за калкулатор
+# Основна услуга за калкулатор MCP
 
-Тази услуга предоставя основни операции на калкулатор чрез Model Context Protocol (MCP). Тя е проектирана като прост пример за начинаещи, които учат за реализации на MCP.
+Тази услуга предоставя основни калкулаторни операции чрез Model Context Protocol (MCP). Тя е създадена като прост пример за начинаещи, които се запознават с имплементациите на MCP.
 
-За повече информация, вижте [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+За повече информация вижте [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## Характеристики
+## Функции
 
-Тази калкулаторна услуга предлага следните възможности:
+Тази услуга калкулатор предлага следните възможности:
 
 1. **Основни аритметични операции**:
    - Събиране на две числа
@@ -29,28 +29,36 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **Конфигуриране на MCP сървъри**:
    - Отворете вашето работно пространство във VS Code.
-   - Създайте `.vscode/mcp.json` файл в папката на вашето работно пространство, за да конфигурирате MCP сървъри. Примерна конфигурация:
-     ```json
+   - Създайте `.vscode/mcp.json` файл в папката на работното пространство за конфигуриране на MCP сървърите. Примерна конфигурация:
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-   - Заменете пътя с пътя към вашия проект. Пътят трябва да бъде абсолютен и не относителен спрямо папката на работното пространство. (Пример: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## Използване на услугата
+   - Ще бъдете подканени да въведете корена на GitHub хранилището, който може да се вземе с командата `git rev-parse --show-toplevel`.
 
-Услугата предоставя следните API крайни точки чрез MCP протокола:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,18 +86,18 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` с вашето потребителско име в Docker Hub:
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` с вашето потребителско име в Docker Hub):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. След като изображението е създадено, нека го качим в Docker Hub. Изпълнете следната команда:
+1. След като образът бъде създаден, нека го качим в Docker Hub. Изпълнете следната команда:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
 ## Използване на версията с Docker
 
-1. В `.vscode/mcp.json` файла заменете конфигурацията на сървъра със следното:
+1. В `.vscode/mcp.json` файла заменете конфигурацията на сървъра със следната:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -103,11 +111,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Гледайки конфигурацията, можете да видите, че командата е `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Ако погледнете конфигурацията, ще видите, че командата е `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, и точно както преди можете да поискате калкулаторната услуга да направи някои изчисления за вас.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, и както преди, можете да помолите услугата калкулатор да направи някакви изчисления за вас.
 
 **Отказ от отговорност**:  
-Този документ е преведен с помощта на AI услуга за превод [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматичните преводи може да съдържат грешки или неточности. Оригиналният документ на родния му език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Не носим отговорност за недоразумения или неправилни интерпретации, произтичащи от използването на този превод.
+Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или погрешни тълкувания, произтичащи от използването на този превод.

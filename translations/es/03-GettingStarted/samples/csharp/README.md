@@ -1,23 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-16T15:04:35+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T05:46:14+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "es"
 }
 -->
 # Servicio Básico de Calculadora MCP
 
-Este servicio proporciona operaciones básicas de calculadora a través del Model Context Protocol (MCP). Está diseñado como un ejemplo sencillo para principiantes que están aprendiendo sobre implementaciones MCP.
+Este servicio ofrece operaciones básicas de calculadora a través del Model Context Protocol (MCP). Está diseñado como un ejemplo sencillo para principiantes que están aprendiendo sobre implementaciones MCP.
 
 Para más información, consulta [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
 ## Características
 
-Este servicio de calculadora ofrece las siguientes capacidades:
+Este servicio de calculadora ofrece las siguientes funcionalidades:
 
-1. **Operaciones aritméticas básicas**:
+1. **Operaciones Aritméticas Básicas**:
    - Suma de dos números
    - Resta de un número a otro
    - Multiplicación de dos números
@@ -27,30 +27,38 @@ Este servicio de calculadora ofrece las siguientes capacidades:
   
 ## Configuración
 
-1. **Configurar servidores MCP**:
+1. **Configurar Servidores MCP**:
    - Abre tu espacio de trabajo en VS Code.
    - Crea un archivo `.vscode/mcp.json` en la carpeta de tu espacio de trabajo para configurar los servidores MCP. Ejemplo de configuración:
-     ```json
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-	- Reemplaza la ruta con la ruta de tu proyecto. La ruta debe ser absoluta y no relativa a la carpeta del espacio de trabajo. (Ejemplo: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## Uso del Servicio
+   - Se te pedirá ingresar la raíz del repositorio de GitHub, que puedes obtener con el comando `git rev-parse --show-toplevel`.
 
-El servicio expone los siguientes endpoints API a través del protocolo MCP:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -82,14 +90,14 @@ The previous soultion is great when you have the .NET SDK installed, and all the
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. Después de construir la imagen, vamos a subirla a Docker Hub. Ejecuta el siguiente comando:
+1. Después de construir la imagen, subámosla a Docker Hub. Ejecuta el siguiente comando:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Usar la versión Dockerizada
+## Usar la Versión Dockerizada
 
-1. En el archivo `.vscode/mcp.json`, reemplaza la configuración del servidor por lo siguiente:
+1. En el archivo `.vscode/mcp.json`, reemplaza la configuración del servidor por la siguiente:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -107,7 +115,7 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, y al igual que antes, puedes pedirle al servicio de calculadora que realice cálculos por ti.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, y al igual que antes, puedes pedirle al servicio de calculadora que haga algunos cálculos por ti.
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+**Aviso Legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea derivada del uso de esta traducción.

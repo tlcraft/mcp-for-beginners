@@ -1,16 +1,26 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-17T10:43:18+00:00",
+  "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
+  "translation_date": "2025-06-18T06:05:06+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "ms"
 }
 -->
-# Jalankan sampel ini
+# Jalankan contoh ini
 
 > [!NOTE]
-> Sampel ini menganggap anda menggunakan instance GitHub Codespaces. Jika anda ingin menjalankannya secara lokal, anda perlu menetapkan token akses peribadi di GitHub.
+> Contoh ini mengandaikan anda menggunakan GitHub Codespaces. Jika anda mahu menjalankannya secara tempatan, anda perlu menyediakan token akses peribadi (PAT) di GitHub.
+>
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```
+>
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```
 
 ## Pasang perpustakaan
 
@@ -18,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-Perlu memasang perpustakaan berikut: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol 
+Perlu memasang perpustakaan berikut: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
 ## Jalankan
 
@@ -26,7 +36,7 @@ Perlu memasang perpustakaan berikut: Azure AI Inference, Azure Identity, Microso
 dotnet run
 ```
 
-Anda sepatutnya melihat output yang serupa dengan:
+Anda akan melihat output yang serupa dengan:
 
 ```text
 Setting up stdio transport
@@ -41,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Banyak daripada output hanyalah penyahpepijatan tetapi yang penting ialah anda menyenaraikan alat dari MCP Server, menukarkannya menjadi alat LLM dan anda akan mendapat respons klien MCP "Sum 6".
+Banyak output hanyalah untuk debugging tetapi yang penting ialah anda menyenaraikan alat daripada MCP Server, menukarnya menjadi alat LLM dan akhirnya anda mendapat respons klien MCP "Sum 6".
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

@@ -1,32 +1,30 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1954cd45a2563dfea43bfe48cccb0c8",
-  "translation_date": "2025-05-16T15:10:58+00:00",
+  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
+  "translation_date": "2025-06-18T05:46:28+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "es"
 }
 -->
 # Ejecutando este ejemplo
 
-## -1- Instala las dependencias
+## -1- Instalar las dependencias
 
 ```bash
-dotnet add package ModelContextProtocol --prerelease
-# Add the .NET Hosting NuGet package
-dotnet add package Microsoft.Extensions.Hosting
+dotnet restore
 ```
 
-## -3- Ejecuta el ejemplo
+## -3- Ejecutar el ejemplo
 
 
 ```bash
 dotnet run
 ```
 
-## -4- Prueba el ejemplo
+## -4- Probar el ejemplo
 
-Con el servidor corriendo en una terminal, abre otra terminal y ejecuta el siguiente comando:
+Con el servidor en ejecución en una terminal, abre otra terminal y ejecuta el siguiente comando:
 
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
@@ -98,8 +96,8 @@ Deberías ver la siguiente salida:
 ```
 
 > ![!TIP]
-> Usualmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
+> Normalmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
 > Lee más sobre el inspector [aquí](https://github.com/modelcontextprotocol/inspector).
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso Legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

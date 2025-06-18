@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T12:57:30+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T05:47:49+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "ar"
 }
 -->
 # خدمة الآلة الحاسبة الأساسية MCP
 
-تقدم هذه الخدمة عمليات الآلة الحاسبة الأساسية من خلال بروتوكول نموذج السياق (MCP). تم تصميمها كمثال بسيط للمبتدئين الذين يتعلمون عن تنفيذات MCP.
+تقدم هذه الخدمة عمليات حسابية أساسية من خلال بروتوكول سياق النموذج (MCP). تم تصميمها كمثال بسيط للمبتدئين الذين يتعلمون عن تطبيقات MCP.
 
 لمزيد من المعلومات، راجع [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
@@ -17,40 +17,48 @@ CO_OP_TRANSLATOR_METADATA:
 
 تقدم خدمة الآلة الحاسبة هذه القدرات التالية:
 
-1. **عمليات الحساب الأساسية**:
+1. **العمليات الحسابية الأساسية**:
    - جمع رقمين
-   - طرح رقم من آخر
+   - طرح رقم من رقم آخر
    - ضرب رقمين
-   - قسمة رقم على آخر (مع فحص القسمة على الصفر)
+   - قسمة رقم على آخر (مع التحقق من القسمة على صفر)
 
 ## استخدام `stdio` النوع
+  
+## التهيئة
 
-## الإعداد
-
-1. **تكوين خوادم MCP**:
+1. **تهيئة خوادم MCP**:
    - افتح مساحة العمل الخاصة بك في VS Code.
-   - قم بإنشاء ملف `.vscode/mcp.json` في مجلد مساحة العمل الخاصة بك لتكوين خوادم MCP. مثال على التكوين:
-     ```json
+   - أنشئ ملف `.vscode/mcp.json` في مجلد مساحة العمل لتهيئة خوادم MCP. مثال على التهيئة:
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-   - استبدل المسار بالمسار إلى مشروعك. يجب أن يكون المسار مطلقًا وليس نسبيًا لمجلد مساحة العمل. (مثال: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## استخدام الخدمة
+   - سيُطلب منك إدخال جذر مستودع GitHub، والذي يمكن الحصول عليه من الأمر، `git rev-parse --show-toplevel`.
 
-تقدم الخدمة نقاط النهاية API التالية من خلال بروتوكول MCP:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,7 +86,7 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` مع اسم المستخدم الخاص بك في Docker Hub:
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` مع اسم مستخدم Docker Hub الخاص بك):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
@@ -87,9 +95,9 @@ The previous soultion is great when you have the .NET SDK installed, and all the
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## استخدام النسخة المعبأة في Docker
+## استخدام النسخة المحوسبة عبر Docker
 
-1. في ملف `.vscode/mcp.json`، استبدل تكوين الخادم بالتالي:
+1. في ملف `.vscode/mcp.json`، استبدل تهيئة الخادم بالتالي:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -103,11 +111,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   بالنظر إلى التكوين، يمكنك أن ترى أن الأمر هو `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   بالنظر إلى التهيئة، يمكنك رؤية أن الأمر هو `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`، وكما هو الحال من قبل، يمكنك أن تطلب من خدمة الآلة الحاسبة القيام ببعض العمليات الحسابية لك.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`، وكما في السابق يمكنك طلب خدمة الآلة الحاسبة لإجراء بعض العمليات الحسابية لك.
 
-**إخلاء مسؤولية**: 
-تمت ترجمة هذه الوثيقة باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار الوثيقة الأصلية بلغتها الأصلية المصدر الموثوق. بالنسبة للمعلومات الهامة، يوصى بالترجمة البشرية الاحترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة تنشأ عن استخدام هذه الترجمة.
+**إخلاء مسؤولية**:  
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق. للمعلومات الهامة، يُنصح بالاستعانة بالترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

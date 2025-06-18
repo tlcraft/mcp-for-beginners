@@ -1,42 +1,44 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-17T11:56:28+00:00",
+  "original_hash": "2a58caa6e11faa09470b7f81e6729652",
+  "translation_date": "2025-06-18T06:01:17+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "da"
 }
 -->
-# Køre dette eksempel
+# Kør denne prøve
 
 ## -1- Installer afhængighederne
 
 ```bash
-dotnet run
+dotnet restore
 ```
 
-## -2- Kør eksemplet
+## -2- Kør prøven
 
 ```bash
 dotnet run
 ```
 
-## -3- Test eksemplet
+## -3- Test prøven
 
-Start en separat terminal, før du kører nedenstående (sørg for, at serveren stadig kører).
+Start et separat terminalvindue, før du kører nedenstående (sørg for, at serveren stadig kører).
 
-Med serveren kørende i én terminal, åbner du en anden terminal og kører følgende kommando:
+Med serveren kørende i et terminalvindue, åbn et andet terminalvindue og kør følgende kommando:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Dette skulle starte en webserver med en visuel grænseflade, der giver dig mulighed for at teste eksemplet.
+Dette skulle starte en webserver med en visuel grænseflade, der giver dig mulighed for at teste prøven.
 
-Når serveren er forbundet:
+> Sørg for, at **SSE** er valgt som transporttype, og at URL'en er `http://localhost:3001/sse`.
 
-- prøv at liste værktøjer og kør `add`, med argumenterne 2 og 4, du skulle se 6 i resultatet.
-- gå til ressourcer og ressource skabelon og kald "greeting", indtast et navn, og du skulle se en hilsen med det navn, du angav.
+Once the server is connected: 
+
+- try listing tools and run `add`, med argumenterne 2 og 4, så burde du se 6 som resultat.
+- gå til resources og resource template og kald "greeting", skriv et navn, og du skulle se en hilsen med det navn, du indtastede.
 
 ### Test i CLI-tilstand
 
@@ -46,7 +48,7 @@ Du kan starte det direkte i CLI-tilstand ved at køre følgende kommando:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Dette vil liste alle de værktøjer, der er tilgængelige på serveren. Du skulle se følgende output:
+Dette vil liste alle tilgængelige værktøjer på serveren. Du burde se følgende output:
 
 ```text
 {
@@ -78,13 +80,13 @@ Dette vil liste alle de værktøjer, der er tilgængelige på serveren. Du skull
 }
 ```
 
-For at kalde et værktøj skal du skrive:
+For at kalde et værktøj, skriv:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Du skulle se følgende output:
+Du burde se følgende output:
 
 ```text
 {
@@ -99,8 +101,8 @@ Du skulle se følgende output:
 ```
 
 > ![!TIP]
-> Det er normalt meget hurtigere at køre inspektøren i CLI-tilstand end i browseren.
-> Læs mere om inspektøren [her](https://github.com/modelcontextprotocol/inspector).
+> Det er som regel meget hurtigere at køre inspectoren i CLI-tilstand end i browseren.
+> Læs mere om inspectoren [her](https://github.com/modelcontextprotocol/inspector).
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på at opnå nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der måtte opstå ved brugen af denne oversættelse.
+Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

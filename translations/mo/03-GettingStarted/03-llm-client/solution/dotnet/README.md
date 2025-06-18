@@ -1,32 +1,42 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-17T10:39:13+00:00",
+  "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
+  "translation_date": "2025-06-18T05:50:36+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "mo"
 }
 -->
-# تشغيل هذا النموذج
+# 執行此範例
 
 > [!NOTE]
-> يفترض هذا النموذج أنك تستخدم مثيل GitHub Codespaces. إذا كنت ترغب في تشغيله محليًا، تحتاج إلى إعداد رمز وصول شخصي على GitHub.
+> 此範例假設您正在使用 GitHub Codespaces 實例。如果您想在本機執行，則需要在 GitHub 上設定個人存取權杖 (PAT)。
+>
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```
+>
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```
 
-## تثبيت المكتبات
+## 安裝函式庫
 
 ```sh
 dotnet restore
 ```
 
-يجب تثبيت المكتبات التالية: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
+應該會安裝以下函式庫：Azure AI Inference、Azure Identity、Microsoft.Extension、Model.Hosting、ModelContextProtcol
 
-## التشغيل
+## 執行
 
 ```sh 
 dotnet run
 ```
 
-يجب أن ترى مخرجات مشابهة لـ:
+您應該會看到類似以下的輸出：
 
 ```text
 Setting up stdio transport
@@ -41,6 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-الكثير من المخرجات هي مجرد تصحيح أخطاء، ولكن المهم هو أنك تسرد الأدوات من خادم MCP، تحولها إلى أدوات LLM وتنتهي باستجابة عميل MCP "Sum 6".
+大部分輸出都是除錯資訊，但重點是您正在從 MCP Server 列出工具，將這些工具轉換成 LLM 工具，最終會得到 MCP 用戶端回應「Sum 6」。
 
-Certainly! However, it seems like there might be a typo in your request, as "mo" isn't a recognized language code. If you meant "Māori," I can provide a translation into Māori. Please confirm or clarify the language you need.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 所翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生之任何誤解或誤譯負責。

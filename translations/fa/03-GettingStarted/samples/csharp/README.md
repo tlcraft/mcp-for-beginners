@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T12:57:44+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T05:48:20+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "fa"
 }
 -->
-# سرویس ماشین حساب پایه MCP
+# سرویس ماشین‌حساب پایه MCP
 
-این سرویس عملیات پایه ماشین حساب را از طریق پروتکل زمینه مدل (MCP) ارائه می‌دهد. این سرویس به عنوان یک مثال ساده برای مبتدیانی که در حال یادگیری پیاده‌سازی‌های MCP هستند طراحی شده است.
+این سرویس عملیات پایه ماشین‌حساب را از طریق پروتکل مدل کانتکست (MCP) ارائه می‌دهد. این سرویس به عنوان یک مثال ساده برای مبتدیانی که می‌خواهند با پیاده‌سازی‌های MCP آشنا شوند، طراحی شده است.
 
 برای اطلاعات بیشتر، به [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) مراجعه کنید.
 
 ## ویژگی‌ها
 
-این سرویس ماشین حساب قابلیت‌های زیر را ارائه می‌دهد:
+این سرویس ماشین‌حساب امکانات زیر را فراهم می‌کند:
 
 1. **عملیات حسابی پایه**:
    - جمع دو عدد
@@ -29,28 +29,36 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **پیکربندی سرورهای MCP**:
    - فضای کاری خود را در VS Code باز کنید.
-   - یک فایل `.vscode/mcp.json` در پوشه فضای کاری خود ایجاد کنید تا سرورهای MCP را پیکربندی کنید. مثال پیکربندی:
-     ```json
+   - یک فایل `.vscode/mcp.json` در پوشه فضای کاری خود ایجاد کنید تا سرورهای MCP را پیکربندی کنید. نمونه پیکربندی:
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-	- مسیر را با مسیر پروژه خود جایگزین کنید. مسیر باید مطلق باشد و نسبت به پوشه فضای کاری نسبی نباشد. (مثال: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## استفاده از سرویس
+   - از شما خواسته می‌شود تا ریشه مخزن GitHub را وارد کنید، که می‌توانید با دستور `git rev-parse --show-toplevel`.
 
-سرویس نقاط انتهایی API زیر را از طریق پروتکل MCP در معرض قرار می‌دهد:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,16 +86,16 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` با نام کاربری Docker Hub شما):
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` به همراه نام کاربری Docker Hub خود به دست آورید:
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. پس از ساخت تصویر، بیایید آن را به Docker Hub بارگذاری کنیم. دستور زیر را اجرا کنید:
+1. پس از ساخته شدن تصویر، آن را در Docker Hub آپلود کنیم. دستور زیر را اجرا کنید:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## استفاده از نسخه داکری‌شده
+## استفاده از نسخه داکری
 
 1. در فایل `.vscode/mcp.json`، پیکربندی سرور را با موارد زیر جایگزین کنید:
    ```json
@@ -103,11 +111,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   با نگاه به پیکربندی، می‌توانید ببینید که دستور `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   با نگاه به پیکربندی، می‌بینید که دستور `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {` است، و مانند قبل می‌توانید از سرویس ماشین حساب بخواهید تا برای شما محاسباتی انجام دهد.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {` است، و درست مثل قبل می‌توانید از سرویس ماشین‌حساب بخواهید که محاسباتی برای شما انجام دهد.
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم تا دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان مادری باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حساس، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نواقصی باشند. سند اصلی به زبان مادری خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا برداشت نادرستی که از استفاده این ترجمه ناشی شود، نیستیم.

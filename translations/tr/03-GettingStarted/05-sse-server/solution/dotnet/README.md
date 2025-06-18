@@ -1,18 +1,18 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-17T11:55:44+00:00",
+  "original_hash": "2a58caa6e11faa09470b7f81e6729652",
+  "translation_date": "2025-06-18T05:59:04+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "tr"
 }
 -->
-# Bu örneği çalıştırma
+# Bu örneği çalıştırmak
 
 ## -1- Bağımlılıkları yükleyin
 
 ```bash
-dotnet run
+dotnet restore
 ```
 
 ## -2- Örneği çalıştırın
@@ -23,20 +23,22 @@ dotnet run
 
 ## -3- Örneği test edin
 
-Aşağıdakileri çalıştırmadan önce ayrı bir terminal başlatın (sunucunun hala çalıştığından emin olun).
+Aşağıdakileri çalıştırmadan önce ayrı bir terminal açın (sunucunun hala çalıştığından emin olun).
 
-Sunucu bir terminalde çalışırken, başka bir terminal açın ve aşağıdaki komutu çalıştırın:
+Bir terminalde sunucu çalışırken, başka bir terminal açın ve aşağıdaki komutu çalıştırın:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Bu, örneği test etmenizi sağlayan görsel bir arayüze sahip bir web sunucusunu başlatmalıdır.
+Bu, örneği test etmenize olanak tanıyan görsel arayüze sahip bir web sunucusu başlatmalıdır.
 
-Sunucu bağlandığında:
+> **SSE** taşıma türü olarak seçili olduğundan ve URL `http://localhost:3001/sse`.
 
-- Araçları listelemeyi deneyin ve `add` komutunu 2 ve 4 argümanlarıyla çalıştırın, sonuçta 6 görmelisiniz.
-- Kaynaklara ve kaynak şablonuna gidin ve "greeting" çağrısını yapın, bir isim girin ve sağladığınız isimle bir selamlama görmelisiniz.
+Once the server is connected: 
+
+- try listing tools and run `add` olduğundan emin olun, argümanlar 2 ve 4 ise sonuçta 6 görmelisiniz.
+- resources ve resource template'e gidin, "greeting" çağırın, bir isim yazın ve verdiğiniz isimle bir selamlama görmelisiniz.
 
 ### CLI modunda test etme
 
@@ -46,7 +48,7 @@ Aşağıdaki komutu çalıştırarak doğrudan CLI modunda başlatabilirsiniz:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Bu, sunucuda mevcut olan tüm araçları listeleyecektir. Aşağıdaki çıktıyı görmelisiniz:
+Bu, sunucuda mevcut tüm araçları listeleyecektir. Aşağıdaki çıktıyı görmelisiniz:
 
 ```text
 {
@@ -99,8 +101,8 @@ Aşağıdaki çıktıyı görmelisiniz:
 ```
 
 > ![!TIP]
-> Genellikle ispector'ı CLI modunda çalıştırmak tarayıcıdan daha hızlıdır.
-> Müfettiş hakkında daha fazla bilgi [burada](https://github.com/modelcontextprotocol/inspector) bulunabilir.
+> Inspector'ı tarayıcıda çalıştırmaktansa CLI modunda çalıştırmak genellikle çok daha hızlıdır.
+> Inspector hakkında daha fazla bilgi için [buraya](https://github.com/modelcontextprotocol/inspector) bakabilirsiniz.
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluğu sağlamak için çaba sarf etsek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belgenin kendi dilindeki hali yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı nedeniyle ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalar konusunda sorumluluk kabul edilmemektedir.

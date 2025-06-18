@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1954cd45a2563dfea43bfe48cccb0c8",
-  "translation_date": "2025-05-17T09:09:12+00:00",
+  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
+  "translation_date": "2025-06-18T05:58:55+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "tr"
 }
@@ -12,9 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## -1- Bağımlılıkları yükleyin
 
 ```bash
-dotnet add package ModelContextProtocol --prerelease
-# Add the .NET Hosting NuGet package
-dotnet add package Microsoft.Extensions.Hosting
+dotnet restore
 ```
 
 ## -3- Örneği çalıştırın
@@ -31,12 +29,12 @@ Sunucu bir terminalde çalışırken, başka bir terminal açın ve aşağıdaki
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-Bu, örneği test etmenizi sağlayacak görsel bir arayüze sahip bir web sunucusunu başlatmalıdır.
+Bu, örneği test etmenizi sağlayan görsel bir arayüze sahip bir web sunucusu başlatmalıdır.
 
 Sunucu bağlandıktan sonra:
 
-- araçları listelemeyi deneyin ve `add`'i 2 ve 4 argümanlarıyla çalıştırın, sonuçta 6'yı görmelisiniz.
-- kaynaklara ve kaynak şablonuna gidin ve "greeting" çağırın, bir isim girin ve sağladığınız isimle bir selamlama görmelisiniz.
+- araçları listelemeyi deneyin ve argümanlar 2 ve 4 olan `add` komutunu çalıştırın, sonuçta 6 görmelisiniz.
+- resources ve resource template kısmına gidin, "greeting" çağırın, bir isim yazın ve sağladığınız isimle bir selamlama görmelisiniz.
 
 ### CLI modunda test etme
 
@@ -96,9 +94,9 @@ Aşağıdaki çıktıyı görmelisiniz:
 }
 ```
 
-> [!TIP]
-> Genellikle, denetleyiciyi tarayıcıda çalıştırmaktan daha hızlı bir şekilde CLI modunda çalıştırmak daha hızlıdır.
-> Denetleyici hakkında daha fazla bilgiyi [burada](https://github.com/modelcontextprotocol/inspector) okuyabilirsiniz.
+> ![!TIP]
+> Inspector'ı tarayıcı yerine CLI modunda çalıştırmak genellikle çok daha hızlıdır.
+> Inspector hakkında daha fazla bilgi için [buraya](https://github.com/modelcontextprotocol/inspector) bakabilirsiniz.
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Orijinal belgenin kendi dilindeki hali yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından doğabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda oluşabilecek yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul edilmemektedir.

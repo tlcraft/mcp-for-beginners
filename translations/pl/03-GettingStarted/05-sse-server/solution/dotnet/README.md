@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-16T15:21:24+00:00",
+  "original_hash": "2a58caa6e11faa09470b7f81e6729652",
+  "translation_date": "2025-06-18T05:58:17+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "pl"
 }
@@ -12,7 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## -1- Zainstaluj zależności
 
 ```bash
-dotnet run
+dotnet restore
 ```
 
 ## -2- Uruchom przykład
@@ -25,18 +25,20 @@ dotnet run
 
 Przed uruchomieniem poniższego polecenia otwórz osobny terminal (upewnij się, że serwer nadal działa).
 
-Gdy serwer działa w jednym terminalu, otwórz inny terminal i uruchom następujące polecenie:
+Mając serwer uruchomiony w jednym terminalu, otwórz drugi terminal i wykonaj następujące polecenie:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-To powinno uruchomić serwer WWW z interfejsem graficznym, który pozwoli Ci przetestować przykład.
+To powinno uruchomić serwer WWW z interfejsem wizualnym, który pozwoli Ci przetestować przykład.
 
-Po połączeniu się z serwerem:
+> Upewnij się, że jako typ transportu wybrano **SSE**, a URL to `http://localhost:3001/sse`.
 
-- spróbuj wyświetlić listę narzędzi i uruchom `add` z argumentami 2 i 4, w wyniku powinno pojawić się 6.
-- przejdź do zasobów i szablonu zasobu, wywołaj "greeting", wpisz imię i powinieneś zobaczyć powitanie z podanym imieniem.
+Once the server is connected: 
+
+- try listing tools and run `add`, z argumentami 2 i 4, w wyniku powinieneś zobaczyć 6.
+- przejdź do resources i resource template, wywołaj "greeting", wpisz imię i powinieneś zobaczyć powitanie z podanym imieniem.
 
 ### Testowanie w trybie CLI
 
@@ -46,7 +48,7 @@ Możesz uruchomić go bezpośrednio w trybie CLI, wykonując następujące polec
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-To wyświetli listę wszystkich narzędzi dostępnych na serwerze. Powinieneś zobaczyć następujący wynik:
+Wyświetli to listę wszystkich narzędzi dostępnych na serwerze. Powinieneś zobaczyć następujący wynik:
 
 ```text
 {
@@ -100,7 +102,7 @@ Powinieneś zobaczyć następujący wynik:
 
 > ![!TIP]
 > Zazwyczaj znacznie szybciej jest uruchomić inspector w trybie CLI niż w przeglądarce.
-> Więcej o inspectorze przeczytasz [tutaj](https://github.com/modelcontextprotocol/inspector).
+> Więcej informacji o inspectorze znajdziesz [tutaj](https://github.com/modelcontextprotocol/inspector).
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym należy traktować jako źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uważany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

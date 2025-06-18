@@ -1,56 +1,64 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T13:03:18+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T06:07:23+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "sk"
 }
 -->
-# Základná Kalkulačka MCP Služba
+# Základná kalkulačka MCP služba
 
 Táto služba poskytuje základné kalkulačné operácie prostredníctvom Model Context Protocol (MCP). Je navrhnutá ako jednoduchý príklad pre začiatočníkov, ktorí sa učia o implementáciách MCP.
 
-Pre viac informácií si pozrite [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+Pre viac informácií pozrite [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
 ## Funkcie
 
 Táto kalkulačná služba ponúka nasledujúce možnosti:
 
-1. **Základné Aritmetické Operácie**:
+1. **Základné aritmetické operácie**:
    - Sčítanie dvoch čísel
    - Odčítanie jedného čísla od druhého
    - Násobenie dvoch čísel
    - Delenie jedného čísla druhým (s kontrolou delenia nulou)
 
-## Používanie `stdio` Typu
+## Použitie `stdio` typu
 
 ## Konfigurácia
 
-1. **Konfigurácia MCP Serverov**:
+1. **Nastavenie MCP serverov**:
    - Otvorte svoj pracovný priestor vo VS Code.
-   - Vytvorte súbor `.vscode/mcp.json` vo vašej zložke pracovného priestoru na konfiguráciu MCP serverov. Príklad konfigurácie:
-     ```json
+   - Vytvorte súbor `.vscode/mcp.json` vo vašom pracovnom priečinku na konfiguráciu MCP serverov. Príklad konfigurácie:
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-   - Nahraďte cestu cestou k vášmu projektu. Cesta by mala byť absolútna a nie relatívna k zložke pracovného priestoru. (Príklad: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## Používanie Služby
+   - Bude vás vyzvaný na zadanie koreňového adresára GitHub repozitára, ktorý môžete získať príkazom `git rev-parse --show-toplevel`.
 
-Služba poskytuje nasledujúce API endpointy prostredníctvom MCP protokolu:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,16 +86,16 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` s vaším Docker Hub používateľským menom):
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` s vaším používateľským menom na Docker Hub):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. Po vytvorení obrazu ho nahrajme na Docker Hub. Spustite nasledujúci príkaz:
+1. Po zostavení image ho nahrajme na Docker Hub. Spustite nasledujúci príkaz:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Používanie Dockerizovanej Verzie
+## Použitie Docker verzie
 
 1. V súbore `.vscode/mcp.json` nahraďte konfiguráciu servera nasledujúcim:
    ```json
@@ -107,7 +115,7 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, a rovnako ako predtým, môžete požiadať kalkulačnú službu, aby pre vás vykonala nejaké výpočty.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, a rovnako ako predtým môžete požiadať kalkulačnú službu, aby vám vykonala nejaké výpočty.
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou AI prekladovej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, uvedomte si, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho pôvodnom jazyku by sa mal považovať za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nezodpovedáme za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.

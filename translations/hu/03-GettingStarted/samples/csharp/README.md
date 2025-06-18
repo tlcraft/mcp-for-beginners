@@ -1,56 +1,64 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T13:02:57+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T06:06:16+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "hu"
 }
 -->
-# Alapvető Kalkulátor MCP Szolgáltatás
+# Alap Számológép MCP Szolgáltatás
 
-Ez a szolgáltatás alapvető kalkulátorműveleteket kínál a Model Context Protocol (MCP) segítségével. Egyszerű példaként készült kezdők számára, akik az MCP implementációkról tanulnak.
+Ez a szolgáltatás alapvető számológép műveleteket biztosít a Model Context Protocol (MCP) segítségével. Egyszerű példaként készült kezdők számára, akik az MCP implementációkat tanulják.
 
-További információkért lásd: [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+További információért lásd a [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) oldalt.
 
-## Funkciók
+## Jellemzők
 
-Ez a kalkulátor szolgáltatás a következő képességeket kínálja:
+Ez a számológép szolgáltatás a következő funkciókat kínálja:
 
-1. **Alapvető Aritmetikai Műveletek**:
+1. **Alapvető matematikai műveletek**:
    - Két szám összeadása
    - Egy szám kivonása egy másikból
    - Két szám szorzása
    - Egy szám osztása egy másikkal (nullával való osztás ellenőrzéssel)
 
-## `stdio` Típus Használata
+## `stdio` típus használata
 
 ## Konfiguráció
 
-1. **MCP Szerverek Konfigurálása**:
-   - Nyissa meg a munkaterületét a VS Code-ban.
-   - Hozzon létre egy `.vscode/mcp.json` fájlt a munkaterület mappájában MCP szerverek konfigurálásához. Példa konfiguráció:
-     ```json
+1. **MCP szerverek beállítása**:
+   - Nyisd meg a munkaterületedet VS Code-ban.
+   - Hozz létre egy `.vscode/mcp.json` fájlt a munkaterületed mappájában az MCP szerverek konfigurálásához. Példa konfiguráció:
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-   - Cserélje ki az útvonalat a projekt útvonalával. Az útvonalnak abszolútnak kell lennie, és nem lehet relatív a munkaterület mappájához. (Példa: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## A Szolgáltatás Használata
+   - A GitHub tároló gyökérkönyvtárát meg kell adnod, amely lekérdezhető a `git rev-parse --show-toplevel` parancsból`.
 
-A szolgáltatás a következő API végpontokat teszi elérhetővé az MCP protokollon keresztül:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,18 +86,18 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` a Docker Hub felhasználónevével:
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` helyére a Docker Hub felhasználónevedet írd be):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
-   ``` 
-1. Miután az image elkészült, töltsük fel a Docker Hub-ra. Futtassa a következő parancsot:
+   ```
+2. Miután az image elkészült, töltsük fel a Docker Hubra. Futtasd a következő parancsot:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## A Dockerizált Verzió Használata
+## A Dockerizált verzió használata
 
-1. A `.vscode/mcp.json` fájlban cserélje le a szerver konfigurációt a következővel:
+1. A `.vscode/mcp.json` fájlban cseréld le a szerver konfigurációt az alábbiakra:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -107,7 +115,7 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, és ugyanúgy, mint korábban, kérheti a kalkulátor szolgáltatást, hogy végezzen néhány matematikai műveletet önnek.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, és ahogy korábban, kérheted a számológép szolgáltatást, hogy végezzen el néhány számítást.
 
-**Felelősség kizárása**:  
-Ezt a dokumentumot AI fordítási szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordították le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelven tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális emberi fordítás. Nem vállalunk felelősséget semmilyen félreértésért vagy félremagyarázásért, amely a fordítás használatából eredhet.
+**Felelősségkizárás**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum anyanyelvén tekintendő hivatalos forrásnak. Kritikus információk esetén profi, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
