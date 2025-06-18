@@ -1,98 +1,107 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5020a3e1a1c7f30c00f9e37f1fa208e3",
-  "translation_date": "2025-05-17T14:05:54+00:00",
+  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
+  "translation_date": "2025-06-18T07:47:25+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "mo"
 }
 -->
-# Sample
+# 範例
 
-The previous example demonstrates how to utilize a local .NET project with the `sdio` type and how to run the server locally in a container. This is a beneficial approach in many scenarios. However, it can be advantageous to have the server operating remotely, such as in a cloud environment. This is where the `http` type becomes relevant.
+前面的範例展示了如何使用本地的 .NET 專案搭配 `stdio` 類型，並且如何在容器中本地執行伺服器。這在許多情況下都是不錯的解決方案。不過，有時候讓伺服器遠端運行（例如在雲端環境）會更有用，這時就會用到 `http` 類型。
 
-Examining the solution in the `04-PracticalImplementation` folder, it might appear more complex than the previous one. But in reality, it isn't. If you look closely at the project `src/mcpserver/mcpserver.csproj`, you'll notice that it's mostly the same code as the previous example. The only difference is that we are using a different library `ModelContextProtocol.AspNetCore` to manage the HTTP requests. Additionally, we modify the method `IsPrime` to make it private, just to illustrate that you can have private methods in your code. The rest of the code remains unchanged.
+看看 `04-PracticalImplementation` 資料夾裡的解決方案，可能看起來比前一個複雜許多，但實際上並非如此。如果仔細查看 `src/Calculator` 專案，你會發現它和前一個範例大致上是相同的程式碼。唯一的差別是我們使用了不同的函式庫 `ModelContextProtocol.AspNetCore` 來處理 HTTP 請求，並且將 `IsPrime` 方法改成 private，主要是為了示範你的程式碼中可以有私有方法。其餘程式碼都和之前一樣。
 
-The other projects are from [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). Including .NET Aspire in the solution will enhance the developer's experience during development and testing and assist with observability. It is not necessary to run the server, but it's a good practice to include it in your solution.
+其他專案來自 [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview)。在解決方案中加入 .NET Aspire，可以提升開發和測試的體驗，並有助於可觀察性。雖然執行伺服器並非必須，但將它加入解決方案是個好習慣。
 
-## Start the server locally
+## 本地啟動伺服器
 
-1. From VS Code (with the C# DevKit extension), open the solution `04-PracticalImplementation\samples\csharp\src\Calculator-chap4.sln`.
-2. Press `F5` to start the server. This should open a web browser with the .NET Aspire dashboard.
+1. 在 VS Code（搭配 C# DevKit 擴充套件）中，切換到 `04-PracticalImplementation/samples/csharp` 目錄。
+1. 執行以下指令以啟動伺服器：
 
-or
-
-1. From a terminal, navigate to the folder `04-PracticalImplementation\samples\csharp\src`.
-2. Execute the following command to start the server:
    ```bash
-    dotnet run --project .\AppHost
+    dotnet watch run --project ./src/AppHost
    ```
 
-3. From the Dashboard, note the `http` URL. It should resemble `http://localhost:5058/`.
+1. 當瀏覽器開啟 .NET Aspire 儀表板時，請注意 `http` 的 URL，應該會是類似 `http://localhost:5058/`。
 
-## Test `SSE` with the ModelContext Protocol Inspector.
+   ![.NET Aspire 儀表板](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.mo.png)
 
-If you have Node.js 22.7.5 and higher, you can use the ModelContext Protocol Inspector to test your server.
+## 使用 MCP Inspector 測試 Streamable HTTP
 
-Start the server and run the following command in a terminal:
+如果你安裝了 Node.js 22.7.5 或更新版本，可以使用 MCP Inspector 來測試你的伺服器。
+
+啟動伺服器後，在終端機執行以下指令：
 
 ```bash
-npx @modelcontextprotocol/inspector@latest
+npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp_inspector.2939244613cb5a0549b83942e062bceb69083c3d7b331c8de991ecf6834d6904.mo.png)
+![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.mo.png)
 
-- Select the `SSE` as the Transport type. SSE stand for Server-Sent Events. 
-- In the Url field, enter the URL of the server noted earlier,and append `/sse`. It should be `http` (not `https`) something like `http://localhost:5058/sse`.
+- 選擇 `Streamable HTTP` as the Transport type.
+- In the Url field, enter the URL of the server noted earlier, and append `/mcp`，它應該是 `http`（而不是 `https`) something like `http://localhost:5058/mcp`.
 - select the Connect button.
 
 A nice thing about the Inspector is that it provide a nice visibility on what is happening.
 
-- Try listing the availables tools
+- Try listing the available tools
 - Try some of them, it should works just like before.
 
+## Test MCP Server with GitHub Copilot Chat in VS Code
 
-## Test `SSE` with Github Copilot Chat in VS Code
+To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp`），先前建立的伺服器應該會長這樣：
 
-To use the `SSE` transport with Github Copilot Chat, change the configuration of the `mcp-calc` server created previously to look like this:
-
-```json
-"mcp-calc": {
-    "type": "sse",
-    "url": "http://localhost:5058/sse"
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "http://localhost:5058/mcp"
+    }
+  }
 }
 ```
 
-Conduct some tests:
-- Request the 3 prime numbers following 6780. Note how Copilot will utilize the new tools `NextFivePrimeNumbers` and only return the first 3 prime numbers.
-- Request the 7 prime numbers following 111 to observe the outcome.
+進行一些測試：
 
-# Deploy the server to Azure
+- 請求「6780 之後的 3 個質數」。注意 Copilot 會使用新工具 `NextFivePrimeNumbers`，並且只回傳前三個質數。
+- 請求「111 之後的 7 個質數」，看看會發生什麼。
+- 請求「John 有 24 顆棒棒糖，要分給他的 3 個孩子，每個孩子會有多少顆？」，看看結果如何。
 
-Let's deploy the server to Azure to allow more users to access it.
+## 部署伺服器到 Azure
 
-From a terminal, navigate to the folder `04-PracticalImplementation\samples\csharp\src` and run the following command:
+讓我們把伺服器部署到 Azure，讓更多人可以使用。
 
-```bash
-azd init
-```
-
-This will generate a few files locally to store the configuration of Azure resources and your Infrastructure as Code (IaC).
-
-Then, run the following command to deploy the server to Azure:
+在終端機中切換到 `04-PracticalImplementation/samples/csharp` 資料夾，執行以下指令：
 
 ```bash
 azd up
 ```
 
-Once the deployment is complete, you should see a message like this:
+部署完成後，你應該會看到類似這樣的訊息：
 
-![Azd deployment success](../../../../../translated_images/chap4-azd-deploy-success.f69e7f61e50fdbf13ea3bf7302d9850a18e12832f34daee1695f29da3f32b452.mo.png)
+![Azd 部署成功](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.mo.png)
 
-Navigate to the Aspire dashboard and note the `HTTP` URL to use it in the MCP Inspector and in the Github Copilot Chat.
+取得 URL，並在 MCP Inspector 以及 GitHub Copilot Chat 中使用。
 
-## What's next?
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "https://calc-mcp.gentleriver-3977fbcf.australiaeast.azurecontainerapps.io/mcp"
+    }
+  }
+}
+```
 
-We've experimented with different transport types, testing tools, and deployed our MCP server to Azure. But what if our server needs access to private resources? For instance, a database or a private API? In the next chapter, we'll explore how we can enhance the security of our server.
+## 接下來呢？
 
-I'm sorry, but I need clarification on what you mean by "mo." Could you please specify the language you are referring to?
+我們嘗試不同的傳輸類型和測試工具，也將你的 MCP 伺服器部署到 Azure。但如果伺服器需要存取私有資源呢？例如資料庫或私有 API？下一章，我們將探討如何加強伺服器的安全性。
+
+**免責聲明**：  
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用此翻譯而產生的任何誤解或誤譯負責。
