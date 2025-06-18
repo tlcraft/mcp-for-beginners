@@ -35,13 +35,13 @@ This section provides practical examples of implementing MCP across multiple pro
 
 ### Available Samples
 
-The repository includes sample implementations in the following languages:
+The repository includes [sample implementations](./samples/) in the following languages:
 
-- C#
-- Java
-- TypeScript
-- JavaScript
-- Python
+- [C#](./samples/csharp/README.md)
+- [Java](./samples/java/containerapp/README.md)
+- [TypeScript](./samples/typescript/README.md)
+- [JavaScript](./samples/javascript/README.md)
+- [Python](./samples/python/README.md)
 
 Each sample demonstrates key MCP concepts and implementation patterns for that specific language and ecosystem.
 
