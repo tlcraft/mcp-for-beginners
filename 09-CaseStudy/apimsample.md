@@ -22,7 +22,7 @@ In this specific use case we'll learn to expose API endpoints as an MCP Server. 
 - You select the endpoint methods you want exposed as tools.
 - The additional features you get is dependent on what you configure in the policy section for your API. But here we will show you how you can add rate limiting.
 
-## Prestep: import an API
+## Pre-step: import an API
 
 If you have an API in Azure API Management already great, then you can skip this step. If not, check out this link, [importing an API to Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
 
@@ -170,7 +170,7 @@ Theres should be a Tools icon like so, where the exposed tools from your server 
 
     You will now be presented with a tools icon asking you to proceed calling a tool. Select to continue running the tool, you should now see an output like so:
 
-    https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png
+    ![Result from prompt](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
 
     **what you see above depends what tools you've setup, but the ideas is that you get a textual response like above**
 
