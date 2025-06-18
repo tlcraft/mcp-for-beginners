@@ -1,99 +1,107 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5020a3e1a1c7f30c00f9e37f1fa208e3",
-  "translation_date": "2025-05-17T14:09:50+00:00",
+  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
+  "translation_date": "2025-06-18T07:51:13+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "fi"
 }
 -->
 # Esimerkki
 
-Edellinen esimerkki näyttää, kuinka käyttää paikallista .NET-projektia `sdio`-tyypin kanssa. Ja kuinka ajaa palvelinta paikallisesti kontissa. Tämä on hyvä ratkaisu monissa tilanteissa. Kuitenkin voi olla hyödyllistä, että palvelin toimii etänä, kuten pilviympäristössä. Tässä kohtaa `http`-tyyppi tulee mukaan.
+Edellinen esimerkki näyttää, miten paikallista .NET-projektia käytetään `stdio`-tyypin kanssa. Ja miten palvelin ajetaan paikallisesti kontissa. Tämä on hyvä ratkaisu monissa tilanteissa. Kuitenkin palvelimen ajaminen etänä, esimerkiksi pilviympäristössä, voi olla hyödyllistä. Tässä kohtaa `http`-tyyppi tulee mukaan kuvaan.
 
-Kun tarkastelet ratkaisua `04-PracticalImplementation`-kansiossa, se voi näyttää paljon monimutkaisemmalta kuin edellinen. Mutta todellisuudessa se ei ole. Jos katsot tarkasti projektia `src/mcpserver/mcpserver.csproj`, huomaat, että se on enimmäkseen samaa koodia kuin edellisessä esimerkissä. Ainoa ero on, että käytämme eri kirjastoa `ModelContextProtocol.AspNetCore` käsittelemään HTTP-pyyntöjä. Ja muutamme metodin `IsPrime` yksityiseksi, vain näyttääksemme, että voit käyttää yksityisiä metodeja koodissasi. Loput koodista on samaa kuin aiemmin.
+Kun katsoo `04-PracticalImplementation`-kansion ratkaisua, se saattaa näyttää paljon monimutkaisemmalta kuin edellinen. Mutta todellisuudessa se ei ole. Jos tarkastelet tarkasti projektia `src/Calculator`, näet, että koodi on pääosin sama kuin edellisessä esimerkissä. Ainoa ero on, että käytämme eri kirjastoa `ModelContextProtocol.AspNetCore` HTTP-pyyntöjen käsittelyyn. Lisäksi muutamme metodin `IsPrime` yksityiseksi, vain osoittaaksemme, että koodissasi voi olla yksityisiä metodeja. Muut koodin osat ovat samat kuin aiemmin.
 
-Muut projektit ovat [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview)-sivustolta. .NET Aspiren sisällyttäminen ratkaisuun parantaa kehittäjän kokemusta kehittäessä ja testatessa sekä auttaa havaittavuudessa. Se ei ole välttämätön palvelimen ajamiseksi, mutta on hyvä käytäntö sisällyttää se ratkaisuusi.
+Muut projektit ovat [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview) -alustalta. .NET Aspire ratkaisussa parantaa kehittäjän kokemusta kehityksen ja testauksen aikana sekä auttaa havaittavuudessa. Se ei ole välttämätöntä palvelimen ajamiseksi, mutta on hyvä käytäntö sisällyttää se ratkaisuun.
 
 ## Käynnistä palvelin paikallisesti
 
-1. VS Code:ssa (C# DevKit -laajennuksella), avaa ratkaisu `04-PracticalImplementation\samples\csharp\src\Calculator-chap4.sln`.
-2. Paina `F5` käynnistääksesi palvelimen. Sen pitäisi avata verkkoselain .NET Aspire -kojelautaan.
+1. Siirry VS Codessa (C# DevKit -laajennuksen kanssa) hakemistoon `04-PracticalImplementation/samples/csharp`.
+1. Suorita seuraava komento käynnistääksesi palvelimen:
 
-tai
-
-1. Päätteessä, siirry kansioon `04-PracticalImplementation\samples\csharp\src`
-2. Suorita seuraava komento käynnistääksesi palvelimen:
    ```bash
-    dotnet run --project .\AppHost
+    dotnet watch run --project ./src/AppHost
    ```
 
-3. Kojelaudasta, huomaa `http` URL. Sen pitäisi olla jotain kuten `http://localhost:5058/`.
+1. Kun selain avaa .NET Aspire -hallintapaneelin, huomaa `http` URL-osoite. Sen pitäisi olla jotakin muotoa `http://localhost:5058/`.
 
-## Test `SSE` ModelContext Protocol Inspectorin kanssa.
+   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.fi.png)
 
-Jos sinulla on Node.js 22.7.5 tai uudempi, voit käyttää ModelContext Protocol Inspectoria testataksesi palvelinta.
+## Testaa Streamable HTTP MCP Inspectorilla
 
-Käynnistä palvelin ja suorita seuraava komento päätteessä:
+Jos sinulla on Node.js 22.7.5 tai uudempi, voit käyttää MCP Inspectoria palvelimesi testaamiseen.
+
+Käynnistä palvelin ja suorita seuraava komento terminaalissa:
 
 ```bash
-npx @modelcontextprotocol/inspector@latest
+npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp_inspector.2939244613cb5a0549b83942e062bceb69083c3d7b331c8de991ecf6834d6904.fi.png)
+![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.fi.png)
 
-- Valitse `SSE` as the Transport type. SSE stand for Server-Sent Events. 
-- In the Url field, enter the URL of the server noted earlier,and append `/sse`. Sen pitäisi olla `http` (ei `https`) something like `http://localhost:5058/sse`.
+- Valitse `Streamable HTTP` as the Transport type.
+- In the Url field, enter the URL of the server noted earlier, and append `/mcp`. Sen pitäisi olla `http` (ei `https`) something like `http://localhost:5058/mcp`.
 - select the Connect button.
 
 A nice thing about the Inspector is that it provide a nice visibility on what is happening.
 
-- Try listing the availables tools
+- Try listing the available tools
 - Try some of them, it should works just like before.
 
+## Test MCP Server with GitHub Copilot Chat in VS Code
 
-## Test `SSE` with Github Copilot Chat in VS Code
+To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp` palvelin, joka luotiin aiemmin näyttämään tältä:
 
-To use the `SSE` transport with Github Copilot Chat, change the configuration of the `mcp-calc` aiemmin luotu palvelin näyttääkseen tältä:
-
-```json
-"mcp-calc": {
-    "type": "sse",
-    "url": "http://localhost:5058/sse"
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "http://localhost:5058/mcp"
+    }
+  }
 }
 ```
 
-Tee joitain testejä:
-- Kysy 3 alkulukua luvun 6780 jälkeen. Huomaa, kuinka Copilot käyttää uusia työkaluja `NextFivePrimeNumbers` ja palauttaa vain ensimmäiset 3 alkulukua.
-- Kysy 7 alkulukua luvun 111 jälkeen nähdäksesi, mitä tapahtuu.
+Tee muutama testi:
 
-# Palvelimen käyttöönotto Azureen
+- Kysy "3 alkulukua luvun 6780 jälkeen". Huomaa, että Copilot käyttää uusia työkaluja `NextFivePrimeNumbers` ja palauttaa vain ensimmäiset 3 alkulukua.
+- Kysy "7 alkulukua luvun 111 jälkeen" nähdäksesi, mitä tapahtuu.
+- Kysy "Johnilla on 24 tikkaria ja hän haluaa jakaa ne tasan kolmelle lapselleen. Kuinka monta tikkaria jokaisella lapsella on?", nähdäksesi mitä tapahtuu.
 
-Otetaan palvelin käyttöön Azuren avulla, jotta useammat ihmiset voivat käyttää sitä.
+## Julkaise palvelin Azureen
 
-Päätteessä, siirry kansioon `04-PracticalImplementation\samples\csharp\src` ja suorita seuraava komento:
+Julkaistaan palvelin Azureen, jotta useammat ihmiset voivat käyttää sitä.
 
-```bash
-azd init
-```
-
-Tämä luo muutaman tiedoston paikallisesti tallentaakseen Azuren resurssien asetukset ja infrastruktuurin koodina (IaC).
-
-Suorita sitten seuraava komento ottaaksesi palvelimen käyttöön Azureen:
+Siirry terminaalissa kansioon `04-PracticalImplementation/samples/csharp` ja suorita seuraava komento:
 
 ```bash
 azd up
 ```
 
-Kun käyttöönotto on valmis, sinun pitäisi nähdä tällainen viesti:
+Kun julkaisu on valmis, näet viestin, joka näyttää tältä:
 
-![Azd deployment success](../../../../../translated_images/chap4-azd-deploy-success.f69e7f61e50fdbf13ea3bf7302d9850a18e12832f34daee1695f29da3f32b452.fi.png)
+![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.fi.png)
 
-Siirry Aspire-kojelautaan ja huomaa `HTTP` URL, jotta voit käyttää sitä MCP Inspectorissa ja Github Copilot Chatissa.
+Ota URL talteen ja käytä sitä MCP Inspectorissa ja GitHub Copilot Chatissa.
+
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "https://calc-mcp.gentleriver-3977fbcf.australiaeast.azurecontainerapps.io/mcp"
+    }
+  }
+}
+```
 
 ## Mitä seuraavaksi?
 
-Kokeilemme eri kuljetustyyppejä ja testityökaluja ja otamme MCP-palvelimemme käyttöön Azureen. Mutta entä jos palvelimemme tarvitsee pääsyn yksityisiin resursseihin? Esimerkiksi tietokantaan tai yksityiseen API:in? Seuraavassa luvussa näemme, kuinka voimme parantaa palvelimemme turvallisuutta.
+Kokeilemme eri siirtotyyppejä ja testausvälineitä. Julkaisemme myös MCP-palvelimesi Azureen. Mutta entä jos palvelimemme tarvitsee pääsyn yksityisiin resursseihin? Esimerkiksi tietokantaan tai yksityiseen APIin? Seuraavassa luvussa näemme, miten voimme parantaa palvelimemme turvallisuutta.
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälykäännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Tärkeää tietoa varten suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinkäsityksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty tekoälypohjaisella käännöspalvelulla [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.

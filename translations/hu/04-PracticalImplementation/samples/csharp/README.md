@@ -1,99 +1,107 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5020a3e1a1c7f30c00f9e37f1fa208e3",
-  "translation_date": "2025-05-17T14:11:35+00:00",
+  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
+  "translation_date": "2025-06-18T07:52:43+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "hu"
 }
 -->
 # Minta
 
-Az előző példa bemutatja, hogyan lehet egy helyi .NET projektet használni a `sdio` típusúval. És hogyan futtathatjuk a szervert helyileg egy konténerben. Ez számos helyzetben jó megoldás. Azonban hasznos lehet, ha a szerver távolról fut, például felhőben. Itt jön képbe a `http` típus.
+Az előző példa bemutatja, hogyan használjunk helyi .NET projektet az `stdio` típussal, és hogyan futtassuk a szervert helyben egy konténerben. Ez sok esetben jó megoldás. Ugyanakkor hasznos lehet, ha a szerver távolról, például egy felhőalapú környezetben fut. Erre való az `http` típus.
 
-Ha megnézzük a megoldást a `04-PracticalImplementation` mappában, sokkal bonyolultabbnak tűnhet, mint az előző. De valójában nem az. Ha alaposan megnézzük a `src/mcpserver/mcpserver.csproj` projektet, láthatjuk, hogy nagyrészt ugyanaz a kód, mint az előző példában. Az egyetlen különbség, hogy egy másik könyvtárat `ModelContextProtocol.AspNetCore` használunk az HTTP kérések kezelésére. És megváltoztatjuk a `IsPrime` metódust, hogy privát legyen, csak azért, hogy megmutassuk, hogy lehetnek privát metódusok a kódban. A többi kód ugyanaz, mint korábban.
+Ha megnézzük a megoldást az `04-PracticalImplementation` mappában, elsőre sokkal bonyolultabbnak tűnhet, mint az előző. De valójában nincs így. Ha alaposan megnézed a `src/Calculator` projektet, látni fogod, hogy nagyrészt ugyanaz a kód, mint az előző példában. Az egyetlen különbség, hogy egy másik könyvtárat, az `ModelContextProtocol.AspNetCore`-t használjuk az HTTP kérések kezelésére. Emellett a `IsPrime` metódust priváttá tesszük, hogy megmutassuk, hogy a kódban lehetnek privát metódusok is. A többi kód ugyanaz, mint korábban.
 
-A többi projekt a [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview) része. A .NET Aspire jelenléte a megoldásban javítja a fejlesztői élményt a fejlesztés és tesztelés során, valamint segít az átláthatóságban. Nem szükséges a szerver futtatásához, de jó gyakorlat, ha benne van a megoldásban.
+A többi projekt a [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview)-ból származik. A .NET Aspire jelenléte a megoldásban jobb fejlesztői élményt biztosít fejlesztés és tesztelés közben, valamint segít az observabilitásban. A szerver futtatásához nem kötelező, de jó gyakorlat, ha benne van a megoldásban.
 
-## A szerver helyi indítása
+## Indítsd el a szervert helyben
 
-1. VS Code-ból (a C# DevKit kiterjesztéssel) nyissa meg a `04-PracticalImplementation\samples\csharp\src\Calculator-chap4.sln` megoldást.
-2. Nyomja meg a `F5` gombot a szerver indításához. Ekkor el kell indulnia egy webböngészőnek a .NET Aspire műszerfalával.
+1. A VS Code-ban (a C# DevKit kiterjesztéssel) navigálj az `04-PracticalImplementation/samples/csharp` könyvtárba.
+1. Futtasd a következő parancsot a szerver indításához:
 
-vagy
-
-1. Terminálból navigáljon a `04-PracticalImplementation\samples\csharp\src` mappába
-2. Hajtsa végre a következő parancsot a szerver indításához:
    ```bash
-    dotnet run --project .\AppHost
+    dotnet watch run --project ./src/AppHost
    ```
 
-3. A műszerfalon jegyezze fel a `http` URL-t. Valami ilyesminek kell lennie: `http://localhost:5058/`.
+1. Amikor egy webböngésző megnyitja a .NET Aspire irányítópultot, jegyezd meg az `http` URL-t. Valami ilyesminek kell lennie: `http://localhost:5058/`.
 
-## Test `SSE` a ModelContext Protocol Inspectorral
+   ![.NET Aspire Irányítópult](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.hu.png)
 
-Ha van Node.js 22.7.5 vagy magasabb, használhatja a ModelContext Protocol Inspectort a szerver teszteléséhez.
+## Streamable HTTP tesztelése az MCP Inspectorral
 
-Indítsa el a szervert, és futtassa a következő parancsot egy terminálban:
+Ha Node.js 22.7.5 vagy újabb verziód van, használhatod az MCP Inspectort a szerver tesztelésére.
+
+Indítsd el a szervert, majd futtasd a következő parancsot egy terminálban:
 
 ```bash
-npx @modelcontextprotocol/inspector@latest
+npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp_inspector.2939244613cb5a0549b83942e062bceb69083c3d7b331c8de991ecf6834d6904.hu.png)
+![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.hu.png)
 
-- Válassza ki az `SSE` as the Transport type. SSE stand for Server-Sent Events. 
-- In the Url field, enter the URL of the server noted earlier,and append `/sse`-t. Ennek `http`-nak kell lennie (nem `https`) something like `http://localhost:5058/sse`.
+- Válaszd ki a `Streamable HTTP` as the Transport type.
+- In the Url field, enter the URL of the server noted earlier, and append `/mcp`-t. Ez az `http` kell legyen (nem `https`) something like `http://localhost:5058/mcp`.
 - select the Connect button.
 
 A nice thing about the Inspector is that it provide a nice visibility on what is happening.
 
-- Try listing the availables tools
+- Try listing the available tools
 - Try some of them, it should works just like before.
 
+## Test MCP Server with GitHub Copilot Chat in VS Code
 
-## Test `SSE` with Github Copilot Chat in VS Code
+To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp` szerver, amit korábban hoztál létre, így néz ki:
 
-To use the `SSE` transport with Github Copilot Chat, change the configuration of the `mcp-calc` szerver, ami korábban készült, hogy így nézzen ki:
-
-```json
-"mcp-calc": {
-    "type": "sse",
-    "url": "http://localhost:5058/sse"
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "http://localhost:5058/mcp"
+    }
+  }
 }
 ```
 
-Végezzen néhány tesztet:
-- Kérje a 3 prímszámot 6780 után. Jegyezze meg, hogyan használja a Copilot az új eszközöket `NextFivePrimeNumbers`, és csak az első 3 prímszámot adja vissza.
-- Kérje a 7 prímszámot 111 után, hogy lássa, mi történik.
+Végezz néhány tesztet:
 
-# A szerver telepítése Azure-ra
+- Kérdezd meg: „3 prímszám 6780 után”. Figyeld meg, hogy a Copilot az új eszközöket, a `NextFivePrimeNumbers`-t használja, és csak az első 3 prímszámot adja vissza.
+- Kérdezd meg: „7 prímszám 111 után”, hogy lásd, mi történik.
+- Kérdezd meg: „Johnnak 24 cukorkája van, és mindet el akarja osztani a 3 gyereke között. Hány cukorka jut egy gyerekre?”, hogy lásd, mi történik.
 
-Telepítsük a szervert Azure-ra, hogy több ember használhassa.
+## Szerver telepítése Azure-ra
 
-Terminálból navigáljon a `04-PracticalImplementation\samples\csharp\src` mappába, és futtassa a következő parancsot:
+Telepítsük a szervert az Azure-ra, hogy többen használhassák.
 
-```bash
-azd init
-```
-
-Ez néhány fájlt hoz létre helyileg az Azure erőforrások konfigurációjának és az infrastruktúra mint kód (IaC) mentéséhez.
-
-Ezután futtassa a következő parancsot a szerver Azure-ra telepítéséhez:
+Terminálban navigálj az `04-PracticalImplementation/samples/csharp` mappába, majd futtasd a következő parancsot:
 
 ```bash
 azd up
 ```
 
-Amint a telepítés befejeződik, egy ilyen üzenetet kell látnia:
+A telepítés befejezése után valami ilyesmi üzenetet kell látnod:
 
-![Azd deployment success](../../../../../translated_images/chap4-azd-deploy-success.f69e7f61e50fdbf13ea3bf7302d9850a18e12832f34daee1695f29da3f32b452.hu.png)
+![Azd telepítés sikeres](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.hu.png)
 
-Navigáljon az Aspire műszerfalra, és jegyezze fel az `HTTP` URL-t, hogy használhassa a MCP Inspectorban és a Github Copilot Chatben.
+Másold ki az URL-t, és használd az MCP Inspectorban, illetve a GitHub Copilot Chatben.
 
-## Mi a következő lépés?
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "https://calc-mcp.gentleriver-3977fbcf.australiaeast.azurecontainerapps.io/mcp"
+    }
+  }
+}
+```
 
-Különböző szállítási típusokat és tesztelő eszközöket próbáltunk ki, valamint telepítettük az MCP szerverünket Azure-ra. De mi van, ha a szerverünknek privát erőforrásokhoz kell hozzáférnie? Például egy adatbázishoz vagy egy privát API-hoz? A következő fejezetben megnézzük, hogyan javíthatjuk a szerverünk biztonságát.
+## Mi következik?
 
-**Felelősségi nyilatkozat**:  
-Ezt a dokumentumot az AI fordítási szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordították le. Bár igyekszünk pontosságra törekedni, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum a saját nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén ajánlott a professzionális emberi fordítás. Nem vállalunk felelősséget semmilyen félreértésért vagy félremagyarázásért, amely a fordítás használatából ered.
+Különböző szállítási típusokat és tesztelő eszközöket próbálunk ki. Emellett telepítjük az MCP szerveredet az Azure-ra is. De mi van akkor, ha a szervernek privát erőforrásokhoz kell hozzáférnie? Például egy adatbázishoz vagy privát API-hoz? A következő fejezetben megnézzük, hogyan javíthatjuk a szerver biztonságát.
+
+**Felelősségkizárás**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum anyanyelvű változata tekintendő hivatalos forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.

@@ -1,101 +1,107 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5020a3e1a1c7f30c00f9e37f1fa208e3",
-  "translation_date": "2025-05-17T14:09:23+00:00",
+  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
+  "translation_date": "2025-06-18T07:50:51+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "da"
 }
 -->
 # Eksempel
 
-Det tidligere eksempel viser, hvordan man bruger et lokalt .NET-projekt med typen `sdio`. Og hvordan man kører serveren lokalt i en container. Dette er en god løsning i mange situationer. Dog kan det være nyttigt at have serveren kørende eksternt, som i et cloud-miljø. Det er her, typen `http` kommer ind i billedet.
+Det forrige eksempel viser, hvordan man bruger et lokalt .NET-projekt med typen `stdio`. Og hvordan man kører serveren lokalt i en container. Dette er en god løsning i mange situationer. Men det kan være nyttigt at have serveren kørende eksternt, for eksempel i et cloud-miljø. Her kommer typen `http` ind i billedet.
 
-Når man ser på løsningen i mappen `04-PracticalImplementation`, kan det virke meget mere komplekst end det tidligere eksempel. Men i virkeligheden er det det ikke. Hvis du ser nærmere på projektet `src/mcpserver/mcpserver.csproj`, vil du se, at det for det meste er den samme kode som det tidligere eksempel. Den eneste forskel er, at vi bruger et andet bibliotek `ModelContextProtocol.AspNetCore` til at håndtere HTTP-anmodningerne. Og vi ændrer metoden `IsPrime` for at gøre den privat, blot for at vise, at du kan have private metoder i din kode. Resten af koden er den samme som før.
+Når man ser på løsningen i `04-PracticalImplementation`-mappen, kan den se meget mere kompleks ud end den forrige. Men i virkeligheden er den det ikke. Hvis du kigger nærmere på projektet `src/Calculator`, vil du se, at det stort set er den samme kode som i det tidligere eksempel. Den eneste forskel er, at vi bruger et andet bibliotek `ModelContextProtocol.AspNetCore` til at håndtere HTTP-forespørgslerne. Og vi ændrer metoden `IsPrime` til at være privat, bare for at vise, at du kan have private metoder i din kode. Resten af koden er den samme som før.
 
-De andre projekter er fra [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). At have .NET Aspire i løsningen vil forbedre udviklerens oplevelse under udvikling og test og hjælpe med observabilitet. Det er ikke nødvendigt for at køre serveren, men det er en god praksis at have det i din løsning.
+De andre projekter kommer fra [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). At have .NET Aspire i løsningen vil forbedre udviklerens oplevelse under udvikling og test og hjælpe med observabilitet. Det er ikke nødvendigt for at køre serveren, men det er god praksis at have det med i din løsning.
 
 ## Start serveren lokalt
 
-1. Fra VS Code (med C# DevKit-udvidelsen), åbn løsningen `04-PracticalImplementation\samples\csharp\src\Calculator-chap4.sln`.
-2. Tryk på `F5` for at starte serveren. Det skulle starte en webbrowser med .NET Aspire dashboardet.
+1. Fra VS Code (med C# DevKit-udvidelsen) naviger ned til `04-PracticalImplementation/samples/csharp`-mappen.
+1. Kør følgende kommando for at starte serveren:
 
-eller
-
-1. Fra en terminal, naviger til mappen `04-PracticalImplementation\samples\csharp\src`
-2. Udfør følgende kommando for at starte serveren:
    ```bash
-    dotnet run --project .\AppHost
+    dotnet watch run --project ./src/AppHost
    ```
 
-3. Fra Dashboardet, bemærk URL'en `http`. Det skulle være noget i stil med `http://localhost:5058/`.
+1. Når en webbrowser åbner .NET Aspire-dashboardet, bemærk `http` URL'en. Den burde være noget i retning af `http://localhost:5058/`.
 
-## Test `SSE` med ModelContext Protocol Inspector
+   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.da.png)
 
-Hvis du har Node.js 22.7.5 eller højere, kan du bruge ModelContext Protocol Inspector til at teste din server.
+## Test Streamable HTTP med MCP Inspector
+
+Hvis du har Node.js 22.7.5 eller nyere, kan du bruge MCP Inspector til at teste din server.
 
 Start serveren og kør følgende kommando i en terminal:
 
 ```bash
-npx @modelcontextprotocol/inspector@latest
+npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp_inspector.2939244613cb5a0549b83942e062bceb69083c3d7b331c8de991ecf6834d6904.da.png)
+![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.da.png)
 
-- Vælg `SSE` as the Transport type. SSE stand for Server-Sent Events. 
-- In the Url field, enter the URL of the server noted earlier,and append `/sse`. Det skulle være `http` (ikke `https`) something like `http://localhost:5058/sse`.
+- Vælg `Streamable HTTP` as the Transport type.
+- In the Url field, enter the URL of the server noted earlier, and append `/mcp`. Det burde være `http` (ikke `https`) something like `http://localhost:5058/mcp`.
 - select the Connect button.
 
 A nice thing about the Inspector is that it provide a nice visibility on what is happening.
 
-- Try listing the availables tools
+- Try listing the available tools
 - Try some of them, it should works just like before.
 
+## Test MCP Server with GitHub Copilot Chat in VS Code
 
-## Test `SSE` with Github Copilot Chat in VS Code
+To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp` serveren oprettet tidligere, så det ser sådan ud:
 
-To use the `SSE` transport with Github Copilot Chat, change the configuration of the `mcp-calc` server oprettet tidligere til at se sådan ud:
-
-```json
-"mcp-calc": {
-    "type": "sse",
-    "url": "http://localhost:5058/sse"
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "http://localhost:5058/mcp"
+    }
+  }
 }
 ```
 
-Foretag nogle tests:
-- Bed om de 3 primtal efter 6780. Bemærk, hvordan Copilot vil bruge de nye værktøjer `NextFivePrimeNumbers` og kun returnere de første 3 primtal.
-- Bed om de 7 primtal efter 111, for at se hvad der sker.
+Lav nogle tests:
 
+- Spørg efter "3 primtal efter 6780". Bemærk hvordan Copilot vil bruge de nye værktøjer `NextFivePrimeNumbers` og kun returnere de første 3 primtal.
+- Spørg efter "7 primtal efter 111" for at se, hvad der sker.
+- Spørg efter "John har 24 slik og vil fordele dem alle til sine 3 børn. Hvor mange slik får hvert barn?", for at se hvad der sker.
 
-# Udrul serveren til Azure
+## Udrul serveren til Azure
 
 Lad os udrulle serveren til Azure, så flere kan bruge den.
 
-Fra en terminal, naviger til mappen `04-PracticalImplementation\samples\csharp\src` og kør følgende kommando:
-
-```bash
-azd init
-```
-
-Dette vil oprette nogle få filer lokalt for at gemme konfigurationen af Azure-ressourcerne og din Infrastruktur som kode (IaC).
-
-Derefter, kør følgende kommando for at udrulle serveren til Azure:
+Fra en terminal, naviger til mappen `04-PracticalImplementation/samples/csharp` og kør følgende kommando:
 
 ```bash
 azd up
 ```
 
-Når udrulningen er færdig, bør du se en besked som denne:
+Når udrulningen er færdig, burde du se en besked som denne:
 
-![Azd deployment success](../../../../../translated_images/chap4-azd-deploy-success.f69e7f61e50fdbf13ea3bf7302d9850a18e12832f34daee1695f29da3f32b452.da.png)
+![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.da.png)
 
-Naviger til Aspire dashboardet og bemærk `HTTP` URL'en for at bruge den i MCP Inspector og i Github Copilot Chat.
+Tag URL'en og brug den i MCP Inspector og i GitHub Copilot Chat.
 
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "https://calc-mcp.gentleriver-3977fbcf.australiaeast.azurecontainerapps.io/mcp"
+    }
+  }
+}
+```
 
-## Hvad er det næste?
+## Hvad nu?
 
-Vi prøver forskellige transporttyper, testværktøjer og vi udruller også vores MCP-server til Azure. Men hvad hvis vores server skal have adgang til private ressourcer? For eksempel en database eller en privat API? I næste kapitel vil vi se, hvordan vi kan forbedre sikkerheden på vores server.
+Vi prøver forskellige transporttyper og testværktøjer. Vi udruller også din MCP-server til Azure. Men hvad hvis vores server skal have adgang til private ressourcer? For eksempel en database eller en privat API? I næste kapitel vil vi se, hvordan vi kan forbedre sikkerheden på vores server.
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for misforståelser eller fejltolkninger som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for eventuelle misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
