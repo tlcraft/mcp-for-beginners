@@ -1,4 +1,4 @@
-# Getting Started with MCP 
+# Getting Started with MCP
 
 Welcome to your first steps with the Model Context Protocol (MCP)! Whether you're new to MCP or looking to deepen your understanding, this guide will walk you through the essential setup and development process. You'll discover how MCP enables seamless integration between AI models and applications, and learn how to quickly get your environment ready for building and testing MCP-powered solutions.
 
@@ -124,8 +124,8 @@ Here's a screenshot of what it can look like:
 
 For local development and testing, you can run MCP servers directly on your machine:
 
-1. **Start the server process**: Run your MCP server application 
-2. **Configure networking**: Ensure the server is accessible on the expected port 
+1. **Start the server process**: Run your MCP server application
+2. **Configure networking**: Ensure the server is accessible on the expected port
 3. **Connect clients**: Use local connection URLs like `http://localhost:3000`
 
 ```bash
@@ -136,7 +136,7 @@ npm run start
 
 ## Building your first MCP Server
 
-We've covered [Core concepts](/01-CoreConcepts/README.md) in a previous lesson, now it's time to put that knowledge to work. 
+We've covered [Core concepts](/01-CoreConcepts/README.md) in a previous lesson, now it's time to put that knowledge to work.
 
 ### What a server can do
 
@@ -174,6 +174,7 @@ Generative AI can generate text, images, and even code.
   npm install @modelcontextprotocol/sdk zod
   npm install -D @types/node typescript
   ```
+
 </details>
 
 <details>
@@ -190,8 +191,8 @@ pip install "mcp[cli]"
 <summary>.NET</summary>
 
 ```sh
-dotnet add package ModelContextProtocol --prerelease
-dotnet add package Microsoft.Extensions.Hosting
+dotnet new console -n McpCalculatorServer
+cd McpCalculatorServer
 ```
 
 </details>
@@ -277,10 +278,10 @@ Add the following complete configuration to your *pom.xml* file:
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
-			      <groupId>org.springframework.boot</groupId>
-			      <artifactId>spring-boot-starter-test</artifactId>
-			      <scope>test</scope>
-		    </dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-test</artifactId>
+         <scope>test</scope>
+      </dependency>
     </dependencies>
 
     <!-- Build configuration -->
@@ -335,6 +336,7 @@ Now that you have your SDK installed, let's create a project next:
   mkdir src
   npm install -y
   ```
+
 </details>
 
 <details>
@@ -344,6 +346,7 @@ Now that you have your SDK installed, let's create a project next:
   python -m venv venv
   venv\Scripts\activate
   ```
+
 </details>
 
 <details>
@@ -396,7 +399,8 @@ cd calculator-server
     "include": ["src/**/*"],
     "exclude": ["node_modules"]
   }
-  ``` 
+  ```
+
 </details>
 
 <details>
@@ -408,8 +412,11 @@ Create a file *server.py*
 <details>
 <summary>.NET</summary>
 
+Install the required NuGet packages:
+
 ```sh
-dotnet new console
+dotnet add package ModelContextProtocol --prerelease
+dotnet add package Microsoft.Extensions.Hosting
 ```
 
 </details>
@@ -420,7 +427,6 @@ dotnet new console
 For Java Spring Boot projects, the project structure is created automatically.
 
 </details>
-
 
 ### -4- Create server code
 
@@ -813,6 +819,7 @@ Add a tool and a resource by adding the following code:
     text: "a text"
   }
   ```
+
 </details>
 
 <details>
@@ -835,13 +842,15 @@ def get_greeting(name: str) -> str:
 
 In the preceding code we've:
 
-- Defined a tool `add` that takes parameters `a` and `p`, both integers. 
+- Defined a tool `add` that takes parameters `a` and `p`, both integers.
 - Created a resource called `greeting` that takes parameter `name`.
 
 </details>
 
 <details>
 <summary>.NET</summary>
+
+Add this to your Program.cs file:
 
 ```csharp
 [McpServerToolType]
@@ -945,7 +954,9 @@ def get_greeting(name: str) -> str:
 <details>
 <summary>.NET</summary>
 
-```dotnet
+Create a Program.cs file with the following content:
+
+```csharp
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -1026,12 +1037,16 @@ npm run build
 ```sh
 mcp run server.py
 ```
+
 </details>
 
 <details>
 <summary>.NET</summary>
 
+Make sure you're in your project directory:
+
 ```sh
+cd McpCalculatorServer
 dotnet run
 ```
 
@@ -1061,7 +1076,7 @@ The inspector is a great tool that can start up your server and lets you interac
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-or add it to your *package.json* like so: ` "inspector": "npx @modelcontextprotocol/inspector node build/index.js"` and then run `npm run inspect`
+or add it to your *package.json* like so: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` and then run `npm run inspect`
 
 </details>
 
@@ -1085,7 +1100,10 @@ npx @modelcontextprotocol/inspector mcp run server.py
 <details>
 <summary>.NET</summary>
 
+Make sure you're in your project directory:
+
 ```sh
+cd McpCalculatorServer
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
@@ -1102,13 +1120,14 @@ npx @modelcontextprotocol/inspector
 ```
 
 In the inspector web interface:
+
 1. Select "SSE" as the transport type
 2. Set the URL to: `http://localhost:8080/sse`
 3. Click "Connect"
 
 ![Connect](/03-GettingStarted/01-first-server/assets/tool.png)
 
-**You're now connected to the server** 
+**You're now connected to the server**
 **The Java server testing section is completed now**
 
 The next section it's about interacting with the server.
@@ -1119,7 +1138,7 @@ You should see the following user interface:
 
 ![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
-1. Connect to the server by selecting the Connect button 
+1. Connect to the server by selecting the Connect button
   Once you connect to the server, you should now see the following:
 
   ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
@@ -1135,6 +1154,7 @@ Congrats, you've managed to create and run your first server!
 ### Official SDKs
 
 MCP provides official SDKs for multiple languages:
+
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Maintained in collaboration with Microsoft
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Maintained in collaboration with Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - The official TypeScript implementation
@@ -1149,7 +1169,7 @@ MCP provides official SDKs for multiple languages:
 - Building MCP servers involves creating and registering tools with clear schemas
 - Testing and debugging are essential for reliable MCP implementations
 
-## Samples 
+## Samples
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../samples/csharp/)
@@ -1160,6 +1180,7 @@ MCP provides official SDKs for multiple languages:
 ## Assignment
 
 Create a simple MCP server with a tool of your choice:
+
 1. Implement the tool in your preferred language (.NET, Java, Python, or JavaScript).
 2. Define input parameters and return values.
 3. Run the inspector tool to ensure the server works as intended.
