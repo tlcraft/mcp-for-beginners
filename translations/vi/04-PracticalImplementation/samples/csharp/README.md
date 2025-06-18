@@ -1,97 +1,107 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5020a3e1a1c7f30c00f9e37f1fa208e3",
-  "translation_date": "2025-05-17T14:10:28+00:00",
+  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
+  "translation_date": "2025-06-18T07:51:47+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "vi"
 }
 -->
-Ví dụ trước cho thấy cách sử dụng một dự án .NET cục bộ với kiểu `sdio`. Và cách chạy máy chủ cục bộ trong một container. Đây là giải pháp tốt trong nhiều tình huống. Tuy nhiên, có thể hữu ích khi máy chủ chạy từ xa, như trong môi trường đám mây. Đây là lúc kiểu `http` xuất hiện.
+# Sample
 
-Nhìn vào giải pháp trong thư mục `04-PracticalImplementation`, có thể trông phức tạp hơn nhiều so với ví dụ trước. Nhưng thực tế, không phải vậy. Nếu bạn xem kỹ dự án `src/mcpserver/mcpserver.csproj`, bạn sẽ thấy rằng nó chủ yếu là cùng mã như ví dụ trước. Sự khác biệt duy nhất là chúng ta đang sử dụng một thư viện khác `ModelContextProtocol.AspNetCore` để xử lý các yêu cầu HTTP. Và chúng ta thay đổi phương thức `IsPrime` để làm cho nó riêng tư, chỉ để cho thấy rằng bạn có thể có các phương thức riêng tư trong mã của mình. Phần còn lại của mã giống như trước.
+Ví dụ trước cho thấy cách sử dụng một dự án .NET cục bộ với kiểu `stdio`. Và cách chạy server cục bộ trong một container. Đây là giải pháp tốt trong nhiều tình huống. Tuy nhiên, việc chạy server từ xa, chẳng hạn trong môi trường đám mây, cũng rất hữu ích. Đó là lúc kiểu `http` phát huy tác dụng.
 
-Các dự án khác là từ [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). Có .NET Aspire trong giải pháp sẽ cải thiện trải nghiệm của nhà phát triển trong khi phát triển và kiểm tra và giúp tăng khả năng quan sát. Nó không cần thiết để chạy máy chủ, nhưng là một thực hành tốt để có nó trong giải pháp của bạn.
+Nhìn vào giải pháp trong thư mục `04-PracticalImplementation`, nó có vẻ phức tạp hơn nhiều so với ví dụ trước. Nhưng thực tế thì không phải vậy. Nếu bạn xem kỹ dự án `src/Calculator`, bạn sẽ thấy nó gần như cùng một đoạn mã với ví dụ trước. Sự khác biệt duy nhất là chúng ta sử dụng thư viện khác `ModelContextProtocol.AspNetCore` để xử lý các yêu cầu HTTP. Và chúng ta thay đổi phương thức `IsPrime` thành private, chỉ để minh họa rằng bạn có thể có các phương thức private trong mã của mình. Phần còn lại của mã vẫn giữ nguyên như trước.
 
-## Khởi động máy chủ cục bộ
+Các dự án khác đến từ [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). Việc có .NET Aspire trong giải pháp sẽ cải thiện trải nghiệm của nhà phát triển trong quá trình phát triển và kiểm thử, đồng thời hỗ trợ quan sát hệ thống. Nó không bắt buộc để chạy server, nhưng là một thói quen tốt khi có trong giải pháp của bạn.
 
-1. Từ VS Code (với phần mở rộng C# DevKit), mở giải pháp `04-PracticalImplementation\samples\csharp\src\Calculator-chap4.sln`.
-2. Nhấn `F5` để khởi động máy chủ. Nó sẽ mở trình duyệt web với bảng điều khiển .NET Aspire.
+## Khởi động server cục bộ
 
-hoặc
+1. Từ VS Code (với extension C# DevKit), điều hướng đến thư mục `04-PracticalImplementation/samples/csharp`.
+1. Thực thi lệnh sau để khởi động server:
 
-1. Từ terminal, điều hướng đến thư mục `04-PracticalImplementation\samples\csharp\src`
-2. Thực thi lệnh sau để khởi động máy chủ:
    ```bash
-    dotnet run --project .\AppHost
+    dotnet watch run --project ./src/AppHost
    ```
 
-3. Từ Dashboard, ghi chú URL `http`. Nó nên là dạng như `http://localhost:5058/`.
+1. Khi trình duyệt web mở bảng điều khiển .NET Aspire, chú ý URL `http`. Nó sẽ có dạng `http://localhost:5058/`.
 
-## Test `SSE` với ModelContext Protocol Inspector
+   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.vi.png)
 
-Nếu bạn có Node.js 22.7.5 trở lên, bạn có thể sử dụng ModelContext Protocol Inspector để kiểm tra máy chủ của mình.
+## Kiểm thử Streamable HTTP với MCP Inspector
 
-Khởi động máy chủ và chạy lệnh sau trong terminal:
+Nếu bạn có Node.js phiên bản 22.7.5 trở lên, bạn có thể dùng MCP Inspector để kiểm thử server.
+
+Khởi động server và chạy lệnh sau trong terminal:
 
 ```bash
-npx @modelcontextprotocol/inspector@latest
+npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp_inspector.2939244613cb5a0549b83942e062bceb69083c3d7b331c8de991ecf6834d6904.vi.png)
+![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.vi.png)
 
-- Chọn `SSE` as the Transport type. SSE stand for Server-Sent Events. 
-- In the Url field, enter the URL of the server noted earlier,and append `/sse`. Nó nên là `http` (không phải `https`) something like `http://localhost:5058/sse`.
+- Chọn `Streamable HTTP` as the Transport type.
+- In the Url field, enter the URL of the server noted earlier, and append `/mcp`. Nó nên là `http` (không phải `https`) something like `http://localhost:5058/mcp`.
 - select the Connect button.
 
 A nice thing about the Inspector is that it provide a nice visibility on what is happening.
 
-- Try listing the availables tools
+- Try listing the available tools
 - Try some of them, it should works just like before.
 
+## Test MCP Server with GitHub Copilot Chat in VS Code
 
-## Test `SSE` with Github Copilot Chat in VS Code
+To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp` server đã tạo trước đó để trông như thế này:
 
-To use the `SSE` transport with Github Copilot Chat, change the configuration of the `mcp-calc` máy chủ đã được tạo trước để trông như thế này:
-
-```json
-"mcp-calc": {
-    "type": "sse",
-    "url": "http://localhost:5058/sse"
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "http://localhost:5058/mcp"
+    }
+  }
 }
 ```
 
-Thực hiện một số thử nghiệm:
-- Yêu cầu 3 số nguyên tố sau 6780. Chú ý cách Copilot sẽ sử dụng công cụ mới `NextFivePrimeNumbers` và chỉ trả về 3 số nguyên tố đầu tiên.
-- Yêu cầu 7 số nguyên tố sau 111, để xem điều gì xảy ra.
+Thực hiện một số kiểm thử:
 
-# Triển khai máy chủ lên Azure
+- Hỏi "3 số nguyên tố sau 6780". Lưu ý Copilot sẽ dùng công cụ mới `NextFivePrimeNumbers` và chỉ trả về 3 số nguyên tố đầu tiên.
+- Hỏi "7 số nguyên tố sau 111", để xem kết quả ra sao.
+- Hỏi "John có 24 viên kẹo và muốn chia đều cho 3 đứa con. Mỗi đứa sẽ nhận bao nhiêu viên?", để xem kết quả.
 
-Hãy triển khai máy chủ lên Azure để nhiều người có thể sử dụng nó.
+## Triển khai server lên Azure
 
-Từ terminal, điều hướng đến thư mục `04-PracticalImplementation\samples\csharp\src` và chạy lệnh sau:
+Chúng ta sẽ triển khai server lên Azure để nhiều người có thể sử dụng.
 
-```bash
-azd init
-```
-
-Điều này sẽ tạo một số tệp cục bộ để lưu cấu hình tài nguyên Azure, và Hạ tầng như mã (IaC) của bạn.
-
-Sau đó, chạy lệnh sau để triển khai máy chủ lên Azure:
+Từ terminal, điều hướng đến thư mục `04-PracticalImplementation/samples/csharp` và chạy lệnh sau:
 
 ```bash
 azd up
 ```
 
-Khi triển khai hoàn tất, bạn sẽ thấy một thông báo như thế này:
+Khi quá trình triển khai hoàn tất, bạn sẽ thấy thông báo như sau:
 
-![Azd deployment success](../../../../../translated_images/chap4-azd-deploy-success.f69e7f61e50fdbf13ea3bf7302d9850a18e12832f34daee1695f29da3f32b452.vi.png)
+![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.vi.png)
 
-Điều hướng đến bảng điều khiển Aspire và ghi chú URL `HTTP` để sử dụng nó trong MCP Inspector và trong Github Copilot Chat.
+Lấy URL này và sử dụng trong MCP Inspector cũng như trong GitHub Copilot Chat.
+
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "https://calc-mcp.gentleriver-3977fbcf.australiaeast.azurecontainerapps.io/mcp"
+    }
+  }
+}
+```
 
 ## Tiếp theo là gì?
 
-Chúng ta thử các loại vận chuyển khác nhau, công cụ kiểm tra và cũng triển khai máy chủ MCP của chúng ta lên Azure. Nhưng điều gì sẽ xảy ra nếu máy chủ của chúng ta cần truy cập vào các tài nguyên riêng tư? Ví dụ, một cơ sở dữ liệu hoặc một API riêng tư? Trong chương tiếp theo, chúng ta sẽ xem cách cải thiện bảo mật của máy chủ.
+Chúng ta đã thử các kiểu giao thức khác nhau và các công cụ kiểm thử. Đồng thời cũng triển khai MCP server lên Azure. Nhưng nếu server của chúng ta cần truy cập tài nguyên riêng tư? Ví dụ như cơ sở dữ liệu hoặc API riêng? Ở chương tiếp theo, chúng ta sẽ tìm hiểu cách nâng cao bảo mật cho server.
 
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp của con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc sai sót. Tài liệu gốc bằng ngôn ngữ nguyên bản được coi là nguồn chính xác và có thẩm quyền. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu nhầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

@@ -1,99 +1,107 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5020a3e1a1c7f30c00f9e37f1fa208e3",
-  "translation_date": "2025-06-17T17:06:02+00:00",
+  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
+  "translation_date": "2025-06-18T07:54:20+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "my"
 }
 -->
-# Sample
+# နမူနာ
 
-ယခင်ဥပမာမှာ `sdio` အမျိုးအစားဖြင့် ဒေသတွင်း .NET ပရောဂျက်ကို အသုံးပြုပုံနဲ့ ကွန်တိန်နာထဲမှာ ဆာဗာကို ဒေသတွင်းမှာ ပြေးဆွဲနည်းကို ပြထားပါတယ်။ ဒီနည်းဟာ အခြေအနေအများကြီးမှာ ကောင်းမွန်တဲ့ဖြေရှင်းချက်တစ်ခုဖြစ်ပါတယ်။ သို့သော် ဆာဗာကို မိုးကောင်းကင်ပတ်ဝန်းကျင်လို ဝေးလံတဲ့နေရာမှာ ပြေးဆွဲနိုင်တာကလည်း အသုံးဝင်နိုင်ပါတယ်။ ဒီမှာ `http` အမျိုးအစားက အရေးပါတဲ့အခန်းကဏ္ဍကို ထမ်းဆောင်ပါတယ်။
+ယခင်ဥပမာမှာ local .NET ပရောဂျက်ကို `stdio` type နဲ့ ဘယ်လိုသုံးရမယ်၊ နဲ့ container အတွင်းမှာ server ကို locally ဘယ်လို run ရမယ် ဆိုတာကို ပြထားပါတယ်။ အများအပြားအခြေအနေတွေမှာ ဒီနည်းလမ်းက ကောင်းတဲ့ဖြေရှင်းချက်တစ်ခုပါ။ သို့သော် server ကို cloud ပတ်ဝန်းကျင်လို ချိတ်ဆက်ထားတဲ့နေရာကနေ run လုပ်နိုင်ရင် ပိုအသုံးဝင်ပါတယ်။ ဒီမှာတော့ `http` type က အသုံးဝင်လာပါတယ်။
 
-`04-PracticalImplementation` ဖိုလ်ဒါထဲက ဖြေရှင်းချက်ကို ကြည့်မယ်ဆိုရင် ယခင်နမူနာထက် ပိုရှုပ်ထွေးသလို ခံစားရနိုင်ပါတယ်။ ဒါပေမယ့် အမှန်မှာတော့ မဟုတ်ပါဘူး။ `src/mcpserver/mcpserver.csproj` ပရောဂျက်ကို နီးကပ်စွာကြည့်မယ်ဆိုရင် ယခင်နမူနာနဲ့ အများအားဖြင့် တူညီတဲ့ ကုဒ်တွေ ဖြစ်ကြောင်း တွေ့ရပါမယ်။ ကွာခြားချက်တစ်ခုကတော့ HTTP တောင်းဆိုမှုတွေကို ကိုင်တွယ်ဖို့အတွက် သုံးတဲ့ စာကြည့်တိုက်ကို `ModelContextProtocol.AspNetCore` အသုံးပြုတာနဲ့ `IsPrime` မက်သဒ်ကို ကိုယ်ပိုင်(private) မက်သဒ်အဖြစ် ပြောင်းလဲထားတာပဲ ဖြစ်ပါတယ်။ ဒါဟာ ကိုယ်ပိုင်မက်သဒ်တွေကို ကိုယ့်ကုဒ်ထဲမှာ သုံးနိုင်တယ်ဆိုတာ ပြသဖို့ပါ။ ကျန်တဲ့ကုဒ်တွေကတော့ ယခင်နမူနာနဲ့ တူညီပါတယ်။
+`04-PracticalImplementation` ဖိုလ်ဒါထဲက solution ကိုကြည့်မယ်ဆိုရင် ယခင်နမူနာထက် ပိုရှုပ်ထွေးနေသလို ခံစားရနိုင်ပါတယ်။ ဒါပေမယ့် အမှန်မှာတော့ မဟုတ်ပါဘူး။ `src/Calculator` project ကို သေချာကြည့်မယ်ဆိုရင် ယခင်နမူနာနဲ့ အများအားဖြင့် တူညီတဲ့ code ဖြစ်ကြောင်း တွေ့ရမှာပါ။ ကွာခြားချက်တစ်ခုကတော့ HTTP requests တွေကို ကိုင်တွယ်ဖို့အတွက် `ModelContextProtocol.AspNetCore` ဆိုတဲ့ library ကို အသုံးပြုထားတာပါ။ နောက်ပြီး `IsPrime` method ကို private ပြောင်းထားတာကတော့ သင့် code မှာ private method တွေကိုပါ ထည့်သုံးနိုင်ကြောင်း ပြသဖို့ပါ။ အခြား code တွေက ယခင်နမူနာနဲ့ တူညီပါပဲ။
 
-အခြားပရောဂျက်တွေကတော့ [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview) မှာ ရှိပါတယ်။ .NET Aspire ကို ဖြေရှင်းချက်ထဲ ထည့်သွင်းခြင်းက ဒီဇိုင်နာတွေနဲ့ စမ်းသပ်သူတွေအတွက် အတွေ့အကြုံကောင်းမွန်စေပြီး စောင့်ကြည့်နိုင်မှုကိုလည်း ကူညီပေးပါတယ်။ ဆာဗာကို ပြေးဆွဲဖို့ မလိုအပ်ပေမယ့် ဖြေရှင်းချက်ထဲ ထည့်ထားတာကောင်းမွန်တဲ့ လေ့လာမှုတစ်ခုဖြစ်ပါတယ်။
+အခြား project တွေကတော့ [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview) မှာရရှိနိုင်တဲ့ project တွေဖြစ်ပါတယ်။ Solution ထဲမှာ .NET Aspire ပါဝင်ခြင်းက developer တွေအတွက် ဖန်တီးမှုနဲ့ စမ်းသပ်မှုတွေမှာ အတွေ့အကြုံပိုမိုကောင်းမွန်စေပြီး observability ကို ကူညီပေးပါတယ်။ Server ကို run ဖို့ မလိုအပ်ပေမယ့် solution ထဲမှာ ထည့်သွင်းထားတာကောင်းတဲ့ အလေ့အကျင့်တစ်ခုပါ။
 
-## ဆာဗာကို ဒေသတွင်းမှာ စတင်ပြေးဆွဲခြင်း
+## Server ကို locally စတင် run မယ်
 
-1. VS Code (C# DevKit extension ပါသော) မှာ `04-PracticalImplementation\samples\csharp\src\Calculator-chap4.sln` ဖြေရှင်းချက်ကို ဖွင့်ပါ။
-2. ဆာဗာကို စတင်ဖို့ `F5` ကိုနှိပ်ပါ။ ဒါဆိုရင် .NET Aspire dashboard ပါတဲ့ ဝက်ဘ်ဘရောက်ဇာကို ဖွင့်ပေးပါလိမ့်မယ်။
+1. VS Code (C# DevKit extension နဲ့) မှ `04-PracticalImplementation/samples/csharp` ဖိုလ်ဒါကို သွားပါ။
+1. Server စတင်ဖို့အတွက် အောက်ပါ command ကို 실행ပါ။
 
-သို့မဟုတ်
-
-1. တာမင်နယ်မှ `04-PracticalImplementation\samples\csharp\src` ဖိုလ်ဒါသို့ သွားပါ။
-2. ဆာဗာကို စတင်ဖို့ အောက်ပါ command ကို အကောင်အထည်ဖော်ပါ။
    ```bash
-    dotnet run --project .\AppHost
+    dotnet watch run --project ./src/AppHost
    ```
 
-3. Dashboard မှာ `http` URL ကို မှတ်သားပါ။ `http://localhost:5058/`.
+1. Web browser က .NET Aspire dashboard ကိုဖွင့်လာရင် `http` URL ကို မှတ်ထားပါ။ အဲဒါက `http://localhost:5058/` လိုမျိုးဖြစ်နိုင်ပါတယ်။
 
-## Test `SSE` လိုမျိုး ModelContext Protocol Inspector နဲ့ တွဲဖက်အသုံးပြုနိုင်ပါတယ်။
+   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.my.png)
 
-Node.js 22.7.5 နှင့် အထက်ရှိသူများအတွက် ModelContext Protocol Inspector ကို အသုံးပြုပြီး ဆာဗာကို စမ်းသပ်နိုင်ပါတယ်။
+## MCP Inspector နဲ့ Streamable HTTP ကို စမ်းသပ်မယ်
 
-ဆာဗာကို စတင်ပြီး တာမင်နယ်မှာ အောက်ပါ command ကို လည်ပတ်ပါ။
+Node.js 22.7.5 နဲ့ အထက်ရှိရင် MCP Inspector ကို သုံးပြီး server ကို စမ်းသပ်နိုင်ပါတယ်။
+
+Server ကို စတင် run လုပ်ပြီး terminal မှာ အောက်ပါ command ကို 실행ပါ။
 
 ```bash
-npx @modelcontextprotocol/inspector@latest
+npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp_inspector.04f7b6d01dd7e8406faefeda83afcd9f608052c840bf53153a6d267c582d4d66.my.png)
+![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.my.png)
 
-- `SSE` as the Transport type. SSE stand for Server-Sent Events. 
-- In the Url field, enter the URL of the server noted earlier,and append `/sse` ကို ရွေးချယ်ပါ။ ဒါဟာ `http` ဖြစ်ရမည် (မဟုတ်ရင် `https`) something like `http://localhost:5058/sse`.
+- `Streamable HTTP` as the Transport type.
+- In the Url field, enter the URL of the server noted earlier, and append `/mcp` ကို ရွေးချယ်ပါ။ အဲဒါက `http` ဖြစ်ရမယ် (မဟုတ်ရင် `https`) something like `http://localhost:5058/mcp`.
 - select the Connect button.
 
 A nice thing about the Inspector is that it provide a nice visibility on what is happening.
 
-- Try listing the availables tools
+- Try listing the available tools
 - Try some of them, it should works just like before.
 
+## Test MCP Server with GitHub Copilot Chat in VS Code
 
-## Test `SSE` with Github Copilot Chat in VS Code
+To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp` ဆိုပြီး ယခင်ကဖန်တီးထားတဲ့ server မဟုတ်ပါဘူး)။
 
-To use the `SSE` transport with Github Copilot Chat, change the configuration of the `mcp-calc` ဆာဗာကို အရင်တုန်းက ဖန်တီးထားသလို ပြသပါမယ်။
-
-```json
-"mcp-calc": {
-    "type": "sse",
-    "url": "http://localhost:5058/sse"
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "http://localhost:5058/mcp"
+    }
+  }
 }
 ```
 
-စမ်းသပ်မှုတွေ လုပ်ပါ။
-- 6780 ထက်နောက်က ပထမဆုံး 3 ခုသော ပရိုင်းမြောက်ဂဏန်းတွေကို မေးမြန်းပါ။ Copilot က `NextFivePrimeNumbers` ကိရိယာအသစ်ကို သုံးပြီး ပထမဆုံး 3 ခုသော ပရိုင်းမြောက်ဂဏန်းကိုသာ ပြန်ပေးပါလိမ့်မယ်။
-- 111 ထက်နောက်က ပထမဆုံး 7 ခုသော ပရိုင်းမြောက်ဂဏန်းကို မေးမြန်းပြီး ဘာဖြစ်မလဲ ကြည့်ပါ။
+အောက်ပါ စမ်းသပ်မှုတွေကို လုပ်ကြည့်ပါ။
 
-# ဆာဗာကို Azure သို့ တင်သွင်းခြင်း
+- "6780 နောက်က ၃ ခုသော ပရိုင်းနံပါတ်များ" ကို မေးပါ။ Copilot က `NextFivePrimeNumbers` tool အသစ်ကို သုံးပြီး ပထမ ၃ ခုသာ ပြန်ပေးပါလိမ့်မယ်။
+- "111 နောက်က ၇ ခုသော ပရိုင်းနံပါတ်များ" ကို မေးပြီး ဘာဖြစ်မလဲ ကြည့်ပါ။
+- "John မှ လိုလီ ၂၄ လုံးရှိပြီး သူ့ကလေး ၃ ယောက်ကို လိုလီတွေကို မျှဝေချင်ပါတယ်။ ကလေးတစ်ယောက်ချင်းစီမှာ လိုလီဘယ်နှစ်လုံးရှိမလဲ?" ကို မေးပြီး ဘာဖြစ်မလဲ ကြည့်ပါ။
 
-ဆာဗာကို Azure သို့ တင်သွင်းလိုက်ပါမယ်၊ ဒါကြောင့် လူပိုများစွာ အသုံးပြုနိုင်ပါလိမ့်မယ်။
+## Server ကို Azure ပေါ်သို့ တင်မယ်
 
-တာမင်နယ်မှ `04-PracticalImplementation\samples\csharp\src` ဖိုလ်ဒါသို့ သွားပြီး အောက်ပါ command ကို လည်ပတ်ပါ။
+ပိုမိုများပြားသောလူတွေ သုံးနိုင်ဖို့ server ကို Azure ပေါ်သို့ တင်ကြမယ်။
 
-```bash
-azd init
-```
-
-ဒီနည်းလမ်းက Azure အရင်းအမြစ်များ၏ ဖွဲ့စည်းတည်ဆောက်မှုကို ဒေသတွင်း ဖိုင်အနေနဲ့ သိမ်းဆည်းပေးမှာဖြစ်ပြီး Infrastructure as code (IaC) ကိုလည်း ဖန်တီးပေးပါလိမ့်မယ်။
-
-ထို့နောက် ဆာဗာကို Azure သို့ တင်သွင်းရန် အောက်ပါ command ကို လည်ပတ်ပါ။
+Terminal မှာ `04-PracticalImplementation/samples/csharp` ဖိုလ်ဒါကို သွားပြီး အောက်ပါ command ကို 실행ပါ။
 
 ```bash
 azd up
 ```
 
-တင်သွင်းမှု ပြီးဆုံးသွားချိန်မှာ အောက်ပါလို သတိပေးစာသားကို မြင်ရပါမယ်။
+Deploy ပြီးဆုံးတဲ့အခါ အောက်ပါစာသားကဲ့သို့ ပြပါလိမ့်မယ်။
 
-![Azd deployment success](../../../../../translated_images/chap4-azd-deploy-success.34ef14f18ebe8db8e5eeb51e939968e6b3095a198fa1aebbded8d1d595c6e405.my.png)
+![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.my.png)
 
-Aspire dashboard သို့ သွားပြီး MCP Inspector နဲ့ Github Copilot Chat မှာ အသုံးပြုရန် `HTTP` URL ကို မှတ်သားပါ။
+URL ကို ယူပြီး MCP Inspector နဲ့ GitHub Copilot Chat မှာ အသုံးပြုပါ။
 
-## နောက်တစ်ဆင့်မှာ?
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "https://calc-mcp.gentleriver-3977fbcf.australiaeast.azurecontainerapps.io/mcp"
+    }
+  }
+}
+```
 
-မတူညီတဲ့ သယ်ယူပို့ဆောင်မှုအမျိုးအစားတွေနဲ့ စမ်းသပ်ကိရိယာတွေကို စမ်းသပ်ပြီး MCP ဆာဗာကို Azure သို့ တင်သွင်းခဲ့ပါတယ်။ ဒါပေမယ့် ဆာဗာကို ကိုယ်ပိုင် အရင်းအမြစ်တွေ (ဥပမာ - ဒေတာဘေ့စ် သို့မဟုတ် ကိုယ်ပိုင် API) မှ အသုံးပြုဖို့ လိုအပ်ရင် ဘာဖြစ်မလဲ? နောက်ပိုင်းအခန်းမှာ ဆာဗာရဲ့ လုံခြုံရေးကို ဘယ်လိုတိုးတက်အောင်လုပ်မလဲဆိုတာ ကြည့်ရှုပါမယ်။
+## နောက်တစ်ခုဘာလဲ?
 
-**အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ တိကျမှန်ကန်မှုအတွက် ကြိုးစားခဲ့သော်လည်း၊ စက်မှုဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မှားယွင်းမှုများ ပါဝင်နိုင်ကြောင်း ကျေးဇူးပြု၍ သတိပြုပါ။ မူရင်းစာတမ်းကို မိခင်ဘာသာဖြင့်သာ အတည်ပြုရမည့် အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသည့် သတင်းအချက်အလက်များအတွက် ကျွမ်းကျင်သော လူ့ဘာသာပြန်ကို အသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်အသုံးပြုမှုကြောင့် ဖြစ်ပေါ်နိုင်သည့် နားလည်မှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မရှိပါ။
+ကြိုးစားပြီး မတူညီတဲ့ transport type တွေ၊ စမ်းသပ်မှု tools တွေကို သုံးကြည့်ပါတယ်။ MCP server ကို Azure ပေါ်သို့ တင်လည်း ပြီးပါပြီ။ ဒါပေမယ့် server က private resource တွေကို access လုပ်ဖို့လိုလာရင် ဘာဖြစ်မလဲ? ဥပမာ database တစ်ခု သို့မဟုတ် private API တစ်ခုလိုပါ။ နောက်ပိုင်း အခန်းမှာတော့ server ရဲ့ လုံခြုံမှုကို ဘယ်လိုတိုးတက်စေမလဲ ဆိုတာကို ကြည့်ပါမယ်။
+
+**ချက်ချင်းသတိပေးချက်**  
+ဤစာတမ်းကို AI ဘာသာပြန်မှုဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ တိကျမှန်ကန်မှုအတွက် ကြိုးစားပေမယ့် အလိုအလျောက်ဘာသာပြန်ခြင်းသည် အမှားများ သို့မဟုတ် မှားယွင်းမှုများ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန်။ မူရင်းစာတမ်းကို မူရင်းဘာသာဖြင့်သာ အတည်ပြုရမည့် အချက်အလက်အရင်းအမြစ်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသောအချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်၏ ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုမှုကြောင့် ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

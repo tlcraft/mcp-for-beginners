@@ -1,85 +1,81 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5020a3e1a1c7f30c00f9e37f1fa208e3",
-  "translation_date": "2025-05-17T14:13:18+00:00",
+  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
+  "translation_date": "2025-06-18T07:54:09+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "sl"
 }
 -->
-# Vzorec
+# Primer
 
-Prejšnji primer prikazuje, kako uporabiti lokalni .NET projekt z `sdio` tipom. In kako zagnati strežnik lokalno v vsebniku. To je dobra rešitev v mnogih situacijah. Vendar je lahko koristno, da strežnik deluje na daljavo, kot na primer v oblačnem okolju. Tukaj pride v poštev `http` tip.
+Prejšnji primer prikazuje, kako uporabiti lokalni .NET projekt z vrsto `stdio`. In kako zagnati strežnik lokalno v vsebniku. To je dobra rešitev v mnogih primerih. Vendar pa je včasih koristno imeti strežnik zagnan na daljavo, na primer v oblaku. Tu pride v poštev vrsta `http`.
 
-Ko pogledamo rešitev v `04-PracticalImplementation` mapi, se lahko zdi veliko bolj zapletena kot prejšnja. A v resnici ni. Če natančno pogledate projekt `src/mcpserver/mcpserver.csproj`, boste videli, da je večinoma ista koda kot v prejšnjem primeru. Edina razlika je, da uporabljamo drugačno knjižnico `ModelContextProtocol.AspNetCore` za obravnavo HTTP zahtevkov. In spreminjamo metodo `IsPrime`, da jo naredimo zasebno, samo da pokažemo, da lahko imate zasebne metode v svoji kodi. Ostala koda je enaka kot prej.
+Če pogledamo rešitev v mapi `04-PracticalImplementation`, se lahko zdi veliko bolj zapletena kot prejšnja. A v resnici ni. Če natančno pogledate projekt `src/Calculator`, boste videli, da gre večinoma za enako kodo kot v prejšnjem primeru. Edina razlika je, da uporabljamo drugačno knjižnico `ModelContextProtocol.AspNetCore` za upravljanje HTTP zahtev. In metodo `IsPrime` spremenimo v zasebno, samo da pokažemo, da lahko v kodi imate zasebne metode. Ostala koda je enaka kot prej.
 
-Drugi projekti so iz [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). Prisotnost .NET Aspire v rešitvi bo izboljšala izkušnjo razvijalca med razvojem in testiranjem ter pomagala pri opazljivosti. Ni potrebno za zagon strežnika, vendar je dobro imeti to v svoji rešitvi.
+Drugi projekti so iz [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). Vključitev .NET Aspire v rešitev izboljša izkušnjo razvijalca med razvojem in testiranjem ter pomaga pri opazovanju. Za zagon strežnika ni obvezno, vendar je dobra praksa, da je vključeno v vašo rešitev.
 
-## Zaženite strežnik lokalno
+## Zaženi strežnik lokalno
 
-1. Iz VS Code (z razširitvijo C# DevKit), odprite rešitev `04-PracticalImplementation\samples\csharp\src\Calculator-chap4.sln`.
-2. Pritisnite `F5`, da zaženete strežnik. Začeti bi se moral spletni brskalnik z .NET Aspire nadzorno ploščo.
+1. V VS Code (z razširitvijo C# DevKit) pojdite v imenik `04-PracticalImplementation/samples/csharp`.
+1. Zaženite naslednji ukaz za zagon strežnika:
 
-ali
-
-1. Iz terminala, pojdite v mapo `04-PracticalImplementation\samples\csharp\src`
-2. Izvedite naslednji ukaz za zagon strežnika:
    ```bash
-    dotnet run --project .\AppHost
+    dotnet watch run --project ./src/AppHost
    ```
 
-3. Na nadzorni plošči si zabeležite URL `http`. Moral bi biti nekaj podobnega `http://localhost:5058/`.
+1. Ko spletni brskalnik odpre nadzorno ploščo .NET Aspire, si zapomnite URL `http`. Moral bi biti nekaj takega kot `http://localhost:5058/`.
 
-## Test `SSE` z ModelContext Protocol Inspector
+   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.sl.png)
 
-Če imate Node.js 22.7.5 in višje, lahko uporabite ModelContext Protocol Inspector za testiranje vašega strežnika.
+## Testirajte Streamable HTTP z MCP Inspector
 
-Zaženite strežnik in zaženite naslednji ukaz v terminalu:
+Če imate Node.js 22.7.5 ali novejši, lahko uporabite MCP Inspector za testiranje vašega strežnika.
+
+Zaženite strežnik in v terminalu zaženite naslednji ukaz:
 
 ```bash
-npx @modelcontextprotocol/inspector@latest
+npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp_inspector.2939244613cb5a0549b83942e062bceb69083c3d7b331c8de991ecf6834d6904.sl.png)
+![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.sl.png)
 
-- Izberite `SSE` as the Transport type. SSE stand for Server-Sent Events. 
-- In the Url field, enter the URL of the server noted earlier,and append `/sse`. Moral bi biti `http` (ne `https`) something like `http://localhost:5058/sse`.
+- Izberite `Streamable HTTP` as the Transport type.
+- In the Url field, enter the URL of the server noted earlier, and append `/mcp`. Moral bi biti `http` (ne `https`) something like `http://localhost:5058/mcp`.
 - select the Connect button.
 
 A nice thing about the Inspector is that it provide a nice visibility on what is happening.
 
-- Try listing the availables tools
+- Try listing the available tools
 - Try some of them, it should works just like before.
 
+## Test MCP Server with GitHub Copilot Chat in VS Code
 
-## Test `SSE` with Github Copilot Chat in VS Code
+To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp` strežnik, ki smo ga prej ustvarili, da izgleda tako:
 
-To use the `SSE` transport with Github Copilot Chat, change the configuration of the `mcp-calc` strežnik, ustvarjen prej, da izgleda takole:
-
-```json
-"mcp-calc": {
-    "type": "sse",
-    "url": "http://localhost:5058/sse"
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "http://localhost:5058/mcp"
+    }
+  }
 }
 ```
 
 Naredite nekaj testov:
-- Povprašajte po 3 praštevilih po 6780. Opazite, kako Copilot uporablja nova orodja `NextFivePrimeNumbers` in vrne le prvih 3 praštevila.
-- Povprašajte po 7 praštevilih po 111, da vidite, kaj se zgodi.
 
-# Namestitev strežnika na Azure
+- Vprašajte za "3 praštevila po 6780". Opazujte, kako Copilot uporabi nova orodja `NextFivePrimeNumbers` in vrne le prva 3 praštevila.
+- Vprašajte za "7 praštevil po 111", da vidite, kaj se zgodi.
+- Vprašajte "John ima 24 lizik in jih želi razdeliti med 3 otroke. Koliko lizik dobi vsak otrok?", da vidite, kaj se zgodi.
 
-Namestimo strežnik na Azure, da ga lahko uporablja več ljudi.
+## Namestite strežnik v Azure
 
-Iz terminala, pojdite v mapo `04-PracticalImplementation\samples\csharp\src` in zaženite naslednji ukaz:
+Namestimo strežnik v Azure, da ga lahko uporablja več ljudi.
 
-```bash
-azd init
-```
-
-To bo ustvarilo nekaj datotek lokalno za shranjevanje konfiguracije Azure virov in vaše infrastrukture kot kode (IaC).
-
-Nato zaženite naslednji ukaz za namestitev strežnika na Azure:
+V terminalu pojdite v mapo `04-PracticalImplementation/samples/csharp` in zaženite naslednji ukaz:
 
 ```bash
 azd up
@@ -87,13 +83,25 @@ azd up
 
 Ko je namestitev končana, bi morali videti sporočilo, kot je to:
 
-![Azd deployment success](../../../../../translated_images/chap4-azd-deploy-success.f69e7f61e50fdbf13ea3bf7302d9850a18e12832f34daee1695f29da3f32b452.sl.png)
+![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.sl.png)
 
-Pojdite na Aspire nadzorno ploščo in si zabeležite `HTTP` URL za uporabo v MCP Inspectorju in v Github Copilot Chat.
+Vzemite URL in ga uporabite v MCP Inspectorju ter v GitHub Copilot Chat.
+
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "https://calc-mcp.gentleriver-3977fbcf.australiaeast.azurecontainerapps.io/mcp"
+    }
+  }
+}
+```
 
 ## Kaj sledi?
 
-Preizkusimo različne vrste prenosa in orodja za testiranje ter tudi namestimo naš MCP strežnik na Azure. Toda kaj, če naš strežnik potrebuje dostop do zasebnih virov? Na primer, do baze podatkov ali zasebnega API-ja? V naslednjem poglavju bomo videli, kako lahko izboljšamo varnost našega strežnika.
+Preizkušamo različne vrste transporta in orodja za testiranje. Prav tako namestimo vaš MCP strežnik v Azure. Kaj pa, če naš strežnik potrebuje dostop do zasebnih virov? Na primer baze podatkov ali zasebnega API-ja? V naslednjem poglavju bomo videli, kako lahko izboljšamo varnost našega strežnika.
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da se zavedate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije je priporočljivo profesionalno človeško prevajanje. Ne prevzemamo odgovornosti za kakršna koli nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Ne odgovarjamo za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.

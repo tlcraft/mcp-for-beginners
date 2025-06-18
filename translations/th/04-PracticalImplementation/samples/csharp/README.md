@@ -1,99 +1,107 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5020a3e1a1c7f30c00f9e37f1fa208e3",
-  "translation_date": "2025-05-17T14:08:55+00:00",
+  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
+  "translation_date": "2025-06-18T07:50:28+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "th"
 }
 -->
 # ตัวอย่าง
 
-ตัวอย่างก่อนหน้านี้แสดงวิธีการใช้โปรเจค .NET ในเครื่องกับประเภท `sdio` และวิธีการรันเซิร์ฟเวอร์ในเครื่องในคอนเทนเนอร์ นี่เป็นวิธีแก้ปัญหาที่ดีในหลายสถานการณ์ อย่างไรก็ตาม มันจะมีประโยชน์ถ้าเซิร์ฟเวอร์รันอยู่ในระยะไกล เช่น ในสภาพแวดล้อมคลาวด์ นี่คือที่ที่ประเภท `http` เข้ามามีบทบาท
+ตัวอย่างก่อนหน้านี้แสดงให้เห็นวิธีการใช้โปรเจกต์ .NET แบบโลคอลที่มีประเภท `stdio` และวิธีการรันเซิร์ฟเวอร์ในเครื่องผ่านคอนเทนเนอร์ นี่เป็นวิธีแก้ปัญหาที่ดีในหลายสถานการณ์ อย่างไรก็ตาม การมีเซิร์ฟเวอร์ที่รันจากระยะไกล เช่น ในสภาพแวดล้อมคลาวด์ ก็มีประโยชน์เช่นกัน ซึ่งตรงนี้เองที่ประเภท `http` เข้ามามีบทบาท
 
-เมื่อดูที่วิธีแก้ปัญหาในโฟลเดอร์ `04-PracticalImplementation` อาจดูซับซ้อนกว่าตัวอย่างก่อนหน้า แต่จริงๆ แล้วไม่ใช่ ถ้าดูอย่างใกล้ชิดในโปรเจค `src/mcpserver/mcpserver.csproj` คุณจะเห็นว่ามันเป็นโค้ดเดียวกันกับตัวอย่างก่อนหน้า ความแตกต่างเดียวคือเราใช้ไลบรารี `ModelContextProtocol.AspNetCore` ที่แตกต่างกันเพื่อจัดการกับคำขอ HTTP และเราเปลี่ยนวิธี `IsPrime` ให้เป็นแบบ private เพียงเพื่อแสดงว่าคุณสามารถมีวิธี private ในโค้ดของคุณ โค้ดที่เหลือเหมือนกับก่อนหน้า
+เมื่อดูที่โซลูชันในโฟลเดอร์ `04-PracticalImplementation` อาจดูซับซ้อนกว่าตัวอย่างก่อนหน้านี้มาก แต่ในความเป็นจริงแล้วไม่ใช่เลย ถ้าคุณดูโปรเจกต์ `src/Calculator` อย่างละเอียด จะเห็นว่าโค้ดส่วนใหญ่เหมือนกับตัวอย่างก่อนหน้า ความแตกต่างเพียงอย่างเดียวคือเราใช้ไลบรารีต่างออกไปคือ `ModelContextProtocol.AspNetCore` เพื่อจัดการกับ HTTP requests และเราเปลี่ยนเมธอด `IsPrime` ให้เป็น private เพื่อแสดงให้เห็นว่าคุณสามารถมีเมธอดส่วนตัวในโค้ดของคุณได้ โค้ดส่วนที่เหลือยังเหมือนเดิม
 
-โปรเจคอื่นๆ มาจาก [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview) การมี .NET Aspire ในวิธีแก้ปัญหาจะช่วยปรับปรุงประสบการณ์ของนักพัฒนาในขณะพัฒนาและทดสอบ และช่วยในการสังเกต ไม่จำเป็นต้องรันเซิร์ฟเวอร์ แต่เป็นการปฏิบัติที่ดีที่จะมีมันในวิธีแก้ปัญหาของคุณ
+โปรเจกต์อื่นๆ มาจาก [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview) การมี .NET Aspire ในโซลูชันจะช่วยปรับปรุงประสบการณ์ของนักพัฒนาในระหว่างการพัฒนาและทดสอบ รวมถึงช่วยในเรื่องของการสังเกตการณ์ (observability) แม้ว่าจะไม่จำเป็นสำหรับการรันเซิร์ฟเวอร์ แต่ก็เป็นแนวทางปฏิบัติที่ดีที่จะมีไว้ในโซลูชันของคุณ
 
-## เริ่มเซิร์ฟเวอร์ในเครื่อง
+## เริ่มรันเซิร์ฟเวอร์ในเครื่อง
 
-1. จาก VS Code (พร้อมส่วนขยาย C# DevKit) เปิดวิธีแก้ปัญหา `04-PracticalImplementation\samples\csharp\src\Calculator-chap4.sln`
-2. กด `F5` เพื่อเริ่มเซิร์ฟเวอร์ มันควรจะเปิดเว็บเบราว์เซอร์พร้อมแดชบอร์ด .NET Aspire
+1. จาก VS Code (พร้อมส่วนขยาย C# DevKit) ให้ไปที่ไดเรกทอรี `04-PracticalImplementation/samples/csharp`
+1. รันคำสั่งต่อไปนี้เพื่อเริ่มเซิร์ฟเวอร์:
 
-หรือ
-
-1. จาก terminal นำทางไปยังโฟลเดอร์ `04-PracticalImplementation\samples\csharp\src`
-2. รันคำสั่งต่อไปนี้เพื่อเริ่มเซิร์ฟเวอร์:
    ```bash
-    dotnet run --project .\AppHost
+    dotnet watch run --project ./src/AppHost
    ```
 
-3. จากแดชบอร์ด สังเกต URL `http` มันควรจะเป็นบางอย่างเช่น `http://localhost:5058/`.
+1. เมื่อเว็บเบราว์เซอร์เปิดหน้าแดชบอร์ด .NET Aspire ให้จดจำ URL ของ `http` ไว้ ซึ่งน่าจะเป็นประมาณ `http://localhost:5058/`
 
-## Test `SSE` พร้อมกับ ModelContext Protocol Inspector
+   ![แดชบอร์ด .NET Aspire](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.th.png)
 
-หากคุณมี Node.js 22.7.5 ขึ้นไป คุณสามารถใช้ ModelContext Protocol Inspector เพื่อทดสอบเซิร์ฟเวอร์ของคุณ
+## ทดสอบ Streamable HTTP ด้วย MCP Inspector
 
-เริ่มเซิร์ฟเวอร์และรันคำสั่งต่อไปนี้ใน terminal:
+ถ้าคุณมี Node.js เวอร์ชัน 22.7.5 ขึ้นไป คุณสามารถใช้ MCP Inspector ในการทดสอบเซิร์ฟเวอร์ของคุณได้
+
+เริ่มเซิร์ฟเวอร์แล้วรันคำสั่งนี้ในเทอร์มินัล:
 
 ```bash
-npx @modelcontextprotocol/inspector@latest
+npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp_inspector.2939244613cb5a0549b83942e062bceb69083c3d7b331c8de991ecf6834d6904.th.png)
+![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.th.png)
 
-- เลือก `SSE` as the Transport type. SSE stand for Server-Sent Events. 
-- In the Url field, enter the URL of the server noted earlier,and append `/sse` มันควรจะเป็น `http` (ไม่ใช่ `https`) something like `http://localhost:5058/sse`.
+- เลือก `Streamable HTTP` as the Transport type.
+- In the Url field, enter the URL of the server noted earlier, and append `/mcp` ซึ่งควรจะเป็น `http` (ไม่ใช่ `https`) something like `http://localhost:5058/mcp`.
 - select the Connect button.
 
 A nice thing about the Inspector is that it provide a nice visibility on what is happening.
 
-- Try listing the availables tools
+- Try listing the available tools
 - Try some of them, it should works just like before.
 
+## Test MCP Server with GitHub Copilot Chat in VS Code
 
-## Test `SSE` with Github Copilot Chat in VS Code
+To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp` เซิร์ฟเวอร์ที่สร้างไว้ก่อนหน้านี้ควรมีลักษณะดังนี้:
 
-To use the `SSE` transport with Github Copilot Chat, change the configuration of the `mcp-calc` เซิร์ฟเวอร์ที่สร้างขึ้นก่อนหน้านี้เพื่อให้ดูเหมือนนี้:
-
-```json
-"mcp-calc": {
-    "type": "sse",
-    "url": "http://localhost:5058/sse"
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "http://localhost:5058/mcp"
+    }
+  }
 }
 ```
 
-ทำการทดสอบบางอย่าง:
-- ขอจำนวนเฉพาะ 3 ตัวหลังจาก 6780 สังเกตว่า Copilot จะใช้เครื่องมือใหม่ `NextFivePrimeNumbers` และคืนค่าเฉพาะ 3 ตัวแรกเท่านั้น
-- ขอจำนวนเฉพาะ 7 ตัวหลังจาก 111 เพื่อดูว่าเกิดอะไรขึ้น
+ลองทดสอบดังนี้:
 
-# Deploy เซิร์ฟเวอร์ไปยัง Azure
+- ขอ "จำนวนเฉพาะ 3 ตัวหลังเลข 6780" สังเกตว่า Copilot จะใช้เครื่องมือใหม่ `NextFivePrimeNumbers` และคืนค่าจำนวนเฉพาะ 3 ตัวแรกเท่านั้น
+- ขอ "จำนวนเฉพาะ 7 ตัวหลังเลข 111" เพื่อดูผลลัพธ์
+- ขอ "จอห์นมีลูกกวาด 24 เม็ดและต้องการแจกให้ลูกทั้ง 3 คนเท่าๆ กัน แต่ละคนจะได้ลูกกวาดกี่เม็ด?" เพื่อดูผลลัพธ์
 
-มา deploy เซิร์ฟเวอร์ไปยัง Azure เพื่อให้คนอื่นๆ สามารถใช้งานได้
+## นำเซิร์ฟเวอร์ไปใช้งานบน Azure
 
-จาก terminal นำทางไปยังโฟลเดอร์ `04-PracticalImplementation\samples\csharp\src` และรันคำสั่งต่อไปนี้:
+มานำเซิร์ฟเวอร์ไปใช้งานบน Azure เพื่อให้คนอื่นสามารถใช้งานได้มากขึ้น
 
-```bash
-azd init
-```
-
-นี่จะสร้างไฟล์บางอย่างในเครื่องเพื่อบันทึกการตั้งค่าทรัพยากร Azure และโครงสร้างพื้นฐานของคุณเป็นโค้ด (IaC)
-
-จากนั้น รันคำสั่งต่อไปนี้เพื่อ deploy เซิร์ฟเวอร์ไปยัง Azure:
+จากเทอร์มินัล ให้ไปที่โฟลเดอร์ `04-PracticalImplementation/samples/csharp` แล้วรันคำสั่งนี้:
 
 ```bash
 azd up
 ```
 
-เมื่อการ deploy เสร็จสิ้น คุณควรเห็นข้อความบางอย่างเช่นนี้:
+เมื่อการดีพลอยเสร็จสิ้น คุณควรเห็นข้อความแบบนี้:
 
-![Azd deployment success](../../../../../translated_images/chap4-azd-deploy-success.f69e7f61e50fdbf13ea3bf7302d9850a18e12832f34daee1695f29da3f32b452.th.png)
+![การดีพลอย Azd สำเร็จ](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.th.png)
 
-นำทางไปยังแดชบอร์ด Aspire และสังเกต URL `HTTP` เพื่อใช้ใน MCP Inspector และใน Github Copilot Chat
+นำ URL นี้ไปใช้ใน MCP Inspector และใน GitHub Copilot Chat
 
-## อะไรต่อไป?
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "https://calc-mcp.gentleriver-3977fbcf.australiaeast.azurecontainerapps.io/mcp"
+    }
+  }
+}
+```
 
-เราลองใช้ประเภทการขนส่งต่างๆ และเครื่องมือทดสอบ และเรายัง deploy เซิร์ฟเวอร์ MCP ของเราไปยัง Azure แต่ถ้าเซิร์ฟเวอร์ของเราต้องการเข้าถึงทรัพยากรส่วนตัวล่ะ? เช่น ฐานข้อมูลหรือ API ส่วนตัว? ในบทถัดไป เราจะเห็นวิธีการปรับปรุงความปลอดภัยของเซิร์ฟเวอร์ของเรา
+## ต่อไปทำอะไรดี?
+
+เราได้ลองใช้ประเภทการขนส่งและเครื่องมือทดสอบต่างๆ และยังได้นำเซิร์ฟเวอร์ MCP ของคุณไปดีพลอยบน Azure แต่ถ้าเซิร์ฟเวอร์ของเราต้องการเข้าถึงทรัพยากรส่วนตัวล่ะ? เช่น ฐานข้อมูลหรือ API ส่วนตัว? ในบทถัดไป เราจะมาดูวิธีปรับปรุงความปลอดภัยของเซิร์ฟเวอร์ของเราให้ดีขึ้น
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้ได้ความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ แนะนำให้ใช้การแปลโดยมนุษย์ที่มีความเชี่ยวชาญ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความที่ผิดพลาดซึ่งเกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลสำคัญแนะนำให้ใช้บริการแปลโดยมนุษย์มืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความที่ผิดพลาดใด ๆ ที่เกิดจากการใช้การแปลนี้

@@ -1,97 +1,107 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5020a3e1a1c7f30c00f9e37f1fa208e3",
-  "translation_date": "2025-05-17T14:07:27+00:00",
+  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
+  "translation_date": "2025-06-18T07:49:03+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "pa"
 }
 -->
-ਪਿਛਲੇ ਉਦਾਹਰਣ ਵਿੱਚ ਦਿਖਾਇਆ ਗਿਆ ਹੈ ਕਿ ਕਿਸ ਤਰ੍ਹਾਂ ਇੱਕ ਸਥਾਨਕ .NET ਪ੍ਰਾਜੈਕਟ ਨੂੰ `sdio` ਕਿਸਮ ਨਾਲ ਵਰਤਣਾ ਹੈ। ਅਤੇ ਕਿਸ ਤਰ੍ਹਾਂ ਸਰਵਰ ਨੂੰ ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਕੰਟੇਨਰ ਵਿੱਚ ਚਲਾਉਣਾ ਹੈ। ਬਹੁਤ ਸਾਰੀਆਂ ਸਥਿਤੀਆਂ ਵਿੱਚ ਇਹ ਇੱਕ ਵਧੀਆ ਹੱਲ ਹੈ। ਹਾਲਾਂਕਿ, ਇਹ ਲਾਭਦਾਇਕ ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਸਰਵਰ ਨੂੰ ਦੂਰਵਰਤੀ ਤੌਰ 'ਤੇ ਚਲਾਇਆ ਜਾਵੇ, ਜਿਵੇਂ ਕਿ ਕਲਾਉਡ ਵਾਤਾਵਰਣ ਵਿੱਚ। ਇੱਥੇ `http` ਕਿਸਮ ਦੀ ਵਰਤੋਂ ਹੁੰਦੀ ਹੈ।
+# Sample
 
-`04-PracticalImplementation` ਫੋਲਡਰ ਵਿੱਚ ਹੱਲ ਨੂੰ ਦੇਖਦੇ ਹੋਏ, ਇਹ ਪਿਛਲੇ ਵਾਲੇ ਨਾਲੋਂ ਕਾਫ਼ੀ ਜਟਿਲ ਲੱਗ ਸਕਦਾ ਹੈ। ਪਰ ਅਸਲ ਵਿੱਚ, ਇਹ ਨਹੀਂ ਹੈ। ਜੇ ਤੁਸੀਂ ਪ੍ਰਾਜੈਕਟ `src/mcpserver/mcpserver.csproj` ਨੂੰ ਧਿਆਨ ਨਾਲ ਦੇਖੋ, ਤਾਂ ਤੁਹਾਨੂੰ ਪਤਾ ਲੱਗੇਗਾ ਕਿ ਇਹ ਮੁੱਖ ਤੌਰ 'ਤੇ ਪਿਛਲੇ ਉਦਾਹਰਣ ਵਾਲਾ ਹੀ ਕੋਡ ਹੈ। ਫਰਕ ਸਿਰਫ ਇਹ ਹੈ ਕਿ ਅਸੀਂ HTTP ਬੇਨਤੀ ਨੂੰ ਸੰਭਾਲਣ ਲਈ ਇੱਕ ਵੱਖਰੀ ਲਾਇਬ੍ਰੇਰੀ `ModelContextProtocol.AspNetCore` ਦੀ ਵਰਤੋਂ ਕਰ ਰਹੇ ਹਾਂ। ਅਤੇ ਅਸੀਂ ਢੰਗ ਬਦਲਦੇ ਹਾਂ `IsPrime` ਇਸਨੂੰ ਨਿੱਜੀ ਬਣਾਉਣ ਲਈ, ਸਿਰਫ ਇਹ ਦਿਖਾਉਣ ਲਈ ਕਿ ਤੁਸੀਂ ਆਪਣੇ ਕੋਡ ਵਿੱਚ ਨਿੱਜੀ ਢੰਗ ਰੱਖ ਸਕਦੇ ਹੋ। ਬਾਕੀ ਕੋਡ ਪਹਿਲਾਂ ਵਾਂਗ ਹੀ ਹੈ।
+ਪਿਛਲਾ ਉਦਾਹਰਨ ਦਿਖਾਉਂਦਾ ਹੈ ਕਿ ਕਿਸ ਤਰ੍ਹਾਂ ਇੱਕ ਸਥਾਨਕ .NET ਪ੍ਰੋਜੈਕਟ ਨੂੰ `stdio` ਕਿਸਮ ਨਾਲ ਵਰਤਣਾ ਹੈ। ਅਤੇ ਕਿਵੇਂ ਸਰਵਰ ਨੂੰ ਇੱਕ ਕੰਟੇਨਰ ਵਿੱਚ ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਚਲਾਇਆ ਜਾ ਸਕਦਾ ਹੈ। ਇਹ ਕਈ ਹਾਲਾਤਾਂ ਵਿੱਚ ਇੱਕ ਚੰਗਾ ਹੱਲ ਹੈ। ਪਰ, ਸਰਵਰ ਨੂੰ ਦੂਰੀ ਤੋਂ ਚਲਾਉਣਾ ਵੀ ਲਾਭਦਾਇਕ ਹੋ ਸਕਦਾ ਹੈ, ਜਿਵੇਂ ਕਿ ਕਲਾਉਡ ਵਾਤਾਵਰਣ ਵਿੱਚ। ਇਹੋ ਜਗ੍ਹਾ ਤੇ `http` ਕਿਸਮ ਆਉਂਦੀ ਹੈ।
 
-ਹੋਰ ਪ੍ਰਾਜੈਕਟ [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview) ਤੋਂ ਹਨ। ਹੱਲ ਵਿੱਚ .NET Aspire ਨੂੰ ਰੱਖਣਾ ਵਿਕਾਸਕ ਦੇ ਤਜਰਬੇ ਨੂੰ ਵਿਕਾਸ ਅਤੇ ਟੈਸਟਿੰਗ ਦੇ ਦੌਰਾਨ ਸੁਧਾਰੇਗਾ ਅਤੇ ਦ੍ਰਿਸ਼ਮਾਨਤਾ ਵਿੱਚ ਮਦਦ ਕਰੇਗਾ। ਸਰਵਰ ਚਲਾਉਣ ਲਈ ਇਹ ਲਾਜ਼ਮੀ ਨਹੀਂ ਹੈ, ਪਰ ਇਹ ਹੱਲ ਵਿੱਚ ਰੱਖਣਾ ਇੱਕ ਵਧੀਆ ਅਭਿਆਸ ਹੈ।
+`04-PracticalImplementation` ਫੋਲਡਰ ਵਿੱਚ ਹੱਲ ਨੂੰ ਦੇਖਦੇ ਹੋਏ, ਇਹ ਪਹਿਲਾਂ ਵਾਲੇ ਨਾਲੋਂ ਕਾਫੀ ਜ਼ਿਆਦਾ ਜਟਿਲ ਲੱਗ ਸਕਦਾ ਹੈ। ਪਰ ਅਸਲ ਵਿੱਚ, ਇਹ ਐਸਾ ਨਹੀਂ ਹੈ। ਜੇ ਤੁਸੀਂ ਪ੍ਰੋਜੈਕਟ `src/Calculator` ਨੂੰ ਧਿਆਨ ਨਾਲ ਵੇਖੋ, ਤਾਂ ਤੁਹਾਨੂੰ ਪਤਾ ਲੱਗੇਗਾ ਕਿ ਇਹ ਜ਼ਿਆਦਾਤਰ ਪਹਿਲਾਂ ਵਾਲੇ ਕੋਡ ਵਰਗਾ ਹੀ ਹੈ। ਸਿਰਫ ਫਰਕ ਇਹ ਹੈ ਕਿ ਅਸੀਂ HTTP ਬੇਨਤੀਆਂ ਨੂੰ ਸੰਭਾਲਣ ਲਈ ਇੱਕ ਵੱਖਰਾ ਲਾਇਬ੍ਰੇਰੀ `ModelContextProtocol.AspNetCore` ਵਰਤ ਰਹੇ ਹਾਂ। ਅਤੇ ਅਸੀਂ `IsPrime` ਮੈਥਡ ਨੂੰ ਪ੍ਰਾਈਵੇਟ ਬਣਾਉਂਦੇ ਹਾਂ, ਸਿਰਫ ਇਹ ਦਿਖਾਉਣ ਲਈ ਕਿ ਤੁਸੀਂ ਆਪਣੇ ਕੋਡ ਵਿੱਚ ਪ੍ਰਾਈਵੇਟ ਮੈਥਡ ਵੀ ਰੱਖ ਸਕਦੇ ਹੋ। ਬਾਕੀ ਸਾਰਾ ਕੋਡ ਪਹਿਲਾਂ ਵਰਗਾ ਹੀ ਹੈ।
 
-## ਸਰਵਰ ਨੂੰ ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਚਲਾਉਣਾ ਸ਼ੁਰੂ ਕਰੋ
+ਹੋਰ ਪ੍ਰੋਜੈਕਟ [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview) ਤੋਂ ਹਨ। ਹੱਲ ਵਿੱਚ .NET Aspire ਹੋਣਾ ਡਿਵੈਲਪਰ ਦੇ ਤਜਰਬੇ ਨੂੰ ਵਿਕਾਸ ਅਤੇ ਟੈਸਟਿੰਗ ਦੌਰਾਨ ਸੁਧਾਰਦਾ ਹੈ ਅਤੇ ਨਿਰੀਖਣ ਯੋਗਤਾ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ। ਸਰਵਰ ਚਲਾਉਣ ਲਈ ਇਹ ਜ਼ਰੂਰੀ ਨਹੀਂ ਹੈ, ਪਰ ਇਹ ਤੁਹਾਡੇ ਹੱਲ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਣਾ ਚੰਗੀ ਪ੍ਰੈਕਟਿਸ ਹੈ।
 
-1. VS Code ਤੋਂ (C# DevKit ਐਕਸਟੈਂਸ਼ਨ ਨਾਲ), ਹੱਲ `04-PracticalImplementation\samples\csharp\src\Calculator-chap4.sln` ਖੋਲ੍ਹੋ।
-2. ਸਰਵਰ ਨੂੰ ਚਲਾਉਣ ਲਈ `F5` ਦਬਾਓ। ਇਸਨੂੰ .NET Aspire ਡੈਸ਼ਬੋਰਡ ਨਾਲ ਵੈਬ ਬ੍ਰਾਊਜ਼ਰ ਸ਼ੁਰੂ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ।
+## ਸਰਵਰ ਨੂੰ ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਚਲਾਓ
 
-ਜਾਂ
+1. VS Code (C# DevKit ਐਕਸਟੈਂਸ਼ਨ ਨਾਲ) ਤੋਂ, `04-PracticalImplementation/samples/csharp` ਡਾਇਰੈਕਟਰੀ ਵਿੱਚ ਜਾਓ।
+1. ਸਰਵਰ ਚਲਾਉਣ ਲਈ ਹੇਠਾਂ ਦਿੱਤਾ ਕਮਾਂਡ ਚਲਾਓ:
 
-1. ਇੱਕ ਟਰਮੀਨਲ ਤੋਂ, ਫੋਲਡਰ `04-PracticalImplementation\samples\csharp\src` ਵਿੱਚ ਜਾਓ
-2. ਸਰਵਰ ਨੂੰ ਚਲਾਉਣ ਲਈ ਹੇਠਾਂ ਦਿੱਤੇ ਕਮਾਂਡ ਨੂੰ ਚਲਾਓ:
    ```bash
-    dotnet run --project .\AppHost
+    dotnet watch run --project ./src/AppHost
    ```
 
-3. ਡੈਸ਼ਬੋਰਡ ਤੋਂ, `http` URL ਨੂੰ ਨੋਟ ਕਰੋ। ਇਹ ਕੁਝ ਇਸ ਤਰ੍ਹਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ `http://localhost:5058/`.
+1. ਜਦੋਂ ਕੋਈ ਵੈੱਬ ਬ੍ਰਾਊਜ਼ਰ .NET Aspire ਡੈਸ਼ਬੋਰਡ ਖੋਲ੍ਹਦਾ ਹੈ, ਤਾਂ `http` URL ਨੂੰ ਨੋਟ ਕਰੋ। ਇਹ ਕੁਝ ਇਸ ਤਰ੍ਹਾਂ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ `http://localhost:5058/`।
 
-## Test `SSE` ModelContext Protocol Inspector ਨਾਲ
+   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.pa.png)
 
-ਜੇ ਤੁਹਾਡੇ ਕੋਲ Node.js 22.7.5 ਅਤੇ ਉੱਚਾ ਹੈ, ਤਾਂ ਤੁਸੀਂ ਆਪਣੇ ਸਰਵਰ ਨੂੰ ਟੈਸਟ ਕਰਨ ਲਈ ModelContext Protocol Inspector ਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦੇ ਹੋ।
+## MCP ਇੰਸਪੈਕਟਰ ਨਾਲ Streamable HTTP ਦੀ ਟੈਸਟਿੰਗ ਕਰੋ
 
-ਸਰਵਰ ਨੂੰ ਚਲਾਉਣਾ ਸ਼ੁਰੂ ਕਰੋ ਅਤੇ ਟਰਮੀਨਲ ਵਿੱਚ ਹੇਠਾਂ ਦਿੱਤੇ ਕਮਾਂਡ ਨੂੰ ਚਲਾਓ:
+ਜੇ ਤੁਹਾਡੇ ਕੋਲ Node.js 22.7.5 ਜਾਂ ਇਸ ਤੋਂ ਉੱਚਾ ਵਰਜਨ ਹੈ, ਤਾਂ ਤੁਸੀਂ MCP ਇੰਸਪੈਕਟਰ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਆਪਣੇ ਸਰਵਰ ਦੀ ਟੈਸਟਿੰਗ ਕਰ ਸਕਦੇ ਹੋ।
+
+ਸਰਵਰ ਚਲਾਓ ਅਤੇ ਟਰਮੀਨਲ ਵਿੱਚ ਹੇਠਾਂ ਦਿੱਤਾ ਕਮਾਂਡ ਚਲਾਓ:
 
 ```bash
-npx @modelcontextprotocol/inspector@latest
+npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp_inspector.2939244613cb5a0549b83942e062bceb69083c3d7b331c8de991ecf6834d6904.pa.png)
+![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.pa.png)
 
-- `SSE` as the Transport type. SSE stand for Server-Sent Events. 
-- In the Url field, enter the URL of the server noted earlier,and append `/sse` ਚੁਣੋ। ਇਹ `http` ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ (ਨਹੀਂ `https`) something like `http://localhost:5058/sse`.
+- `Streamable HTTP` as the Transport type.
+- In the Url field, enter the URL of the server noted earlier, and append `/mcp` ਚੁਣੋ। ਇਹ `http` ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ (ਨਾ ਕਿ `https`) something like `http://localhost:5058/mcp`.
 - select the Connect button.
 
 A nice thing about the Inspector is that it provide a nice visibility on what is happening.
 
-- Try listing the availables tools
+- Try listing the available tools
 - Try some of them, it should works just like before.
 
+## Test MCP Server with GitHub Copilot Chat in VS Code
 
-## Test `SSE` with Github Copilot Chat in VS Code
+To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp` ਸਰਵਰ ਜੋ ਪਹਿਲਾਂ ਬਣਾਇਆ ਗਿਆ ਸੀ, ਇਸ ਤਰ੍ਹਾਂ ਲੱਗਦਾ ਹੈ:
 
-To use the `SSE` transport with Github Copilot Chat, change the configuration of the `mcp-calc` ਪਹਿਲਾਂ ਬਣਾਇਆ ਸਰਵਰ ਇਸ ਤਰ੍ਹਾਂ ਦੇਖਣ ਲਈ:
-
-```json
-"mcp-calc": {
-    "type": "sse",
-    "url": "http://localhost:5058/sse"
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "http://localhost:5058/mcp"
+    }
+  }
 }
 ```
 
 ਕੁਝ ਟੈਸਟ ਕਰੋ:
-- 6780 ਤੋਂ ਬਾਅਦ 3 ਪ੍ਰਾਈਮ ਨੰਬਰਾਂ ਦੀ ਬੇਨਤੀ ਕਰੋ। ਨੋਟ ਕਰੋ ਕਿ Copilot ਨਵੇਂ ਸੰਦ `NextFivePrimeNumbers` ਦੀ ਵਰਤੋਂ ਕਰੇਗਾ ਅਤੇ ਸਿਰਫ ਪਹਿਲੇ 3 ਪ੍ਰਾਈਮ ਨੰਬਰ ਵਾਪਸ ਕਰੇਗਾ।
-- 111 ਤੋਂ ਬਾਅਦ 7 ਪ੍ਰਾਈਮ ਨੰਬਰਾਂ ਦੀ ਬੇਨਤੀ ਕਰੋ, ਦੇਖਣ ਲਈ ਕਿ ਕੀ ਹੁੰਦਾ ਹੈ।
 
-# ਸਰਵਰ ਨੂੰ Azure 'ਤੇ ਡਿਪਲੋਈ ਕਰੋ
+- "6780 ਤੋਂ ਬਾਅਦ 3 ਪ੍ਰਾਈਮ ਨੰਬਰ" ਮੰਗੋ। ਦੇਖੋ ਕਿ Copilot ਨਵੇਂ ਟੂਲ `NextFivePrimeNumbers` ਦੀ ਵਰਤੋਂ ਕਰੇਗਾ ਅਤੇ ਸਿਰਫ ਪਹਿਲੇ 3 ਪ੍ਰਾਈਮ ਨੰਬਰ ਵਾਪਸ ਕਰੇਗਾ।
+- "111 ਤੋਂ ਬਾਅਦ 7 ਪ੍ਰਾਈਮ ਨੰਬਰ" ਮੰਗੋ, ਦੇਖਣ ਲਈ ਕਿ ਕੀ ਹੁੰਦਾ ਹੈ।
+- "ਜੌਨ ਕੋਲ 24 ਲਾਲੀ ਹਨ ਅਤੇ ਉਹ ਆਪਣੇ 3 ਬੱਚਿਆਂ ਵਿੱਚ ਸਾਰੀਆਂ ਵੰਡਣਾ ਚਾਹੁੰਦਾ ਹੈ। ਹਰ ਬੱਚੇ ਕੋਲ ਕਿੰਨੀਆਂ ਲਾਲੀਆਂ ਹਨ?" ਮੰਗੋ, ਦੇਖਣ ਲਈ ਕਿ ਕੀ ਹੁੰਦਾ ਹੈ।
 
-ਆਓ ਸਰਵਰ ਨੂੰ Azure 'ਤੇ ਡਿਪਲੋਈ ਕਰੀਏ ਤਾਂ ਕਿ ਵਧੇਰੇ ਲੋਕ ਇਸਨੂੰ ਵਰਤ ਸਕਣ।
+## ਸਰਵਰ ਨੂੰ Azure 'ਤੇ ਡਿਪਲੌਇ ਕਰੋ
 
-ਟਰਮੀਨਲ ਤੋਂ, ਫੋਲਡਰ `04-PracticalImplementation\samples\csharp\src` ਵਿੱਚ ਜਾਓ ਅਤੇ ਹੇਠਾਂ ਦਿੱਤਾ ਕਮਾਂਡ ਚਲਾਓ:
+ਆਓ ਸਰਵਰ ਨੂੰ Azure 'ਤੇ ਡਿਪਲੌਇ ਕਰੀਏ ਤਾਂ ਜੋ ਹੋਰ ਲੋਕ ਇਸਦੀ ਵਰਤੋਂ ਕਰ ਸਕਣ।
 
-```bash
-azd init
-```
-
-ਇਹ ਕੁਝ ਫਾਈਲਾਂ ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਬਣਾਉਣਗਾ ਜਿਹੜੀਆਂ Azure ਸਰੋਤਾਂ ਦੀ ਸੰਰਚਨਾ ਨੂੰ ਸੇਵ ਕਰਨਗੀਆਂ, ਅਤੇ ਤੁਹਾਡਾ ਇੰਫਰਾਸਟਰਕਚਰ ਐਜ਼ ਕੋਡ (IaC)।
-
-ਫਿਰ, ਸਰਵਰ ਨੂੰ Azure 'ਤੇ ਡਿਪਲੋਈ ਕਰਨ ਲਈ ਹੇਠਾਂ ਦਿੱਤਾ ਕਮਾਂਡ ਚਲਾਓ:
+ਟਰਮੀਨਲ ਤੋਂ, `04-PracticalImplementation/samples/csharp` ਫੋਲਡਰ ਵਿੱਚ ਜਾਓ ਅਤੇ ਹੇਠਾਂ ਦਿੱਤਾ ਕਮਾਂਡ ਚਲਾਓ:
 
 ```bash
 azd up
 ```
 
-ਜਦੋਂ ਡਿਪਲੋਈਮੈਂਟ ਖਤਮ ਹੋ ਜਾਵੇ, ਤਾਂ ਤੁਹਾਨੂੰ ਇਸ ਤਰ੍ਹਾਂ ਦਾ ਸੁਨੇਹਾ ਵੇਖਣਾ ਚਾਹੀਦਾ ਹੈ:
+ਜਦੋਂ ਡਿਪਲੌਇਮੈਂਟ ਮੁਕੰਮਲ ਹੋ ਜਾਏ, ਤਾਂ ਤੁਹਾਨੂੰ ਇਸ ਤਰ੍ਹਾਂ ਦਾ ਸੁਨੇਹਾ ਦੇਖਣਾ ਚਾਹੀਦਾ ਹੈ:
 
-![Azd deployment success](../../../../../translated_images/chap4-azd-deploy-success.f69e7f61e50fdbf13ea3bf7302d9850a18e12832f34daee1695f29da3f32b452.pa.png)
+![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.pa.png)
 
-Aspire ਡੈਸ਼ਬੋਰਡ ਵਿੱਚ ਜਾਓ ਅਤੇ `HTTP` URL ਨੂੰ ਨੋਟ ਕਰੋ ਤਾਂ ਕਿ ਇਸਨੂੰ MCP Inspector ਅਤੇ Github Copilot Chat ਵਿੱਚ ਵਰਤਿਆ ਜਾ ਸਕੇ।
+URL ਲਵੋ ਅਤੇ MCP ਇੰਸਪੈਕਟਰ ਅਤੇ GitHub Copilot Chat ਵਿੱਚ ਇਸਦੀ ਵਰਤੋਂ ਕਰੋ।
 
-## ਅਗਲਾ ਕੀ?
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "https://calc-mcp.gentleriver-3977fbcf.australiaeast.azurecontainerapps.io/mcp"
+    }
+  }
+}
+```
 
-ਅਸੀਂ ਵੱਖ-ਵੱਖ ਟਰਾਂਸਪੋਰਟ ਕਿਸਮਾਂ, ਅਤੇ ਟੈਸਟਿੰਗ ਸੰਦਾਂ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ ਅਤੇ ਅਸੀਂ ਆਪਣਾ MCP ਸਰਵਰ Azure 'ਤੇ ਡਿਪਲੋਈ ਕਰਦੇ ਹਾਂ। ਪਰ ਕੀ ਹੋਵੇ ਜੇ ਸਾਡੇ ਸਰਵਰ ਨੂੰ ਨਿੱਜੀ ਸਰੋਤਾਂ ਤੱਕ ਪਹੁੰਚ ਦੀ ਲੋੜ ਹੋਵੇ? ਉਦਾਹਰਣ ਲਈ, ਇੱਕ ਡਾਟਾਬੇਸ ਜਾਂ ਨਿੱਜੀ API? ਅਗਲੇ ਅਧਿਆਇ ਵਿੱਚ, ਅਸੀਂ ਦੇਖਾਂਗੇ ਕਿ ਕਿਵੇਂ ਅਸੀਂ ਆਪਣੇ ਸਰਵਰ ਦੀ ਸੁਰੱਖਿਆ ਨੂੰ ਸੁਧਾਰ ਸਕਦੇ ਹਾਂ।
+## ਅਗਲਾ ਕੀ ਹੈ?
 
-**ਅਸਵੀਕਰਤਾ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀ ਹੋਣ ਦਾ ਯਤਨ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਸੂਚਿਤ ਰਹੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸੁੱਤੀ ਦੇ ਦੋਸ਼ ਹੋ ਸਕਦੇ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਨੂੰ ਇਸਦੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਅਧਿਕਾਰਤ ਸਰੋਤ ਸਮਝਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਪਜਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+ਅਸੀਂ ਵੱਖ-ਵੱਖ ਟਰਾਂਸਪੋਰਟ ਕਿਸਮਾਂ ਅਤੇ ਟੈਸਟਿੰਗ ਟੂਲਜ਼ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ। ਅਸੀਂ ਤੁਹਾਡੇ MCP ਸਰਵਰ ਨੂੰ Azure 'ਤੇ ਵੀ ਡਿਪਲੌਇ ਕਰਦੇ ਹਾਂ। ਪਰ ਜੇ ਸਾਡੇ ਸਰਵਰ ਨੂੰ ਪ੍ਰਾਈਵੇਟ ਸਰੋਤਾਂ ਤੱਕ ਪਹੁੰਚ ਦੀ ਲੋੜ ਹੋਵੇ ਤਾਂ? ਉਦਾਹਰਨ ਵਜੋਂ, ਡੇਟਾਬੇਸ ਜਾਂ ਪ੍ਰਾਈਵੇਟ API? ਅਗਲੇ ਅਧਿਆਇ ਵਿੱਚ, ਅਸੀਂ ਵੇਖਾਂਗੇ ਕਿ ਅਸੀਂ ਆਪਣੇ ਸਰਵਰ ਦੀ ਸੁਰੱਖਿਆ ਕਿਵੇਂ ਸੁਧਾਰ ਸਕਦੇ ਹਾਂ।
+
+**ਅਸਵੀਕਾਰੋਪਣ**:  
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਨਾਲ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਅਤ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਥਿਰਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਪੈਦਾ ਹੋਣ ਵਾਲੀਆਂ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀਆਂ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆਵਾਂ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
