@@ -1,106 +1,104 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bf05718d019040cf0c7d4ccc6d6a1a88",
-  "translation_date": "2025-06-13T05:53:13+00:00",
+  "original_hash": "f01d4263fc6eec331615fef42429b720",
+  "translation_date": "2025-06-18T18:15:56+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "mo"
 }
 -->
-### -2- Tsim tsa projekti
+### -2- 建立專案
 
-Tam sim no koj twb tau nruab koj lub SDK lawm, cia li tsim ib qho project tom ntej: 
+既然你已經安裝好 SDK，接下來讓我們建立一個專案：
 
-### -3- Tsim cov ntaub ntawv projekti
+### -3- 建立專案檔案
 
-### -4- Sau cov cai server
+### -4- 撰寫伺服器程式碼
 
-### -5- Ntxiv ib qho cuab yeej thiab ib qho peev txheej
+### -5- 新增工具與資源
 
-Ntxiv ib qho cuab yeej thiab ib qho peev txheej los ntawm kev ntxiv cov cai hauv qab no:
+透過加入以下程式碼，新增一個工具和一個資源：
 
-### -6- Cov cai kawg
+### -6 最終程式碼
 
-Cia li ntxiv cov cai kawg uas peb xav tau kom lub server pib tau:
+讓我們加入最後所需的程式碼，讓伺服器可以啟動：
 
-### -7- Sim lub server
+### -7- 測試伺服器
 
-Pib lub server nrog cov lus txib hauv qab no:
+使用以下指令啟動伺服器：
 
-### -8- Khiav siv inspector
+### -8- 使用 Inspector 執行
 
-Inspector yog ib qho cuab yeej zoo uas tuaj yeem pib koj lub server thiab cia koj sib txuas nrog nws kom koj tuaj yeem sim tias nws ua haujlwm zoo. Cia li pib nws:
+Inspector 是一個很棒的工具，可以啟動你的伺服器，並讓你與它互動，測試它是否正常運作。讓我們啟動它：
 
 > [!NOTE]
-> nws yuav txawv me ntsis nyob rau hauv "command" teb vim nws muaj cov lus txib rau khiav ib lub server nrog koj qhov runtime tshwj xeeb/
+> 「指令」欄位中的內容可能會有所不同，因為它包含了用你所選擇的執行環境來執行伺服器的指令。
 
-Koj yuav pom cov interface siv neeg hauv qab no:
+你應該會看到以下使用者介面：
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.mo.png)
 
-1. Sib txuas nrog lub server los ntawm kev xaiv lub pob "Connect"  
-   Thaum koj txuas nrog lub server lawm, koj yuav pom li hauv qab no:
+1. 按下「Connect」按鈕連接到伺服器  
+   連接成功後，你應該會看到以下畫面：
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.mo.png)
 
-2. Xaiv "Tools" thiab "listTools", koj yuav pom "Add" tshwm, xaiv "Add" thiab sau cov nqi parameter.
+2. 選擇「Tools」並點擊「listTools」，你會看到「Add」出現，點選「Add」並填入參數值。
 
-   Koj yuav pom cov lus teb hauv qab no, piv txwv li ib qho txiaj ntsig ntawm "add" cuab yeej:
+   你應該會看到以下回應，也就是「add」工具的結果：
 
    ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.mo.png)
 
-Zoo siab, koj twb ua tiav tsim thiab khiav koj thawj lub server lawm!
+恭喜你，成功建立並執行了你的第一個伺服器！
 
-### Cov SDK raug cai
+### 官方 SDK
 
-MCP muab cov SDK raug cai rau ntau hom lus:
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Ua haujlwm koom tes nrog Microsoft
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Ua haujlwm koom tes nrog Spring AI
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Kev siv TypeScript raug cai
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Kev siv Python raug cai
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Kev siv Kotlin raug cai
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Ua haujlwm koom tes nrog Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Kev siv Rust raug cai
+MCP 提供多種語言的官方 SDK：
 
-## Cov ntsiab lus tseem ceeb
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - 與 Microsoft 共同維護
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - 與 Spring AI 共同維護
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - 官方 TypeScript 實作
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - 官方 Python 實作
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - 官方 Kotlin 實作
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - 與 Loopwork AI 共同維護
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - 官方 Rust 實作
 
-- Tsim ib lub ib puag ncig kev txhim kho MCP yog yooj yim nrog SDK tshwj xeeb rau txhua hom lus
-- Tsim MCP servers suav nrog kev tsim thiab sau npe cuab yeej nrog schemas meej
-- Kev sim thiab debugging yog qhov tseem ceeb rau kev siv MCP kom txhim khu kev ntseeg tau
+## 重要重點
 
-## Cov piv txwv
+- 使用語言專用的 SDK，設定 MCP 開發環境相當簡單
+- 建立 MCP 伺服器需建立並註冊具明確結構的工具
+- 測試與除錯是確保 MCP 實作穩定可靠的關鍵
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+## 範例
 
-## Assignment
+- [Java 計算機](../samples/java/calculator/README.md)
+- [.Net 計算機](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript 計算機](../samples/javascript/README.md)
+- [TypeScript 計算機](../samples/typescript/README.md)
+- [Python 計算機](../../../../03-GettingStarted/samples/python)
 
-Tsim ib lub MCP server yooj yim nrog ib qho cuab yeej ntawm koj xaiv:
-1. Ua kom tiav cov cuab yeej hauv koj hom lus koj nyiam (.NET, Java, Python, lossis JavaScript).
-2. Qhia cov parameter nkag thiab cov nqi rov qab.
-3. Khiav lub cuab yeej inspector kom paub tseeb tias lub server ua haujlwm raws li xav tau.
-4. Sim kev siv nrog ntau yam input sib txawv.
+## 作業
 
-## Solution
+建立一個簡單的 MCP 伺服器，並加入你選擇的工具：
 
-[Solution](./solution/README.md)
+1. 使用你偏好的語言（.NET、Java、Python 或 JavaScript）實作該工具。
+2. 定義輸入參數和回傳值。
+3. 使用 Inspector 工具確保伺服器運作正常。
+4. 用各種輸入測試實作。
 
-## Cov ntaub ntawv ntxiv
+## 解答
 
-- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
-- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+[解答](./solution/README.md)
 
-## Qhov tom ntej
+## 其他資源
 
-Tom ntej: [Getting Started with MCP Clients](/03-GettingStarted/02-client/README.md)
+- [使用 Model Context Protocol 在 Azure 上建立代理](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [使用 Azure Container Apps 遠端 MCP (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP 代理](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+## 接下來的步驟
 
----
+下一章節：[MCP 用戶端入門](/03-GettingStarted/02-client/README.md)
 
-(Note: "mo" is not a recognized language code or widely known language name. If you meant a specific language or dialect, please clarify so I can provide the accurate translation.)
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯所產生之任何誤解或誤釋負責。
