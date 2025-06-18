@@ -10,6 +10,8 @@ Change the server entry as needed to point out the absolute path to your server 
 
 In the example file referred above the server entry looks like so:
 
+<details>
+<summary>node.js</summary>
 ```json
 "hello-mcp": {
     "command": "node",
@@ -18,6 +20,37 @@ In the example file referred above the server entry looks like so:
     ]
 }
 ```
+</details>
+
+<details>
+<summary>.NET</summary>
+
+You might have to enter the GitHub repository root, which can be fetched from the command, `git rev-parse --show-toplevel`.
+
+```jsonc
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "repository-root",
+      "description": "The absolute path to the repository root"
+    }
+  ],
+  "servers": {
+    "calculator-mcp-dotnet": {
+      "type": "stdio",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "${input:repository-root}/03-GettingStarted/02-client/solution/server/server.csproj"
+      ]
+    }
+  }
+}
+```
+
+</details>
 
 This corresponds to running a command like so: `node build/index.js`.
 
