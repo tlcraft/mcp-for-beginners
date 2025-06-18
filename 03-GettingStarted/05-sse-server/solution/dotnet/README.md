@@ -3,7 +3,7 @@
 ## -1- Install the dependencies
 
 ```bash
-dotnet run
+dotnet restore
 ```
 
 ## -2- Run the sample

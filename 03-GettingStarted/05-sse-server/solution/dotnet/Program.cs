@@ -1,10 +1,11 @@
 using server;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services
-    .AddMcpServer()
-    .WithTools<Tools>(); 
 
+builder.Services
+       .AddMcpServer()
+       .WithHttpTransport()
+       .WithTools<Tools>();
 
 builder.Services.AddHttpClient();
 
