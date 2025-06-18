@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.AI;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using ModelContextProtocol.Client;
 
@@ -8,15 +7,6 @@ var builder = Host.CreateApplicationBuilder(args);
 builder.Configuration
     .AddEnvironmentVariables()
     .AddUserSecrets<Program>();
-
-
-
-// var clientTransport = new StdioClientTransport(new StdioClientTransportOptions
-// {
-//     Name = "Everything",
-//     Command = "npx",
-//     Arguments = ["-y", "@modelcontextprotocol/server-everything"],
-// });
 
 var clientTransport = new StdioClientTransport(new()
 {

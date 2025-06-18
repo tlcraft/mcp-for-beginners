@@ -1,13 +1,16 @@
-﻿using Azure;
+﻿using System.Text.Json;
+using Azure;
 using Azure.AI.Inference;
-using Azure.Identity;
-using System.Text.Json;
 using ModelContextProtocol.Client;
-using ModelContextProtocol.Protocol.Transport;
-using System.Text.Json;
 
 var endpoint = "https://models.inference.ai.azure.com";
 var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN"); // Your GitHub Access Token
+if (string.IsNullOrWhiteSpace(token))
+{
+    Console.WriteLine("Please set the GITHUB_TOKEN environment variable to your GitHub Access Token.");
+    return;
+}
+
 var client = new ChatCompletionsClient(new Uri(endpoint), new AzureKeyCredential(token));
 var chatHistory = new List<ChatRequestMessage>
 {
@@ -17,18 +20,18 @@ var chatHistory = new List<ChatRequestMessage>
 var clientTransport = new StdioClientTransport(new()
 {
     Name = "Demo Server",
-    Command = "/workspaces/mcp-for-beginners/03-GettingStarted/02-client/solution/server/bin/Debug/net8.0/server",
+    Command = $"{Path.Combine(AppContext.BaseDirectory, "../../../../../../", "02-client/solution/server/bin/Debug/net9.0/server")}",
     Arguments = [],
 });
 
-    Console.WriteLine("Setting up stdio transport");
+Console.WriteLine("Setting up stdio transport");
 
 await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 
 ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
 { 
     // convert the tool to a function definition
-    FunctionDefinition functionDefinition = new FunctionDefinition(name)
+    FunctionDefinition functionDefinition = new(name)
     {
         Description = description,
         Parameters = BinaryData.FromObjectAsJson(new
@@ -40,7 +43,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
     };
 
     // create a tool definition
-    ChatCompletionsToolDefinition toolDefinition = new ChatCompletionsToolDefinition(functionDefinition);
+    ChatCompletionsToolDefinition toolDefinition = new(functionDefinition);
     return toolDefinition;
 }
 
@@ -49,7 +52,7 @@ async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
     Console.WriteLine("Listing tools");
     var tools = await mcpClient.ListToolsAsync();
 
-    List<ChatCompletionsToolDefinition> toolDefinitions = new List<ChatCompletionsToolDefinition>();
+    List<ChatCompletionsToolDefinition> toolDefinitions = [];
 
     foreach (var tool in tools)
     {
@@ -57,8 +60,7 @@ async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
         Console.WriteLine($"Tool description: {tool.Description}");
         Console.WriteLine($"Tool parameters: {tool.JsonSchema}");
 
-        JsonElement propertiesElement;
-        tool.JsonSchema.TryGetProperty("properties", out propertiesElement);
+        tool.JsonSchema.TryGetProperty("properties", out JsonElement propertiesElement);
 
         var def = ConvertFrom(tool.Name, tool.Description, propertiesElement);
         Console.WriteLine($"Tool definition: {def}");
