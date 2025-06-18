@@ -1,99 +1,107 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5020a3e1a1c7f30c00f9e37f1fa208e3",
-  "translation_date": "2025-05-17T14:11:19+00:00",
+  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
+  "translation_date": "2025-06-18T07:52:32+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "sw"
 }
 -->
-# Sampuli
+# Mfano
 
-Mfano uliopita unaonyesha jinsi ya kutumia mradi wa ndani wa .NET na aina ya `sdio`. Na jinsi ya kuendesha seva ndani ya kontena. Hii ni suluhisho nzuri katika hali nyingi. Hata hivyo, inaweza kuwa muhimu kuwa na seva inayoendesha kwa mbali, kama katika mazingira ya wingu. Hapa ndipo aina ya `http` inapoingia.
+Mfano uliopita unaonyesha jinsi ya kutumia mradi wa .NET wa ndani kwa aina ya `stdio`. Na jinsi ya kuendesha seva kwa ndani kwenye kontena. Hii ni suluhisho nzuri katika hali nyingi. Hata hivyo, inaweza kuwa na faida kuwa na seva inayotumia mbali, kama katika mazingira ya wingu. Hapa ndipo aina ya `http` inakuja.
 
-Ukiangalia suluhisho katika folda ya `04-PracticalImplementation`, inaweza kuonekana kuwa ngumu zaidi kuliko ile ya awali. Lakini kwa kweli, sivyo. Ukichunguza mradi wa `src/mcpserver/mcpserver.csproj` kwa makini, utaona kwamba ni msimbo sawa na mfano wa awali. Tofauti pekee ni kwamba tunatumia maktaba tofauti `ModelContextProtocol.AspNetCore` kushughulikia maombi ya HTTP. Na tunabadilisha mbinu `IsPrime` ili iwe ya kibinafsi, ili tu kuonyesha kuwa unaweza kuwa na mbinu za kibinafsi katika msimbo wako. Msimbo uliobaki ni sawa na ule wa awali.
+Tukitazama suluhisho kwenye folda ya `04-PracticalImplementation`, linaweza kuonekana ngumu zaidi kuliko ile ya awali. Lakini kwa kweli, si hivyo. Ukitazama kwa makini mradi wa `src/Calculator`, utaona kwamba ni kanuni karibu sawa na mfano uliopita. Tofauti pekee ni kwamba tunatumia maktaba tofauti `ModelContextProtocol.AspNetCore` kushughulikia maombi ya HTTP. Na tunabadilisha njia `IsPrime` kuifanya kuwa ya faragha, tu kuonyesha kwamba unaweza kuwa na njia za faragha katika kanuni zako. Mengine yote ya kanuni ni sawa na awali.
 
-Miradi mingine ni kutoka [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). Kuwa na .NET Aspire katika suluhisho kutaboresha uzoefu wa mjenzi wakati wa kuunda na kujaribu na kusaidia na ufuatiliaji. Haitahitajika kuendesha seva, lakini ni mazoezi mazuri kuwa nayo katika suluhisho lako.
+Miradi mingine ni kutoka kwa [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). Kuwa na .NET Aspire katika suluhisho kutaboresha uzoefu wa mtaalamu wakati wa kuendeleza na kupima na kusaidia katika ufuatiliaji. Haohitajiki kuendesha seva, lakini ni desturi nzuri kuwa nayo katika suluhisho lako.
 
-## Anzisha seva ndani ya eneo
+## Anzisha seva kwa ndani
 
-1. Kutoka VS Code (na kiendelezi cha C# DevKit), fungua suluhisho `04-PracticalImplementation\samples\csharp\src\Calculator-chap4.sln`.
-2. Bonyeza `F5` kuanzisha seva. Inapaswa kufungua kivinjari cha wavuti na dashibodi ya .NET Aspire.
+1. Kutoka VS Code (ikiwa na ugani wa C# DevKit), elekea kwenye saraka ya `04-PracticalImplementation/samples/csharp`.
+1. Endesha amri ifuatayo kuanzisha seva:
 
-au
-
-1. Kutoka kwenye terminali, nenda kwenye folda `04-PracticalImplementation\samples\csharp\src`
-2. Tekeleza amri ifuatayo kuanzisha seva:
    ```bash
-    dotnet run --project .\AppHost
+    dotnet watch run --project ./src/AppHost
    ```
 
-3. Kutoka kwenye Dashibodi, angalia URL ya `http`. Inapaswa kuwa kama `http://localhost:5058/`.
+1. Wakati kivinjari cha wavuti kinapofungua dashibodi ya .NET Aspire, kumbuka URL ya `http`. Inapaswa kuwa kama `http://localhost:5058/`.
 
-## Test `SSE` na ModelContext Protocol Inspector
+   ![Dashibodi ya .NET Aspire](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.sw.png)
 
-Ikiwa una Node.js 22.7.5 na zaidi, unaweza kutumia ModelContext Protocol Inspector kujaribu seva yako.
+## Jaribu Streamable HTTP kwa MCP Inspector
 
-Anzisha seva na endesha amri ifuatayo kwenye terminali:
+Kama una Node.js 22.7.5 au zaidi, unaweza kutumia MCP Inspector kujaribu seva yako.
+
+Anzisha seva na endesha amri ifuatayo kwenye terminal:
 
 ```bash
-npx @modelcontextprotocol/inspector@latest
+npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp_inspector.2939244613cb5a0549b83942e062bceb69083c3d7b331c8de991ecf6834d6904.sw.png)
+![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.sw.png)
 
-- Chagua `SSE` as the Transport type. SSE stand for Server-Sent Events. 
-- In the Url field, enter the URL of the server noted earlier,and append `/sse`. Inapaswa kuwa `http` (sio `https`) something like `http://localhost:5058/sse`.
+- Chagua `Streamable HTTP` as the Transport type.
+- In the Url field, enter the URL of the server noted earlier, and append `/mcp`. Inapaswa kuwa `http` (si `https`) something like `http://localhost:5058/mcp`.
 - select the Connect button.
 
 A nice thing about the Inspector is that it provide a nice visibility on what is happening.
 
-- Try listing the availables tools
+- Try listing the available tools
 - Try some of them, it should works just like before.
 
+## Test MCP Server with GitHub Copilot Chat in VS Code
 
-## Test `SSE` with Github Copilot Chat in VS Code
+To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp` seva iliyoundwa awali kuonekana hivi:
 
-To use the `SSE` transport with Github Copilot Chat, change the configuration of the `mcp-calc` seva iliyoundwa hapo awali ili ionekane hivi:
-
-```json
-"mcp-calc": {
-    "type": "sse",
-    "url": "http://localhost:5058/sse"
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "http://localhost:5058/mcp"
+    }
+  }
 }
 ```
 
-Fanya baadhi ya majaribio:
-- Uliza nambari 3 za kwanza baada ya 6780. Angalia jinsi Copilot itakavyotumia zana mpya `NextFivePrimeNumbers` na kurudisha nambari 3 za kwanza pekee.
-- Uliza nambari 7 za kwanza baada ya 111, ili kuona nini kitatokea.
+Fanya majaribio:
 
-# Peleka seva kwenye Azure
+- Uliza "nambari 3 za kwanza za mfuatano wa nambari kuu baada ya 6780". Angalia jinsi Copilot atakavyotumia zana mpya `NextFivePrimeNumbers` na kurudisha nambari 3 za kwanza tu.
+- Uliza "nambari 7 za kwanza za mfuatano wa nambari kuu baada ya 111", kuona kinachotokea.
+- Uliza "John ana pipi 24 na anataka kuzigawa kwa watoto wake 3. Kila mtoto ana pipi ngapi?", kuona kinachotokea.
 
-Wacha tupeleke seva kwenye Azure ili watu wengi zaidi waweze kuitumia.
+## Sambaza seva kwa Azure
 
-Kutoka kwenye terminali, nenda kwenye folda `04-PracticalImplementation\samples\csharp\src` na endesha amri ifuatayo:
+Tuwasambaze seva kwa Azure ili watu wengi zaidi waiweze kutumia.
 
-```bash
-azd init
-```
-
-Hii itaunda faili chache ndani ya eneo ili kuhifadhi usanidi wa rasilimali za Azure, na Miundombinu yako kama msimbo (IaC).
-
-Kisha, endesha amri ifuatayo kupeleka seva kwenye Azure:
+Kutoka kwenye terminal, elekea kwenye folda ya `04-PracticalImplementation/samples/csharp` na endesha amri ifuatayo:
 
 ```bash
 azd up
 ```
 
-Mara baada ya kupelekwa kumalizika, unapaswa kuona ujumbe kama huu:
+Mara utekelezaji ukimalizika, unapaswa kuona ujumbe kama huu:
 
-![Azd deployment success](../../../../../translated_images/chap4-azd-deploy-success.f69e7f61e50fdbf13ea3bf7302d9850a18e12832f34daee1695f29da3f32b452.sw.png)
+![Mafanikio ya usambazaji wa Azd](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.sw.png)
 
-Nenda kwenye dashibodi ya Aspire na angalia URL ya `HTTP` ili kuitumia katika MCP Inspector na katika Mazungumzo ya Github Copilot.
+Chukua URL na uitumie kwenye MCP Inspector na katika GitHub Copilot Chat.
 
-## Nini kinafuata?
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "https://calc-mcp.gentleriver-3977fbcf.australiaeast.azurecontainerapps.io/mcp"
+    }
+  }
+}
+```
 
-Tunajaribu aina tofauti za usafiri, na zana za majaribio na pia tunapeleka seva yetu ya MCP kwenye Azure. Lakini vipi kama seva yetu inahitaji kufikia rasilimali za kibinafsi? Kwa mfano, hifadhidata au API ya kibinafsi? Katika sura inayofuata, tutaona jinsi tunaweza kuboresha usalama wa seva yetu.
+## Nini kinachofuata?
 
-**Kanusho**: 
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya kiasili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya kibinadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+Tujaribu aina tofauti za usafirishaji na zana za majaribio. Pia tunasambaza seva yako ya MCP kwa Azure. Lakini vipi kama seva yetu inahitaji kupata rasilimali za faragha? Kwa mfano, hifadhidata au API binafsi? Katika sura inayofuata, tutaona jinsi tunavyoweza kuboresha usalama wa seva yetu.
+
+**Kumbusho**:  
+Nyaraka hii imetafsiriwa kwa kutumia huduma ya utafsiri wa AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Nyaraka ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatubeba dhima kwa kutoelewana au tafsiri potofu zitokanazo na matumizi ya tafsiri hii.

@@ -1,99 +1,107 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5020a3e1a1c7f30c00f9e37f1fa208e3",
-  "translation_date": "2025-05-17T14:08:28+00:00",
+  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
+  "translation_date": "2025-06-18T07:50:02+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "tr"
 }
 -->
 # Örnek
 
-Önceki örnek, yerel bir .NET projesinin `sdio` türüyle nasıl kullanılacağını ve sunucunun bir konteyner içinde yerel olarak nasıl çalıştırılacağını gösteriyor. Bu, birçok durumda iyi bir çözümdür. Ancak, sunucunun uzaktan, örneğin bulut ortamında çalışması faydalı olabilir. İşte burada `http` türü devreye girer.
+Önceki örnek, `stdio` türü ile yerel bir .NET projesinin nasıl kullanılacağını ve sunucunun yerel olarak bir konteyner içinde nasıl çalıştırılacağını gösteriyor. Bu birçok durumda iyi bir çözümdür. Ancak, sunucunun uzaktan, örneğin bulut ortamında çalışması da faydalı olabilir. İşte burada `http` türü devreye girer.
 
-`04-PracticalImplementation` klasöründeki çözümü incelediğinizde, önceki örnekten çok daha karmaşık görünebilir. Ama aslında öyle değil. Proje `src/mcpserver/mcpserver.csproj`'e dikkatlice bakarsanız, önceki örnekle çoğunlukla aynı kod olduğunu göreceksiniz. Tek fark, HTTP isteklerini yönetmek için farklı bir kütüphane `ModelContextProtocol.AspNetCore` kullanmamızdır. Ve `IsPrime` yöntemini özel yapmak için değiştirdik, sadece kodunuzda özel yöntemler olabileceğini göstermek için. Kodun geri kalanı öncekiyle aynıdır.
+`04-PracticalImplementation` klasöründeki çözüme bakıldığında, önceki örnekten çok daha karmaşık görünebilir. Ama aslında öyle değil. `src/Calculator` projesine dikkatlice bakarsanız, çoğunlukla önceki örnekle aynı kod olduğunu görürsünüz. Tek fark, HTTP isteklerini yönetmek için farklı bir kütüphane olan `ModelContextProtocol.AspNetCore` kullanmamızdır. Ayrıca, kodunuzda özel metotlar olabileceğini göstermek için `IsPrime` metodunu private yaptık. Kodun geri kalanı öncekiyle aynı.
 
-Diğer projeler [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview) kaynaklıdır. Çözümde .NET Aspire olması, geliştiricinin geliştirme ve test sürecindeki deneyimini artıracak ve gözlemlenebilirliği artıracaktır. Sunucuyu çalıştırmak için gerekli değildir, ancak çözümünüzde bulunması iyi bir uygulamadır.
+Diğer projeler [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview) içindendir. Çözüme .NET Aspire eklemek, geliştirici deneyimini geliştirecek, geliştirme ve test sürecini kolaylaştıracak ve gözlemlenebilirliği artıracaktır. Sunucuyu çalıştırmak için zorunlu değildir, ancak çözüme eklemek iyi bir uygulamadır.
 
-## Sunucuyu yerel olarak başlatın
+## Sunucuyu yerel olarak başlatma
 
-1. VS Code'dan (C# DevKit uzantısıyla), `04-PracticalImplementation\samples\csharp\src\Calculator-chap4.sln` çözümünü açın.
-2. Sunucuyu başlatmak için `F5` tuşuna basın. .NET Aspire panosu ile bir web tarayıcısı açılmalıdır.
+1. VS Code’dan (C# DevKit uzantısı ile) `04-PracticalImplementation/samples/csharp` dizinine gidin.
+1. Sunucuyu başlatmak için aşağıdaki komutu çalıştırın:
 
-veya
-
-1. Bir terminalden `04-PracticalImplementation\samples\csharp\src` klasörüne gidin
-2. Sunucuyu başlatmak için aşağıdaki komutu çalıştırın:
    ```bash
-    dotnet run --project .\AppHost
+    dotnet watch run --project ./src/AppHost
    ```
 
-3. Panodan `http` URL'sini not edin. ModelContext Protocol Inspector ile `http://localhost:5058/`.
+1. Bir web tarayıcısı .NET Aspire kontrol panelini açtığında, `http` URL’sine dikkat edin. Şöyle bir şey olmalı: `http://localhost:5058/`.
 
-## Test `SSE` gibi bir şey olmalıdır.
+   ![.NET Aspire Kontrol Paneli](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.tr.png)
 
-Node.js 22.7.5 ve üzeri sürümleriniz varsa, sunucunuzu test etmek için ModelContext Protocol Inspector'ı kullanabilirsiniz.
+## MCP Inspector ile Streamable HTTP testi
+
+Node.js 22.7.5 ve üzeri sürümlere sahipseniz, MCP Inspector ile sunucunuzu test edebilirsiniz.
 
 Sunucuyu başlatın ve bir terminalde aşağıdaki komutu çalıştırın:
 
 ```bash
-npx @modelcontextprotocol/inspector@latest
+npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp_inspector.2939244613cb5a0549b83942e062bceb69083c3d7b331c8de991ecf6834d6904.tr.png)
+![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.tr.png)
 
-- `SSE` as the Transport type. SSE stand for Server-Sent Events. 
-- In the Url field, enter the URL of the server noted earlier,and append `/sse`'yi seçin. `http` olmalıdır (önceden oluşturulan `https`) something like `http://localhost:5058/sse`.
+- `Streamable HTTP` as the Transport type.
+- In the Url field, enter the URL of the server noted earlier, and append `/mcp` seçin. Bu, daha önce oluşturulan `https`) something like `http://localhost:5058/mcp`.
 - select the Connect button.
 
 A nice thing about the Inspector is that it provide a nice visibility on what is happening.
 
-- Try listing the availables tools
+- Try listing the available tools
 - Try some of them, it should works just like before.
 
+## Test MCP Server with GitHub Copilot Chat in VS Code
 
-## Test `SSE` with Github Copilot Chat in VS Code
+To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp` sunucusu değil, `http` olmalıdır.
 
-To use the `SSE` transport with Github Copilot Chat, change the configuration of the `mcp-calc` sunucusu böyle görünmelidir:
-
-```json
-"mcp-calc": {
-    "type": "sse",
-    "url": "http://localhost:5058/sse"
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "http://localhost:5058/mcp"
+    }
+  }
 }
 ```
 
 Bazı testler yapın:
-- 6780'den sonraki 3 asal sayıyı isteyin. Copilot'un yeni `NextFivePrimeNumbers` araçlarını nasıl kullanacağını ve sadece ilk 3 asal sayıyı döndüreceğini not edin.
-- 111'den sonraki 7 asal sayıyı isteyin, ne olacağını görün.
 
-# Sunucuyu Azure'a dağıtın
+- "6780’den sonraki 3 asal sayı" isteyin. Copilot’un yeni araçları `NextFivePrimeNumbers` kullanıp sadece ilk 3 asal sayıyı döndürdüğünü gözlemleyin.
+- "111’den sonraki 7 asal sayı" isteyin ve sonucu görün.
+- "John’un 24 şekeri var ve bunları 3 çocuğuna eşit dağıtmak istiyor. Her çocuk kaç şeker alır?" diye sorun ve sonucu görün.
 
-Sunucuyu Azure'a dağıtalım, böylece daha fazla kişi kullanabilir.
+## Sunucuyu Azure’a dağıtma
 
-Bir terminalden `04-PracticalImplementation\samples\csharp\src` klasörüne gidin ve aşağıdaki komutu çalıştırın:
+Sunucuyu Azure’a dağıtalım ki daha fazla kişi kullanabilsin.
 
-```bash
-azd init
-```
-
-Bu, Azure kaynaklarının yapılandırmasını ve Kod olarak Altyapı (IaC) dosyalarını yerel olarak kaydetmek için birkaç dosya oluşturacaktır.
-
-Sonra, sunucuyu Azure'a dağıtmak için aşağıdaki komutu çalıştırın:
+Bir terminalden `04-PracticalImplementation/samples/csharp` klasörüne gidin ve aşağıdaki komutu çalıştırın:
 
 ```bash
 azd up
 ```
 
-Dağıtım tamamlandığında, şöyle bir mesaj görmelisiniz:
+Dağıtım tamamlandığında şöyle bir mesaj görmelisiniz:
 
-![Azd deployment success](../../../../../translated_images/chap4-azd-deploy-success.f69e7f61e50fdbf13ea3bf7302d9850a18e12832f34daee1695f29da3f32b452.tr.png)
+![Azd dağıtım başarılı](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.tr.png)
 
-Aspire panosuna gidin ve MCP Inspector ve Github Copilot Chat'te kullanmak için `HTTP` URL'sini not edin.
+URL’yi alın ve MCP Inspector ile GitHub Copilot Chat’te kullanın.
 
-## Sırada ne var?
+```jsonc
+// .vscode/mcp.json
+{
+  "servers": {
+    "calc-mcp": {
+      "type": "http",
+      "url": "https://calc-mcp.gentleriver-3977fbcf.australiaeast.azurecontainerapps.io/mcp"
+    }
+  }
+}
+```
 
-Farklı taşıma türlerini, test araçlarını denedik ve MCP sunucumuzu Azure'a dağıttık. Peki ya sunucumuzun özel kaynaklara erişmesi gerekirse? Örneğin, bir veritabanı veya özel bir API? Sonraki bölümde sunucumuzun güvenliğini nasıl artırabileceğimizi göreceğiz.
+## Sonraki adım nedir?
 
-**Feragatname**: 
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluğu sağlamak için çaba sarf etsek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından doğabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Farklı taşıma türlerini ve test araçlarını deniyoruz. MCP sunucunuzu Azure’a dağıtıyoruz. Peki ya sunucumuzun özel kaynaklara erişmesi gerekirse? Örneğin, bir veritabanı veya özel bir API? Bir sonraki bölümde, sunucumuzun güvenliğini nasıl artırabileceğimizi göreceğiz.
+
+**Feragatname**:  
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum farklılıklarından sorumlu değiliz.
