@@ -1,16 +1,26 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-17T10:43:30+00:00",
+  "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
+  "translation_date": "2025-06-18T06:06:12+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "sw"
 }
 -->
-# Endesha sampuli hii
+# Endesha mfano huu
 
 > [!NOTE]
-> Sampuli hii inadhani unatumia mazingira ya GitHub Codespaces. Ikiwa unataka kuendesha hii kwenye kompyuta yako, unahitaji kuunda tokeni ya ufikiaji wa kibinafsi kwenye GitHub.
+> Mfano huu unadhani unatumia GitHub Codespaces. Ikiwa unataka kuendesha hii kwa ndani, unahitaji kuweka tokeni ya upatikanaji binafsi (PAT) kwenye GitHub.
+>
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```
+>
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```
 
 ## Sakinisha maktaba
 
@@ -18,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-Inapaswa kusakinisha maktaba zifuatazo: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtocol 
+Inapaswa kusakinisha maktaba zifuatazo: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
 ## Endesha
 
@@ -41,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Sehemu kubwa ya matokeo ni ya kusuluhisha matatizo, lakini muhimu ni kwamba unaorodhesha zana kutoka kwa MCP Server, geuza hizo kuwa zana za LLM na unapata jibu la mteja wa MCP "Sum 6".
+Sehemu kubwa ya matokeo ni za kufuatilia makosa, lakini muhimu ni kwamba unataja zana kutoka kwa MCP Server, kuzibadilisha kuwa zana za LLM na mwisho wa siku unapata jibu la mteja wa MCP "Jumla 6".
 
-**Kanusho**: 
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo chenye mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutokujali**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za moja kwa moja zinaweza kuwa na makosa au upotovu. Hati ya asili katika lugha yake ya mama inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

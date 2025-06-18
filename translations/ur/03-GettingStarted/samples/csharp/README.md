@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T12:57:56+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T05:49:08+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "ur"
 }
 -->
 # بنیادی کیلکولیٹر MCP سروس
 
-یہ سروس ماڈل کانٹیکسٹ پروٹوکول (MCP) کے ذریعے بنیادی کیلکولیٹر آپریشنز فراہم کرتی ہے۔ یہ ابتدائی افراد کے لیے ایک سادہ مثال کے طور پر تیار کی گئی ہے جو MCP کے نفاذ کے بارے میں سیکھ رہے ہیں۔
+یہ سروس ماڈل کانٹیکسٹ پروٹوکول (MCP) کے ذریعے بنیادی کیلکولیٹر آپریشنز فراہم کرتی ہے۔ یہ MCP کی تنفیذات سیکھنے والے ابتدائی افراد کے لیے ایک سادہ مثال کے طور پر ڈیزائن کی گئی ہے۔
 
 مزید معلومات کے لیے دیکھیں [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
@@ -17,40 +17,48 @@ CO_OP_TRANSLATOR_METADATA:
 
 یہ کیلکولیٹر سروس درج ذیل صلاحیتیں فراہم کرتی ہے:
 
-1. **بنیادی حسابی آپریشنز**:
-   - دو نمبروں کا جمع
-   - ایک نمبر کو دوسرے نمبر سے منفی کرنا
-   - دو نمبروں کی ضرب
-   - ایک نمبر کو دوسرے نمبر سے تقسیم کرنا (صفر تقسیم کی جانچ کے ساتھ)
+1. **بنیادی حسابی عملیات**:
+   - دو نمبروں کا جمع کرنا
+   - ایک نمبر کو دوسرے سے منفی کرنا
+   - دو نمبروں کا ضرب دینا
+   - ایک نمبر کو دوسرے سے تقسیم کرنا (صفر سے تقسیم کی جانچ کے ساتھ)
 
 ## `stdio` قسم کا استعمال
 
 ## ترتیب
 
 1. **MCP سرورز کو ترتیب دیں**:
-   - اپنے ورک اسپیس کو VS کوڈ میں کھولیں۔
-   - اپنے ورک اسپیس فولڈر میں ایک `.vscode/mcp.json` فائل بنائیں تاکہ MCP سرورز کو ترتیب دیا جا سکے۔ مثال ترتیب:
-     ```json
+   - VS Code میں اپنا ورک اسپیس کھولیں۔
+   - اپنے ورک اسپیس فولڈر میں ایک `.vscode/mcp.json` فائل بنائیں تاکہ MCP سرورز کی ترتیب کی جا سکے۔ مثال کے طور پر ترتیب:
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-	- راستے کو اپنے پروجیکٹ کے راستے سے تبدیل کریں۔ راستہ مکمل ہونا چاہیے اور ورک اسپیس فولڈر سے نسبتاً نہیں ہونا چاہیے۔ (مثال: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## سروس کا استعمال
+   - آپ سے GitHub ریپوزٹری روٹ درج کرنے کو کہا جائے گا، جسے کمانڈ `git rev-parse --show-toplevel` سے حاصل کیا جا سکتا ہے۔ اپنے Docker Hub یوزرنیم کے ساتھ ``.
 
-سروس MCP پروٹوکول کے ذریعے درج ذیل API اینڈپوائنٹس کو ظاہر کرتی ہے:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,18 +86,18 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` اپنے Docker Hub یوزر نیم کے ساتھ تبدیل کریں):
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` میں شامل کریں:
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. جب امیج بن جائے، تو اسے Docker Hub پر اپلوڈ کریں۔ درج ذیل کمانڈ چلائیں:
+1. امیج بن جانے کے بعد، اسے Docker Hub پر اپلوڈ کریں۔ درج ذیل کمانڈ چلائیں:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
 ## Dockerized ورژن کا استعمال
 
-1. `.vscode/mcp.json` فائل میں، سرور کی ترتیب کو درج ذیل کے ساتھ تبدیل کریں:
+1. `.vscode/mcp.json` فائل میں سرور کی ترتیب کو درج ذیل سے بدل دیں:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -107,7 +115,7 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {` ہے، اور جیسے پہلے آپ کیلکولیٹر سروس سے کچھ حساب کرنے کو کہہ سکتے ہیں۔
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {` ہے، اور پہلے کی طرح آپ کیلکولیٹر سروس سے کچھ حساب کروا سکتے ہیں۔
 
-**ڈس کلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کے لیے کوشش کرتے ہیں، لیکن براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا بے ضابطگیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ورانہ انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمہ کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لیے ہم ذمہ دار نہیں ہیں۔
+**دستخطی دستبرداری**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار تراجم میں غلطیاں یا عدم صحت ہو سکتی ہے۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ تجویز کیا جاتا ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تعبیر کی ذمہ داری ہم پر عائد نہیں ہوتی۔

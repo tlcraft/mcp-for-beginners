@@ -1,56 +1,64 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T12:57:18+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T05:47:14+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "ru"
 }
 -->
-# Базовый сервис калькулятора MCP
+# Служба базового калькулятора MCP
 
-Этот сервис предоставляет основные операции калькулятора через Протокол Контекста Модели (MCP). Он разработан как простой пример для начинающих, изучающих реализации MCP.
+Эта служба предоставляет базовые операции калькулятора через протокол Model Context Protocol (MCP). Она создана как простой пример для начинающих, изучающих реализацию MCP.
 
-Для получения дополнительной информации см. [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+Для получения дополнительной информации смотрите [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## Особенности
+## Возможности
 
-Этот сервис калькулятора предлагает следующие возможности:
+Данная служба калькулятора предлагает следующие функции:
 
-1. **Основные арифметические операции**:
+1. **Базовые арифметические операции**:
    - Сложение двух чисел
    - Вычитание одного числа из другого
    - Умножение двух чисел
    - Деление одного числа на другое (с проверкой деления на ноль)
 
-## Использование `stdio` Типа
-  
-## Конфигурация
+## Использование `stdio` типа
+
+## Настройка
 
 1. **Настройка MCP серверов**:
    - Откройте вашу рабочую область в VS Code.
-   - Создайте файл `.vscode/mcp.json` в папке вашей рабочей области для настройки MCP серверов. Пример конфигурации:
-     ```json
+   - Создайте файл `.vscode/mcp.json` в папке рабочей области для настройки MCP серверов. Пример конфигурации:
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-   - Замените путь на путь к вашему проекту. Путь должен быть абсолютным, а не относительным к папке рабочей области. (Пример: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## Использование сервиса
+   - Вам будет предложено ввести корневую папку репозитория GitHub, которую можно получить с помощью команды `git rev-parse --show-toplevel`.
 
-Сервис предоставляет следующие API конечные точки через протокол MCP:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,18 +86,18 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` с вашим именем пользователя Docker Hub:
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` с вашим именем пользователя Docker Hub):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. После сборки образа, давайте загрузим его на Docker Hub. Выполните следующую команду:
+1. После сборки образа загрузите его в Docker Hub. Выполните следующую команду:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
 ## Использование версии в Docker
 
-1. В файле `.vscode/mcp.json` замените конфигурацию сервера на следующую:
+1. В файле `.vscode/mcp.json` замените конфигурацию сервера следующим образом:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -103,11 +111,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Посмотрев на конфигурацию, вы можете увидеть, что команда `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Из конфигурации видно, что команда — `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, и как и прежде, вы можете попросить сервис калькулятора выполнить некоторые математические операции для вас.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, и, как и раньше, вы можете попросить службу калькулятора выполнить вычисления для вас.
 
-**Отказ от ответственности**:
-Этот документ был переведен с использованием AI-сервиса перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Хотя мы стремимся к точности, пожалуйста, учитывайте, что автоматические переводы могут содержать ошибки или неточности. Оригинальный документ на его родном языке следует считать авторитетным источником. Для критически важной информации рекомендуется профессиональный перевод человеком. Мы не несем ответственности за любые недоразумения или неправильные интерпретации, возникшие в результате использования этого перевода.
+**Отказ от ответственности**:  
+Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия обеспечить точность, просим учитывать, что автоматические переводы могут содержать ошибки или неточности. Оригинальный документ на его родном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется обращаться к профессиональному переводу, выполненному человеком. Мы не несем ответственности за любые недоразумения или неверные толкования, возникшие в результате использования данного перевода.

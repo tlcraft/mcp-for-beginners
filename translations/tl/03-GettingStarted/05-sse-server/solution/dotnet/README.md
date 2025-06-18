@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-17T11:58:00+00:00",
+  "original_hash": "2a58caa6e11faa09470b7f81e6729652",
+  "translation_date": "2025-06-18T06:05:34+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "tl"
 }
@@ -12,7 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## -1- I-install ang mga dependencies
 
 ```bash
-dotnet run
+dotnet restore
 ```
 
 ## -2- Patakbuhin ang sample
@@ -23,30 +23,32 @@ dotnet run
 
 ## -3- Subukan ang sample
 
-Magbukas ng hiwalay na terminal bago mo patakbuhin ang nasa ibaba (siguraduhing tumatakbo pa rin ang server).
+Magbukas ng hiwalay na terminal bago patakbuhin ang nasa ibaba (siguraduhing tumatakbo pa rin ang server).
 
-Kapag tumatakbo na ang server sa isang terminal, magbukas ng isa pang terminal at patakbuhin ang sumusunod na command:
+Habang tumatakbo ang server sa isang terminal, buksan ang isa pang terminal at patakbuhin ang sumusunod na utos:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Dapat magsimula ito ng web server na may visual na interface na nagbibigay-daan sa iyo na subukan ang sample.
+Dapat nitong simulan ang isang web server na may visual interface na magpapahintulot sa iyo na subukan ang sample.
 
-Kapag nakakonekta na ang server:
+> Siguraduhing naka-set ang **SSE** bilang transport type, at ang URL ay `http://localhost:3001/sse`.
 
-- subukang ilista ang mga tools at patakbuhin ang `add`, gamit ang args 2 at 4, dapat mong makita ang 6 sa resulta.
-- pumunta sa mga resources at resource template at tawagin ang "greeting", mag-type ng pangalan at dapat mong makita ang pagbati na may pangalan na ibinigay mo.
+Once the server is connected: 
+
+- try listing tools and run `add`, gamit ang mga args na 2 at 4, makikita mo ang 6 bilang resulta.
+- pumunta sa resources at resource template at tawagin ang "greeting", mag-type ng pangalan at makikita mo ang pagbati gamit ang pangalang ibinigay mo.
 
 ### Pagsubok sa CLI mode
 
-Maaari mo itong ilunsad nang direkta sa CLI mode sa pamamagitan ng pagpapatakbo ng sumusunod na command:
+Maaari mo itong direktang patakbuhin sa CLI mode sa pamamagitan ng pagsunod na utos:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Ilista nito ang lahat ng tools na available sa server. Dapat mong makita ang sumusunod na output:
+Ipapakita nito ang lahat ng tools na available sa server. Makikita mo ang sumusunod na output:
 
 ```text
 {
@@ -78,13 +80,13 @@ Ilista nito ang lahat ng tools na available sa server. Dapat mong makita ang sum
 }
 ```
 
-Upang magpatakbo ng tool mag-type ng:
+Para tawagin ang isang tool, i-type:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Dapat mong makita ang sumusunod na output:
+Makikita mo ang sumusunod na output:
 
 ```text
 {
@@ -99,8 +101,8 @@ Dapat mong makita ang sumusunod na output:
 ```
 
 > ![!TIP]
-> Karaniwan mas mabilis na patakbuhin ang inspector sa CLI mode kaysa sa browser.
-> Magbasa pa tungkol sa inspector [dito](https://github.com/modelcontextprotocol/inspector).
+> Mas mabilis karaniwang patakbuhin ang inspector sa CLI mode kaysa sa browser.
+> Basahin pa ang tungkol sa inspector [dito](https://github.com/modelcontextprotocol/inspector).
 
-**Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Habang pinagsisikapan naming maging tumpak, pakitandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatumpak. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na mapagkakatiwalaang sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaintindihan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+**Pagtatangi**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat aming pinagsisikapang maging tumpak ang salin, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

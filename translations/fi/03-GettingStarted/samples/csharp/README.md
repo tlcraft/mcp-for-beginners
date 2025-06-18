@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T13:01:27+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T06:01:57+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "fi"
 }
 -->
 # Peruslaskin MCP-palvelu
 
-Tämä palvelu tarjoaa peruslaskutoimituksia Model Context Protocolin (MCP) kautta. Se on suunniteltu yksinkertaiseksi esimerkiksi aloittelijoille, jotka opettelevat MCP-toteutuksia.
+Tämä palvelu tarjoaa peruslaskutoimituksia Model Context Protocolin (MCP) kautta. Se on suunniteltu yksinkertaiseksi esimerkiksi aloittelijoille, jotka opettelevat MCP:n toteutuksia.
 
-Lisätietoja löytyy [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+Lisätietoja löytyy [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) -sivulta.
 
 ## Ominaisuudet
 
@@ -19,38 +19,46 @@ Tämä laskinpalvelu tarjoaa seuraavat toiminnot:
 
 1. **Peruslaskutoimitukset**:
    - Kahden luvun yhteenlasku
-   - Yhden luvun vähennys toisesta
+   - Yhden luvun vähentäminen toisesta
    - Kahden luvun kertolasku
-   - Yhden luvun jakaminen toisella (sisältää nollalla jakamisen tarkistuksen)
+   - Yhden luvun jakaminen toisella (nollalla jakamisen tarkistus)
 
-## `stdio` Tyypin käyttö
+## Käyttö `stdio` -tyypin kanssa
 
 ## Konfigurointi
 
-1. **MCP-palvelimien konfigurointi**:
-   - Avaa työtilasi VS Code -ohjelmassa.
-   - Luo `.vscode/mcp.json`-tiedosto työtilasi kansioon MCP-palvelimien konfigurointia varten. Esimerkki konfiguraatiosta:
-     ```json
+1. **Määritä MCP-palvelimet**:
+   - Avaa työtilasi VS Codessa.
+   - Luo `.vscode/mcp.json` -tiedosto työtilakansioosi MCP-palvelimien määrittämistä varten. Esimerkkikonfiguraatio:
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-   - Korvaa polku projektisi polulla. Polun tulee olla absoluuttinen eikä suhteellinen työtilan kansioon. (Esimerkki: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## Palvelun käyttö
+   - Sinulta kysytään GitHub-repositorion juurihakemistoa, jonka saat komennolla `git rev-parse --show-toplevel`.
 
-Palvelu tarjoaa seuraavat API-päätepisteet MCP-protokollan kautta:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,7 +86,7 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` Docker Hub -käyttäjänimelläsi:
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` korvaten oman Docker Hub -käyttäjänimesi):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
@@ -87,9 +95,9 @@ The previous soultion is great when you have the .NET SDK installed, and all the
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Dockerisoidun version käyttö
+## Käytä Docker-versiota
 
-1. `.vscode/mcp.json`-tiedostossa korvaa palvelimen konfiguraatio seuraavalla:
+1. Korvaa palvelinmääritykset `.vscode/mcp.json` -tiedostossa seuraavasti:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -103,11 +111,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Kun tarkastelet konfiguraatiota, näet, että komento on `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Konfiguraatiosta näet, että komento on `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, ja aivan kuten aiemmin, voit pyytää laskinpalvelua tekemään matematiikkaa puolestasi.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, ja kuten aiemmin, voit pyytää laskinpalvelua tekemään laskutoimituksia puolestasi.
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälykäännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää auktoritatiivisena lähteenä. Kriittisen tiedon kohdalla suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä on katsottava viralliseksi lähteeksi. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinymmärryksistä tai tulkinnoista.

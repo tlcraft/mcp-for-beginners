@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1954cd45a2563dfea43bfe48cccb0c8",
-  "translation_date": "2025-05-17T09:12:22+00:00",
+  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
+  "translation_date": "2025-06-18T06:08:11+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "ro"
 }
@@ -12,9 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## -1- Instalează dependențele
 
 ```bash
-dotnet add package ModelContextProtocol --prerelease
-# Add the .NET Hosting NuGet package
-dotnet add package Microsoft.Extensions.Hosting
+dotnet restore
 ```
 
 ## -3- Rulează exemplul
@@ -25,28 +23,28 @@ dotnet run
 
 ## -4- Testează exemplul
 
-Cu serverul rulând într-un terminal, deschide un alt terminal și execută următoarea comandă:
+Cu serverul pornit într-un terminal, deschide un alt terminal și rulează următoarea comandă:
 
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-Acest lucru ar trebui să pornească un server web cu o interfață vizuală care îți permite să testezi exemplul.
+Aceasta ar trebui să pornească un server web cu o interfață vizuală care îți permite să testezi exemplul.
 
 Odată ce serverul este conectat:
 
-- încearcă să listezi uneltele și să rulezi `add`, cu argumentele 2 și 4, ar trebui să vezi 6 în rezultat.
-- mergi la resurse și șablon de resurse și apelează "greeting", tastează un nume și ar trebui să vezi un salut cu numele pe care l-ai furnizat.
+- încearcă să listezi uneltele și rulează `add`, cu argumentele 2 și 4, ar trebui să vezi rezultatul 6.
+- accesează resursele și șablonul de resurse, apelează "greeting", introdu un nume și ar trebui să vezi un mesaj de salut cu numele introdus.
 
-### Testarea în modul CLI
+### Testare în modul CLI
 
-Poți să-l lansezi direct în modul CLI rulând următoarea comandă:
+Poți porni direct în modul CLI rulând următoarea comandă:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-Acest lucru va lista toate uneltele disponibile în server. Ar trebui să vezi următoarea ieșire:
+Aceasta va lista toate uneltele disponibile pe server. Ar trebui să vezi următorul rezultat:
 
 ```text
 {
@@ -76,13 +74,13 @@ Acest lucru va lista toate uneltele disponibile în server. Ar trebui să vezi u
 }
 ```
 
-Pentru a invoca o unealtă tastează:
+Pentru a apela o unealtă, tastează:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-name Add --tool-arg a=1 --tool-arg b=2
 ```
 
-Ar trebui să vezi următoarea ieșire:
+Ar trebui să vezi următorul rezultat:
 
 ```text
 {
@@ -100,5 +98,5 @@ Ar trebui să vezi următoarea ieșire:
 > De obicei, este mult mai rapid să rulezi inspectorul în modul CLI decât în browser.
 > Citește mai multe despre inspector [aici](https://github.com/modelcontextprotocol/inspector).
 
-**Declinări de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți de faptul că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională umană. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea în urma utilizării acestei traduceri.

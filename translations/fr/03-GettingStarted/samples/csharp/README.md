@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-16T15:04:42+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T05:45:40+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "fr"
 }
 -->
-# Service de Calculatrice Basique MCP
+# Service Calculatrice Basique MCP
 
-Ce service propose des opérations de calcul basiques via le Model Context Protocol (MCP). Il est conçu comme un exemple simple pour les débutants qui souhaitent découvrir les implémentations MCP.
+Ce service fournit des opérations de calcul basiques via le Model Context Protocol (MCP). Il est conçu comme un exemple simple pour les débutants qui découvrent les implémentations MCP.
 
 Pour plus d’informations, consultez [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
 ## Fonctionnalités
 
-Ce service de calculatrice offre les capacités suivantes :
+Ce service calculatrice offre les capacités suivantes :
 
 1. **Opérations arithmétiques de base** :
    - Addition de deux nombres
@@ -23,34 +23,42 @@ Ce service de calculatrice offre les capacités suivantes :
    - Multiplication de deux nombres
    - Division d’un nombre par un autre (avec vérification de la division par zéro)
 
-## Utilisation du type `stdio`
-  
+## Utilisation de `stdio` Type
+
 ## Configuration
 
 1. **Configurer les serveurs MCP** :
    - Ouvrez votre espace de travail dans VS Code.
-   - Créez un fichier `.vscode/mcp.json` dans le dossier de votre espace de travail pour configurer les serveurs MCP. Exemple de configuration :
-     ```json
+   - Créez un fichier `.vscode/mcp.json` dans votre dossier de travail pour configurer les serveurs MCP. Exemple de configuration :
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-	- Remplacez le chemin par celui de votre projet. Le chemin doit être absolu et non relatif au dossier de l’espace de travail. (Exemple : D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## Utilisation du Service
+   - Il vous sera demandé d’entrer la racine du dépôt GitHub, que vous pouvez obtenir avec la commande `git rev-parse --show-toplevel`.
 
-Le service expose les points d’API suivants via le protocole MCP :
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,7 +86,7 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` avec votre nom d’utilisateur Docker Hub) :
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` en remplaçant par votre nom d’utilisateur Docker Hub :
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
@@ -87,9 +95,9 @@ The previous soultion is great when you have the .NET SDK installed, and all the
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Utiliser la Version Dockerisée
+## Utiliser la version Dockerisée
 
-1. Dans le fichier `.vscode/mcp.json`, remplacez la configuration du serveur par la suivante :
+1. Dans le fichier `.vscode/mcp.json`, remplacez la configuration du serveur par ce qui suit :
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -107,7 +115,7 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, et comme précédemment, vous pouvez demander au service calculatrice d’effectuer des calculs pour vous.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, et comme précédemment, vous pouvez demander au service calculatrice de faire des calculs pour vous.
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous ne saurions être tenus responsables des malentendus ou des interprétations erronées résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

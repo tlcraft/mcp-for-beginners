@@ -1,52 +1,54 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-17T11:59:17+00:00",
+  "original_hash": "2a58caa6e11faa09470b7f81e6729652",
+  "translation_date": "2025-06-18T06:09:31+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "sr"
 }
 -->
-# Pokretanje ovog primera
+# Покретање овог примера
 
-## -1- Instalirajte zavisnosti
+## -1- Инсталирајте зависности
+
+```bash
+dotnet restore
+```
+
+## -2- Покрените пример
 
 ```bash
 dotnet run
 ```
 
-## -2- Pokrenite primer
+## -3- Тестирајте пример
 
-```bash
-dotnet run
-```
+Пре него што покренете следеће, отворите посебан терминал (проверите да ли сервер и даље ради).
 
-## -3- Testirajte primer
-
-Pokrenite zaseban terminal pre nego što izvršite naredbu ispod (osigurajte da server još uvek radi).
-
-Sa serverom koji radi u jednom terminalu, otvorite drugi terminal i izvršite sledeću komandu:
+Док сервер ради у једном терминалу, отворите други терминал и покрените следећу команду:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Ovo bi trebalo da pokrene veb server sa vizuelnim interfejsom koji vam omogućava da testirate primer.
+Ово би требало да покрене веб сервер са визуелним интерфејсом који вам омогућава да тестирате пример.
 
-Kada se server poveže:
+> Проверите да ли је **SSE** изабран као тип транспорта, а URL је `http://localhost:3001/sse`.
 
-- pokušajte da prikažete listu alata i pokrenete `add`, sa argumentima 2 i 4, trebalo bi da vidite 6 kao rezultat.
-- idite na resurse i šablon resursa i pozovite "greeting", unesite ime i trebalo bi da vidite pozdrav sa imenom koje ste uneli.
+Once the server is connected: 
 
-### Testiranje u CLI režimu
+- try listing tools and run `add`, са аргументима 2 и 4, требало би да видите резултат 6.
+- идите на resources и resource template и позовите "greeting", укуцајте име и требало би да добијете поздрав са унетим именом.
 
-Možete ga pokrenuti direktno u CLI režimu izvršavanjem sledeće komande:
+### Тестирање у CLI режиму
+
+Можете га покренути директно у CLI режиму покретањем следеће команде:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Ovo će prikazati sve dostupne alate na serveru. Trebalo bi da vidite sledeći izlaz:
+Ово ће приказати све алате доступне на серверу. Требало би да видите следећи излаз:
 
 ```text
 {
@@ -78,13 +80,13 @@ Ovo će prikazati sve dostupne alate na serveru. Trebalo bi da vidite sledeći i
 }
 ```
 
-Da biste pokrenuli alat, unesite:
+Да бисте позвали алат укуцајте:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Trebalo bi da vidite sledeći izlaz:
+Требало би да видите следећи излаз:
 
 ```text
 {
@@ -99,8 +101,8 @@ Trebalo bi da vidite sledeći izlaz:
 ```
 
 > ![!TIP]
-> Obično je mnogo brže pokrenuti inspektor u CLI režimu nego u pretraživaču.
-> Pročitajte više o inspektoru [ovde](https://github.com/modelcontextprotocol/inspector).
+> Обично је много брже покренути инспектор у CLI режиму него у прегледачу.
+> Више о инспектору прочитајте [овде](https://github.com/modelcontextprotocol/inspector).
 
-**Одричање од одговорности**:  
-Овај документ је преведен коришћењем услуге вештачке интелигенције за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако настојимо да постигнемо тачност, молимо вас да будете свесни да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на свом изворном језику треба сматрати меродавним извором. За критичне информације препоручује се професионални људски превод. Не сносимо одговорност за било какве неспоразуме или погрешна тумачења настала коришћењем овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо тачности, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала употребом овог превода.

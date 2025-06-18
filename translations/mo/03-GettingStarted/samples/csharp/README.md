@@ -1,56 +1,64 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T12:58:05+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T05:50:08+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "mo"
 }
 -->
-# सेवसिक्टे बेसिक कैलकुलेटर एमसीपी
+# 基本計算機 MCP 服務
 
-यो सेवाले बेसिक कैलकुलेटर अपरेसनहरू मोडल कण्टेक्स्ट प्रोटोकल (एमसीपी) मार्फत प्रदान गर्दछ। यो एमसीपी कार्यान्वयनहरू सिक्दै गरेका सुरुको लागि सरल उदाहरणको रूपमा डिजाइन गरिएको हो।
+此服務透過 Model Context Protocol (MCP) 提供基本的計算機運算功能。它是為初學者學習 MCP 實作而設計的簡單範例。
 
-थप जानकारीको लागि, [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) हेर्नुहोस्।
+欲了解更多資訊，請參考 [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## विशेषताहरू
+## 功能
 
-यो कैलकुलेटर सेवाले निम्न क्षमताहरू प्रदान गर्दछ:
+此計算機服務提供以下功能：
 
-1. **बेसिक अंकगणित अपरेसनहरू**:
-   - दुई संख्याको योग
-   - एक संख्याबाट अर्को संख्या घटाउने
-   - दुई संख्याको गुणन
-   - एक संख्यालाई अर्को संख्याद्वारा भाग गर्ने (शून्य भागको जाँचसहित)
+1. **基本算術運算**：
+   - 兩數相加
+   - 一數減去另一數
+   - 兩數相乘
+   - 一數除以另一數（包含除以零的檢查）
 
-## `stdio` प्रकार प्रयोग गर्दै
+## 使用 `stdio` 類型
 
-## कन्फिगरेसन
+## 設定
 
-1. **एमसीपी सर्भरहरू कन्फिगर गर्नुहोस्**:
-   - आफ्नो कार्यक्षेत्र VS कोडमा खोल्नुहोस्।
-   - एमसीपी सर्भरहरू कन्फिगर गर्न आफ्नो कार्यक्षेत्र फोल्डरमा `.vscode/mcp.json` फाइल बनाउनुहोस्। कन्फिगरेसनको उदाहरण:
-     ```json
+1. **設定 MCP 伺服器**：
+   - 在 VS Code 中開啟你的工作區。
+   - 在工作區資料夾中建立 `.vscode/mcp.json` 檔案以設定 MCP 伺服器。範例設定：
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-	- आफ्नो परियोजनाको बाटोले प्रतिस्थापन गर्नुहोस्। बाटो पूर्ण हुनुपर्छ र कार्यक्षेत्र फोल्डरसँग सम्बन्धित हुनुपर्दैन। (उदाहरण: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## सेवाको प्रयोग
+   - 系統會要求你輸入 GitHub 倉庫根目錄，可透過指令 `git rev-parse --show-toplevel`.
 
-सेवाले एमसीपी प्रोटोकल मार्फत निम्न एपीआई अन्तर्क्रियाहरू प्रदान गर्दछ:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,18 +86,18 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` आफ्नो Docker Hub प्रयोगकर्ता नामसहित:
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` 取得，<YOUR-DOCKER-USERNAME> 請替換為你的 Docker Hub 使用者名稱：
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. छवि निर्माण भए पछि, यसलाई Docker Hub मा अपलोड गरौं। निम्न कमाण्ड चलाउनुहोस्:
+1. 映像檔建置完成後，我們將它上傳到 Docker Hub。執行以下指令：
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## डकराइज्ड संस्करण प्रयोग गर्नुहोस्
+## 使用 Docker 版本
 
-1. `.vscode/mcp.json` फाइलमा, सर्भर कन्फिगरेसनलाई निम्नानुसार प्रतिस्थापन गर्नुहोस्:
+1. 在 `.vscode/mcp.json` 檔案中，將伺服器設定替換為以下內容：
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -103,10 +111,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   कन्फिगरेसनलाई हेर्दा, तपाईं देख्न सक्नुहुन्छ कि कमाण्ड `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   從設定中可以看到指令是 `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {` हो, र पहिले जस्तै तपाईं कैलकुलेटर सेवालाई केही गणित गर्न सोध्न सक्नुहुन्छ।
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`，如同之前一樣，你可以請計算機服務幫你做一些數學運算。
 
-I'm sorry, but I'm unable to translate text into "mo" as it appears to be an unspecified or fictional language. If you meant a specific language, please provide more details or clarify, and I'll do my best to assist you.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 所翻譯。雖然我們力求準確，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯所引起之任何誤解或誤釋負責。

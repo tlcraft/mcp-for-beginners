@@ -1,29 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1954cd45a2563dfea43bfe48cccb0c8",
-  "translation_date": "2025-05-17T09:10:19+00:00",
+  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
+  "translation_date": "2025-06-18T06:02:14+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "fi"
 }
 -->
-# Näytteen suorittaminen
+# Tämän esimerkin suorittaminen
 
 ## -1- Asenna riippuvuudet
 
 ```bash
-dotnet add package ModelContextProtocol --prerelease
-# Add the .NET Hosting NuGet package
-dotnet add package Microsoft.Extensions.Hosting
+dotnet restore
 ```
 
-## -3- Suorita näyte
+## -3- Suorita esimerkki
 
 ```bash
 dotnet run
 ```
 
-## -4- Testaa näyte
+## -4- Testaa esimerkki
 
 Kun palvelin on käynnissä yhdessä terminaalissa, avaa toinen terminaali ja suorita seuraava komento:
 
@@ -31,14 +29,14 @@ Kun palvelin on käynnissä yhdessä terminaalissa, avaa toinen terminaali ja su
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-Tämän pitäisi käynnistää verkkopalvelin visuaalisella käyttöliittymällä, joka mahdollistaa näytteen testaamisen.
+Tämän pitäisi käynnistää verkkopalvelin, jossa on visuaalinen käyttöliittymä, jonka avulla voit testata esimerkkiä.
 
 Kun palvelin on yhdistetty:
 
-- kokeile luetella työkalut ja suorittaa `add`, argumenteilla 2 ja 4, sinun pitäisi nähdä tuloksena 6.
-- mene resursseihin ja resurssipohjaan ja kutsu "greeting", kirjoita nimi ja sinun pitäisi nähdä tervehdys antamallasi nimellä.
+- kokeile listata työkalut ja suorittaa `add` komento argumenteilla 2 ja 4, tuloksena pitäisi näkyä 6.
+- siirry resources- ja resource template -kohtiin ja kutsu "greeting", kirjoita nimi ja näet tervehdyksen antamallasi nimellä.
 
-### Testaus CLI-tilassa
+### Testaus komentorivillä (CLI-tila)
 
 Voit käynnistää sen suoraan CLI-tilassa suorittamalla seuraavan komennon:
 
@@ -46,7 +44,7 @@ Voit käynnistää sen suoraan CLI-tilassa suorittamalla seuraavan komennon:
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-Tämä luettelee kaikki palvelimessa saatavilla olevat työkalut. Sinun pitäisi nähdä seuraava tulostus:
+Tämä listaa kaikki palvelimella saatavilla olevat työkalut. Näet seuraavan tulosteen:
 
 ```text
 {
@@ -82,7 +80,7 @@ Työkalun kutsumiseksi kirjoita:
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-name Add --tool-arg a=1 --tool-arg b=2
 ```
 
-Sinun pitäisi nähdä seuraava tulostus:
+Näet seuraavan tulosteen:
 
 ```text
 {
@@ -97,8 +95,8 @@ Sinun pitäisi nähdä seuraava tulostus:
 ```
 
 > ![!TIP]
-> On yleensä paljon nopeampaa suorittaa tarkastaja CLI-tilassa kuin selaimessa.
-> Lue lisää tarkastajasta [täältä](https://github.com/modelcontextprotocol/inspector).
+> On yleensä paljon nopeampaa suorittaa inspector CLI-tilassa kuin selaimessa.
+> Lue lisää inspectorista [täältä](https://github.com/modelcontextprotocol/inspector).
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä AI-käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta ole tietoinen siitä, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulee pitää auktoritatiivisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty tekoälypohjaisella käännöspalvelulla [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, ole hyvä ja huomioi, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja omalla kielellään on virallinen lähde. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä mahdollisesti aiheutuvista väärinymmärryksistä tai virhetulkinnoista.

@@ -1,16 +1,26 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-16T14:58:48+00:00",
+  "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
+  "translation_date": "2025-06-18T05:47:10+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "de"
 }
 -->
-# Dieses Beispiel ausführen
+# Führen Sie dieses Beispiel aus
 
-> [!NOTE]
-> Dieses Beispiel geht davon aus, dass Sie eine GitHub Codespaces-Instanz verwenden. Wenn Sie es lokal ausführen möchten, müssen Sie einen persönlichen Zugriffstoken auf GitHub einrichten.
+> [!NOTE]  
+> Dieses Beispiel geht davon aus, dass Sie eine GitHub Codespaces-Instanz verwenden. Wenn Sie es lokal ausführen möchten, müssen Sie ein persönliches Zugriffstoken (PAT) auf GitHub einrichten.  
+>  
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```  
+>  
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```  
 
 ## Bibliotheken installieren
 
@@ -18,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-Es sollten die folgenden Bibliotheken installiert werden: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
+Es sollten folgende Bibliotheken installiert werden: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol  
 
 ## Ausführen
 
@@ -41,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Ein Großteil der Ausgabe dient nur der Fehlersuche, aber wichtig ist, dass Sie Werkzeuge vom MCP-Server auflisten, diese in LLM-Werkzeuge umwandeln und am Ende eine MCP-Client-Antwort "Sum 6" erhalten.
+Ein Großteil der Ausgabe dient nur der Fehlerbehebung, aber wichtig ist, dass Sie Tools vom MCP Server auflisten, diese in LLM-Tools umwandeln und am Ende eine MCP-Client-Antwort wie „Sum 6“ erhalten.
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, bitten wir zu beachten, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

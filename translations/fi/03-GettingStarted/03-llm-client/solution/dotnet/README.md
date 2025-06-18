@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-17T10:42:20+00:00",
+  "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
+  "translation_date": "2025-06-18T06:02:26+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "fi"
 }
@@ -10,7 +10,17 @@ CO_OP_TRANSLATOR_METADATA:
 # Suorita tämä esimerkki
 
 > [!NOTE]
-> Tämä esimerkki olettaa, että käytät GitHub Codespaces -instanssia. Jos haluat suorittaa tämän paikallisesti, sinun on asetettava henkilökohtainen käyttöoikeustunnus GitHubissa.
+> Tämä esimerkki olettaa, että käytät GitHub Codespaces -instanssia. Jos haluat suorittaa tämän paikallisesti, sinun täytyy luoda henkilökohtainen käyttöoikeustunnus (PAT) GitHubiin.
+>
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```
+>
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```
 
 ## Asenna kirjastot
 
@@ -18,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-Tämän pitäisi asentaa seuraavat kirjastot: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtocol 
+Asentaa seuraavat kirjastot: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
 ## Suorita
 
@@ -26,7 +36,7 @@ Tämän pitäisi asentaa seuraavat kirjastot: Azure AI Inference, Azure Identity
 dotnet run
 ```
 
-Sinun pitäisi nähdä tuloste, joka on samanlainen kuin:
+Näet todennäköisesti tulosteen, joka näyttää tältä:
 
 ```text
 Setting up stdio transport
@@ -41,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Paljon tulosteesta on vain virheenkorjausta, mutta tärkeää on, että listaat työkaluja MCP-palvelimelta, muutat ne LLM-työkaluiksi ja saat MCP-asiakasvastauksen "Sum 6".
+Suurin osa tulosteesta on vain debuggausta, mutta tärkeintä on, että luettelet työkaluja MCP Serveriltä, muutat ne LLM-työkaluiksi ja lopputuloksena saat MCP clientin vastauksen "Sum 6".
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomaa, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää auktoritatiivisena lähteenä. Kriittisen tiedon kohdalla suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa mahdollisista väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, ole hyvä ja huomioi, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä on pidettävä auktoritatiivisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

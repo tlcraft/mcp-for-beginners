@@ -1,52 +1,54 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-17T11:55:13+00:00",
+  "original_hash": "2a58caa6e11faa09470b7f81e6729652",
+  "translation_date": "2025-06-18T05:56:35+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "pt"
 }
 -->
-# Executando este exemplo
+# Executar este exemplo
 
-## -1- Instale as dependências
+## -1- Instalar as dependências
+
+```bash
+dotnet restore
+```
+
+## -2- Executar o exemplo
 
 ```bash
 dotnet run
 ```
 
-## -2- Execute o exemplo
+## -3- Testar o exemplo
 
-```bash
-dotnet run
-```
+Abra um terminal separado antes de executar o comando abaixo (certifique-se de que o servidor ainda está a funcionar).
 
-## -3- Teste o exemplo
-
-Inicie um terminal separado antes de executar o comando abaixo (certifique-se de que o servidor ainda está em execução).
-
-Com o servidor rodando em um terminal, abra outro terminal e execute o seguinte comando:
+Com o servidor a correr num terminal, abra outro terminal e execute o seguinte comando:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Isso deve iniciar um servidor web com uma interface visual que permite testar o exemplo.
+Isto deverá iniciar um servidor web com uma interface visual que permite testar o exemplo.
 
-Uma vez conectado ao servidor:
+> Certifique-se de que o **SSE** está selecionado como tipo de transporte, e que a URL é `http://localhost:3001/sse`.
 
-- tente listar as ferramentas e execute `add`, com os argumentos 2 e 4, você deverá ver 6 no resultado.
-- vá para recursos e modelo de recurso e chame "greeting", digite um nome e você deverá ver uma saudação com o nome que você forneceu.
+Once the server is connected: 
 
-### Testando no modo CLI
+- try listing tools and run `add`, com os argumentos 2 e 4, deverá ver 6 no resultado.
+- vá a resources e resource template e chame "greeting", escreva um nome e deverá ver uma saudação com o nome que forneceu.
 
-Você pode iniciá-lo diretamente no modo CLI executando o seguinte comando:
+### Testar em modo CLI
+
+Pode lançá-lo diretamente em modo CLI executando o seguinte comando:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Isso listará todas as ferramentas disponíveis no servidor. Você deverá ver a seguinte saída:
+Isto irá listar todas as ferramentas disponíveis no servidor. Deverá ver a seguinte saída:
 
 ```text
 {
@@ -78,13 +80,13 @@ Isso listará todas as ferramentas disponíveis no servidor. Você deverá ver a
 }
 ```
 
-Para invocar uma ferramenta, digite:
+Para invocar uma ferramenta, escreva:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Você deverá ver a seguinte saída:
+Deverá ver a seguinte saída:
 
 ```text
 {
@@ -99,8 +101,8 @@ Você deverá ver a seguinte saída:
 ```
 
 > ![!TIP]
-> Geralmente é muito mais rápido executar o inspetor no modo CLI do que no navegador.
-> Leia mais sobre o inspetor [aqui](https://github.com/modelcontextprotocol/inspector).
+> Normalmente é muito mais rápido executar o inspector em modo CLI do que no navegador.
+> Leia mais sobre o inspector [aqui](https://github.com/modelcontextprotocol/inspector).
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos por garantir a precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional por um humano. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

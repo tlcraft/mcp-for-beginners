@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1954cd45a2563dfea43bfe48cccb0c8",
-  "translation_date": "2025-05-16T15:11:41+00:00",
+  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
+  "translation_date": "2025-06-18T05:58:10+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "pl"
 }
@@ -12,9 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## -1- Zainstaluj zależności
 
 ```bash
-dotnet add package ModelContextProtocol --prerelease
-# Add the .NET Hosting NuGet package
-dotnet add package Microsoft.Extensions.Hosting
+dotnet restore
 ```
 
 ## -3- Uruchom przykład
@@ -25,28 +23,28 @@ dotnet run
 
 ## -4- Przetestuj przykład
 
-Mając serwer uruchomiony w jednym terminalu, otwórz drugi terminal i wykonaj następujące polecenie:
+Gdy serwer działa w jednym terminalu, otwórz kolejny i uruchom następujące polecenie:
 
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-To powinno uruchomić serwer WWW z interfejsem wizualnym, który pozwoli Ci przetestować przykład.
+To powinno uruchomić serwer WWW z interfejsem graficznym, który pozwoli Ci przetestować przykład.
 
-Gdy serwer będzie połączony:
+Po połączeniu z serwerem:
 
-- spróbuj wyświetlić listę narzędzi i uruchomić `add` z argumentami 2 i 4, w wyniku powinno pojawić się 6.
+- spróbuj wyświetlić listę narzędzi i uruchom `add` z argumentami 2 i 4, w wyniku powinno pojawić się 6.
 - przejdź do zasobów i szablonu zasobu, wywołaj "greeting", wpisz imię i powinieneś zobaczyć powitanie z podanym imieniem.
 
 ### Testowanie w trybie CLI
 
-Możesz uruchomić go bezpośrednio w trybie CLI, wykonując następujące polecenie:
+Możesz uruchomić to bezpośrednio w trybie CLI, wykonując następujące polecenie:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-To wyświetli wszystkie narzędzia dostępne na serwerze. Powinieneś zobaczyć następujący wynik:
+To wyświetli listę wszystkich narzędzi dostępnych na serwerze. Powinieneś zobaczyć następujący wynik:
 
 ```text
 {
@@ -97,8 +95,8 @@ Powinieneś zobaczyć następujący wynik:
 ```
 
 > ![!TIP]
-> Zazwyczaj dużo szybciej jest uruchomić inspector w trybie CLI niż w przeglądarce.
-> Przeczytaj więcej o inspectorze [tutaj](https://github.com/modelcontextprotocol/inspector).
+> Zazwyczaj znacznie szybciej jest uruchomić inspektora w trybie CLI niż w przeglądarce.
+> Więcej informacji o inspektorze znajdziesz [tutaj](https://github.com/modelcontextprotocol/inspector).
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym należy uważać za źródło wiarygodne. W przypadku informacji o krytycznym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najdokładniejsze, prosimy pamiętać, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

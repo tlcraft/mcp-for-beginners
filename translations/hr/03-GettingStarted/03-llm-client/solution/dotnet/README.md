@@ -1,24 +1,34 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-17T10:44:52+00:00",
+  "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
+  "translation_date": "2025-06-18T06:10:09+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "hr"
 }
 -->
-# Pokreni ovaj primjer
+# Pokrenite ovaj primjer
 
 > [!NOTE]
-> Ovaj primjer pretpostavlja da koristite GitHub Codespaces instance. Ako želite pokrenuti ovo lokalno, trebate postaviti osobni pristupni token na GitHubu.
+> Ovaj primjer pretpostavlja da koristite GitHub Codespaces instancu. Ako želite pokrenuti lokalno, morate postaviti personalizirani pristupni token (PAT) na GitHubu.
+>
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```
+>
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```
 
-## Instaliraj biblioteke
+## Instalirajte biblioteke
 
 ```sh
 dotnet restore
 ```
 
-Treba instalirati sljedeće biblioteke: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtocol
+Trebao bi instalirati sljedeće biblioteke: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol 
 
 ## Pokreni
 
@@ -26,7 +36,7 @@ Treba instalirati sljedeće biblioteke: Azure AI Inference, Azure Identity, Micr
 dotnet run
 ```
 
-Trebali biste vidjeti izlaz sličan:
+Trebali biste vidjeti izlaz sličan ovom:
 
 ```text
 Setting up stdio transport
@@ -41,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Velik dio izlaza je samo za debugiranje, ali ono što je važno je da popisujete alate s MCP Servera, pretvarate ih u LLM alate i na kraju dobivate MCP klijentski odgovor "Sum 6".
+Većina izlaza je samo za otklanjanje pogrešaka, ali važno je da nabrajate alate s MCP Servera, pretvarate ih u LLM alate i na kraju dobijete MCP klijentski odgovor "Sum 6".
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge prevođenja [Co-op Translator](https://github.com/Azure/co-op-translator). Iako se trudimo osigurati točnost, molimo vas da budete svjesni da automatizirani prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati mjerodavnim izvorom. Za kritične informacije preporučuje se profesionalni prijevod od strane ljudskog prevoditelja. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prijevod [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne odgovaramo za bilo kakva nesporazuma ili pogrešna tumačenja proizašla iz korištenja ovog prijevoda.

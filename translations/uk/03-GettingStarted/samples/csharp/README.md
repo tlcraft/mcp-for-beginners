@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-06-17T16:36:29+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T06:11:54+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "uk"
 }
 -->
 # Основний сервіс калькулятора MCP
 
-Цей сервіс надає базові операції калькулятора через протокол Model Context Protocol (MCP). Він створений як простий приклад для початківців, які вивчають реалізації MCP.
+Цей сервіс надає базові операції калькулятора через Model Context Protocol (MCP). Він створений як простий приклад для початківців, які вивчають реалізації MCP.
 
 Для отримання додаткової інформації дивіться [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
@@ -17,7 +17,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Цей сервіс калькулятора пропонує такі функції:
 
-1. **Базові арифметичні операції**:
+1. **Основні арифметичні операції**:
    - Додавання двох чисел
    - Віднімання одного числа від іншого
    - Множення двох чисел
@@ -28,29 +28,37 @@ CO_OP_TRANSLATOR_METADATA:
 ## Налаштування
 
 1. **Налаштування MCP серверів**:
-   - Відкрийте вашу робочу область у VS Code.
-   - Створіть файл `.vscode/mcp.json` у папці робочої області для налаштування MCP серверів. Приклад конфігурації:
-     ```json
+   - Відкрийте робочий простір у VS Code.
+   - Створіть файл `.vscode/mcp.json` у папці вашого робочого простору для налаштування MCP серверів. Приклад конфігурації:
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-	- Замініть шлях на шлях до вашого проекту. Шлях повинен бути абсолютним, а не відносним до папки робочої області. (Приклад: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## Використання сервісу
+   - Вас попросять ввести кореневу папку репозиторію GitHub, яку можна отримати за допомогою команди `git rev-parse --show-toplevel`.
 
-Сервіс надає такі API ендпоінти через протокол MCP:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -82,7 +90,7 @@ The previous soultion is great when you have the .NET SDK installed, and all the
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. Після створення образу, завантажте його на Docker Hub. Виконайте таку команду:
+1. Після того, як образ буде створено, завантажте його на Docker Hub. Виконайте таку команду:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
@@ -103,11 +111,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Якщо подивитися на конфігурацію, ви побачите, що команда `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Якщо подивитися на конфігурацію, ви побачите, що команда — `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, і так само, як раніше, ви можете попросити сервіс калькулятора виконати для вас деякі обчислення.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, і так само, як раніше, ви можете попросити сервіс калькулятора виконати для вас обчислення.
 
 **Відмова від відповідальності**:  
-Цей документ було перекладено за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, будь ласка, майте на увазі, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ рідною мовою слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується звертатися до професійного людського перекладу. Ми не несемо відповідальності за будь-які непорозуміння або неправильні тлумачення, що виникли внаслідок використання цього перекладу.
+Цей документ було перекладено за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, будь ласка, майте на увазі, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ його рідною мовою слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується звертатися до професійного людського перекладу. Ми не несемо відповідальності за будь-які непорозуміння чи неправильні тлумачення, що виникли внаслідок використання цього перекладу.

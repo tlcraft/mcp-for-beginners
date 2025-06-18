@@ -1,32 +1,42 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-17T10:45:05+00:00",
+  "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
+  "translation_date": "2025-06-18T06:10:41+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "sl"
 }
 -->
-# इस नमूने को चलाएं
+# Zaženi ta primer
 
 > [!NOTE]
-> यह नमूना मानता है कि आप एक GitHub Codespaces उदाहरण का उपयोग कर रहे हैं। यदि आप इसे स्थानीय रूप से चलाना चाहते हैं, तो आपको GitHub पर एक व्यक्तिगत एक्सेस टोकन सेट अप करने की आवश्यकता है।
+> Ta primer predvideva, da uporabljaš GitHub Codespaces. Če želiš to zagnati lokalno, moraš na GitHubu nastaviti osebni dostopni žeton (PAT).
+>
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```
+>
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```
 
-## लाइब्रेरीज़ स्थापित करें
+## Namesti knjižnice
 
 ```sh
 dotnet restore
 ```
 
-निम्नलिखित लाइब्रेरीज़ को स्थापित करना चाहिए: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol 
+Namestiti bi moral naslednje knjižnice: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
-## चलाएं
+## Zaženi
 
 ```sh 
 dotnet run
 ```
 
-आपको एक आउटपुट देखना चाहिए जो इस प्रकार है:
+Videti bi moral izhod, podoben temu:
 
 ```text
 Setting up stdio transport
@@ -41,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-बहुत सारा आउटपुट केवल डिबगिंग है, लेकिन जो महत्वपूर्ण है वह यह है कि आप MCP सर्वर से टूल्स सूचीबद्ध कर रहे हैं, उन्हें LLM टूल्स में बदलें और आपको MCP क्लाइंट प्रतिक्रिया "Sum 6" मिलती है।
+Velik del izhoda je samo za razhroščevanje, pomembno pa je, da navajaš orodja s strežnika MCP, jih pretvoriš v LLM orodja in na koncu dobiš odgovor od MCP klienta "Sum 6".
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI storitve za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da se zavedate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku naj bo obravnavan kot avtoritativni vir. Za ključne informacije je priporočljivo profesionalno človeško prevajanje. Ne odgovarjamo za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

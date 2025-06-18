@@ -1,56 +1,64 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T13:03:53+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T06:09:09+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "sr"
 }
 -->
-# Osnovna Kalkulator MCP Usluga
+# Основна услуга калкулатора MCP
 
-Ova usluga pruža osnovne operacije kalkulatora putem Model Context Protocol-a (MCP). Dizajnirana je kao jednostavan primer za početnike koji uče o MCP implementacijama.
+Ова услуга пружа основне операције калкулатора преко Model Context Protocol (MCP). Дизајнирана је као једноставан пример за почетнике који уче о имплементацијама MCP.
 
-Za više informacija, pogledajte [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+За више информација, погледајте [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## Karakteristike
+## Карактеристике
 
-Ova kalkulator usluga nudi sledeće mogućnosti:
+Ова услуга калкулатора нуди следеће могућности:
 
-1. **Osnovne Aritmetičke Operacije**:
-   - Sabiranje dva broja
-   - Oduzimanje jednog broja od drugog
-   - Množenje dva broja
-   - Deljenje jednog broja drugim (sa proverom deljenja nulom)
+1. **Основне аритметичке операције**:
+   - Сабирање два броја
+   - Одузимање једног броја од другог
+   - Множење два броја
+   - Дељење једног броја са другим (са провером за дељење нулом)
 
-## Korišćenje `stdio` Tip
+## Коришћење `stdio` типа
+  
+## Конфигурација
 
-## Konfiguracija
+1. **Конфигуришите MCP сервере**:
+   - Отворите свој радни простор у VS Code.
+   - Креирајте `.vscode/mcp.json` фајл у фасцикли вашег радног простора за конфигурацију MCP сервера. Пример конфигурације:
 
-1. **Konfigurišite MCP Servere**:
-   - Otvorite svoj radni prostor u VS Code-u.
-   - Kreirajte `.vscode/mcp.json` datoteku u svom radnom folderu da konfigurišete MCP servere. Primer konfiguracije:
-     ```json
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-   - Zamenite putanju sa putanjom do vašeg projekta. Putanja treba da bude apsolutna, a ne relativna u odnosu na radni folder. (Primer: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## Korišćenje Usluge
+   - Бићете упитани да унесете корен GitHub репозиторијума, који можете добити из команде `git rev-parse --show-toplevel`.
 
-Usluga izlaže sledeće API krajnje tačke putem MCP protokola:
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,18 +86,18 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` sa vašim Docker Hub korisničkim imenom):
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` са вашим Docker Hub корисничким именом):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. Nakon što je slika izgrađena, hajde da je otpremimo na Docker Hub. Pokrenite sledeću komandu:
+1. Након што је слика направљена, учитајмо је на Docker Hub. Покрените следећу команду:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Koristite Verziju u Docker-u
+## Коришћење Docker верзије
 
-1. U `.vscode/mcp.json` datoteci, zamenite konfiguraciju servera sa sledećom:
+1. У `.vscode/mcp.json` фајлу замените конфигурацију сервера следећим:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -103,11 +111,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Gledajući konfiguraciju, možete videti da je komanda `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Погледом на конфигурацију, можете видети да је команда `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, i kao i ranije, možete tražiti od kalkulator usluge da uradi neku matematiku za vas.
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, и као и раније, можете тражити од услуге калкулатора да изврши неке математичке операције за вас.
 
-**Ограничење одговорности**:  
-Овај документ је преведен користећи AI услугу превођења [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо ка тачности, молимо вас да будете свесни да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом матерњем језику треба сматрати ауторитативним извором. За критичне информације, препоручује се професионални људски превод. Нисмо одговорни за било каква погрешна схватања или погрешна тумачења која произилазе из коришћења овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем АИ услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде прецизан, молимо вас да имате у виду да аутоматизовани преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетом. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било какве неспоразуме или погрешна тумачења настала употребом овог превода.

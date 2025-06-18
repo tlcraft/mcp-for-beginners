@@ -1,16 +1,26 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-17T10:38:57+00:00",
+  "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
+  "translation_date": "2025-06-18T05:49:35+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "ur"
 }
 -->
 # اس نمونے کو چلائیں
 
-> [!NOTE]
-> یہ نمونہ فرض کرتا ہے کہ آپ GitHub Codespaces مثال استعمال کر رہے ہیں۔ اگر آپ اسے مقامی طور پر چلانا چاہتے ہیں، تو آپ کو GitHub پر ایک ذاتی رسائی ٹوکن ترتیب دینا ہوگا۔
+> [!NOTE]  
+> یہ نمونہ فرض کرتا ہے کہ آپ GitHub Codespaces استعمال کر رہے ہیں۔ اگر آپ اسے مقامی طور پر چلانا چاہتے ہیں، تو آپ کو GitHub پر ایک personal access token (PAT) ترتیب دینا ہوگا۔  
+>  
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```  
+>  
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```  
 
 ## لائبریریاں انسٹال کریں
 
@@ -18,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-درج ذیل لائبریریاں انسٹال ہونی چاہئیں: Azure AI Inference، Azure Identity، Microsoft.Extension، Model.Hosting، ModelContextProtocol
+مندرجہ ذیل لائبریریاں انسٹال ہونی چاہئیں: Azure AI Inference، Azure Identity، Microsoft.Extension، Model.Hosting، ModelContextProtcol  
 
 ## چلائیں
 
@@ -26,7 +36,7 @@ dotnet restore
 dotnet run
 ```
 
-آپ کو ایک آؤٹ پٹ نظر آنا چاہیے جو اس سے ملتا جلتا ہو:
+آپ کو اس طرح کا آؤٹ پٹ نظر آئے گا:
 
 ```text
 Setting up stdio transport
@@ -41,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-آؤٹ پٹ کا زیادہ تر حصہ صرف ڈیبگنگ ہے لیکن جو اہم ہے وہ یہ ہے کہ آپ MCP سرور سے ٹولز کی فہرست دے رہے ہیں، انہیں LLM ٹولز میں تبدیل کریں اور آپ کو ایک MCP کلائنٹ جواب "Sum 6" ملتا ہے۔
+زیادہ تر آؤٹ پٹ صرف ڈیبگنگ کے لیے ہے لیکن اہم بات یہ ہے کہ آپ MCP Server سے ٹولز کی فہرست بنا رہے ہیں، انہیں LLM ٹولز میں تبدیل کر رہے ہیں اور آخر میں آپ کو MCP کلائنٹ کا جواب "Sum 6" مل رہا ہے۔
 
-**ڈس کلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کے لئے کوشش کرتے ہیں، لیکن براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا نقائص ہو سکتے ہیں۔ اصل دستاویز کو اس کی اصل زبان میں معتبر ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لئے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لئے ہم ذمہ دار نہیں ہیں۔
+**اعلانِ ذمہ داری**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہِ کرم آگاہ رہیں کہ خودکار تراجم میں غلطیاں یا عدم صحت ہو سکتی ہے۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ تجویز کیا جاتا ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

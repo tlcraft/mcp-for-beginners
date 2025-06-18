@@ -1,56 +1,64 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-06-17T16:36:20+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T06:10:45+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "my"
 }
 -->
-# အခြေခံ ကိန်းဂဏန်းတွက်စက် MCP ဝန်ဆောင်မှု
+# Basic Calculator MCP Service
 
-ဤဝန်ဆောင်မှုသည် Model Context Protocol (MCP) မှတဆင့် အခြေခံ ကိန်းဂဏန်းတွက်ခြင်း လုပ်ဆောင်ချက်များကို ပေးဆောင်ပါသည်။ MCP ကို လေ့လာသင်ကြားနေသူများအတွက် ရိုးရှင်းသည့် ဥပမာတစ်ခုအဖြစ် ဒီဇိုင်းပြုထားသည်။
+ဤဝန်ဆောင်မှုသည် Model Context Protocol (MCP) မှတဆင့် မူလတွက်ချက်စက်လုပ်ဆောင်ချက်များကို ပံ့ပိုးပေးသည်။ MCP ကိုသင်ယူနေသော စတင်လေ့လာသူများအတွက် ရိုးရှင်းသော ဥပမာအဖြစ် ဒီဇိုင်းရေးဆွဲထားသည်။
 
-နောက်ထပ်အချက်အလက်များအတွက် [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) ကိုကြည့်ပါ။
+အသေးစိတ်အချက်အလက်များအတွက် [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) ကိုကြည့်ပါ။
 
-## လက္ခဏာများ
+## Features
 
-ဤ ကိန်းဂဏန်းတွက်စက်ဝန်ဆောင်မှုတွင် အောက်ပါ လုပ်ဆောင်ချက်များ ပါဝင်သည်-
+ဤတွက်ချက်စက်ဝန်ဆောင်မှုတွင် အောက်ပါ လုပ်ဆောင်ချက်များပါဝင်သည်-
 
-1. **အခြေခံ သင်္ချာ လုပ်ဆောင်ချက်များ**:
-   - နံပါတ်နှစ်ခု ပေါင်းခြင်း
-   - နံပါတ်တစ်ခုကို နံပါတ်တစ်ခုမှ နှုတ်ခြင်း
-   - နံပါတ်နှစ်ခု များခြင်း
-   - နံပါတ်တစ်ခုကို နံပါတ်တစ်ခုဖြင့် ညှိခြင်း (သုညဖြင့် ညှိခြင်းကို စစ်ဆေးသည်)
+1. **အခြေခံ သင်္ချာ လုပ်ဆောင်ချက်များ**  
+   - နံပါတ်နှစ်ခုကို ပေါင်းခြင်း  
+   - နံပါတ်တစ်ခုကို နောက်တစ်ခုမှ လျော့ခြင်း  
+   - နံပါတ်နှစ်ခုကို မြှောက်ခြင်း  
+   - နံပါတ်တစ်ခုကို နောက်တစ်ခုဖြင့် 나누ခြင်း (သုညဖြင့် 나누မှု စစ်ဆေးမှုပါရှိသည်)  
 
-## `stdio` အမျိုးအစား အသုံးပြုခြင်း
+## `stdio` Type အသုံးပြုခြင်း
+  
+## ပြင်ဆင်ခြင်း
 
-## ဆက်တင်များ
+1. **MCP ဆာဗာများကို ပြင်ဆင်ခြင်း**  
+   - သင့် VS Code တွင် workspace ကိုဖွင့်ပါ။  
+   - workspace ဖိုလ်ဒါထဲတွင် `.vscode/mcp.json` ဖိုင်တစ်ခု ဖန်တီးပြီး MCP ဆာဗာများကို ပြင်ဆင်ပါ။ ဥပမာ ပြင်ဆင်မှု-
 
-1. **MCP ဆာဗာများ ဆက်တင်ခြင်း**:
-   - သင့် VS Code အလုပ်လုပ်နေရာကို ဖွင့်ပါ။
-   - MCP ဆာဗာများ ဆက်တင်ရန် အလုပ်လုပ်နေရာ ဖိုလ်ဒါတွင် `.vscode/mcp.json` ဖိုင်တစ်ခု ဖန်တီးပါ။ ဥပမာ ဆက်တင်အနေဖြင့်-
-     ```json
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-	- လမ်းကြောင်းကို သင့် ပရောဂျက် လမ်းကြောင်းဖြင့် အစားထိုးပါ။ လမ်းကြောင်းသည် အလုံးစုံဖြစ်ရမည်၊ အလုပ်လုပ်နေရာ ဖိုလ်ဒါနှင့် ဆက်စပ်မှုမရှိသင့်ပါ။ (ဥပမာ- D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
 
-## ဝန်ဆောင်မှု အသုံးပြုခြင်း
+   - GitHub repository ရဲ့ root ကို ထည့်သွင်းရန် မေးမြန်းမည်ဖြစ်ပြီး၊ `git rev-parse --show-toplevel`.
 
-ဝန်ဆောင်မှုသည် MCP ပရိုတိုကောမှတဆင့် အောက်ပါ API အစိတ်အပိုင်းများကို ထုတ်ပေးသည်-
+## Using the Service
+
+The service exposes the following API endpoints through the MCP protocol:
 
 - `add(a, b)`: Add two numbers together
 - `subtract(a, b)`: Subtract the second number from the first
@@ -78,18 +86,19 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 1. Start Docker and make sure it's running.
 1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` သင့် Docker Hub အသုံးပြုသူအမည်ဖြင့်-
+1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` သို့ သင့် Docker Hub username ဖြင့် ပြောင်းလဲ၍ ရယူနိုင်သည်။  
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
-   ``` 
-1. ပုံရိပ်တည်ဆောက်ပြီးနောက်၊ Docker Hub သို့ တင်ပါမည်။ အောက်ပါ command ကို လုပ်ဆောင်ပါ-
+   ```  
+
+1. Image ကို တည်ဆောက်ပြီးပါက Docker Hub သို့ တင်ပေးပါ။ အောက်ပါ command ကို အသုံးပြုပါ-  
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Dockerized ဗားရှင်း အသုံးပြုခြင်း
+## Dockerized ဗားရှင်းကို အသုံးပြုခြင်း
 
-1. `.vscode/mcp.json` ဖိုင်တွင် ဆာဗာ ဆက်တင်ကို အောက်ပါအတိုင်း အစားထိုးပါ-
+1. `.vscode/mcp.json` ဖိုင်တွင် ဆာဗာ ပြင်ဆင်မှုကို အောက်ပါအတိုင်း ပြောင်းလဲပါ-  
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -102,12 +111,12 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "envFile": "",
       "env": {}
     }
-   ```
-   ဆက်တင်ကိုကြည့်လိုက်ရင် `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   ```  
+   ပြင်ဆင်မှုကို ကြည့်လျှင် command သည် `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `` ဖြစ်ပြီး၊ ယခင်ကဲ့သို့ ကိန်းဂဏန်းတွက်စက်ဝန်ဆောင်မှုကို သင့်အတွက် သင်္ချာဆောင်ရွက်ရန် တောင်းဆိုနိုင်ပါသည်။
+Start the MCP Server by clicking the little Start button above `"mcp-calc": {` ဖြစ်ပြီး၊ ယခင်ကဲ့သို့ပင် သင်သည် ဒီတွက်ချက်စက်ဝန်ဆောင်မှုကို သင်လိုသလို သင်္ချာတွက်ချက်ပေးရန် တောင်းနိုင်ပါသည်။
 
-**သတိပေးချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ တိကျမှန်ကန်မှုအတွက် ကြိုးစားပေမယ့် အလိုအလျောက်ဘာသာပြန်ချက်များတွင် အမှားများ သို့မဟုတ် မှားယွင်းမှုများ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူလစာတမ်းကို မူရင်းဘာသာဖြင့်သာ ယုံကြည်စိတ်ချရသော အချက်အလက်အရင်းအမြစ်အဖြစ် သတ်မှတ်စဉ်းစားသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် သက်ဆိုင်ရာ ကျွမ်းကျင်သော လူသားဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်အသုံးပြုမှုမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+**ကြိုတင်သတိပေးချက်**  
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ တိကျမှန်ကန်မှုအတွက် ကြိုးစားပေမယ့်၊ အလိုအလျောက် ဘာသာပြန်ချက်များတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန်။ မူလစာတမ်းကို မူရင်းဘာသာဖြင့်သာ တရားဝင်အချက်အလက်အရင်းအမြစ်အဖြစ် သတ်မှတ်ရန် လိုအပ်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် မိမိလက်တွေ့ကျွမ်းကျင်သော လူသား ဘာသာပြန်သူမှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားမလည်မှုများ သို့မဟုတ် မှားယွင်းဖော်ပြမှုများအတွက် ကျွန်ုပ်တို့မှာ တာဝန်မရှိပါ။

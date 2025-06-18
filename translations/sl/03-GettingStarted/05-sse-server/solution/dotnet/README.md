@@ -1,52 +1,54 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-17T11:59:35+00:00",
+  "original_hash": "2a58caa6e11faa09470b7f81e6729652",
+  "translation_date": "2025-06-18T06:10:35+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "sl"
 }
 -->
-# Zagon tega vzorca
+# Zagon tega primera
 
 ## -1- Namestite odvisnosti
 
 ```bash
-dotnet run
+dotnet restore
 ```
 
-## -2- Zaženite vzorec
+## -2- Zaženite primer
 
 ```bash
 dotnet run
 ```
 
-## -3- Preizkusite vzorec
+## -3- Preizkusite primer
 
-Preden zaženete spodnje ukaze, odprite ločen terminal (poskrbite, da strežnik še vedno deluje).
+Preden zaženete spodnje, odprite ločen terminal (prepričajte se, da strežnik še vedno teče).
 
-Ko strežnik deluje v enem terminalu, odprite drug terminal in zaženite naslednji ukaz:
+Ko strežnik teče v enem terminalu, odprite drugega in zaženite naslednji ukaz:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-To bi moralo zagnati spletni strežnik z vizualnim vmesnikom, ki vam omogoča testiranje vzorca.
+To bi moralo zagnati spletni strežnik z vizualnim vmesnikom, ki vam omogoča testiranje primera.
 
-Ko je strežnik povezan:
+> Prepričajte se, da je kot tip prenosa izbran **SSE**, URL pa je `http://localhost:3001/sse`.
 
-- poskusite našteti orodja in zaženite `add`, z argumentoma 2 in 4, v rezultatu bi morali videti 6.
-- pojdite na vire in predlogo virov ter pokličite "greeting", vpišite ime in morali bi videti pozdrav z vnesenim imenom.
+Once the server is connected: 
 
-### Testiranje v načinu CLI
+- try listing tools and run `add`, z argumenti 2 in 4 boste v rezultatu videli 6.
+- pojdite na resources in resource template ter pokličite "greeting", vnesite ime in videli boste pozdrav z vnesenim imenom.
 
-Lahko ga zaženete neposredno v načinu CLI z naslednjim ukazom:
+### Testiranje v CLI načinu
+
+Lahko ga zaženete neposredno v CLI načinu z naslednjim ukazom:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-To bo prikazalo vsa orodja, ki so na voljo na strežniku. Videti bi morali naslednji izhod:
+To bo prikazalo vse orodja, ki so na voljo na strežniku. Videli bi morali naslednji izpis:
 
 ```text
 {
@@ -78,13 +80,13 @@ To bo prikazalo vsa orodja, ki so na voljo na strežniku. Videti bi morali nasle
 }
 ```
 
-Za klic orodja vnesite:
+Za zagon orodja vnesite:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Videti bi morali naslednji izhod:
+Videli boste naslednji izpis:
 
 ```text
 {
@@ -99,8 +101,8 @@ Videti bi morali naslednji izhod:
 ```
 
 > ![!TIP]
-> Običajno je veliko hitreje zagnati inšpektor v načinu CLI kot v brskalniku.
-> Več o inšpektorju preberite [tukaj](https://github.com/modelcontextprotocol/inspector).
+> Običajno je veliko hitreje zagnati inspector v CLI načinu kot v brskalniku.
+> Več o inspectorju preberite [tukaj](https://github.com/modelcontextprotocol/inspector).
 
-**Omejitev odgovornosti**: 
-Ta dokument je bil preveden s pomočjo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da se zavedate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za kritične informacije je priporočljiv profesionalni človeški prevod. Ne odgovarjamo za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Opozorilo:**  
+Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.

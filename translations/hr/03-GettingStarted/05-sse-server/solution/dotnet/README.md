@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-17T11:59:28+00:00",
+  "original_hash": "2a58caa6e11faa09470b7f81e6729652",
+  "translation_date": "2025-06-18T06:10:03+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "hr"
 }
@@ -12,7 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## -1- Instalirajte ovisnosti
 
 ```bash
-dotnet run
+dotnet restore
 ```
 
 ## -2- Pokrenite primjer
@@ -23,20 +23,22 @@ dotnet run
 
 ## -3- Testirajte primjer
 
-Pokrenite zasebni terminal prije nego što izvršite sljedeće (provjerite je li poslužitelj još uvijek pokrenut).
+Prije nego što pokrenete naredbu ispod, otvorite zaseban terminal (provjerite je li server još uvijek pokrenut).
 
-Dok je poslužitelj pokrenut u jednom terminalu, otvorite drugi terminal i pokrenite sljedeću naredbu:
+Dok je server pokrenut u jednom terminalu, otvorite drugi terminal i pokrenite sljedeću naredbu:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-To bi trebalo pokrenuti web poslužitelj s vizualnim sučeljem koje vam omogućuje testiranje primjera.
+Ovo bi trebalo pokrenuti web server s vizualnim sučeljem koje vam omogućuje testiranje primjera.
 
-Kada se poslužitelj poveže:
+> Provjerite je li **SSE** odabrana kao vrsta prijenosa, a URL je `http://localhost:3001/sse`.
 
-- pokušajte navesti alate i pokrenuti `add`, s argumentima 2 i 4, trebali biste vidjeti 6 u rezultatu.
-- idite na resurse i predložak resursa i pozovite "greeting", upišite ime i trebali biste vidjeti pozdrav s imenom koje ste unijeli.
+Once the server is connected: 
+
+- try listing tools and run `add`, s argumentima 2 i 4, trebali biste vidjeti rezultat 6.
+- idite na resources i resource template i pozovite "greeting", unesite ime i trebali biste vidjeti pozdrav s imenom koje ste unijeli.
 
 ### Testiranje u CLI načinu
 
@@ -46,7 +48,7 @@ Možete ga pokrenuti izravno u CLI načinu pokretanjem sljedeće naredbe:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Ovo će navesti sve alate dostupne na poslužitelju. Trebali biste vidjeti sljedeći izlaz:
+Ovo će prikazati sve alate dostupne na serveru. Trebali biste vidjeti sljedeći ispis:
 
 ```text
 {
@@ -84,7 +86,7 @@ Za pozivanje alata upišite:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Trebali biste vidjeti sljedeći izlaz:
+Trebali biste vidjeti sljedeći ispis:
 
 ```text
 {
@@ -99,8 +101,8 @@ Trebali biste vidjeti sljedeći izlaz:
 ```
 
 > ![!TIP]
-> Obično je puno brže pokrenuti inspektor u CLI načinu nego u pregledniku.
-> Više o inspektoru pročitajte [ovdje](https://github.com/modelcontextprotocol/inspector).
+> Obično je puno brže pokrenuti inspector u CLI načinu nego u pregledniku.
+> Više o inspectoru pročitajte [ovdje](https://github.com/modelcontextprotocol/inspector).
 
-**Odricanje odgovornosti**:  
-Ovaj dokument je preveden koristeći AI uslugu za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni prijevod od strane ljudi. Ne odgovaramo za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+**Odricanje od odgovornosti**:  
+Ovaj dokument preveden je korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

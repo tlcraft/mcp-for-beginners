@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1954cd45a2563dfea43bfe48cccb0c8",
-  "translation_date": "2025-05-17T09:09:54+00:00",
+  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
+  "translation_date": "2025-06-18T06:00:40+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "sv"
 }
@@ -12,9 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## -1- Installera beroenden
 
 ```bash
-dotnet add package ModelContextProtocol --prerelease
-# Add the .NET Hosting NuGet package
-dotnet add package Microsoft.Extensions.Hosting
+dotnet restore
 ```
 
 ## -3- Kör exemplet
@@ -25,7 +23,7 @@ dotnet run
 
 ## -4- Testa exemplet
 
-Med servern igång i en terminal, öppna en annan terminal och kör följande kommando:
+Med servern igång i ett terminalfönster, öppna ett annat terminalfönster och kör följande kommando:
 
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
@@ -35,8 +33,8 @@ Detta bör starta en webbserver med ett visuellt gränssnitt som låter dig test
 
 När servern är ansluten:
 
-- försök att lista verktyg och kör `add`, med argumenten 2 och 4, du bör se 6 i resultatet.
-- gå till resurser och resursmall och kalla "greeting", skriv in ett namn och du bör se en hälsning med namnet du angav.
+- prova att lista verktyg och kör `add` med argumenten 2 och 4, du ska se 6 i resultatet.
+- gå till resources och resource template och anropa "greeting", skriv in ett namn och du ska se en hälsning med det namn du angav.
 
 ### Testa i CLI-läge
 
@@ -46,7 +44,7 @@ Du kan starta det direkt i CLI-läge genom att köra följande kommando:
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-Detta kommer att lista alla verktyg som finns tillgängliga på servern. Du bör se följande utdata:
+Detta kommer att lista alla verktyg som finns på servern. Du bör se följande output:
 
 ```text
 {
@@ -76,13 +74,13 @@ Detta kommer att lista alla verktyg som finns tillgängliga på servern. Du bör
 }
 ```
 
-För att anropa ett verktyg skriv:
+För att anropa ett verktyg, skriv:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-name Add --tool-arg a=1 --tool-arg b=2
 ```
 
-Du bör se följande utdata:
+Du bör se följande output:
 
 ```text
 {
@@ -97,8 +95,8 @@ Du bör se följande utdata:
 ```
 
 > ![!TIP]
-> Det är vanligtvis mycket snabbare att köra inspektören i CLI-läge än i webbläsaren.
-> Läs mer om inspektören [här](https://github.com/modelcontextprotocol/inspector).
+> Det går oftast mycket snabbare att köra inspektorn i CLI-läge än i webbläsaren.
+> Läs mer om inspektorn [här](https://github.com/modelcontextprotocol/inspector).
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Vi strävar efter noggrannhet, men var medveten om att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller misstolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För viktig information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.

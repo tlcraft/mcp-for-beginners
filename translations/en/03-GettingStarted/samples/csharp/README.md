@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0f7a188d6cb4c18fc83e44fede4cadb1",
-  "translation_date": "2025-05-17T12:57:09+00:00",
+  "original_hash": "882aae00f1d3f007e20d03b883f44afa",
+  "translation_date": "2025-06-18T05:45:09+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "en"
 }
 -->
 # Basic Calculator MCP Service
 
-This service provides basic calculator operations through the Model Context Protocol (MCP). It's designed as a simple example for beginners learning about MCP implementations.
+This service provides basic calculator operations through the Model Context Protocol (MCP). It’s designed as a simple example for beginners learning about MCP implementations.
 
 For more information, see [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
@@ -24,29 +24,37 @@ This calculator service offers the following capabilities:
    - Division of one number by another (with zero division check)
 
 ## Using `stdio` Type
-
+  
 ## Configuration
 
 1. **Configure MCP Servers**:
    - Open your workspace in VS Code.
    - Create a `.vscode/mcp.json` file in your workspace folder to configure MCP servers. Example configuration:
-     ```json
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-   - Replace the path with the path to your project. The path should be absolute and not relative to the workspace folder. (Example: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
+
+   - You will be asked to enter the GitHub repository root, which can be fetched from the command, `git rev-parse --show-toplevel`.
 
 ## Using the Service
 
@@ -82,14 +90,14 @@ The previous soultion is great when you have the .NET SDK installed, and all the
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. After the image is built, let's upload it to Docker Hub. Run the following command:
+1. After the image is built, let’s upload it to Docker Hub. Run the following command:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
 ## Use the Dockerized Version
 
-1. In the `.vscode/mcp.json` file, replace the server configuration by the following:
+1. In the `.vscode/mcp.json` file, replace the server configuration with the following:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -109,7 +117,5 @@ The previous soultion is great when you have the .NET SDK installed, and all the
 
 Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, and just like before you can ask the calculator service to do some math for you.
 
-Certainly! Here's the translated text in English:
-
-**Disclaimer**: 
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+**Disclaimer**:  
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

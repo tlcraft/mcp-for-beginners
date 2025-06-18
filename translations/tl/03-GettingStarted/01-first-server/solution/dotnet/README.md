@@ -1,52 +1,51 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1954cd45a2563dfea43bfe48cccb0c8",
-  "translation_date": "2025-05-17T09:11:36+00:00",
+  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
+  "translation_date": "2025-06-18T06:05:28+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "tl"
 }
 -->
-# Pagpapatakbo ng halimbawang ito
+# Pagpapatakbo ng sample na ito
 
-## -1- I-install ang mga kinakailangang sangkap
+## -1- I-install ang mga dependencies
 
 ```bash
-dotnet add package ModelContextProtocol --prerelease
-# Add the .NET Hosting NuGet package
-dotnet add package Microsoft.Extensions.Hosting
+dotnet restore
 ```
 
-## -3- Patakbuhin ang halimbawa
+## -3- Patakbuhin ang sample
+
 
 ```bash
 dotnet run
 ```
 
-## -4- Subukan ang halimbawa
+## -4- Subukan ang sample
 
-Habang tumatakbo ang server sa isang terminal, magbukas ng isa pang terminal at patakbuhin ang sumusunod na utos:
+Habang tumatakbo ang server sa isang terminal, buksan ang isa pang terminal at patakbuhin ang sumusunod na utos:
 
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-Dapat magsimula ito ng isang web server na may visual na interface na nagpapahintulot sa iyo na subukan ang halimbawa.
+Dapat itong magsimula ng web server na may visual na interface na magpapahintulot sa iyo na subukan ang sample.
 
 Kapag nakakonekta na ang server:
 
-- subukan ang paglista ng mga tool at patakbuhin ang `add`, gamit ang args 2 at 4, dapat mong makita ang 6 sa resulta.
-- pumunta sa mga resources at resource template at tawagin ang "greeting", mag-type ng isang pangalan at dapat mong makita ang isang pagbati na may pangalan na iyong ibinigay.
+- subukang ilista ang mga tools at patakbuhin ang `add`, gamit ang mga argumento na 2 at 4, dapat lumabas ang 6 bilang resulta.
+- pumunta sa resources at resource template at tawagin ang "greeting", mag-type ng pangalan at makikita mo ang pagbati gamit ang pangalang iyong inilagay.
 
-### Pagsusuri sa CLI mode
+### Pagsubok sa CLI mode
 
-Maaari mo itong ilunsad nang direkta sa CLI mode sa pamamagitan ng pagpapatakbo ng sumusunod na utos:
+Maaari mo itong patakbuhin direkta sa CLI mode sa pamamagitan ng pagpapatakbo ng sumusunod na utos:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-Ililista nito ang lahat ng mga tool na magagamit sa server. Dapat mong makita ang sumusunod na output:
+Ililista nito ang lahat ng mga tools na available sa server. Dapat mong makita ang sumusunod na output:
 
 ```text
 {
@@ -76,7 +75,7 @@ Ililista nito ang lahat ng mga tool na magagamit sa server. Dapat mong makita an
 }
 ```
 
-Upang tawagin ang isang tool, i-type ang:
+Upang tawagin ang isang tool, i-type:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-name Add --tool-arg a=1 --tool-arg b=2
@@ -98,7 +97,7 @@ Dapat mong makita ang sumusunod na output:
 
 > ![!TIP]
 > Karaniwang mas mabilis patakbuhin ang inspector sa CLI mode kaysa sa browser.
-> Magbasa pa tungkol sa inspector [dito](https://github.com/modelcontextprotocol/inspector).
+> Basahin pa tungkol sa inspector [dito](https://github.com/modelcontextprotocol/inspector).
 
 **Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap naming maging tumpak, pakitandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga error o hindi pagkakatumpak. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na mapagkakatiwalaang pinagmulan. Para sa kritikal na impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot para sa anumang hindi pagkakaintindihan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat aming pinagsisikapang maging tumpak ang pagsasalin, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

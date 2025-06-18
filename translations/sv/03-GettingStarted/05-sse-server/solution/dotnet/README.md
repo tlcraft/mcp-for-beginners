@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b97c5e77cede68533d7a92d0ce89bc0a",
-  "translation_date": "2025-05-17T11:56:21+00:00",
+  "original_hash": "2a58caa6e11faa09470b7f81e6729652",
+  "translation_date": "2025-06-18T06:00:45+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "sv"
 }
@@ -12,7 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## -1- Installera beroenden
 
 ```bash
-dotnet run
+dotnet restore
 ```
 
 ## -2- Kör exemplet
@@ -23,7 +23,7 @@ dotnet run
 
 ## -3- Testa exemplet
 
-Starta en separat terminal innan du kör nedanstående (se till att servern fortfarande körs).
+Starta en separat terminal innan du kör nedanstående (se till att servern fortfarande är igång).
 
 Med servern igång i en terminal, öppna en annan terminal och kör följande kommando:
 
@@ -33,10 +33,12 @@ npx @modelcontextprotocol/inspector http://localhost:3001
 
 Detta bör starta en webbserver med ett visuellt gränssnitt som låter dig testa exemplet.
 
-När servern är ansluten:
+> Se till att **SSE** är valt som transporttyp, och att URL är `http://localhost:3001/sse`.
 
-- försök lista verktyg och kör `add`, med argumenten 2 och 4, du bör se 6 i resultatet.
-- gå till resurser och resursmall och kalla "greeting", skriv in ett namn och du bör se en hälsning med namnet du angav.
+Once the server is connected: 
+
+- try listing tools and run `add`, med argumenten 2 och 4, du bör se 6 som resultat.
+- gå till resources och resource template och anropa "greeting", skriv in ett namn och du bör se en hälsning med det namn du angav.
 
 ### Testa i CLI-läge
 
@@ -46,7 +48,7 @@ Du kan starta det direkt i CLI-läge genom att köra följande kommando:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Detta kommer att lista alla verktyg som är tillgängliga på servern. Du bör se följande output:
+Detta listar alla verktyg som finns tillgängliga på servern. Du bör se följande output:
 
 ```text
 {
@@ -99,8 +101,8 @@ Du bör se följande output:
 ```
 
 > ![!TIP]
-> Det är vanligtvis mycket snabbare att köra inspektorn i CLI-läge än i webbläsaren.
-> Läs mer om inspektorn [här](https://github.com/modelcontextprotocol/inspector).
+> Det går oftast mycket snabbare att köra inspectorn i CLI-läge än i webbläsaren.
+> Läs mer om inspectorn [här](https://github.com/modelcontextprotocol/inspector).
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen var medveten om att automatiska översättningar kan innehålla fel eller oriktigheter. Det ursprungliga dokumentet på sitt modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller misstolkningar som uppstår vid användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål ska betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

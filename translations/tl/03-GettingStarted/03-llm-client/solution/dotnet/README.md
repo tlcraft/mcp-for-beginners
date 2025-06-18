@@ -1,24 +1,34 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "24b8b80f2e64a0ee05d1fc394c158638",
-  "translation_date": "2025-05-17T10:43:24+00:00",
+  "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
+  "translation_date": "2025-06-18T06:05:40+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "tl"
 }
 -->
-# Patakbuhin ang halimbawang ito
+# Patakbuhin ang sample na ito
 
 > [!NOTE]
-> Ang halimbawang ito ay inaasahang ginagamit mo ang isang GitHub Codespaces instance. Kung nais mong patakbuhin ito nang lokal, kailangan mong mag-set up ng personal access token sa GitHub.
+> Ipinapalagay ng sample na ito na gumagamit ka ng GitHub Codespaces na instance. Kung gusto mong patakbuhin ito nang lokal, kailangan mong gumawa ng personal access token (PAT) sa GitHub.
+>
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```
+>
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```
 
-## Mag-install ng mga library
+## I-install ang mga library
 
 ```sh
 dotnet restore
 ```
 
-Dapat i-install ang mga sumusunod na library: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtocol
+Dapat mai-install ang mga sumusunod na library: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol 
 
 ## Patakbuhin
 
@@ -26,7 +36,7 @@ Dapat i-install ang mga sumusunod na library: Azure AI Inference, Azure Identity
 dotnet run
 ```
 
-Dapat kang makakita ng output na katulad ng:
+Dapat mong makita ang output na kahalintulad ng:
 
 ```text
 Setting up stdio transport
@@ -41,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Marami sa output ay debugging lamang ngunit ang mahalaga ay naglilista ka ng mga tool mula sa MCP Server, gawing mga LLM tool ang mga iyon at matatapos ka sa isang MCP client response na "Sum 6".
+Marami sa output ay para lang sa debugging pero ang mahalaga ay nililista mo ang mga tool mula sa MCP Server, ginagawa mo silang mga LLM tool at makakakuha ka ng tugon mula sa MCP client na "Sum 6".
 
-**Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap namin ang pagiging tumpak, pakitandaan na ang awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ay dapat ituring na mapagkakatiwalaang pinagmulan. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot para sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasaling-tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

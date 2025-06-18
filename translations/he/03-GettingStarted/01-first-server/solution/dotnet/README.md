@@ -1,52 +1,51 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d1954cd45a2563dfea43bfe48cccb0c8",
-  "translation_date": "2025-05-17T09:10:49+00:00",
+  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
+  "translation_date": "2025-06-18T06:03:25+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "he"
 }
 -->
-# הרצת דוגמה זו
+# הרצת הדוגמה הזו
 
-## -1- התקנת התלויות
+## -1- התקן את התלויות
 
 ```bash
-dotnet add package ModelContextProtocol --prerelease
-# Add the .NET Hosting NuGet package
-dotnet add package Microsoft.Extensions.Hosting
+dotnet restore
 ```
 
-## -3- הרצת הדוגמה
+## -3- הרץ את הדוגמה
+
 
 ```bash
 dotnet run
 ```
 
-## -4- בדיקת הדוגמה
+## -4- בדוק את הדוגמה
 
-עם השרת פועל בטרמינל אחד, פתח טרמינל נוסף והפעל את הפקודה הבאה:
+כששרת רץ בטורמינל אחד, פתח טורמינל נוסף והריץ את הפקודה הבאה:
 
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-זה אמור להפעיל שרת אינטרנט עם ממשק חזותי שיאפשר לך לבדוק את הדוגמה.
+זה אמור להפעיל שרת ווב עם ממשק חזותי שמאפשר לך לבדוק את הדוגמה.
 
 ברגע שהשרת מחובר:
 
-- נסה לרשום כלים ולהפעיל `add`, עם ארגומנטים 2 ו-4, אתה אמור לראות 6 בתוצאה.
-- עבור למשאבים ותבנית משאבים וקרא ל-"greeting", הקלד שם ואתה אמור לראות ברכה עם השם שסיפקת.
+- נסה לרשום את הכלים ולהריץ את `add` עם הפרמטרים 2 ו-4, אתה אמור לראות 6 בתוצאה.
+- עבור ל-resources ול-resource template וקרא ל-"greeting", הקלד שם ואתה אמור לראות ברכה עם השם שהזנת.
 
 ### בדיקה במצב CLI
 
-ניתן להפעיל ישירות במצב CLI על ידי הרצת הפקודה הבאה:
+אתה יכול להפעיל אותו ישירות במצב CLI על ידי הרצת הפקודה הבאה:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-זה ירשום את כל הכלים הזמינים בשרת. אתה אמור לראות את הפלט הבא:
+זה יציג את כל הכלים הזמינים בשרת. אתה אמור לראות את הפלט הבא:
 
 ```text
 {
@@ -76,7 +75,7 @@ npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 }
 ```
 
-כדי להפעיל כלי, הקלד:
+כדי להפעיל כלי הקלד:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-name Add --tool-arg a=1 --tool-arg b=2
@@ -97,8 +96,8 @@ npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-
 ```
 
 > ![!TIP]
-> בדרך כלל הרבה יותר מהיר להפעיל את המפקח במצב CLI מאשר בדפדפן.
-> קרא עוד על המפקח [כאן](https://github.com/modelcontextprotocol/inspector).
+> בדרך כלל הרבה יותר מהיר להריץ את ה-inspector במצב CLI מאשר בדפדפן.
+> קרא עוד על ה-inspector [כאן](https://github.com/modelcontextprotocol/inspector).
 
-**כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, אנא היו מודעים לכך שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור הסמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי אדם. אנו לא נושאים באחריות לכל אי הבנות או פירושים שגויים הנובעים משימוש בתרגום זה.
+**כתב ויתור:**  
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו צריך להיחשב כמקור הסמכות. למידע קריטי מומלץ להשתמש בתרגום מקצועי אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
