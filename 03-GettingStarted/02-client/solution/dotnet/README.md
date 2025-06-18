@@ -3,9 +3,7 @@
 ## -1- Install the dependencies
 
 ```bash
-dotnet add package ModelContextProtocol --prerelease
-# Add the .NET Hosting NuGet package
-dotnet add package Microsoft.Extensions.Hosting
+dotnet restore
 ```
 
 ## -3- Run the sample
