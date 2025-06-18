@@ -1,7 +1,17 @@
 # Run this sample
 
 > [!NOTE]
-> This sample assumes you're using a GitHub Codespaces instance. If you want to run this locally, you need to set up a personal access token on GitHub.
+> This sample assumes you're using a GitHub Codespaces instance. If you want to run this locally, you need to set up a personal access token (PAT) on GitHub.
+>
+> ```bash
+> # zsh/bash
+> export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
+> ```
+>
+> ```powershell
+> # PowerShell
+> $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
+> ```
 
 ## Install libraries
 

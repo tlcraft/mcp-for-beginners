@@ -4,13 +4,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
        .AddMcpServer()
-       .WithHttpTransport()
+       .WithHttpTransport(o => o.Stateless = true)
        .WithTools<Tools>();
 
 builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
-app.MapMcp();
+app.MapMcp("/mcp");
 
 app.Run();

@@ -24,7 +24,7 @@ npx @modelcontextprotocol/inspector http://localhost:3001
 
 This should start a web server with a visual interface allowing you to test the sample.
 
-> Make sure that the **SSE** is selected as the transport type, and URL is `http://localhost:3001/sse`.
+> Make sure that the **Streamable HTTP** is selected as the transport type, and URL is `http://localhost:3001/mcp`.
 
 Once the server is connected: 
 

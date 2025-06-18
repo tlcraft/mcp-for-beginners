@@ -21,23 +21,31 @@ This calculator service offers the following capabilities:
 1. **Configure MCP Servers**:
    - Open your workspace in VS Code.
    - Create a `.vscode/mcp.json` file in your workspace folder to configure MCP servers. Example configuration:
-     ```json
+
+     ```jsonc
      {
+       "inputs": [
+         {
+           "type": "promptString",
+           "id": "repository-root",
+           "description": "The absolute path to the repository root"
+         }
+       ],
        "servers": {
-         "MyCalculator": {
+         "calculator-mcp-dotnet": {
            "type": "stdio",
            "command": "dotnet",
            "args": [
-                "run",
-                "--project",
-                "D:\\source\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj"
-            ],
-           "env": {}
+             "run",
+             "--project",
+             "${input:repository-root}/03-GettingStarted/samples/csharp/src/calculator.csproj"
+           ]
          }
        }
      }
      ```
-	- Replace the path with the path to your project. The path should be absolute and not relative to the workspace folder. (Example: D:\\gh\\mcp-for-beginners\\03-GettingStarted\\samples\\csharp\\src\\calculator.csproj)
+
+   - You will be asked to enter the GitHub repository root, which can be fetched from the command, `git rev-parse --show-toplevel`.
 
 ## Using the Service
 
