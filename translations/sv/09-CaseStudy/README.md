@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "23899e82d806f25e5e46e89aab564dca",
-  "translation_date": "2025-06-13T21:26:41+00:00",
+  "original_hash": "6c11b6162171abc895ed75d1e0f368a3",
+  "translation_date": "2025-06-20T19:08:38+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "sv"
 }
 -->
 # MCP i praktiken: Fallstudier från verkligheten
 
-Model Context Protocol (MCP) förändrar hur AI-applikationer interagerar med data, verktyg och tjänster. Den här sektionen presenterar verkliga fallstudier som visar praktiska tillämpningar av MCP i olika företagsmiljöer.
+Model Context Protocol (MCP) förändrar hur AI-applikationer interagerar med data, verktyg och tjänster. Denna sektion presenterar verkliga fallstudier som visar praktiska tillämpningar av MCP i olika företagsmiljöer.
 
 ## Översikt
 
-Denna sektion visar konkreta exempel på MCP-implementeringar och lyfter fram hur organisationer använder detta protokoll för att lösa komplexa affärsutmaningar. Genom att studera dessa fallstudier får du insikt i MCP:s mångsidighet, skalbarhet och praktiska fördelar i verkliga situationer.
+Här visas konkreta exempel på MCP-implementeringar, där vi lyfter fram hur organisationer använder detta protokoll för att lösa komplexa affärsutmaningar. Genom att granska dessa fallstudier får du insikter i MCP:s mångsidighet, skalbarhet och praktiska fördelar i verkliga situationer.
 
 ## Viktiga lärandemål
 
@@ -22,39 +22,39 @@ Genom att utforska dessa fallstudier kommer du att:
 - Förstå hur MCP kan användas för att lösa specifika affärsproblem  
 - Lära dig om olika integrationsmönster och arkitektoniska tillvägagångssätt  
 - Känna igen bästa praxis för att implementera MCP i företagsmiljöer  
-- Få insikter i de utmaningar och lösningar som uppstått vid verkliga implementationer  
-- Identifiera möjligheter att använda liknande mönster i dina egna projekt  
+- Få insikter i utmaningar och lösningar som uppstått i verkliga implementationer  
+- Identifiera möjligheter att använda liknande mönster i egna projekt  
 
 ## Utvalda fallstudier
 
-### 1. [Azure AI Travel Agents – Reference Implementation](./travelagentsample.md)
+### 1. [Azure AI Travel Agents – Referensimplementation](./travelagentsample.md)
 
-Denna fallstudie undersöker Microsofts omfattande referenslösning som visar hur man bygger en multi-agent, AI-driven reseplaneringsapplikation med MCP, Azure OpenAI och Azure AI Search. Projektet visar bland annat:
+Denna fallstudie granskar Microsofts omfattande referenslösning som visar hur man bygger en multi-agent, AI-driven reseplaneringsapplikation med MCP, Azure OpenAI och Azure AI Search. Projektet visar bland annat:
 
 - Multi-agent orkestrering via MCP  
 - Integration av företagsdata med Azure AI Search  
 - Säker och skalbar arkitektur med Azure-tjänster  
 - Utbyggbara verktyg med återanvändbara MCP-komponenter  
-- Konverserande användarupplevelse drivs av Azure OpenAI  
+- Konverserande användarupplevelse driven av Azure OpenAI  
 
-Arkitekturen och implementeringsdetaljerna ger värdefulla insikter i hur man bygger komplexa multi-agent system med MCP som koordineringslager.
+Arkitekturen och implementationsdetaljerna ger värdefulla insikter i hur man bygger komplexa multi-agent system med MCP som samordningslager.
 
-### 2. [Updating Azure DevOps Items from YouTube Data](./UpdateADOItemsFromYT.md)
+### 2. [Uppdatering av Azure DevOps-objekt från YouTube-data](./UpdateADOItemsFromYT.md)
 
-Denna fallstudie visar en praktisk tillämpning av MCP för att automatisera arbetsflöden. Den visar hur MCP-verktyg kan användas för att:
+Denna fallstudie visar en praktisk tillämpning av MCP för att automatisera arbetsflöden. Den demonstrerar hur MCP-verktyg kan användas för att:
 
 - Extrahera data från onlineplattformar (YouTube)  
 - Uppdatera arbetsobjekt i Azure DevOps-system  
-- Skapa återupprepbara automatiseringsflöden  
+- Skapa repeterbara automatiseringsflöden  
 - Integrera data mellan olika system  
 
-Det här exemplet illustrerar hur även relativt enkla MCP-implementeringar kan ge stora effektivitetsvinster genom att automatisera rutinuppgifter och förbättra datakonsistensen över system.
+Exemplet illustrerar hur även relativt enkla MCP-implementeringar kan ge betydande effektivitet genom att automatisera rutinuppgifter och förbättra datakonsistensen mellan system.
 
 ## Slutsats
 
-Dessa fallstudier belyser MCP:s mångsidighet och praktiska tillämpningar i verkliga scenarier. Från komplexa multi-agent system till riktade automatiseringsflöden, erbjuder MCP ett standardiserat sätt att koppla AI-system till de verktyg och den data de behöver för att skapa värde.
+Dessa fallstudier lyfter fram MCP:s mångsidighet och praktiska tillämpningar i verkliga scenarier. Från komplexa multi-agent system till riktade automatiseringsflöden erbjuder MCP ett standardiserat sätt att koppla samman AI-system med de verktyg och data de behöver för att skapa värde.
 
-Genom att studera dessa implementationer kan du få insikter i arkitekturmönster, implementeringsstrategier och bästa praxis som kan användas i dina egna MCP-projekt. Exemplen visar att MCP inte bara är en teoretisk ram utan en praktisk lösning på verkliga affärsutmaningar.
+Genom att studera dessa implementationer kan du få insikter i arkitekturmönster, implementeringsstrategier och bästa praxis som kan tillämpas i dina egna MCP-projekt. Exemplen visar att MCP inte bara är en teoretisk modell utan en praktisk lösning på verkliga affärsutmaningar.
 
 ## Ytterligare resurser
 
@@ -64,4 +64,4 @@ Genom att studera dessa implementationer kan du få insikter i arkitekturmönste
 - [MCP Community Examples](https://github.com/microsoft/mcp)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För viktig information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår från användningen av denna översättning.

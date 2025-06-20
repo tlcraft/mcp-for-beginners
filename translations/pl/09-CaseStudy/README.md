@@ -1,25 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "23899e82d806f25e5e46e89aab564dca",
-  "translation_date": "2025-06-13T21:25:48+00:00",
+  "original_hash": "6c11b6162171abc895ed75d1e0f368a3",
+  "translation_date": "2025-06-20T19:07:53+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "pl"
 }
 -->
-# MCP w praktyce: studia przypadków z rzeczywistego świata
+# MCP w praktyce: studia przypadków z życia
 
-Model Context Protocol (MCP) zmienia sposób, w jaki aplikacje AI współpracują z danymi, narzędziami i usługami. Ta sekcja przedstawia studia przypadków z rzeczywistego świata, które pokazują praktyczne zastosowania MCP w różnych scenariuszach biznesowych.
+Model Context Protocol (MCP) zmienia sposób, w jaki aplikacje AI współpracują z danymi, narzędziami i usługami. W tej sekcji przedstawiono studia przypadków z rzeczywistych zastosowań MCP w różnych scenariuszach biznesowych.
 
 ## Przegląd
 
-Ta sekcja prezentuje konkretne przykłady implementacji MCP, podkreślając, jak organizacje wykorzystują ten protokół do rozwiązywania złożonych wyzwań biznesowych. Analizując te studia przypadków, zdobędziesz wiedzę na temat wszechstronności, skalowalności i praktycznych korzyści MCP w rzeczywistych zastosowaniach.
+Ta część prezentuje konkretne przykłady wdrożeń MCP, ukazując, jak organizacje wykorzystują ten protokół do rozwiązywania złożonych wyzwań biznesowych. Analizując te studia przypadków, zdobędziesz wiedzę na temat wszechstronności, skalowalności oraz praktycznych korzyści płynących z MCP w rzeczywistych sytuacjach.
 
-## Kluczowe cele nauki
+## Główne cele nauki
 
 Analizując te studia przypadków, będziesz mógł:
 
-- Zrozumieć, jak MCP można zastosować do rozwiązywania konkretnych problemów biznesowych
+- Zrozumieć, jak MCP może być stosowany do rozwiązywania konkretnych problemów biznesowych
 - Poznać różne wzorce integracji i podejścia architektoniczne
 - Rozpoznać najlepsze praktyki wdrażania MCP w środowiskach korporacyjnych
 - Zyskać wgląd w wyzwania i rozwiązania napotkane podczas rzeczywistych implementacji
@@ -29,32 +29,32 @@ Analizując te studia przypadków, będziesz mógł:
 
 ### 1. [Azure AI Travel Agents – implementacja referencyjna](./travelagentsample.md)
 
-To studium przypadku analizuje kompleksowe rozwiązanie referencyjne Microsoftu, które pokazuje, jak zbudować wieloagentową aplikację do planowania podróży opartą na AI, wykorzystując MCP, Azure OpenAI oraz Azure AI Search. Projekt prezentuje:
+To studium przypadku analizuje kompleksowe rozwiązanie referencyjne Microsoftu, które pokazuje, jak zbudować wieloagentową, opartą na AI aplikację do planowania podróży, wykorzystując MCP, Azure OpenAI i Azure AI Search. Projekt prezentuje:
 
-- Orkiestrację wieloagentową za pomocą MCP
+- Orkiestrację wielu agentów za pomocą MCP
 - Integrację danych korporacyjnych z Azure AI Search
 - Bezpieczną, skalowalną architekturę opartą na usługach Azure
-- Rozszerzalne narzędzia z wielokrotnie wykorzystywanymi komponentami MCP
-- Konwersacyjne doświadczenie użytkownika oparte na Azure OpenAI
+- Rozszerzalne narzędzia z wielokrotnego użytku komponentami MCP
+- Konwersacyjne doświadczenie użytkownika napędzane przez Azure OpenAI
 
-Architektura i szczegóły implementacji dostarczają cennych informacji na temat budowy złożonych systemów wieloagentowych z MCP jako warstwą koordynacyjną.
+Architektura i szczegóły implementacji dostarczają cennych wskazówek dotyczących budowy złożonych systemów wieloagentowych z MCP jako warstwą koordynacyjną.
 
 ### 2. [Aktualizacja elementów Azure DevOps na podstawie danych z YouTube](./UpdateADOItemsFromYT.md)
 
-To studium przypadku pokazuje praktyczne zastosowanie MCP do automatyzacji procesów workflow. Przedstawia, jak narzędzia MCP mogą być wykorzystane do:
+To studium przypadku pokazuje praktyczne zastosowanie MCP do automatyzacji procesów roboczych. Przedstawia, jak narzędzia MCP mogą być wykorzystane do:
 
 - Pobierania danych z platform internetowych (YouTube)
 - Aktualizacji elementów pracy w systemach Azure DevOps
 - Tworzenia powtarzalnych procesów automatyzacji
 - Integracji danych między różnymi systemami
 
-Ten przykład ilustruje, jak nawet stosunkowo proste implementacje MCP mogą przynieść znaczące korzyści efektywnościowe poprzez automatyzację rutynowych zadań i poprawę spójności danych między systemami.
+Ten przykład ilustruje, że nawet stosunkowo proste implementacje MCP mogą przynieść znaczące korzyści efektywnościowe poprzez automatyzację rutynowych zadań i poprawę spójności danych między systemami.
 
 ## Podsumowanie
 
-Te studia przypadków podkreślają wszechstronność i praktyczne zastosowania Model Context Protocol w rzeczywistych scenariuszach. Od złożonych systemów wieloagentowych po ukierunkowane workflow automatyzacyjne, MCP zapewnia ustandaryzowany sposób łączenia systemów AI z narzędziami i danymi niezbędnymi do dostarczania wartości.
+Te studia przypadków podkreślają wszechstronność i praktyczne zastosowania Model Context Protocol w rzeczywistych sytuacjach. Od złożonych systemów wieloagentowych po ukierunkowane przepływy automatyzacji, MCP oferuje ustandaryzowany sposób łączenia systemów AI z narzędziami i danymi niezbędnymi do dostarczania wartości.
 
-Analizując te implementacje, możesz zdobyć wiedzę na temat wzorców architektonicznych, strategii wdrożeniowych oraz najlepszych praktyk, które można zastosować w swoich własnych projektach MCP. Przykłady pokazują, że MCP to nie tylko teoretyczne ramy, lecz praktyczne rozwiązanie rzeczywistych wyzwań biznesowych.
+Analizując te wdrożenia, możesz poznać wzorce architektoniczne, strategie implementacji oraz najlepsze praktyki, które można zastosować w swoich projektach MCP. Przykłady pokazują, że MCP to nie tylko teoretyczne ramy, ale praktyczne rozwiązanie rzeczywistych wyzwań biznesowych.
 
 ## Dodatkowe zasoby
 
@@ -64,4 +64,4 @@ Analizując te implementacje, możesz zdobyć wiedzę na temat wzorców architek
 - [MCP Community Examples](https://github.com/microsoft/mcp)
 
 **Zastrzeżenie**:  
-Ten dokument został przetłumaczony za pomocą usługi tłumaczeń AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być traktowany jako autorytatywne źródło. W przypadku informacji o istotnym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
