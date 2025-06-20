@@ -1,67 +1,67 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "23899e82d806f25e5e46e89aab564dca",
-  "translation_date": "2025-06-13T21:30:03+00:00",
+  "original_hash": "6c11b6162171abc895ed75d1e0f368a3",
+  "translation_date": "2025-06-20T19:11:38+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "sl"
 }
 -->
-# MCP in Action: Real-World Case Studies
+# MCP v praksi: študije primerov iz resničnega sveta
 
-Model Context Protocol (MCP) is reshaping how AI applications interact with data, tools, and services. This section presents real-world case studies that showcase practical uses of MCP in various enterprise settings.
+Model Context Protocol (MCP) spreminja način, kako AI aplikacije sodelujejo s podatki, orodji in storitvami. Ta razdelek predstavlja študije primerov iz resničnega sveta, ki prikazujejo praktične uporabe MCP v različnih poslovnih okoljih.
 
-## Overview
+## Pregled
 
-Here, you'll find concrete examples of MCP implementations, highlighting how organizations use this protocol to tackle complex business challenges. These case studies offer insights into MCP’s flexibility, scalability, and real-world benefits.
+V tem razdelku so prikazani konkretni primeri implementacij MCP, ki poudarjajo, kako organizacije izkoriščajo ta protokol za reševanje zapletenih poslovnih izzivov. Z analizo teh študij primerov boste pridobili vpogled v vsestranskost, skalabilnost in praktične koristi MCP v resničnih situacijah.
 
-## Key Learning Objectives
+## Ključni cilji učenja
 
-By reviewing these case studies, you will:
+Z raziskovanjem teh študij primerov boste:
 
-- Understand how MCP can address specific business problems  
-- Discover different integration patterns and architectural styles  
-- Learn best practices for deploying MCP in enterprise environments  
-- Gain insights into challenges and solutions faced during real-world implementations  
-- Spot opportunities to apply similar approaches in your own projects  
+- razumeli, kako se MCP lahko uporabi za reševanje specifičnih poslovnih problemov  
+- spoznali različne vzorce integracije in arhitekturne pristope  
+- prepoznali najboljše prakse za implementacijo MCP v poslovnih okoljih  
+- pridobili vpogled v izzive in rešitve, s katerimi se srečujejo pri resničnih implementacijah  
+- prepoznali priložnosti za uporabo podobnih vzorcev v svojih projektih  
 
-## Featured Case Studies
+## Izpostavljene študije primerov
 
-### 1. [Azure AI Travel Agents – Reference Implementation](./travelagentsample.md)
+### 1. [Azure AI Travel Agents – referenčna implementacija](./travelagentsample.md)
 
-This case study explores Microsoft’s comprehensive reference solution demonstrating how to create a multi-agent, AI-driven travel planning app using MCP, Azure OpenAI, and Azure AI Search. The project highlights:
+Ta študija primera preučuje Microsoftovo celovito referenčno rešitev, ki prikazuje, kako z uporabo MCP, Azure OpenAI in Azure AI Search zgraditi večagentno, AI-podprto aplikacijo za načrtovanje potovanj. Projekt prikazuje:
 
-- Multi-agent coordination via MCP  
-- Enterprise data integration using Azure AI Search  
-- Secure, scalable architecture leveraging Azure services  
-- Extensible tooling with reusable MCP components  
-- Conversational user experience powered by Azure OpenAI  
+- večagentno orkestracijo prek MCP  
+- integracijo poslovnih podatkov z Azure AI Search  
+- varno in skalabilno arhitekturo z uporabo Azure storitev  
+- razširljiva orodja z večkratno uporabo komponent MCP  
+- pogovorno uporabniško izkušnjo, ki jo poganja Azure OpenAI  
 
-The architecture and implementation details provide valuable guidance for building complex multi-agent systems with MCP as the orchestration layer.
+Arhitekturni in izvedbeni podrobnosti nudijo dragocene vpoglede v gradnjo kompleksnih večagentnih sistemov z MCP kot slojem za koordinacijo.
 
-### 2. [Updating Azure DevOps Items from YouTube Data](./UpdateADOItemsFromYT.md)
+### 2. [Posodabljanje Azure DevOps elementov iz podatkov YouTube](./UpdateADOItemsFromYT.md)
 
-This case study showcases a practical MCP application for automating workflows. It demonstrates how MCP tools can:
+Ta študija primera prikazuje praktično uporabo MCP za avtomatizacijo delovnih procesov. Pokaže, kako je mogoče z orodji MCP:
 
-- Extract data from online platforms (YouTube)  
-- Update work items in Azure DevOps  
-- Build repeatable automation workflows  
-- Integrate data across disparate systems  
+- pridobivati podatke z spletnih platform (YouTube)  
+- posodabljati delovne elemente v sistemih Azure DevOps  
+- ustvarjati ponovljive avtomatizirane delovne tokove  
+- integrirati podatke med različnimi sistemi  
 
-This example shows how even relatively simple MCP implementations can boost efficiency by automating routine tasks and enhancing data consistency across systems.
+Ta primer prikazuje, kako lahko tudi razmeroma preproste implementacije MCP prinesejo znatne izboljšave učinkovitosti z avtomatizacijo rutinskih opravil in izboljšanjem konsistence podatkov med sistemi.
 
-## Conclusion
+## Zaključek
 
-These case studies illustrate the versatility and practical value of the Model Context Protocol in real-world settings. From complex multi-agent systems to focused automation workflows, MCP offers a standardized way to connect AI systems with the necessary tools and data to deliver value.
+Te študije primerov poudarjajo vsestranskost in praktične uporabe Model Context Protocol v resničnih situacijah. Od kompleksnih večagentnih sistemov do ciljno usmerjenih avtomatiziranih delovnih tokov, MCP nudi standardiziran način povezovanja AI sistemov z orodji in podatki, ki jih potrebujejo za ustvarjanje vrednosti.
 
-By examining these implementations, you gain insights into architectural patterns, deployment strategies, and best practices applicable to your own MCP projects. These examples prove that MCP is more than a theoretical concept—it’s a practical solution for real business challenges.
+S preučevanjem teh implementacij lahko pridobite vpogled v arhitekturne vzorce, strategije izvedbe in najboljše prakse, ki jih lahko uporabite v svojih MCP projektih. Primeri dokazujejo, da MCP ni zgolj teoretični okvir, temveč praktična rešitev za resnične poslovne izzive.
 
-## Additional Resources
+## Dodatni viri
 
-- [Azure AI Travel Agents GitHub Repository](https://github.com/Azure-Samples/azure-ai-travel-agents)  
+- [Azure AI Travel Agents GitHub repozitorij](https://github.com/Azure-Samples/azure-ai-travel-agents)  
 - [Azure DevOps MCP Tool](https://github.com/microsoft/azure-devops-mcp)  
 - [Playwright MCP Tool](https://github.com/microsoft/playwright-mcp)  
 - [MCP Community Examples](https://github.com/microsoft/mcp)
 
 **Opozorilo**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
