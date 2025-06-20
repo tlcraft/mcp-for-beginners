@@ -37,6 +37,21 @@ A web-based interface (using Chainlit) that allows users to generate a personali
 3. In the chat window, enter your study topic and the number of weeks you want to study (e.g., "AI-900 certification, 8 weeks").
 4. The app will respond with a week-by-week study plan, including links to relevant Microsoft Learn documentation.
 
+**Environment Variables Required:**
+
+To use Scenario 2 (the Chainlit web app with Azure OpenAI), you must set the following environment variables in a `.env` file in the `python` directory:
+
+```
+AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=
+AZURE_OPENAI_API_KEY=
+AZURE_OPENAI_ENDPOINT=
+AZURE_OPENAI_API_VERSION=
+```
+
+Fill in these values with your Azure OpenAI resource details before running the app.
+
+> **Tip:** You can easily deploy your own models using [Azure AI Foundry](https://ai.azure.com/).
+
 ## Why Chainlit for Scenario 2?
 
 Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
