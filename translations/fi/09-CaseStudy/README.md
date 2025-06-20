@@ -1,67 +1,67 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "23899e82d806f25e5e46e89aab564dca",
-  "translation_date": "2025-06-13T21:27:12+00:00",
+  "original_hash": "6c11b6162171abc895ed75d1e0f368a3",
+  "translation_date": "2025-06-20T19:09:09+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "fi"
 }
 -->
-# MCP käytännössä: todellisia tapaustutkimuksia
+# MCP käytännössä: Todellisia tapaustutkimuksia
 
-Model Context Protocol (MCP) muuttaa tapaa, jolla tekoälysovellukset ovat vuorovaikutuksessa datan, työkalujen ja palveluiden kanssa. Tässä osiossa esitellään todellisia tapaustutkimuksia, jotka havainnollistavat MCP:n käytännön sovelluksia erilaisissa yritystilanteissa.
+Model Context Protocol (MCP) muuttaa tapaa, jolla tekoälysovellukset ovat vuorovaikutuksessa datan, työkalujen ja palveluiden kanssa. Tässä osiossa esitellään todellisia tapaustutkimuksia, jotka osoittavat MCP:n käytännön sovelluksia erilaisissa yritystilanteissa.
 
 ## Yleiskatsaus
 
-Tässä osiossa esitellään konkreettisia esimerkkejä MCP:n toteutuksista ja korostetaan, miten organisaatiot hyödyntävät tätä protokollaa ratkaistakseen monimutkaisia liiketoiminnan haasteita. Tarkastelemalla näitä tapaustutkimuksia saat käsityksen MCP:n monipuolisuudesta, skaalautuvuudesta ja käytännön hyödyistä todellisissa tilanteissa.
+Tässä osassa esitellään konkreettisia MCP-toteutuksia, jotka korostavat, miten organisaatiot hyödyntävät tätä protokollaa ratkaistakseen monimutkaisia liiketoiminnan haasteita. Tutustumalla näihin tapaustutkimuksiin saat käsityksen MCP:n monipuolisuudesta, skaalautuvuudesta ja käytännön hyödyistä todellisissa tilanteissa.
 
 ## Keskeiset oppimistavoitteet
 
-Tutustumalla näihin tapaustutkimuksiin opit:
+Tutkimalla näitä tapaustutkimuksia opit:
 
-- Ymmärtämään, miten MCP:tä voidaan soveltaa tiettyjen liiketoimintaongelmien ratkaisemiseen
-- Tutustumaan erilaisiin integraatiomalleihin ja arkkitehtuuriratkaisuihin
-- Tunnistamaan parhaita käytäntöjä MCP:n käyttöönotossa yritysympäristöissä
-- Saamaan näkemyksiä todellisissa toteutuksissa kohdatuista haasteista ja ratkaisuista
-- Löytämään mahdollisuuksia soveltaa vastaavia malleja omissa projekteissasi
+- Miten MCP:tä voidaan käyttää tiettyjen liiketoimintaongelmien ratkaisemiseen
+- Eri integraatiomalleista ja arkkitehtuurisista lähestymistavoista
+- Parhaista käytännöistä MCP:n toteuttamisessa yritysympäristöissä
+- Haasteista ja ratkaisuista, joita on kohdattu käytännön toteutuksissa
+- Mahdollisuuksista soveltaa samanlaisia malleja omissa projekteissasi
 
 ## Esitellyt tapaustutkimukset
 
-### 1. [Azure AI Travel Agents – Reference Implementation](./travelagentsample.md)
+### 1. [Azure AI Travel Agents – Referenssitoteutus](./travelagentsample.md)
 
-Tässä tapaustutkimuksessa tarkastellaan Microsoftin kattavaa referenssiratkaisua, joka havainnollistaa, miten MCP:n, Azure OpenAI:n ja Azure AI Searchin avulla rakennetaan moniagenttinen tekoälypohjainen matkasuunnitteluohjelma. Projekti esittelee:
+Tässä tapaustutkimuksessa tarkastellaan Microsoftin kattavaa referenssiratkaisua, joka näyttää, miten rakentaa moniagenttipohjainen, tekoälyllä toimiva matkasuunnittelusovellus MCP:n, Azure OpenAI:n ja Azure AI Searchin avulla. Projekti esittelee:
 
 - Moniagenttien orkestroinnin MCP:n kautta
-- Yritysdatan integroinnin Azure AI Searchilla
+- Yritysdatan integroinnin Azure AI Searchin avulla
 - Turvallisen ja skaalautuvan arkkitehtuurin Azure-palveluilla
 - Laajennettavat työkalut uudelleenkäytettävillä MCP-komponenteilla
-- Keskustelupohjaisen käyttäjäkokemuksen, jonka tarjoaa Azure OpenAI
+- Keskustelupohjaisen käyttökokemuksen, jota Azure OpenAI tukee
 
-Arkkitehtuuri ja toteutuksen yksityiskohdat tarjoavat arvokkaita näkemyksiä monimutkaisten moniagenttijärjestelmien rakentamisesta MCP:n koordinaatiokerroksena.
+Arkkitehtuuri- ja toteutusyksityiskohdat tarjoavat arvokkaita näkemyksiä monimutkaisten moniagenttijärjestelmien rakentamisesta MCP:n koordinointikerroksena.
 
-### 2. [Updating Azure DevOps Items from YouTube Data](./UpdateADOItemsFromYT.md)
+### 2. [Azure DevOps -kohteiden päivitys YouTube-datan perusteella](./UpdateADOItemsFromYT.md)
 
-Tämä tapaustutkimus osoittaa MCP:n käytännön sovelluksen työnkulkujen automatisointiin. Se näyttää, miten MCP-työkaluja voidaan käyttää:
+Tässä tapaustutkimuksessa demonstroidaan MCP:n käytännön sovellusta työnkulkujen automatisointiin. Se näyttää, miten MCP-työkaluja voidaan käyttää:
 
-- Datan poimimiseen verkkoplatformeilta (YouTube)
+- Datan poimimiseen verkkoalustoilta (YouTube)
 - Työkohteiden päivittämiseen Azure DevOps -järjestelmissä
 - Toistettavien automaatiotyönkulkujen luomiseen
-- Datan integroimiseen eri järjestelmien välillä
+- Datan integrointiin eri järjestelmien välillä
 
-Tämä esimerkki havainnollistaa, kuinka jopa suhteellisen yksinkertaiset MCP-toteutukset voivat tuoda merkittäviä tehokkuushyötyjä automatisoimalla rutiinitehtäviä ja parantamalla datan yhdenmukaisuutta järjestelmien välillä.
+Tämä esimerkki havainnollistaa, miten jopa suhteellisen yksinkertaiset MCP-toteutukset voivat tuoda merkittäviä tehokkuushyötyjä automatisoimalla rutiinitehtäviä ja parantamalla datan yhdenmukaisuutta järjestelmien välillä.
 
 ## Yhteenveto
 
-Nämä tapaustutkimukset korostavat Model Context Protocolin monipuolisuutta ja käytännön sovelluksia todellisissa tilanteissa. Monimutkaisista moniagenttijärjestelmistä kohdennettuun automaatioon MCP tarjoaa standardoidun tavan yhdistää tekoälyjärjestelmät tarvittaviin työkaluihin ja datoihin arvon tuottamiseksi.
+Nämä tapaustutkimukset korostavat Model Context Protocolin monipuolisuutta ja käytännön sovelluksia todellisissa tilanteissa. Monimutkaisista moniagenttijärjestelmistä kohdennettuun automaatioon MCP tarjoaa standardoidun tavan yhdistää tekoälyjärjestelmät tarvitsemiinsa työkaluihin ja dataan tuottaakseen arvoa.
 
-Tutkimalla näitä toteutuksia saat näkemyksiä arkkitehtuurimalleista, toteutusstrategioista ja parhaista käytännöistä, joita voit soveltaa omissa MCP-projekteissasi. Esimerkit osoittavat, että MCP ei ole pelkästään teoreettinen kehys, vaan käytännön ratkaisu todellisiin liiketoiminnan haasteisiin.
+Tutkimalla näitä toteutuksia saat käsityksen arkkitehtuurimalleista, toteutusstrategioista ja parhaista käytännöistä, joita voit soveltaa omissa MCP-projekteissasi. Esimerkit osoittavat, että MCP ei ole pelkkä teoreettinen kehys, vaan käytännöllinen ratkaisu todellisiin liiketoiminnan haasteisiin.
 
 ## Lisäresurssit
 
-- [Azure AI Travel Agents GitHub Repository](https://github.com/Azure-Samples/azure-ai-travel-agents)
-- [Azure DevOps MCP Tool](https://github.com/microsoft/azure-devops-mcp)
-- [Playwright MCP Tool](https://github.com/microsoft/playwright-mcp)
-- [MCP Community Examples](https://github.com/microsoft/mcp)
+- [Azure AI Travel Agents GitHub-repositorio](https://github.com/Azure-Samples/azure-ai-travel-agents)
+- [Azure DevOps MCP -työkalu](https://github.com/microsoft/azure-devops-mcp)
+- [Playwright MCP -työkalu](https://github.com/microsoft/playwright-mcp)
+- [MCP-yhteisön esimerkit](https://github.com/microsoft/mcp)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta ole hyvä ja huomioi, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä on pidettävä auktoritatiivisena lähteenä. Tärkeiden tietojen osalta suositellaan ammattilaisen tekemää ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkintojen seurauksista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulee pitää virallisena lähteenä. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

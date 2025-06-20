@@ -1,67 +1,67 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "23899e82d806f25e5e46e89aab564dca",
-  "translation_date": "2025-06-13T21:23:23+00:00",
+  "original_hash": "6c11b6162171abc895ed75d1e0f368a3",
+  "translation_date": "2025-06-20T19:05:28+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "mo"
 }
 -->
-# MCP in Action: Real-World Case Studies
+# MCP 實戰：真實案例研究
 
-The Model Context Protocol (MCP) is changing how AI applications interact with data, tools, and services. This section presents real-world case studies showcasing practical uses of MCP across various enterprise scenarios.
+Model Context Protocol (MCP) 正在改變 AI 應用與資料、工具及服務互動的方式。本節介紹多個真實案例，展示 MCP 在各種企業場景中的實際應用。
 
-## Overview
+## 概述
 
-Here, you'll find concrete examples of MCP implementations, highlighting how organizations use this protocol to tackle complex business challenges. These case studies offer insights into MCP's flexibility, scalability, and real-world benefits.
+本節展示 MCP 實作的具體範例，強調組織如何利用此協議解決複雜的商業挑戰。透過這些案例，您將了解 MCP 在現實情境中的多樣性、可擴展性及實用價值。
 
-## Key Learning Objectives
+## 主要學習目標
 
-By exploring these case studies, you will:
+透過探討這些案例，您將能：
 
-- See how MCP can address specific business problems
-- Discover different integration patterns and architectural strategies
-- Learn best practices for deploying MCP in enterprise settings
-- Understand challenges and solutions from real-world implementations
-- Find opportunities to apply similar approaches in your own projects
+- 了解 MCP 如何應用於解決特定的商業問題
+- 學習不同的整合模式與架構方法
+- 認識在企業環境中實施 MCP 的最佳實務
+- 獲得關於真實實作中遇到的挑戰與解決方案的洞見
+- 發掘將類似模式應用於自身專案的機會
 
-## Featured Case Studies
+## 精選案例研究
 
-### 1. [Azure AI Travel Agents – Reference Implementation](./travelagentsample.md)
+### 1. [Azure AI 旅遊代理人 – 參考實作](./travelagentsample.md)
 
-This case study reviews Microsoft's detailed reference solution demonstrating how to build a multi-agent, AI-powered travel planning app using MCP, Azure OpenAI, and Azure AI Search. The project highlights:
+本案例探討微軟的完整參考方案，示範如何利用 MCP、Azure OpenAI 與 Azure AI Search 建構多代理、AI 驅動的旅遊規劃應用。專案特色包括：
 
-- Multi-agent coordination through MCP
-- Enterprise data integration via Azure AI Search
-- Secure, scalable architecture leveraging Azure services
-- Extensible tools built with reusable MCP components
-- Conversational user experience powered by Azure OpenAI
+- 透過 MCP 進行多代理協調
+- 與 Azure AI Search 整合企業資料
+- 利用 Azure 服務打造安全且可擴展的架構
+- 使用可重用的 MCP 元件擴充工具功能
+- 由 Azure OpenAI 支援的對話式使用者體驗
 
-The architecture and implementation details offer valuable insights into creating complex multi-agent systems with MCP as the coordination layer.
+架構與實作細節提供了關於以 MCP 作為協調層，建構複雜多代理系統的寶貴見解。
 
-### 2. [Updating Azure DevOps Items from YouTube Data](./UpdateADOItemsFromYT.md)
+### 2. [從 YouTube 資料更新 Azure DevOps 項目](./UpdateADOItemsFromYT.md)
 
-This case study shows a practical use of MCP for automating workflow processes. It demonstrates how MCP tools can:
+此案例展示 MCP 在自動化工作流程中的實務應用，說明如何利用 MCP 工具：
 
-- Extract data from online platforms (YouTube)
-- Update work items in Azure DevOps
-- Create repeatable automation workflows
-- Integrate data across different systems
+- 從線上平台（YouTube）擷取資料
+- 更新 Azure DevOps 系統中的工作項目
+- 建立可重複使用的自動化流程
+- 跨不同系統整合資料
 
-This example illustrates how even relatively simple MCP setups can boost efficiency by automating routine tasks and improving data consistency across systems.
+此範例說明即使是相對簡單的 MCP 實作，也能透過自動化例行任務並提升系統間資料一致性，帶來顯著的效率提升。
 
-## Conclusion
+## 結論
 
-These case studies demonstrate the versatility and practical applications of the Model Context Protocol in real-world settings. From complex multi-agent systems to targeted automation workflows, MCP offers a standardized way to connect AI systems with the tools and data they need to deliver value.
+這些案例突顯 Model Context Protocol 在現實情境中的多功能性與實用價值。從複雜的多代理系統到針對性自動化流程，MCP 提供了一種標準化的方式，將 AI 系統與所需工具及資料連結，創造價值。
 
-Studying these implementations provides insights into architectural patterns, implementation strategies, and best practices you can apply in your own MCP projects. The examples show that MCP is not just theoretical but a practical solution to real business challenges.
+透過研究這些實作，您可以獲得可應用於自身 MCP 專案的架構模式、實作策略與最佳實務。這些範例證明 MCP 不僅是理論框架，更是解決實際商業挑戰的實用方案。
 
-## Additional Resources
+## 其他資源
 
 - [Azure AI Travel Agents GitHub Repository](https://github.com/Azure-Samples/azure-ai-travel-agents)
 - [Azure DevOps MCP Tool](https://github.com/microsoft/azure-devops-mcp)
 - [Playwright MCP Tool](https://github.com/microsoft/playwright-mcp)
 - [MCP Community Examples](https://github.com/microsoft/mcp)
 
-**Disclaimer**:  
-Dis document haz bin translatid yusing AI translatyun servis [Co-op Translator](https://github.com/Azure/co-op-translator). Wyl wi stryv for akyurasy, pliz be awair dat otomaytid translatyuns may kontayn erors or inakurysez. Da orijynal document in its naytiv langwij shud be konsidrd da autorityv sors. For kritikal informashun, profeshynal hyuman translatyun is rekomendid. Wi ar not laybl for eni misunderstandings or misinterpretasyuns aryzng from da yus of dis translatyun.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯所產生之任何誤解或誤譯負責。
