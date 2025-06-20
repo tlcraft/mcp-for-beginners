@@ -63,16 +63,22 @@ This case study demonstrates how to build an interactive web application using C
 
 The project illustrates how conversational AI and MCP can be combined to create dynamic, user-driven educational tools in a modern web environment.
 
-### 5. [VSCode GitHub Copilot For Documentation Validation](./docs-mcp/solution/screenshots/)
+### 5. [In-Editor Docs with MCP Server in VS Code](./docs-mcp/README.md)
 
-This case study explores how GitHub Copilot leverages MCP to provide real-time validation of README files and other documentation. Features include:
+This case study demonstrates how you can bring Microsoft Learn Docs directly into your VS Code environment using the MCP server—no more switching browser tabs! You'll see how to:
 
-- Automated documentation accuracy verification against Microsoft sources
-- Real-time feedback during documentation writing
-- Integration with GitHub workflows for continuous validation
-- README template generation based on project analysis
+- Instantly search and read docs inside VS Code using the MCP panel or command palette
+- Reference documentation and insert links directly into your README or course markdown files
+- Use GitHub Copilot and MCP together for seamless, AI-powered documentation and code workflows
+- Validate and enhance your documentation with real-time feedback and Microsoft-sourced accuracy
+- Integrate MCP with GitHub workflows for continuous documentation validation
 
-This implementation is screenshot-based and demonstrates how MCP can enhance collaboration tools to improve documentation quality across projects.
+The implementation includes:
+- Example `.vscode/mcp.json` configuration for easy setup
+- Screenshot-based walkthroughs of the in-editor experience
+- Tips for combining Copilot and MCP for maximum productivity
+
+This scenario is ideal for course authors, documentation writers, and developers who want to stay focused in their editor while working with docs, Copilot, and validation tools—all powered by MCP.
 
 ## Conclusion
 

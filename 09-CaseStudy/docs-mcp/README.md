@@ -81,6 +81,27 @@ You’ll see how to:
 - Connect to the Docs MCP server
 - Handle user input and display results
 
+Here’s what running the solution might look like:
+
+```
+User> I want to learn about AI102 - so suggest the roadmap to get it started from learn for 6 weeks
+
+Assistant> Here’s a detailed 6-week roadmap to start your preparation for the AI-102: Designing and Implementing a Microsoft Azure AI Solution certification, using official Microsoft resources and focusing on exam skills areas:
+
+---
+## Week 1: Introduction & Fundamentals
+- **Understand the Exam**: Review the [AI-102 exam skills outline](https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-102/).
+- **Set up Azure**: Sign up for a free Azure account if you don't have one.
+- **Learning Path**: [Introduction to Azure AI services](https://learn.microsoft.com/en-us/training/modules/intro-to-azure-ai/)
+- **Focus**: Get familiar with Azure portal, AI capabilities, and necessary tools.
+
+....more weeks of the roadmap...
+
+Let me know if you want module-specific recommendations or need more customized weekly tasks!
+```
+
+Below is a minimal sample solution. The full code and details are available in the solution folder.
+
 <details>
 <summary>Python (Chainlit)</summary>
 
@@ -107,17 +128,21 @@ def handle_message(message):
 - For setup and running instructions, see the [`README.md`](./solution/python/README.md).
 </details>
 
-## Scenario 3 - VSCode GitHub Copilot For Documentation Validation
 
-This scenario explores how to develop a more advanced, agentic solution using Visual Studio Code and MCP. You’ll learn how to configure your project with `mcp.json`, select and use available tools, and build workflows that leverage multiple MCP plugins.
+## Scenario 3: In-Editor Docs with MCP Server in VS Code
 
-You’ll see how to:
-- Set up your project with `mcp.json`
-- Discover and use available tools
-- Build agentic workflows that chain together multiple documentation and code tools
+If you want to get Microsoft Learn Docs directly inside your VS Code (instead of switching browser tabs), you can use the MCP server in your editor. This allows you to:
+- Search and read docs in VS Code without leaving your coding environment.
+- Reference documentation and insert links directly into your README or course files.
+- Leverage GitHub Copilot and MCP together for a seamless, AI-powered documentation workflow.
 
-<details>
-<summary>mcp.json</summary>
+**You'll see how to:**
+- Add a valid `.vscode/mcp.json` file to your workspace root (see example below).
+- Open the MCP panel or use the command palette in VS Code to search and insert docs.
+- Reference documentation directly in your markdown files as you work.
+- Combine this workflow with GitHub Copilot for even greater productivity.
+
+Here’s a example of how to set up the MCP server in VS Code:
 
 ```json
 {
@@ -129,15 +154,11 @@ You’ll see how to:
 }
 ```
 
-After setup, you can use the VS Code extension to send prompts and receive results. Here’s what it might look like:
-
-```
-Prompt> Show me how to use Azure Functions triggers
-Result> Here are the docs and code samples for Azure Functions triggers: ...
-```
-
-You can view a screenshot of the input prompt and the result in the solution folder.
 </details>
+
+> For a detailed walkthrough with screenshots and step-by-step guide, see [`README.md`](./solution/scenario3/README.md).
+
+This approach is ideal for anyone building technical courses, writing documentation, or developing code with frequent reference needs.
 
 ## Key Takeaways
 

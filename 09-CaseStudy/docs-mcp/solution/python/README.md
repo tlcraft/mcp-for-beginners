@@ -52,6 +52,21 @@ Fill in these values with your Azure OpenAI resource details before running the 
 
 > **Tip:** You can easily deploy your own models using [Azure AI Foundry](https://ai.azure.com/).
 
+### Scenario 3: In-Editor Docs with MCP Server in VS Code
+
+Instead of switching browser tabs to search documentation, you can bring Microsoft Learn Docs directly into your VS Code using the MCP server. This enables you to:
+- Search and read docs inside VS Code without leaving your coding environment.
+- Reference documentation and insert links directly into your README or course files.
+- Use GitHub Copilot and MCP together for a seamless, AI-powered documentation workflow.
+
+**Example Use Cases:**
+- Quickly add reference links to a README while writing a course or project documentation.
+- Use Copilot to generate code and MCP to instantly find and cite relevant docs.
+- Stay focused in your editor and boost productivity.
+
+> [!IMPORTANT]
+> Ensure you have a valid [`mcp.json`](../scenario3/mcp.json) configuration in your workspace (location is `.vscode/mcp.json`).
+
 ## Why Chainlit for Scenario 2?
 
 Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
