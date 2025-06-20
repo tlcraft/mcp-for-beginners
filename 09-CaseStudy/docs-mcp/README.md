@@ -28,7 +28,7 @@ Let’s put this into practice. Your task is to write an app that connects to th
 ### Why this approach?
 Because it’s the foundation for building more advanced integrations—whether you want to power a chatbot, an IDE extension, or a web dashboard.
 
-You'll find the code and instructions for this scenario in the `scenario1` folder within this case study. The steps will guide you through setting up the connection:
+You'll find the code and instructions for this scenario in the [`solution`](./solution/README.md) folder within this case study. The steps will guide you through setting up the connection:
 - Use the official MCP SDK and streamable HTTP client for connection
 - Call the `microsoft_docs_search` tool with a query parameter to retrieve documentation
 - Implement proper logging and error handling
