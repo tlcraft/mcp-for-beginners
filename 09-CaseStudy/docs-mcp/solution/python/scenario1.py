@@ -1,12 +1,6 @@
-# """
-# Microsoft Learn Docs MCP Client (Streamable HTTP Approach)
-
-# This client connects to the Microsoft Docs MCP Server using the Model Context Protocol (MCP) over Streamable HTTP.
-# It allows users to search documentation using the 'microsoft_docs_search' tool.
-
-# Usage:
-#     python client.py
-# """
+# Scenario 1: Simple query to Docs MCP
+# This script demonstrates how to connect to the Microsoft Learn Docs MCP server,
+# send a query, and print the result.
 
 import asyncio
 import logging

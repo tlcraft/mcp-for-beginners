@@ -41,7 +41,7 @@ This case study demonstrates a practical application of MCP for automating workf
 
 This example illustrates how even relatively simple MCP implementations can provide significant efficiency gains by automating routine tasks and improving data consistency across systems.
 
-### 3. [Real-Time Documentation Retrieval with MCP](./MCPforDocumentation.md)
+### 3. [Real-Time Documentation Retrieval with MCP](./docs-mcp/README.md)
 
 This case study guides you through connecting a Python console client to a Model Context Protocol (MCP) server to retrieve and log real-time, context-aware Microsoft documentation. You'll learn how to:
 
@@ -52,7 +52,7 @@ This case study guides you through connecting a Python console client to a Model
 
 The chapter includes a hands-on assignment, a minimal working code sample, and links to additional resources for deeper learning. See the full walkthrough and code in the linked chapter to understand how MCP can transform documentation access and developer productivity in console-based environments.
 
-### 4. [Interactive Study Plan Generator Web App with MCP](./BuildingAI900Resources.md)
+### 4. [Interactive Study Plan Generator Web App with MCP](./docs-mcp/README.md)
 
 This case study demonstrates how to build an interactive web application using Chainlit and the Model Context Protocol (MCP) to generate personalized study plans for any topic. Users can specify a subject (such as "AI-900 certification") and a study duration (e.g., 8 weeks), and the app will provide a week-by-week breakdown of recommended content. Chainlit enables a conversational chat interface, making the experience engaging and adaptive.
 
@@ -63,7 +63,7 @@ This case study demonstrates how to build an interactive web application using C
 
 The project illustrates how conversational AI and MCP can be combined to create dynamic, user-driven educational tools in a modern web environment.
 
-### 5. [GitHub Copilot for Documentation Validation Using MCP](./ClientScenarioGitHubCopilot.md)
+### 5. [VSCode GitHub Copilot For Documentation Validation](./docs-mcp/solution/screenshots/)
 
 This case study explores how GitHub Copilot leverages MCP to provide real-time validation of README files and other documentation. Features include:
 
@@ -72,7 +72,7 @@ This case study explores how GitHub Copilot leverages MCP to provide real-time v
 - Integration with GitHub workflows for continuous validation
 - README template generation based on project analysis
 
-This implementation demonstrates how MCP can enhance collaboration tools to improve documentation quality across projects.
+This implementation is screenshot-based and demonstrates how MCP can enhance collaboration tools to improve documentation quality across projects.
 
 ## Conclusion
 
