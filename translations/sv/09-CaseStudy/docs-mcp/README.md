@@ -1,19 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "577394ece173bbc758150fd4bfbc13dd",
-  "translation_date": "2025-06-21T14:18:28+00:00",
+  "original_hash": "4319d291c9d124ecafea52b3d04bfa0e",
+  "translation_date": "2025-06-23T11:10:22+00:00",
   "source_file": "09-CaseStudy/docs-mcp/README.md",
   "language_code": "sv"
 }
 -->
 > För en detaljerad genomgång med skärmbilder och steg-för-steg-guide, se [`README.md`](./solution/scenario3/README.md).
 
-Denna metod är idealisk för alla som skapar tekniska kurser, skriver dokumentation eller utvecklar kod med frekventa referensbehov.
+![Scenario 3 Översikt](../../../../translated_images/step4-prompt-chat.12187bb001605efc5077992b621f0fcd1df12023c5dce0464f8eb8f3d595218f.sv.png)
 
-## Viktiga slutsatser
+Detta tillvägagångssätt är idealiskt för alla som bygger tekniska kurser, skriver dokumentation eller utvecklar kod med frekvent behov av referenser.
 
-Att integrera dokumentation direkt i dina verktyg är inte bara en bekvämlighet – det är en stor förändring för produktiviteten. Genom att ansluta till Microsoft Learn Docs MCP-servern från din klient kan du:
+## Viktiga insikter
+
+Att integrera dokumentation direkt i dina verktyg är inte bara en bekvämlighet – det är en revolution för produktiviteten. Genom att ansluta till Microsoft Learn Docs MCP-servern från din klient kan du:
 
 - Eliminera kontextväxling mellan din kod och dokumentation
 - Hämta uppdaterad, kontextmedveten dokumentation i realtid
@@ -32,4 +34,4 @@ För att fördjupa din förståelse, utforska dessa officiella resurser:
 - [Lägg till plugins från en MCP Server (Python)](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-mcp-plugins)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, var vänlig observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess ursprungsspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål ska betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

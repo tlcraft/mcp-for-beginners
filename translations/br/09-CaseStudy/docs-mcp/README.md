@@ -1,25 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "577394ece173bbc758150fd4bfbc13dd",
-  "translation_date": "2025-06-21T14:17:10+00:00",
+  "original_hash": "4319d291c9d124ecafea52b3d04bfa0e",
+  "translation_date": "2025-06-23T11:07:05+00:00",
   "source_file": "09-CaseStudy/docs-mcp/README.md",
   "language_code": "br"
 }
 -->
-> Para um tutorial detalhado com capturas de tela e guia passo a passo, veja [`README.md`](./solution/scenario3/README.md).
+> Para um passo a passo detalhado com capturas de tela e guia passo a passo, veja [`README.md`](./solution/scenario3/README.md).
 
-Essa abordagem é ideal para quem está criando cursos técnicos, escrevendo documentação ou desenvolvendo código com necessidades frequentes de consulta.
+![Visão Geral do Cenário 3](../../../../translated_images/step4-prompt-chat.12187bb001605efc5077992b621f0fcd1df12023c5dce0464f8eb8f3d595218f.br.png)
 
-## Principais Conclusões
+Esta abordagem é ideal para quem está criando cursos técnicos, escrevendo documentação ou desenvolvendo código que requer consultas frequentes.
 
-Integrar a documentação diretamente em suas ferramentas não é apenas uma comodidade — é uma mudança radical para a produtividade. Ao conectar-se ao servidor Microsoft Learn Docs MCP a partir do seu cliente, você pode:
+## Principais Lições
+
+Integrar a documentação diretamente nas suas ferramentas não é apenas uma comodidade — é uma mudança radical para a produtividade. Ao se conectar ao servidor Microsoft Learn Docs MCP a partir do seu cliente, você pode:
 
 - Eliminar a troca de contexto entre seu código e a documentação
 - Recuperar documentação atualizada e contextualizada em tempo real
 - Construir ferramentas de desenvolvimento mais inteligentes e interativas
 
-Essas habilidades ajudarão você a criar soluções que são não apenas eficientes, mas também agradáveis de usar.
+Essas habilidades vão ajudá-lo a criar soluções que não são apenas eficientes, mas também agradáveis de usar.
 
 ## Recursos Adicionais
 
@@ -32,4 +34,4 @@ Para aprofundar seu conhecimento, explore estes recursos oficiais:
 - [Adicionar plugins de um MCP Server (Python)](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-mcp-plugins)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.

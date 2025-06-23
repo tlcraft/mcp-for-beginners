@@ -1,25 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "577394ece173bbc758150fd4bfbc13dd",
-  "translation_date": "2025-06-21T14:13:00+00:00",
+  "original_hash": "4319d291c9d124ecafea52b3d04bfa0e",
+  "translation_date": "2025-06-23T10:56:41+00:00",
   "source_file": "09-CaseStudy/docs-mcp/README.md",
   "language_code": "en"
 }
 -->
-> For a detailed walkthrough with screenshots and step-by-step guide, see [`README.md`](./solution/scenario3/README.md).
+> For a detailed walkthrough with screenshots and a step-by-step guide, see [`README.md`](./solution/scenario3/README.md).
 
-This approach is perfect for anyone creating technical courses, writing documentation, or developing code that requires frequent references.
+![Scenario 3 Overview](../../../../translated_images/step4-prompt-chat.12187bb001605efc5077992b621f0fcd1df12023c5dce0464f8eb8f3d595218f.en.png)
+
+This approach is perfect for anyone creating technical courses, writing documentation, or developing code that requires frequent referencing.
 
 ## Key Takeaways
 
-Integrating documentation directly into your tools is more than just convenient—it transforms productivity. By connecting your client to the Microsoft Learn Docs MCP server, you can:
+Integrating documentation directly into your tools is more than just a convenience—it transforms productivity. By connecting your client to the Microsoft Learn Docs MCP server, you can:
 
-- Avoid constantly switching between your code and documentation
+- Avoid switching contexts between your code and documentation
 - Access up-to-date, context-aware documentation in real time
 - Build smarter, more interactive developer tools
 
-These skills will enable you to create solutions that are not only efficient but also enjoyable to use.
+These skills will enable you to develop solutions that are not only efficient but also enjoyable to use.
 
 ## Additional Resources
 
