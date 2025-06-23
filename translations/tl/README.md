@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "af49e2a6fd462dde6f9ad952d5c8cc6e",
-  "translation_date": "2025-06-21T14:01:16+00:00",
+  "original_hash": "5dc09d7099d2f09f3e472bc8f073622d",
+  "translation_date": "2025-06-23T14:38:35+00:00",
   "source_file": "README.md",
   "language_code": "tl"
 }
@@ -30,23 +30,23 @@ Sundin ang mga hakbang na ito upang makapagsimula gamit ang mga resources na ito
 
 ### 🌐 Suporta sa Maramihang Wika
 
-#### Sinusuportahan sa pamamagitan ng GitHub Action (Automatiko at Laging Napapanahon)
+#### Sinusuportahan sa pamamagitan ng GitHub Action (Automatiko at Palaging Napapanahon)
 
-# 🚀 Kurikulum ng Model Context Protocol (MCP) para sa mga Baguhan
+# 🚀 Kurikulum ng Model Context Protocol (MCP) para sa mga Nagsisimula
 
-## **Matutunan ang MCP gamit ang Mga Praktikal na Halimbawa ng Code sa C#, Java, JavaScript, Python, at TypeScript**
+## **Matutunan ang MCP gamit ang Mga Halimbawang Kodigo sa C#, Java, JavaScript, Python, at TypeScript**
 
 ## 🧠 Pangkalahatang-ideya ng Kurikulum ng Model Context Protocol
 
-Ang **Model Context Protocol (MCP)** ay isang makabagong framework na nilikha upang gawing standard ang ugnayan sa pagitan ng mga AI model at mga client application. Ang open-source na kurikulum na ito ay nag-aalok ng maayos na landas sa pag-aaral, kumpleto sa mga praktikal na halimbawa ng coding at mga totoong gamit, sa mga kilalang programming language tulad ng C#, Java, JavaScript, TypeScript, at Python.
+Ang **Model Context Protocol (MCP)** ay isang makabagong framework na idinisenyo upang gawing pare-pareho ang mga interaksyon sa pagitan ng mga AI model at mga client application. Ang open-source na kurikulum na ito ay nag-aalok ng isang sistematikong landas sa pag-aaral, kumpleto sa mga praktikal na halimbawa ng pag-cocode at mga totoong gamit, sa mga kilalang programming language tulad ng C#, Java, JavaScript, TypeScript, at Python.
 
-Kung ikaw man ay isang AI developer, system architect, o software engineer, ang gabay na ito ang iyong kumpletong sanggunian para sa pag-master ng mga pundasyon at estratehiya sa pagpapatupad ng MCP.
+Kung ikaw man ay isang AI developer, system architect, o software engineer, ang gabay na ito ang iyong komprehensibong sanggunian para maunawaan ang mga pundasyon at estratehiya sa pagpapatupad ng MCP.
 
 ## 🔗 Opisyal na Mga Mapagkukunan ng MCP
 
 - 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Detalyadong mga tutorial at gabay para sa mga gumagamit  
-- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Arkitektura ng protocol at mga teknikal na reperensya  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source na mga SDK, tools, at mga halimbawa ng code  
+- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Arkitektura ng protocol at mga teknikal na sanggunian  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Mga open-source SDK, tools, at mga sample na kodigo  
 
 ## 🧭 Pangkalahatang-ideya ng Kurikulum ng MCP
 
@@ -54,13 +54,13 @@ Kung ikaw man ay isang AI developer, system architect, o software engineer, ang 
   <summary><strong>00-03: Mga Pundasyon</strong></summary>
 
 - **00. Panimula sa MCP**  
-  Pangkalahatang-ideya ng Model Context Protocol at ang kahalagahan nito sa mga AI pipeline. [Basahin pa](./00-Introduction/README.md)
-- **01. Paliwanag sa Mga Pangunahing Konsepto**  
+  Pangkalahatang ideya ng Model Context Protocol at ang kahalagahan nito sa mga AI pipeline. [Basahin pa](./00-Introduction/README.md)
+- **01. Mga Pangunahing Konsepto**  
   Masusing pagtalakay sa mga pangunahing konsepto ng MCP. [Basahin pa](./01-CoreConcepts/README.md)
 - **02. Seguridad sa MCP**  
-  Mga banta sa seguridad at mga pinakamahuhusay na gawi. [Basahin pa](./02-Security/README.md)
+  Mga banta sa seguridad at mga pinakamahusay na kasanayan. [Basahin pa](./02-Security/README.md)
 - **03. Pagsisimula sa MCP**  
-  Pagsasaayos ng kapaligiran, mga basic na server/client, integrasyon. [Basahin pa](./03-GettingStarted/README.md)
+  Pag-setup ng kapaligiran, mga pangunahing server/client, integrasyon. [Basahin pa](./03-GettingStarted/README.md)
 </details>
 
 <details>
@@ -73,18 +73,18 @@ Kung ikaw man ay isang AI developer, system architect, o software engineer, ang 
 - **3.5. Paggawa ng server gamit ang SSE** – [Gabay](./03-GettingStarted/05-sse-server/README.md)
 - **3.6. HTTP Streaming** – [Gabay](./03-GettingStarted/06-http-streaming/README.md)
 - **3.7. Paggamit ng AI Toolkit** – [Gabay](./03-GettingStarted/07-aitk/README.md)
-- **3.8. Pagsubok sa iyong server** – [Gabay](./03-GettingStarted/08-testing/README.md)
-- **3.9. I-deploy ang iyong server** – [Gabay](./03-GettingStarted/09-deployment/README.md)
+- **3.8. Pagsusuri ng iyong server** – [Gabay](./03-GettingStarted/08-testing/README.md)
+- **3.9. Pag-deploy ng iyong server** – [Gabay](./03-GettingStarted/09-deployment/README.md)
 </details>
 
 <details>
   <summary><strong>04-05: Praktikal at Advanced</strong></summary>
 
 - **04. Praktikal na Pagpapatupad**  
-  SDKs, debugging, testing, mga reusable na prompt template. [Basahin pa](./04-PracticalImplementation/README.md)
+  SDKs, debugging, testing, reusable na mga prompt template. [Basahin pa](./04-PracticalImplementation/README.md)
 - **05. Mga Advanced na Paksa sa MCP**  
   Multi-modal AI, scaling, paggamit sa enterprise. [Basahin pa](./05-AdvancedTopics/README.md)
-- **5.1. Integrasyon ng MCP sa Azure** – [Gabay](./05-AdvancedTopics/mcp-integration/README.md)
+- **5.1. MCP Integration sa Azure** – [Gabay](./05-AdvancedTopics/mcp-integration/README.md)
 - **5.2. Multi modality** – [Gabay](./05-AdvancedTopics/mcp-multi-modality/README.md)
 - **5.3. MCP OAuth2 Demo** – [Gabay](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
 - **5.4. Root Contexts** – [Gabay](./05-AdvancedTopics/mcp-root-contexts/README.md)
@@ -98,20 +98,20 @@ Kung ikaw man ay isang AI developer, system architect, o software engineer, ang 
 </details>
 
 <details>
-  <summary><strong>06-10: Komunidad, Pinakamahuhusay na Gawi at Mga Lab</strong></summary>
+  <summary><strong>06-10: Komunidad, Mga Pinakamahusay na Kasanayan at Mga Lab</strong></summary>
 
-- **06. Mga Ambag ng Komunidad** – [Gabay](./06-CommunityContributions/README.md)
-- **07. Mga Kaalaman mula sa Maagang Paggamit** – [Guide](./07-LessonsFromEarlyAdoption/README.md)
+- **06. Mga Kontribusyon mula sa Komunidad** – [Gabay](./06-CommunityContributions/README.md)
+- **07. Mga Aral mula sa Maagang Paggamit** – [Guide](./07-LessonsFromEarlyAdoption/README.md)
 - **08. Mga Pinakamahusay na Praktis para sa MCP** – [Guide](./08-BestPractices/README.md)
-- **09. Mga Pag-aaral ng Kaso sa MCP** – [Guide](./09-CaseStudy/README.md)
-- **10. Pagpapadali ng AI Workflows: Paggawa ng MCP Server gamit ang AI Toolkit** – [Hands On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+- **09. Mga Pag-aaral ng Kaso ng MCP** – [Guide](./09-CaseStudy/README.md)
+- **10. Pagsasaayos ng AI Workflows: Pagbuo ng MCP Server gamit ang AI Toolkit** – [Hands On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 </details>
 
 ## Mga Halimbawang Proyekto
 
 ### 🧮 Mga Halimbawang Proyekto ng MCP Calculator:
 <details>
-  <summary><strong>Galugarin ang Mga Implementasyon ng Code ayon sa Wika</strong></summary>
+  <summary><strong>Galugarin ang mga Implementasyon ng Code ayon sa Wika</strong></summary>
 
   - [Halimbawa ng C# MCP Server](./03-GettingStarted/samples/csharp/README.md)
   - [Java MCP Calculator](./03-GettingStarted/samples/java/calculator/README.md)
@@ -123,7 +123,7 @@ Kung ikaw man ay isang AI developer, system architect, o software engineer, ang 
 
 ### 💡 Mga Advanced na Proyekto ng MCP Calculator:
 <details>
-  <summary><strong>Galugarin ang Mga Advanced na Halimbawa</strong></summary>
+  <summary><strong>Galugarin ang mga Advanced na Halimbawa</strong></summary>
 
   - [Advanced na Halimbawa ng C#](./04-PracticalImplementation/samples/csharp/README.md)
   - [Halimbawa ng Java Container App](./04-PracticalImplementation/samples/java/containerapp/README.md)
@@ -134,72 +134,70 @@ Kung ikaw man ay isang AI developer, system architect, o software engineer, ang 
 </details>
 
 
-## 🎯 Mga Kinakailangan sa Pag-aaral ng MCP
+## 🎯 Mga Kinakailangan Bago Matutunan ang MCP
 
 Para masulit ang kurikulum na ito, dapat mayroon kang:
 
 - Pangunahing kaalaman sa C#, Java, o Python
-- Pag-unawa sa client-server model at APIs
+- Pag-unawa sa client-server na modelo at mga API
 - (Opsyonal) Pamilyaridad sa mga konsepto ng machine learning
 
 ## 📚 Gabay sa Pag-aaral
 
-Mayroon kang komprehensibong [Gabay sa Pag-aaral](./study_guide.md) upang matulungan kang mag-navigate sa repository na ito nang epektibo. Kasama sa gabay ang:
+Mayroon kang komprehensibong [Study Guide](./study_guide.md) upang tulungan kang mag-navigate sa repository na ito nang epektibo. Kasama sa gabay ang:
 
 - Isang visual na mapa ng kurikulum na nagpapakita ng lahat ng mga paksang sakop
-- Detalyadong paghahati-hati ng bawat bahagi ng repository
-- Gabay kung paano gamitin ang mga halimbawang proyekto
-- Mga inirekomendang landas sa pag-aaral para sa iba't ibang antas ng kasanayan
-- Karagdagang mga mapagkukunan upang suportahan ang iyong paglalakbay sa pag-aaral
+- Detalyadong paliwanag ng bawat seksyon ng repository
+- Patnubay kung paano gamitin ang mga halimbawang proyekto
+- Inirerekomendang mga landas ng pag-aaral para sa iba't ibang antas ng kasanayan
+- Karagdagang mga mapagkukunan upang suportahan ang iyong pag-aaral
 
-## 🛠️ Paano Gamitin nang Mabisa ang Kurikulum na Ito
+## 🛠️ Paano Gamitin nang Epektibo ang Kurikulum na Ito
 
-Bawat aralin sa gabay na ito ay may kasamang:
+Bawat aralin sa gabay na ito ay naglalaman ng:
 
-1. Malinaw na mga paliwanag ng mga konsepto ng MCP  
+1. Malinaw na paliwanag ng mga konsepto ng MCP  
 2. Mga live na halimbawa ng code sa iba't ibang wika  
-3. Mga pagsasanay para makabuo ng tunay na mga MCP na aplikasyon  
+3. Mga pagsasanay upang makabuo ng totoong MCP na mga aplikasyon  
 4. Karagdagang mga mapagkukunan para sa mga advanced na nag-aaral  
 
 ## 📜 Impormasyon sa Lisensya
 
 Ang nilalaman na ito ay lisensyado sa ilalim ng **MIT License**. Para sa mga tuntunin at kundisyon, tingnan ang [LICENSE](../../LICENSE).
 
-## 🤝 Mga Patnubay sa Pagsasagawa ng Kontribusyon
+## 🤝 Mga Patnubay sa Pagsusumite
 
-Malugod na tinatanggap ng proyektong ito ang mga kontribusyon at suhestiyon. Karamihan sa mga kontribusyon ay nangangailangan na sumang-ayon ka sa isang  
-Contributor License Agreement (CLA) na nagsasaad na ikaw ay may karapatan, at talagang nagbibigay, ng mga karapatan upang magamit namin ang iyong kontribusyon. Para sa mga detalye, bisitahin ang <https://cla.opensource.microsoft.com>.
+Malugod na tinatanggap ng proyektong ito ang mga kontribusyon at suhestiyon. Karamihan sa mga kontribusyon ay nangangailangan na sumang-ayon ka sa isang Contributor License Agreement (CLA) na nagpapatunay na ikaw ay may karapatan, at talagang nagbibigay sa amin ng mga karapatan na gamitin ang iyong kontribusyon. Para sa mga detalye, bisitahin ang <https://cla.opensource.microsoft.com>.
 
-Kapag nagsumite ka ng pull request, awtomatikong malalaman ng CLA bot kung kailangan mong magbigay ng CLA at iaayos ang PR nang naaayon (hal., status check, komento). Sundin lamang ang mga tagubiling ibibigay ng bot. Isang beses mo lang ito kailangang gawin sa lahat ng repos na gumagamit ng aming CLA.
+Kapag nagsumite ka ng pull request, awtomatikong malalaman ng CLA bot kung kailangan mong magbigay ng CLA at bibigyan ng tamang marka ang PR (hal., status check, komento). Sundin lamang ang mga tagubilin na ibibigay ng bot. Isang beses mo lang ito kailangang gawin sa lahat ng mga repos na gumagamit ng aming CLA.
 
-Inampon ng proyektong ito ang [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).  
-Para sa karagdagang impormasyon, tingnan ang [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) o kontakin ang [opencode@microsoft.com](mailto:opencode@microsoft.com) para sa anumang karagdagang tanong o komento.
+Ang proyektong ito ay sumusunod sa [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). Para sa karagdagang impormasyon, tingnan ang [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) o kontakin ang [opencode@microsoft.com](mailto:opencode@microsoft.com) para sa iba pang mga tanong o komento.
 
 ## 🎒 Iba Pang Kurso
-Gumagawa ang aming koponan ng iba pang mga kurso! Silipin ang:
+Gumagawa rin ang aming koponan ng iba pang mga kurso! Tingnan ang:
 
-- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
-- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
-- [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-- [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-- [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Pagpapalalim sa GitHub Copilot para sa AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [Pagpapalalim sa GitHub Copilot para sa mga C#/.NET Developer](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+- [AI Agents Para sa mga Nagsisimula](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Generative AI para sa mga Nagsisimula gamit ang .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+- [Generative AI para sa mga Nagsisimula gamit ang JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+- [Generative AI para sa mga Nagsisimula](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [ML para sa mga Nagsisimula](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+- [Data Science para sa mga Nagsisimula](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI para sa mga Nagsisimula](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+- [Cybersecurity para sa mga Nagsisimula](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
+- [Web Dev para sa mga Nagsisimula](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+- [IoT para sa mga Nagsisimula](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+- [XR Development para sa mga Nagsisimula](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Mastering GitHub Copilot para sa AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+- [Mastering GitHub Copilot para sa mga C#/.NET Developer](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 - [Piliin ang Iyong Sariling Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 
 ## ™️ Paunawa sa Trademark
 
-Maaaring naglalaman ang proyektong ito ng mga trademark o logo para sa mga proyekto, produkto, o serbisyo. Ang awtorisadong paggamit ng mga trademark o logo ng Microsoft ay kailangang sumunod sa
+Maaaring naglalaman ang proyektong ito ng mga trademark o logo para sa mga proyekto, produkto, o serbisyo. Ang awtorisadong paggamit ng mga trademark o logo ng Microsoft ay kailangang sumunod sa at batay sa
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Ang paggamit ng mga trademark o logo ng Microsoft sa mga binagong bersyon ng proyektong ito ay hindi dapat magdulot ng kalituhan o magpahiwatig ng pag-sponsor ng Microsoft.
-Ang anumang paggamit ng mga trademark o logo ng ibang partido ay sakop ng mga patakaran ng mga iyon.
+Ang paggamit ng mga trademark o logo ng Microsoft sa mga binagong bersyon ng proyektong ito ay hindi dapat magdulot ng kalituhan o magpahiwatig ng sponsorship ng Microsoft.
+Anumang paggamit ng mga trademark o logo ng third-party ay nakasalalay sa mga patakaran ng mga third-party na iyon.
 
-**Pagtatangi**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang likas na wika ang dapat ituring na pinakapinagkakatiwalaang sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+**Paunawa**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pinagmumulan ng katotohanan. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

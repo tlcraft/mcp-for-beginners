@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "af49e2a6fd462dde6f9ad952d5c8cc6e",
-  "translation_date": "2025-06-21T13:59:38+00:00",
+  "original_hash": "5dc09d7099d2f09f3e472bc8f073622d",
+  "translation_date": "2025-06-23T14:37:10+00:00",
   "source_file": "README.md",
   "language_code": "id"
 }
@@ -25,7 +25,7 @@ CO_OP_TRANSLATOR_METADATA:
 Ikuti langkah-langkah ini untuk mulai menggunakan sumber daya ini:
 1. **Fork Repository**: Klik [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Clone Repository**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Bergabunglah dengan Azure AI Foundry Discord dan temui para ahli serta pengembang lainnya**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Bergabunglah dengan Azure AI Foundry Discord dan temui para ahli serta sesama pengembang**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Dukungan Multi-Bahasa
@@ -38,13 +38,13 @@ Ikuti langkah-langkah ini untuk mulai menggunakan sumber daya ini:
 
 ## 🧠 Gambaran Umum Kurikulum Model Context Protocol
 
-**Model Context Protocol (MCP)** adalah kerangka kerja mutakhir yang dirancang untuk menstandarisasi interaksi antara model AI dan aplikasi klien. Kurikulum open-source ini menyediakan jalur pembelajaran terstruktur, lengkap dengan contoh kode praktis dan kasus penggunaan nyata, dalam bahasa pemrograman populer seperti C#, Java, JavaScript, TypeScript, dan Python.
+**Model Context Protocol (MCP)** adalah kerangka kerja mutakhir yang dirancang untuk menstandarisasi interaksi antara model AI dan aplikasi klien. Kurikulum open-source ini menawarkan jalur pembelajaran yang terstruktur, lengkap dengan contoh kode praktis dan kasus penggunaan nyata, dalam bahasa pemrograman populer seperti C#, Java, JavaScript, TypeScript, dan Python.
 
-Baik Anda pengembang AI, arsitek sistem, atau insinyur perangkat lunak, panduan ini adalah sumber lengkap untuk menguasai dasar-dasar MCP dan strategi implementasinya.
+Apakah Anda seorang pengembang AI, arsitek sistem, atau insinyur perangkat lunak, panduan ini adalah sumber lengkap untuk menguasai dasar-dasar MCP dan strategi implementasinya.
 
 ## 🔗 Sumber Resmi MCP
 
-- 📘 [Dokumentasi MCP](https://modelcontextprotocol.io/) – Tutorial mendetail dan panduan pengguna  
+- 📘 [Dokumentasi MCP](https://modelcontextprotocol.io/) – Tutorial dan panduan pengguna secara mendetail  
 - 📜 [Spesifikasi MCP](https://spec.modelcontextprotocol.io/) – Arsitektur protokol dan referensi teknis  
 - 🧑‍💻 [Repositori MCP di GitHub](https://github.com/modelcontextprotocol) – SDK open-source, alat, dan contoh kode  
 
@@ -54,13 +54,13 @@ Baik Anda pengembang AI, arsitek sistem, atau insinyur perangkat lunak, panduan 
   <summary><strong>00-03: Dasar-dasar</strong></summary>
 
 - **00. Pengenalan MCP**  
-  Gambaran umum Model Context Protocol dan pentingnya dalam pipeline AI. [Baca selengkapnya](./00-Introduction/README.md)
+  Gambaran umum Model Context Protocol dan pentingnya dalam pipeline AI. [Baca lebih lanjut](./00-Introduction/README.md)
 - **01. Penjelasan Konsep Inti**  
-  Eksplorasi mendalam tentang konsep inti MCP. [Baca selengkapnya](./01-CoreConcepts/README.md)
+  Penjelajahan mendalam tentang konsep inti MCP. [Baca lebih lanjut](./01-CoreConcepts/README.md)
 - **02. Keamanan dalam MCP**  
-  Ancaman keamanan dan praktik terbaik. [Baca selengkapnya](./02-Security/README.md)
+  Ancaman keamanan dan praktik terbaik. [Baca lebih lanjut](./02-Security/README.md)
 - **03. Memulai dengan MCP**  
-  Persiapan lingkungan, server/klien dasar, integrasi. [Baca selengkapnya](./03-GettingStarted/README.md)
+  Pengaturan lingkungan, server/klien dasar, integrasi. [Baca lebih lanjut](./03-GettingStarted/README.md)
 </details>
 
 <details>
@@ -69,28 +69,28 @@ Baik Anda pengembang AI, arsitek sistem, atau insinyur perangkat lunak, panduan 
 - **3.1. Server pertama** – [Panduan](./03-GettingStarted/01-first-server/README.md)
 - **3.2. Klien pertama** – [Panduan](./03-GettingStarted/02-client/README.md)
 - **3.3. Klien dengan LLM** – [Panduan](./03-GettingStarted/03-llm-client/README.md)
-- **3.4. Menggunakan server dengan Visual Studio Code** – [Panduan](./03-GettingStarted/04-vscode/README.md)
+- **3.4. Mengakses server dengan Visual Studio Code** – [Panduan](./03-GettingStarted/04-vscode/README.md)
 - **3.5. Membuat server menggunakan SSE** – [Panduan](./03-GettingStarted/05-sse-server/README.md)
 - **3.6. HTTP Streaming** – [Panduan](./03-GettingStarted/06-http-streaming/README.md)
 - **3.7. Menggunakan AI Toolkit** – [Panduan](./03-GettingStarted/07-aitk/README.md)
 - **3.8. Menguji server Anda** – [Panduan](./03-GettingStarted/08-testing/README.md)
-- **3.9. Men-deploy server Anda** – [Panduan](./03-GettingStarted/09-deployment/README.md)
+- **3.9. Mendeploy server Anda** – [Panduan](./03-GettingStarted/09-deployment/README.md)
 </details>
 
 <details>
   <summary><strong>04-05: Praktis & Lanjutan</strong></summary>
 
 - **04. Implementasi Praktis**  
-  SDK, debugging, pengujian, template prompt yang dapat digunakan ulang. [Baca selengkapnya](./04-PracticalImplementation/README.md)
+  SDK, debugging, testing, template prompt yang dapat digunakan ulang. [Baca lebih lanjut](./04-PracticalImplementation/README.md)
 - **05. Topik Lanjutan dalam MCP**  
-  AI multimodal, scaling, penggunaan di perusahaan. [Baca selengkapnya](./05-AdvancedTopics/README.md)
+  AI multi-modal, skalabilitas, penggunaan di perusahaan. [Baca lebih lanjut](./05-AdvancedTopics/README.md)
 - **5.1. Integrasi MCP dengan Azure** – [Panduan](./05-AdvancedTopics/mcp-integration/README.md)
-- **5.2. Multi modalitas** – [Panduan](./05-AdvancedTopics/mcp-multi-modality/README.md)
+- **5.2. Multi-modalitas** – [Panduan](./05-AdvancedTopics/mcp-multi-modality/README.md)
 - **5.3. Demo MCP OAuth2** – [Panduan](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
 - **5.4. Root Contexts** – [Panduan](./05-AdvancedTopics/mcp-root-contexts/README.md)
 - **5.5. Routing** – [Panduan](./05-AdvancedTopics/mcp-routing/README.md)
 - **5.6. Sampling** – [Panduan](./05-AdvancedTopics/mcp-sampling/README.md)
-- **5.7. Scaling** – [Panduan](./05-AdvancedTopics/mcp-scaling/README.md)
+- **5.7. Skalabilitas** – [Panduan](./05-AdvancedTopics/mcp-scaling/README.md)
 - **5.8. Keamanan** – [Panduan](./05-AdvancedTopics/mcp-security/README.md)
 - **5.9. Web Search MCP** – [Panduan](./05-AdvancedTopics/web-search-mcp/README.md)
 - **5.10. Streaming Real-time** – [Panduan](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
@@ -111,7 +111,7 @@ Baik Anda pengembang AI, arsitek sistem, atau insinyur perangkat lunak, panduan 
 
 ### 🧮 Proyek Contoh Kalkulator MCP:
 <details>
-  <summary><strong>Jelajahi Implementasi Kode berdasarkan Bahasa</strong></summary>
+  <summary><strong>Jelajahi Implementasi Kode Berdasarkan Bahasa</strong></summary>
 
   - [Contoh Server MCP C#](./03-GettingStarted/samples/csharp/README.md)
   - [Kalkulator MCP Java](./03-GettingStarted/samples/java/calculator/README.md)
@@ -121,13 +121,13 @@ Baik Anda pengembang AI, arsitek sistem, atau insinyur perangkat lunak, panduan 
 
 </details>
 
-### 💡 Proyek Kalkulator MCP Tingkat Lanjut:
+### 💡 Proyek Kalkulator MCP Lanjutan:
 <details>
-  <summary><strong>Jelajahi Contoh Tingkat Lanjut</strong></summary>
+  <summary><strong>Jelajahi Contoh Lanjutan</strong></summary>
 
-  - [Contoh Tingkat Lanjut C#](./04-PracticalImplementation/samples/csharp/README.md)
+  - [Contoh Lanjutan C#](./04-PracticalImplementation/samples/csharp/README.md)
   - [Contoh Aplikasi Kontainer Java](./04-PracticalImplementation/samples/java/containerapp/README.md)
-  - [Contoh Tingkat Lanjut JavaScript](./04-PracticalImplementation/samples/javascript/README.md)
+  - [Contoh Lanjutan JavaScript](./04-PracticalImplementation/samples/javascript/README.md)
   - [Implementasi Kompleks Python](../../04-PracticalImplementation/samples/python/mcp_sample.py)
   - [Contoh Kontainer TypeScript](./04-PracticalImplementation/samples/typescript/README.md)
 
@@ -136,51 +136,51 @@ Baik Anda pengembang AI, arsitek sistem, atau insinyur perangkat lunak, panduan 
 
 ## 🎯 Prasyarat untuk Belajar MCP
 
-Agar dapat memaksimalkan kurikulum ini, kamu sebaiknya memiliki:
+Agar dapat memanfaatkan kurikulum ini secara maksimal, Anda sebaiknya memiliki:
 
-- Pengetahuan dasar tentang C#, Java, atau Python  
-- Pemahaman tentang model client-server dan API  
-- (Opsional) Familiaritas dengan konsep machine learning  
+- Pengetahuan dasar tentang C#, Java, atau Python
+- Pemahaman tentang model client-server dan API
+- (Opsional) Familiar dengan konsep machine learning
 
 ## 📚 Panduan Belajar
 
-Panduan [Study Guide](./study_guide.md) yang lengkap tersedia untuk membantu kamu menavigasi repositori ini dengan efektif. Panduan ini mencakup:
+Panduan belajar lengkap [Study Guide](./study_guide.md) tersedia untuk membantu Anda menavigasi repositori ini dengan efektif. Panduan ini mencakup:
 
-- Peta kurikulum visual yang menunjukkan semua topik yang dibahas  
-- Rincian setiap bagian repositori  
-- Petunjuk cara menggunakan proyek contoh  
-- Jalur pembelajaran yang direkomendasikan untuk berbagai tingkat keahlian  
-- Sumber tambahan untuk melengkapi perjalanan belajar kamu  
+- Peta kurikulum visual yang menampilkan semua topik yang dibahas
+- Rincian setiap bagian repositori secara mendalam
+- Panduan cara menggunakan proyek contoh
+- Jalur pembelajaran yang direkomendasikan untuk berbagai tingkat keahlian
+- Sumber tambahan untuk melengkapi perjalanan belajar Anda
 
 ## 🛠️ Cara Menggunakan Kurikulum Ini dengan Efektif
 
 Setiap pelajaran dalam panduan ini mencakup:
 
-1. Penjelasan konsep MCP yang jelas  
+1. Penjelasan yang jelas tentang konsep MCP  
 2. Contoh kode langsung dalam berbagai bahasa  
 3. Latihan untuk membangun aplikasi MCP nyata  
-4. Sumber tambahan untuk pelajar tingkat lanjut  
+4. Sumber tambahan untuk pembelajar tingkat lanjut  
 
 ## 📜 Informasi Lisensi
 
 Konten ini dilisensikan di bawah **MIT License**. Untuk syarat dan ketentuan, lihat [LICENSE](../../LICENSE).
 
-## 🤝 Panduan Kontribusi
+## 🤝 Pedoman Kontribusi
 
-Proyek ini menyambut kontribusi dan saran. Sebagian besar kontribusi mengharuskan kamu menyetujui  
-Contributor License Agreement (CLA) yang menyatakan bahwa kamu memiliki hak dan benar-benar memberikan  
-kami hak untuk menggunakan kontribusi kamu. Untuk detail, kunjungi <https://cla.opensource.microsoft.com>.
+Proyek ini menyambut kontribusi dan saran. Sebagian besar kontribusi mengharuskan Anda menyetujui
+Contributor License Agreement (CLA) yang menyatakan bahwa Anda memiliki hak dan memang memberikan
+kami hak untuk menggunakan kontribusi Anda. Untuk detail, kunjungi <https://cla.opensource.microsoft.com>.
 
-Saat kamu mengirimkan pull request, bot CLA secara otomatis akan menentukan apakah kamu perlu menyediakan  
-CLA dan menandai PR dengan tepat (misalnya, pemeriksaan status, komentar). Cukup ikuti instruksi  
-yang diberikan oleh bot. Kamu hanya perlu melakukan ini sekali untuk semua repositori yang menggunakan CLA kami.
+Saat Anda mengirim pull request, bot CLA akan secara otomatis menentukan apakah Anda perlu memberikan
+CLA dan menandai PR dengan tepat (misalnya, pemeriksaan status, komentar). Cukup ikuti instruksi
+yang diberikan oleh bot. Anda hanya perlu melakukannya sekali untuk semua repositori yang menggunakan CLA kami.
 
-Proyek ini telah mengadopsi [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).  
-Untuk informasi lebih lanjut lihat [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) atau  
+Proyek ini mengadopsi [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+Untuk informasi lebih lanjut lihat [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) atau
 hubungi [opencode@microsoft.com](mailto:opencode@microsoft.com) untuk pertanyaan atau komentar tambahan.
 
 ## 🎒 Kursus Lainnya
-Tim kami juga membuat kursus lainnya! Cek di:
+Tim kami juga membuat kursus lain! Cek di:
 
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
@@ -200,10 +200,10 @@ Tim kami juga membuat kursus lainnya! Cek di:
 
 ## ™️ Pemberitahuan Merek Dagang
 
-Proyek ini mungkin berisi merek dagang atau logo untuk proyek, produk, atau layanan. Penggunaan merek dagang atau logo Microsoft yang sah harus mematuhi dan mengikuti  
-[Pedoman Merek & Brand Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-Penggunaan merek dagang atau logo Microsoft dalam versi modifikasi dari proyek ini tidak boleh menimbulkan kebingungan atau menyiratkan sponsor dari Microsoft.  
+Proyek ini mungkin berisi merek dagang atau logo untuk proyek, produk, atau layanan. Penggunaan merek dagang atau logo Microsoft yang sah harus tunduk dan mengikuti
+[Pedoman Merek Dagang & Merek Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Penggunaan merek dagang atau logo Microsoft dalam versi modifikasi dari proyek ini tidak boleh menimbulkan kebingungan atau menyiratkan dukungan dari Microsoft.
 Setiap penggunaan merek dagang atau logo pihak ketiga tunduk pada kebijakan pihak ketiga tersebut.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurat, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan jasa terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
