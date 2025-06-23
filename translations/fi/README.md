@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "af49e2a6fd462dde6f9ad952d5c8cc6e",
-  "translation_date": "2025-06-21T13:56:04+00:00",
+  "original_hash": "5dc09d7099d2f09f3e472bc8f073622d",
+  "translation_date": "2025-06-23T14:34:12+00:00",
   "source_file": "README.md",
   "language_code": "fi"
 }
@@ -28,83 +28,83 @@ Seuraa näitä ohjeita aloittaaksesi näiden resurssien käytön:
 3. [**Liity Azure AI Foundry Discordiin ja tapaa asiantuntijoita sekä muita kehittäjiä**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Monikielituki
+### 🌐 Monikielinen tuki
 
-#### Tuettu GitHub Actionin kautta (Automaattinen & Aina ajan tasalla)
+#### Tuettu GitHub Actionin kautta (automaattinen ja aina ajan tasalla)
 
-# 🚀 Model Context Protocol (MCP) Opetussuunnitelma Aloittelijoille
+# 🚀 Model Context Protocol (MCP) -oppimateriaali aloittelijoille
 
 ## **Opiskele MCP:tä käytännön koodiesimerkkien avulla C#:ssa, Javassa, JavaScriptissä, Pythonissa ja TypeScriptissä**
 
-## 🧠 Yleiskatsaus Model Context Protocol -opetussuunnitelmaan
+## 🧠 Yleiskatsaus Model Context Protocol -oppimateriaaliin
 
-**Model Context Protocol (MCP)** on huippuluokan kehys, joka on suunniteltu vakioimaan vuorovaikutus AI-mallien ja asiakasohjelmistojen välillä. Tämä avoimen lähdekoodin opetussuunnitelma tarjoaa jäsennellyn oppimispolun, sisältäen käytännön koodiesimerkkejä ja todellisia käyttötapauksia suosituilla ohjelmointikielillä, kuten C#, Java, JavaScript, TypeScript ja Python.
+**Model Context Protocol (MCP)** on huippuluokan kehys, joka on suunniteltu vakioimaan vuorovaikutus tekoälymallien ja asiakasohjelmistojen välillä. Tämä avoimen lähdekoodin oppimateriaali tarjoaa jäsennellyn polun, joka sisältää käytännön koodiesimerkkejä ja todellisia käyttötapauksia suosituilla ohjelmointikielillä, kuten C#, Java, JavaScript, TypeScript ja Python.
 
-Oletpa sitten AI-kehittäjä, järjestelmäarkkitehti tai ohjelmistoinsinööri, tämä opas on kattava resurssi MCP:n perusteiden ja toteutusstrategioiden hallintaan.
+Oletpa sitten tekoälykehittäjä, järjestelmäarkkitehti tai ohjelmistoinsinööri, tämä opas on kattava resurssi MCP:n perusteiden ja toteutusstrategioiden hallintaan.
 
 ## 🔗 Viralliset MCP-resurssit
 
-- 📘 [MCP Dokumentaatio](https://modelcontextprotocol.io/) – Yksityiskohtaiset opetusohjelmat ja käyttäjäoppaat  
-- 📜 [MCP Määrittely](https://spec.modelcontextprotocol.io/) – Protokollan arkkitehtuuri ja tekniset viitteet  
+- 📘 [MCP-dokumentaatio](https://modelcontextprotocol.io/) – Yksityiskohtaiset opetusohjelmat ja käyttäjäoppaat  
+- 📜 [MCP-määritys](https://spec.modelcontextprotocol.io/) – Protokollan arkkitehtuuri ja tekniset viitteet  
 - 🧑‍💻 [MCP GitHub-repositorio](https://github.com/modelcontextprotocol) – Avoimen lähdekoodin SDK:t, työkalut ja koodiesimerkit  
 
-## 🧭 MCP Opetussuunnitelman yleiskatsaus
+## 🧭 MCP-oppimateriaalin yleiskatsaus
 
 <details>
   <summary><strong>00-03: Perusteet</strong></summary>
 
-- **00. Johdanto MCP:hen**  
-  Yleiskatsaus Model Context Protocoliin ja sen merkitykseen AI-putkistoissa. [Lue lisää](./00-Introduction/README.md)
+- **00. Johdatus MCP:hen**  
+  Yleiskatsaus Model Context Protocoliin ja sen merkitykseen tekoälyputkissa. [Lue lisää](./00-Introduction/README.md)
 - **01. Keskeiset käsitteet selitettynä**  
-  Syvällinen katsaus MCP:n ydinkäsitteisiin. [Lue lisää](./01-CoreConcepts/README.md)
+  Syvällinen tarkastelu MCP:n keskeisiin käsitteisiin. [Lue lisää](./01-CoreConcepts/README.md)
 - **02. Turvallisuus MCP:ssä**  
   Turvauhat ja parhaat käytännöt. [Lue lisää](./02-Security/README.md)
 - **03. MCP:n käyttöönotto**  
-  Ympäristön asennus, peruspalvelimet/asiakkaat, integrointi. [Lue lisää](./03-GettingStarted/README.md)
+  Ympäristön asennus, peruspalvelimet/asiakkaat, integraatio. [Lue lisää](./03-GettingStarted/README.md)
 </details>
 
 <details>
-  <summary><strong>03.x: Käytännön laboratoriot</strong></summary>
+  <summary><strong>03.x: Käytännön labrat</strong></summary>
 
 - **3.1. Ensimmäinen palvelin** – [Opas](./03-GettingStarted/01-first-server/README.md)
 - **3.2. Ensimmäinen asiakas** – [Opas](./03-GettingStarted/02-client/README.md)
 - **3.3. Asiakas LLM:llä** – [Opas](./03-GettingStarted/03-llm-client/README.md)
 - **3.4. Palvelimen käyttäminen Visual Studio Codella** – [Opas](./03-GettingStarted/04-vscode/README.md)
 - **3.5. Palvelimen luominen SSE:llä** – [Opas](./03-GettingStarted/05-sse-server/README.md)
-- **3.6. HTTP-suoratoisto** – [Opas](./03-GettingStarted/06-http-streaming/README.md)
+- **3.6. HTTP-striimaus** – [Opas](./03-GettingStarted/06-http-streaming/README.md)
 - **3.7. AI Toolkitin käyttö** – [Opas](./03-GettingStarted/07-aitk/README.md)
 - **3.8. Palvelimen testaaminen** – [Opas](./03-GettingStarted/08-testing/README.md)
 - **3.9. Palvelimen käyttöönotto** – [Opas](./03-GettingStarted/09-deployment/README.md)
 </details>
 
 <details>
-  <summary><strong>04-05: Käytännön & Edistyneet</strong></summary>
+  <summary><strong>04-05: Käytännön & Edistynyt</strong></summary>
 
 - **04. Käytännön toteutus**  
-  SDK:t, virheenkorjaus, testaus, uudelleenkäytettävät prompt-mallit. [Lue lisää](./04-PracticalImplementation/README.md)
+  SDK:t, virheenkorjaus, testaus, uudelleenkäytettävät kehotemallit. [Lue lisää](./04-PracticalImplementation/README.md)
 - **05. Edistyneet aiheet MCP:ssä**  
-  Monimodaalinen AI, skaalaus, yrityskäyttö. [Lue lisää](./05-AdvancedTopics/README.md)
+  Monimodaalinen tekoäly, skaalaus, yrityskäyttö. [Lue lisää](./05-AdvancedTopics/README.md)
 - **5.1. MCP:n integrointi Azureen** – [Opas](./05-AdvancedTopics/mcp-integration/README.md)
 - **5.2. Monimodaalisuus** – [Opas](./05-AdvancedTopics/mcp-multi-modality/README.md)
-- **5.3. MCP OAuth2 Demo** – [Opas](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
+- **5.3. MCP OAuth2 -demo** – [Opas](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
 - **5.4. Root Contexts** – [Opas](./05-AdvancedTopics/mcp-root-contexts/README.md)
 - **5.5. Reititys** – [Opas](./05-AdvancedTopics/mcp-routing/README.md)
 - **5.6. Otanta** – [Opas](./05-AdvancedTopics/mcp-sampling/README.md)
 - **5.7. Skaalaus** – [Opas](./05-AdvancedTopics/mcp-scaling/README.md)
 - **5.8. Turvallisuus** – [Opas](./05-AdvancedTopics/mcp-security/README.md)
 - **5.9. Web-haku MCP:llä** – [Opas](./05-AdvancedTopics/web-search-mcp/README.md)
-- **5.10. Reaaliaikainen suoratoisto** – [Opas](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
+- **5.10. Reaaliaikainen striimaus** – [Opas](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
 - **5.11. Reaaliaikainen web-haku** – [Opas](./05-AdvancedTopics/mcp-realtimesearch/README.md)
 </details>
 
 <details>
-  <summary><strong>06-10: Yhteisö, parhaat käytännöt & laboratoriot</strong></summary>
+  <summary><strong>06-10: Yhteisö, parhaat käytännöt & labrat</strong></summary>
 
 - **06. Yhteisön panokset** – [Opas](./06-CommunityContributions/README.md)
 - **07. Varhaisen käyttöönoton opit** – [Opas](./07-LessonsFromEarlyAdoption/README.md)
-- **08. MCP:n parhaat käytännöt** – [Opas](./08-BestPractices/README.md)
-- **09. MCP-tapaukset** – [Opas](./09-CaseStudy/README.md)
-- **10. AI-työnkulkujen tehostaminen: MCP-palvelimen rakentaminen AI Toolkitillä** – [Käytännön harjoitus](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+- **08. Parhaat käytännöt MCP:lle** – [Opas](./08-BestPractices/README.md)
+- **09. MCP-tapaustutkimukset** – [Opas](./09-CaseStudy/README.md)
+- **10. AI-työnkulkujen tehostaminen: MCP-palvelimen rakentaminen AI Toolkitillä** – [Hands On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 </details>
 
 ## Esimerkkiprojektit
@@ -113,7 +113,7 @@ Oletpa sitten AI-kehittäjä, järjestelmäarkkitehti tai ohjelmistoinsinööri,
 <details>
   <summary><strong>Tutustu koodiesimerkkeihin kielittäin</strong></summary>
 
-  - [C# MCP -palvelimen esimerkki](./03-GettingStarted/samples/csharp/README.md)
+  - [C# MCP-palvelin esimerkki](./03-GettingStarted/samples/csharp/README.md)
   - [Java MCP-laskin](./03-GettingStarted/samples/java/calculator/README.md)
   - [JavaScript MCP-demo](./03-GettingStarted/samples/javascript/README.md)
   - [Python MCP-palvelin](../../03-GettingStarted/samples/python/mcp_calculator_server.py)
@@ -126,59 +126,58 @@ Oletpa sitten AI-kehittäjä, järjestelmäarkkitehti tai ohjelmistoinsinööri,
   <summary><strong>Tutustu edistyneisiin esimerkkeihin</strong></summary>
 
   - [Edistynyt C#-esimerkki](./04-PracticalImplementation/samples/csharp/README.md)
-  - [Java-konttisovelluksen esimerkki](./04-PracticalImplementation/samples/java/containerapp/README.md)
+  - [Java Container App -esimerkki](./04-PracticalImplementation/samples/java/containerapp/README.md)
   - [JavaScript-edistynyt esimerkki](./04-PracticalImplementation/samples/javascript/README.md)
-  - [Python-monimutkainen toteutus](../../04-PracticalImplementation/samples/python/mcp_sample.py)
-  - [TypeScript-konttiesimerkki](./04-PracticalImplementation/samples/typescript/README.md)
+  - [Python monimutkainen toteutus](../../04-PracticalImplementation/samples/python/mcp_sample.py)
+  - [TypeScript Container -esimerkki](./04-PracticalImplementation/samples/typescript/README.md)
 
 </details>
 
 
-## 🎯 MCP:n oppimisen edellytykset
+## 🎯 MCP:n oppimisen ennakkoedellytykset
 
-Jotta saat tästä oppimateriaalista parhaan hyödyn, sinun tulisi hallita:
+Jotta saat tästä oppimateriaalista parhaan hyödyn, sinulla tulisi olla:
 
-- Perustiedot C#:stä, Javasta tai Pythonista
-- Asiakas-palvelin-mallin ja API:en ymmärtäminen
-- (Valinnainen) Peruskäsitys koneoppimisesta
+- Perustiedot C#:stä, Javasta tai Pythonista  
+- Ymmärrys asiakas-palvelin-mallista ja API:sta  
+- (Valinnainen) Tuntemus koneoppimisen perusteista  
 
 ## 📚 Opas opiskeluun
 
-Laaja [Opas](./study_guide.md) on saatavilla auttamaan sinua navigoimaan tässä repossa tehokkaasti. Opas sisältää:
+Laaja [Opas](./study_guide.md) on saatavilla auttamaan sinua navigoimaan tässä repositoriossa tehokkaasti. Oppaassa on:
 
-- Visuaalisen kurssikartan kaikista käsitellyistä aiheista
-- Yksityiskohtaisen erittelyn jokaisesta repositorion osasta
-- Ohjeita esimerkkiprojektien käyttöön
-- Suositellut oppimispolut eri taitotasoille
-- Lisäresursseja oppimisen tueksi
+- Visuaalinen opetussuunnitelmakartta, joka näyttää kaikki käsitellyt aiheet  
+- Yksityiskohtainen erittely jokaisesta repositorion osasta  
+- Ohjeet esimerkkiprojektien käyttöön  
+- Suositellut oppimispolut eri taitotasoille  
+- Lisäresurssit oppimismatkan tueksi  
 
-## 🛠️ Kuinka käyttää tätä oppimateriaalia tehokkaasti
+## 🛠️ Kuinka käyttää tätä opetussuunnitelmaa tehokkaasti
 
 Jokainen tämän oppaan oppitunti sisältää:
 
-1. Selkeät selitykset MCP-konsepteista  
+1. Selkeät selitykset MCP-käsitteistä  
 2. Live-koodiesimerkkejä useilla kielillä  
-3. Harjoituksia aidon MCP-sovelluksen rakentamiseen  
+3. Harjoituksia oikeiden MCP-sovellusten rakentamiseen  
 4. Lisäresursseja edistyneille oppijoille  
 
 ## 📜 Lisenssitiedot
 
-Tämä sisältö on lisensoitu **MIT-lisenssillä**. Käyttöehdot löydät [LICENSE](../../LICENSE)-tiedostosta.
+Tämä sisältö on lisensoitu **MIT-lisenssillä**. Ehdot löydät [LICENSE](../../LICENSE)-tiedostosta.
 
 ## 🤝 Osallistumisohjeet
 
 Tämä projekti toivottaa tervetulleiksi panokset ja ehdotukset. Useimmat panokset edellyttävät, että hyväksyt
-Contributor License Agreementin (CLA), jossa vahvistat, että sinulla on oikeus ja myönnät meille oikeudet
-käyttää panostustasi. Lisätietoja löydät osoitteesta <https://cla.opensource.microsoft.com>.
+Contributor License Agreementin (CLA), jossa vakuutat, että sinulla on oikeus ja että myönnät meille
+käyttöoikeudet panokseesi. Lisätietoja löytyy osoitteesta <https://cla.opensource.microsoft.com>.
 
-Kun lähetät pull requestin, CLA-botti arvioi automaattisesti, tarvitseeko sinun toimittaa CLA ja merkitsee PR:n
-sopivasti (esim. tilatarkistus, kommentti). Noudata vain botin ohjeita. Tämä toimenpide tehdään vain kerran kaikissa CLA:ta käyttävissä repostoissa.
+Kun lähetät pull requestin, CLA-botti arvioi automaattisesti, tarvitsetko CLA:n ja merkitsee PR:n asianmukaisesti (esim. tilatarkistus, kommentti). Noudata botin antamia ohjeita. Tämä tehdään vain kerran kaikissa CLA:a käyttävissä repohin.
 
-Tämä projekti on ottanut käyttöön [Microsoft Open Source Code of Conductin](https://opensource.microsoft.com/codeofconduct/).
-Lisätietoja löydät [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)-sivulta tai ota yhteyttä osoitteeseen [opencode@microsoft.com](mailto:opencode@microsoft.com) lisäkysymyksiä tai kommentteja varten.
+Tämä projekti on ottanut käyttöön [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+Lisätietoja löydät [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) -sivulta tai ota yhteyttä osoitteeseen [opencode@microsoft.com](mailto:opencode@microsoft.com) kysymyksiä tai kommentteja varten.
 
-## 🎒 Muut kurssit
-Tiimimme tuottaa myös muita kursseja! Tutustu niihin:
+## 🎒 Muita kursseja
+Tiimimme tuottaa myös muita kursseja! Tutustu:
 
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
@@ -191,17 +190,17 @@ Tiimimme tuottaa myös muita kursseja! Tutustu niihin:
 - [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
 - [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
 - [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Mastering GitHub Copilot for AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [Mastering GitHub Copilot for C#/.NET Developers](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-- [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+- [GitHub Copilotin hallinta tekoälypariohjelmointiin](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+- [GitHub Copilotin hallinta C#/.NET-kehittäjille](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+- [Valitse oma Copilot-seikkailusi](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 
-## ™️ Tavaramerkki-ilmoitus
+## ™️ Tavaramerkkitiedote
 
-Tämä projekti saattaa sisältää tavaramerkkejä tai logoja projekteihin, tuotteisiin tai palveluihin liittyen. Microsoftin tavaramerkkien tai logojen luvallinen käyttö edellyttää ja noudattaa
+Tämä projekti saattaa sisältää tavaramerkkejä tai logoja projekteihin, tuotteisiin tai palveluihin liittyen. Microsoftin tavaramerkkien tai logojen valtuutettu käyttö edellyttää ja noudattaa
 [Microsoftin tavaramerkki- ja brändiohjeita](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Microsoftin tavaramerkkien tai logojen käyttö tämän projektin muokatuissa versioissa ei saa aiheuttaa sekaannusta tai antaa ymmärtää, että Microsoft sponsoroisi niitä.
-Kolmansien osapuolien tavaramerkkien tai logojen käyttö on näiden osapuolten omien sääntöjen alaista.
+Microsoftin tavaramerkkien tai logojen käyttö muokatuissa versioissa tästä projektista ei saa aiheuttaa sekaannusta tai antaa vaikutelmaa Microsoftin sponsoroinnista.
+Kolmansien osapuolten tavaramerkkien tai logojen käyttö on näiden osapuolten sääntöjen alaista.
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinkäsityksistä tai virhetulkinnoista.

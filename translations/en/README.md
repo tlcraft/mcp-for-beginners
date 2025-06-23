@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "af49e2a6fd462dde6f9ad952d5c8cc6e",
-  "translation_date": "2025-06-21T13:30:09+00:00",
+  "original_hash": "5dc09d7099d2f09f3e472bc8f073622d",
+  "translation_date": "2025-06-23T14:12:34+00:00",
   "source_file": "README.md",
   "language_code": "en"
 }
@@ -38,15 +38,15 @@ Follow these steps to get started using these resources:
 
 ## 🧠 Overview of the Model Context Protocol Curriculum
 
-The **Model Context Protocol (MCP)** is a cutting-edge framework designed to standardize interactions between AI models and client applications. This open-source curriculum provides a structured learning path, complete with practical coding examples and real-world use cases, in popular programming languages such as C#, Java, JavaScript, TypeScript, and Python.
+The **Model Context Protocol (MCP)** is an innovative framework designed to standardize the way AI models interact with client applications. This open-source curriculum provides a clear learning path, complete with practical coding examples and real-world scenarios, across popular programming languages like C#, Java, JavaScript, TypeScript, and Python.
 
-Whether you're an AI developer, system architect, or software engineer, this guide is your comprehensive resource for mastering MCP fundamentals and implementation techniques.
+Whether you're an AI developer, system architect, or software engineer, this guide is your go-to resource for mastering MCP fundamentals and implementation techniques.
 
 ## 🔗 Official MCP Resources
 
-- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Detailed tutorials and user guides  
-- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol architecture and technical references  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code samples  
+- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Comprehensive tutorials and user manuals  
+- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol design and technical details  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and sample code  
 
 ## 🧭 MCP Curriculum Overview
 
@@ -54,13 +54,13 @@ Whether you're an AI developer, system architect, or software engineer, this gui
   <summary><strong>00-03: Foundations</strong></summary>
 
 - **00. Introduction to MCP**  
-  An overview of the Model Context Protocol and its importance in AI pipelines. [Read more](./00-Introduction/README.md)
+  An overview of the Model Context Protocol and its role in AI workflows. [Read more](./00-Introduction/README.md)
 - **01. Core Concepts Explained**  
-  A deep dive into the key MCP concepts. [Read more](./01-CoreConcepts/README.md)
+  A deep dive into the fundamental MCP concepts. [Read more](./01-CoreConcepts/README.md)
 - **02. Security in MCP**  
-  Security threats and recommended best practices. [Read more](./02-Security/README.md)
+  Security challenges and recommended practices. [Read more](./02-Security/README.md)
 - **03. Getting Started with MCP**  
-  Setting up your environment, basic server/client setup, and integration. [Read more](./03-GettingStarted/README.md)
+  Setting up your environment, basic server/client setups, and integration tips. [Read more](./03-GettingStarted/README.md)
 </details>
 
 <details>
@@ -167,7 +167,7 @@ This content is licensed under the **MIT License**. For terms and conditions, se
 
 ## 🤝 Contribution Guidelines
 
-This project welcomes contributions and suggestions. Most contributions require you to agree to a
+This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit <https://cla.opensource.microsoft.com>.
 
@@ -180,7 +180,7 @@ For more information see the [Code of Conduct FAQ](https://opensource.microsoft.
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## 🎒 Other Courses
-Our team produces other courses! Check out:
+Our team offers other courses! Check them out:
 
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
@@ -200,9 +200,7 @@ Our team produces other courses! Check out:
 
 ## ™️ Trademark Notice
 
-This project may include trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos must comply with and follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-Using Microsoft trademarks or logos in modified versions of this project must not create confusion or suggest Microsoft sponsorship.  
-Any use of third-party trademarks or logos is governed by the policies of those third parties.
+This project may include trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos must comply with and follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general). Using Microsoft trademarks or logos in modified versions of this project must not cause confusion or suggest Microsoft sponsorship. Any use of third-party trademarks or logos must adhere to the policies of those third parties.
 
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
