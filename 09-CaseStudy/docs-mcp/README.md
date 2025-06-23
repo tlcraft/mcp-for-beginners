@@ -102,6 +102,8 @@ Let me know if you want module-specific recommendations or need more customized 
 
 Below is a minimal sample solution. The full code and details are available in the solution folder.
 
+![Scenario 2 Overview](./assets/scenario2.png)
+
 <details>
 <summary>Python (Chainlit)</summary>
 
@@ -157,6 +159,8 @@ Here’s a example of how to set up the MCP server in VS Code:
 </details>
 
 > For a detailed walkthrough with screenshots and step-by-step guide, see [`README.md`](./solution/scenario3/README.md).
+
+![Scenario 3 Overview](./assets//step4-prompt-chat.png)
 
 This approach is ideal for anyone building technical courses, writing documentation, or developing code with frequent reference needs.
 
