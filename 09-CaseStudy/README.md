@@ -80,6 +80,15 @@ The implementation includes:
 
 This scenario is ideal for course authors, documentation writers, and developers who want to stay focused in their editor while working with docs, Copilot, and validation tools—all powered by MCP.
 
+### 6. [APIM MCP Server Creation](./apimsample.md)
+This case study provides a step-by-step guide on how to create an MCP server using Azure API Management (APIM). It covers:
+- Setting up an MCP server in Azure API Management
+- Exposing API operations as MCP tools
+- Configuring policies for rate limiting and security
+- Testing the MCP server using Visual Studio Code and GitHub Copilot
+
+This example illustrates how to leverage Azure's capabilities to create a robust MCP server that can be used in various applications, enhancing the integration of AI systems with enterprise APIs.
+
 ## Conclusion
 
 These case studies highlight the versatility and practical applications of the Model Context Protocol in real-world scenarios. From complex multi-agent systems to targeted automation workflows, MCP provides a standardized way to connect AI systems with the tools and data they need to deliver value.
