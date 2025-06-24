@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5dc09d7099d2f09f3e472bc8f073622d",
-  "translation_date": "2025-06-23T14:12:34+00:00",
+  "original_hash": "bc76969a3bb20c032d1d5e95a304a2e3",
+  "translation_date": "2025-06-24T16:18:05+00:00",
   "source_file": "README.md",
   "language_code": "en"
 }
@@ -25,7 +25,7 @@ CO_OP_TRANSLATOR_METADATA:
 Follow these steps to get started using these resources:
 1. **Fork the Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Clone the Repository**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Join The Azure AI Foundry Discord and connect with experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Join The Azure AI Foundry Discord to connect with experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Multi-Language Support
@@ -38,15 +38,15 @@ Follow these steps to get started using these resources:
 
 ## 🧠 Overview of the Model Context Protocol Curriculum
 
-The **Model Context Protocol (MCP)** is an innovative framework designed to standardize the way AI models interact with client applications. This open-source curriculum provides a clear learning path, complete with practical coding examples and real-world scenarios, across popular programming languages like C#, Java, JavaScript, TypeScript, and Python.
+The **Model Context Protocol (MCP)** is an innovative framework created to standardize how AI models interact with client applications. This open-source curriculum provides a clear learning path, featuring practical coding examples and real-world scenarios across popular programming languages such as C#, Java, JavaScript, TypeScript, and Python.
 
-Whether you're an AI developer, system architect, or software engineer, this guide is your go-to resource for mastering MCP fundamentals and implementation techniques.
+Whether you are an AI developer, system architect, or software engineer, this guide serves as your all-in-one resource for mastering MCP fundamentals and implementation techniques.
 
 ## 🔗 Official MCP Resources
 
-- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Comprehensive tutorials and user manuals  
-- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol design and technical details  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and sample code  
+- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Comprehensive tutorials and user guides  
+- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol design and technical references  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code samples  
 
 ## 🧭 MCP Curriculum Overview
 
@@ -56,11 +56,11 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 - **00. Introduction to MCP**  
   An overview of the Model Context Protocol and its role in AI workflows. [Read more](./00-Introduction/README.md)
 - **01. Core Concepts Explained**  
-  A deep dive into the fundamental MCP concepts. [Read more](./01-CoreConcepts/README.md)
+  A deep dive into the fundamental concepts of MCP. [Read more](./01-CoreConcepts/README.md)
 - **02. Security in MCP**  
-  Security challenges and recommended practices. [Read more](./02-Security/README.md)
+  Security risks and best practices. [Read more](./02-Security/README.md)
 - **03. Getting Started with MCP**  
-  Setting up your environment, basic server/client setups, and integration tips. [Read more](./03-GettingStarted/README.md)
+  Setting up your environment, basic servers and clients, integration tips. [Read more](./03-GettingStarted/README.md)
 </details>
 
 <details>
@@ -81,9 +81,9 @@ Whether you're an AI developer, system architect, or software engineer, this gui
   <summary><strong>04-05: Practical & Advanced</strong></summary>
 
 - **04. Practical Implementation**  
-  SDKs, debugging, testing, and reusable prompt templates. [Read more](./04-PracticalImplementation/README.md)
+  SDKs, debugging, testing, reusable prompt templates. [Read more](./04-PracticalImplementation/README.md)
 - **05. Advanced Topics in MCP**  
-  Multi-modal AI, scaling, and enterprise applications. [Read more](./05-AdvancedTopics/README.md)
+  Multi-modal AI, scaling, enterprise use cases. [Read more](./05-AdvancedTopics/README.md)
 - **5.1. MCP Integration with Azure** – [Guide](./05-AdvancedTopics/mcp-integration/README.md)
 - **5.2. Multi modality** – [Guide](./05-AdvancedTopics/mcp-multi-modality/README.md)
 - **5.3. MCP OAuth2 Demo** – [Guide](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
@@ -159,7 +159,12 @@ Each lesson in this guide includes:
 1. Clear explanations of MCP concepts  
 2. Live code examples in multiple languages  
 3. Exercises to build real MCP applications  
-4. Extra resources for advanced learners  
+4. Extra resources for advanced learners
+
+
+## 🌟 Community Thanks
+
+Thanks to Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) for contributing important code samples. 
 
 ## 📜 License Information
 
@@ -180,7 +185,7 @@ For more information see the [Code of Conduct FAQ](https://opensource.microsoft.
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## 🎒 Other Courses
-Our team offers other courses! Check them out:
+Our team produces other courses! Check out:
 
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
@@ -200,7 +205,10 @@ Our team offers other courses! Check them out:
 
 ## ™️ Trademark Notice
 
-This project may include trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos must comply with and follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general). Using Microsoft trademarks or logos in modified versions of this project must not cause confusion or suggest Microsoft sponsorship. Any use of third-party trademarks or logos must adhere to the policies of those third parties.
+This project may include trademarks or logos related to projects, products, or services. Authorized use of Microsoft trademarks or logos must comply with and follow  
+[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
+Using Microsoft trademarks or logos in modified versions of this project must not create confusion or suggest Microsoft sponsorship.  
+Any use of third-party trademarks or logos is governed by those third parties' policies.
 
 **Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
