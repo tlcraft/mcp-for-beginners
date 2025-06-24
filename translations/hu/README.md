@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5dc09d7099d2f09f3e472bc8f073622d",
-  "translation_date": "2025-06-23T14:40:05+00:00",
+  "original_hash": "bc76969a3bb20c032d1d5e95a304a2e3",
+  "translation_date": "2025-06-24T16:43:42+00:00",
   "source_file": "README.md",
   "language_code": "hu"
 }
@@ -23,95 +23,95 @@ CO_OP_TRANSLATOR_METADATA:
 
 
 Kövesd ezeket a lépéseket, hogy elkezdhess dolgozni ezekkel az erőforrásokkal:
-1. **Forkold a tárhelyet**: Kattints ide [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
-2. **Klónozd a tárhelyet**: `git clone https://github.com/microsoft/mcp-for-beginners.git`
+1. **Forkold a tárolót**: Kattints ide [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
+2. **Klónozd a tárolót**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
 3. [**Csatlakozz az Azure AI Foundry Discord szerveréhez, és ismerkedj meg szakértőkkel és fejlesztőtársakkal**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Többnyelvű támogatás
 
-#### GitHub Action segítségével támogatott (automatikus és mindig naprakész)
+#### GitHub Action segítségével támogatott (Automatikus és mindig naprakész)
 
 # 🚀 Model Context Protocol (MCP) Tananyag Kezdőknek
 
-## **Ismerd meg az MCP-t gyakorlati kódpéldákon keresztül C#, Java, JavaScript, Python és TypeScript nyelveken**
+## **Tanulj MCP-t gyakorlati kódpéldákon keresztül C#, Java, JavaScript, Python és TypeScript nyelveken**
 
-## 🧠 A Model Context Protocol tananyag áttekintése
+## 🧠 A Model Context Protocol Tananyag Áttekintése
 
-A **Model Context Protocol (MCP)** egy korszerű keretrendszer, amely az AI modellek és kliensalkalmazások közötti kommunikáció egységesítésére szolgál. Ez a nyílt forráskódú tananyag egy jól felépített tanulási útvonalat kínál, gyakorlati kódpéldákkal és valós alkalmazási esetekkel, népszerű programozási nyelveken, mint a C#, Java, JavaScript, TypeScript és Python.
+A **Model Context Protocol (MCP)** egy élvonalbeli keretrendszer, amely az AI modellek és kliensalkalmazások közötti interakciók szabványosítására szolgál. Ez a nyílt forráskódú tananyag egy jól felépített tanulási útvonalat kínál, gyakorlati kódpéldákkal és valós esettanulmányokkal, népszerű programozási nyelveken, mint a C#, Java, JavaScript, TypeScript és Python.
 
-Legyél akár AI fejlesztő, rendszertervező vagy szoftvermérnök, ez az útmutató átfogó forrást nyújt az MCP alapjainak és megvalósítási stratégiáinak elsajátításához.
+Legyél akár AI fejlesztő, rendszerarchitekt vagy szoftvermérnök, ez az útmutató átfogó forrásként szolgál az MCP alapjainak és megvalósítási stratégiáinak elsajátításához.
 
-## 🔗 Hivatalos MCP források
+## 🔗 Hivatalos MCP Források
 
 - 📘 [MCP Dokumentáció](https://modelcontextprotocol.io/) – Részletes oktatóanyagok és felhasználói útmutatók  
-- 📜 [MCP Specifikáció](https://spec.modelcontextprotocol.io/) – A protokoll felépítése és technikai hivatkozások  
-- 🧑‍💻 [MCP GitHub tárhely](https://github.com/modelcontextprotocol) – Nyílt forráskódú SDK-k, eszközök és kódpéldák  
+- 📜 [MCP Specifikáció](https://spec.modelcontextprotocol.io/) – A protokoll felépítése és műszaki hivatkozások  
+- 🧑‍💻 [MCP GitHub Tároló](https://github.com/modelcontextprotocol) – Nyílt forráskódú SDK-k, eszközök és kódpéldák  
 
-## 🧭 MCP tananyag áttekintés
+## 🧭 MCP Tananyag Áttekintés
 
 <details>
   <summary><strong>00-03: Alapok</strong></summary>
 
 - **00. Bevezetés az MCP-be**  
-  Áttekintés a Model Context Protocolról és annak jelentőségéről az AI folyamatokban. [Tovább](./00-Introduction/README.md)
+  Áttekintés a Model Context Protocolról és annak jelentőségéről az AI folyamatokban. [Bővebben](./00-Introduction/README.md)
 - **01. Alapfogalmak magyarázata**  
-  Az MCP alapfogalmainak mélyreható bemutatása. [Tovább](./01-CoreConcepts/README.md)
+  Mélyebb betekintés az MCP alapfogalmaiba. [Bővebben](./01-CoreConcepts/README.md)
 - **02. Biztonság az MCP-ben**  
-  Biztonsági fenyegetések és legjobb gyakorlatok. [Tovább](./02-Security/README.md)
+  Biztonsági fenyegetések és legjobb gyakorlatok. [Bővebben](./02-Security/README.md)
 - **03. Első lépések az MCP-vel**  
-  Környezet beállítása, alap szerverek/kliens, integráció. [Tovább](./03-GettingStarted/README.md)
+  Környezet beállítása, alap szerverek/kliens, integráció. [Bővebben](./03-GettingStarted/README.md)
 </details>
 
 <details>
   <summary><strong>03.x: Gyakorlati laborok</strong></summary>
 
-- **3.1. Az első szerver** – [Útmutató](./03-GettingStarted/01-first-server/README.md)
-- **3.2. Az első kliens** – [Útmutató](./03-GettingStarted/02-client/README.md)
+- **3.1. Első szerver** – [Útmutató](./03-GettingStarted/01-first-server/README.md)
+- **3.2. Első kliens** – [Útmutató](./03-GettingStarted/02-client/README.md)
 - **3.3. Kliens LLM-mel** – [Útmutató](./03-GettingStarted/03-llm-client/README.md)
 - **3.4. Szerver használata Visual Studio Code-dal** – [Útmutató](./03-GettingStarted/04-vscode/README.md)
 - **3.5. Szerver létrehozása SSE-vel** – [Útmutató](./03-GettingStarted/05-sse-server/README.md)
-- **3.6. HTTP streaming** – [Útmutató](./03-GettingStarted/06-http-streaming/README.md)
+- **3.6. HTTP streamelés** – [Útmutató](./03-GettingStarted/06-http-streaming/README.md)
 - **3.7. AI Toolkit használata** – [Útmutató](./03-GettingStarted/07-aitk/README.md)
 - **3.8. Szerver tesztelése** – [Útmutató](./03-GettingStarted/08-testing/README.md)
 - **3.9. Szerver telepítése** – [Útmutató](./03-GettingStarted/09-deployment/README.md)
 </details>
 
 <details>
-  <summary><strong>04-05: Gyakorlati és haladó témák</strong></summary>
+  <summary><strong>04-05: Gyakorlati & Haladó</strong></summary>
 
 - **04. Gyakorlati megvalósítás**  
-  SDK-k, hibakeresés, tesztelés, újrahasznosítható prompt sablonok. [Tovább](./04-PracticalImplementation/README.md)
+  SDK-k, hibakeresés, tesztelés, újrahasználható prompt sablonok. [Bővebben](./04-PracticalImplementation/README.md)
 - **05. Haladó MCP témák**  
-  Többmodalitású AI, skálázás, vállalati felhasználás. [Tovább](./05-AdvancedTopics/README.md)
+  Többmodalitású AI, skálázás, vállalati alkalmazások. [Bővebben](./05-AdvancedTopics/README.md)
 - **5.1. MCP integráció Azure-rel** – [Útmutató](./05-AdvancedTopics/mcp-integration/README.md)
 - **5.2. Többmodalitás** – [Útmutató](./05-AdvancedTopics/mcp-multi-modality/README.md)
-- **5.3. MCP OAuth2 demó** – [Útmutató](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
+- **5.3. MCP OAuth2 bemutató** – [Útmutató](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
 - **5.4. Root Contexts** – [Útmutató](./05-AdvancedTopics/mcp-root-contexts/README.md)
 - **5.5. Routing** – [Útmutató](./05-AdvancedTopics/mcp-routing/README.md)
 - **5.6. Mintavételezés** – [Útmutató](./05-AdvancedTopics/mcp-sampling/README.md)
 - **5.7. Skálázás** – [Útmutató](./05-AdvancedTopics/mcp-scaling/README.md)
 - **5.8. Biztonság** – [Útmutató](./05-AdvancedTopics/mcp-security/README.md)
 - **5.9. Webes keresés MCP-vel** – [Útmutató](./05-AdvancedTopics/web-search-mcp/README.md)
-- **5.10. Valós idejű streaming** – [Útmutató](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
+- **5.10. Valós idejű streamelés** – [Útmutató](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
 - **5.11. Valós idejű webes keresés** – [Útmutató](./05-AdvancedTopics/mcp-realtimesearch/README.md)
 </details>
 
 <details>
-  <summary><strong>06-10: Közösség, legjobb gyakorlatok és laborok</strong></summary>
+  <summary><strong>06-10: Közösség, legjobb gyakorlatok & laborok</strong></summary>
 
 - **06. Közösségi hozzájárulások** – [Útmutató](./06-CommunityContributions/README.md)
-- **07. Korai alkalmazásból származó tanulságok** – [Útmutató](./07-LessonsFromEarlyAdoption/README.md)
+- **07. Korai bevezetésből származó tanulságok** – [Útmutató](./07-LessonsFromEarlyAdoption/README.md)
 - **08. MCP legjobb gyakorlatai** – [Útmutató](./08-BestPractices/README.md)
 - **09. MCP esettanulmányok** – [Útmutató](./09-CaseStudy/README.md)
-- **10. AI munkafolyamatok egyszerűsítése: MCP szerver építése AI Toolkit segítségével** – [Gyakorlati labor](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+- **10. AI munkafolyamatok egyszerűsítése: MCP szerver építése AI eszközkészlettel** – [Gyakorlati labor](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 </details>
 
 ## Minta projektek
 
-### 🧮 MCP kalkulátor minta projektek:
+### 🧮 MCP kalkulátor mintaprojektek:
 <details>
-  <summary><strong>Kód megvalósítások felfedezése nyelvenként</strong></summary>
+  <summary><strong>Kódmegvalósítások nyelvek szerint</strong></summary>
 
   - [C# MCP szerver példa](./03-GettingStarted/samples/csharp/README.md)
   - [Java MCP kalkulátor](./03-GettingStarted/samples/java/calculator/README.md)
@@ -126,77 +126,83 @@ Legyél akár AI fejlesztő, rendszertervező vagy szoftvermérnök, ez az útmu
   <summary><strong>Haladó minták felfedezése</strong></summary>
 
   - [Haladó C# minta](./04-PracticalImplementation/samples/csharp/README.md)
-  - [Java konténer alkalmazás példa](./04-PracticalImplementation/samples/java/containerapp/README.md)
+  - [Java konténeralkalmazás példa](./04-PracticalImplementation/samples/java/containerapp/README.md)
   - [JavaScript haladó minta](./04-PracticalImplementation/samples/javascript/README.md)
   - [Python összetett megvalósítás](../../04-PracticalImplementation/samples/python/mcp_sample.py)
   - [TypeScript konténer minta](./04-PracticalImplementation/samples/typescript/README.md)
 
 </details>
 
+
 ## 🎯 MCP tanulás előfeltételei
 
-Ahhoz, hogy a legtöbbet hozd ki ebből a tananyagból, szükséged van:
+Ahhoz, hogy a legtöbbet hozd ki ebből a tananyagból, érdemes rendelkezned:
 
-- Alapvető ismeretek C#, Java vagy Python nyelvből  
-- Ügyfél-szerver modell és API-k megértése  
-- (Opcionális) Gépi tanulási alapfogalmak ismerete  
+- Alapvető C#, Java vagy Python ismeretekkel
+- A kliens-szerver modell és API-k megértésével
+- (Opcionálisan) Gépi tanulás alapfogalmaival való ismerettel
 
 ## 📚 Tanulási útmutató
 
-Egy átfogó [Tanulási útmutató](./study_guide.md) áll rendelkezésre, amely segít hatékonyan eligazodni ebben a tárházban. Az útmutató tartalmazza:
+Egy átfogó [Tanulási útmutató](./study_guide.md) áll rendelkezésedre, hogy hatékonyan eligazodj ebben a tárolóban. Az útmutató tartalmazza:
 
-- Egy vizuális tananyag térképet az összes témakörrel  
-- Részletes bontást a tárház egyes részeiről  
-- Útmutatót a minta projektek használatához  
-- Ajánlott tanulási útvonalakat különböző szintekhez  
-- Kiegészítő forrásokat a tanulási folyamat támogatására  
+- Egy vizuális tantervtérképet az összes témakörrel
+- Részletes bontást a tároló egyes részeiről
+- Útmutatót a mintaprojektek használatához
+- Ajánlott tanulási útvonalakat különböző tudásszintekhez
+- Kiegészítő forrásokat a tanulási folyamat támogatására
 
 ## 🛠️ Hogyan használd hatékonyan ezt a tananyagot
 
-Minden lecke tartalmazza:
+Minden lecke tartalmaz:
 
-1. Az MCP fogalmak világos magyarázatát  
-2. Élő kód példákat több nyelven  
+1. Egyértelmű magyarázatokat az MCP fogalmakról  
+2. Élő kódpéldákat több nyelven  
 3. Gyakorlatokat valós MCP alkalmazások építéséhez  
-4. Kiegészítő anyagokat haladó tanulók számára  
+4. Kiegészítő anyagokat haladó tanulók számára
 
-## 📜 Licenc információ
 
-A tartalom az **MIT licenc** alatt érhető el. A feltételekért lásd a [LICENSE](../../LICENSE) fájlt.
+## 🌟 Közösségi köszönetnyilvánítás
+
+Köszönet a Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) számára a fontos kódmintákért. 
+
+## 📜 Licenc információk
+
+Ez a tartalom az **MIT License** feltételei alatt érhető el. A részletekért lásd a [LICENSE](../../LICENSE) fájlt.
 
 ## 🤝 Hozzájárulási irányelvek
 
-Ez a projekt szívesen fogad hozzájárulásokat és javaslatokat. A legtöbb hozzájáruláshoz szükséges, hogy elfogadd a Contributor License Agreement-et (CLA), amely igazolja, hogy rendelkezel a jogokkal, és ténylegesen átadod nekünk a hozzájárulásod használati jogát. Részletekért látogass el ide: <https://cla.opensource.microsoft.com>.
+Ez a projekt szívesen fogad hozzájárulásokat és javaslatokat. A legtöbb hozzájárulás esetén el kell fogadnod egy Contributor License Agreement (CLA) megállapodást, amelyben kijelented, hogy jogodban áll, és valóban megadod a jogokat a hozzájárulásod használatához. Részletekért látogass el a <https://cla.opensource.microsoft.com> oldalra.
 
-Amikor pull request-et küldesz, egy CLA bot automatikusan megállapítja, hogy szükséges-e CLA-t benyújtanod, és ennek megfelelően jelöli meg a PR-t (pl. státusz ellenőrzés, komment). Csak kövesd a bot által adott utasításokat. Ezt csak egyszer kell megtenned az összes CLA-t használó tárházban.
+Amikor pull requestet nyújtasz be, egy CLA bot automatikusan megállapítja, hogy szükséges-e CLA-t benyújtanod, és ennek megfelelően jelöli meg a PR-t (pl. státusz ellenőrzés, komment). Egyszerűen kövesd a bot utasításait. Ezt csak egyszer kell megtenned az összes, a CLA-t használó tárolónál.
 
-Ez a projekt a [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) irányelveit alkalmazza. További információkért lásd a [Code of Conduct GYIK](https://opensource.microsoft.com/codeofconduct/faq/) oldalt, vagy írj a [opencode@microsoft.com](mailto:opencode@microsoft.com) címre, ha kérdéseid vagy észrevételeid vannak.
+Ez a projekt a [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) szabályzatát alkalmazza.  
+További információért lásd a [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) oldalt, vagy írj a [opencode@microsoft.com](mailto:opencode@microsoft.com) címre bármilyen kérdéssel vagy észrevétellel.
 
-## 🎒 Egyéb kurzusok  
-Csapatunk más kurzusokat is készít! Nézd meg:
+## 🎒 Egyéb tanfolyamok
+Csapatunk más tanfolyamokat is készít! Nézd meg:
 
-- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
-- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)  
-- [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
-- [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
-- [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
+- [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+- [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+- [XR fejlesztés kezdőknek](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [GitHub Copilot mesterfokon AI páros programozáshoz](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 - [GitHub Copilot mesterfokon C#/.NET fejlesztőknek](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-- [Válaszd ki a saját Copilot kalandodat](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+- [Válaszd a saját Copilot kalandodat](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 
-## ™️ Védjegy értesítés
+## ™️ Védjegy közlemény
 
-Ez a projekt tartalmazhat védjegyeket vagy logókat projektekhez, termékekhez vagy szolgáltatásokhoz. A Microsoft védjegyeinek vagy logóinak engedélyezett használata az alábbiak szerint történhet, és meg kell felelnie a
-[Microsoft védjegy- és márka irányelveinek](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-A Microsoft védjegyek vagy logók módosított verzióban történő használata nem okozhat félreértést, és nem sugallhat Microsoft támogatást.
-Harmadik fél védjegyeinek vagy logóinak bármilyen használata a harmadik fél szabályzata szerint történik.
+Ez a projekt tartalmazhat védjegyeket vagy logókat projektekhez, termékekhez vagy szolgáltatásokhoz. A Microsoft védjegyek vagy logók jogosult használata a [Microsoft védjegy- és márka irányelveinek](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) betartása mellett engedélyezett.
+A Microsoft védjegyek vagy logók használata a projekt módosított változataiban nem okozhat félreértést, és nem sugallhat Microsoft támogatást.
+Bármely harmadik fél védjegyeinek vagy logóinak használata a harmadik fél irányelveinek megfelelően történhet.
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+Ez a dokumentum az AI fordítószolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) használatával készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hivatalos forrásnak. Fontos információk esetén szakmai emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy félreértelmezésekért.
