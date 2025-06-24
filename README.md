@@ -152,7 +152,12 @@ Each lesson in this guide includes:
 1. Clear explanations of MCP concepts  
 2. Live code examples in multiple languages  
 3. Exercises to build real MCP applications  
-4. Extra resources for advanced learners  
+4. Extra resources for advanced learners
+
+
+## 🌟 Community Thanks
+
+Thanks to Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) for contributing important code samples. 
 
 ## 📜 License Information
 
