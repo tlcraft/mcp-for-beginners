@@ -767,4 +767,4 @@ For complete details on MCP security and trust considerations, refer to the [off
 
 ## What's next 
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.11 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
