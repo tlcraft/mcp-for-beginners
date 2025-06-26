@@ -1,71 +1,71 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9abe1d303ab126f9a8b87f03cebe5213",
-  "translation_date": "2025-06-26T14:40:00+00:00",
+  "original_hash": "0abf26a6c4dbe905d5d49ccdc0ccfe92",
+  "translation_date": "2025-06-26T16:22:15+00:00",
   "source_file": "05-AdvancedTopics/mcp-security-entra/README.md",
   "language_code": "ko"
 }
 -->
-# AI 워크플로우 보안: Model Context Protocol 서버용 Entra ID 인증
+# AI 워크플로우 보안: 모델 컨텍스트 프로토콜 서버용 Entra ID 인증
 
 ## 소개  
-Model Context Protocol(MCP) 서버를 보호하는 것은 집의 현관문을 잠그는 것만큼 중요합니다. MCP 서버를 열어두면 도구와 데이터가 무단 접근에 노출되어 보안 침해로 이어질 수 있습니다. Microsoft Entra ID는 강력한 클라우드 기반 ID 및 접근 관리 솔루션을 제공하여, 권한이 있는 사용자와 애플리케이션만 MCP 서버와 상호작용할 수 있도록 돕습니다. 이 섹션에서는 Entra ID 인증을 사용해 AI 워크플로우를 안전하게 보호하는 방법을 배웁니다.
+모델 컨텍스트 프로토콜(MCP) 서버를 보호하는 것은 집의 현관문을 잠그는 것만큼 중요합니다. MCP 서버를 열어두면 도구와 데이터가 무단으로 접근될 수 있어 보안 침해로 이어질 수 있습니다. Microsoft Entra ID는 강력한 클라우드 기반 아이덴티티 및 접근 관리 솔루션을 제공하여, 권한이 있는 사용자와 애플리케이션만 MCP 서버와 상호작용할 수 있도록 돕습니다. 이 섹션에서는 Entra ID 인증을 사용해 AI 워크플로우를 보호하는 방법을 배웁니다.
 
 ## 학습 목표  
 이 섹션을 마치면 다음을 할 수 있습니다:
 
-- MCP 서버 보안의 중요성을 이해합니다.  
-- Microsoft Entra ID와 OAuth 2.0 인증의 기본 개념을 설명할 수 있습니다.  
-- 공개 클라이언트와 기밀 클라이언트의 차이를 인지합니다.  
-- 로컬(공개 클라이언트) 및 원격(기밀 클라이언트) MCP 서버 시나리오에서 Entra ID 인증을 구현합니다.  
-- AI 워크플로우 개발 시 보안 모범 사례를 적용합니다.  
+- MCP 서버 보안의 중요성을 이해한다.
+- Microsoft Entra ID와 OAuth 2.0 인증의 기본을 설명한다.
+- 공개 클라이언트와 기밀 클라이언트의 차이를 인식한다.
+- 로컬(공개 클라이언트) 및 원격(기밀 클라이언트) MCP 서버 시나리오에서 Entra ID 인증을 구현한다.
+- AI 워크플로우 개발 시 보안 모범 사례를 적용한다.
 
-# AI 워크플로우 보안: Model Context Protocol 서버용 Entra ID 인증
+## 보안과 MCP  
 
-집의 현관문을 잠그지 않고 내버려 두지 않듯이, MCP 서버도 누구나 접근할 수 있도록 열어두면 안 됩니다. AI 워크플로우를 안전하게 보호하는 것은 견고하고 신뢰할 수 있으며 안전한 애플리케이션을 만드는 데 필수적입니다. 이 장에서는 Microsoft Entra ID를 사용해 MCP 서버를 보호하고, 권한이 있는 사용자와 애플리케이션만 도구와 데이터에 접근할 수 있도록 하는 방법을 소개합니다.
+집 현관문을 잠그지 않고 두지 않는 것처럼, MCP 서버도 누구나 접근할 수 있도록 열어두면 안 됩니다. AI 워크플로우를 안전하게 보호하는 것은 견고하고 신뢰할 수 있으며 안전한 애플리케이션을 만드는 데 필수적입니다. 이 장에서는 Microsoft Entra ID를 사용해 MCP 서버를 보호하는 방법을 소개하며, 권한이 있는 사용자와 애플리케이션만 도구와 데이터에 접근할 수 있도록 합니다.
 
-## MCP 서버 보안이 중요한 이유
+## MCP 서버 보안이 중요한 이유  
 
-MCP 서버에 이메일 전송이나 고객 데이터베이스 접근 도구가 있다고 가정해 보세요. 보안이 취약한 서버라면 누구나 그 도구를 사용할 수 있어 무단 데이터 접근, 스팸 발송 또는 기타 악의적 행위가 발생할 수 있습니다.
+MCP 서버에 이메일 발송이나 고객 데이터베이스 접근 같은 도구가 있다고 가정해 보세요. 보안이 취약한 서버라면 누구나 이 도구를 사용할 수 있어 무단 데이터 접근, 스팸, 악의적 행위가 발생할 수 있습니다.
 
-인증을 구현하면 서버에 대한 모든 요청이 검증되어 요청을 하는 사용자나 애플리케이션의 신원을 확인할 수 있습니다. 이는 AI 워크플로우 보안에서 가장 중요하고 첫 번째 단계입니다.
+인증을 구현하면 서버에 들어오는 모든 요청이 검증되어, 요청을 하는 사용자나 애플리케이션의 신원을 확인할 수 있습니다. 이는 AI 워크플로우 보안의 첫 번째이자 가장 중요한 단계입니다.
 
-## Microsoft Entra ID 소개
+## Microsoft Entra ID 소개  
 
-**Microsoft Entra ID**는 클라우드 기반 ID 및 접근 관리 서비스입니다. 애플리케이션을 위한 만능 보안 경비원이라고 생각하면 됩니다. 사용자 신원 확인(인증)과 권한 부여(사용자가 무엇을 할 수 있는지 결정하는 과정)를 처리합니다.
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/)는 클라우드 기반 아이덴티티 및 접근 관리 서비스입니다. 애플리케이션을 위한 범용 보안 경비원이라고 생각할 수 있습니다. 사용자 신원 확인(인증)과 권한 부여(사용자가 무엇을 할 수 있는지 결정하는 과정)를 처리합니다.
 
-Entra ID를 사용하면:
+Entra ID를 사용하면 다음을 할 수 있습니다:
 
-- 사용자에게 안전한 로그인 환경을 제공합니다.  
-- API와 서비스를 보호합니다.  
-- 중앙에서 접근 정책을 관리할 수 있습니다.  
+- 사용자에게 안전한 로그인 제공  
+- API 및 서비스 보호  
+- 중앙에서 접근 정책 관리  
 
-MCP 서버에서는 Entra ID가 누가 서버 기능에 접근할 수 있는지 관리하는 강력하고 신뢰받는 솔루션을 제공합니다.
+MCP 서버의 경우, Entra ID는 서버 기능에 접근할 수 있는 사용자를 관리하는 강력하고 신뢰받는 솔루션을 제공합니다.
 
 ---
 
-## Entra ID 인증 작동 원리 이해하기
+## Entra ID 인증의 원리 이해  
 
-Entra ID는 **OAuth 2.0** 같은 공개 표준을 사용해 인증을 처리합니다. 세부 내용은 복잡할 수 있지만, 핵심 개념은 비유를 통해 쉽게 이해할 수 있습니다.
+Entra ID는 **OAuth 2.0** 같은 오픈 스탠다드를 사용해 인증을 처리합니다. 세부 사항은 복잡할 수 있지만, 핵심 개념은 비유를 통해 쉽게 이해할 수 있습니다.
 
-### OAuth 2.0 간단 소개: 발레 키
+### OAuth 2.0 쉽게 이해하기: 발렛 키 비유  
 
-OAuth 2.0을 자동차 발레 서비스에 비유해 보겠습니다. 식당에 도착했을 때, 발레 파킹 직원에게 자동차의 마스터 키를 주지 않습니다. 대신, 제한된 권한이 부여된 **발레 키**를 줍니다. 이 키로는 차 시동을 걸고 문을 잠글 수 있지만, 트렁크나 글로브 박스는 열 수 없습니다.
+OAuth 2.0을 자동차 발렛 서비스로 생각해 보세요. 식당에 도착하면 발렛에게 마스터 키를 주지 않습니다. 대신 제한된 권한을 가진 **발렛 키**를 줍니다. 이 키로는 차를 시동 걸고 문을 잠글 수 있지만 트렁크나 글러브박스는 열 수 없습니다.
 
 이 비유에서:
 
 - **당신**은 **사용자**입니다.  
-- **당신의 차**는 도구와 데이터가 있는 **MCP 서버**입니다.  
-- **발레 파킹 직원**은 **Microsoft Entra ID**입니다.  
-- **주차 안내원**은 **MCP 클라이언트**(서버에 접근하려는 애플리케이션)입니다.  
-- **발레 키**는 **액세스 토큰**입니다.  
+- **당신의 차**는 값진 도구와 데이터가 있는 **MCP 서버**입니다.  
+- **발렛**은 **Microsoft Entra ID**입니다.  
+- **주차 담당자**는 **MCP 클라이언트**(서버에 접근하려는 애플리케이션)입니다.  
+- **발렛 키**는 **액세스 토큰**입니다.
 
-액세스 토큰은 사용자가 로그인한 후 MCP 클라이언트가 Entra ID로부터 받는 보안 문자열입니다. 클라이언트는 이 토큰을 매 요청 시 MCP 서버에 제시합니다. 서버는 토큰을 검증해 요청이 합법적이며 클라이언트가 필요한 권한을 갖고 있는지 확인합니다. 이 과정에서 사용자의 실제 자격 증명(예: 비밀번호)을 다룰 필요가 없습니다.
+액세스 토큰은 사용자가 로그인한 후 Entra ID가 MCP 클라이언트에 전달하는 안전한 문자열입니다. 클라이언트는 모든 요청에 이 토큰을 서버에 제시하며, 서버는 토큰을 검증해 요청이 합법적이고 클라이언트가 필요한 권한을 가지고 있는지 확인합니다. 이 과정에서 실제 사용자 자격 증명(예: 비밀번호)을 다룰 필요가 없습니다.
 
-### 인증 흐름
+### 인증 흐름  
 
-실제로는 다음과 같이 진행됩니다:
+실제로 인증 과정은 다음과 같이 진행됩니다:
 
 ```mermaid
 sequenceDiagram
@@ -85,25 +85,25 @@ sequenceDiagram
     Server-->>-Client: Token is valid. Here is the result of the tool.
 ```
 
-### Microsoft 인증 라이브러리(MSAL) 소개
+### Microsoft 인증 라이브러리(MSAL) 소개  
 
-코드 예제로 넘어가기 전에 중요한 구성 요소인 **Microsoft 인증 라이브러리(MSAL)**를 소개합니다.
+코드 예제를 살펴보기 전에, 중요한 구성 요소인 **Microsoft 인증 라이브러리(MSAL)**를 소개합니다.
 
-MSAL은 Microsoft가 개발한 라이브러리로, 개발자가 인증을 쉽게 처리할 수 있도록 도와줍니다. 보안 토큰 처리, 로그인 관리, 세션 갱신 같은 복잡한 코드를 직접 작성할 필요 없이 MSAL이 이를 대신 처리합니다.
+MSAL은 개발자가 인증을 쉽게 처리할 수 있도록 Microsoft에서 만든 라이브러리입니다. 보안 토큰 처리, 로그인 관리, 세션 갱신 같은 복잡한 코드를 직접 작성할 필요 없이 MSAL이 대신 처리해 줍니다.
 
 MSAL 사용을 권장하는 이유는:
 
-- **안전성**: 업계 표준 프로토콜과 보안 모범 사례를 구현해 코드 취약점 위험을 줄입니다.  
-- **개발 간소화**: OAuth 2.0과 OpenID Connect 프로토콜의 복잡성을 추상화하여 몇 줄의 코드로 강력한 인증을 추가할 수 있습니다.  
-- **지속적 유지보수**: Microsoft가 보안 위협과 플랫폼 변화에 대응해 MSAL을 적극적으로 업데이트합니다.  
+- **보안성**: 업계 표준 프로토콜과 보안 모범 사례를 구현해 코드 내 취약점 위험을 줄입니다.  
+- **개발 간소화**: OAuth 2.0과 OpenID Connect의 복잡함을 추상화하여 몇 줄의 코드만으로 강력한 인증 기능을 추가할 수 있습니다.  
+- **지속적 유지보수**: Microsoft가 최신 보안 위협과 플랫폼 변화에 맞춰 MSAL을 지속적으로 업데이트합니다.  
 
-MSAL은 .NET, JavaScript/TypeScript, Python, Java, Go, iOS, Android 등 다양한 언어와 플랫폼을 지원해 기술 스택 전반에 걸쳐 일관된 인증 패턴을 사용할 수 있습니다.
+MSAL은 .NET, JavaScript/TypeScript, Python, Java, Go, iOS, Android 등 다양한 언어와 프레임워크를 지원해 기술 스택 전반에 걸쳐 일관된 인증 패턴을 사용할 수 있습니다.
 
 MSAL에 대해 더 알고 싶다면 공식 [MSAL 개요 문서](https://learn.microsoft.com/entra/identity-platform/msal-overview)를 참고하세요.
 
 ---
 
-## Entra ID로 MCP 서버 보호하기: 단계별 가이드
+## Entra ID로 MCP 서버 보안 강화: 단계별 가이드  
 
 이제 로컬 MCP 서버(예: `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
 
@@ -134,7 +134,7 @@ This class is responsible for handling the interaction with Entra ID.
 
 - **`CreateAsync`**: This method initializes the `PublicClientApplication` from the MSAL (Microsoft Authentication Library). It's configured with your application's `clientId` and `tenantId`.
 - **`WithBroker`**: This enables the use of a broker (like the Windows Web Account Manager), which provides a more secure and seamless single sign-on experience.
-- **`AcquireTokenAsync` 메서드 사용) 보안 설정 방법을 살펴봅니다. 이 메서드는 먼저 조용히 토큰을 얻으려 시도합니다(이미 유효한 세션이 있으면 사용자가 다시 로그인할 필요가 없습니다). 조용한 토큰 획득에 실패하면 사용자가 직접 로그인하도록 요청합니다.
+- **`AcquireTokenAsync`** 메서드)를 보호하는 방법을 살펴봅니다. 이 메서드는 먼저 조용히(사용자가 이미 유효한 세션이 있으면 다시 로그인하지 않도록) 토큰을 가져오려 시도하며, 실패 시 사용자에게 인터랙티브 로그인 화면을 띄웁니다.
 
 ```csharp
 // Simplified for clarity
@@ -187,7 +187,7 @@ public async Task<string> AcquireTokenAsync()
 This is where the MCP server is set up and the authentication service is integrated.
 
 - **`AddSingleton<AuthenticationService>`**: This registers the `AuthenticationService` with the dependency injection container, so it can be used by other parts of the application (like our tool).
-- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()`**를 호출해 유효한 액세스 토큰을 얻습니다. 인증에 성공하면 이 토큰으로 Microsoft Graph API를 호출해 사용자 정보를 가져옵니다.
+- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()`** 메서드를 사용해 유효한 액세스 토큰을 획득합니다. 인증이 성공하면 토큰을 이용해 Microsoft Graph API를 호출해 사용자 정보를 가져옵니다.
 
 ```csharp
 // Simplified for clarity
@@ -215,7 +215,7 @@ public static async Task<string> GetUserDetailsFromGraph(
 }
 ```
 
-#### 3. 전체 작동 방식
+#### 3. 전체 동작 원리  
 
 1. MCP 클라이언트가 `GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
 2. `AcquireTokenAsync` triggers the MSAL library to check for a valid token.
@@ -256,7 +256,7 @@ This file sets up the Express server and the MCP transport layer.
 
 - **`requireBearerAuth`**: This is middleware that protects the `/sse` and `/message` endpoints. It checks for a valid bearer token in the `Authorization` header of the request.
 - **`EntraIdServerAuthProvider`**: This is a custom class that implements the `McpServerAuthorizationProvider` interface. It's responsible for handling the OAuth 2.0 flow.
-- **`/auth/callback` 엔드포인트에 접근을 시도합니다. 이 엔드포인트는 사용자가 인증을 마친 후 Entra ID로부터 리디렉션을 처리합니다. 권한 코드를 액세스 토큰과 리프레시 토큰으로 교환합니다.
+- **`/auth/callback`** 엔드포인트에 접근하려 할 때, 이 엔드포인트는 사용자가 인증을 마친 후 Entra ID에서 리디렉션되는 곳입니다. 여기서 권한 코드를 액세스 토큰과 리프레시 토큰으로 교환합니다.
 
 ```typescript
 // Simplified for clarity
@@ -338,83 +338,83 @@ This class handles the logic for:
 3. Entra ID redirects the user back to the `/auth/callback` endpoint with an authorization code.
 4. The server exchanges the code for an access token and a refresh token, stores them, and creates a session token which is sent to the client.
 5. The client can now use this session token in the `Authorization` header for all future requests to the MCP server.
-6. When the `getUserDetails`** 도구가 호출되면 세션 토큰으로 Entra ID 액세스 토큰을 조회하고, 이를 사용해 Microsoft Graph API를 호출합니다.
+6. When the `getUserDetails`** 도구가 호출되면 세션 토큰으로 Entra ID 액세스 토큰을 조회하고, 이를 이용해 Microsoft Graph API를 호출합니다.
 
-이 흐름은 공개 클라이언트 흐름보다 복잡하지만, 인터넷에 노출된 엔드포인트에는 필수적입니다. 원격 MCP 서버는 공용 인터넷에서 접근 가능하기 때문에 무단 접근과 잠재적 공격에 대비해 더 강력한 보안 조치가 필요합니다.
+이 흐름은 공개 클라이언트 흐름보다 복잡하지만, 인터넷에 노출된 엔드포인트에는 필수입니다. 원격 MCP 서버는 공용 인터넷을 통해 접근 가능하기 때문에 무단 접근과 공격을 막기 위해 더 강력한 보안 조치가 필요합니다.
 
-## 보안 모범 사례
+## 보안 모범 사례  
 
 - **항상 HTTPS 사용**: 클라이언트와 서버 간 통신을 암호화해 토큰 탈취를 방지합니다.  
-- **역할 기반 접근 제어(RBAC) 구현**: 단순히 사용자가 인증되었는지 여부뿐 아니라 어떤 권한이 있는지 확인하세요. Entra ID에서 역할을 정의하고 MCP 서버에서 이를 검증할 수 있습니다.  
-- **모니터링 및 감사**: 모든 인증 이벤트를 기록해 의심스러운 활동을 탐지하고 대응합니다.  
-- **요청 제한 및 조절 처리**: Microsoft Graph 및 기타 API는 남용 방지를 위해 요청 제한을 적용합니다. MCP 서버에서 지수적 백오프와 재시도 로직을 구현해 HTTP 429(요청 과다) 응답을 우아하게 처리하세요. 자주 사용하는 데이터는 캐싱해 API 호출을 줄이는 것도 고려하세요.  
-- **토큰 안전 저장**: 액세스 토큰과 리프레시 토큰은 안전하게 저장하세요. 로컬 애플리케이션은 시스템의 보안 저장소를, 서버 애플리케이션은 암호화 저장소나 Azure Key Vault 같은 보안 키 관리 서비스를 활용하세요.  
-- **토큰 만료 처리**: 액세스 토큰은 유효 기간이 제한적입니다. 리프레시 토큰을 사용해 자동으로 토큰을 갱신해 재인증 없이 원활한 사용자 경험을 유지하세요.  
-- **Azure API Management 사용 고려**: MCP 서버 내에서 직접 보안을 구현하면 세밀한 제어가 가능하지만, Azure API Management 같은 API 게이트웨이는 인증, 권한 부여, 요청 제한, 모니터링 등 많은 보안 문제를 자동으로 처리해줍니다. 클라이언트와 MCP 서버 사이에 중앙 집중식 보안 계층을 제공합니다. MCP와 API 게이트웨이 활용에 관한 자세한 내용은 [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) 문서를 참고하세요.
+- **역할 기반 접근 제어(RBAC) 구현**: 단순히 사용자가 인증되었는지 확인하는 것뿐 아니라, 사용자가 어떤 권한을 갖는지 확인하세요. Entra ID에서 역할을 정의하고 MCP 서버에서 이를 체크할 수 있습니다.  
+- **모니터링 및 감사**: 모든 인증 이벤트를 기록해 의심스러운 활동을 탐지하고 대응할 수 있도록 합니다.  
+- **요청 제한 및 속도 조절 처리**: Microsoft Graph 등 API는 남용 방지를 위해 요청 제한을 둡니다. MCP 서버에 지수적 백오프와 재시도 로직을 구현해 HTTP 429(요청 과다) 응답을 우아하게 처리하세요. 자주 접근하는 데이터는 캐싱해 API 호출을 줄이는 것도 좋습니다.  
+- **토큰 안전 저장**: 액세스 토큰과 리프레시 토큰은 안전하게 저장해야 합니다. 로컬 애플리케이션은 시스템 보안 저장소를 사용하고, 서버 애플리케이션은 암호화 저장소나 Azure Key Vault 같은 보안 키 관리 서비스를 활용하세요.  
+- **토큰 만료 처리**: 액세스 토큰은 유효 기간이 제한적입니다. 리프레시 토큰을 사용해 자동으로 토큰을 갱신해 원활한 사용자 경험을 유지하세요.  
+- **Azure API Management 활용 고려**: MCP 서버 내에서 직접 보안을 구현하는 것도 좋지만, API 게이트웨이인 Azure API Management는 인증, 권한 부여, 요청 제한, 모니터링 등 많은 보안 문제를 자동으로 처리해 줍니다. 클라이언트와 MCP 서버 사이에 중앙 집중식 보안 계층을 제공합니다. MCP와 함께 API 게이트웨이 사용법은 [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)에서 확인하세요.
 
-## 주요 내용 정리
+## 핵심 요약  
 
 - MCP 서버 보안은 데이터와 도구를 보호하는 데 필수적입니다.  
-- Microsoft Entra ID는 인증과 권한 부여를 위한 강력하고 확장 가능한 솔루션을 제공합니다.  
+- Microsoft Entra ID는 인증과 권한 부여를 위한 강력하고 확장 가능한 솔루션입니다.  
 - 로컬 애플리케이션에는 **공개 클라이언트**, 원격 서버에는 **기밀 클라이언트**를 사용하세요.  
-- 웹 애플리케이션에는 가장 안전한 **권한 부여 코드 흐름(Authorization Code Flow)**을 사용하세요.  
+- 웹 애플리케이션에는 **Authorization Code Flow**가 가장 안전한 선택입니다.
 
-## 연습 문제
+## 연습 문제  
 
-1. 당신이 만들고자 하는 MCP 서버는 로컬 서버인가요, 원격 서버인가요?  
-2. 답변에 따라 공개 클라이언트와 기밀 클라이언트 중 어떤 것을 사용할 건가요?  
-3. Microsoft Graph에서 작업을 수행하기 위해 MCP 서버가 요청할 권한은 무엇인가요?  
+1. 직접 구축할 MCP 서버가 있다면, 로컬 서버일까요 아니면 원격 서버일까요?  
+2. 이에 따라 공개 클라이언트와 기밀 클라이언트 중 어느 것을 사용하시겠습니까?  
+3. Microsoft Graph에 대한 작업을 수행하기 위해 MCP 서버가 요청할 권한은 무엇일까요?
 
-## 실습 과제
+## 실습 과제  
 
-### 과제 1: Entra ID에 애플리케이션 등록하기  
-Microsoft Entra 포털로 이동하세요.  
+### 실습 1: Entra ID에서 애플리케이션 등록  
+Microsoft Entra 포털로 이동합니다.  
 MCP 서버용 새 애플리케이션을 등록하세요.  
-애플리케이션(클라이언트) ID와 디렉터리(테넌트) ID를 기록하세요.
+애플리케이션(클라이언트) ID와 디렉터리(테넌트) ID를 기록합니다.
 
-### 과제 2: 로컬 MCP 서버 보안 설정(공개 클라이언트)  
-코드 예제를 따라 MSAL(Microsoft Authentication Library)을 통합해 사용자 인증을 구현하세요.  
-Microsoft Graph에서 사용자 정보를 가져오는 MCP 도구를 호출해 인증 흐름을 테스트하세요.
+### 실습 2: 로컬 MCP 서버 보안 설정 (공개 클라이언트)  
+- MSAL(Microsoft 인증 라이브러리)을 통합해 사용자 인증을 구현합니다.  
+- Microsoft Graph에서 사용자 정보를 가져오는 MCP 도구를 호출해 인증 흐름을 테스트합니다.
 
-### 과제 3: 원격 MCP 서버 보안 설정(기밀 클라이언트)  
-Entra ID에 기밀 클라이언트를 등록하고 클라이언트 비밀을 생성하세요.  
-Express.js MCP 서버를 권한 부여 코드 흐름으로 구성하세요.  
-보호된 엔드포인트를 테스트하고 토큰 기반 접근이 제대로 동작하는지 확인하세요.
+### 실습 3: 원격 MCP 서버 보안 설정 (기밀 클라이언트)  
+- Entra ID에 기밀 클라이언트를 등록하고 클라이언트 비밀을 생성합니다.  
+- Express.js MCP 서버를 Authorization Code Flow로 구성합니다.  
+- 보호된 엔드포인트를 테스트하고 토큰 기반 접근을 확인합니다.
 
-### 과제 4: 보안 모범 사례 적용하기  
-로컬 또는 원격 서버에 HTTPS를 활성화하세요.  
-서버 로직에 역할 기반 접근 제어(RBAC)를 구현하세요.  
-토큰 만료 처리 및 안전한 토큰 저장을 추가하세요.
+### 실습 4: 보안 모범 사례 적용  
+- 로컬 또는 원격 서버에 HTTPS를 활성화합니다.  
+- 서버 로직에 역할 기반 접근 제어(RBAC)를 구현합니다.  
+- 토큰 만료 처리 및 안전한 토큰 저장을 추가합니다.
 
-## 참고 자료
+## 참고 자료  
 
 1. **MSAL 개요 문서**  
-   Microsoft Authentication Library(MSAL)가 플랫폼 전반에서 안전한 토큰 획득을 어떻게 지원하는지 알아보기:  
-   [Microsoft Learn의 MSAL 개요](https://learn.microsoft.com/en-gb/entra/msal/overview)
+   Microsoft 인증 라이브러리(MSAL)가 다양한 플랫폼에서 안전한 토큰 획득을 어떻게 지원하는지 알아보세요:  
+   [MSAL 개요 - Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)
 
 2. **Azure-Samples/mcp-auth-servers GitHub 저장소**  
-   인증 흐름을 보여주는 MCP 서버 참조 구현:  
-   [Azure-Samples/mcp-auth-servers GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
+   인증 흐름을 시연하는 MCP 서버 참고 구현 예제:  
+   [Azure-Samples/mcp-auth-servers - GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
 
 3. **Azure 리소스용 관리 ID 개요**  
-   시스템 또는 사용자 할당 관리 ID를 사용해 비밀 정보를 없애는 방법:  
-   [Microsoft Learn의 관리 ID 개요](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)
+   시스템 또는 사용자 할당 관리 ID를 사용해 비밀 키 없이 인증하는 방법:  
+   [관리 ID 개요 - Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)
 
 4. **Azure API Management: MCP 서버용 인증 게이트웨이**  
-   MCP 서버용 안전한 OAuth2 게이트웨이로 APIM 활용 심층 가이드:  
+   MCP 서버를 위한 안전한 OAuth2 게이트웨이로 APIM을 활용하는 방법:  
    [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
 
 5. **Microsoft Graph 권한 참조**  
-   Microsoft Graph의 위임 및 애플리케이션 권한 목록:  
+   Microsoft Graph의 위임 및 애플리케이션 권한 전체 목록:  
    [Microsoft Graph 권한 참조](https://learn.microsoft.com/zh-tw/graph/permissions-reference)
 
 ## 학습 성과  
 이 섹션을 완료하면 다음을 할 수 있습니다:
 
 - MCP 서버와 AI 워크플로우에서 인증이 왜 중요한지 설명할 수 있습니다.  
-- 로컬 및 원격 MCP 서버 시나리오에 맞게 Entra ID 인증을 설정하고 구성할 수 있습니다.  
-- 서버 배포 환경에 따라 적절한 클라이언트 유형(공개 또는 기밀)을 선택할 수 있습니다.  
-- 토큰 저장 및 역할 기반 권한 부여 등 안전한 코딩 관행을 구현할 수 있습니다.  
+- 로컬 및 원격 MCP 서버 시나리오에 대해 Entra ID 인증을 설정하고 구성할 수 있습니다.  
+- 서버 배포 방식에 따라 적절한 클라이언트 유형(공개 또는 기밀)을 선택할 수 있습니다.  
+- 토큰 저장과 역할 기반 권한 부여를 포함한 안전한 코딩 관행을 구현할 수 있습니다.  
 - MCP 서버와 도구를 무단 접근으로부터 자신 있게 보호할 수 있습니다.
 
 ## 다음 단계  
@@ -422,4 +422,4 @@ Express.js MCP 서버를 권한 부여 코드 흐름으로 구성하세요.
 - [6. 커뮤니티 기여](../../06-CommunityContributions/README.md)
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있음을 유의하시기 바랍니다. 원본 문서의 원어 버전을 권위 있는 출처로 간주해야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인한 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하였으나, 자동 번역에는 오류나 부정확한 내용이 포함될 수 있음을 유의하시기 바랍니다. 원본 문서는 해당 언어의 원문이 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 본 번역의 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

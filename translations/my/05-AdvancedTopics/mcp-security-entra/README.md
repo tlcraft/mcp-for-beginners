@@ -1,71 +1,65 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9abe1d303ab126f9a8b87f03cebe5213",
-  "translation_date": "2025-06-26T15:03:10+00:00",
+  "original_hash": "0abf26a6c4dbe905d5d49ccdc0ccfe92",
+  "translation_date": "2025-06-26T16:43:55+00:00",
   "source_file": "05-AdvancedTopics/mcp-security-entra/README.md",
   "language_code": "my"
 }
 -->
-# AI Workflow များကို လုံခြုံစေရန်: Model Context Protocol Servers များအတွက် Entra ID Authentication
+# AI လုပ်ငန်းစဉ်များကို လုံခြုံစေခြင်း: Model Context Protocol ဆာဗာများအတွက် Entra ID အတည်ပြုခြင်း
 
 ## နိဒါန်း  
-သင့် Model Context Protocol (MCP) server ကို လုံခြုံစေခြင်းမှာ မိမိအိမ်၏ အရှေ့တံခါးကို သော့ချထားသည့်အတိုင်း အရေးကြီးပါသည်။ MCP server ကို ဖွင့်ထားခြင်းသည် မသင့်တော်သော အသုံးပြုသူများမှ သင့်ကိရိယာများနှင့် ဒေတာများကို မသိမသာ ဝင်ရောက်နိုင်ခြင်းဖြစ်ပြီး လုံခြုံရေး ချိုးဖောက်မှုများ ဖြစ်ပေါ်စေနိုင်သည်။ Microsoft Entra ID သည် မည်သူများသာ MCP server နှင့် ဆက်သွယ်နိုင်မည်ကို သေချာစေရန်၊ cloud အခြေပြု identity နှင့် access management ဖြေရှင်းချက်အား ပေးဆောင်သည်။ ဤအပိုင်းတွင် Entra ID authentication ကို အသုံးပြု၍ သင့် AI workflows များကို မည်သို့ ကာကွယ်ရမည်ကို သင်လေ့လာမည်ဖြစ်သည်။
+Model Context Protocol (MCP) ဆာဗာကို လုံခြုံစေရန် သင်၏အိမ်တံခါးကို ပိတ်ထားသလို အရေးကြီးသည်။ MCP ဆာဗာကို ဖွင့်ထားခြင်းသည် မသင့်လျော်သော အသုံးပြုခွင့်များဖြင့် သင်၏ကိရိယာများနှင့် ဒေတာများအား ဝင်ရောက်နိုင်ခြင်းဖြစ်ပြီး လုံခြုံရေး ချိုးဖောက်မှုများ ဖြစ်ပေါ်နိုင်သည်။ Microsoft Entra ID သည် မိမိ MCP ဆာဗာနှင့်သာ အတည်ပြုထားသော အသုံးပြုသူများနှင့် အပလီကေးရှင်းများသာ ဆက်သွယ်နိုင်စေရန် ကောင်းမွန်ပြီး တည်ငြိမ်သော cloud-based အိုင်ဒင်တီတီနှင့် ဝင်ရောက်ခွင့် စီမံခန့်ခွဲမှု ဖြေရှင်းချက်ဖြစ်သည်။ ဤအပိုင်းတွင် သင်သည် Entra ID အတည်ပြုခြင်းဖြင့် သင့် AI လုပ်ငန်းစဉ်များကို မည်သို့ကာကွယ်ရမည်ကို လေ့လာမည်ဖြစ်သည်။
 
 ## သင်ယူရမည့် ရည်မှန်းချက်များ  
-ဤအပိုင်းကို ပြီးမြောက်ချိန်တွင် သင်သည် -
+ဤအပိုင်းပြီးဆုံးသည့်အခါ သင်သည် -
 
-- MCP servers များကို လုံခြုံစေရန် အရေးပါမှုကို နားလည်နိုင်မည်။
-- Microsoft Entra ID နှင့် OAuth 2.0 authentication အခြေခံအချက်များကို ရှင်းပြနိုင်မည်။
-- public client နှင့် confidential client များ၏ ကွာခြားချက်ကို ခွဲခြားသိရှိနိုင်မည်။
-- local (public client) နှင့် remote (confidential client) MCP server အခြေအနေများတွင် Entra ID authentication ကို အကောင်အထည်ဖော်နိုင်မည်။
-- AI workflows ဖန်တီးရာတွင် လုံခြုံရေးအကောင်းဆုံးအတတ်ပညာများကို အသုံးပြုနိုင်မည်။
+- MCP ဆာဗာများကို လုံခြုံစေရန် အရေးပါမှုကို နားလည်နိုင်မည်။
+- Microsoft Entra ID နှင့် OAuth 2.0 အတည်ပြုခြင်း၏ အခြေခံကို ရှင်းပြနိုင်မည်။
+- Public client နှင့် confidential client များ၏ ကွာခြားချက်ကို သိရှိနိုင်မည်။
+- Entra ID အတည်ပြုခြင်းကို ဒေသတွင်း (public client) နှင့် ဝေးလံသော (confidential client) MCP ဆာဗာ စနစ်များတွင် အကောင်အထည်ဖော်နိုင်မည်။
+- AI လုပ်ငန်းစဉ်များ ဖန်တီးရာတွင် လုံခြုံရေး အကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများကို အသုံးချနိုင်မည်။
 
-# AI Workflow များကို လုံခြုံစေရန်: Model Context Protocol Servers များအတွက် Entra ID Authentication
+## လုံခြုံရေးနှင့် MCP  
+သင်၏အိမ်တံခါးကို မပိတ်ထားသည့်အတိုင်း MCP ဆာဗာကိုလည်း မည်သူမဆို ဝင်ရောက်နိုင်ရန် ဖွင့်ထားသင့်မည်မဟုတ်ပါ။ သင့် AI လုပ်ငန်းစဉ်များကို လုံခြုံစေခြင်းသည် အားမာန်ရှိပြီး ယုံကြည်စိတ်ချရသော၊ လုံခြုံသော အပလီကေးရှင်းများ ဖန်တီးရန် မရှိမဖြစ်လိုအပ်သည်။ ဤအခန်းတွင် Microsoft Entra ID ကို အသုံးပြု၍ MCP ဆာဗာများကို လုံခြုံစေခြင်းအကြောင်း မိတ်ဆက်ပေးမည်ဖြစ်ပြီး၊ အတည်ပြုထားသော အသုံးပြုသူများနှင့် အပလီကေးရှင်းများသာ သင့်ကိရိယာများနှင့် ဒေတာများနှင့် ဆက်သွယ်နိုင်စေရန် သေချာစေမည်ဖြစ်သည်။
 
-မိမိအိမ်၏ အရှေ့တံခါးကို မသော့ချထားသလို MCP server ကိုလည်း မည်သူမဆို ဝင်ရောက်နိုင်အောင် ဖွင့်ထားသင့်မည် မဟုတ်ပါ။ သင့် AI workflows များကို လုံခြုံစေရန်သည် ခိုင်မာပြီး ယုံကြည်စိတ်ချရသော၊ လုံခြုံသော application များ ဖန်တီးရာတွင် အလွန် အရေးကြီးပါသည်။ ဤအခန်းတွင် Microsoft Entra ID ကို အသုံးပြု၍ MCP servers များကို မည်သို့ လုံခြုံစေမည်ကို မိတ်ဆက်ပေးမည်ဖြစ်ပြီး၊ သက်ဆိုင်ရာ အသုံးပြုသူများနှင့် application များသာ သင့်ကိရိယာများနှင့် ဒေတာများနှင့် ဆက်သွယ်နိုင်ကြောင်း သေချာစေရန် နည်းလမ်းများကို လေ့လာနိုင်ပါသည်။
+## MCP ဆာဗာများအတွက် လုံခြုံရေးအရေးကြီးသောအကြောင်းရင်း  
+သင်၏ MCP ဆာဗာတွင် အီးမေးလ်ပို့ခြင်း သို့မဟုတ် ဖောက်သည် ဒေတာဘေ့စ်ကို ဝင်ရောက်ကြည့်ရှုနိုင်သော ကိရိယာတစ်ခု ရှိသည်ဟု စဉ်းစားပါ။ လုံခြုံမှုမရှိသော ဆာဗာဆိုသည်မှာ မည်သူမဆို အဆိုပါကိရိယာကို အသုံးပြုနိုင်ခြင်း ဖြစ်ပြီး ဒေတာ မသင့်လျော်သော ဝင်ရောက်မှု၊ စပမ်ပို့ခြင်း သို့မဟုတ် မကောင်းမွန်သော လှုပ်ရှားမှုများ ဖြစ်ပေါ်နိုင်သည်။
 
-## MCP Servers များအတွက် လုံခြုံရေး အရေးကြီးမှု
+အတည်ပြုခြင်းကို အကောင်အထည်ဖော်ခြင်းဖြင့် သင့်ဆာဗာသို့ လာရောက်သော တောင်းဆိုမှုတိုင်းကို စစ်ဆေးနိုင်ပြီး တောင်းဆိုသူ၏ အိုင်ဒင်တီတီကို အတည်ပြုနိုင်မည်ဖြစ်သည်။ ၎င်းသည် သင့် AI လုပ်ငန်းစဉ်များကို လုံခြုံစေရန် အရေးကြီးဆုံး အဆင့်ဖြစ်သည်။
 
-သင့် MCP server တွင် အီးမေးလ်ပို့ခြင်း သို့မဟုတ် ဖောက်သည်ဒေတာဘေ့စ်ကို ဝင်ရောက်စစ်ဆေးနိုင်သော ကိရိယာတစ်ခု ရှိကြောင်း စဉ်းစားကြည့်ပါ။ လုံခြုံမှုမရှိသော server ဆိုသည်မှာ မည်သူမဆို ထိုကိရိယာကို အသုံးပြုနိုင်ပြီး ဒေတာမမှန်ကန်စွာ ဝင်ရောက်ခြင်း၊ စပမ်ပို့ခြင်း သို့မဟုတ် မကောင်းသော လုပ်ရပ်များ ဖြစ်ပေါ်စေနိုင်ပါသည်။
-
-Authentication ကို ထည့်သွင်းအသုံးပြုခြင်းဖြင့် သင့် server သို့ လာရောက်သော တောင်းဆိုမှုတိုင်းကို စစ်ဆေးပြီး အသုံးပြုသူ သို့မဟုတ် application ၏ ကိုယ်စားလှယ်ကို အတည်ပြုနိုင်သည်။ ၎င်းသည် သင့် AI workflows များကို လုံခြုံစေရန် အရေးကြီးဆုံး အဆင့်ဖြစ်သည်။
-
-## Microsoft Entra ID နဲ့ နိဒါန်း
-
-**Microsoft Entra ID** သည် cloud အခြေပြု identity နှင့် access management ဝန်ဆောင်မှုတစ်ခုဖြစ်သည်။ ၎င်းကို သင့် application များအတွက် အပြည်ပြည်ဆိုင်ရာ လုံခြုံရေးအရာရှိတစ်ဦးလို ထင်မြင်နိုင်သည်။ အသုံးပြုသူများ၏ ကိုယ်ပိုင်အချက်အလက်များကို အတည်ပြုခြင်း (authentication) နှင့် ၎င်းတို့အား မည်သည့်အရာများကို ခွင့်ပြုမည်ကို ဆုံးဖြတ်ခြင်း (authorization) ကို စီမံခန့်ခွဲပေးသည်။
+## Microsoft Entra ID အကြောင်း အကျဉ်းချုပ်  
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) သည် cloud-based အိုင်ဒင်တီတီနှင့် ဝင်ရောက်ခွင့် စီမံခန့်ခွဲမှု ဝန်ဆောင်မှုဖြစ်သည်။ သင့်အပလီကေးရှင်းများအတွက် ယေဘုယျ လုံခြုံရေး အရာရှိတစ်ဦးလို ဖြစ်သည်။ အသုံးပြုသူ အိုင်ဒင်တီတီများကို အတည်ပြုခြင်း (authentication) နှင့် သူတို့အား ဘာလုပ်ခွင့်ရှိမည်ကို သတ်မှတ်ခြင်း (authorization) အစီအစဉ်ရှုပ်ထွေးမှုများကို စီမံပေးသည်။
 
 Entra ID ကို အသုံးပြုခြင်းဖြင့် -
 
-- အသုံးပြုသူများအတွက် လုံခြုံစိတ်ချရသော အကောင့်ဝင်ခြင်းကို ဖွင့်လှစ်နိုင်သည်။
+- အသုံးပြုသူများအတွက် လုံခြုံစိတ်ချရသော လက်မှတ်ထိုးဝင်ရောက်မှုကို ခွင့်ပြုနိုင်သည်။
 - API များနှင့် ဝန်ဆောင်မှုများကို ကာကွယ်နိုင်သည်။
-- Access မူဝါဒများကို ဗဟိုစီမံခန့်ခွဲမှုမှ စီမံနိုင်သည်။
+- ဝင်ရောက်ခွင့် မူဝါဒများကို ဗဟိုမှ စီမံနိုင်သည်။
 
-MCP servers များအတွက် Entra ID သည် သင့် server ၏ လုပ်ဆောင်နိုင်မှုများကို မည်သူအသုံးပြုနိုင်မည်ကို စီမံခန့်ခွဲရန် ခိုင်မာပြီး ယုံကြည်စိတ်ချရသော ဖြေရှင်းချက်တစ်ခုဖြစ်သည်။
+MCP ဆာဗာများအတွက် Entra ID သည် ဆာဗာ၏ လုပ်ဆောင်ချက်များကို မည်သူဝင်ရောက်နိုင်မည်ကို စီမံခန့်ခွဲရန် တည်ငြိမ်ပြီး ယုံကြည်စိတ်ချရသော ဖြေရှင်းချက်တစ်ခု ဖြစ်သည်။
 
 ---
 
-## Entra ID Authentication ဘယ်လို လည်ပတ်သလဲ
+## Entra ID အတည်ပြုခြင်း အလုပ်လုပ်ပုံ နားလည်ခြင်း  
+Entra ID သည် **OAuth 2.0** ကဲ့သို့သော open standard များကို အသုံးပြု၍ အတည်ပြုခြင်းကို စီမံသည်။ အသေးစိတ်များမှာ ရှုပ်ထွေးနိုင်သော်လည်း အဓိကအကြောင်းအရာကို ရိုးရှင်းပြီး သဘောတူနိုင်သော ဥပမာတစ်ခုဖြင့် နားလည်နိုင်သည်။
 
-Entra ID သည် **OAuth 2.0** ကဲ့သို့သော ဖွင့်လှစ်ထားသော စံသတ်မှတ်ချက်များကို အသုံးပြုကာ authentication ကို စီမံခန့်ခွဲသည်။ အသေးစိတ်များမှာ စိပ်စိပ်လွယ်လွယ် မဟုတ်သော်လည်း အဓိက အကြောင်းအရာကို နမူနာတစ်ခုဖြင့် ရှင်းပြနိုင်သည်။
+### OAuth 2.0 ကို ရိုးရှင်းစွာ နားလည်ခြင်း: Valet Key ဥပမာ  
+OAuth 2.0 ကို သင့်ကားအတွက် valet ဝန်ဆောင်မှုတစ်ခုလို ထင်မြင်ပါ။ မိမိစားသောက်ဆိုင်သို့ ရောက်ရှိသောအခါ master key ကို valet ထံ မပေးပစ်ပါ။ အစား **valet key** တစ်ခုကိုပေးပြီး ၎င်းသည် ကားစတင်ခြင်းနှင့် တံခါးပိတ်ခြင်းကိုသာ ခွင့်ပြုသည်။ ကား၏ အထဲပိုင်းသို့ ဝင်ရောက်ခြင်း (ထူးခြားသည့် အပိုင်းများ) မပြုနိုင်ပါ။
 
-### OAuth 2.0 ကို ရိုးရှင်းစွာ နားလည်ခြင်း: Valet Key နမူနာ
+ဤဥပမာတွင် -
 
-OAuth 2.0 ကို မိမိကားအတွက် valet ဝန်ဆောင်မှုတစ်ခုလို ထင်မြင်ပါ။ စားသောက်ဆိုင်သို့ ရောက်ရှိသည့်အခါ မိမိ master key ကို valet ကို မပေးပါ။ အစား **valet key** ကိုပေးပြီး ၎င်းသည် ကားကို စတင်မောင်းနှင်ခြင်းနှင့် တံခါးများကို သော့ချနိုင်သည်၊ သို့သော် ကား၏ ထုပ်ပိုးခုံသို့မဟုတ် glove compartment ကို မဖွင့်နိုင်ပါ။
+- **သင်သည်** **အသုံးပြုသူ** ဖြစ်သည်။
+- **သင့်ကားသည်** သင့် **MCP ဆာဗာ** ဖြစ်ပြီး အဖိုးတန် ကိရိယာများနှင့် ဒေတာများပါရှိသည်။
+- **Valet သည်** **Microsoft Entra ID** ဖြစ်သည်။
+- **ကားရပ်နားသူ** သည် **MCP Client** (ဆာဗာသို့ ဝင်ရောက်ရန် ကြိုးစားသော အပလီကေးရှင်း) ဖြစ်သည်။
+- **Valet Key သည်** **Access Token** ဖြစ်သည်။
 
-ဤနမူနာတွင် -
+Access token သည် MCP client သည် သင် ဝင်ရောက်လက်မှတ်ထိုးပြီးနောက် Entra ID မှ လက်ခံရရှိသော လုံခြုံသော စာသားတစ်ကြောင်းဖြစ်သည်။ client သည် တောင်းဆိုမှုတိုင်းတွင် ဤ token ကို MCP ဆာဗာထံ ပေးပို့သည်။ ဆာဗာသည် token ကို စစ်ဆေးပြီး တောင်းဆိုမှုသည် တရားဝင်ဖြစ်ကြောင်းနှင့် client သည် လိုအပ်သော ခွင့်ပြုချက်များ ရှိကြောင်း အတည်ပြုနိုင်သည်။ ၎င်းသည် သင့် စကားဝှက်ကဲ့သို့သော အချက်အလက်များကို မင်္ဂလာပြုရန် မလိုအပ်ပဲ ဖြစ်သည်။
 
-- **သင်** သည် **အသုံးပြုသူ(User)** ဖြစ်သည်။
-- **သင့်ကား** သည် **MCP Server** ဖြစ်ပြီး တန်ဖိုးရှိသော ကိရိယာများနှင့် ဒေတာများပါဝင်သည်။
-- **Valet** သည် **Microsoft Entra ID** ဖြစ်သည်။
-- **Parking Attendant** သည် **MCP Client** (server ကို ဝင်ရောက်ကြိုးစားသော application) ဖြစ်သည်။
-- **Valet Key** သည် **Access Token** ဖြစ်သည်။
-
-Access token သည် MCP client သို့ သင့်လက်မှတ်ဖြင့် Entra ID မှ ရရှိသော လုံခြုံသော စာသား စီးရီးဖြစ်သည်။ client သည် တောင်းဆိုမှုတိုင်းတွင် token ကို MCP server ဆီ တင်ပြသည်။ server သည် token ကို စစ်ဆေးကာ တောင်းဆိုမှုတရားဝင်ကြောင်းနှင့် client သည် လိုအပ်သော ခွင့်ပြုချက်များ ရှိကြောင်း သေချာစေသည်။ ၎င်းသည် သင့်စကားဝှက်ကဲ့သို့သော ကိုယ်ပိုင်အချက်အလက်များကို မကြားနာဘဲ လုပ်ဆောင်နိုင်သည်။
-
-### Authentication လည်ပတ်မှု စနစ်
-
-လုပ်ငန်းစဉ်ကို အောက်ပါအတိုင်း လုပ်ဆောင်သည် -
+### အတည်ပြုခြင်း လည်ပတ်ပုံ  
+လုပ်ဆောင်မှုများမှာ -
 
 ```mermaid
 sequenceDiagram
@@ -85,27 +79,25 @@ sequenceDiagram
     Server-->>-Client: Token is valid. Here is the result of the tool.
 ```
 
-### Microsoft Authentication Library (MSAL) ကို မိတ်ဆက်ခြင်း
+### Microsoft Authentication Library (MSAL) ကို မိတ်ဆက်ခြင်း  
+ကုဒ်ကို စတင်မဖတ်ရှုမီ သင်တွေ့မည့် အရေးကြီးသော အစိတ်အပိုင်းတစ်ခုမှာ **Microsoft Authentication Library (MSAL)** ဖြစ်သည်။
 
-ကုဒ်ကို စတင်မဖတ်ရှုမီ၊ ဥပမာများတွင် တွေ့ရမည့် အရေးကြီးသော library တစ်ခုဖြစ်သည့် **Microsoft Authentication Library (MSAL)** ကို မိတ်ဆက်ပေးလိုသည်။
+MSAL သည် Microsoft က ဖန်တီးထားသော စာကြည့်တိုက်ဖြစ်ပြီး အတည်ပြုခြင်းကို လွယ်ကူစွာ ကိုင်တွယ်နိုင်စေသည်။ သင်သည် လုံခြုံရေး token များကို ကိုင်တွယ်ရန်၊ လက်မှတ်ထိုးမှုများကို စီမံရန်၊ အချိန်ကာလများကို ပြန်လည်ပြောင်းလဲရန် ရေးသားရမည့် ရှုပ်ထွေးသော ကုဒ်များကို MSAL သည် ကိုင်တွယ်ပေးသည်။
 
-MSAL သည် Microsoft မှ ဖန်တီးထားသော library တစ်ခုဖြစ်ပြီး developer များအတွက် authentication ကို လွယ်ကူစွာ စီမံခန့်ခွဲနိုင်ရန် အထောက်အကူပြုသည်။ သင့်အနေဖြင့် လုံခြုံရေး token များကို စီမံခြင်း၊ အကောင့်ဝင်ခြင်းများကို စီမံခန့်ခွဲခြင်း၊ session များကို ပြန်လည်အသစ်လုပ်ခြင်းတို့ကို ကိုယ်တိုင် ရေးရန် မလိုတော့ပဲ MSAL သည် ၎င်းတို့ကို ပြုလုပ်ပေးသည်။
+MSAL ကို အသုံးပြုရန် အကြံပြုသည့် အကြောင်းရင်းများမှာ -
 
-MSAL ကို အသုံးပြုသင့်သည့် အကြောင်းရင်းများမှာ -
+- **လုံခြုံမှုရှိသည်** - စက်မှုလုပ်ငန်းစံနှုန်းများနှင့် လုံခြုံရေးအကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများကို အကောင်အထည်ဖော်ပြီး သင့်ကုဒ်တွင် အန္တရာယ်များ လျော့နည်းစေသည်။
+- **ဖန်တီးမှု လွယ်ကူစေသည်** - OAuth 2.0 နှင့် OpenID Connect ပရိုတိုကောများ၏ ရှုပ်ထွေးမှုများကို ဖယ်ရှားပေးကာ သင့်အပလီကေးရှင်းတွင် လုံခြုံမှု ပြည့်စုံသော အတည်ပြုခြင်းကို နည်းနည်းသောကုဒ်ဖြင့် ထည့်သွင်းနိုင်စေသည်။
+- **ထိန်းသိမ်းထုတ်လုပ်မှုရှိသည်** - Microsoft မှ လုံခြုံရေး အန္တရာယ်အသစ်များနှင့် ပလက်ဖောင်းပြောင်းလဲမှုများကို ဖြေရှင်းရန် MSAL ကို အဆက်မပြတ် ထိန်းသိမ်းနေသည်။
 
-- **လုံခြုံမှုရှိသည်** - စက်မှုလုပ်ငန်းစံနှုန်းများနှင့် လုံခြုံရေးအကောင်းဆုံးလုပ်ထုံးလုပ်နည်းများကို အသုံးပြုထားသည်၊ သင့်ကုဒ်တွင် ချို့ယွင်းချက်များ ဖြစ်ပေါ်နိုင်မှုကို လျော့နည်းစေသည်။
-- **ဖွံ့ဖြိုးရေး လွယ်ကူစေသည်** - OAuth 2.0 နှင့် OpenID Connect စံသတ်မှတ်ချက်များ၏ ရှုပ်ထွေးမှုများကို ဖုံးကွယ်ပေးကာ သင့် application တွင် authentication ကို လွယ်ကူစွာ ထည့်သွင်းနိုင်သည်။
-- **တိုးတက်ပြောင်းလဲမှုများကို ထိန်းသိမ်းပေးသည်** - Microsoft မှ လုံခြုံရေး အန္တရာယ်အသစ်များနှင့် ပလက်ဖောင်းပြောင်းလဲမှုများကို တက်ကြွစွာ ပြုပြင်ထိန်းသိမ်းသည်။
+MSAL သည် .NET, JavaScript/TypeScript, Python, Java, Go နှင့် iOS၊ Android ကဲ့သို့သော မိုဘိုင်းပလက်ဖောင်းများအပါအဝင် ဘာသာစကားများနှင့် အပလီကေးရှင်းဖွံ့ဖြိုးရေး ပလက်ဖောင်းများစွာကို ထောက်ပံ့သည်။ ထို့ကြောင့် သင့်နည်းပညာ စနစ်တစ်ခုလုံးတွင် တူညီသော အတည်ပြုခြင်း ပုံစံများကို အသုံးပြုနိုင်သည်။
 
-MSAL သည် .NET, JavaScript/TypeScript, Python, Java, Go နှင့် iOS, Android ကဲ့သို့သော မိုဘိုင်း ပလက်ဖောင်းများအပါအဝင် ဘာသာစကားများနှင့် application framework များစွာကို ပံ့ပိုးသည်။ သင်၏ နည်းပညာ stack အားလုံးတွင် တစ်ခုတည်းသော authentication ပုံစံကို အသုံးပြုနိုင်ပါသည်။
-
-MSAL အကြောင်း ပိုမိုသိရှိလိုပါက တရားဝင် [MSAL overview documentation](https://learn.microsoft.com/entra/identity-platform/msal-overview) ကို ကြည့်ရှုနိုင်ပါသည်။
+MSAL အကြောင်း ပိုမိုသိရှိလိုပါက [MSAL အနှစ်ချုပ်စာရွက်စာတမ်း](https://learn.microsoft.com/entra/identity-platform/msal-overview) ကို ကြည့်ရှုနိုင်ပါသည်။
 
 ---
 
-## Entra ID ဖြင့် MCP Server ကို လုံခြုံစေရန် လမ်းညွှန်ချက်
-
-ယခု `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
+## Entra ID ဖြင့် သင့် MCP ဆာဗာကို လုံခြုံစေခြင်း: လုပ်ဆောင်ရန် အဆင့်ဆင့်လမ်းညွှန်  
+ယခုတွင် ဒေသတွင်း MCP ဆာဗာတစ်ခုကို (stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
 
 ### Scenario 1: Securing a Local MCP Server (with a Public Client)
 
@@ -134,7 +126,7 @@ This class is responsible for handling the interaction with Entra ID.
 
 - **`CreateAsync`**: This method initializes the `PublicClientApplication` from the MSAL (Microsoft Authentication Library). It's configured with your application's `clientId` and `tenantId`.
 - **`WithBroker`**: This enables the use of a broker (like the Windows Web Account Manager), which provides a more secure and seamless single sign-on experience.
-- **`AcquireTokenAsync` ကို အသုံးပြု၍ local MCP server တစ်ခုကို မည်သို့ လုံခြုံစေရမည်ကို လေ့လာကြမည်။ ၎င်းသည် အဓိက နည်းလမ်းဖြစ်ပြီး အသုံးပြုသူတွင် session တရားဝင်ရှိပါက silent token ရယူရန် ကြိုးစားသည်။ silent token မရနိုင်ပါက အသုံးပြုသူအား အပြန်အလှန် အကောင့်ဝင်ရန် တောင်းဆိုပါမည်။
+- **`AcquireTokenAsync) ဖြင့် ဆက်သွယ်သည့် နည်းလမ်းဖြင့် လုံခြုံစေရန် လမ်းညွှန်ချက်ကို လိုက်လံကြည့်ရှုပါ။ ၎င်းသည် အဓိကနည်းလမ်းဖြစ်ပြီး ပထမဦးဆုံး token ကို အတိတ်ကာလတစ်ခုအတွင်း မလိုအပ်ပါက အသုံးပြုသူကို လက်မှတ်ထိုးရန် မေးမြန်းသည်။
 
 ```csharp
 // Simplified for clarity
@@ -187,7 +179,7 @@ public async Task<string> AcquireTokenAsync()
 This is where the MCP server is set up and the authentication service is integrated.
 
 - **`AddSingleton<AuthenticationService>`**: This registers the `AuthenticationService` with the dependency injection container, so it can be used by other parts of the application (like our tool).
-- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` ကို အသုံးပြုကာ တရားဝင် access token ရယူသည်။ authentication အောင်မြင်ပါက Microsoft Graph API ကို ခေါ်၍ အသုံးပြုသူ၏ အသေးစိတ်အချက်အလက်များကို ရယူသည်။**
+- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` ကို အသုံးပြု၍ မှန်ကန်သော access token ရယူသည်။ အတည်ပြုခြင်း အောင်မြင်ပါက token ဖြင့် Microsoft Graph API ကို ခေါ်ယူကာ အသုံးပြုသူ အသေးစိတ်ကို ရယူသည်။**
 
 ```csharp
 // Simplified for clarity
@@ -215,9 +207,9 @@ public static async Task<string> GetUserDetailsFromGraph(
 }
 ```
 
-#### ၃။ အားလုံး ပေါင်းစပ်၍ မည်သို့ လည်ပတ်သနည်း
+#### ၃။ အားလုံး ဘယ်လိုပေါင်းစည်း လုပ်ဆောင်သလဲ  
 
-1. MCP client သည် `GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
+၁။ MCP client သည် `GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
 2. `AcquireTokenAsync` triggers the MSAL library to check for a valid token.
 3. If no token is found, MSAL, through the broker, will prompt the user to sign in with their Entra ID account.
 4. Once the user signs in, Entra ID issues an access token.
@@ -256,7 +248,7 @@ This file sets up the Express server and the MCP transport layer.
 
 - **`requireBearerAuth`**: This is middleware that protects the `/sse` and `/message` endpoints. It checks for a valid bearer token in the `Authorization` header of the request.
 - **`EntraIdServerAuthProvider`**: This is a custom class that implements the `McpServerAuthorizationProvider` interface. It's responsible for handling the OAuth 2.0 flow.
-- **`/auth/callback` ကို အသုံးပြု၍ Entra ID မှ authentication ပြီးနောက် redirect ကို ကိုင်တွယ်သည်။ authorization code ကို access token နှင့် refresh token သို့ ပြောင်းလဲသည်။
+- **`/auth/callback` ကို အသုံးပြုရန် ကြိုးစားသည်။ ဤ endpoint သည် အသုံးပြုသူ အတည်ပြုပြီးနောက် Entra ID မှ redirect ပြန်လာသော အချက်အလက်ကို ကိုင်တွယ်သည်။ authorization code ကို access token နှင့် refresh token သို့ ပြောင်းလဲပေးသည်။
 
 ```typescript
 // Simplified for clarity
@@ -291,7 +283,7 @@ app.get("/auth/callback", (req, res) => {
 
 **`Tools.ts`**
 
-This file defines the tools that the MCP server provides. The `getUserDetails` ကိရိယာသည် ယခင် ဥပမာကဲ့သို့ပင်ဖြစ်သော်လည်း session မှ access token ကို ရယူသည်။**
+This file defines the tools that the MCP server provides. The `getUserDetails` ကိရိယာသည် ယခင်ဥပမာကဲ့သို့ပင်ဖြစ်သော်လည်း session မှ access token ကို ရယူသည်။**
 
 ```typescript
 // Simplified for clarity
@@ -338,19 +330,17 @@ This class handles the logic for:
 3. Entra ID redirects the user back to the `/auth/callback` endpoint with an authorization code.
 4. The server exchanges the code for an access token and a refresh token, stores them, and creates a session token which is sent to the client.
 5. The client can now use this session token in the `Authorization` header for all future requests to the MCP server.
-6. When the `getUserDetails` ကိရိယာကို ခေါ်သည့်အခါ session token ကို အသုံးပြုကာ Entra ID access token ကို ရှာဖွေပြီး Microsoft Graph API ကို ခေါ်သည်။**
+6. When the `getUserDetails` ကိရိယာကို ခေါ်သည့်အခါ session token ကို အသုံးပြုပြီး Entra ID access token ကို ရှာဖွေကာ Microsoft Graph API ကို ခေါ်သုံးသည်။**
 
-ဤလုပ်ငန်းစဉ်သည် public client flow ထက် ပိုရှုပ်ထွေးသော်လည်း အင်တာနက်မှ ဝင်ရောက်နိုင်သော remote MCP servers များအတွက် လုံခြုံရေး အားကောင်းစေရန် လိုအပ်သည်။
+ဤစနစ်သည် public client flow ထက် ရှုပ်ထွေးသော်လည်း အင်တာနက်မှ ဝင်ရောက်နိုင်သော endpoint များအတွက် လုံခြုံရေးကာကွယ်မှုအားကောင်းရန် လိုအပ်သည်။ ဝေးလံသော MCP ဆာဗာများသည် အများပြည်သူ အင်တာနက်မှ ဝင်ရောက်နိုင်သောကြောင့် မသင့်လျော်သော ဝင်ရောက်မှုများနှင့် တိုက်ခိုက်မှုများမှ ကာကွယ်ရန် လုံခြုံရေး အားကောင်းသော နည်းလမ်းများ လိုအပ်သည်။
 
-## လုံခြုံရေး အကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများ
+## လုံခြုံရေး အကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများ  
 
-- **အမြဲ HTTPS ကို အသုံးပြုပါ**: client နှင့် server ကြား ဆက်သွယ်မှုကို စနစ်တကျ စစ်ဆေးကာ token များကို ဖမ်းယူခံရမှုမှ ကာကွယ်ပါ။
-- **Role-Based Access Control (RBAC) ကို အသုံးပြုပါ**: အသုံးပြုသူတစ်ဦးသည် authentication ပြုလုပ်ထားခြင်းသာမက မည်သည့် အခန်းကဏ္ဍများတွင် ခွင့်ပြုထားသည်ကို စစ်ဆေးပါ။ Entra ID တွင် role များကို သတ်မှတ်ပြီး MCP server တွင် ထို role များကို စစ်ဆေးနိုင်သည်။
-- **စောင့်ကြည့်ခြင်းနှင့် စစ်ဆေးခြင်း**: authentication ဖြစ်ရပ်များအားလုံးကို မှတ်တမ်းတင်ထားကာ သံသယဖြစ်စေသော လှုပ်ရှားမှုများကို ရှာဖွေကြည့်ရှုနိုင်ရန်။
-- **အမြန်နှုန်းကန့်သတ်ခြင်းနှင့် ပိတ်ဆို့မှုကို ကိုင်တွယ်ပါ**: Microsoft Graph နှင့် အခြား API များသည် rate limiting ကို အသုံးပြုကာ မတရားအသုံးပြုမှုများကို ကာကွယ်သည်။ MCP server တွင် exponential backoff နှင့် retry logic ကို ထည့်သွင်းကာ HTTP 429 (Too Many Requests) တုံ့ပြန်မှုများကို စနစ်တကျ ကိုင်တွယ်ပါ။ API ခေါ်ဆိုမှုများ လျော့နည်းစေရန် မကြာခဏ အသုံးပြုသော ဒေတာများကို cache ထားပါ။
-- **Token များကို လုံခြုံစွာ သိမ်းဆည်းပါ**: access token နှင့် refresh token များကို လုံခြုံစွာ သိမ်းဆည်းပါ။ local application များအတွက် စနစ်၏ လုံခြုံသော သိမ်းဆည်းမှုနည်းလမ်းများကို အသုံးပြုပါ။ server application များအတွက် encrypted storage သို့မဟုတ် Azure Key Vault ကဲ့သို့သော လုံခြုံသော key management ဝန်ဆောင်မှုများကို စဉ်းစားပါ။
-- **Token သက်တမ်းကုန်ဆုံးမှု ကို ကိုင်တွယ်ပါ**: access token များသည် သက်တမ်းကန့်သတ်ထားသည်။ refresh token များကို အသုံးပြုကာ token များကို အလိုအလျောက် ပြန်လည်အသစ်လုပ်၍ အသုံးပြုသူများအတွက် အကောင့်ဝင်ခြင်းကို ဆက်လက်လွယ်ကူစေရန်။
-- **Azure API Management ကို စဉ်းစားပါ**: MCP server တွင် လုံခြုံရေးကို တိုက်ရိုက် ထည့်သွင်းခြင်းသည် ပိုမိုအသေးစိတ် ထိန်းချုပ်မှု ပေးသော်လည်း Azure API Management ကဲ့သို့သော API Gateway များသည် authentication, authorization, rate limiting နှင့် စောင့်ကြည့်မှုများကို အလိုအလျောက် ကိုင်တွယ်ပေးနိုင်သည်။ ၎င်းတို့သည် client များနှင့် MCP servers များအကြား ဗဟိုပြု လုံခြုံရေးအလွှာ တစ်ခုအဖြစ် တည်ရှိသည်။ MCP နှင့် API Gateway များကို ပိုမိုသိရှိလိုပါက [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api
+- **HTTPS ကို အမြဲအသုံးပြုပါ**: Client နှင့် ဆာဗာအကြား ဆက်သွယ်မှုကို စာရင်းလုံခြုံစေပြီး token များ ခိုးယူခံရခြင်းမှ ကာကွယ်သည်။
+- **Role-Based Access Control (RBAC) ကို အကောင်အထည်ဖော်ပါ**: အသုံးပြုသူသည် အတည်ပြုထားခြင်းသာ မဟုတ်ဘဲ ဘာလုပ်ခွင့်ရှိသည်ကိုလည်း စစ်ဆေးပါ။ Entra ID တွင် role များ သတ်မှတ်၍ MCP ဆာဗာတွင် စစ်ဆေးနိုင်သည်။
+- **စောင့်ကြည့်မှုနှင့် စစ်ဆေးမှုများ**: အတည်ပြုမှုဖြစ်ရပ်များအားလုံးကို မှတ်တမ်းတင်ထား၍ မမှန်ကန်သည့် လှုပ်ရှားမှုများကို ရှာဖွေတုံ့ပြန်နိုင်စေပါ။
+- **နှုန်းနှင့် အတားအဆီး စီမံခန့်ခွဲမှု**: Microsoft Graph နှင့် အခြား API များတွင် နှုန်းကန့်သတ်မှုများရှိသည်။ MCP ဆာဗာတွင် exponential backoff နှင့် retry logic ကို ထည့်သွင်းကာ HTTP 429 (Too Many Requests) တုံ့ပြန်မှုများကို သက်သာစွာ ကိုင်တွယ်ပါ။ API ခေါ်ဆိုမှုများကို လျော့ချပေးရန် မကြာခဏ အသုံးပြုသော ဒေတာများကို cache ပြုလုပ်ရန် စဉ်းစားပါ။
+- **Token များကို လုံခြုံစွာ သိမ်းဆည်းပါ**: Access token နှင့် refresh token များကို လုံခြုံစွာ သိမ်းဆည်းပါ။ ဒေသတွင်း အပလီကေးရှင်းများအတွက် စနစ်၏ လုံခြုံသော သိမ်းဆည်းမှု နည်းလမ်းများကို အသုံးပြုပါ။ ဆာဗာအပလီကေးရှင်းများအတွက် encrypted storage သို့မဟုတ် Azure Key Vault ကဲ့သို့သော လုံခြုံသော key management ဝန်ဆောင်
 
-**အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားပေမယ့်၊ အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မှန်ကန်မှုနည်းပါးမှုများ ရှိနိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မူရင်းဘာသာဖြင့်သာ အတည်ပြုရမည့် အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် ပရော်ဖက်ရှင်နယ် လူ့ဘာသာပြန်ကို အသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုမှုကြောင့် ဖြစ်ပေါ်လာသော မလွတ်မြောက်မှုများ သို့မဟုတ် မှားယွင်းချက်များအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+**သတိပေးချက်**  
+ဤစာတမ်းကို AI ဘာသာပြန်ဆာဗစ်ဖြစ်သော [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားပေမယ့် အလိုအလျောက်ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန်။ မူရင်းစာတမ်းကို မူလဘာသာဖြင့်သာ တရားဝင်အချက်အလက်အရင်းအမြစ်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသောအချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုအသုံးပြုမှုကြောင့် ဖြစ်ပေါ်နိုင်သည့် နားလည်မှုမှားယွင်းမှုများ သို့မဟုတ် အဓိပ္ပာယ်လွဲမှားမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
