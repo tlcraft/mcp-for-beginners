@@ -6,13 +6,13 @@ Securing your Model Context Protocol (MCP) server is as important as locking the
 ## Learning Objectives
 By the end of this section, you will be able to:
 
-Understand the importance of securing MCP servers.
-Explain the basics of Microsoft Entra ID and OAuth 2.0 authentication.
-Recognize the difference between public and confidential clients.
-Implement Entra ID authentication in both local (public client) and remote (confidential client) MCP server scenarios.
-Apply security best practices when developing AI workflows.
+- Understand the importance of securing MCP servers.
+- Explain the basics of Microsoft Entra ID and OAuth 2.0 authentication.
+- Recognize the difference between public and confidential clients.
+- Implement Entra ID authentication in both local (public client) and remote (confidential client) MCP server scenarios.
+- Apply security best practices when developing AI workflows.
 
-# Securing AI Workflows: Entra ID Authentication for Model Context Protocol Servers
+## Security and MCP
 
 Just as you wouldn't leave the front door of your house unlocked, you shouldn't leave your MCP server open for anyone to access. Securing your AI workflows is essential for building robust, trustworthy, and safe applications. This chapter will introduce you to using Microsoft Entra ID to secure your MCP servers, ensuring that only authorized users and applications can interact with your tools and data.
 
@@ -24,7 +24,7 @@ By implementing authentication, you ensure that every request to your server is 
 
 ## Introduction to Microsoft Entra ID
 
-**Microsoft Entra ID** is a cloud-based identity and access management service. Think of it as a universal security guard for your applications. It handles the complex process of verifying user identities (authentication) and determining what they are allowed to do (authorization).
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) is a cloud-based identity and access management service. Think of it as a universal security guard for your applications. It handles the complex process of verifying user identities (authentication) and determining what they are allowed to do (authorization).
 
 By using Entra ID, you can:
 
@@ -368,18 +368,18 @@ Register a new application for your MCP server.
 Record the Application (client) ID and Directory (tenant) ID.
 
 ### Exercise 2: Secure a Local MCP Server (Public Client)
-Follow the code example to integrate MSAL (Microsoft Authentication Library) for user authentication.
-Test the authentication flow by calling the MCP tool that fetches user details from Microsoft Graph.
+- Follow the code example to integrate MSAL (Microsoft Authentication Library) for user authentication.
+- Test the authentication flow by calling the MCP tool that fetches user details from Microsoft Graph.
 
 ### Exercise 3: Secure a Remote MCP Server (Confidential Client)
-Register a confidential client in Entra ID and create a client secret.
-Configure your Express.js MCP server to use the Authorization Code Flow.
-Test the protected endpoints and confirm token-based access.
+- Register a confidential client in Entra ID and create a client secret.
+- Configure your Express.js MCP server to use the Authorization Code Flow.
+- Test the protected endpoints and confirm token-based access.
 
 ### Exercise 4: Apply Security Best Practices
-Enable HTTPS for your local or remote server.
-Implement role-based access control (RBAC) in your server logic.
-Add token expiration handling and secure token storage.
+- Enable HTTPS for your local or remote server.
+- Implement role-based access control (RBAC) in your server logic.
+- Add token expiration handling and secure token storage.
 
 ## Resources
 
@@ -408,11 +408,11 @@ Add token expiration handling and secure token storage.
 ## Learning Outcomes
 After completing this section, you will be able to:
 
-Articulate why authentication is critical for MCP servers and AI workflows.
-Set up and configure Entra ID authentication for both local and remote MCP server scenarios.
-Choose the appropriate client type (public or confidential) based on your server’s deployment.
-Implement secure coding practices, including token storage and role-based authorization.
-Confidently protect your MCP server and its tools from unauthorized access.
+- Articulate why authentication is critical for MCP servers and AI workflows.
+- Set up and configure Entra ID authentication for both local and remote MCP server scenarios.
+- Choose the appropriate client type (public or confidential) based on your server’s deployment.
+- Implement secure coding practices, including token storage and role-based authorization.
+- Confidently protect your MCP server and its tools from unauthorized access.
 
 ## What's next 
 
