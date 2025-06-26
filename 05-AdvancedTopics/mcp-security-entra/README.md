@@ -155,7 +155,8 @@ public async Task<string> AcquireTokenAsync()
     }
     catch (Exception ex)
     {
-        // Handle exceptions
+        _logger.LogError(ex, "An error occurred while acquiring the token.");
+        throw; // Optionally rethrow the exception for higher-level handling
     }
 }
 ```
