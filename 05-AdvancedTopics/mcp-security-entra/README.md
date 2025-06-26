@@ -281,7 +281,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
   if (name === ToolName.GET_USER_DETAILS) {
     if (!sessionToken) {
-      throw new Error("No authentication token provided");
+      throw new AuthenticationError("Authentication token is missing or invalid. Ensure the token is provided in the request context.");
     }
 
     // Get the Entra ID token from the session store
