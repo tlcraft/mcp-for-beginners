@@ -1,81 +1,82 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b1cffc51b82049ac3d5e88db0ff4a0a1",
-  "translation_date": "2025-06-13T00:56:29+00:00",
+  "original_hash": "b96f2864e0bcb6fae9b4926813c3feb1",
+  "translation_date": "2025-06-26T14:18:23+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "cs"
 }
 -->
-# Temas avanzados en MCP
+# Pokročilá témata v MCP
 
-Este capítulo está diseñado para cubrir una serie de temas avanzados en la implementación del Model Context Protocol (MCP), incluyendo integración multimodal, escalabilidad, mejores prácticas de seguridad e integración empresarial. Estos temas son fundamentales para construir aplicaciones MCP robustas y listas para producción que puedan satisfacer las demandas de los sistemas de IA modernos.
+Tato kapitola se věnuje řadě pokročilých témat v implementaci Model Context Protocol (MCP), včetně multimodální integrace, škálovatelnosti, osvědčených bezpečnostních postupů a integrace do podnikových systémů. Tato témata jsou klíčová pro vytváření robustních a produkčně připravených aplikací MCP, které dokážou splnit požadavky moderních AI systémů.
 
-## Resumen
+## Přehled
 
-Esta lección explora conceptos avanzados en la implementación del Model Context Protocol, enfocándose en la integración multimodal, escalabilidad, mejores prácticas de seguridad e integración empresarial. Estos temas son esenciales para construir aplicaciones MCP de nivel productivo que puedan manejar requisitos complejos en entornos empresariales.
+Tato lekce zkoumá pokročilé koncepty implementace Model Context Protocol, se zaměřením na multimodální integraci, škálovatelnost, bezpečnostní osvědčené postupy a podnikové integrace. Tato témata jsou nezbytná pro vytváření produkčních aplikací MCP, které zvládnou složité požadavky v podnikových prostředích.
 
-## Objetivos de aprendizaje
+## Výukové cíle
 
-Al finalizar esta lección, podrás:
+Na konci této lekce budete schopni:
 
-- Implementar capacidades multimodales dentro de frameworks MCP
-- Diseñar arquitecturas MCP escalables para escenarios de alta demanda
-- Aplicar mejores prácticas de seguridad alineadas con los principios de seguridad de MCP
-- Integrar MCP con sistemas y frameworks de IA empresariales
-- Optimizar el rendimiento y la confiabilidad en entornos de producción
+- Implementovat multimodální funkce v rámci MCP frameworků
+- Navrhnout škálovatelné MCP architektury pro scénáře s vysokou zátěží
+- Aplikovat bezpečnostní osvědčené postupy v souladu s bezpečnostními principy MCP
+- Integrovat MCP s podnikových AI systémy a frameworky
+- Optimalizovat výkon a spolehlivost v produkčním prostředí
 
-## Lecciones y proyectos de ejemplo
+## Lekce a ukázkové projekty
 
-| Link | Título | Descripción |
-|------|--------|-------------|
-| [5.1 Integration with Azure](./mcp-integration/README.md) | Integración con Azure | Aprende cómo integrar tu MCP Server en Azure |
-| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | Ejemplos MCP multimodal | Ejemplos para respuestas de audio, imagen y multimodal |
-| [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | Demo MCP OAuth2 | Aplicación minimalista en Spring Boot que muestra OAuth2 con MCP, tanto como Authorization como Resource Server. Demuestra emisión segura de tokens, endpoints protegidos, despliegue en Azure Container Apps e integración con API Management. |
-| [5.4 Root Contexts](./mcp-root-contexts/README.md) | Contextos raíz | Aprende más sobre contextos raíz y cómo implementarlos |
-| [5.5 Routing](./mcp-routing/README.md) | Enrutamiento | Aprende los diferentes tipos de enrutamiento |
-| [5.6 Sampling](./mcp-sampling/README.md) | Muestreo | Aprende a trabajar con muestreo |
-| [5.7 Scaling](./mcp-scaling/README.md) | Escalabilidad | Aprende sobre escalabilidad |
-| [5.8 Security](./mcp-security/README.md) | Seguridad | Asegura tu MCP Server |
-| [5.9 Web Search sample](./web-search-mcp/README.md) | Búsqueda web MCP | Servidor y cliente MCP en Python integrando SerpAPI para búsquedas web, noticias, productos y preguntas en tiempo real. Demuestra orquestación multi-herramienta, integración con APIs externas y manejo robusto de errores. |
-| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Streaming | La transmisión de datos en tiempo real se ha vuelto esencial en el mundo actual impulsado por datos, donde negocios y aplicaciones requieren acceso inmediato a la información para tomar decisiones oportunas. |
-| [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Búsqueda web | Cómo MCP transforma la búsqueda web en tiempo real proporcionando un enfoque estandarizado para la gestión de contexto entre modelos de IA, motores de búsqueda y aplicaciones. |
+| Odkaz | Název | Popis |
+|-------|-------|-------|
+| [5.1 Integration with Azure](./mcp-integration/README.md) | Integrace s Azure | Naučte se, jak integrovat váš MCP Server na Azure |
+| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | MCP multimodální ukázky | Ukázky pro audio, obraz a multimodální odpovědi |
+| [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 demo | Minimální Spring Boot aplikace ukazující OAuth2 s MCP, jak jako Authorization, tak Resource Server. Demonstruje bezpečné vydávání tokenů, chráněné endpointy, nasazení na Azure Container Apps a integraci s API Management. |
+| [5.4 Root Contexts](./mcp-root-contexts/README.md) | Root contexty | Více o root contextu a jak jej implementovat |
+| [5.5 Routing](./mcp-routing/README.md) | Směrování | Naučte se různé typy směrování |
+| [5.6 Sampling](./mcp-sampling/README.md) | Sampling | Naučte se pracovat se samplingem |
+| [5.7 Scaling](./mcp-scaling/README.md) | Škálování | Naučte se o škálování |
+| [5.8 Security](./mcp-security/README.md) | Bezpečnost | Zabezpečte svůj MCP Server |
+| [5.9 Web Search sample](./web-search-mcp/README.md) | Web Search MCP | Python MCP server a klient integrující SerpAPI pro vyhledávání na webu, v novinkách, produktech a Q&A v reálném čase. Ukazuje orchestrace více nástrojů, integraci externích API a robustní zpracování chyb. |
+| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Streaming | Streaming dat v reálném čase je dnes nezbytností, protože firmy a aplikace potřebují okamžitý přístup k informacím pro včasná rozhodnutí. |
+| [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Web Search | Jak MCP mění vyhledávání na webu v reálném čase tím, že poskytuje standardizovaný přístup ke správě kontextu napříč AI modely, vyhledávači a aplikacemi. |
+| [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID autentizace | Microsoft Entra ID nabízí robustní cloudové řešení pro správu identity a přístupu, které pomáhá zajistit, že s vaším MCP serverem mohou komunikovat pouze autorizovaní uživatelé a aplikace. |
 
-## Referencias adicionales
+## Další odkazy
 
-Para obtener la información más actualizada sobre temas avanzados de MCP, consulta:
-- [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
-- [GitHub Repository](https://github.com/modelcontextprotocol)
+Pro nejaktuálnější informace o pokročilých tématech MCP navštivte:
+- [MCP Dokumentace](https://modelcontextprotocol.io/)
+- [MCP Specifikace](https://spec.modelcontextprotocol.io/)
+- [GitHub Repozitář](https://github.com/modelcontextprotocol)
 
-## Puntos clave
+## Hlavní poznatky
 
-- Las implementaciones multimodales de MCP amplían las capacidades de IA más allá del procesamiento de texto
-- La escalabilidad es esencial para despliegues empresariales y puede abordarse mediante escalado horizontal y vertical
-- Las medidas de seguridad integrales protegen los datos y garantizan un control de acceso adecuado
-- La integración empresarial con plataformas como Azure OpenAI y Microsoft AI Foundry potencia las capacidades de MCP
-- Las implementaciones avanzadas de MCP se benefician de arquitecturas optimizadas y una gestión cuidadosa de recursos
+- Multimodální implementace MCP rozšiřují schopnosti AI za hranice zpracování textu
+- Škálovatelnost je klíčová pro podniková nasazení a řeší se horizontálním i vertikálním škálováním
+- Komplexní bezpečnostní opatření chrání data a zajišťují správnou kontrolu přístupu
+- Podniková integrace s platformami jako Azure OpenAI a Microsoft AI Foundry rozšiřuje možnosti MCP
+- Pokročilé implementace MCP těží z optimalizovaných architektur a pečlivého řízení zdrojů
 
-## Ejercicio
+## Cvičení
 
-Diseña una implementación MCP de nivel empresarial para un caso de uso específico:
+Navrhněte podnikové řešení MCP pro konkrétní případ použití:
 
-1. Identifica los requisitos multimodales para tu caso de uso
-2. Describe los controles de seguridad necesarios para proteger datos sensibles
-3. Diseña una arquitectura escalable que pueda manejar cargas variables
-4. Planifica los puntos de integración con sistemas de IA empresariales
-5. Documenta posibles cuellos de botella en el rendimiento y estrategias de mitigación
+1. Identifikujte multimodální požadavky pro váš případ použití
+2. Nastavte bezpečnostní opatření pro ochranu citlivých dat
+3. Navrhněte škálovatelnou architekturu, která zvládne proměnlivou zátěž
+4. Naplánujte integrační body s podnikových AI systémy
+5. Zdokumentujte možné výkonnostní úzká místa a strategie jejich řešení
 
-## Recursos adicionales
+## Další zdroje
 
-- [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
+- [Azure OpenAI Dokumentace](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Microsoft AI Foundry Dokumentace](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
-## Qué sigue
+## Co bude dál
 
-- [5.1 MCP Integration](./mcp-integration/README.md)
+- [5.1 MCP Integrace](./mcp-integration/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vzniklé použitím tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje využít profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo chybné výklady vyplývající z použití tohoto překladu.

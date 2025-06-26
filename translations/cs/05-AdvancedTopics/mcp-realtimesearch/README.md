@@ -1,45 +1,45 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "16bef2c93c6a86d4ca6a8ce9e120e384",
-  "translation_date": "2025-06-13T03:00:01+00:00",
+  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
+  "translation_date": "2025-06-26T14:19:06+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "cs"
 }
 -->
-## Code Examples Disclaimer
+## Prohlášení o příkladech kódu
 
-> **Important Note**: Následující ukázky kódu demonstrují integraci Model Context Protocol (MCP) s funkcionalitou webového vyhledávání. I když dodržují vzory a struktury oficiálních MCP SDK, byly zjednodušeny pro výukové účely.
+> **Důležitá poznámka**: Níže uvedené příklady kódu demonstrují integraci Model Context Protocolu (MCP) s funkcionalitou webového vyhledávání. I když vycházejí ze vzorů a struktur oficiálních MCP SDK, byly zjednodušeny pro vzdělávací účely.
 > 
 > Tyto příklady ukazují:
 > 
-> 1. **Implementaci v Pythonu**: Server FastMCP, který poskytuje nástroj pro webové vyhledávání a připojuje se k externímu vyhledávacímu API. Tento příklad demonstruje správu životního cyklu, práci s kontextem a implementaci nástrojů podle vzorů [oficiálního MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk). Server využívá doporučený transport Streamable HTTP, který nahradil starší SSE transport pro produkční nasazení.
+> 1. **Implementaci v Pythonu**: Implementaci serveru FastMCP, který poskytuje nástroj pro webové vyhledávání a připojuje se k externímu vyhledávacímu API. Tento příklad demonstruje správu životního cyklu, práci s kontextem a implementaci nástroje podle vzorů z [oficiálního MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk). Server využívá doporučený transport Streamable HTTP, který nahradil starší SSE transport pro produkční nasazení.
 > 
-> 2. **Implementaci v JavaScriptu**: Implementaci v TypeScript/JavaScriptu podle vzoru FastMCP z [oficiálního MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) pro vytvoření vyhledávacího serveru s definicemi nástrojů a klientskými připojeními. Následuje nejnovější doporučené postupy pro správu relací a uchování kontextu.
+> 2. **Implementaci v JavaScriptu**: Implementaci v TypeScriptu/JavaScriptu využívající vzor FastMCP z [oficiálního MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) k vytvoření vyhledávacího serveru s řádnou definicí nástrojů a klientských připojení. Následuje nejnovější doporučené postupy pro správu relací a zachování kontextu.
 > 
-> Tyto příklady by v produkčním prostředí vyžadovaly další zpracování chyb, autentizaci a specifickou integraci s API. Ukázkové koncové body vyhledávacího API (`https://api.search-service.example/search`) jsou zástupné a měly by být nahrazeny skutečnými službami.
+> Tyto příklady by pro produkční použití vyžadovaly doplnění o zpracování chyb, autentizaci a specifickou integraci s API. Zobrazené koncové body vyhledávacího API (`https://api.search-service.example/search`) jsou zástupné a měly by být nahrazeny skutečnými koncovými body vyhledávacích služeb.
 > 
-> Pro kompletní detaily implementace a nejaktuálnější postupy navštivte [oficiální MCP specifikaci](https://spec.modelcontextprotocol.io/) a dokumentaci SDK.
+> Pro kompletní detaily implementace a nejaktuálnější přístupy prosím odkazujte na [oficiální specifikaci MCP](https://spec.modelcontextprotocol.io/) a dokumentaci SDK.
 
-## Core Concepts
+## Základní koncepty
 
-### The Model Context Protocol (MCP) Framework
+### Rámec Model Context Protocol (MCP)
 
-Základním kamenem Model Context Protocol je standardizovaný způsob výměny kontextu mezi AI modely, aplikacemi a službami. V reálném čase webového vyhledávání je tento rámec nezbytný pro tvorbu koherentních, vícekrokových vyhledávacích zkušeností. Klíčové komponenty zahrnují:
+Model Context Protocol poskytuje standardizovaný způsob, jak si AI modely, aplikace a služby vyměňují kontext. V reálném čase při webovém vyhledávání je tento rámec nezbytný pro tvorbu koherentních vícetahových vyhledávacích zážitků. Klíčové komponenty zahrnují:
 
 1. **Architektura klient-server**: MCP jasně odděluje vyhledávací klienty (žadatele) a vyhledávací servery (poskytovatele), což umožňuje flexibilní modely nasazení.
 
-2. **Komunikace JSON-RPC**: Pro výměnu zpráv protokol používá JSON-RPC, což jej činí kompatibilním s webovými technologiemi a snadno implementovatelným na různých platformách.
+2. **Komunikace JSON-RPC**: Pro výměnu zpráv používá protokol JSON-RPC, což zajišťuje kompatibilitu s webovými technologiemi a snadnou implementaci na různých platformách.
 
-3. **Správa kontextu**: MCP definuje strukturované metody pro udržování, aktualizaci a využití vyhledávacího kontextu napříč více interakcemi.
+3. **Správa kontextu**: MCP definuje strukturované metody pro udržování, aktualizaci a využívání vyhledávacího kontextu během více interakcí.
 
-4. **Definice nástrojů**: Vyhledávací schopnosti jsou vystaveny jako standardizované nástroje s dobře definovanými parametry a návratovými hodnotami.
+4. **Definice nástrojů**: Vyhledávací schopnosti jsou zpřístupněny jako standardizované nástroje s jasně definovanými parametry a návratovými hodnotami.
 
-5. **Podpora streamování**: Protokol podporuje streamování výsledků, což je klíčové pro vyhledávání v reálném čase, kde výsledky mohou přicházet postupně.
+5. **Podpora streamování**: Protokol podporuje streamování výsledků, což je klíčové pro reálné vyhledávání, kde výsledky mohou přicházet postupně.
 
-### Web Search Integration Patterns
+### Vzory integrace webového vyhledávání
 
-Při integraci MCP s webovým vyhledáváním se objevují následující vzory:
+Při integraci MCP s webovým vyhledáváním se objevuje několik vzorů:
 
 #### 1. Přímá integrace poskytovatele vyhledávání
 
@@ -51,7 +51,7 @@ graph LR
     Server --> |MCP Response| Client
 ```
 
-V tomto vzoru MCP server přímo komunikuje s jedním nebo více vyhledávacími API, převádí MCP požadavky na specifické API volání a formátuje výsledky jako MCP odpovědi.
+V tomto vzoru MCP server přímo komunikuje s jedním nebo více vyhledávacími API, překládá MCP požadavky do API specifických volání a formátuje výsledky jako MCP odpovědi.
 
 #### 2. Federované vyhledávání s uchováním kontextu
 
@@ -67,9 +67,9 @@ graph LR
     Federation --> |Aggregated MCP Response| Client
 ```
 
-Tento vzor rozděluje vyhledávací dotazy mezi více MCP-kompatibilních poskytovatelů vyhledávání, z nichž každý se může specializovat na jiný typ obsahu nebo vyhledávací schopnosti, přičemž zachovává jednotný kontext.
+Tento vzor rozděluje vyhledávací dotazy mezi více MCP-kompatibilních poskytovatelů vyhledávání, z nichž každý může být specializovaný na různé typy obsahu nebo vyhledávací schopnosti, přičemž se zachovává jednotný kontext.
 
-#### 3. Řetězec vyhledávání s obohaceným kontextem
+#### 3. Vyhledávací řetězec s rozšířeným kontextem
 
 ```mermaid
 graph LR
@@ -83,138 +83,138 @@ graph LR
     Server --> |Final Results + Updated Context| Client
 ```
 
-Ve tomto vzoru je vyhledávací proces rozdělen do několika fází, přičemž se kontext v každém kroku obohacuje, což vede k postupně relevantnějším výsledkům.
+V tomto vzoru je vyhledávací proces rozdělen do více fází, kdy je kontext na každém kroku obohacován, což vede k postupně relevantnějším výsledkům.
 
 ### Komponenty vyhledávacího kontextu
 
-V MCP založeném webovém vyhledávání kontext obvykle zahrnuje:
+V MCP založeném webovém vyhledávání obvykle kontext zahrnuje:
 
-- **Historie dotazů**: Předchozí vyhledávací dotazy v rámci relace
+- **Historii dotazů**: Předchozí vyhledávací dotazy v rámci relace
 - **Uživatelské preference**: Jazyk, region, nastavení bezpečného vyhledávání
-- **Historie interakcí**: Které výsledky byly kliknuty, čas strávený u výsledků
+- **Historii interakcí**: Které výsledky byly kliknuty, doba strávená u výsledků
 - **Parametry vyhledávání**: Filtry, řazení a další modifikátory vyhledávání
-- **Doménové znalosti**: Kontext specifický pro téma vyhledávání
+- **Doménové znalosti**: Kontext specifický pro dané téma vyhledávání
 - **Časový kontext**: Faktory relevance založené na čase
 - **Preference zdrojů**: Důvěryhodné nebo preferované informační zdroje
 
-## Use Cases and Applications
+## Případy použití a aplikace
 
 ### Výzkum a sběr informací
 
-MCP zlepšuje pracovní postupy výzkumu tím, že:
+MCP zlepšuje pracovní postupy ve výzkumu tím, že:
 
-- Zachovává kontext výzkumu napříč vyhledávacími relacemi
+- Uchovává kontext výzkumu napříč vyhledávacími relacemi
 - Umožňuje sofistikovanější a kontextově relevantní dotazy
-- Podporuje federované vyhledávání z více zdrojů
+- Podporuje federaci vyhledávání napříč více zdroji
 - Usnadňuje extrakci znalostí z výsledků vyhledávání
 
 ### Monitorování zpráv a trendů v reálném čase
 
-Vyhledávání s podporou MCP nabízí výhody pro sledování zpráv:
+Vyhledávání poháněné MCP nabízí výhody pro sledování zpráv:
 
 - Objevování nových zpráv téměř v reálném čase
 - Kontextové filtrování relevantních informací
-- Sledování témat a entit napříč více zdroji
-- Personalizovaná upozornění na zprávy na základě uživatelského kontextu
+- Sledování témat a entit napříč zdroji
+- Personalizovaná upozornění na zprávy založená na uživatelském kontextu
 
-### AI-rozšířené prohlížení a výzkum
+### Prohlížení a výzkum s podporou AI
 
-MCP otevírá nové možnosti pro AI-rozšířené prohlížení:
+MCP otevírá nové možnosti pro AI-podporované prohlížení:
 
-- Kontextové návrhy vyhledávání založené na aktuální aktivitě v prohlížeči
+- Kontextové návrhy vyhledávání na základě aktuální aktivity v prohlížeči
 - Bezproblémová integrace webového vyhledávání s asistenty poháněnými LLM
-- Vícekrokové upřesňování vyhledávání s udrženým kontextem
+- Víceotáčkové zpřesňování vyhledávání s udrženým kontextem
 - Vylepšená kontrola faktů a ověřování informací
 
-## Future Trends and Innovations
+## Budoucí trendy a inovace
 
 ### Vývoj MCP ve webovém vyhledávání
 
 Do budoucna očekáváme, že MCP bude řešit:
 
-- **Multimodální vyhledávání**: Integrace textového, obrazového, audio a video vyhledávání s uchovaným kontextem
+- **Multimodální vyhledávání**: Integrace textového, obrazového, audio a video vyhledávání se zachovaným kontextem
 - **Decentralizované vyhledávání**: Podpora distribuovaných a federovaných vyhledávacích ekosystémů
-- **Soukromí ve vyhledávání**: Kontextově uvědomělé mechanismy ochrany soukromí při vyhledávání
-- **Porozumění dotazům**: Hluboké sémantické zpracování přirozených jazykových dotazů
+- **Soukromí ve vyhledávání**: Kontextově uvědomělé mechanismy ochrany soukromí ve vyhledávání
+- **Porozumění dotazům**: Hluboké sémantické zpracování přirozených jazykových vyhledávacích dotazů
 
 ### Potenciální technologické pokroky
 
-Nové technologie, které budou formovat budoucnost MCP vyhledávání:
+Nové technologie, které ovlivní budoucnost MCP vyhledávání:
 
 1. **Neurální vyhledávací architektury**: Vyhledávací systémy založené na embedování optimalizované pro MCP
-2. **Personalizovaný vyhledávací kontext**: Učení individuálních vzorců vyhledávání uživatele v čase
-3. **Integrace znalostních grafů**: Kontextové vyhledávání obohacené o doménově specifické znalostní grafy
-4. **Křížový multimodální kontext**: Uchovávání kontextu napříč různými vyhledávacími modalitami
+2. **Personalizovaný vyhledávací kontext**: Učení se individuálním vzorcům vyhledávání uživatele v čase
+3. **Integrace znalostních grafů**: Kontextové vyhledávání vylepšené o doménově specifické znalostní grafy
+4. **Křížově modalitní kontext**: Udržování kontextu napříč různými modalitami vyhledávání
 
-## Hands-On Exercises
+## Praktická cvičení
 
 ### Cvičení 1: Nastavení základního MCP vyhledávacího pipeline
 
 V tomto cvičení se naučíte:
 - Konfigurovat základní MCP vyhledávací prostředí
 - Implementovat správce kontextu pro webové vyhledávání
-- Testovat a ověřovat uchování kontextu napříč vyhledávacími iteracemi
+- Testovat a ověřovat zachování kontextu napříč vyhledávacími iteracemi
 
 ### Cvičení 2: Vytvoření výzkumného asistenta s MCP vyhledáváním
 
 Vytvořte kompletní aplikaci, která:
-- Zpracovává přirozeně jazykové výzkumné dotazy
+- Zpracovává výzkumné otázky v přirozeném jazyce
 - Provádí kontextově uvědomělé webové vyhledávání
 - Syntetizuje informace z více zdrojů
-- Prezentuje organizované výsledky výzkumu
+- Prezentuje uspořádané výsledky výzkumu
 
-### Cvičení 3: Implementace federovaného vyhledávání z více zdrojů s MCP
+### Cvičení 3: Implementace federace vyhledávání napříč více zdroji s MCP
 
-Pokročilé cvičení zahrnující:
-- Kontextově uvědomělé směrování dotazů do více vyhledávačů
+Pokročilé cvičení pokrývající:
+- Kontextově uvědomělé rozesílání dotazů do více vyhledávačů
 - Řazení a agregaci výsledků
-- Kontextové odstraňování duplicit ve výsledcích
-- Zpracování metadat specifických pro zdroje
+- Kontextové odstraňování duplicit ve výsledcích vyhledávání
+- Zpracování metadat specifických pro jednotlivé zdroje
 
-## Additional Resources
+## Další zdroje
 
-- [Model Context Protocol Specification](https://spec.modelcontextprotocol.io/) - Oficiální MCP specifikace a detailní dokumentace protokolu
+- [Model Context Protocol Specification](https://spec.modelcontextprotocol.io/) - Oficiální specifikace MCP a podrobná dokumentace protokolu
 - [Model Context Protocol Documentation](https://modelcontextprotocol.io/) - Podrobné tutoriály a průvodce implementací
 - [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Oficiální Python implementace MCP protokolu
 - [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Oficiální TypeScript implementace MCP protokolu
 - [MCP Reference Servers](https://github.com/modelcontextprotocol/servers) - Referenční implementace MCP serverů
 - [Bing Web Search API Documentation](https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview) - Microsoft API pro webové vyhledávání
-- [Google Custom Search JSON API](https://developers.google.com/custom-search/v1/overview) - Programovatelné vyhledávání Google
-- [SerpAPI Documentation](https://serpapi.com/search-api) - API výsledků vyhledávačů
+- [Google Custom Search JSON API](https://developers.google.com/custom-search/v1/overview) - Google programovatelné vyhledávání
+- [SerpAPI Documentation](https://serpapi.com/search-api) - API pro výsledky vyhledávačů
 - [Meilisearch Documentation](https://www.meilisearch.com/docs) - Open-source vyhledávací engine
 - [Elasticsearch Documentation](https://www.elastic.co/guide/index.html) - Distribuovaný vyhledávací a analytický engine
-- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Budování aplikací s LLM
+- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Tvorba aplikací s LLM
 
-## Learning Outcomes
+## Výsledky učení
 
 Po dokončení tohoto modulu budete schopni:
 
-- Pochopit základy reálného času webového vyhledávání a jeho výzvy
-- Vysvětlit, jak Model Context Protocol (MCP) zlepšuje schopnosti reálného času webového vyhledávání
+- Pochopit základy reálného webového vyhledávání a jeho výzvy
+- Vysvětlit, jak Model Context Protocol (MCP) zlepšuje schopnosti reálného webového vyhledávání
 - Implementovat MCP založená vyhledávací řešení s využitím populárních frameworků a API
-- Navrhovat a nasazovat škálovatelné, vysoce výkonné vyhledávací architektury s MCP
-- Aplikovat koncepty MCP v různých případech použití včetně sémantického vyhledávání, asistence při výzkumu a AI-rozšířeného prohlížení
+- Navrhnout a nasadit škálovatelné, vysoce výkonné vyhledávací architektury s MCP
+- Aplikovat koncepty MCP na různé případy použití včetně sémantického vyhledávání, výzkumné asistence a AI-podporovaného prohlížení
 - Hodnotit nové trendy a budoucí inovace v MCP založených vyhledávacích technologiích
 
-### Trust and Safety Considerations
+### Úvahy o důvěře a bezpečnosti
 
-Při implementaci MCP založených webových vyhledávacích řešení mějte na paměti následující důležité zásady z MCP specifikace:
+Při implementaci MCP založených webových vyhledávacích řešení mějte na paměti tyto důležité zásady ze specifikace MCP:
 
 1. **Souhlas a kontrola uživatele**: Uživatelé musí výslovně souhlasit a rozumět všem přístupům k datům a operacím. To je zvláště důležité u implementací webového vyhledávání, které mohou přistupovat k externím zdrojům dat.
 
-2. **Ochrana soukromí dat**: Zajistěte odpovídající nakládání s vyhledávacími dotazy a výsledky, zvláště pokud mohou obsahovat citlivé informace. Implementujte adekvátní přístupové kontroly k ochraně uživatelských dat.
+2. **Ochrana soukromí dat**: Zajistěte vhodné zacházení s vyhledávacími dotazy a výsledky, zejména pokud mohou obsahovat citlivé informace. Implementujte odpovídající přístupová omezení k ochraně uživatelských dat.
 
-3. **Bezpečnost nástrojů**: Implementujte správnou autorizaci a validaci pro vyhledávací nástroje, protože představují potenciální bezpečnostní riziko skrze spuštění libovolného kódu. Popisy chování nástrojů by měly být považovány za nedůvěryhodné, pokud nejsou získány z důvěryhodného serveru.
+3. **Bezpečnost nástrojů**: Implementujte správné ověřování a validaci vyhledávacích nástrojů, protože představují potenciální bezpečnostní rizika kvůli možnosti spuštění libovolného kódu. Popisy chování nástrojů by měly být považovány za nedůvěryhodné, pokud nejsou získány z důvěryhodného serveru.
 
-4. **Jasná dokumentace**: Poskytněte jasnou dokumentaci o schopnostech, omezeních a bezpečnostních aspektech vaší MCP založené vyhledávací implementace v souladu s pokyny MCP specifikace.
+4. **Jasná dokumentace**: Poskytněte jasnou dokumentaci o schopnostech, omezeních a bezpečnostních aspektech vaší MCP založené implementace vyhledávání, v souladu s implementačními pokyny ze specifikace MCP.
 
-5. **Robustní procesy souhlasu**: Vytvořte robustní procesy souhlasu a autorizace, které jasně vysvětlují, co každý nástroj dělá, než povolíte jeho použití, zejména pro nástroje, které komunikují s externími webovými zdroji.
+5. **Robustní procesy souhlasu**: Vytvořte robustní procesy souhlasu a autorizace, které jasně vysvětlují, co každý nástroj dělá před jeho povolením k použití, zejména u nástrojů interagujících s externími webovými zdroji.
 
-Pro úplné informace o bezpečnosti a důvěře v MCP navštivte [oficiální dokumentaci](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).
+Pro úplné informace o bezpečnosti a důvěře MCP navštivte [oficiální dokumentaci](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).
 
-## What's next 
+## Co dál
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.11 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědni za jakékoli nedorozumění nebo chybné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

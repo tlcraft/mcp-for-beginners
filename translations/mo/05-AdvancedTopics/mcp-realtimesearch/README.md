@@ -1,47 +1,47 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "16bef2c93c6a86d4ca6a8ce9e120e384",
-  "translation_date": "2025-06-13T02:37:48+00:00",
+  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
+  "translation_date": "2025-06-26T13:42:59+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "mo"
 }
 -->
-## Code Examples Disclaimer
+## 程式碼範例免責聲明
 
-> **Important Note**: The code examples below demonstrate the integration of the Model Context Protocol (MCP) with web search functionality. While they follow the patterns and structures of the official MCP SDKs, they have been simplified for educational purposes.
+> **重要提醒**：以下程式碼範例展示了如何將 Model Context Protocol (MCP) 與網路搜尋功能整合。雖然這些範例遵循官方 MCP SDK 的架構與結構，但為了教學目的已做簡化。
 > 
-> These examples showcase:
+> 這些範例包含：
 > 
-> 1. **Python Implementation**: A FastMCP server implementation that provides a web search tool and connects to an external search API. This example demonstrates proper lifespan management, context handling, and tool implementation following the patterns of the [official MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk). The server utilizes the recommended Streamable HTTP transport which has superseded the older SSE transport for production deployments.
+> 1. **Python 實作**：使用 FastMCP 伺服器提供網路搜尋工具，並連接外部搜尋 API。此範例展示了正確的生命週期管理、上下文處理以及工具實作，遵循[官方 MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk)的模式。伺服器採用推薦的 Streamable HTTP 傳輸方式，已取代舊有的 SSE 傳輸，更適合生產環境部署。
 > 
-> 2. **JavaScript Implementation**: A TypeScript/JavaScript implementation using the FastMCP pattern from the [official MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) to create a search server with proper tool definitions and client connections. It follows the latest recommended patterns for session management and context preservation.
+> 2. **JavaScript 實作**：利用 FastMCP 模式，基於[官方 MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)開發的 TypeScript/JavaScript 搜尋伺服器，包含完善的工具定義與用戶端連線，符合最新的會話管理與上下文保存建議。
 > 
-> These examples would require additional error handling, authentication, and specific API integration code for production use. The search API endpoints shown (`https://api.search-service.example/search`) are placeholders and would need to be replaced with actual search service endpoints.
+> 這些範例在生產環境中仍需補充錯誤處理、認證機制及特定 API 整合程式碼。範例中使用的搜尋 API 端點（`https://api.search-service.example/search`）僅為示意，需替換成實際的搜尋服務端點。
 > 
-> For complete implementation details and the most up-to-date approaches, please refer to the [official MCP specification](https://spec.modelcontextprotocol.io/) and SDK documentation.
+> 有關完整實作細節與最新作法，請參考[官方 MCP 規範](https://spec.modelcontextprotocol.io/)與 SDK 文件。
 
-## Core Concepts
+## 核心概念
 
-### The Model Context Protocol (MCP) Framework
+### Model Context Protocol (MCP) 框架
 
-At its foundation, the Model Context Protocol provides a standardized way for AI models, applications, and services to exchange context. In real-time web search, this framework is essential for creating coherent, multi-turn search experiences. Key components include:
+MCP 的核心是提供一套標準化方式，讓 AI 模型、應用程式與服務之間能交換上下文。在即時網路搜尋中，此框架對於打造連貫的多輪搜尋體驗至關重要。主要組件包括：
 
-1. **Client-Server Architecture**: MCP establishes a clear separation between search clients (requesters) and search servers (providers), allowing for flexible deployment models.
+1. **客戶端-伺服器架構**：MCP 明確區分搜尋客戶端（請求端）與搜尋伺服器（提供端），支持彈性部署模式。
 
-2. **JSON-RPC Communication**: The protocol uses JSON-RPC for message exchange, making it compatible with web technologies and easy to implement across different platforms.
+2. **JSON-RPC 通訊**：協議採用 JSON-RPC 進行訊息交換，與網路技術相容，且易於跨平台實作。
 
-3. **Context Management**: MCP defines structured methods for maintaining, updating, and leveraging search context across multiple interactions.
+3. **上下文管理**：MCP 定義結構化方法以維護、更新並利用多次互動中的搜尋上下文。
 
-4. **Tool Definitions**: Search capabilities are exposed as standardized tools with well-defined parameters and return values.
+4. **工具定義**：將搜尋功能以標準化工具形式暴露，具備明確參數與回傳值。
 
-5. **Streaming Support**: The protocol supports streaming results, essential for real-time search where results may arrive progressively.
+5. **串流支援**：協議支援串流結果，適合即時搜尋中結果逐步到達的需求。
 
-### Web Search Integration Patterns
+### 網路搜尋整合模式
 
-When integrating MCP with web search, several patterns emerge:
+整合 MCP 與網路搜尋時，會出現以下幾種模式：
 
-#### 1. Direct Search Provider Integration
+#### 1. 直接搜尋提供者整合
 
 ```mermaid
 graph LR
@@ -51,9 +51,9 @@ graph LR
     Server --> |MCP Response| Client
 ```
 
-In this pattern, the MCP server directly interfaces with one or more search APIs, translating MCP requests into API-specific calls and formatting the results as MCP responses.
+此模式中，MCP 伺服器直接與一個或多個搜尋 API 介接，將 MCP 請求轉換為特定 API 呼叫，並將結果格式化為 MCP 回應。
 
-#### 2. Federated Search with Context Preservation
+#### 2. 保留上下文的聯合搜尋
 
 ```mermaid
 graph LR
@@ -67,9 +67,9 @@ graph LR
     Federation --> |Aggregated MCP Response| Client
 ```
 
-This pattern distributes search queries across multiple MCP-compatible search providers, each potentially specializing in different types of content or search capabilities, while maintaining a unified context.
+此模式將搜尋查詢分散給多個 MCP 相容的搜尋提供者，各自專注於不同內容類型或搜尋能力，同時維持統一的上下文。
 
-#### 3. Context-Enhanced Search Chain
+#### 3. 上下文強化的搜尋鏈
 
 ```mermaid
 graph LR
@@ -83,139 +83,138 @@ graph LR
     Server --> |Final Results + Updated Context| Client
 ```
 
-In this pattern, the search process is divided into multiple stages, with context being enriched at each step, resulting in progressively more relevant results.
+此模式將搜尋過程拆分為多個階段，每一步皆豐富上下文，逐步產出更相關的結果。
 
-### Search Context Components
+### 搜尋上下文組成
 
-In MCP-based web search, context typically includes:
+在基於 MCP 的網路搜尋中，上下文通常包含：
 
-- **Query History**: Previous search queries in the session
-- **User Preferences**: Language, region, safe search settings
-- **Interaction History**: Which results were clicked, time spent on results
-- **Search Parameters**: Filters, sort orders, and other search modifiers
-- **Domain Knowledge**: Subject-specific context relevant to the search
-- **Temporal Context**: Time-based relevance factors
-- **Source Preferences**: Trusted or preferred information sources
+- **查詢歷史**：會話中的先前搜尋查詢
+- **使用者偏好**：語言、區域、安全搜尋設定
+- **互動歷史**：點擊過的結果、停留時間
+- **搜尋參數**：篩選條件、排序方式等搜尋修飾
+- **領域知識**：與搜尋主題相關的專業上下文
+- **時間上下文**：基於時間的相關性因素
+- **來源偏好**：信任或偏好的資訊來源
 
-## Use Cases and Applications
+## 使用案例與應用
 
-### Research and Information Gathering
+### 研究與資訊蒐集
 
-MCP enhances research workflows by:
+MCP 強化研究流程，透過：
 
-- Preserving research context across search sessions
-- Enabling more sophisticated and contextually relevant queries
-- Supporting multi-source search federation
-- Facilitating knowledge extraction from search results
+- 保留跨搜尋會話的研究上下文
+- 支援更複雜且具上下文相關性的查詢
+- 支援多來源搜尋聯合
+- 促進從搜尋結果中萃取知識
 
-### Real-Time News and Trend Monitoring
+### 即時新聞與趨勢監控
 
-MCP-powered search offers advantages for news monitoring:
+MCP 驅動的搜尋在新聞監控上有以下優勢：
 
-- Near-real-time discovery of emerging news stories
-- Contextual filtering of relevant information
-- Topic and entity tracking across multiple sources
-- Personalized news alerts based on user context
+- 近乎即時發現新興新聞事件
+- 依據上下文過濾相關資訊
+- 跨多來源追蹤主題與實體
+- 基於使用者上下文的個人化新聞提醒
 
-### AI-Augmented Browsing and Research
+### AI 增強瀏覽與研究
 
-MCP creates new possibilities for AI-augmented browsing:
+MCP 為 AI 增強瀏覽創造新可能：
 
-- Contextual search suggestions based on current browser activity
-- Seamless integration of web search with LLM-powered assistants
-- Multi-turn search refinement with maintained context
-- Enhanced fact-checking and information verification
+- 根據當前瀏覽活動提供上下文搜尋建議
+- 與大型語言模型助理無縫整合網路搜尋
+- 保持上下文的多輪搜尋優化
+- 強化事實查證與資訊驗證
 
-## Future Trends and Innovations
+## 未來趨勢與創新
 
-### Evolution of MCP in Web Search
+### MCP 在網路搜尋的演進
 
-Looking ahead, we anticipate MCP evolving to address:
+展望未來，預期 MCP 將進一步涵蓋：
 
-- **Multimodal Search**: Integrating text, image, audio, and video search with preserved context
-- **Decentralized Search**: Supporting distributed and federated search ecosystems
-- **Search Privacy**: Context-aware privacy-preserving search mechanisms
-- **Query Understanding**: Deep semantic parsing of natural language search queries
+- **多模態搜尋**：整合文字、影像、音訊與影片搜尋，並保留上下文
+- **去中心化搜尋**：支持分散式與聯合搜尋生態系統
+- **搜尋隱私**：具上下文感知的隱私保護搜尋機制
+- **查詢理解**：深入語意解析自然語言搜尋查詢
 
-### Potential Advancements in Technology
+### 潛在技術進展
 
-Emerging technologies that will shape the future of MCP search:
+將影響 MCP 搜尋未來的技術包括：
 
-1. **Neural Search Architectures**: Embedding-based search systems optimized for MCP
-2. **Personalized Search Context**: Learning individual user search patterns over time
-3. **Knowledge Graph Integration**: Contextual search enhanced by domain-specific knowledge graphs
-4. **Cross-Modal Context**: Maintaining context across different search modalities
+1. **神經搜尋架構**：基於嵌入向量優化的 MCP 搜尋系統
+2. **個人化搜尋上下文**：隨時間學習使用者搜尋模式
+3. **知識圖譜整合**：利用領域知識圖譜強化上下文搜尋
+4. **跨模態上下文**：維持不同搜尋模態間的上下文連貫性
 
-## Hands-On Exercises
+## 實作練習
 
-### Exercise 1: Setting Up a Basic MCP Search Pipeline
+### 練習 1：設定基本 MCP 搜尋管線
 
-In this exercise, you'll learn how to:
-- Configure a basic MCP search environment
-- Implement context handlers for web search
-- Test and validate context preservation across search iterations
+本練習將教你如何：
+- 配置基本的 MCP 搜尋環境
+- 實作網路搜尋的上下文處理器
+- 測試並驗證搜尋迭代間的上下文保存
 
-### Exercise 2: Building a Research Assistant with MCP Search
+### 練習 2：打造 MCP 搜尋的研究助理
 
-Create a complete application that:
-- Processes natural language research questions
-- Performs context-aware web searches
-- Synthesizes information from multiple sources
-- Presents organized research findings
+建立完整應用程式，能：
+- 處理自然語言研究問題
+- 執行具上下文感知的網路搜尋
+- 從多來源綜合資訊
+- 呈現有條理的研究成果
 
-### Exercise 3: Implementing Multi-Source Search Federation with MCP
+### 練習 3：實作 MCP 多來源搜尋聯合
 
-Advanced exercise covering:
-- Context-aware query dispatching to multiple search engines
-- Result ranking and aggregation
-- Contextual deduplication of search results
-- Handling source-specific metadata
+進階練習涵蓋：
+- 具上下文感知的查詢分派給多個搜尋引擎
+- 結果排名與彙整
+- 上下文重複結果去除
+- 處理來源特定的元資料
 
-## Additional Resources
+## 附加資源
 
-- [Model Context Protocol Specification](https://spec.modelcontextprotocol.io/) - Official MCP specification and detailed protocol documentation
-- [Model Context Protocol Documentation](https://modelcontextprotocol.io/) - Detailed tutorials and implementation guides
-- [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Official Python implementation of the MCP protocol
-- [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Official TypeScript implementation of the MCP protocol
-- [MCP Reference Servers](https://github.com/modelcontextprotocol/servers) - Reference implementations of MCP servers
-- [Bing Web Search API Documentation](https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview) - Microsoft's web search API
-- [Google Custom Search JSON API](https://developers.google.com/custom-search/v1/overview) - Google's programmable search engine
-- [SerpAPI Documentation](https://serpapi.com/search-api) - Search engine results page API
-- [Meilisearch Documentation](https://www.meilisearch.com/docs) - Open-source search engine
-- [Elasticsearch Documentation](https://www.elastic.co/guide/index.html) - Distributed search and analytics engine
-- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Building applications with LLMs
+- [Model Context Protocol 規範](https://spec.modelcontextprotocol.io/) - 官方 MCP 規範與詳細協議文件
+- [Model Context Protocol 文件](https://modelcontextprotocol.io/) - 詳細教學與實作指南
+- [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) - 官方 MCP Python 實作
+- [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - 官方 MCP TypeScript 實作
+- [MCP 參考伺服器](https://github.com/modelcontextprotocol/servers) - MCP 伺服器參考實作
+- [Bing Web Search API 文件](https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview) - 微軟網路搜尋 API
+- [Google Custom Search JSON API](https://developers.google.com/custom-search/v1/overview) - Google 可程式化搜尋引擎
+- [SerpAPI 文件](https://serpapi.com/search-api) - 搜尋引擎結果頁 API
+- [Meilisearch 文件](https://www.meilisearch.com/docs) - 開源搜尋引擎
+- [Elasticsearch 文件](https://www.elastic.co/guide/index.html) - 分散式搜尋與分析引擎
+- [LangChain 文件](https://python.langchain.com/docs/get_started/introduction) - 建構大型語言模型應用
 
-## Learning Outcomes
+## 學習成果
 
-By completing this module, you will be able to:
+完成本單元後，你將能夠：
 
-- Understand the fundamentals of real-time web search and its challenges
-- Explain how the Model Context Protocol (MCP) enhances real-time web search capabilities
-- Implement MCP-based search solutions using popular frameworks and APIs
-- Design and deploy scalable, high-performance search architectures with MCP
-- Apply MCP concepts to various use cases including semantic search, research assistance, and AI-augmented browsing
-- Evaluate emerging trends and future innovations in MCP-based search technologies
+- 了解即時網路搜尋的基礎與挑戰
+- 解釋 Model Context Protocol (MCP) 如何強化即時網路搜尋能力
+- 使用主流框架與 API 實作基於 MCP 的搜尋解決方案
+- 設計並部署具擴展性、高效能的 MCP 搜尋架構
+- 將 MCP 概念應用於語意搜尋、研究助理與 AI 增強瀏覽等多種使用場景
+- 評估 MCP 搜尋技術的最新趨勢與未來創新
 
+### 信任與安全考量
 
-### Trust and Safety Considerations
+實作基於 MCP 的網路搜尋解決方案時，請遵守 MCP 規範中的重要原則：
 
-When implementing MCP-based web search solutions, remember these important principles from the MCP specification:
+1. **用戶同意與控制**：用戶必須明確同意並理解所有資料存取與操作，尤其是涉及外部資料來源的搜尋實作。
 
-1. **User Consent and Control**: Users must explicitly consent to and understand all data access and operations. This is particularly important for web search implementations that may access external data sources.
+2. **資料隱私**：妥善處理搜尋查詢與結果，特別是可能包含敏感資訊時，實施適當的存取控制以保護用戶資料。
 
-2. **Data Privacy**: Ensure appropriate handling of search queries and results, especially when they might contain sensitive information. Implement appropriate access controls to protect user data.
+3. **工具安全**：搜尋工具可能帶來任意程式碼執行的安全風險，必須實作適當授權與驗證。除非來自受信任伺服器，否則工具行為描述不應被信任。
 
-3. **Tool Safety**: Implement proper authorization and validation for search tools, as they represent potential security risks through arbitrary code execution. Descriptions of tool behavior should be considered untrusted unless obtained from a trusted server.
+4. **清晰文件**：提供明確的文件說明 MCP 搜尋實作的功能、限制與安全考量，遵循 MCP 規範的實作指引。
 
-4. **Clear Documentation**: Provide clear documentation about the capabilities, limitations, and security considerations of your MCP-based search implementation, following the implementation guidelines from the MCP specification.
+5. **完善同意流程**：建立健全的同意與授權流程，清楚解釋每個工具的用途，特別是與外部網路資源互動的工具。
 
-5. **Robust Consent Flows**: Build robust consent and authorization flows that clearly explain what each tool does before authorizing its use, especially for tools that interact with external web resources.
+關於 MCP 安全與信任考量的完整細節，請參閱[官方文件](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety)。
 
-For complete details on MCP security and trust considerations, refer to the [official documentation](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).
+## 接下來的內容
 
-## What's next 
+- [5.11 Model Context Protocol 伺服器的 Entra ID 認證](../mcp-security-entra/README.md)
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
-
-**Disclaimer**:  
-Dis document haz been translatid usin AI translatshun servis [Co-op Translator](https://github.com/Azure/co-op-translator). Whil we striv for accurasi, pleez be awar dat automatid translatshuns may contain errors or inakuracis. Di orijinal document in its native langwij shud be konsiderd di authoritativ sours. For kritikall informashun, profeshunal human translatshun is rekomended. We ar not laybl for eni misunderstandings or misinterpretashuns arising from di yus of dis translatshun.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議使用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

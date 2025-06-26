@@ -1,81 +1,82 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b1cffc51b82049ac3d5e88db0ff4a0a1",
-  "translation_date": "2025-06-13T00:36:22+00:00",
+  "original_hash": "b96f2864e0bcb6fae9b4926813c3feb1",
+  "translation_date": "2025-06-26T14:13:27+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "ms"
 }
 -->
-# موضوعات پیشرفته در MCP
+# Topik Lanjutan dalam MCP
 
-این فصل به بررسی مجموعه‌ای از موضوعات پیشرفته در پیاده‌سازی Model Context Protocol (MCP) می‌پردازد، از جمله یکپارچه‌سازی چندرسانه‌ای، مقیاس‌پذیری، بهترین روش‌های امنیتی و یکپارچه‌سازی سازمانی. این موضوعات برای ساخت برنامه‌های MCP مقاوم و آماده برای تولید که بتوانند نیازهای سیستم‌های مدرن هوش مصنوعی را برآورده کنند، حیاتی هستند.
+Bab ini bertujuan untuk membincangkan beberapa topik lanjutan dalam pelaksanaan Model Context Protocol (MCP), termasuk integrasi multi-modal, skalabiliti, amalan terbaik keselamatan, dan integrasi perusahaan. Topik-topik ini penting untuk membina aplikasi MCP yang kukuh dan bersedia untuk pengeluaran yang dapat memenuhi keperluan sistem AI moden.
 
-## مرور کلی
+## Gambaran Keseluruhan
 
-این درس مفاهیم پیشرفته در پیاده‌سازی Model Context Protocol را بررسی می‌کند، با تمرکز بر یکپارچه‌سازی چندرسانه‌ای، مقیاس‌پذیری، بهترین روش‌های امنیتی و یکپارچه‌سازی سازمانی. این موضوعات برای ساخت برنامه‌های MCP با کیفیت تولید که قادر به مدیریت نیازهای پیچیده در محیط‌های سازمانی باشند، ضروری هستند.
+Pelajaran ini meneroka konsep lanjutan dalam pelaksanaan Model Context Protocol, dengan fokus pada integrasi multi-modal, skalabiliti, amalan terbaik keselamatan, dan integrasi perusahaan. Topik-topik ini penting untuk membina aplikasi MCP tahap produksi yang mampu menangani keperluan kompleks dalam persekitaran perusahaan.
 
-## اهداف یادگیری
+## Objektif Pembelajaran
 
-در پایان این درس، قادر خواهید بود:
+Pada akhir pelajaran ini, anda akan dapat:
 
-- قابلیت‌های چندرسانه‌ای را در چارچوب‌های MCP پیاده‌سازی کنید
-- معماری‌های مقیاس‌پذیر MCP را برای سناریوهای با تقاضای بالا طراحی کنید
-- بهترین روش‌های امنیتی مطابق با اصول امنیتی MCP را به کار ببرید
-- MCP را با سیستم‌ها و چارچوب‌های هوش مصنوعی سازمانی یکپارچه کنید
-- عملکرد و قابلیت اطمینان را در محیط‌های تولید بهینه کنید
+- Melaksanakan keupayaan multi-modal dalam rangka kerja MCP
+- Merancang seni bina MCP yang boleh diskalakan untuk senario permintaan tinggi
+- Menerapkan amalan terbaik keselamatan yang selaras dengan prinsip keselamatan MCP
+- Mengintegrasikan MCP dengan sistem dan rangka kerja AI perusahaan
+- Mengoptimumkan prestasi dan kebolehpercayaan dalam persekitaran produksi
 
-## دروس و پروژه‌های نمونه
+## Pelajaran dan Projek Contoh
 
-| لینک | عنوان | توضیحات |
-|------|-------|-------------|
-| [5.1 Integration with Azure](./mcp-integration/README.md) | یکپارچه‌سازی با Azure | یاد بگیرید چگونه MCP Server خود را روی Azure یکپارچه کنید |
-| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | نمونه چندرسانه‌ای MCP | نمونه‌هایی برای پاسخ‌های صوتی، تصویری و چندرسانه‌ای |
-| [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | نمونه MCP OAuth2 | اپلیکیشن ساده Spring Boot که OAuth2 با MCP را به عنوان Authorization و Resource Server نشان می‌دهد. صدور امن توکن، نقاط انتهایی محافظت‌شده، استقرار در Azure Container Apps و یکپارچه‌سازی مدیریت API را نمایش می‌دهد. |
-| [5.4 Root Contexts](./mcp-root-contexts/README.md) | زمینه‌های ریشه‌ای | بیشتر درباره زمینه ریشه‌ای و نحوه پیاده‌سازی آن بیاموزید |
-| [5.5 Routing](./mcp-routing/README.md) | مسیریابی | انواع مختلف مسیریابی را یاد بگیرید |
-| [5.6 Sampling](./mcp-sampling/README.md) | نمونه‌گیری | نحوه کار با نمونه‌گیری را یاد بگیرید |
-| [5.7 Scaling](./mcp-scaling/README.md) | مقیاس‌پذیری | درباره مقیاس‌پذیری بیاموزید |
-| [5.8 Security](./mcp-security/README.md) | امنیت | MCP Server خود را ایمن کنید |
-| [5.9 Web Search sample](./web-search-mcp/README.md) | جستجوی وب MCP | سرور و کلاینت Python MCP که با SerpAPI برای جستجوی وب، اخبار، محصولات و پرسش و پاسخ در زمان واقعی یکپارچه شده‌اند. ارکستراسیون چندابزاره، یکپارچه‌سازی API خارجی و مدیریت خطای قوی را نشان می‌دهد. |
-| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | پخش زنده | پخش داده‌های زنده در دنیای امروز که کسب‌وکارها و برنامه‌ها نیاز به دسترسی فوری به اطلاعات برای تصمیم‌گیری به موقع دارند، ضروری شده است. |
-| [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | جستجوی وب | جستجوی وب در زمان واقعی؛ چگونه MCP با ارائه رویکردی استاندارد برای مدیریت زمینه در میان مدل‌های هوش مصنوعی، موتورهای جستجو و برنامه‌ها، جستجوی وب زنده را متحول می‌کند. |
+| Pautan | Tajuk | Penerangan |
+|--------|-------|------------|
+| [5.1 Integration with Azure](./mcp-integration/README.md) | Integrasi dengan Azure | Pelajari cara mengintegrasikan MCP Server anda di Azure |
+| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | Contoh Multi modal MCP | Contoh untuk audio, imej dan respons multi modal |
+| [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | Demo MCP OAuth2 | Aplikasi Spring Boot minimal yang menunjukkan OAuth2 dengan MCP, sebagai Authorization dan Resource Server. Memperlihatkan penerbitan token yang selamat, titik akhir terlindung, penyebaran Azure Container Apps, dan integrasi Pengurusan API. |
+| [5.4 Root Contexts](./mcp-root-contexts/README.md) | Root contexts | Pelajari lebih lanjut mengenai root context dan cara melaksanakannya |
+| [5.5 Routing](./mcp-routing/README.md) | Routing | Pelajari pelbagai jenis routing |
+| [5.6 Sampling](./mcp-sampling/README.md) | Sampling | Pelajari cara bekerja dengan sampling |
+| [5.7 Scaling](./mcp-scaling/README.md) | Scaling | Pelajari mengenai scaling |
+| [5.8 Security](./mcp-security/README.md) | Security | Lindungi MCP Server anda |
+| [5.9 Web Search sample](./web-search-mcp/README.md) | Web Search MCP | Server dan klien MCP Python yang mengintegrasi dengan SerpAPI untuk carian web, berita, produk, dan Q&A secara masa nyata. Memperlihatkan orkestrasi multi-alat, integrasi API luaran, dan pengendalian ralat yang kukuh. |
+| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Streaming | Penstriman data masa nyata kini menjadi penting dalam dunia berasaskan data hari ini, di mana perniagaan dan aplikasi memerlukan akses segera kepada maklumat untuk membuat keputusan tepat pada masanya. |
+| [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Web Search | Carian web masa nyata bagaimana MCP mengubah carian web masa nyata dengan menyediakan pendekatan standard untuk pengurusan konteks merentas model AI, enjin carian, dan aplikasi. |
+| [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Pengesahan Entra ID | Microsoft Entra ID menyediakan penyelesaian pengurusan identiti dan akses berasaskan awan yang kukuh, membantu memastikan hanya pengguna dan aplikasi yang dibenarkan dapat berinteraksi dengan server MCP anda. |
 
-## منابع اضافی
+## Rujukan Tambahan
 
-برای به‌روزترین اطلاعات در مورد موضوعات پیشرفته MCP، به موارد زیر مراجعه کنید:
+Untuk maklumat terkini mengenai topik lanjutan MCP, rujuk kepada:
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
-## نکات کلیدی
+## Intipati Utama
 
-- پیاده‌سازی‌های چندرسانه‌ای MCP قابلیت‌های هوش مصنوعی را فراتر از پردازش متن گسترش می‌دهند
-- مقیاس‌پذیری برای استقرارهای سازمانی حیاتی است و می‌توان آن را از طریق مقیاس‌گذاری افقی و عمودی مدیریت کرد
-- اقدامات امنیتی جامع داده‌ها را محافظت کرده و کنترل دسترسی صحیح را تضمین می‌کنند
-- یکپارچه‌سازی سازمانی با پلتفرم‌هایی مانند Azure OpenAI و Microsoft AI Foundry قابلیت‌های MCP را افزایش می‌دهد
-- پیاده‌سازی‌های پیشرفته MCP از معماری‌های بهینه و مدیریت منابع دقیق بهره‌مند می‌شوند
+- Pelaksanaan MCP multi-modal meluaskan keupayaan AI melebihi pemprosesan teks
+- Skalabiliti penting untuk penyebaran perusahaan dan boleh ditangani melalui scaling mendatar dan menegak
+- Langkah keselamatan menyeluruh melindungi data dan memastikan kawalan akses yang betul
+- Integrasi perusahaan dengan platform seperti Azure OpenAI dan Microsoft AI Foundry meningkatkan keupayaan MCP
+- Pelaksanaan MCP lanjutan mendapat manfaat daripada seni bina yang dioptimumkan dan pengurusan sumber yang teliti
 
-## تمرین
+## Latihan
 
-یک پیاده‌سازی MCP با کیفیت سازمانی برای یک مورد استفاده خاص طراحی کنید:
+Rancang pelaksanaan MCP tahap perusahaan untuk kes penggunaan tertentu:
 
-1. نیازهای چندرسانه‌ای مورد استفاده خود را شناسایی کنید
-2. کنترل‌های امنیتی لازم برای محافظت از داده‌های حساس را ترسیم کنید
-3. معماری مقیاس‌پذیری طراحی کنید که بتواند بارهای متغیر را مدیریت کند
-4. نقاط یکپارچه‌سازی با سیستم‌های هوش مصنوعی سازمانی را برنامه‌ریزی کنید
-5. گلوگاه‌های احتمالی عملکرد و راهکارهای کاهش آن‌ها را مستندسازی کنید
+1. Kenal pasti keperluan multi-modal untuk kes penggunaan anda
+2. Gariskan kawalan keselamatan yang diperlukan untuk melindungi data sensitif
+3. Rancang seni bina yang boleh diskalakan yang mampu menangani beban yang berubah-ubah
+4. Rancang titik integrasi dengan sistem AI perusahaan
+5. Dokumentasikan potensi kesesakan prestasi dan strategi mitigasi
 
-## منابع بیشتر
+## Sumber Tambahan
 
 - [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
 - [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
-## مرحله بعد
+## Apa seterusnya
 
 - [5.1 MCP Integration](./mcp-integration/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau tafsiran yang salah yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
