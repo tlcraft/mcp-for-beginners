@@ -1,47 +1,47 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "16bef2c93c6a86d4ca6a8ce9e120e384",
-  "translation_date": "2025-06-13T02:44:42+00:00",
+  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
+  "translation_date": "2025-06-26T13:57:48+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "it"
 }
 -->
-## הודעת ויתור על דוגמאות קוד
+## Disclaimer sugli Esempi di Codice
 
-> **הערה חשובה**: דוגמאות הקוד למטה ממחישות את האינטגרציה של Model Context Protocol (MCP) עם פונקציונליות חיפוש ברשת. אף שהן עוקבות אחרי דפוסים ומבנים של ערכות הכלים הרשמיות של MCP, הן הוכנו בצורה מפושטת למטרות לימוד.
+> **Nota Importante**: Gli esempi di codice riportati di seguito mostrano l'integrazione del Model Context Protocol (MCP) con la funzionalità di ricerca web. Sebbene seguano i pattern e le strutture degli SDK ufficiali MCP, sono stati semplificati a scopo didattico.
 > 
-> דוגמאות אלו מציגות:
+> Questi esempi illustrano:
 > 
-> 1. **מימוש בפייתון**: יישום שרת FastMCP שמספק כלי חיפוש ברשת ומתחבר ל-API חיפוש חיצוני. הדוגמה מראה ניהול מחזור חיים נכון, טיפול בהקשר, ויישום כלי בהתאם לדפוסים של [ערכת הכלים הרשמית של MCP בפייתון](https://github.com/modelcontextprotocol/python-sdk). השרת משתמש בתחבורה HTTP מסוג Streamable המומלצת, שהחליפה את תחבורת SSE הישנה לפרודקשן.
+> 1. **Implementazione Python**: Un server FastMCP che fornisce uno strumento di ricerca web e si connette a un'API di ricerca esterna. Questo esempio dimostra una corretta gestione del ciclo di vita, la gestione del contesto e l'implementazione dello strumento seguendo i pattern dell'[SDK Python MCP ufficiale](https://github.com/modelcontextprotocol/python-sdk). Il server utilizza il trasporto HTTP Streamable raccomandato, che ha sostituito il vecchio trasporto SSE per le distribuzioni in produzione.
 > 
-> 2. **מימוש בג'אווהסקריפט**: מימוש TypeScript/JavaScript באמצעות דפוס FastMCP מתוך [ערכת הכלים הרשמית של MCP ב-TypeScript](https://github.com/modelcontextprotocol/typescript-sdk) ליצירת שרת חיפוש עם הגדרות כלי נכונות וחיבורי לקוח. המימוש עוקב אחרי דפוסים מומלצים לניהול מושבים ושימור הקשר.
+> 2. **Implementazione JavaScript**: Un’implementazione TypeScript/JavaScript che utilizza il pattern FastMCP dell'[SDK TypeScript MCP ufficiale](https://github.com/modelcontextprotocol/typescript-sdk) per creare un server di ricerca con definizioni di strumenti e connessioni client appropriate. Segue i pattern più aggiornati per la gestione delle sessioni e la conservazione del contesto.
 > 
-> דוגמאות אלו דורשות טיפול שגיאות נוסף, אימות, וקוד אינטגרציה ספציפי ל-API לשימוש בפרודקשן. נקודות הקצה של API החיפוש (`https://api.search-service.example/search`) הן דוגמאות בלבד וצריך להחליפן בכתובות שירותי חיפוש אמיתיים.
+> Questi esempi richiederebbero ulteriore gestione degli errori, autenticazione e codice specifico di integrazione API per l’uso in produzione. Gli endpoint API di ricerca mostrati (`https://api.search-service.example/search`) sono segnaposto e dovrebbero essere sostituiti con endpoint reali di servizi di ricerca.
 > 
-> לפרטים מלאים והנחיות מעודכנות, יש לעיין ב-[מפרט MCP הרשמי](https://spec.modelcontextprotocol.io/) ובתיעוד ערכות הכלים.
+> Per dettagli completi sull’implementazione e gli approcci più aggiornati, si rimanda alla [specifica ufficiale MCP](https://spec.modelcontextprotocol.io/) e alla documentazione degli SDK.
 
-## מושגי יסוד
+## Concetti Fondamentali
 
-### מסגרת Model Context Protocol (MCP)
+### Il Framework Model Context Protocol (MCP)
 
-בסיסית, Model Context Protocol מספק דרך סטנדרטית למודלים של AI, יישומים ושירותים להחלפת הקשר. בחיפוש רשת בזמן אמת, המסגרת חיונית ליצירת חוויות חיפוש רציפות עם מספר סבבים. רכיבים מרכזיים כוללים:
+Alla base, il Model Context Protocol fornisce un modo standardizzato affinché modelli AI, applicazioni e servizi scambino contesto. Nella ricerca web in tempo reale, questo framework è essenziale per creare esperienze di ricerca coerenti e multi-turno. I componenti chiave includono:
 
-1. **ארכיטקטורת לקוח-שרת**: MCP מגדיר הפרדה ברורה בין לקוחות חיפוש (מבקשים) לשרתי חיפוש (מספקים), מה שמאפשר מודלים גמישים לפריסה.
+1. **Architettura Client-Server**: MCP stabilisce una chiara separazione tra client di ricerca (richiedenti) e server di ricerca (fornitori), permettendo modelli di distribuzione flessibili.
 
-2. **תקשורת JSON-RPC**: הפרוטוקול משתמש ב-JSON-RPC להחלפת הודעות, דבר שהופך אותו לתואם לטכנולוגיות רשת וליישום במגוון פלטפורמות.
+2. **Comunicazione JSON-RPC**: Il protocollo utilizza JSON-RPC per lo scambio di messaggi, rendendolo compatibile con le tecnologie web e facile da implementare su diverse piattaforme.
 
-3. **ניהול הקשר**: MCP מגדיר שיטות מובנות לשמירה, עדכון וניצול הקשר חיפוש במספר אינטראקציות.
+3. **Gestione del Contesto**: MCP definisce metodi strutturati per mantenere, aggiornare e sfruttare il contesto di ricerca attraverso molteplici interazioni.
 
-4. **הגדרות כלים**: יכולות החיפוש מוצגות ככלים סטנדרטיים עם פרמטרים וערכי החזרה מוגדרים היטב.
+4. **Definizione degli Strumenti**: Le capacità di ricerca sono esposte come strumenti standardizzati con parametri e valori di ritorno ben definiti.
 
-5. **תמיכה בזרימה**: הפרוטוקול תומך בזרימת תוצאות, דבר חיוני לחיפוש בזמן אמת שבו תוצאות עשויות להגיע בהדרגה.
+5. **Supporto allo Streaming**: Il protocollo supporta lo streaming dei risultati, essenziale per la ricerca in tempo reale dove i risultati possono arrivare progressivamente.
 
-### דפוסי אינטגרציה לחיפוש רשת
+### Pattern di Integrazione della Ricerca Web
 
-בעת אינטגרציה של MCP עם חיפוש ברשת, מתגלים כמה דפוסים:
+Quando si integra MCP con la ricerca web, emergono diversi pattern:
 
-#### 1. אינטגרציה ישירה עם ספק חיפוש
+#### 1. Integrazione Diretta con Provider di Ricerca
 
 ```mermaid
 graph LR
@@ -51,9 +51,9 @@ graph LR
     Server --> |MCP Response| Client
 ```
 
-בדפוס זה, שרת MCP מתקשר ישירות עם אחד או יותר APIs של חיפוש, מתרגם בקשות MCP לקריאות API ספציפיות ומעצב את התוצאות כתשובות MCP.
+In questo pattern, il server MCP si interfaccia direttamente con una o più API di ricerca, traducendo le richieste MCP in chiamate specifiche API e formattando i risultati come risposte MCP.
 
-#### 2. חיפוש מאוגד עם שימור הקשר
+#### 2. Ricerca Federata con Conservazione del Contesto
 
 ```mermaid
 graph LR
@@ -67,9 +67,9 @@ graph LR
     Federation --> |Aggregated MCP Response| Client
 ```
 
-בדפוס זה, שאילתות חיפוש מופצות בין מספר ספקי חיפוש התואמים MCP, שכל אחד עשוי להתמחות בסוגי תוכן או יכולות חיפוש שונות, תוך שמירה על הקשר אחיד.
+Questo pattern distribuisce le query di ricerca su più provider di ricerca compatibili MCP, ognuno specializzato in diversi tipi di contenuto o capacità di ricerca, mantenendo un contesto unificato.
 
-#### 3. שרשרת חיפוש משופרת בהקשר
+#### 3. Catena di Ricerca Arricchita dal Contesto
 
 ```mermaid
 graph LR
@@ -83,138 +83,138 @@ graph LR
     Server --> |Final Results + Updated Context| Client
 ```
 
-בדפוס זה, תהליך החיפוש מחולק למספר שלבים, כאשר ההקשר מועשר בכל שלב, מה שמוביל לתוצאות רלוונטיות יותר בהדרגה.
+In questo pattern, il processo di ricerca è diviso in più fasi, con il contesto che viene arricchito a ogni passaggio, producendo risultati progressivamente più pertinenti.
 
-### רכיבי הקשר בחיפוש
+### Componenti del Contesto di Ricerca
 
-בהקשר חיפוש מבוסס MCP, ההקשר כולל בדרך כלל:
+Nella ricerca web basata su MCP, il contesto tipicamente include:
 
-- **היסטוריית שאילתות**: שאילתות חיפוש קודמות במושב
-- **העדפות משתמש**: שפה, אזור, הגדרות חיפוש בטוח
-- **היסטוריית אינטראקציות**: אילו תוצאות נבחרו, זמן שהייה על תוצאות
-- **פרמטרי חיפוש**: סינונים, סדרי מיון ומודיפיקציות נוספות
-- **ידע תחומי**: הקשר נושא ספציפי הרלוונטי לחיפוש
-- **הקשר זמני**: גורמי רלוונטיות מבוססי זמן
-- **העדפות מקורות**: מקורות מידע מהימנים או מועדפים
+- **Cronologia delle Query**: Le query di ricerca precedenti nella sessione
+- **Preferenze Utente**: Lingua, regione, impostazioni di ricerca sicura
+- **Cronologia delle Interazioni**: Risultati cliccati, tempo trascorso sui risultati
+- **Parametri di Ricerca**: Filtri, ordinamenti e altri modificatori di ricerca
+- **Conoscenza del Dominio**: Contesto specifico relativo al soggetto della ricerca
+- **Contesto Temporale**: Fattori di rilevanza basati sul tempo
+- **Preferenze di Fonte**: Fonti di informazione affidabili o preferite
 
-## מקרים שימוש ויישומים
+## Casi d’Uso e Applicazioni
 
-### מחקר ואיסוף מידע
+### Ricerca e Raccolta di Informazioni
 
-MCP משפר תהליכי מחקר על ידי:
+MCP migliora i flussi di lavoro di ricerca:
 
-- שמירת הקשר מחקרי לאורך מושבי חיפוש
-- מתן אפשרות לשאילתות מתוחכמות ורלוונטיות יותר להקשר
-- תמיכה באיחוד חיפוש ממקורות מרובים
-- הקלה על הפקת ידע מתוצאות החיפוש
+- Conservando il contesto di ricerca attraverso le sessioni
+- Abilitando query più sofisticate e contestualmente rilevanti
+- Supportando la federazione di ricerca multi-sorgente
+- Facilitando l’estrazione di conoscenza dai risultati di ricerca
 
-### ניטור חדשות ומגמות בזמן אמת
+### Monitoraggio in Tempo Reale di Notizie e Trend
 
-חיפוש מבוסס MCP מציע יתרונות לניטור חדשות:
+La ricerca potenziata da MCP offre vantaggi per il monitoraggio delle notizie:
 
-- גילוי כמעט בזמן אמת של סיפורי חדשות מתפתחים
-- סינון הקשרי של מידע רלוונטי
-- מעקב אחר נושאים ויישויות במקורות מרובים
-- התראות חדשות מותאמות אישית על בסיס הקשר משתמש
+- Scoperta quasi in tempo reale di notizie emergenti
+- Filtraggio contestuale delle informazioni rilevanti
+- Tracciamento di argomenti ed entità su più fonti
+- Alert personalizzati basati sul contesto utente
 
-### גלישה ומחקר בהגברת AI
+### Navigazione e Ricerca Potenziata da AI
 
-MCP יוצר אפשרויות חדשות לגלישה מוגברת בידי AI:
+MCP crea nuove possibilità per la navigazione potenziata da AI:
 
-- הצעות חיפוש הקשריות בהתבסס על פעילות דפדפן נוכחית
-- אינטגרציה חלקה של חיפוש רשת עם עוזרים מבוססי LLM
-- שיפור חיפוש רב-סבבי עם הקשר מתמשך
-- שיפור בדיקת עובדות ואימות מידע
+- Suggerimenti di ricerca contestuali basati sull’attività corrente del browser
+- Integrazione fluida della ricerca web con assistenti basati su LLM
+- Raffinamento multi-turno della ricerca mantenendo il contesto
+- Miglioramento del fact-checking e della verifica delle informazioni
 
-## מגמות וחדשנות עתידית
+## Tendenze Future e Innovazioni
 
-### התפתחות MCP בחיפוש רשת
+### Evoluzione di MCP nella Ricerca Web
 
-בעתיד, אנו מצפים ש-MCP יתפתח ויתמודד עם:
+Guardando al futuro, ci aspettiamo che MCP evolva per affrontare:
 
-- **חיפוש מולטימודלי**: שילוב חיפוש טקסט, תמונה, אודיו ווידאו עם הקשר מתמשך
-- **חיפוש מבוזר**: תמיכה באקוסיסטמים מבוזרים ומאוגדים
-- **פרטיות בחיפוש**: מנגנוני חיפוש המגנים על פרטיות תוך התחשבות בהקשר
-- **הבנת שאילתות**: ניתוח סמנטי עמוק של שאילתות בשפה טבעית
+- **Ricerca Multimodale**: Integrazione di ricerca testuale, immagini, audio e video con contesto preservato
+- **Ricerca Decentralizzata**: Supporto a ecosistemi di ricerca distribuiti e federati
+- **Privacy nella Ricerca**: Meccanismi di ricerca che rispettano la privacy basati sul contesto
+- **Comprensione della Query**: Parsing semantico profondo delle query di ricerca in linguaggio naturale
 
-### טכנולוגיות מתקדמות עתידיות
+### Possibili Progressi Tecnologici
 
-טכנולוגיות מתפתחות שישפיעו על עתיד החיפוש ב-MCP:
+Tecnologie emergenti che modelleranno il futuro della ricerca MCP:
 
-1. **ארכיטקטורות חיפוש עצביות**: מערכות חיפוש מבוססות אמבדינג מותאמות ל-MCP
-2. **הקשר חיפוש מותאם אישית**: למידת דפוסי חיפוש אישיים לאורך זמן
-3. **אינטגרציה של גרפים ידע**: חיפוש הקשרי משופר באמצעות גרפים תחומיים
-4. **הקשר חוצה-מודאלי**: שמירת הקשר בין מודאליות חיפוש שונות
+1. **Architetture di Ricerca Neurale**: Sistemi di ricerca basati su embedding ottimizzati per MCP
+2. **Contesto di Ricerca Personalizzato**: Apprendimento dei modelli di ricerca individuali nel tempo
+3. **Integrazione di Knowledge Graph**: Ricerca contestuale potenziata da grafi di conoscenza specifici di dominio
+4. **Contesto Cross-Modale**: Mantenimento del contesto attraverso diverse modalità di ricerca
 
-## תרגילים מעשיים
+## Esercizi Pratici
 
-### תרגיל 1: הקמת צינור חיפוש MCP בסיסי
+### Esercizio 1: Configurare una Pipeline di Ricerca MCP di Base
 
-בתרגיל זה תלמדו כיצד:
-- להגדיר סביבה בסיסית לחיפוש MCP
-- ליישם מטפלי הקשר לחיפוש ברשת
-- לבדוק ולאמת שימור הקשר בין שאילתות חיפוש
+In questo esercizio imparerai a:
+- Configurare un ambiente di ricerca MCP di base
+- Implementare gestori di contesto per la ricerca web
+- Testare e validare la conservazione del contesto attraverso iterazioni di ricerca
 
-### תרגיל 2: בניית עוזר מחקר עם חיפוש MCP
+### Esercizio 2: Costruire un Assistente di Ricerca con MCP
 
-צרו יישום שלם ש:
-- מעבד שאלות מחקר בשפה טבעית
-- מבצע חיפושים ברשת בהקשר מודע
-- מסנתז מידע ממספר מקורות
-- מציג ממצאים מאורגנים למחקר
+Crea un’applicazione completa che:
+- Elabora domande di ricerca in linguaggio naturale
+- Esegue ricerche web contestuali
+- Sintetizza informazioni da più fonti
+- Presenta risultati di ricerca organizzati
 
-### תרגיל 3: יישום איחוד חיפוש ממקורות מרובים עם MCP
+### Esercizio 3: Implementare la Federazione di Ricerca Multi-Sorgente con MCP
 
-תרגיל מתקדם הכולל:
-- ניתוב שאילתות מודע הקשר למנועי חיפוש מרובים
-- דירוג ואיחוד תוצאות
-- זיהוי כפילויות הקשריות בתוצאות החיפוש
-- טיפול במטא-נתונים ספציפיים למקור
+Esercizio avanzato che copre:
+- Invio contestuale di query a più motori di ricerca
+- Classifica e aggrega i risultati
+- Deduplicazione contestuale dei risultati di ricerca
+- Gestione di metadata specifici delle fonti
 
-## משאבים נוספים
+## Risorse Aggiuntive
 
-- [מפרט Model Context Protocol](https://spec.modelcontextprotocol.io/) - מפרט רשמי ותיעוד פרוטוקול מפורט
-- [תיעוד Model Context Protocol](https://modelcontextprotocol.io/) - מדריכים מפורטים ומדריכי יישום
-- [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) - מימוש רשמי בפייתון של פרוטוקול MCP
-- [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - מימוש רשמי ב-TypeScript של פרוטוקול MCP
-- [שרתים לדוגמה של MCP](https://github.com/modelcontextprotocol/servers) - מימושי שרתים לדוגמה של MCP
-- [Bing Web Search API Documentation](https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview) - API חיפוש רשת של מיקרוסופט
-- [Google Custom Search JSON API](https://developers.google.com/custom-search/v1/overview) - מנוע חיפוש מותאם של גוגל
-- [SerpAPI Documentation](https://serpapi.com/search-api) - API לדפי תוצאות מנועי חיפוש
-- [Meilisearch Documentation](https://www.meilisearch.com/docs) - מנוע חיפוש קוד פתוח
-- [Elasticsearch Documentation](https://www.elastic.co/guide/index.html) - מנוע חיפוש וניתוח מבוזר
-- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - בניית יישומים עם LLM
+- [Model Context Protocol Specification](https://spec.modelcontextprotocol.io/) - Specifica ufficiale MCP e documentazione dettagliata del protocollo
+- [Model Context Protocol Documentation](https://modelcontextprotocol.io/) - Tutorial dettagliati e guide all’implementazione
+- [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Implementazione Python ufficiale del protocollo MCP
+- [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Implementazione TypeScript ufficiale del protocollo MCP
+- [MCP Reference Servers](https://github.com/modelcontextprotocol/servers) - Implementazioni di riferimento di server MCP
+- [Bing Web Search API Documentation](https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview) - API di ricerca web di Microsoft
+- [Google Custom Search JSON API](https://developers.google.com/custom-search/v1/overview) - Motore di ricerca programmabile di Google
+- [SerpAPI Documentation](https://serpapi.com/search-api) - API per pagine di risultati dei motori di ricerca
+- [Meilisearch Documentation](https://www.meilisearch.com/docs) - Motore di ricerca open-source
+- [Elasticsearch Documentation](https://www.elastic.co/guide/index.html) - Motore di ricerca e analisi distribuito
+- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Costruzione di applicazioni con LLM
 
-## תוצאות למידה
+## Risultati di Apprendimento
 
-בסיום המודול תוכלו:
+Completando questo modulo, sarai in grado di:
 
-- להבין את יסודות החיפוש ברשת בזמן אמת ואת האתגרים שבו
-- להסביר כיצד Model Context Protocol (MCP) משפר יכולות חיפוש בזמן אמת
-- ליישם פתרונות חיפוש מבוססי MCP באמצעות מסגרות ו-APIs פופולריים
-- לתכנן ולפרוס ארכיטקטורות חיפוש בקנה מידה גבוה וביצועים עם MCP
-- ליישם מושגי MCP במקרים שימוש שונים כולל חיפוש סמנטי, סיוע מחקר וגלישה בהגברת AI
-- להעריך מגמות עתידיות וחדשנות בטכנולוגיות חיפוש מבוססות MCP
+- Comprendere i fondamenti della ricerca web in tempo reale e le sue sfide
+- Spiegare come il Model Context Protocol (MCP) potenzia le capacità di ricerca in tempo reale
+- Implementare soluzioni di ricerca basate su MCP usando framework e API popolari
+- Progettare e distribuire architetture di ricerca scalabili e ad alte prestazioni con MCP
+- Applicare i concetti MCP a vari casi d’uso, inclusa la ricerca semantica, assistenza alla ricerca e navigazione potenziata da AI
+- Valutare le tendenze emergenti e le innovazioni future nelle tecnologie di ricerca basate su MCP
 
-### שיקולי אמון ובטיחות
+### Considerazioni su Fiducia e Sicurezza
 
-בעת יישום פתרונות חיפוש מבוססי MCP, זכרו את העקרונות החשובים הבאים מתוך מפרט MCP:
+Quando implementi soluzioni di ricerca web basate su MCP, ricorda questi principi importanti dalla specifica MCP:
 
-1. **הסכמה ושליטה של המשתמש**: יש לקבל הסכמה מפורשת מהמשתמש ולהבטיח הבנת כל הגישה והפעולות על הנתונים. זה חשוב במיוחד במימושי חיפוש רשת שעשויים לגשת למקורות חיצוניים.
+1. **Consenso e Controllo dell’Utente**: Gli utenti devono dare un consenso esplicito e comprendere tutte le operazioni e gli accessi ai dati. Questo è particolarmente importante per implementazioni di ricerca web che possono accedere a fonti di dati esterne.
 
-2. **פרטיות נתונים**: יש לטפל כראוי בשאילתות ותוצאות החיפוש, במיוחד כאשר הן עשויות להכיל מידע רגיש. יש ליישם בקרות גישה מתאימות להגנת פרטיות המשתמש.
+2. **Privacy dei Dati**: Garantire una gestione appropriata delle query di ricerca e dei risultati, specialmente se contengono informazioni sensibili. Implementare controlli di accesso adeguati per proteggere i dati degli utenti.
 
-3. **בטיחות הכלים**: יש ליישם הרשאות ואימות נאותים לכלי החיפוש, כיוון שהם מהווים סיכוני אבטחה פוטנציאליים עקב ביצוע קוד שרירותי. תיאורי התנהגות הכלים צריכים להיחשב כלא מהימנים אלא אם כן התקבלו משרת מהימן.
+3. **Sicurezza degli Strumenti**: Implementare autorizzazioni e validazioni corrette per gli strumenti di ricerca, poiché rappresentano potenziali rischi di sicurezza attraverso l’esecuzione di codice arbitrario. Le descrizioni del comportamento degli strumenti devono essere considerate non attendibili a meno che non provengano da un server fidato.
 
-4. **תיעוד ברור**: ספקו תיעוד ברור על היכולות, המגבלות ושיקולי האבטחה של מימוש החיפוש מבוסס MCP, בהתאם להנחיות המימוש שבמפרט MCP.
+4. **Documentazione Chiara**: Fornire una documentazione chiara sulle capacità, limitazioni e considerazioni di sicurezza della tua implementazione di ricerca basata su MCP, seguendo le linee guida della specifica MCP.
 
-5. **זרימות הסכמה חזקות**: בנו זרימות הסכמה והרשאה איתנות שמסבירות בבירור מה כל כלי עושה לפני שמאשרים את השימוש בו, במיוחד עבור כלים שמתקשרים עם משאבי רשת חיצוניים.
+5. **Flussi di Consenso Robusti**: Costruire flussi di consenso e autorizzazione robusti che spieghino chiaramente cosa fa ogni strumento prima di autorizzarne l’uso, specialmente per strumenti che interagiscono con risorse web esterne.
 
-לפרטים מלאים על אבטחה ושיקולי אמון במפרט MCP, עיינו ב-[התיעוד הרשמי](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).
+Per dettagli completi su sicurezza, fiducia e considerazioni di sicurezza MCP, consulta la [documentazione ufficiale](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).
 
-## מה הלאה
+## Cosa Fare Dopo
 
-- [6. תרומות מהקהילה](../../06-CommunityContributions/README.md)
+- [5.11 Autenticazione Entra ID per Server Model Context Protocol](../mcp-security-entra/README.md)
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale umana. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche si raccomanda la traduzione professionale effettuata da un traduttore umano. Non siamo responsabili per eventuali fraintendimenti o interpretazioni errate derivanti dall’uso di questa traduzione.

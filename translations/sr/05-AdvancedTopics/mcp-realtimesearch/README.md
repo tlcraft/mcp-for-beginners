@@ -1,47 +1,47 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "16bef2c93c6a86d4ca6a8ce9e120e384",
-  "translation_date": "2025-06-13T03:04:05+00:00",
+  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
+  "translation_date": "2025-06-26T14:24:37+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "sr"
 }
 -->
-## Ograničenje Primera Koda
+## Одрицање од одговорности за примере кода
 
-> **Važna Napomena**: Primeri koda ispod pokazuju integraciju Model Context Protocol-a (MCP) sa funkcionalnošću pretraživanja na webu. Iako prate obrasce i strukture zvaničnih MCP SDK-ova, pojednostavljeni su u edukativne svrhe.
+> **Важно обавештење**: примери кода у наставку показују интеграцију Model Context Protocol (MCP) са функционалношћу веб претраге. Иако прате обрасце и структуре званичних MCP SDK-ова, поједностављени су у образовне сврхе.
 > 
-> Ovi primeri prikazuju:
+> Ови примери илуструју:
 > 
-> 1. **Python Implementacija**: FastMCP server koji pruža alat za web pretragu i povezuje se sa eksternim pretraživačkim API-jem. Primer pokazuje pravilno upravljanje životnim ciklusom, rukovanje kontekstom i implementaciju alata prateći obrasce [zvaničnog MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk). Server koristi preporučeni Streamable HTTP transport koji je zamenio stariji SSE transport za produkciju.
+> 1. **Python имплементацију**: FastMCP сервер који пружа алат за веб претрагу и повезује се са спољним API-јем за претрагу. Пример показује правилно управљање животним циклусом, руковање контекстом и имплементацију алата, пратећи обрасце из [званичног MCP Python SDK-а](https://github.com/modelcontextprotocol/python-sdk). Сервер користи препоручени Streamable HTTP транспорт који је заменио старији SSE транспорт за продукцијске примене.
 > 
-> 2. **JavaScript Implementacija**: TypeScript/JavaScript implementacija koristeći FastMCP obrazac iz [zvaničnog MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) za kreiranje serverske pretrage sa pravilnim definicijama alata i klijentskim konekcijama. Prati najnovije preporučene obrasce za upravljanje sesijama i očuvanje konteksta.
+> 2. **JavaScript имплементацију**: TypeScript/JavaScript имплементацију користећи FastMCP образац из [званичног MCP TypeScript SDK-а](https://github.com/modelcontextprotocol/typescript-sdk) за креирање сервера за претрагу са правилним дефиницијама алата и клијентским везама. Прати најновије препоручене обрасце за управљање сесијама и очување контекста.
 > 
-> Ovi primeri bi u produkciji zahtevali dodatno rukovanje greškama, autentifikaciju i specifične API integracije. Prikazani API endpointi za pretragu (`https://api.search-service.example/search`) su rezervisani i treba ih zameniti stvarnim servisima.
+> За продукцијску употребу ови примери захтевају додатно руковање грешкама, аутентификацију и специфичну интеграцију API-ја. Приказани API ендпоинти (`https://api.search-service.example/search`) су замене и морају бити замењени стварним ендпоинтима услуга претраге.
 > 
-> Za kompletne detalje implementacije i najnovije pristupe, pogledajte [zvaničnu MCP specifikaciju](https://spec.modelcontextprotocol.io/) i dokumentaciju SDK-a.
+> За комплетне детаље и најсавременије приступе, погледајте [званичну MCP спецификацију](https://spec.modelcontextprotocol.io/) и документацију SDK-а.
 
-## Osnovni Koncepti
+## Основни појмови
 
-### Okvir Model Context Protocol-a (MCP)
+### Model Context Protocol (MCP) оквир
 
-U osnovi, Model Context Protocol pruža standardizovani način za razmenu konteksta između AI modela, aplikacija i servisa. U realnom vremenu web pretrage, ovaj okvir je ključan za kreiranje koherentnih iskustava pretrage sa više koraka. Ključne komponente uključuju:
+У основи, Model Context Protocol пружа стандардан начин за размену контекста између AI модела, апликација и сервиса. У реалној веб претрази, овај оквир је кључан за креирање кохерентних, вишекратних претраживачких искустава. Кључне компоненте укључују:
 
-1. **Klijent-Server Arhitektura**: MCP uspostavlja jasnu podelu između klijenata pretrage (zahtevaoca) i servera pretrage (pružalaca), omogućavajući fleksibilne modele implementacije.
+1. **Клијент-сервер архитектура**: MCP успоставља јасну поделу између клијената (захтеваоца) и сервера (пружалаца претраге), омогућавајући флексибилне моделе распоређивања.
 
-2. **JSON-RPC Komunikacija**: Protokol koristi JSON-RPC za razmenu poruka, što ga čini kompatibilnim sa web tehnologijama i lakim za implementaciju na različitim platformama.
+2. **JSON-RPC комуникација**: протокол користи JSON-RPC за размену порука, што га чини компатибилним са веб технологијама и лако имплементираним на различитим платформама.
 
-3. **Upravljanje Kontekstom**: MCP definiše strukturirane metode za održavanje, ažuriranje i korišćenje konteksta pretrage kroz više interakcija.
+3. **Управљање контекстом**: MCP дефинише структуиране методе за одржавање, ажурирање и коришћење претраживачког контекста кроз више интеракција.
 
-4. **Definicije Alata**: Mogućnosti pretrage izložene su kao standardizovani alati sa jasno definisanim parametrima i povratnim vrednostima.
+4. **Дефиниције алата**: претраживачке могућности су изложене као стандардизовани алати са јасно дефинисаним параметрима и повратним вредностима.
 
-5. **Podrška za Strimovanje**: Protokol podržava strimovanje rezultata, što je neophodno za realno-vremensku pretragu gde rezultati mogu stizati postepeno.
+5. **Подршка за стриминг**: протокол подржава стримовање резултата, што је важно за реално време претраге где резултати могу стизати поступно.
 
-### Obrasci Integracije Web Pretrage
+### Обрасци интеграције веб претраге
 
-Kod integracije MCP-a sa web pretragom, pojavljuju se sledeći obrasci:
+При интеграцији MCP-а са веб претрагом појављује се неколико образаца:
 
-#### 1. Direktna Integracija Pružaoca Pretrage
+#### 1. Директна интеграција провајдера претраге
 
 ```mermaid
 graph LR
@@ -51,9 +51,9 @@ graph LR
     Server --> |MCP Response| Client
 ```
 
-U ovom obrascu, MCP server direktno komunicira sa jednim ili više pretraživačkih API-ja, prevodeći MCP zahteve u specifične API pozive i formatirajući rezultate kao MCP odgovore.
+У овом обрасцу MCP сервер директно комуницира са једним или више API-ја за претрагу, преводећи MCP захтеве у API-специфичне позиве и форматирајући резултате као MCP одговоре.
 
-#### 2. Federisana Pretraga sa Očuvanjem Konteksta
+#### 2. Федеративна претрага са очувањем контекста
 
 ```mermaid
 graph LR
@@ -67,9 +67,9 @@ graph LR
     Federation --> |Aggregated MCP Response| Client
 ```
 
-Ovaj obrazac raspoređuje upite za pretragu preko više MCP-kompatibilnih pružalaca, od kojih se svaki može specijalizovati za različite tipove sadržaja ili mogućnosti pretrage, dok se održava jedinstveni kontekst.
+Овај образац дистрибуира претраживачке упите преко више MCP-компатибилних провајдера претраге, од којих сваки може бити специјализован за различите типове садржаја или могућности претраге, уз одржавање јединственог контекста.
 
-#### 3. Lanac Pretrage sa Poboljšanim Kontekstom
+#### 3. Ланац претраге са побољшаним контекстом
 
 ```mermaid
 graph LR
@@ -83,138 +83,138 @@ graph LR
     Server --> |Final Results + Updated Context| Client
 ```
 
-Ovde je proces pretrage podeljen na više faza, pri čemu se kontekst obogaćuje u svakom koraku, što rezultira progresivno relevantnijim rezultatima.
+У овом обрасцу процес претраге је подељен у више фаза, при чему се контекст обогаћује у сваком кораку, што резултира све релевантнијим резултатима.
 
-### Komponente Konteksta Pretrage
+### Компоненте претраживачког контекста
 
-U MCP-baziranoj web pretrazi, kontekst obično uključuje:
+У MCP-базираној веб претрази, контекст обично укључује:
 
-- **Istoriju Upita**: Prethodne pretrage u sesiji
-- **Korisničke Preferencije**: Jezik, region, podešavanja bezbedne pretrage
-- **Istoriju Interakcija**: Koji su rezultati kliknuti, vreme provedeno na rezultatima
-- **Parametre Pretrage**: Filteri, redosledi sortiranja i drugi modifikatori pretrage
-- **Stručno Znanje**: Kontekst vezan za specifičnu oblast relevantnu za pretragu
-- **Vremenski Kontekst**: Faktori relevantnosti vezani za vreme
-- **Preferencije Izvora**: Pouzdani ili omiljeni izvori informacija
+- **Историју упита**: претходне претраге у сесији
+- **Корисничке преференције**: језик, регион, подешавања безбедне претраге
+- **Историју интеракција**: који су резултати кликнути, време проведено на резултатима
+- **Параметре претраге**: филтери, редослед сортирања и други модификатори претраге
+- **Стручност домена**: контекст специфичан за тему претраге
+- **Временски контекст**: фактори релевантности везани за време
+- **Преференције извора**: поуздани или одабрани извори информација
 
-## Primeri Upotrebe i Primene
+## Примери употребе и апликације
 
-### Istraživanje i Prikupljanje Informacija
+### Истраживање и прикупљање информација
 
-MCP poboljšava istraživačke tokove rada tako što:
+MCP побољшава радне токове истраживања тако што:
 
-- Očuvava kontekst istraživanja kroz sesije pretrage
-- Omogućava složenije i kontekstualno relevantne upite
-- Podržava federisanu pretragu iz više izvora
-- Olakšava izvlačenje znanja iz rezultata pretrage
+- Чува контекст истраживања кроз сесије претраге
+- Омогућава сложеније и контекстуално релевантне упите
+- Подржава федерацију претраге из више извора
+- Олакшава извлачење знања из резултата претраге
 
-### Praćenje Vesti i Trendova u Realnom Vremenu
+### Мониторинг вести и трендова у реалном времену
 
-Pretraga pokretana MCP-om nudi prednosti za praćenje vesti:
+MCP-покретана претрага нуди предности за праћење вести:
 
-- Otkrivanje novih vesti gotovo u realnom vremenu
-- Kontekstualno filtriranje relevantnih informacija
-- Praćenje tema i entiteta preko više izvora
-- Personalizovane obaveštenja o vestima na osnovu korisničkog konteksta
+- Отkrivanje нових вести скоро у реалном времену
+- Контекстуално филтрирање релевантних информација
+- Праћење тема и ентитета из више извора
+- Персонализована обавештења о вестима заснована на корисничком контексту
 
-### AI-Poboljšano Pretraživanje i Istraživanje
+### AI-подржано прегледање и истраживање
 
-MCP otvara nove mogućnosti za AI-poboljšano pretraživanje:
+MCP отвара нове могућности за AI-подржано прегледање:
 
-- Kontekstualni predlozi pretrage bazirani na aktuelnoj aktivnosti u pregledaču
-- Besprekorno integrisanje web pretrage sa LLM-pokretanim asistentima
-- Višekorakno usavršavanje pretrage uz održavanje konteksta
-- Poboljšana provera činjenica i verifikacija informacija
+- Контекстуалне препоруке претраге засноване на тренутној активности у прегледачу
+- Беспрекорна интеграција веб претраге са асистентима покретаним LLM-ом
+- Вишекратна рафинација претраге уз очуван контекст
+- Побољшано проверавање чињеница и верификација информација
 
-## Budući Trendovi i Inovacije
+## Будући трендови и иновације
 
-### Evolucija MCP-a u Web Pretrazi
+### Еволуција MCP-а у веб претрази
 
-U budućnosti očekujemo da će MCP razvijati mogućnosti za:
+У будућности очекујемо да MCP буде развијен за:
 
-- **Multimodalnu Pretragu**: Integraciju teksta, slike, zvuka i video pretrage uz očuvani kontekst
-- **Decentralizovanu Pretragu**: Podršku za distribuirane i federisane pretraživačke ekosisteme
-- **Privatnost Pretrage**: Mehanizme za očuvanje privatnosti prilagođene kontekstu
-- **Razumevanje Upita**: Duboku semantičku analizu prirodnog jezika u upitima za pretragu
+- **Мултимодалну претрагу**: интеграција претраге текста, слика, звука и видео садржаја уз очуван контекст
+- **Децентрализовану претрагу**: подршка за дистрибуиране и федеративне претраживачке екосистеме
+- **Приватност претраге**: контекстуално свесне механизме заштите приватности у претрази
+- **Разумевање упита**: дубинску семантичку анализу природних језика у претраживачким упитима
 
-### Potencijalni Tehnološki Napredak
+### Потенцијални технолошки напредак
 
-Tehnologije koje će oblikovati budućnost MCP pretrage:
+Нове технологије које ће обликовати будућност MCP претраге:
 
-1. **Neuralne Arhitekture Pretrage**: Sistemi pretrage zasnovani na ugrađenim reprezentacijama optimizovani za MCP
-2. **Personalizovani Kontekst Pretrage**: Učenje obrazaca pretrage pojedinačnih korisnika tokom vremena
-3. **Integracija Grafova Znanja**: Kontekstualna pretraga poboljšana domen-specifičnim grafovima znanja
-4. **Kros-modalni Kontekst**: Očuvanje konteksta kroz različite modalitete pretrage
+1. **Невронске претраживачке архитектуре**: претраживачки системи засновани на уграђеним репрезентацијама оптимизовани за MCP
+2. **Персонализовани претраживачки контекст**: учење индивидуалних образаца претраге корисника током времена
+3. **Интеграција графова знања**: контекстуална претрага побољшана графовима знања специфичним за домен
+4. **Крос-модални контекст**: очување контекста кроз различите модалитете претраге
 
-## Praktične Vežbe
+## Практичне вежбе
 
-### Vežba 1: Postavljanje Osnovnog MCP Pretraživačkog Pipelin-a
+### Вежба 1: Подешавање основне MCP претраживачке цевоводе
 
-U ovoj vežbi naučićete kako da:
-- Konfigurišete osnovno MCP pretraživačko okruženje
-- Implementirate rukovaoce kontekstom za web pretragu
-- Testirate i potvrdite očuvanje konteksta kroz iteracije pretrage
+У овој вежби научићете како да:
+- Конфигуришете основно MCP претраживачко окружење
+- Имплементирате обрађиваче контекста за веб претрагу
+- Тестирате и проверите очување контекста кроз више претраживачких корака
 
-### Vežba 2: Izgradnja Istraživačkog Asistenta sa MCP Pretragom
+### Вежба 2: Израда асистента за истраживање са MCP претрагом
 
-Napravite kompletnu aplikaciju koja:
-- Procesira istraživačka pitanja na prirodnom jeziku
-- Izvodi pretrage na webu uz svest o kontekstu
-- Sintetiše informacije iz više izvora
-- Prikazuje organizovane istraživačke rezultate
+Креирајте комплетну апликацију која:
+- Обрађује питања на природном језику за истраживање
+- Изводи претраге на вебу уз свест о контексту
+- Синтетизује информације из више извора
+- Приказује организоване резултате истраживања
 
-### Vežba 3: Implementacija Federisane Pretrage iz Više Izvora sa MCP
+### Вежба 3: Имплементација федерације претраге из више извора са MCP
 
-Napredna vežba koja pokriva:
-- Slanje upita sa svesti o kontekstu ka više pretraživača
-- Rangiranje i agregaciju rezultata
-- Kontekstualnu deduplikaciju rezultata pretrage
-- Rukovanje metapodacima specifičnim za izvore
+Напредна вежба која покрива:
+- Контекстуално усмеравање упита ка више претраживача
+- Рангирање и агрегирање резултата
+- Контекстуално уклањање дупликата резултата
+- Руководство метаподацима специфичним за изворе
 
-## Dodatni Resursi
+## Додатни ресурси
 
-- [Model Context Protocol Specifikacija](https://spec.modelcontextprotocol.io/) - Zvanična MCP specifikacija i detaljna dokumentacija protokola
-- [Model Context Protocol Dokumentacija](https://modelcontextprotocol.io/) - Detaljni tutorijali i vodiči za implementaciju
-- [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Zvanična Python implementacija MCP protokola
-- [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Zvanična TypeScript implementacija MCP protokola
-- [MCP Referentni Serveri](https://github.com/modelcontextprotocol/servers) - Referentne implementacije MCP servera
-- [Bing Web Search API Dokumentacija](https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview) - Microsoftov web pretraživački API
-- [Google Custom Search JSON API](https://developers.google.com/custom-search/v1/overview) - Google-ov programabilni pretraživač
-- [SerpAPI Dokumentacija](https://serpapi.com/search-api) - API za rezultate pretraživača
-- [Meilisearch Dokumentacija](https://www.meilisearch.com/docs) - Open-source pretraživač
-- [Elasticsearch Dokumentacija](https://www.elastic.co/guide/index.html) - Distribuirani pretraživački i analitički sistem
-- [LangChain Dokumentacija](https://python.langchain.com/docs/get_started/introduction) - Izgradnja aplikacija sa LLM-ovima
+- [Model Context Protocol спецификација](https://spec.modelcontextprotocol.io/) - Званична MCP спецификација и детаљна документација протокола
+- [Model Context Protocol документација](https://modelcontextprotocol.io/) - Детаљни туторијали и водичи за имплементацију
+- [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Званична Python имплементација MCP протокола
+- [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Званична TypeScript имплементација MCP протокола
+- [MCP референтни сервери](https://github.com/modelcontextprotocol/servers) - Референтне имплементације MCP сервера
+- [Bing Web Search API документација](https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview) - Microsoft API за веб претрагу
+- [Google Custom Search JSON API](https://developers.google.com/custom-search/v1/overview) - Google програмабилни претраживач
+- [SerpAPI документација](https://serpapi.com/search-api) - API за резултате претраживача
+- [Meilisearch документација](https://www.meilisearch.com/docs) - Отворени претраживачки систем
+- [Elasticsearch документација](https://www.elastic.co/guide/index.html) - Дистрибуирани систем за претрагу и аналитику
+- [LangChain документација](https://python.langchain.com/docs/get_started/introduction) - Изградња апликација са LLM-овима
 
-## Ishodi Učenja
+## Резултати учења
 
-Nakon završetka ovog modula, moći ćete da:
+Након завршетка овог модула, моћи ћете да:
 
-- Razumete osnove realno-vremenske web pretrage i njene izazove
-- Objasnite kako Model Context Protocol (MCP) poboljšava mogućnosti realno-vremenske pretrage
-- Implementirate MCP-bazirane pretraživačke sisteme koristeći popularne okvire i API-je
-- Dizajnirate i implementirate skalabilne, visokoperformantne arhitekture pretrage sa MCP-om
-- Primenujete MCP koncepte u različitim slučajevima upotrebe, uključujući semantičku pretragu, istraživačku pomoć i AI-poboljšano pretraživanje
-- Procenujete nove trendove i buduće inovacije u MCP-baziranim pretraživačkim tehnologijama
+- Разумете основе реално-временске веб претраге и њене изазове
+- Објасните како Model Context Protocol (MCP) унапређује могућности реално-временске претраге
+- Имплементирате претраживачка решења базирана на MCP користећи популарне оквире и API-је
+- Дизајнирате и имплементирате скалабилне и високоперформантне претраживачке архитектуре са MCP
+- Примените MCP концепте у различитим случајевима употребе укључујући семантичку претрагу, асистенцију у истраживању и AI-подржано прегледање
+- Процените нове трендове и будуће иновације у MCP-базираним претраживачким технологијама
 
-### Razmatranja o Bezbednosti i Pouzdanosti
+### Разматрања о безбедности и поверењу
 
-Prilikom implementacije MCP-baziranih web pretraživačkih rešenja, imajte na umu sledeće važne principe iz MCP specifikacije:
+При имплементацији MCP-базираних решења за веб претрагу, имајте на уму следеће важне принципе из MCP спецификације:
 
-1. **Saglasnost i Kontrola Korisnika**: Korisnici moraju jasno pristati i razumeti sve pristupe podacima i operacije. Ovo je naročito važno za implementacije koje pristupaju eksternim izvorima podataka.
+1. **Сагласност и контрола корисника**: Корисници морају јасно дати сагласност и разумети све приступе подацима и операције. Ово је посебно важно за имплементације веб претраге које могу приступати спољним изворима података.
 
-2. **Privatnost Podataka**: Osigurajte odgovarajuće rukovanje upitima i rezultatima pretrage, posebno ako sadrže osetljive informacije. Implementirajte kontrole pristupa za zaštitu korisničkih podataka.
+2. **Приватност података**: Осигурајте одговарајуће руковање упитима и резултатима претраге, посебно када могу садржати осетљиве информације. Имплементирајте одговарајуће контроле приступа за заштиту корисничких података.
 
-3. **Bezbednost Alata**: Implementirajte odgovarajuću autorizaciju i validaciju za alate za pretragu, jer oni predstavljaju potencijalni sigurnosni rizik zbog mogućnosti izvršavanja proizvoljnog koda. Opisi ponašanja alata ne treba da se smatraju pouzdanim osim ako nisu dobijeni sa poverljivog servera.
+3. **Безбедност алата**: Обезбедите правилну ауторизацију и валидацију претраживачких алата, јер они представљају потенцијалне безбедносне ризике због извођења произвољног кода. Описи понашања алата треба да се сматрају непоузданим осим ако нису добијени са поузданог сервера.
 
-4. **Jasna Dokumentacija**: Obavezno pružite jasnu dokumentaciju o mogućnostima, ograničenjima i bezbednosnim aspektima vaše MCP-bazirane implementacije, prateći smernice iz MCP specifikacije.
+4. **Јасна документација**: Обезбедите јасну документацију о могућностима, ограничењима и безбедносним аспектима ваше MCP-базиране претраге, пратећи смернице из MCP спецификације.
 
-5. **Robusni Procesi Saglasnosti**: Izgradite robusne tokove saglasnosti i autorizacije koji jasno objašnjavaju funkcije svakog alata pre nego što se dozvoli njihova upotreba, naročito za alate koji komuniciraju sa eksternim web resursima.
+5. **Робусни токови сагласности**: Креирајте робусне токове за сагласност и ауторизацију који јасно објашњавају шта сваки алат ради пре него што му се дозволи употреба, посебно за алате који комуницирају са спољним веб ресурсима.
 
-Za potpune detalje o bezbednosti i pouzdanosti MCP-a, pogledajte [zvaničnu dokumentaciju](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).
+За комплетне детаље о безбедности и поверењу у MCP, погледајте [званичну документацију](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).
 
-## Šta sledi
+## Шта следи
 
-- [6. Zajednički Doprinosi](../../06-CommunityContributions/README.md)
+- [5.11 Entra ID аутентификација за Model Context Protocol сервере](../mcp-security-entra/README.md)
 
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korišćenjem AI servisa za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo tačnosti, imajte na umu da automatski prevodi mogu sadržati greške ili netačnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prevod. Ne snosimo odgovornost za bilo kakva nesporazumevanja ili pogrešna tumačenja nastala korišćenjem ovog prevoda.
+**Одрицање од одговорности**:  
+Овај документ је преведен помоћу AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо тачности, молимо вас да имате у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне тумачења која произилазе из коришћења овог превода.
