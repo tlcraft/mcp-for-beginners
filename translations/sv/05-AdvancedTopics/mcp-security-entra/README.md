@@ -1,39 +1,39 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9abe1d303ab126f9a8b87f03cebe5213",
-  "translation_date": "2025-06-26T14:49:31+00:00",
+  "original_hash": "0abf26a6c4dbe905d5d49ccdc0ccfe92",
+  "translation_date": "2025-06-26T16:32:08+00:00",
   "source_file": "05-AdvancedTopics/mcp-security-entra/README.md",
   "language_code": "sv"
 }
 -->
-# Säkerställ AI-arbetsflöden: Entra ID-autentisering för Model Context Protocol-servrar
+# Säkerställa AI-arbetsflöden: Entra ID-autentisering för Model Context Protocol-servrar
 
 ## Introduktion  
-Att säkra din Model Context Protocol (MCP)-server är lika viktigt som att låsa ytterdörren till ditt hus. Att lämna din MCP-server öppen utsätter dina verktyg och data för obehörig åtkomst, vilket kan leda till säkerhetsintrång. Microsoft Entra ID erbjuder en robust molnbaserad lösning för identitets- och åtkomsthantering som hjälper till att säkerställa att endast auktoriserade användare och applikationer kan interagera med din MCP-server. I det här avsnittet lär du dig hur du skyddar dina AI-arbetsflöden med hjälp av Entra ID-autentisering.
+Att säkra din Model Context Protocol (MCP)-server är lika viktigt som att låsa ytterdörren hemma. Att lämna din MCP-server öppen utsätter dina verktyg och data för obehörig åtkomst, vilket kan leda till säkerhetsintrång. Microsoft Entra ID erbjuder en robust molnbaserad lösning för identitets- och åtkomsthantering, som hjälper till att säkerställa att endast auktoriserade användare och applikationer kan interagera med din MCP-server. I detta avsnitt lär du dig hur du skyddar dina AI-arbetsflöden med hjälp av Entra ID-autentisering.
 
 ## Lärandemål  
-Efter detta avsnitt ska du kunna:
+Efter detta avsnitt kommer du att kunna:
 
 - Förstå vikten av att säkra MCP-servrar.  
 - Förklara grunderna i Microsoft Entra ID och OAuth 2.0-autentisering.  
 - Känna igen skillnaden mellan publika och konfidentiella klienter.  
-- Implementera Entra ID-autentisering i både lokala (publik klient) och fjärrstyrda (konfidentiell klient) MCP-servermiljöer.  
+- Implementera Entra ID-autentisering både i lokala (publik klient) och fjärranslutna (konfidentiell klient) MCP-server-scenarier.  
 - Tillämpa säkerhetsbästa praxis vid utveckling av AI-arbetsflöden.
 
-# Säkerställ AI-arbetsflöden: Entra ID-autentisering för Model Context Protocol-servrar
+## Säkerhet och MCP
 
-Precis som du inte skulle lämna ytterdörren olåst bör du inte heller lämna din MCP-server öppen för alla att använda. Att säkra dina AI-arbetsflöden är avgörande för att bygga robusta, pålitliga och säkra applikationer. I detta kapitel introduceras du till hur du använder Microsoft Entra ID för att skydda dina MCP-servrar, så att endast auktoriserade användare och applikationer kan interagera med dina verktyg och data.
+Precis som du inte skulle lämna ytterdörren olåst, bör du inte lämna din MCP-server öppen för vem som helst. Att säkra dina AI-arbetsflöden är avgörande för att bygga robusta, pålitliga och säkra applikationer. Detta kapitel introducerar hur du använder Microsoft Entra ID för att skydda dina MCP-servrar, så att endast auktoriserade användare och applikationer kan använda dina verktyg och data.
 
 ## Varför säkerhet är viktigt för MCP-servrar
 
-Föreställ dig att din MCP-server har ett verktyg som kan skicka e-post eller komma åt en kunddatabas. En osäkrad server innebär att vem som helst potentiellt kan använda det verktyget, vilket kan leda till obehörig dataåtkomst, skräppost eller andra skadliga aktiviteter.
+Föreställ dig att din MCP-server har ett verktyg som kan skicka e-post eller komma åt en kunddatabas. En osäkrad server innebär att vem som helst potentiellt kan använda det verktyget, vilket kan leda till obehörig datatillgång, skräppost eller andra skadliga aktiviteter.
 
-Genom att implementera autentisering säkerställer du att varje förfrågan till din server verifieras och att identiteten för användaren eller applikationen som gör förfrågan bekräftas. Detta är det första och mest kritiska steget för att säkra dina AI-arbetsflöden.
+Genom att implementera autentisering säkerställer du att varje förfrågan till din server verifieras, vilket bekräftar identiteten på användaren eller applikationen som gör förfrågan. Detta är det första och mest kritiska steget för att säkra dina AI-arbetsflöden.
 
 ## Introduktion till Microsoft Entra ID
 
-**Microsoft Entra ID** är en molnbaserad tjänst för identitets- och åtkomsthantering. Tänk på det som en universell säkerhetsvakt för dina applikationer. Den hanterar den komplexa processen att verifiera användaridentiteter (autentisering) och avgöra vad de får göra (auktorisation).
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) är en molnbaserad tjänst för identitets- och åtkomsthantering. Tänk på det som en universell säkerhetsvakt för dina applikationer. Den hanterar den komplexa processen att verifiera användaridentiteter (autentisering) och avgöra vad de har rätt att göra (auktorisering).
 
 Genom att använda Entra ID kan du:
 
@@ -41,27 +41,27 @@ Genom att använda Entra ID kan du:
 - Skydda API:er och tjänster.  
 - Hantera åtkomstpolicyer från en central plats.
 
-För MCP-servrar erbjuder Entra ID en robust och välrenommerad lösning för att hantera vem som kan använda serverns funktioner.
+För MCP-servrar erbjuder Entra ID en robust och allmänt betrodd lösning för att styra vem som kan använda serverns funktioner.
 
 ---
 
-## Förstå magin: Hur Entra ID-autentisering fungerar
+## Förstå magin: Så fungerar Entra ID-autentisering
 
 Entra ID använder öppna standarder som **OAuth 2.0** för att hantera autentisering. Även om detaljerna kan vara komplexa är kärnkonceptet enkelt och kan förstås genom en liknelse.
 
 ### En enkel introduktion till OAuth 2.0: Valetnyckeln
 
-Tänk på OAuth 2.0 som en parkeringsservice för din bil. När du anländer till en restaurang ger du inte parkeringsvakten din huvudnyckel. Istället ger du en **valetnyckel** som har begränsade rättigheter — den kan starta bilen och låsa dörrarna, men kan inte öppna bagageutrymmet eller handskfacket.
+Tänk på OAuth 2.0 som en parkeringsservice för din bil. När du kommer till en restaurang ger du inte parkeringsvakten din huvudnyckel. Istället ger du en **valetnyckel** som har begränsade behörigheter — den kan starta bilen och låsa dörrarna, men kan inte öppna bagageutrymmet eller handskfacket.
 
 I denna liknelse:
 
 - **Du** är **Användaren**.  
-- **Din bil** är **MCP-servern** med dess värdefulla verktyg och data.  
-- **Valet** är **Microsoft Entra ID**.  
-- **Parkeringsvakten** är **MCP-klienten** (applikationen som försöker nå servern).  
-- **Valetnyckeln** är **Access Token**.
+- **Din bil** är **MCP-servern** med sina värdefulla verktyg och data.  
+- **Parkeringsvakten** är **Microsoft Entra ID**.  
+- **Parkeringstjänsten** är **MCP-klienten** (applikationen som försöker nå servern).  
+- **Valetnyckeln** är **Åtkomsttoken**.
 
-Access token är en säker textsträng som MCP-klienten får från Entra ID efter att du loggat in. Klienten skickar sedan med denna token i varje förfrågan till MCP-servern. Servern kan verifiera token för att säkerställa att förfrågan är legitim och att klienten har nödvändiga rättigheter, utan att någonsin behöva hantera dina faktiska inloggningsuppgifter (som ditt lösenord).
+Åtkomsttoken är en säker textsträng som MCP-klienten får från Entra ID efter att du loggat in. Klienten skickar sedan denna token till MCP-servern med varje förfrågan. Servern kan verifiera token för att säkerställa att förfrågan är legitim och att klienten har rätt behörigheter — allt utan att behöva hantera dina faktiska inloggningsuppgifter (som ditt lösenord).
 
 ### Autentiseringsflödet
 
@@ -89,21 +89,21 @@ sequenceDiagram
 
 Innan vi går in på koden är det viktigt att presentera en nyckelkomponent som du kommer att se i exemplen: **Microsoft Authentication Library (MSAL)**.
 
-MSAL är ett bibliotek utvecklat av Microsoft som gör det mycket enklare för utvecklare att hantera autentisering. Istället för att du själv behöver skriva all komplex kod för att hantera säkerhetstoken, inloggningar och sessioner, tar MSAL hand om det tunga arbetet.
+MSAL är ett bibliotek utvecklat av Microsoft som gör det mycket enklare för utvecklare att hantera autentisering. Istället för att du själv behöver skriva all komplex kod för att hantera säkerhetstoken, inloggningar och sessionsuppdateringar, tar MSAL hand om det tunga arbetet.
 
 Att använda ett bibliotek som MSAL rekommenderas starkt eftersom:
 
 - **Det är säkert:** Det implementerar industristandardprotokoll och säkerhetsbästa praxis, vilket minskar risken för sårbarheter i din kod.  
-- **Det förenklar utvecklingen:** Det döljer komplexiteten i OAuth 2.0 och OpenID Connect, så att du kan lägga till robust autentisering med bara några kodrader.  
+- **Det förenklar utveckling:** Det döljer komplexiteten i OAuth 2.0 och OpenID Connect, så att du kan lägga till robust autentisering i din applikation med bara några kodrader.  
 - **Det underhålls:** Microsoft uppdaterar och underhåller aktivt MSAL för att hantera nya säkerhetshot och plattformsförändringar.
 
-MSAL stöder många språk och applikationsramverk, inklusive .NET, JavaScript/TypeScript, Python, Java, Go samt mobila plattformar som iOS och Android. Det betyder att du kan använda samma konsekventa autentiseringsmönster i hela din tekniska miljö.
+MSAL stöder många olika språk och applikationsramverk, inklusive .NET, JavaScript/TypeScript, Python, Java, Go samt mobila plattformar som iOS och Android. Det innebär att du kan använda samma konsekventa autentiseringsmönster i hela din teknikstack.
 
-För att lära dig mer om MSAL kan du besöka den officiella [MSAL-översiktsdokumentationen](https://learn.microsoft.com/entra/identity-platform/msal-overview).
+För att lära dig mer om MSAL kan du läsa den officiella [MSAL-översiktsdokumentationen](https://learn.microsoft.com/entra/identity-platform/msal-overview).
 
 ---
 
-## Så här säkrar du din MCP-server med Entra ID: En steg-för-steg-guide
+## Säkerställa din MCP-server med Entra ID: En steg-för-steg-guide
 
 Nu går vi igenom hur du säkrar en lokal MCP-server (en som kommunicerar över `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
 
@@ -134,7 +134,7 @@ This class is responsible for handling the interaction with Entra ID.
 
 - **`CreateAsync`**: This method initializes the `PublicClientApplication` from the MSAL (Microsoft Authentication Library). It's configured with your application's `clientId` and `tenantId`.
 - **`WithBroker`**: This enables the use of a broker (like the Windows Web Account Manager), which provides a more secure and seamless single sign-on experience.
-- **`AcquireTokenAsync`**: Detta är kärnmetoden. Den försöker först hämta en token tyst (det vill säga att användaren inte behöver logga in igen om en giltig session redan finns). Om en tyst token inte kan hämtas, kommer användaren att uppmanas att logga in interaktivt.
+- **`AcquireTokenAsync`**: Detta är kärnmetoden. Den försöker först hämta en token tyst (det vill säga att användaren inte behöver logga in igen om de redan har en giltig session). Om en tyst token inte kan hämtas, kommer den att be användaren att logga in interaktivt.
 
 ```csharp
 // Simplified for clarity
@@ -187,7 +187,7 @@ public async Task<string> AcquireTokenAsync()
 This is where the MCP server is set up and the authentication service is integrated.
 
 - **`AddSingleton<AuthenticationService>`**: This registers the `AuthenticationService` with the dependency injection container, so it can be used by other parts of the application (like our tool).
-- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` för att få en giltig access token. Om autentiseringen lyckas används token för att anropa Microsoft Graph API och hämta användarens uppgifter.
+- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` för att få en giltig åtkomsttoken. Om autentiseringen lyckas används token för att anropa Microsoft Graph API och hämta användarens detaljer.
 
 ```csharp
 // Simplified for clarity
@@ -256,7 +256,7 @@ This file sets up the Express server and the MCP transport layer.
 
 - **`requireBearerAuth`**: This is middleware that protects the `/sse` and `/message` endpoints. It checks for a valid bearer token in the `Authorization` header of the request.
 - **`EntraIdServerAuthProvider`**: This is a custom class that implements the `McpServerAuthorizationProvider` interface. It's responsible for handling the OAuth 2.0 flow.
-- **`/auth/callback`**: Denna endpoint hanterar omdirigeringen från Entra ID efter att användaren autentiserats. Den byter auktoriseringskoden mot en access token och en refresh token.
+- **`/auth/callback`**: Denna endpoint hanterar omdirigeringen från Entra ID efter att användaren autentiserats. Den byter ut auktoriseringskoden mot en åtkomsttoken och en refresh-token.
 
 ```typescript
 // Simplified for clarity
@@ -291,7 +291,7 @@ app.get("/auth/callback", (req, res) => {
 
 **`Tools.ts`**
 
-This file defines the tools that the MCP server provides. The `getUserDetails`-verktyget är liknande det i föregående exempel, men hämtar access token från sessionen.
+This file defines the tools that the MCP server provides. The `getUserDetails`-verktyget är liknande det i föregående exempel, men hämtar åtkomsttoken från sessionen.
 
 ```typescript
 // Simplified for clarity
@@ -338,53 +338,53 @@ This class handles the logic for:
 3. Entra ID redirects the user back to the `/auth/callback` endpoint with an authorization code.
 4. The server exchanges the code for an access token and a refresh token, stores them, and creates a session token which is sent to the client.
 5. The client can now use this session token in the `Authorization` header for all future requests to the MCP server.
-6. When the `getUserDetails`-verktyget anropas, använder sessionstoken för att slå upp Entra ID-access token och använder sedan den för att anropa Microsoft Graph API.
+6. When the `getUserDetails`-verktyget anropas, använder sessionstoken för att leta upp Entra ID-åtkomsttoken och använder sedan denna för att anropa Microsoft Graph API.
 
-Detta flöde är mer komplext än flödet för publik klient, men krävs för internetexponerade endpoints. Eftersom fjärrstyrda MCP-servrar är åtkomliga via det publika internet behöver de starkare säkerhetsåtgärder för att skydda mot obehörig åtkomst och potentiella attacker.
+Detta flöde är mer komplext än det publika klientflödet, men krävs för internetexponerade endpoints. Eftersom fjärranslutna MCP-servrar är tillgängliga över det publika internet behövs starkare säkerhetsåtgärder för att skydda mot obehörig åtkomst och potentiella attacker.
 
 ## Säkerhetsbästa praxis
 
-- **Använd alltid HTTPS**: Kryptera kommunikationen mellan klient och server för att skydda tokens från att avlyssnas.  
-- **Implementera rollbaserad åtkomstkontroll (RBAC)**: Kontrollera inte bara *om* en användare är autentiserad, utan också *vad* användaren är auktoriserad att göra. Du kan definiera roller i Entra ID och kontrollera dem i din MCP-server.  
-- **Övervaka och granska**: Logga alla autentiseringshändelser så att du kan upptäcka och reagera på misstänkt aktivitet.  
-- **Hantera rate limiting och throttling**: Microsoft Graph och andra API:er använder rate limiting för att förhindra missbruk. Implementera exponentiell backoff och återförsök i din MCP-server för att hantera HTTP 429 (Too Many Requests) på ett smidigt sätt. Överväg att cachelagra ofta efterfrågad data för att minska API-anrop.  
-- **Säkert token-lagring**: Lagra access tokens och refresh tokens säkert. För lokala applikationer, använd systemets säkra lagringsmekanismer. För serverapplikationer, överväg krypterad lagring eller säkra nyckelhanteringstjänster som Azure Key Vault.  
-- **Hantera tokenutgång**: Access tokens har en begränsad livslängd. Implementera automatisk tokenförnyelse med hjälp av refresh tokens för att bibehålla en sömlös användarupplevelse utan att kräva omautentisering.  
-- **Överväg att använda Azure API Management**: Även om säkerhet direkt i din MCP-server ger dig finmaskig kontroll, kan API-gateways som Azure API Management hantera många säkerhetsaspekter automatiskt, inklusive autentisering, auktorisation, rate limiting och övervakning. De erbjuder ett centraliserat säkerhetslager mellan dina klienter och MCP-servrar. För mer information om att använda API-gateways med MCP, se vår [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690).
+- **Använd alltid HTTPS:** Kryptera kommunikationen mellan klient och server för att skydda token från att fångas upp.  
+- **Implementera rollbaserad åtkomstkontroll (RBAC):** Kontrollera inte bara *om* en användare är autentiserad, utan även *vad* användaren är behörig att göra. Du kan definiera roller i Entra ID och kontrollera dessa i din MCP-server.  
+- **Övervaka och granska:** Logga alla autentiseringsevenemang så att du kan upptäcka och reagera på misstänkt aktivitet.  
+- **Hantera rate limiting och throttling:** Microsoft Graph och andra API:er har begränsningar för att förhindra missbruk. Implementera exponentiell backoff och återförsök i din MCP-server för att hantera HTTP 429 (för många förfrågningar) smidigt. Överväg att cachelagra ofta åtkomna data för att minska API-anrop.  
+- **Säkra tokenlagring:** Spara åtkomst- och refresh-token säkert. För lokala applikationer, använd systemets säkra lagringsmekanismer. För serverapplikationer, överväg krypterad lagring eller säkra nyckelhanteringstjänster som Azure Key Vault.  
+- **Hantera tokenutgång:** Åtkomsttoken har begränsad livslängd. Implementera automatisk tokenförnyelse med refresh-token för att bibehålla en sömlös användarupplevelse utan att kräva omautentisering.  
+- **Överväg att använda Azure API Management:** Även om säkerhet direkt i din MCP-server ger finmaskig kontroll, kan API-gateways som Azure API Management hantera många säkerhetsaspekter automatiskt, inklusive autentisering, auktorisering, rate limiting och övervakning. De erbjuder ett centraliserat säkerhetslager mellan dina klienter och MCP-servrar. För mer information om att använda API-gateways med MCP, se vår [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690).
 
-## Viktiga punkter att ta med sig
+## Viktiga slutsatser
 
 - Att säkra din MCP-server är avgörande för att skydda dina data och verktyg.  
-- Microsoft Entra ID erbjuder en robust och skalbar lösning för autentisering och auktorisation.  
+- Microsoft Entra ID erbjuder en robust och skalbar lösning för autentisering och auktorisering.  
 - Använd en **publik klient** för lokala applikationer och en **konfidentiell klient** för fjärrservrar.  
 - **Authorization Code Flow** är det säkraste alternativet för webbapplikationer.
 
 ## Övning
 
-1. Fundera på en MCP-server du skulle kunna bygga. Skulle det vara en lokal server eller en fjärrserver?  
+1. Fundera på en MCP-server du skulle kunna bygga. Skulle den vara lokal eller fjärransluten?  
 2. Baserat på ditt svar, skulle du använda en publik eller konfidentiell klient?  
-3. Vilka behörigheter skulle din MCP-server behöva för att utföra åtgärder mot Microsoft Graph?
+3. Vilka behörigheter skulle din MCP-server begära för att utföra åtgärder mot Microsoft Graph?
 
 ## Praktiska övningar
 
 ### Övning 1: Registrera en applikation i Entra ID  
-Navigera till Microsoft Entra-portalen.  
+Gå till Microsoft Entra-portalen.  
 Registrera en ny applikation för din MCP-server.  
 Anteckna Application (client) ID och Directory (tenant) ID.
 
 ### Övning 2: Säkra en lokal MCP-server (publik klient)  
-Följ kodexemplet för att integrera MSAL (Microsoft Authentication Library) för användarautentisering.  
-Testa autentiseringsflödet genom att anropa MCP-verktyget som hämtar användaruppgifter från Microsoft Graph.
+- Följ kodexemplet för att integrera MSAL (Microsoft Authentication Library) för användarautentisering.  
+- Testa autentiseringsflödet genom att anropa MCP-verktyget som hämtar användardetaljer från Microsoft Graph.
 
-### Övning 3: Säkra en fjärrstyrd MCP-server (konfidentiell klient)  
-Registrera en konfidentiell klient i Entra ID och skapa en klienthemlighet.  
-Konfigurera din Express.js MCP-server att använda Authorization Code Flow.  
-Testa de skyddade endpoints och bekräfta tokenbaserad åtkomst.
+### Övning 3: Säkra en fjärransluten MCP-server (konfidentiell klient)  
+- Registrera en konfidentiell klient i Entra ID och skapa en klienthemlighet.  
+- Konfigurera din Express.js MCP-server att använda Authorization Code Flow.  
+- Testa de skyddade endpoints och bekräfta token-baserad åtkomst.
 
 ### Övning 4: Tillämpa säkerhetsbästa praxis  
-Aktivera HTTPS för din lokala eller fjärrserver.  
-Implementera rollbaserad åtkomstkontroll (RBAC) i serverlogiken.  
-Lägg till hantering av tokenutgång och säker tokenlagring.
+- Aktivera HTTPS för din lokala eller fjärranslutna server.  
+- Implementera rollbaserad åtkomstkontroll (RBAC) i serverlogiken.  
+- Lägg till hantering av tokenutgång och säker tokenlagring.
 
 ## Resurser
 
@@ -393,7 +393,7 @@ Lägg till hantering av tokenutgång och säker tokenlagring.
    [MSAL Overview on Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)
 
 2. **Azure-Samples/mcp-auth-servers GitHub Repository**  
-   Referensimplementationer av MCP-servrar som demonstrerar autentiseringsflöden:  
+   Referensimplementationer av MCP-servrar som visar autentiseringsflöden:  
    [Azure-Samples/mcp-auth-servers on GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
 
 3. **Managed Identities for Azure Resources Overview**  
@@ -401,20 +401,20 @@ Lägg till hantering av tokenutgång och säker tokenlagring.
    [Managed Identities Overview on Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)
 
 4. **Azure API Management: Your Auth Gateway for MCP Servers**  
-   En djupdykning i hur APIM fungerar som en säker OAuth2-gateway för MCP-servrar:  
+   En djupdykning i hur APIM kan användas som en säker OAuth2-gateway för MCP-servrar:  
    [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
 
 5. **Microsoft Graph Permissions Reference**  
-   En komplett lista över delegerade och applikationsbehörigheter för Microsoft Graph:  
+   Omfattande lista över delegerade och applikationsbehörigheter för Microsoft Graph:  
    [Microsoft Graph Permissions Reference](https://learn.microsoft.com/zh-tw/graph/permissions-reference)
 
-## Lärandemål  
-Efter att ha genomfört detta avsnitt kommer du att kunna:
+## Läranderesultat  
+Efter att ha genomgått detta avsnitt kommer du att kunna:
 
 - Förklara varför autentisering är avgörande för MCP-servrar och AI-arbetsflöden.  
-- Ställa in och konfigurera Entra ID-autentisering för både lokala och fjärrstyrda MCP-servrar.  
+- Ställa in och konfigurera Entra ID-autentisering för både lokala och fjärranslutna MCP-server-scenarier.  
 - Välja rätt klienttyp (publik eller konfidentiell) baserat på din servers distribution.  
-- Implementera säkra kodningspraxis, inklusive tokenlagring och rollbaserad auktorisation.  
+- Implementera säkra kodningspraxis, inklusive tokenlagring och rollbaserad auktorisering.  
 - Tryggt skydda din MCP-server och dess verktyg från obehörig åtkomst.
 
 ## Vad händer härnäst
@@ -422,4 +422,4 @@ Efter att ha genomfört detta avsnitt kommer du att kunna:
 - [6. Community Contributions](../../06-CommunityContributions/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, var vänlig uppmärksam på att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För viktig information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

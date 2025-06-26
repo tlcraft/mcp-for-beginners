@@ -1,69 +1,69 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9abe1d303ab126f9a8b87f03cebe5213",
-  "translation_date": "2025-06-26T14:58:12+00:00",
+  "original_hash": "0abf26a6c4dbe905d5d49ccdc0ccfe92",
+  "translation_date": "2025-06-26T16:39:43+00:00",
   "source_file": "05-AdvancedTopics/mcp-security-entra/README.md",
   "language_code": "sk"
 }
 -->
-# Zabezpečenie AI pracovných tokov: Entra ID autentifikácia pre Model Context Protocol servery
+# Zabezpečenie AI pracovných tokov: Overovanie Entra ID pre Model Context Protocol servery
 
 ## Úvod  
-Zabezpečiť svoj Model Context Protocol (MCP) server je rovnako dôležité ako zamknúť predné dvere svojho domu. Nechávať MCP server otvorený vystavuje vaše nástroje a dáta neoprávnenému prístupu, čo môže viesť k bezpečnostným incidentom. Microsoft Entra ID poskytuje robustné cloudové riešenie na správu identity a prístupu, ktoré zabezpečuje, že iba oprávnení používatelia a aplikácie môžu komunikovať s vaším MCP serverom. V tejto časti sa naučíte, ako chrániť svoje AI pracovné toky pomocou autentifikácie Entra ID.
+Zabezpečiť váš Model Context Protocol (MCP) server je rovnako dôležité, ako zamknúť predné dvere vášho domu. Nechávať MCP server otvorený znamená vystaviť vaše nástroje a dáta neoprávnenému prístupu, čo môže viesť k bezpečnostným incidentom. Microsoft Entra ID poskytuje spoľahlivé cloudové riešenie na správu identity a prístupu, ktoré zabezpečuje, že iba autorizovaní používatelia a aplikácie môžu komunikovať s vaším MCP serverom. V tejto časti sa naučíte, ako ochrániť svoje AI pracovné toky pomocou overovania Entra ID.
 
 ## Ciele učenia  
-Na konci tejto časti budete schopní:
+Na konci tejto časti budete vedieť:
 
-- Pochopiť význam zabezpečenia MCP serverov.  
-- Vysvetliť základy Microsoft Entra ID a OAuth 2.0 autentifikácie.  
-- Rozlíšiť rozdiel medzi verejnými a dôvernými klientmi.  
-- Implementovať Entra ID autentifikáciu v lokálnych (verejný klient) a vzdialených (dôverné klient) scenároch MCP serverov.  
-- Aplikovať osvedčené bezpečnostné postupy pri vývoji AI pracovných tokov.
+- Pochopiť význam zabezpečenia MCP serverov.
+- Vysvetliť základy Microsoft Entra ID a overovania OAuth 2.0.
+- Rozlíšiť medzi verejnými a dôvernými klientmi.
+- Implementovať overovanie Entra ID v lokálnych (verejný klient) aj vzdialených (dôverný klient) scenároch MCP servera.
+- Použiť najlepšie bezpečnostné postupy pri vývoji AI pracovných tokov.
 
-# Zabezpečenie AI pracovných tokov: Entra ID autentifikácia pre Model Context Protocol servery
+## Bezpečnosť a MCP
 
-Rovnako ako by ste nenechali predné dvere svojho domu odomknuté, nemali by ste nechať svoj MCP server otvorený pre kohokoľvek. Zabezpečenie vašich AI pracovných tokov je kľúčové pre vytváranie spoľahlivých, dôveryhodných a bezpečných aplikácií. Táto kapitola vám predstaví používanie Microsoft Entra ID na zabezpečenie vašich MCP serverov, aby len oprávnení používatelia a aplikácie mohli pracovať s vašimi nástrojmi a dátami.
+Rovnako ako by ste nenechali predné dvere svojho domu otvorené, nemali by ste nechať MCP server prístupný komukoľvek. Zabezpečenie vašich AI pracovných tokov je kľúčové pre tvorbu spoľahlivých, dôveryhodných a bezpečných aplikácií. Táto kapitola vám predstaví použitie Microsoft Entra ID na zabezpečenie vašich MCP serverov, aby s vašimi nástrojmi a dátami mohli pracovať iba oprávnení používatelia a aplikácie.
 
 ## Prečo je bezpečnosť dôležitá pre MCP servery
 
-Predstavte si, že váš MCP server má nástroj, ktorý môže odosielať e-maily alebo pristupovať k databáze zákazníkov. Nezabezpečený server by znamenal, že hocikto by mohol tento nástroj použiť, čo by viedlo k neoprávnenému prístupu k dátam, spamu alebo iným škodlivým aktivitám.
+Predstavte si, že váš MCP server má nástroj, ktorý dokáže posielať e-maily alebo pristupovať k databáze zákazníkov. Nezabezpečený server by znamenal, že ktokoľvek by mohol tento nástroj použiť, čo by mohlo viesť k neoprávnenému prístupu k údajom, spamu alebo iným škodlivým aktivitám.
 
-Implementáciou autentifikácie zabezpečíte, že každá požiadavka na váš server je overená, čím sa potvrdí identita používateľa alebo aplikácie, ktorá požiadavku odosiela. Toto je prvý a najdôležitejší krok k zabezpečeniu vašich AI pracovných tokov.
+Implementáciou overovania zabezpečíte, že každá požiadavka na server je overená a potvrdzuje identitu používateľa alebo aplikácie, ktorá požiadavku posiela. Toto je prvý a najdôležitejší krok k zabezpečeniu vašich AI pracovných tokov.
 
 ## Úvod do Microsoft Entra ID
 
-**Microsoft Entra ID** je cloudová služba na správu identity a prístupu. Predstavte si ju ako univerzálneho bezpečnostného strážcu pre vaše aplikácie. Spravuje zložitý proces overovania používateľských identít (autentifikácia) a určuje, čo môžu používatelia robiť (autorizácia).
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) je cloudová služba na správu identity a prístupu. Predstavte si ju ako univerzálneho bezpečnostného strážcu pre vaše aplikácie. Zabezpečuje zložitý proces overovania identity používateľov (autentifikácia) a rozhodovania o tom, čo môžu robiť (autorizácia).
 
-Použitím Entra ID môžete:
+Používaním Entra ID môžete:
 
-- Povoliť bezpečné prihlasovanie používateľov.  
-- Chrániť API a služby.  
-- Spravovať prístupové politiky z jedného centrálneho miesta.
+- Umožniť bezpečné prihlásenie používateľov.
+- Chrániť API a služby.
+- Spravovať prístupové politiky z centrálneho miesta.
 
-Pre MCP servery poskytuje Entra ID spoľahlivé a široko dôveryhodné riešenie na správu toho, kto môže využívať funkcie vášho servera.
+Pre MCP servery poskytuje Entra ID spoľahlivé a široko dôveryhodné riešenie na správu prístupu k schopnostiam vášho servera.
 
 ---
 
-## Pochopenie podstaty: Ako funguje autentifikácia Entra ID
+## Pochopenie princípu: Ako funguje overovanie Entra ID
 
-Entra ID používa otvorené štandardy ako **OAuth 2.0** na spracovanie autentifikácie. Aj keď môžu byť detaily zložité, základná myšlienka je jednoduchá a dá sa vysvetliť pomocou analógie.
+Entra ID používa otvorené štandardy ako **OAuth 2.0** na spracovanie overovania. Aj keď detaily môžu byť zložité, základná myšlienka je jednoduchá a dá sa pochopiť cez analógiu.
 
-### Jemný úvod do OAuth 2.0: Kľúč pre valet službu
+### Jemný úvod do OAuth 2.0: Kľúč od parkoviska
 
-Predstavte si OAuth 2.0 ako valet službu pre vaše auto. Keď prídete do reštaurácie, nedáte valetovi svoj hlavný kľúč od auta. Namiesto toho mu poskytnete **valet kľúč**, ktorý má obmedzené oprávnenia – môže naštartovať auto a zamknúť dvere, ale nemôže otvoriť kufor alebo schránku na rukavice.
+Predstavte si OAuth 2.0 ako službu parkovania vášho auta. Keď prídete do reštaurácie, nedáte parkovaciemu služobný kľúč od auta. Namiesto toho mu dáte **valet key** – kľúč s obmedzenými právami, ktorý vie auto naštartovať a zamknúť dvere, ale nemôže otvoriť kufor alebo rukavíc.
 
 V tejto analógii:
 
-- **Vy** ste **Používateľ**.  
-- **Vaše auto** je **MCP server** s jeho cennými nástrojmi a dátami.  
-- **Valet** je **Microsoft Entra ID**.  
-- **Parkovací pracovník** je **MCP klient** (aplikácia, ktorá sa snaží pristupovať k serveru).  
-- **Valet kľúč** je **Access Token**.
+- **Vy** ste **používateľ**.
+- **Vaše auto** je **MCP server** s jeho cennými nástrojmi a dátami.
+- **Valet** je **Microsoft Entra ID**.
+- **Parkovací služobník** je **MCP klient** (aplikácia, ktorá sa snaží pristupovať k serveru).
+- **Valet key** je **Access Token**.
 
-Access token je bezpečný textový reťazec, ktorý MCP klient dostane od Entra ID po vašom prihlásení. Klient potom tento token predkladá MCP serveru pri každej požiadavke. Server môže token overiť, aby sa uistil, že požiadavka je legitímna a že klient má potrebné oprávnenia, a to bez toho, aby musel manipulovať s vašimi skutočnými prihlasovacími údajmi (napríklad heslom).
+Access token je bezpečný textový reťazec, ktorý MCP klient dostane od Entra ID po vašom prihlásení. Klient potom tento token predkladá MCP serveru pri každej požiadavke. Server môže overiť token, aby sa uistil, že požiadavka je legitímna a klient má potrebné oprávnenia, bez toho, aby musel pracovať s vašimi skutočnými prihlasovacími údajmi (napr. heslom).
 
-### Priebeh autentifikácie
+### Priebeh overovania
 
 Takto proces funguje v praxi:
 
@@ -89,21 +89,21 @@ sequenceDiagram
 
 Predtým, než sa pustíme do kódu, je dôležité predstaviť kľúčovú súčasť, ktorú uvidíte v príkladoch: **Microsoft Authentication Library (MSAL)**.
 
-MSAL je knižnica vyvinutá spoločnosťou Microsoft, ktorá výrazne uľahčuje vývojárom prácu s autentifikáciou. Namiesto toho, aby ste museli písať celý zložitý kód na spracovanie bezpečnostných tokenov, správu prihlasovania a obnovovanie relácií, MSAL sa o to postará za vás.
+MSAL je knižnica vyvinutá Microsoftom, ktorá výrazne uľahčuje vývojárom prácu s overovaním. Namiesto toho, aby ste museli písať zložité kódy na spracovanie bezpečnostných tokenov, riadenie prihlásení a obnovovanie relácií, MSAL všetko toto zabezpečuje za vás.
 
-Používanie knižnice ako MSAL sa veľmi odporúča, pretože:
+Použitie knižnice MSAL je veľmi odporúčané, pretože:
 
-- **Je bezpečná:** Implementuje štandardné protokoly a osvedčené bezpečnostné postupy, čím znižuje riziko zraniteľností vo vašom kóde.  
-- **Zjednodušuje vývoj:** Abstrahuje zložitosť protokolov OAuth 2.0 a OpenID Connect, takže môžete pridať robustnú autentifikáciu do vašej aplikácie len niekoľkými riadkami kódu.  
-- **Je udržiavaná:** Microsoft ju aktívne udržiava a aktualizuje, aby riešila nové bezpečnostné hrozby a zmeny platforiem.
+- **Je bezpečná:** Implementuje štandardné protokoly a najlepšie bezpečnostné postupy, čím znižuje riziko zraniteľností vo vašom kóde.
+- **Zjednodušuje vývoj:** Abstrahuje komplexnosť protokolov OAuth 2.0 a OpenID Connect, čo vám umožní pridať robustné overovanie do aplikácie len niekoľkými riadkami kódu.
+- **Je udržiavaná:** Microsoft ju aktívne aktualizuje a vylepšuje, aby reagovala na nové bezpečnostné hrozby a zmeny platforiem.
 
-MSAL podporuje širokú škálu jazykov a aplikačných rámcov vrátane .NET, JavaScript/TypeScript, Python, Java, Go a mobilných platforiem ako iOS a Android. To znamená, že môžete používať rovnaké konzistentné vzory autentifikácie naprieč celým technologickým stackom.
+MSAL podporuje množstvo jazykov a aplikačných rámcov, vrátane .NET, JavaScript/TypeScript, Python, Java, Go a mobilné platformy ako iOS a Android. To znamená, že môžete používať konzistentné overovacie vzory v celej svojej technologickej infraštruktúre.
 
-Viac o MSAL sa dozviete v oficiálnej [dokumentácii MSAL overview](https://learn.microsoft.com/entra/identity-platform/msal-overview).
+Viac informácií o MSAL nájdete v oficiálnej [dokumentácii MSAL](https://learn.microsoft.com/entra/identity-platform/msal-overview).
 
 ---
 
-## Zabezpečenie vášho MCP servera pomocou Entra ID: krok za krokom
+## Zabezpečenie vášho MCP servera pomocou Entra ID: Krok za krokom
 
 Teraz si prejdeme, ako zabezpečiť lokálny MCP server (ten, ktorý komunikuje cez `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
 
@@ -134,7 +134,7 @@ This class is responsible for handling the interaction with Entra ID.
 
 - **`CreateAsync`**: This method initializes the `PublicClientApplication` from the MSAL (Microsoft Authentication Library). It's configured with your application's `clientId` and `tenantId`.
 - **`WithBroker`**: This enables the use of a broker (like the Windows Web Account Manager), which provides a more secure and seamless single sign-on experience.
-- **`AcquireTokenAsync`**: Toto je kľúčová metóda. Najprv sa pokúsi získať token ticho (t.j. používateľ sa nemusí znova prihlasovať, ak už má platnú reláciu). Ak ticho získať token nie je možné, vyzve používateľa na interaktívne prihlásenie.
+- **`AcquireTokenAsync`**: Toto je hlavná metóda. Najprv sa pokúsi získať token ticho (teda používateľ sa nebude musieť znovu prihlasovať, ak už má platnú reláciu). Ak tichý token nie je možné získať, vyzve používateľa na interaktívne prihlásenie.
 
 ```csharp
 // Simplified for clarity
@@ -187,7 +187,7 @@ public async Task<string> AcquireTokenAsync()
 This is where the MCP server is set up and the authentication service is integrated.
 
 - **`AddSingleton<AuthenticationService>`**: This registers the `AuthenticationService` with the dependency injection container, so it can be used by other parts of the application (like our tool).
-- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` na získanie platného access tokenu. Ak je autentifikácia úspešná, použije token na volanie Microsoft Graph API a načítanie detailov používateľa.
+- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` na získanie platného access tokenu. Ak je overenie úspešné, použije token na volanie Microsoft Graph API a získanie údajov o používateľovi.
 
 ```csharp
 // Simplified for clarity
@@ -215,9 +215,9 @@ public static async Task<string> GetUserDetailsFromGraph(
 }
 ```
 
-#### 3. Ako to všetko spolu funguje
+#### 3. Ako to všetko funguje spolu
 
-1. Keď sa MCP klient pokúsi použiť `GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
+1. Keď MCP klient volá `GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
 2. `AcquireTokenAsync` triggers the MSAL library to check for a valid token.
 3. If no token is found, MSAL, through the broker, will prompt the user to sign in with their Entra ID account.
 4. Once the user signs in, Entra ID issues an access token.
@@ -256,7 +256,7 @@ This file sets up the Express server and the MCP transport layer.
 
 - **`requireBearerAuth`**: This is middleware that protects the `/sse` and `/message` endpoints. It checks for a valid bearer token in the `Authorization` header of the request.
 - **`EntraIdServerAuthProvider`**: This is a custom class that implements the `McpServerAuthorizationProvider` interface. It's responsible for handling the OAuth 2.0 flow.
-- **`/auth/callback`**: Tento endpoint spracováva presmerovanie z Entra ID po tom, čo sa používateľ autentifikoval. Vymení autorizačný kód za access token a refresh token.
+- **`/auth/callback`**: Tento endpoint spracováva presmerovanie z Entra ID po úspešnom overení používateľa. Vymení autorizačný kód za access token a refresh token.
 
 ```typescript
 // Simplified for clarity
@@ -291,7 +291,7 @@ app.get("/auth/callback", (req, res) => {
 
 **`Tools.ts`**
 
-This file defines the tools that the MCP server provides. The `getUserDetails` nástroj je podobný tomu z predchádzajúceho príkladu, ale získava access token zo session.
+This file defines the tools that the MCP server provides. The `getUserDetails` nástroj je podobný tomu z predchádzajúceho príkladu, ale access token získava zo session.
 
 ```typescript
 // Simplified for clarity
@@ -338,88 +338,88 @@ This class handles the logic for:
 3. Entra ID redirects the user back to the `/auth/callback` endpoint with an authorization code.
 4. The server exchanges the code for an access token and a refresh token, stores them, and creates a session token which is sent to the client.
 5. The client can now use this session token in the `Authorization` header for all future requests to the MCP server.
-6. When the `getUserDetails` nástroj sa volá s použitím session tokenu na vyhľadanie Entra ID access tokenu a následne používa tento token na volanie Microsoft Graph API.
+6. When the `getUserDetails` nástroj používa token zo session na vyhľadanie Entra ID access tokenu a následne volá Microsoft Graph API.
 
-Tento tok je zložitejší ako tok pre verejného klienta, ale je nevyhnutný pre internetovo prístupné endpointy. Keďže vzdialené MCP servery sú prístupné cez verejný internet, potrebujú silnejšie bezpečnostné opatrenia na ochranu pred neoprávneným prístupom a potenciálnymi útokmi.
+Tento tok je zložitejší ako tok pre verejného klienta, ale je potrebný pre internetovo dostupné endpointy. Keďže vzdialené MCP servery sú prístupné cez verejný internet, potrebujú silnejšie bezpečnostné opatrenia na ochranu pred neoprávneným prístupom a potenciálnymi útokmi.
 
-## Osvedčené bezpečnostné postupy
+## Najlepšie bezpečnostné postupy
 
-- **Vždy používajte HTTPS**: Šifrujte komunikáciu medzi klientom a serverom, aby ste ochránili tokeny pred zachytením.  
-- **Implementujte riadenie prístupu na základe rolí (RBAC)**: Nekontrolujte len *či* je používateľ autentifikovaný, ale aj *čo* má oprávnenie robiť. V Entra ID môžete definovať role a overovať ich na vašom MCP serveri.  
-- **Monitorujte a auditujte**: Logujte všetky autentifikačné udalosti, aby ste mohli odhaliť a reagovať na podozrivé aktivity.  
-- **Riešte obmedzovanie rýchlosti a throttling**: Microsoft Graph a iné API implementujú limitovanie, aby zabránili zneužitiu. Implementujte exponenciálne čakanie a opakovanie v MCP serveri na elegantné zvládanie HTTP 429 (Príliš veľa požiadaviek). Zvážte cacheovanie často používaných dát na zníženie počtu API volaní.  
-- **Bezpečné ukladanie tokenov**: Uchovávajte access a refresh tokeny bezpečne. Pre lokálne aplikácie používajte systémové bezpečné úložiská. Pre serverové aplikácie zvážte šifrované úložiská alebo služby na správu kľúčov ako Azure Key Vault.  
-- **Správa vypršania tokenov**: Access tokeny majú obmedzenú platnosť. Implementujte automatické obnovovanie tokenov pomocou refresh tokenov, aby používateľ nemusel opakovane zadávať prihlasovacie údaje.  
-- **Zvážte použitie Azure API Management**: Aj keď implementácia bezpečnosti priamo v MCP serveri vám dáva detailnú kontrolu, API brány ako Azure API Management môžu automaticky riešiť mnohé bezpečnostné otázky vrátane autentifikácie, autorizácie, limitovania rýchlosti a monitorovania. Poskytujú centralizovanú bezpečnostnú vrstvu medzi klientmi a MCP servermi. Viac o používaní API brán s MCP nájdete v našom článku [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690).
+- **Vždy používajte HTTPS**: Šifrujte komunikáciu medzi klientom a serverom, aby ste ochránili tokeny pred zachytením.
+- **Implementujte riadenie prístupu na základe rolí (RBAC)**: Nekontrolujte len *či* je používateľ overený, ale aj *čo* má oprávnenie robiť. V Entra ID môžete definovať roly a kontrolovať ich na MCP serveri.
+- **Monitorujte a auditujte**: Zaznamenávajte všetky autentifikačné udalosti, aby ste mohli odhaliť a reagovať na podozrivú aktivitu.
+- **Riešte limitovanie a obmedzovanie požiadaviek**: Microsoft Graph a ďalšie API implementujú limitovanie, aby zabránili zneužitiu. Implementujte exponentiálny backoff a logiku opakovaných pokusov vo vašom MCP serveri na hladké spracovanie HTTP 429 (Too Many Requests) odpovedí. Zvážte cacheovanie často používaných dát na zníženie počtu volaní API.
+- **Bezpečné ukladanie tokenov**: Ukladajte access tokeny a refresh tokeny bezpečne. Pre lokálne aplikácie používajte systémové bezpečné úložiská. Pre serverové aplikácie zvážte šifrované úložiská alebo služby na správu kľúčov ako Azure Key Vault.
+- **Správa vypršania platnosti tokenov**: Access tokeny majú obmedzenú platnosť. Implementujte automatické obnovenie tokenov pomocou refresh tokenov, aby používateľ nemusel opakovane prechádzať overením.
+- **Zvážte použitie Azure API Management**: Hoci implementácia bezpečnosti priamo v MCP serveri vám dáva detailnú kontrolu, API brány ako Azure API Management môžu automaticky riešiť mnoho bezpečnostných aspektov vrátane overovania, autorizácie, limitovania a monitorovania. Poskytujú centralizovanú bezpečnostnú vrstvu medzi klientmi a MCP servermi. Pre viac informácií o používaní API brán s MCP si pozrite [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690).
 
-## Kľúčové poznatky
+## Kľúčové zhrnutie
 
-- Zabezpečenie MCP servera je nevyhnutné na ochranu vašich dát a nástrojov.  
-- Microsoft Entra ID poskytuje robustné a škálovateľné riešenie pre autentifikáciu a autorizáciu.  
-- Pre lokálne aplikácie používajte **verejného klienta**, pre vzdialené servery **dôverného klienta**.  
+- Zabezpečenie MCP servera je nevyhnutné na ochranu vašich dát a nástrojov.
+- Microsoft Entra ID poskytuje robustné a škálovateľné riešenie pre autentifikáciu a autorizáciu.
+- Používajte **verejného klienta** pre lokálne aplikácie a **dôverného klienta** pre vzdialené servery.
 - **Authorization Code Flow** je najbezpečnejšia možnosť pre webové aplikácie.
 
 ## Cvičenie
 
-1. Premyslite si MCP server, ktorý by ste mohli vytvoriť. Bude to lokálny alebo vzdialený server?  
-2. Na základe odpovede, použili by ste verejného alebo dôverného klienta?  
-3. Aké oprávnenia by váš MCP server požadoval na vykonávanie akcií voči Microsoft Graph?
+1. Zamyslite sa nad MCP serverom, ktorý by ste mohli vytvoriť. Bude to lokálny server alebo vzdialený server?
+2. Podľa vašej odpovede, použijete verejného alebo dôverného klienta?
+3. Aké oprávnenie by váš MCP server požadoval na vykonávanie akcií voči Microsoft Graph?
 
 ## Praktické cvičenia
 
 ### Cvičenie 1: Registrácia aplikácie v Entra ID  
-Prejdite do Microsoft Entra portálu.  
+Prejdite do portálu Microsoft Entra.  
 Zaregistrujte novú aplikáciu pre váš MCP server.  
 Zaznamenajte si Application (client) ID a Directory (tenant) ID.
 
 ### Cvičenie 2: Zabezpečenie lokálneho MCP servera (verejný klient)  
-Nasledujte príklad kódu na integráciu MSAL (Microsoft Authentication Library) pre autentifikáciu používateľov.  
-Otestujte autentifikačný tok volaním MCP nástroja, ktorý načítava údaje používateľa z Microsoft Graph.
+- Postupujte podľa príkladu kódu na integráciu MSAL (Microsoft Authentication Library) pre overovanie používateľov.  
+- Otestujte overovací tok volaním MCP nástroja, ktorý získava údaje o používateľovi z Microsoft Graph.
 
 ### Cvičenie 3: Zabezpečenie vzdialeného MCP servera (dôverný klient)  
-Zaregistrujte dôverného klienta v Entra ID a vytvorte klientsky tajný kľúč.  
-Nakonfigurujte svoj Express.js MCP server na použitie Authorization Code Flow.  
-Otestujte chránené endpointy a potvrďte prístup na základe tokenu.
+- Zaregistrujte dôverného klienta v Entra ID a vytvorte klientský tajný kľúč.  
+- Nakonfigurujte váš Express.js MCP server na použitie Authorization Code Flow.  
+- Otestujte chránené endpointy a potvrďte prístup na základe tokenu.
 
-### Cvičenie 4: Aplikujte osvedčené bezpečnostné postupy  
-Povoľte HTTPS pre váš lokálny alebo vzdialený server.  
-Implementujte riadenie prístupu na základe rolí (RBAC) v logike servera.  
-Pridajte správu vypršania tokenov a bezpečné ukladanie tokenov.
+### Cvičenie 4: Použitie najlepších bezpečnostných postupov  
+- Povoliť HTTPS pre váš lokálny alebo vzdialený server.  
+- Implementujte riadenie prístupu na základe rolí (RBAC) v logike servera.  
+- Pridajte správu vypršania tokenov a bezpečné ukladanie tokenov.
 
 ## Zdroje
 
-1. **MSAL Overview Documentation**  
+1. **MSAL Prehľad dokumentácie**  
    Naučte sa, ako Microsoft Authentication Library (MSAL) umožňuje bezpečné získavanie tokenov naprieč platformami:  
    [MSAL Overview on Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)
 
-2. **Azure-Samples/mcp-auth-servers GitHub Repository**  
-   Referenčné implementácie MCP serverov demonštrujúce autentifikačné toky:  
+2. **Azure-Samples/mcp-auth-servers GitHub repozitár**  
+   Referenčné implementácie MCP serverov ukazujúce overovacie toky:  
    [Azure-Samples/mcp-auth-servers on GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
 
-3. **Managed Identities for Azure Resources Overview**  
-   Pochopte, ako eliminovať tajomstvá použitím systémových alebo používateľom priradených spravovaných identít:  
+3. **Prehľad spravovaných identít pre Azure zdroje**  
+   Pochopte, ako eliminovať tajomstvá pomocou systémových alebo používateľom pridelených spravovaných identít:  
    [Managed Identities Overview on Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)
 
-4. **Azure API Management: Your Auth Gateway for MCP Servers**  
-   Hlbší pohľad na používanie APIM ako bezpečnej OAuth2 brány pre MCP servery:  
+4. **Azure API Management: Vaša autentifikačná brána pre MCP servery**  
+   Hĺbkový pohľad na použitie APIM ako bezpečnej OAuth2 brány pre MCP servery:  
    [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
 
-5. **Microsoft Graph Permissions Reference**  
+5. **Referenčný zoznam oprávnení Microsoft Graph**  
    Komplexný zoznam delegovaných a aplikačných oprávnení pre Microsoft Graph:  
    [Microsoft Graph Permissions Reference](https://learn.microsoft.com/zh-tw/graph/permissions-reference)
 
 ## Výsledky učenia  
-Po dokončení tejto časti budete schopní:
+Po dokončení tejto časti budete vedieť:
 
 - Vysvetliť, prečo je autentifikácia kritická pre MCP servery a AI pracovné toky.  
-- Nastaviť a nakonfigurovať Entra ID autentifikáciu pre lokálne aj vzdialené MCP servery.  
+- Nastaviť a nakonfigurovať overovanie Entra ID pre lokálne aj vzdialené MCP servery.  
 - Vybrať správny typ klienta (verejný alebo dôverný) podľa nasadenia servera.  
-- Implementovať bezpečné programovacie postupy vrátane ukladania tokenov a autorizácie na základe rolí.  
-- Sebavedome chrániť svoj MCP server a jeho nástroje pred neoprávneným prístupom.
+- Implementovať bezpečnostné postupy vrátane ukladania tokenov a autorizácie na základe rolí.  
+- Sebavedome chrániť váš MCP server a jeho nástroje pred neoprávneným prístupom.
 
-## Čo ďalej
+## Čo bude ďalej  
 
-- [6. Príspevky komunity](../../06-CommunityContributions/README.md)
+- [6. Community Contributions](../../06-CommunityContributions/README.md)
 
-**Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, majte prosím na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+**Zrieknutie sa zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, majte prosím na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

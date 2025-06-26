@@ -1,67 +1,67 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9abe1d303ab126f9a8b87f03cebe5213",
-  "translation_date": "2025-06-26T14:56:24+00:00",
+  "original_hash": "0abf26a6c4dbe905d5d49ccdc0ccfe92",
+  "translation_date": "2025-06-26T16:37:29+00:00",
   "source_file": "05-AdvancedTopics/mcp-security-entra/README.md",
   "language_code": "sw"
 }
 -->
-# Kuweka Usalama katika Mipango ya AI: Uthibitishaji wa Entra ID kwa Seva za Model Context Protocol
+# Kuweka Usalama kwenye Mifumo ya AI: Uthibitishaji wa Entra ID kwa Seva za Model Context Protocol
 
-## Utangulizi  
-Kuweka usalama kwenye seva yako ya Model Context Protocol (MCP) ni muhimu kama kufunga mlango wa mbele wa nyumba yako. Kuacha seva yako ya MCP wazi kunaweka zana zako na data kwa hatari ya kufikiwa na watu wasioidhinishwa, jambo linaloweza kusababisha uvunjifu wa usalama. Microsoft Entra ID hutoa suluhisho thabiti la utambuzi na usimamizi wa upatikanaji ulio katika wingu, kusaidia kuhakikisha kuwa watumiaji na programu zilizoidhinishwa pekee ndizo zinaweza kuwasiliana na seva yako ya MCP. Katika sehemu hii, utajifunza jinsi ya kulinda mipango yako ya AI kwa kutumia uthibitishaji wa Entra ID.
+## Utangulizi
+Kuweka usalama kwenye seva yako ya Model Context Protocol (MCP) ni muhimu kama kufunga mlango wa mbele wa nyumba yako. Kuacha seva yako ya MCP wazi kunaweka zana na data zako katika hatari ya kufikiwa na watu wasioidhinishwa, jambo ambalo linaweza kusababisha uvunjifu wa usalama. Microsoft Entra ID hutoa suluhisho thabiti la usimamizi wa utambulisho na upatikanaji mtandaoni, kusaidia kuhakikisha kuwa watumiaji na programu zilizoidhinishwa pekee ndizo zinaweza kuwasiliana na seva yako ya MCP. Katika sehemu hii, utajifunza jinsi ya kulinda mifumo yako ya AI kwa kutumia uthibitishaji wa Entra ID.
 
-## Malengo ya Kujifunza  
+## Malengo ya Kujifunza
 Mwisho wa sehemu hii, utaweza:
 
-- Kuelewa umuhimu wa kuweka usalama kwa seva za MCP.  
-- Kueleza misingi ya Microsoft Entra ID na uthibitishaji wa OAuth 2.0.  
-- Kutambua tofauti kati ya wateja wa umma na wateja wa siri.  
-- Kutekeleza uthibitishaji wa Entra ID katika mazingira ya seva za MCP za ndani (mteja wa umma) na za mbali (mteja wa siri).  
-- Kutumia mbinu bora za usalama wakati wa kuendeleza mipango ya AI.  
+- Kuelewa umuhimu wa kuimarisha usalama wa seva za MCP.
+- Kueleza misingi ya Microsoft Entra ID na uthibitishaji wa OAuth 2.0.
+- Kutambua tofauti kati ya wateja wa umma na wateja wa siri.
+- Kutekeleza uthibitishaji wa Entra ID katika mazingira ya seva ya MCP ya ndani (mteja wa umma) na ya mbali (mteja wa siri).
+- Kutumia mbinu bora za usalama wakati wa kuunda mifumo ya AI.
 
-# Kuweka Usalama katika Mipango ya AI: Uthibitishaji wa Entra ID kwa Seva za Model Context Protocol
+## Usalama na MCP
 
-Kama vile hutaki kuacha mlango wa mbele wa nyumba yako wazi, vivyo hivyo haupaswi kuacha seva yako ya MCP wazi kwa mtu yeyote. Kuweka usalama kwenye mipango yako ya AI ni muhimu kwa kujenga programu thabiti, za kuaminika, na salama. Sura hii itakuonesha jinsi ya kutumia Microsoft Entra ID kuimarisha usalama wa seva zako za MCP, kuhakikisha kuwa watumiaji na programu zilizoidhinishwa pekee ndizo zinaweza kuwasiliana na zana zako na data zako.
+Kama vile hutaacha mlango wa mbele wa nyumba yako ukiwa wazi, haufai kuacha seva yako ya MCP wazi kwa mtu yeyote kuipata. Kuweka usalama kwenye mifumo yako ya AI ni muhimu kwa ajili ya kujenga programu imara, za kuaminika, na salama. Sura hii itakuonyesha jinsi ya kutumia Microsoft Entra ID kulinda seva zako za MCP, kuhakikisha kuwa watumiaji na programu zilizoidhinishwa pekee ndizo zinaweza kuingiliana na zana na data zako.
 
 ## Kwa Nini Usalama ni Muhimu kwa Seva za MCP
 
-Fikiria seva yako ya MCP ina zana inayoweza kutuma barua pepe au kufikia hifadhidata ya wateja. Seva isiyo na usalama inamaanisha mtu yeyote anaweza kutumia zana hiyo, na kusababisha ufikiaji usioidhinishwa wa data, barua taka, au shughuli nyingine za uharamia.
+Fikiria seva yako ya MCP ina zana inayoweza kutuma barua pepe au kupata data ya wateja. Seva isiyo na usalama ina maana mtu yeyote anaweza kutumia zana hiyo, jambo linaloweza kusababisha ufikiaji wa data bila ruhusa, barua taka, au shughuli nyingine za uovu.
 
-Kwa kutumia uthibitishaji, unahakikisha kila ombi kwa seva yako linathibitishwa, kuthibitisha utambulisho wa mtumiaji au programu inayofanya ombi hilo. Hii ni hatua ya kwanza na muhimu zaidi katika kuweka usalama wa mipango yako ya AI.
+Kwa kutekeleza uthibitishaji, unahakikisha kila ombi kwa seva yako linathibitishwa, kuthibitisha utambulisho wa mtumiaji au programu inayotuma ombi. Hii ni hatua ya kwanza na muhimu zaidi katika kuimarisha usalama wa mifumo yako ya AI.
 
-## Utangulizi kwa Microsoft Entra ID
+## Utangulizi wa Microsoft Entra ID
 
-**Microsoft Entra ID** ni huduma ya utambuzi na usimamizi wa upatikanaji inayotegemea wingu. Fikiria kama mlinzi wa usalama wa jumla kwa programu zako. Huduma hii inashughulikia mchakato mgumu wa kuthibitisha utambulisho wa watumiaji (uthibitishaji) na kuamua wanaruhusiwa kufanya nini (idhinishaji).
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) ni huduma ya usimamizi wa utambulisho na upatikanaji inayotegemea wingu. Fikiria kama mlinzi wa usalama wa jumla kwa programu zako. Huduma hii hushughulikia mchakato mgumu wa kuthibitisha utambulisho wa watumiaji (uthibitishaji) na kuamua wanachoweza kufanya (uruhusu).
 
 Kwa kutumia Entra ID, unaweza:
 
-- Kuwezesha kuingia salama kwa watumiaji.  
-- Kulinda API na huduma.  
-- Kusimamia sera za upatikanaji kutoka mahali pamoja.  
+- Kuruhusu watumiaji kuingia kwa usalama.
+- Kulinda API na huduma.
+- Kusimamia sera za upatikanaji kutoka sehemu moja.
 
-Kwa seva za MCP, Entra ID hutoa suluhisho thabiti na lenye kuaminika la kusimamia nani anaweza kufikia uwezo wa seva yako.
+Kwa seva za MCP, Entra ID hutoa suluhisho thabiti na lenye kuaminika la kusimamia nani anayeweza kufikia uwezo wa seva yako.
 
 ---
 
-## Kuelewa Sanaa: Jinsi Uthibitishaji wa Entra ID Unavyofanya Kazi
+## Kuelewa Uchawi: Jinsi Uthibitishaji wa Entra ID Unavyofanya Kazi
 
-Entra ID hutumia viwango vya wazi kama **OAuth 2.0** kushughulikia uthibitishaji. Ingawa maelezo yake yanaweza kuwa magumu, dhana kuu ni rahisi na inaweza kueleweka kwa mfano.
+Entra ID hutumia viwango wazi kama **OAuth 2.0** kushughulikia uthibitishaji. Ingawa maelezo yanaweza kuwa magumu, dhana kuu ni rahisi na inaweza kueleweka kwa mfano.
 
-### Utangulizi Rahisi kwa OAuth 2.0: Ufunguzi wa Valet
+### Utangulizi Mpole kwa OAuth 2.0: Ufunguo wa Valeti
 
-Fikiria OAuth 2.0 kama huduma ya valet kwa gari lako. Unapofika mgahawani, hutoi valet ufunguo wako mkuu. Badala yake, unampa **ufunguo wa valet** wenye ruhusa ndogo—unaweza kuwasha gari na kufunga milango, lakini hauwezi kufungua sehemu ya mizigo au sanduku la glovu.
+Fikiria OAuth 2.0 kama huduma ya valeti kwa gari lako. Unapofika mgahawa, hutoa valeti ufunguo wako mkuu. Badala yake, unampa **ufunguo wa valeti** wenye ruhusa chache—unaweza kuwasha gari na kufunga milango, lakini hauwezi kufungua sanduku la mizigo au sehemu ya glove.
 
 Katika mfano huu:
 
-- **Wewe** ni **Mtumiaji**.  
-- **Gari lako** ni **Seva ya MCP** yenye zana na data muhimu.  
-- **Valet** ni **Microsoft Entra ID**.  
-- **Msaidizi wa Maegesho** ni **Mteja wa MCP** (programu inayojaribu kufikia seva).  
-- **Ufunguzi wa Valet** ni **Tokeni ya Upatikanaji**.  
+- **Wewe** ni **Mtumiaji**.
+- **Gari lako** ni **Seva ya MCP** yenye zana na data muhimu.
+- **Valeti** ni **Microsoft Entra ID**.
+- **Msimamizi wa Maegesho** ni **Mteja wa MCP** (programu inayojaribu kufikia seva).
+- **Ufunguo wa Valeti** ni **Tokeni ya Upatikanaji**.
 
-Tokeni ya upatikanaji ni mfululizo salama wa maandishi ambao mteja wa MCP hupokea kutoka Entra ID baada ya wewe kuingia. Kisha mteja huwasilisha tokeni hii kwa seva ya MCP kila mara anapofanya ombi. Seva inaweza kuthibitisha tokeni kuhakikisha ombi ni halali na kwamba mteja ana ruhusa zinazohitajika, yote haya bila kushughulikia nywila zako halisi (kama nenosiri lako).
+Tokeni ya upatikanaji ni mfululizo wa maandishi salama unaopokelewa na mteja wa MCP kutoka Entra ID baada ya wewe kuingia. Mteja hutumia tokeni hii kuwasilisha kwa seva ya MCP kila anapofanya ombi. Seva inaweza kuthibitisha tokeni ili kuhakikisha ombi ni halali na mteja ana ruhusa zinazohitajika, yote haya bila kushughulikia nywila zako halisi.
 
 ### Mtiririko wa Uthibitishaji
 
@@ -85,27 +85,27 @@ sequenceDiagram
     Server-->>-Client: Token is valid. Here is the result of the tool.
 ```
 
-### Utangulizi wa Maktaba ya Uthibitishaji ya Microsoft (MSAL)
+### Utambulisho wa Maktaba ya Uthibitishaji ya Microsoft (MSAL)
 
-Kabla hatujaingia kwenye msimbo, ni muhimu kuanzisha sehemu muhimu utakayokutana nayo mifano: **Maktaba ya Uthibitishaji ya Microsoft (MSAL)**.
+Kabla ya kuingia kwenye msimbo, ni muhimu kutambulisha sehemu muhimu utakayokiona katika mifano: **Maktaba ya Uthibitishaji ya Microsoft (MSAL)**.
 
-MSAL ni maktaba iliyotengenezwa na Microsoft inayorahisisha sana kwa watengenezaji kushughulikia uthibitishaji. Badala ya wewe kuandika msimbo mgumu wote wa kushughulikia tokeni za usalama, kusimamia kuingia, na kufufua vikao, MSAL hufanya kazi hii nzito.
+MSAL ni maktaba iliyotengenezwa na Microsoft inayorahisisha sana kwa watengenezaji kushughulikia uthibitishaji. Badala ya kuandika msimbo mgumu kushughulikia tokeni za usalama, kusimamia kuingia, na kufufua vikao, MSAL hufanya kazi hii nzito.
 
-Kutumia maktaba kama MSAL kunapendekezwa sana kwa sababu:
+Kutumia maktaba kama MSAL kunapendekezwa kwa sababu:
 
-- **Ni Salama:** Inatekeleza itifaki za viwandani na mbinu bora za usalama, kupunguza hatari ya udhaifu katika msimbo wako.  
-- **Inarahisisha Maendeleo:** Inaficha ugumu wa itifaki za OAuth 2.0 na OpenID Connect, ikikuwezesha kuongeza uthibitishaji thabiti kwa programu yako kwa mistari michache tu ya msimbo.  
-- **Inadumishwa:** Microsoft inaendelea kudumisha na kusasisha MSAL kukabiliana na vitisho vipya vya usalama na mabadiliko ya jukwaa.  
+- **Ni Salama:** Inatekeleza itifaki za viwango vya tasnia na mbinu bora za usalama, kupunguza hatari ya udhaifu kwenye msimbo wako.
+- **Inarahisisha Maendeleo:** Inaficha ugumu wa itifaki za OAuth 2.0 na OpenID Connect, ikiruhusu kuongeza uthibitishaji thabiti kwa programu yako kwa mistari michache tu ya msimbo.
+- **Inadumishwa:** Microsoft huendeleza na kusasisha MSAL ili kukabiliana na vitisho vipya vya usalama na mabadiliko ya jukwaa.
 
-MSAL inaunga mkono lugha na mifumo mingi ya programu, ikiwa ni pamoja na .NET, JavaScript/TypeScript, Python, Java, Go, na majukwaa ya simu kama iOS na Android. Hii inamaanisha unaweza kutumia mifumo ya uthibitishaji inayolingana katika teknolojia yako yote.
+MSAL inaunga mkono lugha nyingi na mifumo ya programu, ikiwa ni pamoja na .NET, JavaScript/TypeScript, Python, Java, Go, na majukwaa ya simu kama iOS na Android. Hii ina maana unaweza kutumia mifumo ya uthibitishaji yenye uthabiti kote kwenye teknolojia yako.
 
-Ili kujifunza zaidi kuhusu MSAL, unaweza kutembelea [nyaraka rasmi za MSAL](https://learn.microsoft.com/entra/identity-platform/msal-overview).
+Kujifunza zaidi kuhusu MSAL, unaweza kutembelea [nyaraka rasmi za MSAL](https://learn.microsoft.com/entra/identity-platform/msal-overview).
 
 ---
 
-## Kuweka Usalama wa Seva Yako ya MCP kwa Entra ID: Mwongozo wa Hatua kwa Hatua
+## Kuweka Usalama kwa Seva Yako ya MCP kwa Entra ID: Mwongozo wa Hatua kwa Hatua
 
-Sasa, tuchukue hatua kwa hatua jinsi ya kuimarisha seva ya MCP ya ndani (inayozungumza kupitia `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
+Sasa, tuchunguze jinsi ya kuimarisha seva ya MCP ya ndani (inayowasiliana kupitia `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
 
 ### Scenario 1: Securing a Local MCP Server (with a Public Client)
 
@@ -134,7 +134,7 @@ This class is responsible for handling the interaction with Entra ID.
 
 - **`CreateAsync`**: This method initializes the `PublicClientApplication` from the MSAL (Microsoft Authentication Library). It's configured with your application's `clientId` and `tenantId`.
 - **`WithBroker`**: This enables the use of a broker (like the Windows Web Account Manager), which provides a more secure and seamless single sign-on experience.
-- **`AcquireTokenAsync`**: Hii ni njia kuu. Kwanza inajaribu kupata tokeni kimya kimya (maana mtumiaji hatahitaji kuingia tena ikiwa tayari ana kikao halali). Ikiwa tokeni ya kimya haiwezi kupatikana, itaomba mtumiaji aingie kwa njia ya mwingiliano.
+- **`AcquireTokenAsync`**: Hii ni njia kuu. Kwanza inajaribu kupata tokeni kimya kimya (maana mtumiaji hatahitaji kuingia tena ikiwa tayari ana kikao halali). Ikiwa tokeni ya kimya haipatikani, itaamsha mtumiaji kuingia kwa njia ya mwingiliano.
 
 ```csharp
 // Simplified for clarity
@@ -187,7 +187,7 @@ public async Task<string> AcquireTokenAsync()
 This is where the MCP server is set up and the authentication service is integrated.
 
 - **`AddSingleton<AuthenticationService>`**: This registers the `AuthenticationService` with the dependency injection container, so it can be used by other parts of the application (like our tool).
-- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` kupata tokeni halali ya upatikanaji. Ikiwa uthibitishaji unafanikiwa, hutumia tokeni hii kupiga API ya Microsoft Graph na kupata maelezo ya mtumiaji.
+- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` kupata tokeni halali ya upatikanaji. Ikiwa uthibitishaji utakuwa mzuri, hutumia tokeni hiyo kupiga API ya Microsoft Graph na kupata maelezo ya mtumiaji.
 
 ```csharp
 // Simplified for clarity
@@ -256,7 +256,7 @@ This file sets up the Express server and the MCP transport layer.
 
 - **`requireBearerAuth`**: This is middleware that protects the `/sse` and `/message` endpoints. It checks for a valid bearer token in the `Authorization` header of the request.
 - **`EntraIdServerAuthProvider`**: This is a custom class that implements the `McpServerAuthorizationProvider` interface. It's responsible for handling the OAuth 2.0 flow.
-- **`/auth/callback`**: Kituo hiki kinashughulikia mwelekeo kutoka Entra ID baada ya mtumiaji kuthibitishwa. Kinabadili msimbo wa idhini kuwa tokeni ya upatikanaji na tokeni ya kufufua.
+- **`/auth/callback`**: Anuani hii hushughulikia mwelekeo kutoka Entra ID baada ya mtumiaji kuthibitishwa. Huhamisha msimbo wa idhini kwa tokeni ya upatikanaji na tokeni ya kufufua.
 
 ```typescript
 // Simplified for clarity
@@ -291,7 +291,7 @@ app.get("/auth/callback", (req, res) => {
 
 **`Tools.ts`**
 
-This file defines the tools that the MCP server provides. The `getUserDetails` zana ni sawa na ile ya mfano uliopita, lakini hupata tokeni ya upatikanaji kutoka kikao.
+This file defines the tools that the MCP server provides. The `getUserDetails` zana ni sawa na ile katika mfano uliopita, lakini hupata tokeni ya upatikanaji kutoka kikao.
 
 ```typescript
 // Simplified for clarity
@@ -338,88 +338,88 @@ This class handles the logic for:
 3. Entra ID redirects the user back to the `/auth/callback` endpoint with an authorization code.
 4. The server exchanges the code for an access token and a refresh token, stores them, and creates a session token which is sent to the client.
 5. The client can now use this session token in the `Authorization` header for all future requests to the MCP server.
-6. When the `getUserDetails` zana inapoitwa, hutumia tokeni ya kikao kutafuta tokeni ya upatikanaji ya Entra ID kisha hutumia hiyo kupiga Microsoft Graph API.
+6. When the `getUserDetails` zana inapoitwa, hutumia tokeni ya kikao kutafuta tokeni ya upatikanaji ya Entra ID na kisha kuitumia kupiga Microsoft Graph API.
 
-Mtiririko huu ni mgumu zaidi kuliko wa mteja wa umma, lakini unahitajika kwa vituo vinavyoelekezwa mtandaoni. Kwa kuwa seva za MCP za mbali zinapatikana kupitia intaneti ya umma, zinahitaji hatua madhubuti za usalama ili kuzuia ufikiaji usioidhinishwa na mashambulizi yanayoweza kutokea.
+Mtiririko huu ni mgumu zaidi kuliko mtiririko wa mteja wa umma, lakini unahitajika kwa anwani zinazokabili mtandao. Kwa kuwa seva za MCP za mbali zinapatikana mtandaoni, zinahitaji hatua kali zaidi za usalama kuzuia ufikiaji usioidhinishwa na mashambulizi yanayoweza kutokea.
 
 ## Mbinu Bora za Usalama
 
-- **Daima tumia HTTPS**: Ficha mawasiliano kati ya mteja na seva ili kulinda tokeni zisikamatwe.  
-- **Tekeleza Udhibiti wa Upatikanaji kwa Kazi (RBAC)**: Usijaribu tu kuthibitisha *ikiwa* mtumiaji ameingia; hakikisha unachunguza *nini* wanaruhusiwa kufanya. Unaweza kufafanua majukumu katika Entra ID na kuyakagua kwenye seva yako ya MCP.  
-- **Fuatilia na kagua**: Andika matukio yote ya uthibitishaji ili uweze kugundua na kujibu shughuli za kutiliwa shaka.  
-- **Shughulikia mipaka ya kasi na kupunguza mzigo**: Microsoft Graph na API nyingine zinaweka mipaka ya maombi ili kuzuia matumizi mabaya. Tekeleza mbinu za kurudi nyuma kwa mzunguko na jaribu tena ili kushughulikia kwa heshima majibu ya HTTP 429 (Maombi Mengi Sana). Fikiria kuhifadhi data inayotumiwa mara kwa mara ili kupunguza maombi ya API.  
-- **Hifadhi tokeni kwa usalama**: Hifadhi tokeni za upatikanaji na tokeni za kufufua kwa usalama. Kwa programu za ndani, tumia mifumo ya kuhifadhi salama ya mfumo. Kwa programu za seva, fikiria kutumia uhifadhi uliosimbwa au huduma za usimamizi wa funguo kama Azure Key Vault.  
-- **Shughulikia muda wa kumalizika kwa tokeni**: Tokeni za upatikanaji zina muda mfupi wa matumizi. Tekeleza uhuishaji wa tokeni kiotomatiki kwa kutumia tokeni za kufufua ili kudumisha uzoefu wa mtumiaji bila kuhitaji kuingia tena.  
-- **Fikiria kutumia Azure API Management**: Ingawa kutekeleza usalama moja kwa moja kwenye seva yako ya MCP kunakupa udhibiti wa kina, API Gateways kama Azure API Management zinaweza kushughulikia changamoto nyingi za usalama kiotomatiki, ikiwa ni pamoja na uthibitishaji, idhinisho, mipaka ya kasi, na ufuatiliaji. Hutoa safu ya usalama iliyojikita kati ya wateja wako na seva zako za MCP. Kwa maelezo zaidi kuhusu kutumia API Gateways na MCP, angalia [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690).
+- **Daima tumia HTTPS**: Ficha mawasiliano kati ya mteja na seva ili kulinda tokeni zisikamatwe.
+- **Tekeleza Udhibiti wa Upatikanaji kwa Kazi (RBAC)**: Usijaribu tu kuthibitisha *ikiwa* mtumiaji ameingia; angalia *kazi* anazotakiwa kufanya. Unaweza kuweka majukumu katika Entra ID na kuyakagua kwenye seva yako ya MCP.
+- **Fuatilia na fanya ukaguzi**: Andika matukio yote ya uthibitishaji ili uweze kugundua na kuchukua hatua dhidi ya shughuli zenye shaka.
+- **Shughulikia ukomo wa maombi na kupunguza mzigo**: Microsoft Graph na API nyingine hutumia ukomo wa maombi kuzuia matumizi mabaya. Tekeleza mbinu ya kurudi nyuma kwa mfululizo na jaribu tena ili kushughulikia kwa heshima majibu ya HTTP 429 (Maombi mengi sana). Fikiria kuhifadhi data inayotumika mara kwa mara ili kupunguza wito wa API.
+- **Hifadhi tokeni kwa usalama**: Hifadhi tokeni za upatikanaji na tokeni za kufufua kwa usalama. Kwa programu za ndani, tumia mbinu za hifadhi salama za mfumo. Kwa programu za seva, fikiria kutumia hifadhi iliyofichwa au huduma za usimamizi wa funguo kama Azure Key Vault.
+- **Shughulikia kumalizika kwa tokeni**: Tokeni za upatikanaji zina muda mfupi wa matumizi. Tekeleza kufufua tokeni moja kwa moja kwa kutumia tokeni za kufufua ili kuhakikisha mtumiaji hana usumbufu wa kuingia tena.
+- **Fikiria kutumia Azure API Management**: Ingawa kuweka usalama moja kwa moja kwenye seva yako ya MCP kunakupa udhibiti mzuri, Milango ya API kama Azure API Management inaweza kushughulikia masuala mengi ya usalama moja kwa moja, ikiwa ni pamoja na uthibitishaji, idhini, ukomo wa maombi, na ufuatiliaji. Hutoa tabaka la usalama lililojikita kati ya wateja wako na seva zako za MCP. Kwa maelezo zaidi kuhusu kutumia Milango ya API na MCP, angalia [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690).
 
-## Muhimu Kukumbuka
+## Muhimu wa Kumbuka
 
-- Kuweka usalama kwenye seva yako ya MCP ni muhimu kwa kulinda data na zana zako.  
-- Microsoft Entra ID hutoa suluhisho thabiti na linaloweza kupanuka kwa uthibitishaji na idhinisho.  
-- Tumia **mteja wa umma** kwa programu za ndani na **mteja wa siri** kwa seva za mbali.  
-- **Mtiririko wa Msimbo wa Idhini** ni chaguo salama zaidi kwa programu za wavuti.  
+- Kuweka usalama kwenye seva yako ya MCP ni muhimu kwa kulinda data na zana zako.
+- Microsoft Entra ID hutoa suluhisho thabiti na linaloweza kupanuka kwa uthibitishaji na idhini.
+- Tumia **mteja wa umma** kwa programu za ndani na **mteja wa siri** kwa seva za mbali.
+- **Mtiririko wa Msimbo wa Idhini** ni chaguo salama zaidi kwa programu za wavuti.
 
-## Mazoezi
+## Zoef
 
-1. Fikiria seva ya MCP unayoweza kuijenga. Je, itakuwa seva ya ndani au ya mbali?  
-2. Kulingana na jibu lako, je, utatumia mteja wa umma au wa siri?  
-3. Seva yako ya MCP itahitaji ruhusa gani kwa ajili ya kufanya shughuli dhidi ya Microsoft Graph?  
+1. Fikiria kuhusu seva ya MCP unayoweza kuijenga. Je, itakuwa seva ya ndani au seva ya mbali?
+2. Kulingana na jibu lako, ungechagua mteja wa umma au mteja wa siri?
+3. Je, seva yako ya MCP ingeomba ruhusa gani kwa ajili ya kutekeleza vitendo dhidi ya Microsoft Graph?
 
 ## Mazoezi ya Vitendo
 
-### Zoezi 1: Jisajili Programu katika Entra ID  
-Tembelea lango la Microsoft Entra.  
-Jisajili programu mpya kwa seva yako ya MCP.  
-Andika ID ya Programu (mteja) na ID ya Saraka (mpangaji).  
+### Zoef 1: Sajili Programu katika Entra ID
+Tembelea lango la Microsoft Entra.
+Sajili programu mpya kwa seva yako ya MCP.
+Rekodi Kitambulisho cha Programu (client) na Kitambulisho cha Saraka (tenant).
 
-### Zoezi 2: Linde Seva ya MCP ya Ndani (Mteja wa Umma)  
-Fuata mfano wa msimbo kuingiza MSAL (Maktaba ya Uthibitishaji ya Microsoft) kwa uthibitishaji wa mtumiaji.  
-Jaribu mtiririko wa uthibitishaji kwa kupiga zana ya MCP inayopata maelezo ya mtumiaji kutoka Microsoft Graph.  
+### Zoef 2: Linda Seva ya MCP ya Ndani (Mteja wa Umma)
+- Fuata mfano wa msimbo kuingiza MSAL (Maktaba ya Uthibitishaji ya Microsoft) kwa uthibitishaji wa mtumiaji.
+- Jaribu mtiririko wa uthibitishaji kwa kupiga zana ya MCP inayopata maelezo ya mtumiaji kutoka Microsoft Graph.
 
-### Zoezi 3: Linde Seva ya MCP ya Mbali (Mteja wa Siri)  
-Jisajili mteja wa siri katika Entra ID na tengeneza siri ya mteja.  
-Sanidi seva yako ya MCP ya Express.js kutumia Mtiririko wa Msimbo wa Idhini.  
-Jaribu vituo vilivyo na ulinzi na thibitisha upatikanaji kwa tokeni.  
+### Zoef 3: Linda Seva ya MCP ya Mbali (Mteja wa Siri)
+- Sajili mteja wa siri katika Entra ID na unda siri ya mteja.
+- Sanidi seva yako ya MCP ya Express.js kutumia Mtiririko wa Msimbo wa Idhini.
+- Jaribu anwani zilizolindwa na thibitisha upatikanaji wa tokeni.
 
-### Zoezi 4: Tumia Mbinu Bora za Usalama  
-Wezesha HTTPS kwa seva yako ya ndani au ya mbali.  
-Tekeleza udhibiti wa upatikanaji kwa msingi wa majukumu (RBAC) katika mantiki ya seva yako.  
-Ongeza usimamizi wa muda wa kumalizika kwa tokeni na uhifadhi salama wa tokeni.  
+### Zoef 4: Tumia Mbinu Bora za Usalama
+- Washa HTTPS kwa seva yako ya ndani au mbali.
+- Tekeleza udhibiti wa upatikanaji kwa kazi (RBAC) katika mantiki ya seva yako.
+- Ongeza usimamizi wa kumalizika kwa tokeni na uhifadhi salama wa tokeni.
 
 ## Rasilimali
 
 1. **Nyaraka za Muhtasari wa MSAL**  
-   Jifunze jinsi Maktaba ya Uthibitishaji ya Microsoft (MSAL) inavyorahisisha upatikanaji wa tokeni salama katika majukwaa mbalimbali:  
-   [Muhtasari wa MSAL kwenye Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)  
+Jifunze jinsi Maktaba ya Uthibitishaji ya Microsoft (MSAL) inavyorahisisha upatikanaji wa tokeni kwa usalama katika majukwaa mbalimbali:  
+[Muhtasari wa MSAL kwenye Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)
 
 2. **Azure-Samples/mcp-auth-servers GitHub Repository**  
-   Mfano wa utekelezaji wa seva za MCP unaoonyesha mitiririko ya uthibitishaji:  
-   [Azure-Samples/mcp-auth-servers kwenye GitHub](https://github.com/Azure-Samples/mcp-auth-servers)  
+Mifano ya utekelezaji ya seva za MCP ikionyesha mitiririko ya uthibitishaji:  
+[Azure-Samples/mcp-auth-servers kwenye GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
 
 3. **Muhtasari wa Managed Identities kwa Rasilimali za Azure**  
-   Elewa jinsi ya kuondoa siri kwa kutumia utambulisho unaosimamiwa na mfumo au mtumiaji:  
-   [Muhtasari wa Managed Identities kwenye Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)  
+Elewa jinsi ya kuondoa siri kwa kutumia utambulisho uliosimamiwa na mfumo au mtumiaji:  
+[Muhtasari wa Managed Identities kwenye Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)
 
-4. **Azure API Management: Lango lako la Uthibitishaji kwa Seva za MCP**  
-   Uchambuzi wa kina wa kutumia APIM kama lango salama la OAuth2 kwa seva za MCP:  
-   [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)  
+4. **Azure API Management: Mlango Wako wa Uthibitishaji kwa Seva za MCP**  
+Uchunguzi wa kina wa kutumia APIM kama mlango salama wa OAuth2 kwa seva za MCP:  
+[Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
 
-5. **Rejeleo la Ruhusa za Microsoft Graph**  
-   Orodha kamili ya ruhusa za kupewa na programu kwa Microsoft Graph:  
-   [Rejeleo la Ruhusa za Microsoft Graph](https://learn.microsoft.com/zh-tw/graph/permissions-reference)  
+5. **Rejea ya Ruhusa za Microsoft Graph**  
+Orodha kamili ya ruhusa za kupewa na programu kwa Microsoft Graph:  
+[Rejea ya Ruhusa za Microsoft Graph](https://learn.microsoft.com/zh-tw/graph/permissions-reference)
 
-## Matokeo ya Kujifunza  
+## Matokeo ya Kujifunza
 Baada ya kumaliza sehemu hii, utaweza:
 
-- Eleza kwa nini uthibitishaji ni muhimu kwa seva za MCP na mipango ya AI.  
-- Sanidi na usanidi uthibitishaji wa Entra ID kwa mazingira ya seva za MCP za ndani na mbali.  
-- Chagua aina sahihi ya mteja (mteja wa umma au wa siri) kulingana na uendeshaji wa seva yako.  
-- Tekeleza mbinu salama za uandishi wa msimbo, ikiwa ni pamoja na uhifadhi wa tokeni na idhinisho kwa msingi wa majukumu.  
-- Linda kwa ujasiri seva yako ya MCP na zana zake dhidi ya ufikiaji usioidhinishwa.  
+- Kueleza kwa nini uthibitishaji ni muhimu kwa seva za MCP na mifumo ya AI.
+- Kusanidi na kuanzisha uthibitishaji wa Entra ID kwa mazingira ya seva za MCP za ndani na mbali.
+- Kuchagua aina sahihi ya mteja (umum au siri) kulingana na usanidi wa seva yako.
+- Kutekeleza mbinu za usalama wa msimbo, ikiwa ni pamoja na uhifadhi wa tokeni na idhini kwa msingi wa majukumu.
+- Kulinda kwa ujasiri seva yako ya MCP na zana zake dhidi ya ufikiaji usioidhinishwa.
 
-## Nini Kifuatacho  
+## Kile Kifuatayo
 
 - [6. Michango ya Jamii](../../06-CommunityContributions/README.md)
 
-**Kiasi cha Hukumu**:  
-Nyaraka hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au ukosefu wa usahihi. Nyaraka ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inashauriwa. Hatubeba dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Msamaha**:  
+Nyaraka hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Nyaraka ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu na ya binadamu inapendekezwa. Hatubeba jukumu lolote kwa kutoelewana au tafsiri potofu zitokanazo na matumizi ya tafsiri hii.

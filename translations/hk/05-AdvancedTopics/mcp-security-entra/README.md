@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9abe1d303ab126f9a8b87f03cebe5213",
-  "translation_date": "2025-06-26T14:37:35+00:00",
+  "original_hash": "0abf26a6c4dbe905d5d49ccdc0ccfe92",
+  "translation_date": "2025-06-26T16:20:26+00:00",
   "source_file": "05-AdvancedTopics/mcp-security-entra/README.md",
   "language_code": "hk"
 }
@@ -10,60 +10,60 @@ CO_OP_TRANSLATOR_METADATA:
 # 保護 AI 工作流程：Model Context Protocol 伺服器的 Entra ID 認證
 
 ## 介紹  
-保護你的 Model Context Protocol (MCP) 伺服器，就像鎖好家門一樣重要。若將 MCP 伺服器開放，將會讓你的工具和資料暴露於未經授權的存取，可能導致安全漏洞。Microsoft Entra ID 提供強大且雲端的身分識別與存取管理解決方案，確保只有經授權的使用者和應用程式能與你的 MCP 伺服器互動。在本節中，你將學習如何使用 Entra ID 認證來保護你的 AI 工作流程。
+保護你的 Model Context Protocol (MCP) 伺服器，就像鎖好家門一樣重要。若將 MCP 伺服器開放，會讓你的工具和資料暴露在未經授權的存取風險中，導致安全漏洞。Microsoft Entra ID 提供強大的雲端身份與存取管理解決方案，確保只有授權的使用者和應用程式能與你的 MCP 伺服器互動。本節將教你如何利用 Entra ID 認證來保護 AI 工作流程。
 
 ## 學習目標  
 完成本節後，你將能夠：
 
-- 理解保護 MCP 伺服器的重要性。  
-- 解釋 Microsoft Entra ID 及 OAuth 2.0 認證的基本概念。  
-- 區分公開客戶端與機密客戶端的差異。  
-- 在本地（公開客戶端）與遠端（機密客戶端） MCP 伺服器場景中實作 Entra ID 認證。  
-- 應用開發 AI 工作流程時的安全最佳實踐。
+- 了解保護 MCP 伺服器的重要性。
+- 解釋 Microsoft Entra ID 及 OAuth 2.0 認證的基本概念。
+- 辨識公開用戶端與機密用戶端的差異。
+- 在本地（公開用戶端）及遠端（機密用戶端）MCP 伺服器情境中實作 Entra ID 認證。
+- 在開發 AI 工作流程時應用安全最佳實務。
 
-# 保護 AI 工作流程：Model Context Protocol 伺服器的 Entra ID 認證
+## 安全性與 MCP  
 
-就像你不會把家門敞開不鎖一樣，也不應該讓 MCP 伺服器任由任何人存取。保護你的 AI 工作流程是打造穩健、值得信賴且安全應用的關鍵。本章將介紹如何使用 Microsoft Entra ID 來保護你的 MCP 伺服器，確保只有經授權的使用者與應用程式能操作你的工具和資料。
+就像你不會讓家門敞開一樣，也不該讓 MCP 伺服器任人存取。保護 AI 工作流程是打造穩健、值得信賴且安全應用程式的關鍵。本章將介紹如何使用 Microsoft Entra ID 來保護 MCP 伺服器，確保只有授權使用者與應用程式能存取你的工具和資料。
 
-## 為什麼 MCP 伺服器的安全性很重要
+## 為什麼 MCP 伺服器的安全性很重要  
 
-想像你的 MCP 伺服器有一個可以發送電子郵件或存取客戶資料庫的工具。如果伺服器沒有妥善保護，任何人都有可能使用該工具，導致未經授權的資料存取、垃圾郵件或其他惡意行為。
+想像你的 MCP 伺服器擁有可發送電子郵件或存取客戶資料庫的工具。若伺服器未加以保護，任何人都可能使用這些工具，導致未經授權的資料存取、垃圾郵件或其他惡意行為。
 
-透過實作認證，你能確保每個送到伺服器的請求都經過驗證，確認發送請求的使用者或應用程式身份。這是保護 AI 工作流程的首要且最關鍵的步驟。
+透過實作認證，你可以確保每個伺服器請求都經過驗證，確認發出請求的使用者或應用程式身份。這是保護 AI 工作流程的首要且最關鍵的步驟。
 
-## Microsoft Entra ID 簡介
+## Microsoft Entra ID 簡介  
 
-**Microsoft Entra ID** 是一個基於雲端的身分識別與存取管理服務。你可以把它想像成應用程式的萬能保全。它負責處理驗證使用者身份（認證）以及決定他們能做什麼（授權）的複雜過程。
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) 是一項雲端身份與存取管理服務。你可以把它想像成應用程式的通用保安人員，負責驗證使用者身份（認證）及判定其權限（授權）。
 
-透過 Entra ID，你可以：
+使用 Entra ID 你可以：
 
-- 啟用安全的使用者登入。  
-- 保護 API 和服務。  
+- 啟用使用者安全登入。
+- 保護 API 和服務。
 - 從中央位置管理存取政策。
 
-對於 MCP 伺服器而言，Entra ID 提供了一個強大且廣受信賴的解決方案，管理誰能存取伺服器功能。
+對於 MCP 伺服器，Entra ID 提供強大且廣受信賴的解決方案，管理誰能存取伺服器功能。
 
 ---
 
-## 了解原理：Entra ID 認證如何運作
+## 了解原理：Entra ID 認證如何運作  
 
-Entra ID 使用像是 **OAuth 2.0** 這類開放標準來處理認證。雖然細節可能複雜，但核心概念很簡單，以下用比喻來說明。
+Entra ID 採用像是 **OAuth 2.0** 等開放標準處理認證。雖然細節可能複雜，但核心概念很簡單，可以用比喻來理解。
 
-### OAuth 2.0 入門：代客鑰匙
+### OAuth 2.0 簡介：代客泊車鑰匙  
 
-把 OAuth 2.0 想成你的車子代客泊車服務。當你到餐廳時，你不會給代客泊車的人你的主鑰匙，而是給他一把**代客鑰匙**，這把鑰匙權限有限——它可以發動車子並鎖門，但無法打開後車廂或手套箱。
+想像 OAuth 2.0 就像你車子的代客泊車服務。當你到餐廳時，不會把車子的主鑰匙交給代客泊車人員，而是給一把 **代客鑰匙**，它的權限有限——能啟動車子和鎖門，但不能打開後車廂或手套箱。
 
 在這個比喻中：
 
-- **你** 是 **使用者**。  
-- **你的車** 是擁有寶貴工具和資料的 **MCP 伺服器**。  
-- **代客** 是 **Microsoft Entra ID**。  
-- **泊車員** 是嘗試存取伺服器的 **MCP 客戶端**（應用程式）。  
+- **你** 是 **使用者**。
+- **你的車** 是擁有珍貴工具與資料的 **MCP 伺服器**。
+- **代客泊車人員** 是 **Microsoft Entra ID**。
+- **停車場服務員** 是嘗試存取伺服器的 **MCP 用戶端**（應用程式）。
 - **代客鑰匙** 是 **存取權杖（Access Token）**。
 
-存取權杖是一串安全的文字，當你登入後，MCP 客戶端會從 Entra ID 取得這個權杖。客戶端每次發送請求給 MCP 伺服器時，都會附上這個權杖。伺服器驗證權杖，以確認請求的合法性以及客戶端是否有權限，而不需要處理你的實際認證資訊（例如密碼）。
+存取權杖是 MCP 用戶端在你登入後從 Entra ID 取得的安全字串。用戶端每次請求時會帶上此權杖，伺服器能驗證權杖以確認請求是否合法，以及用戶端是否有相應權限，而不需處理你的密碼等真實認證資訊。
 
-### 認證流程
+### 認證流程  
 
 實際流程如下：
 
@@ -85,27 +85,27 @@ sequenceDiagram
     Server-->>-Client: Token is valid. Here is the result of the tool.
 ```
 
-### 介紹 Microsoft Authentication Library (MSAL)
+### 介紹 Microsoft Authentication Library (MSAL)  
 
-在深入程式碼之前，先介紹你會在範例中看到的重要元件：**Microsoft Authentication Library (MSAL)**。
+在深入程式碼之前，先介紹一個範例中會看到的重要元件：**Microsoft Authentication Library (MSAL)**。
 
-MSAL 是微軟開發的函式庫，讓開發者更輕鬆處理認證。你不用自己撰寫複雜的程式碼來管理安全權杖、登入流程和會話更新，MSAL 幫你處理這些繁重工作。
+MSAL 是微軟開發的函式庫，讓開發者更輕鬆處理認證。你不必自己撰寫複雜的安全權杖管理、登入及會話續期程式碼，MSAL 會幫你處理這些繁重工作。
 
-使用 MSAL 有以下優點：
+推薦使用 MSAL 的理由：
 
-- **安全可靠**：實作產業標準協議和安全最佳實踐，降低程式碼出現漏洞的風險。  
-- **簡化開發**：抽象化 OAuth 2.0 和 OpenID Connect 協議的複雜度，只需少量程式碼即可加入強大的認證功能。  
-- **持續維護**：微軟持續更新 MSAL，以因應新的安全威脅和平台變化。
+- **安全性高**：實作業界標準協議及安全最佳實務，降低程式碼漏洞風險。
+- **簡化開發**：抽象化 OAuth 2.0 和 OpenID Connect 協議的複雜性，只需少量程式碼即可加入強健認證。
+- **持續維護**：微軟持續更新 MSAL，應對新安全威脅及平台變化。
 
-MSAL 支援多種語言與應用框架，包括 .NET、JavaScript/TypeScript、Python、Java、Go，以及 iOS 和 Android 等行動平台，讓你在整個技術堆疊中都能使用一致的認證模式。
+MSAL 支援多種語言與應用框架，包括 .NET、JavaScript/TypeScript、Python、Java、Go 以及 iOS、Android 等行動平台，讓你能在整個技術棧中使用一致的認證模式。
 
-想了解更多 MSAL，可參考官方 [MSAL 概覽文件](https://learn.microsoft.com/entra/identity-platform/msal-overview)。
+欲了解更多 MSAL 資訊，可參考官方 [MSAL 概覽文件](https://learn.microsoft.com/entra/identity-platform/msal-overview)。
 
 ---
 
-## 使用 Entra ID 保護你的 MCP 伺服器：逐步教學
+## 使用 Entra ID 保護你的 MCP 伺服器：逐步指南  
 
-現在，我們來示範如何保護一個本地 MCP 伺服器（透過 `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
+接著，我們示範如何保護本地 MCP 伺服器（透過 `stdio` 通訊）`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
 
 ### Scenario 1: Securing a Local MCP Server (with a Public Client)
 
@@ -134,7 +134,7 @@ This class is responsible for handling the interaction with Entra ID.
 
 - **`CreateAsync`**: This method initializes the `PublicClientApplication` from the MSAL (Microsoft Authentication Library). It's configured with your application's `clientId` and `tenantId`.
 - **`WithBroker`**: This enables the use of a broker (like the Windows Web Account Manager), which provides a more secure and seamless single sign-on experience.
-- **`AcquireTokenAsync` **：這是核心方法。它會先嘗試靜默取得權杖（若使用者已有有效會話，則不需重新登入）。若無法靜默取得，則會提示使用者進行互動式登入。
+- **`AcquireTokenAsync`**：此為核心方法，會先嘗試靜默取得權杖（若用戶已有有效會話則不需再次登入），若無法靜默取得，則會互動式提示用戶登入。
 
 ```csharp
 // Simplified for clarity
@@ -187,7 +187,7 @@ public async Task<string> AcquireTokenAsync()
 This is where the MCP server is set up and the authentication service is integrated.
 
 - **`AddSingleton<AuthenticationService>`**: This registers the `AuthenticationService` with the dependency injection container, so it can be used by other parts of the application (like our tool).
-- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` 用來取得有效的存取權杖。若認證成功，會使用該權杖呼叫 Microsoft Graph API，取得使用者詳細資訊。
+- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` 用以取得有效存取權杖。認證成功後，使用該權杖呼叫 Microsoft Graph API 以取得使用者詳細資料。
 
 ```csharp
 // Simplified for clarity
@@ -215,9 +215,9 @@ public static async Task<string> GetUserDetailsFromGraph(
 }
 ```
 
-#### 3. 整體流程運作說明
+#### 3. 整體運作流程  
 
-1. 當 MCP 客戶端嘗試使用 `GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
+1. 當 MCP 用戶端嘗試使用 `GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
 2. `AcquireTokenAsync` triggers the MSAL library to check for a valid token.
 3. If no token is found, MSAL, through the broker, will prompt the user to sign in with their Entra ID account.
 4. Once the user signs in, Entra ID issues an access token.
@@ -256,7 +256,7 @@ This file sets up the Express server and the MCP transport layer.
 
 - **`requireBearerAuth`**: This is middleware that protects the `/sse` and `/message` endpoints. It checks for a valid bearer token in the `Authorization` header of the request.
 - **`EntraIdServerAuthProvider`**: This is a custom class that implements the `McpServerAuthorizationProvider` interface. It's responsible for handling the OAuth 2.0 flow.
-- **`/auth/callback` **：此端點處理使用者認證完成後，Entra ID 重導向的請求。它會將授權碼交換成存取權杖和更新權杖。
+- **`/auth/callback`**：此端點處理使用者認證完成後，Entra ID 的重定向，並將授權碼交換為存取權杖及更新權杖。
 
 ```typescript
 // Simplified for clarity
@@ -291,7 +291,7 @@ app.get("/auth/callback", (req, res) => {
 
 **`Tools.ts`**
 
-This file defines the tools that the MCP server provides. The `getUserDetails` 工具與前例類似，但它從會話中取得存取權杖。
+This file defines the tools that the MCP server provides. The `getUserDetails` 工具與前例類似，但從會話中取得存取權杖。
 
 ```typescript
 // Simplified for clarity
@@ -338,88 +338,88 @@ This class handles the logic for:
 3. Entra ID redirects the user back to the `/auth/callback` endpoint with an authorization code.
 4. The server exchanges the code for an access token and a refresh token, stores them, and creates a session token which is sent to the client.
 5. The client can now use this session token in the `Authorization` header for all future requests to the MCP server.
-6. When the `getUserDetails` 工具被呼叫時，會使用會話權杖查找 Entra ID 存取權杖，然後用該權杖呼叫 Microsoft Graph API。
+6. When the `getUserDetails` 工具呼叫時，會使用會話權杖查詢 Entra ID 存取權杖，接著用該權杖呼叫 Microsoft Graph API。
 
-這個流程比公開客戶端流程複雜，但對於面向網際網路的端點是必要的。由於遠端 MCP 伺服器可從公網存取，因此必須採取更嚴格的安全措施，防範未經授權的存取及潛在攻擊。
+此流程比公開用戶端流程複雜，但針對面向網際網路的端點是必要的。遠端 MCP 伺服器可從公網存取，需更強的安全措施防範未經授權存取及潛在攻擊。
 
-## 安全最佳實踐
+## 安全最佳實務  
 
-- **務必使用 HTTPS**：加密客戶端與伺服器之間的通訊，防止權杖被攔截。  
-- **實作基於角色的存取控制（RBAC）**：不僅檢查使用者是否已認證，還要檢查其授權範圍。你可以在 Entra ID 中定義角色，並在 MCP 伺服器中檢查這些角色。  
-- **監控與稽核**：記錄所有認證事件，以便偵測並回應可疑活動。  
-- **處理速率限制與節流**：Microsoft Graph 和其他 API 會實施速率限制以防止濫用。你的 MCP 伺服器應實作指數退避與重試機制，優雅地處理 HTTP 429（請求過多）回應。考慮快取常用資料以減少 API 呼叫。  
-- **安全儲存權杖**：妥善儲存存取權杖與更新權杖。對於本地應用，使用系統的安全儲存機制。對伺服器應用，考慮使用加密儲存或安全金鑰管理服務，例如 Azure Key Vault。  
-- **權杖過期處理**：存取權杖有有效期限。實作自動使用更新權杖刷新權杖，以維持流暢的使用者體驗，無需重新認證。  
-- **考慮使用 Azure API Management**：雖然直接在 MCP 伺服器實作安全性可達到細緻控制，但 API 閘道（如 Azure API Management）能自動處理多數安全議題，包括認證、授權、速率限制和監控。它們提供一層位於客戶端與 MCP 伺服器間的集中式安全防護。想了解更多如何將 API 閘道與 MCP 搭配使用，請參考我們的[Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)。
+- **務必使用 HTTPS**：加密用戶端與伺服器間的通訊，防止權杖被攔截。
+- **實作角色基礎存取控制 (RBAC)**：不僅檢查使用者是否已認證，更要確認其授權範圍。你可以在 Entra ID 中定義角色，並在 MCP 伺服器中檢查這些角色。
+- **監控與稽核**：記錄所有認證事件，以便偵測並回應可疑行為。
+- **處理頻率限制與流量控管**：Microsoft Graph 及其他 API 實施頻率限制以防濫用。MCP 伺服器應實作指數退避與重試邏輯，優雅處理 HTTP 429（請求過多）回應。考慮快取常用資料以減少 API 呼叫。
+- **安全存放權杖**：妥善存放存取權杖與更新權杖。對本地應用程式，使用系統安全儲存機制；對伺服器應用，考慮加密存儲或使用像 Azure Key Vault 之類的安全金鑰管理服務。
+- **處理權杖過期**：存取權杖有有效期限。實作自動使用更新權杖續期，確保使用者體驗流暢，無需重新認證。
+- **考慮使用 Azure API Management**：雖然直接在 MCP 伺服器實作安全性可細緻控管，但像 Azure API Management 這類 API 閘道能自動處理許多安全議題，包括認證、授權、頻率限制與監控。它們提供位於用戶端與 MCP 伺服器間的集中安全層。欲了解更多 MCP 與 API 閘道的整合，請參閱我們的 [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)。
 
-## 重要重點
+## 主要重點  
 
-- 保護 MCP 伺服器對於資料與工具安全至關重要。  
-- Microsoft Entra ID 提供強大且可擴展的認證與授權解決方案。  
-- 本地應用使用 **公開客戶端**，遠端伺服器使用 **機密客戶端**。  
-- 對於網頁應用，**授權碼流程** 是最安全的選擇。
+- 保護 MCP 伺服器對於保障資料與工具安全至關重要。
+- Microsoft Entra ID 提供強大且可擴充的認證與授權解決方案。
+- 本地應用使用 **公開用戶端**，遠端伺服器使用 **機密用戶端**。
+- **授權碼流程（Authorization Code Flow）** 是網頁應用最安全的選擇。
 
-## 練習題
+## 練習  
 
-1. 想想你可能會建立的 MCP 伺服器，是本地伺服器還是遠端伺服器？  
-2. 根據你的答案，你會使用公開客戶端還是機密客戶端？  
-3. 你的 MCP 伺服器會請求哪些權限來對 Microsoft Graph 執行操作？
+1. 想像你要建置的 MCP 伺服器，是本地還是遠端？
+2. 根據你的選擇，會使用公開用戶端還是機密用戶端？
+3. 你的 MCP 伺服器會請求哪些 Microsoft Graph 權限來執行操作？
 
-## 實作練習
+## 實作練習  
 
 ### 練習 1：在 Entra ID 註冊應用程式  
 前往 Microsoft Entra 入口網站。  
-為你的 MCP 伺服器註冊一個新應用程式。  
-記錄應用程式（client）ID 與目錄（tenant）ID。
+註冊一個新的應用程式給你的 MCP 伺服器。  
+記錄應用程式（用戶端）ID 及目錄（租戶）ID。
 
-### 練習 2：保護本地 MCP 伺服器（公開客戶端）  
-依照程式碼範例整合 MSAL（Microsoft Authentication Library）進行使用者認證。  
-透過呼叫取得 Microsoft Graph 使用者資料的 MCP 工具，測試認證流程。
+### 練習 2：保護本地 MCP 伺服器（公開用戶端）  
+- 依照程式碼範例整合 MSAL（Microsoft Authentication Library）以實現使用者認證。  
+- 透過呼叫取得 Microsoft Graph 使用者詳細資料的 MCP 工具測試認證流程。
 
-### 練習 3：保護遠端 MCP 伺服器（機密客戶端）  
-在 Entra ID 中註冊機密客戶端並建立客戶端密鑰。  
-設定你的 Express.js MCP 伺服器使用授權碼流程。  
-測試受保護的端點並確認基於權杖的存取。
+### 練習 3：保護遠端 MCP 伺服器（機密用戶端）  
+- 在 Entra ID 註冊機密用戶端並建立用戶端密鑰。  
+- 配置你的 Express.js MCP 伺服器使用授權碼流程。  
+- 測試受保護端點並確認基於權杖的存取。
 
-### 練習 4：應用安全最佳實踐  
-為本地或遠端伺服器啟用 HTTPS。  
-在伺服器邏輯中實作基於角色的存取控制（RBAC）。  
-加入權杖過期處理與安全的權杖儲存。
+### 練習 4：應用安全最佳實務  
+- 為本地或遠端伺服器啟用 HTTPS。  
+- 在伺服器邏輯中實作角色基礎存取控制（RBAC）。  
+- 加入權杖過期處理與安全權杖存放機制。
 
-## 資源
+## 資源  
 
 1. **MSAL 概覽文件**  
-   了解 Microsoft Authentication Library (MSAL) 如何跨平台實現安全的權杖取得：  
+   了解 Microsoft Authentication Library (MSAL) 如何跨平台安全取得權杖：  
    [MSAL Overview on Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)
 
 2. **Azure-Samples/mcp-auth-servers GitHub 倉庫**  
    MCP 伺服器認證流程的參考實作：  
    [Azure-Samples/mcp-auth-servers on GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
 
-3. **Azure 資源的託管身分識別概述**  
-   了解如何利用系統或使用者指派的託管身分識別，免除秘密管理：  
+3. **Azure 資源管理的受管身份概述**  
+   了解如何使用系統或使用者指派的受管身份來消除密鑰：  
    [Managed Identities Overview on Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)
 
 4. **Azure API Management：你的 MCP 伺服器認證閘道**  
-   深入探討如何使用 APIM 作為 MCP 伺服器的安全 OAuth2 閘道：  
+   深入探討如何將 APIM 作為 MCP 伺服器的安全 OAuth2 閘道：  
    [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
 
 5. **Microsoft Graph 權限參考**  
-   Microsoft Graph 的委派與應用程式權限完整清單：  
+   Microsoft Graph 的委派與應用程式權限完整列表：  
    [Microsoft Graph Permissions Reference](https://learn.microsoft.com/zh-tw/graph/permissions-reference)
 
 ## 學習成果  
 完成本節後，你將能夠：
 
-- 清楚說明為何認證對 MCP 伺服器與 AI 工作流程至關重要。  
-- 設定並配置 Entra ID 認證，涵蓋本地及遠端 MCP 伺服器場景。  
-- 根據伺服器部署選擇合適的客戶端類型（公開或機密）。  
-- 實作安全編碼實務，包括權杖儲存與基於角色的授權。  
-- 自信地保護你的 MCP 伺服器及其工具免於未經授權存取。
+- 清楚說明認證對 MCP 伺服器與 AI 工作流程的重要性。  
+- 設定並配置本地及遠端 MCP 伺服器的 Entra ID 認證。  
+- 根據伺服器部署選擇合適的用戶端類型（公開或機密）。  
+- 實作安全編碼實務，包括權杖存放與角色授權。  
+- 自信地保護你的 MCP 伺服器及其工具，防止未經授權存取。
 
 ## 下一步  
 
 - [6. 社群貢獻](../../06-CommunityContributions/README.md)
 
 **免責聲明**：  
-本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯而成。雖然我們致力於確保翻譯準確，但請注意自動翻譯可能存在錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋負責。
+本文件乃使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 所翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原文文件應被視為具權威性的版本。對於重要資訊，建議採用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤譯概不負責。

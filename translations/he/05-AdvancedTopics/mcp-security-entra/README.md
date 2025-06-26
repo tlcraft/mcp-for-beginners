@@ -1,69 +1,68 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9abe1d303ab126f9a8b87f03cebe5213",
-  "translation_date": "2025-06-26T14:52:56+00:00",
+  "original_hash": "0abf26a6c4dbe905d5d49ccdc0ccfe92",
+  "translation_date": "2025-06-26T16:34:51+00:00",
   "source_file": "05-AdvancedTopics/mcp-security-entra/README.md",
   "language_code": "he"
 }
 -->
-# אבטחת זרימות עבודה של AI: אימות Entra ID עבור שרתי Model Context Protocol
+# אבטחת זרימות עבודה של בינה מלאכותית: אימות Entra ID עבור שרתי פרוטוקול הקשר של מודלים
 
-## הקדמה  
-אבטחת שרת Model Context Protocol (MCP) שלך חשובה לא פחות מלהנעל את הדלת הראשית של הבית שלך. השארת שרת MCP פתוח חושפת את הכלים והנתונים שלך לגישה לא מורשית, שעלולה לגרום לפרצות אבטחה. Microsoft Entra ID מספק פתרון ניהול זהויות וגישה מבוסס ענן חזק, שמסייע לוודא שרק משתמשים ויישומים מורשים יכולים לתקשר עם שרת ה-MCP שלך. בחלק זה תלמד כיצד להגן על זרימות העבודה של ה-AI שלך באמצעות אימות Entra ID.
+## מבוא  
+אבטחת שרת ה-Model Context Protocol (MCP) שלך חשובה לא פחות מלהנעל את דלת הבית. השארת שרת ה-MCP פתוח חושפת את הכלים והנתונים שלך לגישה לא מורשית, שעלולה להוביל להפרות אבטחה. Microsoft Entra ID מספק פתרון חזק לניהול זהויות וגישה מבוסס ענן, שעוזר להבטיח שרק משתמשים ויישומים מורשים יוכלו לתקשר עם שרת ה-MCP שלך. בחלק זה תלמד כיצד להגן על זרימות העבודה של הבינה המלאכותית שלך באמצעות אימות Entra ID.
 
 ## מטרות הלמידה  
-בסוף חלק זה תוכל:
+בסיום חלק זה תוכל:
 
-- להבין את החשיבות של אבטחת שרתי MCP.  
+- להבין את חשיבות אבטחת שרתי MCP.  
 - להסביר את היסודות של Microsoft Entra ID ואימות OAuth 2.0.  
-- להבחין בין לקוחות ציבוריים ללקוחות סודיים.  
-- ליישם אימות Entra ID בתרחישי שרת MCP מקומי (לקוח ציבורי) ומרוחק (לקוח סודי).  
-- ליישם שיטות עבודה מומלצות לאבטחה בעת פיתוח זרימות עבודה של AI.
+- להבחין בין לקוחות ציבוריים ללקוחות חסויים.  
+- ליישם אימות Entra ID בתרחישים של שרתי MCP מקומיים (לקוחות ציבוריים) ומרוחקים (לקוחות חסויים).  
+- ליישם שיטות אבטחה מיטביות בפיתוח זרימות עבודה של בינה מלאכותית.
 
-# אבטחת זרימות עבודה של AI: אימות Entra ID עבור שרתי Model Context Protocol
+## אבטחה ו-MCP  
 
-כמו שלא תשאיר את הדלת הראשית של הבית שלך פתוחה, כך אסור להשאיר את שרת ה-MCP שלך פתוח לגישה חופשית. אבטחת זרימות העבודה של ה-AI חיונית לבניית יישומים חזקים, אמינים ובטוחים. בפרק זה תכיר כיצד להשתמש ב-Microsoft Entra ID כדי לאבטח את שרתי ה-MCP שלך, ולהבטיח שרק משתמשים ויישומים מורשים יוכלו לגשת לכלים ולנתונים שלך.
+כמו שלא היית משאיר את דלת הבית שלך פתוחה, כך אסור להשאיר את שרת ה-MCP פתוח לגישה חופשית. אבטחת זרימות העבודה של הבינה המלאכותית חיונית לבניית יישומים חזקים, אמינים ובטוחים. פרק זה יציג כיצד להשתמש ב-Microsoft Entra ID כדי לאבטח את שרתי ה-MCP שלך, ולהבטיח שרק משתמשים ויישומים מורשים יוכלו לגשת לכלים ולנתונים שלך.
 
-## למה אבטחה חשובה עבור שרתי MCP
+## מדוע אבטחה חשובה לשרתי MCP  
 
-דמיין ששרת ה-MCP שלך כולל כלי שיכול לשלוח מיילים או לגשת למאגר נתוני לקוחות. שרת לא מאובטח משמעותו שכל אחד יכול להשתמש בכלי הזה, מה שעלול לגרום לגישה לא מורשית לנתונים, ספאם או פעילויות זדוניות אחרות.
+תאר לעצמך ששרת ה-MCP שלך כולל כלי שיכול לשלוח אימיילים או לגשת למסד נתונים של לקוחות. שרת לא מאובטח יאפשר לכל אחד להשתמש בכלי הזה, מה שעלול להוביל לגישה לא מורשית לנתונים, לספאם או לפעילויות זדוניות אחרות.
 
-באמצעות יישום אימות, אתה מבטיח שכל בקשה לשרת שלך תעבור אימות, המאשר את זהות המשתמש או היישום המבקש. זהו הצעד הראשון והחשוב ביותר באבטחת זרימות העבודה של ה-AI שלך.
+על ידי יישום אימות, אתה מוודא שכל בקשה לשרת שלך מאומתת, ומאשרת את זהות המשתמש או היישום המבצע את הבקשה. זו השלב הראשון והחשוב ביותר באבטחת זרימות העבודה של הבינה המלאכותית שלך.
 
-## מבוא ל-Microsoft Entra ID
+## מבוא ל-Microsoft Entra ID  
 
-**Microsoft Entra ID** היא שירות ניהול זהויות וגישה מבוסס ענן. תחשוב עליו כשומר ביטחון אוניברסלי ליישומים שלך. הוא מטפל בתהליך המורכב של אימות זהויות משתמשים (authentication) וקביעת ההרשאות שלהם (authorization).
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) היא שירות ניהול זהויות וגישה מבוסס ענן. תחשוב עליו כשומר אבטחה אוניברסלי ליישומים שלך. השירות מטפל בתהליך המורכב של אימות זהויות המשתמשים (Authentication) וקביעת ההרשאות שלהם (Authorization).
 
 באמצעות Entra ID תוכל:
 
-- לאפשר כניסה מאובטחת למשתמשים.  
+- לאפשר התחברות מאובטחת למשתמשים.  
 - להגן על APIs ושירותים.  
 - לנהל מדיניות גישה ממקום מרכזי.
 
-עבור שרתי MCP, Entra ID מספק פתרון חזק ומוכר לניהול מי יכול לגשת ליכולות השרת שלך.
+עבור שרתי MCP, Entra ID מספק פתרון אמין ומקובל לניהול מי יכול לגשת ליכולות של השרת.
 
 ---
 
-## הבנת הקסם: איך עובד אימות Entra ID
+## הבנת הקסם: איך עובד אימות Entra ID  
 
-Entra ID משתמש בסטנדרטים פתוחים כמו **OAuth 2.0** לטיפול באימות. למרות שהפרטים יכולים להיות מורכבים, הרעיון המרכזי פשוט וניתן להבין אותו באמצעות דימוי.
+Entra ID משתמש בסטנדרטים פתוחים כמו **OAuth 2.0** לטיפול באימות. למרות שהפרטים עשויים להיות מורכבים, הרעיון המרכזי פשוט וניתן להבין אותו באמצעות אנלוגיה.
 
-### מבוא עדין ל-OAuth 2.0: מפתח החניית הרכב
+### הקדמה עדינה ל-OAuth 2.0: מפתח הוולט  
+תחשוב על OAuth 2.0 כשירות וולט למכונית שלך. כשאתה מגיע למסעדה, אינך נותן לוולט את המפתח הראשי שלך. במקום זאת, אתה נותן לו **מפתח וולט** שמוגבל בהרשאות — הוא יכול להניע את המכונית ולנעול את הדלתות, אך לא לפתוח את תא המטען או את תא הכפפות.
 
-תחשוב על OAuth 2.0 כמו שירות חניית רכב. כשאתה מגיע למסעדה, אינך נותן לחניין את מפתח הרכב הראשי שלך. במקום זאת, אתה נותן לו **מפתח חנייה** עם הרשאות מוגבלות — הוא יכול להניע את הרכב ולנעול את הדלתות, אבל לא יכול לפתוח את תא המטען או את תא הכפפות.
-
-בדימוי הזה:
+באנלוגיה זו:
 
 - **אתה** הוא ה-**משתמש**.  
-- **הרכב שלך** הוא **שרת ה-MCP** עם הכלים והנתונים החשובים.  
-- ה-**חניין** הוא **Microsoft Entra ID**.  
-- ה-**שומר החנייה** הוא **לקוח ה-MCP** (היישום שמנסה לגשת לשרת).  
-- **מפתח החנייה** הוא **Access Token**.
+- **המכונית שלך** היא ה-**שרת MCP** עם הכלים והנתונים היקרים שלו.  
+- ה-**וולט** הוא **Microsoft Entra ID**.  
+- ה-**חניין החניה** הוא ה-**לקוח MCP** (היישום שמנסה לגשת לשרת).  
+- ה-**מפתח הוולט** הוא ה-**Access Token**.
 
-טוקן הגישה הוא מחרוזת מאובטחת שהלקוח מקבל מ-Entra ID לאחר שאתה נכנס. הלקוח מציג את הטוקן הזה לשרת ה-MCP בכל בקשה. השרת יכול לאמת את הטוקן כדי לוודא שהבקשה חוקית ושהלקוח בעל ההרשאות הדרושות, כל זאת מבלי לטפל בפרטי ההתחברות שלך (כמו סיסמה).
+אסימון הגישה הוא מחרוזת טקסט מאובטחת שהלקוח מקבל מ-Entra ID לאחר ההתחברות שלך. הלקוח מציג אסימון זה לשרת MCP בכל בקשה. השרת יכול לאמת את האסימון כדי לוודא שהבקשה חוקית ושהלקוח מורשה, וכל זאת מבלי לטפל בסיסמאות או פרטי ההתחברות שלך.
 
-### זרימת האימות
+### זרימת האימות  
 
 כך התהליך עובד בפועל:
 
@@ -85,27 +84,27 @@ sequenceDiagram
     Server-->>-Client: Token is valid. Here is the result of the tool.
 ```
 
-### היכרות עם ספריית האימות של Microsoft (MSAL)
+### היכרות עם ספריית האימות של Microsoft (MSAL)  
 
 לפני שנצלול לקוד, חשוב להכיר רכיב מרכזי שתראה בדוגמאות: **Microsoft Authentication Library (MSAL)**.
 
-MSAL היא ספרייה שפותחה על ידי מיקרוסופט שמקלה מאוד על מפתחים לטפל באימות. במקום שתצטרך לכתוב את כל הקוד המורכב לניהול טוקנים, כניסות וחידוש סשנים, MSAL עושה את העבודה הקשה עבורך.
+MSAL היא ספרייה שפותחה על ידי Microsoft שמקלה משמעותית על מפתחים בטיפול באימות. במקום שתכתוב את כל הקוד המורכב לטיפול באסימוני אבטחה, ניהול התחברויות ורענון סשנים, MSAL עושה את העבודה הקשה עבורך.
 
 שימוש בספרייה כמו MSAL מומלץ מאוד כי:
 
-- **היא מאובטחת:** מיישמת פרוטוקולים וסטנדרטים בטיחותיים מוכרים בתעשייה, ומפחיתה את הסיכון לפגיעויות בקוד שלך.  
-- **מפשטת את הפיתוח:** מסתירה את המורכבות של פרוטוקולי OAuth 2.0 ו-OpenID Connect, ומאפשרת להוסיף אימות חזק ליישום שלך בכמה שורות קוד בלבד.  
-- **מתוחזקת:** מיקרוסופט מעדכנת ומשפרת את MSAL בהתמדה כדי להתמודד עם איומי אבטחה חדשים ושינויים בפלטפורמות.
+- **היא מאובטחת:** מיישמת פרוטוקולים ותהליכי אבטחה סטנדרטיים בתעשייה, ומפחיתה סיכונים לפגיעויות בקוד שלך.  
+- **מפשטת את הפיתוח:** מסתירה את המורכבות של פרוטוקולי OAuth 2.0 ו-OpenID Connect, ומאפשרת לך להוסיף אימות חזק ליישום שלך בכמה שורות קוד בלבד.  
+- **מתוחזקת:** מיקרוסופט מעדכנת ומשפרת את MSAL באופן שוטף כדי להתמודד עם איומי אבטחה חדשים ושינויים בפלטפורמות.
 
-MSAL תומכת במגוון רחב של שפות ומסגרות עבודה, כולל .NET, JavaScript/TypeScript, Python, Java, Go ופלטפורמות מובייל כמו iOS ואנדרואיד. משמעות הדבר שתוכל להשתמש בדפוסי אימות עקביים בכל טכנולוגיות המערכת שלך.
+MSAL תומכת במגוון שפות ומסגרות עבודה, כולל .NET, JavaScript/TypeScript, Python, Java, Go ופלטפורמות מובייל כמו iOS ואנדרואיד. משמעות הדבר היא שתוכל להשתמש בדפוסי אימות עקביים בכל טכנולוגיות הפיתוח שלך.
 
-למידע נוסף על MSAL, ניתן לעיין בתיעוד הרשמי של [סקירת MSAL](https://learn.microsoft.com/entra/identity-platform/msal-overview).
+למידע נוסף על MSAL, ניתן לעיין בתיעוד הרשמי [MSAL overview documentation](https://learn.microsoft.com/entra/identity-platform/msal-overview).
 
 ---
 
-## אבטחת שרת MCP עם Entra ID: מדריך שלב-אחר-שלב
+## אבטחת שרת MCP שלך עם Entra ID: מדריך שלב-אחר-שלב  
 
-כעת, נעבור כיצד לאבטח שרת MCP מקומי (שמתקשר דרך `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
+כעת נעבור כיצד לאבטח שרת MCP מקומי (אשר מתקשר דרך `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
 
 ### Scenario 1: Securing a Local MCP Server (with a Public Client)
 
@@ -134,7 +133,7 @@ This class is responsible for handling the interaction with Entra ID.
 
 - **`CreateAsync`**: This method initializes the `PublicClientApplication` from the MSAL (Microsoft Authentication Library). It's configured with your application's `clientId` and `tenantId`.
 - **`WithBroker`**: This enables the use of a broker (like the Windows Web Account Manager), which provides a more secure and seamless single sign-on experience.
-- **`AcquireTokenAsync`**: זו השיטה המרכזית. היא מנסה תחילה לקבל טוקן באופן שקט (כלומר, המשתמש לא יצטרך להיכנס שוב אם כבר יש לו סשן תקף). אם לא ניתן לקבל טוקן שקט, תתבקש כניסה אינטראקטיבית.
+- **`AcquireTokenAsync`**: זוהי השיטה המרכזית. היא מנסה תחילה לקבל אסימון באופן שקט (ללא צורך בהתחברות מחודשת אם כבר קיימת סשן תקף). אם לא ניתן לקבל אסימון בשקט, המשתמש יתבקש להתחבר באופן אינטראקטיבי.
 
 ```csharp
 // Simplified for clarity
@@ -187,7 +186,7 @@ public async Task<string> AcquireTokenAsync()
 This is where the MCP server is set up and the authentication service is integrated.
 
 - **`AddSingleton<AuthenticationService>`**: This registers the `AuthenticationService` with the dependency injection container, so it can be used by other parts of the application (like our tool).
-- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` משמש לקבלת טוקן גישה תקף. אם האימות מצליח, משתמשים בטוקן לקריאה ל-Microsoft Graph API כדי לקבל את פרטי המשתמש.
+- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` כדי לקבל אסימון גישה תקף. אם האימות מצליח, הוא משתמש באסימון לקרוא ל-Microsoft Graph API ולהביא את פרטי המשתמש.
 
 ```csharp
 // Simplified for clarity
@@ -215,9 +214,9 @@ public static async Task<string> GetUserDetailsFromGraph(
 }
 ```
 
-#### 3. איך הכל עובד יחד
+#### 3. איך הכל עובד ביחד  
 
-1. כאשר לקוח ה-MCP מנסה להשתמש ב-`GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
+1. כאשר לקוח MCP מנסה להשתמש ב-`GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
 2. `AcquireTokenAsync` triggers the MSAL library to check for a valid token.
 3. If no token is found, MSAL, through the broker, will prompt the user to sign in with their Entra ID account.
 4. Once the user signs in, Entra ID issues an access token.
@@ -256,7 +255,7 @@ This file sets up the Express server and the MCP transport layer.
 
 - **`requireBearerAuth`**: This is middleware that protects the `/sse` and `/message` endpoints. It checks for a valid bearer token in the `Authorization` header of the request.
 - **`EntraIdServerAuthProvider`**: This is a custom class that implements the `McpServerAuthorizationProvider` interface. It's responsible for handling the OAuth 2.0 flow.
-- **`/auth/callback`**: נקודת הקצה הזו מטפלת בהפניה מ-Entra ID לאחר שהמשתמש אותת. היא מחליפה את קוד ההרשאה בטוקן גישה וטוקן רענון.
+- **`/auth/callback`**: נקודת קצה זו מטפלת בהפניה מ-Entra ID לאחר שהמשתמש התחבר. היא מחליפה את קוד האישור באסימון גישה ואסימון רענון.
 
 ```typescript
 // Simplified for clarity
@@ -291,7 +290,7 @@ app.get("/auth/callback", (req, res) => {
 
 **`Tools.ts`**
 
-This file defines the tools that the MCP server provides. The `getUserDetails` הוא כלי דומה לזה שבדוגמה הקודמת, אך מקבל את טוקן הגישה מהסשן.
+This file defines the tools that the MCP server provides. The `getUserDetails` הכלי דומה לזה שבדוגמה הקודמת, אך מקבל את אסימון הגישה מהסשן.
 
 ```typescript
 // Simplified for clarity
@@ -338,34 +337,34 @@ This class handles the logic for:
 3. Entra ID redirects the user back to the `/auth/callback` endpoint with an authorization code.
 4. The server exchanges the code for an access token and a refresh token, stores them, and creates a session token which is sent to the client.
 5. The client can now use this session token in the `Authorization` header for all future requests to the MCP server.
-6. When the `getUserDetails` כאשר הכלי נקרא, הוא משתמש בטוקן מהסשן כדי לאתר את טוקן הגישה מ-Entra ID ואז משתמש בו לקריאה ל-Microsoft Graph API.
+6. When the `getUserDetails` כאשר הכלי נקרא, הוא משתמש באסימון הסשן כדי למצוא את אסימון הגישה של Entra ID ואז משתמש בו לקריאה ל-Microsoft Graph API.
 
-זרימה זו מורכבת יותר מזו של הלקוח הציבורי, אך נדרשת לנקודות קצה שנגישות דרך האינטרנט הציבורי. מאחר ששרתי MCP מרוחקים חשופים לאינטרנט, נדרשות אמצעי אבטחה חזקים יותר להגנה מפני גישה לא מורשית ותקיפות פוטנציאליות.
+הזרימה הזו מורכבת יותר מזו של הלקוח הציבורי, אך נדרשת לנקודות קצה הפונות לאינטרנט. מכיוון ששרתי MCP מרוחקים נגישים דרך האינטרנט הציבורי, הם זקוקים לאמצעי אבטחה חזקים יותר כדי להגן מפני גישה לא מורשית ותקיפות פוטנציאליות.
 
-## שיטות עבודה מומלצות לאבטחה
+## שיטות עבודה מומלצות לאבטחה  
 
-- **תמיד השתמש ב-HTTPS**: הצפן את התקשורת בין הלקוח לשרת כדי להגן על הטוקנים מיירוט.  
-- **יישם בקרת גישה מבוססת תפקידים (RBAC)**: אל תבדוק רק *אם* המשתמש אותת; בדוק *מה* הוא מורשה לעשות. ניתן להגדיר תפקידים ב-Entra ID ולבדוק אותם בשרת ה-MCP.  
-- **נטר ובצע ביקורת**: תעד את כל אירועי האימות כדי לזהות ולפעול נגד פעילות חשודה.  
-- **טפל בהגבלת קצב (rate limiting) ובהאטות (throttling)**: Microsoft Graph ו-APIs אחרים מיישמים הגבלות קצב למניעת שימוש לרעה. יישם לוגיקת backoff אקספוננציאלית וניסיונות חוזרים בשרת ה-MCP כדי לטפל בנימוס בתגובות HTTP 429 (בקשות רבות מדי). שקול מטמון לנתונים הנגישים תדיר להפחתת קריאות API.  
-- **אחסן טוקנים בצורה מאובטחת**: אחסן את טוקני הגישה והרענון באופן מאובטח. ביישומים מקומיים השתמש במנגנוני אחסון מאובטח של המערכת. ביישומי שרת שקול שימוש באחסון מוצפן או שירותי ניהול מפתחות מאובטחים כמו Azure Key Vault.  
-- **טיפול בתוקף הטוקן**: לטוקני גישה יש תוקף מוגבל. יישם חידוש אוטומטי של טוקנים באמצעות טוקני רענון כדי לשמור על חוויית משתמש חלקה ללא צורך באימות חוזר.  
-- **שקול שימוש ב-Azure API Management**: למרות שאבטחה ישירה בשרת ה-MCP נותנת שליטה מדויקת, שערי API כמו Azure API Management יכולים לטפל ברוב סוגיות האבטחה באופן אוטומטי, כולל אימות, הרשאה, הגבלת קצב ומעקב. הם מספקים שכבת אבטחה מרכזית בין הלקוחות לשרתי ה-MCP. לפרטים נוספים על שימוש בשערי API עם MCP, ראה את [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690).
+- **השתמש תמיד ב-HTTPS**: הצפן את התקשורת בין הלקוח לשרת כדי להגן על האסימונים מפני חטיפה.  
+- **יישם בקרת גישה מבוססת תפקידים (RBAC)**: אל תבדוק רק *אם* המשתמש מאומת; בדוק *מה* הוא מורשה לעשות. ניתן להגדיר תפקידים ב-Entra ID ולבדוק אותם בשרת ה-MCP.  
+- **נטר ובצע ביקורת**: רשם את כל אירועי האימות כדי לזהות ולהגיב לפעילות חשודה.  
+- **טפל במגבלות קצב ו-throttling**: Microsoft Graph ו-APIs אחרים מיישמים מגבלות קצב למניעת ניצול לרעה. יישם לוגיקת exponential backoff ו-retry בשרת ה-MCP כדי להתמודד בצורה חלקה עם תגובות HTTP 429 (Too Many Requests). שקול להשתמש במטמון לנתונים הנגישים לעיתים קרובות כדי להפחית קריאות API.  
+- **אחסן אסימונים בצורה מאובטחת**: אחסן את אסימוני הגישה ואסימוני הרענון בצורה בטוחה. עבור יישומים מקומיים, השתמש במנגנוני אחסון מאובטחים של המערכת. עבור יישומי שרת, שקול שימוש באחסון מוצפן או בשירותי ניהול מפתחות מאובטחים כמו Azure Key Vault.  
+- **טפל בתוקף האסימון**: לאסימוני גישה יש תוקף מוגבל. יישם רענון אוטומטי של אסימונים באמצעות אסימוני רענון כדי לשמור על חוויית משתמש רציפה ללא צורך באימות חוזר.  
+- **שקול שימוש ב-Azure API Management**: למרות שיישום אבטחה ישירות בשרת ה-MCP נותן לך שליטה מדויקת, שערי API כמו Azure API Management יכולים לטפל ברוב נושאי האבטחה אוטומטית, כולל אימות, הרשאות, הגבלת קצב ומעקב. הם מספקים שכבת אבטחה מרכזית שממוקמת בין הלקוחות לשרתי MCP שלך. לפרטים נוספים על שימוש בשערי API עם MCP, ראה [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690).
 
-## נקודות עיקריות לזכור
+## נקודות מרכזיות  
 
-- אבטחת שרת ה-MCP חיונית להגנה על הנתונים והכלים שלך.  
-- Microsoft Entra ID מספק פתרון חזק וניתן להרחבה לאימות והרשאה.  
-- השתמש ב-**לקוח ציבורי** עבור יישומים מקומיים וב-**לקוח סודי** עבור שרתים מרוחקים.  
-- **Authorization Code Flow** הוא האופציה המאובטחת ביותר ליישומי רשת.
+- אבטחת שרת ה-MCP שלך חיונית להגנה על הנתונים והכלים שלך.  
+- Microsoft Entra ID מספק פתרון חזק ומדרג לניהול אימות והרשאות.  
+- השתמש ב-**לקוח ציבורי** עבור יישומים מקומיים וב-**לקוח חסוי** עבור שרתים מרוחקים.  
+- **Authorization Code Flow** היא האפשרות המאובטחת ביותר ליישומי רשת.
 
-## תרגיל
+## תרגיל  
 
-1. חשוב על שרת MCP שאתה עשוי לבנות. האם הוא יהיה שרת מקומי או מרוחק?  
-2. בהתבסס על התשובה, האם תשתמש בלקוח ציבורי או סודי?  
-3. איזו הרשאה יבקש שרת ה-MCP שלך לביצוע פעולות מול Microsoft Graph?
+1. חשוב על שרת MCP שאתה עשוי לבנות. האם הוא יהיה מקומי או מרוחק?  
+2. בהתבסס על התשובה, האם תשתמש בלקוח ציבורי או חסוי?  
+3. איזו הרשאה ידרוש שרת ה-MCP שלך כדי לבצע פעולות מול Microsoft Graph?
 
-## תרגילים מעשיים
+## תרגילים מעשיים  
 
 ### תרגיל 1: רישום יישום ב-Entra ID  
 גש לפורטל Microsoft Entra.  
@@ -373,53 +372,53 @@ This class handles the logic for:
 רשום את מזהה היישום (client ID) ואת מזהה התיקייה (tenant ID).
 
 ### תרגיל 2: אבטחת שרת MCP מקומי (לקוח ציבורי)  
-עקוב אחרי דוגמת הקוד לשילוב MSAL (Microsoft Authentication Library) לאימות משתמש.  
-בדוק את זרימת האימות על ידי קריאה לכלי MCP שמושך פרטי משתמש מ-Microsoft Graph.
+- עקוב אחר דוגמת הקוד לשילוב MSAL (Microsoft Authentication Library) לאימות משתמשים.  
+- בדוק את זרימת האימות על ידי קריאה לכלי MCP שמביא פרטי משתמש מ-Microsoft Graph.
 
-### תרגיל 3: אבטחת שרת MCP מרוחק (לקוח סודי)  
-רשום לקוח סודי ב-Entra ID ויצר סוד לקוח.  
-הגדר את שרת ה-Express.js שלך להשתמש ב-Authorization Code Flow.  
-בדוק את נקודות הקצה המוגנות ואמת גישה מבוססת טוקן.
+### תרגיל 3: אבטחת שרת MCP מרוחק (לקוח חסוי)  
+- רשם לקוח חסוי ב-Entra ID ויצר סוד לקוח (client secret).  
+- קבע את תצורת שרת ה-Express.js MCP לשימוש ב-Authorization Code Flow.  
+- בדוק את נקודות הקצה המוגנות ואמת גישה מבוססת אסימון.
 
 ### תרגיל 4: יישום שיטות עבודה מומלצות לאבטחה  
-הפעל HTTPS לשרת המקומי או המרוחק שלך.  
-יישם בקרת גישה מבוססת תפקידים (RBAC) בלוגיקת השרת.  
-הוסף טיפול בתוקף הטוקן ואחסון מאובטח של הטוקנים.
+- אפשר HTTPS בשרת המקומי או המרוחק שלך.  
+- יישם בקרת גישה מבוססת תפקידים (RBAC) בלוגיקת השרת.  
+- הוסף טיפול בתוקף אסימון ואחסון מאובטח של אסימונים.
 
-## משאבים
+## משאבים  
 
-1. **תיעוד סקירת MSAL**  
-למד כיצד Microsoft Authentication Library (MSAL) מאפשרת רכישת טוקנים מאובטחת בפלטפורמות שונות:  
-[סקירת MSAL ב-Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)
+1. **תיעוד סקירה של MSAL**  
+   למד כיצד Microsoft Authentication Library (MSAL) מאפשרת רכישת אסימונים מאובטחת בפלטפורמות שונות:  
+   [סקירת MSAL ב-Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)
 
 2. **מאגר GitHub של Azure-Samples/mcp-auth-servers**  
-מימושים לדוגמה של שרתי MCP המדגימים זרימות אימות:  
-[Azure-Samples/mcp-auth-servers ב-GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
+   יישומים לדוגמה של שרתי MCP המדגימים זרימות אימות:  
+   [Azure-Samples/mcp-auth-servers ב-GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
 
-3. **סקירת Managed Identities עבור משאבי Azure**  
-הבנת איך לבטל סודות על ידי שימוש בזהויות מנוהלות שמוקצות למערכת או למשתמש:  
-[סקירת Managed Identities ב-Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)
+3. **סקירה של Managed Identities עבור משאבי Azure**  
+   הבן כיצד לבטל סודות באמצעות זהויות מנוהלות שמוקצות למערכת או למשתמש:  
+   [סקירת Managed Identities ב-Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)
 
 4. **Azure API Management: שער האימות שלך לשרתי MCP**  
-סקירה מעמיקה של שימוש ב-APIM כשער OAuth2 מאובטח לשרתי MCP:  
-[Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
+   סקירה מעמיקה של שימוש ב-APIM כשער OAuth2 מאובטח לשרתי MCP:  
+   [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
 
-5. **רשימת הרשאות Microsoft Graph**  
-רשימה מקיפה של הרשאות מורשות ומורשות יישום עבור Microsoft Graph:  
-[רשימת הרשאות Microsoft Graph](https://learn.microsoft.com/zh-tw/graph/permissions-reference)
+5. **רפרנס הרשאות Microsoft Graph**  
+   רשימה מקיפה של הרשאות מונפקות ויישומיות עבור Microsoft Graph:  
+   [רפרנס הרשאות Microsoft Graph](https://learn.microsoft.com/zh-tw/graph/permissions-reference)
 
 ## תוצאות למידה  
 בסיום חלק זה תוכל:
 
-- להסביר מדוע אימות הוא קריטי לשרתי MCP ולזרימות עבודה של AI.  
-- להגדיר ולהגדיר אימות Entra ID בתרחישי שרת MCP מקומי ומרוחק.  
-- לבחור את סוג הלקוח המתאים (ציבורי או סודי) בהתבסס על פריסת השרת.  
-- ליישם שיטות קידוד מאובטחות, כולל אחסון טוקנים והרשאות מבוססות תפקיד.  
-- להגן בביטחון על שרת ה-MCP וכליו מפני גישה לא מורשית.
+- להסביר מדוע אימות הוא קריטי עבור שרתי MCP וזרימות עבודה של בינה מלאכותית.  
+- להגדיר ולהגדיר אימות Entra ID עבור תרחישי שרתי MCP מקומיים ומרוחקים.  
+- לבחור את סוג הלקוח המתאים (ציבורי או חסוי) בהתאם לפריסת השרת שלך.  
+- ליישם שיטות קידוד מאובטחות, כולל אחסון אסימונים והרשאות מבוססות תפקידים.  
+- להגן בביטחון על שרת ה-MCP שלך וכליו מפני גישה לא מורשית.
 
-## מה הלאה
+## מה הלאה  
 
-- [6. תרומות קהילתיות](../../06-CommunityContributions/README.md)
+- [6. תרומות מהקהילה](../../06-CommunityContributions/README.md)
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). בעוד שאנו שואפים לדייק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפתו המקורית נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי אדם. איננו אחראים לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי של אדם. אנו לא נושאים באחריות לכל אי הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

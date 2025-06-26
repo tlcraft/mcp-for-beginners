@@ -1,67 +1,67 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9abe1d303ab126f9a8b87f03cebe5213",
-  "translation_date": "2025-06-26T14:51:44+00:00",
+  "original_hash": "0abf26a6c4dbe905d5d49ccdc0ccfe92",
+  "translation_date": "2025-06-26T16:33:43+00:00",
   "source_file": "05-AdvancedTopics/mcp-security-entra/README.md",
   "language_code": "fi"
 }
 -->
-# Turvaamalla tekoälytyönkulut: Entra ID -todennus Model Context Protocol -palvelimille
+# Securing AI Workflows: Entra ID Authentication for Model Context Protocol Servers
 
-## Johdanto  
-Model Context Protocol (MCP) -palvelimesi suojaaminen on yhtä tärkeää kuin kotisi etuoven lukitseminen. Jos jätät MCP-palvelimesi avoimeksi, työkalusi ja tietosi ovat alttiina luvattomalle käytölle, mikä voi johtaa tietoturvaloukkauksiin. Microsoft Entra ID tarjoaa vahvan pilvipohjaisen identiteetin ja pääsynhallinnan ratkaisun, joka varmistaa, että vain valtuutetut käyttäjät ja sovellukset voivat käyttää MCP-palvelintasi. Tässä osiossa opit, miten voit suojata tekoälytyönkulkujasi Entra ID -todennuksella.
+## Johdanto
+Model Context Protocol (MCP) -palvelimesi suojaaminen on yhtä tärkeää kuin kotisi etuoven lukitseminen. Jättämällä MCP-palvelimesi avoimeksi altistat työkalusi ja tietosi luvattomalle käytölle, mikä voi johtaa tietoturvaloukkauksiin. Microsoft Entra ID tarjoaa vahvan pilvipohjaisen identiteetin- ja pääsynhallintaratkaisun, joka varmistaa, että vain valtuutetut käyttäjät ja sovellukset voivat olla vuorovaikutuksessa MCP-palvelimesi kanssa. Tässä osiossa opit suojaamaan tekoälytyönkulkujasi Entra ID -todennuksen avulla.
 
-## Oppimistavoitteet  
-Tämän osion lopuksi osaat:
+## Oppimistavoitteet
+Tämän osion lopussa osaat:
 
-- Ymmärtää MCP-palvelinten suojaamisen merkityksen.  
-- Selittää Microsoft Entra ID:n ja OAuth 2.0 -todennuksen perusteet.  
-- Tunnistaa julkisen ja luottamuksellisen asiakkaan erot.  
-- Toteuttaa Entra ID -todennuksen sekä paikallisissa (julkinen asiakas) että etäisissä (luottamuksellinen asiakas) MCP-palvelintilanteissa.  
-- Soveltaa turvallisuuden parhaita käytäntöjä tekoälytyönkulkujen kehittämisessä.
+- Ymmärtää MCP-palvelinten suojaamisen merkityksen.
+- Selittää Microsoft Entra ID:n ja OAuth 2.0 -todennuksen perusteet.
+- Tunnistaa julkisten ja luottamuksellisten asiakkaiden erot.
+- Toteuttaa Entra ID -todennuksen sekä paikallisissa (julkinen asiakas) että etä-MCP-palvelinympäristöissä (luottamuksellinen asiakas).
+- Soveltaa tietoturvan parhaita käytäntöjä tekoälytyönkulkuja kehittäessäsi.
 
-# Turvaamalla tekoälytyönkulut: Entra ID -todennus Model Context Protocol -palvelimille
+## Turvallisuus ja MCP
 
-Aivan kuten et jättäisi kotisi etuovea lukitsematta, et myöskään saa jättää MCP-palvelintasi vapaasti kenen tahansa käyttöön. Tekoälytyönkulkujen suojaaminen on olennaista luotettavien, turvallisten ja vakaiden sovellusten rakentamisessa. Tässä luvussa tutustut Microsoft Entra ID:n käyttöön MCP-palvelimien suojaamisessa, jotta vain valtuutetut käyttäjät ja sovellukset pääsevät käsiksi työkaluihisi ja tietoihisi.
+Aivan kuten et jättäisi kotisi etuovea lukitsematta, et myöskään saa jättää MCP-palvelintasi avoimeksi kenen tahansa käyttöön. Tekoälytyönkulkujen suojaaminen on välttämätöntä, jotta voit rakentaa luotettavia, turvallisia ja vahvoja sovelluksia. Tässä luvussa tutustut Microsoft Entra ID:n käyttöön MCP-palvelimiesi suojaamisessa, jotta vain valtuutetut käyttäjät ja sovellukset pääsevät työkaluihisi ja tietoihisi käsiksi.
 
 ## Miksi turvallisuus on tärkeää MCP-palvelimille
 
-Kuvittele, että MCP-palvelimellasi on työkalu, joka voi lähettää sähköposteja tai käyttää asiakasrekisteriä. Suojaamaton palvelin tarkoittaisi, että kuka tahansa voisi käyttää tätä työkalua, mikä johtaisi luvattomaan tietojen käyttöön, roskapostiin tai muihin haitallisiin toimintoihin.
+Kuvittele, että MCP-palvelimellasi on työkalu, joka voi lähettää sähköposteja tai käyttää asiakasrekisteriä. Suojaamaton palvelin tarkoittaisi, että kuka tahansa voisi käyttää tätä työkalua, mikä johtaisi luvattomaan tietojen käsittelyyn, roskapostiin tai muihin haitallisiin toimiin.
 
-Todennuksen avulla varmistat, että jokainen palvelimelle tehty pyyntö tarkistetaan ja käyttäjän tai sovelluksen henkilöllisyys vahvistetaan. Tämä on ensimmäinen ja tärkein askel tekoälytyönkulkujen suojaamisessa.
+Todennuksen avulla varmistat, että jokainen pyyntö palvelimellesi on vahvistettu ja että pyyntöä tekevä käyttäjä tai sovellus on tunnistettu. Tämä on ensimmäinen ja tärkein askel tekoälytyönkulkujen suojaamisessa.
 
-## Johdanto Microsoft Entra ID:hin
+## Johdanto Microsoft Entra ID:hen
 
-**Microsoft Entra ID** on pilvipohjainen identiteetin ja pääsynhallinnan palvelu. Voit ajatella sitä sovellustesi yleisenä turvamiehenä. Se hoitaa monimutkaisen käyttäjien tunnistamisen (todennus) ja käyttöoikeuksien määrittämisen (valtuutus) prosessin.
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) on pilvipohjainen identiteetin- ja pääsynhallintapalvelu. Voit ajatella sitä sovellustesi yleismaailmallisena turvamiehenä. Se hoitaa monimutkaisen prosessin käyttäjien tunnistamisessa (todennus) ja sen määrittämisessä, mitä he saavat tehdä (valtuutus).
 
 Entra ID:n avulla voit:
 
-- Mahdollistaa turvallisen kirjautumisen käyttäjille.  
-- Suojata API:t ja palvelut.  
-- Hallita käyttöoikeuspolitiikkoja keskitetysti.
+- Mahdollistaa käyttäjille turvallisen kirjautumisen.
+- Suojata rajapintoja ja palveluita.
+- Hallita pääsypolitiikkoja keskitetysti.
 
-MCP-palvelimille Entra ID tarjoaa vahvan ja laajalti luotetun ratkaisun hallita, kuka voi käyttää palvelimen toimintoja.
+MCP-palvelimille Entra ID tarjoaa vahvan ja laajalti luotetun ratkaisun, jolla hallitaan, kuka pääsee käyttämään palvelimesi toimintoja.
 
 ---
 
 ## Ymmärtäminen: Miten Entra ID -todennus toimii
 
-Entra ID käyttää avoimia standardeja, kuten **OAuth 2.0**, todennuksen hallintaan. Vaikka yksityiskohdat voivat olla monimutkaisia, perusidea on yksinkertainen ja sen voi ymmärtää vertauksen avulla.
+Entra ID käyttää avoimia standardeja, kuten **OAuth 2.0**, todennuksen hallintaan. Vaikka yksityiskohdat voivat olla monimutkaisia, perusajatus on yksinkertainen ja sen voi ymmärtää vertauksen avulla.
 
-### Kevyt johdanto OAuth 2.0:aan: avain autonhoitajalle
+### Kevyt johdanto OAuth 2.0:aan: Parkkipaikan avain
 
-Ajattele OAuth 2.0:aa kuin autonhoitopalvelua. Kun saavut ravintolaan, et anna autonhoitajalle pääavaintasi. Sen sijaan annat **avainautonhoitajan avaimen**, jolla on rajatut oikeudet – se voi käynnistää auton ja lukita ovet, mutta ei avata takaluukkua tai hansikaslokeroa.
+Ajattele OAuth 2.0:aa kuin auton pysäköintipalvelua. Kun saavut ravintolaan, et anna parkkiapulaiselle pääavaintasi. Sen sijaan annat **parkkiavaimen**, jolla on rajoitetut oikeudet – se voi käynnistää auton ja lukita ovet, mutta ei avata takakonttia tai hansikaslokeroa.
 
 Tässä vertauksessa:
 
-- **Sinä** olet **Käyttäjä**.  
-- **Autosi** on **MCP-palvelin** arvokkaine työkaluineen ja tietoineen.  
-- **Autonhoitaja** on **Microsoft Entra ID**.  
-- **Pysäköinninvalvoja** on **MCP-asiakas** (sovellus, joka yrittää käyttää palvelinta).  
-- **Avainautonhoitajan avain** on **Access Token** (käyttöoikeustunnus).
+- **Sinä** olet **Käyttäjä**.
+- **Autosi** on **MCP-palvelin**, jossa on arvokkaita työkaluja ja tietoja.
+- **Parkkiapulainen** on **Microsoft Entra ID**.
+- **Pysäköinnin valvoja** on **MCP-asiakas** (sovellus, joka yrittää käyttää palvelinta).
+- **Parkkiavain** on **Access Token** (käyttöoikeustunnus).
 
-Access token on turvallinen tekstijono, jonka MCP-asiakas saa Entra ID:ltä kirjautumisen jälkeen. Asiakas esittää tämän tokenin jokaisessa pyynnössä MCP-palvelimelle. Palvelin voi varmistaa tokenin aitouden ja että asiakkaalla on tarvittavat oikeudet, ilman että sen tarvitsee käsitellä varsinaisia tunnistetietojasi (kuten salasanaasi).
+Käyttöoikeustunnus on turvallinen tekstimuotoinen merkkijono, jonka MCP-asiakas saa Entra ID:ltä kirjautumisen jälkeen. Asiakas esittää tämän tunnuksen palvelimelle jokaisessa pyynnössä. Palvelin voi varmistaa tunnuksen aitouden ja sen, että asiakkaalla on tarvittavat oikeudet, ilman että se käsittelee suoraan käyttäjän todellisia tunnuksia (kuten salasanaa).
 
 ### Todennusprosessi
 
@@ -85,29 +85,56 @@ sequenceDiagram
     Server-->>-Client: Token is valid. Here is the result of the tool.
 ```
 
-### Microsoft Authentication Library (MSAL) -kirjaston esittely
+### Microsoft Authentication Library (MSAL) esittely
 
-Ennen kuin siirrymme koodiesimerkkeihin, on tärkeää tutustua keskeiseen komponenttiin, jota näet esimerkeissä: **Microsoft Authentication Library (MSAL)**.
+Ennen kuin siirrymme koodiin, on tärkeää esitellä keskeinen komponentti, joka esiintyy esimerkeissä: **Microsoft Authentication Library (MSAL)**.
 
-MSAL on Microsoftin kehittämä kirjasto, joka helpottaa kehittäjien työtä todennuksen kanssa. Sen sijaan, että sinun pitäisi kirjoittaa monimutkaista koodia turvatunnusten käsittelyyn, kirjautumisten hallintaan ja istuntojen uusimiseen, MSAL hoitaa nämä tehtävät puolestasi.
+MSAL on Microsoftin kehittämä kirjasto, joka helpottaa kehittäjien työtä todennuksen kanssa. Sen sijaan, että sinun pitäisi kirjoittaa monimutkaista koodia turvatunnusten käsittelyyn, kirjautumisten hallintaan ja istuntojen uudistamiseen, MSAL hoitaa nämä puolestasi.
 
 MSAL:n käyttöä suositellaan, koska:
 
-- **Se on turvallinen:** Se toteuttaa alan standardeihin perustuvat protokollat ja turvallisuuden parhaat käytännöt, mikä vähentää haavoittuvuuksia koodissasi.  
-- **Se yksinkertaistaa kehitystä:** Se piilottaa OAuth 2.0:n ja OpenID Connectin monimutkaisuudet, jolloin voit lisätä vahvan todennuksen sovellukseesi muutamalla koodirivillä.  
-- **Sitä ylläpidetään aktiivisesti:** Microsoft päivittää MSAL:ia jatkuvasti vastaamaan uusia turvallisuusuhkia ja alustamuutoksia.
+- **Se on turvallinen:** Se toteuttaa alan standardit protokollat ja parhaat tietoturvakäytännöt, vähentäen haavoittuvuuksia koodissasi.
+- **Se yksinkertaistaa kehitystä:** Se abstrahoi OAuth 2.0- ja OpenID Connect -protokollien monimutkaisuuden, jolloin voit lisätä vahvan todennuksen sovellukseesi muutamalla koodirivillä.
+- **Sitä ylläpidetään aktiivisesti:** Microsoft päivittää MSAL:ia jatkuvasti vastaamaan uusia tietoturvauhkia ja alustamuutoksia.
 
-MSAL tukee monia kieliä ja sovelluskehyksiä, kuten .NET, JavaScript/TypeScript, Python, Java, Go sekä mobiilialustoja kuten iOS ja Android. Näin voit käyttää yhtenäisiä todennusmalleja koko teknologia-alustallasi.
+MSAL tukee monia kieliä ja sovelluskehyksiä, kuten .NET, JavaScript/TypeScript, Python, Java, Go sekä mobiilialustoja kuten iOS ja Android. Tämä mahdollistaa yhdenmukaisten todennusmallien käytön koko teknologia-alustallasi.
 
-Lisätietoja MSAL:sta löydät virallisesta [MSAL overview documentation](https://learn.microsoft.com/entra/identity-platform/msal-overview) -sivustosta.
+Lisätietoja MSAL:sta löydät virallisesta [MSAL-yleiskatsausdokumentaatiosta](https://learn.microsoft.com/entra/identity-platform/msal-overview).
 
 ---
 
-## MCP-palvelimen suojaaminen Entra ID:llä: askel askeleelta
+## MCP-palvelimen suojaaminen Entra ID:llä: vaihe vaiheelta
 
-Käydään läpi, miten suojataan paikallinen MCP-palvelin (joka kommunikoi `stdio`-rajapinnan kautta) käyttäen Entra ID -todennusta.
+Käydään läpi, miten paikallinen MCP-palvelin (joka kommunikoi `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
 
-`AuthenticationService.cs`-tiedostossa `CreateAsync`-metodi on keskeinen. Se yrittää ensin hankkia tokenin hiljaisesti (eli käyttäjän ei tarvitse kirjautua uudelleen, jos voimassa oleva istunto on jo olemassa). Jos hiljaista tokenia ei saada, käyttäjältä pyydetään kirjautumista vuorovaikutteisesti.
+### Scenario 1: Securing a Local MCP Server (with a Public Client)
+
+In this scenario, we'll look at an MCP server that runs locally, communicates over `stdio`, and uses Entra ID to authenticate the user before allowing access to its tools. The server will have a single tool that fetches the user's profile information from the Microsoft Graph API.
+
+#### 1. Setting Up the Application in Entra ID
+
+Before writing any code, you need to register your application in Microsoft Entra ID. This tells Entra ID about your application and grants it permission to use the authentication service.
+
+1. Navigate to the **[Microsoft Entra portal](https://entra.microsoft.com/)**.
+2. Go to **App registrations** and click **New registration**.
+3. Give your application a name (e.g., "My Local MCP Server").
+4. For **Supported account types**, select **Accounts in this organizational directory only**.
+5. You can leave the **Redirect URI** blank for this example.
+6. Click **Register**.
+
+Once registered, take note of the **Application (client) ID** and **Directory (tenant) ID**. You'll need these in your code.
+
+#### 2. The Code: A Breakdown
+
+Let's look at the key parts of the code that handle authentication. The full code for this example is available in the [Entra ID - Local - WAM](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-local-wam) folder of the [mcp-auth-servers GitHub repository](https://github.com/Azure-Samples/mcp-auth-servers).
+
+**`AuthenticationService.cs`**
+
+This class is responsible for handling the interaction with Entra ID.
+
+- **`CreateAsync`**: This method initializes the `PublicClientApplication` from the MSAL (Microsoft Authentication Library). It's configured with your application's `clientId` and `tenantId`.
+- **`WithBroker`**: This enables the use of a broker (like the Windows Web Account Manager), which provides a more secure and seamless single sign-on experience.
+- **`AcquireTokenAsync`**-menetelmällä) suojataan: Tämä on keskeinen menetelmä, joka yrittää ensin hankkia tunnuksen hiljaisesti (eli käyttäjän ei tarvitse kirjautua uudelleen, jos istunto on voimassa). Jos hiljaista tunnusta ei saada, käyttäjää pyydetään kirjautumaan vuorovaikutteisesti.
 
 ```csharp
 // Simplified for clarity
@@ -155,7 +182,12 @@ public async Task<string> AcquireTokenAsync()
 }
 ```
 
-**`Program.cs`-tiedostossa** lisätään singleton-palveluna `AuthenticationService`, ja käytetään `authService.AcquireTokenAsync()`-metodia saadaksemme voimassa olevan käyttöoikeustunnuksen. Onnistuneen todennuksen jälkeen tokenia käytetään kutsuttaessa Microsoft Graph API:a käyttäjätietojen hakemiseksi.
+**`Program.cs`**
+
+This is where the MCP server is set up and the authentication service is integrated.
+
+- **`AddSingleton<AuthenticationService>`**: This registers the `AuthenticationService` with the dependency injection container, so it can be used by other parts of the application (like our tool).
+- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()`** hakee voimassa olevan käyttöoikeustunnuksen. Jos todennus onnistuu, tunnusta käytetään Microsoft Graph API:n kutsumiseen ja käyttäjätietojen hakemiseen.
 
 ```csharp
 // Simplified for clarity
@@ -185,13 +217,46 @@ public static async Task<string> GetUserDetailsFromGraph(
 
 #### 3. Miten kaikki toimii yhdessä
 
-1. Kun MCP-asiakas kutsuu `GetUserDetailsFromGraph`-työkalua, se käyttää istuntotokenia hakeakseen Entra ID:n access tokenin ja kutsuu Microsoft Graph API:a käyttäjätietojen saamiseksi.
+1. Kun MCP-asiakas yrittää käyttää `GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
+2. `AcquireTokenAsync` triggers the MSAL library to check for a valid token.
+3. If no token is found, MSAL, through the broker, will prompt the user to sign in with their Entra ID account.
+4. Once the user signs in, Entra ID issues an access token.
+5. The tool receives the token and uses it to make a secure call to the Microsoft Graph API.
+6. The user's details are returned to the MCP client.
 
-2. `AcquireTokenAsync`-metodi yrittää ensin hiljaista todennusta ja tarvittaessa pyytää käyttäjää kirjautumaan.
+This process ensures that only authenticated users can use the tool, effectively securing your local MCP server.
 
-3. `/auth/callback`-päätepiste käsittelee uudelleenohjauksen Entra ID:ltä käyttäjän todennuksen jälkeen, vaihtaa valtuutuskoodin käyttöoikeustunnukseen ja päivitystunnukseen.
+### Scenario 2: Securing a Remote MCP Server (with a Confidential Client)
 
-4. Tämä virtaus on monimutkaisempi kuin julkisen asiakkaan virtaus, mutta välttämätön internetiin suuntautuville päätepisteille. Etäiset MCP-palvelimet ovat julkisen internetin kautta saavutettavissa, joten ne tarvitsevat vahvempia turvatoimia luvattoman käytön ja hyökkäysten estämiseksi.
+When your MCP server is running on a remote machine (like a cloud server) and communicates over a protocol like HTTP Streaming, the security requirements are different. In this case, you should use a **confidential client** and the **Authorization Code Flow**. This is a more secure method because the application's secrets are never exposed to the browser.
+
+This example uses a TypeScript-based MCP server that uses Express.js to handle HTTP requests.
+
+#### 1. Setting Up the Application in Entra ID
+
+The setup in Entra ID is similar to the public client, but with one key difference: you need to create a **client secret**.
+
+1. Navigate to the **[Microsoft Entra portal](https://entra.microsoft.com/)**.
+2. In your app registration, go to the **Certificates & secrets** tab.
+3. Click **New client secret**, give it a description, and click **Add**.
+4. **Important:** Copy the secret value immediately. You will not be able to see it again.
+5. You also need to configure a **Redirect URI**. Go to the **Authentication** tab, click **Add a platform**, select **Web**, and enter the redirect URI for your application (e.g., `http://localhost:3001/auth/callback`).
+
+> **⚠️ Important Security Note:** For production applications, Microsoft strongly recommends using **secretless authentication** methods such as **Managed Identity** or **Workload Identity Federation** instead of client secrets. Client secrets pose security risks as they can be exposed or compromised. Managed identities provide a more secure approach by eliminating the need to store credentials in your code or configuration.
+>
+> For more information about managed identities and how to implement them, see the [Managed identities for Azure resources overview](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/overview).
+
+#### 2. The Code: A Breakdown
+
+This example uses a session-based approach. When the user authenticates, the server stores the access token and refresh token in a session and gives the user a session token. This session token is then used for subsequent requests. The full code for this example is available in the [Entra ID - Confidential client](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-cca-session) folder of the [mcp-auth-servers GitHub repository](https://github.com/Azure-Samples/mcp-auth-servers).
+
+**`Server.ts`**
+
+This file sets up the Express server and the MCP transport layer.
+
+- **`requireBearerAuth`**: This is middleware that protects the `/sse` and `/message` endpoints. It checks for a valid bearer token in the `Authorization` header of the request.
+- **`EntraIdServerAuthProvider`**: This is a custom class that implements the `McpServerAuthorizationProvider` interface. It's responsible for handling the OAuth 2.0 flow.
+- **`/auth/callback`**-päätepistettä, se käsittelee Entra ID:ltä käyttäjän kirjautumisen jälkeen tulevan uudelleenohjauksen. Se vaihtaa valtuutuskoodin käyttöoikeustunnukseen ja uudistustunnukseen.
 
 ```typescript
 // Simplified for clarity
@@ -224,7 +289,9 @@ app.get("/auth/callback", (req, res) => {
 });
 ```
 
-`Tools.ts`-tiedostossa `getUserDetails`-työkalu on samankaltainen kuin aiemmassa esimerkissä, mutta se hakee access tokenin istunnosta.
+**`Tools.ts`**
+
+This file defines the tools that the MCP server provides. The `getUserDetails`** -työkalu on samankaltainen kuin edellisessä esimerkissä, mutta se hakee käyttöoikeustunnuksen istunnosta.
 
 ```typescript
 // Simplified for clarity
@@ -255,98 +322,104 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 });
 ```
 
-`auth/EntraIdServerAuthProvider.ts`-tiedostossa tokenien tallennus, vaaditut Bearer-todennukset ja `/auth/callback`-käsittely ovat keskeisiä osia virrassa.
+Kun **`auth/EntraIdServerAuthProvider.ts`**
 
----
+This class handles the logic for:
+
+- Redirecting the user to the Entra ID sign-in page.
+- Exchanging the authorization code for an access token.
+- Storing the tokens in the `tokenStore`.
+- Refreshing the access token when it expires.
+
+#### 3. How It All Works Together
+
+1. When a user first tries to connect to the MCP server, the `requireBearerAuth` middleware will see that they don't have a valid session and will redirect them to the Entra ID sign-in page.
+2. The user signs in with their Entra ID account.
+3. Entra ID redirects the user back to the `/auth/callback` endpoint with an authorization code.
+4. The server exchanges the code for an access token and a refresh token, stores them, and creates a session token which is sent to the client.
+5. The client can now use this session token in the `Authorization` header for all future requests to the MCP server.
+6. When the `getUserDetails`** -työkalu kutsutaan, se käyttää istuntotunnusta hakeakseen Entra ID:n käyttöoikeustunnuksen ja kutsuu sitten Microsoft Graph API:a.
+
+Tämä työnkulku on monimutkaisempi kuin julkisen asiakkaan virtaus, mutta se on välttämätön internetiin suuntautuville päätepisteille. Koska etä-MCP-palvelimet ovat julkisen internetin kautta saavutettavissa, ne tarvitsevat vahvempia turvatoimia estääkseen luvattoman käytön ja mahdolliset hyökkäykset.
 
 ## Turvallisuuden parhaat käytännöt
 
-- **Käytä aina HTTPS-yhteyttä:** Salaa asiakas-palvelin -välinen viestintä estää tokenien sieppauksen.  
-- **Ota käyttöön roolipohjainen pääsynhallinta (RBAC):** Älä tarkista pelkästään, onko käyttäjä todennettu, vaan myös mitä oikeuksia hänellä on. Voit määritellä roolit Entra ID:ssä ja tarkistaa ne MCP-palvelimessa.  
-- **Seuraa ja kirjaa tapahtumat:** Kirjaa kaikki todennustapahtumat, jotta voit havaita ja reagoida epäilyttäviin toimintoihin.  
-- **Hallinnoi pyyntöjen rajoituksia ja kuormitusta:** Microsoft Graph ja muut API:t käyttävät rajoituksia väärinkäytön estämiseksi. Toteuta eksponentiaalinen takaisinkytkentä ja uudelleenkutsut MCP-palvelimessasi HTTP 429 -vastauksien varalta. Harkitse usein käytettyjen tietojen välimuistittamista API-kutsujen vähentämiseksi.  
-- **Säilytä tokenit turvallisesti:** Säilytä access ja refresh tokenit turvallisessa paikassa. Paikallisissa sovelluksissa käytä järjestelmän tarjoamia turvallisia säilytystiloja. Palvelinsovelluksissa harkitse salattua tallennusta tai turvallisia avainhallintapalveluita, kuten Azure Key Vaultia.  
-- **Tokenien vanhentumisen hallinta:** Access tokenit ovat voimassa rajatun ajan. Toteuta automaattinen tokenin uusiminen refresh tokeneilla, jotta käyttäjäkokemus pysyy saumattomana ilman uudelleentodennusta.  
-- **Harkitse Azure API Managementin käyttöä:** Vaikka turvallisuuden toteuttaminen suoraan MCP-palvelimessa antaa tarkat hallintamahdollisuudet, API Gatewayt kuten Azure API Management voivat hoitaa monia turvallisuusasioita automaattisesti, kuten todennuksen, valtuutuksen, kuormituksen rajoituksen ja seurannan. Ne tarjoavat keskitetyn turvakerroksen asiakkaiden ja MCP-palvelimien väliin. Lisätietoja APIM:n käytöstä MCP:n kanssa löydät [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) -artikkelista.
-
----
+- **Käytä aina HTTPS:ää**: Salaa asiakas-palvelin -välinen liikenne, jotta tunnuksia ei voida siepata.
+- **Ota käyttöön roolipohjainen pääsynhallinta (RBAC)**: Älä tarkista vain *onko* käyttäjä todennettu, vaan myös *mitä* hän saa tehdä. Voit määritellä roolit Entra ID:ssä ja tarkistaa ne MCP-palvelimella.
+- **Valvo ja tarkasta**: Kirjaa kaikki todennustapahtumat, jotta voit havaita ja reagoida epäilyttäviin toimintoihin.
+- **Hallitse pyynnön rajoituksia ja throttlingia**: Microsoft Graph ja muut rajapinnat rajoittavat pyyntöjen määrää väärinkäytösten estämiseksi. Toteuta eksponentiaalinen takaisinkytkentä ja uudelleenyrittomekanismit MCP-palvelimessasi käsitelläksesi sujuvasti HTTP 429 (Liian monta pyyntöä) -vastauksia. Harkitse usein käytettyjen tietojen välimuistia API-kutsujen vähentämiseksi.
+- **Suojaa tunnusten tallennus**: Säilytä käyttö- ja uudistustunnukset turvallisesti. Paikallisissa sovelluksissa käytä järjestelmän turvallisia tallennusmenetelmiä. Palvelinsovelluksissa harkitse salattua tallennusta tai turvallisia avainhallintapalveluita kuten Azure Key Vaultia.
+- **Hallinnoi tunnusten vanhenemista**: Käyttöoikeustunnuksilla on rajattu voimassaoloaika. Toteuta automaattinen tunnusten uudistus uudistustunnuksilla, jotta käyttäjäkokemus pysyy saumattomana ilman uudelleentodennusta.
+- **Harkitse Azure API Managementin käyttöä**: Vaikka tietoturvan toteuttaminen suoraan MCP-palvelimessa antaa sinulle tarkemman hallinnan, API Gatewayt kuten Azure API Management voivat hoitaa monia tietoturvaan liittyviä asioita automaattisesti, mukaan lukien todennuksen, valtuutuksen, pyynnön rajoitukset ja valvonnan. Ne tarjoavat keskitetyn suojaustason asiakkaiden ja MCP-palvelimien välille. Lisätietoja API Gatewayn käytöstä MCP:n kanssa löydät artikkelistamme [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690).
 
 ## Keskeiset opit
 
-- MCP-palvelimen suojaaminen on ratkaisevaa tietojesi ja työkalujesi turvaamiseksi.  
-- Microsoft Entra ID tarjoaa vahvan ja skaalautuvan ratkaisun todennukseen ja valtuutukseen.  
-- Käytä **julkista asiakasta** paikallisissa sovelluksissa ja **luottamuksellista asiakasta** etäpalvelimissa.  
+- MCP-palvelimen suojaaminen on ratkaisevan tärkeää tietojen ja työkalujen turvaamiseksi.
+- Microsoft Entra ID tarjoaa vahvan ja skaalautuvan ratkaisun todennukseen ja valtuutukseen.
+- Käytä **julkista asiakasta** paikallisissa sovelluksissa ja **luottamuksellista asiakasta** etäpalvelimissa.
 - **Authorization Code Flow** on turvallisin vaihtoehto web-sovelluksille.
-
----
 
 ## Harjoitus
 
-1. Mieti MCP-palvelinta, jonka haluaisit rakentaa. Olisiko se paikallinen vai etäinen palvelin?  
-2. Vastauksesi perusteella, käyttäisitkö julkista vai luottamuksellista asiakasta?  
-3. Mitä käyttöoikeutta MCP-palvelimesi pyytäisi toimiakseen Microsoft Graphin kanssa?
-
----
+1. Mieti MCP-palvelinta, jonka voisit rakentaa. Olisiko se paikallinen vai etäpalvelin?
+2. Vastauksesi perusteella, käyttäisitkö julkista vai luottamuksellista asiakasta?
+3. Mitä käyttöoikeuksia MCP-palvelimesi pyytäisi toimiakseen Microsoft Graphin kanssa?
 
 ## Käytännön harjoitukset
 
-### Harjoitus 1: Rekisteröi sovellus Entra ID:ssä  
+### Harjoitus 1: Rekisteröi sovellus Entra ID:ssä
 Siirry Microsoft Entra -portaaliin.  
 Rekisteröi uusi sovellus MCP-palvelimellesi.  
-Tallenna sovelluksen (client) ID ja hakemiston (tenant) ID.
+Tallenna sovelluksen (asiakas) ID ja hakemiston (vuokraaja) ID.
 
-### Harjoitus 2: Suojaa paikallinen MCP-palvelin (julkinen asiakas)  
-Seuraa koodiesimerkkiä ja integroi MSAL käyttäjien todennukseen.  
-Testaa todennusvirtaus kutsumalla MCP-työkalua, joka hakee käyttäjätiedot Microsoft Graphista.
+### Harjoitus 2: Suojaa paikallinen MCP-palvelin (julkinen asiakas)
+- Seuraa koodiesimerkkiä ja integroi MSAL (Microsoft Authentication Library) käyttäjätodennukseen.
+- Testaa todennusprosessi kutsumalla MCP-työkalua, joka hakee käyttäjätiedot Microsoft Graphista.
 
-### Harjoitus 3: Suojaa etäinen MCP-palvelin (luottamuksellinen asiakas)  
-Rekisteröi luottamuksellinen asiakas Entra ID:ssä ja luo asiakassalaisuus.  
-Määritä Express.js MCP-palvelimesi käyttämään Authorization Code Flow'ta.  
-Testaa suojattuja päätepisteitä ja varmista token-pohjainen pääsy.
+### Harjoitus 3: Suojaa etä-MCP-palvelin (luottamuksellinen asiakas)
+- Rekisteröi luottamuksellinen asiakas Entra ID:ssä ja luo asiakassalaisuus.
+- Määritä Express.js MCP-palvelimesi käyttämään Authorization Code Flow’ta.
+- Testaa suojattuja päätepisteitä ja varmista tunnuspohjainen pääsy.
 
-### Harjoitus 4: Sovella turvallisuuden parhaita käytäntöjä  
-Ota HTTPS käyttöön paikallisessa tai etäpalvelimessasi.  
-Toteuta roolipohjainen pääsynhallinta (RBAC) palvelinlogiikassa.  
-Lisää tokenien vanhentumisen hallinta ja turvallinen tokenien säilytys.
-
----
+### Harjoitus 4: Ota käyttöön tietoturvan parhaat käytännöt
+- Ota HTTPS käyttöön paikallisessa tai etäpalvelimessasi.
+- Toteuta roolipohjainen pääsynhallinta (RBAC) palvelinlogiikassasi.
+- Lisää tunnusten vanhenemisen hallinta ja turvallinen tunnusten tallennus.
 
 ## Resurssit
 
 1. **MSAL Overview Documentation**  
-   Opi, miten Microsoft Authentication Library (MSAL) mahdollistaa turvallisen tokenien hankinnan eri alustoilla:  
+   Opi, miten Microsoft Authentication Library (MSAL) mahdollistaa turvallisen tunnusten hankinnan eri alustoilla:  
    [MSAL Overview on Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)
 
 2. **Azure-Samples/mcp-auth-servers GitHub Repository**  
-   MCP-palvelinten todennusvirtojen referenssikoodit:  
+   MCP-palvelimien todennusvirtausten referenssiesimerkkejä:  
    [Azure-Samples/mcp-auth-servers on GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
 
 3. **Managed Identities for Azure Resources Overview**  
-   Ymmärrä, miten voit poistaa salaisuudet käytöstä käyttämällä järjestelmän tai käyttäjän hallinnoimia identiteettejä:  
+   Ymmärrä, miten salaisuudet voidaan poistaa käytöstä käyttämällä järjestelmän tai käyttäjän määrittämiä hallittuja identiteettejä:  
    [Managed Identities Overview on Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)
 
 4. **Azure API Management: Your Auth Gateway for MCP Servers**  
-   Syväsukellus APIM:n käyttöön MCP-palvelinten turvallisena OAuth2-porttina:  
+   Syvällinen katsaus APIM:n käyttöön turvallisena OAuth2-porttina MCP-palvelimille:  
    [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
 
 5. **Microsoft Graph Permissions Reference**  
-   Laaja luettelo delegoiduista ja sovelluskohtaisista käyttöoikeuksista Microsoft Graphille:  
+   Laaja luettelo Microsoft Graphin valtuutetuista ja sovellusvaltuuksista:  
    [Microsoft Graph Permissions Reference](https://learn.microsoft.com/zh-tw/graph/permissions-reference)
 
----
-
-## Oppimistulokset  
+## Oppimistulokset
 Tämän osion suorittamisen jälkeen osaat:
 
-- Selittää, miksi todennus on kriittinen MCP-palvelimille ja tekoälytyönkuluille.  
-- Määrittää ja konfiguroida Entra ID -todennuksen sekä paikallisiin että etäisiin MCP-palvelintilanteisiin.  
-- Valita sopivan asiakastyypin (julkinen tai luottamuksellinen) palvelimesi käyttötarkoituksen mukaan.  
-- Toteuttaa turvallisen koodauksen käytäntöjä, mukaan lukien tokenien säilytys ja roolipohjainen valtuutus.  
-- Suojata MCP-palvelimesi ja sen työkalut luotettavasti luvattomalta käytöltä.
+- Selittää, miksi todennus on kriittinen MCP-palvelimille ja tekoälytyönkuluille.
+- Määrittää ja konfiguroida Entra ID -todennuksen sekä paikallisille että etä-MCP-palvelimille.
+- Valita oikean asiakastyypin (julkinen tai luottamuksellinen) palvelimesi käyttötapauksen mukaan.
+- Toteuttaa turvallisia ohjelmointikäytäntöjä, mukaan lukien tunnusten tallennus ja roolipohjainen valtuutus.
+- Suojata MCP-palvelimesi ja sen työkalut luottamuksellista käyttöä vastaan.
 
 ## Mitä seuraavaksi
 
 - [6. Community Contributions](../../06-CommunityContributions/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja omalla kielellään on virallinen lähde. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.
