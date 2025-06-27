@@ -88,6 +88,7 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 - **5.9. Web Search MCP** – [Guide](./05-AdvancedTopics/web-search-mcp/README.md)
 - **5.10. Realtime Streaming** – [Guide](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
 - **5.11. Realtime Web Search** – [Guide](./05-AdvancedTopics/mcp-realtimesearch/README.md)
+- **5.12. Entra ID Authentication for Model Context Protocol Servers** – [Guide](./05-AdvancedTopics/mcp-security-entra/README.md)
 </details>
 
 <details>
