@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bc76969a3bb20c032d1d5e95a304a2e3",
-  "translation_date": "2025-06-24T16:33:04+00:00",
+  "original_hash": "a94f85d76c34db9e2230c3d70787d320",
+  "translation_date": "2025-06-27T15:01:15+00:00",
   "source_file": "README.md",
   "language_code": "pl"
 }
@@ -22,8 +22,8 @@ CO_OP_TRANSLATOR_METADATA:
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 
-Postępuj zgodnie z tymi krokami, aby zacząć korzystać z tych zasobów:
-1. **Utwórz fork repozytorium**: Kliknij [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
+Wykonaj te kroki, aby rozpocząć korzystanie z tych zasobów:
+1. **Sforkuj repozytorium**: Kliknij [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Sklonuj repozytorium**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
 3. [**Dołącz do Discorda Azure AI Foundry i poznaj ekspertów oraz innych deweloperów**](https://discord.com/invite/ByRwuEEgH4)
 
@@ -34,13 +34,13 @@ Postępuj zgodnie z tymi krokami, aby zacząć korzystać z tych zasobów:
 
 # 🚀 Program nauczania Model Context Protocol (MCP) dla początkujących
 
-## **Naucz się MCP na praktycznych przykładach kodu w C#, Java, JavaScript, Python i TypeScript**
+## **Poznaj MCP na praktycznych przykładach kodu w C#, Java, JavaScript, Python i TypeScript**
 
 ## 🧠 Przegląd programu nauczania Model Context Protocol
 
-**Model Context Protocol (MCP)** to nowoczesny framework stworzony w celu ujednolicenia interakcji między modelami AI a aplikacjami klienckimi. Ten otwarty program nauczania oferuje uporządkowaną ścieżkę edukacyjną, wzbogaconą o praktyczne przykłady kodu i rzeczywiste zastosowania, obejmujące popularne języki programowania, takie jak C#, Java, JavaScript, TypeScript oraz Python.
+**Model Context Protocol (MCP)** to nowoczesne rozwiązanie mające na celu ujednolicenie interakcji między modelami AI a aplikacjami klienckimi. Ten otwarty program nauczania oferuje uporządkowaną ścieżkę edukacyjną, wzbogaconą o praktyczne przykłady kodu oraz rzeczywiste scenariusze zastosowań w popularnych językach programowania, takich jak C#, Java, JavaScript, TypeScript i Python.
 
-Niezależnie od tego, czy jesteś deweloperem AI, architektem systemów czy inżynierem oprogramowania, ten przewodnik jest kompleksowym źródłem wiedzy na temat podstaw MCP oraz strategii wdrażania.
+Niezależnie od tego, czy jesteś programistą AI, architektem systemów czy inżynierem oprogramowania, ten przewodnik to kompleksowe źródło wiedzy, które pozwoli Ci opanować podstawy MCP oraz strategie jego wdrażania.
 
 ## 🔗 Oficjalne zasoby MCP
 
@@ -54,22 +54,22 @@ Niezależnie od tego, czy jesteś deweloperem AI, architektem systemów czy inż
   <summary><strong>00-03: Podstawy</strong></summary>
 
 - **00. Wprowadzenie do MCP**  
-  Przegląd Model Context Protocol i jego znaczenia w pipeline’ach AI. [Czytaj więcej](./00-Introduction/README.md)
+  Przegląd Model Context Protocol i jego znaczenia w pipeline’ach AI. [Czytaj dalej](./00-Introduction/README.md)
 - **01. Wyjaśnienie podstawowych pojęć**  
-  Dogłębne omówienie kluczowych koncepcji MCP. [Czytaj więcej](./01-CoreConcepts/README.md)
+  Szczegółowe omówienie kluczowych koncepcji MCP. [Czytaj dalej](./01-CoreConcepts/README.md)
 - **02. Bezpieczeństwo w MCP**  
-  Zagrożenia bezpieczeństwa i najlepsze praktyki. [Czytaj więcej](./02-Security/README.md)
+  Zagrożenia bezpieczeństwa i najlepsze praktyki. [Czytaj dalej](./02-Security/README.md)
 - **03. Pierwsze kroki z MCP**  
-  Konfiguracja środowiska, podstawowe serwery/klienci, integracja. [Czytaj więcej](./03-GettingStarted/README.md)
+  Konfiguracja środowiska, podstawowe serwery/klienci, integracja. [Czytaj dalej](./03-GettingStarted/README.md)
 </details>
 
 <details>
-  <summary><strong>03.x: Praktyczne laboratoria</strong></summary>
+  <summary><strong>03.x: Laboratoria praktyczne</strong></summary>
 
 - **3.1. Pierwszy serwer** – [Przewodnik](./03-GettingStarted/01-first-server/README.md)
 - **3.2. Pierwszy klient** – [Przewodnik](./03-GettingStarted/02-client/README.md)
 - **3.3. Klient z LLM** – [Przewodnik](./03-GettingStarted/03-llm-client/README.md)
-- **3.4. Konsumowanie serwera za pomocą Visual Studio Code** – [Przewodnik](./03-GettingStarted/04-vscode/README.md)
+- **3.4. Konsumpcja serwera w Visual Studio Code** – [Przewodnik](./03-GettingStarted/04-vscode/README.md)
 - **3.5. Tworzenie serwera z użyciem SSE** – [Przewodnik](./03-GettingStarted/05-sse-server/README.md)
 - **3.6. HTTP Streaming** – [Przewodnik](./03-GettingStarted/06-http-streaming/README.md)
 - **3.7. Korzystanie z AI Toolkit** – [Przewodnik](./03-GettingStarted/07-aitk/README.md)
@@ -81,9 +81,9 @@ Niezależnie od tego, czy jesteś deweloperem AI, architektem systemów czy inż
   <summary><strong>04-05: Praktyczne i zaawansowane tematy</strong></summary>
 
 - **04. Praktyczna implementacja**  
-  SDK, debugowanie, testowanie, wielokrotnego użytku szablony promptów. [Czytaj więcej](./04-PracticalImplementation/README.md)
+  SDK, debugowanie, testowanie, wielokrotnego użytku szablony promptów. [Czytaj dalej](./04-PracticalImplementation/README.md)
 - **05. Zaawansowane tematy w MCP**  
-  AI multimodalne, skalowanie, zastosowania korporacyjne. [Czytaj więcej](./05-AdvancedTopics/README.md)
+  AI multimodalne, skalowanie, zastosowania korporacyjne. [Czytaj dalej](./05-AdvancedTopics/README.md)
 - **5.1. Integracja MCP z Azure** – [Przewodnik](./05-AdvancedTopics/mcp-integration/README.md)
 - **5.2. Multi modality** – [Przewodnik](./05-AdvancedTopics/mcp-multi-modality/README.md)
 - **5.3. MCP OAuth2 Demo** – [Przewodnik](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
@@ -93,17 +93,17 @@ Niezależnie od tego, czy jesteś deweloperem AI, architektem systemów czy inż
 - **5.7. Skalowanie** – [Przewodnik](./05-AdvancedTopics/mcp-scaling/README.md)
 - **5.8. Bezpieczeństwo** – [Przewodnik](./05-AdvancedTopics/mcp-security/README.md)
 - **5.9. Web Search MCP** – [Przewodnik](./05-AdvancedTopics/web-search-mcp/README.md)
-- **5.10. Realtime Streaming** – [Przewodnik](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
-- **5.11. Realtime Web Search** – [Przewodnik](./05-AdvancedTopics/mcp-realtimesearch/README.md)
+- **5.10. Streaming w czasie rzeczywistym** – [Przewodnik](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
+- **5.11. Wyszukiwanie w czasie rzeczywistym w sieci** – [Przewodnik](./05-AdvancedTopics/mcp-realtimesearch/README.md)
+- **5.12. Uwierzytelnianie Entra ID dla serwerów Model Context Protocol** – [Przewodnik](./05-AdvancedTopics/mcp-security-entra/README.md)
 </details>
 
 <details>
   <summary><strong>06-10: Społeczność, najlepsze praktyki i laboratoria</strong></summary>
-
-- **06. Wkład społeczności** – [Przewodnik](./06-CommunityContributions/README.md)
+- **06. Wkład Społeczności** – [Przewodnik](./06-CommunityContributions/README.md)
 - **07. Wnioski z Wczesnej Adopcji** – [Przewodnik](./07-LessonsFromEarlyAdoption/README.md)
 - **08. Najlepsze Praktyki dla MCP** – [Przewodnik](./08-BestPractices/README.md)
-- **09. Studia Przypadków MCP** – [Przewodnik](./09-CaseStudy/README.md)
+- **09. Studium Przypadków MCP** – [Przewodnik](./09-CaseStudy/README.md)
 - **10. Usprawnianie Przepływów Pracy AI: Budowa Serwera MCP z AI Toolkit** – [Laboratorium Praktyczne](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 </details>
 
@@ -136,21 +136,21 @@ Niezależnie od tego, czy jesteś deweloperem AI, architektem systemów czy inż
 
 ## 🎯 Wymagania Wstępne do Nauki MCP
 
-Aby w pełni skorzystać z tego programu, powinieneś mieć:
+Aby w pełni wykorzystać ten materiał, powinieneś mieć:
 
-- Podstawową znajomość C#, Java lub Python  
-- Zrozumienie modelu klient-serwer i API  
-- (Opcjonalnie) Znajomość podstaw uczenia maszynowego  
+- Podstawową znajomość C#, Java lub Python
+- Zrozumienie modelu klient-serwer oraz API
+- (Opcjonalnie) Znajomość podstaw uczenia maszynowego
 
 ## 📚 Przewodnik Nauki
 
-Dostępny jest kompleksowy [Przewodnik Nauki](./study_guide.md), który pomoże Ci efektywnie poruszać się po tym repozytorium. Przewodnik zawiera:
+Dostępny jest obszerny [Przewodnik Nauki](./study_guide.md), który pomoże Ci efektywnie poruszać się po tym repozytorium. Przewodnik zawiera:
 
-- Wizualną mapę programu nauczania pokazującą wszystkie omawiane tematy  
-- Szczegółowy podział każdej sekcji repozytorium  
-- Wskazówki, jak korzystać z przykładowych projektów  
-- Rekomendowane ścieżki nauki dla różnych poziomów zaawansowania  
-- Dodatkowe zasoby wspierające Twoją naukę  
+- Wizualną mapę programu nauczania z wszystkimi omawianymi tematami
+- Szczegółowy podział każdej sekcji repozytorium
+- Wskazówki, jak korzystać z przykładowych projektów
+- Zalecane ścieżki nauki dla różnych poziomów zaawansowania
+- Dodatkowe zasoby wspierające proces nauki
 
 ## 🛠️ Jak Skutecznie Korzystać z Tego Programu Nauczania
 
@@ -159,26 +159,31 @@ Każda lekcja w tym przewodniku zawiera:
 1. Jasne wyjaśnienia koncepcji MCP  
 2. Przykłady kodu na żywo w różnych językach  
 3. Ćwiczenia do tworzenia prawdziwych aplikacji MCP  
-4. Dodatkowe materiały dla zaawansowanych uczniów  
+4. Dodatkowe materiały dla zaawansowanych użytkowników
 
 
-## 🌟 Podziękowania Społeczności
+## 🌟 Podziękowania dla Społeczności
 
-Podziękowania dla Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) za wkład w ważne przykłady kodu. 
+Podziękowania dla Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) za udostępnienie ważnych przykładów kodu.
 
 ## 📜 Informacje o Licencji
 
-Ta zawartość jest objęta licencją **MIT License**. Warunki licencji znajdziesz w pliku [LICENSE](../../LICENSE).
+Zawartość ta jest udostępniona na podstawie **licencji MIT**. Warunki licencji znajdziesz w pliku [LICENSE](../../LICENSE).
 
 ## 🤝 Zasady Współpracy
 
-Ten projekt zachęca do współpracy i sugestii. Większość wkładów wymaga zgody na Contributor License Agreement (CLA), który potwierdza, że masz prawo i faktycznie udzielasz nam licencji na korzystanie z Twojego wkładu. Szczegóły znajdziesz na <https://cla.opensource.microsoft.com>.
+Ten projekt zachęca do zgłaszania wkładów i sugestii. Większość wkładów wymaga zaakceptowania
+Contributor License Agreement (CLA), który potwierdza, że masz prawo i rzeczywiście udzielasz
+nam licencji na wykorzystanie swojego wkładu. Szczegóły znajdziesz na <https://cla.opensource.microsoft.com>.
 
-Po wysłaniu pull requesta, bot CLA automatycznie sprawdzi, czy musisz dostarczyć CLA i odpowiednio oznaczy PR (np. status, komentarz). Wystarczy, że wykonasz ten proces raz dla wszystkich repozytoriów korzystających z naszego CLA.
+Po zgłoszeniu pull request, bot CLA automatycznie sprawdzi, czy musisz dostarczyć
+CLA i odpowiednio oznaczy PR (np. status, komentarz). Wystarczy, że wykonasz te kroki raz dla wszystkich repozytoriów korzystających z naszego CLA.
 
-Projekt przyjął [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). Więcej informacji znajdziesz w [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) lub kontaktując się pod adresem [opencode@microsoft.com](mailto:opencode@microsoft.com) w razie dodatkowych pytań lub uwag.
+Projekt ten przyjął [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+Więcej informacji znajdziesz w [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) lub
+kontaktując się pod adresem [opencode@microsoft.com](mailto:opencode@microsoft.com) w razie dodatkowych pytań lub uwag.
 
-## 🎒 Inne Kursy  
+## 🎒 Inne Kursy
 Nasz zespół tworzy także inne kursy! Sprawdź:
 
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
@@ -190,19 +195,19 @@ Nasz zespół tworzy także inne kursy! Sprawdź:
 - [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
 - [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
 - [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-- [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-- [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Mastering GitHub Copilot for AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [Mastering GitHub Copilot for C#/.NET Developers](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-- [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+- [IoT dla początkujących](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+- [Tworzenie XR dla początkujących](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Opanowanie GitHub Copilot do programowania w parach z AI](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+- [Opanowanie GitHub Copilot dla programistów C#/.NET](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+- [Wybierz swoją własną przygodę z Copilotem](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 
-## ™️ Informacja o znaku towarowym
+## ™️ Informacje o znaku towarowym
 
-Ten projekt może zawierać znaki towarowe lub logotypy projektów, produktów lub usług. Autoryzowane użycie znaków towarowych lub logotypów Microsoft podlega i musi być zgodne z
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Użycie znaków towarowych lub logotypów Microsoft w zmodyfikowanych wersjach tego projektu nie może powodować nieporozumień ani sugerować sponsorowania przez Microsoft.
-Każde użycie znaków towarowych lub logotypów osób trzecich podlega politykom tych osób trzecich.
+Ten projekt może zawierać znaki towarowe lub logotypy projektów, produktów lub usług. Autoryzowane użycie znaków towarowych lub logotypów Microsoft musi być zgodne z
+[Wytycznymi Microsoft dotyczącymi znaków towarowych i marek](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Użycie znaków towarowych lub logotypów Microsoft w zmodyfikowanych wersjach tego projektu nie może wprowadzać w błąd ani sugerować sponsorowania przez Microsoft.
+Wszelkie użycie znaków towarowych lub logotypów stron trzecich podlega politykom tych stron.
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być traktowany jako źródło autorytatywne. W przypadku informacji o krytycznym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym powinien być traktowany jako źródło wiarygodne i autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego, ludzkiego tłumaczenia. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

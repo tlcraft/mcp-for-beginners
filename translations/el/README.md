@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bc76969a3bb20c032d1d5e95a304a2e3",
-  "translation_date": "2025-06-24T16:34:32+00:00",
+  "original_hash": "a94f85d76c34db9e2230c3d70787d320",
+  "translation_date": "2025-06-27T15:03:21+00:00",
   "source_file": "README.md",
   "language_code": "el"
 }
@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 
 Ακολουθήστε αυτά τα βήματα για να ξεκινήσετε να χρησιμοποιείτε αυτούς τους πόρους:
-1. **Κάντε Fork το Αποθετήριο**: Πατήστε [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
+1. **Κάντε Fork το Αποθετήριο**: Κάντε κλικ στο [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Κλωνοποιήστε το Αποθετήριο**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
 3. [**Εγγραφείτε στο Azure AI Foundry Discord και γνωρίστε ειδικούς και άλλους προγραμματιστές**](https://discord.com/invite/ByRwuEEgH4)
 
@@ -32,109 +32,109 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### Υποστηρίζεται μέσω GitHub Action (Αυτοματοποιημένο & Πάντα Ενημερωμένο)
 
-# 🚀 Πρόγραμμα Σπουδών Model Context Protocol (MCP) για Αρχάριους
+# 🚀 Πρόγραμμα Σπουδών του Model Context Protocol (MCP) για Αρχάριους
 
-## **Μάθετε MCP με Πρακτικά Παραδείγματα Κώδικα σε C#, Java, JavaScript, Python και TypeScript**
+## **Μάθετε MCP με πρακτικά παραδείγματα κώδικα σε C#, Java, JavaScript, Python και TypeScript**
 
-## 🧠 Επισκόπηση του Προγράμματος Σπουδών Model Context Protocol
+## 🧠 Επισκόπηση του Προγράμματος Σπουδών του Model Context Protocol
 
-Το **Model Context Protocol (MCP)** είναι ένα καινοτόμο πλαίσιο σχεδιασμένο να τυποποιεί τις αλληλεπιδράσεις μεταξύ μοντέλων AI και πελατειακών εφαρμογών. Αυτό το ανοιχτού κώδικα πρόγραμμα σπουδών προσφέρει μια δομημένη διαδρομή μάθησης, με πρακτικά παραδείγματα κώδικα και πραγματικά σενάρια χρήσης, σε δημοφιλείς γλώσσες προγραμματισμού όπως C#, Java, JavaScript, TypeScript και Python.
+Το **Model Context Protocol (MCP)** είναι ένα σύγχρονο πλαίσιο σχεδιασμένο να τυποποιεί τις αλληλεπιδράσεις μεταξύ μοντέλων τεχνητής νοημοσύνης και πελατειακών εφαρμογών. Αυτό το ανοιχτού κώδικα πρόγραμμα σπουδών προσφέρει μια δομημένη μαθησιακή πορεία, με πρακτικά παραδείγματα κώδικα και πραγματικές εφαρμογές, σε δημοφιλείς γλώσσες προγραμματισμού όπως C#, Java, JavaScript, TypeScript και Python.
 
-Είτε είστε προγραμματιστής AI, αρχιτέκτονας συστημάτων ή μηχανικός λογισμικού, αυτός ο οδηγός είναι ο ολοκληρωμένος πόρος σας για να κατακτήσετε τα βασικά του MCP και τις στρατηγικές υλοποίησης.
+Είτε είστε προγραμματιστής AI, αρχιτέκτονας συστημάτων, είτε μηχανικός λογισμικού, αυτός ο οδηγός αποτελεί τον πλήρη πόρο σας για να κατανοήσετε τα βασικά του MCP και τις στρατηγικές υλοποίησης.
 
 ## 🔗 Επίσημοι Πόροι MCP
 
 - 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Αναλυτικά σεμινάρια και οδηγοί χρήσης  
 - 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Αρχιτεκτονική πρωτοκόλλου και τεχνικές αναφορές  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Ανοιχτού κώδικα SDK, εργαλεία και δείγματα κώδικα  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Ανοιχτού κώδικα SDKs, εργαλεία και δείγματα κώδικα  
 
-## 🧭 Επισκόπηση Προγράμματος Σπουδών MCP
+## 🧭 Επισκόπηση του Προγράμματος Σπουδών MCP
 
 <details>
-  <summary><strong>00-03: Θεμελιώδεις Αρχές</strong></summary>
+  <summary><strong>00-03: Θεμελιώδεις Έννοιες</strong></summary>
 
 - **00. Εισαγωγή στο MCP**  
-  Επισκόπηση του Model Context Protocol και της σημασίας του στις ροές AI. [Διαβάστε περισσότερα](./00-Introduction/README.md)
+  Επισκόπηση του Model Context Protocol και της σημασίας του στις ροές εργασίας AI. [Διαβάστε περισσότερα](./00-Introduction/README.md)
 - **01. Επεξήγηση Βασικών Εννοιών**  
-  Βαθιά ανάλυση των βασικών εννοιών του MCP. [Διαβάστε περισσότερα](./01-CoreConcepts/README.md)
+  Εκτενής ανάλυση των βασικών εννοιών του MCP. [Διαβάστε περισσότερα](./01-CoreConcepts/README.md)
 - **02. Ασφάλεια στο MCP**  
-  Απειλές ασφαλείας και βέλτιστες πρακτικές. [Διαβάστε περισσότερα](./02-Security/README.md)
+  Απειλές ασφάλειας και βέλτιστες πρακτικές. [Διαβάστε περισσότερα](./02-Security/README.md)
 - **03. Ξεκινώντας με το MCP**  
-  Ρύθμιση περιβάλλοντος, βασικοί διακομιστές/πελάτες, ενσωμάτωση. [Διαβάστε περισσότερα](./03-GettingStarted/README.md)
+  Ρύθμιση περιβάλλοντος, βασικοί servers/clients, ενσωμάτωση. [Διαβάστε περισσότερα](./03-GettingStarted/README.md)
 </details>
 
 <details>
   <summary><strong>03.x: Πρακτικά Εργαστήρια</strong></summary>
 
-- **3.1. Πρώτος διακομιστής** – [Οδηγός](./03-GettingStarted/01-first-server/README.md)
-- **3.2. Πρώτος πελάτης** – [Οδηγός](./03-GettingStarted/02-client/README.md)
-- **3.3. Πελάτης με LLM** – [Οδηγός](./03-GettingStarted/03-llm-client/README.md)
-- **3.4. Χρήση διακομιστή με Visual Studio Code** – [Οδηγός](./03-GettingStarted/04-vscode/README.md)
-- **3.5. Δημιουργία διακομιστή με SSE** – [Οδηγός](./03-GettingStarted/05-sse-server/README.md)
+- **3.1. Πρώτος server** – [Οδηγός](./03-GettingStarted/01-first-server/README.md)
+- **3.2. Πρώτος client** – [Οδηγός](./03-GettingStarted/02-client/README.md)
+- **3.3. Client με LLM** – [Οδηγός](./03-GettingStarted/03-llm-client/README.md)
+- **3.4. Κατανάλωση server με Visual Studio Code** – [Οδηγός](./03-GettingStarted/04-vscode/README.md)
+- **3.5. Δημιουργία server με χρήση SSE** – [Οδηγός](./03-GettingStarted/05-sse-server/README.md)
 - **3.6. HTTP Streaming** – [Οδηγός](./03-GettingStarted/06-http-streaming/README.md)
 - **3.7. Χρήση AI Toolkit** – [Οδηγός](./03-GettingStarted/07-aitk/README.md)
-- **3.8. Δοκιμή του διακομιστή σας** – [Οδηγός](./03-GettingStarted/08-testing/README.md)
-- **3.9. Ανάπτυξη του διακομιστή σας** – [Οδηγός](./03-GettingStarted/09-deployment/README.md)
+- **3.8. Δοκιμή του server σας** – [Οδηγός](./03-GettingStarted/08-testing/README.md)
+- **3.9. Ανάπτυξη του server σας** – [Οδηγός](./03-GettingStarted/09-deployment/README.md)
 </details>
 
 <details>
-  <summary><strong>04-05: Πρακτικά & Προχωρημένα Θέματα</strong></summary>
+  <summary><strong>04-05: Πρακτικό & Προχωρημένο Επίπεδο</strong></summary>
 
 - **04. Πρακτική Υλοποίηση**  
-  SDKs, αποσφαλμάτωση, δοκιμές, επαναχρησιμοποιήσιμα πρότυπα prompt. [Διαβάστε περισσότερα](./04-PracticalImplementation/README.md)
+  SDKs, εντοπισμός σφαλμάτων, δοκιμές, επαναχρησιμοποιήσιμα πρότυπα prompt. [Διαβάστε περισσότερα](./04-PracticalImplementation/README.md)
 - **05. Προχωρημένα Θέματα στο MCP**  
-  Πολυτροπική AI, κλιμάκωση, επιχειρησιακή χρήση. [Διαβάστε περισσότερα](./05-AdvancedTopics/README.md)
+  Πολυμορφική AI, κλιμάκωση, χρήση σε επιχειρήσεις. [Διαβάστε περισσότερα](./05-AdvancedTopics/README.md)
 - **5.1. Ενσωμάτωση MCP με Azure** – [Οδηγός](./05-AdvancedTopics/mcp-integration/README.md)
-- **5.2. Πολυτροπικότητα** – [Οδηγός](./05-AdvancedTopics/mcp-multi-modality/README.md)
-- **5.3. Demo MCP OAuth2** – [Οδηγός](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
+- **5.2. Πολυμορφικότητα** – [Οδηγός](./05-AdvancedTopics/mcp-multi-modality/README.md)
+- **5.3. Επίδειξη MCP OAuth2** – [Οδηγός](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
 - **5.4. Root Contexts** – [Οδηγός](./05-AdvancedTopics/mcp-root-contexts/README.md)
 - **5.5. Routing** – [Οδηγός](./05-AdvancedTopics/mcp-routing/README.md)
 - **5.6. Sampling** – [Οδηγός](./05-AdvancedTopics/mcp-sampling/README.md)
 - **5.7. Κλιμάκωση** – [Οδηγός](./05-AdvancedTopics/mcp-scaling/README.md)
 - **5.8. Ασφάλεια** – [Οδηγός](./05-AdvancedTopics/mcp-security/README.md)
 - **5.9. Web Search MCP** – [Οδηγός](./05-AdvancedTopics/web-search-mcp/README.md)
-- **5.10. Ροή σε Πραγματικό Χρόνο** – [Οδηγός](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
+- **5.10. Streaming σε Πραγματικό Χρόνο** – [Οδηγός](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
 - **5.11. Αναζήτηση Web σε Πραγματικό Χρόνο** – [Οδηγός](./05-AdvancedTopics/mcp-realtimesearch/README.md)
+- **5.12. Επαλήθευση ταυτότητας Entra ID για Model Context Protocol Servers** – [Οδηγός](./05-AdvancedTopics/mcp-security-entra/README.md)
 </details>
 
 <details>
   <summary><strong>06-10: Κοινότητα, Βέλτιστες Πρακτικές & Εργαστήρια</strong></summary>
-
-- **06. Συμβολές Κοινότητας** – [Οδηγός](./06-CommunityContributions/README.md)
-- **07. Συμπεράσματα από την Πρώιμη Υιοθέτηση** – [Οδηγός](./07-LessonsFromEarlyAdoption/README.md)
-- **08. Βέλτιστες Πρακτικές για MCP** – [Οδηγός](./08-BestPractices/README.md)
-- **09. Μελέτες Περίπτωσης MCP** – [Οδηγός](./09-CaseStudy/README.md)
-- **10. Απλοποίηση Ροών Εργασίας AI: Δημιουργία MCP Server με AI Toolkit** – [Hands On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+- **06. Συμβολές της Κοινότητας** – [Οδηγός](./06-CommunityContributions/README.md)
+- **07. Μαθήματα από την Πρώιμη Υιοθέτηση** – [Οδηγός](./07-LessonsFromEarlyAdoption/README.md)
+- **08. Καλές Πρακτικές για MCP** – [Οδηγός](./08-BestPractices/README.md)
+- **09. Μελέτες Περιπτώσεων MCP** – [Οδηγός](./09-CaseStudy/README.md)
+- **10. Βελτιστοποίηση Ροών Εργασίας AI: Δημιουργία ενός MCP Server με το AI Toolkit** – [Hands On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 </details>
 
 ## Δείγματα Έργων
 
-### 🧮 Δείγματα Έργων MCP Calculator:
+### 🧮 Δείγματα Έργων Υπολογιστή MCP:
 <details>
-  <summary><strong>Εξερευνήστε Υλοποιήσεις Κώδικα ανά Γλώσσα</strong></summary>
+  <summary><strong>Εξερεύνηση Υλοποιήσεων Κώδικα ανά Γλώσσα</strong></summary>
 
-  - [Παράδειγμα C# MCP Server](./03-GettingStarted/samples/csharp/README.md)
-  - [Java MCP Calculator](./03-GettingStarted/samples/java/calculator/README.md)
-  - [JavaScript MCP Demo](./03-GettingStarted/samples/javascript/README.md)
-  - [Python MCP Server](../../03-GettingStarted/samples/python/mcp_calculator_server.py)
-  - [Παράδειγμα TypeScript MCP](./03-GettingStarted/samples/typescript/README.md)
+  - [Παράδειγμα MCP Server σε C#](./03-GettingStarted/samples/csharp/README.md)
+  - [Υπολογιστής MCP σε Java](./03-GettingStarted/samples/java/calculator/README.md)
+  - [Επίδειξη MCP σε JavaScript](./03-GettingStarted/samples/javascript/README.md)
+  - [MCP Server σε Python](../../03-GettingStarted/samples/python/mcp_calculator_server.py)
+  - [Παράδειγμα MCP σε TypeScript](./03-GettingStarted/samples/typescript/README.md)
 
 </details>
 
-### 💡 Προχωρημένα Έργα MCP Calculator:
+### 💡 Προχωρημένα Έργα Υπολογιστή MCP:
 <details>
-  <summary><strong>Εξερευνήστε Προχωρημένα Δείγματα</strong></summary>
+  <summary><strong>Εξερεύνηση Προχωρημένων Δειγμάτων</strong></summary>
 
-  - [Προχωρημένο Παράδειγμα C#](./04-PracticalImplementation/samples/csharp/README.md)
-  - [Παράδειγμα Java Container App](./04-PracticalImplementation/samples/java/containerapp/README.md)
-  - [Προχωρημένο Παράδειγμα JavaScript](./04-PracticalImplementation/samples/javascript/README.md)
-  - [Σύνθετη Υλοποίηση Python](../../04-PracticalImplementation/samples/python/mcp_sample.py)
-  - [Παράδειγμα TypeScript Container](./04-PracticalImplementation/samples/typescript/README.md)
+  - [Προχωρημένο Παράδειγμα σε C#](./04-PracticalImplementation/samples/csharp/README.md)
+  - [Παράδειγμα Εφαρμογής Container σε Java](./04-PracticalImplementation/samples/java/containerapp/README.md)
+  - [Προχωρημένο Παράδειγμα σε JavaScript](./04-PracticalImplementation/samples/javascript/README.md)
+  - [Σύνθετη Υλοποίηση σε Python](../../04-PracticalImplementation/samples/python/mcp_sample.py)
+  - [Παράδειγμα Container σε TypeScript](./04-PracticalImplementation/samples/typescript/README.md)
 
 </details>
 
 
-## 🎯 Προαπαιτούμενα για την Εκμάθηση MCP
+## 🎯 Προαπαιτούμενα για τη Μάθηση του MCP
 
 Για να αξιοποιήσετε στο έπακρο αυτό το πρόγραμμα σπουδών, θα πρέπει να έχετε:
 
@@ -144,71 +144,71 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 📚 Οδηγός Μελέτης
 
-Διατίθεται ένας πλήρης [Οδηγός Μελέτης](./study_guide.md) για να σας βοηθήσει να περιηγηθείτε αποτελεσματικά σε αυτό το αποθετήριο. Ο οδηγός περιλαμβάνει:
+Ένας ολοκληρωμένος [Οδηγός Μελέτης](./study_guide.md) είναι διαθέσιμος για να σας βοηθήσει να πλοηγηθείτε αποτελεσματικά σε αυτό το αποθετήριο. Ο οδηγός περιλαμβάνει:
 
 - Οπτικό χάρτη προγράμματος σπουδών με όλα τα καλυπτόμενα θέματα  
 - Αναλυτική ανάλυση κάθε ενότητας του αποθετηρίου  
-- Οδηγίες για τη χρήση των δειγμάτων έργων  
-- Συνιστώμενες διαδρομές εκμάθησης για διαφορετικά επίπεδα δεξιοτήτων  
-- Επιπλέον πόρους για να συμπληρώσουν το ταξίδι μάθησής σας  
+- Οδηγίες για τη χρήση δειγμάτων έργων  
+- Προτεινόμενες διαδρομές μάθησης για διαφορετικά επίπεδα δεξιοτήτων  
+- Πρόσθετους πόρους για να συμπληρώσουν το ταξίδι της μάθησής σας  
 
 ## 🛠️ Πώς να Χρησιμοποιήσετε Αποτελεσματικά Αυτό το Πρόγραμμα Σπουδών
 
 Κάθε μάθημα σε αυτόν τον οδηγό περιλαμβάνει:
 
-1. Καθαρή εξήγηση των εννοιών MCP  
-2. Παραδείγματα κώδικα σε ζωντανή λειτουργία σε πολλές γλώσσες  
+1. Σαφείς εξηγήσεις των εννοιών MCP  
+2. Παραδείγματα κώδικα σε πραγματικό χρόνο σε πολλές γλώσσες  
 3. Ασκήσεις για την ανάπτυξη πραγματικών εφαρμογών MCP  
 4. Επιπλέον πόρους για προχωρημένους μαθητές  
 
 
 ## 🌟 Ευχαριστίες στην Κοινότητα
 
-Ευχαριστούμε τον Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) για τη συμβολή σημαντικών δειγμάτων κώδικα.
+Ευχαριστούμε τον Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) για τη συμβολή σημαντικών δειγμάτων κώδικα. 
 
 ## 📜 Πληροφορίες Άδειας
 
 Αυτό το περιεχόμενο διατίθεται υπό την **MIT License**. Για όρους και προϋποθέσεις, δείτε το [LICENSE](../../LICENSE).
 
-## 🤝 Οδηγίες Συμμετοχής
+## 🤝 Οδηγίες Συμβολής
 
-Αυτό το έργο καλωσορίζει συνεισφορές και προτάσεις. Οι περισσότερες συνεισφορές απαιτούν να συμφωνήσετε με μια  
-Συμφωνία Άδειας Συνεισφοράς (Contributor License Agreement - CLA) που δηλώνει ότι έχετε το δικαίωμα και πραγματικά παραχωρείτε  
-τα δικαιώματα χρήσης της συνεισφοράς σας. Για λεπτομέρειες, επισκεφθείτε το <https://cla.opensource.microsoft.com>.
+Αυτό το έργο καλωσορίζει τις συμβολές και τις προτάσεις. Οι περισσότερες συμβολές απαιτούν να συμφωνήσετε με μια
+Συμφωνία Άδειας Συμβολής (CLA) που δηλώνει ότι έχετε το δικαίωμα και πράγματι παραχωρείτε σε εμάς
+τα δικαιώματα χρήσης της συμβολής σας. Για λεπτομέρειες, επισκεφθείτε <https://cla.opensource.microsoft.com>.
 
-Όταν υποβάλλετε ένα pull request, ένα bot CLA θα καθορίσει αυτόματα αν πρέπει να παρέχετε  
-CLA και θα διακοσμήσει ανάλογα το PR (π.χ. έλεγχος κατάστασης, σχόλιο). Απλώς ακολουθήστε τις οδηγίες  
-που παρέχει το bot. Θα χρειαστεί να το κάνετε μόνο μία φορά για όλα τα αποθετήρια που χρησιμοποιούν την CLA μας.
+Όταν υποβάλλετε ένα pull request, ένα bot CLA θα καθορίσει αυτόματα αν χρειάζεται να παρέχετε
+μια CLA και θα επισημάνει κατάλληλα το PR (π.χ., έλεγχος κατάστασης, σχόλιο). Απλά ακολουθήστε τις οδηγίες
+που παρέχει το bot. Θα χρειαστεί να το κάνετε μόνο μία φορά σε όλα τα αποθετήρια που χρησιμοποιούν τη CLA μας.
 
-Αυτό το έργο έχει υιοθετήσει τον [Κώδικα Δεοντολογίας Ανοιχτού Κώδικα της Microsoft](https://opensource.microsoft.com/codeofconduct/).  
-Για περισσότερες πληροφορίες δείτε το [FAQ Κώδικα Δεοντολογίας](https://opensource.microsoft.com/codeofconduct/faq/) ή  
+Αυτό το έργο έχει υιοθετήσει τον [Κώδικα Δεοντολογίας Ανοιχτού Κώδικα της Microsoft](https://opensource.microsoft.com/codeofconduct/).
+Για περισσότερες πληροφορίες δείτε τις [Συχνές Ερωτήσεις για τον Κώδικα Δεοντολογίας](https://opensource.microsoft.com/codeofconduct/faq/) ή
 επικοινωνήστε με [opencode@microsoft.com](mailto:opencode@microsoft.com) για επιπλέον ερωτήσεις ή σχόλια.
 
-## 🎒 Άλλα Μαθήματα  
+## 🎒 Άλλα Μαθήματα
 Η ομάδα μας παράγει και άλλα μαθήματα! Δείτε:
 
-- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
-- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)  
-- [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
-- [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
+- [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+- [IoT για Αρχάριους](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
 - [Ανάπτυξη XR για Αρχάριους](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Εξοικείωση με το GitHub Copilot για Προγραμματισμό με AI](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+- [Εξοικείωση με το GitHub Copilot για Προγραμματισμό με AI σε Ζεύγη](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 - [Εξοικείωση με το GitHub Copilot για Προγραμματιστές C#/.NET](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-- [Επέλεξε τη Δική σου Περιπέτεια με το Copilot](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+- [Επίλεξε τη Δική Σου Περιπέτεια με το Copilot](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 
-## ™️ Δήλωση Σήματος Κατατεθέντος
+## ™️ Σημείωση Εμπορικού Σήματος
 
-Αυτό το έργο μπορεί να περιέχει σήματα κατατεθέντα ή λογότυπα για έργα, προϊόντα ή υπηρεσίες. Η εξουσιοδοτημένη χρήση των σημάτων κατατεθέντων ή λογοτύπων της Microsoft υπόκειται και πρέπει να ακολουθεί τις
-[Οδηγίες Χρήσης Σημάτων & Εταιρικής Ταυτότητας της Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Η χρήση σημάτων κατατεθέντων ή λογοτύπων της Microsoft σε τροποποιημένες εκδόσεις αυτού του έργου δεν πρέπει να προκαλεί σύγχυση ή να υποδηλώνει χορηγία από τη Microsoft.
-Οποιαδήποτε χρήση σημάτων κατατεθέντων ή λογοτύπων τρίτων υπόκειται στις πολιτικές των αντίστοιχων τρίτων.
+Αυτό το έργο μπορεί να περιέχει εμπορικά σήματα ή λογότυπα για έργα, προϊόντα ή υπηρεσίες. Η εξουσιοδοτημένη χρήση των εμπορικών σημάτων ή λογοτύπων της Microsoft υπόκειται και πρέπει να ακολουθεί τις
+[Οδηγίες για Εμπορικά Σήματα & Μάρκες της Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Η χρήση των εμπορικών σημάτων ή λογοτύπων της Microsoft σε τροποποιημένες εκδόσεις αυτού του έργου δεν πρέπει να προκαλεί σύγχυση ή να υπονοεί χορηγία από τη Microsoft.
+Οποιαδήποτε χρήση εμπορικών σημάτων ή λογοτύπων τρίτων υπόκειται στις πολιτικές αυτών των τρίτων.
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις μπορεί να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στην αρχική του γλώσσα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να λάβετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν σφάλματα ή ανακρίβειες. Το πρωτότυπο έγγραφο στην μητρική του γλώσσα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
