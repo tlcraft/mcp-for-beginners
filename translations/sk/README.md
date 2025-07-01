@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a94f85d76c34db9e2230c3d70787d320",
-  "translation_date": "2025-06-27T15:19:19+00:00",
+  "original_hash": "44405cc3bec37703b241dd4d8336e54a",
+  "translation_date": "2025-07-01T09:50:59+00:00",
   "source_file": "README.md",
   "language_code": "sk"
 }
@@ -22,68 +22,71 @@ CO_OP_TRANSLATOR_METADATA:
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 
-Postupujte podľa týchto krokov, aby ste začali využívať tieto zdroje:
+Postupujte podľa týchto krokov, aby ste mohli začať používať tieto zdroje:
 1. **Vytvorte Fork repozitára**: Kliknite na [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Naklonujte repozitár**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Pridajte sa na Discord Azure AI Foundry a spoznajte expertov a ďalších vývojárov**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Pridajte sa na Azure AI Foundry Discord a stretnite sa s odborníkmi a ďalšími vývojármi**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Podpora viacerých jazykov
 
 #### Podporované cez GitHub Action (automatizované a vždy aktuálne)
 
-# 🚀 Kurikulum Model Context Protocol (MCP) pre Začiatočníkov
+# 🚀 Kurz Model Context Protocol (MCP) pre začiatočníkov
 
-## **Naučte sa MCP pomocou praktických príkladov v C#, Java, JavaScript, Python a TypeScript**
+## **Naučte sa MCP prostredníctvom praktických príkladov v C#, Java, JavaScript, Python a TypeScript**
 
-## 🧠 Prehľad kurikula Model Context Protocol
+## 🧠 Prehľad kurzu Model Context Protocol
 
-**Model Context Protocol (MCP)** je moderný rámec navrhnutý na štandardizáciu interakcií medzi AI modelmi a klientskymi aplikáciami. Toto open-source kurikulum ponúka štruktúrovanú cestu učenia s praktickými príkladmi kódu a reálnymi prípadmi použitia v populárnych programovacích jazykoch ako C#, Java, JavaScript, TypeScript a Python.
+**Model Context Protocol (MCP)** je moderný rámec navrhnutý na štandardizáciu komunikácie medzi AI modelmi a klientskymi aplikáciami. Tento open-source kurz ponúka systematickú cestu učenia s praktickými ukážkami kódu a reálnymi prípadmi použitia v populárnych programovacích jazykoch ako C#, Java, JavaScript, TypeScript a Python.
 
-Či už ste vývojár AI, systémový architekt alebo softvérový inžinier, tento sprievodca je váš komplexný zdroj na zvládnutie základov MCP a stratégií implementácie.
+Či už ste vývojár AI, systémový architekt alebo softvérový inžinier, tento sprievodca je vaším komplexným zdrojom na zvládnutie základov MCP a stratégií jeho implementácie.
 
 ## 🔗 Oficiálne zdroje MCP
 
 - 📘 [MCP Dokumentácia](https://modelcontextprotocol.io/) – Podrobné návody a používateľské príručky  
-- 📜 [MCP Špecifikácia](https://spec.modelcontextprotocol.io/) – Architektúra protokolu a technické referencie  
+- 📜 [MCP Špecifikácia](https://spec.modelcontextprotocol.io/) – Architektúra protokolu a technické odkazy  
 - 🧑‍💻 [MCP GitHub Repo](https://github.com/modelcontextprotocol) – Open-source SDK, nástroje a ukážky kódu  
 
-## 🧭 Prehľad kurikula MCP
+## 🧭 Prehľad kurzu MCP
 
+### Základy Model Context Protocol  
 <details>
-  <summary><strong>00-03: Základy</strong></summary>
+  <summary><strong> Lekcie 1-3: Základy Model Context Protocol</strong></summary>
 
 - **00. Úvod do MCP**  
-  Prehľad Model Context Protocol a jeho význam v AI pipeline. [Čítať viac](./00-Introduction/README.md)
-- **01. Vysvetlenie základných konceptov**  
-  Hĺbkový pohľad na kľúčové koncepty MCP. [Čítať viac](./01-CoreConcepts/README.md)
+  Prehľad Model Context Protocol a jeho význam v AI pipeline. [Viac](./00-Introduction/README.md)
+- **01. Vysvetlenie základných pojmov**  
+  Hĺbkový pohľad na základné koncepty MCP. [Viac](./01-CoreConcepts/README.md)
 - **02. Bezpečnosť v MCP**  
-  Hrozby bezpečnosti a najlepšie postupy. [Čítať viac](./02-Security/README.md)
+  Hrozby bezpečnosti a osvedčené postupy. [Viac](./02-Security/README.md)
 - **03. Začíname s MCP**  
-  Nastavenie prostredia, základné servery/klienti, integrácia. [Čítať viac](./03-GettingStarted/README.md)
+  Nastavenie prostredia, základné servery/klienti, integrácia. [Viac](./03-GettingStarted/README.md)
 </details>
 
+### Vytvorenie a nasadenie prvého MCP servera a klienta, praktické cvičenia a scenáre  
 <details>
-  <summary><strong>03.x: Praktické laboratóriá</strong></summary>
+  <summary><strong> Lekcia 3: Vytvorenie a nasadenie prvého MCP servera a klienta</strong></summary>
 
 - **3.1. Prvý server** – [Návod](./03-GettingStarted/01-first-server/README.md)
 - **3.2. Prvý klient** – [Návod](./03-GettingStarted/02-client/README.md)
 - **3.3. Klient s LLM** – [Návod](./03-GettingStarted/03-llm-client/README.md)
-- **3.4. Používanie servera vo Visual Studio Code** – [Návod](./03-GettingStarted/04-vscode/README.md)
+- **3.4. Použitie servera vo Visual Studio Code** – [Návod](./03-GettingStarted/04-vscode/README.md)
 - **3.5. Vytvorenie servera pomocou SSE** – [Návod](./03-GettingStarted/05-sse-server/README.md)
 - **3.6. HTTP Streaming** – [Návod](./03-GettingStarted/06-http-streaming/README.md)
 - **3.7. Použitie AI Toolkit** – [Návod](./03-GettingStarted/07-aitk/README.md)
-- **3.8. Testovanie vášho servera** – [Návod](./03-GettingStarted/08-testing/README.md)
-- **3.9. Nasadenie vášho servera** – [Návod](./03-GettingStarted/09-deployment/README.md)
+- **3.8. Testovanie servera** – [Návod](./03-GettingStarted/08-testing/README.md)
+- **3.9. Nasadenie servera** – [Návod](./03-GettingStarted/09-deployment/README.md)
 </details>
 
+### Praktické implementácie a pokročilý obsah Model Context Protocol  
 <details>
-  <summary><strong>04-05: Praktické a pokročilé témy</strong></summary>
+  <summary><strong> Lekcie 4-5: Praktické a pokročilé témy</strong></summary>
 
 - **04. Praktická implementácia**  
-  SDK, ladenie, testovanie, znovupoužiteľné šablóny promptov. [Čítať viac](./04-PracticalImplementation/README.md)
+  SDK, ladenie, testovanie, znovupoužiteľné šablóny promptov. [Viac](./04-PracticalImplementation/README.md)
 - **05. Pokročilé témy v MCP**  
-  Multi-modálna AI, škálovanie, podnikové použitie. [Čítať viac](./05-AdvancedTopics/README.md)
+  Multimodálna AI, škálovanie, použitie v podnikovej sfére. [Viac](./05-AdvancedTopics/README.md)
 - **5.1. Integrácia MCP s Azure** – [Návod](./05-AdvancedTopics/mcp-integration/README.md)
 - **5.2. Multimodalita** – [Návod](./05-AdvancedTopics/mcp-multi-modality/README.md)
 - **5.3. MCP OAuth2 Demo** – [Návod](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
@@ -98,18 +101,25 @@ Postupujte podľa týchto krokov, aby ste začali využívať tieto zdroje:
 - **5.12. Entra ID autentifikácia pre Model Context Protocol servery** – [Návod](./05-AdvancedTopics/mcp-security-entra/README.md)
 </details>
 
+### Najlepšie postupy Model Context Protocol  
 <details>
-  <summary><strong>06-10: Komunita, najlepšie praktiky a laboratóriá</strong></summary>
+  <summary><strong> Lekcie 6-9: Komunita, najlepšie postupy a laboratóriá</strong></summary>
 - **06. Príspevky komunity** – [Sprievodca](./06-CommunityContributions/README.md)
-- **07. Poznatky z raného prijatia** – [Sprievodca](./07-LessonsFromEarlyAdoption/README.md)
+- **07. Poučenie z raného prijatia** – [Sprievodca](./07-LessonsFromEarlyAdoption/README.md)
 - **08. Najlepšie postupy pre MCP** – [Sprievodca](./08-BestPractices/README.md)
 - **09. Prípadové štúdie MCP** – [Sprievodca](./09-CaseStudy/README.md)
+</details>
+
+### Praktický workshop Model Context Protocol s AI Toolkit pre VScode
+<details>
+  <summary><strong>Lekcia 10: Praktický workshop – Vytváranie MCP servera s AI Toolkit pre VScode</strong></summary>
+    
 - **10. Zefektívnenie AI pracovných tokov: Vytvorenie MCP servera s AI Toolkit** – [Praktický workshop](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 </details>
 
-## Ukážkové projekty
+## Model Context Protocol – Ukážkové projekty Vytváranie MCP kalkulačky v Jave, C#, JavaScripte, TypeScripte a Pythone
 
-### 🧮 Ukážkové projekty MCP kalkulačky:
+### 🧮 Ukážkové projekty MCP kalkulačky v Jave, C#, JavaScripte, TypeScripte a Pythone
 <details>
   <summary><strong>Preskúmajte implementácie kódu podľa jazyka</strong></summary>
 
@@ -121,44 +131,46 @@ Postupujte podľa týchto krokov, aby ste začali využívať tieto zdroje:
 
 </details>
 
-### 💡 Pokročilé MCP kalkulačné projekty:
+### 💡 Pokročilé príklady MCP: Kalkulačné projekty v C#, Jave, JavaScripte, TypeScripte a Pythone
 <details>
   <summary><strong>Preskúmajte pokročilé ukážky</strong></summary>
 
-  - [Pokročilá ukážka v C#](./04-PracticalImplementation/samples/csharp/README.md)
+  - [Pokročilý príklad v C#](./04-PracticalImplementation/samples/csharp/README.md)
   - [Príklad Java kontajnerovej aplikácie](./04-PracticalImplementation/samples/java/containerapp/README.md)
-  - [Pokročilá ukážka v JavaScripte](./04-PracticalImplementation/samples/javascript/README.md)
-  - [Zložitejšia implementácia v Pythone](../../04-PracticalImplementation/samples/python/mcp_sample.py)
-  - [Ukážka kontajnera v TypeScripte](./04-PracticalImplementation/samples/typescript/README.md)
+  - [Pokročilý príklad v JavaScripte](./04-PracticalImplementation/samples/javascript/README.md)
+  - [Zložitá implementácia v Pythone](../../04-PracticalImplementation/samples/python/mcp_sample.py)
+  - [Príklad kontajnera v TypeScripte](./04-PracticalImplementation/samples/typescript/README.md)
 
 </details>
 
-## 🎯 Predpoklady pre učenie MCP
 
-Aby ste z tohto kurikula získali čo najviac, mali by ste mať:
+## 🎯 Predpoklady na štúdium MCP
 
-- Základné znalosti C#, Javy alebo Pythonu  
-- Pochopenie klient-server modelu a API  
-- (Voliteľné) Znalosť konceptov strojového učenia  
+Aby ste z tohto kurikula vyťažili čo najviac, mali by ste mať:
+
+- Základné znalosti C#, Javy alebo Pythonu
+- Pochopenie klient-server modelu a API
+- (Voliteľné) Znalosti o strojovom učení
 
 ## 📚 Študijný sprievodca
 
 K dispozícii je komplexný [Študijný sprievodca](./study_guide.md), ktorý vám pomôže efektívne sa orientovať v tomto repozitári. Sprievodca obsahuje:
 
-- Vizualizáciu osnovy s prehľadom všetkých tém  
-- Podrobný rozpis jednotlivých častí repozitára  
-- Návody, ako používať ukážkové projekty  
-- Odporúčané študijné cesty pre rôzne úrovne znalostí  
-- Doplnkové zdroje na podporu vášho učenia  
+- Vizualizáciu kurikula so všetkými témami
+- Podrobný rozpis jednotlivých častí repozitára
+- Návod, ako používať ukážkové projekty
+- Odporúčané učebné cesty pre rôzne úrovne zručností
+- Dodatočné zdroje na doplnenie vášho štúdia
 
-## 🛠️ Ako efektívne využiť toto kurikulum
+## 🛠️ Ako efektívne používať toto kurikulum
 
 Každá lekcia v tomto sprievodcovi obsahuje:
 
 1. Jasné vysvetlenie konceptov MCP  
-2. Ukážky kódu v niekoľkých programovacích jazykoch  
-3. Cvičenia na vytvorenie skutočných MCP aplikácií  
-4. Dodatočné zdroje pre pokročilých študentov  
+2. Ukážky kódu v rôznych programovacích jazykoch  
+3. Cvičenia na vytváranie reálnych MCP aplikácií  
+4. Dodatočné zdroje pre pokročilých študentov
+
 
 ## 🌟 Poďakovanie komunite
 
@@ -166,48 +178,47 @@ Každá lekcia v tomto sprievodcovi obsahuje:
 
 ## 📜 Informácie o licencii
 
-Tento obsah je licencovaný pod **MIT licenciou**. Pre podmienky použitia si pozrite [LICENSE](../../LICENSE).
+Tento obsah je licencovaný pod **MIT licenciou**. Podmienky nájdete v súbore [LICENSE](../../LICENSE).
 
-## 🤝 Pokyny pre príspevky
+## 🤝 Pravidlá prispievania
 
-Tento projekt vítá príspevky a návrhy. Väčšina príspevkov vyžaduje súhlas s  
-Contributor License Agreement (CLA), ktorý potvrdzuje, že máte právo a naozaj nám udeľujete  
-práva na použitie vášho príspevku. Pre viac informácií navštívte <https://cla.opensource.microsoft.com>.
+Tento projekt vítá príspevky a návrhy. Väčšina príspevkov vyžaduje súhlas s
+Contributor License Agreement (CLA), ktorý potvrdzuje, že máte právo a skutočne nám
+poskytujete práva na používanie vášho príspevku. Pre podrobnosti navštívte <https://cla.opensource.microsoft.com>.
 
-Pri odoslaní pull requestu automaticky CLA bot zistí, či je potrebné poskytnúť  
-CLA a označí PR príslušne (napr. kontrola stavu, komentár). Stačí postupovať podľa pokynov  
-bota. Toto je potrebné urobiť len raz vo všetkých repozitároch používajúcich náš CLA.
+Pri odoslaní pull requestu CLA bot automaticky zistí, či je potrebné poskytnúť
+CLA a označí PR podľa potreby (napr. kontrola stavu, komentár). Stačí postupovať podľa pokynov
+bota. Tento proces je potrebné absolvovať iba raz pre všetky repozitáre používajúce náš CLA.
 
-Tento projekt prijal [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).  
-Viac informácií nájdete v [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) alebo  
+Tento projekt prijal [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+Pre viac informácií si prečítajte [Často kladené otázky k Code of Conduct](https://opensource.microsoft.com/codeofconduct/faq/) alebo
 kontaktujte [opencode@microsoft.com](mailto:opencode@microsoft.com) s ďalšími otázkami či pripomienkami.
 
-## 🎒 Ďalšie kurzy
+## 🎒 Iné kurzy
+Náš tím pripravuje aj ďalšie kurzy! Pozrite si:
 
-Náš tím vytvára aj ďalšie kurzy! Pozrite si:
-
-- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
-- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)  
-- [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI Agenti pre začiatočníkov](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Generatívna AI pre začiatočníkov pomocou .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+- [Generatívna AI pre začiatočníkov pomocou JavaScriptu](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+- [Generatívna AI pre začiatočníkov](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Strojové učenie pre začiatočníkov](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+- [Dátová veda pre začiatočníkov](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI pre začiatočníkov](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+- [Kyberbezpečnosť pre začiatočníkov](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
+- [Webový vývoj pre začiatočníkov](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
 - [IoT pre začiatočníkov](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
 - [Vývoj XR pre začiatočníkov](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Ovládnutie GitHub Copilot pre AI párované programovanie](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [Ovládnutie GitHub Copilot pre C#/.NET vývojárov](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-- [Vyberte si svoju vlastnú Copilot dobrodružstvo](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+- [Ovládnite GitHub Copilot pre AI párované programovanie](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+- [Ovládnite GitHub Copilot pre C#/.NET vývojárov](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+- [Vyberte si svoju vlastnú Copilot dobrodružnú cestu](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 
 ## ™️ Upozornenie na ochrannú známku
 
-Tento projekt môže obsahovať ochranné známky alebo logá projektov, produktov či služieb. Autorizované používanie ochranných známok alebo log Microsoftu podlieha a musí dodržiavať
-[Pravidlá používania ochranných známok a značiek Microsoftu](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Tento projekt môže obsahovať ochranné známky alebo logá projektov, produktov alebo služieb. Autorizované používanie ochranných známok alebo log Microsoftu podlieha a musí dodržiavať
+[Pravidlá používania ochranných známok a značiek Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
 Použitie ochranných známok alebo log Microsoftu v upravených verziách tohto projektu nesmie viesť k zmätku ani naznačovať sponzorstvo Microsoftu.
 Akékoľvek použitie ochranných známok alebo log tretích strán podlieha pravidlám týchto tretích strán.
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, vezmite prosím na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.

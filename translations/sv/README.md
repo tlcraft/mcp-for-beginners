@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a94f85d76c34db9e2230c3d70787d320",
-  "translation_date": "2025-06-27T15:05:39+00:00",
+  "original_hash": "44405cc3bec37703b241dd4d8336e54a",
+  "translation_date": "2025-07-01T09:41:26+00:00",
   "source_file": "README.md",
   "language_code": "sv"
 }
@@ -28,43 +28,45 @@ Följ dessa steg för att komma igång med dessa resurser:
 3. [**Gå med i Azure AI Foundry Discord och träffa experter och andra utvecklare**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Fler språkstöd
+### 🌐 Flerspråkigt stöd
 
-#### Stöds via GitHub Action (Automatiserat & Alltid Uppdaterat)
+#### Stöds via GitHub Action (Automatiserat & Alltid uppdaterat)
 
 # 🚀 Model Context Protocol (MCP) Kursplan för Nybörjare
 
 ## **Lär dig MCP med praktiska kodexempel i C#, Java, JavaScript, Python och TypeScript**
 
-## 🧠 Översikt av Model Context Protocol-kursen
+## 🧠 Översikt av Model Context Protocol-kursplanen
 
-**Model Context Protocol (MCP)** är ett banbrytande ramverk som syftar till att standardisera interaktioner mellan AI-modeller och klientapplikationer. Denna öppen källkods-kursplan erbjuder en strukturerad inlärningsväg, komplett med praktiska kodexempel och verkliga användningsfall, i populära programmeringsspråk som C#, Java, JavaScript, TypeScript och Python.
+**Model Context Protocol (MCP)** är ett banbrytande ramverk som är utformat för att standardisera interaktioner mellan AI-modeller och klientapplikationer. Denna öppna kursplan erbjuder en strukturerad inlärningsväg, komplett med praktiska kodexempel och verkliga användningsfall, i populära programmeringsspråk som C#, Java, JavaScript, TypeScript och Python.
 
-Oavsett om du är AI-utvecklare, systemarkitekt eller mjukvaruingenjör är denna guide din heltäckande resurs för att bemästra MCP:s grunder och implementeringsstrategier.
+Oavsett om du är AI-utvecklare, systemarkitekt eller mjukvaruingenjör är denna guide din heltäckande resurs för att bemästra MCP-grunder och implementationsstrategier.
 
 ## 🔗 Officiella MCP-resurser
 
-- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Utförliga handledningar och användarguider  
+- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Detaljerade handledningar och användarguider  
 - 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protokollarkitektur och tekniska referenser  
 - 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Öppen källkod SDK:er, verktyg och kodexempel  
 
 ## 🧭 Översikt av MCP-kursplanen
 
+### Model Context Protocol-grunder  
 <details>
-  <summary><strong>00-03: Grunderna</strong></summary>
+  <summary><strong> Lektion 1-3: Model Context Protocol-grunder</strong></summary>
 
 - **00. Introduktion till MCP**  
-  En översikt av Model Context Protocol och dess betydelse i AI-flöden. [Läs mer](./00-Introduction/README.md)
-- **01. Kärnkoncept förklarade**  
-  Djupdykning i MCP:s grundläggande koncept. [Läs mer](./01-CoreConcepts/README.md)
+  Översikt av Model Context Protocol och dess betydelse i AI-pipelines. [Läs mer](./00-Introduction/README.md)
+- **01. Kärnbegrepp förklarade**  
+  Djupdykning i MCP:s kärnbegrepp. [Läs mer](./01-CoreConcepts/README.md)
 - **02. Säkerhet i MCP**  
   Säkerhetshot och bästa praxis. [Läs mer](./02-Security/README.md)
 - **03. Kom igång med MCP**  
-  Miljöinställning, grundläggande servrar/klienter, integration. [Läs mer](./03-GettingStarted/README.md)
+  Miljösetup, grundläggande servrar/klienter, integration. [Läs mer](./03-GettingStarted/README.md)
 </details>
 
+### Bygga och driftsätta din första MCP-server och klient samt praktiska labbar och scenarier  
 <details>
-  <summary><strong>03.x: Praktiska labbar</strong></summary>
+  <summary><strong> Lektion 3: Bygga och driftsätta din första MCP-server och klient</strong></summary>
 
 - **3.1. Första servern** – [Guide](./03-GettingStarted/01-first-server/README.md)
 - **3.2. Första klienten** – [Guide](./03-GettingStarted/02-client/README.md)
@@ -74,13 +76,14 @@ Oavsett om du är AI-utvecklare, systemarkitekt eller mjukvaruingenjör är denn
 - **3.6. HTTP Streaming** – [Guide](./03-GettingStarted/06-http-streaming/README.md)
 - **3.7. Använd AI Toolkit** – [Guide](./03-GettingStarted/07-aitk/README.md)
 - **3.8. Testa din server** – [Guide](./03-GettingStarted/08-testing/README.md)
-- **3.9. Distribuera din server** – [Guide](./03-GettingStarted/09-deployment/README.md)
+- **3.9. Driftsätt din server** – [Guide](./03-GettingStarted/09-deployment/README.md)
 </details>
 
+### Model Context Protocol praktiska implementationer och avancerat innehåll  
 <details>
-  <summary><strong>04-05: Praktiskt & Avancerat</strong></summary>
+  <summary><strong> Lektion 4-5: Praktiskt & Avancerat</strong></summary>
 
-- **04. Praktisk implementering**  
+- **04. Praktisk implementation**  
   SDK:er, felsökning, testning, återanvändbara promptmallar. [Läs mer](./04-PracticalImplementation/README.md)
 - **05. Avancerade ämnen inom MCP**  
   Multimodal AI, skalning, företagsanvändning. [Läs mer](./05-AdvancedTopics/README.md)
@@ -93,50 +96,57 @@ Oavsett om du är AI-utvecklare, systemarkitekt eller mjukvaruingenjör är denn
 - **5.7. Skalning** – [Guide](./05-AdvancedTopics/mcp-scaling/README.md)
 - **5.8. Säkerhet** – [Guide](./05-AdvancedTopics/mcp-security/README.md)
 - **5.9. Web Search MCP** – [Guide](./05-AdvancedTopics/web-search-mcp/README.md)
-- **5.10. Realtidsstreaming** – [Guide](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
-- **5.11. Realtidssökning på webben** – [Guide](./05-AdvancedTopics/mcp-realtimesearch/README.md)
+- **5.10. Realtidsströmning** – [Guide](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
+- **5.11. Realtids webbsökning** – [Guide](./05-AdvancedTopics/mcp-realtimesearch/README.md)
 - **5.12. Entra ID-autentisering för Model Context Protocol-servrar** – [Guide](./05-AdvancedTopics/mcp-security-entra/README.md)
 </details>
 
+### Model Context Protocol bästa praxis  
 <details>
-  <summary><strong>06-10: Community, Bästa praxis & Labbar</strong></summary>
-- **06. Community Contributions** – [Guide](./06-CommunityContributions/README.md)  
-- **07. Insights from Early Adoption** – [Guide](./07-LessonsFromEarlyAdoption/README.md)  
-- **08. Best Practices for MCP** – [Guide](./08-BestPractices/README.md)  
-- **09. MCP Case Studies** – [Guide](./09-CaseStudy/README.md)  
-- **10. Streamlining AI Workflows: Building an MCP Server with AI Toolkit** – [Hands On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
+  <summary><strong> Lektion 6-9: Community, bästa praxis & labbar</strong></summary>
+- **06. Community Contributions** – [Guide](./06-CommunityContributions/README.md)
+- **07. Insights from Early Adoption** – [Guide](./07-LessonsFromEarlyAdoption/README.md)
+- **08. Best Practices for MCP** – [Guide](./08-BestPractices/README.md)
+- **09. MCP Case Studies** – [Guide](./09-CaseStudy/README.md)
 </details>
 
-## Exempelprojekt
+### Model Context Protocol Hands on Lab with AI Toolkit for VScode
+<details>
+  <summary><strong>Lektion 10: Praktisk laboration för att bygga en MCP-server med AI Toolkit för VScode</strong></summary>
+    
+- **10. Effektivisera AI-arbetsflöden: Bygga en MCP-server med AI Toolkit** – [Praktisk laboration](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+</details>
 
-### 🧮 MCP Calculator Exempelprojekt:  
-<details>  
-  <summary><strong>Utforska kodexempel efter språk</strong></summary>  
+## Model Context Protocol Exempelprojekt för att bygga ett MCP-kalkylatorprojekt i Java, C#, JavaScript, TypeScript och Python
 
-  - [C# MCP Server Example](./03-GettingStarted/samples/csharp/README.md)  
-  - [Java MCP Calculator](./03-GettingStarted/samples/java/calculator/README.md)  
-  - [JavaScript MCP Demo](./03-GettingStarted/samples/javascript/README.md)  
-  - [Python MCP Server](../../03-GettingStarted/samples/python/mcp_calculator_server.py)  
-  - [TypeScript MCP Example](./03-GettingStarted/samples/typescript/README.md)  
+### 🧮 MCP Kalkylatorexempel i Java, C#, JavaScript, TypeScript och Python
+<details>
+  <summary><strong>Utforska kodimplementeringar per språk</strong></summary>
+
+  - [C# MCP Server Exempel](./03-GettingStarted/samples/csharp/README.md)
+  - [Java MCP Kalkylator](./03-GettingStarted/samples/java/calculator/README.md)
+  - [JavaScript MCP Demo](./03-GettingStarted/samples/javascript/README.md)
+  - [Python MCP Server](../../03-GettingStarted/samples/python/mcp_calculator_server.py)
+  - [TypeScript MCP Exempel](./03-GettingStarted/samples/typescript/README.md)
 
 </details>
 
-### 💡 MCP Avancerade Calculatorprojekt:  
-<details>  
-  <summary><strong>Utforska avancerade exempel</strong></summary>  
+### 💡 MCP Avancerad Exempellösning: Kalkylatorprojekt i C#, Java, JavaScript, TypeScript och Python
+<details>
+  <summary><strong>Utforska avancerade exempel</strong></summary>
 
-  - [Advanced C# Sample](./04-PracticalImplementation/samples/csharp/README.md)  
-  - [Java Container App Example](./04-PracticalImplementation/samples/java/containerapp/README.md)  
-  - [JavaScript Advanced Sample](./04-PracticalImplementation/samples/javascript/README.md)  
-  - [Python Complex Implementation](../../04-PracticalImplementation/samples/python/mcp_sample.py)  
-  - [TypeScript Container Sample](./04-PracticalImplementation/samples/typescript/README.md)  
+  - [Avancerat C# Exempel](./04-PracticalImplementation/samples/csharp/README.md)
+  - [Java Container App Exempel](./04-PracticalImplementation/samples/java/containerapp/README.md)
+  - [JavaScript Avancerat Exempel](./04-PracticalImplementation/samples/javascript/README.md)
+  - [Python Komplex Implementering](../../04-PracticalImplementation/samples/python/mcp_sample.py)
+  - [TypeScript Container Exempel](./04-PracticalImplementation/samples/typescript/README.md)
 
-</details>  
+</details>
 
 
 ## 🎯 Förkunskaper för att lära sig MCP
 
-För att få ut det mesta av detta kursmaterial bör du ha:
+För att få ut mesta möjliga av detta kursmaterial bör du ha:
 
 - Grundläggande kunskaper i C#, Java eller Python  
 - Förståelse för klient-server-modellen och API:er  
@@ -144,55 +154,55 @@ För att få ut det mesta av detta kursmaterial bör du ha:
 
 ## 📚 Studieguide
 
-En omfattande [Studieguide](./study_guide.md) finns för att hjälpa dig navigera i detta repository på ett effektivt sätt. Guiden innehåller:
+En omfattande [Studieguide](./study_guide.md) finns tillgänglig för att hjälpa dig navigera i detta arkiv på ett effektivt sätt. Guiden innehåller:
 
-- En visuell kursöversikt som visar alla täckta ämnen  
-- Detaljerad genomgång av varje sektion i repositoryt  
-- Vägledning om hur du använder exempelprojekten  
+- En visuell kursöversikt som visar alla behandlade ämnen  
+- Detaljerad uppdelning av varje del i arkivet  
+- Vägledning för hur man använder exempelprojekt  
 - Rekommenderade lärvägar för olika kunskapsnivåer  
-- Ytterligare resurser som kompletterar din läranderesa  
+- Ytterligare resurser för att komplettera din inlärningsresa  
 
-## 🛠️ Så använder du detta kursmaterial effektivt
+## 🛠️ Hur du använder detta kursmaterial effektivt
 
 Varje lektion i denna guide innehåller:
 
 1. Tydliga förklaringar av MCP-koncept  
-2. Live kodexempel i flera språk  
+2. Live-kodexempel i flera språk  
 3. Övningar för att bygga riktiga MCP-applikationer  
 4. Extra resurser för avancerade användare  
 
 
-## 🌟 Tack från communityn
+## 🌟 Tack till communityn
 
-Tack till Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) för viktiga kodexempel.  
+Tack till Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) för viktiga kodexempel. 
 
 ## 📜 Licensinformation
 
-Detta innehåll är licensierat under **MIT License**. För villkor, se [LICENSE](../../LICENSE).  
+Detta innehåll är licensierat under **MIT License**. För villkor, se [LICENSE](../../LICENSE).
 
 ## 🤝 Riktlinjer för bidrag
 
-Detta projekt välkomnar bidrag och förslag. De flesta bidrag kräver att du godkänner ett Contributor License Agreement (CLA) som intygar att du har rätt att, och faktiskt gör det, ge oss rätt att använda ditt bidrag. För mer information, besök <https://cla.opensource.microsoft.com>.
+Detta projekt välkomnar bidrag och förslag. De flesta bidrag kräver att du godkänner ett Contributor License Agreement (CLA) som intygar att du har rätt att, och faktiskt gör det, ge oss rättigheter att använda ditt bidrag. För detaljer, besök <https://cla.opensource.microsoft.com>.
 
-När du skickar in en pull request kommer en CLA-bot automatiskt avgöra om du behöver lämna in en CLA och märka PR:n på lämpligt sätt (t.ex. statuskontroll, kommentar). Följ bara instruktionerna från boten. Detta behöver du bara göra en gång för alla repos som använder vår CLA.
+När du skickar en pull request kommer en CLA-bot automatiskt avgöra om du behöver lämna in en CLA och markera PR därefter (t.ex. statuskontroll, kommentar). Följ bara instruktionerna från boten. Detta behöver du bara göra en gång för alla repos som använder vår CLA.
 
-Detta projekt har antagit [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). För mer information, se [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) eller kontakta [opencode@microsoft.com](mailto:opencode@microsoft.com) vid frågor eller kommentarer.
+Detta projekt har antagit [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). För mer information, se [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) eller kontakta [opencode@microsoft.com](mailto:opencode@microsoft.com) med eventuella frågor eller kommentarer.
 
-## 🎒 Andra kurser  
-Vårt team producerar fler kurser! Kolla in:  
+## 🎒 Andra kurser
+Vårt team producerar även andra kurser! Kolla in:
 
-- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
-- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)  
+- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
 - [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
 - [IoT för nybörjare](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
 - [XR-utveckling för nybörjare](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Bemästra GitHub Copilot för AI-samarbetsprogrammering](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+- [Bemästra GitHub Copilot för AI-parprogrammering](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 - [Bemästra GitHub Copilot för C#/.NET-utvecklare](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 - [Välj ditt eget Copilot-äventyr](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
@@ -202,8 +212,8 @@ Vårt team producerar fler kurser! Kolla in:
 Detta projekt kan innehålla varumärken eller logotyper för projekt, produkter eller tjänster. Auktoriserad användning av Microsofts
 varumärken eller logotyper är föremål för och måste följa
 [Microsofts riktlinjer för varumärken och varumärkesanvändning](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Användning av Microsofts varumärken eller logotyper i modifierade versioner av detta projekt får inte orsaka förvirring eller antyda Microsofts sponsring.
-All användning av tredjeparts varumärken eller logotyper är föremål för dessa tredjeparters riktlinjer.
+Användning av Microsofts varumärken eller logotyper i modifierade versioner av detta projekt får inte skapa förvirring eller antyda att Microsoft sponsrar.
+All användning av tredje parts varumärken eller logotyper omfattas av dessa tredje parters riktlinjer.
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen var medveten om att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål ska betraktas som den auktoritativa källan. För viktig information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
