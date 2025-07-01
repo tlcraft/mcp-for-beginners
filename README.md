@@ -104,7 +104,7 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 - **09. MCP Case Studies** – [Guide](./09-CaseStudy/README.md)
 </details>
 
-### Model Context Protocol Hands on Lab with AI Toolkit for VScode 
+### Model Context Protocol Hands on Lab with AI Toolkit for VScode
 <details>
   <summary><strong>Lesson 10: Hands on Lab Building an MCP Server with AI Toolkit for VScode </summary>
     
