@@ -45,7 +45,7 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 
 ### Model Context Protocol Fundamentals 
 <details>
-  <summary><strong> Lesson 1-3: Model Context Protocl Fundamentals</strong></summary>
+  <summary><strong> Lesson 1-3: Model Context Protocol Fundamentals</strong></summary>
 
 - **00. Introduction to MCP**  
   Overview of the Model Context Protocol and its significance in AI pipelines. [Read more](./00-Introduction/README.md)
@@ -72,7 +72,7 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 - **3.9. Deploy your server** – [Guide](./03-GettingStarted/09-deployment/README.md)
 </details>
 
-### Model Context Protoocl Practical Implementations and Advanced Content
+### Model Context Protocol Practical Implementations and Advanced Content
 <details>
   <summary><strong> Lessons 4-5: Practical & Advanced</strong></summary>
 
@@ -104,16 +104,16 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 - **09. MCP Case Studies** – [Guide](./09-CaseStudy/README.md)
 </details>
 
-### Model Context Protoocl Hands on Lab with AI Toolkit for VScode 
+### Model Context Protocol Hands on Lab with AI Toolkit for VScode
 <details>
-  <summary><strong>Lesson 10: Hands on Lab Building an MCP Sever with AI Toolkit for VScode </summary>
+  <summary><strong>Lesson 10: Hands on Lab Building an MCP Server with AI Toolkit for VScode </summary>
     
 - **10. Streamlining AI Workflows: Building an MCP Server with AI Toolkit** – [Hands On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 </details>
 
-## Model Context Protocol Sample Projects Building a MCP Calculator Project in Java, C#, Javascript, Typescript and Python
+## Model Context Protocol Sample Projects Building a MCP Calculator Project in Java, C#, JavaScript, TypeScript and Python
 
-### 🧮 MCP Calculator Sample Projects in Java, C#, Javascript, Typescript and Python
+### 🧮 MCP Calculator Sample Projects in Java, C#, JavaScript, TypeScript and Python
 <details>
   <summary><strong>Explore Code Implementations by Language</strong></summary>
 
