@@ -43,8 +43,9 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 
 ## 🧭 MCP Curriculum Overview
 
+### Model Context Protocol Fundamentals 
 <details>
-  <summary><strong>00-03: Foundations</strong></summary>
+  <summary><strong> Lesson 1-3: Model Context Protocl Fundamentals</strong></summary>
 
 - **00. Introduction to MCP**  
   Overview of the Model Context Protocol and its significance in AI pipelines. [Read more](./00-Introduction/README.md)
@@ -56,8 +57,9 @@ Whether you're an AI developer, system architect, or software engineer, this gui
   Environment setup, basic servers/clients, integration. [Read more](./03-GettingStarted/README.md)
 </details>
 
+### Building and deploying your first MCP server and Client and Hands on Labs and Scenarios.
 <details>
-  <summary><strong>03.x: Hands-On Labs</strong></summary>
+  <summary><strong> Lesson 3: Building and deploying your first MCP server and client</strong></summary>
 
 - **3.1. First server** – [Guide](./03-GettingStarted/01-first-server/README.md)
 - **3.2. First client** – [Guide](./03-GettingStarted/02-client/README.md)
@@ -70,8 +72,9 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 - **3.9. Deploy your server** – [Guide](./03-GettingStarted/09-deployment/README.md)
 </details>
 
+### Model Context Protoocl Practical Implementations and Advanced Content
 <details>
-  <summary><strong>04-05: Practical & Advanced</strong></summary>
+  <summary><strong> Lessons 4-5: Practical & Advanced</strong></summary>
 
 - **04. Practical Implementation**  
   SDKs, debugging, testing, reusable prompt templates. [Read more](./04-PracticalImplementation/README.md)
@@ -91,19 +94,26 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 - **5.12. Entra ID Authentication for Model Context Protocol Servers** – [Guide](./05-AdvancedTopics/mcp-security-entra/README.md)
 </details>
 
+### Model Context Protocol Best Practices 
 <details>
-  <summary><strong>06-10: Community, Best Practices & Labs</strong></summary>
+  <summary><strong> Lessons 6-9: Community, Best Practices & Labs</strong></summary>
 
 - **06. Community Contributions** – [Guide](./06-CommunityContributions/README.md)
 - **07. Insights from Early Adoption** – [Guide](./07-LessonsFromEarlyAdoption/README.md)
 - **08. Best Practices for MCP** – [Guide](./08-BestPractices/README.md)
 - **09. MCP Case Studies** – [Guide](./09-CaseStudy/README.md)
+</details>
+
+### Model Context Protoocl Hands on Lab with AI Toolkit for VScode 
+<details>
+  <summary><strong>Lesson 10: Hands on Lab Building an MCP Sever with AI Toolkit for VScode </summary>
+    
 - **10. Streamlining AI Workflows: Building an MCP Server with AI Toolkit** – [Hands On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 </details>
 
-## Sample Projects
+## Model Context Protocol Sample Projects Building a MCP Calculator Project in Java, C#, Javascript, Typescript and Python
 
-### 🧮 MCP Calculator Sample Projects:
+### 🧮 MCP Calculator Sample Projects in Java, C#, Javascript, Typescript and Python
 <details>
   <summary><strong>Explore Code Implementations by Language</strong></summary>
 
@@ -115,7 +125,7 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 
 </details>
 
-### 💡 MCP Advanced Calculator Projects:
+### 💡 MCP Advanced Example Solution: Calculator Projects in C#, Java, JavaScript,TypeScript and Python
 <details>
   <summary><strong>Explore Advanced Samples</strong></summary>
 
