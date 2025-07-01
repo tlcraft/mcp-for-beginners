@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a94f85d76c34db9e2230c3d70787d320",
-  "translation_date": "2025-06-27T15:13:49+00:00",
+  "original_hash": "44405cc3bec37703b241dd4d8336e54a",
+  "translation_date": "2025-07-01T09:47:12+00:00",
   "source_file": "README.md",
   "language_code": "ms"
 }
@@ -30,17 +30,17 @@ Ikuti langkah-langkah ini untuk mula menggunakan sumber ini:
 
 ### 🌐 Sokongan Pelbagai Bahasa
 
-#### Disokong melalui GitHub Action (Automatik & Sentiasa Dikemaskini)
+#### Disokong melalui GitHub Action (Automatik & Sentiasa Dikemas Kini)
 
-# 🚀 Kurikulum Model Context Protocol (MCP) untuk Pemula
+# 🚀 Kurikulum Protokol Konteks Model (MCP) untuk Pemula
 
-## **Pelajari MCP dengan Contoh Kod Praktikal dalam C#, Java, JavaScript, Python, dan TypeScript**
+## **Belajar MCP dengan Contoh Kod Praktikal dalam C#, Java, JavaScript, Python, dan TypeScript**
 
-## 🧠 Gambaran Keseluruhan Kurikulum Model Context Protocol
+## 🧠 Gambaran Keseluruhan Kurikulum Protokol Konteks Model
 
-**Model Context Protocol (MCP)** adalah rangka kerja terkini yang direka untuk menstandardkan interaksi antara model AI dan aplikasi klien. Kurikulum sumber terbuka ini menyediakan laluan pembelajaran yang teratur, lengkap dengan contoh kod praktikal dan kes penggunaan sebenar, merangkumi bahasa pengaturcaraan popular seperti C#, Java, JavaScript, TypeScript, dan Python.
+**Model Context Protocol (MCP)** adalah rangka kerja terkini yang direka untuk menstandardkan interaksi antara model AI dan aplikasi klien. Kurikulum sumber terbuka ini menawarkan laluan pembelajaran yang tersusun, lengkap dengan contoh kod praktikal dan kes penggunaan sebenar, merangkumi bahasa pengaturcaraan popular seperti C#, Java, JavaScript, TypeScript, dan Python.
 
-Sama ada anda seorang pembangun AI, arkitek sistem, atau jurutera perisian, panduan ini adalah sumber komprehensif anda untuk menguasai asas dan strategi pelaksanaan MCP.
+Sama ada anda seorang pembangun AI, arkitek sistem, atau jurutera perisian, panduan ini adalah sumber komprehensif anda untuk menguasai asas-asas MCP dan strategi pelaksanaannya.
 
 ## 🔗 Sumber Rasmi MCP
 
@@ -48,14 +48,15 @@ Sama ada anda seorang pembangun AI, arkitek sistem, atau jurutera perisian, pand
 - 📜 [Spesifikasi MCP](https://spec.modelcontextprotocol.io/) – Seni bina protokol dan rujukan teknikal  
 - 🧑‍💻 [Repositori GitHub MCP](https://github.com/modelcontextprotocol) – SDK sumber terbuka, alat, dan contoh kod  
 
-## 🧭 Gambaran Kurikulum MCP
+## 🧭 Gambaran Keseluruhan Kurikulum MCP
 
+### Asas Protokol Konteks Model  
 <details>
-  <summary><strong>00-03: Asas</strong></summary>
+  <summary><strong> Pelajaran 1-3: Asas Protokol Konteks Model</strong></summary>
 
 - **00. Pengenalan kepada MCP**  
-  Gambaran keseluruhan Model Context Protocol dan kepentingannya dalam aliran AI. [Baca lebih lanjut](./00-Introduction/README.md)
-- **01. Penjelasan Konsep Teras**  
+  Gambaran keseluruhan Model Context Protocol dan kepentingannya dalam rangkaian AI. [Baca lebih lanjut](./00-Introduction/README.md)
+- **01. Konsep Teras Dijelaskan**  
   Penerangan mendalam tentang konsep teras MCP. [Baca lebih lanjut](./01-CoreConcepts/README.md)
 - **02. Keselamatan dalam MCP**  
   Ancaman keselamatan dan amalan terbaik. [Baca lebih lanjut](./02-Security/README.md)
@@ -63,8 +64,9 @@ Sama ada anda seorang pembangun AI, arkitek sistem, atau jurutera perisian, pand
   Persediaan persekitaran, pelayan/klien asas, integrasi. [Baca lebih lanjut](./03-GettingStarted/README.md)
 </details>
 
+### Membangun dan melancarkan pelayan MCP dan Klien pertama anda serta Makmal dan Senario Praktikal  
 <details>
-  <summary><strong>03.x: Makmal Praktikal</strong></summary>
+  <summary><strong> Pelajaran 3: Membangun dan melancarkan pelayan MCP dan klien pertama anda</strong></summary>
 
 - **3.1. Pelayan pertama** – [Panduan](./03-GettingStarted/01-first-server/README.md)
 - **3.2. Klien pertama** – [Panduan](./03-GettingStarted/02-client/README.md)
@@ -74,42 +76,50 @@ Sama ada anda seorang pembangun AI, arkitek sistem, atau jurutera perisian, pand
 - **3.6. Penstriman HTTP** – [Panduan](./03-GettingStarted/06-http-streaming/README.md)
 - **3.7. Menggunakan AI Toolkit** – [Panduan](./03-GettingStarted/07-aitk/README.md)
 - **3.8. Menguji pelayan anda** – [Panduan](./03-GettingStarted/08-testing/README.md)
-- **3.9. Menghoskan pelayan anda** – [Panduan](./03-GettingStarted/09-deployment/README.md)
+- **3.9. Melancarkan pelayan anda** – [Panduan](./03-GettingStarted/09-deployment/README.md)
 </details>
 
+### Pelaksanaan Praktikal dan Kandungan Lanjutan Protokol Konteks Model  
 <details>
-  <summary><strong>04-05: Praktikal & Lanjutan</strong></summary>
+  <summary><strong> Pelajaran 4-5: Praktikal & Lanjutan</strong></summary>
 
 - **04. Pelaksanaan Praktikal**  
-  SDK, penyahpepijatan, ujian, templat arahan yang boleh digunakan semula. [Baca lebih lanjut](./04-PracticalImplementation/README.md)
+  SDK, penyahpepijatan, ujian, templat prompt yang boleh digunakan semula. [Baca lebih lanjut](./04-PracticalImplementation/README.md)
 - **05. Topik Lanjutan dalam MCP**  
   AI multi-modal, penskalaan, penggunaan perusahaan. [Baca lebih lanjut](./05-AdvancedTopics/README.md)
 - **5.1. Integrasi MCP dengan Azure** – [Panduan](./05-AdvancedTopics/mcp-integration/README.md)
 - **5.2. Multi modaliti** – [Panduan](./05-AdvancedTopics/mcp-multi-modality/README.md)
 - **5.3. Demo OAuth2 MCP** – [Panduan](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
-- **5.4. Root Contexts** – [Panduan](./05-AdvancedTopics/mcp-root-contexts/README.md)
-- **5.5. Routing** – [Panduan](./05-AdvancedTopics/mcp-routing/README.md)
-- **5.6. Sampling** – [Panduan](./05-AdvancedTopics/mcp-sampling/README.md)
+- **5.4. Konteks Akar** – [Panduan](./05-AdvancedTopics/mcp-root-contexts/README.md)
+- **5.5. Penghalaan** – [Panduan](./05-AdvancedTopics/mcp-routing/README.md)
+- **5.6. Pengambilan Sampel** – [Panduan](./05-AdvancedTopics/mcp-sampling/README.md)
 - **5.7. Penskalaan** – [Panduan](./05-AdvancedTopics/mcp-scaling/README.md)
 - **5.8. Keselamatan** – [Panduan](./05-AdvancedTopics/mcp-security/README.md)
-- **5.9. Web Search MCP** – [Panduan](./05-AdvancedTopics/web-search-mcp/README.md)
+- **5.9. Carian Web MCP** – [Panduan](./05-AdvancedTopics/web-search-mcp/README.md)
 - **5.10. Penstriman Masa Nyata** – [Panduan](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
 - **5.11. Carian Web Masa Nyata** – [Panduan](./05-AdvancedTopics/mcp-realtimesearch/README.md)
-- **5.12. Pengesahan Entra ID untuk Pelayan Model Context Protocol** – [Panduan](./05-AdvancedTopics/mcp-security-entra/README.md)
+- **5.12. Pengesahan Entra ID untuk Pelayan Protokol Konteks Model** – [Panduan](./05-AdvancedTopics/mcp-security-entra/README.md)
 </details>
 
+### Amalan Terbaik Protokol Konteks Model  
 <details>
-  <summary><strong>06-10: Komuniti, Amalan Terbaik & Makmal</strong></summary>
+  <summary><strong> Pelajaran 6-9: Komuniti, Amalan Terbaik & Makmal</strong></summary>
 - **06. Sumbangan Komuniti** – [Panduan](./06-CommunityContributions/README.md)
-- **07. Pengajaran dari Penggunaan Awal** – [Panduan](./07-LessonsFromEarlyAdoption/README.md)
+- **07. Pengetahuan daripada Penggunaan Awal** – [Panduan](./07-LessonsFromEarlyAdoption/README.md)
 - **08. Amalan Terbaik untuk MCP** – [Panduan](./08-BestPractices/README.md)
 - **09. Kajian Kes MCP** – [Panduan](./09-CaseStudy/README.md)
-- **10. Mempermudah Aliran Kerja AI: Membangun Pelayan MCP dengan AI Toolkit** – [Makmal Praktikal](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 </details>
 
-## Projek Contoh
+### Model Context Protocol Latihan Praktikal dengan AI Toolkit untuk VScode
+<details>
+  <summary><strong>Pelajaran 10: Latihan Praktikal Membangun Pelayan MCP dengan AI Toolkit untuk VScode</strong></summary>
+    
+- **10. Memperkemas Aliran Kerja AI: Membangun Pelayan MCP dengan AI Toolkit** – [Latihan Praktikal](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+</details>
 
-### 🧮 Projek Contoh Kalkulator MCP:
+## Projek Contoh Model Context Protocol Membangun Projek Kalkulator MCP dalam Java, C#, JavaScript, TypeScript dan Python
+
+### 🧮 Projek Contoh Kalkulator MCP dalam Java, C#, JavaScript, TypeScript dan Python
 <details>
   <summary><strong>Terokai Pelaksanaan Kod Mengikut Bahasa</strong></summary>
 
@@ -121,80 +131,78 @@ Sama ada anda seorang pembangun AI, arkitek sistem, atau jurutera perisian, pand
 
 </details>
 
-### 💡 Projek Kalkulator MCP Lanjutan:
+### 💡 Penyelesaian Contoh Lanjutan MCP: Projek Kalkulator dalam C#, Java, JavaScript, TypeScript dan Python
 <details>
   <summary><strong>Terokai Contoh Lanjutan</strong></summary>
 
-  - [Contoh C# Lanjutan](./04-PracticalImplementation/samples/csharp/README.md)
+  - [Contoh Lanjutan C#](./04-PracticalImplementation/samples/csharp/README.md)
   - [Contoh Aplikasi Kontena Java](./04-PracticalImplementation/samples/java/containerapp/README.md)
-  - [Contoh JavaScript Lanjutan](./04-PracticalImplementation/samples/javascript/README.md)
+  - [Contoh Lanjutan JavaScript](./04-PracticalImplementation/samples/javascript/README.md)
   - [Pelaksanaan Kompleks Python](../../04-PracticalImplementation/samples/python/mcp_sample.py)
   - [Contoh Kontena TypeScript](./04-PracticalImplementation/samples/typescript/README.md)
 
 </details>
 
-
 ## 🎯 Prasyarat untuk Mempelajari MCP
 
 Untuk mendapatkan manfaat maksimum daripada kurikulum ini, anda perlu mempunyai:
 
-- Pengetahuan asas tentang C#, Java, atau Python
-- Kefahaman tentang model klien-pelayan dan API
+- Pengetahuan asas tentang C#, Java, atau Python  
+- Kefahaman mengenai model klien-pelayan dan API  
 - (Pilihan) Kefahaman tentang konsep pembelajaran mesin
 
 ## 📚 Panduan Pembelajaran
 
-Panduan pembelajaran [Study Guide](./study_guide.md) yang lengkap disediakan untuk membantu anda menavigasi repositori ini dengan berkesan. Panduan ini merangkumi:
+Satu [Panduan Pembelajaran](./study_guide.md) yang lengkap disediakan untuk membantu anda menavigasi repositori ini dengan berkesan. Panduan ini merangkumi:
 
-- Peta kurikulum visual yang menunjukkan semua topik yang diliputi
-- Pecahan terperinci setiap bahagian repositori
-- Panduan cara menggunakan projek contoh
-- Laluan pembelajaran yang disyorkan untuk pelbagai tahap kemahiran
-- Sumber tambahan untuk melengkapkan perjalanan pembelajaran anda
+- Peta kurikulum visual yang menunjukkan semua topik yang dibincangkan  
+- Perincian terperinci bagi setiap bahagian repositori  
+- Panduan menggunakan projek contoh  
+- Laluan pembelajaran yang disyorkan mengikut tahap kemahiran  
+- Sumber tambahan untuk menyokong perjalanan pembelajaran anda
 
 ## 🛠️ Cara Menggunakan Kurikulum Ini dengan Berkesan
 
-Setiap pelajaran dalam panduan ini termasuk:
+Setiap pelajaran dalam panduan ini mengandungi:
 
 1. Penjelasan jelas tentang konsep MCP  
 2. Contoh kod secara langsung dalam pelbagai bahasa  
 3. Latihan untuk membina aplikasi MCP sebenar  
-4. Sumber tambahan untuk pelajar lanjutan
+4. Sumber tambahan untuk pelajar yang ingin mendalami
 
+## 🌟 Terima Kasih Kepada Komuniti
 
-## 🌟 Penghargaan Komuniti
-
-Terima kasih kepada Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) atas sumbangan contoh kod penting. 
+Terima kasih kepada Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) atas sumbangan contoh kod penting.
 
 ## 📜 Maklumat Lesen
 
-Kandungan ini dilisensikan di bawah **MIT License**. Untuk terma dan syarat, lihat [LICENSE](../../LICENSE).
+Kandungan ini dilesenkan di bawah **Lesen MIT**. Untuk terma dan syarat, sila lihat [LICENSE](../../LICENSE).
 
 ## 🤝 Garis Panduan Sumbangan
 
-Projek ini mengalu-alukan sumbangan dan cadangan. Kebanyakan sumbangan memerlukan anda bersetuju dengan
-Perjanjian Lesen Penyumbang (CLA) yang menyatakan anda mempunyai hak untuk, dan benar-benar memberi kami
+Projek ini mengalu-alukan sumbangan dan cadangan. Kebanyakan sumbangan memerlukan anda bersetuju dengan  
+Perjanjian Lesen Penyumbang (CLA) yang menyatakan bahawa anda mempunyai hak dan benar-benar memberikan kami  
 hak untuk menggunakan sumbangan anda. Untuk maklumat lanjut, lawati <https://cla.opensource.microsoft.com>.
 
-Apabila anda menghantar permintaan tarik (pull request), bot CLA akan secara automatik menentukan sama ada anda perlu memberikan
-CLA dan menghiasi PR dengan sewajarnya (contohnya, semakan status, komen). Ikuti sahaja arahan
-yang diberikan oleh bot. Anda hanya perlu melakukannya sekali sahaja bagi semua repositori yang menggunakan CLA kami.
+Apabila anda menghantar pull request, bot CLA akan secara automatik menentukan sama ada anda perlu  
+mengemukakan CLA dan menandakan PR dengan sewajarnya (contohnya, semakan status, komen). Ikuti sahaja arahan  
+yang diberikan oleh bot. Anda hanya perlu melakukannya sekali sahaja untuk semua repositori yang menggunakan CLA kami.
 
-Projek ini telah mengamalkan [Kod Etika Sumber Terbuka Microsoft](https://opensource.microsoft.com/codeofconduct/).
-Untuk maklumat lanjut, lihat [Soalan Lazim Kod Etika](https://opensource.microsoft.com/codeofconduct/faq/) atau
-hubungi [opencode@microsoft.com](mailto:opencode@microsoft.com) untuk sebarang pertanyaan atau komen tambahan.
+Projek ini telah mengamalkan [Kod Etika Sumber Terbuka Microsoft](https://opensource.microsoft.com/codeofconduct/).  
+Untuk maklumat lanjut, lihat [Soalan Lazim Kod Etika](https://opensource.microsoft.com/codeofconduct/faq/) atau  
+hubungi [opencode@microsoft.com](mailto:opencode@microsoft.com) untuk sebarang soalan atau komen tambahan.
 
-## 🎒 Kursus Lain
-Pasukan kami juga menghasilkan kursus lain! Semak:
+## 🎒 Kursus Lain  
+Pasukan kami menghasilkan kursus lain! Lihat:
 
-- [Ejen AI untuk Pemula](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI Generatif untuk Pemula menggunakan .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-- [AI Generatif untuk Pemula menggunakan JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
-- [AI Generatif untuk Pemula](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Pembelajaran Mesin untuk Pemula](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-- [Sains Data untuk Pemula](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI untuk Pemula](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-- [Keselamatan Siber untuk Pemula](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
+- [AI Agents Untuk Pemula](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
+- [Generative AI untuk Pemula menggunakan .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
+- [Generative AI untuk Pemula menggunakan JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
+- [Generative AI untuk Pemula](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+- [ML untuk Pemula](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
+- [Sains Data untuk Pemula](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
+- [AI untuk Pemula](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
+- [Keselamatan Siber untuk Pemula](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)  
 - [Pembangunan Web untuk Pemula](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
 - [IoT untuk Pemula](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
 - [Pembangunan XR untuk Pemula](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
@@ -205,10 +213,10 @@ Pasukan kami juga menghasilkan kursus lain! Semak:
 
 ## ™️ Notis Tanda Dagangan
 
-Projek ini mungkin mengandungi tanda dagangan atau logo untuk projek, produk, atau perkhidmatan. Penggunaan tanda dagangan atau logo Microsoft yang dibenarkan tertakluk kepada dan mesti mematuhi
-[Garispanduan Tanda Dagangan & Jenama Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Penggunaan tanda dagangan atau logo Microsoft dalam versi projek yang diubahsuai tidak boleh menyebabkan kekeliruan atau memberi gambaran bahawa Microsoft menaja.
+Projek ini mungkin mengandungi tanda dagangan atau logo untuk projek, produk, atau perkhidmatan. Penggunaan tanda dagangan atau logo Microsoft yang dibenarkan tertakluk kepada dan mesti mengikuti
+[Garisan Panduan Tanda Dagangan & Jenama Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Penggunaan tanda dagangan atau logo Microsoft dalam versi projek yang diubah suai tidak boleh menyebabkan kekeliruan atau memberi gambaran bahawa Microsoft menaja.
 Sebarang penggunaan tanda dagangan atau logo pihak ketiga tertakluk kepada polisi pihak ketiga tersebut.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a94f85d76c34db9e2230c3d70787d320",
-  "translation_date": "2025-06-27T15:25:42+00:00",
+  "original_hash": "44405cc3bec37703b241dd4d8336e54a",
+  "translation_date": "2025-07-01T09:55:24+00:00",
   "source_file": "README.md",
   "language_code": "my"
 }
@@ -22,187 +22,195 @@ CO_OP_TRANSLATOR_METADATA:
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 
-ဒီအရင်းအမြစ်တွေကို အသုံးပြုဖို့ အောက်ပါအဆင့်တွေကို လိုက်နာပါ-
+ဒီအရင်းအမြစ်တွေကိုအသုံးပြုဖို့အတွက် အောက်ပါအဆင့်တွေကို လိုက်နာပါ-
 1. **Repository ကို Fork လုပ်ပါ**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
-2. **Repository ကို Clone လုပ်ပါ**: `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Azure AI Foundry Discord မှာ ဝင်ရောက်ပြီး ကျွမ်းကျင်သူတွေနဲ့ အတူတူ Developer တွေကို တွေ့ဆုံပါ**](https://discord.com/invite/ByRwuEEgH4)
+2. **Repository ကို Clone လုပ်ပါ**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
+3. [**Azure AI Foundry Discord မှာ ပါဝင်ပြီး ကျွမ်းကျင်သူတွေနဲ့ အခြား developer တွေကို တွေ့ဆုံပါ**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 ဘာသာစကားစုံထောက်ပံ့မှု
+### 🌐 ဘာသာစကားအမျိုးမျိုးကို ထောက်ပံ့မှု
 
-#### GitHub Action ဖြင့် ထောက်ပံ့ထားပြီး (အလိုအလျောက်နဲ့ အမြဲတမ်းအသစ်ဖြစ်နေသော)
+#### GitHub Action မှတဆင့် ထောက်ပံ့ထားသည် (အလိုအလျောက်နှင့် အမြဲတမ်းနောက်ဆုံးပေါ်)
 
-# 🚀 Model Context Protocol (MCP) အခြေခံသင်တန်း
+# 🚀 Model Context Protocol (MCP) စတင်သင်ယူသူများအတွက် သင်ရိုးညွှန်းတမ်း
 
-## **C#, Java, JavaScript, Python, နှင့် TypeScript ဖြင့် MCP ကို လက်တွေ့ကုဒ်နမူနာများဖြင့် သင်ယူပါ**
+## **C#, Java, JavaScript, Python, နှင့် TypeScript တွင် လက်တွေ့ကုဒ်နမူနာများဖြင့် MCP သင်ယူပါ**
 
-## 🧠 Model Context Protocol သင်ရိုးညွှန်းတမ်း အနှစ်ချုပ်
+## 🧠 Model Context Protocol သင်ရိုးညွှန်းတမ်း အကျဉ်းချုပ်
 
-**Model Context Protocol (MCP)** သည် AI မော်ဒယ်များနှင့် client application များအကြား ဆက်သွယ်မှုများကို စံချိန်စံညွှန်းတင်ရန် ရည်ရွယ်ထားသည့် နောက်ဆုံးပေါ် framework ဖြစ်သည်။ ဒီ open-source သင်ရိုးညွှန်းတမ်းတွင် C#, Java, JavaScript, TypeScript နှင့် Python အပါအဝင် လူကြိုက်များသော programming ဘာသာစကားများအတွက် လက်တွေ့ကုဒ်နမူနာများနှင့် လက်တွေ့အသုံးချမှုများပါရှိပြီး စနစ်တကျ သင်ယူနိုင်သည်။
+**Model Context Protocol (MCP)** သည် AI မော်ဒယ်များနှင့် client application များအကြား ဆက်သွယ်မှုများကို စံပြတည်ဆောက်ရန် ရည်ရွယ်ထားသော နောက်ဆုံးပေါ် framework ဖြစ်သည်။ ဒီ open-source သင်ရိုးညွှန်းတမ်းသည် C#, Java, JavaScript, TypeScript နှင့် Python အပါအဝင် လူကြိုက်များသော programming language များတွင် လက်တွေ့ကုဒ်နမူနာများနှင့် တကယ့်အသုံးချမှုများကို ပေါင်းစပ်ထားသော စနစ်တကျ သင်ယူနိုင်မည့် လမ်းညွှန်တစ်ခု ဖြစ်သည်။
 
-AI developer, system architect သို့မဟုတ် software engineer မဆို MCP အခြေခံအယူအဆများနှင့် အကောင်အထည်ဖော်နည်းလမ်းများကို ကျွမ်းကျင်စွာ ရယူနိုင်ရန် ဒီလမ်းညွှန်သည် သင့်အတွက် စုံလင်သော အရင်းအမြစ်ဖြစ်ပါသည်။
+သင်သည် AI developer, system architect, သို့မဟုတ် software engineer ဖြစ်စေ၊ ဒီလမ်းညွှန်သည် MCP အခြေခံသဘောတရားများနှင့် အသုံးပြုနည်းများကို ကျွမ်းကျင်စွာ လေ့လာနိုင်ရန် သင့်အတွက် ပြည့်စုံသော အရင်းအမြစ် ဖြစ်ပါသည်။
 
-## 🔗 MCP တရားဝင်အရင်းအမြစ်များ
+## 🔗 MCP တရားဝင် အရင်းအမြစ်များ
 
 - 📘 [MCP Documentation](https://modelcontextprotocol.io/) – အသေးစိတ် သင်ခန်းစာများနှင့် အသုံးပြုသူလမ်းညွှန်များ  
-- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol ဖွဲ့စည်းပုံနှင့် နည်းပညာဆိုင်ရာ အညွှန်းများ  
+- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol ဖွဲ့စည်းပုံနှင့် နည်းပညာဆိုင်ရာ ရည်ညွှန်းချက်များ  
 - 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDK များ၊ ကိရိယာများနှင့် ကုဒ်နမူနာများ  
 
-## 🧭 MCP သင်ရိုးညွှန်းတမ်း အနှစ်ချုပ်
+## 🧭 MCP သင်ရိုးညွှန်းတမ်း အကျဉ်းချုပ်
 
+### Model Context Protocol အခြေခံများ  
 <details>
-  <summary><strong>00-03: အခြေခံများ</strong></summary>
+  <summary><strong> သင်ခန်းစာ ၁-၃: Model Context Protocol အခြေခံများ</strong></summary>
 
-- **00. MCP အကြောင်းအရာနိဒါန်း**  
-  Model Context Protocol ၏ အဓိပ္ပါယ်နှင့် AI pipeline များတွင် အရေးပါမှုကို ရှင်းလင်းပြောကြားသည်။ [ဆက်ဖတ်ရန်](./00-Introduction/README.md)
-- **01. အခြေခံအယူအဆများ**  
-  MCP ၏ အဓိကအယူအဆများကို အသေးစိတ် ရှင်းလင်းတင်ပြသည်။ [ဆက်ဖတ်ရန်](./01-CoreConcepts/README.md)
+- **00. MCP မိတ်ဆက်**  
+  Model Context Protocol ၏ အကျဉ်းချုပ်နှင့် AI pipeline များတွင် ၎င်း၏ အရေးပါမှု။ [ပိုမိုဖတ်ရန်](./00-Introduction/README.md)
+- **01. အဓိကအယူအဆများ ရှင်းလင်းချက်**  
+  MCP ၏ အဓိကအယူအဆများကို နက်နဲစွာ လေ့လာခြင်း။ [ပိုမိုဖတ်ရန်](./01-CoreConcepts/README.md)
 - **02. MCP တွင် လုံခြုံရေး**  
-  လုံခြုံရေး ခြိမ်းခြောက်မှုများနှင့် အကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများကို ဖော်ပြသည်။ [ဆက်ဖတ်ရန်](./02-Security/README.md)
-- **03. MCP ဖြင့် စတင်ခြင်း**  
-  ပတ်ဝန်းကျင် စီမံခန့်ခွဲမှု၊ အခြေခံ server/client များနှင့် ပေါင်းစပ်ခြင်း။ [ဆက်ဖတ်ရန်](./03-GettingStarted/README.md)
+  လုံခြုံရေး အန္တရာယ်များနှင့် အကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများ။ [ပိုမိုဖတ်ရန်](./02-Security/README.md)
+- **03. MCP စတင်အသုံးပြုခြင်း**  
+  ပတ်ဝန်းကျင် ပြင်ဆင်ခြင်း၊ အခြေခံ server/client များ၊ ပေါင်းစပ်ခြင်း။ [ပိုမိုဖတ်ရန်](./03-GettingStarted/README.md)
 </details>
 
+### သင့် ပထမဆုံး MCP server နှင့် client တည်ဆောက်ခြင်း၊ ဖြန့်ချိခြင်း၊ လက်တွေ့ လေ့ကျင့်ခန်းများနှင့် နမူနာများ  
 <details>
-  <summary><strong>03.x: လက်တွေ့ လေ့ကျင့်ခန်းများ</strong></summary>
+  <summary><strong> သင်ခန်းစာ ၃: သင့် ပထမဆုံး MCP server နှင့် client တည်ဆောက်ခြင်း၊ ဖြန့်ချိခြင်း</strong></summary>
 
 - **3.1. ပထမဆုံး server** – [လမ်းညွှန်](./03-GettingStarted/01-first-server/README.md)
 - **3.2. ပထမဆုံး client** – [လမ်းညွှန်](./03-GettingStarted/02-client/README.md)
-- **3.3. LLM ပါရှိသော client** – [လမ်းညွှန်](./03-GettingStarted/03-llm-client/README.md)
-- **3.4. Visual Studio Code ဖြင့် server ကို အသုံးပြုခြင်း** – [လမ်းညွှန်](./03-GettingStarted/04-vscode/README.md)
-- **3.5. SSE အသုံးပြု၍ server ဖန်တီးခြင်း** – [လမ်းညွှန်](./03-GettingStarted/05-sse-server/README.md)
+- **3.3. LLM ပါသော client** – [လမ်းညွှန်](./03-GettingStarted/03-llm-client/README.md)
+- **3.4. Visual Studio Code ဖြင့် server အသုံးပြုခြင်း** – [လမ်းညွှန်](./03-GettingStarted/04-vscode/README.md)
+- **3.5. SSE အသုံးပြု၍ server တည်ဆောက်ခြင်း** – [လမ်းညွှန်](./03-GettingStarted/05-sse-server/README.md)
 - **3.6. HTTP Streaming** – [လမ်းညွှန်](./03-GettingStarted/06-http-streaming/README.md)
 - **3.7. AI Toolkit အသုံးပြုခြင်း** – [လမ်းညွှန်](./03-GettingStarted/07-aitk/README.md)
 - **3.8. သင့် server ကို စမ်းသပ်ခြင်း** – [လမ်းညွှန်](./03-GettingStarted/08-testing/README.md)
-- **3.9. သင့် server ကို တပ်ဆင်ခြင်း** – [လမ်းညွှန်](./03-GettingStarted/09-deployment/README.md)
+- **3.9. သင့် server ကို ဖြန့်ချိခြင်း** – [လမ်းညွှန်](./03-GettingStarted/09-deployment/README.md)
 </details>
 
+### Model Context Protocol လက်တွေ့အသုံးပြုမှုများနှင့် အဆင့်မြင့် အကြောင်းအရာများ  
 <details>
-  <summary><strong>04-05: လက်တွေ့နှင့် အဆင့်မြင့်</strong></summary>
+  <summary><strong> သင်ခန်းစာ ၄-၅: လက်တွေ့အသုံးပြုမှုနှင့် အဆင့်မြင့်</strong></summary>
 
-- **04. လက်တွေ့ အကောင်အထည်ဖော်ခြင်း**  
-  SDK များ၊ debugging၊ စမ်းသပ်ခြင်း၊ ပြန်လည်အသုံးပြုနိုင်သော prompt template များ။ [ဆက်ဖတ်ရန်](./04-PracticalImplementation/README.md)
-- **05. MCP အတွက် အဆင့်မြင့် ခေါင်းစဉ်များ**  
-  Multi-modal AI, စွမ်းဆောင်ရည် တိုးချဲ့ခြင်းနှင့် စီးပွားရေး အသုံးပြုမှုများ။ [ဆက်ဖတ်ရန်](./05-AdvancedTopics/README.md)
+- **04. လက်တွေ့အသုံးပြုမှု**  
+  SDK များ၊ debugging၊ စမ်းသပ်ခြင်း၊ ပြန်လည်အသုံးပြုနိုင်သော prompt template များ။ [ပိုမိုဖတ်ရန်](./04-PracticalImplementation/README.md)
+- **05. MCP တွင် အဆင့်မြင့် ခေါင်းစဉ်များ**  
+  Multi-modal AI၊ တိုးချဲ့မှု၊ စီးပွားရေးအသုံးပြုမှု။ [ပိုမိုဖတ်ရန်](./05-AdvancedTopics/README.md)
 - **5.1. Azure နှင့် MCP ပေါင်းစပ်ခြင်း** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-integration/README.md)
 - **5.2. Multi modality** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-multi-modality/README.md)
-- **5.3. MCP OAuth2 များ ပြသချက်** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
-- **5.4. Root Context များ** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-root-contexts/README.md)
+- **5.3. MCP OAuth2 စမ်းသပ်မှု** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
+- **5.4. Root Contexts** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-root-contexts/README.md)
 - **5.5. Routing** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-routing/README.md)
 - **5.6. Sampling** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-sampling/README.md)
 - **5.7. Scaling** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-scaling/README.md)
-- **5.8. လုံခြုံရေး** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-security/README.md)
+- **5.8. Security** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-security/README.md)
 - **5.9. Web Search MCP** – [လမ်းညွှန်](./05-AdvancedTopics/web-search-mcp/README.md)
-- **5.10. အချိန်နှင့်တပြေးညီ Streaming** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
-- **5.11. အချိန်နှင့်တပြေးညီ Web Search** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-realtimesearch/README.md)
-- **5.12. Model Context Protocol Servers များအတွက် Entra ID Authentication** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-security-entra/README.md)
+- **5.10. Realtime Streaming** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
+- **5.11. Realtime Web Search** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-realtimesearch/README.md)
+- **5.12. Model Context Protocol Servers အတွက် Entra ID Authentication** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-security-entra/README.md)
 </details>
 
+### Model Context Protocol အကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများ  
 <details>
-  <summary><strong>06-10: အသိုင်းအဝိုင်း၊ အကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများ နှင့် လေ့ကျင့်ခန်းများ</strong></summary>
-- **06. အသိုင်းအဝိုင်း အကူအညီများ** – [လမ်းညွှန်](./06-CommunityContributions/README.md)
-- **07. များပြားစွာ လက်ခံအသုံးပြုမှုမှ သင်ခန်းစာများ** – [လမ်းညွှန်](./07-LessonsFromEarlyAdoption/README.md)
-- **08. MCP အတွက် အကောင်းဆုံး လေ့လာသင်ယူမှုများ** – [လမ်းညွှန်](./08-BestPractices/README.md)
+  <summary><strong> သင်ခန်းစာ ၆-၉: အသိုင်းအဝိုင်း၊ အကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများ နှင့် လေ့ကျင့်ခန်းများ</strong></summary>
+- **06. အသိုင်းအဝိုင်း၏ လှုပ်ရှားမှုများ** – [လမ်းညွှန်](./06-CommunityContributions/README.md)
+- **07. မျှဝေခြင်းမှရရှိသော အတွေ့အကြုံများ** – [လမ်းညွှန်](./07-LessonsFromEarlyAdoption/README.md)
+- **08. MCP အတွက် အကောင်းဆုံး လေ့လာမှုများ** – [လမ်းညွှန်](./08-BestPractices/README.md)
 - **09. MCP ကိစ္စလေ့လာမှုများ** – [လမ်းညွှန်](./09-CaseStudy/README.md)
-- **10. AI အလုပ်စဉ်များကို ရိုးရှင်းစေခြင်း - AI Toolkit ဖြင့် MCP ဆာဗာ တည်ဆောက်ခြင်း** – [လက်တွေ့ လေ့ကျင့်ခန်း](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 </details>
 
-## နမူနာ ပရောဂျက်များ
-
-### 🧮 MCP ကိန်းဂဏန်း ကိရိယာ နမူနာ ပရောဂျက်များ:
+### Model Context Protocol ကို VScode အတွက် AI Toolkit ဖြင့် လက်တွေ့ လေ့ကျင့်ခြင်း
 <details>
-  <summary><strong>ဘာသာစကားအလိုက် ကုဒ်အကောင်အထည်ဖော်မှုများကို ရှာဖွေပါ</strong></summary>
+  <summary><strong>သင်ခန်းစာ 10: AI Toolkit ဖြင့် MCP Server တည်ဆောက်ခြင်း လက်တွေ့ လေ့ကျင့်ခြင်း</strong></summary>
+    
+- **10. AI လုပ်ငန်းစဉ်များကို ပိုမိုထိရောက်စေခြင်း: AI Toolkit ဖြင့် MCP Server တည်ဆောက်ခြင်း** – [လက်တွေ့ လေ့ကျင့်ခန်း](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+</details>
 
-  - [C# MCP ဆာဗာ နမူနာ](./03-GettingStarted/samples/csharp/README.md)
-  - [Java MCP ကိန်းဂဏန်း ကိရိယာ](./03-GettingStarted/samples/java/calculator/README.md)
-  - [JavaScript MCP သရုပ်ပြ](./03-GettingStarted/samples/javascript/README.md)
-  - [Python MCP ဆာဗာ](../../03-GettingStarted/samples/python/mcp_calculator_server.py)
+## Model Context Protocol နမူနာပရောဂျက်များ - Java, C#, JavaScript, TypeScript နှင့် Python မှာ MCP ကိန်းဂဏန်းတွက်စက် ပရောဂျက် တည်ဆောက်ခြင်း
+
+### 🧮 Java, C#, JavaScript, TypeScript နှင့် Python မှာ MCP ကိန်းဂဏန်းတွက်စက် နမူနာပရောဂျက်များ
+<details>
+  <summary><strong>ဘာသာစကားအလိုက် ကုဒ်များကို ရှာဖွေကြည့်ပါ</strong></summary>
+
+  - [C# MCP Server နမူနာ](./03-GettingStarted/samples/csharp/README.md)
+  - [Java MCP Calculator](./03-GettingStarted/samples/java/calculator/README.md)
+  - [JavaScript MCP မိတ်ဆက်](./03-GettingStarted/samples/javascript/README.md)
+  - [Python MCP Server](../../03-GettingStarted/samples/python/mcp_calculator_server.py)
   - [TypeScript MCP နမူနာ](./03-GettingStarted/samples/typescript/README.md)
 
 </details>
 
-### 💡 MCP အဆင့်မြင့် ကိန်းဂဏန်း ကိရိယာ ပရောဂျက်များ:
+### 💡 MCP အဆင့်မြင့် နမူနာ ဖြေရှင်းချက်: C#, Java, JavaScript, TypeScript နှင့် Python မှာ ကိန်းဂဏန်းတွက်စက် ပရောဂျက်များ
 <details>
-  <summary><strong>အဆင့်မြင့် နမူနာများကို ရှာဖွေပါ</strong></summary>
+  <summary><strong>အဆင့်မြင့် နမူနာများကို ရှာဖွေကြည့်ပါ</strong></summary>
 
   - [အဆင့်မြင့် C# နမူနာ](./04-PracticalImplementation/samples/csharp/README.md)
-  - [Java ကွန်တိန်နာ အက်ပ် နမူနာ](./04-PracticalImplementation/samples/java/containerapp/README.md)
+  - [Java Container App နမူနာ](./04-PracticalImplementation/samples/java/containerapp/README.md)
   - [JavaScript အဆင့်မြင့် နမူနာ](./04-PracticalImplementation/samples/javascript/README.md)
   - [Python ရှုပ်ထွေးသော အကောင်အထည်ဖော်မှု](../../04-PracticalImplementation/samples/python/mcp_sample.py)
-  - [TypeScript ကွန်တိန်နာ နမူနာ](./04-PracticalImplementation/samples/typescript/README.md)
+  - [TypeScript Container နမူနာ](./04-PracticalImplementation/samples/typescript/README.md)
 
 </details>
 
+## 🎯 MCP သင်ယူရန် လိုအပ်ချက်များ
 
-## 🎯 MCP သင်ယူရန် မတိုင်မီ လိုအပ်ချက်များ
+ဒီသင်ရိုးညွှန်းကိန်းမှ အကျိုးရှိစွာ ရယူရန်အတွက် -
 
-ဒီ သင်ခန်းစာအစီအစဉ်ကို အကျိုးရှိစွာ သုံးနိုင်ရန်အတွက်၊ သင်မှာရှိသင့်တာတွေကတော့ -
+- C#, Java, သို့မဟုတ် Python အခြေခံ အသိပညာရှိရမည်
+- Client-server မော်ဒယ်နှင့် API များကို နားလည်မှုရှိရမည်
+- (Optional) စက်သင်ယူမှု အကြောင်းအရာများကို သိရှိမှု ရှိသင့်သည်
 
-- C#, Java, သို့မဟုတ် Python အခြေခံ နားလည်မှု
-- client-server မော်ဒယ်နှင့် API များကို နားလည်မှု
-- (ရွေးချယ်စရာ) စက်လေ့လာမှု အယူအဆများကို သိရှိမှု
+## 📚 သင်ကြားရေး လမ်းညွှန်
 
-## 📚 သင်ကြားမှု လမ်းညွှန်
+ဒီ repository ကို ထိရောက်စွာ လေ့လာနိုင်ရန် အတွက် ပြည့်စုံသော [သင်ကြားရေး လမ်းညွှန်](./study_guide.md) ရရှိနိုင်ပါသည်။ လမ်းညွှန်တွင် -
 
-ဒီ repository ကို ထိရောက်စွာ လမ်းညွှန်ပေးနိုင်ရန် အပြည့်အစုံ [သင်ကြားမှု လမ်းညွှန်](./study_guide.md) ရရှိနိုင်ပါသည်။ လမ်းညွှန်တွင် -
+- ကဏ္ဍအားလုံးကို ဖော်ပြထားသော မြင်ကွင်းမြေပုံ
+- repository အပိုင်းများကို အသေးစိတ် ဖော်ပြချက်
+- နမူနာပရောဂျက်များကို မည်သို့ အသုံးပြုမည်ကို လမ်းညွှန်ချက်
+- ကျွမ်းကျင်မှုအဆင့်အလိုက် သင်ယူရန် လမ်းကြောင်းများ
+- သင်ယူမှုကို ပိုမိုအထောက်အကူဖြစ်စေမည့် အရင်းအမြစ်များ
 
-- အားလုံးသော ခေါင်းစဉ်များ ပါဝင်သည့် ရုပ်မြင်သံကြား သင်တန်းစီမံကိန်းမြေပုံ
-- repository အပိုင်းတိုင်း၏ အသေးစိတ် ဖော်ပြချက်
-- နမူနာ ပရောဂျက်များကို ဘယ်လို အသုံးပြုမလဲ ဆိုတာ လမ်းညွှန်ချက်
-- အတတ်ပညာအဆင့်အလိုက် သင်ယူရန် လမ်းကြောင်းများ အကြံပြုချက်
-- သင်ယူမှု ခရီးစဉ်ကို ပိုမိုကောင်းမွန်စေရန် အပိုဆောင်း အရင်းအမြစ်များ
+## 🛠️ ဒီ သင်ရိုးညွှန်းကို ထိရောက်စွာ အသုံးပြုနည်း
 
-## 🛠️ ဒီ သင်ခန်းစာအစီအစဉ်ကို ထိရောက်စွာ အသုံးပြုနည်း
-
-ဒီ လမ်းညွှန်ရှိ သင်ခန်းစာတိုင်းတွင် -
+ဒီ လမ်းညွှန်ရှိ သင်ခန်းစာတစ်ခုချင်းစီတွင် -
 
 1. MCP အယူအဆများကို ရှင်းလင်းပြသခြင်း  
-2. ဘာသာစကားအမျိုးမျိုးဖြင့် တိုက်ရိုက် ကုဒ် နမူနာများ  
-3. အမှန်တကယ် MCP အက်ပ်များ တည်ဆောက်ရန် လေ့ကျင့်ခန်းများ  
+2. ဘာသာစကား မျိုးစုံဖြင့် တိုက်ရိုက် ကုဒ် နမူနာများ  
+3. အမှန်တကယ် MCP အက်ပ်များ ဖန်တီးရန် လေ့ကျင့်ခန်းများ  
 4. အဆင့်မြင့် သင်ယူသူများအတွက် အပိုအရင်းအမြစ်များ
 
+## 🌟 အသိုင်းအဝိုင်းအား ကျေးဇူးတင်ခြင်း
 
-## 🌟 အသိုင်းအဝိုင်း ကျေးဇူးတင်စကား
+Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) မှ အရေးကြီးသော ကုဒ်နမူနာများ ပံ့ပိုးပေးမှုအတွက် ကျေးဇူးအထူးတင်ရှိပါသည်။
 
-Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) မှ အရေးပါသော ကုဒ် နမူနာများ ပံ့ပိုးပေးမှုအတွက် ကျေးဇူးတင်ရှိပါသည်။
+## 📜 ခွင့်ပြုချက် အချက်အလက်များ
 
-## 📜 လိုင်စင် အချက်အလက်
-
-ဤ အကြောင်းအရာကို **MIT License** ဖြင့်လိုင်စင်ပြုထားသည်။ စည်းကမ်းချက်များအတွက် [LICENSE](../../LICENSE) ကို ကြည့်ရှုပါ။
+ဒီ အကြောင်းအရာကို **MIT License** အောက်မှာ ခွင့်ပြုထားသည်။ စည်းမျဉ်းများနှင့် အခြေအနေများကို ကြည့်ရန် [LICENSE](../../LICENSE) ကို ဖတ်ပါ။
 
 ## 🤝 ပံ့ပိုးမှု လမ်းညွှန်ချက်များ
 
-ဒီ ပရောဂျက်သည် ပံ့ပိုးမှုများနှင့် အကြံပြုချက်များကို ကြိုဆိုပါသည်။ ပံ့ပိုးမှုအများစုတွင် Contributor License Agreement (CLA) သို့ သဘောတူညီရန် လိုအပ်ပြီး သင်၏ ပံ့ပိုးမှုကို အသုံးပြုခွင့်များ ရရှိသည်ဟု သက်သေပြရမည်။ အသေးစိတ်အချက်အလက်များအတွက် <https://cla.opensource.microsoft.com> ကို ကြည့်ပါ။
+ဒီ ပရောဂျက်တွင် ပံ့ပိုးမှုများနှင့် အကြံပြုချက်များကို ကြိုဆိုပါသည်။ များသောအားဖြင့် ပံ့ပိုးမှုများအတွက် Contributor License Agreement (CLA) ကို သဘောတူညီရန် လိုအပ်ပြီး သင်၏ ပံ့ပိုးမှုကို အသုံးပြုခွင့်များကို သင် ပိုင်ဆိုင်ကြောင်း သက်သေပြရမည်။ အသေးစိတ်အချက်အလက်များအတွက် <https://cla.opensource.microsoft.com> ကို ကြည့်ရှုနိုင်ပါသည်။
 
-သင် pull request တင်သည့်အခါ၊ CLA bot သည် သင့်အား CLA ပေးရန် လိုအပ်မလား၊ PR ကို သင့်တော်စွာ အမှတ်အသားပြုမလား စစ်ဆေးပေးမည်ဖြစ်ပြီး (ဥပမာ၊ status check, comment) bot မှ ပေးသော ညွှန်ကြားချက်များကို လိုက်နာရုံဖြစ်သည်။ ဒီလုပ်ငန်းစဉ်ကို repository အားလုံးအတွက် တစ်ကြိမ်သာ ပြုလုပ်ရမည်ဖြစ်သည်။
+သင် pull request တင်သောအခါ CLA bot သည် သင့်အား CLA တင်ရန် လိုအပ်မရှိ/ရှိသည်ကို အလိုအလျောက် သတ်မှတ်ပြီး PR ကို သင့်တော်စွာ အလှဆင်ပေးပါမည် (ဥပမာ - status check, မှတ်ချက်)။ bot မှ ပေးသော ညွှန်ကြားချက်များကို လိုက်နာရန်သာ လိုအပ်ပါသည်။ သင့်အား CLA ကို အားလုံးသော repos တွင် တစ်ကြိမ်တည်းသာ ပြုလုပ်ရန် လိုအပ်ပါသည်။
 
-ဒီ ပရောဂျက်သည် [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) ကို လက်ခံအသုံးပြုထားသည်။ ပိုမိုသိရှိလိုပါက [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) ကို ကြည့်ရှုပါ သို့မဟုတ် မေးခွန်းများ သို့မဟုတ် မှတ်ချက်များရှိပါက [opencode@microsoft.com](mailto:opencode@microsoft.com) သို့ ဆက်သွယ်နိုင်ပါသည်။
+ဒီ ပရောဂျက်သည် [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) ကို လက်ခံအသုံးပြုထားသည်။ ပိုမိုသိရှိလိုပါက [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) ကို ကြည့်ရှုပါ၊ သို့မဟုတ် မေးခွန်းများရှိပါက [opencode@microsoft.com](mailto:opencode@microsoft.com) သို့ ဆက်သွယ်နိုင်ပါသည်။
 
 ## 🎒 အခြား သင်တန်းများ  
-ကျွန်ုပ်တို့၏ အဖွဲ့သည် အခြားသင်တန်းများကို ထုတ်လုပ်ပါသည်။ အောက်ပါ သင်တန်းများကို ကြည့်ရှုပါ -
+ကျွန်ုပ်တို့အဖွဲ့သည် အခြား သင်တန်းများကို ထုတ်လုပ်ထားပါသည်။ ကြည့်ရှုရန် -
 
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [.NET ဖြင့် Generative AI for Beginners](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-- [JavaScript ဖြင့် Generative AI for Beginners](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+- [.NET အသုံးပြု၍ Generative AI for Beginners](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+- [JavaScript အသုံးပြု၍ Generative AI for Beginners](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
 - [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 - [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
 - [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
 - [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-- [စတင်သူများအတွက် IoT](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-- [စတင်သူများအတွက် XR ဖွံ့ဖြိုးတိုးတက်မှု](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI တွဲဖက်ပရိုဂရမ်မင်းအတွက် GitHub Copilot ကိုကျွမ်းကျင်စွာ အသုံးပြုခြင်း](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [C#/.NET Developer များအတွက် GitHub Copilot ကိုကျွမ်းကျင်စွာ အသုံးပြုခြင်း](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-- [သင်၏ကိုယ်ပိုင် Copilot စွန့်စားခန်းကို ရွေးချယ်ပါ](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+- [IoT အတွက် စတင်လေ့လာသူများ](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+- [XR ဖွံ့ဖြိုးတိုးတက်မှု စတင်လေ့လာသူများအတွက်](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI တွဲဖက်ပရိုဂရမ်မင်းအတွက် GitHub Copilot ကျွမ်းကျင်မှု](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+- [C#/.NET ဖွံ့ဖြိုးသူများအတွက် GitHub Copilot ကျွမ်းကျင်မှု](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+- [သင့်ကိုယ်ပိုင် Copilot စွန့်စားခန်းကို ရွေးချယ်ပါ](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 
 ## ™️ ကုန်အမှတ်တံဆိပ် အသိပေးချက်
 
-ဤပရောဂျက်တွင် ပရောဂျက်များ၊ ထုတ်ကုန်များ သို့မဟုတ် ဝန်ဆောင်မှုများအတွက် ကုန်အမှတ်တံဆိပ်များ သို့မဟုတ် လိုဂိုများ ပါဝင်နိုင်ပါသည်။ Microsoft ၏ ကုန်အမှတ်တံဆိပ်များ သို့မဟုတ် လိုဂိုများကို ခွင့်ပြုချက်ဖြင့် အသုံးပြုခြင်းမှာ  
-[Microsoft ၏ ကုန်အမှတ်တံဆိပ်နှင့် အမှတ်တံဆိပ်လမ်းညွှန်ချက်များ](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) ကို လိုက်နာရမည်ဖြစ်သည်။  
-ဤပရောဂျက်၏ ပြင်ဆင်ထားသောဗားရှင်းများတွင် Microsoft ၏ ကုန်အမှတ်တံဆိပ်များ သို့မဟုတ် လိုဂိုများကို အသုံးပြုရာတွင် မဖောက်ပြန်မှု ဖြစ်စေခြင်း သို့မဟုတ် Microsoft ၏ အားပေးမှုကို ဖော်ပြခြင်း မဖြစ်စေရန် သေချာစေရမည်။  
-တတိယပါတီ ကုန်အမှတ်တံဆိပ်များ သို့မဟုတ် လိုဂိုများကို အသုံးပြုရာတွင် ထိုတတိယပါတီများ၏ မူဝါဒများကို လိုက်နာရမည် ဖြစ်သည်။
+ဤပရောဂျက်တွင် ပရောဂျက်များ၊ ထုတ်ကုန်များ သို့မဟုတ် ဝန်ဆောင်မှုများအတွက် ကုန်အမှတ်တံဆိပ်များ သို့မဟုတ် လိုဂိုများ ပါဝင်နိုင်ပါသည်။ Microsoft ၏ ကုန်အမှတ်တံဆိပ်များ သို့မဟုတ် လိုဂိုများကို အသုံးပြုရန် သတ်မှတ်ချက်များနှင့် လိုက်နာရမည်ဖြစ်ပြီး၊
+[Microsoft ၏ ကုန်အမှတ်တံဆိပ်နှင့် အမှတ်တံဆိပ် လမ်းညွှန်ချက်များ](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) ကို လိုက်နာရပါမည်။
+ဤပရောဂျက်၏ ပြင်ဆင်ထားသည့် ဗားရှင်းများတွင် Microsoft ၏ ကုန်အမှတ်တံဆိပ်များ သို့မဟုတ် လိုဂိုများကို အသုံးပြုသည်မှာ မမှားယွင်းစေခြင်း သို့မဟုတ် Microsoft ၏ အားပေးမှုရှိကြောင်း သဘောတူမှု မဖြစ်စေရန် ဖြစ်ရမည်။
+တတိယပါတီ၏ ကုန်အမှတ်တံဆိပ်များ သို့မဟုတ် လိုဂိုများကို အသုံးပြုခြင်းသည် ထိုတတိယပါတီ၏ မူဝါဒများအောက်မှသာ ဖြစ်ပါသည်။
 
-**အနှုတ်ချ**  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်စနစ်ဖြစ်သည့် [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးပမ်းနေသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းသည် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံပါသည်။ မူလစာရွက်စာတမ်းကို မိမိဘာသာစကားဖြင့်သာ အတည်ပြုရမည့် အရင်းအမြစ်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် ပရော်ဖက်ရှင်နယ် လူ့ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုမှုကြောင့် ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မခံပါ။
+**အကြောင်းကြားချက်**  
+ဤစာတမ်းကို AI ဘာသာပြန်မှုဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးပမ်းနေသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မှားယွင်းမှုများ ပါဝင်နိုင်ကြောင်း ကျေးဇူးပြု၍ သိရှိထားပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မူလဘာသာဖြင့်သာ တရားဝင် အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ကျွမ်းကျင်သူ၏ ဘာသာပြန်မှုကို ဦးစားပေးအသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်မှု အသုံးပြုမှုကြောင့် ဖြစ်ပေါ်လာနိုင်သည့် နားမလည်မှုများ သို့မဟုတ် မှားယွင်းသော အဓိပ္ပာယ်ဖော်ပြချက်များအတွက် ကျွန်ုပ်တို့ တာဝန်မယူပါ။
