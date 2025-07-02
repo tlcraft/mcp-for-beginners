@@ -1,43 +1,43 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "36e46bfca83e3528afc6f66803efa75e",
-  "translation_date": "2025-05-17T17:03:26+00:00",
+  "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
+  "translation_date": "2025-07-02T08:07:31+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "da"
 }
 -->
-# MCP Udviklings Bedste Praksis
+# MCP Udviklings bedste praksis
 
 ## Oversigt
 
-Denne lektion fokuserer på avancerede bedste praksis for udvikling, test og implementering af MCP-servere og funktioner i produktionsmiljøer. Efterhånden som MCP-økosystemer vokser i kompleksitet og betydning, sikrer det at følge etablerede mønstre pålidelighed, vedligeholdelse og interoperabilitet. Denne lektion samler praktisk visdom opnået fra virkelige MCP-implementeringer for at vejlede dig i at skabe robuste, effektive servere med effektive ressourcer, anvisninger og værktøjer.
+Denne lektion fokuserer på avancerede bedste praksisser for udvikling, test og implementering af MCP-servere og funktioner i produktionsmiljøer. Efterhånden som MCP-økosystemer bliver mere komplekse og vigtige, sikrer overholdelse af etablerede mønstre pålidelighed, vedligeholdelse og interoperabilitet. Denne lektion samler praktisk erfaring fra virkelige MCP-implementeringer for at guide dig i at skabe robuste, effektive servere med effektive ressourcer, prompts og værktøjer.
 
 ## Læringsmål
 
-Ved afslutningen af denne lektion vil du kunne:
-- Anvende industriens bedste praksis i design af MCP-servere og funktioner
-- Oprette omfattende teststrategier for MCP-servere
-- Designe effektive, genanvendelige arbejdsmønstre for komplekse MCP-applikationer
-- Implementere korrekt fejlbehandling, logning og observabilitet i MCP-servere
+Når du har gennemført denne lektion, vil du kunne:
+- Anvende branchens bedste praksis i design af MCP-servere og funktioner
+- Udvikle omfattende teststrategier for MCP-servere
+- Designe effektive, genanvendelige workflow-mønstre til komplekse MCP-applikationer
+- Implementere korrekt fejlhåndtering, logging og observabilitet i MCP-servere
 - Optimere MCP-implementeringer for ydeevne, sikkerhed og vedligeholdelse
 
-## Yderligere Referencer
+## Yderligere referencer
 
-For den mest opdaterede information om MCP bedste praksis, henvis til:
-- [MCP Dokumentation](https://modelcontextprotocol.io/)
-- [MCP Specifikation](https://spec.modelcontextprotocol.io/)
+For den mest opdaterede information om MCP bedste praksis, se:
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## MCP Værktøjsudvikling Bedste Praksis
 
-### Arkitektoniske Principper
+### Arkitektoniske principper
 
 #### 1. Single Responsibility Principle
 
-Hver MCP-funktion bør have et klart, fokuseret formål. I stedet for at skabe monolitiske værktøjer, der forsøger at håndtere flere bekymringer, udvikl specialiserede værktøjer, der excellerer i specifikke opgaver.
+Hver MCP-funktion bør have et klart, fokuseret formål. I stedet for at skabe monolitiske værktøjer, der forsøger at håndtere flere opgaver, udvikl specialiserede værktøjer, der er fremragende til specifikke opgaver.
 
-**Godt Eksempel:**
+**Godt eksempel:**
 ```csharp
 // A focused tool that does one thing well
 public class WeatherForecastTool : ITool
@@ -95,7 +95,7 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-**Dårligt Eksempel:**
+**Dårligt eksempel:**
 ```csharp
 // A tool trying to do too many things
 public class WeatherToolSuite : ITool
@@ -179,9 +179,9 @@ public class CurrencyConversionTool implements Tool {
 }
 ```
 
-#### 3. Sammensatte Værktøjer
+#### 3. Komponerbare værktøjer
 
-Design værktøjer, der kan sammensættes sammen for at skabe mere komplekse arbejdsgange:
+Design værktøjer, der kan sammensættes for at skabe mere komplekse workflows:
 
 ```python
 # Python example showing composable tools
@@ -212,11 +212,11 @@ class DataVisualizationTool(Tool):
 # These tools can be used independently or as part of a workflow
 ```
 
-### Skema Design Bedste Praksis
+### Skemadesign bedste praksis
 
-Skemaet er kontrakten mellem modellen og dit værktøj. Veludformede skemaer fører til bedre værktøjsbrugervenlighed.
+Skemaet er kontrakten mellem modellen og dit værktøj. Veludformede skemaer fører til bedre brugervenlighed.
 
-#### 1. Klare Parameterbeskrivelser
+#### 1. Klare parameterbeskrivelser
 
 Inkluder altid beskrivende information for hver parameter:
 
@@ -257,7 +257,7 @@ public object GetSchema()
 
 #### 2. Valideringsbegrænsninger
 
-Inkluder valideringsbegrænsninger for at forhindre ugyldige indgange:
+Inkluder valideringsbegrænsninger for at forhindre ugyldige input:
 
 ```java
 Map<String, Object> getSchema() {
@@ -297,9 +297,9 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. Konsistente Returneringsstrukturer
+#### 3. Konsistente returstrukturer
 
-Oprethold konsistens i dine svarstrukturer for at gøre det lettere for modeller at fortolke resultater:
+Oprethold konsistens i dine responsstrukturer for at gøre det lettere for modeller at fortolke resultater:
 
 ```python
 async def execute_async(self, request):
@@ -338,13 +338,13 @@ def _format_item(self, item):
     }
 ```
 
-### Fejlbehandling
+### Fejlhåndtering
 
-Robust fejlbehandling er afgørende for MCP-værktøjer for at opretholde pålidelighed.
+Robust fejlhåndtering er afgørende for, at MCP-værktøjer kan opretholde pålidelighed.
 
-#### 1. Yndefuld Fejlbehandling
+#### 1. Elegant fejlhåndtering
 
-Håndter fejl på passende niveauer og giv informative meddelelser:
+Håndter fejl på passende niveauer og giv informative beskeder:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -386,7 +386,7 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. Strukturerede Fejlsvar
+#### 2. Strukturerede fejlrespons
 
 Returner struktureret fejlinformation, når det er muligt:
 
@@ -418,9 +418,9 @@ public ToolResponse execute(ToolRequest request) {
 }
 ```
 
-#### 3. Genforsøgslogik
+#### 3. Genforsøg-logik
 
-Implementer passende genforsøgslogik for forbigående fejl:
+Implementer passende genforsøg-logik for midlertidige fejl:
 
 ```python
 async def execute_async(self, request):
@@ -446,7 +446,7 @@ async def execute_async(self, request):
             raise ToolExecutionException(f"Operation failed: {str(e)}")
 ```
 
-### Ydeevneoptimering
+### Ydelsesoptimering
 
 #### 1. Caching
 
@@ -496,9 +496,9 @@ public class CachedDataTool : IMcpTool
 }
 ```
 
-#### 2. Asynkron Behandling
+#### 2. Asynkron behandling
 
-Brug asynkrone programmeringsmønstre for I/O-bundne operationer:
+Brug asynkrone programmeringsmønstre til I/O-bundne operationer:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -547,7 +547,7 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. Ressourcebegrænsning
+#### 3. Ressourcestyring
 
 Implementer ressourcebegrænsning for at forhindre overbelastning:
 
@@ -611,9 +611,9 @@ class TokenBucketRateLimiter:
         self.last_refill = now
 ```
 
-### Sikkerhed Bedste Praksis
+### Sikkerhed bedste praksis
 
-#### 1. Input Validering
+#### 1. Inputvalidering
 
 Valider altid inputparametre grundigt:
 
@@ -656,7 +656,7 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. Autorisationskontroller
+#### 2. Autorisationskontrol
 
 Implementer korrekte autorisationskontroller:
 
@@ -682,7 +682,7 @@ public ToolResponse execute(ToolRequest request) {
 }
 ```
 
-#### 3. Håndtering af Følsomme Data
+#### 3. Håndtering af følsomme data
 
 Håndter følsomme data omhyggeligt:
 
@@ -733,15 +733,15 @@ class SecureDataTool(Tool):
         return redacted
 ```
 
-## Test Bedste Praksis for MCP Værktøjer
+## Test bedste praksis for MCP-værktøjer
 
-Omfattende test sikrer, at MCP-værktøjer fungerer korrekt, håndterer kanttilfælde og integrerer korrekt med resten af systemet.
+Omfattende test sikrer, at MCP-værktøjer fungerer korrekt, håndterer kanttilfælde og integreres ordentligt med resten af systemet.
 
 ### Enhedstest
 
-#### 1. Test Hvert Værktøj i Isolation
+#### 1. Test hvert værktøj isoleret
 
-Opret fokuserede tests for hver værktøjs funktionalitet:
+Lav fokuserede tests for hvert værktøjs funktionalitet:
 
 ```csharp
 [Fact]
@@ -846,9 +846,9 @@ public void testSchemaValidation() {
 }
 ```
 
-#### 3. Fejlbehandlingstests
+#### 3. Fejlhåndteringstest
 
-Opret specifikke tests for fejltilstande:
+Lav specifikke tests for fejlsituationer:
 
 ```python
 @pytest.mark.asyncio
@@ -906,7 +906,7 @@ async def test_api_tool_handles_rate_limiting():
 
 ### Integrationstest
 
-#### 1. Værktøjskæde Test
+#### 1. Værktøjskædetest
 
 Test værktøjer, der arbejder sammen i forventede kombinationer:
 
@@ -947,7 +947,7 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 }
 ```
 
-#### 2. MCP Server Test
+#### 2. MCP-servertest
 
 Test MCP-serveren med fuld værktøjsregistrering og udførelse:
 
@@ -1015,9 +1015,9 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. End-to-End Test
+#### 3. End-to-end-test
 
-Test komplette arbejdsgange fra modelprompt til værktøjsudførelse:
+Test komplette workflows fra modelprompt til værktøjsudførelse:
 
 ```python
 @pytest.mark.asyncio
@@ -1072,7 +1072,7 @@ async def test_model_interaction_with_tool():
         assert response.tool_calls[0].tool_name == "weatherForecast"
 ```
 
-### Ydeevne Test
+### Ydelsestest
 
 #### 1. Belastningstest
 
@@ -1164,9 +1164,9 @@ public void testServerUnderStress() {
 }
 ```
 
-#### 3. Overvågning og Profilering
+#### 3. Overvågning og profilering
 
-Opsæt overvågning for langsigtet ydeevneanalyse:
+Opsæt overvågning til langtidsholdbar ydelsesanalyse:
 
 ```python
 # Configure monitoring for an MCP server
@@ -1208,13 +1208,13 @@ def configure_monitoring(server):
     return server
 ```
 
-## MCP Arbejdsgang Design Mønstre
+## MCP Workflow Designmønstre
 
-Veludformede MCP-arbejdsgange forbedrer effektivitet, pålidelighed og vedligeholdelse. Her er nøglemønstre at følge:
+Veludformede MCP-workflows forbedrer effektivitet, pålidelighed og vedligeholdelse. Her er nøglemønstre at følge:
 
-### 1. Kæde af Værktøjer Mønster
+### 1. Kæde af værktøjer-mønster
 
-Forbind flere værktøjer i en sekvens, hvor hvert værktøjs output bliver input for det næste:
+Forbind flere værktøjer i en sekvens, hvor output fra et værktøj bliver input til det næste:
 
 ```python
 # Python Chain of Tools implementation
@@ -1253,9 +1253,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. Dispatcher Mønster
+### 2. Dispatcher-mønster
 
-Brug et centralt værktøj, der dispatcher til specialiserede værktøjer baseret på input:
+Brug et centralt værktøj, der sender videre til specialiserede værktøjer baseret på input:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1335,9 +1335,9 @@ public class ContentDispatcherTool : IMcpTool
 }
 ```
 
-### 3. Parallel Behandling Mønster
+### 3. Parallel behandlingsmønster
 
-Udfør flere værktøjer samtidigt for effektivitet:
+Kør flere værktøjer samtidigt for effektivitet:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1403,9 +1403,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. Fejlgenoprettelses Mønster
+### 4. Fejlgendannelsesmønster
 
-Implementer yndefulde tilbagefald for værktøjsfejl:
+Implementer elegante fallback-mekanismer ved værktøjsfejl:
 
 ```python
 class ResilientWorkflow:
@@ -1459,9 +1459,9 @@ async def get_weather(workflow, location):
     )
 ```
 
-### 5. Arbejdsgang Sammensætning Mønster
+### 5. Workflow-kompositionsmønster
 
-Byg komplekse arbejdsgange ved at sammensætte enklere:
+Byg komplekse workflows ved at sammensætte enklere:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1508,37 +1508,37 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# Testning af MCP Servere: Bedste Praksis og Top Tips
+# Test af MCP-servere: Bedste praksis og top tips
 
 ## Oversigt
 
-Testning er en kritisk aspekt af udviklingen af pålidelige, høj-kvalitets MCP-servere. Denne guide giver omfattende bedste praksis og tips til testning af dine MCP-servere gennem udviklingslivscyklussen, fra enhedstests til integrationstests og end-to-end validering.
+Testning er en kritisk del af udviklingen af pålidelige, høj-kvalitets MCP-servere. Denne guide giver omfattende bedste praksisser og tips til test af dine MCP-servere gennem hele udviklingscyklussen, fra enhedstest til integrationstest og end-to-end validering.
 
-## Hvorfor Testning Er Vigtig for MCP Servere
+## Hvorfor testning er vigtigt for MCP-servere
 
-MCP-servere fungerer som kritisk middleware mellem AI-modeller og klientapplikationer. Grundig testning sikrer:
+MCP-servere fungerer som afgørende middleware mellem AI-modeller og klientapplikationer. Grundig test sikrer:
 
 - Pålidelighed i produktionsmiljøer
-- Nøjagtig håndtering af forespørgsler og svar
+- Korrekt håndtering af forespørgsler og svar
 - Korrekt implementering af MCP-specifikationer
-- Modstandsdygtighed mod fejl og kanttilfælde
+- Robusthed mod fejl og kanttilfælde
 - Konsistent ydeevne under forskellige belastninger
 
-## Enhedstest for MCP Servere
+## Enhedstest for MCP-servere
 
-### Enhedstest (Fundament)
+### Enhedstest (grundlag)
 
-Enhedstests verificerer individuelle komponenter af din MCP-server i isolation.
+Enhedstests verificerer individuelle komponenter i din MCP-server isoleret.
 
-#### Hvad Skal Testes
+#### Hvad skal testes
 
-1. **Ressource Håndterere**: Test hver ressource håndterers logik uafhængigt
-2. **Værktøjsimplementeringer**: Verificer værktøjsadfærd med forskellige input
-3. **Prompt Skabeloner**: Sikre at prompt skabeloner render korrekt
-4. **Skemavalidering**: Test parameter valideringslogik
-5. **Fejlbehandling**: Verificer fejlsvar for ugyldige input
+1. **Resource Handlers**: Test hver resource handlers logik uafhængigt
+2. **Tool Implementations**: Verificer værktøjsadfærd med forskellige input
+3. **Prompt Templates**: Sikr at promptskabeloner gengives korrekt
+4. **Schema Validation**: Test parameter-valideringslogik
+5. **Error Handling**: Verificer fejlresponser ved ugyldige input
 
-#### Bedste Praksis for Enhedstest
+#### Bedste praksis for enhedstest
 
 ```csharp
 // Example unit test for a calculator tool in C#
@@ -1582,19 +1582,19 @@ def test_calculator_tool_add():
     assert result["value"] == 12
 ```
 
-### Integrationstest (Mellem Lag)
+### Integrationstest (mellemlag)
 
-Integrationstests verificerer interaktioner mellem komponenter af din MCP-server.
+Integrationstests verificerer interaktioner mellem komponenter i din MCP-server.
 
-#### Hvad Skal Testes
+#### Hvad skal testes
 
-1. **Server Initialisering**: Test server opstart med forskellige konfigurationer
-2. **Rute Registrering**: Verificer at alle endepunkter er korrekt registreret
-3. **Forespørgsel Behandling**: Test hele forespørgsel-svar cyklus
-4. **Fejl Udbredelse**: Sikre at fejl håndteres korrekt på tværs af komponenter
-5. **Godkendelse & Autorisation**: Test sikkerhedsmekanismer
+1. **Server Initialization**: Test serveropstart med forskellige konfigurationer
+2. **Route Registration**: Verificer at alle endpoints er korrekt registreret
+3. **Request Processing**: Test hele forespørgsels- og svarcyklussen
+4. **Error Propagation**: Sikr korrekt fejlhåndtering på tværs af komponenter
+5. **Authentication & Authorization**: Test sikkerhedsmekanismer
 
-#### Bedste Praksis for Integrationstest
+#### Bedste praksis for integrationstest
 
 ```csharp
 // Example integration test for MCP server in C#
@@ -1630,19 +1630,19 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 }
 ```
 
-### End-to-End Test (Top Lag)
+### End-to-end-test (toplag)
 
-End-to-end tests verificerer den komplette systemadfærd fra klient til server.
+End-to-end-tests verificerer hele systemets adfærd fra klient til server.
 
-#### Hvad Skal Testes
+#### Hvad skal testes
 
-1. **Klient-Server Kommunikation**: Test komplette forespørgsel-svar cyklusser
-2. **Ægte Klient SDK'er**: Test med faktiske klientimplementeringer
-3. **Ydeevne Under Belastning**: Verificer adfærd med flere samtidige forespørgsler
-4. **Fejl Genoprettelse**: Test systemets genoprettelse fra fejl
-5. **Langvarige Operationer**: Verificer håndtering af streaming og lange operationer
+1. **Client-Server Communication**: Test komplette forespørgsels- og svarcyklusser
+2. **Real Client SDKs**: Test med faktiske klientimplementeringer
+3. **Performance Under Load**: Verificer adfærd ved flere samtidige forespørgsler
+4. **Error Recovery**: Test systemets genopretning ved fejl
+5. **Long-Running Operations**: Verificer håndtering af streaming og langvarige operationer
 
-#### Bedste Praksis for E2E Testning
+#### Bedste praksis for E2E-test
 
 ```typescript
 // Example E2E test with a client in TypeScript
@@ -1674,18 +1674,18 @@ describe('MCP Server E2E Tests', () => {
 });
 ```
 
-## Mocking Strategier for MCP Testning
+## Mocking-strategier til MCP-test
 
-Mocking er essentielt for at isolere komponenter under testning.
+Mocking er essentielt for at isolere komponenter under test.
 
-### Komponenter at Mocke
+### Komponenter der skal mockes
 
-1. **Eksterne AI Modeller**: Mock modelresponser for forudsigelig testning
-2. **Eksterne Tjenester**: Mock API-afhængigheder (databaser, tredjepartstjenester)
-3. **Godkendelsestjenester**: Mock identitetsudbydere
-4. **Ressource Udbydere**: Mock dyre ressource håndterere
+1. **Eksterne AI-modeller**: Mock modelresponser for forudsigelig testning
+2. **Eksterne tjenester**: Mock API-afhængigheder (databaser, tredjepartstjenester)
+3. **Autentifikationstjenester**: Mock identitetsudbydere
+4. **Resource Providers**: Mock dyre resource handlers
 
-### Eksempel: Mocking af et AI Model Respons
+### Eksempel: Mocking af AI-modelsvar
 
 ```csharp
 // C# example with Moq
@@ -1717,26 +1717,26 @@ def test_with_mock_model(mock_model):
     # Continue with test
 ```
 
-## Ydeevne Testning
+## Ydelsestest
 
-Ydeevne testning er afgørende for produktions MCP-servere.
+Ydelsestest er afgørende for produktions-MCP-servere.
 
-### Hvad Skal Måles
+### Hvad skal måles
 
-1. **Latens**: Responstid for forespørgsler
-2. **Gennemstrømning**: Forespørgsler håndteret pr. sekund
-3. **Ressourceudnyttelse**: CPU, hukommelse, netværksbrug
-4. **Samtidig Håndtering**: Adfærd under parallelle forespørgsler
-5. **Skaleringskarakteristika**: Ydeevne som belastningen øges
+1. **Latency**: Responstid for forespørgsler
+2. **Throughput**: Antal håndterede forespørgsler pr. sekund
+3. **Resource Utilization**: CPU-, hukommelses- og netværksforbrug
+4. **Concurrency Handling**: Adfærd ved parallelle forespørgsler
+5. **Scaling Characteristics**: Ydeevne ved stigende belastning
 
-### Værktøjer til Ydeevne Testning
+### Værktøjer til ydelsestest
 
 - **k6**: Open-source belastningstestværktøj
-- **JMeter**: Omfattende ydeevne testning
-- **Locust**: Python-baseret belastningstestning
-- **Azure Load Testing**: Cloud-baseret ydeevne testning
+- **JMeter**: Omfattende ydelsestest
+- **Locust**: Python-baseret belastningstest
+- **Azure Load Testing**: Cloud-baseret ydelsestest
 
-### Eksempel: Grundlæggende Belastningstest med k6
+### Eksempel: Grundlæggende belastningstest med k6
 
 ```javascript
 // k6 script for load testing MCP server
@@ -1776,18 +1776,18 @@ export default function () {
 }
 ```
 
-## Test Automatisering for MCP Servere
+## Testautomatisering for MCP-servere
 
-Automatisering af dine tests sikrer konsistent kvalitet og hurtigere feedback loops.
+Automatisering af dine tests sikrer konsekvent kvalitet og hurtigere feedback.
 
-### CI/CD Integration
+### CI/CD-integration
 
-1. **Kør Enhedstests på Pull Requests**: Sikre at kodeændringer ikke bryder eksisterende funktionalitet
-2. **Integrationstests i Staging**: Kør integrationstests i præ-produktionsmiljøer
-3. **Ydeevne Baselines**: Vedligehold ydeevne benchmarks for at fange regressioner
+1. **Kør enhedstests ved pull requests**: Sikr at kodeændringer ikke bryder eksisterende funktionalitet
+2. **Integrationstests i staging**: Kør integrationstests i pre-produktionsmiljøer
+3. **Ydelsesbaseline**: Oprethold ydelsesbenchmark for at opdage regressioner
 4. **Sikkerhedsscanninger**: Automatiser sikkerhedstest som en del af pipeline
 
-### Eksempel CI Pipeline (GitHub Actions)
+### Eksempel på CI-pipeline (GitHub Actions)
 
 ```yaml
 name: MCP Server Tests
@@ -1826,19 +1826,19 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## Testning for Overensstemmelse med MCP Specifikation
+## Test for overholdelse af MCP-specifikation
 
 Verificer at din server korrekt implementerer MCP-specifikationen.
 
-### Nøgle Overensstemmelsesområder
+### Centrale overholdelsesområder
 
-1. **API Endepunkter**: Test krævede endepunkter (/resources, /tools, etc.)
-2. **Forespørgsel/Svar Format**: Validér skemaoverensstemmelse
-3. **Fejlkoder**: Verificer korrekte statuskoder for forskellige scenarier
-4. **Indholdstyper**: Test håndtering af forskellige indholdstyper
-5. **Godkendelses Flow**: Verificer spec-kompatible godkendelsesmekanismer
+1. **API Endpoints**: Test nødvendige endpoints (/resources, /tools osv.)
+2. **Request/Response Format**: Valider skemaoverholdelse
+3. **Error Codes**: Verificer korrekte statuskoder for forskellige scenarier
+4. **Content Types**: Test håndtering af forskellige indholdstyper
+5. **Authentication Flow**: Verificer spec-kompatible autentifikationsmekanismer
 
-### Overensstemmelse Test Suite
+### Overholdelsestestpakke
 
 ```csharp
 [Fact]
@@ -1865,63 +1865,62 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 }
 ```
 
-## Top 10 Tips til Effektiv MCP Server Testning
+## Top 10 tips til effektiv MCP-servertest
 
-1. **Test Værktøjsdefinitioner Separat**: Verificer skemadefinitioner uafhængigt af værktøjslogik
-2. **Brug Parameteriserede Tests**: Test værktøjer med en række input, inklusive kanttilfælde
-3. **Kontroller Fejlsvar**: Verificer korrekt fejlbehandling for alle mulige fejlbetingelser
-4. **Test Autorisationslogik**: Sikre korrekt adgangskontrol for forskellige brugerroller
-5. **Overvåg Testdækning**: Sigt efter høj dækning af kritisk vejkode
-6. **Test Streaming Svar**: Verificer korrekt håndtering af streaming indhold
-7. **Simulér Netværksproblemer**: Test adfærd under dårlige netværksforhold
-8. **Test Ressourcegrænser**: Verificer adfærd ved nåelse af kvoter eller hastighedsgrænser
-9. **Automatiser Regressionstests**: Byg en suite, der kører på hver kodeændring
-10. **Dokumentér Test Cases**: Vedligehold klar dokumentation af testscenarier
+1. **Test værktøjsdefinitioner separat**: Verificer skemadefinitioner uafhængigt af værktøjslogik
+2. **Brug parameteriserede tests**: Test værktøjer med forskellige input, inklusive kanttilfælde
+3. **Tjek fejlresponser**: Verificer korrekt fejlhåndtering for alle mulige fejltilstande
+4. **Test autorisationslogik**: Sikr korrekt adgangskontrol for forskellige brugerroller
+5. **Overvåg testdækning**: Sigter efter høj dækning af kritisk kode
+6. **Test streamingresponser**: Verificer korrekt håndtering af streamingindhold
+7. **Simuler netværksproblemer**: Test adfærd under dårlige netværksforhold
+8. **Test ressourcegrænser**: Verificer adfærd ved opnåelse af kvoter eller rate limits
+9. **Automatiser regressionstest**: Byg en suite, der kører ved hver kodeændring
+10. **Dokumenter testcases**: Vedligehold klar dokumentation af testscenarier
 
-## Almindelige Test Pitfalls
+## Almindelige faldgruber ved test
 
-- **Over-afhængighed af glad vej testning**: Sørg for at teste fejltilfælde grundigt
-- **Ignorering af ydeevne testning**: Identificer flaskehalse, før de påvirker produktionen
-- **Testning i isolation kun**: Kombiner enhed, integration og E2E tests
-- **Ufuldstændig API-dækning**: Sikre at alle endepunkter og funktioner testes
-- **Inkonsekvente testmiljøer**: Brug containere for at sikre konsistente testmiljøer
+- **Overdreven fokus på "happy path"**: Sørg for at teste fejlscenarier grundigt
+- **Ignorering af ydelsestest**: Identificer flaskehalse før de påvirker produktion
+- **Kun isolerede tests**: Kombiner enhedstest, integrationstest og E2E-tests
+- **Ufuldstændig API-dækning**: Sikr at alle endpoints og funktioner testes
+- **Uensartede testmiljøer**: Brug containere for at sikre konsistente testmiljøer
 
 ## Konklusion
 
-En omfattende teststrategi er essentiel for udvikling af pålidelige, høj-kvalitets MCP-servere. Ved at implementere de bedste praksis og tips, der er skitseret i denne guide, kan du sikre at dine MCP-implementeringer opfylder de højeste standarder for kvalitet, pålidelighed og ydeevne.
+En omfattende teststrategi er essentiel for at udvikle pålidelige, høj-kvalitets MCP-servere. Ved at implementere de bedste praksisser og tips i denne guide kan du sikre, at dine MCP-implementeringer lever op til de højeste standarder for kvalitet, pålidelighed og ydeevne.
 
-## Vigtige Punkter
+## Vigtige pointer
 
-1. **Værktøjsdesign**: Følg single responsibility principle, brug dependency injection, og design for sammensætning
-2. **Skemadesign**: Opret klare, veldokumenterede skemaer med korrekte valideringsbegrænsninger
-3. **Fejlbehandling**: Implementer yndefuld fejlbehandling, strukturerede fejlsvar, og genforsøgslogik
-4. **Ydeevne**: Brug caching, asynkron behandling, og ressourcebegrænsning
-5. **Sikkerhed**: Anvend grundig input validering, autorisationskontroller, og håndtering af følsomme data
-6. **Testning**: Opret omfattende enhed, integration, og end-to-end tests
-7. **Arbejdsgangsmønstre**: Anvend etablerede mønstre som kæder, dispatchers, og parallel behandling
+1. **Værktøjsdesign**: Følg single responsibility principle, brug dependency injection, og design for komposabilitet
+2. **Skemadesign**: Skab klare, veldokumenterede skemaer med korrekte valideringsbegrænsninger
+3. **Fejlhåndtering**: Implementer elegant fejlhåndtering, strukturerede fejlresponser og genforsøg-logik
+4. **Ydelse**: Brug caching, asynkron behandling og ressourcebegrænsning
+5. **Sikkerhed**: Anvend grundig inputvalidering, autorisationskontrol og håndtering af følsomme data
+6. **Test**: Udarbejd omfattende enhedstest, integrationstest og end-to-end-tests
+7. **Workflow-mønstre**: Anvend etablerede mønstre som kæder, dispatchere og parallel behandling
 
 ## Øvelse
 
-Design et MCP-værktøj og arbejdsgang for et dokumentbehandlingssystem, der:
+Design et MCP-værktøj og workflow til et dokumentbehandlingssystem, der:
 
 1. Accepterer dokumenter i flere formater (PDF, DOCX, TXT)
-2. Udtrækker tekst og nøgleinformation fra dokumenterne
+2. Ekstraherer tekst og nøgleinformation fra dokumenterne
 3. Klassificerer dokumenter efter type og indhold
-4. Genererer et resume af hvert dokument
+4. Genererer et sammendrag af hvert dokument
 
-Implementer værktøjsskemaer, fejlbehandling, og et arbejdsgangsmønster der passer bedst til dette scenario. Overvej hvordan du ville teste denne implementering.
+Implementer værktøjsskemaerne, fejlhåndtering og et workflow-mønster, der passer bedst til denne situation. Overvej, hvordan du vil teste denne implementering.
 
----
-## Næste Skridt
+## Ressourcer
 
-Tillykke med at have gennemført MCP-læseplanen! For at fortsætte din rejse:
+1. Deltag i MCP-fællesskabet på [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) for at holde dig opdateret om de seneste udviklinger  
+2. Bidrag til open-source [MCP-projekter](https://github.com/modelcontextprotocol)  
+3. Anvend MCP-principper i din egen organisations AI-initiativer  
+4. Udforsk specialiserede MCP-implementeringer til din branche  
+5. Overvej at tage avancerede kurser om specifikke MCP-emner, såsom multimodal integration eller enterprise applikationsintegration  
+6. Eksperimenter med at bygge dine egne MCP-værktøjer og workflows ved hjælp af principperne lært gennem [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
 
-1. Deltag i MCP-fællesskabet for at holde dig opdateret på de seneste udviklinger
-2. Bidrag til open-source MCP-projekter
-3. Anvend MCP-principper i din egen organisations AI-initiativer
-4. Udforsk specialiserede MCP-implementeringer for din industri.
-5. Overvej at tage avancerede kurser om specifikke MCP-emner, såsom multi-modal integration eller enterprise applikationsintegration.
-6. Eksperimentér med at bygge dine egne MCP-værktøjer og arbejdsgange ved hjælp af de principper, der er lært i denne læseplan.
+Næste: Bedste praksis [case studies](../09-CaseStudy/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Mens vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiske oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

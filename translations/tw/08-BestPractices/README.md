@@ -1,30 +1,30 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "36e46bfca83e3528afc6f66803efa75e",
-  "translation_date": "2025-05-17T16:47:55+00:00",
+  "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
+  "translation_date": "2025-07-02T07:54:31+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "tw"
 }
 -->
 # MCP 開發最佳實踐
 
-## 概述
+## 概覽
 
-本課程專注於在生產環境中開發、測試和部署 MCP 服務器和功能的高級最佳實踐。隨著 MCP 生態系統的複雜性和重要性增加，遵循既定模式可確保可靠性、可維護性和互操作性。本課程匯集了來自現實世界 MCP 實施的實用智慧，指導您創建具有有效資源、提示和工具的強大、高效服務器。
+本課程聚焦於在生產環境中開發、測試及部署 MCP 伺服器與功能的進階最佳實踐。隨著 MCP 生態系統的日益複雜與重要，遵循既定模式能確保系統的可靠性、可維護性及互通性。本課程彙整了來自實際 MCP 實作的寶貴經驗，指引您打造穩健、高效的伺服器，並善用資源、提示與工具。
 
 ## 學習目標
 
 完成本課程後，您將能夠：
-- 在 MCP 服務器和功能設計中應用行業最佳實踐
-- 為 MCP 服務器創建全面的測試策略
-- 設計高效、可重用的複雜 MCP 應用程序工作流程模式
-- 在 MCP 服務器中實施正確的錯誤處理、日誌記錄和可觀察性
-- 優化 MCP 實施以提高性能、安全性和可維護性
+- 在 MCP 伺服器與功能設計中應用業界最佳實踐
+- 制定完整的 MCP 伺服器測試策略
+- 為複雜 MCP 應用設計高效且可重用的工作流程模式
+- 實作適當的錯誤處理、日誌記錄與可觀察性
+- 針對效能、安全性與可維護性優化 MCP 實作
 
-## 附加參考資料
+## 參考資源
 
-有關 MCP 最佳實踐的最新信息，請參考：
+欲獲取 MCP 最佳實踐的最新資訊，請參考：
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
@@ -35,9 +35,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### 1. 單一職責原則
 
-每個 MCP 功能應該有一個明確、集中的目的。與其創建嘗試處理多個問題的單一工具，不如開發在特定任務上表現出色的專用工具。
+每個 MCP 功能應有明確且專注的目的。避免打造試圖處理多重關注點的巨型工具，應開發專精於特定任務的專用工具。
 
-**好的例子：**
+**良好範例：**  
 ```csharp
 // A focused tool that does one thing well
 public class WeatherForecastTool : ITool
@@ -95,7 +95,7 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-**不好的例子：**
+**不佳範例：**  
 ```csharp
 // A tool trying to do too many things
 public class WeatherToolSuite : ITool
@@ -153,9 +153,9 @@ public class WeatherToolSuite : ITool
 }
 ```
 
-#### 2. 依賴注入和可測試性
+#### 2. 依賴注入與可測試性
 
-設計工具以通過構造函數注入接收其依賴項，使其可測試和可配置：
+設計工具時，透過建構子注入依賴，使其具備可測試性與可配置性：
 
 ```java
 // Java example with dependency injection
@@ -181,7 +181,7 @@ public class CurrencyConversionTool implements Tool {
 
 #### 3. 可組合工具
 
-設計可以組合在一起以創建更複雜工作流程的工具：
+設計可相互組合的工具，以構建更複雜的工作流程：
 
 ```python
 # Python example showing composable tools
@@ -212,13 +212,13 @@ class DataVisualizationTool(Tool):
 # These tools can be used independently or as part of a workflow
 ```
 
-### 模式設計最佳實踐
+### 架構設計最佳實踐
 
-模式是模型和您的工具之間的契約。設計良好的模式可提高工具的可用性。
+Schema 是模型與工具間的契約。良好設計的 schema 能提升工具的易用性。
 
 #### 1. 清晰的參數描述
 
-始終為每個參數包含描述信息：
+務必為每個參數提供描述性資訊：
 
 ```csharp
 public object GetSchema()
@@ -255,9 +255,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. 驗證約束
+#### 2. 驗證限制
 
-包含驗證約束以防止無效輸入：
+加入驗證限制以避免無效輸入：
 
 ```java
 Map<String, Object> getSchema() {
@@ -297,9 +297,9 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. 一致的返回結構
+#### 3. 一致的回傳結構
 
-保持響應結構的一致性，使模型更容易解釋結果：
+保持回應結構的一致性，方便模型解析結果：
 
 ```python
 async def execute_async(self, request):
@@ -340,11 +340,11 @@ def _format_item(self, item):
 
 ### 錯誤處理
 
-強大的錯誤處理對於 MCP 工具維持可靠性至關重要。
+健全的錯誤處理對 MCP 工具維持可靠性至關重要。
 
 #### 1. 優雅的錯誤處理
 
-在適當的級別處理錯誤並提供信息性消息：
+在適當層級處理錯誤並提供具資訊性的訊息：
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -386,9 +386,9 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. 結構化的錯誤響應
+#### 2. 結構化錯誤回應
 
-盡可能返回結構化的錯誤信息：
+盡可能回傳結構化的錯誤資訊：
 
 ```java
 @Override
@@ -418,9 +418,9 @@ public ToolResponse execute(ToolRequest request) {
 }
 ```
 
-#### 3. 重試邏輯
+#### 3. 重試機制
 
-對於暫時性故障實施適當的重試邏輯：
+針對暫時性失敗實作適當的重試邏輯：
 
 ```python
 async def execute_async(self, request):
@@ -446,11 +446,11 @@ async def execute_async(self, request):
             raise ToolExecutionException(f"Operation failed: {str(e)}")
 ```
 
-### 性能優化
+### 效能優化
 
-#### 1. 緩存
+#### 1. 快取
 
-對於耗費資源的操作實施緩存：
+對昂貴的操作實作快取：
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -496,9 +496,9 @@ public class CachedDataTool : IMcpTool
 }
 ```
 
-#### 2. 異步處理
+#### 2. 非同步處理
 
-對於 I/O 綁定操作使用異步編程模式：
+對 I/O 密集型操作使用非同步程式設計模式：
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -547,9 +547,9 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. 資源限制
+#### 3. 資源節流
 
-實施資源限制以防止過載：
+實作資源節流以防止過載：
 
 ```python
 class ThrottledApiTool(Tool):
@@ -615,7 +615,7 @@ class TokenBucketRateLimiter:
 
 #### 1. 輸入驗證
 
-始終徹底驗證輸入參數：
+務必全面驗證輸入參數：
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -658,7 +658,7 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. 授權檢查
 
-實施正確的授權檢查：
+實作適當的授權檢查：
 
 ```java
 @Override
@@ -682,9 +682,9 @@ public ToolResponse execute(ToolRequest request) {
 }
 ```
 
-#### 3. 敏感數據處理
+#### 3. 敏感資料處理
 
-小心處理敏感數據：
+謹慎處理敏感資料：
 
 ```python
 class SecureDataTool(Tool):
@@ -735,13 +735,13 @@ class SecureDataTool(Tool):
 
 ## MCP 工具測試最佳實踐
 
-全面的測試可確保 MCP 工具正常運行，處理邊緣情況，並與系統的其他部分正確集成。
+完整的測試確保 MCP 工具功能正確、能處理邊界情況，並與系統其他部分良好整合。
 
 ### 單元測試
 
-#### 1. 獨立測試每個工具
+#### 1. 單獨測試每個工具
 
-為每個工具的功能創建專注的測試：
+針對每個工具功能撰寫專注的測試：
 
 ```csharp
 [Fact]
@@ -801,9 +801,9 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 }
 ```
 
-#### 2. 模式驗證測試
+#### 2. Schema 驗證測試
 
-測試模式是否有效並正確執行約束：
+測試 schema 是否有效並正確執行限制：
 
 ```java
 @Test
@@ -848,7 +848,7 @@ public void testSchemaValidation() {
 
 #### 3. 錯誤處理測試
 
-為錯誤條件創建特定測試：
+針對錯誤情況撰寫特定測試：
 
 ```python
 @pytest.mark.asyncio
@@ -904,11 +904,11 @@ async def test_api_tool_handles_rate_limiting():
         assert "try again" in error_msg
 ```
 
-### 集成測試
+### 整合測試
 
 #### 1. 工具鏈測試
 
-測試工具在預期組合中的協同工作：
+測試工具在預期組合中的協同運作：
 
 ```csharp
 [Fact]
@@ -947,9 +947,9 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 }
 ```
 
-#### 2. MCP 服務器測試
+#### 2. MCP 伺服器測試
 
-測試 MCP 服務器的完整工具註冊和執行：
+測試 MCP 伺服器的完整工具註冊與執行：
 
 ```java
 @SpringBootTest
@@ -1015,9 +1015,9 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. 端到端測試
+#### 3. 端對端測試
 
-從模型提示到工具執行的完整工作流程測試：
+測試從模型提示到工具執行的完整工作流程：
 
 ```python
 @pytest.mark.asyncio
@@ -1072,11 +1072,11 @@ async def test_model_interaction_with_tool():
         assert response.tool_calls[0].tool_name == "weatherForecast"
 ```
 
-### 性能測試
+### 效能測試
 
 #### 1. 負載測試
 
-測試您的 MCP 服務器可以處理多少併發請求：
+測試 MCP 伺服器可處理的同時請求數：
 
 ```csharp
 [Fact]
@@ -1111,7 +1111,7 @@ public async Task McpServer_HandlesHighConcurrency()
 
 #### 2. 壓力測試
 
-在極端負載下測試系統：
+測試系統在極端負載下的表現：
 
 ```java
 @Test
@@ -1164,9 +1164,9 @@ public void testServerUnderStress() {
 }
 ```
 
-#### 3. 監控和分析
+#### 3. 監控與剖析
 
-設置長期性能分析的監控：
+設置監控以進行長期效能分析：
 
 ```python
 # Configure monitoring for an MCP server
@@ -1210,11 +1210,11 @@ def configure_monitoring(server):
 
 ## MCP 工作流程設計模式
 
-設計良好的 MCP 工作流程可提高效率、可靠性和可維護性。以下是關鍵模式：
+良好設計的 MCP 工作流程能提升效率、可靠性與可維護性。以下為主要設計模式：
 
 ### 1. 工具鏈模式
 
-將多個工具連接在一起，每個工具的輸出成為下一個工具的輸入：
+將多個工具串聯，讓前一工具的輸出成為下一工具的輸入：
 
 ```python
 # Python Chain of Tools implementation
@@ -1253,9 +1253,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. 調度模式
+### 2. 調度器模式
 
-使用中央工具根據輸入分派到專用工具：
+使用中央工具根據輸入調度至專門工具：
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1335,9 +1335,9 @@ public class ContentDispatcherTool : IMcpTool
 }
 ```
 
-### 3. 並行處理模式
+### 3. 平行處理模式
 
-同時執行多個工具以提高效率：
+同時執行多個工具以提升效率：
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1403,9 +1403,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. 錯誤恢復模式
+### 4. 錯誤復原模式
 
-為工具故障實施優雅的回退：
+為工具失敗實作優雅的回退機制：
 
 ```python
 class ResilientWorkflow:
@@ -1461,7 +1461,7 @@ async def get_weather(workflow, location):
 
 ### 5. 工作流程組合模式
 
-通過組合簡單的工作流程來構建複雜的工作流程：
+透過組合較簡單的工作流程，建構複雜流程：
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1508,35 +1508,35 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# 測試 MCP 服務器：最佳實踐和頂尖技巧
+# 測試 MCP 伺服器：最佳實踐與頂尖技巧
 
-## 概述
+## 概覽
 
-測試是開發可靠、高質量 MCP 服務器的重要方面。本指南提供了全面的最佳實踐和技巧，幫助您在開發生命周期中測試 MCP 服務器，從單元測試到集成測試和端到端驗證。
+測試是開發可靠且高品質 MCP 伺服器的重要環節。本指南提供從單元測試到整合測試及端對端驗證的全面最佳實踐與技巧。
 
-## 為什麼 MCP 服務器測試很重要
+## 為何測試對 MCP 伺服器至關重要
 
-MCP 服務器作為 AI 模型和客戶端應用程序之間的重要中介。徹底的測試確保：
+MCP 伺服器作為 AI 模型與客戶端應用間的關鍵中介，徹底測試能確保：
 
 - 生產環境中的可靠性
-- 請求和響應的準確處理
-- 正確實施 MCP 規範
-- 對故障和邊緣情況的抵抗力
-- 在各種負載下的穩定性能
+- 請求與回應的正確處理
+- MCP 規範的正確實作
+- 對失敗與邊界情況的韌性
+- 在各種負載下的穩定效能
 
-## MCP 服務器的單元測試
+## MCP 伺服器的單元測試
 
 ### 單元測試（基礎）
 
-單元測試獨立驗證 MCP 服務器的各個組件。
+單元測試用於獨立驗證 MCP 伺服器的各個元件。
 
-#### 測試內容
+#### 測試項目
 
 1. **資源處理器**：獨立測試每個資源處理器的邏輯
-2. **工具實現**：使用各種輸入驗證工具行為
-3. **提示模板**：確保提示模板正確渲染
-4. **模式驗證**：測試參數驗證邏輯
-5. **錯誤處理**：驗證無效輸入的錯誤響應
+2. **工具實作**：驗證工具在不同輸入下的行為
+3. **提示模板**：確保提示模板正確呈現
+4. **Schema 驗證**：測試參數驗證邏輯
+5. **錯誤處理**：驗證無效輸入的錯誤回應
 
 #### 單元測試最佳實踐
 
@@ -1582,19 +1582,19 @@ def test_calculator_tool_add():
     assert result["value"] == 12
 ```
 
-### 集成測試（中間層）
+### 整合測試（中層）
 
-集成測試驗證 MCP 服務器組件之間的交互。
+整合測試驗證 MCP 伺服器元件間的互動。
 
-#### 測試內容
+#### 測試項目
 
-1. **服務器初始化**：測試服務器啟動的各種配置
+1. **伺服器啟動**：測試不同配置下的伺服器啟動
 2. **路由註冊**：驗證所有端點是否正確註冊
-3. **請求處理**：測試完整的請求-響應循環
-4. **錯誤傳播**：確保錯誤在組件間正確處理
-5. **身份驗證和授權**：測試安全機制
+3. **請求處理**：測試完整請求與回應流程
+4. **錯誤傳遞**：確保錯誤能正確跨元件處理
+5. **認證與授權**：測試安全機制
 
-#### 集成測試最佳實踐
+#### 整合測試最佳實踐
 
 ```csharp
 // Example integration test for MCP server in C#
@@ -1630,19 +1630,19 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 }
 ```
 
-### 端到端測試（頂層）
+### 端對端測試（頂層）
 
-端到端測試從客戶端到服務器的完整系統行為。
+端對端測試驗證從客戶端到伺服器的整體系統行為。
 
-#### 測試內容
+#### 測試項目
 
-1. **客戶端-服務器通信**：測試完整的請求-響應循環
-2. **真實客戶端 SDK**：使用實際客戶端實現進行測試
-3. **負載下的性能**：驗證多個併發請求的行為
-4. **錯誤恢復**：測試系統從故障中恢復
-5. **長時間運行操作**：驗證流媒體和長時間操作的處理
+1. **客戶端與伺服器通訊**：測試完整的請求與回應週期
+2. **真實客戶端 SDK**：使用實際客戶端實作進行測試
+3. **負載下的效能**：驗證多重同時請求的行為
+4. **錯誤復原**：測試系統從失敗中恢復
+5. **長時間運作**：驗證串流與長時間操作的處理
 
-#### 端到端測試最佳實踐
+#### 端對端測試最佳實踐
 
 ```typescript
 // Example E2E test with a client in TypeScript
@@ -1674,18 +1674,18 @@ describe('MCP Server E2E Tests', () => {
 });
 ```
 
-## MCP 測試的模擬策略
+## MCP 測試的 Mock 策略
 
-模擬是測試期間隔離組件的必要手段。
+Mock 是測試中隔離元件的關鍵技術。
 
-### 要模擬的組件
+### 需 Mock 的元件
 
-1. **外部 AI 模型**：模擬模型響應以進行可預測的測試
-2. **外部服務**：模擬 API 依賴項（數據庫、第三方服務）
-3. **身份驗證服務**：模擬身份提供者
+1. **外部 AI 模型**：模擬模型回應以確保測試可預測
+2. **外部服務**：模擬 API 依賴（資料庫、第三方服務）
+3. **認證服務**：模擬身份驗證提供者
 4. **資源提供者**：模擬昂貴的資源處理器
 
-### 示例：模擬 AI 模型響應
+### 範例：模擬 AI 模型回應
 
 ```csharp
 // C# example with Moq
@@ -1717,26 +1717,26 @@ def test_with_mock_model(mock_model):
     # Continue with test
 ```
 
-## 性能測試
+## 效能測試
 
-性能測試對於生產 MCP 服務器至關重要。
+效能測試對生產環境的 MCP 伺服器至關重要。
 
-### 測量內容
+### 測量項目
 
-1. **延遲**：請求的響應時間
+1. **延遲**：請求的回應時間
 2. **吞吐量**：每秒處理的請求數
-3. **資源利用率**：CPU、內存、網絡使用情況
-4. **併發處理**：在並行請求下的行為
-5. **擴展特性**：隨著負載增加的性能
+3. **資源使用率**：CPU、記憶體、網路使用狀況
+4. **併發處理能力**：多重請求下的行為
+5. **擴展特性**：負載增加時的效能表現
 
-### 性能測試工具
+### 效能測試工具
 
 - **k6**：開源負載測試工具
-- **JMeter**：全面的性能測試
+- **JMeter**：全面的效能測試工具
 - **Locust**：基於 Python 的負載測試
-- **Azure Load Testing**：基於雲的性能測試
+- **Azure Load Testing**：雲端效能測試服務
 
-### 示例：使用 k6 進行基本負載測試
+### 範例：使用 k6 進行基礎負載測試
 
 ```javascript
 // k6 script for load testing MCP server
@@ -1776,18 +1776,18 @@ export default function () {
 }
 ```
 
-## MCP 服務器的測試自動化
+## MCP 伺服器的測試自動化
 
-自動化測試可確保一致的質量和更快的反饋循環。
+自動化測試可確保品質一致並加快回饋速度。
 
-### CI/CD 集成
+### CI/CD 整合
 
-1. **在拉取請求上運行單元測試**：確保代碼更改不破壞現有功能
-2. **在預發布環境中進行集成測試**：在預生產環境中運行集成測試
-3. **性能基準**：保持性能基準以捕捉回歸
-4. **安全掃描**：將安全測試自動化作為流水線的一部分
+1. **在 Pull Request 執行單元測試**：確保程式碼變更不破壞現有功能
+2. **在預備環境執行整合測試**：於準生產環境運行整合測試
+3. **維護效能基準**：監控效能指標以防止回退
+4. **安全掃描**：將安全測試納入管線自動化
 
-### 示例 CI 管道（GitHub Actions）
+### 範例 CI 流程（GitHub Actions）
 
 ```yaml
 name: MCP Server Tests
@@ -1826,19 +1826,19 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## 測試 MCP 規範的合規性
+## MCP 規範相容性測試
 
-驗證您的服務器正確實施 MCP 規範。
+驗證您的伺服器是否正確實作 MCP 規範。
 
-### 關鍵合規領域
+### 主要相容性範疇
 
-1. **API 端點**：測試所需的端點（/resources, /tools 等）
-2. **請求/響應格式**：驗證模式合規性
-3. **錯誤代碼**：驗證各種場景的正確狀態代碼
+1. **API 端點**：測試必須端點（/resources、/tools 等）
+2. **請求/回應格式**：驗證 schema 相容性
+3. **錯誤代碼**：確認各種情境下的狀態碼正確
 4. **內容類型**：測試不同內容類型的處理
-5. **身份驗證流程**：驗證符合規範的身份驗證機制
+5. **認證流程**：驗證符合規範的認證機制
 
-### 合規測試套件
+### 相容性測試套件
 
 ```csharp
 [Fact]
@@ -1865,63 +1865,62 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 }
 ```
 
-## 有效 MCP 服務器測試的十大技巧
+## MCP 伺服器測試十大秘訣
 
-1. **單獨測試工具定義**：獨立驗證模式定義與工具邏輯
-2. **使用參數化測試**：用多種輸入測試工具，包括邊緣情況
-3. **檢查錯誤響應**：驗證所有可能錯誤條件的正確錯誤處理
-4. **測試授權邏輯**：確保對不同用戶角色的正確訪問控制
-5. **監控測試覆蓋率**：目標是關鍵路徑代碼的高覆蓋率
-6. **測試流媒體響應**：驗證流媒體內容的正確處理
-7. **模擬網絡問題**：在不良網絡條件下測試行為
-8. **測試資源限制**：驗證在達到配額或速率限制時的行為
-9. **自動化回歸測試**：建立一個在每次代碼更改時運行的套件
-10. **文檔化測試案例**：維護測試場景的清晰文檔
+1. **分開測試工具定義**：獨立驗證 schema 定義與工具邏輯
+2. **使用參數化測試**：以多樣輸入（含邊界條件）測試工具
+3. **檢查錯誤回應**：驗證所有錯誤情況的處理
+4. **測試授權邏輯**：確保不同用戶角色的存取控制
+5. **監控測試覆蓋率**：追求關鍵路徑的高覆蓋率
+6. **測試串流回應**：驗證串流內容的正確處理
+7. **模擬網路異常**：測試在網路不佳情況下的行為
+8. **測試資源限制**：驗證達到配額或速率限制時的表現
+9. **自動化回歸測試**：建立每次程式碼變更皆執行的測試套件
+10. **文件化測試案例**：維護清晰的測試情境說明
 
 ## 常見測試陷阱
 
-- **過度依賴快樂路徑測試**：確保徹底測試錯誤情況
-- **忽視性能測試**：在影響生產之前識別瓶頸
-- **僅在隔離中測試**：結合單元、集成和端到端測試
-- **API 覆蓋不完整**：確保測試所有端點和功能
-- **不一致的測試環境**：使用容器確保一致的測試環境
+- **過度依賴順利路徑測試**：務必徹底測試錯誤情況
+- **忽略效能測試**：提前找出瓶頸避免影響生產
+- **僅做孤立測試**：結合單元、整合與端對端測試
+- **API 覆蓋不完整**：確保所有端點與功能均有測試
+- **測試環境不一致**：使用容器確保環境一致性
 
-## 結論
+## 結語
 
-全面的測試策略對於開發可靠、高質量的 MCP 服務器至關重要。通過實施本指南中概述的最佳實踐和技巧，您可以確保您的 MCP 實施達到最高的質量、可靠性和性能標準。
+完整的測試策略是打造可靠且高品質 MCP 伺服器的關鍵。透過本指南的最佳實踐與技巧，您能確保 MCP 實作達到最高的品質、可靠性與效能標準。
 
-## 關鍵要點
+## 重點摘要
 
-1. **工具設計**：遵循單一職責原則，使用依賴注入，並設計可組合性
-2. **模式設計**：創建清晰、文檔齊全的模式，具有正確的驗證約束
-3. **錯誤處理**：實施優雅的錯誤處理、結構化錯誤響應和重試邏輯
-4. **性能**：使用緩存、異步處理和資源限制
-5. **安全**：應用徹底的輸入驗證、授權檢查和敏感數據處理
-6. **測試**：創建全面的單元、集成和端到端測試
-7. **工作流程模式**：應用既定模式，如鏈、調度和並行處理
+1. **工具設計**：遵循單一職責原則，使用依賴注入，並設計可組合的工具  
+2. **Schema 設計**：建立清晰、具說明且有適當驗證限制的 schema  
+3. **錯誤處理**：實作優雅錯誤處理、結構化錯誤回應與重試機制  
+4. **效能**：使用快取、非同步處理與資源節流  
+5. **安全**：徹底的輸入驗證、授權檢查與敏感資料處理  
+6. **測試**：建立完整的單元、整合與端對端測試  
+7. **工作流程模式**：應用鏈式、調度器及平行處理等既有模式  
 
 ## 練習
 
-設計一個 MCP 工具和工作流程，用於文檔處理系統：
+設計一個用於文件處理系統的 MCP 工具與工作流程，需求如下：
 
-1. 接受多種格式的文檔（PDF、DOCX、TXT）
-2. 從文檔中提取文本和關鍵信息
-3. 按類型和內容對文檔進行分類
-4. 生成每個文檔的摘要
+1. 接受多種格式的文件（PDF、DOCX、TXT）  
+2. 從文件中擷取文字與關鍵資訊  
+3. 根據類型與內容分類文件  
+4. 產生每份文件的摘要  
 
-實施工具模式、錯誤處理和最適合此場景的工作流程模式。考慮如何測試此實施。
+實作工具 schema、錯誤處理，並選擇最適合此場景的工作流程模式。思考如何測試此實作。
 
----
-## 下一步
+## 資源
 
-恭喜您完成 MCP 課程！要繼續您的學習旅程：
+1. 加入 [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) 的 MCP 社群，掌握最新動態  
+2. 參與開源 [MCP 專案](https://github.com/modelcontextprotocol)  
+3. 在自家組織的 AI 計畫中應用 MCP 原則  
+4. 探索針對產業的專門 MCP 實作  
+5. 考慮進修 MCP 相關進階課程，如多模態整合或企業應用整合  
+6. 利用 [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) 所學原則，實驗打造自有 MCP 工具與工作流程  
 
-1. 加入 MCP 社區，隨時了解最新發展
-2. 為開源 MCP 項目做出貢獻
-3. 在您自己的組織的 AI 項目中應用 MCP 原則
-4. 探索您行業的專業 MCP 實施
-5. 考慮參加關於特定 MCP 主題的高級課程，如多模態集成或企業應用集成
-6. 使用本課程中學到的原則，嘗試構建您自己的 MCP 工具和工作流程。
+下一章節：最佳實踐 [案例研究](../09-CaseStudy/README.md)
 
 **免責聲明**：  
-本文件使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。我們努力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原文文件作為權威來源。對於關鍵信息，建議尋求專業人工翻譯。我們對於使用此翻譯所產生的任何誤解或誤讀不承擔責任。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 所翻譯。雖然我們致力於翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤譯負責。
