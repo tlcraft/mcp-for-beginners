@@ -219,3 +219,8 @@ To further enhance your MCP integration:
 For additional support and questions:
 - Review the [Azure AI Foundry documentation](https://learn.microsoft.com/en-us/azure/ai-foundry/)
 - Check the [MCP community resources](https://modelcontextprotocol.io/)
+
+
+## What's next 
+
+- [6. Community Contributions](../../06-CommunityContributions/README.md)
