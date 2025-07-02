@@ -1903,14 +1903,15 @@ Design an MCP tool and workflow for a document processing system that:
 
 Implement the tool schemas, error handling, and a workflow pattern that best suits this scenario. Consider how you would test this implementation.
 
----
-## Next Steps
+## Resources 
 
-Congratulations on completing the MCP curriculum! To continue your journey:
-
-1. Join the MCP community to stay updated on the latest developments
-2. Contribute to open-source MCP projects
+1. Join the MCP community on the [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) to stay updated on the latest developments 
+2. Contribute to open-source [MCP projects](https://github.com/modelcontextprotocol)
 3. Apply MCP principles in your own organization's AI initiatives
 4. Explore specialized MCP implementations for your industry. 
 5. Consider taking advanced courses on specific MCP topics, such as multi-modal integration or enterprise application integration.
-6. Experiment with building your own MCP tools and workflows using the principles learned in this curriculum.
+6. Experiment with building your own MCP tools and workflows using the principles learned in this curriculum in the [Hands on Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.MD)
+
+Next: Best Practices [case studies](./09-CaseStudy/README.MD)
+
+
