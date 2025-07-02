@@ -1,71 +1,71 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0abf26a6c4dbe905d5d49ccdc0ccfe92",
-  "translation_date": "2025-06-26T16:31:28+00:00",
+  "original_hash": "6e562d7e5a77c8982da4aa8f762ad1d8",
+  "translation_date": "2025-07-02T09:30:30+00:00",
   "source_file": "05-AdvancedTopics/mcp-security-entra/README.md",
   "language_code": "th"
 }
 -->
-# การรักษาความปลอดภัยของเวิร์กโฟลว์ AI: การตรวจสอบสิทธิ์ Entra ID สำหรับเซิร์ฟเวอร์ Model Context Protocol
+# การรักษาความปลอดภัยของเวิร์กโฟลว์ AI: การตรวจสอบสิทธิ์ Entra ID สำหรับ Model Context Protocol Servers
 
 ## บทนำ  
-การรักษาความปลอดภัยเซิร์ฟเวอร์ Model Context Protocol (MCP) ของคุณสำคัญไม่ต่างจากการล็อกประตูหน้าบ้าน การปล่อยให้เซิร์ฟเวอร์ MCP ของคุณเปิดเผยจะทำให้เครื่องมือและข้อมูลของคุณถูกเข้าถึงโดยไม่ได้รับอนุญาต ซึ่งอาจนำไปสู่การละเมิดความปลอดภัย Microsoft Entra ID ให้บริการการจัดการตัวตนและการเข้าถึงบนคลาวด์ที่แข็งแกร่ง ช่วยให้มั่นใจได้ว่าเฉพาะผู้ใช้และแอปพลิเคชันที่ได้รับอนุญาตเท่านั้นที่สามารถโต้ตอบกับเซิร์ฟเวอร์ MCP ของคุณ ในส่วนนี้ คุณจะได้เรียนรู้วิธีปกป้องเวิร์กโฟลว์ AI ของคุณด้วยการตรวจสอบสิทธิ์ Entra ID
+การรักษาความปลอดภัยของเซิร์ฟเวอร์ Model Context Protocol (MCP) ของคุณสำคัญไม่ต่างจากการล็อกประตูหน้าบ้าน หากปล่อยให้เซิร์ฟเวอร์ MCP ของคุณเปิดอยู่โดยไม่มีการป้องกัน เครื่องมือและข้อมูลของคุณอาจถูกเข้าถึงโดยไม่ได้รับอนุญาต ซึ่งอาจนำไปสู่ปัญหาด้านความปลอดภัย Microsoft Entra ID เป็นโซลูชันการจัดการตัวตนและการเข้าถึงบนคลาวด์ที่มีความแข็งแกร่ง ช่วยให้มั่นใจได้ว่าเฉพาะผู้ใช้และแอปพลิเคชันที่ได้รับอนุญาตเท่านั้นที่สามารถโต้ตอบกับเซิร์ฟเวอร์ MCP ของคุณได้ ในส่วนนี้ คุณจะได้เรียนรู้วิธีปกป้องเวิร์กโฟลว์ AI ของคุณด้วยการตรวจสอบสิทธิ์ Entra ID
 
 ## วัตถุประสงค์การเรียนรู้  
-เมื่อจบบทนี้ คุณจะสามารถ:
+เมื่อจบส่วนนี้ คุณจะสามารถ:
 
 - เข้าใจความสำคัญของการรักษาความปลอดภัยเซิร์ฟเวอร์ MCP  
 - อธิบายพื้นฐานของ Microsoft Entra ID และการตรวจสอบสิทธิ์ OAuth 2.0  
 - แยกแยะความแตกต่างระหว่าง public client และ confidential client  
-- นำการตรวจสอบสิทธิ์ Entra ID ไปใช้กับสถานการณ์เซิร์ฟเวอร์ MCP ทั้งในเครื่อง (public client) และระยะไกล (confidential client)  
-- นำแนวทางปฏิบัติที่ดีที่สุดด้านความปลอดภัยมาใช้ในการพัฒนาเวิร์กโฟลว์ AI  
+- นำการตรวจสอบสิทธิ์ Entra ID ไปใช้กับเซิร์ฟเวอร์ MCP ทั้งในสถานการณ์ที่เป็น local (public client) และ remote (confidential client)  
+- นำแนวทางปฏิบัติด้านความปลอดภัยที่ดีที่สุดมาใช้ในการพัฒนาเวิร์กโฟลว์ AI  
 
 ## ความปลอดภัยและ MCP  
 
-เหมือนกับที่คุณไม่ปล่อยให้ประตูหน้าบ้านเปิดค้าง คุณก็ไม่ควรปล่อยเซิร์ฟเวอร์ MCP ของคุณเปิดให้ใครก็ได้เข้าถึง การรักษาความปลอดภัยเวิร์กโฟลว์ AI ของคุณเป็นสิ่งจำเป็นสำหรับการสร้างแอปพลิเคชันที่มั่นคง น่าเชื่อถือ และปลอดภัย บทนี้จะแนะนำการใช้ Microsoft Entra ID เพื่อรักษาความปลอดภัยเซิร์ฟเวอร์ MCP ของคุณ เพื่อให้เฉพาะผู้ใช้และแอปพลิเคชันที่ได้รับอนุญาตเท่านั้นที่สามารถเข้าถึงเครื่องมือและข้อมูลของคุณได้  
+เช่นเดียวกับที่คุณจะไม่ปล่อยให้ประตูหน้าบ้านของคุณเปิดทิ้งไว้โดยไม่มีการล็อก คุณก็ไม่ควรปล่อยให้เซิร์ฟเวอร์ MCP ของคุณเปิดให้ใครก็ได้เข้าถึง การรักษาความปลอดภัยเวิร์กโฟลว์ AI เป็นสิ่งจำเป็นสำหรับการสร้างแอปพลิเคชันที่แข็งแกร่ง เชื่อถือได้ และปลอดภัย บทนี้จะแนะนำการใช้ Microsoft Entra ID เพื่อรักษาความปลอดภัยเซิร์ฟเวอร์ MCP ของคุณ เพื่อให้แน่ใจว่าเฉพาะผู้ใช้และแอปพลิเคชันที่ได้รับอนุญาตเท่านั้นที่สามารถเข้าถึงเครื่องมือและข้อมูลของคุณได้
 
 ## ทำไมความปลอดภัยจึงสำคัญสำหรับเซิร์ฟเวอร์ MCP  
 
-ลองนึกภาพว่าเซิร์ฟเวอร์ MCP ของคุณมีเครื่องมือที่สามารถส่งอีเมลหรือเข้าถึงฐานข้อมูลลูกค้าได้ หากเซิร์ฟเวอร์ไม่ได้รับการป้องกันใครก็สามารถใช้เครื่องมือนั้นได้ ซึ่งอาจทำให้ข้อมูลถูกเข้าถึงโดยไม่ได้รับอนุญาต ส่งสแปมหรือกิจกรรมที่เป็นอันตรายอื่นๆ  
+ลองจินตนาการว่าเซิร์ฟเวอร์ MCP ของคุณมีเครื่องมือที่สามารถส่งอีเมลหรือเข้าถึงฐานข้อมูลลูกค้าได้ หากเซิร์ฟเวอร์ไม่มีการป้องกันใด ๆ ใครก็ตามก็อาจใช้เครื่องมือนั้นได้ ซึ่งอาจนำไปสู่การเข้าถึงข้อมูลโดยไม่ได้รับอนุญาต สแปมหรือกิจกรรมที่เป็นอันตรายอื่น ๆ  
 
-การนำการตรวจสอบสิทธิ์มาใช้ช่วยให้มั่นใจได้ว่าทุกคำขอที่ส่งไปยังเซิร์ฟเวอร์ได้รับการยืนยันตัวตน ยืนยันว่าเป็นผู้ใช้หรือแอปพลิเคชันที่ถูกต้อง นี่คือขั้นตอนแรกและสำคัญที่สุดในการรักษาความปลอดภัยเวิร์กโฟลว์ AI ของคุณ  
+ด้วยการนำการตรวจสอบสิทธิ์มาใช้ คุณจะมั่นใจได้ว่าทุกคำขอที่ส่งไปยังเซิร์ฟเวอร์ของคุณจะได้รับการตรวจสอบยืนยันตัวตน เพื่อยืนยันว่าเป็นผู้ใช้หรือแอปพลิเคชันที่ได้รับอนุญาตจริง นี่คือขั้นตอนแรกและสำคัญที่สุดในการรักษาความปลอดภัยเวิร์กโฟลว์ AI ของคุณ  
 
 ## แนะนำ Microsoft Entra ID  
 
-[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) คือบริการจัดการตัวตนและการเข้าถึงบนคลาวด์ เปรียบเสมือนยามรักษาความปลอดภัยสำหรับแอปพลิเคชันของคุณ มันจัดการกระบวนการตรวจสอบตัวตน (authentication) และการกำหนดสิทธิ์ (authorization) ที่ซับซ้อน  
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) คือบริการจัดการตัวตนและการเข้าถึงบนคลาวด์ เปรียบเสมือนยามรักษาความปลอดภัยสากลสำหรับแอปพลิเคชันของคุณ มันจัดการกระบวนการตรวจสอบตัวตนผู้ใช้ (authentication) และกำหนดสิทธิ์ที่ผู้ใช้สามารถทำได้ (authorization)  
 
-ด้วยการใช้ Entra ID คุณสามารถ:  
+ด้วยการใช้ Entra ID คุณสามารถ:
 
-- เปิดใช้งานการลงชื่อเข้าใช้อย่างปลอดภัยสำหรับผู้ใช้  
-- ปกป้อง API และบริการต่างๆ  
+- เปิดใช้งานการเข้าสู่ระบบที่ปลอดภัยสำหรับผู้ใช้  
+- ปกป้อง API และบริการต่าง ๆ  
 - จัดการนโยบายการเข้าถึงจากศูนย์กลาง  
 
-สำหรับเซิร์ฟเวอร์ MCP Entra ID เป็นโซลูชันที่แข็งแกร่งและได้รับความไว้วางใจอย่างกว้างขวางในการจัดการว่าใครสามารถเข้าถึงความสามารถของเซิร์ฟเวอร์ได้  
+สำหรับเซิร์ฟเวอร์ MCP, Entra ID เป็นโซลูชันที่แข็งแกร่งและได้รับความไว้วางใจอย่างกว้างขวางในการจัดการว่าใครสามารถเข้าถึงความสามารถของเซิร์ฟเวอร์ได้  
 
 ---
 
-## ทำความเข้าใจเวทมนตร์: การทำงานของการตรวจสอบสิทธิ์ Entra ID  
+## ทำความเข้าใจหลักการ: วิธีการทำงานของการตรวจสอบสิทธิ์ Entra ID  
 
-Entra ID ใช้มาตรฐานเปิดอย่าง **OAuth 2.0** ในการจัดการการตรวจสอบสิทธิ์ แม้ว่ารายละเอียดจะซับซ้อน แต่แนวคิดหลักเข้าใจได้ง่ายผ่านการเปรียบเทียบ  
+Entra ID ใช้มาตรฐานเปิดอย่าง **OAuth 2.0** ในการจัดการการตรวจสอบสิทธิ์ แม้ว่ารายละเอียดจะซับซ้อน แต่แนวคิดหลักนั้นง่ายและสามารถเข้าใจได้ผ่านการเปรียบเทียบ  
 
-### แนะนำ OAuth 2.0 อย่างง่าย: กุญแจวาเล่ต์  
+### แนะนำ OAuth 2.0 อย่างง่าย: กุญแจ valet  
 
-ลองนึกถึง OAuth 2.0 เหมือนบริการวาเล่ต์สำหรับรถยนต์ของคุณ เมื่อคุณไปถึงร้านอาหาร คุณไม่ได้ให้กุญแจหลักแก่วาเล่ต์ แต่ให้กุญแจวาเล่ต์ที่มีสิทธิ์จำกัด—สามารถสตาร์ทรถและล็อกประตูได้ แต่เปิดฝากระโปรงหรือช่องเก็บของไม่ได้  
+ลองนึกถึง OAuth 2.0 เหมือนบริการ valet สำหรับรถของคุณ เมื่อคุณไปถึงร้านอาหาร คุณจะไม่มอบกุญแจรถหลักให้ valet แต่จะให้กุญแจ valet ที่มีสิทธิ์จำกัดแทน — กุญแจนี้สามารถสตาร์ทรถและล็อกประตูได้ แต่ไม่สามารถเปิดฝากระโปรงหน้าหรือช่องเก็บของในรถได้  
 
-ในเปรียบเทียบนี้:  
+ในการเปรียบเทียบนี้:
 
 - **คุณ** คือ **ผู้ใช้ (User)**  
 - **รถของคุณ** คือ **เซิร์ฟเวอร์ MCP** ที่มีเครื่องมือและข้อมูลสำคัญ  
-- **วาเล่ต์** คือ **Microsoft Entra ID**  
-- **พนักงานจอดรถ** คือ **MCP Client** (แอปพลิเคชันที่พยายามเข้าถึงเซิร์ฟเวอร์)  
-- **กุญแจวาเล่ต์** คือ **Access Token**  
+- **valet** คือ **Microsoft Entra ID**  
+- **ผู้ดูแลที่จอดรถ** คือ **MCP Client** (แอปพลิเคชันที่พยายามเข้าถึงเซิร์ฟเวอร์)  
+- **กุญแจ valet** คือ **Access Token**  
 
-Access Token คือข้อความที่ปลอดภัยซึ่ง MCP client ได้รับจาก Entra ID หลังจากที่คุณลงชื่อเข้าใช้ จากนั้น client จะส่ง token นี้ไปยังเซิร์ฟเวอร์ MCP ในทุกคำขอ เซิร์ฟเวอร์จะตรวจสอบ token เพื่อยืนยันคำขอว่าเป็นของจริงและ client มีสิทธิ์ที่จำเป็น โดยไม่ต้องจัดการกับข้อมูลรับรองจริงของคุณ (เช่น รหัสผ่าน)  
+Access token คือข้อความที่ปลอดภัยซึ่ง MCP client จะได้รับจาก Entra ID หลังจากที่คุณลงชื่อเข้าใช้ จากนั้น client จะนำ token นี้ไปแสดงต่อเซิร์ฟเวอร์ MCP ทุกครั้งที่มีการร้องขอ เซิร์ฟเวอร์สามารถตรวจสอบ token เพื่อยืนยันว่าคำขอนั้นถูกต้องและ client มีสิทธิ์ที่จำเป็น โดยไม่ต้องจัดการกับข้อมูลรับรองจริงของคุณ (เช่น รหัสผ่าน)  
 
 ### กระบวนการตรวจสอบสิทธิ์  
 
-นี่คือวิธีการทำงานในทางปฏิบัติ:  
+นี่คือขั้นตอนการทำงานในทางปฏิบัติ:
 
 ```mermaid
 sequenceDiagram
@@ -83,29 +83,29 @@ sequenceDiagram
     Server->>+Entra: Is this access token valid?
     Entra-->>-Server: Yes, it is.
     Server-->>-Client: Token is valid. Here is the result of the tool.
-```  
+```
 
 ### แนะนำ Microsoft Authentication Library (MSAL)  
 
-ก่อนเข้าสู่โค้ด จำเป็นต้องแนะนำส่วนสำคัญที่คุณจะเห็นในตัวอย่าง: **Microsoft Authentication Library (MSAL)**  
+ก่อนที่จะลงลึกในโค้ด สิ่งสำคัญคือต้องแนะนำส่วนประกอบหลักที่คุณจะเห็นในตัวอย่าง: **Microsoft Authentication Library (MSAL)**  
 
-MSAL เป็นไลบรารีที่พัฒนาโดย Microsoft ช่วยให้นักพัฒนาจัดการการตรวจสอบสิทธิ์ได้ง่ายขึ้น แทนที่คุณจะต้องเขียนโค้ดยุ่งยากทั้งหมดเพื่อจัดการโทเค็นความปลอดภัย การลงชื่อเข้าใช้ และการรีเฟรชเซสชัน MSAL จะจัดการส่วนที่ซับซ้อนเหล่านี้ให้  
+MSAL คือไลบรารีที่พัฒนาโดย Microsoft ที่ช่วยให้นักพัฒนาจัดการการตรวจสอบสิทธิ์ได้ง่ายขึ้น แทนที่คุณจะต้องเขียนโค้ดซับซ้อนเพื่อจัดการโทเค็นรักษาความปลอดภัย การเข้าสู่ระบบ และการรีเฟรชเซสชัน MSAL จะช่วยจัดการส่วนเหล่านี้ให้  
 
-การใช้ไลบรารีอย่าง MSAL แนะนำอย่างยิ่งเพราะ:  
+การใช้ไลบรารีอย่าง MSAL เป็นสิ่งที่แนะนำอย่างยิ่ง เพราะ:
 
-- **ปลอดภัย:** ใช้มาตรฐานอุตสาหกรรมและแนวทางปฏิบัติด้านความปลอดภัยที่ดีที่สุด ลดความเสี่ยงช่องโหว่ในโค้ดของคุณ  
-- **ช่วยให้ง่ายต่อการพัฒนา:** ซ่อนความซับซ้อนของโปรโตคอล OAuth 2.0 และ OpenID Connect ให้คุณเพิ่มการตรวจสอบสิทธิ์ที่แข็งแกร่งในแอปด้วยโค้ดเพียงไม่กี่บรรทัด  
-- **มีการดูแลรักษา:** Microsoft อัปเดตและดูแล MSAL อย่างต่อเนื่องเพื่อรับมือกับภัยคุกคามความปลอดภัยและการเปลี่ยนแปลงของแพลตฟอร์ม  
+- **ปลอดภัย:** ใช้มาตรฐานอุตสาหกรรมและแนวทางปฏิบัติด้านความปลอดภัยที่ดีที่สุด เพื่อลดความเสี่ยงของช่องโหว่ในโค้ดของคุณ  
+- **ง่ายต่อการพัฒนา:** ซ่อนความซับซ้อนของโปรโตคอล OAuth 2.0 และ OpenID Connect ช่วยให้คุณเพิ่มการตรวจสอบสิทธิ์ที่แข็งแกร่งในแอปได้ด้วยโค้ดเพียงไม่กี่บรรทัด  
+- **ได้รับการดูแลอย่างต่อเนื่อง:** Microsoft อัปเดต MSAL อย่างสม่ำเสมอเพื่อตอบสนองต่อภัยคุกคามด้านความปลอดภัยและการเปลี่ยนแปลงของแพลตฟอร์ม  
 
-MSAL รองรับภาษาต่างๆ และเฟรมเวิร์กแอปพลิเคชันหลากหลาย เช่น .NET, JavaScript/TypeScript, Python, Java, Go และแพลตฟอร์มมือถืออย่าง iOS และ Android ทำให้คุณใช้รูปแบบการตรวจสอบสิทธิ์ที่สม่ำเสมอในเทคโนโลยีทั้งหมดของคุณ  
+MSAL รองรับภาษาการเขียนโปรแกรมและเฟรมเวิร์กแอปพลิเคชันหลากหลาย เช่น .NET, JavaScript/TypeScript, Python, Java, Go รวมถึงแพลตฟอร์มมือถืออย่าง iOS และ Android ซึ่งหมายความว่าคุณสามารถใช้รูปแบบการตรวจสอบสิทธิ์ที่สอดคล้องกันได้ทั่วทั้งเทคโนโลยีของคุณ  
 
-หากต้องการเรียนรู้เพิ่มเติมเกี่ยวกับ MSAL สามารถดูได้ที่เอกสาร [MSAL overview documentation](https://learn.microsoft.com/entra/identity-platform/msal-overview)  
+หากต้องการเรียนรู้เพิ่มเติมเกี่ยวกับ MSAL สามารถดูได้ที่เอกสาร [ภาพรวม MSAL อย่างเป็นทางการ](https://learn.microsoft.com/entra/identity-platform/msal-overview)  
 
 ---
 
 ## การรักษาความปลอดภัยเซิร์ฟเวอร์ MCP ของคุณด้วย Entra ID: คู่มือทีละขั้นตอน  
 
-ตอนนี้ เรามาดูวิธีการรักษาความปลอดภัยเซิร์ฟเวอร์ MCP ในเครื่อง (ซึ่งสื่อสารผ่าน `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
+ตอนนี้เรามาดูวิธีรักษาความปลอดภัยเซิร์ฟเวอร์ MCP แบบ local (ที่สื่อสารผ่าน `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
 
 ### Scenario 1: Securing a Local MCP Server (with a Public Client)
 
@@ -134,7 +134,7 @@ This class is responsible for handling the interaction with Entra ID.
 
 - **`CreateAsync`**: This method initializes the `PublicClientApplication` from the MSAL (Microsoft Authentication Library). It's configured with your application's `clientId` and `tenantId`.
 - **`WithBroker`**: This enables the use of a broker (like the Windows Web Account Manager), which provides a more secure and seamless single sign-on experience.
-- **`AcquireTokenAsync`**: นี่คือเมธอดหลัก พยายามรับ token แบบเงียบ (silent) ก่อน หมายความว่าผู้ใช้ไม่ต้องลงชื่อเข้าใช้ใหม่หากมีเซสชันที่ยังใช้ได้ หากไม่ได้ token แบบเงียบ จะให้ผู้ใช้ลงชื่อเข้าใช้อย่างโต้ตอบ  
+- **`AcquireTokenAsync`**: นี่คือเมธอดหลักที่พยายามรับ token แบบเงียบ (silent) ก่อน (หมายความว่าผู้ใช้ไม่ต้องลงชื่อเข้าใช้ใหม่ถ้ามีเซสชันที่ยังใช้ได้) หากไม่สามารถรับ token แบบ silent ได้ ก็จะร้องขอให้ผู้ใช้ลงชื่อเข้าใช้อย่างโต้ตอบ  
 
 ```csharp
 // Simplified for clarity
@@ -187,7 +187,7 @@ public async Task<string> AcquireTokenAsync()
 This is where the MCP server is set up and the authentication service is integrated.
 
 - **`AddSingleton<AuthenticationService>`**: This registers the `AuthenticationService` with the dependency injection container, so it can be used by other parts of the application (like our tool).
-- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` เพื่อรับ access token ที่ถูกต้อง หากการตรวจสอบสิทธิ์สำเร็จ จะใช้ token นี้เรียก Microsoft Graph API เพื่อดึงข้อมูลผู้ใช้  
+- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` ใช้เพื่อรับ access token ที่ถูกต้อง หากการตรวจสอบสิทธิ์สำเร็จ จะใช้ token นี้เรียก Microsoft Graph API เพื่อดึงข้อมูลผู้ใช้  
 
 ```csharp
 // Simplified for clarity
@@ -215,7 +215,7 @@ public static async Task<string> GetUserDetailsFromGraph(
 }
 ```  
 
-#### 3. การทำงานร่วมกันทั้งหมด  
+#### 3. วิธีการทำงานร่วมกัน  
 
 1. เมื่อ MCP client พยายามใช้ `GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
 2. `AcquireTokenAsync` triggers the MSAL library to check for a valid token.
@@ -256,7 +256,7 @@ This file sets up the Express server and the MCP transport layer.
 
 - **`requireBearerAuth`**: This is middleware that protects the `/sse` and `/message` endpoints. It checks for a valid bearer token in the `Authorization` header of the request.
 - **`EntraIdServerAuthProvider`**: This is a custom class that implements the `McpServerAuthorizationProvider` interface. It's responsible for handling the OAuth 2.0 flow.
-- **`/auth/callback`**: endpoint นี้จัดการการเปลี่ยนเส้นทางจาก Entra ID หลังผู้ใช้ตรวจสอบสิทธิ์แล้ว โดยแลกเปลี่ยน authorization code เป็น access token และ refresh token  
+- **`/auth/callback`**: endpoint นี้จัดการการเปลี่ยนเส้นทางกลับจาก Entra ID หลังจากผู้ใช้ได้ทำการตรวจสอบสิทธิ์แล้ว โดยแลกเปลี่ยน authorization code เป็น access token และ refresh token  
 
 ```typescript
 // Simplified for clarity
@@ -291,7 +291,7 @@ app.get("/auth/callback", (req, res) => {
 
 **`Tools.ts`**
 
-This file defines the tools that the MCP server provides. The `getUserDetails` เครื่องมือเหมือนกับตัวอย่างก่อนหน้า แต่รับ access token จากเซสชัน  
+This file defines the tools that the MCP server provides. The `getUserDetails` เครื่องมือนี้คล้ายกับตัวอย่างก่อนหน้า แต่จะรับ access token จาก session  
 
 ```typescript
 // Simplified for clarity
@@ -338,39 +338,39 @@ This class handles the logic for:
 3. Entra ID redirects the user back to the `/auth/callback` endpoint with an authorization code.
 4. The server exchanges the code for an access token and a refresh token, stores them, and creates a session token which is sent to the client.
 5. The client can now use this session token in the `Authorization` header for all future requests to the MCP server.
-6. When the `getUserDetails` เครื่องมือนี้ถูกเรียกโดยใช้ token จากเซสชันเพื่อตรวจสอบ access token ของ Entra ID แล้วใช้ token นั้นเรียก Microsoft Graph API  
+6. When the `getUserDetails` เมื่อเครื่องมือนี้ถูกเรียกใช้ จะใช้ token ใน session เพื่อตรวจสอบ access token ของ Entra ID จากนั้นใช้ token นั้นเรียก Microsoft Graph API  
 
-โฟลว์นี้ซับซ้อนกว่าการใช้ public client แต่จำเป็นสำหรับ endpoint ที่เข้าถึงผ่านอินเทอร์เน็ต เนื่องจากเซิร์ฟเวอร์ MCP ระยะไกลเข้าถึงได้จากอินเทอร์เน็ตสาธารณะ จึงต้องมีมาตรการรักษาความปลอดภัยที่เข้มงวดกว่าเพื่อป้องกันการเข้าถึงโดยไม่ได้รับอนุญาตและการโจมตีที่อาจเกิดขึ้น  
+กระบวนการนี้ซับซ้อนกว่ากรณี public client แต่จำเป็นสำหรับ endpoint ที่เปิดให้เข้าถึงผ่านอินเทอร์เน็ต เนื่องจากเซิร์ฟเวอร์ MCP ระยะไกลเข้าถึงได้ผ่านอินเทอร์เน็ตสาธารณะ จึงต้องมีมาตรการรักษาความปลอดภัยที่เข้มงวดขึ้นเพื่อป้องกันการเข้าถึงโดยไม่ได้รับอนุญาตและการโจมตีที่อาจเกิดขึ้น  
 
-## แนวทางปฏิบัติที่ดีที่สุดด้านความปลอดภัย  
+## แนวทางปฏิบัติด้านความปลอดภัยที่ดีที่สุด  
 
-- **ใช้ HTTPS เสมอ**: เข้ารหัสการสื่อสารระหว่าง client และ server เพื่อป้องกันไม่ให้ token ถูกดักจับ  
-- **นำ Role-Based Access Control (RBAC) มาใช้**: อย่าตรวจสอบแค่ *ว่าผู้ใช้ได้รับการตรวจสอบสิทธิ์หรือไม่* แต่ตรวจสอบ *ว่าผู้ใช้ได้รับอนุญาตให้ทำอะไร* คุณสามารถกำหนดบทบาทใน Entra ID และตรวจสอบบทบาทเหล่านั้นในเซิร์ฟเวอร์ MCP  
-- **ตรวจสอบและบันทึกเหตุการณ์**: จดบันทึกกิจกรรมการตรวจสอบสิทธิ์ทั้งหมดเพื่อช่วยตรวจจับและตอบสนองต่อกิจกรรมที่น่าสงสัย  
-- **จัดการการจำกัดอัตราและการหน่วงเวลา**: Microsoft Graph และ API อื่นๆ มีการจำกัดอัตราเพื่อป้องกันการใช้งานเกินขอบเขต นำกลไก exponential backoff และ retry มาใช้ในเซิร์ฟเวอร์ MCP เพื่อจัดการกับ HTTP 429 (Too Many Requests) อย่างเหมาะสม พิจารณาการแคชข้อมูลที่ถูกเรียกบ่อยเพื่อลดจำนวนครั้งที่เรียก API  
-- **จัดเก็บ token อย่างปลอดภัย**: เก็บ access token และ refresh token อย่างปลอดภัย สำหรับแอปในเครื่อง ให้ใช้กลไกจัดเก็บข้อมูลที่ปลอดภัยของระบบ สำหรับแอปเซิร์ฟเวอร์ ให้พิจารณาใช้การจัดเก็บแบบเข้ารหัสหรือบริการจัดการคีย์ที่ปลอดภัย เช่น Azure Key Vault  
-- **จัดการการหมดอายุของ token**: Access token มีอายุจำกัด ควรตั้งค่าการรีเฟรช token อัตโนมัติด้วย refresh token เพื่อให้ผู้ใช้ไม่ต้องลงชื่อเข้าใช้ซ้ำ  
-- **พิจารณาใช้ Azure API Management**: แม้ว่าการรักษาความปลอดภัยในเซิร์ฟเวอร์ MCP โดยตรงจะให้การควบคุมที่ละเอียด แต่ API Gateway อย่าง Azure API Management สามารถจัดการเรื่องความปลอดภัยหลายอย่างโดยอัตโนมัติ เช่น การตรวจสอบสิทธิ์ การกำหนดสิทธิ์ การจำกัดอัตรา และการตรวจสอบสถานะ ซึ่งจะเป็นชั้นความปลอดภัยกลางระหว่าง client กับเซิร์ฟเวอร์ MCP ของคุณ สำหรับรายละเอียดเพิ่มเติมเกี่ยวกับการใช้ API Gateway กับ MCP ดูได้ที่ [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)  
+- **ใช้ HTTPS เสมอ**: เข้ารหัสการสื่อสารระหว่าง client กับ server เพื่อป้องกันการดักจับ token  
+- **นำ Role-Based Access Control (RBAC) มาใช้**: อย่าตรวจสอบแค่เพียงว่าผู้ใช้ผ่านการตรวจสอบสิทธิ์หรือไม่ แต่ต้องตรวจสอบด้วยว่าผู้ใช้นั้นได้รับอนุญาตให้ทำอะไรบ้าง คุณสามารถกำหนดบทบาทใน Entra ID และตรวจสอบบทบาทเหล่านั้นในเซิร์ฟเวอร์ MCP ของคุณ  
+- **ติดตามและตรวจสอบ (audit)**: บันทึกเหตุการณ์การตรวจสอบสิทธิ์ทั้งหมดเพื่อให้สามารถตรวจจับและตอบสนองต่อกิจกรรมที่น่าสงสัยได้  
+- **จัดการการจำกัดอัตราและการหน่วงเวลา**: Microsoft Graph และ API อื่น ๆ มีการจำกัดอัตราเพื่อป้องกันการใช้งานเกินขอบเขต ให้ใช้กลไก exponential backoff และ retry ในเซิร์ฟเวอร์ MCP เพื่อจัดการกับการตอบสนอง HTTP 429 (Too Many Requests) อย่างเหมาะสม พิจารณาการเก็บข้อมูลที่เข้าถึงบ่อยในแคชเพื่อลดจำนวนคำขอ API  
+- **จัดเก็บ token อย่างปลอดภัย**: เก็บ access token และ refresh token อย่างปลอดภัย สำหรับแอปพลิเคชันในเครื่อง ให้ใช้กลไกจัดเก็บข้อมูลที่ปลอดภัยของระบบ สำหรับแอปพลิเคชันเซิร์ฟเวอร์ ให้พิจารณาใช้การจัดเก็บข้อมูลที่เข้ารหัสหรือบริการจัดการคีย์อย่าง Azure Key Vault  
+- **จัดการการหมดอายุของ token**: Access token มีอายุจำกัด ควรตั้งค่าให้รีเฟรช token โดยอัตโนมัติด้วย refresh token เพื่อให้ผู้ใช้ไม่ต้องลงชื่อเข้าใช้ซ้ำ  
+- **พิจารณาใช้ Azure API Management**: แม้ว่าการนำมาตรการรักษาความปลอดภัยมาใช้โดยตรงในเซิร์ฟเวอร์ MCP จะช่วยให้คุณควบคุมได้อย่างละเอียด แต่ API Gateway อย่าง Azure API Management สามารถจัดการเรื่องความปลอดภัยหลายอย่างให้อัตโนมัติ รวมถึงการตรวจสอบสิทธิ์ การกำหนดสิทธิ์ การจำกัดอัตรา และการตรวจสอบสถานะ มันทำหน้าที่เป็นชั้นความปลอดภัยกลางระหว่าง client กับเซิร์ฟเวอร์ MCP ของคุณ ดูรายละเอียดเพิ่มเติมเกี่ยวกับการใช้ API Gateway กับ MCP ได้ที่ [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)  
 
 ## สรุปประเด็นสำคัญ  
 
-- การรักษาความปลอดภัยเซิร์ฟเวอร์ MCP สำคัญสำหรับการปกป้องข้อมูลและเครื่องมือของคุณ  
-- Microsoft Entra ID ให้โซลูชันที่แข็งแกร่งและปรับขนาดได้สำหรับการตรวจสอบสิทธิ์และการกำหนดสิทธิ์  
-- ใช้ **public client** สำหรับแอปในเครื่อง และ **confidential client** สำหรับเซิร์ฟเวอร์ระยะไกล  
-- **Authorization Code Flow** เป็นตัวเลือกที่ปลอดภัยที่สุดสำหรับเว็บแอปพลิเคชัน  
+- การรักษาความปลอดภัยเซิร์ฟเวอร์ MCP เป็นสิ่งสำคัญเพื่อปกป้องข้อมูลและเครื่องมือของคุณ  
+- Microsoft Entra ID เป็นโซลูชันที่แข็งแกร่งและสามารถปรับขนาดได้สำหรับการตรวจสอบสิทธิ์และการกำหนดสิทธิ์  
+- ใช้ **public client** สำหรับแอปพลิเคชันในเครื่อง และ **confidential client** สำหรับเซิร์ฟเวอร์ระยะไกล  
+- **Authorization Code Flow** คือวิธีที่ปลอดภัยที่สุดสำหรับเว็บแอปพลิเคชัน  
 
 ## แบบฝึกหัด  
 
-1. คิดถึงเซิร์ฟเวอร์ MCP ที่คุณอาจจะสร้าง จะเป็นเซิร์ฟเวอร์ในเครื่องหรือเซิร์ฟเวอร์ระยะไกล?  
+1. ลองคิดถึงเซิร์ฟเวอร์ MCP ที่คุณอาจสร้างขึ้น มันจะเป็นเซิร์ฟเวอร์ในเครื่อง (local) หรือเซิร์ฟเวอร์ระยะไกล (remote)?  
 2. จากคำตอบของคุณ คุณจะใช้ public client หรือ confidential client?  
-3. เซิร์ฟเวอร์ MCP ของคุณจะขอสิทธิ์อะไรบ้างเพื่อทำงานกับ Microsoft Graph?  
+3. เซิร์ฟเวอร์ MCP ของคุณจะร้องขอสิทธิ์อะไรในการทำงานกับ Microsoft Graph?  
 
 ## แบบฝึกหัดปฏิบัติ  
 
 ### แบบฝึกหัด 1: ลงทะเบียนแอปพลิเคชันใน Entra ID  
 ไปที่พอร์ทัล Microsoft Entra  
 ลงทะเบียนแอปพลิเคชันใหม่สำหรับเซิร์ฟเวอร์ MCP ของคุณ  
-จดบันทึก Application (client) ID และ Directory (tenant) ID  
+บันทึก Application (client) ID และ Directory (tenant) ID  
 
 ### แบบฝึกหัด 2: รักษาความปลอดภัยเซิร์ฟเวอร์ MCP ในเครื่อง (Public Client)  
 - ทำตามตัวอย่างโค้ดเพื่อนำ MSAL (Microsoft Authentication Library) มาใช้สำหรับการตรวจสอบสิทธิ์ผู้ใช้  
@@ -378,37 +378,29 @@ This class handles the logic for:
 
 ### แบบฝึกหัด 3: รักษาความปลอดภัยเซิร์ฟเวอร์ MCP ระยะไกล (Confidential Client)  
 - ลงทะเบียน confidential client ใน Entra ID และสร้าง client secret  
-- กำหนดค่าเซิร์ฟเวอร์ MCP Express.js ของคุณให้ใช้ Authorization Code Flow  
-- ทดสอบ endpoint ที่ได้รับการป้องกันและยืนยันการเข้าถึงด้วย token  
+- กำหนดค่าเซิร์ฟเวอร์ MCP บน Express.js ของคุณให้ใช้ Authorization Code Flow  
+- ทดสอบ endpoint ที่ได้รับการปกป้องและยืนยันการเข้าถึงด้วย token  
 
-### แบบฝึกหัด 4: นำแนวทางปฏิบัติด้านความปลอดภัยมาใช้  
+### แบบฝึกหัด 4: นำแนวทางปฏิบัติด้านความปลอดภัยที่ดีที่สุดมาใช้  
 - เปิดใช้งาน HTTPS สำหรับเซิร์ฟเวอร์ในเครื่องหรือระยะไกลของคุณ  
-- นำ Role-Based Access Control (RBAC) มาใช้ในตรรกะเซิร์ฟเวอร์  
+- นำระบบควบคุมการเข้าถึงตามบทบาท (RBAC) มาใช้ในตรรกะเซิร์ฟเวอร์ของคุณ  
 - เพิ่มการจัดการการหมดอายุของ token และการจัดเก็บ token อย่างปลอดภัย  
 
 ## แหล่งข้อมูล  
 
 1. **เอกสารภาพรวม MSAL**  
-   เรียนรู้วิธีที่ Microsoft Authentication Library (MSAL) ช่วยให้การรับ token อย่างปลอดภัยบนหลายแพลตฟอร์ม:  
+   เรียนรู้ว่า Microsoft Authentication Library (MSAL) ช่วยให้การรับโทเค็นที่ปลอดภัยข้ามแพลตฟอร์มทำได้อย่างไร:  
    [MSAL Overview on Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)  
 
 2. **Azure-Samples/mcp-auth-servers GitHub Repository**  
-   ตัวอย่างการใช้งานเซิร์ฟเวอร์ MCP ที่แสดงการทำงานของการตรวจสอบสิทธิ์:  
+   ตัวอย่างการใช้งานเซิร์ฟเวอร์ MCP ที่แสดงกระบวนการตรวจสอบสิทธิ์:  
    [Azure-Samples/mcp-auth-servers on GitHub](https://github.com/Azure-Samples/mcp-auth-servers)  
 
 3. **ภาพรวม Managed Identities สำหรับ Azure Resources**  
-   เข้าใจวิธีการกำจัดความลับโดยใช้ managed identities ที่กำหนดโดยระบบหรือผู้ใช้:  
+   เข้าใจวิธีการกำจัดความลับด้วยการใช้ managed identities ที่ระบบหรือผู้ใช้กำหนด:  
    [Managed Identities Overview on Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)  
 
-4. **Azure API Management: Your Auth Gateway for MCP Servers**  
-   เจาะลึกการใช้ APIM เป็นเกตเวย์ OAuth2 ที่ปลอดภัยสำหรับเซิร์ฟเวอร์ MCP:  
-   [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)  
-
-5. **Microsoft Graph Permissions Reference**  
-   รายการสิทธิ์ที่ได้รับมอบหมายและสิทธิ์แอปพลิเคชันสำหรับ Microsoft Graph อย่างครบถ้วน:  
-   [Microsoft Graph Permissions Reference](https://learn.microsoft.com/zh-tw/graph/permissions-reference)  
-
-## ผลลัพธ์การ
+4. **Azure API Management: Your Auth Gateway for
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความคลาดเคลื่อนได้ เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ แนะนำให้ใช้บริการแปลโดยมนุษย์มืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาด้วย AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้มีความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่น่าเชื่อถือที่สุด สำหรับข้อมูลที่สำคัญ ควรใช้บริการแปลโดยมนุษย์ผู้เชี่ยวชาญ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความที่ผิดพลาดใด ๆ ที่เกิดจากการใช้การแปลนี้
