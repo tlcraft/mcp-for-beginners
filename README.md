@@ -125,7 +125,7 @@ If you’re a developer, tool builder, or AI product strategist, this day is pac
 - **5.10. Realtime Streaming** – [Guide](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
 - **5.11. Realtime Web Search** – [Guide](./05-AdvancedTopics/mcp-realtimesearch/README.md)
 - **5.12. Entra ID Authentication for Model Context Protocol Servers** – [Guide](./05-AdvancedTopics/mcp-security-entra/README.md)
-- **5.13. Azure AI Foundry Agent Integration** – [Guide](./05-AdvancedTopics/mcp-foundry-agent-intergration/README.md)
+- **5.13. odel Context Protocol (MCP) Integration with Azure AI Foundry** – [Guide](./05-AdvancedTopics/mcp-foundry-agent-intergration/README.md)
 </details>
 
 ### Model Context Protocol Best Practices 

@@ -329,4 +329,4 @@ In the preceding code, we have:
 
 ## What's next
 
-- [5.13 Model Context Protocol (MCP) Integration with Azure AI Foundry](../mcp-foundry-agent-intergration/README.md)
+- [5.9 Web search](../web-search-mcp/README.md)

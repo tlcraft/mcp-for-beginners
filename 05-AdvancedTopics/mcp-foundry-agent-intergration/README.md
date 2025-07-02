@@ -209,15 +209,15 @@ To further enhance your MCP integration:
 
 ## Additional Resources
 
-- [Azure AI Foundry Documentation](https://learn.microsoft.com/en-us/azure/ai-foundry/)
-- [Model Context Protocol Samples](https://learn.microsoft.com/en-us/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
-- [Azure AI Foundry Agents Overview](https://learn.microsoft.com/en-us/azure/ai-foundry/agents/)
+- [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-foundry/)
+- [Model Context Protocol Samples](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
+- [Azure AI Foundry Agents Overview](https://learn.microsoft.com/azure/ai-foundry/agents/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 
 ## Support
 
 For additional support and questions:
-- Review the [Azure AI Foundry documentation](https://learn.microsoft.com/en-us/azure/ai-foundry/)
+- Review the [Azure AI Foundry documentation](https://learn.microsoft.com/azure/ai-foundry/)
 - Check the [MCP community resources](https://modelcontextprotocol.io/)
 
 
