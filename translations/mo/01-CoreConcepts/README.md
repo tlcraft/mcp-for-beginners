@@ -1,117 +1,144 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f00defb149ee1ac4a799e44a9783c7fc",
-  "translation_date": "2025-06-06T18:03:48+00:00",
+  "original_hash": "b3b4a6ad10c3c0edbf7fa7cfa0ec496b",
+  "translation_date": "2025-07-02T06:58:47+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "mo"
 }
 -->
-# 📖 MCP Core Concepts: Mastering the Model Context Protocol for AI Integration
+# 📖 MCP 核心概念：掌握用於 AI 整合的模型上下文協議
 
-The Model Context Protocol (MCP) is a powerful, standardized framework that optimizes communication between Large Language Models (LLMs) and external tools, applications, and data sources. This SEO-optimized guide will walk you through the core concepts of MCP, ensuring you understand its client-server architecture, essential components, communication mechanics, and implementation best practices.
+[Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) 是一個強大且標準化的框架，優化大型語言模型（LLM）與外部工具、應用程式及資料來源之間的溝通。這份經過 SEO 優化的指南將帶你深入了解 MCP 的核心概念，確保你掌握其客戶端-伺服器架構、重要組件、通信機制以及實作最佳實踐。
 
-## Overview
+## 概述
 
-This lesson explores the fundamental architecture and components that make up the Model Context Protocol (MCP) ecosystem. You'll learn about the client-server architecture, key components, and communication mechanisms that power MCP interactions.
+本課程將探討構成模型上下文協議（MCP）生態系統的基本架構與組件。你將學習 MCP 的客戶端-伺服器架構、關鍵組件及推動 MCP 互動的通信機制。
 
-## 👩‍🎓 Key Learning Objectives
+## 👩‍🎓 主要學習目標
 
-By the end of this lesson, you will:
+完成本課程後，你將能夠：
 
-- Understand the MCP client-server architecture.
-- Identify roles and responsibilities of Hosts, Clients, and Servers.
-- Analyze the core features that make MCP a flexible integration layer.
-- Learn how information flows within the MCP ecosystem.
-- Gain practical insights through code examples in .NET, Java, Python, and JavaScript.
+- 理解 MCP 的客戶端-伺服器架構。
+- 辨識 Hosts、Clients 與 Servers 的角色與職責。
+- 分析 MCP 作為靈活整合層的核心特性。
+- 了解 MCP 生態系統中的資訊流動方式。
+- 透過 .NET、Java、Python 和 JavaScript 的程式碼範例獲得實務見解。
 
-## 🔎 MCP Architecture: A Deeper Look
+## 🔎 MCP 架構：深入解析
 
-The MCP ecosystem is built on a client-server model. This modular structure allows AI applications to interact with tools, databases, APIs, and contextual resources efficiently. Let's break down this architecture into its core components.
+MCP 生態系統基於客戶端-伺服器模型構建。這種模組化結構讓 AI 應用程式能有效與工具、資料庫、API 及上下文資源互動。讓我們將此架構拆解為核心組件。
+
+MCP 核心遵循客戶端-伺服器架構，Host 應用程式可連接多個伺服器：
+
+```mermaid
+flowchart LR
+    subgraph "Your Computer"
+        Host["Host with MCP VScode, IDEs, Tools)"]
+        S1["MCP Server A"]
+        S2["MCP Server B"]
+        S3["MCP Server C"]
+        Host <-->|"MCP Protocol"| S1
+        Host <-->|"MCP Protocol"| S2
+        Host <-->|"MCP Protocol"| S3
+        S1 <--> D1[("Local\Data Source A")]
+        S2 <--> D2[("Local\Data Source B")]
+    end
+    subgraph "Internet"
+        S3 <-->|"Web APIs"| D3[("Remote\Services")]
+    end
+```
+
+- **MCP Hosts**：像 VSCode、Claude Desktop、整合開發環境（IDE）或想透過 MCP 存取資料的 AI 工具等程式
+- **MCP Clients**：與伺服器維持一對一連線的協議客戶端
+- **MCP Servers**：透過標準化模型上下文協議暴露特定功能的輕量級程式
+- **本地資料來源**：MCP 伺服器可安全存取的電腦檔案、資料庫與服務
+- **遠端服務**：MCP 伺服器能透過 API 連接的網路上外部系統
+
+MCP 協議是一項持續演進的標準，你可在[協議規範](https://modelcontextprotocol.io/specification/2025-06-18/)查看最新更新。
 
 ### 1. Hosts
 
-In the Model Context Protocol (MCP), Hosts play a crucial role as the primary interface through which users interact with the protocol. Hosts are applications or environments that initiate connections with MCP servers to access data, tools, and prompts. Examples of Hosts include integrated development environments (IDEs) like Visual Studio Code, AI tools like Claude Desktop, or custom-built agents designed for specific tasks
+在模型上下文協議（MCP）中，Hosts 扮演主要介面角色，讓使用者透過它與協議互動。Hosts 是啟動與 MCP 伺服器連線以存取資料、工具與提示的應用程式或環境。Hosts 範例包括整合開發環境（IDE）如 Visual Studio Code、AI 工具如 Claude Desktop，或為特定任務設計的自訂代理程式。
 
-**Hosts** are LLM applications that initiate connections. They:
+**Hosts** 是啟動連線的 LLM 應用程式，它們會：
 
-- Execute or interact with AI models to generate responses.
-- Initiate connections with MCP servers.
-- Manage the conversation flow and user interface.
-- Control permission and security constraints.
-- Handle user consent for data sharing and tool execution.
-
+- 執行或與 AI 模型互動以生成回應。
+- 啟動與 MCP 伺服器的連線。
+- 管理對話流程與使用者介面。
+- 控制權限與安全限制。
+- 處理使用者對資料分享與工具執行的同意。
 
 ### 2. Clients
 
-Clients are essential components that facilitate the interaction between Hosts and MCP servers. Clients act as intermediaries, enabling Hosts to access and utilize the functionalities provided by MCP servers. They play a crucial role in ensuring smooth communication and efficient data exchange within the MCP architecture
+Clients 是促進 Hosts 與 MCP 伺服器互動的重要組件。Clients 作為中介，讓 Hosts 能存取並利用 MCP 伺服器提供的功能。它們在確保 MCP 架構內溝通順暢與資料交換效率方面扮演關鍵角色。
 
-**Clients** are connectors within the host application. They:
+**Clients** 是 Host 應用程式中的連接器，它們會：
 
-- Send requests to servers with prompts/instructions.
-- Negotiate capabilities with servers.
-- Manage tool execution requests from models.
-- Process and display responses to users.
+- 向伺服器發送包含提示或指令的請求。
+- 與伺服器協商功能。
+- 管理模型發出的工具執行請求。
+- 處理並向使用者展示回應。
 
 ### 3. Servers
 
-Servers are responsible for handling requests from MCP clients and providing appropriate responses. They manage various operations such as data retrieval, tool execution, and prompt generation. Servers ensure that the communication between clients and Hosts is efficient and reliable, maintaining the integrity of the interaction process
+Servers 負責處理 MCP clients 的請求並提供適當回應。它們管理資料擷取、工具執行及提示生成等多種操作。Servers 確保 Clients 與 Hosts 之間的溝通高效且可靠，維護互動過程的完整性。
 
-**Servers** are services that provide context and capabilities. They:
+**Servers** 是提供上下文與功能的服務，它們會：
 
-- Register available features (resources, prompts, tools)
-- Receive and execute tool calls from the client
-- Provide contextual information to enhance model responses
-- Return outputs back to the client
-- Maintain state across interactions when needed
+- 註冊可用功能（資源、提示、工具）
+- 接收並執行來自 Client 的工具調用
+- 提供上下文資訊以強化模型回應
+- 將輸出返回給 Client
+- 必要時維持多次互動間的狀態
 
-Servers can be developed by anyone to extend model capabilities with specialized functionality.
+任何人都可以開發 Servers，藉此擴展模型功能並加入專門化功能。
 
 ### 4. Server Features
 
-Servers in the Model Context Protocol (MCP) provide fundamental building blocks that enable rich interactions between clients, hosts, and language models. These features are designed to enhance the capabilities of MCP by offering structured context, tools, and prompts.
+模型上下文協議（MCP）中的 Servers 提供基本構件，促進 Clients、Hosts 與語言模型間的豐富互動。這些功能旨在透過結構化的上下文、工具與提示，提升 MCP 的能力。
 
-MCP servers can offer any of the following features:
+MCP 伺服器可提供以下任一功能：
 
-#### 📑 Resources 
+#### 📑 資源
 
-Resources in the Model Context Protocol (MCP) encompass various types of context and data that can be utilized by users or AI models. These include:
+MCP 中的資源涵蓋各種可被使用者或 AI 模型利用的上下文與資料，包括：
 
-- **Contextual Data**: Information and context that users or AI models can leverage for decision-making and task execution.
-- **Knowledge Bases and Document Repositories**: Collections of structured and unstructured data, such as articles, manuals, and research papers, that provide valuable insights and information.
-- **Local Files and Databases**: Data stored locally on devices or within databases, accessible for processing and analysis.
-- **APIs and Web Services**: External interfaces and services that offer additional data and functionalities, enabling integration with various online resources and tools.
+- **上下文資料**：使用者或 AI 模型可用於決策與任務執行的資訊與背景。
+- **知識庫與文件庫**：包含文章、手冊、研究報告等結構化與非結構化資料的集合，提供寶貴見解。
+- **本地檔案與資料庫**：存放於裝置或資料庫中、可供處理與分析的資料。
+- **API 與網路服務**：提供額外資料與功能的外部介面，支援與各種線上資源及工具整合。
 
-An example of a resource can be a database schema or a file that can be accessed like so:
+資源範例可為資料庫結構或可透過以下方式存取的檔案：
 
 ```text
 file://log.txt
 database://schema
 ```
 
-### 🤖 Prompts
-Prompts in the Model Context Protocol (MCP) include various pre-defined templates and interaction patterns designed to streamline user workflows and enhance communication. These include:
+### 🤖 提示
+MCP 中的提示包含各種預先定義的範本與互動模式，旨在簡化使用者工作流程並增進溝通，包括：
 
-- **Templated Messages and Workflows**: Pre-structured messages and processes that guide users through specific tasks and interactions.
-- **Pre-defined Interaction Patterns**: Standardized sequences of actions and responses that facilitate consistent and efficient communication.
-- **Specialized Conversation Templates**: Customizable templates tailored for specific types of conversations, ensuring relevant and contextually appropriate interactions.
+- **範本訊息與工作流程**：預先結構化的訊息與流程，引導使用者完成特定任務與互動。
+- **預設互動模式**：標準化的動作與回應序列，促進一致且高效的溝通。
+- **專門化對話範本**：針對特定對話類型客製化的範本，確保相關且符合上下文的互動。
 
-A prompt template can look like so:
+提示範本示例如下：
 
 ```markdown
 Generate a product slogan based on the following {{product}} with the following {{keywords}}
 ```
 
-#### ⛏️ Tools
+#### ⛏️ 工具
 
-Tools in the Model Context Protocol (MCP) are functions that the AI model can execute to perform specific tasks. These tools are designed to enhance the capabilities of the AI model by providing structured and reliable operations. Key aspects include:
+MCP 中的工具是 AI 模型可執行以完成特定任務的功能。這些工具旨在透過提供結構化且可靠的操作，增強 AI 模型的能力。主要特點包括：
 
-- **Functions for the AI model to execute**: Tools are executable functions that the AI model can invoke to carry out various tasks.
-- **Unique Name and Description**: Each tool has a distinct name and a detailed description that explains its purpose and functionality.
-- **Parameters and Outputs**: Tools accept specific parameters and return structured outputs, ensuring consistent and predictable results.
-- **Discrete Functions**: Tools perform discrete functions such as web searches, calculations, and database queries.
+- **AI 模型可執行的函式**：工具是可被 AI 模型調用以執行各種任務的函式。
+- **獨特名稱與描述**：每個工具都有明確名稱及詳細說明其目的與功能。
+- **參數與輸出**：工具接受特定參數並回傳結構化輸出，確保結果一致且可預測。
+- **離散功能**：工具執行獨立功能，如網路搜尋、計算與資料庫查詢。
 
-An example tool could look like so:
+工具範例如下：
 
 ```typescript
 server.tool(
@@ -125,88 +152,86 @@ server.tool(
 )
 ```
 
-## Client Features
-In the Model Context Protocol (MCP), clients offer several key features to servers, enhancing the overall functionality and interaction within the protocol. One of the notable features is Sampling.
+## Client 功能
+在 MCP 中，Clients 向 Servers 提供多項關鍵功能，提升協議整體互動與功能性。其中一項重要功能是抽樣（Sampling）。
 
-### 👉 Sampling
+### 👉 抽樣（Sampling）
 
-- **Server-Initiated Agentic Behaviors**: Clients enable servers to initiate specific actions or behaviors autonomously, enhancing the dynamic capabilities of the system.
-- **Recursive LLM Interactions**: This feature allows for recursive interactions with large language models (LLMs), enabling more complex and iterative processing of tasks.
-- **Requesting Additional Model Completions**: Servers can request additional completions from the model, ensuring that the responses are thorough and contextually relevant.
+- **伺服器主導的代理行為**：Clients 允許伺服器自主啟動特定行動或行為，增強系統的動態能力。
+- **遞迴式 LLM 互動**：此功能支援與大型語言模型（LLM）的遞迴互動，使任務處理更複雜且反覆。
+- **請求額外模型完成**：伺服器可向模型請求額外完成，確保回應完整且符合上下文。
 
-## Information Flow in MCP
+## MCP 中的資訊流
 
-The Model Context Protocol (MCP) defines a structured flow of information between hosts, clients, servers, and models. Understanding this flow helps clarify how user requests are processed and how external tools and data are integrated into model responses.
+模型上下文協議（MCP）定義了 Hosts、Clients、Servers 與模型間的結構化資訊流。理解此流程有助釐清使用者請求如何被處理，以及外部工具與資料如何整合進模型回應。
 
-- **Host Initiates Connection**  
-  The host application (such as an IDE or chat interface) establishes a connection to an MCP server, typically via STDIO, WebSocket, or another supported transport.
+- **Host 啟動連線**  
+  Host 應用程式（如 IDE 或聊天介面）透過 STDIO、WebSocket 或其他支援的傳輸方式與 MCP 伺服器建立連線。
 
-- **Capability Negotiation**  
-  The client (embedded in the host) and the server exchange information about their supported features, tools, resources, and protocol versions. This ensures both sides understand what capabilities are available for the session.
+- **功能協商**  
+  Client（內嵌於 Host）與 Server 交換關於支援的功能、工具、資源及協議版本的資訊，確保雙方了解本次會話可用功能。
 
-- **User Request**  
-  The user interacts with the host (e.g., enters a prompt or command). The host collects this input and passes it to the client for processing.
+- **使用者請求**  
+  使用者與 Host 互動（例如輸入提示或指令）。Host 收集輸入並傳給 Client 處理。
 
-- **Resource or Tool Use**  
-  - The client may request additional context or resources from the server (such as files, database entries, or knowledge base articles) to enrich the model's understanding.
-  - If the model determines that a tool is needed (e.g., to fetch data, perform a calculation, or call an API), the client sends a tool invocation request to the server, specifying the tool name and parameters.
+- **資源或工具使用**  
+  - Client 可能向 Server 請求額外上下文或資源（如檔案、資料庫條目或知識庫文章）以豐富模型理解。
+  - 若模型判定需要工具（例如擷取資料、執行計算或呼叫 API），Client 將發送工具調用請求給 Server，指定工具名稱與參數。
 
-- **Server Execution**  
-  The server receives the resource or tool request, executes the necessary operations (such as running a function, querying a database, or retrieving a file), and returns the results to the client in a structured format.
+- **伺服器執行**  
+  Server 收到資源或工具請求後，執行必要操作（如執行函式、查詢資料庫或擷取檔案），並以結構化格式將結果返回 Client。
 
-- **Response Generation**  
-  The client integrates the server's responses (resource data, tool outputs, etc.) into the ongoing model interaction. The model uses this information to generate a comprehensive and contextually relevant response.
+- **回應生成**  
+  Client 將 Server 回應（資源資料、工具輸出等）整合進持續的模型互動中。模型利用這些資訊產生完整且符合上下文的回應。
 
-- **Result Presentation**  
-  The host receives the final output from the client and presents it to the user, often including both the model's generated text and any results from tool executions or resource lookups.
+- **結果呈現**  
+  Host 從 Client 收到最終輸出並呈現給使用者，通常包含模型生成的文字及任何工具執行或資源查詢的結果。
 
-This flow enables MCP to support advanced, interactive, and context-aware AI applications by seamlessly connecting models with external tools and data sources.
+此流程讓 MCP 能無縫連接模型與外部工具及資料來源，支援進階、互動且具上下文感知的 AI 應用。
 
-## Protocol Details
+## 協議細節
 
-MCP (Model Context Protocol) is built on top of [JSON-RPC 2.0](https://www.jsonrpc.org/), providing a standardized, language-agnostic message format for communication between hosts, clients, and servers. This foundation enables reliable, structured, and extensible interactions across diverse platforms and programming languages.
+MCP（模型上下文協議）建立於[JSON-RPC 2.0](https://www.jsonrpc.org/)之上，提供標準化、語言無關的訊息格式，促進 Hosts、Clients 與 Servers 間的溝通。此基礎確保跨多平台與程式語言的可靠、結構化且可擴充的互動。
 
-### Key Protocol Features
+### 主要協議功能
 
-MCP extends JSON-RPC 2.0 with additional conventions for tool invocation, resource access, and prompt management. It supports multiple transport layers (STDIO, WebSocket, SSE) and enables secure, extensible, and language-agnostic communication between components.
+MCP 擴充 JSON-RPC 2.0，加入工具調用、資源存取與提示管理的額外約定。支援多種傳輸層（STDIO、WebSocket、SSE），並實現元件間安全、可擴充且語言無關的通信。
 
-#### 🧢 Base Protocol
+#### 🧢 基本協議
 
-- **JSON-RPC Message Format**: All requests and responses use the JSON-RPC 2.0 specification, ensuring consistent structure for method calls, parameters, results, and error handling.
-- **Stateful Connections**: MCP sessions maintain state across multiple requests, supporting ongoing conversations, context accumulation, and resource management.
-- **Capability Negotiation**: During connection setup, clients and servers exchange information about supported features, protocol versions, available tools, and resources. This ensures both sides understand each other's capabilities and can adapt accordingly.
+- **JSON-RPC 訊息格式**：所有請求與回應皆遵循 JSON-RPC 2.0 規範，確保方法呼叫、參數、結果與錯誤處理結構一致。
+- **有狀態連線**：MCP 會話可跨多次請求維持狀態，支援持續對話、上下文累積與資源管理。
+- **功能協商**：連線建立時，Clients 與 Servers 交換支援功能、協議版本、可用工具與資源資訊，確保雙方了解彼此能力並能適當調整。
 
-#### ➕ Additional Utilities
+#### ➕ 額外工具
 
-Below are some additional utilities and protocol extensions that MCP provides to enhance developer experience and enable advanced scenarios:
+以下為 MCP 提供的部分額外工具與協議擴充，提升開發者體驗並支援進階場景：
 
-- **Configuration Options**: MCP allows dynamic configuration of session parameters, such as tool permissions, resource access, and model settings, tailored to each interaction.
-- **Progress Tracking**: Long-running operations can report progress updates, enabling responsive user interfaces and better user experience during complex tasks.
-- **Request Cancellation**: Clients can cancel in-flight requests, allowing users to interrupt operations that are no longer needed or taking too long.
-- **Error Reporting**: Standardized error messages and codes help diagnose issues, handle failures gracefully, and provide actionable feedback to users and developers.
-- **Logging**: Both clients and servers can emit structured logs for auditing, debugging, and monitoring protocol interactions.
+- **設定選項**：MCP 允許動態設定會話參數，如工具權限、資源存取與模型設定，依互動需求調整。
+- **進度追蹤**：長時間執行操作可回報進度更新，提升使用者介面回應性與使用體驗。
+- **請求取消**：Clients 可取消進行中的請求，讓使用者中斷不再需要或執行過久的操作。
+- **錯誤回報**：標準化錯誤訊息與代碼協助診斷問題、優雅處理失敗，並提供使用者與開發者可行的反饋。
+- **日誌紀錄**：Clients 與 Servers 均可產生結構化日誌，用於審計、除錯與監控協議互動。
 
-By leveraging these protocol features, MCP ensures robust, secure, and flexible communication between language models and external tools or data sources.
+藉由這些協議功能，MCP 確保語言模型與外部工具或資料來源間的通信穩健、安全且靈活。
 
-### 🔐 Security Considerations
+### 🔐 安全考量
 
-MCP implementations should adhere to several key security principles to ensure safe and trustworthy interactions:
+MCP 實作應遵守多項關鍵安全原則，確保互動安全可信：
 
-- **User Consent and Control**: Users must provide explicit consent before any data is accessed or operations are performed. They should have clear control over what data is shared and which actions are authorized, supported by intuitive user interfaces for reviewing and approving activities.
+- **使用者同意與控制**：使用者必須明確同意後，資料才能被存取或操作執行。應提供直覺介面，讓使用者清楚掌控資料分享範圍及授權行為。
+- **資料隱私**：使用者資料僅在明確同意下曝光，且必須透過適當存取控制保護。MCP 實作需防止未授權資料傳輸，並確保隱私在整個互動過程中維持。
+- **工具安全**：調用任何工具前，需取得使用者明確同意。使用者應充分了解每個工具的功能，並強制執行嚴格安全界限，避免非預期或不安全的工具執行。
 
-- **Data Privacy**: User data should only be exposed with explicit consent and must be protected by appropriate access controls. MCP implementations must safeguard against unauthorized data transmission and ensure that privacy is maintained throughout all interactions.
+遵循這些原則，MCP 確保使用者信任、隱私與安全在所有協議互動中獲得維護。
 
-- **Tool Safety**: Before invoking any tool, explicit user consent is required. Users should have a clear understanding of each tool’s functionality, and robust security boundaries must be enforced to prevent unintended or unsafe tool execution.
+## 程式碼範例：關鍵組件
 
-By following these principles, MCP ensures that user trust, privacy, and safety are maintained across all protocol interactions.
+以下為多種熱門程式語言的程式碼範例，展示如何實作 MCP 伺服器關鍵組件與工具。
 
-## Code Examples: Key Components
+### .NET 範例：建立簡單的 MCP 伺服器與工具
 
-Below are code examples in several popular programming languages that illustrate how to implement key MCP server components and tools.
-
-### .NET Example: Creating a Simple MCP Server with Tools
-
-Here is a practical .NET code example demonstrating how to implement a simple MCP server with custom tools. This example showcases how to define and register tools, handle requests, and connect the server using the Model Context Protocol.
+此實用 .NET 範例展示如何實作簡單 MCP 伺服器並註冊自訂工具。範例涵蓋工具定義、註冊、請求處理及透過模型上下文協議連接伺服器。
 
 ```csharp
 using System;
@@ -265,9 +290,9 @@ public class WeatherData
 }
 ```
 
-### Java Example: MCP Server Components
+### Java 範例：MCP 伺服器組件
 
-This example demonstrates the same MCP server and tool registration as the .NET example above, but implemented in Java.
+本範例展示與上述 .NET 範例相同的 MCP 伺服器與工具註冊，但以 Java 實作。
 
 ```java
 import io.modelcontextprotocol.server.McpServer;
@@ -345,9 +370,9 @@ class WeatherData {
 }
 ```
 
-### Python Example: Building an MCP Server
+### Python 範例：建立 MCP 伺服器
 
-In this example we show how to build an MCP server in Python. You're also shown two different ways to create tools.
+本範例示範如何用 Python 建立 MCP 伺服器，並展示兩種不同方式創建工具。
 
 ```python
 #!/usr/bin/env python3
@@ -395,9 +420,9 @@ if __name__ == "__main__":
     asyncio.run(serve_stdio(mcp))
 ```
 
-### JavaScript Example: Creating an MCP Server
+### JavaScript 範例：建立 MCP 伺服器
 
-This example shows MCP server creation in JavaScript and how to register two weather-related tools.
+此範例展示如何用 JavaScript 建立 MCP 伺服器，並註冊兩個與天氣相關的工具。
 
 ```javascript
 // Using the official Model Context Protocol SDK
@@ -482,83 +507,33 @@ server.connect(transport).catch(console.error);
 console.log("Weather MCP Server started");
 ```
 
-This JavaScript example demonstrates how to create an MCP client that connects to a server, sends a prompt, and processes the response including any tool calls that were made.
+此 JavaScript 範例示範如何建立 MCP client，連接伺服器、發送提示，並處理包含工具調用的回應。
 
-## Security and Authorization
+## 安全與授權
 
-MCP includes several built-in concepts and mechanisms for managing security and authorization throughout the protocol:
+MCP 包含多項內建概念與機制，管理協議中的安全與授權：
 
-1. **Tool Permission Control**:  
-  Clients can specify which tools a model is allowed to use during a session. This ensures that only explicitly authorized tools are accessible, reducing the risk of unintended or unsafe operations. Permissions can be configured dynamically based on user preferences, organizational policies, or the context of the interaction.
+1. **工具權限控制**：  
+   Clients 可指定模型在會話期間可使用哪些工具，確保僅授權工具可被存取，降低非預期或不安全操作風險。權限可依使用者偏好、組織政策或互動上下文動態設定。
 
-2. **Authentication**:  
-  Servers can require authentication before granting access to tools, resources, or sensitive operations. This may involve API keys, OAuth tokens, or other authentication schemes. Proper authentication ensures that only trusted clients and users can invoke server-side capabilities.
+2. **認證**：  
+   Servers 可要求認證，方可存取工具、資源或敏感操作。認證方式可能包括 API 金鑰、OAuth 令牌或其他機制。適當認證確保僅受信任的 Clients 與使用者能調用伺服器功能。
 
-3. **Validation**:  
-  Parameter validation is enforced for all tool invocations. Each tool defines the expected types, formats, and constraints for its parameters, and the server validates incoming requests accordingly. This prevents malformed or malicious input from reaching tool implementations and helps maintain the integrity of operations.
+3. **驗證**：  
+   所有工具調用均強制參數驗證。每個工具定義參數的類型、格式與限制，伺服器依此驗證請求，防止格式錯誤或惡意輸入進入工具實作，維護操作完整性。
 
-4. **Rate Limiting**:  
-  To prevent abuse and ensure fair usage of server resources, MCP servers can implement rate limiting for tool calls and resource access. Rate limits can be applied per user, per session, or globally, and help protect against denial-of-service attacks or excessive resource consumption.
+4. **速率限制**：  
+   為防止濫用並確保伺服器資源公平使用，MCP 伺服器可對工具調用與資源存取實施速率限制。限制可按使用者、會話或全域設定，有助防範拒絕服務攻擊或過度資源消耗。
 
-By combining these mechanisms, MCP provides a secure foundation for integrating language models with external tools and data sources, while giving users and developers fine-grained control over access and usage.
+結合這些機制，MCP 提供安全基礎，整合語言模型與外部工具及資料來源，同時賦予使用者與開發者細緻的存取與使用控制。
 
-## Protocol Messages
+## 協議訊息
 
-MCP communication uses structured JSON messages to facilitate clear and reliable interactions between clients, servers, and models. The main message types include:
+MCP 通信使用結構化 JSON 訊息，促進 Clients、Servers 與模型間清晰且可靠的互動。主要訊息類型包括：
 
-- **Client Request**  
-  Sent from the client to the server, this message typically includes:
-  - The user's prompt or command
-  - Conversation history for context
-  - Tool configuration and permissions
-  - Any additional metadata or session information
+- **Client 請求**  
+  由 Client 發送至 Server，通常包含：
+ 
 
-- **Model Response**  
-  Returned by the model (via the client), this message contains:
-  - Generated text or completion based on the prompt and context
-  - Optional tool call instructions if the model determines a tool should be invoked
-  - References to resources or additional context as needed
-
-- **Tool Request**  
-  Sent from the client to the server when a tool needs to be executed. This message includes:
-  - The name of the tool to invoke
-  - Parameters required by the tool (validated against the tool's schema)
-  - Contextual information or identifiers for tracking the request
-
-- **Tool Response**  
-  Returned by the server after executing a tool. This message provides:
-  - The results of the tool execution (structured data or content)
-  - Any errors or status information if the tool call failed
-  - Optionally, additional metadata or logs related to the execution
-
-These structured messages ensure that each step in the MCP workflow is explicit, traceable, and extensible, supporting advanced scenarios such as multi-turn conversations, tool chaining, and robust error handling.
-
-## Key Takeaways
-
-- MCP uses a client-server architecture to connect models with external capabilities
-- The ecosystem consists of clients, hosts, servers, tools, and data sources
-- Communication can happen through STDIO, SSE, or WebSockets
-- Tools are the fundamental units of functionality exposed to models
-- Structured communication protocols ensure consistent interactions
-
-## Exercise
-
-Design a simple MCP tool that would be useful in your domain. Define:
-1. What the tool would be named
-2. What parameters it would accept
-3. What output it would return
-4. How a model might use this tool to solve user problems
-
-
----
-
-## What's next
-
-Next: [Chapter 2: Security](/02-Security/README.md)
-
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-If by "mo" you meant a specific language or code (for example, Moldovan, or a language code), please clarify. Currently, "mo" is not a widely recognized language code or language name. If you provide more details, I can assist you better.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。
