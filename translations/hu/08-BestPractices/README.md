@@ -1,43 +1,43 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "36e46bfca83e3528afc6f66803efa75e",
-  "translation_date": "2025-05-17T17:13:48+00:00",
+  "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
+  "translation_date": "2025-07-02T08:15:02+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "hu"
 }
 -->
-# MCP fejlesztési bevált gyakorlatok
+# MCP Fejlesztési Legjobb Gyakorlatai
 
 ## Áttekintés
 
-Ez a lecke az MCP szerverek és funkciók fejlesztésére, tesztelésére és telepítésére vonatkozó fejlett bevált gyakorlatokra összpontosít a termelési környezetekben. Ahogy az MCP ökoszisztémák egyre összetettebbé és fontosabbá válnak, az elismert minták követése biztosítja a megbízhatóságot, fenntarthatóságot és együttműködést. Ez a lecke összegyűjti a valódi MCP megvalósítások során szerzett gyakorlati bölcsességet, hogy útmutatást nyújtson robusztus, hatékony szerverek létrehozásához hatékony erőforrásokkal, parancsokkal és eszközökkel.
+Ez a lecke az MCP szerverek és funkciók fejlett fejlesztési, tesztelési és éles környezetbe való telepítési legjobb gyakorlataira fókuszál. Ahogy az MCP ökoszisztémák egyre összetettebbé és fontosabbá válnak, a bevált minták követése biztosítja a megbízhatóságot, karbantarthatóságot és az interoperabilitást. Ez a lecke a valós MCP megvalósítások során szerzett gyakorlati tapasztalatokat foglalja össze, hogy segítsen robosztus, hatékony szervereket létrehozni megfelelő erőforrásokkal, promptokkal és eszközökkel.
 
-## Tanulási célok
+## Tanulási Célok
 
 A lecke végére képes leszel:
-- Alkalmazni az iparági bevált gyakorlatokat az MCP szerverek és funkciók tervezésében
-- Átfogó tesztelési stratégiákat létrehozni MCP szerverekhez
-- Hatékony, újrahasznosítható munkafolyamat mintákat tervezni összetett MCP alkalmazásokhoz
+- Alkalmazni az iparági legjobb gyakorlatokat MCP szerverek és funkciók tervezésében
+- Átfogó tesztelési stratégiákat kidolgozni MCP szerverekhez
+- Hatékony, újrahasznosítható munkafolyamat-mintákat tervezni összetett MCP alkalmazásokhoz
 - Megfelelő hibakezelést, naplózást és megfigyelhetőséget megvalósítani MCP szerverekben
-- Optimalizálni MCP megvalósításokat teljesítmény, biztonság és fenntarthatóság szempontjából
+- Optimalizálni az MCP megvalósításokat teljesítmény, biztonság és karbantarthatóság szempontjából
 
-## További hivatkozások
+## További Hivatkozások
 
-Az MCP bevált gyakorlatokról a legfrissebb információkért látogass el:
+A legfrissebb MCP legjobb gyakorlatokért tekintsd meg:
 - [MCP Dokumentáció](https://modelcontextprotocol.io/)
 - [MCP Specifikáció](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
-## MCP eszköz fejlesztési bevált gyakorlatok
+## MCP Eszközfejlesztési Legjobb Gyakorlatok
 
-### Építészeti alapelvek
+### Architektúrális Elvek
 
-#### 1. Egyszerű Felelősség Elv
+#### 1. Egységnyi Felelősség Elve
 
-Minden MCP funkciónak legyen egyértelmű, fókuszált célja. Ahelyett, hogy monolitikus eszközöket hoznál létre, amelyek több feladatot próbálnak kezelni, fejlessz specializált eszközöket, amelyek kiválóak bizonyos feladatokban.
+Minden MCP funkciónak világos, fókuszált céllal kell rendelkeznie. Ahelyett, hogy monolitikus eszközöket készítenél, amelyek több feladatot próbálnak egyszerre kezelni, fejlessz specializált eszközöket, amelyek egy adott feladatban kiválóak.
 
-**Jó példa:**
+**Jó Példa:**
 ```csharp
 // A focused tool that does one thing well
 public class WeatherForecastTool : ITool
@@ -95,7 +95,7 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-**Rossz példa:**
+**Rossz Példa:**
 ```csharp
 // A tool trying to do too many things
 public class WeatherToolSuite : ITool
@@ -153,9 +153,9 @@ public class WeatherToolSuite : ITool
 }
 ```
 
-#### 2. Függőség Injektálás és Tesztelhetőség
+#### 2. Függőség Befecskendezés és Tesztelhetőség
 
-Tervezd meg az eszközöket úgy, hogy függőségeiket konstruktor injektálás útján kapják meg, így tesztelhetők és konfigurálhatók:
+Tervezd meg az eszközöket úgy, hogy a függőségeiket konstruktoron keresztül kapják meg, így tesztelhetőek és konfigurálhatóak lesznek:
 
 ```java
 // Java example with dependency injection
@@ -179,9 +179,9 @@ public class CurrencyConversionTool implements Tool {
 }
 ```
 
-#### 3. Komponálható Eszközök
+#### 3. Összeilleszthető Eszközök
 
-Tervezd meg az eszközöket úgy, hogy összekapcsolhatók legyenek komplex munkafolyamatok létrehozására:
+Tervezd az eszközöket úgy, hogy összekapcsolhatóak legyenek komplexebb munkafolyamatok létrehozásához:
 
 ```python
 # Python example showing composable tools
@@ -212,13 +212,13 @@ class DataVisualizationTool(Tool):
 # These tools can be used independently or as part of a workflow
 ```
 
-### Séma tervezési bevált gyakorlatok
+### Sématervezési Legjobb Gyakorlatok
 
-A séma a szerződés a modell és az eszközöd között. Jól tervezett sémák jobb eszközhasználhatósághoz vezetnek.
+A séma a szerződés a modell és az eszközöd között. A jól megtervezett sémák jobb használhatósághoz vezetnek.
 
-#### 1. Egyértelmű Paraméter Leírások
+#### 1. Világos Paraméterleírások
 
-Mindig tartalmazz leíró információt minden paraméterhez:
+Mindig adj leíró információkat minden paraméterhez:
 
 ```csharp
 public object GetSchema()
@@ -257,7 +257,7 @@ public object GetSchema()
 
 #### 2. Érvényesítési Korlátozások
 
-Tartalmazz érvényesítési korlátozásokat az érvénytelen bemenetek megelőzésére:
+Adj meg érvényesítési korlátokat, hogy megakadályozd a hibás bemeneteket:
 
 ```java
 Map<String, Object> getSchema() {
@@ -297,9 +297,9 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. Következetes Válasz Struktúrák
+#### 3. Egységes Válaszstruktúrák
 
-Tartsd fenn a következetességet a válasz struktúráidban, hogy a modellek könnyebben értelmezhessék az eredményeket:
+Tartsd következetesen a válaszstruktúrákat, hogy a modellek könnyebben értelmezhessék az eredményeket:
 
 ```python
 async def execute_async(self, request):
@@ -340,11 +340,11 @@ def _format_item(self, item):
 
 ### Hibakezelés
 
-A robusztus hibakezelés elengedhetetlen az MCP eszközök megbízhatóságának fenntartásához.
+Robusztus hibakezelés elengedhetetlen az MCP eszközök megbízhatóságának fenntartásához.
 
-#### 1. Kegyes Hibakezelés
+#### 1. Kifinomult Hibakezelés
 
-Kezeld a hibákat megfelelő szinteken, és biztosíts tájékoztató üzeneteket:
+Kezeld a hibákat a megfelelő szinteken és adj informatív üzeneteket:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -386,9 +386,9 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. Strukturált Hiba Válaszok
+#### 2. Strukturált Hibaválaszok
 
-Amikor lehetséges, adj strukturált hiba információt vissza:
+Lehetőség szerint adj vissza strukturált hibainformációt:
 
 ```java
 @Override
@@ -420,7 +420,7 @@ public ToolResponse execute(ToolRequest request) {
 
 #### 3. Újrapróbálkozási Logika
 
-Valósítsd meg a megfelelő újrapróbálkozási logikát átmeneti hibák esetén:
+Valósíts meg megfelelő újrapróbálkozási logikát átmeneti hibák esetére:
 
 ```python
 async def execute_async(self, request):
@@ -446,11 +446,11 @@ async def execute_async(self, request):
             raise ToolExecutionException(f"Operation failed: {str(e)}")
 ```
 
-### Teljesítmény optimalizálás
+### Teljesítményoptimalizálás
 
 #### 1. Gyorsítótárazás
 
-Valósítsd meg a gyorsítótárazást a költséges műveletekhez:
+Valósíts meg gyorsítótárazást erőforrás-igényes műveletekhez:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -498,7 +498,7 @@ public class CachedDataTool : IMcpTool
 
 #### 2. Aszinkron Feldolgozás
 
-Használj aszinkron programozási mintákat az I/O-kötött műveletekhez:
+Használj aszinkron programozási mintákat I/O-kötött műveletekhez:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -547,9 +547,9 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. Erőforrás korlátozás
+#### 3. Erőforrás Korlátozás
 
-Valósítsd meg az erőforrás korlátozást a túlterhelés megelőzésére:
+Valósíts meg erőforrás-korlátozást a túlterhelés megelőzésére:
 
 ```python
 class ThrottledApiTool(Tool):
@@ -611,9 +611,9 @@ class TokenBucketRateLimiter:
         self.last_refill = now
 ```
 
-### Biztonsági bevált gyakorlatok
+### Biztonsági Legjobb Gyakorlatok
 
-#### 1. Bemenet Érvényesítés
+#### 1. Bemeneti Érvényesítés
 
 Mindig alaposan érvényesítsd a bemeneti paramétereket:
 
@@ -658,7 +658,7 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. Jogosultság Ellenőrzések
 
-Valósítsd meg a megfelelő jogosultság ellenőrzéseket:
+Valósíts meg megfelelő jogosultság ellenőrzéseket:
 
 ```java
 @Override
@@ -684,7 +684,7 @@ public ToolResponse execute(ToolRequest request) {
 
 #### 3. Érzékeny Adatok Kezelése
 
-Kezeld az érzékeny adatokat körültekintően:
+Kezeld körültekintően az érzékeny adatokat:
 
 ```python
 class SecureDataTool(Tool):
@@ -733,15 +733,15 @@ class SecureDataTool(Tool):
         return redacted
 ```
 
-## Tesztelési bevált gyakorlatok MCP eszközökhöz
+## Tesztelési Legjobb Gyakorlatok MCP Eszközökhöz
 
-Az átfogó tesztelés biztosítja, hogy az MCP eszközök helyesen működjenek, kezeljék a szélsőséges eseteket, és megfelelően integrálódjanak a rendszer többi részével.
+Az átfogó tesztelés biztosítja, hogy az MCP eszközök helyesen működjenek, kezeljék a szélsőséges eseteket és megfelelően integrálódjanak a rendszer többi részével.
 
-### Egység Tesztelés
+### Egységtesztelés
 
-#### 1. Teszteld Minden Eszközt Elkülönítve
+#### 1. Teszteld az Eszközöket Elkülönítve
 
-Hozz létre fókuszált teszteket minden eszköz funkciójára:
+Készíts fókuszált teszteket az egyes eszközök funkcionalitására:
 
 ```csharp
 [Fact]
@@ -801,9 +801,9 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 }
 ```
 
-#### 2. Séma Érvényesítés Tesztelés
+#### 2. Séma Érvényesítés Tesztelése
 
-Teszteld, hogy a sémák érvényesek-e, és megfelelően érvényesítik a korlátozásokat:
+Teszteld, hogy a sémák érvényesek és megfelelően érvényesítik a korlátokat:
 
 ```java
 @Test
@@ -848,7 +848,7 @@ public void testSchemaValidation() {
 
 #### 3. Hibakezelési Tesztek
 
-Hozz létre specifikus teszteket a hibás körülményekre:
+Készíts specifikus teszteket hibás esetekre:
 
 ```python
 @pytest.mark.asyncio
@@ -908,7 +908,7 @@ async def test_api_tool_handles_rate_limiting():
 
 #### 1. Eszközlánc Tesztelés
 
-Teszteld az eszközök együttműködését a várható kombinációkban:
+Teszteld, hogy az eszközök az elvárt kombinációkban együtt működnek:
 
 ```csharp
 [Fact]
@@ -949,7 +949,7 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 
 #### 2. MCP Szerver Tesztelés
 
-Teszteld az MCP szervert teljes eszköz regisztrációval és végrehajtással:
+Teszteld az MCP szervert az összes eszköz regisztrálásával és futtatásával:
 
 ```java
 @SpringBootTest
@@ -1015,9 +1015,9 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. Végpontok közötti tesztelés
+#### 3. Végponttól Végpontig Tesztelés
 
-Teszteld a teljes munkafolyamatokat a modell parancstól az eszköz végrehajtásig:
+Teszteld a teljes munkafolyamatot a modell promptjától az eszköz végrehajtásáig:
 
 ```python
 @pytest.mark.asyncio
@@ -1074,9 +1074,9 @@ async def test_model_interaction_with_tool():
 
 ### Teljesítmény Tesztelés
 
-#### 1. Terhelési Tesztelés
+#### 1. Terhelés Tesztelés
 
-Teszteld, hogy hány egyidejű kérést képes kezelni az MCP szervered:
+Teszteld, hogy hány egyidejű kérést tud kezelni az MCP szervered:
 
 ```csharp
 [Fact]
@@ -1164,9 +1164,9 @@ public void testServerUnderStress() {
 }
 ```
 
-#### 3. Monitoring és Profilozás
+#### 3. Megfigyelés és Profilozás
 
-Állítsd be a monitorozást a hosszú távú teljesítmény elemzéshez:
+Állíts be megfigyelést hosszú távú teljesítmény elemzéshez:
 
 ```python
 # Configure monitoring for an MCP server
@@ -1208,13 +1208,13 @@ def configure_monitoring(server):
     return server
 ```
 
-## MCP munkafolyamat tervezési minták
+## MCP Munkafolyamat Tervezési Minták
 
-Jól tervezett MCP munkafolyamatok javítják a hatékonyságot, megbízhatóságot és fenntarthatóságot. Íme a követendő kulcsfontosságú minták:
+A jól megtervezett MCP munkafolyamatok javítják a hatékonyságot, megbízhatóságot és karbantarthatóságot. Íme a legfontosabb minták:
 
-### 1. Eszközlánc Minta
+### 1. Eszközök Láncolata Minta
 
-Kapcsolj össze több eszközt sorban, ahol minden eszköz kimenete a következő bemenete lesz:
+Kapcsolj össze több eszközt úgy, hogy az egyik kimenete a következő bemenete legyen:
 
 ```python
 # Python Chain of Tools implementation
@@ -1255,7 +1255,7 @@ result = await data_processing_chain.execute(
 
 ### 2. Dispatcher Minta
 
-Használj egy központi eszközt, amely a bemenet alapján specializált eszközökhöz irányít:
+Használj központi eszközt, amely bemenet alapján specializált eszközökhöz irányít:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1337,7 +1337,7 @@ public class ContentDispatcherTool : IMcpTool
 
 ### 3. Párhuzamos Feldolgozás Minta
 
-Hajts végre több eszközt egyidejűleg a hatékonyság érdekében:
+Futtass több eszközt egyszerre a hatékonyság érdekében:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1403,9 +1403,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. Hiba helyreállítási minta
+### 4. Hibajavító Minta
 
-Valósítsd meg a kegyes visszaállításokat eszközhibák esetén:
+Valósíts meg kifinomult visszaesési megoldásokat eszközhibák esetére:
 
 ```python
 class ResilientWorkflow:
@@ -1459,9 +1459,9 @@ async def get_weather(workflow, location):
     )
 ```
 
-### 5. Munkafolyamat Kompozíciós Minta
+### 5. Munkafolyamat Összeállítás Minta
 
-Építs összetett munkafolyamatokat egyszerűbbek komponálásával:
+Építs komplex munkafolyamatokat egyszerűbbek összeillesztésével:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1508,37 +1508,37 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# MCP szerverek tesztelése: Bevált gyakorlatok és legjobb tippek
+# MCP Szerverek Tesztelése: Legjobb Gyakorlatok és Tippek
 
 ## Áttekintés
 
-A tesztelés kritikus szempont a megbízható, magas színvonalú MCP szerverek fejlesztésében. Ez az útmutató átfogó bevált gyakorlatokat és tippeket nyújt az MCP szerverek teszteléséhez a fejlesztési életciklus során, az egységtesztektől az integrációs tesztekig és a végpontok közötti validálásig.
+A tesztelés kulcsfontosságú a megbízható, magas minőségű MCP szerverek fejlesztésében. Ez az útmutató átfogó legjobb gyakorlatokat és tippeket nyújt az MCP szerverek fejlesztési ciklus alatti teszteléséhez, az egységtesztektől az integrációs és végponttól végpontig tartó validációig.
 
-## Miért fontos a tesztelés az MCP szerverek számára
+## Miért Fontos a Tesztelés MCP Szervereknél
 
-Az MCP szerverek kulcsfontosságú köztes szoftverként szolgálnak az AI modellek és a kliens alkalmazások között. Az alapos tesztelés biztosítja:
+Az MCP szerverek fontos köztes rétegként működnek az AI modellek és a kliens alkalmazások között. Az alapos tesztelés biztosítja:
 
-- Megbízhatóságot a termelési környezetekben
-- Pontos kérés- és válaszkezelést
-- Az MCP specifikációk megfelelő megvalósítását
-- Ellenállást a hibákkal és szélsőséges esetekkel szemben
+- Megbízhatóságot éles környezetben
+- Pontos kérés-válasz kezelését
+- Az MCP specifikációk helyes megvalósítását
+- Ellenállóképességet hibák és szélsőséges esetek ellen
 - Következetes teljesítményt különböző terhelések alatt
 
-## Egység Tesztelés az MCP Szerverekhez
+## Egységtesztelés MCP Szerverekhez
 
-### Egység Tesztelés (Alapozás)
+### Egységtesztelés (Alap)
 
-Az egységtesztek ellenőrzik az MCP szerver egyes komponenseit elkülönítve.
+Az egységtesztek az MCP szerver egyes komponenseit izoláltan ellenőrzik.
 
-#### Mit tesztelj
+#### Mit Tesztelj
 
-1. **Erőforrás Kezelők**: Teszteld minden erőforrás kezelő logikáját függetlenül
+1. **Erőforrás Kezelők**: Teszteld az egyes erőforrás kezelők logikáját külön-külön
 2. **Eszköz Megvalósítások**: Ellenőrizd az eszközök viselkedését különböző bemenetekkel
-3. **Prompt Sablonok**: Bizonyosodj meg arról, hogy a prompt sablonok helyesen jelennek meg
-4. **Séma Érvényesítés**: Teszteld a paraméter érvényesítési logikát
-5. **Hibakezelés**: Ellenőrizd a hiba válaszokat érvénytelen bemenetek esetén
+3. **Prompt Sablonok**: Biztosítsd, hogy a prompt sablonok helyesen renderelődnek
+4. **Séma Érvényesítés**: Teszteld a paraméterek érvényesítési logikáját
+5. **Hibakezelés**: Ellenőrizd a hibaválaszokat hibás bemenetek esetén
 
-#### Bevált gyakorlatok az egységteszteléshez
+#### Egységtesztelési Legjobb Gyakorlatok
 
 ```csharp
 // Example unit test for a calculator tool in C#
@@ -1582,19 +1582,19 @@ def test_calculator_tool_add():
     assert result["value"] == 12
 ```
 
-### Integrációs Tesztelés (Középső réteg)
+### Integrációs Tesztelés (Középső Réteg)
 
-Az integrációs tesztek ellenőrzik az MCP szerver komponensei közötti interakciókat.
+Az integrációs tesztek az MCP szerver komponenseinek kölcsönhatásait ellenőrzik.
 
-#### Mit tesztelj
+#### Mit Tesztelj
 
-1. **Szerver Inicializálás**: Teszteld a szerver indítását különböző konfigurációkkal
-2. **Útvonal Regisztráció**: Ellenőrizd, hogy minden végpont helyesen van-e regisztrálva
+1. **Szerver Indítás**: Teszteld a szerver indítását különböző konfigurációkkal
+2. **Útvonal Regisztráció**: Ellenőrizd, hogy minden végpont helyesen regisztrálva van
 3. **Kérés Feldolgozás**: Teszteld a teljes kérés-válasz ciklust
-4. **Hiba Terjedés**: Bizonyosodj meg arról, hogy a hibák megfelelően kezelődnek a komponensek között
+4. **Hibák Átterjedése**: Biztosítsd, hogy a hibák megfelelően kezelődnek a komponensek között
 5. **Hitelesítés és Jogosultság**: Teszteld a biztonsági mechanizmusokat
 
-#### Bevált gyakorlatok az integrációs teszteléshez
+#### Integrációs Tesztelési Legjobb Gyakorlatok
 
 ```csharp
 // Example integration test for MCP server in C#
@@ -1630,19 +1630,19 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 }
 ```
 
-### Végpontok közötti tesztelés (Felső réteg)
+### Végponttól Végpontig Tesztelés (Felső Réteg)
 
-A végpontok közötti tesztek ellenőrzik a teljes rendszer viselkedését a kliens és a szerver között.
+A végponttól végpontig tartó tesztek az egész rendszer viselkedését ellenőrzik a kliens oldaltól a szerverig.
 
-#### Mit tesztelj
+#### Mit Tesztelj
 
-1. **Kliens-szerver kommunikáció**: Teszteld a teljes kérés-válasz ciklusokat
-2. **Valódi kliens SDK-k**: Teszteld valódi kliens megvalósításokkal
-3. **Teljesítmény terhelés alatt**: Ellenőrizd a viselkedést több egyidejű kérés esetén
-4. **Hiba helyreállítás**: Teszteld a rendszer helyreállítását hibákból
-5. **Hosszú műveletek kezelése**: Ellenőrizd a streaming és hosszú műveletek kezelését
+1. **Kliens-Szerver Kommunikáció**: Teszteld a teljes kérés-válasz ciklusokat
+2. **Valós Kliens SDK-k**: Tesztelj valódi kliens megvalósításokkal
+3. **Terhelés Alatti Teljesítmény**: Ellenőrizd a viselkedést több egyidejű kérés esetén
+4. **Hibajavítás**: Teszteld a rendszer helyreállását hibákból
+5. **Hosszú Műveletek**: Ellenőrizd a streaming és hosszú futású műveletek kezelését
 
-#### Bevált gyakorlatok a végpontok közötti teszteléshez
+#### Végponttól Végpontig Tesztelési Legjobb Gyakorlatok
 
 ```typescript
 // Example E2E test with a client in TypeScript
@@ -1674,18 +1674,18 @@ describe('MCP Server E2E Tests', () => {
 });
 ```
 
-## Mocking Stratégiák az MCP Teszteléshez
+## Mockolási Stratégiák MCP Teszteléshez
 
-A mocking elengedhetetlen a komponensek elkülönítéséhez a tesztelés során.
+A mockolás elengedhetetlen a komponensek izolált teszteléséhez.
 
-### Komponensek, amelyeket mockolni kell
+### Mockolandó Komponensek
 
-1. **Külső AI Modellek**: Mockold a modell válaszokat a kiszámítható teszteléshez
+1. **Külső AI Modellek**: Mockold a modell válaszokat kiszámítható tesztekhez
 2. **Külső Szolgáltatások**: Mockold az API függőségeket (adatbázisok, harmadik fél szolgáltatások)
 3. **Hitelesítési Szolgáltatások**: Mockold az identitás szolgáltatókat
-4. **Erőforrás Szolgáltatók**: Mockold a költséges erőforrás kezelőket
+4. **Erőforrás Szolgáltatók**: Mockold az erőforrás-igényes kezelőket
 
-### Példa: AI Modell válasz mockolása
+### Példa: AI Modell Válasz Mockolása
 
 ```csharp
 // C# example with Moq
@@ -1719,24 +1719,24 @@ def test_with_mock_model(mock_model):
 
 ## Teljesítmény Tesztelés
 
-A teljesítmény tesztelés elengedhetetlen a termelési MCP szerverekhez.
+A teljesítménytesztelés kulcsfontosságú az éles MCP szerverekhez.
 
-### Mit mérj
+### Mit Mérj
 
-1. **Késleltetés**: Válaszidő a kérésekhez
-2. **Áteresztőképesség**: Kérések kezelése másodpercenként
-3. **Erőforrás Felhasználás**: CPU, memória, hálózati használat
-4. **Egyidejűség Kezelés**: Viselkedés párhuzamos kérések alatt
-5. **Skálázási Jellemzők**: Teljesítmény, ahogy a terhelés növekszik
+1. **Késleltetés**: Válaszidő kérésekre
+2. **Áteresztőképesség**: Másodpercenként kezelt kérések száma
+3. **Erőforrás Használat**: CPU, memória, hálózat kihasználtság
+4. **Párhuzamosság Kezelése**: Viselkedés párhuzamos kérések alatt
+5. **Skálázódási Jellemzők**: Teljesítmény terhelés növekedésével
 
-### Eszközök a teljesítmény teszteléshez
+### Teljesítmény Tesztelő Eszközök
 
-- **k6**: Nyílt forráskódú terhelési tesztelő eszköz
-- **JMeter**: Átfogó teljesítmény tesztelés
-- **Locust**: Python alapú terhelési tesztelés
-- **Azure Load Testing**: Felhő alapú teljesítmény tesztelés
+- **k6**: Nyílt forráskódú terhelés tesztelő eszköz
+- **JMeter**: Átfogó teljesítménytesztelő
+- **Locust**: Python alapú terhelés tesztelő
+- **Azure Load Testing**: Felhő alapú teljesítménytesztelő
 
-### Példa: Alap terhelési teszt k6-tal
+### Példa: Egyszerű Terhelés Teszt k6-tal
 
 ```javascript
 // k6 script for load testing MCP server
@@ -1776,16 +1776,16 @@ export default function () {
 }
 ```
 
-## Teszt Automatizálás az MCP Szerverekhez
+## Teszt Automatizálás MCP Szerverekhez
 
-A tesztjeid automatizálása biztosítja a következetes minőséget és gyorsabb visszajelzési köröket.
+A tesztek automatizálása biztosítja a következetes minőséget és gyorsabb visszacsatolást.
 
 ### CI/CD Integráció
 
-1. **Futtasd az egységteszteket pull requestekre**: Biztosítsd, hogy a kódváltozások ne törjék meg a meglévő funkciókat
-2. **Integrációs tesztek a staging környezetben**: Futtasd az integrációs teszteket a pre-production környezetekben
-3. **Teljesítmény alapértékek**: Tartsd fenn a teljesítmény benchmarkokat a regressziók észlelésére
-4. **Biztonsági szkennelések**: Automatizáld a biztonsági tesztelést a pipeline részeként
+1. **Egységtesztek futtatása Pull Request-eknél**: Biztosítsd, hogy a kódváltozások ne törjék meg a meglévő funkcionalitást
+2. **Integrációs tesztek staging környezetben**: Fussanak integrációs tesztek előéles környezetben
+3. **Teljesítmény alapvonalak**: Tartsd fenn a teljesítmény mérőszámokat a regressziók elkerülésére
+4. **Biztonsági szkennelés**: Automatizáld a biztonsági teszteket a folyamat részeként
 
 ### Példa CI Pipeline (GitHub Actions)
 
@@ -1826,19 +1826,19 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## Tesztelés az MCP Specifikációval való megfelelőséghez
+## MCP Specifikációnak Megfelelés Tesztelése
 
-Ellenőrizd, hogy a szervered helyesen megvalósítja az MCP specifikációt.
+Ellenőrizd, hogy a szervered helyesen valósítja meg az MCP specifikációt.
 
-### Kulcsfontosságú megfelelőségi területek
+### Fő Megfelelési Területek
 
-1. **API végpontok**: Teszteld a szükséges végpontokat (/resources, /tools, stb.)
-2. **Kérés/válasz formátum**: Érvényesítsd a séma megfelelőséget
-3. **Hiba kódok**: Ellenőrizd a megfelelő státuszkódokat különböző forgatókönyvekhez
-4. **Tartalom típusok**: Teszteld a különböző tartalom típusok kezelését
-5. **Hitelesítési folyamat**: Ellenőrizd a specifikációval összhangban lévő hitelesítési mechanizmusokat
+1. **API Végpontok**: Teszteld a kötelező végpontokat (/resources, /tools, stb.)
+2. **Kérés/Válasz Formátum**: Érvényesítsd a séma szerinti megfelelést
+3. **Hibakódok**: Ellenőrizd a helyes státuszkódokat különböző esetekben
+4. **Tartalomtípusok**: Teszteld a különböző tartalomtípusok kezelését
+5. **Hitelesítési Folyamat**: Ellenőrizd a specifikációnak megfelelő hitelesítési mechanizmusokat
 
-### Megfelelőségi tesztcsomag
+### Megfelelőségi Tesztcsomag
 
 ```csharp
 [Fact]
@@ -1865,10 +1865,12 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 }
 ```
 
-## A 10 legjobb tipp az MCP szerver teszteléshez
+## Top 10 Tipp Hatékony MCP Szerver Teszteléshez
 
-1. **Eszköz definíciók külön tesztelése**: Ellenőrizd a séma definíciókat függetlenül az eszköz logikától
-2. **Használj paraméterezett teszteket**: Teszteld az
+1. **Teszteld külön az eszköz definíciókat**: Ellenőrizd a séma definíciókat az eszköz logikájától függetlenül
+2. **Használj paraméterezett teszteket**: Tesztelj eszközöket változatos bemenetekkel, beleértve a szélsőséges eseteket is
+3. **Ellenőrizd a hibaválaszokat**: Biztosítsd a megfelelő hibakezelést minden lehetséges hibahelyzetre
+4. **Teszteld a jogosultság logikát**: Biztosítsd a megfelelő hozzáférés-ellenőrzést különböző felhasználói szerepk
 
-**Felelősségi nyilatkozat**:  
-Ez a dokumentum az AI fordítási szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) használatával lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekinthető hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítás ajánlott. Nem vállalunk felelősséget semmilyen félreértésért vagy félremagyarázásért, amely a fordítás használatából ered.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

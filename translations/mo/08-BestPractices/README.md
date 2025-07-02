@@ -1,43 +1,43 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "36e46bfca83e3528afc6f66803efa75e",
-  "translation_date": "2025-05-17T16:46:44+00:00",
+  "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
+  "translation_date": "2025-07-02T07:53:10+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "mo"
 }
 -->
-# MCP Development Best Practices
+# MCP 開發最佳實踐
 
-## Overview
+## 概述
 
-This lesson focuses on advanced best practices for developing, testing, and deploying MCP servers and features in production environments. As MCP ecosystems grow in complexity and importance, following established patterns ensures reliability, maintainability, and interoperability. This lesson consolidates practical wisdom gained from real-world MCP implementations to guide you in creating robust, efficient servers with effective resources, prompts, and tools.
+本課程聚焦於在生產環境中開發、測試及部署 MCP 伺服器與功能的進階最佳實踐。隨著 MCP 生態系統日益複雜且重要，遵循既有模式能確保可靠性、可維護性及互通性。本課程整合了來自實際 MCP 實作的寶貴經驗，指導你打造穩健、高效的伺服器，並善用資源、提示與工具。
 
-## Learning Objectives
+## 學習目標
 
-By the end of this lesson, you will be able to:
-- Apply industry best practices in MCP server and feature design
-- Create comprehensive testing strategies for MCP servers
-- Design efficient, reusable workflow patterns for complex MCP applications
-- Implement proper error handling, logging, and observability in MCP servers
-- Optimize MCP implementations for performance, security, and maintainability
+完成本課程後，你將能夠：
+- 在 MCP 伺服器與功能設計中應用業界最佳實踐
+- 制定全面的 MCP 伺服器測試策略
+- 為複雜 MCP 應用設計高效且可重複使用的工作流程模式
+- 在 MCP 伺服器中實作適當的錯誤處理、日誌記錄與可觀察性
+- 優化 MCP 實作以提升效能、安全性與可維護性
 
-## Additional References
+## 參考資料
 
-For the most up-to-date information on MCP best practices, refer to:
+欲取得最新 MCP 最佳實踐資訊，請參考：
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
-## MCP Tool Development Best Practices
+## MCP 工具開發最佳實踐
 
-### Architectural Principles
+### 架構原則
 
-#### 1. Single Responsibility Principle
+#### 1. 單一職責原則
 
-Each MCP feature should have a clear, focused purpose. Rather than creating monolithic tools that attempt to handle multiple concerns, develop specialized tools that excel at specific tasks.
+每個 MCP 功能應有明確且專注的目的。避免打造試圖同時處理多種問題的單一巨型工具，應開發專門針對特定任務的工具。
 
-**Good Example:**
+**良好範例：**
 ```csharp
 // A focused tool that does one thing well
 public class WeatherForecastTool : ITool
@@ -95,7 +95,7 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-**Poor Example:**
+**不佳範例：**
 ```csharp
 // A tool trying to do too many things
 public class WeatherToolSuite : ITool
@@ -153,9 +153,9 @@ public class WeatherToolSuite : ITool
 }
 ```
 
-#### 2. Dependency Injection and Testability
+#### 2. 依賴注入與可測試性
 
-Design tools to receive their dependencies through constructor injection, making them testable and configurable:
+設計工具時，透過建構函式注入依賴，使其易於測試與配置：
 
 ```java
 // Java example with dependency injection
@@ -179,9 +179,9 @@ public class CurrencyConversionTool implements Tool {
 }
 ```
 
-#### 3. Composable Tools
+#### 3. 可組合的工具
 
-Design tools that can be composed together to create more complex workflows:
+設計能夠相互組合，以建立更複雜工作流程的工具：
 
 ```python
 # Python example showing composable tools
@@ -212,13 +212,13 @@ class DataVisualizationTool(Tool):
 # These tools can be used independently or as part of a workflow
 ```
 
-### Schema Design Best Practices
+### 架構設計最佳實踐
 
-The schema is the contract between the model and your tool. Well-designed schemas lead to better tool usability.
+Schema 是模型與工具之間的契約。良好的 schema 設計能提升工具的易用性。
 
-#### 1. Clear Parameter Descriptions
+#### 1. 清晰的參數描述
 
-Always include descriptive information for each parameter:
+務必為每個參數提供詳細描述：
 
 ```csharp
 public object GetSchema()
@@ -255,9 +255,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. Validation Constraints
+#### 2. 驗證限制
 
-Include validation constraints to prevent invalid inputs:
+加入驗證條件以防止無效輸入：
 
 ```java
 Map<String, Object> getSchema() {
@@ -297,9 +297,9 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. Consistent Return Structures
+#### 3. 一致的回傳結構
 
-Maintain consistency in your response structures to make it easier for models to interpret results:
+維持回應結構的一致性，方便模型解析結果：
 
 ```python
 async def execute_async(self, request):
@@ -338,13 +338,13 @@ def _format_item(self, item):
     }
 ```
 
-### Error Handling
+### 錯誤處理
 
-Robust error handling is crucial for MCP tools to maintain reliability.
+健全的錯誤處理對 MCP 工具的可靠性至關重要。
 
-#### 1. Graceful Error Handling
+#### 1. 優雅的錯誤處理
 
-Handle errors at appropriate levels and provide informative messages:
+在適當層級處理錯誤，並提供有用的訊息：
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -386,9 +386,9 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. Structured Error Responses
+#### 2. 結構化錯誤回應
 
-Return structured error information when possible:
+盡可能回傳結構化的錯誤資訊：
 
 ```java
 @Override
@@ -418,9 +418,9 @@ public ToolResponse execute(ToolRequest request) {
 }
 ```
 
-#### 3. Retry Logic
+#### 3. 重試邏輯
 
-Implement appropriate retry logic for transient failures:
+為暫時性錯誤實作適當的重試機制：
 
 ```python
 async def execute_async(self, request):
@@ -446,11 +446,11 @@ async def execute_async(self, request):
             raise ToolExecutionException(f"Operation failed: {str(e)}")
 ```
 
-### Performance Optimization
+### 性能優化
 
-#### 1. Caching
+#### 1. 快取
 
-Implement caching for expensive operations:
+對昂貴操作實施快取：
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -496,9 +496,9 @@ public class CachedDataTool : IMcpTool
 }
 ```
 
-#### 2. Asynchronous Processing
+#### 2. 非同步處理
 
-Use asynchronous programming patterns for I/O-bound operations:
+對 I/O 密集型操作使用非同步程式設計模式：
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -547,9 +547,9 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. Resource Throttling
+#### 3. 資源節流
 
-Implement resource throttling to prevent overload:
+實施資源節流以避免過載：
 
 ```python
 class ThrottledApiTool(Tool):
@@ -611,11 +611,11 @@ class TokenBucketRateLimiter:
         self.last_refill = now
 ```
 
-### Security Best Practices
+### 安全最佳實踐
 
-#### 1. Input Validation
+#### 1. 輸入驗證
 
-Always validate input parameters thoroughly:
+務必徹底驗證輸入參數：
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -656,9 +656,9 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. Authorization Checks
+#### 2. 授權檢查
 
-Implement proper authorization checks:
+實作正確的授權檢查：
 
 ```java
 @Override
@@ -682,9 +682,9 @@ public ToolResponse execute(ToolRequest request) {
 }
 ```
 
-#### 3. Sensitive Data Handling
+#### 3. 敏感資料處理
 
-Handle sensitive data carefully:
+謹慎處理敏感資料：
 
 ```python
 class SecureDataTool(Tool):
@@ -733,15 +733,15 @@ class SecureDataTool(Tool):
         return redacted
 ```
 
-## Testing Best Practices for MCP Tools
+## MCP 工具測試最佳實踐
 
-Comprehensive testing ensures that MCP tools function correctly, handle edge cases, and integrate properly with the rest of the system.
+全面測試確保 MCP 工具功能正確，能處理邊緣情況，並與系統其他部分良好整合。
 
-### Unit Testing
+### 單元測試
 
-#### 1. Test Each Tool in Isolation
+#### 1. 單獨測試每個工具
 
-Create focused tests for each tool's functionality:
+針對各工具功能撰寫專注測試：
 
 ```csharp
 [Fact]
@@ -801,9 +801,9 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 }
 ```
 
-#### 2. Schema Validation Testing
+#### 2. Schema 驗證測試
 
-Test that schemas are valid and properly enforce constraints:
+測試 schema 的有效性及限制條件：
 
 ```java
 @Test
@@ -846,9 +846,9 @@ public void testSchemaValidation() {
 }
 ```
 
-#### 3. Error Handling Tests
+#### 3. 錯誤處理測試
 
-Create specific tests for error conditions:
+針對錯誤情況撰寫專門測試：
 
 ```python
 @pytest.mark.asyncio
@@ -904,11 +904,11 @@ async def test_api_tool_handles_rate_limiting():
         assert "try again" in error_msg
 ```
 
-### Integration Testing
+### 整合測試
 
-#### 1. Tool Chain Testing
+#### 1. 工具鏈測試
 
-Test tools working together in expected combinations:
+測試工具間的預期組合運作：
 
 ```csharp
 [Fact]
@@ -947,9 +947,9 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 }
 ```
 
-#### 2. MCP Server Testing
+#### 2. MCP 伺服器測試
 
-Test the MCP server with full tool registration and execution:
+測試完整註冊與執行工具的 MCP 伺服器：
 
 ```java
 @SpringBootTest
@@ -1015,9 +1015,9 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. End-to-End Testing
+#### 3. 端對端測試
 
-Test complete workflows from model prompt to tool execution:
+測試從模型提示到工具執行的完整工作流程：
 
 ```python
 @pytest.mark.asyncio
@@ -1072,11 +1072,11 @@ async def test_model_interaction_with_tool():
         assert response.tool_calls[0].tool_name == "weatherForecast"
 ```
 
-### Performance Testing
+### 性能測試
 
-#### 1. Load Testing
+#### 1. 負載測試
 
-Test how many concurrent requests your MCP server can handle:
+測試 MCP 伺服器可同時處理多少請求：
 
 ```csharp
 [Fact]
@@ -1109,9 +1109,9 @@ public async Task McpServer_HandlesHighConcurrency()
 }
 ```
 
-#### 2. Stress Testing
+#### 2. 壓力測試
 
-Test the system under extreme load:
+在極限負載下測試系統：
 
 ```java
 @Test
@@ -1164,9 +1164,9 @@ public void testServerUnderStress() {
 }
 ```
 
-#### 3. Monitoring and Profiling
+#### 3. 監控與分析
 
-Set up monitoring for long-term performance analysis:
+設定監控以進行長期效能分析：
 
 ```python
 # Configure monitoring for an MCP server
@@ -1208,13 +1208,13 @@ def configure_monitoring(server):
     return server
 ```
 
-## MCP Workflow Design Patterns
+## MCP 工作流程設計模式
 
-Well-designed MCP workflows improve efficiency, reliability, and maintainability. Here are key patterns to follow:
+良好設計的 MCP 工作流程能提升效率、可靠性與可維護性。以下是重要模式：
 
-### 1. Chain of Tools Pattern
+### 1. 工具鏈模式
 
-Connect multiple tools in a sequence where each tool's output becomes the input for the next:
+將多個工具串接成序列，每個工具的輸出成為下一個的輸入：
 
 ```python
 # Python Chain of Tools implementation
@@ -1253,9 +1253,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. Dispatcher Pattern
+### 2. 分派器模式
 
-Use a central tool that dispatches to specialized tools based on input:
+使用中央工具根據輸入分派給專門工具：
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1335,9 +1335,9 @@ public class ContentDispatcherTool : IMcpTool
 }
 ```
 
-### 3. Parallel Processing Pattern
+### 3. 平行處理模式
 
-Execute multiple tools simultaneously for efficiency:
+同時執行多個工具以提升效率：
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1403,9 +1403,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. Error Recovery Pattern
+### 4. 錯誤復原模式
 
-Implement graceful fallbacks for tool failures:
+為工具失敗實作優雅的備援機制：
 
 ```python
 class ResilientWorkflow:
@@ -1459,9 +1459,9 @@ async def get_weather(workflow, location):
     )
 ```
 
-### 5. Workflow Composition Pattern
+### 5. 工作流程組合模式
 
-Build complex workflows by composing simpler ones:
+透過組合較簡單的工作流程來構建複雜流程：
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1508,37 +1508,37 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# Testing MCP Servers: Best Practices and Top Tips
+# 測試 MCP 伺服器：最佳實踐與重要提示
 
-## Overview
+## 概述
 
-Testing is a critical aspect of developing reliable, high-quality MCP servers. This guide provides comprehensive best practices and tips for testing your MCP servers throughout the development lifecycle, from unit tests to integration tests and end-to-end validation.
+測試是開發可靠且高品質 MCP 伺服器的關鍵環節。本指南提供從單元測試到整合測試及端對端驗證的全面最佳實踐與技巧。
 
-## Why Testing Matters for MCP Servers
+## 為何 MCP 伺服器測試很重要
 
-MCP servers serve as crucial middleware between AI models and client applications. Thorough testing ensures:
+MCP 伺服器作為 AI 模型與客戶端應用之間的重要中介軟體，完整測試能確保：
 
-- Reliability in production environments
-- Accurate handling of requests and responses
-- Proper implementation of MCP specifications
-- Resilience against failures and edge cases
-- Consistent performance under various loads
+- 生產環境的可靠性
+- 請求與回應的正確處理
+- MCP 規範的正確實作
+- 對失敗與邊緣情況的韌性
+- 在各種負載下的穩定效能
 
-## Unit Testing for MCP Servers
+## MCP 伺服器的單元測試
 
-### Unit Testing (Foundation)
+### 單元測試（基礎）
 
-Unit tests verify individual components of your MCP server in isolation.
+單元測試驗證 MCP 伺服器中各個元件的獨立功能。
 
-#### What to Test
+#### 測試項目
 
-1. **Resource Handlers**: Test each resource handler's logic independently
-2. **Tool Implementations**: Verify tool behavior with various inputs
-3. **Prompt Templates**: Ensure prompt templates render correctly
-4. **Schema Validation**: Test parameter validation logic
-5. **Error Handling**: Verify error responses for invalid inputs
+1. **資源處理器**：獨立測試每個資源處理器的邏輯
+2. **工具實作**：驗證工具在不同輸入下的行為
+3. **提示模板**：確保提示模板正確渲染
+4. **Schema 驗證**：測試參數驗證邏輯
+5. **錯誤處理**：驗證無效輸入的錯誤回應
 
-#### Best Practices for Unit Testing
+#### 單元測試最佳實踐
 
 ```csharp
 // Example unit test for a calculator tool in C#
@@ -1582,19 +1582,19 @@ def test_calculator_tool_add():
     assert result["value"] == 12
 ```
 
-### Integration Testing (Middle Layer)
+### 整合測試（中層）
 
-Integration tests verify interactions between components of your MCP server.
+整合測試驗證 MCP 伺服器各元件間的互動。
 
-#### What to Test
+#### 測試項目
 
-1. **Server Initialization**: Test server startup with various configurations
-2. **Route Registration**: Verify all endpoints are correctly registered
-3. **Request Processing**: Test the full request-response cycle
-4. **Error Propagation**: Ensure errors are properly handled across components
-5. **Authentication & Authorization**: Test security mechanisms
+1. **伺服器初始化**：測試不同設定下的啟動流程
+2. **路由註冊**：確認所有端點正確註冊
+3. **請求處理**：測試完整請求-回應流程
+4. **錯誤傳遞**：確保錯誤在元件間妥善處理
+5. **認證與授權**：測試安全機制
 
-#### Best Practices for Integration Testing
+#### 整合測試最佳實踐
 
 ```csharp
 // Example integration test for MCP server in C#
@@ -1630,19 +1630,19 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 }
 ```
 
-### End-to-End Testing (Top Layer)
+### 端對端測試（最高層）
 
-End-to-end tests verify the complete system behavior from client to server.
+端對端測試驗證從客戶端到伺服器的整體系統行為。
 
-#### What to Test
+#### 測試項目
 
-1. **Client-Server Communication**: Test complete request-response cycles
-2. **Real Client SDKs**: Test with actual client implementations
-3. **Performance Under Load**: Verify behavior with multiple concurrent requests
-4. **Error Recovery**: Test system recovery from failures
-5. **Long-Running Operations**: Verify handling of streaming and long operations
+1. **客戶端與伺服器通訊**：測試完整請求-回應週期
+2. **真實客戶端 SDK**：使用實際客戶端實作測試
+3. **負載下效能**：驗證多重併發請求下的行為
+4. **錯誤復原**：測試系統從失敗中恢復能力
+5. **長時間操作**：驗證串流與長時間操作的處理
 
-#### Best Practices for E2E Testing
+#### 端對端測試最佳實踐
 
 ```typescript
 // Example E2E test with a client in TypeScript
@@ -1674,18 +1674,18 @@ describe('MCP Server E2E Tests', () => {
 });
 ```
 
-## Mocking Strategies for MCP Testing
+## MCP 測試的模擬策略
 
-Mocking is essential for isolating components during testing.
+模擬有助於在測試期間隔離元件。
 
-### Components to Mock
+### 需要模擬的元件
 
-1. **External AI Models**: Mock model responses for predictable testing
-2. **External Services**: Mock API dependencies (databases, third-party services)
-3. **Authentication Services**: Mock identity providers
-4. **Resource Providers**: Mock expensive resource handlers
+1. **外部 AI 模型**：模擬模型回應以達成可預測測試
+2. **外部服務**：模擬 API 依賴（資料庫、第三方服務）
+3. **認證服務**：模擬身份驗證提供者
+4. **資源提供者**：模擬高成本資源處理器
 
-### Example: Mocking an AI Model Response
+### 範例：模擬 AI 模型回應
 
 ```csharp
 // C# example with Moq
@@ -1717,26 +1717,26 @@ def test_with_mock_model(mock_model):
     # Continue with test
 ```
 
-## Performance Testing
+## 性能測試
 
-Performance testing is crucial for production MCP servers.
+性能測試對生產環境的 MCP 伺服器至關重要。
 
-### What to Measure
+### 測量指標
 
-1. **Latency**: Response time for requests
-2. **Throughput**: Requests handled per second
-3. **Resource Utilization**: CPU, memory, network usage
-4. **Concurrency Handling**: Behavior under parallel requests
-5. **Scaling Characteristics**: Performance as load increases
+1. **延遲**：請求的回應時間
+2. **吞吐量**：每秒處理的請求數
+3. **資源使用率**：CPU、記憶體、網路使用狀況
+4. **併發處理能力**：平行請求下的行為
+5. **擴展特性**：負載增加時的效能表現
 
-### Tools for Performance Testing
+### 性能測試工具
 
-- **k6**: Open-source load testing tool
-- **JMeter**: Comprehensive performance testing
-- **Locust**: Python-based load testing
-- **Azure Load Testing**: Cloud-based performance testing
+- **k6**：開源負載測試工具
+- **JMeter**：全面性能測試工具
+- **Locust**：Python 基礎負載測試
+- **Azure Load Testing**：雲端性能測試
 
-### Example: Basic Load Test with k6
+### 範例：使用 k6 進行基本負載測試
 
 ```javascript
 // k6 script for load testing MCP server
@@ -1776,18 +1776,18 @@ export default function () {
 }
 ```
 
-## Test Automation for MCP Servers
+## MCP 伺服器的測試自動化
 
-Automating your tests ensures consistent quality and faster feedback loops.
+自動化測試可確保品質穩定並加快回饋速度。
 
-### CI/CD Integration
+### CI/CD 整合
 
-1. **Run Unit Tests on Pull Requests**: Ensure code changes don't break existing functionality
-2. **Integration Tests in Staging**: Run integration tests in pre-production environments
-3. **Performance Baselines**: Maintain performance benchmarks to catch regressions
-4. **Security Scans**: Automate security testing as part of the pipeline
+1. **拉取請求時執行單元測試**：確保程式碼變更不破壞現有功能
+2. **預備環境執行整合測試**：在預生產環境運行整合測試
+3. **性能基準維護**：追蹤性能基準以偵測回歸
+4. **安全掃描**：將安全測試自動化納入流程
 
-### Example CI Pipeline (GitHub Actions)
+### 範例 CI 流水線（GitHub Actions）
 
 ```yaml
 name: MCP Server Tests
@@ -1826,19 +1826,19 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## Testing for Compliance with MCP Specification
+## MCP 規範相容性測試
 
-Verify your server correctly implements the MCP specification.
+驗證伺服器是否正確實作 MCP 規範。
 
-### Key Compliance Areas
+### 主要相容性檢查項目
 
-1. **API Endpoints**: Test required endpoints (/resources, /tools, etc.)
-2. **Request/Response Format**: Validate schema compliance
-3. **Error Codes**: Verify correct status codes for various scenarios
-4. **Content Types**: Test handling of different content types
-5. **Authentication Flow**: Verify spec-compliant auth mechanisms
+1. **API 端點**：測試必要端點（/resources、/tools 等）
+2. **請求/回應格式**：驗證 schema 合規性
+3. **錯誤代碼**：確認各種情況的正確狀態碼
+4. **內容類型**：測試不同內容類型的處理
+5. **認證流程**：驗證符合規範的認證機制
 
-### Compliance Test Suite
+### 相容性測試套件
 
 ```csharp
 [Fact]
@@ -1865,63 +1865,62 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 }
 ```
 
-## Top 10 Tips for Effective MCP Server Testing
+## MCP 伺服器測試十大要訣
 
-1. **Test Tool Definitions Separately**: Verify schema definitions independently from tool logic
-2. **Use Parameterized Tests**: Test tools with a variety of inputs, including edge cases
-3. **Check Error Responses**: Verify proper error handling for all possible error conditions
-4. **Test Authorization Logic**: Ensure proper access control for different user roles
-5. **Monitor Test Coverage**: Aim for high coverage of critical path code
-6. **Test Streaming Responses**: Verify proper handling of streaming content
-7. **Simulate Network Issues**: Test behavior under poor network conditions
-8. **Test Resource Limits**: Verify behavior when reaching quotas or rate limits
-9. **Automate Regression Tests**: Build a suite that runs on every code change
-10. **Document Test Cases**: Maintain clear documentation of test scenarios
+1. **分開測試工具定義**：獨立驗證 schema 定義與工具邏輯
+2. **使用參數化測試**：以多種輸入（含邊緣案例）測試工具
+3. **檢查錯誤回應**：驗證所有可能錯誤條件的正確處理
+4. **測試授權邏輯**：確保不同用戶角色的正確存取控制
+5. **監控測試覆蓋率**：爭取關鍵程式碼路徑的高覆蓋率
+6. **測試串流回應**：驗證串流內容的正確處理
+7. **模擬網路問題**：測試在不良網路條件下的行為
+8. **測試資源限制**：驗證達到配額或速率限制時的表現
+9. **自動化回歸測試**：建立每次程式碼變更皆執行的測試套件
+10. **文件化測試案例**：維護清晰的測試場景說明
 
-## Common Testing Pitfalls
+## 常見測試陷阱
 
-- **Over-reliance on happy path testing**: Make sure to test error cases thoroughly
-- **Ignoring performance testing**: Identify bottlenecks before they affect production
-- **Testing in isolation only**: Combine unit, integration, and E2E tests
-- **Incomplete API coverage**: Ensure all endpoints and features are tested
-- **Inconsistent test environments**: Use containers to ensure consistent test environments
+- **過度依賴順利路徑測試**：務必充分測試錯誤情況
+- **忽略性能測試**：提前找出瓶頸避免生產問題
+- **只做孤立測試**：結合單元、整合與端對端測試
+- **API 覆蓋不完整**：確保所有端點與功能均有測試
+- **測試環境不一致**：使用容器確保環境一致性
 
-## Conclusion
+## 結論
 
-A comprehensive testing strategy is essential for developing reliable, high-quality MCP servers. By implementing the best practices and tips outlined in this guide, you can ensure your MCP implementations meet the highest standards of quality, reliability, and performance.
+全面的測試策略是打造可靠且高品質 MCP 伺服器的基石。透過本指南中提出的最佳實踐與技巧，你可以確保 MCP 實作達到最高的品質、可靠性與效能標準。
 
-## Key Takeaways
+## 主要重點
 
-1. **Tool Design**: Follow single responsibility principle, use dependency injection, and design for composability
-2. **Schema Design**: Create clear, well-documented schemas with proper validation constraints
-3. **Error Handling**: Implement graceful error handling, structured error responses, and retry logic
-4. **Performance**: Use caching, asynchronous processing, and resource throttling
-5. **Security**: Apply thorough input validation, authorization checks, and sensitive data handling
-6. **Testing**: Create comprehensive unit, integration, and end-to-end tests
-7. **Workflow Patterns**: Apply established patterns like chains, dispatchers, and parallel processing
+1. **工具設計**：遵循單一職責原則，使用依賴注入，並設計可組合的工具
+2. **Schema 設計**：建立清晰且有完整文件的 schema，並加入適當驗證限制
+3. **錯誤處理**：實作優雅錯誤處理、結構化錯誤回應與重試機制
+4. **效能**：利用快取、非同步處理與資源節流
+5. **安全**：全面的輸入驗證、授權檢查與敏感資料處理
+6. **測試**：建立完整的單元、整合與端對端測試
+7. **工作流程模式**：應用既有模式如工具鏈、分派器與平行處理
 
-## Exercise
+## 練習
 
-Design an MCP tool and workflow for a document processing system that:
+設計一個 MCP 工具與工作流程，用於文件處理系統，要求：
 
-1. Accepts documents in multiple formats (PDF, DOCX, TXT)
-2. Extracts text and key information from the documents
-3. Classifies documents by type and content
-4. Generates a summary of each document
+1. 支援多種格式的文件（PDF、DOCX、TXT）
+2. 從文件中擷取文字與關鍵資訊
+3. 根據類型與內容分類文件
+4. 生成每份文件的摘要
 
-Implement the tool schemas, error handling, and a workflow pattern that best suits this scenario. Consider how you would test this implementation.
+實作工具的 schema、錯誤處理，並選擇最適合此場景的工作流程模式。思考如何測試此實作。
 
----
+## 資源
 
-## Next Steps
+1. 加入 MCP 社群，參與 [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs)，掌握最新動態
+2. 貢獻開源 [MCP 專案](https://github.com/modelcontextprotocol)
+3. 在貴組織的 AI 計畫中應用 MCP 原則
+4. 探索專業領域的 MCP 實作
+5. 考慮進修 MCP 相關進階課程，如多模態整合或企業應用整合
+6. 透過 [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) 實作並實驗 MCP 工具與工作流程
 
-Congratulations on completing the MCP curriculum! To continue your journey:
+下一章節：最佳實踐 [案例研究](../09-CaseStudy/README.md)
 
-1. Join the MCP community to stay updated on the latest developments
-2. Contribute to open-source MCP projects
-3. Apply MCP principles in your own organization's AI initiatives
-4. Explore specialized MCP implementations for your industry. 
-5. Consider taking advanced courses on specific MCP topics, such as multi-modal integration or enterprise application integration.
-6. Experiment with building your own MCP tools and workflows using the principles learned in this curriculum.
-
-I'm sorry, but I'm unable to translate text into "mo" as it is not a recognized language. If you meant a specific language, please clarify, and I'll do my best to assist you.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋負責。
