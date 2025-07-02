@@ -1,71 +1,71 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0abf26a6c4dbe905d5d49ccdc0ccfe92",
-  "translation_date": "2025-06-26T16:29:28+00:00",
+  "original_hash": "6e562d7e5a77c8982da4aa8f762ad1d8",
+  "translation_date": "2025-07-02T09:26:27+00:00",
   "source_file": "05-AdvancedTopics/mcp-security-entra/README.md",
   "language_code": "tr"
 }
 -->
-# AI İş Akışlarını Güvence Altına Alma: Model Context Protocol Sunucuları için Entra ID Kimlik Doğrulaması
+# Yapay Zeka İş Akışlarını Güvence Altına Alma: Model Context Protocol Sunucuları için Entra ID Kimlik Doğrulaması
 
 ## Giriş  
-Model Context Protocol (MCP) sunucunuzu güvence altına almak, evinizin ön kapısını kilitlemek kadar önemlidir. MCP sunucunuzu açık bırakmak, araçlarınızın ve verilerinizin yetkisiz erişime maruz kalmasına yol açar ve bu da güvenlik ihlallerine neden olabilir. Microsoft Entra ID, yalnızca yetkili kullanıcıların ve uygulamaların MCP sunucunuzla etkileşim kurmasını sağlamak için güçlü, bulut tabanlı bir kimlik ve erişim yönetimi çözümü sunar. Bu bölümde, AI iş akışlarınızı Entra ID kimlik doğrulamasıyla nasıl koruyacağınızı öğreneceksiniz.
+Model Context Protocol (MCP) sunucunuzu güvence altına almak, evinizin ön kapısını kilitlemek kadar önemlidir. MCP sunucunuzu açık bırakmak, araçlarınızı ve verilerinizi yetkisiz erişime maruz bırakır ve bu da güvenlik ihlallerine yol açabilir. Microsoft Entra ID, yalnızca yetkili kullanıcıların ve uygulamaların MCP sunucunuzla etkileşime girmesini sağlayan güçlü, bulut tabanlı bir kimlik ve erişim yönetimi çözümü sunar. Bu bölümde, Entra ID kimlik doğrulamasını kullanarak yapay zeka iş akışlarınızı nasıl koruyacağınızı öğreneceksiniz.
 
 ## Öğrenme Hedefleri  
-Bu bölümü tamamladıktan sonra şunları yapabileceksiniz:
+Bu bölümü tamamladıktan sonra:
 
-- MCP sunucularının güvence altına alınmasının önemini kavramak.  
-- Microsoft Entra ID ve OAuth 2.0 kimlik doğrulamasının temel prensiplerini açıklamak.  
-- Genel (public) ve gizli (confidential) istemciler arasındaki farkları anlamak.  
-- Hem yerel (genel istemci) hem de uzaktan (gizli istemci) MCP sunucu senaryolarında Entra ID kimlik doğrulamasını uygulamak.  
-- AI iş akışları geliştirirken güvenlik en iyi uygulamalarını kullanmak.
+- MCP sunucularının güvenliğinin neden önemli olduğunu anlayabileceksiniz.  
+- Microsoft Entra ID ve OAuth 2.0 kimlik doğrulamasının temellerini açıklayabileceksiniz.  
+- Genel (public) ve gizli (confidential) istemciler arasındaki farkı ayırt edebileceksiniz.  
+- Hem yerel (public client) hem de uzak (confidential client) MCP sunucu senaryolarında Entra ID kimlik doğrulamasını uygulayabileceksiniz.  
+- Yapay zeka iş akışları geliştirirken güvenlik en iyi uygulamalarını uygulayabileceksiniz.
 
 ## Güvenlik ve MCP  
 
-Evinizin ön kapısını kilitlemeden bırakmayacağınız gibi, MCP sunucunuzu da herkesin erişimine açık bırakmamalısınız. AI iş akışlarınızı güvence altına almak, sağlam, güvenilir ve güvenli uygulamalar oluşturmanın temelidir. Bu bölümde, Microsoft Entra ID kullanarak MCP sunucularınızı nasıl koruyacağınızı öğreneceksiniz; böylece yalnızca yetkili kullanıcılar ve uygulamalar araçlarınıza ve verilerinize erişebilecektir.
+Tıpkı evinizin ön kapısını açık bırakmayacağınız gibi, MCP sunucunuzu da herkesin erişimine açık bırakmamalısınız. Yapay zeka iş akışlarınızı güvence altına almak, sağlam, güvenilir ve güvenli uygulamalar oluşturmak için gereklidir. Bu bölümde, Microsoft Entra ID kullanarak MCP sunucularınızı nasıl koruyacağınızı öğreneceksiniz; böylece yalnızca yetkili kullanıcılar ve uygulamalar araçlarınız ve verilerinizle etkileşime girebilecek.
 
 ## MCP Sunucuları için Güvenliğin Önemi  
 
-MCP sunucunuzun e-posta gönderebilen veya müşteri veritabanına erişebilen bir aracı olduğunu düşünün. Güvenli olmayan bir sunucu, bu aracı herkesin kullanabilmesi anlamına gelir; bu da yetkisiz veri erişimi, spam veya diğer kötü niyetli faaliyetlere yol açabilir.
+MCP sunucunuzda e-posta gönderebilen veya müşteri veritabanına erişebilen bir araç olduğunu düşünün. Güvensiz bir sunucu, herhangi birinin bu aracı kullanabilmesi anlamına gelir; bu da yetkisiz veri erişimi, spam veya diğer kötü niyetli faaliyetlere yol açabilir.
 
-Kimlik doğrulama uygulayarak, sunucunuza gelen her isteğin doğrulandığından emin olursunuz; böylece isteği yapan kullanıcı veya uygulamanın kimliği teyit edilir. Bu, AI iş akışlarınızı güvence altına almanın ilk ve en kritik adımıdır.
+Kimlik doğrulamayı uygulayarak, sunucunuza yapılan her isteğin doğrulandığından emin olursunuz; isteği yapan kullanıcı veya uygulamanın kimliği teyit edilir. Bu, yapay zeka iş akışlarınızı güvence altına almanın ilk ve en kritik adımıdır.
 
 ## Microsoft Entra ID'ye Giriş  
 
-[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/), bulut tabanlı bir kimlik ve erişim yönetimi hizmetidir. Uygulamalarınız için evrensel bir güvenlik görevlisi gibi düşünebilirsiniz. Kullanıcı kimliklerini doğrulama (kimlik doğrulama) ve ne yapabileceklerini belirleme (yetkilendirme) karmaşık süreçlerini yönetir.
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) bulut tabanlı bir kimlik ve erişim yönetimi hizmetidir. Bunu, uygulamalarınız için evrensel bir güvenlik görevlisi olarak düşünebilirsiniz. Kullanıcı kimliklerini doğrulama (kimlik doğrulama) ve ne yapmalarına izin verileceğini belirleme (yetkilendirme) süreçlerini yönetir.
 
-Entra ID kullanarak şunları yapabilirsiniz:
+Entra ID kullanarak:
 
-- Kullanıcılar için güvenli oturum açma sağlamak.  
-- API’leri ve servisleri korumak.  
-- Erişim politikalarını merkezi bir yerden yönetmek.
+- Kullanıcılar için güvenli oturum açmayı etkinleştirebilirsiniz.  
+- API’leri ve hizmetleri koruyabilirsiniz.  
+- Erişim politikalarını merkezi bir yerden yönetebilirsiniz.
 
 MCP sunucuları için Entra ID, sunucunuzun yeteneklerine kimlerin erişebileceğini yönetmek için güçlü ve yaygın olarak güvenilen bir çözüm sunar.
 
 ---
 
-## Sihirli Kısım: Entra ID Kimlik Doğrulaması Nasıl Çalışır?  
+## Entra ID Kimlik Doğrulamasının İşleyişi: Temel Bilgiler  
 
-Entra ID, kimlik doğrulama için **OAuth 2.0** gibi açık standartları kullanır. Ayrıntılar karmaşık olabilir ancak temel kavram basit ve bir benzetmeyle açıklanabilir.
+Entra ID, kimlik doğrulamayı yönetmek için **OAuth 2.0** gibi açık standartları kullanır. Ayrıntılar karmaşık olabilir, ancak temel kavram basittir ve bir benzetmeyle anlaşılabilir.
 
 ### OAuth 2.0’a Nazik Bir Giriş: Vale Anahtarı  
 
-OAuth 2.0’ı arabanız için bir vale hizmeti gibi düşünün. Bir restorana gittiğinizde valeye anahtarınızın tamamını vermezsiniz. Bunun yerine, sınırlı izinlere sahip bir **vale anahtarı** verirsiniz—arabanızı çalıştırabilir ve kapıları kilitleyebilir, ancak bagaj kapağını veya torpido gözünü açamaz.
+OAuth 2.0’ı, arabanız için bir vale hizmeti gibi düşünün. Bir restorana geldiğinizde, valeye anahtarınızın tamamını vermezsiniz. Bunun yerine, sınırlı izinlere sahip bir **vale anahtarı** verirsiniz—arabanızı çalıştırabilir ve kapıları kilitleyebilir, ancak bagajı veya torpido gözünü açamaz.
 
 Bu benzetmede:
 
-- **Siz** **Kullanıcı**'sınız.  
-- **Arabanız** değerli araç ve verilerinizle **MCP Sunucusu**'dur.  
-- **Vale** **Microsoft Entra ID**'dir.  
-- **Park Görevlisi** MCP sunucusuna erişmeye çalışan **MCP İstemcisi** (uygulama)dır.  
-- **Vale Anahtarı** ise **Erişim Tokenı**dır.
+- **Siz** kullanıcı (User) olursunuz.  
+- **Arabanız**, değerli araçlarınız ve verilerinizle birlikte **MCP Sunucusudur**.  
+- **Vale** Microsoft Entra ID’dir.  
+- **Park Görevlisi** MCP istemcisidir (sunucuya erişmeye çalışan uygulama).  
+- **Vale Anahtarı** ise erişim belirtecidir (Access Token).
 
-Erişim tokenı, MCP istemcisinin Entra ID’den oturum açtıktan sonra aldığı güvenli bir metin dizisidir. İstemci, her istekte bu tokenı MCP sunucusuna sunar. Sunucu, tokenı doğrulayarak isteğin geçerli olduğunu ve istemcinin gerekli izinlere sahip olduğunu onaylar; böylece gerçek kimlik bilgilerinizi (örneğin şifrenizi) asla işlememiş olur.
+Erişim belirteci, MCP istemcisinin, sizin oturum açmanızın ardından Entra ID’den aldığı güvenli bir metin dizisidir. İstemci, bu belirteci her istekte MCP sunucusuna sunar. Sunucu, belirteci doğrulayarak isteğin meşru olduğunu ve istemcinin gerekli izinlere sahip olduğunu teyit eder; bu süreçte gerçek kimlik bilgilerinizi (örneğin şifrenizi) asla kullanmaz.
 
 ### Kimlik Doğrulama Akışı  
 
-Süreç pratikte şu şekilde işler:
+İşleyiş şu şekildedir:
 
 ```mermaid
 sequenceDiagram
@@ -87,17 +87,17 @@ sequenceDiagram
 
 ### Microsoft Authentication Library (MSAL) Tanıtımı  
 
-Koda geçmeden önce, örneklerde göreceğiniz önemli bir bileşeni tanıtmak faydalı: **Microsoft Authentication Library (MSAL)**.
+Koda geçmeden önce, örneklerde göreceğiniz önemli bir bileşeni tanıtmakta fayda var: **Microsoft Authentication Library (MSAL)**.
 
-MSAL, Microsoft tarafından geliştirilen ve geliştiricilerin kimlik doğrulamayı çok daha kolay yönetmesini sağlayan bir kütüphanedir. Güvenlik tokenlarını yönetmek, oturum açma işlemlerini kolaylaştırmak ve oturum yenilemeyi sağlamak için karmaşık kodlar yazmanıza gerek kalmaz; MSAL tüm bu ağır işleri üstlenir.
+MSAL, geliştiricilerin kimlik doğrulamayı çok daha kolay yönetmesini sağlayan Microsoft tarafından geliştirilmiş bir kütüphanedir. Güvenlik belirteçlerini yönetmek, oturum açmayı sağlamak ve oturum yenilemek için karmaşık kodlar yazmak yerine, MSAL bu ağır işleri üstlenir.
 
 MSAL kullanmanız şiddetle tavsiye edilir çünkü:
 
-- **Güvenlidir:** Endüstri standardı protokolleri ve güvenlik en iyi uygulamalarını uygular, böylece kodunuzdaki güvenlik açıklarını azaltır.  
-- **Geliştirmeyi Basitleştirir:** OAuth 2.0 ve OpenID Connect protokollerinin karmaşıklığını soyutlar, böylece uygulamanıza sadece birkaç satır kodla sağlam kimlik doğrulama ekleyebilirsiniz.  
-- **Sürekli Güncellenir:** Microsoft, MSAL’ı yeni güvenlik tehditlerine ve platform değişikliklerine karşı sürekli günceller.
+- **Güvenlidir:** Endüstri standardı protokoller ve güvenlik en iyi uygulamalarını uygular, böylece kodunuzdaki güvenlik açıklarını azaltır.  
+- **Geliştirmeyi Basitleştirir:** OAuth 2.0 ve OpenID Connect protokollerinin karmaşıklığını soyutlar, uygulamanıza birkaç satır kodla sağlam kimlik doğrulama eklemenizi sağlar.  
+- **Bakımı Yapılır:** Microsoft, yeni güvenlik tehditleri ve platform değişikliklerine karşı MSAL’ı sürekli günceller.
 
-MSAL, .NET, JavaScript/TypeScript, Python, Java, Go ve iOS ile Android gibi mobil platformlar dahil olmak üzere pek çok dil ve uygulama çerçevesini destekler. Bu sayede tüm teknoloji yığını boyunca tutarlı kimlik doğrulama desenleri kullanabilirsiniz.
+MSAL, .NET, JavaScript/TypeScript, Python, Java, Go ve iOS ile Android gibi mobil platformlar dahil olmak üzere birçok dil ve uygulama çatısını destekler. Bu sayede tüm teknoloji yığını boyunca tutarlı kimlik doğrulama kalıpları kullanabilirsiniz.
 
 MSAL hakkında daha fazla bilgi için resmi [MSAL genel bakış dokümantasyonuna](https://learn.microsoft.com/entra/identity-platform/msal-overview) göz atabilirsiniz.
 
@@ -105,36 +105,9 @@ MSAL hakkında daha fazla bilgi için resmi [MSAL genel bakış dokümantasyonun
 
 ## MCP Sunucunuzu Entra ID ile Güvence Altına Alma: Adım Adım Rehber  
 
-Şimdi, yerel bir MCP sunucusunu (örneğin `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
+Şimdi, yerel bir MCP sunucusunu (örneğin `stdio` üzerinden iletişim kuran) nasıl güvence altına alacağımızı inceleyelim.  
 
-### Scenario 1: Securing a Local MCP Server (with a Public Client)
-
-In this scenario, we'll look at an MCP server that runs locally, communicates over `stdio`, and uses Entra ID to authenticate the user before allowing access to its tools. The server will have a single tool that fetches the user's profile information from the Microsoft Graph API.
-
-#### 1. Setting Up the Application in Entra ID
-
-Before writing any code, you need to register your application in Microsoft Entra ID. This tells Entra ID about your application and grants it permission to use the authentication service.
-
-1. Navigate to the **[Microsoft Entra portal](https://entra.microsoft.com/)**.
-2. Go to **App registrations** and click **New registration**.
-3. Give your application a name (e.g., "My Local MCP Server").
-4. For **Supported account types**, select **Accounts in this organizational directory only**.
-5. You can leave the **Redirect URI** blank for this example.
-6. Click **Register**.
-
-Once registered, take note of the **Application (client) ID** and **Directory (tenant) ID**. You'll need these in your code.
-
-#### 2. The Code: A Breakdown
-
-Let's look at the key parts of the code that handle authentication. The full code for this example is available in the [Entra ID - Local - WAM](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-local-wam) folder of the [mcp-auth-servers GitHub repository](https://github.com/Azure-Samples/mcp-auth-servers).
-
-**`AuthenticationService.cs`**
-
-This class is responsible for handling the interaction with Entra ID.
-
-- **`CreateAsync`**: This method initializes the `PublicClientApplication` from the MSAL (Microsoft Authentication Library). It's configured with your application's `clientId` and `tenantId`.
-- **`WithBroker`**: This enables the use of a broker (like the Windows Web Account Manager), which provides a more secure and seamless single sign-on experience.
-- **`AcquireTokenAsync`** yöntemiyle iletişim kuran) nasıl güvence altına alacağınızı inceleyelim: Bu temel yöntem, önce tokenı sessizce almaya çalışır (yani kullanıcı zaten geçerli bir oturuma sahipse tekrar oturum açması gerekmez). Sessiz token alınamazsa, kullanıcıdan etkileşimli olarak oturum açması istenir.
+**`AuthenticationService.cs` içindeki `CreateAsync` yöntemi:** Bu temel yöntemdir. Öncelikle sessizce (silent) bir token almaya çalışır; yani kullanıcı geçerli bir oturuma sahipse tekrar oturum açması gerekmez. Sessiz token alınamazsa, kullanıcıdan etkileşimli olarak oturum açması istenir.
 
 ```csharp
 // Simplified for clarity
@@ -182,12 +155,7 @@ public async Task<string> AcquireTokenAsync()
 }
 ```
 
-**`Program.cs`**
-
-This is where the MCP server is set up and the authentication service is integrated.
-
-- **`AddSingleton<AuthenticationService>`**: This registers the `AuthenticationService` with the dependency injection container, so it can be used by other parts of the application (like our tool).
-- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()`** ile geçerli bir erişim tokenı alınır. Kimlik doğrulama başarılıysa, bu token Microsoft Graph API’yi çağırmak ve kullanıcının bilgilerini almak için kullanılır.
+**`Program.cs` içinde:** `AddSingleton<AuthenticationService>` ile `AuthenticationService` tekil olarak eklenir. `GetUserDetailsFromGraph` yöntemi, `authService.AcquireTokenAsync()` ile geçerli bir erişim belirteci alır. Kimlik doğrulama başarılı olursa, bu belirteci Microsoft Graph API’sini çağırmak ve kullanıcının bilgilerini almak için kullanır.
 
 ```csharp
 // Simplified for clarity
@@ -215,48 +183,10 @@ public static async Task<string> GetUserDetailsFromGraph(
 }
 ```
 
-#### 3. Hepsi Birlikte Nasıl Çalışır?  
+#### 3. Bütünün İşleyişi  
 
-1. MCP istemcisi, `GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
-2. `AcquireTokenAsync` triggers the MSAL library to check for a valid token.
-3. If no token is found, MSAL, through the broker, will prompt the user to sign in with their Entra ID account.
-4. Once the user signs in, Entra ID issues an access token.
-5. The tool receives the token and uses it to make a secure call to the Microsoft Graph API.
-6. The user's details are returned to the MCP client.
-
-This process ensures that only authenticated users can use the tool, effectively securing your local MCP server.
-
-### Scenario 2: Securing a Remote MCP Server (with a Confidential Client)
-
-When your MCP server is running on a remote machine (like a cloud server) and communicates over a protocol like HTTP Streaming, the security requirements are different. In this case, you should use a **confidential client** and the **Authorization Code Flow**. This is a more secure method because the application's secrets are never exposed to the browser.
-
-This example uses a TypeScript-based MCP server that uses Express.js to handle HTTP requests.
-
-#### 1. Setting Up the Application in Entra ID
-
-The setup in Entra ID is similar to the public client, but with one key difference: you need to create a **client secret**.
-
-1. Navigate to the **[Microsoft Entra portal](https://entra.microsoft.com/)**.
-2. In your app registration, go to the **Certificates & secrets** tab.
-3. Click **New client secret**, give it a description, and click **Add**.
-4. **Important:** Copy the secret value immediately. You will not be able to see it again.
-5. You also need to configure a **Redirect URI**. Go to the **Authentication** tab, click **Add a platform**, select **Web**, and enter the redirect URI for your application (e.g., `http://localhost:3001/auth/callback`).
-
-> **⚠️ Important Security Note:** For production applications, Microsoft strongly recommends using **secretless authentication** methods such as **Managed Identity** or **Workload Identity Federation** instead of client secrets. Client secrets pose security risks as they can be exposed or compromised. Managed identities provide a more secure approach by eliminating the need to store credentials in your code or configuration.
->
-> For more information about managed identities and how to implement them, see the [Managed identities for Azure resources overview](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/overview).
-
-#### 2. The Code: A Breakdown
-
-This example uses a session-based approach. When the user authenticates, the server stores the access token and refresh token in a session and gives the user a session token. This session token is then used for subsequent requests. The full code for this example is available in the [Entra ID - Confidential client](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-cca-session) folder of the [mcp-auth-servers GitHub repository](https://github.com/Azure-Samples/mcp-auth-servers).
-
-**`Server.ts`**
-
-This file sets up the Express server and the MCP transport layer.
-
-- **`requireBearerAuth`**: This is middleware that protects the `/sse` and `/message` endpoints. It checks for a valid bearer token in the `Authorization` header of the request.
-- **`EntraIdServerAuthProvider`**: This is a custom class that implements the `McpServerAuthorizationProvider` interface. It's responsible for handling the OAuth 2.0 flow.
-- **`/auth/callback`** gibi bir uç noktayı kullanmaya çalıştığında, bu uç nokta kullanıcı Entra ID’de kimlik doğrulamasını tamamladıktan sonra yönlendirme işlemini ele alır. Yetkilendirme kodunu erişim tokenı ve yenileme tokenı ile değiştirir.
+1. MCP istemcisi `GetUserDetailsFromGraph` çağrısı yaptığında, `AcquireTokenAsync` yöntemi ile erişim belirteci alınır.  
+2. MCP sunucusu, `http://localhost:3001/auth/callback` gibi bir uç noktaya sahiptir; burası kullanıcı Entra ID ile kimlik doğrulandıktan sonra yönlendirme adresidir. Bu uç nokta yetkilendirme kodunu erişim belirtecine ve yenileme belirtecine dönüştürür.
 
 ```typescript
 // Simplified for clarity
@@ -289,9 +219,7 @@ app.get("/auth/callback", (req, res) => {
 });
 ```
 
-**`Tools.ts`**
-
-This file defines the tools that the MCP server provides. The `getUserDetails`** aracı önceki örneğe benzer, ancak erişim tokenını oturumdan alır.
+**`Tools.ts` içindeki `getUserDetails` aracı**, önceki örneğe benzer, ancak erişim belirtecini oturumdan alır.
 
 ```typescript
 // Simplified for clarity
@@ -322,104 +250,88 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 });
 ```
 
-**`auth/EntraIdServerAuthProvider.ts`**
+**`auth/EntraIdServerAuthProvider.ts` içindeki tokenStore**, `requireBearerAuth` ve `/auth/callback` gibi bileşenler, `getUserDetails` aracı çağrıldığında, oturum belirtecini kullanarak Entra ID erişim belirtecini bulur ve ardından Microsoft Graph API’yi çağırır.
 
-This class handles the logic for:
-
-- Redirecting the user to the Entra ID sign-in page.
-- Exchanging the authorization code for an access token.
-- Storing the tokens in the `tokenStore`.
-- Refreshing the access token when it expires.
-
-#### 3. How It All Works Together
-
-1. When a user first tries to connect to the MCP server, the `requireBearerAuth` middleware will see that they don't have a valid session and will redirect them to the Entra ID sign-in page.
-2. The user signs in with their Entra ID account.
-3. Entra ID redirects the user back to the `/auth/callback` endpoint with an authorization code.
-4. The server exchanges the code for an access token and a refresh token, stores them, and creates a session token which is sent to the client.
-5. The client can now use this session token in the `Authorization` header for all future requests to the MCP server.
-6. When the `getUserDetails`** aracı çağrıldığında, oturum tokenını kullanarak Entra ID erişim tokenını bulur ve ardından Microsoft Graph API çağrısı yapar.
-
-Bu akış, genel istemci akışından daha karmaşıktır, ancak internet üzerinden erişilen uç noktalar için gereklidir. Uzaktaki MCP sunucuları halka açık internet üzerinden erişilebilir olduğundan, yetkisiz erişim ve olası saldırılara karşı daha güçlü güvenlik önlemleri gerektirir.
+Bu akış, genel istemci (public client) akışından daha karmaşıktır, ancak internet üzerinden erişilen uç noktalar için gereklidir. Uzak MCP sunucuları genel internet üzerinden erişilebilir olduğundan, yetkisiz erişim ve potansiyel saldırılara karşı daha güçlü güvenlik önlemleri gerektirir.
 
 ## Güvenlik En İyi Uygulamaları  
 
-- **Her zaman HTTPS kullanın:** İstemci ile sunucu arasındaki iletişimi şifreleyerek tokenların ele geçirilmesini önleyin.  
-- **Rol Tabanlı Erişim Kontrolü (RBAC) uygulayın:** Sadece kullanıcının *kimliğini doğrulamakla* kalmayın, *ne yapmaya yetkili olduğunu* da kontrol edin. Entra ID’de roller tanımlayabilir ve MCP sunucunuzda bunları kontrol edebilirsiniz.  
-- **İzleme ve denetim yapın:** Tüm kimlik doğrulama olaylarını kaydedin, böylece şüpheli faaliyetleri tespit edip müdahale edebilirsiniz.  
-- **Oran sınırlaması ve kısıtlama işlemleri:** Microsoft Graph ve diğer API’ler kötüye kullanımı önlemek için oran sınırlaması uygular. MCP sunucunuzda HTTP 429 (Çok Fazla İstek) yanıtlarını yönetmek için üstel geri çekilme (exponential backoff) ve yeniden deneme mantığı uygulayın. Sık erişilen verileri önbelleğe almayı düşünün.  
-- **Tokenları güvenli şekilde saklayın:** Erişim ve yenileme tokenlarını güvenli şekilde depolayın. Yerel uygulamalarda sistemin güvenli depolama mekanizmalarını kullanın. Sunucu uygulamalarında ise şifreli depolama veya Azure Key Vault gibi güvenli anahtar yönetim hizmetlerini tercih edin.  
-- **Token süresi dolma yönetimi:** Erişim tokenlarının ömrü sınırlıdır. Yenileme tokenları kullanarak otomatik token yenileme uygulayın, böylece kullanıcı deneyimi kesintisiz olur ve yeniden kimlik doğrulama gerektirmez.  
-- **Azure API Management kullanmayı düşünün:** MCP sunucunuzda doğrudan güvenlik uygulamak size ince ayar kontrolü sağlar ancak API Gateway’ler (örneğin Azure API Management) kimlik doğrulama, yetkilendirme, oran sınırlama ve izleme gibi birçok güvenlik sorununu otomatik olarak yönetebilir. Bu, istemcileriniz ile MCP sunucularınız arasında merkezi bir güvenlik katmanı oluşturur. MCP ile API Gateway kullanımı hakkında daha fazla bilgi için [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) makalesine bakabilirsiniz.
+- **Her zaman HTTPS kullanın:** İstemci ile sunucu arasındaki iletişimi şifreleyerek belirteçlerin ele geçirilmesini önleyin.  
+- **Rol Tabanlı Erişim Kontrolü (RBAC) uygulayın:** Sadece kullanıcının kimliğinin doğrulanıp doğrulanmadığını değil, ne yapmaya yetkili olduğunu da kontrol edin. Entra ID’de roller tanımlayabilir ve MCP sunucunuzda bunları denetleyebilirsiniz.  
+- **İzleme ve denetim yapın:** Tüm kimlik doğrulama olaylarını kaydedin, böylece şüpheli aktiviteleri tespit edip yanıt verebilirsiniz.  
+- **Oran sınırlaması ve kısıtlama yönetin:** Microsoft Graph ve diğer API’ler kötüye kullanımı önlemek için oran sınırlaması uygular. MCP sunucunuzda, HTTP 429 (Too Many Requests) yanıtlarını yönetmek için üssel geri çekilme ve yeniden deneme mantığı uygulayın. Sık erişilen verileri önbelleğe almayı düşünün.  
+- **Belirteç depolamasını güvenli yapın:** Erişim ve yenileme belirteçlerini güvenli bir şekilde saklayın. Yerel uygulamalar için sistemin güvenli depolama mekanizmalarını kullanın. Sunucu uygulamaları için şifreli depolama veya Azure Key Vault gibi güvenli anahtar yönetim servislerini tercih edin.  
+- **Belirteç süresi dolma yönetimi:** Erişim belirteçlerinin ömrü sınırlıdır. Yenileme belirteçlerini kullanarak otomatik belirteç yenileme uygulayın, böylece kullanıcıların yeniden kimlik doğrulaması yapması gerekmez.  
+- **Azure API Management kullanmayı düşünün:** MCP sunucunuzda doğrudan güvenlik uygulamak size ayrıntılı kontrol sağlar, ancak Azure API Management gibi API Gateway’ler kimlik doğrulama, yetkilendirme, oran sınırlaması ve izleme gibi birçok güvenlik sorununu otomatik olarak yönetebilir. Bu, istemcileriniz ile MCP sunucularınız arasında merkezi bir güvenlik katmanı sağlar. MCP ile API Gateway kullanımı hakkında daha fazla bilgi için [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) bağlantısına bakabilirsiniz.
 
 ## Önemli Noktalar  
 
 - MCP sunucunuzu güvence altına almak, verilerinizi ve araçlarınızı korumak için çok önemlidir.  
 - Microsoft Entra ID, kimlik doğrulama ve yetkilendirme için güçlü ve ölçeklenebilir bir çözüm sunar.  
-- Yerel uygulamalar için **genel istemci**, uzaktaki sunucular için **gizli istemci** kullanın.  
-- Web uygulamaları için en güvenli seçenek **Authorization Code Flow**’dur.
+- Yerel uygulamalar için **public client**, uzak sunucular için **confidential client** kullanın.  
+- Web uygulamaları için en güvenli seçenek **Authorization Code Flow**dur.
 
 ## Alıştırma  
 
-1. İnşa etmeyi düşündüğünüz bir MCP sunucusunu hayal edin. Yerel mi yoksa uzaktan mı olacak?  
-2. Cevabınıza göre genel mi yoksa gizli istemci mi kullanırsınız?  
-3. MCP sunucunuzun Microsoft Graph üzerinde işlem yapabilmesi için hangi izinleri talep eder?
+1. Kendi kuracağınız bir MCP sunucusunu düşünün. Yerel mi yoksa uzak mı olacak?  
+2. Cevabınıza göre, public client mı yoksa confidential client mı kullanırsınız?  
+3. MCP sunucunuzun Microsoft Graph üzerinde işlem yapabilmek için hangi izinleri talep etmesini istersiniz?
 
 ## Uygulamalı Alıştırmalar  
 
-### Alıştırma 1: Entra ID’de Uygulama Kaydı  
-Microsoft Entra portalına gidin.  
-MCP sunucunuz için yeni bir uygulama kaydı oluşturun.  
-Uygulama (istemci) kimliği ve Dizin (kiracı) kimliğini not edin.
+### Alıştırma 1: Entra ID’de Bir Uygulama Kaydı Oluşturun  
+- Microsoft Entra portalına gidin.  
+- MCP sunucunuz için yeni bir uygulama kaydedin.  
+- Uygulama (client) ID ve Dizin (tenant) ID bilgilerini not edin.
 
-### Alıştırma 2: Yerel MCP Sunucusunu Güvenceye Alma (Genel İstemci)  
-- MSAL (Microsoft Authentication Library) kullanarak kullanıcı kimlik doğrulamasını entegre etmek için kod örneğini takip edin.  
-- Microsoft Graph’tan kullanıcı bilgisi alan MCP aracını çağırarak kimlik doğrulama akışını test edin.
+### Alıştırma 2: Yerel MCP Sunucusunu Güvence Altına Alma (Public Client)  
+- Kullanıcı kimlik doğrulaması için MSAL entegrasyonunu kod örneğine göre yapın.  
+- Microsoft Graph’tan kullanıcı bilgilerini alan MCP aracını çağırarak kimlik doğrulama akışını test edin.
 
-### Alıştırma 3: Uzaktaki MCP Sunucusunu Güvenceye Alma (Gizli İstemci)  
-- Entra ID’de gizli istemci kaydı yapın ve bir istemci sırrı oluşturun.  
+### Alıştırma 3: Uzak MCP Sunucusunu Güvence Altına Alma (Confidential Client)  
+- Entra ID’de confidential client kaydı oluşturun ve bir client secret oluşturun.  
 - Express.js MCP sunucunuzu Authorization Code Flow kullanacak şekilde yapılandırın.  
 - Korunan uç noktaları test edin ve token tabanlı erişimi doğrulayın.
 
-### Alıştırma 4: Güvenlik En İyi Uygulamalarını Uygulama  
-- Yerel veya uzaktaki sunucunuz için HTTPS etkinleştirin.  
+### Alıştırma 4: Güvenlik En İyi Uygulamalarını Uygulayın  
+- Yerel veya uzak sunucunuzda HTTPS’yi etkinleştirin.  
 - Sunucu mantığınızda rol tabanlı erişim kontrolü (RBAC) uygulayın.  
-- Token süresi dolma yönetimi ve güvenli token depolama ekleyin.
+- Belirteç süresi dolma yönetimi ve güvenli belirteç depolama ekleyin.
 
 ## Kaynaklar  
 
 1. **MSAL Genel Bakış Dokümantasyonu**  
-   Microsoft Authentication Library’nin (MSAL) platformlar arası güvenli token edinimini nasıl sağladığını öğrenin:  
+   Microsoft Authentication Library (MSAL) ile platformlar arası güvenli belirteç edinimini öğrenin:  
    [Microsoft Learn’de MSAL Genel Bakış](https://learn.microsoft.com/en-gb/entra/msal/overview)
 
 2. **Azure-Samples/mcp-auth-servers GitHub Deposu**  
-   Kimlik doğrulama akışlarını gösteren MCP sunucularının referans uygulamaları:  
-   [Azure-Samples/mcp-auth-servers GitHub’da](https://github.com/Azure-Samples/mcp-auth-servers)
+   Kimlik doğrulama akışlarını gösteren MCP sunucusu referans uygulamaları:  
+   [Azure-Samples/mcp-auth-servers GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
 
 3. **Azure Kaynakları için Yönetilen Kimlikler Genel Bakış**  
-   Sistem veya kullanıcı atamalı yönetilen kimlikler kullanarak gizli bilgileri nasıl ortadan kaldıracağınızı anlayın:  
+   Sistem veya kullanıcı atanmış yönetilen kimlikler kullanarak gizli bilgileri ortadan kaldırma:  
    [Microsoft Learn’de Yönetilen Kimlikler Genel Bakış](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)
 
 4. **Azure API Management: MCP Sunucuları için Kimlik Doğrulama Geçidi**  
-   MCP sunucuları için güvenli OAuth2 geçidi olarak APIM kullanımı hakkında detaylı inceleme:  
+   MCP sunucuları için güvenli OAuth2 geçidi olarak APIM kullanımı:  
    [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
 
-5. **Microsoft Graph İzinleri Referansı**  
-   Microsoft Graph için yetkilendirilmiş ve uygulama izinlerinin kapsamlı listesi:  
-   [Microsoft Graph İzinleri Referansı](https://learn.microsoft.com/zh-tw/graph/permissions-reference)
+5. **Microsoft Graph İzin Referansı**  
+   Microsoft Graph için devredilen ve uygulama izinlerinin kapsamlı listesi:  
+   [Microsoft Graph İzin Referansı](https://learn.microsoft.com/zh-tw/graph/permissions-reference)
 
 ## Öğrenme Çıktıları  
 Bu bölümü tamamladıktan sonra:
 
-- MCP sunucuları ve AI iş akışları için kimlik doğrulamanın neden kritik olduğunu açıklayabileceksiniz.  
-- Hem yerel hem de uzaktaki MCP sunucu senaryoları için Entra ID kimlik doğrulamasını kurup yapılandırabileceksiniz.  
-- Sunucunuzun dağıtımına göre uygun istemci türünü (genel veya gizli) seçebileceksiniz.  
-- Token depolama ve rol tabanlı yetkilendirme dahil olmak üzere güvenli kodlama uygulamalarını hayata geçirebileceksiniz.  
-- MCP sunucunuzu ve araçlarını yetkisiz erişime karşı güvenle koruyabileceksiniz.
+- MCP sunucuları ve yapay zeka iş akışları için kimlik doğrulamanın neden kritik olduğunu açıklayabileceksiniz.  
+- Hem yerel hem de uzak MCP sunucu senaryoları için Entra ID kimlik doğrulamasını kurup yapılandırabileceksiniz.  
+- Sunucunuzun dağıtımına göre uygun istemci türünü (public veya confidential) seçebileceksiniz.  
+- Belirteç depolama ve rol tabanlı yetkilendirme gibi güvenli kodlama uygulamalarını hayata geçirebileceksiniz.  
+- MCP sunucunuzu ve araçlarını yetkisiz erişimden güvenle koruyabileceksiniz.
 
 ## Sonraki Adım  
 
-- [6. Topluluk Katkıları](../../06-CommunityContributions/README.md)
+- [5.13 Model Context Protocol (MCP) Azure AI Foundry Entegrasyonu](../mcp-foundry-agent-integration/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda oluşabilecek yanlış anlamalar veya yanlış yorumlamalardan dolayı sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

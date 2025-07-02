@@ -1,67 +1,67 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0abf26a6c4dbe905d5d49ccdc0ccfe92",
-  "translation_date": "2025-06-26T16:40:20+00:00",
+  "original_hash": "6e562d7e5a77c8982da4aa8f762ad1d8",
+  "translation_date": "2025-07-02T09:55:14+00:00",
   "source_file": "05-AdvancedTopics/mcp-security-entra/README.md",
   "language_code": "ro"
 }
 -->
-# Asigurarea fluxurilor de lucru AI: Autentificarea Entra ID pentru serverele Model Context Protocol
+# Securizarea fluxurilor de lucru AI: Autentificarea Entra ID pentru serverele Model Context Protocol
 
 ## Introducere
-Securizarea serverului Model Context Protocol (MCP) este la fel de importantă ca încuietorile ușii de la intrare a casei tale. Lăsând serverul MCP deschis, expui instrumentele și datele tale accesului neautorizat, ceea ce poate duce la breșe de securitate. Microsoft Entra ID oferă o soluție solidă, bazată pe cloud, pentru gestionarea identității și accesului, ajutând să te asiguri că doar utilizatorii și aplicațiile autorizate pot interacționa cu serverul tău MCP. În această secțiune, vei învăța cum să protejezi fluxurile tale de lucru AI folosind autentificarea Entra ID.
+Securizarea serverului tău Model Context Protocol (MCP) este la fel de importantă ca încuietorarea ușii de la intrare a casei tale. Lăsarea serverului MCP deschis expune uneltele și datele tale accesului neautorizat, ceea ce poate duce la breșe de securitate. Microsoft Entra ID oferă o soluție robustă de gestionare a identității și accesului în cloud, ajutând la asigurarea faptului că doar utilizatorii și aplicațiile autorizate pot interacționa cu serverul tău MCP. În această secțiune, vei învăța cum să protejezi fluxurile tale de lucru AI folosind autentificarea Entra ID.
 
 ## Obiective de învățare
 La finalul acestei secțiuni, vei putea:
 
 - Să înțelegi importanța securizării serverelor MCP.
 - Să explici elementele de bază ale Microsoft Entra ID și autentificarea OAuth 2.0.
-- Să recunoști diferența dintre clienții publici și cei confidențiali.
-- Să implementezi autentificarea Entra ID atât în scenarii locale (client public), cât și în cele la distanță (client confidențial) pentru serverele MCP.
+- Să recunoști diferența dintre clienți publici și clienți confidențiali.
+- Să implementezi autentificarea Entra ID atât în scenarii locale (client public), cât și la distanță (client confidențial) pentru serverele MCP.
 - Să aplici cele mai bune practici de securitate în dezvoltarea fluxurilor de lucru AI.
 
-## Securitatea și MCP
+## Securitate și MCP
 
-La fel cum nu ai lăsa ușa de la intrare a casei tale descuiată, nu ar trebui să lași serverul MCP deschis pentru oricine. Securizarea fluxurilor tale de lucru AI este esențială pentru construirea unor aplicații robuste, de încredere și sigure. Acest capitol te va introduce în utilizarea Microsoft Entra ID pentru a securiza serverele MCP, asigurându-te că doar utilizatorii și aplicațiile autorizate pot interacționa cu instrumentele și datele tale.
+Așa cum nu ai lăsa ușa de la intrare a casei descuiată, nici serverul tău MCP nu ar trebui să fie accesibil oricui. Securizarea fluxurilor tale de lucru AI este esențială pentru construirea unor aplicații robuste, de încredere și sigure. Acest capitol îți va prezenta utilizarea Microsoft Entra ID pentru a proteja serverele MCP, asigurând că doar utilizatorii și aplicațiile autorizate pot interacționa cu uneltele și datele tale.
 
 ## De ce contează securitatea pentru serverele MCP
 
-Imaginează-ți că serverul tău MCP are un instrument care poate trimite emailuri sau accesa o bază de date a clienților. Un server nesecurizat ar însemna că oricine ar putea folosi acel instrument, ceea ce poate duce la acces neautorizat la date, spam sau alte activități malițioase.
+Imaginează-ți că serverul tău MCP are o unealtă care poate trimite emailuri sau accesa o bază de date a clienților. Un server nesecurizat ar însemna că oricine ar putea folosi acea unealtă, ceea ce ar duce la acces neautorizat la date, spam sau alte activități malițioase.
 
-Implementând autentificarea, te asiguri că fiecare cerere către server este verificată, confirmând identitatea utilizatorului sau a aplicației care face cererea. Acesta este primul și cel mai important pas în securizarea fluxurilor tale de lucru AI.
+Prin implementarea autentificării, te asiguri că fiecare cerere către server este verificată, confirmând identitatea utilizatorului sau aplicației care face cererea. Acesta este primul și cel mai important pas în securizarea fluxurilor tale de lucru AI.
 
 ## Introducere în Microsoft Entra ID
 
-[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) este un serviciu cloud pentru gestionarea identității și accesului. Gândește-te la el ca la un paznic universal pentru aplicațiile tale. Se ocupă de procesul complex de verificare a identității utilizatorilor (autentificare) și de determinare a ceea ce au voie să facă (autorizare).
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) este un serviciu cloud de gestionare a identității și accesului. Gândește-l ca pe un agent de securitate universal pentru aplicațiile tale. El gestionează procesul complex de verificare a identității utilizatorilor (autentificare) și determină ce au voie să facă (autorizare).
 
 Folosind Entra ID, poți:
 
-- Permite autentificarea sigură a utilizatorilor.
+- Permite autentificare sigură pentru utilizatori.
 - Proteja API-urile și serviciile.
-- Gestionează politicile de acces dintr-un singur loc.
+- Gestiona politicile de acces dintr-un singur loc.
 
-Pentru serverele MCP, Entra ID oferă o soluție robustă și de încredere pentru a controla cine poate accesa capabilitățile serverului tău.
+Pentru serverele MCP, Entra ID oferă o soluție robustă și larg recunoscută pentru a gestiona cine poate accesa funcționalitățile serverului tău.
 
 ---
 
 ## Înțelegerea mecanismului: Cum funcționează autentificarea Entra ID
 
-Entra ID folosește standarde deschise precum **OAuth 2.0** pentru a gestiona autentificarea. Deși detaliile pot fi complexe, conceptul de bază este simplu și poate fi înțeles printr-o analogie.
+Entra ID folosește standarde deschise precum **OAuth 2.0** pentru gestionarea autentificării. Deși detaliile pot fi complexe, conceptul de bază este simplu și poate fi înțeles printr-o analogie.
 
-### O introducere blândă în OAuth 2.0: Cheia valetului
+### O introducere simplă în OAuth 2.0: Cheia valetului
 
-Gândește-te la OAuth 2.0 ca la un serviciu de valet pentru mașina ta. Când ajungi la un restaurant, nu îi dai valetului cheia principală. În schimb, îi oferi o **cheie valet** care are permisiuni limitate — poate porni mașina și încuia ușile, dar nu poate deschide portbagajul sau torpedoul.
+Gândește-te la OAuth 2.0 ca la un serviciu de valet pentru mașina ta. Când ajungi la un restaurant, nu dai valetului cheia ta principală. În schimb, îi oferi o **cheie de valet** care are permisiuni limitate – poate porni mașina și încuia ușile, dar nu poate deschide portbagajul sau torpedoul.
 
 În această analogie:
 
 - **Tu** ești **Utilizatorul**.
-- **Mașina ta** este **Serverul MCP** cu instrumentele și datele sale valoroase.
+- **Mașina ta** este **Serverul MCP** cu uneltele și datele sale valoroase.
 - **Valetul** este **Microsoft Entra ID**.
-- **Valetul de parcare** este **Clientul MCP** (aplicația care încearcă să acceseze serverul).
-- **Cheia valet** este **Tokenul de acces**.
+- **Atendentul de parcare** este **Clientul MCP** (aplicația care încearcă să acceseze serverul).
+- **Cheia de valet** este **Tokenul de acces**.
 
-Tokenul de acces este un șir securizat de text pe care clientul MCP îl primește de la Entra ID după ce te autentifici. Clientul prezintă apoi acest token serverului MCP la fiecare cerere. Serverul poate verifica tokenul pentru a se asigura că cererea este legitimă și că clientul are permisiunile necesare, fără a fi nevoie să gestioneze datele tale reale de autentificare (precum parola).
+Tokenul de acces este un șir securizat de text pe care clientul MCP îl primește de la Entra ID după ce te autentifici. Clientul apoi prezintă acest token serverului MCP la fiecare cerere. Serverul poate verifica tokenul pentru a se asigura că cererea este legitimă și că clientul are permisiunile necesare, toate acestea fără a manipula efectiv datele tale de autentificare (cum ar fi parola).
 
 ### Fluxul de autentificare
 
@@ -85,27 +85,27 @@ sequenceDiagram
     Server-->>-Client: Token is valid. Here is the result of the tool.
 ```
 
-### Introducerea Microsoft Authentication Library (MSAL)
+### Prezentarea Microsoft Authentication Library (MSAL)
 
-Înainte să intrăm în cod, este important să prezentăm un component cheie pe care îl vei vedea în exemple: **Microsoft Authentication Library (MSAL)**.
+Înainte să intrăm în cod, este important să prezentăm un element cheie pe care îl vei vedea în exemple: **Microsoft Authentication Library (MSAL)**.
 
-MSAL este o bibliotecă dezvoltată de Microsoft care face mult mai ușoară pentru dezvoltatori gestionarea autentificării. În loc să scrii tot codul complex pentru a gestiona tokenurile de securitate, autentificările și reîmprospătările de sesiune, MSAL se ocupă de toate acestea.
+MSAL este o bibliotecă dezvoltată de Microsoft care face mult mai ușoară gestionarea autentificării pentru dezvoltatori. În loc să scrii tot codul complex pentru gestionarea token-urilor de securitate, a autentificărilor și reîmprospătărilor sesiunilor, MSAL se ocupă de toate acestea.
 
-Utilizarea unei biblioteci precum MSAL este recomandată deoarece:
+Utilizarea unei biblioteci precum MSAL este recomandată pentru că:
 
 - **Este sigură:** implementează protocoale standard din industrie și cele mai bune practici de securitate, reducând riscul vulnerabilităților în codul tău.
-- **Simplifică dezvoltarea:** ascunde complexitatea protocoalelor OAuth 2.0 și OpenID Connect, permițându-ți să adaugi autentificare robustă în aplicația ta cu doar câteva linii de cod.
-- **Este întreținută:** Microsoft actualizează activ MSAL pentru a răspunde noilor amenințări de securitate și schimbări de platformă.
+- **Simplifică dezvoltarea:** ascunde complexitatea protocoalelor OAuth 2.0 și OpenID Connect, permițându-ți să adaugi autentificare robustă aplicației tale cu doar câteva linii de cod.
+- **Este întreținută:** Microsoft actualizează activ MSAL pentru a răspunde noilor amenințări de securitate și schimbărilor de platformă.
 
-MSAL suportă o varietate largă de limbaje și cadre de dezvoltare, inclusiv .NET, JavaScript/TypeScript, Python, Java, Go și platforme mobile precum iOS și Android. Asta înseamnă că poți folosi aceleași modele de autentificare consistente pe întregul tău stack tehnologic.
+MSAL suportă o gamă largă de limbaje și cadre de aplicații, inclusiv .NET, JavaScript/TypeScript, Python, Java, Go și platforme mobile precum iOS și Android. Aceasta înseamnă că poți folosi aceleași modele consistente de autentificare pe întregul tău stack tehnologic.
 
-Pentru a afla mai multe despre MSAL, poți consulta documentația oficială [MSAL overview](https://learn.microsoft.com/entra/identity-platform/msal-overview).
+Pentru a afla mai multe despre MSAL, poți consulta documentația oficială [MSAL overview documentation](https://learn.microsoft.com/entra/identity-platform/msal-overview).
 
 ---
 
-## Securizarea serverului MCP cu Entra ID: un ghid pas cu pas
+## Securizarea serverului MCP cu Entra ID: Ghid pas cu pas
 
-Acum să parcurgem cum să securizezi un server MCP local (care comunică prin `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
+Acum, să parcurgem cum să securizezi un server MCP local (care comunică prin `stdio``) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
 
 ### Scenario 1: Securing a Local MCP Server (with a Public Client)
 
@@ -134,7 +134,7 @@ This class is responsible for handling the interaction with Entra ID.
 
 - **`CreateAsync`**: This method initializes the `PublicClientApplication` from the MSAL (Microsoft Authentication Library). It's configured with your application's `clientId` and `tenantId`.
 - **`WithBroker`**: This enables the use of a broker (like the Windows Web Account Manager), which provides a more secure and seamless single sign-on experience.
-- **`AcquireTokenAsync`**: Aceasta este metoda principală. Ea încearcă mai întâi să obțină un token în mod silențios (adică utilizatorul nu trebuie să se autentifice din nou dacă are deja o sesiune validă). Dacă nu poate obține un token silențios, va solicita utilizatorului să se autentifice interactiv.
+- **`AcquireTokenAsync`**: Aceasta este metoda principală. Mai întâi încearcă să obțină un token în mod silențios (adică utilizatorul nu va trebui să se autentifice din nou dacă are deja o sesiune validă). Dacă nu poate obține un token silențios, va solicita utilizatorului să se autentifice interactiv.
 
 ```csharp
 // Simplified for clarity
@@ -256,7 +256,7 @@ This file sets up the Express server and the MCP transport layer.
 
 - **`requireBearerAuth`**: This is middleware that protects the `/sse` and `/message` endpoints. It checks for a valid bearer token in the `Authorization` header of the request.
 - **`EntraIdServerAuthProvider`**: This is a custom class that implements the `McpServerAuthorizationProvider` interface. It's responsible for handling the OAuth 2.0 flow.
-- **`/auth/callback`**: Acest endpoint gestionează redirecționarea de la Entra ID după ce utilizatorul s-a autentificat. Face schimbul codului de autorizare pentru un token de acces și un token de reîmprospătare.
+- **`/auth/callback`**: Acest endpoint gestionează redirecționarea de la Entra ID după ce utilizatorul s-a autentificat. Schimbă codul de autorizare pentru un token de acces și un token de reîmprospătare.
 
 ```typescript
 // Simplified for clarity
@@ -291,7 +291,7 @@ app.get("/auth/callback", (req, res) => {
 
 **`Tools.ts`**
 
-This file defines the tools that the MCP server provides. The `getUserDetails` este similar cu cel din exemplul anterior, dar obține tokenul de acces din sesiune.
+This file defines the tools that the MCP server provides. The `getUserDetails` unealta este similară cu cea din exemplul anterior, dar obține tokenul de acces din sesiune.
 
 ```typescript
 // Simplified for clarity
@@ -338,32 +338,32 @@ This class handles the logic for:
 3. Entra ID redirects the user back to the `/auth/callback` endpoint with an authorization code.
 4. The server exchanges the code for an access token and a refresh token, stores them, and creates a session token which is sent to the client.
 5. The client can now use this session token in the `Authorization` header for all future requests to the MCP server.
-6. When the `getUserDetails` când este apelat, folosește tokenul din sesiune pentru a căuta tokenul de acces Entra ID și apoi îl folosește pentru a apela Microsoft Graph API.
+6. When the `getUserDetails` când este apelată, folosește tokenul din sesiune pentru a căuta tokenul de acces Entra ID și apoi îl folosește pentru a apela Microsoft Graph API.
 
-Acest flux este mai complex decât cel al clientului public, dar este necesar pentru endpoint-urile accesibile pe internet. Deoarece serverele MCP la distanță sunt accesibile prin internet public, ele necesită măsuri de securitate mai puternice pentru a preveni accesul neautorizat și posibile atacuri.
+Acest flux este mai complex decât cel pentru clientul public, dar este necesar pentru endpoint-urile expuse pe internet. Deoarece serverele MCP la distanță sunt accesibile prin internetul public, ele necesită măsuri de securitate mai stricte pentru a se proteja împotriva accesului neautorizat și a potențialelor atacuri.
 
 ## Cele mai bune practici de securitate
 
 - **Folosește întotdeauna HTTPS**: Criptează comunicația între client și server pentru a proteja tokenurile de interceptare.
-- **Implementează controlul accesului bazat pe roluri (RBAC)**: Nu verifica doar *dacă* un utilizator este autentificat, ci și *ce* are voie să facă. Poți defini roluri în Entra ID și să le verifici în serverul MCP.
-- **Monitorizează și auditează**: Înregistrează toate evenimentele de autentificare pentru a putea detecta și răspunde la activități suspecte.
-- **Gestionează limitarea ratei și throttling-ul**: Microsoft Graph și alte API-uri implementează limitări pentru a preveni abuzul. Implementează o strategie de retry cu backoff exponențial în serverul MCP pentru a gestiona elegant răspunsurile HTTP 429 (Too Many Requests). Ia în considerare caching-ul datelor accesate frecvent pentru a reduce apelurile API.
-- **Stocarea securizată a tokenurilor**: Stochează tokenurile de acces și de reîmprospătare în mod sigur. Pentru aplicațiile locale, folosește mecanismele de stocare securizată ale sistemului. Pentru aplicațiile server, ia în considerare utilizarea stocării criptate sau a serviciilor de gestionare a cheilor securizate, precum Azure Key Vault.
-- **Gestionarea expirării tokenurilor**: Tokenurile de acces au o durată limitată. Implementează reîmprospătarea automată a tokenurilor folosind tokenurile de reîmprospătare pentru a menține o experiență fluidă fără a cere reautentificare.
-- **Ia în considerare folosirea Azure API Management**: Deși implementarea securității direct în serverul MCP îți oferă control detaliat, API Gateway-uri precum Azure API Management pot gestiona automat multe dintre aceste aspecte de securitate, inclusiv autentificarea, autorizarea, limitarea ratei și monitorizarea. Ele oferă un strat centralizat de securitate între clienții tăi și serverele MCP. Pentru mai multe detalii despre utilizarea API Gateway-urilor cu MCP, vezi [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690).
+- **Implementează controlul accesului bazat pe roluri (RBAC)**: Nu verifica doar *dacă* un utilizator este autentificat; verifică *ce* este autorizat să facă. Poți defini roluri în Entra ID și să le verifici în serverul tău MCP.
+- **Monitorizează și auditează**: Înregistrează toate evenimentele de autentificare pentru a detecta și răspunde la activități suspecte.
+- **Gestionează limitarea ratei și throttling-ul**: Microsoft Graph și alte API-uri implementează limitarea ratei pentru a preveni abuzurile. Implementează logica de backoff exponențial și retry în serverul tău MCP pentru a gestiona elegant răspunsurile HTTP 429 (Too Many Requests). Ia în considerare cache-ul pentru datele accesate frecvent pentru a reduce apelurile API.
+- **Stocarea securizată a tokenurilor**: Depozitează tokenurile de acces și cele de reîmprospătare în mod sigur. Pentru aplicații locale, folosește mecanismele de stocare securizată ale sistemului. Pentru aplicațiile server, ia în considerare utilizarea stocării criptate sau a serviciilor de gestionare a cheilor securizate precum Azure Key Vault.
+- **Gestionarea expirării tokenurilor**: Tokenurile de acces au o durată limitată. Implementează reîmprospătarea automată a tokenurilor folosind tokenurile de reîmprospătare pentru a menține o experiență de utilizator fără întreruperi, fără a necesita reautentificare.
+- **Ia în considerare utilizarea Azure API Management**: Deși implementarea securității direct în serverul MCP îți oferă control detaliat, API Gateways precum Azure API Management pot gestiona automat multe dintre aceste aspecte de securitate, inclusiv autentificarea, autorizarea, limitarea ratei și monitorizarea. Ele oferă un strat centralizat de securitate între clienții tăi și serverele MCP. Pentru mai multe detalii despre utilizarea API Gateways cu MCP, vezi [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690).
 
 ## Concluzii cheie
 
-- Securizarea serverului MCP este esențială pentru protejarea datelor și instrumentelor tale.
+- Securizarea serverului MCP este esențială pentru protejarea datelor și uneltelor tale.
 - Microsoft Entra ID oferă o soluție robustă și scalabilă pentru autentificare și autorizare.
-- Folosește un **client public** pentru aplicațiile locale și un **client confidențial** pentru serverele la distanță.
-- **Fluxul codului de autorizare** este cea mai sigură opțiune pentru aplicațiile web.
+- Folosește un **client public** pentru aplicații locale și un **client confidențial** pentru servere la distanță.
+- **Authorization Code Flow** este cea mai sigură opțiune pentru aplicațiile web.
 
 ## Exercițiu
 
-1. Gândește-te la un server MCP pe care ai putea să îl construiești. Ar fi un server local sau unul la distanță?
-2. În funcție de răspunsul tău, ai folosi un client public sau confidențial?
-3. Ce permisiune ar solicita serverul tău MCP pentru a efectua acțiuni asupra Microsoft Graph?
+1. Gândește-te la un server MCP pe care ai putea să-l construiești. Ar fi un server local sau unul la distanță?
+2. În funcție de răspunsul tău, ai folosi un client public sau unul confidențial?
+3. Ce permisiuni ar solicita serverul tău MCP pentru a efectua acțiuni împotriva Microsoft Graph?
 
 ## Exerciții practice
 
@@ -374,52 +374,52 @@ Notează Application (client) ID și Directory (tenant) ID.
 
 ### Exercițiul 2: Securizează un server MCP local (client public)
 - Urmează exemplul de cod pentru a integra MSAL (Microsoft Authentication Library) pentru autentificarea utilizatorului.
-- Testează fluxul de autentificare apelând instrumentul MCP care preia detalii despre utilizator din Microsoft Graph.
+- Testează fluxul de autentificare apelând unealta MCP care preia detalii despre utilizator din Microsoft Graph.
 
 ### Exercițiul 3: Securizează un server MCP la distanță (client confidențial)
 - Înregistrează un client confidențial în Entra ID și creează un secret de client.
-- Configurează serverul Express.js MCP să folosească Fluxul codului de autorizare.
+- Configurează serverul tău MCP Express.js să folosească Authorization Code Flow.
 - Testează endpoint-urile protejate și confirmă accesul bazat pe token.
 
 ### Exercițiul 4: Aplică cele mai bune practici de securitate
 - Activează HTTPS pentru serverul tău local sau la distanță.
 - Implementează controlul accesului bazat pe roluri (RBAC) în logica serverului.
-- Adaugă gestionarea expirării tokenurilor și stocarea securizată a acestora.
+- Adaugă gestionarea expirării tokenurilor și stocarea securizată a tokenurilor.
 
 ## Resurse
 
-1. **Documentație MSAL Overview**  
-   Află cum Microsoft Authentication Library (MSAL) permite obținerea sigură a tokenurilor pe diverse platforme:  
+1. **Documentația MSAL Overview**  
+   Află cum Microsoft Authentication Library (MSAL) permite achiziția securizată de tokenuri pe diverse platforme:  
    [MSAL Overview on Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)
 
-2. **Azure-Samples/mcp-auth-servers pe GitHub**  
+2. **Repository GitHub Azure-Samples/mcp-auth-servers**  
    Implementări de referință pentru servere MCP care demonstrează fluxurile de autentificare:  
-   [Azure-Samples/mcp-auth-servers pe GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
+   [Azure-Samples/mcp-auth-servers on GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
 
-3. **Managed Identities for Azure Resources Overview**  
-   Înțelege cum să elimini secretele folosind identități gestionate la nivel de sistem sau utilizator:  
+3. **Prezentare Managed Identities pentru resurse Azure**  
+   Înțelege cum să elimini secretele folosind identități gestionate de sistem sau utilizator:  
    [Managed Identities Overview on Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)
 
-4. **Azure API Management: Your Auth Gateway for MCP Servers**  
-   O analiză detaliată a utilizării APIM ca gateway OAuth2 securizat pentru serverele MCP:  
+4. **Azure API Management: Poarta ta de autentificare pentru serverele MCP**  
+   O analiză detaliată despre utilizarea APIM ca poartă OAuth2 securizată pentru serverele MCP:  
    [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
 
-5. **Microsoft Graph Permissions Reference**  
-   Listă completă de permisiuni delegate și aplicație pentru Microsoft Graph:  
+5. **Referință permisiuni Microsoft Graph**  
+   Listă completă de permisiuni delegate și de aplicație pentru Microsoft Graph:  
    [Microsoft Graph Permissions Reference](https://learn.microsoft.com/zh-tw/graph/permissions-reference)
 
-## Rezultate ale învățării
+## Rezultate de învățare
 După parcurgerea acestei secțiuni, vei putea:
 
-- Să explici de ce autentificarea este esențială pentru serverele MCP și fluxurile AI.
-- Să configurezi și să implementezi autentificarea Entra ID pentru scenarii locale și la distanță ale serverului MCP.
-- Să alegi tipul corect de client (public sau confidențial) în funcție de modul de implementare al serverului tău.
-- Să aplici practici sigure de programare, inclusiv stocarea tokenurilor și autorizarea bazată pe roluri.
-- Să protejezi cu încredere serverul MCP și instrumentele sale împotriva accesului neautorizat.
+- Explica de ce autentificarea este critică pentru serverele MCP și fluxurile AI.
+- Configura și seta autentificarea Entra ID pentru scenarii locale și la distanță ale serverelor MCP.
+- Alege tipul potrivit de client (public sau confidențial) în funcție de implementarea serverului tău.
+- Implementa practici de codare securizată, inclusiv stocarea tokenurilor și autorizarea bazată pe roluri.
+- Proteja cu încredere serverul MCP și uneltele sale împotriva accesului neautorizat.
 
 ## Ce urmează
 
-- [6. Contribuții din comunitate](../../06-CommunityContributions/README.md)
+- [5.13 Integrarea Model Context Protocol (MCP) cu Azure AI Foundry](../mcp-foundry-agent-integration/README.md)
 
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original, în limba sa nativă, trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
