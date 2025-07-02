@@ -416,4 +416,4 @@ After completing this section, you will be able to:
 
 ## What's next 
 
-- [5.13 odel Context Protocol (MCP) Integration with Azure AI Foundry](../mcp-foundry-agent-intergration/README.md)
+- [5.13 Model Context Protocol (MCP) Integration with Azure AI Foundry](../mcp-foundry-agent-integration/README.md)
