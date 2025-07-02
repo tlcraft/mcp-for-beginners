@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "36e46bfca83e3528afc6f66803efa75e",
-  "translation_date": "2025-05-17T16:58:46+00:00",
+  "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
+  "translation_date": "2025-07-02T08:03:59+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "tr"
 }
@@ -11,31 +11,31 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Genel Bakış
 
-Bu ders, MCP sunucuları ve özelliklerini üretim ortamlarında geliştirmek, test etmek ve dağıtmak için gelişmiş en iyi uygulamalara odaklanmaktadır. MCP ekosistemleri karmaşıklık ve önem açısından büyüdükçe, belirlenmiş kalıpları takip etmek güvenilirlik, sürdürülebilirlik ve birlikte çalışabilirlik sağlar. Bu ders, gerçek dünyadaki MCP uygulamalarından kazanılan pratik bilgileri bir araya getirerek, sağlam, verimli sunucular oluşturmanız için etkili kaynaklar, yönlendirmeler ve araçlar sunar.
+Bu ders, MCP sunucularını ve özelliklerini üretim ortamlarında geliştirme, test etme ve dağıtma konusunda ileri düzey en iyi uygulamalara odaklanmaktadır. MCP ekosistemleri karmaşıklık ve önem kazandıkça, belirlenmiş kalıplara uymak güvenilirlik, sürdürülebilirlik ve birlikte çalışabilirliği garanti eder. Bu ders, gerçek dünya MCP uygulamalarından edinilen pratik bilgileri bir araya getirerek, etkili kaynaklar, istemler ve araçlarla sağlam, verimli sunucular oluşturmanız için rehberlik sunar.
 
 ## Öğrenme Hedefleri
 
 Bu dersin sonunda şunları yapabileceksiniz:
-- MCP sunucu ve özellik tasarımında endüstri en iyi uygulamalarını uygulamak
+- MCP sunucu ve özellik tasarımında sektörün en iyi uygulamalarını uygulamak
 - MCP sunucuları için kapsamlı test stratejileri oluşturmak
 - Karmaşık MCP uygulamaları için verimli, yeniden kullanılabilir iş akışı kalıpları tasarlamak
 - MCP sunucularında uygun hata yönetimi, kayıt tutma ve gözlemlenebilirlik uygulamak
-- MCP uygulamalarını performans, güvenlik ve sürdürülebilirlik için optimize etmek
+- MCP uygulamalarını performans, güvenlik ve sürdürülebilirlik açısından optimize etmek
 
-## Ek Referanslar
+## Ek Kaynaklar
 
-MCP en iyi uygulamaları hakkında en güncel bilgiler için şunlara başvurun:
-- [MCP Dokümantasyonu](https://modelcontextprotocol.io/)
-- [MCP Spesifikasyonu](https://spec.modelcontextprotocol.io/)
-- [GitHub Deposu](https://github.com/modelcontextprotocol)
+MCP en iyi uygulamaları hakkında en güncel bilgiler için şunlara bakınız:
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## MCP Araç Geliştirme En İyi Uygulamaları
 
 ### Mimari İlkeler
 
-#### 1. Tek Sorumluluk İlkesi
+#### 1. Tek Sorumluluk Prensibi
 
-Her MCP özelliği açık ve odaklanmış bir amaca sahip olmalıdır. Birden fazla konuyu ele almaya çalışan tek parça araçlar oluşturmak yerine, belirli görevlerde mükemmel olan uzmanlaşmış araçlar geliştirin.
+Her MCP özelliği net ve odaklanmış bir amaca sahip olmalıdır. Birden fazla konuyu ele almaya çalışan tek parça araçlar yerine, belirli görevlerde üstün olan uzmanlaşmış araçlar geliştirin.
 
 **İyi Örnek:**
 ```csharp
@@ -155,7 +155,7 @@ public class WeatherToolSuite : ITool
 
 #### 2. Bağımlılık Enjeksiyonu ve Test Edilebilirlik
 
-Araçları, bağımlılıklarını yapılandırıcı enjeksiyonu ile alacak şekilde tasarlayın, böylece test edilebilir ve yapılandırılabilir hale getirin:
+Araçları, bağımlılıklarını yapıcı enjeksiyonu yoluyla alacak şekilde tasarlayın; böylece test edilebilir ve yapılandırılabilir olurlar:
 
 ```java
 // Java example with dependency injection
@@ -181,7 +181,7 @@ public class CurrencyConversionTool implements Tool {
 
 #### 3. Birleştirilebilir Araçlar
 
-Daha karmaşık iş akışları oluşturmak için birleştirilebilir araçlar tasarlayın:
+Daha karmaşık iş akışları oluşturmak için birlikte birleştirilebilen araçlar tasarlayın:
 
 ```python
 # Python example showing composable tools
@@ -214,11 +214,11 @@ class DataVisualizationTool(Tool):
 
 ### Şema Tasarım En İyi Uygulamaları
 
-Şema, model ve aracınız arasındaki sözleşmedir. İyi tasarlanmış şemalar, araç kullanılabilirliğini artırır.
+Şema, model ile aracınız arasındaki sözleşmedir. İyi tasarlanmış şemalar, aracın kullanılabilirliğini artırır.
 
-#### 1. Açık Parametre Tanımları
+#### 1. Net Parametre Açıklamaları
 
-Her parametre için açıklayıcı bilgiler ekleyin:
+Her parametre için açıklayıcı bilgiler mutlaka ekleyin:
 
 ```csharp
 public object GetSchema()
@@ -299,7 +299,7 @@ Map<String, Object> getSchema() {
 
 #### 3. Tutarlı Dönüş Yapıları
 
-Sonuçları modellerin daha kolay yorumlaması için yanıt yapılarınızda tutarlılığı koruyun:
+Modelin sonuçları daha kolay yorumlayabilmesi için yanıt yapılarında tutarlılığı koruyun:
 
 ```python
 async def execute_async(self, request):
@@ -340,9 +340,9 @@ def _format_item(self, item):
 
 ### Hata Yönetimi
 
-Güçlü hata yönetimi, MCP araçlarının güvenilirliğini koruması için önemlidir.
+MCP araçlarının güvenilirliğini sağlamak için sağlam hata yönetimi çok önemlidir.
 
-#### 1. Zarif Hata Yönetimi
+#### 1. Nazik Hata Yönetimi
 
 Hataları uygun seviyelerde ele alın ve bilgilendirici mesajlar sağlayın:
 
@@ -388,7 +388,7 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. Yapılandırılmış Hata Yanıtları
 
-Mümkün olduğunda yapılandırılmış hata bilgisi döndürün:
+Mümkün olduğunda yapılandırılmış hata bilgileri döndürün:
 
 ```java
 @Override
@@ -418,9 +418,9 @@ public ToolResponse execute(ToolRequest request) {
 }
 ```
 
-#### 3. Yeniden Deneme Mantığı
+#### 3. Tekrar Deneme Mantığı
 
-Geçici hatalar için uygun yeniden deneme mantığı uygulayın:
+Geçici hatalar için uygun tekrar deneme mantığı uygulayın:
 
 ```python
 async def execute_async(self, request):
@@ -450,7 +450,7 @@ async def execute_async(self, request):
 
 #### 1. Önbellekleme
 
-Pahalı işlemler için önbellekleme uygulayın:
+Maliyetli işlemler için önbellekleme uygulayın:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -498,7 +498,7 @@ public class CachedDataTool : IMcpTool
 
 #### 2. Asenkron İşleme
 
-G/Ç bağlı işlemler için asenkron programlama kalıplarını kullanın:
+G/Ç odaklı işlemler için asenkron programlama kalıplarını kullanın:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -547,9 +547,9 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. Kaynak Sınırlama
+#### 3. Kaynak Kısıtlaması
 
-Aşırı yüklemeyi önlemek için kaynak sınırlama uygulayın:
+Aşırı yüklenmeyi önlemek için kaynak kısıtlaması uygulayın:
 
 ```python
 class ThrottledApiTool(Tool):
@@ -613,9 +613,9 @@ class TokenBucketRateLimiter:
 
 ### Güvenlik En İyi Uygulamaları
 
-#### 1. Giriş Doğrulama
+#### 1. Girdi Doğrulama
 
-Giriş parametrelerini her zaman dikkatlice doğrulayın:
+Girdi parametrelerini her zaman kapsamlı şekilde doğrulayın:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -658,7 +658,7 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. Yetkilendirme Kontrolleri
 
-Uygun yetkilendirme kontrolleri uygulayın:
+Doğru yetkilendirme kontrollerini uygulayın:
 
 ```java
 @Override
@@ -684,7 +684,7 @@ public ToolResponse execute(ToolRequest request) {
 
 #### 3. Hassas Veri Yönetimi
 
-Hassas verileri dikkatlice yönetin:
+Hassas verileri dikkatli yönetin:
 
 ```python
 class SecureDataTool(Tool):
@@ -735,11 +735,11 @@ class SecureDataTool(Tool):
 
 ## MCP Araçları için Test En İyi Uygulamaları
 
-Kapsamlı testler, MCP araçlarının doğru çalışmasını, sınır durumlarını ele almasını ve sistemin geri kalanıyla düzgün bir şekilde entegre olmasını sağlar.
+Kapsamlı testler, MCP araçlarının doğru çalışmasını, uç durumları yönetmesini ve sistemle doğru entegrasyonunu sağlar.
 
 ### Birim Testi
 
-#### 1. Her Aracı İzole Olarak Test Et
+#### 1. Her Aracı İzole Ederek Test Edin
 
 Her aracın işlevselliği için odaklanmış testler oluşturun:
 
@@ -803,7 +803,7 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 
 #### 2. Şema Doğrulama Testi
 
-Şemaların geçerli olduğunu ve kısıtlamaları düzgün bir şekilde uyguladığını test edin:
+Şemaların geçerli olduğunu ve kısıtlamaları doğru uyguladığını test edin:
 
 ```java
 @Test
@@ -848,7 +848,7 @@ public void testSchemaValidation() {
 
 #### 3. Hata Yönetimi Testleri
 
-Hata koşulları için özel testler oluşturun:
+Hata durumları için özel testler oluşturun:
 
 ```python
 @pytest.mark.asyncio
@@ -949,7 +949,7 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 
 #### 2. MCP Sunucu Testi
 
-MCP sunucusunu tam araç kaydı ve yürütmesi ile test edin:
+Tüm araç kayıt ve yürütme işlemleriyle MCP sunucusunu test edin:
 
 ```java
 @SpringBootTest
@@ -1017,7 +1017,7 @@ public class McpServerIntegrationTest {
 
 #### 3. Uçtan Uca Test
 
-Model yönlendirmesinden araç yürütmesine kadar tam iş akışlarını test edin:
+Model isteminden araç yürütmesine kadar tam iş akışlarını test edin:
 
 ```python
 @pytest.mark.asyncio
@@ -1076,7 +1076,7 @@ async def test_model_interaction_with_tool():
 
 #### 1. Yük Testi
 
-MCP sunucunuzun kaç eşzamanlı isteği kaldırabileceğini test edin:
+MCP sunucunuzun aynı anda kaç isteği işleyebileceğini test edin:
 
 ```csharp
 [Fact]
@@ -1164,9 +1164,9 @@ public void testServerUnderStress() {
 }
 ```
 
-#### 3. İzleme ve Profilleme
+#### 3. İzleme ve Profil Oluşturma
 
-Uzun vadeli performans analizi için izleme ayarlayın:
+Uzun vadeli performans analizi için izleme kurun:
 
 ```python
 # Configure monitoring for an MCP server
@@ -1210,11 +1210,11 @@ def configure_monitoring(server):
 
 ## MCP İş Akışı Tasarım Kalıpları
 
-İyi tasarlanmış MCP iş akışları verimliliği, güvenilirliği ve sürdürülebilirliği artırır. İşte takip edilmesi gereken temel kalıplar:
+İyi tasarlanmış MCP iş akışları verimlilik, güvenilirlik ve sürdürülebilirliği artırır. İşte takip edilmesi gereken temel kalıplar:
 
 ### 1. Araç Zinciri Kalıbı
 
-Her aracın çıktısının bir sonraki için giriş olduğu bir sırada birden fazla aracı bağlayın:
+Birden fazla aracı birbirine bağlayın; her aracın çıktısı bir sonraki aracın girdisi olur:
 
 ```python
 # Python Chain of Tools implementation
@@ -1253,9 +1253,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. Yönlendirici Kalıbı
+### 2. Dağıtıcı Kalıbı
 
-Girdiye göre uzmanlaşmış araçlara yönlendiren merkezi bir araç kullanın:
+Girdiye göre uzman araçlara yönlendiren merkezi bir araç kullanın:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1337,7 +1337,7 @@ public class ContentDispatcherTool : IMcpTool
 
 ### 3. Paralel İşleme Kalıbı
 
-Verimlilik için birden fazla aracı eşzamanlı olarak yürütün:
+Verimlilik için birden çok aracı aynı anda çalıştırın:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1405,7 +1405,7 @@ public class ParallelDataProcessingWorkflow {
 
 ### 4. Hata Kurtarma Kalıbı
 
-Araç hataları için zarif geri dönüşler uygulayın:
+Araç hataları için nazik geri dönüşler uygulayın:
 
 ```python
 class ResilientWorkflow:
@@ -1461,7 +1461,7 @@ async def get_weather(workflow, location):
 
 ### 5. İş Akışı Bileşimi Kalıbı
 
-Daha karmaşık iş akışlarını daha basit olanları birleştirerek oluşturun:
+Daha basit iş akışlarını birleştirerek karmaşık iş akışları oluşturun:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1508,37 +1508,37 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# MCP Sunucularını Test Etme: En İyi Uygulamalar ve Öneriler
+# MCP Sunucularını Test Etme: En İyi Uygulamalar ve Önemli İpuçları
 
 ## Genel Bakış
 
-Test, güvenilir, yüksek kaliteli MCP sunucuları geliştirmenin kritik bir yönüdür. Bu kılavuz, geliştirme yaşam döngüsü boyunca MCP sunucularınızı test etmek için kapsamlı en iyi uygulamalar ve öneriler sunar; birim testlerinden entegrasyon testlerine ve uçtan uca doğrulamaya kadar.
+Test, güvenilir ve yüksek kaliteli MCP sunucuları geliştirmek için kritik bir aşamadır. Bu rehber, geliştirme süreci boyunca birim testlerden entegrasyon testlerine ve uçtan uca doğrulamaya kadar MCP sunucularınızı test etmek için kapsamlı en iyi uygulamalar ve ipuçları sunar.
 
-## MCP Sunucuları için Testin Önemi
+## MCP Sunucuları İçin Testin Önemi
 
-MCP sunucuları, AI modelleri ve istemci uygulamaları arasında önemli bir ara katman olarak hizmet verir. Kapsamlı testler şunları sağlar:
+MCP sunucuları, AI modelleri ile istemci uygulamalar arasında önemli bir ara katman görevi görür. Kapsamlı testler şunları sağlar:
 
 - Üretim ortamlarında güvenilirlik
-- İsteklerin ve yanıtların doğru şekilde işlenmesi
-- MCP spesifikasyonlarının doğru uygulanması
-- Hatalara ve sınır durumlarına karşı dayanıklılık
+- İstek ve yanıtların doğru işlenmesi
+- MCP spesifikasyonlarının uygun uygulanması
+- Hata ve uç durumlara karşı dayanıklılık
 - Çeşitli yükler altında tutarlı performans
 
-## MCP Sunucuları için Birim Testi
+## MCP Sunucuları İçin Birim Testi
 
-### Birim Testi (Temel Katman)
+### Birim Testi (Temel)
 
-Birim testleri, MCP sunucunuzun bireysel bileşenlerini izole olarak doğrular.
+Birim testleri, MCP sunucunuzun bireysel bileşenlerini izole şekilde doğrular.
 
-#### Neleri Test Etmeli
+#### Neler Test Edilmeli
 
-1. **Kaynak Yöneticileri**: Her kaynak yöneticisinin mantığını bağımsız olarak test edin
-2. **Araç Uygulamaları**: Araç davranışını çeşitli girdilerle doğrulayın
-3. **Yönlendirme Şablonları**: Yönlendirme şablonlarının doğru şekilde renderlandığından emin olun
-4. **Şema Doğrulama**: Parametre doğrulama mantığını test edin
+1. **Kaynak İşleyiciler**: Her kaynak işleyicinin mantığını bağımsız test edin
+2. **Araç Uygulamaları**: Araç davranışlarını farklı girdilerle doğrulayın
+3. **İstem Şablonları**: İstem şablonlarının doğru şekilde oluşturulduğunu kontrol edin
+4. **Şema Doğrulaması**: Parametre doğrulama mantığını test edin
 5. **Hata Yönetimi**: Geçersiz girdiler için hata yanıtlarını doğrulayın
 
-#### Birim Testi için En İyi Uygulamalar
+#### Birim Testi İçin En İyi Uygulamalar
 
 ```csharp
 // Example unit test for a calculator tool in C#
@@ -1586,15 +1586,15 @@ def test_calculator_tool_add():
 
 Entegrasyon testleri, MCP sunucunuzun bileşenleri arasındaki etkileşimleri doğrular.
 
-#### Neleri Test Etmeli
+#### Neler Test Edilmeli
 
-1. **Sunucu Başlatma**: Çeşitli yapılandırmalarla sunucu başlatmayı test edin
-2. **Yol Kaydı**: Tüm uç noktaların doğru şekilde kaydedildiğini doğrulayın
+1. **Sunucu Başlatma**: Farklı yapılandırmalarla sunucu başlatmayı test edin
+2. **Rota Kaydı**: Tüm uç noktaların doğru şekilde kaydedildiğini doğrulayın
 3. **İstek İşleme**: Tam istek-yanıt döngüsünü test edin
-4. **Hata Yayılımı**: Hataların bileşenler arasında düzgün şekilde ele alındığından emin olun
+4. **Hata Yayılımı**: Hataların bileşenler arasında doğru işlendiğinden emin olun
 5. **Kimlik Doğrulama ve Yetkilendirme**: Güvenlik mekanizmalarını test edin
 
-#### Entegrasyon Testi için En İyi Uygulamalar
+#### Entegrasyon Testi İçin En İyi Uygulamalar
 
 ```csharp
 // Example integration test for MCP server in C#
@@ -1634,15 +1634,15 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 
 Uçtan uca testler, istemciden sunucuya kadar tüm sistem davranışını doğrular.
 
-#### Neleri Test Etmeli
+#### Neler Test Edilmeli
 
 1. **İstemci-Sunucu İletişimi**: Tam istek-yanıt döngülerini test edin
-2. **Gerçek İstemci SDK'ları**: Gerçek istemci uygulamaları ile test edin
-3. **Yük Altında Performans**: Birden fazla eşzamanlı istekle davranışı doğrulayın
-4. **Hata Kurtarma**: Hatalardan sistem kurtarmasını test edin
-5. **Uzun Süreli İşlemler**: Akış ve uzun işlemlerin yönetimini doğrulayın
+2. **Gerçek İstemci SDK'ları**: Gerçek istemci uygulamalarıyla test yapın
+3. **Yük Altında Performans**: Aynı anda birden çok istekle davranışı doğrulayın
+4. **Hata Kurtarma**: Sistem hatalardan nasıl toparlanıyor test edin
+5. **Uzun Süreli Operasyonlar**: Akış ve uzun işlemlerin yönetimini doğrulayın
 
-#### Uçtan Uca Test için En İyi Uygulamalar
+#### Uçtan Uca Test İçin En İyi Uygulamalar
 
 ```typescript
 // Example E2E test with a client in TypeScript
@@ -1674,16 +1674,16 @@ describe('MCP Server E2E Tests', () => {
 });
 ```
 
-## MCP Testi için Mock Stratejileri
+## MCP Testleri İçin Mocklama Stratejileri
 
-Mocking, test sırasında bileşenleri izole etmek için gereklidir.
+Mocklama, test sırasında bileşenleri izole etmek için gereklidir.
 
 ### Mocklanacak Bileşenler
 
-1. **Harici AI Modelleri**: Öngörülebilir test için model yanıtlarını mocklayın
-2. **Harici Hizmetler**: API bağımlılıklarını (veritabanları, üçüncü taraf hizmetler) mocklayın
-3. **Kimlik Doğrulama Hizmetleri**: Kimlik sağlayıcıları mocklayın
-4. **Kaynak Sağlayıcılar**: Pahalı kaynak yöneticilerini mocklayın
+1. **Dış AI Modelleri**: Tahmin edilebilir testler için model yanıtlarını mocklayın
+2. **Dış Servisler**: API bağımlılıklarını (veritabanları, üçüncü taraf servisler) mocklayın
+3. **Kimlik Doğrulama Servisleri**: Kimlik sağlayıcıları mocklayın
+4. **Kaynak Sağlayıcılar**: Maliyetli kaynak işleyicileri mocklayın
 
 ### Örnek: Bir AI Model Yanıtını Mocklama
 
@@ -1719,19 +1719,19 @@ def test_with_mock_model(mock_model):
 
 ## Performans Testi
 
-Performans testi, üretim MCP sunucuları için kritiktir.
+Performans testi, üretim MCP sunucuları için kritik öneme sahiptir.
 
 ### Ölçülecekler
 
-1. **Gecikme**: İstekler için yanıt süresi
-2. **Verim**: Saniyede işlenen istekler
+1. **Gecikme**: İsteklerin yanıt süresi
+2. **Verimlilik**: Saniyede işlenen istek sayısı
 3. **Kaynak Kullanımı**: CPU, bellek, ağ kullanımı
 4. **Eşzamanlılık Yönetimi**: Paralel istekler altındaki davranış
-5. **Ölçekleme Özellikleri**: Yük arttıkça performans
+5. **Ölçeklenebilirlik Özellikleri**: Yük arttıkça performans
 
-### Performans Testi için Araçlar
+### Performans Testi Araçları
 
-- **k6**: Açık kaynaklı yük test aracı
+- **k6**: Açık kaynak yük testi aracı
 - **JMeter**: Kapsamlı performans testi
 - **Locust**: Python tabanlı yük testi
 - **Azure Load Testing**: Bulut tabanlı performans testi
@@ -1776,18 +1776,18 @@ export default function () {
 }
 ```
 
-## MCP Sunucuları için Test Otomasyonu
+## MCP Sunucuları İçin Test Otomasyonu
 
-Testlerinizi otomatikleştirmek, tutarlı kalite ve daha hızlı geri bildirim döngüleri sağlar.
+Testlerinizi otomatikleştirmek, tutarlı kalite ve hızlı geri bildirim sağlar.
 
 ### CI/CD Entegrasyonu
 
-1. **Pull İsteklerinde Birim Testleri Çalıştırın**: Kod değişikliklerinin mevcut işlevselliği bozmadığından emin olun
-2. **Sahneleme Entegrasyon Testleri**: Üretim öncesi ortamlarda entegrasyon testleri çalıştırın
-3. **Performans Temel Çizgileri**: Regresyonları yakalamak için performans ölçütlerini koruyun
-4. **Güvenlik Taramaları**: Boru hattının bir parçası olarak güvenlik testlerini otomatikleştirin
+1. **Pull Requestlerde Birim Testleri Çalıştırma**: Kod değişikliklerinin mevcut işlevselliği bozmamasını sağlayın
+2. **Ön Üretim Ortamında Entegrasyon Testleri**: Entegrasyon testlerini ön üretim ortamında çalıştırın
+3. **Performans Temelleri**: Regresyonları yakalamak için performans kıyaslamaları yapın
+4. **Güvenlik Taramaları**: Güvenlik testlerini otomatikleştirin
 
-### Örnek CI Boru Hattı (GitHub Actions)
+### Örnek CI Pipeline (GitHub Actions)
 
 ```yaml
 name: MCP Server Tests
@@ -1826,19 +1826,19 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## MCP Spesifikasyonu ile Uyumluluk Testi
+## MCP Spesifikasyonuna Uyum İçin Test
 
-Sunucunuzun MCP spesifikasyonunu doğru şekilde uyguladığını doğrulayın.
+Sunucunuzun MCP spesifikasyonunu doğru uyguladığını doğrulayın.
 
-### Ana Uyumluluk Alanları
+### Önemli Uyum Alanları
 
-1. **API Uç Noktaları**: Gerekli uç noktaları (/resources, /tools, vb.) test edin
+1. **API Uç Noktaları**: Gerekli uç noktaları test edin (/resources, /tools vb.)
 2. **İstek/Yanıt Formatı**: Şema uyumluluğunu doğrulayın
-3. **Hata Kodları**: Çeşitli senaryolar için doğru durum kodlarını doğrulayın
-4. **İçerik Türleri**: Farklı içerik türlerini işleme yeteneğini test edin
-5. **Kimlik Doğrulama Akışı**: Spesifikasyon uyumlu kimlik doğrulama mekanizmalarını doğrulayın
+3. **Hata Kodları**: Farklı senaryolarda doğru durum kodlarını test edin
+4. **İçerik Türleri**: Farklı içerik türlerinin işlenmesini test edin
+5. **Kimlik Doğrulama Akışı**: Spesifikasyona uygun kimlik doğrulama mekanizmalarını doğrulayın
 
-### Uyumluluk Test Paketi
+### Uyum Test Paketi
 
 ```csharp
 [Fact]
@@ -1865,51 +1865,55 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 }
 ```
 
-## Etkili MCP Sunucu Testi için En İyi 10 İpucu
+## Etkili MCP Sunucu Testi İçin En İyi 10 İpucu
 
-1. **Araç Tanımlarını Ayrı Test Edin**: Şema tanımlarını araç mantığından bağımsız olarak doğrulayın
-2. **Parametreli Testler Kullanın**: Araçları çeşitli girdilerle, sınır durumları dahil test edin
-3. **Hata Yanıtlarını Kontrol Edin**: Tüm olası hata koşulları için uygun hata yönetimini doğrulayın
-4. **Yetkilendirme Mantığını Test Edin**: Farklı kullanıcı rolleri için uygun erişim kontrolünü sağlayın
-5. **Test Kapsamını İzleyin**: Kritik yol kodu için yüksek kapsama hedefleyin
-6. **Akış Yanıtlarını Test Edin**: Akış içeriğini doğru şekilde yönetmeyi doğrulayın
-7. **Ağ Sorunlarını Simüle Edin**: Kötü ağ koşulları altında davranışı test edin
-8. **Kaynak Limitlerini Test Edin**: Kota veya hız limitlerine ulaşıldığında davranışı doğrulayın
-9. **Regresyon Testlerini Otomatikleştirin**: Her kod değişikliğinde çalışan bir paket oluşturun
-10. **Test Senaryolarını Belgeler**: Test senaryolarının açık belgelerini koruyun
+1. **Araç Tanımlarını Ayrı Test Edin**: Şema tanımlarını araç mantığından bağımsız doğrulayın
+2. **Parametreli Testler Kullanın**: Araçları farklı girdiler ve uç durumlarla test edin
+3. **Hata Yanıtlarını Kontrol Edin**: Tüm olası hata durumları için doğru hata yönetimini doğrulayın
+4. **Yetkilendirme Mantığını Test Edin**: Farklı kullanıcı rolleri için erişim kontrollerini doğrulayın
+5. **Test Kapsamını İzleyin**: Kritik kod yolları için yüksek kapsam hedefleyin
+6. **Akış Yanıtlarını Test Edin**: Akış içeriğinin doğru işlendiğini doğrulayın
+7. **Ağ Sorunlarını Simüle Edin**: Kötü ağ koşullarında davranışı test edin
+8. **Kaynak Limitlerini Test Edin**: Kota ve hız sınırlarına ulaşıldığında davranışı doğrulayın
+9. **Regresyon Testlerini Otomatikleştirin**: Her kod değişikliğinde çalışan test paketi oluşturun
+10. **Test Senaryolarını Belgelenin**: Test durumlarının net dokümantasyonunu tutun
 
 ## Yaygın Test Hataları
 
-- **Mutlu yol testine aşırı bağımlılık**: Hata durumlarını kapsamlı bir şekilde test ettiğinizden emin olun
-- **Performans testini göz ardı etme**: Üretimi etkilemeden önce darboğazları belirleyin
-- **Yalnızca izole test yapma**: Birim, entegrasyon ve uçtan uca testleri birleştirin
-- **Eksik API kapsamı**: Tüm uç noktaların ve özelliklerin test edildiğinden emin olun
-- **Tutarsız test ortamları**: Tutarlı test ortamları sağlamak için konteynerler kullanın
+- **Sadece başarılı senaryolara odaklanmak**: Hata durumlarını kapsamlı test edin
+- **Performans testlerini ihmal etmek**: Üretim öncesi darboğazları belirleyin
+- **Sadece izole test yapmak**: Birim, entegrasyon ve uçtan uca testleri birleştirin
+- **Eksik API kapsamı**: Tüm uç noktalar ve özellikler test edilmeli
+- **Tutarsız test ortamları**: Tutarlı test ortamları için konteyner kullanın
 
 ## Sonuç
 
-Kapsamlı bir test stratejisi, güvenilir, yüksek kaliteli MCP sunucuları geliştirmek için esastır. Bu kılavuzda belirtilen en iyi uygulamaları ve ipuçlarını uygulayarak, MCP uygulamalarınızın en yüksek kalite, güvenilirlik ve performans standartlarını karşılamasını sağlayabilirsiniz.
+Kapsamlı bir test stratejisi, güvenilir ve yüksek kaliteli MCP sunucuları geliştirmek için esastır. Bu rehberde belirtilen en iyi uygulamalar ve ipuçlarını uygulayarak, MCP uygulamalarınızın kalite, güvenilirlik ve performans açısından en yüksek standartlara ulaşmasını sağlayabilirsiniz.
 
-## Anahtar Noktalar
+## Temel Noktalar
 
-1. **Araç Tasarımı**: Tek sorumluluk ilkesini takip edin, bağımlılık enjeksiyonu kullanın ve birleştirilebilirlik için tasarlayın
-2. **Şema Tasarımı**: Açık, iyi belgelenmiş şemalar oluşturun ve uygun doğrulama kısıtlamalarını uygulayın
-3. **Hata Yönetimi**: Zarif hata yönetimi, yapılandırılmış hata yanıtları ve yeniden deneme mantığı uygulayın
-4. **Performans**: Önbellekleme, asenkron işleme ve kaynak sınırlama kullanın
-5. **Güvenlik**: Dikkatli giriş doğrulama, yetkilendirme kontrolleri ve hassas veri yönetimi uygulayın
+1. **Araç Tasarımı**: Tek sorumluluk prensibine uyun, bağımlılık enjeksiyonu kullanın ve birleştirilebilir tasarım yapın
+2. **Şema Tasarımı**: Net, iyi belgelenmiş şemalar ve uygun doğrulama kısıtlamaları oluşturun
+3. **Hata Yönetimi**: Nazik hata yönetimi, yapılandırılmış hata yanıtları ve tekrar deneme mantığı uygulayın
+4. **Performans**: Önbellekleme, asenkron işleme ve kaynak kısıtlaması kullanın
+5. **Güvenlik**: Kapsamlı girdi doğrulama, yetkilendirme kontrolleri ve hassas veri yönetimi uygulayın
 6. **Test**: Kapsamlı birim, entegrasyon ve uçtan uca testler oluşturun
-7. **İş Akışı Kalıpları**: Zincirler, yönlendiriciler ve paralel işleme gibi belirlenmiş kalıpları uygulayın
+7. **İş Akışı Kalıpları**: Zincirler, dağıtıcılar ve paralel işleme gibi yerleşik kalıpları uygulayın
 
-## Egzersiz
+## Alıştırma
 
-Bir belge işleme sistemi için bir MCP aracı ve iş akışı tasarlayın:
+Aşağıdaki özelliklere sahip bir belge işleme sistemi için bir MCP aracı ve iş akışı tasarlayın:
 
-1. Birden fazla formatta (PDF, DOCX, TXT) belgeleri kabul eder
-2. Belgelerden metin ve anahtar bilgileri çıkarır
-3. Belgeleri tür ve içeriğe göre sınıflandırır
-4. Her belgenin bir özetini oluşturur
+1. Birden çok formatta (PDF, DOCX, TXT) belge kabul etme
+2. Belgelerden metin ve anahtar bilgileri çıkarma
+3. Belgeleri tür ve içeriğe göre sınıflandırma
+4. Her belgenin özetini oluşturma
 
-Bu senaryoya
+Araç şemalarını, hata yönetimini ve bu senaryoya en uygun iş akışı kalıbını uygulayın. Bu uygulamayı nasıl test edeceğinizi düşünün.
+
+## Kaynaklar
+
+1. En son gelişmelerden haberdar olmak için MCP topluluğuna [Azure AI Foundry Discord Community](https://aka
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluğu sağlamak için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belgenin kendi dilindeki versiyonu yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda oluşabilecek herhangi bir yanlış anlama veya yanlış yorumlamadan sorumlu değiliz.
