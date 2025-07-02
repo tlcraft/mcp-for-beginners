@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "44405cc3bec37703b241dd4d8336e54a",
-  "translation_date": "2025-07-01T09:39:09+00:00",
+  "original_hash": "292f96c64f54ba097daea9598111ed82",
+  "translation_date": "2025-07-02T05:35:24+00:00",
   "source_file": "README.md",
   "language_code": "tr"
 }
@@ -19,28 +19,27 @@ CO_OP_TRANSLATOR_METADATA:
 [![GitHub stars](https://img.shields.io/github/stars/microsoft/mcp-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/mcp-for-beginners/stargazers)
 
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
-
+[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Bu kaynakları kullanmaya başlamak için şu adımları izleyin:
 1. **Depoyu Forklayın**: Tıklayın [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Depoyu Klonlayın**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Azure AI Foundry Discord'una katılın ve uzmanlar ile diğer geliştiricilerle tanışın**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Azure AI Foundry Discord’a Katılın ve uzmanlar ile diğer geliştiricilerle tanışın**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Çoklu Dil Desteği
+### 🌐 Çok Dilli Destek
 
-#### GitHub Action ile desteklenmektedir (Otomatik ve Her Zaman Güncel)
+#### GitHub Action ile Desteklenir (Otomatik & Her Zaman Güncel)
 
-# 🚀 Model Context Protocol (MCP) Yeni Başlayanlar İçin Müfredatı
+# 🚀 Başlangıç Seviyesi için Model Context Protocol (MCP) Müfredatı
 
-## **C#, Java, JavaScript, Python ve TypeScript ile Uygulamalı Kod Örnekleriyle MCP Öğrenin**
+## **C#, Java, JavaScript, Python ve TypeScript ile Uygulamalı MCP Öğrenin**
 
-## 🧠 Model Context Protocol Müfredatı Genel Bakış
+## 🧠 Model Context Protocol Müfredatına Genel Bakış
 
-**Model Context Protocol (MCP)**, yapay zeka modelleri ile istemci uygulamalar arasındaki etkileşimleri standartlaştırmak için tasarlanmış yenilikçi bir çerçevedir. Bu açık kaynaklı müfredat, C#, Java, JavaScript, TypeScript ve Python gibi popüler programlama dillerinde pratik kod örnekleri ve gerçek dünya kullanım senaryolarıyla yapılandırılmış bir öğrenme yolu sunar.
+**Model Context Protocol (MCP)**, yapay zeka modelleri ile istemci uygulamaları arasındaki etkileşimleri standartlaştırmak için tasarlanmış yenilikçi bir çerçevedir. Bu açık kaynaklı müfredat, C#, Java, JavaScript, TypeScript ve Python gibi popüler programlama dillerinde pratik kod örnekleri ve gerçek dünya kullanım senaryolarıyla yapılandırılmış bir öğrenme yolu sunar.
 
-İster bir yapay zeka geliştiricisi, sistem mimarı ya da yazılım mühendisi olun, bu rehber MCP’nin temel kavramlarını ve uygulama stratejilerini öğrenmeniz için kapsamlı bir kaynaktır.
+İster bir yapay zeka geliştiricisi, sistem mimarı ya da yazılım mühendisi olun, bu rehber MCP temellerini ve uygulama stratejilerini öğrenmeniz için kapsamlı bir kaynaktır.
 
 ## 🔗 Resmi MCP Kaynakları
 
@@ -48,47 +47,47 @@ Bu kaynakları kullanmaya başlamak için şu adımları izleyin:
 - 📜 [MCP Spesifikasyonu](https://spec.modelcontextprotocol.io/) – Protokol mimarisi ve teknik referanslar  
 - 🧑‍💻 [MCP GitHub Deposu](https://github.com/modelcontextprotocol) – Açık kaynak SDK’lar, araçlar ve kod örnekleri  
 
-## 🧭 MCP Müfredatı Genel Bakış
+## 🧭 MCP Müfredatının Genel Görünümü
 
 ### Model Context Protocol Temelleri  
 <details>
-  <summary><strong>Ders 1-3: Model Context Protocol Temelleri</strong></summary>
+  <summary><strong> Ders 1-3: Model Context Protocol Temelleri</strong></summary>
 
 - **00. MCP’ye Giriş**  
-  Model Context Protocol’ün genel tanıtımı ve yapay zeka süreçlerindeki önemi. [Devamını oku](./00-Introduction/README.md)
-- **01. Temel Kavramlar**  
-  MCP’nin temel kavramlarının detaylı açıklaması. [Devamını oku](./01-CoreConcepts/README.md)
+  Model Context Protocol’ün genel tanıtımı ve yapay zeka iş akışlarındaki önemi. [Devamını oku](./00-Introduction/README.md)
+- **01. Temel Kavramların Açıklaması**  
+  MCP’nin temel kavramlarının derinlemesine incelenmesi. [Devamını oku](./01-CoreConcepts/README.md)
 - **02. MCP’de Güvenlik**  
   Güvenlik tehditleri ve en iyi uygulamalar. [Devamını oku](./02-Security/README.md)
 - **03. MCP ile Başlarken**  
   Ortam kurulumu, temel sunucu/istemci yapıları, entegrasyon. [Devamını oku](./03-GettingStarted/README.md)
 </details>
 
-### İlk MCP sunucusu ve istemcisini oluşturma, dağıtma ve Uygulamalı Laboratuvarlar ile Senaryolar  
+### İlk MCP sunucunuzu ve istemcinizi oluşturma, dağıtma ve Uygulamalı Laboratuvarlar ile Senaryolar  
 <details>
-  <summary><strong>Ders 3: İlk MCP sunucusu ve istemcisini oluşturma ve dağıtma</strong></summary>
+  <summary><strong> Ders 3: İlk MCP sunucusu ve istemcisi oluşturma ve dağıtma</strong></summary>
 
 - **3.1. İlk sunucu** – [Kılavuz](./03-GettingStarted/01-first-server/README.md)
 - **3.2. İlk istemci** – [Kılavuz](./03-GettingStarted/02-client/README.md)
-- **3.3. LLM destekli istemci** – [Kılavuz](./03-GettingStarted/03-llm-client/README.md)
-- **3.4. Visual Studio Code ile sunucu kullanımı** – [Kılavuz](./03-GettingStarted/04-vscode/README.md)
+- **3.3. LLM ile istemci** – [Kılavuz](./03-GettingStarted/03-llm-client/README.md)
+- **3.4. Visual Studio Code ile sunucu tüketimi** – [Kılavuz](./03-GettingStarted/04-vscode/README.md)
 - **3.5. SSE kullanarak sunucu oluşturma** – [Kılavuz](./03-GettingStarted/05-sse-server/README.md)
 - **3.6. HTTP Akışı** – [Kılavuz](./03-GettingStarted/06-http-streaming/README.md)
-- **3.7. AI Araç Setini Kullanma** – [Kılavuz](./03-GettingStarted/07-aitk/README.md)
-- **3.8. Sunucunuzu Test Etme** – [Kılavuz](./03-GettingStarted/08-testing/README.md)
-- **3.9. Sunucunuzu Dağıtma** – [Kılavuz](./03-GettingStarted/09-deployment/README.md)
+- **3.7. AI Toolkit Kullanımı** – [Kılavuz](./03-GettingStarted/07-aitk/README.md)
+- **3.8. Sunucunuzu test etme** – [Kılavuz](./03-GettingStarted/08-testing/README.md)
+- **3.9. Sunucunuzu dağıtma** – [Kılavuz](./03-GettingStarted/09-deployment/README.md)
 </details>
 
 ### Model Context Protocol Pratik Uygulamalar ve İleri Seviye İçerik  
 <details>
-  <summary><strong>Ders 4-5: Pratik & İleri Seviye</strong></summary>
+  <summary><strong> Ders 4-5: Pratik & İleri Seviye</strong></summary>
 
 - **04. Pratik Uygulama**  
   SDK’lar, hata ayıklama, test, tekrar kullanılabilir prompt şablonları. [Devamını oku](./04-PracticalImplementation/README.md)
 - **05. MCP’de İleri Konular**  
   Çok modlu yapay zeka, ölçeklendirme, kurumsal kullanım. [Devamını oku](./05-AdvancedTopics/README.md)
 - **5.1. MCP’nin Azure ile Entegrasyonu** – [Kılavuz](./05-AdvancedTopics/mcp-integration/README.md)
-- **5.2. Çok Modluluk** – [Kılavuz](./05-AdvancedTopics/mcp-multi-modality/README.md)
+- **5.2. Çok modluluk** – [Kılavuz](./05-AdvancedTopics/mcp-multi-modality/README.md)
 - **5.3. MCP OAuth2 Demo** – [Kılavuz](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
 - **5.4. Root Context’ler** – [Kılavuz](./05-AdvancedTopics/mcp-root-contexts/README.md)
 - **5.5. Yönlendirme** – [Kılavuz](./05-AdvancedTopics/mcp-routing/README.md)
@@ -98,28 +97,28 @@ Bu kaynakları kullanmaya başlamak için şu adımları izleyin:
 - **5.9. Web Arama MCP** – [Kılavuz](./05-AdvancedTopics/web-search-mcp/README.md)
 - **5.10. Gerçek Zamanlı Akış** – [Kılavuz](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
 - **5.11. Gerçek Zamanlı Web Arama** – [Kılavuz](./05-AdvancedTopics/mcp-realtimesearch/README.md)
-- **5.12. Model Context Protocol Sunucuları için Entra ID Doğrulaması** – [Kılavuz](./05-AdvancedTopics/mcp-security-entra/README.md)
+- **5.12. Model Context Protocol Sunucuları için Entra ID Kimlik Doğrulaması** – [Kılavuz](./05-AdvancedTopics/mcp-security-entra/README.md)
 </details>
 
 ### Model Context Protocol En İyi Uygulamaları  
 <details>
-  <summary><strong>Ders 6-9: Topluluk, En İyi Uygulamalar & Laboratuvarlar</strong></summary>
+  <summary><strong> Ders 6-9: Topluluk, En İyi Uygulamalar ve Laboratuvarlar</strong></summary>
 - **06. Topluluk Katkıları** – [Kılavuz](./06-CommunityContributions/README.md)
-- **07. Erken Benimsemeden Alınan Dersler** – [Kılavuz](./07-LessonsFromEarlyAdoption/README.md)
+- **07. Erken Benimsemeden Çıkarılan Dersler** – [Kılavuz](./07-LessonsFromEarlyAdoption/README.md)
 - **08. MCP için En İyi Uygulamalar** – [Kılavuz](./08-BestPractices/README.md)
-- **09. MCP Vaka Çalışmaları** – [Kılavuz](./09-CaseStudy/README.md)
+- **09. MCP Vaka İncelemeleri** – [Kılavuz](./09-CaseStudy/README.md)
 </details>
 
-### Model Context Protocol AI Toolkit ile VScode için Uygulamalı Laboratuvar
+### Model Context Protocol VScode için AI Toolkit ile Uygulamalı Laboratuvar
 <details>
-  <summary><strong>Ders 10: AI Toolkit ile VScode için MCP Sunucusu Kurma Uygulamalı Laboratuvarı</strong></summary>
+  <summary><strong>Ders 10: VScode için AI Toolkit ile MCP Sunucusu Kurma Uygulamalı Laboratuvarı</strong></summary>
     
 - **10. AI İş Akışlarını Kolaylaştırma: AI Toolkit ile MCP Sunucusu Kurma** – [Uygulamalı Laboratuvar](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 </details>
 
-## Model Context Protocol Örnek Projeler Java, C#, JavaScript, TypeScript ve Python ile MCP Hesap Makinesi Projesi Oluşturma
+## Model Context Protocol Örnek Projeler Java, C#, JavaScript, TypeScript ve Python ile MCP Hesap Makinesi Projesi İnşası
 
-### 🧮 Java, C#, JavaScript, TypeScript ve Python ile MCP Hesap Makinesi Örnek Projeleri
+### 🧮 Java, C#, JavaScript, TypeScript ve Python’da MCP Hesap Makinesi Örnek Projeleri
 <details>
   <summary><strong>Dil Bazında Kod Uygulamalarını Keşfedin</strong></summary>
 
@@ -131,36 +130,36 @@ Bu kaynakları kullanmaya başlamak için şu adımları izleyin:
 
 </details>
 
-### 💡 MCP İleri Seviye Örnek Çözüm: C#, Java, JavaScript, TypeScript ve Python ile Hesap Makinesi Projeleri
+### 💡 MCP Gelişmiş Örnek Çözüm: C#, Java, JavaScript, TypeScript ve Python’da Hesap Makinesi Projeleri
 <details>
-  <summary><strong>İleri Düzey Örnekleri Keşfedin</strong></summary>
+  <summary><strong>Gelişmiş Örnekleri Keşfedin</strong></summary>
 
-  - [İleri Seviye C# Örneği](./04-PracticalImplementation/samples/csharp/README.md)
+  - [Gelişmiş C# Örneği](./04-PracticalImplementation/samples/csharp/README.md)
   - [Java Container Uygulama Örneği](./04-PracticalImplementation/samples/java/containerapp/README.md)
-  - [JavaScript İleri Seviye Örnek](./04-PracticalImplementation/samples/javascript/README.md)
+  - [JavaScript Gelişmiş Örnek](./04-PracticalImplementation/samples/javascript/README.md)
   - [Python Karmaşık Uygulama](../../04-PracticalImplementation/samples/python/mcp_sample.py)
   - [TypeScript Container Örneği](./04-PracticalImplementation/samples/typescript/README.md)
 
 </details>
 
 
-## 🎯 MCP Öğrenimi için Önkoşullar
+## 🎯 MCP Öğrenmek İçin Gereksinimler
 
 Bu müfredattan en iyi şekilde faydalanmak için:
 
 - C#, Java veya Python hakkında temel bilgi sahibi olmalısınız  
-- İstemci-sunucu modeli ve API’ler hakkında anlayışınız olmalı  
-- (İsteğe bağlı) Makine öğrenmesi kavramlarına aşina olmak faydalıdır  
+- İstemci-sunucu modeli ve API’leri anlamalısınız  
+- (İsteğe bağlı) Makine öğrenimi kavramlarına aşina olmanız faydalı olur  
 
-## 📚 Çalışma Rehberi
+## 📚 Çalışma Kılavuzu
 
-Bu depoyu etkin kullanmanız için kapsamlı bir [Çalışma Rehberi](./study_guide.md) mevcuttur. Rehber şunları içerir:
+Bu depo içinde etkin bir şekilde yol göstermek için kapsamlı bir [Çalışma Kılavuzu](./study_guide.md) bulunmaktadır. Kılavuzda şunlar yer alır:
 
 - Tüm konuları gösteren görsel müfredat haritası  
 - Her depo bölümünün detaylı açıklaması  
-- Örnek projelerin nasıl kullanılacağına dair yönlendirmeler  
+- Örnek projelerin nasıl kullanılacağına dair rehber  
 - Farklı beceri seviyeleri için önerilen öğrenme yolları  
-- Öğrenme yolculuğunuzu destekleyecek ek kaynaklar  
+- Öğrenme sürecinizi destekleyecek ek kaynaklar  
 
 ## 🛠️ Bu Müfredatı Etkili Kullanma Yöntemleri
 
@@ -172,24 +171,24 @@ Bu kılavuzdaki her ders şunları içerir:
 4. İleri düzey öğrenenler için ek kaynaklar  
 
 
-## 🌟 Topluluk Teşekkürü
+## 🌟 Topluluğa Teşekkürler
 
 Önemli kod örnekleriyle katkıda bulunan Microsoft Değerli Uzmanı [Shivam Goyal](https://www.linkedin.com/in/shivam2003/)’a teşekkür ederiz.
 
 ## 📜 Lisans Bilgisi
 
-Bu içerik **MIT Lisansı** ile lisanslanmıştır. Şartlar ve koşullar için [LICENSE](../../LICENSE) dosyasına bakınız.
+Bu içerik **MIT Lisansı** altında lisanslanmıştır. Şartlar için [LICENSE](../../LICENSE) dosyasına bakınız.
 
 ## 🤝 Katkı Kuralları
 
-Bu proje katkı ve önerilere açıktır. Çoğu katkı için, katkınızın kullanım haklarını bize verdiğinizi beyan eden ve gerçekten bu hakları size ait olduğunu onaylayan bir Katkıda Bulunan Lisans Sözleşmesi (CLA) kabul etmeniz gerekmektedir. Detaylar için <https://cla.opensource.microsoft.com> adresini ziyaret edin.
+Bu proje katkılara ve önerilere açıktır. Çoğu katkı için, katkınızın kullanım haklarını bize verdiğinizi ve bunu yapmaya yetkin olduğunuzu belirten bir Katkı Lisans Anlaşması (CLA) kabul etmeniz gerekmektedir. Detaylar için <https://cla.opensource.microsoft.com> adresini ziyaret edebilirsiniz.
 
-Bir pull request gönderdiğinizde, CLA botu otomatik olarak CLA sağlamanız gerekip gerekmediğini belirler ve PR’ı uygun şekilde işaretler (örneğin, durum kontrolü, yorum). Botun talimatlarını takip etmeniz yeterlidir. CLA’yı kullanan tüm depolarda bunu yalnızca bir kez yapmanız yeterlidir.
+Bir pull request gönderdiğinizde, bir CLA botu otomatik olarak CLA sağlamanız gerekip gerekmediğini belirler ve PR’ı uygun şekilde işaretler (örneğin, durum kontrolü, yorum). Botun verdiği talimatları takip etmeniz yeterlidir. Bu işlemi CLA kullanan tüm depolar için sadece bir kez yapmanız yeterlidir.
 
-Bu proje [Microsoft Açık Kaynak Davranış Kuralları](https://opensource.microsoft.com/codeofconduct/)’nu benimsemiştir. Daha fazla bilgi için [Davranış Kuralları SSS](https://opensource.microsoft.com/codeofconduct/faq/) sayfasını ziyaret edebilir veya ek sorularınız için [opencode@microsoft.com](mailto:opencode@microsoft.com) adresiyle iletişime geçebilirsiniz.
+Bu proje [Microsoft Açık Kaynak Davranış Kuralları](https://opensource.microsoft.com/codeofconduct/)’nu benimsemiştir. Daha fazla bilgi için [Davranış Kuralları SSS](https://opensource.microsoft.com/codeofconduct/faq/) sayfasını ziyaret edebilir veya ek soru ve yorumlarınız için [opencode@microsoft.com](mailto:opencode@microsoft.com) adresiyle iletişime geçebilirsiniz.
 
 ## 🎒 Diğer Kurslar  
-Ekibimiz başka kurslar da sunmaktadır! İnceleyin:
+Ekibimiz başka kurslar da sunmaktadır! Şunlara göz atabilirsiniz:
 
 - [Yeni Başlayanlar için AI Ajanları](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
 - [.NET ile Yeni Başlayanlar için Üretken AI](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
@@ -200,16 +199,16 @@ Ekibimiz başka kurslar da sunmaktadır! İnceleyin:
 - [Yeni Başlayanlar için Yapay Zeka](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
 - [Yeni Başlayanlar için Siber Güvenlik](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)  
 - [Yeni Başlayanlar için Web Geliştirme](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-- [Yeni Başlayanlar İçin IoT](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-- [Yeni Başlayanlar İçin XR Geliştirme](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Yeni Başlayanlar için IoT](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+- [Yeni Başlayanlar için XR Geliştirme](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Yapay Zeka Eşli Programlama için GitHub Copilot'u Ustalaştırma](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 - [C#/.NET Geliştiricileri için GitHub Copilot'u Ustalaştırma](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 - [Kendi Copilot Maceranı Seç](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 
-## ™️ Marka Uyarısı
+## ™️ Marka Bildirimi
 
-Bu proje, projeler, ürünler veya hizmetler için ticari markalar veya logolar içerebilir. Microsoft ticari markalarının veya logolarının yetkili kullanımı, [Microsoft'un Marka ve Marka Yönergeleri](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) uyarınca olmalı ve bu kurallara uygun olmalıdır. Bu projenin değiştirilmiş sürümlerinde Microsoft ticari markalarının veya logolarının kullanımı karışıklığa yol açmamalı veya Microsoft sponsorluğunu ima etmemelidir. Üçüncü taraf ticari markalarının veya logolarının kullanımı, ilgili üçüncü tarafların politikalarına tabidir.
+Bu proje, projeler, ürünler veya hizmetler için ticari markalar veya logolar içerebilir. Microsoft ticari markalarının veya logolarının yetkili kullanımı, [Microsoft'un Ticari Marka ve Marka Kılavuzları](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) uyarınca olmalı ve bu kurallara uygun olmalıdır. Bu projenin değiştirilmiş sürümlerinde Microsoft ticari markalarının veya logolarının kullanımı, karışıklığa yol açmamalı veya Microsoft sponsorluğunu ima etmemelidir. Üçüncü taraf ticari markalarının veya logolarının kullanımı ise ilgili üçüncü tarafların politikalarına tabidir.
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalardan dolayı sorumluluk kabul edilmemektedir.

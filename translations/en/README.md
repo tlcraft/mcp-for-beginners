@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "44405cc3bec37703b241dd4d8336e54a",
-  "translation_date": "2025-07-01T09:22:45+00:00",
+  "original_hash": "292f96c64f54ba097daea9598111ed82",
+  "translation_date": "2025-07-02T05:19:53+00:00",
   "source_file": "README.md",
   "language_code": "en"
 }
@@ -19,13 +19,12 @@ CO_OP_TRANSLATOR_METADATA:
 [![GitHub stars](https://img.shields.io/github/stars/microsoft/mcp-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/mcp-for-beginners/stargazers)
 
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
-
+[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Follow these steps to get started using these resources:
 1. **Fork the Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Clone the Repository**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Join The Azure AI Foundry Discord and connect with experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Join The Azure AI Foundry Discord and meet experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Multi-Language Support
@@ -38,15 +37,15 @@ Follow these steps to get started using these resources:
 
 ## 🧠 Overview of the Model Context Protocol Curriculum
 
-The **Model Context Protocol (MCP)** is an innovative framework designed to standardize how AI models and client applications interact. This open-source curriculum provides a structured learning path, complete with practical coding examples and real-world use cases, in popular programming languages such as C#, Java, JavaScript, TypeScript, and Python.
+The **Model Context Protocol (MCP)** is an innovative framework designed to standardize communication between AI models and client applications. This open-source curriculum provides a structured learning path, featuring practical coding examples and real-world scenarios in popular programming languages such as C#, Java, JavaScript, TypeScript, and Python.
 
 Whether you're an AI developer, system architect, or software engineer, this guide is your all-in-one resource for mastering MCP fundamentals and implementation techniques.
 
 ## 🔗 Official MCP Resources
 
-- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Detailed tutorials and user manuals  
-- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol design and technical references  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code samples  
+- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Comprehensive tutorials and user guides  
+- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol design and technical details  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and sample code  
 
 ## 🧭 MCP Curriculum Overview
 
@@ -55,13 +54,13 @@ Whether you're an AI developer, system architect, or software engineer, this gui
   <summary><strong> Lesson 1-3: Model Context Protocol Fundamentals</strong></summary>
 
 - **00. Introduction to MCP**  
-  A general overview of the Model Context Protocol and its role in AI pipelines. [Read more](./00-Introduction/README.md)
+  An introduction to the Model Context Protocol and its role in AI workflows. [Read more](./00-Introduction/README.md)
 - **01. Core Concepts Explained**  
-  A deep dive into the key MCP concepts. [Read more](./01-CoreConcepts/README.md)
+  A deep dive into the key concepts of MCP. [Read more](./01-CoreConcepts/README.md)
 - **02. Security in MCP**  
-  Security risks and recommended best practices. [Read more](./02-Security/README.md)
+  Security challenges and recommended practices. [Read more](./02-Security/README.md)
 - **03. Getting Started with MCP**  
-  Setting up the environment, basic server/client setups, and integration. [Read more](./03-GettingStarted/README.md)
+  Setting up your environment, basic server/client examples, and integration steps. [Read more](./03-GettingStarted/README.md)
 </details>
 
 ### Building and deploying your first MCP server and Client and Hands on Labs and Scenarios.
@@ -84,9 +83,9 @@ Whether you're an AI developer, system architect, or software engineer, this gui
   <summary><strong> Lessons 4-5: Practical & Advanced</strong></summary>
 
 - **04. Practical Implementation**  
-  SDKs, debugging, testing, reusable prompt templates. [Read more](./04-PracticalImplementation/README.md)
+  SDKs, debugging, testing, and reusable prompt templates. [Read more](./04-PracticalImplementation/README.md)
 - **05. Advanced Topics in MCP**  
-  Multi-modal AI, scaling, enterprise use cases. [Read more](./05-AdvancedTopics/README.md)
+  Multi-modal AI, scaling, and enterprise applications. [Read more](./05-AdvancedTopics/README.md)
 - **5.1. MCP Integration with Azure** – [Guide](./05-AdvancedTopics/mcp-integration/README.md)
 - **5.2. Multi modality** – [Guide](./05-AdvancedTopics/mcp-multi-modality/README.md)
 - **5.3. MCP OAuth2 Demo** – [Guide](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
@@ -114,10 +113,10 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 <details>
   <summary><strong>Lesson 10: Hands-on Lab Building an MCP Server with AI Toolkit for VScode</strong></summary>
     
-- **10. Streamlining AI Workflows: Building an MCP Server with AI Toolkit** – [Hands On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+- **10. Streamlining AI Workflows: Building an MCP Server with AI Toolkit** – [Hands-On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 </details>
 
-## Model Context Protocol Sample Projects Building an MCP Calculator Project in Java, C#, JavaScript, TypeScript, and Python
+## Model Context Protocol Sample Projects: Building an MCP Calculator Project in Java, C#, JavaScript, TypeScript, and Python
 
 ### 🧮 MCP Calculator Sample Projects in Java, C#, JavaScript, TypeScript, and Python
 <details>
@@ -143,24 +142,23 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 
 </details>
 
-
 ## 🎯 Prerequisites for Learning MCP
 
 To get the most out of this curriculum, you should have:
 
-- Basic knowledge of C#, Java, or Python
-- Understanding of the client-server model and APIs
-- (Optional) Familiarity with machine learning concepts
+- Basic knowledge of C#, Java, or Python  
+- Understanding of client-server model and APIs  
+- (Optional) Familiarity with machine learning concepts  
 
 ## 📚 Study Guide
 
 A comprehensive [Study Guide](./study_guide.md) is available to help you navigate this repository effectively. The guide includes:
 
-- A visual curriculum map showing all covered topics
-- Detailed breakdown of each repository section
-- Guidance on how to use sample projects
-- Recommended learning paths for different skill levels
-- Additional resources to support your learning journey
+- A visual curriculum map showing all topics covered  
+- Detailed breakdown of each repository section  
+- Guidance on how to use sample projects  
+- Recommended learning paths for different skill levels  
+- Additional resources to complement your learning journey  
 
 ## 🛠️ How to Use This Curriculum Effectively
 
@@ -169,37 +167,41 @@ Each lesson in this guide includes:
 1. Clear explanations of MCP concepts  
 2. Live code examples in multiple languages  
 3. Exercises to build real MCP applications  
-4. Extra resources for advanced learners
-
+4. Extra resources for advanced learners  
 
 ## 🌟 Community Thanks
 
-Thanks to Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) for contributing important code samples. 
+Thanks to Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) for contributing important code samples.  
 
 ## 📜 License Information
 
-This content is licensed under the **MIT License**. For terms and conditions, see the [LICENSE](../../LICENSE).
+This content is licensed under the **MIT License**. For terms and conditions, see the [LICENSE](../../LICENSE).  
 
 ## 🤝 Contribution Guidelines
 
-This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit <https://cla.opensource.microsoft.com>.
+This project welcomes contributions and suggestions. Most contributions require you to agree to a  
+Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us  
+the rights to use your contribution. For details, visit <https://cla.opensource.microsoft.com>.  
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
+When you submit a pull request, a CLA bot will automatically determine whether you need to provide  
+a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions  
+provided by the bot. You will only need to do this once across all repos using our CLA.  
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).  
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or  
+contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.  
 
-## 🎒 Other Courses
+## 🎒 Other Courses  
 Our team produces other courses! Check out:
 
-- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
-- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
+- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
+- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
+- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
+- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
+- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
+- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
+- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)  
 - [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
 - [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
 - [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
@@ -210,10 +212,11 @@ Our team produces other courses! Check out:
 
 ## ™️ Trademark Notice
 
-This project may include trademarks or logos related to projects, products, or services. Authorized use of Microsoft trademarks or logos must comply with and follow
+This project may include trademarks or logos of projects, products, or services. Authorized use of Microsoft
+trademarks or logos must comply with and follow
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Using Microsoft trademarks or logos in modified versions of this project must not cause confusion or suggest Microsoft endorsement.
-Any use of third-party trademarks or logos must adhere to the policies of those third parties.
+Using Microsoft trademarks or logos in modified versions of this project must not cause confusion or suggest Microsoft sponsorship.
+Any use of third-party trademarks or logos is governed by the policies of those third parties.
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
