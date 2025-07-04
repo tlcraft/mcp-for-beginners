@@ -132,7 +132,6 @@ Si vous êtes développeur, créateur d’outils ou stratège produit IA, cette 
 - **5.9. Recherche web MCP** – [Guide](./05-AdvancedTopics/web-search-mcp/README.md)  
 - **5.10. Streaming en temps réel** – [Guide](./05-AdvancedTopics/mcp-realtimestreaming/README.md)  
 - **5.11. Recherche web en temps réel** – [Guide](./05-AdvancedTopics/mcp-realtimesearch/README.md)  
-</details>
 - **5.12. Authentification Entra ID pour les serveurs Model Context Protocol** – [Guide](./05-AdvancedTopics/mcp-security-entra/README.md)
 - **5.13. Intégration du Model Context Protocol (MCP) avec Azure AI Foundry** – [Guide](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md)
 </details>
