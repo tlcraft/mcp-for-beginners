@@ -131,7 +131,6 @@ CO_OP_TRANSLATOR_METADATA:
 - **5.9. MCP для веб-поиска** – [Руководство](./05-AdvancedTopics/web-search-mcp/README.md)  
 - **5.10. Потоковая передача в реальном времени** – [Руководство](./05-AdvancedTopics/mcp-realtimestreaming/README.md)  
 - **5.11. Веб-поиск в реальном времени** – [Руководство](./05-AdvancedTopics/mcp-realtimesearch/README.md)  
-</details>
 - **5.12. Аутентификация Entra ID для серверов Model Context Protocol** – [Руководство](./05-AdvancedTopics/mcp-security-entra/README.md)
 - **5.13. Интеграция Model Context Protocol (MCP) с Azure AI Foundry** – [Руководство](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md)
 </details>

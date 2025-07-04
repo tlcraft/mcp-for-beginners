@@ -132,7 +132,6 @@ MCP ကို တည်ဆောက်သူများအတွက် ဖြ�
 - **5.9. Web Search MCP** – [လမ်းညွှန်](./05-AdvancedTopics/web-search-mcp/README.md)
 - **5.10. Realtime Streaming** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
 - **5.11. Realtime Web Search** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-realtimesearch/README.md)
-</details>
 - **5.12. Model Context Protocol ဆာဗာများအတွက် Entra ID အတည်ပြုခြင်း** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-security-entra/README.md)
 - **5.13. Model Context Protocol (MCP) ကို Azure AI Foundry နှင့် ပေါင်းစပ်ခြင်း** – [လမ်းညွှန်](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md)
 </details>

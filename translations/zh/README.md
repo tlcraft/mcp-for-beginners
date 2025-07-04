@@ -132,7 +132,6 @@ CO_OP_TRANSLATOR_METADATA:
 - **5.9. Web 搜索 MCP** – [指南](./05-AdvancedTopics/web-search-mcp/README.md)  
 - **5.10. 实时流** – [指南](./05-AdvancedTopics/mcp-realtimestreaming/README.md)  
 - **5.11. 实时网页搜索** – [指南](./05-AdvancedTopics/mcp-realtimesearch/README.md)  
-</details>
 - **5.12. Model Context Protocol 服务器的 Entra ID 认证** – [指南](./05-AdvancedTopics/mcp-security-entra/README.md)
 - **5.13. Model Context Protocol (MCP) 与 Azure AI Foundry 集成** – [指南](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md)
 </details>

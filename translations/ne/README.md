@@ -130,7 +130,6 @@ MCP Dev Days मा दुई दिनको गहिरो प्रावि
 - **5.9. वेब सर्च MCP** – [मार्गनिर्देशन](./05-AdvancedTopics/web-search-mcp/README.md)
 - **5.10. रियलटाइम स्ट्रिमिङ** – [मार्गनिर्देशन](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
 - **5.11. रियलटाइम वेब सर्च** – [मार्गनिर्देशन](./05-AdvancedTopics/mcp-realtimesearch/README.md)
-</details>
 - **5.12. मोडेल कन्टेक्स्ट प्रोटोकल सर्भरहरूका लागि Entra ID प्रमाणीकरण** – [गाइड](./05-AdvancedTopics/mcp-security-entra/README.md)
 - **5.13. Azure AI Foundry सँग मोडेल कन्टेक्स्ट प्रोटोकल (MCP) एकीकरण** – [गाइड](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md)
 </details>
