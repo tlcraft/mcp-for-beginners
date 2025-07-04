@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0eb9557780cd0a2551cdb8a16c886b51",
-  "translation_date": "2025-06-17T15:55:26+00:00",
+  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
+  "translation_date": "2025-07-04T17:50:20+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "fi"
 }
@@ -11,25 +11,25 @@ Puhutaan lisää siitä, miten käytämme visuaalista käyttöliittymää seuraa
 
 ## Lähestymistapa
 
-Näin meidän tulee lähestyä asiaa yleisellä tasolla:
+Näin meidän tulee lähestyä tätä korkealla tasolla:
 
-- Määritä tiedosto, josta löydämme MCP-palvelimemme.
-- Käynnistä/yhdistä kyseiseen palvelimeen, jotta se voi listata kykynsä.
+- Määritä tiedosto, josta MCP-palvelimemme löytyy.
+- Käynnistä/Yhdistä kyseiseen palvelimeen, jotta se listaa kykynsä.
 - Käytä näitä kykyjä GitHub Copilot Chat -käyttöliittymän kautta.
 
-Hienoa, nyt kun ymmärrämme prosessin, kokeillaan MCP-palvelimen käyttöä Visual Studio Code -sovelluksen kautta harjoituksen avulla.
+Hienoa, nyt kun ymmärrämme prosessin, kokeillaan MCP-palvelimen käyttöä Visual Studio Codessa harjoituksen avulla.
 
 ## Harjoitus: Palvelimen käyttäminen
 
-Tässä harjoituksessa määritämme Visual Studio Code -sovelluksen löytämään MCP-palvelimesi, jotta sitä voidaan käyttää GitHub Copilot Chat -käyttöliittymässä.
+Tässä harjoituksessa määritämme Visual Studio Coden löytämään MCP-palvelimesi, jotta sitä voidaan käyttää GitHub Copilot Chat -käyttöliittymässä.
 
-### -0- Esivaihe, ota MCP-palvelimien haku käyttöön
+### -0- Esiaste, ota MCP-palvelimen löytyminen käyttöön
 
-Saatat joutua ottamaan MCP-palvelimien haun käyttöön.
+Saatat joutua ottamaan MCP-palvelimien löytymisen käyttöön.
 
-1. Mene kohtaan `File -> Preferences -> Settings` in Visual Studio Code.
+1. Mene Visual Studio Codessa kohtaan `File -> Preferences -> Settings`.
 
-1. Search for "MCP" and enable `chat.mcp.discovery.enabled` settings.json-tiedostossa.
+1. Etsi "MCP" ja ota käyttöön `chat.mcp.discovery.enabled` settings.json-tiedostossa.
 
 ### -1- Luo konfiguraatiotiedosto
 
@@ -44,7 +44,7 @@ Seuraavaksi katsotaan, miten palvelinmerkintä lisätään.
 
 ### -2- Määritä palvelin
 
-Lisää seuraava sisältö tiedostoon *mcp.json*:
+Lisää seuraava sisältö *mcp.json*-tiedostoon:
 
 ```json
 {
@@ -60,17 +60,17 @@ Lisää seuraava sisältö tiedostoon *mcp.json*:
 }
 ```
 
-Yllä on yksinkertainen esimerkki siitä, miten Node.js:llä kirjoitettu palvelin käynnistetään. Muissa ajoympäristöissä ilmoita oikea käynnistyskomento `command` and `args`-kenttään.
+Yllä on yksinkertainen esimerkki Node.js:llä kirjoitetun palvelimen käynnistämisestä. Muille ajoympäristöille määritä oikea käynnistyskomento `command`- ja `args`-kenttien avulla.
 
 ### -3- Käynnistä palvelin
 
 Nyt kun olet lisännyt merkinnän, käynnistetään palvelin:
 
-1. Etsi merkintäsi *mcp.json*-tiedostosta ja varmista, että löydät "play"-kuvakkeen:
+1. Etsi merkintäsi *mcp.json*-tiedostosta ja varmista, että löydät "play"-ikonin:
 
   ![Palvelimen käynnistäminen Visual Studio Codessa](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.fi.png)  
 
-1. Klikkaa "play"-kuvaketta, jolloin GitHub Copilot Chatin työkalukuvake näyttää käytettävissä olevien työkalujen määrän kasvavan. Jos klikkaat tätä työkalukuvaketta, näet rekisteröityjen työkalujen listan. Voit valita tai poistaa valinnan kunkin työkalun kohdalta sen mukaan, haluatko GitHub Copilotin käyttävän niitä kontekstina:
+1. Klikkaa "play"-ikonia, GitHub Copilot Chatin työkalujen kuvakkeen pitäisi näyttää lisääntyneen käytettävissä olevien työkalujen määrän. Kun klikkaat työkalujen kuvaketta, näet rekisteröityjen työkalujen listan. Voit valita tai poistaa valinnan kunkin työkalun kohdalta sen mukaan, haluatko GitHub Copilotin käyttävän niitä kontekstina:
 
   ![Palvelimen käynnistäminen Visual Studio Codessa](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.fi.png)
 
@@ -78,7 +78,7 @@ Nyt kun olet lisännyt merkinnän, käynnistetään palvelin:
 
   ![Työkalun käyttäminen GitHub Copilotista](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.fi.png)
 
-  Sinun pitäisi nähdä vastaus, joka on 23.
+  Näet vastauksen, jossa lukee 23.
 
 ## Tehtävä
 
@@ -92,9 +92,9 @@ Kokeile lisätä palvelinmerkintä *mcp.json*-tiedostoosi ja varmista, että voi
 
 Tämän luvun keskeiset opit ovat seuraavat:
 
-- Visual Studio Code on erinomainen asiakasohjelma, jonka avulla voit käyttää useita MCP-palvelimia ja niiden työkaluja.
+- Visual Studio Code on erinomainen asiakasohjelma, joka mahdollistaa useiden MCP-palvelimien ja niiden työkalujen käytön.
 - GitHub Copilot Chat -käyttöliittymä on tapa, jolla kommunikoit palvelimien kanssa.
-- Voit pyytää käyttäjältä syötteitä, kuten API-avaimia, jotka voidaan välittää MCP-palvelimelle, kun määrität palvelinmerkinnän *mcp.json*-tiedostossa.
+- Voit pyytää käyttäjältä syötteitä, kuten API-avaimia, jotka voidaan välittää MCP-palvelimelle määritettäessä palvelinmerkintää *mcp.json*-tiedostossa.
 
 ## Esimerkit
 
@@ -110,7 +110,7 @@ Tämän luvun keskeiset opit ovat seuraavat:
 
 ## Mitä seuraavaksi
 
-- Seuraavaksi: [SSE-palvelimen luominen](/03-GettingStarted/05-sse-server/README.md)
+- Seuraava: [SSE-palvelimen luominen](../05-sse-server/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty tekoälypohjaisella käännöspalvelulla [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

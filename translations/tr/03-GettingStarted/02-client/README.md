@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2342baa570312086fc19edcf41320250",
-  "translation_date": "2025-06-17T15:45:58+00:00",
+  "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
+  "translation_date": "2025-07-04T17:16:23+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "tr"
 }
@@ -10,60 +10,62 @@ CO_OP_TRANSLATOR_METADATA:
 Önceki kodda şunları yaptık:
 
 - Kütüphaneleri içe aktardık
-- Bir client örneği oluşturduk ve stdio transportu ile bağladık.
+- Bir client örneği oluşturduk ve stdio üzerinden bağlantı kurduk.
 - Prompts, kaynaklar ve araçları listeledik ve hepsini çağırdık.
 
 İşte bu kadar, MCP Server ile iletişim kurabilen bir client.
 
-Bir sonraki egzersiz bölümünde her kod parçasını tek tek inceleyip ne olduğunu açıklayalım, acele etmeyelim.
+Bir sonraki alıştırma bölümünde her kod parçasını detaylıca inceleyip ne olup bittiğini açıklayacağız.
 
-## Egzersiz: Bir client yazmak
+## Alıştırma: Bir client yazmak
 
-Yukarıda söylediğimiz gibi, kodu açıklamak için zaman ayıralım ve isterseniz kodu birlikte yazabilirsiniz.
+Yukarıda da belirtildiği gibi, kodu açıklamak için zaman ayıralım ve isterseniz kodu birlikte yazalım.
 
 ### -1- Kütüphaneleri içe aktarma
 
-İhtiyacımız olan kütüphaneleri içe aktaralım, client ve seçtiğimiz transport protokolü olan stdio’ya referanslara ihtiyacımız olacak. stdio, yerel makinenizde çalışması amaçlanan şeyler için bir protokoldür. SSE ise gelecekteki bölümlerde göstereceğimiz başka bir transport protokolüdür ama şimdilik diğer seçeneğiniz o. Şimdilik stdio ile devam edelim.
+Gerekli kütüphaneleri içe aktaralım, bir client ve seçtiğimiz taşıma protokolü olan stdio için referanslara ihtiyacımız olacak. stdio, yerel makinenizde çalıştırılmak üzere tasarlanmış bir protokoldür. SSE ise gelecekteki bölümlerde göstereceğimiz başka bir taşıma protokolüdür, ancak şu an için stdio ile devam edelim.
 
-### -2- Client ve transport örneği oluşturma
+Şimdi örneklemeye geçelim.
 
-Transport ve client örneği oluşturmamız gerekecek:
+### -2- Client ve taşıma örneği oluşturma
+
+Taşıma ve client için birer örnek oluşturmamız gerekecek:
 
 ### -3- Sunucu özelliklerini listeleme
 
-Artık program çalıştırıldığında bağlanabilen bir client’ımız var. Ancak özelliklerini listelemiyor, bunu şimdi yapalım:
+Artık program çalıştırıldığında bağlanabilen bir client'ımız var. Ancak, özelliklerini listelemiyor, bunu şimdi yapalım:
 
-Harika, şimdi tüm özellikleri yakaladık. Peki, ne zaman kullanacağız? Bu client oldukça basit, yani özellikleri kullanmak istediğimizde açıkça çağırmamız gerekiyor. Bir sonraki bölümde kendi büyük dil modeline (LLM) erişimi olan daha gelişmiş bir client oluşturacağız. Şimdilik, sunucudaki özellikleri nasıl çağırabileceğimize bakalım:
+Harika, şimdi tüm özellikleri yakaladık. Peki, bunları ne zaman kullanacağız? Bu client oldukça basit, yani özellikleri kullanmak istediğimizde açıkça çağırmamız gerekiyor. Bir sonraki bölümde, kendi büyük dil modeline (LLM) erişimi olan daha gelişmiş bir client oluşturacağız. Şimdilik, sunucudaki özellikleri nasıl çağırabileceğimize bakalım:
 
 ### -4- Özellikleri çağırma
 
 Özellikleri çağırmak için doğru argümanları ve bazı durumlarda çağırmak istediğimiz şeyin adını belirtmemiz gerekiyor.
 
-### -5- Client’ı çalıştırma
+### -5- Client'ı çalıştırma
 
-Client’ı çalıştırmak için terminalde aşağıdaki komutu yazın:
+Client'ı çalıştırmak için terminalde aşağıdaki komutu yazın:
 
 ## Ödev
 
-Bu ödevde, öğrendiklerinizi kullanarak kendi client’ınızı oluşturacaksınız.
+Bu ödevde, öğrendiklerinizi kullanarak kendi client'ınızı oluşturacaksınız.
 
-Kullanabileceğiniz bir sunucu burada, client kodunuzla çağırmanız gerekiyor; sunucuyu daha ilginç hale getirmek için daha fazla özellik ekleyip ekleyemeyeceğinize bakın.
+İşte kullanabileceğiniz bir sunucu, client kodunuz aracılığıyla çağırmanız gerekiyor. Sunucuyu daha ilginç hale getirmek için daha fazla özellik ekleyip ekleyemeyeceğinize bakın.
 
 ## Çözüm
 
 [Çözüm](./solution/README.md)
 
-## Ana Noktalar
+## Önemli Noktalar
 
-Bu bölümün ana noktaları client’lar hakkında şunlardır:
+Bu bölümde client'lar hakkında önemli noktalar şunlardır:
 
 - Sunucudaki özellikleri keşfetmek ve çağırmak için kullanılabilirler.
-- Kendi kendini başlatırken sunucuyu da başlatabilir (bu bölümde olduğu gibi) ancak client’lar çalışan sunuculara da bağlanabilir.
-- Önceki bölümde anlatılan Inspector gibi alternatiflerin yanında sunucu yeteneklerini test etmek için harika bir yoldur.
+- Kendini başlatırken bir sunucuyu da başlatabilirler (bu bölümde olduğu gibi), ancak client'lar çalışan sunuculara da bağlanabilir.
+- Önceki bölümde anlatıldığı gibi Inspector gibi alternatiflerin yanında sunucu yeteneklerini test etmek için harika bir yoldur.
 
 ## Ek Kaynaklar
 
-- [MCP’de client oluşturma](https://modelcontextprotocol.io/quickstart/client)
+- [MCP'de client oluşturma](https://modelcontextprotocol.io/quickstart/client)
 
 ## Örnekler
 
@@ -75,7 +77,7 @@ Bu bölümün ana noktaları client’lar hakkında şunlardır:
 
 ## Sonraki Adım
 
-- Sonraki: [LLM ile client oluşturma](/03-GettingStarted/03-llm-client/README.md)
+- Sonraki: [LLM ile client oluşturma](../03-llm-client/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilindeki haliyle yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

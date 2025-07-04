@@ -1,60 +1,60 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7816cc28f7ab9a54e31f9246429ffcd9",
-  "translation_date": "2025-06-13T01:28:10+00:00",
+  "original_hash": "1d9dc83260576b76f272d330ed93c51f",
+  "translation_date": "2025-07-04T15:59:47+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "mo"
 }
 -->
-# نشر خوادم MCP
+# 部署 MCP 伺服器
 
-نشر خادم MCP الخاص بك يسمح للآخرين بالوصول إلى أدواته وموارده خارج بيئتك المحلية. هناك عدة استراتيجيات للنشر يجب مراعاتها، حسب متطلباتك من حيث القابلية للتوسع، والموثوقية، وسهولة الإدارة. أدناه ستجد إرشادات لنشر خوادم MCP محليًا، في الحاويات، وعلى السحابة.
+部署您的 MCP 伺服器可以讓其他人超越本地環境，存取其工具和資源。根據您對擴展性、可靠性和管理便利性的需求，有多種部署策略可供選擇。以下將提供在本地、容器及雲端部署 MCP 伺服器的指引。
 
-## نظرة عامة
+## 概覽
 
-يغطي هذا الدرس كيفية نشر تطبيق MCP Server الخاص بك.
+本課程將介紹如何部署您的 MCP Server 應用程式。
 
-## أهداف التعلم
+## 學習目標
 
-بحلول نهاية هذا الدرس، ستكون قادرًا على:
+完成本課程後，您將能夠：
 
-- تقييم طرق النشر المختلفة.
-- نشر تطبيقك.
+- 評估不同的部署方式。
+- 部署您的應用程式。
 
-## التطوير والنشر المحلي
+## 本地開發與部署
 
-إذا كان من المفترض أن يستخدم الخادم على جهاز المستخدم، يمكنك اتباع الخطوات التالية:
+如果您的伺服器是要在使用者機器上執行並被使用，您可以依照以下步驟：
 
-1. **تحميل الخادم**. إذا لم تقم بكتابة الخادم، فقم أولاً بتحميله إلى جهازك.
-1. **تشغيل عملية الخادم**: شغل تطبيق MCP server الخاص بك.
+1. **下載伺服器**。如果您不是自行撰寫伺服器，請先將其下載到您的機器。  
+1. **啟動伺服器程序**：執行您的 MCP 伺服器應用程式。
 
-بالنسبة لـ SSE (غير مطلوب لخادم نوع stdio)
+針對 SSE（stdio 類型伺服器不需要）：
 
-1. **تهيئة الشبكة**: تأكد من أن الخادم متاح على المنفذ المتوقع.
-1. **اتصال العملاء**: استخدم عناوين الاتصال المحلية مثل `http://localhost:3000`.
+1. **設定網路**：確保伺服器在預期的埠口可被存取。  
+1. **連接客戶端**：使用類似 `http://localhost:3000` 的本地連接 URL。
 
-## النشر على السحابة
+## 雲端部署
 
-يمكن نشر خوادم MCP على منصات سحابية متعددة:
+MCP 伺服器可以部署到多種雲端平台：
 
-- **الدوال بدون خادم**: نشر خوادم MCP خفيفة الوزن كدوال بدون خادم.
-- **خدمات الحاويات**: استخدم خدمات مثل Azure Container Apps، AWS ECS، أو Google Cloud Run.
-- **Kubernetes**: نشر وإدارة خوادم MCP في مجموعات Kubernetes لتحقيق توافر عالي.
+- **無伺服器函式**：將輕量級 MCP 伺服器部署為無伺服器函式。  
+- **容器服務**：使用 Azure Container Apps、AWS ECS 或 Google Cloud Run 等服務。  
+- **Kubernetes**：在 Kubernetes 叢集部署並管理 MCP 伺服器，以達到高可用性。
 
-### مثال: Azure Container Apps
+### 範例：Azure Container Apps
 
-تدعم Azure Container Apps نشر خوادم MCP. لا يزال هذا العمل قيد التطوير ويدعم حاليًا خوادم SSE.
+Azure Container Apps 支援部署 MCP 伺服器。此功能仍在開發中，目前支援 SSE 伺服器。
 
-إليك كيفية القيام بذلك:
+操作步驟如下：
 
-1. استنساخ المستودع:
+1. 複製一個程式庫：
 
   ```sh
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
   ```
 
-1. تشغيله محليًا لاختبار الأمور:
+1. 在本地執行以測試：
 
   ```sh
   uv venv
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
   uv run fastapi dev main.py
   ```
 
-1. لتجربته محليًا، أنشئ ملف *mcp.json* في مجلد *.vscode* وأضف المحتوى التالي:
+1. 若要在本地嘗試，請在 *.vscode* 目錄下建立 *mcp.json* 檔案，並加入以下內容：
 
   ```json
   {
@@ -92,25 +92,25 @@ CO_OP_TRANSLATOR_METADATA:
   }
   ```
 
-  بمجرد بدء تشغيل خادم SSE، يمكنك النقر على أيقونة التشغيل في ملف JSON، يجب أن ترى الآن الأدوات على الخادم يتم التقاطها بواسطة GitHub Copilot، انظر إلى أيقونة الأداة.
+  SSE 伺服器啟動後，您可以點擊 JSON 檔案中的播放圖示，您應該會看到 GitHub Copilot 偵測到伺服器上的工具，並顯示工具圖示。
 
-1. للنشر، شغل الأمر التالي:
+1. 部署時，執行以下指令：
 
   ```sh
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-ها قد انتهيت، انشره محليًا أو انشره على Azure من خلال هذه الخطوات.
+就這樣，您可以透過這些步驟在本地或 Azure 上部署。
 
-## موارد إضافية
+## 其他資源
 
 - [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
-- [مقال Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
-- [مستودع Azure Container Apps MCP](https://github.com/anthonychu/azure-container-apps-mcp-sample)
+- [Azure Container Apps 文章](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
+- [Azure Container Apps MCP 程式庫](https://github.com/anthonychu/azure-container-apps-mcp-sample)
 
-## ما التالي
+## 接下來
 
-- التالي: [التنفيذ العملي](/04-PracticalImplementation/README.md)
+- 下一步：[實務應用](../../04-PracticalImplementation/README.md)
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

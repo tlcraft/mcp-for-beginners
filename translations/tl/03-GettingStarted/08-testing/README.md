@@ -1,66 +1,66 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e25bc265a51244a7a2d93b3761543a1f",
-  "translation_date": "2025-06-13T02:10:57+00:00",
+  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
+  "translation_date": "2025-07-04T18:20:58+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "tl"
 }
 -->
-## Testing and Debugging
+## Testing at Pag-debug
 
-Bago ka magsimulang mag-test ng iyong MCP server, mahalagang maintindihan ang mga available na tools at mga pinakamainam na paraan para mag-debug. Ang epektibong testing ay nagsisiguro na ang iyong server ay gumagana ayon sa inaasahan at tumutulong upang mabilis mong matukoy at maresolba ang mga isyu. Ang sumusunod na seksyon ay naglalahad ng mga inirerekomendang pamamaraan para i-validate ang iyong MCP implementation.
+Bago ka magsimulang mag-test ng iyong MCP server, mahalagang maintindihan ang mga available na tools at mga pinakamahusay na paraan para mag-debug. Ang epektibong testing ay nagsisiguro na ang iyong server ay gumagana ayon sa inaasahan at tumutulong sa mabilis na pagtukoy at paglutas ng mga isyu. Ang sumusunod na seksyon ay naglalahad ng mga inirerekomendang pamamaraan para sa pag-validate ng iyong MCP implementation.
 
-## Overview
+## Pangkalahatang-ideya
 
-Tinutukoy ng araling ito kung paano pumili ng tamang testing approach at ang pinakaepektibong testing tool.
+Tinutukoy ng araling ito kung paano pumili ng tamang paraan ng testing at ang pinakaepektibong testing tool.
 
-## Learning Objectives
+## Mga Layunin sa Pagkatuto
 
-Pagkatapos ng araling ito, magagawa mong:
+Sa pagtatapos ng araling ito, magagawa mong:
 
 - Ilarawan ang iba't ibang pamamaraan para sa testing.
-- Gamitin ang iba't ibang tools para epektibong i-test ang iyong code.
+- Gumamit ng iba't ibang tools upang epektibong matest ang iyong code.
 
-## Testing MCP Servers
+## Pagsusuri ng MCP Servers
 
-Nagbibigay ang MCP ng mga tools para tulungan kang i-test at i-debug ang iyong mga server:
+Nagbibigay ang MCP ng mga tools upang matulungan kang mag-test at mag-debug ng iyong mga server:
 
 - **MCP Inspector**: Isang command line tool na maaaring patakbuhin bilang CLI tool o bilang visual tool.
-- **Manual testing**: Maaari kang gumamit ng tool tulad ng curl para magpadala ng web requests, pero kahit anong tool na kayang magpatakbo ng HTTP ay pwede.
-- **Unit testing**: Posibleng gamitin ang paborito mong testing framework para i-test ang mga features ng parehong server at client.
+- **Manwal na testing**: Maaari kang gumamit ng tool tulad ng curl para magpadala ng web requests, ngunit anumang tool na kayang magpatakbo ng HTTP ay pwede.
+- **Unit testing**: Posible ring gamitin ang paborito mong testing framework para subukan ang mga features ng parehong server at client.
 
-### Using MCP Inspector
+### Paggamit ng MCP Inspector
 
-Naipaliwanag na namin ang paggamit ng tool na ito sa mga nakaraang aralin pero pag-usapan natin ito nang bahagya sa mataas na antas. Ito ay isang tool na ginawa sa Node.js at maaari mo itong gamitin sa pamamagitan ng pagtawag sa `npx` executable na magda-download at mag-iinstall ng tool pansamantala at maglilinis ng sarili kapag natapos na ang iyong request.
+Nailarawan na namin ang paggamit ng tool na ito sa mga naunang aralin ngunit pag-usapan natin ito nang bahagya sa mataas na antas. Ito ay isang tool na ginawa gamit ang Node.js at magagamit mo ito sa pamamagitan ng pagtawag sa `npx` executable na magda-download at mag-iinstall ng tool nang pansamantala at lilinisin ang sarili kapag natapos na ang iyong request.
 
 Ang [MCP Inspector](https://github.com/modelcontextprotocol/inspector) ay tumutulong sa iyo na:
 
-- **Matuklasan ang Kakayahan ng Server**: Awtomatikong nadedetect ang mga available na resources, tools, at prompts
-- **Subukan ang Pagpapatakbo ng Tool**: Subukan ang iba't ibang parameters at makita ang mga tugon nang real-time
-- **Tingnan ang Metadata ng Server**: Suriin ang impormasyon ng server, schemas, at mga configuration
+- **Matuklasan ang Kakayahan ng Server**: Awtomatikong tuklasin ang mga available na resources, tools, at prompts
+- **Subukan ang Pagpapatakbo ng Tool**: Subukan ang iba't ibang parameters at tingnan ang mga sagot nang real-time
+- **Tingnan ang Metadata ng Server**: Suriin ang impormasyon ng server, mga schema, at mga configuration
 
-Ganito ang karaniwang itsura ng pagpapatakbo ng tool:
+Ganito ang karaniwang hitsura ng pagpapatakbo ng tool:
 
 ```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Ang command sa itaas ay nagpapasimula ng MCP at ang visual interface nito at naglulunsad ng lokal na web interface sa iyong browser. Makikita mo ang dashboard na nagpapakita ng mga naka-register mong MCP servers, ang mga available nilang tools, resources, at prompts. Pinapayagan ka ng interface na ito na interaktibong subukan ang pagpapatakbo ng mga tool, suriin ang metadata ng server, at tingnan ang mga tugon nang real-time, na nagpapadali sa pag-validate at pag-debug ng iyong MCP server implementations.
+Ang utos sa itaas ay nagsisimula ng MCP at ang visual interface nito at naglulunsad ng lokal na web interface sa iyong browser. Makikita mo ang dashboard na nagpapakita ng iyong mga rehistradong MCP servers, ang kanilang mga available na tools, resources, at prompts. Pinapayagan ka ng interface na ito na interaktibong subukan ang pagpapatakbo ng mga tool, suriin ang metadata ng server, at tingnan ang mga sagot nang real-time, na nagpapadali sa pag-validate at pag-debug ng iyong mga MCP server implementations.
 
 Ganito ang maaaring itsura nito: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.tl.png)
 
-Maaari mo ring patakbuhin ang tool na ito sa CLI mode kung saan idinadagdag mo ang `--cli` attribute. Narito ang halimbawa ng pagpapatakbo ng tool sa "CLI" mode na naglilista ng lahat ng tools sa server:
+Maaari mo ring patakbuhin ang tool na ito sa CLI mode kung saan idinadagdag mo ang `--cli` na attribute. Narito ang halimbawa ng pagpapatakbo ng tool sa "CLI" mode na naglilista ng lahat ng tools sa server:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
 ```
 
-### Manual Testing
+### Manwal na Testing
 
-Bukod sa pagpapatakbo ng inspector tool para subukan ang kakayahan ng server, isang katulad na pamamaraan ay ang pagpapatakbo ng client na kayang gumamit ng HTTP tulad ng curl.
+Bukod sa pagpapatakbo ng inspector tool para subukan ang kakayahan ng server, isa pang katulad na paraan ay ang pagpapatakbo ng client na kayang gumamit ng HTTP tulad ng curl.
 
-Sa curl, maaari mong direktang i-test ang MCP servers gamit ang HTTP requests:
+Sa curl, maaari mong direktang subukan ang MCP servers gamit ang HTTP requests:
 
 ```bash
 # Example: Test server metadata
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Tulad ng nakikita mo sa paggamit ng curl sa itaas, gumagamit ka ng POST request para tawagin ang isang tool gamit ang payload na binubuo ng pangalan ng tool at ang mga parameters nito. Piliin ang paraan na pinakaangkop sa iyo. Ang mga CLI tools sa pangkalahatan ay mas mabilis gamitin at madaling gawing script na kapaki-pakinabang sa isang CI/CD environment.
+Tulad ng makikita sa paggamit ng curl sa itaas, gumagamit ka ng POST request para tawagin ang isang tool gamit ang payload na binubuo ng pangalan ng tool at mga parameters nito. Piliin ang paraan na pinakaangkop sa iyo. Karaniwan, mas mabilis gamitin ang mga CLI tools at madali rin silang gawing script na kapaki-pakinabang sa CI/CD na kapaligiran.
 
 ### Unit Testing
 
-Gumawa ng unit tests para sa iyong mga tools at resources upang matiyak na gumagana ang mga ito ayon sa inaasahan. Narito ang halimbawa ng testing code.
+Gumawa ng unit tests para sa iyong mga tools at resources upang matiyak na gumagana ang mga ito ayon sa inaasahan. Narito ang ilang halimbawa ng testing code.
 
 ```python
 import pytest
@@ -129,19 +129,19 @@ async def test_list_tools_cursor_parameter():
     
 ```
 
-Ang code sa itaas ay gumagawa ng mga sumusunod:
+Ang code sa itaas ay:
 
-- Ginagamit ang pytest framework na nagpapahintulot sa iyo na gumawa ng mga tests bilang mga function at gumamit ng assert statements.
-- Lumilikha ng MCP Server na may dalawang magkakaibang tools.
-- Gumagamit ng `assert` statement para suriin kung natutugunan ang ilang mga kondisyon.
+- Gumagamit ng pytest framework na nagpapahintulot sa iyo na gumawa ng mga tests bilang mga function at gumamit ng assert statements.
+- Lumilikha ng MCP Server na may dalawang magkaibang tools.
+- Gumagamit ng `assert` statement upang suriin kung natutugunan ang ilang mga kondisyon.
 
 Tingnan ang [buong file dito](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-Batay sa file na ito, maaari mong i-test ang sarili mong server upang matiyak na ang mga kakayahan ay naitatag nang tama.
+Sa pamamagitan ng file na ito, maaari mong subukan ang sarili mong server upang matiyak na ang mga kakayahan ay nalilikha ayon sa dapat.
 
 Lahat ng pangunahing SDK ay may katulad na mga seksyon para sa testing kaya maaari mong i-adjust ito sa iyong napiling runtime.
 
-## Samples
+## Mga Halimbawa
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
@@ -149,13 +149,13 @@ Lahat ng pangunahing SDK ay may katulad na mga seksyon para sa testing kaya maaa
 - [TypeScript Calculator](../samples/typescript/README.md)
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Additional Resources
+## Karagdagang Mga Mapagkukunan
 
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 
-## What's Next
+## Ano ang Susunod
 
-- Next: [Deployment](/03-GettingStarted/09-deployment/README.md)
+- Susunod: [Deployment](../09-deployment/README.md)
 
-**Pagtatanggol**:  
-Ang dokumentong ito ay isinalin gamit ang serbisyong AI na pagsasalin [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na nagmula sa paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

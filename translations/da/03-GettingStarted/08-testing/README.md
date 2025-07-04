@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e25bc265a51244a7a2d93b3761543a1f",
-  "translation_date": "2025-06-13T02:09:07+00:00",
+  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
+  "translation_date": "2025-07-04T17:41:40+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "da"
 }
 -->
-## Testing og fejlfinding
+## Test og fejlfinding
 
 Før du begynder at teste din MCP-server, er det vigtigt at forstå de tilgængelige værktøjer og bedste praksis for fejlfinding. Effektiv test sikrer, at din server opfører sig som forventet og hjælper dig med hurtigt at identificere og løse problemer. Følgende afsnit beskriver anbefalede metoder til at validere din MCP-implementering.
 
@@ -17,28 +17,28 @@ Denne lektion handler om, hvordan du vælger den rette testmetode og det mest ef
 
 ## Læringsmål
 
-Når du er færdig med denne lektion, vil du kunne:
+Når du har gennemført denne lektion, vil du kunne:
 
-- Beskrive forskellige tilgange til testning.
+- Beskrive forskellige tilgange til test.
 - Bruge forskellige værktøjer til effektivt at teste din kode.
 
 ## Test af MCP-servere
 
 MCP tilbyder værktøjer, der hjælper dig med at teste og fejlsøge dine servere:
 
-- **MCP Inspector**: Et kommandolinjeværktøj, der kan køre både som CLI-værktøj og som et visuelt værktøj.
-- **Manuel testning**: Du kan bruge et værktøj som curl til at køre web-forespørgsler, men ethvert værktøj, der kan håndtere HTTP, fungerer.
+- **MCP Inspector**: Et kommandolinjeværktøj, der kan køres både som CLI-værktøj og som et visuelt værktøj.
+- **Manuel test**: Du kan bruge et værktøj som curl til at sende web-forespørgsler, men ethvert værktøj, der kan håndtere HTTP, kan bruges.
 - **Unit testing**: Det er muligt at bruge dit foretrukne testframework til at teste funktionerne i både server og klient.
 
 ### Brug af MCP Inspector
 
-Vi har tidligere beskrevet brugen af dette værktøj, men lad os tage et overblik. Det er et værktøj bygget i Node.js, og du kan bruge det ved at kalde `npx` eksekverbaren, som midlertidigt downloader og installerer værktøjet og rydder op, når din forespørgsel er kørt.
+Vi har tidligere beskrevet brugen af dette værktøj, men lad os tage et overblik. Det er et værktøj bygget i Node.js, og du kan bruge det ved at kalde `npx`-eksekverbaren, som midlertidigt downloader og installerer værktøjet og rydder op, når din forespørgsel er kørt færdig.
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) hjælper dig med at:
 
 - **Opdage serverfunktioner**: Automatisk finde tilgængelige ressourcer, værktøjer og prompts
 - **Teste værktøjsudførelse**: Prøve forskellige parametre og se svar i realtid
-- **Se servermetadata**: Undersøge serverinformation, skemaer og konfigurationer
+- **Se servermetadata**: Undersøge serverinfo, skemaer og konfigurationer
 
 Et typisk kørsel af værktøjet ser sådan ud:
 
@@ -46,19 +46,19 @@ Et typisk kørsel af værktøjet ser sådan ud:
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Ovenstående kommando starter en MCP og dens visuelle interface og åbner en lokal webgrænseflade i din browser. Du kan forvente at se et dashboard, der viser dine registrerede MCP-servere, deres tilgængelige værktøjer, ressourcer og prompts. Interfacet giver dig mulighed for interaktivt at teste værktøjsudførelse, inspicere servermetadata og se svar i realtid, hvilket gør det nemmere at validere og fejlfinde dine MCP-serverimplementeringer.
+Ovenstående kommando starter en MCP og dens visuelle interface og åbner en lokal webgrænseflade i din browser. Du kan forvente at se et dashboard, der viser dine registrerede MCP-servere, deres tilgængelige værktøjer, ressourcer og prompts. Interfacet giver dig mulighed for interaktivt at teste værktøjsudførelse, inspicere servermetadata og se svar i realtid, hvilket gør det nemmere at validere og fejlsøge dine MCP-serverimplementeringer.
 
 Sådan kan det se ud: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.da.png)
 
-Du kan også køre dette værktøj i CLI-tilstand ved at tilføje `--cli` attributten. Her er et eksempel på at køre værktøjet i "CLI"-tilstand, som viser alle værktøjer på serveren:
+Du kan også køre dette værktøj i CLI-tilstand ved at tilføje `--cli`-attributten. Her er et eksempel på at køre værktøjet i "CLI"-tilstand, som viser alle værktøjer på serveren:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
 ```
 
-### Manuel testning
+### Manuel test
 
-Udover at køre inspector-værktøjet for at teste serverfunktioner, er en anden lignende tilgang at køre en klient, der kan bruge HTTP, som for eksempel curl.
+Udover at køre inspector-værktøjet for at teste serverfunktioner, kan du også bruge en klient, der kan håndtere HTTP, som for eksempel curl.
 
 Med curl kan du teste MCP-servere direkte ved hjælp af HTTP-forespørgsler:
 
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Som du kan se i eksemplet med curl, bruger du en POST-forespørgsel til at kalde et værktøj med en payload bestående af værktøjets navn og dets parametre. Brug den tilgang, der passer dig bedst. CLI-værktøjer er generelt hurtigere at bruge og egner sig godt til scripting, hvilket kan være nyttigt i et CI/CD-miljø.
+Som du kan se i eksemplet med curl, bruger du en POST-forespørgsel til at kalde et værktøj med en payload bestående af værktøjets navn og dets parametre. Brug den metode, der passer dig bedst. CLI-værktøjer er generelt hurtigere at bruge og egner sig godt til scripting, hvilket kan være nyttigt i et CI/CD-miljø.
 
 ### Unit testing
 
-Opret unit tests for dine værktøjer og ressourcer for at sikre, at de fungerer som forventet. Her er noget eksempeltestkode.
+Lav unit tests for dine værktøjer og ressourcer for at sikre, at de fungerer som forventet. Her er et eksempel på testkode.
 
 ```python
 import pytest
@@ -129,17 +129,17 @@ async def test_list_tools_cursor_parameter():
     
 ```
 
-Den forudgående kode gør følgende:
+Koden ovenfor gør følgende:
 
 - Benytter pytest-frameworket, som lader dig oprette tests som funktioner og bruge assert-udsagn.
-- Opretter en MCP Server med to forskellige værktøjer.
-- Bruger `assert`-udsagn til at kontrollere, at visse betingelser er opfyldt.
+- Opretter en MCP-server med to forskellige værktøjer.
+- Bruger `assert` til at kontrollere, at visse betingelser er opfyldt.
 
-Tag et kig på [hele filen her](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
+Tag et kig på [den fulde fil her](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-Med den ovenstående fil kan du teste din egen server for at sikre, at funktionerne oprettes som de skal.
+Med udgangspunkt i denne fil kan du teste din egen server for at sikre, at funktionaliteterne oprettes som forventet.
 
-Alle større SDK'er har lignende testsektioner, så du kan tilpasse det til dit valgte runtime.
+Alle større SDK’er har lignende testsektioner, så du kan tilpasse det til dit valgte runtime-miljø.
 
 ## Eksempler
 
@@ -155,7 +155,7 @@ Alle større SDK'er har lignende testsektioner, så du kan tilpasse det til dit 
 
 ## Hvad er det næste
 
-- Næste: [Deployment](/03-GettingStarted/09-deployment/README.md)
+- Næste: [Deployment](../09-deployment/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For vigtig information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

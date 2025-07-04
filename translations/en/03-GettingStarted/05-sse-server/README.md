@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1681ca3633aeb49ee03766abdbb94a93",
-  "translation_date": "2025-06-17T21:50:04+00:00",
+  "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
+  "translation_date": "2025-07-04T15:15:58+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "en"
 }
@@ -59,7 +59,7 @@ To run the inspector, you first must have an SSE server running, so let's do tha
 
 ### -2- Trying out the tool
 
-Connect to the server by selecting SSE in the dropdown and fill in the URL field where your server is running, for example http://localhost:4321/sse. Now click the "Connect" button. As before, select to list tools, choose a tool and provide input values. You should see a result like below:
+Connect to the server by selecting SSE in the dropdown and fill in the URL field where your server is running, for example http://localhost:4321/sse. Now click the "Connect" button. As before, select to list tools, select a tool and provide input values. You should see a result like below:
 
 ![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.en.png)
 
@@ -79,7 +79,7 @@ The key takeaways from this chapter are the following:
 
 - SSE is the second supported transport next to stdio.
 - To support SSE, you need to manage incoming connections and messages using a web framework.
-- You can use both Inspector and Visual Studio Code to consume an SSE server, just like stdio servers. Note how it differs a little between stdio and SSE. For SSE, you need to start up the server separately and then run your inspector tool. For the inspector tool, there's also some differences in that you need to specify the URL. 
+- You can use both Inspector and Visual Studio Code to consume an SSE server, just like stdio servers. Note how it differs a little between stdio and SSE. For SSE, you need to start up the server separately and then run your inspector tool. For the inspector tool, there's also some differences in that you need to specify the URL.
 
 ## Samples 
 
@@ -95,7 +95,7 @@ The key takeaways from this chapter are the following:
 
 ## What's Next
 
-- Next: [HTTP Streaming with MCP (Streamable HTTP)](/03-GettingStarted/06-http-streaming/README.md)
+- Next: [HTTP Streaming with MCP (Streamable HTTP)](../06-http-streaming/README.md)
 
 **Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

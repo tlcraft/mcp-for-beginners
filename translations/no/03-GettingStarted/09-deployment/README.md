@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7816cc28f7ab9a54e31f9246429ffcd9",
-  "translation_date": "2025-06-13T01:30:18+00:00",
+  "original_hash": "1d9dc83260576b76f272d330ed93c51f",
+  "translation_date": "2025-07-04T17:44:39+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "no"
 }
 -->
 # Distribuere MCP-servere
 
-Å distribuere MCP-serveren din lar andre få tilgang til verktøyene og ressursene dens utenfor ditt lokale miljø. Det finnes flere distribusjonsstrategier å vurdere, avhengig av dine behov for skalerbarhet, pålitelighet og enkel administrasjon. Nedenfor finner du veiledning for distribusjon av MCP-servere lokalt, i containere og i skyen.
+Å distribuere MCP-serveren din gjør det mulig for andre å få tilgang til verktøyene og ressursene utover ditt lokale miljø. Det finnes flere distribusjonsstrategier å vurdere, avhengig av dine krav til skalerbarhet, pålitelighet og enkel administrasjon. Nedenfor finner du veiledning for å distribuere MCP-servere lokalt, i containere og i skyen.
 
 ## Oversikt
 
@@ -17,16 +17,16 @@ Denne leksjonen dekker hvordan du distribuerer MCP Server-appen din.
 
 ## Læringsmål
 
-Ved slutten av denne leksjonen vil du kunne:
+Når du er ferdig med denne leksjonen, vil du kunne:
 
-- Vurdere ulike distribusjonstilnærminger.
+- Vurdere ulike distribusjonsmetoder.
 - Distribuere appen din.
 
 ## Lokal utvikling og distribusjon
 
-Hvis serveren din er ment å brukes ved å kjøre på brukernes maskin, kan du følge disse stegene:
+Hvis serveren din er ment å brukes ved å kjøre den på brukerens maskin, kan du følge disse stegene:
 
-1. **Last ned serveren**. Hvis du ikke har skrevet serveren, last den ned til maskinen din først.  
+1. **Last ned serveren**. Hvis du ikke har skrevet serveren selv, last den ned til maskinen din først.  
 1. **Start serverprosessen**: Kjør MCP-serverapplikasjonen din.
 
 For SSE (ikke nødvendig for stdio-type server)
@@ -38,7 +38,7 @@ For SSE (ikke nødvendig for stdio-type server)
 
 MCP-servere kan distribueres til ulike skyplattformer:
 
-- **Serverløse funksjoner**: Distribuer lette MCP-servere som serverløse funksjoner.  
+- **Serverless Functions**: Distribuer lette MCP-servere som serverløse funksjoner.  
 - **Container-tjenester**: Bruk tjenester som Azure Container Apps, AWS ECS eller Google Cloud Run.  
 - **Kubernetes**: Distribuer og administrer MCP-servere i Kubernetes-klynger for høy tilgjengelighet.
 
@@ -46,7 +46,7 @@ MCP-servere kan distribueres til ulike skyplattformer:
 
 Azure Container Apps støtter distribusjon av MCP-servere. Det er fortsatt under utvikling, og støtter for øyeblikket SSE-servere.
 
-Slik gjør du det:
+Slik kan du gjøre det:
 
 1. Klon et repo:
 
@@ -92,7 +92,7 @@ Slik gjør du det:
   }
   ```
 
-  Når SSE-serveren er startet, kan du klikke på play-ikonet i JSON-filen. Du skal nå se at verktøyene på serveren blir plukket opp av GitHub Copilot, se verktøyikonet.
+  Når SSE-serveren er startet, kan du klikke på avspillingsikonet i JSON-filen. Du skal nå se at verktøyene på serveren blir plukket opp av GitHub Copilot, se verktøyikonet.
 
 1. For å distribuere, kjør følgende kommando:
 
@@ -100,17 +100,18 @@ Slik gjør du det:
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-Der har du det, distribuer den lokalt eller til Azure ved å følge disse stegene.
+Der har du det, distribuer det lokalt, eller distribuer det til Azure ved å følge disse stegene.
 
-## Tilleggsressurser
+## Ekstra ressurser
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
-- [Azure Container Apps artikkel](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
-- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
+- [Azure Container Apps artikkel](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
+- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
+
 
 ## Hva nå
 
-- Neste: [Praktisk implementering](/04-PracticalImplementation/README.md)
+- Neste: [Praktisk implementering](../../04-PracticalImplementation/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

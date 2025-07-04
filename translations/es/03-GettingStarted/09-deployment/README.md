@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7816cc28f7ab9a54e31f9246429ffcd9",
-  "translation_date": "2025-06-12T22:11:43+00:00",
+  "original_hash": "1d9dc83260576b76f272d330ed93c51f",
+  "translation_date": "2025-07-04T15:24:06+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "es"
 }
 -->
 # Despliegue de Servidores MCP
 
-Desplegar tu servidor MCP permite que otros accedan a sus herramientas y recursos más allá de tu entorno local. Hay varias estrategias de despliegue a considerar, dependiendo de tus requisitos de escalabilidad, confiabilidad y facilidad de gestión. A continuación encontrarás orientación para desplegar servidores MCP localmente, en contenedores y en la nube.
+Desplegar tu servidor MCP permite que otros accedan a sus herramientas y recursos más allá de tu entorno local. Existen varias estrategias de despliegue a considerar, dependiendo de tus necesidades de escalabilidad, confiabilidad y facilidad de gestión. A continuación, encontrarás orientación para desplegar servidores MCP localmente, en contenedores y en la nube.
 
 ## Resumen
 
@@ -26,25 +26,25 @@ Al finalizar esta lección, podrás:
 
 Si tu servidor está pensado para ser utilizado ejecutándose en la máquina del usuario, puedes seguir los siguientes pasos:
 
-1. **Descarga el servidor**. Si no escribiste el servidor, primero descárgalo a tu máquina.  
-1. **Inicia el proceso del servidor**: Ejecuta tu aplicación MCP server.
+1. **Descargar el servidor**. Si no escribiste el servidor, primero descárgalo a tu máquina.  
+1. **Iniciar el proceso del servidor**: Ejecuta tu aplicación MCP server.
 
 Para SSE (no es necesario para servidores tipo stdio)
 
-1. **Configura la red**: Asegúrate de que el servidor sea accesible en el puerto esperado.  
-1. **Conecta los clientes**: Usa URLs de conexión locales como `http://localhost:3000`.
+1. **Configurar la red**: Asegúrate de que el servidor sea accesible en el puerto esperado.  
+1. **Conectar clientes**: Usa URLs de conexión local como `http://localhost:3000`.
 
-## Despliegue en la Nube
+## Despliegue en la nube
 
-Los servidores MCP pueden desplegarse en diversas plataformas en la nube:
+Los servidores MCP pueden desplegarse en varias plataformas en la nube:
 
 - **Funciones Serverless**: Despliega servidores MCP ligeros como funciones serverless.  
-- **Servicios de Contenedores**: Usa servicios como Azure Container Apps, AWS ECS o Google Cloud Run.  
-- **Kubernetes**: Despliega y gestiona servidores MCP en clústeres Kubernetes para alta disponibilidad.
+- **Servicios de contenedores**: Usa servicios como Azure Container Apps, AWS ECS o Google Cloud Run.  
+- **Kubernetes**: Despliega y administra servidores MCP en clústeres de Kubernetes para alta disponibilidad.
 
 ### Ejemplo: Azure Container Apps
 
-Azure Container Apps soporta el despliegue de MCP Servers. Aún está en desarrollo y actualmente soporta servidores SSE.
+Azure Container Apps soporta el despliegue de servidores MCP. Aún está en desarrollo y actualmente soporta servidores SSE.
 
 Así es como puedes hacerlo:
 
@@ -54,7 +54,7 @@ Así es como puedes hacerlo:
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
   ```
 
-1. Ejecútalo localmente para probar:
+1. Ejecútalo localmente para probarlo:
 
   ```sh
   uv venv
@@ -68,7 +68,7 @@ Así es como puedes hacerlo:
   uv run fastapi dev main.py
   ```
 
-1. Para probarlo localmente, crea un archivo *mcp.json* en un directorio *.vscode* y añade el siguiente contenido:
+1. Para probarlo localmente, crea un archivo *mcp.json* en un directorio *.vscode* y agrega el siguiente contenido:
 
   ```json
   {
@@ -92,7 +92,7 @@ Así es como puedes hacerlo:
   }
   ```
 
-  Una vez que el servidor SSE esté iniciado, puedes hacer clic en el ícono de reproducir en el archivo JSON; ahora deberías ver que las herramientas del servidor son detectadas por GitHub Copilot, observa el ícono de la herramienta.
+  Una vez que el servidor SSE esté iniciado, puedes hacer clic en el ícono de reproducción en el archivo JSON; ahora deberías ver que las herramientas del servidor son detectadas por GitHub Copilot, observa el ícono de la herramienta.
 
 1. Para desplegar, ejecuta el siguiente comando:
 
@@ -102,16 +102,15 @@ Así es como puedes hacerlo:
 
 Ahí lo tienes, despliega localmente o en Azure siguiendo estos pasos.
 
-## Recursos Adicionales
+## Recursos adicionales
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
-- [Artículo sobre Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
-- [Repositorio MCP para Azure Container Apps](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
-
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
+- [Artículo sobre Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
+- [Repositorio MCP para Azure Container Apps](https://github.com/anthonychu/azure-container-apps-mcp-sample)
 
 ## Qué sigue
 
-- Siguiente: [Implementación Práctica](/04-PracticalImplementation/README.md)
+- Siguiente: [Implementación Práctica](../../04-PracticalImplementation/README.md)
 
-**Aviso Legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

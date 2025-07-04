@@ -1,107 +1,107 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1446979020432f512c883848d7eca144",
-  "translation_date": "2025-05-29T21:42:41+00:00",
+  "original_hash": "105c2ddbb77bc38f7e9df009e1b06e45",
+  "translation_date": "2025-07-04T15:58:31+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "mo"
 }
 -->
-# Introduction to Model Context Protocol (MCP): Why It Matters for Scalable AI Applications
+# 模型上下文協議 (MCP) 簡介：為何它對可擴展的 AI 應用至關重要
 
-Generative AI applications represent a significant advancement by allowing users to interact through natural language prompts. However, as these applications grow and require more resources, it's important to ensure easy integration of functionalities and resources in a way that supports extensibility, multi-model support, and handles various model complexities. In short, building Gen AI apps is simple at first, but as they scale and become more complex, defining a clear architecture and relying on a standard becomes necessary. This is where MCP steps in to organize and standardize the process.
-
----
-
-## **🔍 What Is the Model Context Protocol (MCP)?**
-
-The **Model Context Protocol (MCP)** is an **open, standardized interface** that enables Large Language Models (LLMs) to seamlessly interact with external tools, APIs, and data sources. It provides a consistent framework to extend AI model capabilities beyond their training data, allowing for smarter, scalable, and more responsive AI systems.
+生成式 AI 應用是一大進步，因為它們通常允許使用者透過自然語言提示與應用互動。然而，隨著投入更多時間和資源，你會希望能輕鬆整合功能和資源，使應用易於擴展，能同時支援多個模型，並處理各種模型的複雜性。簡言之，建立生成式 AI 應用起步容易，但隨著規模擴大和複雜度增加，你需要開始定義架構，並可能需要依賴一套標準，確保應用的一致性。這正是 MCP 發揮作用，組織並提供標準的地方。
 
 ---
 
-## **🎯 Why Standardization in AI Matters**
+## **🔍 什麼是模型上下文協議 (MCP)?**
 
-As generative AI applications become more complex, adopting standards that ensure **scalability, extensibility**, and **maintainability** is crucial. MCP addresses these needs by:
-
-- Unifying model-tool integrations
-- Reducing fragile, one-off custom solutions
-- Supporting multiple models within a single ecosystem
+**模型上下文協議 (MCP)** 是一個**開放且標準化的介面**，讓大型語言模型 (LLMs) 能無縫地與外部工具、API 和資料來源互動。它提供一致的架構，讓 AI 模型的功能超越訓練資料，實現更智慧、可擴展且反應靈敏的 AI 系統。
 
 ---
 
-## **📚 Learning Objectives**
+## **🎯 為何 AI 標準化如此重要**
 
-By the end of this article, you will be able to:
+隨著生成式 AI 應用變得越來越複雜，採用標準以確保**可擴展性、可延展性**和**可維護性**變得至關重要。MCP 解決了這些需求，透過：
 
-- Define **Model Context Protocol (MCP)** and its applications
-- Understand how MCP standardizes communication between models and tools
-- Identify the main components of MCP architecture
-- Explore real-world uses of MCP in enterprise and development settings
-
----
-
-## **💡 Why the Model Context Protocol (MCP) Is a Game-Changer**
-
-### **🔗 MCP Solves Fragmentation in AI Interactions**
-
-Before MCP, integrating models with tools involved:
-
-- Writing custom code for each tool-model pair
-- Using non-standard APIs for different vendors
-- Frequent disruptions due to updates
-- Poor scalability as more tools were added
-
-### **✅ Benefits of MCP Standardization**
-
-| **Benefit**              | **Description**                                                                |
-|--------------------------|--------------------------------------------------------------------------------|
-| Interoperability         | LLMs work smoothly with tools from various vendors                            |
-| Consistency              | Uniform behavior across platforms and tools                                   |
-| Reusability              | Tools built once can be reused across multiple projects and systems           |
-| Accelerated Development  | Shorten development time with standardized, plug-and-play interfaces          |
+- 統一模型與工具的整合
+- 減少脆弱且一次性的客製化解決方案
+- 允許多個模型共存於同一生態系統中
 
 ---
 
-## **🧱 High-Level MCP Architecture Overview**
+## **📚 學習目標**
 
-MCP uses a **client-server model**, where:
+閱讀完本文後，你將能夠：
 
-- **MCP Hosts** run the AI models
-- **MCP Clients** initiate requests
-- **MCP Servers** provide context, tools, and capabilities
-
-### **Key Components:**
-
-- **Resources** – Static or dynamic data available to models  
-- **Prompts** – Predefined workflows to guide generation  
-- **Tools** – Executable functions such as search or calculations  
-- **Sampling** – Agent-like behavior through recursive interactions
+- 定義**模型上下文協議 (MCP)**及其應用場景
+- 理解 MCP 如何標準化模型與工具的溝通
+- 辨識 MCP 架構的核心組件
+- 探索 MCP 在企業與開發環境中的實際應用
 
 ---
 
-## How MCP Servers Work
+## **💡 為何模型上下文協議 (MCP) 是改變遊戲規則的技術**
 
-MCP servers function as follows:
+### **🔗 MCP 解決 AI 互動的碎片化問題**
 
-- **Request Flow**: 
-    1. The MCP Client sends a request to the AI Model hosted in an MCP Host.
-    2. The AI Model determines when it needs external tools or data.
-    3. The model communicates with the MCP Server via the standardized protocol.
+在 MCP 出現之前，模型與工具的整合需要：
 
-- **MCP Server Functionality**:
-    - Tool Registry: Keeps a catalog of available tools and their capabilities.
-    - Authentication: Confirms permissions for tool access.
-    - Request Handler: Manages incoming tool requests from the model.
-    - Response Formatter: Organizes tool outputs into a format the model understands.
+- 每對工具與模型撰寫客製化程式碼
+- 各廠商使用非標準 API
+- 更新頻繁導致整合中斷
+- 工具數量增加時擴展性差
 
-- **Tool Execution**: 
-    - The server forwards requests to the appropriate external tools.
-    - Tools perform their specialized functions (search, calculations, database queries, etc.).
-    - Results are returned to the model in a consistent format.
+### **✅ MCP 標準化的好處**
 
-- **Response Completion**: 
-    - The AI model integrates tool outputs into its response.
-    - The final response is sent back to the client application.
+| **好處**                | **說明**                                                                    |
+|-------------------------|-----------------------------------------------------------------------------|
+| 互通性                  | LLM 能與不同廠商的工具無縫合作                                             |
+| 一致性                  | 跨平台與工具行為統一                                                        |
+| 可重用性                | 工具只需開發一次，可跨專案與系統使用                                        |
+| 加速開發                | 使用標準化、即插即用介面，縮短開發時間                                      |
+
+---
+
+## **🧱 MCP 架構高階概覽**
+
+MCP 採用**客戶端-伺服器模型**，其中：
+
+- **MCP Hosts** 運行 AI 模型
+- **MCP Clients** 發起請求
+- **MCP Servers** 提供上下文、工具與功能
+
+### **主要組件：**
+
+- **資源** – 提供模型的靜態或動態資料  
+- **提示** – 預先定義的工作流程以引導生成  
+- **工具** – 可執行的功能，如搜尋、計算  
+- **取樣** – 透過遞迴互動實現代理行為
+
+---
+
+## MCP 伺服器如何運作
+
+MCP 伺服器的運作流程如下：
+
+- **請求流程**：  
+    1. MCP Client 向運行於 MCP Host 的 AI 模型發送請求。  
+    2. AI 模型判斷何時需要外部工具或資料。  
+    3. 模型使用標準化協議與 MCP Server 通訊。
+
+- **MCP 伺服器功能**：  
+    - 工具註冊表：維護可用工具及其功能目錄。  
+    - 認證：驗證工具存取權限。  
+    - 請求處理器：處理模型發出的工具請求。  
+    - 回應格式化器：將工具輸出整理成模型可理解的格式。
+
+- **工具執行**：  
+    - 伺服器將請求導向適當的外部工具。  
+    - 工具執行其專門功能（搜尋、計算、資料庫查詢等）。  
+    - 結果以一致格式回傳給模型。
+
+- **回應完成**：  
+    - AI 模型將工具輸出整合進回應中。  
+    - 最終回應送回客戶端應用。
 
 ```mermaid
 ---
@@ -140,47 +140,46 @@ graph TD
     style F fill:#c2f0c2,stroke:#333,stroke-width:1px    
 ```
 
-## 👨‍💻 How to Build an MCP Server (With Examples)
+## 👨‍💻 如何建立 MCP 伺服器（附範例）
 
-MCP servers enable you to expand LLM capabilities by supplying data and functionality.
+MCP 伺服器讓你能透過提供資料和功能來擴展 LLM 的能力。
 
-Ready to get started? Here are examples of creating a simple MCP server in different programming languages:
+準備好試試看了嗎？以下是用不同語言建立簡單 MCP 伺服器的範例：
 
-- **Python Example**: https://github.com/modelcontextprotocol/python-sdk
+- **Python 範例**：https://github.com/modelcontextprotocol/python-sdk
 
-- **TypeScript Example**: https://github.com/modelcontextprotocol/typescript-sdk
+- **TypeScript 範例**：https://github.com/modelcontextprotocol/typescript-sdk
 
-- **Java Example**: https://github.com/modelcontextprotocol/java-sdk
+- **Java 範例**：https://github.com/modelcontextprotocol/java-sdk
 
-- **C#/.NET Example**: https://github.com/modelcontextprotocol/csharp-sdk
+- **C#/.NET 範例**：https://github.com/modelcontextprotocol/csharp-sdk
 
+## 🌍 MCP 的實際應用案例
 
-## 🌍 Real-World Use Cases for MCP
+MCP 透過擴展 AI 能力，支持多種應用：
 
-MCP powers a broad range of applications by enhancing AI capabilities:
+| **應用**                    | **說明**                                                                    |
+|-----------------------------|-----------------------------------------------------------------------------|
+| 企業資料整合                | 將 LLM 連接至資料庫、CRM 或內部工具                                         |
+| 代理式 AI 系統              | 讓自主代理具備工具存取與決策工作流程                                        |
+| 多模態應用                  | 在單一統一 AI 應用中結合文字、影像與音訊工具                               |
+| 即時資料整合                | 將即時資料引入 AI 互動，提供更準確、即時的輸出                             |
 
-| **Application**              | **Description**                                                                |
-|------------------------------|--------------------------------------------------------------------------------|
-| Enterprise Data Integration  | Connect LLMs to databases, CRMs, or internal tools                             |
-| Agentic AI Systems           | Enable autonomous agents with tool access and decision-making workflows        |
-| Multi-modal Applications     | Combine text, image, and audio tools within a single unified AI app            |
-| Real-time Data Integration   | Integrate live data into AI interactions for more accurate, up-to-date outputs |
+### 🧠 MCP = AI 互動的通用標準
 
-### 🧠 MCP = Universal Standard for AI Interactions
+模型上下文協議 (MCP) 就像 USB-C 標準化裝置的物理連接一樣，成為 AI 互動的通用標準。在 AI 領域，MCP 提供一致介面，讓模型（客戶端）能無縫整合外部工具與資料提供者（伺服器）。這消除了為每個 API 或資料來源設計多種客製化協議的需求。
 
-The Model Context Protocol (MCP) serves as a universal standard for AI interactions, similar to how USB-C standardized device connections. In AI, MCP provides a consistent interface that lets models (clients) integrate effortlessly with external tools and data providers (servers). This removes the need for multiple custom protocols for each API or data source.
+在 MCP 下，符合 MCP 的工具（稱為 MCP 伺服器）遵循統一標準。這些伺服器能列出它們提供的工具或動作，並在 AI 代理請求時執行。支援 MCP 的 AI 代理平台能發現伺服器上的可用工具，並透過此標準協議調用它們。
 
-With MCP, an MCP-compatible tool (an MCP server) adheres to a unified standard. These servers can list the tools or actions they offer and execute them when requested by an AI agent. AI platforms supporting MCP can discover available tools from servers and invoke them through this standard protocol.
+### 💡 促進知識存取
 
-### 💡 Facilitates access to knowledge
+除了提供工具外，MCP 也促進知識存取。它讓應用能為大型語言模型 (LLMs) 提供上下文，透過連結多種資料來源。例如，某個 MCP 伺服器可能代表公司的文件庫，讓代理能按需檢索相關資訊。另一個伺服器則可處理特定動作，如發送電子郵件或更新紀錄。對代理而言，這些都是可用的工具——有些工具回傳資料（知識上下文），有些則執行動作。MCP 有效管理兩者。
 
-Beyond tools, MCP also enables access to knowledge. It allows applications to provide context to large language models (LLMs) by connecting them to various data sources. For example, an MCP server might represent a company’s document repository, letting agents fetch relevant information on demand. Another server might handle specific actions like sending emails or updating records. From the agent’s perspective, these are just tools—some return data (knowledge context), others perform actions. MCP manages both efficiently.
+代理連接 MCP 伺服器時，會自動透過標準格式了解伺服器的可用功能與可存取資料。這種標準化使工具可動態提供。例如，新增 MCP 伺服器到代理系統後，其功能即可立即使用，無需額外調整代理指令。
 
-When an agent connects to an MCP server, it automatically learns about the server's available capabilities and accessible data via a standard format. This standardization allows dynamic tool availability. For instance, adding a new MCP server to an agent’s system immediately makes its functions available without needing to customize the agent’s instructions further.
+這種簡化整合符合下方 mermaid 圖示的流程，伺服器同時提供工具與知識，確保系統間的無縫協作。
 
-This streamlined integration matches the flow shown in the mermaid diagram, where servers supply both tools and knowledge, enabling seamless collaboration across systems.
-
-### 👉 Example: Scalable Agent Solution
+### 👉 範例：可擴展的代理解決方案
 
 ```mermaid
 ---
@@ -209,9 +208,9 @@ graph TD
     end
 ```
 
-### 🔄 Advanced MCP Scenarios with Client-Side LLM Integration
+### 🔄 進階 MCP 場景：客戶端 LLM 整合
 
-Beyond the basic MCP architecture, advanced scenarios exist where both client and server include LLMs, allowing for more complex interactions:
+除了基本 MCP 架構外，還有進階場景，客戶端與伺服器皆包含 LLM，實現更複雜的互動：
 
 ```mermaid
 ---
@@ -275,39 +274,38 @@ sequenceDiagram
     end
 ```
 
-## 🔐 Practical Benefits of MCP
+## 🔐 MCP 的實際好處
 
-Here are the practical advantages of using MCP:
+使用 MCP 的實際好處包括：
 
-- **Freshness**: Models can access current information beyond their training data
-- **Capability Extension**: Models can use specialized tools for tasks outside their training
-- **Reduced Hallucinations**: External data sources provide factual grounding
-- **Privacy**: Sensitive data remains secure instead of being embedded in prompts
+- **資訊新鮮度**：模型能存取訓練資料外的最新資訊  
+- **能力擴展**：模型可利用專門工具完成未訓練的任務  
+- **減少幻覺**：外部資料來源提供事實依據  
+- **隱私保護**：敏感資料可保留在安全環境，不需嵌入提示中
 
-## 📌 Key Takeaways
+## 📌 重要重點整理
 
-Key points to remember about MCP:
+使用 MCP 的關鍵重點：
 
-- **MCP** standardizes AI model interactions with tools and data
-- Encourages **extensibility, consistency, and interoperability**
-- Helps **reduce development time, improve reliability, and expand model capabilities**
-- The client-server design supports flexible, extensible AI applications
+- **MCP** 標準化 AI 模型與工具及資料的互動方式  
+- 促進**可延展性、一致性與互通性**  
+- MCP 有助於**縮短開發時間、提升可靠性並擴展模型能力**  
+- 客戶端-伺服器架構**支持靈活且可擴展的 AI 應用**
 
-## 🧠 Exercise
+## 🧠 練習
 
-Consider an AI application you want to build.
+思考你有興趣開發的 AI 應用：
 
-- What **external tools or data** could enhance its capabilities?
-- How might MCP make integration **simpler and more reliable?**
+- 哪些**外部工具或資料**能增強其功能？  
+- MCP 如何讓整合變得**更簡單且更可靠**？
 
-## Additional Resources
+## 其他資源
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+- [MCP GitHub 倉庫](https://github.com/modelcontextprotocol)
 
+## 接下來
 
-## What's next
+下一章：[第 1 章：核心概念](../01-CoreConcepts/README.md)
 
-Next: [Chapter 1: Core Concepts](/01-CoreConcepts/README.md)
-
-**Disclaimer**:  
-Dis document ha bin transleit yuseng AI transleit servis [Co-op Translator](https://github.com/Azure/co-op-translator). While wi try fi mek it accurate, memba seh automated transleits can get errors or wrong parts. Di original document inna di original language fi be di main source. Fi important info, it better fi use professional human transleit. Wi no responsible fi any mix-up or wrong understandin weh come from dis transleit.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

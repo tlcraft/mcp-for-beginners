@@ -1,164 +1,164 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f00aedb7b1d11b7eaacb0618d8791c65",
-  "translation_date": "2025-05-29T23:30:04+00:00",
+  "original_hash": "c69f9df7f3215dac8d056020539bac36",
+  "translation_date": "2025-07-04T18:16:12+00:00",
   "source_file": "02-Security/README.md",
   "language_code": "ms"
 }
 -->
-# Security Best Practices
+# Amalan Terbaik Keselamatan
 
-Adopting the Model Context Protocol (MCP) adds powerful new features to AI-driven applications but also brings unique security challenges beyond traditional software risks. Alongside established concerns like secure coding, least privilege, and supply chain security, MCP and AI workloads face new threats such as prompt injection, tool poisoning, and dynamic tool modification. If not properly managed, these risks can result in data leaks, privacy violations, and unintended system behavior.
+Menggunakan Model Context Protocol (MCP) membawa keupayaan baru yang hebat kepada aplikasi berasaskan AI, tetapi juga memperkenalkan cabaran keselamatan unik yang melangkaui risiko perisian tradisional. Selain kebimbangan yang sudah diketahui seperti pengekodan selamat, prinsip keistimewaan minimum, dan keselamatan rantaian bekalan, MCP dan beban kerja AI menghadapi ancaman baru seperti suntikan arahan (prompt injection), pencemaran alat (tool poisoning), dan pengubahsuaian alat secara dinamik. Risiko ini boleh menyebabkan pendedahan data, pelanggaran privasi, dan tingkah laku sistem yang tidak diingini jika tidak diurus dengan betul.
 
-This lesson covers the key security risks related to MCP—including authentication, authorization, excessive permissions, indirect prompt injection, and supply chain vulnerabilities—and offers practical controls and best practices to address them. You’ll also learn how to use Microsoft solutions like Prompt Shields, Azure Content Safety, and GitHub Advanced Security to enhance your MCP deployment. By understanding and applying these controls, you can greatly reduce the chance of a security breach and keep your AI systems reliable and trustworthy.
+Pelajaran ini meneroka risiko keselamatan yang paling relevan berkaitan dengan MCP—termasuk pengesahan, kebenaran, kebenaran berlebihan, suntikan arahan tidak langsung, dan kelemahan rantaian bekalan—serta menyediakan kawalan dan amalan terbaik yang boleh diambil tindakan untuk mengurangkannya. Anda juga akan belajar bagaimana memanfaatkan penyelesaian Microsoft seperti Prompt Shields, Azure Content Safety, dan GitHub Advanced Security untuk mengukuhkan pelaksanaan MCP anda. Dengan memahami dan menggunakan kawalan ini, anda boleh mengurangkan kemungkinan berlakunya pelanggaran keselamatan dan memastikan sistem AI anda kekal kukuh dan boleh dipercayai.
 
-# Learning Objectives
+# Objektif Pembelajaran
 
-By the end of this lesson, you will be able to:
+Menjelang akhir pelajaran ini, anda akan dapat:
 
-- Identify and explain the unique security risks introduced by the Model Context Protocol (MCP), such as prompt injection, tool poisoning, excessive permissions, and supply chain vulnerabilities.
-- Describe and implement effective mitigating controls for MCP security risks, including strong authentication, least privilege, secure token management, and supply chain verification.
-- Understand and utilize Microsoft solutions like Prompt Shields, Azure Content Safety, and GitHub Advanced Security to protect MCP and AI workloads.
-- Recognize the importance of validating tool metadata, monitoring for dynamic changes, and defending against indirect prompt injection attacks.
-- Integrate established security best practices—like secure coding, server hardening, and zero trust architecture—into your MCP implementation to minimize the likelihood and impact of security incidents.
+- Mengenal pasti dan menerangkan risiko keselamatan unik yang diperkenalkan oleh Model Context Protocol (MCP), termasuk suntikan arahan, pencemaran alat, kebenaran berlebihan, dan kelemahan rantaian bekalan.
+- Menerangkan dan menggunakan kawalan mitigasi yang berkesan untuk risiko keselamatan MCP, seperti pengesahan yang kukuh, prinsip keistimewaan minimum, pengurusan token yang selamat, dan pengesahan rantaian bekalan.
+- Memahami dan memanfaatkan penyelesaian Microsoft seperti Prompt Shields, Azure Content Safety, dan GitHub Advanced Security untuk melindungi MCP dan beban kerja AI.
+- Mengiktiraf kepentingan mengesahkan metadata alat, memantau perubahan dinamik, dan mempertahankan serangan suntikan arahan tidak langsung.
+- Mengintegrasikan amalan keselamatan terbaik yang telah ditetapkan—seperti pengekodan selamat, pengukuhan pelayan, dan seni bina zero trust—ke dalam pelaksanaan MCP anda untuk mengurangkan kemungkinan dan impak pelanggaran keselamatan.
 
-# MCP security controls
+# Kawalan keselamatan MCP
 
-Any system with access to critical resources faces inherent security challenges. These challenges can generally be addressed by applying fundamental security controls and principles correctly. Since MCP is newly defined, its specification is evolving rapidly. As the protocol matures, its security controls will improve, allowing better integration with enterprise security architectures and established best practices.
+Mana-mana sistem yang mempunyai akses kepada sumber penting mempunyai cabaran keselamatan tersirat. Cabaran keselamatan biasanya boleh diatasi melalui penerapan kawalan dan konsep keselamatan asas yang betul. Oleh kerana MCP baru sahaja ditakrifkan, spesifikasi sedang berubah dengan pantas dan protokol ini terus berkembang. Akhirnya, kawalan keselamatan di dalamnya akan matang, membolehkan integrasi yang lebih baik dengan seni bina keselamatan perusahaan dan amalan terbaik yang telah ditetapkan.
 
-Research from the [Microsoft Digital Defense Report](https://aka.ms/mddr) shows that 98% of reported breaches could be prevented with strong security hygiene. The best defense against any breach remains solid baseline security hygiene, secure coding practices, and supply chain security—those proven approaches still have the greatest impact on reducing risk.
+Penyelidikan yang diterbitkan dalam [Microsoft Digital Defense Report](https://aka.ms/mddr) menyatakan bahawa 98% pelanggaran yang dilaporkan boleh dicegah dengan amalan kebersihan keselamatan yang kukuh dan perlindungan terbaik terhadap sebarang jenis pelanggaran adalah dengan memastikan kebersihan keselamatan asas, amalan pengekodan selamat dan keselamatan rantaian bekalan dilakukan dengan betul — amalan yang telah diuji dan terbukti ini masih memberi impak paling besar dalam mengurangkan risiko keselamatan.
 
-Let’s explore some ways to start addressing security risks when adopting MCP.
+Mari kita lihat beberapa cara yang boleh anda mulakan untuk menangani risiko keselamatan apabila menggunakan MCP.
 
-> **Note:** The following information is accurate as of **29th May 2025**. The MCP protocol continues to evolve, and future versions may introduce new authentication patterns and controls. For the latest updates and guidance, always consult the [MCP Specification](https://spec.modelcontextprotocol.io/) and the official [MCP GitHub repository](https://github.com/modelcontextprotocol) as well as the [security best practice page](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices).
+> **Note:** Maklumat berikut adalah tepat sehingga **29 Mei 2025**. Protokol MCP sentiasa berkembang, dan pelaksanaan masa depan mungkin memperkenalkan corak pengesahan dan kawalan baru. Untuk kemas kini dan panduan terkini, sentiasa rujuk [MCP Specification](https://spec.modelcontextprotocol.io/) dan repositori rasmi [MCP GitHub](https://github.com/modelcontextprotocol) serta [halaman amalan terbaik keselamatan](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices).
 
-### Problem statement  
-The original MCP specification assumed developers would build their own authentication server, requiring knowledge of OAuth and related security constraints. MCP servers acted as OAuth 2.0 Authorization Servers, handling user authentication directly instead of delegating it to an external service like Microsoft Entra ID. As of **26 April 2025**, an update to the MCP specification allows MCP servers to delegate user authentication to an external service.
+### Pernyataan masalah  
+Spesifikasi asal MCP menganggap pembangun akan menulis pelayan pengesahan mereka sendiri. Ini memerlukan pengetahuan tentang OAuth dan kekangan keselamatan berkaitan. Pelayan MCP bertindak sebagai Pelayan Kebenaran OAuth 2.0, mengurus pengesahan pengguna yang diperlukan secara langsung dan bukannya mendelegasikannya kepada perkhidmatan luaran seperti Microsoft Entra ID. Sehingga **26 April 2025**, kemas kini spesifikasi MCP membenarkan pelayan MCP mendelegasikan pengesahan pengguna kepada perkhidmatan luaran.
 
-### Risks
-- Misconfigured authorization logic in the MCP server can expose sensitive data and cause incorrect access controls.
-- Theft of OAuth tokens on the local MCP server. If stolen, these tokens can be used to impersonate the MCP server and access resources and data associated with the token.
+### Risiko
+- Logik kebenaran yang salah konfigurasi dalam pelayan MCP boleh menyebabkan pendedahan data sensitif dan kawalan akses yang tidak betul.
+- Kecurian token OAuth pada pelayan MCP tempatan. Jika dicuri, token tersebut boleh digunakan untuk menyamar sebagai pelayan MCP dan mengakses sumber serta data dari perkhidmatan yang token OAuth itu untuknya.
 
-#### Token Passthrough  
-Token passthrough is explicitly prohibited in the authorization specification because it introduces several security risks, including:
+#### Token Passthrough
+Token passthrough secara jelas dilarang dalam spesifikasi kebenaran kerana ia memperkenalkan beberapa risiko keselamatan, termasuk:
 
-#### Security Control Circumvention  
-The MCP Server or downstream APIs may enforce important security controls like rate limiting, request validation, or traffic monitoring based on token audience or other credential constraints. If clients can obtain and use tokens directly with downstream APIs without the MCP server properly validating them or ensuring tokens are issued for the correct service, these controls are bypassed.
+#### Pengelakan Kawalan Keselamatan
+Pelayan MCP atau API hiliran mungkin melaksanakan kawalan keselamatan penting seperti had kadar, pengesahan permintaan, atau pemantauan trafik, yang bergantung pada audiens token atau kekangan kelayakan lain. Jika klien boleh mendapatkan dan menggunakan token terus dengan API hiliran tanpa pelayan MCP mengesahkannya dengan betul atau memastikan token dikeluarkan untuk perkhidmatan yang betul, mereka akan memintas kawalan ini.
 
-#### Accountability and Audit Trail Issues  
-The MCP Server cannot identify or distinguish between MCP Clients when clients call with an upstream-issued access token that may be opaque to the MCP Server.  
-The downstream Resource Server’s logs might show requests appearing to come from a different source or identity than the actual MCP server forwarding the tokens.  
-Both factors complicate incident investigation, control enforcement, and auditing.  
-If the MCP Server passes tokens without validating claims (like roles, privileges, or audience) or other metadata, an attacker with a stolen token can use the server as a proxy to exfiltrate data.
+#### Isu Akauntabiliti dan Jejak Audit
+Pelayan MCP tidak dapat mengenal pasti atau membezakan antara Klien MCP apabila klien memanggil dengan token akses yang dikeluarkan oleh hulu yang mungkin tidak dapat dilihat oleh pelayan MCP.  
+Log pelayan Sumber hiliran mungkin menunjukkan permintaan yang kelihatan datang dari sumber berbeza dengan identiti berbeza, bukan pelayan MCP yang sebenarnya meneruskan token tersebut.  
+Kedua-dua faktor ini menyukarkan penyiasatan insiden, kawalan, dan audit.  
+Jika pelayan MCP meneruskan token tanpa mengesahkan tuntutan mereka (contohnya, peranan, keistimewaan, atau audiens) atau metadata lain, pelaku berniat jahat yang memiliki token curi boleh menggunakan pelayan sebagai proksi untuk pengeluaran data.
 
-#### Trust Boundary Issues  
-The downstream Resource Server trusts specific entities, often based on origin or client behavior patterns. Violating this trust boundary can cause unexpected problems.  
-If tokens are accepted by multiple services without proper validation, an attacker compromising one service can use the token to access others.
+#### Isu Sempadan Kepercayaan
+Pelayan Sumber hiliran memberi kepercayaan kepada entiti tertentu. Kepercayaan ini mungkin termasuk andaian tentang asal atau corak tingkah laku klien. Memecahkan sempadan kepercayaan ini boleh menyebabkan isu yang tidak dijangka.  
+Jika token diterima oleh pelbagai perkhidmatan tanpa pengesahan yang betul, penyerang yang menembusi satu perkhidmatan boleh menggunakan token itu untuk mengakses perkhidmatan lain yang bersambung.
 
-#### Future Compatibility Risk  
-Even if an MCP Server starts as a “pure proxy” today, it may need to add security controls later. Starting with proper token audience separation makes evolving the security model easier.
+#### Risiko Keserasian Masa Depan
+Walaupun pelayan MCP bermula sebagai “proksi tulen” hari ini, ia mungkin perlu menambah kawalan keselamatan kemudian. Memulakan dengan pemisahan audiens token yang betul memudahkan evolusi model keselamatan.
 
-### Mitigating controls
+### Kawalan mitigasi
 
-**MCP servers MUST NOT accept any tokens not explicitly issued for the MCP server**
+**Pelayan MCP TIDAK BOLEH menerima sebarang token yang tidak dikeluarkan secara eksplisit untuk pelayan MCP**
 
-- **Review and Harden Authorization Logic:** Thoroughly audit your MCP server’s authorization to ensure only intended users and clients can access sensitive resources. For practical guidance, see [Azure API Management Your Auth Gateway For MCP Servers | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) and [Using Microsoft Entra ID To Authenticate With MCP Servers Via Sessions - Den Delimarsky](https://den.dev/blog/mcp-server-auth-entra-id-session/).
-- **Enforce Secure Token Practices:** Follow [Microsoft’s best practices for token validation and lifetime](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens) to prevent token misuse and reduce the risk of replay or theft.
-- **Protect Token Storage:** Always store tokens securely and use encryption both at rest and in transit. For implementation tips, see [Use secure token storage and encrypt tokens](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2).
+- **Semak dan Kukuhkan Logik Kebenaran:** Audit dengan teliti pelaksanaan kebenaran pelayan MCP anda untuk memastikan hanya pengguna dan klien yang dimaksudkan boleh mengakses sumber sensitif. Untuk panduan praktikal, lihat [Azure API Management Your Auth Gateway For MCP Servers | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) dan [Using Microsoft Entra ID To Authenticate With MCP Servers Via Sessions - Den Delimarsky](https://den.dev/blog/mcp-server-auth-entra-id-session/).
+- **Laksanakan Amalan Token Selamat:** Ikuti [amalan terbaik Microsoft untuk pengesahan token dan jangka hayat](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens) untuk mengelakkan penyalahgunaan token akses dan mengurangkan risiko pengulangan atau kecurian token.
+- **Lindungi Penyimpanan Token:** Sentiasa simpan token dengan selamat dan gunakan penyulitan untuk melindungi token semasa disimpan dan dalam transit. Untuk petua pelaksanaan, lihat [Use secure token storage and encrypt tokens](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2).
 
-# Excessive permissions for MCP servers
+# Kebenaran berlebihan untuk pelayan MCP
 
-### Problem statement  
-MCP servers may be granted more permissions than necessary for the resources they access. For example, an MCP server in an AI sales app connected to an enterprise data store should only have access scoped to sales data, not all files in the store. Following the principle of least privilege—one of the oldest security principles—no resource should have permissions beyond what it needs to perform its tasks. AI increases the challenge here because its flexibility makes it harder to define exact permissions.
+### Pernyataan masalah  
+Pelayan MCP mungkin telah diberikan kebenaran berlebihan ke atas perkhidmatan/sumber yang diaksesnya. Contohnya, pelayan MCP yang merupakan sebahagian daripada aplikasi jualan AI yang menyambung ke stor data perusahaan harus mempunyai akses yang terhad kepada data jualan sahaja dan tidak dibenarkan mengakses semua fail dalam stor tersebut. Merujuk kembali kepada prinsip keistimewaan minimum (salah satu prinsip keselamatan tertua), tiada sumber harus mempunyai kebenaran melebihi apa yang diperlukan untuk melaksanakan tugas yang dimaksudkan. AI menghadirkan cabaran yang lebih besar dalam ruang ini kerana untuk membolehkan fleksibiliti, sukar untuk menentukan kebenaran tepat yang diperlukan.
 
-### Risks  
-- Excessive permissions can allow data exfiltration or modification beyond what the MCP server should access. This may also cause privacy issues if the data includes personally identifiable information (PII).
+### Risiko  
+- Memberi kebenaran berlebihan boleh membenarkan pengeluaran atau pengubahsuaian data yang tidak sepatutnya diakses oleh pelayan MCP. Ini juga boleh menjadi isu privasi jika data tersebut adalah maklumat peribadi yang boleh dikenal pasti (PII).
 
-### Mitigating controls  
-- **Apply the Principle of Least Privilege:** Grant the MCP server only the minimum permissions necessary to perform its tasks. Regularly review and adjust permissions to avoid excess. For detailed guidance, see [Secure least-privileged access](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access).
-- **Use Role-Based Access Control (RBAC):** Assign roles to the MCP server that are tightly scoped to specific resources and actions, avoiding broad or unnecessary permissions.
-- **Monitor and Audit Permissions:** Continuously monitor permission use and audit access logs to quickly detect and fix excessive or unused privileges.
+### Kawalan mitigasi  
+- **Gunakan Prinsip Keistimewaan Minimum:** Berikan pelayan MCP hanya kebenaran minimum yang diperlukan untuk melaksanakan tugasnya. Semak dan kemas kini kebenaran ini secara berkala untuk memastikan ia tidak melebihi keperluan. Untuk panduan terperinci, lihat [Secure least-privileged access](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access).
+- **Gunakan Kawalan Akses Berasaskan Peranan (RBAC):** Tetapkan peranan kepada pelayan MCP yang terhad kepada sumber dan tindakan tertentu, mengelakkan kebenaran yang luas atau tidak perlu.
+- **Pantau dan Audit Kebenaran:** Pantau penggunaan kebenaran secara berterusan dan audit log akses untuk mengesan dan membetulkan keistimewaan berlebihan atau tidak digunakan dengan segera.
 
-# Indirect prompt injection attacks
+# Serangan suntikan arahan tidak langsung
 
-### Problem statement
+### Pernyataan masalah
 
-Malicious or compromised MCP servers pose significant risks by exposing customer data or enabling unintended actions. These risks are especially relevant in AI and MCP workloads, including:
+Pelayan MCP yang berniat jahat atau telah dikompromi boleh memperkenalkan risiko besar dengan mendedahkan data pelanggan atau membolehkan tindakan yang tidak diingini. Risiko ini sangat relevan dalam beban kerja AI dan berasaskan MCP, di mana:
 
-- **Prompt Injection Attacks:** Attackers embed malicious instructions in prompts or external content, causing the AI system to perform unintended actions or leak sensitive data. Learn more: [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
-- **Tool Poisoning:** Attackers manipulate tool metadata (like descriptions or parameters) to influence AI behavior, potentially bypassing security controls or exfiltrating data. Details: [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
-- **Cross-Domain Prompt Injection:** Malicious instructions embedded in documents, web pages, or emails are processed by the AI, leading to data leaks or manipulation.
-- **Dynamic Tool Modification (Rug Pulls):** Tool definitions can be changed after user approval, introducing malicious behaviors without user awareness.
+- **Serangan Suntikan Arahan (Prompt Injection):** Penyerang menyelitkan arahan berniat jahat dalam arahan atau kandungan luaran, menyebabkan sistem AI melakukan tindakan yang tidak diingini atau mendedahkan data sensitif. Ketahui lebih lanjut: [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
+- **Pencemaran Alat (Tool Poisoning):** Penyerang memanipulasi metadata alat (seperti deskripsi atau parameter) untuk mempengaruhi tingkah laku AI, berpotensi memintas kawalan keselamatan atau mengeluarkan data. Maklumat lanjut: [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
+- **Suntikan Arahan Rentas Domain:** Arahan berniat jahat diselitkan dalam dokumen, halaman web, atau emel, yang kemudian diproses oleh AI, menyebabkan kebocoran atau manipulasi data.
+- **Pengubahsuaian Alat Dinamik (Rug Pulls):** Definisi alat boleh diubah selepas kelulusan pengguna, memperkenalkan tingkah laku berniat jahat baru tanpa pengetahuan pengguna.
 
-These vulnerabilities highlight the need for strong validation, monitoring, and security controls when integrating MCP servers and tools. For more details, see the linked references.
+Kelemahan ini menekankan keperluan untuk pengesahan yang kukuh, pemantauan, dan kawalan keselamatan apabila mengintegrasikan pelayan MCP dan alat ke dalam persekitaran anda. Untuk penerangan lebih mendalam, lihat rujukan yang disertakan di atas.
 
 ![prompt-injection-lg-2048x1034](../../../translated_images/prompt-injection.ed9fbfde297ca877c15bc6daa808681cd3c3dc7bf27bbbda342ef1ba5fc4f52d.ms.png)
 
-**Indirect Prompt Injection** (also called cross-domain prompt injection or XPIA) is a critical vulnerability in generative AI systems, including those using MCP. Here, malicious instructions hidden in external content—such as documents, web pages, or emails—may be interpreted by the AI as legitimate user commands. This can lead to unintended actions like data leaks, harmful content generation, or manipulation of user interactions. For detailed explanations and examples, see [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/).
+**Suntikan Arahan Tidak Langsung** (juga dikenali sebagai suntikan arahan rentas domain atau XPIA) adalah kelemahan kritikal dalam sistem AI generatif, termasuk yang menggunakan Model Context Protocol (MCP). Dalam serangan ini, arahan berniat jahat disembunyikan dalam kandungan luaran—seperti dokumen, halaman web, atau emel. Apabila sistem AI memproses kandungan ini, ia mungkin mentafsir arahan yang diselitkan sebagai arahan pengguna yang sah, mengakibatkan tindakan tidak diingini seperti kebocoran data, penghasilan kandungan berbahaya, atau manipulasi interaksi pengguna. Untuk penjelasan terperinci dan contoh dunia sebenar, lihat [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/).
 
-A particularly dangerous form of this attack is **Tool Poisoning**. Attackers inject malicious instructions into MCP tool metadata (e.g., tool descriptions or parameters). Since large language models (LLMs) rely on this metadata to decide which tools to call, compromised descriptions can trick the model into unauthorized tool calls or bypassing security controls. These manipulations are often invisible to users but interpreted by the AI system. This risk is higher in hosted MCP server environments where tool definitions can be updated after user approval—a scenario known as a "[rug pull](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)". In such cases, a previously safe tool may later be altered to perform malicious actions, like data exfiltration or system manipulation, without the user’s knowledge. For more, see [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
+Bentuk serangan yang sangat berbahaya adalah **Pencemaran Alat (Tool Poisoning)**. Di sini, penyerang menyuntik arahan berniat jahat ke dalam metadata alat MCP (seperti deskripsi alat atau parameter). Oleh kerana model bahasa besar (LLM) bergantung pada metadata ini untuk memutuskan alat mana yang akan digunakan, deskripsi yang dikompromi boleh memperdaya model untuk melaksanakan panggilan alat yang tidak dibenarkan atau memintas kawalan keselamatan. Manipulasi ini sering tidak kelihatan oleh pengguna akhir tetapi boleh ditafsir dan dilaksanakan oleh sistem AI. Risiko ini lebih tinggi dalam persekitaran pelayan MCP yang dihoskan, di mana definisi alat boleh dikemas kini selepas kelulusan pengguna—senario yang kadang-kadang dirujuk sebagai "[rug pull](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)". Dalam kes sedemikian, alat yang sebelum ini selamat mungkin diubah kemudian untuk melakukan tindakan berniat jahat, seperti mengeluarkan data atau mengubah tingkah laku sistem, tanpa pengetahuan pengguna. Untuk maklumat lanjut mengenai vektor serangan ini, lihat [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
 
 ![tool-injection-lg-2048x1239 (1)](../../../translated_images/tool-injection.3b0b4a6b24de6befe7d3afdeae44138ef005881aebcfc84c6f61369ce31e3640.ms.png)
 
-## Risks  
-Unintended AI actions can cause security issues such as data leaks and privacy breaches.
+## Risiko  
+Tindakan AI yang tidak diingini membawa pelbagai risiko keselamatan termasuk pengeluaran data dan pelanggaran privasi.
 
-### Mitigating controls  
-### Using prompt shields to protect against Indirect Prompt Injection attacks  
+### Kawalan mitigasi  
+### Menggunakan prompt shields untuk melindungi daripada serangan Suntikan Arahan Tidak Langsung
 -----------------------------------------------------------------------------
 
-**AI Prompt Shields** are Microsoft’s solution to defend against both direct and indirect prompt injection attacks. They work by:
+**AI Prompt Shields** adalah penyelesaian yang dibangunkan oleh Microsoft untuk mempertahankan daripada serangan suntikan arahan langsung dan tidak langsung. Ia membantu melalui:
 
-1.  **Detection and Filtering:** Using advanced machine learning and natural language processing to identify and block malicious instructions embedded in external content like documents, web pages, or emails.
+1.  **Pengesanan dan Penapisan:** Prompt Shields menggunakan algoritma pembelajaran mesin canggih dan pemprosesan bahasa semula jadi untuk mengesan dan menapis arahan berniat jahat yang diselitkan dalam kandungan luaran, seperti dokumen, halaman web, atau emel.
     
-2.  **Spotlighting:** Helping the AI system differentiate valid system instructions from potentially untrustworthy external inputs. By transforming input text to make it more relevant to the model, Spotlighting helps the AI better detect and ignore malicious instructions.
+2.  **Spotlighting:** Teknik ini membantu sistem AI membezakan antara arahan sistem yang sah dan input luaran yang mungkin tidak boleh dipercayai. Dengan mengubah teks input supaya lebih relevan kepada model, Spotlighting memastikan AI dapat mengenal pasti dan mengabaikan arahan berniat jahat dengan lebih baik.
     
-3.  **Delimiters and Datamarking:** Including delimiters in system messages clearly marks the location of input text, helping the AI distinguish user inputs from harmful external content. Datamarking extends this by using special markers to highlight trusted and untrusted data boundaries.
+3.  **Pembatas dan Penandaan Data:** Menyertakan pembatas dalam mesej sistem secara jelas menunjukkan lokasi teks input, membantu sistem AI mengenal pasti dan memisahkan input pengguna daripada kandungan luaran yang berpotensi berbahaya. Penandaan data melanjutkan konsep ini dengan menggunakan penanda khas untuk menyerlahkan sempadan data yang dipercayai dan tidak dipercayai.
     
-4.  **Continuous Monitoring and Updates:** Microsoft continuously monitors and updates Prompt Shields to address new and evolving threats, keeping defenses effective against the latest attack methods.
+4.  **Pemantauan dan Kemas Kini Berterusan:** Microsoft sentiasa memantau dan mengemas kini Prompt Shields untuk menangani ancaman baru dan yang sedang berkembang. Pendekatan proaktif ini memastikan pertahanan kekal berkesan terhadap teknik serangan terkini.
     
-5. **Integration with Azure Content Safety:** Prompt Shields are part of the broader Azure AI Content Safety suite, which offers additional tools to detect jailbreak attempts, harmful content, and other AI security risks.
+5. **Integrasi dengan Azure Content Safety:** Prompt Shields adalah sebahagian daripada suite Azure AI Content Safety yang lebih luas, yang menyediakan alat tambahan untuk mengesan cubaan jailbreak, kandungan berbahaya, dan risiko keselamatan lain dalam aplikasi AI.
 
-You can learn more about AI prompt shields in the [Prompt Shields documentation](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection).
+Anda boleh membaca lebih lanjut mengenai AI prompt shields dalam [dokumentasi Prompt Shields](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection).
 
 ![prompt-shield-lg-2048x1328](../../../translated_images/prompt-shield.ff5b95be76e9c78c6ec0888206a4a6a0a5ab4bb787832a9eceef7a62fe0138d1.ms.png)
 
-### Supply chain security
+### Keselamatan rantaian bekalan
+Keselamatan rantaian bekalan kekal penting dalam era AI, tetapi skop apa yang dianggap sebagai rantaian bekalan anda telah berkembang. Selain pakej kod tradisional, anda kini mesti mengesahkan dan memantau dengan teliti semua komponen berkaitan AI, termasuk model asas, perkhidmatan embeddings, penyedia konteks, dan API pihak ketiga. Setiap satu daripada ini boleh memperkenalkan kelemahan atau risiko jika tidak diurus dengan betul.
 
-Supply chain security remains crucial in the AI era, but the definition of your supply chain has expanded. Beyond traditional code packages, you now must rigorously verify and monitor all AI-related components, including foundation models, embedding services, context providers, and third-party APIs. Each can introduce vulnerabilities if not properly managed.
+**Amalan keselamatan rantaian bekalan utama untuk AI dan MCP:**
+- **Sahkan semua komponen sebelum integrasi:** Ini termasuk bukan sahaja perpustakaan sumber terbuka, tetapi juga model AI, sumber data, dan API luaran. Sentiasa periksa asal usul, lesen, dan kelemahan yang diketahui.
+- **Kekalkan saluran penyebaran yang selamat:** Gunakan saluran CI/CD automatik dengan imbasan keselamatan terbina untuk mengesan isu lebih awal. Pastikan hanya artifak yang dipercayai disebarkan ke produksi.
+- **Pantau dan audit secara berterusan:** Laksanakan pemantauan berterusan untuk semua kebergantungan, termasuk model dan perkhidmatan data, untuk mengesan kelemahan baru atau serangan rantaian bekalan.
+- **Gunakan prinsip keistimewaan minimum dan kawalan akses:** Hadkan akses kepada model, data, dan perkhidmatan hanya kepada apa yang diperlukan untuk server MCP anda berfungsi.
+- **Bertindak cepat terhadap ancaman:** Sediakan proses untuk menampal atau menggantikan komponen yang terjejas, dan untuk menukar rahsia atau kelayakan jika berlaku pelanggaran.
 
-**Key supply chain security practices for AI and MCP:**
-- **Verify all components before integration:** This includes not only open-source libraries but also AI models, data sources, and external APIs. Always check provenance, licensing, and known vulnerabilities.
-- **Maintain secure deployment pipelines:** Use automated CI/CD pipelines with integrated security scanning to catch issues early. Ensure only trusted artifacts are deployed to production.
-- **Continuously monitor and audit:** Implement ongoing monitoring of all dependencies, including models and data services, to detect new vulnerabilities or supply chain attacks.
-- **Apply least privilege and access controls:** Restrict access to models, data, and services to only what the MCP server requires.
-- **Respond quickly to threats:** Have processes to patch or replace compromised components and rotate secrets or credentials if a breach occurs.
+[GitHub Advanced Security](https://github.com/security/advanced-security) menyediakan ciri seperti imbasan rahsia, imbasan kebergantungan, dan analisis CodeQL. Alat ini berintegrasi dengan [Azure DevOps](https://azure.microsoft.com/en-us/products/devops) dan [Azure Repos](https://azure.microsoft.com/en-us/products/devops/repos/) untuk membantu pasukan mengenal pasti dan mengurangkan kelemahan dalam kod dan komponen rantaian bekalan AI.
 
-[GitHub Advanced Security](https://github.com/security/advanced-security) offers features like secret scanning, dependency scanning, and CodeQL analysis. These integrate with [Azure DevOps](https://azure.microsoft.com/en-us/products/devops) and [Azure Repos](https://azure.microsoft.com/en-us/products/devops/repos/) to help teams identify and fix vulnerabilities across code and AI supply chain components.
+Microsoft juga melaksanakan amalan keselamatan rantaian bekalan yang meluas secara dalaman untuk semua produk. Ketahui lebih lanjut dalam [The Journey to Secure the Software Supply Chain at Microsoft](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/).
 
-Microsoft also applies extensive supply chain security practices internally across all products. Learn more in [The Journey to Secure the Software Supply Chain at Microsoft](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/).
 
-# Established security best practices that will uplift your MCP implementation's security posture
+# Amalan keselamatan terbaik yang telah ditetapkan untuk meningkatkan kedudukan keselamatan pelaksanaan MCP anda
 
-Any MCP implementation inherits the security posture of the organization’s environment it is built on. Therefore, when securing MCP as part of your overall AI systems, it’s recommended to strengthen your existing security posture. The following established controls are especially relevant:
+Mana-mana pelaksanaan MCP mewarisi kedudukan keselamatan sedia ada persekitaran organisasi anda yang menjadi asasnya, jadi apabila mempertimbangkan keselamatan MCP sebagai komponen sistem AI keseluruhan anda, disarankan untuk meningkatkan kedudukan keselamatan sedia ada anda secara keseluruhan. Kawalan keselamatan yang telah ditetapkan berikut adalah sangat relevan:
 
-- Secure coding best practices in your AI application—protect against [the OWASP Top 10](https://owasp.org/www-project-top-ten/), the [OWASP Top 10 for LLMs](https://genai.owasp.org/download/43299/?tmstv=1731900559), use secure vaults for secrets and tokens, implement end-to-end secure communications between components, etc.
-- Server hardening—use MFA where possible, keep patches current, integrate servers with third-party identity providers for access, and more.
-- Keep devices, infrastructure, and applications up to date with patches.
-- Security monitoring—implement logging and monitoring of AI applications (including MCP clients and servers) and send logs to a central SIEM for detecting anomalies.
-- Zero trust architecture—isolate components through network and identity controls to minimize lateral movement if an AI application is compromised.
+-   Amalan pengekodan selamat dalam aplikasi AI anda – lindungi daripada [OWASP Top 10](https://owasp.org/www-project-top-ten/), [OWASP Top 10 untuk LLMs](https://genai.owasp.org/download/43299/?tmstv=1731900559), penggunaan peti keselamatan untuk rahsia dan token, melaksanakan komunikasi selamat hujung ke hujung antara semua komponen aplikasi, dan sebagainya.
+-   Pengukuhan server – gunakan MFA jika boleh, sentiasa kemas kini tampalan, integrasikan server dengan penyedia identiti pihak ketiga untuk akses, dan lain-lain.
+-   Pastikan peranti, infrastruktur dan aplikasi sentiasa dikemas kini dengan tampalan
+-   Pemantauan keselamatan – melaksanakan pencatatan dan pemantauan aplikasi AI (termasuk klien/server MCP) dan menghantar log tersebut ke SIEM pusat untuk mengesan aktiviti luar biasa
+-   Seni bina zero trust – mengasingkan komponen melalui kawalan rangkaian dan identiti secara logik untuk meminimumkan pergerakan sisi jika aplikasi AI dikompromi.
 
-# Key Takeaways
+# Perkara Penting
 
-- Security fundamentals remain vital: secure coding, least privilege, supply chain verification, and continuous monitoring are essential for MCP and AI workloads.
-- MCP introduces new risks—such as prompt injection, tool poisoning, and excessive permissions—that require both traditional and AI-specific controls.
-- Use strong authentication, authorization, and token management, leveraging external identity providers like Microsoft Entra ID when possible.
-- Protect against indirect prompt injection and tool poisoning by validating tool metadata, monitoring for dynamic changes, and using solutions like Microsoft Prompt Shields.
-- Treat all components in your AI supply chain—including models, embeddings, and context providers—with the same rigor as code dependencies.
-- Stay up to date with evolving MCP specifications and contribute to the community to help shape secure standards.
+- Asas keselamatan kekal kritikal: Pengekodan selamat, keistimewaan minimum, pengesahan rantaian bekalan, dan pemantauan berterusan adalah penting untuk beban kerja MCP dan AI.
+- MCP memperkenalkan risiko baru—seperti suntikan prompt, pencemaran alat, dan kebenaran berlebihan—yang memerlukan kawalan tradisional dan khusus AI.
+- Gunakan amalan pengesahan, kebenaran, dan pengurusan token yang kukuh, memanfaatkan penyedia identiti luaran seperti Microsoft Entra ID jika boleh.
+- Lindungi daripada suntikan prompt tidak langsung dan pencemaran alat dengan mengesahkan metadata alat, memantau perubahan dinamik, dan menggunakan penyelesaian seperti Microsoft Prompt Shields.
+- Perlakukan semua komponen dalam rantaian bekalan AI anda—termasuk model, embeddings, dan penyedia konteks—dengan ketelitian yang sama seperti kebergantungan kod.
+- Sentiasa kemas kini dengan spesifikasi MCP yang berkembang dan sumbangkan kepada komuniti untuk membantu membentuk piawaian keselamatan.
 
-# Additional Resources
+# Sumber Tambahan
 
 - [Microsoft Digital Defense Report](https://aka.ms/mddr)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
@@ -179,9 +179,9 @@ Any MCP implementation inherits the security posture of the organization’s env
 - [MCP Security Best Practice](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 - [Using Microsoft Entra ID to Authenticate with MCP Servers](https://den.dev/blog/mcp-server-auth-entra-id-session/)
 
-### Next 
+### Seterusnya
 
-Next: [Chapter 3: Getting Started](/03-GettingStarted/README.md)
+Seterusnya: [Chapter 3: Getting Started](../03-GettingStarted/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

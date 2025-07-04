@@ -1,50 +1,50 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7816cc28f7ab9a54e31f9246429ffcd9",
-  "translation_date": "2025-06-13T01:32:50+00:00",
+  "original_hash": "1d9dc83260576b76f272d330ed93c51f",
+  "translation_date": "2025-07-04T19:07:48+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "hr"
 }
 -->
-# Deployanje MCP servera
+# Postavljanje MCP poslužitelja
 
-Deployanje vašeg MCP servera omogućuje drugima pristup njegovim alatima i resursima izvan vašeg lokalnog okruženja. Postoji nekoliko strategija za deployanje, ovisno o vašim zahtjevima za skalabilnošću, pouzdanošću i jednostavnošću upravljanja. Ispod ćete pronaći upute za deployanje MCP servera lokalno, u kontejnerima i u oblaku.
+Postavljanje vašeg MCP poslužitelja omogućuje drugima pristup njegovim alatima i resursima izvan vaše lokalne okoline. Postoji nekoliko strategija postavljanja koje treba razmotriti, ovisno o vašim zahtjevima za skalabilnošću, pouzdanošću i jednostavnošću upravljanja. U nastavku ćete pronaći upute za postavljanje MCP poslužitelja lokalno, u kontejnerima i u oblaku.
 
 ## Pregled
 
-Ova lekcija objašnjava kako deployati vašu MCP Server aplikaciju.
+Ova lekcija objašnjava kako postaviti vašu MCP Server aplikaciju.
 
 ## Ciljevi učenja
 
 Na kraju ove lekcije moći ćete:
 
-- Procijeniti različite pristupe deployanju.
-- Deployati svoju aplikaciju.
+- Procijeniti različite pristupe postavljanju.
+- Postaviti svoju aplikaciju.
 
-## Lokalni razvoj i deployanje
+## Lokalni razvoj i postavljanje
 
-Ako je vaš server namijenjen da ga korisnici pokreću na svojim računalima, slijedite sljedeće korake:
+Ako je vaš poslužitelj namijenjen za korištenje na korisničkom računalu, možete slijediti sljedeće korake:
 
-1. **Preuzmite server**. Ako niste vi pisali server, prvo ga preuzmite na svoje računalo.  
-1. **Pokrenite server proces**: Pokrenite vašu MCP server aplikaciju.
+1. **Preuzmite poslužitelj**. Ako niste vi napisali poslužitelj, prvo ga preuzmite na svoje računalo.  
+1. **Pokrenite poslužiteljski proces**: Pokrenite vašu MCP server aplikaciju
 
-Za SSE (nije potrebno za stdio tip servera):
+Za SSE (nije potrebno za stdio tip poslužitelja)
 
-1. **Konfigurirajte mrežu**: Provjerite da je server dostupan na očekivanom portu.  
-1. **Povežite klijente**: Koristite lokalne URL-ove za povezivanje poput `http://localhost:3000`.
+1. **Konfigurirajte mrežu**: Provjerite je li poslužitelj dostupan na očekivanom portu  
+1. **Povežite klijente**: Koristite lokalne URL-ove poput `http://localhost:3000`
 
-## Deployanje u oblak
+## Postavljanje u oblaku
 
-MCP serveri mogu se deployati na različite cloud platforme:
+MCP poslužitelji mogu se postaviti na različite cloud platforme:
 
-- **Serverless funkcije**: Deployajte lagane MCP servere kao serverless funkcije  
-- **Container servisi**: Koristite servise poput Azure Container Apps, AWS ECS ili Google Cloud Run  
-- **Kubernetes**: Deployajte i upravljajte MCP serverima u Kubernetes klasterima za visoku dostupnost
+- **Serverless funkcije**: Postavite lagane MCP poslužitelje kao serverless funkcije  
+- **Usluge kontejnera**: Koristite usluge poput Azure Container Apps, AWS ECS ili Google Cloud Run  
+- **Kubernetes**: Postavite i upravljajte MCP poslužiteljima u Kubernetes klasterima za visoku dostupnost
 
 ### Primjer: Azure Container Apps
 
-Azure Container Apps podržava deployanje MCP servera. Još je u razvoju i trenutno podržava SSE servere.
+Azure Container Apps podržava postavljanje MCP poslužitelja. Još je u fazi razvoja i trenutno podržava SSE poslužitelje.
 
 Evo kako to možete napraviti:
 
@@ -54,7 +54,7 @@ Evo kako to možete napraviti:
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
   ```
 
-1. Pokrenite lokalno za testiranje:
+1. Pokrenite ga lokalno za testiranje:
 
   ```sh
   uv venv
@@ -92,15 +92,15 @@ Evo kako to možete napraviti:
   }
   ```
 
-  Nakon što se SSE server pokrene, kliknite na ikonu za pokretanje u JSON datoteci; sada biste trebali vidjeti da alati na serveru budu prepoznati od strane GitHub Copilota, vidite ikonu Tool.
+  Nakon što se SSE poslužitelj pokrene, možete kliknuti na ikonu za pokretanje u JSON datoteci, sada biste trebali vidjeti da GitHub Copilot prepoznaje alate na poslužitelju, pogledajte ikonu alata.
 
-1. Za deployanje pokrenite sljedeću naredbu:
+1. Za postavljanje, pokrenite sljedeću naredbu:
 
   ```sh
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-Eto, deployajte lokalno ili u Azure slijedeći ove korake.
+Eto, postavite ga lokalno ili na Azure slijedeći ove korake.
 
 ## Dodatni resursi
 
@@ -110,7 +110,7 @@ Eto, deployajte lokalno ili u Azure slijedeći ove korake.
 
 ## Što slijedi
 
-- Sljedeće: [Praktična implementacija](/04-PracticalImplementation/README.md)
+- Sljedeće: [Praktična implementacija](../../04-PracticalImplementation/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne odgovaramo za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

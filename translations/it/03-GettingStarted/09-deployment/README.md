@@ -1,60 +1,60 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7816cc28f7ab9a54e31f9246429ffcd9",
-  "translation_date": "2025-06-13T01:29:14+00:00",
+  "original_hash": "1d9dc83260576b76f272d330ed93c51f",
+  "translation_date": "2025-07-04T17:05:16+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "it"
 }
 -->
-# Distribuire server MCP
+# Distribuire i server MCP
 
-Distribuirea serverului MCP permite altora să acceseze uneltele și resursele sale dincolo de mediul local. Există mai multe strategii de implementare, în funcție de cerințele tale privind scalabilitatea, fiabilitatea și ușurința gestionării. Mai jos vei găsi indicații pentru a distribui servere MCP local, în containere și în cloud.
+Distribuire il tuo server MCP permette ad altri di accedere ai suoi strumenti e risorse oltre il tuo ambiente locale. Ci sono diverse strategie di distribuzione da considerare, a seconda delle tue esigenze di scalabilità, affidabilità e facilità di gestione. Di seguito troverai indicazioni per distribuire i server MCP localmente, in container e sul cloud.
 
-## Prezentare generală
+## Panoramica
 
-Această lecție explică cum să distribui aplicația MCP Server.
+Questa lezione spiega come distribuire la tua app MCP Server.
 
-## Obiective de învățare
+## Obiettivi di apprendimento
 
-La finalul acestei lecții, vei putea:
+Al termine di questa lezione, sarai in grado di:
 
-- Evalua diferite abordări de implementare.
-- Distribui aplicația ta.
+- Valutare diversi approcci di distribuzione.
+- Distribuire la tua app.
 
-## Dezvoltare și implementare locală
+## Sviluppo e distribuzione locale
 
-Dacă serverul tău este destinat să fie folosit rulând pe calculatorul utilizatorului, poți urma pașii următori:
+Se il tuo server è pensato per essere utilizzato direttamente sulla macchina degli utenti, puoi seguire questi passaggi:
 
-1. **Descarcă serverul**. Dacă nu ai scris serverul, descarcă-l mai întâi pe calculatorul tău.  
-1. **Pornește procesul serverului**: Rulează aplicația MCP server.
+1. **Scarica il server**. Se non hai scritto il server, scaricalo prima sulla tua macchina.  
+1. **Avvia il processo del server**: Esegui la tua applicazione MCP server.
 
-Pentru SSE (nu este necesar pentru serverele de tip stdio)
+Per SSE (non necessario per server di tipo stdio)
 
-1. **Configurează rețeaua**: Asigură-te că serverul este accesibil pe portul așteptat.  
-1. **Conectează clienții**: Folosește URL-uri de conexiune locale precum `http://localhost:3000`.
+1. **Configura la rete**: Assicurati che il server sia accessibile sulla porta prevista.  
+1. **Connetti i client**: Usa URL di connessione locali come `http://localhost:3000`.
 
-## Implementare în cloud
+## Distribuzione sul cloud
 
-Serverele MCP pot fi distribuite pe diverse platforme cloud:
+I server MCP possono essere distribuiti su diverse piattaforme cloud:
 
-- **Funcții serverless**: Distribuie servere MCP ușoare ca funcții serverless.  
-- **Servicii de containere**: Folosește servicii precum Azure Container Apps, AWS ECS sau Google Cloud Run.  
-- **Kubernetes**: Distribuie și gestionează servere MCP în clustere Kubernetes pentru disponibilitate ridicată.
+- **Funzioni serverless**: Distribuisci server MCP leggeri come funzioni serverless.  
+- **Servizi container**: Usa servizi come Azure Container Apps, AWS ECS o Google Cloud Run.  
+- **Kubernetes**: Distribuisci e gestisci i server MCP in cluster Kubernetes per alta disponibilità.
 
-### Exemplu: Azure Container Apps
+### Esempio: Azure Container Apps
 
-Azure Container Apps suportă distribuirea serverelor MCP. Este încă în dezvoltare și momentan suportă servere SSE.
+Azure Container Apps supporta la distribuzione di server MCP. È ancora in fase di sviluppo e attualmente supporta server SSE.
 
-Iată cum poți proceda:
+Ecco come procedere:
 
-1. Clonează un repo:
+1. Clona un repository:
 
   ```sh
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
   ```
 
-1. Rulează-l local pentru a testa:
+1. Eseguilo localmente per fare dei test:
 
   ```sh
   uv venv
@@ -68,7 +68,7 @@ Iată cum poți proceda:
   uv run fastapi dev main.py
   ```
 
-1. Pentru a-l testa local, creează un fișier *mcp.json* într-un director *.vscode* și adaugă următorul conținut:
+1. Per provarlo localmente, crea un file *mcp.json* in una cartella *.vscode* e aggiungi il seguente contenuto:
 
   ```json
   {
@@ -92,25 +92,26 @@ Iată cum poți proceda:
   }
   ```
 
-  După ce serverul SSE pornește, poți da click pe iconița de play din fișierul JSON; acum uneltele de pe server ar trebui să fie recunoscute de GitHub Copilot, vezi iconița Tool.
+  Una volta avviato il server SSE, puoi cliccare sull’icona play nel file JSON; ora dovresti vedere gli strumenti del server riconosciuti da GitHub Copilot, guarda l’icona Tool.
 
-1. Pentru a distribui, rulează comanda următoare:
+1. Per distribuire, esegui il seguente comando:
 
   ```sh
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-Așa că, iată cum îl poți distribui local sau în Azure urmând acești pași.
+Ecco fatto, distribuiscilo localmente o su Azure seguendo questi passaggi.
 
-## Resurse suplimentare
+## Risorse aggiuntive
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
-- [Articol Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
-- [Repo Azure Container Apps MCP](https://github.com/anthonychu/azure-container-apps-mcp-sample)
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
+- [Articolo su Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
+- [Repository MCP per Azure Container Apps](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
 
-## Ce urmează
 
-- Următorul: [Implementare practică](/04-PracticalImplementation/README.md)
+## Cosa c’è dopo
 
-**Avvertenza**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di considerare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali fraintendimenti o interpretazioni errate derivanti dall’uso di questa traduzione.
+- Successivo: [Implementazione pratica](../../04-PracticalImplementation/README.md)
+
+**Disclaimer**:  
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

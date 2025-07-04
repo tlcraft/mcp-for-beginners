@@ -1,37 +1,37 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6940b1e931e51821b219aa9dcfe8c4ee",
-  "translation_date": "2025-06-23T11:16:41+00:00",
+  "original_hash": "873741da08dd6537858d5e14c3a386e1",
+  "translation_date": "2025-07-04T18:40:53+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "sk"
 }
 -->
 # MCP v praxi: Skutočné prípadové štúdie
 
-Model Context Protocol (MCP) mení spôsob, akým AI aplikácie komunikujú s dátami, nástrojmi a službami. Táto sekcia predstavuje reálne prípadové štúdie, ktoré ukazujú praktické využitie MCP v rôznych podnikových scenároch.
+Model Context Protocol (MCP) mení spôsob, akým AI aplikácie komunikujú s dátami, nástrojmi a službami. Táto sekcia predstavuje skutočné prípadové štúdie, ktoré ukazujú praktické využitie MCP v rôznych podnikových scenároch.
 
 ## Prehľad
 
-Táto sekcia prináša konkrétne príklady implementácií MCP a zdôrazňuje, ako organizácie využívajú tento protokol na riešenie zložitých obchodných výziev. Preskúmaním týchto prípadových štúdií získate prehľad o všestrannosti, škálovateľnosti a praktických výhodách MCP v reálnych situáciách.
+Táto časť prináša konkrétne príklady implementácií MCP a zdôrazňuje, ako organizácie využívajú tento protokol na riešenie zložitých obchodných výziev. Preskúmaním týchto prípadových štúdií získate prehľad o všestrannosti, škálovateľnosti a praktických výhodách MCP v reálnych situáciách.
 
 ## Kľúčové ciele učenia
 
 Preskúmaním týchto prípadových štúdií budete:
 
-- Rozumieť, ako možno MCP využiť na riešenie konkrétnych obchodných problémov
-- Spoznáte rôzne integračné vzory a architektonické prístupy
-- Identifikovať osvedčené postupy pri implementácii MCP v podnikových prostrediach
-- Získať poznatky o výzvach a riešeniach, ktoré sa vyskytli pri reálnych implementáciách
-- Objaviť príležitosti na aplikáciu podobných vzorov vo vlastných projektoch
+- Rozumieť, ako možno MCP použiť na riešenie konkrétnych obchodných problémov
+- Naučiť sa o rôznych integračných vzorcoch a architektonických prístupoch
+- Spoznať osvedčené postupy pri implementácii MCP v podnikových prostrediach
+- Získať prehľad o výzvach a riešeniach, ktoré sa objavili pri reálnych implementáciách
+- Identifikovať príležitosti na použitie podobných vzorcov vo vlastných projektoch
 
 ## Vybrané prípadové štúdie
 
 ### 1. [Azure AI Travel Agents – Referenčná implementácia](./travelagentsample.md)
 
-Táto prípadová štúdia skúma komplexné referenčné riešenie od Microsoftu, ktoré demonštruje, ako vytvoriť viacagentovú AI aplikáciu na plánovanie ciest pomocou MCP, Azure OpenAI a Azure AI Search. Projekt ukazuje:
+Táto prípadová štúdia skúma komplexné referenčné riešenie od Microsoftu, ktoré ukazuje, ako vytvoriť viacagentovú AI aplikáciu na plánovanie ciest pomocou MCP, Azure OpenAI a Azure AI Search. Projekt predstavuje:
 
-- Orchestráciu viac agentov cez MCP
+- Orchestrace viacerých agentov cez MCP
 - Integráciu podnikových dát s Azure AI Search
 - Bezpečnú a škálovateľnú architektúru využívajúcu Azure služby
 - Rozšíriteľné nástroje s opakovane použiteľnými MCP komponentmi
@@ -43,68 +43,68 @@ Architektúra a detaily implementácie poskytujú cenné poznatky o budovaní zl
 
 Táto prípadová štúdia ukazuje praktické využitie MCP na automatizáciu pracovných procesov. Demonštruje, ako možno MCP nástroje použiť na:
 
-- Extrahovanie dát z online platforiem (YouTube)
+- Extrakciu dát z online platforiem (YouTube)
 - Aktualizáciu pracovných položiek v systémoch Azure DevOps
-- Vytvorenie opakovateľných automatizačných pracovných tokov
-- Integráciu dát medzi rôznymi systémami
+- Vytváranie opakovateľných automatizačných pracovných tokov
+- Integráciu dát naprieč rôznymi systémami
 
-Tento príklad ilustruje, že aj relatívne jednoduché implementácie MCP môžu priniesť výrazné zlepšenie efektivity automatizáciou rutinných úloh a zvýšením konzistencie dát naprieč systémami.
+Tento príklad ilustruje, ako aj relatívne jednoduché implementácie MCP môžu priniesť výrazné zlepšenie efektivity automatizáciou rutinných úloh a zlepšením konzistencie dát medzi systémami.
 
-### 3. [Získavanie dokumentácie v reálnom čase pomocou MCP](./docs-mcp/README.md)
+### 3. [Získavanie dokumentácie v reálnom čase s MCP](./docs-mcp/README.md)
 
-Táto prípadová štúdia vás prevedie pripojením Python konzolového klienta k MCP serveru na získavanie a zaznamenávanie aktuálnej, kontextovo relevantnej dokumentácie Microsoftu v reálnom čase. Naučíte sa, ako:
+Táto prípadová štúdia vás prevedie pripojením Python konzolového klienta k MCP serveru na získavanie a zaznamenávanie aktuálnej, kontextovo relevantnej Microsoft dokumentácie v reálnom čase. Naučíte sa, ako:
 
 - Pripojiť sa k MCP serveru pomocou Python klienta a oficiálneho MCP SDK
-- Používať streaming HTTP klientov pre efektívne získavanie dát v reálnom čase
+- Použiť streaming HTTP klientov pre efektívne získavanie dát v reálnom čase
 - Volat nástroje na dokumentáciu na serveri a zaznamenávať odpovede priamo do konzoly
 - Integrovať aktuálnu Microsoft dokumentáciu do svojho pracovného toku bez opustenia terminálu
 
-Kapitola obsahuje praktické zadanie, minimálny funkčný ukážkový kód a odkazy na ďalšie zdroje pre hlbšie štúdium. Pozrite si kompletný návod a kód v prepojenej kapitole, aby ste pochopili, ako MCP môže zmeniť prístup k dokumentácii a zvýšiť produktivitu vývojárov v konzolovom prostredí.
+Kapitola obsahuje praktické zadanie, minimálny funkčný ukážkový kód a odkazy na ďalšie zdroje pre hlbšie štúdium. Pozrite si kompletný návod a kód v prepojenej kapitole, aby ste pochopili, ako MCP môže zmeniť prístup k dokumentácii a zvýšiť produktivitu vývojárov v konzolových prostrediach.
 
 ### 4. [Interaktívna webová aplikácia na generovanie študijných plánov s MCP](./docs-mcp/README.md)
 
-Táto prípadová štúdia ukazuje, ako vytvoriť interaktívnu webovú aplikáciu pomocou Chainlit a Model Context Protocol (MCP) na generovanie personalizovaných študijných plánov pre ľubovoľnú tému. Používatelia môžu zadať predmet (napr. "certifikácia AI-900") a dĺžku štúdia (napr. 8 týždňov) a aplikácia poskytne týždenný rozpis odporúčaného obsahu. Chainlit umožňuje konverzačné chatové rozhranie, ktoré robí zážitok pútavým a prispôsobivým.
+Táto prípadová štúdia ukazuje, ako vytvoriť interaktívnu webovú aplikáciu pomocou Chainlit a Model Context Protocol (MCP) na generovanie personalizovaných študijných plánov pre akúkoľvek tému. Používatelia môžu zadať predmet (napríklad „certifikácia AI-900“) a dĺžku štúdia (napr. 8 týždňov), a aplikácia poskytne týždenný rozpis odporúčaného obsahu. Chainlit umožňuje konverzačné chatové rozhranie, ktoré robí zážitok pútavým a prispôsobivým.
 
 - Konverzačná webová aplikácia poháňaná Chainlit
-- Používateľom riadené zadávanie témy a trvania
-- Odporúčania obsahu týždeň po týždni s využitím MCP
-- Reálne časové, adaptívne odpovede v chatovom rozhraní
+- Používateľom riadené vstupy pre tému a dĺžku štúdia
+- Odporúčania obsahu týždeň po týždni pomocou MCP
+- Reakcie v reálnom čase v chatovom rozhraní
 
-Projekt demonštruje, ako možno kombinovať konverzačnú AI a MCP na vytváranie dynamických, používateľom riadených vzdelávacích nástrojov v modernom webovom prostredí.
+Projekt ukazuje, ako možno kombinovať konverzačnú AI a MCP na vytvorenie dynamických, používateľom riadených vzdelávacích nástrojov v modernom webovom prostredí.
 
 ### 5. [Dokumentácia priamo v editore s MCP serverom vo VS Code](./docs-mcp/README.md)
 
-Táto prípadová štúdia ukazuje, ako priniesť Microsoft Learn Docs priamo do vášho prostredia VS Code pomocou MCP servera – už žiadne prepínanie medzi záložkami prehliadača! Uvidíte, ako:
+Táto prípadová štúdia ukazuje, ako si môžete priniesť Microsoft Learn Docs priamo do prostredia VS Code pomocou MCP servera – už žiadne prepínanie medzi záložkami prehliadača! Uvidíte, ako:
 
-- Okamžite vyhľadávať a čítať dokumentáciu priamo vo VS Code pomocou MCP panelu alebo príkazovej palety
-- Odkazovať na dokumentáciu a vkladať linky priamo do README alebo markdown súborov kurzov
+- Okamžite vyhľadávať a čítať dokumentáciu priamo vo VS Code pomocou MCP panela alebo príkazovej palety
+- Odkazovať na dokumentáciu a vkladať odkazy priamo do README alebo markdown súborov kurzov
 - Používať GitHub Copilot a MCP spoločne pre plynulé AI-poháňané pracovné toky s dokumentáciou a kódom
-- Overovať a vylepšovať dokumentáciu s reálnou spätnou väzbou a presnosťou od Microsoftu
-- Integrovať MCP s GitHub pracovnými tokmi pre kontinuálnu validáciu dokumentácie
+- Overovať a vylepšovať dokumentáciu s spätnou väzbou v reálnom čase a presnosťou od Microsoftu
+- Integrovať MCP s GitHub pracovnými tokmi pre kontinuálne overovanie dokumentácie
 
 Implementácia obsahuje:
-- Príklad `.vscode/mcp.json` konfigurácie pre jednoduché nastavenie
-- Prechádzky prostredníctvom screenshotov z práce v editore
+- Príklad konfigurácie `.vscode/mcp.json` pre jednoduché nastavenie
+- Návody so screenshotmi z prostredia editora
 - Tipy na kombinovanie Copilota a MCP pre maximálnu produktivitu
 
-Tento scenár je ideálny pre autorov kurzov, tvorcov dokumentácie a vývojárov, ktorí chcú zostať sústredení vo svojom editore a zároveň pracovať s dokumentáciou, Copilotom a validačnými nástrojmi – všetko poháňané MCP.
+Tento scenár je ideálny pre autorov kurzov, tvorcov dokumentácie a vývojárov, ktorí chcú zostať sústredení v editore pri práci s dokumentáciou, Copilotom a nástrojmi na overovanie – všetko poháňané MCP.
 
-### 6. [Vytvorenie MCP servera v APIM](./apimsample.md)
+### 6. [Vytvorenie MCP servera pomocou APIM](./apimsample.md)
 
 Táto prípadová štúdia poskytuje krok za krokom návod, ako vytvoriť MCP server pomocou Azure API Management (APIM). Pokrýva:
 
 - Nastavenie MCP servera v Azure API Management
 - Zverejnenie API operácií ako MCP nástrojov
-- Konfiguráciu politík pre obmedzenie rýchlosti a bezpečnosť
+- Konfiguráciu politík pre obmedzovanie rýchlosti a bezpečnosť
 - Testovanie MCP servera pomocou Visual Studio Code a GitHub Copilot
 
-Tento príklad ukazuje, ako využiť možnosti Azure na vytvorenie robustného MCP servera, ktorý možno použiť v rôznych aplikáciách a zlepšiť tak integráciu AI systémov s podnikových API.
+Tento príklad ukazuje, ako využiť možnosti Azure na vytvorenie robustného MCP servera, ktorý možno použiť v rôznych aplikáciách a zlepšiť integráciu AI systémov s podnikových API.
 
 ## Záver
 
-Tieto prípadové štúdie zdôrazňujú všestrannosť a praktické využitie Model Context Protocol v reálnych situáciách. Od zložitých viacagentových systémov po cielene automatizované pracovné toky, MCP poskytuje štandardizovaný spôsob prepojenia AI systémov s nástrojmi a dátami, ktoré potrebujú na vytváranie hodnoty.
+Tieto prípadové štúdie zdôrazňujú všestrannosť a praktické využitie Model Context Protocol v reálnych situáciách. Od zložitých viacagentových systémov po cielené automatizačné pracovné toky, MCP poskytuje štandardizovaný spôsob, ako prepojiť AI systémy s nástrojmi a dátami, ktoré potrebujú na vytváranie hodnoty.
 
-Štúdiom týchto implementácií získate poznatky o architektonických vzoroch, stratégiách implementácie a osvedčených postupoch, ktoré môžete aplikovať vo vlastných MCP projektoch. Príklady ukazujú, že MCP nie je len teoretický rámec, ale praktické riešenie reálnych obchodných výziev.
+Štúdiom týchto implementácií získate prehľad o architektonických vzorcoch, stratégiách implementácie a osvedčených postupoch, ktoré môžete aplikovať vo vlastných MCP projektoch. Príklady ukazujú, že MCP nie je len teoretický rámec, ale praktické riešenie reálnych obchodných výziev.
 
 ## Ďalšie zdroje
 
@@ -114,5 +114,7 @@ Tieto prípadové štúdie zdôrazňujú všestrannosť a praktické využitie M
 - [Microsoft Docs MCP Server](https://github.com/MicrosoftDocs/mcp)
 - [MCP Community Examples](https://github.com/microsoft/mcp)
 
-**Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, berte na vedomie, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Ďalšie: Hands on Lab [Streamlining AI Workflows: Building an MCP Server with AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+
+**Zrieknutie sa zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.

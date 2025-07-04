@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e25bc265a51244a7a2d93b3761543a1f",
-  "translation_date": "2025-06-13T02:08:02+00:00",
+  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
+  "translation_date": "2025-07-04T17:18:36+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "tr"
 }
@@ -13,32 +13,32 @@ MCP sunucunuzu test etmeye başlamadan önce, kullanılabilir araçları ve hata
 
 ## Genel Bakış
 
-Bu ders, doğru test yaklaşımının nasıl seçileceğini ve en etkili test aracını ele alır.
+Bu ders, doğru test yaklaşımını seçmeyi ve en etkili test aracını kullanmayı ele alır.
 
 ## Öğrenme Hedefleri
 
 Bu dersin sonunda şunları yapabileceksiniz:
 
-- Test için çeşitli yaklaşımları tanımlamak.
-- Kodunuzu etkili bir şekilde test etmek için farklı araçları kullanmak.
+- Farklı test yaklaşımlarını tanımlamak.
+- Kodunuzu etkili şekilde test etmek için çeşitli araçları kullanmak.
 
 ## MCP Sunucularını Test Etme
 
 MCP, sunucularınızı test etmenize ve hata ayıklamanıza yardımcı olacak araçlar sunar:
 
-- **MCP Inspector**: Hem CLI aracı hem de görsel araç olarak çalıştırılabilen komut satırı aracı.
-- **Manuel test**: curl gibi bir araç kullanarak web istekleri gönderebilirsiniz, ancak HTTP çalıştırabilen herhangi bir araç da işe yarar.
+- **MCP Inspector**: Hem komut satırı aracı hem de görsel araç olarak çalıştırılabilen bir komut satırı aracı.
+- **Manuel test**: curl gibi bir araç kullanarak web istekleri yapabilirsiniz, ancak HTTP çalıştırabilen herhangi bir araç işinizi görür.
 - **Birim testi**: Tercih ettiğiniz test çerçevesini kullanarak hem sunucu hem de istemci özelliklerini test etmek mümkündür.
 
 ### MCP Inspector Kullanımı
 
-Bu aracın kullanımını önceki derslerde anlattık ancak burada üst düzey olarak biraz bahsedelim. Node.js ile geliştirilmiş bir araçtır ve `npx` yürütülebilir dosyasını çağırarak kullanabilirsiniz. Bu dosya aracı geçici olarak indirir ve yükler, isteğiniz tamamlandığında kendini temizler.
+Bu aracın kullanımını önceki derslerde anlattık ancak burada biraz genel hatlarıyla bahsedelim. Node.js ile geliştirilmiş bir araçtır ve `npx` yürütülebilir dosyasını çağırarak kullanabilirsiniz; bu, aracı geçici olarak indirip kurar ve isteğiniz tamamlandıktan sonra kendini temizler.
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) size şunları sağlar:
 
 - **Sunucu Yetkinliklerini Keşfetme**: Mevcut kaynakları, araçları ve istemleri otomatik olarak tespit eder
-- **Araç Çalıştırmayı Test Etme**: Farklı parametreleri deneyip yanıtları gerçek zamanlı görme
-- **Sunucu Meta Verilerini Görüntüleme**: Sunucu bilgileri, şemalar ve yapılandırmaları inceleme
+- **Araç Çalıştırmayı Test Etme**: Farklı parametreleri deneyip yanıtları gerçek zamanlı görebilirsiniz
+- **Sunucu Meta Verilerini Görüntüleme**: Sunucu bilgilerini, şemaları ve yapılandırmaları inceleyebilirsiniz
 
 Aracın tipik bir çalıştırması şu şekildedir:
 
@@ -46,11 +46,11 @@ Aracın tipik bir çalıştırması şu şekildedir:
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Yukarıdaki komut, bir MCP ve görsel arayüzünü başlatır ve tarayıcınızda yerel bir web arayüzü açar. Kayıtlı MCP sunucularınızı, mevcut araçlarını, kaynaklarını ve istemlerini gösteren bir kontrol paneli görmeyi bekleyebilirsiniz. Arayüz, araç çalıştırmayı etkileşimli olarak test etmenize, sunucu meta verilerini incelemenize ve gerçek zamanlı yanıtları görmenize olanak tanır; bu da MCP sunucu uygulamalarınızı doğrulamayı ve hata ayıklamayı kolaylaştırır.
+Yukarıdaki komut, bir MCP ve görsel arayüzünü başlatır ve tarayıcınızda yerel bir web arayüzü açar. Kayıtlı MCP sunucularınızı, mevcut araçlarını, kaynaklarını ve istemlerini gösteren bir kontrol paneli görmeyi bekleyebilirsiniz. Arayüz, araç çalıştırmayı etkileşimli olarak test etmenize, sunucu meta verilerini incelemenize ve gerçek zamanlı yanıtları görmenize olanak tanır; böylece MCP sunucu uygulamalarınızı doğrulamak ve hata ayıklamak kolaylaşır.
 
 Şöyle görünebilir: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.tr.png)
 
-Bu aracı CLI modunda da çalıştırabilirsiniz; bu durumda `--cli` parametresini eklersiniz. İşte sunucudaki tüm araçları listeleyen "CLI" modunda aracın çalıştırılmasına örnek:
+Bu aracı CLI modunda da çalıştırabilirsiniz; bu durumda `--cli` parametresini eklersiniz. İşte araçları listeleyen "CLI" modunda çalıştırmaya bir örnek:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
@@ -58,9 +58,9 @@ npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/lis
 
 ### Manuel Test
 
-Sunucu yetkinliklerini test etmek için inspector aracını çalıştırmanın yanı sıra, HTTP kullanabilen bir istemciyi, örneğin curl'u çalıştırmak gibi benzer bir yaklaşım da vardır.
+Sunucu yetkinliklerini test etmek için inspector aracını çalıştırmanın yanı sıra, HTTP kullanabilen bir istemciyi, örneğin curl'u kullanmak da benzer bir yaklaşımdır.
 
-Curl ile MCP sunucularını doğrudan HTTP istekleri kullanarak test edebilirsiniz:
+curl ile MCP sunucularını doğrudan HTTP istekleriyle test edebilirsiniz:
 
 ```bash
 # Example: Test server metadata
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Yukarıdaki curl kullanımından görebileceğiniz gibi, araç adını ve parametrelerini içeren bir yükle aracı çağırmak için POST isteği kullanıyorsunuz. Size en uygun yaklaşımı seçin. CLI araçları genellikle daha hızlı kullanılır ve betiklenebilir olmaları CI/CD ortamlarında faydalı olabilir.
+Yukarıdaki curl kullanımından da görebileceğiniz gibi, bir aracı çağırmak için araç adı ve parametrelerinden oluşan bir yükle POST isteği yapıyorsunuz. Size en uygun olan yöntemi kullanın. CLI araçları genellikle daha hızlıdır ve betiklenebilir olmaları CI/CD ortamlarında faydalı olabilir.
 
 ### Birim Testi
 
-Araçlarınız ve kaynaklarınız için birim testleri oluşturarak beklendiği gibi çalıştıklarından emin olun. İşte bazı örnek test kodları.
+Araçlarınız ve kaynaklarınız için birim testleri oluşturun, böylece beklendiği gibi çalıştıklarından emin olabilirsiniz. İşte bazı örnek test kodları.
 
 ```python
 import pytest
@@ -131,13 +131,13 @@ async def test_list_tools_cursor_parameter():
 
 Yukarıdaki kod şunları yapar:
 
-- Fonksiyon olarak test oluşturmanıza ve assert ifadeleri kullanmanıza olanak sağlayan pytest çerçevesini kullanır.
-- İki farklı araçla bir MCP Sunucusu oluşturur.
-- Belirli koşulların sağlanıp sağlanmadığını kontrol etmek için `assert` ifadesini kullanır.
+- Fonksiyon olarak testler oluşturmanıza ve assert ifadeleri kullanmanıza olanak tanıyan pytest çerçevesini kullanır.
+- İki farklı araca sahip bir MCP Sunucusu oluşturur.
+- Belirli koşulların sağlandığını kontrol etmek için `assert` ifadesini kullanır.
 
 [Tam dosyaya buradan bakabilirsiniz](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-Yukarıdaki dosyaya dayanarak, kendi sunucunuzu test ederek yeteneklerin gerektiği gibi oluşturulduğundan emin olabilirsiniz.
+Yukarıdaki dosyaya dayanarak, kendi sunucunuzu test ederek yetkinliklerin doğru oluşturulduğundan emin olabilirsiniz.
 
 Tüm büyük SDK'larda benzer test bölümleri bulunur, böylece seçtiğiniz çalışma ortamına uyarlayabilirsiniz.
 
@@ -155,7 +155,7 @@ Tüm büyük SDK'larda benzer test bölümleri bulunur, böylece seçtiğiniz ç
 
 ## Sonraki Adım
 
-- Sonraki: [Deployment](/03-GettingStarted/09-deployment/README.md)
+- Sonraki: [Deployment](../09-deployment/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

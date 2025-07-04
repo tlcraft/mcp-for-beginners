@@ -1,26 +1,26 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7816cc28f7ab9a54e31f9246429ffcd9",
-  "translation_date": "2025-06-13T01:31:47+00:00",
+  "original_hash": "1d9dc83260576b76f272d330ed93c51f",
+  "translation_date": "2025-07-04T18:30:31+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "hu"
 }
 -->
 # MCP szerverek telepítése
 
-Az MCP szerver telepítése lehetővé teszi, hogy mások is hozzáférjenek az eszközeihez és erőforrásaihoz a helyi környezeteden túl. Többféle telepítési stratégia létezik, attól függően, hogy milyen skálázhatóságot, megbízhatóságot és egyszerű kezelhetőséget szeretnél. Lentebb útmutatást találsz az MCP szerverek helyi, konténeres és felhőben történő telepítéséhez.
+Az MCP szerver telepítésével mások is hozzáférhetnek az eszközeihez és erőforrásaihoz a helyi környezeteden kívül. Többféle telepítési stratégia létezik, amelyeket a skálázhatóság, megbízhatóság és a kezelhetőség szempontjai alapján érdemes mérlegelni. Az alábbiakban útmutatót találsz az MCP szerverek helyi, konténeres és felhőbeli telepítéséhez.
 
 ## Áttekintés
 
-Ez a lecke bemutatja, hogyan telepítheted az MCP Server alkalmazásodat.
+Ebben a leckében megtanulhatod, hogyan telepítsd az MCP Server alkalmazásodat.
 
 ## Tanulási célok
 
 A lecke végére képes leszel:
 
-- Különböző telepítési megközelítések értékelésére.
-- Az alkalmazásod telepítésére.
+- Különböző telepítési megközelítéseket értékelni.
+- Telepíteni az alkalmazásodat.
 
 ## Helyi fejlesztés és telepítés
 
@@ -32,9 +32,9 @@ Ha a szerveredet úgy tervezted, hogy a felhasználók gépén fusson, kövesd a
 SSE esetén (nem szükséges stdio típusú szerverhez)
 
 1. **Hálózat beállítása**: Győződj meg róla, hogy a szerver elérhető a várt porton.  
-1. **Csatlakoztasd az ügyfeleket**: Használj helyi kapcsolati URL-eket, például `http://localhost:3000`
+1. **Csatlakoztasd az ügyfeleket**: Használj helyi kapcsolati URL-eket, például `http://localhost:3000`.
 
-## Felhőbe telepítés
+## Felhőbeli telepítés
 
 Az MCP szerverek különböző felhőplatformokra telepíthetők:
 
@@ -44,11 +44,11 @@ Az MCP szerverek különböző felhőplatformokra telepíthetők:
 
 ### Példa: Azure Container Apps
 
-Az Azure Container Apps támogatja az MCP szerverek telepítését. Még fejlesztés alatt áll, jelenleg SSE szervereket támogat.
+Az Azure Container Apps támogatja az MCP szerverek telepítését. Ez még fejlesztés alatt áll, jelenleg SSE szervereket támogat.
 
 Így csinálhatod:
 
-1. Klónozd a repót:
+1. Klónozz egy repót:
 
   ```sh
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
@@ -68,7 +68,7 @@ Az Azure Container Apps támogatja az MCP szerverek telepítését. Még fejlesz
   uv run fastapi dev main.py
   ```
 
-1. Helyi próbához hozz létre egy *mcp.json* fájlt a *.vscode* könyvtárban, és másold bele a következő tartalmat:
+1. Helyi próbához hozz létre egy *mcp.json* fájlt a *.vscode* könyvtárban, és illeszd be a következő tartalmat:
 
   ```json
   {
@@ -92,7 +92,7 @@ Az Azure Container Apps támogatja az MCP szerverek telepítését. Még fejlesz
   }
   ```
 
-  Amint az SSE szerver elindult, a JSON fájlban kattints a lejátszás ikonra, ekkor a GitHub Copilot fel fogja ismerni a szerver eszközeit, lásd az Eszköz ikont.
+  Miután elindítottad az SSE szervert, a JSON fájlban kattints a lejátszás ikonra, így a GitHub Copilot fel fogja ismerni a szerveren futó eszközöket, lásd az Eszköz ikont.
 
 1. A telepítéshez futtasd a következő parancsot:
 
@@ -100,7 +100,7 @@ Az Azure Container Apps támogatja az MCP szerverek telepítését. Még fejlesz
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-Így helyben is telepítheted, illetve az Azure-ra is ezekkel a lépésekkel.
+Ennyi az egész, telepítsd helyben, vagy az Azure-ra a fenti lépésekkel.
 
 ## További források
 
@@ -110,7 +110,7 @@ Az Azure Container Apps támogatja az MCP szerverek telepítését. Még fejlesz
 
 ## Mi következik
 
-- Következő: [Gyakorlati megvalósítás](/04-PracticalImplementation/README.md)
+- Következő: [Gyakorlati megvalósítás](../../04-PracticalImplementation/README.md)
 
-**Nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből eredő félreértésekért vagy téves értelmezésekért.

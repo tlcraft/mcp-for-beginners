@@ -1,50 +1,50 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7816cc28f7ab9a54e31f9246429ffcd9",
-  "translation_date": "2025-06-13T01:32:20+00:00",
+  "original_hash": "1d9dc83260576b76f272d330ed93c51f",
+  "translation_date": "2025-07-04T18:49:03+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "ro"
 }
 -->
-# Deployarea serverelor MCP
+# Implementarea serverelor MCP
 
-Deployarea serverului MCP permite altora să acceseze uneltele și resursele acestuia dincolo de mediul local. Există mai multe strategii de deployare, în funcție de cerințele tale legate de scalabilitate, fiabilitate și ușurință în gestionare. Mai jos găsești recomandări pentru deployarea serverelor MCP local, în containere și în cloud.
+Implementarea serverului MCP permite altora să acceseze uneltele și resursele acestuia dincolo de mediul tău local. Există mai multe strategii de implementare de luat în considerare, în funcție de cerințele tale legate de scalabilitate, fiabilitate și ușurința în administrare. Mai jos vei găsi îndrumări pentru implementarea serverelor MCP local, în containere și în cloud.
 
 ## Prezentare generală
 
-Această lecție explică cum să deployezi aplicația MCP Server.
+Această lecție acoperă modul de implementare a aplicației tale MCP Server.
 
 ## Obiective de învățare
 
-La finalul acestei lecții vei putea:
+La finalul acestei lecții, vei putea:
 
-- Evalua diferite metode de deployare.
-- Deploya aplicația ta.
+- Evalua diferite abordări de implementare.
+- Implementa aplicația ta.
 
-## Dezvoltare și deployare locală
+## Dezvoltare și implementare locală
 
-Dacă serverul tău este destinat să fie folosit rulându-se pe mașina utilizatorului, poți urma pașii următori:
+Dacă serverul tău este destinat să fie folosit rulând pe mașina utilizatorului, poți urma pașii următori:
 
-1. **Descarcă serverul**. Dacă nu ai scris serverul, descarcă-l mai întâi pe mașina ta.
+1. **Descarcă serverul**. Dacă nu ai scris serverul, descarcă-l mai întâi pe mașina ta.  
 1. **Pornește procesul serverului**: Rulează aplicația MCP server.
 
 Pentru SSE (nu este necesar pentru serverele de tip stdio)
 
-1. **Configurează rețeaua**: Asigură-te că serverul este accesibil pe portul așteptat.
-1. **Conectează clienții**: Folosește URL-uri de conexiune locale precum `http://localhost:3000`.
+1. **Configurează rețeaua**: Asigură-te că serverul este accesibil pe portul așteptat.  
+1. **Conectează clienții**: Folosește URL-uri de conexiune locală, cum ar fi `http://localhost:3000`.
 
-## Deployare în cloud
+## Implementare în cloud
 
-Serverele MCP pot fi deployate pe diverse platforme cloud:
+Serverele MCP pot fi implementate pe diverse platforme cloud:
 
-- **Serverless Functions**: Deployează servere MCP ușoare ca funcții serverless.
-- **Container Services**: Folosește servicii precum Azure Container Apps, AWS ECS sau Google Cloud Run.
-- **Kubernetes**: Deployează și gestionează servere MCP în clustere Kubernetes pentru disponibilitate ridicată.
+- **Funcții serverless**: Implementarea serverelor MCP ușoare ca funcții serverless  
+- **Servicii de containere**: Folosește servicii precum Azure Container Apps, AWS ECS sau Google Cloud Run  
+- **Kubernetes**: Implementarea și gestionarea serverelor MCP în clustere Kubernetes pentru disponibilitate ridicată
 
 ### Exemplu: Azure Container Apps
 
-Azure Container Apps suportă deployarea serverelor MCP. Este încă în dezvoltare și în prezent suportă serverele SSE.
+Azure Container Apps suportă implementarea serverelor MCP. Este încă în curs de dezvoltare și în prezent suportă serverele SSE.
 
 Iată cum poți proceda:
 
@@ -92,15 +92,15 @@ Iată cum poți proceda:
   }
   ```
 
-  După ce serverul SSE este pornit, poți da click pe iconița de play din fișierul JSON, iar uneltele serverului ar trebui să fie preluate de GitHub Copilot, vezi iconița Tool.
+  Odată ce serverul SSE este pornit, poți da click pe iconița de redare din fișierul JSON; acum ar trebui să vezi uneltele serverului preluate de GitHub Copilot, vezi iconița Tool.
 
-1. Pentru deployare, rulează comanda următoare:
+1. Pentru a implementa, rulează următoarea comandă:
 
   ```sh
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-Așa că, deployează local sau în Azure urmând acești pași.
+Asta este tot, implementează-l local sau în Azure urmând acești pași.
 
 ## Resurse suplimentare
 
@@ -110,7 +110,7 @@ Așa că, deployează local sau în Azure urmând acești pași.
 
 ## Ce urmează
 
-- Următorul: [Implementare practică](/04-PracticalImplementation/README.md)
+- Următorul: [Implementare practică](../../04-PracticalImplementation/README.md)
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

@@ -1,23 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "904b689eda5a68cbafe656d53f9787c7",
-  "translation_date": "2025-06-17T18:52:01+00:00",
+  "original_hash": "f74887f51a69d3f255cb83d0b517c623",
+  "translation_date": "2025-07-04T18:27:10+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "sw"
 }
 -->
-Nzuri, kwa hatua yetu inayofuata, hebu tutae uwezo kwenye seva.
+Nzuri, kwa hatua yetu inayofuata, hebu orodhesha uwezo kwenye seva.
 
 ### -2 Orodhesha uwezo wa seva
 
-Sasa tutaunganishwa na seva na kuomba uwezo wake:
+Sasa tutaungana na seva na kuomba uwezo wake:
 
 ### -3 Badilisha uwezo wa seva kuwa zana za LLM
 
-Hatua inayofuata baada ya kuorodhesha uwezo wa seva ni kubadilisha kuwa muundo unaoeleweka na LLM. Mara tu tunapofanya hivyo, tunaweza kutoa uwezo huu kama zana kwa LLM yetu.
+Hatua inayofuata baada ya kuorodhesha uwezo wa seva ni kubadilisha kuwa muundo unaoeleweka na LLM. Mara tu tutakapofanya hivyo, tunaweza kutoa uwezo huu kama zana kwa LLM yetu.
 
-Nzuri, sasa tumejipanga kushughulikia maombi ya mtumiaji, hivyo hebu tushughulikie hilo sasa.
+Nzuri, sasa tumejiandaa kushughulikia maombi ya mtumiaji, hivyo hebu tushughulikie hilo sasa.
 
 ### -4 Shughulikia ombi la mtumiaji
 
@@ -25,32 +25,32 @@ Katika sehemu hii ya msimbo, tutashughulikia maombi ya mtumiaji.
 
 Nzuri, umefanya kazi nzuri!
 
-## Kazi
+## Kazi ya Nyumbani
 
-Chukua msimbo kutoka mazoezini na tengeneza seva yenye zana zaidi. Kisha tengeneza mteja mwenye LLM, kama ilivyo kwenye mazoezi, na ujaribu na maelekezo tofauti ili kuhakikisha zana zote za seva zinaitwa kwa njia ya mabadiliko. Njia hii ya kujenga mteja inamaanisha mtumiaji wa mwisho atakuwa na uzoefu mzuri wa mtumiaji kwani wanaweza kutumia maelekezo, badala ya amri za mteja za moja kwa moja, na hawatajua kama seva ya MCP inaitwa.
+Chukua msimbo kutoka kwenye zoezi na ujenge seva yenye zana zaidi. Kisha tengeneza mteja mwenye LLM, kama ilivyo kwenye zoezi, na ujaribu kwa kutumia maelekezo tofauti ili kuhakikisha zana zote za seva zinaitwa kwa njia ya mabadiliko. Njia hii ya kujenga mteja inamaanisha mtumiaji wa mwisho atapata uzoefu mzuri wa mtumiaji kwani wanaweza kutumia maelekezo ya asili badala ya amri halisi za mteja, na hawatajua kama seva ya MCP inaitwa.
 
 ## Suluhisho
 
 [Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## Muhimu Kutoka
+## Muhimu Kumbuka
 
-- Kuongeza LLM kwa mteja wako kunatoa njia bora kwa watumiaji kuingiliana na Seva za MCP.
-- Unahitaji kubadilisha majibu ya Seva ya MCP kuwa kitu ambacho LLM inaweza kuelewa.
+- Kuongeza LLM kwenye mteja wako kunatoa njia bora kwa watumiaji kuwasiliana na seva za MCP.
+- Unahitaji kubadilisha majibu ya seva ya MCP kuwa kitu ambacho LLM inaweza kuelewa.
 
 ## Sampuli
 
-- [Kalkuleta ya Java](../samples/java/calculator/README.md)
-- [Kalkuleta ya .Net](../../../../03-GettingStarted/samples/csharp)
-- [Kalkuleta ya JavaScript](../samples/javascript/README.md)
-- [Kalkuleta ya TypeScript](../samples/typescript/README.md)
-- [Kalkuleta ya Python](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## Rasilimali Zaidi
 
-## Ifuatayo
+## Nini Kifuatacho
 
-- Ifuatayo: [Kutumia seva kwa kutumia Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
+- Ifuatayo: [Kutumia seva kwa kutumia Visual Studio Code](../04-vscode/README.md)
 
-**Kumbusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kasoro. Hati asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

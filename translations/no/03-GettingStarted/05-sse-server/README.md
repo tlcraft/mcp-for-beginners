@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1681ca3633aeb49ee03766abdbb94a93",
-  "translation_date": "2025-06-17T22:16:19+00:00",
+  "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
+  "translation_date": "2025-07-04T17:46:09+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "no"
 }
@@ -14,7 +14,7 @@ Nå som vi vet litt mer om SSE, la oss bygge en SSE-server neste.
 For å lage serveren vår må vi ha to ting i tankene:
 
 - Vi må bruke en webserver for å eksponere endepunkter for tilkobling og meldinger.
-- Bygg serveren vår som vi vanligvis gjør med verktøy, ressurser og prompts når vi brukte stdio.
+- Bygge serveren vår som vi vanligvis gjør med verktøy, ressurser og prompts når vi brukte stdio.
 
 ### -1- Opprett en serverinstans
 
@@ -38,36 +38,36 @@ Flott, vi har en server som bruker SSE, la oss prøve den ut neste.
 
 ## Øvelse: Feilsøke en SSE-server med Inspector
 
-Inspector er et flott verktøy vi så i en tidligere leksjon [Lage din første server](/03-GettingStarted/01-first-server/README.md). La oss se om vi kan bruke Inspector også her:
+Inspector er et flott verktøy som vi så i en tidligere leksjon [Opprette din første server](/03-GettingStarted/01-first-server/README.md). La oss se om vi kan bruke Inspector også her:
 
 ### -1- Kjøre Inspector
 
-For å kjøre Inspector må du først ha en SSE-server kjørende, så la oss gjøre det nå:
+For å kjøre Inspector må du først ha en SSE-server som kjører, så la oss gjøre det nå:
 
-1. Kjør serveren
+1. Start serveren
 
 1. Kjør Inspector
 
     > ![NOTE]
-    > Kjør dette i et eget terminalvindu enn der serveren kjører. Merk også at du må tilpasse kommandoen under slik at den passer URL-en der serveren din kjører.
+    > Kjør dette i et eget terminalvindu enn der serveren kjører. Merk også at du må tilpasse kommandoen under til URL-en der serveren din kjører.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-Å kjøre Inspector ser likt ut i alle runtime-miljøer. Legg merke til at i stedet for å sende en sti til serveren vår og en kommando for å starte serveren, sender vi URL-en der serveren kjører og spesifiserer også `/sse`-ruten.
+    Å kjøre Inspector ser likt ut i alle runtime-miljøer. Legg merke til at i stedet for å sende inn en sti til serveren vår og en kommando for å starte serveren, sender vi i stedet URL-en der serveren kjører, og vi spesifiserer også `/sse`-ruten.
 
 ### -2- Prøve ut verktøyet
 
-Koble til serveren ved å velge SSE i nedtrekksmenyen og fyll inn URL-feltet der serveren din kjører, for eksempel http:localhost:4321/sse. Klikk deretter på "Connect"-knappen. Som før, velg å liste verktøy, velg et verktøy og gi inputverdier. Du bør se et resultat som nedenfor:
+Koble til serveren ved å velge SSE i nedtrekksmenyen og fyll inn URL-feltet der serveren din kjører, for eksempel http:localhost:4321/sse. Klikk deretter på "Connect"-knappen. Som før, velg å liste opp verktøy, velg et verktøy og gi inputverdier. Du bør se et resultat som under:
 
-![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.no.png)
+![SSE Server kjører i Inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.no.png)
 
 Flott, du kan jobbe med Inspector, la oss se hvordan vi kan jobbe med Visual Studio Code neste.
 
 ## Oppgave
 
-Prøv å bygge ut serveren din med flere funksjoner. Se [denne siden](https://api.chucknorris.io/) for eksempelvis å legge til et verktøy som kaller et API. Du bestemmer hvordan serveren skal se ut. Lykke til :)
+Prøv å bygge ut serveren din med flere funksjoner. Se [denne siden](https://api.chucknorris.io/) for eksempel for å legge til et verktøy som kaller et API. Du bestemmer hvordan serveren skal se ut. Lykke til :)
 
 ## Løsning
 
@@ -79,7 +79,7 @@ De viktigste punktene fra dette kapitlet er:
 
 - SSE er den andre støttede transporttypen ved siden av stdio.
 - For å støtte SSE må du håndtere innkommende tilkoblinger og meldinger ved hjelp av et web-rammeverk.
-- Du kan bruke både Inspector og Visual Studio Code for å konsumere en SSE-server, akkurat som stdio-servere. Merk hvordan det er noen forskjeller mellom stdio og SSE. For SSE må du starte serveren separat og deretter kjøre inspeksjonsverktøyet. For inspeksjonsverktøyet må du også spesifisere URL-en.
+- Du kan bruke både Inspector og Visual Studio Code for å konsumere en SSE-server, akkurat som stdio-servere. Merk hvordan det er noen forskjeller mellom stdio og SSE. For SSE må du starte serveren separat og deretter kjøre Inspector-verktøyet. For Inspector-verktøyet er det også noen forskjeller ved at du må spesifisere URL-en.
 
 ## Eksempler
 
@@ -95,7 +95,7 @@ De viktigste punktene fra dette kapitlet er:
 
 ## Hva kommer nå
 
-- Neste: [HTTP Streaming med MCP (Streamable HTTP)](/03-GettingStarted/06-http-streaming/README.md)
+- Neste: [HTTP Streaming med MCP (Streamable HTTP)](../06-http-streaming/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e25bc265a51244a7a2d93b3761543a1f",
-  "translation_date": "2025-06-13T02:10:34+00:00",
+  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
+  "translation_date": "2025-07-04T18:11:03+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "id"
 }
 -->
 ## Pengujian dan Debugging
 
-Sebelum Anda mulai menguji server MCP Anda, penting untuk memahami alat yang tersedia dan praktik terbaik untuk debugging. Pengujian yang efektif memastikan server Anda berperilaku sesuai harapan dan membantu Anda dengan cepat mengidentifikasi serta menyelesaikan masalah. Bagian berikut menguraikan pendekatan yang direkomendasikan untuk memvalidasi implementasi MCP Anda.
+Sebelum mulai menguji server MCP Anda, penting untuk memahami alat yang tersedia dan praktik terbaik dalam debugging. Pengujian yang efektif memastikan server Anda berfungsi sesuai harapan dan membantu Anda dengan cepat mengidentifikasi serta menyelesaikan masalah. Bagian berikut menjelaskan pendekatan yang direkomendasikan untuk memvalidasi implementasi MCP Anda.
 
 ## Gambaran Umum
 
@@ -17,40 +17,40 @@ Pelajaran ini membahas cara memilih pendekatan pengujian yang tepat dan alat pen
 
 ## Tujuan Pembelajaran
 
-Pada akhir pelajaran ini, Anda akan dapat:
+Setelah menyelesaikan pelajaran ini, Anda akan dapat:
 
 - Menjelaskan berbagai pendekatan untuk pengujian.
 - Menggunakan berbagai alat untuk menguji kode Anda secara efektif.
 
 ## Pengujian Server MCP
 
-MCP menyediakan alat untuk membantu Anda menguji dan melakukan debugging server Anda:
+MCP menyediakan alat untuk membantu Anda menguji dan debugging server Anda:
 
-- **MCP Inspector**: Alat baris perintah yang dapat dijalankan baik sebagai alat CLI maupun alat visual.
-- **Pengujian manual**: Anda dapat menggunakan alat seperti curl untuk menjalankan permintaan web, tetapi alat apa pun yang mampu menjalankan HTTP juga bisa digunakan.
-- **Unit testing**: Anda dapat menggunakan framework pengujian pilihan Anda untuk menguji fitur dari server maupun klien.
+- **MCP Inspector**: Alat baris perintah yang dapat dijalankan sebagai CLI maupun alat visual.
+- **Pengujian manual**: Anda dapat menggunakan alat seperti curl untuk menjalankan permintaan web, tapi alat apa pun yang mampu menjalankan HTTP juga bisa digunakan.
+- **Unit testing**: Anda bisa menggunakan framework pengujian favorit untuk menguji fitur baik di server maupun klien.
 
 ### Menggunakan MCP Inspector
 
-Kami telah menjelaskan penggunaan alat ini dalam pelajaran sebelumnya, tetapi mari kita bahas sedikit secara garis besar. Ini adalah alat yang dibangun dengan Node.js dan Anda dapat menggunakannya dengan memanggil executable `npx` yang akan mengunduh dan menginstal alat tersebut secara sementara dan membersihkan dirinya sendiri setelah selesai menjalankan permintaan Anda.
+Kami telah menjelaskan penggunaan alat ini di pelajaran sebelumnya, tapi mari kita bahas secara singkat. Ini adalah alat yang dibuat dengan Node.js dan Anda dapat menggunakannya dengan menjalankan executable `npx` yang akan mengunduh dan menginstal alat ini secara sementara, lalu membersihkan dirinya sendiri setelah selesai menjalankan permintaan Anda.
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) membantu Anda:
 
-- **Menemukan Kapabilitas Server**: Secara otomatis mendeteksi sumber daya, alat, dan prompt yang tersedia
-- **Menguji Eksekusi Alat**: Mencoba parameter berbeda dan melihat respons secara real-time
+- **Menemukan Kapabilitas Server**: Mendeteksi secara otomatis sumber daya, alat, dan prompt yang tersedia
+- **Mengujicoba Eksekusi Alat**: Mencoba parameter berbeda dan melihat respons secara real-time
 - **Melihat Metadata Server**: Memeriksa info server, skema, dan konfigurasi
 
-Contoh menjalankan alat ini seperti berikut:
+Contoh penggunaan alat ini adalah sebagai berikut:
 
 ```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Perintah di atas memulai MCP dan antarmuka visualnya serta meluncurkan antarmuka web lokal di browser Anda. Anda dapat melihat dashboard yang menampilkan server MCP yang terdaftar, alat yang tersedia, sumber daya, dan prompt mereka. Antarmuka ini memungkinkan Anda untuk menguji eksekusi alat secara interaktif, memeriksa metadata server, dan melihat respons secara real-time, sehingga memudahkan validasi dan debugging implementasi server MCP Anda.
+Perintah di atas menjalankan MCP dan antarmuka visualnya serta membuka antarmuka web lokal di browser Anda. Anda akan melihat dashboard yang menampilkan server MCP yang terdaftar, alat, sumber daya, dan prompt yang tersedia. Antarmuka ini memungkinkan Anda menguji eksekusi alat secara interaktif, memeriksa metadata server, dan melihat respons secara real-time, sehingga memudahkan validasi dan debugging implementasi server MCP Anda.
 
-Ini tampilannya: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.id.png)
+Berikut tampilannya: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.id.png)
 
-Anda juga dapat menjalankan alat ini dalam mode CLI dengan menambahkan atribut `--cli`. Berikut contoh menjalankan alat dalam mode "CLI" yang menampilkan semua alat di server:
+Anda juga bisa menjalankan alat ini dalam mode CLI dengan menambahkan atribut `--cli`. Berikut contoh menjalankan alat dalam mode "CLI" yang menampilkan semua alat di server:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
@@ -58,7 +58,7 @@ npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/lis
 
 ### Pengujian Manual
 
-Selain menjalankan alat inspector untuk menguji kapabilitas server, pendekatan serupa adalah menjalankan klien yang mampu menggunakan HTTP seperti misalnya curl.
+Selain menjalankan alat inspector untuk menguji kapabilitas server, pendekatan serupa adalah menjalankan klien yang mampu menggunakan HTTP seperti curl.
 
 Dengan curl, Anda dapat menguji server MCP secara langsung menggunakan permintaan HTTP:
 
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Seperti yang Anda lihat dari penggunaan curl di atas, Anda menggunakan permintaan POST untuk memanggil alat menggunakan payload yang terdiri dari nama alat dan parameternya. Gunakan pendekatan yang paling sesuai untuk Anda. Alat CLI umumnya lebih cepat digunakan dan mudah untuk dibuat skrip, yang bisa berguna dalam lingkungan CI/CD.
+Seperti yang terlihat dari contoh penggunaan curl di atas, Anda menggunakan permintaan POST untuk memanggil alat dengan payload yang berisi nama alat dan parameternya. Gunakan pendekatan yang paling sesuai untuk Anda. Alat CLI umumnya lebih cepat digunakan dan mudah untuk diotomasi, yang berguna dalam lingkungan CI/CD.
 
 ### Unit Testing
 
-Buat unit test untuk alat dan sumber daya Anda untuk memastikan mereka bekerja sesuai harapan. Berikut contoh kode pengujian.
+Buat unit test untuk alat dan sumber daya Anda agar memastikan semuanya berjalan sesuai harapan. Berikut contoh kode pengujian.
 
 ```python
 import pytest
@@ -132,14 +132,14 @@ async def test_list_tools_cursor_parameter():
 Kode di atas melakukan hal berikut:
 
 - Memanfaatkan framework pytest yang memungkinkan Anda membuat tes sebagai fungsi dan menggunakan pernyataan assert.
-- Membuat MCP Server dengan dua alat yang berbeda.
+- Membuat MCP Server dengan dua alat berbeda.
 - Menggunakan pernyataan `assert` untuk memeriksa bahwa kondisi tertentu terpenuhi.
 
-Lihat [file lengkap di sini](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
+Lihat [file lengkapnya di sini](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-Dengan file di atas, Anda dapat menguji server Anda sendiri untuk memastikan kapabilitas dibuat sesuai yang diharapkan.
+Dengan file tersebut, Anda dapat menguji server Anda sendiri untuk memastikan kapabilitas dibuat sesuai yang diharapkan.
 
-Semua SDK utama memiliki bagian pengujian serupa sehingga Anda dapat menyesuaikan dengan runtime pilihan Anda.
+Semua SDK utama memiliki bagian pengujian serupa sehingga Anda dapat menyesuaikannya dengan runtime pilihan Anda.
 
 ## Contoh
 
@@ -149,13 +149,13 @@ Semua SDK utama memiliki bagian pengujian serupa sehingga Anda dapat menyesuaika
 - [TypeScript Calculator](../samples/typescript/README.md)
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Sumber Tambahan
+## Sumber Daya Tambahan
 
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 
 ## Selanjutnya
 
-- Selanjutnya: [Deployment](/03-GettingStarted/09-deployment/README.md)
+- Selanjutnya: [Deployment](../09-deployment/README.md)
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.

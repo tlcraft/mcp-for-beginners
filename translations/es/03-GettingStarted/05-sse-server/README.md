@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1681ca3633aeb49ee03766abdbb94a93",
-  "translation_date": "2025-06-17T21:52:06+00:00",
+  "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
+  "translation_date": "2025-07-04T15:25:40+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "es"
 }
@@ -18,7 +18,7 @@ Para crear nuestro servidor, debemos tener en cuenta dos cosas:
 
 ### -1- Crear una instancia del servidor
 
-Para crear nuestro servidor, usamos los mismos tipos que con stdio. Sin embargo, para el transporte, debemos elegir SSE.
+Para crear nuestro servidor, usamos los mismos tipos que con stdio. Sin embargo, para el transporte, necesitamos elegir SSE.
 
 Vamos a añadir las rutas necesarias a continuación.
 
@@ -38,7 +38,7 @@ Genial, tenemos un servidor usando SSE, probémoslo a continuación.
 
 ## Ejercicio: Depurando un servidor SSE con Inspector
 
-Inspector es una gran herramienta que vimos en una lección anterior [Creando tu primer servidor](/03-GettingStarted/01-first-server/README.md). Veamos si podemos usar el Inspector aquí también:
+Inspector es una gran herramienta que vimos en una lección anterior [Creando tu primer servidor](/03-GettingStarted/01-first-server/README.md). Veamos si podemos usar Inspector aquí también:
 
 ### -1- Ejecutando el inspector
 
@@ -49,7 +49,7 @@ Para ejecutar el inspector, primero debes tener un servidor SSE corriendo, así 
 1. Ejecuta el inspector
 
     > ![NOTE]
-    > Ejecuta esto en una ventana de terminal separada de donde está corriendo el servidor. También ten en cuenta que necesitas ajustar el comando de abajo para que coincida con la URL donde corre tu servidor.
+    > Ejecuta esto en una ventana de terminal separada de donde está corriendo el servidor. También ten en cuenta que debes ajustar el comando a continuación para que coincida con la URL donde tu servidor está corriendo.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
@@ -59,7 +59,7 @@ Para ejecutar el inspector, primero debes tener un servidor SSE corriendo, así 
 
 ### -2- Probando la herramienta
 
-Conéctate al servidor seleccionando SSE en la lista desplegable y llena el campo de URL donde corre tu servidor, por ejemplo http:localhost:4321/sse. Ahora haz clic en el botón "Connect". Como antes, selecciona listar herramientas, selecciona una herramienta y proporciona valores de entrada. Deberías ver un resultado como el siguiente:
+Conéctate al servidor seleccionando SSE en la lista desplegable y completa el campo de URL donde tu servidor está corriendo, por ejemplo http://localhost:4321/sse. Ahora haz clic en el botón "Connect". Como antes, selecciona listar herramientas, elige una herramienta y proporciona valores de entrada. Deberías ver un resultado como el siguiente:
 
 ![Servidor SSE corriendo en inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.es.png)
 
@@ -77,9 +77,9 @@ Intenta ampliar tu servidor con más capacidades. Consulta [esta página](https:
 
 Los puntos clave de este capítulo son los siguientes:
 
-- SSE es el segundo transporte soportado junto a stdio.
+- SSE es el segundo tipo de transporte soportado junto con stdio.
 - Para soportar SSE, necesitas gestionar conexiones entrantes y mensajes usando un framework web.
-- Puedes usar tanto Inspector como Visual Studio Code para consumir un servidor SSE, igual que con servidores stdio. Nota cómo difiere un poco entre stdio y SSE. Para SSE, necesitas iniciar el servidor por separado y luego ejecutar tu herramienta inspector. Para la herramienta inspector, también hay algunas diferencias en que debes especificar la URL.
+- Puedes usar tanto Inspector como Visual Studio Code para consumir un servidor SSE, igual que con servidores stdio. Nota cómo difiere un poco entre stdio y SSE. Para SSE, necesitas iniciar el servidor por separado y luego ejecutar tu herramienta inspector. Para la herramienta inspector, también hay algunas diferencias en que necesitas especificar la URL.
 
 ## Ejemplos
 
@@ -95,7 +95,7 @@ Los puntos clave de este capítulo son los siguientes:
 
 ## Qué sigue
 
-- Siguiente: [HTTP Streaming con MCP (HTTP transmitible)](/03-GettingStarted/06-http-streaming/README.md)
+- Siguiente: [HTTP Streaming con MCP (HTTP transmitible)](../06-http-streaming/README.md)
 
 **Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

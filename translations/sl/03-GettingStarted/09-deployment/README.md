@@ -1,60 +1,60 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7816cc28f7ab9a54e31f9246429ffcd9",
-  "translation_date": "2025-06-13T01:33:02+00:00",
+  "original_hash": "1d9dc83260576b76f272d330ed93c51f",
+  "translation_date": "2025-07-04T19:13:19+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "sl"
 }
 -->
-# Deploying MCP Servers
+# Namestitev MCP strežnikov
 
-Deploying your MCP server lets others access its tools and resources beyond your local setup. There are several deployment options depending on your needs for scalability, reliability, and ease of management. Below you'll find guidance for deploying MCP servers locally, in containers, and on the cloud.
+Namestitev vašega MCP strežnika omogoča drugim dostop do njegovih orodij in virov tudi izven vašega lokalnega okolja. Obstaja več strategij namestitve, ki jih je treba upoštevati glede na vaše zahteve po razširljivosti, zanesljivosti in enostavnosti upravljanja. Spodaj boste našli navodila za namestitev MCP strežnikov lokalno, v vsebnikih in v oblaku.
 
-## Overview
+## Pregled
 
-This lesson explains how to deploy your MCP Server app.
+Ta lekcija zajema, kako namestiti vašo MCP Server aplikacijo.
 
-## Learning Objectives
+## Cilji učenja
 
-By the end of this lesson, you will be able to:
+Do konca te lekcije boste znali:
 
-- Compare different deployment methods.
-- Deploy your app.
+- Oceniti različne pristope namestitve.
+- Namestiti vašo aplikacijo.
 
-## Local development and deployment
+## Lokalni razvoj in namestitev
 
-If your server is intended to run on users' machines, you can follow these steps:
+Če je vaš strežnik namenjen uporabi na uporabnikovem računalniku, lahko sledite naslednjim korakom:
 
-1. **Download the server**. If you didn’t create the server, download it first to your machine.  
-1. **Start the server process**: Run your MCP server application.
+1. **Prenesite strežnik**. Če strežnika niste napisali sami, ga najprej prenesite na svoj računalnik.  
+1. **Zaženite strežniški proces**: Zaženite vašo MCP strežniško aplikacijo.
 
-For SSE (not required for stdio type server):
+Za SSE (ni potrebno za strežnik tipa stdio)
 
-1. **Configure networking**: Make sure the server is accessible on the expected port.  
-1. **Connect clients**: Use local connection URLs like `http://localhost:3000`.
+1. **Konfigurirajte omrežje**: Poskrbite, da je strežnik dostopen na pričakovanem vratih.  
+1. **Povežite odjemalce**: Uporabite lokalne povezovalne URL-je, kot je `http://localhost:3000`.
 
-## Cloud Deployment
+## Namestitev v oblak
 
-MCP servers can be deployed to various cloud platforms:
+MCP strežnike lahko namestite na različne oblačne platforme:
 
-- **Serverless Functions**: Deploy lightweight MCP servers as serverless functions.  
-- **Container Services**: Use services like Azure Container Apps, AWS ECS, or Google Cloud Run.  
-- **Kubernetes**: Deploy and manage MCP servers in Kubernetes clusters for high availability.
+- **Serverless funkcije**: Namestite lahke MCP strežnike kot serverless funkcije.  
+- **Storitve vsebnikov**: Uporabite storitve, kot so Azure Container Apps, AWS ECS ali Google Cloud Run.  
+- **Kubernetes**: Namestite in upravljajte MCP strežnike v Kubernetes grozdih za visoko razpoložljivost.
 
-### Example: Azure Container Apps
+### Primer: Azure Container Apps
 
-Azure Container Apps support deploying MCP Servers. It’s still evolving and currently supports SSE servers.
+Azure Container Apps podpirajo namestitev MCP strežnikov. Projekt je še v razvoju in trenutno podpira SSE strežnike.
 
-Here’s how to do it:
+Tukaj je, kako lahko to storite:
 
-1. Clone a repo:
+1. Klonirajte repozitorij:
 
   ```sh
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
   ```
 
-1. Run it locally to test:
+1. Zaženite ga lokalno za testiranje:
 
   ```sh
   uv venv
@@ -68,7 +68,7 @@ Here’s how to do it:
   uv run fastapi dev main.py
   ```
 
-1. To test locally, create a *mcp.json* file in a *.vscode* folder and add the following content:
+1. Za lokalno preizkušanje ustvarite datoteko *mcp.json* v mapi *.vscode* in dodajte naslednjo vsebino:
 
   ```json
   {
@@ -92,25 +92,25 @@ Here’s how to do it:
   }
   ```
 
-  After starting the SSE server, you can click the play icon in the JSON file. You should now see tools on the server recognized by GitHub Copilot, indicated by the Tool icon.
+  Ko je SSE strežnik zagnan, lahko kliknete ikono za predvajanje v JSON datoteki, zdaj bi morali videti, da orodja na strežniku zazna GitHub Copilot, glejte ikono orodja.
 
-1. To deploy, run this command:
+1. Za namestitev zaženite naslednji ukaz:
 
   ```sh
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-That’s it—deploy locally or to Azure following these steps.
+Tako, namestite ga lokalno ali v Azure s temi koraki.
 
-## Additional Resources
+## Dodatni viri
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
-- [Azure Container Apps article](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
-- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
+- [Članek o Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
+- [Azure Container Apps MCP repozitorij](https://github.com/anthonychu/azure-container-apps-mcp-sample)
 
-## What's Next
+## Kaj sledi
 
-- Next: [Practical Implementation](/04-PracticalImplementation/README.md)
+- Naslednje: [Praktična izvedba](../../04-PracticalImplementation/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v izvorni jezik velja za avtoritativni vir. Za ključne informacije priporočamo strokovni prevod, opravljen s strani človeka. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne prevzemamo odgovornosti.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

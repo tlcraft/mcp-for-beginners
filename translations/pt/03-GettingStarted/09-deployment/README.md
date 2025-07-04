@@ -1,52 +1,52 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7816cc28f7ab9a54e31f9246429ffcd9",
-  "translation_date": "2025-06-12T22:11:34+00:00",
+  "original_hash": "1d9dc83260576b76f272d330ed93c51f",
+  "translation_date": "2025-07-04T16:56:17+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "pt"
 }
 -->
-# Implantando Servidores MCP
+# Desdobramento de Servidores MCP
 
-Implantar seu servidor MCP permite que outras pessoas acessem suas ferramentas e recursos além do seu ambiente local. Existem várias estratégias de implantação a considerar, dependendo das suas necessidades de escalabilidade, confiabilidade e facilidade de gerenciamento. Abaixo, você encontrará orientações para implantar servidores MCP localmente, em contêineres e na nuvem.
+Desdobrar o seu servidor MCP permite que outros acedam às suas ferramentas e recursos para além do seu ambiente local. Existem várias estratégias de desdobramento a considerar, dependendo dos seus requisitos de escalabilidade, fiabilidade e facilidade de gestão. A seguir, encontrará orientações para desdobrar servidores MCP localmente, em contentores e na cloud.
 
 ## Visão Geral
 
-Esta lição aborda como implantar seu aplicativo MCP Server.
+Esta lição aborda como desdobrar a sua aplicação MCP Server.
 
 ## Objetivos de Aprendizagem
 
-Ao final desta lição, você será capaz de:
+No final desta lição, será capaz de:
 
-- Avaliar diferentes abordagens de implantação.
-- Implantar seu aplicativo.
+- Avaliar diferentes abordagens de desdobramento.
+- Desdobrar a sua aplicação.
 
-## Desenvolvimento e implantação local
+## Desenvolvimento e desdobramento local
 
-Se o seu servidor for destinado a ser utilizado rodando na máquina dos usuários, você pode seguir os seguintes passos:
+Se o seu servidor se destina a ser utilizado diretamente na máquina dos utilizadores, pode seguir os seguintes passos:
 
-1. **Baixe o servidor**. Se você não escreveu o servidor, baixe-o primeiro para sua máquina.  
-1. **Inicie o processo do servidor**: Execute seu aplicativo MCP server.
+1. **Descarregar o servidor**. Se não escreveu o servidor, descarregue-o primeiro para a sua máquina.  
+1. **Iniciar o processo do servidor**: Execute a sua aplicação MCP server.
 
-Para SSE (não necessário para servidor do tipo stdio)
+Para SSE (não necessário para servidores do tipo stdio)
 
-1. **Configure a rede**: Garanta que o servidor esteja acessível na porta esperada.  
-1. **Conecte os clientes**: Use URLs de conexão locais como `http://localhost:3000`
+1. **Configurar a rede**: Assegure que o servidor está acessível na porta esperada.  
+1. **Ligar os clientes**: Utilize URLs de ligação local como `http://localhost:3000`.
 
-## Implantação na Nuvem
+## Desdobramento na Cloud
 
-Servidores MCP podem ser implantados em várias plataformas de nuvem:
+Os servidores MCP podem ser desdobrados em várias plataformas cloud:
 
-- **Funções Serverless**: Implemente servidores MCP leves como funções serverless  
-- **Serviços de Contêiner**: Use serviços como Azure Container Apps, AWS ECS ou Google Cloud Run  
-- **Kubernetes**: Implemente e gerencie servidores MCP em clusters Kubernetes para alta disponibilidade
+- **Funções Serverless**: Desdobre servidores MCP leves como funções serverless.  
+- **Serviços de Contentores**: Utilize serviços como Azure Container Apps, AWS ECS ou Google Cloud Run.  
+- **Kubernetes**: Desdobre e gere servidores MCP em clusters Kubernetes para alta disponibilidade.
 
 ### Exemplo: Azure Container Apps
 
-Azure Container Apps suporta a implantação de servidores MCP. Ainda está em desenvolvimento e atualmente suporta servidores SSE.
+O Azure Container Apps suporta o desdobramento de Servidores MCP. Ainda está em desenvolvimento e atualmente suporta servidores SSE.
 
-Veja como você pode fazer isso:
+Aqui está como pode proceder:
 
 1. Clone um repositório:
 
@@ -68,7 +68,7 @@ Veja como você pode fazer isso:
   uv run fastapi dev main.py
   ```
 
-1. Para testar localmente, crie um arquivo *mcp.json* em um diretório *.vscode* e adicione o seguinte conteúdo:
+1. Para testar localmente, crie um ficheiro *mcp.json* numa diretoria *.vscode* e adicione o seguinte conteúdo:
 
   ```json
   {
@@ -92,15 +92,15 @@ Veja como você pode fazer isso:
   }
   ```
 
-  Uma vez que o servidor SSE esteja iniciado, você pode clicar no ícone de play no arquivo JSON, e deverá ver as ferramentas no servidor sendo reconhecidas pelo GitHub Copilot, observe o ícone da Ferramenta.
+  Depois de iniciar o servidor SSE, pode clicar no ícone de play no ficheiro JSON; deverá agora ver as ferramentas do servidor serem reconhecidas pelo GitHub Copilot, veja o ícone da Ferramenta.
 
-1. Para implantar, execute o seguinte comando:
+1. Para desdobrar, execute o seguinte comando:
 
   ```sh
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-Pronto, implante localmente ou na Azure seguindo esses passos.
+Está feito, desdobre localmente ou na Azure seguindo estes passos.
 
 ## Recursos Adicionais
 
@@ -108,9 +108,9 @@ Pronto, implante localmente ou na Azure seguindo esses passos.
 - [Artigo sobre Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
 - [Repositório MCP para Azure Container Apps](https://github.com/anthonychu/azure-container-apps-mcp-sample)
 
-## Próximos Passos
+## O que vem a seguir
 
-- Próximo: [Implementação Prática](/04-PracticalImplementation/README.md)
+- Seguinte: [Implementação Prática](../../04-PracticalImplementation/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

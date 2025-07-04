@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b3b4a6ad10c3c0edbf7fa7cfa0ec496b",
-  "translation_date": "2025-07-02T06:49:33+00:00",
+  "original_hash": "355b12a5970c5c9e6db0bee970c751ba",
+  "translation_date": "2025-07-04T15:13:36+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "en"
 }
@@ -513,7 +513,6 @@ console.log("Weather MCP Server started");
 This JavaScript example demonstrates how to create an MCP client that connects to a server, sends a prompt, and processes the response including any tool calls that were made.
 
 ## Security and Authorization
-
 MCP includes several built-in concepts and mechanisms for managing security and authorization throughout the protocol:
 
 1. **Tool Permission Control**:  
@@ -582,7 +581,7 @@ Design a simple MCP tool that would be useful in your domain. Define:
 
 ## What's next
 
-Next: [Chapter 2: Security](/02-Security/README.md)
+Next: [Chapter 2: Security](../02-Security/README.md)
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

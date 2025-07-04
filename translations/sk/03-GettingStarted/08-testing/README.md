@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e25bc265a51244a7a2d93b3761543a1f",
-  "translation_date": "2025-06-13T02:11:59+00:00",
+  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
+  "translation_date": "2025-07-04T18:45:16+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "sk"
 }
 -->
 ## Testovanie a ladenie
 
-Pred začatím testovania vášho MCP servera je dôležité pochopiť dostupné nástroje a osvedčené postupy pre ladenie. Efektívne testovanie zabezpečí, že váš server bude fungovať podľa očakávaní a pomôže vám rýchlo identifikovať a vyriešiť problémy. Nasledujúca sekcia popisuje odporúčané prístupy na overenie implementácie MCP.
+Predtým, než začnete testovať svoj MCP server, je dôležité porozumieť dostupným nástrojom a osvedčeným postupom pri ladení. Efektívne testovanie zabezpečí, že váš server bude fungovať podľa očakávaní a pomôže vám rýchlo identifikovať a vyriešiť problémy. Nasledujúca časť popisuje odporúčané prístupy na overenie implementácie MCP.
 
 ## Prehľad
 
-Táto lekcia sa zaoberá výberom správneho testovacieho prístupu a najefektívnejším testovacím nástrojom.
+Táto lekcia sa zaoberá výberom správneho prístupu k testovaniu a najefektívnejším testovacím nástrojom.
 
 ## Ciele učenia
 
@@ -26,19 +26,19 @@ Na konci tejto lekcie budete vedieť:
 
 MCP poskytuje nástroje, ktoré vám pomôžu testovať a ladiť vaše servery:
 
-- **MCP Inspector**: nástroj príkazového riadku, ktorý môžete spustiť ako CLI nástroj alebo ako vizuálny nástroj.
-- **Manuálne testovanie**: môžete použiť nástroj ako curl na spúšťanie webových požiadaviek, ale stačí akýkoľvek nástroj schopný pracovať s HTTP.
-- **Unit testing**: je možné použiť váš obľúbený testovací framework na testovanie funkcií servera aj klienta.
+- **MCP Inspector**: Nástroj príkazového riadku, ktorý môžete spustiť ako CLI nástroj alebo ako vizuálny nástroj.
+- **Manuálne testovanie**: Môžete použiť nástroj ako curl na spúšťanie webových požiadaviek, ale postačí akýkoľvek nástroj schopný vykonávať HTTP požiadavky.
+- **Jednotkové testovanie**: Je možné použiť váš obľúbený testovací framework na testovanie funkcií servera aj klienta.
 
 ### Použitie MCP Inspector
 
-Použitie tohto nástroja sme už popisovali v predchádzajúcich lekciách, ale poďme si to stručne zhrnúť. Je to nástroj postavený na Node.js, ktorý spustíte pomocou `npx` spustiteľného súboru, ktorý si dočasne stiahne a nainštaluje nástroj a po dokončení vášho požiadavku sa sám vyčistí.
+Použitie tohto nástroja sme popisovali v predchádzajúcich lekciách, ale poďme si to zhrnúť na vyššej úrovni. Je to nástroj postavený na Node.js a môžete ho použiť spustením `npx` príkazu, ktorý dočasne stiahne a nainštaluje nástroj a po dokončení spustenia vášho požiadavku sa sám vyčistí.
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) vám pomáha:
 
-- **Objavovanie schopností servera**: automaticky detekuje dostupné zdroje, nástroje a výzvy
-- **Testovanie spustenia nástrojov**: vyskúšajte rôzne parametre a sledujte odpovede v reálnom čase
-- **Zobrazenie metadát servera**: prezrite si informácie o serveri, schémy a konfigurácie
+- **Objaviť schopnosti servera**: Automaticky detekuje dostupné zdroje, nástroje a výzvy
+- **Testovať spustenie nástrojov**: Vyskúšať rôzne parametre a vidieť odpovede v reálnom čase
+- **Zobraziť metadata servera**: Preskúmať informácie o serveri, schémy a konfigurácie
 
 Typické spustenie nástroja vyzerá takto:
 
@@ -46,11 +46,11 @@ Typické spustenie nástroja vyzerá takto:
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Vyššie uvedený príkaz spustí MCP a jeho vizuálne rozhranie a otvorí lokálne webové rozhranie vo vašom prehliadači. Očakávajte, že uvidíte dashboard zobrazujúci registrované MCP servery, ich dostupné nástroje, zdroje a výzvy. Rozhranie vám umožňuje interaktívne testovať spustenie nástrojov, kontrolovať metadáta servera a sledovať odpovede v reálnom čase, čo uľahčuje overovanie a ladenie implementácií MCP serverov.
+Vyššie uvedený príkaz spustí MCP a jeho vizuálne rozhranie a otvorí lokálne webové rozhranie vo vašom prehliadači. Môžete očakávať zobrazenie dashboardu, ktorý ukazuje vaše registrované MCP servery, ich dostupné nástroje, zdroje a výzvy. Rozhranie vám umožňuje interaktívne testovať spustenie nástrojov, prezerať metadata servera a sledovať odpovede v reálnom čase, čo uľahčuje overovanie a ladenie implementácií MCP servera.
 
 Takto to môže vyzerať: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sk.png)
 
-Tento nástroj môžete tiež spustiť v režime CLI, kde pridáte atribút `--cli`. Tu je príklad spustenia nástroja v "CLI" režime, ktorý vypíše všetky nástroje na serveri:
+Tento nástroj môžete tiež spustiť v režime CLI, v tom prípade pridajte atribút `--cli`. Tu je príklad spustenia nástroja v režime "CLI", ktorý vypíše všetky nástroje na serveri:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
@@ -58,9 +58,9 @@ npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/lis
 
 ### Manuálne testovanie
 
-Okrem spustenia inspector nástroja na testovanie schopností servera môžete použiť aj klienta schopného pracovať s HTTP, napríklad curl.
+Okrem spustenia nástroja inspector na testovanie schopností servera, ďalším podobným prístupom je spustiť klienta schopného používať HTTP, napríklad curl.
 
-S curl môžete testovať MCP servery priamo pomocou HTTP požiadaviek:
+Pomocou curl môžete testovať MCP servery priamo cez HTTP požiadavky:
 
 ```bash
 # Example: Test server metadata
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Ako vidíte z vyššie uvedeného použitia curl, použijete POST požiadavku na vyvolanie nástroja s payloadom obsahujúcim názov nástroja a jeho parametre. Použite prístup, ktorý vám najviac vyhovuje. CLI nástroje sú všeobecne rýchlejšie na použitie a dajú sa dobre skriptovať, čo môže byť užitočné v CI/CD prostredí.
+Ako vidíte z vyššie uvedeného použitia curl, používate POST požiadavku na vyvolanie nástroja s payloadom obsahujúcim názov nástroja a jeho parametre. Použite prístup, ktorý vám najviac vyhovuje. CLI nástroje sú všeobecne rýchlejšie na použitie a dajú sa dobre skriptovať, čo môže byť užitočné v CI/CD prostredí.
 
-### Unit testing
+### Jednotkové testovanie
 
-Vytvorte jednotkové testy pre vaše nástroje a zdroje, aby ste sa uistili, že fungujú podľa očakávaní. Tu je príklad testovacieho kódu.
+Vytvorte jednotkové testy pre vaše nástroje a zdroje, aby ste zabezpečili, že fungujú podľa očakávaní. Tu je príklad testovacieho kódu.
 
 ```python
 import pytest
@@ -131,15 +131,15 @@ async def test_list_tools_cursor_parameter():
 
 Predchádzajúci kód robí nasledovné:
 
-- Využíva pytest framework, ktorý umožňuje vytvárať testy ako funkcie a používať assert príkazy.
+- Využíva framework pytest, ktorý umožňuje vytvárať testy ako funkcie a používať assert príkazy.
 - Vytvára MCP Server s dvoma rôznymi nástrojmi.
-- Používa `assert` príkaz na kontrolu splnenia určitých podmienok.
+- Používa príkaz `assert` na overenie, že sú splnené určité podmienky.
 
 Pozrite si [celý súbor tu](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-Na základe vyššie uvedeného súboru môžete otestovať svoj vlastný server, aby ste sa uistili, že schopnosti sú vytvorené správne.
+Na základe tohto súboru môžete otestovať svoj vlastný server, aby ste sa uistili, že schopnosti sú vytvorené tak, ako majú byť.
 
-Všetky hlavné SDK majú podobné sekcie testovania, takže ich môžete prispôsobiť svojmu vybranému runtime.
+Všetky hlavné SDK majú podobné sekcie na testovanie, takže si ich môžete prispôsobiť podľa vášho runtime.
 
 ## Ukážky
 
@@ -149,13 +149,13 @@ Všetky hlavné SDK majú podobné sekcie testovania, takže ich môžete prisp�
 - [TypeScript Calculator](../samples/typescript/README.md)
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Ďalšie zdroje
+## Dodatočné zdroje
 
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 
 ## Čo nasleduje
 
-- Ďalej: [Deployment](/03-GettingStarted/09-deployment/README.md)
+- Ďalej: [Deployment](../09-deployment/README.md)
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, majte prosím na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

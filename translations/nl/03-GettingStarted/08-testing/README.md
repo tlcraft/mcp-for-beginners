@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e25bc265a51244a7a2d93b3761543a1f",
-  "translation_date": "2025-06-13T02:09:52+00:00",
+  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
+  "translation_date": "2025-07-04T17:56:15+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "nl"
 }
 -->
 ## Testen en Debuggen
 
-Voordat je begint met het testen van je MCP-server, is het belangrijk om de beschikbare tools en beste praktijken voor debuggen te begrijpen. Effectief testen zorgt ervoor dat je server zich gedraagt zoals verwacht en helpt je snel problemen te identificeren en op te lossen. In de volgende sectie worden aanbevolen methoden beschreven om je MCP-implementatie te valideren.
+Voordat je begint met het testen van je MCP-server, is het belangrijk om de beschikbare tools en best practices voor debuggen te begrijpen. Effectief testen zorgt ervoor dat je server zich gedraagt zoals verwacht en helpt je snel problemen te identificeren en op te lossen. In de volgende sectie worden aanbevolen methoden beschreven om je MCP-implementatie te valideren.
 
 ## Overzicht
 
-Deze les behandelt hoe je de juiste testmethode kiest en de meest effectieve testtool gebruikt.
+Deze les behandelt hoe je de juiste testmethode kiest en welke testtool het meest effectief is.
 
 ## Leerdoelen
 
@@ -24,21 +24,21 @@ Aan het einde van deze les kun je:
 
 ## MCP-servers testen
 
-MCP biedt tools om je te helpen je servers te testen en te debuggen:
+MCP biedt tools om je te helpen bij het testen en debuggen van je servers:
 
 - **MCP Inspector**: Een commandoregeltool die zowel als CLI-tool als visuele tool kan worden gebruikt.
-- **Handmatig testen**: Je kunt een tool zoals curl gebruiken om webverzoeken uit te voeren, maar elke tool die HTTP ondersteunt werkt.
-- **Unittesting**: Je kunt je favoriete testframework gebruiken om de functies van zowel server als client te testen.
+- **Handmatig testen**: Je kunt een tool zoals curl gebruiken om webverzoeken uit te voeren, maar elke tool die HTTP ondersteunt is geschikt.
+- **Unit testen**: Het is mogelijk om je favoriete testframework te gebruiken om de functionaliteiten van zowel server als client te testen.
 
 ### MCP Inspector gebruiken
 
-We hebben het gebruik van deze tool in eerdere lessen beschreven, maar laten we het hier kort samenvatten. Het is een tool gebouwd in Node.js en je kunt het gebruiken door het `npx` uitvoerbare bestand aan te roepen, dat de tool tijdelijk downloadt en installeert en zichzelf opruimt zodra je verzoek is uitgevoerd.
+We hebben het gebruik van deze tool in eerdere lessen beschreven, maar laten we er hier kort op ingaan. Het is een tool gebouwd in Node.js en je kunt het gebruiken door het `npx`-commando aan te roepen, dat de tool tijdelijk downloadt en installeert en zichzelf opruimt zodra je verzoek is uitgevoerd.
 
 De [MCP Inspector](https://github.com/modelcontextprotocol/inspector) helpt je om:
 
-- **Servermogelijkheden ontdekken**: Detecteert automatisch beschikbare resources, tools en prompts.
-- **Testen van tooluitvoering**: Probeer verschillende parameters en zie reacties in real-time.
-- **Servermetadata bekijken**: Bekijk serverinformatie, schema's en configuraties.
+- **Servermogelijkheden ontdekken**: Automatisch beschikbare resources, tools en prompts detecteren
+- **Tooluitvoering testen**: Verschillende parameters proberen en reacties in realtime bekijken
+- **Servermetadata bekijken**: Serverinformatie, schema’s en configuraties onderzoeken
 
 Een typische uitvoering van de tool ziet er als volgt uit:
 
@@ -46,11 +46,11 @@ Een typische uitvoering van de tool ziet er als volgt uit:
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Het bovenstaande commando start een MCP en de visuele interface en opent een lokale webinterface in je browser. Je ziet een dashboard met je geregistreerde MCP-servers, hun beschikbare tools, resources en prompts. De interface stelt je in staat om interactief tooluitvoering te testen, servermetadata te inspecteren en reacties in real-time te bekijken, wat het valideren en debuggen van je MCP-serverimplementaties eenvoudiger maakt.
+Bovenstaand commando start een MCP en de visuele interface en opent een lokale webinterface in je browser. Je ziet een dashboard met je geregistreerde MCP-servers, hun beschikbare tools, resources en prompts. De interface maakt het mogelijk om interactief tooluitvoering te testen, servermetadata te inspecteren en realtime reacties te bekijken, wat het valideren en debuggen van je MCP-serverimplementaties vergemakkelijkt.
 
 Zo kan het eruitzien: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.nl.png)
 
-Je kunt deze tool ook in CLI-modus draaien door de `--cli` optie toe te voegen. Hieronder een voorbeeld van het draaien van de tool in "CLI"-modus, waarbij alle tools op de server worden weergegeven:
+Je kunt deze tool ook in CLI-modus draaien door de `--cli` optie toe te voegen. Hier is een voorbeeld van het draaien van de tool in "CLI"-modus, waarbij alle tools op de server worden weergegeven:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
@@ -58,7 +58,7 @@ npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/lis
 
 ### Handmatig testen
 
-Naast het gebruik van de inspector tool om servermogelijkheden te testen, is een vergelijkbare aanpak om een client te gebruiken die HTTP ondersteunt, zoals curl.
+Naast het gebruik van de inspector-tool om servermogelijkheden te testen, is een vergelijkbare aanpak het draaien van een client die HTTP ondersteunt, zoals bijvoorbeeld curl.
 
 Met curl kun je MCP-servers direct testen via HTTP-verzoeken:
 
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Zoals je ziet in het bovenstaande voorbeeld met curl, gebruik je een POST-verzoek om een tool aan te roepen met een payload die de naam van de tool en de parameters bevat. Gebruik de aanpak die het beste bij jou past. CLI-tools zijn over het algemeen sneller in gebruik en lenen zich goed voor scripting, wat handig kan zijn in een CI/CD-omgeving.
+Zoals je ziet bij het bovenstaande gebruik van curl, gebruik je een POST-verzoek om een tool aan te roepen met een payload die bestaat uit de naam van de tool en de parameters. Gebruik de aanpak die het beste bij jou past. CLI-tools zijn over het algemeen sneller in gebruik en lenen zich goed voor scripting, wat handig kan zijn in een CI/CD-omgeving.
 
-### Unittesting
+### Unit testen
 
-Maak unittests voor je tools en resources om te garanderen dat ze werken zoals verwacht. Hier is een voorbeeld van testcode.
+Maak unittests voor je tools en resources om te zorgen dat ze werken zoals verwacht. Hier is een voorbeeld van testcode.
 
 ```python
 import pytest
@@ -131,15 +131,15 @@ async def test_list_tools_cursor_parameter():
 
 De bovenstaande code doet het volgende:
 
-- Maakt gebruik van het pytest-framework waarmee je tests als functies kunt maken en assert-statements kunt gebruiken.
-- Creëert een MCP Server met twee verschillende tools.
-- Gebruikt de `assert`-statement om te controleren of bepaalde voorwaarden worden voldaan.
+- Maakt gebruik van het pytest-framework, waarmee je tests als functies kunt schrijven en assert-statements kunt gebruiken.
+- Creëert een MCP-server met twee verschillende tools.
+- Gebruikt `assert` om te controleren of bepaalde voorwaarden worden voldaan.
 
 Bekijk het [volledige bestand hier](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-Met het bovenstaande bestand kun je je eigen server testen om te controleren of de mogelijkheden correct zijn aangemaakt.
+Met dit bestand kun je je eigen server testen om te controleren of de mogelijkheden correct zijn aangemaakt.
 
-Alle grote SDK's hebben vergelijkbare testsecties, dus je kunt dit aanpassen aan je gekozen runtime.
+Alle grote SDK’s hebben vergelijkbare testsecties, zodat je dit kunt aanpassen aan je gekozen runtime.
 
 ## Voorbeelden
 
@@ -149,13 +149,13 @@ Alle grote SDK's hebben vergelijkbare testsecties, dus je kunt dit aanpassen aan
 - [TypeScript Calculator](../samples/typescript/README.md)
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Extra bronnen
+## Aanvullende bronnen
 
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 
-## Wat is de volgende stap
+## Wat volgt
 
-- Volgende: [Deployment](/03-GettingStarted/09-deployment/README.md)
+- Volgende: [Deployment](../09-deployment/README.md)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onjuistheden kunnen bevatten. Het oorspronkelijke document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
