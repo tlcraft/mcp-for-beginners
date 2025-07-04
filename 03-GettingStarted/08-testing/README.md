@@ -147,4 +147,4 @@ All major SDKs have similar testing sections so you can adjust to your chosen ru
 
 ## What's Next
 
-- Next: [Deployment](/03-GettingStarted/09-deployment/README.md)
+- Next: [Deployment](../09-deployment/README.md)

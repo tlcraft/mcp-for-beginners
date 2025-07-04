@@ -299,4 +299,4 @@ Think about an AI application you're interested in building.
 
 ## What's next
 
-Next: [Chapter 1: Core Concepts](/01-CoreConcepts/README.md)
+Next: [Chapter 1: Core Concepts](../01-CoreConcepts/README.md)

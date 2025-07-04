@@ -768,5 +768,5 @@ The key takeaways for this chapter is the following about clients:
 
 ## What's Next
 
-- Next: [Creating a client with an LLM](/03-GettingStarted/03-llm-client/README.md)
+- Next: [Creating a client with an LLM](../03-llm-client/README.md)
 
