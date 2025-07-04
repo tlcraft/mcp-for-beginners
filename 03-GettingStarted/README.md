@@ -87,4 +87,4 @@ We have a set of samples that complements the exercises you will see in all chap
 
 ## What's next
 
-Next: [Creating your first MCP Server](/03-GettingStarted/01-first-server/README.md)
+Next: [Creating your first MCP Server](./01-first-server/README.md)

@@ -102,3 +102,6 @@ By studying these implementations, you can gain insights into architectural patt
 - [Playwright MCP Tool](https://github.com/microsoft/playwright-mcp)
 - [Microsoft Docs MCP Server](https://github.com/MicrosoftDocs/mcp)
 - [MCP Community Examples](https://github.com/microsoft/mcp)
+
+
+Next: Hands on Lab [Streamlining AI Workflows: Building an MCP Server with AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)

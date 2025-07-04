@@ -545,4 +545,4 @@ The key takeaways from this chapter are the following:
 
 ## What's Next
 
-- Next: [HTTP Streaming with MCP (Streamable HTTP)](/03-GettingStarted/06-http-streaming/README.md)
+- Next: [HTTP Streaming with MCP (Streamable HTTP)](../06-http-streaming/README.md)

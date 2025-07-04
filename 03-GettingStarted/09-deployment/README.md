@@ -102,4 +102,4 @@ There you have it, deploy it locally, deploy it to Azure through these steps.
 
 ## What's Next
 
-- Next: [Practical Implementation](/04-PracticalImplementation/README.md)
+- Next: [Practical Implementation](../../04-PracticalImplementation/README.md)

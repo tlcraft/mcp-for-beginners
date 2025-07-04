@@ -1201,4 +1201,4 @@ Take the code from the exercise and build out the server with some more tools. T
 
 ## What's Next
 
-- Next: [Consuming a server using Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
+- Next: [Consuming a server using Visual Studio Code](../04-vscode/README.md)
