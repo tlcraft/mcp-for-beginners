@@ -1,60 +1,60 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7816cc28f7ab9a54e31f9246429ffcd9",
-  "translation_date": "2025-06-13T01:32:39+00:00",
+  "original_hash": "1d9dc83260576b76f272d330ed93c51f",
+  "translation_date": "2025-07-04T19:01:14+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "sr"
 }
 -->
-# Deployovanje MCP servera
+# Деплојовање MCP сервера
 
-Deployovanje vašeg MCP servera omogućava drugima pristup njegovim alatima i resursima van vašeg lokalnog okruženja. Postoji nekoliko strategija za deploy, u zavisnosti od vaših zahteva za skalabilnošću, pouzdanošću i jednostavnošću upravljanja. Ispod ćete pronaći smernice za deploy MCP servera lokalno, u kontejnerima i u oblaku.
+Деплојовање вашег MCP сервера омогућава другима да приступе његовим алатима и ресурсима ван вашег локалног окружења. Постоји неколико стратегија за деплојовање које треба размотрити, у зависности од ваших захтева за скалабилношћу, поузданошћу и лакоћом управљања. Испод ћете пронаћи упутства за деплојовање MCP сервера локално, у контејнерима и у облаку.
 
-## Pregled
+## Преглед
 
-Ova lekcija pokriva kako da deployujete vašu MCP Server aplikaciju.
+Ова лекција обухвата како да деплојујете вашу MCP Server апликацију.
 
-## Ciljevi učenja
+## Циљеви учења
 
-Do kraja ove lekcije, moći ćete da:
+До краја ове лекције, моћи ћете да:
 
-- Procijenite različite pristupe deploy-u.
-- Deployujete vašu aplikaciju.
+- Процените различите приступе деплојовању.
+- Деплојујете вашу апликацију.
 
-## Lokalni razvoj i deploy
+## Локални развој и деплојовање
 
-Ako je vaš server namenjen da se koristi na korisničkom računaru, možete pratiti sledeće korake:
+Ако је ваш сервер намењен да се користи тако што ће радити на корисничком рачунару, можете пратити следеће кораке:
 
-1. **Preuzmite server**. Ako niste vi pisali server, prvo ga preuzmite na svoj računar.  
-1. **Pokrenite server proces**: Pokrenite vašu MCP server aplikaciju.
+1. **Преузмите сервер**. Ако нисте ви написали сервер, прво га преузмите на свој рачунар.  
+1. **Покрените серверски процес**: Покрените вашу MCP сервер апликацију.
 
-Za SSE (nije potrebno za stdio tip servera):
+За SSE (није потребно за stdio тип сервера)
 
-1. **Konfigurišite mrežu**: Osigurajte da je server dostupan na očekivanom portu.  
-1. **Povežite klijente**: Koristite lokalne URL-ove za konekciju kao što je `http://localhost:3000`.
+1. **Конфигуришите мрежу**: Осигурајте да је сервер доступан на очекиваном порту.  
+1. **Повежите клијенте**: Користите локалне URL адресе као што је `http://localhost:3000`.
 
-## Deploy u oblak
+## Деплојовање у облак
 
-MCP serveri mogu biti deployovani na različite cloud platforme:
+MCP сервери могу бити деплојовани на различите облачне платформе:
 
-- **Serverless funkcije**: Deploy laganih MCP servera kao serverless funkcije  
-- **Kontejnerske usluge**: Koristite usluge poput Azure Container Apps, AWS ECS ili Google Cloud Run  
-- **Kubernetes**: Deploy i upravljanje MCP serverima u Kubernetes klasterima za visoku dostupnost
+- **Serverless Functions**: Деплојујте лагане MCP сервере као serverless функције  
+- **Container Services**: Користите сервисе као што су Azure Container Apps, AWS ECS или Google Cloud Run  
+- **Kubernetes**: Деплојујте и управљајте MCP серверима у Kubernetes кластерима за високу доступност
 
-### Primer: Azure Container Apps
+### Пример: Azure Container Apps
 
-Azure Container Apps podržava deploy MCP servera. Još uvek je u razvoju i trenutno podržava SSE servere.
+Azure Container Apps подржавају деплојовање MCP сервера. Ово је још увек у развоју и тренутно подржава SSE сервере.
 
-Evo kako to možete uraditi:
+Ево како то можете урадити:
 
-1. Klonirajte repozitorijum:
+1. Клонирајте репозиторијум:
 
   ```sh
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
   ```
 
-1. Pokrenite ga lokalno da testirate:
+1. Покрените га локално да тестирате:
 
   ```sh
   uv venv
@@ -68,7 +68,7 @@ Evo kako to možete uraditi:
   uv run fastapi dev main.py
   ```
 
-1. Da biste probali lokalno, kreirajte *mcp.json* fajl u *.vscode* direktorijumu i dodajte sledeći sadržaj:
+1. Да бисте га пробали локално, направите *mcp.json* фајл у *.vscode* директоријуму и додајте следећи садржај:
 
   ```json
   {
@@ -92,25 +92,25 @@ Evo kako to možete uraditi:
   }
   ```
 
-  Kada se SSE server pokrene, možete kliknuti na ikonu za pokretanje u JSON fajlu, sada bi alati na serveru trebali biti prepoznati od strane GitHub Copilot-a, pogledajte ikonu alata.
+  Када се SSE сервер покрене, можете кликнути на иконицу за репродукцију у JSON фајлу, сада би алати на серверу требало да буду препознати од стране GitHub Copilot-а, видите икону алата.
 
-1. Za deploy, pokrenite sledeću komandu:
+1. За деплојовање, покрените следећу команду:
 
   ```sh
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-Eto, deployujte lokalno ili na Azure prateći ove korake.
+Ето, деплојујте га локално или у Azure пратећи ове кораке.
 
-## Dodatni resursi
+## Додатни ресурси
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
-- [Članak o Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
-- [Azure Container Apps MCP repozitorijum](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
+- [Azure Container Apps чланак](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
+- [Azure Container Apps MCP репо](https://github.com/anthonychu/azure-container-apps-mcp-sample)
 
-## Šta sledi
+## Шта следи
 
-- Sledeće: [Praktična implementacija](/04-PracticalImplementation/README.md)
+- Следеће: [Практична имплементација](../../04-PracticalImplementation/README.md)
 
-**Ограничење одговорности**:  
-Овај документ је преведен помоћу AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде прецизан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати коначним и ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне интерпретације настале коришћењем овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

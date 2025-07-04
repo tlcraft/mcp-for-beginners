@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2342baa570312086fc19edcf41320250",
-  "translation_date": "2025-06-17T15:09:30+00:00",
+  "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
+  "translation_date": "2025-07-04T15:23:59+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "es"
 }
 -->
-En el código anterior nosotros:
+En el código anterior:
 
 - Importamos las librerías
-- Creamos una instancia de un cliente y la conectamos usando stdio como transporte.
-- Listamos prompts, recursos y herramientas e invocamos todos.
+- Creamos una instancia de un cliente y lo conectamos usando stdio como transporte.
+- Listamos prompts, recursos y herramientas, y los invocamos todos.
 
 Ahí lo tienes, un cliente que puede comunicarse con un servidor MCP.
 
@@ -31,15 +31,15 @@ Pasemos a la instanciación.
 
 Necesitaremos crear una instancia del transporte y otra de nuestro cliente:
 
-### -3- Listando las funcionalidades del servidor
+### -3- Listando las características del servidor
 
-Ahora, tenemos un cliente que puede conectarse cuando se ejecute el programa. Sin embargo, no lista sus funcionalidades, así que hagámoslo a continuación:
+Ahora, tenemos un cliente que puede conectarse cuando se ejecute el programa. Sin embargo, no lista realmente sus características, así que hagámoslo a continuación:
 
-Genial, ahora hemos capturado todas las funcionalidades. Ahora la pregunta es, ¿cuándo las usamos? Bueno, este cliente es bastante simple, simple en el sentido de que necesitaremos llamar explícitamente a las funcionalidades cuando las queramos. En el siguiente capítulo, crearemos un cliente más avanzado que tendrá acceso a su propio modelo de lenguaje grande, LLM. Por ahora, veamos cómo podemos invocar las funcionalidades en el servidor:
+Genial, ahora hemos capturado todas las características. Ahora la pregunta es, ¿cuándo las usamos? Bueno, este cliente es bastante simple, simple en el sentido de que necesitaremos llamar explícitamente a las características cuando las queramos. En el próximo capítulo, crearemos un cliente más avanzado que tendrá acceso a su propio modelo de lenguaje grande, LLM. Por ahora, veamos cómo podemos invocar las características en el servidor:
 
-### -4- Invocar funcionalidades
+### -4- Invocar características
 
-Para invocar las funcionalidades necesitamos asegurarnos de especificar los argumentos correctos y, en algunos casos, el nombre de lo que estamos intentando invocar.
+Para invocar las características, necesitamos asegurarnos de especificar los argumentos correctos y, en algunos casos, el nombre de lo que estamos tratando de invocar.
 
 ### -5- Ejecutar el cliente
 
@@ -47,9 +47,9 @@ Para ejecutar el cliente, escribe el siguiente comando en la terminal:
 
 ## Tarea
 
-En esta tarea, usarás lo que has aprendido para crear un cliente, pero crea un cliente propio.
+En esta tarea, usarás lo que has aprendido para crear un cliente, pero crearás un cliente propio.
 
-Aquí tienes un servidor que puedes usar y al que necesitas llamar mediante el código de tu cliente, intenta añadir más funcionalidades al servidor para hacerlo más interesante.
+Aquí tienes un servidor que puedes usar y al que necesitas llamar desde tu código cliente, intenta agregar más características al servidor para hacerlo más interesante.
 
 ## Solución
 
@@ -57,11 +57,11 @@ Aquí tienes un servidor que puedes usar y al que necesitas llamar mediante el c
 
 ## Puntos clave
 
-Los puntos clave de este capítulo sobre clientes son los siguientes:
+Los puntos clave de este capítulo sobre los clientes son los siguientes:
 
-- Pueden usarse tanto para descubrir como para invocar funcionalidades en el servidor.
+- Pueden usarse tanto para descubrir como para invocar características en el servidor.
 - Pueden iniciar un servidor mientras se inician ellos mismos (como en este capítulo), pero los clientes también pueden conectarse a servidores ya en ejecución.
-- Son una excelente manera de probar las capacidades del servidor junto con alternativas como el Inspector, como se describió en el capítulo anterior.
+- Son una excelente manera de probar las capacidades del servidor junto a alternativas como el Inspector, como se describió en el capítulo anterior.
 
 ## Recursos adicionales
 
@@ -77,7 +77,7 @@ Los puntos clave de este capítulo sobre clientes son los siguientes:
 
 ## Qué sigue
 
-- Siguiente: [Creando un cliente con un LLM](/03-GettingStarted/03-llm-client/README.md)
+- Siguiente: [Creando un cliente con un LLM](../03-llm-client/README.md)
 
 **Aviso legal**:  
 Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

@@ -1,52 +1,52 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e25bc265a51244a7a2d93b3761543a1f",
-  "translation_date": "2025-06-13T02:10:20+00:00",
+  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
+  "translation_date": "2025-07-04T18:06:42+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "vi"
 }
 -->
-## Kiểm tra và Gỡ lỗi
+## Kiểm thử và Gỡ lỗi
 
-Trước khi bắt đầu kiểm tra server MCP của bạn, điều quan trọng là phải hiểu các công cụ sẵn có và những phương pháp tốt nhất để gỡ lỗi. Việc kiểm tra hiệu quả giúp server của bạn hoạt động như mong đợi và hỗ trợ bạn nhanh chóng phát hiện cũng như khắc phục sự cố. Phần sau đây trình bày các cách tiếp cận được khuyến nghị để xác thực việc triển khai MCP của bạn.
+Trước khi bắt đầu kiểm thử server MCP của bạn, điều quan trọng là phải hiểu các công cụ có sẵn và các phương pháp tốt nhất để gỡ lỗi. Kiểm thử hiệu quả đảm bảo server của bạn hoạt động như mong đợi và giúp bạn nhanh chóng phát hiện cũng như khắc phục sự cố. Phần sau đây sẽ trình bày các cách tiếp cận được khuyến nghị để xác thực việc triển khai MCP của bạn.
 
 ## Tổng quan
 
-Bài học này bao gồm cách chọn phương pháp kiểm tra phù hợp và công cụ kiểm tra hiệu quả nhất.
+Bài học này sẽ hướng dẫn cách chọn phương pháp kiểm thử phù hợp và công cụ kiểm thử hiệu quả nhất.
 
 ## Mục tiêu học tập
 
-Kết thúc bài học này, bạn sẽ có thể:
+Sau bài học này, bạn sẽ có thể:
 
-- Mô tả các phương pháp khác nhau để kiểm tra.
-- Sử dụng các công cụ khác nhau để kiểm tra mã của bạn một cách hiệu quả.
+- Mô tả các phương pháp kiểm thử khác nhau.
+- Sử dụng các công cụ khác nhau để kiểm thử mã của bạn một cách hiệu quả.
 
-## Kiểm tra MCP Servers
+## Kiểm thử Server MCP
 
-MCP cung cấp các công cụ giúp bạn kiểm tra và gỡ lỗi server của mình:
+MCP cung cấp các công cụ giúp bạn kiểm thử và gỡ lỗi server của mình:
 
 - **MCP Inspector**: Công cụ dòng lệnh có thể chạy dưới dạng CLI hoặc giao diện trực quan.
-- **Kiểm tra thủ công**: Bạn có thể dùng công cụ như curl để gửi các yêu cầu web, nhưng bất kỳ công cụ nào có thể chạy HTTP đều được.
-- **Kiểm tra đơn vị**: Bạn có thể dùng framework kiểm tra yêu thích để kiểm tra các tính năng của cả server và client.
+- **Kiểm thử thủ công**: Bạn có thể dùng công cụ như curl để gửi các yêu cầu web, hoặc bất kỳ công cụ nào có thể thực hiện HTTP.
+- **Kiểm thử đơn vị**: Bạn có thể sử dụng framework kiểm thử yêu thích để kiểm thử các tính năng của cả server và client.
 
 ### Sử dụng MCP Inspector
 
-Chúng tôi đã mô tả cách sử dụng công cụ này trong các bài học trước, nhưng hãy cùng điểm qua một chút ở cấp độ tổng quát. Đây là công cụ được xây dựng trên Node.js và bạn có thể dùng bằng cách gọi `npx` thực thi, công cụ này sẽ tải về và cài đặt tạm thời, sau đó tự động dọn dẹp khi hoàn thành yêu cầu của bạn.
+Chúng tôi đã mô tả cách sử dụng công cụ này trong các bài học trước, nhưng hãy cùng điểm qua một số thông tin tổng quan. Đây là công cụ được xây dựng trên Node.js và bạn có thể sử dụng bằng cách gọi thực thi `npx`, công cụ này sẽ tải xuống và cài đặt tạm thời MCP Inspector, sau đó tự động dọn dẹp khi hoàn thành yêu cầu của bạn.
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) giúp bạn:
 
-- **Khám phá khả năng của Server**: Tự động phát hiện tài nguyên, công cụ và lời nhắc có sẵn
-- **Kiểm tra thực thi công cụ**: Thử các tham số khác nhau và xem phản hồi theo thời gian thực
-- **Xem metadata của Server**: Xem thông tin server, schema và cấu hình
+- **Khám phá khả năng của Server**: Tự động phát hiện các tài nguyên, công cụ và lời nhắc có sẵn
+- **Kiểm thử thực thi công cụ**: Thử các tham số khác nhau và xem phản hồi theo thời gian thực
+- **Xem metadata của Server**: Kiểm tra thông tin server, schema và cấu hình
 
-Một ví dụ chạy công cụ trông như sau:
+Một ví dụ điển hình khi chạy công cụ như sau:
 
 ```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Lệnh trên khởi động MCP và giao diện trực quan, đồng thời mở giao diện web cục bộ trên trình duyệt của bạn. Bạn sẽ thấy một bảng điều khiển hiển thị các server MCP đã đăng ký, các công cụ, tài nguyên và lời nhắc có sẵn. Giao diện cho phép bạn kiểm tra tương tác thực thi công cụ, xem metadata server và phản hồi thời gian thực, giúp bạn dễ dàng xác thực và gỡ lỗi các triển khai MCP.
+Lệnh trên khởi động MCP cùng giao diện trực quan và mở giao diện web cục bộ trên trình duyệt của bạn. Bạn sẽ thấy một bảng điều khiển hiển thị các server MCP đã đăng ký, các công cụ, tài nguyên và lời nhắc có sẵn. Giao diện cho phép bạn tương tác kiểm thử thực thi công cụ, kiểm tra metadata server và xem phản hồi theo thời gian thực, giúp việc xác thực và gỡ lỗi các triển khai MCP trở nên dễ dàng hơn.
 
 Giao diện có thể trông như thế này: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.vi.png)
 
@@ -56,11 +56,11 @@ Bạn cũng có thể chạy công cụ này ở chế độ CLI bằng cách th
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
 ```
 
-### Kiểm tra thủ công
+### Kiểm thử thủ công
 
-Ngoài việc chạy công cụ inspector để kiểm tra khả năng của server, một cách tiếp cận tương tự là chạy client có thể sử dụng HTTP, ví dụ như curl.
+Ngoài việc chạy công cụ inspector để kiểm thử khả năng của server, một cách tiếp cận tương tự là sử dụng client có thể gửi HTTP, ví dụ như curl.
 
-Với curl, bạn có thể kiểm tra trực tiếp các MCP server bằng các yêu cầu HTTP:
+Với curl, bạn có thể kiểm thử trực tiếp server MCP bằng các yêu cầu HTTP:
 
 ```bash
 # Example: Test server metadata
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Như bạn thấy trong ví dụ sử dụng curl trên, bạn dùng yêu cầu POST để gọi một công cụ với payload gồm tên công cụ và các tham số của nó. Hãy chọn cách phù hợp nhất với bạn. Các công cụ CLI thường nhanh hơn khi sử dụng và dễ dàng được tự động hóa trong môi trường CI/CD.
+Như bạn thấy trong ví dụ sử dụng curl ở trên, bạn dùng yêu cầu POST để gọi một công cụ với payload gồm tên công cụ và các tham số của nó. Hãy chọn cách phù hợp nhất với bạn. Các công cụ CLI thường nhanh hơn và dễ dàng được tự động hóa, điều này rất hữu ích trong môi trường CI/CD.
 
-### Kiểm tra đơn vị
+### Kiểm thử đơn vị
 
-Tạo các bài kiểm tra đơn vị cho công cụ và tài nguyên của bạn để đảm bảo chúng hoạt động như mong đợi. Dưới đây là ví dụ mã kiểm tra.
+Tạo các bài kiểm thử đơn vị cho các công cụ và tài nguyên của bạn để đảm bảo chúng hoạt động như mong đợi. Dưới đây là ví dụ về mã kiểm thử.
 
 ```python
 import pytest
@@ -129,19 +129,19 @@ async def test_list_tools_cursor_parameter():
     
 ```
 
-Mã trên thực hiện:
+Đoạn mã trên thực hiện các bước sau:
 
-- Sử dụng framework pytest cho phép bạn tạo các bài kiểm tra dưới dạng hàm và dùng câu lệnh assert.
+- Sử dụng framework pytest cho phép bạn tạo các bài kiểm thử dưới dạng hàm và dùng câu lệnh assert.
 - Tạo một MCP Server với hai công cụ khác nhau.
-- Dùng câu lệnh `assert` để kiểm tra các điều kiện nhất định.
+- Dùng câu lệnh `assert` để kiểm tra các điều kiện nhất định được thỏa mãn.
 
 Bạn có thể xem [toàn bộ file tại đây](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-Dựa trên file trên, bạn có thể kiểm tra server của riêng mình để đảm bảo các khả năng được tạo đúng như mong muốn.
+Dựa trên file trên, bạn có thể kiểm thử server của mình để đảm bảo các khả năng được tạo ra đúng như mong muốn.
 
-Hầu hết các SDK lớn đều có phần kiểm tra tương tự, bạn có thể điều chỉnh cho phù hợp với môi trường runtime bạn chọn.
+Tất cả các SDK chính đều có phần kiểm thử tương tự, vì vậy bạn có thể điều chỉnh theo môi trường runtime bạn chọn.
 
-## Ví dụ mẫu
+## Mẫu
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
@@ -155,7 +155,7 @@ Hầu hết các SDK lớn đều có phần kiểm tra tương tự, bạn có 
 
 ## Tiếp theo
 
-- Tiếp theo: [Deployment](/03-GettingStarted/09-deployment/README.md)
+- Tiếp theo: [Triển khai](../09-deployment/README.md)
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn chính xác và đáng tin cậy. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

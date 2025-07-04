@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1446979020432f512c883848d7eca144",
-  "translation_date": "2025-05-29T21:47:32+00:00",
+  "original_hash": "105c2ddbb77bc38f7e9df009e1b06e45",
+  "translation_date": "2025-07-04T17:08:34+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "pl"
 }
 -->
-# Wprowadzenie do Model Context Protocol (MCP): Dlaczego ma znaczenie dla skalowalnych aplikacji AI
+# Wprowadzenie do Model Context Protocol (MCP): Dlaczego jest ważny dla skalowalnych aplikacji AI
 
-Generatywne aplikacje AI to duży krok naprzód, ponieważ często pozwalają użytkownikowi na interakcję z aplikacją za pomocą naturalnych poleceń językowych. Jednak w miarę inwestowania coraz większej ilości czasu i zasobów w takie aplikacje, chcesz mieć pewność, że łatwo zintegrujesz funkcje i zasoby w sposób umożliwiający ich łatwe rozszerzanie, obsługę wielu modeli jednocześnie oraz radzenie sobie z różnymi niuansami modeli. Krótko mówiąc, tworzenie aplikacji Gen AI jest na początku proste, ale w miarę ich rozwoju i rosnącej złożoności trzeba zacząć definiować architekturę i prawdopodobnie oprzeć się na standardzie, który zapewni spójność budowy aplikacji. W tym właśnie miejscu pojawia się MCP, które organizuje proces i dostarcza standard.
+Aplikacje generatywnej AI to duży krok naprzód, ponieważ często pozwalają użytkownikowi na interakcję z aplikacją za pomocą naturalnych poleceń językowych. Jednak wraz z inwestowaniem coraz większej ilości czasu i zasobów w takie aplikacje, chcesz mieć pewność, że łatwo zintegrujesz funkcjonalności i zasoby w sposób umożliwiający ich rozbudowę, obsługę wielu modeli jednocześnie oraz radzenie sobie z różnymi niuansami modeli. Krótko mówiąc, budowanie aplikacji Gen AI jest na początku proste, ale w miarę ich rozwoju i rosnącej złożoności, musisz zacząć definiować architekturę i prawdopodobnie polegać na standardzie, który zapewni spójność w budowie aplikacji. Właśnie tutaj wchodzi MCP, aby uporządkować sprawy i dostarczyć standard.
 
 ---
 
@@ -21,11 +21,11 @@ Generatywne aplikacje AI to duży krok naprzód, ponieważ często pozwalają u�
 
 ## **🎯 Dlaczego standaryzacja w AI jest ważna**
 
-W miarę jak aplikacje generatywne AI stają się coraz bardziej złożone, niezbędne jest przyjęcie standardów gwarantujących **skalowalność, rozszerzalność** i **łatwość utrzymania**. MCP odpowiada na te potrzeby poprzez:
+W miarę jak aplikacje generatywnej AI stają się coraz bardziej złożone, kluczowe jest przyjęcie standardów zapewniających **skalowalność, rozszerzalność** i **łatwość utrzymania**. MCP odpowiada na te potrzeby poprzez:
 
 - Ujednolicenie integracji modeli z narzędziami  
 - Ograniczenie kruchych, jednorazowych rozwiązań  
-- Pozwolenie na współistnienie wielu modeli w jednym ekosystemie  
+- Umożliwienie współistnienia wielu modeli w jednym ekosystemie  
 
 ---
 
@@ -33,10 +33,10 @@ W miarę jak aplikacje generatywne AI stają się coraz bardziej złożone, niez
 
 Po przeczytaniu tego artykułu będziesz potrafił:
 
-- Zdefiniować **Model Context Protocol (MCP)** oraz jego zastosowania  
-- Zrozumieć, jak MCP ustandaryzowało komunikację model–narzędzie  
-- Wymienić kluczowe elementy architektury MCP  
-- Poznać przykłady zastosowań MCP w kontekście biznesowym i developerskim  
+- Zdefiniować **Model Context Protocol (MCP)** i jego zastosowania  
+- Zrozumieć, jak MCP standaryzuje komunikację model-narzędzie  
+- Wskazać kluczowe elementy architektury MCP  
+- Poznać przykłady zastosowań MCP w środowiskach korporacyjnych i deweloperskich  
 
 ---
 
@@ -46,19 +46,19 @@ Po przeczytaniu tego artykułu będziesz potrafił:
 
 Przed MCP integracja modeli z narzędziami wymagała:
 
-- Pisania dedykowanego kodu dla każdej pary narzędzie–model  
-- Korzystania z niestandardowych API dla każdego dostawcy  
+- Dedykowanego kodu dla każdej pary narzędzie-model  
+- Niestandardowych API dla każdego dostawcy  
 - Częstych przerw spowodowanych aktualizacjami  
-- Słabej skalowalności wraz z rosnącą liczbą narzędzi  
+- Słabej skalowalności przy rosnącej liczbie narzędzi  
 
 ### **✅ Korzyści ze standaryzacji MCP**
 
-| **Korzyść**             | **Opis**                                                                       |
-|-------------------------|--------------------------------------------------------------------------------|
-| Interoperacyjność       | LLM współpracują płynnie z narzędziami różnych dostawców                      |
-| Spójność                | Jednolite zachowanie na różnych platformach i narzędziach                     |
-| Możliwość ponownego użycia | Narzędzia stworzone raz można wykorzystywać w różnych projektach i systemach  |
-| Przyspieszenie rozwoju  | Skrócenie czasu tworzenia dzięki standardowym, plug-and-play interfejsom      |
+| **Korzyść**              | **Opis**                                                                    |
+|--------------------------|-----------------------------------------------------------------------------|
+| Interoperacyjność        | LLM współpracują bezproblemowo z narzędziami różnych dostawców             |
+| Spójność                 | Jednolite zachowanie na różnych platformach i narzędziach                   |
+| Ponowne użycie           | Narzędzia stworzone raz mogą być wykorzystywane w wielu projektach i systemach |
+| Przyspieszenie rozwoju   | Skrócenie czasu tworzenia dzięki standardowym, gotowym do użycia interfejsom |
 
 ---
 
@@ -67,41 +67,41 @@ Przed MCP integracja modeli z narzędziami wymagała:
 MCP opiera się na **modelu klient-serwer**, gdzie:
 
 - **MCP Hosts** uruchamiają modele AI  
-- **MCP Clients** inicjują żądania  
-- **MCP Servers** dostarczają kontekst, narzędzia i funkcjonalności  
+- **MCP Clients** inicjują zapytania  
+- **MCP Servers** dostarczają kontekst, narzędzia i możliwości  
 
 ### **Kluczowe komponenty:**
 
 - **Resources** – statyczne lub dynamiczne dane dla modeli  
-- **Prompts** – zdefiniowane wcześniej workflow do sterowanego generowania  
+- **Prompts** – zdefiniowane wcześniej przepływy pracy do sterowanej generacji  
 - **Tools** – wykonywalne funkcje, takie jak wyszukiwanie, obliczenia  
 - **Sampling** – zachowanie agentowe poprzez rekurencyjne interakcje  
 
 ---
 
-## Jak działają MCP Servers
+## Jak działają serwery MCP
 
-Serwery MCP funkcjonują w następujący sposób:
+Serwery MCP działają w następujący sposób:
 
-- **Przepływ żądania**:  
-    1. MCP Client wysyła żądanie do modelu AI działającego na MCP Host.  
+- **Przepływ zapytań**:  
+    1. MCP Client wysyła zapytanie do modelu AI działającego na MCP Host.  
     2. Model AI rozpoznaje, kiedy potrzebuje zewnętrznych narzędzi lub danych.  
-    3. Model komunikuje się z MCP Serverem za pomocą ustandaryzowanego protokołu.  
+    3. Model komunikuje się z MCP Server za pomocą ustandaryzowanego protokołu.  
 
-- **Funkcje MCP Servera**:  
+- **Funkcje MCP Server**:  
     - Rejestr narzędzi: utrzymuje katalog dostępnych narzędzi i ich możliwości.  
-    - Uwierzytelnianie: weryfikuje uprawnienia do korzystania z narzędzi.  
-    - Obsługa żądań: przetwarza przychodzące żądania narzędzi od modelu.  
+    - Uwierzytelnianie: weryfikuje uprawnienia do dostępu do narzędzi.  
+    - Obsługa zapytań: przetwarza przychodzące żądania narzędzi od modelu.  
     - Formatowanie odpowiedzi: strukturyzuje wyniki narzędzi w formacie zrozumiałym dla modelu.  
 
-- **Wykonanie narzędzia**:  
-    - Serwer kieruje żądania do odpowiednich zewnętrznych narzędzi  
-    - Narzędzia wykonują swoje specjalistyczne funkcje (wyszukiwanie, obliczenia, zapytania do baz danych itd.)  
-    - Wyniki są zwracane do modelu w spójnym formacie  
+- **Wykonanie narzędzi**:  
+    - Serwer kieruje zapytania do odpowiednich zewnętrznych narzędzi  
+    - Narzędzia wykonują swoje specjalistyczne funkcje (wyszukiwanie, obliczenia, zapytania do baz danych itp.)  
+    - Wyniki są zwracane do modelu w spójnym formacie.  
 
 - **Zakończenie odpowiedzi**:  
-    - Model AI włącza wyniki narzędzi do swojej odpowiedzi  
-    - Ostateczna odpowiedź jest wysyłana do aplikacji-klienta  
+    - Model AI włącza wyniki narzędzi do swojej odpowiedzi.  
+    - Ostateczna odpowiedź jest wysyłana z powrotem do aplikacji klienckiej.  
 
 ```mermaid
 ---
@@ -140,7 +140,7 @@ graph TD
     style F fill:#c2f0c2,stroke:#333,stroke-width:1px    
 ```
 
-## 👨‍💻 Jak zbudować MCP Server (z przykładami)
+## 👨‍💻 Jak zbudować serwer MCP (z przykładami)
 
 Serwery MCP pozwalają rozszerzyć możliwości LLM, dostarczając dane i funkcjonalności.
 
@@ -154,33 +154,32 @@ Chcesz spróbować? Oto przykłady tworzenia prostego serwera MCP w różnych j�
 
 - **Przykład w C#/.NET**: https://github.com/modelcontextprotocol/csharp-sdk
 
+## 🌍 Przykłady zastosowań MCP w praktyce
 
-## 🌍 Przykłady zastosowań MCP w rzeczywistych projektach
+MCP umożliwia szeroki zakres zastosowań, rozszerzając możliwości AI:
 
-MCP umożliwia szeroki zakres zastosowań poprzez rozszerzenie możliwości AI:
+| **Zastosowanie**           | **Opis**                                                                    |
+|----------------------------|-----------------------------------------------------------------------------|
+| Integracja danych w przedsiębiorstwie | Łączenie LLM z bazami danych, CRM lub narzędziami wewnętrznymi          |
+| Systemy agentowe AI        | Umożliwienie autonomicznym agentom dostępu do narzędzi i przepływów decyzyjnych |
+| Aplikacje multimodalne     | Łączenie narzędzi tekstowych, obrazowych i audio w jednej zunifikowanej aplikacji AI |
+| Integracja danych w czasie rzeczywistym | Dostarczanie na żywo danych do interakcji AI dla dokładniejszych i aktualnych wyników |
 
-| **Zastosowanie**           | **Opis**                                                                       |
-|----------------------------|--------------------------------------------------------------------------------|
-| Integracja danych w przedsiębiorstwie | Łączenie LLM z bazami danych, CRM-ami lub narzędziami wewnętrznymi       |
-| Systemy agentowe AI         | Umożliwienie autonomicznym agentom dostępu do narzędzi i podejmowania decyzji |
-| Aplikacje multimodalne      | Łączenie narzędzi tekstowych, obrazowych i audio w jednej zunifikowanej aplikacji AI |
-| Integracja danych w czasie rzeczywistym | Dostarczanie aktualnych danych do interakcji AI dla dokładniejszych wyników |
+### 🧠 MCP = Uniwersalny standard dla interakcji AI
 
-### 🧠 MCP = uniwersalny standard dla interakcji AI
+Model Context Protocol (MCP) działa jak uniwersalny standard dla interakcji AI, podobnie jak USB-C ustandaryzował fizyczne połączenia urządzeń. W świecie AI MCP zapewnia spójny interfejs, pozwalając modelom (klientom) na płynną integrację z zewnętrznymi narzędziami i dostawcami danych (serwerami). Dzięki temu nie ma potrzeby tworzenia różnych, niestandardowych protokołów dla każdego API czy źródła danych.
 
-Model Context Protocol (MCP) działa jak uniwersalny standard dla interakcji AI, podobnie jak USB-C ustandaryzowało fizyczne połączenia urządzeń. W świecie AI MCP dostarcza spójny interfejs, który pozwala modelom (klientom) na płynną integrację z zewnętrznymi narzędziami i dostawcami danych (serwerami). Dzięki temu nie ma potrzeby stosowania różnych, niestandardowych protokołów dla każdego API lub źródła danych.
-
-W ramach MCP narzędzie kompatybilne z MCP (zwane MCP serverem) działa według jednolitego standardu. Serwery te mogą wymieniać listę dostępnych narzędzi lub akcji i wykonywać je na żądanie agenta AI. Platformy agentowe wspierające MCP potrafią odkrywać dostępne narzędzia na serwerach i wywoływać je za pomocą tego standardowego protokołu.
+W ramach MCP narzędzie kompatybilne z MCP (zwane serwerem MCP) działa według jednolitego standardu. Serwery te mogą udostępniać listę oferowanych narzędzi lub akcji oraz wykonywać je na żądanie agenta AI. Platformy agentów AI wspierające MCP potrafią wykrywać dostępne narzędzia na serwerach i wywoływać je za pomocą tego standardowego protokołu.
 
 ### 💡 Ułatwia dostęp do wiedzy
 
-Poza dostarczaniem narzędzi MCP ułatwia też dostęp do wiedzy. Pozwala aplikacjom dostarczać kontekst dużym modelom językowym (LLM) poprzez łączenie ich z różnymi źródłami danych. Na przykład MCP server może reprezentować repozytorium dokumentów firmy, umożliwiając agentom pobieranie istotnych informacji na żądanie. Inny serwer może obsługiwać konkretne akcje, jak wysyłanie maili czy aktualizacja rekordów. Z perspektywy agenta to po prostu narzędzia — niektóre zwracają dane (kontekst wiedzy), inne wykonują akcje. MCP efektywnie zarządza oboma przypadkami.
+Poza udostępnianiem narzędzi, MCP ułatwia także dostęp do wiedzy. Pozwala aplikacjom dostarczać kontekst dużym modelom językowym (LLM) poprzez łączenie ich z różnymi źródłami danych. Na przykład serwer MCP może reprezentować repozytorium dokumentów firmy, umożliwiając agentom pobieranie odpowiednich informacji na żądanie. Inny serwer może obsługiwać konkretne akcje, takie jak wysyłanie e-maili czy aktualizacja rekordów. Z perspektywy agenta to po prostu narzędzia, które może wykorzystać — niektóre zwracają dane (kontekst wiedzy), inne wykonują akcje. MCP efektywnie zarządza oboma przypadkami.
 
-Agent łączący się z MCP serverem automatycznie poznaje dostępne funkcjonalności i dane dzięki standardowemu formatowi. Ta standaryzacja umożliwia dynamiczną dostępność narzędzi. Na przykład dodanie nowego serwera MCP do systemu agenta sprawia, że jego funkcje są od razu dostępne, bez konieczności dalszej konfiguracji czy modyfikacji instrukcji agenta.
+Agent łączący się z serwerem MCP automatycznie poznaje dostępne możliwości i dane serwera dzięki standardowemu formatowi. Ta standaryzacja umożliwia dynamiczną dostępność narzędzi. Na przykład dodanie nowego serwera MCP do systemu agenta sprawia, że jego funkcje są od razu dostępne bez konieczności dalszej modyfikacji instrukcji agenta.
 
 Tak uproszczona integracja odpowiada schematowi przedstawionemu na diagramie mermaid, gdzie serwery dostarczają zarówno narzędzia, jak i wiedzę, zapewniając płynną współpracę między systemami.
 
-### 👉 Przykład: skalowalne rozwiązanie agentowe
+### 👉 Przykład: Skalowalne rozwiązanie agentowe
 
 ```mermaid
 ---
@@ -211,7 +210,7 @@ graph TD
 
 ### 🔄 Zaawansowane scenariusze MCP z integracją LLM po stronie klienta
 
-Poza podstawową architekturą MCP istnieją zaawansowane scenariusze, w których zarówno klient, jak i serwer zawierają LLM, co umożliwia bardziej złożone interakcje:
+Poza podstawową architekturą MCP istnieją zaawansowane scenariusze, w których zarówno klient, jak i serwer zawierają LLM, co umożliwia bardziej zaawansowane interakcje:
 
 ```mermaid
 ---
@@ -277,21 +276,21 @@ sequenceDiagram
 
 ## 🔐 Praktyczne korzyści MCP
 
-Oto praktyczne zalety korzystania z MCP:
+Oto praktyczne korzyści z używania MCP:
 
 - **Aktualność**: Modele mają dostęp do najnowszych informacji poza danymi treningowymi  
 - **Rozszerzenie możliwości**: Modele mogą korzystać ze specjalistycznych narzędzi do zadań, do których nie były trenowane  
 - **Zmniejszenie halucynacji**: Zewnętrzne źródła danych zapewniają oparcie w faktach  
-- **Prywatność**: Wrażliwe dane mogą pozostać w bezpiecznym środowisku, zamiast być osadzone w promptach  
+- **Prywatność**: Wrażliwe dane mogą pozostać w bezpiecznym środowisku, zamiast być osadzane w promptach  
 
 ## 📌 Najważniejsze wnioski
 
-Kluczowe punkty dotyczące MCP:
+Oto kluczowe wnioski dotyczące MCP:
 
-- **MCP** ustandaryzowało sposób, w jaki modele AI komunikują się z narzędziami i danymi  
+- **MCP** standaryzuje sposób, w jaki modele AI współpracują z narzędziami i danymi  
 - Promuje **rozszerzalność, spójność i interoperacyjność**  
 - MCP pomaga **skrócić czas rozwoju, poprawić niezawodność i rozszerzyć możliwości modeli**  
-- Architektura klient-serwer **umożliwia tworzenie elastycznych, rozszerzalnych aplikacji AI**  
+- Architektura klient-serwer **umożliwia elastyczne i rozbudowywalne aplikacje AI**  
 
 ## 🧠 Ćwiczenie
 
@@ -304,10 +303,9 @@ Pomyśl o aplikacji AI, którą chciałbyś stworzyć.
 
 - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
 
-
 ## Co dalej
 
-Następny rozdział: [Chapter 1: Core Concepts](/01-CoreConcepts/README.md)
+Następny rozdział: [Chapter 1: Core Concepts](../01-CoreConcepts/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczeń AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy wszelkich starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym należy traktować jako źródło wiążące. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

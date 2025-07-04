@@ -1,64 +1,64 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e25bc265a51244a7a2d93b3761543a1f",
-  "translation_date": "2025-06-13T02:11:23+00:00",
+  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
+  "translation_date": "2025-07-04T18:32:32+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "hu"
 }
 -->
 ## Tesztelés és Hibakeresés
 
-Mielőtt elkezdenéd tesztelni az MCP szerveredet, fontos megérteni a rendelkezésre álló eszközöket és a hibakeresés legjobb gyakorlatait. A hatékony tesztelés biztosítja, hogy a szerver a várakozásoknak megfelelően működjön, és segít gyorsan azonosítani és megoldani a problémákat. A következő rész a javasolt módszereket ismerteti az MCP megvalósításod érvényesítéséhez.
+Mielőtt elkezdenéd tesztelni az MCP szerveredet, fontos megérteni a rendelkezésre álló eszközöket és a hibakeresés legjobb gyakorlatait. A hatékony tesztelés biztosítja, hogy a szerver a várakozásoknak megfelelően működjön, és segít gyorsan azonosítani és megoldani a problémákat. A következő részben ajánlott módszereket ismertetünk az MCP megvalósításának ellenőrzésére.
 
 ## Áttekintés
 
-Ez a lecke bemutatja, hogyan válaszd ki a megfelelő tesztelési megközelítést és a leghatékonyabb tesztelő eszközt.
+Ebben a leckében azt tárgyaljuk, hogyan válaszd ki a megfelelő tesztelési megközelítést és a leghatékonyabb tesztelő eszközt.
 
 ## Tanulási célok
 
 A lecke végére képes leszel:
 
-- Leírni a tesztelés különböző megközelítéseit.
+- Leírni a különböző tesztelési megközelítéseket.
 - Különböző eszközöket használni a kód hatékony teszteléséhez.
 
 ## MCP szerverek tesztelése
 
-Az MCP eszközöket biztosít a szervereid teszteléséhez és hibakereséséhez:
+Az MCP eszközöket biztosít a szerverek teszteléséhez és hibakereséséhez:
 
-- **MCP Inspector**: Parancssoros eszköz, amely CLI-ként és vizuális eszközként is használható.
-- **Manuális tesztelés**: Használhatsz például curl-t webkérések futtatásához, de bármilyen HTTP képes eszköz megfelel.
-- **Egységtesztelés**: Használhatod a kedvenc tesztkeretrendszered a szerver és kliens funkcióinak tesztelésére.
+- **MCP Inspector**: Parancssori eszköz, amely futtatható CLI-ként és vizuális eszközként is.
+- **Kézi tesztelés**: Használhatsz például curl-t webes kérések futtatásához, de bármilyen HTTP-képes eszköz megfelel.
+- **Egységtesztelés**: Használhatod a kedvenc tesztelési keretrendszeredet a szerver és kliens funkcióinak tesztelésére.
 
 ### MCP Inspector használata
 
-Ezt az eszközt korábbi leckékben már bemutattuk, de most egy kicsit átfogóbb képet adunk róla. Node.js-ben készült, és az `npx` futtatható állomány meghívásával használhatod, amely ideiglenesen letölti és telepíti az eszközt, majd a kérésed lefuttatása után eltávolítja magát.
+Ezt az eszközt korábbi leckékben már bemutattuk, de most egy kicsit magasabb szinten is beszéljünk róla. Ez egy Node.js-ben készült eszköz, amelyet az `npx` futtatható fájl segítségével használhatsz, ami ideiglenesen letölti és telepíti az eszközt, majd a futtatás után eltávolítja magát.
 
-Az [MCP Inspector](https://github.com/modelcontextprotocol/inspector) segít:
+Az [MCP Inspector](https://github.com/modelcontextprotocol/inspector) segít neked:
 
 - **Szerver képességek felfedezése**: Automatikusan felismeri az elérhető erőforrásokat, eszközöket és promptokat
 - **Eszközök futtatásának tesztelése**: Különböző paraméterek kipróbálása és válaszok valós idejű megtekintése
-- **Szerver metaadatainak megtekintése**: Információk, sémák és konfigurációk vizsgálata
+- **Szerver metaadatainak megtekintése**: Szerver információk, sémák és konfigurációk vizsgálata
 
-Az eszköz tipikus futtatása így néz ki:
+Egy tipikus futtatás így néz ki:
 
 ```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-A fenti parancs elindít egy MCP-t és annak vizuális felületét, majd elindít egy helyi webes felületet a böngésződben. Egy irányítópultot fogsz látni, amely megjeleníti a regisztrált MCP szervereidet, azok elérhető eszközeit, erőforrásait és promptjait. Az interfész lehetővé teszi az eszközök interaktív tesztelését, a szerver metaadatainak vizsgálatát és a valós idejű válaszok megtekintését, megkönnyítve az MCP szerver implementációk érvényesítését és hibakeresését.
+A fenti parancs elindít egy MCP-t és annak vizuális felületét, majd megnyit egy helyi webes felületet a böngésződben. Egy irányítópultot láthatsz, amely megjeleníti a regisztrált MCP szervereidet, azok elérhető eszközeit, erőforrásait és promptjait. Az interfész lehetővé teszi az eszközök interaktív tesztelését, a szerver metaadatainak vizsgálatát és a valós idejű válaszok megtekintését, megkönnyítve az MCP szerver implementációk ellenőrzését és hibakeresését.
 
 Így nézhet ki: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.hu.png)
 
-Az eszközt CLI módban is futtathatod, ilyenkor a `--cli` kapcsolót kell megadni. Íme egy példa, amikor a szerveren elérhető összes eszközt listázza:
+Az eszközt CLI módban is futtathatod, ilyenkor a `--cli` kapcsolót kell hozzáadni. Íme egy példa a CLI módban történő futtatásra, amely felsorolja a szerveren elérhető összes eszközt:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
 ```
 
-### Manuális tesztelés
+### Kézi tesztelés
 
-Az inspector eszköz használata mellett egy másik hasonló megközelítés egy HTTP-képes kliens futtatása, például curl.
+Az inspector eszköz futtatásán kívül egy másik hasonló megközelítés, ha egy HTTP-képes klienssel, például curl-lel teszteled a szervert.
 
 Curl segítségével közvetlenül HTTP kérésekkel tesztelheted az MCP szervereket:
 
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Ahogy a fenti curl példából látható, egy POST kéréssel hívsz meg egy eszközt, amelynek a terhelése az eszköz nevét és paramétereit tartalmazza. Használd azt a módszert, amelyik a legjobban megfelel neked. A CLI eszközök általában gyorsabbak, és könnyen szkriptelhetők, ami hasznos lehet CI/CD környezetben.
+Ahogy a fenti curl használatból látható, egy POST kérést használsz az eszköz meghívására, amelynek terhelése az eszköz nevét és paramétereit tartalmazza. Válaszd azt a megközelítést, amelyik neked a legkényelmesebb. A CLI eszközök általában gyorsabbak és könnyen automatizálhatók, ami hasznos lehet CI/CD környezetben.
 
 ### Egységtesztelés
 
-Készíts egységteszteket az eszközeidhez és erőforrásaidhoz, hogy megbizonyosodj arról, hogy azok a várakozásoknak megfelelően működnek. Íme egy példa tesztkód.
+Készíts egységteszteket az eszközeidhez és erőforrásaidhoz, hogy biztosítsd azok megfelelő működését. Íme egy példa tesztkód.
 
 ```python
 import pytest
@@ -131,15 +131,15 @@ async def test_list_tools_cursor_parameter():
 
 A fenti kód a következőket teszi:
 
-- A pytest keretrendszert használja, amely lehetővé teszi, hogy függvényként hozz létre teszteket és assert állításokat használj.
+- A pytest keretrendszert használja, amely lehetővé teszi, hogy teszteket függvényekként hozz létre és assert állításokat alkalmazz.
 - Létrehoz egy MCP szervert két különböző eszközzel.
-- Az `assert` állítással ellenőrzi, hogy bizonyos feltételek teljesülnek.
+- Az `assert` állításokkal ellenőrzi, hogy bizonyos feltételek teljesülnek.
 
 Nézd meg a [teljes fájlt itt](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-A fenti fájl alapján tesztelheted a saját szervered, hogy megbizonyosodj arról, hogy a képességek megfelelően jönnek létre.
+A fenti fájl alapján tesztelheted a saját szerveredet, hogy megbizonyosodj arról, hogy a képességek a megfelelő módon jönnek létre.
 
-Minden jelentősebb SDK hasonló tesztelési részeket tartalmaz, így könnyen igazíthatod a választott futtatókörnyezetedhez.
+Minden jelentősebb SDK hasonló tesztelési részekkel rendelkezik, így könnyen igazíthatod a választott futtatókörnyezetedhez.
 
 ## Minták
 
@@ -155,7 +155,7 @@ Minden jelentősebb SDK hasonló tesztelési részeket tartalmaz, így könnyen 
 
 ## Mi következik
 
-- Következő: [Deployment](/03-GettingStarted/09-deployment/README.md)
+- Következő: [Deployment](../09-deployment/README.md)
 
-**Felelősség kizárása**:  
-Ezt a dokumentumot az AI fordítószolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum anyanyelvű változatát tekintse a hiteles forrásnak. Kritikus információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

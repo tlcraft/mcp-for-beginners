@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1681ca3633aeb49ee03766abdbb94a93",
-  "translation_date": "2025-06-17T22:27:44+00:00",
+  "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
+  "translation_date": "2025-07-04T18:45:06+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "sk"
 }
@@ -26,48 +26,48 @@ Poďme teraz pridať potrebné routy.
 
 Pridajme routy, ktoré budú spracovávať pripojenie a prichádzajúce správy:
 
-Teraz pridáme schopnosti servera.
+Teraz pridajme schopnosti servera.
 
 ### -3- Pridanie schopností servera
 
-Keď máme definované všetko špecifické pre SSE, pridajme schopnosti servera ako nástroje, prompty a zdroje.
+Keď už máme definované všetko špecifické pre SSE, pridajme schopnosti servera ako nástroje, prompty a zdroje.
 
-Tvoj kompletný kód by mal vyzerať takto:
+Celý váš kód by mal vyzerať takto:
 
-Skvelé, máme server používajúci SSE, poďme ho teraz vyskúšať.
+Skvelé, máme server používajúci SSE, poďme ho teraz otestovať.
 
 ## Cvičenie: Ladenie SSE servera pomocou Inspector
 
-Inspector je skvelý nástroj, ktorý sme videli v predchádzajúcej lekcii [Creating your first server](/03-GettingStarted/01-first-server/README.md). Pozrime sa, či ho môžeme použiť aj tu:
+Inspector je skvelý nástroj, ktorý sme videli v predchádzajúcej lekcii [Vytvorenie vášho prvého servera](/03-GettingStarted/01-first-server/README.md). Pozrime sa, či ho môžeme použiť aj tu:
 
-### -1- Spustenie inspectora
+### -1- Spustenie inspektora
 
-Na spustenie inspectora musíš mať najskôr bežiaci SSE server, tak ho spustime:
+Na spustenie inspektora musíte mať najprv bežiaci SSE server, tak ho spustime:
 
-1. Spusti server
+1. Spustite server
 
-1. Spusti inspector
+1. Spustite inspektora
 
     > ![NOTE]
-    > Spusti tento príkaz v inom terminálovom okne, než kde beží server. Tiež si všimni, že príkaz nižšie musíš upraviť podľa URL, kde tvoj server beží.
+    > Spustite tento príkaz v inom terminálovom okne, než kde beží server. Tiež si všimnite, že musíte upraviť nižšie uvedený príkaz tak, aby zodpovedal URL, kde váš server beží.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-Spustenie inspectora vyzerá rovnako vo všetkých runtime. Všimni si, že namiesto odovzdania cesty k serveru a príkazu na jeho spustenie odovzdávame URL, kde server beží, a tiež špecifikujeme routu `/sse`.
+Spustenie inspektora vyzerá rovnako vo všetkých runtime prostrediach. Všimnite si, že namiesto zadania cesty k serveru a príkazu na jeho spustenie zadávame URL, kde server beží, a tiež špecifikujeme routu `/sse`.
 
 ### -2- Vyskúšanie nástroja
 
-Pripoj sa k serveru výberom SSE z rozbaľovacieho zoznamu a vyplň pole URL, kde tvoj server beží, napríklad http://localhost:4321/sse. Potom klikni na tlačidlo "Connect". Ako predtým, vyber nástroje, zadaj vstupné hodnoty a mal by si vidieť výsledok ako nižšie:
+Pripojte sa k serveru výberom SSE v rozbaľovacom zozname a vyplňte pole URL, kde váš server beží, napríklad http://localhost:4321/sse. Potom kliknite na tlačidlo "Connect". Ako predtým, vyberte možnosť zobraziť nástroje, vyberte nástroj a zadajte vstupné hodnoty. Mali by ste vidieť výsledok ako na obrázku nižšie:
 
-![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.sk.png)
+![SSE Server bežiaci v inspektore](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.sk.png)
 
-Skvelé, dokážeš pracovať s inspectorom, poďme sa pozrieť, ako pracovať s Visual Studio Code.
+Skvelé, dokážete pracovať s inspektorom, poďme sa pozrieť, ako pracovať s Visual Studio Code.
 
 ## Zadanie
 
-Skús rozšíriť svoj server o ďalšie schopnosti. Pozri si [túto stránku](https://api.chucknorris.io/) a napríklad pridaj nástroj, ktorý volá API. Ty rozhodni, ako má server vyzerať. Prajem veľa zábavy :)
+Skúste rozšíriť svoj server o ďalšie schopnosti. Pozrite si [túto stránku](https://api.chucknorris.io/), kde môžete napríklad pridať nástroj, ktorý volá API. Vy rozhodnete, ako má server vyzerať. Prajeme veľa zábavy :)
 
 ## Riešenie
 
@@ -75,27 +75,27 @@ Skús rozšíriť svoj server o ďalšie schopnosti. Pozri si [túto stránku](h
 
 ## Kľúčové poznatky
 
-Kľúčové poznatky z tejto kapitoly sú:
+Hlavné poznatky z tejto kapitoly sú:
 
 - SSE je druhý podporovaný transport vedľa stdio.
-- Na podporu SSE je potrebné spravovať prichádzajúce pripojenia a správy pomocou webového frameworku.
-- Na konzumáciu SSE servera môžeš použiť Inspector aj Visual Studio Code, rovnako ako pri stdio serveroch. Všimni si, že medzi stdio a SSE sú malé rozdiely. Pri SSE musíš server spustiť samostatne a potom spustiť inspector nástroj. Pri inspectore je tiež potrebné zadať URL.
+- Na podporu SSE musíte spravovať prichádzajúce pripojenia a správy pomocou webového frameworku.
+- Na konzumáciu SSE servera môžete použiť Inspector aj Visual Studio Code, rovnako ako pri stdio serveroch. Všimnite si, že medzi stdio a SSE sú malé rozdiely. Pri SSE musíte server spustiť samostatne a potom spustiť nástroj inspektora. Pri inspektore je tiež potrebné špecifikovať URL.
 
 ## Ukážky
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Java Kalkulačka](../samples/java/calculator/README.md)
+- [.Net Kalkulačka](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Kalkulačka](../samples/javascript/README.md)
+- [TypeScript Kalkulačka](../samples/typescript/README.md)
+- [Python Kalkulačka](../../../../03-GettingStarted/samples/python)
 
 ## Dodatočné zdroje
 
 - [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 
-## Čo nasleduje
+## Čo ďalej
 
-- Ďalej: [HTTP Streaming with MCP (Streamable HTTP)](/03-GettingStarted/06-http-streaming/README.md)
+- Ďalej: [HTTP Streaming s MCP (Streamovateľný HTTP)](../06-http-streaming/README.md)
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

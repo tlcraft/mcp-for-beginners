@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1681ca3633aeb49ee03766abdbb94a93",
-  "translation_date": "2025-06-17T22:08:59+00:00",
+  "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
+  "translation_date": "2025-07-04T17:02:11+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "br"
 }
@@ -24,7 +24,7 @@ Vamos adicionar as rotas necessárias a seguir.
 
 ### -2- Adicionar rotas
 
-Vamos adicionar as rotas que lidam com a conexão e as mensagens recebidas:
+Vamos adicionar rotas que lidam com a conexão e mensagens recebidas:
 
 Vamos adicionar capacidades ao servidor a seguir.
 
@@ -49,17 +49,17 @@ Para executar o inspector, você primeiro deve ter um servidor SSE rodando, ent�
 1. Execute o inspector
 
     > ![NOTE]
-    > Execute isso em uma janela de terminal separada da que o servidor está rodando. Também note que você precisa ajustar o comando abaixo para o URL onde seu servidor está rodando.
+    > Execute isso em uma janela de terminal separada daquela onde o servidor está rodando. Também note que você precisa ajustar o comando abaixo para se adequar à URL onde seu servidor está rodando.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-Executar o inspector é igual em todos os ambientes de execução. Note como, ao invés de passar um caminho para o servidor e um comando para iniciar o servidor, passamos o URL onde o servidor está rodando e também especificamos a rota `/sse`.
+Executar o inspector é igual em todos os ambientes de execução. Note como, ao invés de passar um caminho para nosso servidor e um comando para iniciar o servidor, passamos a URL onde o servidor está rodando e também especificamos a rota `/sse`.
 
 ### -2- Testando a ferramenta
 
-Conecte ao servidor selecionando SSE na lista suspensa e preencha o campo URL onde seu servidor está rodando, por exemplo http:localhost:4321/sse. Agora clique no botão "Connect". Como antes, selecione listar ferramentas, escolha uma ferramenta e forneça os valores de entrada. Você deverá ver um resultado como o abaixo:
+Conecte ao servidor selecionando SSE na lista suspensa e preencha o campo de URL onde seu servidor está rodando, por exemplo http:localhost:4321/sse. Agora clique no botão "Connect". Como antes, selecione listar ferramentas, escolha uma ferramenta e forneça valores de entrada. Você deve ver um resultado como o abaixo:
 
 ![Servidor SSE rodando no inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.br.png)
 
@@ -67,19 +67,19 @@ Conecte ao servidor selecionando SSE na lista suspensa e preencha o campo URL on
 
 ## Tarefa
 
-Tente ampliar seu servidor com mais capacidades. Veja [esta página](https://api.chucknorris.io/) para, por exemplo, adicionar uma ferramenta que chama uma API. Você decide como o servidor deve ser. Divirta-se :)
+Tente expandir seu servidor com mais capacidades. Veja [esta página](https://api.chucknorris.io/) para, por exemplo, adicionar uma ferramenta que chama uma API. Você decide como o servidor deve ser. Divirta-se :)
 
 ## Solução
 
-[Solution](./solution/README.md) Aqui está uma solução possível com código funcionando.
+[Solucao](./solution/README.md) Aqui está uma possível solução com código funcional.
 
 ## Principais Lições
 
 As principais lições deste capítulo são as seguintes:
 
-- SSE é o segundo tipo de transporte suportado, além do stdio.
+- SSE é o segundo tipo de transporte suportado, ao lado do stdio.
 - Para suportar SSE, você precisa gerenciar conexões e mensagens recebidas usando um framework web.
-- Você pode usar tanto o Inspector quanto o Visual Studio Code para consumir um servidor SSE, assim como servidores stdio. Note como há algumas diferenças entre stdio e SSE. Para SSE, você precisa iniciar o servidor separadamente e depois rodar sua ferramenta inspector. Para a ferramenta inspector, também há diferenças no fato de que você precisa especificar o URL.
+- Você pode usar tanto o Inspector quanto o Visual Studio Code para consumir um servidor SSE, assim como servidores stdio. Note como há pequenas diferenças entre stdio e SSE. Para SSE, você precisa iniciar o servidor separadamente e então rodar sua ferramenta inspector. Para o inspector, também há diferenças em que você precisa especificar a URL.
 
 ## Exemplos
 
@@ -95,7 +95,7 @@ As principais lições deste capítulo são as seguintes:
 
 ## O que vem a seguir
 
-- Próximo: [Streaming HTTP com MCP (Streamable HTTP)](/03-GettingStarted/06-http-streaming/README.md)
+- Próximo: [Streaming HTTP com MCP (HTTP Streamable)](../06-http-streaming/README.md)
 
 **Aviso Legal**:  
 Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

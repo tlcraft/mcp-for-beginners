@@ -1,66 +1,66 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e25bc265a51244a7a2d93b3761543a1f",
-  "translation_date": "2025-06-13T02:12:41+00:00",
+  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
+  "translation_date": "2025-07-04T19:03:14+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "sr"
 }
 -->
-## Testiranje i ispravljanje grešaka
+## Тестирање и отклањање грешака
 
-Pre nego što počnete sa testiranjem vašeg MCP servera, važno je da razumete dostupne alate i najbolje prakse za ispravljanje grešaka. Efikasno testiranje osigurava da vaš server radi kako se očekuje i pomaže vam da brzo identifikujete i rešite probleme. Sledeći odeljak daje preporučene pristupe za validaciju vaše MCP implementacije.
+Пре него што почнете са тестирањем вашег MCP сервера, важно је да разумете доступне алате и најбоље праксе за отклањање грешака. Ефикасно тестирање осигурава да ваш сервер ради онако како се очекује и помаже вам да брзо идентификујете и решите проблеме. Следећи одељак описује препоручене приступе за валидацију ваше MCP имплементације.
 
-## Pregled
+## Преглед
 
-Ova lekcija obuhvata kako izabrati pravi pristup testiranju i najučinkovitiji alat za testiranje.
+Ова лекција обухвата како одабрати прави приступ тестирању и најефикаснији алат за тестирање.
 
-## Ciljevi učenja
+## Циљеви учења
 
-Na kraju ove lekcije, bićete u stanju da:
+До краја ове лекције, моћи ћете да:
 
-- Opišete različite pristupe testiranju.
-- Koristite različite alate za efikasno testiranje vašeg koda.
+- Опишете различите приступе тестирању.
+- Користите различите алате за ефикасно тестирање вашег кода.
 
-## Testiranje MCP servera
+## Тестирање MCP сервера
 
-MCP pruža alate koji vam pomažu da testirate i ispravljate greške na vašim serverima:
+MCP пружа алате који вам помажу да тестирате и отклањате грешке на вашим серверима:
 
-- **MCP Inspector**: alat iz komandne linije koji se može koristiti i kao CLI i kao vizuelni alat.
-- **Ručno testiranje**: možete koristiti alat poput curl za pokretanje web zahteva, ali bilo koji alat sposoban za HTTP će biti dovoljan.
-- **Jedinično testiranje**: moguće je koristiti vaš omiljeni testni okvir za testiranje funkcionalnosti kako servera, tako i klijenta.
+- **MCP Inspector**: Алат за командну линију који се може покретати и као CLI и као визуелни алат.
+- **Ручно тестирање**: Можете користити алат као што је curl за извршавање веб захтева, али било који алат који може да изврши HTTP захтеве ће бити довољан.
+- **Јединично тестирање**: Могуће је користити ваш омиљени тестирачки фрејмворк за тестирање функција и сервера и клијента.
 
-### Korišćenje MCP Inspector-a
+### Коришћење MCP Inspector-а
 
-Opisali smo upotrebu ovog alata u prethodnim lekcijama, ali hajde da ga ukratko predstavimo. To je alat napravljen u Node.js i možete ga koristiti pozivom izvršne datoteke `npx` koja će privremeno preuzeti i instalirati alat i očistiti se nakon izvršenja vašeg zahteva.
+Овај алат смо описали у претходним лекцијама, али хајде да га укратко представимо. То је алат изграђен у Node.js и можете га користити позивањем `npx` извршног фајла који ће привремено преузети и инсталирати алат, а након извршења вашег захтева ће се сам очистити.
 
-[MCP Inspector](https://github.com/modelcontextprotocol/inspector) vam pomaže da:
+[MCP Inspector](https://github.com/modelcontextprotocol/inspector) вам помаже да:
 
-- **Otkrivate mogućnosti servera**: Automatski detektuje dostupne resurse, alate i upite
-- **Testirate izvršavanje alata**: Isprobajte različite parametre i pratite odgovore u realnom vremenu
-- **Pregledate metapodatke servera**: Ispitajte informacije o serveru, šeme i konfiguracije
+- **Откријете могућности сервера**: Аутоматски детектује доступне ресурсе, алате и упите
+- **Тестирате извршење алата**: Испробајте различите параметре и пратите одговоре у реалном времену
+- **Погледате метаподатке сервера**: Испитајте информације о серверу, шеме и конфигурације
 
-Tipično pokretanje alata izgleda ovako:
+Типично покретање алата изгледа овако:
 
 ```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Gornja komanda pokreće MCP i njegov vizuelni interfejs, kao i lokalni web interfejs u vašem pregledaču. Očekujte da vidite kontrolnu tablu sa registrovanim MCP serverima, njihovim dostupnim alatima, resursima i upitima. Interfejs vam omogućava interaktivno testiranje izvršenja alata, pregled metapodataka servera i gledanje odgovora u realnom vremenu, što olakšava validaciju i ispravljanje grešaka u implementacijama MCP servera.
+Горња команда покреће MCP и његов визуелни интерфејс и отвара локални веб интерфејс у вашем прегледачу. Можете очекивати да видите контролну таблу која приказује ваше регистроване MCP сервере, њихове доступне алате, ресурсе и упите. Интерфејс вам омогућава интерактивно тестирање извршења алата, преглед метаподатака сервера и праћење одговора у реалном времену, што олакшава валидацију и отклањање грешака у вашим MCP имплементацијама.
 
-Ovako to može izgledati: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sr.png)
+Ево како то може изгледати: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sr.png)
 
-Takođe možete pokrenuti ovaj alat u CLI režimu dodavanjem atributa `--cli`. Evo primera pokretanja alata u "CLI" režimu koji prikazuje sve alate na serveru:
+Такође можете покренути овај алат у CLI режиму тако што ћете додати `--cli` параметар. Ево примера покретања алата у "CLI" режиму који приказује све алате на серверу:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
 ```
 
-### Ručno testiranje
+### Ручно тестирање
 
-Pored korišćenja inspektora za testiranje mogućnosti servera, sličan pristup je korišćenje klijenta sposoban za HTTP, na primer curl.
+Поред покретања инспектора за тестирање могућности сервера, сличан приступ је коришћење клијента који може да користи HTTP, као што је curl.
 
-Sa curl-om možete direktno testirati MCP servere koristeći HTTP zahteve:
+Помоћу curl-а можете директно тестирати MCP сервере користећи HTTP захтеве:
 
 ```bash
 # Example: Test server metadata
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Kao što vidite iz primera korišćenja curl-a, koristite POST zahtev da pozovete alat sa payload-om koji sadrži ime alata i njegove parametre. Koristite pristup koji vam najviše odgovara. CLI alati su uglavnom brži za korišćenje i lako se mogu skriptovati, što može biti korisno u CI/CD okruženju.
+Као што видите из горњег примера коришћења curl-а, користите POST захтев да позовете алат са подацима који садрже име алата и његове параметре. Користите приступ који вам највише одговара. CLI алати су генерално бржи за коришћење и лако се могу скриптовати, што може бити корисно у CI/CD окружењу.
 
-### Jedinično testiranje
+### Јединично тестирање
 
-Kreirajte jedinične testove za vaše alate i resurse kako biste osigurali da rade kako treba. Evo primera test koda.
+Креирајте јединичне тестове за ваше алате и ресурсе како бисте осигурали да раде како се очекује. Ево примера тест кода.
 
 ```python
 import pytest
@@ -129,33 +129,33 @@ async def test_list_tools_cursor_parameter():
     
 ```
 
-Gore navedeni kod radi sledeće:
+Горњи код ради следеће:
 
-- Koristi pytest framework koji omogućava kreiranje testova kao funkcija i korišćenje assert izraza.
-- Kreira MCP Server sa dva različita alata.
-- Koristi `assert` izraz da proveri da li su određeni uslovi ispunjeni.
+- Користи pytest фрејмворк који вам омогућава да креирате тестове као функције и користите assert изјаве.
+- Креира MCP сервер са два различита алата.
+- Користи `assert` изјаву да провери да ли су одређени услови испуњени.
 
-Pogledajte [cela datoteka ovde](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
+Погледајте [целу датотеку овде](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-Na osnovu ove datoteke, možete testirati sopstveni server da biste osigurali da su mogućnosti kreirane kako treba.
+На основу ове датотеке, можете тестирати свој сервер како бисте били сигурни да су могућности креиране како треба.
 
-Svi glavni SDK-ovi imaju slične sekcije za testiranje, tako da ih možete prilagoditi vašem runtime okruženju.
+Сви главни SDK-ови имају сличне одељке за тестирање, па их можете прилагодити вашем одабраном окружењу.
 
-## Primeri
+## Примери
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Java калкулатор](../samples/java/calculator/README.md)
+- [.Net калкулатор](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript калкулатор](../samples/javascript/README.md)
+- [TypeScript калкулатор](../samples/typescript/README.md)
+- [Python калкулатор](../../../../03-GettingStarted/samples/python)
 
-## Dodatni resursi
+## Додатни ресурси
 
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 
-## Šta sledi
+## Шта следи
 
-- Sledeće: [Deployment](/03-GettingStarted/09-deployment/README.md)
+- Следеће: [Деплојмент](../09-deployment/README.md)
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде прецизан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која могу настати коришћењем овог превода.
+Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

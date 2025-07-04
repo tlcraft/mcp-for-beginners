@@ -1,106 +1,102 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9191921de355cd9c8f46ebe21bdd52fd",
-  "translation_date": "2025-06-12T23:11:11+00:00",
+  "original_hash": "97f1c99b5b12cf03d4b1be68b3636a4a",
+  "translation_date": "2025-07-04T15:59:22+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "mo"
 }
 -->
-## Getting Started  
+## 入門指南  
 
-This section consists of several lessons:
+本節包含多個課程：
 
-- **1 Your first server**, in this first lesson, you will learn how to create your first server and inspect it with the inspector tool, a valuable way to test and debug your server, [to the lesson](/03-GettingStarted/01-first-server/README.md)
+- **1 你的第一個伺服器**，在這第一課中，你將學會如何建立你的第一個伺服器，並使用檢查工具來檢視它，這是一種測試和除錯伺服器的寶貴方法，[前往課程](/03-GettingStarted/01-first-server/README.md)
 
-- **2 Client**, in this lesson, you will learn how to write a client that can connect to your server, [to the lesson](/03-GettingStarted/02-client/README.md)
+- **2 用戶端**，在這課中，你將學會如何撰寫一個能連接到你的伺服器的用戶端，[前往課程](/03-GettingStarted/02-client/README.md)
 
-- **3 Client with LLM**, an even better way of writing a client is by adding an LLM to it so it can "negotiate" with your server on what to do, [to the lesson](/03-GettingStarted/03-llm-client/README.md)
+- **3 帶有 LLM 的用戶端**，撰寫用戶端更好的方法是加入 LLM，讓它能與你的伺服器「協商」該如何處理，[前往課程](/03-GettingStarted/03-llm-client/README.md)
 
-- **4 Consuming a server GitHub Copilot Agent mode in Visual Studio Code**. Here, we're looking at running our MCP Server from within Visual Studio Code, [to the lesson](/03-GettingStarted/04-vscode/README.md)
+- **4 在 Visual Studio Code 中使用 GitHub Copilot Agent 模式消費伺服器**。這裡我們將探討如何在 Visual Studio Code 內執行 MCP 伺服器，[前往課程](/03-GettingStarted/04-vscode/README.md)
 
-- **5 Consuming from a SSE (Server Sent Events)** SSE is a standard for server-to-client streaming, allowing servers to push real-time updates to clients over HTTP [to the lesson](/03-GettingStarted/05-sse-server/README.md)
+- **5 從 SSE（伺服器推送事件）消費**。SSE 是一種伺服器到用戶端的串流標準，允許伺服器透過 HTTP 推送即時更新給用戶端，[前往課程](/03-GettingStarted/05-sse-server/README.md)
 
-- **6 HTTP Streaming with MCP (Streamable HTTP)**. Learn about modern HTTP streaming, progress notifications, and how to implement scalable, real-time MCP servers and clients using Streamable HTTP. [to the lesson](/03-GettingStarted/06-http-streaming/README.md)
+- **6 使用 MCP 的 HTTP 串流（可串流的 HTTP）**。了解現代 HTTP 串流、進度通知，以及如何使用可串流的 HTTP 實作可擴展的即時 MCP 伺服器和用戶端，[前往課程](/03-GettingStarted/06-http-streaming/README.md)
 
-- **7 Utilising AI Toolkit for VSCode** to consume and test your MCP Clients and Servers [to the lesson](/03-GettingStarted/07-aitk/README.md)
+- **7 利用 VSCode 的 AI 工具包** 來消費和測試你的 MCP 用戶端和伺服器，[前往課程](/03-GettingStarted/07-aitk/README.md)
 
-- **8 Testing**. Here we will focus especially how we can test out our server and client in different ways, [to the lesson](/03-GettingStarted/08-testing/README.md)
+- **8 測試**。這裡我們將特別著重於如何以不同方式測試我們的伺服器和用戶端，[前往課程](/03-GettingStarted/08-testing/README.md)
 
-- **9 Deployment**. This chapter will look at different ways of deploying your MCP solutions, [to the lesson](/03-GettingStarted/09-deployment/README.md)
-
-
-The Model Context Protocol (MCP) is an open protocol that standardizes how applications provide context to LLMs. Think of MCP like a USB-C port for AI applications - it provides a standardized way to connect AI models to different data sources and tools.
-
-## Learning Objectives
-
-By the end of this lesson, you will be able to:
-
-- Set up development environments for MCP in C#, Java, Python, TypeScript, and JavaScript
-- Build and deploy basic MCP servers with custom features (resources, prompts, and tools)
-- Create host applications that connect to MCP servers
-- Test and debug MCP implementations
-- Understand common setup challenges and their solutions
-- Connect your MCP implementations to popular LLM services
-
-## Setting Up Your MCP Environment
-
-Before you begin working with MCP, it's important to prepare your development environment and understand the basic workflow. This section will guide you through the initial setup steps to ensure a smooth start with MCP.
-
-### Prerequisites
-
-Before diving into MCP development, ensure you have:
-
-- **Development Environment**: For your chosen language (C#, Java, Python, TypeScript, or JavaScript)
-- **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm, or any modern code editor
-- **Package Managers**: NuGet, Maven/Gradle, pip, or npm/yarn
-- **API Keys**: For any AI services you plan to use in your host applications
+- **9 部署**。本章將探討部署 MCP 解決方案的不同方法，[前往課程](/03-GettingStarted/09-deployment/README.md)
 
 
-### Official SDKs
+Model Context Protocol (MCP) 是一個開放協議，標準化應用程式如何向 LLM 提供上下文。可以把 MCP 想像成 AI 應用的 USB-C 連接埠——它提供一種標準化的方式，將 AI 模型連接到不同的資料來源和工具。
 
-In the upcoming chapters you will see solutions built using Python, TypeScript, Java and .NET. Here are all the officially supported SDKs.
+## 學習目標
 
-MCP provides official SDKs for multiple languages:
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Maintained in collaboration with Microsoft
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Maintained in collaboration with Spring AI
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - The official TypeScript implementation
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - The official Python implementation
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - The official Kotlin implementation
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Maintained in collaboration with Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - The official Rust implementation
+完成本課程後，你將能夠：
 
-## Key Takeaways
+- 為 C#、Java、Python、TypeScript 和 JavaScript 設定 MCP 開發環境
+- 建立並部署具自訂功能（資源、提示和工具）的基本 MCP 伺服器
+- 建立連接 MCP 伺服器的主機應用程式
+- 測試和除錯 MCP 實作
+- 理解常見的設定挑戰及其解決方案
+- 將你的 MCP 實作連接到熱門的 LLM 服務
 
-- Setting up an MCP development environment is straightforward with language-specific SDKs
-- Building MCP servers involves creating and registering tools with clear schemas
-- MCP clients connect to servers and models to leverage extended capabilities
-- Testing and debugging are essential for reliable MCP implementations
-- Deployment options range from local development to cloud-based solutions
+## 設定你的 MCP 環境
 
-## Practicing
+在開始使用 MCP 之前，準備好開發環境並了解基本工作流程非常重要。本節將引導你完成初始設定步驟，確保你能順利開始使用 MCP。
 
-We have a set of samples that complements the exercises you will see in all chapters in this section. Additionally each chapter also has their own exercises and assignments
+### 先決條件
 
-- [Java Calculator](./samples/java/calculator/README.md)
-- [.Net Calculator](../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](./samples/javascript/README.md)
-- [TypeScript Calculator](./samples/typescript/README.md)
-- [Python Calculator](../../../03-GettingStarted/samples/python)
+在深入 MCP 開發之前，請確保你已具備：
 
-## Additional Resources
+- **開發環境**：適用於你選擇的語言（C#、Java、Python、TypeScript 或 JavaScript）
+- **IDE/編輯器**：Visual Studio、Visual Studio Code、IntelliJ、Eclipse、PyCharm 或任何現代程式碼編輯器
+- **套件管理工具**：NuGet、Maven/Gradle、pip 或 npm/yarn
+- **API 金鑰**：用於你計劃在主機應用中使用的任何 AI 服務
 
-- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
-- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
-## What's next
+### 官方 SDK
 
-Next: [Creating your first MCP Server](/03-GettingStarted/01-first-server/README.md)
+在接下來的章節中，你會看到使用 Python、TypeScript、Java 和 .NET 建立的解決方案。以下是所有官方支援的 SDK。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+MCP 提供多種語言的官方 SDK：
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - 與 Microsoft 合作維護
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - 與 Spring AI 合作維護
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - 官方 TypeScript 實作
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - 官方 Python 實作
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - 官方 Kotlin 實作
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - 與 Loopwork AI 合作維護
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - 官方 Rust 實作
 
----
+## 主要重點
 
-(Note: "mo" is not a recognized language code or standard language name. Could you please specify which language or dialect "mo" refers to? This will help me provide an accurate translation.)
+- 使用語言專屬 SDK 設定 MCP 開發環境相當簡單
+- 建立 MCP 伺服器涉及建立並註冊具有明確結構的工具
+- MCP 用戶端連接伺服器和模型以利用擴展功能
+- 測試和除錯對於可靠的 MCP 實作至關重要
+- 部署選項從本地開發到雲端解決方案皆有
+
+## 練習
+
+我們提供一組範例，補充本節所有章節中的練習。此外，每個章節也有自己的練習和作業
+
+- [Java 計算機](./samples/java/calculator/README.md)
+- [.Net 計算機](../../../03-GettingStarted/samples/csharp)
+- [JavaScript 計算機](./samples/javascript/README.md)
+- [TypeScript 計算機](./samples/typescript/README.md)
+- [Python 計算機](../../../03-GettingStarted/samples/python)
+
+## 額外資源
+
+- [使用 Model Context Protocol 在 Azure 上建立代理](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [使用 Azure Container Apps 遠端 MCP（Node.js/TypeScript/JavaScript）](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP 代理](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+
+## 接下來
+
+下一步：[建立你的第一個 MCP 伺服器](./01-first-server/README.md)
+
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

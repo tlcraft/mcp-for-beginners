@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2342baa570312086fc19edcf41320250",
-  "translation_date": "2025-06-17T16:10:20+00:00",
+  "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
+  "translation_date": "2025-07-04T18:43:14+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "sk"
 }
@@ -11,73 +11,59 @@ V predchádzajúcom kóde sme:
 
 - Importovali knižnice
 - Vytvorili inštanciu klienta a pripojili ju pomocou stdio ako transportu.
-- Zobrazili promptovacie príkazy, zdroje a nástroje a všetky ich vyvolali.
+- Vypísali prompt-y, zdroje a nástroje a všetky ich vyvolali.
 
-Máte teda klienta, ktorý dokáže komunikovať s MCP serverom.
+Máte tu teda klienta, ktorý dokáže komunikovať s MCP Serverom.
 
-V ďalšej časti cvičenia si na čas rozoberieme každý kódový úryvok a vysvetlíme, čo sa deje.
+V ďalšej časti cvičenia si na to dáme čas a rozoberieme každý útržok kódu a vysvetlíme, čo sa deje.
 
 ## Cvičenie: Písanie klienta
 
-Ako sme už povedali, vezmime si čas na vysvetlenie kódu a pokojne aj kódujte spolu s nami, ak chcete.
+Ako sme už povedali, venujme čas vysvetleniu kódu a pokojne si ho aj sami napíšte.
 
 ### -1- Import knižníc
 
-Importujme knižnice, ktoré potrebujeme, budeme potrebovať referencie na klienta a na náš vybraný transportný protokol, stdio. stdio je protokol určený na spúšťanie na vašom lokálnom počítači. SSE je ďalší transportný protokol, ktorý ukážeme v budúcich kapitolách, ale to je vaša ďalšia možnosť. Pre teraz však pokračujme so stdio.
-
----
-
-Poďme na inštancovanie.
+Importujme knižnice, ktoré potrebujeme, budeme potrebovať referencie na klienta a na zvolený transportný protokol, stdio. stdio je protokol určený pre veci, ktoré bežia na vašom lokálnom počítači. SSE je ďalší transportný protokol, ktorý ukážeme v budúcich kapitolách, ale to je vaša ďalšia možnosť. Pre teraz však pokračujme so stdio.
 
 ### -2- Inštancovanie klienta a transportu
 
-Budeme potrebovať vytvoriť inštanciu transportu a inštanciu nášho klienta:
-
----
+Budeme potrebovať vytvoriť inštanciu transportu a tiež nášho klienta:
 
 ### -3- Výpis funkcií servera
 
-Teraz máme klienta, ktorý sa môže pripojiť, keď sa program spustí. Avšak, zatiaľ nevypisuje jeho funkcie, poďme to teda urobiť teraz:
+Teraz máme klienta, ktorý sa môže pripojiť, ak sa program spustí. Avšak zatiaľ nevypisuje jeho funkcie, tak to spravme teraz:
 
----
-
-Skvelé, teraz sme zachytili všetky funkcie. Otázka znie, kedy ich použijeme? Tento klient je dosť jednoduchý, jednoduchý v tom zmysle, že funkcie budeme musieť explicitne volať, keď ich budeme chcieť použiť. V ďalšej kapitole vytvoríme pokročilejšieho klienta, ktorý bude mať prístup k vlastnému veľkému jazykovému modelu (LLM). Pre teraz si však ukážeme, ako môžeme vyvolať funkcie na serveri:
+Skvelé, teraz sme zachytili všetky funkcie. Otázka znie, kedy ich použijeme? Tento klient je dosť jednoduchý, jednoduchý v tom zmysle, že funkcie budeme musieť explicitne volať, keď ich chceme použiť. V ďalšej kapitole vytvoríme pokročilejšieho klienta, ktorý bude mať prístup k vlastnému veľkému jazykovému modelu (LLM). Pre teraz si však ukážeme, ako môžeme vyvolať funkcie na serveri:
 
 ### -4- Vyvolanie funkcií
 
-Na vyvolanie funkcií musíme zabezpečiť správne zadanie argumentov a v niektorých prípadoch aj názvu toho, čo sa snažíme vyvolať.
-
----
+Na vyvolanie funkcií musíme zabezpečiť, že zadáme správne argumenty a v niektorých prípadoch aj názov toho, čo sa snažíme vyvolať.
 
 ### -5- Spustenie klienta
 
 Na spustenie klienta zadajte v termináli nasledujúci príkaz:
 
----
-
 ## Zadanie
 
-V tomto zadaní použijete to, čo ste sa naučili o tvorbe klienta, ale vytvoríte si vlastného klienta.
+V tomto zadaní použijete to, čo ste sa naučili o vytváraní klienta, ale vytvoríte si vlastného klienta.
 
-Tu je server, ktorý môžete použiť a ku ktorému sa musíte pripojiť cez váš klientsky kód. Skúste pridať ďalšie funkcie na server, aby bol zaujímavejší.
-
----
+Tu je server, ktorý môžete použiť a ktorý musíte volať cez svoj klientsky kód, skúste pridať viac funkcií na server, aby bol zaujímavejší.
 
 ## Riešenie
 
 [Riešenie](./solution/README.md)
 
-## Kľúčové body
+## Kľúčové poznatky
 
-Kľúčové body tejto kapitoly o klientoch sú:
+Kľúčové poznatky z tejto kapitoly o klientoch sú:
 
-- Môžu sa použiť na objavovanie a vyvolávanie funkcií na serveri.
-- Môžu spustiť server pri svojom štarte (ako v tejto kapitole), ale klienti sa môžu pripojiť aj k už bežiacim serverom.
-- Sú skvelým spôsobom, ako otestovať schopnosti servera, vedľa alternatív ako Inspector, ktorý bol popísaný v predchádzajúcej kapitole.
+- Môžu sa použiť na objavovanie aj vyvolávanie funkcií na serveri.
+- Môžu spustiť server, keď sa sami spúšťajú (ako v tejto kapitole), ale klienti sa môžu pripojiť aj k už bežiacim serverom.
+- Sú skvelým spôsobom, ako otestovať schopnosti servera vedľa alternatív ako Inspector, ako bolo popísané v predchádzajúcej kapitole.
 
 ## Dodatočné zdroje
 
-- [Tvorba klientov v MCP](https://modelcontextprotocol.io/quickstart/client)
+- [Budovanie klientov v MCP](https://modelcontextprotocol.io/quickstart/client)
 
 ## Ukážky
 
@@ -87,9 +73,9 @@ Kľúčové body tejto kapitoly o klientoch sú:
 - [TypeScript kalkulačka](../samples/typescript/README.md)
 - [Python kalkulačka](../../../../03-GettingStarted/samples/python)
 
-## Čo nasleduje
+## Čo bude ďalej
 
-- Ďalej: [Vytvorenie klienta s LLM](/03-GettingStarted/03-llm-client/README.md)
+- Ďalej: [Vytvorenie klienta s LLM](../03-llm-client/README.md)
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, berte prosím na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

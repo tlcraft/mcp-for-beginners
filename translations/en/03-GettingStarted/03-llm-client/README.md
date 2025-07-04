@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "904b689eda5a68cbafe656d53f9787c7",
-  "translation_date": "2025-06-17T18:43:40+00:00",
+  "original_hash": "f74887f51a69d3f255cb83d0b517c623",
+  "translation_date": "2025-07-04T15:16:51+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "en"
 }
@@ -17,7 +17,7 @@ Now we will connect to the server and ask for its capabilities:
 
 The next step after listing server capabilities is to convert them into a format that the LLM understands. Once we do that, we can provide these capabilities as tools to our LLM.
 
-Great, we're now set up to handle any user requests, so let's tackle that next.
+Great, we're now set up to handle user requests, so let's tackle that next.
 
 ### -4- Handle user prompt request
 
@@ -27,7 +27,7 @@ Great, you did it!
 
 ## Assignment
 
-Take the code from the exercise and expand the server with some additional tools. Then create a client with an LLM, like in the exercise, and test it with different prompts to ensure all your server tools are dynamically called. This way of building a client offers the end user a great experience, as they can use natural language prompts instead of exact client commands and won't even notice that an MCP server is being called.
+Take the code from the exercise and build out the server with some more tools. Then create a client with an LLM, like in the exercise, and test it out with different prompts to make sure all your server tools get called dynamically. This way of building a client means the end user will have a great user experience as they're able to use prompts, instead of exact client commands, and be unaware of any MCP server being called.
 
 ## Solution 
 
@@ -36,7 +36,7 @@ Take the code from the exercise and expand the server with some additional tools
 ## Key Takeaways
 
 - Adding an LLM to your client provides a better way for users to interact with MCP Servers.
-- You need to convert the MCP Server response into a format the LLM can understand.
+- You need to convert the MCP Server response to something the LLM can understand.
 
 ## Samples 
 
@@ -50,7 +50,7 @@ Take the code from the exercise and expand the server with some additional tools
 
 ## What's Next
 
-- Next: [Consuming a server using Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
+- Next: [Consuming a server using Visual Studio Code](../04-vscode/README.md)
 
 **Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

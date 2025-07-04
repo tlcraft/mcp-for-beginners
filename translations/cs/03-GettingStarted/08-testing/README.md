@@ -1,66 +1,66 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e25bc265a51244a7a2d93b3761543a1f",
-  "translation_date": "2025-06-13T02:11:44+00:00",
+  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
+  "translation_date": "2025-07-04T18:39:27+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "cs"
 }
 -->
-## Testing and Debugging
+## Testování a ladění
 
-Antes de comenzar a probar tu servidor MCP, es importante entender las herramientas disponibles y las mejores prácticas para depurar. Las pruebas efectivas aseguran que tu servidor se comporte como se espera y te ayudan a identificar y resolver problemas rápidamente. La siguiente sección describe los enfoques recomendados para validar tu implementación MCP.
+Než začnete testovat svůj MCP server, je důležité pochopit dostupné nástroje a osvědčené postupy pro ladění. Efektivní testování zajistí, že váš server bude fungovat podle očekávání, a pomůže vám rychle identifikovat a vyřešit problémy. Následující část popisuje doporučené přístupy k ověření vaší implementace MCP.
 
-## Overview
+## Přehled
 
-Esta lección cubre cómo seleccionar el enfoque de prueba adecuado y la herramienta de prueba más efectiva.
+Tato lekce se zabývá tím, jak vybrat správný přístup k testování a nejefektivnější nástroj pro testování.
 
-## Learning Objectives
+## Cíle učení
 
-Al final de esta lección, podrás:
+Na konci této lekce budete schopni:
 
-- Describir varios enfoques para las pruebas.
-- Usar diferentes herramientas para probar tu código de manera efectiva.
+- Popsat různé přístupy k testování.
+- Používat různé nástroje pro efektivní testování vašeho kódu.
 
-## Testing MCP Servers
+## Testování MCP serverů
 
-MCP proporciona herramientas para ayudarte a probar y depurar tus servidores:
+MCP poskytuje nástroje, které vám pomohou testovat a ladit vaše servery:
 
-- **MCP Inspector**: Una herramienta de línea de comandos que se puede ejecutar tanto como herramienta CLI como visual.
-- **Pruebas manuales**: Puedes usar una herramienta como curl para ejecutar solicitudes web, aunque cualquier herramienta capaz de ejecutar HTTP servirá.
-- **Pruebas unitarias**: Es posible usar tu framework de pruebas preferido para testear las funcionalidades tanto del servidor como del cliente.
+- **MCP Inspector**: Nástroj příkazové řádky, který lze spustit jak jako CLI nástroj, tak i jako vizuální nástroj.
+- **Manuální testování**: Můžete použít nástroj jako curl pro spouštění webových požadavků, ale postačí jakýkoli nástroj schopný provádět HTTP požadavky.
+- **Unit testing**: Je možné použít váš oblíbený testovací framework k testování funkcí jak serveru, tak klienta.
 
-### Using MCP Inspector
+### Použití MCP Inspector
 
-Ya describimos el uso de esta herramienta en lecciones anteriores, pero hablemos un poco a nivel general. Es una herramienta construida en Node.js y puedes usarla ejecutando el ejecutable `npx`, que descargará e instalará la herramienta temporalmente y se limpiará automáticamente una vez que termine de ejecutar tu solicitud.
+Použití tohoto nástroje jsme popsali v předchozích lekcích, ale pojďme si to shrnout na vyšší úrovni. Jedná se o nástroj postavený na Node.js, který můžete spustit pomocí příkazu `npx`. Ten dočasně stáhne a nainstaluje nástroj a po dokončení vašeho požadavku se sám odstraní.
 
-El [MCP Inspector](https://github.com/modelcontextprotocol/inspector) te ayuda a:
+[MCP Inspector](https://github.com/modelcontextprotocol/inspector) vám pomůže:
 
-- **Descubrir capacidades del servidor**: Detecta automáticamente recursos, herramientas y prompts disponibles
-- **Probar la ejecución de herramientas**: Prueba diferentes parámetros y observa las respuestas en tiempo real
-- **Ver metadatos del servidor**: Examina información, esquemas y configuraciones del servidor
+- **Objevit schopnosti serveru**: Automaticky detekuje dostupné zdroje, nástroje a výzvy
+- **Testovat spuštění nástrojů**: Vyzkoušet různé parametry a sledovat odpovědi v reálném čase
+- **Prohlížet metadata serveru**: Zkoumat informace o serveru, schémata a konfigurace
 
-Una ejecución típica de la herramienta se ve así:
+Typické spuštění nástroje vypadá takto:
 
 ```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-El comando anterior inicia un MCP y su interfaz visual, además de abrir una interfaz web local en tu navegador. Puedes esperar ver un panel que muestra tus servidores MCP registrados, sus herramientas, recursos y prompts disponibles. La interfaz te permite probar la ejecución de herramientas de forma interactiva, inspeccionar metadatos del servidor y ver respuestas en tiempo real, facilitando la validación y depuración de tus implementaciones MCP.
+Výše uvedený příkaz spustí MCP a jeho vizuální rozhraní a otevře lokální webové rozhraní ve vašem prohlížeči. Můžete očekávat dashboard zobrazující vaše registrované MCP servery, jejich dostupné nástroje, zdroje a výzvy. Rozhraní umožňuje interaktivně testovat spuštění nástrojů, prohlížet metadata serveru a sledovat odpovědi v reálném čase, což usnadňuje ověřování a ladění implementací MCP serveru.
 
-Así es como puede verse: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.cs.png)
+Takto to může vypadat: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.cs.png)
 
-También puedes ejecutar esta herramienta en modo CLI, para lo cual agregas el atributo `--cli`. Aquí tienes un ejemplo de cómo ejecutar la herramienta en modo "CLI", que lista todas las herramientas del servidor:
+Tento nástroj můžete také spustit v režimu CLI, kdy přidáte atribut `--cli`. Zde je příklad spuštění nástroje v režimu "CLI", který vypíše všechny nástroje na serveru:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
 ```
 
-### Manual Testing
+### Manuální testování
 
-Además de usar la herramienta inspector para probar las capacidades del servidor, otro enfoque similar es ejecutar un cliente capaz de usar HTTP, como por ejemplo curl.
+Kromě spuštění nástroje inspector pro testování schopností serveru můžete použít podobný přístup a spustit klienta schopného používat HTTP, například curl.
 
-Con curl, puedes probar servidores MCP directamente usando solicitudes HTTP:
+Pomocí curl můžete testovat MCP servery přímo pomocí HTTP požadavků:
 
 ```bash
 # Example: Test server metadata
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Como puedes ver en el ejemplo anterior con curl, usas una solicitud POST para invocar una herramienta con un payload que contiene el nombre de la herramienta y sus parámetros. Usa el enfoque que mejor se adapte a ti. Las herramientas CLI en general suelen ser más rápidas y permiten ser automatizadas, lo cual puede ser útil en un entorno CI/CD.
+Jak vidíte z výše uvedeného použití curl, používáte POST požadavek k vyvolání nástroje s payloadem obsahujícím název nástroje a jeho parametry. Použijte přístup, který vám nejlépe vyhovuje. CLI nástroje jsou obecně rychlejší na použití a snadno se dají skriptovat, což může být užitečné v prostředí CI/CD.
 
-### Unit Testing
+### Unit testing
 
-Crea pruebas unitarias para tus herramientas y recursos para asegurarte de que funcionan como se espera. Aquí tienes un ejemplo de código de prueba.
+Vytvořte unit testy pro své nástroje a zdroje, abyste zajistili, že fungují podle očekávání. Zde je příklad testovacího kódu.
 
 ```python
 import pytest
@@ -129,33 +129,33 @@ async def test_list_tools_cursor_parameter():
     
 ```
 
-El código anterior hace lo siguiente:
+Výše uvedený kód dělá následující:
 
-- Usa el framework pytest, que te permite crear pruebas como funciones y usar sentencias assert.
-- Crea un MCP Server con dos herramientas diferentes.
-- Usa la sentencia `assert` para verificar que se cumplen ciertas condiciones.
+- Využívá framework pytest, který umožňuje vytvářet testy jako funkce a používat assert příkazy.
+- Vytváří MCP server se dvěma různými nástroji.
+- Používá příkaz `assert` k ověření, že jsou splněny určité podmínky.
 
-Consulta el [archivo completo aquí](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
+Podívejte se na [celý soubor zde](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-Con el archivo anterior, puedes probar tu propio servidor para asegurarte de que las capacidades se crean como deberían.
+Na základě tohoto souboru můžete otestovat svůj vlastní server, abyste se ujistili, že schopnosti jsou vytvořeny tak, jak mají být.
 
-Todos los SDK principales tienen secciones similares de pruebas, por lo que puedes adaptarte a tu entorno de ejecución elegido.
+Všechny hlavní SDK mají podobné sekce pro testování, takže je můžete přizpůsobit svému zvolenému runtime.
 
-## Samples 
+## Ukázky
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
 - [JavaScript Calculator](../samples/javascript/README.md)
 - [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python) 
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Additional Resources
+## Další zdroje
 
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 
-## What's Next
+## Co dál
 
-- Next: [Deployment](/03-GettingStarted/09-deployment/README.md)
+- Další: [Deployment](../09-deployment/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

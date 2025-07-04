@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2342baa570312086fc19edcf41320250",
-  "translation_date": "2025-06-17T16:16:49+00:00",
+  "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
+  "translation_date": "2025-07-04T19:07:40+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "hr"
 }
@@ -11,73 +11,73 @@ U prethodnom kodu smo:
 
 - Uvezli biblioteke
 - Kreirali instancu klijenta i povezali je koristeći stdio kao transport.
-- Ispisali promptove, resurse i alate te ih sve pozvali.
+- Izlistali promptove, resurse i alate te ih sve pozvali.
 
-Eto ga, klijent koji može komunicirati s MCP serverom.
+Eto ga, klijent koji može komunicirati s MCP Serverom.
 
 U sljedećem dijelu vježbe ćemo polako razložiti svaki dio koda i objasniti što se događa.
 
 ## Vježba: Pisanje klijenta
 
-Kao što smo rekli, uzmimo si vremena za objašnjenje koda, i svakako slobodno programirajte zajedno ako želite.
+Kao što je rečeno, uzet ćemo si vremena za objašnjenje koda, i svakako slobodno kodirajte zajedno ako želite.
 
 ### -1- Uvoz biblioteka
 
-Uvezimo potrebne biblioteke, trebat će nam reference na klijenta i na odabrani transportni protokol, stdio. stdio je protokol za stvari koje se izvode na vašem lokalnom računalu. SSE je drugi transportni protokol koji ćemo pokazati u budućim poglavljima, ali to je vaša druga opcija. Za sada nastavimo sa stdio. 
+Uvezimo potrebne biblioteke, trebat će nam reference na klijenta i na odabrani transportni protokol, stdio. stdio je protokol za stvari koje se izvode na vašem lokalnom računalu. SSE je drugi transportni protokol koji ćemo pokazati u budućim poglavljima, ali to je vaša druga opcija. Za sada nastavljamo sa stdio.
 
-Krenimo dalje s instanciranjem.
+Krenimo na instanciranje.
 
 ### -2- Instanciranje klijenta i transporta
 
 Trebat ćemo kreirati instancu transporta i instancu našeg klijenta:
 
-### -3- Ispisivanje značajki servera
+### -3- Izlistavanje značajki servera
 
-Sada imamo klijenta koji se može povezati ako se program pokrene. Međutim, on zapravo ne ispisuje svoje značajke, pa to napravimo sljedeće:
+Sada imamo klijenta koji se može povezati ako se program pokrene. Međutim, on zapravo ne izlistava svoje značajke, pa to napravimo sada:
 
-Odlično, sada smo uhvatili sve značajke. Sada se postavlja pitanje kada ih koristimo? Ovaj klijent je prilično jednostavan, u smislu da ćemo morati eksplicitno pozvati značajke kad ih želimo koristiti. U sljedećem poglavlju ćemo napraviti napredniji klijent koji ima pristup vlastitom velikom jezičnom modelu (LLM). Za sada, pogledajmo kako možemo pozvati značajke na serveru:
+Odlično, sada smo dohvatili sve značajke. Sad se postavlja pitanje – kada ih koristimo? Ovaj klijent je prilično jednostavan, u smislu da ćemo morati eksplicitno pozvati značajke kad ih želimo koristiti. U sljedećem poglavlju ćemo napraviti naprednijeg klijenta koji ima pristup vlastitom velikom jezičnom modelu (LLM). Za sada, pogledajmo kako možemo pozvati značajke na serveru:
 
 ### -4- Pozivanje značajki
 
-Da bismo pozvali značajke, moramo osigurati da navedemo ispravne argumente i u nekim slučajevima ime onoga što pokušavamo pozvati.
+Da bismo pozvali značajke, moramo osigurati da navedemo ispravne argumente i u nekim slučajevima ime onoga što želimo pozvati.
 
 ### -5- Pokretanje klijenta
 
-Za pokretanje klijenta, upišite sljedeću naredbu u terminal:
+Da biste pokrenuli klijenta, upišite sljedeću naredbu u terminal:
 
 ## Zadatak
 
-U ovom zadatku koristit ćete ono što ste naučili o kreiranju klijenta, ali napravit ćete vlastitog klijenta.
+U ovom zadatku iskoristit ćete ono što ste naučili o stvaranju klijenta, ali napravite vlastitog klijenta.
 
-Evo servera koji možete koristiti i kojem trebate pristupiti putem koda svog klijenta, pokušajte dodati više značajki serveru kako bi bio zanimljiviji.
+Evo servera kojeg možete koristiti i kojem trebate pristupiti putem svog klijentskog koda, pokušajte dodati više značajki serveru kako bi bio zanimljiviji.
 
 ## Rješenje
 
 [Rješenje](./solution/README.md)
 
-## Ključni zaključci
+## Ključne spoznaje
 
-Ključni zaključci za ovo poglavlje o klijentima su sljedeći:
+Ključne spoznaje za ovo poglavlje o klijentima su sljedeće:
 
 - Mogu se koristiti i za otkrivanje i za pozivanje značajki na serveru.
 - Mogu pokrenuti server dok se sami pokreću (kao u ovom poglavlju), ali klijenti se mogu povezati i na već pokrenute servere.
-- Izvrsna su metoda za testiranje mogućnosti servera uz alternative poput Inspektora, kao što je opisano u prethodnom poglavlju.
+- Izvrsni su za testiranje mogućnosti servera uz alternative poput Inspektora, kako je opisano u prethodnom poglavlju.
 
 ## Dodatni resursi
 
-- [Izgradnja klijenata u MCP-u](https://modelcontextprotocol.io/quickstart/client)
+- [Izrada klijenata u MCP-u](https://modelcontextprotocol.io/quickstart/client)
 
 ## Primjeri
 
-- [Java Kalkulator](../samples/java/calculator/README.md)
-- [.Net Kalkulator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Kalkulator](../samples/javascript/README.md)
-- [TypeScript Kalkulator](../samples/typescript/README.md)
-- [Python Kalkulator](../../../../03-GettingStarted/samples/python)
+- [Java kalkulator](../samples/java/calculator/README.md)
+- [.Net kalkulator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript kalkulator](../samples/javascript/README.md)
+- [TypeScript kalkulator](../samples/typescript/README.md)
+- [Python kalkulator](../../../../03-GettingStarted/samples/python)
 
 ## Što slijedi
 
-- Sljedeće: [Kreiranje klijenta s LLM-om](/03-GettingStarted/03-llm-client/README.md)
+- Sljedeće: [Izrada klijenta s LLM-om](../03-llm-client/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument preveden je korištenjem AI usluge prevođenja [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba se smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

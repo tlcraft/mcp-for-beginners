@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2342baa570312086fc19edcf41320250",
-  "translation_date": "2025-06-17T15:42:27+00:00",
+  "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
+  "translation_date": "2025-07-04T17:05:08+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "it"
 }
@@ -19,13 +19,13 @@ Prendiamoci il tempo nella prossima sezione esercizi per analizzare ogni frammen
 
 ## Esercizio: Scrivere un client
 
-Come detto sopra, prendiamoci il tempo per spiegare il codice, e sentitevi liberi di scrivere il codice insieme se volete.
+Come detto sopra, prendiamoci il tempo per spiegare il codice e, se vuoi, segui il codice passo passo.
 
 ### -1- Importare le librerie
 
-Importiamo le librerie di cui abbiamo bisogno, serviranno riferimenti a un client e al protocollo di trasporto scelto, stdio. stdio è un protocollo pensato per eseguire le cose sulla tua macchina locale. SSE è un altro protocollo di trasporto che mostreremo nei capitoli successivi, ma questa è la tua altra opzione. Per ora però, continuiamo con stdio.
+Importiamo le librerie di cui abbiamo bisogno, ci serviranno riferimenti a un client e al protocollo di trasporto scelto, stdio. stdio è un protocollo pensato per esecuzioni sulla tua macchina locale. SSE è un altro protocollo di trasporto che mostreremo nei capitoli futuri, ma questa è la tua altra opzione. Per ora, continuiamo con stdio.
 
-Passiamo all'istanza.
+Passiamo ora all'istanza.
 
 ### -2- Istanziare client e trasporto
 
@@ -33,13 +33,13 @@ Dobbiamo creare un'istanza del trasporto e una del nostro client:
 
 ### -3- Elencare le funzionalità del server
 
-Ora abbiamo un client che può connettersi qualora il programma venga eseguito. Tuttavia, non elenca ancora le sue funzionalità, quindi facciamolo ora:
+Ora abbiamo un client che può connettersi se il programma viene eseguito. Tuttavia, non elenca ancora le sue funzionalità, quindi facciamolo adesso:
 
-Ottimo, ora abbiamo catturato tutte le funzionalità. Ora la domanda è: quando le usiamo? Beh, questo client è piuttosto semplice, nel senso che dobbiamo chiamare esplicitamente le funzionalità quando le vogliamo. Nel prossimo capitolo creeremo un client più avanzato che avrà accesso al proprio modello linguistico di grandi dimensioni, LLM. Per ora però, vediamo come possiamo invocare le funzionalità sul server:
+Ottimo, ora abbiamo catturato tutte le funzionalità. La domanda è: quando le usiamo? Beh, questo client è piuttosto semplice, nel senso che dovremo chiamare esplicitamente le funzionalità quando le vogliamo. Nel capitolo successivo creeremo un client più avanzato che avrà accesso al proprio modello linguistico di grandi dimensioni, LLM. Per ora, vediamo come possiamo invocare le funzionalità sul server:
 
 ### -4- Invocare le funzionalità
 
-Per invocare le funzionalità dobbiamo assicurarci di specificare gli argomenti corretti e in alcuni casi il nome di ciò che stiamo cercando di invocare.
+Per invocare le funzionalità dobbiamo assicurarci di specificare gli argomenti corretti e, in alcuni casi, il nome di ciò che stiamo cercando di invocare.
 
 ### -5- Eseguire il client
 
@@ -47,9 +47,9 @@ Per eseguire il client, digita il seguente comando nel terminale:
 
 ## Compito
 
-In questo compito, userai ciò che hai imparato per creare un client, ma creerai un client tutto tuo.
+In questo compito, utilizzerai ciò che hai imparato per creare un client, ma questa volta uno tutto tuo.
 
-Ecco un server che puoi usare e che devi chiamare tramite il codice del tuo client, prova a vedere se riesci ad aggiungere altre funzionalità al server per renderlo più interessante.
+Ecco un server che puoi usare e che devi chiamare tramite il codice del tuo client, prova ad aggiungere più funzionalità al server per renderlo più interessante.
 
 ## Soluzione
 
@@ -57,11 +57,11 @@ Ecco un server che puoi usare e che devi chiamare tramite il codice del tuo clie
 
 ## Punti Chiave
 
-I punti chiave di questo capitolo riguardo i client sono:
+I punti chiave di questo capitolo riguardo ai client sono i seguenti:
 
 - Possono essere usati sia per scoprire che per invocare funzionalità sul server.
 - Possono avviare un server mentre si avviano da soli (come in questo capitolo), ma i client possono anche connettersi a server già in esecuzione.
-- Sono un ottimo modo per testare le capacità del server, accanto ad alternative come l’Inspector descritto nel capitolo precedente.
+- Sono un ottimo modo per testare le capacità del server accanto ad alternative come l'Inspector, come descritto nel capitolo precedente.
 
 ## Risorse Aggiuntive
 
@@ -75,9 +75,9 @@ I punti chiave di questo capitolo riguardo i client sono:
 - [Calcolatrice TypeScript](../samples/typescript/README.md)
 - [Calcolatrice Python](../../../../03-GettingStarted/samples/python)
 
-## Cosa c’è dopo
+## Cosa c'è dopo
 
-- Successivo: [Creare un client con un LLM](/03-GettingStarted/03-llm-client/README.md)
+- Successivo: [Creare un client con un LLM](../03-llm-client/README.md)
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

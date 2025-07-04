@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e25bc265a51244a7a2d93b3761543a1f",
-  "translation_date": "2025-06-12T22:24:43+00:00",
+  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
+  "translation_date": "2025-07-04T17:12:34+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "pl"
 }
@@ -13,42 +13,42 @@ Zanim zaczniesz testować swój serwer MCP, ważne jest, aby zrozumieć dostępn
 
 ## Przegląd
 
-Ta lekcja omawia, jak wybrać odpowiednie podejście do testowania oraz najskuteczniejsze narzędzie testowe.
+Ta lekcja omawia, jak wybrać odpowiednie podejście do testowania oraz najskuteczniejsze narzędzie do testów.
 
 ## Cele nauki
 
 Po ukończeniu tej lekcji będziesz potrafił:
 
 - Opisać różne podejścia do testowania.
-- Korzystać z różnych narzędzi do skutecznego testowania kodu.
+- Korzystać z różnych narzędzi do efektywnego testowania kodu.
 
 ## Testowanie serwerów MCP
 
 MCP udostępnia narzędzia, które pomogą Ci testować i debugować serwery:
 
-- **MCP Inspector**: narzędzie wiersza poleceń, które można uruchamiać zarówno jako CLI, jak i w trybie wizualnym.
-- **Testowanie manualne**: możesz użyć narzędzia takiego jak curl do wykonywania żądań sieciowych, ale każde narzędzie obsługujące HTTP będzie odpowiednie.
-- **Testy jednostkowe**: możesz użyć wybranego frameworka testowego do testowania funkcji zarówno serwera, jak i klienta.
+- **MCP Inspector**: narzędzie wiersza poleceń, które można uruchomić zarówno jako CLI, jak i w trybie wizualnym.
+- **Testowanie manualne**: możesz użyć narzędzia takiego jak curl do wykonywania zapytań webowych, ale każde narzędzie obsługujące HTTP będzie odpowiednie.
+- **Testy jednostkowe**: możesz użyć swojego ulubionego frameworka testowego do testowania funkcji zarówno serwera, jak i klienta.
 
 ### Korzystanie z MCP Inspector
 
-Opisaliśmy użycie tego narzędzia w poprzednich lekcjach, ale omówmy je teraz pokrótce. To narzędzie napisane w Node.js, które możesz uruchomić wywołując wykonywalny plik `npx`. Spowoduje to tymczasowe pobranie i instalację narzędzia, a po zakończeniu obsługi żądania narzędzie samo się posprząta.
+Opisaliśmy użycie tego narzędzia w poprzednich lekcjach, ale omówmy je teraz na poziomie ogólnym. To narzędzie napisane w Node.js, które możesz uruchomić za pomocą `npx`. Polecenie to tymczasowo pobierze i zainstaluje narzędzie, a po wykonaniu żądania samo się posprząta.
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) pomaga:
 
 - **Odkrywać możliwości serwera**: automatycznie wykrywa dostępne zasoby, narzędzia i podpowiedzi
-- **Testować wykonanie narzędzi**: pozwala wypróbować różne parametry i oglądać odpowiedzi w czasie rzeczywistym
-- **Przeglądać metadane serwera**: umożliwia analizę informacji o serwerze, schematach i konfiguracjach
+- **Testować wykonanie narzędzi**: wypróbuj różne parametry i zobacz odpowiedzi w czasie rzeczywistym
+- **Przeglądać metadane serwera**: sprawdź informacje o serwerze, schematy i konfiguracje
 
-Typowe uruchomienie narzędzia wygląda następująco:
+Typowe uruchomienie narzędzia wygląda tak:
 
 ```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Powyższe polecenie uruchamia MCP wraz z jego interfejsem wizualnym i otwiera lokalny interfejs webowy w przeglądarce. Możesz spodziewać się pulpitu nawigacyjnego wyświetlającego zarejestrowane serwery MCP, dostępne narzędzia, zasoby i podpowiedzi. Interfejs pozwala interaktywnie testować wykonanie narzędzi, przeglądać metadane serwera i oglądać odpowiedzi w czasie rzeczywistym, co ułatwia weryfikację i debugowanie implementacji serwera MCP.
+Powyższe polecenie uruchamia MCP wraz z interfejsem wizualnym i otwiera lokalny interfejs webowy w przeglądarce. Możesz spodziewać się pulpitu nawigacyjnego pokazującego zarejestrowane serwery MCP, dostępne narzędzia, zasoby i podpowiedzi. Interfejs pozwala interaktywnie testować wykonanie narzędzi, przeglądać metadane serwera i obserwować odpowiedzi w czasie rzeczywistym, co ułatwia weryfikację i debugowanie implementacji serwera MCP.
 
-Tak może to wyglądać: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.pl.png)
+Tak to może wyglądać: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.pl.png)
 
 Możesz też uruchomić to narzędzie w trybie CLI, dodając atrybut `--cli`. Oto przykład uruchomienia narzędzia w trybie "CLI", który wyświetla listę wszystkich narzędzi na serwerze:
 
@@ -60,7 +60,7 @@ npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/lis
 
 Poza uruchamianiem narzędzia inspector do testowania możliwości serwera, innym podobnym podejściem jest użycie klienta obsługującego HTTP, na przykład curl.
 
-Za pomocą curl możesz testować serwery MCP bezpośrednio poprzez żądania HTTP:
+Za pomocą curl możesz testować serwery MCP bezpośrednio, wysyłając zapytania HTTP:
 
 ```bash
 # Example: Test server metadata
@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Jak widać z powyższego przykładu użycia curl, do wywołania narzędzia używasz żądania POST z ładunkiem zawierającym nazwę narzędzia i jego parametry. Wybierz podejście, które najlepiej Ci odpowiada. Narzędzia CLI zazwyczaj są szybsze w użyciu i łatwo je zautomatyzować, co może być przydatne w środowisku CI/CD.
+Jak widać z powyższego przykładu użycia curl, korzystasz z zapytania POST, aby wywołać narzędzie, przesyłając ładunek zawierający nazwę narzędzia i jego parametry. Wybierz podejście, które najbardziej Ci odpowiada. Narzędzia CLI zazwyczaj są szybsze w użyciu i łatwo je zautomatyzować, co może być przydatne w środowisku CI/CD.
 
 ### Testy jednostkowe
 
@@ -133,11 +133,11 @@ Powyższy kod robi następujące rzeczy:
 
 - Wykorzystuje framework pytest, który pozwala tworzyć testy jako funkcje i używać instrukcji assert.
 - Tworzy serwer MCP z dwoma różnymi narzędziami.
-- Używa instrukcji `assert` do sprawdzania, czy spełnione są określone warunki.
+- Używa instrukcji `assert`, aby sprawdzić, czy spełnione są określone warunki.
 
 Zobacz [pełny plik tutaj](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-Mając powyższy plik, możesz testować własny serwer, aby upewnić się, że możliwości są tworzone zgodnie z założeniami.
+Na podstawie powyższego pliku możesz testować własny serwer, aby upewnić się, że możliwości są tworzone zgodnie z oczekiwaniami.
 
 Wszystkie główne SDK mają podobne sekcje testowe, więc możesz dostosować je do wybranego środowiska uruchomieniowego.
 
@@ -155,7 +155,7 @@ Wszystkie główne SDK mają podobne sekcje testowe, więc możesz dostosować j
 
 ## Co dalej
 
-- Następny: [Deployment](/03-GettingStarted/09-deployment/README.md)
+- Następny: [Deployment](../09-deployment/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najdokładniejsze, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za autorytatywne źródło. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

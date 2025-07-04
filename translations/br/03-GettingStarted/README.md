@@ -1,102 +1,102 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9191921de355cd9c8f46ebe21bdd52fd",
-  "translation_date": "2025-06-12T23:37:19+00:00",
+  "original_hash": "97f1c99b5b12cf03d4b1be68b3636a4a",
+  "translation_date": "2025-07-04T17:00:15+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "br"
 }
 -->
-## Kemm Da Zaba  
+## Começando  
 
-Wannan sashe yana dauke da darussa da dama:
+Esta seção consiste em várias lições:
 
-- **1 Server dinka na farko**, a wannan darasin na farko, za ka koyi yadda ake ƙirƙirar server dinka na farko da kuma duba shi ta amfani da kayan aikin inspector, wata hanya mai amfani wajen gwaji da gyara server ɗinka, [zuwa darasin](/03-GettingStarted/01-first-server/README.md)
+- **1 Seu primeiro servidor**, nesta primeira lição, você aprenderá como criar seu primeiro servidor e inspecioná-lo com a ferramenta de inspeção, uma forma valiosa de testar e depurar seu servidor, [para a lição](/03-GettingStarted/01-first-server/README.md)
 
-- **2 Client**, a wannan darasin, za ka koyi yadda ake rubuta client wanda zai iya haɗawa da server ɗinka, [zuwa darasin](/03-GettingStarted/02-client/README.md)
+- **2 Cliente**, nesta lição, você aprenderá como escrever um cliente que pode se conectar ao seu servidor, [para a lição](/03-GettingStarted/02-client/README.md)
 
-- **3 Client tare da LLM**, hanya mafi kyau wajen rubuta client shine ta hanyar ƙara LLM a ciki domin ya iya "tattaunawa" da server ɗinka kan abin da za a yi, [zuwa darasin](/03-GettingStarted/03-llm-client/README.md)
+- **3 Cliente com LLM**, uma forma ainda melhor de escrever um cliente é adicionando um LLM para que ele possa "negociar" com seu servidor sobre o que fazer, [para a lição](/03-GettingStarted/03-llm-client/README.md)
 
-- **4 Amfani da yanayin GitHub Copilot Agent na server a Visual Studio Code**. Anan, muna duban yadda ake gudanar da MCP Server ɗinmu daga cikin Visual Studio Code, [zuwa darasin](/03-GettingStarted/04-vscode/README.md)
+- **4 Consumindo um servidor no modo GitHub Copilot Agent no Visual Studio Code**. Aqui, veremos como executar nosso MCP Server dentro do Visual Studio Code, [para a lição](/03-GettingStarted/04-vscode/README.md)
 
-- **5 Amfani daga SSE (Server Sent Events)** SSE wata ka'ida ce ta isar da bayanai daga server zuwa client kai tsaye, tana ba server damar turawa clients sabbin bayanai a lokaci guda ta HTTP [zuwa darasin](/03-GettingStarted/05-sse-server/README.md)
+- **5 Consumindo a partir de SSE (Server Sent Events)** SSE é um padrão para streaming do servidor para o cliente, permitindo que servidores enviem atualizações em tempo real para os clientes via HTTP [para a lição](/03-GettingStarted/05-sse-server/README.md)
 
-- **6 HTTP Streaming tare da MCP (Streamable HTTP)**. Koyi game da zamani na HTTP streaming, sanarwar ci gaba, da yadda ake aiwatar da MCP servers da clients masu iya aiki kai tsaye da yawa ta amfani da Streamable HTTP. [zuwa darasin](/03-GettingStarted/06-http-streaming/README.md)
+- **6 Streaming HTTP com MCP (Streamable HTTP)**. Aprenda sobre streaming HTTP moderno, notificações de progresso e como implementar servidores e clientes MCP escaláveis e em tempo real usando Streamable HTTP. [para a lição](/03-GettingStarted/06-http-streaming/README.md)
 
-- **7 Amfani da AI Toolkit don VSCode** don amfani da gwaji MCP Clients da Servers ɗinka [zuwa darasin](/03-GettingStarted/07-aitk/README.md)
+- **7 Utilizando AI Toolkit para VSCode** para consumir e testar seus MCP Clients e Servers [para a lição](/03-GettingStarted/07-aitk/README.md)
 
-- **8 Gwaji**. Anan za mu mayar da hankali musamman yadda za mu gwada server da client ɗinmu ta hanyoyi daban-daban, [zuwa darasin](/03-GettingStarted/08-testing/README.md)
+- **8 Testes**. Aqui vamos focar especialmente em como testar nosso servidor e cliente de diferentes maneiras, [para a lição](/03-GettingStarted/08-testing/README.md)
 
-- **9 Tura aikace-aikace**. Wannan babin zai dubi hanyoyi daban-daban na tura mafita MCP ɗinka, [zuwa darasin](/03-GettingStarted/09-deployment/README.md)
-
-
-Model Context Protocol (MCP) wata hanya ce ta bude da ke daidaita yadda aikace-aikace ke samar da mahallin aiki ga LLMs. Ka ɗauki MCP kamar tashar USB-C ce ga aikace-aikacen AI - tana ba da hanyar haɗi ta daidaita don haɗa samfuran AI zuwa tushen bayanai da kayan aiki daban-daban.
-
-## Manufofin Koyo
-
-A ƙarshen wannan darasin, za ka iya:
-
-- Kafa yanayin ci gaba don MCP a C#, Java, Python, TypeScript, da JavaScript
-- Gina da tura MCP servers na asali tare da siffofi na musamman (kayan aiki, tambayoyi, da kayan aiki)
-- Ƙirƙirar aikace-aikacen mai masauki da ke haɗa zuwa MCP servers
-- Gwaji da gyara MCP implementations
-- Fahimtar matsalolin da aka fi fuskanta wajen saitawa da hanyoyin magance su
-- Haɗa MCP implementations ɗinka zuwa sabis na LLM masu shahara
-
-## Kafa Yanayin MCP ɗinka
-
-Kafin ka fara aiki da MCP, yana da muhimmanci ka shirya yanayin ci gaban ka kuma ka fahimci tsarin aiki na asali. Wannan sashe zai jagorance ka ta matakan farko na saitawa don tabbatar da fara aiki cikin sauƙi da MCP.
-
-### Abubuwan da ake buƙata
-
-Kafin ka fara ci gaba da MCP, tabbatar ka na da:
-
-- **Yanayin Ci Gaba**: Don harshen da ka zaɓa (C#, Java, Python, TypeScript, ko JavaScript)
-- **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm, ko kowanne sabon edita na lambar
-- **Manajan Kunshin**: NuGet, Maven/Gradle, pip, ko npm/yarn
-- **Maballan API**: Don kowanne sabis na AI da kake shirin amfani da su a aikace-aikacen mai masauki
+- **9 Implantação**. Este capítulo abordará diferentes formas de implantar suas soluções MCP, [para a lição](/03-GettingStarted/09-deployment/README.md)
 
 
-### SDKs na Hukuma
+O Model Context Protocol (MCP) é um protocolo aberto que padroniza como aplicações fornecem contexto para LLMs. Pense no MCP como uma porta USB-C para aplicações de IA - ele oferece uma forma padronizada de conectar modelos de IA a diferentes fontes de dados e ferramentas.
 
-A cikin babin da ke tafe za ka ga mafita da aka gina ta amfani da Python, TypeScript, Java da .NET. Ga dukkan SDKs na hukuma da ake tallafawa.
+## Objetivos de Aprendizagem
 
-MCP na samar da SDKs na hukuma don harsuna da dama:
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Ana kula da shi tare da Microsoft
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Ana kula da shi tare da Spring AI
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Tsarin TypeScript na hukuma
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Tsarin Python na hukuma
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Tsarin Kotlin na hukuma
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Ana kula da shi tare da Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Tsarin Rust na hukuma
+Ao final desta lição, você será capaz de:
 
-## Muhimman Abubuwan da Za a Tuna
+- Configurar ambientes de desenvolvimento para MCP em C#, Java, Python, TypeScript e JavaScript
+- Construir e implantar servidores MCP básicos com recursos personalizados (recursos, prompts e ferramentas)
+- Criar aplicações host que se conectam a servidores MCP
+- Testar e depurar implementações MCP
+- Entender desafios comuns de configuração e suas soluções
+- Conectar suas implementações MCP a serviços populares de LLM
 
-- Kafa yanayin ci gaba na MCP abu ne mai sauƙi tare da SDKs na musamman ga harshe
-- Gina MCP servers na nufin ƙirƙira da rajistar kayan aiki tare da cikakken tsarin bayanai
-- MCP clients suna haɗawa da servers da samfura don amfani da ƙarin fasaloli
-- Gwaji da gyara suna da mahimmanci don tabbatar da ingancin MCP implementations
-- Zaɓuɓɓukan tura aikace-aikace sun haɗa daga ci gaban gida zuwa mafita a girgije
+## Configurando seu Ambiente MCP
 
-## Yin Aiki
+Antes de começar a trabalhar com MCP, é importante preparar seu ambiente de desenvolvimento e entender o fluxo básico de trabalho. Esta seção irá guiá-lo pelos passos iniciais para garantir um começo tranquilo com MCP.
 
-Muna da jerin misalai da suka cika aikin da za ka gani a dukkan babi a wannan sashe. Bugu da ƙari, kowanne babi yana da nasa ayyuka da ƙalubale
+### Pré-requisitos
 
-- [Java Calculator](./samples/java/calculator/README.md)
-- [.Net Calculator](../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](./samples/javascript/README.md)
-- [TypeScript Calculator](./samples/typescript/README.md)
-- [Python Calculator](../../../03-GettingStarted/samples/python)
+Antes de mergulhar no desenvolvimento MCP, certifique-se de ter:
 
-## Karin Albarkatu
+- **Ambiente de Desenvolvimento**: Para a linguagem escolhida (C#, Java, Python, TypeScript ou JavaScript)
+- **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm ou qualquer editor de código moderno
+- **Gerenciadores de Pacotes**: NuGet, Maven/Gradle, pip ou npm/yarn
+- **Chaves de API**: Para quaisquer serviços de IA que você planeja usar em suas aplicações host
 
-- [Gina Agents ta amfani da Model Context Protocol a Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [Remote MCP tare da Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
-- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
-## Me Zai Biyo Baya
+### SDKs Oficiais
 
-Na gaba: [Ƙirƙirar MCP Server ɗinka na farko](/03-GettingStarted/01-first-server/README.md)
+Nos próximos capítulos você verá soluções construídas usando Python, TypeScript, Java e .NET. Aqui estão todos os SDKs oficialmente suportados.
+
+O MCP oferece SDKs oficiais para várias linguagens:
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Mantido em colaboração com a Microsoft
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Mantido em colaboração com Spring AI
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - A implementação oficial em TypeScript
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - A implementação oficial em Python
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - A implementação oficial em Kotlin
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Mantido em colaboração com Loopwork AI
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - A implementação oficial em Rust
+
+## Principais Pontos
+
+- Configurar um ambiente de desenvolvimento MCP é simples com SDKs específicos para cada linguagem
+- Construir servidores MCP envolve criar e registrar ferramentas com esquemas claros
+- Clientes MCP se conectam a servidores e modelos para aproveitar capacidades estendidas
+- Testes e depuração são essenciais para implementações MCP confiáveis
+- Opções de implantação vão desde desenvolvimento local até soluções baseadas em nuvem
+
+## Praticando
+
+Temos um conjunto de exemplos que complementa os exercícios que você verá em todos os capítulos desta seção. Além disso, cada capítulo também possui seus próprios exercícios e tarefas
+
+- [Calculadora Java](./samples/java/calculator/README.md)
+- [Calculadora .Net](../../../03-GettingStarted/samples/csharp)
+- [Calculadora JavaScript](./samples/javascript/README.md)
+- [Calculadora TypeScript](./samples/typescript/README.md)
+- [Calculadora Python](../../../03-GettingStarted/samples/python)
+
+## Recursos Adicionais
+
+- [Construindo Agentes usando Model Context Protocol no Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [MCP Remoto com Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [Agente MCP OpenAI .NET](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+
+## O que vem a seguir
+
+Próximo: [Criando seu primeiro MCP Server](./01-first-server/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

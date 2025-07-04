@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "904b689eda5a68cbafe656d53f9787c7",
-  "translation_date": "2025-06-17T18:53:54+00:00",
+  "original_hash": "f74887f51a69d3f255cb83d0b517c623",
+  "translation_date": "2025-07-04T19:15:50+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "sl"
 }
 -->
-Odlično, za naslednji korak naštejmo zmogljivosti strežnika.
+Super, za naslednji korak pa naštejmo zmogljivosti na strežniku.
 
 ### -2 Naštejmo zmogljivosti strežnika
 
@@ -15,19 +15,19 @@ Zdaj se bomo povezali s strežnikom in zahtevali njegove zmogljivosti:
 
 ### -3- Pretvorba zmogljivosti strežnika v orodja za LLM
 
-Naslednji korak po naštetju zmogljivosti strežnika je, da jih pretvorimo v obliko, ki jo razume LLM. Ko to naredimo, lahko te zmogljivosti ponudimo kot orodja našemu LLM.
+Naslednji korak po naštetju zmogljivosti strežnika je, da jih pretvorimo v obliko, ki jo LLM razume. Ko to storimo, lahko te zmogljivosti ponudimo kot orodja našemu LLM.
 
-Odlično, zdaj smo pripravljeni obravnavati uporabniške zahteve, zato se tega lotimo.
+Super, zdaj smo pripravljeni za obravnavo uporabniških zahtev, zato se lotimo tega.
 
 ### -4- Obravnava uporabniškega poziva
 
 V tem delu kode bomo obravnavali uporabniške zahteve.
 
-Odlično, uspelo ti je!
+Super, uspelo ti je!
 
 ## Naloga
 
-Vzemi kodo iz vaje in razširi strežnik z nekaj dodatnimi orodji. Nato ustvari klienta z LLM, kot v vaji, in ga preizkusi z različnimi pozivi, da se prepričaš, da se vsa orodja strežnika dinamično kličejo. Tak način izdelave klienta pomeni, da bo končni uporabnik imel odlično uporabniško izkušnjo, saj lahko uporablja pozive namesto natančnih ukazov klienta in ne bo opazil, da se kliče kateri koli MCP strežnik.
+Vzemi kodo iz vaje in razširi strežnik z nekaj dodatnimi orodji. Nato ustvari klienta z LLM, kot v vaji, in ga preizkusi z različnimi pozivi, da se prepričaš, da se vsa orodja strežnika dinamično kličejo. Ta način gradnje klienta pomeni, da bo končni uporabnik imel odlično uporabniško izkušnjo, saj lahko uporablja pozive namesto natančnih ukazov klienta in ne bo opazil, da se kliče MCP strežnik.
 
 ## Rešitev
 
@@ -35,10 +35,10 @@ Vzemi kodo iz vaje in razširi strežnik z nekaj dodatnimi orodji. Nato ustvari 
 
 ## Ključne ugotovitve
 
-- Dodajanje LLM klientu omogoča boljšo interakcijo uporabnikov z MCP strežniki.
-- Odziv MCP strežnika je treba pretvoriti v nekaj, kar LLM razume.
+- Dodajanje LLM k vašemu klientu omogoča boljši način interakcije uporabnikov z MCP strežniki.
+- Odgovor MCP strežnika je treba pretvoriti v nekaj, kar LLM lahko razume.
 
-## Vzorci
+## Primeri
 
 - [Java kalkulator](../samples/java/calculator/README.md)
 - [.Net kalkulator](../../../../03-GettingStarted/samples/csharp)
@@ -50,7 +50,7 @@ Vzemi kodo iz vaje in razširi strežnik z nekaj dodatnimi orodji. Nato ustvari 
 
 ## Kaj sledi
 
-- Naslednje: [Uporaba strežnika z Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
+- Naslednje: [Uporaba strežnika v Visual Studio Code](../04-vscode/README.md)
 
-**Opozorilo**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

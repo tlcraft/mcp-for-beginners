@@ -1,160 +1,154 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f00aedb7b1d11b7eaacb0618d8791c65",
-  "translation_date": "2025-05-29T23:40:35+00:00",
+  "original_hash": "c69f9df7f3215dac8d056020539bac36",
+  "translation_date": "2025-07-04T19:15:56+00:00",
   "source_file": "02-Security/README.md",
   "language_code": "sl"
 }
 -->
-# Security Best Practices
+# Najboljše varnostne prakse
 
-Model Context Protocol (MCP) introduces powerful features for AI-driven apps but also brings unique security challenges beyond traditional software risks. Alongside familiar concerns like secure coding, least privilege, and supply chain security, MCP and AI workloads face new threats such as prompt injection, tool poisoning, and dynamic tool modification. Without proper management, these risks can cause data leaks, privacy violations, and unexpected system behavior.
+Sprejetje Model Context Protocol (MCP) prinaša močne nove zmogljivosti za aplikacije, ki temeljijo na umetni inteligenci, vendar hkrati uvaja tudi edinstvene varnostne izzive, ki presegajo tradicionalna tveganja programske opreme. Poleg uveljavljenih skrbi, kot so varno kodiranje, načelo najmanjših privilegijev in varnost dobavne verige, se MCP in delovne obremenitve AI soočajo z novimi grožnjami, kot so prompt injection, zastrupitev orodij in dinamične spremembe orodij. Ta tveganja lahko vodijo do iztoka podatkov, kršitev zasebnosti in neželenega vedenja sistema, če niso ustrezno obvladana.
 
-This lesson covers key security risks linked to MCP—including authentication, authorization, excessive permissions, indirect prompt injection, and supply chain vulnerabilities—and offers practical controls and best practices to address them. You’ll also discover how to use Microsoft solutions like Prompt Shields, Azure Content Safety, and GitHub Advanced Security to enhance your MCP setup. Applying these controls will help you lower the chance of breaches and keep your AI systems secure and reliable.
+Ta lekcija raziskuje najpomembnejša varnostna tveganja, povezana z MCP — vključno z avtentikacijo, avtorizacijo, prekomernimi dovoljenji, posrednim prompt injection in ranljivostmi dobavne verige — ter ponuja izvedljive ukrepe in najboljše prakse za njihovo ublažitev. Naučili se boste tudi, kako izkoristiti Microsoftove rešitve, kot so Prompt Shields, Azure Content Safety in GitHub Advanced Security, za krepitev vaše implementacije MCP. Z razumevanjem in uporabo teh ukrepov lahko znatno zmanjšate verjetnost varnostnega incidenta in zagotovite, da vaši AI sistemi ostanejo zanesljivi in varni.
 
-# Learning Objectives
+# Cilji učenja
 
-By the end of this lesson, you will be able to:
+Ob koncu te lekcije boste znali:
 
-- Identify and explain unique security risks introduced by MCP, such as prompt injection, tool poisoning, excessive permissions, and supply chain vulnerabilities.
-- Describe and apply effective controls for MCP security risks, including strong authentication, least privilege, secure token handling, and supply chain verification.
-- Understand and leverage Microsoft tools like Prompt Shields, Azure Content Safety, and GitHub Advanced Security to protect MCP and AI workloads.
-- Recognize the importance of validating tool metadata, monitoring for dynamic changes, and defending against indirect prompt injection attacks.
-- Integrate established security best practices—like secure coding, server hardening, and zero trust architecture—into your MCP implementation to reduce security risks and impact.
+- Prepoznati in razložiti edinstvena varnostna tveganja, ki jih prinaša Model Context Protocol (MCP), vključno s prompt injection, zastrupitvijo orodij, prekomernimi dovoljenji in ranljivostmi dobavne verige.
+- Opisati in uporabiti učinkovite ukrepe za ublažitev varnostnih tveganj MCP, kot so robustna avtentikacija, načelo najmanjših privilegijev, varno upravljanje žetonov in preverjanje dobavne verige.
+- Razumeti in izkoristiti Microsoftove rešitve, kot so Prompt Shields, Azure Content Safety in GitHub Advanced Security, za zaščito MCP in AI delovnih obremenitev.
+- Prepoznati pomen preverjanja metapodatkov orodij, spremljanja dinamičnih sprememb in obrambe pred posrednimi napadi prompt injection.
+- Vključiti uveljavljene varnostne najboljše prakse — kot so varno kodiranje, utrjevanje strežnikov in arhitektura ničelnega zaupanja — v vašo implementacijo MCP za zmanjšanje verjetnosti in vpliva varnostnih kršitev.
 
-# MCP security controls
+# Varnostni ukrepi MCP
 
-Any system accessing critical resources faces inherent security challenges. These can generally be addressed by applying fundamental security controls and concepts correctly. MCP is still evolving rapidly, so its security controls will mature over time, allowing better integration with enterprise security architectures and best practices.
+Vsak sistem, ki ima dostop do pomembnih virov, se sooča z implicitnimi varnostnimi izzivi. Varnostne izzive je na splošno mogoče rešiti z ustrezno uporabo osnovnih varnostnih ukrepov in konceptov. Ker je MCP šele nedavno definiran, se specifikacija hitro spreminja in se razvija skupaj s protokolom. Sčasoma bodo varnostni ukrepi v njem dozoreli, kar bo omogočilo boljšo integracijo z obstoječimi podjetniškimi in uveljavljenimi varnostnimi arhitekturami ter najboljšimi praksami.
 
-Research from the [Microsoft Digital Defense Report](https://aka.ms/mddr) shows 98% of reported breaches could be prevented by solid security hygiene. The best defense against breaches remains getting your baseline security hygiene, secure coding, and supply chain security right—time-tested practices still have the greatest impact on reducing risk.
+Raziskava, objavljena v [Microsoft Digital Defense Report](https://aka.ms/mddr), navaja, da bi 98 % prijavljenih kršitev preprečila dosledna varnostna higiena, najboljša zaščita pred kakršnokoli kršitvijo pa je pravilno izvajanje osnovne varnostne higiene, najboljših praks varnega kodiranja in varnosti dobavne verige — te preizkušene prakse še vedno najbolj vplivajo na zmanjšanje varnostnih tveganj.
 
-Let’s explore ways you can begin addressing security risks when adopting MCP.
+Poglejmo si nekaj načinov, kako lahko začnete obvladovati varnostna tveganja pri uvajanju MCP.
 
-> **Note:** The following information is accurate as of **29th May 2025**. MCP is continuously evolving, and future versions may introduce new authentication methods and controls. For the latest updates, always consult the [MCP Specification](https://spec.modelcontextprotocol.io/), the official [MCP GitHub repository](https://github.com/modelcontextprotocol), and the [security best practice page](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices).
+> **Note:** Naslednje informacije so veljavne na dan **29. maj 2025**. Protokol MCP se nenehno razvija, prihodnje implementacije pa lahko uvedejo nove vzorce avtentikacije in varnostne ukrepe. Za najnovejše posodobitve in navodila vedno preverite [MCP Specification](https://spec.modelcontextprotocol.io/) ter uradni [MCP GitHub repozitorij](https://github.com/modelcontextprotocol) in [stran z najboljšimi varnostnimi praksami](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices).
 
-### Problem statement  
-The original MCP spec assumed developers would build their own authentication server, requiring knowledge of OAuth and related security constraints. MCP servers acted as OAuth 2.0 Authorization Servers, managing user authentication directly rather than delegating to external services like Microsoft Entra ID. As of **26 April 2025**, an update allows MCP servers to delegate user authentication to external services.
+### Opis problema  
+Izvirna specifikacija MCP je predvidevala, da bodo razvijalci napisali svoj avtentikacijski strežnik. To je zahtevalo znanje o OAuth in povezanih varnostnih omejitvah. MCP strežniki so delovali kot OAuth 2.0 avtorizacijski strežniki, ki so neposredno upravljali potrebno uporabniško avtentikacijo, namesto da bi jo delegirali zunanjemu servisu, kot je Microsoft Entra ID. Od **26. aprila 2025** posodobitev specifikacije MCP omogoča, da MCP strežniki delegirajo uporabniško avtentikacijo zunanjemu servisu.
 
-### Risks
-- Misconfigured authorization logic in MCP servers can expose sensitive data or enforce access controls incorrectly.
-- Theft of OAuth tokens on local MCP servers can enable attackers to impersonate the MCP server and access protected resources.
+### Tveganja
+- Napačno konfigurirana avtorizacijska logika na MCP strežniku lahko vodi do razkritja občutljivih podatkov in nepravilno uporabljenih dostopnih pravic.
+- Kraja OAuth žetonov na lokalnem MCP strežniku. Če so žetoni ukradeni, jih lahko napadalec uporabi za lažno predstavljanje MCP strežnika in dostop do virov ter podatkov, za katere je žeton namenjen.
 
-#### Token Passthrough  
-Token passthrough is explicitly forbidden in the authorization spec because it introduces several security risks:
+#### Token Passthrough
+Token passthrough je v specifikaciji avtorizacije izrecno prepovedan, saj prinaša več varnostnih tveganj, med drugim:
 
-#### Security Control Circumvention  
-MCP servers or downstream APIs often rely on tokens for enforcing rate limits, request validation, or traffic monitoring based on token audience or credential constraints. If clients can use tokens directly with downstream APIs without MCP server validation, these controls are bypassed.
+#### Obhod varnostnih ukrepov
+MCP strežnik ali spodnji API-ji lahko izvajajo pomembne varnostne ukrepe, kot so omejevanje hitrosti, preverjanje zahtevkov ali spremljanje prometa, ki so odvisni od občinstva žetona ali drugih omejitev poverilnic. Če lahko odjemalci pridobijo in neposredno uporabljajo žetone pri spodnjih API-jih brez ustrezne validacije MCP strežnika ali brez zagotovila, da so žetoni izdani za pravi servis, ti ukrepi niso upoštevani.
 
-#### Accountability and Audit Trail Issues  
-MCP servers cannot distinguish between clients if upstream-issued access tokens are used directly, making it hard to track who initiated requests. Logs on downstream servers may show requests as coming from different sources, complicating incident investigation and auditing. If tokens are passed without validating claims or metadata, attackers with stolen tokens can use the MCP server as a proxy for data theft.
+#### Težave z odgovornostjo in revizijsko sledjo
+MCP strežnik ne bo mogel identificirati ali razlikovati med MCP odjemalci, če ti kličejo z žetonom za dostop, ki ga je izdal zunanji vir in je za MCP strežnik lahko nejasen.
+Dnevniki spodnjega strežnika virov lahko kažejo zahtevke, ki se zdijo, kot da prihajajo iz drugega vira z drugačno identiteto, namesto iz MCP strežnika, ki dejansko posreduje žetone.
+Oba dejavnika otežujeta preiskavo incidentov, nadzor in revizijo.
+Če MCP strežnik posreduje žetone brez preverjanja njihovih trditev (npr. vlog, privilegijev ali občinstva) ali drugih metapodatkov, lahko zlonamerni uporabnik z ukradenim žetonom uporabi strežnik kot posrednika za iztiskanje podatkov.
 
-#### Trust Boundary Issues  
-Downstream servers trust specific entities based on origin or behavior. Breaking this trust boundary by accepting tokens without proper validation risks unauthorized access across services.
+#### Težave z mejo zaupanja
+Spodnji strežnik virov zaupa določenim entitetam. To zaupanje lahko vključuje predpostavke o izvoru ali vzorcih vedenja odjemalcev. Kršitev te meje zaupanja lahko povzroči nepričakovane težave.
+Če žeton sprejema več storitev brez ustrezne validacije, lahko napadalec, ki kompromitira eno storitev, uporabi žeton za dostop do drugih povezanih storitev.
 
-#### Future Compatibility Risk  
-Even if an MCP server acts as a “pure proxy” today, it may need to add security controls later. Proper token audience separation from the start makes evolving security easier.
+#### Tveganje združljivosti v prihodnosti
+Tudi če MCP strežnik danes deluje kot "čisti proxy", bo morda kasneje moral dodati varnostne ukrepe. Začetek z ustrezno ločitvijo občinstva žetonov olajša razvoj varnostnega modela.
 
-### Mitigating controls
+### Ukrepi za ublažitev
 
-**MCP servers MUST NOT accept tokens not explicitly issued for the MCP server**
+**MCP strežniki NE SMEJO sprejemati žetonov, ki niso izrecno izdani za MCP strežnik**
 
-- **Review and Harden Authorization Logic:** Audit your MCP server’s authorization to ensure only authorized users and clients access sensitive resources. For guidance, see [Azure API Management Your Auth Gateway For MCP Servers | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) and [Using Microsoft Entra ID To Authenticate With MCP Servers Via Sessions - Den Delimarsky](https://den.dev/blog/mcp-server-auth-entra-id-session/).
-- **Enforce Secure Token Practices:** Follow [Microsoft’s best practices for token validation and lifetime](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens) to prevent token misuse and reduce replay or theft risks.
-- **Protect Token Storage:** Always store tokens securely with encryption at rest and in transit. See [Use secure token storage and encrypt tokens](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2) for implementation tips.
+- **Preglejte in utrdite avtorizacijsko logiko:** Natančno preglejte implementacijo avtorizacije na vašem MCP strežniku, da zagotovite, da do občutljivih virov dostopajo le predvideni uporabniki in odjemalci. Za praktične nasvete glejte [Azure API Management Your Auth Gateway For MCP Servers | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) in [Using Microsoft Entra ID To Authenticate With MCP Servers Via Sessions - Den Delimarsky](https://den.dev/blog/mcp-server-auth-entra-id-session/).
+- **Uveljavljajte varne prakse upravljanja žetonov:** Sledite [Microsoftovim najboljšim praksam za validacijo žetonov in njihovo življenjsko dobo](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens), da preprečite zlorabo dostopnih žetonov in zmanjšate tveganje ponovne uporabe ali kraje žetonov.
+- **Zaščitite shranjevanje žetonov:** Vedno shranjujte žetone varno in uporabljajte šifriranje za zaščito med mirovanjem in prenosom. Za nasvete o implementaciji glejte [Use secure token storage and encrypt tokens](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2).
 
-# Excessive permissions for MCP servers
+# Prekomerna dovoljenja za MCP strežnike
 
-### Problem statement  
-MCP servers may have been granted permissions beyond what they need. For example, an MCP server in an AI sales app accessing an enterprise data store should only have access scoped to sales data, not all files. Following the principle of least privilege, no resource should have permissions exceeding what’s necessary for its tasks. AI makes this challenging because defining exact permissions can be complex.
+### Opis problema  
+MCP strežnikom so morda dodeljena prekomerna dovoljenja za storitev/vir, do katerega dostopajo. Na primer, MCP strežnik, ki je del AI prodajne aplikacije, ki se povezuje s podjetniškim podatkovnim skladiščem, bi moral imeti dostop omejen na prodajne podatke in ne dovoljenje za dostop do vseh datotek v skladišču. Glede na načelo najmanjših privilegijev (eno najstarejših varnostnih načel) noben vir ne bi smel imeti dovoljenj, ki presegajo tisto, kar je potrebno za izvedbo predvidenih nalog. AI predstavlja dodatni izziv, saj je zaradi njene prilagodljivosti težko natančno določiti potrebna dovoljenja.
 
-### Risks  
-- Excessive permissions can allow unauthorized data exfiltration or modification, potentially exposing personally identifiable information (PII).
+### Tveganja  
+- Dodeljevanje prekomernih dovoljenj lahko omogoči iztiskanje ali spreminjanje podatkov, do katerih MCP strežnik ni smel imeti dostopa. To je lahko tudi vprašanje zasebnosti, če gre za osebne podatke (PII).
 
-### Mitigating controls  
-- **Apply the Principle of Least Privilege:** Grant MCP servers only the minimum permissions needed for their tasks. Regularly review and update permissions. See [Secure least-privileged access](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access) for details.
-- **Use Role-Based Access Control (RBAC):** Assign tightly scoped roles to MCP servers, avoiding broad permissions.
-- **Monitor and Audit Permissions:** Continuously monitor permission usage and audit logs to detect and address excessive or unused privileges promptly.
+### Ukrepi za ublažitev
+- **Uporabite načelo najmanjših privilegijev:** MCP strežniku dodelite le minimalna dovoljenja, potrebna za opravljanje njegovih nalog. Redno pregledujte in posodabljajte ta dovoljenja, da zagotovite, da ne presegajo potrebnega. Za podrobna navodila glejte [Secure least-privileged access](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access).
+- **Uporabite nadzor dostopa na osnovi vlog (RBAC):** Dodelite vlogi MCP strežniku, ki so strogo omejene na določene vire in dejanja, ter se izogibajte širokim ali nepotrebnim dovoljenjem.
+- **Spremljajte in revidirajte dovoljenja:** Neprestano spremljajte uporabo dovoljenj in pregledujte dnevnike dostopa, da hitro odkrijete in odpravite prekomerna ali neuporabljena dovoljenja.
 
-# Indirect prompt injection attacks
+# Posredni napadi prompt injection
 
-### Problem statement
+### Opis problema
 
-Malicious or compromised MCP servers can expose customer data or trigger unintended actions, especially in AI and MCP workloads:
+Zlonamerni ali kompromitirani MCP strežniki lahko povzročijo resna tveganja z razkritjem podatkov strank ali omogočanjem neželenih dejanj. Ta tveganja so še posebej pomembna pri AI in delovnih obremenitvah, ki temeljijo na MCP, kjer:
 
-- **Prompt Injection Attacks:** Attackers embed harmful instructions in prompts or external content, causing AI to act unexpectedly or leak data. Learn more: [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
-- **Tool Poisoning:** Attackers manipulate tool metadata (like descriptions or parameters) to influence AI behavior, bypass controls, or exfiltrate data. Details: [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
-- **Cross-Domain Prompt Injection:** Malicious instructions hidden in documents, web pages, or emails processed by AI, leading to data leaks or manipulation.
-- **Dynamic Tool Modification (Rug Pulls):** Tool definitions can be changed post user-approval, introducing malicious behavior without user knowledge.
+- **Napadi prompt injection:** Napadalci vstavijo zlonamerna navodila v pozive ali zunanjo vsebino, zaradi česar AI sistem izvede neželena dejanja ali razkrije občutljive podatke. Več: [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
+- **Zastrupitev orodij:** Napadalci manipulirajo z metapodatki orodij (kot so opisi ali parametri), da vplivajo na vedenje AI, potencialno obidejo varnostne ukrepe ali iztiskajo podatke. Podrobnosti: [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
+- **Cross-Domain Prompt Injection:** Zlonamerna navodila so vgrajena v dokumente, spletne strani ali e-pošto, ki jih nato obdela AI, kar vodi do uhajanja ali manipulacije podatkov.
+- **Dinamične spremembe orodij (Rug Pulls):** Definicije orodij se lahko spremenijo po odobritvi uporabnika, kar uvaja nove zlonamerne vedenja brez vednosti uporabnika.
 
-These vulnerabilities call for strong validation, monitoring, and security when integrating MCP servers and tools. See linked references for deeper insights.
+Te ranljivosti poudarjajo potrebo po robustni validaciji, spremljanju in varnostnih ukrepih pri integraciji MCP strežnikov in orodij v vaše okolje. Za podrobnejši vpogled glejte zgoraj navedene povezave.
 
 ![prompt-injection-lg-2048x1034](../../../translated_images/prompt-injection.ed9fbfde297ca877c15bc6daa808681cd3c3dc7bf27bbbda342ef1ba5fc4f52d.sl.png)
 
-**Indirect Prompt Injection** (or cross-domain prompt injection, XPIA) is a critical vulnerability in generative AI, including MCP-based systems. Malicious instructions hidden in external content (documents, web pages, emails) may be interpreted as legitimate commands, causing unintended actions like data leaks or harmful content generation. For detailed info and examples, see [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/).
+**Posredni prompt injection** (znan tudi kot cross-domain prompt injection ali XPIA) je kritična ranljivost v generativnih AI sistemih, vključno s tistimi, ki uporabljajo Model Context Protocol (MCP). Pri tem napadu so zlonamerna navodila skrita v zunanji vsebini — kot so dokumenti, spletne strani ali e-pošta. Ko AI sistem obdela to vsebino, lahko vgrajena navodila interpretira kot legitimna uporabniška navodila, kar povzroči neželena dejanja, kot so uhajanje podatkov, generiranje škodljive vsebine ali manipulacija uporabniških interakcij. Za podroben opis in primere iz prakse glejte [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/).
 
-A particularly dangerous form is **Tool Poisoning**, where attackers inject malicious instructions into MCP tool metadata (descriptions, parameters). Since LLMs rely on this metadata to decide which tools to call, compromised descriptions can trick the model into unauthorized calls or bypassing security. These manipulations are often invisible to users but executed by the AI. This risk is higher in hosted MCP servers where tool definitions can be updated after user approval—a scenario called a "[rug pull](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)". A previously safe tool might later be modified to act maliciously, like stealing data or changing system behavior, without user awareness. For more, see [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
+Posebej nevarna oblika tega napada je **zastrupitev orodij**. Napadalci v metapodatke MCP orodij (kot so opisi ali parametri) vstavijo zlonamerna navodila. Ker veliki jezikovni modeli (LLM) temeljijo na teh metapodatkih, da odločijo, katera orodja uporabiti, lahko kompromitirani opisi zavajajo model, da izvede nepooblaščene klice orodij ali obide varnostne ukrepe. Te manipulacije so pogosto nevidne končnim uporabnikom, a jih AI sistem lahko interpretira in izvede. To tveganje je še posebej izrazito v gostovanih okoljih MCP strežnikov, kjer se definicije orodij lahko posodobijo po odobritvi uporabnika — scenarij, ki ga včasih imenujejo "[rug pull](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)". V takih primerih je orodje, ki je bilo prej varno, lahko kasneje spremenjeno za izvajanje zlonamernih dejanj, kot je iztiskanje podatkov ali spreminjanje vedenja sistema, brez vednosti uporabnika. Za več informacij o tem napadu glejte [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
 
 ![tool-injection-lg-2048x1239 (1)](../../../translated_images/tool-injection.3b0b4a6b24de6befe7d3afdeae44138ef005881aebcfc84c6f61369ce31e3640.sl.png)
 
-## Risks  
-Unintended AI actions risk data exfiltration and privacy breaches.
+## Tveganja
+Neželeni ukrepi AI predstavljajo različna varnostna tveganja, vključno z iztiskom podatkov in kršitvami zasebnosti.
 
-### Mitigating controls  
-### Using prompt shields to protect against Indirect Prompt Injection attacks  
+### Ukrepi za ublažitev
+### Uporaba prompt shields za zaščito pred posrednimi napadi prompt injection
 -----------------------------------------------------------------------------
 
-**AI Prompt Shields** are Microsoft’s solution to defend against direct and indirect prompt injection attacks. They work by:
+**AI Prompt Shields** so rešitev, ki jo je razvil Microsoft za obrambo pred neposrednimi in posrednimi napadi prompt injection. Pomagajo z:
 
-1.  **Detection and Filtering:** Using advanced machine learning and natural language processing to detect and filter malicious instructions embedded in external content like documents, web pages, or emails.
+1.  **Zaznavanjem in filtriranjem:** Prompt Shields uporabljajo napredne algoritme strojnega učenja in obdelave naravnega jezika za zaznavanje in filtriranje zlonamernih navodil, vgrajenih v zunanjo vsebino, kot so dokumenti, spletne strani ali e-pošta.
     
-2.  **Spotlighting:** Helping the AI distinguish valid system instructions from potentially untrustworthy external inputs by transforming input text to make it more relevant to the model, improving identification and ignoring of malicious instructions.
+2.  **Osvetljevanjem (Spotlighting):** Ta tehnika pomaga AI sistemu razlikovati med veljavnimi sistemskimi navodili in potencialno nezanesljivimi zunanjimi vnosi. S preoblikovanjem vhodnega besedila na način, ki je modelu bolj relevanten, Spotlighting zagotavlja, da AI lažje prepozna in prezre zlonamerna navodila.
     
-3.  **Delimiters and Datamarking:** Including delimiters in system messages to clearly mark input text location, aiding the AI in separating user input from harmful external content. Datamarking uses special markers to highlight trusted vs untrusted data boundaries.
-    
-4.  **Continuous Monitoring and Updates:** Microsoft continuously updates Prompt Shields to address new threats, keeping defenses effective against evolving attack methods.
-    
-5. **Integration with Azure Content Safety:** Prompt Shields are part of Azure AI Content Safety, which offers tools to detect jailbreak attempts, harmful content, and other AI security risks.
+3.  **Omejevalniki in označevanje podatkov (Delimiters and Datamarking):** Vključevanje omejevalnikov v sistemsko sporočilo jasno označuje lokacijo vhodnega besedila, kar pomaga AI sistemu prepoznati in ločiti uporabniške vnose od potencialno škodljive zunanje vsebine
+Varnost dobavne verige ostaja temeljna v dobi umetne inteligence, vendar se je obseg tega, kar šteje kot vaša dobavna veriga, razširil. Poleg tradicionalnih paketov kode morate zdaj dosledno preverjati in nadzorovati vse komponente, povezane z umetno inteligenco, vključno z osnovnimi modeli, storitvami za vdelave, ponudniki konteksta in API-ji tretjih oseb. Vsaka od teh lahko, če ni ustrezno upravljana, prinese ranljivosti ali tveganja.
 
-Learn more in the [Prompt Shields documentation](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection).
+**Ključne prakse za varnost dobavne verige pri AI in MCP:**
+- **Preverite vse komponente pred integracijo:** To vključuje ne le odprtokodne knjižnice, ampak tudi AI modele, podatkovne vire in zunanje API-je. Vedno preverite izvor, licenciranje in znane ranljivosti.
+- **Vzdržujte varne postopke uvajanja:** Uporabljajte avtomatizirane CI/CD procese z vgrajenim varnostnim pregledovanjem, da težave odkrijete zgodaj. Poskrbite, da se v produkcijo uvajajo le zaupanja vredni artefakti.
+- **Neprestano spremljajte in revidirajte:** Uvedite stalno spremljanje vseh odvisnosti, vključno z modeli in podatkovnimi storitvami, da zaznate nove ranljivosti ali napade na dobavno verigo.
+- **Uporabljajte načelo najmanjših privilegijev in nadzor dostopa:** Omejite dostop do modelov, podatkov in storitev le na tisto, kar je nujno potrebno za delovanje vašega MCP strežnika.
+- **Hitro ukrepajte ob grožnjah:** Imate vzpostavljen postopek za popravke ali zamenjavo ogroženih komponent ter za rotacijo skrivnosti ali poverilnic, če zaznate vdor.
 
-![prompt-shield-lg-2048x1328](../../../translated_images/prompt-shield.ff5b95be76e9c78c6ec0888206a4a6a0a5ab4bb787832a9eceef7a62fe0138d1.sl.png)
+[GitHub Advanced Security](https://github.com/security/advanced-security) ponuja funkcije, kot so pregledovanje skrivnosti, pregledovanje odvisnosti in analiza CodeQL. Ta orodja se integrirajo z [Azure DevOps](https://azure.microsoft.com/en-us/products/devops) in [Azure Repos](https://azure.microsoft.com/en-us/products/devops/repos/), da ekipam pomagajo prepoznati in ublažiti ranljivosti tako v kodi kot v komponentah AI dobavne verige.
 
-### Supply chain security
+Microsoft prav tako interno izvaja obsežne prakse varnosti dobavne verige za vse izdelke. Več izveste v [The Journey to Secure the Software Supply Chain at Microsoft](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/).
 
-Supply chain security remains vital in the AI era, but the scope has expanded. Beyond traditional code packages, you must verify and monitor all AI-related components, including foundation models, embedding services, context providers, and third-party APIs. Each can introduce vulnerabilities if not managed properly.
 
-**Key supply chain security practices for AI and MCP:**
-- **Verify all components before integration:** Check open-source libraries, AI models, data sources, and external APIs for provenance, licenses, and known vulnerabilities.
-- **Maintain secure deployment pipelines:** Use automated CI/CD pipelines with integrated security scanning to catch issues early. Deploy only trusted artifacts to production.
-- **Continuously monitor and audit:** Implement ongoing monitoring of dependencies, including models and data services, to detect new vulnerabilities or attacks.
-- **Apply least privilege and access controls:** Restrict access to models, data, and services strictly to what MCP servers need.
-- **Respond quickly to threats:** Have processes for patching or replacing compromised components and rotating secrets if breaches occur.
+# Uveljavljene varnostne prakse, ki bodo izboljšale varnostno držo vaše MCP implementacije
 
-[GitHub Advanced Security](https://github.com/security/advanced-security) offers secret scanning, dependency scanning, and CodeQL analysis. These integrate with [Azure DevOps](https://azure.microsoft.com/en-us/products/devops) and [Azure Repos](https://azure.microsoft.com/en-us/products/devops/repos/) to help teams identify and fix vulnerabilities across code and AI supply chains.
+Vsaka MCP implementacija podeduje obstoječo varnostno držo okolja vaše organizacije, na katerem temelji, zato je priporočljivo, da pri razmišljanju o varnosti MCP kot dela vaših celotnih AI sistemov izboljšate svojo obstoječo varnostno držo. Naslednji uveljavljeni varnostni ukrepi so še posebej pomembni:
 
-Microsoft also applies extensive supply chain security internally for all products. Learn more in [The Journey to Secure the Software Supply Chain at Microsoft](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/).
+-   Najboljše prakse varnega kodiranja v vaši AI aplikaciji – zaščita pred [OWASP Top 10](https://owasp.org/www-project-top-ten/), [OWASP Top 10 za LLM-je](https://genai.owasp.org/download/43299/?tmstv=1731900559), uporaba varnih trezorjev za skrivnosti in žetone, vzpostavitev varne komunikacije od začetka do konca med vsemi komponentami aplikacije itd.
+-   Ojačitev strežnika – kjer je mogoče, uporabite MFA, redno nameščajte popravke, integrirajte strežnik z zunanjim ponudnikom identitete za dostop itd.
+-   Redno posodabljajte naprave, infrastrukturo in aplikacije s popravki
+-   Varnostno spremljanje – uvedba beleženja in nadzora AI aplikacije (vključno s MCP klienti/strežniki) ter pošiljanje teh dnevnikov v centralni SIEM za zaznavanje nenavadnih aktivnosti
+-   Arhitektura ničelnega zaupanja – logično izoliranje komponent z uporabo omrežnih in identitetnih kontrol, da se zmanjša možnost lateralnega premikanja v primeru kompromitacije AI aplikacije.
 
-# Established security best practices that will uplift your MCP implementation's security posture
+# Ključne ugotovitve
 
-Any MCP deployment inherits your organization’s existing security posture. When securing MCP as part of your AI systems, it’s recommended to strengthen your overall security stance. Key established controls include:
+- Temelji varnosti ostajajo ključni: varno kodiranje, načelo najmanjših privilegijev, preverjanje dobavne verige in neprekinjeno spremljanje so bistveni za MCP in AI delovne obremenitve.
+- MCP prinaša nova tveganja – kot so vbrizgavanje pozivov, zastrupitev orodij in pretirane pravice – ki zahtevajo tako tradicionalne kot AI-specifične kontrole.
+- Uporabljajte robustne prakse avtentikacije, avtorizacije in upravljanja žetonov, kjer je mogoče zunanji ponudniki identitete, kot je Microsoft Entra ID.
+- Zaščitite se pred posrednim vbrizgavanjem pozivov in zastrupitvijo orodij z validacijo metapodatkov orodij, spremljanjem dinamičnih sprememb in uporabo rešitev, kot je Microsoft Prompt Shields.
+- Vse komponente v vaši AI dobavni verigi – vključno z modeli, vdelavami in ponudniki konteksta – obravnavajte z enako skrbnostjo kot odvisnosti kode.
+- Bodite na tekočem z razvijajočimi se specifikacijami MCP in prispevajte skupnosti za oblikovanje varnih standardov.
 
-- Secure coding best practices for your AI app—protect against [the OWASP Top 10](https://owasp.org/www-project-top-ten/), the [OWASP Top 10 for LLMs](https://genai.owasp.org/download/43299/?tmstv=1731900559), use secure vaults for secrets and tokens, and ensure end-to-end secure communication between components.
-- Server hardening—use MFA where possible, keep patches current, and integrate servers with third-party identity providers for access.
-- Keep devices, infrastructure, and apps updated with patches.
-- Security monitoring—log and monitor AI applications (including MCP clients/servers), sending logs to a central SIEM to detect anomalies.
-- Zero trust architecture—segment components via network and identity controls to minimize lateral movement if compromised.
-
-# Key Takeaways
-
-- Security fundamentals remain crucial: secure coding, least privilege, supply chain verification, and continuous monitoring are essential for MCP and AI workloads.
-- MCP introduces new risks—prompt injection, tool poisoning, excessive permissions—that require both traditional and AI-specific controls.
-- Use strong authentication, authorization, and token management, leveraging external identity providers like Microsoft Entra ID when possible.
-- Protect against indirect prompt injection and tool poisoning by validating tool metadata, monitoring dynamic changes, and using solutions like Microsoft Prompt Shields.
-- Treat all components in your AI supply chain—including models, embeddings, and context providers—with the same rigor as code dependencies.
-- Stay up to date with evolving MCP specs and contribute to the community to help shape secure standards.
-
-# Additional Resources
+# Dodatni viri
 
 - [Microsoft Digital Defense Report](https://aka.ms/mddr)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
@@ -175,9 +169,9 @@ Any MCP deployment inherits your organization’s existing security posture. Whe
 - [MCP Security Best Practice](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 - [Using Microsoft Entra ID to Authenticate with MCP Servers](https://den.dev/blog/mcp-server-auth-entra-id-session/)
 
-### Next
+### Naslednje
 
-Next: [Chapter 3: Getting Started](/03-GettingStarted/README.md)
+Naslednje: [Poglavje 3: Začetek](../03-GettingStarted/README.md)
 
-**Opozorilo**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

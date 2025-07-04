@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "904b689eda5a68cbafe656d53f9787c7",
-  "translation_date": "2025-06-17T18:51:47+00:00",
+  "original_hash": "f74887f51a69d3f255cb83d0b517c623",
+  "translation_date": "2025-07-04T18:21:38+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "tl"
 }
@@ -11,32 +11,32 @@ Mahusay, para sa susunod nating hakbang, ilista natin ang mga kakayahan sa serve
 
 ### -2 Ilahad ang mga kakayahan ng server
 
-Ngayon, ikokonekta natin ang client sa server at hihingin ang mga kakayahan nito:
+Ngayon ay kokonekta tayo sa server at hihingin ang mga kakayahan nito:
 
-### -3- I-convert ang mga kakayahan ng server sa mga kasangkapan ng LLM
+### -3- I-convert ang mga kakayahan ng server sa mga tool ng LLM
 
-Ang susunod na hakbang pagkatapos ilista ang mga kakayahan ng server ay i-convert ang mga ito sa format na nauunawaan ng LLM. Kapag nagawa na natin ito, maipapasa natin ang mga kakayahang ito bilang mga kasangkapan sa ating LLM.
+Susunod na hakbang pagkatapos ilista ang mga kakayahan ng server ay i-convert ang mga ito sa format na naiintindihan ng LLM. Kapag nagawa na natin ito, maibibigay natin ang mga kakayahang ito bilang mga tool sa ating LLM.
 
-Mahusay, nakahanda na tayo para harapin ang mga kahilingan ng user, kaya't simulan natin iyon.
+Mahusay, handa na tayo para hawakan ang anumang kahilingan ng user, kaya't simulan natin iyon.
 
-### -4- Pangasiwaan ang kahilingan ng user na prompt
+### -4- Hawakan ang kahilingan ng user na prompt
 
-Sa bahaging ito ng code, pangasiwaan natin ang mga kahilingan ng user.
+Sa bahaging ito ng code, hahawakan natin ang mga kahilingan ng user.
 
 Mahusay, nagawa mo na!
 
 ## Takdang-Aralin
 
-Kunin ang code mula sa pagsasanay at dagdagan ang server ng ilang mga kasangkapan. Pagkatapos ay gumawa ng client na may LLM, tulad ng sa pagsasanay, at subukan ito gamit ang iba't ibang mga prompt upang matiyak na lahat ng mga kasangkapan ng server ay tawagin nang dinamiko. Ang paraan ng paggawa ng client na ito ay nagbibigay ng mahusay na karanasan sa end user dahil nagagamit nila ang mga prompt sa halip na eksaktong mga utos ng client, at hindi nila kailangang alamin kung may tinatawagan na MCP server.
+Kunin ang code mula sa exercise at palawakin ang server gamit ang mas maraming mga tool. Pagkatapos ay gumawa ng client na may LLM, tulad sa exercise, at subukan ito gamit ang iba't ibang mga prompt upang matiyak na ang lahat ng mga tool ng server ay tinatawag nang dinamiko. Ang ganitong paraan ng paggawa ng client ay nagbibigay ng mahusay na karanasan sa end user dahil nagagamit nila ang mga prompt, sa halip na eksaktong mga utos ng client, at hindi nila kailangang malaman kung may tinatawag na MCP server.
 
 ## Solusyon
 
 [Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## Pangunahing Mga Aral
+## Pangunahing Mga Natutunan
 
 - Ang pagdagdag ng LLM sa iyong client ay nagbibigay ng mas mahusay na paraan para makipag-ugnayan ang mga user sa MCP Servers.
-- Kailangan mong i-convert ang tugon ng MCP Server sa isang bagay na mauunawaan ng LLM.
+- Kailangan mong i-convert ang tugon ng MCP Server sa isang bagay na maiintindihan ng LLM.
 
 ## Mga Halimbawa
 
@@ -50,7 +50,7 @@ Kunin ang code mula sa pagsasanay at dagdagan ang server ng ilang mga kasangkapa
 
 ## Ano ang Susunod
 
-- Susunod: [Pagkonsumo ng server gamit ang Visual Studio Code](/03-GettingStarted/04-vscode/README.md)
+- Susunod: [Paggamit ng server gamit ang Visual Studio Code](../04-vscode/README.md)
 
-**Paalala:**  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat aming pinagsisikapang maging tumpak ang pagsasalin, pakatandaan na maaaring may mga pagkakamali o di-tumpak na bahagi ang awtomatikong pagsasalin. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasaling-tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

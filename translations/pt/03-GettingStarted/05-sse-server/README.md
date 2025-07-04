@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1681ca3633aeb49ee03766abdbb94a93",
-  "translation_date": "2025-06-17T22:07:53+00:00",
+  "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
+  "translation_date": "2025-07-04T16:57:44+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "pt"
 }
@@ -24,15 +24,15 @@ Vamos adicionar as rotas necessárias a seguir.
 
 ### -2- Adicionar rotas
 
-Vamos adicionar rotas que lidam com a conexão e as mensagens recebidas:
+Vamos adicionar rotas que tratam a conexão e as mensagens recebidas:
 
-Vamos adicionar funcionalidades ao servidor a seguir.
+Vamos adicionar capacidades ao servidor a seguir.
 
-### -3- Adicionar funcionalidades ao servidor
+### -3- Adicionar capacidades ao servidor
 
-Agora que definimos tudo o que é específico do SSE, vamos adicionar funcionalidades ao servidor como ferramentas, prompts e recursos.
+Agora que definimos tudo o que é específico do SSE, vamos adicionar capacidades ao servidor como ferramentas, prompts e recursos.
 
-O seu código completo deverá ficar assim:
+O seu código completo deve ficar assim:
 
 Ótimo, temos um servidor a usar SSE, vamos testá-lo a seguir.
 
@@ -49,17 +49,17 @@ Para executar o inspector, primeiro deve ter um servidor SSE a correr, por isso 
 1. Execute o inspector
 
     > ![NOTE]
-    > Execute isto numa janela de terminal diferente daquela onde o servidor está a correr. Note também que precisa de ajustar o comando abaixo para corresponder ao URL onde o seu servidor está a correr.
+    > Execute isto numa janela de terminal separada daquela onde o servidor está a correr. Note também que precisa de ajustar o comando abaixo para corresponder ao URL onde o seu servidor está a correr.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-Executar o inspector é igual em todos os ambientes de execução. Note como, em vez de passar um caminho para o nosso servidor e um comando para iniciar o servidor, passamos o URL onde o servidor está a correr e também especificamos a rota `/sse`.
+Executar o inspector é igual em todos os ambientes de execução. Note como, em vez de passar um caminho para o nosso servidor e um comando para iniciar o servidor, passamos o URL onde o servidor está a correr e especificamos também a rota `/sse`.
 
 ### -2- Experimentar a ferramenta
 
-Ligue ao servidor selecionando SSE na lista suspensa e preencha o campo do URL onde o seu servidor está a correr, por exemplo http:localhost:4321/sse. Agora clique no botão "Connect". Como antes, selecione listar ferramentas, escolha uma ferramenta e forneça valores de entrada. Deve ver um resultado como o abaixo:
+Ligue ao servidor selecionando SSE na lista suspensa e preencha o campo do URL onde o seu servidor está a correr, por exemplo http://localhost:4321/sse. Agora clique no botão "Connect". Como antes, selecione listar ferramentas, escolha uma ferramenta e forneça valores de entrada. Deve ver um resultado como o abaixo:
 
 ![Servidor SSE a correr no inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.pt.png)
 
@@ -67,7 +67,7 @@ Ligue ao servidor selecionando SSE na lista suspensa e preencha o campo do URL o
 
 ## Tarefa
 
-Tente expandir o seu servidor com mais funcionalidades. Veja [esta página](https://api.chucknorris.io/) para, por exemplo, adicionar uma ferramenta que chama uma API. Você decide como o servidor deve ser. Divirta-se :)
+Tente expandir o seu servidor com mais capacidades. Veja [esta página](https://api.chucknorris.io/) para, por exemplo, adicionar uma ferramenta que chama uma API. Você decide como o servidor deve ser. Divirta-se :)
 
 ## Solução
 
@@ -77,9 +77,9 @@ Tente expandir o seu servidor com mais funcionalidades. Veja [esta página](http
 
 As principais conclusões deste capítulo são as seguintes:
 
-- SSE é o segundo transporte suportado depois do stdio.
-- Para suportar SSE, precisa gerir conexões e mensagens recebidas usando um framework web.
-- Pode usar tanto o Inspector como o Visual Studio Code para consumir um servidor SSE, tal como servidores stdio. Note que há algumas diferenças entre stdio e SSE. Para SSE, precisa iniciar o servidor separadamente e depois executar a ferramenta inspector. Para o inspector, também há diferenças no facto de ter de especificar o URL.
+- SSE é o segundo tipo de transporte suportado, ao lado do stdio.
+- Para suportar SSE, precisa de gerir conexões e mensagens recebidas usando um framework web.
+- Pode usar tanto o Inspector como o Visual Studio Code para consumir um servidor SSE, tal como com servidores stdio. Note como há algumas diferenças entre stdio e SSE. Para SSE, precisa de iniciar o servidor separadamente e depois executar a sua ferramenta inspector. Para a ferramenta inspector, há também algumas diferenças, pois precisa de especificar o URL.
 
 ## Exemplos
 
@@ -95,7 +95,7 @@ As principais conclusões deste capítulo são as seguintes:
 
 ## O que vem a seguir
 
-- A seguir: [Streaming HTTP com MCP (HTTP Streamable)](/03-GettingStarted/06-http-streaming/README.md)
+- A seguir: [Streaming HTTP com MCP (HTTP Streamable)](../06-http-streaming/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em atenção que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em atenção que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

@@ -1,33 +1,33 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "904b689eda5a68cbafe656d53f9787c7",
-  "translation_date": "2025-06-17T18:52:14+00:00",
+  "original_hash": "f74887f51a69d3f255cb83d0b517c623",
+  "translation_date": "2025-07-04T18:33:24+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "hu"
 }
 -->
-Nagyszerű, a következő lépésként listázzuk ki a szerver képességeit.
+Nagyszerű, a következő lépésként soroljuk fel a szerver képességeit.
 
 ### -2 Szerver képességeinek listázása
 
 Most csatlakozunk a szerverhez, és lekérdezzük a képességeit:
 
-### -3- Szerver képességek átalakítása LLM eszközökké
+### -3- A szerver képességeinek átalakítása LLM eszközökké
 
-A következő lépés a szerver képességeinek listázása után, hogy átalakítsuk őket az LLM által értelmezhető formátumba. Ha ez megvan, ezeket a képességeket eszközként adhatjuk át az LLM-nek.
+A szerver képességeinek listázása után a következő lépés, hogy olyan formátumba alakítsuk őket, amit az LLM megért. Miután ez megtörtént, ezeket a képességeket eszközként biztosíthatjuk az LLM számára.
 
-Nagyszerű, most készen állunk arra, hogy kezeljük a felhasználói kéréseket, tehát nézzük meg ezt a következő lépésben.
+Nagyszerű, most, hogy készen állunk a felhasználói kérések kezelésére, lássunk neki.
 
 ### -4- Felhasználói prompt kérés kezelése
 
-Ebben a kódrészletben a felhasználói kéréseket fogjuk kezelni.
+A kód ezen részében a felhasználói kéréseket fogjuk kezelni.
 
 Nagyszerű, sikerült!
 
 ## Feladat
 
-Vedd át a gyakorlatban írt kódot, és bővítsd a szervert további eszközökkel. Ezután hozz létre egy klienst LLM-mel, ahogy a gyakorlatban láttad, és teszteld különböző promptokkal, hogy megbizonyosodj róla, minden szervereszköz dinamikusan meghívásra kerül. Ez a kliensépítési mód nagyszerű felhasználói élményt biztosít, hiszen a végfelhasználó promptokat használhat a pontos kliensparancsok helyett, és nem kell tudnia arról, hogy egy MCP szerver hívódik meg.
+Vedd át a gyakorlatban használt kódot, és bővítsd ki a szervert további eszközökkel. Ezután hozz létre egy klienst LLM-mel, ahogy a gyakorlatban is tettük, és teszteld különböző promptokkal, hogy megbizonyosodj róla, minden szervereszköz dinamikusan meghívásra kerül. Ez a kliensépítési mód nagyszerű felhasználói élményt nyújt, hiszen a felhasználók promptokat használhatnak, nem pedig pontos kliensparancsokat, és nem kell tudniuk arról, hogy MCP szerver hívódik meg.
 
 ## Megoldás
 
@@ -35,10 +35,10 @@ Vedd át a gyakorlatban írt kódot, és bővítsd a szervert további eszközö
 
 ## Főbb tanulságok
 
-- Az LLM hozzáadása a klienshez jobb interakciós lehetőséget biztosít a felhasználóknak az MCP szerverekkel.
+- Az LLM hozzáadása a klienshez jobb felhasználói interakciót tesz lehetővé az MCP szerverekkel.
 - Az MCP szerver válaszát olyan formátumba kell alakítani, amit az LLM megért.
 
-## Példák
+## Minták
 
 - [Java számológép](../samples/java/calculator/README.md)
 - [.Net számológép](../../../../03-GettingStarted/samples/csharp)
@@ -50,7 +50,7 @@ Vedd át a gyakorlatban írt kódot, és bővítsd a szervert további eszközö
 
 ## Mi következik
 
-- Következő: [Szerver használata Visual Studio Code-dal](/03-GettingStarted/04-vscode/README.md)
+- Következő: [Szerver használata Visual Studio Code-dal](../04-vscode/README.md)
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből eredő félreértésekért vagy félreértelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

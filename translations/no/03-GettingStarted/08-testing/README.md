@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e25bc265a51244a7a2d93b3761543a1f",
-  "translation_date": "2025-06-13T02:09:21+00:00",
+  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
+  "translation_date": "2025-07-04T17:46:18+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "no"
 }
 -->
 ## Testing og feilsøking
 
-Før du begynner å teste MCP-serveren din, er det viktig å forstå hvilke verktøy som er tilgjengelige og beste praksis for feilsøking. Effektiv testing sikrer at serveren oppfører seg som forventet og hjelper deg raskt med å identifisere og løse problemer. Følgende seksjon beskriver anbefalte metoder for å validere din MCP-implementasjon.
+Før du begynner å teste MCP-serveren din, er det viktig å forstå hvilke verktøy som finnes og beste praksis for feilsøking. Effektiv testing sikrer at serveren oppfører seg som forventet og hjelper deg med å raskt identifisere og løse problemer. Følgende seksjon beskriver anbefalte metoder for å validere din MCP-implementasjon.
 
 ## Oversikt
 
-Denne leksjonen dekker hvordan du velger riktig testmetode og det mest effektive testverktøyet.
+Denne leksjonen handler om hvordan du velger riktig testmetode og det mest effektive testverktøyet.
 
 ## Læringsmål
 
@@ -27,30 +27,30 @@ Etter denne leksjonen skal du kunne:
 MCP tilbyr verktøy som hjelper deg med å teste og feilsøke serverne dine:
 
 - **MCP Inspector**: Et kommandolinjeverktøy som kan kjøres både som CLI-verktøy og som et visuelt verktøy.
-- **Manuell testing**: Du kan bruke et verktøy som curl for å sende web-forespørsler, men ethvert verktøy som kan sende HTTP-forespørsler fungerer.
-- **Enhetstesting**: Det er mulig å bruke ditt foretrukne testframework for å teste funksjonaliteten til både server og klient.
+- **Manuell testing**: Du kan bruke et verktøy som curl for å sende web-forespørsler, men ethvert verktøy som kan håndtere HTTP fungerer.
+- **Enhetstesting**: Det er mulig å bruke ditt foretrukne test-rammeverk for å teste funksjonene til både server og klient.
 
 ### Bruke MCP Inspector
 
-Vi har beskrevet bruken av dette verktøyet i tidligere leksjoner, men la oss se litt på det på et overordnet nivå. Det er et verktøy bygget i Node.js, og du kan bruke det ved å kjøre `npx`-kjørbar fil, som vil laste ned og installere verktøyet midlertidig, og rydde opp etter seg når forespørselen er ferdig kjørt.
+Vi har beskrevet bruken av dette verktøyet i tidligere leksjoner, men la oss ta en kort oppsummering. Det er et verktøy bygget i Node.js, og du kan bruke det ved å kjøre `npx`-kommandoen, som midlertidig laster ned og installerer verktøyet, og rydder opp etter seg når forespørselen er ferdig.
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) hjelper deg med å:
 
-- **Oppdage serverfunksjoner**: Automatisk finne tilgjengelige ressurser, verktøy og prompts
+- **Oppdage serverkapasiteter**: Automatisk finne tilgjengelige ressurser, verktøy og prompts
 - **Teste verktøyutførelse**: Prøve ulike parametere og se svar i sanntid
 - **Se servermetadata**: Undersøke serverinformasjon, skjemaer og konfigurasjoner
 
-En typisk kjøring av verktøyet ser slik ut:
+Et typisk kjør av verktøyet ser slik ut:
 
 ```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Kommandoen over starter en MCP og dens visuelle grensesnitt, og åpner et lokalt webgrensesnitt i nettleseren din. Du kan forvente å se et dashbord som viser dine registrerte MCP-servere, tilgjengelige verktøy, ressurser og prompts. Grensesnittet lar deg teste verktøyutførelse interaktivt, inspisere servermetadata og se svar i sanntid, noe som gjør det enklere å validere og feilsøke MCP-serverimplementasjoner.
+Kommandoen over starter en MCP og dens visuelle grensesnitt, og åpner en lokal webgrensesnitt i nettleseren din. Du kan forvente å se et dashbord som viser dine registrerte MCP-servere, tilgjengelige verktøy, ressurser og prompts. Grensesnittet lar deg teste verktøyutførelse interaktivt, inspisere servermetadata og se svar i sanntid, noe som gjør det enklere å validere og feilsøke MCP-serverimplementasjonene dine.
 
 Slik kan det se ut: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.no.png)
 
-Du kan også kjøre verktøyet i CLI-modus ved å legge til `--cli`-attributtet. Her er et eksempel på kjøring i "CLI"-modus som viser alle verktøyene på serveren:
+Du kan også kjøre dette verktøyet i CLI-modus ved å legge til `--cli`-attributtet. Her er et eksempel på å kjøre verktøyet i "CLI"-modus som viser alle verktøyene på serveren:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
@@ -58,7 +58,7 @@ npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/lis
 
 ### Manuell testing
 
-I tillegg til å bruke inspector-verktøyet for å teste serverfunksjoner, kan du også kjøre en klient som kan bruke HTTP, for eksempel curl.
+I tillegg til å bruke inspector-verktøyet for å teste serverkapasiteter, kan du også bruke en klient som kan sende HTTP-forespørsler, for eksempel curl.
 
 Med curl kan du teste MCP-servere direkte ved hjelp av HTTP-forespørsler:
 
@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Som du ser i eksempelet over med curl, bruker du en POST-forespørsel for å kalle et verktøy med en payload som inneholder verktøyets navn og dets parametere. Bruk den metoden som passer deg best. CLI-verktøy er generelt raskere å bruke og egner seg godt for skripting, noe som kan være nyttig i et CI/CD-miljø.
+Som du ser i eksempelet over, bruker du en POST-forespørsel for å kalle et verktøy med en payload som inneholder verktøyets navn og parametere. Velg den metoden som passer best for deg. CLI-verktøy er generelt raskere å bruke og egner seg godt for skripting, noe som kan være nyttig i et CI/CD-miljø.
 
 ### Enhetstesting
 
@@ -137,9 +137,9 @@ Koden over gjør følgende:
 
 Ta en titt på [hele filen her](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-Med denne filen kan du teste din egen server for å sikre at funksjonene opprettes som de skal.
+Med denne filen kan du teste din egen server for å sikre at kapasiteter opprettes som de skal.
 
-Alle større SDK-er har tilsvarende testseksjoner, slik at du kan tilpasse til ditt valgte runtime.
+Alle større SDK-er har lignende testseksjoner, så du kan tilpasse til ditt valgte runtime.
 
 ## Eksempler
 
@@ -153,9 +153,9 @@ Alle større SDK-er har tilsvarende testseksjoner, slik at du kan tilpasse til d
 
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 
-## Hva skjer videre
+## Hva kommer nå
 
-- Neste: [Deployment](/03-GettingStarted/09-deployment/README.md)
+- Neste: [Deployment](../09-deployment/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi påtar oss ikke ansvar for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7816cc28f7ab9a54e31f9246429ffcd9",
-  "translation_date": "2025-06-13T01:30:01+00:00",
+  "original_hash": "1d9dc83260576b76f272d330ed93c51f",
+  "translation_date": "2025-07-04T17:35:08+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "sv"
 }
 -->
 # Distribuera MCP-servrar
 
-Att distribuera din MCP-server gör det möjligt för andra att använda dess verktyg och resurser utanför din lokala miljö. Det finns flera distributionsstrategier att överväga beroende på dina krav på skalbarhet, tillförlitlighet och enkel hantering. Nedan hittar du vägledning för att distribuera MCP-servrar lokalt, i containrar och i molnet.
+Att distribuera din MCP-server gör det möjligt för andra att få tillgång till dess verktyg och resurser utanför din lokala miljö. Det finns flera distributionsstrategier att överväga, beroende på dina krav på skalbarhet, tillförlitlighet och enkel hantering. Nedan hittar du vägledning för att distribuera MCP-servrar lokalt, i containrar och i molnet.
 
 ## Översikt
 
@@ -24,15 +24,15 @@ I slutet av denna lektion kommer du att kunna:
 
 ## Lokal utveckling och distribution
 
-Om din server är tänkt att användas genom att köras på användarens dator kan du följa följande steg:
+Om din server är avsedd att användas genom att köras på användarens dator kan du följa dessa steg:
 
-1. **Ladda ner servern**. Om du inte skrev servern själv, ladda ner den först till din dator.  
+1. **Ladda ner servern**. Om du inte har skrivit servern själv, ladda ner den först till din dator.  
 1. **Starta serverprocessen**: Kör din MCP-serverapplikation.
 
 För SSE (behövs inte för stdio-typ server)
 
-1. **Konfigurera nätverket**: Se till att servern är tillgänglig på den förväntade porten.  
-1. **Anslut klienter**: Använd lokala anslutnings-URL:er som `http://localhost:3000`.
+1. **Konfigurera nätverk**: Se till att servern är tillgänglig på den förväntade porten.  
+1. **Anslut klienter**: Använd lokala anslutningsadresser som `http://localhost:3000`.
 
 ## Molndistribution
 
@@ -44,9 +44,9 @@ MCP-servrar kan distribueras till olika molnplattformar:
 
 ### Exempel: Azure Container Apps
 
-Azure Container Apps stöder distribution av MCP-servrar. Det är fortfarande under utveckling och stöder för närvarande SSE-servrar.
+Azure Container Apps stödjer distribution av MCP-servrar. Det är fortfarande under utveckling och stöder för närvarande SSE-servrar.
 
-Så här gör du:
+Så här kan du gå tillväga:
 
 1. Klona ett repo:
 
@@ -68,7 +68,7 @@ Så här gör du:
   uv run fastapi dev main.py
   ```
 
-1. För att testa lokalt, skapa en *mcp.json*-fil i en *.vscode*-katalog och lägg till följande innehåll:
+1. För att testa lokalt, skapa en *mcp.json*-fil i en *.vscode*-mapp och lägg till följande innehåll:
 
   ```json
   {
@@ -92,7 +92,7 @@ Så här gör du:
   }
   ```
 
-  När SSE-servern har startats kan du klicka på play-ikonen i JSON-filen. Du bör nu se att verktygen på servern plockas upp av GitHub Copilot, se Tool-ikonen.
+  När SSE-servern har startat kan du klicka på play-ikonen i JSON-filen, du bör nu se att verktygen på servern plockas upp av GitHub Copilot, se verktygsikonen.
 
 1. För att distribuera, kör följande kommando:
 
@@ -106,11 +106,11 @@ Där har du det, distribuera lokalt eller till Azure med dessa steg.
 
 - [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
 - [Azure Container Apps artikel](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
-- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)
+- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
 
 ## Vad händer härnäst
 
-- Nästa: [Praktisk implementering](/04-PracticalImplementation/README.md)
+- Nästa: [Praktisk implementering](../../04-PracticalImplementation/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

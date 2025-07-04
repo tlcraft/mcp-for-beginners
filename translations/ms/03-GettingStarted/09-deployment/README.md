@@ -1,60 +1,60 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7816cc28f7ab9a54e31f9246429ffcd9",
-  "translation_date": "2025-06-13T01:31:20+00:00",
+  "original_hash": "1d9dc83260576b76f272d330ed93c51f",
+  "translation_date": "2025-07-04T18:13:46+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "ms"
 }
 -->
-# Deploying MCP Servers
+# Menyebarkan Pelayan MCP
 
-Deploying your MCP server enables others to access its tools and resources beyond your local setup. There are multiple deployment strategies depending on your needs for scalability, reliability, and ease of management. Below you’ll find guidance on deploying MCP servers locally, in containers, and to the cloud.
+Menyebarkan pelayan MCP anda membolehkan orang lain mengakses alat dan sumbernya di luar persekitaran tempatan anda. Terdapat beberapa strategi penyebaran yang boleh dipertimbangkan, bergantung pada keperluan anda untuk kebolehsuaian, kebolehpercayaan, dan kemudahan pengurusan. Di bawah ini anda akan menemui panduan untuk menyebarkan pelayan MCP secara tempatan, dalam kontena, dan ke awan.
 
-## Overview
+## Gambaran Keseluruhan
 
-This lesson explains how to deploy your MCP Server app.
+Pelajaran ini merangkumi cara untuk menyebarkan aplikasi Pelayan MCP anda.
 
-## Learning Objectives
+## Objektif Pembelajaran
 
-By the end of this lesson, you will be able to:
+Menjelang akhir pelajaran ini, anda akan dapat:
 
-- Assess different deployment methods.
-- Deploy your app.
+- Menilai pelbagai pendekatan penyebaran.
+- Menyebarkan aplikasi anda.
 
-## Local development and deployment
+## Pembangunan dan Penyebaran Tempatan
 
-If your server is intended to run on users' machines, you can follow these steps:
+Jika pelayan anda dimaksudkan untuk digunakan dengan menjalankan pada mesin pengguna, anda boleh mengikuti langkah-langkah berikut:
 
-1. **Download the server**. If you didn’t write the server, download it first to your machine.  
-1. **Start the server process**: Launch your MCP server application.
+1. **Muat turun pelayan**. Jika anda tidak menulis pelayan tersebut, muat turun terlebih dahulu ke mesin anda.  
+1. **Mulakan proses pelayan**: Jalankan aplikasi pelayan MCP anda
 
-For SSE (not required for stdio type server):
+Untuk SSE (tidak diperlukan untuk pelayan jenis stdio)
 
-1. **Configure networking**: Make sure the server is accessible on the expected port.  
-1. **Connect clients**: Use local connection URLs like `http://localhost:3000`.
+1. **Konfigurasikan rangkaian**: Pastikan pelayan boleh diakses pada port yang dijangka  
+1. **Sambungkan klien**: Gunakan URL sambungan tempatan seperti `http://localhost:3000`
 
-## Cloud Deployment
+## Penyebaran Awan
 
-MCP servers can be deployed on various cloud platforms:
+Pelayan MCP boleh disebarkan ke pelbagai platform awan:
 
-- **Serverless Functions**: Deploy lightweight MCP servers as serverless functions.  
-- **Container Services**: Use services like Azure Container Apps, AWS ECS, or Google Cloud Run.  
-- **Kubernetes**: Deploy and manage MCP servers in Kubernetes clusters for high availability.
+- **Fungsi Tanpa Pelayan**: Sebarkan pelayan MCP ringan sebagai fungsi tanpa pelayan  
+- **Perkhidmatan Kontena**: Gunakan perkhidmatan seperti Azure Container Apps, AWS ECS, atau Google Cloud Run  
+- **Kubernetes**: Sebarkan dan urus pelayan MCP dalam kluster Kubernetes untuk ketersediaan tinggi
 
-### Example: Azure Container Apps
+### Contoh: Azure Container Apps
 
-Azure Container Apps support deploying MCP Servers. This feature is still evolving and currently supports SSE servers.
+Azure Container Apps menyokong penyebaran Pelayan MCP. Ia masih dalam proses pembangunan dan kini menyokong pelayan SSE.
 
-Here’s how to do it:
+Berikut adalah cara anda boleh melakukannya:
 
-1. Clone a repo:
+1. Klon repositori:
 
   ```sh
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
   ```
 
-1. Run it locally to test:
+1. Jalankan secara tempatan untuk menguji:
 
   ```sh
   uv venv
@@ -68,7 +68,7 @@ Here’s how to do it:
   uv run fastapi dev main.py
   ```
 
-1. To test locally, create a *mcp.json* file in a *.vscode* folder and add the following content:
+1. Untuk mencubanya secara tempatan, buat fail *mcp.json* dalam direktori *.vscode* dan tambah kandungan berikut:
 
   ```json
   {
@@ -92,25 +92,25 @@ Here’s how to do it:
   }
   ```
 
-  Once the SSE server is running, click the play icon in the JSON file. You should now see the server’s tools picked up by GitHub Copilot, indicated by the Tool icon.
+  Setelah pelayan SSE dimulakan, anda boleh klik ikon main dalam fail JSON tersebut, anda kini sepatutnya melihat alat pada pelayan diambil oleh GitHub Copilot, lihat ikon Alat.
 
-1. To deploy, run the following command:
+1. Untuk menyebarkan, jalankan arahan berikut:
 
   ```sh
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-That’s it — deploy locally or to Azure by following these steps.
+Itulah dia, sebarkan secara tempatan, sebarkan ke Azure melalui langkah-langkah ini.
 
-## Additional Resources
+## Sumber Tambahan
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
-- [Azure Container Apps article](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
-- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
+- [Artikel Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
+- [Repositori Azure Container Apps MCP](https://github.com/anthonychu/azure-container-apps-mcp-sample)
 
-## What's Next
+## Apa Seterusnya
 
-- Next: [Practical Implementation](/04-PracticalImplementation/README.md)
+- Seterusnya: [Pelaksanaan Praktikal](../../04-PracticalImplementation/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau tafsiran yang salah yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0eb9557780cd0a2551cdb8a16c886b51",
-  "translation_date": "2025-06-17T15:53:49+00:00",
+  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
+  "translation_date": "2025-07-04T17:44:57+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "no"
 }
@@ -11,10 +11,10 @@ La oss snakke mer om hvordan vi bruker det visuelle grensesnittet i de neste sek
 
 ## Tilnærming
 
-Slik bør vi angripe dette på et overordnet nivå:
+Slik må vi tilnærme oss dette på et overordnet nivå:
 
 - Konfigurer en fil for å finne MCP-serveren vår.
-- Start opp/ Koble til den nevnte serveren for å få den til å liste opp sine funksjoner.
+- Start opp/ Koble til nevnte server for å få den til å liste sine funksjoner.
 - Bruk disse funksjonene gjennom GitHub Copilot Chat-grensesnittet.
 
 Flott, nå som vi forstår flyten, la oss prøve å bruke en MCP-server gjennom Visual Studio Code i en øvelse.
@@ -23,17 +23,17 @@ Flott, nå som vi forstår flyten, la oss prøve å bruke en MCP-server gjennom 
 
 I denne øvelsen skal vi konfigurere Visual Studio Code til å finne MCP-serveren din slik at den kan brukes fra GitHub Copilot Chat-grensesnittet.
 
-### -0- Forberedelse, aktiver MCP Server discovery
+### -0- Forberedelse, aktiver oppdagelse av MCP-server
 
 Du må kanskje aktivere oppdagelse av MCP-servere.
 
-1. Gå til `File -> Preferences -> Settings` in Visual Studio Code.
+1. Gå til `Fil -> Innstillinger -> Innstillinger` i Visual Studio Code.
 
-1. Search for "MCP" and enable `chat.mcp.discovery.enabled` i settings.json-filen.
+1. Søk etter "MCP" og aktiver `chat.mcp.discovery.enabled` i settings.json-filen.
 
-### -1- Lag konfigurasjonsfil
+### -1- Opprett konfigurasjonsfil
 
-Start med å lage en konfigurasjonsfil i prosjektets rotmappe. Du trenger en fil kalt MCP.json som skal plasseres i en mappe som heter .vscode. Den skal se slik ut:
+Start med å opprette en konfigurasjonsfil i prosjektets rotmappe, du trenger en fil kalt MCP.json som plasseres i en mappe som heter .vscode. Den skal se slik ut:
 
 ```text
 .vscode
@@ -60,7 +60,7 @@ Legg til følgende innhold i *mcp.json*:
 }
 ```
 
-Her er et enkelt eksempel på hvordan du starter en server skrevet i Node.js. For andre kjøretidsmiljøer må du spesifisere riktig kommando for å starte serveren ved å bruke `command` and `args`.
+Her er et enkelt eksempel på hvordan du starter en server skrevet i Node.js, for andre kjøretidsmiljøer angir du riktig kommando for å starte serveren ved å bruke `command` og `args`.
 
 ### -3- Start serveren
 
@@ -70,15 +70,15 @@ Nå som du har lagt til en oppføring, la oss starte serveren:
 
   ![Starter server i Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.no.png)  
 
-2. Klikk på "play"-ikonet. Du bør se at verktøyikonet i GitHub Copilot Chat øker antall tilgjengelige verktøy. Hvis du klikker på verktøyikonet, vil du se en liste over registrerte verktøy. Du kan krysse av eller fjerne avkrysning for hvert verktøy, avhengig av om du vil at GitHub Copilot skal bruke dem som kontekst:
+1. Klikk på "play"-ikonet, du skal se at verktøyikonet i GitHub Copilot Chat øker antallet tilgjengelige verktøy. Hvis du klikker på verktøyikonet, vil du se en liste over registrerte verktøy. Du kan krysse av eller fjerne avkrysning for hvert verktøy avhengig av om du vil at GitHub Copilot skal bruke dem som kontekst:
 
-  ![Verktøy i Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.no.png)
+  ![Starter server i Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.no.png)
 
-3. For å kjøre et verktøy, skriv inn en prompt som du vet vil matche beskrivelsen av et av verktøyene dine, for eksempel en prompt som "add 22 to 1":
+1. For å kjøre et verktøy, skriv en prompt som du vet vil matche beskrivelsen av et av verktøyene dine, for eksempel en prompt som "add 22 to 1":
 
-  ![Kjøre et verktøy fra GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.no.png)
+  ![Kjører et verktøy fra GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.no.png)
 
-  Du bør se et svar som sier 23.
+  Du skal se et svar som sier 23.
 
 ## Oppgave
 
@@ -90,7 +90,7 @@ Prøv å legge til en serveroppføring i *mcp.json*-filen din og sørg for at du
 
 ## Viktige punkter
 
-Hovedpunktene fra dette kapitlet er:
+De viktigste punktene fra dette kapitlet er:
 
 - Visual Studio Code er en flott klient som lar deg bruke flere MCP-servere og deres verktøy.
 - GitHub Copilot Chat-grensesnittet er hvordan du samhandler med serverne.
@@ -108,9 +108,9 @@ Hovedpunktene fra dette kapitlet er:
 
 - [Visual Studio-dokumentasjon](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
-## Hva skjer videre
+## Hva kommer nå
 
-- Neste: [Opprette en SSE Server](/03-GettingStarted/05-sse-server/README.md)
+- Neste: [Opprette en SSE-server](../05-sse-server/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

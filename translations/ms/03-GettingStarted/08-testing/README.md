@@ -1,66 +1,66 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e25bc265a51244a7a2d93b3761543a1f",
-  "translation_date": "2025-06-13T02:10:47+00:00",
+  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
+  "translation_date": "2025-07-04T18:15:26+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "ms"
 }
 -->
-## Testing and Debugging
+## Ujian dan Penyahpepijatan
 
-Before you start testing your MCP server, it’s important to familiarize yourself with the available tools and best practices for debugging. Effective testing ensures your server behaves correctly and helps you quickly find and fix issues. The following section outlines recommended methods for validating your MCP implementation.
+Sebelum anda mula menguji pelayan MCP anda, adalah penting untuk memahami alat yang tersedia dan amalan terbaik untuk penyahpepijatan. Ujian yang berkesan memastikan pelayan anda berfungsi seperti yang dijangkakan dan membantu anda mengenal pasti serta menyelesaikan masalah dengan cepat. Bahagian berikut menerangkan pendekatan yang disyorkan untuk mengesahkan pelaksanaan MCP anda.
 
-## Overview
+## Gambaran Keseluruhan
 
-This lesson explains how to choose the right testing approach and the most effective testing tool.
+Pelajaran ini membincangkan cara memilih pendekatan ujian yang sesuai dan alat ujian yang paling berkesan.
 
-## Learning Objectives
+## Objektif Pembelajaran
 
-By the end of this lesson, you will be able to:
+Menjelang akhir pelajaran ini, anda akan dapat:
 
-- Explain different testing approaches.
-- Use various tools to test your code effectively.
+- Menerangkan pelbagai pendekatan untuk ujian.
+- Menggunakan pelbagai alat untuk menguji kod anda dengan berkesan.
 
-## Testing MCP Servers
+## Menguji Pelayan MCP
 
-MCP offers tools to help you test and debug your servers:
+MCP menyediakan alat untuk membantu anda menguji dan menyahpepijat pelayan anda:
 
-- **MCP Inspector**: A command line tool that can be used both as a CLI and as a graphical tool.
-- **Manual testing**: You can use a tool like curl to send web requests, but any HTTP-capable tool will work.
-- **Unit testing**: You can use your preferred testing framework to test features of both server and client.
+- **MCP Inspector**: Alat baris perintah yang boleh dijalankan sebagai alat CLI dan juga sebagai alat visual.
+- **Ujian manual**: Anda boleh menggunakan alat seperti curl untuk menjalankan permintaan web, tetapi mana-mana alat yang mampu menjalankan HTTP juga boleh digunakan.
+- **Ujian unit**: Anda boleh menggunakan rangka kerja ujian pilihan anda untuk menguji ciri-ciri pelayan dan klien.
 
-### Using MCP Inspector
+### Menggunakan MCP Inspector
 
-We’ve covered this tool in earlier lessons, but here’s a brief overview. It’s built with Node.js and you use it by running the `npx` executable, which downloads and installs the tool temporarily and cleans up after running your request.
+Kami telah menerangkan penggunaan alat ini dalam pelajaran sebelum ini tetapi mari kita bincangkan sedikit secara ringkas. Ia adalah alat yang dibina menggunakan Node.js dan anda boleh menggunakannya dengan memanggil executable `npx` yang akan memuat turun dan memasang alat tersebut secara sementara dan akan membersihkan dirinya selepas selesai menjalankan permintaan anda.
 
-The [MCP Inspector](https://github.com/modelcontextprotocol/inspector) helps you:
+[MCP Inspector](https://github.com/modelcontextprotocol/inspector) membantu anda:
 
-- **Discover Server Capabilities**: Automatically find available resources, tools, and prompts
-- **Test Tool Execution**: Experiment with different parameters and see responses instantly
-- **View Server Metadata**: Check server info, schemas, and configurations
+- **Mengesan Keupayaan Pelayan**: Mengesan secara automatik sumber, alat, dan arahan yang tersedia
+- **Uji Pelaksanaan Alat**: Cuba parameter berbeza dan lihat respons secara masa nyata
+- **Lihat Metadata Pelayan**: Periksa maklumat pelayan, skema, dan konfigurasi
 
-A typical use of the tool looks like this:
+Contoh penggunaan alat ini adalah seperti berikut:
 
 ```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-This command starts an MCP server and its visual interface, launching a local web interface in your browser. You’ll see a dashboard showing your registered MCP servers, their available tools, resources, and prompts. The interface lets you interactively test tool execution, inspect server metadata, and view live responses, making it easier to validate and debug your MCP server implementations.
+Arahan di atas memulakan MCP dan antara muka visualnya serta melancarkan antara muka web tempatan dalam pelayar anda. Anda boleh menjangkakan untuk melihat papan pemuka yang memaparkan pelayan MCP yang didaftarkan, alat, sumber, dan arahan yang tersedia. Antara muka ini membolehkan anda menguji pelaksanaan alat secara interaktif, memeriksa metadata pelayan, dan melihat respons masa nyata, menjadikannya lebih mudah untuk mengesahkan dan menyahpepijat pelaksanaan pelayan MCP anda.
 
-Here’s an example screenshot: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ms.png)
+Ini adalah contoh rupa antara mukanya: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ms.png)
 
-You can also run this tool in CLI mode by adding the `--cli` option. Here’s an example of running the tool in CLI mode to list all tools on the server:
+Anda juga boleh menjalankan alat ini dalam mod CLI dengan menambah atribut `--cli`. Berikut adalah contoh menjalankan alat dalam mod "CLI" yang menyenaraikan semua alat pada pelayan:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
 ```
 
-### Manual Testing
+### Ujian Manual
 
-Besides using the inspector tool to test server capabilities, another option is to run an HTTP client like curl.
+Selain menjalankan alat inspector untuk menguji keupayaan pelayan, satu pendekatan serupa adalah menjalankan klien yang mampu menggunakan HTTP seperti curl contohnya.
 
-With curl, you can test MCP servers directly by sending HTTP requests:
+Dengan curl, anda boleh menguji pelayan MCP secara langsung menggunakan permintaan HTTP:
 
 ```bash
 # Example: Test server metadata
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-As shown in the curl example above, you send a POST request to invoke a tool with a payload containing the tool’s name and parameters. Choose the method that works best for you. CLI tools are generally faster and can be scripted, which is helpful in CI/CD pipelines.
+Seperti yang anda lihat daripada penggunaan curl di atas, anda menggunakan permintaan POST untuk memanggil alat menggunakan payload yang mengandungi nama alat dan parameternya. Gunakan pendekatan yang paling sesuai untuk anda. Alat CLI secara amnya lebih pantas digunakan dan mudah untuk diskripkan yang boleh berguna dalam persekitaran CI/CD.
 
-### Unit Testing
+### Ujian Unit
 
-Create unit tests for your tools and resources to make sure they behave as expected. Here’s some example test code:
+Buat ujian unit untuk alat dan sumber anda bagi memastikan ia berfungsi seperti yang dijangkakan. Berikut adalah contoh kod ujian.
 
 ```python
 import pytest
@@ -129,19 +129,19 @@ async def test_list_tools_cursor_parameter():
     
 ```
 
-This code does the following:
+Kod di atas melakukan perkara berikut:
 
-- Uses the pytest framework, allowing you to write tests as functions and use assert statements.
-- Creates an MCP Server with two different tools.
-- Uses `assert` statements to verify certain conditions.
+- Menggunakan rangka kerja pytest yang membolehkan anda membuat ujian sebagai fungsi dan menggunakan pernyataan assert.
+- Membuat Pelayan MCP dengan dua alat yang berbeza.
+- Menggunakan pernyataan `assert` untuk memeriksa bahawa syarat tertentu dipenuhi.
 
-Check out the [full file here](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
+Lihat [fail penuh di sini](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-Using this file, you can test your own server to ensure capabilities are properly created.
+Berdasarkan fail di atas, anda boleh menguji pelayan anda sendiri untuk memastikan keupayaan dicipta seperti yang sepatutnya.
 
-All major SDKs include similar testing sections so you can adapt them to your runtime environment.
+Semua SDK utama mempunyai bahagian ujian yang serupa supaya anda boleh menyesuaikan dengan runtime pilihan anda.
 
-## Samples
+## Contoh
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
@@ -149,13 +149,13 @@ All major SDKs include similar testing sections so you can adapt them to your ru
 - [TypeScript Calculator](../samples/typescript/README.md)
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Additional Resources
+## Sumber Tambahan
 
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 
-## What's Next
+## Apa Seterusnya
 
-- Next: [Deployment](/03-GettingStarted/09-deployment/README.md)
+- Seterusnya: [Deployment](../09-deployment/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
