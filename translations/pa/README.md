@@ -131,7 +131,6 @@ CO_OP_TRANSLATOR_METADATA:
 - **5.9. ਵੈੱਬ ਖੋਜ MCP** – [ਗਾਈਡ](./05-AdvancedTopics/web-search-mcp/README.md)
 - **5.10. ਰੀਅਲਟਾਈਮ ਸਟ੍ਰੀਮਿੰਗ** – [ਗਾਈਡ](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
 - **5.11. ਰੀਅਲਟਾਈਮ ਵੈੱਬ ਖੋਜ** – [ਗਾਈਡ](./05-AdvancedTopics/mcp-realtimesearch/README.md)
-</details>
 - **5.12. ਮਾਡਲ ਕਾਂਟੈਕਸਟ ਪ੍ਰੋਟੋਕੋਲ ਸਰਵਰਾਂ ਲਈ Entra ID ਪ੍ਰਮਾਣਿਕਤਾ** – [ਗਾਈਡ](./05-AdvancedTopics/mcp-security-entra/README.md)  
 - **5.13. ਮਾਡਲ ਕਾਂਟੈਕਸਟ ਪ੍ਰੋਟੋਕੋਲ (MCP) ਦਾ Azure AI Foundry ਨਾਲ ਇੰਟਿਗ੍ਰੇਸ਼ਨ** – [ਗਾਈਡ](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md)  
 </details>

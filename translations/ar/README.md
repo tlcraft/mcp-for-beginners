@@ -131,7 +131,6 @@ CO_OP_TRANSLATOR_METADATA:
 - **5.9. بحث ويب MCP** – [الدليل](./05-AdvancedTopics/web-search-mcp/README.md)
 - **5.10. البث المباشر** – [الدليل](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
 - **5.11. بحث الويب المباشر** – [الدليل](./05-AdvancedTopics/mcp-realtimesearch/README.md)
-</details>
 - **5.12. مصادقة Entra ID لخوادم بروتوكول Model Context** – [الدليل](./05-AdvancedTopics/mcp-security-entra/README.md)
 - **5.13. تكامل بروتوكول Model Context (MCP) مع Azure AI Foundry** – [الدليل](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md)
 </details>

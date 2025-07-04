@@ -131,7 +131,6 @@ MCP 서버 구축자들을 위한 날입니다. MCP 서버를 만들고 AI 워�
 - **5.9. 웹 검색 MCP** – [가이드](./05-AdvancedTopics/web-search-mcp/README.md)
 - **5.10. 실시간 스트리밍** – [가이드](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
 - **5.11. 실시간 웹 검색** – [가이드](./05-AdvancedTopics/mcp-realtimesearch/README.md)
-</details>
 - **5.12. 모델 컨텍스트 프로토콜 서버용 Entra ID 인증** – [가이드](./05-AdvancedTopics/mcp-security-entra/README.md)
 - **5.13. Azure AI Foundry와 모델 컨텍스트 프로토콜(MCP) 통합** – [가이드](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md)
 </details>

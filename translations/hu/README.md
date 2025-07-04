@@ -131,7 +131,6 @@ Ha fejlesztő, eszközfejlesztő vagy AI termékstratégia szakértő vagy, ez a
 - **5.9. Web Search MCP** – [Útmutató](./05-AdvancedTopics/web-search-mcp/README.md)  
 - **5.10. Valós idejű streaming** – [Útmutató](./05-AdvancedTopics/mcp-realtimestreaming/README.md)  
 - **5.11. Valós idejű web keresés** – [Útmutató](./05-AdvancedTopics/mcp-realtimesearch/README.md)  
-</details>
 - **5.12. Entra ID hitelesítés a Model Context Protocol szerverekhez** – [Útmutató](./05-AdvancedTopics/mcp-security-entra/README.md)
 - **5.13. Model Context Protocol (MCP) integráció az Azure AI Foundry-val** – [Útmutató](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md)
 </details>

@@ -131,7 +131,6 @@ Dacă ești dezvoltator, creator de unelte sau strateg de produse AI, această z
 - **5.9. Web Search MCP** – [Ghid](./05-AdvancedTopics/web-search-mcp/README.md)
 - **5.10. Streaming în timp real** – [Ghid](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
 - **5.11. Căutare web în timp real** – [Ghid](./05-AdvancedTopics/mcp-realtimesearch/README.md)
-</details>
 - **5.12. Autentificarea Entra ID pentru Serverele Model Context Protocol** – [Ghid](./05-AdvancedTopics/mcp-security-entra/README.md)
 - **5.13. Integrarea Model Context Protocol (MCP) cu Azure AI Foundry** – [Ghid](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md)
 </details>

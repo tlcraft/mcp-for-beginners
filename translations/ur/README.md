@@ -132,7 +132,6 @@ CO_OP_TRANSLATOR_METADATA:
 - **5.9. ویب سرچ MCP** – [رہنما](./05-AdvancedTopics/web-search-mcp/README.md)  
 - **5.10. ریئل ٹائم سٹریمنگ** – [رہنما](./05-AdvancedTopics/mcp-realtimestreaming/README.md)  
 - **5.11. ریئل ٹائم ویب سرچ** – [رہنما](./05-AdvancedTopics/mcp-realtimesearch/README.md)  
-</details>
 - **5.12. ماڈل کانٹیکسٹ پروٹوکول سرورز کے لیے Entra ID تصدیق** – [گائیڈ](./05-AdvancedTopics/mcp-security-entra/README.md)  
 - **5.13. Azure AI Foundry کے ساتھ ماڈل کانٹیکسٹ پروٹوکول (MCP) انٹیگریشن** – [گائیڈ](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md)  
 </details>

@@ -131,8 +131,7 @@ Hvis du er udvikler, værktøjsbygger eller AI-produktstrateg, er denne dag fyld
 - **5.8. Sikkerhed** – [Guide](./05-AdvancedTopics/mcp-security/README.md)
 - **5.9. Web Search MCP** – [Guide](./05-AdvancedTopics/web-search-mcp/README.md)
 - **5.10. Realtidsstreaming** – [Guide](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
-- **5.11. Realtids Web Search** – [Guide](./05-AdvancedTopics/mcp-realtimesearch/README.md)
-</details>
+- **5.11. Realtids Web Search** – [Guide](./05-AdvancedTopics/mcp-realtimesearch/
 - **5.12. Entra ID-godkendelse for Model Context Protocol-servere** – [Guide](./05-AdvancedTopics/mcp-security-entra/README.md)
 - **5.13. Model Context Protocol (MCP) integration med Azure AI Foundry** – [Guide](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md)
 </details>

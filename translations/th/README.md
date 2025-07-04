@@ -131,7 +131,6 @@ CO_OP_TRANSLATOR_METADATA:
 - **5.9. การค้นหาเว็บ MCP** – [คู่มือ](./05-AdvancedTopics/web-search-mcp/README.md)
 - **5.10. การสตรีมแบบเรียลไทม์** – [คู่มือ](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
 - **5.11. การค้นหาเว็บแบบเรียลไทม์** – [คู่มือ](./05-AdvancedTopics/mcp-realtimesearch/README.md)
-</details>
 - **5.12. การตรวจสอบสิทธิ์ Entra ID สำหรับเซิร์ฟเวอร์ Model Context Protocol** – [คู่มือ](./05-AdvancedTopics/mcp-security-entra/README.md)
 - **5.13. การผสานรวม Model Context Protocol (MCP) กับ Azure AI Foundry** – [คู่มือ](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md)
 </details>
