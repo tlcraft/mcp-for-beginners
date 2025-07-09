@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "97f1c99b5b12cf03d4b1be68b3636a4a",
-  "translation_date": "2025-07-04T17:34:41+00:00",
+  "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
+  "translation_date": "2025-07-09T22:31:54+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "sv"
 }
@@ -11,23 +11,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 Denna sektion består av flera lektioner:
 
-- **1 Din första server**, i denna första lektion kommer du att lära dig hur du skapar din första server och inspekterar den med inspektörsverktyget, ett värdefullt sätt att testa och felsöka din server, [till lektionen](/03-GettingStarted/01-first-server/README.md)
+- **1 Din första server**, i denna första lektion kommer du att lära dig hur du skapar din första server och inspekterar den med inspektörsverktyget, ett värdefullt sätt att testa och felsöka din server, [till lektionen](01-first-server/README.md)
 
-- **2 Klient**, i denna lektion lär du dig hur du skriver en klient som kan ansluta till din server, [till lektionen](/03-GettingStarted/02-client/README.md)
+- **2 Klient**, i denna lektion lär du dig hur du skriver en klient som kan ansluta till din server, [till lektionen](02-client/README.md)
 
-- **3 Klient med LLM**, ett ännu bättre sätt att skriva en klient är att lägga till en LLM så att den kan "förhandla" med din server om vad som ska göras, [till lektionen](/03-GettingStarted/03-llm-client/README.md)
+- **3 Klient med LLM**, ett ännu bättre sätt att skriva en klient är att lägga till en LLM så att den kan "förhandla" med din server om vad som ska göras, [till lektionen](03-llm-client/README.md)
 
-- **4 Använda en server GitHub Copilot Agent-läge i Visual Studio Code**. Här tittar vi på att köra vår MCP Server från Visual Studio Code, [till lektionen](/03-GettingStarted/04-vscode/README.md)
+- **4 Använda en server GitHub Copilot Agent-läge i Visual Studio Code**. Här tittar vi på att köra vår MCP Server från Visual Studio Code, [till lektionen](04-vscode/README.md)
 
-- **5 Konsumera från en SSE (Server Sent Events)** SSE är en standard för server-till-klient streaming, som tillåter servrar att skicka realtidsuppdateringar till klienter över HTTP [till lektionen](/03-GettingStarted/05-sse-server/README.md)
+- **5 Konsumera från en SSE (Server Sent Events)** SSE är en standard för server-till-klient streaming, som tillåter servrar att skicka realtidsuppdateringar till klienter över HTTP [till lektionen](05-sse-server/README.md)
 
-- **6 HTTP Streaming med MCP (Streamable HTTP)**. Lär dig om modern HTTP-streaming, progressnotiser och hur du implementerar skalbara, realtids MCP-servrar och klienter med Streamable HTTP. [till lektionen](/03-GettingStarted/06-http-streaming/README.md)
+- **6 HTTP Streaming med MCP (Streamable HTTP)**. Lär dig om modern HTTP-streaming, progressnotiser och hur man implementerar skalbara, realtids MCP-servrar och klienter med Streamable HTTP. [till lektionen](06-http-streaming/README.md)
 
-- **7 Använda AI Toolkit för VSCode** för att konsumera och testa dina MCP-klienter och servrar [till lektionen](/03-GettingStarted/07-aitk/README.md)
+- **7 Använda AI Toolkit för VSCode** för att konsumera och testa dina MCP-klienter och servrar [till lektionen](07-aitk/README.md)
 
-- **8 Testning**. Här fokuserar vi särskilt på hur vi kan testa vår server och klient på olika sätt, [till lektionen](/03-GettingStarted/08-testing/README.md)
+- **8 Testning**. Här fokuserar vi särskilt på hur vi kan testa vår server och klient på olika sätt, [till lektionen](08-testing/README.md)
 
-- **9 Distribution**. Detta kapitel tittar på olika sätt att distribuera dina MCP-lösningar, [till lektionen](/03-GettingStarted/09-deployment/README.md)
+- **9 Distribution**. Detta kapitel tittar på olika sätt att distribuera dina MCP-lösningar, [till lektionen](09-deployment/README.md)
 
 
 Model Context Protocol (MCP) är ett öppet protokoll som standardiserar hur applikationer tillhandahåller kontext till LLMs. Tänk på MCP som en USB-C-port för AI-applikationer – det ger ett standardiserat sätt att koppla AI-modeller till olika datakällor och verktyg.
@@ -54,7 +54,7 @@ Innan du dyker in i MCP-utveckling, se till att du har:
 - **Utvecklingsmiljö**: För ditt valda språk (C#, Java, Python, TypeScript eller JavaScript)
 - **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm eller någon modern kodredigerare
 - **Paketchefer**: NuGet, Maven/Gradle, pip eller npm/yarn
-- **API-nycklar**: För alla AI-tjänster du planerar att använda i dina värdapplikationer
+- **API-nycklar**: För eventuella AI-tjänster du planerar att använda i dina värdapplikationer
 
 
 ### Officiella SDK:er
@@ -90,13 +90,13 @@ Vi har ett antal exempel som kompletterar övningarna du kommer att se i alla ka
 
 ## Ytterligare resurser
 
-- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [Bygg agenter med Model Context Protocol på Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Fjärr-MCP med Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Vad händer härnäst
 
-Nästa: [Skapa din första MCP Server](./01-first-server/README.md)
+Nästa: [Skapa din första MCP Server](01-first-server/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
