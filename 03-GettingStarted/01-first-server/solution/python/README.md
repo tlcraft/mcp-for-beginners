@@ -40,6 +40,7 @@ This should start a web server with a visual interface allowing you to test the 
 Once the server is connected: 
 
 - try listing tools and run `add`, with args 2 and 4, you should see 6 in the result.
+
 - go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
 
 ### Testing in ClI mode
