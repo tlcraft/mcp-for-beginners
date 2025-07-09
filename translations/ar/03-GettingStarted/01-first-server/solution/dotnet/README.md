@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
-  "translation_date": "2025-06-18T05:48:03+00:00",
+  "original_hash": "07863f50601f395c3bdfce30f555f11a",
+  "translation_date": "2025-07-09T21:56:53+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "ar"
 }
@@ -30,12 +30,12 @@ dotnet run
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-هذا يجب أن يبدأ خادم ويب مع واجهة بصرية تتيح لك اختبار المثال.
+يجب أن يبدأ هذا خادم ويب بواجهة بصرية تتيح لك اختبار المثال.
 
 بمجرد اتصال الخادم:
 
-- جرب عرض الأدوات وتشغيل `add` مع الوسيطين 2 و 4، يجب أن ترى النتيجة 6.
-- انتقل إلى الموارد وقالب المورد واطلب "greeting"، اكتب اسمًا وسترى تحية بالاسم الذي أدخلته.
+- جرب عرض الأدوات وتشغيل `add` مع الوسيطين 2 و4، يجب أن ترى النتيجة 6.
+- انتقل إلى الموارد وقالب الموارد واستدعِ "greeting"، اكتب اسمًا وسترى تحية تحتوي على الاسم الذي أدخلته.
 
 ### الاختبار في وضع CLI
 
@@ -45,7 +45,7 @@ npx @modelcontextprotocol/inspector dotnet run
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-سيعرض هذا جميع الأدوات المتاحة في الخادم. يجب أن ترى الإخراج التالي:
+سيعرض هذا جميع الأدوات المتاحة في الخادم. يجب أن ترى المخرجات التالية:
 
 ```text
 {
@@ -81,7 +81,7 @@ npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-name Add --tool-arg a=1 --tool-arg b=2
 ```
 
-يجب أن ترى الإخراج التالي:
+يجب أن ترى المخرجات التالية:
 
 ```text
 {
@@ -96,8 +96,8 @@ npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-
 ```
 
 > ![!TIP]
-> عادةً ما يكون تشغيل الـ inspector في وضع CLI أسرع بكثير من تشغيله في المتصفح.
-> اقرأ المزيد عن الـ inspector [هنا](https://github.com/modelcontextprotocol/inspector).
+> عادةً ما يكون تشغيل المفتش في وضع CLI أسرع بكثير من تشغيله في المتصفح.
+> اقرأ المزيد عن المفتش [هنا](https://github.com/modelcontextprotocol/inspector).
 
 **إخلاء المسؤولية**:  
-تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاستعانة بالترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة ناتجة عن استخدام هذه الترجمة.
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

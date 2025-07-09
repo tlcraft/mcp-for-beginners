@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
-  "translation_date": "2025-06-18T05:46:28+00:00",
+  "original_hash": "07863f50601f395c3bdfce30f555f11a",
+  "translation_date": "2025-07-09T21:56:37+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "es"
 }
@@ -16,7 +16,6 @@ dotnet restore
 ```
 
 ## -3- Ejecutar el ejemplo
-
 
 ```bash
 dotnet run
@@ -34,7 +33,7 @@ Esto debería iniciar un servidor web con una interfaz visual que te permitirá 
 
 Una vez que el servidor esté conectado:
 
-- intenta listar las herramientas y ejecutar `add`, con los argumentos 2 y 4, deberías ver 6 en el resultado.
+- intenta listar las herramientas y ejecutar `add`, con los argumentos 2 y 4, deberías ver 6 como resultado.
 - ve a resources y resource template y llama a "greeting", escribe un nombre y deberías ver un saludo con el nombre que proporcionaste.
 
 ### Pruebas en modo CLI
@@ -96,8 +95,8 @@ Deberías ver la siguiente salida:
 ```
 
 > ![!TIP]
-> Normalmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
+> Usualmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
 > Lee más sobre el inspector [aquí](https://github.com/modelcontextprotocol/inspector).
 
-**Aviso Legal**:  
+**Aviso legal**:  
 Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

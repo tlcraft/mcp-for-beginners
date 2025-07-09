@@ -1,28 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
-  "translation_date": "2025-06-18T06:07:39+00:00",
+  "original_hash": "07863f50601f395c3bdfce30f555f11a",
+  "translation_date": "2025-07-09T22:00:07+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "sk"
 }
 -->
 # Spustenie tohto príkladu
 
-## -1- Nainštalujte závislosti
+## -1- Inštalácia závislostí
 
 ```bash
 dotnet restore
 ```
 
-## -3- Spustite príklad
-
+## -3- Spustenie príkladu
 
 ```bash
 dotnet run
 ```
 
-## -4- Otestujte príklad
+## -4- Testovanie príkladu
 
 Keď máte server spustený v jednom termináli, otvorte ďalší terminál a spustite nasledujúci príkaz:
 
@@ -30,12 +29,12 @@ Keď máte server spustený v jednom termináli, otvorte ďalší terminál a sp
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-Tým sa spustí webový server s vizuálnym rozhraním, ktoré vám umožní testovať príklad.
+Týmto by sa mal spustiť webový server s vizuálnym rozhraním, ktoré vám umožní testovať príklad.
 
 Keď je server pripojený:
 
-- skúste vypísať nástroje a spustiť `add` s argumentmi 2 a 4, výsledok by mal byť 6.
-- prejdite na resources a resource template a zavolajte "greeting", zadajte meno a mali by ste vidieť pozdrav s menom, ktoré ste zadali.
+- skúste zobraziť zoznam nástrojov a spustiť `add` s argumentmi 2 a 4, výsledok by mal byť 6.
+- prejdite na resources a resource template, zavolajte "greeting", zadajte meno a mali by ste vidieť pozdrav s menom, ktoré ste zadali.
 
 ### Testovanie v CLI režime
 
@@ -45,7 +44,7 @@ Môžete ho spustiť priamo v CLI režime pomocou nasledujúceho príkazu:
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-Tým sa zobrazia všetky nástroje dostupné na serveri. Mali by ste vidieť nasledujúci výstup:
+Týmto sa zobrazia všetky nástroje dostupné na serveri. Mali by ste vidieť nasledujúci výstup:
 
 ```text
 {
@@ -96,8 +95,8 @@ Mali by ste vidieť nasledujúci výstup:
 ```
 
 > ![!TIP]
-> Bežne je oveľa rýchlejšie spustiť inspector v CLI režime ako v prehliadači.
-> Viac o inspektorovi sa dozviete [tu](https://github.com/modelcontextprotocol/inspector).
+> Zvyčajne je oveľa rýchlejšie spustiť inspector v CLI režime než v prehliadači.
+> Viac o inspektorovi si prečítate [tu](https://github.com/modelcontextprotocol/inspector).
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nezodpovedáme za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
-  "translation_date": "2025-06-18T06:04:56+00:00",
+  "original_hash": "07863f50601f395c3bdfce30f555f11a",
+  "translation_date": "2025-07-09T21:59:38+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "ms"
 }
@@ -30,12 +30,12 @@ Dengan pelayan berjalan di satu terminal, buka terminal lain dan jalankan arahan
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-Ini akan memulakan pelayan web dengan antara muka visual yang membolehkan anda menguji contoh tersebut.
+Ini akan memulakan pelayan web dengan antara muka visual yang membolehkan anda menguji contoh.
 
 Setelah pelayan disambungkan:
 
 - cuba senaraikan alat dan jalankan `add`, dengan argumen 2 dan 4, anda sepatutnya melihat 6 sebagai hasilnya.
-- pergi ke resources dan resource template dan panggil "greeting", taipkan nama dan anda sepatutnya melihat ucapan dengan nama yang anda berikan.
+- pergi ke resources dan resource template dan panggil "greeting", taipkan nama dan anda akan melihat ucapan dengan nama yang anda berikan.
 
 ### Ujian dalam mod CLI
 
@@ -96,8 +96,8 @@ Anda sepatutnya melihat output berikut:
 ```
 
 > ![!TIP]
-> Biasanya lebih cepat menjalankan inspector dalam mod CLI berbanding dalam pelayar.
+> Biasanya lebih pantas menjalankan inspector dalam mod CLI berbanding di pelayar.
 > Baca lebih lanjut tentang inspector [di sini](https://github.com/modelcontextprotocol/inspector).
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

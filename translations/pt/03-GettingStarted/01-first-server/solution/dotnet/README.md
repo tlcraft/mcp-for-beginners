@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
-  "translation_date": "2025-06-18T05:56:30+00:00",
+  "original_hash": "07863f50601f395c3bdfce30f555f11a",
+  "translation_date": "2025-07-09T21:58:15+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "pt"
 }
@@ -31,7 +31,7 @@ npx @modelcontextprotocol/inspector dotnet run
 
 Isto deverá iniciar um servidor web com uma interface visual que lhe permite testar o exemplo.
 
-Depois de o servidor estar ligado:
+Assim que o servidor estiver ligado:
 
 - experimente listar as ferramentas e executar `add`, com os argumentos 2 e 4, deverá ver 6 no resultado.
 - vá a resources e resource template e chame "greeting", escreva um nome e deverá ver uma saudação com o nome que forneceu.
@@ -44,7 +44,7 @@ Pode lançá-lo diretamente em modo CLI executando o seguinte comando:
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-Isto vai listar todas as ferramentas disponíveis no servidor. Deverá ver a seguinte saída:
+Isto irá listar todas as ferramentas disponíveis no servidor. Deverá ver a seguinte saída:
 
 ```text
 {
@@ -99,4 +99,4 @@ Deverá ver a seguinte saída:
 > Leia mais sobre o inspector [aqui](https://github.com/modelcontextprotocol/inspector).
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original no seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.
