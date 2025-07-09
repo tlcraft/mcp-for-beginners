@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "97f1c99b5b12cf03d4b1be68b3636a4a",
-  "translation_date": "2025-07-04T15:28:25+00:00",
+  "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
+  "translation_date": "2025-07-09T22:26:35+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "de"
 }
@@ -11,23 +11,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 Dieser Abschnitt besteht aus mehreren Lektionen:
 
-- **1 Dein erster Server**, in dieser ersten Lektion lernst du, wie du deinen ersten Server erstellst und ihn mit dem Inspektor-Tool überprüfst – eine wertvolle Methode, um deinen Server zu testen und zu debuggen, [zur Lektion](/03-GettingStarted/01-first-server/README.md)
+- **1 Dein erster Server**, in dieser ersten Lektion lernst du, wie du deinen ersten Server erstellst und ihn mit dem Inspektor-Tool überprüfst – eine wertvolle Methode, um deinen Server zu testen und zu debuggen, [zur Lektion](01-first-server/README.md)
 
-- **2 Client**, in dieser Lektion lernst du, wie du einen Client schreibst, der sich mit deinem Server verbinden kann, [zur Lektion](/03-GettingStarted/02-client/README.md)
+- **2 Client**, in dieser Lektion lernst du, wie du einen Client schreibst, der sich mit deinem Server verbinden kann, [zur Lektion](02-client/README.md)
 
-- **3 Client mit LLM**, eine noch bessere Möglichkeit, einen Client zu schreiben, besteht darin, ihm ein LLM hinzuzufügen, damit es mit deinem Server „verhandeln“ kann, was zu tun ist, [zur Lektion](/03-GettingStarted/03-llm-client/README.md)
+- **3 Client mit LLM**, eine noch bessere Möglichkeit, einen Client zu schreiben, besteht darin, ihm ein LLM hinzuzufügen, damit es mit deinem Server „verhandeln“ kann, was zu tun ist, [zur Lektion](03-llm-client/README.md)
 
-- **4 Nutzung eines Servers im GitHub Copilot Agent-Modus in Visual Studio Code**. Hier betrachten wir, wie wir unseren MCP Server direkt aus Visual Studio Code heraus ausführen, [zur Lektion](/03-GettingStarted/04-vscode/README.md)
+- **4 Nutzung eines Servers im GitHub Copilot Agent-Modus in Visual Studio Code**. Hier betrachten wir, wie wir unseren MCP Server direkt aus Visual Studio Code heraus ausführen, [zur Lektion](04-vscode/README.md)
 
-- **5 Nutzung von SSE (Server Sent Events)** SSE ist ein Standard für serverseitiges Streaming zum Client, der es Servern ermöglicht, Echtzeit-Updates über HTTP an Clients zu senden, [zur Lektion](/03-GettingStarted/05-sse-server/README.md)
+- **5 Nutzung von SSE (Server Sent Events)** SSE ist ein Standard für serverseitiges Streaming zum Client, der es Servern ermöglicht, Echtzeit-Updates über HTTP an Clients zu senden, [zur Lektion](05-sse-server/README.md)
 
-- **6 HTTP Streaming mit MCP (Streamable HTTP)**. Erfahre mehr über modernes HTTP-Streaming, Fortschrittsbenachrichtigungen und wie man skalierbare, Echtzeit-MCP-Server und -Clients mit Streamable HTTP implementiert. [zur Lektion](/03-GettingStarted/06-http-streaming/README.md)
+- **6 HTTP Streaming mit MCP (Streamable HTTP)**. Erfahre mehr über modernes HTTP-Streaming, Fortschrittsbenachrichtigungen und wie man skalierbare, Echtzeit-MCP-Server und -Clients mit Streamable HTTP implementiert. [zur Lektion](06-http-streaming/README.md)
 
-- **7 Nutzung des AI Toolkits für VSCode**, um deine MCP Clients und Server zu konsumieren und zu testen, [zur Lektion](/03-GettingStarted/07-aitk/README.md)
+- **7 Nutzung des AI Toolkits für VSCode**, um deine MCP Clients und Server zu konsumieren und zu testen, [zur Lektion](07-aitk/README.md)
 
-- **8 Testing**. Hier konzentrieren wir uns besonders darauf, wie wir unseren Server und Client auf verschiedene Arten testen können, [zur Lektion](/03-GettingStarted/08-testing/README.md)
+- **8 Testing**. Hier konzentrieren wir uns besonders darauf, wie wir unseren Server und Client auf verschiedene Arten testen können, [zur Lektion](08-testing/README.md)
 
-- **9 Deployment**. Dieses Kapitel behandelt verschiedene Möglichkeiten, deine MCP-Lösungen bereitzustellen, [zur Lektion](/03-GettingStarted/09-deployment/README.md)
+- **9 Deployment**. Dieses Kapitel behandelt verschiedene Möglichkeiten, deine MCP-Lösungen bereitzustellen, [zur Lektion](09-deployment/README.md)
 
 
 Das Model Context Protocol (MCP) ist ein offenes Protokoll, das standardisiert, wie Anwendungen Kontext für LLMs bereitstellen. Man kann MCP sich vorstellen wie einen USB-C-Anschluss für KI-Anwendungen – es bietet eine standardisierte Möglichkeit, KI-Modelle mit verschiedenen Datenquellen und Tools zu verbinden.
@@ -76,7 +76,7 @@ MCP bietet offizielle SDKs für mehrere Sprachen:
 - Der Aufbau von MCP-Servern umfasst das Erstellen und Registrieren von Tools mit klaren Schemata
 - MCP-Clients verbinden sich mit Servern und Modellen, um erweiterte Funktionen zu nutzen
 - Testen und Debuggen sind entscheidend für zuverlässige MCP-Implementierungen
-- Bereitstellungsoptionen reichen von lokaler Entwicklung bis hin zu cloudbasierten Lösungen
+- Bereitstellungsoptionen reichen von lokaler Entwicklung bis hin zu Cloud-Lösungen
 
 ## Üben
 
@@ -90,13 +90,13 @@ Wir haben eine Reihe von Beispielen, die die Übungen in allen Kapiteln dieses A
 
 ## Zusätzliche Ressourcen
 
-- [Agents mit Model Context Protocol auf Azure erstellen](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [Remote MCP mit Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Was kommt als Nächstes
 
-Weiter: [Erstellen deines ersten MCP Servers](./01-first-server/README.md)
+Weiter: [Erstellen deines ersten MCP Servers](01-first-server/README.md)
 
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

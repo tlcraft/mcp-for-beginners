@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "97f1c99b5b12cf03d4b1be68b3636a4a",
-  "translation_date": "2025-07-04T15:14:02+00:00",
+  "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
+  "translation_date": "2025-07-09T22:26:00+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "en"
 }
@@ -11,26 +11,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 This section includes several lessons:
 
-- **1 Your first server**: In this first lesson, you will learn how to create your first server and inspect it using the inspector tool, a valuable way to test and debug your server, [to the lesson](/03-GettingStarted/01-first-server/README.md)
+- **1 Your first server**: In this first lesson, you will learn how to create your first server and inspect it using the inspector tool, a valuable way to test and debug your server, [to the lesson](01-first-server/README.md)
 
-- **2 Client**: In this lesson, you will learn how to write a client that can connect to your server, [to the lesson](/03-GettingStarted/02-client/README.md)
+- **2 Client**: In this lesson, you will learn how to write a client that can connect to your server, [to the lesson](02-client/README.md)
 
-- **3 Client with LLM**: An even better way to write a client is by adding an LLM so it can "negotiate" with your server on what to do, [to the lesson](/03-GettingStarted/03-llm-client/README.md)
+- **3 Client with LLM**: An even better way to write a client is by adding an LLM so it can "negotiate" with your server on what to do, [to the lesson](03-llm-client/README.md)
 
-- **4 Consuming a server GitHub Copilot Agent mode in Visual Studio Code**: Here, we explore running our MCP Server from within Visual Studio Code, [to the lesson](/03-GettingStarted/04-vscode/README.md)
+- **4 Consuming a server GitHub Copilot Agent mode in Visual Studio Code**: Here, we explore running our MCP Server from within Visual Studio Code, [to the lesson](04-vscode/README.md)
 
-- **5 Consuming from a SSE (Server Sent Events)**: SSE is a standard for server-to-client streaming, allowing servers to push real-time updates to clients over HTTP, [to the lesson](/03-GettingStarted/05-sse-server/README.md)
+- **5 Consuming from a SSE (Server Sent Events)**: SSE is a standard for server-to-client streaming, allowing servers to push real-time updates to clients over HTTP, [to the lesson](05-sse-server/README.md)
 
-- **6 HTTP Streaming with MCP (Streamable HTTP)**: Learn about modern HTTP streaming, progress notifications, and how to implement scalable, real-time MCP servers and clients using Streamable HTTP, [to the lesson](/03-GettingStarted/06-http-streaming/README.md)
+- **6 HTTP Streaming with MCP (Streamable HTTP)**: Learn about modern HTTP streaming, progress notifications, and how to implement scalable, real-time MCP servers and clients using Streamable HTTP, [to the lesson](06-http-streaming/README.md)
 
-- **7 Utilizing AI Toolkit for VSCode** to consume and test your MCP Clients and Servers, [to the lesson](/03-GettingStarted/07-aitk/README.md)
+- **7 Utilizing AI Toolkit for VSCode** to consume and test your MCP Clients and Servers, [to the lesson](07-aitk/README.md)
 
-- **8 Testing**: Here we focus especially on how to test our server and client in different ways, [to the lesson](/03-GettingStarted/08-testing/README.md)
+- **8 Testing**: Here we focus especially on how to test our server and client in different ways, [to the lesson](08-testing/README.md)
 
-- **9 Deployment**: This chapter covers different ways to deploy your MCP solutions, [to the lesson](/03-GettingStarted/09-deployment/README.md)
+- **9 Deployment**: This chapter covers different ways to deploy your MCP solutions, [to the lesson](09-deployment/README.md)
 
 
-The Model Context Protocol (MCP) is an open protocol that standardizes how applications provide context to LLMs. Think of MCP like a USB-C port for AI applications – it offers a standardized way to connect AI models to various data sources and tools.
+The Model Context Protocol (MCP) is an open protocol that standardizes how applications provide context to LLMs. Think of MCP like a USB-C port for AI applications—it offers a standardized way to connect AI models to various data sources and tools.
 
 ## Learning Objectives
 
@@ -61,13 +61,13 @@ Before diving into MCP development, make sure you have:
 In the upcoming chapters, you will see solutions built using Python, TypeScript, Java, and .NET. Here are all the officially supported SDKs.
 
 MCP provides official SDKs for multiple languages:  
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) – Maintained in collaboration with Microsoft  
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) – Maintained in collaboration with Spring AI  
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) – The official TypeScript implementation  
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) – The official Python implementation  
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) – The official Kotlin implementation  
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) – Maintained in collaboration with Loopwork AI  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) – The official Rust implementation  
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Maintained in collaboration with Microsoft  
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Maintained in collaboration with Spring AI  
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - The official TypeScript implementation  
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - The official Python implementation  
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - The official Kotlin implementation  
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Maintained in collaboration with Loopwork AI  
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - The official Rust implementation  
 
 ## Key Takeaways
 
@@ -83,7 +83,7 @@ We have a set of samples that complement the exercises you will find in all chap
 
 - [Java Calculator](./samples/java/calculator/README.md)  
 - [.Net Calculator](../../../03-GettingStarted/samples/csharp)  
-- [JavaScript Calculator](../../../03-GettingStarted/samples/javascript)  
+- [JavaScript Calculator](./samples/javascript/README.md)  
 - [TypeScript Calculator](./samples/typescript/README.md)  
 - [Python Calculator](../../../03-GettingStarted/samples/python)  
 
@@ -95,7 +95,7 @@ We have a set of samples that complement the exercises you will find in all chap
 
 ## What's next
 
-Next: [Creating your first MCP Server](./01-first-server/README.md)
+Next: [Creating your first MCP Server](01-first-server/README.md)
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

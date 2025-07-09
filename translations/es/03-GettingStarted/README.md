@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "97f1c99b5b12cf03d4b1be68b3636a4a",
-  "translation_date": "2025-07-04T15:23:38+00:00",
+  "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
+  "translation_date": "2025-07-09T22:26:24+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "es"
 }
@@ -11,30 +11,30 @@ CO_OP_TRANSLATOR_METADATA:
 
 Esta sección consta de varias lecciones:
 
-- **1 Tu primer servidor**, en esta primera lección aprenderás a crear tu primer servidor y a inspeccionarlo con la herramienta inspector, una forma valiosa de probar y depurar tu servidor, [a la lección](/03-GettingStarted/01-first-server/README.md)
+- **1 Tu primer servidor**, en esta primera lección aprenderás a crear tu primer servidor y a inspeccionarlo con la herramienta inspector, una forma valiosa de probar y depurar tu servidor, [a la lección](01-first-server/README.md)
 
-- **2 Cliente**, en esta lección aprenderás a escribir un cliente que pueda conectarse a tu servidor, [a la lección](/03-GettingStarted/02-client/README.md)
+- **2 Cliente**, en esta lección aprenderás a escribir un cliente que pueda conectarse a tu servidor, [a la lección](02-client/README.md)
 
-- **3 Cliente con LLM**, una forma aún mejor de escribir un cliente es añadiendo un LLM para que pueda "negociar" con tu servidor sobre qué hacer, [a la lección](/03-GettingStarted/03-llm-client/README.md)
+- **3 Cliente con LLM**, una forma aún mejor de escribir un cliente es añadiendo un LLM para que pueda "negociar" con tu servidor sobre qué hacer, [a la lección](03-llm-client/README.md)
 
-- **4 Consumiendo un servidor en modo Agente GitHub Copilot en Visual Studio Code**. Aquí veremos cómo ejecutar nuestro MCP Server desde Visual Studio Code, [a la lección](/03-GettingStarted/04-vscode/README.md)
+- **4 Consumiendo un servidor en modo Agente GitHub Copilot en Visual Studio Code**. Aquí veremos cómo ejecutar nuestro MCP Server desde Visual Studio Code, [a la lección](04-vscode/README.md)
 
-- **5 Consumiendo desde SSE (Server Sent Events)** SSE es un estándar para streaming de servidor a cliente, que permite a los servidores enviar actualizaciones en tiempo real a los clientes mediante HTTP [a la lección](/03-GettingStarted/05-sse-server/README.md)
+- **5 Consumiendo desde SSE (Server Sent Events)** SSE es un estándar para streaming de servidor a cliente, que permite a los servidores enviar actualizaciones en tiempo real a los clientes a través de HTTP [a la lección](05-sse-server/README.md)
 
-- **6 Streaming HTTP con MCP (HTTP Streamable)**. Aprende sobre el streaming HTTP moderno, notificaciones de progreso y cómo implementar servidores y clientes MCP escalables y en tiempo real usando Streamable HTTP. [a la lección](/03-GettingStarted/06-http-streaming/README.md)
+- **6 Streaming HTTP con MCP (HTTP Streamable)**. Aprende sobre el streaming HTTP moderno, notificaciones de progreso y cómo implementar servidores y clientes MCP escalables y en tiempo real usando Streamable HTTP. [a la lección](06-http-streaming/README.md)
 
-- **7 Utilizando AI Toolkit para VSCode** para consumir y probar tus clientes y servidores MCP [a la lección](/03-GettingStarted/07-aitk/README.md)
+- **7 Utilizando AI Toolkit para VSCode** para consumir y probar tus clientes y servidores MCP [a la lección](07-aitk/README.md)
 
-- **8 Pruebas**. Aquí nos enfocaremos especialmente en cómo probar nuestro servidor y cliente de diferentes maneras, [a la lección](/03-GettingStarted/08-testing/README.md)
+- **8 Pruebas**. Aquí nos enfocaremos especialmente en cómo probar nuestro servidor y cliente de diferentes maneras, [a la lección](08-testing/README.md)
 
-- **9 Despliegue**. Este capítulo abordará diferentes formas de desplegar tus soluciones MCP, [a la lección](/03-GettingStarted/09-deployment/README.md)
+- **9 Despliegue**. Este capítulo analizará diferentes formas de desplegar tus soluciones MCP, [a la lección](09-deployment/README.md)
 
 
 El Model Context Protocol (MCP) es un protocolo abierto que estandariza cómo las aplicaciones proporcionan contexto a los LLMs. Piensa en MCP como un puerto USB-C para aplicaciones de IA: ofrece una forma estandarizada de conectar modelos de IA a diferentes fuentes de datos y herramientas.
 
 ## Objetivos de aprendizaje
 
-Al finalizar esta lección, serás capaz de:
+Al final de esta lección, serás capaz de:
 
 - Configurar entornos de desarrollo para MCP en C#, Java, Python, TypeScript y JavaScript
 - Construir y desplegar servidores MCP básicos con características personalizadas (recursos, prompts y herramientas)
@@ -96,7 +96,7 @@ Contamos con un conjunto de ejemplos que complementan los ejercicios que verás 
 
 ## Qué sigue
 
-Siguiente: [Creando tu primer servidor MCP](./01-first-server/README.md)
+Siguiente: [Creando tu primer servidor MCP](01-first-server/README.md)
 
 **Aviso legal**:  
 Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

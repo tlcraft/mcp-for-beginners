@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "97f1c99b5b12cf03d4b1be68b3636a4a",
-  "translation_date": "2025-07-04T17:10:14+00:00",
+  "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
+  "translation_date": "2025-07-09T22:30:50+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "pl"
 }
@@ -11,23 +11,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ta sekcja składa się z kilku lekcji:
 
-- **1 Twój pierwszy serwer**, w tej pierwszej lekcji nauczysz się, jak stworzyć swój pierwszy serwer i sprawdzić go za pomocą narzędzia inspektora, co jest cennym sposobem na testowanie i debugowanie serwera, [do lekcji](/03-GettingStarted/01-first-server/README.md)
+- **1 Twój pierwszy serwer**, w tej pierwszej lekcji nauczysz się, jak stworzyć swój pierwszy serwer i sprawdzić go za pomocą narzędzia inspektora, co jest cennym sposobem na testowanie i debugowanie serwera, [do lekcji](01-first-server/README.md)
 
-- **2 Klient**, w tej lekcji nauczysz się, jak napisać klienta, który może połączyć się z twoim serwerem, [do lekcji](/03-GettingStarted/02-client/README.md)
+- **2 Klient**, w tej lekcji nauczysz się, jak napisać klienta, który może połączyć się z twoim serwerem, [do lekcji](02-client/README.md)
 
-- **3 Klient z LLM**, jeszcze lepszym sposobem pisania klienta jest dodanie do niego LLM, aby mógł „negocjować” z twoim serwerem, co zrobić, [do lekcji](/03-GettingStarted/03-llm-client/README.md)
+- **3 Klient z LLM**, jeszcze lepszym sposobem pisania klienta jest dodanie do niego LLM, aby mógł „negocjować” z twoim serwerem, co ma robić, [do lekcji](03-llm-client/README.md)
 
-- **4 Konsumpcja serwera w trybie GitHub Copilot Agent w Visual Studio Code**. Tutaj przyjrzymy się uruchamianiu naszego MCP Server bezpośrednio z Visual Studio Code, [do lekcji](/03-GettingStarted/04-vscode/README.md)
+- **4 Konsumpcja serwera w trybie GitHub Copilot Agent w Visual Studio Code**. Tutaj przyjrzymy się uruchamianiu naszego MCP Server bezpośrednio w Visual Studio Code, [do lekcji](04-vscode/README.md)
 
-- **5 Konsumpcja z SSE (Server Sent Events)** SSE to standard do strumieniowania z serwera do klienta, pozwalający serwerom na przesyłanie aktualizacji w czasie rzeczywistym do klientów przez HTTP [do lekcji](/03-GettingStarted/05-sse-server/README.md)
+- **5 Konsumpcja z SSE (Server Sent Events)** SSE to standard do strumieniowania danych z serwera do klienta, pozwalający serwerom na przesyłanie aktualizacji w czasie rzeczywistym do klientów przez HTTP [do lekcji](05-sse-server/README.md)
 
-- **6 HTTP Streaming z MCP (Streamable HTTP)**. Poznaj nowoczesne strumieniowanie HTTP, powiadomienia o postępie oraz jak wdrożyć skalowalne, działające w czasie rzeczywistym serwery i klientów MCP korzystając ze Streamable HTTP. [do lekcji](/03-GettingStarted/06-http-streaming/README.md)
+- **6 HTTP Streaming z MCP (Streamable HTTP)**. Poznaj nowoczesne strumieniowanie HTTP, powiadomienia o postępie oraz jak wdrożyć skalowalne, działające w czasie rzeczywistym serwery i klientów MCP korzystając ze Streamable HTTP. [do lekcji](06-http-streaming/README.md)
 
-- **7 Wykorzystanie AI Toolkit dla VSCode** do konsumpcji i testowania twoich klientów i serwerów MCP [do lekcji](/03-GettingStarted/07-aitk/README.md)
+- **7 Wykorzystanie AI Toolkit dla VSCode** do konsumpcji i testowania twoich klientów i serwerów MCP [do lekcji](07-aitk/README.md)
 
-- **8 Testowanie**. Skupimy się tutaj szczególnie na różnych sposobach testowania naszego serwera i klienta, [do lekcji](/03-GettingStarted/08-testing/README.md)
+- **8 Testowanie**. Skupimy się tutaj szczególnie na różnych sposobach testowania naszego serwera i klienta, [do lekcji](08-testing/README.md)
 
-- **9 Wdrażanie**. Ten rozdział pokaże różne sposoby wdrażania twoich rozwiązań MCP, [do lekcji](/03-GettingStarted/09-deployment/README.md)
+- **9 Wdrożenie**. Ten rozdział pokaże różne sposoby wdrażania twoich rozwiązań MCP, [do lekcji](09-deployment/README.md)
 
 
 Model Context Protocol (MCP) to otwarty protokół, który standaryzuje sposób, w jaki aplikacje dostarczają kontekst do LLM. Można go porównać do portu USB-C dla aplikacji AI – zapewnia ustandaryzowany sposób łączenia modeli AI z różnymi źródłami danych i narzędziami.
@@ -41,11 +41,11 @@ Po zakończeniu tej lekcji będziesz potrafił:
 - Tworzyć aplikacje hostujące, które łączą się z serwerami MCP
 - Testować i debugować implementacje MCP
 - Zrozumieć typowe problemy z konfiguracją i ich rozwiązania
-- Połączyć swoje implementacje MCP z popularnymi usługami LLM
+- Łączyć swoje implementacje MCP z popularnymi usługami LLM
 
 ## Konfiguracja środowiska MCP
 
-Zanim zaczniesz pracę z MCP, ważne jest, aby przygotować środowisko programistyczne i zrozumieć podstawowy przepływ pracy. Ta sekcja przeprowadzi cię przez pierwsze kroki konfiguracji, aby zapewnić płynny start z MCP.
+Zanim zaczniesz pracę z MCP, ważne jest, aby przygotować środowisko programistyczne i zrozumieć podstawowy przebieg pracy. Ta sekcja przeprowadzi cię przez pierwsze kroki konfiguracji, aby zapewnić płynny start z MCP.
 
 ### Wymagania wstępne
 
@@ -61,7 +61,7 @@ Zanim zaczniesz rozwijać MCP, upewnij się, że masz:
 
 W kolejnych rozdziałach zobaczysz rozwiązania zbudowane w Pythonie, TypeScript, Javie i .NET. Oto wszystkie oficjalnie wspierane SDK.
 
-MCP oferuje oficjalne SDK dla wielu języków:
+MCP udostępnia oficjalne SDK dla wielu języków:
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - utrzymywane we współpracy z Microsoft
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - utrzymywane we współpracy ze Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - oficjalna implementacja TypeScript
@@ -96,7 +96,7 @@ Mamy zestaw przykładów, które uzupełniają ćwiczenia widoczne we wszystkich
 
 ## Co dalej
 
-Następny krok: [Tworzenie twojego pierwszego serwera MCP](./01-first-server/README.md)
+Następne: [Tworzenie twojego pierwszego serwera MCP](01-first-server/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

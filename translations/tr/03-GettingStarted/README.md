@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "97f1c99b5b12cf03d4b1be68b3636a4a",
-  "translation_date": "2025-07-04T17:16:01+00:00",
+  "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
+  "translation_date": "2025-07-09T22:31:06+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "tr"
 }
@@ -11,23 +11,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 Bu bölüm birkaç dersten oluşmaktadır:
 
-- **1 İlk sunucunuz**, bu ilk derste, ilk sunucunuzu nasıl oluşturacağınızı ve sunucunuzu test etmek ve hata ayıklamak için değerli bir araç olan inspector ile nasıl inceleyeceğinizi öğreneceksiniz, [derse git](/03-GettingStarted/01-first-server/README.md)
+- **1 İlk sunucunuz**, bu ilk derste, ilk sunucunuzu nasıl oluşturacağınızı ve sunucunuzu test etmek ve hata ayıklamak için değerli bir araç olan inspector ile nasıl inceleyeceğinizi öğreneceksiniz, [derse git](01-first-server/README.md)
 
-- **2 İstemci**, bu derste, sunucunuza bağlanabilen bir istemci nasıl yazılır öğreneceksiniz, [derse git](/03-GettingStarted/02-client/README.md)
+- **2 İstemci**, bu derste, sunucunuza bağlanabilen bir istemci yazmayı öğreneceksiniz, [derse git](02-client/README.md)
 
-- **3 LLM ile İstemci**, istemci yazmanın daha iyi bir yolu, sunucunuzla ne yapacağı konusunda "müzakere" edebilmesi için bir LLM eklemektir, [derse git](/03-GettingStarted/03-llm-client/README.md)
+- **3 LLM ile İstemci**, istemci yazmanın daha iyi bir yolu, sunucunuzla ne yapacağı konusunda "müzakere" edebilmesi için bir LLM eklemektir, [derse git](03-llm-client/README.md)
 
-- **4 Visual Studio Code'da GitHub Copilot Agent modunda bir sunucuyu kullanmak**. Burada, MCP Sunucumuzu Visual Studio Code içinden çalıştırmayı inceliyoruz, [derse git](/03-GettingStarted/04-vscode/README.md)
+- **4 Visual Studio Code'da GitHub Copilot Agent modunda bir sunucuyu kullanmak**. Burada, MCP Sunucumuzu Visual Studio Code içinden çalıştırmayı inceliyoruz, [derse git](04-vscode/README.md)
 
-- **5 SSE (Server Sent Events) ile Tüketim** SSE, sunucudan istemciye gerçek zamanlı güncellemeleri HTTP üzerinden ileten standart bir akış yöntemidir, [derse git](/03-GettingStarted/05-sse-server/README.md)
+- **5 SSE (Server Sent Events) ile Tüketim** SSE, sunucudan istemciye gerçek zamanlı güncellemeler göndermeyi sağlayan bir standarttır, HTTP üzerinden sunucuların istemcilere veri akışı yapmasına olanak tanır [derse git](05-sse-server/README.md)
 
-- **6 MCP ile HTTP Akışı (Streamable HTTP)**. Modern HTTP akışı, ilerleme bildirimleri ve Streamable HTTP kullanarak ölçeklenebilir, gerçek zamanlı MCP sunucuları ve istemcileri nasıl oluşturacağınızı öğrenin. [derse git](/03-GettingStarted/06-http-streaming/README.md)
+- **6 MCP ile HTTP Akışı (Streamable HTTP)**. Modern HTTP akışı, ilerleme bildirimleri ve ölçeklenebilir, gerçek zamanlı MCP sunucuları ve istemcileri Streamable HTTP kullanarak nasıl oluşturacağınızı öğrenin. [derse git](06-http-streaming/README.md)
 
-- **7 VSCode için AI Toolkit'i kullanmak** MCP İstemcilerinizi ve Sunucularınızı tüketmek ve test etmek için [derse git](/03-GettingStarted/07-aitk/README.md)
+- **7 VSCode için AI Toolkit kullanımı** MCP İstemcilerinizi ve Sunucularınızı tüketmek ve test etmek için [derse git](07-aitk/README.md)
 
-- **8 Test Etme**. Burada özellikle sunucumuzu ve istemcimizi farklı şekillerde nasıl test edebileceğimize odaklanacağız, [derse git](/03-GettingStarted/08-testing/README.md)
+- **8 Test Etme**. Burada özellikle sunucumuzu ve istemcimizi farklı şekillerde nasıl test edebileceğimize odaklanacağız, [derse git](08-testing/README.md)
 
-- **9 Dağıtım**. Bu bölümde MCP çözümlerinizi dağıtmanın farklı yollarına bakacağız, [derse git](/03-GettingStarted/09-deployment/README.md)
+- **9 Dağıtım**. Bu bölümde MCP çözümlerinizi dağıtmanın farklı yollarına bakacağız, [derse git](09-deployment/README.md)
 
 
 Model Context Protocol (MCP), uygulamaların LLM'lere bağlam sağlamasını standartlaştıran açık bir protokoldür. MCP'yi AI uygulamaları için bir USB-C portu gibi düşünebilirsiniz - AI modellerini farklı veri kaynakları ve araçlara bağlamak için standart bir yol sağlar.
@@ -72,7 +72,7 @@ MCP, birden fazla dil için resmi SDK'lar sağlar:
 
 ## Önemli Noktalar
 
-- MCP geliştirme ortamı, dil bazlı SDK'lar ile kurulumu kolaydır
+- MCP geliştirme ortamı, dil bazlı SDK'lar sayesinde kurulumu kolaydır
 - MCP sunucuları, açık şemalara sahip araçlar oluşturup kaydetmeyi içerir
 - MCP istemcileri, genişletilmiş yeteneklerden faydalanmak için sunuculara ve modellere bağlanır
 - Test ve hata ayıklama, güvenilir MCP uygulamaları için gereklidir
@@ -80,7 +80,7 @@ MCP, birden fazla dil için resmi SDK'lar sağlar:
 
 ## Uygulama
 
-Bu bölümdeki tüm derslerde göreceğiniz alıştırmaları tamamlayan bir dizi örnek bulunmaktadır. Ayrıca her bölümün kendi alıştırmaları ve görevleri de vardır.
+Bu bölümdeki tüm derslerde göreceğiniz alıştırmaları tamamlayan bir dizi örnek bulunmaktadır. Ayrıca her bölümün kendi alıştırmaları ve ödevleri de vardır.
 
 - [Java Hesap Makinesi](./samples/java/calculator/README.md)
 - [.Net Hesap Makinesi](../../../03-GettingStarted/samples/csharp)
@@ -96,7 +96,7 @@ Bu bölümdeki tüm derslerde göreceğiniz alıştırmaları tamamlayan bir diz
 
 ## Sonraki Adım
 
-Sonraki: [İlk MCP Sunucunuzu Oluşturmak](./01-first-server/README.md)
+Sonraki: [İlk MCP Sunucunuzu Oluşturmak](01-first-server/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "97f1c99b5b12cf03d4b1be68b3636a4a",
-  "translation_date": "2025-07-04T17:49:29+00:00",
+  "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
+  "translation_date": "2025-07-09T22:32:39+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "fi"
 }
@@ -11,30 +11,30 @@ CO_OP_TRANSLATOR_METADATA:
 
 Tässä osiossa on useita oppitunteja:
 
-- **1 Ensimmäinen palvelimesi**, tässä ensimmäisessä oppitunnissa opit luomaan ensimmäisen palvelimesi ja tarkastelemaan sitä inspector-työkalulla, arvokas tapa testata ja virheenkorjata palvelintasi, [oppitunnille](/03-GettingStarted/01-first-server/README.md)
+- **1 Ensimmäinen palvelimesi**, tässä ensimmäisessä oppitunnissa opit luomaan ensimmäisen palvelimesi ja tarkastelemaan sitä inspector-työkalulla, arvokas tapa testata ja virheenkorjata palvelintasi, [oppitunnille](01-first-server/README.md)
 
-- **2 Asiakas**, tässä oppitunnissa opit kirjoittamaan asiakkaan, joka voi muodostaa yhteyden palvelimeesi, [oppitunnille](/03-GettingStarted/02-client/README.md)
+- **2 Asiakas**, tässä oppitunnissa opit kirjoittamaan asiakkaan, joka voi muodostaa yhteyden palvelimeesi, [oppitunnille](02-client/README.md)
 
-- **3 Asiakas LLM:llä**, vielä parempi tapa kirjoittaa asiakas on lisätä siihen LLM, jotta se voi "neuvotella" palvelimesi kanssa siitä, mitä tehdä, [oppitunnille](/03-GettingStarted/03-llm-client/README.md)
+- **3 Asiakas LLM:llä**, vielä parempi tapa kirjoittaa asiakas on lisätä siihen LLM, jotta se voi "neuvotella" palvelimesi kanssa siitä, mitä tehdä, [oppitunnille](03-llm-client/README.md)
 
-- **4 Palvelimen käyttäminen GitHub Copilot Agent -tilassa Visual Studio Codessa**. Tässä tarkastelemme MCP-palvelimen ajamista suoraan Visual Studio Codesta, [oppitunnille](/03-GettingStarted/04-vscode/README.md)
+- **4 Palvelimen käyttäminen GitHub Copilot Agent -tilassa Visual Studio Codessa**. Tässä tarkastelemme MCP-palvelimen ajamista suoraan Visual Studio Codesta, [oppitunnille](04-vscode/README.md)
 
-- **5 Käyttö SSE:n (Server Sent Events) kautta** SSE on standardi palvelimelta asiakkaalle tapahtuvaan suoratoistoon, jonka avulla palvelimet voivat työntää reaaliaikaisia päivityksiä asiakkaille HTTP:n yli [oppitunnille](/03-GettingStarted/05-sse-server/README.md)
+- **5 Käyttö SSE:n (Server Sent Events) kautta** SSE on standardi palvelimelta asiakkaalle tapahtuvaan suoratoistoon, jonka avulla palvelimet voivat lähettää reaaliaikaisia päivityksiä asiakkaille HTTP:n yli [oppitunnille](05-sse-server/README.md)
 
-- **6 HTTP-suoratoisto MCP:llä (Streamable HTTP)**. Opit modernista HTTP-suoratoistosta, etenemisilmoituksista ja siitä, miten toteuttaa skaalautuvia, reaaliaikaisia MCP-palvelimia ja -asiakkaita Streamable HTTP:n avulla. [oppitunnille](/03-GettingStarted/06-http-streaming/README.md)
+- **6 HTTP-suoratoisto MCP:llä (Streamable HTTP)**. Opit modernista HTTP-suoratoistosta, etenemisilmoituksista ja siitä, miten toteuttaa skaalautuvia, reaaliaikaisia MCP-palvelimia ja -asiakkaita Streamable HTTP:n avulla. [oppitunnille](06-http-streaming/README.md)
 
-- **7 AI Toolkitin hyödyntäminen VSCode:ssa** MCP-asiakkaiden ja -palvelimien kulutukseen ja testaamiseen [oppitunnille](/03-GettingStarted/07-aitk/README.md)
+- **7 AI Toolkitin hyödyntäminen VSCodea varten** MCP-asiakkaiden ja -palvelimien kulutukseen ja testaamiseen [oppitunnille](07-aitk/README.md)
 
-- **8 Testaus**. Tässä keskitymme erityisesti siihen, miten voimme testata palvelintamme ja asiakastamme eri tavoin, [oppitunnille](/03-GettingStarted/08-testing/README.md)
+- **8 Testaus**. Tässä keskitymme erityisesti siihen, miten voimme testata palvelintamme ja asiakastamme eri tavoin, [oppitunnille](08-testing/README.md)
 
-- **9 Julkaisu**. Tässä luvussa tarkastellaan erilaisia tapoja julkaista MCP-ratkaisuja, [oppitunnille](/03-GettingStarted/09-deployment/README.md)
+- **9 Julkaisu**. Tässä luvussa tarkastellaan erilaisia tapoja julkaista MCP-ratkaisuja, [oppitunnille](09-deployment/README.md)
 
 
 Model Context Protocol (MCP) on avoin protokolla, joka standardisoi sen, miten sovellukset tarjoavat kontekstia LLM:ille. Ajattele MCP:tä kuin USB-C-porttina tekoälysovelluksille – se tarjoaa standardoidun tavan yhdistää tekoälymalleja erilaisiin tietolähteisiin ja työkaluihin.
 
 ## Oppimistavoitteet
 
-Tämän oppitunnin lopussa osaat:
+Tämän oppitunnin jälkeen osaat:
 
 - Määrittää kehitysympäristöt MCP:lle C#:ssa, Javassa, Pythonissa, TypeScriptissä ja JavaScriptissä
 - Rakentaa ja ottaa käyttöön perus MCP-palvelimia mukautetuilla ominaisuuksilla (resurssit, kehotteet ja työkalut)
@@ -49,7 +49,7 @@ Ennen kuin aloitat MCP:n kanssa työskentelyn, on tärkeää valmistella kehitys
 
 ### Esivaatimukset
 
-Ennen kuin sukellat MCP-kehitykseen, varmista että sinulla on:
+Ennen MCP-kehitykseen ryhtymistä varmista, että sinulla on:
 
 - **Kehitysympäristö**: Valitsemallesi kielelle (C#, Java, Python, TypeScript tai JavaScript)
 - **IDE/Editori**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm tai mikä tahansa nykyaikainen koodieditori
@@ -61,7 +61,7 @@ Ennen kuin sukellat MCP-kehitykseen, varmista että sinulla on:
 
 Seuraavissa luvuissa näet ratkaisuja, jotka on rakennettu Pythonilla, TypeScriptillä, Javalla ja .NET:llä. Tässä ovat kaikki virallisesti tuetut SDK:t.
 
-MCP tarjoaa viralliset SDK:t useille kielille:
+MCP tarjoaa virallisia SDK:ita useille kielille:
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Ylläpidetään yhteistyössä Microsoftin kanssa
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Ylläpidetään yhteistyössä Spring AI:n kanssa
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Virallinen TypeScript-toteutus
@@ -80,7 +80,7 @@ MCP tarjoaa viralliset SDK:t useille kielille:
 
 ## Harjoittelu
 
-Meillä on joukko esimerkkejä, jotka täydentävät kaikkien tämän osion lukujen harjoituksia. Lisäksi jokaisella luvulla on omat harjoituksensa ja tehtävänsä.
+Meillä on joukko esimerkkejä, jotka täydentävät kaikkien tämän osion lukujen harjoituksia. Lisäksi jokaisessa luvussa on omat harjoituksensa ja tehtävänsä.
 
 - [Java-laskin](./samples/java/calculator/README.md)
 - [.Net-laskin](../../../03-GettingStarted/samples/csharp)
@@ -96,7 +96,7 @@ Meillä on joukko esimerkkejä, jotka täydentävät kaikkien tämän osion luku
 
 ## Mitä seuraavaksi
 
-Seuraavaksi: [Ensimmäisen MCP-palvelimen luominen](./01-first-server/README.md)
+Seuraavaksi: [Ensimmäisen MCP-palvelimen luominen](01-first-server/README.md)
 
 **Vastuuvapauslauseke**:  
 Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
