@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-17T09:17:56+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T23:10:29+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "he"
 }
 -->
-# הפעלת דוגמה זו
+# הרצת הדוגמה הזו
 
-מומלץ להתקין את `uv` אבל זה לא חובה, ראו [הוראות](https://docs.astral.sh/uv/#highlights)
+מומלץ להתקין את `uv` אבל זה לא חובה, ראה [הוראות](https://docs.astral.sh/uv/#highlights)
 
 ## -0- יצירת סביבה וירטואלית
 
@@ -29,7 +29,7 @@ venv\Scrips\activate
 pip install "mcp[cli]"
 ```
 
-## -3- הפעלת הדוגמה
+## -3- הרצת הדוגמה
 
 ```bash
 mcp run server.py
@@ -37,30 +37,31 @@ mcp run server.py
 
 ## -4- בדיקת הדוגמה
 
-עם השרת פועל בטרמינל אחד, פתחו טרמינל נוסף והריצו את הפקודה הבאה:
+כאשר השרת רץ במסוף אחד, פתח מסוף נוסף והרץ את הפקודה הבאה:
 
 ```bash
 mcp dev server.py
 ```
 
-זה אמור להפעיל שרת אינטרנט עם ממשק חזותי המאפשר לבדוק את הדוגמה.
+זה אמור להפעיל שרת אינטרנט עם ממשק חזותי שיאפשר לך לבדוק את הדוגמה.
 
-לאחר שהשרת מחובר:
+ברגע שהשרת מחובר:
 
-- נסו לרשום כלים ולהריץ `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- נסה לרשום את הכלים ולהריץ את `add` עם הפרמטרים 2 ו-4, אתה אמור לראות 6 בתוצאה.
 
-### Testing in ClI mode
+- עבור למשאבים ולתבנית המשאב וקרא ל-get_greeting, הקלד שם ואתה אמור לראות ברכה עם השם שהזנת.
 
-The inspector you ran is actually a Node.js app and `mcp dev` הוא עוטף סביב זה.
+### בדיקה במצב CLI
 
-ניתן להפעיל אותו ישירות במצב CLI על ידי הרצת הפקודה הבאה:
+ה-inspector שהרצת הוא למעשה אפליקציית Node.js ו-`mcp dev` הוא עטיפה סביבו.
+
+אתה יכול להפעיל אותו ישירות במצב CLI על ידי הרצת הפקודה הבאה:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-זה ירשום את כל הכלים הזמינים בשרת. אתם אמורים לראות את הפלט הבא:
+זה ירשום את כל הכלים הזמינים בשרת. אתה אמור לראות את הפלט הבא:
 
 ```text
 {
@@ -91,13 +92,13 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 }
 ```
 
-כדי להפעיל כלי הקלידו:
+כדי להפעיל כלי הקלד:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-אתם אמורים לראות את הפלט הבא:
+אתה אמור לראות את הפלט הבא:
 
 ```text
 {
@@ -112,8 +113,8 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call 
 ```
 
 > ![!TIP]
-> בדרך כלל מהיר יותר להריץ את הבודק במצב CLI מאשר בדפדפן.
-> קראו עוד על הבודק [כאן](https://github.com/modelcontextprotocol/inspector).
+> בדרך כלל הרבה יותר מהיר להריץ את ה-inspector במצב CLI מאשר בדפדפן.
+> קרא עוד על ה-inspector [כאן](https://github.com/modelcontextprotocol/inspector).
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). בעוד שאנו שואפים לדיוק, אנא היו מודעים לכך שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור הסמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי בני אדם. אנו לא אחראים לאי הבנות או לפרשנויות מוטעות הנובעות משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

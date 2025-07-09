@@ -1,41 +1,41 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-17T09:16:18+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T23:06:12+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "tr"
 }
 -->
 # Bu örneği çalıştırma
 
-`uv` kurmanız önerilir, ancak zorunlu değildir, [talimatlara](https://docs.astral.sh/uv/#highlights) bakın.
+`uv` kurmanız önerilir ancak zorunlu değildir, detaylar için [talimatlara](https://docs.astral.sh/uv/#highlights) bakabilirsiniz.
 
-## -0- Sanal bir ortam oluşturun
+## -0- Sanal ortam oluşturma
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Sanal ortamı etkinleştirin
+## -1- Sanal ortamı aktifleştirme
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Bağımlılıkları yükleyin
+## -2- Bağımlılıkları yükleme
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- Örneği çalıştırın
+## -3- Örneği çalıştırma
 
 ```bash
 mcp run server.py
 ```
 
-## -4- Örneği test edin
+## -4- Örneği test etme
 
 Sunucu bir terminalde çalışırken, başka bir terminal açın ve aşağıdaki komutu çalıştırın:
 
@@ -43,16 +43,17 @@ Sunucu bir terminalde çalışırken, başka bir terminal açın ve aşağıdaki
 mcp dev server.py
 ```
 
-Bu, örneği test etmenize olanak tanıyan görsel bir arayüzle bir web sunucusunu başlatmalıdır.
+Bu, örneği test etmenize olanak sağlayan görsel arayüze sahip bir web sunucusunu başlatmalıdır.
 
-Sunucu bağlandığında:
+Sunucu bağlandıktan sonra:
 
-- araçları listelemeyi deneyin ve `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- araçları listelemeyi deneyin ve `add` komutunu, argüman olarak 2 ve 4 ile çalıştırın, sonuçta 6 görmelisiniz.
 
-### Testing in ClI mode
+- resources ve resource template kısmına gidin, get_greeting fonksiyonunu çağırın, bir isim yazın ve verdiğiniz isimle bir selamlama görmelisiniz.
 
-The inspector you ran is actually a Node.js app and `mcp dev` onun etrafında bir sarmalayıcıdır.
+### CLI modunda test etme
+
+Çalıştırdığınız inspector aslında bir Node.js uygulamasıdır ve `mcp dev` bunun etrafında bir sarmalayıcıdır.
 
 Aşağıdaki komutu çalıştırarak doğrudan CLI modunda başlatabilirsiniz:
 
@@ -91,7 +92,7 @@ Bu, sunucuda mevcut olan tüm araçları listeleyecektir. Aşağıdaki çıktıy
 }
 ```
 
-Bir aracı çağırmak için yazın:
+Bir aracı çağırmak için şunu yazın:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
@@ -112,8 +113,8 @@ Aşağıdaki çıktıyı görmelisiniz:
 ```
 
 > ![!TIP]
-> İnspektörü CLI modunda çalıştırmak genellikle tarayıcıda çalıştırmaktan çok daha hızlıdır.
-> İnspektör hakkında daha fazla bilgiyi [burada](https://github.com/modelcontextprotocol/inspector) okuyun.
+> Inspector'ı tarayıcıda çalıştırmaktansa CLI modunda çalıştırmak genellikle çok daha hızlıdır.
+> Inspector hakkında daha fazla bilgi için [buraya](https://github.com/modelcontextprotocol/inspector) bakabilirsiniz.
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

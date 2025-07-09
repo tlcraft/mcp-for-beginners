@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-17T09:17:17+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T23:08:51+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "no"
 }
 -->
-# Å kjøre dette eksemplet
+# Kjøre dette eksempelet
 
-Det anbefales å installere `uv`, men det er ikke nødvendig. Se [instruksjoner](https://docs.astral.sh/uv/#highlights)
+Det anbefales å installere `uv`, men det er ikke et krav, se [instruksjoner](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Opprett et virtuelt miljø
 
@@ -29,38 +29,40 @@ venv\Scrips\activate
 pip install "mcp[cli]"
 ```
 
-## -3- Kjør eksemplet
+## -3- Kjør eksempelet
+
 
 ```bash
 mcp run server.py
 ```
 
-## -4- Test eksemplet
+## -4- Test eksempelet
 
-Med serveren kjørende i en terminal, åpne en annen terminal og kjør følgende kommando:
+Med serveren kjørende i ett terminalvindu, åpne et nytt terminalvindu og kjør følgende kommando:
 
 ```bash
 mcp dev server.py
 ```
 
-Dette skal starte en webserver med et visuelt grensesnitt som lar deg teste eksemplet.
+Dette skal starte en webserver med et visuelt grensesnitt som lar deg teste eksempelet.
 
-Når serveren er koblet til:
+Når serveren er tilkoblet:
 
-- prøv å liste verktøyene og kjør `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- prøv å liste opp verktøy og kjør `add` med argumentene 2 og 4, du skal se 6 som resultat.
 
-### Testing in ClI mode
+- gå til resources og resource template og kall get_greeting, skriv inn et navn og du skal se en hilsen med navnet du oppga.
 
-The inspector you ran is actually a Node.js app and `mcp dev`, som er en innpakning rundt det.
+### Testing i CLI-modus
 
-Du kan starte det direkte i CLI-modus ved å kjøre følgende kommando:
+Inspektøren du kjørte er egentlig en Node.js-app, og `mcp dev` er et wrapper rundt den.
+
+Du kan starte den direkte i CLI-modus ved å kjøre følgende kommando:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Dette vil liste alle verktøyene tilgjengelig på serveren. Du bør se følgende utdata:
+Dette vil liste opp alle verktøyene som er tilgjengelige på serveren. Du skal se følgende output:
 
 ```text
 {
@@ -91,13 +93,13 @@ Dette vil liste alle verktøyene tilgjengelig på serveren. Du bør se følgende
 }
 ```
 
-For å påkalle et verktøy, skriv:
+For å kalle et verktøy, skriv:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Du bør se følgende utdata:
+Du skal se følgende output:
 
 ```text
 {
@@ -116,4 +118,4 @@ Du bør se følgende utdata:
 > Les mer om inspektøren [her](https://github.com/modelcontextprotocol/inspector).
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi etterstreber nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår fra bruken av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

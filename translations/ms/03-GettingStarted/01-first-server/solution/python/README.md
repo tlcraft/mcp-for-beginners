@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-17T09:18:29+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T23:11:58+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "ms"
 }
 -->
 # Menjalankan contoh ini
 
-Anda disarankan untuk memasang `uv` tetapi ia bukanlah satu keperluan, lihat [arahan](https://docs.astral.sh/uv/#highlights)
+Anda disarankan untuk memasang `uv` tetapi ia bukan wajib, lihat [arahan](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Cipta persekitaran maya
 
@@ -23,7 +23,7 @@ python -m venv venv
 venv\Scrips\activate
 ```
 
-## -2- Pasang keperluan
+## -2- Pasang kebergantungan
 
 ```bash
 pip install "mcp[cli]"
@@ -31,36 +31,38 @@ pip install "mcp[cli]"
 
 ## -3- Jalankan contoh
 
+
 ```bash
 mcp run server.py
 ```
 
 ## -4- Uji contoh
 
-Dengan pelayan sedang berjalan di satu terminal, buka terminal lain dan jalankan perintah berikut:
+Dengan pelayan berjalan di satu terminal, buka terminal lain dan jalankan arahan berikut:
 
 ```bash
 mcp dev server.py
 ```
 
-Ini sepatutnya memulakan pelayan web dengan antaramuka visual yang membolehkan anda menguji contoh tersebut.
+Ini sepatutnya memulakan pelayan web dengan antara muka visual yang membolehkan anda menguji contoh.
 
-Sebaik sahaja pelayan bersambung:
+Setelah pelayan disambungkan:
 
-- cuba senaraikan alat dan jalankan `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- cuba senaraikan alat dan jalankan `add`, dengan argumen 2 dan 4, anda sepatutnya melihat 6 dalam keputusan.
 
-### Testing in ClI mode
+- pergi ke resources dan resource template dan panggil get_greeting, taipkan nama dan anda sepatutnya melihat ucapan dengan nama yang anda berikan.
 
-The inspector you ran is actually a Node.js app and `mcp dev` adalah pembungkus di sekelilingnya.
+### Ujian dalam mod CLI
 
-Anda boleh melancarkannya terus dalam mod CLI dengan menjalankan perintah berikut:
+Inspector yang anda jalankan sebenarnya adalah aplikasi Node.js dan `mcp dev` adalah pembungkus di sekelilingnya.
+
+Anda boleh melancarkannya terus dalam mod CLI dengan menjalankan arahan berikut:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Ini akan menyenaraikan semua alat yang tersedia dalam pelayan. Anda sepatutnya melihat keluaran berikut:
+Ini akan menyenaraikan semua alat yang tersedia di pelayan. Anda sepatutnya melihat output berikut:
 
 ```text
 {
@@ -97,7 +99,7 @@ Untuk memanggil alat taip:
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Anda sepatutnya melihat keluaran berikut:
+Anda sepatutnya melihat output berikut:
 
 ```text
 {
@@ -112,8 +114,8 @@ Anda sepatutnya melihat keluaran berikut:
 ```
 
 > ![!TIP]
-> Biasanya lebih cepat menjalankan pemeriksa dalam mod CLI berbanding dalam pelayar.
-> Baca lebih lanjut mengenai pemeriksa [di sini](https://github.com/modelcontextprotocol/inspector).
+> Biasanya lebih pantas menjalankan inspector dalam mod CLI berbanding di pelayar.
+> Baca lebih lanjut tentang inspector [di sini](https://github.com/modelcontextprotocol/inspector).
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

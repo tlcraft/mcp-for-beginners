@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-17T09:17:24+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T23:09:25+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "fi"
 }
@@ -43,16 +43,17 @@ Kun palvelin on käynnissä yhdessä terminaalissa, avaa toinen terminaali ja su
 mcp dev server.py
 ```
 
-Tämän pitäisi käynnistää verkkopalvelin visuaalisella käyttöliittymällä, joka mahdollistaa esimerkin testaamisen.
+Tämän pitäisi käynnistää web-palvelin, jossa on visuaalinen käyttöliittymä, jonka avulla voit testata esimerkkiä.
 
 Kun palvelin on yhdistetty:
 
-- kokeile luetella työkaluja ja suorita `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- kokeile listata työkalut ja suorita `add` argumenteilla 2 ja 4, tuloksena pitäisi näkyä 6.
 
-### Testing in ClI mode
+- siirry resources- ja resource template -kohtiin ja kutsu get_greeting, kirjoita nimi ja näet tervehdyksen antamallasi nimellä.
 
-The inspector you ran is actually a Node.js app and `mcp dev` on sen ympärille rakennettu kääre.
+### Testaus CLI-tilassa
+
+Käyttämäsi inspector on itse asiassa Node.js-sovellus ja `mcp dev` on sen ympärille rakennettu käärö.
 
 Voit käynnistää sen suoraan CLI-tilassa suorittamalla seuraavan komennon:
 
@@ -60,7 +61,7 @@ Voit käynnistää sen suoraan CLI-tilassa suorittamalla seuraavan komennon:
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Tämä luettelee kaikki palvelimella käytettävissä olevat työkalut. Sinun pitäisi nähdä seuraava tuloste:
+Tämä listaa kaikki palvelimella saatavilla olevat työkalut. Näet seuraavanlaisen tulosteen:
 
 ```text
 {
@@ -91,13 +92,13 @@ Tämä luettelee kaikki palvelimella käytettävissä olevat työkalut. Sinun pi
 }
 ```
 
-Käynnistääksesi työkalun kirjoita:
+Työkalun kutsumiseksi kirjoita:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Sinun pitäisi nähdä seuraava tuloste:
+Näet seuraavanlaisen tulosteen:
 
 ```text
 {
@@ -112,8 +113,8 @@ Sinun pitäisi nähdä seuraava tuloste:
 ```
 
 > ![!TIP]
-> On yleensä paljon nopeampaa suorittaa ispector CLI-tilassa kuin selaimessa.
+> On yleensä paljon nopeampaa suorittaa inspector CLI-tilassa kuin selaimessa.
 > Lue lisää inspectorista [täältä](https://github.com/modelcontextprotocol/inspector).
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää auktoritatiivisena lähteenä. Kriittisten tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa mahdollisista väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

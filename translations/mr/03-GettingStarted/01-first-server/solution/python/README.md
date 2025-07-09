@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-17T09:15:13+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T23:02:20+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "mr"
 }
 -->
-# हे नमुना चालवणे
+# हा नमुना चालविणे
 
-तुम्हाला `uv` स्थापित करणे सुचवले जाते, परंतु ते आवश्यक नाही, [सूचना](https://docs.astral.sh/uv/#highlights) पहा
+तुम्हाला `uv` इन्स्टॉल करण्याची शिफारस केली जाते पण ते आवश्यक नाही, पाहा [सूचना](https://docs.astral.sh/uv/#highlights)
 
 ## -0- एक वर्चुअल वातावरण तयार करा
 
@@ -23,7 +23,7 @@ python -m venv venv
 venv\Scrips\activate
 ```
 
-## -2- अवलंबन स्थापित करा
+## -2- अवलंबित्वे इन्स्टॉल करा
 
 ```bash
 pip install "mcp[cli]"
@@ -35,32 +35,33 @@ pip install "mcp[cli]"
 mcp run server.py
 ```
 
-## -4- नमुना तपासा
+## -4- नमुन्याची चाचणी करा
 
-सर्व्हर एका टर्मिनलमध्ये चालू असताना, दुसरे टर्मिनल उघडा आणि खालील आदेश चालवा:
+सर्व्हर एका टर्मिनलमध्ये चालू असताना, दुसरा टर्मिनल उघडा आणि खालील कमांड चालवा:
 
 ```bash
 mcp dev server.py
 ```
 
-हे एक व्हिज्युअल इंटरफेससह वेब सर्व्हर सुरू करेल, ज्यामुळे तुम्हाला नमुना तपासता येईल.
+यामुळे एक वेब सर्व्हर सुरू होईल ज्यामध्ये एक दृश्यात्मक इंटरफेस असेल ज्याद्वारे तुम्ही नमुन्याची चाचणी करू शकता.
 
-एकदा सर्व्हर कनेक्ट झाल्यावर:
+सर्व्हर कनेक्ट झाल्यानंतर:
 
-- साधनांची यादी करण्याचा प्रयत्न करा आणि `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- टूल्सची यादी पाहा आणि `add` चालवा, 2 आणि 4 या आर्ग्युमेंट्ससह, तुम्हाला निकालात 6 दिसेल.
 
-### Testing in ClI mode
+- resources आणि resource template मध्ये जा आणि get_greeting कॉल करा, नाव टाका आणि तुम्हाला दिलेल्या नावासह एक अभिवादन दिसेल.
 
-The inspector you ran is actually a Node.js app and `mcp dev` हे त्याचे आवरण आहे.
+### CLI मोडमध्ये चाचणी
 
-तुम्ही खालील आदेश चालवून CLI मोडमध्ये थेट ते सुरू करू शकता:
+तुम्ही चालवलेला inspector प्रत्यक्षात Node.js अॅप आहे आणि `mcp dev` त्याचा एक wrapper आहे.
+
+तुम्ही खालील कमांड चालवून थेट CLI मोडमध्ये ते सुरू करू शकता:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-हे सर्व्हरमध्ये उपलब्ध असलेली सर्व साधने सूचीबद्ध करेल. तुम्हाला खालील आउटपुट दिसायला हवे:
+यामुळे सर्व्हरमधील सर्व टूल्सची यादी दिसेल. तुम्हाला खालील आउटपुट दिसेल:
 
 ```text
 {
@@ -91,13 +92,13 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 }
 ```
 
-एखादे साधन वापरण्यासाठी टाइप करा:
+टूल invoke करण्यासाठी टाइप करा:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-तुम्हाला खालील आउटपुट दिसायला हवे:
+तुम्हाला खालील आउटपुट दिसेल:
 
 ```text
 {
@@ -112,8 +113,8 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call 
 ```
 
 > ![!TIP]
-> ब्राउझरपेक्षा CLI मोडमध्ये ispector चालवणे सहसा खूप जलद असते.
-> निरीक्षकाबद्दल अधिक वाचा [येथे](https://github.com/modelcontextprotocol/inspector).
+> CLI मोडमध्ये inspector चालवणे ब्राउझरच्या तुलनेत सहसा खूप जलद असते.
+> inspector बद्दल अधिक वाचा [इथे](https://github.com/modelcontextprotocol/inspector).
 
 **अस्वीकरण**:  
-हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित करण्यात आला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी कृपया लक्षात ठेवा की स्वयंचलित अनुवादांमध्ये त्रुटी किंवा अपूर्णता असू शकतात. मूळ भाषेतील दस्तऐवज हा अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी, व्यावसायिक मानवी अनुवादाची शिफारस केली जाते. या अनुवादाचा वापर करून उद्भवणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थ लावण्यास आम्ही जबाबदार नाही.
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद करण्याची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.

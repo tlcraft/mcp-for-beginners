@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-16T15:11:55+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T22:54:17+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "fr"
 }
 -->
-# Exécution de cet exemple
+# Exécuter cet exemple
 
-Il est recommandé d’installer `uv` mais ce n’est pas obligatoire, voir les [instructions](https://docs.astral.sh/uv/#highlights)
+Il est recommandé d’installer `uv` mais ce n’est pas obligatoire, voir [instructions](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Créer un environnement virtuel
 
@@ -29,7 +29,7 @@ venv\Scrips\activate
 pip install "mcp[cli]"
 ```
 
-## -3- Lancer l’exemple
+## -3- Exécuter l’exemple
 
 
 ```bash
@@ -38,7 +38,7 @@ mcp run server.py
 
 ## -4- Tester l’exemple
 
-Avec le serveur en cours d’exécution dans un terminal, ouvrez un autre terminal et exécutez la commande suivante :
+Avec le serveur en cours d’exécution dans un terminal, ouvrez un autre terminal et lancez la commande suivante :
 
 ```bash
 mcp dev server.py
@@ -48,12 +48,13 @@ Cela devrait démarrer un serveur web avec une interface visuelle vous permettan
 
 Une fois le serveur connecté :
 
-- essayez de lister les outils et exécutez `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- essayez de lister les outils et exécutez `add`, avec les arguments 2 et 4, vous devriez voir 6 dans le résultat.
 
-### Testing in ClI mode
+- allez dans resources et resource template et appelez get_greeting, saisissez un nom et vous devriez voir un message de bienvenue avec le nom que vous avez fourni.
 
-The inspector you ran is actually a Node.js app and `mcp dev` qui est un wrapper autour.
+### Tester en mode CLI
+
+L’inspecteur que vous avez lancé est en fait une application Node.js et `mcp dev` est un wrapper autour de celle-ci.
 
 Vous pouvez le lancer directement en mode CLI en exécutant la commande suivante :
 
@@ -113,8 +114,8 @@ Vous devriez voir la sortie suivante :
 ```
 
 > ![!TIP]
-> Il est généralement beaucoup plus rapide d’exécuter l’inspector en mode CLI que dans le navigateur.
-> Pour en savoir plus sur l’inspector, consultez [ici](https://github.com/modelcontextprotocol/inspector).
+> Il est généralement beaucoup plus rapide d’exécuter l’inspecteur en mode CLI que dans le navigateur.
+> Pour en savoir plus sur l’inspecteur, consultez [ici](https://github.com/modelcontextprotocol/inspector).
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

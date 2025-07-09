@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-16T15:12:10+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T23:00:01+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "ja"
 }
 -->
 # このサンプルの実行
 
-`uv` のインストールを推奨しますが、必須ではありません。詳細は[instructions](https://docs.astral.sh/uv/#highlights)を参照してください。
+`uv` のインストールを推奨しますが、必須ではありません。詳しくは [instructions](https://docs.astral.sh/uv/#highlights) をご覧ください。
 
 ## -0- 仮想環境の作成
 
@@ -37,30 +37,31 @@ mcp run server.py
 
 ## -4- サンプルのテスト
 
-サーバーを一つのターミナルで起動したまま、別のターミナルを開いて以下のコマンドを実行してください：
+サーバーを一つのターミナルで起動したまま、別のターミナルを開いて以下のコマンドを実行してください。
 
 ```bash
 mcp dev server.py
 ```
 
-これにより、サンプルをテストできるビジュアルインターフェース付きのウェブサーバーが起動します。
+これで、サンプルをテストできるビジュアルインターフェース付きのウェブサーバーが起動するはずです。
 
-サーバーに接続したら：
+サーバーが接続されたら：
 
-- ツールの一覧を表示し、`add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- ツールの一覧を試し、`add` を引数 2 と 4 で実行してみてください。結果に 6 が表示されるはずです。
 
-### Testing in ClI mode
+- resources と resource template に移動し、get_greeting を呼び出して名前を入力すると、入力した名前入りの挨拶が表示されます。
 
-The inspector you ran is actually a Node.js app and `mcp dev` はそのラッパーです。
+### CLIモードでのテスト
 
-以下のコマンドを実行すると、CLIモードで直接起動できます：
+実行したインスペクターは実際には Node.js アプリで、`mcp dev` はそのラッパーです。
+
+以下のコマンドで直接 CLI モードで起動できます。
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-これでサーバーで利用可能な全ツールが一覧表示されます。次のような出力が得られるはずです：
+これにより、サーバーで利用可能なすべてのツールが一覧表示されます。以下のような出力が表示されるはずです。
 
 ```text
 {
@@ -91,13 +92,13 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 }
 ```
 
-ツールを呼び出すには、以下のように入力します：
+ツールを呼び出すには、以下のように入力します。
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-次のような出力が表示されるはずです：
+以下のような出力が表示されるはずです。
 
 ```text
 {
@@ -112,8 +113,8 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call 
 ```
 
 > ![!TIP]
-> ブラウザよりもCLIモードでインスペクターを実行したほうが通常ははるかに高速です。
-> インスペクターの詳細は[こちら](https://github.com/modelcontextprotocol/inspector)を参照してください。
+> インスペクターをブラウザより CLI モードで実行するほうが通常はずっと高速です。
+> インスペクターの詳細は [こちら](https://github.com/modelcontextprotocol/inspector) をご覧ください。
 
-**免責事項**:  
-本書類はAI翻訳サービス「Co-op Translator」（https://github.com/Azure/co-op-translator）を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。原文の母国語版が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

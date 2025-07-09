@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-16T15:12:34+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T23:05:38+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "pl"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 Zaleca się zainstalowanie `uv`, ale nie jest to konieczne, zobacz [instrukcje](https://docs.astral.sh/uv/#highlights)
 
-## -0- Utwórz wirtualne środowisko
+## -0- Utwórz środowisko wirtualne
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Aktywuj wirtualne środowisko
+## -1- Aktywuj środowisko wirtualne
 
 ```bash
 venv\Scrips\activate
@@ -31,7 +31,6 @@ pip install "mcp[cli]"
 
 ## -3- Uruchom przykład
 
-
 ```bash
 mcp run server.py
 ```
@@ -44,16 +43,17 @@ Gdy serwer działa w jednym terminalu, otwórz drugi terminal i uruchom następu
 mcp dev server.py
 ```
 
-To powinno uruchomić serwer WWW z interfejsem graficznym, który pozwoli Ci przetestować przykład.
+To powinno uruchomić serwer WWW z interfejsem wizualnym, który pozwoli Ci przetestować przykład.
 
 Po połączeniu z serwerem:
 
-- spróbuj wyświetlić listę narzędzi i uruchomić `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- spróbuj wyświetlić listę narzędzi i uruchom `add` z argumentami 2 i 4, w wyniku powinno pojawić się 6.
 
-### Testing in ClI mode
+- przejdź do zasobów i szablonu zasobu, wywołaj get_greeting, wpisz imię i powinieneś zobaczyć powitanie z podanym imieniem.
 
-The inspector you ran is actually a Node.js app and `mcp dev` to nakładka na to.
+### Testowanie w trybie CLI
+
+Inspektor, który uruchomiłeś, to w rzeczywistości aplikacja Node.js, a `mcp dev` to jej nakładka.
 
 Możesz uruchomić go bezpośrednio w trybie CLI, wykonując następujące polecenie:
 
@@ -61,7 +61,7 @@ Możesz uruchomić go bezpośrednio w trybie CLI, wykonując następujące polec
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-To wyświetli listę wszystkich narzędzi dostępnych na serwerze. Powinieneś zobaczyć następujące wyjście:
+To wyświetli listę wszystkich narzędzi dostępnych na serwerze. Powinieneś zobaczyć następujący wynik:
 
 ```text
 {
@@ -98,7 +98,7 @@ Aby wywołać narzędzie, wpisz:
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Powinieneś zobaczyć następujące wyjście:
+Powinieneś zobaczyć następujący wynik:
 
 ```text
 {
@@ -117,4 +117,4 @@ Powinieneś zobaczyć następujące wyjście:
 > Więcej o inspektorze przeczytasz [tutaj](https://github.com/modelcontextprotocol/inspector).
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za wiarygodne źródło informacji. W przypadku informacji o istotnym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

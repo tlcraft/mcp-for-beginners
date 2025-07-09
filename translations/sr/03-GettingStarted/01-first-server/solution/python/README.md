@@ -1,66 +1,68 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-17T09:19:58+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T23:16:23+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "sr"
 }
 -->
-# Pokretanje ovog primera
+# Покретање овог примера
 
-Preporučuje se instalacija `uv`, ali nije obavezna, pogledajte [uputstva](https://docs.astral.sh/uv/#highlights)
+Препоручује се да инсталирате `uv`, али није обавезно, погледајте [упутства](https://docs.astral.sh/uv/#highlights)
 
-## -0- Kreirajte virtuelno okruženje
+## -0- Креирајте виртуелно окружење
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Aktivirajte virtuelno okruženje
+## -1- Активирајте виртуелно окружење
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Instalirajte zavisnosti
+## -2- Инсталирајте зависности
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- Pokrenite primer
+## -3- Покрените пример
+
 
 ```bash
 mcp run server.py
 ```
 
-## -4- Testirajte primer
+## -4- Тестирајте пример
 
-Sa serverom koji radi u jednom terminalu, otvorite drugi terminal i pokrenite sledeću komandu:
+Док сервер ради у једном терминалу, отворите други терминал и покрените следећу команду:
 
 ```bash
 mcp dev server.py
 ```
 
-Ovo bi trebalo da pokrene veb server sa vizuelnim interfejsom koji vam omogućava da testirate primer.
+Ово би требало да покрене веб сервер са визуелним интерфејсом који вам омогућава да тестирате пример.
 
-Kada se server poveže:
+Када се сервер повеже:
 
-- pokušajte da prikažete alate i pokrenete `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- покушајте да набројите алате и покренете `add` са аргументима 2 и 4, требало би да видите резултат 6.
 
-### Testing in ClI mode
+- идите на resources и resource template и позовите get_greeting, унесите име и требало би да видите поздрав са именом које сте унели.
 
-The inspector you ran is actually a Node.js app and `mcp dev`, što je omotač oko njega.
+### Тестирање у CLI режиму
 
-Možete ga pokrenuti direktno u CLI modu izvršavanjem sledeće komande:
+Инспектор који сте покренули је у ствари Node.js апликација, а `mcp dev` је омотач око ње.
+
+Можете га покренути директно у CLI режиму покретањем следеће команде:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Ovo će prikazati sve dostupne alate na serveru. Trebalo bi da vidite sledeći izlaz:
+Ово ће набројати све алате доступне на серверу. Требало би да видите следећи излаз:
 
 ```text
 {
@@ -91,13 +93,13 @@ Ovo će prikazati sve dostupne alate na serveru. Trebalo bi da vidite sledeći i
 }
 ```
 
-Da biste pozvali alat, otkucajte:
+Да бисте позвали алат укуцајте:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Trebalo bi da vidite sledeći izlaz:
+Требало би да видите следећи излаз:
 
 ```text
 {
@@ -112,8 +114,8 @@ Trebalo bi da vidite sledeći izlaz:
 ```
 
 > ![!TIP]
-> Obično je mnogo brže pokrenuti ispektor u CLI modu nego u pretraživaču.
-> Pročitajte više o ispektoru [ovde](https://github.com/modelcontextprotocol/inspector).
+> Обично је много брже покренути инспектор у CLI режиму него у прегледачу.
+> Више о инспектору прочитајте [овде](https://github.com/modelcontextprotocol/inspector).
 
-**Одричање од одговорности**:  
-Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да постигнемо тачност, молимо вас да будете свесни да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати меродавним извором. За критичне информације, препоручује се професионални превод од стране људи. Не сносимо одговорност за било какве неспоразуме или погрешна тумачења која могу произаћи из употребе овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.
