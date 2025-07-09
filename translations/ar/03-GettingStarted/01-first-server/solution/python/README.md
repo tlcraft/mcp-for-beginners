@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-17T09:13:48+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T22:56:16+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "ar"
 }
 -->
-# تشغيل هذا النموذج
+# تشغيل هذا المثال
 
-يوصى بتثبيت `uv` ولكنه ليس ضروريًا، انظر [التعليمات](https://docs.astral.sh/uv/#highlights)
+يوصى بتثبيت `uv` لكنه ليس ضروريًا، راجع [التعليمات](https://docs.astral.sh/uv/#highlights)
 
 ## -0- إنشاء بيئة افتراضية
 
@@ -23,19 +23,19 @@ python -m venv venv
 venv\Scrips\activate
 ```
 
-## -2- تثبيت الاعتمادات
+## -2- تثبيت التبعيات
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- تشغيل النموذج
+## -3- تشغيل المثال
 
 ```bash
 mcp run server.py
 ```
 
-## -4- اختبار النموذج
+## -4- اختبار المثال
 
 مع تشغيل الخادم في نافذة طرفية واحدة، افتح نافذة طرفية أخرى وقم بتشغيل الأمر التالي:
 
@@ -43,24 +43,25 @@ mcp run server.py
 mcp dev server.py
 ```
 
-يجب أن يبدأ هذا تشغيل خادم ويب بواجهة مرئية تتيح لك اختبار النموذج.
+يجب أن يبدأ هذا خادم ويب بواجهة مرئية تتيح لك اختبار المثال.
 
 بمجرد اتصال الخادم:
 
-- حاول سرد الأدوات وتشغيل `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- جرب عرض الأدوات وتشغيل `add` مع الوسيطين 2 و4، يجب أن ترى النتيجة 6.
 
-### Testing in ClI mode
+- انتقل إلى الموارد وقالب الموارد واستدعِ get_greeting، اكتب اسمًا وسترى تحية تحتوي على الاسم الذي أدخلته.
 
-The inspector you ran is actually a Node.js app and `mcp dev` هو عبارة عن غلاف حوله.
+### الاختبار في وضع CLI
 
-يمكنك تشغيله مباشرة في وضع CLI عن طريق تشغيل الأمر التالي:
+المفتش الذي شغلته هو في الواقع تطبيق Node.js و`mcp dev` هو غلاف له.
+
+يمكنك تشغيله مباشرة في وضع CLI عن طريق تنفيذ الأمر التالي:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-سيقوم ذلك بسرد جميع الأدوات المتاحة في الخادم. يجب أن ترى الإخراج التالي:
+سيعرض هذا جميع الأدوات المتاحة في الخادم. يجب أن ترى المخرجات التالية:
 
 ```text
 {
@@ -91,13 +92,13 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 }
 ```
 
-للاستدعاء أداة اكتب:
+لاستدعاء أداة اكتب:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-يجب أن ترى الإخراج التالي:
+يجب أن ترى المخرجات التالية:
 
 ```text
 {
@@ -116,4 +117,4 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call 
 > اقرأ المزيد عن المفتش [هنا](https://github.com/modelcontextprotocol/inspector).
 
 **إخلاء المسؤولية**:  
-تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو معلومات غير دقيقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للحصول على معلومات حساسة، يُوصى بالترجمة البشرية الاحترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسير خاطئ ناتج عن استخدام هذه الترجمة.
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-17T09:14:45+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T22:59:27+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "tw"
 }
 -->
 # 執行此範例
 
-建議安裝 `uv`，但不是必須的，請參閱[說明](https://docs.astral.sh/uv/#highlights)
+建議安裝 `uv`，但非必要，詳見[說明](https://docs.astral.sh/uv/#highlights)
 
 ## -0- 建立虛擬環境
 
@@ -23,7 +23,7 @@ python -m venv venv
 venv\Scrips\activate
 ```
 
-## -2- 安裝依賴項
+## -2- 安裝相依套件
 
 ```bash
 pip install "mcp[cli]"
@@ -37,30 +37,31 @@ mcp run server.py
 
 ## -4- 測試範例
 
-在一個終端中運行伺服器，然後打開另一個終端並執行以下命令：
+在一個終端機啟動伺服器後，開啟另一個終端機並執行以下指令：
 
 ```bash
 mcp dev server.py
 ```
 
-這應該會啟動一個具有視覺介面的網絡伺服器，允許你測試範例。
+這會啟動一個帶有視覺介面的網頁伺服器，讓你可以測試範例。
 
-伺服器連接後：
+伺服器連線後：
 
-- 嘗試列出工具並運行 `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- 試著列出工具並執行 `add`，帶入參數 2 和 4，結果應該會顯示 6。
 
-### Testing in ClI mode
+- 前往 resources 和 resource template，呼叫 get_greeting，輸入一個名字，你應該會看到帶有該名字的問候語。
 
-The inspector you ran is actually a Node.js app and `mcp dev` 是其包裝器。
+### CLI 模式測試
 
-你可以通過運行以下命令直接在 CLI 模式中啟動它：
+你執行的 inspector 實際上是個 Node.js 應用程式，而 `mcp dev` 是它的包裝器。
+
+你可以直接用 CLI 模式啟動它，執行以下指令：
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-這將列出伺服器中所有可用的工具。你應該會看到以下輸出：
+這會列出伺服器中所有可用的工具，你應該會看到以下輸出：
 
 ```text
 {
@@ -91,7 +92,7 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 }
 ```
 
-要調用工具，請輸入：
+要呼叫工具，輸入：
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
@@ -112,8 +113,8 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call 
 ```
 
 > ![!TIP]
-> 通常在 CLI 模式中運行 ispector 比在瀏覽器中要快得多。
-> 在[這裡](https://github.com/modelcontextprotocol/inspector)閱讀更多關於 ispector 的信息。
+> 通常在 CLI 模式下執行 inspector 比在瀏覽器中快很多。
+> 更多關於 inspector 的資訊請參考[這裡](https://github.com/modelcontextprotocol/inspector)。
 
-**免責聲明**：
-本文檔使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始語言的文檔應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。因使用此翻譯而產生的任何誤解或誤讀，我們概不負責。
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-17T09:18:06+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T23:11:00+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "vi"
 }
 -->
-# Chạy mẫu này
+# Chạy ví dụ này
 
-Bạn được khuyến nghị cài đặt `uv` nhưng không bắt buộc, xem [hướng dẫn](https://docs.astral.sh/uv/#highlights)
+Bạn nên cài đặt `uv` nhưng không bắt buộc, xem [hướng dẫn](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Tạo môi trường ảo
 
@@ -29,38 +29,40 @@ venv\Scrips\activate
 pip install "mcp[cli]"
 ```
 
-## -3- Chạy mẫu
+## -3- Chạy ví dụ
+
 
 ```bash
 mcp run server.py
 ```
 
-## -4- Kiểm tra mẫu
+## -4- Kiểm tra ví dụ
 
-Với máy chủ đang chạy trong một terminal, mở terminal khác và chạy lệnh sau:
+Khi server đang chạy trong một terminal, mở terminal khác và chạy lệnh sau:
 
 ```bash
 mcp dev server.py
 ```
 
-Điều này sẽ khởi động một máy chủ web với giao diện trực quan cho phép bạn kiểm tra mẫu.
+Lệnh này sẽ khởi động một web server với giao diện trực quan cho phép bạn kiểm tra ví dụ.
 
-Khi máy chủ đã kết nối:
+Khi server đã kết nối:
 
-- thử liệt kê các công cụ và chạy `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- thử liệt kê các công cụ và chạy `add` với các tham số 2 và 4, bạn sẽ thấy kết quả là 6.
 
-### Testing in ClI mode
+- vào phần resources và resource template, gọi get_greeting, nhập tên và bạn sẽ thấy lời chào với tên bạn đã nhập.
 
-The inspector you ran is actually a Node.js app and `mcp dev` là một trình bao quanh nó.
+### Kiểm tra ở chế độ CLI
 
-Bạn có thể khởi động nó trực tiếp ở chế độ CLI bằng cách chạy lệnh sau:
+Inspector bạn chạy thực chất là một ứng dụng Node.js và `mcp dev` là một trình bao bọc cho nó.
+
+Bạn có thể khởi chạy trực tiếp ở chế độ CLI bằng cách chạy lệnh sau:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Điều này sẽ liệt kê tất cả các công cụ có sẵn trong máy chủ. Bạn sẽ thấy đầu ra sau:
+Lệnh này sẽ liệt kê tất cả các công cụ có trên server. Bạn sẽ thấy kết quả như sau:
 
 ```text
 {
@@ -91,13 +93,13 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 }
 ```
 
-Để gọi một công cụ, nhập:
+Để gọi một công cụ, gõ:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Bạn sẽ thấy đầu ra sau:
+Bạn sẽ thấy kết quả như sau:
 
 ```text
 {
@@ -112,8 +114,8 @@ Bạn sẽ thấy đầu ra sau:
 ```
 
 > ![!TIP]
-> Thường nhanh hơn nhiều khi chạy ispector ở chế độ CLI so với trên trình duyệt.
-> Đọc thêm về ispector [tại đây](https://github.com/modelcontextprotocol/inspector).
+> Thường thì chạy inspector ở chế độ CLI sẽ nhanh hơn nhiều so với chạy trên trình duyệt.
+> Đọc thêm về inspector [tại đây](https://github.com/modelcontextprotocol/inspector).
 
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin có thẩm quyền. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp của con người. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

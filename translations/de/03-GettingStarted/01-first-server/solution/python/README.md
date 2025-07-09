@@ -1,43 +1,43 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-16T15:12:03+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T22:55:17+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "de"
 }
 -->
-# Dieses Beispiel ausführen
+# Ausführen dieses Beispiels
 
 Es wird empfohlen, `uv` zu installieren, ist aber nicht zwingend erforderlich. Siehe [Anleitung](https://docs.astral.sh/uv/#highlights)
 
-## -0- Eine virtuelle Umgebung erstellen
+## -0- Erstelle eine virtuelle Umgebung
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Die virtuelle Umgebung aktivieren
+## -1- Aktiviere die virtuelle Umgebung
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Die Abhängigkeiten installieren
+## -2- Installiere die Abhängigkeiten
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- Das Beispiel ausführen
+## -3- Führe das Beispiel aus
 
 ```bash
 mcp run server.py
 ```
 
-## -4- Das Beispiel testen
+## -4- Teste das Beispiel
 
-Mit dem laufenden Server in einem Terminal öffne ein weiteres Terminal und führe folgenden Befehl aus:
+Während der Server in einem Terminal läuft, öffne ein weiteres Terminal und führe folgenden Befehl aus:
 
 ```bash
 mcp dev server.py
@@ -47,20 +47,21 @@ Dadurch sollte ein Webserver mit einer visuellen Oberfläche gestartet werden, m
 
 Sobald der Server verbunden ist:
 
-- versuche, Tools aufzulisten, und führe `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- Versuche, die Tools aufzulisten und führe `add` mit den Argumenten 2 und 4 aus, im Ergebnis solltest du 6 sehen.
 
-### Testing in ClI mode
+- Gehe zu resources und resource template und rufe get_greeting auf, gib einen Namen ein und du solltest eine Begrüßung mit dem eingegebenen Namen sehen.
 
-The inspector you ran is actually a Node.js app and `mcp dev` aus, das ein Wrapper dafür ist.
+### Testen im CLI-Modus
 
-Du kannst es auch direkt im CLI-Modus starten, indem du folgenden Befehl ausführst:
+Der Inspector, den du gestartet hast, ist eigentlich eine Node.js-Anwendung und `mcp dev` ist ein Wrapper darum herum.
+
+Du kannst ihn direkt im CLI-Modus starten, indem du folgenden Befehl ausführst:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Dies listet alle auf dem Server verfügbaren Tools auf. Du solltest folgende Ausgabe sehen:
+Dies listet alle im Server verfügbaren Tools auf. Du solltest folgende Ausgabe sehen:
 
 ```text
 {
@@ -112,8 +113,8 @@ Du solltest folgende Ausgabe sehen:
 ```
 
 > ![!TIP]
-> Im CLI-Modus läuft der Inspector meist deutlich schneller als im Browser.
+> Es ist in der Regel viel schneller, den Inspector im CLI-Modus als im Browser auszuführen.
 > Mehr zum Inspector findest du [hier](https://github.com/modelcontextprotocol/inspector).
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

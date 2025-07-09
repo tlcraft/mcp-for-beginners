@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-16T15:11:48+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T22:54:46+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "es"
 }
@@ -31,14 +31,13 @@ pip install "mcp[cli]"
 
 ## -3- Ejecutar el ejemplo
 
-
 ```bash
 mcp run server.py
 ```
 
 ## -4- Probar el ejemplo
 
-Con el servidor ejecutándose en una terminal, abre otra terminal y ejecuta el siguiente comando:
+Con el servidor corriendo en una terminal, abre otra terminal y ejecuta el siguiente comando:
 
 ```bash
 mcp dev server.py
@@ -48,14 +47,15 @@ Esto debería iniciar un servidor web con una interfaz visual que te permitirá 
 
 Una vez que el servidor esté conectado:
 
-- intenta listar las herramientas y ejecutar `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- intenta listar las herramientas y ejecutar `add`, con los argumentos 2 y 4, deberías ver 6 como resultado.
 
-### Testing in ClI mode
+- ve a resources y resource template y llama a get_greeting, escribe un nombre y deberías ver un saludo con el nombre que proporcionaste.
 
-The inspector you ran is actually a Node.js app and `mcp dev` que es un envoltorio alrededor de ello.
+### Pruebas en modo CLI
 
-Puedes iniciarlo directamente en modo CLI ejecutando el siguiente comando:
+El inspector que ejecutaste es en realidad una aplicación Node.js y `mcp dev` es un envoltorio alrededor de ella.
+
+Puedes lanzarlo directamente en modo CLI ejecutando el siguiente comando:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
@@ -113,8 +113,8 @@ Deberías ver la siguiente salida:
 ```
 
 > ![!TIP]
-> Usualmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
+> Generalmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
 > Lee más sobre el inspector [aquí](https://github.com/modelcontextprotocol/inspector).
 
-**Aviso Legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

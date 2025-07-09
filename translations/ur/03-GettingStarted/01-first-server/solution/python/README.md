@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c49dc211615eefbcd6ea6e7d9f2d4e39",
-  "translation_date": "2025-05-17T09:14:07+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-09T22:57:22+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "ur"
 }
 -->
 # اس نمونے کو چلانا
 
-آپ کو `uv` انسٹال کرنے کی سفارش کی جاتی ہے لیکن یہ لازمی نہیں ہے، [ہدایات](https://docs.astral.sh/uv/#highlights) دیکھیں
+آپ کو `uv` انسٹال کرنے کی سفارش کی جاتی ہے لیکن یہ ضروری نہیں ہے، مزید معلومات کے لیے [ہدایات](https://docs.astral.sh/uv/#highlights) دیکھیں۔
 
 ## -0- ایک ورچوئل ماحول بنائیں
 
@@ -23,44 +23,45 @@ python -m venv venv
 venv\Scrips\activate
 ```
 
-## -2- ضروریات کو انسٹال کریں
+## -2- انحصار انسٹال کریں
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- نمونے کو چلائیں
+## -3- نمونہ چلائیں
 
 ```bash
 mcp run server.py
 ```
 
-## -4- نمونے کو آزمائیں
+## -4- نمونے کا ٹیسٹ کریں
 
-ایک ٹرمینل میں سرور چلانے کے ساتھ، دوسرا ٹرمینل کھولیں اور درج ذیل کمانڈ چلائیں:
+جب سرور ایک ٹرمینل میں چل رہا ہو، تو دوسرا ٹرمینل کھولیں اور درج ذیل کمانڈ چلائیں:
 
 ```bash
 mcp dev server.py
 ```
 
-یہ ایک ویب سرور کو بصری انٹرفیس کے ساتھ شروع کرے گا جو آپ کو نمونے کو آزمانے کی اجازت دیتا ہے۔
+اس سے ایک ویب سرور شروع ہو جائے گا جس کا ایک بصری انٹرفیس ہوگا جو آپ کو نمونے کا ٹیسٹ کرنے کی اجازت دے گا۔
 
-جب سرور منسلک ہو جائے:
+جب سرور کنیکٹ ہو جائے:
 
-- ٹولز کی فہرست بنانے کی کوشش کریں اور `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- ٹولز کی فہرست دیکھنے کی کوشش کریں اور `add` چلائیں، دلائل 2 اور 4 کے ساتھ، آپ کو نتیجے میں 6 نظر آنا چاہیے۔
 
-### Testing in ClI mode
+- resources اور resource template پر جائیں اور get_greeting کال کریں، ایک نام ٹائپ کریں اور آپ کو وہی نام شامل کرتے ہوئے ایک سلامی نظر آئے گی۔
 
-The inspector you ran is actually a Node.js app and `mcp dev` کو چلائیں، یہ اس کے گرد ایک ریپر ہے۔
+### CLI موڈ میں ٹیسٹنگ
 
-آپ اسے CLI موڈ میں براہ راست چلانے کے لیے درج ذیل کمانڈ چلا سکتے ہیں:
+جو inspector آپ نے چلایا ہے وہ درحقیقت ایک Node.js ایپ ہے اور `mcp dev` اس کا ایک ریپر ہے۔
+
+آپ اسے براہ راست CLI موڈ میں درج ذیل کمانڈ چلا کر شروع کر سکتے ہیں:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-یہ سرور میں دستیاب تمام ٹولز کی فہرست بنائے گا۔ آپ کو درج ذیل نتائج دیکھنے چاہئیں:
+یہ سرور میں دستیاب تمام ٹولز کی فہرست دکھائے گا۔ آپ کو درج ذیل آؤٹ پٹ نظر آئے گا:
 
 ```text
 {
@@ -97,7 +98,7 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-آپ کو درج ذیل نتائج دیکھنے چاہئیں:
+آپ کو درج ذیل آؤٹ پٹ نظر آئے گا:
 
 ```text
 {
@@ -112,8 +113,8 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call 
 ```
 
 > ![!TIP]
-> عام طور پر CLI موڈ میں انسپکٹر کو چلانا براؤزر کی نسبت بہت تیز ہوتا ہے۔
-> انسپکٹر کے بارے میں مزید پڑھیں [یہاں](https://github.com/modelcontextprotocol/inspector)۔
+> عام طور پر inspector کو CLI موڈ میں براؤزر کے مقابلے میں بہت تیزی سے چلایا جا سکتا ہے۔
+> inspector کے بارے میں مزید پڑھیں [یہاں](https://github.com/modelcontextprotocol/inspector)۔
 
-**ڈس کلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کے لیے کوشش کرتے ہیں، لیکن براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا نقائص ہو سکتے ہیں۔ اصل دستاویز کو اس کی مقامی زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ورانہ انسانی ترجمہ کی سفارش کی جاتی ہے۔ ہم اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔
+**دستخطی نوٹ**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم اس بات سے آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔
