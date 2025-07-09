@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
-  "translation_date": "2025-06-18T06:10:29+00:00",
+  "original_hash": "07863f50601f395c3bdfce30f555f11a",
+  "translation_date": "2025-07-09T22:00:37+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "sl"
 }
@@ -22,15 +22,15 @@ dotnet restore
 dotnet run
 ```
 
-## -4- Testirajte primer
+## -4- Preizkusite primer
 
-Medtem ko je strežnik zagnan v enem terminalu, odprite drugi terminal in zaženite naslednji ukaz:
+Ko je strežnik zagnan v enem terminalu, odprite drug terminal in zaženite naslednji ukaz:
 
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-To bo zagnalo spletni strežnik z vizualnim vmesnikom, ki vam omogoča testiranje primera.
+To bi moralo zagnati spletni strežnik z vizualnim vmesnikom, ki vam omogoča testiranje primera.
 
 Ko je strežnik povezan:
 
@@ -75,7 +75,7 @@ To bo naštelo vsa orodja, ki so na voljo na strežniku. Videli bi morali nasled
 }
 ```
 
-Za zagon orodja vnesite:
+Za klic orodja vnesite:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-name Add --tool-arg a=1 --tool-arg b=2
@@ -99,5 +99,5 @@ Videli bi morali naslednji izpis:
 > Običajno je veliko hitreje zagnati inspector v CLI načinu kot v brskalniku.
 > Več o inspectorju preberite [tukaj](https://github.com/modelcontextprotocol/inspector).
 
-**Opozorilo**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatski prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Ne odgovarjamo za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

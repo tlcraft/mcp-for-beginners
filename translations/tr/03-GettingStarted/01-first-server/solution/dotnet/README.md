@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
-  "translation_date": "2025-06-18T05:58:55+00:00",
+  "original_hash": "07863f50601f395c3bdfce30f555f11a",
+  "translation_date": "2025-07-09T21:58:36+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "tr"
 }
@@ -29,12 +29,12 @@ Sunucu bir terminalde çalışırken, başka bir terminal açın ve aşağıdaki
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-Bu, örneği test etmenizi sağlayan görsel bir arayüze sahip bir web sunucusu başlatmalıdır.
+Bu, örneği test etmenize olanak tanıyan görsel bir arayüze sahip bir web sunucusunu başlatmalıdır.
 
 Sunucu bağlandıktan sonra:
 
-- araçları listelemeyi deneyin ve argümanlar 2 ve 4 olan `add` komutunu çalıştırın, sonuçta 6 görmelisiniz.
-- resources ve resource template kısmına gidin, "greeting" çağırın, bir isim yazın ve sağladığınız isimle bir selamlama görmelisiniz.
+- araçları listelemeyi deneyin ve `add` komutunu, argümanlar olarak 2 ve 4 ile çalıştırın, sonuçta 6 görmelisiniz.
+- resources ve resource template bölümüne gidin, "greeting" çağırın, bir isim yazın ve verdiğiniz isimle bir selamlama görmelisiniz.
 
 ### CLI modunda test etme
 
@@ -95,8 +95,8 @@ Aşağıdaki çıktıyı görmelisiniz:
 ```
 
 > ![!TIP]
-> Inspector'ı tarayıcı yerine CLI modunda çalıştırmak genellikle çok daha hızlıdır.
+> Inspector'ı tarayıcıda çalıştırmaktansa CLI modunda çalıştırmak genellikle çok daha hızlıdır.
 > Inspector hakkında daha fazla bilgi için [buraya](https://github.com/modelcontextprotocol/inspector) bakabilirsiniz.
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda oluşabilecek yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

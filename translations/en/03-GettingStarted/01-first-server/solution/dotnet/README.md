@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
-  "translation_date": "2025-06-18T05:45:25+00:00",
+  "original_hash": "07863f50601f395c3bdfce30f555f11a",
+  "translation_date": "2025-07-09T21:56:25+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "en"
 }
@@ -34,7 +34,7 @@ This should start a web server with a visual interface that lets you test the sa
 Once the server is connected:
 
 - try listing tools and run `add` with arguments 2 and 4; you should see 6 as the result.
-- go to resources and resource template, call "greeting", enter a name, and you should see a greeting with the name you provided.
+- go to resources and resource template, call "greeting," enter a name, and you should see a greeting with the name you provided.
 
 ### Testing in CLI mode
 

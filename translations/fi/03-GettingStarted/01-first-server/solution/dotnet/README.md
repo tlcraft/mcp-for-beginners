@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
-  "translation_date": "2025-06-18T06:02:14+00:00",
+  "original_hash": "07863f50601f395c3bdfce30f555f11a",
+  "translation_date": "2025-07-09T21:59:11+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "fi"
 }
@@ -29,14 +29,14 @@ Kun palvelin on käynnissä yhdessä terminaalissa, avaa toinen terminaali ja su
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-Tämän pitäisi käynnistää verkkopalvelin, jossa on visuaalinen käyttöliittymä, jonka avulla voit testata esimerkkiä.
+Tämän pitäisi käynnistää web-palvelin, jossa on visuaalinen käyttöliittymä, jonka avulla voit testata esimerkkiä.
 
 Kun palvelin on yhdistetty:
 
-- kokeile listata työkalut ja suorittaa `add` komento argumenteilla 2 ja 4, tuloksena pitäisi näkyä 6.
+- kokeile listata työkalut ja suorita `add` argumenteilla 2 ja 4, tuloksena pitäisi näkyä 6.
 - siirry resources- ja resource template -kohtiin ja kutsu "greeting", kirjoita nimi ja näet tervehdyksen antamallasi nimellä.
 
-### Testaus komentorivillä (CLI-tila)
+### Testaus CLI-tilassa
 
 Voit käynnistää sen suoraan CLI-tilassa suorittamalla seuraavan komennon:
 
@@ -44,7 +44,7 @@ Voit käynnistää sen suoraan CLI-tilassa suorittamalla seuraavan komennon:
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-Tämä listaa kaikki palvelimella saatavilla olevat työkalut. Näet seuraavan tulosteen:
+Tämä listaa kaikki palvelimella saatavilla olevat työkalut. Näet seuraavanlaisen tulosteen:
 
 ```text
 {
@@ -95,8 +95,8 @@ Näet seuraavan tulosteen:
 ```
 
 > ![!TIP]
-> On yleensä paljon nopeampaa suorittaa inspector CLI-tilassa kuin selaimessa.
+> Tarkastimen ajaminen CLI-tilassa on yleensä paljon nopeampaa kuin selaimessa.
 > Lue lisää inspectorista [täältä](https://github.com/modelcontextprotocol/inspector).
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty tekoälypohjaisella käännöspalvelulla [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, ole hyvä ja huomioi, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja omalla kielellään on virallinen lähde. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä mahdollisesti aiheutuvista väärinymmärryksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

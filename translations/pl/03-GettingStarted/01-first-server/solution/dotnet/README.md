@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
-  "translation_date": "2025-06-18T05:58:10+00:00",
+  "original_hash": "07863f50601f395c3bdfce30f555f11a",
+  "translation_date": "2025-07-09T21:58:30+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "pl"
 }
@@ -23,22 +23,22 @@ dotnet run
 
 ## -4- Przetestuj przykład
 
-Gdy serwer działa w jednym terminalu, otwórz kolejny i uruchom następujące polecenie:
+Gdy serwer działa w jednym terminalu, otwórz inny terminal i uruchom następujące polecenie:
 
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-To powinno uruchomić serwer WWW z interfejsem graficznym, który pozwoli Ci przetestować przykład.
+To powinno uruchomić serwer WWW z interfejsem wizualnym, który pozwoli Ci przetestować przykład.
 
 Po połączeniu z serwerem:
 
-- spróbuj wyświetlić listę narzędzi i uruchom `add` z argumentami 2 i 4, w wyniku powinno pojawić się 6.
+- spróbuj wyświetlić listę narzędzi i uruchomić `add` z argumentami 2 i 4, w wyniku powinno pojawić się 6.
 - przejdź do zasobów i szablonu zasobu, wywołaj "greeting", wpisz imię i powinieneś zobaczyć powitanie z podanym imieniem.
 
 ### Testowanie w trybie CLI
 
-Możesz uruchomić to bezpośrednio w trybie CLI, wykonując następujące polecenie:
+Możesz uruchomić go bezpośrednio w trybie CLI, wykonując następujące polecenie:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
@@ -95,8 +95,8 @@ Powinieneś zobaczyć następujący wynik:
 ```
 
 > ![!TIP]
-> Zazwyczaj znacznie szybciej jest uruchomić inspektora w trybie CLI niż w przeglądarce.
-> Więcej informacji o inspektorze znajdziesz [tutaj](https://github.com/modelcontextprotocol/inspector).
+> Zazwyczaj znacznie szybciej jest uruchomić inspector w trybie CLI niż w przeglądarce.
+> Więcej informacji o inspectorze znajdziesz [tutaj](https://github.com/modelcontextprotocol/inspector).
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najdokładniejsze, prosimy pamiętać, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
-  "translation_date": "2025-06-18T06:00:40+00:00",
+  "original_hash": "07863f50601f395c3bdfce30f555f11a",
+  "translation_date": "2025-07-09T21:58:55+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "sv"
 }
@@ -23,7 +23,7 @@ dotnet run
 
 ## -4- Testa exemplet
 
-Med servern igång i ett terminalfönster, öppna ett annat terminalfönster och kör följande kommando:
+Med servern igång i en terminal, öppna en annan terminal och kör följande kommando:
 
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
@@ -33,8 +33,8 @@ Detta bör starta en webbserver med ett visuellt gränssnitt som låter dig test
 
 När servern är ansluten:
 
-- prova att lista verktyg och kör `add` med argumenten 2 och 4, du ska se 6 i resultatet.
-- gå till resources och resource template och anropa "greeting", skriv in ett namn och du ska se en hälsning med det namn du angav.
+- prova att lista verktyg och kör `add` med argumenten 2 och 4, du bör se 6 som resultat.
+- gå till resources och resource template och anropa "greeting", skriv in ett namn och du bör se en hälsning med det namn du angav.
 
 ### Testa i CLI-läge
 
@@ -44,7 +44,7 @@ Du kan starta det direkt i CLI-läge genom att köra följande kommando:
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-Detta kommer att lista alla verktyg som finns på servern. Du bör se följande output:
+Detta listar alla verktyg som finns tillgängliga på servern. Du bör se följande output:
 
 ```text
 {
@@ -95,8 +95,8 @@ Du bör se följande output:
 ```
 
 > ![!TIP]
-> Det går oftast mycket snabbare att köra inspektorn i CLI-läge än i webbläsaren.
-> Läs mer om inspektorn [här](https://github.com/modelcontextprotocol/inspector).
+> Det går oftast mycket snabbare att köra inspektören i CLI-läge än i webbläsaren.
+> Läs mer om inspektören [här](https://github.com/modelcontextprotocol/inspector).
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För viktig information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

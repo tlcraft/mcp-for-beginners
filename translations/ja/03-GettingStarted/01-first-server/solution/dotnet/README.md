@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1d6ed68c1dd1584c2d8eb599fa601c0b",
-  "translation_date": "2025-06-18T05:52:03+00:00",
+  "original_hash": "07863f50601f395c3bdfce30f555f11a",
+  "translation_date": "2025-07-09T21:57:32+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "ja"
 }
@@ -31,9 +31,9 @@ npx @modelcontextprotocol/inspector dotnet run
 
 これにより、サンプルをテストできるビジュアルインターフェース付きのウェブサーバーが起動します。
 
-サーバーに接続したら：
+サーバーが接続されたら：
 
-- ツールの一覧を表示し、引数に2と4を指定して`add`を実行してみてください。結果に6が表示されるはずです。
+- ツールの一覧を試し、引数に2と4を指定して`add`を実行すると、結果に6が表示されるはずです。
 - resourcesとresource templateに移動し、「greeting」を呼び出して名前を入力すると、入力した名前を使った挨拶が表示されます。
 
 ### CLIモードでのテスト
@@ -44,7 +44,7 @@ npx @modelcontextprotocol/inspector dotnet run
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-これでサーバーで利用可能なすべてのツールが一覧表示されます。以下のような出力が確認できるはずです：
+これにより、サーバーで利用可能なすべてのツールが一覧表示されます。以下のような出力が表示されるはずです：
 
 ```text
 {
@@ -74,13 +74,13 @@ npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 }
 ```
 
-ツールを呼び出すには、以下のようにタイプしてください：
+ツールを呼び出すには、以下のように入力します：
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-name Add --tool-arg a=1 --tool-arg b=2
 ```
 
-以下のような出力が表示されます：
+以下のような出力が表示されるはずです：
 
 ```text
 {
@@ -95,8 +95,8 @@ npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-
 ```
 
 > ![!TIP]
-> ブラウザよりもCLIモードでinspectorを実行したほうが通常はずっと速いです。
-> inspectorについて詳しくは[こちら](https://github.com/modelcontextprotocol/inspector)をご覧ください。
+> インスペクターをブラウザよりCLIモードで実行するほうが通常はずっと高速です。
+> インスペクターの詳細については[こちら](https://github.com/modelcontextprotocol/inspector)をご覧ください。
 
 **免責事項**：  
-本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されました。正確性には努めておりますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、一切の責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
