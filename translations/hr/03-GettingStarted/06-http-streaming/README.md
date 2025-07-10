@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3eaf38ffe0638867045ec6664908333c",
-  "translation_date": "2025-06-18T09:35:27+00:00",
+  "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
+  "translation_date": "2025-07-10T16:27:10+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "hr"
 }
 -->
-# HTTPS streaming s Model Context Protocolom (MCP)
+# HTTPS Streaming s Model Context Protocolom (MCP)
 
-Ovo poglavlje pruža sveobuhvatan vodič za implementaciju sigurnog, skalabilnog i real-time streaminga koristeći Model Context Protocol (MCP) preko HTTPS-a. Obrađuje motivaciju za streaming, dostupne transportne mehanizme, kako implementirati streamabilni HTTP u MCP-u, najbolje sigurnosne prakse, migraciju sa SSE-a te praktične smjernice za izgradnju vlastitih streaming MCP aplikacija.
+Ovo poglavlje pruža sveobuhvatan vodič za implementaciju sigurnog, skalabilnog i real-time streaminga koristeći Model Context Protocol (MCP) preko HTTPS-a. Obuhvaća motivaciju za streaming, dostupne transportne mehanizme, kako implementirati streamable HTTP u MCP-u, najbolje sigurnosne prakse, migraciju sa SSE-a te praktične smjernice za izgradnju vlastitih streaming MCP aplikacija.
 
 ## Transportni mehanizmi i streaming u MCP-u
 
-Ovaj odjeljak istražuje različite transportne mehanizme dostupne u MCP-u i njihovu ulogu u omogućavanju streaming funkcionalnosti za real-time komunikaciju između klijenata i servera.
+Ovaj odjeljak istražuje različite transportne mehanizme dostupne u MCP-u i njihovu ulogu u omogućavanju streaming mogućnosti za real-time komunikaciju između klijenata i servera.
 
 ### Što je transportni mehanizam?
 
@@ -21,36 +21,36 @@ Transportni mehanizam definira kako se podaci razmjenjuju između klijenta i ser
 
 - **stdio**: Standardni ulaz/izlaz, pogodan za lokalne i CLI alate. Jednostavan, ali nije prikladan za web ili cloud.
 - **SSE (Server-Sent Events)**: Omogućuje serverima da šalju real-time ažuriranja klijentima preko HTTP-a. Dobar za web UI, ali ograničen u skalabilnosti i fleksibilnosti.
-- **Streamable HTTP**: Moderni HTTP bazirani streaming transport, podržava notifikacije i bolju skalabilnost. Preporuča se za većinu produkcijskih i cloud scenarija.
+- **Streamable HTTP**: Moderni HTTP-based streaming transport, podržava notifikacije i bolju skalabilnost. Preporuča se za većinu produkcijskih i cloud scenarija.
 
-### Tablica usporedbe
+### Usporedna tablica
 
-Pogledajte donju tablicu za razumijevanje razlika između ovih transportnih mehanizama:
+Pogledajte tablicu u nastavku kako biste razumjeli razlike između ovih transportnih mehanizama:
 
-| Transport         | Real-time ažuriranja | Streaming | Skalabilnost | Primjena                 |
-|-------------------|---------------------|-----------|--------------|--------------------------|
-| stdio             | Ne                  | Ne        | Niska        | Lokalni CLI alati         |
+| Transport         | Real-time ažuriranja | Streaming | Skalabilnost | Primjena                |
+|-------------------|---------------------|-----------|--------------|-------------------------|
+| stdio             | Ne                  | Ne        | Niska        | Lokalni CLI alati        |
 | SSE               | Da                  | Da        | Srednja      | Web, real-time ažuriranja|
-| Streamable HTTP   | Da                  | Da        | Visoka       | Cloud, višekorisnički    |
+| Streamable HTTP   | Da                  | Da        | Visoka       | Cloud, višekorisnički   |
 
 > **Tip:** Odabir pravog transporta utječe na performanse, skalabilnost i korisničko iskustvo. **Streamable HTTP** se preporučuje za moderne, skalabilne i cloud-ready aplikacije.
 
-Primijetite transportne mehanizme stdio i SSE koje ste vidjeli u prethodnim poglavljima te kako je streamable HTTP transport obrađen u ovom poglavlju.
+Primijetite transportne mehanizme stdio i SSE koje ste vidjeli u prethodnim poglavljima, dok je streamable HTTP transport obrađen u ovom poglavlju.
 
-## Streaming: koncepti i motivacija
+## Streaming: Koncepti i motivacija
 
-Razumijevanje osnovnih koncepata i motiva iza streaminga ključno je za implementaciju učinkovitih real-time komunikacijskih sustava.
+Razumijevanje osnovnih koncepata i motivacije iza streaminga ključno je za implementaciju učinkovitih sustava za real-time komunikaciju.
 
-**Streaming** je tehnika u mrežnom programiranju koja omogućuje slanje i primanje podataka u malim, upravljivim dijelovima ili kao niz događaja, umjesto da se čeka da cijeli odgovor bude spreman. Ovo je posebno korisno za:
+**Streaming** je tehnika u mrežnom programiranju koja omogućuje slanje i primanje podataka u malim, upravljivim dijelovima ili kao niz događaja, umjesto čekanja da cijeli odgovor bude spreman. Ovo je posebno korisno za:
 
 - Velike datoteke ili skupove podataka.
 - Real-time ažuriranja (npr. chat, trake napretka).
-- Dugotrajne izračune kod kojih želite korisnika stalno informirati.
+- Dugotrajne izračune gdje želite korisnika stalno informirati.
 
 Evo što trebate znati o streamingu na visokoj razini:
 
 - Podaci se isporučuju postupno, ne odjednom.
-- Klijent može obrađivati podatke kako pristižu.
+- Klijent može obrađivati podatke čim stignu.
 - Smanjuje percipiranu latenciju i poboljšava korisničko iskustvo.
 
 ### Zašto koristiti streaming?
@@ -58,8 +58,8 @@ Evo što trebate znati o streamingu na visokoj razini:
 Razlozi za korištenje streaminga su sljedeći:
 
 - Korisnici odmah dobivaju povratnu informaciju, ne samo na kraju
-- Omogućava real-time aplikacije i responzivne UI-je
-- Učinkovitije korištenje mrežnih i računalnih resursa
+- Omogućuje real-time aplikacije i responzivne UI-je
+- Efikasnije korištenje mrežnih i računalnih resursa
 
 ### Jednostavan primjer: HTTP streaming server i klijent
 
@@ -106,16 +106,16 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-Ovaj primjer pokazuje server koji šalje niz poruka klijentu čim su dostupne, umjesto da čeka da sve poruke budu spremne.
+Ovaj primjer pokazuje server koji šalje niz poruka klijentu čim postanu dostupne, umjesto da čeka da sve poruke budu spremne.
 
-**Kako to funkcionira:**
+**Kako radi:**
 - Server šalje svaku poruku čim je spremna.
 - Klijent prima i ispisuje svaki dio čim stigne.
 
 **Zahtjevi:**
-- Server mora koristiti streaming response (npr. `StreamingResponse` in FastAPI).
-- The client must process the response as a stream (`stream=True` in requests).
-- Content-Type is usually `text/event-stream` or `application/octet-stream`).
+- Server mora koristiti streaming odgovor (npr. `StreamingResponse` u FastAPI).
+- Klijent mora obrađivati odgovor kao stream (`stream=True` u requests).
+- Content-Type je obično `text/event-stream` ili `application/octet-stream`.
 
 </details>
 
@@ -185,75 +185,75 @@ public class CalculatorClientApplication implements CommandLineRunner {
 }
 ```
 
-**Napomene za Java implementaciju:**
-- Koristi Spring Boot reaktivni stack s `Flux` for streaming
-- `ServerSentEvent` provides structured event streaming with event types
-- `WebClient` with `bodyToFlux()` enables reactive streaming consumption
-- `delayElements()` simulates processing time between events
-- Events can have types (`info`, `result`) for better client handling
+**Napomene o Java implementaciji:**
+- Koristi Spring Boot reaktivni stack s `Flux` za streaming
+- `ServerSentEvent` pruža strukturirani streaming događaja s tipovima događaja
+- `WebClient` s `bodyToFlux()` omogućuje reaktivnu potrošnju streama
+- `delayElements()` simulira vrijeme obrade između događaja
+- Događaji mogu imati tipove (`info`, `result`) za bolju obradu na klijentu
 
 </details>
 
-### Comparison: Classic Streaming vs MCP Streaming
+### Usporedba: Klasični streaming vs MCP streaming
 
-The differences between how streaming works in a "classical" manner versus how it works in MCP can be depicted like so:
+Razlike između klasičnog streaminga i MCP streaminga mogu se prikazati ovako:
 
-| Feature                | Classic HTTP Streaming         | MCP Streaming (Notifications)      |
-|------------------------|-------------------------------|-------------------------------------|
-| Main response          | Chunked                       | Single, at end                      |
-| Progress updates       | Sent as data chunks           | Sent as notifications               |
-| Client requirements    | Must process stream           | Must implement message handler      |
-| Use case               | Large files, AI token streams | Progress, logs, real-time feedback  |
+| Značajka               | Klasični HTTP streaming        | MCP streaming (notifikacije)       |
+|------------------------|-------------------------------|-----------------------------------|
+| Glavni odgovor         | Podijeljen u dijelove (chunked) | Jedan, na kraju                   |
+| Ažuriranja napretka    | Šalju se kao dijelovi podataka | Šalju se kao notifikacije         |
+| Zahtjevi za klijenta   | Mora obrađivati stream         | Mora implementirati message handler|
+| Primjena               | Velike datoteke, AI token streami | Napredak, logovi, real-time povratne informacije |
 
-### Key Differences Observed
+### Ključne uočene razlike
 
-Additionally, here are some key differences:
+Dodatno, evo nekoliko ključnih razlika:
 
-- **Communication Pattern:**
-   - Classic HTTP streaming: Uses simple chunked transfer encoding to send data in chunks
-   - MCP streaming: Uses a structured notification system with JSON-RPC protocol
+- **Obrazac komunikacije:**
+   - Klasični HTTP streaming: koristi jednostavan chunked transfer encoding za slanje podataka u dijelovima
+   - MCP streaming: koristi strukturirani sustav notifikacija s JSON-RPC protokolom
 
-- **Message Format:**
-   - Classic HTTP: Plain text chunks with newlines
-   - MCP: Structured LoggingMessageNotification objects with metadata
+- **Format poruke:**
+   - Klasični HTTP: običan tekst s novim redovima
+   - MCP: strukturirani objekti LoggingMessageNotification s metapodacima
 
-- **Client Implementation:**
-   - Classic HTTP: Simple client that processes streaming responses
-   - MCP: More sophisticated client with a message handler to process different types of messages
+- **Implementacija klijenta:**
+   - Klasični HTTP: jednostavan klijent koji obrađuje streaming odgovore
+   - MCP: sofisticiraniji klijent s message handlerom za obradu različitih tipova poruka
 
-- **Progress Updates:**
-   - Classic HTTP: The progress is part of the main response stream
-   - MCP: Progress is sent via separate notification messages while the main response comes at the end
+- **Ažuriranja napretka:**
+   - Klasični HTTP: napredak je dio glavnog streama odgovora
+   - MCP: napredak se šalje putem zasebnih notifikacijskih poruka dok glavni odgovor dolazi na kraju
 
-### Recommendations
+### Preporuke
 
-There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream`) u odnosu na odabir streaminga preko MCP-a.
+Preporučujemo sljedeće prilikom odabira između klasičnog streaminga (kao što je endpoint prikazan gore s `/stream`) i streaminga putem MCP-a:
 
 - **Za jednostavne potrebe streaminga:** Klasični HTTP streaming je jednostavniji za implementaciju i dovoljan za osnovne potrebe.
 
-- **Za složene, interaktivne aplikacije:** MCP streaming nudi strukturiraniji pristup s bogatijim metapodacima i odvojenim notifikacijama i konačnim rezultatima.
+- **Za složene, interaktivne aplikacije:** MCP streaming pruža strukturiraniji pristup s bogatijim metapodacima i razdvajanjem notifikacija i konačnih rezultata.
 
-- **Za AI aplikacije:** MCP-ov sustav notifikacija posebno je koristan za dugotrajne AI zadatke gdje želite korisnike držati informiranima o napretku.
+- **Za AI aplikacije:** MCP-ov sustav notifikacija posebno je koristan za dugotrajne AI zadatke gdje želite korisnike stalno informirati o napretku.
 
 ## Streaming u MCP-u
 
-Dakle, vidjeli ste neke preporuke i usporedbe do sada o razlikama između klasičnog streaminga i streaminga u MCP-u. Sada ćemo detaljno objasniti kako možete iskoristiti streaming u MCP-u.
+Dakle, vidjeli ste neke preporuke i usporedbe do sada o razlikama između klasičnog streaminga i streaminga u MCP-u. Sada ćemo detaljnije objasniti kako točno možete iskoristiti streaming u MCP-u.
 
-Razumijevanje kako streaming funkcionira unutar MCP okvira ključno je za izgradnju responzivnih aplikacija koje korisnicima pružaju real-time povratne informacije tijekom dugotrajnih operacija.
+Razumijevanje kako streaming funkcionira unutar MCP okvira ključno je za izgradnju responzivnih aplikacija koje pružaju real-time povratne informacije korisnicima tijekom dugotrajnih operacija.
 
-U MCP-u streaming nije slanje glavnog odgovora u dijelovima, već slanje **notifikacija** klijentu dok alat obrađuje zahtjev. Te notifikacije mogu uključivati ažuriranja napretka, zapise ili druge događaje.
+U MCP-u streaming nije slanje glavnog odgovora u dijelovima, već slanje **notifikacija** klijentu dok alat obrađuje zahtjev. Te notifikacije mogu uključivati ažuriranja napretka, logove ili druge događaje.
 
-### Kako to funkcionira
+### Kako to radi
 
-Glavni rezultat se i dalje šalje kao jedan odgovor. Međutim, notifikacije se mogu slati kao zasebne poruke tijekom obrade te tako u realnom vremenu ažurirati klijenta. Klijent mora biti sposoban obraditi i prikazati te notifikacije.
+Glavni rezultat se i dalje šalje kao jedan odgovor. Međutim, notifikacije se mogu slati kao zasebne poruke tijekom obrade i tako ažurirati klijenta u realnom vremenu. Klijent mora moći obraditi i prikazati te notifikacije.
 
 ## Što je notifikacija?
 
 Rekli smo "notifikacija", što to znači u kontekstu MCP-a?
 
-Notifikacija je poruka koju server šalje klijentu kako bi ga obavijestio o napretku, statusu ili drugim događajima tijekom dugotrajne operacije. Notifikacije povećavaju transparentnost i poboljšavaju korisničko iskustvo.
+Notifikacija je poruka poslana sa servera klijentu koja informira o napretku, statusu ili drugim događajima tijekom dugotrajne operacije. Notifikacije poboljšavaju transparentnost i korisničko iskustvo.
 
-Na primjer, klijent bi trebao poslati notifikaciju čim se uspostavi početni handshake sa serverom.
+Na primjer, klijent bi trebao poslati notifikaciju čim je uspostavljena početna veza sa serverom.
 
 Notifikacija izgleda ovako kao JSON poruka:
 
@@ -269,7 +269,7 @@ Notifikacija izgleda ovako kao JSON poruka:
 
 Notifikacije pripadaju temi u MCP-u nazvanoj ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
 
-Da bi logging radio, server ga mora omogućiti kao značajku/sposobnost na sljedeći način:
+Da bi logging radio, server mora omogućiti tu značajku/kapacitet ovako:
 
 ```json
 {
@@ -288,20 +288,20 @@ Postoje različite vrste notifikacija:
 |-----------|-------------------------------|------------------------------|
 | debug     | Detaljne informacije za debug | Ulaz/izlaz funkcija          |
 | info      | Opće informativne poruke      | Ažuriranja napretka operacije|
-| notice    | Normalni, ali značajni događaji | Promjene konfiguracije       |
-| warning   | Upozoravajući uvjeti          | Korištenje zastarjele funkcije|
-| error     | Greške                       | Neuspjesi u operacijama      |
-| critical  | Kritični uvjeti              | Kvarovi sistemskih komponenti|
-| alert     | Potrebna je hitna akcija      | Otkrivena korupcija podataka |
-| emergency | Sustav je neupotrebljiv       | Potpuni kvar sustava         |
+| notice    | Normalni, ali značajni događaji| Promjene konfiguracije       |
+| warning   | Upozorenja                    | Korištenje zastarjele funkcije|
+| error     | Greške                       | Neuspjesi operacija          |
+| critical  | Kritični uvjeti              | Kvarovi sustavnih komponenti |
+| alert     | Potrebna je hitna akcija     | Otkrivena korupcija podataka |
+| emergency | Sustav neupotrebljiv         | Potpuni kvar sustava         |
 
 ## Implementacija notifikacija u MCP-u
 
-Za implementaciju notifikacija u MCP-u potrebno je postaviti i server i klijent da obrađuju real-time ažuriranja. To omogućuje vašoj aplikaciji da korisnicima pruži trenutne povratne informacije tijekom dugotrajnih operacija.
+Za implementaciju notifikacija u MCP-u, potrebno je postaviti i server i klijent da podrže real-time ažuriranja. To omogućuje vašoj aplikaciji da korisnicima pruži trenutne povratne informacije tijekom dugotrajnih operacija.
 
-### Server-side: slanje notifikacija
+### Server: Slanje notifikacija
 
-Počnimo sa serverom. U MCP-u definirate alate koji mogu slati notifikacije tijekom obrade zahtjeva. Server koristi context objekt (obično `ctx`) za slanje poruka klijentu.
+Počnimo sa serverom. U MCP-u definirate alate koji mogu slati notifikacije tijekom obrade zahtjeva. Server koristi kontekstni objekt (obično `ctx`) za slanje poruka klijentu.
 
 <details>
 <summary>Python</summary>
@@ -318,11 +318,11 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-U prethodnom primjeru, `process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
+U prethodnom primjeru, alat `process_files` šalje tri notifikacije klijentu dok obrađuje svaku datoteku. Metoda `ctx.info()` koristi se za slanje informativnih poruka.
 
 </details>
 
-Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http` transport:
+Također, da biste omogućili notifikacije, osigurajte da vaš server koristi streaming transport (kao `streamable-http`) i da klijent implementira message handler za obradu notifikacija. Evo kako postaviti server da koristi `streamable-http` transport:
 
 ```python
 mcp.run(transport="streamable-http")
@@ -348,9 +348,9 @@ public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
 }
 ```
 
-U ovom .NET primjeru, metoda `ProcessFiles` tool is decorated with the `Tool` attribute and sends three notifications to the client as it processes each file. The `ctx.Info()` koristi se za slanje informativnih poruka.
+U ovom .NET primjeru, alat `ProcessFiles` je označen atributom `Tool` i šalje tri notifikacije klijentu dok obrađuje svaku datoteku. Metoda `ctx.Info()` koristi se za slanje informativnih poruka.
 
-Da biste omogućili notifikacije u vašem .NET MCP serveru, provjerite koristite li streaming transport:
+Da biste omogućili notifikacije u vašem .NET MCP serveru, osigurajte da koristite streaming transport:
 
 ```csharp
 var builder = McpBuilder.Create();
@@ -362,9 +362,9 @@ await builder
 
 </details>
 
-### Client-side: primanje notifikacija
+### Klijent: Primanje notifikacija
 
-Klijent mora implementirati handler poruka za obradu i prikaz notifikacija čim stignu.
+Klijent mora implementirati message handler koji obrađuje i prikazuje notifikacije čim stignu.
 
 <details>
 <summary>Python</summary>
@@ -384,7 +384,7 @@ async with ClientSession(
 ) as session:
 ```
 
-U prethodnom kodu, `message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` obrađuje dolazne notifikacije.
+U prethodnom kodu, funkcija `message_handler` provjerava je li dolazna poruka notifikacija. Ako jest, ispisuje notifikaciju; inače je obrađuje kao redovitu server poruku. Također, primijetite kako je `ClientSession` inicijaliziran s `message_handler` za obradu dolaznih notifikacija.
 
 </details>
 
@@ -418,15 +418,15 @@ await client.InitializeAsync();
 // Now the client will process notifications through the MessageHandler
 ```
 
-U ovom .NET primjeru, `MessageHandler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. The `ClientSession` is initialized with the message handler via the `ClientSessionOptions`.
+U ovom .NET primjeru, funkcija `MessageHandler` provjerava je li dolazna poruka notifikacija. Ako jest, ispisuje notifikaciju; inače je obrađuje kao redovitu server poruku. `ClientSession` je inicijaliziran s message handlerom putem `ClientSessionOptions`.
 
 </details>
 
-To enable notifications, ensure your server uses a streaming transport (like `streamable-http`) i vaš klijent implementira handler za obradu notifikacija.
+Da biste omogućili notifikacije, osigurajte da vaš server koristi streaming transport (kao `streamable-http`) i da klijent implementira message handler za obradu notifikacija.
 
 ## Notifikacije napretka i scenariji
 
-Ovaj odjeljak objašnjava koncept notifikacija napretka u MCP-u, zašto su važne i kako ih implementirati koristeći Streamable HTTP. Također sadrži praktični zadatak za utvrđivanje znanja.
+Ovaj odjeljak objašnjava koncept notifikacija napretka u MCP-u, zašto su važne i kako ih implementirati koristeći Streamable HTTP. Također ćete pronaći praktični zadatak za jačanje razumijevanja.
 
 Notifikacije napretka su real-time poruke koje server šalje klijentu tijekom dugotrajnih operacija. Umjesto da se čeka da cijeli proces završi, server stalno obavještava klijenta o trenutnom statusu. To poboljšava transparentnost, korisničko iskustvo i olakšava debugiranje.
 
@@ -446,19 +446,18 @@ Notifikacije napretka su real-time poruke koje server šalje klijentu tijekom du
 Notifikacije napretka su važne iz nekoliko razloga:
 
 - **Bolje korisničko iskustvo:** Korisnici vide ažuriranja tijekom rada, ne samo na kraju.
-- **Real-time povratna informacija:** Klijenti mogu prikazivati trake napretka ili zapise, što aplikaciju čini responzivnijom.
-- **Jednostavnije debugiranje i nadzor:** Programeri i korisnici mogu vidjeti gdje proces može biti spor ili zapeti.
+- **Real-time povratne informacije:** Klijenti mogu prikazivati trake napretka ili logove, čineći aplikaciju responzivnijom.
+- **Lakše debugiranje i nadzor:** Programeri i korisnici mogu vidjeti gdje proces može biti spor ili zapeti.
 
 ### Kako implementirati notifikacije napretka
 
 Evo kako možete implementirati notifikacije napretka u MCP-u:
 
-- **Na serveru:** Koristite `ctx.info()` or `ctx.log()` za slanje notifikacija dok se svaki element obrađuje. To šalje poruku klijentu prije nego što glavni rezultat bude spreman.
-- **Na klijentu:** Implementirajte handler poruka koji sluša i prikazuje notifikacije čim stignu. Ovaj handler razlikuje notifikacije i konačni rezultat.
+- **Na serveru:** Koristite `ctx.info()` ili `ctx.log()` za slanje notifikacija dok se svaki element obrađuje. Time se šalje poruka klijentu prije nego što je glavni rezultat spreman.
+- **Na klijentu:** Implementirajte message handler koji sluša i prikazuje notifikacije čim stignu. Taj handler razlikuje notifikacije od konačnog rezultata.
 
 **Primjer servera:**
 
-<details>
 <summary>Python</summary>
 
 ```python
@@ -489,24 +488,54 @@ async def message_handler(message):
 
 ## Sigurnosne napomene
 
-Prilikom implementacije MCP servera s HTTP baziranim transportima, sigurnost postaje ključni aspekt koji zahtijeva pažnju prema različitim vrstama napada i zaštitnim mehanizmima.
+Kod implementacije MCP servera s HTTP transportima, sigurnost postaje ključna tema koja zahtijeva pažnju prema različitim vrstama napada i mehanizmima zaštite.
 
 ### Pregled
 
-Sigurnost je presudna pri izlaganju MCP servera preko HTTP-a. Streamable HTTP uvodi nove površine za napad i zahtijeva pažljivu konfiguraciju.
+Sigurnost je presudna kada se MCP serveri izlažu preko HTTP-a. Streamable HTTP donosi nove ranjivosti i zahtijeva pažljivu konfiguraciju.
 
 ### Ključne točke
-- **Validacija Origin zaglavlja**: Uvijek provjeravajte `Origin` zaglavlje kako biste spriječili neovlašteni pristup.
-- **Koristite HTTPS** za enkripciju podataka u prijenosu.
-- **Autentikacija i autorizacija** moraju biti pravilno postavljene.
-- **Ograničite pristup** samo na pouzdane klijente i domene.
-- **Redovito pratite i ažurirajte** server i njegove komponente.
+- **Provjera Origin zaglavlja**: Uvijek provjeravajte `Origin` zaglavlje kako biste spriječili DNS rebinding napade.
+- **Povezivanje na localhost**: Za lokalni razvoj, vežite servere na `localhost` kako ne biste izložili server javnom internetu.
+- **Autentikacija**: Implementirajte autentikaciju (npr. API ključeve, OAuth) za produkcijska okruženja.
+- **CORS**: Konfigurirajte politike Cross-Origin Resource Sharing (CORS) za ograničavanje pristupa.
+- **HTTPS**: U produkciji koristite HTTPS za enkripciju prometa.
+
+### Najbolje prakse
+- Nikada ne vjerujte dolaznim zahtjevima bez provjere.
+- Bilježite i pratite sav pristup i greške.
+- Redovito ažurirajte ovisnosti kako biste zakrpali sigurnosne propuste.
+
+### Izazovi
+- Pronalaženje ravnoteže između sigurnosti i jednostavnosti razvoja
+- Osiguravanje kompatibilnosti s različitim klijentskim okruženjima
+
+
+## Nadogradnja sa SSE na Streamable HTTP
+
+Za aplikacije koje trenutno koriste Server-Sent Events (SSE), prelazak na Streamable HTTP donosi poboljšane mogućnosti i bolju dugoročnu održivost MCP implementacija.
+
+### Zašto nadograditi?
+
+Postoje dva glavna razloga za prelazak sa SSE na Streamable HTTP:
+
+- Streamable HTTP nudi bolju skalabilnost, kompatibilnost i bogatiju podršku za notifikacije u odnosu na SSE.
+- To je preporučeni transport za nove MCP aplikacije.
+
+### Koraci migracije
+
+Evo kako možete migrirati sa SSE na Streamable HTTP u svojim MCP aplikacijama:
+
+- **Ažurirajte kod servera** da koristi `transport="streamable-http"` u `mcp.run()`.
+- **Ažurirajte kod klijenta** da koristi `streamablehttp_client` umjesto SSE klijenta.
+- **Implementirajte handler poruka** u klijentu za obradu notifikacija.
+- **Testirajte kompatibilnost** s postojećim alatima i radnim tokovima.
 
 ### Održavanje kompatibilnosti
 
-Preporučuje se održavati kompatibilnost s postojećim SSE klijentima tijekom procesa migracije. Evo nekoliko strategija:
+Preporučuje se održavati kompatibilnost s postojećim SSE klijentima tijekom migracije. Evo nekoliko strategija:
 
-- Možete podržavati i SSE i Streamable HTTP pokretanjem oba transporta na različitim endpointima.
+- Možete podržavati oba transporta, SSE i Streamable HTTP, pokretanjem na različitim endpointima.
 - Postupno migrirajte klijente na novi transport.
 
 ### Izazovi
@@ -516,35 +545,68 @@ Tijekom migracije obratite pažnju na sljedeće izazove:
 - Osigurati da su svi klijenti ažurirani
 - Rukovanje razlikama u isporuci notifikacija
 
-### Zadatak: Izgradite vlastitu streaming MCP aplikaciju
+## Sigurnosne napomene
+
+Sigurnost treba biti prioritet kod implementacije bilo kojeg servera, osobito kada se koriste HTTP transporti poput Streamable HTTP u MCP-u.
+
+Kod implementacije MCP servera s HTTP transportima, sigurnost postaje ključna tema koja zahtijeva pažnju prema različitim vrstama napada i mehanizmima zaštite.
+
+### Pregled
+
+Sigurnost je presudna kada se MCP serveri izlažu preko HTTP-a. Streamable HTTP donosi nove ranjivosti i zahtijeva pažljivu konfiguraciju.
+
+Evo nekoliko ključnih sigurnosnih napomena:
+
+- **Provjera Origin zaglavlja**: Uvijek provjeravajte `Origin` zaglavlje kako biste spriječili DNS rebinding napade.
+- **Povezivanje na localhost**: Za lokalni razvoj, vežite servere na `localhost` kako ne biste izložili server javnom internetu.
+- **Autentikacija**: Implementirajte autentikaciju (npr. API ključeve, OAuth) za produkcijska okruženja.
+- **CORS**: Konfigurirajte politike Cross-Origin Resource Sharing (CORS) za ograničavanje pristupa.
+- **HTTPS**: U produkciji koristite HTTPS za enkripciju prometa.
+
+### Najbolje prakse
+
+Također, evo nekoliko preporučenih praksi za sigurnu implementaciju MCP streaming servera:
+
+- Nikada ne vjerujte dolaznim zahtjevima bez provjere.
+- Bilježite i pratite sav pristup i greške.
+- Redovito ažurirajte ovisnosti kako biste zakrpali sigurnosne propuste.
+
+### Izazovi
+
+Prilikom implementacije sigurnosti u MCP streaming serverima suočit ćete se s nekim izazovima:
+
+- Pronalaženje ravnoteže između sigurnosti i jednostavnosti razvoja
+- Osiguravanje kompatibilnosti s različitim klijentskim okruženjima
+
+### Zadatak: Izradite vlastitu streaming MCP aplikaciju
 
 **Scenarij:**
-Izradite MCP server i klijenta gdje server obrađuje listu stavki (npr. datoteke ili dokumente) i šalje notifikaciju za svaku obrađenu stavku. Klijent treba prikazivati svaku notifikaciju čim stigne.
+Izradite MCP server i klijenta gdje server obrađuje popis stavki (npr. datoteka ili dokumenata) i šalje notifikaciju za svaku obrađenu stavku. Klijent treba prikazivati svaku notifikaciju čim stigne.
 
 **Koraci:**
 
-1. Implementirajte server alat koji obrađuje listu i šalje notifikacije za svaku stavku.
-2. Implementirajte klijenta s handlerom poruka koji prikazuje notifikacije u realnom vremenu.
-3. Testirajte implementaciju pokretanjem servera i klijenta te promatrajte notifikacije.
+1. Implementirajte server koji obrađuje popis i šalje notifikacije za svaku stavku.
+2. Implementirajte klijenta s handlerom poruka koji u realnom vremenu prikazuje notifikacije.
+3. Testirajte implementaciju pokretanjem servera i klijenta te pratite notifikacije.
 
-[Solution](./solution/README.md)
+[Rješenje](./solution/README.md)
 
-## Dodatna literatura i što dalje?
+## Dodatno čitanje i što dalje?
 
-Za nastavak učenja o MCP streamingu i širenje znanja, ovaj odjeljak pruža dodatne izvore i prijedloge za daljnje korake u izgradnji naprednijih aplikacija.
+Za nastavak učenja o MCP streamingu i proširenje znanja, ovaj odjeljak nudi dodatne izvore i prijedloge za sljedeće korake u izradi naprednijih aplikacija.
 
-### Dodatna literatura
+### Dodatno čitanje
 
-- [Microsoft: Uvod u HTTP Streaming](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
+- [Microsoft: Uvod u HTTP streaming](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
 - [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
 - [Microsoft: CORS u ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
 - [Python requests: Streaming Requests](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
 
 ### Što dalje?
 
-- Pokušajte izgraditi naprednije MCP alate koji koriste streaming za real-time analitiku, chat ili kolaborativno uređivanje.
-- Istražite integraciju MCP streaminga s frontend frameworkima (React, Vue, itd.) za live UI ažuriranja.
-- Sljedeće: [Korištenje AI Toolkit-a za VSCode](../07-aitk/README.md)
+- Isprobajte izradu naprednijih MCP alata koji koriste streaming za analitiku u stvarnom vremenu, chat ili kolaborativno uređivanje.
+- Istražite integraciju MCP streaminga s frontend frameworkima (React, Vue i sl.) za live ažuriranja korisničkog sučelja.
+- Sljedeće: [Korištenje AI Toolkit za VSCode](../07-aitk/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

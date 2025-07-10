@@ -1,53 +1,53 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3eaf38ffe0638867045ec6664908333c",
-  "translation_date": "2025-06-18T09:29:39+00:00",
+  "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
+  "translation_date": "2025-07-10T16:24:01+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "sk"
 }
 -->
-# HTTPS streamovanie s Model Context Protocol (MCP)
+# HTTPS Streaming s Model Context Protocol (MCP)
 
-Táto kapitola poskytuje komplexný návod na implementáciu bezpečného, škálovateľného a real-time streamovania pomocou Model Context Protocol (MCP) cez HTTPS. Pokrýva motiváciu pre streamovanie, dostupné transportné mechanizmy, spôsob implementácie streamovateľného HTTP v MCP, bezpečnostné odporúčania, migráciu zo SSE a praktické rady pre tvorbu vlastných streamingových MCP aplikácií.
+Táto kapitola poskytuje komplexný návod na implementáciu bezpečného, škálovateľného a real-time streamovania pomocou Model Context Protocol (MCP) cez HTTPS. Pokrýva motiváciu pre streamovanie, dostupné transportné mechanizmy, ako implementovať streamovateľný HTTP v MCP, bezpečnostné odporúčania, migráciu zo SSE a praktické rady pre tvorbu vlastných streamovacích MCP aplikácií.
 
 ## Transportné mechanizmy a streamovanie v MCP
 
-Táto časť skúma rôzne dostupné transportné mechanizmy v MCP a ich úlohu pri umožnení streamovacích schopností pre real-time komunikáciu medzi klientmi a servermi.
+Táto sekcia skúma rôzne dostupné transportné mechanizmy v MCP a ich úlohu pri umožnení streamovacích schopností pre real-time komunikáciu medzi klientmi a servermi.
 
 ### Čo je transportný mechanizmus?
 
-Transportný mechanizmus definuje, ako sa vymieňajú dáta medzi klientom a serverom. MCP podporuje viacero typov transportov, aby vyhovel rôznym prostrediam a požiadavkám:
+Transportný mechanizmus definuje, ako sa vymieňajú dáta medzi klientom a serverom. MCP podporuje viacero typov transportu, aby vyhovel rôznym prostrediam a požiadavkám:
 
 - **stdio**: Štandardný vstup/výstup, vhodný pre lokálne a CLI nástroje. Jednoduchý, ale nevhodný pre web alebo cloud.
-- **SSE (Server-Sent Events)**: Umožňuje serverom posielať real-time aktualizácie klientom cez HTTP. Vhodné pre webové UI, ale obmedzené v škálovateľnosti a flexibilite.
-- **Streamable HTTP**: Moderný HTTP založený streamingový transport, podporujúci notifikácie a lepšiu škálovateľnosť. Odporúča sa pre väčšinu produkčných a cloudových scenárov.
+- **SSE (Server-Sent Events)**: Umožňuje serverom posielať real-time aktualizácie klientom cez HTTP. Dobré pre webové UI, ale obmedzené v škálovateľnosti a flexibilite.
+- **Streamable HTTP**: Moderný HTTP-based streaming transport, podporujúci notifikácie a lepšiu škálovateľnosť. Odporúča sa pre väčšinu produkčných a cloudových scenárov.
 
 ### Porovnávacia tabuľka
 
-Pozrite si nižšie porovnávaciu tabuľku, ktorá vám pomôže pochopiť rozdiely medzi týmito transportnými mechanizmami:
+Pozrite si porovnávaciu tabuľku nižšie, aby ste pochopili rozdiely medzi týmito transportnými mechanizmami:
 
-| Transport         | Real-time aktualizácie | Streamovanie | Škálovateľnosť | Použitie                 |
-|-------------------|-----------------------|--------------|----------------|-------------------------|
-| stdio             | Nie                   | Nie          | Nízka          | Lokálne CLI nástroje    |
+| Transport         | Real-time aktualizácie | Streamovanie | Škálovateľnosť | Použitie                  |
+|-------------------|-----------------------|--------------|----------------|--------------------------|
+| stdio             | Nie                   | Nie          | Nízka          | Lokálne CLI nástroje      |
 | SSE               | Áno                   | Áno          | Stredná        | Web, real-time aktualizácie |
-| Streamable HTTP   | Áno                   | Áno          | Vysoká         | Cloud, multi-klient     |
+| Streamable HTTP   | Áno                   | Áno          | Vysoká         | Cloud, multi-klient       |
 
 > **Tip:** Výber správneho transportu ovplyvňuje výkon, škálovateľnosť a používateľský zážitok. **Streamable HTTP** je odporúčaný pre moderné, škálovateľné a cloud-ready aplikácie.
 
-Všimnite si transporty stdio a SSE, ktoré ste videli v predchádzajúcich kapitolách, a ako je streamovateľné HTTP transport, ktorý sa rieši v tejto kapitole.
+Všimnite si transporty stdio a SSE, ktoré ste videli v predchádzajúcich kapitolách, a ako streamovateľný HTTP je transport, ktorý je pokrytý v tejto kapitole.
 
 ## Streamovanie: Koncepty a motivácia
 
-Pochopenie základných konceptov a motivácií za streamovaním je nevyhnutné pre efektívnu implementáciu real-time komunikačných systémov.
+Pochopenie základných konceptov a motivácií za streamovaním je kľúčové pre implementáciu efektívnych real-time komunikačných systémov.
 
-**Streamovanie** je technika v sieťovom programovaní, ktorá umožňuje posielať a prijímať dáta v malých, spravovateľných častiach alebo ako sled udalostí, namiesto čakania na kompletnú odpoveď. Je to obzvlášť užitočné pre:
+**Streamovanie** je technika v sieťovom programovaní, ktorá umožňuje posielať a prijímať dáta v malých, spracovateľných častiach alebo ako sekvenciu udalostí, namiesto čakania na kompletnú odpoveď. To je obzvlášť užitočné pre:
 
 - Veľké súbory alebo dátové sady.
-- Real-time aktualizácie (napr. chat, indikátory priebehu).
+- Real-time aktualizácie (napr. chat, progress bary).
 - Dlhodobé výpočty, kde chcete používateľa priebežne informovať.
 
-Tu je, čo by ste mali o streamovaní vedieť na vyššej úrovni:
+Tu je, čo potrebujete vedieť o streamovaní na vysokej úrovni:
 
 - Dáta sa doručujú postupne, nie naraz.
 - Klient môže spracovávať dáta hneď, ako prichádzajú.
@@ -55,11 +55,11 @@ Tu je, čo by ste mali o streamovaní vedieť na vyššej úrovni:
 
 ### Prečo používať streamovanie?
 
-Dôvody na použitie streamovania sú nasledovné:
+Dôvody pre použitie streamovania sú nasledovné:
 
-- Používatelia dostávajú spätnú väzbu okamžite, nie až na konci.
-- Umožňuje real-time aplikácie a responzívne UI.
-- Efektívnejšie využitie sieťových a výpočtových zdrojov.
+- Používatelia dostávajú spätnú väzbu okamžite, nie až na konci
+- Umožňuje real-time aplikácie a responzívne UI
+- Efektívnejšie využitie sieťových a výpočtových zdrojov
 
 ### Jednoduchý príklad: HTTP streaming server a klient
 
@@ -106,16 +106,16 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-Tento príklad ukazuje server, ktorý posiela sériu správ klientovi, keď sú k dispozícii, namiesto čakania na všetky správy naraz.
+Tento príklad demonštruje server, ktorý posiela sériu správ klientovi, keď sú k dispozícii, namiesto čakania na všetky správy naraz.
 
 **Ako to funguje:**
-- Server postupne vydáva každú správu, keď je pripravená.
+- Server postupne odovzdáva každú správu, keď je pripravená.
 - Klient prijíma a vypisuje každú časť hneď, ako príde.
 
 **Požiadavky:**
-- Server musí použiť streamingovú odpoveď (napr. `StreamingResponse` in FastAPI).
-- The client must process the response as a stream (`stream=True` in requests).
-- Content-Type is usually `text/event-stream` or `application/octet-stream`).
+- Server musí používať streamovaciu odpoveď (napr. `StreamingResponse` vo FastAPI).
+- Klient musí spracovávať odpoveď ako stream (`stream=True` v requests).
+- Content-Type je zvyčajne `text/event-stream` alebo `application/octet-stream`.
 
 </details>
 
@@ -186,76 +186,76 @@ public class CalculatorClientApplication implements CommandLineRunner {
 ```
 
 **Poznámky k implementácii v Jave:**
-- Používa reaktívny stack Spring Boot s `Flux` for streaming
-- `ServerSentEvent` provides structured event streaming with event types
-- `WebClient` with `bodyToFlux()` enables reactive streaming consumption
-- `delayElements()` simulates processing time between events
-- Events can have types (`info`, `result`) for better client handling
+- Používa reaktívny stack Spring Boot s `Flux` pre streamovanie
+- `ServerSentEvent` poskytuje štruktúrované streamovanie udalostí s typmi udalostí
+- `WebClient` s `bodyToFlux()` umožňuje reaktívne spracovanie streamu
+- `delayElements()` simuluje čas spracovania medzi udalosťami
+- Udalosti môžu mať typy (`info`, `result`) pre lepšie spracovanie na strane klienta
 
 </details>
 
-### Comparison: Classic Streaming vs MCP Streaming
+### Porovnanie: Klasické streamovanie vs MCP streamovanie
 
-The differences between how streaming works in a "classical" manner versus how it works in MCP can be depicted like so:
+Rozdiely medzi klasickým spôsobom streamovania a tým, ako funguje streamovanie v MCP, možno znázorniť takto:
 
-| Feature                | Classic HTTP Streaming         | MCP Streaming (Notifications)      |
-|------------------------|-------------------------------|-------------------------------------|
-| Main response          | Chunked                       | Single, at end                      |
-| Progress updates       | Sent as data chunks           | Sent as notifications               |
-| Client requirements    | Must process stream           | Must implement message handler      |
-| Use case               | Large files, AI token streams | Progress, logs, real-time feedback  |
+| Funkcia                | Klasické HTTP streamovanie     | MCP streamovanie (notifikácie)    |
+|------------------------|-------------------------------|----------------------------------|
+| Hlavná odpoveď         | Rozdelená na časti (chunked)  | Jedna, na konci                   |
+| Aktualizácie priebehu   | Posielané ako dátové časti    | Posielané ako notifikácie         |
+| Požiadavky na klienta  | Musí spracovať stream         | Musí implementovať message handler |
+| Použitie               | Veľké súbory, AI token streamy | Priebeh, logy, real-time spätná väzba |
 
-### Key Differences Observed
+### Kľúčové rozdiely
 
-Additionally, here are some key differences:
+Ďalej sú uvedené niektoré kľúčové rozdiely:
 
-- **Communication Pattern:**
-   - Classic HTTP streaming: Uses simple chunked transfer encoding to send data in chunks
-   - MCP streaming: Uses a structured notification system with JSON-RPC protocol
+- **Komunikačný vzor:**
+   - Klasické HTTP streamovanie: Používa jednoduché chunked transfer encoding na posielanie dát po častiach
+   - MCP streamovanie: Používa štruktúrovaný systém notifikácií s JSON-RPC protokolom
 
-- **Message Format:**
-   - Classic HTTP: Plain text chunks with newlines
-   - MCP: Structured LoggingMessageNotification objects with metadata
+- **Formát správ:**
+   - Klasické HTTP: Čistý text s novými riadkami
+   - MCP: Štruktúrované objekty LoggingMessageNotification s metadátami
 
-- **Client Implementation:**
-   - Classic HTTP: Simple client that processes streaming responses
-   - MCP: More sophisticated client with a message handler to process different types of messages
+- **Implementácia klienta:**
+   - Klasické HTTP: Jednoduchý klient spracúvajúci streamované odpovede
+   - MCP: Zložitejší klient s message handlerom na spracovanie rôznych typov správ
 
-- **Progress Updates:**
-   - Classic HTTP: The progress is part of the main response stream
-   - MCP: Progress is sent via separate notification messages while the main response comes at the end
+- **Aktualizácie priebehu:**
+   - Klasické HTTP: Priebeh je súčasťou hlavného streamu odpovede
+   - MCP: Priebeh sa posiela cez samostatné notifikačné správy, zatiaľ čo hlavná odpoveď príde na konci
 
-### Recommendations
+### Odporúčania
 
-There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream`) oproti výberu streamovania cez MCP.
+Odporúčame zvážiť nasledujúce pri výbere medzi klasickým streamovaním (ako endpoint `/stream`, ktorý sme ukázali vyššie) a streamovaním cez MCP:
 
-- **Pre jednoduché potreby streamovania:** Klasické HTTP streamovanie je jednoduchšie na implementáciu a postačuje pre základné použitia.
+- **Pre jednoduché potreby streamovania:** Klasické HTTP streamovanie je jednoduchšie na implementáciu a postačuje pre základné potreby.
 
-- **Pre komplexné, interaktívne aplikácie:** MCP streamovanie poskytuje štruktúrovanejší prístup s bohatšími metadátami a oddelením notifikácií od konečných výsledkov.
+- **Pre komplexné, interaktívne aplikácie:** MCP streamovanie poskytuje štruktúrovanejší prístup s bohatšími metadátami a oddelením notifikácií od finálnych výsledkov.
 
 - **Pre AI aplikácie:** Notifikačný systém MCP je obzvlášť užitočný pre dlhodobé AI úlohy, kde chcete používateľov priebežne informovať o stave.
 
 ## Streamovanie v MCP
 
-Takže ste už videli niektoré odporúčania a porovnania medzi klasickým streamovaním a streamovaním v MCP. Poďme si podrobne vysvetliť, ako môžete využiť streamovanie v MCP.
+Takže ste už videli niektoré odporúčania a porovnania rozdielov medzi klasickým streamovaním a streamovaním v MCP. Poďme sa podrobnejšie pozrieť, ako môžete využiť streamovanie v MCP.
 
-Pochopenie, ako streamovanie funguje v rámci MCP, je kľúčové pre tvorbu responzívnych aplikácií, ktoré poskytujú real-time spätnú väzbu používateľom počas dlhodobých operácií.
+Pochopenie, ako streamovanie funguje v rámci MCP, je nevyhnutné pre tvorbu responzívnych aplikácií, ktoré poskytujú real-time spätnú väzbu používateľom počas dlhodobých operácií.
 
-V MCP nejde o posielanie hlavnej odpovede po častiach, ale o posielanie **notifikácií** klientovi počas spracovania požiadavky nástrojom. Tieto notifikácie môžu obsahovať informácie o priebehu, logy alebo iné udalosti.
+V MCP nejde o posielanie hlavnej odpovede po častiach, ale o posielanie **notifikácií** klientovi počas spracovania požiadavky. Tieto notifikácie môžu obsahovať aktualizácie priebehu, logy alebo iné udalosti.
 
 ### Ako to funguje
 
-Hlavný výsledok sa stále posiela ako jedna odpoveď. Notifikácie sa však môžu posielať ako samostatné správy počas spracovania a tak aktualizovať klienta v reálnom čase. Klient musí byť schopný tieto notifikácie spracovať a zobraziť.
+Hlavný výsledok sa stále posiela ako jedna odpoveď. Notifikácie sa však môžu posielať ako samostatné správy počas spracovania a tým priebežne aktualizovať klienta. Klient musí byť schopný tieto notifikácie spracovať a zobraziť.
 
-## Čo je notifikácia?
+## Čo je to notifikácia?
 
-Povedali sme „notifikácia“, čo to znamená v kontexte MCP?
+Povedali sme "notifikácia", čo to znamená v kontexte MCP?
 
-Notifikácia je správa od servera klientovi, ktorá informuje o priebehu, stave alebo iných udalostiach počas dlhodobej operácie. Notifikácie zlepšujú transparentnosť a používateľský zážitok.
+Notifikácia je správa poslaná zo servera klientovi, ktorá informuje o priebehu, stave alebo iných udalostiach počas dlhodobej operácie. Notifikácie zlepšujú transparentnosť a používateľský zážitok.
 
-Napríklad klient má poslať notifikáciu, keď je dokončené počiatočné nadviazanie spojenia so serverom.
+Napríklad klient by mal poslať notifikáciu, keď je dokončené úvodné nadviazanie spojenia so serverom.
 
-Notifikácia vyzerá takto ako JSON správa:
+Notifikácia vyzerá ako JSON správa:
 
 ```json
 {
@@ -269,7 +269,7 @@ Notifikácia vyzerá takto ako JSON správa:
 
 Notifikácie patria do témy v MCP nazvanej ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
 
-Aby logging fungoval, server musí túto funkciu/povolenie povoliť takto:
+Aby logging fungoval, server musí túto funkciu/povolenie aktivovať takto:
 
 ```json
 {
@@ -284,20 +284,20 @@ Aby logging fungoval, server musí túto funkciu/povolenie povoliť takto:
 
 Existujú rôzne typy notifikácií:
 
-| Úroveň     | Popis                          | Príklad použitia             |
-|------------|-------------------------------|-----------------------------|
-| debug      | Detailné ladacie informácie   | Vstupy a výstupy funkcií    |
-| info       | Všeobecné informačné správy   | Aktualizácie priebehu       |
-| notice     | Normálne, ale významné udalosti | Zmeny konfigurácie         |
-| warning    | Varovné stavy                 | Použitie zastaralých funkcií|
-| error      | Chybové stavy                | Zlyhania operácií           |
-| critical   | Kritické stavy               | Zlyhania systémových komponentov |
-| alert      | Nutná okamžitá akcia          | Detekcia poškodenia dát     |
-| emergency  | Systém nepoužiteľný           | Kompletné zlyhanie systému  |
+| Úroveň     | Popis                          | Príklad použitia               |
+|------------|-------------------------------|-------------------------------|
+| debug      | Detailné debug informácie      | Vstupy/výstupy funkcií         |
+| info       | Všeobecné informačné správy   | Aktualizácie priebehu operácie |
+| notice     | Bežné, ale významné udalosti   | Zmeny konfigurácie             |
+| warning    | Varovné stavy                 | Použitie zastaranej funkcie    |
+| error      | Chybové stavy                 | Zlyhania operácie             |
+| critical   | Kritické stavy                | Zlyhania systémových komponentov |
+| alert      | Nutná okamžitá akcia          | Zistená korupcia dát          |
+| emergency  | Systém je nepoužiteľný        | Kompletné zlyhanie systému    |
 
 ## Implementácia notifikácií v MCP
 
-Na implementáciu notifikácií v MCP je potrebné nastaviť server aj klienta tak, aby zvládali real-time aktualizácie. To umožní vašej aplikácii poskytovať okamžitú spätnú väzbu počas dlhodobých operácií.
+Na implementáciu notifikácií v MCP je potrebné nastaviť server aj klienta tak, aby zvládali real-time aktualizácie. To umožní vašej aplikácii poskytovať okamžitú spätnú väzbu používateľom počas dlhodobých operácií.
 
 ### Serverová strana: Posielanie notifikácií
 
@@ -318,11 +318,11 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-V predchádzajúcom príklade sa používa `process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
+V predchádzajúcom príklade nástroj `process_files` posiela klientovi tri notifikácie počas spracovania každého súboru. Metóda `ctx.info()` sa používa na posielanie informačných správ.
 
 </details>
 
-Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http` transport:
+Okrem toho, aby notifikácie fungovali, uistite sa, že server používa streamovací transport (napr. `streamable-http`) a klient implementuje message handler na spracovanie notifikácií. Tu je príklad, ako nastaviť server na použitie transportu `streamable-http`:
 
 ```python
 mcp.run(transport="streamable-http")
@@ -348,9 +348,9 @@ public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
 }
 ```
 
-V tomto .NET príklade sa na posielanie informačných správ používa metóda `ProcessFiles` tool is decorated with the `Tool` attribute and sends three notifications to the client as it processes each file. The `ctx.Info()`.
+V tomto príklade v .NET je nástroj `ProcessFiles` označený atribútom `Tool` a posiela tri notifikácie klientovi počas spracovania každého súboru. Metóda `ctx.Info()` sa používa na posielanie informačných správ.
 
-Aby ste povolili notifikácie na vašom .NET MCP serveri, uistite sa, že používate streamingový transport:
+Na povolenie notifikácií vo vašom .NET MCP serveri sa uistite, že používate streamovací transport:
 
 ```csharp
 var builder = McpBuilder.Create();
@@ -364,7 +364,7 @@ await builder
 
 ### Klientská strana: Prijímanie notifikácií
 
-Klient musí implementovať handler správ na spracovanie a zobrazenie notifikácií, keď prichádzajú.
+Klient musí implementovať message handler, ktorý spracuje a zobrazí notifikácie hneď, ako prídu.
 
 <details>
 <summary>Python</summary>
@@ -384,7 +384,7 @@ async with ClientSession(
 ) as session:
 ```
 
-V predchádzajúcom kóde sa `message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` používa na spracovanie prichádzajúcich notifikácií.
+V predchádzajúcom kóde funkcia `message_handler` kontroluje, či prichádzajúca správa je notifikácia. Ak áno, vypíše ju; inak ju spracuje ako bežnú správu zo servera. Tiež si všimnite, že `ClientSession` je inicializovaná s `message_handler` na spracovanie prichádzajúcich notifikácií.
 
 </details>
 
@@ -418,17 +418,17 @@ await client.InitializeAsync();
 // Now the client will process notifications through the MessageHandler
 ```
 
-V tomto .NET príklade sa `MessageHandler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. The `ClientSession` is initialized with the message handler via the `ClientSessionOptions`.
+V tomto príklade v .NET funkcia `MessageHandler` kontroluje, či prichádzajúca správa je notifikácia. Ak áno, vypíše ju; inak ju spracuje ako bežnú správu zo servera. `ClientSession` je inicializovaná s message handlerom cez `ClientSessionOptions`.
 
 </details>
 
-To enable notifications, ensure your server uses a streaming transport (like `streamable-http` používa a klient implementuje handler správ na spracovanie notifikácií.
+Na povolenie notifikácií sa uistite, že server používa streamovací transport (napr. `streamable-http`) a klient implementuje message handler na spracovanie notifikácií.
 
-## Notifikácie o priebehu a scenáre
+## Notifikácie priebehu a scenáre
 
-Táto časť vysvetľuje koncept notifikácií o priebehu v MCP, prečo sú dôležité a ako ich implementovať pomocou Streamable HTTP. Nájdete tu aj praktické zadanie na upevnenie vedomostí.
+Táto sekcia vysvetľuje koncept notifikácií priebehu v MCP, prečo sú dôležité a ako ich implementovať pomocou Streamable HTTP. Nájdete tu aj praktické zadanie na upevnenie vedomostí.
 
-Notifikácie o priebehu sú real-time správy posielané zo servera klientovi počas dlhodobých operácií. Namiesto čakania na dokončenie celého procesu server priebežne informuje klienta o aktuálnom stave. To zlepšuje transparentnosť, používateľský zážitok a uľahčuje ladenie.
+Notifikácie priebehu sú real-time správy posielané zo servera klientovi počas dlhodobých operácií. Namiesto čakania na dokončenie celého procesu server priebežne informuje klienta o aktuálnom stave. To zlepšuje transparentnosť, používateľský zážitok a uľahčuje ladenie.
 
 **Príklad:**
 
@@ -441,24 +441,23 @@ Notifikácie o priebehu sú real-time správy posielané zo servera klientovi po
 
 ```
 
-### Prečo používať notifikácie o priebehu?
+### Prečo používať notifikácie priebehu?
 
-Notifikácie o priebehu sú dôležité z viacerých dôvodov:
+Notifikácie priebehu sú dôležité z niekoľkých dôvodov:
 
 - **Lepší používateľský zážitok:** Používatelia vidia aktualizácie počas práce, nie len na konci.
-- **Real-time spätná väzba:** Klienti môžu zobrazovať indikátory priebehu alebo logy, vďaka čomu aplikácia pôsobí responzívne.
-- **Jednoduchšie ladenie a monitorovanie:** Vývojári a používatelia vidia, kde môže byť proces pomalý alebo zablokovaný.
+- **Real-time spätná väzba:** Klienti môžu zobrazovať progress bary alebo logy, čo robí aplikáciu responzívnejšou.
+- **Jednoduchšie ladenie a monitorovanie:** Vývojári a používatelia vidia, kde môže byť proces pomalý alebo zaseknutý.
 
-### Ako implementovať notifikácie o priebehu
+### Ako implementovať notifikácie priebehu
 
-Tu je postup, ako implementovať notifikácie o priebehu v MCP:
+Tu je, ako môžete implementovať notifikácie priebehu v MCP:
 
-- **Na serveri:** Použite `ctx.info()` or `ctx.log()` na posielanie notifikácií pri spracovaní každej položky. Tým sa klientovi pošle správa ešte predtým, než je hlavný výsledok pripravený.
-- **Na klientovi:** Implementujte handler správ, ktorý počúva a zobrazuje notifikácie hneď, ako prídu. Tento handler rozlišuje medzi notifikáciami a konečným výsledkom.
+- **Na serveri:** Použite `ctx.info()` alebo `ctx.log()` na posielanie notifikácií počas spracovania jednotlivých položiek. Tým sa klientovi pošle správa ešte pred finálnym výsledkom.
+- **Na klientovi:** Implementujte message handler, ktorý počúva na notifikácie a zobrazuje ich hneď, ako prídu. Tento handler rozlišuje medzi notifikáciami a finálnym výsledkom.
 
-**Serverový príklad:**
+**Príklad servera:**
 
-<details>
 <summary>Python</summary>
 
 ```python
@@ -472,7 +471,7 @@ async def process_files(message: str, ctx: Context) -> TextContent:
 
 </details>
 
-**Klientsky príklad:**
+**Príklad klienta:**
 
 <details>
 <summary>Python</summary>
@@ -489,62 +488,125 @@ async def message_handler(message):
 
 ## Bezpečnostné úvahy
 
-Pri implementácii MCP serverov s HTTP-based transportami je bezpečnosť kľúčová a vyžaduje si dôkladnú pozornosť voči rôznym útokom a ochranným mechanizmom.
+Pri implementácii MCP serverov s HTTP transportmi je bezpečnosť kľúčovou otázkou, ktorá si vyžaduje dôkladnú pozornosť voči rôznym útokom a ochranným mechanizmom.
 
 ### Prehľad
 
-Bezpečnosť je kritická pri vystavovaní MCP serverov cez HTTP. Streamable HTTP prináša nové potenciálne útoky a vyžaduje dôkladné nastavenie.
+Bezpečnosť je zásadná pri sprístupňovaní MCP serverov cez HTTP. Streamable HTTP prináša nové možnosti útokov a vyžaduje starostlivé nastavenie.
 
 ### Kľúčové body
-- **Validácia hlavičky Origin**: Vždy overujte hlavičku `Origin`, aby ste zabránili CSRF útokom.
-- **Používanie HTTPS**: Vždy používajte šifrované spojenie na ochranu dát.
-- **Autentifikácia a autorizácia**: Implementujte mechanizmy na overenie a povolenie prístupu k serveru.
-- **Ochrana proti DoS útokom**: Obmedzte počet spojení a požiadaviek na server.
-- **Bezpečné nastavenie CORS**: Konfigurujte CORS pravidlá podľa potreby.
+- **Validácia hlavičky Origin**: Vždy overujte hlavičku `Origin`, aby ste zabránili DNS rebinding útokom.
+- **Viazanie na localhost**: Pri lokálnom vývoji viažte servery na `localhost`, aby neboli prístupné z verejného internetu.
+- **Autentifikácia**: Pre produkčné nasadenia implementujte autentifikáciu (napr. API kľúče, OAuth).
+- **CORS**: Nastavte politiky Cross-Origin Resource Sharing (CORS) na obmedzenie prístupu.
+- **HTTPS**: V produkcii používajte HTTPS na šifrovanie komunikácie.
+
+### Najlepšie postupy
+- Nikdy neverte prichádzajúcim požiadavkám bez overenia.
+- Logujte a monitorujte všetky prístupy a chyby.
+- Pravidelne aktualizujte závislosti, aby ste opravili bezpečnostné chyby.
+
+### Výzvy
+- Vyváženie bezpečnosti a jednoduchosti vývoja
+- Zabezpečenie kompatibility s rôznymi klientskymi prostrediami
+
+
+## Prechod zo SSE na Streamable HTTP
+
+Pre aplikácie, ktoré momentálne používajú Server-Sent Events (SSE), migrácia na Streamable HTTP prináša rozšírené možnosti a lepšiu dlhodobú udržateľnosť MCP implementácií.
+
+### Prečo prejsť na novšie riešenie?
+
+Existujú dva hlavné dôvody na prechod zo SSE na Streamable HTTP:
+
+- Streamable HTTP ponúka lepšiu škálovateľnosť, kompatibilitu a bohatšiu podporu notifikácií než SSE.
+- Je odporúčaným transportom pre nové MCP aplikácie.
+
+### Kroky migrácie
+
+Takto môžete migrovať zo SSE na Streamable HTTP vo vašich MCP aplikáciách:
+
+- **Aktualizujte serverový kód** na použitie `transport="streamable-http"` v `mcp.run()`.
+- **Aktualizujte klientsky kód** na použitie `streamablehttp_client` namiesto SSE klienta.
+- **Implementujte spracovanie správ** v klientovi na spracovanie notifikácií.
+- **Otestujte kompatibilitu** s existujúcimi nástrojmi a pracovnými postupmi.
 
 ### Udržiavanie kompatibility
 
-Odporúča sa zachovať kompatibilitu so súčasnými SSE klientmi počas migrácie. Tu sú niektoré stratégie:
+Odporúča sa počas migrácie zachovať kompatibilitu so súčasnými SSE klientmi. Tu sú niektoré stratégie:
 
-- Môžete podporovať súčasne SSE aj Streamable HTTP na rôznych endpointoch.
+- Podporujte súčasne SSE aj Streamable HTTP spustením oboch transportov na rôznych endpointoch.
 - Postupne migrujte klientov na nový transport.
 
 ### Výzvy
 
-Počas migrácie je potrebné riešiť:
+Pri migrácii je potrebné riešiť tieto výzvy:
 
-- Zabezpečenie, že všetci klienti sú aktualizovaní.
-- Riešenie rozdielov v doručovaní notifikácií.
+- Zabezpečiť, aby všetci klienti boli aktualizovaní
+- Riešiť rozdiely v doručovaní notifikácií
 
-### Zadanie: Vytvorte vlastnú streamingovú MCP aplikáciu
+## Bezpečnostné úvahy
+
+Bezpečnosť by mala byť prioritou pri implementácii akéhokoľvek servera, najmä pri použití HTTP transportov ako Streamable HTTP v MCP.
+
+Pri implementácii MCP serverov s HTTP transportmi je bezpečnosť kľúčovou otázkou, ktorá si vyžaduje dôkladnú pozornosť voči rôznym útokom a ochranným mechanizmom.
+
+### Prehľad
+
+Bezpečnosť je zásadná pri sprístupňovaní MCP serverov cez HTTP. Streamable HTTP prináša nové možnosti útokov a vyžaduje starostlivé nastavenie.
+
+Tu sú niektoré kľúčové bezpečnostné opatrenia:
+
+- **Validácia hlavičky Origin**: Vždy overujte hlavičku `Origin`, aby ste zabránili DNS rebinding útokom.
+- **Viazanie na localhost**: Pri lokálnom vývoji viažte servery na `localhost`, aby neboli prístupné z verejného internetu.
+- **Autentifikácia**: Pre produkčné nasadenia implementujte autentifikáciu (napr. API kľúče, OAuth).
+- **CORS**: Nastavte politiky Cross-Origin Resource Sharing (CORS) na obmedzenie prístupu.
+- **HTTPS**: V produkcii používajte HTTPS na šifrovanie komunikácie.
+
+### Najlepšie postupy
+
+Okrem toho tu sú niektoré odporúčané postupy pri zabezpečení MCP streaming servera:
+
+- Nikdy neverte prichádzajúcim požiadavkám bez overenia.
+- Logujte a monitorujte všetky prístupy a chyby.
+- Pravidelne aktualizujte závislosti, aby ste opravili bezpečnostné chyby.
+
+### Výzvy
+
+Pri implementácii bezpečnosti v MCP streaming serveroch narazíte na tieto výzvy:
+
+- Vyváženie bezpečnosti a jednoduchosti vývoja
+- Zabezpečenie kompatibility s rôznymi klientskymi prostrediami
+
+### Zadanie: Vytvorte si vlastnú streamingovú MCP aplikáciu
 
 **Scenár:**
-Vytvorte MCP server a klienta, kde server spracováva zoznam položiek (napr. súbory alebo dokumenty) a pre každú spracovanú položku pošle notifikáciu. Klient by mal zobrazovať každú notifikáciu hneď, ako príde.
+Vytvorte MCP server a klienta, kde server spracuje zoznam položiek (napr. súbory alebo dokumenty) a po spracovaní každej položky pošle notifikáciu. Klient by mal zobrazovať každú notifikáciu hneď, ako príde.
 
 **Kroky:**
 
 1. Implementujte serverový nástroj, ktorý spracuje zoznam a pošle notifikácie pre každú položku.
-2. Implementujte klienta s handlerom správ, ktorý zobrazuje notifikácie v reálnom čase.
+2. Implementujte klienta so spracovaním správ, ktorý bude notifikácie zobrazovať v reálnom čase.
 3. Otestujte implementáciu spustením servera aj klienta a sledujte notifikácie.
 
-[Solution](./solution/README.md)
+[Riešenie](./solution/README.md)
 
 ## Ďalšie čítanie a čo ďalej?
 
-Ak chcete pokračovať vo vašej ceste so streamovaním MCP a rozšíriť svoje znalosti, táto sekcia poskytuje ďalšie zdroje a odporúčané kroky na tvorbu pokročilejších aplikácií.
+Ak chcete pokračovať v práci s MCP streamingom a rozšíriť svoje znalosti, táto sekcia ponúka ďalšie zdroje a odporúčané kroky pre tvorbu pokročilejších aplikácií.
 
 ### Ďalšie čítanie
 
-- [Microsoft: Úvod do HTTP streamovania](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
+- [Microsoft: Úvod do HTTP streamingu](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
 - [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
 - [Microsoft: CORS v ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
 - [Python requests: Streaming Requests](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
 
 ### Čo ďalej?
 
-- Vyskúšajte vytvoriť pokročilejšie MCP nástroje, ktoré používajú streamovanie pre real-time analytiku, chat alebo kolaboratívne úpravy.
-- Preskúmajte integráciu MCP streamovania s frontend frameworkami (React, Vue a pod.) pre živé aktualizácie UI.
-- Ďalej: [Využitie AI Toolkit pre VSCode
+- Vyskúšajte vytvoriť pokročilejšie MCP nástroje, ktoré využívajú streaming pre analýzy v reálnom čase, chat alebo kolaboratívne úpravy.
+- Preskúmajte integráciu MCP streamingu s frontendovými frameworkmi (React, Vue a pod.) pre živé aktualizácie UI.
+- Ďalej: [Využitie AI Toolkit pre VSCode](../07-aitk/README.md)
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, berte prosím na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

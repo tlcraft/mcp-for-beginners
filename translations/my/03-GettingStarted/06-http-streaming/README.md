@@ -1,74 +1,74 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3eaf38ffe0638867045ec6664908333c",
-  "translation_date": "2025-06-18T09:38:42+00:00",
+  "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
+  "translation_date": "2025-07-10T16:29:30+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "my"
 }
 -->
 # HTTPS Streaming with Model Context Protocol (MCP)
 
-ဤအခန်းတွင် HTTPS ကို အသုံးပြု၍ Model Context Protocol (MCP) ဖြင့် လုံခြုံပြီး၊ တိုးချဲ့နိုင်သော၊ အချိန်နောက်ကျခြင်းမရှိသော streaming ကို အကောင်အထည်ဖော်နည်းများအား လက်တွေ့ ညွှန်ပြထားသည်။ Streaming ကို အသုံးပြုရခြင်းရဲ့ အကြောင်းရင်း၊ ရရှိနိုင်သော သယ်ယူပို့ဆောင်မှုနည်းလမ်းများ၊ MCP တွင် streamable HTTP ကို အကောင်အထည်ဖော်နည်း၊ လုံခြုံရေးအကောင်းဆုံးလုပ်ထုံးလုပ်နည်းများ၊ SSE မှ ပြောင်းရွှေ့ခြင်း၊ သင့်ကိုယ်ပိုင် streaming MCP အက်ပလီကေးရှင်းများ ဖန်တီးရာတွင် လိုအပ်သော လမ်းညွှန်ချက်များကို ပါဝင်ဖော်ပြထားသည်။
+ဤအခန်းတွင် HTTPS ကို အသုံးပြု၍ Model Context Protocol (MCP) ဖြင့် လုံခြုံပြီး၊ တိုးချဲ့နိုင်ပြီး၊ အချိန်နှင့်တပြေးညီ စတရီမင်းလုပ်ဆောင်နိုင်ရန် လမ်းညွှန်ချက်များကို အသေးစိတ် ဖော်ပြထားသည်။ စတရီမင်း၏ အကြောင်းရင်း၊ ရရှိနိုင်သော သယ်ယူပို့ဆောင်မှုနည်းလမ်းများ၊ MCP တွင် streamable HTTP ကို မည်သို့ အကောင်အထည်ဖော်မည်၊ လုံခြုံရေးအကောင်းဆုံး လေ့လာမှုများ၊ SSE မှ ပြောင်းရွှေ့ခြင်းနှင့် သင့်ကိုယ်ပိုင် streaming MCP အက်ပလီကေးရှင်းများ တည်ဆောက်ရာတွင် လက်တွေ့ လမ်းညွှန်ချက်များ ပါဝင်သည်။
 
-## Transport Mechanisms and Streaming in MCP
+## MCP တွင် သယ်ယူပို့ဆောင်မှုနည်းလမ်းများနှင့် စတရီမင်း
 
-ဤအပိုင်းတွင် MCP တွင် ရရှိနိုင်သော သယ်ယူပို့ဆောင်မှုနည်းလမ်းအမျိုးမျိုးနှင့် ၎င်းတို့၏ client နှင့် server အကြား အချိန်နောက်ကျမှုမရှိသော ဆက်သွယ်မှုများအတွက် streaming လုပ်ဆောင်နိုင်စွမ်းများ ဖော်ဆောင်ပေးသည့် အခန်းကဏ္ဍကို လေ့လာရှုကြမည်။
+ဤအပိုင်းတွင် MCP တွင် ရရှိနိုင်သည့် သယ်ယူပို့ဆောင်မှုနည်းလမ်းများနှင့် ၎င်းတို့၏ အခန်းကဏ္ဍကို ရှင်းလင်းပြသထားပြီး၊ client နှင့် server များအကြား အချိန်နှင့်တပြေးညီ ဆက်သွယ်မှုအတွက် စတရီမင်း လုပ်ဆောင်နိုင်စေရန် အရေးပါသည်။
 
-### Transport Mechanism ဆိုတာဘာလဲ?
+### သယ်ယူပို့ဆောင်မှုနည်းလမ်း ဆိုသည်မှာ?
 
-Transport mechanism ဆိုသည်မှာ client နှင့် server အကြား ဒေတာလဲလှယ်မှုကို ဘယ်လို ပြုလုပ်မည်ဆိုသည်ကို သတ်မှတ်သည်။ MCP သည် ပတ်ဝန်းကျင်နှင့် လိုအပ်ချက်အမျိုးမျိုးအတွက် သင့်တော်သော သယ်ယူပို့ဆောင်မှုအမျိုးအစားများစွာကို ထောက်ပံ့ပေးသည်-
+သယ်ယူပို့ဆောင်မှုနည်းလမ်းသည် client နှင့် server အကြား ဒေတာကို မည်သို့ လဲလှယ်ပေးမည်ကို သတ်မှတ်သည်။ MCP သည် ပတ်ဝန်းကျင်နှင့် လိုအပ်ချက်အမျိုးမျိုးကို ဖြည့်ဆည်းနိုင်ရန် သယ်ယူပို့ဆောင်မှုအမျိုးအစားများစွာကို ထောက်ခံပေးသည်-
 
-- **stdio**: standard input/output ဖြစ်ပြီး ဒေသတွင်းနှင့် CLI အခြေပြုကိရိယာများအတွက် သင့်တော်သည်။ ရိုးရှင်းသော်လည်း web သို့မဟုတ် cloud အတွက် မသင့်တော်ပါ။
-- **SSE (Server-Sent Events)**: server များမှ client များသို့ HTTP အပေါ်မှ အချိန်နောက်ကျမှုမရှိသော အပ်ဒိတ်များကို ပို့နိုင်သည်။ web UI များအတွက် ကောင်းမွန်သော်လည်း တိုးချဲ့နိုင်မှုနှင့် လွယ်ကူမှုမှာ ကန့်သတ်ချက်ရှိသည်။
-- **Streamable HTTP**: ခေတ်မီသော HTTP အခြေပြု streaming သယ်ယူပို့ဆောင်မှုဖြစ်ပြီး အသိပေးချက်များနှင့် တိုးချဲ့နိုင်မှုကောင်းမွန်မှုများ ပံ့ပိုးပေးသည်။ ထုတ်လုပ်မှုနှင့် cloud ပတ်ဝန်းကျင်များအတွက် အကြံပြုသည်။
+- **stdio**: စံသတ်မှတ် input/output ဖြစ်ပြီး ဒေသတွင်းနှင့် CLI အခြေပြု ကိရိယာများအတွက် သင့်တော်သည်။ ရိုးရှင်းသော်လည်း web သို့မဟုတ် cloud အတွက် မသင့်တော်ပါ။
+- **SSE (Server-Sent Events)**: server များမှ client များသို့ HTTP ဖြင့် အချိန်နှင့်တပြေးညီ အပ်ဒိတ်များ ပို့ပေးနိုင်သည်။ web UI များအတွက် ကောင်းမွန်သော်လည်း တိုးချဲ့နိုင်မှုနှင့် လွတ်လပ်မှုမှာ ကန့်သတ်ချက်ရှိသည်။
+- **Streamable HTTP**: ခေတ်မီ HTTP အခြေပြု စတရီမင်း သယ်ယူပို့ဆောင်မှုဖြစ်ပြီး အသိပေးချက်များနှင့် တိုးချဲ့နိုင်မှုကောင်းမွန်မှုကို ထောက်ပံ့သည်။ ထုတ်လုပ်မှုနှင့် cloud ပတ်ဝန်းကျင်များအတွက် အကြံပြုသည်။
 
 ### နှိုင်းယှဉ်ဇယား
 
-အောက်ပါ ဇယားတွင် သယ်ယူပို့ဆောင်မှုနည်းလမ်းများ၏ ကွာခြားချက်များကို နားလည်နိုင်ရန် ဖော်ပြထားသည်-
+အောက်ပါ နှိုင်းယှဉ်ဇယားမှတဆင့် သယ်ယူပို့ဆောင်မှုနည်းလမ်းများ၏ ကွာခြားချက်များကို နားလည်နိုင်ပါသည်-
 
-| Transport         | Real-time Updates | Streaming | Scalability | Use Case                |
-|-------------------|------------------|-----------|-------------|-------------------------|
-| stdio             | မဟုတ်ပါ         | မဟုတ်ပါ  | နည်းပါးသည်  | ဒေသတွင်း CLI ကိရိယာများ |
-| SSE               | ဟုတ်သည်          | ဟုတ်သည်   | အလယ်အလတ်    | web၊ အချိန်နောက်ကျမှုမရှိသော အပ်ဒိတ်များ |
-| Streamable HTTP   | ဟုတ်သည်          | ဟုတ်သည်   | မြင့်မားသည်  | cloud၊ client များစွာ |
+| သယ်ယူပို့ဆောင်မှု | အချိန်နှင့်တပြေးညီ အပ်ဒိတ်များ | စတရီမင်း | တိုးချဲ့နိုင်မှု | အသုံးပြုမှုအခြေအနေ          |
+|-------------------|------------------------------|-----------|---------------|-----------------------------|
+| stdio             | မဟုတ်ပါ                     | မဟုတ်ပါ  | နည်းပါးသည်  | ဒေသတွင်း CLI ကိရိယာများ     |
+| SSE               | ဟုတ်သည်                      | ဟုတ်သည်   | အလယ်အလတ်    | web, အချိန်နှင့်တပြေးညီ အပ်ဒိတ်များ |
+| Streamable HTTP   | ဟုတ်သည်                      | ဟုတ်သည်   | မြင့်မားသည်  | cloud, multi-client          |
 
-> **Tip:** သင့်တော်သော သယ်ယူပို့ဆောင်မှုကို ရွေးချယ်ခြင်းသည် စွမ်းဆောင်ရည်၊ တိုးချဲ့နိုင်မှုနှင့် အသုံးပြုသူ အတွေ့အကြုံကို ထိခိုက်စေသည်။ ခေတ်မီ၊ တိုးချဲ့နိုင်ပြီး cloud သင့်လျော်သော အက်ပလီကေးရှင်းများအတွက် **Streamable HTTP** ကို အကြံပြုပါသည်။
+> **Tip:** သင့်တော်သော သယ်ယူပို့ဆောင်မှုကို ရွေးချယ်ခြင်းသည် စွမ်းဆောင်ရည်၊ တိုးချဲ့နိုင်မှုနှင့် အသုံးပြုသူ အတွေ့အကြုံကို ထိခိုက်စေသည်။ **Streamable HTTP** ကို ခေတ်မီ၊ တိုးချဲ့နိုင်ပြီး cloud အတွက် အကြံပြုသည်။
 
-ယခင်အခန်းများတွင် ပြသခဲ့သော stdio နှင့် SSE သယ်ယူပို့ဆောင်မှုများနှင့် ယခုအခန်းတွင် ဖော်ပြထားသော streamable HTTP သယ်ယူပို့ဆောင်မှုကို သတိပြုကြပါ။
+ယခင်အခန်းများတွင် ပြသခဲ့သည့် stdio နှင့် SSE သယ်ယူပို့ဆောင်မှုများနှင့် ယခုအခန်းတွင် ဖော်ပြထားသည့် streamable HTTP သယ်ယူပို့ဆောင်မှုကို သတိပြုပါ။
 
-## Streaming: Concepts and Motivation
+## စတရီမင်း- အယူအဆများနှင့် အကြောင်းရင်း
 
-Streaming ၏ အခြေခံသဘောတရားများနှင့် အကြောင်းရင်းများကို နားလည်ခြင်းသည် အချိန်နောက်ကျမှုမရှိသော ဆက်သွယ်မှုစနစ်များကို ထိရောက်စွာ တည်ဆောက်ရာတွင် အရေးကြီးသည်။
+စတရီမင်း၏ အခြေခံအယူအဆများနှင့် အကြောင်းရင်းများကို နားလည်ခြင်းသည် အချိန်နှင့်တပြေးညီ ဆက်သွယ်မှုစနစ်များကို ထိရောက်စွာ တည်ဆောက်ရာတွင် အရေးကြီးသည်။
 
-**Streaming** သည် network programming တွင် ဒေတာများကို တစ်ပြိုင်နက်တည်း ပြီးပြည့်စုံသော တုံ့ပြန်ချက်အတွက် မစောင့်ပဲ၊ သေးငယ်ပြီး စီမံနိုင်သော အပိုင်းအစများ သို့မဟုတ် ဖြစ်ရပ်စဉ်များ အဆက်မပြတ် ပို့ဆောင်ခြင်းနည်းလမ်းဖြစ်သည်။ ၎င်းသည် အထူးသဖြင့် အောက်ပါအရာများအတွက် အသုံးဝင်သည်-
+**စတရီမင်း** ဆိုသည်မှာ ကွန်ယက်ပရိုဂရမ်မင်းတွင် ဒေတာကို တစ်ပြိုင်နက်လုံး ပြီးစီးရန် မစောင့်ဘဲ၊ အစိတ်အပိုင်းသေးသေးလေးများ သို့မဟုတ် ဖြစ်ရပ်စဉ်များ အစဉ်လိုက် ပို့ပေးခြင်းနှင့် လက်ခံခြင်းနည်းလမ်းဖြစ်သည်။ ၎င်းသည် အထူးသဖြင့်-
 
-- ဖိုင်များ သို့မဟုတ် ဒေတာစုစည်းမှုကြီးများ။
-- အချိန်နောက်ကျမှုမရှိသော အပ်ဒိတ်များ (ဥပမာ - စကားပြော, တိုးတက်မှု ဘားများ)။
-- ကြာရှည်သည့် တွက်ချက်မှုများတွင် အသုံးပြုသူကို အဆက်မပြတ် သတင်းပေးရန်။
+- ဖိုင်ကြီးများ သို့မဟုတ် ဒေတာစုစည်းမှုများအတွက်
+- အချိန်နှင့်တပြေးညီ အပ်ဒိတ်များ (ဥပမာ- စကားပြောခြင်း၊ တိုးတက်မှု အတန်းများ)
+- ရေရှည် ဆောင်ရွက်မှုများတွင် အသုံးပြုသူကို သတင်းပေးရန်
 
-Streaming အကြောင်းအရာကို အထွေထွေသိရှိရန်-
+အထက်တန်းအဆင့်တွင် စတရီမင်းအကြောင်း သိထားသင့်သည်-
 
-- ဒေတာများကို တစ်ပြိုင်နက်တည်း မပို့ပဲ တဖြည်းဖြည်းပို့သည်။
-- client သည် ဒေတာရောက်ရှိသလို ကိုင်တွယ်နိုင်သည်။
-- အချိန်နောက်ကျမှုခံစားမှု လျော့နည်းပြီး အသုံးပြုသူ အတွေ့အကြုံကောင်းမွန်စေသည်။
+- ဒေတာကို တဖြည်းဖြည်း ပို့ပေးသည်၊ တပြိုင်နက်လုံး မဟုတ်ပါ။
+- client သည် ဒေတာရောက်ရှိသည့်အခါ ချက်ချင်း လုပ်ဆောင်နိုင်သည်။
+- ခံစားရသော နောက်ကျမှုကို လျော့နည်းစေပြီး အသုံးပြုသူ အတွေ့အကြုံကို တိုးတက်စေသည်။
 
-### Streaming ကို ဘာကြောင့် အသုံးပြုသနည်း?
+### စတရီမင်းကို မည်သို့ အသုံးပြုသနည်း?
 
-Streaming အသုံးပြုရခြင်း၏ အကြောင်းရင်းများမှာ-
+စတရီမင်းကို အသုံးပြုရခြင်း၏ အကြောင်းရင်းများမှာ-
 
-- အသုံးပြုသူများသည် အဆုံးသတ်မီ မဟုတ်ဘဲ ချက်ချင်းတုံ့ပြန်မှုရရှိသည်။
-- အချိန်နောက်ကျမှုမရှိသော အက်ပလီကေးရှင်းများနှင့် တုံ့ပြန်မှုမြန်သော UI များ ဖန်တီးနိုင်သည်။
-- ကွန်ရက်နှင့် ကွန်ပျူတာ အရင်းအမြစ်များကို ထိရောက်စွာ အသုံးပြုနိုင်သည်။
+- အသုံးပြုသူများသည် အဆုံးမရောက်ခင်မှ မျက်နှာပြင်တွင် တုံ့ပြန်ချက် ချက်ချင်း ရရှိသည်။
+- အချိန်နှင့်တပြေးညီ အက်ပလီကေးရှင်းများနှင့် တုံ့ပြန်မှုရှိသော UI များ ဖန်တီးနိုင်သည်။
+- ကွန်ယက်နှင့် ကွန်ပျူတာ အရင်းအမြစ်များကို ထိရောက်စွာ အသုံးပြုနိုင်သည်။
 
-### ရိုးရှင်းသော ဥပမာ - HTTP Streaming Server & Client
+### ရိုးရှင်းသော ဥပမာ- HTTP Streaming Server နှင့် Client
 
-Streaming ကို အကောင်အထည်ဖော်နိုင်ပုံ ရိုးရှင်းစွာ ဖော်ပြထားသည်-
+စတရီမင်းကို မည်သို့ အကောင်အထည်ဖော်နိုင်သည်ဆိုသည်ကို ရိုးရှင်းသော ဥပမာဖြင့် ဖော်ပြထားသည်-
 
 <details>
 <summary>Python</summary>
 
-**Server (Python, FastAPI နှင့် StreamingResponse အသုံးပြု၍):**
+**Server (Python, FastAPI နှင့် StreamingResponse အသုံးပြု):**
 <details>
 <summary>Python</summary>
 
@@ -91,7 +91,7 @@ def stream():
 
 </details>
 
-**Client (Python, requests အသုံးပြု၍):**
+**Client (Python, requests အသုံးပြု):**
 <details>
 <summary>Python</summary>
 
@@ -106,23 +106,23 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-ဤဥပမာတွင် server သည် စာတိုများစွာကို ပြင်ဆင်ပြီး client သို့ တစ်ခုချင်းစီ ပို့ပေးသည်။ စာတိုအားလုံး ပြင်ဆင်ပြီးမှ မစောင့်ဘဲဖြစ်သည်။
+ဤဥပမာတွင် server သည် မက်ဆေ့ခ်ျများအားလုံး ပြီးစီးရန် မစောင့်ဘဲ မက်ဆေ့ခ်ျတစ်ခုချင်းစီကို client သို့ ပို့ပေးသည်။
 
-**အလုပ်လုပ်ပုံ:**
-- server သည် စာတိုတစ်ခုချင်းစီ ပြင်ဆင်ပြီးတိုင်း ပေးပို့သည်။
-- client သည် စာတိုများ ရောက်ရှိသလို လက်ခံပြီး ပုံနှိပ်ပြသည်။
+**လုပ်ဆောင်ပုံ:**
+- server သည် မက်ဆေ့ခ်ျတစ်ခုချင်းစီ ပြင်ဆင်ပြီးချိန်တွင် ပေးပို့သည်။
+- client သည် ရောက်ရှိသည့် အစိတ်အပိုင်းများကို လက်ခံပြီး ပုံနှိပ်ပြသည်။
 
 **လိုအပ်ချက်များ:**
-- server သည် streaming response (ဥပမာ `StreamingResponse` in FastAPI).
-- The client must process the response as a stream (`stream=True` in requests).
-- Content-Type is usually `text/event-stream` or `application/octet-stream`) ကို အသုံးပြုရမည်။
+- server သည် streaming response (ဥပမာ- FastAPI တွင် `StreamingResponse`) ကို အသုံးပြုရမည်။
+- client သည် stream အဖြစ် response ကို လက်ခံရမည် (`stream=True` in requests)။
+- Content-Type သည် ပုံမှန်အားဖြင့် `text/event-stream` သို့မဟုတ် `application/octet-stream` ဖြစ်သည်။
 
 </details>
 
 <details>
 <summary>Java</summary>
 
-**Server (Java, Spring Boot နှင့် Server-Sent Events အသုံးပြု၍):**
+**Server (Java, Spring Boot နှင့် Server-Sent Events အသုံးပြု):**
 
 ```java
 @RestController
@@ -157,7 +157,7 @@ public class CalculatorController {
 }
 ```
 
-**Client (Java, Spring WebFlux WebClient အသုံးပြု၍):**
+**Client (Java, Spring WebFlux WebClient အသုံးပြု):**
 
 ```java
 @SpringBootApplication
@@ -185,78 +185,77 @@ public class CalculatorClientApplication implements CommandLineRunner {
 }
 ```
 
-**Java အကောင်အထည်ဖော်ချက်မှတ်စုများ:**
-- Spring Boot ၏ reactive stack ကို အသုံးပြု၍ `Flux` for streaming
-- `ServerSentEvent` provides structured event streaming with event types
-- `WebClient` with `bodyToFlux()` enables reactive streaming consumption
-- `delayElements()` simulates processing time between events
-- Events can have types (`info`, `result`) for better client handling
+**Java အကောင်အထည်ဖော်မှု မှတ်ချက်များ:**
+- Spring Boot ၏ reactive stack ကို `Flux` ဖြင့် စတရီမင်းအတွက် အသုံးပြုသည်။
+- `ServerSentEvent` သည် event အမျိုးအစားများပါဝင်သည့် ဖွဲ့စည်းထားသော event စတရီမင်းကို ပံ့ပိုးသည်။
+- `WebClient` ၏ `bodyToFlux()` သည် reactive streaming ကို လက်ခံနိုင်စေသည်။
+- `delayElements()` သည် event များအကြား အချိန်ကြာမြင့်မှုကို အတုယူသည်။
+- event များတွင် `info`, `result` ကဲ့သို့ အမျိုးအစားများ ပါဝင်နိုင်သည်။
 
 </details>
 
-### Comparison: Classic Streaming vs MCP Streaming
+### နှိုင်းယှဉ်ခြင်း- Classic Streaming နှင့် MCP Streaming
 
-The differences between how streaming works in a "classical" manner versus how it works in MCP can be depicted like so:
+Classic streaming နှင့် MCP streaming ၏ ကွာခြားချက်များကို အောက်ပါဇယားဖြင့် ဖော်ပြနိုင်သည်-
 
-| Feature                | Classic HTTP Streaming         | MCP Streaming (Notifications)      |
+| အင်္ဂါရပ်               | Classic HTTP Streaming          | MCP Streaming (Notifications)      |
 |------------------------|-------------------------------|-------------------------------------|
-| Main response          | Chunked                       | Single, at end                      |
-| Progress updates       | Sent as data chunks           | Sent as notifications               |
-| Client requirements    | Must process stream           | Must implement message handler      |
-| Use case               | Large files, AI token streams | Progress, logs, real-time feedback  |
+| အဓိက တုံ့ပြန်ချက်       | အစိတ်အပိုင်းများဖြင့် ပေးပို့သည် | တစ်ခုတည်း၊ အဆုံးတွင် ပေးပို့သည်       |
+| တိုးတက်မှု အပ်ဒိတ်များ    | ဒေတာအစိတ်အပိုင်းများအဖြစ် ပေးပို့သည် | အသိပေးချက်များအဖြစ် ပေးပို့သည်         |
+| client လိုအပ်ချက်များ    | stream ကို လုပ်ဆောင်နိုင်ရမည်    | မက်ဆေ့ခ်ျ handler ကို အကောင်အထည်ဖော်ရမည် |
+| အသုံးပြုမှုအခြေအနေ     | ဖိုင်ကြီးများ၊ AI token streams | တိုးတက်မှု၊ မှတ်တမ်းများ၊ အချိန်နှင့်တပြေးညီ တုံ့ပြန်ချက် |
 
-### Key Differences Observed
+### တွေ့ရှိရသော အဓိက ကွာခြားချက်များ
 
-Additionally, here are some key differences:
+ထို့အပြင် အဓိက ကွာခြားချက်များမှာ-
 
-- **Communication Pattern:**
-   - Classic HTTP streaming: Uses simple chunked transfer encoding to send data in chunks
-   - MCP streaming: Uses a structured notification system with JSON-RPC protocol
+- **ဆက်သွယ်မှု ပုံစံ:**
+   - Classic HTTP streaming: ဒေတာကို အစိတ်အပိုင်းများဖြင့် ပေးပို့ရန် chunked transfer encoding ကို အသုံးပြုသည်။
+   - MCP streaming: JSON-RPC protocol ဖြင့် ဖွဲ့စည်းထားသော အသိပေးချက် စနစ်ကို အသုံးပြုသည်။
 
-- **Message Format:**
-   - Classic HTTP: Plain text chunks with newlines
-   - MCP: Structured LoggingMessageNotification objects with metadata
+- **မက်ဆေ့ခ်ျ ပုံစံ:**
+   - Classic HTTP: စာသားအစိတ်အပိုင်းများ၊ newlines ပါဝင်သည်။
+   - MCP: metadata ပါဝင်သည့် LoggingMessageNotification အရာဝတ္ထုများဖြစ်သည်။
 
-- **Client Implementation:**
-   - Classic HTTP: Simple client that processes streaming responses
-   - MCP: More sophisticated client with a message handler to process different types of messages
+- **client အကောင်အထည်ဖော်မှု:**
+   - Classic HTTP: streaming response ကို လက်ခံနိုင်သည့် ရိုးရှင်းသော client ဖြစ်သည်။
+   - MCP: မက်ဆေ့ခ်ျအမျိုးအစားများကို ခွဲခြားစီမံနိုင်သည့် message handler ပါဝင်သည်။
 
-- **Progress Updates:**
-   - Classic HTTP: The progress is part of the main response stream
-   - MCP: Progress is sent via separate notification messages while the main response comes at the end
+- **တိုးတက်မှု အပ်ဒိတ်များ:**
+   - Classic HTTP: အဓိက response stream ၏ အစိတ်အပိုင်းတစ်ခုအဖြစ် ပါဝင်သည်။
+   - MCP: အဓိက response အဆုံးတွင် ရောက်ရှိသည့်အပြင် တိုးတက်မှုများကို သီးခြား အသိပေးချက်များဖြင့် ပေးပို့သည်။
 
-### Recommendations
+### အကြံပြုချက်များ
 
-There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream` တို့ဖြင့် streaming ကို ဆောင်ရွက်သည်။
-- MCP မှ streaming ကို ရွေးချယ်ခြင်းနှင့် နှိုင်းယှဉ်၍ အလုပ်လုပ်ပုံကွာခြားသည်။
+Classic streaming (ဥပမာ `/stream` endpoint ဖြင့် ပြသထားသည့်) နှင့် MCP streaming တို့အကြား ရွေးချယ်ရာတွင် အောက်ပါအချက်များကို အကြံပြုသည်-
 
-- **ရိုးရှင်းသော streaming လိုအပ်ချက်များအတွက်:** Classic HTTP streaming သည် ပိုမိုရိုးရှင်းပြီး မူလ streaming လိုအပ်ချက်များအတွက် လုံလောက်သည်။
+- **ရိုးရှင်းသော စတရီမင်း လိုအပ်ချက်များအတွက်:** Classic HTTP streaming သည် ရိုးရှင်းပြီး အခြေခံ စတရီမင်း လိုအပ်ချက်များအတွက် လုံလောက်သည်။
 
-- **ရှုပ်ထွေးပြီး အပြန်အလှန်ဆက်သွယ်မှုများရှိသော အက်ပလီကေးရှင်းများအတွက်:** MCP streaming သည် အသေးစိတ် metadata များနှင့် အသိပေးချက်များနှင့် နောက်ဆုံးရလဒ်များကို ခွဲခြားပေးသည့် ပိုမိုစနစ်တကျသော နည်းလမ်းဖြစ်သည်။
+- **ရှုပ်ထွေးပြီး အပြန်အလှန် ဆက်သွယ်မှုများလိုအပ်သော အက်ပလီကေးရှင်းများအတွက်:** MCP streaming သည် ပိုမိုဖွဲ့စည်းထားသော နည်းလမ်းဖြင့် metadata ပိုများပြီး အသိပေးချက်များနှင့် နောက်ဆုံးရလဒ်ကို ခွဲခြားထားသည်။
 
-- **AI အက်ပလီကေးရှင်းများအတွက်:** MCP ၏ အသိပေးစနစ်သည် ကြာရှည်ဆက်လက် ဆောင်ရွက်နေသည့် AI အလုပ်များတွင် အသုံးပြုသူအား တိုးတက်မှုအခြေအနေများကို သတင်းပေးရန် အထူးအသုံးဝင်သည်။
+- **AI အက်ပလီကေးရှင်းများအတွက်:** MCP ၏ အသိပေးချက် စနစ်သည် ရေရှည် ဆောင်ရွက်မှုရှိသော AI လုပ်ငန်းများတွင် အသုံးပြုသူများအား တိုးတက်မှုအခြေအနေများကို သတင်းပေးရန် အထူးအသုံးဝင်သည်။
 
-## Streaming in MCP
+## MCP တွင် စတရီမင်း
 
-ယခုအထိ classical streaming နှင့် MCP streaming ၏ ကွာခြားချက်များနှင့် အကြံပြုချက်များကို ကြည့်ရှုခဲ့ပါပြီ။ ယခု MCP တွင် streaming ကို မည်သို့ အသုံးချနိုင်သည်ကို အသေးစိတ် ရှင်းပြမည်။
+ယခုအထိ Classic streaming နှင့် MCP streaming ၏ ကွာခြားချက်များနှင့် အကြံပြုချက်များကို ကြည့်ရှုခဲ့ပါပြီ။ ယခု MCP တွင် စတရီမင်းကို မည်သို့ အသုံးချနိုင်သည်ကို အသေးစိတ် ရှင်းပြပါမည်။
 
-MCP စနစ်အတွင်း streaming ၏ အလုပ်လုပ်ပုံကို နားလည်ခြင်းသည် ကြာရှည်ဆောင်ရွက်နေစဉ် အသုံးပြုသူအား အချိန်နောက်ကျမှုမရှိသော တုံ့ပြန်မှုများ ပေးနိုင်သော အက်ပလီကေးရှင်းများ ဖန်တီးရာတွင် အရေးကြီးသည်။
+MCP ဖရိမ်ဝတ်အတွင်း စတရီမင်းသည် ရေရှည် ဆောင်ရွက်မှုများအတွင်း အသုံးပြုသူများအား အချိန်နှင့်တပြေးညီ တုံ့ပြန်ချက်ပေးနိုင်သော အက်ပလီကေးရှင်းများ ဖန်တီးရာတွင် အရေးကြီးသည်။
 
-MCP တွင် streaming သည် အဓိက တုံ့ပြန်ချက်ကို အပိုင်းအစများဖြင့် ပို့ခြင်းမဟုတ်ပဲ၊ တူညီသော အချိန်တွင် ကိရိယာတစ်ခုက တောင်းဆိုချက်ကို လုပ်ဆောင်နေစဉ် client သို့ **အသိပေးချက်များ** ပို့ခြင်းဖြစ်သည်။ ၎င်းအသိပေးချက်များတွင် တိုးတက်မှု အပ်ဒိတ်များ၊ မှတ်တမ်းများ သို့မဟုတ် အခြား ဖြစ်ရပ်များ ပါဝင်နိုင်သည်။
+MCP တွင် စတရီမင်းဆိုသည်မှာ အဓိက တုံ့ပြန်ချက်ကို အစိတ်အပိုင်းများဖြင့် မပို့ပဲ၊ ကိရိယာတစ်ခုက တောင်းဆိုမှုကို ဆောင်ရွက်နေစဉ် အသိပေးချက်များ (notifications) ကို client သို့ ပို့ပေးခြင်းဖြစ်သည်။ ၎င်းအသိပေးချက်များတွင် တိုးတက်မှု အပ်ဒိတ်များ၊ မှတ်တမ်းများ သို့မဟုတ် အခြား ဖြစ်ရပ်များ ပါဝင်နိုင်သည်။
 
-### အလုပ်လုပ်ပုံ
+### လုပ်ဆောင်ပုံ
 
-အဓိကရလဒ်ကို တစ်ခုတည်းသော တုံ့ပြန်ချက်အဖြစ် ပေးပို့သည်။ သို့သော် processing ဖြစ်စဉ်အတွင်း အသိပေးချက်များကို သီးခြားစာတိုများအဖြစ် ပို့နိုင်ပြီး client ကို အချိန်နောက်ကျမှုမရှိစွာ update ပြုလုပ်ပေးသည်။ client သည် ဤအသိပေးချက်များကို ကိုင်တွယ်ပြီး ပြသနိုင်ရမည်။
+အဓိက ရလဒ်ကို တစ်ခုတည်းသော တုံ့ပြန်ချက်အဖြစ် ပေးပို့သည်။ သို့သော် ဆောင်ရွက်နေစဉ် အသိပေးချက်များကို သီးခြား မက်ဆေ့ခ်ျများအဖြစ် ပို့ပေးနိုင်ပြီး client ကို အချိန်နှင့်တပြေးညီ အပ်ဒိတ်ပေးနိုင်သည်။ client သည် ၎င်းအသိပေးချက်များကို လက်ခံ၍ ပြသနိုင်ရမည်။
 
-## Notification ဆိုတာဘာလဲ?
+## အသိပေးချက် (Notification) ဆိုသည်မှာ?
 
-ကျွန်ုပ်တို့ "Notification" ဟု ဆိုခဲ့သည်။ MCP အတွင်း၌ ၎င်းသည် ဘာကို ဆိုလိုသနည်း?
+"အသိပေးချက်" ဟု ဆိုသည်မှာ MCP အတွင်း ဘာကို ဆိုလိုသနည်း?
 
-Notification သည် server မှ client သို့ ကြာရှည်ဆောင်ရွက်နေသော လုပ်ငန်းစဉ်တစ်ခုအတွင်း တိုးတက်မှု၊ အခြေအနေ သို့မဟုတ် အခြားဖြစ်ရပ်များကို အသိပေးရန် ပို့သော စာတိုဖြစ်သည်။ Notification များသည် ထင်မြင်နိုင်မှုကို တိုးတက်စေပြီး အသုံးပြုသူ အတွေ့အကြုံကို မြှင့်တင်ပေးသည်။
+အသိပေးချက်သည် ရေရှည် ဆောင်ရွက်မှုများအတွင်း တိုးတက်မှု၊ အခြေအနေ သို့မဟုတ် အခြား ဖြစ်ရပ်များအကြောင်း server မှ client သို့ ပို့သော မက်ဆေ့ခ်ျဖြစ်သည်။ အသိပေးချက်များသည် ထင်ရှားမှုနှင့် အသုံးပြုသူ အတွေ့အကြုံကို တိုးတက်စေသည်။
 
-ဥပမာအားဖြင့် client သည် server နှင့် အစပျိုးချိတ်ဆက်မှု ပြုလုပ်ပြီးနောက် Notification တစ်ခု ပို့ရမည်ဖြစ်သည်။
+ဥပမာအားဖြင့် client သည် server နှင့် ပထမဆုံး handshake ပြီးဆုံးသည့်အခါ အသိပေးချက် တစ်ခု ပို့ရမည်ဖြစ်သည်။
 
-Notification သည် JSON စာတိုအဖြစ် အောက်ပါပုံစံဖြစ်သည်-
+အသိပေးချက်သည် JSON မက်ဆေ့ခ်ျအဖြစ် အောက်ပါပုံစံဖြစ်သည်-
 
 ```json
 {
@@ -268,9 +267,9 @@ Notification သည် JSON စာတိုအဖြစ် အောက်ပါ
 }
 ```
 
-Notification များသည် MCP ၏ ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging) ဟူသော ခေါင်းစဉ်တစ်ခုတွင် ပါဝင်သည်။
+အသိပေးချက်များသည် MCP တွင် ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging) ဟု ခေါ်သော topic တစ်ခုတွင် ပါဝင်သည်။
 
-Logging ကို အလုပ်လုပ်စေရန် server သည် ၎င်းကို feature/capability အဖြစ် ဖွင့်ထားရမည်-
+logging ကို အလုပ်လုပ်စေရန် server သည် အောက်ပါအတိုင်း feature/capability အဖြစ် ဖွင့်ထားရမည်-
 
 ```json
 {
@@ -281,91 +280,32 @@ Logging ကို အလုပ်လုပ်စေရန် server သည် �
 ```
 
 > [!NOTE]
-> သုံးနေသော SDK အပေါ် မူတည်၍ logging သည် ပုံမှန်အားဖြင့် ဖွင့်ထားနိုင်သည်၊ သို့မဟုတ် server configuration တွင် သင့်တော်စွာ ဖွင့်ရပါမည်။
+> အသုံးပြုသော SDK အပေါ်မူတည်၍ logging ကို ပုံမှန်အားဖြင့် ဖွင့်ထားနိုင်သော်လည်း၊ သင့် server configuration တွင် ထိရောက်စွာ ဖွင့်ရန် လိုအပ်နိုင်သည်။
 
-Notification များအမျိုးအစားများ-
+အသိပေးချက်အမျိုးအစားများမှာ-
 
-| Level     | ဖော်ပြချက်                    | ဥပမာ အသုံးပြုမှု              |
+| အဆင့်     | ဖော်ပြချက်                      | အသုံးပြုမှု ဥပမာ               |
 |-----------|-------------------------------|---------------------------------|
-| debug     | အသေးစိတ် debugging အချက်အလက်များ | function ဝင်/ထွက်နေရာများ       |
-| info      | အထွေထွေ သတင်းအချက်အလက်များ    | လုပ်ငန်းတိုးတက်မှု အပ်ဒိတ်များ     |
-| notice    | သာမာန် သို့မဟုတ် အရေးကြီးဖြစ်ရပ်များ | စနစ်ပြင်ဆင်မှုများ               |
-| warning   | သတိပေး အခြေအနေများ              | အဟောင်း features အသုံးပြုမှု      |
-| error     | အမှားအခြေအနေများ                 | လုပ်ငန်းကျရှုံးမှုများ             |
-| critical  | အရေးပေါ် အခြေအနေများ             | စနစ်အစိတ်အပိုင်း မအောင်မြင်မှုများ  |
-| alert     | ချက်ချင်း လုပ်ဆောင်ရမည့် အရေးပေါ်    | ဒေတာပျက်စီးမှုတွေ့ရှိမှု          |
-| emergency | စနစ် အသုံးမပြုနိုင်ခြင်း           | စနစ်လုံးဝ ပျက်စီးမှု               |
+| debug     | အသေးစိတ် debugging အချက်အလက်များ | function ဝင်/ထွက် အချက်များ    |
+| info      | အထွေထွေ သတင်းအချက်အလက်များ   | လုပ်ငန်းတိုးတက်မှု အပ်ဒိတ်များ   |
+| notice    | ပုံမှန် သို့သော် အရေးကြီးသော ဖြစ်ရပ်များ | configuration ပြောင်းလဲမှုများ  |
+| warning   | သတိပေးချက် အခြေအနေများ         | အသုံးမပြုသင့်သော feature အသုံးပြုမှု |
+| error     | အမှားအခြေအနေများ               |
 
-## MCP တွင် Notification များ အကောင်အထည်ဖော်ခြင်း
-
-MCP တွင် notification များကို အကောင်အထည်ဖော်ရန် server နှင့် client နှစ်ဖက်စလုံးတွင် အချိန်နောက်ကျမှုမရှိသော အပ်ဒိတ်များကို ကိုင်တွယ်နိုင်ရန် ပြင်ဆင်ရမည်။ ၎င်းသည် ကြာရှည်ဆောင်ရွက်နေစဉ် အသုံးပြုသူအား ချက်ချင်းတုံ့ပြန်မှု ပေးနိုင်စေသည်။
-
-### Server ဘက် - Notification ပို့ခြင်း
-
-server ဘက်မှ စတင်မည်။ MCP တွင် request များကို လုပ်ဆောင်စဉ် notification ပို့နိုင်သော tools များကို သတ်မှတ်သည်။ server သည် context object (အများအားဖြင့် `ctx`) ကို အသုံးပြု၍ client သို့ စာတိုများ ပို့သည်။
-
-<details>
-<summary>Python</summary>
-
-<details>
 <summary>Python</summary>
 
 ```python
 @mcp.tool(description="A tool that sends progress notifications")
 async def process_files(message: str, ctx: Context) -> TextContent:
-    await ctx.info("Processing file 1/3...")
-    await ctx.info("Processing file 2/3...")
-    await ctx.info("Processing file 3/3...")
+    for i in range(1, 11):
+        await ctx.info(f"Processing document {i}/10")
+    await ctx.info("Processing complete!")
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-အထက်ပါ ဥပမာတွင် `process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
-
 </details>
 
-Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http` သယ်ယူပို့ဆောင်မှုကို အသုံးပြုထားသည်-
-
-```python
-mcp.run(transport="streamable-http")
-```
-
-</details>
-
-<details>
-<summary>.NET</summary>
-
-```csharp
-[Tool("A tool that sends progress notifications")]
-public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
-{
-    await ctx.Info("Processing file 1/3...");
-    await ctx.Info("Processing file 2/3...");
-    await ctx.Info("Processing file 3/3...");
-    return new TextContent
-    {
-        Type = "text",
-        Text = $"Done: {message}"
-    };
-}
-```
-
-ဤ .NET ဥပမာတွင် `ProcessFiles` tool is decorated with the `Tool` attribute and sends three notifications to the client as it processes each file. The `ctx.Info()` ကို အသုံးပြု၍ သတင်းအချက်အလက်များ ပို့သည်။
-
-သင့် .NET MCP server တွင် notification များဖွင့်ရန် streaming transport ကို သုံးပါ-
-
-```csharp
-var builder = McpBuilder.Create();
-await builder
-    .UseStreamableHttp() // Enable streamable HTTP transport
-    .Build()
-    .RunAsync();
-```
-
-</details>
-
-### Client ဘက် - Notification လက်ခံခြင်း
-
-client သည် notification များ ရောက်ရှိသလို ကိုင်တွယ်ပြသနိုင်ရန် message handler တစ်ခု ထည့်သွင်းရမည်။
+**Client Example:**
 
 <details>
 <summary>Python</summary>
@@ -376,60 +316,128 @@ async def message_handler(message):
         print("NOTIFICATION:", message)
     else:
         print("SERVER MESSAGE:", message)
-
-async with ClientSession(
-   read_stream, 
-   write_stream,
-   logging_callback=logging_collector,
-   message_handler=message_handler,
-) as session:
 ```
-
-အထက်ပါ ကုဒ်တွင် `message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` သည် လက်ခံလာသော notification များကို ကိုင်တွယ်သည်။
 
 </details>
 
-<details>
-<summary>.NET</summary>
+## လုံခြုံရေးဆိုင်ရာစဉ်းစားချက်များ
 
-```csharp
-// Define a message handler
-void MessageHandler(IJsonRpcMessage message)
-{
-    if (message is ServerNotification notification)
-    {
-        Console.WriteLine($"NOTIFICATION: {notification}");
-    }
-    else
-    {
-        Console.WriteLine($"SERVER MESSAGE: {message}");
-    }
-}
+HTTP အခြေပြု ပို့ဆောင်မှုများဖြင့် MCP ဆာဗာများကို တည်ဆောက်ရာတွင် လုံခြုံရေးသည် အလွန်အရေးကြီးပြီး၊ အမျိုးမျိုးသောတိုက်ခိုက်မှုနည်းလမ်းများနှင့် ကာကွယ်မှုစနစ်များကို ဂရုစိုက်စွာ စီမံရန် လိုအပ်ပါသည်။
 
-// Create and use a client session with the message handler
-var clientOptions = new ClientSessionOptions
-{
-    MessageHandler = MessageHandler,
-    LoggingCallback = (level, message) => Console.WriteLine($"[{level}] {message}")
-};
+### အနှစ်ချုပ်
 
-using var client = new ClientSession(readStream, writeStream, clientOptions);
-await client.InitializeAsync();
+MCP ဆာဗာများကို HTTP မှတဆင့် ဖော်ပြရာတွင် လုံခြုံရေးသည် အရေးကြီးပါသည်။ Streamable HTTP သည် တိုက်ခိုက်မှုအလားအလာအသစ်များကို ဖန်တီးပြီး၊ သေချာစွာ ပြင်ဆင်ရန် လိုအပ်ပါသည်။
 
-// Now the client will process notifications through the MessageHandler
-```
+### အဓိကအချက်များ
+- **Origin Header စစ်ဆေးခြင်း**: DNS rebinding တိုက်ခိုက်မှုများကို ကာကွယ်ရန် `Origin` header ကို အမြဲစစ်ဆေးပါ။
+- **Localhost Binding**: ဒေသတွင်း ဖွံ့ဖြိုးရေးအတွက် ဆာဗာများကို `localhost` တွင်သာ ချိတ်ဆက်ပါ၊ အများပြည်သူအင်တာနက်တွင် ဖော်ပြခြင်းမှ ရှောင်ကြဉ်ရန်။
+- **Authentication**: ထုတ်လုပ်မှုတွင် API key များ၊ OAuth စသည့် အတည်ပြုမှုစနစ်များကို ထည့်သွင်းပါ။
+- **CORS**: Cross-Origin Resource Sharing (CORS) မူဝါဒများကို သတ်မှတ်၍ ဝင်ရောက်ခွင့်ကို ကန့်သတ်ပါ။
+- **HTTPS**: ထုတ်လုပ်မှုတွင် HTTPS ကို အသုံးပြု၍ သတင်းအချက်အလက်များကို စာလုံးကောက်ထားပါ။
 
-ဤ .NET ဥပမာတွင် `MessageHandler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. The `ClientSession` is initialized with the message handler via the `ClientSessionOptions`.
+### အကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများ
+- စစ်ဆေးမှုမရှိဘဲ ဝင်ရောက်လာသော တောင်းဆိုမှုများကို ယုံကြည်မထားပါနှင့်။
+- ဝင်ရောက်မှုများနှင့် အမှားများအားလုံးကို မှတ်တမ်းတင်ပြီး စောင့်ကြည့်ပါ။
+- လုံခြုံရေး ချို့ယွင်းချက်များကို ပြုပြင်ရန် အချိန်နှင့်တပြေးညီ အခြားပစ္စည်းများကို အဆက်မပြတ် update လုပ်ပါ။
 
-</details>
+### စိန်ခေါ်မှုများ
+- ဖွံ့ဖြိုးရေး လွယ်ကူမှုနှင့် လုံခြုံရေးကို ညီမျှစွာ ထိန်းသိမ်းရခြင်း
+- မတူညီသော client ပတ်ဝန်းကျင်များနှင့် ကိုက်ညီမှုရှိစေရန်
 
-To enable notifications, ensure your server uses a streaming transport (like `streamable-http` အသုံးပြု၍ client သည် notification များကို ကိုင်တွယ်သည်။
+## SSE မှ Streamable HTTP သို့ အဆင့်မြှင့်ခြင်း
 
-## Progress Notifications & Scenarios
+Server-Sent Events (SSE) ကို အသုံးပြုနေသော အပလီကေးရှင်းများအတွက် Streamable HTTP သို့ ပြောင်းရွှေ့ခြင်းသည် MCP အကောင်အထည်ဖော်မှုများအတွက် ပိုမိုကောင်းမွန်သော စွမ်းဆောင်ရည်နှင့် ရေရှည်တည်တံ့မှုကို ပေးစွမ်းပါသည်။
 
-ဤအပိုင်းတွင် MCP တွင် progress notification ဆိုသည့် အကြောင်းအရာ၊ ၎င်း၏ အရေးကြီးမှုနှင့် Streamable HTTP ဖြင့် မည်သို့ အကောင်အထည်ဖော်ရမည်ကို ဖော်ပြထားသည်။ သင်၏ နားလည်မှုကို ခိုင်မာစေရန် လက်တွေ့ လေ့ကျင့်ခန်းလည်း ပါဝင်သည်။
+### အဆင့်မြှင့်ရသည့် အကြောင်းရင်း
 
-Progress notification များသည် ကြာရှည်ဆောင်ရွက်နေစဉ် server မှ client သို့ အချိန်နောက်ကျမှုမရှိစွာ ပို့သော စ
+SSE မှ Streamable HTTP သို့ အဆင့်မြှင့်ရန် အကြောင်းရင်း ၂ ချက်ရှိပါသည်-
+
+- Streamable HTTP သည် SSE ထက် ပိုမိုတိုးတက်သော စွမ်းဆောင်ရည်၊ ကိုက်ညီမှုနှင့် အသိပေးမှုများ ပိုမိုကြွယ်ဝစေပါသည်။
+- MCP အသစ်များအတွက် အကြံပြုထားသော ပို့ဆောင်မှုနည်းလမ်းဖြစ်ပါသည်။
+
+### ပြောင်းရွှေ့ခြင်း အဆင့်များ
+
+MCP အပလီကေးရှင်းများတွင် SSE မှ Streamable HTTP သို့ ပြောင်းရွှေ့ရန် အောက်ပါအတိုင်း လုပ်ဆောင်နိုင်ပါသည်-
+
+- `mcp.run()` တွင် `transport="streamable-http"` ကို အသုံးပြုရန် ဆာဗာကုဒ်ကို update လုပ်ပါ။
+- SSE client အစား `streamablehttp_client` ကို အသုံးပြုရန် client ကုဒ်ကို update လုပ်ပါ။
+- အသိပေးချက်များကို ကိုင်တွယ်ရန် client တွင် message handler တစ်ခု ထည့်သွင်းပါ။
+- ရှိပြီးသား ကိရိယာများနှင့် workflow များနှင့် ကိုက်ညီမှုရှိမရှိ စမ်းသပ်ပါ။
+
+### ကိုက်ညီမှု ထိန်းသိမ်းခြင်း
+
+ပြောင်းရွှေ့မှုကာလအတွင်း ရှိပြီးသား SSE client များနှင့် ကိုက်ညီမှုရှိစေရန် အောက်ပါနည်းလမ်းများကို အသုံးပြုနိုင်ပါသည်-
+
+- SSE နှင့် Streamable HTTP နှစ်မျိုးလုံးကို endpoint မတူကွဲပြားစွာ တပြိုင်နက်တွင် ထောက်ပံ့နိုင်ပါသည်။
+- Client များကို တဖြည်းဖြည်း အသစ်သော ပို့ဆောင်မှုသို့ ပြောင်းရွှေ့ပါ။
+
+### စိန်ခေါ်မှုများ
+
+ပြောင်းရွှေ့မှုအတွင်း အောက်ပါ စိန်ခေါ်မှုများကို ဖြေရှင်းရန် လိုအပ်ပါသည်-
+
+- Client များအားလုံးကို update လုပ်ထားခြင်း
+- အသိပေးချက် ပေးပို့မှုကွာခြားချက်များကို ကိုင်တွယ်ခြင်း
+
+## လုံခြုံရေးဆိုင်ရာစဉ်းစားချက်များ
+
+HTTP အခြေပြု ပို့ဆောင်မှုများဖြင့် MCP ဆာဗာများ တည်ဆောက်ရာတွင် လုံခြုံရေးသည် အလွန်အရေးကြီးပြီး၊ အမျိုးမျိုးသောတိုက်ခိုက်မှုနည်းလမ်းများနှင့် ကာကွယ်မှုစနစ်များကို ဂရုစိုက်စွာ စီမံရန် လိုအပ်ပါသည်။
+
+### အနှစ်ချုပ်
+
+MCP ဆာဗာများကို HTTP မှတဆင့် ဖော်ပြရာတွင် လုံခြုံရေးသည် အရေးကြီးပါသည်။ Streamable HTTP သည် တိုက်ခိုက်မှုအလားအလာအသစ်များကို ဖန်တီးပြီး၊ သေချာစွာ ပြင်ဆင်ရန် လိုအပ်ပါသည်။
+
+အောက်ပါ လုံခြုံရေးအချက်များကို သတိပြုပါ-
+
+- **Origin Header စစ်ဆေးခြင်း**: DNS rebinding တိုက်ခိုက်မှုများကို ကာကွယ်ရန် `Origin` header ကို အမြဲစစ်ဆေးပါ။
+- **Localhost Binding**: ဒေသတွင်း ဖွံ့ဖြိုးရေးအတွက် ဆာဗာများကို `localhost` တွင်သာ ချိတ်ဆက်ပါ၊ အများပြည်သူအင်တာနက်တွင် ဖော်ပြခြင်းမှ ရှောင်ကြဉ်ရန်။
+- **Authentication**: ထုတ်လုပ်မှုတွင် API key များ၊ OAuth စသည့် အတည်ပြုမှုစနစ်များကို ထည့်သွင်းပါ။
+- **CORS**: Cross-Origin Resource Sharing (CORS) မူဝါဒများကို သတ်မှတ်၍ ဝင်ရောက်ခွင့်ကို ကန့်သတ်ပါ။
+- **HTTPS**: ထုတ်လုပ်မှုတွင် HTTPS ကို အသုံးပြု၍ သတင်းအချက်အလက်များကို စာလုံးကောက်ထားပါ။
+
+### အကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများ
+
+MCP streaming ဆာဗာတွင် လုံခြုံရေးကို ထည့်သွင်းရာတွင် အောက်ပါ အကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများကို လိုက်နာပါ-
+
+- စစ်ဆေးမှုမရှိဘဲ ဝင်ရောက်လာသော တောင်းဆိုမှုများကို ယုံကြည်မထားပါနှင့်။
+- ဝင်ရောက်မှုများနှင့် အမှားများအားလုံးကို မှတ်တမ်းတင်ပြီး စောင့်ကြည့်ပါ။
+- လုံခြုံရေး ချို့ယွင်းချက်များကို ပြုပြင်ရန် အချိန်နှင့်တပြေးညီ အခြားပစ္စည်းများကို အဆက်မပြတ် update လုပ်ပါ။
+
+### စိန်ခေါ်မှုများ
+
+MCP streaming ဆာဗာများတွင် လုံခြုံရေး ထည့်သွင်းရာတွင် အောက်ပါ စိန်ခေါ်မှုများကို ကြုံတွေ့ရပါမည်-
+
+- ဖွံ့ဖြိုးရေး လွယ်ကူမှုနှင့် လုံခြုံရေးကို ညီမျှစွာ ထိန်းသိမ်းရခြင်း
+- မတူညီသော client ပတ်ဝန်းကျင်များနှင့် ကိုက်ညီမှုရှိစေရန်
+
+### လုပ်ငန်းတာဝန်: ကိုယ်ပိုင် Streaming MCP အက်ပ် တည်ဆောက်ခြင်း
+
+**အခြေအနေ:**
+MCP ဆာဗာနှင့် client တစ်ခုကို တည်ဆောက်ပါ၊ ဆာဗာသည် အချက်အလက်စာရင်း (ဥပမာ ဖိုင်များ သို့မဟုတ် စာရွက်စာတမ်းများ) ကို လုပ်ဆောင်ပြီး၊ အချက်တစ်ခုစီအတွက် အသိပေးချက် ပို့ပေးပါမည်။ Client သည် အသိပေးချက်များကို ရောက်ရှိသလို ပြသပေးရမည်။
+
+**အဆင့်များ:**
+
+1. အချက်အလက်စာရင်းကို လုပ်ဆောင်ပြီး အသိပေးချက်များ ပို့ပေးသော ဆာဗာကိရိယာ တစ်ခုကို တည်ဆောက်ပါ။
+2. အသိပေးချက်များကို အချိန်နှင့်တပြေးညီ ပြသနိုင်ရန် message handler ပါရှိသော client ကို တည်ဆောက်ပါ။
+3. ဆာဗာနှင့် client နှစ်ခုလုံးကို လည်ပတ်စစ်ဆေးပြီး အသိပေးချက်များကို ကြည့်ရှုပါ။
+
+[Solution](./solution/README.md)
+
+## နောက်ထပ်ဖတ်ရှုရန်နှင့် နောက်တစ်ဆင့်
+
+MCP streaming နှင့် ပိုမိုကျွမ်းကျင်ရန်၊ ဒီအပိုင်းတွင် နောက်ထပ် အရင်းအမြစ်များနှင့် ပိုမိုတိုးတက်သော အက်ပ်များ တည်ဆောက်ရန် အကြံပြုချက်များ ပါဝင်သည်။
+
+### နောက်ထပ်ဖတ်ရှုရန်
+
+- [Microsoft: Introduction to HTTP Streaming](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
+- [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
+- [Microsoft: CORS in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
+- [Python requests: Streaming Requests](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
+
+### နောက်တစ်ဆင့်
+
+- အချိန်နှင့်တပြေးညီ သုံးစွဲသူများအတွက် အချက်အလက်များကို တိုက်ရိုက်သုံးသပ်ခြင်း၊ စကားပြောခြင်း သို့မဟုတ် ပူးပေါင်းတည်းဖြတ်ခြင်းများအတွက် streaming ကို အသုံးပြုသော MCP ကိရိယာများ ပိုမိုတိုးတက်စွာ တည်ဆောက်ကြည့်ပါ။
+- MCP streaming ကို frontend framework များ (React, Vue စသည်) နှင့် ပေါင်းစပ်၍ အသက်ဝင်သော UI အပ်ဒိတ်များ ပြုလုပ်ပါ။
+- နောက်တစ်ဆင့်: [Utilising AI Toolkit for VSCode](../07-aitk/README.md)
 
 **အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်မှု ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ တိကျမှန်ကန်မှုအတွက် ကြိုးစားပေမယ့်၊ အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန်။ မူလစာတမ်းကို မူရင်းဘာသာဖြင့်သာ တရားဝင်အရင်းအမြစ်အဖြစ်ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် ပရော်ဖက်ရှင်နယ် လူသား ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းကြောင့် ဖြစ်ပေါ်လာနိုင်သည့် မတိကျမှုများ သို့မဟုတ် နားမလည်မှုများအတွက် ကျွန်ုပ်တို့တာဝန်မယူပါ။
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မူလဘာသာဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

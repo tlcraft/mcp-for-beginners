@@ -1,51 +1,51 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3eaf38ffe0638867045ec6664908333c",
-  "translation_date": "2025-06-18T09:02:42+00:00",
+  "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
+  "translation_date": "2025-07-10T16:08:35+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "it"
 }
 -->
 # HTTPS Streaming con Model Context Protocol (MCP)
 
-Questo capitolo offre una guida completa per implementare uno streaming sicuro, scalabile e in tempo reale con il Model Context Protocol (MCP) utilizzando HTTPS. Copre la motivazione dello streaming, i meccanismi di trasporto disponibili, come implementare HTTP streamable in MCP, le migliori pratiche di sicurezza, la migrazione da SSE e indicazioni pratiche per costruire le tue applicazioni MCP streaming.
+Questo capitolo fornisce una guida completa per implementare lo streaming sicuro, scalabile e in tempo reale con il Model Context Protocol (MCP) utilizzando HTTPS. Copre la motivazione dello streaming, i meccanismi di trasporto disponibili, come implementare HTTP streamable in MCP, le migliori pratiche di sicurezza, la migrazione da SSE e indicazioni pratiche per costruire le tue applicazioni MCP con streaming.
 
 ## Meccanismi di Trasporto e Streaming in MCP
 
-Questa sezione esplora i diversi meccanismi di trasporto disponibili in MCP e il loro ruolo nell’abilitare capacità di streaming per la comunicazione in tempo reale tra client e server.
+Questa sezione esplora i diversi meccanismi di trasporto disponibili in MCP e il loro ruolo nell’abilitare funzionalità di streaming per la comunicazione in tempo reale tra client e server.
 
 ### Cos’è un Meccanismo di Trasporto?
 
-Un meccanismo di trasporto definisce come i dati vengono scambiati tra client e server. MCP supporta diversi tipi di trasporto per adattarsi a differenti ambienti e requisiti:
+Un meccanismo di trasporto definisce come i dati vengono scambiati tra client e server. MCP supporta diversi tipi di trasporto per adattarsi a vari ambienti e requisiti:
 
 - **stdio**: input/output standard, adatto per strumenti locali e CLI. Semplice ma non adatto per web o cloud.
 - **SSE (Server-Sent Events)**: permette ai server di inviare aggiornamenti in tempo reale ai client tramite HTTP. Buono per interfacce web, ma limitato in scalabilità e flessibilità.
-- **Streamable HTTP**: trasporto streaming basato su HTTP moderno, supporta notifiche e migliore scalabilità. Raccomandato per la maggior parte degli scenari di produzione e cloud.
+- **Streamable HTTP**: trasporto di streaming moderno basato su HTTP, supporta notifiche e migliore scalabilità. Raccomandato per la maggior parte degli scenari di produzione e cloud.
 
 ### Tabella di Confronto
 
 Dai un’occhiata alla tabella di confronto qui sotto per capire le differenze tra questi meccanismi di trasporto:
 
-| Trasporto         | Aggiornamenti in Tempo Reale | Streaming | Scalabilità | Caso d'Uso               |
-|-------------------|------------------------------|-----------|-------------|--------------------------|
-| stdio             | No                           | No        | Bassa       | Strumenti CLI locali      |
-| SSE               | Sì                           | Sì        | Media       | Web, aggiornamenti in tempo reale |
-| Streamable HTTP   | Sì                           | Sì        | Alta        | Cloud, multi-client      |
+| Trasporto         | Aggiornamenti in tempo reale | Streaming | Scalabilità | Caso d’uso               |
+|-------------------|-----------------------------|-----------|-------------|-------------------------|
+| stdio             | No                          | No        | Bassa       | Strumenti CLI locali     |
+| SSE               | Sì                          | Sì        | Media       | Web, aggiornamenti real-time |
+| Streamable HTTP   | Sì                          | Sì        | Alta        | Cloud, multi-client     |
 
-> **Tip:** La scelta del trasporto giusto influenza performance, scalabilità ed esperienza utente. **Streamable HTTP** è raccomandato per applicazioni moderne, scalabili e pronte per il cloud.
+> **Tip:** La scelta del trasporto giusto influisce su prestazioni, scalabilità ed esperienza utente. **Streamable HTTP** è raccomandato per applicazioni moderne, scalabili e pronte per il cloud.
 
-Nota i trasporti stdio e SSE mostrati nei capitoli precedenti e come in questo capitolo viene trattato lo streamable HTTP.
+Nota i trasporti stdio e SSE mostrati nei capitoli precedenti e come lo streamable HTTP sia il trasporto trattato in questo capitolo.
 
 ## Streaming: Concetti e Motivazioni
 
 Comprendere i concetti fondamentali e le motivazioni dietro lo streaming è essenziale per implementare sistemi di comunicazione in tempo reale efficaci.
 
-**Streaming** è una tecnica nella programmazione di rete che permette di inviare e ricevere dati in piccoli blocchi gestibili o come una sequenza di eventi, invece di aspettare che l’intera risposta sia pronta. Questo è particolarmente utile per:
+**Streaming** è una tecnica nella programmazione di rete che permette di inviare e ricevere dati in piccoli blocchi gestibili o come una sequenza di eventi, invece di aspettare che tutta la risposta sia pronta. Questo è particolarmente utile per:
 
 - File o dataset di grandi dimensioni.
 - Aggiornamenti in tempo reale (es. chat, barre di progresso).
-- Calcoli a lunga durata in cui si vuole tenere informato l’utente.
+- Calcoli di lunga durata in cui si vuole tenere informato l’utente.
 
 Ecco cosa devi sapere sullo streaming a livello generale:
 
@@ -59,16 +59,16 @@ Le ragioni per usare lo streaming sono le seguenti:
 
 - Gli utenti ricevono feedback immediato, non solo alla fine
 - Permette applicazioni in tempo reale e interfacce reattive
-- Utilizzo più efficiente delle risorse di rete e calcolo
+- Uso più efficiente delle risorse di rete e calcolo
 
-### Esempio Semplice: Server & Client HTTP Streaming
+### Esempio Semplice: Server e Client HTTP Streaming
 
-Ecco un esempio semplice di come può essere implementato lo streaming:
+Ecco un esempio semplice di come si può implementare lo streaming:
 
 <details>
 <summary>Python</summary>
 
-**Server (Python, con FastAPI e StreamingResponse):**
+**Server (Python, usando FastAPI e StreamingResponse):**
 <details>
 <summary>Python</summary>
 
@@ -91,7 +91,7 @@ def stream():
 
 </details>
 
-**Client (Python, con requests):**
+**Client (Python, usando requests):**
 <details>
 <summary>Python</summary>
 
@@ -106,23 +106,23 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-Questo esempio mostra un server che invia una serie di messaggi al client non appena sono disponibili, invece di aspettare che tutti i messaggi siano pronti.
+Questo esempio mostra un server che invia una serie di messaggi al client man mano che diventano disponibili, invece di aspettare che tutti i messaggi siano pronti.
 
 **Come funziona:**
 - Il server invia ogni messaggio appena è pronto.
-- Il client riceve e stampa ogni blocco man mano che arriva.
+- Il client riceve e stampa ogni blocco appena arriva.
 
 **Requisiti:**
-- Il server deve utilizzare una risposta streaming (es. `StreamingResponse` in FastAPI).
-- The client must process the response as a stream (`stream=True` in requests).
-- Content-Type is usually `text/event-stream` or `application/octet-stream`.
+- Il server deve usare una risposta in streaming (es. `StreamingResponse` in FastAPI).
+- Il client deve processare la risposta come stream (`stream=True` in requests).
+- Il Content-Type è solitamente `text/event-stream` o `application/octet-stream`.
 
 </details>
 
 <details>
 <summary>Java</summary>
 
-**Server (Java, con Spring Boot e Server-Sent Events):**
+**Server (Java, usando Spring Boot e Server-Sent Events):**
 
 ```java
 @RestController
@@ -157,7 +157,7 @@ public class CalculatorController {
 }
 ```
 
-**Client (Java, con Spring WebFlux WebClient):**
+**Client (Java, usando Spring WebFlux WebClient):**
 
 ```java
 @SpringBootApplication
@@ -186,72 +186,72 @@ public class CalculatorClientApplication implements CommandLineRunner {
 ```
 
 **Note sull’implementazione Java:**
-- Usa lo stack reattivo di Spring Boot con `Flux` for streaming
-- `ServerSentEvent` provides structured event streaming with event types
-- `WebClient` with `bodyToFlux()` enables reactive streaming consumption
-- `delayElements()` simulates processing time between events
-- Events can have types (`info`, `result`) for better client handling
+- Usa lo stack reattivo di Spring Boot con `Flux` per lo streaming
+- `ServerSentEvent` fornisce streaming di eventi strutturati con tipi di evento
+- `WebClient` con `bodyToFlux()` abilita il consumo reattivo dello streaming
+- `delayElements()` simula il tempo di elaborazione tra eventi
+- Gli eventi possono avere tipi (`info`, `result`) per una migliore gestione client
 
 </details>
 
-### Comparison: Classic Streaming vs MCP Streaming
+### Confronto: Streaming Classico vs Streaming MCP
 
-The differences between how streaming works in a "classical" manner versus how it works in MCP can be depicted like so:
+Le differenze tra come funziona lo streaming in modo "classico" rispetto a MCP possono essere rappresentate così:
 
-| Feature                | Classic HTTP Streaming         | MCP Streaming (Notifications)      |
-|------------------------|-------------------------------|-------------------------------------|
-| Main response          | Chunked                       | Single, at end                      |
-| Progress updates       | Sent as data chunks           | Sent as notifications               |
-| Client requirements    | Must process stream           | Must implement message handler      |
-| Use case               | Large files, AI token streams | Progress, logs, real-time feedback  |
+| Caratteristica         | Streaming HTTP Classico         | Streaming MCP (Notifiche)         |
+|-----------------------|--------------------------------|----------------------------------|
+| Risposta principale   | Chunked                        | Singola, alla fine               |
+| Aggiornamenti di progresso | Inviati come blocchi di dati | Inviati come notifiche           |
+| Requisiti client      | Deve processare lo stream      | Deve implementare un gestore messaggi |
+| Caso d’uso            | File grandi, stream di token AI | Progresso, log, feedback in tempo reale |
 
-### Key Differences Observed
+### Differenze Chiave Osservate
 
-Additionally, here are some key differences:
+Inoltre, ecco alcune differenze chiave:
 
-- **Communication Pattern:**
-   - Classic HTTP streaming: Uses simple chunked transfer encoding to send data in chunks
-   - MCP streaming: Uses a structured notification system with JSON-RPC protocol
+- **Schema di comunicazione:**
+   - Streaming HTTP classico: usa semplice chunked transfer encoding per inviare dati a blocchi
+   - Streaming MCP: usa un sistema strutturato di notifiche con protocollo JSON-RPC
 
-- **Message Format:**
-   - Classic HTTP: Plain text chunks with newlines
-   - MCP: Structured LoggingMessageNotification objects with metadata
+- **Formato del messaggio:**
+   - HTTP classico: blocchi di testo semplice con newline
+   - MCP: oggetti strutturati LoggingMessageNotification con metadati
 
-- **Client Implementation:**
-   - Classic HTTP: Simple client that processes streaming responses
-   - MCP: More sophisticated client with a message handler to process different types of messages
+- **Implementazione client:**
+   - HTTP classico: client semplice che processa risposte in streaming
+   - MCP: client più sofisticato con gestore messaggi per elaborare diversi tipi di messaggi
 
-- **Progress Updates:**
-   - Classic HTTP: The progress is part of the main response stream
-   - MCP: Progress is sent via separate notification messages while the main response comes at the end
+- **Aggiornamenti di progresso:**
+   - HTTP classico: il progresso fa parte dello stream principale di risposta
+   - MCP: il progresso è inviato tramite messaggi di notifica separati mentre la risposta principale arriva alla fine
 
-### Recommendations
+### Raccomandazioni
 
-There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream`) rispetto alla scelta dello streaming via MCP.
+Ci sono alcune indicazioni che consigliamo quando si tratta di scegliere tra implementare lo streaming classico (come l’endpoint mostrato sopra usando `/stream`) o scegliere lo streaming tramite MCP.
 
-- **Per esigenze di streaming semplici:** Lo streaming HTTP classico è più semplice da implementare e sufficiente per esigenze base.
+- **Per esigenze di streaming semplici:** lo streaming HTTP classico è più semplice da implementare e sufficiente per esigenze di base.
 
-- **Per applicazioni complesse e interattive:** Lo streaming MCP offre un approccio più strutturato con metadati più ricchi e separazione tra notifiche e risultati finali.
+- **Per applicazioni complesse e interattive:** lo streaming MCP offre un approccio più strutturato con metadati più ricchi e separazione tra notifiche e risultati finali.
 
-- **Per applicazioni AI:** Il sistema di notifiche MCP è particolarmente utile per task AI a lunga durata in cui si vuole tenere l’utente aggiornato sul progresso.
+- **Per applicazioni AI:** il sistema di notifiche MCP è particolarmente utile per task AI di lunga durata in cui si vuole tenere informati gli utenti sul progresso.
 
 ## Streaming in MCP
 
-Bene, hai visto alcune raccomandazioni e confronti finora tra streaming classico e streaming in MCP. Vediamo nel dettaglio come puoi sfruttare lo streaming in MCP.
+Ok, hai visto alcune raccomandazioni e confronti finora sulla differenza tra streaming classico e streaming in MCP. Vediamo nel dettaglio come puoi sfruttare lo streaming in MCP.
 
-Comprendere come funziona lo streaming all’interno del framework MCP è fondamentale per costruire applicazioni reattive che forniscano feedback in tempo reale agli utenti durante operazioni a lunga durata.
+Capire come funziona lo streaming all’interno del framework MCP è essenziale per costruire applicazioni reattive che forniscano feedback in tempo reale agli utenti durante operazioni di lunga durata.
 
 In MCP, lo streaming non riguarda l’invio della risposta principale a blocchi, ma l’invio di **notifiche** al client mentre uno strumento elabora una richiesta. Queste notifiche possono includere aggiornamenti di progresso, log o altri eventi.
 
 ### Come funziona
 
-Il risultato principale viene comunque inviato come una singola risposta. Tuttavia, le notifiche possono essere inviate come messaggi separati durante l’elaborazione, aggiornando così il client in tempo reale. Il client deve essere in grado di gestire e mostrare queste notifiche.
+Il risultato principale viene comunque inviato come risposta singola. Tuttavia, le notifiche possono essere inviate come messaggi separati durante l’elaborazione e aggiornare così il client in tempo reale. Il client deve essere in grado di gestire e mostrare queste notifiche.
 
 ## Cos’è una Notifica?
 
-Abbiamo detto "Notifica", cosa significa nel contesto MCP?
+Abbiamo detto "Notifica", cosa significa nel contesto di MCP?
 
-Una notifica è un messaggio inviato dal server al client per informare su progresso, stato o altri eventi durante un’operazione a lunga durata. Le notifiche migliorano trasparenza ed esperienza utente.
+Una notifica è un messaggio inviato dal server al client per informare su progresso, stato o altri eventi durante un’operazione di lunga durata. Le notifiche migliorano trasparenza ed esperienza utente.
 
 Ad esempio, un client dovrebbe inviare una notifica una volta che il handshake iniziale con il server è stato effettuato.
 
@@ -269,7 +269,7 @@ Una notifica appare così come messaggio JSON:
 
 Le notifiche appartengono a un topic in MCP chiamato ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
 
-Per far funzionare il logging, il server deve abilitarlo come feature/capabilità in questo modo:
+Per far funzionare il logging, il server deve abilitarlo come feature/capability così:
 
 ```json
 {
@@ -280,28 +280,28 @@ Per far funzionare il logging, il server deve abilitarlo come feature/capabilit�
 ```
 
 > [!NOTE]
-> A seconda dell’SDK utilizzato, il logging potrebbe essere abilitato di default, oppure potrebbe essere necessario abilitarlo esplicitamente nella configurazione del server.
+> A seconda dell’SDK usato, il logging potrebbe essere abilitato di default, oppure potrebbe essere necessario abilitarlo esplicitamente nella configurazione del server.
 
 Esistono diversi tipi di notifiche:
 
-| Livello    | Descrizione                    | Caso d’Uso Esempio            |
-|------------|-------------------------------|------------------------------|
+| Livello    | Descrizione                    | Esempio di utilizzo            |
+|------------|-------------------------------|-------------------------------|
 | debug      | Informazioni dettagliate di debug | Punti di ingresso/uscita funzione |
-| info       | Messaggi informativi generali | Aggiornamenti di progresso   |
-| notice     | Eventi normali ma significativi | Modifiche di configurazione  |
+| info       | Messaggi informativi generali | Aggiornamenti di progresso    |
+| notice     | Eventi normali ma significativi | Cambiamenti di configurazione |
 | warning    | Condizioni di avviso           | Uso di funzionalità deprecate |
-| error      | Condizioni di errore           | Fallimenti operativi         |
+| error      | Condizioni di errore           | Fallimenti di operazioni      |
 | critical   | Condizioni critiche            | Guasti di componenti di sistema |
-| alert      | Azione immediata richiesta     | Rilevamento di corruzione dati |
-| emergency  | Sistema inutilizzabile         | Guasto completo del sistema  |
+| alert      | Azione da intraprendere immediatamente | Rilevata corruzione dati    |
+| emergency  | Sistema inutilizzabile         | Guasto completo del sistema   |
 
 ## Implementare le Notifiche in MCP
 
-Per implementare le notifiche in MCP, devi configurare sia il server che il client per gestire aggiornamenti in tempo reale. Questo permette alla tua applicazione di fornire feedback immediato agli utenti durante operazioni a lunga durata.
+Per implementare le notifiche in MCP, devi configurare sia il server che il client per gestire aggiornamenti in tempo reale. Questo permette alla tua applicazione di fornire feedback immediato agli utenti durante operazioni di lunga durata.
 
-### Lato Server: Invio delle Notifiche
+### Lato server: Invio delle Notifiche
 
-Iniziamo dal lato server. In MCP, definisci strumenti che possono inviare notifiche mentre elaborano richieste. Il server usa l’oggetto context (di solito `ctx`) per inviare messaggi al client.
+Iniziamo dal lato server. In MCP, definisci strumenti che possono inviare notifiche mentre elaborano le richieste. Il server usa l’oggetto context (di solito `ctx`) per inviare messaggi al client.
 
 <details>
 <summary>Python</summary>
@@ -318,11 +318,11 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-Nell’esempio precedente, il trasporto `process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
+Nell’esempio precedente, lo strumento `process_files` invia tre notifiche al client mentre elabora ogni file. Il metodo `ctx.info()` viene usato per inviare messaggi informativi.
 
 </details>
 
-Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http`:
+Inoltre, per abilitare le notifiche, assicurati che il server usi un trasporto in streaming (come `streamable-http`) e che il client implementi un gestore messaggi per processare le notifiche. Ecco come configurare il server per usare il trasporto `streamable-http`:
 
 ```python
 mcp.run(transport="streamable-http")
@@ -348,9 +348,9 @@ public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
 }
 ```
 
-In questo esempio .NET, il metodo `ProcessFiles` tool is decorated with the `Tool` attribute and sends three notifications to the client as it processes each file. The `ctx.Info()` viene usato per inviare messaggi informativi.
+In questo esempio .NET, lo strumento `ProcessFiles` è decorato con l’attributo `Tool` e invia tre notifiche al client mentre elabora ogni file. Il metodo `ctx.Info()` viene usato per inviare messaggi informativi.
 
-Per abilitare le notifiche nel tuo server MCP .NET, assicurati di usare un trasporto streaming:
+Per abilitare le notifiche nel tuo server MCP .NET, assicurati di usare un trasporto in streaming:
 
 ```csharp
 var builder = McpBuilder.Create();
@@ -362,9 +362,9 @@ await builder
 
 </details>
 
-### Lato Client: Ricezione delle Notifiche
+### Lato client: Ricezione delle Notifiche
 
-Il client deve implementare un gestore di messaggi per elaborare e mostrare le notifiche appena arrivano.
+Il client deve implementare un gestore messaggi per processare e mostrare le notifiche appena arrivano.
 
 <details>
 <summary>Python</summary>
@@ -384,7 +384,7 @@ async with ClientSession(
 ) as session:
 ```
 
-Nel codice precedente, `message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` gestisce le notifiche in arrivo.
+Nel codice precedente, la funzione `message_handler` verifica se il messaggio in arrivo è una notifica. Se lo è, stampa la notifica; altrimenti la processa come messaggio server normale. Nota anche come `ClientSession` venga inizializzato con `message_handler` per gestire le notifiche in arrivo.
 
 </details>
 
@@ -418,17 +418,17 @@ await client.InitializeAsync();
 // Now the client will process notifications through the MessageHandler
 ```
 
-In questo esempio .NET, `MessageHandler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. The `ClientSession` is initialized with the message handler via the `ClientSessionOptions`.
+In questo esempio .NET, la funzione `MessageHandler` verifica se il messaggio in arrivo è una notifica. Se lo è, stampa la notifica; altrimenti la processa come messaggio server normale. `ClientSession` viene inizializzato con il gestore messaggi tramite `ClientSessionOptions`.
 
 </details>
 
-To enable notifications, ensure your server uses a streaming transport (like `streamable-http`) e il client implementano un gestore di messaggi per elaborare le notifiche.
+Per abilitare le notifiche, assicurati che il server usi un trasporto in streaming (come `streamable-http`) e che il client implementi un gestore messaggi per processare le notifiche.
 
 ## Notifiche di Progresso & Scenari
 
-Questa sezione spiega il concetto di notifiche di progresso in MCP, perché sono importanti e come implementarle usando Streamable HTTP. Troverai anche un esercizio pratico per consolidare la tua comprensione.
+Questa sezione spiega il concetto di notifiche di progresso in MCP, perché sono importanti e come implementarle usando Streamable HTTP. Troverai anche un esercizio pratico per rafforzare la comprensione.
 
-Le notifiche di progresso sono messaggi in tempo reale inviati dal server al client durante operazioni a lunga durata. Invece di aspettare che tutto finisca, il server tiene aggiornato il client sullo stato attuale. Questo migliora trasparenza, esperienza utente e facilita il debug.
+Le notifiche di progresso sono messaggi in tempo reale inviati dal server al client durante operazioni di lunga durata. Invece di aspettare che l’intero processo finisca, il server tiene aggiornato il client sullo stato corrente. Questo migliora trasparenza, esperienza utente e facilita il debug.
 
 **Esempio:**
 
@@ -445,20 +445,19 @@ Le notifiche di progresso sono messaggi in tempo reale inviati dal server al cli
 
 Le notifiche di progresso sono essenziali per diversi motivi:
 
-- **Migliore esperienza utente:** Gli utenti vedono aggiornamenti mentre il lavoro procede, non solo alla fine.
-- **Feedback in tempo reale:** I client possono mostrare barre di progresso o log, rendendo l’app più reattiva.
-- **Debug e monitoraggio facilitati:** Sviluppatori e utenti possono capire dove un processo è lento o bloccato.
+- **Migliore esperienza utente:** gli utenti vedono aggiornamenti mentre il lavoro procede, non solo alla fine.
+- **Feedback in tempo reale:** i client possono mostrare barre di progresso o log, rendendo l’app più reattiva.
+- **Debug e monitoraggio più semplici:** sviluppatori e utenti possono vedere dove un processo è lento o bloccato.
 
 ### Come implementare le notifiche di progresso
 
-Ecco come implementare notifiche di progresso in MCP:
+Ecco come implementare le notifiche di progresso in MCP:
 
-- **Sul server:** Usa `ctx.info()` or `ctx.log()` per inviare notifiche mentre ogni elemento viene elaborato. Questo invia un messaggio al client prima che il risultato principale sia pronto.
-- **Sul client:** Implementa un gestore di messaggi che ascolta e mostra le notifiche appena arrivano. Questo gestore distingue tra notifiche e risultato finale.
+- **Sul server:** usa `ctx.info()` o `ctx.log()` per inviare notifiche mentre ogni elemento viene processato. Questo invia un messaggio al client prima che il risultato principale sia pronto.
+- **Sul client:** implementa un gestore messaggi che ascolta e mostra le notifiche appena arrivano. Questo gestore distingue tra notifiche e risultato finale.
 
 **Esempio Server:**
 
-<details>
 <summary>Python</summary>
 
 ```python
@@ -489,40 +488,102 @@ async def message_handler(message):
 
 ## Considerazioni sulla Sicurezza
 
-Quando si implementano server MCP con trasporti basati su HTTP, la sicurezza diventa una preoccupazione fondamentale che richiede attenzione a molteplici vettori di attacco e meccanismi di protezione.
+Quando si implementano server MCP con trasporti basati su HTTP, la sicurezza diventa una preoccupazione fondamentale che richiede un’attenzione accurata a molteplici vettori di attacco e meccanismi di protezione.
 
 ### Panoramica
 
-La sicurezza è critica quando si espongono server MCP su HTTP. Streamable HTTP introduce nuove superfici di attacco e richiede configurazioni attente.
+La sicurezza è cruciale quando si espongono server MCP tramite HTTP. Streamable HTTP introduce nuove superfici di attacco e richiede una configurazione attenta.
 
 ### Punti Chiave
-- **Validazione dell’Header Origin**: Valida sempre l’header `Origin` per evitare richieste da origini non autorizzate.
-- **Usa HTTPS**: Assicurati che tutte le comunicazioni avvengano su HTTPS per proteggere i dati in transito.
-- **Autenticazione e Autorizzazione**: Implementa meccanismi robusti per autenticare e autorizzare client e utenti.
-- **Gestione degli Errori**: Tratta con cura gli errori per non esporre informazioni sensibili.
-- **Rate Limiting e Protezioni Anti-DDoS**: Proteggi il server da attacchi di tipo denial-of-service.
-- **Logging Sicuro**: Monitora e registra gli eventi di sicurezza per analisi e auditing.
+- **Validazione dell’Header Origin**: Verificare sempre l’header `Origin` per prevenire attacchi di DNS rebinding.
+- **Binding su Localhost**: Per lo sviluppo locale, associare i server a `localhost` per evitare di esporli a internet pubblico.
+- **Autenticazione**: Implementare l’autenticazione (es. API key, OAuth) per le distribuzioni in produzione.
+- **CORS**: Configurare le politiche di Cross-Origin Resource Sharing (CORS) per limitare l’accesso.
+- **HTTPS**: Usare HTTPS in produzione per criptare il traffico.
+
+### Best Practice
+- Non fidarsi mai delle richieste in ingresso senza una valida verifica.
+- Registrare e monitorare tutti gli accessi e gli errori.
+- Aggiornare regolarmente le dipendenze per correggere vulnerabilità di sicurezza.
+
+### Sfide
+- Bilanciare la sicurezza con la facilità di sviluppo
+- Garantire la compatibilità con diversi ambienti client
+
+
+## Aggiornamento da SSE a Streamable HTTP
+
+Per le applicazioni che attualmente utilizzano Server-Sent Events (SSE), migrare a Streamable HTTP offre funzionalità migliorate e una maggiore sostenibilità a lungo termine per le implementazioni MCP.
+
+### Perché Aggiornare?
+
+Ci sono due motivi principali per passare da SSE a Streamable HTTP:
+
+- Streamable HTTP offre migliore scalabilità, compatibilità e supporto più ricco per le notifiche rispetto a SSE.
+- È il trasporto raccomandato per le nuove applicazioni MCP.
+
+### Passaggi per la Migrazione
+
+Ecco come migrare da SSE a Streamable HTTP nelle tue applicazioni MCP:
+
+- **Aggiorna il codice server** per usare `transport="streamable-http"` in `mcp.run()`.
+- **Aggiorna il codice client** per usare `streamablehttp_client` invece del client SSE.
+- **Implementa un gestore di messaggi** nel client per elaborare le notifiche.
+- **Testa la compatibilità** con gli strumenti e i flussi di lavoro esistenti.
 
 ### Mantenere la Compatibilità
 
-Si raccomanda di mantenere la compatibilità con i client SSE esistenti durante il processo di migrazione. Ecco alcune strategie:
+Si consiglia di mantenere la compatibilità con i client SSE esistenti durante la migrazione. Ecco alcune strategie:
 
 - Puoi supportare sia SSE che Streamable HTTP eseguendo entrambi i trasporti su endpoint diversi.
-- Migra gradualmente i client al nuovo trasporto.
+- Migrare gradualmente i client al nuovo trasporto.
 
 ### Sfide
 
 Assicurati di affrontare le seguenti sfide durante la migrazione:
 
-- Garantire che tutti i client siano aggiornati
+- Garantire che tutti i client vengano aggiornati
 - Gestire le differenze nella consegna delle notifiche
 
-### Esercizio: Costruisci la Tua App MCP Streaming
+## Considerazioni sulla Sicurezza
 
-**Scenario:**
-Costruisci un server e un client MCP dove il server elabora una lista di elementi (es. file o documenti) e invia una notifica per ogni elemento processato. Il client deve mostrare ogni notifica appena arriva.
+La sicurezza deve essere una priorità assoluta quando si implementa qualsiasi server, specialmente utilizzando trasporti basati su HTTP come Streamable HTTP in MCP.
 
-**Passi:**
+Quando si implementano server MCP con trasporti basati su HTTP, la sicurezza diventa una preoccupazione fondamentale che richiede un’attenzione accurata a molteplici vettori di attacco e meccanismi di protezione.
+
+### Panoramica
+
+La sicurezza è cruciale quando si espongono server MCP tramite HTTP. Streamable HTTP introduce nuove superfici di attacco e richiede una configurazione attenta.
+
+Ecco alcune considerazioni chiave sulla sicurezza:
+
+- **Validazione dell’Header Origin**: Verificare sempre l’header `Origin` per prevenire attacchi di DNS rebinding.
+- **Binding su Localhost**: Per lo sviluppo locale, associare i server a `localhost` per evitare di esporli a internet pubblico.
+- **Autenticazione**: Implementare l’autenticazione (es. API key, OAuth) per le distribuzioni in produzione.
+- **CORS**: Configurare le politiche di Cross-Origin Resource Sharing (CORS) per limitare l’accesso.
+- **HTTPS**: Usare HTTPS in produzione per criptare il traffico.
+
+### Best Practice
+
+Inoltre, ecco alcune best practice da seguire quando si implementa la sicurezza nel server di streaming MCP:
+
+- Non fidarsi mai delle richieste in ingresso senza una valida verifica.
+- Registrare e monitorare tutti gli accessi e gli errori.
+- Aggiornare regolarmente le dipendenze per correggere vulnerabilità di sicurezza.
+
+### Sfide
+
+Affronterai alcune sfide implementando la sicurezza nei server di streaming MCP:
+
+- Bilanciare la sicurezza con la facilità di sviluppo
+- Garantire la compatibilità con diversi ambienti client
+
+### Esercizio: Costruisci la Tua App MCP in Streaming
+
+**Scenario:**  
+Costruisci un server e un client MCP dove il server elabora una lista di elementi (es. file o documenti) e invia una notifica per ogni elemento elaborato. Il client deve mostrare ogni notifica non appena arriva.
+
+**Passaggi:**
 
 1. Implementa uno strumento server che elabora una lista e invia notifiche per ogni elemento.
 2. Implementa un client con un gestore di messaggi per mostrare le notifiche in tempo reale.
@@ -532,7 +593,7 @@ Costruisci un server e un client MCP dove il server elabora una lista di element
 
 ## Ulteriori Letture & Cosa Fare Dopo?
 
-Per continuare il tuo percorso con lo streaming MCP e ampliare le tue conoscenze, questa sezione fornisce risorse aggiuntive e suggerimenti per costruire applicazioni più avanzate.
+Per proseguire il tuo percorso con lo streaming MCP e ampliare le tue conoscenze, questa sezione offre risorse aggiuntive e suggerimenti per costruire applicazioni più avanzate.
 
 ### Ulteriori Letture
 
@@ -543,9 +604,9 @@ Per continuare il tuo percorso con lo streaming MCP e ampliare le tue conoscenze
 
 ### Cosa Fare Dopo?
 
-- Prova a costruire strumenti MCP più avanzati che usano lo streaming per analytics in tempo reale, chat o editing collaborativo.
+- Prova a costruire strumenti MCP più avanzati che usano lo streaming per analisi in tempo reale, chat o editing collaborativo.
 - Esplora l’integrazione dello streaming MCP con framework frontend (React, Vue, ecc.) per aggiornamenti UI live.
-- Successivo: [Utilizzo del Toolkit AI per VSCode](../07-aitk/README.md)
+- Prossimo: [Utilizzo del Toolkit AI per VSCode](../07-aitk/README.md)
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di considerare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale effettuata da un traduttore umano. Non ci assumiamo responsabilità per eventuali incomprensioni o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
