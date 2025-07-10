@@ -510,20 +510,32 @@ Security is critical when exposing MCP servers over HTTP. Streamable HTTP introd
 For applications currently using Server-Sent Events (SSE), migrating to Streamable HTTP provides enhanced capabilities and better long-term sustainability for your MCP implementations.
 
 ### Why Upgrade?
+
+There are two compelling reasons to upgrade from SSE to Streamable HTTP:
+
 - Streamable HTTP offers better scalability, compatibility, and richer notification support than SSE.
 - It is the recommended transport for new MCP applications.
 
 ### Migration Steps
+
+Here's how you can migrate from SSE to Streamable HTTP in your MCP applications:
+
 - **Update server code** to use `transport="streamable-http"` in `mcp.run()`.
 - **Update client code** to use `streamablehttp_client` instead of SSE client.
 - **Implement a message handler** in the client to process notifications.
 - **Test for compatibility** with existing tools and workflows.
 
 ### Maintaining Compatibility
+
+It's recommended to maintain compatibility with existing SSE clients during the migration process. Here are some strategies:
+
 - You can support both SSE and Streamable HTTP by running both transports on different endpoints.
 - Gradually migrate clients to the new transport.
 
 ### Challenges
+
+Ensure you address the following challenges during migration:
+
 - Ensuring all clients are updated
 - Handling differences in notification delivery
 
@@ -559,41 +571,6 @@ You will face some challenges when implementing security in MCP streaming server
 
 - Balancing security with ease of development
 - Ensuring compatibility with various client environments
-
-
-## Upgrading from SSE to Streamable HTTP
-
-For applications currently using Server-Sent Events (SSE), migrating to Streamable HTTP provides enhanced capabilities and better long-term sustainability for your MCP implementations.
-
-### Why Upgrade?
-
-There are two compelling reasons to upgrade from SSE to Streamable HTTP:
-
-- Streamable HTTP offers better scalability, compatibility, and richer notification support than SSE.
-- It is the recommended transport for new MCP applications.
-
-### Migration Steps
-
-Here's how you can migrate from SSE to Streamable HTTP in your MCP applications:
-
-1. **Update server code** to use `transport="streamable-http"` in `mcp.run()`.
-2. **Update client code** to use `streamablehttp_client` instead of SSE client.
-3. **Implement a message handler** in the client to process notifications.
-4. **Test for compatibility** with existing tools and workflows.
-
-### Maintaining Compatibility
-
-It's recommended to maintain compatibility with existing SSE clients during the migration process. Here are some strategies:
-
-- You can support both SSE and Streamable HTTP by running both transports on different endpoints.
-- Gradually migrate clients to the new transport.
-
-### Challenges
-
-Ensure you address the following challenges during migration:
-
-- Ensuring all clients are updated
-- Handling differences in notification delivery
 
 ### Assignment: Build Your Own Streaming MCP App
 
