@@ -1,56 +1,56 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3eaf38ffe0638867045ec6664908333c",
-  "translation_date": "2025-06-18T09:07:42+00:00",
+  "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
+  "translation_date": "2025-07-10T16:11:32+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "el"
 }
 -->
 # HTTPS Streaming με το Model Context Protocol (MCP)
 
-Αυτό το κεφάλαιο παρέχει έναν ολοκληρωμένο οδηγό για την υλοποίηση ασφαλούς, επεκτάσιμου και σε πραγματικό χρόνο streaming με το Model Context Protocol (MCP) χρησιμοποιώντας HTTPS. Καλύπτει το κίνητρο για το streaming, τους διαθέσιμους μηχανισμούς μεταφοράς, τον τρόπο υλοποίησης streamable HTTP στο MCP, τις βέλτιστες πρακτικές ασφάλειας, τη μετανάστευση από SSE, καθώς και πρακτικές οδηγίες για την κατασκευή δικών σας streaming εφαρμογών MCP.
+Αυτό το κεφάλαιο παρέχει έναν ολοκληρωμένο οδηγό για την υλοποίηση ασφαλούς, κλιμακούμενου και σε πραγματικό χρόνο streaming με το Model Context Protocol (MCP) χρησιμοποιώντας HTTPS. Καλύπτει το κίνητρο για streaming, τους διαθέσιμους μηχανισμούς μεταφοράς, πώς να υλοποιήσετε streamable HTTP στο MCP, βέλτιστες πρακτικές ασφάλειας, τη μετάβαση από SSE και πρακτικές οδηγίες για την κατασκευή των δικών σας streaming εφαρμογών MCP.
 
 ## Μηχανισμοί Μεταφοράς και Streaming στο MCP
 
-Αυτή η ενότητα εξετάζει τους διάφορους μηχανισμούς μεταφοράς που είναι διαθέσιμοι στο MCP και τον ρόλο τους στην ενεργοποίηση των δυνατοτήτων streaming για επικοινωνία σε πραγματικό χρόνο μεταξύ πελατών και διακομιστών.
+Αυτή η ενότητα εξερευνά τους διαφορετικούς μηχανισμούς μεταφοράς που είναι διαθέσιμοι στο MCP και τον ρόλο τους στην ενεργοποίηση δυνατοτήτων streaming για επικοινωνία σε πραγματικό χρόνο μεταξύ πελατών και διακομιστών.
 
-### Τι είναι ο Μηχανισμός Μεταφοράς;
+### Τι είναι ένας Μηχανισμός Μεταφοράς;
 
-Ένας μηχανισμός μεταφοράς ορίζει τον τρόπο με τον οποίο ανταλλάσσονται τα δεδομένα μεταξύ πελάτη και διακομιστή. Το MCP υποστηρίζει πολλούς τύπους μεταφοράς για να καλύψει διαφορετικά περιβάλλοντα και απαιτήσεις:
+Ένας μηχανισμός μεταφοράς ορίζει πώς ανταλλάσσονται τα δεδομένα μεταξύ πελάτη και διακομιστή. Το MCP υποστηρίζει πολλούς τύπους μεταφοράς για να ταιριάζει σε διαφορετικά περιβάλλοντα και απαιτήσεις:
 
-- **stdio**: Τυπική είσοδος/έξοδος, κατάλληλη για τοπικά εργαλεία και εργαλεία γραμμής εντολών. Απλή, αλλά όχι κατάλληλη για web ή cloud.
-- **SSE (Server-Sent Events)**: Επιτρέπει στους διακομιστές να στέλνουν ενημερώσεις σε πραγματικό χρόνο στους πελάτες μέσω HTTP. Καλή για web UI, αλλά περιορισμένη σε επεκτασιμότητα και ευελιξία.
-- **Streamable HTTP**: Σύγχρονη μεταφορά streaming βασισμένη σε HTTP, που υποστηρίζει ειδοποιήσεις και καλύτερη επεκτασιμότητα. Συνιστάται για τις περισσότερες παραγωγικές και cloud περιπτώσεις.
+- **stdio**: Τυπική είσοδος/έξοδος, κατάλληλη για τοπικά εργαλεία και εργαλεία γραμμής εντολών. Απλή αλλά όχι κατάλληλη για web ή cloud.
+- **SSE (Server-Sent Events)**: Επιτρέπει στους διακομιστές να στέλνουν ενημερώσεις σε πραγματικό χρόνο στους πελάτες μέσω HTTP. Καλή για web UI, αλλά περιορισμένη σε κλιμακωσιμότητα και ευελιξία.
+- **Streamable HTTP**: Σύγχρονος μηχανισμός μεταφοράς βασισμένος σε HTTP για streaming, υποστηρίζει ειδοποιήσεις και καλύτερη κλιμακωσιμότητα. Συνιστάται για τις περισσότερες παραγωγικές και cloud περιπτώσεις.
 
 ### Πίνακας Σύγκρισης
 
 Δείτε τον παρακάτω πίνακα σύγκρισης για να κατανοήσετε τις διαφορές μεταξύ αυτών των μηχανισμών μεταφοράς:
 
-| Μεταφορά         | Ενημερώσεις σε Πραγματικό Χρόνο | Streaming | Επεκτασιμότητα | Περίπτωση Χρήσης          |
-|------------------|---------------------------------|-----------|----------------|--------------------------|
-| stdio            | Όχι                             | Όχι       | Χαμηλή         | Τοπικά εργαλεία CLI      |
-| SSE              | Ναι                             | Ναι       | Μέτρια         | Web, ενημερώσεις σε πραγματικό χρόνο |
-| Streamable HTTP  | Ναι                             | Ναι       | Υψηλή          | Cloud, πολλαπλοί πελάτες |
+| Μεταφορά          | Ενημερώσεις σε Πραγματικό Χρόνο | Streaming | Κλιμακωσιμότητα | Περίπτωση Χρήσης          |
+|-------------------|---------------------------------|-----------|-----------------|--------------------------|
+| stdio             | Όχι                             | Όχι       | Χαμηλή          | Τοπικά εργαλεία CLI      |
+| SSE               | Ναι                             | Ναι       | Μέτρια          | Web, ενημερώσεις σε πραγματικό χρόνο |
+| Streamable HTTP   | Ναι                             | Ναι       | Υψηλή           | Cloud, πολλαπλοί πελάτες |
 
-> **Tip:** Η επιλογή της κατάλληλης μεταφοράς επηρεάζει την απόδοση, την επεκτασιμότητα και την εμπειρία χρήστη. Το **Streamable HTTP** συνιστάται για σύγχρονες, επεκτάσιμες και cloud-έτοιμες εφαρμογές.
+> **Tip:** Η επιλογή του κατάλληλου μηχανισμού μεταφοράς επηρεάζει την απόδοση, την κλιμακωσιμότητα και την εμπειρία χρήστη. Το **Streamable HTTP** συνιστάται για σύγχρονες, κλιμακούμενες και cloud-έτοιμες εφαρμογές.
 
-Σημειώστε τις μεταφορές stdio και SSE που παρουσιάστηκαν στα προηγούμενα κεφάλαια και πώς το streamable HTTP είναι η μεταφορά που καλύπτεται σε αυτό το κεφάλαιο.
+Σημειώστε τους μηχανισμούς stdio και SSE που παρουσιάστηκαν στα προηγούμενα κεφάλαια και πώς το streamable HTTP είναι ο μηχανισμός που καλύπτεται σε αυτό το κεφάλαιο.
 
 ## Streaming: Έννοιες και Κίνητρα
 
 Η κατανόηση των βασικών εννοιών και κινήτρων πίσω από το streaming είναι απαραίτητη για την υλοποίηση αποτελεσματικών συστημάτων επικοινωνίας σε πραγματικό χρόνο.
 
-Το **Streaming** είναι μια τεχνική στον προγραμματισμό δικτύων που επιτρέπει την αποστολή και λήψη δεδομένων σε μικρά, διαχειρίσιμα κομμάτια ή ως ακολουθία γεγονότων, αντί να περιμένουμε ολόκληρη την απάντηση να είναι έτοιμη. Αυτό είναι ιδιαίτερα χρήσιμο για:
+**Το streaming** είναι μια τεχνική στον προγραμματισμό δικτύων που επιτρέπει την αποστολή και λήψη δεδομένων σε μικρά, διαχειρίσιμα κομμάτια ή ως ακολουθία γεγονότων, αντί να περιμένουμε ολόκληρη την απάντηση να είναι έτοιμη. Αυτό είναι ιδιαίτερα χρήσιμο για:
 
 - Μεγάλα αρχεία ή σύνολα δεδομένων.
-- Ενημερώσεις σε πραγματικό χρόνο (π.χ. chat, μπαρ προόδου).
+- Ενημερώσεις σε πραγματικό χρόνο (π.χ. chat, μπάρες προόδου).
 - Μακροχρόνιους υπολογισμούς όπου θέλετε να κρατάτε τον χρήστη ενήμερο.
 
 Ακολουθούν τα βασικά που πρέπει να γνωρίζετε για το streaming σε υψηλό επίπεδο:
 
-- Τα δεδομένα παραδίδονται προοδευτικά, όχι όλα μαζί.
-- Ο πελάτης μπορεί να επεξεργαστεί τα δεδομένα καθώς αυτά φτάνουν.
+- Τα δεδομένα παραδίδονται σταδιακά, όχι όλα μαζί.
+- Ο πελάτης μπορεί να επεξεργαστεί τα δεδομένα καθώς φτάνουν.
 - Μειώνει την αντιληπτή καθυστέρηση και βελτιώνει την εμπειρία χρήστη.
 
 ### Γιατί να χρησιμοποιήσετε streaming;
@@ -58,8 +58,8 @@ CO_OP_TRANSLATOR_METADATA:
 Οι λόγοι για τη χρήση του streaming είναι οι εξής:
 
 - Οι χρήστες λαμβάνουν άμεση ανατροφοδότηση, όχι μόνο στο τέλος.
-- Επιτρέπει εφαρμογές σε πραγματικό χρόνο και ανταποκρινόμενα UI.
-- Αποδοτικότερη χρήση πόρων δικτύου και υπολογιστικής ισχύος.
+- Επιτρέπει εφαρμογές σε πραγματικό χρόνο και ευέλικτα UI.
+- Αποτελεσματικότερη χρήση πόρων δικτύου και υπολογιστικής ισχύος.
 
 ### Απλό Παράδειγμα: HTTP Streaming Server & Client
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
 <details>
 <summary>Python</summary>
 
-**Διακομιστής (Python, χρησιμοποιώντας FastAPI και StreamingResponse):**
+**Διακομιστής (Python, με FastAPI και StreamingResponse):**
 <details>
 <summary>Python</summary>
 
@@ -91,7 +91,7 @@ def stream():
 
 </details>
 
-**Πελάτης (Python, χρησιμοποιώντας requests):**
+**Πελάτης (Python, με requests):**
 <details>
 <summary>Python</summary>
 
@@ -106,23 +106,23 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-Αυτό το παράδειγμα δείχνει έναν διακομιστή που στέλνει μια σειρά μηνυμάτων στον πελάτη καθώς αυτά γίνονται διαθέσιμα, αντί να περιμένει όλα τα μηνύματα να είναι έτοιμα.
+Αυτό το παράδειγμα δείχνει έναν διακομιστή που στέλνει μια σειρά μηνυμάτων στον πελάτη καθώς γίνονται διαθέσιμα, αντί να περιμένει να είναι έτοιμα όλα τα μηνύματα.
 
 **Πώς λειτουργεί:**
 - Ο διακομιστής αποδίδει κάθε μήνυμα μόλις είναι έτοιμο.
 - Ο πελάτης λαμβάνει και εκτυπώνει κάθε κομμάτι μόλις φτάσει.
 
 **Απαιτήσεις:**
-- Ο διακομιστής πρέπει να χρησιμοποιεί streaming response (π.χ. `StreamingResponse` in FastAPI).
-- The client must process the response as a stream (`stream=True` in requests).
-- Content-Type is usually `text/event-stream` or `application/octet-stream`.
+- Ο διακομιστής πρέπει να χρησιμοποιεί streaming response (π.χ. `StreamingResponse` στο FastAPI).
+- Ο πελάτης πρέπει να επεξεργάζεται την απάντηση ως ροή (`stream=True` στα requests).
+- Το Content-Type είναι συνήθως `text/event-stream` ή `application/octet-stream`.
 
 </details>
 
 <details>
 <summary>Java</summary>
 
-**Διακομιστής (Java, χρησιμοποιώντας Spring Boot και Server-Sent Events):**
+**Διακομιστής (Java, με Spring Boot και Server-Sent Events):**
 
 ```java
 @RestController
@@ -157,7 +157,7 @@ public class CalculatorController {
 }
 ```
 
-**Πελάτης (Java, χρησιμοποιώντας Spring WebFlux WebClient):**
+**Πελάτης (Java, με Spring WebFlux WebClient):**
 
 ```java
 @SpringBootApplication
@@ -186,66 +186,66 @@ public class CalculatorClientApplication implements CommandLineRunner {
 ```
 
 **Σημειώσεις Υλοποίησης Java:**
-- Χρησιμοποιεί το reactive stack του Spring Boot με `Flux` for streaming
-- `ServerSentEvent` provides structured event streaming with event types
-- `WebClient` with `bodyToFlux()` enables reactive streaming consumption
-- `delayElements()` simulates processing time between events
-- Events can have types (`info`, `result`) for better client handling
+- Χρησιμοποιεί το reactive stack του Spring Boot με `Flux` για streaming
+- Το `ServerSentEvent` παρέχει δομημένο streaming γεγονότων με τύπους γεγονότων
+- Το `WebClient` με `bodyToFlux()` επιτρέπει την κατανάλωση reactive streaming
+- Το `delayElements()` προσομοιώνει χρόνο επεξεργασίας μεταξύ γεγονότων
+- Τα γεγονότα μπορούν να έχουν τύπους (`info`, `result`) για καλύτερη διαχείριση από τον πελάτη
 
 </details>
 
-### Comparison: Classic Streaming vs MCP Streaming
+### Σύγκριση: Κλασικό Streaming vs MCP Streaming
 
-The differences between how streaming works in a "classical" manner versus how it works in MCP can be depicted like so:
+Οι διαφορές μεταξύ του πώς λειτουργεί το streaming με τον "κλασικό" τρόπο και πώς λειτουργεί στο MCP μπορούν να απεικονιστούν ως εξής:
 
-| Feature                | Classic HTTP Streaming         | MCP Streaming (Notifications)      |
-|------------------------|-------------------------------|-------------------------------------|
-| Main response          | Chunked                       | Single, at end                      |
-| Progress updates       | Sent as data chunks           | Sent as notifications               |
-| Client requirements    | Must process stream           | Must implement message handler      |
-| Use case               | Large files, AI token streams | Progress, logs, real-time feedback  |
+| Χαρακτηριστικό         | Κλασικό HTTP Streaming          | MCP Streaming (Ειδοποιήσεις)       |
+|-----------------------|--------------------------------|-----------------------------------|
+| Κύρια απάντηση        | Τμηματοποιημένη (chunked)       | Μοναδική, στο τέλος               |
+| Ενημερώσεις προόδου   | Αποστέλλονται ως κομμάτια δεδομένων | Αποστέλλονται ως ειδοποιήσεις     |
+| Απαιτήσεις πελάτη     | Πρέπει να επεξεργάζεται τη ροή  | Πρέπει να υλοποιεί χειριστή μηνυμάτων |
+| Περίπτωση χρήσης      | Μεγάλα αρχεία, ροές token AI   | Πρόοδος, logs, ανατροφοδότηση σε πραγματικό χρόνο |
 
-### Key Differences Observed
+### Κύριες Διαφορές
 
-Additionally, here are some key differences:
+Επιπλέον, μερικές βασικές διαφορές:
 
-- **Communication Pattern:**
-   - Classic HTTP streaming: Uses simple chunked transfer encoding to send data in chunks
-   - MCP streaming: Uses a structured notification system with JSON-RPC protocol
+- **Πρότυπο Επικοινωνίας:**
+   - Κλασικό HTTP streaming: Χρησιμοποιεί απλή κωδικοποίηση μεταφοράς σε κομμάτια για αποστολή δεδομένων
+   - MCP streaming: Χρησιμοποιεί δομημένο σύστημα ειδοποιήσεων με πρωτόκολλο JSON-RPC
 
-- **Message Format:**
-   - Classic HTTP: Plain text chunks with newlines
-   - MCP: Structured LoggingMessageNotification objects with metadata
+- **Μορφή Μηνύματος:**
+   - Κλασικό HTTP: Απλά κομμάτια κειμένου με αλλαγές γραμμής
+   - MCP: Δομημένα αντικείμενα LoggingMessageNotification με μεταδεδομένα
 
-- **Client Implementation:**
-   - Classic HTTP: Simple client that processes streaming responses
-   - MCP: More sophisticated client with a message handler to process different types of messages
+- **Υλοποίηση Πελάτη:**
+   - Κλασικό HTTP: Απλός πελάτης που επεξεργάζεται streaming απαντήσεις
+   - MCP: Πιο σύνθετος πελάτης με χειριστή μηνυμάτων για επεξεργασία διαφορετικών τύπων μηνυμάτων
 
-- **Progress Updates:**
-   - Classic HTTP: The progress is part of the main response stream
-   - MCP: Progress is sent via separate notification messages while the main response comes at the end
+- **Ενημερώσεις Προόδου:**
+   - Κλασικό HTTP: Η πρόοδος είναι μέρος της κύριας ροής απάντησης
+   - MCP: Η πρόοδος αποστέλλεται μέσω ξεχωριστών μηνυμάτων ειδοποίησης ενώ η κύρια απάντηση έρχεται στο τέλος
 
-### Recommendations
+### Συστάσεις
 
-There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream`) σε σύγκριση με την επιλογή streaming μέσω MCP.
+Υπάρχουν ορισμένα που προτείνουμε όταν πρόκειται για την επιλογή μεταξύ υλοποίησης κλασικού streaming (ως endpoint που δείξαμε παραπάνω με χρήση `/stream`) ή streaming μέσω MCP.
 
-- **Για απλές ανάγκες streaming:** Το κλασικό HTTP streaming είναι πιο απλό στην υλοποίηση και επαρκεί για βασικές ανάγκες.
+- **Για απλές ανάγκες streaming:** Το κλασικό HTTP streaming είναι πιο απλό στην υλοποίηση και επαρκεί για βασικές ανάγκες streaming.
 
-- **Για πολύπλοκες, διαδραστικές εφαρμογές:** Το MCP streaming παρέχει πιο δομημένη προσέγγιση με πλουσιότερα μεταδεδομένα και διαχωρισμό μεταξύ ειδοποιήσεων και τελικών αποτελεσμάτων.
+- **Για σύνθετες, διαδραστικές εφαρμογές:** Το MCP streaming παρέχει πιο δομημένη προσέγγιση με πλουσιότερα μεταδεδομένα και διαχωρισμό μεταξύ ειδοποιήσεων και τελικών αποτελεσμάτων.
 
 - **Για εφαρμογές AI:** Το σύστημα ειδοποιήσεων του MCP είναι ιδιαίτερα χρήσιμο για μακροχρόνιες εργασίες AI όπου θέλετε να κρατάτε τους χρήστες ενήμερους για την πρόοδο.
 
 ## Streaming στο MCP
 
-Έχετε δει κάποιες συστάσεις και συγκρίσεις μέχρι τώρα σχετικά με τη διαφορά μεταξύ κλασικού streaming και streaming στο MCP. Ας δούμε αναλυτικά πώς μπορείτε να αξιοποιήσετε το streaming στο MCP.
+Λοιπόν, έχετε δει κάποιες συστάσεις και συγκρίσεις μέχρι τώρα σχετικά με τη διαφορά μεταξύ κλασικού streaming και streaming στο MCP. Ας δούμε αναλυτικά πώς ακριβώς μπορείτε να αξιοποιήσετε το streaming στο MCP.
 
-Η κατανόηση του πώς λειτουργεί το streaming εντός του πλαισίου του MCP είναι απαραίτητη για την κατασκευή ανταποκρινόμενων εφαρμογών που παρέχουν ανατροφοδότηση σε πραγματικό χρόνο στους χρήστες κατά τη διάρκεια μακροχρόνιων λειτουργιών.
+Η κατανόηση του πώς λειτουργεί το streaming μέσα στο πλαίσιο του MCP είναι απαραίτητη για την κατασκευή ευέλικτων εφαρμογών που παρέχουν ανατροφοδότηση σε πραγματικό χρόνο στους χρήστες κατά τη διάρκεια μακροχρόνιων λειτουργιών.
 
-Στο MCP, το streaming δεν αφορά την αποστολή της κύριας απάντησης σε κομμάτια, αλλά την αποστολή **ειδοποιήσεων** στον πελάτη ενώ ένα εργαλείο επεξεργάζεται ένα αίτημα. Αυτές οι ειδοποιήσεις μπορεί να περιλαμβάνουν ενημερώσεις προόδου, αρχεία καταγραφής ή άλλα γεγονότα.
+Στο MCP, το streaming δεν αφορά την αποστολή της κύριας απάντησης σε κομμάτια, αλλά την αποστολή **ειδοποιήσεων** στον πελάτη ενώ ένα εργαλείο επεξεργάζεται ένα αίτημα. Αυτές οι ειδοποιήσεις μπορεί να περιλαμβάνουν ενημερώσεις προόδου, logs ή άλλα γεγονότα.
 
 ### Πώς λειτουργεί
 
-Το κύριο αποτέλεσμα εξακολουθεί να αποστέλλεται ως μία απάντηση. Ωστόσο, οι ειδοποιήσεις μπορούν να αποστέλλονται ως ξεχωριστά μηνύματα κατά τη διάρκεια της επεξεργασίας και έτσι να ενημερώνουν τον πελάτη σε πραγματικό χρόνο. Ο πελάτης πρέπει να μπορεί να χειρίζεται και να εμφανίζει αυτές τις ειδοποιήσεις.
+Το κύριο αποτέλεσμα αποστέλλεται ακόμα ως μία μοναδική απάντηση. Ωστόσο, οι ειδοποιήσεις μπορούν να αποστέλλονται ως ξεχωριστά μηνύματα κατά τη διάρκεια της επεξεργασίας και έτσι να ενημερώνουν τον πελάτη σε πραγματικό χρόνο. Ο πελάτης πρέπει να μπορεί να χειρίζεται και να εμφανίζει αυτές τις ειδοποιήσεις.
 
 ## Τι είναι μια Ειδοποίηση;
 
@@ -253,9 +253,9 @@ There are some things we recommend when it comes to choosing between implementin
 
 Μια ειδοποίηση είναι ένα μήνυμα που αποστέλλεται από τον διακομιστή στον πελάτη για να ενημερώσει σχετικά με την πρόοδο, την κατάσταση ή άλλα γεγονότα κατά τη διάρκεια μιας μακροχρόνιας λειτουργίας. Οι ειδοποιήσεις βελτιώνουν τη διαφάνεια και την εμπειρία χρήστη.
 
-Για παράδειγμα, ένας πελάτης πρέπει να στείλει μια ειδοποίηση μόλις ολοκληρωθεί η αρχική σύνδεση (handshake) με τον διακομιστή.
+Για παράδειγμα, ένας πελάτης πρέπει να στείλει μια ειδοποίηση μόλις ολοκληρωθεί η αρχική χειραψία με τον διακομιστή.
 
-Μια ειδοποίηση έχει την εξής μορφή ως μήνυμα JSON:
+Μια ειδοποίηση μοιάζει ως εξής σε μορφή JSON:
 
 ```json
 {
@@ -280,24 +280,24 @@ There are some things we recommend when it comes to choosing between implementin
 ```
 
 > [!NOTE]
-> Ανάλογα με το SDK που χρησιμοποιείται, το logging μπορεί να είναι ενεργοποιημένο από προεπιλογή ή μπορεί να χρειαστεί να το ενεργοποιήσετε ρητά στη ρύθμιση του διακομιστή σας.
+> Ανάλογα με το SDK που χρησιμοποιείται, το logging μπορεί να είναι ενεργοποιημένο από προεπιλογή ή μπορεί να χρειαστεί να το ενεργοποιήσετε ρητά στη διαμόρφωση του διακομιστή σας.
 
-Υπάρχουν διάφοροι τύποι ειδοποιήσεων:
+Υπάρχουν διαφορετικοί τύποι ειδοποιήσεων:
 
-| Επίπεδο    | Περιγραφή                    | Παράδειγμα Χρήσης            |
-|------------|-----------------------------|-----------------------------|
+| Επίπεδο    | Περιγραφή                      | Παράδειγμα Χρήσης             |
+|------------|-------------------------------|------------------------------|
 | debug      | Λεπτομερείς πληροφορίες αποσφαλμάτωσης | Σημεία εισόδου/εξόδου συναρτήσεων |
-| info       | Γενικά πληροφοριακά μηνύματα | Ενημερώσεις προόδου λειτουργίας |
-| notice     | Κανονικά αλλά σημαντικά γεγονότα | Αλλαγές ρυθμίσεων           |
-| warning    | Συνθήκες προειδοποίησης      | Χρήση παρωχημένων λειτουργιών |
-| error      | Συνθήκες σφάλματος           | Αποτυχίες λειτουργίας       |
-| critical   | Κρίσιμες συνθήκες            | Αποτυχίες συστατικών συστήματος |
-| alert      | Άμεση ανάγκη δράσης          | Ανίχνευση καταστροφής δεδομένων |
-| emergency  | Το σύστημα είναι μη λειτουργικό | Ολική αποτυχία συστήματος   |
+| info       | Γενικά πληροφοριακά μηνύματα  | Ενημερώσεις προόδου λειτουργίας |
+| notice     | Κανονικά αλλά σημαντικά γεγονότα | Αλλαγές ρυθμίσεων            |
+| warning    | Συνθήκες προειδοποίησης       | Χρήση αποσυρμένης λειτουργίας |
+| error      | Συνθήκες σφάλματος            | Αποτυχίες λειτουργίας        |
+| critical   | Κρίσιμες συνθήκες             | Αποτυχίες συστημικών στοιχείων |
+| alert      | Απαιτείται άμεση ενέργεια     | Ανίχνευση καταστροφής δεδομένων |
+| emergency  | Το σύστημα είναι μη λειτουργικό | Πλήρης αποτυχία συστήματος   |
 
 ## Υλοποίηση Ειδοποιήσεων στο MCP
 
-Για να υλοποιήσετε ειδοποιήσεις στο MCP, πρέπει να ρυθμίσετε τόσο την πλευρά του διακομιστή όσο και του πελάτη για να χειρίζονται ενημερώσεις σε πραγματικό χρόνο. Αυτό επιτρέπει στην εφαρμογή σας να παρέχει άμεση ανατροφοδότηση στους χρήστες κατά τη διάρκεια μακροχρόνιων λειτουργιών.
+Για να υλοποιήσετε ειδοποιήσεις στο MCP, πρέπει να ρυθμίσετε τόσο την πλευρά του διακομιστή όσο και του πελάτη ώστε να χειρίζονται ενημερώσεις σε πραγματικό χρόνο. Αυτό επιτρέπει στην εφαρμογή σας να παρέχει άμεση ανατροφοδότηση στους χρήστες κατά τη διάρκεια μακροχρόνιων λειτουργιών.
 
 ### Πλευρά Διακομιστή: Αποστολή Ειδοποιήσεων
 
@@ -318,11 +318,11 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-Στο προηγούμενο παράδειγμα, η μέθοδος `process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
+Στο προηγούμενο παράδειγμα, το εργαλείο `process_files` στέλνει τρεις ειδοποιήσεις στον πελάτη καθώς επεξεργάζεται κάθε αρχείο. Η μέθοδος `ctx.info()` χρησιμοποιείται για την αποστολή πληροφοριακών μηνυμάτων.
 
 </details>
 
-Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http` χρησιμοποιεί τη μεταφορά:
+Επιπλέον, για να ενεργοποιήσετε τις ειδοποιήσεις, βεβαιωθείτε ότι ο διακομιστής σας χρησιμοποιεί streaming transport (όπως `streamable-http`) και ο πελάτης υλοποιεί χειριστή μηνυμάτων για την επεξεργασία των ειδοποιήσεων. Δείτε πώς μπορείτε να ρυθμίσετε τον διακομιστή να χρησιμοποιεί το `streamable-http` transport:
 
 ```python
 mcp.run(transport="streamable-http")
@@ -348,9 +348,9 @@ public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
 }
 ```
 
-Σε αυτό το παράδειγμα .NET, η μέθοδος `ProcessFiles` tool is decorated with the `Tool` attribute and sends three notifications to the client as it processes each file. The `ctx.Info()` χρησιμοποιείται για την αποστολή πληροφοριακών μηνυμάτων.
+Σε αυτό το παράδειγμα .NET, το εργαλείο `ProcessFiles` είναι διακοσμημένο με το χαρακτηριστικό `Tool` και στέλνει τρεις ειδοποιήσεις στον πελάτη καθώς επεξεργάζεται κάθε αρχείο. Η μέθοδος `ctx.Info()` χρησιμοποιείται για την αποστολή πληροφοριακών μηνυμάτων.
 
-Για να ενεργοποιήσετε τις ειδοποιήσεις στον MCP διακομιστή σας .NET, βεβαιωθείτε ότι χρησιμοποιείτε streaming μεταφορά:
+Για να ενεργοποιήσετε τις ειδοποιήσεις στον MCP διακομιστή σας .NET, βεβαιωθείτε ότι χρησιμοποιείτε streaming transport:
 
 ```csharp
 var builder = McpBuilder.Create();
@@ -384,7 +384,7 @@ async with ClientSession(
 ) as session:
 ```
 
-Στον προηγούμενο κώδικα, η `message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` χρησιμοποιείται για τη διαχείριση εισερχόμενων ειδοποιήσεων.
+Στον παραπάνω κώδικα, η συνάρτηση `message_handler` ελέγχει αν το εισερχόμενο μήνυμα είναι ειδοποίηση. Αν ναι, εκτυπώνει την ειδοποίηση, αλλιώς το επεξεργάζεται ως κανονικό μήνυμα διακομιστή. Σημειώστε επίσης πώς το `ClientSession` αρχικοποιείται με τον `message_handler` για να χειρίζεται τις εισερχόμενες ειδοποιήσεις.
 
 </details>
 
@@ -418,47 +418,8 @@ await client.InitializeAsync();
 // Now the client will process notifications through the MessageHandler
 ```
 
-Σε αυτό το παράδειγμα .NET, η `MessageHandler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. The `ClientSession` is initialized with the message handler via the `ClientSessionOptions`.
+Σε αυτό το παράδειγμα .NET, η συνάρτηση `MessageHandler` ελέγχει αν το εισερχόμενο μήνυμα είναι ειδοποίηση. Αν ναι, εκτυπώνει την ειδοποίηση, αλλιώς το επεξεργάζεται ως κα
 
-</details>
-
-To enable notifications, ensure your server uses a streaming transport (like `streamable-http`) και ο πελάτης υλοποιεί έναν χειριστή μηνυμάτων για την επεξεργασία ειδοποιήσεων.
-
-## Ειδοποιήσεις Προόδου & Σενάρια
-
-Αυτή η ενότητα εξηγεί την έννοια των ειδοποιήσεων προόδου στο MCP, γιατί είναι σημαντικές και πώς να τις υλοποιήσετε χρησιμοποιώντας Streamable HTTP. Θα βρείτε επίσης μια πρακτική άσκηση για να εμβαθύνετε την κατανόησή σας.
-
-Οι ειδοποιήσεις προόδου είναι μηνύματα σε πραγματικό χρόνο που στέλνονται από τον διακομιστή στον πελάτη κατά τη διάρκεια μακροχρόνιων λειτουργιών. Αντί να περιμένει ο διακομιστής να ολοκληρωθεί η όλη διαδικασία, ενημερώνει τον πελάτη για την τρέχουσα κατάσταση. Αυτό βελτιώνει τη διαφάνεια, την εμπειρία χρήστη και διευκολύνει τον εντοπισμό σφαλμάτων.
-
-**Παράδειγμα:**
-
-```text
-
-"Processing document 1/10"
-"Processing document 2/10"
-...
-"Processing complete!"
-
-```
-
-### Γιατί να χρησιμοποιήσετε ειδοποιήσεις προόδου;
-
-Οι ειδοποιήσεις προόδου είναι απαραίτητες για διάφορους λόγους:
-
-- **Καλύτερη εμπειρία χρήστη:** Οι χρήστες βλέπουν ενημερώσεις καθώς προχωρά η εργασία, όχι μόνο στο τέλος.
-- **Άμεση ανατροφοδότηση:** Οι πελάτες μπορούν να εμφανίζουν μπαρ προόδου ή αρχεία καταγραφής, κάνοντας την εφαρμογή να φαίνεται ανταποκρινόμενη.
-- **Ευκολότερος εντοπισμός σφαλμάτων και παρακολούθηση:** Οι προγραμματιστές και οι χρήστες μπορούν να δουν πού μπορεί να υπάρχει καθυστέρηση ή πρόβλημα στη διαδικασία.
-
-### Πώς να υλοποιήσετε ειδοποιήσεις προόδου
-
-Ακολουθεί ο τρόπος υλοποίησης ειδοποιήσεων προόδου στο MCP:
-
-- **Στον διακομιστή:** Χρησιμοποιήστε `ctx.info()` or `ctx.log()` για να στέλνετε ειδοποιήσεις καθώς επεξεργάζεται κάθε στοιχείο. Αυτό στέλνει μήνυμα στον πελάτη πριν το κύριο αποτέλεσμα είναι έτοιμο.
-- **Στον πελάτη:** Υλοποιήστε έναν χειριστή μηνυμάτων που ακούει και εμφανίζει τις ειδοποιήσεις καθώς φτάνουν. Ο χειριστής αυτός διαχωρίζει τις ειδοποιήσεις από το τελικό αποτέλεσμα.
-
-**Παράδειγμα Διακομιστή:**
-
-<details>
 <summary>Python</summary>
 
 ```python
@@ -487,103 +448,127 @@ async def message_handler(message):
 
 </details>
 
-## Θεωρήσεις Ασφαλείας
+## Θέματα Ασφαλείας
 
-Κατά την υλοποίηση MCP διακομιστών με μεταφορές βασισμένες σε HTTP, η ασφάλεια γίνεται πρωτεύουσα ανησυχία που απαιτεί προσεκτική προσοχή σε πολλαπλές επιθέσεις και μηχανισμούς προστασίας.
+Κατά την υλοποίηση MCP servers με μεταφορές βασισμένες σε HTTP, η ασφάλεια γίνεται πρωταρχικό ζήτημα που απαιτεί προσεκτική προσοχή σε πολλαπλές επιθέσεις και μηχανισμούς προστασίας.
 
 ### Επισκόπηση
 
-Η ασφάλεια είναι κρίσιμη όταν εκθέτετε MCP διακομιστές μέσω HTTP. Το Streamable HTTP εισάγει νέες επιφάνειες επίθεσης και απαιτεί προσεκτική διαμόρφωση.
+Η ασφάλεια είναι κρίσιμη όταν εκθέτουμε MCP servers μέσω HTTP. Το Streamable HTTP εισάγει νέες επιφάνειες επίθεσης και απαιτεί προσεκτική ρύθμιση.
 
 ### Βασικά Σημεία
-- **Έλεγχος της κεφαλίδας Origin**: Πάντα ελέγχετε την κεφαλίδα `Origin` header to prevent DNS rebinding attacks.
-- **Localhost Binding**: For local development, bind servers to `localhost` to avoid exposing them to the public internet.
-- **Authentication**: Implement authentication (e.g., API keys, OAuth) for production deployments.
-- **CORS**: Configure Cross-Origin Resource Sharing (CORS) policies to restrict access.
-- **HTTPS**: Use HTTPS in production to encrypt traffic.
+- **Επαλήθευση της κεφαλίδας Origin**: Πάντα να επαληθεύετε την κεφαλίδα `Origin` για να αποτρέψετε επιθέσεις DNS rebinding.
+- **Δέσμευση σε localhost**: Για τοπική ανάπτυξη, δέστε τους servers στο `localhost` για να αποφύγετε την έκθεσή τους στο δημόσιο διαδίκτυο.
+- **Πιστοποίηση**: Υλοποιήστε πιστοποίηση (π.χ. API keys, OAuth) για παραγωγικές εγκαταστάσεις.
+- **CORS**: Ρυθμίστε πολιτικές Cross-Origin Resource Sharing (CORS) για περιορισμό πρόσβασης.
+- **HTTPS**: Χρησιμοποιήστε HTTPS στην παραγωγή για κρυπτογράφηση της κίνησης.
 
-### Best Practices
-- Never trust incoming requests without validation.
-- Log and monitor all access and errors.
-- Regularly update dependencies to patch security vulnerabilities.
+### Καλές Πρακτικές
+- Μην εμπιστεύεστε ποτέ αιτήματα χωρίς επαλήθευση.
+- Καταγράψτε και παρακολουθήστε όλες τις προσβάσεις και τα σφάλματα.
+- Ενημερώνετε τακτικά τις εξαρτήσεις για να διορθώσετε ευπάθειες ασφαλείας.
 
-### Challenges
-- Balancing security with ease of development
-- Ensuring compatibility with various client environments
-
-
-## Upgrading from SSE to Streamable HTTP
-
-For applications currently using Server-Sent Events (SSE), migrating to Streamable HTTP provides enhanced capabilities and better long-term sustainability for your MCP implementations.
-
-### Why Upgrade?
-- Streamable HTTP offers better scalability, compatibility, and richer notification support than SSE.
-- It is the recommended transport for new MCP applications.
-
-### Migration Steps
-- **Update server code** to use `transport="streamable-http"` in `mcp.run()`.
-- **Update client code** to use `streamablehttp_client` instead of SSE client.
-- **Implement a message handler** in the client to process notifications.
-- **Test for compatibility** with existing tools and workflows.
-
-### Maintaining Compatibility
-- You can support both SSE and Streamable HTTP by running both transports on different endpoints.
-- Gradually migrate clients to the new transport.
-
-### Challenges
-- Ensuring all clients are updated
-- Handling differences in notification delivery
-
-## Security Considerations
-
-Security should be a top priority when implementing any server, especially when using HTTP-based transports like Streamable HTTP in MCP. 
-
-When implementing MCP servers with HTTP-based transports, security becomes a paramount concern that requires careful attention to multiple attack vectors and protection mechanisms.
-
-### Overview
-
-Security is critical when exposing MCP servers over HTTP. Streamable HTTP introduces new attack surfaces and requires careful configuration.
-
-Here are some key security considerations:
-
-- **Origin Header Validation**: Always validate the `Origin` header to prevent DNS rebinding attacks.
-- **Localhost Binding**: For local development, bind servers to `localhost` to avoid exposing them to the public internet.
-- **Authentication**: Implement authentication (e.g., API keys, OAuth) for production deployments.
-- **CORS**: Configure Cross-Origin Resource Sharing (CORS) policies to restrict access.
-- **HTTPS**: Use HTTPS in production to encrypt traffic.
-
-### Best Practices
-
-Additionally, here are some best practices to follow when implementing security in your MCP streaming server:
-
-- Never trust incoming requests without validation.
-- Log and monitor all access and errors.
-- Regularly update dependencies to patch security vulnerabilities.
-
-### Challenges
-
-You will face some challenges when implementing security in MCP streaming servers:
-
-- Balancing security with ease of development
-- Ensuring compatibility with various client environments
+### Προκλήσεις
+- Ισορροπία μεταξύ ασφάλειας και ευκολίας ανάπτυξης
+- Εξασφάλιση συμβατότητας με διάφορα περιβάλλοντα πελατών
 
 
-## Upgrading from SSE to Streamable HTTP
+## Αναβάθμιση από SSE σε Streamable HTTP
 
-For applications currently using Server-Sent Events (SSE), migrating to Streamable HTTP provides enhanced capabilities and better long-term sustainability for your MCP implementations.
+Για εφαρμογές που χρησιμοποιούν Server-Sent Events (SSE), η μετάβαση σε Streamable HTTP προσφέρει βελτιωμένες δυνατότητες και καλύτερη μακροπρόθεσμη βιωσιμότητα για τις υλοποιήσεις MCP.
 
-### Why Upgrade?
+### Γιατί να Αναβαθμίσετε;
 
-There are two compelling reasons to upgrade from SSE to Streamable HTTP:
+Υπάρχουν δύο βασικοί λόγοι για να αναβαθμίσετε από SSE σε Streamable HTTP:
 
-- Streamable HTTP offers better scalability, compatibility, and richer notification support than SSE.
-- It is the recommended transport for new MCP applications.
+- Το Streamable HTTP προσφέρει καλύτερη κλιμάκωση, συμβατότητα και πλουσιότερη υποστήριξη ειδοποιήσεων σε σχέση με το SSE.
+- Είναι η προτεινόμενη μεταφορά για νέες εφαρμογές MCP.
 
-### Migration Steps
+### Βήματα Μετάβασης
 
-Here's how you can migrate from SSE to Streamable HTTP in your MCP applications:
+Ακολουθεί πώς μπορείτε να μεταβείτε από SSE σε Streamable HTTP στις εφαρμογές MCP σας:
 
-1. **Update server code** to use `transport="streamable-http"@@INLINE_CODE
+- **Ενημερώστε τον κώδικα του server** για να χρησιμοποιεί `transport="streamable-http"` στο `mcp.run()`.
+- **Ενημερώστε τον κώδικα του πελάτη** για να χρησιμοποιεί `streamablehttp_client` αντί για τον SSE client.
+- **Υλοποιήστε έναν χειριστή μηνυμάτων** στον πελάτη για την επεξεργασία των ειδοποιήσεων.
+- **Δοκιμάστε τη συμβατότητα** με τα υπάρχοντα εργαλεία και ροές εργασίας.
+
+### Διατήρηση Συμβατότητας
+
+Συνιστάται να διατηρήσετε τη συμβατότητα με τους υπάρχοντες SSE clients κατά τη διαδικασία μετάβασης. Μερικές στρατηγικές:
+
+- Μπορείτε να υποστηρίξετε και τα δύο, SSE και Streamable HTTP, τρέχοντας και τις δύο μεταφορές σε διαφορετικά endpoints.
+- Μεταβείτε σταδιακά τους πελάτες στη νέα μεταφορά.
+
+### Προκλήσεις
+
+Πρέπει να αντιμετωπίσετε τις εξής προκλήσεις κατά τη μετάβαση:
+
+- Ενημέρωση όλων των πελατών
+- Διαχείριση διαφορών στην παράδοση των ειδοποιήσεων
+
+## Θέματα Ασφαλείας
+
+Η ασφάλεια πρέπει να είναι κορυφαία προτεραιότητα κατά την υλοποίηση οποιουδήποτε server, ειδικά όταν χρησιμοποιούνται μεταφορές βασισμένες σε HTTP όπως το Streamable HTTP στο MCP.
+
+Κατά την υλοποίηση MCP servers με μεταφορές βασισμένες σε HTTP, η ασφάλεια γίνεται πρωταρχικό ζήτημα που απαιτεί προσεκτική προσοχή σε πολλαπλές επιθέσεις και μηχανισμούς προστασίας.
+
+### Επισκόπηση
+
+Η ασφάλεια είναι κρίσιμη όταν εκθέτουμε MCP servers μέσω HTTP. Το Streamable HTTP εισάγει νέες επιφάνειες επίθεσης και απαιτεί προσεκτική ρύθμιση.
+
+Ακολουθούν μερικά βασικά θέματα ασφαλείας:
+
+- **Επαλήθευση της κεφαλίδας Origin**: Πάντα να επαληθεύετε την κεφαλίδα `Origin` για να αποτρέψετε επιθέσεις DNS rebinding.
+- **Δέσμευση σε localhost**: Για τοπική ανάπτυξη, δέστε τους servers στο `localhost` για να αποφύγετε την έκθεσή τους στο δημόσιο διαδίκτυο.
+- **Πιστοποίηση**: Υλοποιήστε πιστοποίηση (π.χ. API keys, OAuth) για παραγωγικές εγκαταστάσεις.
+- **CORS**: Ρυθμίστε πολιτικές Cross-Origin Resource Sharing (CORS) για περιορισμό πρόσβασης.
+- **HTTPS**: Χρησιμοποιήστε HTTPS στην παραγωγή για κρυπτογράφηση της κίνησης.
+
+### Καλές Πρακτικές
+
+Επιπλέον, ακολουθήστε τις παρακάτω καλές πρακτικές κατά την υλοποίηση ασφάλειας στον MCP streaming server σας:
+
+- Μην εμπιστεύεστε ποτέ αιτήματα χωρίς επαλήθευση.
+- Καταγράψτε και παρακολουθήστε όλες τις προσβάσεις και τα σφάλματα.
+- Ενημερώνετε τακτικά τις εξαρτήσεις για να διορθώσετε ευπάθειες ασφαλείας.
+
+### Προκλήσεις
+
+Θα αντιμετωπίσετε κάποιες προκλήσεις κατά την υλοποίηση ασφάλειας σε MCP streaming servers:
+
+- Ισορροπία μεταξύ ασφάλειας και ευκολίας ανάπτυξης
+- Εξασφάλιση συμβατότητας με διάφορα περιβάλλοντα πελατών
+
+### Άσκηση: Δημιουργήστε τη δική σας Streaming MCP Εφαρμογή
+
+**Σενάριο:**
+Δημιουργήστε έναν MCP server και πελάτη όπου ο server επεξεργάζεται μια λίστα αντικειμένων (π.χ. αρχεία ή έγγραφα) και στέλνει μια ειδοποίηση για κάθε επεξεργασμένο αντικείμενο. Ο πελάτης θα εμφανίζει κάθε ειδοποίηση καθώς αυτή φτάνει.
+
+**Βήματα:**
+
+1. Υλοποιήστε ένα εργαλείο server που επεξεργάζεται μια λίστα και στέλνει ειδοποιήσεις για κάθε αντικείμενο.
+2. Υλοποιήστε έναν πελάτη με χειριστή μηνυμάτων για να εμφανίζει τις ειδοποιήσεις σε πραγματικό χρόνο.
+3. Δοκιμάστε την υλοποίησή σας τρέχοντας και τον server και τον πελάτη, και παρατηρήστε τις ειδοποιήσεις.
+
+[Solution](./solution/README.md)
+
+## Επιπλέον Ανάγνωση & Τι Ακολουθεί;
+
+Για να συνεχίσετε το ταξίδι σας με το MCP streaming και να επεκτείνετε τις γνώσεις σας, αυτή η ενότητα παρέχει επιπλέον πόρους και προτεινόμενα επόμενα βήματα για την κατασκευή πιο προηγμένων εφαρμογών.
+
+### Επιπλέον Ανάγνωση
+
+- [Microsoft: Introduction to HTTP Streaming](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
+- [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
+- [Microsoft: CORS in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
+- [Python requests: Streaming Requests](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
+
+### Τι Ακολουθεί;
+
+- Δοκιμάστε να δημιουργήσετε πιο προηγμένα εργαλεία MCP που χρησιμοποιούν streaming για ανάλυση σε πραγματικό χρόνο, chat ή συνεργατική επεξεργασία.
+- Εξερευνήστε την ενσωμάτωση του MCP streaming με frontend frameworks (React, Vue, κ.ά.) για ζωντανές ενημερώσεις UI.
+- Επόμενο: [Utilising AI Toolkit for VSCode](../07-aitk/README.md)
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που προσπαθούμε για ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η επίσημη πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική μετάφραση από άνθρωπο. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

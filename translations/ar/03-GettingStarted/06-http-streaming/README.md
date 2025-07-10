@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3eaf38ffe0638867045ec6664908333c",
-  "translation_date": "2025-06-18T08:34:42+00:00",
+  "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
+  "translation_date": "2025-07-10T15:54:58+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "ar"
 }
 -->
-# HTTPS للبث مع بروتوكول سياق النموذج (MCP)
+# البث عبر HTTPS باستخدام بروتوكول سياق النموذج (MCP)
 
-يوفر هذا الفصل دليلاً شاملاً لتنفيذ بث آمن وقابل للتوسع وفي الوقت الحقيقي باستخدام بروتوكول سياق النموذج (MCP) عبر HTTPS. يغطي الدوافع وراء البث، وآليات النقل المتاحة، وكيفية تنفيذ HTTP قابل للبث في MCP، وأفضل ممارسات الأمان، والهجرة من SSE، وإرشادات عملية لبناء تطبيقات MCP للبث خاصتك.
+يوفر هذا الفصل دليلاً شاملاً لتنفيذ بث آمن وقابل للتوسع وفي الوقت الحقيقي باستخدام بروتوكول سياق النموذج (MCP) عبر HTTPS. يغطي الدوافع وراء البث، وآليات النقل المتاحة، وكيفية تنفيذ HTTP قابل للبث في MCP، وأفضل ممارسات الأمان، والهجرة من SSE، وإرشادات عملية لبناء تطبيقات MCP للبث الخاصة بك.
 
 ## آليات النقل والبث في MCP
 
@@ -20,55 +20,55 @@ CO_OP_TRANSLATOR_METADATA:
 تعرف آلية النقل كيفية تبادل البيانات بين العميل والخادم. يدعم MCP عدة أنواع من النقل لتناسب بيئات ومتطلبات مختلفة:
 
 - **stdio**: الإدخال/الإخراج القياسي، مناسب للأدوات المحلية وأدوات سطر الأوامر. بسيط لكنه غير مناسب للويب أو السحابة.
-- **SSE (Server-Sent Events)**: يسمح للخوادم بدفع التحديثات في الوقت الحقيقي إلى العملاء عبر HTTP. جيد لواجهات الويب، لكنه محدود في قابلية التوسع والمرونة.
-- **Streamable HTTP**: نقل بث حديث قائم على HTTP، يدعم الإشعارات وقابلية التوسع الأفضل. يُنصح به لمعظم سيناريوهات الإنتاج والسحابة.
+- **SSE (Server-Sent Events)**: يسمح للخوادم بدفع تحديثات في الوقت الحقيقي إلى العملاء عبر HTTP. جيد لواجهات الويب، لكنه محدود من حيث القابلية للتوسع والمرونة.
+- **Streamable HTTP**: نقل بث حديث قائم على HTTP، يدعم الإشعارات وقابلية توسع أفضل. يُنصح به لمعظم سيناريوهات الإنتاج والسحابة.
 
 ### جدول المقارنة
 
-اطلع على جدول المقارنة أدناه لفهم الفروقات بين آليات النقل هذه:
+اطلع على جدول المقارنة أدناه لفهم الفروقات بين هذه الآليات:
 
-| النقل             | التحديثات في الوقت الحقيقي | البث        | قابلية التوسع | حالة الاستخدام            |
-|-------------------|----------------------------|-------------|---------------|---------------------------|
-| stdio             | لا                         | لا          | منخفضة        | أدوات CLI محلية           |
-| SSE               | نعم                        | نعم         | متوسطة        | الويب، تحديثات الوقت الحقيقي |
-| Streamable HTTP   | نعم                        | نعم         | عالية         | السحابة، متعدد العملاء     |
+| النقل             | التحديثات في الوقت الحقيقي | البث       | القابلية للتوسع | حالة الاستخدام           |
+|-------------------|----------------------------|------------|-----------------|--------------------------|
+| stdio             | لا                         | لا         | منخفضة          | أدوات CLI محلية          |
+| SSE               | نعم                        | نعم        | متوسطة          | الويب، التحديثات الفورية |
+| Streamable HTTP   | نعم                        | نعم        | عالية           | السحابة، متعدد العملاء   |
 
-> **نصيحة:** اختيار آلية النقل المناسبة يؤثر على الأداء، وقابلية التوسع، وتجربة المستخدم. **Streamable HTTP** هو الخيار الموصى به للتطبيقات الحديثة والقابلة للتوسع والمهيأة للسحابة.
+> **نصيحة:** اختيار آلية النقل المناسبة يؤثر على الأداء، القابلية للتوسع، وتجربة المستخدم. يُنصح باستخدام **Streamable HTTP** للتطبيقات الحديثة والقابلة للتوسع والمهيأة للسحابة.
 
-لاحظ آليتي النقل stdio وSSE التي تم عرضهما في الفصول السابقة وكيف أن Streamable HTTP هو النقل الذي يغطيه هذا الفصل.
+لاحظ آليات النقل stdio و SSE التي تم عرضها في الفصول السابقة وكيف أن Streamable HTTP هو النقل الذي يغطيه هذا الفصل.
 
 ## البث: المفاهيم والدوافع
 
-فهم المفاهيم الأساسية والدوافع وراء البث أمر ضروري لتنفيذ أنظمة اتصال فعالة في الوقت الحقيقي.
+فهم المفاهيم الأساسية والدوافع وراء البث ضروري لتنفيذ أنظمة تواصل فعالة في الوقت الحقيقي.
 
-**البث** هو تقنية في برمجة الشبكات تسمح بإرسال واستقبال البيانات على شكل أجزاء صغيرة يمكن إدارتها أو كسلسلة من الأحداث، بدلاً من انتظار استكمال الاستجابة كاملة. هذا مفيد بشكل خاص لـ:
+**البث** هو تقنية في برمجة الشبكات تسمح بإرسال واستقبال البيانات على شكل أجزاء صغيرة يمكن إدارتها أو كسلسلة من الأحداث، بدلاً من الانتظار حتى يصبح الرد كاملاً جاهزًا. هذا مفيد بشكل خاص لـ:
 
 - الملفات أو مجموعات البيانات الكبيرة.
 - التحديثات في الوقت الحقيقي (مثل الدردشة، أشرطة التقدم).
-- العمليات الحسابية الطويلة التي ترغب في إبقاء المستخدم على اطلاع.
+- العمليات الحسابية طويلة الأمد حيث تريد إبقاء المستخدم على اطلاع.
 
-إليك ما تحتاج لمعرفته على مستوى عالٍ عن البث:
+إليك ما تحتاج لمعرفته حول البث على مستوى عالٍ:
 
-- تُسلم البيانات تدريجياً، وليس دفعة واحدة.
+- يتم تسليم البيانات تدريجيًا، وليس دفعة واحدة.
 - يمكن للعميل معالجة البيانات فور وصولها.
-- يقلل من زمن الانتظار الظاهري ويحسن تجربة المستخدم.
+- يقلل من زمن الاستجابة الظاهر ويحسن تجربة المستخدم.
 
 ### لماذا نستخدم البث؟
 
-الأسباب لاستخدام البث هي كالتالي:
+الأسباب لاستخدام البث هي:
 
 - يحصل المستخدمون على ردود فعل فورية، وليس فقط في النهاية.
-- يتيح تطبيقات الوقت الحقيقي وواجهات مستخدم تفاعلية.
+- يتيح تطبيقات في الوقت الحقيقي وواجهات مستخدم تفاعلية.
 - استخدام أكثر كفاءة لموارد الشبكة والحوسبة.
 
 ### مثال بسيط: خادم وعميل بث HTTP
 
-إليك مثال بسيط لكيفية تنفيذ البث:
+إليك مثالًا بسيطًا لكيفية تنفيذ البث:
 
 <details>
 <summary>Python</summary>
 
-**الخادم (Python، باستخدام FastAPI وStreamingResponse):**
+**الخادم (Python، باستخدام FastAPI و StreamingResponse):**
 <details>
 <summary>Python</summary>
 
@@ -106,23 +106,23 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-يوضح هذا المثال خادمًا يرسل سلسلة من الرسائل إلى العميل فور توفرها، بدلاً من انتظار تحضير كل الرسائل دفعة واحدة.
+يوضح هذا المثال خادمًا يرسل سلسلة من الرسائل إلى العميل بمجرد توفرها، بدلاً من الانتظار حتى تصبح كل الرسائل جاهزة.
 
 **كيف يعمل:**
-- الخادم ينتج كل رسالة بمجرد جاهزيتها.
+- الخادم يرسل كل رسالة بمجرد جاهزيتها.
 - العميل يستقبل ويطبع كل جزء فور وصوله.
 
 **المتطلبات:**
-- يجب أن يستخدم الخادم استجابة بث (مثل `StreamingResponse` in FastAPI).
-- The client must process the response as a stream (`stream=True` in requests).
-- Content-Type is usually `text/event-stream` or `application/octet-stream`).
+- يجب أن يستخدم الخادم استجابة بث (مثل `StreamingResponse` في FastAPI).
+- يجب أن يعالج العميل الاستجابة كبث (`stream=True` في requests).
+- نوع المحتوى عادةً `text/event-stream` أو `application/octet-stream`.
 
 </details>
 
 <details>
 <summary>Java</summary>
 
-**الخادم (Java، باستخدام Spring Boot وServer-Sent Events):**
+**الخادم (Java، باستخدام Spring Boot و Server-Sent Events):**
 
 ```java
 @RestController
@@ -186,72 +186,72 @@ public class CalculatorClientApplication implements CommandLineRunner {
 ```
 
 **ملاحظات تنفيذ Java:**
-- يستخدم المكدس التفاعلي في Spring Boot مع `Flux` for streaming
-- `ServerSentEvent` provides structured event streaming with event types
-- `WebClient` with `bodyToFlux()` enables reactive streaming consumption
-- `delayElements()` simulates processing time between events
-- Events can have types (`info`, `result`) for better client handling
+- يستخدم تكديس Spring Boot التفاعلي مع `Flux` للبث
+- `ServerSentEvent` يوفر بث أحداث منظم مع أنواع الأحداث
+- `WebClient` مع `bodyToFlux()` يمكّن استهلاك البث التفاعلي
+- `delayElements()` يحاكي وقت المعالجة بين الأحداث
+- يمكن أن تحتوي الأحداث على أنواع (`info`, `result`) لتحسين معالجة العميل
 
 </details>
 
-### Comparison: Classic Streaming vs MCP Streaming
+### مقارنة: البث الكلاسيكي مقابل بث MCP
 
-The differences between how streaming works in a "classical" manner versus how it works in MCP can be depicted like so:
+يمكن توضيح الفروقات بين كيفية عمل البث "الكلاسيكي" وكيفية عمله في MCP كما يلي:
 
-| Feature                | Classic HTTP Streaming         | MCP Streaming (Notifications)      |
-|------------------------|-------------------------------|-------------------------------------|
-| Main response          | Chunked                       | Single, at end                      |
-| Progress updates       | Sent as data chunks           | Sent as notifications               |
-| Client requirements    | Must process stream           | Must implement message handler      |
-| Use case               | Large files, AI token streams | Progress, logs, real-time feedback  |
+| الميزة                 | البث الكلاسيكي عبر HTTP       | بث MCP (الإشعارات)               |
+|------------------------|-------------------------------|---------------------------------|
+| الاستجابة الرئيسية     | مقسمة إلى أجزاء               | واحدة، في النهاية               |
+| تحديثات التقدم         | تُرسل كقطع بيانات             | تُرسل كإشعارات                 |
+| متطلبات العميل         | يجب معالجة البث               | يجب تنفيذ معالج رسائل          |
+| حالة الاستخدام         | ملفات كبيرة، تدفقات رموز AI   | التقدم، السجلات، ردود فعل فورية |
 
-### Key Differences Observed
+### الفروقات الرئيسية الملحوظة
 
-Additionally, here are some key differences:
+إضافة إلى ذلك، هناك بعض الفروقات الرئيسية:
 
-- **Communication Pattern:**
-   - Classic HTTP streaming: Uses simple chunked transfer encoding to send data in chunks
-   - MCP streaming: Uses a structured notification system with JSON-RPC protocol
+- **نمط الاتصال:**
+   - البث الكلاسيكي عبر HTTP: يستخدم ترميز نقل مقسم بسيط لإرسال البيانات على شكل أجزاء
+   - بث MCP: يستخدم نظام إشعارات منظم مع بروتوكول JSON-RPC
 
-- **Message Format:**
-   - Classic HTTP: Plain text chunks with newlines
-   - MCP: Structured LoggingMessageNotification objects with metadata
+- **صيغة الرسالة:**
+   - HTTP الكلاسيكي: أجزاء نصية عادية مع فواصل أسطر
+   - MCP: كائنات LoggingMessageNotification منظمة مع بيانات وصفية
 
-- **Client Implementation:**
-   - Classic HTTP: Simple client that processes streaming responses
-   - MCP: More sophisticated client with a message handler to process different types of messages
+- **تنفيذ العميل:**
+   - HTTP الكلاسيكي: عميل بسيط يعالج استجابات البث
+   - MCP: عميل أكثر تطورًا مع معالج رسائل لمعالجة أنواع مختلفة من الرسائل
 
-- **Progress Updates:**
-   - Classic HTTP: The progress is part of the main response stream
-   - MCP: Progress is sent via separate notification messages while the main response comes at the end
+- **تحديثات التقدم:**
+   - HTTP الكلاسيكي: التقدم جزء من تدفق الاستجابة الرئيسي
+   - MCP: التقدم يُرسل عبر رسائل إشعار منفصلة بينما تأتي الاستجابة الرئيسية في النهاية
 
-### Recommendations
+### التوصيات
 
-There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream`) مقابل اختيار البث عبر MCP.
+هناك بعض الأمور التي نوصي بها عند الاختيار بين تنفيذ البث الكلاسيكي (كنقطة نهاية عرضناها أعلاه باستخدام `/stream`) مقابل اختيار البث عبر MCP.
 
-- **للحاجات البسيطة للبث:** البث الكلاسيكي عبر HTTP أبسط في التنفيذ وكافٍ للحاجات الأساسية.
+- **للحاجات البسيطة للبث:** البث الكلاسيكي عبر HTTP أبسط في التنفيذ وكافٍ للاحتياجات الأساسية.
 
-- **للتطبيقات المعقدة والتفاعلية:** يوفر بث MCP نهجًا أكثر تنظيماً مع بيانات وصفية أغنى وفصل بين الإشعارات والنتائج النهائية.
+- **للتطبيقات التفاعلية والمعقدة:** بث MCP يوفر نهجًا أكثر تنظيمًا مع بيانات وصفية أغنى وفصل بين الإشعارات والنتائج النهائية.
 
-- **لتطبيقات الذكاء الاصطناعي:** نظام الإشعارات في MCP مفيد بشكل خاص للمهام الطويلة التي تريد إبقاء المستخدمين على اطلاع بتقدمها.
+- **لتطبيقات الذكاء الاصطناعي:** نظام الإشعارات في MCP مفيد بشكل خاص للمهام الطويلة الأمد حيث تريد إبقاء المستخدمين على اطلاع بالتقدم.
 
 ## البث في MCP
 
 حسنًا، لقد رأيت بعض التوصيات والمقارنات حتى الآن حول الفرق بين البث الكلاسيكي والبث في MCP. دعنا ندخل في التفاصيل حول كيفية الاستفادة من البث في MCP.
 
-فهم كيفية عمل البث داخل إطار عمل MCP ضروري لبناء تطبيقات تفاعلية توفر ردود فعل في الوقت الحقيقي للمستخدمين أثناء العمليات الطويلة.
+فهم كيفية عمل البث ضمن إطار MCP ضروري لبناء تطبيقات تفاعلية توفر ردود فعل في الوقت الحقيقي للمستخدمين أثناء العمليات طويلة الأمد.
 
-في MCP، لا يتعلق البث بإرسال الاستجابة الرئيسية على شكل أجزاء، بل بإرسال **الإشعارات** إلى العميل أثناء معالجة الأداة للطلب. يمكن أن تتضمن هذه الإشعارات تحديثات التقدم، السجلات، أو أحداث أخرى.
+في MCP، البث لا يعني إرسال الاستجابة الرئيسية على شكل أجزاء، بل إرسال **إشعارات** إلى العميل أثناء معالجة الأداة للطلب. يمكن أن تشمل هذه الإشعارات تحديثات التقدم، السجلات، أو أحداث أخرى.
 
 ### كيف يعمل
 
-النتيجة الرئيسية تُرسل كاستجابة واحدة. ومع ذلك، يمكن إرسال الإشعارات كرسائل منفصلة أثناء المعالجة وبالتالي تحديث العميل في الوقت الحقيقي. يجب أن يكون العميل قادرًا على التعامل مع هذه الإشعارات وعرضها.
+النتيجة الرئيسية لا تزال تُرسل كرد واحد. ومع ذلك، يمكن إرسال الإشعارات كرسائل منفصلة أثناء المعالجة لتحديث العميل في الوقت الحقيقي. يجب أن يكون العميل قادرًا على التعامل مع هذه الإشعارات وعرضها.
 
 ## ما هي الإشعارات؟
 
 قلنا "إشعار"، ماذا يعني ذلك في سياق MCP؟
 
-الإشعار هو رسالة تُرسل من الخادم إلى العميل لإبلاغه بالتقدم، الحالة، أو أحداث أخرى أثناء عملية طويلة. تحسن الإشعارات الشفافية وتجربة المستخدم.
+الإشعار هو رسالة تُرسل من الخادم إلى العميل لإبلاغه بالتقدم، الحالة، أو أحداث أخرى أثناء عملية طويلة الأمد. تحسن الإشعارات الشفافية وتجربة المستخدم.
 
 على سبيل المثال، من المفترض أن يرسل العميل إشعارًا بمجرد إتمام المصافحة الأولية مع الخادم.
 
@@ -267,9 +267,9 @@ There are some things we recommend when it comes to choosing between implementin
 }
 ```
 
-تنتمي الإشعارات إلى موضوع في MCP يُشار إليه بـ ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
+تنتمي الإشعارات إلى موضوع في MCP يُشار إليه باسم ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
 
-لتمكين التسجيل، يحتاج الخادم إلى تفعيله كميزة/قدرة كما يلي:
+لجعل التسجيل يعمل، يحتاج الخادم إلى تمكينه كميزة/قدرة كما يلي:
 
 ```json
 {
@@ -280,28 +280,28 @@ There are some things we recommend when it comes to choosing between implementin
 ```
 
 > [!NOTE]
-> اعتمادًا على SDK المستخدم، قد يكون التسجيل مفعلاً بشكل افتراضي، أو قد تحتاج إلى تمكينه صراحة في إعدادات الخادم.
+> اعتمادًا على SDK المستخدم، قد يكون التسجيل مفعّلًا افتراضيًا، أو قد تحتاج إلى تمكينه صراحة في تكوين الخادم.
 
 هناك أنواع مختلفة من الإشعارات:
 
-| المستوى    | الوصف                         | مثال على الاستخدام             |
-|------------|------------------------------|-------------------------------|
-| debug      | معلومات تفصيلية للتصحيح      | نقاط الدخول/الخروج للدوال     |
-| info       | رسائل معلومات عامة           | تحديثات تقدم العمليات         |
-| notice     | أحداث طبيعية ولكن مهمة       | تغييرات التكوين               |
-| warning    | حالات تحذيرية                | استخدام ميزات مهجورة          |
-| error      | حالات خطأ                    | فشل العمليات                  |
-| critical   | حالات حرجة                  | فشل مكونات النظام             |
-| alert      | يجب اتخاذ إجراء فوراً         | اكتشاف تلف في البيانات        |
-| emergency  | النظام غير قابل للاستخدام    | فشل كامل للنظام               |
+| المستوى    | الوصف                         | مثال على الاستخدام              |
+|------------|-------------------------------|--------------------------------|
+| debug      | معلومات تفصيلية للتصحيح       | نقاط دخول/خروج الدوال          |
+| info       | رسائل معلومات عامة            | تحديثات تقدم العملية           |
+| notice     | أحداث عادية لكنها مهمة        | تغييرات التكوين                |
+| warning    | حالات تحذيرية                 | استخدام ميزات مهجورة           |
+| error      | حالات خطأ                     | فشل العمليات                  |
+| critical   | حالات حرجة                   | فشل مكونات النظام              |
+| alert      | يجب اتخاذ إجراء فورًا         | اكتشاف تلف في البيانات         |
+| emergency  | النظام غير قابل للاستخدام     | فشل النظام الكامل              |
 
 ## تنفيذ الإشعارات في MCP
 
-لتنفيذ الإشعارات في MCP، تحتاج إلى إعداد كل من جانب الخادم والعميل للتعامل مع التحديثات في الوقت الحقيقي. هذا يسمح لتطبيقك بتوفير ردود فعل فورية للمستخدمين أثناء العمليات الطويلة.
+لتنفيذ الإشعارات في MCP، تحتاج إلى إعداد كل من جانب الخادم والعميل للتعامل مع التحديثات في الوقت الحقيقي. هذا يسمح لتطبيقك بتقديم ردود فعل فورية للمستخدمين أثناء العمليات طويلة الأمد.
 
 ### جانب الخادم: إرسال الإشعارات
 
-لنبدأ بجانب الخادم. في MCP، تعرف الأدوات التي يمكنها إرسال الإشعارات أثناء معالجة الطلبات. يستخدم الخادم كائن السياق (عادةً `ctx`) لإرسال الرسائل إلى العميل.
+لنبدأ بجانب الخادم. في MCP، تعرف الأدوات التي يمكنها إرسال إشعارات أثناء معالجة الطلبات. يستخدم الخادم كائن السياق (عادةً `ctx`) لإرسال الرسائل إلى العميل.
 
 <details>
 <summary>Python</summary>
@@ -318,11 +318,11 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-في المثال السابق، يستخدم النقل `process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
+في المثال السابق، ترسل أداة `process_files` ثلاث إشعارات إلى العميل أثناء معالجة كل ملف. تُستخدم طريقة `ctx.info()` لإرسال رسائل معلوماتية.
 
 </details>
 
-Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http`:
+بالإضافة إلى ذلك، لتمكين الإشعارات، تأكد من أن خادمك يستخدم نقل بث (مثل `streamable-http`) وأن عميلك ينفذ معالج رسائل لمعالجة الإشعارات. إليك كيفية إعداد الخادم لاستخدام نقل `streamable-http`:
 
 ```python
 mcp.run(transport="streamable-http")
@@ -348,9 +348,9 @@ public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
 }
 ```
 
-في هذا المثال لـ .NET، تُستخدم طريقة `ProcessFiles` tool is decorated with the `Tool` attribute and sends three notifications to the client as it processes each file. The `ctx.Info()` لإرسال رسائل معلوماتية.
+في هذا المثال الخاص بـ .NET، تُزين أداة `ProcessFiles` بوسم `Tool` وترسل ثلاث إشعارات إلى العميل أثناء معالجة كل ملف. تُستخدم طريقة `ctx.Info()` لإرسال رسائل معلوماتية.
 
-لتفعيل الإشعارات في خادم MCP الخاص بك على .NET، تأكد من استخدام نقل بث:
+لتمكين الإشعارات في خادم MCP الخاص بك على .NET، تأكد من استخدام نقل بث:
 
 ```csharp
 var builder = McpBuilder.Create();
@@ -384,7 +384,7 @@ async with ClientSession(
 ) as session:
 ```
 
-في الكود السابق، يستخدم `message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` لمعالجة الإشعارات الواردة.
+في الكود السابق، تتحقق دالة `message_handler` مما إذا كانت الرسالة الواردة إشعارًا. إذا كانت كذلك، تطبع الإشعار؛ وإلا تعالجه كرسالة خادم عادية. لاحظ أيضًا كيف تم تهيئة `ClientSession` مع `message_handler` للتعامل مع الإشعارات الواردة.
 
 </details>
 
@@ -418,17 +418,17 @@ await client.InitializeAsync();
 // Now the client will process notifications through the MessageHandler
 ```
 
-في هذا المثال لـ .NET، يستخدم `MessageHandler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. The `ClientSession` is initialized with the message handler via the `ClientSessionOptions`.
+في هذا المثال الخاص بـ .NET، تتحقق دالة `MessageHandler` مما إذا كانت الرسالة الواردة إشعارًا. إذا كانت كذلك، تطبع الإشعار؛ وإلا تعالجه كرسالة خادم عادية. يتم تهيئة `ClientSession` مع معالج الرسائل عبر `ClientSessionOptions`.
 
 </details>
 
-To enable notifications, ensure your server uses a streaming transport (like `streamable-http`، ويقوم عميلك بتنفيذ معالج رسائل لمعالجة الإشعارات.
+لتمكين الإشعارات، تأكد من أن خادمك يستخدم نقل بث (مثل `streamable-http`) وأن عميلك ينفذ معالج رسائل لمعالجة الإشعارات.
 
 ## إشعارات التقدم والسيناريوهات
 
-يشرح هذا القسم مفهوم إشعارات التقدم في MCP، وأهميتها، وكيفية تنفيذها باستخدام Streamable HTTP. ستجد أيضًا تمرينًا عمليًا لتعزيز فهمك.
+يشرح هذا القسم مفهوم إشعارات التقدم في MCP، ولماذا هي مهمة، وكيفية تنفيذها باستخدام Streamable HTTP. ستجد أيضًا مهمة عملية لتعزيز فهمك.
 
-إشعارات التقدم هي رسائل في الوقت الحقيقي تُرسل من الخادم إلى العميل أثناء العمليات الطويلة. بدلاً من انتظار انتهاء العملية بأكملها، يبقي الخادم العميل على اطلاع بالحالة الحالية. هذا يعزز الشفافية، تجربة المستخدم، ويسهل التصحيح.
+إشعارات التقدم هي رسائل في الوقت الحقيقي تُرسل من الخادم إلى العميل أثناء العمليات طويلة الأمد. بدلاً من الانتظار حتى انتهاء العملية بالكامل، يبقي الخادم العميل محدثًا بالحالة الحالية. هذا يحسن الشفافية، تجربة المستخدم، ويسهل التصحيح.
 
 **مثال:**
 
@@ -447,19 +447,18 @@ To enable notifications, ensure your server uses a streaming transport (like `st
 
 - **تحسين تجربة المستخدم:** يرى المستخدمون التحديثات أثناء تقدم العمل، وليس فقط في النهاية.
 - **ردود فعل في الوقت الحقيقي:** يمكن للعملاء عرض أشرطة تقدم أو سجلات، مما يجعل التطبيق يبدو تفاعليًا.
-- **تسهيل التصحيح والمراقبة:** يمكن للمطورين والمستخدمين رؤية أماكن البطء أو التوقف في العملية.
+- **تسهيل التصحيح والمراقبة:** يمكن للمطورين والمستخدمين رؤية أين قد تكون العملية بطيئة أو متوقفة.
 
 ### كيفية تنفيذ إشعارات التقدم
 
 إليك كيفية تنفيذ إشعارات التقدم في MCP:
 
-- **على الخادم:** استخدم `ctx.info()` or `ctx.log()` لإرسال الإشعارات مع معالجة كل عنصر. يرسل هذا رسالة إلى العميل قبل أن تكون النتيجة الرئيسية جاهزة.
+- **على الخادم:** استخدم `ctx.info()` أو `ctx.log()` لإرسال الإشعارات أثناء معالجة كل عنصر. هذا يرسل رسالة إلى العميل قبل أن تكون النتيجة الرئيسية جاهزة.
 - **على العميل:** نفذ معالج رسائل يستمع للإشعارات ويعرضها فور وصولها. يميز هذا المعالج بين الإشعارات والنتيجة النهائية.
 
-**مثال الخادم:**
-
-<details>
-<summary>Python</summary>
+**مثال على الخادم:**
+<تفاصيل>
+<summary>بايثون</summary>
 
 ```python
 @mcp.tool(description="A tool that sends progress notifications")
@@ -475,7 +474,7 @@ async def process_files(message: str, ctx: Context) -> TextContent:
 **مثال العميل:**
 
 <details>
-<summary>Python</summary>
+<summary>بايثون</summary>
 
 ```python
 async def message_handler(message):
@@ -489,137 +488,114 @@ async def message_handler(message):
 
 ## اعتبارات الأمان
 
-عند تنفيذ خوادم MCP باستخدام نقل قائم على HTTP، يصبح الأمان أمرًا بالغ الأهمية يتطلب اهتمامًا دقيقًا بعدة نواحي للهجوم وآليات الحماية.
+عند تنفيذ خوادم MCP باستخدام وسائل نقل تعتمد على HTTP، يصبح الأمان أمرًا بالغ الأهمية يتطلب اهتمامًا دقيقًا بعدة نواحي للهجوم وآليات الحماية.
 
 ### نظرة عامة
 
-الأمان أمر حاسم عند تعريض خوادم MCP عبر HTTP. يقدم Streamable HTTP أسطح هجوم جديدة ويتطلب تكوينًا دقيقًا.
+الأمان ضروري عند عرض خوادم MCP عبر HTTP. يقدم HTTP القابل للبث أسطح هجوم جديدة ويتطلب إعدادًا دقيقًا.
 
-### نقاط رئيسية
-- **التحقق من رأس Origin**: تحقق دائمًا من `Origin` header to prevent DNS rebinding attacks.
-- **Localhost Binding**: For local development, bind servers to `localhost` to avoid exposing them to the public internet.
-- **Authentication**: Implement authentication (e.g., API keys, OAuth) for production deployments.
-- **CORS**: Configure Cross-Origin Resource Sharing (CORS) policies to restrict access.
-- **HTTPS**: Use HTTPS in production to encrypt traffic.
+### النقاط الرئيسية
+- **التحقق من رأس Origin**: تحقق دائمًا من رأس `Origin` لمنع هجمات إعادة ربط DNS.
+- **ربط localhost**: للتطوير المحلي، اربط الخوادم بـ `localhost` لتجنب تعريضها للإنترنت العام.
+- **المصادقة**: نفذ المصادقة (مثل مفاتيح API، OAuth) في بيئات الإنتاج.
+- **CORS**: قم بتكوين سياسات مشاركة الموارد عبر الأصول (CORS) لتقييد الوصول.
+- **HTTPS**: استخدم HTTPS في الإنتاج لتشفير حركة المرور.
 
-### Best Practices
-- Never trust incoming requests without validation.
-- Log and monitor all access and errors.
-- Regularly update dependencies to patch security vulnerabilities.
+### أفضل الممارسات
+- لا تثق أبدًا في الطلبات الواردة دون تحقق.
+- سجل وراقب جميع عمليات الوصول والأخطاء.
+- حدّث التبعيات بانتظام لسد ثغرات الأمان.
 
-### Challenges
-- Balancing security with ease of development
-- Ensuring compatibility with various client environments
-
-
-## Upgrading from SSE to Streamable HTTP
-
-For applications currently using Server-Sent Events (SSE), migrating to Streamable HTTP provides enhanced capabilities and better long-term sustainability for your MCP implementations.
-
-### Why Upgrade?
-- Streamable HTTP offers better scalability, compatibility, and richer notification support than SSE.
-- It is the recommended transport for new MCP applications.
-
-### Migration Steps
-- **Update server code** to use `transport="streamable-http"` in `mcp.run()`.
-- **Update client code** to use `streamablehttp_client` instead of SSE client.
-- **Implement a message handler** in the client to process notifications.
-- **Test for compatibility** with existing tools and workflows.
-
-### Maintaining Compatibility
-- You can support both SSE and Streamable HTTP by running both transports on different endpoints.
-- Gradually migrate clients to the new transport.
-
-### Challenges
-- Ensuring all clients are updated
-- Handling differences in notification delivery
-
-## Security Considerations
-
-Security should be a top priority when implementing any server, especially when using HTTP-based transports like Streamable HTTP in MCP. 
-
-When implementing MCP servers with HTTP-based transports, security becomes a paramount concern that requires careful attention to multiple attack vectors and protection mechanisms.
-
-### Overview
-
-Security is critical when exposing MCP servers over HTTP. Streamable HTTP introduces new attack surfaces and requires careful configuration.
-
-Here are some key security considerations:
-
-- **Origin Header Validation**: Always validate the `Origin` header to prevent DNS rebinding attacks.
-- **Localhost Binding**: For local development, bind servers to `localhost` to avoid exposing them to the public internet.
-- **Authentication**: Implement authentication (e.g., API keys, OAuth) for production deployments.
-- **CORS**: Configure Cross-Origin Resource Sharing (CORS) policies to restrict access.
-- **HTTPS**: Use HTTPS in production to encrypt traffic.
-
-### Best Practices
-
-Additionally, here are some best practices to follow when implementing security in your MCP streaming server:
-
-- Never trust incoming requests without validation.
-- Log and monitor all access and errors.
-- Regularly update dependencies to patch security vulnerabilities.
-
-### Challenges
-
-You will face some challenges when implementing security in MCP streaming servers:
-
-- Balancing security with ease of development
-- Ensuring compatibility with various client environments
+### التحديات
+- الموازنة بين الأمان وسهولة التطوير
+- ضمان التوافق مع بيئات العملاء المختلفة
 
 
-## Upgrading from SSE to Streamable HTTP
+## الترقية من SSE إلى HTTP القابل للبث
 
-For applications currently using Server-Sent Events (SSE), migrating to Streamable HTTP provides enhanced capabilities and better long-term sustainability for your MCP implementations.
+بالنسبة للتطبيقات التي تستخدم حاليًا Server-Sent Events (SSE)، يوفر الانتقال إلى HTTP القابل للبث قدرات محسنة واستدامة أفضل على المدى الطويل لتطبيقات MCP الخاصة بك.
 
-### Why Upgrade?
+### لماذا الترقية؟
 
-There are two compelling reasons to upgrade from SSE to Streamable HTTP:
+هناك سببان مقنعان للترقية من SSE إلى HTTP القابل للبث:
 
-- Streamable HTTP offers better scalability, compatibility, and richer notification support than SSE.
-- It is the recommended transport for new MCP applications.
+- HTTP القابل للبث يقدم قابلية توسع أفضل، وتوافقًا أوسع، ودعمًا أغنى للإشعارات مقارنة بـ SSE.
+- هو وسيلة النقل الموصى بها لتطبيقات MCP الجديدة.
 
-### Migration Steps
+### خطوات الترحيل
 
-Here's how you can migrate from SSE to Streamable HTTP in your MCP applications:
+إليك كيفية الترحيل من SSE إلى HTTP القابل للبث في تطبيقات MCP الخاصة بك:
 
-1. **Update server code** to use `transport="streamable-http"` in `mcp.run()`.
-2. **Update client code** to use `streamablehttp_client` بدلاً من عميل SSE.
-3. **تنفيذ معالج رسائل** في العميل لمعالجة الإشعارات.
-4. **اختبار التوافق** مع الأدوات وسير العمل الحالية.
+- **تحديث كود الخادم** لاستخدام `transport="streamable-http"` في `mcp.run()`.
+- **تحديث كود العميل** لاستخدام `streamablehttp_client` بدلاً من عميل SSE.
+- **تنفيذ معالج رسائل** في العميل لمعالجة الإشعارات.
+- **اختبار التوافق** مع الأدوات وسير العمل الحالية.
 
 ### الحفاظ على التوافق
 
-يوصى بالحفاظ على التوافق مع عملاء SSE الحاليين أثناء عملية الهجرة. فيما يلي بعض الاستراتيجيات:
+يوصى بالحفاظ على التوافق مع عملاء SSE الحاليين أثناء عملية الترحيل. إليك بعض الاستراتيجيات:
 
-- يمكنك دعم كل من SSE وStreamable HTTP عن طريق تشغيل كلا النقلين على نقاط نهاية مختلفة.
-- الهجرة التدريجية للعملاء إلى النقل الجديد.
+- يمكنك دعم كل من SSE وHTTP القابل للبث بتشغيل كلا الوسيلتين على نقاط نهاية مختلفة.
+- ترحيل العملاء تدريجيًا إلى وسيلة النقل الجديدة.
 
 ### التحديات
 
-تأكد من معالجة التحديات التالية أثناء الهجرة:
+تأكد من معالجة التحديات التالية أثناء الترحيل:
 
 - ضمان تحديث جميع العملاء
-- التعامل مع اختلافات في تسليم الإشعارات
+- التعامل مع اختلافات تسليم الإشعارات
 
-### التمرين: بناء تطبيق MCP للبث خاصتك
+## اعتبارات الأمان
+
+يجب أن يكون الأمان أولوية قصوى عند تنفيذ أي خادم، خاصة عند استخدام وسائل نقل تعتمد على HTTP مثل HTTP القابل للبث في MCP.
+
+عند تنفيذ خوادم MCP باستخدام وسائل نقل تعتمد على HTTP، يصبح الأمان أمرًا بالغ الأهمية يتطلب اهتمامًا دقيقًا بعدة نواحي للهجوم وآليات الحماية.
+
+### نظرة عامة
+
+الأمان ضروري عند عرض خوادم MCP عبر HTTP. يقدم HTTP القابل للبث أسطح هجوم جديدة ويتطلب إعدادًا دقيقًا.
+
+فيما يلي بعض اعتبارات الأمان الرئيسية:
+
+- **التحقق من رأس Origin**: تحقق دائمًا من رأس `Origin` لمنع هجمات إعادة ربط DNS.
+- **ربط localhost**: للتطوير المحلي، اربط الخوادم بـ `localhost` لتجنب تعريضها للإنترنت العام.
+- **المصادقة**: نفذ المصادقة (مثل مفاتيح API، OAuth) في بيئات الإنتاج.
+- **CORS**: قم بتكوين سياسات مشاركة الموارد عبر الأصول (CORS) لتقييد الوصول.
+- **HTTPS**: استخدم HTTPS في الإنتاج لتشفير حركة المرور.
+
+### أفضل الممارسات
+
+بالإضافة إلى ذلك، إليك بعض أفضل الممارسات التي يجب اتباعها عند تنفيذ الأمان في خادم بث MCP الخاص بك:
+
+- لا تثق أبدًا في الطلبات الواردة دون تحقق.
+- سجل وراقب جميع عمليات الوصول والأخطاء.
+- حدّث التبعيات بانتظام لسد ثغرات الأمان.
+
+### التحديات
+
+ستواجه بعض التحديات عند تنفيذ الأمان في خوادم بث MCP:
+
+- الموازنة بين الأمان وسهولة التطوير
+- ضمان التوافق مع بيئات العملاء المختلفة
+
+### المهمة: بناء تطبيق MCP للبث خاص بك
 
 **السيناريو:**
-قم ببناء خادم وعميل MCP حيث يعالج الخادم قائمة من العناصر (مثل ملفات أو مستندات) ويرسل إشعارًا لكل عنصر يتم معالجته. يجب على العميل عرض كل إشعار فور وصوله.
+قم ببناء خادم وعميل MCP حيث يعالج الخادم قائمة من العناصر (مثل الملفات أو المستندات) ويرسل إشعارًا لكل عنصر يتم معالجته. يجب على العميل عرض كل إشعار فور وصوله.
 
 **الخطوات:**
 
 1. نفذ أداة خادم تعالج قائمة وترسل إشعارات لكل عنصر.
-2. نفذ عميلًا بمعالج رسائل لعرض الإشعارات في الوقت الحقيقي.
+2. نفذ عميلًا مع معالج رسائل لعرض الإشعارات في الوقت الحقيقي.
 3. اختبر تنفيذك بتشغيل كل من الخادم والعميل، وراقب الإشعارات.
 
 [الحل](./solution/README.md)
 
-## قراءة إضافية وما التالي؟
+## المزيد من القراءة وما التالي؟
 
-لمتابعة رحلتك مع بث MCP وتوسيع معرفتك، يقدم هذا القسم موارد إضافية وخطوات مقترحة لبناء تطبيقات أكثر تقدمًا.
+لمواصلة رحلتك مع بث MCP وتوسيع معرفتك، يوفر هذا القسم موارد إضافية وخطوات مقترحة لبناء تطبيقات أكثر تقدمًا.
 
-### قراءة إضافية
+### المزيد من القراءة
 
 - [Microsoft: مقدمة في بث HTTP](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
 - [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
@@ -628,9 +604,9 @@ Here's how you can migrate from SSE to Streamable HTTP in your MCP applications:
 
 ### ما التالي؟
 
-- جرب بناء أدوات MCP أكثر تقدمًا تستخدم البث لتحليلات الوقت الحقيقي، الدردشة، أو التحرير التعاوني.
+- جرب بناء أدوات MCP أكثر تقدمًا تستخدم البث للتحليلات اللحظية، الدردشة، أو التحرير التعاوني.
 - استكشف دمج بث MCP مع أُطُر الواجهة الأمامية (React، Vue، إلخ) لتحديثات واجهة المستخدم الحية.
 - التالي: [استخدام مجموعة أدوات الذكاء الاصطناعي لـ VSCode](../07-aitk/README.md)
 
-**إخلاء مسؤولية**:  
-تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي والموثوق. للمعلومات الحرجة، يُنصح بالاستعانة بترجمة بشرية محترفة. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة ناتجة عن استخدام هذه الترجمة.
+**إخلاء المسؤولية**:  
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

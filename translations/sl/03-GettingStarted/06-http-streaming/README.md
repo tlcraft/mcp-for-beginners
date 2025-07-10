@@ -1,27 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3eaf38ffe0638867045ec6664908333c",
-  "translation_date": "2025-06-18T09:37:05+00:00",
+  "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
+  "translation_date": "2025-07-10T16:27:50+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "sl"
 }
 -->
 # HTTPS pretakanje s protokolom Model Context Protocol (MCP)
 
-To poglavje ponuja celovit vodič za implementacijo varnega, razširljivega in pretakanja v realnem času s protokolom Model Context Protocol (MCP) preko HTTPS. Obravnava motivacijo za pretakanje, razpoložljive transportne mehanizme, kako implementirati pretakajoči HTTP v MCP, varnostne dobre prakse, migracijo iz SSE ter praktična navodila za gradnjo lastnih MCP aplikacij s pretakanjem.
+To poglavje ponuja celovit vodič za implementacijo varnega, razširljivega in pretočnega pretakanja v realnem času s protokolom Model Context Protocol (MCP) prek HTTPS. Obravnava motivacijo za pretakanje, razpoložljive transportne mehanizme, kako implementirati pretočni HTTP v MCP, varnostne dobre prakse, migracijo s SSE ter praktične nasvete za izdelavo lastnih pretočnih MCP aplikacij.
 
 ## Transportni mehanizmi in pretakanje v MCP
 
-Ta razdelek raziskuje različne transportne mehanizme, ki so na voljo v MCP, in njihovo vlogo pri omogočanju pretakanja za komunikacijo v realnem času med odjemalci in strežniki.
+Ta razdelek raziskuje različne transportne mehanizme, ki so na voljo v MCP, in njihovo vlogo pri omogočanju pretočnih zmogljivosti za komunikacijo v realnem času med odjemalci in strežniki.
 
 ### Kaj je transportni mehanizem?
 
-Transportni mehanizem določa, kako se podatki izmenjujejo med odjemalcem in strežnikom. MCP podpira več vrst transportov, ki ustrezajo različnim okoljem in zahtevam:
+Transportni mehanizem določa, kako se podatki izmenjujejo med odjemalcem in strežnikom. MCP podpira več vrst transporta, da ustreza različnim okoljem in zahtevam:
 
-- **stdio**: standardni vhod/izhod, primeren za lokalna orodja in orodja prek ukazne vrstice. Enostaven, a neprimeren za splet ali oblak.
-- **SSE (Server-Sent Events)**: omogoča strežnikom pošiljanje posodobitev v realnem času odjemalcem preko HTTP. Dobro za spletne uporabniške vmesnike, a omejeno glede razširljivosti in prilagodljivosti.
-- **Streamable HTTP**: sodoben HTTP transport za pretakanje, ki podpira obvestila in boljšo razširljivost. Priporočen za večino produkcijskih in oblačnih scenarijev.
+- **stdio**: Standardni vhod/izhod, primeren za lokalna orodja in ukazno vrstico. Preprost, a neprimeren za splet ali oblak.
+- **SSE (Server-Sent Events)**: Omogoča strežnikom, da prek HTTP-ja pošiljajo posodobitve v realnem času odjemalcem. Dobro za spletne uporabniške vmesnike, a omejeno v razširljivosti in prilagodljivosti.
+- **Streamable HTTP**: Sodobni pretočni transport na osnovi HTTP, ki podpira obvestila in boljšo razširljivost. Priporočljiv za večino produkcijskih in oblačnih scenarijev.
 
 ### Primerjalna tabela
 
@@ -31,44 +31,44 @@ Oglejte si spodnjo primerjalno tabelo, da razumete razlike med temi transportnim
 |-------------------|----------------------------|------------|---------------|-------------------------|
 | stdio             | Ne                         | Ne         | Nizka         | Lokalna orodja CLI      |
 | SSE               | Da                         | Da         | Srednja       | Splet, posodobitve v realnem času |
-| Streamable HTTP   | Da                         | Da         | Visoka        | Oblačne, več odjemalcev |
+| Streamable HTTP   | Da                         | Da         | Visoka        | Oblačne, večodjemalske aplikacije |
 
-> **Nasvet:** Izbira pravega transporta vpliva na zmogljivost, razširljivost in uporabniško izkušnjo. **Streamable HTTP** je priporočljiv za sodobne, razširljive in oblačne aplikacije.
+> **Nasvet:** Prava izbira transporta vpliva na zmogljivost, razširljivost in uporabniško izkušnjo. **Streamable HTTP** je priporočljiv za sodobne, razširljive in oblačne aplikacije.
 
-Opazite transporta stdio in SSE, ki ste ju spoznali v prejšnjih poglavjih, ter kako je streamable HTTP transport, obravnavan v tem poglavju.
+Opazite transporta stdio in SSE, ki ste ju spoznali v prejšnjih poglavjih, ter kako je v tem poglavju obravnavan transport Streamable HTTP.
 
 ## Pretakanje: koncepti in motivacija
 
 Razumevanje osnovnih konceptov in motivacij za pretakanje je ključno za učinkovito implementacijo komunikacijskih sistemov v realnem času.
 
-**Pretakanje** je tehnika v mrežnem programiranju, ki omogoča pošiljanje in sprejemanje podatkov v majhnih, obvladljivih delih ali kot zaporedje dogodkov, namesto da bi čakali, da je celoten odgovor pripravljen. To je posebej uporabno za:
+**Pretakanje** je tehnika v omrežnem programiranju, ki omogoča pošiljanje in prejemanje podatkov v majhnih, obvladljivih delih ali kot zaporedje dogodkov, namesto da bi čakali na celoten odgovor. To je še posebej uporabno za:
 
-- Velike datoteke ali nabor podatkov.
-- Posodobitve v realnem času (npr. klepet, indikatorji napredka).
+- Velike datoteke ali podatkovne nize.
+- Posodobitve v realnem času (npr. klepet, prikaz napredka).
 - Dolgotrajne izračune, kjer želite uporabnika sproti obveščati.
 
 Tukaj je nekaj osnovnih dejstev o pretakanju:
 
 - Podatki se dostavljajo postopoma, ne naenkrat.
-- Odjemalec lahko podatke obdeluje takoj, ko prispejo.
+- Odjemalec lahko podatke obdeluje sproti, ko prispejo.
 - Zmanjšuje zaznano zakasnitev in izboljšuje uporabniško izkušnjo.
 
 ### Zakaj uporabljati pretakanje?
 
 Razlogi za uporabo pretakanja so naslednji:
 
-- Uporabniki takoj prejmejo povratne informacije, ne šele na koncu.
+- Uporabniki takoj dobijo povratno informacijo, ne šele na koncu.
 - Omogoča aplikacije v realnem času in odzivne uporabniške vmesnike.
-- Učinkovitejša raba omrežnih in računalniških virov.
+- Bolj učinkovita raba omrežnih in računalniških virov.
 
-### Preprost primer: HTTP strežnik in odjemalec s pretakanjem
+### Preprost primer: HTTP pretočni strežnik in odjemalec
 
 Tukaj je preprost primer, kako lahko implementirate pretakanje:
 
 <details>
 <summary>Python</summary>
 
-**Strežnik (Python, uporaba FastAPI in StreamingResponse):**
+**Strežnik (Python, z uporabo FastAPI in StreamingResponse):**
 <details>
 <summary>Python</summary>
 
@@ -91,7 +91,7 @@ def stream():
 
 </details>
 
-**Odjemalec (Python, uporaba requests):**
+**Odjemalec (Python, z uporabo requests):**
 <details>
 <summary>Python</summary>
 
@@ -106,23 +106,23 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-Ta primer prikazuje strežnik, ki pošilja serijo sporočil odjemalcu, takoj ko so na voljo, namesto da bi čakal, da so vsa sporočila pripravljena.
+Ta primer prikazuje strežnik, ki pošilja vrsto sporočil odjemalcu sproti, ko so na voljo, namesto da bi čakal, da so vsa sporočila pripravljena.
 
 **Kako deluje:**
 - Strežnik sproti pošilja vsako sporočilo, ko je pripravljeno.
-- Odjemalec prejema in izpiše vsak delček takoj, ko prispe.
+- Odjemalec prejema in izpisuje vsak del, ko prispe.
 
 **Zahteve:**
-- Strežnik mora uporabljati pretakan odziv (npr. `StreamingResponse` in FastAPI).
-- The client must process the response as a stream (`stream=True` in requests).
-- Content-Type is usually `text/event-stream` or `application/octet-stream`.
+- Strežnik mora uporabljati pretočni odgovor (npr. `StreamingResponse` v FastAPI).
+- Odjemalec mora obdelovati odgovor kot tok (`stream=True` v requests).
+- Content-Type je običajno `text/event-stream` ali `application/octet-stream`.
 
 </details>
 
 <details>
 <summary>Java</summary>
 
-**Strežnik (Java, uporaba Spring Boot in Server-Sent Events):**
+**Strežnik (Java, z uporabo Spring Boot in Server-Sent Events):**
 
 ```java
 @RestController
@@ -157,7 +157,7 @@ public class CalculatorController {
 }
 ```
 
-**Odjemalec (Java, uporaba Spring WebFlux WebClient):**
+**Odjemalec (Java, z uporabo Spring WebFlux WebClient):**
 
 ```java
 @SpringBootApplication
@@ -185,67 +185,67 @@ public class CalculatorClientApplication implements CommandLineRunner {
 }
 ```
 
-**Opombe k Java implementaciji:**
-- Uporablja reaktivni sklad Spring Boot z `Flux` for streaming
-- `ServerSentEvent` provides structured event streaming with event types
-- `WebClient` with `bodyToFlux()` enables reactive streaming consumption
-- `delayElements()` simulates processing time between events
-- Events can have types (`info`, `result`) for better client handling
+**Opombe k implementaciji v Javi:**
+- Uporablja reaktivni sklad Spring Boot z `Flux` za pretakanje
+- `ServerSentEvent` omogoča strukturirano pretakanje dogodkov z vrstami dogodkov
+- `WebClient` z `bodyToFlux()` omogoča reaktivno porabo pretoka
+- `delayElements()` simulira čas obdelave med dogodki
+- Dogodki lahko imajo vrste (`info`, `result`) za boljšo obdelavo na odjemalcu
 
 </details>
 
-### Comparison: Classic Streaming vs MCP Streaming
+### Primerjava: klasično pretakanje proti MCP pretakanju
 
-The differences between how streaming works in a "classical" manner versus how it works in MCP can be depicted like so:
+Razlike med klasičnim pretakanjem in pretakanjem v MCP lahko prikažemo takole:
 
-| Feature                | Classic HTTP Streaming         | MCP Streaming (Notifications)      |
-|------------------------|-------------------------------|-------------------------------------|
-| Main response          | Chunked                       | Single, at end                      |
-| Progress updates       | Sent as data chunks           | Sent as notifications               |
-| Client requirements    | Must process stream           | Must implement message handler      |
-| Use case               | Large files, AI token streams | Progress, logs, real-time feedback  |
+| Značilnost             | Klasično HTTP pretakanje       | MCP pretakanje (obvestila)         |
+|------------------------|-------------------------------|-----------------------------------|
+| Glavni odgovor         | Razdeljen na dele (chunked)   | En sam, na koncu                  |
+| Posodobitve napredka   | Pošiljane kot podatkovni deli | Pošiljane kot obvestila           |
+| Zahteve za odjemalca   | Mora obdelovati tok           | Mora implementirati upravljalnik sporočil |
+| Uporabni primer        | Velike datoteke, AI token tokovi | Napredek, dnevniki, povratne informacije v realnem času |
 
-### Key Differences Observed
+### Ključne opažene razlike
 
-Additionally, here are some key differences:
+Poleg tega so tu nekatere ključne razlike:
 
-- **Communication Pattern:**
-   - Classic HTTP streaming: Uses simple chunked transfer encoding to send data in chunks
-   - MCP streaming: Uses a structured notification system with JSON-RPC protocol
+- **Vzorec komunikacije:**
+   - Klasično HTTP pretakanje: uporablja preprosto kodiranje prenosa v delih (chunked transfer encoding)
+   - MCP pretakanje: uporablja strukturiran sistem obvestil s protokolom JSON-RPC
 
-- **Message Format:**
-   - Classic HTTP: Plain text chunks with newlines
-   - MCP: Structured LoggingMessageNotification objects with metadata
+- **Oblika sporočila:**
+   - Klasično HTTP: navadni tekstovni deli z novimi vrsticami
+   - MCP: strukturirani objekti LoggingMessageNotification z metapodatki
 
-- **Client Implementation:**
-   - Classic HTTP: Simple client that processes streaming responses
-   - MCP: More sophisticated client with a message handler to process different types of messages
+- **Implementacija odjemalca:**
+   - Klasično HTTP: preprost odjemalec, ki obdeluje pretočne odgovore
+   - MCP: bolj sofisticiran odjemalec z upravljalnikom sporočil za obdelavo različnih vrst sporočil
 
-- **Progress Updates:**
-   - Classic HTTP: The progress is part of the main response stream
-   - MCP: Progress is sent via separate notification messages while the main response comes at the end
+- **Posodobitve napredka:**
+   - Klasično HTTP: napredek je del glavnega toka odgovora
+   - MCP: napredek se pošilja prek ločenih obvestil, medtem ko glavni odgovor pride na koncu
 
-### Recommendations
+### Priporočila
 
-There are some things we recommend when it comes to choosing between implementing classical streaming (as an endpoint we showed you above using `/stream`) v primerjavi z izbiro pretakanja preko MCP.
+Pri izbiri med klasičnim pretakanjem (kot smo prikazali zgoraj z `/stream`) in pretakanjem prek MCP priporočamo naslednje:
 
-- **Za preproste potrebe pretakanja:** Klasično HTTP pretakanje je lažje za implementacijo in zadostuje za osnovne primere.
+- **Za preproste potrebe pretakanja:** Klasično HTTP pretakanje je lažje za implementacijo in zadostuje za osnovne potrebe.
 
 - **Za kompleksne, interaktivne aplikacije:** MCP pretakanje ponuja bolj strukturiran pristop z bogatejšimi metapodatki in ločitvijo med obvestili in končnimi rezultati.
 
-- **Za AI aplikacije:** MCP obvestilni sistem je še posebej uporaben za dolgotrajne AI naloge, kjer želite uporabnike sproti obveščati o napredku.
+- **Za AI aplikacije:** MCP-jev sistem obvestil je posebej uporaben za dolgotrajne AI naloge, kjer želite uporabnike sproti obveščati o napredku.
 
 ## Pretakanje v MCP
 
-Videli ste nekaj priporočil in primerjav med klasičnim pretakanjem in pretakanjem v MCP. Poglejmo podrobneje, kako lahko pretakanje izkoristite v MCP.
+Torej, videli ste nekaj priporočil in primerjav o razlikah med klasičnim pretakanjem in pretakanjem v MCP. Poglejmo podrobneje, kako lahko izkoristite pretakanje v MCP.
 
-Razumevanje, kako pretakanje deluje znotraj okvira MCP, je ključnega pomena za gradnjo odzivnih aplikacij, ki uporabnikom med dolgotrajnimi operacijami zagotavljajo povratne informacije v realnem času.
+Razumevanje, kako pretakanje deluje znotraj okvira MCP, je ključno za izdelavo odzivnih aplikacij, ki uporabnikom med dolgotrajnimi operacijami nudijo povratne informacije v realnem času.
 
-V MCP pretakanje ni pošiljanje glavnega odgovora v delih, temveč pošiljanje **obvestil** odjemalcu med obdelavo zahteve. Ta obvestila lahko vključujejo posodobitve napredka, zapise ali druge dogodke.
+V MCP pretakanje ni pošiljanje glavnega odgovora v delih, ampak pošiljanje **obvestil** odjemalcu med obdelavo zahteve. Ta obvestila lahko vključujejo posodobitve napredka, dnevnike ali druge dogodke.
 
 ### Kako deluje
 
-Glavni rezultat se še vedno pošlje kot en sam odgovor. Vendar pa se obvestila lahko pošiljajo kot ločena sporočila med obdelavo in tako sproti posodabljajo odjemalca. Odjemalec mora biti sposoben obdelati in prikazati ta obvestila.
+Glavni rezultat se še vedno pošlje kot en sam odgovor. Vendar pa se obvestila pošiljajo kot ločena sporočila med obdelavo in tako sproti obveščajo odjemalca. Odjemalec mora biti sposoben ta obvestila obdelati in prikazati.
 
 ## Kaj je obvestilo?
 
@@ -253,7 +253,7 @@ Rekli smo "obvestilo", kaj to pomeni v kontekstu MCP?
 
 Obvestilo je sporočilo, ki ga strežnik pošlje odjemalcu, da ga obvesti o napredku, stanju ali drugih dogodkih med dolgotrajno operacijo. Obvestila izboljšujejo preglednost in uporabniško izkušnjo.
 
-Na primer, odjemalec naj bi poslal obvestilo, ko je bil opravljen začetni dogovor s strežnikom.
+Na primer, odjemalec naj bi poslal obvestilo, ko je bil vzpostavljen začetni stik s strežnikom.
 
 Obvestilo izgleda takole kot JSON sporočilo:
 
@@ -269,7 +269,7 @@ Obvestilo izgleda takole kot JSON sporočilo:
 
 Obvestila pripadajo temi v MCP, imenovani ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
 
-Za delovanje beleženja mora strežnik omogočiti to funkcionalnost kot lastnost oziroma zmogljivost, na primer takole:
+Da bi omogočili beleženje, mora strežnik to omogočiti kot funkcijo/zmožnost, na primer tako:
 
 ```json
 {
@@ -280,28 +280,28 @@ Za delovanje beleženja mora strežnik omogočiti to funkcionalnost kot lastnost
 ```
 
 > [!NOTE]
-> Glede na uporabljeni SDK je lahko beleženje privzeto omogočeno ali pa ga je treba izrecno omogočiti v konfiguraciji strežnika.
+> Glede na uporabljeni SDK je beleženje morda privzeto omogočeno ali pa ga je treba izrecno aktivirati v konfiguraciji strežnika.
 
 Obstajajo različne vrste obvestil:
 
 | Raven     | Opis                          | Primer uporabe               |
 |-----------|-------------------------------|-----------------------------|
-| debug     | Podrobne informacije za odpravljanje napak | Vhodi/izhodi funkcij         |
-| info      | Splošna informacijska sporočila | Posodobitve napredka operacije |
-| notice    | Normalni, a pomembni dogodki   | Spremembe konfiguracije      |
-| warning   | Opozorilna stanja             | Uporaba zastarelih funkcij   |
-| error     | Napake                       | Neuspehi operacij            |
-| critical  | Kritična stanja              | Napake sistemskih komponent  |
-| alert     | Takojšnje ukrepanje potrebno | Zaznana poškodba podatkov    |
-| emergency | Sistem ni uporaben           | Popolna odpoved sistema      |
+| debug     | Podrobne informacije za odpravljanje napak | Vhodi/izhodi funkcij        |
+| info      | Splošna informativna sporočila | Posodobitve napredka        |
+| notice    | Normalni, a pomembni dogodki   | Spremembe konfiguracije     |
+| warning   | Opozorilna stanja             | Uporaba zastarelih funkcij  |
+| error     | Napake                       | Neuspehi operacij           |
+| critical  | Kritična stanja              | Napake sistemskih komponent |
+| alert     | Potrebno takojšnje ukrepanje | Zaznana poškodba podatkov   |
+| emergency | Sistem ni uporaben           | Popolna okvara sistema      |
 
 ## Implementacija obvestil v MCP
 
-Za implementacijo obvestil v MCP morate nastaviti tako strežniški kot odjemalski del, da lahko obdelujeta posodobitve v realnem času. To omogoča vaši aplikaciji, da uporabnikom med dolgotrajnimi operacijami zagotavlja takojšnje povratne informacije.
+Za implementacijo obvestil v MCP morate nastaviti tako strežniški kot odjemalski del za obdelavo posodobitev v realnem času. To omogoča vaši aplikaciji, da uporabnikom med dolgotrajnimi operacijami nudi takojšnje povratne informacije.
 
-### Strežniška stran: pošiljanje obvestil
+### Strežniški del: pošiljanje obvestil
 
-Začnimo s strežniško stranjo. V MCP definirate orodja, ki lahko med obdelavo zahtev pošiljajo obvestila. Strežnik uporablja kontekstni objekt (običajno `ctx`) za pošiljanje sporočil odjemalcu.
+Začnimo s strežniškim delom. V MCP definirate orodja, ki lahko med obdelavo zahtev pošiljajo obvestila. Strežnik uporablja kontekstni objekt (običajno `ctx`), da pošilja sporočila odjemalcu.
 
 <details>
 <summary>Python</summary>
@@ -318,11 +318,11 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-V prejšnjem primeru metoda `process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
+V zgornjem primeru orodje `process_files` pošlje tri obvestila odjemalcu med obdelavo vsake datoteke. Metoda `ctx.info()` se uporablja za pošiljanje informativnih sporočil.
 
 </details>
 
-Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http` transport:
+Poleg tega, da omogočite obvestila, poskrbite, da strežnik uporablja pretočni transport (npr. `streamable-http`), odjemalec pa implementira upravljalnik sporočil za obdelavo obvestil. Tako lahko nastavite strežnik za uporabo transporta `streamable-http`:
 
 ```python
 mcp.run(transport="streamable-http")
@@ -348,9 +348,9 @@ public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
 }
 ```
 
-V tem .NET primeru se uporablja metoda `ProcessFiles` tool is decorated with the `Tool` attribute and sends three notifications to the client as it processes each file. The `ctx.Info()` za pošiljanje informativnih sporočil.
+V tem .NET primeru je orodje `ProcessFiles` označeno z atributom `Tool` in pošilja tri obvestila odjemalcu med obdelavo vsake datoteke. Metoda `ctx.Info()` se uporablja za pošiljanje informativnih sporočil.
 
-Da omogočite obvestila v vašem .NET MCP strežniku, poskrbite, da uporabljate pretakan transport:
+Da omogočite obvestila v vašem .NET MCP strežniku, poskrbite, da uporabljate pretočni transport:
 
 ```csharp
 var builder = McpBuilder.Create();
@@ -362,9 +362,9 @@ await builder
 
 </details>
 
-### Odjemalska stran: prejemanje obvestil
+### Odjemalski del: prejemanje obvestil
 
-Odjemalec mora implementirati obdelovalec sporočil, ki bo obdelal in prikazal obvestila takoj, ko prispejo.
+Odjemalec mora implementirati upravljalnik sporočil, ki obdeluje in prikazuje obvestila, ko prispejo.
 
 <details>
 <summary>Python</summary>
@@ -384,7 +384,7 @@ async with ClientSession(
 ) as session:
 ```
 
-V zgornji kodi `message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` obdeluje dohodna obvestila.
+V zgornji kodi funkcija `message_handler` preveri, ali je dohodno sporočilo obvestilo. Če je, ga izpiše; sicer ga obdela kot običajno strežniško sporočilo. Prav tako opazite, kako je `ClientSession` inicializiran z `message_handler`, da obdeluje dohodna obvestila.
 
 </details>
 
@@ -418,17 +418,17 @@ await client.InitializeAsync();
 // Now the client will process notifications through the MessageHandler
 ```
 
-V tem .NET primeru `MessageHandler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. The `ClientSession` is initialized with the message handler via the `ClientSessionOptions`.
+V tem .NET primeru funkcija `MessageHandler` preveri, ali je dohodno sporočilo obvestilo. Če je, ga izpiše; sicer ga obdela kot običajno strežniško sporočilo. `ClientSession` je inicializiran z upravljalnikom sporočil prek `ClientSessionOptions`.
 
 </details>
 
-To enable notifications, ensure your server uses a streaming transport (like `streamable-http`) in vaš odjemalec implementira obdelovalca sporočil za obvestila.
+Da omogočite obvestila, poskrbite, da strežnik uporablja pretočni transport (npr. `streamable-http`) in da odjemalec implementira upravljalnik sporočil za obdelavo obvestil.
 
 ## Obvestila o napredku in scenariji
 
-Ta razdelek pojasnjuje koncept obvestil o napredku v MCP, zakaj so pomembna in kako jih implementirati z uporabo Streamable HTTP. Prav tako je na voljo praktična naloga za utrditev znanja.
+Ta razdelek pojasnjuje koncept obvestil o napredku v MCP, zakaj so pomembna in kako jih implementirati z uporabo Streamable HTTP. Prav tako boste našli praktično nalogo za utrjevanje znanja.
 
-Obvestila o napredku so sporočila v realnem času, ki jih strežnik pošilja odjemalcu med dolgotrajnimi operacijami. Namesto da bi čakal na zaključek procesa, strežnik sproti obvešča odjemalca o trenutnem stanju. To izboljša preglednost, uporabniško izkušnjo in olajša odpravljanje napak.
+Obvestila o napredku so sporočila v realnem času, ki jih strežnik pošilja odjemalcu med dolgotrajnimi operacijami. Namesto da bi čakali, da se celoten proces zaključi, strežnik sproti obvešča odjemalca o trenutnem stanju. To izboljšuje preglednost, uporabniško izkušnjo in olajša odpravljanje napak.
 
 **Primer:**
 
@@ -443,22 +443,21 @@ Obvestila o napredku so sporočila v realnem času, ki jih strežnik pošilja od
 
 ### Zakaj uporabljati obvestila o napredku?
 
-Obvestila o napredku so pomembna zaradi več razlogov:
+Obvestila o napredku so pomembna iz več razlogov:
 
-- **Boljša uporabniška izkušnja:** uporabniki vidijo posodobitve sproti, ne le na koncu.
-- **Povratne informacije v realnem času:** odjemalci lahko prikazujejo indikatorje napredka ali zapise, kar naredi aplikacijo odzivno.
-- **Lažje odpravljanje napak in nadzor:** razvijalci in uporabniki lahko vidijo, kje je postopek morda počasen ali zataknjen.
+- **Boljša uporabniška izkušnja:** Uporabniki vidijo posodobitve med potekom dela, ne šele na koncu.
+- **Povratne informacije v realnem času:** Odjemalci lahko prikazujejo trakove napredka ali dnevnike, kar aplikacijo naredi bolj odzivno.
+- **Lažje odpravljanje napak in nadzor:** Razvijalci in uporabniki lahko vidijo, kje je proces morda počasen ali zastal.
 
 ### Kako implementirati obvestila o napredku
 
 Tako lahko implementirate obvestila o napredku v MCP:
 
-- **Na strežniku:** uporabite `ctx.info()` or `ctx.log()`, da pošljete obvestila za vsak obdelan element. To pošlje sporočilo odjemalcu, preden je glavni rezultat pripravljen.
-- **Na odjemalcu:** implementirajte obdelovalca sporočil, ki posluša in prikazuje obvestila, ko prispejo. Ta obdelovalec razlikuje med obvestili in končnim rezultatom.
+- **Na strežniku:** Uporabite `ctx.info()` ali `ctx.log()`, da pošljete obvestila, ko se obdeluje vsak element. To pošlje sporočilo odjemalcu pred glavnim rezultatom.
+- **Na odjemalcu:** Implementirajte upravljalnik sporočil, ki posluša in prikazuje obvestila, ko prispejo. Ta upravljalnik razlikuje med obvestili in končnim rezultatom.
 
 **Primer strežnika:**
 
-<details>
 <summary>Python</summary>
 
 ```python
@@ -472,7 +471,7 @@ async def process_files(message: str, ctx: Context) -> TextContent:
 
 </details>
 
-**Primer odjemalca:**
+**Primer za odjemalca:**
 
 <details>
 <summary>Python</summary>
@@ -489,147 +488,125 @@ async def message_handler(message):
 
 ## Varnostni vidiki
 
-Pri implementaciji MCP strežnikov z HTTP transporti postane varnost ključna skrb, ki zahteva skrbno obravnavo različnih načinov napadov in zaščitnih mehanizmov.
+Pri implementaciji MCP strežnikov z uporabo HTTP transportov postane varnost ključnega pomena, saj zahteva natančno pozornost na različne napadalne vektorje in zaščitne mehanizme.
 
 ### Pregled
 
-Varnost je bistvena pri izpostavljanju MCP strežnikov preko HTTP. Streamable HTTP odpira nove možnosti za napade in zahteva natančno konfiguracijo.
+Varnost je ključna pri izpostavljanju MCP strežnikov prek HTTP. Streamable HTTP prinaša nove možnosti napadov in zahteva skrbno konfiguracijo.
 
 ### Ključne točke
-- **Preverjanje glave Origin**: Vedno preverite `Origin` header to prevent DNS rebinding attacks.
-- **Localhost Binding**: For local development, bind servers to `localhost` to avoid exposing them to the public internet.
-- **Authentication**: Implement authentication (e.g., API keys, OAuth) for production deployments.
-- **CORS**: Configure Cross-Origin Resource Sharing (CORS) policies to restrict access.
-- **HTTPS**: Use HTTPS in production to encrypt traffic.
+- **Preverjanje glave Origin**: Vedno preverite glavo `Origin`, da preprečite DNS rebinding napade.
+- **Povezava na localhost**: Za lokalni razvoj povežite strežnike na `localhost`, da jih ne izpostavite javnemu internetu.
+- **Avtentikacija**: Za produkcijsko uporabo uvedite avtentikacijo (npr. API ključi, OAuth).
+- **CORS**: Nastavite politike Cross-Origin Resource Sharing (CORS), da omejite dostop.
+- **HTTPS**: V produkciji uporabljajte HTTPS za šifriranje prometa.
 
-### Best Practices
-- Never trust incoming requests without validation.
-- Log and monitor all access and errors.
-- Regularly update dependencies to patch security vulnerabilities.
+### Najboljše prakse
+- Nikoli ne zaupajte dohodnim zahtevam brez preverjanja.
+- Beležite in spremljajte vse dostope in napake.
+- Redno posodabljajte odvisnosti, da zaprete varnostne ranljivosti.
 
-### Challenges
-- Balancing security with ease of development
-- Ensuring compatibility with various client environments
-
-
-## Upgrading from SSE to Streamable HTTP
-
-For applications currently using Server-Sent Events (SSE), migrating to Streamable HTTP provides enhanced capabilities and better long-term sustainability for your MCP implementations.
-
-### Why Upgrade?
-- Streamable HTTP offers better scalability, compatibility, and richer notification support than SSE.
-- It is the recommended transport for new MCP applications.
-
-### Migration Steps
-- **Update server code** to use `transport="streamable-http"` in `mcp.run()`.
-- **Update client code** to use `streamablehttp_client` instead of SSE client.
-- **Implement a message handler** in the client to process notifications.
-- **Test for compatibility** with existing tools and workflows.
-
-### Maintaining Compatibility
-- You can support both SSE and Streamable HTTP by running both transports on different endpoints.
-- Gradually migrate clients to the new transport.
-
-### Challenges
-- Ensuring all clients are updated
-- Handling differences in notification delivery
-
-## Security Considerations
-
-Security should be a top priority when implementing any server, especially when using HTTP-based transports like Streamable HTTP in MCP. 
-
-When implementing MCP servers with HTTP-based transports, security becomes a paramount concern that requires careful attention to multiple attack vectors and protection mechanisms.
-
-### Overview
-
-Security is critical when exposing MCP servers over HTTP. Streamable HTTP introduces new attack surfaces and requires careful configuration.
-
-Here are some key security considerations:
-
-- **Origin Header Validation**: Always validate the `Origin` header to prevent DNS rebinding attacks.
-- **Localhost Binding**: For local development, bind servers to `localhost` to avoid exposing them to the public internet.
-- **Authentication**: Implement authentication (e.g., API keys, OAuth) for production deployments.
-- **CORS**: Configure Cross-Origin Resource Sharing (CORS) policies to restrict access.
-- **HTTPS**: Use HTTPS in production to encrypt traffic.
-
-### Best Practices
-
-Additionally, here are some best practices to follow when implementing security in your MCP streaming server:
-
-- Never trust incoming requests without validation.
-- Log and monitor all access and errors.
-- Regularly update dependencies to patch security vulnerabilities.
-
-### Challenges
-
-You will face some challenges when implementing security in MCP streaming servers:
-
-- Balancing security with ease of development
-- Ensuring compatibility with various client environments
+### Izzivi
+- Uravnoteženje varnosti in enostavnosti razvoja
+- Zagotavljanje združljivosti z različnimi okolji odjemalcev
 
 
-## Upgrading from SSE to Streamable HTTP
+## Nadgradnja s SSE na Streamable HTTP
 
-For applications currently using Server-Sent Events (SSE), migrating to Streamable HTTP provides enhanced capabilities and better long-term sustainability for your MCP implementations.
+Za aplikacije, ki trenutno uporabljajo Server-Sent Events (SSE), migracija na Streamable HTTP prinaša izboljšane zmogljivosti in boljšo dolgoročno vzdržnost MCP implementacij.
 
-### Why Upgrade?
+### Zakaj nadgraditi?
 
-There are two compelling reasons to upgrade from SSE to Streamable HTTP:
+Obstajata dva pomembna razloga za nadgradnjo s SSE na Streamable HTTP:
 
-- Streamable HTTP offers better scalability, compatibility, and richer notification support than SSE.
-- It is the recommended transport for new MCP applications.
+- Streamable HTTP omogoča boljšo skalabilnost, združljivost in bogatejšo podporo za obvestila kot SSE.
+- Je priporočeni transport za nove MCP aplikacije.
 
-### Migration Steps
+### Koraki migracije
 
-Here's how you can migrate from SSE to Streamable HTTP in your MCP applications:
+Tako lahko migrirate s SSE na Streamable HTTP v svojih MCP aplikacijah:
 
-1. **Update server code** to use `transport="streamable-http"` in `mcp.run()`.
-2. **Update client code** to use `streamablehttp_client` namesto SSE odjemalca.
-3. **Implementirajte obdelovalca sporočil** v odjemalcu za obdelavo obvestil.
-4. **Testirajte združljivost** z obstoječimi orodji in delovnimi tokovi.
+- **Posodobite strežniško kodo** tako, da uporabite `transport="streamable-http"` v `mcp.run()`.
+- **Posodobite odjemalsko kodo** tako, da uporabite `streamablehttp_client` namesto SSE odjemalca.
+- **Implementirajte upravljalnik sporočil** v odjemalcu za obdelavo obvestil.
+- **Preizkusite združljivost** z obstoječimi orodji in delovnimi tokovi.
 
 ### Ohranjanje združljivosti
 
-Priporočljivo je ohraniti združljivost z obstoječimi SSE odjemalci med postopkom migracije. Nekatere strategije so:
+Priporočljivo je ohraniti združljivost z obstoječimi SSE odjemalci med migracijo. Nekaj strategij:
 
-- Lahko podpirate oba transporta, SSE in Streamable HTTP, tako da ju zaženete na različnih končnih točkah.
+- Podpirajte oba transporta, SSE in Streamable HTTP, na različnih končnih točkah.
 - Postopoma migrirajte odjemalce na novi transport.
 
 ### Izzivi
 
-Poskrbite, da boste med migracijo naslovili naslednje izzive:
+Med migracijo morate nasloviti naslednje izzive:
 
-- Zagotovitev, da so vsi odjemalci posodobljeni.
-- Obvladovanje razlik v dostavi obvestil.
+- Zagotoviti, da so vsi odjemalci posodobljeni
+- Obvladovati razlike v dostavi obvestil
 
-### Naloga: zgradite svojo MCP aplikacijo s pretakanjem
+## Varnostni vidiki
+
+Varnost mora biti na prvem mestu pri implementaciji kateregakoli strežnika, še posebej pri uporabi HTTP transportov, kot je Streamable HTTP v MCP.
+
+Pri implementaciji MCP strežnikov z uporabo HTTP transportov postane varnost ključnega pomena, saj zahteva natančno pozornost na različne napadalne vektorje in zaščitne mehanizme.
+
+### Pregled
+
+Varnost je ključna pri izpostavljanju MCP strežnikov prek HTTP. Streamable HTTP prinaša nove možnosti napadov in zahteva skrbno konfiguracijo.
+
+Tukaj je nekaj ključnih varnostnih vidikov:
+
+- **Preverjanje glave Origin**: Vedno preverite glavo `Origin`, da preprečite DNS rebinding napade.
+- **Povezava na localhost**: Za lokalni razvoj povežite strežnike na `localhost`, da jih ne izpostavite javnemu internetu.
+- **Avtentikacija**: Za produkcijsko uporabo uvedite avtentikacijo (npr. API ključi, OAuth).
+- **CORS**: Nastavite politike Cross-Origin Resource Sharing (CORS), da omejite dostop.
+- **HTTPS**: V produkciji uporabljajte HTTPS za šifriranje prometa.
+
+### Najboljše prakse
+
+Poleg tega upoštevajte naslednje najboljše prakse pri implementaciji varnosti v vašem MCP streaming strežniku:
+
+- Nikoli ne zaupajte dohodnim zahtevam brez preverjanja.
+- Beležite in spremljajte vse dostope in napake.
+- Redno posodabljajte odvisnosti, da zaprete varnostne ranljivosti.
+
+### Izzivi
+
+Pri implementaciji varnosti v MCP streaming strežnikih se boste soočili z naslednjimi izzivi:
+
+- Uravnoteženje varnosti in enostavnosti razvoja
+- Zagotavljanje združljivosti z različnimi okolji odjemalcev
+
+### Naloga: Zgradite svojo streaming MCP aplikacijo
 
 **Scenarij:**
-Zgradite MCP strežnik in odjemalca, kjer strežnik obdeluje seznam elementov (npr. datoteke ali dokumente) in pošlje obvestilo za vsak obdelan element. Odjemalec naj sproti prikazuje vsako obvestilo, ko prispe.
+Zgradite MCP strežnik in odjemalca, kjer strežnik obdela seznam elementov (npr. datotek ali dokumentov) in pošlje obvestilo za vsak obdelan element. Odjemalec naj prikaže vsako obvestilo takoj, ko prispe.
 
 **Koraki:**
 
-1. Implementirajte strežniško orodje, ki obdeluje seznam in pošilja obvestila za vsak element.
-2. Implementirajte odjemalca z obdelovalcem sporočil, ki v realnem času prikazuje obvestila.
-3. Preizkusite svojo implementacijo z zagonom strežnika in odjemalca ter opazujte obvestila.
+1. Implementirajte strežniško orodje, ki obdela seznam in pošlje obvestila za vsak element.
+2. Implementirajte odjemalca z upravljalnikom sporočil, ki v realnem času prikazuje obvestila.
+3. Preizkusite implementacijo tako, da zaženete strežnik in odjemalca ter opazujete obvestila.
 
 [Solution](./solution/README.md)
 
-## Nadaljnje branje in kaj sledi?
+## Dodatno branje in kaj sledi?
 
-Za nadaljevanje poti z MCP pretakanjem in širjenje znanja ta razdelek ponuja dodatne vire in predloge za naslednje korake pri gradnji bolj naprednih aplikacij.
+Za nadaljevanje vaše poti z MCP streamingom in širjenje znanja ta razdelek ponuja dodatne vire in predloge za naslednje korake pri gradnji bolj naprednih aplikacij.
 
-### Nadaljnje branje
+### Dodatno branje
 
-- [Microsoft: Uvod v HTTP pretakanje](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
+- [Microsoft: Introduction to HTTP Streaming](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
 - [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
-- [Microsoft: CORS v ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
+- [Microsoft: CORS in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
 - [Python requests: Streaming Requests](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
 
 ### Kaj sledi?
 
-- Poskusite zgraditi bolj napredna MCP orodja, ki uporabljajo pretakanje za analitiko v realnem času, klepet ali sodelovalno urejanje.
-- Raziskujte integracijo MCP pretakanja s frontend ogrodji (React, Vue itd.) za žive posodobitve
+- Poskusite zgraditi bolj napredna MCP orodja, ki uporabljajo streaming za analitiko v realnem času, klepet ali sodelovalno urejanje.
+- Raziskujte integracijo MCP streaminga s frontend ogrodji (React, Vue itd.) za žive posodobitve uporabniškega vmesnika.
+- Naslednje: [Utilising AI Toolkit for VSCode](../07-aitk/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za kritične informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne prevzemamo odgovornosti.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
