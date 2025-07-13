@@ -1,4 +1,4 @@
-##Routing in Model Context Protocol
+# Routing in Model Context Protocol
 
 Routing is essential for directing requests to the appropriate models, tools, or services within an MCP ecosystem.
 
