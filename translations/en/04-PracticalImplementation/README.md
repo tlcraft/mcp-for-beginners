@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T22:43:04+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:02:25+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "en"
 }
@@ -130,7 +130,7 @@ The Python SDK offers a Pythonic approach to MCP implementation with excellent M
 ### Key Features
 
 - Async/await support with asyncio
-- Flask and FastAPI integration
+- FastAPI integration``
 - Simple tool registration
 - Native integration with popular ML libraries
 
@@ -185,13 +185,13 @@ Let's see how to deploy the sample we mentioned earlier:
     * If you are using Azure CLI, run `az provider register --namespace Microsoft.App --wait`.
     * If you are using Azure PowerShell, run `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Then run `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` after some time to check if the registration is complete.
 
-2. Run this [azd](https://aka.ms/azd) command to provision the API management service, function app (with code), and all other required Azure resources
+2. Run this [azd](https://aka.ms/azd) command to provision the API Management service, function app (with code), and all other required Azure resources
 
     ```shell
     azd up
     ```
 
-    This command should deploy all the cloud resources on Azure
+    This command should deploy all the cloud resources on Azure.
 
 ### Testing your server with MCP Inspector
 
@@ -203,7 +203,7 @@ Let's see how to deploy the sample we mentioned earlier:
 
     You should see an interface similar to:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.en.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png) 
 
 1. CTRL-click to open the MCP Inspector web app from the URL displayed by the app (e.g. http://127.0.0.1:6274/#resources)
 1. Set the transport type to `SSE`
@@ -219,7 +219,7 @@ If all the steps worked, you should now be connected to the MCP server and able 
 
 ## MCP servers for Azure 
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): This set of repositories provides quickstart templates for building and deploying custom remote MCP (Model Context Protocol) servers using Azure Functions with Python, C# .NET, or Node/TypeScript. 
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): This set of repositories is a quickstart template for building and deploying custom remote MCP (Model Context Protocol) servers using Azure Functions with Python, C# .NET, or Node/TypeScript. 
 
 The samples provide a complete solution that allows developers to:
 

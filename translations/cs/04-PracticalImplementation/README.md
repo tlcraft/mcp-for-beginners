@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T22:58:41+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:22:07+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "cs"
 }
 -->
 # Praktická implementace
 
-Praktická implementace je moment, kdy se síla Model Context Protocolu (MCP) stává hmatatelnou. Zatímco porozumění teorii a architektuře MCP je důležité, skutečná hodnota se projeví, když tyto koncepty použijete k vytváření, testování a nasazování řešení, která řeší reálné problémy. Tato kapitola překlene propast mezi teoretickými znalostmi a praktickým vývojem a provede vás procesem oživení aplikací založených na MCP.
+Praktická implementace je moment, kdy se síla Model Context Protocolu (MCP) stává hmatatelnou. Zatímco porozumění teorii a architektuře MCP je důležité, skutečná hodnota se ukáže, když tyto koncepty použijete k vytváření, testování a nasazování řešení, která řeší reálné problémy. Tato kapitola propojuje teoretické znalosti s praktickým vývojem a provede vás procesem oživení aplikací založených na MCP.
 
-Ať už vyvíjíte inteligentní asistenty, integrujete AI do podnikových procesů, nebo vytváříte vlastní nástroje pro zpracování dat, MCP poskytuje flexibilní základ. Jeho jazykově nezávislý design a oficiální SDK pro populární programovací jazyky zpřístupňují MCP širokému spektru vývojářů. Využitím těchto SDK můžete rychle prototypovat, iterovat a škálovat svá řešení napříč různými platformami a prostředími.
+Ať už vyvíjíte inteligentní asistenty, integrujete AI do podnikových procesů, nebo vytváříte vlastní nástroje pro zpracování dat, MCP poskytuje flexibilní základ. Jeho jazykově nezávislý design a oficiální SDK pro populární programovací jazyky zpřístupňují MCP širokému spektru vývojářů. Díky těmto SDK můžete rychle prototypovat, iterovat a škálovat svá řešení napříč různými platformami a prostředími.
 
 V následujících sekcích najdete praktické příklady, ukázkový kód a strategie nasazení, které demonstrují, jak implementovat MCP v C#, Javě, TypeScriptu, JavaScriptu a Pythonu. Naučíte se také, jak ladit a testovat MCP servery, spravovat API a nasazovat řešení do cloudu pomocí Azure. Tyto praktické zdroje jsou navrženy tak, aby urychlily vaše učení a pomohly vám s jistotou vytvářet robustní, produkčně připravené MCP aplikace.
 
@@ -26,7 +26,7 @@ Na konci této lekce budete schopni:
 - Systematicky ladit a testovat MCP servery
 - Vytvářet a používat funkce serveru (Resources, Prompts a Tools)
 - Navrhovat efektivní MCP workflow pro složité úkoly
-- Optimalizovat implementace MCP pro výkon a spolehlivost
+- Optimalizovat MCP implementace pro výkon a spolehlivost
 
 ## Oficiální SDK zdroje
 
@@ -44,7 +44,7 @@ Tato sekce poskytuje praktické příklady implementace MCP v různých programo
 
 ### Dostupné ukázky
 
-Repositář obsahuje [ukázkové implementace](../../../04-PracticalImplementation/samples) v následujících jazycích:
+Repositář obsahuje [ukázkové implementace](../../../04-PracticalImplementation/samples) v těchto jazycích:
 
 - [C#](./samples/csharp/README.md)
 - [Java](./samples/java/containerapp/README.md)
@@ -59,7 +59,7 @@ Každá ukázka demonstruje klíčové koncepty MCP a vzory implementace pro dan
 MCP servery mohou implementovat libovolnou kombinaci těchto funkcí:
 
 ### Resources
-Resources poskytují kontext a data pro uživatele nebo AI model:
+Resources poskytují kontext a data, která uživatel nebo AI model může využít:
 - Repozitáře dokumentů
 - Znalostní báze
 - Strukturované datové zdroje
@@ -88,7 +88,7 @@ Oficiální repositář C# SDK obsahuje několik ukázkových implementací, kte
 - **Integrace s ASP.NET**: Příklady integrace s ASP.NET Core
 - **Vzory implementace nástrojů**: Různé vzory pro implementaci nástrojů s různou úrovní složitosti
 
-MCP C# SDK je ve fázi preview a API se mohou měnit. Tento blog budeme průběžně aktualizovat podle vývoje SDK.
+MCP C# SDK je ve fázi preview a API se může měnit. Tento blog budeme průběžně aktualizovat podle vývoje SDK.
 
 ### Klíčové funkce
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
@@ -130,7 +130,7 @@ Python SDK nabízí pythonický přístup k implementaci MCP s vynikající inte
 ### Klíčové funkce
 
 - Podpora async/await s asyncio
-- Integrace s Flask a FastAPI
+- Integrace s FastAPI
 - Jednoduchá registrace nástrojů
 - Nativní integrace s populárními ML knihovnami
 
@@ -203,7 +203,7 @@ Podívejme se, jestli můžeme nasadit dříve zmíněný příklad:
 
     Měli byste vidět rozhraní podobné tomuto:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.cs.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png) 
 
 1. Klikněte s podržením CTRL pro načtení webové aplikace MCP Inspector z URL zobrazené aplikací (např. http://127.0.0.1:6274/#resources)
 1. Nastavte typ přenosu na `SSE`
@@ -219,7 +219,7 @@ Pokud vše proběhlo správně, měli byste být nyní připojeni k MCP serveru 
 
 ## MCP servery pro Azure
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Tato sada repozitářů je šablonou pro rychlý start při vytváření a nasazování vlastních vzdálených MCP (Model Context Protocol) serverů pomocí Azure Functions v Pythonu, C# .NET nebo Node/TypeScript.
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Tato sada repozitářů je rychlý startovací šablonou pro vytváření a nasazení vlastních vzdálených MCP (Model Context Protocol) serverů pomocí Azure Functions v Pythonu, C# .NET nebo Node/TypeScript.
 
 Ukázky poskytují kompletní řešení, které umožňuje vývojářům:
 
@@ -230,13 +230,13 @@ Ukázky poskytují kompletní řešení, které umožňuje vývojářům:
 ### Klíčové vlastnosti:
 
 - Bezpečnost od základu: MCP server je zabezpečen pomocí klíčů a HTTPS
-- Možnosti autentizace: Podpora OAuth pomocí vestavěné autentizace a/nebo API Managementu
+- Možnosti autentizace: Podpora OAuth s vestavěnou autentizací a/nebo API Managementem
 - Izolace sítě: Umožňuje izolaci sítě pomocí Azure Virtual Networks (VNET)
 - Serverless architektura: Využívá Azure Functions pro škálovatelné, událostmi řízené provádění
 - Lokální vývoj: Komplexní podpora lokálního vývoje a ladění
 - Jednoduché nasazení: Zjednodušený proces nasazení do Azure
 
-Repositář obsahuje všechny potřebné konfigurační soubory, zdrojový kód a definice infrastruktury, aby bylo možné rychle začít s produkčně připravenou implementací MCP serveru.
+Repozitář obsahuje všechny potřebné konfigurační soubory, zdrojový kód a definice infrastruktury, aby bylo možné rychle začít s produkčně připravenou implementací MCP serveru.
 
 - [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Ukázková implementace MCP pomocí Azure Functions v Pythonu
 
@@ -249,7 +249,7 @@ Repositář obsahuje všechny potřebné konfigurační soubory, zdrojový kód 
 - MCP SDK poskytují jazykově specifické nástroje pro implementaci robustních MCP řešení
 - Proces ladění a testování je klíčový pro spolehlivé MCP aplikace
 - Znovupoužitelné šablony promptů umožňují konzistentní interakce s AI
-- Dobře navržená workflow mohou orchestrálně řídit složité úkoly pomocí více nástrojů
+- Dobře navržená workflow dokážou orchestraci složitých úkolů pomocí více nástrojů
 - Implementace MCP řešení vyžaduje zvážení bezpečnosti, výkonu a zpracování chyb
 
 ## Cvičení
@@ -257,9 +257,9 @@ Repositář obsahuje všechny potřebné konfigurační soubory, zdrojový kód 
 Navrhněte praktické MCP workflow, které řeší reálný problém ve vašem oboru:
 
 1. Identifikujte 3-4 nástroje, které by byly užitečné pro řešení tohoto problému
-2. Vytvořte diagram workflow, který ukáže, jak tyto nástroje spolupracují
+2. Vytvořte diagram workflow, který ukazuje, jak tyto nástroje spolupracují
 3. Implementujte základní verzi jednoho z nástrojů ve vámi preferovaném jazyce
-4. Vytvořte šablonu promptu, která pomůže modelu efektivně používat váš nástroj
+4. Vytvořte šablonu promptu, která pomůže modelu efektivně využít váš nástroj
 
 ## Další zdroje
 

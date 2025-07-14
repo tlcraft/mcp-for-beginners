@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T23:00:40+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:24:48+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "hr"
 }
@@ -21,7 +21,7 @@ Ova lekcija fokusira se na praktične aspekte implementacije MCP-a u više progr
 
 ## Ciljevi učenja
 
-Na kraju ove lekcije moći ćete:
+Do kraja ove lekcije moći ćete:
 - Implementirati MCP rješenja koristeći službene SDK-ove u različitim programskim jezicima
 - Sustavno otklanjati pogreške i testirati MCP servere
 - Kreirati i koristiti značajke servera (Resurse, Prompte i Alate)
@@ -130,13 +130,13 @@ Python SDK nudi pitoničan pristup implementaciji MCP-a s izvrsnim integracijama
 ### Ključne značajke
 
 - Podrška za async/await s asyncio
-- Integracija s Flaskom i FastAPI-jem
+- Integracija s FastAPI-jem
 - Jednostavna registracija alata
 - Izvorna integracija s popularnim ML bibliotekama
 
 Za potpuni primjer implementacije u Pythonu, pogledajte [Python primjer](samples/python/README.md) u direktoriju uzoraka.
 
-## Upravljanje API-jem
+## Upravljanje API-jima
 
 Azure API Management je izvrsno rješenje za osiguranje MCP servera. Ideja je postaviti Azure API Management instancu ispred vašeg MCP servera i dopustiti joj da upravlja značajkama koje ćete vjerojatno htjeti, kao što su:
 
@@ -203,7 +203,7 @@ Pogledajmo možemo li implementirati ranije spomenuti primjer:
 
     Trebali biste vidjeti sučelje slično ovom:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.hr.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png) 
 
 1. CTRL klikom otvorite MCP Inspector web aplikaciju s URL-a koji aplikacija prikazuje (npr. http://127.0.0.1:6274/#resources)
 1. Postavite tip transporta na `SSE`
@@ -213,7 +213,7 @@ Pogledajmo možemo li implementirati ranije spomenuti primjer:
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-5. **Popis alata**. Kliknite na alat i **Pokrenite alat**.  
+5. **Popis alata**. Kliknite na alat i **Pokreni alat**.
 
 Ako su svi koraci prošli uspješno, sada ste povezani s MCP serverom i uspjeli ste pozvati alat.
 
@@ -230,9 +230,9 @@ Primjeri pružaju kompletno rješenje koje omogućuje programerima da:
 ### Ključne značajke:
 
 - Sigurnost po dizajnu: MCP server je osiguran pomoću ključeva i HTTPS-a
-- Opcije autentifikacije: podržava OAuth koristeći ugrađenu autentifikaciju i/ili API Management
+- Opcije autentikacije: podržava OAuth koristeći ugrađenu autentikaciju i/ili API Management
 - Izolacija mreže: omogućuje mrežnu izolaciju koristeći Azure Virtual Networks (VNET)
-- Serverless arhitektura: koristi Azure Functions za skalabilno, događajno vođeno izvršavanje
+- Serverless arhitektura: koristi Azure Functions za skalabilno, događajima vođeno izvršavanje
 - Lokalni razvoj: sveobuhvatna podrška za lokalni razvoj i otklanjanje pogrešaka
 - Jednostavna implementacija: pojednostavljen proces implementacije na Azure
 
@@ -248,7 +248,7 @@ Repozitorij uključuje sve potrebne konfiguracijske datoteke, izvorni kod i defi
 
 - MCP SDK-ovi pružaju jezično specifične alate za implementaciju robusnih MCP rješenja
 - Proces otklanjanja pogrešaka i testiranja je ključan za pouzdane MCP aplikacije
-- Ponovljivi predlošci promptova omogućuju dosljedne AI interakcije
+- Ponovno upotrebljivi predlošci promptova omogućuju dosljedne AI interakcije
 - Dobro dizajnirani tokovi rada mogu orkestrirati složene zadatke koristeći više alata
 - Implementacija MCP rješenja zahtijeva razmatranje sigurnosti, performansi i rukovanja pogreškama
 
@@ -258,7 +258,7 @@ Dizajnirajte praktični MCP tok rada koji rješava stvarni problem u vašem podr
 
 1. Identificirajte 3-4 alata koji bi bili korisni za rješavanje tog problema
 2. Izradite dijagram toka rada koji prikazuje kako ti alati međusobno djeluju
-3. Implementirajte osnovnu verziju jednog od alata koristeći vaš omiljeni jezik
+3. Implementirajte osnovnu verziju jednog od alata koristeći željeni programski jezik
 4. Kreirajte predložak prompta koji će pomoći modelu da učinkovito koristi vaš alat
 
 ## Dodatni resursi
@@ -269,4 +269,4 @@ Dizajnirajte praktični MCP tok rada koji rješava stvarni problem u vašem podr
 Sljedeće: [Napredne teme](../05-AdvancedTopics/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T22:43:42+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:03:17+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "es"
 }
 -->
 # Implementación Práctica
 
-La implementación práctica es donde el poder del Model Context Protocol (MCP) se vuelve tangible. Aunque entender la teoría y la arquitectura detrás de MCP es importante, el verdadero valor surge cuando aplicas estos conceptos para construir, probar y desplegar soluciones que resuelven problemas del mundo real. Este capítulo cierra la brecha entre el conocimiento conceptual y el desarrollo práctico, guiándote en el proceso de dar vida a aplicaciones basadas en MCP.
+La implementación práctica es donde el poder del Model Context Protocol (MCP) se vuelve tangible. Aunque entender la teoría y arquitectura detrás de MCP es importante, el verdadero valor surge cuando aplicas estos conceptos para construir, probar y desplegar soluciones que resuelven problemas del mundo real. Este capítulo cierra la brecha entre el conocimiento conceptual y el desarrollo práctico, guiándote en el proceso de dar vida a aplicaciones basadas en MCP.
 
 Ya sea que estés desarrollando asistentes inteligentes, integrando IA en flujos de trabajo empresariales o creando herramientas personalizadas para el procesamiento de datos, MCP ofrece una base flexible. Su diseño independiente del lenguaje y los SDK oficiales para lenguajes de programación populares lo hacen accesible para una amplia variedad de desarrolladores. Aprovechando estos SDK, puedes prototipar, iterar y escalar tus soluciones rápidamente en diferentes plataformas y entornos.
 
@@ -23,8 +23,8 @@ Esta lección se centra en los aspectos prácticos de la implementación de MCP 
 
 Al finalizar esta lección, serás capaz de:
 - Implementar soluciones MCP usando los SDK oficiales en varios lenguajes de programación
-- Depurar y probar servidores MCP de manera sistemática
-- Crear y usar características del servidor (Recursos, Prompts y Herramientas)
+- Depurar y probar servidores MCP de forma sistemática
+- Crear y usar funcionalidades del servidor (Recursos, Prompts y Herramientas)
 - Diseñar flujos de trabajo MCP efectivos para tareas complejas
 - Optimizar implementaciones MCP para rendimiento y fiabilidad
 
@@ -54,12 +54,12 @@ El repositorio incluye [implementaciones de ejemplo](../../../04-PracticalImplem
 
 Cada ejemplo demuestra conceptos clave de MCP y patrones de implementación para ese lenguaje y ecosistema específico.
 
-## Características Principales del Servidor
+## Funcionalidades Principales del Servidor
 
-Los servidores MCP pueden implementar cualquier combinación de estas características:
+Los servidores MCP pueden implementar cualquier combinación de estas funcionalidades:
 
 ### Recursos
-Los recursos proporcionan contexto y datos para que el usuario o el modelo de IA los utilicen:
+Los recursos proporcionan contexto y datos para que el usuario o el modelo de IA los utilice:
 - Repositorios de documentos
 - Bases de conocimiento
 - Fuentes de datos estructurados
@@ -80,15 +80,15 @@ Las herramientas son funciones que el modelo de IA puede ejecutar:
 
 ## Implementaciones de Ejemplo: C#
 
-El repositorio oficial del SDK de C# contiene varias implementaciones de ejemplo que demuestran diferentes aspectos de MCP:
+El repositorio oficial del SDK de C# contiene varias implementaciones de ejemplo que muestran diferentes aspectos de MCP:
 
-- **Cliente MCP Básico**: Ejemplo simple que muestra cómo crear un cliente MCP y llamar a herramientas
+- **Cliente MCP Básico**: Ejemplo simple que muestra cómo crear un cliente MCP y llamar herramientas
 - **Servidor MCP Básico**: Implementación mínima de servidor con registro básico de herramientas
 - **Servidor MCP Avanzado**: Servidor completo con registro de herramientas, autenticación y manejo de errores
 - **Integración con ASP.NET**: Ejemplos que demuestran integración con ASP.NET Core
 - **Patrones de Implementación de Herramientas**: Varios patrones para implementar herramientas con diferentes niveles de complejidad
 
-El SDK MCP para C# está en vista previa y las APIs pueden cambiar. Actualizaremos continuamente este blog a medida que el SDK evolucione.
+El SDK MCP para C# está en vista previa y las APIs pueden cambiar. Actualizaremos continuamente este blog conforme evolucione el SDK.
 
 ### Características Clave
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
@@ -108,7 +108,7 @@ El SDK de Java ofrece opciones robustas para la implementación de MCP con carac
 - Soporte para programación reactiva
 - Manejo completo de errores
 
-Para un ejemplo completo de implementación en Java, consulta el [ejemplo de Java](samples/java/containerapp/README.md) en el directorio de muestras.
+Para un ejemplo completo de implementación en Java, consulta el [ejemplo Java](samples/java/containerapp/README.md) en el directorio de muestras.
 
 ## Implementación de Ejemplo: JavaScript
 
@@ -116,12 +116,12 @@ El SDK de JavaScript ofrece un enfoque ligero y flexible para la implementación
 
 ### Características Clave
 
-- Soporte para Node.js y navegadores
+- Soporte para Node.js y navegador
 - API basada en Promesas
 - Integración sencilla con Express y otros frameworks
 - Soporte WebSocket para streaming
 
-Para un ejemplo completo de implementación en JavaScript, consulta el [ejemplo de JavaScript](samples/javascript/README.md) en el directorio de muestras.
+Para un ejemplo completo de implementación en JavaScript, consulta el [ejemplo JavaScript](samples/javascript/README.md) en el directorio de muestras.
 
 ## Implementación de Ejemplo: Python
 
@@ -130,11 +130,11 @@ El SDK de Python ofrece un enfoque pythonico para la implementación de MCP con 
 ### Características Clave
 
 - Soporte async/await con asyncio
-- Integración con Flask y FastAPI
+- Integración con FastAPI
 - Registro simple de herramientas
 - Integración nativa con librerías populares de ML
 
-Para un ejemplo completo de implementación en Python, consulta el [ejemplo de Python](samples/python/README.md) en el directorio de muestras.
+Para un ejemplo completo de implementación en Python, consulta el [ejemplo Python](samples/python/README.md) en el directorio de muestras.
 
 ## Gestión de API
 
@@ -203,17 +203,17 @@ Veamos si podemos desplegar el ejemplo que mencionamos antes:
 
     Deberías ver una interfaz similar a:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.es.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png) 
 
 1. Haz CTRL clic para cargar la aplicación web MCP Inspector desde la URL que muestra la app (por ejemplo, http://127.0.0.1:6274/#resources)
 1. Configura el tipo de transporte a `SSE`
-1. Establece la URL a tu endpoint SSE de API Management en ejecución que se muestra después de `azd up` y **Conéctate**:
+1. Configura la URL al endpoint SSE de tu API Management en ejecución que se muestra después de `azd up` y **Conéctate**:
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-5. **Lista de Herramientas**. Haz clic en una herramienta y **Ejecuta la Herramienta**.  
+5. **Listar Herramientas**. Haz clic en una herramienta y **Ejecutar Herramienta**.  
 
 Si todos los pasos funcionaron, ahora deberías estar conectado al servidor MCP y haber podido llamar a una herramienta.
 
@@ -229,7 +229,7 @@ Las muestras proporcionan una solución completa que permite a los desarrollador
 
 ### Características Clave:
 
-- Seguridad desde el diseño: El servidor MCP está asegurado usando claves y HTTPS
+- Seguridad por diseño: El servidor MCP está asegurado usando claves y HTTPS
 - Opciones de autenticación: Soporta OAuth usando autenticación integrada y/o API Management
 - Aislamiento de red: Permite aislamiento de red usando Azure Virtual Networks (VNET)
 - Arquitectura serverless: Aprovecha Azure Functions para ejecución escalable y basada en eventos

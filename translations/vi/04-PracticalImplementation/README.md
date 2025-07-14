@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T22:56:14+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:18:58+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "vi"
 }
@@ -13,7 +13,7 @@ Triển khai thực tiễn là nơi sức mạnh của Model Context Protocol (M
 
 Dù bạn đang phát triển trợ lý thông minh, tích hợp AI vào quy trình kinh doanh, hay xây dựng các công cụ tùy chỉnh để xử lý dữ liệu, MCP cung cấp một nền tảng linh hoạt. Thiết kế không phụ thuộc ngôn ngữ và các SDK chính thức cho các ngôn ngữ lập trình phổ biến giúp MCP dễ tiếp cận với nhiều nhà phát triển. Bằng cách tận dụng các SDK này, bạn có thể nhanh chóng tạo mẫu, lặp lại và mở rộng giải pháp trên nhiều nền tảng và môi trường khác nhau.
 
-Trong các phần tiếp theo, bạn sẽ tìm thấy các ví dụ thực tế, mã mẫu và chiến lược triển khai minh họa cách triển khai MCP trong C#, Java, TypeScript, JavaScript và Python. Bạn cũng sẽ học cách gỡ lỗi và kiểm thử các máy chủ MCP, quản lý API, và triển khai giải pháp lên đám mây bằng Azure. Những tài nguyên thực hành này được thiết kế để tăng tốc quá trình học tập và giúp bạn tự tin xây dựng các ứng dụng MCP mạnh mẽ, sẵn sàng cho môi trường sản xuất.
+Trong các phần tiếp theo, bạn sẽ tìm thấy các ví dụ thực tế, mã mẫu và chiến lược triển khai minh họa cách triển khai MCP trong C#, Java, TypeScript, JavaScript và Python. Bạn cũng sẽ học cách gỡ lỗi và kiểm thử các máy chủ MCP, quản lý API và triển khai giải pháp lên đám mây bằng Azure. Những tài nguyên thực hành này được thiết kế để tăng tốc quá trình học tập và giúp bạn tự tin xây dựng các ứng dụng MCP mạnh mẽ, sẵn sàng cho môi trường sản xuất.
 
 ## Tổng Quan
 
@@ -21,7 +21,7 @@ Bài học này tập trung vào các khía cạnh thực tiễn của việc tr
 
 ## Mục Tiêu Học Tập
 
-Sau bài học này, bạn sẽ có khả năng:
+Kết thúc bài học này, bạn sẽ có khả năng:
 - Triển khai các giải pháp MCP sử dụng SDK chính thức trên nhiều ngôn ngữ lập trình
 - Gỡ lỗi và kiểm thử máy chủ MCP một cách có hệ thống
 - Tạo và sử dụng các tính năng máy chủ (Resources, Prompts và Tools)
@@ -60,19 +60,19 @@ Máy chủ MCP có thể triển khai bất kỳ sự kết hợp nào của cá
 
 ### Resources
 Resources cung cấp ngữ cảnh và dữ liệu để người dùng hoặc mô hình AI sử dụng:
-- Kho lưu trữ tài liệu
+- Kho tài liệu
 - Cơ sở tri thức
 - Nguồn dữ liệu có cấu trúc
 - Hệ thống tập tin
 
 ### Prompts
 Prompts là các mẫu tin nhắn và quy trình làm việc dành cho người dùng:
-- Mẫu hội thoại được định nghĩa trước
+- Mẫu hội thoại được định nghĩa sẵn
 - Các mẫu tương tác có hướng dẫn
 - Cấu trúc đối thoại chuyên biệt
 
 ### Tools
-Tools là các chức năng để mô hình AI thực thi:
+Tools là các hàm mà mô hình AI có thể thực thi:
 - Tiện ích xử lý dữ liệu
 - Tích hợp API bên ngoài
 - Khả năng tính toán
@@ -125,12 +125,12 @@ SDK JavaScript cung cấp cách tiếp cận nhẹ và linh hoạt cho triển k
 
 ## Mẫu Triển Khai: Python
 
-SDK Python mang đến cách tiếp cận Pythonic cho triển khai MCP với tích hợp xuất sắc các framework ML.
+SDK Python cung cấp cách tiếp cận Pythonic cho triển khai MCP với tích hợp xuất sắc các framework ML.
 
 ### Tính Năng Chính
 
 - Hỗ trợ async/await với asyncio
-- Tích hợp Flask và FastAPI
+- Tích hợp FastAPI
 - Đăng ký công cụ đơn giản
 - Tích hợp gốc với các thư viện ML phổ biến
 
@@ -174,7 +174,7 @@ Tìm hiểu thêm về [đặc tả ủy quyền MCP](https://modelcontextprotoc
 
 Hãy thử triển khai mẫu mà chúng ta đã đề cập trước đó:
 
-1. Clone kho lưu trữ
+1. Clone repo
 
     ```bash
     git clone https://github.com/Azure-Samples/remote-mcp-apim-functions-python.git
@@ -185,13 +185,13 @@ Hãy thử triển khai mẫu mà chúng ta đã đề cập trước đó:
     * Nếu bạn dùng Azure CLI, chạy `az provider register --namespace Microsoft.App --wait`.
     * Nếu bạn dùng Azure PowerShell, chạy `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Sau đó chạy `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` sau một thời gian để kiểm tra xem đăng ký đã hoàn tất chưa.
 
-2. Chạy lệnh [azd](https://aka.ms/azd) này để cấp phát dịch vụ quản lý API, function app (kèm mã) và tất cả các tài nguyên Azure cần thiết khác
+2. Chạy lệnh [azd](https://aka.ms/azd) này để cấp phát dịch vụ quản lý API, function app (có mã nguồn) và tất cả các tài nguyên Azure cần thiết khác
 
     ```shell
     azd up
     ```
 
-    Lệnh này sẽ triển khai tất cả tài nguyên đám mây trên Azure
+    Lệnh này sẽ triển khai tất cả các tài nguyên đám mây trên Azure
 
 ### Kiểm thử máy chủ với MCP Inspector
 
@@ -203,10 +203,10 @@ Hãy thử triển khai mẫu mà chúng ta đã đề cập trước đó:
 
     Bạn sẽ thấy giao diện tương tự như:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.vi.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png) 
 
 1. Nhấn CTRL và click để tải ứng dụng web MCP Inspector từ URL hiển thị bởi ứng dụng (ví dụ: http://127.0.0.1:6274/#resources)
-1. Đặt loại truyền tải là `SSE`
+1. Đặt loại giao thức truyền tải là `SSE`
 1. Đặt URL đến endpoint SSE của API Management đang chạy được hiển thị sau khi chạy `azd up` và **Kết nối**:
 
     ```shell
@@ -225,15 +225,15 @@ Các mẫu này cung cấp giải pháp hoàn chỉnh cho phép nhà phát tri�
 
 - Xây dựng và chạy cục bộ: Phát triển và gỡ lỗi máy chủ MCP trên máy tính cá nhân
 - Triển khai lên Azure: Dễ dàng triển khai lên đám mây chỉ với lệnh azd up đơn giản
-- Kết nối từ các client: Kết nối tới máy chủ MCP từ nhiều client khác nhau bao gồm chế độ Copilot agent của VS Code và công cụ MCP Inspector
+- Kết nối từ các client: Kết nối tới máy chủ MCP từ nhiều client khác nhau bao gồm chế độ Copilot của VS Code và công cụ MCP Inspector
 
 ### Tính Năng Chính:
 
 - Bảo mật theo thiết kế: Máy chủ MCP được bảo vệ bằng khóa và HTTPS
 - Tùy chọn xác thực: Hỗ trợ OAuth sử dụng xác thực tích hợp sẵn và/hoặc API Management
 - Cô lập mạng: Cho phép cô lập mạng bằng Azure Virtual Networks (VNET)
-- Kiến trúc serverless: Tận dụng Azure Functions cho thực thi theo sự kiện, có thể mở rộng
-- Phát triển cục bộ: Hỗ trợ phát triển và gỡ lỗi toàn diện tại chỗ
+- Kiến trúc serverless: Tận dụng Azure Functions cho thực thi mở rộng, sự kiện kích hoạt
+- Phát triển cục bộ: Hỗ trợ phát triển và gỡ lỗi toàn diện trên máy cá nhân
 - Triển khai đơn giản: Quy trình triển khai lên Azure được tối giản
 
 Kho lưu trữ bao gồm tất cả các file cấu hình cần thiết, mã nguồn và định nghĩa hạ tầng để bạn nhanh chóng bắt đầu với triển khai máy chủ MCP sẵn sàng cho môi trường sản xuất.
@@ -246,11 +246,11 @@ Kho lưu trữ bao gồm tất cả các file cấu hình cần thiết, mã ngu
 
 ## Những Điểm Chính Cần Nhớ
 
-- SDK MCP cung cấp các công cụ đặc thù cho từng ngôn ngữ để triển khai các giải pháp MCP vững chắc
+- SDK MCP cung cấp các công cụ theo ngôn ngữ để triển khai các giải pháp MCP vững chắc
 - Quá trình gỡ lỗi và kiểm thử rất quan trọng để đảm bảo ứng dụng MCP đáng tin cậy
 - Các mẫu prompt có thể tái sử dụng giúp tương tác AI nhất quán
 - Các workflow được thiết kế tốt có thể điều phối các tác vụ phức tạp sử dụng nhiều công cụ
-- Triển khai giải pháp MCP cần cân nhắc về bảo mật, hiệu suất và xử lý lỗi
+- Triển khai MCP cần cân nhắc về bảo mật, hiệu suất và xử lý lỗi
 
 ## Bài Tập
 
@@ -259,7 +259,7 @@ Thiết kế một workflow MCP thực tiễn giải quyết một vấn đề t
 1. Xác định 3-4 công cụ hữu ích để giải quyết vấn đề này
 2. Tạo sơ đồ workflow thể hiện cách các công cụ này tương tác với nhau
 3. Triển khai phiên bản cơ bản của một trong các công cụ bằng ngôn ngữ bạn ưa thích
-4. Tạo một mẫu prompt giúp mô hình sử dụng hiệu quả công cụ của bạn
+4. Tạo mẫu prompt giúp mô hình sử dụng hiệu quả công cụ của bạn
 
 ## Tài Nguyên Bổ Sung
 

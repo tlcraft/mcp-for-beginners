@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T22:58:16+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:21:24+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "hu"
 }
 -->
 # Gyakorlati megvalósítás
 
-A gyakorlati megvalósítás az a pont, ahol a Model Context Protocol (MCP) ereje kézzelfoghatóvá válik. Bár fontos megérteni az MCP mögötti elméletet és architektúrát, az igazi érték akkor mutatkozik meg, amikor ezeket a fogalmakat alkalmazod valós problémák megoldására szolgáló megoldások építésében, tesztelésében és üzembe helyezésében. Ez a fejezet hidat képez az elméleti tudás és a gyakorlati fejlesztés között, és végigvezet a MCP-alapú alkalmazások életre keltésének folyamatán.
+A gyakorlati megvalósítás az a pont, ahol a Model Context Protocol (MCP) ereje kézzelfoghatóvá válik. Bár fontos megérteni az MCP mögötti elméletet és architektúrát, az igazi érték akkor mutatkozik meg, amikor ezeket a fogalmakat alkalmazva valós problémákat megoldó megoldásokat építesz, tesztelsz és telepítesz. Ez a fejezet hidat képez az elméleti tudás és a gyakorlati fejlesztés között, és végigvezet a MCP-alapú alkalmazások életre keltésének folyamatán.
 
-Akár intelligens asszisztenseket fejlesztesz, AI-t integrálsz üzleti munkafolyamatokba, vagy egyedi eszközöket építesz adatfeldolgozáshoz, az MCP rugalmas alapot biztosít. Nyelvfüggetlen kialakítása és a népszerű programozási nyelvekhez készült hivatalos SDK-k széles fejlesztői kör számára elérhetővé teszik. Ezeknek az SDK-knak a segítségével gyorsan prototípust készíthetsz, iterálhatsz, és skálázhatod megoldásaidat különböző platformokon és környezetekben.
+Akár intelligens asszisztenseket fejlesztesz, AI-t integrálsz üzleti munkafolyamatokba, vagy egyedi eszközöket építesz adatfeldolgozáshoz, az MCP rugalmas alapot biztosít. Nyelvfüggetlen kialakítása és a népszerű programozási nyelvekhez készült hivatalos SDK-k széles fejlesztői kör számára elérhetővé teszik. Ezeket az SDK-kat kihasználva gyorsan prototípust készíthetsz, iterálhatsz, és skálázhatod megoldásaidat különböző platformokon és környezetekben.
 
-A következő szakaszokban gyakorlati példákat, mintakódokat és telepítési stratégiákat találsz, amelyek bemutatják, hogyan valósítható meg az MCP C#, Java, TypeScript, JavaScript és Python nyelveken. Megtanulod továbbá, hogyan hibakeresd és teszteld MCP szervereidet, hogyan kezeld az API-kat, és hogyan telepíts megoldásokat az Azure felhőbe. Ezek a gyakorlati anyagok felgyorsítják a tanulásodat, és segítenek magabiztosan felépíteni robusztus, éles környezetbe szánt MCP alkalmazásokat.
+A következő szakaszokban gyakorlati példákat, mintakódokat és telepítési stratégiákat találsz, amelyek bemutatják, hogyan valósítható meg az MCP C#, Java, TypeScript, JavaScript és Python nyelveken. Megtanulod továbbá, hogyan hibakeress és tesztelj MCP szervereket, hogyan kezeld az API-kat, és hogyan telepíts megoldásokat az Azure felhőbe. Ezek a gyakorlati anyagok felgyorsítják a tanulásodat, és segítenek magabiztosan felépíteni robusztus, éles környezetbe szánt MCP alkalmazásokat.
 
 ## Áttekintés
 
@@ -66,7 +66,7 @@ Az erőforrások kontextust és adatokat biztosítanak a felhasználó vagy az A
 - Fájlrendszerek
 
 ### Promptok
-A promptok sablonos üzenetek és munkafolyamatok a felhasználók számára:
+A promptok sablonosított üzenetek és munkafolyamatok a felhasználók számára:
 - Előre definiált beszélgetési sablonok
 - Irányított interakciós minták
 - Speciális párbeszédstruktúrák
@@ -82,8 +82,8 @@ Az eszközök olyan funkciók, amelyeket az AI modell végrehajthat:
 
 A hivatalos C# SDK tároló több mintamegvalósítást tartalmaz, amelyek az MCP különböző aspektusait mutatják be:
 
-- **Alap MCP kliens**: Egyszerű példa arra, hogyan hozz létre MCP klienst és hívj meg eszközöket
-- **Alap MCP szerver**: Minimális szervermegvalósítás alap eszközregisztrációval
+- **Alap MCP kliens**: Egyszerű példa arra, hogyan hozzunk létre MCP klienst és hívjunk meg eszközöket
+- **Alap MCP szerver**: Minimális szervermegvalósítás alapvető eszközregisztrációval
 - **Fejlett MCP szerver**: Teljes funkcionalitású szerver eszközregisztrációval, hitelesítéssel és hibakezeléssel
 - **ASP.NET integráció**: Példák az ASP.NET Core integrációjára
 - **Eszközmegvalósítási minták**: Különböző minták eszközök megvalósítására különböző bonyolultsági szinteken
@@ -108,7 +108,7 @@ A Java SDK robusztus MCP megvalósítási lehetőségeket kínál vállalati szi
 - Reaktív programozás támogatása
 - Átfogó hibakezelés
 
-A teljes Java megvalósítási mintáért lásd a [Java mintát](samples/java/containerapp/README.md) a minták könyvtárában.
+A teljes Java megvalósítási mintáért lásd a [Java mintát](samples/java/containerapp/README.md) a mintakönyvtárban.
 
 ## Mintamegvalósítás: JavaScript megvalósítás
 
@@ -121,7 +121,7 @@ A JavaScript SDK könnyű és rugalmas megközelítést kínál az MCP megvalós
 - Egyszerű integráció Express és más keretrendszerekkel
 - WebSocket támogatás streaminghez
 
-A teljes JavaScript megvalósítási mintáért lásd a [JavaScript mintát](samples/javascript/README.md) a minták könyvtárában.
+A teljes JavaScript megvalósítási mintáért lásd a [JavaScript mintát](samples/javascript/README.md) a mintakönyvtárban.
 
 ## Mintamegvalósítás: Python megvalósítás
 
@@ -130,11 +130,11 @@ A Python SDK pythonos megközelítést kínál az MCP megvalósításához, kiv�
 ### Főbb jellemzők
 
 - Async/await támogatás asyncio-val
-- Flask és FastAPI integráció
+- FastAPI integráció
 - Egyszerű eszközregisztráció
 - Natív integráció népszerű ML könyvtárakkal
 
-A teljes Python megvalósítási mintáért lásd a [Python mintát](samples/python/README.md) a minták könyvtárában.
+A teljes Python megvalósítási mintáért lásd a [Python mintát](samples/python/README.md) a mintakönyvtárban.
 
 ## API kezelés
 
@@ -148,11 +148,11 @@ Az Azure API Management remek megoldás arra, hogyan biztosíthatjuk az MCP szer
 
 ### Azure minta
 
-Itt egy Azure minta, amely pontosan ezt csinálja, azaz [MCP szerver létrehozása és biztosítása Azure API Management segítségével](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
+Itt egy Azure minta, amely pontosan ezt valósítja meg, azaz [MCP szerver létrehozása és Azure API Managementtel való biztosítása](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
 
 Nézd meg, hogyan zajlik az engedélyezési folyamat az alábbi képen:
 
-![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true) 
+![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true)
 
 A fenti képen a következők történnek:
 
@@ -185,7 +185,7 @@ Nézzük meg, hogyan telepíthetjük az előbb említett mintát:
     * Ha Azure CLI-t használsz, futtasd az `az provider register --namespace Microsoft.App --wait` parancsot.
     * Ha Azure PowerShell-t használsz, futtasd a `Register-AzResourceProvider -ProviderNamespace Microsoft.App` parancsot. Ezután egy kis idő múlva ellenőrizd a regisztráció állapotát a `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` paranccsal.
 
-2. Futtasd ezt az [azd](https://aka.ms/azd) parancsot az API Management szolgáltatás, a function app (kóddal) és az összes többi szükséges Azure erőforrás létrehozásához
+2. Futtasd ezt az [azd](https://aka.ms/azd) parancsot az API Management szolgáltatás, a funkcióalkalmazás (kóddal) és az összes szükséges Azure erőforrás létrehozásához
 
     ```shell
     azd up
@@ -203,7 +203,7 @@ Nézzük meg, hogyan telepíthetjük az előbb említett mintát:
 
     Egy hasonló felületet kell látnod:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.hu.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. CTRL kattintással töltsd be az MCP Inspector webalkalmazást az alkalmazás által megjelenített URL-ről (pl. http://127.0.0.1:6274/#resources)
 1. Állítsd a szállítási típust `SSE`-re
@@ -215,13 +215,13 @@ Nézzük meg, hogyan telepíthetjük az előbb említett mintát:
 
 5. **Eszközök listázása**. Kattints egy eszközre, majd válaszd a **Run Tool** lehetőséget.
 
-Ha minden lépés sikeres volt, most csatlakoztál az MCP szerverhez, és sikeresen meghívtál egy eszközt.
+Ha minden lépés sikeres volt, most már csatlakozva vagy az MCP szerverhez, és sikeresen meghívtál egy eszközt.
 
 ## MCP szerverek Azure-hoz
 
 [Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Ezek a tárolók gyorsindító sablonokat kínálnak egyedi távoli MCP (Model Context Protocol) szerverek építéséhez és telepítéséhez Azure Functions segítségével Python, C# .NET vagy Node/TypeScript nyelveken.
 
-A minták egy teljes megoldást nyújtanak, amely lehetővé teszi a fejlesztők számára, hogy:
+A minták teljes megoldást nyújtanak, amely lehetővé teszi a fejlesztők számára, hogy:
 
 - Helyben fejlesszenek és futtassanak: MCP szerver fejlesztése és hibakeresése helyi gépen
 - Telepítsenek Azure-ra: Egyszerűen telepíthető a felhőbe egyetlen azd up paranccsal
@@ -229,20 +229,20 @@ A minták egy teljes megoldást nyújtanak, amely lehetővé teszi a fejlesztők
 
 ### Főbb jellemzők:
 
-- Biztonság tervezésből: Az MCP szerver kulcsokkal és HTTPS-sel védett
+- Biztonság tervezésből: Az MCP szerver kulcsokkal és HTTPS-sel van védve
 - Hitelesítési lehetőségek: OAuth támogatás beépített hitelesítéssel és/vagy API Managementtel
 - Hálózati izoláció: Azure Virtuális Hálózatok (VNET) használata hálózati izolációhoz
-- Szerver nélküli architektúra: Azure Functions használata skálázható, eseményvezérelt végrehajtáshoz
+- Serverless architektúra: Azure Functions használata skálázható, eseményvezérelt végrehajtáshoz
 - Helyi fejlesztés: Átfogó helyi fejlesztési és hibakeresési támogatás
 - Egyszerű telepítés: Egyszerűsített telepítési folyamat Azure-ra
 
-A tároló tartalmazza az összes szükséges konfigurációs fájlt, forráskódot és infrastruktúra definíciót, hogy gyorsan elindulhass egy éles környezetbe szánt MCP szerver megvalósítással.
+A tároló tartalmaz minden szükséges konfigurációs fájlt, forráskódot és infrastruktúra definíciót, hogy gyorsan elindulhass egy éles környezetbe szánt MCP szerver megvalósítással.
 
 - [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - MCP mintamegvalósítás Azure Functions segítségével Python nyelven
 
 - [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - MCP mintamegvalósítás Azure Functions segítségével C# .NET nyelven
 
-- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - MCP mintamegvalósítás Azure Functions segítségével Node/TypeScript nyelven.
+- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - MCP mintamegvalósítás Azure Functions segítségével Node/TypeScript nyelven
 
 ## Főbb tanulságok
 
@@ -258,7 +258,7 @@ Tervezzen egy gyakorlati MCP munkafolyamatot, amely egy valós problémát old m
 
 1. Azonosítson 3-4 eszközt, amelyek hasznosak lehetnek a probléma megoldásához
 2. Készítsen egy munkafolyamat-diagramot, amely bemutatja, hogyan lépnek kölcsönhatásba ezek az eszközök
-3. Valósítson meg egy eszköz alapverzióját a választott nyelvén
+3. Valósítson meg egy alapverziót az egyik eszközből a választott nyelvén
 4. Készítsen egy prompt sablont, amely segíti a modellt az eszköz hatékony használatában
 
 ## További források
@@ -269,4 +269,4 @@ Tervezzen egy gyakorlati MCP munkafolyamatot, amely egy valós problémát old m
 Következő: [Haladó témák](../05-AdvancedTopics/README.md)
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

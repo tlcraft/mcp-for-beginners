@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T22:53:56+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:16:04+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "sv"
 }
 -->
 # Praktisk Implementering
 
-Praktisk implementering är där kraften i Model Context Protocol (MCP) blir påtaglig. Även om det är viktigt att förstå teorin och arkitekturen bakom MCP, uppstår det verkliga värdet när du tillämpar dessa koncept för att bygga, testa och distribuera lösningar som löser verkliga problem. Detta kapitel överbryggar klyftan mellan konceptuell kunskap och praktisk utveckling, och vägleder dig genom processen att förverkliga MCP-baserade applikationer.
+Praktisk implementering är där kraften i Model Context Protocol (MCP) blir påtaglig. Även om det är viktigt att förstå teorin och arkitekturen bakom MCP, uppstår det verkliga värdet när du tillämpar dessa koncept för att bygga, testa och distribuera lösningar som löser verkliga problem. Detta kapitel överbryggar klyftan mellan konceptuell kunskap och praktisk utveckling, och guidar dig genom processen att förverkliga MCP-baserade applikationer.
 
 Oavsett om du utvecklar intelligenta assistenter, integrerar AI i affärsflöden eller bygger anpassade verktyg för databehandling, erbjuder MCP en flexibel grund. Dess språkoberoende design och officiella SDK:er för populära programmeringsspråk gör det tillgängligt för en bred utvecklarkrets. Genom att utnyttja dessa SDK:er kan du snabbt prototypa, iterera och skala dina lösningar över olika plattformar och miljöer.
 
@@ -66,7 +66,7 @@ Resources tillhandahåller kontext och data för användaren eller AI-modellen a
 - Filsystem
 
 ### Prompts
-Prompts är mallbaserade meddelanden och arbetsflöden för användare:
+Prompts är mallade meddelanden och arbetsflöden för användare:
 - Fördefinierade konversationsmallar
 - Guidad interaktionsmönster
 - Specialiserade dialogstrukturer
@@ -88,7 +88,7 @@ Det officiella C# SDK-förrådet innehåller flera exempel som visar olika aspek
 - **ASP.NET Integration**: Exempel som visar integration med ASP.NET Core
 - **Tool Implementation Patterns**: Olika mönster för att implementera verktyg med varierande komplexitet
 
-MCP C# SDK är i förhandsgranskning och API:er kan ändras. Vi kommer kontinuerligt att uppdatera denna blogg i takt med att SDK:n utvecklas.
+MCP C# SDK är i förhandsgranskning och API:erna kan komma att ändras. Vi kommer kontinuerligt att uppdatera denna blogg i takt med att SDK:n utvecklas.
 
 ### Viktiga funktioner 
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
@@ -108,7 +108,7 @@ Java SDK erbjuder robusta MCP-implementeringsalternativ med företagsklassade fu
 - Stöd för reaktiv programmering
 - Omfattande felhantering
 
-För ett komplett Java-implementationsprov, se [Java sample](samples/java/containerapp/README.md) i samples-katalogen.
+För ett komplett Java-implementationsprov, se [Java sample](samples/java/containerapp/README.md) i exempel-katalogen.
 
 ## Exempelimplementation: JavaScript Implementation
 
@@ -121,7 +121,7 @@ JavaScript SDK erbjuder ett lättviktigt och flexibelt tillvägagångssätt för
 - Enkel integration med Express och andra ramverk
 - WebSocket-stöd för streaming
 
-För ett komplett JavaScript-implementationsprov, se [JavaScript sample](samples/javascript/README.md) i samples-katalogen.
+För ett komplett JavaScript-implementationsprov, se [JavaScript sample](samples/javascript/README.md) i exempel-katalogen.
 
 ## Exempelimplementation: Python Implementation
 
@@ -130,17 +130,17 @@ Python SDK erbjuder ett Pythoniskt tillvägagångssätt för MCP-implementering 
 ### Viktiga funktioner
 
 - Async/await-stöd med asyncio
-- Integration med Flask och FastAPI
+- FastAPI-integration
 - Enkel verktygsregistrering
 - Naturlig integration med populära ML-bibliotek
 
-För ett komplett Python-implementationsprov, se [Python sample](samples/python/README.md) i samples-katalogen.
+För ett komplett Python-implementationsprov, se [Python sample](samples/python/README.md) i exempel-katalogen.
 
 ## API-hantering
 
 Azure API Management är en utmärkt lösning för hur vi kan säkra MCP-servrar. Idén är att placera en Azure API Management-instans framför din MCP-server och låta den hantera funktioner som du sannolikt vill ha, såsom:
 
-- begränsning av anropstakt
+- begränsning av anrop (rate limiting)
 - tokenhantering
 - övervakning
 - lastbalansering
@@ -181,11 +181,11 @@ Låt oss se om vi kan distribuera exemplet vi nämnde tidigare:
     cd remote-mcp-apim-functions-python
     ```
 
-1. Registrera `Microsoft.App` resource provider.
+1. Registrera `Microsoft.App` resursleverantör.
     * Om du använder Azure CLI, kör `az provider register --namespace Microsoft.App --wait`.
     * Om du använder Azure PowerShell, kör `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Kör sedan `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` efter en stund för att kontrollera om registreringen är klar.
 
-2. Kör detta [azd](https://aka.ms/azd)-kommando för att provisionera API Management-tjänsten, function app (med kod) och alla andra nödvändiga Azure-resurser
+2. Kör detta [azd](https://aka.ms/azd) kommando för att provisionera API Management-tjänsten, function app (med kod) och alla andra nödvändiga Azure-resurser
 
     ```shell
     azd up
@@ -203,9 +203,9 @@ Låt oss se om vi kan distribuera exemplet vi nämnde tidigare:
 
     Du bör se ett gränssnitt som liknar:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sv.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png) 
 
-1. CTRL-klicka för att ladda MCP Inspector webbappen från den URL som visas av appen (t.ex. http://127.0.0.1:6274/#resources)
+1. CTRL-klicka för att ladda MCP Inspector webbappen från den URL som appen visar (t.ex. http://127.0.0.1:6274/#resources)
 1. Ställ in transporttypen till `SSE`
 1. Ange URL:en till din körande API Management SSE-endpoint som visas efter `azd up` och **Connect**:
 
@@ -215,17 +215,17 @@ Låt oss se om vi kan distribuera exemplet vi nämnde tidigare:
 
 5. **Lista verktyg**. Klicka på ett verktyg och **Run Tool**.  
 
-Om alla steg fungerat bör du nu vara ansluten till MCP-servern och ha kunnat anropa ett verktyg.
+Om alla steg fungerat ska du nu vara ansluten till MCP-servern och ha kunnat anropa ett verktyg.
 
 ## MCP-servrar för Azure
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Denna uppsättning förråd är en snabbstartsmall för att bygga och distribuera anpassade fjärr-MCP-servrar (Model Context Protocol) med Azure Functions i Python, C# .NET eller Node/TypeScript.
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Denna uppsättning förråd är en snabbstartsmall för att bygga och distribuera anpassade fjärr-MCP (Model Context Protocol) servrar med Azure Functions i Python, C# .NET eller Node/TypeScript.
 
 Exemplen erbjuder en komplett lösning som låter utvecklare:
 
 - Bygga och köra lokalt: Utveckla och felsöka en MCP-server på en lokal maskin
 - Distribuera till Azure: Enkel distribution till molnet med ett enkelt azd up-kommando
-- Ansluta från klienter: Anslut till MCP-servern från olika klienter, inklusive VS Codes Copilot agent-läge och MCP Inspector-verktyget
+- Ansluta från klienter: Anslut till MCP-servern från olika klienter inklusive VS Codes Copilot agentläge och MCP Inspector-verktyget
 
 ### Viktiga funktioner:
 
@@ -266,7 +266,7 @@ Designa ett praktiskt MCP-arbetsflöde som löser ett verkligt problem inom ditt
 
 ---
 
-Nästa: [Avancerade ämnen](../05-AdvancedTopics/README.md)
+Nästa: [Avancerade Ämnen](../05-AdvancedTopics/README.md)
 
 **Ansvarsfriskrivning**:  
 Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.

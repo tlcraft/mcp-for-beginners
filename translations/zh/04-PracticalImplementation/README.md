@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T22:46:09+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:06:05+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "zh"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 实践应用是模型上下文协议（MCP）威力得以体现的地方。虽然理解MCP的理论和架构很重要，但真正的价值在于将这些概念应用于构建、测试和部署解决方案，以解决现实世界的问题。本章弥合了概念知识与动手开发之间的差距，指导你如何将基于MCP的应用付诸实践。
 
-无论你是在开发智能助手、将AI集成到业务流程中，还是构建定制的数据处理工具，MCP都提供了灵活的基础。其语言无关的设计和针对主流编程语言的官方SDK，使得各种开发者都能轻松上手。通过利用这些SDK，你可以快速进行原型设计、迭代和跨平台扩展解决方案。
+无论你是在开发智能助手、将AI集成到业务流程中，还是构建定制的数据处理工具，MCP都提供了灵活的基础。它的语言无关设计以及针对主流编程语言的官方SDK，使得各种开发者都能轻松上手。通过利用这些SDK，你可以快速进行原型设计、迭代和跨平台扩展解决方案。
 
-在接下来的章节中，你将看到实用示例、示范代码和部署策略，展示如何在C#、Java、TypeScript、JavaScript和Python中实现MCP。你还将学习如何调试和测试MCP服务器、管理API，以及使用Azure将解决方案部署到云端。这些实操资源旨在加速你的学习，帮助你自信地构建健壮且可投入生产的MCP应用。
+在接下来的章节中，你将看到实用示例、示范代码和部署策略，展示如何在C#、Java、TypeScript、JavaScript和Python中实现MCP。你还将学习如何调试和测试MCP服务器、管理API，以及使用Azure将解决方案部署到云端。这些实操资源旨在加速你的学习，帮助你自信地构建健壮且适合生产环境的MCP应用。
 
 ## 概述
 
@@ -40,7 +40,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 使用MCP SDK
 
-本节提供了跨多种编程语言实现MCP的实用示例。你可以在`samples`目录中按语言分类找到示范代码。
+本节提供了多种编程语言中实现MCP的实用示例。你可以在`samples`目录中按语言分类找到示范代码。
 
 ### 可用示例
 
@@ -83,12 +83,12 @@ MCP服务器可以实现以下任意组合的功能：
 官方C# SDK仓库包含多个示例实现，展示MCP的不同方面：
 
 - **基础MCP客户端**：展示如何创建MCP客户端并调用工具的简单示例
-- **基础MCP服务器**：带有基础工具注册的最简服务器实现
+- **基础MCP服务器**：带有基本工具注册的最简服务器实现
 - **高级MCP服务器**：具备工具注册、身份验证和错误处理的完整服务器
 - **ASP.NET集成**：展示与ASP.NET Core集成的示例
-- **工具实现模式**：多种复杂度的工具实现模式
+- **工具实现模式**：多种不同复杂度的工具实现模式
 
-MCP C# SDK目前处于预览阶段，API可能会变动。我们将持续更新博客内容以跟进SDK的演进。
+MCP C# SDK目前处于预览阶段，API可能会发生变化。随着SDK的发展，我们会持续更新本博客。
 
 ### 主要功能
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
@@ -116,7 +116,7 @@ JavaScript SDK提供了轻量且灵活的MCP实现方式。
 
 ### 主要功能
 
-- 支持Node.js和浏览器环境
+- 支持Node.js和浏览器
 - 基于Promise的API
 - 易于与Express及其他框架集成
 - 支持WebSocket流式传输
@@ -130,7 +130,7 @@ Python SDK提供了符合Python习惯的MCP实现方式，并与主流机器学�
 ### 主要功能
 
 - 支持async/await和asyncio
-- 集成Flask和FastAPI
+- FastAPI集成
 - 简单的工具注册
 - 与流行机器学习库的原生集成
 
@@ -138,7 +138,7 @@ Python SDK提供了符合Python习惯的MCP实现方式，并与主流机器学�
 
 ## API管理
 
-Azure API管理是保护MCP服务器的绝佳方案。思路是在你的MCP服务器前面放置一个Azure API管理实例，让它处理你可能需要的功能，如：
+Azure API Management是保护MCP服务器的绝佳方案。其思路是在MCP服务器前端部署Azure API Management实例，负责处理你可能需要的功能，如：
 
 - 限流
 - 令牌管理
@@ -148,7 +148,7 @@ Azure API管理是保护MCP服务器的绝佳方案。思路是在你的MCP服�
 
 ### Azure示例
 
-这里有一个Azure示例，正是实现了上述功能，即[创建MCP服务器并用Azure API管理保护它](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)。
+这里有一个Azure示例，正是实现了上述功能，即[创建MCP服务器并用Azure API Management保护它](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)。
 
 下图展示了授权流程：
 
@@ -157,7 +157,7 @@ Azure API管理是保护MCP服务器的绝佳方案。思路是在你的MCP服�
 图中发生了以下过程：
 
 - 使用Microsoft Entra进行身份验证/授权。
-- Azure API管理作为网关，使用策略来引导和管理流量。
+- Azure API Management作为网关，利用策略引导和管理流量。
 - Azure Monitor记录所有请求以供后续分析。
 
 #### 授权流程
@@ -181,17 +181,17 @@ Azure API管理是保护MCP服务器的绝佳方案。思路是在你的MCP服�
     cd remote-mcp-apim-functions-python
     ```
 
-2. 注册`Microsoft.App`资源提供程序。
-    * 如果使用Azure CLI，运行 `az provider register --namespace Microsoft.App --wait`。
-    * 如果使用Azure PowerShell，运行 `Register-AzResourceProvider -ProviderNamespace Microsoft.App`。稍后运行 `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` 检查注册是否完成。
+1. 注册`Microsoft.App`资源提供程序。
+    * 如果使用Azure CLI，运行`az provider register --namespace Microsoft.App --wait`。
+    * 如果使用Azure PowerShell，运行`Register-AzResourceProvider -ProviderNamespace Microsoft.App`。稍后运行`(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState`检查注册是否完成。
 
-3. 运行此[azd](https://aka.ms/azd)命令，预配API管理服务、函数应用（含代码）及所有其他所需的Azure资源
+2. 运行此[azd](https://aka.ms/azd)命令，预配API管理服务、函数应用（含代码）及所有其他所需的Azure资源
 
     ```shell
     azd up
     ```
 
-    该命令应在Azure上部署所有云资源。
+    该命令将部署所有Azure云资源
 
 ### 使用MCP Inspector测试服务器
 
@@ -201,13 +201,13 @@ Azure API管理是保护MCP服务器的绝佳方案。思路是在你的MCP服�
     npx @modelcontextprotocol/inspector
     ```
 
-    你应看到类似如下界面：
+    你应看到类似以下界面：
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.zh.png)
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png)
 
-2. 按住CTRL点击，从应用显示的URL（例如 http://127.0.0.1:6274/#resources）加载MCP Inspector网页应用
-3. 将传输类型设置为`SSE`
-4. 将URL设置为`azd up`后显示的正在运行的API管理SSE端点，并点击**连接**：
+1. 按住CTRL点击，加载MCP Inspector网页应用，地址由应用显示（例如 http://127.0.0.1:6274/#resources）
+1. 将传输类型设置为`SSE`
+1. 将URL设置为`azd up`后显示的正在运行的API管理SSE端点，点击**连接**：
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
@@ -234,15 +234,15 @@ Azure API管理是保护MCP服务器的绝佳方案。思路是在你的MCP服�
 - 网络隔离：支持使用Azure虚拟网络（VNET）实现网络隔离
 - 无服务器架构：利用Azure Functions实现可扩展的事件驱动执行
 - 本地开发：全面支持本地开发和调试
-- 简单部署：简化的Azure部署流程
+- 简化部署：简化的Azure部署流程
 
 仓库包含所有必要的配置文件、源代码和基础设施定义，帮助你快速启动生产级MCP服务器实现。
 
-- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - 使用Azure Functions和Python实现的MCP示例
+- [Azure远程MCP函数Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - 使用Azure Functions和Python实现的MCP示例
 
-- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - 使用Azure Functions和C# .NET实现的MCP示例
+- [Azure远程MCP函数.NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - 使用Azure Functions和C# .NET实现的MCP示例
 
-- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - 使用Azure Functions和Node/TypeScript实现的MCP示例
+- [Azure远程MCP函数Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - 使用Azure Functions和Node/TypeScript实现的MCP示例
 
 ## 关键要点
 
@@ -254,7 +254,7 @@ Azure API管理是保护MCP服务器的绝佳方案。思路是在你的MCP服�
 
 ## 练习
 
-设计一个实用的MCP工作流，解决你所在领域的一个现实问题：
+设计一个实用的MCP工作流，解决你所在领域的实际问题：
 
 1. 确定3-4个对解决该问题有用的工具
 2. 创建一个工作流图，展示这些工具如何交互
@@ -269,4 +269,4 @@ Azure API管理是保护MCP服务器的绝佳方案。思路是在你的MCP服�
 下一章：[高级主题](../05-AdvancedTopics/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始语言的原文应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始语言的原文应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T22:55:03+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:17:24+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "fi"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 Käytännön toteutus on se vaihe, jossa Model Context Protocolin (MCP) voima konkretisoituu. Vaikka MCP:n teorian ja arkkitehtuurin ymmärtäminen on tärkeää, todellinen arvo syntyy, kun sovellat näitä käsitteitä rakentaaksesi, testataksesi ja ottaaksesi käyttöön ratkaisuja, jotka ratkaisevat todellisia ongelmia. Tämä luku yhdistää käsitteellisen tiedon ja käytännön kehityksen, ohjaten sinua MCP-pohjaisten sovellusten toteuttamisessa.
 
-Olitpa sitten kehittämässä älykkäitä avustajia, integroimassa tekoälyä liiketoimintaprosesseihin tai rakentamassa räätälöityjä työkaluja datankäsittelyyn, MCP tarjoaa joustavan perustan. Sen kieliriippumaton rakenne ja viralliset SDK:t suosituimmille ohjelmointikielille tekevät siitä helposti lähestyttävän laajalle kehittäjäjoukolle. Näitä SDK:ita hyödyntämällä voit nopeasti prototyypittää, kehittää ja skaalata ratkaisuja eri alustoilla ja ympäristöissä.
+Olitpa sitten kehittämässä älykkäitä avustajia, integroimassa tekoälyä liiketoimintaprosesseihin tai rakentamassa räätälöityjä työkaluja datankäsittelyyn, MCP tarjoaa joustavan perustan. Sen kieliriippumaton rakenne ja viralliset SDK:t suosituimmille ohjelmointikielille tekevät siitä helposti lähestyttävän monenlaisille kehittäjille. Hyödyntämällä näitä SDK:ita voit nopeasti prototyypittää, kehittää ja skaalata ratkaisuja eri alustoilla ja ympäristöissä.
 
-Seuraavissa osioissa löydät käytännön esimerkkejä, koodinäytteitä ja käyttöönotto-strategioita, jotka näyttävät, miten MCP toteutetaan C#:lla, Javalla, TypeScriptillä, JavaScriptillä ja Pythonilla. Opit myös, miten MCP-palvelimia virheenkorjataan ja testataan, hallitaan API-rajapintoja ja otetaan ratkaisuja käyttöön pilvessä Azurea hyödyntäen. Nämä käytännön materiaalit on suunniteltu nopeuttamaan oppimistasi ja auttamaan sinua rakentamaan luotettavia, tuotantovalmiita MCP-sovelluksia itsevarmasti.
+Seuraavissa osioissa löydät käytännön esimerkkejä, koodinäytteitä ja käyttöönotto-strategioita, jotka näyttävät, miten MCP toteutetaan C#:lla, Javalla, TypeScriptillä, JavaScriptillä ja Pythonilla. Opit myös, miten MCP-palvelimia virheenkorjataan ja testataan, hallitaan API-rajapintoja ja otetaan ratkaisuja käyttöön pilvessä Azurea hyödyntäen. Nämä käytännön materiaalit on suunniteltu nopeuttamaan oppimistasi ja auttamaan sinua rakentamaan luotettavia, tuotantovalmiita MCP-sovelluksia.
 
 ## Yleiskatsaus
 
@@ -38,7 +38,7 @@ Model Context Protocol tarjoaa viralliset SDK:t useille kielille:
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
 
-## Työskentely MCP SDK:iden kanssa
+## MCP SDK:iden käyttö
 
 Tässä osiossa on käytännön esimerkkejä MCP:n toteutuksesta useilla ohjelmointikielillä. Löydät esimerkkikoodit `samples`-hakemistosta, joka on järjestetty kielittäin.
 
@@ -75,7 +75,7 @@ Kehotteet ovat mallipohjaisia viestejä ja työnkulkuja käyttäjille:
 Työkalut ovat toimintoja, joita tekoälymalli voi suorittaa:
 - Datan käsittelyyn liittyvät apuvälineet
 - Ulkoiset API-integraatiot
-- Laskennalliset toiminnot
+- Laskentakyvyt
 - Hakutoiminnot
 
 ## Esimerkkitoteutukset: C#
@@ -83,8 +83,8 @@ Työkalut ovat toimintoja, joita tekoälymalli voi suorittaa:
 Virallinen C# SDK -repositorio sisältää useita esimerkkitoteutuksia, jotka havainnollistavat MCP:n eri osa-alueita:
 
 - **Perus MCP Client**: Yksinkertainen esimerkki MCP-asiakkaan luomisesta ja työkalujen kutsumisesta
-- **Perus MCP Server**: Minimipalvelimen toteutus perus työkalurekisteröinnillä
-- **Edistynyt MCP Server**: Täysimittainen palvelin työkalurekisteröinnillä, autentikoinnilla ja virheenkäsittelyllä
+- **Perus MCP Server**: Minimipalvelimen toteutus perus työkalujen rekisteröinnillä
+- **Edistynyt MCP Server**: Täysimittainen palvelin työkalujen rekisteröinnillä, autentikoinnilla ja virheenkäsittelyllä
 - **ASP.NET-integraatio**: Esimerkkejä ASP.NET Core -integraatiosta
 - **Työkalujen toteutusmallit**: Erilaisia malleja työkalujen toteuttamiseen eri monimutkaisuustasoilla
 
@@ -125,13 +125,13 @@ Täydellinen JavaScript-esimerkki löytyy [JavaScript-esimerkistä](samples/java
 
 ## Esimerkkitoteutus: Python
 
-Python SDK tarjoaa pythonmaisen lähestymistavan MCP:n toteutukseen erinomaisilla ML-kehysintegraatioilla.
+Python SDK tarjoaa pythonmaisen tavan toteuttaa MCP erinomaisilla ML-kehysintegraatioilla.
 
 ### Keskeiset ominaisuudet
 
 - Async/await-tuki asyncio-kirjastolla
-- Flask- ja FastAPI-integraatio
-- Yksinkertainen työkalurekisteröinti
+- FastAPI-integraatio
+- Yksinkertainen työkalujen rekisteröinti
 - Natiivi integraatio suosittuihin ML-kirjastoihin
 
 Täydellinen Python-esimerkki löytyy [Python-esimerkistä](samples/python/README.md) samples-hakemistosta.
@@ -154,10 +154,10 @@ Katso, miten valtuutusprosessi tapahtuu alla olevassa kuvassa:
 
 ![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true) 
 
-Kuvassa tapahtuu seuraavaa:
+Edellä olevassa kuvassa tapahtuu seuraavaa:
 
 - Todennus/valtuutus tapahtuu Microsoft Entran avulla.
-- Azure API Management toimii porttina ja käyttää politiikkoja liikenteen ohjaamiseen ja hallintaan.
+- Azure API Management toimii porttina ja käyttää politiikkoja liikenteen ohjaukseen ja hallintaan.
 - Azure Monitor kirjaa kaikki pyynnöt jatkoanalyysiä varten.
 
 #### Valtuutusprosessi
@@ -166,9 +166,9 @@ Katsotaan valtuutusprosessia tarkemmin:
 
 ![Sequence Diagram](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
 
-#### MCP:n valtuutusspesifikaatio
+#### MCP-valtuutuksen määrittely
 
-Lue lisää [MCP Authorization -spesifikaatiosta](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
+Lue lisää [MCP Authorization -määrittelystä](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
 
 ## Etä-MCP-palvelimen käyttöönotto Azureen
 
@@ -191,7 +191,7 @@ Katsotaan, voimmeko ottaa käyttöön aiemmin mainitun esimerkin:
     azd up
     ```
 
-    Tämä komento ottaa käyttöön kaikki pilviresurssit Azureen.
+    Tämä komento ottaa käyttöön kaikki pilviresurssit Azureen
 
 ### Palvelimen testaus MCP Inspectorilla
 
@@ -203,11 +203,11 @@ Katsotaan, voimmeko ottaa käyttöön aiemmin mainitun esimerkin:
 
     Näet käyttöliittymän, joka näyttää tältä:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.fi.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png) 
 
 1. CTRL-klikkaa ladataksesi MCP Inspector -verkkosovelluksen sovelluksen näyttämästä URL-osoitteesta (esim. http://127.0.0.1:6274/#resources)
 1. Aseta siirtotavaksi `SSE`
-1. Aseta URL osoittamaan käynnissä olevan API Managementin SSE-päätepisteeseen, joka näkyy `azd up` -komennon jälkeen, ja **Yhdistä**:
+1. Aseta URL osoittamaan käynnissä olevan API Managementin SSE-päätteeseen, joka näkyy `azd up` -komennon jälkeen, ja **Yhdistä**:
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
@@ -223,7 +223,7 @@ Jos kaikki vaiheet onnistuivat, olet nyt yhteydessä MCP-palvelimeen ja olet pys
 
 Esimerkit tarjoavat täydellisen ratkaisun, joka mahdollistaa kehittäjille:
 
-- Paikallisen kehityksen ja ajon: MCP-palvelimen kehittäminen ja virheenkorjaus paikallisella koneella
+- Paikallisen rakentamisen ja ajon: MCP-palvelimen kehittäminen ja virheenkorjaus paikallisella koneella
 - Pilveen käyttöönoton: Helppo pilvikäyttöönotto yksinkertaisella azd up -komennolla
 - Yhteyden asiakkaista: Yhteys MCP-palvelimeen eri asiakasohjelmista, mukaan lukien VS Coden Copilot agent -tila ja MCP Inspector -työkalu
 
@@ -231,7 +231,7 @@ Esimerkit tarjoavat täydellisen ratkaisun, joka mahdollistaa kehittäjille:
 
 - Turvallisuus suunnittelusta lähtien: MCP-palvelin on suojattu avaimilla ja HTTPS:llä
 - Autentikointivaihtoehdot: Tukee OAuth:ta sisäänrakennetulla autentikoinnilla ja/tai API Managementilla
-- Verkkoympäristön eristäminen: Mahdollistaa verkkoympäristön eristämisen Azure Virtual Networks (VNET) avulla
+- Verkkoympäristön eristäminen: Mahdollistaa verkkoeristyksen Azure Virtual Networks (VNET) avulla
 - Serverless-arkkitehtuuri: Hyödyntää Azure Functionsia skaalautuvaan, tapahtumapohjaiseen suoritukseen
 - Paikallinen kehitys: Laaja tuki paikalliselle kehitykselle ja virheenkorjaukselle
 - Yksinkertainen käyttöönotto: Virtaviivainen käyttöönotto Azureen
@@ -269,4 +269,4 @@ Suunnittele käytännön MCP-työnkulku, joka ratkaisee todellisen ongelman omal
 Seuraava: [Edistyneet aiheet](../05-AdvancedTopics/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

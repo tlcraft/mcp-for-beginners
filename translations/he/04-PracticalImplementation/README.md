@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T22:55:52+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:18:25+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "he"
 }
 -->
 # יישום מעשי
 
-היישום המעשי הוא המקום שבו כוחו של Model Context Protocol (MCP) מתממש במציאות. בעוד שהבנת התיאוריה והארכיטקטורה שמאחורי MCP חשובה, הערך האמיתי מתגלה כשאתה מיישם את המושגים האלה לבניית, בדיקה ופריסה של פתרונות שפועלים בבעיות אמיתיות. פרק זה מהווה גשר בין הידע התיאורטי לפיתוח מעשי, ומנחה אותך בתהליך הבאת יישומים מבוססי MCP לחיים.
+היישום המעשי הוא המקום שבו כוחו של Model Context Protocol (MCP) הופך למוחשי. בעוד שהבנת התיאוריה והארכיטקטורה שמאחורי MCP חשובה, הערך האמיתי מתגלה כאשר מיישמים את המושגים האלה לבניית, בדיקה ופריסה של פתרונות שפועלים בעולם האמיתי. פרק זה גשר בין הידע התיאורטי לפיתוח מעשי, ומנחה אותך בתהליך של הבאת יישומים מבוססי MCP לחיים.
 
-בין אם אתה מפתח עוזרים חכמים, משלב AI בתהליכי עבודה עסקיים, או בונה כלים מותאמים לעיבוד נתונים, MCP מספק בסיס גמיש. העיצוב הבלתי תלוי בשפה וה-SDKs הרשמיים לשפות תכנות פופולריות הופכים אותו לנגיש למגוון רחב של מפתחים. באמצעות ניצול ה-SDKs האלה, תוכל במהירות ליצור אב-טיפוס, לבצע איטרציות ולהרחיב את הפתרונות שלך בפלטפורמות וסביבות שונות.
+בין אם אתה מפתח עוזרים חכמים, משלב AI בתהליכי עבודה עסקיים, או בונה כלים מותאמים לעיבוד נתונים, MCP מספק בסיס גמיש. העיצוב הבלתי תלוי בשפה וה-SDKs הרשמיים לשפות תכנות פופולריות הופכים אותו לנגיש למגוון רחב של מפתחים. באמצעות ניצול ה-SDKs האלה, תוכל במהירות ליצור אב-טיפוס, לחזור על הפיתוח ולהרחיב את הפתרונות שלך בפלטפורמות וסביבות שונות.
 
-בקטעים הבאים תמצא דוגמאות מעשיות, קוד לדוגמה ואסטרטגיות פריסה שמדגימות כיצד ליישם MCP ב-C#, Java, TypeScript, JavaScript ו-Python. תלמד גם כיצד לנפות שגיאות ולבדוק את שרתי MCP שלך, לנהל APIs ולפרוס פתרונות לענן באמצעות Azure. המשאבים המעשים האלה נועדו להאיץ את הלמידה שלך ולעזור לך לבנות בביטחון יישומים יציבים ומוכנים לייצור מבוססי MCP.
+בקטעים הבאים תמצא דוגמאות מעשיות, קוד לדוגמה ואסטרטגיות פריסה שמדגימות כיצד ליישם MCP ב-C#, Java, TypeScript, JavaScript ו-Python. תלמד גם כיצד לנפות שגיאות ולבדוק את שרתי ה-MCP שלך, לנהל APIs ולפרוס פתרונות לענן באמצעות Azure. המשאבים המעשים האלה נועדו להאיץ את הלמידה שלך ולעזור לך לבנות בביטחון יישומים יציבים ומוכנים לייצור מבוססי MCP.
 
 ## סקירה כללית
 
@@ -56,7 +56,7 @@ Model Context Protocol מציע SDKs רשמיים למספר שפות:
 
 ## תכונות מרכזיות של השרת
 
-שרתי MCP יכולים ליישם כל שילוב מהתכונות הבאות:
+שרתי MCP יכולים ליישם כל שילוב של התכונות הבאות:
 
 ### משאבים  
 משאבים מספקים הקשר ונתונים לשימוש המשתמש או מודל ה-AI:  
@@ -72,7 +72,7 @@ Model Context Protocol מציע SDKs רשמיים למספר שפות:
 - מבני דיאלוג מיוחדים  
 
 ### כלים  
-כלים הם פונקציות שהמודל מבצע:  
+כלים הם פונקציות שהמודל יכול לבצע:  
 - כלי עיבוד נתונים  
 - אינטגרציות עם API חיצוניים  
 - יכולות חישוביות  
@@ -88,16 +88,16 @@ Model Context Protocol מציע SDKs רשמיים למספר שפות:
 - **אינטגרציה עם ASP.NET**: דוגמאות המראות אינטגרציה עם ASP.NET Core  
 - **דפוסי יישום כלים**: דפוסים שונים ליישום כלים ברמות מורכבות שונות  
 
-ה-SDK של MCP ב-C# נמצא בבטא וייתכנו שינויים ב-APIs. נעדכן את הבלוג באופן שוטף ככל שה-SDK יתפתח.
+ה-SDK של MCP ב-C# נמצא בבטא ו-APIs עשויים להשתנות. נעדכן את הבלוג באופן שוטף ככל שה-SDK יתפתח.
 
 ### תכונות מרכזיות  
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
 
 - בניית [שרת MCP ראשון](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
 
-לקבלת דוגמאות יישום מלאות ב-C#, בקר ב-[ריפוזיטורי דוגמאות ה-SDK הרשמי של C#](https://github.com/modelcontextprotocol/csharp-sdk)
+למשאבי יישום מלאים ב-C#, בקר ב-[ריפוזיטורי הדוגמאות הרשמי של C#](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## דוגמא ליישום: Java
+## דוגמת יישום: Java
 
 ה-SDK של Java מציע אפשרויות יישום MCP חזקות עם תכונות ברמת ארגונית.
 
@@ -108,9 +108,9 @@ Model Context Protocol מציע SDKs רשמיים למספר שפות:
 - תמיכה בתכנות ריאקטיבי  
 - טיפול שגיאות מקיף  
 
-לדוגמה מלאה ליישום ב-Java, ראה [דוגמת Java](samples/java/containerapp/README.md) בתיקיית הדוגמאות.
+לדוגמה מלאה של יישום Java, ראה [דוגמת Java](samples/java/containerapp/README.md) בתיקיית הדוגמאות.
 
-## דוגמא ליישום: JavaScript
+## דוגמת יישום: JavaScript
 
 ה-SDK של JavaScript מספק גישה קלה וגמישה ליישום MCP.
 
@@ -121,24 +121,24 @@ Model Context Protocol מציע SDKs רשמיים למספר שפות:
 - אינטגרציה פשוטה עם Express ומסגרות נוספות  
 - תמיכה ב-WebSocket לזרימה  
 
-לדוגמה מלאה ליישום ב-JavaScript, ראה [דוגמת JavaScript](samples/javascript/README.md) בתיקיית הדוגמאות.
+לדוגמה מלאה של יישום JavaScript, ראה [דוגמת JavaScript](samples/javascript/README.md) בתיקיית הדוגמאות.
 
-## דוגמא ליישום: Python
+## דוגמת יישום: Python
 
 ה-SDK של Python מציע גישה פייתונית ליישום MCP עם אינטגרציות מצוינות למסגרות ML.
 
 ### תכונות מרכזיות
 
 - תמיכה ב-async/await עם asyncio  
-- אינטגרציה עם Flask ו-FastAPI  
+- אינטגרציה עם FastAPI  
 - רישום כלים פשוט  
 - אינטגרציה טבעית עם ספריות ML פופולריות  
 
-לדוגמה מלאה ליישום ב-Python, ראה [דוגמת Python](samples/python/README.md) בתיקיית הדוגמאות.
+לדוגמה מלאה של יישום Python, ראה [דוגמת Python](samples/python/README.md) בתיקיית הדוגמאות.
 
 ## ניהול API
 
-Azure API Management היא פתרון מצוין לאבטחת שרתי MCP. הרעיון הוא להציב מופע Azure API Management מול שרת ה-MCP שלך ולתת לו לנהל תכונות שאתה צפוי להזדקק להן כמו:
+Azure API Management היא פתרון מצוין לאבטחת שרתי MCP. הרעיון הוא למקם מופע Azure API Management מול שרת ה-MCP שלך ולתת לו לנהל תכונות שאתה צפוי להזדקק להן כמו:
 
 - הגבלת קצב  
 - ניהול טוקנים  
@@ -150,27 +150,27 @@ Azure API Management היא פתרון מצוין לאבטחת שרתי MCP. ה�
 
 הנה דוגמת Azure שעושה בדיוק את זה, כלומר [יצירת שרת MCP ואבטחתו עם Azure API Management](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
 
-ראה כיצד מתבצע תהליך האישור בתמונה למטה:
+ראה כיצד מתבצע תהליך האישור בתמונה הבאה:
 
 ![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true) 
 
 בתמונה שלמעלה מתרחשים הדברים הבאים:
 
 - אימות/הרשאה מתבצעים באמצעות Microsoft Entra.  
-- Azure API Management משמש כשער ומנהל תעבורה באמצעות מדיניות.  
+- Azure API Management פועל כשער ומשתמש במדיניות לניהול והכוונת התעבורה.  
 - Azure Monitor רושם את כל הבקשות לניתוח נוסף.  
 
-#### תהליך האישור
+#### תהליך ההרשאה
 
-בואו נבחן את תהליך האישור ביתר פירוט:
+בוא נבחן את תהליך ההרשאה ביתר פירוט:
 
 ![Sequence Diagram](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
 
-#### מפרט האישור של MCP
+#### מפרט הרשאת MCP
 
-למידע נוסף על [מפרט האישור של MCP](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
+למידע נוסף על [מפרט ההרשאה של MCP](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
 
-## פריסת שרת MCP מרוחק ב-Azure
+## פריסת שרת MCP מרוחק ל-Azure
 
 בוא נראה אם נוכל לפרוס את הדוגמה שהזכרנו קודם:
 
@@ -185,7 +185,7 @@ Azure API Management היא פתרון מצוין לאבטחת שרתי MCP. ה�
     * אם אתה משתמש ב-Azure CLI, הרץ `az provider register --namespace Microsoft.App --wait`.  
     * אם אתה משתמש ב-Azure PowerShell, הרץ `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. לאחר מכן הרץ `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` לאחר זמן מה כדי לבדוק אם הרישום הושלם.  
 
-2. הרץ את הפקודה [azd](https://aka.ms/azd) כדי להקים את שירות ניהול ה-API, אפליקציית הפונקציות (עם הקוד) וכל שאר המשאבים הנדרשים ב-Azure
+2. הרץ את הפקודה [azd](https://aka.ms/azd) כדי להקצות את שירות ניהול ה-API, אפליקציית הפונקציות (עם הקוד) וכל שאר המשאבים הנדרשים ב-Azure
 
     ```shell
     azd up
@@ -203,23 +203,23 @@ Azure API Management היא פתרון מצוין לאבטחת שרתי MCP. ה�
 
     תראה ממשק דומה ל:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.he.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png) 
 
 1. לחץ עם CTRL כדי לטעון את אפליקציית הווב של MCP Inspector מה-URL שמוצג על ידי האפליקציה (למשל http://127.0.0.1:6274/#resources)  
-1. הגדר את סוג התעבורה ל-`SSE`  
+1. הגדר את סוג ההעברה ל-`SSE`  
 1. הגדר את ה-URL לנקודת הקצה SSE של ניהול ה-API שלך שמוצגת לאחר `azd up` ולחץ **Connect**:
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-5. **רשימת כלים**. לחץ על כלי והפעל אותו באמצעות **Run Tool**.  
+5. **רשימת כלים**. לחץ על כלי ו**הרץ את הכלי**.  
 
 אם כל השלבים בוצעו בהצלחה, כעת אתה מחובר לשרת MCP והצלחת להפעיל כלי.
 
-## שרתי MCP עבור Azure
+## שרתי MCP ל-Azure
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): סט ריפוזיטוריים זה הוא תבנית התחלה מהירה לבניית ופריסת שרתי MCP מרוחקים מותאמים אישית באמצעות Azure Functions עם Python, C# .NET או Node/TypeScript.
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): אוסף ריפוזיטוריים זה הוא תבנית התחלה מהירה לבניית ופריסת שרתי MCP מרוחקים מותאמים אישית באמצעות Azure Functions עם Python, C# .NET או Node/TypeScript.
 
 הדוגמאות מספקות פתרון מלא שמאפשר למפתחים:
 
@@ -230,7 +230,7 @@ Azure API Management היא פתרון מצוין לאבטחת שרתי MCP. ה�
 ### תכונות מרכזיות:
 
 - אבטחה כברירת מחדל: שרת MCP מאובטח באמצעות מפתחות ו-HTTPS  
-- אפשרויות אימות: תמיכה ב-OAuth עם אימות מובנה ו/או ניהול API  
+- אפשרויות אימות: תומך ב-OAuth באמצעות אימות מובנה ו/או ניהול API  
 - בידוד רשת: מאפשר בידוד רשת באמצעות Azure Virtual Networks (VNET)  
 - ארכיטקטורה ללא שרת: משתמש ב-Azure Functions לביצוע סקלאבילי ומונחה אירועים  
 - פיתוח מקומי: תמיכה מקיפה בפיתוח וניפוי שגיאות מקומי  
@@ -249,7 +249,7 @@ Azure API Management היא פתרון מצוין לאבטחת שרתי MCP. ה�
 - SDKs של MCP מספקים כלים ספציפיים לשפה ליישום פתרונות MCP יציבים  
 - תהליך ניפוי השגיאות והבדיקה קריטי ליישומים אמינים  
 - תבניות פרומפט לשימוש חוזר מאפשרות אינטראקציות AI עקביות  
-- תהליכי עבודה מתוכננים היטב יכולים לתזמר משימות מורכבות עם כלים מרובים  
+- תהליכי עבודה מתוכננים היטב יכולים לתזמר משימות מורכבות באמצעות כלים מרובים  
 - יישום פתרונות MCP דורש התייחסות לאבטחה, ביצועים וטיפול בשגיאות  
 
 ## תרגיל
@@ -269,4 +269,4 @@ Azure API Management היא פתרון מצוין לאבטחת שרתי MCP. ה�
 הבא: [נושאים מתקדמים](../05-AdvancedTopics/README.md)
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. יש להתייחס למסמך המקורי בשפת המקור כמקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

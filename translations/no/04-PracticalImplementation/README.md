@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T22:54:40+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:16:57+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "no"
 }
@@ -95,7 +95,7 @@ MCP C# SDK er i preview, og API-er kan endres. Vi vil kontinuerlig oppdatere den
 
 - Bygg din [første MCP Server](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
 
-For komplette C# implementeringseksempler, besøk det [offisielle C# SDK-eksempelsamlingen](https://github.com/modelcontextprotocol/csharp-sdk)
+For komplette C# implementeringseksempler, besøk [det offisielle C# SDK-eksempelsrepositoryet](https://github.com/modelcontextprotocol/csharp-sdk)
 
 ## Eksempelimplementering: Java
 
@@ -130,9 +130,9 @@ Python SDK tilbyr en Python-vennlig tilnærming til MCP-implementering med utmer
 ### Nøkkelfunksjoner
 
 - Async/await-støtte med asyncio
-- Integrasjon med Flask og FastAPI
+- FastAPI-integrasjon
 - Enkel verktøyregistrering
-- Native integrasjon med populære ML-biblioteker
+- Naturlig integrasjon med populære ML-biblioteker
 
 For et komplett Python-implementeringseksempel, se [Python-eksempel](samples/python/README.md) i samples-mappen.
 
@@ -203,7 +203,7 @@ La oss se om vi kan distribuere eksemplet vi nevnte tidligere:
 
     Du bør se et grensesnitt som ligner på:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.no.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png) 
 
 1. CTRL-klikk for å laste MCP Inspector webappen fra URL-en som vises i appen (f.eks. http://127.0.0.1:6274/#resources)
 1. Sett transporttypen til `SSE`
@@ -215,13 +215,13 @@ La oss se om vi kan distribuere eksemplet vi nevnte tidligere:
 
 5. **List Tools**. Klikk på et verktøy og **Run Tool**.  
 
-Hvis alle stegene har fungert, skal du nå være koblet til MCP-serveren og ha klart å kalle et verktøy.
+Hvis alle trinnene har fungert, skal du nå være koblet til MCP-serveren og ha klart å kalle et verktøy.
 
 ## MCP-servere for Azure
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Dette settet med repositorier er en raskstartmal for å bygge og distribuere tilpassede eksterne MCP (Model Context Protocol) servere ved bruk av Azure Functions med Python, C# .NET eller Node/TypeScript.
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Dette settet med repositories er en raskstartmal for å bygge og distribuere tilpassede eksterne MCP (Model Context Protocol) servere ved bruk av Azure Functions med Python, C# .NET eller Node/TypeScript.
 
-Eksemplene tilbyr en komplett løsning som lar utviklere:
+Eksemplene gir en komplett løsning som lar utviklere:
 
 - Bygge og kjøre lokalt: Utvikle og feilsøke en MCP-server på en lokal maskin
 - Distribuere til Azure: Enkel distribusjon til skyen med en enkel azd up-kommando
@@ -254,7 +254,7 @@ Repositoryet inkluderer alle nødvendige konfigurasjonsfiler, kildekode og infra
 
 ## Øvelse
 
-Design en praktisk MCP-arbeidsflyt som løser et reelt problem i ditt domene:
+Design en praktisk MCP-arbeidsflyt som løser et reelt problem innen ditt fagområde:
 
 1. Identifiser 3-4 verktøy som vil være nyttige for å løse dette problemet
 2. Lag et arbeidsflytdiagram som viser hvordan disse verktøyene samhandler
