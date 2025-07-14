@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T22:52:10+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:13:55+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "pl"
 }
 -->
 # Praktyczna implementacja
 
-Praktyczna implementacja to moment, w którym moc Model Context Protocol (MCP) staje się namacalna. Choć zrozumienie teorii i architektury MCP jest ważne, prawdziwa wartość pojawia się, gdy zastosujesz te koncepcje do budowy, testowania i wdrażania rozwiązań rozwiązujących rzeczywiste problemy. Ten rozdział łączy wiedzę koncepcyjną z praktycznym programowaniem, prowadząc Cię przez proces tworzenia aplikacji opartych na MCP.
+Praktyczna implementacja to moment, w którym moc Model Context Protocol (MCP) staje się namacalna. Choć zrozumienie teorii i architektury MCP jest ważne, prawdziwa wartość pojawia się, gdy zastosujesz te koncepcje do budowy, testowania i wdrażania rozwiązań rozwiązujących rzeczywiste problemy. Ten rozdział łączy wiedzę koncepcyjną z praktycznym rozwojem, prowadząc Cię przez proces tworzenia aplikacji opartych na MCP.
 
 Niezależnie od tego, czy tworzysz inteligentnych asystentów, integrujesz AI z procesami biznesowymi, czy budujesz niestandardowe narzędzia do przetwarzania danych, MCP zapewnia elastyczną podstawę. Jego językowo-neutralny design oraz oficjalne SDK dla popularnych języków programowania sprawiają, że jest dostępny dla szerokiego grona deweloperów. Wykorzystując te SDK, możesz szybko prototypować, iterować i skalować swoje rozwiązania na różnych platformach i środowiskach.
 
-W kolejnych sekcjach znajdziesz praktyczne przykłady, przykładowy kod oraz strategie wdrożenia, które pokazują, jak zaimplementować MCP w C#, Java, TypeScript, JavaScript i Python. Dowiesz się także, jak debugować i testować serwery MCP, zarządzać API oraz wdrażać rozwiązania w chmurze za pomocą Azure. Te praktyczne materiały mają na celu przyspieszyć Twoją naukę i pomóc Ci pewnie budować solidne, gotowe do produkcji aplikacje MCP.
+W kolejnych sekcjach znajdziesz praktyczne przykłady, przykładowy kod oraz strategie wdrożeniowe pokazujące, jak zaimplementować MCP w C#, Java, TypeScript, JavaScript i Python. Dowiesz się także, jak debugować i testować serwery MCP, zarządzać API oraz wdrażać rozwiązania w chmurze za pomocą Azure. Te praktyczne materiały mają na celu przyspieszyć Twoją naukę i pomóc Ci pewnie budować solidne, gotowe do produkcji aplikacje MCP.
 
 ## Przegląd
 
@@ -52,26 +52,26 @@ Repozytorium zawiera [przykładowe implementacje](../../../04-PracticalImplement
 - [JavaScript](./samples/javascript/README.md)
 - [Python](./samples/python/README.md)
 
-Każdy przykład demonstruje kluczowe koncepcje MCP oraz wzorce implementacji dla danego języka i ekosystemu.
+Każdy przykład demonstruje kluczowe koncepcje MCP oraz wzorce implementacyjne dla danego języka i ekosystemu.
 
 ## Podstawowe funkcje serwera
 
 Serwery MCP mogą implementować dowolne połączenie poniższych funkcji:
 
-### Resources
+### Resources  
 Resources dostarczają kontekst i dane do wykorzystania przez użytkownika lub model AI:
 - Repozytoria dokumentów
 - Bazy wiedzy
 - Źródła danych strukturalnych
 - Systemy plików
 
-### Prompts
+### Prompts  
 Prompts to szablonowe wiadomości i workflow dla użytkowników:
 - Wstępnie zdefiniowane szablony konwersacji
 - Wzorce prowadzonej interakcji
 - Specjalistyczne struktury dialogowe
 
-### Tools
+### Tools  
 Tools to funkcje, które model AI może wykonać:
 - Narzędzia do przetwarzania danych
 - Integracje z zewnętrznymi API
@@ -88,9 +88,9 @@ Oficjalne repozytorium C# SDK zawiera kilka przykładów pokazujących różne a
 - **Integracja z ASP.NET**: Przykłady integracji z ASP.NET Core
 - **Wzorce implementacji narzędzi**: Różne wzorce implementacji narzędzi o różnym stopniu złożoności
 
-SDK MCP dla C# jest w fazie podglądu i API mogą ulec zmianie. Będziemy na bieżąco aktualizować ten blog wraz z rozwojem SDK.
+SDK MCP dla C# jest w wersji preview i API mogą ulec zmianie. Będziemy na bieżąco aktualizować ten blog wraz z rozwojem SDK.
 
-### Kluczowe funkcje 
+### Kluczowe funkcje  
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
 
 - Budowa [pierwszego serwera MCP](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
@@ -112,11 +112,11 @@ Pełny przykład implementacji w Javie znajdziesz w [Java sample](samples/java/c
 
 ## Przykładowa implementacja: JavaScript
 
-JavaScript SDK oferuje lekkie i elastyczne podejście do implementacji MCP.
+JavaScript SDK zapewnia lekkie i elastyczne podejście do implementacji MCP.
 
 ### Kluczowe funkcje
 
-- Wsparcie dla Node.js i przeglądarek
+- Wsparcie Node.js i przeglądarek
 - API oparte na Promise
 - Łatwa integracja z Express i innymi frameworkami
 - Wsparcie WebSocket do streamingu
@@ -130,7 +130,7 @@ Python SDK oferuje pythoniczne podejście do implementacji MCP z doskonałą int
 ### Kluczowe funkcje
 
 - Wsparcie async/await z asyncio
-- Integracja z Flask i FastAPI
+- Integracja z FastAPI
 - Prosta rejestracja narzędzi
 - Natychmiastowa integracja z popularnymi bibliotekami ML
 
@@ -138,7 +138,7 @@ Pełny przykład implementacji w Pythonie znajdziesz w [Python sample](samples/p
 
 ## Zarządzanie API
 
-Azure API Management to świetne rozwiązanie, aby zabezpieczyć serwery MCP. Pomysł polega na umieszczeniu instancji Azure API Management przed Twoim serwerem MCP, która zajmie się funkcjami, które prawdopodobnie będziesz chciał mieć, takimi jak:
+Azure API Management to świetne rozwiązanie, które pozwala zabezpieczyć serwery MCP. Pomysł polega na umieszczeniu instancji Azure API Management przed Twoim serwerem MCP, która zajmie się funkcjami, które prawdopodobnie będziesz chciał mieć, takimi jak:
 
 - ograniczanie liczby żądań (rate limiting)
 - zarządzanie tokenami
@@ -157,7 +157,7 @@ Zobacz, jak przebiega proces autoryzacji na poniższym obrazku:
 Na powyższym obrazku dzieje się:
 
 - Uwierzytelnianie/autoryzacja odbywa się za pomocą Microsoft Entra.
-- Azure API Management działa jako brama i używa polityk do kierowania i zarządzania ruchem.
+- Azure API Management działa jako brama i wykorzystuje polityki do kierowania i zarządzania ruchem.
 - Azure Monitor rejestruje wszystkie żądania do dalszej analizy.
 
 #### Przebieg autoryzacji
@@ -203,11 +203,11 @@ Sprawdźmy, czy możemy wdrożyć wspomniany wcześniej przykład:
 
     Powinieneś zobaczyć interfejs podobny do:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.pl.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png) 
 
-1. Kliknij CTRL, aby załadować aplikację webową MCP Inspector z wyświetlonego adresu URL (np. http://127.0.0.1:6274/#resources)
+1. Kliknij CTRL i otwórz aplikację webową MCP Inspector z adresu URL wyświetlonego przez aplikację (np. http://127.0.0.1:6274/#resources)
 1. Ustaw typ transportu na `SSE`
-1. Ustaw URL na działający punkt końcowy API Management SSE wyświetlony po `azd up` i kliknij **Connect**:
+1. Ustaw URL na swój działający punkt końcowy API Management SSE wyświetlony po `azd up` i kliknij **Connect**:
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
@@ -219,7 +219,7 @@ Jeśli wszystkie kroki przebiegły pomyślnie, powinieneś być teraz połączon
 
 ## Serwery MCP dla Azure
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Ten zestaw repozytoriów to szablon szybkiego startu do budowy i wdrażania niestandardowych zdalnych serwerów MCP (Model Context Protocol) przy użyciu Azure Functions z Python, C# .NET lub Node/TypeScript.
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Ten zestaw repozytoriów to szablon szybkiego startu do budowy i wdrażania niestandardowych zdalnych serwerów MCP (Model Context Protocol) przy użyciu Azure Functions w Python, C# .NET lub Node/TypeScript.
 
 Przykłady dostarczają kompletne rozwiązanie, które pozwala deweloperom:
 
@@ -227,22 +227,22 @@ Przykłady dostarczają kompletne rozwiązanie, które pozwala deweloperom:
 - Wdrażać na Azure: łatwo wdrażać w chmurze za pomocą prostego polecenia azd up
 - Łączyć się z klientami: łączyć się z serwerem MCP z różnych klientów, w tym z trybu agenta Copilot w VS Code oraz narzędzia MCP Inspector
 
-### Kluczowe cechy:
+### Kluczowe funkcje:
 
-- Bezpieczeństwo wbudowane: serwer MCP zabezpieczony kluczami i HTTPS
+- Bezpieczeństwo od podstaw: serwer MCP jest zabezpieczony za pomocą kluczy i HTTPS
 - Opcje uwierzytelniania: obsługa OAuth z wbudowanym auth i/lub API Management
 - Izolacja sieciowa: umożliwia izolację sieciową za pomocą Azure Virtual Networks (VNET)
-- Architektura bezserwerowa: wykorzystuje Azure Functions do skalowalnego, zdarzeniowego wykonywania
+- Architektura serverless: wykorzystuje Azure Functions do skalowalnego, zdarzeniowego wykonywania
 - Lokalny rozwój: kompleksowe wsparcie dla lokalnego rozwoju i debugowania
 - Proste wdrożenie: uproszczony proces wdrożenia na Azure
 
-Repozytorium zawiera wszystkie niezbędne pliki konfiguracyjne, kod źródłowy i definicje infrastruktury, aby szybko rozpocząć implementację produkcyjnego serwera MCP.
+Repozytorium zawiera wszystkie niezbędne pliki konfiguracyjne, kod źródłowy i definicje infrastruktury, aby szybko rozpocząć implementację serwera MCP gotowego do produkcji.
 
-- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Przykładowa implementacja MCP z użyciem Azure Functions i Pythona
+- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Przykładowa implementacja MCP z użyciem Azure Functions w Pythonie
 
-- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Przykładowa implementacja MCP z użyciem Azure Functions i C# .NET
+- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Przykładowa implementacja MCP z użyciem Azure Functions w C# .NET
 
-- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Przykładowa implementacja MCP z użyciem Azure Functions i Node/TypeScript.
+- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Przykładowa implementacja MCP z użyciem Azure Functions w Node/TypeScript.
 
 ## Najważniejsze wnioski
 
@@ -269,4 +269,4 @@ Zaprojektuj praktyczny workflow MCP, który rozwiązuje rzeczywisty problem w Tw
 Następny: [Zaawansowane tematy](../05-AdvancedTopics/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

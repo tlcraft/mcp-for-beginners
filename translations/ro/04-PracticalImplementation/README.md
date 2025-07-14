@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T22:59:27+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:23:07+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "ro"
 }
@@ -17,13 +17,13 @@ Indiferent dacă dezvolți asistenți inteligenți, integrezi AI în fluxuri de 
 
 ## Prezentare generală
 
-Această lecție se concentrează pe aspectele practice ale implementării MCP în mai multe limbaje de programare. Vom explora cum să folosești SDK-urile MCP în C#, Java, TypeScript, JavaScript și Python pentru a construi aplicații robuste, a depana și testa serverele MCP și a crea resurse, prompturi și unelte reutilizabile.
+Această lecție se concentrează pe aspectele practice ale implementării MCP în mai multe limbaje de programare. Vom explora cum să folosești SDK-urile MCP în C#, Java, TypeScript, JavaScript și Python pentru a construi aplicații robuste, a depana și testa servere MCP și a crea resurse, prompturi și unelte reutilizabile.
 
 ## Obiective de învățare
 
 La finalul acestei lecții vei putea:
 - Implementa soluții MCP folosind SDK-urile oficiale în diverse limbaje de programare
-- Depana și testa serverele MCP în mod sistematic
+- Depana și testa servere MCP în mod sistematic
 - Crea și utiliza funcționalități ale serverului (Resurse, Prompturi și Unelte)
 - Proiecta fluxuri de lucru MCP eficiente pentru sarcini complexe
 - Optimiza implementările MCP pentru performanță și fiabilitate
@@ -78,9 +78,9 @@ Uneltele sunt funcții pe care modelul AI le poate executa:
 - Capacități de calcul
 - Funcționalități de căutare
 
-## Implementări de probă: C#
+## Exemple de implementare: C#
 
-Repository-ul oficial C# SDK conține mai multe implementări de probă care demonstrează diferite aspecte ale MCP:
+Repository-ul oficial C# SDK conține mai multe exemple care demonstrează diferite aspecte ale MCP:
 
 - **Client MCP de bază**: Exemplu simplu care arată cum să creezi un client MCP și să apelezi unelte
 - **Server MCP de bază**: Implementare minimală a unui server cu înregistrare simplă a uneltelor
@@ -93,11 +93,11 @@ SDK-ul MCP pentru C# este în stadiu de previzualizare și API-urile pot suferi 
 ### Funcționalități cheie
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
 
-- Construirea [primului tău server MCP](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
+- Construiește-ți [primul server MCP](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
 
 Pentru exemple complete de implementare în C#, vizitează [repository-ul oficial cu exemple C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## Implementare de probă: Implementare Java
+## Exemplu de implementare: Java
 
 SDK-ul Java oferă opțiuni robuste pentru implementarea MCP cu funcționalități de nivel enterprise.
 
@@ -110,27 +110,27 @@ SDK-ul Java oferă opțiuni robuste pentru implementarea MCP cu funcționalită�
 
 Pentru un exemplu complet de implementare Java, vezi [exemplul Java](samples/java/containerapp/README.md) din directorul de exemple.
 
-## Implementare de probă: Implementare JavaScript
+## Exemplu de implementare: JavaScript
 
 SDK-ul JavaScript oferă o abordare ușoară și flexibilă pentru implementarea MCP.
 
 ### Funcționalități cheie
 
 - Suport pentru Node.js și browser
-- API bazat pe Promises
+- API bazat pe Promise
 - Integrare ușoară cu Express și alte framework-uri
 - Suport WebSocket pentru streaming
 
 Pentru un exemplu complet de implementare JavaScript, vezi [exemplul JavaScript](samples/javascript/README.md) din directorul de exemple.
 
-## Implementare de probă: Implementare Python
+## Exemplu de implementare: Python
 
 SDK-ul Python oferă o abordare pythonică pentru implementarea MCP, cu integrări excelente pentru framework-uri ML.
 
 ### Funcționalități cheie
 
 - Suport async/await cu asyncio
-- Integrare cu Flask și FastAPI
+- Integrare FastAPI
 - Înregistrare simplă a uneltelor
 - Integrare nativă cu biblioteci ML populare
 
@@ -203,17 +203,17 @@ Să vedem dacă putem implementa exemplul menționat anterior:
 
     Ar trebui să vezi o interfață similară cu:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ro.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png) 
 
-1. Apasă CTRL și fă click pentru a încărca aplicația web MCP Inspector de la URL-ul afișat de aplicație (ex. http://127.0.0.1:6274/#resources)
+1. Apasă CTRL și click pentru a încărca aplicația web MCP Inspector de la URL-ul afișat de aplicație (ex. http://127.0.0.1:6274/#resources)
 1. Setează tipul de transport la `SSE`
-1. Setează URL-ul către endpoint-ul SSE al API Management afișat după comanda `azd up` și **Conectează-te**:
+1. Setează URL-ul la endpoint-ul SSE al API Management afișat după comanda `azd up` și **Conectează-te**:
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-5. **Listează uneltele**. Apasă pe o unealtă și **Rulează unealta**.  
+5. **Listă unelte**. Apasă pe o unealtă și **Rulează unealta**.  
 
 Dacă toate pașii au fost urmați corect, acum ar trebui să fii conectat la serverul MCP și să fi reușit să apelezi o unealtă.
 
@@ -223,7 +223,7 @@ Dacă toate pașii au fost urmați corect, acum ar trebui să fii conectat la se
 
 Exemplele oferă o soluție completă care permite dezvoltatorilor să:
 
-- Construiască și ruleze local: Dezvoltă și depanează un server MCP pe o mașină locală
+- Construiască și ruleze local: Dezvoltă și depanează un server MCP pe mașina locală
 - Implementeze în Azure: Implementează ușor în cloud cu o simplă comandă azd up
 - Se conecteze de la clienți: Conectează-te la serverul MCP din diverse clienți, inclusiv modul agent Copilot din VS Code și instrumentul MCP Inspector
 
@@ -231,18 +231,18 @@ Exemplele oferă o soluție completă care permite dezvoltatorilor să:
 
 - Securitate prin design: Serverul MCP este securizat folosind chei și HTTPS
 - Opțiuni de autentificare: Suportă OAuth folosind autentificare încorporată și/sau API Management
-- Izolare de rețea: Permite izolarea rețelei folosind Azure Virtual Networks (VNET)
+- Izolare de rețea: Permite izolare de rețea folosind Azure Virtual Networks (VNET)
 - Arhitectură serverless: Folosește Azure Functions pentru execuție scalabilă, bazată pe evenimente
 - Dezvoltare locală: Suport complet pentru dezvoltare și depanare locală
-- Implementare simplificată: Proces simplificat de implementare în Azure
+- Implementare simplă: Proces simplificat de implementare în Azure
 
 Repository-ul include toate fișierele de configurare necesare, codul sursă și definițiile infrastructurii pentru a începe rapid cu o implementare MCP gata pentru producție.
 
-- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Implementare de probă MCP folosind Azure Functions cu Python
+- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Implementare exemplu MCP folosind Azure Functions cu Python
 
-- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Implementare de probă MCP folosind Azure Functions cu C# .NET
+- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Implementare exemplu MCP folosind Azure Functions cu C# .NET
 
-- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Implementare de probă MCP folosind Azure Functions cu Node/TypeScript.
+- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Implementare exemplu MCP folosind Azure Functions cu Node/TypeScript.
 
 ## Concluzii cheie
 

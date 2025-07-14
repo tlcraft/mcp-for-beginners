@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T22:51:29+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:12:58+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "br"
 }
@@ -13,7 +13,7 @@ A implementação prática é onde o poder do Model Context Protocol (MCP) se to
 
 Seja desenvolvendo assistentes inteligentes, integrando IA em fluxos de trabalho empresariais ou criando ferramentas personalizadas para processamento de dados, o MCP oferece uma base flexível. Seu design independente de linguagem e os SDKs oficiais para linguagens populares tornam-no acessível a uma ampla gama de desenvolvedores. Aproveitando esses SDKs, você pode prototipar rapidamente, iterar e escalar suas soluções em diferentes plataformas e ambientes.
 
-Nas seções seguintes, você encontrará exemplos práticos, códigos de amostra e estratégias de implantação que demonstram como implementar MCP em C#, Java, TypeScript, JavaScript e Python. Você também aprenderá a depurar e testar seus servidores MCP, gerenciar APIs e implantar soluções na nuvem usando Azure. Esses recursos práticos foram criados para acelerar seu aprendizado e ajudar você a construir com confiança aplicações MCP robustas e prontas para produção.
+Nas seções seguintes, você encontrará exemplos práticos, códigos de exemplo e estratégias de implantação que demonstram como implementar MCP em C#, Java, TypeScript, JavaScript e Python. Você também aprenderá a depurar e testar seus servidores MCP, gerenciar APIs e implantar soluções na nuvem usando Azure. Esses recursos práticos foram criados para acelerar seu aprendizado e ajudar você a construir com confiança aplicações MCP robustas e prontas para produção.
 
 ## Visão Geral
 
@@ -22,7 +22,7 @@ Esta lição foca nos aspectos práticos da implementação do MCP em várias li
 ## Objetivos de Aprendizagem
 
 Ao final desta lição, você será capaz de:
-- Implementar soluções MCP usando SDKs oficiais em diversas linguagens de programação
+- Implementar soluções MCP usando os SDKs oficiais em diversas linguagens de programação
 - Depurar e testar servidores MCP de forma sistemática
 - Criar e usar funcionalidades do servidor (Recursos, Prompts e Ferramentas)
 - Projetar fluxos de trabalho MCP eficazes para tarefas complexas
@@ -40,9 +40,9 @@ O Model Context Protocol oferece SDKs oficiais para várias linguagens:
 
 ## Trabalhando com os SDKs MCP
 
-Esta seção traz exemplos práticos de implementação do MCP em várias linguagens de programação. Você pode encontrar códigos de amostra no diretório `samples`, organizados por linguagem.
+Esta seção traz exemplos práticos de implementação do MCP em várias linguagens de programação. Você pode encontrar códigos de exemplo no diretório `samples`, organizados por linguagem.
 
-### Amostras Disponíveis
+### Exemplos Disponíveis
 
 O repositório inclui [implementações de exemplo](../../../04-PracticalImplementation/samples) nas seguintes linguagens:
 
@@ -108,7 +108,7 @@ O SDK Java oferece opções robustas para implementação MCP com recursos de n�
 - Suporte a programação reativa
 - Tratamento abrangente de erros
 
-Para um exemplo completo de implementação em Java, veja [exemplo Java](samples/java/containerapp/README.md) no diretório de amostras.
+Para um exemplo completo de implementação em Java, veja [exemplo Java](samples/java/containerapp/README.md) no diretório de exemplos.
 
 ## Implementação de Exemplo: JavaScript
 
@@ -116,29 +116,29 @@ O SDK JavaScript oferece uma abordagem leve e flexível para implementação MCP
 
 ### Funcionalidades Principais
 
-- Suporte a Node.js e navegadores
+- Suporte para Node.js e navegadores
 - API baseada em Promises
 - Integração fácil com Express e outros frameworks
 - Suporte a WebSocket para streaming
 
-Para um exemplo completo de implementação em JavaScript, veja [exemplo JavaScript](samples/javascript/README.md) no diretório de amostras.
+Para um exemplo completo de implementação em JavaScript, veja [exemplo JavaScript](samples/javascript/README.md) no diretório de exemplos.
 
 ## Implementação de Exemplo: Python
 
-O SDK Python oferece uma abordagem pythonica para implementação MCP com excelentes integrações a frameworks de ML.
+O SDK Python oferece uma abordagem pythonica para implementação MCP com excelentes integrações para frameworks de ML.
 
 ### Funcionalidades Principais
 
 - Suporte a async/await com asyncio
-- Integração com Flask e FastAPI
+- Integração com FastAPI
 - Registro simples de ferramentas
 - Integração nativa com bibliotecas populares de ML
 
-Para um exemplo completo de implementação em Python, veja [exemplo Python](samples/python/README.md) no diretório de amostras.
+Para um exemplo completo de implementação em Python, veja [exemplo Python](samples/python/README.md) no diretório de exemplos.
 
 ## Gerenciamento de API
 
-O Azure API Management é uma ótima solução para garantir a segurança dos servidores MCP. A ideia é colocar uma instância do Azure API Management na frente do seu servidor MCP e deixar que ele gerencie recursos que você provavelmente vai querer, como:
+O Azure API Management é uma ótima solução para garantir a segurança dos servidores MCP. A ideia é colocar uma instância do Azure API Management na frente do seu servidor MCP e deixar que ele gerencie funcionalidades que você provavelmente vai querer, como:
 
 - limitação de taxa
 - gerenciamento de tokens
@@ -185,7 +185,7 @@ Vamos ver se conseguimos implantar o exemplo mencionado anteriormente:
     * Se estiver usando Azure CLI, execute `az provider register --namespace Microsoft.App --wait`.
     * Se estiver usando Azure PowerShell, execute `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Depois, execute `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` após algum tempo para verificar se o registro foi concluído.
 
-2. Execute este comando [azd](https://aka.ms/azd) para provisionar o serviço de gerenciamento de API, function app (com código) e todos os outros recursos Azure necessários
+2. Execute este comando [azd](https://aka.ms/azd) para provisionar o serviço de gerenciamento de API, o function app (com código) e todos os outros recursos Azure necessários
 
     ```shell
     azd up
@@ -203,17 +203,17 @@ Vamos ver se conseguimos implantar o exemplo mencionado anteriormente:
 
     Você deverá ver uma interface semelhante a:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.br.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png) 
 
 1. Clique com CTRL para carregar o aplicativo web MCP Inspector a partir da URL exibida pelo app (ex: http://127.0.0.1:6274/#resources)
 1. Defina o tipo de transporte para `SSE`
-1. Defina a URL para o endpoint SSE do API Management em execução, exibido após o comando `azd up`, e clique em **Conectar**:
+1. Defina a URL para o endpoint SSE do API Management em execução, exibido após o comando `azd up`, e clique em **Connect**:
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-5. **Listar Ferramentas**. Clique em uma ferramenta e **Executar Ferramenta**.  
+5. **Listar Ferramentas**. Clique em uma ferramenta e **Execute a Ferramenta**.  
 
 Se todos os passos funcionaram, você agora está conectado ao servidor MCP e conseguiu chamar uma ferramenta.
 
@@ -234,7 +234,7 @@ Os exemplos fornecem uma solução completa que permite aos desenvolvedores:
 - Isolamento de rede: Permite isolamento de rede usando Azure Virtual Networks (VNET)
 - Arquitetura serverless: Aproveita Azure Functions para execução escalável e orientada a eventos
 - Desenvolvimento local: Suporte abrangente para desenvolvimento e depuração local
-- Implantação simples: Processo simplificado para implantação no Azure
+- Implantação simples: Processo simplificado de implantação no Azure
 
 O repositório inclui todos os arquivos de configuração necessários, código-fonte e definições de infraestrutura para começar rapidamente com uma implementação de servidor MCP pronta para produção.
 
@@ -248,7 +248,7 @@ O repositório inclui todos os arquivos de configuração necessários, código-
 
 - Os SDKs MCP fornecem ferramentas específicas para cada linguagem para implementar soluções MCP robustas
 - O processo de depuração e teste é fundamental para aplicações MCP confiáveis
-- Templates de prompt reutilizáveis permitem interações consistentes com IA
+- Templates de prompts reutilizáveis permitem interações consistentes com a IA
 - Fluxos de trabalho bem projetados podem orquestrar tarefas complexas usando múltiplas ferramentas
 - Implementar soluções MCP requer atenção à segurança, desempenho e tratamento de erros
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T22:54:17+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:16:30+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "da"
 }
@@ -13,7 +13,7 @@ Praktisk implementering er, hvor kraften i Model Context Protocol (MCP) bliver h
 
 Uanset om du udvikler intelligente assistenter, integrerer AI i forretningsprocesser eller bygger specialværktøjer til databehandling, giver MCP et fleksibelt fundament. Dets sprogagnostiske design og officielle SDK’er til populære programmeringssprog gør det tilgængeligt for en bred vifte af udviklere. Ved at udnytte disse SDK’er kan du hurtigt prototype, iterere og skalere dine løsninger på tværs af forskellige platforme og miljøer.
 
-I de følgende afsnit finder du praktiske eksempler, kodeeksempler og implementeringsstrategier, der viser, hvordan du implementerer MCP i C#, Java, TypeScript, JavaScript og Python. Du lærer også, hvordan du debugger og tester dine MCP-servere, håndterer API’er og implementerer løsninger i skyen ved hjælp af Azure. Disse praktiske ressourcer er designet til at fremskynde din læring og hjælpe dig med trygt at bygge robuste, produktionsklare MCP-applikationer.
+I de følgende afsnit finder du praktiske eksempler, kodeeksempler og implementeringsstrategier, der viser, hvordan du implementerer MCP i C#, Java, TypeScript, JavaScript og Python. Du lærer også, hvordan du debugger og tester dine MCP-servere, administrerer API’er og implementerer løsninger i skyen ved hjælp af Azure. Disse praktiske ressourcer er designet til at fremskynde din læring og hjælpe dig med trygt at bygge robuste, produktionsklare MCP-applikationer.
 
 ## Oversigt
 
@@ -95,7 +95,7 @@ MCP C# SDK’et er i preview, og API’er kan ændre sig. Vi opdaterer løbende 
 
 - Byg din [første MCP Server](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
 
-For komplette C# implementeringseksempler, besøg det [officielle C# SDK-eksempelsrepository](https://github.com/modelcontextprotocol/csharp-sdk)
+For komplette C# implementeringseksempler, besøg det [officielle C# SDK samples repository](https://github.com/modelcontextprotocol/csharp-sdk)
 
 ## Eksempelimplementering: Java Implementation
 
@@ -130,13 +130,13 @@ Python SDK tilbyder en Pythonisk tilgang til MCP-implementering med fremragende 
 ### Nøglefunktioner
 
 - Async/await-understøttelse med asyncio
-- Flask og FastAPI-integration
+- FastAPI-integration
 - Enkel værktøjsregistrering
 - Naturlig integration med populære ML-biblioteker
 
 For et komplet Python-implementeringseksempel, se [Python sample](samples/python/README.md) i samples-mappen.
 
-## API-styring
+## API-administration
 
 Azure API Management er en fremragende løsning til at sikre MCP-servere. Ideen er at placere en Azure API Management-instans foran din MCP-server og lade den håndtere funktioner, du sandsynligvis vil have, såsom:
 
@@ -201,9 +201,9 @@ Lad os se, om vi kan implementere det eksempel, vi nævnte tidligere:
     npx @modelcontextprotocol/inspector
     ```
 
-    Du skulle gerne se en grænseflade som denne:
+    Du bør se en grænseflade som denne:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.da.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png) 
 
 1. CTRL-klik for at åbne MCP Inspector webappen fra den URL, appen viser (f.eks. http://127.0.0.1:6274/#resources)
 1. Sæt transporttypen til `SSE`
@@ -213,19 +213,19 @@ Lad os se, om vi kan implementere det eksempel, vi nævnte tidligere:
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-5. **List Tools**. Klik på et værktøj og **Run Tool**.  
+5. **List Tools**. Klik på et værktøj og **Run Tool**.
 
-Hvis alle trin er gennemført korrekt, skulle du nu være forbundet til MCP-serveren og have kunnet kalde et værktøj.
+Hvis alle trin er gennemført korrekt, bør du nu være forbundet til MCP-serveren og have kunnet kalde et værktøj.
 
 ## MCP-servere til Azure
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Dette sæt repositories er en quickstart-skabelon til at bygge og implementere tilpassede remote MCP (Model Context Protocol) servere ved hjælp af Azure Functions med Python, C# .NET eller Node/TypeScript.
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Dette sæt af repositories er en quickstart-skabelon til at bygge og implementere tilpassede remote MCP (Model Context Protocol) servere ved hjælp af Azure Functions med Python, C# .NET eller Node/TypeScript.
 
 Samples giver en komplet løsning, der gør det muligt for udviklere at:
 
 - Bygge og køre lokalt: Udvikle og debugge en MCP-server på en lokal maskine
 - Implementere til Azure: Nem implementering til skyen med en simpel azd up-kommando
-- Forbinde fra klienter: Forbinde til MCP-serveren fra forskellige klienter, herunder VS Codes Copilot agent-tilstand og MCP Inspector-værktøjet
+- Forbinde fra klienter: Forbinde til MCP-serveren fra forskellige klienter, herunder VS Codes Copilot agent mode og MCP Inspector-værktøjet
 
 ### Nøglefunktioner:
 

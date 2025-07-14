@@ -1,23 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T22:46:51+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:06:58+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "hk"
 }
 -->
 # 實務應用
 
-實務應用是讓 Model Context Protocol (MCP) 的威力具體展現的階段。雖然理解 MCP 的理論與架構很重要，但真正的價值在於將這些概念應用於建構、測試及部署解決方案，解決現實世界的問題。本章將彌合概念知識與實作開發之間的鴻溝，帶領你完成基於 MCP 的應用程式開發流程。
+實務應用是讓 Model Context Protocol (MCP) 的威力具體展現的階段。雖然理解 MCP 的理論與架構很重要，但真正的價值在於將這些概念應用於建構、測試及部署解決方案，解決現實世界的問題。本章節將彌補概念知識與實作開發之間的鴻溝，帶領你一步步實現基於 MCP 的應用程式。
 
-無論你是在開發智能助理、將 AI 整合進商業工作流程，或是打造自訂的資料處理工具，MCP 都提供了彈性的基礎。它的語言無關設計以及針對主流程式語言的官方 SDK，使各類開發者都能輕鬆上手。透過這些 SDK，你可以快速原型設計、反覆迭代，並在不同平台與環境中擴展你的解決方案。
+無論你是在開發智能助理、將 AI 整合進商業流程，或是打造自訂的資料處理工具，MCP 都提供了彈性的基礎。它的語言無關設計以及針對主流程式語言的官方 SDK，使各類開發者都能輕鬆上手。透過這些 SDK，你可以快速原型設計、反覆迭代，並在不同平台與環境中擴展你的解決方案。
 
 在接下來的章節中，你會看到實務範例、示範程式碼與部署策略，展示如何在 C#、Java、TypeScript、JavaScript 和 Python 中實作 MCP。你也會學到如何除錯與測試 MCP 伺服器、管理 API，以及使用 Azure 將解決方案部署到雲端。這些實作資源旨在加速你的學習，幫助你自信地打造穩健且可投入生產的 MCP 應用。
 
 ## 概覽
 
-本課程聚焦於 MCP 在多種程式語言中的實務實作。我們將探討如何使用 C#、Java、TypeScript、JavaScript 和 Python 的 MCP SDK，建構穩健的應用程式，除錯與測試 MCP 伺服器，以及建立可重複使用的資源、提示與工具。
+本課程聚焦於 MCP 在多種程式語言中的實務應用。我們將探討如何使用 C#、Java、TypeScript、JavaScript 和 Python 的 MCP SDK，建構穩健的應用程式，除錯與測試 MCP 伺服器，以及建立可重複使用的資源、提示與工具。
 
 ## 學習目標
 
@@ -88,7 +88,7 @@ MCP 伺服器可以實作以下任意組合的功能：
 - **ASP.NET 整合**：示範如何與 ASP.NET Core 整合
 - **工具實作模式**：多種工具實作模式，涵蓋不同複雜度
 
-MCP C# SDK 目前為預覽版，API 可能會變動。我們會持續更新此部落格以反映 SDK 的演進。
+MCP C# SDK 目前仍在預覽階段，API 可能會變動。我們會持續更新此部落格以反映 SDK 的演進。
 
 ### 主要功能
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
@@ -105,7 +105,7 @@ Java SDK 提供企業級功能的強大 MCP 實作選項。
 
 - Spring Framework 整合
 - 強型別安全
-- 反應式程式設計支援
+- 支援反應式程式設計
 - 完善的錯誤處理
 
 完整的 Java 實作範例，請參考 samples 目錄中的 [Java 範例](samples/java/containerapp/README.md)。
@@ -130,7 +130,7 @@ Python SDK 提供符合 Python 風格的 MCP 實作，並與主流機器學習�
 ### 主要功能
 
 - 支援 asyncio 的 async/await
-- Flask 與 FastAPI 整合
+- FastAPI 整合
 - 簡易的工具註冊
 - 原生整合熱門機器學習函式庫
 
@@ -148,7 +148,7 @@ Azure API Management 是保護 MCP 伺服器的絕佳方案。其概念是在 MC
 
 ### Azure 範例
 
-這裡有一個 Azure 範例，正是做這件事，也就是[建立 MCP 伺服器並用 Azure API Management 保護它](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)。
+這裡有一個 Azure 範例，正是實現上述功能，也就是[建立 MCP 伺服器並用 Azure API Management 保護它](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)。
 
 下圖展示了授權流程：
 
@@ -168,7 +168,7 @@ Azure API Management 是保護 MCP 伺服器的絕佳方案。其概念是在 MC
 
 #### MCP 授權規範
 
-了解更多關於 [MCP 授權規範](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
+深入了解 [MCP 授權規範](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
 
 ## 將遠端 MCP 伺服器部署到 Azure
 
@@ -185,7 +185,7 @@ Azure API Management 是保護 MCP 伺服器的絕佳方案。其概念是在 MC
     * 如果你使用 Azure CLI，執行 `az provider register --namespace Microsoft.App --wait`。
     * 如果你使用 Azure PowerShell，執行 `Register-AzResourceProvider -ProviderNamespace Microsoft.App`。稍後執行 `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` 以確認註冊是否完成。
 
-2. 執行此 [azd](https://aka.ms/azd) 指令來佈建 API 管理服務、Function App（含程式碼）及所有其他所需的 Azure 資源
+2. 執行此 [azd](https://aka.ms/azd) 指令，佈建 API 管理服務、函式應用（含程式碼）及所有其他所需的 Azure 資源
 
     ```shell
     azd up
@@ -203,11 +203,11 @@ Azure API Management 是保護 MCP 伺服器的絕佳方案。其概念是在 MC
 
     你應該會看到類似以下的介面：
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.hk.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png) 
 
 1. 按住 CTRL 點擊，從應用程式顯示的 URL（例如 http://127.0.0.1:6274/#resources）載入 MCP Inspector 網頁應用
 1. 將傳輸類型設定為 `SSE`
-1. 將 URL 設為你執行中 API 管理 SSE 端點（`azd up` 後顯示的），然後**連線**：
+1. 將 URL 設為你執行中 API Management SSE 端點（`azd up` 後顯示的），然後**連線**：
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
@@ -219,7 +219,7 @@ Azure API Management 是保護 MCP 伺服器的絕佳方案。其概念是在 MC
 
 ## Azure 的 MCP 伺服器
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)：這組儲存庫是使用 Azure Functions 以 Python、C# .NET 或 Node/TypeScript 快速建立與部署自訂遠端 MCP（Model Context Protocol）伺服器的範本。
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)：這組儲存庫是使用 Azure Functions 以 Python、C# .NET 或 Node/TypeScript 快速啟動並部署自訂遠端 MCP（Model Context Protocol）伺服器的範本。
 
 這些範例提供完整解決方案，讓開發者能夠：
 
@@ -236,7 +236,7 @@ Azure API Management 是保護 MCP 伺服器的絕佳方案。其概念是在 MC
 - 本地開發：完整的本地開發與除錯支援
 - 簡易部署：流暢的 Azure 部署流程
 
-儲存庫包含所有必要的設定檔、原始碼與基礎架構定義，讓你能快速開始生產就緒的 MCP 伺服器實作。
+儲存庫包含所有必要的設定檔、原始碼與基礎架構定義，讓你能快速啟動生產級 MCP 伺服器實作。
 
 - [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - 使用 Azure Functions 與 Python 實作 MCP 的範例
 
@@ -246,7 +246,7 @@ Azure API Management 是保護 MCP 伺服器的絕佳方案。其概念是在 MC
 
 ## 重要重點
 
-- MCP SDK 提供針對不同語言的工具，方便實作穩健的 MCP 解決方案
+- MCP SDK 提供針對不同語言的工具，協助實作穩健的 MCP 解決方案
 - 除錯與測試流程對於可靠的 MCP 應用至關重要
 - 可重複使用的提示模板能確保 AI 互動的一致性
 - 良好設計的工作流程能協調多個工具完成複雜任務
@@ -258,7 +258,7 @@ Azure API Management 是保護 MCP 伺服器的絕佳方案。其概念是在 MC
 
 1. 確認 3-4 個對解決此問題有幫助的工具
 2. 繪製工作流程圖，展示這些工具如何互動
-3. 使用你偏好的程式語言實作其中一個工具的基本版本
+3. 使用你偏好的程式語言實作其中一個工具的基礎版本
 4. 建立一個提示模板，幫助模型有效使用你的工具
 
 ## 其他資源
@@ -266,7 +266,7 @@ Azure API Management 是保護 MCP 伺服器的絕佳方案。其概念是在 MC
 
 ---
 
-下一章： [進階主題](../05-AdvancedTopics/README.md)
+下一章節：[進階主題](../05-AdvancedTopics/README.md)
 
 **免責聲明**：  
-本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

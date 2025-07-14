@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5384bbb2a92d00d5d7e66274dbe0331d",
-  "translation_date": "2025-07-13T23:01:10+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:25:22+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "sl"
 }
@@ -13,11 +13,11 @@ Praktična implementacija je trenutek, ko moč Model Context Protocol (MCP) post
 
 Ne glede na to, ali razvijate inteligentne asistente, integrirate AI v poslovne procese ali ustvarjate prilagojena orodja za obdelavo podatkov, MCP nudi prilagodljivo osnovo. Njegova jezikovno neodvisna zasnova in uradni SDK-ji za priljubljene programske jezike omogočajo dostop širokemu krogu razvijalcev. Z uporabo teh SDK-jev lahko hitro izdelate prototipe, iterirate in razširite svoje rešitve na različnih platformah in okoljih.
 
-V naslednjih razdelkih boste našli praktične primere, vzorčno kodo in strategije uvajanja, ki prikazujejo, kako implementirati MCP v C#, Java, TypeScript, JavaScript in Python. Naučili se boste tudi, kako razhroščevati in testirati svoje MCP strežnike, upravljati API-je ter uvajati rešitve v oblak z uporabo Azure. Ti praktični viri so zasnovani tako, da pospešijo vaše učenje in vam pomagajo samozavestno graditi robustne, produkcijsko pripravljene MCP aplikacije.
+V naslednjih razdelkih boste našli praktične primere, vzorčno kodo in strategije uvajanja, ki prikazujejo, kako implementirati MCP v C#, Javi, TypeScriptu, JavaScriptu in Pythonu. Naučili se boste tudi, kako razhroščevati in testirati MCP strežnike, upravljati API-je ter uvajati rešitve v oblak z uporabo Azure. Ti praktični viri so zasnovani tako, da pospešijo vaše učenje in vam pomagajo samozavestno graditi robustne, produkcijsko pripravljene MCP aplikacije.
 
 ## Pregled
 
-Ta lekcija se osredotoča na praktične vidike implementacije MCP v več programskih jezikih. Raziskali bomo, kako uporabljati MCP SDK-je v C#, Java, TypeScript, JavaScript in Python za izdelavo robustnih aplikacij, razhroščevanje in testiranje MCP strežnikov ter ustvarjanje ponovno uporabnih virov, pozivov in orodij.
+Ta lekcija se osredotoča na praktične vidike implementacije MCP v več programskih jezikih. Raziskali bomo, kako uporabljati MCP SDK-je v C#, Javi, TypeScriptu, JavaScriptu in Pythonu za izdelavo robustnih aplikacij, razhroščevanje in testiranje MCP strežnikov ter ustvarjanje ponovno uporabnih virov, pozivov in orodij.
 
 ## Cilji učenja
 
@@ -130,7 +130,7 @@ Python SDK ponuja pythonističen pristop k implementaciji MCP z odlično integra
 ### Ključne funkcije
 
 - Podpora async/await z asyncio
-- Integracija s Flask in FastAPI
+- Integracija s FastAPI
 - Enostavna registracija orodij
 - Nativna integracija s priljubljenimi ML knjižnicami
 
@@ -140,7 +140,7 @@ Za popoln vzorec implementacije v Pythonu si oglejte [Python vzorec](samples/pyt
 
 Azure API Management je odličen odgovor na vprašanje, kako lahko zaščitimo MCP strežnike. Ideja je, da pred vaš MCP strežnik postavite instanco Azure API Management in ji prepustite upravljanje funkcij, ki jih boste verjetno želeli, kot so:
 
-- omejevanje hitrosti (rate limiting)
+- omejevanje hitrosti
 - upravljanje žetonov
 - nadzor
 - uravnoteženje obremenitve
@@ -150,19 +150,19 @@ Azure API Management je odličen odgovor na vprašanje, kako lahko zaščitimo M
 
 Tukaj je Azure vzorec, ki točno to počne, tj. [ustvarjanje MCP strežnika in njegovo zaščito z Azure API Management](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
 
-Spodnja slika prikazuje, kako poteka avtentikacijski potek:
+Spodnja slika prikazuje, kako poteka avtentikacijski tok:
 
 ![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true) 
 
 Na zgornji sliki se zgodi naslednje:
 
-- Avtentikacija/avtorizacija poteka preko Microsoft Entra.
+- Avtentikacija/avtorizacija poteka z uporabo Microsoft Entra.
 - Azure API Management deluje kot prehod in uporablja politike za usmerjanje in upravljanje prometa.
 - Azure Monitor beleži vse zahteve za nadaljnjo analizo.
 
-#### Potek avtorizacije
+#### Tok avtorizacije
 
-Poglejmo si potek avtorizacije podrobneje:
+Poglejmo si tok avtorizacije podrobneje:
 
 ![Sequence Diagram](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
 
@@ -172,7 +172,7 @@ Več o [MCP specifikaciji avtorizacije](https://modelcontextprotocol.io/specific
 
 ## Uvajanje oddaljenega MCP strežnika v Azure
 
-Poglejmo, ali lahko uvedemo vzorec, ki smo ga omenili prej:
+Poglejmo, ali lahko uvedemo prej omenjeni vzorec:
 
 1. Klonirajte repozitorij
 
@@ -203,29 +203,29 @@ Poglejmo, ali lahko uvedemo vzorec, ki smo ga omenili prej:
 
     Videli boste vmesnik, podoben temu:
 
-    ![Connect to Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sl.png) 
+    ![Connect to Node inspector](/03-GettingStarted/01-first-server/assets/connect.png) 
 
-1. Kliknite CTRL in odprite MCP Inspector spletno aplikacijo na URL-ju, ki ga prikaže aplikacija (npr. http://127.0.0.1:6274/#resources)
+1. Kliknite CTRL in odprite MCP Inspector spletno aplikacijo z URL-jem, ki ga prikaže aplikacija (npr. http://127.0.0.1:6274/#resources)
 1. Nastavite tip prenosa na `SSE`
-1. Nastavite URL na vaš tekoči API Management SSE konektor, prikazan po ukazu `azd up` in kliknite **Connect**:
+1. Nastavite URL na vaš tekoči API Management SSE konektor, prikazan po ukazu `azd up` in **Povežite se**:
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
     ```
 
-5. **Seznam orodij**. Kliknite na orodje in izberite **Run Tool**.
+5. **Seznam orodij**. Kliknite na orodje in **Zaženi orodje**.  
 
-Če so vsi koraki uspeli, ste zdaj povezani z MCP strežnikom in lahko kličete orodja.
+Če so vsi koraki uspeli, ste zdaj povezani z MCP strežnikom in lahko kličete orodje.
 
 ## MCP strežniki za Azure
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Ta niz repozitorijev je hitri začetek za izdelavo in uvajanje prilagojenih oddaljenih MCP (Model Context Protocol) strežnikov z uporabo Azure Functions v Pythonu, C# .NET ali Node/TypeScript.
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Ta niz repozitorijev je hitri začetek za gradnjo in uvajanje prilagojenih oddaljenih MCP (Model Context Protocol) strežnikov z uporabo Azure Functions v Pythonu, C# .NET ali Node/TypeScript.
 
 Vzorec ponuja celovito rešitev, ki razvijalcem omogoča:
 
 - Lokalno gradnjo in zagon: Razvijajte in razhroščujte MCP strežnik na lokalnem računalniku
 - Uvajanje v Azure: Enostavno uvajanje v oblak z ukazom azd up
-- Povezovanje s klienti: Povezovanje z MCP strežnikom iz različnih klientov, vključno z VS Code Copilot agent načinom in orodjem MCP Inspector
+- Povezovanje s klienti: Povezovanje z MCP strežnikom iz različnih klientov, vključno z načinom agenta Copilot v VS Code in orodjem MCP Inspector
 
 ### Ključne lastnosti:
 
@@ -258,7 +258,7 @@ Načrtujte praktičen MCP delovni tok, ki rešuje resnični problem v vašem pod
 
 1. Določite 3-4 orodja, ki bi bila uporabna za reševanje tega problema
 2. Ustvarite diagram delovnega toka, ki prikazuje, kako ta orodja sodelujejo
-3. Implementirajte osnovno različico enega izmed orodij v vašem priljubljenem jeziku
+3. Implementirajte osnovno različico enega od orodij v vašem izbranem jeziku
 4. Ustvarite predlogo poziva, ki bo modelu pomagala učinkovito uporabljati vaše orodje
 
 ## Dodatni viri
@@ -269,4 +269,4 @@ Načrtujte praktičen MCP delovni tok, ki rešuje resnični problem v vašem pod
 Naslednje: [Napredne teme](../05-AdvancedTopics/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
