@@ -1,19 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
-  "translation_date": "2025-07-14T02:15:54+00:00",
+  "original_hash": "2f1b473818b5a6cc9a9bbf777fffa6d4",
+  "translation_date": "2025-07-14T21:50:15+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "hu"
 }
 -->
-## Mintavételezés és útválasztási architektúra az MCP-ben
+## Dinamikus eszközirányítás
 
-A mintavételezés a Model Context Protocol (MCP) egyik kulcsfontosságú eleme, amely lehetővé teszi a hatékony kérésfeldolgozást és útválasztást. Ez magában foglalja a beérkező kérések elemzését annak érdekében, hogy meghatározzuk a legmegfelelőbb modellt vagy szolgáltatást a kezelésükhöz, különböző szempontok alapján, mint például a tartalom típusa, a felhasználói kontextus és a rendszer terheltsége.
+Az eszközirányítás biztosítja, hogy az eszközhívások a kontextus alapján a legmegfelelőbb szolgáltatáshoz kerüljenek. Például egy időjárás-eszköz hívását a felhasználó helyzete alapján egy regionális végpontra kell irányítani, vagy egy számológép eszköznek egy adott API verziót kell használnia.
 
-A mintavételezés és az útválasztás kombinálásával egy robusztus architektúra hozható létre, amely optimalizálja az erőforrások kihasználtságát és biztosítja a magas rendelkezésre állást. A mintavételezési folyamat a kérések osztályozására használható, míg az útválasztás a megfelelő modellekhez vagy szolgáltatásokhoz irányítja azokat.
+Nézzünk egy példát, amely bemutatja a dinamikus eszközirányítást a kérés elemzése, a regionális végpontok és a verziókezelés alapján.
 
-Az alábbi ábra bemutatja, hogyan működik együtt a mintavételezés és az útválasztás egy átfogó MCP architektúrában:
+## Mintavételezés és irányítás az MCP-ben
+
+A mintavételezés a Model Context Protocol (MCP) egyik kulcsfontosságú eleme, amely lehetővé teszi a hatékony kérésfeldolgozást és irányítást. Ez magában foglalja a bejövő kérések elemzését annak érdekében, hogy meghatározzuk a legmegfelelőbb modellt vagy szolgáltatást, amely kezelni tudja azokat, különböző szempontok alapján, mint például a tartalom típusa, a felhasználói kontextus és a rendszer terheltsége.
+
+A mintavételezés és az irányítás kombinálásával egy robusztus architektúra hozható létre, amely optimalizálja az erőforrások kihasználását és biztosítja a magas rendelkezésre állást. A mintavételezési folyamat a kérések osztályozására használható, míg az irányítás a megfelelő modellekhez vagy szolgáltatásokhoz irányítja azokat.
+
+Az alábbi ábra szemlélteti, hogyan működik együtt a mintavételezés és az irányítás egy átfogó MCP architektúrában:
 
 ```mermaid
 flowchart TB

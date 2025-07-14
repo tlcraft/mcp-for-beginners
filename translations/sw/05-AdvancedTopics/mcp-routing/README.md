@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
-  "translation_date": "2025-07-14T02:15:43+00:00",
+  "original_hash": "2f1b473818b5a6cc9a9bbf777fffa6d4",
+  "translation_date": "2025-07-14T21:50:02+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "sw"
 }
 -->
 ## Usanidi wa Sampuli na Upangaji Njia katika MCP
 
-Usanidi wa sampuli ni sehemu muhimu ya Model Context Protocol (MCP) inayoruhusu usindikaji mzuri wa maombi na upangaji njia. Inahusisha kuchambua maombi yanayoingia ili kubaini mfano au huduma inayofaa zaidi kushughulikia maombi hayo, kulingana na vigezo mbalimbali kama aina ya maudhui, muktadha wa mtumiaji, na mzigo wa mfumo.
+Sampuli ni sehemu muhimu ya Model Context Protocol (MCP) inayoruhusu usindikaji wa maombi kwa ufanisi na upangaji njia. Inahusisha kuchambua maombi yanayoingia ili kubaini mfano au huduma inayofaa zaidi kushughulikia maombi hayo, kulingana na vigezo mbalimbali kama aina ya maudhui, muktadha wa mtumiaji, na mzigo wa mfumo.
 
-Usanidi wa sampuli na upangaji njia vinaweza kuunganishwa kuunda usanifu thabiti unaoboresha matumizi ya rasilimali na kuhakikisha upatikanaji wa juu. Mchakato wa sampuli unaweza kutumika kuainisha maombi, wakati upangaji njia unawaelekeza kwa mifano au huduma zinazofaa.
+Sampuli na upangaji njia vinaweza kuunganishwa kuunda usanifu imara unaoboresha matumizi ya rasilimali na kuhakikisha upatikanaji wa juu. Mchakato wa sampuli unaweza kutumika kuainisha maombi, wakati upangaji njia unawaelekeza kwa mifano au huduma zinazofaa.
 
-Mchoro hapa chini unaonyesha jinsi usanidi wa sampuli na upangaji njia vinavyofanya kazi pamoja katika usanifu kamili wa MCP:
+Mchoro hapa chini unaonyesha jinsi sampuli na upangaji njia vinavyofanya kazi pamoja katika usanifu kamili wa MCP:
 
 ```mermaid
 flowchart TB

@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
-  "translation_date": "2025-07-14T02:16:27+00:00",
+  "original_hash": "2f1b473818b5a6cc9a9bbf777fffa6d4",
+  "translation_date": "2025-07-14T21:50:54+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "ro"
 }
 -->
-## Arhitectura de Eșantionare și Rutare în MCP
+## Eșantionare și Arhitectură de Rutare în MCP
 
-Eșantionarea este o componentă esențială a Model Context Protocol (MCP) care permite procesarea și rutarea eficientă a cererilor. Aceasta implică analizarea cererilor primite pentru a determina cel mai potrivit model sau serviciu care să le gestioneze, pe baza unor criterii variate, cum ar fi tipul conținutului, contextul utilizatorului și încărcarea sistemului.
+Eșantionarea este o componentă esențială a Model Context Protocol (MCP) care permite procesarea și rutarea eficientă a cererilor. Aceasta implică analizarea cererilor primite pentru a determina cel mai potrivit model sau serviciu care să le gestioneze, pe baza unor criterii variate, cum ar fi tipul de conținut, contextul utilizatorului și încărcarea sistemului.
 
-Eșantionarea și rutarea pot fi combinate pentru a crea o arhitectură robustă care optimizează utilizarea resurselor și asigură o disponibilitate ridicată. Procesul de eșantionare poate fi folosit pentru a clasifica cererile, în timp ce rutarea le direcționează către modelele sau serviciile adecvate.
+Eșantionarea și rutarea pot fi combinate pentru a crea o arhitectură robustă care optimizează utilizarea resurselor și asigură o disponibilitate ridicată. Procesul de eșantionare poate fi folosit pentru a clasifica cererile, în timp ce rutarea le direcționează către modelele sau serviciile potrivite.
 
-Diagrama de mai jos ilustrează modul în care eșantionarea și rutarea funcționează împreună într-o arhitectură cuprinzătoare MCP:
+Diagrama de mai jos ilustrează modul în care eșantionarea și rutarea funcționează împreună într-o arhitectură MCP cuprinzătoare:
 
 ```mermaid
 flowchart TB
