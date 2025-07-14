@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T16:09:29+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:29:51+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "tw"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 以下是我們在高層次上需要採取的步驟：
 
-- 配置一個檔案以找到我們的 MCP Server。
+- 配置一個檔案來尋找我們的 MCP Server。
 - 啟動/連接到該伺服器，讓它列出其功能。
 - 透過 GitHub Copilot Chat 介面使用這些功能。
 
@@ -21,15 +21,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 練習：使用伺服器
 
-在這個練習中，我們將配置 Visual Studio Code 以找到你的 MCP 伺服器，讓它可以從 GitHub Copilot Chat 介面使用。
+在這個練習中，我們將配置 Visual Studio Code 以尋找你的 MCP 伺服器，讓它可以從 GitHub Copilot Chat 介面使用。
 
 ### -0- 預備步驟，啟用 MCP Server 探測
 
 你可能需要啟用 MCP Server 的探測功能。
 
-1. 在 Visual Studio Code 中，前往 `檔案 -> 偏好設定 -> 設定`。
+1. 在 Visual Studio Code 中，前往 `File -> Preferences -> Settings`。
 
-2. 搜尋「MCP」，並在 settings.json 檔案中啟用 `chat.mcp.discovery.enabled`。
+2. 搜尋 "MCP"，並在 settings.json 檔案中啟用 `chat.mcp.discovery.enabled`。
 
 ### -1- 建立設定檔
 
@@ -40,7 +40,7 @@ CO_OP_TRANSLATOR_METADATA:
 |-- mcp.json
 ```
 
-接著，讓我們看看如何新增伺服器條目。
+接著，讓我們看看如何新增一個伺服器條目。
 
 ### -2- 配置伺服器
 
@@ -60,7 +60,7 @@ CO_OP_TRANSLATOR_METADATA:
 }
 ```
 
-上面是一個簡單的範例，展示如何啟動一個用 Node.js 撰寫的伺服器，其他執行環境請使用 `command` 和 `args` 指定正確的啟動指令。
+上面是一個簡單的範例，展示如何啟動一個用 Node.js 撰寫的伺服器，對於其他執行環境，請使用 `command` 和 `args` 指定正確的啟動伺服器指令。
 
 ### -3- 啟動伺服器
 
@@ -82,7 +82,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 作業
 
-嘗試在你的 *mcp.json* 檔案中新增一個伺服器條目，並確保你可以啟動/停止伺服器。也確保你能透過 GitHub Copilot Chat 介面與伺服器上的工具溝通。
+嘗試在你的 *mcp.json* 檔案中新增一個伺服器條目，並確保你可以啟動/停止伺服器。也確保你能透過 GitHub Copilot Chat 介面與伺服器上的工具進行溝通。
 
 ## 解答
 
@@ -92,9 +92,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 本章節的重點如下：
 
-- Visual Studio Code 是一個很棒的用戶端，讓你能使用多個 MCP Server 及其工具。
+- Visual Studio Code 是一個很棒的客戶端，讓你能使用多個 MCP Server 及其工具。
 - GitHub Copilot Chat 介面是你與伺服器互動的方式。
-- 你可以提示使用者輸入像是 API 金鑰等資訊，並在 *mcp.json* 中配置伺服器條目時將其傳遞給 MCP Server。
+- 你可以提示使用者輸入像是 API 金鑰等資訊，並在 *mcp.json* 檔案中配置伺服器條目時將這些資訊傳遞給 MCP Server。
 
 ## 範例
 
@@ -110,7 +110,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 接下來
 
-- 下一步：[建立 SSE 伺服器](../05-sse-server/README.md)
+- 下一章： [建立 SSE 伺服器](../05-sse-server/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤譯負責。

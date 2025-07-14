@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T17:55:00+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:36:58+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "nl"
 }
@@ -11,11 +11,11 @@ Laten we in de volgende secties dieper ingaan op het gebruik van de visuele inte
 
 ## Aanpak
 
-Dit is hoe we dit op hoofdlijnen moeten aanpakken:
+Dit is hoe we het op hoofdlijn moeten aanpakken:
 
-- Configureer een bestand om onze MCP Server te vinden.
-- Start/Verbind met de server om een lijst van zijn mogelijkheden te krijgen.
-- Gebruik deze mogelijkheden via de GitHub Copilot Chat interface.
+- Een bestand configureren om onze MCP Server te vinden.
+- De server opstarten/verbinden zodat deze zijn mogelijkheden kan tonen.
+- Deze mogelijkheden gebruiken via de GitHub Copilot Chat interface.
 
 Geweldig, nu we de flow begrijpen, laten we proberen een MCP Server te gebruiken via Visual Studio Code met een oefening.
 
@@ -25,11 +25,11 @@ In deze oefening configureren we Visual Studio Code zodat het jouw MCP server ka
 
 ### -0- Voorbereiding, MCP Server ontdekking inschakelen
 
-Je moet mogelijk de ontdekking van MCP Servers inschakelen.
+Mogelijk moet je de ontdekking van MCP Servers inschakelen.
 
-1. Ga naar `Bestand -> Voorkeuren -> Instellingen` in Visual Studio Code.
+1. Ga in Visual Studio Code naar `Bestand -> Voorkeuren -> Instellingen`.
 
-1. Zoek op "MCP" en schakel `chat.mcp.discovery.enabled` in in het settings.json bestand.
+1. Zoek op "MCP" en schakel `chat.mcp.discovery.enabled` in het settings.json bestand in.
 
 ### -1- Configuratiebestand aanmaken
 
@@ -60,9 +60,9 @@ Voeg de volgende inhoud toe aan *mcp.json*:
 }
 ```
 
-Hierboven zie je een eenvoudig voorbeeld van hoe je een server start die in Node.js is geschreven. Voor andere runtimes geef je het juiste commando op om de server te starten met `command` en `args`.
+Hierboven zie je een eenvoudig voorbeeld van het starten van een server geschreven in Node.js. Voor andere runtimes geef je het juiste commando op om de server te starten via `command` en `args`.
 
-### -3- Start de server
+### -3- Server starten
 
 Nu je een entry hebt toegevoegd, starten we de server:
 
@@ -70,7 +70,7 @@ Nu je een entry hebt toegevoegd, starten we de server:
 
   ![Server starten in Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.nl.png)  
 
-1. Klik op het "play" icoon, je zou moeten zien dat het tools-icoon in GitHub Copilot Chat het aantal beschikbare tools verhoogt. Als je op dat tools-icoon klikt, zie je een lijst met geregistreerde tools. Je kunt elke tool aan- of uitvinken afhankelijk van of je wilt dat GitHub Copilot deze als context gebruikt:
+1. Klik op het "play" icoon, je zou moeten zien dat het tools-icoon in GitHub Copilot Chat het aantal beschikbare tools verhoogt. Klik je op dat tools-icoon, dan zie je een lijst met geregistreerde tools. Je kunt elke tool aan- of uitvinken afhankelijk van of je wilt dat GitHub Copilot deze als context gebruikt:
 
   ![Server starten in Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.nl.png)
 

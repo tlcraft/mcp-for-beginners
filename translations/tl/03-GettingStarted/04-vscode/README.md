@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T18:19:27+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:40:15+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "tl"
 }
@@ -25,7 +25,7 @@ Sa pagsasanay na ito, i-configure natin ang Visual Studio Code para mahanap ang 
 
 ### -0- Paunang hakbang, i-enable ang MCP Server discovery
 
-Maaaring kailanganin mong i-enable ang pagtuklas ng MCP Servers.
+Maaaring kailanganin mong i-enable ang discovery ng MCP Servers.
 
 1. Pumunta sa `File -> Preferences -> Settings` sa Visual Studio Code.
 
@@ -33,7 +33,7 @@ Maaaring kailanganin mong i-enable ang pagtuklas ng MCP Servers.
 
 ### -1- Gumawa ng config file
 
-Magsimula sa paggawa ng config file sa root ng iyong proyekto, kailangan mo ng file na tinatawag na MCP.json at ilagay ito sa folder na tinatawag na .vscode. Dapat itong ganito ang hitsura:
+Magsimula sa paggawa ng config file sa root ng iyong proyekto, kailangan mo ng file na tinatawag na MCP.json at ilagay ito sa folder na tinatawag na .vscode. Dapat itong ganito ang itsura:
 
 ```text
 .vscode
@@ -82,7 +82,7 @@ Ngayon na nakadagdag ka na ng entry, simulan natin ang server:
 
 ## Takdang Aralin
 
-Subukang magdagdag ng entry ng server sa iyong *mcp.json* file at siguraduhing kaya mong simulan/hintuin ang server. Siguraduhin mo ring makipag-ugnayan sa mga tools sa iyong server gamit ang GitHub Copilot Chat interface.
+Subukang magdagdag ng server entry sa iyong *mcp.json* file at siguraduhing kaya mong simulan/hintuin ang server. Siguraduhin mo rin na makipag-ugnayan ka sa mga tools sa iyong server gamit ang GitHub Copilot Chat interface.
 
 ## Solusyon
 
@@ -104,7 +104,7 @@ Ang mga mahahalagang punto mula sa kabanatang ito ay ang mga sumusunod:
 - [TypeScript Calculator](../samples/typescript/README.md)
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Karagdagang Mga Mapagkukunan
+## Karagdagang Mga Sanggunian
 
 - [Visual Studio docs](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
@@ -113,4 +113,4 @@ Ang mga mahahalagang punto mula sa kabanatang ito ay ang mga sumusunod:
 - Susunod: [Paglikha ng SSE Server](../05-sse-server/README.md)
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

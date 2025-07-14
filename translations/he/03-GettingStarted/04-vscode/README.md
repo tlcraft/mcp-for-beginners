@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T18:00:08+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:37:17+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "he"
 }
@@ -70,7 +70,7 @@ CO_OP_TRANSLATOR_METADATA:
 
   ![הפעלת שרת ב-Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.he.png)  
 
-1. לחץ על סמל ה"play", אתה אמור לראות שסמל הכלים בממשק השיחה של GitHub Copilot מראה עלייה במספר הכלים הזמינים. אם תלחץ על סמל הכלים, תראה רשימה של כלים רשומים. תוכל לסמן/לבטל סימון לכל כלי בהתאם אם ברצונך ש-GitHub Copilot ישתמש בהם כהקשר:
+1. לחץ על סמל ה"play", אתה אמור לראות שסמל הכלים בממשק השיחה של GitHub Copilot מראה על עלייה במספר הכלים הזמינים. אם תלחץ על סמל הכלים, תראה רשימה של כלים רשומים. תוכל לסמן/לבטל סימון לכל כלי לפי אם אתה רוצה ש-GitHub Copilot ישתמש בהם בהקשר:
 
   ![הפעלת שרת ב-Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.he.png)
 
@@ -94,7 +94,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - Visual Studio Code הוא לקוח מצוין שמאפשר לך לצרוך מספר שרתי MCP והכלים שלהם.
 - ממשק השיחה של GitHub Copilot הוא איך אתה מתקשר עם השרתים.
-- ניתן לבקש מהמשתמש להזין קלטים כמו מפתחות API שניתן להעביר לשרת MCP בעת הגדרת רשומת השרת בקובץ *mcp.json*.
+- אתה יכול לבקש מהמשתמש להזין קלטים כמו מפתחות API שניתן להעביר לשרת MCP בעת הגדרת רשומת השרת בקובץ *mcp.json*.
 
 ## דוגמאות
 

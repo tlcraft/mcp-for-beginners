@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T18:09:48+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:39:32+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "id"
 }
@@ -17,7 +17,7 @@ Berikut cara kita perlu mendekatinya secara garis besar:
 - Mulai/Koneksi ke server tersebut untuk mendapatkan daftar kapabilitasnya.
 - Gunakan kapabilitas tersebut melalui antarmuka GitHub Copilot Chat.
 
-Bagus, sekarang setelah kita memahami alurnya, mari coba gunakan MCP Server melalui Visual Studio Code lewat sebuah latihan.
+Bagus, sekarang kita sudah memahami alurnya, mari coba gunakan MCP Server melalui Visual Studio Code lewat sebuah latihan.
 
 ## Latihan: Menggunakan server
 
@@ -82,7 +82,7 @@ Setelah Anda menambahkan entri, mari mulai server:
 
 ## Tugas
 
-Cobalah menambahkan entri server ke file *mcp.json* Anda dan pastikan Anda bisa memulai/menghentikan server. Pastikan juga Anda bisa berkomunikasi dengan tools di server Anda melalui antarmuka GitHub Copilot Chat.
+Coba tambahkan entri server ke file *mcp.json* Anda dan pastikan Anda bisa memulai/menghentikan server. Pastikan juga Anda bisa berkomunikasi dengan tools di server Anda melalui antarmuka GitHub Copilot Chat.
 
 ## Solusi
 
@@ -94,7 +94,7 @@ Poin penting dari bab ini adalah sebagai berikut:
 
 - Visual Studio Code adalah klien yang hebat yang memungkinkan Anda menggunakan beberapa MCP Server dan tools mereka.
 - Antarmuka GitHub Copilot Chat adalah cara Anda berinteraksi dengan server.
-- Anda dapat meminta input dari pengguna seperti API key yang bisa diteruskan ke MCP Server saat mengonfigurasi entri server di file *mcp.json*.
+- Anda bisa meminta input dari pengguna seperti API key yang dapat diteruskan ke MCP Server saat mengonfigurasi entri server di file *mcp.json*.
 
 ## Contoh
 
@@ -113,4 +113,4 @@ Poin penting dari bab ini adalah sebagai berikut:
 - Selanjutnya: [Membuat SSE Server](../05-sse-server/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

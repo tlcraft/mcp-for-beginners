@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T18:43:40+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:41:53+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "sk"
 }
@@ -17,11 +17,11 @@ Takto by sme mali postupovať na vysokej úrovni:
 - Spustiť/pripojiť sa k danému serveru, aby sme získali zoznam jeho schopností.
 - Používať tieto schopnosti cez rozhranie GitHub Copilot Chat.
 
-Skvelé, teraz keď rozumieme postupu, vyskúšajme použiť MCP Server vo Visual Studio Code prostredníctvom cvičenia.
+Skvelé, teraz keď rozumieme postupu, vyskúšajme použiť MCP Server vo Visual Studio Code v rámci cvičenia.
 
 ## Cvičenie: Použitie servera
 
-V tomto cvičení nakonfigurujeme Visual Studio Code tak, aby našiel váš MCP server a mohol byť použitý z rozhrania GitHub Copilot Chat.
+V tomto cvičení nakonfigurujeme Visual Studio Code tak, aby našiel váš MCP server a mohol ho používať cez rozhranie GitHub Copilot Chat.
 
 ### -0- Predkrok, povolenie objavovania MCP Serverov
 
@@ -70,7 +70,7 @@ Keď ste pridali záznam, spustime server:
 
   ![Spustenie servera vo Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.sk.png)  
 
-2. Kliknite na ikonu "play", mali by ste vidieť, že ikona nástrojov v GitHub Copilot Chat sa zvýši o počet dostupných nástrojov. Ak kliknete na túto ikonu nástrojov, zobrazí sa zoznam registrovaných nástrojov. Môžete zaškrtnúť alebo odškrtnúť každý nástroj podľa toho, či chcete, aby ich GitHub Copilot používal ako kontext:
+2. Kliknite na ikonu "play", mali by ste vidieť, že ikona nástrojov v GitHub Copilot Chat sa zvýši o počet dostupných nástrojov. Ak kliknete na túto ikonu nástrojov, zobrazí sa zoznam registrovaných nástrojov. Môžete ich zaškrtnúť alebo odškrtnúť podľa toho, či chcete, aby ich GitHub Copilot používal ako kontext:
 
   ![Spustenie servera vo Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.sk.png)
 
@@ -82,7 +82,7 @@ Keď ste pridali záznam, spustime server:
 
 ## Zadanie
 
-Skúste pridať záznam o serveri do vášho súboru *mcp.json* a uistite sa, že viete server spustiť a zastaviť. Tiež sa uistite, že môžete komunikovať s nástrojmi na vašom serveri cez rozhranie GitHub Copilot Chat.
+Skúste pridať záznam o serveri do vášho *mcp.json* súboru a uistite sa, že viete server spustiť a zastaviť. Tiež sa uistite, že môžete komunikovať s nástrojmi na vašom serveri cez rozhranie GitHub Copilot Chat.
 
 ## Riešenie
 
@@ -94,7 +94,7 @@ Z tohto kapitoly si odnášame nasledovné:
 
 - Visual Studio Code je skvelý klient, ktorý vám umožní používať viac MCP Serverov a ich nástrojov.
 - Rozhranie GitHub Copilot Chat je spôsob, ako komunikovať so servermi.
-- Môžete vyzvať používateľa na zadanie vstupov, ako sú API kľúče, ktoré sa môžu odovzdať MCP Serveru pri konfigurácii záznamu v súbore *mcp.json*.
+- Môžete vyzvať používateľa na zadanie vstupov, ako sú API kľúče, ktoré sa môžu odovzdať MCP Serveru pri konfigurácii záznamu v *mcp.json* súbore.
 
 ## Ukážky
 

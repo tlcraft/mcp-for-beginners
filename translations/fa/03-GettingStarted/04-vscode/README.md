@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T15:44:51+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:28:04+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "fa"
 }
@@ -74,11 +74,11 @@ CO_OP_TRANSLATOR_METADATA:
 
   ![ابزارها در Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.fa.png)
 
-3. برای اجرای یک ابزار، یک درخواست تایپ کنید که می‌دانید با توضیحات یکی از ابزارهای شما مطابقت دارد، مثلاً یک درخواست مانند "add 22 to 1":
+3. برای اجرای یک ابزار، متنی را تایپ کنید که می‌دانید با توضیح یکی از ابزارهای شما مطابقت دارد، مثلاً متنی مانند "add 22 to 1":
 
   ![اجرای ابزار از GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.fa.png)
 
-  باید پاسخی با مقدار 23 ببینید.
+  باید پاسخی با مقدار 23 دریافت کنید.
 
 ## تمرین عملی
 
