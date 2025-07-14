@@ -121,7 +121,7 @@ The Python SDK offers a Pythonic approach to MCP implementation with excellent M
 ### Key Features
 
 - Async/await support with asyncio
-- Flask and FastAPI integration
+- FastAPI integration``
 - Simple tool registration
 - Native integration with popular ML libraries
 
