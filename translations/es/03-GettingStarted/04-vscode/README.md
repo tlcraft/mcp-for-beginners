@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:22:24+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:26:45+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "es"
 }
@@ -21,7 +21,7 @@ Genial, ahora que entendemos el flujo, intentemos usar un MCP Server a través d
 
 ## Ejercicio: Consumir un servidor
 
-En este ejercicio, configuraremos Visual Studio Code para encontrar tu MCP server y que pueda ser usado desde la interfaz de GitHub Copilot Chat.
+En este ejercicio, configuraremos Visual Studio Code para que encuentre tu MCP server y pueda ser usado desde la interfaz de GitHub Copilot Chat.
 
 ### -0- Paso previo, habilitar el descubrimiento de MCP Server
 
@@ -78,7 +78,7 @@ Ahora que has agregado una entrada, vamos a iniciar el servidor:
 
   ![Ejecutando una herramienta desde GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.es.png)
 
-  Deberías ver una respuesta que dice 23.
+  Deberías ver una respuesta que diga 23.
 
 ## Tarea
 

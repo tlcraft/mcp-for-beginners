@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:32:57+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:39:32+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "id"
 }
@@ -11,7 +11,7 @@ Mari kita bahas lebih lanjut tentang cara menggunakan antarmuka visual di bagian
 
 ## Pendekatan
 
-Berikut cara kita perlu mendekati ini secara garis besar:
+Berikut cara kita perlu mendekatinya secara garis besar:
 
 - Konfigurasikan sebuah file untuk menemukan MCP Server kita.
 - Mulai/Koneksi ke server tersebut untuk mendapatkan daftar kapabilitasnya.
@@ -29,11 +29,11 @@ Anda mungkin perlu mengaktifkan penemuan MCP Server.
 
 1. Buka `File -> Preferences -> Settings` di Visual Studio Code.
 
-2. Cari "MCP" dan aktifkan `chat.mcp.discovery.enabled` di file settings.json.
+1. Cari "MCP" dan aktifkan `chat.mcp.discovery.enabled` di file settings.json.
 
 ### -1- Buat file konfigurasi
 
-Mulailah dengan membuat file konfigurasi di root proyek Anda, Anda perlu sebuah file bernama MCP.json dan menaruhnya di folder bernama .vscode. Isinya kira-kira seperti ini:
+Mulailah dengan membuat file konfigurasi di root proyek Anda, Anda perlu file bernama MCP.json dan menaruhnya di folder bernama .vscode. Isinya kira-kira seperti ini:
 
 ```text
 .vscode
@@ -70,11 +70,11 @@ Setelah Anda menambahkan entri, mari mulai server:
 
   ![Memulai server di Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.id.png)  
 
-2. Klik ikon "play", Anda akan melihat ikon tools di GitHub Copilot Chat bertambah jumlah tools yang tersedia. Jika Anda klik ikon tools tersebut, Anda akan melihat daftar tools yang terdaftar. Anda bisa centang atau hapus centang setiap tool tergantung apakah Anda ingin GitHub Copilot menggunakannya sebagai konteks:
+1. Klik ikon "play", Anda akan melihat ikon tools di GitHub Copilot Chat bertambah jumlah tools yang tersedia. Jika Anda klik ikon tools tersebut, Anda akan melihat daftar tools yang terdaftar. Anda bisa centang atau hapus centang setiap tool tergantung apakah Anda ingin GitHub Copilot menggunakannya sebagai konteks:
 
   ![Memulai server di Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.id.png)
 
-3. Untuk menjalankan sebuah tool, ketik prompt yang Anda tahu sesuai dengan deskripsi salah satu tools Anda, misalnya prompt seperti "add 22 to 1":
+1. Untuk menjalankan sebuah tool, ketik prompt yang Anda tahu sesuai dengan deskripsi salah satu tools Anda, misalnya prompt seperti "add 22 to 1":
 
   ![Menjalankan tool dari GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.id.png)
 
@@ -113,4 +113,4 @@ Poin penting dari bab ini adalah sebagai berikut:
 - Selanjutnya: [Membuat SSE Server](../05-sse-server/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

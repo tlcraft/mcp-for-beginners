@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:30:53+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:35:55+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "da"
 }
@@ -11,10 +11,10 @@ Lad os tale mere om, hvordan vi bruger den visuelle grænseflade i de næste afs
 
 ## Fremgangsmåde
 
-Her er, hvordan vi skal gribe det an på et overordnet niveau:
+Her er, hvordan vi skal gribe det an på et overordnet plan:
 
 - Konfigurer en fil til at finde vores MCP Server.
-- Start/opret forbindelse til den nævnte server for at få den til at liste sine funktioner.
+- Start/opret forbindelse til den pågældende server for at få den til at liste sine funktioner.
 - Brug disse funktioner gennem GitHub Copilot Chat-grænsefladen.
 
 Fint, nu hvor vi forstår flowet, lad os prøve at bruge en MCP Server gennem Visual Studio Code via en øvelse.
@@ -60,7 +60,7 @@ Tilføj følgende indhold til *mcp.json*:
 }
 ```
 
-Her er et simpelt eksempel ovenfor på, hvordan man starter en server skrevet i Node.js. For andre runtime-miljøer angiv den korrekte kommando til at starte serveren ved hjælp af `command` og `args`.
+Her er et simpelt eksempel på, hvordan man starter en server skrevet i Node.js. For andre runtime-miljøer angiv den korrekte kommando til at starte serveren ved hjælp af `command` og `args`.
 
 ### -3- Start serveren
 
@@ -74,7 +74,7 @@ Nu hvor du har tilføjet en post, lad os starte serveren:
 
   ![Starting server in Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.da.png)
 
-1. For at køre et værktøj, skriv en prompt, som du ved vil matche beskrivelsen af et af dine værktøjer, for eksempel en prompt som "add 22 to 1":
+1. For at køre et værktøj, skriv en prompt, som du ved matcher beskrivelsen af et af dine værktøjer, for eksempel en prompt som "add 22 to 1":
 
   ![Running a tool from GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.da.png)
 

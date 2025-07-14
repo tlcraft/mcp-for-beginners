@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:28:10+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:32:58+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "pt"
 }
@@ -66,11 +66,11 @@ Aqui está um exemplo simples de como iniciar um servidor escrito em Node.js, pa
 
 Agora que adicionou uma entrada, vamos iniciar o servidor:
 
-1. Localize a sua entrada em *mcp.json* e certifique-se de encontrar o ícone "play":
+1. Localize a sua entrada em *mcp.json* e certifique-se de que vê o ícone "play":
 
   ![Iniciar servidor no Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.pt.png)  
 
-1. Clique no ícone "play", deverá ver o ícone de ferramentas no GitHub Copilot Chat aumentar o número de ferramentas disponíveis. Se clicar nesse ícone de ferramentas, verá uma lista de ferramentas registadas. Pode marcar/desmarcar cada ferramenta dependendo se quer que o GitHub Copilot as use como contexto:
+1. Clique no ícone "play", deverá ver o ícone de ferramentas no GitHub Copilot Chat aumentar o número de ferramentas disponíveis. Se clicar nesse ícone de ferramentas, verá uma lista das ferramentas registadas. Pode marcar/desmarcar cada ferramenta dependendo se quer que o GitHub Copilot as use como contexto:
 
   ![Iniciar servidor no Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.pt.png)
 
@@ -88,13 +88,13 @@ Tente adicionar uma entrada de servidor ao seu ficheiro *mcp.json* e certifique-
 
 [Solução](./solution/README.md)
 
-## Principais Conclusões
+## Pontos-chave
 
-As principais conclusões deste capítulo são as seguintes:
+Os pontos principais deste capítulo são os seguintes:
 
 - O Visual Studio Code é um excelente cliente que permite consumir vários MCP Servers e as suas ferramentas.
 - A interface do GitHub Copilot Chat é como interage com os servidores.
-- Pode pedir ao utilizador inputs como chaves API que podem ser passadas para o MCP Server ao configurar a entrada do servidor no ficheiro *mcp.json*.
+- Pode pedir ao utilizador inputs como chaves de API que podem ser passadas para o MCP Server ao configurar a entrada do servidor no ficheiro *mcp.json*.
 
 ## Exemplos
 
@@ -113,4 +113,4 @@ As principais conclusões deste capítulo são as seguintes:
 - Seguinte: [Criar um Servidor SSE](../05-sse-server/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

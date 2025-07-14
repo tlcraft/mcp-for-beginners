@@ -1,29 +1,29 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:37:00+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:43:48+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "sl"
 }
 -->
-Pogovorimo se več o tem, kako uporabljamo vizualni vmesnik v naslednjih razdelkih.
+Pogovorimo se več o uporabi vizualnega vmesnika v naslednjih razdelkih.
 
 ## Pristop
 
 Tako moramo pristopiti k temu na visoki ravni:
 
-- Konfigurirati datoteko, da najde naš MCP Server.
+- Konfigurirati datoteko za iskanje našega MCP strežnika.
 - Zagnati/povezati se s tem strežnikom, da nam prikaže svoje zmogljivosti.
 - Uporabiti te zmogljivosti prek vmesnika GitHub Copilot Chat.
 
-Odlično, zdaj ko razumemo potek, poskusimo uporabiti MCP Server prek Visual Studio Code z vajo.
+Super, zdaj ko razumemo potek, poskusimo uporabiti MCP strežnik prek Visual Studio Code z vajo.
 
 ## Vaja: Uporaba strežnika
 
 V tej vaji bomo konfigurirali Visual Studio Code, da najde vaš MCP strežnik, tako da ga bo mogoče uporabljati prek vmesnika GitHub Copilot Chat.
 
-### -0- Predhodni korak, omogočite odkrivanje MCP strežnikov
+### -0- Predpriprava, omogočite odkrivanje MCP strežnikov
 
 Morda boste morali omogočiti odkrivanje MCP strežnikov.
 
@@ -113,4 +113,4 @@ Ključne ugotovitve iz tega poglavja so naslednje:
 - Naslednje: [Ustvarjanje SSE strežnika](../05-sse-server/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

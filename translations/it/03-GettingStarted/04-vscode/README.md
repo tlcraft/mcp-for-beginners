@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:28:47+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:33:33+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "it"
 }
 -->
-Parliamo ora di come utilizzare l'interfaccia visiva nelle sezioni successive.
+Parliamo più nel dettaglio di come utilizzare l'interfaccia visiva nelle sezioni successive.
 
 ## Approccio
 
@@ -21,9 +21,9 @@ Perfetto, ora che abbiamo capito il flusso, proviamo a usare un MCP Server trami
 
 ## Esercizio: Consumare un server
 
-In questo esercizio configureremo Visual Studio Code per trovare il tuo MCP server in modo che possa essere utilizzato dall'interfaccia GitHub Copilot Chat.
+In questo esercizio configureremo Visual Studio Code per trovare il tuo MCP server in modo che possa essere usato dall'interfaccia GitHub Copilot Chat.
 
-### -0- Passo preliminare, abilitare la scoperta del MCP Server
+### -0- Passo preliminare, abilitare la scoperta MCP Server
 
 Potresti dover abilitare la scoperta dei MCP Server.
 
@@ -33,7 +33,7 @@ Potresti dover abilitare la scoperta dei MCP Server.
 
 ### -1- Creare il file di configurazione
 
-Inizia creando un file di configurazione nella radice del progetto, ti servirà un file chiamato MCP.json da posizionare in una cartella chiamata .vscode. Dovrebbe essere così:
+Inizia creando un file di configurazione nella root del tuo progetto, ti servirà un file chiamato MCP.json da posizionare in una cartella chiamata .vscode. Dovrebbe essere così:
 
 ```text
 .vscode
@@ -68,13 +68,13 @@ Ora che hai aggiunto una voce, avvia il server:
 
 1. Trova la tua voce in *mcp.json* e assicurati di vedere l'icona "play":
 
-  ![Avvio del server in Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.it.png)  
+  ![Avvio server in Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.it.png)  
 
 1. Clicca sull'icona "play", dovresti vedere l'icona degli strumenti in GitHub Copilot Chat aumentare il numero di strumenti disponibili. Se clicchi su questa icona, vedrai la lista degli strumenti registrati. Puoi selezionare/deselezionare ogni strumento a seconda se vuoi che GitHub Copilot li usi come contesto:
 
-  ![Avvio del server in Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.it.png)
+  ![Strumenti in Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.it.png)
 
-1. Per eseguire uno strumento, digita un prompt che corrisponda alla descrizione di uno dei tuoi strumenti, per esempio un prompt come "add 22 to 1":
+1. Per eseguire uno strumento, digita un prompt che corrisponda alla descrizione di uno dei tuoi strumenti, ad esempio un prompt come "add 22 to 1":
 
   ![Esecuzione di uno strumento da GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.it.png)
 
@@ -88,13 +88,13 @@ Prova ad aggiungere una voce server al tuo file *mcp.json* e assicurati di poter
 
 [Soluzione](./solution/README.md)
 
-## Punti Chiave
+## Punti chiave
 
 I punti chiave di questo capitolo sono i seguenti:
 
 - Visual Studio Code è un ottimo client che ti permette di consumare diversi MCP Server e i loro strumenti.
 - L'interfaccia GitHub Copilot Chat è il modo con cui interagisci con i server.
-- Puoi richiedere all'utente input come chiavi API che possono essere passate al MCP Server configurando la voce del server nel file *mcp.json*.
+- Puoi richiedere all'utente input come chiavi API da passare al MCP Server quando configuri la voce server nel file *mcp.json*.
 
 ## Esempi
 
@@ -104,7 +104,7 @@ I punti chiave di questo capitolo sono i seguenti:
 - [Calcolatrice TypeScript](../samples/typescript/README.md)
 - [Calcolatrice Python](../../../../03-GettingStarted/samples/python)
 
-## Risorse Aggiuntive
+## Risorse aggiuntive
 
 - [Documentazione Visual Studio](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 

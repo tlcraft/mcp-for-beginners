@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:29:26+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:34:17+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "tr"
 }
@@ -13,19 +13,19 @@ Görsel arayüzü nasıl kullanacağımızı sonraki bölümlerde daha detaylı 
 
 Yüksek seviyede nasıl yaklaşmamız gerektiği şöyle:
 
-- MCP Server'ımızı bulmak için bir dosya yapılandırmak.
+- MCP Sunucumuzu bulmak için bir dosya yapılandırmak.
 - Söz konusu sunucuyu başlatmak/bağlanmak ve yeteneklerini listelemesini sağlamak.
 - Bu yetenekleri GitHub Copilot Chat arayüzü üzerinden kullanmak.
 
-Harika, akışı anladığımıza göre, bir egzersizle Visual Studio Code üzerinden bir MCP Server kullanmayı deneyelim.
+Harika, akışı anladığımıza göre, bir egzersizle Visual Studio Code üzerinden bir MCP Sunucusu kullanmayı deneyelim.
 
 ## Egzersiz: Bir sunucuyu kullanmak
 
 Bu egzersizde, Visual Studio Code'u MCP sunucunuzu bulacak şekilde yapılandıracağız, böylece GitHub Copilot Chat arayüzünden kullanılabilir olacak.
 
-### -0- Ön adım, MCP Server keşfini etkinleştirme
+### -0- Ön adım, MCP Sunucu keşfini etkinleştirme
 
-MCP Server keşfini etkinleştirmeniz gerekebilir.
+MCP Sunucularının keşfini etkinleştirmeniz gerekebilir.
 
 1. Visual Studio Code'da `File -> Preferences -> Settings` menüsüne gidin.
 
@@ -40,7 +40,7 @@ Proje kök dizininizde bir konfigürasyon dosyası oluşturarak başlayın, MCP.
 |-- mcp.json
 ```
 
-Sonra, bir sunucu girdisi nasıl eklenir görelim.
+Şimdi, bir sunucu girişi nasıl eklenir görelim.
 
 ### -2- Sunucu yapılandırma
 
@@ -64,9 +64,9 @@ Yukarıda Node.js ile yazılmış bir sunucuyu başlatmak için basit bir örnek
 
 ### -3- Sunucuyu başlatma
 
-Bir girdi eklediğinize göre, şimdi sunucuyu başlatalım:
+Bir giriş eklediğinize göre, şimdi sunucuyu başlatalım:
 
-1. *mcp.json* dosyanızdaki girdinizi bulun ve "play" simgesini görebildiğinizden emin olun:
+1. *mcp.json* dosyanızdaki girişinizi bulun ve "play" simgesini görebildiğinizden emin olun:
 
   ![Visual Studio Code'da sunucu başlatma](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.tr.png)  
 
@@ -82,7 +82,7 @@ Bir girdi eklediğinize göre, şimdi sunucuyu başlatalım:
 
 ## Ödev
 
-*mcp.json* dosyanıza bir sunucu girdisi eklemeyi deneyin ve sunucuyu başlatıp durdurabildiğinizden emin olun. Ayrıca GitHub Copilot Chat arayüzü üzerinden sunucunuzdaki araçlarla iletişim kurabildiğinizi kontrol edin.
+*mcp.json* dosyanıza bir sunucu girişi eklemeyi deneyin ve sunucuyu başlatıp durdurabildiğinizden emin olun. Ayrıca GitHub Copilot Chat arayüzü üzerinden sunucunuzdaki araçlarla iletişim kurabildiğinizi kontrol edin.
 
 ## Çözüm
 
@@ -92,9 +92,9 @@ Bir girdi eklediğinize göre, şimdi sunucuyu başlatalım:
 
 Bu bölümden çıkarılacak önemli noktalar şunlardır:
 
-- Visual Studio Code, birden fazla MCP Server ve araçlarını kullanmanızı sağlayan harika bir istemcidir.
+- Visual Studio Code, birden fazla MCP Sunucusunu ve araçlarını kullanmanızı sağlayan harika bir istemcidir.
 - GitHub Copilot Chat arayüzü, sunucularla etkileşim kurduğunuz yerdir.
-- *mcp.json* dosyasındaki sunucu girdisini yapılandırırken API anahtarları gibi kullanıcı girdilerini MCP Server'a iletmek için kullanıcıdan bilgi isteyebilirsiniz.
+- Kullanıcıdan API anahtarları gibi girdiler istemek ve bunları *mcp.json* dosyasındaki sunucu girişini yapılandırırken MCP Sunucusuna iletmek mümkündür.
 
 ## Örnekler
 
@@ -113,4 +113,4 @@ Bu bölümden çıkarılacak önemli noktalar şunlardır:
 - Sonraki: [Bir SSE Sunucusu Oluşturma](../05-sse-server/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

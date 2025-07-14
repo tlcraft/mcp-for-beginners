@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:24:41+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:29:05+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "mo"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 方法
 
-以下是我們需要採取的高階步驟：
+以下是我們需要採取的高層次步驟：
 
-- 配置一個檔案來尋找我們的 MCP Server。
+- 配置一個檔案以找到我們的 MCP Server。
 - 啟動/連接到該伺服器，讓它列出其功能。
 - 透過 GitHub Copilot Chat 介面使用這些功能。
 
@@ -21,7 +21,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 練習：使用伺服器
 
-在這個練習中，我們將配置 Visual Studio Code 以尋找你的 MCP 伺服器，讓它能從 GitHub Copilot Chat 介面使用。
+在這個練習中，我們將配置 Visual Studio Code 以找到你的 MCP 伺服器，讓它能從 GitHub Copilot Chat 介面使用。
 
 ### -0- 預備步驟，啟用 MCP Server 探測
 
@@ -60,7 +60,7 @@ CO_OP_TRANSLATOR_METADATA:
 }
 ```
 
-上面是一個簡單的範例，展示如何啟動一個用 Node.js 撰寫的伺服器，其他執行環境請使用 `command` 和 `args` 指定正確的啟動指令。
+上面是一個簡單的範例，展示如何啟動一個用 Node.js 撰寫的伺服器，對於其他執行環境，請使用 `command` 和 `args` 指定啟動伺服器的正確指令。
 
 ### -3- 啟動伺服器
 
@@ -82,7 +82,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 作業
 
-嘗試在你的 *mcp.json* 檔案中新增一個伺服器條目，並確保你能啟動/停止該伺服器。也要確保你能透過 GitHub Copilot Chat 介面與伺服器上的工具溝通。
+嘗試在你的 *mcp.json* 檔案中新增一個伺服器條目，並確保你能啟動/停止伺服器。也確保你能透過 GitHub Copilot Chat 介面與伺服器上的工具溝通。
 
 ## 解答
 
@@ -92,9 +92,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 本章節的重點如下：
 
-- Visual Studio Code 是一個很棒的客戶端，讓你能使用多個 MCP Server 及其工具。
+- Visual Studio Code 是一個很棒的用戶端，讓你能使用多個 MCP Server 及其工具。
 - GitHub Copilot Chat 介面是你與伺服器互動的方式。
-- 你可以提示使用者輸入像是 API 金鑰等資訊，並在 *mcp.json* 中配置伺服器條目時將其傳遞給 MCP Server。
+- 你可以提示使用者輸入像是 API 金鑰等資訊，並在 *mcp.json* 檔案中配置伺服器條目時將其傳遞給 MCP Server。
 
 ## 範例
 

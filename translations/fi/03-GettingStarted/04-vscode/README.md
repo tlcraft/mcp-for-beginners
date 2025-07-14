@@ -1,31 +1,31 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:31:36+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:36:38+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "fi"
 }
 -->
-Puhutaan lisää siitä, miten käytämme visuaalista käyttöliittymää seuraavissa osioissa.
+Keskustellaan lisää siitä, miten käytämme visuaalista käyttöliittymää seuraavissa osioissa.
 
 ## Lähestymistapa
 
 Näin meidän tulee lähestyä tätä korkealla tasolla:
 
-- Määritä tiedosto, josta MCP-palvelimemme löytyy.
-- Käynnistä/Yhdistä kyseiseen palvelimeen, jotta se voi listata kykynsä.
+- Määritä tiedosto, josta MCP Server löytyy.
+- Käynnistä/Yhdistä kyseiseen palvelimeen, jotta se listaa kykynsä.
 - Käytä näitä kykyjä GitHub Copilot Chat -käyttöliittymän kautta.
 
-Hienoa, nyt kun ymmärrämme prosessin, kokeillaan MCP-palvelimen käyttöä Visual Studio Codessa harjoituksen avulla.
+Hienoa, nyt kun ymmärrämme prosessin, kokeillaan käyttää MCP Serveriä Visual Studio Coden kautta harjoituksen avulla.
 
 ## Harjoitus: Palvelimen käyttäminen
 
 Tässä harjoituksessa määritämme Visual Studio Coden löytämään MCP-palvelimesi, jotta sitä voidaan käyttää GitHub Copilot Chat -käyttöliittymässä.
 
-### -0- Esivaihe, ota MCP-palvelinten haku käyttöön
+### -0- Esivaihe, ota MCP Serverin löytyminen käyttöön
 
-Saatat joutua ottamaan MCP-palvelinten haun käyttöön.
+Saatat joutua ottamaan MCP Serverien löytymisen käyttöön.
 
 1. Mene Visual Studio Codessa kohtaan `File -> Preferences -> Settings`.
 
@@ -66,7 +66,7 @@ Yllä on yksinkertainen esimerkki Node.js:llä kirjoitetun palvelimen käynnist�
 
 Nyt kun olet lisännyt merkinnän, käynnistetään palvelin:
 
-1. Etsi merkintäsi *mcp.json*-tiedostosta ja varmista, että näet "play"-ikonin:
+1. Etsi merkintäsi *mcp.json*-tiedostosta ja varmista, että löydät "play"-ikonin:
 
   ![Palvelimen käynnistäminen Visual Studio Codessa](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.fi.png)  
 
@@ -86,31 +86,31 @@ Kokeile lisätä palvelinmerkintä *mcp.json*-tiedostoosi ja varmista, että voi
 
 ## Ratkaisu
 
-[Ratkaisu](./solution/README.md)
+[Solution](./solution/README.md)
 
 ## Tärkeimmät opit
 
 Tämän luvun tärkeimmät opit ovat:
 
-- Visual Studio Code on erinomainen asiakasohjelma, joka mahdollistaa useiden MCP-palvelimien ja niiden työkalujen käytön.
+- Visual Studio Code on erinomainen asiakasohjelma, joka mahdollistaa useiden MCP Serverien ja niiden työkalujen käytön.
 - GitHub Copilot Chat -käyttöliittymä on tapa, jolla kommunikoit palvelimien kanssa.
-- Voit pyytää käyttäjältä syötteitä, kuten API-avaimia, jotka voidaan välittää MCP-palvelimelle määritettäessä palvelinmerkintää *mcp.json*-tiedostossa.
+- Voit pyytää käyttäjältä syötteitä, kuten API-avaimia, jotka voidaan välittää MCP Serverille määritettäessä palvelinmerkintää *mcp.json*-tiedostossa.
 
 ## Esimerkit
 
-- [Java-laskin](../samples/java/calculator/README.md)
-- [.Net-laskin](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript-laskin](../samples/javascript/README.md)
-- [TypeScript-laskin](../samples/typescript/README.md)
-- [Python-laskin](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## Lisäresurssit
 
-- [Visual Studio -dokumentaatio](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
+- [Visual Studio docs](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
 ## Mitä seuraavaksi
 
-- Seuraavaksi: [SSE-palvelimen luominen](../05-sse-server/README.md)
+- Seuraava: [SSE-palvelimen luominen](../05-sse-server/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

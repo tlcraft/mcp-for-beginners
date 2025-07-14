@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:35:31+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:42:15+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "ro"
 }
 -->
-Să vorbim mai mult despre cum folosim interfața vizuală în secțiunile următoare.
+Să discutăm mai mult despre cum folosim interfața vizuală în secțiunile următoare.
 
 ## Abordare
 
 Iată cum trebuie să abordăm acest lucru la un nivel general:
 
 - Configurăm un fișier pentru a găsi MCP Server-ul nostru.
-- Pornim/Ne conectăm la serverul respectiv pentru a-i lista capabilitățile.
+- Pornim/Conectăm la serverul respectiv pentru a obține lista de capabilități.
 - Folosim aceste capabilități prin interfața GitHub Copilot Chat.
 
 Perfect, acum că înțelegem fluxul, să încercăm să folosim un MCP Server prin Visual Studio Code printr-un exercițiu.
@@ -70,7 +70,7 @@ Acum că ai adăugat o intrare, să pornim serverul:
 
   ![Pornirea serverului în Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.ro.png)  
 
-1. Apasă pe pictograma "play", ar trebui să vezi pictograma de unelte din GitHub Copilot Chat crescând numărul de unelte disponibile. Dacă apeși pe această pictogramă, vei vedea o listă cu uneltele înregistrate. Poți bifa/debifa fiecare unealtă în funcție de dacă vrei ca GitHub Copilot să le folosească ca context:
+1. Apasă pe pictograma "play", ar trebui să vezi că pictograma de unelte din GitHub Copilot Chat crește numărul de unelte disponibile. Dacă apeși pe pictograma uneltelor, vei vedea o listă cu uneltele înregistrate. Poți bifa/debifa fiecare unealtă în funcție de dacă vrei ca GitHub Copilot să le folosească ca context:
 
   ![Pornirea serverului în Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.ro.png)
 
@@ -94,7 +94,7 @@ Concluziile din acest capitol sunt următoarele:
 
 - Visual Studio Code este un client excelent care îți permite să consumi mai mulți MCP Serveri și uneltele lor.
 - Interfața GitHub Copilot Chat este modul în care interacționezi cu serverele.
-- Poți solicita utilizatorului să introducă date precum chei API care pot fi transmise MCP Server-ului când configurezi intrarea serverului în fișierul *mcp.json*.
+- Poți solicita utilizatorului să introducă date precum chei API care pot fi transmise MCP Server-ului atunci când configurezi intrarea serverului în fișierul *mcp.json*.
 
 ## Exemple
 

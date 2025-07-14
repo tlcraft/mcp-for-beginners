@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:22:43+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:27:05+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "de"
 }
@@ -60,7 +60,7 @@ Füge folgenden Inhalt zu *mcp.json* hinzu:
 }
 ```
 
-Oben siehst du ein einfaches Beispiel, wie man einen Server in Node.js startet. Für andere Laufzeitumgebungen gibst du den passenden Befehl zum Starten des Servers mit `command` und `args` an.
+Oben siehst du ein einfaches Beispiel, wie man einen Server in Node.js startet. Für andere Laufzeitumgebungen gib den passenden Befehl zum Starten des Servers mit `command` und `args` an.
 
 ### -3- Server starten
 
@@ -93,7 +93,7 @@ Füge einen Servereintrag zu deiner *mcp.json* Datei hinzu und stelle sicher, da
 Die wichtigsten Erkenntnisse aus diesem Kapitel sind:
 
 - Visual Studio Code ist ein großartiger Client, mit dem du mehrere MCP Server und deren Tools nutzen kannst.
-- Die GitHub Copilot Chat-Oberfläche ist die Schnittstelle zur Interaktion mit den Servern.
+- Die GitHub Copilot Chat-Oberfläche ist der Weg, wie du mit den Servern interagierst.
 - Du kannst den Nutzer nach Eingaben wie API-Schlüsseln fragen, die beim Konfigurieren des Servereintrags in der *mcp.json* Datei an den MCP Server übergeben werden.
 
 ## Beispiele
@@ -113,4 +113,4 @@ Die wichtigsten Erkenntnisse aus diesem Kapitel sind:
 - Nächstes Thema: [Erstellen eines SSE Servers](../05-sse-server/README.md)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

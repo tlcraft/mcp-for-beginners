@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:28:28+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:33:15+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "br"
 }
@@ -21,13 +21,13 @@ Aqui está como precisamos abordar isso em um nível geral:
 
 ## Exercício: Consumindo um servidor
 
-Neste exercício, vamos configurar o Visual Studio Code para encontrar seu MCP server para que ele possa ser usado na interface do GitHub Copilot Chat.
+Neste exercício, vamos configurar o Visual Studio Code para encontrar seu MCP Server para que ele possa ser usado pela interface do GitHub Copilot Chat.
 
 ### -0- Passo prévio, habilitar descoberta do MCP Server
 
 Pode ser necessário habilitar a descoberta dos MCP Servers.
 
-1. Vá em `File -> Preferences -> Settings` no Visual Studio Code.
+1. Vá em `Arquivo -> Preferências -> Configurações` no Visual Studio Code.
 
 1. Procure por "MCP" e habilite `chat.mcp.discovery.enabled` no arquivo settings.json.
 
@@ -66,7 +66,7 @@ Aqui está um exemplo simples de como iniciar um servidor escrito em Node.js, pa
 
 Agora que você adicionou uma entrada, vamos iniciar o servidor:
 
-1. Localize sua entrada em *mcp.json* e certifique-se de encontrar o ícone de "play":
+1. Localize sua entrada no *mcp.json* e certifique-se de encontrar o ícone de "play":
 
   ![Iniciando servidor no Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.br.png)  
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:33:17+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:39:51+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "ms"
 }
@@ -25,7 +25,7 @@ Dalam latihan ini, kita akan konfigurasikan Visual Studio Code untuk mencari MCP
 
 ### -0- Langkah awal, aktifkan penemuan MCP Server
 
-Anda mungkin perlu mengaktifkan penemuan MCP Servers.
+Anda mungkin perlu mengaktifkan penemuan MCP Server.
 
 1. Pergi ke `File -> Preferences -> Settings` dalam Visual Studio Code.
 
@@ -74,7 +74,7 @@ Sekarang anda telah menambah entri, mari mulakan server:
 
   ![Memulakan server dalam Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.ms.png)
 
-1. Untuk menjalankan alat, taipkan arahan yang anda tahu akan sepadan dengan penerangan salah satu alat anda, contohnya arahan seperti "add 22 to 1":
+1. Untuk menjalankan alat, taip arahan yang anda tahu akan sepadan dengan penerangan salah satu alat anda, contohnya arahan seperti "add 22 to 1":
 
   ![Menjalankan alat dari GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.ms.png)
 
@@ -92,7 +92,7 @@ Cuba tambah entri server ke dalam fail *mcp.json* anda dan pastikan anda boleh m
 
 Perkara penting dari bab ini adalah seperti berikut:
 
-- Visual Studio Code adalah klien yang hebat yang membolehkan anda menggunakan beberapa MCP Servers dan alat-alat mereka.
+- Visual Studio Code adalah klien yang hebat yang membolehkan anda menggunakan beberapa MCP Server dan alat mereka.
 - Antara muka GitHub Copilot Chat adalah cara anda berinteraksi dengan server.
 - Anda boleh meminta pengguna untuk input seperti kunci API yang boleh dihantar ke MCP Server apabila mengkonfigurasi entri server dalam fail *mcp.json*.
 
@@ -113,4 +113,4 @@ Perkara penting dari bab ini adalah seperti berikut:
 - Seterusnya: [Mencipta SSE Server](../05-sse-server/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

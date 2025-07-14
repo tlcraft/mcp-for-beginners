@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:36:38+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:43:25+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "hr"
 }
@@ -19,9 +19,9 @@ Evo kako trebamo pristupiti ovom procesu na visokoj razini:
 
 Odlično, sada kada razumijemo tijek, pokušajmo koristiti MCP Server kroz Visual Studio Code kroz jedan zadatak.
 
-## Vježba: Korištenje servera
+## Zadatak: Korištenje servera
 
-U ovoj vježbi konfigurirat ćemo Visual Studio Code da pronađe vaš MCP server kako bi se mogao koristiti iz GitHub Copilot Chat sučelja.
+U ovom zadatku konfigurirat ćemo Visual Studio Code da pronađe vaš MCP server kako bi se mogao koristiti iz GitHub Copilot Chat sučelja.
 
 ### -0- Pripremni korak, omogućite otkrivanje MCP Servera
 
@@ -113,4 +113,4 @@ Ključne poruke iz ovog poglavlja su sljedeće:
 - Sljedeće: [Kreiranje SSE Servera](../05-sse-server/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

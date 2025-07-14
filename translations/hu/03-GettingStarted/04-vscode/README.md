@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:34:24+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:40:59+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "hu"
 }
@@ -23,7 +23,7 @@ Remek, most, hogy értjük a folyamatot, próbáljuk ki az MCP szerver használa
 
 Ebben a gyakorlatban beállítjuk a Visual Studio Code-ot, hogy megtalálja az MCP szerveredet, így az használható lesz a GitHub Copilot Chat felületén.
 
-### -0- Előfeltétel, MCP szerver felfedezés engedélyezése
+### -0- Előkészület, MCP szerver felfedezés engedélyezése
 
 Lehet, hogy engedélyezned kell az MCP szerverek felfedezését.
 
@@ -113,4 +113,4 @@ A fejezet főbb tanulságai a következők:
 - Következő: [SSE szerver létrehozása](../05-sse-server/README.md)
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

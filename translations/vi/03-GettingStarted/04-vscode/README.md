@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:32:37+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:37:38+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "vi"
 }
@@ -11,17 +11,17 @@ Hãy cùng tìm hiểu thêm về cách sử dụng giao diện trực quan tron
 
 ## Cách tiếp cận
 
-Dưới đây là cách chúng ta cần tiếp cận ở mức độ tổng quát:
+Dưới đây là cách tiếp cận tổng quan:
 
-- Cấu hình một file để tìm MCP Server của chúng ta.
+- Cấu hình một file để tìm MCP Server của bạn.
 - Khởi động/Kết nối với server đó để lấy danh sách các khả năng của nó.
 - Sử dụng các khả năng đó thông qua giao diện GitHub Copilot Chat.
 
-Tuyệt vời, giờ khi đã hiểu được quy trình, hãy thử sử dụng MCP Server qua Visual Studio Code thông qua một bài tập.
+Tuyệt vời, giờ khi đã hiểu được quy trình, hãy thử sử dụng MCP Server qua Visual Studio Code trong một bài tập.
 
 ## Bài tập: Sử dụng một server
 
-Trong bài tập này, chúng ta sẽ cấu hình Visual Studio Code để tìm MCP server của bạn để có thể sử dụng từ giao diện GitHub Copilot Chat.
+Trong bài tập này, chúng ta sẽ cấu hình Visual Studio Code để tìm MCP server của bạn nhằm sử dụng nó từ giao diện GitHub Copilot Chat.
 
 ### -0- Bước chuẩn bị, bật tính năng phát hiện MCP Server
 
@@ -60,11 +60,11 @@ Thêm nội dung sau vào *mcp.json*:
 }
 ```
 
-Đây là ví dụ đơn giản về cách khởi động một server viết bằng Node.js, với các runtime khác bạn chỉ cần chỉ định đúng lệnh khởi động server bằng `command` và `args`.
+Ví dụ đơn giản trên cho thấy cách khởi động một server viết bằng Node.js, với các runtime khác bạn chỉ cần chỉ định đúng lệnh khởi động server bằng `command` và `args`.
 
 ### -3- Khởi động server
 
-Bây giờ bạn đã thêm một mục, hãy khởi động server:
+Sau khi đã thêm mục, hãy khởi động server:
 
 1. Tìm mục của bạn trong *mcp.json* và chắc chắn bạn thấy biểu tượng "play":
 
@@ -78,11 +78,11 @@ Bây giờ bạn đã thêm một mục, hãy khởi động server:
 
   ![Chạy công cụ từ GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.vi.png)
 
-  Bạn sẽ thấy phản hồi trả về là 23.
+  Bạn sẽ nhận được phản hồi là 23.
 
 ## Bài tập về nhà
 
-Hãy thử thêm một mục server vào file *mcp.json* của bạn và đảm bảo bạn có thể khởi động/dừng server. Đồng thời đảm bảo bạn có thể giao tiếp với các công cụ trên server thông qua giao diện GitHub Copilot Chat.
+Hãy thử thêm một mục server vào file *mcp.json* của bạn và đảm bảo bạn có thể khởi động/dừng server. Đồng thời, hãy chắc chắn bạn có thể giao tiếp với các công cụ trên server qua giao diện GitHub Copilot Chat.
 
 ## Giải pháp
 
@@ -90,11 +90,11 @@ Hãy thử thêm một mục server vào file *mcp.json* của bạn và đảm 
 
 ## Những điểm chính cần nhớ
 
-Những điểm chính rút ra từ chương này là:
+Những điểm chính từ chương này là:
 
 - Visual Studio Code là một client tuyệt vời cho phép bạn sử dụng nhiều MCP Servers và các công cụ của chúng.
 - Giao diện GitHub Copilot Chat là cách bạn tương tác với các server.
-- Bạn có thể yêu cầu người dùng nhập các thông tin như khóa API để truyền cho MCP Server khi cấu hình mục server trong file *mcp.json*.
+- Bạn có thể yêu cầu người dùng nhập các thông tin như API key và truyền chúng đến MCP Server khi cấu hình mục server trong file *mcp.json*.
 
 ## Mẫu ví dụ
 

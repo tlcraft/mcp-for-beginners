@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:31:15+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:36:15+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "no"
 }
@@ -33,7 +33,7 @@ Du må kanskje aktivere oppdagelse av MCP-servere.
 
 ### -1- Opprett konfigurasjonsfil
 
-Start med å opprette en konfigurasjonsfil i prosjektets rotmappe, du trenger en fil som heter MCP.json og plassere den i en mappe som heter .vscode. Den skal se slik ut:
+Start med å opprette en konfigurasjonsfil i prosjektets rotmappe, du trenger en fil kalt MCP.json som plasseres i en mappe som heter .vscode. Den skal se slik ut:
 
 ```text
 .vscode
@@ -72,7 +72,7 @@ Nå som du har lagt til en oppføring, la oss starte serveren:
 
 1. Klikk på "play"-ikonet, du skal se at verktøyikonet i GitHub Copilot Chat øker antallet tilgjengelige verktøy. Hvis du klikker på verktøyikonet, vil du se en liste over registrerte verktøy. Du kan krysse av eller fjerne avkrysning for hvert verktøy avhengig av om du vil at GitHub Copilot skal bruke dem som kontekst:
 
-  ![Starter server i Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.no.png)
+  ![Verktøy i Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.no.png)
 
 1. For å kjøre et verktøy, skriv en prompt som du vet vil matche beskrivelsen av et av verktøyene dine, for eksempel en prompt som "add 22 to 1":
 
@@ -82,7 +82,7 @@ Nå som du har lagt til en oppføring, la oss starte serveren:
 
 ## Oppgave
 
-Prøv å legge til en serveroppføring i *mcp.json*-filen din og sørg for at du kan starte/stoppe serveren. Sørg også for at du kan kommunisere med verktøyene på serveren via GitHub Copilot Chat-grensesnittet.
+Prøv å legge til en serveroppføring i *mcp.json*-filen din og sørg for at du kan starte og stoppe serveren. Sørg også for at du kan kommunisere med verktøyene på serveren via GitHub Copilot Chat-grensesnittet.
 
 ## Løsning
 

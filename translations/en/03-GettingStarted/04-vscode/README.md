@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:21:51+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:26:07+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "en"
 }
@@ -14,7 +14,7 @@ Let's talk more about how we use the visual interface in the next sections.
 Here's the high-level approach we need to take:
 
 - Configure a file to locate our MCP Server.
-- Start up or connect to the server to have it list its capabilities.
+- Start or connect to the server to have it list its capabilities.
 - Use those capabilities through the GitHub Copilot Chat interface.
 
 Great, now that we understand the flow, let's try using an MCP Server through Visual Studio Code with an exercise.
@@ -74,7 +74,7 @@ Now that you've added an entry, let's start the server:
 
   ![Starting server in Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.en.png)
 
-3. To run a tool, type a prompt that matches the description of one of your tools, for example a prompt like "add 22 to 1":
+3. To run a tool, type a prompt that matches the description of one of your tools, for example, a prompt like "add 22 to 1":
 
   ![Running a tool from GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.en.png)
 

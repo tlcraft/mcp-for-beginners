@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:23:02+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:27:25+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "ru"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Подход
 
-Вот как нам нужно подойти к этому на высоком уровне:
+Вот как мы должны подойти к этому на высоком уровне:
 
 - Настроить файл для поиска нашего MCP сервера.
 - Запустить/подключиться к серверу, чтобы получить список его возможностей.
@@ -94,15 +94,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 - Visual Studio Code — отличный клиент, который позволяет использовать несколько MCP серверов и их инструменты.
 - Интерфейс GitHub Copilot Chat — это способ взаимодействия с серверами.
-- Вы можете запрашивать у пользователя ввод, например, API ключи, которые можно передавать MCP серверу при настройке записи о сервере в файле *mcp.json*.
+- Вы можете запрашивать у пользователя ввод, например, API ключи, которые можно передавать MCP серверу при настройке записи сервера в файле *mcp.json*.
 
 ## Примеры
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Калькулятор на Java](../samples/java/calculator/README.md)
+- [Калькулятор на .Net](../../../../03-GettingStarted/samples/csharp)
+- [Калькулятор на JavaScript](../samples/javascript/README.md)
+- [Калькулятор на TypeScript](../samples/typescript/README.md)
+- [Калькулятор на Python](../../../../03-GettingStarted/samples/python)
 
 ## Дополнительные ресурсы
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-13T19:30:32+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:35:35+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "sv"
 }
@@ -21,9 +21,9 @@ Bra, nu när vi förstår flödet, låt oss prova att använda en MCP-server gen
 
 ## Övning: Använda en server
 
-I denna övning ska vi konfigurera Visual Studio Code för att hitta din MCP-server så att den kan användas från GitHub Copilot Chat-gränssnittet.
+I denna övning kommer vi att konfigurera Visual Studio Code för att hitta din MCP-server så att den kan användas från GitHub Copilot Chat-gränssnittet.
 
-### -0- Förberedelse, aktivera upptäckt av MCP-servrar
+### -0- Förberedelse, aktivera upptäckt av MCP-server
 
 Du kan behöva aktivera upptäckt av MCP-servrar.
 
@@ -33,7 +33,7 @@ Du kan behöva aktivera upptäckt av MCP-servrar.
 
 ### -1- Skapa konfigurationsfil
 
-Börja med att skapa en konfigurationsfil i din projektrot, du behöver en fil som heter MCP.json och placera den i en mapp som heter .vscode. Den ska se ut så här:
+Börja med att skapa en konfigurationsfil i din projektrot, du behöver en fil som heter MCP.json och placera den i en mapp som heter .vscode. Den bör se ut så här:
 
 ```text
 .vscode
@@ -60,7 +60,7 @@ Lägg till följande innehåll i *mcp.json*:
 }
 ```
 
-Här ovan är ett enkelt exempel på hur man startar en server skriven i Node.js, för andra körmiljöer anger du rätt kommando för att starta servern med `command` och `args`.
+Ovan är ett enkelt exempel på hur man startar en server skriven i Node.js, för andra körmiljöer anger du rätt kommando för att starta servern med `command` och `args`.
 
 ### -3- Starta servern
 
@@ -113,4 +113,4 @@ De viktigaste insikterna från detta kapitel är följande:
 - Nästa: [Skapa en SSE-server](../05-sse-server/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
