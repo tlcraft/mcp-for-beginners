@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T17:35:24+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:35:35+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "sv"
 }
@@ -21,9 +21,9 @@ Bra, nu när vi förstår flödet, låt oss prova att använda en MCP-server gen
 
 ## Övning: Använda en server
 
-I denna övning ska vi konfigurera Visual Studio Code för att hitta din MCP-server så att den kan användas från GitHub Copilot Chat-gränssnittet.
+I denna övning kommer vi att konfigurera Visual Studio Code för att hitta din MCP-server så att den kan användas från GitHub Copilot Chat-gränssnittet.
 
-### -0- Förberedelse, aktivera upptäckt av MCP-servrar
+### -0- Förberedelse, aktivera upptäckt av MCP-server
 
 Du kan behöva aktivera upptäckt av MCP-servrar.
 
@@ -33,7 +33,7 @@ Du kan behöva aktivera upptäckt av MCP-servrar.
 
 ### -1- Skapa konfigurationsfil
 
-Börja med att skapa en konfigurationsfil i din projektrot, du behöver en fil som heter MCP.json och placera den i en mapp som heter .vscode. Den ska se ut så här:
+Börja med att skapa en konfigurationsfil i din projektrot, du behöver en fil som heter MCP.json och placera den i en mapp som heter .vscode. Den bör se ut så här:
 
 ```text
 .vscode
@@ -72,17 +72,17 @@ Nu när du har lagt till en post, låt oss starta servern:
 
 1. Klicka på "play"-ikonen, du bör se att verktygsikonen i GitHub Copilot Chat ökar antalet tillgängliga verktyg. Om du klickar på verktygsikonen ser du en lista över registrerade verktyg. Du kan markera/avmarkera varje verktyg beroende på om du vill att GitHub Copilot ska använda dem som kontext:
 
-  ![Verktyg i Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.sv.png)
+  ![Starta server i Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.sv.png)
 
 1. För att köra ett verktyg, skriv en prompt som du vet matchar beskrivningen av ett av dina verktyg, till exempel en prompt som "add 22 to 1":
 
   ![Köra ett verktyg från GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.sv.png)
 
-  Du bör få ett svar som säger 23.
+  Du bör se ett svar som säger 23.
 
 ## Uppgift
 
-Försök att lägga till en serverpost i din *mcp.json*-fil och se till att du kan starta/stoppa servern. Kontrollera också att du kan kommunicera med verktygen på din server via GitHub Copilot Chat-gränssnittet.
+Försök att lägga till en serverpost i din *mcp.json*-fil och se till att du kan starta/stoppa servern. Se också till att du kan kommunicera med verktygen på din server via GitHub Copilot Chat-gränssnittet.
 
 ## Lösning
 

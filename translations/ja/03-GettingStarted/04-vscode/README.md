@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T16:15:07+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:30:13+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "ja"
 }
@@ -17,19 +17,19 @@ CO_OP_TRANSLATOR_METADATA:
 - サーバーを起動または接続し、その機能一覧を取得する。
 - GitHub Copilot Chatインターフェースを通じてその機能を利用する。
 
-流れが理解できたので、次はVisual Studio Codeを使ってMCPサーバーを利用する演習をしてみましょう。
+流れが理解できたので、次はVisual Studio Codeを使ってMCPサーバーを利用する練習をしてみましょう。
 
 ## 演習：サーバーの利用
 
 この演習では、Visual Studio CodeがあなたのMCPサーバーを見つけられるように設定し、GitHub Copilot Chatインターフェースから利用できるようにします。
 
-### -0- 事前準備：MCPサーバーの検出を有効にする
+### -0- 事前準備：MCPサーバーの検出を有効化する
 
 MCPサーバーの検出を有効にする必要があるかもしれません。
 
 1. Visual Studio Codeで `ファイル -> 設定 -> 設定` に移動します。
 
-1. 「MCP」で検索し、settings.jsonファイル内の `chat.mcp.discovery.enabled` を有効にします。
+2. 「MCP」で検索し、settings.jsonファイル内の `chat.mcp.discovery.enabled` を有効にします。
 
 ### -1- 設定ファイルの作成
 
@@ -70,19 +70,19 @@ MCPサーバーの検出を有効にする必要があるかもしれません�
 
   ![Visual Studio Codeでサーバーを起動](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.ja.png)  
 
-1. 「再生」アイコンをクリックすると、GitHub Copilot Chatのツールアイコンに利用可能なツールの数が増えます。ツールアイコンをクリックすると登録されたツールの一覧が表示されます。GitHub Copilotにツールをコンテキストとして使わせたい場合は、チェックを入れたり外したりできます：
+2. 「再生」アイコンをクリックすると、GitHub Copilot Chatのツールアイコンに利用可能なツールの数が増えます。ツールアイコンをクリックすると登録されたツールの一覧が表示されます。GitHub Copilotにツールをコンテキストとして使わせたい場合は、チェックを入れたり外したりできます：
 
   ![Visual Studio Codeでツールを表示](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.ja.png)
 
-1. ツールを実行するには、ツールの説明に合致するプロンプトを入力します。例えば「add 22 to 1」のようなプロンプトです：
+3. ツールを実行するには、ツールの説明に合致するプロンプトを入力します。例えば「add 22 to 1」のようなプロンプトです：
 
   ![GitHub Copilotからツールを実行](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.ja.png)
 
-  「23」と返答が返ってくるはずです。
+  23という応答が返ってくるはずです。
 
 ## 課題
 
-*mcp.json* にサーバーのエントリを追加し、サーバーの起動・停止ができることを確認してください。また、GitHub Copilot Chatインターフェースを通じてサーバーのツールと通信できることも確認しましょう。
+*mcp.json* にサーバーのエントリを追加し、サーバーの起動・停止ができることを確認してください。また、GitHub Copilot Chatインターフェースを通じてサーバー上のツールと通信できることも確認しましょう。
 
 ## 解答例
 

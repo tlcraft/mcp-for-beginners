@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T18:14:03+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:39:51+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "ms"
 }
@@ -17,7 +17,7 @@ Berikut adalah cara kita perlu mendekati ini pada tahap tinggi:
 - Mulakan/Sambungkan ke server tersebut untuk mendapatkan senarai keupayaannya.
 - Gunakan keupayaan tersebut melalui antara muka GitHub Copilot Chat.
 
-Bagus, sekarang kita faham aliran ini, mari cuba gunakan MCP Server melalui Visual Studio Code dalam satu latihan.
+Bagus, sekarang kita faham alirannya, mari cuba gunakan MCP Server melalui Visual Studio Code melalui satu latihan.
 
 ## Latihan: Menggunakan server
 
@@ -60,7 +60,7 @@ Tambah kandungan berikut ke *mcp.json*:
 }
 ```
 
-Berikut adalah contoh mudah bagaimana untuk memulakan server yang ditulis dalam Node.js, untuk runtime lain nyatakan arahan yang betul untuk memulakan server menggunakan `command` dan `args`.
+Di atas adalah contoh mudah bagaimana untuk memulakan server yang ditulis dalam Node.js, untuk runtime lain nyatakan arahan yang betul untuk memulakan server menggunakan `command` dan `args`.
 
 ### -3- Mulakan server
 
@@ -74,7 +74,7 @@ Sekarang anda telah menambah entri, mari mulakan server:
 
   ![Memulakan server dalam Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.ms.png)
 
-1. Untuk menjalankan alat, taipkan arahan yang anda tahu akan sepadan dengan penerangan salah satu alat anda, contohnya arahan seperti "add 22 to 1":
+1. Untuk menjalankan alat, taip arahan yang anda tahu akan sepadan dengan penerangan salah satu alat anda, contohnya arahan seperti "add 22 to 1":
 
   ![Menjalankan alat dari GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.ms.png)
 
@@ -94,7 +94,7 @@ Perkara penting dari bab ini adalah seperti berikut:
 
 - Visual Studio Code adalah klien yang hebat yang membolehkan anda menggunakan beberapa MCP Server dan alat mereka.
 - Antara muka GitHub Copilot Chat adalah cara anda berinteraksi dengan server.
-- Anda boleh meminta input pengguna seperti kunci API yang boleh dihantar ke MCP Server semasa mengkonfigurasi entri server dalam fail *mcp.json*.
+- Anda boleh meminta pengguna untuk input seperti kunci API yang boleh dihantar ke MCP Server apabila mengkonfigurasi entri server dalam fail *mcp.json*.
 
 ## Contoh
 

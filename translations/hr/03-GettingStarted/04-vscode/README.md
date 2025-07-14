@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T19:08:05+00:00",
+  "original_hash": "222e01c3002a33355806d60d558d9429",
+  "translation_date": "2025-07-14T09:43:25+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "hr"
 }
@@ -70,7 +70,7 @@ Sada kada ste dodali unos, pokrenimo server:
 
   ![Pokretanje servera u Visual Studio Codeu](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.hr.png)  
 
-1. Kliknite na ikonu "play", trebali biste vidjeti da se ikona alata u GitHub Copilot Chatu povećava broj dostupnih alata. Ako kliknete na tu ikonu alata, vidjet ćete popis registriranih alata. Možete označiti/odznačiti svaki alat ovisno želite li da ih GitHub Copilot koristi kao kontekst:
+1. Kliknite na ikonu "play", trebali biste vidjeti da se ikona alata u GitHub Copilot Chat povećava broj dostupnih alata. Ako kliknete na tu ikonu alata, vidjet ćete popis registriranih alata. Možete označiti/odznačiti svaki alat ovisno želite li da ih GitHub Copilot koristi kao kontekst:
 
   ![Pokretanje servera u Visual Studio Codeu](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.hr.png)
 
@@ -113,4 +113,4 @@ Ključne poruke iz ovog poglavlja su sljedeće:
 - Sljedeće: [Kreiranje SSE Servera](../05-sse-server/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
