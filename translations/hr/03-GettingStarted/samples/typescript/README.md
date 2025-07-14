@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d1fd6d5079bee9fe4f6ed9cfd8031d98",
-  "translation_date": "2025-05-17T13:40:27+00:00",
+  "translation_date": "2025-07-13T22:42:46+00:00",
   "source_file": "03-GettingStarted/samples/typescript/README.md",
   "language_code": "hr"
 }
 -->
-# Uzorak
+# Primjer
 
-Ovo je uzorak Typescripta za MCP Server
+Ovo je Typescript primjer za MCP Server
 
-Evo kako izgleda dio za kalkulator:
+Evo kako izgleda dio kalkulatora:
 
 ```typescript
 // Define calculator tools for each operation
@@ -82,5 +82,5 @@ npm install
 npm start
 ```
 
-**Izjava o odricanju od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge prevođenja [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, molimo vas da budete svjesni da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na njegovom izvornom jeziku treba smatrati mjerodavnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne preuzimamo odgovornost za bilo kakva nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+**Odricanje od odgovornosti**:  
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

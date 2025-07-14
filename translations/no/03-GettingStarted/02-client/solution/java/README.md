@@ -2,21 +2,21 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:12:27+00:00",
+  "translation_date": "2025-07-13T18:35:17+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "no"
 }
 -->
-# MCP Java-klient - Kalkulatordemo
+# MCP Java Client - Kalkulatordemo
 
-Dette prosjektet viser hvordan man lager en Java-klient som kobler til og samhandler med en MCP (Model Context Protocol) server. I dette eksempelet kobler vi til kalkulatorserveren fra Kapittel 01 og utfører ulike matematiske operasjoner.
+Dette prosjektet viser hvordan du lager en Java-klient som kobler til og samhandler med en MCP (Model Context Protocol) server. I dette eksempelet kobler vi til kalkulatorserveren fra Kapittel 01 og utfører ulike matematiske operasjoner.
 
 ## Forutsetninger
 
 Før du kjører denne klienten, må du:
 
-1. **Start kalkulatorserveren** fra Kapittel 01:
-   - Gå til kalkulatorserverens katalog: `03-GettingStarted/01-first-server/solution/java/`
+1. **Starte Kalkulatorserveren** fra Kapittel 01:
+   - Gå til kalkulatorserver-mappen: `03-GettingStarted/01-first-server/solution/java/`
    - Bygg og kjør kalkulatorserveren:
      ```cmd
      cd ..\01-first-server\solution\java
@@ -25,16 +25,16 @@ Før du kjører denne klienten, må du:
      ```
    - Serveren skal kjøre på `http://localhost:8080`
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. **Java 21 eller nyere** installert på systemet ditt
+3. **Maven** (inkludert via Maven Wrapper)
 
-## What is the SDKClient?
+## Hva er SDKClient?
 
-The `SDKClient` er en Java-applikasjon som demonstrerer hvordan man:
-- Knytter til en MCP-server ved bruk av Server-Sent Events (SSE) transport
-- Lister tilgjengelige verktøy fra serveren
-- Kaller ulike kalkulatorfunksjoner eksternt
-- Håndterer svar og viser resultater
+`SDKClient` er en Java-applikasjon som viser hvordan man kan:
+- Koble til en MCP-server ved hjelp av Server-Sent Events (SSE) transport
+- Liste tilgjengelige verktøy fra serveren
+- Kalle ulike kalkulatorfunksjoner eksternt
+- Håndtere svar og vise resultater
 
 ## Hvordan det fungerer
 
@@ -42,8 +42,8 @@ Klienten bruker Spring AI MCP-rammeverket til å:
 
 1. **Etablere tilkobling**: Oppretter en WebFlux SSE-klienttransport for å koble til kalkulatorserveren
 2. **Initialisere klient**: Setter opp MCP-klienten og etablerer tilkoblingen
-3. **Oppdage verktøy**: Lister opp alle tilgjengelige kalkulatoroperasjoner
-4. **Utføre operasjoner**: Kaller ulike matematiske funksjoner med eksemplardata
+3. **Oppdage verktøy**: Lister alle tilgjengelige kalkulatoroperasjoner
+4. **Utføre operasjoner**: Kaller ulike matematiske funksjoner med eksempeldata
 5. **Vise resultater**: Viser resultatene av hver beregning
 
 ## Prosjektstruktur
@@ -62,7 +62,7 @@ src/
 
 ## Viktige avhengigheter
 
-Prosjektet bruker følgende nøkkelavhengigheter:
+Prosjektet bruker følgende viktige avhengigheter:
 
 ```xml
 <dependency>
@@ -71,14 +71,14 @@ Prosjektet bruker følgende nøkkelavhengigheter:
 </dependency>
 ```
 
-Denne avhengigheten tilbyr:
-- `McpClient` - The main client interface
-- `WebFluxSseClientTransport` - SSE-transport for nettbasert kommunikasjon
+Denne avhengigheten gir:
+- `McpClient` - Hovedklientgrensesnittet
+- `WebFluxSseClientTransport` - SSE-transport for webbasert kommunikasjon
 - MCP-protokollskjemaer og forespørsels-/svar-typer
 
-## Bygg prosjektet
+## Bygge prosjektet
 
-Bygg prosjektet ved å bruke Maven-wrapperen:
+Bygg prosjektet med Maven-wrapperen:
 
 ```cmd
 .\mvnw clean install
@@ -90,13 +90,13 @@ Bygg prosjektet ved å bruke Maven-wrapperen:
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**Merk**: Sørg for at kalkulatorserveren kjører på `http://localhost:8080` before executing any of these commands.
+**Merk**: Sørg for at kalkulatorserveren kjører på `http://localhost:8080` før du kjører noen av disse kommandoene.
 
-## What the Client Does
+## Hva klienten gjør
 
-When you run the client, it will:
+Når du kjører klienten, vil den:
 
-1. **Connect** to the calculator server at `http://localhost:8080`
+1. **Koble til** kalkulatorserveren på `http://localhost:8080`
 2. **Liste verktøy** - Viser alle tilgjengelige kalkulatoroperasjoner
 3. **Utføre beregninger**:
    - Addisjon: 5 + 3 = 8
@@ -108,7 +108,7 @@ When you run the client, it will:
    - Absoluttverdi: |-5.5| = 5.5
    - Hjelp: Viser tilgjengelige operasjoner
 
-## Forventet resultat
+## Forventet output
 
 ```
 Available Tools = ListToolsResult[tools=[Tool[name=add, description=Add two numbers together, ...], ...]]
@@ -122,7 +122,7 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**Merk**: Du kan se Maven-advarsler om gjenværende tråder til slutt – dette er normalt for reaktive applikasjoner og betyr ikke at det er en feil.
+**Merk**: Du kan se Maven-advarsler om hengende tråder på slutten – dette er normalt for reaktive applikasjoner og indikerer ikke en feil.
 
 ## Forstå koden
 
@@ -143,11 +143,11 @@ Oppretter en synkron MCP-klient og initialiserer tilkoblingen.
 ```java
 CallToolResult resultAdd = client.callTool(new CallToolRequest("add", Map.of("a", 5.0, "b", 3.0)));
 ```
-Kaller "add" verktøyet med parametrene a=5.0 og b=3.0.
+Kaller "add"-verktøyet med parametrene a=5.0 og b=3.0.
 
 ## Feilsøking
 
-### Serveren kjører ikke
+### Server kjører ikke
 Hvis du får tilkoblingsfeil, sørg for at kalkulatorserveren fra Kapittel 01 kjører:
 ```
 Error: Connection refused
@@ -174,4 +174,4 @@ Hvis du får byggefeil:
 - [Spring WebFlux Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på dets opprinnelige språk bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår fra bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

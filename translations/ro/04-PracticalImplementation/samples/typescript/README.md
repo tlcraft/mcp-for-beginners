@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f7a8ffd07682d554929968dfc6ae2ecb",
-  "translation_date": "2025-05-17T15:07:35+00:00",
+  "translation_date": "2025-07-13T23:38:43+00:00",
   "source_file": "04-PracticalImplementation/samples/typescript/README.md",
   "language_code": "ro"
 }
 -->
 # Exemplu
 
-Acesta este un exemplu de Typescript pentru un server MCP
+Acesta este un exemplu Typescript pentru un MCP Server
 
 Iată un exemplu de creare a unui instrument:
 
@@ -76,7 +76,7 @@ async ({ model, prompt, options }) => {
 
 ## Instalare
 
-Executați următoarea comandă:
+Rulează următoarea comandă:
 
 ```bash
 npm install
@@ -88,5 +88,5 @@ npm install
 npm start
 ```
 
-**Declinarea responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți de faptul că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea umană profesională. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

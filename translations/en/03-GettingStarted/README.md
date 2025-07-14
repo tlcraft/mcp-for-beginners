@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:26:00+00:00",
+  "translation_date": "2025-07-13T17:10:45+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "en"
 }
@@ -19,11 +19,11 @@ This section includes several lessons:
 
 - **4 Consuming a server GitHub Copilot Agent mode in Visual Studio Code**: Here, we explore running our MCP Server from within Visual Studio Code, [to the lesson](04-vscode/README.md)
 
-- **5 Consuming from a SSE (Server Sent Events)**: SSE is a standard for server-to-client streaming, allowing servers to push real-time updates to clients over HTTP, [to the lesson](05-sse-server/README.md)
+- **5 Consuming from SSE (Server Sent Events)**: SSE is a standard for server-to-client streaming, allowing servers to push real-time updates to clients over HTTP, [to the lesson](05-sse-server/README.md)
 
 - **6 HTTP Streaming with MCP (Streamable HTTP)**: Learn about modern HTTP streaming, progress notifications, and how to implement scalable, real-time MCP servers and clients using Streamable HTTP, [to the lesson](06-http-streaming/README.md)
 
-- **7 Utilizing AI Toolkit for VSCode** to consume and test your MCP Clients and Servers, [to the lesson](07-aitk/README.md)
+- **7 Utilizing AI Toolkit for VSCode**: To consume and test your MCP Clients and Servers, [to the lesson](07-aitk/README.md)
 
 - **8 Testing**: Here we focus especially on how to test our server and client in different ways, [to the lesson](08-testing/README.md)
 

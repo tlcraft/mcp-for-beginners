@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:15:45+00:00",
+  "translation_date": "2025-07-13T21:02:27+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "ar"
 }
@@ -23,7 +23,7 @@ dotnet run
 
 ## -3- اختبار المثال
 
-ابدأ نافذة طرفية منفصلة قبل تشغيل الأمر أدناه (تأكد من أن الخادم لا يزال قيد التشغيل).
+ابدأ نافذة طرفية منفصلة قبل تشغيل الأمر أدناه (تأكد من أن الخادم لا يزال يعمل).
 
 مع تشغيل الخادم في نافذة طرفية واحدة، افتح نافذة طرفية أخرى وقم بتشغيل الأمر التالي:
 
@@ -31,14 +31,14 @@ dotnet run
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-سيؤدي هذا إلى بدء خادم ويب بواجهة بصرية تتيح لك اختبار المثال.
+يجب أن يبدأ هذا خادم ويب بواجهة بصرية تتيح لك اختبار المثال.
 
-> تأكد من اختيار **Streamable HTTP** كنوع النقل، وأن العنوان هو `http://localhost:3001/mcp`.
+> تأكد من اختيار **Streamable HTTP** كنوع النقل، وأن عنوان URL هو `http://localhost:3001/mcp`.
 
-Once the server is connected: 
+بمجرد اتصال الخادم:
 
-- try listing tools and run `add`، مع الوسيطين 2 و 4، يجب أن ترى النتيجة 6.
-- اذهب إلى الموارد وقالب المورد وادعُ "greeting"، اكتب اسمًا وسترى تحية بالاسم الذي أدخلته.
+- جرب عرض الأدوات وتشغيل `add` مع الوسيطين 2 و4، يجب أن ترى النتيجة 6.
+- انتقل إلى الموارد وقالب الموارد واستدعِ "greeting"، اكتب اسمًا وسترى تحية بالاسم الذي أدخلته.
 
 ### الاختبار في وضع CLI
 
@@ -48,7 +48,7 @@ Once the server is connected:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-سيعرض هذا جميع الأدوات المتاحة في الخادم. يجب أن ترى الإخراج التالي:
+سيعرض هذا جميع الأدوات المتاحة في الخادم. يجب أن ترى المخرجات التالية:
 
 ```text
 {
@@ -86,7 +86,7 @@ npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/l
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-يجب أن ترى الإخراج التالي:
+يجب أن ترى المخرجات التالية:
 
 ```text
 {
@@ -101,8 +101,8 @@ npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/c
 ```
 
 > ![!TIP]
-> عادةً ما يكون تشغيل الفاحص في وضع CLI أسرع بكثير من تشغيله في المتصفح.
-> اقرأ المزيد عن الفاحص [هنا](https://github.com/modelcontextprotocol/inspector).
+> عادةً ما يكون تشغيل الـ inspector في وضع CLI أسرع بكثير من تشغيله في المتصفح.
+> اقرأ المزيد عن الـ inspector [هنا](https://github.com/modelcontextprotocol/inspector).
 
 **إخلاء المسؤولية**:  
 تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

@@ -2,29 +2,29 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ed9cab32cc67c12d8969b407aa47100a",
-  "translation_date": "2025-06-11T09:27:36+00:00",
+  "translation_date": "2025-07-13T17:51:28+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/java/README.md",
   "language_code": "en"
 }
 -->
 # Basic Calculator MCP Service
 
-This service offers basic calculator operations via the Model Context Protocol (MCP) using Spring Boot with WebFlux transport. It's designed as a simple example for beginners learning about MCP implementations.
+This service offers basic calculator functions through the Model Context Protocol (MCP) using Spring Boot with WebFlux transport. It’s designed as a simple example for beginners learning about MCP implementations.
 
 For more details, see the [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html) reference documentation.
 
 
 ## Using the Service
 
-The service provides the following API endpoints through the MCP protocol:
+The service provides the following API endpoints via the MCP protocol:
 
 - `add(a, b)`: Add two numbers
 - `subtract(a, b)`: Subtract the second number from the first
 - `multiply(a, b)`: Multiply two numbers
 - `divide(a, b)`: Divide the first number by the second (with zero check)
 - `power(base, exponent)`: Calculate the power of a number
-- `squareRoot(number)`: Calculate the square root (with check for negative numbers)
-- `modulus(a, b)`: Calculate the remainder of a division
+- `squareRoot(number)`: Calculate the square root (with negative number check)
+- `modulus(a, b)`: Calculate the remainder of division
 - `absolute(number)`: Calculate the absolute value
 
 ## Dependencies
@@ -55,9 +55,9 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 
 ### Using MCP Inspector
 
-MCP Inspector is a handy tool for interacting with MCP services. To use it with this calculator service:
+The MCP Inspector is a useful tool for interacting with MCP services. To use it with this calculator service:
 
-1. **Install and launch MCP Inspector** in a new terminal window:
+1. **Install and run MCP Inspector** in a new terminal window:
    ```bash
    npx @modelcontextprotocol/inspector
    ```
@@ -65,8 +65,8 @@ MCP Inspector is a handy tool for interacting with MCP services. To use it with 
 2. **Open the web UI** by clicking the URL shown by the app (usually http://localhost:6274)
 
 3. **Set up the connection**:
-   - Choose "SSE" as the transport type
-   - Enter your server’s SSE endpoint URL: `http://localhost:8080/sse`
+   - Choose the transport type "SSE"
+   - Enter the URL for your running server’s SSE endpoint: `http://localhost:8080/sse`
    - Click "Connect"
 
 4. **Use the tools**:

@@ -2,17 +2,17 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7a11a5dcf2f9fdf6392f5a4545cf005e",
-  "translation_date": "2025-06-11T16:23:58+00:00",
+  "translation_date": "2025-07-14T03:47:05+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "ro"
 }
 -->
-# Lecția: Construirea unui Server MCP pentru Căutare Web
+# Lecția: Construirea unui server MCP pentru căutare web
 
 Acest capitol arată cum să construiești un agent AI real care se integrează cu API-uri externe, gestionează tipuri diverse de date, tratează erorile și coordonează mai multe unelte — toate într-un format pregătit pentru producție. Vei vedea:
 
 - **Integrarea cu API-uri externe care necesită autentificare**
-- **Gestionarea tipurilor diverse de date de la multiple endpoint-uri**
+- **Gestionarea tipurilor diverse de date provenite din mai multe puncte finale**
 - **Strategii robuste de tratare a erorilor și logare**
 - **Orchestrarea mai multor unelte într-un singur server**
 
@@ -20,33 +20,33 @@ La final, vei avea experiență practică cu modele și bune practici esențiale
 
 ## Introducere
 
-În această lecție, vei învăța cum să construiești un server și un client MCP avansat care extind capabilitățile LLM cu date web în timp real folosind SerpAPI. Aceasta este o abilitate esențială pentru dezvoltarea agenților AI dinamici care pot accesa informații actualizate de pe web.
+În această lecție vei învăța cum să construiești un server și un client MCP avansat care extind capabilitățile LLM cu date web în timp real folosind SerpAPI. Aceasta este o abilitate esențială pentru dezvoltarea agenților AI dinamici care pot accesa informații actualizate de pe web.
 
-## Obiectivele de Învățare
+## Obiective de învățare
 
-La finalul acestei lecții, vei putea să:
+La finalul acestei lecții vei putea:
 
-- Integrezi API-uri externe (ca SerpAPI) în siguranță într-un server MCP
-- Implementezi mai multe unelte pentru căutare web, știri, produse și Q&A
-- Parsezi și formatezi date structurate pentru consumul LLM
-- Gestionezi erorile și limitele de rată ale API-urilor eficient
-- Construiești și testezi atât clienți MCP automatizați, cât și interactivi
+- Integra API-uri externe (precum SerpAPI) în siguranță într-un server MCP
+- Implementa mai multe unelte pentru căutare web, știri, produse și întrebări-răspunsuri
+- Parcurge și formata date structurate pentru consumul LLM
+- Gestiona erorile și limita de rată a API-ului eficient
+- Construi și testa atât clienți MCP automatizați, cât și interactivi
 
-## Server MCP pentru Căutare Web
+## Server MCP pentru căutare web
 
-Această secțiune prezintă arhitectura și funcționalitățile Serverului MCP pentru Căutare Web. Vei vedea cum FastMCP și SerpAPI sunt folosite împreună pentru a extinde capabilitățile LLM cu date web în timp real.
+Această secțiune introduce arhitectura și funcționalitățile Serverului MCP pentru căutare web. Vei vedea cum FastMCP și SerpAPI sunt folosite împreună pentru a extinde capabilitățile LLM cu date web în timp real.
 
 ### Prezentare generală
 
 Această implementare include patru unelte care demonstrează capacitatea MCP de a gestiona sarcini diverse, bazate pe API-uri externe, în mod sigur și eficient:
 
-- **general_search**: Pentru rezultate generale pe web
-- **news_search**: Pentru titluri recente din știri
+- **general_search**: Pentru rezultate web generale
+- **news_search**: Pentru titluri recente de știri
 - **product_search**: Pentru date de comerț electronic
 - **qna**: Pentru fragmente de întrebări și răspunsuri
 
 ### Funcționalități
-- **Exemple de cod**: Include blocuri de cod specifice pentru Python (și ușor de extins la alte limbaje) folosind secțiuni pliabile pentru claritate
+- **Exemple de cod**: Include blocuri de cod specifice limbajului Python (și ușor extensibile la alte limbaje) folosind secțiuni pliabile pentru claritate
 
 <details>  
 <summary>Python</summary>  
@@ -69,14 +69,14 @@ async def run_search():
 ```
 </details>
 
-Înainte de a rula clientul, este util să înțelegi ce face serverul. Fișierul [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
+Înainte de a rula clientul, este util să înțelegi ce face serverul. Fișierul [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) implementează serverul MCP, expunând unelte pentru căutare web, știri, produse și Q&A prin integrarea cu SerpAPI. Acesta gestionează cererile primite, apelează API-ul, parsează răspunsurile și returnează rezultate structurate clientului.
 
-You can review the full implementation in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
+Poți consulta implementarea completă în [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
 Iată un exemplu scurt despre cum serverul definește și înregistrează o unealtă:
 
 <details>  
-<summary>Python Server</summary> 
+<summary>Server Python</summary> 
 
 ```python
 # server.py (excerpt)
@@ -93,17 +93,17 @@ if __name__ == "__main__":
 ```
 </details>
 
-- **Integrarea API-urilor Externe**: Demonstrează gestionarea sigură a cheilor API și a cererilor externe
-- **Parsing-ul Datelor Structurate**: Arată cum se transformă răspunsurile API în formate prietenoase pentru LLM
-- **Gestionarea Erorilor**: Tratare robustă a erorilor cu logare corespunzătoare
-- **Client Interactiv**: Include atât teste automate, cât și un mod interactiv pentru testare
-- **Managementul Contextului**: Folosește MCP Context pentru logare și urmărirea cererilor
+- **Integrare API extern**: Demonstrează gestionarea sigură a cheilor API și a cererilor externe
+- **Parsare date structurate**: Arată cum să transformi răspunsurile API în formate prietenoase pentru LLM
+- **Gestionarea erorilor**: Tratare robustă a erorilor cu logare adecvată
+- **Client interactiv**: Include atât teste automate, cât și un mod interactiv pentru testare
+- **Managementul contextului**: Folosește MCP Context pentru logare și urmărirea cererilor
 
-## Cerințe Prealabile
+## Cerințe preliminare
 
-Înainte să începi, asigură-te că mediul tău este configurat corect urmând acești pași. Astfel, toate dependențele vor fi instalate și cheile tale API configurate corespunzător pentru dezvoltare și testare fără probleme.
+Înainte să începi, asigură-te că mediul tău este configurat corect urmând acești pași. Astfel vei avea toate dependențele instalate și cheile API configurate corect pentru o dezvoltare și testare fără probleme.
 
-- Python 3.8 sau mai nou
+- Python 3.8 sau versiune superioară
 - Cheie API SerpAPI (Înscrie-te la [SerpAPI](https://serpapi.com/) - există un plan gratuit)
 
 ## Instalare
@@ -128,49 +128,49 @@ SERPAPI_KEY=your_serpapi_key_here
 
 ## Utilizare
 
-Serverul MCP pentru Căutare Web este componenta principală care expune unelte pentru căutare web, știri, produse și Q&A prin integrarea cu SerpAPI. El gestionează cererile primite, apelează API-urile, parsează răspunsurile și returnează rezultate structurate către client.
+Serverul MCP pentru căutare web este componenta principală care expune unelte pentru căutare web, știri, produse și Q&A prin integrarea cu SerpAPI. Acesta gestionează cererile primite, apelează API-ul, parsează răspunsurile și returnează rezultate structurate clientului.
 
 Poți consulta implementarea completă în [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
-### Pornirea Serverului
+### Pornirea serverului
 
-Pentru a porni serverul MCP, folosește următoarea comandă:
+Pentru a porni serverul MCP, folosește comanda următoare:
 
 ```bash
 python server.py
 ```
 
-Serverul va funcționa ca un server MCP bazat pe stdio, la care clientul se poate conecta direct.
+Serverul va rula ca un server MCP bazat pe stdio, la care clientul se poate conecta direct.
 
-### Moduri Client
+### Moduri client
 
-Clientul (`client.py`) supports two modes for interacting with the MCP server:
+Clientul (`client.py`) suportă două moduri de interacțiune cu serverul MCP:
 
-- **Normal mode**: Runs automated tests that exercise all the tools and verify their responses. This is useful for quickly checking that the server and tools are working as expected.
-- **Interactive mode**: Starts a menu-driven interface where you can manually select and call tools, enter custom queries, and see results in real time. This is ideal for exploring the server's capabilities and experimenting with different inputs.
+- **Mod normal**: Rulează teste automate care verifică toate uneltele și răspunsurile lor. Este util pentru a verifica rapid dacă serverul și uneltele funcționează corect.
+- **Mod interactiv**: Pornește o interfață cu meniu unde poți selecta manual uneltele, introduce interogări personalizate și vedea rezultatele în timp real. Ideal pentru explorarea capabilităților serverului și experimentarea cu diferite inputuri.
 
-You can review the full implementation in [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
+Poți consulta implementarea completă în [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
 
-### Rularea Clientului
+### Rularea clientului
 
-Pentru a rula testele automate (acesta va porni automat serverul):
+Pentru a rula testele automate (aceasta va porni automat și serverul):
 
 ```bash
 python client.py
 ```
 
-Sau în modul interactiv:
+Sau rulează în mod interactiv:
 
 ```bash
 python client.py --interactive
 ```
 
-### Testare cu Metode Diferite
+### Testare cu metode diferite
 
 Există mai multe moduri de a testa și interacționa cu uneltele oferite de server, în funcție de nevoile și fluxul tău de lucru.
 
-#### Scrierea Scripturilor Personalizate de Test folosind MCP Python SDK
-Poți să-ți construiești propriile scripturi de test folosind MCP Python SDK:
+#### Scrierea scripturilor de test personalizate cu MCP Python SDK
+Poți construi și propriile scripturi de test folosind MCP Python SDK:
 
 <details>
 <summary>Python</summary>
@@ -195,27 +195,27 @@ async def test_custom_query():
 ```
 </details>
 
-În acest context, un „script de test” înseamnă un program Python personalizat pe care îl scrii pentru a acționa ca un client pentru serverul MCP. În loc să fie un test formal de unitate, acest script îți permite să te conectezi programatic la server, să apelezi oricare dintre uneltele sale cu parametri aleși de tine și să inspectezi rezultatele. Această abordare este utilă pentru:
-- Prototiparea și experimentarea cu apelurile uneltelor
-- Validarea modului în care serverul răspunde la diverse intrări
-- Automatizarea apelurilor repetate ale uneltelor
+În acest context, un „script de test” înseamnă un program Python personalizat pe care îl scrii pentru a acționa ca un client pentru serverul MCP. În loc să fie un test unitar formal, acest script îți permite să te conectezi programatic la server, să apelezi oricare dintre uneltele sale cu parametrii aleși de tine și să inspectezi rezultatele. Această abordare este utilă pentru:
+- Prototiparea și experimentarea cu apeluri către unelte
+- Validarea modului în care serverul răspunde la inputuri diferite
+- Automatizarea apelurilor repetate către unelte
 - Construirea propriilor fluxuri de lucru sau integrări peste serverul MCP
 
 Poți folosi scripturile de test pentru a încerca rapid interogări noi, a depana comportamentul uneltelor sau chiar ca punct de plecare pentru automatizări mai avansate. Mai jos este un exemplu despre cum să folosești MCP Python SDK pentru a crea un astfel de script:
 
-## Descrierea Uneltelor
+## Descrierea uneltelor
 
-Poți folosi următoarele unelte oferite de server pentru a efectua diferite tipuri de căutări și interogări. Fiecare unealtă este descrisă mai jos cu parametrii săi și un exemplu de utilizare.
+Poți folosi următoarele unelte oferite de server pentru a efectua diferite tipuri de căutări și interogări. Fiecare unealtă este descrisă mai jos cu parametrii și un exemplu de utilizare.
 
 Această secțiune oferă detalii despre fiecare unealtă disponibilă și parametrii lor.
 
 ### general_search
 
-Efectuează o căutare generală pe web și returnează rezultate formatate.
+Efectuează o căutare web generală și returnează rezultate formatate.
 
 **Cum să apelezi această unealtă:**
 
-Poți apela `general_search` din propriul script folosind MCP Python SDK sau interactiv folosind Inspectorul sau modul interactiv al clientului. Iată un exemplu de cod folosind SDK:
+Poți apela `general_search` din propriul script folosind MCP Python SDK sau interactiv folosind Inspectorul sau modul interactiv al clientului. Iată un exemplu de cod folosind SDK-ul:
 
 <details>
 <summary>Exemplu Python</summary>
@@ -237,12 +237,12 @@ async def run_general_search():
 ```
 </details>
 
-Alternativ, în modul interactiv, selectează `general_search` from the menu and enter your query when prompted.
+Alternativ, în modul interactiv, selectează `general_search` din meniu și introdu interogarea când ți se cere.
 
-**Parameters:**
+**Parametri:**
 - `query` (string): Interogarea de căutare
 
-**Exemplu de Cerere:**
+**Exemplu de cerere:**
 
 ```json
 {
@@ -256,7 +256,7 @@ Caută articole recente de știri legate de o interogare.
 
 **Cum să apelezi această unealtă:**
 
-Poți apela `news_search` din propriul script folosind MCP Python SDK sau interactiv folosind Inspectorul sau modul interactiv al clientului. Iată un exemplu de cod folosind SDK:
+Poți apela `news_search` din propriul script folosind MCP Python SDK sau interactiv folosind Inspectorul sau modul interactiv al clientului. Iată un exemplu de cod folosind SDK-ul:
 
 <details>
 <summary>Exemplu Python</summary>
@@ -278,12 +278,12 @@ async def run_news_search():
 ```
 </details>
 
-Alternativ, în modul interactiv, selectează `news_search` from the menu and enter your query when prompted.
+Alternativ, în modul interactiv, selectează `news_search` din meniu și introdu interogarea când ți se cere.
 
-**Parameters:**
+**Parametri:**
 - `query` (string): Interogarea de căutare
 
-**Exemplu de Cerere:**
+**Exemplu de cerere:**
 
 ```json
 {
@@ -297,7 +297,7 @@ Caută produse care corespund unei interogări.
 
 **Cum să apelezi această unealtă:**
 
-Poți apela `product_search` din propriul script folosind MCP Python SDK sau interactiv folosind Inspectorul sau modul interactiv al clientului. Iată un exemplu de cod folosind SDK:
+Poți apela `product_search` din propriul script folosind MCP Python SDK sau interactiv folosind Inspectorul sau modul interactiv al clientului. Iată un exemplu de cod folosind SDK-ul:
 
 <details>
 <summary>Exemplu Python</summary>
@@ -319,12 +319,12 @@ async def run_product_search():
 ```
 </details>
 
-Alternativ, în modul interactiv, selectează `product_search` from the menu and enter your query when prompted.
+Alternativ, în modul interactiv, selectează `product_search` din meniu și introdu interogarea când ți se cere.
 
-**Parameters:**
-- `query` (string): Interogarea de căutare pentru produse
+**Parametri:**
+- `query` (string): Interogarea pentru căutarea produselor
 
-**Exemplu de Cerere:**
+**Exemplu de cerere:**
 
 ```json
 {
@@ -334,11 +334,11 @@ Alternativ, în modul interactiv, selectează `product_search` from the menu and
 
 ### qna
 
-Oferă răspunsuri directe la întrebări din motoarele de căutare.
+Obține răspunsuri directe la întrebări de la motoarele de căutare.
 
 **Cum să apelezi această unealtă:**
 
-Poți apela `qna` din propriul script folosind MCP Python SDK sau interactiv folosind Inspectorul sau modul interactiv al clientului. Iată un exemplu de cod folosind SDK:
+Poți apela `qna` din propriul script folosind MCP Python SDK sau interactiv folosind Inspectorul sau modul interactiv al clientului. Iată un exemplu de cod folosind SDK-ul:
 
 <details>
 <summary>Exemplu Python</summary>
@@ -360,12 +360,12 @@ async def run_qna():
 ```
 </details>
 
-Alternativ, în modul interactiv, selectează `qna` from the menu and enter your question when prompted.
+Alternativ, în modul interactiv, selectează `qna` din meniu și introdu întrebarea când ți se cere.
 
-**Parameters:**
+**Parametri:**
 - `question` (string): Întrebarea pentru care vrei un răspuns
 
-**Exemplu de Cerere:**
+**Exemplu de cerere:**
 
 ```json
 {
@@ -373,14 +373,14 @@ Alternativ, în modul interactiv, selectează `qna` from the menu and enter your
 }
 ```
 
-## Detalii de Cod
+## Detalii despre cod
 
 Această secțiune oferă fragmente de cod și referințe pentru implementările serverului și clientului.
 
 <details>
 <summary>Python</summary>
 
-Vezi [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) and [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) pentru detalii complete ale implementării.
+Vezi [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) și [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) pentru detalii complete ale implementării.
 
 ```python
 # Example snippet from server.py:
@@ -390,43 +390,43 @@ import httpx
 ```
 </details>
 
-## Concepte Avansate în Această Lecție
+## Concepte avansate în această lecție
 
-Înainte să începi să construiești, iată câteva concepte avansate importante care vor apărea pe tot parcursul acestui capitol. Înțelegerea lor te va ajuta să urmărești mai ușor, chiar dacă sunt noi pentru tine:
+Înainte să începi să construiești, iată câteva concepte avansate importante care vor apărea pe parcursul acestui capitol. Înțelegerea lor te va ajuta să urmărești mai ușor, chiar dacă sunt noi pentru tine:
 
-- **Orchestrarea mai multor unelte**: Aceasta înseamnă rularea simultană a mai multor unelte diferite (ca căutare web, știri, produse și Q&A) într-un singur server MCP. Permite serverului să gestioneze o varietate de sarcini, nu doar una singură.
-- **Gestionarea limitelor de rată API**: Multe API-uri externe (ca SerpAPI) limitează câte cereri poți face într-un interval de timp. Un cod bun verifică aceste limite și le gestionează elegant, astfel încât aplicația ta să nu se oprească dacă atingi o limită.
-- **Parsing-ul datelor structurate**: Răspunsurile API sunt adesea complexe și ierarhizate. Acest concept se referă la transformarea acestor răspunsuri în formate curate, ușor de folosit, prietenoase pentru LLM-uri sau alte programe.
-- **Recuperarea după erori**: Uneori apar probleme — poate rețeaua cade sau API-ul nu răspunde cum te aștepți. Recuperarea după erori înseamnă că codul tău poate gestiona aceste probleme și tot oferă feedback util, în loc să se blocheze.
-- **Validarea parametrilor**: Este despre verificarea faptului că toate intrările către uneltele tale sunt corecte și sigure pentru utilizare. Include setarea valorilor implicite și asigurarea tipurilor corecte, ceea ce ajută la prevenirea erorilor și confuziilor.
+- **Orchestrarea mai multor unelte**: Înseamnă rularea mai multor unelte diferite (precum căutare web, știri, produse și Q&A) într-un singur server MCP. Permite serverului să gestioneze o varietate de sarcini, nu doar una singură.
+- **Gestionarea limitelor de rată API**: Multe API-uri externe (precum SerpAPI) limitează câte cereri poți face într-un anumit interval de timp. Un cod bine scris verifică aceste limite și le gestionează elegant, astfel încât aplicația ta să nu se blocheze dacă atingi o limită.
+- **Parsarea datelor structurate**: Răspunsurile API sunt adesea complexe și ierarhizate. Acest concept se referă la transformarea acestor răspunsuri în formate curate, ușor de folosit, prietenoase pentru LLM-uri sau alte programe.
+- **Recuperarea după erori**: Uneori apar probleme — poate rețeaua cade sau API-ul nu returnează ce te aștepți. Recuperarea după erori înseamnă că codul tău poate gestiona aceste probleme și tot oferă feedback util, în loc să se blocheze.
+- **Validarea parametrilor**: Este vorba despre verificarea faptului că toate inputurile către uneltele tale sunt corecte și sigure de folosit. Include setarea valorilor implicite și asigurarea tipurilor corecte, ceea ce ajută la prevenirea erorilor și confuziilor.
 
-Această secțiune te va ajuta să identifici și să rezolvi problemele comune pe care le-ai putea întâlni lucrând cu Serverul MCP pentru Căutare Web. Dacă întâmpini erori sau comportamente neașteptate, această secțiune de depanare oferă soluții pentru cele mai frecvente probleme. Consultă aceste sfaturi înainte de a cere ajutor suplimentar — adesea rezolvă rapid problemele.
+Această secțiune te va ajuta să diagnostichezi și să rezolvi probleme comune pe care le-ai putea întâlni lucrând cu Serverul MCP pentru căutare web. Dacă dai peste erori sau comportamente neașteptate, această secțiune de depanare oferă soluții pentru cele mai frecvente probleme. Consultă aceste sfaturi înainte de a cere ajutor suplimentar — adesea rezolvă rapid problemele.
 
 ## Depanare
 
-Lucrând cu Serverul MCP pentru Căutare Web, s-ar putea să întâmpini uneori probleme — este normal când dezvolți cu API-uri externe și unelte noi. Această secțiune oferă soluții practice pentru cele mai frecvente probleme, ca să te poți întoarce rapid la lucru. Dacă întâmpini o eroare, începe de aici: sfaturile de mai jos abordează problemele pe care cei mai mulți utilizatori le întâmpină și deseori pot rezolva problema fără ajutor suplimentar.
+Lucrând cu Serverul MCP pentru căutare web, este normal să întâlnești uneori probleme — mai ales când dezvolți cu API-uri externe și unelte noi. Această secțiune oferă soluții practice pentru cele mai frecvente probleme, ca să te poți întoarce rapid pe drumul cel bun. Dacă întâmpini o eroare, începe de aici: sfaturile de mai jos abordează problemele cu care se confruntă majoritatea utilizatorilor și adesea pot rezolva problema fără ajutor suplimentar.
 
-### Probleme Comune
+### Probleme comune
 
 Mai jos sunt câteva dintre cele mai frecvente probleme întâlnite de utilizatori, împreună cu explicații clare și pași pentru rezolvare:
 
-1. **Lipsa SERPAPI_KEY în fișierul .env**
-   - Dacă vezi eroarea `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
+1. **Lipsa variabilei SERPAPI_KEY în fișierul .env**
+   - Dacă vezi eroarea `SERPAPI_KEY environment variable not found`, înseamnă că aplicația ta nu găsește cheia API necesară pentru accesul la SerpAPI. Pentru a remedia, creează un fișier numit `.env` în rădăcina proiectului (dacă nu există deja) și adaugă o linie de forma `SERPAPI_KEY=cheia_ta_serpapi_aici`. Asigură-te că înlocuiești `cheia_ta_serpapi_aici` cu cheia ta reală de pe site-ul SerpAPI.
 
-2. **Module not found errors**
-   - Errors such as `ModuleNotFoundError: No module named 'httpx'` indicate that a required Python package is missing. This usually happens if you haven't installed all the dependencies. To resolve this, run `pip install -r requirements.txt` in your terminal to install everything your project needs.
+2. **Erori de tipul modulului inexistent**
+   - Erori precum `ModuleNotFoundError: No module named 'httpx'` indică faptul că un pachet Python necesar lipsește. De obicei, apare dacă nu ai instalat toate dependențele. Pentru a rezolva, rulează `pip install -r requirements.txt` în terminal pentru a instala tot ce are nevoie proiectul.
 
-3. **Connection issues**
-   - If you get an error like `Error during client execution`, it often means the client can't connect to the server, or the server isn't running as expected. Double-check that both the client and server are compatible versions, and that `server.py` is present and running in the correct directory. Restarting both the server and client can also help.
+3. **Probleme de conexiune**
+   - Dacă primești o eroare de genul `Error during client execution`, de obicei înseamnă că clientul nu poate să se conecteze la server sau serverul nu rulează cum trebuie. Verifică dacă clientul și serverul sunt versiuni compatibile și dacă `server.py` este prezent și rulează în directorul corect. Repornirea ambelor poate ajuta.
 
-4. **SerpAPI errors**
-   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your ``, creează fișierul `.env` dacă este necesar. Dacă cheia ta este corectă, dar încă vezi această eroare, verifică dacă ai depășit cota din planul gratuit.
+4. **Erori SerpAPI**
+   - Mesajul `Search API returned error status: 401` indică faptul că cheia ta SerpAPI lipsește, este incorectă sau a expirat. Accesează dashboard-ul SerpAPI, verifică cheia și actualizează fișierul `.env` dacă este nevoie. Dacă cheia este corectă, dar eroarea persistă, verifică dacă planul tău gratuit nu a depășit cota.
 
-### Modul Debug
+### Mod debug
 
-Implicit, aplicația înregistrează doar informațiile importante. Dacă vrei să vezi mai multe detalii despre ce se întâmplă (de exemplu, pentru a diagnostica probleme dificile), poți activa modul DEBUG. Acesta îți va arăta mult mai multe despre fiecare pas pe care îl face aplicația.
+Implicit, aplicația loghează doar informațiile importante. Dacă vrei să vezi mai multe detalii despre ce se întâmplă (de exemplu, pentru a diagnostica probleme dificile), poți activa modul DEBUG. Acesta îți va arăta mult mai multe despre fiecare pas pe care îl face aplicația.
 
-**Exemplu: Ieșire Normală**
+**Exemplu: Ieșire normală**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:24,123 - __main__ - INFO - Successfully called general_search
@@ -448,9 +448,8 @@ GENERAL_SEARCH RESULTS:
 
 Observă cum modul DEBUG include linii suplimentare despre cererile HTTP, răspunsuri și alte detalii interne. Acest lucru poate fi foarte util pentru depanare.
 
-Pentru a activa modul DEBUG, setează nivelul de logare la DEBUG în partea de sus a fișierului `client.py` or `server.py`:
+Pentru a activa modul DEBUG, setează nivelul de logare la DEBUG în partea de sus a fișierului `client.py` sau `server.py`:
 
-<details>
 <summary>Python</summary>
 
 ```python
@@ -467,7 +466,7 @@ logging.basicConfig(
 
 ## Ce urmează
 
-- [5.10 Real Time Streaming](../mcp-realtimestreaming/README.md)
+- [5.10 Streaming în timp real](../mcp-realtimestreaming/README.md)
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un traducător uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

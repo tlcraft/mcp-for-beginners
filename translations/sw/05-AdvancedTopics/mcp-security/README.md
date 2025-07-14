@@ -2,27 +2,27 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-06-13T00:45:46+00:00",
+  "translation_date": "2025-07-14T02:42:53+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "sw"
 }
 -->
-# Mazoea Bora za Usalama
+# Mazoea Bora ya Usalama
 
-Usalama ni muhimu kwa utekelezaji wa MCP, hasa katika mazingira ya biashara. Ni muhimu kuhakikisha kuwa zana na data zinahifadhiwa dhidi ya upatikanaji usioidhinishwa, uvunjaji wa data, na tishio lingine lolote la usalama.
+Usalama ni muhimu sana kwa utekelezaji wa MCP, hasa katika mazingira ya biashara. Ni muhimu kuhakikisha kuwa zana na data zinahifadhiwa dhidi ya upatikanaji usioidhinishwa, uvunjaji wa data, na vitisho vingine vya usalama.
 
 ## Utangulizi
 
-Katika somo hili, tutachunguza mazalio bora ya usalama kwa utekelezaji wa MCP. Tutagusia uthibitishaji na idhini, ulinzi wa data, utekelezaji salama wa zana, na kufuata kanuni za faragha ya data.
+Katika somo hili, tutaangazia mazuri ya usalama kwa utekelezaji wa MCP. Tutajadili uthibitishaji na idhini, ulinzi wa data, utekelezaji salama wa zana, na ufuataji wa kanuni za faragha ya data.
 
 ## Malengo ya Kujifunza
 
 Mwisho wa somo hili, utaweza:
 
 - Kutekeleza mbinu salama za uthibitishaji na idhini kwa seva za MCP.
-- Kulinda data nyeti kwa kutumia usimbaji na uhifadhi salama.
+- Kulinda data nyeti kwa kutumia usimbaji fiche na uhifadhi salama.
 - Kuhakikisha utekelezaji salama wa zana kwa kudhibiti upatikanaji ipasavyo.
-- Kutumia mbinu bora za ulinzi wa data na kufuata sheria za faragha.
+- Kutumia mazuri ya ulinzi wa data na ufuataji wa faragha.
 
 ## Uthibitishaji na Idhini
 
@@ -32,13 +32,13 @@ Tuchunguze mifano ya jinsi ya kutekeleza uthibitishaji na idhini salama kwenye s
 
 ### Muunganisho wa .NET Identity
 
-ASP .NET Core Identity hutoa mfumo thabiti wa kusimamia uthibitishaji na idhini ya watumiaji. Tunaweza kuuiunganisha na seva za MCP ili kulinda upatikanaji wa zana na rasilimali.
+ASP .NET Core Identity hutoa mfumo thabiti wa kusimamia uthibitishaji na idhini ya watumiaji. Tunaweza kuunganisha na seva za MCP ili kulinda upatikanaji wa zana na rasilimali.
 
-Kuna dhana kuu tunazohitaji kuelewa tunapoingiza ASP.NET Core Identity na seva za MCP, yaani:
+Kuna dhana kuu tunazohitaji kuelewa tunapounganisha ASP.NET Core Identity na seva za MCP, ambazo ni:
 
-- **Usanidi wa Identity**: Kuweka ASP.NET Core Identity na majukumu ya watumiaji na madai. Dadai ni kipande cha taarifa kuhusu mtumiaji, kama jukumu lao au ruhusa, mfano "Admin" au "User".
-- **Uthibitishaji wa JWT**: Kutumia JSON Web Tokens (JWT) kwa upatikanaji salama wa API. JWT ni kiwango cha kusafirisha taarifa kwa usalama kati ya pande kama kitu cha JSON, kinachoweza kuthibitishwa na kuaminiwa kwa sababu kimesainiwa kidijitali.
-- **Sera za Idhini**: Kuweka sera za kudhibiti upatikanaji wa zana maalum kulingana na majukumu ya watumiaji. MCP hutumia sera za idhini kuamua ni watumiaji gani wanaweza kupata zana gani kulingana na majukumu na madai yao.
+- **Usanidi wa Identity**: Kuweka ASP.NET Core Identity na majukumu na madai ya watumiaji. Dadai ni kipande cha taarifa kuhusu mtumiaji, kama jukumu lao au ruhusa, kwa mfano "Admin" au "User".
+- **Uthibitishaji wa JWT**: Kutumia JSON Web Tokens (JWT) kwa upatikanaji salama wa API. JWT ni kiwango cha kusafirisha taarifa kwa usalama kati ya pande kama kitu cha JSON, ambacho kinaweza kuthibitishwa na kuaminika kwa sababu kimesainiwa kidijitali.
+- **Sera za Idhini**: Kuweka sera za kudhibiti upatikanaji wa zana maalum kulingana na majukumu ya watumiaji. MCP hutumia sera za idhini kuamua ni watumiaji gani wanaweza kufikia zana gani kulingana na majukumu na madai yao.
 
 ```csharp
 public class SecureMcpStartup
@@ -111,22 +111,22 @@ public class SecureMcpStartup
 
 Katika msimbo uliotangulia, tumefanya:
 
-- Kuandaa ASP.NET Core Identity kwa usimamizi wa watumiaji.
-- Kuweka uthibitishaji wa JWT kwa upatikanaji salama wa API. Tulibainisha vigezo vya uthibitishaji wa tokeni, ikiwemo mtumaji, hadhira, na funguo za kusaini.
+- Kusanidi ASP.NET Core Identity kwa usimamizi wa watumiaji.
+- Kuweka uthibitishaji wa JWT kwa upatikanaji salama wa API. Tulibainisha vigezo vya uthibitishaji wa tokeni, ikiwa ni pamoja na mtengenezaji, hadhira, na ufunguo wa kusaini.
 - Kuweka sera za idhini kudhibiti upatikanaji wa zana kulingana na majukumu ya watumiaji. Kwa mfano, sera ya "CanUseAdminTools" inahitaji mtumiaji kuwa na jukumu la "Admin", wakati sera ya "CanUseBasic" inahitaji mtumiaji kuthibitishwa.
-- Kusajili zana za MCP na mahitaji maalum ya idhini, kuhakikisha kuwa ni watumiaji wenye majukumu sahihi tu ndio wanaweza kuzitumia.
+- Kusajili zana za MCP na mahitaji maalum ya idhini, kuhakikisha kuwa ni watumiaji wenye majukumu sahihi tu wanaoweza kuzifikia.
 
 ### Muunganisho wa Java Spring Security
 
-Kwa Java, tutatumia Spring Security kutekeleza uthibitishaji na idhini salama kwa seva za MCP. Spring Security hutoa mfumo kamili wa usalama unaounganishwa vizuri na programu za Spring.
+Kwa Java, tutatumia Spring Security kutekeleza uthibitishaji na idhini salama kwa seva za MCP. Spring Security hutoa mfumo kamili wa usalama unaoendana vizuri na programu za Spring.
 
 Dhana kuu hapa ni:
 
 - **Usanidi wa Spring Security**: Kuweka usanidi wa usalama kwa uthibitishaji na idhini.
-- **OAuth2 Resource Server**: Kutumia OAuth2 kwa upatikanaji salama wa zana za MCP. OAuth2 ni mfumo wa idhini unaowezesha huduma za tatu kubadilishana tokeni za upatikanaji kwa upatikanaji salama wa API.
-- **Vizuizi vya Usalama**: Kutekeleza vizuizi vya usalama ili kutekeleza udhibiti wa upatikanaji kwenye utekelezaji wa zana.
-- **Udhibiti wa Upatikanaji Kulingana na Majukumu**: Kutumia majukumu kudhibiti upatikanaji wa zana na rasilimali maalum.
-- **Maelezo ya Usalama**: Kutumia maelezo ili kulinda njia na vipengele vya programu.
+- **OAuth2 Resource Server**: Kutumia OAuth2 kwa upatikanaji salama wa zana za MCP. OAuth2 ni mfumo wa idhini unaoruhusu huduma za watu wengine kubadilishana tokeni za upatikanaji kwa upatikanaji salama wa API.
+- **Security Interceptors**: Kutekeleza vizingiti vya usalama ili kutekeleza udhibiti wa upatikanaji kwenye utekelezaji wa zana.
+- **Udhibiti wa Upatikanaji kwa Misingi ya Majukumu**: Kutumia majukumu kudhibiti upatikanaji wa zana na rasilimali maalum.
+- **Maelezo ya Usalama (Security Annotations)**: Kutumia maelezo ili kulinda mbinu na vituo vya mwisho.
 
 ```java
 @Configuration
@@ -180,18 +180,18 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 Katika msimbo uliotangulia, tumefanya:
 
-- Kuandaa Spring Security kulinda vituo vya MCP, kuruhusu upatikanaji wa umma kwa kugundua zana huku tukihitaji uthibitishaji kwa utekelezaji wa zana.
+- Kusanidi Spring Security kulinda vituo vya MCP, kuruhusu upatikanaji wa umma kwa ugunduzi wa zana huku tukihitaji uthibitishaji kwa utekelezaji wa zana.
 - Kutumia OAuth2 kama seva ya rasilimali kushughulikia upatikanaji salama wa zana za MCP.
-- Kutekeleza kizui cha usalama kuimarisha udhibiti wa upatikanaji kwenye utekelezaji wa zana, kuangalia majukumu na ruhusa za mtumiaji kabla ya kuruhusu upatikanaji kwa zana maalum.
-- Kuweka udhibiti wa upatikanaji kulingana na majukumu ili kupunguza upatikanaji wa zana za wasimamizi na data nyeti kulingana na majukumu ya watumiaji.
+- Kutekeleza kizingiti cha usalama ili kutekeleza udhibiti wa upatikanaji kwenye utekelezaji wa zana, ukikagua majukumu na ruhusa za mtumiaji kabla ya kuruhusu upatikanaji wa zana maalum.
+- Kuweka udhibiti wa upatikanaji kwa misingi ya majukumu ili kupunguza upatikanaji wa zana za wasimamizi na data nyeti kulingana na majukumu ya watumiaji.
 
 ## Ulinzi wa Data na Faragha
 
-Ulinzi wa data ni muhimu kuhakikisha kuwa taarifa nyeti zinashughulikiwa kwa usalama. Hii ni pamoja na kulinda taarifa zinazotambulika binafsi (PII), data za kifedha, na taarifa nyingine nyeti dhidi ya upatikanaji usioidhinishwa na uvunjaji.
+Ulinzi wa data ni muhimu kuhakikisha kuwa taarifa nyeti zinashughulikiwa kwa usalama. Hii ni pamoja na kulinda taarifa za mtu binafsi (PII), data za kifedha, na taarifa nyingine nyeti dhidi ya upatikanaji usioidhinishwa na uvunjaji.
 
 ### Mfano wa Ulinzi wa Data kwa Python
 
-Tuchunguze mfano wa jinsi ya kutekeleza ulinzi wa data kwa Python kwa kutumia usimbaji na kugundua PII.
+Tuchunguze mfano wa jinsi ya kutekeleza ulinzi wa data kwa Python kwa kutumia usimbaji fiche na utambuzi wa PII.
 
 ```python
 from mcp_server import McpServer
@@ -329,14 +329,14 @@ class SecureCustomerDataTool(Tool):
 
 Katika msimbo uliotangulia, tumefanya:
 
-- Kutekeleza `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
-- Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
-- Defined a `secure_tool` decorator that wraps tool execution to check for PII, log access, and encrypt sensitive data if required.
-- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool`) kuhakikisha inashughulikia data nyeti kwa usalama.
+- Kutekeleza darasa la `PiiDetector` kuchambua maandishi na vigezo kwa taarifa za mtu binafsi (PII).
+- Kuunda darasa la `EncryptionService` kushughulikia usimbaji fiche na ufichaji wa data nyeti kwa kutumia maktaba ya `cryptography`.
+- Kuweka dekoreta ya `secure_tool` inayozunguka utekelezaji wa zana ili kuangalia PII, kurekodi upatikanaji, na kusimba data nyeti ikiwa inahitajika.
+- Kutumia dekoreta ya `secure_tool` kwenye zana ya mfano (`SecureCustomerDataTool`) kuhakikisha inashughulikia data nyeti kwa usalama.
 
 ## Nini Kifuatacho
 
-- [5.9 Web search](../web-search-mcp/README.md)
+- [5.9 Utafutaji wa wavuti](../web-search-mcp/README.md)
 
-**Kiasi cha Hati**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kasoro. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:03:03+00:00",
+  "translation_date": "2025-07-13T21:21:06+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "vi"
 }
 -->
 # Chạy ví dụ này
 
-Dưới đây là cách chạy server và client HTTP streaming cổ điển, cũng như server và client MCP streaming sử dụng Python.
+Dưới đây là cách chạy server và client streaming HTTP cổ điển, cũng như server và client streaming MCP sử dụng Python.
 
 ### Tổng quan
 
-- Bạn sẽ thiết lập một MCP server phát các thông báo tiến trình đến client khi xử lý các mục.
+- Bạn sẽ thiết lập một server MCP phát các thông báo tiến trình đến client trong quá trình xử lý các mục.
 - Client sẽ hiển thị từng thông báo theo thời gian thực.
-- Hướng dẫn này bao gồm các phần về yêu cầu, cài đặt, chạy và xử lý sự cố.
+- Hướng dẫn này bao gồm các yêu cầu trước, cài đặt, chạy và khắc phục sự cố.
 
-### Yêu cầu
+### Yêu cầu trước
 
 - Python 3.9 trở lên
-- Gói `mcp` Python (cài đặt bằng `pip install mcp`)
+- Gói Python `mcp` (cài đặt bằng `pip install mcp`)
 
 ### Cài đặt & Thiết lập
 
@@ -58,7 +58,7 @@ Dưới đây là cách chạy server và client HTTP streaming cổ điển, c�
    cd 03-GettingStarted/06-http-streaming/solution
    ```
 
-2. Khởi động server HTTP streaming cổ điển:
+2. Khởi động server streaming HTTP cổ điển:
 
    ```pwsh
    python server.py
@@ -73,14 +73,14 @@ Dưới đây là cách chạy server và client HTTP streaming cổ điển, c�
 
 ### Chạy Classic HTTP Streaming Client
 
-1. Mở terminal mới (kích hoạt cùng môi trường ảo và thư mục):
+1. Mở một terminal mới (kích hoạt cùng môi trường ảo và thư mục):
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py
    ```
 
-2. Bạn sẽ thấy các tin nhắn được phát liên tiếp:
+2. Bạn sẽ thấy các thông điệp được phát liên tiếp:
 
    ```text
    Running classic HTTP streaming client...
@@ -99,7 +99,7 @@ Dưới đây là cách chạy server và client HTTP streaming cổ điển, c�
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
-2. Khởi động MCP server với giao thức streamable-http:
+2. Khởi động server MCP với transport streamable-http:
    ```pwsh
    python server.py mcp
    ```
@@ -111,7 +111,7 @@ Dưới đây là cách chạy server và client HTTP streaming cổ điển, c�
 
 ### Chạy MCP Streaming Client
 
-1. Mở terminal mới (kích hoạt cùng môi trường ảo và thư mục):
+1. Mở một terminal mới (kích hoạt cùng môi trường ảo và thư mục):
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
@@ -131,21 +131,21 @@ Dưới đây là cách chạy server và client HTTP streaming cổ điển, c�
 
 ### Các bước triển khai chính
 
-1. **Tạo MCP server sử dụng FastMCP.**
-2. **Định nghĩa một công cụ xử lý danh sách và gửi thông báo sử dụng `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+1. **Tạo server MCP sử dụng FastMCP.**
+2. **Định nghĩa một công cụ xử lý danh sách và gửi thông báo bằng `ctx.info()` hoặc `ctx.log()`.**
+3. **Chạy server với `transport="streamable-http"`.**
+4. **Triển khai client với bộ xử lý tin nhắn để hiển thị thông báo khi chúng đến.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Giải thích mã nguồn
+- Server sử dụng các hàm async và context MCP để gửi cập nhật tiến trình.
+- Client triển khai bộ xử lý tin nhắn async để in thông báo và kết quả cuối cùng.
 
-### Tips & Troubleshooting
+### Mẹo & Khắc phục sự cố
 
-- Use `async/await` để thực hiện không chặn.**
-- Luôn xử lý ngoại lệ ở cả server và client để đảm bảo ổn định.
-- Thử nghiệm với nhiều client để quan sát cập nhật theo thời gian thực.
-- Nếu gặp lỗi, kiểm tra phiên bản Python và đảm bảo đã cài đặt đủ các phụ thuộc.
+- Sử dụng `async/await` để tránh chặn quá trình.
+- Luôn xử lý ngoại lệ ở cả server và client để tăng độ ổn định.
+- Thử với nhiều client để quan sát cập nhật theo thời gian thực.
+- Nếu gặp lỗi, kiểm tra phiên bản Python và đảm bảo đã cài đủ các phụ thuộc.
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ nguyên bản nên được xem là nguồn tham khảo chính xác nhất. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hay giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

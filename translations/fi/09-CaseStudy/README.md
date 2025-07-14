@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T17:47:38+00:00",
+  "translation_date": "2025-07-14T05:47:59+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "fi"
 }
@@ -41,7 +41,7 @@ Arkkitehtuuri ja toteutuksen yksityiskohdat tarjoavat arvokkaita näkemyksiä mo
 
 ### 2. [Azure DevOps -kohteiden päivitys YouTube-datan avulla](./UpdateADOItemsFromYT.md)
 
-Tässä tapaustutkimuksessa havainnollistetaan MCP:n käytännön sovellusta työnkulkujen automatisointiin. Se näyttää, miten MCP-työkaluja voidaan käyttää:
+Tässä tapaustutkimuksessa havainnollistetaan MCP:n käytännön sovellus työnkulkujen automatisointiin. Se näyttää, miten MCP-työkaluja voidaan käyttää:
 
 - Datan poimimiseen verkkopalveluista (YouTube)
 - Työkohteiden päivittämiseen Azure DevOps -järjestelmissä
@@ -59,7 +59,7 @@ Tässä tapaustutkimuksessa opastetaan, miten Python-konsoliasiakas yhdistetää
 - Kutsumaan dokumentaatiotyökaluja palvelimella ja kirjaamaan vastaukset suoraan konsoliin
 - Integroimaan ajantasaisen Microsoft-dokumentaation työnkulkuusi ilman, että tarvitsee poistua terminaalista
 
-Luku sisältää käytännön harjoituksen, minimikoodiesimerkin ja linkkejä lisäresursseihin syvempää oppimista varten. Katso koko läpikäynti ja koodi linkitetystä luvusta ymmärtääksesi, miten MCP voi muuttaa dokumentaatioon pääsyä ja kehittäjien tuottavuutta konsolipohjaisissa ympäristöissä.
+Luku sisältää käytännön harjoituksen, minimikoodiesimerkin ja linkkejä lisäresursseihin syvempää oppimista varten. Katso koko läpikäynti ja koodi linkitetyssä luvussa ymmärtääksesi, miten MCP voi muuttaa dokumentaation saatavuutta ja kehittäjien tuottavuutta konsolipohjaisissa ympäristöissä.
 
 ### 4. [Interaktiivinen opintosuunnitelman generaattori web-sovellus MCP:llä](./docs-mcp/README.md)
 

@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-06-18T07:53:23+00:00",
+  "translation_date": "2025-07-13T23:09:44+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "ro"
 }
 -->
 # Exemplu
 
-Exemplul anterior arată cum să folosești un proiect local .NET cu tipul `stdio`. Și cum să rulezi serverul local într-un container. Aceasta este o soluție bună în multe situații. Totuși, poate fi util să ai serverul rulând de la distanță, de exemplu într-un mediu cloud. Aici intervine tipul `http`.
+Exemplul anterior arată cum să folosești un proiect local .NET cu tipul `stdio`. Și cum să rulezi serverul local într-un container. Aceasta este o soluție bună în multe situații. Totuși, poate fi util să ai serverul rulând de la distanță, cum ar fi într-un mediu cloud. Aici intervine tipul `http`.
 
-Privind soluția din folderul `04-PracticalImplementation`, poate părea mult mai complexă decât cea anterioară. Dar în realitate, nu este așa. Dacă te uiți cu atenție la proiectul `src/Calculator`, vei vedea că este în mare parte același cod ca în exemplul anterior. Singura diferență este că folosim o bibliotecă diferită, `ModelContextProtocol.AspNetCore`, pentru a gestiona cererile HTTP. Și schimbăm metoda `IsPrime` pentru a o face privată, doar pentru a arăta că poți avea metode private în codul tău. Restul codului este la fel ca înainte.
+Privind soluția din folderul `04-PracticalImplementation`, poate părea mult mai complexă decât cea anterioară. Dar, în realitate, nu este așa. Dacă te uiți cu atenție la proiectul `src/Calculator`, vei vedea că este în mare parte același cod ca în exemplul anterior. Singura diferență este că folosim o bibliotecă diferită, `ModelContextProtocol.AspNetCore`, pentru a gestiona cererile HTTP. Și am schimbat metoda `IsPrime` să fie privată, doar pentru a arăta că poți avea metode private în codul tău. Restul codului este la fel ca înainte.
 
-Celelalte proiecte provin din [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). Având .NET Aspire în soluție va îmbunătăți experiența dezvoltatorului în timpul dezvoltării și testării și va ajuta la observabilitate. Nu este obligatoriu pentru a rula serverul, dar este o bună practică să îl ai în soluția ta.
+Celelalte proiecte provin de la [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). Având .NET Aspire în soluție va îmbunătăți experiența dezvoltatorului în timpul dezvoltării și testării și va ajuta la observabilitate. Nu este obligatoriu pentru rularea serverului, dar este o practică bună să îl ai în soluția ta.
 
 ## Pornește serverul local
 
@@ -24,9 +24,9 @@ Celelalte proiecte provin din [.NET Aspire](https://learn.microsoft.com/dotnet/a
     dotnet watch run --project ./src/AppHost
    ```
 
-1. Când un browser web deschide panoul de control .NET Aspire, notează URL-ul `http`. Ar trebui să fie ceva de genul `http://localhost:5058/`.
+1. Când un browser web deschide dashboard-ul .NET Aspire, notează URL-ul `http`. Ar trebui să fie ceva de genul `http://localhost:5058/`.
 
-   ![Panoul de control .NET Aspire](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.ro.png)
+   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.ro.png)
 
 ## Testează Streamable HTTP cu MCP Inspector
 
@@ -40,18 +40,18 @@ npx @modelcontextprotocol/inspector http://localhost:5058
 
 ![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.ro.png)
 
-- Selectează `Streamable HTTP` as the Transport type.
-- In the Url field, enter the URL of the server noted earlier, and append `/mcp`. Ar trebui să fie `http` (nu `https`) something like `http://localhost:5058/mcp`.
-- select the Connect button.
+- Selectează `Streamable HTTP` ca tip de Transport.
+- În câmpul Url, introdu URL-ul serverului notat anterior și adaugă `/mcp`. Ar trebui să fie `http` (nu `https`), ceva de genul `http://localhost:5058/mcp`.
+- Apasă butonul Connect.
 
-A nice thing about the Inspector is that it provide a nice visibility on what is happening.
+Un lucru plăcut la Inspector este că oferă o vizibilitate clară asupra a ceea ce se întâmplă.
 
-- Try listing the available tools
-- Try some of them, it should works just like before.
+- Încearcă să listezi uneltele disponibile
+- Încearcă câteva dintre ele, ar trebui să funcționeze la fel ca înainte.
 
-## Test MCP Server with GitHub Copilot Chat in VS Code
+## Testează MCP Server cu GitHub Copilot Chat în VS Code
 
-To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp` server creat anterior să arate astfel:
+Pentru a folosi transportul Streamable HTTP cu GitHub Copilot Chat, schimbă configurația serverului `calc-mcp` creat anterior să arate astfel:
 
 ```jsonc
 // .vscode/mcp.json
@@ -68,12 +68,12 @@ To use the Streamable HTTP transport with GitHub Copilot Chat, change the config
 Fă câteva teste:
 
 - Cere "3 numere prime după 6780". Observă cum Copilot va folosi noile unelte `NextFivePrimeNumbers` și va returna doar primele 3 numere prime.
-- Cere "7 numere prime după 111", pentru a vedea ce se întâmplă.
-- Cere "John are 24 de acadele și vrea să le împartă egal la cei 3 copii ai săi. Câte acadele primește fiecare copil?", pentru a vedea ce se întâmplă.
+- Cere "7 numere prime după 111", să vezi ce se întâmplă.
+- Cere "John are 24 de acadele și vrea să le împartă tuturor celor 3 copii ai săi. Câte acadele primește fiecare copil?", să vezi ce se întâmplă.
 
 ## Publică serverul pe Azure
 
-Să publicăm serverul pe Azure astfel încât mai mulți oameni să îl poată folosi.
+Hai să publicăm serverul pe Azure ca să poată fi folosit de mai mulți oameni.
 
 Dintr-un terminal, navighează în folderul `04-PracticalImplementation/samples/csharp` și rulează următoarea comandă:
 
@@ -81,9 +81,9 @@ Dintr-un terminal, navighează în folderul `04-PracticalImplementation/samples/
 azd up
 ```
 
-După ce publicarea s-a încheiat, ar trebui să vezi un mesaj de genul acesta:
+După ce publicarea se termină, ar trebui să vezi un mesaj de genul acesta:
 
-![Publicare reușită cu Azd](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.ro.png)
+![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.ro.png)
 
 Ia URL-ul și folosește-l în MCP Inspector și în GitHub Copilot Chat.
 
@@ -101,7 +101,7 @@ Ia URL-ul și folosește-l în MCP Inspector și în GitHub Copilot Chat.
 
 ## Ce urmează?
 
-Vom încerca diferite tipuri de transport și unelte de testare. De asemenea, vom publica serverul MCP pe Azure. Dar ce se întâmplă dacă serverul nostru trebuie să acceseze resurse private? De exemplu, o bază de date sau un API privat? În capitolul următor, vom vedea cum putem îmbunătăți securitatea serverului nostru.
+Am încercat diferite tipuri de transport și unelte de testare. De asemenea, am publicat serverul MCP pe Azure. Dar ce se întâmplă dacă serverul nostru trebuie să acceseze resurse private? De exemplu, o bază de date sau o API privată? În capitolul următor, vom vedea cum putem îmbunătăți securitatea serverului nostru.
 
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un traducător uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea în urma utilizării acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

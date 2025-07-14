@@ -2,120 +2,121 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e5ea5e7582f70008ea9bec3b3820f20a",
-  "translation_date": "2025-05-17T14:28:18+00:00",
+  "translation_date": "2025-07-13T23:17:35+00:00",
   "source_file": "04-PracticalImplementation/samples/java/containerapp/README.md",
   "language_code": "fi"
 }
 -->
 ## Järjestelmän arkkitehtuuri
 
-Tämä projekti esittelee verkkosovelluksen, joka käyttää sisällön turvallisuuden tarkistusta ennen kuin käyttäjän syötteet välitetään laskinpalveluun Model Context Protocol (MCP) -protokollan kautta.
+Tämä projekti esittelee web-sovelluksen, joka käyttää sisällön turvallisuustarkistusta ennen käyttäjän syötteiden välittämistä laskinpalvelimelle Model Context Protocolin (MCP) kautta.
 
-### Kuinka se toimii
+![Järjestelmän arkkitehtuurikaavio](../../../../../../translated_images/plant.b079fed84e945b7c2978993a16163bb53f0517cfe3548d2e442ff40d619ba4b4.fi.png)
 
-1. **Käyttäjän syöte**: Käyttäjä syöttää laskupyyntöä verkkokäyttöliittymässä
-2. **Sisällön turvallisuustarkistus (syöte)**: Pyyntö analysoidaan Azure Content Safety API:n avulla
-3. **Turvallisuuspäätös (syöte)**:
-   - Jos sisältö on turvallista (vakavuus < 2 kaikissa kategorioissa), se jatkaa laskimeen
-   - Jos sisältö merkitään mahdollisesti haitalliseksi, prosessi pysähtyy ja palauttaa varoituksen
-4. **Laskimen integrointi**: Turvallinen sisältö käsitellään LangChain4j:n avulla, joka kommunikoi MCP-laskinpalvelimen kanssa
-5. **Sisällön turvallisuustarkistus (tulos)**: Botin vastaus analysoidaan Azure Content Safety API:n avulla
-6. **Turvallisuuspäätös (tulos)**:
-   - Jos botin vastaus on turvallinen, se näytetään käyttäjälle
-   - Jos botin vastaus merkitään mahdollisesti haitalliseksi, se korvataan varoituksella
-7. **Vastaus**: Tulokset (jos turvallisia) näytetään käyttäjälle yhdessä molempien turvallisuusanalyysien kanssa
+### Miten se toimii
 
-## Model Context Protocol (MCP) -protokollan käyttäminen laskinpalveluiden kanssa
+1. **Käyttäjän syöte**: Käyttäjä syöttää laskentakyselyn web-käyttöliittymään  
+2. **Sisällön turvallisuustarkastus (syöte)**: Kysely analysoidaan Azure Content Safety API:lla  
+3. **Turvallisuuspäätös (syöte)**:  
+   - Jos sisältö on turvallista (vakavuus < 2 kaikissa kategorioissa), se siirtyy laskimelle  
+   - Jos sisältö on merkitty mahdollisesti haitalliseksi, prosessi keskeytyy ja palauttaa varoituksen  
+4. **Laskimen integrointi**: Turvallinen sisältö käsitellään LangChain4j:n kautta, joka kommunikoi MCP-laskinpalvelimen kanssa  
+5. **Sisällön turvallisuustarkastus (tulos)**: Botin vastaus analysoidaan Azure Content Safety API:lla  
+6. **Turvallisuuspäätös (tulos)**:  
+   - Jos botin vastaus on turvallinen, se näytetään käyttäjälle  
+   - Jos botin vastaus on merkitty mahdollisesti haitalliseksi, se korvataan varoituksella  
+7. **Vastaus**: Tulokset (jos turvalliset) näytetään käyttäjälle molempien turvallisuusanalyysien kanssa
 
-Tämä projekti esittelee, kuinka käyttää Model Context Protocol (MCP) -protokollaa LangChain4j:n avulla kutsumaan laskinpalveluita. Toteutus käyttää paikallista MCP-palvelinta, joka toimii portissa 8080 tarjoten laskutoimituksia.
+## Model Context Protocolin (MCP) käyttö laskinpalveluissa
 
-### Azure Content Safety -palvelun asettaminen
+Tämä projekti näyttää, miten Model Context Protocolia (MCP) käytetään kutsuttaessa laskin-MCP-palveluita LangChain4j:stä. Toteutus käyttää paikallista MCP-palvelinta, joka toimii portissa 8080 ja tarjoaa laskutoimituksia.
 
-Ennen kuin käytät sisällön turvallisuusominaisuuksia, sinun tulee luoda Azure Content Safety -palveluresurssi:
+### Azure Content Safety -palvelun käyttöönotto
 
-1. Kirjaudu [Azure-portaaliin](https://portal.azure.com)
-2. Klikkaa "Luo resurssi" ja etsi "Content Safety"
-3. Valitse "Content Safety" ja klikkaa "Luo"
-4. Anna resurssillesi yksilöllinen nimi
-5. Valitse tilauksesi ja resurssiryhmäsi (tai luo uusi)
-6. Valitse tuettu alue (katso [Alueen saatavuus](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services) yksityiskohdat)
-7. Valitse sopiva hinnoittelutaso
-8. Klikkaa "Luo" resurssin käyttöönottoon
-9. Kun käyttöönotto on valmis, klikkaa "Siirry resurssiin"
-10. Vasemmassa paneelissa, kohdassa "Resurssien hallinta", valitse "Avaimet ja päätepiste"
+Ennen sisällön turvallisuusominaisuuksien käyttöä sinun tulee luoda Azure Content Safety -palveluresurssi:
+
+1. Kirjaudu sisään [Azure-portaaliin](https://portal.azure.com)  
+2. Valitse "Create a resource" ja hae "Content Safety"  
+3. Valitse "Content Safety" ja klikkaa "Create"  
+4. Anna resurssillesi yksilöllinen nimi  
+5. Valitse tilauksesi ja resurssiryhmä (tai luo uusi)  
+6. Valitse tuettu alue (katso [Alueiden saatavuus](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services) lisätietoja varten)  
+7. Valitse sopiva hinnoittelutaso  
+8. Klikkaa "Create" ottaaksesi resurssin käyttöön  
+9. Kun käyttöönotto on valmis, klikkaa "Go to resource"  
+10. Vasemmasta valikosta, "Resource Management" alta, valitse "Keys and Endpoint"  
 11. Kopioi jompikumpi avaimista ja päätepisteen URL seuraavaa vaihetta varten
 
-### Ympäristömuuttujien konfigurointi
+### Ympäristömuuttujien määrittäminen
 
-Aseta `GITHUB_TOKEN` ympäristömuuttuja GitHub-mallien autentikointia varten:
+Aseta `GITHUB_TOKEN` ympäristömuuttuja GitHub-mallien todennusta varten:  
 ```sh
 export GITHUB_TOKEN=<your_github_token>
 ```
 
-Sisällön turvallisuusominaisuuksia varten aseta:
+Sisällön turvallisuusominaisuuksia varten aseta:  
 ```sh
 export CONTENT_SAFETY_ENDPOINT=<your_content_safety_endpoint>
 export CONTENT_SAFETY_KEY=<your_content_safety_key>
 ```
 
-Nämä ympäristömuuttujat käytetään sovelluksessa autentikoitumiseen Azure Content Safety -palvelun kanssa. Jos näitä muuttujia ei aseteta, sovellus käyttää paikkamerkkiarvoja demonstraatiotarkoituksiin, mutta sisällön turvallisuusominaisuudet eivät toimi kunnolla.
+Näitä ympäristömuuttujia sovellus käyttää todennukseen Azure Content Safety -palvelussa. Jos muuttujia ei ole asetettu, sovellus käyttää esimerkkitietoja, mutta sisällön turvallisuusominaisuudet eivät toimi oikein.
 
-### Laskimen MCP-palvelimen käynnistäminen
+### Laskin MCP -palvelimen käynnistäminen
 
-Ennen kuin suoritat asiakkaan, sinun tulee käynnistää laskimen MCP-palvelin SSE-tilassa localhost:8080:ssa.
+Ennen asiakkaan käynnistämistä sinun tulee käynnistää laskin MCP -palvelin SSE-tilassa osoitteessa localhost:8080.
 
 ## Projektin kuvaus
 
-Tämä projekti esittelee Model Context Protocol (MCP) -protokollan integroinnin LangChain4j:n kanssa laskinpalveluiden kutsumiseen. Keskeisiä ominaisuuksia ovat:
+Tämä projekti demonstroi Model Context Protocolin (MCP) integrointia LangChain4j:hin laskinpalveluiden kutsumiseksi. Keskeisiä ominaisuuksia ovat:
 
-- MCP:n käyttäminen laskinpalveluun yhdistämiseen perusmatemaattisia operaatioita varten
-- Kaksikerroksinen sisällön turvallisuustarkistus sekä käyttäjän syötteille että botin vastauksille
-- Integrointi GitHubin gpt-4.1-nano-mallin kanssa LangChain4j:n kautta
-- Server-Sent Events (SSE) -tapahtumien käyttäminen MCP-kuljetukseen
+- MCP:n käyttö yhteyden muodostamiseen laskinpalveluun peruslaskutoimituksia varten  
+- Kaksitasoinen sisällön turvallisuustarkastus sekä käyttäjän syötteille että botin vastauksille  
+- Integrointi GitHubin gpt-4.1-nano -malliin LangChain4j:n kautta  
+- Server-Sent Events (SSE) -protokollan käyttö MCP-siirrossa
 
-## Sisällön turvallisuuden integrointi
+## Sisällön turvallisuusintegraatio
 
-Projekti sisältää kattavat sisällön turvallisuusominaisuudet varmistaakseen, että sekä käyttäjän syötteet että järjestelmän vastaukset ovat vapaita haitallisesta sisällöstä:
+Projekti sisältää kattavat sisällön turvallisuusominaisuudet, jotka varmistavat, että sekä käyttäjän syötteet että järjestelmän vastaukset ovat vapaita haitallisesta sisällöstä:
 
-1. **Syötteen tarkistus**: Kaikki käyttäjän pyynnöt analysoidaan haitallisten sisältökategorioiden, kuten vihapuheen, väkivallan, itsensä vahingoittamisen ja seksuaalisen sisällön, varalta ennen käsittelyä.
+1. **Syötteen tarkastus**: Kaikki käyttäjän syötteet analysoidaan haitallisten sisältökategorioiden, kuten vihapuheen, väkivallan, itsetuhoisuuden ja seksuaalisen sisällön varalta ennen käsittelyä.  
+2. **Tuloksen tarkastus**: Vaikka käytössä olisi mahdollisesti sensuroimattomia malleja, järjestelmä tarkistaa kaikki generoitu vastaukset samoilla sisällön turvallisuusfilttereillä ennen niiden näyttämistä käyttäjälle.
 
-2. **Tuloksen tarkistus**: Vaikka käytettäisiin mahdollisesti sensuroimattomia malleja, järjestelmä tarkistaa kaikki luodut vastaukset samojen sisällön turvallisuussuodattimien avulla ennen kuin ne näytetään käyttäjälle.
+Tämä kaksitasoinen lähestymistapa varmistaa, että järjestelmä pysyy turvallisena riippumatta käytettävästä tekoälymallista, suojaten käyttäjiä sekä haitallisilta syötteiltä että mahdollisesti ongelmallisilta tekoälyn tuottamilta vastauksilta.
 
-Tämä kaksikerroksinen lähestymistapa varmistaa, että järjestelmä pysyy turvallisena riippumatta siitä, mitä AI-mallia käytetään, suojaten käyttäjiä sekä haitallisilta syötteiltä että mahdollisesti ongelmallisilta AI-luoduilta tuloksilta.
+## Web-asiakas
 
-## Verkkoklientti
+Sovellus sisältää käyttäjäystävällisen web-käyttöliittymän, jonka avulla käyttäjät voivat olla vuorovaikutuksessa Content Safety Calculator -järjestelmän kanssa:
 
-Sovellus sisältää käyttäjäystävällisen verkkokäyttöliittymän, jonka avulla käyttäjät voivat olla vuorovaikutuksessa Content Safety Calculator -järjestelmän kanssa:
+### Web-käyttöliittymän ominaisuudet
 
-### Verkkokäyttöliittymän ominaisuudet
+- Yksinkertainen ja selkeä lomake laskentakyselyiden syöttämiseen  
+- Kaksitasoinen sisällön turvallisuusvalidointi (syöte ja tulos)  
+- Reaaliaikainen palaute kyselyn ja vastauksen turvallisuudesta  
+- Väritetyt turvallisuusindikaattorit helppoon tulkintaan  
+- Selkeä ja responsiivinen ulkoasu, joka toimii eri laitteilla  
+- Esimerkkikyselyjä turvallisen käytön ohjeistamiseksi
 
-- Yksinkertainen, intuitiivinen lomake laskupyyntöjen syöttämiseen
-- Kaksikerroksinen sisällön turvallisuuden validointi (syöte ja tulos)
-- Reaaliaikainen palaute pyynnön ja vastauksen turvallisuudesta
-- Värikoodatut turvallisuusindikaattorit helppoon tulkintaan
-- Selkeä, responsiivinen muotoilu, joka toimii eri laitteilla
-- Esimerkkejä turvallisista pyynnöistä käyttäjien ohjaamiseen
+### Web-asiakkaan käyttö
 
-### Verkkoklientin käyttäminen
-
-1. Käynnistä sovellus:
+1. Käynnistä sovellus:  
    ```sh
    mvn spring-boot:run
    ```
 
-2. Avaa selaimesi ja siirry osoitteeseen `http://localhost:8087`
+2. Avaa selain ja siirry osoitteeseen `http://localhost:8087`
 
-3. Syötä laskupyyntö annettuun tekstialueeseen (esim. "Laske 24.5 ja 17.3 summa")
+3. Syötä laskentakysely tekstikenttään (esim. "Laske lukujen 24.5 ja 17.3 summa")
 
-4. Klikkaa "Lähetä" käsitelläksesi pyyntösi
+4. Klikkaa "Submit" käsitelläksesi pyyntösi
 
-5. Näe tulokset, jotka sisältävät:
-   - Sisällön turvallisuusanalyysi pyynnöstäsi
-   - Laskettu tulos (jos pyyntö oli turvallinen)
-   - Sisällön turvallisuusanalyysi botin vastauksesta
-   - Mahdolliset turvallisuusvaroitukset, jos joko syöte tai tulos merkitään
+5. Tarkastele tuloksia, jotka sisältävät:  
+   - Kyselyn sisällön turvallisuusanalyysin  
+   - Lasketun tuloksen (jos kysely oli turvallinen)  
+   - Botin vastauksen sisällön turvallisuusanalyysin  
+   - Mahdolliset turvallisuusvaroitukset, jos syöte tai tulos oli merkitty
 
-Verkkoklientti käsittelee automaattisesti molemmat sisällön turvallisuuden tarkistusprosessit varmistaen, että kaikki vuorovaikutukset ovat turvallisia ja asianmukaisia riippumatta siitä, mitä AI-mallia käytetään.
+Web-asiakas hoitaa automaattisesti molemmat sisällön turvallisuustarkistukset, varmistaen, että kaikki vuorovaikutukset ovat turvallisia ja asianmukaisia riippumatta käytetystä tekoälymallista.
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälykäännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomaa, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi katsoa auktoritatiiviseksi lähteeksi. Kriittisen tiedon kohdalla suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinkäsityksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

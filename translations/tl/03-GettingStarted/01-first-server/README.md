@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:12:17+00:00",
+  "translation_date": "2025-07-13T17:37:50+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "tl"
 }
@@ -41,13 +41,13 @@ Dapat mong makita ang sumusunod na user interface:
 
   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.tl.png)
 
-1. Piliin ang "Tools" at "listTools", makikita mo ang "Add" na lalabas, piliin ang "Add" at punan ang mga halaga ng parameter.
+1. Piliin ang "Tools" at "listTools", dapat lumabas ang "Add", piliin ang "Add" at punan ang mga halaga ng parameter.
 
   Makikita mo ang sumusunod na tugon, ibig sabihin ay resulta mula sa "add" tool:
 
   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.tl.png)
 
-Congrats, nagawa mo nang likhain at patakbuhin ang iyong unang server!
+Congrats, nagawa mo nang gumawa at patakbuhin ang iyong unang server!
 
 ### Official SDKs
 

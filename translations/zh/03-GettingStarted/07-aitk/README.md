@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8248e3491f5245ee6ab48ef724a4f65a",
-  "translation_date": "2025-07-04T15:57:13+00:00",
+  "translation_date": "2025-07-13T21:27:10+00:00",
   "source_file": "03-GettingStarted/07-aitk/README.md",
   "language_code": "zh"
 }
@@ -15,9 +15,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 概述
 
-本课将介绍如何通过 Visual Studio Code 中的 [AI Toolkit](https://aka.ms/AIToolkit) 扩展，将计算器 MCP 服务器连接到代理，使代理能够通过自然语言执行加法、减法、乘法和除法等数学运算。
+本课将介绍如何通过 Visual Studio Code 中的 [AI Toolkit](https://aka.ms/AIToolkit) 扩展，将计算器 MCP 服务器连接到代理，使代理能够通过自然语言执行加、减、乘、除等数学运算。
 
-AI Toolkit 是 Visual Studio Code 的强大扩展，简化了代理开发流程。AI 工程师可以轻松地开发和测试生成式 AI 模型，无论是在本地还是云端。该扩展支持目前大多数主流生成式模型。
+AI Toolkit 是 Visual Studio Code 的强大扩展，简化了代理开发流程。AI 工程师可以轻松构建 AI 应用，开发和测试生成式 AI 模型——无论是在本地还是云端。该扩展支持目前大多数主流生成式模型。
 
 *注意*：AI Toolkit 目前支持 Python 和 TypeScript。
 
@@ -31,7 +31,7 @@ AI Toolkit 是 Visual Studio Code 的强大扩展，简化了代理开发流程�
 
 ## 方法
 
-我们需要从整体上这样进行：
+我们需要从宏观上这样进行：
 
 - 创建代理并定义其系统提示。
 - 创建带有计算器工具的 MCP 服务器。
@@ -56,20 +56,20 @@ AI Toolkit 是 Visual Studio Code 的强大扩展，简化了代理开发流程�
 ![Visual Studio Code AI Toolkit 扩展中模型选择界面截图。标题为“Find the right model for your AI Solution”，副标题鼓励用户发现、测试和部署 AI 模型。下方“Popular Models”展示六个模型卡片：DeepSeek-R1（GitHub 托管）、OpenAI GPT-4o、OpenAI GPT-4.1、OpenAI o1、Phi 4 Mini（CPU - 小型，快速）和 DeepSeek-R1（Ollama 托管）。每个卡片包含“Add”添加模型和“Try in Playground”试用选项。](../../../../translated_images/aitk-model-catalog.2acd38953bb9c119aa629fe74ef34cc56e4eed35e7f5acba7cd0a59e614ab335.zh.png)
 
 1. 从 **Activity Bar** 打开 **AI Toolkit** 扩展。
-2. 在 **Catalog** 部分选择 **Models**，打开 **Model Catalog**。选择 **Models** 会在新编辑器标签页打开 **Model Catalog**。
+2. 在 **Catalog** 部分选择 **Models**，打开 **Model Catalog**。选择 **Models** 会在新编辑器标签页打开模型目录。
 3. 在 **Model Catalog** 的搜索栏输入 **OpenAI GPT-4o**。
 4. 点击 **+ Add** 将模型添加到你的 **My Models** 列表。确保选择的是 **GitHub 托管** 的模型。
 5. 在 **Activity Bar** 中确认 **OpenAI GPT-4o** 模型已出现在列表中。
 
 ### -1- 创建代理
 
-**Agent (Prompt) Builder** 让你创建并定制自己的 AI 代理。本节将创建一个新代理，并为其分配模型以驱动对话。
+**Agent (Prompt) Builder** 让你创建并定制自己的 AI 代理。本节将创建一个新代理，并分配模型以驱动对话。
 
 ![Visual Studio Code AI Toolkit 扩展中“Calculator Agent”构建界面截图。左侧面板选中模型为“OpenAI GPT-4o (via GitHub)”。系统提示为“你是一名大学数学教授”，用户提示为“用简单的语言向我解释傅里叶方程”。还有添加工具、启用 MCP Server 和选择结构化输出的按钮。底部有蓝色“Run”按钮。右侧面板“Get Started with Examples”列出三个示例代理：Web Developer（带 MCP Server）、Second-Grade Simplifier 和 Dream Interpreter，均附简短功能描述。](../../../../translated_images/aitk-agent-builder.901e3a2960c3e4774b29a23024ff5bec2d4232f57fae2a418b2aaae80f81c05f.zh.png)
 
 1. 从 **Activity Bar** 打开 **AI Toolkit** 扩展。
-2. 在 **Tools** 部分选择 **Agent (Prompt) Builder**，会在新编辑器标签页打开该工具。
-3. 点击 **+ New Agent** 按钮。扩展会通过 **Command Palette** 启动设置向导。
+2. 在 **Tools** 部分选择 **Agent (Prompt) Builder**，会在新编辑器标签页打开该构建器。
+3. 点击 **+ New Agent** 按钮，扩展会通过 **Command Palette** 启动设置向导。
 4. 输入名称 **Calculator Agent**，按回车确认。
 5. 在 **Agent (Prompt) Builder** 中，**Model** 字段选择 **OpenAI GPT-4o (via GitHub)** 模型。
 
@@ -77,7 +77,7 @@ AI Toolkit 是 Visual Studio Code 的强大扩展，简化了代理开发流程�
 
 代理搭建完成后，接下来定义其个性和用途。本节将使用 **Generate system prompt** 功能，描述代理的预期行为（这里是计算器代理），并让模型帮你生成系统提示。
 
-![Visual Studio Code AI Toolkit 中“Calculator Agent”界面截图，弹出“Generate a prompt”窗口。窗口说明可通过填写基本信息生成提示模板，文本框内示例系统提示为：“你是一个乐于助人且高效的数学助手。当遇到基本算术问题时，你会给出正确答案。”下方有“Close”和“Generate”按钮。背景中可见代理配置，包括选中的模型“OpenAI GPT-4o (via GitHub)”及系统和用户提示字段。](../../../../translated_images/aitk-generate-prompt.ba9e69d3d2bbe2a26444d0c78775540b14196061eee32c2054e9ee68c4f51f3a.zh.png)
+![Visual Studio Code AI Toolkit 中“Calculator Agent”界面截图，弹出“Generate a prompt”窗口。窗口说明可通过填写基本信息生成提示模板，文本框内示例系统提示为：“You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.” 窗口下方有“Close”和“Generate”按钮。背景中可见代理配置，包括选中的模型“OpenAI GPT-4o (via GitHub)”及系统和用户提示字段。](../../../../translated_images/aitk-generate-prompt.ba9e69d3d2bbe2a26444d0c78775540b14196061eee32c2054e9ee68c4f51f3a.zh.png)
 
 1. 在 **Prompts** 部分，点击 **Generate system prompt** 按钮。该按钮会打开提示生成器，利用 AI 生成系统提示。
 2. 在 **Generate a prompt** 窗口中输入：`You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
@@ -97,7 +97,7 @@ AI Toolkit 提供了模板，方便你创建 MCP 服务器。这里我们使用 
 1. 在 **Agent (Prompt) Builder** 的 **Tools** 部分，点击 **+ MCP Server** 按钮。扩展会通过 **Command Palette** 启动设置向导。
 2. 选择 **+ Add Server**。
 3. 选择 **Create a New MCP Server**。
-4. 选择 **python-weather** 模板。
+4. 选择 **python-weather** 作为模板。
 5. 选择 **Default folder** 保存 MCP 服务器模板。
 6. 输入服务器名称：**Calculator**
 7. 会打开一个新的 Visual Studio Code 窗口，选择 **Yes, I trust the authors**。
@@ -195,4 +195,4 @@ AI Toolkit 提供了模板，方便你创建 MCP 服务器。这里我们使用 
 - 下一步：[测试与调试](../08-testing/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

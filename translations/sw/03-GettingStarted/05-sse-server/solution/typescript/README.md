@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-17T12:12:13+00:00",
+  "translation_date": "2025-07-13T20:21:44+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "sw"
 }
@@ -17,30 +17,31 @@ npm install
 
 ## -3- Endesha sampuli
 
+
 ```bash
 npm run build
 ```
 
 ## -4- Jaribu sampuli
 
-Na seva ikikimbia katika terminal moja, fungua terminal nyingine na endesha amri ifuatayo:
+Wakati server ikifanya kazi kwenye terminal moja, fungua terminal nyingine na endesha amri ifuatayo:
 
 ```bash
 npm run inspector
 ```
 
-Hii inapaswa kuanzisha seva ya wavuti na kiolesura cha kuona kinachokuwezesha kujaribu sampuli.
+Hii inapaswa kuanzisha server ya wavuti yenye kiolesura cha kuona kinachokuwezesha kujaribu sampuli.
 
-Mara seva inapounganishwa:
+Mara server itakapounganishwa:
 
-- jaribu kuorodhesha zana na endesha `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- jaribu kuorodhesha zana na endesha `add`, ukiingiza hoja 2 na 4, unapaswa kuona 6 kama matokeo.
+- nenda kwenye resources na resource template na piga "greeting", andika jina na unapaswa kuona salamu yenye jina ulilotoa.
 
-### Testing in CLI mode
+### Kupima kwa mode ya CLI
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+Inspector uliyoendesha ni app ya Node.js na `mcp dev` ni kifuniko cha app hiyo.
 
-- Start up the server with the command `npm run build`.
+- Anzisha server kwa amri `npm run build`.
 
 - Katika terminal tofauti endesha amri ifuatayo:
 
@@ -48,7 +49,7 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    Hii itaorodhesha zana zote zinazopatikana kwenye seva. Unapaswa kuona matokeo yafuatayo:
+    Hii itaorodhesha zana zote zinazopatikana kwenye server. Unapaswa kuona matokeo yafuatayo:
 
     ```text
     {
@@ -79,7 +80,7 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     }
     ```
 
-- Ingiza aina ya zana kwa kuandika amri ifuatayo:
+- Tumia aina ya zana kwa kuandika amri ifuatayo:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
@@ -99,8 +100,8 @@ Unapaswa kuona matokeo yafuatayo:
     ```
 
 > ![!TIP]
-> Kwa kawaida ni haraka zaidi kuendesha ispector katika hali ya CLI kuliko kwenye kivinjari.
-> Soma zaidi kuhusu ispector [hapa](https://github.com/modelcontextprotocol/inspector).
+> Kwa kawaida ni haraka zaidi kuendesha inspector kwa mode ya CLI kuliko kutumia kivinjari.
+> Soma zaidi kuhusu inspector [hapa](https://github.com/modelcontextprotocol/inspector).
 
-**Kanusho**: 
-Hati hii imetafsiriwa kwa kutumia huduma ya kutafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokamilika. Hati ya asili katika lugha yake ya kiasili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

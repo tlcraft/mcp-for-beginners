@@ -2,34 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0ab9613fc9595f493847f91275859a18",
-  "translation_date": "2025-05-17T10:04:13+00:00",
+  "translation_date": "2025-07-13T18:41:58+00:00",
   "source_file": "03-GettingStarted/02-client/solution/python/README.md",
   "language_code": "sw"
 }
 -->
 # Kuendesha sampuli hii
 
-Inashauriwa usakinishe `uv` lakini si lazima, angalia [maelekezo](https://docs.astral.sh/uv/#highlights)
+Unashauriwa kufunga `uv` lakini si lazima, angalia [maelekezo](https://docs.astral.sh/uv/#highlights)
 
-## -0- Tengeneza mazingira pepe
+## -0- Unda mazingira ya mtandaoni
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Washa mazingira pepe
+## -1- Washa mazingira ya mtandaoni
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Sakinisha mahitaji
+## -2- Sakinisha utegemezi
 
 ```bash
 pip install "mcp[cli]"
 ```
 
 ## -3- Endesha sampuli
+
 
 ```bash
 python client.py
@@ -52,5 +53,5 @@ CALL TOOL
 [TextContent(type='text', text='8', annotations=None)]
 ```
 
-**Kanusho**: 
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwepo kwa usahihi. Hati ya awali katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo chenye mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatuwajibiki kwa kutoelewana au kutafsiri vibaya kunakotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

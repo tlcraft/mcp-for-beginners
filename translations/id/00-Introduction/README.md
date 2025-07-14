@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "105c2ddbb77bc38f7e9df009e1b06e45",
-  "translation_date": "2025-07-04T18:08:17+00:00",
+  "translation_date": "2025-07-13T15:36:25+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "id"
 }
@@ -54,7 +54,7 @@ Sebelum MCP, mengintegrasikan model dengan alat memerlukan:
 ### **✅ Manfaat Standarisasi MCP**
 
 | **Manfaat**              | **Deskripsi**                                                                |
-|--------------------------|------------------------------------------------------------------------------|
+|--------------------------|-------------------------------------------------------------------------------|
 | Interoperabilitas        | LLM bekerja mulus dengan alat dari berbagai vendor                           |
 | Konsistensi              | Perilaku seragam di berbagai platform dan alat                              |
 | Dapat Digunakan Kembali  | Alat yang dibuat sekali dapat digunakan di berbagai proyek dan sistem       |
@@ -159,19 +159,19 @@ Siap mencoba? Berikut contoh membuat MCP server sederhana dalam berbagai bahasa:
 MCP memungkinkan berbagai aplikasi dengan memperluas kapabilitas AI:
 
 | **Aplikasi**               | **Deskripsi**                                                                |
-|----------------------------|------------------------------------------------------------------------------|
-| Integrasi Data Perusahaan  | Menghubungkan LLM ke database, CRM, atau alat internal                       |
-| Sistem AI Agenik           | Memungkinkan agen otonom dengan akses alat dan alur pengambilan keputusan    |
-| Aplikasi Multi-modal       | Menggabungkan alat teks, gambar, dan audio dalam satu aplikasi AI terpadu   |
+|----------------------------|-------------------------------------------------------------------------------|
+| Integrasi Data Perusahaan  | Menghubungkan LLM ke database, CRM, atau alat internal                        |
+| Sistem AI Agenik           | Memungkinkan agen otonom dengan akses alat dan alur kerja pengambilan keputusan |
+| Aplikasi Multi-modal       | Menggabungkan alat teks, gambar, dan audio dalam satu aplikasi AI terpadu    |
 | Integrasi Data Real-time   | Membawa data langsung ke interaksi AI untuk output yang lebih akurat dan terkini |
 
 ### 🧠 MCP = Standar Universal untuk Interaksi AI
 
-Model Context Protocol (MCP) berperan sebagai standar universal untuk interaksi AI, seperti bagaimana USB-C menstandarisasi koneksi fisik perangkat. Dalam dunia AI, MCP menyediakan antarmuka yang konsisten, memungkinkan model (klien) terintegrasi mulus dengan alat eksternal dan penyedia data (server). Ini menghilangkan kebutuhan akan protokol kustom yang beragam untuk setiap API atau sumber data.
+Model Context Protocol (MCP) berperan sebagai standar universal untuk interaksi AI, seperti bagaimana USB-C menstandarisasi koneksi fisik perangkat. Dalam dunia AI, MCP menyediakan antarmuka konsisten, memungkinkan model (klien) terintegrasi mulus dengan alat eksternal dan penyedia data (server). Ini menghilangkan kebutuhan protokol kustom yang beragam untuk setiap API atau sumber data.
 
-Di bawah MCP, alat yang kompatibel dengan MCP (disebut MCP server) mengikuti standar terpadu. Server ini dapat mencantumkan alat atau aksi yang mereka tawarkan dan menjalankan aksi tersebut saat diminta oleh agen AI. Platform agen AI yang mendukung MCP mampu menemukan alat yang tersedia dari server dan memanggilnya melalui protokol standar ini.
+Di bawah MCP, alat yang kompatibel MCP (disebut MCP server) mengikuti standar terpadu. Server ini dapat mencantumkan alat atau aksi yang mereka tawarkan dan menjalankan aksi tersebut saat diminta oleh agen AI. Platform agen AI yang mendukung MCP mampu menemukan alat yang tersedia dari server dan memanggilnya melalui protokol standar ini.
 
-### 💡 Memudahkan Akses ke Pengetahuan
+### 💡 Memudahkan akses ke pengetahuan
 
 Selain menyediakan alat, MCP juga memudahkan akses ke pengetahuan. MCP memungkinkan aplikasi memberikan konteks kepada large language models (LLM) dengan menghubungkannya ke berbagai sumber data. Misalnya, sebuah MCP server bisa mewakili repositori dokumen perusahaan, memungkinkan agen mengambil informasi relevan sesuai permintaan. Server lain bisa menangani aksi spesifik seperti mengirim email atau memperbarui catatan. Dari perspektif agen, ini hanyalah alat yang bisa digunakan—beberapa alat mengembalikan data (konteks pengetahuan), sementara yang lain melakukan aksi. MCP mengelola keduanya dengan efisien.
 
@@ -308,4 +308,4 @@ Pikirkan tentang aplikasi AI yang ingin Anda bangun.
 Selanjutnya: [Bab 1: Konsep Inti](../01-CoreConcepts/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "105c2ddbb77bc38f7e9df009e1b06e45",
-  "translation_date": "2025-07-04T19:05:44+00:00",
+  "translation_date": "2025-07-13T15:39:59+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "hr"
 }
@@ -21,11 +21,11 @@ Generativne AI aplikacije predstavljaju veliki iskorak jer često omogućuju kor
 
 ## **🎯 Zašto je standardizacija u AI važna**
 
-Kako generativne AI aplikacije postaju složenije, ključno je usvojiti standarde koji osiguravaju **skalabilnost, proširivost** i **održivost**. MCP odgovara na ove potrebe tako da:
+Kako generativne AI aplikacije postaju složenije, ključno je usvojiti standarde koji osiguravaju **skalabilnost, proširivost** i **održivost**. MCP odgovara na ove potrebe kroz:
 
-- Ujedinjuje integracije modela i alata
-- Smanjuje krhka, jednokratna prilagođena rješenja
-- Omogućuje suživot više modela unutar jednog ekosustava
+- Ujedinjenje integracija modela i alata
+- Smanjenje krhkih, jednokratnih prilagođenih rješenja
+- Omogućavanje suživota više modela unutar jednog ekosustava
 
 ---
 
@@ -36,7 +36,7 @@ Na kraju ovog članka moći ćete:
 - Definirati **Model Context Protocol (MCP)** i njegove primjene
 - Razumjeti kako MCP standardizira komunikaciju između modela i alata
 - Prepoznati ključne komponente MCP arhitekture
-- Istražiti stvarne primjene MCP-a u poslovnom i razvojnom okruženju
+- Istražiti stvarne primjere primjene MCP-a u poslovnom i razvojnom okruženju
 
 ---
 
@@ -58,7 +58,7 @@ Prije MCP-a, integracija modela s alatima zahtijevala je:
 | Interoperabilnost        | LLM-ovi besprijekorno rade s alatima različitih dobavljača                    |
 | Dosljednost              | Jednako ponašanje na različitim platformama i alatima                         |
 | Ponovna upotrebljivost   | Alati izgrađeni jednom mogu se koristiti u različitim projektima i sustavima  |
-| Ubrzani razvoj           | Smanjuje vrijeme razvoja korištenjem standardiziranih, plug-and-play sučelja  |
+| Brži razvoj              | Smanjuje vrijeme razvoja korištenjem standardiziranih, plug-and-play sučelja  |
 
 ---
 
@@ -75,7 +75,7 @@ MCP slijedi **klijent-poslužitelj model**, gdje:
 - **Resursi** – Statički ili dinamički podaci za modele  
 - **Promptovi** – Preddefinirani tijekovi rada za vođenu generaciju  
 - **Alati** – Izvršne funkcije poput pretraživanja, izračuna  
-- **Uzorkovanje** – Agentno ponašanje putem rekurzivnih interakcija
+- **Uzorkovanje** – Agentno ponašanje kroz rekurzivne interakcije
 
 ---
 
@@ -94,13 +94,13 @@ MCP poslužitelji funkcioniraju na sljedeći način:
     - Obrada zahtjeva: Procesira dolazne zahtjeve za alate od modela.  
     - Formatiranje odgovora: Strukturira izlaze alata u format koji model može razumjeti.
 
-- **Izvršenje alata**:  
+- **Izvršavanje alata**:  
     - Poslužitelj usmjerava zahtjeve prema odgovarajućim vanjskim alatima  
     - Alati izvršavaju svoje specijalizirane funkcije (pretraživanje, izračun, upiti u bazu podataka itd.)  
     - Rezultati se vraćaju modelu u dosljednom formatu.
 
 - **Završetak odgovora**:  
-    - AI model uključi izlaze alata u svoj odgovor.  
+    - AI model uključuje izlaze alata u svoj odgovor.  
     - Konačni odgovor se šalje natrag klijentskoj aplikaciji.
 
 ```mermaid
@@ -142,7 +142,7 @@ graph TD
 
 ## 👨‍💻 Kako izgraditi MCP poslužitelj (s primjerima)
 
-MCP poslužitelji omogućuju proširenje mogućnosti LLM-ova pružajući podatke i funkcionalnosti.
+MCP poslužitelji omogućuju proširenje mogućnosti LLM-ova pružanjem podataka i funkcionalnosti.
 
 Spremni za isprobavanje? Evo primjera kako napraviti jednostavan MCP poslužitelj u različitim jezicima:
 
@@ -160,7 +160,7 @@ Spremni za isprobavanje? Evo primjera kako napraviti jednostavan MCP poslužitel
 MCP omogućuje širok spektar primjena proširujući AI mogućnosti:
 
 | **Primjena**               | **Opis**                                                                       |
-|---------------------------|--------------------------------------------------------------------------------|
+|----------------------------|--------------------------------------------------------------------------------|
 | Integracija podataka u poduzeću | Povezivanje LLM-ova s bazama podataka, CRM-ovima ili internim alatima       |
 | Agentni AI sustavi         | Omogućavanje autonomnih agenata s pristupom alatima i tijekovima donošenja odluka |
 | Multimodalne aplikacije    | Kombinacija tekstualnih, slikovnih i audio alata unutar jedne AI aplikacije    |
@@ -176,7 +176,7 @@ Prema MCP-u, alat kompatibilan s MCP-om (nazvan MCP poslužitelj) slijedi jedins
 
 Osim što nudi alate, MCP također olakšava pristup znanju. Omogućuje aplikacijama da pruže kontekst velikim jezičnim modelima (LLM-ovima) povezivanjem s različitim izvorima podataka. Na primjer, MCP poslužitelj može predstavljati repozitorij dokumenata tvrtke, omogućujući agentima dohvat relevantnih informacija na zahtjev. Drugi poslužitelj može upravljati specifičnim radnjama poput slanja e-pošte ili ažuriranja zapisa. Iz perspektive agenta, to su jednostavno alati koje može koristiti — neki alati vraćaju podatke (kontekst znanja), dok drugi izvršavaju radnje. MCP učinkovito upravlja oboje.
 
-Agent koji se povezuje na MCP poslužitelj automatski uči o dostupnim mogućnostima i pristupačnim podacima poslužitelja kroz standardizirani format. Ova standardizacija omogućuje dinamičnu dostupnost alata. Na primjer, dodavanjem novog MCP poslužitelja u sustav agenta njegove funkcije postaju odmah dostupne bez potrebe za dodatnim prilagodbama u uputama agenta.
+Agent koji se povezuje na MCP poslužitelj automatski uči o dostupnim mogućnostima i pristupačnim podacima poslužitelja kroz standardizirani format. Ova standardizacija omogućuje dinamičku dostupnost alata. Na primjer, dodavanjem novog MCP poslužitelja u sustav agenta njegove funkcije postaju odmah dostupne bez potrebe za dodatnim prilagodbama u uputama agenta.
 
 Ova pojednostavljena integracija usklađena je s tijekom prikazanim u mermaid dijagramu, gdje poslužitelji pružaju i alate i znanje, osiguravajući besprijekornu suradnju između sustava.
 
@@ -279,7 +279,7 @@ sequenceDiagram
 
 Evo praktičnih prednosti korištenja MCP-a:
 
-- **Svježina**: modeli mogu pristupiti ažuriranim informacijama izvan svojih podataka za treniranje  
+- **Ažurnost**: modeli mogu pristupiti najnovijim informacijama izvan svojih podataka za treniranje  
 - **Proširenje mogućnosti**: modeli mogu koristiti specijalizirane alate za zadatke za koje nisu trenirani  
 - **Smanjenje halucinacija**: vanjski izvori podataka pružaju čvrstu činjenicu  
 - **Privatnost**: osjetljivi podaci mogu ostati u sigurnim okruženjima umjesto da budu ugrađeni u promptove
@@ -291,7 +291,7 @@ Evo ključnih zaključaka za korištenje MCP-a:
 - **MCP** standardizira način na koji AI modeli komuniciraju s alatima i podacima  
 - Promiče **proširivost, dosljednost i interoperabilnost**  
 - MCP pomaže **skratiti vrijeme razvoja, poboljšati pouzdanost i proširiti mogućnosti modela**  
-- Klijent-poslužitelj arhitektura **omogućuje fleksibilne, proširive AI aplikacije**
+- Klijent-poslužitelj arhitektura omogućuje **fleksibilne, proširive AI aplikacije**
 
 ## 🧠 Vježba
 
@@ -309,4 +309,4 @@ Razmislite o AI aplikaciji koju želite izgraditi.
 Sljedeće: [Poglavlje 1: Osnovni pojmovi](../01-CoreConcepts/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

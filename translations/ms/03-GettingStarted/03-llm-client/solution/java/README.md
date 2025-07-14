@@ -2,95 +2,95 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac2459c0d5cc823922e3d9240a95028c",
-  "translation_date": "2025-06-11T13:31:12+00:00",
+  "translation_date": "2025-07-13T19:11:45+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/java/README.md",
   "language_code": "ms"
 }
 -->
 # Calculator LLM Client
 
-A Java application demonstrating how to use LangChain4j to connect to an MCP (Model Context Protocol) calculator service with GitHub Models integration.
+Aplikasi Java yang menunjukkan cara menggunakan LangChain4j untuk berhubung dengan perkhidmatan kalkulator MCP (Model Context Protocol) dengan integrasi GitHub Models.
 
-## Prerequisites
+## Prasyarat
 
-- Java 21 or higher
-- Maven 3.6+ (or use the included Maven wrapper)
-- A GitHub account with access to GitHub Models
-- An MCP calculator service running on `http://localhost:8080`
+- Java 21 atau lebih tinggi
+- Maven 3.6+ (atau gunakan Maven wrapper yang disertakan)
+- Akaun GitHub dengan akses ke GitHub Models
+- Perkhidmatan kalkulator MCP berjalan di `http://localhost:8080`
 
-## Getting the GitHub Token
+## Mendapatkan Token GitHub
 
-This application uses GitHub Models, which requires a GitHub personal access token. Follow these steps to get your token:
+Aplikasi ini menggunakan GitHub Models yang memerlukan token akses peribadi GitHub. Ikuti langkah berikut untuk mendapatkan token anda:
 
-### 1. Access GitHub Models
-1. Go to [GitHub Models](https://github.com/marketplace/models)
-2. Sign in with your GitHub account
-3. Request access to GitHub Models if you haven’t already
+### 1. Akses GitHub Models
+1. Pergi ke [GitHub Models](https://github.com/marketplace/models)
+2. Log masuk dengan akaun GitHub anda
+3. Mohon akses ke GitHub Models jika anda belum berbuat demikian
 
-### 2. Create a Personal Access Token
-1. Go to [GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)](https://github.com/settings/tokens)
-2. Click "Generate new token" → "Generate new token (classic)"
-3. Give your token a descriptive name (e.g., "MCP Calculator Client")
-4. Set expiration as needed
-5. Select the following scopes:
-   - `repo` (if accessing private repositories)
+### 2. Buat Token Akses Peribadi
+1. Pergi ke [GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)](https://github.com/settings/tokens)
+2. Klik "Generate new token" → "Generate new token (classic)"
+3. Beri nama token anda yang jelas (contoh: "MCP Calculator Client")
+4. Tetapkan tarikh luput mengikut keperluan
+5. Pilih skop berikut:
+   - `repo` (jika mengakses repositori peribadi)
    - `user:email`
-6. Click "Generate token"
-7. **Important**: Copy the token immediately - you won’t be able to see it again!
+6. Klik "Generate token"
+7. **Penting**: Salin token segera - anda tidak akan dapat melihatnya lagi!
 
-### 3. Set the Environment Variable
+### 3. Tetapkan Pembolehubah Persekitaran
 
-#### On Windows (Command Prompt):
+#### Pada Windows (Command Prompt):
 ```cmd
 set GITHUB_TOKEN=your_github_token_here
 ```
 
-#### On Windows (PowerShell):
+#### Pada Windows (PowerShell):
 ```powershell
 $env:GITHUB_TOKEN="your_github_token_here"
 ```
 
-#### On macOS/Linux:
+#### Pada macOS/Linux:
 ```bash
 export GITHUB_TOKEN=your_github_token_here
 ```
 
-## Setup and Installation
+## Persediaan dan Pemasangan
 
-1. **Clone or navigate to the project directory**
+1. **Clone atau navigasi ke direktori projek**
 
-2. **Install dependencies**:
+2. **Pasang kebergantungan**:
    ```cmd
    mvnw clean install
    ```
-   Or if you have Maven installed globally:
+   Atau jika Maven sudah dipasang secara global:
    ```cmd
    mvn clean install
    ```
 
-3. **Set up the environment variable** (see "Getting the GitHub Token" section above)
+3. **Tetapkan pembolehubah persekitaran** (rujuk bahagian "Mendapatkan Token GitHub" di atas)
 
-4. **Start the MCP Calculator Service**:
-   Make sure the MCP calculator service from chapter 1 is running on `http://localhost:8080/sse`. It should be up before starting the client.
+4. **Mulakan Perkhidmatan Kalkulator MCP**:
+   Pastikan perkhidmatan kalkulator MCP bab 1 berjalan di `http://localhost:8080/sse`. Ia perlu berjalan sebelum anda memulakan klien.
 
-## Running the Application
+## Menjalankan Aplikasi
 
 ```cmd
 mvnw clean package
 java -jar target\calculator-llm-client-0.0.1-SNAPSHOT.jar
 ```
 
-## What the Application Does
+## Apa Yang Aplikasi Lakukan
 
-The application demonstrates three main interactions with the calculator service:
+Aplikasi ini menunjukkan tiga interaksi utama dengan perkhidmatan kalkulator:
 
-1. **Addition**: Calculates the sum of 24.5 and 17.3
-2. **Square Root**: Calculates the square root of 144
-3. **Help**: Displays available calculator functions
+1. **Penambahan**: Mengira jumlah 24.5 dan 17.3
+2. **Punca Kuasa Dua**: Mengira punca kuasa dua bagi 144
+3. **Bantuan**: Menunjukkan fungsi kalkulator yang tersedia
 
-## Expected Output
+## Output Dijangka
 
-When running successfully, you should see output similar to:
+Apabila berjaya dijalankan, anda akan melihat output seperti berikut:
 
 ```
 The sum of 24.5 and 17.3 is 41.8.
@@ -98,52 +98,52 @@ The square root of 144 is 12.
 The calculator service provides the following functions: add, subtract, multiply, divide, sqrt, power...
 ```
 
-## Troubleshooting
+## Penyelesaian Masalah
 
-### Common Issues
+### Isu Lazim
 
 1. **"GITHUB_TOKEN environment variable not set"**
-   - Make sure you’ve set the `GITHUB_TOKEN` environment variable
-   - Restart your terminal/command prompt after setting the variable
+   - Pastikan anda telah menetapkan pembolehubah persekitaran `GITHUB_TOKEN`
+   - Mulakan semula terminal/command prompt selepas menetapkan pembolehubah
 
 2. **"Connection refused to localhost:8080"**
-   - Ensure the MCP calculator service is running on port 8080
-   - Check if another service is using port 8080
+   - Pastikan perkhidmatan kalkulator MCP berjalan pada port 8080
+   - Semak jika ada perkhidmatan lain menggunakan port 8080
 
 3. **"Authentication failed"**
-   - Verify your GitHub token is valid and has the correct permissions
-   - Check if you have access to GitHub Models
+   - Sahkan token GitHub anda sah dan mempunyai kebenaran yang betul
+   - Semak jika anda mempunyai akses ke GitHub Models
 
-4. **Maven build errors**
-   - Ensure you're using Java 21 or higher: `java -version`
-   - Try cleaning the build: `mvnw clean`
+4. **Ralat binaan Maven**
+   - Pastikan anda menggunakan Java 21 atau lebih tinggi: `java -version`
+   - Cuba bersihkan binaan: `mvnw clean`
 
 ### Debugging
 
-To enable debug logging, add the following JVM argument when running:
+Untuk mengaktifkan log debug, tambah argumen JVM berikut semasa menjalankan:
 ```cmd
 java -Dlogging.level.dev.langchain4j=DEBUG -jar target\calculator-llm-client-0.0.1-SNAPSHOT.jar
 ```
 
-## Configuration
+## Konfigurasi
 
-The application is configured to:
-- Use GitHub Models with the `gpt-4.1-nano` model
-- Connect to MCP service at `http://localhost:8080/sse`
-- Use a 60-second timeout for requests
-- Enable request/response logging for debugging
+Aplikasi ini dikonfigurasikan untuk:
+- Menggunakan GitHub Models dengan model `gpt-4.1-nano`
+- Berhubung ke perkhidmatan MCP di `http://localhost:8080/sse`
+- Menggunakan masa tamat 60 saat untuk permintaan
+- Mengaktifkan log permintaan/respon untuk debugging
 
-## Dependencies
+## Kebergantungan
 
-Key dependencies used in this project:
-- **LangChain4j**: For AI integration and tool management
-- **LangChain4j MCP**: For Model Context Protocol support
-- **LangChain4j GitHub Models**: For GitHub Models integration
-- **Spring Boot**: For application framework and dependency injection
+Kebergantungan utama yang digunakan dalam projek ini:
+- **LangChain4j**: Untuk integrasi AI dan pengurusan alat
+- **LangChain4j MCP**: Untuk sokongan Model Context Protocol
+- **LangChain4j GitHub Models**: Untuk integrasi GitHub Models
+- **Spring Boot**: Untuk rangka kerja aplikasi dan suntikan kebergantungan
 
-## License
+## Lesen
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE) file for details.
+Projek ini dilesenkan di bawah Apache License 2.0 - lihat fail [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE) untuk maklumat lanjut.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

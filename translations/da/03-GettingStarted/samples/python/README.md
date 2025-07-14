@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bb55f3119d45c4412fc5555299e60498",
-  "translation_date": "2025-05-17T13:30:17+00:00",
+  "translation_date": "2025-07-13T22:38:22+00:00",
   "source_file": "03-GettingStarted/samples/python/README.md",
   "language_code": "da"
 }
 -->
 # Eksempel
 
-Dette er et Python-eksempel for en MCP-server
+Dette er et Python-eksempel til en MCP Server
 
-Her er, hvordan lommeregnerdelen ser ud:
+Sådan ser kalkulatordelen ud:
 
 ```python
 @mcp.tool()
@@ -50,11 +50,11 @@ Kør følgende kommando:
 pip install mcp
 ```
 
-## Kør
+## Kørsel
 
 ```bash
 python mcp_calculator_server.py
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for misforståelser eller fejltolkninger, der måtte opstå ved brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

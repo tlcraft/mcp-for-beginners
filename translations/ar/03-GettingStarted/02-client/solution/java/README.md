@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:04:27+00:00",
+  "translation_date": "2025-07-13T18:30:41+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "ar"
 }
 -->
-# MCP Java Client - مثال الحاسبة
+# MCP Java Client - عرض توضيحي للآلة الحاسبة
 
-يُظهر هذا المشروع كيفية إنشاء عميل Java يتصل ويتفاعل مع خادم MCP (بروتوكول سياق النموذج). في هذا المثال، سنتصل بخادم الحاسبة من الفصل 01 وننفذ عمليات رياضية متنوعة.
+يُظهر هذا المشروع كيفية إنشاء عميل Java يتصل بخادم MCP (بروتوكول سياق النموذج) ويتفاعل معه. في هذا المثال، سنقوم بالاتصال بخادم الآلة الحاسبة من الفصل 01 وتنفيذ عمليات رياضية مختلفة.
 
 ## المتطلبات الأساسية
 
 قبل تشغيل هذا العميل، تحتاج إلى:
 
-1. **تشغيل خادم الحاسبة** من الفصل 01:
-   - انتقل إلى دليل خادم الحاسبة: `03-GettingStarted/01-first-server/solution/java/`
-   - بناء وتشغيل خادم الحاسبة:
+1. **تشغيل خادم الآلة الحاسبة** من الفصل 01:
+   - انتقل إلى مجلد خادم الآلة الحاسبة: `03-GettingStarted/01-first-server/solution/java/`
+   - قم ببناء وتشغيل خادم الآلة الحاسبة:
      ```cmd
      cd ..\01-first-server\solution\java
      .\mvnw clean install -DskipTests
@@ -25,26 +25,26 @@ CO_OP_TRANSLATOR_METADATA:
      ```
    - يجب أن يكون الخادم قيد التشغيل على `http://localhost:8080`
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. **تثبيت Java 21 أو أحدث** على نظامك  
+3. **Maven** (مضمن عبر Maven Wrapper)
 
-## What is the SDKClient?
+## ما هو SDKClient؟
 
-The `SDKClient` هو تطبيق Java يوضح كيفية:
-- الاتصال بخادم MCP باستخدام نقل Server-Sent Events (SSE)
-- عرض الأدوات المتاحة من الخادم
-- استدعاء وظائف الحاسبة المختلفة عن بُعد
-- معالجة الردود وعرض النتائج
+`SDKClient` هو تطبيق Java يوضح كيفية:
+- الاتصال بخادم MCP باستخدام نقل Server-Sent Events (SSE)  
+- عرض الأدوات المتاحة من الخادم  
+- استدعاء وظائف الآلة الحاسبة المختلفة عن بُعد  
+- معالجة الردود وعرض النتائج  
 
 ## كيف يعمل
 
 يستخدم العميل إطار عمل Spring AI MCP لـ:
 
-1. **إنشاء الاتصال**: ينشئ عميل WebFlux SSE للاتصال بخادم الحاسبة
-2. **تهيئة العميل**: يضبط عميل MCP وينشئ الاتصال
-3. **اكتشاف الأدوات**: يعرض جميع عمليات الحاسبة المتاحة
-4. **تنفيذ العمليات**: يستدعي وظائف رياضية مختلفة ببيانات تجريبية
-5. **عرض النتائج**: يعرض نتائج كل عملية حسابية
+1. **إقامة الاتصال**: ينشئ عميل WebFlux SSE للاتصال بخادم الآلة الحاسبة  
+2. **تهيئة العميل**: يضبط عميل MCP ويؤسس الاتصال  
+3. **اكتشاف الأدوات**: يعرض جميع عمليات الآلة الحاسبة المتاحة  
+4. **تنفيذ العمليات**: يستدعي وظائف رياضية مختلفة باستخدام بيانات تجريبية  
+5. **عرض النتائج**: يعرض نتائج كل عملية حسابية  
 
 ## هيكل المشروع
 
@@ -60,9 +60,9 @@ src/
                             └── SDKClient.java    # Main client implementation
 ```
 
-## التبعيات الأساسية
+## التبعيات الرئيسية
 
-يستخدم المشروع التبعيات الأساسية التالية:
+يستخدم المشروع التبعيات الرئيسية التالية:
 
 ```xml
 <dependency>
@@ -71,14 +71,14 @@ src/
 </dependency>
 ```
 
-توفر هذه التبعية:
-- `McpClient` - The main client interface
-- `WebFluxSseClientTransport` - نقل SSE للاتصال عبر الويب
-- مخططات بروتوكول MCP وأنواع الطلب/الرد
+تقدم هذه التبعية:
+- `McpClient` - واجهة العميل الرئيسية  
+- `WebFluxSseClientTransport` - نقل SSE للاتصالات عبر الويب  
+- مخططات بروتوكول MCP وأنواع الطلبات/الردود  
 
 ## بناء المشروع
 
-قم ببناء المشروع باستخدام ملف Maven المساعد:
+قم ببناء المشروع باستخدام Maven wrapper:
 
 ```cmd
 .\mvnw clean install
@@ -90,25 +90,25 @@ src/
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**ملاحظة**: تأكد من تشغيل خادم الحاسبة على `http://localhost:8080` before executing any of these commands.
+**ملاحظة**: تأكد من تشغيل خادم الآلة الحاسبة على `http://localhost:8080` قبل تنفيذ أي من هذه الأوامر.
 
-## What the Client Does
+## ما الذي يفعله العميل
 
-When you run the client, it will:
+عند تشغيل العميل، سيقوم بـ:
 
-1. **Connect** to the calculator server at `http://localhost:8080`
-2. **عرض الأدوات** - يعرض جميع عمليات الحاسبة المتاحة
-3. **إجراء الحسابات**:
-   - الجمع: 5 + 3 = 8
-   - الطرح: 10 - 4 = 6
-   - الضرب: 6 × 7 = 42
-   - القسمة: 20 ÷ 4 = 5
-   - الأس: 2^8 = 256
-   - الجذر التربيعي: √16 = 4
-   - القيمة المطلقة: |-5.5| = 5.5
-   - المساعدة: يعرض العمليات المتاحة
+1. **الاتصال** بخادم الآلة الحاسبة على `http://localhost:8080`  
+2. **عرض الأدوات** - يعرض جميع عمليات الآلة الحاسبة المتاحة  
+3. **إجراء الحسابات**:  
+   - الجمع: 5 + 3 = 8  
+   - الطرح: 10 - 4 = 6  
+   - الضرب: 6 × 7 = 42  
+   - القسمة: 20 ÷ 4 = 5  
+   - الأس: 2^8 = 256  
+   - الجذر التربيعي: √16 = 4  
+   - القيمة المطلقة: |-5.5| = 5.5  
+   - المساعدة: يعرض العمليات المتاحة  
 
-## النتيجة المتوقعة
+## المخرجات المتوقعة
 
 ```
 Available Tools = ListToolsResult[tools=[Tool[name=add, description=Add two numbers together, ...], ...]]
@@ -122,56 +122,56 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**ملاحظة**: قد ترى تحذيرات Maven حول وجود خيوط متبقية في النهاية - هذا أمر طبيعي لتطبيقات التفاعل ولا يشير إلى وجود خطأ.
+**ملاحظة**: قد تظهر تحذيرات Maven حول وجود خيوط متبقية في النهاية - هذا أمر طبيعي في التطبيقات التفاعلية ولا يشير إلى وجود خطأ.
 
 ## فهم الكود
 
-### 1. إعداد النقل
+### 1. إعداد النقل  
 ```java
 var transport = new WebFluxSseClientTransport(WebClient.builder().baseUrl("http://localhost:8080"));
-```
-هذا ينشئ نقل SSE (Server-Sent Events) الذي يتصل بخادم الحاسبة.
+```  
+هذا ينشئ نقل SSE (Server-Sent Events) يتصل بخادم الآلة الحاسبة.
 
-### 2. إنشاء العميل
+### 2. إنشاء العميل  
 ```java
 var client = McpClient.sync(this.transport).build();
 client.initialize();
-```
+```  
 ينشئ عميل MCP متزامن ويهيئ الاتصال.
 
-### 3. استدعاء الأدوات
+### 3. استدعاء الأدوات  
 ```java
 CallToolResult resultAdd = client.callTool(new CallToolRequest("add", Map.of("a", 5.0, "b", 3.0)));
-```
-يستدعي أداة "add" بالمعاملات a=5.0 و b=3.0.
+```  
+يستدعي أداة "add" مع المعاملات a=5.0 و b=3.0.
 
 ## استكشاف الأخطاء وإصلاحها
 
-### الخادم غير قيد التشغيل
-إذا واجهت أخطاء في الاتصال، تأكد من تشغيل خادم الحاسبة من الفصل 01:
+### الخادم غير قيد التشغيل  
+إذا واجهت أخطاء في الاتصال، تأكد من تشغيل خادم الآلة الحاسبة من الفصل 01:  
 ```
 Error: Connection refused
-```
-**الحل**: ابدأ تشغيل خادم الحاسبة أولاً.
+```  
+**الحل**: قم بتشغيل خادم الآلة الحاسبة أولاً.
 
-### المنفذ مستخدم بالفعل
-إذا كان المنفذ 8080 مشغولاً:
+### المنفذ مستخدم بالفعل  
+إذا كان المنفذ 8080 مشغولاً:  
 ```
 Error: Address already in use
-```
+```  
 **الحل**: أوقف التطبيقات الأخرى التي تستخدم المنفذ 8080 أو قم بتعديل الخادم لاستخدام منفذ مختلف.
 
-### أخطاء البناء
-إذا واجهت أخطاء في البناء:
+### أخطاء البناء  
+إذا واجهت أخطاء في البناء:  
 ```cmd
 .\mvnw clean install -DskipTests
 ```
 
-## تعلّم المزيد
+## تعلم المزيد
 
-- [Spring AI MCP Documentation](https://docs.spring.io/spring-ai/reference/api/mcp/)
-- [Model Context Protocol Specification](https://modelcontextprotocol.io/)
-- [Spring WebFlux Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
+- [توثيق Spring AI MCP](https://docs.spring.io/spring-ai/reference/api/mcp/)  
+- [مواصفات بروتوكول سياق النموذج](https://modelcontextprotocol.io/)  
+- [توثيق Spring WebFlux](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
 **إخلاء المسؤولية**:  
-تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر المعتمد. للمعلومات الهامة، يُنصح بالاستعانة بالترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة ناتجة عن استخدام هذه الترجمة.
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

@@ -2,21 +2,21 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:46:36+00:00",
+  "translation_date": "2025-07-13T21:11:20+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "pl"
 }
 -->
 # Calculator HTTP Streaming Demo
 
-Ten projekt demonstruje streaming HTTP za pomocą Server-Sent Events (SSE) w Spring Boot WebFlux. Składa się z dwóch aplikacji:
+Ten projekt demonstruje strumieniowanie HTTP za pomocą Server-Sent Events (SSE) w Spring Boot WebFlux. Składa się z dwóch aplikacji:
 
-- **Calculator Server**: reaktywny serwis webowy wykonujący obliczenia i przesyłający wyniki strumieniowo za pomocą SSE  
-- **Calculator Client**: aplikacja kliencka konsumująca endpoint streamingowy
+- **Calculator Server**: reaktywna usługa webowa wykonująca obliczenia i przesyłająca wyniki za pomocą SSE
+- **Calculator Client**: aplikacja kliencka konsumująca endpoint strumieniowy
 
 ## Wymagania wstępne
 
-- Java 17 lub nowsza  
+- Java 17 lub nowsza
 - Maven 3.6 lub nowszy
 
 ## Struktura projektu
@@ -37,15 +37,15 @@ java/
 
 ## Jak to działa
 
-1. **Calculator Server** udostępnia endpoint `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** udostępnia endpoint `/calculate`, który:
+   - Przyjmuje parametry zapytania: `a` (liczba), `b` (liczba), `op` (operacja)
+   - Obsługiwane operacje: `add`, `sub`, `mul`, `div`
+   - Zwraca Server-Sent Events z postępem obliczeń i wynikiem
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`  
-   - Konsumuje odpowiedź strumieniową  
-   - Wypisuje każde zdarzenie na konsolę
+2. **Calculator Client** łączy się z serwerem i:
+   - Wysyła zapytanie o obliczenie `7 * 5`
+   - Odbiera odpowiedź strumieniową
+   - Wyświetla każde zdarzenie w konsoli
 
 ## Uruchamianie aplikacji
 
@@ -63,7 +63,7 @@ mvn spring-boot:run
 
 Serwer uruchomi się pod adresem `http://localhost:8080`
 
-Powinieneś zobaczyć wyjście podobne do:  
+Powinieneś zobaczyć wyjście podobne do:
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
@@ -99,19 +99,19 @@ mvn clean package
 java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-## Testowanie serwera ręcznie
+## Ręczne testowanie serwera
 
 Możesz także przetestować serwer za pomocą przeglądarki lub curl:
 
-### Za pomocą przeglądarki:  
+### Za pomocą przeglądarki:
 Odwiedź: `http://localhost:8080/calculate?a=10&b=5&op=add`
 
-### Za pomocą curl:  
+### Za pomocą curl:
 ```bash
 curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-stream"
 ```
 
-## Oczekiwane wyjście
+## Oczekiwany wynik
 
 Podczas uruchamiania klienta powinieneś zobaczyć strumieniowe wyjście podobne do:
 
@@ -125,32 +125,32 @@ data:35.0
 
 ## Obsługiwane operacje
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - dodawanie (a + b)
+- `sub` - odejmowanie (a - b)
+- `mul` - mnożenie (a * b)
+- `div` - dzielenie (a / b, zwraca NaN jeśli b = 0)
 
-## API Reference
+## Dokumentacja API
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Parametry:**
+- `a` (wymagany): pierwsza liczba (double)
+- `b` (wymagany): druga liczba (double)
+- `op` (wymagany): operacja (`add`, `sub`, `mul`, `div`)
 
-**Response:**
-- Content-Type: `text/event-stream`  
+**Odpowiedź:**
+- Content-Type: `text/event-stream`
 - Zwraca Server-Sent Events z postępem obliczeń i wynikiem
 
-**Przykładowe zapytanie:**  
+**Przykładowe zapytanie:**
 ```
 GET /calculate?a=7&b=5&op=mul HTTP/1.1
 Host: localhost:8080
 Accept: text/event-stream
 ```
 
-**Przykładowa odpowiedź:**  
+**Przykładowa odpowiedź:**
 ```
 event: info
 data: Calculating: 7.0 mul 5.0
@@ -163,40 +163,40 @@ data: 35.0
 
 ### Najczęstsze problemy
 
-1. **Port 8080 jest już zajęty**  
-   - Zamknij inne aplikacje korzystające z portu 8080  
+1. **Port 8080 jest już zajęty**
+   - Zatrzymaj inne aplikacje korzystające z portu 8080
    - Lub zmień port serwera w `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Połączenie odrzucone**
+   - Upewnij się, że serwer jest uruchomiony przed startem klienta
+   - Sprawdź, czy serwer poprawnie wystartował na porcie 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Problemy z nazwami parametrów**
+   - Projekt zawiera konfigurację kompilatora Maven z flagą `-parameters`
+   - Jeśli masz problemy z wiązaniem parametrów, upewnij się, że projekt jest zbudowany z tą konfiguracją
 
-### Stopping the Applications
+### Zatrzymywanie aplikacji
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop`, jeśli działa w tle
+- Naciśnij `Ctrl+C` w terminalu, w którym działa aplikacja
+- Lub użyj `mvn spring-boot:stop`, jeśli aplikacja działa w tle
 
 ## Stos technologiczny
 
-- **Spring Boot 3.3.1** - framework aplikacji  
-- **Spring WebFlux** - reaktywny framework webowy  
-- **Project Reactor** - biblioteka do reaktywnych strumieni  
-- **Netty** - serwer non-blocking I/O  
-- **Maven** - narzędzie do budowania  
+- **Spring Boot 3.3.1** - framework aplikacji
+- **Spring WebFlux** - reaktywny framework webowy
+- **Project Reactor** - biblioteka strumieni reaktywnych
+- **Netty** - serwer I/O nieblokujący
+- **Maven** - narzędzie do budowania
 - **Java 17+** - język programowania
 
 ## Kolejne kroki
 
-Spróbuj zmodyfikować kod, aby:  
-- Dodać więcej operacji matematycznych  
-- Zaimplementować obsługę błędów dla nieprawidłowych operacji  
-- Dodać logowanie zapytań i odpowiedzi  
-- Wprowadzić uwierzytelnianie  
+Spróbuj zmodyfikować kod, aby:
+- Dodać więcej operacji matematycznych
+- Uwzględnić obsługę błędów dla nieprawidłowych operacji
+- Dodać logowanie zapytań i odpowiedzi
+- Wdrożyć uwierzytelnianie
 - Dodać testy jednostkowe
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najdokładniejsze, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym powinien być uznawany za wiarygodne źródło. W przypadku informacji o krytycznym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło wiążące. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

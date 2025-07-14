@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac67652abc453e2a7e2c75cd7a8897ae",
-  "translation_date": "2025-05-17T09:27:20+00:00",
+  "translation_date": "2025-07-13T18:07:47+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/typescript/README.md",
   "language_code": "sl"
 }
 -->
-# Zaženite ta vzorec
+# Zagon tega primera
 
-Priporočljivo je namestiti `uv`, vendar to ni nujno, glejte [navodila](https://docs.astral.sh/uv/#highlights)
+Priporočamo, da namestite `uv`, vendar ni nujno, poglejte [navodila](https://docs.astral.sh/uv/#highlights)
 
 ## -1- Namestite odvisnosti
 
@@ -17,38 +17,39 @@ Priporočljivo je namestiti `uv`, vendar to ni nujno, glejte [navodila](https://
 npm install
 ```
 
-## -3- Zaženite vzorec
+## -3- Zaženite primer
+
 
 ```bash
 npm run build
 ```
 
-## -4- Preizkusite vzorec
+## -4- Preizkusite primer
 
-Ko strežnik teče v enem terminalu, odprite drug terminal in zaženite naslednji ukaz:
+Ko je strežnik zagnan v enem terminalu, odprite drug terminal in zaženite naslednji ukaz:
 
 ```bash
 npm run inspector
 ```
 
-To bi moralo zagnati spletni strežnik z vizualnim vmesnikom, ki vam omogoča preizkus vzorca.
+To bi moralo zagnati spletni strežnik z vizualnim vmesnikom, ki vam omogoča testiranje primera.
 
 Ko je strežnik povezan:
 
-- poskusite našteti orodja in zaženite `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- poskusite našteti orodja in zaženite `add` z argumenti 2 in 4, v rezultatu bi morali videti 6.
+- pojdite na resources in resource template ter pokličite "greeting", vnesite ime in videli boste pozdrav z vnesenim imenom.
 
-### Testing in CLI mode
+### Testiranje v CLI načinu
 
-The inspector you ran is actually a Node.js app and `mcp dev`, ki je ovojnica okoli njega.
+Inspector, ki ste ga zagnali, je pravzaprav Node.js aplikacija, `mcp dev` pa je ovitek okoli nje.
 
-Lahko ga zaženete neposredno v načinu CLI z naslednjim ukazom:
+Lahko ga zaženete neposredno v CLI načinu z naslednjim ukazom:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/list
 ```
 
-To bo navedlo vsa orodja, ki so na voljo v strežniku. Videti bi morali naslednji izhod:
+To bo naštelo vsa orodja, ki so na voljo na strežniku. Videli bi morali naslednji izpis:
 
 ```text
 {
@@ -79,13 +80,13 @@ To bo navedlo vsa orodja, ki so na voljo v strežniku. Videti bi morali naslednj
 }
 ```
 
-Za priklic orodja vnesite:
+Za klic orodja vnesite:
 
 ```bash
 nnpx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Videti bi morali naslednji izhod:
+Videli bi morali naslednji izpis:
 
 ```text
 {
@@ -100,8 +101,8 @@ Videti bi morali naslednji izhod:
 ```
 
 > ![!TIP]
-> Običajno je veliko hitreje zagnati ispektor v načinu CLI kot v brskalniku.
-> Preberite več o ispektorju [tukaj](https://github.com/modelcontextprotocol/inspector).
+> Običajno je veliko hitreje zagnati inspector v CLI načinu kot v brskalniku.
+> Več o inspectorju preberite [tukaj](https://github.com/modelcontextprotocol/inspector).
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve AI prevajanja [Co-op Translator](https://github.com/Azure/co-op-translator). Medtem ko si prizadevamo za natančnost, vas prosimo, da se zavedate, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v svojem maternem jeziku je treba obravnavati kot avtoritativni vir. Za kritične informacije se priporoča profesionalni človeški prevod. Ne odgovarjamo za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

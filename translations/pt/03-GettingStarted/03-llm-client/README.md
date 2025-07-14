@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f74887f51a69d3f255cb83d0b517c623",
-  "translation_date": "2025-07-04T16:58:29+00:00",
+  "translation_date": "2025-07-13T18:50:57+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "pt"
 }
@@ -15,7 +15,7 @@ Agora vamos conectar ao servidor e pedir as suas capacidades:
 
 ### -3- Converter capacidades do servidor em ferramentas para o LLM
 
-O próximo passo após listar as capacidades do servidor é convertê-las para um formato que o LLM compreenda. Depois de fazermos isso, podemos fornecer essas capacidades como ferramentas para o nosso LLM.
+O próximo passo depois de listar as capacidades do servidor é convertê-las num formato que o LLM compreenda. Depois de fazermos isso, podemos fornecer essas capacidades como ferramentas para o nosso LLM.
 
 Ótimo, agora estamos prontos para lidar com pedidos dos utilizadores, por isso vamos tratar disso a seguir.
 
@@ -27,7 +27,7 @@ Nesta parte do código, vamos tratar os pedidos dos utilizadores.
 
 ## Tarefa
 
-Pega no código do exercício e desenvolve o servidor com mais algumas ferramentas. Depois cria um cliente com um LLM, como no exercício, e testa com diferentes prompts para garantir que todas as ferramentas do servidor são chamadas dinamicamente. Esta forma de construir um cliente significa que o utilizador final terá uma ótima experiência, pois pode usar prompts em linguagem natural, em vez de comandos exatos do cliente, sem se aperceber de que está a ser chamado um servidor MCP.
+Pega no código do exercício e desenvolve o servidor com mais algumas ferramentas. Depois cria um cliente com um LLM, como no exercício, e testa com diferentes prompts para garantir que todas as ferramentas do servidor são chamadas dinamicamente. Esta forma de construir um cliente significa que o utilizador final terá uma ótima experiência, pois poderá usar prompts em linguagem natural, em vez de comandos exatos do cliente, sem se aperceber de que está a ser chamado um servidor MCP.
 
 ## Solução
 

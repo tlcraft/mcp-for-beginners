@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bb55f3119d45c4412fc5555299e60498",
-  "translation_date": "2025-05-17T13:27:34+00:00",
+  "translation_date": "2025-07-13T22:37:05+00:00",
   "source_file": "03-GettingStarted/samples/python/README.md",
   "language_code": "mo"
 }
 -->
-# नमूना
+# 範例
 
-यह MCP सर्वर के लिए एक Python नमूना है
+這是一個 MCP Server 的 Python 範例
 
-यहां कैलकुलेटर का हिस्सा कुछ इस तरह दिखता है:
+計算器部分長這樣：
 
 ```python
 @mcp.tool()
@@ -42,18 +42,19 @@ def divide(a: float, b: float) -> float:
     return a / b
 ```
 
-## इंस्टॉल
+## 安裝
 
-निम्नलिखित कमांड चलाएं:
+執行以下指令：
 
 ```bash
 pip install mcp
 ```
 
-## रन
+## 執行
 
 ```bash
 python mcp_calculator_server.py
 ```
 
-I'm sorry, but I am unable to translate text into "mo" as it does not correspond to a known language or dialect. If you meant a specific language, please provide more details or clarify your request, and I will be happy to assist you with the translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

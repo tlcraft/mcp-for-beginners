@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-07-09T21:57:03+00:00",
+  "translation_date": "2025-07-13T17:47:15+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "ur"
 }
@@ -33,7 +33,7 @@ npx @modelcontextprotocol/inspector dotnet run
 
 جب سرور کنیکٹ ہو جائے:
 
-- ٹولز کی فہرست دیکھیں اور `add` چلائیں، دلائل 2 اور 4 کے ساتھ، آپ کو نتیجے میں 6 نظر آنا چاہیے۔
+- ٹولز کی فہرست بنانے کی کوشش کریں اور `add` چلائیں، دلائل 2 اور 4 کے ساتھ، آپ کو نتیجے میں 6 نظر آنا چاہیے۔
 - resources اور resource template پر جائیں اور "greeting" کال کریں، ایک نام ٹائپ کریں اور آپ کو وہی نام کے ساتھ ایک سلام نظر آئے گا جو آپ نے فراہم کیا ہے۔
 
 ### CLI موڈ میں ٹیسٹنگ

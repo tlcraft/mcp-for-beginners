@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fae57a69c2b62cb7d92ff12da65f36c3",
-  "translation_date": "2025-05-17T10:08:16+00:00",
+  "translation_date": "2025-07-13T18:44:17+00:00",
   "source_file": "03-GettingStarted/02-client/solution/typescript/README.md",
   "language_code": "pt"
 }
 -->
-# Executando este exemplo
+# Executar este exemplo
 
-Recomenda-se instalar `uv`, mas não é obrigatório, veja [instruções](https://docs.astral.sh/uv/#highlights)
+Recomenda-se instalar o `uv`, mas não é obrigatório, veja as [instruções](https://docs.astral.sh/uv/#highlights)
 
-## -1- Instale as dependências
+## -1- Instalar as dependências
 
 ```bash
 npm install
 ```
 
-## -3- Execute o servidor
+## -3- Executar o servidor
 
 ```bash
 npm run build
 ```
 
-## -4- Execute o cliente
+## -4- Executar o cliente
 
 ```sh
 npm run client
 ```
 
-Você deverá ver um resultado similar a:
+Deverá ver um resultado semelhante a:
 
 ```text
 Prompt:  {
@@ -41,4 +41,4 @@ Tool result:  { content: [ { type: 'text', text: '9' } ] }
 ```
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações errôneas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em atenção que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f7a8ffd07682d554929968dfc6ae2ecb",
-  "translation_date": "2025-05-17T15:06:32+00:00",
+  "translation_date": "2025-07-13T23:38:22+00:00",
   "source_file": "04-PracticalImplementation/samples/typescript/README.md",
   "language_code": "tl"
 }
 -->
-# Halimbawa
+# Sample
 
 Ito ay isang halimbawa ng Typescript para sa isang MCP Server
 
-Narito ang isang halimbawa ng paglikha ng tool:
+Narito ang isang halimbawa ng paggawa ng tool:
 
 ```typescript
 this.mcpServer.tool(
@@ -74,7 +74,7 @@ async ({ model, prompt, options }) => {
 );
 ```
 
-## I-install
+## Install
 
 Patakbuhin ang sumusunod na utos:
 
@@ -82,11 +82,11 @@ Patakbuhin ang sumusunod na utos:
 npm install
 ```
 
-## Patakbuhin
+## Run
 
 ```bash
 npm start
 ```
 
-**Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI na serbisyo sa pagsasalin [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga error o hindi pagiging tama. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na mapagkakatiwalaang pinagmulan. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaintindihan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

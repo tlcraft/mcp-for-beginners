@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f83bc722dc758efffd68667d6a1db470",
-  "translation_date": "2025-06-17T16:31:26+00:00",
+  "translation_date": "2025-07-14T08:49:06+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/README.md",
   "language_code": "my"
 }
@@ -15,77 +15,77 @@ CO_OP_TRANSLATOR_METADATA:
 ![VS Code](https://img.shields.io/badge/VS%20Code-Integration-blue?style=flat-square&logo=visualstudiocode)
 ![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Agent%20Mode-green?style=flat-square&logo=github)
 
-> **⚡ အမြန်စတင်ခြင်း:** GitHub repository များကို အလိုအလျောက် clone လုပ်ပေးပြီး VS Code နှင့်ပေါင်းစပ်အသုံးပြုနိုင်တဲ့ production-ready MCP server ကို ၃၀ မိနစ်အတွင်း တည်ဆောက်လိုက်ပါ။
+> **⚡ အမြန်စတင်ခြင်း:** GitHub repository ကို clone လုပ်ခြင်းနဲ့ VS Code ပေါ်မှာ အလိုအလျောက်ပေါင်းစည်းပေးတဲ့ production-ready MCP server ကို ၃၀ မိနစ်အတွင်း တည်ဆောက်လိုက်ပါ!
 
 ## 🎯 သင်ယူရမည့် ရည်မှန်းချက်များ
 
-ဤလက်တွေ့လေ့ကျင့်ခန်းပြီးဆုံးချိန်တွင် သင်သည် -
+ဒီ lab အဆုံးသတ်တဲ့အချိန်မှာ သင်မှာ အောက်ပါအရာတွေကို လုပ်နိုင်ပါလိမ့်မယ်-
 
-- ✅ လက်တွေ့အသုံးပြုမှုများအတွက် custom MCP server တည်ဆောက်နိုင်မည်
-- ✅ MCP မှတဆင့် GitHub repository များ clone လုပ်နိုင်မည်
-- ✅ custom MCP server များကို VS Code နှင့် Agent Builder တွင် ပေါင်းစပ်အသုံးပြုနိုင်မည်
-- ✅ GitHub Copilot Agent Mode ကို custom MCP tools နှင့် အသုံးပြုနိုင်မည်
-- ✅ production ပတ်ဝန်းကျင်များတွင် custom MCP server များ စမ်းသပ်၊ တင်သွင်းနိုင်မည်
+- ✅ အမှန်တကယ် အသုံးပြုနိုင်တဲ့ custom MCP server တစ်ခု ဖန်တီးနိုင်ခြင်း
+- ✅ MCP မှတဆင့် GitHub repository cloning လုပ်ဆောင်ချက် ထည့်သွင်းနိုင်ခြင်း
+- ✅ custom MCP server တွေကို VS Code နဲ့ Agent Builder နဲ့ ပေါင်းစည်းအသုံးပြုနိုင်ခြင်း
+- ✅ GitHub Copilot Agent Mode ကို custom MCP tools တွေနဲ့ အသုံးပြုနိုင်ခြင်း
+- ✅ custom MCP server တွေကို production ပတ်ဝန်းကျင်မှာ စမ်းသပ်ပြီး deploy လုပ်နိုင်ခြင်း
 
 ## 📋 လိုအပ်ချက်များ
 
-- Labs 1-3 (MCP အခြေခံနှင့် အဆင့်မြင့် ဖွံ့ဖြိုးမှုများ) ပြီးမြောက်ထားရှိခြင်း
-- GitHub Copilot subscription ([အခမဲ့ စာရင်းသွင်းနိုင်ပါသည်](https://github.com/github-copilot/signup))
-- VS Code တွင် AI Toolkit နှင့် GitHub Copilot extension များ ထည့်သွင်းထားရှိခြင်း
-- Git CLI တပ်ဆင်ပြီး ပြင်ဆင်ထားခြင်း
+- Labs 1-3 (MCP အခြေခံနဲ့ အဆင့်မြင့် ဖွံ့ဖြိုးမှု) ပြီးမြောက်ထားခြင်း
+- GitHub Copilot subscription ([အခမဲ့ စာရင်းသွင်းနိုင်သည်](https://github.com/github-copilot/signup))
+- VS Code မှာ AI Toolkit နဲ့ GitHub Copilot extension များ ထည့်သွင်းထားခြင်း
+- Git CLI ကို install လုပ်ပြီး configure ပြီးခြင်း
 
-## 🏗️ စီမံကိန်းအနှစ်ချုပ်
+## 🏗️ ပရောဂျက်အကျဉ်း
 
-### **လက်တွေ့ဖွံ့ဖြိုးမှု စိန်ခေါ်မှု**
-ဖွံ့ဖြိုးသူများအနေဖြင့် GitHub မှ repository များကို clone လုပ်ပြီး VS Code သို့မဟုတ် VS Code Insiders တွင် ဖွင့်ရခြင်းသည် လက်ဖြင့် လုပ်ဆောင်ရသော အဆင့်များဖြစ်သည်။
-ဤလုပ်ငန်းစဉ်မှာ -
-1. Terminal/command prompt ဖွင့်ခြင်း
-2. လိုချင်သော directory သို့ သွားရောက်ခြင်း
-3. `git clone` command ကို ရိုက်ထည့်ခြင်း
-4. Clone လုပ်ထားသော directory တွင် VS Code ဖွင့်ခြင်း
+### **အမှန်တကယ် အသုံးပြုနိုင်တဲ့ ဖွံ့ဖြိုးမှု စိန်ခေါ်မှု**
+Developer တွေအနေနဲ့ GitHub မှ repository တွေကို clone လုပ်ပြီး VS Code သို့မဟုတ် VS Code Insiders မှာ ဖွင့်ကြပါတယ်။ ဒီလုပ်ငန်းစဉ်ကို manual နည်းဖြင့် လုပ်ရတာမှာ-
 
-**ကျွန်ုပ်တို့၏ MCP ဖြေရှင်းချက်သည် ဤလုပ်ငန်းစဉ်ကို တစ်ချက် command ဖြင့် ပြုလုပ်ပေးနိုင်ပါသည်။**
+1. Terminal/command prompt ကိုဖွင့်ခြင်း
+2. လိုချင်တဲ့ directory ကိုသွားခြင်း
+3. `git clone` command ကို run ချခြင်း
+4. Clone လုပ်ထားတဲ့ directory မှာ VS Code ဖွင့်ခြင်း
 
-### **သင်တည်ဆောက်မည့်အရာ**
-**GitHub Clone MCP Server** (`git_mcp_server`) သည် အောက်ပါအချက်များကို ပံ့ပိုးပေးပါသည် -
+**ကျွန်တော်တို့ရဲ့ MCP ဖြေရှင်းချက်က ဒီလုပ်ငန်းစဉ်ကို တစ်ချက်တည်း အတိအကျ command တစ်ခုနဲ့ ပြီးစီးစေပါတယ်!**
+
+### **သင်တည်ဆောက်မယ့်အရာ**
+**GitHub Clone MCP Server** (`git_mcp_server`) တစ်ခုဖြစ်ပြီး အောက်ပါအရာတွေ ပါဝင်ပါတယ်-
 
 | လုပ်ဆောင်ချက် | ဖော်ပြချက် | အကျိုးကျေးဇူး |
 |---------|-------------|---------|
-| 🔄 **တော်တော်ကို အဆင်ပြေသော Repository Cloning** | GitHub repo များကို စစ်ဆေးပြီး clone လုပ်ပေးခြင်း | အမှားစစ်ဆေးမှုကို အလိုအလျောက် ပြုလုပ်ခြင်း |
-| 📁 **အတိအကျ Directory စီမံခန့်ခွဲမှု** | directory များကို စစ်ဆေးပြီး လုံခြုံစွာ ဖန်တီးပေးခြင်း | မတော်တဆ overwrite ဖြစ်မှုကို ကာကွယ်ပေးခြင်း |
-| 🚀 **Platform များစွာတွင် VS Code ပေါင်းစပ်ခြင်း** | VS Code/Insiders တွင် project များ ဖွင့်ပေးခြင်း | လုပ်ငန်းစဉ် ပြောင်းလဲမှုကို အဆင်ပြေစေခြင်း |
-| 🛡️ **ခိုင်မာသော အမှားစီမံခန့်ခွဲမှု** | network, permission, path အခက်အခဲများကို ကိုင်တွယ်ပေးခြင်း | production အသုံးပြုမှုအတွက် ယုံကြည်စိတ်ချရမှု |
+| 🔄 **အတိအကျ Repository Cloning** | GitHub repos ကို စစ်ဆေးပြီး clone လုပ်ခြင်း | အမှားစစ်ဆေးမှု အလိုအလျောက်လုပ်ဆောင်ခြင်း |
+| 📁 **အတိအကျ Directory စီမံခန့်ခွဲမှု** | Directory များကို စစ်ဆေးပြီး လုံခြုံစွာ ဖန်တီးခြင်း | ဖိုင်များ overwrite မဖြစ်စေရန် ကာကွယ်ခြင်း |
+| 🚀 **Cross-Platform VS Code ပေါင်းစည်းမှု** | VS Code/Insiders မှာ project တွေ ဖွင့်ခြင်း | လုပ်ငန်းစဉ်များကို အဆင်ပြေစေခြင်း |
+| 🛡️ **ခိုင်မာသော အမှားကိုင်တွယ်မှု** | Network, permission, path ပြဿနာများကို ကိုင်တွယ်ခြင်း | Production အသုံးပြုနိုင်စွမ်းရှိခြင်း |
 
 ---
 
-## 📖 လုပ်ဆောင်မှု အဆင့်ဆင့်
+## 📖 အဆင့်လိုက် အကောင်အထည်ဖော်ခြင်း
 
-### အဆင့် ၁: Agent Builder တွင် GitHub Agent ဖန်တီးခြင်း
+### အဆင့် ၁: Agent Builder မှ GitHub Agent ဖန်တီးခြင်း
 
-1. AI Toolkit extension မှတဆင့် **Agent Builder ကို စတင်ဖွင့်ပါ**
-2. အောက်ပါ အချက်အလက်များဖြင့် **Agent အသစ် တစ်ခု ဖန်တီးပါ**
+1. AI Toolkit extension မှတဆင့် **Agent Builder ကို ဖွင့်ပါ**
+2. အောက်ပါ configuration နဲ့ **Agent အသစ်တစ်ခု ဖန်တီးပါ**
    ```
    Agent Name: GitHubAgent
    ```
 
-3. **custom MCP server ကို စတင်ဖန်တီးခြင်း**
-   - **Tools** → **Add Tool** → **MCP Server** သို့ သွားပါ
-   - **"Create A new MCP Server"** ကို ရွေးချယ်ပါ
-   - အလွန်တော်သော လွတ်လပ်မှုအတွက် **Python template** ကို ရွေးပါ
+3. **custom MCP server ကို စတင်ဖန်တီးခြင်း:**
+   - **Tools** → **Add Tool** → **MCP Server** ကို သွားပါ
+   - **"Create A new MCP Server"** ကို ရွေးပါ
+   - အများဆုံး လွယ်ကူမှုအတွက် **Python template** ကို ရွေးပါ
    - **Server Name:** `git_mcp_server`
 
 ### အဆင့် ၂: GitHub Copilot Agent Mode ကို ပြင်ဆင်ခြင်း
 
-1. VS Code တွင် **GitHub Copilot ကို ဖွင့်ပါ** (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
-2. Copilot အင်တာဖေ့စ်တွင် **Agent Model ကို ရွေးချယ်ပါ**
-3. ပိုမိုကောင်းမွန်သော မှတ်ချက်စဉ်များအတွက် **Claude 3.7 model** ကို ရွေးပါ
-4. **MCP integration ကို ဖွင့်ပါ** (tool များအသုံးပြုရန်)
+1. VS Code မှာ **GitHub Copilot ကို ဖွင့်ပါ** (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
+2. Copilot interface မှာ **Agent Model ကို ရွေးပါ**
+3. **Claude 3.7 model** ကို ရွေးပြီး reasoning စွမ်းရည် မြင့်မားစေပါ
+4. Tool အသုံးပြုခွင့်အတွက် **MCP integration ကို ဖွင့်ပါ**
 
-> **💡 အကြံပြုချက်:** Claude 3.7 သည် ဖွံ့ဖြိုးမှုလုပ်ငန်းစဉ်များနှင့် အမှားစီမံခန့်ခွဲမှု ပုံစံများကို ပိုမိုနက်ရှိုင်းစွာ နားလည်စေပါသည်။
+> **💡 အကြံပြုချက်:** Claude 3.7 က ဖွံ့ဖြိုးမှုလုပ်ငန်းစဉ်နဲ့ အမှားကိုင်တွယ်မှု pattern တွေကို ပိုမိုနားလည်စေပါတယ်။
 
-### အဆင့် ၃: MCP Server အဓိကလုပ်ဆောင်ချက်များ အကောင်အထည်ဖော်ခြင်း
+### အဆင့် ၃: MCP Server အဓိက လုပ်ဆောင်ချက်များ အကောင်အထည်ဖော်ခြင်း
 
-**GitHub Copilot Agent Mode ဖြင့် အောက်ပါ အသေးစိတ် prompt ကို အသုံးပြုပါ**
+**GitHub Copilot Agent Mode နဲ့ အောက်ပါ prompt ကို အသုံးပြုပါ:**
 
 ```
 Create two MCP tools with the following comprehensive requirements:
@@ -120,17 +120,17 @@ Additional Requirements:
 
 ### အဆင့် ၄: MCP Server ကို စမ်းသပ်ခြင်း
 
-#### 4a. Agent Builder တွင် စမ်းသပ်ခြင်း
+#### 4a. Agent Builder မှာ စမ်းသပ်ခြင်း
 
-1. Agent Builder အတွက် debug configuration ကို စတင်ဖွင့်ပါ
-2. အောက်ပါ system prompt ဖြင့် သင့် agent ကို ပြင်ဆင်ပါ
+1. Agent Builder အတွက် debug configuration ကို စတင်ပါ
+2. အောက်ပါ system prompt နဲ့ agent ကို ပြင်ဆင်ပါ-
 
 ```
 SYSTEM_PROMPT:
 You are my intelligent coding repository assistant. You help developers efficiently clone GitHub repositories and set up their development environment. Always provide clear feedback about operations and handle errors gracefully.
 ```
 
-3. အမှန်တကယ်ဖြစ်နိုင်သော အသုံးပြုသူ အခြေအနေများဖြင့် စမ်းသပ်ပါ
+3. အသုံးပြုသူ အခြေအနေများနဲ့ စမ်းသပ်ပါ-
 
 ```
 USER_PROMPT EXAMPLES:
@@ -142,68 +142,68 @@ Scenario : Basic Clone and Open
 
 ![Agent Builder Testing](../../../../translated_images/DebugAgent.81d152370c503241b3b39a251b8966f7f739286df19dd57f9147f6402214a012.my.png)
 
-**မျှော်မှန်းထားသော ရလဒ်များ**
-- ✅ path အတည်ပြုချက်နှင့်အတူ cloning အောင်မြင်မှု
+**မျှော်မှန်းရလဒ်များ:**
+- ✅ Path အတည်ပြုချက်နဲ့ အောင်မြင်စွာ cloning လုပ်နိုင်ခြင်း
 - ✅ VS Code ကို အလိုအလျောက် ဖွင့်ပေးခြင်း
-- ✅ မှားယွင်းမှုရှိသော အခြေအနေများအတွက် ရှင်းလင်းသော error message များ
-- ✅ အထူးအခြေအနေများကို သေချာစွာ ကိုင်တွယ်နိုင်ခြင်း
+- ✅ မမှန်ကန်တဲ့ အခြေအနေများအတွက် error message များ ပြသခြင်း
+- ✅ အထူးအခြေအနေများကို မှန်ကန်စွာ ကိုင်တွယ်ခြင်း
 
-#### 4b. MCP Inspector တွင် စမ်းသပ်ခြင်း
+#### 4b. MCP Inspector မှာ စမ်းသပ်ခြင်း
 
 ![MCP Inspector Testing](../../../../translated_images/DebugInspector.eb5c95f94c69a8ba36944941b9a3588309a3a2fae101ace470ee09bde41d1667.my.png)
 
 ---
 
-**🎉 ဂုဏ်ပြုပါတယ်!** သင်သည် လက်တွေ့အသုံးပြုနိုင်ပြီး production-ready MCP server တစ်ခုကို အောင်မြင်စွာ ဖန်တီးနိုင်ခဲ့ပါပြီ။ သင့် custom GitHub clone server သည် MCP ၏ စွမ်းအားကို အသုံးပြု၍ ဖွံ့ဖြိုးသူများ၏ အလုပ်လုပ်စဉ်များကို အလိုအလျောက် ပြုလုပ်ပေးနိုင်မှုကို ပြသပေးပါသည်။
+**🎉 ဂုဏ်ပြုပါတယ်!** သင်သည် အမှန်တကယ် အသုံးဝင်ပြီး production-ready MCP server တစ်ခုကို ဖန်တီးနိုင်ပြီး ဖွံ့ဖြိုးမှုလုပ်ငန်းစဉ်များကို ဖြေရှင်းနိုင်ပါပြီ။ သင်၏ custom GitHub clone server သည် MCP ၏ အင်အားကို အသုံးပြု၍ developer productivity ကို အလိုအလျောက်မြှင့်တင်ပေးနိုင်သည်ကို ပြသပါသည်။
 
-### 🏆 ရရှိထားသော အောင်မြင်မှုများ
-- ✅ **MCP Developer** - Custom MCP server တည်ဆောက်နိုင်ခြင်း
-- ✅ **Workflow Automator** - ဖွံ့ဖြိုးမှုလုပ်ငန်းစဉ်များကို တိုးတက်စေခြင်း  
-- ✅ **Integration Expert** - ဖွံ့ဖြိုးရေးကိရိယာများကို ပေါင်းစပ်နိုင်ခြင်း
-- ✅ **Production Ready** - တင်သွင်းအသုံးပြုနိုင်သော ဖြေရှင်းချက်များ တည်ဆောက်နိုင်ခြင်း
-
----
-
-## 🎓 သင်တန်းပြီးမြောက်ခြင်း: Model Context Protocol နှင့် သင့်ခရီး
-
-**အထူးဂုဏ်ယူပါသော သင်တန်းသားများခင်ဗျာ၊**
-
-Model Context Protocol သင်တန်း၏ မော်ဂျူးလ်လေးခုလုံးကို အောင်မြင်စွာ ပြီးမြောက်ခဲ့ကြသည်မှာ ဂုဏ်ယူစရာပါ။ AI Toolkit အခြေခံများကို နားလည်မှုမှ စ၍ လက်တွေ့အသုံးပြုနိုင်သော production-ready MCP server များ တည်ဆောက်နိုင်ရေးအထိ သင်တန်းတစ်ခုလုံးအတွင်း ရရှိခဲ့သည်။
-
-### 🚀 သင့်သင်ယူမှုလမ်းကြောင်း ပြန်လည်သုံးသပ်ခြင်း
-
-**[Module 1](../lab1/README.md)**: AI Toolkit အခြေခံများ၊ မော်ဒယ်စမ်းသပ်ခြင်း၊ ပထမဆုံး AI agent ဖန်တီးခြင်း
-
-**[Module 2](../lab2/README.md)**: MCP architecture နားလည်ခြင်း၊ Playwright MCP ပေါင်းစပ်ခြင်း၊ browser automation agent တည်ဆောက်ခြင်း
-
-**[Module 3](../lab3/README.md)**: custom MCP server ဖွံ့ဖြိုးမှု၊ Weather MCP server ဖန်တီးခြင်း၊ debugging ကိရိယာများ ကျွမ်းကျင်မှု
-
-**[Module 4](../lab4/README.md)**: GitHub repository workflow အလိုအလျောက်လုပ်ဆောင်မှု tool တည်ဆောက်ခြင်း
-
-### 🌟 သင်တတ်မြောက်ထားသောအရာများ
-
-- ✅ **AI Toolkit Ecosystem**: မော်ဒယ်များ၊ agent များ၊ ပေါင်းစပ်မှုနည်းပညာများ
-- ✅ **MCP Architecture**: client-server ဒီဇိုင်း၊ သယ်ယူပို့ဆောင်မှုနည်းပညာများ၊ လုံခြုံရေး
-- ✅ **Developer Tools**: Playground, Inspector မှ production deployment အထိ
-- ✅ **Custom Development**: MCP server များ တည်ဆောက်၊ စမ်းသပ်၊ တင်သွင်းခြင်း
-- ✅ **လက်တွေ့အသုံးပြုမှုများ**: AI ဖြင့် လုပ်ငန်းစဉ်များ ပြုပြင်ပြောင်းလဲခြင်း
-
-### 🔮 နောက်တစ်ဆင့် အစီအစဉ်များ
-
-1. **သင့်ကိုယ်ပိုင် MCP Server တည်ဆောက်ပါ** - သင့် workflow များကို အလိုအလျောက်လုပ်ဆောင်ရန်
-2. **MCP အသိုင်းအဝိုင်းသို့ ပူးပေါင်းပါ** - သင်၏ ဖန်တီးမှုများကို မျှဝေပြီး အခြားသူများထံမှ သင်ယူပါ
-3. **အဆင့်မြင့် ပေါင်းစပ်မှုများ ရှာဖွေပါ** - MCP server များကို စီးပွားရေးစနစ်များနှင့် ချိတ်ဆက်ပါ
-4. **Open Source တွင် ပံ့ပိုးပါ** - MCP ကိရိယာများနှင့် စာတမ်းများ တိုးတက်အောင် ကူညီပါ
-
-ဤသင်တန်းသည် စတင်ခြင်းသာဖြစ်ပြီး Model Context Protocol ecosystem သည် အလွန်မြန်ဆန်စွာ ဖွံ့ဖြိုးနေပါသည်။ သင်သည် AI စွမ်းအားဖြင့် တီထွင်ဖန်တီးမှုကိရိယာများ၏ ရှေ့ဆောင်တစ်ဦးဖြစ်ရန် ပြင်ဆင်ပြီးဖြစ်ပါသည်။
-
-**သင်တန်းတွင် ပါဝင်ပေးမှုနှင့် သင်ယူမှုအတွက် ကျေးဇူးအထူးတင်ရှိပါသည်။**
-
-AI tool များနှင့် သင်၏ ဖွံ့ဖြိုးရေးခရီးကို ပိုမိုကောင်းမွန်စေမည့် စိတ်ကူးများကို ဤသင်တန်းက ဖန်တီးပေးနိုင်ခဲ့ကြောင်း မျှော်လင့်ပါသည်။
-
-**ကိုဒ်ရေးသားရာတွင် ပျော်ရွှင်ပါစေ!**
+### 🏆 ရရှိထားသော အောင်မြင်မှုများ:
+- ✅ **MCP Developer** - custom MCP server တည်ဆောက်နိုင်ခြင်း
+- ✅ **Workflow Automator** - ဖွံ့ဖြိုးမှုလုပ်ငန်းစဉ်များကို လွယ်ကူစွာ ပြုလုပ်နိုင်ခြင်း  
+- ✅ **Integration Expert** - ဖွံ့ဖြိုးမှုကိရိယာများစွာကို ပေါင်းစည်းနိုင်ခြင်း
+- ✅ **Production Ready** - deploy လုပ်နိုင်သော ဖြေရှင်းချက်များ တည်ဆောက်နိုင်ခြင်း
 
 ---
 
-**ကန့်သတ်ချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ တိကျမှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ချက်များတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် လိုအပ်ပါသည်။ မူရင်းစာတမ်းကို မူလဘာသာဖြင့်သာ တရားဝင် အချက်အလက်အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် ကျွမ်းကျင်သော လူသားဘာသာပြန်မှ ပြုလုပ်ရန် အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုခြင်းကြောင့် ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမမှန်ခြင်းများ သို့မဟုတ် အဓိပ္ပာယ်အပြောင်းအလဲများအတွက် ကျွန်ုပ်တို့ တာဝန်မယူပါ။
+## 🎓 Workshop ပြီးမြောက်ခြင်း: Model Context Protocol နဲ့ သင်၏ ခရီး
+
+**Workshop ပါဝင်သူ ခင်ဗျား၊**
+
+Model Context Protocol workshop ၏ module ၄ ခုလုံးကို ပြီးမြောက်ခဲ့တဲ့အတွက် ဂုဏ်ယူပါတယ်! AI Toolkit အခြေခံများကို နားလည်ခြင်းမှ စ၍ အမှန်တကယ် အသုံးပြုနိုင်တဲ့ production-ready MCP server များ ဖန်တီးနိုင်အောင် လေ့လာခဲ့ပါပြီ။
+
+### 🚀 သင်ယူခဲ့သော လမ်းကြောင်း အကျဉ်းချုပ်
+
+**[Module 1](../lab1/README.md)**: AI Toolkit အခြေခံများ၊ model စမ်းသပ်ခြင်းနဲ့ ပထမဆုံး AI agent ဖန်တီးခြင်းကို စတင်လေ့လာခဲ့သည်။
+
+**[Module 2](../lab2/README.md)**: MCP architecture ကို နားလည်ပြီး Playwright MCP ကို ပေါင်းစည်းကာ ပထမဆုံး browser automation agent တည်ဆောက်ခဲ့သည်။
+
+**[Module 3](../lab3/README.md)**: Weather MCP server နဲ့ custom MCP server ဖန်တီးခြင်း၊ debugging ကိရိယာများကို ကျွမ်းကျင်စွာ အသုံးပြုခဲ့သည်။
+
+**[Module 4](../lab4/README.md)**: GitHub repository workflow automation tool တစ်ခုကို လက်တွေ့အသုံးချနိုင်အောင် ဖန်တီးခဲ့သည်။
+
+### 🌟 သင်ကျွမ်းကျင်ခဲ့သော အရာများ
+
+- ✅ **AI Toolkit Ecosystem**: Models, agents, integration နည်းပညာများ
+- ✅ **MCP Architecture**: Client-server ဒီဇိုင်း၊ transport protocol များ၊ security
+- ✅ **Developer Tools**: Playground, Inspector, production deployment
+- ✅ **Custom Development**: MCP server များ တည်ဆောက်၊ စမ်းသပ်၊ deploy လုပ်ခြင်း
+- ✅ **လက်တွေ့ အသုံးချမှုများ**: AI နည်းပညာဖြင့် workflow စိန်ခေါ်မှုများ ဖြေရှင်းခြင်း
+
+### 🔮 နောက်တစ်ဆင့် လုပ်ဆောင်ရန်
+
+1. **သင်၏ MCP Server ကို တည်ဆောက်ပါ**: သင့် workflow များကို အလိုအလျောက်လုပ်ဆောင်ရန် ဒီကျွမ်းကျင်မှုများကို အသုံးချပါ
+2. **MCP Community တွင် ပါဝင်ပါ**: သင်၏ ဖန်တီးမှုများကို မျှဝေပြီး အခြားသူများထံမှ သင်ယူပါ
+3. **အဆင့်မြင့် ပေါင်းစည်းမှုများကို ရှာဖွေပါ**: MCP server များကို စီးပွားရေးစနစ်များနှင့် ချိတ်ဆက်ပါ
+4. **Open Source တွင် ပါဝင်ပါ**: MCP ကိရိယာများနဲ့ စာတမ်းများ တိုးတက်အောင် ကူညီပါ
+
+ဒီ workshop က သင်၏ စတင်ခြင်းသာဖြစ်ပါသည်။ Model Context Protocol ecosystem က အလျင်အမြန် တိုးတက်နေပြီး သင်သည် AI အခြေပြု ဖွံ့ဖြိုးမှုကိရိယာများ၏ ရှေ့ဆောင်ဖြစ်လာနိုင်ပါပြီ။
+
+**သင်၏ ပါဝင်မှုနဲ့ သင်ယူမှုအတွက် ကျေးဇူးတင်ပါတယ်!**
+
+ဒီ workshop က သင်၏ ဖန်တီးမှုနဲ့ AI ကိရိယာများကို အသုံးပြုရာမှာ အတွေးအခေါ်အသစ်တွေ ဖန်တီးပေးနိုင်ခဲ့လိမ့်မယ်လို့ မျှော်လင့်ပါတယ်။
+
+**ကောင်းသော coding ခရီးစဉ်ဖြစ်ပါစေ!**
+
+---
+
+**အကြောင်းကြားချက်**  
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ပညာရှင်များ၏ ပရော်ဖက်ရှင်နယ် ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မခံပါ။

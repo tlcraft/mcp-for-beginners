@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:28:18+00:00",
+  "translation_date": "2025-07-13T17:13:01+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "tw"
 }
@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **4 在 Visual Studio Code 中使用 GitHub Copilot Agent 模式消費伺服器**。這裡我們將探討如何在 Visual Studio Code 內執行 MCP 伺服器，[前往課程](04-vscode/README.md)
 
-- **5 從 SSE（Server Sent Events）消費**，SSE 是一種伺服器到用戶端的串流標準，允許伺服器透過 HTTP 推送即時更新給用戶端，[前往課程](05-sse-server/README.md)
+- **5 從 SSE（Server Sent Events）消費** SSE 是一種伺服器到用戶端的串流標準，允許伺服器透過 HTTP 推送即時更新給用戶端，[前往課程](05-sse-server/README.md)
 
 - **6 使用 MCP 的 HTTP 串流（可串流的 HTTP）**。了解現代 HTTP 串流、進度通知，以及如何使用可串流的 HTTP 實作可擴展的即時 MCP 伺服器和用戶端，[前往課程](06-http-streaming/README.md)
 
@@ -27,7 +27,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **8 測試**。這裡我們將特別著重於如何以不同方式測試伺服器和用戶端，[前往課程](08-testing/README.md)
 
-- **9 部署**。本章將探討部署 MCP 解決方案的各種方法，[前往課程](09-deployment/README.md)
+- **9 部署**。本章將探討部署 MCP 解決方案的不同方法，[前往課程](09-deployment/README.md)
 
 
 Model Context Protocol (MCP) 是一個開放協議，標準化應用程式如何向 LLM 提供上下文。可以把 MCP 想像成 AI 應用的 USB-C 連接埠——它提供一種標準化的方式，將 AI 模型連接到不同的資料來源和工具。
@@ -38,7 +38,7 @@ Model Context Protocol (MCP) 是一個開放協議，標準化應用程式如何
 
 - 為 C#、Java、Python、TypeScript 和 JavaScript 設定 MCP 開發環境
 - 建立並部署具備自訂功能（資源、提示和工具）的基本 MCP 伺服器
-- 建立連接 MCP 伺服器的主機應用程式
+- 建立能連接 MCP 伺服器的主機應用程式
 - 測試和除錯 MCP 實作
 - 理解常見的設定挑戰及其解決方案
 - 將你的 MCP 實作連接到熱門的 LLM 服務
@@ -49,12 +49,12 @@ Model Context Protocol (MCP) 是一個開放協議，標準化應用程式如何
 
 ### 先決條件
 
-在深入 MCP 開發前，請確保你已具備：
+在投入 MCP 開發前，請確保你已具備：
 
 - **開發環境**：適用於你選擇的語言（C#、Java、Python、TypeScript 或 JavaScript）
 - **IDE/編輯器**：Visual Studio、Visual Studio Code、IntelliJ、Eclipse、PyCharm 或任何現代程式碼編輯器
 - **套件管理工具**：NuGet、Maven/Gradle、pip 或 npm/yarn
-- **API 金鑰**：用於你計劃在主機應用中使用的任何 AI 服務
+- **API 金鑰**：用於你計畫在主機應用程式中使用的任何 AI 服務
 
 ### 官方 SDK
 
@@ -69,17 +69,17 @@ MCP 提供多種語言的官方 SDK：
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - 與 Loopwork AI 合作維護
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - 官方 Rust 實作
 
-## 主要重點
+## 重要重點
 
 - 使用語言專屬 SDK 設定 MCP 開發環境相當簡單
 - 建立 MCP 伺服器需創建並註冊具明確結構的工具
-- MCP 用戶端連接伺服器和模型以利用擴充功能
+- MCP 用戶端連接伺服器和模型，以利用擴充功能
 - 測試和除錯對於可靠的 MCP 實作至關重要
 - 部署選項涵蓋從本地開發到雲端解決方案
 
 ## 練習
 
-我們提供一組範例，搭配本節所有章節中的練習使用。此外，每個章節也有自己的練習和作業。
+我們提供一組範例，搭配本節所有章節中的練習。此外，每個章節也有自己的練習和作業。
 
 - [Java 計算機](./samples/java/calculator/README.md)
 - [.Net 計算機](../../../03-GettingStarted/samples/csharp)
@@ -98,4 +98,4 @@ MCP 提供多種語言的官方 SDK：
 下一課： [建立你的第一台 MCP 伺服器](01-first-server/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f74887f51a69d3f255cb83d0b517c623",
-  "translation_date": "2025-07-04T18:33:24+00:00",
+  "translation_date": "2025-07-13T18:55:17+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "hu"
 }
@@ -15,19 +15,19 @@ Most csatlakozunk a szerverhez, és lekérdezzük a képességeit:
 
 ### -3- A szerver képességeinek átalakítása LLM eszközökké
 
-A szerver képességeinek listázása után a következő lépés, hogy olyan formátumba alakítsuk őket, amit az LLM megért. Miután ez megtörtént, ezeket a képességeket eszközként biztosíthatjuk az LLM számára.
+A szerver képességeinek listázása után a következő lépés, hogy olyan formátumba alakítsuk őket, amelyet az LLM megért. Miután ez megtörtént, ezeket a képességeket eszközként adhatjuk át az LLM-nek.
 
 Nagyszerű, most, hogy készen állunk a felhasználói kérések kezelésére, lássunk neki.
 
 ### -4- Felhasználói prompt kérés kezelése
 
-A kód ezen részében a felhasználói kéréseket fogjuk kezelni.
+Ebben a kódrészletben a felhasználói kéréseket fogjuk kezelni.
 
 Nagyszerű, sikerült!
 
 ## Feladat
 
-Vedd át a gyakorlatban használt kódot, és bővítsd ki a szervert további eszközökkel. Ezután hozz létre egy klienst LLM-mel, ahogy a gyakorlatban is tettük, és teszteld különböző promptokkal, hogy megbizonyosodj róla, minden szervereszköz dinamikusan meghívásra kerül. Ez a kliensépítési mód nagyszerű felhasználói élményt nyújt, hiszen a felhasználók promptokat használhatnak, nem pedig pontos kliensparancsokat, és nem kell tudniuk arról, hogy MCP szerver hívódik meg.
+Vedd át a gyakorlatban használt kódot, és bővítsd ki a szervert további eszközökkel. Ezután hozz létre egy klienst LLM-mel, ahogy a gyakorlatban is tettük, és teszteld különböző promptokkal, hogy megbizonyosodj arról, hogy a szerver összes eszköze dinamikusan meghívásra kerül. Ez a kliensépítési mód nagyszerű felhasználói élményt nyújt, hiszen a felhasználók promptokat használhatnak a pontos kliensparancsok helyett, és nem kell tudniuk arról, hogy egy MCP szerver hívódik meg.
 
 ## Megoldás
 
@@ -36,7 +36,7 @@ Vedd át a gyakorlatban használt kódot, és bővítsd ki a szervert további e
 ## Főbb tanulságok
 
 - Az LLM hozzáadása a klienshez jobb felhasználói interakciót tesz lehetővé az MCP szerverekkel.
-- Az MCP szerver válaszát olyan formátumba kell alakítani, amit az LLM megért.
+- Az MCP szerver válaszát olyan formátumba kell alakítani, amelyet az LLM megért.
 
 ## Minták
 

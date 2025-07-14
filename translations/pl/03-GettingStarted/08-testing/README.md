@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T17:12:34+00:00",
+  "translation_date": "2025-07-13T22:00:11+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "pl"
 }
@@ -26,7 +26,7 @@ Po ukończeniu tej lekcji będziesz potrafił:
 
 MCP udostępnia narzędzia, które pomogą Ci testować i debugować serwery:
 
-- **MCP Inspector**: narzędzie wiersza poleceń, które można uruchomić zarówno jako CLI, jak i w trybie wizualnym.
+- **MCP Inspector**: narzędzie wiersza poleceń, które można uruchomić zarówno jako CLI, jak i w wersji wizualnej.
 - **Testowanie manualne**: możesz użyć narzędzia takiego jak curl do wykonywania zapytań webowych, ale każde narzędzie obsługujące HTTP będzie odpowiednie.
 - **Testy jednostkowe**: możesz użyć swojego ulubionego frameworka testowego do testowania funkcji zarówno serwera, jak i klienta.
 
@@ -36,7 +36,7 @@ Opisaliśmy użycie tego narzędzia w poprzednich lekcjach, ale omówmy je teraz
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) pomaga:
 
-- **Odkrywać możliwości serwera**: automatycznie wykrywa dostępne zasoby, narzędzia i podpowiedzi
+- **Odkrywać możliwości serwera**: automatycznie wykrywa dostępne zasoby, narzędzia i promptsy
 - **Testować wykonanie narzędzi**: wypróbuj różne parametry i zobacz odpowiedzi w czasie rzeczywistym
 - **Przeglądać metadane serwera**: sprawdź informacje o serwerze, schematy i konfiguracje
 
@@ -46,7 +46,7 @@ Typowe uruchomienie narzędzia wygląda tak:
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Powyższe polecenie uruchamia MCP wraz z interfejsem wizualnym i otwiera lokalny interfejs webowy w przeglądarce. Możesz spodziewać się pulpitu nawigacyjnego pokazującego zarejestrowane serwery MCP, dostępne narzędzia, zasoby i podpowiedzi. Interfejs pozwala interaktywnie testować wykonanie narzędzi, przeglądać metadane serwera i obserwować odpowiedzi w czasie rzeczywistym, co ułatwia weryfikację i debugowanie implementacji serwera MCP.
+Powyższe polecenie uruchamia MCP wraz z interfejsem wizualnym i otwiera lokalny interfejs webowy w przeglądarce. Możesz spodziewać się pulpitu nawigacyjnego pokazującego zarejestrowane serwery MCP, dostępne narzędzia, zasoby i promptsy. Interfejs pozwala interaktywnie testować wykonanie narzędzi, przeglądać metadane serwera oraz obserwować odpowiedzi w czasie rzeczywistym, co ułatwia weryfikację i debugowanie implementacji serwera MCP.
 
 Tak to może wyglądać: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.pl.png)
 
@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Jak widać z powyższego przykładu użycia curl, korzystasz z zapytania POST, aby wywołać narzędzie, przesyłając ładunek zawierający nazwę narzędzia i jego parametry. Wybierz podejście, które najbardziej Ci odpowiada. Narzędzia CLI zazwyczaj są szybsze w użyciu i łatwo je zautomatyzować, co może być przydatne w środowisku CI/CD.
+Jak widać z powyższego przykładu użycia curl, korzystasz z zapytania POST, aby wywołać narzędzie, przesyłając w ładunku nazwę narzędzia i jego parametry. Wybierz podejście, które najbardziej Ci odpowiada. Narzędzia CLI zazwyczaj są szybsze w użyciu i łatwo je zautomatyzować, co może być przydatne w środowisku CI/CD.
 
 ### Testy jednostkowe
 

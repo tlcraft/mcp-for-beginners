@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:26:24+00:00",
+  "translation_date": "2025-07-13T17:11:09+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "es"
 }
@@ -15,19 +15,19 @@ Esta sección consta de varias lecciones:
 
 - **2 Cliente**, en esta lección aprenderás a escribir un cliente que pueda conectarse a tu servidor, [a la lección](02-client/README.md)
 
-- **3 Cliente con LLM**, una forma aún mejor de escribir un cliente es añadiendo un LLM para que pueda "negociar" con tu servidor sobre qué hacer, [a la lección](03-llm-client/README.md)
+- **3 Cliente con LLM**, una forma aún mejor de escribir un cliente es añadiendo un LLM para que pueda "negociar" con tu servidor qué hacer, [a la lección](03-llm-client/README.md)
 
 - **4 Consumiendo un servidor en modo Agente GitHub Copilot en Visual Studio Code**. Aquí veremos cómo ejecutar nuestro MCP Server desde Visual Studio Code, [a la lección](04-vscode/README.md)
 
-- **5 Consumiendo desde SSE (Server Sent Events)** SSE es un estándar para streaming de servidor a cliente, que permite a los servidores enviar actualizaciones en tiempo real a los clientes a través de HTTP [a la lección](05-sse-server/README.md)
+- **5 Consumiendo desde SSE (Server Sent Events)** SSE es un estándar para streaming de servidor a cliente, que permite a los servidores enviar actualizaciones en tiempo real a los clientes mediante HTTP [a la lección](05-sse-server/README.md)
 
-- **6 Streaming HTTP con MCP (HTTP Streamable)**. Aprende sobre el streaming HTTP moderno, notificaciones de progreso y cómo implementar servidores y clientes MCP escalables y en tiempo real usando Streamable HTTP. [a la lección](06-http-streaming/README.md)
+- **6 Streaming HTTP con MCP (HTTP Streamable)**. Aprende sobre el streaming HTTP moderno, notificaciones de progreso y cómo implementar servidores y clientes MCP escalables y en tiempo real usando HTTP Streamable. [a la lección](06-http-streaming/README.md)
 
 - **7 Utilizando AI Toolkit para VSCode** para consumir y probar tus clientes y servidores MCP [a la lección](07-aitk/README.md)
 
-- **8 Pruebas**. Aquí nos enfocaremos especialmente en cómo probar nuestro servidor y cliente de diferentes maneras, [a la lección](08-testing/README.md)
+- **8 Pruebas**. Aquí nos centraremos especialmente en cómo probar nuestro servidor y cliente de diferentes maneras, [a la lección](08-testing/README.md)
 
-- **9 Despliegue**. Este capítulo analizará diferentes formas de desplegar tus soluciones MCP, [a la lección](09-deployment/README.md)
+- **9 Despliegue**. Este capítulo abordará diferentes formas de desplegar tus soluciones MCP, [a la lección](09-deployment/README.md)
 
 
 El Model Context Protocol (MCP) es un protocolo abierto que estandariza cómo las aplicaciones proporcionan contexto a los LLMs. Piensa en MCP como un puerto USB-C para aplicaciones de IA: ofrece una forma estandarizada de conectar modelos de IA a diferentes fuentes de datos y herramientas.

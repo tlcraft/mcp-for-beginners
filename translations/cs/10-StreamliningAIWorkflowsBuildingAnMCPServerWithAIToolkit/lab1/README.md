@@ -2,119 +2,119 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2aa9dbc165e104764fa57e8a0d3f1c73",
-  "translation_date": "2025-06-10T05:29:38+00:00",
+  "translation_date": "2025-07-14T07:33:34+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab1/README.md",
   "language_code": "cs"
 }
 -->
-# 🚀 Module 1: Fundamentos del AI Toolkit
+# 🚀 Modul 1: Základy AI Toolkit
 
-[![Duration](https://img.shields.io/badge/Duration-15%20minutes-blue.svg)]()
-[![Difficulty](https://img.shields.io/badge/Difficulty-Beginner-green.svg)]()
-[![Prerequisites](https://img.shields.io/badge/Prerequisites-VS%20Code-orange.svg)]()
+[![Délka](https://img.shields.io/badge/Duration-15%20minutes-blue.svg)]()
+[![Obtížnost](https://img.shields.io/badge/Difficulty-Beginner-green.svg)]()
+[![Požadavky](https://img.shields.io/badge/Prerequisites-VS%20Code-orange.svg)]()
 
-## 📋 Objetivos de Aprendizaje
+## 📋 Výukové cíle
 
-Al finalizar este módulo, podrás:
-- ✅ Instalar y configurar AI Toolkit para Visual Studio Code
-- ✅ Navegar por el Catálogo de Modelos y entender las diferentes fuentes de modelos
-- ✅ Usar el Playground para probar y experimentar con modelos
-- ✅ Crear agentes AI personalizados usando Agent Builder
-- ✅ Comparar el rendimiento de modelos entre distintos proveedores
-- ✅ Aplicar las mejores prácticas en ingeniería de prompts
+Na konci tohoto modulu budete umět:
+- ✅ Nainstalovat a nakonfigurovat AI Toolkit pro Visual Studio Code
+- ✅ Procházet Model Catalog a porozumět různým zdrojům modelů
+- ✅ Používat Playground pro testování a experimentování s modely
+- ✅ Vytvářet vlastní AI agenty pomocí Agent Builderu
+- ✅ Porovnávat výkon modelů napříč různými poskytovateli
+- ✅ Aplikovat osvědčené postupy pro prompt engineering
 
-## 🧠 Introducción al AI Toolkit (AITK)
+## 🧠 Úvod do AI Toolkit (AITK)
 
-El **AI Toolkit para Visual Studio Code** es la extensión principal de Microsoft que transforma VS Code en un entorno completo para desarrollo de IA. Cierra la brecha entre la investigación en IA y el desarrollo práctico, haciendo que la IA generativa sea accesible para desarrolladores de todos los niveles.
+**AI Toolkit pro Visual Studio Code** je vlajkovým rozšířením Microsoftu, které proměňuje VS Code v komplexní vývojové prostředí pro AI. Překonává propast mezi výzkumem AI a praktickým vývojem aplikací, díky čemuž je generativní AI dostupná vývojářům všech úrovní.
 
-### 🌟 Capacidades Clave
+### 🌟 Klíčové funkce
 
-| Característica | Descripción | Caso de Uso |
-|----------------|-------------|-------------|
-| **🗂️ Catálogo de Modelos** | Acceso a más de 100 modelos de GitHub, ONNX, OpenAI, Anthropic, Google | Descubrimiento y selección de modelos |
-| **🔌 Soporte BYOM** | Integra tus propios modelos (locales o remotos) | Despliegue de modelos personalizados |
-| **🎮 Playground Interactivo** | Pruebas en tiempo real con interfaz de chat | Prototipado y pruebas rápidas |
-| **📎 Soporte Multimodal** | Manejo de texto, imágenes y archivos adjuntos | Aplicaciones de IA complejas |
-| **⚡ Procesamiento por Lotes** | Ejecuta múltiples prompts simultáneamente | Flujos de trabajo de prueba eficientes |
-| **📊 Evaluación de Modelos** | Métricas integradas (F1, relevancia, similitud, coherencia) | Evaluación de desempeño |
+| Funkce | Popis | Použití |
+|---------|-------------|----------|
+| **🗂️ Model Catalog** | Přístup k více než 100 modelům z GitHubu, ONNX, OpenAI, Anthropic, Google | Objevování a výběr modelů |
+| **🔌 BYOM Support** | Integrace vlastních modelů (lokálních nebo vzdálených) | Nasazení vlastních modelů |
+| **🎮 Interaktivní Playground** | Testování modelů v reálném čase s chatovacím rozhraním | Rychlé prototypování a testování |
+| **📎 Podpora multimodálních vstupů** | Práce s textem, obrázky a přílohami | Složitější AI aplikace |
+| **⚡ Hromadné zpracování** | Spouštění více promptů současně | Efektivní testovací workflow |
+| **📊 Hodnocení modelů** | Vestavěné metriky (F1, relevance, podobnost, koherence) | Posouzení výkonu |
 
-### 🎯 Por qué AI Toolkit es Importante
+### 🎯 Proč je AI Toolkit důležitý
 
-- **🚀 Desarrollo Acelerado**: De la idea al prototipo en minutos
-- **🔄 Flujo de Trabajo Unificado**: Una sola interfaz para múltiples proveedores de IA
-- **🧪 Experimentación Sencilla**: Compara modelos sin configuraciones complejas
-- **📈 Listo para Producción**: Transición fluida de prototipo a despliegue
+- **🚀 Rychlejší vývoj**: Od nápadu k prototypu během minut
+- **🔄 Jednotné prostředí**: Jedno rozhraní pro více AI poskytovatelů
+- **🧪 Snadné experimentování**: Porovnání modelů bez složitého nastavení
+- **📈 Připravený na produkci**: Plynulý přechod od prototypu k nasazení
 
-## 🛠️ Requisitos Previos y Configuración
+## 🛠️ Požadavky a nastavení
 
-### 📦 Instalar la Extensión AI Toolkit
+### 📦 Instalace rozšíření AI Toolkit
 
-**Paso 1: Acceder al Marketplace de Extensiones**
-1. Abre Visual Studio Code
-2. Ve a la vista de Extensiones (`Ctrl+Shift+X` o `Cmd+Shift+X`)
-3. Busca "AI Toolkit"
+**Krok 1: Otevřete Marketplace rozšíření**
+1. Spusťte Visual Studio Code
+2. Přejděte do zobrazení rozšíření (`Ctrl+Shift+X` nebo `Cmd+Shift+X`)
+3. Vyhledejte "AI Toolkit"
 
-**Paso 2: Elige tu Versión**
-- **🟢 Release**: Recomendado para uso en producción
-- **🔶 Pre-release**: Acceso anticipado a funciones innovadoras
+**Krok 2: Vyberte verzi**
+- **🟢 Release**: Doporučeno pro produkční použití
+- **🔶 Pre-release**: Předběžný přístup k nejnovějším funkcím
 
-**Paso 3: Instalar y Activar**
+**Krok 3: Instalujte a aktivujte**
 
 ![AI Toolkit Extension](../../../../translated_images/aitkext.d28945a03eed003c39fc39bc96ae655af9b64b9b922e78e88b07214420ed7985.cs.png)
 
-### ✅ Lista de Verificación para Verificación
-- [ ] El ícono de AI Toolkit aparece en la barra lateral de VS Code
-- [ ] La extensión está habilitada y activada
-- [ ] No hay errores de instalación en el panel de salida
+### ✅ Kontrolní seznam ověření
+- [ ] Ikona AI Toolkit se zobrazuje v postranním panelu VS Code
+- [ ] Rozšíření je povoleno a aktivováno
+- [ ] V panelu výstupu nejsou chyby instalace
 
-## 🧪 Ejercicio Práctico 1: Explorando Modelos de GitHub
+## 🧪 Praktické cvičení 1: Prozkoumání modelů na GitHubu
 
-**🎯 Objetivo**: Dominar el Catálogo de Modelos y probar tu primer modelo AI
+**🎯 Cíl**: Ovládnout Model Catalog a otestovat svůj první AI model
 
-### 📊 Paso 1: Navegar el Catálogo de Modelos
+### 📊 Krok 1: Procházení Model Catalog
 
-El Catálogo de Modelos es tu puerta de entrada al ecosistema de IA. Reúne modelos de varios proveedores, facilitando su descubrimiento y comparación.
+Model Catalog je vaše brána do AI ekosystému. Sbírá modely od různých poskytovatelů, což usnadňuje jejich objevování a porovnávání.
 
-**🔍 Guía de Navegación:**
+**🔍 Navigační návod:**
 
-Haz clic en **MODELOS - Catálogo** en la barra lateral de AI Toolkit
+Klikněte na **MODELS - Catalog** v postranním panelu AI Toolkit
 
 ![Model Catalog](../../../../translated_images/aimodel.263ed2be013d8fb0e2265c4f742cfe490f6f00eca5e132ec50438c8e826e34ed.cs.png)
 
-**💡 Consejo**: Busca modelos con capacidades específicas que se ajusten a tu caso de uso (por ejemplo, generación de código, escritura creativa, análisis).
+**💡 Tip**: Hledejte modely s konkrétními schopnostmi, které odpovídají vašemu použití (např. generování kódu, kreativní psaní, analýza).
 
-**⚠️ Nota**: Los modelos alojados en GitHub (GitHub Models) son gratuitos pero tienen límites en la cantidad de solicitudes y tokens. Para acceder a modelos externos (como los alojados en Azure AI u otros endpoints), deberás proporcionar la clave API o autenticación correspondiente.
+**⚠️ Poznámka**: Modely hostované na GitHubu (GitHub Models) jsou zdarma, ale podléhají omezením počtu požadavků a tokenů. Pokud chcete přistupovat k modelům mimo GitHub (např. externí modely přes Azure AI nebo jiné endpointy), budete potřebovat příslušný API klíč nebo autentizaci.
 
-### 🚀 Paso 2: Añadir y Configurar tu Primer Modelo
+### 🚀 Krok 2: Přidání a konfigurace prvního modelu
 
-**Estrategia de Selección de Modelo:**
-- **GPT-4.1**: Ideal para razonamiento complejo y análisis
-- **Phi-4-mini**: Ligero y rápido para tareas sencillas
+**Strategie výběru modelu:**
+- **GPT-4.1**: Nejlepší pro složité uvažování a analýzu
+- **Phi-4-mini**: Lehký, rychlé odpovědi pro jednoduché úkoly
 
-**🔧 Proceso de Configuración:**
-1. Selecciona **OpenAI GPT-4.1** en el catálogo
-2. Haz clic en **Agregar a Mis Modelos** para registrarlo
-3. Elige **Probar en Playground** para abrir el entorno de pruebas
-4. Espera la inicialización del modelo (la primera vez puede tardar un poco)
+**🔧 Postup konfigurace:**
+1. Vyberte **OpenAI GPT-4.1** z katalogu
+2. Klikněte na **Add to My Models** – tím model zaregistrujete k použití
+3. Zvolte **Try in Playground** pro spuštění testovacího prostředí
+4. Počkejte na inicializaci modelu (první spuštění může chvíli trvat)
 
 ![Playground Setup](../../../../translated_images/playground.dd6f5141344878ca4d4f3de819775da7b113518941accf37c291117c602f85db.cs.png)
 
-**⚙️ Parámetros del Modelo:**
-- **Temperature**: Controla la creatividad (0 = determinista, 1 = creativo)
-- **Max Tokens**: Longitud máxima de la respuesta
-- **Top-p**: Muestreo de núcleo para diversidad en respuestas
+**⚙️ Vysvětlení parametrů modelu:**
+- **Temperature**: Řídí kreativitu (0 = deterministické, 1 = kreativní)
+- **Max Tokens**: Maximální délka odpovědi
+- **Top-p**: Nucleus sampling pro rozmanitost odpovědí
 
-### 🎯 Paso 3: Domina la Interfaz del Playground
+### 🎯 Krok 3: Ovládnutí rozhraní Playground
 
-El Playground es tu laboratorio de experimentación con IA. Así puedes sacarle el máximo provecho:
+Playground je vaše laboratoř pro experimenty s AI. Jak ho co nejlépe využít:
 
-**🎨 Mejores Prácticas para Ingeniería de Prompts:**
-1. **Sé Específico**: Instrucciones claras y detalladas producen mejores resultados
-2. **Proporciona Contexto**: Incluye información relevante de fondo
-3. **Usa Ejemplos**: Muestra al modelo lo que deseas con ejemplos
-4. **Itera**: Ajusta los prompts según los resultados iniciales
+**🎨 Osvědčené postupy pro prompt engineering:**
+1. **Buďte konkrétní**: Jasné a detailní instrukce přinášejí lepší výsledky
+2. **Poskytněte kontext**: Přidejte relevantní informace na pozadí
+3. **Používejte příklady**: Ukažte modelu, co chcete, na příkladech
+4. **Iterujte**: Vylepšujte prompt podle prvních výsledků
 
-**🧪 Escenarios de Prueba:**
+**🧪 Testovací scénáře:**
 ```markdown
 # Example 1: Code Generation
 "Write a Python function that calculates the factorial of a number using recursion. Include error handling and docstrings."
@@ -128,46 +128,46 @@ El Playground es tu laboratorio de experimentación con IA. Así puedes sacarle 
 
 ![Testing Results](../../../../translated_images/result.1dfcf211fb359cf65902b09db191d3bfc65713ca15e279c1a30be213bb526949.cs.png)
 
-### 🏆 Ejercicio Desafío: Comparación de Rendimiento de Modelos
+### 🏆 Výzva: Porovnání výkonu modelů
 
-**🎯 Meta**: Compara diferentes modelos usando los mismos prompts para entender sus fortalezas
+**🎯 Cíl**: Porovnat různé modely pomocí stejných promptů a pochopit jejich silné stránky
 
-**📋 Instrucciones:**
-1. Añade **Phi-4-mini** a tu espacio de trabajo
-2. Usa el mismo prompt para GPT-4.1 y Phi-4-mini
+**📋 Instrukce:**
+1. Přidejte **Phi-4-mini** do svého pracovního prostoru
+2. Použijte stejný prompt pro GPT-4.1 i Phi-4-mini
 
 ![set](../../../../translated_images/set.88132df189ecde2cbbda256c1841db5aac8e9bdeba1a4e343dfa031b9545d6c9.cs.png)
 
-3. Compara calidad, velocidad y precisión de las respuestas
-4. Documenta tus hallazgos en la sección de resultados
+3. Porovnejte kvalitu odpovědí, rychlost a přesnost
+4. Zaznamenejte své poznatky v sekci výsledků
 
 ![Model Comparison](../../../../translated_images/compare.97746cd0f907495503c1fc217739f3890dc76ea5f6fd92379a6db0cc331feb58.cs.png)
 
-**💡 Ideas Clave para Descubrir:**
-- Cuándo usar LLM vs SLM
-- Balance costo vs rendimiento
-- Capacidades especializadas de cada modelo
+**💡 Klíčové poznatky k objevení:**
+- Kdy použít LLM vs SLM
+- Poměr cena/výkon
+- Specializované schopnosti různých modelů
 
-## 🤖 Ejercicio Práctico 2: Creando Agentes Personalizados con Agent Builder
+## 🤖 Praktické cvičení 2: Vytváření vlastních agentů pomocí Agent Builder
 
-**🎯 Objetivo**: Crear agentes AI especializados para tareas y flujos de trabajo específicos
+**🎯 Cíl**: Vytvořit specializované AI agenty přizpůsobené konkrétním úkolům a pracovním postupům
 
-### 🏗️ Paso 1: Entendiendo Agent Builder
+### 🏗️ Krok 1: Seznámení s Agent Builderem
 
-Agent Builder es donde AI Toolkit realmente destaca. Permite crear asistentes AI a medida que combinan el poder de grandes modelos de lenguaje con instrucciones personalizadas, parámetros específicos y conocimiento especializado.
+Agent Builder je místo, kde AI Toolkit opravdu vyniká. Umožňuje vytvářet na míru šité AI asistenty, kteří kombinují sílu velkých jazykových modelů s vlastními instrukcemi, specifickými parametry a specializovanými znalostmi.
 
-**🧠 Componentes de la Arquitectura del Agente:**
-- **Modelo Central**: El LLM base (GPT-4, Groks, Phi, etc.)
-- **Prompt del Sistema**: Define la personalidad y comportamiento del agente
-- **Parámetros**: Configuraciones finas para rendimiento óptimo
-- **Integración de Herramientas**: Conexión con APIs externas y servicios MCP
-- **Memoria**: Contexto de conversación y persistencia de sesión
+**🧠 Komponenty architektury agenta:**
+- **Core Model**: Základní LLM (GPT-4, Groks, Phi atd.)
+- **System Prompt**: Definuje osobnost a chování agenta
+- **Parametry**: Jemně laděná nastavení pro optimální výkon
+- **Integrace nástrojů**: Připojení k externím API a MCP službám
+- **Paměť**: Kontext konverzace a uchování relace
 
 ![Agent Builder Interface](../../../../translated_images/agentbuilder.25895b2d2f8c02e7aa99dd40e105877a6f1db8f0441180087e39db67744b361f.cs.png)
 
-### ⚙️ Paso 2: Profundizando en la Configuración del Agente
+### ⚙️ Krok 2: Hloubková konfigurace agenta
 
-**🎨 Creación de Prompts de Sistema Efectivos:**
+**🎨 Tvorba efektivních systémových promptů:**
 ```markdown
 # Template Structure:
 ## Role Definition
@@ -187,25 +187,25 @@ You are a [specific role] with expertise in [domain].
 Provide 2-3 examples of ideal interactions
 ```
 
-*Por supuesto, también puedes usar Generate System Prompt para que la IA te ayude a crear y optimizar prompts*
+*Samozřejmě můžete také použít Generate System Prompt, aby vám AI pomohla prompt vytvořit a optimalizovat*
 
-**🔧 Optimización de Parámetros:**
-| Parámetro | Rango Recomendado | Caso de Uso |
-|-----------|-------------------|-------------|
-| **Temperature** | 0.1-0.3 | Respuestas técnicas/factuales |
-| **Temperature** | 0.7-0.9 | Tareas creativas/brainstorming |
-| **Max Tokens** | 500-1000 | Respuestas concisas |
-| **Max Tokens** | 2000-4000 | Explicaciones detalladas |
+**🔧 Optimalizace parametrů:**
+| Parametr | Doporučený rozsah | Použití |
+|-----------|------------------|----------|
+| **Temperature** | 0.1-0.3 | Technické/faktické odpovědi |
+| **Temperature** | 0.7-0.9 | Kreativní/brainstormingové úkoly |
+| **Max Tokens** | 500-1000 | Stručné odpovědi |
+| **Max Tokens** | 2000-4000 | Podrobné vysvětlení |
 
-### 🐍 Paso 3: Ejercicio Práctico - Agente de Programación en Python
+### 🐍 Krok 3: Praktické cvičení – Python programovací agent
 
-**🎯 Misión**: Crear un asistente especializado en codificación Python
+**🎯 Mise**: Vytvořit specializovaného asistenta pro Python kódování
 
-**📋 Pasos de Configuración:**
+**📋 Konfigurační kroky:**
 
-1. **Selección de Modelo**: Elige **Claude 3.5 Sonnet** (excelente para código)
+1. **Výběr modelu**: Zvolte **Claude 3.5 Sonnet** (vynikající pro kód)
 
-2. **Diseño del Prompt del Sistema**:
+2. **Návrh systémového promptu**:
 ```markdown
 # Python Programming Expert Agent
 
@@ -232,53 +232,53 @@ You are a senior Python developer with 10+ years of experience. You excel at wri
 - Write readable, maintainable code
 ```
 
-3. **Configuración de Parámetros**:
-   - Temperature: 0.2 (para código consistente y confiable)
-   - Max Tokens: 2000 (explicaciones detalladas)
-   - Top-p: 0.9 (creatividad balanceada)
+3. **Nastavení parametrů**:
+   - Temperature: 0.2 (pro konzistentní a spolehlivý kód)
+   - Max Tokens: 2000 (podrobné vysvětlení)
+   - Top-p: 0.9 (vyvážená kreativita)
 
 ![Python Agent Configuration](../../../../translated_images/pythonagent.5e51b406401c165fcabfd66f2d943c27f46b5fed0f9fb73abefc9e91ca3489d4.cs.png)
 
-### 🧪 Paso 4: Prueba de tu Agente Python
+### 🧪 Krok 4: Testování vašeho Python agenta
 
-**Escenarios de Prueba:**
-1. **Función Básica**: "Crea una función para encontrar números primos"
-2. **Algoritmo Complejo**: "Implementa un árbol binario de búsqueda con métodos insertar, eliminar y buscar"
-3. **Problema Real**: "Construye un web scraper que maneje limitación de tasa y reintentos"
-4. **Depuración**: "Corrige este código [pega código con errores]"
+**Testovací scénáře:**
+1. **Základní funkce**: "Vytvoř funkci pro hledání prvočísel"
+2. **Složitý algoritmus**: "Implementuj binární vyhledávací strom s metodami insert, delete a search"
+3. **Reálný problém**: "Postav web scraper, který zvládá omezení počtu požadavků a opakování"
+4. **Ladění**: "Oprav tento kód [vložit chybný kód]"
 
-**🏆 Criterios de Éxito:**
-- ✅ El código funciona sin errores
-- ✅ Incluye documentación adecuada
-- ✅ Sigue las mejores prácticas de Python
-- ✅ Ofrece explicaciones claras
-- ✅ Sugiere mejoras
+**🏆 Kritéria úspěchu:**
+- ✅ Kód běží bez chyb
+- ✅ Obsahuje správnou dokumentaci
+- ✅ Dodržuje nejlepší praktiky Pythonu
+- ✅ Poskytuje jasná vysvětlení
+- ✅ Navrhuje vylepšení
 
-## 🎓 Resumen del Módulo 1 y Próximos Pasos
+## 🎓 Shrnutí modulu 1 a další kroky
 
-### 📊 Evaluación de Conocimientos
+### 📊 Kontrola znalostí
 
-Pon a prueba lo aprendido:
-- [ ] ¿Puedes explicar las diferencias entre los modelos del catálogo?
-- [ ] ¿Has creado y probado un agente personalizado con éxito?
-- [ ] ¿Sabes cómo optimizar parámetros para distintos casos de uso?
-- [ ] ¿Puedes diseñar prompts de sistema efectivos?
+Otestujte své porozumění:
+- [ ] Dokážete vysvětlit rozdíly mezi modely v katalogu?
+- [ ] Úspěšně jste vytvořili a otestovali vlastního agenta?
+- [ ] Rozumíte, jak optimalizovat parametry pro různé scénáře?
+- [ ] Umíte navrhnout efektivní systémové prompty?
 
-### 📚 Recursos Adicionales
+### 📚 Další zdroje
 
-- **Documentación AI Toolkit**: [Official Microsoft Docs](https://github.com/microsoft/vscode-ai-toolkit)
-- **Guía de Ingeniería de Prompts**: [Best Practices](https://platform.openai.com/docs/guides/prompt-engineering)
-- **Modelos en AI Toolkit**: [Models in Develpment](https://github.com/microsoft/vscode-ai-toolkit/blob/main/doc/models.md)
+- **Dokumentace AI Toolkit**: [Oficiální Microsoft Docs](https://github.com/microsoft/vscode-ai-toolkit)
+- **Průvodce prompt engineeringem**: [Osvědčené postupy](https://platform.openai.com/docs/guides/prompt-engineering)
+- **Modely v AI Toolkit**: [Modely ve vývoji](https://github.com/microsoft/vscode-ai-toolkit/blob/main/doc/models.md)
 
-**🎉 ¡Felicidades!** Has dominado los fundamentos del AI Toolkit y estás listo para crear aplicaciones AI más avanzadas.
+**🎉 Gratulujeme!** Ovládli jste základy AI Toolkit a jste připraveni vytvářet pokročilejší AI aplikace!
 
-### 🔜 Continúa al Siguiente Módulo
+### 🔜 Pokračujte do dalšího modulu
 
-¿Listo para capacidades más avanzadas? Continúa a **[Módulo 2: MCP con Fundamentos de AI Toolkit](../lab2/README.md)** donde aprenderás a:
-- Conectar tus agentes con herramientas externas usando Model Context Protocol (MCP)
-- Crear agentes de automatización de navegador con Playwright
-- Integrar servidores MCP con tus agentes AI Toolkit
-- Potenciar tus agentes con datos y capacidades externas
+Chcete-li se naučit pokročilejší funkce, pokračujte do **[Modulu 2: MCP s AI Toolkit základy](../lab2/README.md)**, kde se naučíte:
+- Připojovat agenty k externím nástrojům pomocí Model Context Protocol (MCP)
+- Vytvářet agenty pro automatizaci prohlížeče s Playwright
+- Integrovat MCP servery s vašimi AI Toolkit agenty
+- Posílit své agenty externími daty a schopnostmi
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo chybné výklady vzniklé použitím tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

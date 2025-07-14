@@ -2,21 +2,21 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ed9cab32cc67c12d8969b407aa47100a",
-  "translation_date": "2025-06-11T09:31:51+00:00",
+  "translation_date": "2025-07-13T17:54:01+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/java/README.md",
   "language_code": "br"
 }
 -->
 # Serviço Básico de Calculadora MCP
 
-Este serviço fornece operações básicas de calculadora através do Model Context Protocol (MCP) usando Spring Boot com transporte WebFlux. Foi criado como um exemplo simples para iniciantes que estão aprendendo sobre implementações MCP.
+Este serviço oferece operações básicas de calculadora através do Model Context Protocol (MCP) usando Spring Boot com transporte WebFlux. Foi criado como um exemplo simples para iniciantes que estão aprendendo sobre implementações MCP.
 
 Para mais informações, consulte a documentação de referência do [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html).
 
 
 ## Usando o Serviço
 
-O serviço expõe os seguintes endpoints da API através do protocolo MCP:
+O serviço expõe os seguintes endpoints de API através do protocolo MCP:
 
 - `add(a, b)`: Soma dois números
 - `subtract(a, b)`: Subtrai o segundo número do primeiro
@@ -40,7 +40,7 @@ O projeto requer as seguintes dependências principais:
 
 ## Construindo o Projeto
 
-Construa o projeto usando Maven:
+Compile o projeto usando Maven:
 ```bash
 ./mvnw clean install -DskipTests
 ```
@@ -73,7 +73,7 @@ O MCP Inspector é uma ferramenta útil para interagir com serviços MCP. Para u
    - Clique em "List Tools" para ver as operações de calculadora disponíveis
    - Selecione uma ferramenta e clique em "Run Tool" para executar uma operação
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.40e180a7b0d0fe2067cf96435532b01f63f7f8619d6b0132355a04b426b669ac.br.png)
+![Captura de tela do MCP Inspector](../../../../../../translated_images/tool.40e180a7b0d0fe2067cf96435532b01f63f7f8619d6b0132355a04b426b669ac.br.png)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

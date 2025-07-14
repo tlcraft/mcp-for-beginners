@@ -2,88 +2,88 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-05-17T13:12:39+00:00",
+  "translation_date": "2025-07-13T22:27:43+00:00",
   "source_file": "03-GettingStarted/samples/java/calculator/README.md",
   "language_code": "da"
 }
 -->
-# Grundlæggende Lommeregner MCP Service
+# Basic Calculator MCP Service
 
-Denne service tilbyder grundlæggende lommeregnerfunktioner gennem Model Context Protocol (MCP) ved hjælp af Spring Boot med WebFlux transport. Den er designet som et enkelt eksempel for begyndere, der lærer om MCP-implementeringer.
+Denne service tilbyder grundlæggende lommeregnerfunktioner via Model Context Protocol (MCP) ved brug af Spring Boot med WebFlux transport. Den er designet som et simpelt eksempel for begyndere, der vil lære om MCP-implementeringer.
 
-For mere information, se [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html) reference dokumentation.
+For mere information, se reference-dokumentationen for [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html).
 
 ## Oversigt
 
-Servicen viser:
+Servicen demonstrerer:
 - Understøttelse af SSE (Server-Sent Events)
-- Automatisk værktøjsregistrering ved hjælp af Spring AI's `@Tool` annotation
+- Automatisk værktøjsregistrering ved hjælp af Spring AI’s `@Tool` annotation
 - Grundlæggende lommeregnerfunktioner:
   - Addition, subtraktion, multiplikation, division
   - Potensberegning og kvadratrod
-  - Modulus (resterende) og absolut værdi
+  - Modulus (rest) og absolut værdi
   - Hjælpefunktion til beskrivelse af operationer
 
 ## Funktioner
 
-Denne lommeregner service tilbyder følgende kapaciteter:
+Denne lommeregner-service tilbyder følgende muligheder:
 
 1. **Grundlæggende aritmetiske operationer**:
    - Addition af to tal
    - Subtraktion af et tal fra et andet
    - Multiplikation af to tal
-   - Division af et tal med et andet (med nul divisionskontrol)
+   - Division af et tal med et andet (med kontrol for division med nul)
 
 2. **Avancerede operationer**:
-   - Potensberegning (hæve en base til en eksponent)
-   - Kvadratrodsberegning (med negativ tal kontrol)
-   - Modulus (resterende) beregning
-   - Absolut værdi beregning
+   - Potensberegning (at hæve en base til en eksponent)
+   - Kvadratrodsberegning (med kontrol for negative tal)
+   - Modulus (rest) beregning
+   - Beregning af absolut værdi
 
 3. **Hjælpesystem**:
    - Indbygget hjælpefunktion, der forklarer alle tilgængelige operationer
 
-## Brug af Servicen
+## Brug af servicen
 
-Servicen eksponerer følgende API endpoints gennem MCP-protokollen:
+Servicen eksponerer følgende API-endpoints via MCP-protokollen:
 
-- `add(a, b)`: Lægge to tal sammen
-- `subtract(a, b)`: Trække det andet tal fra det første
-- `multiply(a, b)`: Multiplicere to tal
-- `divide(a, b)`: Dividere det første tal med det andet (med nul kontrol)
-- `power(base, exponent)`: Beregne potensen af et tal
-- `squareRoot(number)`: Beregne kvadratroden (med negativ tal kontrol)
-- `modulus(a, b)`: Beregne resten ved division
-- `absolute(number)`: Beregne den absolutte værdi
+- `add(a, b)`: Læg to tal sammen
+- `subtract(a, b)`: Træk det andet tal fra det første
+- `multiply(a, b)`: Gange to tal
+- `divide(a, b)`: Divider det første tal med det andet (med nul-kontrol)
+- `power(base, exponent)`: Beregn potens af et tal
+- `squareRoot(number)`: Beregn kvadratrod (med kontrol for negative tal)
+- `modulus(a, b)`: Beregn resten ved division
+- `absolute(number)`: Beregn absolut værdi
 - `help()`: Få information om tilgængelige operationer
 
 ## Testklient
 
-En simpel testklient er inkluderet i `com.microsoft.mcp.sample.client` pakken. `SampleCalculatorClient` klassen demonstrerer de tilgængelige operationer af lommeregner servicen.
+En simpel testklient er inkluderet i pakken `com.microsoft.mcp.sample.client`. Klassen `SampleCalculatorClient` demonstrerer de tilgængelige operationer i lommeregner-servicen.
 
-## Brug af LangChain4j Klient
+## Brug af LangChain4j-klienten
 
-Projektet inkluderer en LangChain4j eksempelklient i `com.microsoft.mcp.sample.client.LangChain4jClient`, der demonstrerer hvordan man integrerer lommeregner servicen med LangChain4j og GitHub modeller:
+Projektet inkluderer et eksempel på en LangChain4j-klient i `com.microsoft.mcp.sample.client.LangChain4jClient`, som viser, hvordan man integrerer lommeregner-servicen med LangChain4j og GitHub-modeller:
 
 ### Forudsætninger
 
-1. **GitHub Token Opsætning**:
+1. **Opsætning af GitHub-token**:
    
-   For at bruge GitHubs AI-modeller (som phi-4), skal du bruge en GitHub personlig adgangstoken:
+   For at bruge GitHubs AI-modeller (som phi-4) skal du have et personligt adgangstoken til GitHub:
 
-   a. Gå til dine GitHub kontoindstillinger: https://github.com/settings/tokens
+   a. Gå til dine GitHub-kontoindstillinger: https://github.com/settings/tokens
    
-   b. Klik "Generer ny token" → "Generer ny token (klassisk)"
+   b. Klik på "Generate new token" → "Generate new token (classic)"
    
-   c. Giv din token et beskrivende navn
+   c. Giv dit token et beskrivende navn
    
    d. Vælg følgende scopes:
       - `repo` (Fuld kontrol over private repositories)
-      - `read:org` (Læs org og team medlemskab, læs org projekter)
+      - `read:org` (Læs organisation og teammedlemskab, læs organisationsprojekter)
       - `gist` (Opret gists)
-      - `user:email` (Adgang til bruger emailadresser (kun læsning))
+      - `user:email` (Adgang til brugerens e-mailadresser (read-only))
    
-   e. Klik "Generer token" og kopier din nye token
+   e. Klik på "Generate token" og kopier dit nye token
    
    f. Sæt det som en miljøvariabel:
       
@@ -97,9 +97,9 @@ Projektet inkluderer en LangChain4j eksempelklient i `com.microsoft.mcp.sample.c
       export GITHUB_TOKEN=your-github-token
       ```
 
-   g. For vedvarende opsætning, tilføj det til dine miljøvariabler gennem systemindstillinger
+   g. For permanent opsætning, tilføj det til dine miljøvariabler via systemindstillinger
 
-2. Tilføj LangChain4j GitHub afhængighed til dit projekt (allerede inkluderet i pom.xml):
+2. Tilføj LangChain4j GitHub-afhængigheden til dit projekt (allerede inkluderet i pom.xml):
    ```xml
    <dependency>
        <groupId>dev.langchain4j</groupId>
@@ -108,25 +108,25 @@ Projektet inkluderer en LangChain4j eksempelklient i `com.microsoft.mcp.sample.c
    </dependency>
    ```
 
-3. Sørg for at lommeregner serveren kører på `localhost:8080`
+3. Sørg for, at lommeregner-serveren kører på `localhost:8080`
 
-### Kørsel af LangChain4j Klient
+### Kørsel af LangChain4j-klienten
 
 Dette eksempel demonstrerer:
-- Forbindelse til lommeregner MCP server via SSE transport
-- Brug af LangChain4j til at skabe en chat bot, der udnytter lommeregner operationer
-- Integration med GitHub AI modeller (nu ved hjælp af phi-4 model)
+- Forbindelse til lommeregner MCP-serveren via SSE-transport
+- Brug af LangChain4j til at oprette en chatbot, der benytter lommeregnerfunktioner
+- Integration med GitHub AI-modeller (nu med phi-4 modellen)
 
-Klienten sender følgende prøveforespørgsler for at demonstrere funktionalitet:
+Klienten sender følgende eksempler på forespørgsler for at demonstrere funktionaliteten:
 1. Beregning af summen af to tal
-2. Find kvadratroden af et tal
-3. Få hjælp information om tilgængelige lommeregner operationer
+2. Udregning af kvadratroden af et tal
+3. Få hjælp til tilgængelige lommeregneroperationer
 
-Kør eksemplet og tjek konsoloutput for at se hvordan AI-modellen bruger lommeregner værktøjerne til at svare på forespørgsler.
+Kør eksemplet og tjek konsoloutputtet for at se, hvordan AI-modellen bruger lommeregner-værktøjerne til at besvare forespørgsler.
 
-### GitHub Model Konfiguration
+### GitHub Modelkonfiguration
 
-LangChain4j klienten er konfigureret til at bruge GitHubs phi-4 model med følgende indstillinger:
+LangChain4j-klienten er konfigureret til at bruge GitHubs phi-4 model med følgende indstillinger:
 
 ```java
 ChatLanguageModel model = GitHubChatModel.builder()
@@ -138,11 +138,11 @@ ChatLanguageModel model = GitHubChatModel.builder()
     .build();
 ```
 
-For at bruge forskellige GitHub modeller, skal du blot ændre `modelName` parameteren til en anden understøttet model (f.eks., "claude-3-haiku-20240307", "llama-3-70b-8192", osv.).
+For at bruge andre GitHub-modeller, ændr blot `modelName` parameteren til en anden understøttet model (f.eks. "claude-3-haiku-20240307", "llama-3-70b-8192" osv.).
 
 ## Afhængigheder
 
-Projektet kræver følgende nøgle afhængigheder:
+Projektet kræver følgende nøgleafhængigheder:
 
 ```xml
 <!-- For MCP Server -->
@@ -166,14 +166,14 @@ Projektet kræver følgende nøgle afhængigheder:
 </dependency>
 ```
 
-## Bygning af Projektet
+## Byg projektet
 
-Byg projektet ved hjælp af Maven:
+Byg projektet med Maven:
 ```bash
 ./mvnw clean install -DskipTests
 ```
 
-## Kørsel af Serveren
+## Kør serveren
 
 ### Brug af Java
 
@@ -183,61 +183,61 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 
 ### Brug af MCP Inspector
 
-MCP Inspector er et nyttigt værktøj til interaktion med MCP services. For at bruge det med denne lommeregner service:
+MCP Inspector er et nyttigt værktøj til at interagere med MCP-services. For at bruge det med denne lommeregner-service:
 
-1. **Installer og kør MCP Inspector** i et nyt terminal vindue:
+1. **Installer og kør MCP Inspector** i et nyt terminalvindue:
    ```bash
    npx @modelcontextprotocol/inspector
    ```
 
-2. **Adgang til web UI** ved at klikke på URL'en vist af appen (typisk http://localhost:6274)
+2. **Åbn web-UI** ved at klikke på den URL, som appen viser (typisk http://localhost:6274)
 
 3. **Konfigurer forbindelsen**:
    - Sæt transporttypen til "SSE"
-   - Sæt URL'en til din kørende servers SSE endpoint: `http://localhost:8080/sse`
-   - Klik "Connect"
+   - Sæt URL’en til din kørende servers SSE-endpoint: `http://localhost:8080/sse`
+   - Klik på "Connect"
 
 4. **Brug værktøjerne**:
-   - Klik "List Tools" for at se tilgængelige lommeregner operationer
-   - Vælg et værktøj og klik "Run Tool" for at udføre en operation
+   - Klik på "List Tools" for at se tilgængelige lommeregneroperationer
+   - Vælg et værktøj og klik på "Run Tool" for at udføre en operation
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.d45bdee7d4d5740a48d0d6378c9a8af0c1a289f1e0f2ae95ee176f1a5afb40a8.da.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.da.png)
 
 ### Brug af Docker
 
-Projektet inkluderer en Dockerfile til containeriseret deployment:
+Projektet inkluderer en Dockerfile til containeriseret udrulning:
 
-1. **Byg Docker image**:
+1. **Byg Docker-billedet**:
    ```bash
    docker build -t calculator-mcp-service .
    ```
 
-2. **Kør Docker container**:
+2. **Kør Docker-containeren**:
    ```bash
    docker run -p 8080:8080 calculator-mcp-service
    ```
 
 Dette vil:
-- Bygge et multi-stage Docker image med Maven 3.9.9 og Eclipse Temurin 24 JDK
-- Oprette et optimeret container image
+- Bygge et multi-stage Docker-billede med Maven 3.9.9 og Eclipse Temurin 24 JDK
+- Oprette et optimeret containerbillede
 - Eksponere servicen på port 8080
-- Starte MCP lommeregner servicen inde i containeren
+- Starte MCP lommeregner-servicen inde i containeren
 
-Du kan få adgang til servicen på `http://localhost:8080` når containeren kører.
+Du kan tilgå servicen på `http://localhost:8080`, når containeren kører.
 
 ## Fejlfinding
 
-### Almindelige Problemer med GitHub Token
+### Almindelige problemer med GitHub-token
 
-1. **Token Tilladelsesproblemer**: Hvis du får en 403 Forbidden fejl, tjek at din token har de korrekte tilladelser som angivet i forudsætningerne.
+1. **Token-tilladelsesproblemer**: Hvis du får en 403 Forbidden-fejl, så tjek, at dit token har de korrekte tilladelser som beskrevet i forudsætningerne.
 
-2. **Token Ikke Fundet**: Hvis du får en "No API key found" fejl, sørg for at GITHUB_TOKEN miljøvariabelen er korrekt sat.
+2. **Token ikke fundet**: Hvis du får en "No API key found"-fejl, så sørg for, at miljøvariablen GITHUB_TOKEN er korrekt sat.
 
-3. **Rate Limitering**: GitHub API har rate grænser. Hvis du støder på en rate limit fejl (status kode 429), vent et par minutter før du prøver igen.
+3. **Ratebegrænsning**: GitHub API har ratebegrænsninger. Hvis du støder på en ratebegrænsningsfejl (statuskode 429), vent et par minutter, før du prøver igen.
 
-4. **Token Udløber**: GitHub tokens kan udløbe. Hvis du modtager autentificeringsfejl efter nogen tid, generer en ny token og opdater din miljøvariabel.
+4. **Token-udløb**: GitHub-tokens kan udløbe. Hvis du modtager autentificeringsfejl efter noget tid, generer et nyt token og opdater din miljøvariabel.
 
-Hvis du har brug for yderligere assistance, tjek [LangChain4j dokumentation](https://github.com/langchain4j/langchain4j) eller [GitHub API dokumentation](https://docs.github.com/en/rest).
+Hvis du har brug for yderligere hjælp, se [LangChain4j dokumentationen](https://github.com/langchain4j/langchain4j) eller [GitHub API dokumentationen](https://docs.github.com/en/rest).
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på at opnå nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der måtte opstå ved brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

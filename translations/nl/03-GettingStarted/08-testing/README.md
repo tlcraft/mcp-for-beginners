@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T17:56:15+00:00",
+  "translation_date": "2025-07-13T22:01:50+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "nl"
 }
@@ -13,7 +13,7 @@ Voordat je begint met het testen van je MCP-server, is het belangrijk om de besc
 
 ## Overzicht
 
-Deze les behandelt hoe je de juiste testmethode kiest en welke testtool het meest effectief is.
+Deze les behandelt hoe je de juiste testmethode kiest en de meest effectieve testtool gebruikt.
 
 ## Leerdoelen
 
@@ -38,7 +38,7 @@ De [MCP Inspector](https://github.com/modelcontextprotocol/inspector) helpt je o
 
 - **Servermogelijkheden ontdekken**: Automatisch beschikbare resources, tools en prompts detecteren
 - **Tooluitvoering testen**: Verschillende parameters proberen en reacties in realtime bekijken
-- **Servermetadata bekijken**: Serverinformatie, schema’s en configuraties onderzoeken
+- **Servermetadata bekijken**: Serverinformatie, schema’s en configuraties inspecteren
 
 Een typische uitvoering van de tool ziet er als volgt uit:
 
@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Zoals je ziet bij het bovenstaande gebruik van curl, gebruik je een POST-verzoek om een tool aan te roepen met een payload die bestaat uit de naam van de tool en de parameters. Gebruik de aanpak die het beste bij jou past. CLI-tools zijn over het algemeen sneller in gebruik en lenen zich goed voor scripting, wat handig kan zijn in een CI/CD-omgeving.
+Zoals je ziet in het bovenstaande voorbeeld met curl, gebruik je een POST-verzoek om een tool aan te roepen met een payload die de naam van de tool en de parameters bevat. Gebruik de methode die het beste bij jou past. CLI-tools zijn over het algemeen sneller in gebruik en lenen zich goed voor scripting, wat handig kan zijn in een CI/CD-omgeving.
 
 ### Unit testen
 

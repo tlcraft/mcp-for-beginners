@@ -2,17 +2,17 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:48:01+00:00",
+  "translation_date": "2025-07-13T21:12:37+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "fi"
 }
 -->
 # Calculator HTTP Streaming Demo
 
-Tämä projekti esittelee HTTP-streamausta käyttäen Server-Sent Events (SSE) -tekniikkaa Spring Boot WebFluxin kanssa. Se koostuu kahdesta sovelluksesta:
+Tämä projekti esittelee HTTP-streamausta Server-Sent Events (SSE) -tekniikalla Spring Boot WebFluxin avulla. Se koostuu kahdesta sovelluksesta:
 
-- **Calculator Server**: reaktiivinen web-palvelu, joka suorittaa laskutoimituksia ja lähettää tulokset SSE:n avulla
-- **Calculator Client**: asiakassovellus, joka vastaanottaa streamatun datan
+- **Calculator Server**: reaktiivinen verkkopalvelu, joka suorittaa laskutoimituksia ja lähettää tulokset SSE:n kautta
+- **Calculator Client**: asiakassovellus, joka kuluttaa streamaavaa päätepistettä
 
 ## Vaatimukset
 
@@ -37,19 +37,19 @@ java/
 
 ## Miten se toimii
 
-1. **Calculator Server** tarjoaa `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** tarjoaa `/calculate`-päätepisteen, joka:
+   - Ottaa vastaan kyselyparametrit: `a` (numero), `b` (numero), `op` (operaatio)
+   - Tuetut operaatiot: `add`, `sub`, `mul`, `div`
+   - Palauttaa Server-Sent Events -viestejä laskennan etenemisestä ja tuloksesta
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
-   - Kuluttaa streamatun vastauksen
+2. **Calculator Client** yhdistää palvelimeen ja:
+   - Tekee pyynnön laskea `7 * 5`
+   - Kuluttaa streamaavan vastauksen
    - Tulostaa jokaisen tapahtuman konsoliin
 
 ## Sovellusten käynnistäminen
 
-### Vaihtoehto 1: Mavenin käyttö (suositeltu)
+### Vaihtoehto 1: Mavenin käyttäminen (suositeltu)
 
 #### 1. Käynnistä Calculator Server
 
@@ -81,7 +81,7 @@ mvn spring-boot:run
 
 Asiakas yhdistää palvelimeen, suorittaa laskutoimituksen ja näyttää streamatut tulokset.
 
-### Vaihtoehto 2: Java-komentojen suora käyttö
+### Vaihtoehto 2: Suora Java-komentojen käyttö
 
 #### 1. Käännä ja käynnistä palvelin:
 
@@ -104,14 +104,14 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 Voit testata palvelinta myös selaimella tai curl-komennolla:
 
 ### Selaimella:
-Vieraile osoitteessa: `http://localhost:8080/calculate?a=10&b=5&op=add`
+Siirry osoitteeseen: `http://localhost:8080/calculate?a=10&b=5&op=add`
 
-### curl-komennolla:
+### Curl-komennolla:
 ```bash
 curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-stream"
 ```
 
-## Odotettu tulos
+## Odotettu tuloste
 
 Kun ajat asiakasta, näet streamatun tulosteen, joka näyttää suunnilleen tältä:
 
@@ -125,23 +125,23 @@ data:35.0
 
 ## Tuetut operaatiot
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - yhteenlasku (a + b)
+- `sub` - vähennyslasku (a - b)
+- `mul` - kertolasku (a * b)
+- `div` - jakolasku (a / b, palauttaa NaN jos b = 0)
 
-## API Reference
+## API-dokumentaatio
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Parametrit:**
+- `a` (pakollinen): Ensimmäinen luku (double)
+- `b` (pakollinen): Toinen luku (double)
+- `op` (pakollinen): Operaatio (`add`, `sub`, `mul`, `div`)
 
-**Response:**
+**Vastaus:**
 - Content-Type: `text/event-stream`
-- Palauttaa Server-Sent Events -viestejä laskutoimituksen etenemisestä ja tuloksesta
+- Palauttaa Server-Sent Events -viestejä laskennan etenemisestä ja tuloksesta
 
 **Esimerkkipyyntö:**
 ```
@@ -159,45 +159,44 @@ event: result
 data: 35.0
 ```
 
-## Vianmääritys
+## Vianetsintä
 
 ### Yleisiä ongelmia
 
 1. **Portti 8080 on jo käytössä**
    - Lopeta muut sovellukset, jotka käyttävät porttia 8080
-   - Tai muuta palvelimen porttia tiedostossa `calculator-server/src/main/resources/application.yml`
+   - Tai vaihda palvelimen portti tiedostossa `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Yhteys evätty**
+   - Varmista, että palvelin on käynnissä ennen asiakkaan käynnistämistä
+   - Tarkista, että palvelin käynnistyi onnistuneesti porttiin 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Parametrien nimeämisongelmat**
+   - Tässä projektissa on Maven-kääntäjän asetuksena `-parameters`-lippu
+   - Jos kohtaat ongelmia parametrien sitomisessa, varmista että projekti on käännetty tällä asetuksella
 
-### Stopping the Applications
+### Sovellusten pysäyttäminen
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` jos palvelin on käynnissä taustaprosessina
+- Paina `Ctrl+C` terminaalissa, jossa sovellus on käynnissä
+- Tai käytä komentoa `mvn spring-boot:stop`, jos sovellus on taustaprosessina
 
 ## Teknologiat
 
 - **Spring Boot 3.3.1** - Sovelluskehys
 - **Spring WebFlux** - Reaktiivinen web-kehys
 - **Project Reactor** - Reaktiivisten streamien kirjasto
-- **Netty** - Ei-estävä I/O-palvelin
+- **Netty** - Ei-blokkaava I/O-palvelin
 - **Maven** - Rakennustyökalu
 - **Java 17+** - Ohjelmointikieli
 
 ## Seuraavat askeleet
 
 Kokeile muokata koodia niin, että:
-
-- Lisää lisää matemaattisia operaatioita
+- Lisää muita matemaattisia operaatioita
 - Lisää virheenkäsittely virheellisille operaatioille
-- Lisää pyyntöjen ja vastausten lokitus
+- Lisää pyyntö- ja vastauslokitus
 - Toteuta autentikointi
 - Lisää yksikkötestejä
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty tekoälypohjaisella käännöspalvelulla [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

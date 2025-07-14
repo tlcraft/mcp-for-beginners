@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:04:06+00:00",
+  "translation_date": "2025-07-13T21:22:11+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "sk"
 }
@@ -13,18 +13,18 @@ Tu je návod, ako spustiť klasický HTTP streaming server a klienta, ako aj MCP
 
 ### Prehľad
 
-- Nastavíte MCP server, ktorý počas spracovania položiek vysiela notifikácie o priebehu klientovi.
+- Nastavíte MCP server, ktorý bude klientovi streamovať notifikácie o priebehu spracovania položiek.
 - Klient bude zobrazovať každú notifikáciu v reálnom čase.
 - Tento návod pokrýva požiadavky, nastavenie, spustenie a riešenie problémov.
 
 ### Požiadavky
 
 - Python 3.9 alebo novší
-- Balík `mcp` pre Python (inštalácia pomocou `pip install mcp`)
+- Python balík `mcp` (nainštalujete pomocou `pip install mcp`)
 
 ### Inštalácia a nastavenie
 
-1. Naklonujte repozitár alebo stiahnite súbory riešenia.
+1. Naklonujte repozitár alebo si stiahnite súbory riešenia.
 
    ```pwsh
    git clone https://github.com/microsoft/mcp-for-beginners
@@ -80,7 +80,7 @@ Tu je návod, ako spustiť klasický HTTP streaming server a klienta, ako aj MCP
    python client.py
    ```
 
-2. Mali by sa zobrazovať postupne vysielané správy:
+2. Mali by ste vidieť postupne vypisované streamované správy:
 
    ```text
    Running classic HTTP streaming client...
@@ -116,7 +116,7 @@ Tu je návod, ako spustiť klasický HTTP streaming server a klienta, ako aj MCP
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. Mali by sa zobrazovať notifikácie v reálnom čase, keď server spracováva jednotlivé položky:
+2. Mali by ste vidieť notifikácie vypisované v reálnom čase, ako server spracováva jednotlivé položky:
    ```
    Running MCP client...
    Starting client...
@@ -132,20 +132,20 @@ Tu je návod, ako spustiť klasický HTTP streaming server a klienta, ako aj MCP
 ### Kľúčové kroky implementácie
 
 1. **Vytvorte MCP server pomocou FastMCP.**
-2. **Definujte nástroj, ktorý spracuje zoznam a posiela notifikácie pomocou `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+2. **Definujte nástroj, ktorý spracuje zoznam a posiela notifikácie pomocou `ctx.info()` alebo `ctx.log()`.**
+3. **Spustite server s `transport="streamable-http"`.**
+4. **Implementujte klienta s handlerom správ, ktorý zobrazuje notifikácie hneď, ako prídu.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Prehľad kódu
+- Server používa asynchrónne funkcie a MCP kontext na odosielanie aktualizácií priebehu.
+- Klient implementuje asynchrónny handler správ na vypisovanie notifikácií a konečného výsledku.
 
-### Tips & Troubleshooting
+### Tipy a riešenie problémov
 
-- Use `async/await` pre neblokujúce operácie.**
-- Vždy ošetrujte výnimky na strane servera aj klienta pre spoľahlivosť.
+- Používajte `async/await` pre neblokujúce operácie.
+- Vždy ošetrujte výnimky na strane servera aj klienta pre väčšiu spoľahlivosť.
 - Testujte s viacerými klientmi, aby ste videli aktualizácie v reálnom čase.
-- Ak narazíte na chyby, skontrolujte verziu Pythonu a uistite sa, že všetky závislosti sú nainštalované.
+- Ak narazíte na chyby, skontrolujte verziu Pythonu a či sú všetky závislosti nainštalované.
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím berte na vedomie, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T16:01:27+00:00",
+  "translation_date": "2025-07-13T19:50:24+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "mo"
 }
@@ -34,7 +34,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### -3- 新增伺服器功能
 
-現在我們已定義好所有 SSE 相關的部分，接著加入工具、提示和資源等伺服器功能。
+現在我們已定義好所有 SSE 相關的部分，接著新增伺服器功能，例如工具、提示和資源。
 
 ---
 
@@ -58,18 +58,18 @@ Inspector 是一個很棒的工具，我們在之前的課程 [建立你的第�
 
 1. 執行 Inspector
 
-    > [!NOTE]
-    > 請在與伺服器不同的終端機視窗中執行此命令。另外請注意，你需要根據伺服器運行的 URL 調整以下指令。
+    > ![NOTE]
+    > 請在與伺服器不同的終端機視窗中執行此命令。另外，請根據你的伺服器運行的 URL 調整以下指令。
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    在所有執行環境中，執行 Inspector 的方式都相同。請注意，我們不是傳入伺服器的路徑和啟動伺服器的指令，而是傳入伺服器運行的 URL，並指定 `/sse` 路由。
+    在所有執行環境中，執行 Inspector 的方式都相同。注意，我們不是傳入伺服器的路徑和啟動伺服器的指令，而是傳入伺服器運行的 URL，並指定 `/sse` 路由。
 
 ### -2- 試用工具
 
-在下拉選單中選擇 SSE，並填入伺服器運行的 URL，例如 http://localhost:4321/sse。然後點擊「Connect」按鈕。接著像之前一樣，選擇列出工具、選擇工具並提供輸入值。你應該會看到如下結果：
+在下拉選單中選擇 SSE，並填入你的伺服器運行的 URL，例如 http://localhost:4321/sse。然後點擊「Connect」按鈕。接著像之前一樣，選擇列出工具、選擇工具並提供輸入值。你應該會看到如下結果：
 
 ![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.mo.png)
 
@@ -77,7 +77,7 @@ Inspector 是一個很棒的工具，我們在之前的課程 [建立你的第�
 
 ## 作業
 
-試著為你的伺服器增加更多功能。參考 [這個網站](https://api.chucknorris.io/) 來新增一個呼叫 API 的工具。伺服器的樣貌由你決定。玩得開心 :)
+試著為你的伺服器增加更多功能。參考 [這個頁面](https://api.chucknorris.io/) 來新增一個呼叫 API 的工具。伺服器的樣貌由你決定。玩得開心 :)
 
 ## 解答
 
@@ -89,7 +89,7 @@ Inspector 是一個很棒的工具，我們在之前的課程 [建立你的第�
 
 - SSE 是繼 stdio 之後支援的第二種傳輸方式。
 - 支援 SSE 需要使用網頁框架來管理進來的連線和訊息。
-- 你可以像使用 stdio 伺服器一樣，使用 Inspector 和 Visual Studio Code 來使用 SSE 伺服器。請注意 stdio 和 SSE 之間有些差異。對 SSE 來說，你需要先啟動伺服器，然後再執行 Inspector 工具。Inspector 工具也有些不同，需要指定 URL。
+- 你可以使用 Inspector 和 Visual Studio Code 來使用 SSE 伺服器，就像 stdio 伺服器一樣。注意 stdio 和 SSE 之間有些差異。對 SSE 來說，你需要先啟動伺服器，然後再執行 Inspector 工具。Inspector 工具也有些不同，你需要指定 URL。
 
 ## 範例
 
@@ -108,4 +108,4 @@ Inspector 是一個很棒的工具，我們在之前的課程 [建立你的第�
 - 下一課：[使用 MCP 的 HTTP 串流（可串流的 HTTP）](../06-http-streaming/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

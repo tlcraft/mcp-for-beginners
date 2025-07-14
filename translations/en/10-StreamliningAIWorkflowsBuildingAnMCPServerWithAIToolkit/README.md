@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "787440926586cd064b0899fd1c514f52",
-  "translation_date": "2025-06-10T04:44:48+00:00",
+  "translation_date": "2025-07-14T06:57:54+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md",
   "language_code": "en"
 }
@@ -24,7 +24,7 @@ Welcome to the **Model Context Protocol (MCP) Workshop**! This hands-on workshop
 
 ### 🎓 What You'll Learn
 
-By the end of this workshop, you'll be skilled at building intelligent applications that connect AI models with real-world tools and services. From automated testing to custom API integrations, you'll gain practical skills to tackle complex business problems.
+By the end of this workshop, you'll be able to build intelligent applications that connect AI models with real-world tools and services. From automated testing to custom API integrations, you'll gain practical skills to tackle complex business challenges.
 
 ## 🏗️ Technology Stack
 
@@ -33,22 +33,22 @@ By the end of this workshop, you'll be skilled at building intelligent applicati
 MCP is the **"USB-C for AI"** — a universal standard that links AI models to external tools and data sources.
 
 **✨ Key Features:**
-- 🔄 **Standardized Integration**: Universal interface for connecting AI and tools
+- 🔄 **Standardized Integration**: A universal interface for connecting AI tools
 - 🏛️ **Flexible Architecture**: Supports local and remote servers via stdio/SSE transport
 - 🧰 **Rich Ecosystem**: Combines tools, prompts, and resources in one protocol
-- 🔒 **Enterprise-Ready**: Built with security and reliability in mind
+- 🔒 **Enterprise-Ready**: Built-in security and reliability
 
 **🎯 Why MCP Matters:**
 Just like USB-C simplified cable connections, MCP removes the complexity of AI integrations. One protocol, endless possibilities.
 
 ### 🤖 AI Toolkit for Visual Studio Code (AITK)
 
-Microsoft's flagship AI development extension that turns VS Code into an AI powerhouse.
+Microsoft’s flagship AI development extension that turns VS Code into an AI powerhouse.
 
 **🚀 Core Capabilities:**
 - 📦 **Model Catalog**: Access models from Azure AI, GitHub, Hugging Face, Ollama
 - ⚡ **Local Inference**: ONNX-optimized execution on CPU/GPU/NPU
-- 🏗️ **Agent Builder**: Visual AI agent creation with MCP integration
+- 🏗️ **Agent Builder**: Visual AI agent development with MCP integration
 - 🎭 **Multi-Modal**: Supports text, vision, and structured outputs
 
 **💡 Development Benefits:**
@@ -63,33 +63,33 @@ Microsoft's flagship AI development extension that turns VS Code into an AI powe
 **Duration**: 15 minutes
 - 🛠️ Install and set up AI Toolkit for VS Code
 - 🗂️ Explore the Model Catalog (100+ models from GitHub, ONNX, OpenAI, Anthropic, Google)
-- 🎮 Use the Interactive Playground for real-time model testing
+- 🎮 Master the Interactive Playground for real-time model testing
 - 🤖 Build your first AI agent with Agent Builder
-- 📊 Evaluate model performance with built-in metrics (F1, relevance, similarity, coherence)
+- 📊 Evaluate model performance using built-in metrics (F1, relevance, similarity, coherence)
 - ⚡ Learn batch processing and multi-modal support features
 
-**🎯 Learning Outcome**: Build a functional AI agent and gain a solid understanding of AITK features
+**🎯 Learning Outcome**: Build a functional AI agent with a solid understanding of AITK capabilities
 
 ### [🌐 Module 2: MCP with AI Toolkit Fundamentals](./lab2/README.md)
 **Duration**: 20 minutes
-- 🧠 Understand the architecture and concepts of Model Context Protocol (MCP)
+- 🧠 Understand Model Context Protocol (MCP) architecture and concepts
 - 🌐 Explore Microsoft’s MCP server ecosystem
-- 🤖 Create a browser automation agent using the Playwright MCP server
-- 🔧 Connect MCP servers with AI Toolkit Agent Builder
+- 🤖 Build a browser automation agent using the Playwright MCP server
+- 🔧 Integrate MCP servers with AI Toolkit Agent Builder
 - 📊 Configure and test MCP tools within your agents
 - 🚀 Export and deploy MCP-powered agents for production
 
-**🎯 Learning Outcome**: Launch an AI agent enhanced with external tools via MCP
+**🎯 Learning Outcome**: Deploy an AI agent enhanced with external tools via MCP
 
 ### [🔧 Module 3: Advanced MCP Development with AI Toolkit](./lab3/README.md)
 **Duration**: 20 minutes
-- 💻 Build custom MCP servers using AI Toolkit
+- 💻 Create custom MCP servers using AI Toolkit
 - 🐍 Set up and use the latest MCP Python SDK (v1.9.3)
 - 🔍 Use MCP Inspector for debugging
-- 🛠️ Develop a Weather MCP Server with professional debugging workflows
-- 🧪 Debug MCP servers in both Agent Builder and Inspector
+- 🛠️ Build a Weather MCP Server with professional debugging workflows
+- 🧪 Debug MCP servers in both Agent Builder and Inspector environments
 
-**🎯 Learning Outcome**: Create and troubleshoot custom MCP servers with modern tools
+**🎯 Learning Outcome**: Develop and debug custom MCP servers using modern tools
 
 ### [🐙 Module 4: Practical MCP Development - Custom GitHub Clone Server](./lab4/README.md)
 **Duration**: 30 minutes
@@ -97,16 +97,17 @@ Microsoft's flagship AI development extension that turns VS Code into an AI powe
 - 🔄 Implement smart repository cloning with validation and error handling
 - 📁 Create intelligent directory management and VS Code integration
 - 🤖 Use GitHub Copilot Agent Mode with custom MCP tools
-- 🛡️ Ensure production-ready reliability and cross-platform compatibility
+- 🛡️ Apply production-ready reliability and cross-platform compatibility
 
-**🎯 Learning Outcome**: Deliver a production-ready MCP server that streamlines real development workflows
+**🎯 Learning Outcome**: Deploy a production-ready MCP server that streamlines real development workflows
+
 
 ## 💡 Real-World Applications & Impact
 
 ### 🏢 Enterprise Use Cases
 
 #### 🔄 DevOps Automation
-Transform your development process with intelligent automation:
+Transform your development workflow with intelligent automation:
 - **Smart Repository Management**: AI-driven code review and merge decisions
 - **Intelligent CI/CD**: Automated pipeline optimization based on code changes
 - **Issue Triage**: Automatic bug classification and assignment
@@ -128,6 +129,7 @@ Create outstanding customer interactions:
 - **Context-Aware Support**: AI agents with access to customer history
 - **Proactive Issue Resolution**: Predictive customer service
 - **Multi-Channel Integration**: Unified AI experience across platforms
+
 
 ## 🛠️ Prerequisites & Setup
 
@@ -154,6 +156,7 @@ Create outstanding customer interactions:
 - **MCP Inspector**: Visual debugging tool for MCP servers
 - **Playwright**: For web automation examples
 
+
 ## 🎖️ Learning Outcomes & Certification Path
 
 ### 🏆 Skill Mastery Checklist
@@ -164,12 +167,12 @@ By completing this workshop, you will master:
 - [ ] **MCP Protocol Mastery**: Deep understanding of architecture and implementation patterns
 - [ ] **AITK Proficiency**: Expert use of AI Toolkit for rapid development
 - [ ] **Custom Server Development**: Build, deploy, and maintain production MCP servers
-- [ ] **Tool Integration Excellence**: Seamlessly connect AI with existing workflows
+- [ ] **Tool Integration Excellence**: Seamlessly connect AI with existing development workflows
 - [ ] **Problem-Solving Application**: Apply skills to real business challenges
 
 #### 🔧 Technical Skills
 - [ ] Set up and configure AI Toolkit in VS Code
-- [ ] Design and build custom MCP servers
+- [ ] Design and implement custom MCP servers
 - [ ] Integrate GitHub Models with MCP architecture
 - [ ] Build automated testing workflows with Playwright
 - [ ] Deploy AI agents for production use

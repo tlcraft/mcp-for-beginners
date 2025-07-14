@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a05fb941810e539147fec53aaadbb6fd",
-  "translation_date": "2025-06-21T14:27:27+00:00",
+  "translation_date": "2025-07-14T06:37:37+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/python/README.md",
   "language_code": "hk"
 }
 -->
 # Study Plan Generator with Chainlit & Microsoft Learn Docs MCP
 
-## 前置條件
+## 先決條件
 
 - Python 3.8 或以上版本
 - pip（Python 套件管理工具）
-- 可連接 Microsoft Learn Docs MCP 伺服器的網絡
+- 可連接 Microsoft Learn Docs MCP 伺服器的網絡連線
 
 ## 安裝
 
@@ -27,28 +27,28 @@ CO_OP_TRANSLATOR_METADATA:
 ## 使用方法
 
 ### 情境 1：簡單查詢 Docs MCP  
-一個命令行客戶端，連接到 Docs MCP 伺服器，發送查詢並列印結果。
+一個命令列客戶端，連接到 Docs MCP 伺服器，發送查詢並列印結果。
 
 1. 執行腳本：  
    ```bash
    python scenario1.py
    ```  
-2. 在提示符輸入你的文件問題。
+2. 在提示符號輸入你的文件問題。
 
-### 情境 2：學習計劃生成器（Chainlit 網頁應用）  
-一個基於網頁的介面（使用 Chainlit），讓使用者為任何技術主題生成個人化的逐週學習計劃。
+### 情境 2：學習計劃產生器（Chainlit 網頁應用）  
+一個基於網頁的介面（使用 Chainlit），讓使用者能為任何技術主題產生個人化的逐週學習計劃。
 
 1. 啟動 Chainlit 應用：  
    ```bash
    chainlit run scenario2.py
    ```  
-2. 在瀏覽器打開終端機中提供的本地 URL（例如 http://localhost:8000）。  
+2. 在瀏覽器中打開終端機提供的本地 URL（例如 http://localhost:8000）。  
 3. 在聊天視窗輸入你的學習主題及學習週數（例如「AI-900 認證，8 週」）。  
 4. 應用會回應逐週的學習計劃，並附上相關 Microsoft Learn 文件的連結。
 
 **所需環境變數：**
 
-使用情境 2（帶 Azure OpenAI 的 Chainlit 網頁應用）時，必須在 `.env` file in the `python` 目錄中設定以下環境變數：
+要使用情境 2（搭配 Azure OpenAI 的 Chainlit 網頁應用），必須在 `python` 目錄下的 `.env` 檔案中設定以下環境變數：
 
 ```
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=
@@ -57,47 +57,47 @@ AZURE_OPENAI_ENDPOINT=
 AZURE_OPENAI_API_VERSION=
 ```
 
-請在執行應用前填入你的 Azure OpenAI 資源詳情。
+請在執行應用前填入你的 Azure OpenAI 資源詳細資料。
 
-> **提示：** 你可以輕鬆地使用 [Azure AI Foundry](https://ai.azure.com/) 部署自己的模型。
+> **Tip:** 你可以透過 [Azure AI Foundry](https://ai.azure.com/) 輕鬆部署自己的模型。
 
-### 情境 3：在 VS Code 編輯器內使用 MCP 伺服器的文件
+### 情境 3：在 VS Code 編輯器內使用 MCP 伺服器查閱文件
 
-不用切換瀏覽器分頁搜尋文件，你可以直接在 VS Code 中使用 MCP 伺服器帶來的 Microsoft Learn Docs。這能讓你：  
-- 在 VS Code 內搜尋及閱讀文件，不用離開編碼環境。  
-- 參考文件並直接插入連結到 README 或課程檔案。  
-- 同時使用 GitHub Copilot 與 MCP，打造無縫的 AI 驅動文件工作流程。
+不用切換瀏覽器分頁搜尋文件，你可以直接在 VS Code 裡使用 MCP 伺服器帶入 Microsoft Learn Docs。這讓你能夠：  
+- 在 VS Code 內搜尋及閱讀文件，無需離開編碼環境。  
+- 直接引用文件並插入連結到 README 或課程檔案。  
+- 結合 GitHub Copilot 與 MCP，打造無縫的 AI 助力文件工作流程。
 
 **範例使用情境：**  
 - 在撰寫課程或專案文件時，快速新增參考連結到 README。  
-- 使用 Copilot 生成程式碼，並用 MCP 即時找到及引用相關文件。  
-- 保持專注在編輯器內，提高工作效率。
+- 使用 Copilot 產生程式碼，並用 MCP 即時找到並引用相關文件。  
+- 保持專注於編輯器，提高工作效率。
 
 > [!IMPORTANT]  
-> 確保你有有效的 [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) configuration in your workspace (location is `.vscode/mcp.json`).
+> 請確保你的工作區有有效的 [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) 設定檔（位置為 `.vscode/mcp.json`）。
 
-## Why Chainlit for Scenario 2?
+## 為什麼情境 2 選擇 Chainlit？
 
-Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
+Chainlit 是一個現代化的開源框架，用於建立對話式網頁應用。它讓你輕鬆打造連接後端服務（如 Microsoft Learn Docs MCP 伺服器）的聊天介面。本專案利用 Chainlit 提供簡單且互動的方式，實時產生個人化學習計劃。透過 Chainlit，你可以快速建立並部署聊天工具，提升生產力與學習效果。
 
-## What This Does
+## 這個應用做什麼？
 
-This app allows users to create a personalized study plan by simply entering a topic and a duration. The app parses your input, queries the Microsoft Learn Docs MCP server for relevant content, and organizes the results into a structured, week-by-week plan. Each week’s recommendations are displayed in the chat, making it easy to follow and track your progress. The integration ensures you always get the latest, most relevant learning resources.
+此應用允許使用者只需輸入主題和時間長度，即可建立個人化學習計劃。應用會解析你的輸入，向 Microsoft Learn Docs MCP 伺服器查詢相關內容，並將結果整理成結構化的逐週計劃。每週的建議會在聊天中顯示，方便你跟進與追蹤進度。整合確保你隨時獲得最新且最相關的學習資源。
 
-## Sample Queries
+## 範例查詢
 
-Try these queries in the chat window to see how the app responds:
+在聊天視窗試試以下查詢，看看應用如何回應：
 
-- `AI-900 certification, 8 weeks`
-- `Learn Azure Functions, 4 weeks`
-- `Azure DevOps, 6 weeks`
-- `Data engineering on Azure, 10 weeks`
-- `Microsoft security fundamentals, 5 weeks`
-- `Power Platform, 7 weeks`
-- `Azure AI services, 12 weeks`
+- `AI-900 certification, 8 weeks`  
+- `Learn Azure Functions, 4 weeks`  
+- `Azure DevOps, 6 weeks`  
+- `Data engineering on Azure, 10 weeks`  
+- `Microsoft security fundamentals, 5 weeks`  
+- `Power Platform, 7 weeks`  
+- `Azure AI services, 12 weeks`  
 - `Cloud architecture, 9 weeks`
 
-這些範例展示了此應用在不同學習目標和時間安排上的彈性。
+這些範例展示了應用對不同學習目標和時間範圍的彈性。
 
 ## 參考資料
 
@@ -105,4 +105,4 @@ Try these queries in the chat window to see how the app responds:
 - [MCP Documentation](https://github.com/MicrosoftDocs/mcp)
 
 **免責聲明**：  
-本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯而成。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議使用專業人工翻譯。對於因使用本翻譯而引起的任何誤解或誤譯，我們概不負責。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

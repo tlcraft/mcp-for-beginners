@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a05fb941810e539147fec53aaadbb6fd",
-  "translation_date": "2025-06-21T14:31:31+00:00",
+  "translation_date": "2025-07-14T06:42:26+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/python/README.md",
   "language_code": "id"
 }
@@ -11,14 +11,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Prasyarat
 
-- Python 3.8 atau versi lebih baru  
+- Python 3.8 atau lebih baru  
 - pip (manajer paket Python)  
-- Koneksi internet untuk terhubung ke server Microsoft Learn Docs MCP  
+- Akses internet untuk terhubung ke server Microsoft Learn Docs MCP  
 
 ## Instalasi
 
-1. Clone repositori ini atau unduh file proyeknya.  
-2. Instal dependensi yang dibutuhkan:
+1. Clone repositori ini atau unduh file proyek.  
+2. Instal dependensi yang dibutuhkan:  
 
    ```bash
    pip install -r requirements.txt
@@ -27,7 +27,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## Penggunaan
 
 ### Skenario 1: Query Sederhana ke Docs MCP  
-Client command-line yang terhubung ke server Docs MCP, mengirimkan query, dan menampilkan hasilnya.
+Client command-line yang terhubung ke server Docs MCP, mengirim query, dan menampilkan hasilnya.
 
 1. Jalankan skrip:  
    ```bash
@@ -36,19 +36,19 @@ Client command-line yang terhubung ke server Docs MCP, mengirimkan query, dan me
 2. Masukkan pertanyaan dokumentasi Anda pada prompt.
 
 ### Skenario 2: Study Plan Generator (Aplikasi Web Chainlit)  
-Antarmuka berbasis web (menggunakan Chainlit) yang memungkinkan pengguna membuat rencana belajar pribadi mingguan untuk topik teknis apa pun.
+Antarmuka berbasis web (menggunakan Chainlit) yang memungkinkan pengguna membuat rencana belajar personal, mingguan, untuk topik teknis apa pun.
 
 1. Mulai aplikasi Chainlit:  
    ```bash
    chainlit run scenario2.py
    ```  
-2. Buka URL lokal yang muncul di terminal Anda (misalnya, http://localhost:8000) di browser.  
-3. Di jendela chat, masukkan topik belajar dan jumlah minggu yang ingin Anda pelajari (misalnya, "AI-900 certification, 8 weeks").  
-4. Aplikasi akan merespon dengan rencana belajar mingguan, termasuk tautan ke dokumentasi Microsoft Learn yang relevan.
+2. Buka URL lokal yang muncul di terminal Anda (misalnya http://localhost:8000) di browser.  
+3. Di jendela chat, masukkan topik belajar dan jumlah minggu yang ingin Anda pelajari (misalnya, "sertifikasi AI-900, 8 minggu").  
+4. Aplikasi akan merespons dengan rencana belajar mingguan, termasuk tautan ke dokumentasi Microsoft Learn yang relevan.
 
 **Variabel Lingkungan yang Diperlukan:**  
 
-Untuk menggunakan Skenario 2 (aplikasi web Chainlit dengan Azure OpenAI), Anda harus mengatur variabel lingkungan berikut di direktori `.env` file in the `python`:
+Untuk menggunakan Skenario 2 (aplikasi web Chainlit dengan Azure OpenAI), Anda harus mengatur variabel lingkungan berikut di file `.env` dalam direktori `python`:  
 
 ```
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=
@@ -57,45 +57,45 @@ AZURE_OPENAI_ENDPOINT=
 AZURE_OPENAI_API_VERSION=
 ```
 
-Isi nilai-nilai tersebut dengan detail resource Azure OpenAI Anda sebelum menjalankan aplikasi.
+Isi nilai-nilai ini dengan detail resource Azure OpenAI Anda sebelum menjalankan aplikasi.
 
 > **Tip:** Anda bisa dengan mudah menerapkan model Anda sendiri menggunakan [Azure AI Foundry](https://ai.azure.com/).
 
-### Skenario 3: Docs Dalam Editor dengan MCP Server di VS Code  
+### Skenario 3: Docs di Editor dengan MCP Server di VS Code  
 
-Daripada berganti tab browser untuk mencari dokumentasi, Anda dapat membawa Microsoft Learn Docs langsung ke VS Code menggunakan server MCP. Ini memungkinkan Anda untuk:  
-- Mencari dan membaca dokumentasi di dalam VS Code tanpa meninggalkan lingkungan coding Anda.  
-- Mereferensikan dokumentasi dan memasukkan tautan langsung ke README atau file kursus Anda.  
-- Menggunakan GitHub Copilot dan MCP secara bersamaan untuk alur kerja dokumentasi berbasis AI yang mulus.
+Alih-alih berpindah tab browser untuk mencari dokumentasi, Anda bisa membawa Microsoft Learn Docs langsung ke VS Code menggunakan server MCP. Ini memungkinkan Anda untuk:  
+- Mencari dan membaca dokumentasi di dalam VS Code tanpa meninggalkan lingkungan coding.  
+- Mengacu pada dokumentasi dan menyisipkan tautan langsung ke README atau file kursus Anda.  
+- Menggunakan GitHub Copilot dan MCP secara bersamaan untuk alur kerja dokumentasi bertenaga AI yang mulus.
 
 **Contoh Kasus Penggunaan:**  
-- Menambahkan tautan referensi ke README dengan cepat saat menulis dokumentasi kursus atau proyek.  
-- Menggunakan Copilot untuk membuat kode dan MCP untuk langsung menemukan serta mengutip dokumentasi yang relevan.  
+- Menambahkan tautan referensi dengan cepat ke README saat menulis dokumentasi kursus atau proyek.  
+- Menggunakan Copilot untuk menghasilkan kode dan MCP untuk langsung menemukan serta mengutip dokumentasi yang relevan.  
 - Tetap fokus di editor dan tingkatkan produktivitas.
 
 > [!IMPORTANT]  
-> Pastikan Anda memiliki file [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) configuration in your workspace (location is `.vscode/mcp.json`).
+> Pastikan Anda memiliki konfigurasi [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) yang valid di workspace Anda (lokasi di `.vscode/mcp.json`).
 
-## Why Chainlit for Scenario 2?
+## Mengapa Chainlit untuk Skenario 2?
 
-Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
+Chainlit adalah framework open-source modern untuk membangun aplikasi web percakapan. Framework ini memudahkan pembuatan antarmuka chat yang terhubung ke layanan backend seperti Microsoft Learn Docs MCP server. Proyek ini menggunakan Chainlit untuk menyediakan cara sederhana dan interaktif dalam membuat rencana belajar personal secara real-time. Dengan memanfaatkan Chainlit, Anda dapat dengan cepat membangun dan menerapkan alat berbasis chat yang meningkatkan produktivitas dan pembelajaran.
 
-## What This Does
+## Fungsi Aplikasi Ini
 
-This app allows users to create a personalized study plan by simply entering a topic and a duration. The app parses your input, queries the Microsoft Learn Docs MCP server for relevant content, and organizes the results into a structured, week-by-week plan. Each week’s recommendations are displayed in the chat, making it easy to follow and track your progress. The integration ensures you always get the latest, most relevant learning resources.
+Aplikasi ini memungkinkan pengguna membuat rencana belajar personal hanya dengan memasukkan topik dan durasi. Aplikasi akan memproses input Anda, mengirim query ke Microsoft Learn Docs MCP server untuk konten yang relevan, dan mengatur hasilnya menjadi rencana mingguan yang terstruktur. Rekomendasi setiap minggu ditampilkan di chat, sehingga mudah diikuti dan dipantau kemajuannya. Integrasi ini memastikan Anda selalu mendapatkan sumber belajar terbaru dan paling relevan.
 
-## Sample Queries
+## Contoh Query
 
-Try these queries in the chat window to see how the app responds:
+Coba beberapa query berikut di jendela chat untuk melihat bagaimana aplikasi merespons:
 
-- `AI-900 certification, 8 weeks`
-- `Learn Azure Functions, 4 weeks`
-- `Azure DevOps, 6 weeks`
-- `Data engineering on Azure, 10 weeks`
-- `Microsoft security fundamentals, 5 weeks`
-- `Power Platform, 7 weeks`
-- `Azure AI services, 12 weeks`
-- `Cloud architecture, 9 weeks`] yang valid.
+- `sertifikasi AI-900, 8 minggu`  
+- `Belajar Azure Functions, 4 minggu`  
+- `Azure DevOps, 6 minggu`  
+- `Data engineering di Azure, 10 minggu`  
+- `Dasar keamanan Microsoft, 5 minggu`  
+- `Power Platform, 7 minggu`  
+- `Layanan Azure AI, 12 minggu`  
+- `Arsitektur cloud, 9 minggu`
 
 Contoh-contoh ini menunjukkan fleksibilitas aplikasi untuk berbagai tujuan belajar dan jangka waktu.
 
@@ -105,4 +105,4 @@ Contoh-contoh ini menunjukkan fleksibilitas aplikasi untuk berbagai tujuan belaj
 - [MCP Documentation](https://github.com/MicrosoftDocs/mcp)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

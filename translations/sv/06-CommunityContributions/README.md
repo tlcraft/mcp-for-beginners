@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-05-20T21:41:47+00:00",
+  "translation_date": "2025-07-14T03:59:56+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "sv"
 }
 -->
-# Community och bidrag
+# Community och Bidrag
 
 ## Översikt
 
-Den här lektionen fokuserar på hur man engagerar sig i MCP-communityn, bidrar till MCP-ekosystemet och följer bästa praxis för samarbetsutveckling. Att förstå hur man deltar i öppna MCP-projekt är avgörande för dem som vill påverka framtiden för denna teknik.
+Den här lektionen fokuserar på hur man engagerar sig i MCP-communityn, bidrar till MCP-ekosystemet och följer bästa praxis för samarbetsutveckling. Att förstå hur man deltar i öppna MCP-projekt är avgörande för dem som vill forma framtiden för denna teknik.
 
 ## Lärandemål
 
-I slutet av denna lektion kommer du att kunna:
-- Förstå strukturen för MCP-communityn och ekosystemet
+Efter den här lektionen kommer du att kunna:
+- Förstå strukturen i MCP-communityn och ekosystemet
 - Delta effektivt i MCP-communityns forum och diskussioner
-- Bidra till MCP open-source-repositorier
+- Bidra till MCP:s open source-repositorier
 - Skapa och dela anpassade MCP-verktyg
 - Följa bästa praxis för MCP-utveckling och samarbete
 
@@ -32,7 +32,7 @@ MCP-ekosystemet består av olika komponenter och deltagare som samarbetar för a
 2. **Tool Developers**: Individer och team som skapar MCP-verktyg  
 3. **Integration Providers**: Företag som integrerar MCP i sina produkter och tjänster  
 4. **End Users**: Utvecklare och organisationer som använder MCP i sina applikationer  
-5. **Contributors**: Communitymedlemmar som bidrar med kod, dokumentation eller andra resurser  
+5. **Contributors**: Community-medlemmar som bidrar med kod, dokumentation eller andra resurser  
 
 ### Community-resurser
 
@@ -47,10 +47,10 @@ MCP-ekosystemet består av olika komponenter och deltagare som samarbetar för a
 
 - Språkspecifika SDK-implementationer  
 - Serverimplementationer och verktygsbibliotek  
-- Blogginlägg och handledningar  
-- Community-forum och diskussioner på sociala medier  
+- Blogginlägg och tutorials  
+- Community-forum och diskussioner i sociala medier  
 
-## Bidra till MCP
+## Att bidra till MCP
 
 ### Typer av bidrag
 
@@ -64,9 +64,9 @@ MCP-ekosystemet välkomnar olika typer av bidrag:
 
 2. **Documentation**:  
    - Förbättra befintlig dokumentation  
-   - Skapa handledningar och guider  
+   - Skapa tutorials och guider  
    - Översätta dokumentation  
-   - Skapa exempel och exempelapplikationer  
+   - Skapa exempel och demoapplikationer  
 
 3. **Community Support**:  
    - Svara på frågor i forum  
@@ -399,7 +399,7 @@ För att göra ett framgångsrikt bidrag till MCP-projekt:
 3. **Skriv tester**: Inkludera enhetstester för dina kodbidrag  
 4. **Dokumentera ditt arbete**: Lägg till tydlig dokumentation för nya funktioner eller ändringar  
 5. **Skicka riktade PRs**: Håll pull requests fokuserade på en enda fråga eller funktion  
-6. **Engagera dig i feedback**: Var mottaglig för återkoppling på dina bidrag  
+6. **Engagera dig i feedback**: Var lyhörd för feedback på dina bidrag  
 
 ### Exempel på arbetsflöde för bidrag
 
@@ -769,23 +769,23 @@ När du delar MCP-verktyg med communityn:
 4. **Säkerhet**:  
    - Använd säkra API-nycklar och autentisering  
    - Validera och sanera indata  
-   - Implementera begränsningar för externa API-anrop  
+   - Implementera rate limiting för externa API-anrop  
 
 5. **Testning**:  
    - Inkludera omfattande testtäckning  
-   - Testa med olika indatatyper och kantfall  
+   - Testa med olika indata och kantfall  
    - Dokumentera testprocedurer  
 
 ## Community-samarbete och bästa praxis
 
-Effektivt samarbete är nyckeln till ett blomstrande MCP-ekosystem.
+Effektivt samarbete är nyckeln till ett framgångsrikt MCP-ekosystem.
 
 ### Kommunikationskanaler
 
 - GitHub Issues och Discussions  
 - Microsoft Tech Community  
 - Discord- och Slack-kanaler  
-- Stack Overflow (tagg: `model-context-protocol` or `mcp`)  
+- Stack Overflow (tagg: `model-context-protocol` eller `mcp`)  
 
 ### Kodgranskningar
 
@@ -794,17 +794,17 @@ När du granskar MCP-bidrag:
 1. **Tydlighet**: Är koden tydlig och väl dokumenterad?  
 2. **Korrekthet**: Fungerar den som förväntat?  
 3. **Konsekvens**: Följer den projektets konventioner?  
-4. **Fullständighet**: Inkluderar den tester och dokumentation?  
+4. **Fullständighet**: Ingår tester och dokumentation?  
 5. **Säkerhet**: Finns det några säkerhetsrisker?  
 
 ### Versionskompatibilitet
 
 När du utvecklar för MCP:
 
-1. **Protokollversionering**: Följ den MCP-protokollversion som ditt verktyg stöder  
+1. **Protokollversionering**: Följ den MCP-protokollversion som ditt verktyg stödjer  
 2. **Klientkompatibilitet**: Tänk på bakåtkompatibilitet  
-3. **Serverkompatibilitet**: Följ riktlinjer för serverimplementationer  
-4. **Brytande förändringar**: Dokumentera tydligt eventuella brytande ändringar  
+3. **Serverkompatibilitet**: Följ riktlinjer för serverimplementation  
+4. **Breaking Changes**: Dokumentera tydligt eventuella brytande förändringar  
 
 ## Exempel på community-projekt: MCP Tool Registry
 
@@ -890,16 +890,16 @@ async def delete_tool(tool_name: str):
 ## Viktiga punkter att ta med sig
 
 - MCP-communityn är mångsidig och välkomnar olika typer av bidrag  
-- Bidrag till MCP kan variera från core-protokollförbättringar till anpassade verktyg  
+- Bidrag till MCP kan sträcka sig från core-protokollförbättringar till anpassade verktyg  
 - Att följa riktlinjer för bidrag ökar chansen att din PR accepteras  
-- Att skapa och dela MCP-verktyg är ett värdefullt sätt att förbättra ekosystemet  
-- Community-samarbete är avgörande för MCP:s tillväxt och utveckling  
+- Att skapa och dela MCP-verktyg är ett värdefullt sätt att stärka ekosystemet  
+- Community-samarbete är avgörande för MCP:s tillväxt och förbättring  
 
 ## Övning
 
-1. Identifiera ett område i MCP-ekosystemet där du kan bidra baserat på dina färdigheter och intressen  
-2. Fork:a MCP-repositoriet och sätt upp en lokal utvecklingsmiljö  
-3. Skapa en liten förbättring, buggfix eller verktyg som skulle gynna communityn  
+1. Identifiera ett område i MCP-ekosystemet där du kan bidra utifrån dina kunskaper och intressen  
+2. Forka MCP-repositoriet och sätt upp en lokal utvecklingsmiljö  
+3. Skapa en liten förbättring, buggfix eller verktyg som kan gynna communityn  
 4. Dokumentera ditt bidrag med lämpliga tester och dokumentation  
 5. Skicka en pull request till rätt repository  
 
@@ -913,4 +913,4 @@ async def delete_tool(tool_name: str):
 Nästa: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, var vänlig observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För viktig information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.

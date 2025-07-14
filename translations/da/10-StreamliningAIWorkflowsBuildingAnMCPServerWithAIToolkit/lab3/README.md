@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-06-10T06:13:02+00:00",
+  "translation_date": "2025-07-14T08:14:58+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
   "language_code": "da"
 }
@@ -17,11 +17,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 🎯 Læringsmål
 
-Når du er færdig med dette lab, vil du kunne:
+Når du er færdig med dette laboratorium, vil du kunne:
 
 - ✅ Oprette tilpassede MCP-servere ved hjælp af AI Toolkit
 - ✅ Konfigurere og bruge den nyeste MCP Python SDK (v1.9.3)
-- ✅ Opsætte og anvende MCP Inspector til fejlfinding
+- ✅ Sætte MCP Inspector op og bruge den til fejlfinding
 - ✅ Fejlsøge MCP-servere i både Agent Builder og Inspector-miljøer
 - ✅ Forstå avancerede arbejdsgange for MCP-serverudvikling
 
@@ -32,12 +32,12 @@ Når du er færdig med dette lab, vil du kunne:
 - Python 3.10+ miljø
 - Node.js og npm til opsætning af Inspector
 
-## 🏗️ Hvad du vil bygge
+## 🏗️ Hvad du skal bygge
 
-I dette lab opretter du en **Weather MCP Server**, som demonstrerer:
-- Tilpasset MCP-serverimplementering
+I dette laboratorium opretter du en **Weather MCP Server**, som demonstrerer:
+- Implementering af en tilpasset MCP-server
 - Integration med AI Toolkit Agent Builder
-- Professionelle fejlsøgningsarbejdsgange
+- Professionelle fejlfinding-arbejdsgange
 - Moderne MCP SDK-brugsmønstre
 
 ---
@@ -45,14 +45,14 @@ I dette lab opretter du en **Weather MCP Server**, som demonstrerer:
 ## 🔧 Oversigt over kernekomponenter
 
 ### 🐍 MCP Python SDK  
-Model Context Protocol Python SDK udgør fundamentet for at bygge tilpassede MCP-servere. Du bruger version 1.9.3 med forbedrede fejlsøgningsfunktioner.
+Model Context Protocol Python SDK udgør fundamentet for at bygge tilpassede MCP-servere. Du vil bruge version 1.9.3 med forbedrede fejlfindingsegenskaber.
 
 ### 🔍 MCP Inspector  
-Et kraftfuldt fejlsøgningsværktøj, som tilbyder:  
-- Realtids overvågning af servere  
+Et kraftfuldt fejlfindingværktøj, der tilbyder:  
+- Overvågning af server i realtid  
 - Visualisering af værktøjsudførelse  
 - Inspektion af netværksanmodninger/-svar  
-- Interaktiv testmiljø
+- Interaktivt testmiljø
 
 ---
 
@@ -69,9 +69,9 @@ Et kraftfuldt fejlsøgningsværktøj, som tilbyder:
 ### Trin 2: Initialiser MCP Server-projekt
 
 1. **Gå til Tools** → **Add Tool** i Agent Builder  
-2. **Vælg "MCP Server"** blandt de tilgængelige muligheder  
+2. **Vælg "MCP Server"** blandt mulighederne  
 3. **Vælg "Create A new MCP Server"**  
-4. **Vælg skabelonen `python-weather`**  
+4. **Vælg `python-weather` skabelonen**  
 5. **Navngiv din server:** `weather_mcp`
 
 ![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.da.png)
@@ -97,33 +97,31 @@ Et kraftfuldt fejlsøgningsværktøj, som tilbyder:
 
 ### Trin 4: Opgrader til nyeste MCP SDK
 
-> **🔍 Hvorfor opgradere?** Vi ønsker at bruge den nyeste MCP SDK (v1.9.3) og Inspector-service (0.14.0) for at få forbedrede funktioner og bedre fejlsøgning.
+> **🔍 Hvorfor opgradere?** Vi ønsker at bruge den nyeste MCP SDK (v1.9.3) og Inspector service (0.14.0) for forbedrede funktioner og bedre fejlfinding.
 
 #### 4a. Opdater Python-afhængigheder
 
-**Rediger `pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
+**Rediger `pyproject.toml`:** opdater [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
 
+#### 4b. Opdater Inspector-konfiguration
 
-#### 4b. Update Inspector Configuration
+**Rediger `inspector/package.json`:** opdater [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
 
-**Edit `inspector/package.json`:** update [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
+#### 4c. Opdater Inspector-afhængigheder
 
-#### 4c. Update Inspector Dependencies
+**Rediger `inspector/package-lock.json`:** opdater [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
 
-**Edit `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
+> **📝 Bemærk:** Denne fil indeholder omfattende afhængighedsdefinitioner. Nedenfor ses den væsentlige struktur – den fulde fil sikrer korrekt afhængighedsløsning.
 
-> **📝 Note:** This file contains extensive dependency definitions. Below is the essential structure - the full content ensures proper dependency resolution.
+> **⚡ Fuld Package Lock:** Den komplette package-lock.json indeholder ca. 3000 linjer afhængighedsdefinitioner. Ovenstående viser nøglestrukturen – brug den medfølgende fil for fuld afhængighedsløsning.
 
+### Trin 5: Konfigurer VS Code fejlfinding
 
-> **⚡ Full Package Lock:** The complete package-lock.json contains ~3000 lines of dependency definitions. The above shows the key structure - use the provided file for complete dependency resolution.
+*Bemærk: Kopiér venligst filen i den angivne sti for at erstatte den tilsvarende lokale fil*
 
-### Step 5: Configure VS Code Debugging
+#### 5a. Opdater launch-konfiguration
 
-*Note: Please copy the file in the specified path to replace the corresponding local file*
-
-#### 5a. Update Launch Configuration
-
-**Edit `.vscode/launch.json`:**
+**Rediger `.vscode/launch.json`:**
 
 ```json
 {
@@ -302,7 +300,6 @@ Et kraftfuldt fejlsøgningsværktøj, som tilbyder:
 }
 ```
 
-
 ---
 
 ## 🚀 Kørsel og test af din MCP-server
@@ -322,12 +319,12 @@ cd inspector
 npm install
 ```
 
-### Trin 7: Fejlsøg med Agent Builder
+### Trin 7: Fejlfinding med Agent Builder
 
 1. **Tryk på F5** eller brug konfigurationen **"Debug in Agent Builder"**  
-2. **Vælg compound-konfigurationen** i debug-panelet  
+2. **Vælg den sammensatte konfiguration** i debug-panelet  
 3. **Vent på at serveren starter** og Agent Builder åbner  
-4. **Test din Weather MCP Server** med naturlige sprogforespørgsler
+4. **Test din weather MCP-server** med naturlige sprogforespørgsler
 
 Indtast prompt som denne
 
@@ -345,7 +342,7 @@ How's the weather like in Seattle
 
 ![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.da.png)
 
-### Trin 8: Fejlsøg med MCP Inspector
+### Trin 8: Fejlfinding med MCP Inspector
 
 1. **Brug konfigurationen "Debug in Inspector"** (Edge eller Chrome)  
 2. **Åbn Inspector-grænsefladen** på `http://localhost:6274`  
@@ -359,44 +356,44 @@ How's the weather like in Seattle
 
 ---
 
-## 🎯 Vigtige læringsresultater
+## 🎯 Centrale læringsresultater
 
-Ved at gennemføre dette lab har du:
+Ved at gennemføre dette laboratorium har du:
 
 - [x] **Oprettet en tilpasset MCP-server** ved hjælp af AI Toolkit-skabeloner  
 - [x] **Opgraderet til den nyeste MCP SDK** (v1.9.3) for forbedret funktionalitet  
-- [x] **Konfigureret professionelle fejlsøgningsarbejdsgange** for både Agent Builder og Inspector  
-- [x] **Opsat MCP Inspector** til interaktiv servertest  
-- [x] **Behersket VS Code fejlsøgningskonfigurationer** til MCP-udvikling
+- [x] **Konfigureret professionelle fejlfinding-arbejdsgange** for både Agent Builder og Inspector  
+- [x] **Sat MCP Inspector op** til interaktiv servertest  
+- [x] **Behersket VS Code fejlfinding-konfigurationer** til MCP-udvikling
 
 ## 🔧 Avancerede funktioner udforsket
 
 | Funktion | Beskrivelse | Anvendelsestilfælde |
 |---------|-------------|---------------------|
 | **MCP Python SDK v1.9.3** | Nyeste protokolimplementering | Moderne serverudvikling |
-| **MCP Inspector 0.14.0** | Interaktivt fejlsøgningsværktøj | Realtids servertest |
-| **VS Code Debugging** | Integreret udviklingsmiljø | Professionel fejlsøgningsworkflow |
+| **MCP Inspector 0.14.0** | Interaktivt fejlfindingværktøj | Servertest i realtid |
+| **VS Code Debugging** | Integreret udviklingsmiljø | Professionel fejlfinding |
 | **Agent Builder Integration** | Direkte AI Toolkit-forbindelse | End-to-end agenttest |
 
 ## 📚 Yderligere ressourcer
 
-- [MCP Python SDK Documentation](https://modelcontextprotocol.io/docs/sdk/python)  
-- [AI Toolkit Extension Guide](https://code.visualstudio.com/docs/ai/ai-toolkit)  
-- [VS Code Debugging Documentation](https://code.visualstudio.com/docs/editor/debugging)  
-- [Model Context Protocol Specification](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [MCP Python SDK Dokumentation](https://modelcontextprotocol.io/docs/sdk/python)  
+- [AI Toolkit Udvidelsesguide](https://code.visualstudio.com/docs/ai/ai-toolkit)  
+- [VS Code Fejlfinding Dokumentation](https://code.visualstudio.com/docs/editor/debugging)  
+- [Model Context Protocol Specifikation](https://modelcontextprotocol.io/docs/concepts/architecture)
 
 ---
 
-**🎉 Tillykke!** Du har nu gennemført Lab 3 og kan oprette, fejlsøge og implementere tilpassede MCP-servere med professionelle udviklingsarbejdsgange.
+**🎉 Tillykke!** Du har nu gennemført Lab 3 og kan oprette, fejlsøge og implementere tilpassede MCP-servere ved hjælp af professionelle udviklingsarbejdsgange.
 
 ### 🔜 Fortsæt til næste modul
 
-Klar til at anvende dine MCP-færdigheder i en reel udviklingsworkflow? Fortsæt til **[Modul 4: Praktisk MCP-udvikling - Custom GitHub Clone Server](../lab4/README.md)**, hvor du vil:  
-- Bygge en produktionsklar MCP-server, der automatiserer GitHub-repositorieoperationer  
-- Implementere GitHub-repositorie-kloning via MCP  
+Klar til at anvende dine MCP-færdigheder i en reel udviklingsarbejdsgang? Fortsæt til **[Modul 4: Praktisk MCP-udvikling - Tilpasset GitHub Clone Server](../lab4/README.md)**, hvor du vil:  
+- Bygge en produktionsklar MCP-server, der automatiserer GitHub repository-operationer  
+- Implementere GitHub repository-kloning via MCP  
 - Integrere tilpassede MCP-servere med VS Code og GitHub Copilot Agent Mode  
 - Teste og implementere tilpassede MCP-servere i produktionsmiljøer  
 - Lære praktisk workflow-automatisering for udviklere
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For vigtig information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

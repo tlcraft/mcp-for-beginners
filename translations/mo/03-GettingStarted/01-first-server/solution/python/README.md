@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-09T22:58:23+00:00",
+  "translation_date": "2025-07-13T17:58:27+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "mo"
 }
@@ -47,11 +47,11 @@ mcp dev server.py
 
 伺服器連線後：
 
-- 試著列出工具並執行 `add`，帶入參數 2 和 4，結果應該會顯示 6。
+- 嘗試列出工具並執行 `add`，帶入參數 2 和 4，結果應該會顯示 6。
 
 - 前往 resources 和 resource template，呼叫 get_greeting，輸入一個名字，你應該會看到帶有該名字的問候語。
 
-### CLI 模式測試
+### 在 CLI 模式下測試
 
 你執行的 inspector 實際上是個 Node.js 應用程式，而 `mcp dev` 是它的包裝器。
 
@@ -92,7 +92,7 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 }
 ```
 
-要呼叫工具，輸入：
+要呼叫工具，請輸入：
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
@@ -113,7 +113,7 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call 
 ```
 
 > ![!TIP]
-> 通常在 CLI 模式下執行 inspector 比在瀏覽器中快很多。
+> 通常在 CLI 模式下執行 inspector 會比在瀏覽器中快很多。
 > 更多關於 inspector 的資訊請參考[這裡](https://github.com/modelcontextprotocol/inspector)。
 
 **免責聲明**：  

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-12T22:21:51+00:00",
+  "translation_date": "2025-07-13T21:16:39+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "de"
 }
@@ -20,7 +20,7 @@ So starten Sie den klassischen HTTP-Streaming-Server und -Client sowie den MCP-S
 ### Voraussetzungen
 
 - Python 3.9 oder neuer
-- Das `mcp` Python-Paket (Installation mit `pip install mcp`)
+- Das Python-Paket `mcp` (Installation mit `pip install mcp`)
 
 ### Installation & Einrichtung
 
@@ -99,7 +99,7 @@ So starten Sie den klassischen HTTP-Streaming-Server und -Client sowie den MCP-S
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```  
-2. Starten Sie den MCP-Server mit dem streamable-http Transport:  
+2. Starten Sie den MCP-Server mit dem streamable-http-Transport:  
    ```pwsh
    python server.py mcp
    ```  
@@ -132,20 +132,20 @@ So starten Sie den klassischen HTTP-Streaming-Server und -Client sowie den MCP-S
 ### Wichtige Implementierungsschritte
 
 1. **Erstellen Sie den MCP-Server mit FastMCP.**  
-2. **Definieren Sie ein Tool, das eine Liste verarbeitet und Benachrichtigungen mit `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+2. **Definieren Sie ein Tool, das eine Liste verarbeitet und Benachrichtigungen mit `ctx.info()` oder `ctx.log()` sendet.**  
+3. **Starten Sie den Server mit `transport="streamable-http"`.**  
+4. **Implementieren Sie einen Client mit einem Nachrichten-Handler, der Benachrichtigungen beim Eintreffen anzeigt.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Code-Durchgang
+- Der Server verwendet asynchrone Funktionen und den MCP-Kontext, um Fortschrittsupdates zu senden.  
+- Der Client implementiert einen asynchronen Nachrichten-Handler, der Benachrichtigungen und das Endergebnis ausgibt.
 
-### Tips & Troubleshooting
+### Tipps & Fehlerbehebung
 
-- Use `async/await` für nicht blockierende Operationen sendet.**  
-- Behandeln Sie Ausnahmen sowohl im Server als auch im Client, um Stabilität zu gewährleisten.  
+- Verwenden Sie `async/await` für nicht blockierende Operationen.  
+- Behandeln Sie Ausnahmen sowohl im Server als auch im Client für mehr Stabilität.  
 - Testen Sie mit mehreren Clients, um Echtzeit-Updates zu beobachten.  
 - Bei Fehlern prüfen Sie Ihre Python-Version und stellen Sie sicher, dass alle Abhängigkeiten installiert sind.
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Verwendung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

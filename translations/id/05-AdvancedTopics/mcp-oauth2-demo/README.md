@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-13T00:32:26+00:00",
+  "translation_date": "2025-07-14T00:42:56+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "id"
 }
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Catatan: Header Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Catatan: Header Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) adalah encoding Base64 dari `mcp-client:secret`.
 
 ### 3. Akses endpoint yang dilindungi menggunakan token
 
@@ -77,7 +77,7 @@ Respon berhasil dengan "Hello from MCP OAuth2 Demo!" menandakan konfigurasi OAut
 
 ---
 
-## Membangun Container
+## Build container
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -96,7 +96,7 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 Ingress FQDN menjadi **issuer** Anda (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`).
+Azure secara otomatis menyediakan sertifikat TLS terpercaya untuk `*.azurecontainerapps.io`.
 
 ---
 
@@ -125,4 +125,4 @@ APIM akan mengambil JWKS dan memvalidasi setiap permintaan.
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

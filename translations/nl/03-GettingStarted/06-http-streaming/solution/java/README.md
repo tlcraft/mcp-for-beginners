@@ -2,21 +2,21 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:48:11+00:00",
+  "translation_date": "2025-07-13T21:12:49+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "nl"
 }
 -->
 # Calculator HTTP Streaming Demo
 
-Dit project toont HTTP streaming met Server-Sent Events (SSE) in Spring Boot WebFlux. Het bestaat uit twee applicaties:
+Dit project demonstreert HTTP streaming met Server-Sent Events (SSE) in Spring Boot WebFlux. Het bestaat uit twee applicaties:
 
-- **Calculator Server**: een reactieve webservice die berekeningen uitvoert en resultaten via SSE streamt  
-- **Calculator Client**: een clientapplicatie die de streaming endpoint consumeert
+- **Calculator Server**: Een reactieve webservice die berekeningen uitvoert en resultaten streamt via SSE
+- **Calculator Client**: Een clientapplicatie die de streaming endpoint consumeert
 
 ## Vereisten
 
-- Java 17 of hoger  
+- Java 17 of hoger
 - Maven 3.6 of hoger
 
 ## Projectstructuur
@@ -37,14 +37,14 @@ java/
 
 ## Hoe het werkt
 
-1. De **Calculator Server** maakt `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. De **Calculator Server** biedt een `/calculate` endpoint dat:
+   - Queryparameters accepteert: `a` (getal), `b` (getal), `op` (bewerking)
+   - Ondersteunde bewerkingen: `add`, `sub`, `mul`, `div`
+   - Server-Sent Events teruggeeft met voortgang en resultaat van de berekening
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5` beschikbaar  
-   - Consumeert de streaming response  
+2. De **Calculator Client** maakt verbinding met de server en:
+   - Stuurt een verzoek om `7 * 5` te berekenen
+   - Consumeert de streaming response
    - Drukt elk event af in de console
 
 ## Applicaties starten
@@ -63,7 +63,7 @@ mvn spring-boot:run
 
 De server start op `http://localhost:8080`
 
-Je ziet output zoals:
+Je zou output moeten zien zoals:
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
@@ -103,17 +103,17 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 Je kunt de server ook testen met een webbrowser of curl:
 
-### Met een webbrowser:  
+### Met een webbrowser:
 Bezoek: `http://localhost:8080/calculate?a=10&b=5&op=add`
 
-### Met curl:  
+### Met curl:
 ```bash
 curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-stream"
 ```
 
 ## Verwachte output
 
-Bij het draaien van de client zie je streaming output zoals:
+Bij het draaien van de client zie je streaming output vergelijkbaar met:
 
 ```
 event:info
@@ -125,32 +125,32 @@ data:35.0
 
 ## Ondersteunde bewerkingen
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - Optellen (a + b)
+- `sub` - Aftrekken (a - b)
+- `mul` - Vermenigvuldigen (a * b)
+- `div` - Delen (a / b, geeft NaN als b = 0)
 
-## API Reference
+## API Referentie
 
 ### GET /calculate
 
 **Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+- `a` (verplicht): Eerste getal (double)
+- `b` (verplicht): Tweede getal (double)
+- `op` (verplicht): Bewerking (`add`, `sub`, `mul`, `div`)
 
 **Response:**
-- Content-Type: `text/event-stream`  
-- Stuurt Server-Sent Events met voortgang en resultaat van de berekening
+- Content-Type: `text/event-stream`
+- Geeft Server-Sent Events terug met voortgang en resultaat van de berekening
 
-**Voorbeeld request:**  
+**Voorbeeldverzoek:**
 ```
 GET /calculate?a=7&b=5&op=mul HTTP/1.1
 Host: localhost:8080
 Accept: text/event-stream
 ```
 
-**Voorbeeld response:**  
+**Voorbeeldresponse:**
 ```
 event: info
 data: Calculating: 7.0 mul 5.0
@@ -163,40 +163,40 @@ data: 35.0
 
 ### Veelvoorkomende problemen
 
-1. **Poort 8080 is al in gebruik**  
-   - Stop andere applicaties die poort 8080 gebruiken  
-   - Of verander de serverpoort in `calculator-server/src/main/resources/application.yml`
+1. **Poort 8080 is al in gebruik**
+   - Stop andere applicaties die poort 8080 gebruiken
+   - Of wijzig de serverpoort in `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Verbinding geweigerd**
+   - Zorg dat de server draait voordat je de client start
+   - Controleer of de server succesvol gestart is op poort 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Problemen met parameter namen**
+   - Dit project bevat Maven compiler configuratie met de `-parameters` vlag
+   - Bij problemen met parameterbinding, zorg dat het project met deze configuratie gebouwd is
 
-### Stopping the Applications
+### Applicaties stoppen
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` als je de server op de achtergrond draait
+- Druk op `Ctrl+C` in de terminal waar de applicatie draait
+- Of gebruik `mvn spring-boot:stop` als het als achtergrondproces draait
 
 ## Technologieën
 
-- **Spring Boot 3.3.1** - Applicatieframework  
-- **Spring WebFlux** - Reactief webframework  
-- **Project Reactor** - Reactive streams bibliotheek  
-- **Netty** - Non-blocking I/O server  
-- **Maven** - Build tool  
+- **Spring Boot 3.3.1** - Applicatieframework
+- **Spring WebFlux** - Reactief webframework
+- **Project Reactor** - Bibliotheek voor reactieve streams
+- **Netty** - Non-blocking I/O server
+- **Maven** - Build tool
 - **Java 17+** - Programmeertaal
 
 ## Volgende stappen
 
-Probeer de code aan te passen om:  
-- Meer wiskundige bewerkingen toe te voegen  
-- Foutafhandeling voor ongeldige bewerkingen te implementeren  
-- Request/response logging toe te voegen  
-- Authenticatie te implementeren  
+Probeer de code aan te passen om:
+- Meer wiskundige bewerkingen toe te voegen
+- Foutafhandeling voor ongeldige bewerkingen te implementeren
+- Request/response logging toe te voegen
+- Authenticatie te implementeren
 - Unit tests toe te voegen
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal dient als de gezaghebbende bron te worden beschouwd. Voor belangrijke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

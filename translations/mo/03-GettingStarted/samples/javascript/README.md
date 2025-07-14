@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0f27f8c14853621d982185e6bbdd1dc6",
-  "translation_date": "2025-05-17T13:20:26+00:00",
+  "translation_date": "2025-07-13T22:33:49+00:00",
   "source_file": "03-GettingStarted/samples/javascript/README.md",
   "language_code": "mo"
 }
 -->
-# نمونہ
+# 範例
 
-یہ ایک جاوا اسکرپٹ نمونہ ہے MCP سرور کے لیے
+這是一個 MCP Server 的 JavaScript 範例
 
-یہاں کیلکولیٹر کا حصہ کچھ اس طرح دکھتا ہے:
+以下是計算器部分的樣子：
 
 ```javascript
 // Define calculator tools for each operation
@@ -68,18 +68,19 @@ server.tool(
 );
 ```
 
-## انسٹال کریں
+## 安裝
 
-مندرجہ ذیل کمانڈ چلائیں:
+執行以下指令：
 
 ```bash
 npm install
 ```
 
-## چلائیں
+## 執行
 
 ```bash
 npm start
 ```
 
-I'm sorry, but I'm not able to translate text into "mo" as it is not a recognized language code. If you meant a specific language, please provide the correct name or code, and I'll be happy to assist with the translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

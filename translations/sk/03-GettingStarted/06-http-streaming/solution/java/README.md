@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:49:47+00:00",
+  "translation_date": "2025-07-13T21:14:36+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "sk"
 }
@@ -12,7 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 Tento projekt demonštruje HTTP streaming pomocou Server-Sent Events (SSE) so Spring Boot WebFlux. Skladá sa z dvoch aplikácií:
 
 - **Calculator Server**: reaktívna webová služba, ktorá vykonáva výpočty a streamuje výsledky pomocou SSE
-- **Calculator Client**: klientská aplikácia, ktorá spotrebúva streamovací endpoint
+- **Calculator Client**: klientská aplikácia, ktorá spotrebúva streamingový endpoint
 
 ## Požiadavky
 
@@ -37,15 +37,15 @@ java/
 
 ## Ako to funguje
 
-1. **Calculator Server** sprístupňuje `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** sprístupňuje endpoint `/calculate`, ktorý:
+   - prijíma query parametre: `a` (číslo), `b` (číslo), `op` (operácia)
+   - podporované operácie: `add`, `sub`, `mul`, `div`
+   - vracia Server-Sent Events s priebehom výpočtu a výsledkom
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
-   - Spotrebúva streamovaciu odpoveď
-   - Vypisuje každú udalosť do konzoly
+2. **Calculator Client** sa pripojí k serveru a:
+   - pošle požiadavku na výpočet `7 * 5`
+   - spracováva streamingovú odpoveď
+   - vypisuje každú udalosť do konzoly
 
 ## Spustenie aplikácií
 
@@ -63,7 +63,7 @@ mvn spring-boot:run
 
 Server sa spustí na `http://localhost:8080`
 
-Mali by ste vidieť výstup ako:
+Mali by ste vidieť výstup podobný tomuto:
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
@@ -79,11 +79,11 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-Klient sa pripojí k serveru, vykoná výpočet a zobrazí streamované výsledky.
+Klient sa pripojí k serveru, vykoná výpočet a zobrazí streamingové výsledky.
 
-### Možnosť 2: Priame použitie Java
+### Možnosť 2: Priame spustenie cez Java
 
-#### 1. Preložte a spustite server:
+#### 1. Kompilácia a spustenie servera:
 
 ```bash
 cd calculator-server
@@ -91,7 +91,7 @@ mvn clean package
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-#### 2. Preložte a spustite klienta:
+#### 2. Kompilácia a spustenie klienta:
 
 ```bash
 cd calculator-client
@@ -101,7 +101,7 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 ## Manuálne testovanie servera
 
-Server môžete otestovať aj cez webový prehliadač alebo curl:
+Server môžete otestovať aj pomocou webového prehliadača alebo curl:
 
 ### Použitie webového prehliadača:
 Navštívte: `http://localhost:8080/calculate?a=10&b=5&op=add`
@@ -113,7 +113,7 @@ curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-st
 
 ## Očakávaný výstup
 
-Pri spustení klienta by ste mali vidieť streamovaný výstup podobný:
+Pri spustení klienta by ste mali vidieť streamingový výstup podobný tomuto:
 
 ```
 event:info
@@ -125,21 +125,21 @@ data:35.0
 
 ## Podporované operácie
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - sčítanie (a + b)
+- `sub` - odčítanie (a - b)
+- `mul` - násobenie (a * b)
+- `div` - delenie (a / b, vráti NaN, ak b = 0)
 
-## API Reference
+## API Referencia
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Parametre:**
+- `a` (povinné): prvé číslo (double)
+- `b` (povinné): druhé číslo (double)
+- `op` (povinné): operácia (`add`, `sub`, `mul`, `div`)
 
-**Response:**
+**Odpoveď:**
 - Content-Type: `text/event-stream`
 - Vracia Server-Sent Events s priebehom výpočtu a výsledkom
 
@@ -163,22 +163,22 @@ data: 35.0
 
 ### Bežné problémy
 
-1. **Port 8080 je už obsadený**
+1. **Port 8080 už je obsadený**
    - Zastavte iné aplikácie používajúce port 8080
    - Alebo zmeňte port servera v `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Pripojenie odmietnuté**
+   - Uistite sa, že server beží pred spustením klienta
+   - Skontrolujte, či sa server úspešne spustil na porte 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Problémy s názvami parametrov**
+   - Projekt obsahuje Maven konfiguráciu kompilátora s príznakom `-parameters`
+   - Ak máte problémy s viazaním parametrov, uistite sa, že projekt je zostavený s touto konfiguráciou
 
-### Stopping the Applications
+### Zastavenie aplikácií
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop`, ak beží ako pozadový proces
+- Stlačte `Ctrl+C` v termináli, kde aplikácia beží
+- Alebo použite `mvn spring-boot:stop`, ak beží na pozadí
 
 ## Technologický stack
 
@@ -186,17 +186,17 @@ data: 35.0
 - **Spring WebFlux** - reaktívny webový framework
 - **Project Reactor** - knižnica pre reaktívne streamy
 - **Netty** - server s neblokujúcim I/O
-- **Maven** - nástroj na build
+- **Maven** - nástroj na buildovanie
 - **Java 17+** - programovací jazyk
 
 ## Ďalšie kroky
 
-Vyskúšajte upraviť kód tak, aby:
+Skúste upraviť kód tak, aby:
 - Pridal viac matematických operácií
 - Zahrnul spracovanie chýb pre neplatné operácie
-- Pridal logovanie požiadaviek a odpovedí
+- Pridal logovanie požiadaviek/odpovedí
 - Implementoval autentifikáciu
 - Pridal jednotkové testy
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, majte prosím na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
-  "translation_date": "2025-07-04T15:19:04+00:00",
+  "translation_date": "2025-07-13T18:08:34+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "fr"
 }
@@ -23,7 +23,7 @@ Comme dit précédemment, prenons le temps d’expliquer le code, et n’hésite
 
 ### -1- Importer les bibliothèques
 
-Importons les bibliothèques dont nous avons besoin, nous aurons besoin de références à un client et au protocole de transport choisi, stdio. stdio est un protocole destiné aux applications qui s’exécutent sur votre machine locale. SSE est un autre protocole de transport que nous présenterons dans les chapitres suivants, mais c’est votre autre option. Pour l’instant, continuons avec stdio.
+Importons les bibliothèques dont nous avons besoin, nous aurons besoin de références à un client et au protocole de transport choisi, stdio. stdio est un protocole destiné aux applications locales. SSE est un autre protocole de transport que nous présenterons dans les chapitres suivants, mais c’est votre autre option. Pour l’instant, continuons avec stdio.
 
 Passons maintenant à l’instanciation.
 
@@ -33,7 +33,7 @@ Nous devons créer une instance du transport ainsi que celle de notre client :
 
 ### -3- Lister les fonctionnalités du serveur
 
-Maintenant, nous avons un client qui peut se connecter lorsque le programme est lancé. Cependant, il ne liste pas encore ses fonctionnalités, faisons-le maintenant :
+Maintenant, nous avons un client qui peut se connecter si le programme est lancé. Cependant, il ne liste pas encore ses fonctionnalités, faisons-le maintenant :
 
 Super, nous avons maintenant récupéré toutes les fonctionnalités. La question est : quand les utilisons-nous ? Ce client est assez simple, dans le sens où nous devons explicitement appeler les fonctionnalités quand nous en avons besoin. Dans le chapitre suivant, nous créerons un client plus avancé qui aura accès à son propre grand modèle de langage, LLM. Pour l’instant, voyons comment invoquer les fonctionnalités sur le serveur :
 
@@ -75,7 +75,7 @@ Les points clés de ce chapitre concernant les clients sont les suivants :
 - [Calculatrice TypeScript](../samples/typescript/README.md)
 - [Calculatrice Python](../../../../03-GettingStarted/samples/python)
 
-## Et ensuite
+## Et après ?
 
 - Suivant : [Créer un client avec un LLM](../03-llm-client/README.md)
 

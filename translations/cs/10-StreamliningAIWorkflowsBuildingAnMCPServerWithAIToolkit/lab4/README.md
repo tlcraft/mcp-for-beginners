@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f83bc722dc758efffd68667d6a1db470",
-  "translation_date": "2025-06-10T06:56:14+00:00",
+  "translation_date": "2025-07-14T08:46:43+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/README.md",
   "language_code": "cs"
 }
 -->
-# 🐙 Module 4: Práctico Desarrollo MCP - Servidor Personalizado de Clonación GitHub
+# 🐙 Modul 4: Praktický vývoj MCP – Vlastní server pro klonování GitHub repozitářů
 
 ![Duration](https://img.shields.io/badge/Duration-30_minutes-blue?style=flat-square)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=flat-square)
@@ -15,76 +15,76 @@ CO_OP_TRANSLATOR_METADATA:
 ![VS Code](https://img.shields.io/badge/VS%20Code-Integration-blue?style=flat-square&logo=visualstudiocode)
 ![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Agent%20Mode-green?style=flat-square&logo=github)
 
-> **⚡ Inicio Rápido:** ¡Construye un servidor MCP listo para producción que automatiza la clonación de repositorios GitHub y la integración con VS Code en solo 30 minutos!
+> **⚡ Rychlý start:** Vytvořte produkčně připravený MCP server, který automatizuje klonování GitHub repozitářů a integraci s VS Code během pouhých 30 minut!
 
-## 🎯 Objetivos de Aprendizaje
+## 🎯 Cíle učení
 
-Al finalizar este laboratorio, podrás:
+Na konci tohoto labu budete umět:
 
-- ✅ Crear un servidor MCP personalizado para flujos de trabajo de desarrollo reales  
-- ✅ Implementar la funcionalidad de clonación de repositorios GitHub vía MCP  
-- ✅ Integrar servidores MCP personalizados con VS Code y Agent Builder  
-- ✅ Usar GitHub Copilot Agent Mode con herramientas MCP personalizadas  
-- ✅ Probar y desplegar servidores MCP personalizados en entornos productivos  
+- ✅ Vytvořit vlastní MCP server pro reálné vývojové workflow
+- ✅ Implementovat funkci klonování GitHub repozitářů přes MCP
+- ✅ Integrovat vlastní MCP servery s VS Code a Agent Builderem
+- ✅ Používat GitHub Copilot Agent Mode s vlastními MCP nástroji
+- ✅ Testovat a nasazovat vlastní MCP servery v produkčním prostředí
 
-## 📋 Requisitos Previos
+## 📋 Požadavky
 
-- Haber completado los laboratorios 1-3 (fundamentos y desarrollo avanzado de MCP)  
-- Suscripción a GitHub Copilot ([registro gratuito disponible](https://github.com/github-copilot/signup))  
-- VS Code con las extensiones AI Toolkit y GitHub Copilot instaladas  
-- CLI de Git instalado y configurado  
+- Dokončení labů 1–3 (základy MCP a pokročilý vývoj)
+- Předplatné GitHub Copilot ([dostupná bezplatná registrace](https://github.com/github-copilot/signup))
+- VS Code s rozšířeními AI Toolkit a GitHub Copilot
+- Nainstalovaný a nakonfigurovaný Git CLI
 
-## 🏗️ Resumen del Proyecto
+## 🏗️ Přehled projektu
 
-### **Desafío Real de Desarrollo**  
-Como desarrolladores, frecuentemente usamos GitHub para clonar repositorios y abrirlos en VS Code o VS Code Insiders. Este proceso manual implica:  
-1. Abrir terminal o consola  
-2. Navegar al directorio deseado  
-3. Ejecutar el comando `git clone`  
-4. Abrir VS Code en el directorio clonado  
+### **Reálná výzva ve vývoji**
+Jako vývojáři často používáme GitHub k naklonování repozitářů a jejich otevření ve VS Code nebo VS Code Insiders. Tento manuální proces zahrnuje:
+1. Otevření terminálu/příkazového řádku
+2. Navigaci do požadovaného adresáře
+3. Spuštění příkazu `git clone`
+4. Otevření VS Code v naklonovaném adresáři
 
-**¡Nuestra solución MCP simplifica todo esto en un solo comando inteligente!**
+**Naše MCP řešení to zjednodušuje na jediný inteligentní příkaz!**
 
-### **Qué Construirás**  
-Un **Servidor MCP de Clonación GitHub** (`git_mcp_server`) que ofrece:
+### **Co vytvoříte**
+**GitHub Clone MCP Server** (`git_mcp_server`), který nabízí:
 
-| Característica | Descripción | Beneficio |
-|----------------|-------------|-----------|
-| 🔄 **Clonación Inteligente de Repositorios** | Clona repositorios GitHub con validación | Verificación automática de errores |
-| 📁 **Gestión Inteligente de Directorios** | Verifica y crea directorios de forma segura | Evita sobrescritura accidental |
-| 🚀 **Integración Multiplataforma con VS Code** | Abre proyectos en VS Code/Insiders | Transición fluida en el flujo de trabajo |
-| 🛡️ **Manejo Robusto de Errores** | Gestiona problemas de red, permisos y rutas | Fiabilidad lista para producción |
+| Funkce | Popis | Výhoda |
+|---------|-------------|---------|
+| 🔄 **Chytré klonování repozitářů** | Klonování GitHub repozitářů s validací | Automatická kontrola chyb |
+| 📁 **Inteligentní správa adresářů** | Bezpečná kontrola a vytváření adresářů | Zabraňuje přepsání dat |
+| 🚀 **Multiplatformní integrace VS Code** | Otevírání projektů ve VS Code/Insiders | Plynulý přechod ve workflow |
+| 🛡️ **Robustní zpracování chyb** | Řešení problémů sítě, oprávnění a cest | Spolehlivost pro produkci |
 
 ---
 
-## 📖 Implementación Paso a Paso
+## 📖 Krok za krokem – implementace
 
-### Paso 1: Crear Agente GitHub en Agent Builder
+### Krok 1: Vytvoření GitHub agenta v Agent Builderu
 
-1. **Abre Agent Builder** desde la extensión AI Toolkit  
-2. **Crea un nuevo agente** con la siguiente configuración:  
+1. **Spusťte Agent Builder** přes rozšíření AI Toolkit
+2. **Vytvořte nového agenta** s následující konfigurací:
    ```
    Agent Name: GitHubAgent
    ```
 
-3. **Inicializa el servidor MCP personalizado:**  
-   - Ve a **Tools** → **Add Tool** → **MCP Server**  
-   - Selecciona **"Create A new MCP Server"**  
-   - Escoge la **plantilla Python** para máxima flexibilidad  
-   - **Nombre del servidor:** `git_mcp_server`  
+3. **Inicializujte vlastní MCP server:**
+   - Přejděte do **Nástroje** → **Přidat nástroj** → **MCP Server**
+   - Vyberte **"Vytvořit nový MCP Server"**
+   - Zvolte **Python šablonu** pro maximální flexibilitu
+   - **Název serveru:** `git_mcp_server`
 
-### Paso 2: Configurar GitHub Copilot Agent Mode
+### Krok 2: Nastavení GitHub Copilot Agent Mode
 
-1. **Abre GitHub Copilot** en VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")  
-2. **Selecciona el modelo Agent** en la interfaz de Copilot  
-3. **Elige el modelo Claude 3.7** para capacidades avanzadas de razonamiento  
-4. **Activa la integración MCP** para acceso a herramientas  
+1. **Otevřete GitHub Copilot** ve VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
+2. **Vyberte Agent Model** v rozhraní Copilota
+3. **Zvolte model Claude 3.7** pro lepší schopnosti uvažování
+4. **Povolte integraci MCP** pro přístup k nástrojům
 
-> **💡 Consejo Profesional:** Claude 3.7 ofrece una comprensión superior de flujos de trabajo de desarrollo y patrones de manejo de errores.
+> **💡 Tip:** Claude 3.7 nabízí lepší porozumění vývojovým workflow a vzorcům zpracování chyb.
 
-### Paso 3: Implementar Funcionalidad Principal del Servidor MCP
+### Krok 3: Implementace základní funkčnosti MCP serveru
 
-**Usa el siguiente prompt detallado con GitHub Copilot Agent Mode:**  
+**Použijte následující podrobný prompt s GitHub Copilot Agent Mode:**
 
 ```
 Create two MCP tools with the following comprehensive requirements:
@@ -117,19 +117,19 @@ Additional Requirements:
 - Include comprehensive error handling
 ```
 
-### Paso 4: Probar tu Servidor MCP
+### Krok 4: Testování vašeho MCP serveru
 
-#### 4a. Prueba en Agent Builder
+#### 4a. Testování v Agent Builderu
 
-1. **Inicia la configuración de depuración** en Agent Builder  
-2. **Configura tu agente con este prompt del sistema:**  
+1. **Spusťte debug konfiguraci** v Agent Builderu
+2. **Nakonfigurujte agenta s tímto systémovým promptem:**
 
 ```
 SYSTEM_PROMPT:
 You are my intelligent coding repository assistant. You help developers efficiently clone GitHub repositories and set up their development environment. Always provide clear feedback about operations and handle errors gracefully.
 ```
 
-3. **Prueba con escenarios realistas de usuario:**  
+3. **Testujte realistické uživatelské scénáře:**
 
 ```
 USER_PROMPT EXAMPLES:
@@ -141,68 +141,71 @@ Scenario : Basic Clone and Open
 
 ![Agent Builder Testing](../../../../translated_images/DebugAgent.81d152370c503241b3b39a251b8966f7f739286df19dd57f9147f6402214a012.cs.png)
 
-**Resultados Esperados:**  
-- ✅ Clonación exitosa con confirmación de ruta  
-- ✅ Lanzamiento automático de VS Code  
-- ✅ Mensajes claros de error en escenarios inválidos  
-- ✅ Manejo adecuado de casos límite  
+**Očekávané výsledky:**
+- ✅ Úspěšné klonování s potvrzením cesty
+- ✅ Automatické spuštění VS Code
+- ✅ Jasné chybové zprávy pro neplatné scénáře
+- ✅ Správné zpracování okrajových případů
 
-#### 4b. Prueba en MCP Inspector
+#### 4b. Testování v MCP Inspector
+
 
 ![MCP Inspector Testing](../../../../translated_images/DebugInspector.eb5c95f94c69a8ba36944941b9a3588309a3a2fae101ace470ee09bde41d1667.cs.png)
 
 ---
 
-**🎉 ¡Felicidades!** Has creado exitosamente un servidor MCP práctico y listo para producción que resuelve desafíos reales en flujos de trabajo de desarrollo. Tu servidor personalizado de clonación GitHub demuestra el poder de MCP para automatizar y mejorar la productividad de desarrolladores.
 
-### 🏆 Logros Desbloqueados:  
-- ✅ **Desarrollador MCP** - Creaste un servidor MCP personalizado  
-- ✅ **Automatizador de Flujos** - Simplificaste procesos de desarrollo  
-- ✅ **Experto en Integración** - Conectaste múltiples herramientas de desarrollo  
-- ✅ **Listo para Producción** - Construiste soluciones desplegables  
+
+**🎉 Gratulujeme!** Úspěšně jste vytvořili praktický, produkčně připravený MCP server, který řeší skutečné výzvy ve vývojových workflow. Váš vlastní GitHub clone server ukazuje sílu MCP pro automatizaci a zvýšení produktivity vývojářů.
+
+### 🏆 Ocenění:
+- ✅ **MCP Developer** – Vytvořil vlastní MCP server
+- ✅ **Workflow Automator** – Zjednodušil vývojové procesy  
+- ✅ **Integration Expert** – Propojil více vývojových nástrojů
+- ✅ **Production Ready** – Vytvořil řešení připravená k nasazení
 
 ---
 
-## 🎓 Finalización del Taller: Tu Trayectoria con Model Context Protocol
+## 🎓 Dokončení workshopu: Vaše cesta s Model Context Protocol
 
-**Estimado Participante del Taller,**
+**Vážený účastníku workshopu,**
 
-¡Felicitaciones por completar los cuatro módulos del taller Model Context Protocol! Has avanzado desde comprender conceptos básicos del AI Toolkit hasta construir servidores MCP listos para producción que solucionan desafíos reales de desarrollo.
+gratulujeme k dokončení všech čtyř modulů workshopu Model Context Protocol! Ušli jste dlouhou cestu od pochopení základů AI Toolkit až po tvorbu produkčně připravených MCP serverů, které řeší reálné vývojové výzvy.
 
-### 🚀 Recapitulación de tu Camino de Aprendizaje:
+### 🚀 Přehled vaší cesty:
 
-**[Módulo 1](../lab1/README.md)**: Comenzaste explorando fundamentos del AI Toolkit, pruebas de modelos y creación de tu primer agente AI.
+**[Modul 1](../lab1/README.md)**: Začali jste průzkumem základů AI Toolkit, testováním modelů a tvorbou prvního AI agenta.
 
-**[Módulo 2](../lab2/README.md)**: Aprendiste la arquitectura MCP, integraste Playwright MCP y creaste tu primer agente de automatización de navegador.
+**[Modul 2](../lab2/README.md)**: Naučili jste se architekturu MCP, integrovali Playwright MCP a vytvořili prvního agenta pro automatizaci prohlížeče.
 
-**[Módulo 3](../lab3/README.md)**: Avanzaste en desarrollo de servidores MCP personalizados con el servidor Weather MCP y dominaste herramientas de depuración.
+**[Modul 3](../lab3/README.md)**: Pokročili jste ve vývoji vlastních MCP serverů s Weather MCP serverem a zvládli ladicí nástroje.
 
-**[Módulo 4](../lab4/README.md)**: Ahora aplicaste todo para crear una herramienta práctica de automatización de flujo de trabajo de repositorios GitHub.
+**[Modul 4](../lab4/README.md)**: Nyní jste vše aplikovali při tvorbě praktického nástroje pro automatizaci workflow s GitHub repozitáři.
 
-### 🌟 Lo que Dominas:
+### 🌟 Co jste zvládli:
 
-- ✅ **Ecosistema AI Toolkit**: Modelos, agentes y patrones de integración  
-- ✅ **Arquitectura MCP**: Diseño cliente-servidor, protocolos de transporte y seguridad  
-- ✅ **Herramientas para Desarrolladores**: Desde Playground hasta Inspector y despliegue en producción  
-- ✅ **Desarrollo Personalizado**: Construcción, prueba y despliegue de servidores MCP propios  
-- ✅ **Aplicaciones Prácticas**: Resolución de desafíos reales con IA  
+- ✅ **Ekosystém AI Toolkit**: Modely, agenti a integrační vzory
+- ✅ **Architektura MCP**: Klient-server design, transportní protokoly a bezpečnost
+- ✅ **Vývojářské nástroje**: Od Playground přes Inspector až po produkční nasazení
+- ✅ **Vlastní vývoj**: Tvorba, testování a nasazení vlastních MCP serverů
+- ✅ **Praktické aplikace**: Řešení reálných workflow výzev pomocí AI
 
-### 🔮 Tus Próximos Pasos:
+### 🔮 Vaše další kroky:
 
-1. **Construye tu propio servidor MCP**: Aplica estas habilidades para automatizar tus flujos de trabajo únicos  
-2. **Únete a la comunidad MCP**: Comparte tus creaciones y aprende de otros  
-3. **Explora integraciones avanzadas**: Conecta servidores MCP con sistemas empresariales  
-4. **Contribuye a código abierto**: Ayuda a mejorar las herramientas y documentación MCP  
+1. **Vytvořte si vlastní MCP server**: Aplikujte získané dovednosti k automatizaci svých unikátních workflow
+2. **Připojte se ke komunitě MCP**: Sdílejte své projekty a učte se od ostatních
+3. **Prozkoumejte pokročilou integraci**: Propojte MCP servery s podnikovými systémy
+4. **Přispívejte do open source**: Pomozte zlepšovat MCP nástroje a dokumentaci
 
-Recuerda, este taller es solo el comienzo. El ecosistema Model Context Protocol está evolucionando rápidamente, y ahora estás preparado para estar a la vanguardia en herramientas de desarrollo impulsadas por IA.
+Pamatujte, že tento workshop je jen začátek. Ekosystém Model Context Protocol se rychle vyvíjí a vy jste nyní vybaveni být v čele AI-poháněných vývojářských nástrojů.
 
-**Gracias por tu participación y dedicación al aprendizaje!**
+**Děkujeme za vaši účast a odhodlání učit se!**
 
-Esperamos que este taller haya inspirado ideas que transformarán cómo construyes e interactúas con herramientas AI en tu camino de desarrollo.
+Doufáme, že vám workshop přinesl inspiraci, která změní způsob, jakým vytváříte a pracujete s AI nástroji ve svém vývojářském životě.
 
-**¡Feliz codificación!**
+**Přejeme hodně úspěchů při kódování!**
 
 ---
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

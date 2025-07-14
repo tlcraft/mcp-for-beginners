@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:34:25+00:00",
+  "translation_date": "2025-07-13T17:19:18+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "hu"
 }
@@ -17,20 +17,20 @@ Ez a szakasz több leckéből áll:
 
 - **3 Ügyfél LLM-mel**, egy még jobb módja az ügyfél írásának, ha hozzáadsz egy LLM-et, így "tárgyalhat" a szervereddel arról, mit tegyen, [a leckéhez](03-llm-client/README.md)
 
-- **4 Szerver használata GitHub Copilot Agent módban Visual Studio Code-ban**. Itt azt nézzük meg, hogyan futtathatjuk az MCP szerverünket a Visual Studio Code-ból, [a leckéhez](04-vscode/README.md)
+- **4 Szerver használata GitHub Copilot Agent módban Visual Studio Code-ban**. Itt azt nézzük meg, hogyan futtathatjuk MCP szerverünket a Visual Studio Code-on belül, [a leckéhez](04-vscode/README.md)
 
 - **5 Fogyasztás SSE-ből (Server Sent Events)** Az SSE egy szabvány a szerver-ügyfél streaminghez, amely lehetővé teszi a szerverek számára, hogy valós idejű frissítéseket küldjenek az ügyfeleknek HTTP-n keresztül [a leckéhez](05-sse-server/README.md)
 
-- **6 HTTP streaming MCP-vel (Streamable HTTP)**. Ismerd meg a modern HTTP streaminget, a folyamatjelző értesítéseket, és hogyan valósíthatsz meg skálázható, valós idejű MCP szervereket és ügyfeleket Streamable HTTP segítségével. [a leckéhez](06-http-streaming/README.md)
+- **6 HTTP streaming MCP-vel (Streamable HTTP)**. Ismerd meg a modern HTTP streaminget, a folyamatjelző értesítéseket, és hogyan valósíthatók meg skálázható, valós idejű MCP szerverek és ügyfelek Streamable HTTP használatával. [a leckéhez](06-http-streaming/README.md)
 
-- **7 AI Toolkit használata VSCode-hoz** az MCP ügyfelek és szerverek fogyasztásához és teszteléséhez [a leckéhez](07-aitk/README.md)
+- **7 AI Toolkit használata VSCode-hoz** MCP ügyfelek és szerverek fogyasztásához és teszteléséhez [a leckéhez](07-aitk/README.md)
 
-- **8 Tesztelés**. Itt különösen arra fókuszálunk, hogyan tesztelhetjük a szerverünket és ügyfelünket különböző módokon, [a leckéhez](08-testing/README.md)
+- **8 Tesztelés**. Itt különösen arra fókuszálunk, hogyan tesztelhetjük szerverünket és ügyfelünket különböző módokon, [a leckéhez](08-testing/README.md)
 
 - **9 Telepítés**. Ez a fejezet a MCP megoldások különböző telepítési módjait vizsgálja, [a leckéhez](09-deployment/README.md)
 
 
-A Model Context Protocol (MCP) egy nyílt protokoll, amely szabványosítja, hogyan biztosítanak az alkalmazások kontextust az LLM-ek számára. Gondolj az MCP-re úgy, mint egy USB-C portra az AI alkalmazások számára – egy szabványosított módot ad arra, hogy az AI modelleket különböző adatforrásokhoz és eszközökhöz csatlakoztassuk.
+A Model Context Protocol (MCP) egy nyílt protokoll, amely szabványosítja, hogyan biztosítanak az alkalmazások kontextust az LLM-ek számára. Gondolj az MCP-re úgy, mint egy USB-C portra az AI alkalmazások számára – egy szabványosított módot ad arra, hogy az AI modellek különböző adatforrásokhoz és eszközökhöz kapcsolódjanak.
 
 ## Tanulási célok
 
@@ -45,7 +45,7 @@ A lecke végére képes leszel:
 
 ## MCP környezet beállítása
 
-Mielőtt elkezdenéd az MCP-vel való munkát, fontos előkészíteni a fejlesztői környezetet és megérteni az alapvető munkafolyamatot. Ez a szakasz végigvezet az első beállítási lépéseken, hogy zökkenőmentesen indulhass az MCP-vel.
+Mielőtt elkezdenéd az MCP-vel való munkát, fontos előkészíteni a fejlesztői környezetet és megérteni az alapvető munkafolyamatot. Ez a rész végigvezet az első beállítási lépéseken, hogy zökkenőmentesen indulhass az MCP-vel.
 
 ### Előfeltételek
 
@@ -62,19 +62,19 @@ Mielőtt belevágnál az MCP fejlesztésbe, győződj meg róla, hogy rendelkeze
 A következő fejezetekben Python, TypeScript, Java és .NET megoldásokat fogsz látni. Íme az összes hivatalosan támogatott SDK.
 
 Az MCP hivatalos SDK-kat biztosít több nyelvhez:
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) – Microsoft együttműködésével karbantartva
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) – Spring AI együttműködésével karbantartva
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) – A hivatalos TypeScript implementáció
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) – A hivatalos Python implementáció
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) – A hivatalos Kotlin implementáció
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) – Loopwork AI együttműködésével karbantartva
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) – A hivatalos Rust implementáció
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Microsoft együttműködésével karbantartva
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Spring AI együttműködésével karbantartva
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Hivatalos TypeScript implementáció
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Hivatalos Python implementáció
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Hivatalos Kotlin implementáció
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Loopwork AI együttműködésével karbantartva
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Hivatalos Rust implementáció
 
 ## Főbb tanulságok
 
 - Az MCP fejlesztői környezet beállítása egyszerű a nyelvspecifikus SDK-kkal
 - MCP szerverek építése eszközök létrehozását és regisztrálását jelenti egyértelmű sémákkal
-- MCP ügyfelek kapcsolódnak a szerverekhez és modellekhez, hogy kihasználják a kibővített képességeket
+- MCP ügyfelek kapcsolódnak szerverekhez és modellekhez, hogy kihasználják a kibővített képességeket
 - A tesztelés és hibakeresés elengedhetetlen a megbízható MCP implementációkhoz
 - A telepítési lehetőségek a helyi fejlesztéstől a felhőalapú megoldásokig terjednek
 
@@ -99,4 +99,4 @@ Van egy mintakészletünk, amely kiegészíti az összes fejezetben található 
 Következő: [Az első MCP szerver létrehozása](01-first-server/README.md)
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

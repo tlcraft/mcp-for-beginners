@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
-  "translation_date": "2025-07-10T16:08:00+00:00",
+  "translation_date": "2025-07-13T20:36:48+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "br"
 }
@@ -49,7 +49,7 @@ Compreender os conceitos fundamentais e as motivações por trás do streaming �
 
 Aqui está o que você precisa saber sobre streaming em alto nível:
 
-- Os dados são entregues progressivamente, não todos de uma vez.
+- Os dados são entregues progressivamente, não de uma vez só.
 - O cliente pode processar os dados conforme eles chegam.
 - Reduz a latência percebida e melhora a experiência do usuário.
 
@@ -106,7 +106,7 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-Este exemplo demonstra um servidor enviando uma série de mensagens para o cliente conforme elas ficam disponíveis, em vez de esperar que todas as mensagens estejam prontas.
+Este exemplo demonstra um servidor enviando uma série de mensagens para o cliente conforme elas ficam disponíveis, em vez de esperar que todas estejam prontas.
 
 **Como funciona:**
 - O servidor envia cada mensagem assim que está pronta.
@@ -219,7 +219,7 @@ Além disso, aqui estão algumas diferenças chave:
 
 - **Implementação do Cliente:**
    - HTTP clássico: Cliente simples que processa respostas em streaming
-   - MCP: Cliente mais sofisticado com handler de mensagens para processar diferentes tipos de mensagens
+   - MCP: Cliente mais sofisticado com handler para processar diferentes tipos de mensagens
 
 - **Atualizações de Progresso:**
    - HTTP clássico: Progresso faz parte do stream principal da resposta
@@ -233,7 +233,7 @@ Algumas recomendações para escolher entre implementar streaming clássico (com
 
 - **Para aplicações complexas e interativas:** Streaming MCP oferece uma abordagem mais estruturada com metadados ricos e separação entre notificações e resultados finais.
 
-- **Para aplicações de IA:** O sistema de notificações do MCP é especialmente útil para tarefas de IA longas onde se deseja manter os usuários informados sobre o progresso.
+- **Para aplicações de IA:** O sistema de notificações do MCP é especialmente útil para tarefas de IA longas onde se deseja manter o usuário informado sobre o progresso.
 
 ## Streaming no MCP
 
@@ -241,7 +241,7 @@ Ok, você já viu algumas recomendações e comparações até aqui sobre a dife
 
 Entender como o streaming funciona dentro do framework MCP é essencial para construir aplicações responsivas que fornecem feedback em tempo real aos usuários durante operações longas.
 
-No MCP, streaming não é sobre enviar a resposta principal em pedaços, mas sim sobre enviar **notificações** para o cliente enquanto uma ferramenta está processando uma requisição. Essas notificações podem incluir atualizações de progresso, logs ou outros eventos.
+No MCP, streaming não é sobre enviar a resposta principal em pedaços, mas sim sobre enviar **notificações** para o cliente enquanto uma ferramenta processa uma requisição. Essas notificações podem incluir atualizações de progresso, logs ou outros eventos.
 
 ### Como funciona
 
@@ -253,7 +253,7 @@ Dissemos "Notificação", o que isso significa no contexto do MCP?
 
 Uma notificação é uma mensagem enviada do servidor para o cliente para informar sobre progresso, status ou outros eventos durante uma operação longa. Notificações melhoram a transparência e a experiência do usuário.
 
-Por exemplo, um cliente deve enviar uma notificação assim que o handshake inicial com o servidor for realizado.
+Por exemplo, um cliente deve enviar uma notificação assim que o handshake inicial com o servidor for feito.
 
 Uma notificação tem a seguinte aparência como mensagem JSON:
 
@@ -384,7 +384,7 @@ async with ClientSession(
 ) as session:
 ```
 
-No código acima, a função `message_handler` verifica se a mensagem recebida é uma notificação. Se for, imprime a notificação; caso contrário, processa como uma mensagem normal do servidor. Note também como o `ClientSession` é inicializado com o `message_handler` para lidar com notificações recebidas.
+No código acima, a função `message_handler` verifica se a mensagem recebida é uma notificação. Se for, imprime a notificação; caso contrário, processa como uma mensagem normal do servidor. Note também como a `ClientSession` é inicializada com o `message_handler` para lidar com notificações recebidas.
 
 </details>
 
@@ -418,7 +418,7 @@ await client.InitializeAsync();
 // Now the client will process notifications through the MessageHandler
 ```
 
-Neste exemplo em .NET, a função `MessageHandler` verifica se a mensagem recebida é uma notificação. Se for, imprime a notificação; caso contrário, processa como uma mensagem normal do servidor. O `ClientSession` é inicializado com o handler de mensagens via `ClientSessionOptions`.
+Neste exemplo .NET, a função `MessageHandler` verifica se a mensagem recebida é uma notificação. Se for, imprime a notificação; caso contrário, processa como uma mensagem normal do servidor. A `ClientSession` é inicializada com o handler de mensagens via `ClientSessionOptions`.
 
 </details>
 
@@ -454,9 +454,9 @@ Notificações de progresso são essenciais por vários motivos:
 Veja como implementar notificações de progresso no MCP:
 
 - **No servidor:** Use `ctx.info()` ou `ctx.log()` para enviar notificações conforme cada item é processado. Isso envia uma mensagem ao cliente antes do resultado principal estar pronto.
-- **No cliente:** Implemente um handler de mensagens que escute e exiba notificações conforme elas chegam. Esse handler diferencia notificações do resultado final.
+- **No cliente:** Implemente um handler de mensagens que escute e exiba notificações conforme chegam. Esse handler diferencia notificações do resultado final.
 
-**Exemplo de servidor:**
+**Exemplo de Servidor:**
 
 <summary>Python</summary>
 
@@ -533,14 +533,14 @@ Veja como migrar de SSE para Streamable HTTP em suas aplicações MCP:
 
 ### Mantendo a Compatibilidade
 
-Recomenda-se manter a compatibilidade com clientes SSE existentes durante o processo de migração. Algumas estratégias são:
+Recomenda-se manter a compatibilidade com clientes SSE existentes durante o processo de migração. Algumas estratégias:
 
 - Você pode suportar ambos SSE e Streamable HTTP executando os dois transportes em endpoints diferentes.
 - Migre os clientes gradualmente para o novo transporte.
 
 ### Desafios
 
-Certifique-se de lidar com os seguintes desafios durante a migração:
+Garanta que você lide com os seguintes desafios durante a migração:
 
 - Garantir que todos os clientes sejam atualizados
 - Lidar com diferenças na entrega das notificações
@@ -580,7 +580,7 @@ Você enfrentará alguns desafios ao implementar segurança em servidores de str
 
 ### Exercício: Construa Seu Próprio App MCP de Streaming
 
-**Cenário:**  
+**Cenário:**
 Construa um servidor e cliente MCP onde o servidor processa uma lista de itens (ex.: arquivos ou documentos) e envia uma notificação para cada item processado. O cliente deve exibir cada notificação assim que ela chegar.
 
 **Passos:**

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T15:20:56+00:00",
+  "translation_date": "2025-07-13T21:56:15+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "fr"
 }
@@ -15,7 +15,7 @@ Avant de commencer à tester votre serveur MCP, il est important de bien compren
 
 Cette leçon explique comment choisir la bonne méthode de test et l’outil de test le plus efficace.
 
-## Objectifs d'apprentissage
+## Objectifs d’apprentissage
 
 À la fin de cette leçon, vous serez capable de :
 
@@ -27,12 +27,12 @@ Cette leçon explique comment choisir la bonne méthode de test et l’outil de 
 MCP fournit des outils pour vous aider à tester et déboguer vos serveurs :
 
 - **MCP Inspector** : Un outil en ligne de commande qui peut être utilisé à la fois en mode CLI et en mode visuel.
-- **Tests manuels** : Vous pouvez utiliser un outil comme curl pour exécuter des requêtes web, mais tout outil capable d’exécuter des requêtes HTTP convient.
+- **Tests manuels** : Vous pouvez utiliser un outil comme curl pour effectuer des requêtes web, mais tout outil capable d’exécuter des requêtes HTTP convient.
 - **Tests unitaires** : Il est possible d’utiliser votre framework de test préféré pour tester les fonctionnalités du serveur et du client.
 
 ### Utilisation de MCP Inspector
 
-Nous avons déjà décrit l’utilisation de cet outil dans les leçons précédentes, mais parlons-en brièvement ici. C’est un outil développé en Node.js que vous pouvez utiliser en appelant l’exécutable `npx`, qui téléchargera et installera temporairement l’outil, puis le supprimera une fois votre requête terminée.
+Nous avons déjà décrit l’utilisation de cet outil dans les leçons précédentes, mais parlons-en brièvement ici. C’est un outil développé en Node.js que vous pouvez utiliser en appelant l’exécutable `npx`, qui téléchargera et installera temporairement l’outil, puis le supprimera une fois la requête terminée.
 
 Le [MCP Inspector](https://github.com/modelcontextprotocol/inspector) vous permet de :
 
@@ -40,13 +40,13 @@ Le [MCP Inspector](https://github.com/modelcontextprotocol/inspector) vous perme
 - **Tester l’exécution des outils** : essayer différents paramètres et voir les réponses en temps réel
 - **Consulter les métadonnées du serveur** : examiner les informations, schémas et configurations du serveur
 
-Une exécution typique de l’outil ressemble à ceci :
+Une utilisation typique de l’outil ressemble à ceci :
 
 ```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-La commande ci-dessus lance un MCP et son interface visuelle, ouvrant une interface web locale dans votre navigateur. Vous verrez un tableau de bord affichant vos serveurs MCP enregistrés, leurs outils, ressources et invites disponibles. L’interface vous permet de tester l’exécution des outils de manière interactive, d’inspecter les métadonnées du serveur et de visualiser les réponses en temps réel, ce qui facilite la validation et le débogage de vos implémentations MCP.
+La commande ci-dessus lance un MCP avec son interface visuelle et ouvre une interface web locale dans votre navigateur. Vous verrez un tableau de bord affichant vos serveurs MCP enregistrés, leurs outils, ressources et invites disponibles. L’interface vous permet de tester l’exécution des outils de manière interactive, d’inspecter les métadonnées du serveur et de visualiser les réponses en temps réel, ce qui facilite la validation et le débogage de vos implémentations MCP.
 
 Voici à quoi cela peut ressembler : ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.fr.png)
 
@@ -58,7 +58,7 @@ npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/lis
 
 ### Tests manuels
 
-En plus d’utiliser l’outil inspector pour tester les capacités du serveur, une autre approche similaire consiste à utiliser un client capable d’envoyer des requêtes HTTP, comme curl par exemple.
+En plus d’utiliser l’outil inspector pour tester les capacités du serveur, une autre approche similaire consiste à utiliser un client capable d’effectuer des requêtes HTTP, comme curl par exemple.
 
 Avec curl, vous pouvez tester directement les serveurs MCP via des requêtes HTTP :
 
@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Comme vous pouvez le voir dans l’exemple d’utilisation de curl ci-dessus, vous utilisez une requête POST pour invoquer un outil avec une charge utile contenant le nom de l’outil et ses paramètres. Choisissez l’approche qui vous convient le mieux. Les outils CLI sont généralement plus rapides à utiliser et peuvent être facilement scriptés, ce qui est utile dans un environnement CI/CD.
+Comme vous pouvez le voir dans l’exemple ci-dessus, vous utilisez une requête POST pour invoquer un outil avec une charge utile contenant le nom de l’outil et ses paramètres. Choisissez l’approche qui vous convient le mieux. Les outils CLI sont généralement plus rapides à utiliser et peuvent être facilement scriptés, ce qui est utile dans un environnement CI/CD.
 
 ### Tests unitaires
 
@@ -139,7 +139,7 @@ Consultez le [fichier complet ici](https://github.com/modelcontextprotocol/pytho
 
 À partir de ce fichier, vous pouvez tester votre propre serveur pour vous assurer que les capacités sont créées comme prévu.
 
-Tous les SDK majeurs disposent de sections de test similaires, vous pouvez donc les adapter à votre environnement d’exécution choisi.
+Tous les SDK majeurs disposent de sections de test similaires, vous pouvez donc vous adapter à votre environnement d’exécution choisi.
 
 ## Exemples
 
@@ -153,7 +153,7 @@ Tous les SDK majeurs disposent de sections de test similaires, vous pouvez donc 
 
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 
-## Et après ?
+## Et ensuite
 
 - Suivant : [Déploiement](../09-deployment/README.md)
 

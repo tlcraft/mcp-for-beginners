@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T18:12:16+00:00",
+  "translation_date": "2025-07-14T05:49:17+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "ms"
 }
@@ -33,7 +33,7 @@ Kajian kes ini mengkaji penyelesaian rujukan menyeluruh Microsoft yang menunjukk
 
 - Orkestrasi pelbagai ejen melalui MCP
 - Integrasi data perusahaan dengan Azure AI Search
-- Seni bina yang selamat dan boleh diskalakan menggunakan perkhidmatan Azure
+- Seni bina yang selamat dan boleh diskala menggunakan perkhidmatan Azure
 - Alat yang boleh dikembangkan dengan komponen MCP yang boleh digunakan semula
 - Pengalaman pengguna perbualan yang dikuasakan oleh Azure OpenAI
 
@@ -52,11 +52,11 @@ Contoh ini menggambarkan bagaimana pelaksanaan MCP yang agak mudah boleh memberi
 
 ### 3. [Pengambilan Dokumentasi Masa Nyata dengan MCP](./docs-mcp/README.md)
 
-Kajian kes ini membimbing anda melalui sambungan klien konsol Python ke pelayan Model Context Protocol (MCP) untuk mendapatkan dan merekod dokumentasi Microsoft yang berasaskan konteks masa nyata. Anda akan belajar bagaimana untuk:
+Kajian kes ini membimbing anda melalui sambungan klien konsol Python ke pelayan Model Context Protocol (MCP) untuk mengambil dan merekod dokumentasi Microsoft yang berasaskan konteks masa nyata. Anda akan belajar bagaimana untuk:
 
 - Bersambung ke pelayan MCP menggunakan klien Python dan SDK MCP rasmi
 - Menggunakan klien HTTP penstriman untuk pengambilan data masa nyata yang cekap
-- Memanggil alat dokumentasi di pelayan dan merekod respons terus ke konsol
+- Memanggil alat dokumentasi pada pelayan dan merekod respons terus ke konsol
 - Mengintegrasikan dokumentasi Microsoft terkini ke dalam aliran kerja anda tanpa meninggalkan terminal
 
 Bab ini termasuk tugasan praktikal, contoh kod kerja minimum, dan pautan ke sumber tambahan untuk pembelajaran lebih mendalam. Lihat panduan penuh dan kod dalam bab yang dipautkan untuk memahami bagaimana MCP boleh mengubah akses dokumentasi dan produktiviti pembangun dalam persekitaran berasaskan konsol.
@@ -97,13 +97,13 @@ Kajian kes ini menyediakan panduan langkah demi langkah tentang cara mencipta pe
 - Mengkonfigurasi polisi untuk had kadar dan keselamatan
 - Menguji pelayan MCP menggunakan Visual Studio Code dan GitHub Copilot
 
-Contoh ini menggambarkan bagaimana memanfaatkan keupayaan Azure untuk mencipta pelayan MCP yang kukuh yang boleh digunakan dalam pelbagai aplikasi, meningkatkan integrasi sistem AI dengan API perusahaan.
+Contoh ini menggambarkan cara memanfaatkan keupayaan Azure untuk mencipta pelayan MCP yang kukuh yang boleh digunakan dalam pelbagai aplikasi, meningkatkan integrasi sistem AI dengan API perusahaan.
 
 ## Kesimpulan
 
 Kajian kes ini menonjolkan kepelbagaian dan aplikasi praktikal Model Context Protocol dalam senario dunia sebenar. Dari sistem pelbagai ejen yang kompleks hingga aliran kerja automasi yang disasarkan, MCP menyediakan cara standard untuk menghubungkan sistem AI dengan alat dan data yang mereka perlukan untuk memberikan nilai.
 
-Dengan mempelajari pelaksanaan ini, anda boleh mendapat pandangan tentang corak seni bina, strategi pelaksanaan, dan amalan terbaik yang boleh digunakan dalam projek MCP anda sendiri. Contoh-contoh ini menunjukkan bahawa MCP bukan sahaja rangka kerja teori tetapi penyelesaian praktikal untuk cabaran perniagaan sebenar.
+Dengan mengkaji pelaksanaan ini, anda boleh mendapat pandangan tentang corak seni bina, strategi pelaksanaan, dan amalan terbaik yang boleh digunakan dalam projek MCP anda sendiri. Contoh-contoh ini menunjukkan bahawa MCP bukan sekadar rangka kerja teori tetapi penyelesaian praktikal untuk cabaran perniagaan sebenar.
 
 ## Sumber Tambahan
 
@@ -116,4 +116,4 @@ Dengan mempelajari pelaksanaan ini, anda boleh mendapat pandangan tentang corak 
 Seterusnya: Hands on Lab [Memperkemas Aliran Kerja AI: Membangun Pelayan MCP dengan AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

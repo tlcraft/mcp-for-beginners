@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:35:18+00:00",
+  "translation_date": "2025-07-13T17:20:18+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "bg"
 }
@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **4 Използване на сървър в режим GitHub Copilot Agent във Visual Studio Code**. Тук разглеждаме как да стартираме нашия MCP сървър директно от Visual Studio Code, [към урока](04-vscode/README.md)
 
-- **5 Използване на SSE (Server Sent Events)** SSE е стандарт за стрийминг от сървър към клиент, позволяващ на сървърите да изпращат актуализации в реално време към клиентите през HTTP [към урока](05-sse-server/README.md)
+- **5 Консумиране от SSE (Server Sent Events)** SSE е стандарт за стрийминг от сървър към клиент, позволяващ на сървърите да изпращат актуализации в реално време към клиентите през HTTP [към урока](05-sse-server/README.md)
 
 - **6 HTTP стрийминг с MCP (Streamable HTTP)**. Научете за съвременния HTTP стрийминг, известия за напредък и как да реализирате мащабируеми, реално-времеви MCP сървъри и клиенти с помощта на Streamable HTTP. [към урока](06-http-streaming/README.md)
 
@@ -37,7 +37,7 @@ Model Context Protocol (MCP) е отворен протокол, който ст
 Към края на този урок ще можете да:
 
 - Настроите среди за разработка за MCP на C#, Java, Python, TypeScript и JavaScript
-- Създавате и разгръщате основни MCP сървъри с персонализирани функции (ресурси, подсказки и инструменти)
+- Създавате и разгръщате базови MCP сървъри с персонализирани функции (ресурси, подсказки и инструменти)
 - Създавате хост приложения, които се свързват с MCP сървъри
 - Тествате и отстранявате грешки в MCP реализации
 - Разбирате често срещани предизвикателства при настройка и техните решения
@@ -45,7 +45,7 @@ Model Context Protocol (MCP) е отворен протокол, който ст
 
 ## Настройване на вашата MCP среда
 
-Преди да започнете работа с MCP, е важно да подготвите средата си за разработка и да разберете основния работен процес. Този раздел ще ви преведе през началните стъпки, за да осигури гладък старт с MCP.
+Преди да започнете работа с MCP, е важно да подготвите средата си за разработка и да разберете основния работен процес. Този раздел ще ви преведе през началните стъпки за гладък старт с MCP.
 
 ### Предварителни изисквания
 
@@ -54,7 +54,7 @@ Model Context Protocol (MCP) е отворен протокол, който ст
 - **Среда за разработка**: за избрания от вас език (C#, Java, Python, TypeScript или JavaScript)
 - **IDE/редактор**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm или друг модерен редактор за код
 - **Мениджъри на пакети**: NuGet, Maven/Gradle, pip или npm/yarn
-- **API ключове**: за всички AI услуги, които планирате да използвате във вашите хост приложения
+- **API ключове**: за всички AI услуги, които планирате да използвате в хост приложенията си
 
 
 ### Официални SDK-та
@@ -62,12 +62,12 @@ Model Context Protocol (MCP) е отворен протокол, който ст
 В следващите глави ще видите решения, изградени с Python, TypeScript, Java и .NET. Ето всички официално поддържани SDK-та.
 
 MCP предоставя официални SDK-та за няколко езика:
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Поддържа се в сътрудничество с Microsoft
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Поддържа се в сътрудничество с Spring AI
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Поддържан в сътрудничество с Microsoft
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Поддържан в сътрудничество със Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Официалната TypeScript имплементация
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Официалната Python имплементация
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Официалната Kotlin имплементация
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Поддържа се в сътрудничество с Loopwork AI
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Поддържан в сътрудничество с Loopwork AI
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Официалната Rust имплементация
 
 ## Основни изводи

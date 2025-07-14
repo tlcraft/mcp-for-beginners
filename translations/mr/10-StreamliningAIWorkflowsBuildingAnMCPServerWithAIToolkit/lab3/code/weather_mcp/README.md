@@ -2,77 +2,77 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "999c5e7623c1e2d5e5a07c2feb39eb67",
-  "translation_date": "2025-06-10T06:27:24+00:00",
+  "translation_date": "2025-07-14T08:26:04+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/README.md",
   "language_code": "mr"
 }
 -->
 # Weather MCP Server
 
-हा Python मध्ये लिहिलेला sample MCP Server आहे जो weather tools mock responses सह implement करतो. हा तुमच्या स्वतःच्या MCP Server साठी scaffold म्हणून वापरता येऊ शकतो. यात खालील features आहेत:
+हा Python मधील एक नमुना MCP Server आहे जो mock responses सह हवामान साधने अंमलात आणतो. तुम्ही तुमच्या स्वतःच्या MCP Server साठी याचा आधार म्हणून वापर करू शकता. यात खालील वैशिष्ट्ये आहेत:
 
-- **Weather Tool**: एक tool जो दिलेल्या location नुसार mock weather माहिती पुरवतो.
-- **Connect to Agent Builder**: एक feature ज्याद्वारे तुम्ही MCP server ला Agent Builder शी जोडू शकता टेस्टिंग आणि debugging साठी.
-- **Debug in [MCP Inspector](https://github.com/modelcontextprotocol/inspector)**: MCP Server ला MCP Inspector वापरून debug करण्याची सुविधा.
+- **Weather Tool**: दिलेल्या ठिकाणावर आधारित mock केलेली हवामान माहिती पुरवणारे साधन.
+- **Connect to Agent Builder**: MCP server ला Agent Builder शी जोडण्याची सुविधा, ज्यामुळे चाचणी आणि डिबगिंग करता येते.
+- **Debug in [MCP Inspector](https://github.com/modelcontextprotocol/inspector)**: MCP Inspector वापरून MCP Server चे डिबगिंग करण्याची सुविधा.
 
-## Weather MCP Server template सोबत सुरुवात करा
+## Weather MCP Server टेम्प्लेटसह सुरुवात करा
 
-> **आवश्यकता**
+> **पूर्वअट**
 >
-> MCP Server तुमच्या local dev machine वर चालवण्यासाठी, तुम्हाला हवे असेल:
+> तुमच्या स्थानिक विकास मशीनवर MCP Server चालवण्यासाठी, तुम्हाला खालील गोष्टी आवश्यक आहेत:
 >
 > - [Python](https://www.python.org/)
-> - (*ऐच्छिक - जर तुम्हाला uv आवडत असेल*) [uv](https://github.com/astral-sh/uv)
+> - (*ऐच्छिक - जर तुम्हाला uv वापरायचे असेल तर*) [uv](https://github.com/astral-sh/uv)
 > - [Python Debugger Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
 
 ## पर्यावरण तयार करा
 
-या प्रोजेक्टसाठी environment सेटअप करण्याचे दोन मार्ग आहेत. तुम्ही तुमच्या आवडीनुसार कोणताही एक निवडू शकता.
+या प्रोजेक्टसाठी पर्यावरण तयार करण्यासाठी दोन पद्धती आहेत. तुम्ही तुमच्या पसंतीनुसार कोणतीही एक निवडू शकता.
 
-> Note: virtual environment तयार केल्यावर virtual environment चा python वापर होईल यासाठी VSCode किंवा terminal पुन्हा लोड करा.
+> लक्षात ठेवा: वर्चुअल एन्व्हायर्नमेंट तयार केल्यानंतर VSCode किंवा टर्मिनल रीलोड करा जेणेकरून वर्चुअल एन्व्हायर्नमेंटमधील python वापरला जाईल.
 
-| Approach | Steps |
+| पद्धत | टप्पे |
 | -------- | ----- |
-| Using `uv` | 1. virtual environment तयार करा: `uv venv` <br>2. VSCode मध्ये "***Python: Select Interpreter***" कमांड चालवा आणि तयार केलेल्या virtual environment मधील python निवडा <br>3. dependencies (dev dependencies सह) install करा: `uv pip install -r pyproject.toml --extra dev` |
-| Using `pip` | 1. virtual environment तयार करा: `python -m venv .venv` <br>2. VSCode मध्ये "***Python: Select Interpreter***" कमांड चालवा आणि तयार केलेल्या virtual environment मधील python निवडा<br>3. dependencies (dev dependencies सह) install करा: `pip install -e .[dev]` |
+| `uv` वापरून | 1. वर्चुअल एन्व्हायर्नमेंट तयार करा: `uv venv` <br>2. VSCode मध्ये "***Python: Select Interpreter***" कमांड चालवा आणि तयार केलेल्या वर्चुअल एन्व्हायर्नमेंटमधील python निवडा <br>3. अवलंबित्वे (dev dependencies सह) इन्स्टॉल करा: `uv pip install -r pyproject.toml --extra dev` |
+| `pip` वापरून | 1. वर्चुअल एन्व्हायर्नमेंट तयार करा: `python -m venv .venv` <br>2. VSCode मध्ये "***Python: Select Interpreter***" कमांड चालवा आणि तयार केलेल्या वर्चुअल एन्व्हायर्नमेंटमधील python निवडा<br>3. अवलंबित्वे (dev dependencies सह) इन्स्टॉल करा: `pip install -e .[dev]` |
 
-पर्यावरण तयार केल्यानंतर, तुम्ही Agent Builder वापरून तुमच्या local dev machine वर MCP Client म्हणून server चालवू शकता:
-1. VS Code Debug panel उघडा. `Debug in Agent Builder` निवडा किंवा `F5` दाबा आणि MCP server debugging सुरू करा.
-2. AI Toolkit Agent Builder वापरून [हा prompt](../../../../../../../../../../../open_prompt_builder) वापरून server ची चाचणी करा. Server आपोआप Agent Builder शी कनेक्ट होईल.
-3. prompt सह server ची चाचणी करण्यासाठी `Run` क्लिक करा.
+पर्यावरण तयार केल्यानंतर, तुम्ही Agent Builder च्या माध्यमातून MCP Client म्हणून तुमच्या स्थानिक विकास मशीनवर सर्व्हर चालवू शकता:
+1. VS Code चा Debug पॅनेल उघडा. `Debug in Agent Builder` निवडा किंवा MCP server डिबगिंग सुरू करण्यासाठी `F5` दाबा.
+2. AI Toolkit Agent Builder वापरून [हा प्रॉम्प्ट](../../../../../../../../../../open_prompt_builder) वापरून सर्व्हरची चाचणी करा. सर्व्हर आपोआप Agent Builder शी जोडले जाईल.
+3. प्रॉम्प्टसह सर्व्हरची चाचणी करण्यासाठी `Run` क्लिक करा.
 
-**अभिनंदन**! तुम्ही यशस्वीरित्या तुमच्या local dev machine वर Agent Builder वापरून Weather MCP Server चालवला आहे.
+**अभिनंदन**! तुम्ही यशस्वीपणे Agent Builder च्या माध्यमातून MCP Client म्हणून तुमच्या स्थानिक विकास मशीनवर Weather MCP Server चालवला आहे.
 ![DebugMCP](https://raw.githubusercontent.com/microsoft/windows-ai-studio-templates/refs/heads/dev/mcpServers/mcp_debug.gif)
 
-## template मध्ये काय समाविष्ट आहे
+## टेम्प्लेटमध्ये काय समाविष्ट आहे
 
-| Folder / File| Contents                                     |
+| फोल्डर / फाइल | सामग्री                                     |
 | ------------ | -------------------------------------------- |
-| `.vscode`    | debugging साठी VSCode फायली                   |
-| `.aitk`      | AI Toolkit साठी configurations                |
-| `src`        | weather mcp server साठी source code           |
+| `.vscode`    | डिबगिंगसाठी VSCode फाइल्स                   |
+| `.aitk`      | AI Toolkit साठी कॉन्फिगरेशन                  |
+| `src`        | weather mcp server साठी स्रोत कोड             |
 
-## Weather MCP Server कसे debug करावे
+## Weather MCP Server कसे डिबग करावे
 
-> नोंदी:
-> - [MCP Inspector](https://github.com/modelcontextprotocol/inspector) हा एक visual developer tool आहे जो MCP servers च्या टेस्टिंग आणि debugging साठी वापरला जातो.
-> - सर्व debugging modes मध्ये breakpoints सपोर्ट आहेत, त्यामुळे तुम्ही tool implementation code मध्ये breakpoints ठेवू शकता.
+> टीपा:
+> - [MCP Inspector](https://github.com/modelcontextprotocol/inspector) हा MCP servers च्या चाचणी आणि डिबगिंगसाठी एक दृश्य विकास साधन आहे.
+> - सर्व डिबगिंग मोड ब्रेकपॉइंट्सना समर्थन देतात, त्यामुळे तुम्ही टूल अंमलबजावणी कोडमध्ये ब्रेकपॉइंट्स जोडू शकता.
 
-| Debug Mode | Description | Steps to debug |
+| डिबग मोड | वर्णन | डिबग करण्याचे टप्पे |
 | ---------- | ----------- | --------------- |
-| Agent Builder | AI Toolkit द्वारे Agent Builder मध्ये MCP server debug करा. | 1. VS Code Debug panel उघडा. `Debug in Agent Builder` निवडा आणि `F5` दाबा, MCP server debug सुरू करण्यासाठी.<br>2. AI Toolkit Agent Builder वापरून [हा prompt](../../../../../../../../../../../open_prompt_builder) वापरून server ची चाचणी करा. Server आपोआप Agent Builder शी कनेक्ट होईल.<br>3. prompt सह server ची चाचणी करण्यासाठी `Run` क्लिक करा. |
-| MCP Inspector | MCP Inspector वापरून MCP server debug करा. | 1. [Node.js](https://nodejs.org/) install करा<br> 2. Inspector सेटअप करा: `cd inspector` && `npm install` <br> 3. VS Code Debug panel उघडा. `Debug SSE in Inspector (Edge)` किंवा `Debug SSE in Inspector (Chrome)` निवडा. F5 दाबा debug सुरू करण्यासाठी.<br> 4. जेव्हा MCP Inspector ब्राउझरमध्ये सुरू होईल, तेव्हा `Connect` बटणावर क्लिक करून या MCP server शी कनेक्ट करा.<br> 5. मग तुम्ही `List Tools` करू शकता, tool निवडा, parameters टाका, आणि `Run Tool` करून तुमचा server code debug करा.<br> |
+| Agent Builder | AI Toolkit च्या माध्यमातून Agent Builder मध्ये MCP server चे डिबगिंग करा. | 1. VS Code चा Debug पॅनेल उघडा. `Debug in Agent Builder` निवडा आणि MCP server डिबगिंग सुरू करण्यासाठी `F5` दाबा.<br>2. AI Toolkit Agent Builder वापरून [हा प्रॉम्प्ट](../../../../../../../../../../open_prompt_builder) वापरून सर्व्हरची चाचणी करा. सर्व्हर आपोआप Agent Builder शी जोडले जाईल.<br>3. प्रॉम्प्टसह सर्व्हरची चाचणी करण्यासाठी `Run` क्लिक करा. |
+| MCP Inspector | MCP Inspector वापरून MCP server चे डिबगिंग करा. | 1. [Node.js](https://nodejs.org/) इन्स्टॉल करा<br> 2. Inspector सेटअप करा: `cd inspector` && `npm install` <br> 3. VS Code चा Debug पॅनेल उघडा. `Debug SSE in Inspector (Edge)` किंवा `Debug SSE in Inspector (Chrome)` निवडा. डिबगिंग सुरू करण्यासाठी F5 दाबा.<br> 4. जेव्हा MCP Inspector ब्राउझरमध्ये सुरू होईल, तेव्हा `Connect` बटणावर क्लिक करून हा MCP server कनेक्ट करा.<br> 5. नंतर तुम्ही `List Tools` करू शकता, साधन निवडा, पॅरामीटर्स द्या आणि `Run Tool` करून तुमचा सर्व्हर कोड डिबग करा.<br> |
 
-## Default Ports आणि सानुकूलने
+## डीफॉल्ट पोर्ट्स आणि सानुकूलन
 
-| Debug Mode | Ports | Definitions | Customizations | Note |
+| डिबग मोड | पोर्ट्स | व्याख्या | सानुकूलन | टीप |
 | ---------- | ----- | ------------ | -------------- |-------------- |
-| Agent Builder | 3001 | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) edit करून वरील ports बदला. | N/A |
-| MCP Inspector | 3001 (Server); 5173 आणि 3000 (Inspector) | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) edit करून वरील ports बदला.| N/A |
+| Agent Builder | 3001 | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | वरील पोर्ट्स बदलण्यासाठी [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) संपादित करा. | लागू नाही |
+| MCP Inspector | 3001 (सर्व्हर); 5173 आणि 3000 (Inspector) | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | वरील पोर्ट्स बदलण्यासाठी [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) संपादित करा. | लागू नाही |
 
-## Feedback
+## अभिप्राय
 
-जर तुम्हाला या template बद्दल काही feedback किंवा सूचना असतील, तर कृपया [AI Toolkit GitHub repository](https://github.com/microsoft/vscode-ai-toolkit/issues) वर issue उघडा.
+जर तुम्हाला या टेम्प्लेटसाठी काही अभिप्राय किंवा सूचना असतील, तर कृपया [AI Toolkit GitHub repository](https://github.com/microsoft/vscode-ai-toolkit/issues) वर एक इश्यू उघडा.
 
 **अस्वीकरण**:  
-हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेचा अभाव असू शकतो. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद शिफारस केली जाते. या अनुवादाच्या वापरामुळे झालेल्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद करण्याची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवलेल्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.

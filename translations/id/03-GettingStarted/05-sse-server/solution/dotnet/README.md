@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2a58caa6e11faa09470b7f81e6729652",
-  "translation_date": "2025-06-18T06:04:31+00:00",
+  "translation_date": "2025-07-13T20:11:05+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "id"
 }
@@ -33,16 +33,16 @@ npx @modelcontextprotocol/inspector http://localhost:3001
 
 Ini akan memulai server web dengan antarmuka visual yang memungkinkan Anda menguji contoh.
 
-> Pastikan **SSE** dipilih sebagai tipe transportasi, dan URL-nya adalah `http://localhost:3001/sse`.
+> Pastikan **SSE** dipilih sebagai tipe transport, dan URL-nya adalah `http://localhost:3001/sse`.
 
-Once the server is connected: 
+Setelah server terhubung:
 
-- try listing tools and run `add`, dengan argumen 2 dan 4, Anda harus melihat hasil 6.
+- coba daftar tools dan jalankan `add`, dengan argumen 2 dan 4, Anda harus melihat hasil 6.
 - buka resources dan resource template lalu panggil "greeting", ketikkan sebuah nama dan Anda akan melihat sapaan dengan nama yang Anda masukkan.
 
 ### Pengujian dalam mode CLI
 
-Anda dapat langsung menjalankannya dalam mode CLI dengan menjalankan perintah berikut:
+Anda bisa langsung menjalankannya dalam mode CLI dengan menjalankan perintah berikut:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
@@ -105,4 +105,4 @@ Anda akan melihat output berikut:
 > Baca lebih lanjut tentang inspector [di sini](https://github.com/modelcontextprotocol/inspector).
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

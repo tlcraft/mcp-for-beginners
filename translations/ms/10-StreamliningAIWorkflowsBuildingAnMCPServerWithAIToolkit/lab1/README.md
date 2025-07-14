@@ -2,119 +2,119 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2aa9dbc165e104764fa57e8a0d3f1c73",
-  "translation_date": "2025-06-10T05:27:15+00:00",
+  "translation_date": "2025-07-14T07:31:30+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab1/README.md",
   "language_code": "ms"
 }
 -->
-# 🚀 الوحدة 1: أساسيات مجموعة أدوات الذكاء الاصطناعي
+# 🚀 Modul 1: Asas AI Toolkit
 
-[![المدة](https://img.shields.io/badge/Duration-15%20minutes-blue.svg)]()
-[![الصعوبة](https://img.shields.io/badge/Difficulty-Beginner-green.svg)]()
-[![المتطلبات المسبقة](https://img.shields.io/badge/Prerequisites-VS%20Code-orange.svg)]()
+[![Duration](https://img.shields.io/badge/Duration-15%20minutes-blue.svg)]()
+[![Difficulty](https://img.shields.io/badge/Difficulty-Beginner-green.svg)]()
+[![Prerequisites](https://img.shields.io/badge/Prerequisites-VS%20Code-orange.svg)]()
 
-## 📋 أهداف التعلم
+## 📋 Objektif Pembelajaran
 
-بنهاية هذه الوحدة، ستكون قادرًا على:
-- ✅ تثبيت وتكوين AI Toolkit لـ Visual Studio Code
-- ✅ التنقل في كتالوج النماذج وفهم مصادر النماذج المختلفة
-- ✅ استخدام Playground لاختبار النماذج والتجربة
-- ✅ إنشاء وكلاء ذكاء اصطناعي مخصصين باستخدام Agent Builder
-- ✅ مقارنة أداء النماذج عبر مزودين مختلفين
-- ✅ تطبيق أفضل الممارسات في هندسة الأوامر (prompt engineering)
+Menjelang akhir modul ini, anda akan dapat:
+- ✅ Pasang dan konfigurasikan AI Toolkit untuk Visual Studio Code
+- ✅ Navigasi Katalog Model dan fahami pelbagai sumber model
+- ✅ Gunakan Playground untuk ujian dan eksperimen model
+- ✅ Cipta ejen AI tersuai menggunakan Agent Builder
+- ✅ Bandingkan prestasi model dari pelbagai penyedia
+- ✅ Terapkan amalan terbaik untuk kejuruteraan prompt
 
-## 🧠 مقدمة في AI Toolkit (AITK)
+## 🧠 Pengenalan kepada AI Toolkit (AITK)
 
-**AI Toolkit لـ Visual Studio Code** هو الامتداد الرئيسي من مايكروسوفت الذي يحول VS Code إلى بيئة تطوير شاملة للذكاء الاصطناعي. يجسر الفجوة بين أبحاث الذكاء الاصطناعي وتطوير التطبيقات العملية، مما يجعل الذكاء الاصطناعي التوليدي متاحًا للمطورين من جميع المستويات.
+**AI Toolkit untuk Visual Studio Code** adalah sambungan utama Microsoft yang mengubah VS Code menjadi persekitaran pembangunan AI yang lengkap. Ia merapatkan jurang antara penyelidikan AI dan pembangunan aplikasi praktikal, menjadikan AI generatif mudah diakses oleh pembangun dari semua tahap kemahiran.
 
-### 🌟 القدرات الرئيسية
+### 🌟 Keupayaan Utama
 
-| الميزة | الوصف | حالة الاستخدام |
+| Ciri | Penerangan | Kes Penggunaan |
 |---------|-------------|----------|
-| **🗂️ كتالوج النماذج** | الوصول إلى أكثر من 100 نموذج من GitHub، ONNX، OpenAI، Anthropic، Google | اكتشاف واختيار النماذج |
-| **🔌 دعم BYOM** | دمج نماذجك الخاصة (محلية/عن بعد) | نشر النماذج المخصصة |
-| **🎮 Playground تفاعلي** | اختبار النماذج في الوقت الحقيقي بواجهة محادثة | النمذجة السريعة والاختبار |
-| **📎 دعم متعدد الوسائط** | التعامل مع النصوص، الصور، والمرفقات | تطبيقات ذكاء اصطناعي معقدة |
-| **⚡ المعالجة الدفعية** | تشغيل عدة أوامر في آن واحد | سير عمل اختبار فعال |
-| **📊 تقييم النماذج** | مقاييس مدمجة (F1، الصلة، التشابه، التماسك) | تقييم الأداء |
+| **🗂️ Katalog Model** | Akses lebih 100 model dari GitHub, ONNX, OpenAI, Anthropic, Google | Penemuan dan pemilihan model |
+| **🔌 Sokongan BYOM** | Integrasi model anda sendiri (tempatan/jauh) | Penggunaan model tersuai |
+| **🎮 Playground Interaktif** | Ujian model masa nyata dengan antara muka chat | Prototip dan ujian pantas |
+| **📎 Sokongan Multi-Modal** | Mengendalikan teks, imej, dan lampiran | Aplikasi AI yang kompleks |
+| **⚡ Pemprosesan Kumpulan** | Jalankan pelbagai prompt serentak | Aliran kerja ujian yang cekap |
+| **📊 Penilaian Model** | Metrik terbina dalam (F1, relevan, kesamaan, koheren) | Penilaian prestasi |
 
-### 🎯 لماذا AI Toolkit مهم
+### 🎯 Kenapa AI Toolkit Penting
 
-- **🚀 تطوير أسرع**: من الفكرة إلى النموذج الأولي في دقائق
-- **🔄 سير عمل موحد**: واجهة واحدة لمزودي الذكاء الاصطناعي المتعددين
-- **🧪 تجربة سهلة**: قارن النماذج بدون إعدادات معقدة
-- **📈 جاهز للإنتاج**: انتقال سلس من النموذج الأولي إلى النشر
+- **🚀 Pembangunan Dipercepatkan**: Dari idea ke prototaip dalam beberapa minit
+- **🔄 Aliran Kerja Bersatu**: Satu antara muka untuk pelbagai penyedia AI
+- **🧪 Eksperimen Mudah**: Bandingkan model tanpa persediaan rumit
+- **📈 Sedia untuk Pengeluaran**: Peralihan lancar dari prototaip ke pelaksanaan
 
-## 🛠️ المتطلبات المسبقة والإعداد
+## 🛠️ Prasyarat & Persediaan
 
-### 📦 تثبيت امتداد AI Toolkit
+### 📦 Pasang Sambungan AI Toolkit
 
-**الخطوة 1: الوصول إلى سوق الإضافات**
-1. افتح Visual Studio Code
-2. انتقل إلى عرض الإضافات (`Ctrl+Shift+X` أو `Cmd+Shift+X`)
-3. ابحث عن "AI Toolkit"
+**Langkah 1: Akses Marketplace Sambungan**
+1. Buka Visual Studio Code
+2. Pergi ke paparan Extensions (`Ctrl+Shift+X` atau `Cmd+Shift+X`)
+3. Cari "AI Toolkit"
 
-**الخطوة 2: اختر نسختك**
-- **🟢 الإصدار الرسمي**: موصى به للاستخدام الإنتاجي
-- **🔶 النسخة التجريبية**: وصول مبكر إلى الميزات المتطورة
+**Langkah 2: Pilih Versi Anda**
+- **🟢 Release**: Disyorkan untuk penggunaan produksi
+- **🔶 Pre-release**: Akses awal kepada ciri terkini
 
-**الخطوة 3: التثبيت والتفعيل**
+**Langkah 3: Pasang dan Aktifkan**
 
-![امتداد AI Toolkit](../../../../translated_images/aitkext.d28945a03eed003c39fc39bc96ae655af9b64b9b922e78e88b07214420ed7985.ms.png)
+![AI Toolkit Extension](../../../../translated_images/aitkext.d28945a03eed003c39fc39bc96ae655af9b64b9b922e78e88b07214420ed7985.ms.png)
 
-### ✅ قائمة التحقق من التحقق
-- [ ] ظهور أيقونة AI Toolkit في الشريط الجانبي لـ VS Code
-- [ ] تم تفعيل وتمكين الامتداد
-- [ ] لا توجد أخطاء تثبيت في لوحة المخرجات
+### ✅ Senarai Semak Pengesahan
+- [ ] Ikon AI Toolkit muncul di bar sisi VS Code
+- [ ] Sambungan diaktifkan dan berfungsi
+- [ ] Tiada ralat pemasangan dalam panel output
 
-## 🧪 التمرين العملي 1: استكشاف نماذج GitHub
+## 🧪 Latihan Praktikal 1: Meneroka Model GitHub
 
-**🎯 الهدف**: إتقان كتالوج النماذج وتجربة أول نموذج ذكاء اصطناعي
+**🎯 Objektif**: Kuasai Katalog Model dan uji model AI pertama anda
 
-### 📊 الخطوة 1: التنقل في كتالوج النماذج
+### 📊 Langkah 1: Navigasi Katalog Model
 
-كتالوج النماذج هو بوابتك إلى نظام الذكاء الاصطناعي. يجمع نماذج من مزودين متعددين، مما يسهل اكتشاف الخيارات ومقارنتها.
+Katalog Model adalah pintu masuk anda ke ekosistem AI. Ia mengumpulkan model dari pelbagai penyedia, memudahkan penemuan dan perbandingan pilihan.
 
-**🔍 دليل التنقل:**
+**🔍 Panduan Navigasi:**
 
-انقر على **MODELS - Catalog** في الشريط الجانبي لـ AI Toolkit
+Klik pada **MODELS - Catalog** di bar sisi AI Toolkit
 
-![كتالوج النماذج](../../../../translated_images/aimodel.263ed2be013d8fb0e2265c4f742cfe490f6f00eca5e132ec50438c8e826e34ed.ms.png)
+![Model Catalog](../../../../translated_images/aimodel.263ed2be013d8fb0e2265c4f742cfe490f6f00eca5e132ec50438c8e826e34ed.ms.png)
 
-**💡 نصيحة محترف**: ابحث عن النماذج التي تتمتع بقدرات محددة تناسب حالتك (مثل توليد الأكواد، الكتابة الإبداعية، التحليل).
+**💡 Petua Pro**: Cari model dengan keupayaan khusus yang sesuai dengan kes penggunaan anda (contoh: penjanaan kod, penulisan kreatif, analisis).
 
-**⚠️ ملاحظة**: النماذج المستضافة على GitHub (أي نماذج GitHub) مجانية للاستخدام لكنها تخضع لقيود على عدد الطلبات وعدد الرموز (tokens). إذا أردت الوصول إلى نماذج غير GitHub (أي نماذج خارجية مستضافة عبر Azure AI أو نقاط نهاية أخرى)، ستحتاج إلى توفير مفتاح API أو بيانات اعتماد مناسبة.
+**⚠️ Nota**: Model yang dihoskan di GitHub (iaitu Model GitHub) adalah percuma untuk digunakan tetapi tertakluk kepada had kadar permintaan dan token. Jika anda ingin mengakses model bukan GitHub (model luaran yang dihoskan melalui Azure AI atau titik akhir lain), anda perlu menyediakan kunci API atau pengesahan yang sesuai.
 
-### 🚀 الخطوة 2: إضافة وتكوين أول نموذج لك
+### 🚀 Langkah 2: Tambah dan Konfigurasikan Model Pertama Anda
 
-**استراتيجية اختيار النموذج:**
-- **GPT-4.1**: الأفضل للتحليل والتفكير المعقد
-- **Phi-4-mini**: خفيف وسريع للمهام البسيطة
+**Strategi Pemilihan Model:**
+- **GPT-4.1**: Terbaik untuk penalaran dan analisis kompleks
+- **Phi-4-mini**: Ringan, respons pantas untuk tugasan mudah
 
-**🔧 عملية التكوين:**
-1. اختر **OpenAI GPT-4.1** من الكتالوج
-2. انقر على **Add to My Models** - لتسجيل النموذج للاستخدام
-3. اختر **Try in Playground** لفتح بيئة الاختبار
-4. انتظر تهيئة النموذج (قد يستغرق الإعداد الأولي بعض الوقت)
+**🔧 Proses Konfigurasi:**
+1. Pilih **OpenAI GPT-4.1** dari katalog
+2. Klik **Add to My Models** - ini mendaftarkan model untuk digunakan
+3. Pilih **Try in Playground** untuk melancarkan persekitaran ujian
+4. Tunggu inisialisasi model (persediaan kali pertama mungkin mengambil masa)
 
-![إعداد Playground](../../../../translated_images/playground.dd6f5141344878ca4d4f3de819775da7b113518941accf37c291117c602f85db.ms.png)
+![Playground Setup](../../../../translated_images/playground.dd6f5141344878ca4d4f3de819775da7b113518941accf37c291117c602f85db.ms.png)
 
-**⚙️ فهم معلمات النموذج:**
-- **Temperature**: يتحكم في الإبداع (0 = محدد، 1 = إبداعي)
-- **Max Tokens**: أقصى طول للرد
-- **Top-p**: عينات النواة لتنوع الردود
+**⚙️ Memahami Parameter Model:**
+- **Temperature**: Kawal kreativiti (0 = deterministik, 1 = kreatif)
+- **Max Tokens**: Panjang maksimum respons
+- **Top-p**: Sampel nukleus untuk kepelbagaian respons
 
-### 🎯 الخطوة 3: إتقان واجهة Playground
+### 🎯 Langkah 3: Kuasai Antara Muka Playground
 
-Playground هو مختبر تجارب الذكاء الاصطناعي الخاص بك. إليك كيفية الاستفادة القصوى منه:
+Playground adalah makmal eksperimen AI anda. Berikut cara memaksimumkan potensinya:
 
-**🎨 أفضل ممارسات هندسة الأوامر (Prompt Engineering):**
-1. **كن محددًا**: تعليمات واضحة ومفصلة تعطي نتائج أفضل
-2. **وفر سياقًا**: أضف معلومات خلفية ذات صلة
-3. **استخدم أمثلة**: بيّن للنموذج ما تريد من خلال الأمثلة
-4. **كرر**: حسّن الأوامر بناءً على النتائج الأولية
+**🎨 Amalan Terbaik Kejuruteraan Prompt:**
+1. **Jelas dan Spesifik**: Arahan yang jelas dan terperinci menghasilkan keputusan lebih baik
+2. **Berikan Konteks**: Sertakan maklumat latar belakang yang relevan
+3. **Gunakan Contoh**: Tunjukkan model apa yang anda mahu dengan contoh
+4. **Ulang Kaji**: Perbaiki prompt berdasarkan hasil awal
 
-**🧪 سيناريوهات الاختبار:**
+**🧪 Senario Ujian:**
 ```markdown
 # Example 1: Code Generation
 "Write a Python function that calculates the factorial of a number using recursion. Include error handling and docstrings."
@@ -126,48 +126,48 @@ Playground هو مختبر تجارب الذكاء الاصطناعي الخاص
 "Analyze this sales data and provide insights: [paste your data]. Focus on trends, anomalies, and actionable recommendations."
 ```
 
-![نتائج الاختبار](../../../../translated_images/result.1dfcf211fb359cf65902b09db191d3bfc65713ca15e279c1a30be213bb526949.ms.png)
+![Testing Results](../../../../translated_images/result.1dfcf211fb359cf65902b09db191d3bfc65713ca15e279c1a30be213bb526949.ms.png)
 
-### 🏆 تمرين التحدي: مقارنة أداء النماذج
+### 🏆 Latihan Cabaran: Perbandingan Prestasi Model
 
-**🎯 الهدف**: قارن بين نماذج مختلفة باستخدام نفس الأوامر لفهم نقاط قوتها
+**🎯 Matlamat**: Bandingkan model berbeza menggunakan prompt yang sama untuk memahami kekuatan mereka
 
-**📋 التعليمات:**
-1. أضف **Phi-4-mini** إلى مساحة العمل الخاصة بك
-2. استخدم نفس الأمر لكل من GPT-4.1 و Phi-4-mini
+**📋 Arahan:**
+1. Tambah **Phi-4-mini** ke ruang kerja anda
+2. Gunakan prompt yang sama untuk GPT-4.1 dan Phi-4-mini
 
-![الإعداد](../../../../translated_images/set.88132df189ecde2cbbda256c1841db5aac8e9bdeba1a4e343dfa031b9545d6c9.ms.png)
+![set](../../../../translated_images/set.88132df189ecde2cbbda256c1841db5aac8e9bdeba1a4e343dfa031b9545d6c9.ms.png)
 
-3. قارن جودة الرد، السرعة، والدقة
-4. وثق نتائجك في قسم النتائج
+3. Bandingkan kualiti respons, kelajuan, dan ketepatan
+4. Dokumentasikan penemuan anda dalam bahagian keputusan
 
-![مقارنة النماذج](../../../../translated_images/compare.97746cd0f907495503c1fc217739f3890dc76ea5f6fd92379a6db0cc331feb58.ms.png)
+![Model Comparison](../../../../translated_images/compare.97746cd0f907495503c1fc217739f3890dc76ea5f6fd92379a6db0cc331feb58.ms.png)
 
-**💡 رؤى رئيسية لاكتشافها:**
-- متى تستخدم LLM مقابل SLM
-- الموازنة بين التكلفة والأداء
-- القدرات المتخصصة للنماذج المختلفة
+**💡 Wawasan Utama untuk Ditemui:**
+- Bila menggunakan LLM vs SLM
+- Perbandingan kos dan prestasi
+- Keupayaan khusus model berbeza
 
-## 🤖 التمرين العملي 2: بناء وكلاء مخصصين باستخدام Agent Builder
+## 🤖 Latihan Praktikal 2: Membina Ejen Tersuai dengan Agent Builder
 
-**🎯 الهدف**: إنشاء وكلاء ذكاء اصطناعي متخصصين لمهام وسير عمل محددة
+**🎯 Objektif**: Cipta ejen AI khusus yang disesuaikan untuk tugasan dan aliran kerja tertentu
 
-### 🏗️ الخطوة 1: فهم Agent Builder
+### 🏗️ Langkah 1: Memahami Agent Builder
 
-Agent Builder هو المكان الذي يتألق فيه AI Toolkit حقًا. يسمح لك بإنشاء مساعدين ذكاء اصطناعي مخصصين يجمعون بين قوة نماذج اللغة الكبيرة وتعليمات خاصة، معلمات محددة، ومعرفة متخصصة.
+Agent Builder adalah tempat AI Toolkit benar-benar menonjol. Ia membolehkan anda mencipta pembantu AI yang dibina khas yang menggabungkan kuasa model bahasa besar dengan arahan tersuai, parameter khusus, dan pengetahuan khusus.
 
-**🧠 مكونات بنية الوكيل:**
-- **النموذج الأساسي**: نموذج اللغة الكبير الأساسي (GPT-4، Groks، Phi، إلخ)
-- **نظام الأوامر (System Prompt)**: يحدد شخصية وسلوك الوكيل
-- **المعلمات**: إعدادات دقيقة للأداء الأمثل
-- **دمج الأدوات**: الربط مع APIs الخارجية وخدمات MCP
-- **الذاكرة**: سياق المحادثة واستمرارية الجلسة
+**🧠 Komponen Seni Bina Ejen:**
+- **Model Teras**: LLM asas (GPT-4, Groks, Phi, dll.)
+- **System Prompt**: Menentukan personaliti dan tingkah laku ejen
+- **Parameter**: Tetapan halus untuk prestasi optimum
+- **Integrasi Alat**: Sambung ke API luaran dan perkhidmatan MCP
+- **Memori**: Konteks perbualan dan penyimpanan sesi
 
-![واجهة Agent Builder](../../../../translated_images/agentbuilder.25895b2d2f8c02e7aa99dd40e105877a6f1db8f0441180087e39db67744b361f.ms.png)
+![Agent Builder Interface](../../../../translated_images/agentbuilder.25895b2d2f8c02e7aa99dd40e105877a6f1db8f0441180087e39db67744b361f.ms.png)
 
-### ⚙️ الخطوة 2: الغوص في تكوين الوكيل
+### ⚙️ Langkah 2: Pendalaman Konfigurasi Ejen
 
-**🎨 إنشاء System Prompts فعالة:**
+**🎨 Mencipta System Prompt yang Berkesan:**
 ```markdown
 # Template Structure:
 ## Role Definition
@@ -187,25 +187,25 @@ You are a [specific role] with expertise in [domain].
 Provide 2-3 examples of ideal interactions
 ```
 
-*بالطبع، يمكنك أيضًا استخدام Generate System Prompt ليقوم الذكاء الاصطناعي بمساعدتك في إنشاء وتحسين الأوامر*
+*Sudah tentu, anda juga boleh menggunakan Generate System Prompt untuk membolehkan AI membantu anda menjana dan mengoptimumkan prompt*
 
-**🔧 تحسين المعلمات:**
-| المعلمة | النطاق الموصى به | حالة الاستخدام |
+**🔧 Pengoptimuman Parameter:**
+| Parameter | Julat Disyorkan | Kes Penggunaan |
 |-----------|------------------|----------|
-| **Temperature** | 0.1-0.3 | ردود تقنية/حقيقية |
-| **Temperature** | 0.7-0.9 | مهام إبداعية/عصف ذهني |
-| **Max Tokens** | 500-1000 | ردود مختصرة |
-| **Max Tokens** | 2000-4000 | شروحات مفصلة |
+| **Temperature** | 0.1-0.3 | Respons teknikal/faktual |
+| **Temperature** | 0.7-0.9 | Tugasan kreatif/brainstorming |
+| **Max Tokens** | 500-1000 | Respons ringkas |
+| **Max Tokens** | 2000-4000 | Penjelasan terperinci |
 
-### 🐍 الخطوة 3: التمرين العملي - وكيل برمجة Python
+### 🐍 Langkah 3: Latihan Praktikal - Ejen Pengaturcaraan Python
 
-**🎯 المهمة**: إنشاء مساعد برمجة Python متخصص
+**🎯 Misi**: Cipta pembantu pengaturcaraan Python khusus
 
-**📋 خطوات التكوين:**
+**📋 Langkah Konfigurasi:**
 
-1. **اختيار النموذج**: اختر **Claude 3.5 Sonnet** (ممتاز للبرمجة)
+1. **Pemilihan Model**: Pilih **Claude 3.5 Sonnet** (sangat baik untuk kod)
 
-2. **تصميم System Prompt**:
+2. **Reka Bentuk System Prompt**:
 ```markdown
 # Python Programming Expert Agent
 
@@ -232,53 +232,53 @@ You are a senior Python developer with 10+ years of experience. You excel at wri
 - Write readable, maintainable code
 ```
 
-3. **تكوين المعلمات**:
-   - Temperature: 0.2 (للكود المتسق والموثوق)
-   - Max Tokens: 2000 (شروحات مفصلة)
-   - Top-p: 0.9 (توازن الإبداع)
+3. **Konfigurasi Parameter**:
+   - Temperature: 0.2 (untuk kod yang konsisten dan boleh dipercayai)
+   - Max Tokens: 2000 (penjelasan terperinci)
+   - Top-p: 0.9 (kreativiti seimbang)
 
-![تكوين وكيل Python](../../../../translated_images/pythonagent.5e51b406401c165fcabfd66f2d943c27f46b5fed0f9fb73abefc9e91ca3489d4.ms.png)
+![Python Agent Configuration](../../../../translated_images/pythonagent.5e51b406401c165fcabfd66f2d943c27f46b5fed0f9fb73abefc9e91ca3489d4.ms.png)
 
-### 🧪 الخطوة 4: اختبار وكيل Python الخاص بك
+### 🧪 Langkah 4: Uji Ejen Python Anda
 
-**سيناريوهات الاختبار:**
-1. **وظيفة أساسية**: "إنشاء دالة للعثور على الأعداد الأولية"
-2. **خوارزمية معقدة**: "تنفيذ شجرة بحث ثنائية مع دوال الإدخال، الحذف، والبحث"
-3. **مشكلة واقعية**: "بناء كاشط ويب يتعامل مع تحديد المعدل وإعادة المحاولة"
-4. **تصحيح الأخطاء**: "إصلاح هذا الكود [الصق الكود الخاطئ]"
+**Senario Ujian:**
+1. **Fungsi Asas**: "Cipta fungsi untuk mencari nombor perdana"
+2. **Algoritma Kompleks**: "Laksanakan pokok carian binari dengan kaedah insert, delete, dan search"
+3. **Masalah Dunia Sebenar**: "Bina web scraper yang mengendalikan had kadar dan percubaan semula"
+4. **Pembaikan Kod**: "Betulkan kod ini [tampal kod bermasalah]"
 
-**🏆 معايير النجاح:**
-- ✅ الكود يعمل بدون أخطاء
-- ✅ يتضمن توثيقًا مناسبًا
-- ✅ يتبع أفضل ممارسات Python
-- ✅ يقدم شروحات واضحة
-- ✅ يقترح تحسينات
+**🏆 Kriteria Kejayaan:**
+- ✅ Kod berjalan tanpa ralat
+- ✅ Termasuk dokumentasi yang betul
+- ✅ Mengikuti amalan terbaik Python
+- ✅ Memberi penjelasan yang jelas
+- ✅ Mencadangkan penambahbaikan
 
-## 🎓 ختام الوحدة 1 والخطوات القادمة
+## 🎓 Penutup Modul 1 & Langkah Seterusnya
 
-### 📊 اختبار المعرفة
+### 📊 Semakan Pengetahuan
 
-اختبر فهمك:
-- [ ] هل يمكنك شرح الفرق بين النماذج في الكتالوج؟
-- [ ] هل أنشأت واختبرت وكيلًا مخصصًا بنجاح؟
-- [ ] هل تفهم كيفية تحسين المعلمات لحالات استخدام مختلفة؟
-- [ ] هل يمكنك تصميم System Prompts فعالة؟
+Uji pemahaman anda:
+- [ ] Boleh terangkan perbezaan antara model dalam katalog?
+- [ ] Berjaya mencipta dan menguji ejen tersuai?
+- [ ] Faham cara mengoptimumkan parameter untuk pelbagai kes penggunaan?
+- [ ] Boleh reka system prompt yang berkesan?
 
-### 📚 موارد إضافية
+### 📚 Sumber Tambahan
 
-- **توثيق AI Toolkit**: [الوثائق الرسمية لمايكروسوفت](https://github.com/microsoft/vscode-ai-toolkit)
-- **دليل هندسة الأوامر**: [أفضل الممارسات](https://platform.openai.com/docs/guides/prompt-engineering)
-- **نماذج في AI Toolkit**: [نماذج قيد التطوير](https://github.com/microsoft/vscode-ai-toolkit/blob/main/doc/models.md)
+- **Dokumentasi AI Toolkit**: [Official Microsoft Docs](https://github.com/microsoft/vscode-ai-toolkit)
+- **Panduan Kejuruteraan Prompt**: [Best Practices](https://platform.openai.com/docs/guides/prompt-engineering)
+- **Model dalam AI Toolkit**: [Models in Develpment](https://github.com/microsoft/vscode-ai-toolkit/blob/main/doc/models.md)
 
-**🎉 تهانينا!** لقد أتقنت أساسيات AI Toolkit وأصبحت جاهزًا لبناء تطبيقات ذكاء اصطناعي أكثر تقدمًا!
+**🎉 Tahniah!** Anda telah menguasai asas AI Toolkit dan bersedia untuk membina aplikasi AI yang lebih maju!
 
-### 🔜 تابع إلى الوحدة التالية
+### 🔜 Teruskan ke Modul Seterusnya
 
-هل أنت مستعد للقدرات الأكثر تقدمًا؟ تابع إلى **[الوحدة 2: MCP مع أساسيات AI Toolkit](../lab2/README.md)** حيث ستتعلم كيفية:
-- ربط وكلائك بالأدوات الخارجية باستخدام بروتوكول سياق النموذج (MCP)
-- بناء وكلاء أتمتة المتصفح باستخدام Playwright
-- دمج خوادم MCP مع وكلاء AI Toolkit الخاص بك
-- تعزيز وكلائك بالبيانات والقدرات الخارجية
+Bersedia untuk keupayaan yang lebih maju? Teruskan ke **[Modul 2: MCP dengan Asas AI Toolkit](../lab2/README.md)** di mana anda akan belajar cara untuk:
+- Sambungkan ejen anda ke alat luaran menggunakan Model Context Protocol (MCP)
+- Bina ejen automasi pelayar dengan Playwright
+- Integrasi pelayan MCP dengan ejen AI Toolkit anda
+- Memperkasakan ejen anda dengan data dan keupayaan luaran
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

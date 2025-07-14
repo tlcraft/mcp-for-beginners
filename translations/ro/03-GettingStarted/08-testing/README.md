@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T18:50:54+00:00",
+  "translation_date": "2025-07-13T22:03:46+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "ro"
 }
@@ -17,10 +17,10 @@ Această lecție explică cum să alegi abordarea potrivită pentru testare și 
 
 ## Obiective de învățare
 
-La finalul acestei lecții, vei putea:
+La finalul acestei lecții, vei putea să:
 
-- Descrie diferite metode de testare.
-- Folosi diverse unelte pentru a testa eficient codul tău.
+- Descrii diferite metode de testare.
+- Folosești diverse unelte pentru a testa eficient codul tău.
 
 ## Testarea serverelor MCP
 
@@ -132,7 +132,7 @@ async def test_list_tools_cursor_parameter():
 Codul de mai sus face următoarele:
 
 - Folosește cadrul pytest care îți permite să creezi teste ca funcții și să folosești instrucțiuni assert.
-- Creează un MCP Server cu două unelte diferite.
+- Creează un server MCP cu două unelte diferite.
 - Folosește instrucțiunea `assert` pentru a verifica dacă anumite condiții sunt îndeplinite.
 
 Aruncă o privire la [fișierul complet aici](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)

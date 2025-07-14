@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "355b12a5970c5c9e6db0bee970c751ba",
-  "translation_date": "2025-07-04T17:34:05+00:00",
+  "translation_date": "2025-07-13T16:07:07+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "sv"
 }
 -->
 # 📖 MCP Core Concepts: Bemästra Model Context Protocol för AI-integration
 
-[Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) är ett kraftfullt, standardiserat ramverk som optimerar kommunikationen mellan stora språkmodeller (LLM) och externa verktyg, applikationer och datakällor. Denna SEO-optimerade guide tar dig igenom MCP:s kärnkoncept och säkerställer att du förstår dess klient-server-arkitektur, viktiga komponenter, kommunikationsmekanismer och bästa praxis för implementering.
+[Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) är ett kraftfullt, standardiserat ramverk som optimerar kommunikationen mellan stora språkmodeller (LLM) och externa verktyg, applikationer och datakällor. Denna SEO-optimerade guide tar dig igenom MCP:s kärnkoncept och säkerställer att du förstår dess klient-server-arkitektur, viktiga komponenter, kommunikationsmekanik och bästa praxis för implementering.
 
 ## Översikt
 
-Den här lektionen utforskar den grundläggande arkitekturen och komponenterna som utgör Model Context Protocol (MCP)-ekosystemet. Du kommer att lära dig om klient-server-arkitekturen, nyckelkomponenter och kommunikationsmekanismer som driver MCP-interaktioner.
+Denna lektion utforskar den grundläggande arkitekturen och komponenterna som utgör Model Context Protocol (MCP)-ekosystemet. Du kommer att lära dig om klient-server-arkitekturen, nyckelkomponenter och kommunikationsmekanismer som driver MCP-interaktioner.
 
 ## 👩‍🎓 Viktiga lärandemål
 
@@ -52,10 +52,10 @@ flowchart LR
 - **MCP Hosts**: Program som VSCode, Claude Desktop, IDE:er eller AI-verktyg som vill få tillgång till data via MCP
 - **MCP Clients**: Protokollklienter som upprätthåller 1:1-anslutningar med servrar
 - **MCP Servers**: Lättviktiga program som var och en exponerar specifika funktioner genom det standardiserade Model Context Protocol
-- **Lokala datakällor**: Din dators filer, databaser och tjänster som MCP-servrar kan nå på ett säkert sätt
-- **Fjärrtjänster**: Externa system tillgängliga via internet som MCP-servrar kan ansluta till via API:er.
+- **Lokala datakällor**: Din dators filer, databaser och tjänster som MCP-servrar kan komma åt på ett säkert sätt
+- **Fjärrtjänster**: Externa system tillgängliga över internet som MCP-servrar kan ansluta till via API:er.
 
-MCP-protokollet är en ständigt utvecklande standard, du kan se de senaste uppdateringarna i [protokollspecificeringen](https://modelcontextprotocol.io/specification/2025-06-18/)
+MCP-protokollet är en pågående standard, du kan se de senaste uppdateringarna i [protokollspecificeringen](https://modelcontextprotocol.io/specification/2025-06-18/)
 
 ### 1. Hosts
 
@@ -82,13 +82,13 @@ Clients är viktiga komponenter som underlättar interaktionen mellan Hosts och 
 
 ### 3. Servers
 
-Servers ansvarar för att hantera förfrågningar från MCP-klienter och ge lämpliga svar. De hanterar olika operationer som datainhämtning, verktygsexekvering och promptgenerering. Servrar säkerställer att kommunikationen mellan klienter och Hosts är effektiv och pålitlig, och upprätthåller integriteten i interaktionsprocessen.
+Servers ansvarar för att hantera förfrågningar från MCP-klienter och ge lämpliga svar. De hanterar olika operationer som datahämtning, verktygsexekvering och promptgenerering. Servrar säkerställer att kommunikationen mellan klienter och Hosts är effektiv och pålitlig, och upprätthåller integriteten i interaktionsprocessen.
 
 **Servers** är tjänster som tillhandahåller kontext och funktioner. De:
 
 - Registrerar tillgängliga funktioner (resurser, prompts, verktyg)
 - Tar emot och utför verktygsanrop från klienten
-- Ger kontextuell information för att förbättra modellens svar
+- Tillhandahåller kontextuell information för att förbättra modellens svar
 - Returnerar resultat tillbaka till klienten
 - Behåller tillstånd över interaktioner vid behov
 
@@ -165,7 +165,7 @@ I Model Context Protocol (MCP) erbjuder klienter flera viktiga funktioner till s
 
 ## Informationsflöde i MCP
 
-Model Context Protocol (MCP) definierar ett strukturerat informationsflöde mellan hosts, clients, servers och modeller. Att förstå detta flöde hjälper till att klargöra hur användarförfrågningar bearbetas och hur externa verktyg och data integreras i modellsvar.
+Model Context Protocol (MCP) definierar ett strukturerat informationsflöde mellan hosts, clients, servrar och modeller. Att förstå detta flöde hjälper till att klargöra hur användarförfrågningar bearbetas och hur externa verktyg och data integreras i modellsvar.
 
 - **Host initierar anslutning**  
   Host-applikationen (t.ex. en IDE eller chattgränssnitt) etablerar en anslutning till en MCP-server, vanligtvis via STDIO, WebSocket eller annan stödjad transport.
@@ -189,11 +189,11 @@ Model Context Protocol (MCP) definierar ett strukturerat informationsflöde mell
 - **Resultatpresentation**  
   Hosten tar emot det slutgiltiga resultatet från klienten och presenterar det för användaren, ofta inklusive både modellens genererade text och eventuella resultat från verktygsexekveringar eller resursuppslag.
 
-Detta flöde gör det möjligt för MCP att stödja avancerade, interaktiva och kontextmedvetna AI-applikationer genom att sömlöst koppla modeller till externa verktyg och datakällor.
+Detta flöde möjliggör att MCP kan stödja avancerade, interaktiva och kontextmedvetna AI-applikationer genom att sömlöst koppla modeller till externa verktyg och datakällor.
 
 ## Protokolldetaljer
 
-MCP (Model Context Protocol) bygger på [JSON-RPC 2.0](https://www.jsonrpc.org/), vilket ger ett standardiserat, språkoberoende meddelandeformat för kommunikation mellan hosts, clients och servers. Denna grund möjliggör pålitliga, strukturerade och utbyggbara interaktioner över olika plattformar och programmeringsspråk.
+MCP (Model Context Protocol) bygger på [JSON-RPC 2.0](https://www.jsonrpc.org/), vilket ger ett standardiserat, språkoberoende meddelandeformat för kommunikation mellan hosts, clients och servrar. Denna grund möjliggör pålitliga, strukturerade och utbyggbara interaktioner över olika plattformar och programmeringsspråk.
 
 ### Viktiga protokollfunktioner
 
@@ -201,9 +201,9 @@ MCP utökar JSON-RPC 2.0 med ytterligare konventioner för verktygsanrop, resurs
 
 #### 🧢 Basprotokoll
 
-- **JSON-RPC-meddelandformat**: Alla förfrågningar och svar följer JSON-RPC 2.0-specifikationen, vilket säkerställer enhetlig struktur för metodanrop, parametrar, resultat och felhantering.
+- **JSON-RPC-meddelandformat**: Alla förfrågningar och svar följer JSON-RPC 2.0-specifikationen, vilket säkerställer konsekvent struktur för metodanrop, parametrar, resultat och felhantering.
 - **Stateful-anslutningar**: MCP-sessioner behåller tillstånd över flera förfrågningar, vilket stödjer pågående konversationer, kontextackumulering och resursförvaltning.
-- **Funktionförhandling**: Under anslutningsuppsättning utbyter klienter och servrar information om stödda funktioner, protokollversioner, tillgängliga verktyg och resurser. Detta säkerställer att båda parter förstår varandras kapabiliteter och kan anpassa sig därefter.
+- **Funktionförhandling**: Under anslutningsuppbyggnad utbyter klienter och servrar information om stödda funktioner, protokollversioner, tillgängliga verktyg och resurser. Detta säkerställer att båda parter förstår varandras kapabiliteter och kan anpassa sig därefter.
 
 #### ➕ Ytterligare verktyg
 
@@ -212,7 +212,7 @@ Nedan följer några extra verktyg och protokollförlängningar som MCP erbjuder
 - **Konfigurationsalternativ**: MCP tillåter dynamisk konfiguration av sessionsparametrar, såsom verktygstillstånd, resursåtkomst och modellinställningar, anpassade för varje interaktion.
 - **Framstegsspårning**: Långvariga operationer kan rapportera framsteg, vilket möjliggör responsiva användargränssnitt och bättre användarupplevelse vid komplexa uppgifter.
 - **Avbrytande av förfrågningar**: Klienter kan avbryta pågående förfrågningar, vilket låter användare stoppa operationer som inte längre behövs eller tar för lång tid.
-- **Felrapportering**: Standardiserade felmeddelanden och koder hjälper till att diagnostisera problem, hantera fel på ett smidigt sätt och ge användbar återkoppling till användare och utvecklare.
+- **Felrapportering**: Standardiserade felmeddelanden och koder hjälper till att diagnostisera problem, hantera fel smidigt och ge användbar återkoppling till användare och utvecklare.
 - **Loggning**: Både klienter och servrar kan generera strukturerade loggar för revision, felsökning och övervakning av protokollinteraktioner.
 
 Genom att utnyttja dessa protokollfunktioner säkerställer MCP robust, säker och flexibel kommunikation mellan språkmodeller och externa verktyg eller datakällor.
@@ -223,7 +223,7 @@ MCP-implementationer bör följa flera viktiga säkerhetsprinciper för att gara
 
 - **Användarsamtycke och kontroll**: Användare måste ge uttryckligt samtycke innan någon data nås eller operationer utförs. De ska ha tydlig kontroll över vilken data som delas och vilka åtgärder som godkänns, understödda av intuitiva användargränssnitt för granskning och godkännande.
 
-- **Datasekretess**: Användardata ska endast exponeras med uttryckligt samtycke och måste skyddas med lämpliga åtkomstkontroller. MCP-implementationer måste skydda mot obehörig datatransmission och säkerställa att sekretess upprätthålls genom hela interaktionen.
+- **Datasekretess**: Användardata ska endast exponeras med uttryckligt samtycke och måste skyddas med lämpliga åtkomstkontroller. MCP-implementationer måste skydda mot obehörig datatransmission och säkerställa att sekretess upprätthålls i alla interaktioner.
 
 - **Verktygssäkerhet**: Innan något verktyg anropas krävs uttryckligt användarsamtycke. Användare ska ha en klar förståelse för varje verktygs funktionalitet, och robusta säkerhetsgränser måste upprätthållas för att förhindra oavsiktlig eller osäker verktygsexekvering.
 
@@ -231,11 +231,11 @@ Genom att följa dessa principer säkerställer MCP att användarnas förtroende
 
 ## Kodexempel: Nyckelkomponenter
 
-Nedan finns kodexempel i flera populära programmeringsspråk som visar hur man implementerar viktiga MCP-serverkomponenter och verktyg.
+Nedan följer kodexempel i flera populära programmeringsspråk som illustrerar hur man implementerar viktiga MCP-serverkomponenter och verktyg.
 
 ### .NET-exempel: Skapa en enkel MCP-server med verktyg
 
-Här är ett praktiskt .NET-kodexempel som visar hur man implementerar en enkel MCP-server med egna verktyg. Exemplet visar hur man definierar och registrerar verktyg, hanterar förfrågningar och ansluter servern med Model Context Protocol.
+Här är ett praktiskt .NET-kodexempel som visar hur man implementerar en enkel MCP-server med anpassade verktyg. Exemplet visar hur man definierar och registrerar verktyg, hanterar förfrågningar och ansluter servern med Model Context Protocol.
 
 ```csharp
 using System;
@@ -511,20 +511,20 @@ server.connect(transport).catch(console.error);
 console.log("Weather MCP Server started");
 ```
 
-Detta JavaScript-exempel visar hur man skapar en MCP-klient som ansluter
-MCP inkluderar flera inbyggda koncept och mekanismer för att hantera säkerhet och auktorisation genom hela protokollet:
+Detta JavaScript-exempel visar hur man skapar en MCP-klient som ans
+MCP inkluderar flera inbyggda koncept och mekanismer för att hantera säkerhet och auktorisering genom hela protokollet:
 
 1. **Verktygstillståndskontroll**:  
   Klienter kan specificera vilka verktyg en modell får använda under en session. Detta säkerställer att endast uttryckligen auktoriserade verktyg är tillgängliga, vilket minskar risken för oavsiktliga eller osäkra operationer. Behörigheter kan konfigureras dynamiskt baserat på användarpreferenser, organisationspolicyer eller interaktionskontext.
 
 2. **Autentisering**:  
-  Servrar kan kräva autentisering innan åtkomst till verktyg, resurser eller känsliga operationer beviljas. Detta kan innebära API-nycklar, OAuth-token eller andra autentiseringsmetoder. Korrekt autentisering säkerställer att endast betrodda klienter och användare kan anropa serverfunktioner.
+  Servrar kan kräva autentisering innan åtkomst ges till verktyg, resurser eller känsliga operationer. Detta kan innebära API-nycklar, OAuth-token eller andra autentiseringsmetoder. Korrekt autentisering säkerställer att endast betrodda klienter och användare kan anropa serverfunktioner.
 
 3. **Validering**:  
   Parameterkontroll tillämpas för alla verktygsanrop. Varje verktyg definierar förväntade typer, format och begränsningar för sina parametrar, och servern validerar inkommande förfrågningar därefter. Detta förhindrar att felaktig eller skadlig input når verktygsimplementationerna och hjälper till att upprätthålla operationernas integritet.
 
 4. **Begränsning av anropstakt (Rate Limiting)**:  
-  För att förhindra missbruk och säkerställa rättvis användning av serverresurser kan MCP-servrar införa begränsningar för hur ofta verktygsanrop och resursåtkomst får göras. Begränsningarna kan gälla per användare, per session eller globalt, och hjälper till att skydda mot överbelastningsattacker eller överdriven resursförbrukning.
+  För att förhindra missbruk och säkerställa rättvis användning av serverresurser kan MCP-servrar införa begränsningar för hur ofta verktyg kan anropas och resurser nås. Begränsningar kan tillämpas per användare, per session eller globalt, och hjälper till att skydda mot överbelastningsattacker eller överdriven resursförbrukning.
 
 Genom att kombinera dessa mekanismer erbjuder MCP en säker grund för att integrera språkmodeller med externa verktyg och datakällor, samtidigt som användare och utvecklare får detaljerad kontroll över åtkomst och användning.
 
@@ -546,14 +546,14 @@ MCP-kommunikation använder strukturerade JSON-meddelanden för att möjliggöra
   - Referenser till resurser eller ytterligare kontext vid behov
 
 - **Tool Request**  
-  Skickas från klienten till servern när ett verktyg behöver köras. Detta meddelande innehåller:
+  Skickas från klienten till servern när ett verktyg ska köras. Detta meddelande innehåller:
   - Namnet på verktyget som ska anropas
   - Parametrar som krävs av verktyget (validerade mot verktygets schema)
   - Kontextuell information eller identifierare för att spåra förfrågan
 
 - **Tool Response**  
   Returneras av servern efter att ett verktyg har körts. Detta meddelande innehåller:
-  - Resultatet av verktygskörningen (strukturerad data eller innehåll)
+  - Resultatet av verktygets körning (strukturerad data eller innehåll)
   - Eventuella fel eller statusinformation om verktygsanropet misslyckades
   - Valfritt ytterligare metadata eller loggar relaterade till körningen
 

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T18:26:20+00:00",
+  "translation_date": "2025-07-13T20:00:01+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "sw"
 }
@@ -24,13 +24,13 @@ Hebu tuongeze njia zinazohitajika ifuatayo.
 
 ### -2- Ongeza njia
 
-Hebu tuongeze njia zinazoshughulikia muunganisho na ujumbe unaoingia:
+Hebu tuongeze njia zinazoshughulikia muunganisho na ujumbe unaokuja:
 
 Hebu tuongeze uwezo kwa seva ifuatayo.
 
 ### -3- Kuongeza uwezo wa seva
 
-Sasa tumeweka kila kitu maalum cha SSE, hebu tuongeze uwezo wa seva kama zana, maelekezo na rasilimali.
+Sasa tumeeleza kila kitu maalum cha SSE, hebu tuongeze uwezo wa seva kama zana, maelekezo na rasilimali.
 
 Msimbo wako mzima unapaswa kuonekana kama huu:
 
@@ -49,13 +49,13 @@ Ili kuendesha inspector, kwanza lazima uwe na seva ya SSE inayoendesha, hivyo he
 1. Endesha inspector
 
     > ![NOTE]
-    > Endesha hii katika dirisha tofauti la terminal tofauti na ile seva inayoendesha. Pia kumbuka, unahitaji kurekebisha amri iliyo chini ili ifae URL ambapo seva yako inaendesha.
+    > Endesha hii katika dirisha tofauti la terminal tofauti na ile seva inayoendesha. Pia kumbuka, unahitaji kurekebisha amri ifuatayo ili ifae URL ambapo seva yako inaendesha.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-Kuendesha inspector ni sawa katika mazingira yote ya utekelezaji. Angalia jinsi badala ya kupitisha njia ya seva yetu na amri ya kuanzisha seva, tunapita URL ambapo seva inaendesha na pia tunaelekeza njia ya `/sse`.
+Kuendesha inspector ni sawa katika mazingira yote ya utekelezaji. Angalia jinsi badala ya kupeana njia ya seva yetu na amri ya kuanzisha seva, tunapeana URL ambapo seva inaendesha na pia tunaelekeza njia ya `/sse`.
 
 ### -2- Kuijaribu zana
 
@@ -77,8 +77,8 @@ Jaribu kujenga seva yako na uwezo zaidi. Angalia [ukurasa huu](https://api.chuck
 
 Muhimu kumbuka kutoka sura hii ni yafuatayo:
 
-- SSE ni usafirishaji wa pili unaoungwa mkono baada ya stdio.
-- Ili kuunga mkono SSE, unahitaji kusimamia muunganisho unaoingia na ujumbe kwa kutumia mfumo wa wavuti.
+- SSE ni aina ya pili ya usafirishaji inayoungwa mkono baada ya stdio.
+- Ili kuunga mkono SSE, unahitaji kusimamia muunganisho unaokuja na ujumbe kwa kutumia mfumo wa wavuti.
 - Unaweza kutumia Inspector na Visual Studio Code kula seva ya SSE, kama vile seva za stdio. Angalia jinsi inavyotofautiana kidogo kati ya stdio na SSE. Kwa SSE, unahitaji kuanzisha seva kando kisha kuendesha zana yako ya inspector. Kwa zana ya inspector, pia kuna tofauti kidogo kwamba unahitaji kubainisha URL.
 
 ## Sampuli
@@ -97,5 +97,5 @@ Muhimu kumbuka kutoka sura hii ni yafuatayo:
 
 - Ifuatayo: [HTTP Streaming na MCP (Streamable HTTP)](../06-http-streaming/README.md)
 
-**Kiarifu cha Kutotegemea**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Msamaha**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

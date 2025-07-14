@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:04:48+00:00",
+  "translation_date": "2025-07-13T21:22:51+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "hr"
 }
@@ -15,12 +15,12 @@ Evo kako pokrenuti klasični HTTP streaming server i klijent, kao i MCP streamin
 
 - Postavit ćete MCP server koji šalje obavijesti o napretku klijentu dok obrađuje stavke.
 - Klijent će prikazivati svaku obavijest u stvarnom vremenu.
-- Ovaj vodič pokriva preduvjete, postavljanje, pokretanje i rješavanje problema.
+- Ovaj vodič obuhvaća preduvjete, postavljanje, pokretanje i rješavanje problema.
 
 ### Preduvjeti
 
 - Python 3.9 ili noviji
-- Paket `mcp` za Python (instalirajte s `pip install mcp`)
+- `mcp` Python paket (instalirajte s `pip install mcp`)
 
 ### Instalacija i postavljanje
 
@@ -80,7 +80,7 @@ Evo kako pokrenuti klasični HTTP streaming server i klijent, kao i MCP streamin
    python client.py
    ```
 
-2. Trebali biste vidjeti poruke koje se streamingom ispisuju redom:
+2. Trebali biste vidjeti poruke koje se ispisuju redom:
 
    ```text
    Running classic HTTP streaming client...
@@ -116,7 +116,7 @@ Evo kako pokrenuti klasični HTTP streaming server i klijent, kao i MCP streamin
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. Trebali biste vidjeti obavijesti koje se ispisuju u stvarnom vremenu dok server obrađuje svaku stavku:
+2. Trebali biste vidjeti obavijesti ispisane u stvarnom vremenu dok server obrađuje svaku stavku:
    ```
    Running MCP client...
    Starting client...
@@ -132,20 +132,20 @@ Evo kako pokrenuti klasični HTTP streaming server i klijent, kao i MCP streamin
 ### Ključni koraci implementacije
 
 1. **Kreirajte MCP server koristeći FastMCP.**
-2. **Definirajte alat koji obrađuje listu i šalje obavijesti koristeći `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+2. **Definirajte alat koji obrađuje listu i šalje obavijesti koristeći `ctx.info()` ili `ctx.log()`.**
+3. **Pokrenite server s `transport="streamable-http"`.**
+4. **Implementirajte klijenta s handlerom poruka koji prikazuje obavijesti čim stignu.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Pregled koda
+- Server koristi async funkcije i MCP kontekst za slanje ažuriranja napretka.
+- Klijent implementira async handler poruka za ispis obavijesti i konačnog rezultata.
 
-### Tips & Troubleshooting
+### Savjeti i rješavanje problema
 
-- Use `async/await` za neblokirajuće operacije.**
-- Uvijek rukujte iznimkama i na serveru i na klijentu radi veće pouzdanosti.
+- Koristite `async/await` za neblokirajuće operacije.
+- Uvijek hvatajte iznimke i na serveru i na klijentu radi stabilnosti.
 - Testirajte s više klijenata kako biste vidjeli ažuriranja u stvarnom vremenu.
-- Ako naiđete na greške, provjerite verziju Pythona i osigurajte da su sve ovisnosti instalirane.
+- Ako naiđete na greške, provjerite verziju Pythona i jesu li sve ovisnosti instalirane.
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja proizašla iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

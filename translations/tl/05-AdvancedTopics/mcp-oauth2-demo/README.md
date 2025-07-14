@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-13T00:40:50+00:00",
+  "translation_date": "2025-07-14T00:43:09+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "tl"
 }
 -->
 # MCP OAuth2 Demo
 
-Ang proyektong ito ay isang **minimal na Spring Boot application** na nagsisilbing:
+Ang proyektong ito ay isang **minimal na Spring Boot application** na gumaganap bilang:
 
 * isang **Spring Authorization Server** (nagbibigay ng JWT access tokens gamit ang `client_credentials` flow), at  
-* isang **Resource Server** (pinoprotektahan ang sarili nitong `/hello` endpoint).
+* isang **Resource Server** (pinoprotektahan ang sariling `/hello` endpoint).
 
 Ito ay sumusunod sa setup na ipinakita sa [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
-## Mabilis na pagsisimula (local)
+## Mabilis na pagsisimula (lokal)
 
 ```bash
 # build & run
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Note: Ang Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Tandaan: Ang Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) ay ang Base64 encoding ng `mcp-client:secret`.
 
 ### 3. I-access ang protektadong endpoint gamit ang token
 
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Ang matagumpay na tugon na may "Hello from MCP OAuth2 Demo!" ay nagpapatunay na maayos ang OAuth2 configuration.
+Ang matagumpay na tugon na may "Hello from MCP OAuth2 Demo!" ay nagpapatunay na tama ang OAuth2 configuration.
 
 ---
 
@@ -96,7 +96,7 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 Ang ingress FQDN ang magiging iyong **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+Awtomatikong nagbibigay ang Azure ng trusted TLS certificate para sa `*.azurecontainerapps.io`.
 
 ---
 
@@ -116,7 +116,7 @@ Idagdag ang inbound policy na ito sa iyong API:
 </inbound>
 ```
 
-Kukunin ng APIM ang JWKS at vavalidate ang bawat request.
+Kukunin ng APIM ang JWKS at susuriin ang bawat request.
 
 ---
 
@@ -124,5 +124,5 @@ Kukunin ng APIM ang JWKS at vavalidate ang bawat request.
 
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
-**Pagtatapat**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na nagmumula sa paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

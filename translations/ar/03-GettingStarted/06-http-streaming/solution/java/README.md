@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:43:39+00:00",
+  "translation_date": "2025-07-13T21:08:01+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "ar"
 }
 -->
 # عرض توضيحي لتدفق HTTP في الآلة الحاسبة
 
-يعرض هذا المشروع تدفق HTTP باستخدام Server-Sent Events (SSE) مع Spring Boot WebFlux. ويتكون من تطبيقين:
+يعرض هذا المشروع تدفق HTTP باستخدام Server-Sent Events (SSE) مع Spring Boot WebFlux. يتكون من تطبيقين:
 
-- **خادم الآلة الحاسبة**: خدمة ويب تفاعلية تقوم بالعمليات الحسابية وتبث النتائج باستخدام SSE  
-- **عميل الآلة الحاسبة**: تطبيق عميل يستهلك نقطة النهاية للبث
+- **خادم الآلة الحاسبة**: خدمة ويب تفاعلية تقوم بإجراء الحسابات وتدفق النتائج باستخدام SSE  
+- **عميل الآلة الحاسبة**: تطبيق عميل يستهلك نقطة النهاية الخاصة بالتدفق
 
 ## المتطلبات الأساسية
 
 - جافا 17 أو أعلى  
-- مافن 3.6 أو أعلى  
+- مافن 3.6 أو أعلى
 
 ## هيكل المشروع
 
@@ -37,23 +37,23 @@ java/
 
 ## كيف يعمل
 
-1. يقوم **خادم الآلة الحاسبة** بكشف نقطة النهاية `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. يقوم **خادم الآلة الحاسبة** بفتح نقطة نهاية `/calculate` التي:  
+   - تقبل معلمات استعلام: `a` (رقم)، `b` (رقم)، `op` (عملية)  
+   - العمليات المدعومة: `add`، `sub`، `mul`، `div`  
+   - يعيد Server-Sent Events مع تقدم الحساب والنتيجة
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`  
-   - يستهلك استجابة التدفق  
-   - يعرض كل حدث في وحدة التحكم  
+2. يتصل **عميل الآلة الحاسبة** بالخادم ويقوم بـ:  
+   - إرسال طلب لحساب `7 * 5`  
+   - استهلاك الاستجابة المتدفقة  
+   - طباعة كل حدث على وحدة التحكم
 
 ## تشغيل التطبيقات
 
-### الخيار 1: استخدام مافن (موصى به)
+### الخيار 1: باستخدام مافن (موصى به)
 
 #### 1. تشغيل خادم الآلة الحاسبة
 
-افتح الطرفية وانتقل إلى مجلد الخادم:
+افتح نافذة طرفية وانتقل إلى مجلد الخادم:
 
 ```bash
 cd calculator-server
@@ -71,7 +71,7 @@ Netty started on port 8080 (http)
 
 #### 2. تشغيل عميل الآلة الحاسبة
 
-افتح **طرفية جديدة** وانتقل إلى مجلد العميل:
+افتح **نافذة طرفية جديدة** وانتقل إلى مجلد العميل:
 
 ```bash
 cd calculator-client
@@ -79,11 +79,11 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-سيتصل العميل بالخادم، وينفذ العملية الحسابية، ويعرض نتائج التدفق.
+سيتصل العميل بالخادم، ينفذ الحساب، ويعرض النتائج المتدفقة.
 
-### الخيار 2: استخدام جافا مباشرةً
+### الخيار 2: استخدام جافا مباشرة
 
-#### 1. تجميع وتشغيل الخادم:
+#### 1. ترجمة وتشغيل الخادم:
 
 ```bash
 cd calculator-server
@@ -91,7 +91,7 @@ mvn clean package
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-#### 2. تجميع وتشغيل العميل:
+#### 2. ترجمة وتشغيل العميل:
 
 ```bash
 cd calculator-client
@@ -104,7 +104,7 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 يمكنك أيضًا اختبار الخادم باستخدام متصفح الويب أو curl:
 
 ### باستخدام متصفح الويب:  
-زر الرابط: `http://localhost:8080/calculate?a=10&b=5&op=add`
+قم بزيارة: `http://localhost:8080/calculate?a=10&b=5&op=add`
 
 ### باستخدام curl:  
 ```bash
@@ -113,7 +113,7 @@ curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-st
 
 ## المخرجات المتوقعة
 
-عند تشغيل العميل، يجب أن ترى تدفقًا مماثلًا للآتي:
+عند تشغيل العميل، يجب أن ترى مخرجات متدفقة مشابهة لـ:
 
 ```
 event:info
@@ -125,23 +125,23 @@ data:35.0
 
 ## العمليات المدعومة
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - الجمع (a + b)  
+- `sub` - الطرح (a - b)  
+- `mul` - الضرب (a * b)  
+- `div` - القسمة (a / b، ترجع NaN إذا كان b = 0)
 
-## API Reference
+## مرجع API
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**المعلمات:**  
+- `a` (مطلوب): الرقم الأول (double)  
+- `b` (مطلوب): الرقم الثاني (double)  
+- `op` (مطلوب): العملية (`add`، `sub`، `mul`، `div`)
 
-**Response:**
-- Content-Type: `text/event-stream`  
-- يعيد Server-Sent Events مع تقدم العملية والنتيجة
+**الاستجابة:**  
+- نوع المحتوى: `text/event-stream`  
+- يعيد Server-Sent Events مع تقدم الحساب والنتيجة
 
 **مثال على الطلب:**  
 ```
@@ -167,36 +167,36 @@ data: 35.0
    - أوقف أي تطبيقات أخرى تستخدم المنفذ 8080  
    - أو غيّر منفذ الخادم في `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **رفض الاتصال**  
+   - تأكد من تشغيل الخادم قبل بدء العميل  
+   - تحقق من أن الخادم بدأ بنجاح على المنفذ 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **مشاكل أسماء المعلمات**  
+   - يتضمن هذا المشروع إعداد مافن للمترجم مع العلم `-parameters`  
+   - إذا واجهت مشاكل في ربط المعلمات، تأكد من بناء المشروع بهذا الإعداد
 
-### Stopping the Applications
+### إيقاف التطبيقات
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` إذا كنت تشغله كعملية في الخلفية  
+- اضغط `Ctrl+C` في الطرفية التي يعمل فيها كل تطبيق  
+- أو استخدم `mvn spring-boot:stop` إذا كان يعمل كعملية في الخلفية
 
 ## تقنية المشروع
 
 - **Spring Boot 3.3.1** - إطار عمل التطبيق  
-- **Spring WebFlux** - إطار عمل الويب التفاعلي  
+- **Spring WebFlux** - إطار عمل ويب تفاعلي  
 - **Project Reactor** - مكتبة تدفقات تفاعلية  
 - **Netty** - خادم I/O غير محظور  
 - **Maven** - أداة البناء  
-- **Java 17+** - لغة البرمجة  
+- **Java 17+** - لغة البرمجة
 
 ## الخطوات التالية
 
-جرّب تعديل الكود لـ:  
-- إضافة المزيد من العمليات الحسابية  
+حاول تعديل الكود لـ:  
+- إضافة المزيد من العمليات الرياضية  
 - تضمين معالجة الأخطاء للعمليات غير الصالحة  
 - إضافة تسجيل الطلبات/الاستجابات  
 - تنفيذ المصادقة  
 - إضافة اختبارات وحدات
 
 **إخلاء المسؤولية**:  
-تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر المعتمد. للمعلومات الحساسة أو الهامة، يُنصح بالاعتماد على الترجمة المهنية البشرية. نحن غير مسؤولين عن أي سوء فهم أو تفسير خاطئ ناتج عن استخدام هذه الترجمة.
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

@@ -2,84 +2,84 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-06-10T06:19:56+00:00",
+  "translation_date": "2025-07-14T08:20:09+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
   "language_code": "sr"
 }
 -->
-# 🔧 Modul 3: Napredni razvoj MCP-a sa AI Toolkit-om
+# 🔧 Модул 3: Напредни развој MCP-а уз AI Toolkit
 
-![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)  
-![AI Toolkit](https://img.shields.io/badge/AI_Toolkit-Required-orange?style=flat-square)  
-![Python](https://img.shields.io/badge/Python-3.10+-green?style=flat-square)  
-![MCP SDK](https://img.shields.io/badge/MCP_SDK-1.9.3-purple?style=flat-square)  
-![Inspector](https://img.shields.io/badge/MCP_Inspector-0.14.0-blue?style=flat-square)  
+![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
+![AI Toolkit](https://img.shields.io/badge/AI_Toolkit-Required-orange?style=flat-square)
+![Python](https://img.shields.io/badge/Python-3.10+-green?style=flat-square)
+![MCP SDK](https://img.shields.io/badge/MCP_SDK-1.9.3-purple?style=flat-square)
+![Inspector](https://img.shields.io/badge/MCP_Inspector-0.14.0-blue?style=flat-square)
 
-## 🎯 Ciljevi učenja
+## 🎯 Циљеви учења
 
-Na kraju ovog laboratorijskog zadatka bićete u stanju da:
+На крају овог лабораторијског задатка моћи ћете да:
 
-- ✅ Kreirate prilagođene MCP servere koristeći AI Toolkit  
-- ✅ Konfigurišete i koristite najnoviji MCP Python SDK (v1.9.3)  
-- ✅ Postavite i koristite MCP Inspector za otklanjanje grešaka  
-- ✅ Otklanjate greške MCP servera u okruženjima Agent Builder i Inspector  
-- ✅ Razumete napredne tokove rada u razvoju MCP servera  
+- ✅ Креирате прилагођене MCP сервере користећи AI Toolkit
+- ✅ Конфигуришете и користите најновији MCP Python SDK (в1.9.3)
+- ✅ Подесите и користите MCP Inspector за отклањање грешака
+- ✅ Откључавате грешке на MCP серверима у окружењима Agent Builder и Inspector
+- ✅ Разумете напредне токове рада у развоју MCP сервера
 
-## 📋 Preduslovi
+## 📋 Предуслови
 
-- Završetak laboratorije 2 (MCP Osnove)  
-- VS Code sa instaliranim AI Toolkit dodatkom  
-- Python 3.10+ okruženje  
-- Node.js i npm za podešavanje Inspectora  
+- Завршен Лаб 2 (Основе MCP-а)
+- VS Code са инсталираним AI Toolkit екстензијом
+- Python окружење верзије 3.10+
+- Node.js и npm за подешавање Inspectora
 
-## 🏗️ Šta ćete napraviti
+## 🏗️ Шта ћете направити
 
-U ovoj laboratoriji kreiraćete **Weather MCP Server** koji prikazuje:  
-- Implementaciju prilagođenog MCP servera  
-- Integraciju sa AI Toolkit Agent Builder-om  
-- Profesionalne tokove rada za otklanjanje grešaka  
-- Moderne obrasce korišćenja MCP SDK-a  
+У овом лабораторијском задатку направићете **Weather MCP Server** који демонстрира:
+- Имплементацију прилагођеног MCP сервера
+- Интеграцију са AI Toolkit Agent Builder-ом
+- Професионалне токове рада за отклањање грешака
+- Савремене обрасце коришћења MCP SDK-а
 
 ---
 
-## 🔧 Pregled osnovnih komponenti
+## 🔧 Преглед основних компоненти
 
 ### 🐍 MCP Python SDK  
-Model Context Protocol Python SDK pruža osnovu za pravljenje prilagođenih MCP servera. Koristićete verziju 1.9.3 sa unapređenim mogućnostima za otklanjanje grešaka.
+Model Context Protocol Python SDK пружа основу за изградњу прилагођених MCP сервера. Користићете верзију 1.9.3 са побољшаним могућностима отклањања грешака.
 
 ### 🔍 MCP Inspector  
-Snažan alat za otklanjanje grešaka koji nudi:  
-- Praćenje servera u realnom vremenu  
-- Vizualizaciju izvršavanja alata  
-- Inspekciju mrežnih zahteva/odgovora  
-- Interaktivno testno okruženje  
+Снажан алат за отклањање грешака који пружа:  
+- Праћење сервера у реалном времену  
+- Визуелизацију извршавања алата  
+- Инспекцију мрежних захтева/одговора  
+- Интерактивно тестирање
 
 ---
 
-## 📖 Korak po korak implementacija
+## 📖 Корак по корак имплементација
 
-### Korak 1: Kreirajte WeatherAgent u Agent Builder-u
+### Корак 1: Креирајте WeatherAgent у Agent Builder-у
 
-1. **Pokrenite Agent Builder** u VS Code-u preko AI Toolkit dodatka  
-2. **Kreirajte novog agenta** sa sledećom konfiguracijom:  
-   - Ime agenta: `WeatherAgent`  
+1. **Покрените Agent Builder** у VS Code преко AI Toolkit екстензије  
+2. **Креирајте новог агента** са следећом конфигурацијом:  
+   - Име агента: `WeatherAgent`
 
 ![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.sr.png)
 
-### Korak 2: Inicijalizujte MCP Server projekat
+### Корак 2: Иницијализујте MCP Server пројекат
 
-1. **Idite na Tools** → **Add Tool** u Agent Builder-u  
-2. **Izaberite "MCP Server"** iz ponuđenih opcija  
-3. **Izaberite "Create A new MCP Server"**  
-4. **Odaberite `python-weather` šablon**  
-5. **Imenujte svoj server:** `weather_mcp`  
+1. **Идите на Tools** → **Add Tool** у Agent Builder-у  
+2. **Изаберите "MCP Server"** из понуђених опција  
+3. **Одаберите "Create A new MCP Server"**  
+4. **Изаберите `python-weather` шаблон**  
+5. **Назовите свој сервер:** `weather_mcp`
 
 ![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.sr.png)
 
-### Korak 3: Otvorite i pregledajte projekat
+### Корак 3: Отворите и прегледајте пројекат
 
-1. **Otvorite generisani projekat** u VS Code-u  
-2. **Pregledajte strukturu projekta:**  
+1. **Отворите генерисани пројекат** у VS Code  
+2. **Прегледајте структуру пројекта:**  
    ```
    weather_mcp/
    ├── src/
@@ -93,37 +93,35 @@ Snažan alat za otklanjanje grešaka koji nudi:
    │   └── tasks.json
    ├── pyproject.toml
    └── README.md
-   ```  
+   ```
 
-### Korak 4: Nadogradnja na najnoviji MCP SDK
+### Корак 4: Надоградите на најновији MCP SDK
 
-> **🔍 Zašto nadogradnja?** Želimo da koristimo najnoviji MCP SDK (v1.9.3) i Inspector servis (0.14.0) za dodatne funkcionalnosti i bolje mogućnosti otklanjanja grešaka.
+> **🔍 Зашто надоградити?** Желимо да користимо најновији MCP SDK (в1.9.3) и Inspector сервис (0.14.0) ради бољих функција и напреднијег отклањања грешака.
 
-#### 4a. Ažurirajte Python zavisnosti
+#### 4a. Ажурирајте Python зависности
 
-**Izmenite `pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
+**Измените `pyproject.toml`:** ажурирајте [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
 
+#### 4b. Ажурирајте Inspector конфигурацију
 
-#### 4b. Update Inspector Configuration
+**Измените `inspector/package.json`:** ажурирајте [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
 
-**Edit `inspector/package.json`:** update [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
+#### 4c. Ажурирајте Inspector зависности
 
-#### 4c. Update Inspector Dependencies
+**Измените `inspector/package-lock.json`:** ажурирајте [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
 
-**Edit `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
+> **📝 Напомена:** Овај фајл садржи обимне дефиниције зависности. Испод је основна структура – цео садржај обезбеђује правилно решавање зависности.
 
-> **📝 Note:** This file contains extensive dependency definitions. Below is the essential structure - the full content ensures proper dependency resolution.
+> **⚡ Потпуни Package Lock:** Целокупни package-lock.json садржи око 3000 линија дефиниција зависности. Горњи приказ показује кључну структуру – користите приложени фајл за потпуно решавање зависности.
 
+### Корак 5: Конфигуришите VS Code за отклањање грешака
 
-> **⚡ Full Package Lock:** The complete package-lock.json contains ~3000 lines of dependency definitions. The above shows the key structure - use the provided file for complete dependency resolution.
+*Напомена: Молимо копирајте фајл на назначену локацију да бисте заменили одговарајући локални фајл*
 
-### Step 5: Configure VS Code Debugging
+#### 5a. Ажурирајте Launch конфигурацију
 
-*Note: Please copy the file in the specified path to replace the corresponding local file*
-
-#### 5a. Update Launch Configuration
-
-**Edit `.vscode/launch.json`:**
+**Измените `.vscode/launch.json`:**
 
 ```json
 {
@@ -200,7 +198,7 @@ Snažan alat za otklanjanje grešaka koji nudi:
 }
 ```
 
-**Izmenite `.vscode/tasks.json`:**
+**Измените `.vscode/tasks.json`:**
 
 ```
 {
@@ -304,31 +302,31 @@ Snažan alat za otklanjanje grešaka koji nudi:
 
 ---
 
-## 🚀 Pokretanje i testiranje MCP servera
+## 🚀 Покретање и тестирање вашег MCP сервера
 
-### Korak 6: Instalirajte zavisnosti
+### Корак 6: Инсталирајте зависности
 
-Nakon što izvršite izmene u konfiguraciji, pokrenite sledeće komande:
+Након измена у конфигурацији, покрените следеће команде:
 
-**Instalirajte Python zavisnosti:**  
+**Инсталирајте Python зависности:**  
 ```bash
 uv sync
 ```
 
-**Instalirajte zavisnosti za Inspector:**  
+**Инсталирајте Inspector зависности:**  
 ```bash
 cd inspector
 npm install
 ```
 
-### Korak 7: Otklanjanje grešaka sa Agent Builder-om
+### Корак 7: Откључавање грешака у Agent Builder-у
 
-1. **Pritisnite F5** ili koristite konfiguraciju **"Debug in Agent Builder"**  
-2. **Izaberite compound konfiguraciju** u debug panelu  
-3. **Sačekajte da server startuje** i da se otvori Agent Builder  
-4. **Testirajte svoj weather MCP server** koristeći upite na prirodnom jeziku  
+1. **Притисните F5** или користите конфигурацију **"Debug in Agent Builder"**  
+2. **Изаберите compound конфигурацију** у debug панелу  
+3. **Сачекајте да сервер почне са радом** и да се Agent Builder отвори  
+4. **Тестирајте свој weather MCP сервер** са упитима на природном језику
 
-Unesite upit kao u primeru:
+Унесите упит као овај
 
 SYSTEM_PROMPT
 
@@ -344,58 +342,58 @@ How's the weather like in Seattle
 
 ![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.sr.png)
 
-### Korak 8: Otklanjanje grešaka sa MCP Inspector-om
+### Корак 8: Откључавање грешака уз MCP Inspector
 
-1. **Koristite konfiguraciju "Debug in Inspector"** (Edge ili Chrome)  
-2. **Otvorite Inspector interfejs** na adresi `http://localhost:6274`  
-3. **Istražite interaktivno testno okruženje:**  
-   - Pregled dostupnih alata  
-   - Testiranje izvršenja alata  
-   - Praćenje mrežnih zahteva  
-   - Otklanjanje grešaka odgovora servera  
+1. **Користите конфигурацију "Debug in Inspector"** (Edge или Chrome)  
+2. **Отворите Inspector интерфејс** на `http://localhost:6274`  
+3. **Истражите интерактивно тестирачко окружење:**  
+   - Погледајте доступне алате  
+   - Тестирајте извршавање алата  
+   - Пратите мрежне захтеве  
+   - Откључавајте грешке у одговорима сервера
 
 ![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.sr.png)
 
 ---
 
-## 🎯 Ključni ishodi učenja
+## 🎯 Кључни резултати учења
 
-Završetkom ove laboratorije ste:
+Завршетком овог лабораторијског задатка сте:
 
-- [x] **Kreirali prilagođeni MCP server** koristeći AI Toolkit šablone  
-- [x] **Nadogradili na najnoviji MCP SDK** (v1.9.3) za unapređenu funkcionalnost  
-- [x] **Konfigurisali profesionalne tokove za otklanjanje grešaka** za Agent Builder i Inspector  
-- [x] **Postavili MCP Inspector** za interaktivno testiranje servera  
-- [x] **Savladali VS Code konfiguracije za otklanjanje grešaka** u razvoju MCP-a  
+- [x] **Креирали прилагођени MCP сервер** користећи AI Toolkit шаблоне  
+- [x] **Надоградили на најновији MCP SDK** (в1.9.3) ради боље функционалности  
+- [x] **Конфигурисали професионалне токове рада за отклањање грешака** у Agent Builder-у и Inspector-у  
+- [x] **Подесили MCP Inspector** за интерактивно тестирање сервера  
+- [x] **Мастерирали VS Code конфигурације за отклањање грешака** у развоју MCP-а
 
-## 🔧 Istražene napredne funkcije
+## 🔧 Напредне истражене функције
 
-| Funkcija               | Opis                             | Primer upotrebe               |
-|-----------------------|---------------------------------|------------------------------|
-| **MCP Python SDK v1.9.3** | Najnovija implementacija protokola | Savremeni razvoj servera      |
-| **MCP Inspector 0.14.0**   | Interaktivni alat za otklanjanje grešaka | Testiranje servera u realnom vremenu |
-| **VS Code Debugging**      | Integrisano razvojno okruženje   | Profesionalni tok otklanjanja grešaka |
-| **Agent Builder Integration** | Direktna veza sa AI Toolkit-om | End-to-end testiranje agenta  |
+| Функција | Опис | Примена |
+|---------|-------------|----------|
+| **MCP Python SDK в1.9.3** | Најновија имплементација протокола | Савремени развој сервера |
+| **MCP Inspector 0.14.0** | Интерактивни алат за отклањање грешака | Тестирање сервера у реалном времену |
+| **VS Code Debugging** | Интегрисано развојно окружење | Професионални ток рада за отклањање грешака |
+| **Agent Builder интеграција** | Директна веза са AI Toolkit-ом | Комплетно тестирање агента |
 
-## 📚 Dodatni resursi
+## 📚 Додатни ресурси
 
-- [MCP Python SDK Dokumentacija](https://modelcontextprotocol.io/docs/sdk/python)  
-- [AI Toolkit Uputstvo za dodatak](https://code.visualstudio.com/docs/ai/ai-toolkit)  
-- [VS Code Dokumentacija za otklanjanje grešaka](https://code.visualstudio.com/docs/editor/debugging)  
-- [Model Context Protocol Specifikacija](https://modelcontextprotocol.io/docs/concepts/architecture)  
+- [MCP Python SDK документација](https://modelcontextprotocol.io/docs/sdk/python)  
+- [AI Toolkit водич за екстензију](https://code.visualstudio.com/docs/ai/ai-toolkit)  
+- [VS Code документација за отклањање грешака](https://code.visualstudio.com/docs/editor/debugging)  
+- [Model Context Protocol спецификација](https://modelcontextprotocol.io/docs/concepts/architecture)
 
 ---
 
-**🎉 Čestitamo!** Uspešno ste završili laboratoriju 3 i sada možete kreirati, otklanjati greške i implementirati prilagođene MCP servere koristeći profesionalne tokove rada.
+**🎉 Честитамо!** Успешно сте завршили Лаб 3 и сада можете да креирате, отклањате грешке и пуштате у рад прилагођене MCP сервере користећи професионалне токове развоја.
 
-### 🔜 Nastavite na sledeći modul
+### 🔜 Наставите на следећи модул
 
-Spremni da primenite svoje MCP veštine u realnom razvojnom okruženju? Nastavite na **[Modul 4: Praktični MCP razvoj - Prilagođeni GitHub Clone Server](../lab4/README.md)** gde ćete:  
-- Izgraditi MCP server spreman za produkciju koji automatizuje operacije sa GitHub repozitorijumima  
-- Implementirati funkcionalnost kloniranja GitHub repozitorijuma preko MCP-a  
-- Integrisati prilagođene MCP servere sa VS Code i GitHub Copilot Agent modom  
-- Testirati i implementirati prilagođene MCP servere u produkcionim okruženjima  
-- Naučiti praktičnu automatizaciju tokova rada za programere
+Спремни да примените своје MCP вештине у стварном развојном окружењу? Наставите на **[Модул 4: Практични развој MCP-а - Прилагођени GitHub Clone Server](../lab4/README.md)** где ћете:  
+- Изградити MCP сервер спреман за продукцију који аутоматизује операције GitHub репозиторијума  
+- Имплементирати функционалност клонирања GitHub репозиторијума преко MCP-а  
+- Интегрисати прилагођене MCP сервере са VS Code и GitHub Copilot Agent Mode-ом  
+- Тестирати и пуштати у рад прилагођене MCP сервере у продукцијским окружењима  
+- Научити практичну аутоматизацију токова рада за програмере
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако настојимо да превод буде прецизан, молимо вас да имате у виду да аутоматизовани преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне интерпретације настале употребом овог превода.
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

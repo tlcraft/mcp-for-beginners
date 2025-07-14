@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "105c2ddbb77bc38f7e9df009e1b06e45",
-  "translation_date": "2025-07-04T18:03:28+00:00",
+  "translation_date": "2025-07-13T15:36:04+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "vi"
 }
@@ -24,7 +24,7 @@ Các ứng dụng AI tạo sinh là một bước tiến lớn khi chúng thư�
 Khi các ứng dụng AI tạo sinh ngày càng phức tạp, việc áp dụng các tiêu chuẩn để đảm bảo **khả năng mở rộng, khả năng mở rộng chức năng** và **dễ bảo trì** là điều cần thiết. MCP đáp ứng những nhu cầu này bằng cách:
 
 - Thống nhất việc tích hợp mô hình với công cụ
-- Giảm thiểu các giải pháp tùy chỉnh dễ hỏng hóc, chỉ dùng một lần
+- Giảm thiểu các giải pháp tùy chỉnh dễ hỏng hóc
 - Cho phép nhiều mô hình cùng tồn tại trong một hệ sinh thái
 
 ---
@@ -58,11 +58,11 @@ Trước MCP, việc tích hợp mô hình với công cụ đòi hỏi:
 | Tương tác đa nền tảng    | LLM hoạt động mượt mà với các công cụ từ nhiều nhà cung cấp khác nhau        |
 | Tính nhất quán           | Hành vi đồng nhất trên các nền tảng và công cụ                               |
 | Tái sử dụng              | Công cụ xây dựng một lần có thể dùng lại trong nhiều dự án và hệ thống       |
-| Tăng tốc phát triển      | Giảm thời gian phát triển nhờ sử dụng giao diện tiêu chuẩn, cắm là chạy      |
+| Tăng tốc phát triển      | Giảm thời gian phát triển nhờ sử dụng giao diện tiêu chuẩn, cắm và chạy      |
 
 ---
 
-## **🧱 Tổng quan kiến trúc MCP ở cấp độ cao**
+## **🧱 Tổng quan kiến trúc MCP ở cấp cao**
 
 MCP tuân theo mô hình **client-server**, trong đó:
 
@@ -167,17 +167,17 @@ MCP mở rộng khả năng AI cho nhiều ứng dụng khác nhau:
 
 ### 🧠 MCP = Tiêu chuẩn chung cho tương tác AI
 
-Model Context Protocol (MCP) hoạt động như một tiêu chuẩn chung cho các tương tác AI, tương tự như USB-C đã tiêu chuẩn hóa kết nối vật lý cho thiết bị. Trong thế giới AI, MCP cung cấp một giao diện nhất quán, cho phép các mô hình (client) tích hợp mượt mà với các công cụ và nhà cung cấp dữ liệu bên ngoài (server). Điều này loại bỏ nhu cầu về các giao thức tùy chỉnh đa dạng cho từng API hoặc nguồn dữ liệu.
+Model Context Protocol (MCP) hoạt động như một tiêu chuẩn chung cho các tương tác AI, tương tự như USB-C tiêu chuẩn hóa kết nối vật lý cho thiết bị. Trong thế giới AI, MCP cung cấp một giao diện nhất quán, cho phép các mô hình (client) tích hợp mượt mà với các công cụ và nhà cung cấp dữ liệu bên ngoài (server). Điều này loại bỏ nhu cầu về các giao thức tùy chỉnh đa dạng cho từng API hoặc nguồn dữ liệu.
 
-Theo MCP, một công cụ tương thích MCP (gọi là MCP server) tuân theo một tiêu chuẩn thống nhất. Các server này có thể liệt kê các công cụ hoặc hành động mà họ cung cấp và thực thi các hành động đó khi được tác nhân AI yêu cầu. Các nền tảng tác nhân AI hỗ trợ MCP có khả năng phát hiện các công cụ có sẵn từ server và gọi chúng thông qua giao thức tiêu chuẩn này.
+Theo MCP, một công cụ tương thích MCP (gọi là MCP server) tuân theo một tiêu chuẩn thống nhất. Các server này có thể liệt kê các công cụ hoặc hành động mà họ cung cấp và thực thi các hành động đó khi được tác nhân AI yêu cầu. Các nền tảng tác nhân AI hỗ trợ MCP có khả năng phát hiện các công cụ có sẵn từ các server và gọi chúng thông qua giao thức tiêu chuẩn này.
 
 ### 💡 Hỗ trợ truy cập kiến thức
 
-Ngoài việc cung cấp công cụ, MCP còn hỗ trợ truy cập kiến thức. Nó cho phép ứng dụng cung cấp ngữ cảnh cho các mô hình ngôn ngữ lớn (LLMs) bằng cách liên kết chúng với nhiều nguồn dữ liệu khác nhau. Ví dụ, một MCP server có thể đại diện cho kho tài liệu của một công ty, cho phép các tác nhân truy xuất thông tin liên quan khi cần. Một server khác có thể xử lý các hành động cụ thể như gửi email hoặc cập nhật hồ sơ. Với tác nhân, đây đơn giản là các công cụ mà nó có thể sử dụng — một số công cụ trả về dữ liệu (ngữ cảnh kiến thức), trong khi số khác thực hiện hành động. MCP quản lý hiệu quả cả hai loại này.
+Ngoài việc cung cấp công cụ, MCP còn hỗ trợ truy cập kiến thức. Nó cho phép các ứng dụng cung cấp ngữ cảnh cho các mô hình ngôn ngữ lớn (LLMs) bằng cách liên kết chúng với nhiều nguồn dữ liệu khác nhau. Ví dụ, một MCP server có thể đại diện cho kho tài liệu của một công ty, cho phép các tác nhân truy xuất thông tin liên quan khi cần. Một server khác có thể xử lý các hành động cụ thể như gửi email hoặc cập nhật hồ sơ. Với tác nhân, đây đơn giản là các công cụ mà nó có thể sử dụng — một số công cụ trả về dữ liệu (ngữ cảnh kiến thức), trong khi số khác thực hiện hành động. MCP quản lý hiệu quả cả hai loại này.
 
 Một tác nhân khi kết nối với MCP server sẽ tự động học được các khả năng và dữ liệu có thể truy cập của server thông qua định dạng tiêu chuẩn. Việc tiêu chuẩn hóa này cho phép công cụ có thể được thêm vào một cách linh hoạt. Ví dụ, khi thêm một MCP server mới vào hệ thống của tác nhân, các chức năng của server đó sẽ được sử dụng ngay lập tức mà không cần tùy chỉnh thêm hướng dẫn cho tác nhân.
 
-Việc tích hợp này được minh họa trong sơ đồ mermaid, nơi các server cung cấp cả công cụ và kiến thức, đảm bảo sự phối hợp liền mạch giữa các hệ thống.
+Việc tích hợp này được minh họa trong sơ đồ mermaid, nơi các server cung cấp cả công cụ và kiến thức, đảm bảo sự hợp tác liền mạch giữa các hệ thống.
 
 ### 👉 Ví dụ: Giải pháp tác nhân có khả năng mở rộng
 
@@ -281,13 +281,13 @@ Dưới đây là các lợi ích thực tế khi sử dụng MCP:
 - **Thông tin cập nhật**: Mô hình có thể truy cập thông tin mới nhất ngoài dữ liệu huấn luyện  
 - **Mở rộng khả năng**: Mô hình có thể tận dụng các công cụ chuyên biệt cho các nhiệm vụ chưa được huấn luyện  
 - **Giảm ảo tưởng**: Nguồn dữ liệu bên ngoài cung cấp cơ sở thực tế  
-- **Bảo mật**: Dữ liệu nhạy cảm có thể được giữ trong môi trường an toàn thay vì nhúng vào câu lệnh
+- **Bảo mật**: Dữ liệu nhạy cảm có thể được giữ trong môi trường an toàn thay vì nhúng vào prompt
 
 ## 📌 Những điểm chính cần nhớ
 
 Dưới đây là những điểm chính khi sử dụng MCP:
 
-- **MCP** tiêu chuẩn hóa cách mô hình AI tương tác với công cụ và dữ liệu  
+- **MCP** tiêu chuẩn hóa cách các mô hình AI tương tác với công cụ và dữ liệu  
 - Thúc đẩy **khả năng mở rộng, tính nhất quán và tương tác đa nền tảng**  
 - MCP giúp **rút ngắn thời gian phát triển, cải thiện độ tin cậy và mở rộng khả năng mô hình**  
 - Kiến trúc client-server **cho phép xây dựng các ứng dụng AI linh hoạt và dễ mở rộng**

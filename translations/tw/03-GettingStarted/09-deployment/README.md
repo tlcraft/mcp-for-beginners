@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T16:09:09+00:00",
+  "translation_date": "2025-07-13T22:06:51+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "tw"
 }
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 針對 SSE（stdio 類型伺服器不需要）：
 
 1. **設定網路**：確保伺服器在預期的埠口可被存取。  
-1. **連接客戶端**：使用像 `http://localhost:3000` 這樣的本地連接 URL。
+1. **連接客戶端**：使用像是 `http://localhost:3000` 的本地連線 URL。
 
 ## 雲端部署
 
@@ -48,7 +48,7 @@ Azure Container Apps 支援部署 MCP 伺服器。此功能仍在開發中，目
 
 以下是操作步驟：
 
-1. 複製一個程式庫：
+1. 複製一個 repo：
 
   ```sh
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
@@ -104,13 +104,13 @@ Azure Container Apps 支援部署 MCP 伺服器。此功能仍在開發中，目
 
 ## 其他資源
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
-- [Azure Container Apps 文章](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
-- [Azure Container Apps MCP 程式庫](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
+- [Azure Container Apps 文章](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
+- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)
 
 ## 接下來
 
 - 下一步：[實務應用](../../04-PracticalImplementation/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤譯負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤譯負責。

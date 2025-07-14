@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:27:16+00:00",
+  "translation_date": "2025-07-13T23:29:53+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "de"
 }
@@ -31,15 +31,15 @@ Diese Implementierung zeigt mehrere wichtige MCP-Funktionen:
 - `add` – Ein einfacher Taschenrechner, der zwei Zahlen addiert
 
 ### Resources
-- `models://` – Liefert Informationen über verfügbare KI-Modelle
+- `models://` – Gibt Informationen über verfügbare KI-Modelle zurück
 - `greeting://{name}` – Gibt eine personalisierte Begrüßung für einen angegebenen Namen zurück
 
 ### Prompts
-- `review_code` – Erstellt eine Eingabeaufforderung zur Code-Überprüfung
+- `review_code` – Erstellt eine Eingabeaufforderung zum Überprüfen von Code
 
 ## Installation
 
-Um diese MCP-Implementierung zu verwenden, installieren Sie die benötigten Pakete:
+Um diese MCP-Implementierung zu verwenden, installiere die benötigten Pakete:
 
 ```powershell
 pip install mcp-server mcp-client
@@ -49,13 +49,13 @@ pip install mcp-server mcp-client
 
 ### Server starten
 
-Starten Sie den Server in einem Terminalfenster:
+Starte den Server in einem Terminalfenster:
 
 ```powershell
 python server.py
 ```
 
-Der Server kann auch im Entwicklungsmodus mit dem MCP CLI ausgeführt werden:
+Der Server kann auch im Entwicklungsmodus über die MCP CLI gestartet werden:
 
 ```powershell
 mcp dev server.py
@@ -67,15 +67,15 @@ Oder in Claude Desktop installiert werden (falls verfügbar):
 mcp install server.py
 ```
 
-### Client ausführen
+### Client starten
 
-Starten Sie den Client in einem anderen Terminalfenster:
+Starte den Client in einem anderen Terminalfenster:
 
 ```powershell
 python client.py
 ```
 
-Dies verbindet den Client mit dem Server und demonstriert alle verfügbaren Funktionen.
+Dadurch wird eine Verbindung zum Server hergestellt und alle verfügbaren Funktionen demonstriert.
 
 ### Client-Nutzung
 
@@ -85,9 +85,9 @@ Der Client (`client.py`) zeigt alle MCP-Fähigkeiten:
 python client.py
 ```
 
-Dies stellt die Verbindung zum Server her und nutzt alle Funktionen, einschließlich Tools, Resources und Prompts. Die Ausgabe zeigt:
+Dies verbindet sich mit dem Server und nutzt alle Funktionen, einschließlich Tools, Resources und Prompts. Die Ausgabe zeigt:
 
-1. Ergebnis des Taschenrechners (5 + 7 = 12)
+1. Ergebnis des Taschenrechner-Tools (5 + 7 = 12)
 2. Antwort des Completion-Tools auf „What is the meaning of life?“
 3. Liste der verfügbaren KI-Modelle
 4. Personalisierte Begrüßung für „MCP Explorer“
@@ -95,7 +95,7 @@ Dies stellt die Verbindung zum Server her und nutzt alle Funktionen, einschließ
 
 ## Implementierungsdetails
 
-Der Server wird mit der `FastMCP` API implementiert, die hochrangige Abstraktionen zur Definition von MCP-Diensten bietet. Hier ein vereinfachtes Beispiel, wie Tools definiert werden:
+Der Server ist mit der `FastMCP` API umgesetzt, die hochrangige Abstraktionen zur Definition von MCP-Diensten bietet. Hier ein vereinfachtes Beispiel, wie Tools definiert werden:
 
 ```python
 @mcp.tool()
@@ -113,7 +113,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-Der Client verwendet die MCP-Client-Bibliothek, um sich zu verbinden und den Server aufzurufen:
+Der Client verwendet die MCP-Client-Bibliothek, um sich mit dem Server zu verbinden und ihn aufzurufen:
 
 ```python
 async with stdio_client(server_params) as (reader, writer):
@@ -124,7 +124,7 @@ async with stdio_client(server_params) as (reader, writer):
 
 ## Mehr erfahren
 
-Weitere Informationen zum MCP finden Sie unter: https://modelcontextprotocol.io/
+Weitere Informationen zum MCP findest du unter: https://modelcontextprotocol.io/
 
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

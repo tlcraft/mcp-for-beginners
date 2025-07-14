@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c69f9df7f3215dac8d056020539bac36",
-  "translation_date": "2025-07-04T18:16:12+00:00",
+  "translation_date": "2025-07-13T16:57:32+00:00",
   "source_file": "02-Security/README.md",
   "language_code": "ms"
 }
@@ -25,7 +25,7 @@ Menjelang akhir pelajaran ini, anda akan dapat:
 
 # Kawalan keselamatan MCP
 
-Mana-mana sistem yang mempunyai akses kepada sumber penting mempunyai cabaran keselamatan tersirat. Cabaran keselamatan biasanya boleh diatasi melalui penerapan kawalan dan konsep keselamatan asas yang betul. Oleh kerana MCP baru sahaja ditakrifkan, spesifikasi sedang berubah dengan pantas dan protokol ini terus berkembang. Akhirnya, kawalan keselamatan di dalamnya akan matang, membolehkan integrasi yang lebih baik dengan seni bina keselamatan perusahaan dan amalan terbaik yang telah ditetapkan.
+Mana-mana sistem yang mempunyai akses kepada sumber penting mempunyai cabaran keselamatan tersirat. Cabaran keselamatan biasanya boleh diatasi melalui penerapan kawalan dan konsep keselamatan asas yang betul. Oleh kerana MCP baru sahaja ditakrifkan, spesifikasi sedang berubah dengan sangat pantas dan protokol ini terus berkembang. Akhirnya, kawalan keselamatan di dalamnya akan matang, membolehkan integrasi yang lebih baik dengan seni bina keselamatan perusahaan dan amalan terbaik yang telah ditetapkan.
 
 Penyelidikan yang diterbitkan dalam [Microsoft Digital Defense Report](https://aka.ms/mddr) menyatakan bahawa 98% pelanggaran yang dilaporkan boleh dicegah dengan amalan kebersihan keselamatan yang kukuh dan perlindungan terbaik terhadap sebarang jenis pelanggaran adalah dengan memastikan kebersihan keselamatan asas, amalan pengekodan selamat dan keselamatan rantaian bekalan dilakukan dengan betul — amalan yang telah diuji dan terbukti ini masih memberi impak paling besar dalam mengurangkan risiko keselamatan.
 
@@ -86,18 +86,18 @@ Pelayan MCP mungkin telah diberikan kebenaran berlebihan ke atas perkhidmatan/su
 
 Pelayan MCP yang berniat jahat atau telah dikompromi boleh memperkenalkan risiko besar dengan mendedahkan data pelanggan atau membolehkan tindakan yang tidak diingini. Risiko ini sangat relevan dalam beban kerja AI dan berasaskan MCP, di mana:
 
-- **Serangan Suntikan Arahan (Prompt Injection):** Penyerang menyelitkan arahan berniat jahat dalam arahan atau kandungan luaran, menyebabkan sistem AI melakukan tindakan yang tidak diingini atau mendedahkan data sensitif. Ketahui lebih lanjut: [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
-- **Pencemaran Alat (Tool Poisoning):** Penyerang memanipulasi metadata alat (seperti deskripsi atau parameter) untuk mempengaruhi tingkah laku AI, berpotensi memintas kawalan keselamatan atau mengeluarkan data. Maklumat lanjut: [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
-- **Suntikan Arahan Rentas Domain:** Arahan berniat jahat diselitkan dalam dokumen, halaman web, atau emel, yang kemudian diproses oleh AI, menyebabkan kebocoran atau manipulasi data.
+- **Serangan Suntikan Arahan (Prompt Injection):** Penyerang menyisipkan arahan berniat jahat dalam arahan atau kandungan luaran, menyebabkan sistem AI melakukan tindakan yang tidak diingini atau mendedahkan data sensitif. Ketahui lebih lanjut: [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
+- **Pencemaran Alat (Tool Poisoning):** Penyerang memanipulasi metadata alat (seperti penerangan atau parameter) untuk mempengaruhi tingkah laku AI, berpotensi memintas kawalan keselamatan atau mengeluarkan data. Maklumat lanjut: [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
+- **Suntikan Arahan Rentas Domain:** Arahan berniat jahat disisipkan dalam dokumen, halaman web, atau emel, yang kemudian diproses oleh AI, menyebabkan kebocoran atau manipulasi data.
 - **Pengubahsuaian Alat Dinamik (Rug Pulls):** Definisi alat boleh diubah selepas kelulusan pengguna, memperkenalkan tingkah laku berniat jahat baru tanpa pengetahuan pengguna.
 
 Kelemahan ini menekankan keperluan untuk pengesahan yang kukuh, pemantauan, dan kawalan keselamatan apabila mengintegrasikan pelayan MCP dan alat ke dalam persekitaran anda. Untuk penerangan lebih mendalam, lihat rujukan yang disertakan di atas.
 
 ![prompt-injection-lg-2048x1034](../../../translated_images/prompt-injection.ed9fbfde297ca877c15bc6daa808681cd3c3dc7bf27bbbda342ef1ba5fc4f52d.ms.png)
 
-**Suntikan Arahan Tidak Langsung** (juga dikenali sebagai suntikan arahan rentas domain atau XPIA) adalah kelemahan kritikal dalam sistem AI generatif, termasuk yang menggunakan Model Context Protocol (MCP). Dalam serangan ini, arahan berniat jahat disembunyikan dalam kandungan luaran—seperti dokumen, halaman web, atau emel. Apabila sistem AI memproses kandungan ini, ia mungkin mentafsir arahan yang diselitkan sebagai arahan pengguna yang sah, mengakibatkan tindakan tidak diingini seperti kebocoran data, penghasilan kandungan berbahaya, atau manipulasi interaksi pengguna. Untuk penjelasan terperinci dan contoh dunia sebenar, lihat [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/).
+**Suntikan Arahan Tidak Langsung** (juga dikenali sebagai suntikan arahan rentas domain atau XPIA) adalah kelemahan kritikal dalam sistem AI generatif, termasuk yang menggunakan Model Context Protocol (MCP). Dalam serangan ini, arahan berniat jahat disembunyikan dalam kandungan luaran—seperti dokumen, halaman web, atau emel. Apabila sistem AI memproses kandungan ini, ia mungkin mentafsir arahan yang disisipkan sebagai arahan pengguna yang sah, mengakibatkan tindakan tidak diingini seperti kebocoran data, penghasilan kandungan berbahaya, atau manipulasi interaksi pengguna. Untuk penjelasan terperinci dan contoh dunia sebenar, lihat [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/).
 
-Bentuk serangan yang sangat berbahaya adalah **Pencemaran Alat (Tool Poisoning)**. Di sini, penyerang menyuntik arahan berniat jahat ke dalam metadata alat MCP (seperti deskripsi alat atau parameter). Oleh kerana model bahasa besar (LLM) bergantung pada metadata ini untuk memutuskan alat mana yang akan digunakan, deskripsi yang dikompromi boleh memperdaya model untuk melaksanakan panggilan alat yang tidak dibenarkan atau memintas kawalan keselamatan. Manipulasi ini sering tidak kelihatan oleh pengguna akhir tetapi boleh ditafsir dan dilaksanakan oleh sistem AI. Risiko ini lebih tinggi dalam persekitaran pelayan MCP yang dihoskan, di mana definisi alat boleh dikemas kini selepas kelulusan pengguna—senario yang kadang-kadang dirujuk sebagai "[rug pull](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)". Dalam kes sedemikian, alat yang sebelum ini selamat mungkin diubah kemudian untuk melakukan tindakan berniat jahat, seperti mengeluarkan data atau mengubah tingkah laku sistem, tanpa pengetahuan pengguna. Untuk maklumat lanjut mengenai vektor serangan ini, lihat [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
+Bentuk serangan yang sangat berbahaya adalah **Pencemaran Alat (Tool Poisoning)**. Di sini, penyerang menyuntik arahan berniat jahat ke dalam metadata alat MCP (seperti penerangan alat atau parameter). Oleh kerana model bahasa besar (LLM) bergantung pada metadata ini untuk memutuskan alat mana yang akan digunakan, penerangan yang dikompromi boleh memperdaya model untuk melaksanakan panggilan alat yang tidak dibenarkan atau memintas kawalan keselamatan. Manipulasi ini sering tidak kelihatan oleh pengguna akhir tetapi boleh ditafsir dan dilaksanakan oleh sistem AI. Risiko ini bertambah tinggi dalam persekitaran pelayan MCP yang dihoskan, di mana definisi alat boleh dikemas kini selepas kelulusan pengguna—senario yang kadang-kadang dirujuk sebagai "[rug pull](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)". Dalam kes sedemikian, alat yang sebelum ini selamat mungkin diubah kemudian untuk melakukan tindakan berniat jahat, seperti mengeluarkan data atau mengubah tingkah laku sistem, tanpa pengetahuan pengguna. Untuk maklumat lanjut mengenai vektor serangan ini, lihat [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
 
 ![tool-injection-lg-2048x1239 (1)](../../../translated_images/tool-injection.3b0b4a6b24de6befe7d3afdeae44138ef005881aebcfc84c6f61369ce31e3640.ms.png)
 
@@ -110,9 +110,9 @@ Tindakan AI yang tidak diingini membawa pelbagai risiko keselamatan termasuk pen
 
 **AI Prompt Shields** adalah penyelesaian yang dibangunkan oleh Microsoft untuk mempertahankan daripada serangan suntikan arahan langsung dan tidak langsung. Ia membantu melalui:
 
-1.  **Pengesanan dan Penapisan:** Prompt Shields menggunakan algoritma pembelajaran mesin canggih dan pemprosesan bahasa semula jadi untuk mengesan dan menapis arahan berniat jahat yang diselitkan dalam kandungan luaran, seperti dokumen, halaman web, atau emel.
+1.  **Pengesanan dan Penapisan:** Prompt Shields menggunakan algoritma pembelajaran mesin maju dan pemprosesan bahasa semula jadi untuk mengesan dan menapis arahan berniat jahat yang disisipkan dalam kandungan luaran, seperti dokumen, halaman web, atau emel.
     
-2.  **Spotlighting:** Teknik ini membantu sistem AI membezakan antara arahan sistem yang sah dan input luaran yang mungkin tidak boleh dipercayai. Dengan mengubah teks input supaya lebih relevan kepada model, Spotlighting memastikan AI dapat mengenal pasti dan mengabaikan arahan berniat jahat dengan lebih baik.
+2.  **Spotlighting:** Teknik ini membantu sistem AI membezakan antara arahan sistem yang sah dan input luaran yang berpotensi tidak boleh dipercayai. Dengan mengubah teks input supaya lebih relevan kepada model, Spotlighting memastikan AI dapat mengenal pasti dan mengabaikan arahan berniat jahat dengan lebih baik.
     
 3.  **Pembatas dan Penandaan Data:** Menyertakan pembatas dalam mesej sistem secara jelas menunjukkan lokasi teks input, membantu sistem AI mengenal pasti dan memisahkan input pengguna daripada kandungan luaran yang berpotensi berbahaya. Penandaan data melanjutkan konsep ini dengan menggunakan penanda khas untuk menyerlahkan sempadan data yang dipercayai dan tidak dipercayai.
     
@@ -131,7 +131,7 @@ Keselamatan rantaian bekalan kekal penting dalam era AI, tetapi skop apa yang di
 - **Sahkan semua komponen sebelum integrasi:** Ini termasuk bukan sahaja perpustakaan sumber terbuka, tetapi juga model AI, sumber data, dan API luaran. Sentiasa periksa asal usul, lesen, dan kelemahan yang diketahui.
 - **Kekalkan saluran penyebaran yang selamat:** Gunakan saluran CI/CD automatik dengan imbasan keselamatan terbina untuk mengesan isu lebih awal. Pastikan hanya artifak yang dipercayai disebarkan ke produksi.
 - **Pantau dan audit secara berterusan:** Laksanakan pemantauan berterusan untuk semua kebergantungan, termasuk model dan perkhidmatan data, untuk mengesan kelemahan baru atau serangan rantaian bekalan.
-- **Gunakan prinsip keistimewaan minimum dan kawalan akses:** Hadkan akses kepada model, data, dan perkhidmatan hanya kepada apa yang diperlukan untuk server MCP anda berfungsi.
+- **Gunakan prinsip keistimewaan minimum dan kawalan akses:** Hadkan akses kepada model, data, dan perkhidmatan hanya kepada apa yang diperlukan untuk fungsi pelayan MCP anda.
 - **Bertindak cepat terhadap ancaman:** Sediakan proses untuk menampal atau menggantikan komponen yang terjejas, dan untuk menukar rahsia atau kelayakan jika berlaku pelanggaran.
 
 [GitHub Advanced Security](https://github.com/security/advanced-security) menyediakan ciri seperti imbasan rahsia, imbasan kebergantungan, dan analisis CodeQL. Alat ini berintegrasi dengan [Azure DevOps](https://azure.microsoft.com/en-us/products/devops) dan [Azure Repos](https://azure.microsoft.com/en-us/products/devops/repos/) untuk membantu pasukan mengenal pasti dan mengurangkan kelemahan dalam kod dan komponen rantaian bekalan AI.
@@ -141,22 +141,22 @@ Microsoft juga melaksanakan amalan keselamatan rantaian bekalan yang meluas seca
 
 # Amalan keselamatan terbaik yang telah ditetapkan untuk meningkatkan kedudukan keselamatan pelaksanaan MCP anda
 
-Mana-mana pelaksanaan MCP mewarisi kedudukan keselamatan sedia ada persekitaran organisasi anda yang menjadi asasnya, jadi apabila mempertimbangkan keselamatan MCP sebagai komponen sistem AI keseluruhan anda, disarankan untuk meningkatkan kedudukan keselamatan sedia ada anda secara keseluruhan. Kawalan keselamatan yang telah ditetapkan berikut adalah sangat relevan:
+Mana-mana pelaksanaan MCP mewarisi kedudukan keselamatan sedia ada persekitaran organisasi anda yang menjadi asasnya, jadi apabila mempertimbangkan keselamatan MCP sebagai komponen sistem AI keseluruhan anda, disyorkan agar anda meningkatkan kedudukan keselamatan sedia ada anda secara keseluruhan. Kawalan keselamatan yang telah ditetapkan berikut adalah sangat relevan:
 
--   Amalan pengekodan selamat dalam aplikasi AI anda – lindungi daripada [OWASP Top 10](https://owasp.org/www-project-top-ten/), [OWASP Top 10 untuk LLMs](https://genai.owasp.org/download/43299/?tmstv=1731900559), penggunaan peti keselamatan untuk rahsia dan token, melaksanakan komunikasi selamat hujung ke hujung antara semua komponen aplikasi, dan sebagainya.
--   Pengukuhan server – gunakan MFA jika boleh, sentiasa kemas kini tampalan, integrasikan server dengan penyedia identiti pihak ketiga untuk akses, dan lain-lain.
+-   Amalan pengekodan selamat dalam aplikasi AI anda – lindungi daripada [OWASP Top 10](https://owasp.org/www-project-top-ten/), [OWASP Top 10 untuk LLMs](https://genai.owasp.org/download/43299/?tmstv=1731900559), penggunaan peti keselamatan yang selamat untuk rahsia dan token, melaksanakan komunikasi selamat hujung ke hujung antara semua komponen aplikasi, dan sebagainya.
+-   Pengukuhan pelayan – gunakan MFA jika boleh, sentiasa kemas kini tampalan, integrasikan pelayan dengan penyedia identiti pihak ketiga untuk akses, dan lain-lain.
 -   Pastikan peranti, infrastruktur dan aplikasi sentiasa dikemas kini dengan tampalan
--   Pemantauan keselamatan – melaksanakan pencatatan dan pemantauan aplikasi AI (termasuk klien/server MCP) dan menghantar log tersebut ke SIEM pusat untuk mengesan aktiviti luar biasa
+-   Pemantauan keselamatan – melaksanakan pencatatan dan pemantauan aplikasi AI (termasuk klien/pelayan MCP) dan menghantar log tersebut ke SIEM pusat untuk mengesan aktiviti luar biasa
 -   Seni bina zero trust – mengasingkan komponen melalui kawalan rangkaian dan identiti secara logik untuk meminimumkan pergerakan sisi jika aplikasi AI dikompromi.
 
 # Perkara Penting
 
 - Asas keselamatan kekal kritikal: Pengekodan selamat, keistimewaan minimum, pengesahan rantaian bekalan, dan pemantauan berterusan adalah penting untuk beban kerja MCP dan AI.
 - MCP memperkenalkan risiko baru—seperti suntikan prompt, pencemaran alat, dan kebenaran berlebihan—yang memerlukan kawalan tradisional dan khusus AI.
-- Gunakan amalan pengesahan, kebenaran, dan pengurusan token yang kukuh, memanfaatkan penyedia identiti luaran seperti Microsoft Entra ID jika boleh.
+- Gunakan amalan pengesahan, kebenaran, dan pengurusan token yang kukuh, dengan memanfaatkan penyedia identiti luaran seperti Microsoft Entra ID jika boleh.
 - Lindungi daripada suntikan prompt tidak langsung dan pencemaran alat dengan mengesahkan metadata alat, memantau perubahan dinamik, dan menggunakan penyelesaian seperti Microsoft Prompt Shields.
 - Perlakukan semua komponen dalam rantaian bekalan AI anda—termasuk model, embeddings, dan penyedia konteks—dengan ketelitian yang sama seperti kebergantungan kod.
-- Sentiasa kemas kini dengan spesifikasi MCP yang berkembang dan sumbangkan kepada komuniti untuk membantu membentuk piawaian keselamatan.
+- Sentiasa kemas kini dengan spesifikasi MCP yang berkembang dan sumbang kepada komuniti untuk membantu membentuk piawaian keselamatan.
 
 # Sumber Tambahan
 

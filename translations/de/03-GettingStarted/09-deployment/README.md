@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T15:28:55+00:00",
+  "translation_date": "2025-07-13T22:05:44+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "de"
 }
@@ -24,7 +24,7 @@ Am Ende dieser Lektion können Sie:
 
 ## Lokale Entwicklung und Bereitstellung
 
-Wenn Ihr Server auf den Rechnern der Nutzer ausgeführt werden soll, können Sie folgende Schritte befolgen:
+Wenn Ihr Server auf den Rechnern der Nutzer laufen soll, können Sie folgende Schritte befolgen:
 
 1. **Server herunterladen**. Falls Sie den Server nicht selbst geschrieben haben, laden Sie ihn zuerst auf Ihren Rechner herunter.  
 1. **Serverprozess starten**: Starten Sie Ihre MCP Server-Anwendung.
@@ -104,11 +104,12 @@ Damit haben Sie es: lokal bereitstellen oder über diese Schritte in Azure berei
 
 ## Zusätzliche Ressourcen
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
-- [Azure Container Apps Artikel](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
-- [Azure Container Apps MCP Repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
+- [Azure Container Apps Artikel](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
+- [Azure Container Apps MCP Repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
 
-## Wie geht es weiter
+
+## Was kommt als Nächstes
 
 - Nächster Schritt: [Praktische Umsetzung](../../04-PracticalImplementation/README.md)
 

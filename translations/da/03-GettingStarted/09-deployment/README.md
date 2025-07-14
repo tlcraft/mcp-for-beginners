@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T17:39:54+00:00",
+  "translation_date": "2025-07-13T22:09:19+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "da"
 }
@@ -27,20 +27,20 @@ Når du er færdig med denne lektion, vil du kunne:
 Hvis din server er beregnet til at blive brugt ved at køre på brugerens maskine, kan du følge disse trin:
 
 1. **Download serveren**. Hvis du ikke selv har skrevet serveren, skal du først downloade den til din maskine.  
-1. **Start serverprocessen**: Kør din MCP-serverapplikation
+1. **Start serverprocessen**: Kør din MCP-serverapplikation.
 
 For SSE (ikke nødvendigt for stdio-type server)
 
-1. **Konfigurer netværk**: Sørg for, at serveren er tilgængelig på den forventede port  
-1. **Forbind klienter**: Brug lokale forbindelses-URL’er som `http://localhost:3000`
+1. **Konfigurer netværk**: Sørg for, at serveren er tilgængelig på den forventede port.  
+1. **Forbind klienter**: Brug lokale forbindelses-URL’er som `http://localhost:3000`.
 
 ## Udrulning i skyen
 
 MCP-servere kan udrulles på forskellige cloud-platforme:
 
-- **Serverless Functions**: Udrul lette MCP-servere som serverless functions  
-- **Container Services**: Brug tjenester som Azure Container Apps, AWS ECS eller Google Cloud Run  
-- **Kubernetes**: Udrul og administrer MCP-servere i Kubernetes-klynger for høj tilgængelighed
+- **Serverless Functions**: Udrul letvægts MCP-servere som serverless functions.  
+- **Container Services**: Brug tjenester som Azure Container Apps, AWS ECS eller Google Cloud Run.  
+- **Kubernetes**: Udrul og administrer MCP-servere i Kubernetes-klynger for høj tilgængelighed.
 
 ### Eksempel: Azure Container Apps
 
@@ -92,7 +92,7 @@ Sådan kan du gøre:
   }
   ```
 
-  Når SSE-serveren er startet, kan du klikke på afspilningsikonet i JSON-filen. Du skulle nu kunne se, at værktøjerne på serveren bliver opfanget af GitHub Copilot – se værktøjsikonet.
+  Når SSE-serveren er startet, kan du klikke på afspilningsikonet i JSON-filen. Du skulle nu kunne se, at værktøjerne på serveren bliver opfanget af GitHub Copilot, se værktøjsikonet.
 
 1. For at udrulle, kør følgende kommando:
 
@@ -104,9 +104,10 @@ Sådan! Udrul det lokalt, eller udrul det til Azure via disse trin.
 
 ## Yderligere ressourcer
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
-- [Azure Container Apps artikel](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
-- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
+- [Azure Container Apps artikel](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
+- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
+
 
 ## Hvad er det næste
 

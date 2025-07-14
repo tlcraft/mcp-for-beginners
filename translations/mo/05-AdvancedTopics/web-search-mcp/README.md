@@ -2,51 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7a11a5dcf2f9fdf6392f5a4545cf005e",
-  "translation_date": "2025-06-11T14:54:59+00:00",
+  "translation_date": "2025-07-14T03:26:28+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "mo"
 }
 -->
-# Lesson: Building a Web Search MCP Server
+# 課程：建立一個網路搜尋 MCP 伺服器
 
-This chapter shows how to build a real-world AI agent that integrates with external APIs, handles various data types, manages errors, and coordinates multiple tools—all ready for production. You'll learn about:
+本章示範如何打造一個整合外部 API、處理多種資料類型、管理錯誤，並協調多個工具的實務 AI 代理，且具備生產環境可用的架構。你將學到：
 
-- **Integrating external APIs that require authentication**
-- **Handling different data types from multiple endpoints**
-- **Strong error handling and logging strategies**
-- **Orchestrating multiple tools in a single server**
+- **整合需要驗證的外部 API**
+- **處理來自多個端點的多樣資料類型**
+- **穩健的錯誤處理與日誌策略**
+- **在單一伺服器中協調多工具運作**
 
-By the end, you'll gain hands-on experience with patterns and best practices essential for advanced AI and LLM-powered applications.
+結束後，你將擁有實務經驗，掌握進階 AI 與大型語言模型應用的設計模式與最佳實踐。
 
-## Introduction
+## 介紹
 
-In this lesson, you'll learn how to build an advanced MCP server and client that extend LLM capabilities with real-time web data using SerpAPI. This skill is crucial for creating dynamic AI agents that can access up-to-date information from the web.
+本課程將教你如何建立一個進階的 MCP 伺服器與客戶端，利用 SerpAPI 將 LLM 能力擴展至即時網路資料。這是開發能存取最新網路資訊的動態 AI 代理的重要技能。
 
-## Learning Objectives
+## 學習目標
 
-By the end of this lesson, you will be able to:
+完成本課程後，你將能夠：
 
-- Securely integrate external APIs (like SerpAPI) into an MCP server
-- Implement multiple tools for web, news, product search, and Q&A
-- Parse and format structured data for LLM consumption
-- Handle errors and manage API rate limits effectively
-- Build and test both automated and interactive MCP clients
+- 安全地將外部 API（如 SerpAPI）整合到 MCP 伺服器中
+- 實作多種工具，涵蓋網路、新聞、商品搜尋及問答
+- 解析並格式化結構化資料以供 LLM 使用
+- 有效處理錯誤並管理 API 請求速率限制
+- 建立並測試自動化及互動式 MCP 客戶端
 
-## Web Search MCP Server
+## 網路搜尋 MCP 伺服器
 
-This section introduces the architecture and features of the Web Search MCP Server. You'll see how FastMCP and SerpAPI work together to extend LLM capabilities with real-time web data.
+本節介紹網路搜尋 MCP 伺服器的架構與功能。你將看到 FastMCP 與 SerpAPI 如何結合，將 LLM 能力擴展至即時網路資料。
 
-### Overview
+### 概覽
 
-This implementation includes four tools demonstrating MCP’s ability to securely and efficiently handle diverse external API-driven tasks:
+此實作包含四個工具，展示 MCP 安全且高效處理多樣外部 API 任務的能力：
 
-- **general_search**: For broad web results
-- **news_search**: For recent headlines
-- **product_search**: For e-commerce data
-- **qna**: For question-and-answer snippets
+- **general_search**：廣泛的網路搜尋結果
+- **news_search**：最新新聞標題
+- **product_search**：電子商務商品資料
+- **qna**：問答摘要
 
-### Features
-- **Code Examples**: Language-specific code blocks for Python (and easy to extend to other languages) using collapsible sections for clarity
+### 功能特色
+- **程式碼範例**：包含針對 Python 的語言特定程式碼區塊（並可輕鬆擴充至其他語言），使用可摺疊區塊以提升閱讀清晰度
 
 <details>  
 <summary>Python</summary>  
@@ -69,11 +69,11 @@ async def run_search():
 ```
 </details>
 
-Before running the client, it’s useful to understand what the server does. See the [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
+在執行客戶端前，了解伺服器的運作很有幫助。[`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) 實作 MCP 伺服器，透過整合 SerpAPI，提供網路、新聞、商品搜尋及問答工具。它負責處理進來的請求、管理 API 呼叫、解析回應，並回傳結構化結果給客戶端。
 
-You can review the full implementation in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
+你可以查看 [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) 的完整實作。
 
-Here is a brief example of how the server defines and registers a tool:
+以下是伺服器定義並註冊工具的簡短範例：
 
 <details>  
 <summary>Python Server</summary> 
@@ -93,24 +93,24 @@ if __name__ == "__main__":
 ```
 </details>
 
-- **External API Integration**: Shows secure handling of API keys and external requests
-- **Structured Data Parsing**: Converts API responses into LLM-friendly formats
-- **Error Handling**: Robust error handling with proper logging
-- **Interactive Client**: Includes both automated tests and an interactive testing mode
-- **Context Management**: Uses MCP Context for logging and tracking requests
+- **外部 API 整合**：示範如何安全處理 API 金鑰與外部請求
+- **結構化資料解析**：展示如何將 API 回應轉換為適合 LLM 使用的格式
+- **錯誤處理**：具備完善的錯誤處理與適當的日誌紀錄
+- **互動式客戶端**：包含自動化測試與互動模式供測試使用
+- **上下文管理**：利用 MCP Context 進行日誌與請求追蹤
 
-## Prerequisites
+## 先決條件
 
-Before starting, ensure your environment is properly set up by following these steps. This guarantees all dependencies are installed and your API keys are configured correctly for smooth development and testing.
+開始前，請確保你的環境已正確設定，依照以下步驟安裝所有相依套件並配置 API 金鑰，以確保開發與測試順利進行。
 
-- Python 3.8 or higher
-- SerpAPI API Key (Sign up at [SerpAPI](https://serpapi.com/) - free tier available)
+- Python 3.8 或以上版本
+- SerpAPI API 金鑰（可於 [SerpAPI](https://serpapi.com/) 註冊，提供免費方案）
 
-## Installation
+## 安裝
 
-To get started, follow these steps to set up your environment:
+請依照以下步驟設定你的開發環境：
 
-1. Install dependencies using uv (recommended) or pip:
+1. 使用 uv（推薦）或 pip 安裝相依套件：
 
 ```bash
 # Using uv (recommended)
@@ -120,57 +120,57 @@ uv pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-2. Create a `.env` file in the project root with your SerpAPI key:
+2. 在專案根目錄建立 `.env` 檔案，並填入你的 SerpAPI 金鑰：
 
 ```
 SERPAPI_KEY=your_serpapi_key_here
 ```
 
-## Usage
+## 使用說明
 
-The Web Search MCP Server is the core component exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
+網路搜尋 MCP 伺服器是核心元件，透過整合 SerpAPI，提供網路、新聞、商品搜尋及問答工具。它負責處理請求、管理 API 呼叫、解析回應，並回傳結構化結果給客戶端。
 
-You can review the full implementation in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
+你可以查看 [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) 的完整實作。
 
-### Running the Server
+### 啟動伺服器
 
-To start the MCP server, use the following command:
+使用以下指令啟動 MCP 伺服器：
 
 ```bash
 python server.py
 ```
 
-The server will run as a stdio-based MCP server that the client can connect to directly.
+伺服器將以 stdio 為基礎運行，客戶端可直接連線。
 
-### Client Modes
+### 客戶端模式
 
-The client (`client.py`) supports two modes for interacting with the MCP server:
+客戶端（`client.py`）支援兩種與 MCP 伺服器互動的模式：
 
-- **Normal mode**: Runs automated tests that exercise all the tools and verify their responses. This is useful for quickly checking that the server and tools are working as expected.
-- **Interactive mode**: Starts a menu-driven interface where you can manually select and call tools, enter custom queries, and see results in real time. This is ideal for exploring the server's capabilities and experimenting with different inputs.
+- **一般模式**：執行自動化測試，涵蓋所有工具並驗證回應。適合快速檢查伺服器與工具是否正常運作。
+- **互動模式**：啟動選單介面，讓你手動選擇並呼叫工具，輸入自訂查詢，並即時查看結果。適合探索伺服器功能與嘗試不同輸入。
 
-You can review the full implementation in [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
+你可以查看 [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) 的完整實作。
 
-### Running the Client
+### 執行客戶端
 
-To run automated tests (this will automatically start the server):
+執行自動化測試（會自動啟動伺服器）：
 
 ```bash
 python client.py
 ```
 
-Or run in interactive mode:
+或以互動模式執行：
 
 ```bash
 python client.py --interactive
 ```
 
-### Testing with Different Methods
+### 使用不同方式測試
 
-There are several ways to test and interact with the tools provided by the server, depending on your needs and workflow.
+根據需求與工作流程，有多種方式測試與互動伺服器提供的工具。
 
-#### Writing Custom Test Scripts with the MCP Python SDK
-You can also create your own test scripts using the MCP Python SDK:
+#### 使用 MCP Python SDK 撰寫自訂測試腳本
+你也可以利用 MCP Python SDK 撰寫自己的測試腳本：
 
 <details>
 <summary>Python</summary>
@@ -195,30 +195,31 @@ async def test_custom_query():
 ```
 </details>
 
-In this context, a "test script" is a custom Python program you write to act as a client for the MCP server. Instead of a formal unit test, this script lets you programmatically connect to the server, call any of its tools with parameters you choose, and inspect the results. This approach is useful for:
-- Prototyping and experimenting with tool calls
-- Validating how the server responds to different inputs
-- Automating repeated tool invocations
-- Building your own workflows or integrations on top of the MCP server
+在此情境中，「測試腳本」指的是你撰寫的自訂 Python 程式，作為 MCP 伺服器的客戶端。它不是正式的單元測試，而是讓你程式化連線伺服器、以自訂參數呼叫任一工具並檢視結果。此方法適用於：
 
-You can use test scripts to quickly try out new queries, debug tool behavior, or as a starting point for more advanced automation. Below is an example of how to use the MCP Python SDK to create such a script:
+- 原型設計與工具呼叫實驗
+- 驗證伺服器對不同輸入的回應
+- 自動化重複工具呼叫
+- 在 MCP 伺服器上建立自訂工作流程或整合
 
-## Tool Descriptions
+你可以用測試腳本快速嘗試新查詢、除錯工具行為，甚至作為更進階自動化的起點。以下是使用 MCP Python SDK 建立此類腳本的範例：
 
-You can use the following tools provided by the server to perform different types of searches and queries. Each tool is described below with its parameters and example usage.
+## 工具說明
 
-This section provides details about each available tool and their parameters.
+伺服器提供以下工具，供你執行不同類型的搜尋與查詢。每個工具的參數與範例用法如下。
+
+本節詳述各工具及其參數。
 
 ### general_search
 
-Performs a general web search and returns formatted results.
+執行一般網路搜尋並回傳格式化結果。
 
-**How to call this tool:**
+**如何呼叫此工具：**
 
-You can call `general_search` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
+你可以使用 MCP Python SDK 從自己的腳本呼叫 `general_search`，或在 Inspector 或互動式客戶端模式中操作。以下為 SDK 的程式碼範例：
 
 <details>
-<summary>Python Example</summary>
+<summary>Python 範例</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -237,12 +238,12 @@ async def run_general_search():
 ```
 </details>
 
-Alternatively, in interactive mode, select `general_search` from the menu and enter your query when prompted.
+或在互動模式中，從選單選擇 `general_search`，並在提示時輸入查詢。
 
-**Parameters:**
-- `query` (string): The search query
+**參數：**
+- `query`（字串）：搜尋查詢字串
 
-**Example Request:**
+**範例請求：**
 
 ```json
 {
@@ -252,14 +253,14 @@ Alternatively, in interactive mode, select `general_search` from the menu and en
 
 ### news_search
 
-Searches for recent news articles related to a query.
+搜尋與查詢相關的最新新聞文章。
 
-**How to call this tool:**
+**如何呼叫此工具：**
 
-You can call `news_search` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
+你可以使用 MCP Python SDK 從自己的腳本呼叫 `news_search`，或在 Inspector 或互動式客戶端模式中操作。以下為 SDK 的程式碼範例：
 
 <details>
-<summary>Python Example</summary>
+<summary>Python 範例</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -278,12 +279,12 @@ async def run_news_search():
 ```
 </details>
 
-Alternatively, in interactive mode, select `news_search` from the menu and enter your query when prompted.
+或在互動模式中，從選單選擇 `news_search`，並在提示時輸入查詢。
 
-**Parameters:**
-- `query` (string): The search query
+**參數：**
+- `query`（字串）：搜尋查詢字串
 
-**Example Request:**
+**範例請求：**
 
 ```json
 {
@@ -293,14 +294,14 @@ Alternatively, in interactive mode, select `news_search` from the menu and enter
 
 ### product_search
 
-Searches for products matching a query.
+搜尋符合查詢的商品。
 
-**How to call this tool:**
+**如何呼叫此工具：**
 
-You can call `product_search` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
+你可以使用 MCP Python SDK 從自己的腳本呼叫 `product_search`，或在 Inspector 或互動式客戶端模式中操作。以下為 SDK 的程式碼範例：
 
 <details>
-<summary>Python Example</summary>
+<summary>Python 範例</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -319,12 +320,12 @@ async def run_product_search():
 ```
 </details>
 
-Alternatively, in interactive mode, select `product_search` from the menu and enter your query when prompted.
+或在互動模式中，從選單選擇 `product_search`，並在提示時輸入查詢。
 
-**Parameters:**
-- `query` (string): The product search query
+**參數：**
+- `query`（字串）：商品搜尋查詢字串
 
-**Example Request:**
+**範例請求：**
 
 ```json
 {
@@ -334,14 +335,14 @@ Alternatively, in interactive mode, select `product_search` from the menu and en
 
 ### qna
 
-Gets direct answers to questions from search engines.
+從搜尋引擎取得問題的直接答案。
 
-**How to call this tool:**
+**如何呼叫此工具：**
 
-You can call `qna` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
+你可以使用 MCP Python SDK 從自己的腳本呼叫 `qna`，或在 Inspector 或互動式客戶端模式中操作。以下為 SDK 的程式碼範例：
 
 <details>
-<summary>Python Example</summary>
+<summary>Python 範例</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -360,12 +361,12 @@ async def run_qna():
 ```
 </details>
 
-Alternatively, in interactive mode, select `qna` from the menu and enter your question when prompted.
+或在互動模式中，從選單選擇 `qna`，並在提示時輸入問題。
 
-**Parameters:**
-- `question` (string): The question to find an answer for
+**參數：**
+- `question`（字串）：欲尋找答案的問題
 
-**Example Request:**
+**範例請求：**
 
 ```json
 {
@@ -373,14 +374,14 @@ Alternatively, in interactive mode, select `qna` from the menu and enter your qu
 }
 ```
 
-## Code Details
+## 程式碼細節
 
-This section provides code snippets and references for the server and client implementations.
+本節提供伺服器與客戶端實作的程式碼片段與參考。
 
 <details>
 <summary>Python</summary>
 
-See [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) and [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) for full implementation details.
+請參閱 [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) 與 [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) 以取得完整實作細節。
 
 ```python
 # Example snippet from server.py:
@@ -390,43 +391,43 @@ import httpx
 ```
 </details>
 
-## Advanced Concepts in This Lesson
+## 本課程的進階概念
 
-Before you start building, here are some key advanced concepts that appear throughout this chapter. Understanding these will help you follow along, even if you're new to them:
+開始建置前，這裡介紹本章節會出現的重要進階概念。理解這些將幫助你更順利跟上內容，即使你對它們不熟悉：
 
-- **Multi-tool Orchestration**: Running several different tools (web search, news search, product search, and Q&A) within a single MCP server. This allows your server to handle a variety of tasks, not just one.
-- **API Rate Limit Handling**: Many external APIs (like SerpAPI) limit how many requests you can make in a certain time. Good code checks for these limits and handles them gracefully, so your app doesn't break if you hit a limit.
-- **Structured Data Parsing**: API responses are often complex and nested. This concept is about turning those responses into clean, easy-to-use formats friendly for LLMs or other programs.
-- **Error Recovery**: Sometimes things go wrong—maybe the network fails, or the API doesn’t return what you expect. Error recovery means your code can handle these problems and still give useful feedback instead of crashing.
-- **Parameter Validation**: Checking that all inputs to your tools are correct and safe to use. It includes setting default values and ensuring types are correct, which helps prevent bugs and confusion.
+- **多工具協調**：指在單一 MCP 伺服器中同時運行多種工具（如網路搜尋、新聞搜尋、商品搜尋及問答），讓伺服器能處理多元任務，而非單一功能。
+- **API 速率限制管理**：許多外部 API（如 SerpAPI）限制一定時間內的請求數量。良好的程式會檢查這些限制並妥善處理，避免應用程式因超過限制而崩潰。
+- **結構化資料解析**：API 回應通常複雜且巢狀。此概念指將回應轉換成乾淨且易用的格式，方便 LLM 或其他程式使用。
+- **錯誤復原**：有時會發生問題，例如網路故障或 API 回應異常。錯誤復原指程式能處理這些問題，並提供有用的回饋，而非直接崩潰。
+- **參數驗證**：檢查所有工具輸入是否正確且安全使用，包括設定預設值與確保型別正確，有助於避免錯誤與混淆。
 
-This section will help you diagnose and resolve common issues you might encounter while working with the Web Search MCP Server. If you run into errors or unexpected behavior, this troubleshooting section offers solutions to the most common problems. Review these tips before seeking further help—they often fix issues quickly.
+本節將協助你診斷並解決使用網路搜尋 MCP 伺服器時可能遇到的常見問題。若遇到錯誤或異常行為，請先參考此故障排除章節，這些建議通常能快速解決問題。
 
-## Troubleshooting
+## 故障排除
 
-When working with the Web Search MCP Server, you may occasionally encounter issues—this is normal when developing with external APIs and new tools. This section provides practical solutions to the most common problems, so you can get back on track quickly. If you get an error, start here: the tips below address issues most users face and often resolve problems without extra help.
+使用網路搜尋 MCP 伺服器時，偶爾會遇到問題——這在開發外部 API 與新工具時很常見。本節提供最常見問題的實用解決方案，幫助你快速回到正軌。遇到錯誤時，請從這裡開始：以下建議針對大多數使用者遇到的問題，通常能在不需額外協助下解決。
 
-### Common Issues
+### 常見問題
 
-Here are some of the most frequent problems users encounter, with clear explanations and steps to fix them:
+以下列出使用者最常遇到的問題，並附上清楚說明與解決步驟：
 
-1. **Missing SERPAPI_KEY in .env file**
-   - If you see the error `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
+1. **.env 檔案缺少 SERPAPI_KEY**
+   - 若出現錯誤 `SERPAPI_KEY environment variable not found`，表示應用程式找不到存取 SerpAPI 所需的 API 金鑰。解決方法是在專案根目錄建立 `.env` 檔案（若尚未存在），並加入類似 `SERPAPI_KEY=your_serpapi_key_here` 的一行。請將 `your_serpapi_key_here` 替換為你從 SerpAPI 網站取得的實際金鑰。
 
-2. **Module not found errors**
-   - Errors such as `ModuleNotFoundError: No module named 'httpx'` indicate that a required Python package is missing. This usually happens if you haven't installed all the dependencies. To resolve this, run `pip install -r requirements.txt` in your terminal to install everything your project needs.
+2. **找不到模組錯誤**
+   - 如 `ModuleNotFoundError: No module named 'httpx'` 表示缺少必要的 Python 套件。通常是因為未安裝所有相依套件。請在終端機執行 `pip install -r requirements.txt` 以安裝專案所需的所有套件。
 
-3. **Connection issues**
-   - If you get an error like `Error during client execution`, it often means the client can't connect to the server, or the server isn't running as expected. Double-check that both the client and server are compatible versions, and that `server.py` is present and running in the correct directory. Restarting both the server and client can also help.
+3. **連線問題**
+   - 若出現 `Error during client execution`，通常表示客戶端無法連線到伺服器，或伺服器未正常運行。請確認客戶端與伺服器版本相容，且 `server.py` 存在且在正確目錄中運行。重新啟動伺服器與客戶端也常有助於解決問題。
 
-4. **SerpAPI errors**
-   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env` file if needed. If your key is correct but you still see this error, check if your free tier quota has been used up.
+4. **SerpAPI 錯誤**
+   - 若看到 `Search API returned error status: 401`，表示你的 SerpAPI 金鑰缺失、錯誤或已過期。請前往 SerpAPI 控制台確認金鑰，並更新 `.env` 檔案。若金鑰正確但仍出錯，請檢查免費方案配額是否已用盡。
 
-### Debug Mode
+### 除錯模式
 
-By default, the app logs only important information. If you want to see more details about what’s happening (for example, to diagnose tricky issues), you can enable DEBUG mode. This will show much more about each step the app takes.
+預設情況下，應用程式只記錄重要資訊。若想查看更詳細的執行過程（例如診斷棘手問題），可啟用 DEBUG 模式。這會顯示更多關於每個步驟的細節。
 
-**Example: Normal Output**
+**範例：一般輸出**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:24,123 - __main__ - INFO - Successfully called general_search
@@ -435,7 +436,7 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-**Example: DEBUG Output**
+**範例：DEBUG 輸出**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:23,457 - httpx - DEBUG - HTTP Request: GET https://serpapi.com/search ...
@@ -446,11 +447,10 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-Notice how DEBUG mode includes extra lines about HTTP requests, responses, and other internal details. This is very helpful for troubleshooting.
+注意 DEBUG 模式會額外顯示 HTTP 請求、回應及其他內部細節，對故障排除非常有幫助。
 
-To enable DEBUG mode, set the logging level to DEBUG at the top of your `client.py` or `server.py`:
+要啟用 DEBUG 模式，請在 `client.py` 或 `server.py` 頂端將日誌等級設定為 DEBUG：
 
-<details>
 <summary>Python</summary>
 
 ```python
@@ -465,9 +465,9 @@ logging.basicConfig(
 
 ---
 
-## What's next 
+## 接下來的內容
 
-- [5.10 Real Time Streaming](../mcp-realtimestreaming/README.md)
+- [5.10 即時串流](../mcp-realtimestreaming/README.md)
 
-**Disclaimer**:  
-Dis document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

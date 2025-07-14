@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6d6315e03f591fb5a39be91da88585dc",
-  "translation_date": "2025-05-17T10:56:11+00:00",
+  "translation_date": "2025-07-13T19:20:09+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/typescript/README.md",
   "language_code": "da"
 }
 -->
-# Kør dette eksempel
+# Kørsel af dette eksempel
 
-Dette eksempel kræver, at du har en LLM på klienten. LLM'en kræver, at du enten kører dette i en Codespaces eller opsætter en personlig adgangstoken i GitHub for at fungere.
+Dette eksempel involverer at have en LLM på klienten. LLM'en kræver, at du enten kører dette i en Codespaces eller opsætter et personligt adgangstoken i GitHub for at få det til at fungere.
 
 ## -1- Installer afhængighederne
 
@@ -41,4 +41,4 @@ Tool result:  { content: [ { type: 'text', text: '5' } ] }
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der måtte opstå ved brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

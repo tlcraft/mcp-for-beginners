@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T16:54:49+00:00",
+  "translation_date": "2025-07-14T05:45:06+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "pt"
 }
@@ -63,10 +63,10 @@ O capítulo inclui um exercício prático, um exemplo mínimo de código funcion
 
 ### 4. [Aplicação Web Interativa para Gerar Planos de Estudo com MCP](./docs-mcp/README.md)
 
-Este estudo de caso demonstra como construir uma aplicação web interativa usando Chainlit e o Model Context Protocol (MCP) para gerar planos de estudo personalizados para qualquer tema. Os utilizadores podem especificar um assunto (como "certificação AI-900") e uma duração de estudo (por exemplo, 8 semanas), e a aplicação fornecerá um plano detalhado semana a semana com conteúdos recomendados. O Chainlit permite uma interface de chat conversacional, tornando a experiência envolvente e adaptativa.
+Este estudo de caso demonstra como construir uma aplicação web interativa usando Chainlit e o Model Context Protocol (MCP) para gerar planos de estudo personalizados para qualquer tema. Os utilizadores podem especificar um assunto (como "certificação AI-900") e uma duração de estudo (ex.: 8 semanas), e a aplicação fornece um plano detalhado semana a semana com conteúdos recomendados. O Chainlit permite uma interface de chat conversacional, tornando a experiência envolvente e adaptativa.
 
 - Aplicação web conversacional alimentada por Chainlit
-- Prompts definidos pelo utilizador para tema e duração
+- Prompts orientados pelo utilizador para tema e duração
 - Recomendações semanais de conteúdo usando MCP
 - Respostas adaptativas em tempo real numa interface de chat
 
@@ -95,7 +95,7 @@ Este estudo de caso fornece um guia passo a passo sobre como criar um servidor M
 - Configuração de um servidor MCP no Azure API Management
 - Exposição de operações API como ferramentas MCP
 - Configuração de políticas para limitação de taxa e segurança
-- Teste do servidor MCP usando Visual Studio Code e GitHub Copilot
+- Testes do servidor MCP usando Visual Studio Code e GitHub Copilot
 
 Este exemplo ilustra como aproveitar as capacidades do Azure para criar um servidor MCP robusto que pode ser usado em várias aplicações, melhorando a integração de sistemas de IA com APIs empresariais.
 
@@ -103,7 +103,7 @@ Este exemplo ilustra como aproveitar as capacidades do Azure para criar um servi
 
 Estes estudos de caso destacam a versatilidade e as aplicações práticas do Model Context Protocol em cenários do mundo real. Desde sistemas multi-agente complexos a workflows de automação direcionados, o MCP oferece uma forma padronizada de ligar sistemas de IA às ferramentas e dados de que precisam para gerar valor.
 
-Ao estudar estas implementações, poderá obter insights sobre padrões arquitetónicos, estratégias de implementação e melhores práticas que podem ser aplicadas nos seus próprios projetos MCP. Os exemplos demonstram que o MCP não é apenas um framework teórico, mas uma solução prática para desafios empresariais reais.
+Ao estudar estas implementações, pode obter insights sobre padrões arquitetónicos, estratégias de implementação e melhores práticas que podem ser aplicadas nos seus próprios projetos MCP. Os exemplos demonstram que o MCP não é apenas um framework teórico, mas uma solução prática para desafios empresariais reais.
 
 ## Recursos Adicionais
 
@@ -116,4 +116,4 @@ Ao estudar estas implementações, poderá obter insights sobre padrões arquite
 Próximo: Hands on Lab [Simplificação de Workflows de IA: Construção de um Servidor MCP com AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos por garantir a precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

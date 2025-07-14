@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T05:54:47+00:00",
+  "translation_date": "2025-07-13T22:15:06+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "ne"
 }
 -->
 # Basic Calculator MCP सेवा
 
-यो सेवा Model Context Protocol (MCP) मार्फत आधारभूत क्याल्कुलेटर अपरेसनहरू प्रदान गर्छ। यो MCP कार्यान्वयनहरू सिक्दै गरेका सुरुवातीहरूका लागि सरल उदाहरणको रूपमा डिजाइन गरिएको हो।
+यो सेवा Model Context Protocol (MCP) मार्फत आधारभूत क्याल्कुलेटर अपरेसनहरू प्रदान गर्छ। यो MCP कार्यान्वयनहरू सिक्न चाहने शुरुवातीहरूका लागि सरल उदाहरणको रूपमा डिजाइन गरिएको हो।
 
-थप जानकारीको लागि, हेर्नुहोस् [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+थप जानकारीका लागि, हेर्नुहोस् [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## विशेषताहरू
+## सुविधाहरू
 
-यस क्याल्कुलेटर सेवाले निम्न क्षमताहरू प्रदान गर्दछ:
+यो क्याल्कुलेटर सेवाले निम्न क्षमताहरू प्रदान गर्छ:
 
 1. **आधारभूत अंकगणितीय अपरेसनहरू**:
    - दुई संख्याको जोड
@@ -23,13 +23,13 @@ CO_OP_TRANSLATOR_METADATA:
    - दुई संख्याको गुणा
    - एउटा संख्या अर्कोले भाग गर्ने (शून्यले भाग गर्ने जाँचसहित)
 
-## `stdio` प्रकार प्रयोग गर्दै
+## `stdio` प्रकारको प्रयोग
 
 ## कन्फिगरेसन
 
 1. **MCP सर्भरहरू कन्फिगर गर्नुहोस्**:
    - आफ्नो कार्यक्षेत्र VS Code मा खोल्नुहोस्।
-   - आफ्नो कार्यक्षेत्र फोल्डरमा MCP सर्भरहरू कन्फिगर गर्न `.vscode/mcp.json` फाइल बनाउनुहोस्। कन्फिगरेसनको उदाहरण:
+   - आफ्नो कार्यक्षेत्र फोल्डरमा `.vscode/mcp.json` फाइल बनाएर MCP सर्भरहरू कन्फिगर गर्नुहोस्। उदाहरण कन्फिगरेसन:
 
      ```jsonc
      {
@@ -54,50 +54,49 @@ CO_OP_TRANSLATOR_METADATA:
      }
      ```
 
-   - तपाईंसँग GitHub रिपोजिटरी रुट प्रविष्टि मागिनेछ, जुन कमाण्ड `git rev-parse --show-toplevel`.
+   - तपाईंलाई GitHub रिपोजिटरीको मूल स्थान प्रविष्ट गर्न भनिनेछ, जुन कमाण्ड `git rev-parse --show-toplevel` बाट प्राप्त गर्न सकिन्छ।
 
-## Using the Service
+## सेवाको प्रयोग
 
-The service exposes the following API endpoints through the MCP protocol:
+सेवाले MCP प्रोटोकल मार्फत निम्न API अन्तबिन्दुहरू उपलब्ध गराउँछ:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: दुई संख्या जोड्नुहोस्
+- `subtract(a, b)`: दोस्रो संख्या पहिलोबाट घटाउनुहोस्
+- `multiply(a, b)`: दुई संख्या गुणा गर्नुहोस्
+- `divide(a, b)`: पहिलो संख्या दोस्रोले भाग गर्नुहोस् (शून्य जाँचसहित)
+- isPrime(n): संख्या प्राइम हो कि होइन जाँच गर्नुहोस्
 
-## Test with Github Copilot Chat in VS Code
+## VS Code मा Github Copilot Chat सँग परीक्षण गर्नुहोस्
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
-   - "Add 5 and 3"
-   - "Subtract 10 from 4"
-   - "Multiply 6 and 7"
-   - "Divide 8 by 2"
-   - "Does 37854 prime?"
-   - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
-   - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
+1. MCP प्रोटोकल प्रयोग गरेर सेवामा अनुरोध पठाउन प्रयास गर्नुहोस्। उदाहरणका लागि, तपाईं सोध्न सक्नुहुन्छ:
+   - "5 र 3 जोड्नुहोस्"
+   - "4 बाट 10 घटाउनुहोस्"
+   - "6 र 7 गुणा गर्नुहोस्"
+   - "8 लाई 2 ले भाग गर्नुहोस्"
+   - "37854 प्राइम हो?"
+   - "4242 भन्दा पहिले र पछि 3 प्राइम संख्या के के हुन्?"
+2. उपकरणहरू प्रयोग भइरहेको सुनिश्चित गर्नको लागि प्रॉम्प्टमा #MyCalculator थप्नुहोस्। उदाहरणका लागि:
+   - "5 र 3 जोड्नुहोस् #MyCalculator"
+   - "4 बाट 10 घटाउनुहोस् #MyCalculator"
 
+## कन्टेनराइज्ड संस्करण
 
-## Containerized Version
+पहिलो समाधान तब राम्रो हुन्छ जब तपाईंले .NET SDK इन्स्टल गर्नुभएको छ र सबै निर्भरताहरू उपलब्ध छन्। तर, यदि तपाईं समाधान साझा गर्न चाहनुहुन्छ वा फरक वातावरणमा चलाउन चाहनुहुन्छ भने, कन्टेनराइज्ड संस्करण प्रयोग गर्न सक्नुहुन्छ।
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
-
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` बाट प्राप्त गर्न सकिन्छ (यहाँ आफ्नो Docker Hub प्रयोगकर्ता नाम राख्नुहोस्):
+1. Docker सुरु गर्नुहोस् र चलिरहेको छ भनी सुनिश्चित गर्नुहोस्।
+1. टर्मिनलबाट `03-GettingStarted\samples\csharp\src` फोल्डरमा जानुहोस्।
+1. क्याल्कुलेटर सेवाको Docker इमेज बनाउन निम्न कमाण्ड चलाउनुहोस् (यहाँ `<YOUR-DOCKER-USERNAME>` लाई आफ्नो Docker Hub प्रयोगकर्ता नामले प्रतिस्थापन गर्नुहोस्):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
-   ```  
-1. इमेज तयार भएपछि, यसलाई Docker Hub मा अपलोड गरौं। तलको कमाण्ड चलाउनुहोस्:
+   ```
+1. इमेज बनेपछि, यसलाई Docker Hub मा अपलोड गर्न निम्न कमाण्ड चलाउनुहोस्:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Dockerized संस्करण प्रयोग गर्नुहोस्
+## Dockerized संस्करणको प्रयोग
 
-1. `.vscode/mcp.json` फाइलमा, सर्भर कन्फिगरेसनलाई तलकोसँग प्रतिस्थापन गर्नुहोस्:
+1. `.vscode/mcp.json` फाइलमा सर्भर कन्फिगरेसनलाई तलको रूपमा प्रतिस्थापन गर्नुहोस्:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -111,11 +110,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   कन्फिगरेसन हेर्दा, कमाण्ड `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   कन्फिगरेसन हेर्दा, कमाण्ड `docker` हो र args `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc` छन्। `--rm` फ्ल्यागले कन्टेनर रोकिएपछि हटाइन्छ भन्ने सुनिश्चित गर्छ, र `-i` फ्ल्यागले कन्टेनरको स्ट्यान्डर्ड इनपुटसँग अन्तरक्रिया गर्न अनुमति दिन्छ। अन्तिम आर्गुमेन्ट भनेको हामीले बनाएको र Docker Hub मा पठाएको इमेजको नाम हो।
 
-## Test the Dockerized Version
+## Dockerized संस्करण परीक्षण गर्नुहोस्
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {` छ, र पहिलेझैं तपाईं क्याल्कुलेटर सेवालाई गणित गराउन अनुरोध गर्न सक्नुहुन्छ।
+`"mcp-calc": {` माथि रहेको सानो Start बटन क्लिक गरेर MCP सर्भर सुरु गर्नुहोस्, र पहिलेझैं क्याल्कुलेटर सेवालाई केही गणित गर्न भन्न सक्नुहुन्छ।
 
 **अस्वीकरण**:  
-यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) को प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा गलतफहमी हुन सक्छ। मूल दस्तावेज यसको मूल भाषामा नै आधिकारिक स्रोत मानिनु पर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न हुने कुनै पनि गलतफहमी वा गलत व्याख्याको लागि हामी जिम्मेवार छैनौं।
+यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा अशुद्धता हुन सक्छ। मूल दस्तावेज यसको मूल भाषामा आधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।

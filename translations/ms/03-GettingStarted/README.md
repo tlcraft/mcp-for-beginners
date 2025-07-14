@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:33:47+00:00",
+  "translation_date": "2025-07-13T17:18:37+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "ms"
 }
@@ -13,19 +13,19 @@ Bahagian ini terdiri daripada beberapa pelajaran:
 
 - **1 Pelayan pertama anda**, dalam pelajaran pertama ini, anda akan belajar cara mencipta pelayan pertama anda dan memeriksanya dengan alat pemeriksa, satu cara yang berguna untuk menguji dan menyahpepijat pelayan anda, [ke pelajaran](01-first-server/README.md)
 
-- **2 Pelanggan**, dalam pelajaran ini, anda akan belajar cara menulis pelanggan yang boleh menyambung ke pelayan anda, [ke pelajaran](02-client/README.md)
+- **2 Klien**, dalam pelajaran ini, anda akan belajar cara menulis klien yang boleh menyambung ke pelayan anda, [ke pelajaran](02-client/README.md)
 
-- **3 Pelanggan dengan LLM**, cara yang lebih baik menulis pelanggan adalah dengan menambah LLM supaya ia boleh "berunding" dengan pelayan anda tentang apa yang perlu dilakukan, [ke pelajaran](03-llm-client/README.md)
+- **3 Klien dengan LLM**, cara yang lebih baik menulis klien adalah dengan menambah LLM supaya ia boleh "berunding" dengan pelayan anda tentang apa yang perlu dilakukan, [ke pelajaran](03-llm-client/README.md)
 
 - **4 Menggunakan mod Agen GitHub Copilot pelayan dalam Visual Studio Code**. Di sini, kita melihat cara menjalankan MCP Server kita dari dalam Visual Studio Code, [ke pelajaran](04-vscode/README.md)
 
-- **5 Menggunakan dari SSE (Server Sent Events)** SSE adalah standard untuk penstriman dari pelayan ke pelanggan, membolehkan pelayan menghantar kemas kini masa nyata kepada pelanggan melalui HTTP [ke pelajaran](05-sse-server/README.md)
+- **5 Menggunakan dari SSE (Server Sent Events)** SSE adalah standard untuk penstriman dari pelayan ke klien, membolehkan pelayan menghantar kemas kini masa nyata kepada klien melalui HTTP [ke pelajaran](05-sse-server/README.md)
 
-- **6 Penstriman HTTP dengan MCP (Streamable HTTP)**. Pelajari tentang penstriman HTTP moden, notifikasi kemajuan, dan cara melaksanakan pelayan dan pelanggan MCP yang boleh diskalakan dan masa nyata menggunakan Streamable HTTP. [ke pelajaran](06-http-streaming/README.md)
+- **6 Penstriman HTTP dengan MCP (Streamable HTTP)**. Pelajari tentang penstriman HTTP moden, notifikasi kemajuan, dan cara melaksanakan pelayan dan klien MCP yang boleh diskalakan dan masa nyata menggunakan Streamable HTTP. [ke pelajaran](06-http-streaming/README.md)
 
 - **7 Menggunakan AI Toolkit untuk VSCode** untuk menggunakan dan menguji MCP Clients dan Servers anda [ke pelajaran](07-aitk/README.md)
 
-- **8 Pengujian**. Di sini kita akan fokus terutamanya pada cara kita boleh menguji pelayan dan pelanggan kita dengan pelbagai cara, [ke pelajaran](08-testing/README.md)
+- **8 Pengujian**. Di sini kita akan fokus terutamanya pada cara kita boleh menguji pelayan dan klien kita dengan pelbagai cara, [ke pelajaran](08-testing/README.md)
 
 - **9 Penghantaran**. Bab ini akan melihat pelbagai cara untuk menghantar penyelesaian MCP anda, [ke pelajaran](09-deployment/README.md)
 
@@ -74,13 +74,13 @@ MCP menyediakan SDK rasmi untuk pelbagai bahasa:
 
 - Menyediakan persekitaran pembangunan MCP adalah mudah dengan SDK khusus bahasa
 - Membina pelayan MCP melibatkan penciptaan dan pendaftaran alat dengan skema yang jelas
-- Pelanggan MCP menyambung ke pelayan dan model untuk memanfaatkan keupayaan lanjutan
+- Klien MCP menyambung ke pelayan dan model untuk memanfaatkan keupayaan lanjutan
 - Pengujian dan penyahpepijatan penting untuk pelaksanaan MCP yang boleh dipercayai
 - Pilihan penghantaran merangkumi pembangunan tempatan hingga penyelesaian berasaskan awan
 
 ## Amalan
 
-Kami mempunyai set sampel yang melengkapkan latihan yang akan anda lihat dalam semua bab di bahagian ini. Selain itu setiap bab juga mempunyai latihan dan tugasan tersendiri
+Kami mempunyai set sampel yang melengkapkan latihan yang anda akan lihat dalam semua bab di bahagian ini. Selain itu, setiap bab juga mempunyai latihan dan tugasan mereka sendiri
 
 - [Java Calculator](./samples/java/calculator/README.md)
 - [.Net Calculator](../../../03-GettingStarted/samples/csharp)

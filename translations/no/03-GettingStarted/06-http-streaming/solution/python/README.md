@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:02:28+00:00",
+  "translation_date": "2025-07-13T21:20:31+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "no"
 }
@@ -14,13 +14,13 @@ Slik kjører du den klassiske HTTP streaming-serveren og klienten, samt MCP stre
 ### Oversikt
 
 - Du setter opp en MCP-server som sender fremdriftsvarsler til klienten mens den behandler elementer.
-- Klienten viser hver varsling i sanntid.
-- Denne guiden dekker forutsetninger, oppsett, kjøring og feilsøking.
+- Klienten viser hvert varsel i sanntid.
+- Denne veiledningen dekker forutsetninger, oppsett, kjøring og feilsøking.
 
 ### Forutsetninger
 
 - Python 3.9 eller nyere
-- Pakken `mcp` for Python (installer med `pip install mcp`)
+- `mcp` Python-pakken (installer med `pip install mcp`)
 
 ### Installasjon og oppsett
 
@@ -80,7 +80,7 @@ Slik kjører du den klassiske HTTP streaming-serveren og klienten, samt MCP stre
    python client.py
    ```
 
-2. Du vil se strømmede meldinger skrevet ut fortløpende:
+2. Du skal se meldinger som streames og skrives ut fortløpende:
 
    ```text
    Running classic HTTP streaming client...
@@ -116,7 +116,7 @@ Slik kjører du den klassiske HTTP streaming-serveren og klienten, samt MCP stre
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. Du vil se varsler skrevet ut i sanntid mens serveren behandler hvert element:
+2. Du skal se varsler skrevet ut i sanntid mens serveren behandler hvert element:
    ```
    Running MCP client...
    Starting client...
@@ -132,20 +132,20 @@ Slik kjører du den klassiske HTTP streaming-serveren og klienten, samt MCP stre
 ### Viktige implementeringstrinn
 
 1. **Opprett MCP-serveren med FastMCP.**
-2. **Definer et verktøy som behandler en liste og sender varsler ved hjelp av `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+2. **Definer et verktøy som behandler en liste og sender varsler med `ctx.info()` eller `ctx.log()`.**
+3. **Kjør serveren med `transport="streamable-http"`.**
+4. **Implementer en klient med en meldingshåndterer som viser varsler etter hvert som de kommer.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Gjennomgang av koden
+- Serveren bruker asynkrone funksjoner og MCP-konteksten for å sende fremdriftsoppdateringer.
+- Klienten implementerer en asynkron meldingshåndterer som skriver ut varsler og sluttresultatet.
 
-### Tips & Troubleshooting
+### Tips og feilsøking
 
-- Use `async/await` for ikke-blokkerende operasjoner.**
+- Bruk `async/await` for ikke-blokkerende operasjoner.
 - Håndter alltid unntak i både server og klient for robusthet.
 - Test med flere klienter for å se sanntidsoppdateringer.
-- Hvis du får feil, sjekk Python-versjonen og at alle avhengigheter er installert.
+- Hvis du får feil, sjekk Python-versjonen din og at alle avhengigheter er installert.
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på det opprinnelige språket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår fra bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

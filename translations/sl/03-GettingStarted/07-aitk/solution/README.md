@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e9490aedc71f99bc774af57b207a7adb",
-  "translation_date": "2025-06-13T02:34:05+00:00",
+  "translation_date": "2025-07-13T21:55:37+00:00",
   "source_file": "03-GettingStarted/07-aitk/solution/README.md",
   "language_code": "sl"
 }
 -->
-# 📘 Rješenje zadatka: Proširenje MCP servera kalkulatora s alatom za kvadratni korijen
+# 📘 Rešitev naloge: Razširitev vašega kalkulator MCP strežnika z orodjem za kvadratni koren
 
 ## Pregled
-U ovom zadatku ste unaprijedili svoj MCP server kalkulatora dodavanjem novog alata koji računa kvadratni korijen broja. Ova nadogradnja omogućuje vašem AI agentu da rješava složenije matematičke upite, poput "Koliki je kvadratni korijen od 16?" ili "Izračunaj √49," koristeći prirodni jezik.
+V tej nalogi ste izboljšali svoj kalkulator MCP strežnik z dodajanjem novega orodja, ki izračuna kvadratni koren števila. Ta dodatek omogoča vašemu AI agentu, da obravnava bolj zahtevna matematična vprašanja, kot so "Kolikšen je kvadratni koren števila 16?" ali "Izračunaj √49," z uporabo naravnih jezikovnih ukazov.
 
-## 🛠️ Implementacija alata za kvadratni korijen
-Da biste dodali ovu funkcionalnost, definirali ste novu funkciju alata u datoteci server.py. Evo implementacije:
+## 🛠️ Implementacija orodja za kvadratni koren
+Za dodajanje te funkcionalnosti ste v datoteki server.py definirali novo funkcijo orodja. Tukaj je implementacija:
 
 ```python
 """
@@ -68,13 +68,35 @@ def sqrt(a: float) -> float:
     return math.sqrt(a)
 ```
 
-## 🔍 Kako to radi
+## 🔍 Kako deluje
 
-- **Uvezite `math` modul i koristite `math.sqrt()` funkciju u alatu označenom s `@server.tool()` pod imenom `sqrt` koji prima parametar `a` tipa `float` i obrađuje eventualne `ValueError` iznimke pri pozivu `math.sqrt(a)`.**
-- Omogućili ste svom AI agentu da obrađuje izračune kvadratnog korijena putem upita na prirodnom jeziku.
-- Vježbali ste dodavanje novih alata i ponovno pokretanje servera kako biste integrirali dodatne funkcionalnosti.
+- **Uvoz modula `math`**: Za izvajanje matematičnih operacij, ki presegajo osnovno aritmetiko, Python ponuja vgrajeni modul `math`. Ta modul vsebuje različne matematične funkcije in konstante. Z uvozom z `import math` pridobite dostop do funkcij, kot je `math.sqrt()`, ki izračuna kvadratni koren števila.
+- **Definicija funkcije**: Dekorator `@server.tool()` registrira funkcijo `sqrt` kot orodje, ki je dostopno vašemu AI agentu.
+- **Vhodni parameter**: Funkcija sprejme en argument `a` tipa `float`.
+- **Obravnava napak**: Če je `a` negativno, funkcija sproži izjemo `ValueError`, da prepreči izračun kvadratnega korena negativnega števila, kar funkcija `math.sqrt()` ne podpira.
+- **Vrednost, ki jo vrne**: Za nenegativne vrednosti funkcija vrne kvadratni koren `a` z uporabo vgrajene metode `math.sqrt()`.
 
-Slobodno nastavite s eksperimentiranjem dodavanjem još matematičkih alata, poput potenciranja ili logaritamskih funkcija, kako biste dodatno unaprijedili sposobnosti svog agenta!
+## 🔄 Ponovni zagon strežnika
+Po dodajanju novega orodja `sqrt` je pomembno, da ponovno zaženete MCP strežnik, da agent prepozna in lahko uporablja novo funkcionalnost.
 
-**Opozorilo**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvorno jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+## 💬 Primeri ukazov za testiranje novega orodja
+Tukaj je nekaj naravnih jezikovnih ukazov, ki jih lahko uporabite za testiranje funkcionalnosti kvadratnega korena:
+
+- "Kolikšen je kvadratni koren števila 25?"
+- "Izračunaj kvadratni koren števila 81."
+- "Poišči kvadratni koren števila 0."
+- "Kolikšen je kvadratni koren števila 2.25?"
+
+Ti ukazi bi morali sprožiti agenta, da pokliče orodje `sqrt` in vrne pravilne rezultate.
+
+## ✅ Povzetek
+Z dokončanjem te naloge ste:
+
+- Razširili svoj kalkulator MCP strežnik z novim orodjem `sqrt`.
+- Omogočili vašemu AI agentu, da izračunava kvadratne korene preko naravnih jezikovnih ukazov.
+- Vadili dodajanje novih orodij in ponovni zagon strežnika za integracijo dodatnih funkcionalnosti.
+
+Brez zadržkov nadaljujte z eksperimentiranjem in dodajanjem še več matematičnih orodij, kot so potenciranje ali logaritmične funkcije, da še naprej izboljšujete zmogljivosti vašega agenta!
+
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

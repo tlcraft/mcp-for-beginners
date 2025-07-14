@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
-  "translation_date": "2025-07-04T18:30:21+00:00",
+  "translation_date": "2025-07-13T18:19:41+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "hu"
 }
 -->
-A fenti kódban:
+A korábbi kódban:
 
 - Importáltuk a könyvtárakat
 - Létrehoztunk egy kliens példányt, és stdio segítségével csatlakoztattuk a transzporthoz.
 - Felsoroltuk a promptokat, erőforrásokat és eszközöket, majd mindet meghívtuk.
 
-Így tehát van egy kliensünk, amely képes kommunikálni egy MCP szerverrel.
+Így hát kész is van egy kliens, amely képes kommunikálni egy MCP szerverrel.
 
-A következő gyakorlati részben szánjunk időt arra, hogy részletesen átbeszéljük a kódrészleteket, és magyarázzuk el, mi történik pontosan.
+A következő gyakorlati részben szánjunk időt arra, hogy részletesen átbeszéljük az egyes kódrészleteket, és magyarázzuk el, mi történik pontosan.
 
 ## Gyakorlat: Kliens írása
 
@@ -25,7 +25,7 @@ Ahogy fentebb említettük, szánjunk időt a kód magyarázatára, és termész
 
 Importáljuk a szükséges könyvtárakat, szükségünk lesz hivatkozásokra a klienshez és a választott transzport protokollhoz, az stdio-hoz. Az stdio egy olyan protokoll, amely helyi gépen futó alkalmazásokhoz készült. Az SSE egy másik transzport protokoll, amelyet a későbbi fejezetekben mutatunk be, de ez a másik lehetőséged. Egyelőre azonban folytassuk az stdio-val.
 
-Haladjunk tovább az példányosításhoz.
+Haladjunk tovább az példányosítással.
 
 ### -2- Kliens és transzport példányosítása
 
@@ -35,7 +35,7 @@ Létre kell hoznunk egy példányt a transzportból, és egyet a kliensből is:
 
 Most már van egy kliensünk, amely képes csatlakozni, ha a programot futtatjuk. Azonban még nem listázza a funkciókat, így ezt most pótoljuk:
 
-Nagyszerű, most már lekaptuk az összes funkciót. De mikor használjuk őket? Nos, ez a kliens elég egyszerű, abban az értelemben, hogy explicit módon kell meghívnunk a funkciókat, amikor szükségünk van rájuk. A következő fejezetben egy fejlettebb klienst fogunk létrehozni, amely saját nagy nyelvi modellhez (LLM) fér hozzá. Egyelőre azonban nézzük meg, hogyan hívhatjuk meg a szerver funkcióit:
+Nagyszerű, most már lekértük az összes funkciót. De mikor használjuk őket? Ez a kliens elég egyszerű, abban az értelemben, hogy explicit módon kell meghívnunk a funkciókat, amikor szükségünk van rájuk. A következő fejezetben egy fejlettebb klienst fogunk létrehozni, amely saját nagy nyelvi modellel (LLM) rendelkezik. Egyelőre azonban nézzük meg, hogyan hívhatjuk meg a szerver funkcióit:
 
 ### -4- Funkciók meghívása
 
@@ -47,7 +47,7 @@ A kliens futtatásához írd be a következő parancsot a terminálba:
 
 ## Feladat
 
-Ebben a feladatban a kliens létrehozásával kapcsolatos ismereteidet fogod alkalmazni, és saját klienst készítesz.
+Ebben a feladatban a tanultakat felhasználva készítsd el a saját kliensedet.
 
 Itt van egy szerver, amelyet használhatsz, és amelyet a kliensed kódjából kell meghívnod. Próbálj meg több funkciót hozzáadni a szerverhez, hogy érdekesebbé tedd.
 
@@ -57,7 +57,7 @@ Itt van egy szerver, amelyet használhatsz, és amelyet a kliensed kódjából k
 
 ## Főbb tanulságok
 
-A fejezet legfontosabb tanulságai a kliensekkel kapcsolatban:
+A fejezet legfontosabb tanulságai a kliensekről:
 
 - Használhatók a szerver funkcióinak felfedezésére és meghívására egyaránt.
 - Elindíthatnak egy szervert, miközben maguk is elindulnak (ahogy ebben a fejezetben), de a kliensek csatlakozhatnak már futó szerverekhez is.

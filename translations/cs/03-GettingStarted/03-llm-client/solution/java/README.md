@@ -2,94 +2,95 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac2459c0d5cc823922e3d9240a95028c",
-  "translation_date": "2025-06-11T13:32:41+00:00",
+  "translation_date": "2025-07-13T19:12:34+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/java/README.md",
   "language_code": "cs"
 }
 -->
 # Calculator LLM Client
 
-Eine C#-Anwendung, die zeigt, wie man LangChain4j verwendet, um eine Verbindung zu einem MCP (Model Context Protocol) Calculator-Service mit GitHub Models Integration herzustellen.
+Java aplikace, která ukazuje, jak použít LangChain4j pro připojení ke službě MCP (Model Context Protocol) kalkulačky s integrací GitHub Models.
 
-## Voraussetzungen
+## Požadavky
 
-- .NET 7 oder höher
-- Ein GitHub-Konto mit Zugriff auf GitHub Models
-- Ein laufender MCP Calculator-Service auf `http://localhost:8080`
+- Java 21 nebo novější
+- Maven 3.6+ (nebo použijte přiložený Maven wrapper)
+- GitHub účet s přístupem k GitHub Models
+- MCP kalkulační služba běžící na `http://localhost:8080`
 
-## GitHub-Token erhalten
+## Získání GitHub Tokenu
 
-Diese Anwendung nutzt GitHub Models, wofür ein persönlicher GitHub-Zugangstoken erforderlich ist. Gehen Sie dazu wie folgt vor:
+Tato aplikace používá GitHub Models, které vyžadují osobní přístupový token GitHubu. Postupujte podle těchto kroků, jak token získat:
 
-### 1. Zugriff auf GitHub Models
-1. Gehen Sie zu [GitHub Models](https://github.com/marketplace/models)
-2. Melden Sie sich mit Ihrem GitHub-Konto an
-3. Beantragen Sie den Zugriff auf GitHub Models, falls noch nicht geschehen
+### 1. Přístup k GitHub Models
+1. Přejděte na [GitHub Models](https://github.com/marketplace/models)
+2. Přihlaste se pomocí svého GitHub účtu
+3. Požádejte o přístup k GitHub Models, pokud ho ještě nemáte
 
-### 2. Persönlichen Zugriffstoken erstellen
-1. Gehen Sie zu [GitHub Einstellungen → Entwickler-Einstellungen → Persönliche Zugriffstoken → Tokens (klassisch)](https://github.com/settings/tokens)
-2. Klicken Sie auf "Neuen Token generieren" → "Neuen Token generieren (klassisch)"
-3. Vergeben Sie einen aussagekräftigen Namen für den Token (z.B. "MCP Calculator Client")
-4. Legen Sie die Ablaufzeit fest
-5. Wählen Sie folgende Berechtigungen aus:
-   - `repo` (falls Zugriff auf private Repositories nötig ist)
+### 2. Vytvoření osobního přístupového tokenu
+1. Přejděte na [GitHub Nastavení → Developer settings → Personal access tokens → Tokens (classic)](https://github.com/settings/tokens)
+2. Klikněte na "Generate new token" → "Generate new token (classic)"
+3. Pojmenujte token popisným názvem (např. "MCP Calculator Client")
+4. Nastavte platnost tokenu podle potřeby
+5. Vyberte následující oprávnění:
+   - `repo` (pokud přistupujete k soukromým repozitářům)
    - `user:email`
-6. Klicken Sie auf "Token generieren"
-7. **Wichtig**: Kopieren Sie den Token sofort – er ist später nicht mehr sichtbar!
+6. Klikněte na "Generate token"
+7. **Důležité**: Token si ihned zkopírujte – už ho znovu neuvidíte!
 
-### 3. Umgebungsvariable setzen
+### 3. Nastavení proměnné prostředí
 
-#### Unter Windows (Eingabeaufforderung):
+#### Na Windows (Příkazový řádek):
 ```cmd
 set GITHUB_TOKEN=your_github_token_here
 ```
 
-#### Unter Windows (PowerShell):
+#### Na Windows (PowerShell):
 ```powershell
 $env:GITHUB_TOKEN="your_github_token_here"
 ```
 
-#### Unter macOS/Linux:
+#### Na macOS/Linux:
 ```bash
 export GITHUB_TOKEN=your_github_token_here
 ```
 
-## Einrichtung und Installation
+## Nastavení a instalace
 
-1. **Projekt klonen oder ins Projektverzeichnis wechseln**
+1. **Naklonujte nebo přejděte do adresáře projektu**
 
-2. **Abhängigkeiten installieren**:
+2. **Nainstalujte závislosti**:
    ```cmd
    mvnw clean install
    ```
-   Oder, wenn Maven global installiert ist:
+   Nebo pokud máte Maven nainstalovaný globálně:
    ```cmd
    mvn clean install
    ```
 
-3. **Umgebungsvariable setzen** (siehe Abschnitt "GitHub-Token erhalten")
+3. **Nastavte proměnnou prostředí** (viz sekce "Získání GitHub Tokenu" výše)
 
-4. **MCP Calculator Service starten**:
-   Stellen Sie sicher, dass der MCP Calculator Service aus Kapitel 1 auf `http://localhost:8080/sse` läuft. Dieser muss vor dem Start des Clients aktiv sein.
+4. **Spusťte MCP kalkulační službu**:
+   Ujistěte se, že máte spuštěnou MCP kalkulační službu z kapitoly 1 na `http://localhost:8080/sse`. Tato služba musí běžet před spuštěním klienta.
 
-## Anwendung ausführen
+## Spuštění aplikace
 
 ```cmd
 mvnw clean package
 java -jar target\calculator-llm-client-0.0.1-SNAPSHOT.jar
 ```
 
-## Was die Anwendung macht
+## Co aplikace dělá
 
-Die Anwendung demonstriert drei Hauptinteraktionen mit dem Calculator-Service:
+Aplikace demonstruje tři hlavní interakce se službou kalkulačky:
 
-1. **Addition**: Berechnet die Summe von 24,5 und 17,3
-2. **Quadratwurzel**: Berechnet die Quadratwurzel von 144
-3. **Hilfe**: Zeigt verfügbare Calculator-Funktionen an
+1. **Sčítání**: Vypočítá součet 24.5 a 17.3
+2. **Druhá odmocnina**: Vypočítá druhou odmocninu z 144
+3. **Nápověda**: Zobrazí dostupné funkce kalkulačky
 
-## Erwartete Ausgabe
+## Očekávaný výstup
 
-Bei erfolgreichem Lauf sollte die Ausgabe etwa so aussehen:
+Při úspěšném spuštění byste měli vidět výstup podobný tomuto:
 
 ```
 The sum of 24.5 and 17.3 is 41.8.
@@ -97,39 +98,52 @@ The square root of 144 is 12.
 The calculator service provides the following functions: add, subtract, multiply, divide, sqrt, power...
 ```
 
-## Fehlerbehebung
+## Řešení problémů
 
-### Häufige Probleme
+### Běžné problémy
 
 1. **"GITHUB_TOKEN environment variable not set"**
-   - Stellen Sie sicher, dass die Umgebungsvariable `GITHUB_TOKEN` gesetzt ist
+   - Ujistěte se, že máte nastavenou proměnnou prostředí `GITHUB_TOKEN`
+   - Po nastavení proměnné restartujte terminál/příkazový řádek
 
-### Debugging
+2. **"Connection refused to localhost:8080"**
+   - Zkontrolujte, že MCP kalkulační služba běží na portu 8080
+   - Ověřte, zda port 8080 nepoužívá jiná služba
 
-Um Debug-Logging zu aktivieren, fügen Sie beim Starten der Anwendung folgendes JVM-Argument hinzu:
+3. **"Authentication failed"**
+   - Ověřte platnost GitHub tokenu a správná oprávnění
+   - Zkontrolujte, zda máte přístup k GitHub Models
+
+4. **Chyby při sestavení Mavenem**
+   - Ujistěte se, že používáte Java 21 nebo novější: `java -version`
+   - Zkuste vyčistit sestavení: `mvnw clean`
+
+### Ladění
+
+Pro zapnutí ladicích logů přidejte při spuštění následující JVM argument:
 ```cmd
 java -Dlogging.level.dev.langchain4j=DEBUG -jar target\calculator-llm-client-0.0.1-SNAPSHOT.jar
 ```
 
-## Konfiguration
+## Konfigurace
 
-Die Anwendung ist so konfiguriert, dass sie:
-- GitHub Models mit `gpt-4.1-nano` model
-- Connect to MCP service at `http://localhost:8080/sse` verwendet
-- Eine Timeout-Zeit von 60 Sekunden für Anfragen nutzt
-- Request- und Response-Logging zur Fehleranalyse aktiviert
+Aplikace je nakonfigurována takto:
+- Používá GitHub Models s modelem `gpt-4.1-nano`
+- Připojuje se ke službě MCP na `http://localhost:8080/sse`
+- Nastavuje timeout požadavků na 60 sekund
+- Povolené logování požadavků a odpovědí pro ladění
 
-## Abhängigkeiten
+## Závislosti
 
-Wichtige Abhängigkeiten in diesem Projekt:
-- **LangChain4j**: Für KI-Integration und Tool-Management
-- **LangChain4j MCP**: Für Model Context Protocol Unterstützung
-- **LangChain4j GitHub Models**: Für GitHub Models Integration
-- **Spring Boot**: Für Anwendungsframework und Dependency Injection
+Hlavní závislosti použité v projektu:
+- **LangChain4j**: Pro AI integraci a správu nástrojů
+- **LangChain4j MCP**: Pro podporu Model Context Protocol
+- **LangChain4j GitHub Models**: Pro integraci GitHub Models
+- **Spring Boot**: Pro aplikační framework a dependency injection
 
-## Lizenz
+## Licence
 
-Dieses Projekt steht unter der Apache License 2.0 - siehe die [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE) Datei für Details.
+Tento projekt je licencován pod Apache License 2.0 – podrobnosti najdete v souboru [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE).
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědni za jakékoli nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

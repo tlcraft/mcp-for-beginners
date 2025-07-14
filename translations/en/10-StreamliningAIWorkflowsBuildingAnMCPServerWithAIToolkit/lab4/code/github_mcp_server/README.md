@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a3f252a62f059360855de5331a575898",
-  "translation_date": "2025-06-10T06:59:33+00:00",
+  "translation_date": "2025-07-14T08:49:48+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/README.md",
   "language_code": "en"
 }
 -->
 # Weather MCP Server
 
-This is a sample MCP Server in Python that implements weather tools with mock responses. It can serve as a starting point for your own MCP Server. It includes the following features:
+This is a sample MCP Server in Python implementing weather tools with mock responses. It can be used as a scaffold for your own MCP Server. It includes the following features: 
 
-- **Weather Tool**: Provides mocked weather information based on a given location.
-- **Git Clone Tool**: Clones a git repository into a specified folder.
-- **VS Code Open Tool**: Opens a folder in VS Code or VS Code Insiders.
-- **Connect to Agent Builder**: Allows you to connect the MCP server to the Agent Builder for testing and debugging.
-- **Debug in [MCP Inspector](https://github.com/modelcontextprotocol/inspector)**: Enables debugging the MCP Server using the MCP Inspector.
+- **Weather Tool**: A tool that provides mocked weather information based on the given location.
+- **Git Clone Tool**: A tool that clones a git repository to a specified folder.
+- **VS Code Open Tool**: A tool that opens a folder in VS Code or VS Code Insiders.
+- **Connect to Agent Builder**: A feature that allows you to connect the MCP server to the Agent Builder for testing and debugging.
+- **Debug in [MCP Inspector](https://github.com/modelcontextprotocol/inspector)**: A feature that allows you to debug the MCP Server using the MCP Inspector.
 
 ## Get started with the Weather MCP Server template
 
@@ -24,34 +24,34 @@ This is a sample MCP Server in Python that implements weather tools with mock re
 > To run the MCP Server on your local development machine, you will need:
 >
 > - [Python](https://www.python.org/)
-> - [Git](https://git-scm.com/) (required for git_clone_repo tool)
-> - [VS Code](https://code.visualstudio.com/) or [VS Code Insiders](https://code.visualstudio.com/insiders/) (required for open_in_vscode tool)
+> - [Git](https://git-scm.com/) (Required for git_clone_repo tool)
+> - [VS Code](https://code.visualstudio.com/) or [VS Code Insiders](https://code.visualstudio.com/insiders/) (Required for open_in_vscode tool)
 > - (*Optional - if you prefer uv*) [uv](https://github.com/astral-sh/uv)
 > - [Python Debugger Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
 
 ## Prepare environment
 
-There are two ways to set up the environment for this project. You can pick the one you prefer.
+There are two ways to set up the environment for this project. You can choose whichever you prefer.
 
 > Note: Reload VSCode or your terminal to ensure the virtual environment’s Python is used after creating it.
 
 | Approach | Steps |
 | -------- | ----- |
-| Using `uv` | 1. Create a virtual environment: `uv venv` <br>2. Run the VSCode command "***Python: Select Interpreter***" and choose the Python from the created virtual environment <br>3. Install dependencies (including dev dependencies): `uv pip install -r pyproject.toml --extra dev` |
-| Using `pip` | 1. Create a virtual environment: `python -m venv .venv` <br>2. Run the VSCode command "***Python: Select Interpreter***" and choose the Python from the created virtual environment<br>3. Install dependencies (including dev dependencies): `pip install -e .[dev]` |
+| Using `uv` | 1. Create virtual environment: `uv venv` <br>2. Run VSCode Command "***Python: Select Interpreter***" and select the Python from the created virtual environment <br>3. Install dependencies (including dev dependencies): `uv pip install -r pyproject.toml --extra dev` |
+| Using `pip` | 1. Create virtual environment: `python -m venv .venv` <br>2. Run VSCode Command "***Python: Select Interpreter***" and select the Python from the created virtual environment<br>3. Install dependencies (including dev dependencies): `pip install -e .[dev]` | 
 
-After setting up the environment, you can run the server locally via Agent Builder as the MCP Client to get started:
+After setting up the environment, you can run the server on your local development machine via Agent Builder as the MCP Client to get started:
 1. Open the VS Code Debug panel. Select `Debug in Agent Builder` or press `F5` to start debugging the MCP server.
-2. Use the AI Toolkit Agent Builder to test the server with [this prompt](../../../../../../../../../../../open_prompt_builder). The server will automatically connect to the Agent Builder.
+2. Use AI Toolkit Agent Builder to test the server with [this prompt](../../../../../../../../../../open_prompt_builder). The server will automatically connect to the Agent Builder.
 3. Click `Run` to test the server with the prompt.
 
-**Congratulations**! You have successfully run the Weather MCP Server on your local development machine via Agent Builder as the MCP Client.  
+**Congratulations**! You have successfully run the Weather MCP Server on your local development machine via Agent Builder as the MCP Client.
 ![DebugMCP](https://raw.githubusercontent.com/microsoft/windows-ai-studio-templates/refs/heads/dev/mcpServers/mcp_debug.gif)
 
 ## What's included in the template
 
-| Folder / File | Contents                                     |
-| ------------- | -------------------------------------------- |
+| Folder / File| Contents                                     |
+| ------------ | -------------------------------------------- |
 | `.vscode`    | VSCode files for debugging                   |
 | `.aitk`      | Configurations for AI Toolkit                |
 | `src`        | The source code for the weather MCP server   |
@@ -72,7 +72,7 @@ The `get_weather` tool provides mocked weather information for a specified locat
 | `location` | string | Location to get weather for (e.g., city name, state, or coordinates) |
 
 ### Git Clone Tool
-The `git_clone_repo` tool clones a git repository into a specified folder.
+The `git_clone_repo` tool clones a git repository to a specified folder.
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
@@ -80,11 +80,11 @@ The `git_clone_repo` tool clones a git repository into a specified folder.
 | `target_folder` | string | Path to the folder where the repository should be cloned |
 
 The tool returns a JSON object with:
-- `success`: Boolean indicating whether the operation was successful
+- `success`: Boolean indicating if the operation was successful
 - `target_folder` or `error`: The path of the cloned repository or an error message
 
 ### VS Code Open Tool
-The `open_in_vscode` tool opens a folder in the VS Code or VS Code Insiders application.
+The `open_in_vscode` tool opens a folder in VS Code or VS Code Insiders application.
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
@@ -92,20 +92,20 @@ The `open_in_vscode` tool opens a folder in the VS Code or VS Code Insiders appl
 | `use_insiders` | boolean (optional) | Whether to use VS Code Insiders instead of regular VS Code |
 
 The tool returns a JSON object with:
-- `success`: Boolean indicating whether the operation was successful
+- `success`: Boolean indicating if the operation was successful
 - `message` or `error`: A confirmation message or an error message
 
 ## Debug Mode | Description | Steps to debug |
 | ---------- | ----------- | --------------- |
-| Agent Builder | Debug the MCP server within the Agent Builder via AI Toolkit. | 1. Open the VS Code Debug panel. Select `Debug in Agent Builder` and press `F5` to start debugging the MCP server.<br>2. Use the AI Toolkit Agent Builder to test the server with [this prompt](../../../../../../../../../../../open_prompt_builder). The server will automatically connect to the Agent Builder.<br>3. Click `Run` to test the server with the prompt. |
-| MCP Inspector | Debug the MCP server using the MCP Inspector. | 1. Install [Node.js](https://nodejs.org/)<br> 2. Set up Inspector: `cd inspector` && `npm install` <br> 3. Open the VS Code Debug panel. Select `Debug SSE in Inspector (Edge)` or `Debug SSE in Inspector (Chrome)`. Press F5 to start debugging.<br> 4. When MCP Inspector opens in your browser, click the `Connect` button to connect this MCP server.<br> 5. Then you can `List Tools`, select a tool, enter parameters, and `Run Tool` to debug your server code.<br> |
+| Agent Builder | Debug the MCP server in the Agent Builder via AI Toolkit. | 1. Open the VS Code Debug panel. Select `Debug in Agent Builder` and press `F5` to start debugging the MCP server.<br>2. Use AI Toolkit Agent Builder to test the server with [this prompt](../../../../../../../../../../open_prompt_builder). The server will automatically connect to the Agent Builder.<br>3. Click `Run` to test the server with the prompt. |
+| MCP Inspector | Debug the MCP server using the MCP Inspector. | 1. Install [Node.js](https://nodejs.org/)<br> 2. Set up Inspector: `cd inspector` && `npm install` <br> 3. Open the VS Code Debug panel. Select `Debug SSE in Inspector (Edge)` or `Debug SSE in Inspector (Chrome)`. Press F5 to start debugging.<br> 4. When MCP Inspector launches in the browser, click the `Connect` button to connect this MCP server.<br> 5. Then you can `List Tools`, select a tool, input parameters, and `Run Tool` to debug your server code.<br> |
 
-## Default Ports and Customizations
+## Default Ports and customizations
 
 | Debug Mode | Ports | Definitions | Customizations | Note |
 | ---------- | ----- | ------------ | -------------- |-------------- |
-| Agent Builder | 3001 | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json) | Edit [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.aitk/mcp.json) to change the above ports. | N/A |
-| MCP Inspector | 3001 (Server); 5173 and 3000 (Inspector) | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json) | Edit [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.aitk/mcp.json) to change the above ports. | N/A |
+| Agent Builder | 3001 | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json) | Edit [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.aitk/mcp.json) to change these ports. | N/A |
+| MCP Inspector | 3001 (Server); 5173 and 3000 (Inspector) | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json) | Edit [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.aitk/mcp.json) to change these ports.| N/A |
 
 ## Feedback
 

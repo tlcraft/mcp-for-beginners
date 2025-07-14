@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T17:36:38+00:00",
+  "translation_date": "2025-07-13T19:56:30+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "sv"
 }
@@ -40,22 +40,22 @@ Bra, vi har en server som använder SSE, låt oss testa den nästa steg.
 
 Inspector är ett utmärkt verktyg som vi såg i en tidigare lektion [Skapa din första server](/03-GettingStarted/01-first-server/README.md). Låt oss se om vi kan använda Inspector även här:
 
-### -1- Starta inspector
+### -1- Starta Inspector
 
-För att köra inspector måste du först ha en SSE-server igång, så låt oss göra det nu:
+För att köra Inspector måste du först ha en SSE-server igång, så låt oss göra det nu:
 
 1. Starta servern
 
-1. Starta inspector
+1. Starta Inspector
 
     > ![NOTE]
-    > Kör detta i ett separat terminalfönster från där servern körs. Observera också att du behöver anpassa kommandot nedan för att passa URL:en där din server körs.
+    > Kör detta i ett separat terminalfönster från där servern körs. Observera också att du behöver justera kommandot nedan för att passa URL:en där din server körs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-Att köra inspector ser likadant ut i alla runtime-miljöer. Notera hur vi istället för att skicka en sökväg till vår server och ett kommando för att starta servern, istället skickar URL:en där servern körs och vi specificerar även `/sse`-rutten.
+Att köra Inspector ser likadant ut i alla runtime-miljöer. Notera hur vi istället för att ange en sökväg till vår server och ett kommando för att starta servern, istället anger URL:en där servern körs och vi specificerar även `/sse`-rutten.
 
 ### -2- Testa verktyget
 
@@ -63,7 +63,7 @@ Anslut till servern genom att välja SSE i rullgardinsmenyn och fyll i URL-fält
 
 ![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.sv.png)
 
-Bra, du kan arbeta med inspector, låt oss se hur vi kan arbeta med Visual Studio Code nästa.
+Bra, du kan arbeta med Inspector, låt oss se hur vi kan arbeta med Visual Studio Code nästa steg.
 
 ## Uppgift
 
@@ -79,7 +79,7 @@ De viktigaste punkterna från detta kapitel är följande:
 
 - SSE är den andra stödda transporttypen efter stdio.
 - För att stödja SSE behöver du hantera inkommande anslutningar och meddelanden med hjälp av ett webbframework.
-- Du kan använda både Inspector och Visual Studio Code för att konsumera en SSE-server, precis som med stdio-servrar. Notera hur det skiljer sig lite mellan stdio och SSE. För SSE behöver du starta servern separat och sedan köra ditt inspector-verktyg. För inspector-verktyget finns det också vissa skillnader i att du behöver specificera URL:en.
+- Du kan använda både Inspector och Visual Studio Code för att konsumera en SSE-server, precis som med stdio-servrar. Notera hur det skiljer sig lite mellan stdio och SSE. För SSE behöver du starta servern separat och sedan köra ditt Inspector-verktyg. För Inspector-verktyget finns det också vissa skillnader i att du behöver specificera URL:en.
 
 ## Exempel
 

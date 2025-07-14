@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:32:52+00:00",
+  "translation_date": "2025-07-13T17:17:43+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "nl"
 }
@@ -45,7 +45,7 @@ Aan het einde van deze les kun je:
 
 ## Je MCP-omgeving opzetten
 
-Voordat je aan de slag gaat met MCP is het belangrijk om je ontwikkelomgeving voor te bereiden en de basisworkflow te begrijpen. Deze sectie begeleidt je door de eerste stappen zodat je soepel kunt starten met MCP.
+Voordat je aan de slag gaat met MCP, is het belangrijk om je ontwikkelomgeving voor te bereiden en de basisworkflow te begrijpen. Deze sectie begeleidt je door de eerste stappen om een soepele start met MCP te garanderen.
 
 ### Vereisten
 
@@ -73,8 +73,8 @@ MCP biedt officiële SDK's voor meerdere talen:
 ## Belangrijkste punten
 
 - Het opzetten van een MCP-ontwikkelomgeving is eenvoudig met taalspecifieke SDK's
-- Het bouwen van MCP-servers houdt in dat je tools maakt en registreert met duidelijke schema's
-- MCP-clients verbinden met servers en modellen om uitgebreide mogelijkheden te benutten
+- Het bouwen van MCP-servers omvat het creëren en registreren van tools met duidelijke schema's
+- MCP-clients maken verbinding met servers en modellen om uitgebreide mogelijkheden te benutten
 - Testen en debuggen zijn essentieel voor betrouwbare MCP-implementaties
 - Deployment-opties variëren van lokale ontwikkeling tot cloudoplossingen
 
@@ -94,7 +94,7 @@ We hebben een set voorbeelden die de oefeningen in alle hoofdstukken van deze se
 - [Remote MCP met Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
-## Wat volgt
+## Wat nu?
 
 Volgende: [Je eerste MCP Server maken](01-first-server/README.md)
 

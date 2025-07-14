@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:12:09+00:00",
+  "translation_date": "2025-07-13T18:35:06+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "da"
 }
@@ -15,7 +15,7 @@ Dette projekt viser, hvordan man opretter en Java-klient, der forbinder til og i
 
 Før du kører denne klient, skal du:
 
-1. **Start Calculator Serveren** fra Kapitel 01:
+1. **Starte Calculator Serveren** fra Kapitel 01:
    - Gå til calculator-serverens mappe: `03-GettingStarted/01-first-server/solution/java/`
    - Byg og kør calculator-serveren:
      ```cmd
@@ -25,25 +25,25 @@ Før du kører denne klient, skal du:
      ```
    - Serveren skal køre på `http://localhost:8080`
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. **Java 21 eller nyere** installeret på dit system
+3. **Maven** (inkluderet via Maven Wrapper)
 
-## What is the SDKClient?
+## Hvad er SDKClient?
 
-The `SDKClient` er en Java-applikation, der viser, hvordan man:
+`SDKClient` er en Java-applikation, der demonstrerer, hvordan man:
 - Forbinder til en MCP-server ved hjælp af Server-Sent Events (SSE) transport
 - Lister tilgængelige værktøjer fra serveren
 - Kalder forskellige calculator-funktioner eksternt
 - Håndterer svar og viser resultater
 
-## Sådan virker det
+## Sådan fungerer det
 
-Klienten bruger Spring AI MCP-rammeværket til at:
+Klienten bruger Spring AI MCP framework til at:
 
 1. **Etablere forbindelse**: Opretter en WebFlux SSE klienttransport til at forbinde til calculator-serveren
-2. **Initialisere klient**: Opsætter MCP-klienten og etablerer forbindelsen
-3. **Opdage værktøjer**: Lister alle tilgængelige calculator-operationer
-4. **Udføre operationer**: Kalder forskellige matematiske funktioner med eksempeldata
+2. **Initialisere klient**: Sætter MCP-klienten op og etablerer forbindelsen
+3. **Find værktøjer**: Lister alle tilgængelige calculator-operationer
+4. **Udfør operationer**: Kalder forskellige matematiske funktioner med eksempeldata
 5. **Vis resultater**: Viser resultaterne af hver beregning
 
 ## Projektstruktur
@@ -62,7 +62,7 @@ src/
 
 ## Vigtige afhængigheder
 
-Projektet bruger følgende vigtige afhængigheder:
+Projektet bruger følgende nøgleafhængigheder:
 
 ```xml
 <dependency>
@@ -71,14 +71,14 @@ Projektet bruger følgende vigtige afhængigheder:
 </dependency>
 ```
 
-Denne afhængighed leverer:
-- `McpClient` - The main client interface
+Denne afhængighed indeholder:
+- `McpClient` - Hovedklientens interface
 - `WebFluxSseClientTransport` - SSE transport til webbaseret kommunikation
-- MCP-protokol skemaer samt forespørgsels- og svar-typer
+- MCP protokol skemaer og request/response typer
 
 ## Byg projektet
 
-Byg projektet med Maven-wrapperen:
+Byg projektet med Maven wrapperen:
 
 ```cmd
 .\mvnw clean install
@@ -90,15 +90,15 @@ Byg projektet med Maven-wrapperen:
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**Note**: Sørg for, at calculator-serveren kører på `http://localhost:8080` before executing any of these commands.
+**Note**: Sørg for, at calculator-serveren kører på `http://localhost:8080` før du kører nogen af disse kommandoer.
 
-## What the Client Does
+## Hvad klienten gør
 
-When you run the client, it will:
+Når du kører klienten, vil den:
 
-1. **Connect** to the calculator server at `http://localhost:8080`
-2. **List værktøjer** - Viser alle tilgængelige calculator-operationer
-3. **Udfør beregninger**:
+1. **Forbinde** til calculator-serveren på `http://localhost:8080`
+2. **Liste værktøjer** - Viser alle tilgængelige calculator-operationer
+3. **Udføre beregninger**:
    - Addition: 5 + 3 = 8
    - Subtraktion: 10 - 4 = 6
    - Multiplikation: 6 × 7 = 42
@@ -122,7 +122,7 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**Note**: Du kan se Maven-advarsler om tilbageværende tråde til sidst – det er normalt for reaktive applikationer og betyder ikke en fejl.
+**Note**: Du kan se Maven advarsler om tilbageværende tråde til sidst - det er normalt for reaktive applikationer og indikerer ikke en fejl.
 
 ## Forstå koden
 
@@ -143,26 +143,26 @@ Opretter en synkron MCP-klient og initialiserer forbindelsen.
 ```java
 CallToolResult resultAdd = client.callTool(new CallToolRequest("add", Map.of("a", 5.0, "b", 3.0)));
 ```
-Kalder værktøjet "add" med parametrene a=5.0 og b=3.0.
+Kalder "add" værktøjet med parametrene a=5.0 og b=3.0.
 
 ## Fejlfinding
 
-### Server kører ikke
-Hvis du får forbindelsesfejl, skal du sikre dig, at calculator-serveren fra Kapitel 01 kører:
+### Serveren kører ikke
+Hvis du får forbindelsesfejl, så sørg for, at calculator-serveren fra Kapitel 01 kører:
 ```
 Error: Connection refused
 ```
 **Løsning**: Start calculator-serveren først.
 
-### Port allerede i brug
+### Porten er allerede i brug
 Hvis port 8080 er optaget:
 ```
 Error: Address already in use
 ```
-**Løsning**: Stop andre applikationer, der bruger port 8080, eller ændr serverens port.
+**Løsning**: Stop andre programmer, der bruger port 8080, eller ændr serveren til at bruge en anden port.
 
-### Bygfejl
-Hvis du støder på fejl under bygning:
+### Byggefejl
+Hvis du støder på byggefejl:
 ```cmd
 .\mvnw clean install -DskipTests
 ```

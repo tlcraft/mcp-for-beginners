@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T05:56:13+00:00",
+  "translation_date": "2025-07-13T22:15:31+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "pt"
 }
 -->
 # Serviço Básico de Calculadora MCP
 
-Este serviço oferece operações básicas de calculadora através do Model Context Protocol (MCP). Foi concebido como um exemplo simples para iniciantes que estão a aprender sobre implementações MCP.
+Este serviço fornece operações básicas de calculadora através do Model Context Protocol (MCP). Foi concebido como um exemplo simples para iniciantes que estão a aprender sobre implementações MCP.
 
 Para mais informações, consulte [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
 ## Funcionalidades
 
-Este serviço de calculadora disponibiliza as seguintes capacidades:
+Este serviço de calculadora oferece as seguintes capacidades:
 
 1. **Operações Aritméticas Básicas**:
    - Adição de dois números
-   - Subtração de um número por outro
+   - Subtração de um número a partir de outro
    - Multiplicação de dois números
    - Divisão de um número por outro (com verificação de divisão por zero)
 
-## Utilização do `stdio` Type
+## Utilização do tipo `stdio`
   
 ## Configuração
 
@@ -56,41 +56,40 @@ Este serviço de calculadora disponibiliza as seguintes capacidades:
 
    - Será solicitado que insira a raiz do repositório GitHub, que pode ser obtida com o comando `git rev-parse --show-toplevel`.
 
-## Using the Service
+## Utilização do Serviço
 
-The service exposes the following API endpoints through the MCP protocol:
+O serviço expõe os seguintes endpoints API através do protocolo MCP:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: Adiciona dois números
+- `subtract(a, b)`: Subtrai o segundo número ao primeiro
+- `multiply(a, b)`: Multiplica dois números
+- `divide(a, b)`: Divide o primeiro número pelo segundo (com verificação de zero)
+- isPrime(n): Verifica se um número é primo
 
-## Test with Github Copilot Chat in VS Code
+## Testar com Github Copilot Chat no VS Code
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
+1. Experimente fazer um pedido ao serviço usando o protocolo MCP. Por exemplo, pode pedir:
    - "Add 5 and 3"
    - "Subtract 10 from 4"
    - "Multiply 6 and 7"
    - "Divide 8 by 2"
    - "Does 37854 prime?"
    - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
+2. Para garantir que está a usar as ferramentas, adicione #MyCalculator ao prompt. Por exemplo:
    - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
+   - "Subtract 10 from 4 #MyCalculator"
 
+## Versão Containerizada
 
-## Containerized Version
+A solução anterior é ótima quando tem o .NET SDK instalado e todas as dependências configuradas. No entanto, se quiser partilhar a solução ou executá-la num ambiente diferente, pode usar a versão containerizada.
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
-
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` com o seu nome de utilizador do Docker Hub):
+1. Inicie o Docker e certifique-se de que está a funcionar.
+1. A partir de um terminal, navegue até à pasta `03-GettingStarted\samples\csharp\src`
+1. Para construir a imagem Docker para o serviço de calculadora, execute o seguinte comando (substitua `<YOUR-DOCKER-USERNAME>` pelo seu nome de utilizador do Docker Hub):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. Depois de a imagem estar construída, vamos carregá-la para o Docker Hub. Execute o seguinte comando:
+1. Depois de a imagem estar construída, vamos enviá-la para o Docker Hub. Execute o seguinte comando:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
@@ -111,11 +110,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Observando a configuração, pode ver que o comando é `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Ao analisar a configuração, pode ver que o comando é `docker` e os argumentos são `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. A flag `--rm` garante que o container é removido após parar, e a flag `-i` permite interagir com a entrada padrão do container. O último argumento é o nome da imagem que acabámos de construir e enviar para o Docker Hub.
 
-## Test the Dockerized Version
+## Testar a Versão Dockerizada
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, e tal como antes, pode pedir ao serviço de calculadora para fazer alguns cálculos por si.
+Inicie o Servidor MCP clicando no pequeno botão Iniciar acima de `"mcp-calc": {`, e tal como antes, pode pedir ao serviço de calculadora para fazer alguns cálculos por si.
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos por garantir a precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.

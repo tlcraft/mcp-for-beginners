@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a05fb941810e539147fec53aaadbb6fd",
-  "translation_date": "2025-06-21T14:32:50+00:00",
+  "translation_date": "2025-07-14T06:44:15+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/python/README.md",
   "language_code": "bg"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - Python 3.8 или по-нова версия  
 - pip (мениджър на Python пакети)  
-- Интернет връзка за свързване със сървъра на Microsoft Learn Docs MCP  
+- Интернет връзка за свързване със сървъра Microsoft Learn Docs MCP  
 
 ## Инсталация
 
@@ -24,31 +24,31 @@ CO_OP_TRANSLATOR_METADATA:
    pip install -r requirements.txt
    ```
 
-## Употреба
+## Използване
 
 ### Сценарий 1: Просто запитване към Docs MCP  
-Клиент от командния ред, който се свързва със сървъра на Docs MCP, изпраща запитване и отпечатва резултата.
+Клиент от командния ред, който се свързва със сървъра Docs MCP, изпраща запитване и отпечатва резултата.
 
 1. Стартирайте скрипта:  
    ```bash
    python scenario1.py
    ```  
-2. Въведете вашия въпрос за документацията в подканата.
+2. Въведете въпроса си за документацията на подканата.
 
 ### Сценарий 2: Генератор на учебен план (уеб приложение Chainlit)  
-Уеб интерфейс (използващ Chainlit), който позволява на потребителите да генерират персонализиран, седмичен учебен план за всяка техническа тема.
+Уеб интерфейс (използващ Chainlit), който позволява на потребителите да генерират персонализиран учебен план седмица по седмица за всяка техническа тема.
 
 1. Стартирайте Chainlit приложението:  
    ```bash
    chainlit run scenario2.py
    ```  
-2. Отворете локалния URL, който се показва в терминала ви (например http://localhost:8000), в браузъра си.  
-3. В чат прозореца въведете темата за учене и броя седмици, които искате да учите (например "AI-900 certification, 8 weeks").  
-4. Приложението ще ви отговори със седмичен учебен план, включително връзки към съответната документация на Microsoft Learn.
+2. Отворете локалния URL, показан в терминала ви (например http://localhost:8000) в браузъра си.  
+3. В чат прозореца въведете темата за учене и броя седмици, през които искате да учите (например "AI-900 certification, 8 weeks").  
+4. Приложението ще отговори с учебен план седмица по седмица, включително връзки към съответната документация на Microsoft Learn.
 
 **Необходими променливи на средата:**
 
-За да използвате Сценарий 2 (уеб приложението Chainlit с Azure OpenAI), трябва да зададете следните променливи на средата в `.env` file in the `python` директорията:
+За да използвате Сценарий 2 (уеб приложението Chainlit с Azure OpenAI), трябва да зададете следните променливи на средата в `.env` файл в директорията `python`:
 
 ```
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=
@@ -57,44 +57,44 @@ AZURE_OPENAI_ENDPOINT=
 AZURE_OPENAI_API_VERSION=
 ```
 
-Попълнете тези стойности с детайлите на вашия Azure OpenAI ресурс преди да стартирате приложението.
+Попълнете тези стойности с данните на вашия Azure OpenAI ресурс преди да стартирате приложението.
 
-> **Tip:** Лесно можете да разположите свои модели чрез [Azure AI Foundry](https://ai.azure.com/).
+> **Съвет:** Лесно можете да разположите свои модели, използвайки [Azure AI Foundry](https://ai.azure.com/).
 
 ### Сценарий 3: Документация в редактора с MCP сървър във VS Code
 
-Вместо да сменяте раздели в браузъра, за да търсите документация, можете да интегрирате Microsoft Learn Docs директно във VS Code чрез MCP сървъра. Това ви позволява:  
-- Да търсите и четете документация в VS Code без да напускате средата за програмиране.  
-- Да добавяте препратки към документация и връзки директно в README или учебните файлове.  
-- Да използвате GitHub Copilot и MCP за безпроблемна AI-поддържана работа с документация.
+Вместо да превключвате между табове в браузъра, за да търсите документация, можете да интегрирате Microsoft Learn Docs директно във VS Code чрез MCP сървъра. Това ви позволява да:  
+- Търсите и четете документация вътре във VS Code, без да напускате средата за кодиране.  
+- Цитирате документация и вмъквате връзки директно в README или учебни файлове.  
+- Използвате GitHub Copilot и MCP заедно за безпроблемен работен процес с AI-подпомогната документация.
 
 **Примери за употреба:**  
-- Бързо добавяне на препратки в README, докато пишете курс или проектна документация.  
-- Използване на Copilot за генериране на код и MCP за незабавно намиране и цитиране на подходяща документация.  
+- Бързо добавяне на референтни връзки в README, докато пишете курс или проектна документация.  
+- Използване на Copilot за генериране на код и MCP за мигновено намиране и цитиране на релевантна документация.  
 - Оставате фокусирани в редактора и повишавате продуктивността си.
 
 > [!IMPORTANT]  
-> Уверете се, че имате валиден [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) configuration in your workspace (location is `.vscode/mcp.json`).
+> Уверете се, че имате валидна конфигурация [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) в работната си директория (намира се в `.vscode/mcp.json`).
 
-## Why Chainlit for Scenario 2?
+## Защо Chainlit за Сценарий 2?
 
-Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
+Chainlit е модерен open-source фреймуърк за създаване на разговорни уеб приложения. Той улеснява създаването на чат-базирани потребителски интерфейси, които се свързват с бекенд услуги като Microsoft Learn Docs MCP сървъра. Този проект използва Chainlit, за да предостави прост и интерактивен начин за генериране на персонализирани учебни планове в реално време. Благодарение на Chainlit можете бързо да изграждате и разгръщате чат-базирани инструменти, които подобряват продуктивността и ученето.
 
-## What This Does
+## Какво прави това
 
-This app allows users to create a personalized study plan by simply entering a topic and a duration. The app parses your input, queries the Microsoft Learn Docs MCP server for relevant content, and organizes the results into a structured, week-by-week plan. Each week’s recommendations are displayed in the chat, making it easy to follow and track your progress. The integration ensures you always get the latest, most relevant learning resources.
+Това приложение позволява на потребителите да създадат персонализиран учебен план, като просто въведат тема и продължителност. Приложението анализира вашия вход, изпраща запитване към Microsoft Learn Docs MCP сървъра за релевантно съдържание и организира резултатите в структуриран план седмица по седмица. Препоръките за всяка седмица се показват в чата, което улеснява следенето и напредъка ви. Интеграцията гарантира, че винаги получавате най-актуалните и подходящи учебни ресурси.
 
-## Sample Queries
+## Примерни запитвания
 
-Try these queries in the chat window to see how the app responds:
+Опитайте тези запитвания в чат прозореца, за да видите как приложението отговаря:
 
-- `AI-900 certification, 8 weeks`
-- `Learn Azure Functions, 4 weeks`
-- `Azure DevOps, 6 weeks`
-- `Data engineering on Azure, 10 weeks`
-- `Microsoft security fundamentals, 5 weeks`
-- `Power Platform, 7 weeks`
-- `Azure AI services, 12 weeks`
+- `AI-900 certification, 8 weeks`  
+- `Learn Azure Functions, 4 weeks`  
+- `Azure DevOps, 6 weeks`  
+- `Data engineering on Azure, 10 weeks`  
+- `Microsoft security fundamentals, 5 weeks`  
+- `Power Platform, 7 weeks`  
+- `Azure AI services, 12 weeks`  
 - `Cloud architecture, 9 weeks`
 
 Тези примери показват гъвкавостта на приложението за различни учебни цели и времеви рамки.
@@ -105,4 +105,4 @@ Try these queries in the chat window to see how the app responds:
 - [MCP Documentation](https://github.com/MicrosoftDocs/mcp)
 
 **Отказ от отговорност**:  
-Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или неправилни тълкувания, произтичащи от използването на този превод.
+Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или неправилни тълкувания, произтичащи от използването на този превод.

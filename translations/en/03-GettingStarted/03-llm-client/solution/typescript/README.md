@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6d6315e03f591fb5a39be91da88585dc",
-  "translation_date": "2025-05-17T10:52:36+00:00",
+  "translation_date": "2025-07-13T19:18:05+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/typescript/README.md",
   "language_code": "en"
 }
 -->
 # Running this sample
 
-This sample requires having an LLM on the client. The LLM needs you to either run this in a Codespaces or set up a personal access token in GitHub to work.
+This sample requires having an LLM on the client side. You need to either run this in Codespaces or set up a personal access token in GitHub for it to work.
 
 ## -1- Install the dependencies
 
@@ -40,4 +40,5 @@ Calling tool add with args "{\"a\":2,\"b\":3}"
 Tool result:  { content: [ { type: 'text', text: '5' } ] }
 ```
 
-Sure, please provide the text you would like to be translated into English.
+**Disclaimer**:  
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

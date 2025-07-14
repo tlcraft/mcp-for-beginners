@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:44:48+00:00",
+  "translation_date": "2025-07-13T21:09:20+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "ja"
 }
 -->
-# Calculator HTTP Streaming Demo
+# Calculator HTTP Streaming デモ
 
-このプロジェクトは、Spring Boot WebFluxを使ったServer-Sent Events（SSE）によるHTTPストリーミングを示しています。以下の2つのアプリケーションで構成されています：
+このプロジェクトは、Spring Boot WebFlux を使った Server-Sent Events (SSE) による HTTP ストリーミングを示しています。2つのアプリケーションで構成されています：
 
-- **Calculator Server**：計算を行い、SSEを使って結果をストリーミングするリアクティブなウェブサービス
+- **Calculator Server**：計算を行い、SSE を使って結果をストリーミングするリアクティブなウェブサービス
 - **Calculator Client**：ストリーミングエンドポイントを利用するクライアントアプリケーション
 
 ## 前提条件
 
-- Java 17以上
-- Maven 3.6以上
+- Java 17 以上
+- Maven 3.6 以上
 
 ## プロジェクト構成
 
@@ -37,21 +37,21 @@ java/
 
 ## 動作の仕組み
 
-1. **Calculator Server** は `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** は `/calculate` エンドポイントを公開し、以下を行います：
+   - クエリパラメータを受け取る：`a`（数値）、`b`（数値）、`op`（演算）
+   - 対応する演算：`add`、`sub`、`mul`、`div`
+   - 計算の進捗と結果を Server-Sent Events で返す
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5` を公開します
-   - ストリーミングレスポンスを受け取ります
-   - 各イベントをコンソールに出力します
+2. **Calculator Client** はサーバーに接続し：
+   - `7 * 5` の計算リクエストを送る
+   - ストリーミングレスポンスを受け取る
+   - 各イベントをコンソールに表示する
 
 ## アプリケーションの実行方法
 
-### オプション1：Mavenを使う（推奨）
+### オプション1：Maven を使う（推奨）
 
-#### 1. Calculator Serverを起動する
+#### 1. Calculator Server を起動する
 
 ターミナルを開き、サーバーディレクトリに移動します：
 
@@ -63,13 +63,13 @@ mvn spring-boot:run
 
 サーバーは `http://localhost:8080` で起動します
 
-以下のような出力が表示されるはずです：
+以下のような出力が表示されます：
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
 ```
 
-#### 2. Calculator Clientを実行する
+#### 2. Calculator Client を実行する
 
 **新しいターミナル**を開き、クライアントディレクトリに移動します：
 
@@ -81,7 +81,7 @@ mvn spring-boot:run
 
 クライアントはサーバーに接続し、計算を実行してストリーミング結果を表示します。
 
-### オプション2：Javaを直接使う
+### オプション2：Java を直接使う
 
 #### 1. サーバーをコンパイルして実行する：
 
@@ -99,14 +99,14 @@ mvn clean package
 java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-## サーバーを手動でテストする
+## サーバーの手動テスト
 
-ウェブブラウザやcurlでもサーバーをテストできます：
+ブラウザや curl を使ってサーバーをテストすることもできます：
 
-### ウェブブラウザを使う場合：
+### ブラウザを使う場合：
 `http://localhost:8080/calculate?a=10&b=5&op=add` にアクセスしてください
 
-### curlを使う場合：
+### curl を使う場合：
 ```bash
 curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-stream"
 ```
@@ -123,34 +123,34 @@ event:result
 data:35.0
 ```
 
-## サポートされている演算
+## 対応している演算
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - 加算 (a + b)
+- `sub` - 減算 (a - b)
+- `mul` - 乗算 (a * b)
+- `div` - 除算 (a / b、b = 0 の場合は NaN を返す)
 
-## API Reference
+## API リファレンス
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**パラメータ:**
+- `a`（必須）：最初の数値（double）
+- `b`（必須）：2番目の数値（double）
+- `op`（必須）：演算（`add`、`sub`、`mul`、`div`）
 
-**Response:**
+**レスポンス:**
 - Content-Type: `text/event-stream`
-- 計算の進行状況や結果を含むServer-Sent Eventsを返します
+- 計算の進捗と結果を Server-Sent Events で返す
 
-**リクエスト例：**
+**リクエスト例:**
 ```
 GET /calculate?a=7&b=5&op=mul HTTP/1.1
 Host: localhost:8080
 Accept: text/event-stream
 ```
 
-**レスポンス例：**
+**レスポンス例:**
 ```
 event: info
 data: Calculating: 7.0 mul 5.0
@@ -164,21 +164,21 @@ data: 35.0
 ### よくある問題
 
 1. **ポート8080がすでに使用中**
-   - ポート8080を使用している他のアプリケーションを停止してください
-   - または `calculator-server/src/main/resources/application.yml`
+   - ポート8080を使っている他のアプリケーションを停止してください
+   - または `calculator-server/src/main/resources/application.yml` でサーバーポートを変更してください
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **接続拒否される**
+   - クライアントを起動する前にサーバーが起動していることを確認してください
+   - サーバーがポート8080で正常に起動しているか確認してください
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **パラメータ名の問題**
+   - このプロジェクトは Maven のコンパイラ設定で `-parameters` フラグを使用しています
+   - パラメータバインディングの問題が発生した場合は、この設定でビルドされているか確認してください
 
-### Stopping the Applications
+### アプリケーションの停止方法
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` でサーバーポートを変更するか、バックグラウンドで実行している場合は停止してください
+- 各アプリケーションが動作しているターミナルで `Ctrl+C` を押してください
+- バックグラウンドで実行している場合は `mvn spring-boot:stop` を使って停止できます
 
 ## 技術スタック
 
@@ -191,12 +191,12 @@ data: 35.0
 
 ## 次のステップ
 
-コードを修正してみましょう：
-- さらに多くの数学演算を追加する
+コードを変更してみましょう：
+- さらに多くの数学的演算を追加する
 - 無効な演算に対するエラーハンドリングを含める
-- リクエスト／レスポンスのログを追加する
-- 認証機能を実装する
+- リクエスト/レスポンスのログを追加する
+- 認証を実装する
 - ユニットテストを追加する
 
 **免責事項**：  
-本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。原文の言語による文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は一切の責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。

@@ -2,104 +2,104 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-05-29T20:22:03+00:00",
+  "translation_date": "2025-07-13T22:25:41+00:00",
   "source_file": "03-GettingStarted/samples/java/calculator/README.md",
   "language_code": "br"
 }
 -->
-# Basic Calculator MCP Service
+# Serviço Básico de Calculadora MCP
 
-Ar servijh-mañ a ginnig operadoù kalkul simpl war-lerc’h Model Context Protocol (MCP) en ur ober gant Spring Boot hag ar transport WebFlux. Emañ bet krouet evel un enklask simpl evit an dud o kregiñ da zeskiñ ar c’hemmoù MCP.
+Este serviço oferece operações básicas de calculadora através do Model Context Protocol (MCP) usando Spring Boot com transporte WebFlux. Foi criado como um exemplo simples para iniciantes que estão aprendendo sobre implementações MCP.
 
-Evit muioc’h a ditouroù, sellit ouzh an [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html) e-barzh an dastumad titouroù.
+Para mais informações, consulte a documentação de referência do [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html).
 
-## Dielfennañ
+## Visão Geral
 
-Ar servij a zispleg:
-- Sikour evit SSE (Server-Sent Events)
-- Enrollañ emgefreek an ostilhoù dre implij ar notenn `@Tool` eus Spring AI
-- Oberadoù kalkul diazez:
-  - Ouzhpennañ, digreskañ, liessevel, rannañ
-  - Kalkuliñ ar galloud ha gwask karrez
-  - Modulus (gwashadenn) hag an talvoud gwellañ
-  - Oberenn sikour evit deskrivañ an oberadoù
+O serviço demonstra:
+- Suporte a SSE (Server-Sent Events)
+- Registro automático de ferramentas usando a anotação `@Tool` do Spring AI
+- Funções básicas de calculadora:
+  - Adição, subtração, multiplicação, divisão
+  - Cálculo de potência e raiz quadrada
+  - Módulo (resto) e valor absoluto
+  - Função de ajuda para descrição das operações
 
-## Perzhioù
+## Funcionalidades
 
-Ar servij kalkul-mañ a ginnig an tuioù da-heul:
+Este serviço de calculadora oferece as seguintes capacidades:
 
-1. **Operadoù Arithmetik Diazez**:
-   - Ouzhpennañ daou niverenn
-   - Digreskañ ur niverenn eus unan all
-   - Liessevel daou niverenn
-   - Rannañ ur niverenn gant unan all (gwareziñ ouzh rannadenn dre zero)
+1. **Operações Aritméticas Básicas**:
+   - Adição de dois números
+   - Subtração de um número por outro
+   - Multiplicação de dois números
+   - Divisão de um número pelo outro (com verificação de divisão por zero)
 
-2. **Operadoù Kevredet**:
-   - Kalkuliñ galloud (digeriñ ur bazenn d’ur goumoul)
-   - Gwask karrez (gwareziñ ouzh niverenn negativ)
-   - Kalkuliñ gwashadenn (modulus)
-   - Kalkuliñ talvoud gwellañ (valeur absolue)
+2. **Operações Avançadas**:
+   - Cálculo de potência (elevar uma base a um expoente)
+   - Cálculo de raiz quadrada (com verificação de número negativo)
+   - Cálculo do módulo (resto da divisão)
+   - Cálculo do valor absoluto
 
-3. **Sistem Sikour**:
-   - Oberenn sikour enno evit displegañ an holl operadoù a zo
+3. **Sistema de Ajuda**:
+   - Função de ajuda integrada explicando todas as operações disponíveis
 
-## Implij ar Servij
+## Usando o Serviço
 
-Ar servij a zispleg an API da-heul dre ar protokol MCP:
+O serviço expõe os seguintes endpoints da API através do protocolo MCP:
 
-- `add(a, b)`: Ouzhpennañ daou niverenn
-- `subtract(a, b)`: Digreskañ an eil niverenn eus ar pezh kentañ
-- `multiply(a, b)`: Liessevel daou niverenn
-- `divide(a, b)`: Rannañ ar pezh kentañ gant an eil (gwareziñ ouzh zero)
-- `power(base, exponent)`: Kalkuliñ galloud ur niverenn
-- `squareRoot(number)`: Kalkuliñ gwask karrez (gwareziñ ouzh niverenn negativ)
-- `modulus(a, b)`: Kalkuliñ gwashadenn
-- `absolute(number)`: Kalkuliñ talvoud gwellañ
-- `help()`: Kaout titouroù diwar-benn an operadoù a zo
+- `add(a, b)`: Soma dois números
+- `subtract(a, b)`: Subtrai o segundo número do primeiro
+- `multiply(a, b)`: Multiplica dois números
+- `divide(a, b)`: Divide o primeiro número pelo segundo (com verificação de zero)
+- `power(base, exponent)`: Calcula a potência de um número
+- `squareRoot(number)`: Calcula a raiz quadrada (com verificação de número negativo)
+- `modulus(a, b)`: Calcula o resto da divisão
+- `absolute(number)`: Calcula o valor absoluto
+- `help()`: Obtém informações sobre as operações disponíveis
 
-## Klient Amprouiñ
+## Cliente de Teste
 
-Ur klient amprouiñ simpl zo e-barzh ar pakad `com.microsoft.mcp.sample.client`. Ar klas `SampleCalculatorClient` a zispleg an operadoù a zo d’ar servij kalkul.
+Um cliente de teste simples está incluído no pacote `com.microsoft.mcp.sample.client`. A classe `SampleCalculatorClient` demonstra as operações disponíveis do serviço de calculadora.
 
-## Implij ar LangChain4j Client
+## Usando o Cliente LangChain4j
 
-Ar raktres a ginnig un enklask LangChain4j e-barzh `com.microsoft.mcp.sample.client.LangChain4jClient` evit diskouez penaos en em staliañ gant ar servij kalkul hag ar modeloù GitHub:
+O projeto inclui um exemplo de cliente LangChain4j em `com.microsoft.mcp.sample.client.LangChain4jClient` que demonstra como integrar o serviço de calculadora com LangChain4j e modelos do GitHub:
 
-### Goulennadoù
+### Pré-requisitos
 
-1. **Krouiñ Token GitHub**:
+1. **Configuração do Token do GitHub**:
    
-Evit implij ar modeloù AI GitHub (evel phi-4), ezhomm eus ur token personel:
+   Para usar os modelos de IA do GitHub (como o phi-4), você precisa de um token de acesso pessoal do GitHub:
 
-a. Mont d'an arventennoù ho kont GitHub: https://github.com/settings/tokens
+   a. Acesse as configurações da sua conta no GitHub: https://github.com/settings/tokens
    
-b. Klickit war "Generate new token" → "Generate new token (classic)"
+   b. Clique em "Generate new token" → "Generate new token (classic)"
    
-c. Roiñ ur anv deskrivadek d'ho token
+   c. Dê um nome descritivo para o seu token
    
-d. Dibabit an doareoù da-heul:
-   - `repo` (kontroll hollek eus ar c'hrouadoù prevez)
-   - `read:org` (lenn membership ar c'hrouadoù ha ar skipailhoù, lenn raktresoù ar c'hrouadoù)
-   - `gist` (krouiñ gists)
-   - `user:email` (kaout miret war an emlioù postel ar implijerien)
+   d. Selecione os seguintes escopos:
+      - `repo` (Controle total dos repositórios privados)
+      - `read:org` (Ler membros da organização e equipes, ler projetos da organização)
+      - `gist` (Criar gists)
+      - `user:email` (Acesso aos endereços de e-mail do usuário (somente leitura))
    
-e. Klickit war "Generate token" ha kemerit ho token nevez
+   e. Clique em "Generate token" e copie o novo token
    
-f. Savit evel un argemm evit an endro:
-   
-   War Windows:
-   ```
+   f. Defina-o como uma variável de ambiente:
+      
+      No Windows:
+      ```
       set GITHUB_TOKEN=your-github-token
       ```
-   
-   War macOS/Linux:
-   ```bash
+      
+      No macOS/Linux:
+      ```bash
       export GITHUB_TOKEN=your-github-token
       ```
 
-g. Evit ma vefe stabil, ouzhpennañ anezhañ d'ho argemmoù endro dre an arventennoù sistem
+   g. Para configuração persistente, adicione-o às variáveis de ambiente pelo sistema operacional
 
-2. Ouzhpennañ ar meneg LangChain4j GitHub d'ho raktres (enrollet e-barzh pom.xml):
+2. Adicione a dependência LangChain4j GitHub ao seu projeto (já incluída no pom.xml):
    ```xml
    <dependency>
        <groupId>dev.langchain4j</groupId>
@@ -108,25 +108,25 @@ g. Evit ma vefe stabil, ouzhpennañ anezhañ d'ho argemmoù endro dre an arvente
    </dependency>
    ```
 
-3. Gwiriit e vez mont war-raok ar servij kalkul war `localhost:8080`
+3. Certifique-se de que o servidor da calculadora está rodando em `localhost:8080`
 
-### Redañ ar LangChain4j Client
+### Executando o Cliente LangChain4j
 
-Ar pezh-mañ a zispleg:
-- Kevreañ gant ar servij MCP kalkul dre ar transport SSE
-- Implij LangChain4j evit krouiñ ur bot kelaouiñ o implijout an operadoù kalkul
-- Kevreañ gant modeloù AI GitHub (implijet bremañ ar model phi-4)
+Este exemplo demonstra:
+- Conexão ao servidor MCP da calculadora via transporte SSE
+- Uso do LangChain4j para criar um chatbot que utiliza as operações da calculadora
+- Integração com modelos de IA do GitHub (agora usando o modelo phi-4)
 
-Ar klient a kas ar c’hinnigioù da-heul evit diskouez ar geflusk:
-1. Kalkuliñ ouzhpennañ daou niverenn
-2. Klask gwask karrez ur niverenn
-3. Kaout titouroù sikour diwar-benn an operadoù kalkul
+O cliente envia as seguintes consultas de exemplo para demonstrar a funcionalidade:
+1. Calcular a soma de dois números
+2. Encontrar a raiz quadrada de um número
+3. Obter informações de ajuda sobre as operações disponíveis da calculadora
 
-Renañ an enklask ha sellit ouzh ar c’hontrol evit gwelet penaos ar model AI a implij ar servijoù kalkul evit respont d’ar goulenn.
+Execute o exemplo e verifique a saída no console para ver como o modelo de IA usa as ferramentas da calculadora para responder às consultas.
 
-### Merañ ar Model GitHub
+### Configuração do Modelo GitHub
 
-Ar LangChain4j client a zo meret evit implij ar model phi-4 GitHub gant ar savadurioù da-heul:
+O cliente LangChain4j está configurado para usar o modelo phi-4 do GitHub com as seguintes configurações:
 
 ```java
 ChatLanguageModel model = GitHubChatModel.builder()
@@ -138,11 +138,11 @@ ChatLanguageModel model = GitHubChatModel.builder()
     .build();
 ```
 
-Evit implij modeloù GitHub all, kemmit hepken ar parameter `modelName` d’ur model all (e.g. "claude-3-haiku-20240307", "llama-3-70b-8192", hag all).
+Para usar outros modelos do GitHub, basta alterar o parâmetro `modelName` para outro modelo suportado (ex.: "claude-3-haiku-20240307", "llama-3-70b-8192", etc.).
 
-## Menegadennoù
+## Dependências
 
-Ar raktres ezhomm ar meneg da-heul:
+O projeto requer as seguintes dependências principais:
 
 ```xml
 <!-- For MCP Server -->
@@ -166,78 +166,78 @@ Ar raktres ezhomm ar meneg da-heul:
 </dependency>
 ```
 
-## Sevel ar Raktres
+## Construindo o Projeto
 
-Sevit ar raktres gant Maven:
+Compile o projeto usando Maven:
 ```bash
 ./mvnw clean install -DskipTests
 ```
 
-## Redañ ar Servij
+## Executando o Servidor
 
-### Implij Java
+### Usando Java
 
 ```bash
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-### Implij MCP Inspector
+### Usando o MCP Inspector
 
-MCP Inspector zo ur benveg talvoudus evit ober gant servijoù MCP. Evit implij anezhañ gant ar servij kalkul-mañ:
+O MCP Inspector é uma ferramenta útil para interagir com serviços MCP. Para usá-lo com este serviço de calculadora:
 
-1. **Krouiñ ha redañ MCP Inspector** e-barzh ur prenestr termenal nevez:
+1. **Instale e execute o MCP Inspector** em uma nova janela do terminal:
    ```bash
    npx @modelcontextprotocol/inspector
    ```
 
-2. **Mont war-zu ar web UI** dre klick war ar URL a vez diskouezet gant ar benveg (dastumad http://localhost:6274)
+2. **Acesse a interface web** clicando na URL exibida pelo app (normalmente http://localhost:6274)
 
-3. **Kemmañ ar kevreañ**:
-   - Savit ar mod transport da "SSE"
-   - Savit ar URL da ar servij SSE a vez o redek: `http://localhost:8080/sse`
-   - Klickit war "Connect"
+3. **Configure a conexão**:
+   - Defina o tipo de transporte como "SSE"
+   - Defina a URL para o endpoint SSE do seu servidor em execução: `http://localhost:8080/sse`
+   - Clique em "Connect"
 
-4. **Implij ar c’hinnigoù**:
-   - Klickit war "List Tools" evit gwelet an operadoù kalkul a zo
-   - Dibabit ur c’hinnig ha klickit war "Run Tool" evit ober an oberenn
+4. **Use as ferramentas**:
+   - Clique em "List Tools" para ver as operações disponíveis da calculadora
+   - Selecione uma ferramenta e clique em "Run Tool" para executar uma operação
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.br.png)
+![Captura de tela do MCP Inspector](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.br.png)
 
-### Implij Docker
+### Usando Docker
 
-Ar raktres a ginnig ur Dockerfile evit kenderc’hel ar servij en ur kontener:
+O projeto inclui um Dockerfile para implantação em container:
 
-1. **Sevel an dresenn Docker**:
+1. **Construa a imagem Docker**:
    ```bash
    docker build -t calculator-mcp-service .
    ```
 
-2. **Redañ ar kontener Docker**:
+2. **Execute o container Docker**:
    ```bash
    docker run -p 8080:8080 calculator-mcp-service
    ```
 
-Ar pezh-mañ a:
-- Sevel ur dresenn Docker e meur a live gant Maven 3.9.9 ha Eclipse Temurin 24 JDK
-- Krouiñ ur skeudenn optimizet evit ar kontener
-- Diskouez ar servij war port 8080
-- Kregiñ ar servij kalkul MCP e-barzh ar kontener
+Isso irá:
+- Construir uma imagem Docker multi-stage com Maven 3.9.9 e Eclipse Temurin 24 JDK
+- Criar uma imagem de container otimizada
+- Expor o serviço na porta 8080
+- Iniciar o serviço MCP da calculadora dentro do container
 
-Gallout a rit mont da ar servij war `http://localhost:8080` goude ma vez o redek ar kontener.
+Você poderá acessar o serviço em `http://localhost:8080` assim que o container estiver em execução.
 
-## Diwallerezh
+## Solução de Problemas
 
-### Kudennoù a Vez Aet da Veur War ar Token GitHub
+### Problemas Comuns com o Token do GitHub
 
-1. **Kudennoù a-bouez gant ar perzhioù token**: Ma kavez fazi 403 Forbidden, gwelit ma vez ar perzhioù token reizh evel ma vez diskouezet e-barzh an dafar goulennet.
+1. **Problemas de Permissão do Token**: Se receber um erro 403 Forbidden, verifique se seu token tem as permissões corretas conforme descrito nos pré-requisitos.
 
-2. **Token N’eo Ket Kavet**: Ma kavez fazi "No API key found", gwelit ma vez ar GITHUB_TOKEN e-barzh an argemmoù endro savet mat.
+2. **Token Não Encontrado**: Se receber um erro "No API key found", certifique-se de que a variável de ambiente GITHUB_TOKEN está corretamente configurada.
 
-3. **Limitadennoù Aotre GitHub**: Ar API GitHub a zo gant limitadennoù. Ma kavez fazi 429 (rate limit), gortozit ur pennadig a-raok klask en-dro.
+3. **Limite de Requisições**: A API do GitHub possui limites de requisições. Se encontrar um erro de limite (código 429), aguarde alguns minutos antes de tentar novamente.
 
-4. **Dizober Token**: Ar token GitHub a c’hall dizober. Ma kavez fazi autentikadur goude un amzer, krouit ur token nevez ha hizivit an argemm endro.
+4. **Expiração do Token**: Tokens do GitHub podem expirar. Se receber erros de autenticação após algum tempo, gere um novo token e atualize sua variável de ambiente.
 
-Mar bez ezhomm sikour ouzhpenn, sellit ouzh ar [LangChain4j documentation](https://github.com/langchain4j/langchain4j) pe ouzh an [GitHub API documentation](https://docs.github.com/en/rest).
+Se precisar de mais ajuda, consulte a [documentação do LangChain4j](https://github.com/langchain4j/langchain4j) ou a [documentação da API do GitHub](https://docs.github.com/en/rest).
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

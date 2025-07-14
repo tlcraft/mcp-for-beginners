@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
-  "translation_date": "2025-07-02T07:47:44+00:00",
+  "translation_date": "2025-07-14T04:48:02+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "en"
 }
@@ -16,7 +16,7 @@ This lesson covers advanced best practices for developing, testing, and deployin
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
-- Apply industry best practices in designing MCP servers and features
+- Apply industry best practices in MCP server and feature design
 - Develop comprehensive testing strategies for MCP servers
 - Design efficient, reusable workflow patterns for complex MCP applications
 - Implement proper error handling, logging, and observability in MCP servers
@@ -155,7 +155,7 @@ public class WeatherToolSuite : ITool
 
 #### 2. Dependency Injection and Testability
 
-Design tools to receive their dependencies via constructor injection, making them easier to test and configure:
+Design tools to receive their dependencies through constructor injection, making them easier to test and configure:
 
 ```java
 // Java example with dependency injection
@@ -181,7 +181,7 @@ public class CurrencyConversionTool implements Tool {
 
 #### 3. Composable Tools
 
-Design tools that can be combined to build more complex workflows:
+Design tools so they can be combined to build more complex workflows:
 
 ```python
 # Python example showing composable tools
@@ -299,7 +299,7 @@ Map<String, Object> getSchema() {
 
 #### 3. Consistent Return Structures
 
-Keep response structures consistent to make it easier for models to interpret results:
+Keep response structures consistent to help models interpret results more easily:
 
 ```python
 async def execute_async(self, request):
@@ -340,11 +340,11 @@ def _format_item(self, item):
 
 ### Error Handling
 
-Robust error handling is key to maintaining reliable MCP tools.
+Robust error handling is essential for MCP tools to maintain reliability.
 
 #### 1. Graceful Error Handling
 
-Handle errors appropriately and provide clear messages:
+Handle errors at the right levels and provide informative messages:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -420,7 +420,7 @@ public ToolResponse execute(ToolRequest request) {
 
 #### 3. Retry Logic
 
-Implement retry mechanisms for transient failures:
+Implement retry logic for transient failures where appropriate:
 
 ```python
 async def execute_async(self, request):
@@ -498,7 +498,7 @@ public class CachedDataTool : IMcpTool
 
 #### 2. Asynchronous Processing
 
-Leverage asynchronous programming for I/O-bound tasks:
+Apply asynchronous programming patterns for I/O-bound tasks:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -549,7 +549,7 @@ public class AsyncDocumentProcessingTool implements Tool {
 
 #### 3. Resource Throttling
 
-Apply resource throttling to prevent overload:
+Implement resource throttling to avoid overload:
 
 ```python
 class ThrottledApiTool(Tool):
@@ -658,7 +658,7 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. Authorization Checks
 
-Implement proper authorization controls:
+Implement proper authorization checks:
 
 ```java
 @Override
@@ -735,7 +735,7 @@ class SecureDataTool(Tool):
 
 ## Testing Best Practices for MCP Tools
 
-Comprehensive testing ensures MCP tools work correctly, handle edge cases, and integrate smoothly with other system components.
+Comprehensive testing ensures MCP tools work correctly, handle edge cases, and integrate well with the rest of the system.
 
 ### Unit Testing
 
@@ -848,7 +848,7 @@ public void testSchemaValidation() {
 
 #### 3. Error Handling Tests
 
-Create targeted tests for error scenarios:
+Create specific tests for error scenarios:
 
 ```python
 @pytest.mark.asyncio
@@ -908,7 +908,7 @@ async def test_api_tool_handles_rate_limiting():
 
 #### 1. Tool Chain Testing
 
-Test how tools work together in expected combinations:
+Test tools working together in expected combinations:
 
 ```csharp
 [Fact]
@@ -1017,7 +1017,7 @@ public class McpServerIntegrationTest {
 
 #### 3. End-to-End Testing
 
-Test complete workflows from model prompt through tool execution:
+Test complete workflows from model prompt to tool execution:
 
 ```python
 @pytest.mark.asyncio
@@ -1111,7 +1111,7 @@ public async Task McpServer_HandlesHighConcurrency()
 
 #### 2. Stress Testing
 
-Evaluate system behavior under extreme load:
+Test the system under extreme load:
 
 ```java
 @Test
@@ -1214,7 +1214,7 @@ Well-designed MCP workflows boost efficiency, reliability, and maintainability. 
 
 ### 1. Chain of Tools Pattern
 
-Link multiple tools in a sequence where each tool’s output feeds the next:
+Link multiple tools in sequence, where each tool’s output feeds into the next:
 
 ```python
 # Python Chain of Tools implementation
@@ -1255,7 +1255,7 @@ result = await data_processing_chain.execute(
 
 ### 2. Dispatcher Pattern
 
-Use a central tool that routes to specialized tools based on input:
+Use a central tool that routes requests to specialized tools based on input:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1405,7 +1405,7 @@ public class ParallelDataProcessingWorkflow {
 
 ### 4. Error Recovery Pattern
 
-Implement graceful fallbacks when tools fail:
+Implement graceful fallbacks for tool failures:
 
 ```python
 class ResilientWorkflow:
@@ -1512,31 +1512,31 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 
 ## Overview
 
-Testing is essential for building reliable, high-quality MCP servers. This guide offers comprehensive best practices and tips for testing MCP servers throughout development—from unit tests to integration tests and end-to-end validation.
+Testing is a vital part of building reliable, high-quality MCP servers. This guide offers comprehensive best practices and tips for testing MCP servers throughout development, from unit tests to integration and end-to-end validation.
 
 ## Why Testing Matters for MCP Servers
 
 MCP servers act as critical middleware between AI models and client applications. Thorough testing ensures:
 
 - Reliability in production
-- Accurate handling of requests and responses
+- Accurate request and response handling
 - Correct implementation of MCP specifications
-- Resilience against failures and edge cases
+- Resilience to failures and edge cases
 - Consistent performance under various loads
 
 ## Unit Testing for MCP Servers
 
 ### Unit Testing (Foundation)
 
-Unit tests validate individual MCP server components in isolation.
+Unit tests verify individual MCP server components in isolation.
 
 #### What to Test
 
-1. **Resource Handlers**: Test each resource handler’s logic separately
+1. **Resource Handlers**: Test each resource handler’s logic independently
 2. **Tool Implementations**: Verify tool behavior with different inputs
-3. **Prompt Templates**: Ensure prompt templates render as expected
+3. **Prompt Templates**: Ensure prompt templates render correctly
 4. **Schema Validation**: Test parameter validation logic
-5. **Error Handling**: Confirm error responses for invalid inputs
+5. **Error Handling**: Verify error responses for invalid inputs
 
 #### Best Practices for Unit Testing
 
@@ -1589,9 +1589,9 @@ Integration tests verify interactions between MCP server components.
 #### What to Test
 
 1. **Server Initialization**: Test server startup with various configurations
-2. **Route Registration**: Confirm all endpoints are registered correctly
-3. **Request Processing**: Test full request-response cycles
-4. **Error Propagation**: Ensure errors are handled across components
+2. **Route Registration**: Verify all endpoints are correctly registered
+3. **Request Processing**: Test the full request-response cycle
+4. **Error Propagation**: Ensure errors are properly handled across components
 5. **Authentication & Authorization**: Test security mechanisms
 
 #### Best Practices for Integration Testing
@@ -1632,15 +1632,15 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 
 ### End-to-End Testing (Top Layer)
 
-End-to-end tests validate the entire system from client to server.
+End-to-end tests verify the complete system behavior from client to server.
 
 #### What to Test
 
-1. **Client-Server Communication**: Test full request-response flows
+1. **Client-Server Communication**: Test full request-response cycles
 2. **Real Client SDKs**: Test with actual client implementations
-3. **Performance Under Load**: Verify behavior with concurrent requests
+3. **Performance Under Load**: Verify behavior with multiple concurrent requests
 4. **Error Recovery**: Test system recovery from failures
-5. **Long-Running Operations**: Validate streaming and long-running tasks
+5. **Long-Running Operations**: Verify handling of streaming and long operations
 
 #### Best Practices for E2E Testing
 
@@ -1676,14 +1676,14 @@ describe('MCP Server E2E Tests', () => {
 
 ## Mocking Strategies for MCP Testing
 
-Mocking is vital for isolating components during tests.
+Mocking is essential to isolate components during testing.
 
 ### Components to Mock
 
-1. **External AI Models**: Mock model responses for predictable tests
-2. **External Services**: Mock APIs like databases or third-party services
+1. **External AI Models**: Mock model responses for predictable testing
+2. **External Services**: Mock API dependencies like databases or third-party services
 3. **Authentication Services**: Mock identity providers
-4. **Resource Providers**: Mock costly resource handlers
+4. **Resource Providers**: Mock expensive resource handlers
 
 ### Example: Mocking an AI Model Response
 
@@ -1723,18 +1723,18 @@ Performance testing is critical for production MCP servers.
 
 ### What to Measure
 
-1. **Latency**: Response times
+1. **Latency**: Response time for requests
 2. **Throughput**: Requests handled per second
-3. **Resource Utilization**: CPU, memory, network usage
-4. **Concurrency Handling**: Behavior with parallel requests
-5. **Scaling Characteristics**: Performance under increasing load
+3. **Resource Utilization**: CPU, memory, and network usage
+4. **Concurrency Handling**: Behavior under parallel requests
+5. **Scaling Characteristics**: Performance as load increases
 
 ### Tools for Performance Testing
 
 - **k6**: Open-source load testing tool
-- **JMeter**: Comprehensive performance testing
+- **JMeter**: Comprehensive performance testing tool
 - **Locust**: Python-based load testing
-- **Azure Load Testing**: Cloud-based testing service
+- **Azure Load Testing**: Cloud-based performance testing
 
 ### Example: Basic Load Test with k6
 
@@ -1782,10 +1782,10 @@ Automating tests ensures consistent quality and faster feedback.
 
 ### CI/CD Integration
 
-1. **Run Unit Tests on Pull Requests**: Prevent breaking changes
-2. **Integration Tests in Staging**: Run integration tests before production
-3. **Performance Baselines**: Track performance to catch regressions
-4. **Security Scans**: Automate security checks in the pipeline
+1. **Run Unit Tests on Pull Requests**: Prevent code changes from breaking existing functionality
+2. **Integration Tests in Staging**: Run integration tests in pre-production environments
+3. **Performance Baselines**: Maintain benchmarks to catch regressions
+4. **Security Scans**: Automate security testing in the pipeline
 
 ### Example CI Pipeline (GitHub Actions)
 
@@ -1828,15 +1828,15 @@ jobs:
 
 ## Testing for Compliance with MCP Specification
 
-Ensure your server correctly follows the MCP spec.
+Verify your server correctly implements the MCP specification.
 
 ### Key Compliance Areas
 
 1. **API Endpoints**: Test required endpoints (/resources, /tools, etc.)
 2. **Request/Response Format**: Validate schema compliance
-3. **Error Codes**: Verify correct status codes for scenarios
+3. **Error Codes**: Verify correct status codes for different scenarios
 4. **Content Types**: Test handling of various content types
-5. **Authentication Flow**: Confirm spec-compliant authentication
+5. **Authentication Flow**: Verify spec-compliant authentication mechanisms
 
 ### Compliance Test Suite
 
@@ -1868,31 +1868,31 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 ## Top 10 Tips for Effective MCP Server Testing
 
 1. **Test Tool Definitions Separately**: Validate schema definitions independently from tool logic
-2. **Use Parameterized Tests**: Test tools with diverse inputs, including edge cases
-3. **Check Error Responses**: Verify error handling for all possible conditions
-4. **Test Authorization Logic**: Ensure correct access control for different roles
-5. **Monitor Test Coverage**: Aim for high coverage on critical code paths
-6. **Test Streaming Responses**: Confirm proper handling of streaming data
+2. **Use Parameterized Tests**: Test tools with a wide range of inputs, including edge cases
+3. **Check Error Responses**: Ensure proper error handling for all error conditions
+4. **Test Authorization Logic**: Verify access control for different user roles
+5. **Monitor Test Coverage**: Aim for high coverage of critical code paths
+6. **Test Streaming Responses**: Verify correct handling of streaming content
 7. **Simulate Network Issues**: Test behavior under poor network conditions
-8. **Test Resource Limits**: Verify handling of quotas and rate limits
+8. **Test Resource Limits**: Verify behavior when quotas or rate limits are reached
 9. **Automate Regression Tests**: Build a suite that runs on every code change
 10. **Document Test Cases**: Keep clear documentation of test scenarios
 
 ## Common Testing Pitfalls
 
-- **Over-reliance on happy path testing**: Thoroughly test error cases
-- **Ignoring performance testing**: Identify bottlenecks before production
+- **Over-reliance on happy path testing**: Make sure to thoroughly test error cases
+- **Ignoring performance testing**: Identify bottlenecks before they impact production
 - **Testing in isolation only**: Combine unit, integration, and end-to-end tests
-- **Incomplete API coverage**: Test all endpoints and features
-- **Inconsistent test environments**: Use containers to ensure consistency
+- **Incomplete API coverage**: Ensure all endpoints and features are tested
+- **Inconsistent test environments**: Use containers to maintain consistent environments
 
 ## Conclusion
 
-A solid testing strategy is vital for building reliable, high-quality MCP servers. By following the best practices and tips in this guide, you can ensure your MCP implementations meet the highest standards of quality, reliability, and performance.
+A thorough testing strategy is essential for building reliable, high-quality MCP servers. By following the best practices and tips in this guide, you can ensure your MCP implementations meet the highest standards of quality, reliability, and performance.
 
 ## Key Takeaways
 
-1. **Tool Design**: Follow single responsibility principle, use dependency injection, and design for composability
+1. **Tool Design**: Follow the single responsibility principle, use dependency injection, and design for composability
 2. **Schema Design**: Create clear, well-documented schemas with proper validation constraints
 3. **Error Handling**: Implement graceful error handling, structured error responses, and retry logic
 4. **Performance**: Use caching, asynchronous processing, and resource throttling
@@ -1907,18 +1907,18 @@ Design an MCP tool and workflow for a document processing system that:
 1. Accepts documents in multiple formats (PDF, DOCX, TXT)
 2. Extracts text and key information from the documents
 3. Classifies documents by type and content
-4. Generates a summary for each document
+4. Generates a summary of each document
 
-Implement the tool schemas, error handling, and a workflow pattern best suited for this scenario. Consider how you would test this implementation.
+Implement the tool schemas, error handling, and a workflow pattern that best fits this scenario. Consider how you would test this implementation.
 
 ## Resources
 
 1. Join the MCP community on the [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) to stay updated on the latest developments  
 2. Contribute to open-source [MCP projects](https://github.com/modelcontextprotocol)  
 3. Apply MCP principles in your organization’s AI initiatives  
-4. Explore specialized MCP implementations tailored to your industry  
-5. Consider advanced courses on specific MCP topics, such as multi-modal or enterprise integration  
-6. Experiment with building your own MCP tools and workflows using the principles learned in the [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
+4. Explore specialized MCP implementations tailored to your industry
+5. Consider taking advanced courses on specific MCP topics, such as multi-modal integration or enterprise application integration.  
+6. Experiment with building your own MCP tools and workflows using the principles learned through the [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
 
 Next: Best Practices [case studies](../09-CaseStudy/README.md)
 

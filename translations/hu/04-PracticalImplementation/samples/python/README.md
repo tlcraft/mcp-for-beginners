@@ -2,50 +2,50 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:32:49+00:00",
+  "translation_date": "2025-07-13T23:34:30+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "hu"
 }
 -->
-# Model Context Protocol (MCP) Python implementáció
+# Model Context Protocol (MCP) Python megvalósítás
 
-Ez a tároló egy Python implementációt tartalmaz a Model Context Protocol (MCP) számára, bemutatva, hogyan lehet létrehozni egy szerver és egy kliens alkalmazást, amelyek az MCP szabvány szerint kommunikálnak.
+Ez a tároló tartalmaz egy Python megvalósítást a Model Context Protocol (MCP) számára, bemutatva, hogyan lehet létrehozni egy szerver és kliens alkalmazást, amelyek az MCP szabvány szerint kommunikálnak.
 
 ## Áttekintés
 
-Az MCP implementáció két fő komponensből áll:
+Az MCP megvalósítás két fő részből áll:
 
-1. **MCP Server (`server.py`)** – Egy szerver, amely elérhetővé teszi:
-   - **Tools**: Távolról hívható függvények
-   - **Resources**: Lekérdezhető adatok
-   - **Prompts**: Nyelvi modellekhez generált prompt sablonok
+1. **MCP szerver (`server.py`)** – Egy szerver, amely elérhetővé teszi:
+   - **Eszközök**: Távolról hívható függvények
+   - **Erőforrások**: Lekérdezhető adatok
+   - **Promptok**: Nyelvi modellek számára generált prompt sablonok
 
-2. **MCP Client (`client.py`)** – Egy kliens alkalmazás, amely kapcsolódik a szerverhez és használja annak funkcióit
+2. **MCP kliens (`client.py`)** – Egy kliens alkalmazás, amely kapcsolódik a szerverhez és használja annak funkcióit
 
-## Funkciók
+## Jellemzők
 
-Ez az implementáció több kulcsfontosságú MCP funkciót mutat be:
+Ez a megvalósítás több fontos MCP funkciót mutat be:
 
-### Tools
-- `completion` – Szöveg kiegészítések generálása AI modellektől (szimulált)
+### Eszközök
+- `completion` – Szövegkiegészítéseket generál AI modellektől (szimulált)
 - `add` – Egyszerű kalkulátor, amely két számot ad össze
 
-### Resources
-- `models://` – Információk visszaadása az elérhető AI modellekről
-- `greeting://{name}` – Személyre szabott üdvözlés egy adott névhez
+### Erőforrások
+- `models://` – Információkat ad vissza az elérhető AI modellekről
+- `greeting://{name}` – Személyre szabott üdvözletet ad megadott névhez
 
-### Prompts
-- `review_code` – Prompt generálása kód átvizsgáláshoz
+### Promptok
+- `review_code` – Kód átnézéséhez generál promptot
 
 ## Telepítés
 
-Az MCP implementáció használatához telepítsd a szükséges csomagokat:
+Az MCP megvalósítás használatához telepítsd a szükséges csomagokat:
 
 ```powershell
 pip install mcp-server mcp-client
 ```
 
-## A szerver és kliens indítása
+## Szerver és kliens indítása
 
 ### Szerver indítása
 
@@ -61,7 +61,7 @@ A szerver fejlesztői módban is futtatható az MCP CLI segítségével:
 mcp dev server.py
 ```
 
-Vagy telepíthető a Claude Desktopba (ha elérhető):
+Vagy telepíthető Claude Desktopba (ha elérhető):
 
 ```powershell
 mcp install server.py
@@ -75,7 +75,7 @@ Indítsd el a klienst egy másik terminál ablakban:
 python client.py
 ```
 
-Ez kapcsolódik a szerverhez és bemutatja az összes elérhető funkciót.
+Ez csatlakozik a szerverhez és bemutatja az összes elérhető funkciót.
 
 ### Kliens használata
 
@@ -85,17 +85,17 @@ A kliens (`client.py`) bemutatja az MCP összes képességét:
 python client.py
 ```
 
-Ez kapcsolódik a szerverhez, és használja az összes funkciót, beleértve az eszközöket, erőforrásokat és promptokat. A kimenet a következőket mutatja:
+Ez csatlakozik a szerverhez és használja az összes funkciót, beleértve az eszközöket, erőforrásokat és promptokat. A kimenet a következőket mutatja:
 
 1. Kalkulátor eszköz eredménye (5 + 7 = 12)
-2. Kiegészítő eszköz válasza a "Mi az élet értelme?" kérdésre
-3. Az elérhető AI modellek listája
-4. Személyre szabott üdvözlés "MCP Explorer" számára
-5. Kód átvizsgálási prompt sablon
+2. Completion eszköz válasza a "What is the meaning of life?" kérdésre
+3. Elérhető AI modellek listája
+4. Személyre szabott üdvözlet "MCP Explorer" számára
+5. Kód átnéző prompt sablon
 
 ## Megvalósítás részletei
 
-A szerver a `FastMCP` API-t használja, amely magas szintű absztrakciókat biztosít MCP szolgáltatások definiálásához. Íme egy egyszerűsített példa arra, hogyan definiálhatók az eszközök:
+A szerver a `FastMCP` API-val készült, amely magas szintű absztrakciókat biztosít MCP szolgáltatások definiálásához. Íme egy egyszerűsített példa az eszközök definiálására:
 
 ```python
 @mcp.tool()
@@ -127,4 +127,4 @@ async with stdio_client(server_params) as (reader, writer):
 További részletekért az MCP-ről látogass el ide: https://modelcontextprotocol.io/
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

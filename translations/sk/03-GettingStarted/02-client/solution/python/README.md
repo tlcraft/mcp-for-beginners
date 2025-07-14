@@ -2,40 +2,40 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0ab9613fc9595f493847f91275859a18",
-  "translation_date": "2025-05-17T10:04:32+00:00",
+  "translation_date": "2025-07-13T18:42:12+00:00",
   "source_file": "03-GettingStarted/02-client/solution/python/README.md",
   "language_code": "sk"
 }
 -->
-# Spustenie tejto ukážky
+# Spustenie tohto príkladu
 
-Odporúča sa nainštalovať `uv`, ale nie je to nevyhnutné, pozrite si [pokyny](https://docs.astral.sh/uv/#highlights)
+Odporúča sa nainštalovať `uv`, ale nie je to povinné, pozri [návod](https://docs.astral.sh/uv/#highlights)
 
-## -0- Vytvorte virtuálne prostredie
+## -0- Vytvorenie virtuálneho prostredia
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Aktivujte virtuálne prostredie
+## -1- Aktivácia virtuálneho prostredia
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Nainštalujte závislosti
+## -2- Inštalácia závislostí
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- Spustite ukážku
+## -3- Spustenie príkladu
 
 ```bash
 python client.py
 ```
 
-Mali by ste vidieť výstup podobný:
+Mali by ste vidieť výstup podobný tomuto:
 
 ```text
 LISTING RESOURCES
@@ -52,5 +52,5 @@ CALL TOOL
 [TextContent(type='text', text='8', annotations=None)]
 ```
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou AI prekladovej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, vezmite prosím na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za záväzný zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

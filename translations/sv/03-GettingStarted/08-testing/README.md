@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T17:36:47+00:00",
+  "translation_date": "2025-07-13T22:01:07+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "sv"
 }
@@ -22,7 +22,7 @@ Efter den här lektionen kommer du att kunna:
 - Beskriva olika metoder för testning.
 - Använda olika verktyg för att effektivt testa din kod.
 
-## Testning av MCP-servrar
+## Testa MCP-servrar
 
 MCP erbjuder verktyg som hjälper dig att testa och felsöka dina servrar:
 
@@ -32,7 +32,7 @@ MCP erbjuder verktyg som hjälper dig att testa och felsöka dina servrar:
 
 ### Använda MCP Inspector
 
-Vi har beskrivit hur man använder detta verktyg i tidigare lektioner, men låt oss ta en kort översikt. Det är ett verktyg byggt i Node.js och du kan använda det genom att köra `npx`-exekverbara filen, som temporärt laddar ner och installerar verktyget och sedan städar upp efter sig när din förfrågan är klar.
+Vi har beskrivit hur man använder detta verktyg i tidigare lektioner, men låt oss ta en kort översikt. Det är ett verktyg byggt i Node.js och du kan använda det genom att köra `npx`-exekverbara filen, som laddar ner och installerar verktyget temporärt och sedan städar upp efter sig när din förfrågan är klar.
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) hjälper dig att:
 

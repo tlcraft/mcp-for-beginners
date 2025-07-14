@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-06-10T06:11:00+00:00",
+  "translation_date": "2025-07-14T08:13:32+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
   "language_code": "tr"
 }
 -->
-# 🔧 Modül 3: AI Toolkit ile İleri Seviye MCP Geliştirme
+# 🔧 Modül 3: AI Toolkit ile Gelişmiş MCP Geliştirme
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
 ![AI Toolkit](https://img.shields.io/badge/AI_Toolkit-Required-orange?style=flat-square)
@@ -20,21 +20,21 @@ CO_OP_TRANSLATOR_METADATA:
 Bu laboratuvarın sonunda şunları yapabileceksiniz:
 
 - ✅ AI Toolkit kullanarak özel MCP sunucuları oluşturmak
-- ✅ En son MCP Python SDK (v1.9.3) yapılandırması ve kullanımı
-- ✅ MCP Inspector’u kurup hata ayıklamada kullanmak
-- ✅ Hem Agent Builder hem de Inspector ortamlarında MCP sunucularını hata ayıklamak
-- ✅ İleri seviye MCP sunucu geliştirme iş akışlarını anlamak
+- ✅ En son MCP Python SDK'sını (v1.9.3) yapılandırmak ve kullanmak
+- ✅ MCP Inspector'ı kurup hata ayıklamada kullanmak
+- ✅ MCP sunucularını hem Agent Builder hem de Inspector ortamlarında hata ayıklamak
+- ✅ Gelişmiş MCP sunucu geliştirme iş akışlarını anlamak
 
 ## 📋 Ön Koşullar
 
-- Lab 2 (MCP Temelleri) tamamlanmış olmalı
-- AI Toolkit uzantısı yüklü VS Code
+- Lab 2'nin (MCP Temelleri) tamamlanmış olması
+- AI Toolkit eklentisi yüklü VS Code
 - Python 3.10+ ortamı
 - Inspector kurulumu için Node.js ve npm
 
 ## 🏗️ Neler İnşa Edeceksiniz
 
-Bu laboratuvarda, aşağıdakileri gösteren bir **Weather MCP Server** oluşturacaksınız:
+Bu laboratuvarda, aşağıdakileri gösteren bir **Hava Durumu MCP Sunucusu** oluşturacaksınız:
 - Özel MCP sunucu uygulaması
 - AI Toolkit Agent Builder ile entegrasyon
 - Profesyonel hata ayıklama iş akışları
@@ -45,42 +45,38 @@ Bu laboratuvarda, aşağıdakileri gösteren bir **Weather MCP Server** oluştur
 ## 🔧 Temel Bileşenler Genel Bakış
 
 ### 🐍 MCP Python SDK  
-Model Context Protocol Python SDK, özel MCP sunucuları oluşturmak için temel sağlar. Gelişmiş hata ayıklama özelliklerine sahip 1.9.3 sürümünü kullanacaksınız.
+Model Context Protocol Python SDK, özel MCP sunucuları oluşturmak için temel sağlar. Gelişmiş hata ayıklama özellikleriyle 1.9.3 sürümünü kullanacaksınız.
 
 ### 🔍 MCP Inspector  
-Güçlü bir hata ayıklama aracı olup şunları sunar:  
-- Gerçek zamanlı sunucu izleme  
-- Araç yürütme görselleştirmesi  
-- Ağ istek/yanıt incelemesi  
-- Etkileşimli test ortamı  
+Gerçek zamanlı sunucu izleme, araç çalıştırma görselleştirme, ağ istek/yanıt inceleme ve etkileşimli test ortamı sunan güçlü bir hata ayıklama aracıdır.
 
 ---
 
 ## 📖 Adım Adım Uygulama
 
-### Adım 1: Agent Builder’da WeatherAgent Oluşturma
+### Adım 1: Agent Builder'da WeatherAgent Oluşturun
 
-1. VS Code’da AI Toolkit uzantısı ile **Agent Builder’ı başlatın**  
-2. Aşağıdaki konfigürasyonla **yeni bir agent oluşturun:**  
+1. AI Toolkit eklentisi üzerinden VS Code’da **Agent Builder'ı başlatın**
+2. Aşağıdaki yapılandırmayla **yeni bir agent oluşturun**:
    - Agent Adı: `WeatherAgent`
 
 ![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.tr.png)
 
-### Adım 2: MCP Sunucu Projesini Başlatma
+### Adım 2: MCP Sunucu Projesini Başlatın
 
-1. Agent Builder’da **Tools → Add Tool** menüsüne gidin  
-2. Mevcut seçeneklerden **"MCP Server"** seçin  
-3. **"Create A new MCP Server"** seçeneğini işaretleyin  
-4. `python-weather` şablonunu seçin  
+1. Agent Builder’da **Tools** → **Add Tool** menüsüne gidin
+2. Mevcut seçeneklerden **"MCP Server"** seçin
+3. **"Create A new MCP Server"** seçeneğini seçin
+4. `python-weather` şablonunu seçin
 5. Sunucunuza isim verin: `weather_mcp`
 
 ![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.tr.png)
 
-### Adım 3: Projeyi Açıp İnceleyin
+### Adım 3: Projeyi Açın ve İnceleyin
 
-1. Oluşturulan projeyi VS Code’da açın  
+1. Oluşturulan projeyi VS Code’da açın
 2. Proje yapısını gözden geçirin:  
-   ```
+```
    weather_mcp/
    ├── src/
    │   ├── __init__.py
@@ -95,36 +91,33 @@ Güçlü bir hata ayıklama aracı olup şunları sunar:
    └── README.md
    ```
 
-### Adım 4: MCP SDK’yı En Son Sürüme Güncelleyin
+### Adım 4: En Son MCP SDK’ya Yükseltme
 
-> **🔍 Neden Güncelleme?** Daha gelişmiş özellikler ve daha iyi hata ayıklama için en son MCP SDK (v1.9.3) ve Inspector servisini (0.14.0) kullanmak istiyoruz.
+> **🔍 Neden Yükseltmeliyiz?** Daha gelişmiş özellikler ve daha iyi hata ayıklama için en son MCP SDK (v1.9.3) ve Inspector servisini (0.14.0) kullanmak istiyoruz.
 
-#### 4a. Python Bağımlılıklarını Güncelleme
+#### 4a. Python Bağımlılıklarını Güncelleyin
 
-**`pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
+**`pyproject.toml` dosyasını düzenleyin:** [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml) dosyasını güncelleyin
 
+#### 4b. Inspector Yapılandırmasını Güncelleyin
 
-#### 4b. Update Inspector Configuration
+**`inspector/package.json` dosyasını düzenleyin:** [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json) dosyasını güncelleyin
 
-**Edit `inspector/package.json`:** update [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
+#### 4c. Inspector Bağımlılıklarını Güncelleyin
 
-#### 4c. Update Inspector Dependencies
+**`inspector/package-lock.json` dosyasını düzenleyin:** [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json) dosyasını güncelleyin
 
-**Edit `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
+> **📝 Not:** Bu dosya kapsamlı bağımlılık tanımları içerir. Aşağıda temel yapı gösterilmiştir - tam içerik doğru bağımlılık çözümlemesi için gereklidir.
 
-> **📝 Note:** This file contains extensive dependency definitions. Below is the essential structure - the full content ensures proper dependency resolution.
+> **⚡ Tam Paket Kilidi:** package-lock.json dosyası yaklaşık 3000 satır bağımlılık tanımı içerir. Yukarıda ana yapı gösterilmiştir - tam çözümleme için sağlanan dosyayı kullanın.
 
+### Adım 5: VS Code Hata Ayıklamayı Yapılandırın
 
-> **⚡ Full Package Lock:** The complete package-lock.json contains ~3000 lines of dependency definitions. The above shows the key structure - use the provided file for complete dependency resolution.
+*Not: Belirtilen yoldaki dosyayı kopyalayarak yerel dosyanın üzerine yazınız*
 
-### Step 5: Configure VS Code Debugging
+#### 5a. Başlatma Yapılandırmasını Güncelleyin
 
-*Note: Please copy the file in the specified path to replace the corresponding local file*
-
-#### 5a. Update Launch Configuration
-
-**Edit `.vscode/launch.json` dosyalarını düzenleyin:**
-
+**`.vscode/launch.json` dosyasını düzenleyin:**  
 ```json
 {
   "version": "0.2.0",
@@ -200,8 +193,7 @@ Güçlü bir hata ayıklama aracı olup şunları sunar:
 }
 ```
 
-**`.vscode/tasks.json` dosyasını düzenleyin:**
-
+**`.vscode/tasks.json` dosyasını düzenleyin:**  
 ```
 {
   "version": "2.0.0",
@@ -308,7 +300,7 @@ Güçlü bir hata ayıklama aracı olup şunları sunar:
 
 ### Adım 6: Bağımlılıkları Yükleyin
 
-Yapılandırma değişikliklerinden sonra aşağıdaki komutları çalıştırın:
+Yapılandırma değişikliklerini yaptıktan sonra aşağıdaki komutları çalıştırın:
 
 **Python bağımlılıklarını yükleyin:**  
 ```bash
@@ -323,12 +315,12 @@ npm install
 
 ### Adım 7: Agent Builder ile Hata Ayıklama
 
-1. **F5 tuşuna basın** veya **"Debug in Agent Builder"** yapılandırmasını kullanın  
-2. Hata ayıklama panelinden birleşik konfigürasyonu seçin  
-3. Sunucunun başlamasını ve Agent Builder’ın açılmasını bekleyin  
+1. **F5 tuşuna basın** veya **"Debug in Agent Builder"** yapılandırmasını kullanın
+2. Hata ayıklama panelinden bileşik yapılandırmayı seçin
+3. Sunucunun başlamasını ve Agent Builder’ın açılmasını bekleyin
 4. Hava durumu MCP sunucunuzu doğal dil sorgularıyla test edin
 
-Aşağıdaki gibi bir girdi kullanabilirsiniz
+Aşağıdaki gibi bir giriş yapabilirsiniz
 
 SYSTEM_PROMPT
 
@@ -346,42 +338,42 @@ How's the weather like in Seattle
 
 ### Adım 8: MCP Inspector ile Hata Ayıklama
 
-1. **"Debug in Inspector"** yapılandırmasını kullanın (Edge veya Chrome)  
-2. `http://localhost:6274` adresinde Inspector arayüzünü açın  
-3. Etkileşimli test ortamını keşfedin:  
-   - Mevcut araçları görüntüleyin  
-   - Araç yürütmesini test edin  
-   - Ağ isteklerini izleyin  
-   - Sunucu yanıtlarını hata ayıklayın  
+1. **"Debug in Inspector"** yapılandırmasını kullanın (Edge veya Chrome)
+2. `http://localhost:6274` adresinde Inspector arayüzünü açın
+3. Etkileşimli test ortamını keşfedin:
+   - Mevcut araçları görüntüleyin
+   - Araç çalıştırmayı test edin
+   - Ağ isteklerini izleyin
+   - Sunucu yanıtlarını hata ayıklayın
 
 ![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.tr.png)
 
 ---
 
-## 🎯 Temel Öğrenme Sonuçları
+## 🎯 Temel Öğrenme Çıktıları
 
 Bu laboratuvarı tamamlayarak:
 
-- [x] AI Toolkit şablonlarını kullanarak **özel bir MCP sunucu oluşturdunuz**  
-- [x] Daha gelişmiş işlevsellik için **en son MCP SDK (v1.9.3) sürümüne yükselttiniz**  
-- [x] Hem Agent Builder hem de Inspector için **profesyonel hata ayıklama iş akışları yapılandırdınız**  
-- [x] Etkileşimli sunucu testi için **MCP Inspector’u kurdunuz**  
-- [x] MCP geliştirme için **VS Code hata ayıklama ayarlarını ustaca kullandınız**
+- [x] AI Toolkit şablonları kullanarak **özel bir MCP sunucusu oluşturdunuz**
+- [x] Gelişmiş işlevsellik için **en son MCP SDK’ya (v1.9.3) yükselttiniz**
+- [x] Hem Agent Builder hem de Inspector için **profesyonel hata ayıklama iş akışları yapılandırdınız**
+- [x] **MCP Inspector’ı** etkileşimli sunucu testi için kurdunuz
+- [x] MCP geliştirme için **VS Code hata ayıklama yapılandırmalarını** ustalıkla kullandınız
 
-## 🔧 Keşfedilen İleri Seviye Özellikler
+## 🔧 İncelenen Gelişmiş Özellikler
 
-| Özellik                   | Açıklama                      | Kullanım Durumu              |
-|---------------------------|-------------------------------|-----------------------------|
-| **MCP Python SDK v1.9.3** | En son protokol uygulaması    | Modern sunucu geliştirme    |
-| **MCP Inspector 0.14.0**  | Etkileşimli hata ayıklama aracı | Gerçek zamanlı sunucu testi |
-| **VS Code Debugging**     | Entegre geliştirme ortamı     | Profesyonel hata ayıklama iş akışı |
-| **Agent Builder Entegrasyonu** | Doğrudan AI Toolkit bağlantısı | Uçtan uca agent testi       |
+| Özellik | Açıklama | Kullanım Alanı |
+|---------|----------|---------------|
+| **MCP Python SDK v1.9.3** | En son protokol uygulaması | Modern sunucu geliştirme |
+| **MCP Inspector 0.14.0** | Etkileşimli hata ayıklama aracı | Gerçek zamanlı sunucu testi |
+| **VS Code Hata Ayıklama** | Entegre geliştirme ortamı | Profesyonel hata ayıklama iş akışı |
+| **Agent Builder Entegrasyonu** | Doğrudan AI Toolkit bağlantısı | Uçtan uca agent testi |
 
 ## 📚 Ek Kaynaklar
 
-- [MCP Python SDK Dokümantasyonu](https://modelcontextprotocol.io/docs/sdk/python)  
-- [AI Toolkit Uzantı Rehberi](https://code.visualstudio.com/docs/ai/ai-toolkit)  
-- [VS Code Hata Ayıklama Dokümantasyonu](https://code.visualstudio.com/docs/editor/debugging)  
+- [MCP Python SDK Dokümantasyonu](https://modelcontextprotocol.io/docs/sdk/python)
+- [AI Toolkit Eklenti Kılavuzu](https://code.visualstudio.com/docs/ai/ai-toolkit)
+- [VS Code Hata Ayıklama Dokümantasyonu](https://code.visualstudio.com/docs/editor/debugging)
 - [Model Context Protocol Spesifikasyonu](https://modelcontextprotocol.io/docs/concepts/architecture)
 
 ---
@@ -390,12 +382,13 @@ Bu laboratuvarı tamamlayarak:
 
 ### 🔜 Sonraki Modüle Geçin
 
-MCP becerilerinizi gerçek dünya geliştirme iş akışlarında uygulamaya hazır mısınız? **[Modül 4: Pratik MCP Geliştirme - Özel GitHub Klon Sunucusu](../lab4/README.md)** bölümüne geçerek:  
-- GitHub depo işlemlerini otomatikleştiren üretim hazır bir MCP sunucusu oluşturacaksınız  
-- MCP üzerinden GitHub depo klonlama işlevselliği uygulayacaksınız  
-- Özel MCP sunucularını VS Code ve GitHub Copilot Agent Modu ile entegre edeceksiniz  
-- Üretim ortamlarında özel MCP sunucularını test edip dağıtacaksınız  
-- Geliştiriciler için pratik iş akışı otomasyonlarını öğreneceksiniz
+MCP becerilerinizi gerçek dünya geliştirme iş akışına uygulamaya hazır mısınız? Şimdi **[Modül 4: Pratik MCP Geliştirme - Özel GitHub Klon Sunucusu](../lab4/README.md)** bölümüne geçin. Burada:
+
+- GitHub depo işlemlerini otomatikleştiren üretim hazır bir MCP sunucusu inşa edeceksiniz
+- MCP üzerinden GitHub depo klonlama işlevselliği uygulayacaksınız
+- Özel MCP sunucularını VS Code ve GitHub Copilot Agent Modu ile entegre edeceksiniz
+- Üretim ortamlarında özel MCP sunucularını test edip dağıtacaksınız
+- Geliştiriciler için pratik iş akışı otomasyonunu öğreneceksiniz
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

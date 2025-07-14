@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:08:29+00:00",
+  "translation_date": "2025-07-13T23:50:21+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "de"
 }
 -->
 # Model Context Protocol (MCP) Integration mit Azure AI Foundry
 
-Diese Anleitung zeigt, wie man Model Context Protocol (MCP)-Server mit Azure AI Foundry-Agenten integriert, um leistungsstarke Tool-Orchestrierung und Enterprise-KI-Funktionen zu ermöglichen.
+Dieser Leitfaden zeigt, wie Model Context Protocol (MCP)-Server mit Azure AI Foundry-Agenten integriert werden, um leistungsstarke Tool-Orchestrierung und Enterprise-KI-Funktionen zu ermöglichen.
 
 ## Einführung
 
-Model Context Protocol (MCP) ist ein offener Standard, der es KI-Anwendungen ermöglicht, sicher mit externen Datenquellen und Tools zu kommunizieren. In Kombination mit Azure AI Foundry erlaubt MCP Agenten den Zugriff auf verschiedene externe Dienste, APIs und Datenquellen auf standardisierte Weise.
+Model Context Protocol (MCP) ist ein offener Standard, der es KI-Anwendungen ermöglicht, sicher auf externe Datenquellen und Tools zuzugreifen. In Kombination mit Azure AI Foundry erlaubt MCP Agenten, auf verschiedene externe Dienste, APIs und Datenquellen auf standardisierte Weise zuzugreifen und mit ihnen zu interagieren.
 
 Diese Integration verbindet die Flexibilität des MCP-Tool-Ökosystems mit dem robusten Agenten-Framework von Azure AI Foundry und bietet so KI-Lösungen auf Unternehmensniveau mit umfangreichen Anpassungsmöglichkeiten.
 
@@ -21,28 +21,28 @@ Diese Integration verbindet die Flexibilität des MCP-Tool-Ökosystems mit dem r
 
 ## Lernziele
 
-Am Ende dieser Anleitung werden Sie in der Lage sein:
+Am Ende dieses Leitfadens werden Sie in der Lage sein:
 
 - Das Model Context Protocol und seine Vorteile zu verstehen
 - MCP-Server für die Verwendung mit Azure AI Foundry-Agenten einzurichten
 - Agenten mit MCP-Tool-Integration zu erstellen und zu konfigurieren
 - Praktische Beispiele mit echten MCP-Servern umzusetzen
-- Tool-Antworten und Quellenangaben in Agenten-Konversationen zu verarbeiten
+- Werkzeugantworten und Quellenangaben in Agentenkonversationen zu verarbeiten
 
 ## Voraussetzungen
 
-Bevor Sie beginnen, stellen Sie sicher, dass Sie:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie Folgendes haben:
 
-- Ein Azure-Abonnement mit Zugang zu AI Foundry besitzen
-- Python 3.10+ installiert haben
-- Azure CLI installiert und konfiguriert ist
-- Die erforderlichen Berechtigungen zum Erstellen von AI-Ressourcen besitzen
+- Ein Azure-Abonnement mit Zugriff auf AI Foundry
+- Python 3.10+
+- Azure CLI installiert und konfiguriert
+- Die erforderlichen Berechtigungen zum Erstellen von KI-Ressourcen
 
 ## Was ist Model Context Protocol (MCP)?
 
-Model Context Protocol ist eine standardisierte Methode, mit der KI-Anwendungen externe Datenquellen und Tools anbinden können. Wichtige Vorteile sind:
+Model Context Protocol ist eine standardisierte Methode, mit der KI-Anwendungen eine Verbindung zu externen Datenquellen und Tools herstellen können. Wichtige Vorteile sind:
 
-- **Standardisierte Integration**: Einheitliche Schnittstelle für verschiedene Tools und Dienste
+- **Standardisierte Integration**: Einheitliche Schnittstelle über verschiedene Tools und Dienste hinweg
 - **Sicherheit**: Sichere Authentifizierungs- und Autorisierungsmechanismen
 - **Flexibilität**: Unterstützung verschiedener Datenquellen, APIs und benutzerdefinierter Tools
 - **Erweiterbarkeit**: Einfache Erweiterung um neue Funktionen und Integrationen
@@ -104,7 +104,7 @@ When configuring MCP tools for your agent, you can specify several important par
 mcp_tool = {
     "type": "mcp",
     "server_label": "unique_server_name",      # Bezeichner für den MCP-Server
-    "server_url": "https://api.example.com/mcp", # Endpunkt des MCP-Servers
+    "server_url": "https://api.example.com/mcp", # MCP-Server-Endpunkt
     "require_approval": "never"                 # Genehmigungsrichtlinie: derzeit nur "never" unterstützt
 }
 ```
@@ -187,33 +187,33 @@ def create_mcp_agent_example():
 
 if __name__ == "__main__":
     create_mcp_agent_example()
-  
+```
 
-## Häufige Probleme und Lösungen
+## Häufige Probleme und deren Behebung
 
 ### 1. Verbindungsprobleme
 - Überprüfen Sie, ob die MCP-Server-URL erreichbar ist
 - Prüfen Sie die Authentifizierungsdaten
-- Stellen Sie die Netzwerkverbindung sicher
+- Stellen Sie sicher, dass die Netzwerkverbindung besteht
 
 ### 2. Fehler bei Tool-Aufrufen
 - Überprüfen Sie die Argumente und das Format der Tool-Aufrufe
 - Beachten Sie server-spezifische Anforderungen
-- Implementieren Sie eine ordnungsgemäße Fehlerbehandlung
+- Implementieren Sie eine geeignete Fehlerbehandlung
 
 ### 3. Leistungsprobleme
 - Optimieren Sie die Häufigkeit der Tool-Aufrufe
-- Nutzen Sie Caching, wo es sinnvoll ist
+- Nutzen Sie Caching, wo sinnvoll
 - Überwachen Sie die Antwortzeiten des Servers
 
 ## Nächste Schritte
 
 Um Ihre MCP-Integration weiter zu verbessern:
 
-1. **Eigene MCP-Server erkunden**: Erstellen Sie eigene MCP-Server für proprietäre Datenquellen
+1. **Eigene MCP-Server entwickeln**: Erstellen Sie eigene MCP-Server für proprietäre Datenquellen
 2. **Erweiterte Sicherheit implementieren**: Fügen Sie OAuth2 oder benutzerdefinierte Authentifizierungsmechanismen hinzu
 3. **Überwachung und Analyse**: Implementieren Sie Logging und Monitoring für die Tool-Nutzung
-4. **Skalierung Ihrer Lösung**: Erwägen Sie Lastverteilung und verteilte MCP-Server-Architekturen
+4. **Skalierung Ihrer Lösung**: Berücksichtigen Sie Lastverteilung und verteilte MCP-Server-Architekturen
 
 ## Zusätzliche Ressourcen
 
@@ -224,13 +224,13 @@ Um Ihre MCP-Integration weiter zu verbessern:
 
 ## Support
 
-Für zusätzlichen Support und Fragen:
-- Sehen Sie sich die [Azure AI Foundry Dokumentation](https://learn.microsoft.com/azure/ai-foundry/) an
-- Prüfen Sie die [MCP Community-Ressourcen](https://modelcontextprotocol.io/)
+Für weitere Unterstützung und Fragen:
+- Lesen Sie die [Azure AI Foundry Dokumentation](https://learn.microsoft.com/azure/ai-foundry/)
+- Schauen Sie in die [MCP Community-Ressourcen](https://modelcontextprotocol.io/)
 
 ## Was kommt als Nächstes
 
 - [6. Community Contributions](../../06-CommunityContributions/README.md)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

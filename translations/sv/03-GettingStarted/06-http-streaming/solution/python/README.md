@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:02:11+00:00",
+  "translation_date": "2025-07-13T21:20:12+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "sv"
 }
@@ -13,16 +13,16 @@ Så här kör du den klassiska HTTP-streamingservern och klienten, samt MCP-stre
 
 ### Översikt
 
-- Du kommer att sätta upp en MCP-server som strömmar progressmeddelanden till klienten medan den bearbetar objekt.
-- Klienten visar varje meddelande i realtid.
+- Du kommer att sätta upp en MCP-server som strömmar progressnotiser till klienten medan den bearbetar objekt.
+- Klienten visar varje notis i realtid.
 - Denna guide täcker förutsättningar, installation, körning och felsökning.
 
 ### Förutsättningar
 
 - Python 3.9 eller nyare
-- Paketet `mcp` för Python (installera med `pip install mcp`)
+- Pythonpaketet `mcp` (installera med `pip install mcp`)
 
-### Installation & Setup
+### Installation & Uppstart
 
 1. Klona repot eller ladda ner lösningsfilerna.
 
@@ -52,7 +52,7 @@ Så här kör du den klassiska HTTP-streamingservern och klienten, samt MCP-stre
 
 ### Köra den klassiska HTTP-streamingservern
 
-1. Navigera till lösningsmappen:
+1. Gå till lösningsmappen:
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
@@ -73,7 +73,7 @@ Så här kör du den klassiska HTTP-streamingservern och klienten, samt MCP-stre
 
 ### Köra den klassiska HTTP-streamingklienten
 
-1. Öppna en ny terminal (aktivera samma virtuella miljö och katalog):
+1. Öppna en ny terminal (aktivera samma virtuella miljö och mapp):
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
@@ -95,7 +95,7 @@ Så här kör du den klassiska HTTP-streamingservern och klienten, samt MCP-stre
 
 ### Köra MCP-streamingservern
 
-1. Navigera till lösningsmappen:
+1. Gå till lösningsmappen:
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
@@ -111,12 +111,12 @@ Så här kör du den klassiska HTTP-streamingservern och klienten, samt MCP-stre
 
 ### Köra MCP-streamingklienten
 
-1. Öppna en ny terminal (aktivera samma virtuella miljö och katalog):
+1. Öppna en ny terminal (aktivera samma virtuella miljö och mapp):
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. Du bör se meddelanden skrivas ut i realtid medan servern bearbetar varje objekt:
+2. Du bör se notiser skrivas ut i realtid medan servern bearbetar varje objekt:
    ```
    Running MCP client...
    Starting client...
@@ -132,20 +132,20 @@ Så här kör du den klassiska HTTP-streamingservern och klienten, samt MCP-stre
 ### Viktiga implementeringssteg
 
 1. **Skapa MCP-servern med FastMCP.**
-2. **Definiera ett verktyg som bearbetar en lista och skickar meddelanden med `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+2. **Definiera ett verktyg som bearbetar en lista och skickar notiser med `ctx.info()` eller `ctx.log()`.**
+3. **Kör servern med `transport="streamable-http"`.**
+4. **Implementera en klient med en meddelandehanterare som visar notiser när de kommer.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Genomgång av koden
+- Servern använder asynkrona funktioner och MCP-konteksten för att skicka progressuppdateringar.
+- Klienten implementerar en asynkron meddelandehanterare som skriver ut notiser och slutresultatet.
 
-### Tips & Troubleshooting
+### Tips & Felsökning
 
-- Use `async/await` för icke-blockerande operationer.**
-- Hantera alltid undantag i både server och klient för robusthet.
+- Använd `async/await` för icke-blockerande operationer.
+- Hantera alltid undantag i både server och klient för stabilitet.
 - Testa med flera klienter för att se realtidsuppdateringar.
-- Om du stöter på fel, kontrollera din Python-version och se till att alla beroenden är installerade.
+- Om du stöter på fel, kontrollera din Python-version och att alla beroenden är installerade.
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen var medveten om att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår från användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

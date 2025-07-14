@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2a58caa6e11faa09470b7f81e6729652",
-  "translation_date": "2025-06-18T06:01:17+00:00",
+  "translation_date": "2025-07-13T20:10:29+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "da"
 }
 -->
-# Kør denne prøve
+# Kør dette eksempel
 
 ## -1- Installer afhængighederne
 
@@ -15,13 +15,13 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-## -2- Kør prøven
+## -2- Kør eksemplet
 
 ```bash
 dotnet run
 ```
 
-## -3- Test prøven
+## -3- Test eksemplet
 
 Start et separat terminalvindue, før du kører nedenstående (sørg for, at serveren stadig kører).
 
@@ -31,14 +31,14 @@ Med serveren kørende i et terminalvindue, åbn et andet terminalvindue og kør 
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Dette skulle starte en webserver med en visuel grænseflade, der giver dig mulighed for at teste prøven.
+Dette skulle starte en webserver med en visuel grænseflade, der giver dig mulighed for at teste eksemplet.
 
-> Sørg for, at **SSE** er valgt som transporttype, og at URL'en er `http://localhost:3001/sse`.
+> Sørg for, at **SSE** er valgt som transporttype, og at URL’en er `http://localhost:3001/sse`.
 
-Once the server is connected: 
+Når serveren er tilsluttet:
 
-- try listing tools and run `add`, med argumenterne 2 og 4, så burde du se 6 som resultat.
-- gå til resources og resource template og kald "greeting", skriv et navn, og du skulle se en hilsen med det navn, du indtastede.
+- prøv at liste værktøjer og kør `add` med argumenterne 2 og 4, du skulle se 6 som resultat.
+- gå til resources og resource template og kald "greeting", indtast et navn, og du skulle se en hilsen med det navn, du har angivet.
 
 ### Test i CLI-tilstand
 
@@ -48,7 +48,7 @@ Du kan starte det direkte i CLI-tilstand ved at køre følgende kommando:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Dette vil liste alle tilgængelige værktøjer på serveren. Du burde se følgende output:
+Dette vil liste alle tilgængelige værktøjer på serveren. Du skulle se følgende output:
 
 ```text
 {
@@ -86,7 +86,7 @@ For at kalde et værktøj, skriv:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Du burde se følgende output:
+Du skulle se følgende output:
 
 ```text
 {
@@ -101,8 +101,8 @@ Du burde se følgende output:
 ```
 
 > ![!TIP]
-> Det er som regel meget hurtigere at køre inspectoren i CLI-tilstand end i browseren.
-> Læs mere om inspectoren [her](https://github.com/modelcontextprotocol/inspector).
+> Det er som regel meget hurtigere at køre inspector i CLI-tilstand end i browseren.
+> Læs mere om inspector [her](https://github.com/modelcontextprotocol/inspector).
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

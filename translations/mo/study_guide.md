@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a607d4febc94caee9a12b77795f7fc9a",
-  "translation_date": "2025-06-11T16:38:24+00:00",
+  "translation_date": "2025-07-13T15:10:57+00:00",
   "source_file": "study_guide.md",
   "language_code": "mo"
 }
 -->
-# Model Context Protocol (MCP) for Beginners - Study Guide
+# Model Context Protocol (MCP) 初學者學習指南
 
-This study guide offers an overview of the repository structure and contents for the "Model Context Protocol (MCP) for Beginners" course. Use it to navigate the repository effectively and make the most of the available resources.
+本學習指南概述了「Model Context Protocol (MCP) 初學者」課程的倉庫結構與內容。請利用此指南有效瀏覽倉庫，充分利用現有資源。
 
-## Repository Overview
+## 倉庫概覽
 
-The Model Context Protocol (MCP) is a standardized framework for interactions between AI models and client applications. This repository delivers a comprehensive curriculum with practical code examples in C#, Java, JavaScript, Python, and TypeScript, tailored for AI developers, system architects, and software engineers.
+Model Context Protocol (MCP) 是一套標準化的框架，用於 AI 模型與客戶端應用程式之間的互動。本倉庫提供完整課程，包含 C#、Java、JavaScript、Python 及 TypeScript 的實作範例，適合 AI 開發者、系統架構師及軟體工程師使用。
 
-## Visual Curriculum Map
+## 視覺化課程地圖
 
 ```mermaid
 mindmap
@@ -86,112 +86,112 @@ mindmap
       (Production Deployment)
 ```
 
-## Repository Structure
+## 倉庫結構
 
-The repository is divided into ten main sections, each covering different aspects of MCP:
+倉庫分為十個主要章節，各自聚焦 MCP 的不同面向：
 
-1. **Introduction (00-Introduction/)**
-   - Overview of the Model Context Protocol
-   - Why standardization is important in AI pipelines
-   - Practical use cases and advantages
+1. **介紹 (00-Introduction/)**
+   - Model Context Protocol 概述
+   - 為何 AI 流程中標準化至關重要
+   - 實際應用案例與效益
 
-2. **Core Concepts (01-CoreConcepts/)**
-   - Client-server architecture
-   - Key protocol components
-   - Messaging patterns in MCP
+2. **核心概念 (01-CoreConcepts/)**
+   - 客戶端-伺服器架構
+   - 主要協議元件
+   - MCP 中的訊息傳遞模式
 
-3. **Security (02-Security/)**
-   - Security threats in MCP-based systems
-   - Best practices for securing implementations
-   - Authentication and authorization methods
+3. **安全性 (02-Security/)**
+   - MCP 系統中的安全威脅
+   - 安全實作最佳做法
+   - 認證與授權策略
 
-4. **Getting Started (03-GettingStarted/)**
-   - Environment setup and configuration
-   - Creating basic MCP servers and clients
-   - Integration with existing applications
-   - Subsections for first server, first client, LLM client, VS Code integration, SSE server, AI Toolkit, testing, and deployment
+4. **入門指南 (03-GettingStarted/)**
+   - 環境設定與配置
+   - 建立基本 MCP 伺服器與客戶端
+   - 與現有應用整合
+   - 包含首次伺服器、首次客戶端、LLM 客戶端、VS Code 整合、SSE 伺服器、AI 工具包、測試與部署等子章節
 
-5. **Practical Implementation (04-PracticalImplementation/)**
-   - Using SDKs across different programming languages
-   - Debugging, testing, and validation techniques
-   - Designing reusable prompt templates and workflows
-   - Sample projects with implementation examples
+5. **實務實作 (04-PracticalImplementation/)**
+   - 跨語言 SDK 使用
+   - 除錯、測試與驗證技巧
+   - 製作可重用的提示模板與工作流程
+   - 範例專案與實作示範
 
-6. **Advanced Topics (05-AdvancedTopics/)**
-   - Multi-modal AI workflows and extensibility
-   - Secure scaling strategies
-   - MCP in enterprise ecosystems
-   - Specialized topics including Azure integration, multi-modality, OAuth2, root contexts, routing, sampling, scaling, security, web search integration, and streaming.
+6. **進階主題 (05-AdvancedTopics/)**
+   - 多模態 AI 工作流程與擴充性
+   - 安全擴展策略
+   - MCP 在企業生態系中的應用
+   - 專題包括 Azure 整合、多模態、OAuth2、根上下文、路由、取樣、擴展、安全性、網路搜尋整合與串流等
 
-7. **Community Contributions (06-CommunityContributions/)**
-   - How to contribute code and documentation
-   - Collaborating via GitHub
-   - Community-driven enhancements and feedback
+7. **社群貢獻 (06-CommunityContributions/)**
+   - 如何貢獻程式碼與文件
+   - 透過 GitHub 協作
+   - 社群驅動的改進與回饋
 
-8. **Lessons from Early Adoption (07-LessonsfromEarlyAdoption/)**
-   - Real-world implementations and success stories
-   - Building and deploying MCP-based solutions
-   - Trends and future roadmap
+8. **早期採用經驗 (07-LessonsfromEarlyAdoption/)**
+   - 實際案例與成功故事
+   - MCP 解決方案的建置與部署
+   - 趨勢與未來發展路線圖
 
-9. **Best Practices (08-BestPractices/)**
-   - Performance tuning and optimization
-   - Designing fault-tolerant MCP systems
-   - Testing and resilience strategies
+9. **最佳實務 (08-BestPractices/)**
+   - 效能調校與優化
+   - 設計容錯的 MCP 系統
+   - 測試與韌性策略
 
-10. **Case Studies (09-CaseStudy/)**
-    - In-depth looks at MCP solution architectures
-    - Deployment blueprints and integration tips
-    - Annotated diagrams and project walkthroughs
+10. **案例研究 (09-CaseStudy/)**
+    - 深入探討 MCP 解決方案架構
+    - 部署藍圖與整合建議
+    - 附註圖表與專案導覽
 
-11. **Hands-on Workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - Comprehensive hands-on workshop combining MCP with Microsoft's AI Toolkit for VS Code
-    - Building intelligent applications connecting AI models with real-world tools
-    - Practical modules covering fundamentals, custom server development, and production deployment strategies
+11. **實作工作坊 (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
+    - 結合 MCP 與 Microsoft AI Toolkit for VS Code 的完整實作工作坊
+    - 建構連結 AI 模型與實務工具的智慧應用
+    - 涵蓋基礎、客製伺服器開發與生產部署策略的實務模組
 
-## Sample Projects
+## 範例專案
 
-The repository includes multiple sample projects showcasing MCP implementation across various programming languages:
+倉庫包含多個示範 MCP 實作的範例專案，涵蓋不同程式語言：
 
-### Basic MCP Calculator Samples
-- C# MCP Server Example
-- Java MCP Calculator
-- JavaScript MCP Demo
-- Python MCP Server
-- TypeScript MCP Example
+### 基本 MCP 計算器範例
+- C# MCP 伺服器範例
+- Java MCP 計算器
+- JavaScript MCP 示範
+- Python MCP 伺服器
+- TypeScript MCP 範例
 
-### Advanced MCP Calculator Projects
-- Advanced C# Sample
-- Java Container App Example
-- JavaScript Advanced Sample
-- Python Complex Implementation
-- TypeScript Container Sample
+### 進階 MCP 計算器專案
+- 進階 C# 範例
+- Java 容器應用範例
+- JavaScript 進階範例
+- Python 複雜實作
+- TypeScript 容器範例
 
-## Additional Resources
+## 其他資源
 
-The repository also contains supporting materials:
+倉庫還包含輔助資源：
 
-- **Images folder**: Contains diagrams and illustrations used throughout the curriculum
-- **Translations**: Multi-language support with automated documentation translations
-- **Official MCP Resources**:
+- **Images 資料夾**：課程中使用的圖表與插圖
+- **翻譯**：多語言支援與文件自動翻譯
+- **官方 MCP 資源**：
   - [MCP Documentation](https://modelcontextprotocol.io/)
   - [MCP Specification](https://spec.modelcontextprotocol.io/)
   - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
 
-## How to Use This Repository
+## 如何使用本倉庫
 
-1. **Sequential Learning**: Follow the chapters in order (00 through 10) for a structured learning experience.
-2. **Language-Specific Focus**: If you prefer a particular programming language, explore the samples directories for implementations in your language of choice.
-3. **Practical Implementation**: Start with the "Getting Started" section to set up your environment and build your first MCP server and client.
-4. **Advanced Exploration**: Once you’re comfortable with the basics, dive into advanced topics to deepen your understanding.
-5. **Community Engagement**: Join the [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) to connect with experts and fellow developers.
+1. **循序學習**：依序閱讀章節（00 至 10），獲得系統化學習體驗。
+2. **語言專注**：若偏好特定程式語言，可瀏覽對應語言的範例目錄。
+3. **實務入門**：從「入門指南」開始，設定環境並建立第一個 MCP 伺服器與客戶端。
+4. **進階探索**：熟悉基礎後，深入進階主題擴展知識。
+5. **社群互動**：加入 [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4)，與專家及開發者交流。
 
-## Contributing
+## 貢獻指南
 
-This repository welcomes community contributions. See the Community Contributions section for instructions on how to get involved.
+歡迎社群貢獻本倉庫。請參考社群貢獻章節了解如何參與。
 
 ---
 
-*This study guide was created on June 11, 2025, and reflects the repository status as of that date. Content may have been updated since then.*
+*本學習指南於 2025 年 6 月 11 日製作，內容反映當時倉庫狀態，後續可能有所更新。*
 
-**Disclaimer**:  
-Thiz documant haz bin translaited yusing AI translaiton serviz [Co-op Translator](https://github.com/Azure/co-op-translator). Whil wee stryve for akurasy, pleez bee awair that otomated translaitons may contain errurz or inakuratisez. The orijinal documant in its naytiv langwij shood bee considirred the authoritativ sourz. For kritikal informashun, profeshunal human translaiton is rekomended. Wee ar not layabl for eny misanderstandings or misinterpretashuns arizing from the yuse of this translaiton.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

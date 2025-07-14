@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
-  "translation_date": "2025-06-18T06:02:26+00:00",
+  "translation_date": "2025-07-13T19:03:40+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "fi"
 }
@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # Suorita tämä esimerkki
 
 > [!NOTE]
-> Tämä esimerkki olettaa, että käytät GitHub Codespaces -instanssia. Jos haluat suorittaa tämän paikallisesti, sinun täytyy luoda henkilökohtainen käyttöoikeustunnus (PAT) GitHubiin.
+> Tämä esimerkki olettaa, että käytät GitHub Codespaces -instanssia. Jos haluat suorittaa tämän paikallisesti, sinun täytyy luoda henkilökohtainen käyttöoikeustunnus (PAT) GitHubissa.
 >
 > ```bash
 > # zsh/bash
@@ -28,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-Asentaa seuraavat kirjastot: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
+Tämän pitäisi asentaa seuraavat kirjastot: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
 ## Suorita
 
@@ -36,7 +36,7 @@ Asentaa seuraavat kirjastot: Azure AI Inference, Azure Identity, Microsoft.Exten
 dotnet run
 ```
 
-Näet todennäköisesti tulosteen, joka näyttää tältä:
+Näet tulosteen, joka on samanlainen kuin:
 
 ```text
 Setting up stdio transport
@@ -51,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Suurin osa tulosteesta on vain debuggausta, mutta tärkeintä on, että luettelet työkaluja MCP Serveriltä, muutat ne LLM-työkaluiksi ja lopputuloksena saat MCP clientin vastauksen "Sum 6".
+Suurin osa tulosteesta on vain virheenkorjausta, mutta tärkeää on, että listaat työkalut MCP Serveriltä, muutat ne LLM-työkaluiksi ja lopulta saat MCP-asiakasvastauksen "Sum 6".
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, ole hyvä ja huomioi, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä on pidettävä auktoritatiivisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

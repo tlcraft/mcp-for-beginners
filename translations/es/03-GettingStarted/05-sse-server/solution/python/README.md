@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-05-16T15:21:32+00:00",
+  "translation_date": "2025-07-13T20:12:50+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "es"
 }
@@ -31,7 +31,6 @@ pip install "mcp[cli]"
 
 ## -3- Ejecutar el ejemplo
 
-
 ```bash
 mcp run server.py
 ```
@@ -46,22 +45,22 @@ mcp dev server.py
 
 Esto debería iniciar un servidor web con una interfaz visual que te permitirá probar el ejemplo.
 
-Una vez que el servidor esté conectado: 
+Una vez que el servidor esté conectado:
 
-- intenta listar las herramientas y ejecutar `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- intenta listar las herramientas y ejecutar `add`, con los argumentos 2 y 4, deberías ver 6 como resultado.
+- ve a resources y resource template y llama a get_greeting, escribe un nombre y deberías ver un saludo con el nombre que proporcionaste.
 
-### Testing in ClI mode
+### Pruebas en modo CLI
 
-The inspector you ran is actually a Node.js app and `mcp dev` es un envoltorio alrededor de esto. 
+El inspector que ejecutaste es en realidad una aplicación de Node.js y `mcp dev` es un envoltorio alrededor de ella.
 
-Puedes iniciarlo directamente en modo CLI ejecutando el siguiente comando:
+Puedes lanzarlo directamente en modo CLI ejecutando el siguiente comando:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-Esto mostrará todas las herramientas disponibles en el servidor. Deberías ver la siguiente salida:
+Esto listará todas las herramientas disponibles en el servidor. Deberías ver la siguiente salida:
 
 ```text
 {
@@ -116,5 +115,5 @@ Deberías ver la siguiente salida:
 > Generalmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
 > Lee más sobre el inspector [aquí](https://github.com/modelcontextprotocol/inspector).
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea que surja del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

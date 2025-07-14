@@ -2,60 +2,60 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a22b7dd11cd7690f99f9195877cafdc3",
-  "translation_date": "2025-06-10T06:01:01+00:00",
+  "translation_date": "2025-07-14T08:03:39+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab2/README.md",
   "language_code": "sl"
 }
 -->
-# 🌐 Module 2: MCP with AI Toolkit Fundamentals
+# 🌐 Modul 2: Osnove MCP z AI Toolkit
 
 [![Duration](https://img.shields.io/badge/Duration-20%20minutes-blue.svg)]()
 [![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-yellow.svg)]()
 [![Prerequisites](https://img.shields.io/badge/Prerequisites-Module%201%20Complete-orange.svg)]()
 
-## 📋 Learning Objectives
+## 📋 Cilji učenja
 
-By the end of this module, you'll be able to:
-- ✅ Grasp the architecture and benefits of Model Context Protocol (MCP)
-- ✅ Explore Microsoft’s MCP server ecosystem
-- ✅ Connect MCP servers with AI Toolkit Agent Builder
-- ✅ Build a working browser automation agent using Playwright MCP
-- ✅ Configure and test MCP tools inside your agents
-- ✅ Export and deploy MCP-powered agents for production
+Ob koncu tega modula boste znali:
+- ✅ Razumeti arhitekturo in prednosti Model Context Protocol (MCP)
+- ✅ Raziščite Microsoftov MCP strežniški ekosistem
+- ✅ Integrirati MCP strežnike z AI Toolkit Agent Builderjem
+- ✅ Zgraditi funkcionalnega agenta za avtomatizacijo brskalnika z uporabo Playwright MCP
+- ✅ Konfigurirati in testirati MCP orodja znotraj vaših agentov
+- ✅ Izvoziti in namestiti agente, ki temeljijo na MCP, za produkcijsko uporabo
 
-## 🎯 Building on Module 1
+## 🎯 Nadgradnja na Modul 1
 
-In Module 1, we covered AI Toolkit basics and built our first Python Agent. Now we’ll **boost** your agents by linking them to external tools and services via the groundbreaking **Model Context Protocol (MCP)**.
+V Modulu 1 smo osvojili osnove AI Toolkita in ustvarili našega prvega Python agenta. Zdaj bomo vaše agente **nadgradili** z povezovanjem na zunanja orodja in storitve preko revolucionarnega **Model Context Protocol (MCP)**.
 
-Think of it as upgrading from a simple calculator to a full computer — your AI agents will now be able to:
-- 🌐 Browse and interact with websites
-- 📁 Access and manage files
-- 🔧 Integrate with enterprise systems
-- 📊 Process real-time API data
+Predstavljajte si to kot nadgradnjo iz osnovnega kalkulatorja v poln računalnik – vaši AI agenti bodo pridobili sposobnosti:
+- 🌐 Brskanja in interakcije z spletnimi stranmi
+- 📁 Dostopa in upravljanja datotek
+- 🔧 Integracije s poslovnimi sistemi
+- 📊 Obdelave podatkov v realnem času iz API-jev
 
-## 🧠 Understanding Model Context Protocol (MCP)
+## 🧠 Razumevanje Model Context Protocol (MCP)
 
-### 🔍 What is MCP?
+### 🔍 Kaj je MCP?
 
-Model Context Protocol (MCP) is the **"USB-C for AI applications"** — an innovative open standard that connects Large Language Models (LLMs) to external tools, data sources, and services. Just like USB-C unified cables into one connector, MCP simplifies AI integration with a single standardized protocol.
+Model Context Protocol (MCP) je **"USB-C za AI aplikacije"** – revolucionarni odprti standard, ki povezuje velike jezikovne modele (LLM) z zunanjimi orodji, podatkovnimi viri in storitvami. Tako kot je USB-C odpravil zmedo s kabli z enim univerzalnim priključkom, MCP poenostavlja integracijo AI z enim standardiziranim protokolom.
 
-### 🎯 The Problem MCP Solves
+### 🎯 Problem, ki ga MCP rešuje
 
-**Before MCP:**
-- 🔧 Custom integrations for each tool
-- 🔄 Vendor lock-in with proprietary solutions  
-- 🔒 Security risks from ad-hoc connections
-- ⏱️ Months of development for simple integrations
+**Pred MCP:**
+- 🔧 Prilagojene integracije za vsako orodje posebej
+- 🔄 Zaklepanje pri ponudniku z lastniškimi rešitvami  
+- 🔒 Varnostne ranljivosti zaradi ad-hoc povezav
+- ⏱️ Mesece razvoja za osnovne integracije
 
-**With MCP:**
-- ⚡ Plug-and-play tool integration
-- 🔄 Vendor-neutral architecture
-- 🛡️ Built-in security best practices
-- 🚀 Minutes to add new features
+**Z MCP:**
+- ⚡ Plug-and-play integracija orodij
+- 🔄 Neodvisna arhitektura od ponudnikov
+- 🛡️ Vgrajene varnostne prakse
+- 🚀 Dodajanje novih funkcionalnosti v nekaj minutah
 
-### 🏗️ MCP Architecture Deep Dive
+### 🏗️ Podrobna arhitektura MCP
 
-MCP uses a **client-server architecture** that creates a secure, scalable ecosystem:
+MCP sledi **arhitekturi klient-strežnik**, ki ustvarja varen in razširljiv ekosistem:
 
 ```mermaid
 graph TB
@@ -71,203 +71,200 @@ graph TB
     F --> J[Enterprise Systems]
 ```
 
-**🔧 Core Components:**
+**🔧 Glavne komponente:**
 
-| Component      | Role                                | Examples                          |
-|----------------|-----------------------------------|----------------------------------|
-| **MCP Hosts**  | Applications consuming MCP services | Claude Desktop, VS Code, AI Toolkit |
-| **MCP Clients**| Protocol handlers (1:1 with servers) | Built into host applications       |
-| **MCP Servers**| Provide capabilities via standard protocol | Playwright, Files, Azure, GitHub    |
-| **Transport Layer** | Communication methods            | stdio, HTTP, WebSockets             |
+| Komponenta | Vloga | Primeri |
+|------------|-------|---------|
+| **MCP Hosts** | Aplikacije, ki uporabljajo MCP storitve | Claude Desktop, VS Code, AI Toolkit |
+| **MCP Clients** | Upravljalci protokola (1:1 s strežniki) | Vgrajeni v gostiteljske aplikacije |
+| **MCP Servers** | Ponujajo zmogljivosti preko standardnega protokola | Playwright, Files, Azure, GitHub |
+| **Transport Layer** | Načini komunikacije | stdio, HTTP, WebSockets |
 
+## 🏢 Microsoftov MCP strežniški ekosistem
 
-## 🏢 Microsoft's MCP Server Ecosystem
+Microsoft vodi MCP ekosistem s celovito zbirko strežnikov za podjetja, ki pokrivajo resnične poslovne potrebe.
 
-Microsoft leads the MCP ecosystem with a robust set of enterprise-grade servers addressing real business needs.
-
-### 🌟 Featured Microsoft MCP Servers
+### 🌟 Izpostavljeni Microsoftovi MCP strežniki
 
 #### 1. ☁️ Azure MCP Server
-**🔗 Repository**: [azure/azure-mcp](https://github.com/azure/azure-mcp)  
-**🎯 Purpose**: Comprehensive Azure resource management with AI integration
+**🔗 Repozitorij**: [azure/azure-mcp](https://github.com/azure/azure-mcp)  
+**🎯 Namen**: Celovito upravljanje Azure virov z AI integracijo
 
-**✨ Key Features:**
-- Declarative infrastructure provisioning
-- Real-time resource monitoring
-- Cost optimization recommendations
-- Security compliance checks
+**✨ Ključne funkcije:**
+- Deklarativno zagotavljanje infrastrukture
+- Spremljanje virov v realnem času
+- Priporočila za optimizacijo stroškov
+- Preverjanje skladnosti z varnostnimi zahtevami
 
-**🚀 Use Cases:**
-- Infrastructure-as-Code with AI support
-- Automated resource scaling
-- Cloud cost optimization
-- DevOps workflow automation
+**🚀 Primeri uporabe:**
+- Infrastructure-as-Code z AI pomočjo
+- Avtomatsko prilagajanje virov
+- Optimizacija stroškov v oblaku
+- Avtomatizacija DevOps procesov
 
 #### 2. 📊 Microsoft Dataverse MCP
-**📚 Documentation**: [Microsoft Dataverse Integration](https://go.microsoft.com/fwlink/?linkid=2320176)  
-**🎯 Purpose**: Natural language interface for business data
+**📚 Dokumentacija**: [Microsoft Dataverse Integration](https://go.microsoft.com/fwlink/?linkid=2320176)  
+**🎯 Namen**: Naravni jezikovni vmesnik za poslovne podatke
 
-**✨ Key Features:**
-- Natural language database queries
-- Business context understanding
-- Custom prompt templates
-- Enterprise data governance
+**✨ Ključne funkcije:**
+- Poizvedbe v bazi podatkov v naravnem jeziku
+- Razumevanje poslovnega konteksta
+- Prilagojeni predlogi za poizvedbe
+- Upravljanje podatkov v podjetju
 
-**🚀 Use Cases:**
-- Business intelligence reporting
-- Customer data analysis
-- Sales pipeline insights
-- Compliance data queries
+**🚀 Primeri uporabe:**
+- Poslovno poročanje
+- Analiza podatkov o strankah
+- Pregled prodajnega lijaka
+- Poizvedbe skladnosti podatkov
 
 #### 3. 🌐 Playwright MCP Server
-**🔗 Repository**: [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)  
-**🎯 Purpose**: Browser automation and web interaction
+**🔗 Repozitorij**: [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)  
+**🎯 Namen**: Avtomatizacija brskalnika in spletna interakcija
 
-**✨ Key Features:**
-- Cross-browser automation (Chrome, Firefox, Safari)
-- Smart element detection
-- Screenshot and PDF generation
-- Network traffic monitoring
+**✨ Ključne funkcije:**
+- Avtomatizacija v več brskalnikih (Chrome, Firefox, Safari)
+- Pametno zaznavanje elementov
+- Ustvarjanje posnetkov zaslona in PDF-jev
+- Spremljanje omrežnega prometa
 
-**🚀 Use Cases:**
-- Automated testing workflows
-- Web scraping and data extraction
-- UI/UX monitoring
-- Competitive analysis automation
+**🚀 Primeri uporabe:**
+- Avtomatizirani testi
+- Spletno strganje in ekstrakcija podatkov
+- Spremljanje uporabniške izkušnje
+- Avtomatizacija konkurenčne analize
 
 #### 4. 📁 Files MCP Server
-**🔗 Repository**: [microsoft/files-mcp-server](https://github.com/microsoft/files-mcp-server)  
-**🎯 Purpose**: Intelligent file system operations
+**🔗 Repozitorij**: [microsoft/files-mcp-server](https://github.com/microsoft/files-mcp-server)  
+**🎯 Namen**: Pametno upravljanje datotečnega sistema
 
-**✨ Key Features:**
-- Declarative file management
-- Content synchronization
-- Version control integration
-- Metadata extraction
+**✨ Ključne funkcije:**
+- Deklarativno upravljanje datotek
+- Sinhronizacija vsebin
+- Integracija z nadzorom različic
+- Izvleček metapodatkov
 
-**🚀 Use Cases:**
-- Documentation management
-- Code repository organization
-- Content publishing workflows
-- Data pipeline file handling
+**🚀 Primeri uporabe:**
+- Upravljanje dokumentacije
+- Organizacija repozitorijev kode
+- Delovni tokovi objavljanja vsebin
+- Upravljanje datotek v podatkovnih tokovih
 
 #### 5. 📝 MarkItDown MCP Server
-**🔗 Repository**: [microsoft/markitdown](https://github.com/microsoft/markitdown)  
-**🎯 Purpose**: Advanced Markdown processing and manipulation
+**🔗 Repozitorij**: [microsoft/markitdown](https://github.com/microsoft/markitdown)  
+**🎯 Namen**: Napredna obdelava in manipulacija Markdown vsebin
 
-**✨ Key Features:**
-- Rich Markdown parsing
-- Format conversion (MD ↔ HTML ↔ PDF)
-- Content structure analysis
-- Template processing
+**✨ Ključne funkcije:**
+- Napredno razčlenjevanje Markdowna
+- Pretvorba formatov (MD ↔ HTML ↔ PDF)
+- Analiza strukture vsebine
+- Obdelava predlog
 
-**🚀 Use Cases:**
-- Technical documentation workflows
-- Content management systems
-- Report generation
-- Knowledge base automation
+**🚀 Primeri uporabe:**
+- Delovni tokovi tehnične dokumentacije
+- Sistemi za upravljanje vsebin
+- Generiranje poročil
+- Avtomatizacija znanstvenih baz
 
 #### 6. 📈 Clarity MCP Server
-**📦 Package**: [@microsoft/clarity-mcp-server](https://www.npmjs.com/package/@microsoft/clarity-mcp-server)  
-**🎯 Purpose**: Web analytics and user behavior insights
+**📦 Paket**: [@microsoft/clarity-mcp-server](https://www.npmjs.com/package/@microsoft/clarity-mcp-server)  
+**🎯 Namen**: Spletna analitika in vpogledi v vedenje uporabnikov
 
-**✨ Key Features:**
-- Heatmap data analysis
-- User session recordings
-- Performance metrics
-- Conversion funnel analysis
+**✨ Ključne funkcije:**
+- Analiza podatkov toplotnih zemljevidov
+- Snemanje uporabniških sej
+- Merjenje zmogljivosti
+- Analiza konverzijskih lijakov
 
-**🚀 Use Cases:**
-- Website optimization
-- User experience research
-- A/B testing analysis
-- Business intelligence dashboards
+**🚀 Primeri uporabe:**
+- Optimizacija spletnih strani
+- Raziskave uporabniške izkušnje
+- Analiza A/B testov
+- Poslovni nadzorni paneli
 
-### 🌍 Community Ecosystem
+### 🌍 Skupnostni ekosistem
 
-Besides Microsoft’s servers, the MCP ecosystem includes:
-- **🐙 GitHub MCP**: Repository management and code analysis
-- **🗄️ Database MCPs**: PostgreSQL, MySQL, MongoDB integrations
-- **☁️ Cloud Provider MCPs**: AWS, GCP, Digital Ocean tools
-- **📧 Communication MCPs**: Slack, Teams, Email integrations
+Poleg Microsoftovih strežnikov MCP ekosistem vključuje:
+- **🐙 GitHub MCP**: Upravljanje repozitorijev in analiza kode
+- **🗄️ Database MCPs**: Integracije PostgreSQL, MySQL, MongoDB
+- **☁️ Cloud Provider MCPs**: Orodja za AWS, GCP, Digital Ocean
+- **📧 Communication MCPs**: Integracije Slack, Teams, Email
 
-## 🛠️ Hands-On Lab: Building a Browser Automation Agent
+## 🛠️ Praktična vaja: Izgradnja agenta za avtomatizacijo brskalnika
 
-**🎯 Project Goal**: Build an intelligent browser automation agent using Playwright MCP server that can navigate websites, extract data, and perform complex web interactions.
+**🎯 Cilj projekta**: Ustvariti inteligentnega agenta za avtomatizacijo brskalnika z uporabo Playwright MCP strežnika, ki zna brskati po spletnih straneh, izluščiti informacije in izvajati kompleksne spletne interakcije.
 
-### 🚀 Phase 1: Agent Foundation Setup
+### 🚀 Faza 1: Postavitev temeljev agenta
 
-#### Step 1: Initialize Your Agent
-1. **Open AI Toolkit Agent Builder**  
-2. **Create New Agent** with this configuration:  
-   - **Name**: `BrowserAgent`
-   - **Model**: Choose GPT-4o 
+#### Korak 1: Inicializirajte svojega agenta
+1. **Odprite AI Toolkit Agent Builder**
+2. **Ustvarite novega agenta** z naslednjo konfiguracijo:
+   - **Ime**: `BrowserAgent`
+   - **Model**: Izberite GPT-4o
 
 ![BrowserAgent](../../../../translated_images/BrowserAgent.09c1adde5e136573b64ab1baecd830049830e295eac66cb18bebb85fb386e00a.sl.png)
 
+### 🔧 Faza 2: Delovni tok integracije MCP
 
-### 🔧 Phase 2: MCP Integration Workflow
-
-#### Step 3: Add MCP Server Integration
-1. **Navigate to Tools Section** in Agent Builder
-2. **Click "Add Tool"** to open the integration menu
-3. **Select "MCP Server"** from available options
+#### Korak 3: Dodajte integracijo MCP strežnika
+1. **Pojdite v razdelek Orodja** v Agent Builderju
+2. **Kliknite "Add Tool"** za odprtje menija integracij
+3. **Izberite "MCP Server"** med razpoložljivimi možnostmi
 
 ![AddMCP](../../../../translated_images/AddMCP.afe3308ac20aa94469a5717b632d77b2197b9838a438b05d39aeb2db3ec47ef1.sl.png)
 
-**🔍 Understanding Tool Types:**
-- **Built-in Tools**: Pre-configured AI Toolkit functions
-- **MCP Servers**: External service integrations
-- **Custom APIs**: Your own service endpoints
-- **Function Calling**: Direct model function access
+**🔍 Razumevanje vrst orodij:**
+- **Vgrajena orodja**: Prednastavljene funkcije AI Toolkita
+- **MCP strežniki**: Integracije zunanjih storitev
+- **Lastni API-ji**: Vaši lastni končni točki storitev
+- **Klic funkcij**: Neposreden dostop do funkcij modela
 
-#### Step 4: MCP Server Selection
-1. **Choose "MCP Server"** option to proceed
+#### Korak 4: Izbira MCP strežnika
+1. **Izberite možnost "MCP Server"** za nadaljevanje  
 ![AddMCPServer](../../../../translated_images/AddMCPServer.69b911ccef872cbd0d0c0c2e6a00806916e1673e543b902a23dee23e6ff54b4c.sl.png)
 
-2. **Browse MCP Catalog** to explore available integrations
+2. **Prebrskajte MCP katalog** za razpoložljive integracije  
 ![MCPCatalog](../../../../translated_images/MCPCatalog.a817d053145699006264f5a475f2b48fbd744e43633f656b6453c15a09ba5130.sl.png)
 
+### 🎮 Faza 3: Konfiguracija Playwright MCP
 
-### 🎮 Phase 3: Playwright MCP Configuration
-
-#### Step 5: Select and Configure Playwright
-1. **Click "Use Featured MCP Servers"** to access Microsoft's verified servers
-2. **Select "Playwright"** from the featured list
-3. **Accept Default MCP ID** or customize for your environment
+#### Korak 5: Izberite in konfigurirajte Playwright
+1. **Kliknite "Use Featured MCP Servers"** za dostop do Microsoftovih preverjenih strežnikov
+2. **Izberite "Playwright"** s seznama
+3. **Sprejmite privzeti MCP ID** ali prilagodite za svoje okolje
 
 ![MCPID](../../../../translated_images/MCPID.67d446052979e819c945ff7b6430196ef587f5217daadd3ca52fa9659c1245c9.sl.png)
 
-#### Step 6: Enable Playwright Capabilities
-**🔑 Critical Step**: Select **ALL** available Playwright methods for maximum functionality
+#### Korak 6: Omogočite Playwright zmogljivosti
+**🔑 Ključni korak**: Izberite **VSE** razpoložljive Playwright metode za maksimalno funkcionalnost
 
 ![Tools](../../../../translated_images/Tools.3ea23c447b4d9feccbd7101e6dcf9e27cb0e5273f351995fde62c5abf9a78b4c.sl.png)
 
-**🛠️ Essential Playwright Tools:**
-- **Navigation**: `goto`, `goBack`, `goForward`, `reload`
-- **Interaction**: `click`, `fill`, `press`, `hover`, `drag`
-- **Extraction**: `textContent`, `innerHTML`, `getAttribute`
-- **Validation**: `isVisible`, `isEnabled`, `waitForSelector`
-- **Capture**: `screenshot`, `pdf`, `video`
-- **Network**: `setExtraHTTPHeaders`, `route`, `waitForResponse`
+**🛠️ Ključna Playwright orodja:**
+- **Navigacija**: `goto`, `goBack`, `goForward`, `reload`
+- **Interakcija**: `click`, `fill`, `press`, `hover`, `drag`
+- **Ekstrakcija**: `textContent`, `innerHTML`, `getAttribute`
+- **Validacija**: `isVisible`, `isEnabled`, `waitForSelector`
+- **Zajem**: `screenshot`, `pdf`, `video`
+- **Omrežje**: `setExtraHTTPHeaders`, `route`, `waitForResponse`
 
-#### Step 7: Verify Integration Success
-**✅ Success Indicators:**
-- All tools show up in Agent Builder interface
-- No errors in the integration panel
-- Playwright server status reads "Connected"
+#### Korak 7: Preverite uspešnost integracije
+**✅ Znaki uspeha:**
+- Vsa orodja so vidna v vmesniku Agent Builderja
+- Brez sporočil o napakah v integracijskem panelu
+- Status Playwright strežnika kaže "Connected"
 
 ![AgentTools](../../../../translated_images/AgentTools.053cfb96a17e02199dcc6563010d2b324d4fc3ebdd24889657a6950647a52f63.sl.png)
 
-**🔧 Troubleshooting Common Issues:**
-- **Connection Failed**: Check your internet and firewall settings
-- **Missing Tools**: Confirm all capabilities were selected during setup
-- **Permission Errors**: Make sure VS Code has required system permissions
+**🔧 Pogoste težave in rešitve:**
+- **Povezava ni uspela**: Preverite internetno povezavo in nastavitve požarnega zidu
+- **Manjkajo orodja**: Prepričajte se, da ste izbrali vse zmogljivosti med nastavitvijo
+- **Napake dovoljenj**: Preverite, ali ima VS Code potrebna sistemska dovoljenja
 
-### 🎯 Phase 4: Advanced Prompt Engineering
+### 🎯 Faza 4: Napredno oblikovanje pozivov
 
-#### Step 8: Design Intelligent System Prompts
-Create advanced prompts that fully leverage Playwright’s capabilities:
+#### Korak 8: Oblikujte inteligentne sistemske pozive
+Ustvarite sofisticirane pozive, ki izkoristijo vse zmogljivosti Playwrighta:
 
 ```markdown
 # Web Automation Expert System Prompt
@@ -307,10 +304,10 @@ You are an advanced web automation specialist with deep expertise in browser aut
 - Follow website terms of service
 ```
 
-#### Step 9: Create Dynamic User Prompts
-Build prompts that showcase different features:
+#### Korak 9: Ustvarite dinamične uporabniške pozive
+Oblikujte pozive, ki prikazujejo različne zmogljivosti:
 
-**🌐 Web Analysis Example:**  
+**🌐 Primer spletne analize:**  
 ```markdown
 Navigate to github.com/kinfey and provide a comprehensive analysis including:
 1. Repository structure and organization
@@ -325,58 +322,58 @@ Include screenshots at key steps and provide actionable insights.
 
 ![Prompt](../../../../translated_images/Prompt.bfc846605db4999f4d9c1b09c710ef63cae7b3057444e68bf07240fb142d9f8f.sl.png)
 
-### 🚀 Phase 5: Execution and Testing
+### 🚀 Faza 5: Izvedba in testiranje
 
-#### Step 10: Execute Your First Automation
-1. **Click "Run"** to start the automation  
-2. **Watch Real-time Execution**:  
-   - Chrome browser opens automatically  
-   - Agent navigates to target site  
-   - Screenshots capture key steps  
-   - Analysis results stream live
+#### Korak 10: Zaženite svojo prvo avtomatizacijo
+1. **Kliknite "Run"** za začetek avtomatizacije
+2. **Spremljajte izvajanje v realnem času**:
+   - Samodejno se zažene brskalnik Chrome
+   - Agent navigira do ciljne spletne strani
+   - Posnetki zaslona zajamejo vsak pomemben korak
+   - Rezultati analize se prikažejo sproti
 
 ![Browser](../../../../translated_images/Browser.ec011d0bd64d0d112c8a29bd8cc44c76d0bbfd0b019cb2983ef679328435ce5d.sl.png)
 
-#### Step 11: Analyze Results and Insights
-Review detailed analysis in Agent Builder’s interface:
+#### Korak 11: Analizirajte rezultate in vpoglede
+Preglejte podrobno analizo v vmesniku Agent Builderja:
 
 ![Result](../../../../translated_images/Result.8638f2b6703e9ea6d58d4e4475e39456b6a51d4c787f9bf481bae694d370a69a.sl.png)
 
-### 🌟 Phase 6: Advanced Capabilities and Deployment
+### 🌟 Faza 6: Napredne zmogljivosti in namestitev
 
-#### Step 12: Export and Production Deployment
-Agent Builder offers multiple deployment options:
+#### Korak 12: Izvoz in produkcijska namestitev
+Agent Builder podpira več možnosti namestitve:
 
 ![Code](../../../../translated_images/Code.d9eeeead0b96db0ca19c5b10ad64cfea8c1d0d1736584262970a4d43e1403d13.sl.png)
 
-## 🎓 Module 2 Summary & Next Steps
+## 🎓 Povzetek modula 2 in nadaljnji koraki
 
-### 🏆 Achievement Unlocked: MCP Integration Master
+### 🏆 Dosežek odklenjen: Mojster MCP integracije
 
-**✅ Skills Mastered:**
-- [ ] Understanding MCP architecture and benefits
-- [ ] Navigating Microsoft’s MCP server ecosystem
-- [ ] Integrating Playwright MCP with AI Toolkit
-- [ ] Building advanced browser automation agents
-- [ ] Advanced prompt engineering for web automation
+**✅ Osvojene veščine:**
+- [ ] Razumevanje arhitekture in prednosti MCP
+- [ ] Orientacija v Microsoftovem MCP strežniškem ekosistemu
+- [ ] Integracija Playwright MCP z AI Toolkit
+- [ ] Izgradnja naprednih agentov za avtomatizacijo brskalnika
+- [ ] Napredno oblikovanje pozivov za spletno avtomatizacijo
 
-### 📚 Additional Resources
+### 📚 Dodatni viri
 
-- **🔗 MCP Specification**: [Official Protocol Documentation](https://modelcontextprotocol.io/)
-- **🛠️ Playwright API**: [Complete Method Reference](https://playwright.dev/docs/api/class-playwright)
-- **🏢 Microsoft MCP Servers**: [Enterprise Integration Guide](https://github.com/microsoft/mcp-servers)
-- **🌍 Community Examples**: [MCP Server Gallery](https://github.com/modelcontextprotocol/servers)
+- **🔗 MCP specifikacija**: [Uradna dokumentacija protokola](https://modelcontextprotocol.io/)
+- **🛠️ Playwright API**: [Popoln seznam metod](https://playwright.dev/docs/api/class-playwright)
+- **🏢 Microsoft MCP strežniki**: [Vodnik za integracijo v podjetju](https://github.com/microsoft/mcp-servers)
+- **🌍 Skupnostni primeri**: [Galerija MCP strežnikov](https://github.com/modelcontextprotocol/servers)
 
-**🎉 Congratulations!** You’ve successfully mastered MCP integration and can now build production-ready AI agents with external tool capabilities!
+**🎉 Čestitke!** Uspešno ste osvojili MCP integracijo in lahko zdaj gradite produkcijsko pripravljene AI agente z zmogljivostmi zunanjih orodij!
 
-### 🔜 Continue to Next Module
+### 🔜 Nadaljujte na naslednji modul
 
-Ready to level up your MCP skills? Move on to **[Module 3: Advanced MCP Development with AI Toolkit](../lab3/README.md)** where you’ll learn to:
-- Build your own custom MCP servers
-- Configure and use the latest MCP Python SDK
-- Set up MCP Inspector for debugging
-- Master advanced MCP server development workflows
-- Create a Weather MCP Server from scratch
+Ste pripravljeni nadgraditi svoje MCP znanje? Nadaljujte na **[Modul 3: Napredni razvoj MCP z AI Toolkit](../lab3/README.md)**, kjer se boste naučili:
+- Ustvarjati lastne prilagojene MCP strežnike
+- Konfigurirati in uporabljati najnovejši MCP Python SDK
+- Nastaviti MCP Inspector za odpravljanje napak
+- Obvladati napredne delovne tokove razvoja MCP strežnikov
+- Zgradi Weather MCP strežnik od začetka
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

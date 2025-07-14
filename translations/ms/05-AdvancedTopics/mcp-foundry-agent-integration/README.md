@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:18:36+00:00",
+  "translation_date": "2025-07-13T23:58:50+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "ms"
 }
@@ -13,45 +13,45 @@ Panduan ini menunjukkan cara mengintegrasikan pelayan Model Context Protocol (MC
 
 ## Pengenalan
 
-Model Context Protocol (MCP) adalah standard terbuka yang membolehkan aplikasi AI menyambung dengan selamat ke sumber data dan alat luaran. Apabila digabungkan dengan Azure AI Foundry, MCP membolehkan ejen mengakses dan berinteraksi dengan pelbagai perkhidmatan luaran, API, dan sumber data secara berstandard.
+Model Context Protocol (MCP) adalah piawaian terbuka yang membolehkan aplikasi AI berhubung dengan selamat ke sumber data dan alat luaran. Apabila digabungkan dengan Azure AI Foundry, MCP membolehkan ejen mengakses dan berinteraksi dengan pelbagai perkhidmatan, API, dan sumber data luaran secara berstandard.
 
-Integrasi ini menggabungkan fleksibiliti ekosistem alat MCP dengan rangka kerja ejen Azure AI Foundry yang mantap, menyediakan penyelesaian AI bertaraf perusahaan dengan keupayaan penyesuaian yang meluas.
+Integrasi ini menggabungkan fleksibiliti ekosistem alat MCP dengan rangka kerja ejen Azure AI Foundry yang kukuh, menyediakan penyelesaian AI bertaraf perusahaan dengan keupayaan penyesuaian yang meluas.
 
-**Note:** Jika anda ingin menggunakan MCP dalam Azure AI Foundry Agent Service, buat masa ini hanya wilayah berikut yang disokong: westus, westus2, uaenorth, southindia dan switzerlandnorth
+**Note:** Jika anda ingin menggunakan MCP dalam Perkhidmatan Ejen Azure AI Foundry, buat masa ini hanya wilayah berikut yang disokong: westus, westus2, uaenorth, southindia dan switzerlandnorth
 
 ## Objektif Pembelajaran
 
-Pada akhir panduan ini, anda akan dapat:
+Menjelang akhir panduan ini, anda akan dapat:
 
-- Memahami Model Context Protocol dan manfaatnya  
-- Menyediakan pelayan MCP untuk digunakan dengan ejen Azure AI Foundry  
-- Mencipta dan mengkonfigurasi ejen dengan integrasi alat MCP  
-- Melaksanakan contoh praktikal menggunakan pelayan MCP sebenar  
-- Mengendalikan tindak balas alat dan sitasi dalam perbualan ejen  
+- Memahami Model Context Protocol dan manfaatnya
+- Menyediakan pelayan MCP untuk digunakan dengan ejen Azure AI Foundry
+- Membuat dan mengkonfigurasi ejen dengan integrasi alat MCP
+- Melaksanakan contoh praktikal menggunakan pelayan MCP sebenar
+- Mengendalikan respons alat dan sitasi dalam perbualan ejen
 
 ## Prasyarat
 
-Sebelum memulakan, pastikan anda mempunyai:
+Sebelum bermula, pastikan anda mempunyai:
 
-- Langganan Azure dengan akses AI Foundry  
-- Python 3.10+  
-- Azure CLI dipasang dan dikonfigurasi  
-- Kebenaran yang sesuai untuk mencipta sumber AI  
+- Langganan Azure dengan akses AI Foundry
+- Python 3.10+
+- Azure CLI dipasang dan dikonfigurasi
+- Kebenaran yang sesuai untuk mencipta sumber AI
 
 ## Apakah Model Context Protocol (MCP)?
 
-Model Context Protocol ialah cara berstandard untuk aplikasi AI menyambung ke sumber data dan alat luaran. Manfaat utama termasuk:
+Model Context Protocol adalah cara berstandard untuk aplikasi AI berhubung dengan sumber data dan alat luaran. Manfaat utama termasuk:
 
-- **Integrasi Berstandard**: Antara muka yang konsisten merentasi pelbagai alat dan perkhidmatan  
-- **Keselamatan**: Mekanisme pengesahan dan kebenaran yang selamat  
-- **Fleksibiliti**: Menyokong pelbagai sumber data, API, dan alat tersuai  
-- **Kebolehpanjangan**: Mudah untuk menambah keupayaan dan integrasi baru  
+- **Integrasi Berstandard**: Antara muka konsisten merentas pelbagai alat dan perkhidmatan
+- **Keselamatan**: Mekanisme pengesahan dan kebenaran yang selamat
+- **Fleksibiliti**: Sokongan untuk pelbagai sumber data, API, dan alat tersuai
+- **Kebolehlanjutan**: Mudah untuk menambah keupayaan dan integrasi baru
 
 ## Menyediakan MCP dengan Azure AI Foundry
 
 ### 1. Konfigurasi Persekitaran
 
-Mula-mula, tetapkan pemboleh ubah persekitaran dan kebergantungan anda:
+Mula-mula, tetapkan pembolehubah persekitaran dan kebergantungan anda:
 
 ```python
 import os
@@ -103,9 +103,9 @@ When configuring MCP tools for your agent, you can specify several important par
 ```python
 mcp_tool = {
     "type": "mcp",
-    "server_label": "unique_server_name",      # Pengenal untuk pelayan MCP
+    "server_label": "unique_server_name",      # Pengecam untuk pelayan MCP
     "server_url": "https://api.example.com/mcp", # Titik akhir pelayan MCP
-    "require_approval": "never"                 # Polisi kelulusan: buat masa ini hanya sokong "never" 
+    "require_approval": "never"                 # Polisi kelulusan: buat masa ini hanya menyokong "never"
 }
 ```
 
@@ -167,7 +167,7 @@ def create_mcp_agent_example():
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
             print(f"Run status: {run.status}")
 
-        # Periksa langkah run dan panggilan alat
+        # Periksa langkah-langkah run dan panggilan alat
         run_steps = project_client.agents.run_steps.list(thread_id=thread.id, run_id=run.id)
         for step in run_steps:
             print(f"Run step: {step.id}, status: {step.status}, type: {step.type}")
@@ -187,51 +187,50 @@ def create_mcp_agent_example():
 
 if __name__ == "__main__":
     create_mcp_agent_example()
-  
+
 
 ## Menyelesaikan Masalah Biasa
 
 ### 1. Masalah Sambungan
-- Sahkan URL pelayan MCP boleh diakses  
-- Semak kelayakan pengesahan  
-- Pastikan rangkaian berfungsi  
+- Sahkan URL pelayan MCP boleh diakses
+- Semak kelayakan pengesahan
+- Pastikan sambungan rangkaian stabil
 
 ### 2. Kegagalan Panggilan Alat
-- Semak argumen dan format alat  
-- Periksa keperluan khusus pelayan  
-- Laksanakan pengendalian ralat yang betul  
+- Semak argumen dan format alat
+- Periksa keperluan khusus pelayan
+- Laksanakan pengendalian ralat yang betul
 
 ### 3. Masalah Prestasi
-- Optimumkan kekerapan panggilan alat  
-- Gunakan caching jika sesuai  
-- Pantau masa tindak balas pelayan  
+- Optimumkan kekerapan panggilan alat
+- Gunakan caching jika sesuai
+- Pantau masa tindak balas pelayan
 
 ## Langkah Seterusnya
 
-Untuk meningkatkan lagi integrasi MCP anda:
+Untuk meningkatkan integrasi MCP anda:
 
-1. **Terokai Pelayan MCP Tersuai**: Bangunkan pelayan MCP anda sendiri untuk sumber data proprietari  
-2. **Laksanakan Keselamatan Lanjutan**: Tambah OAuth2 atau mekanisme pengesahan tersuai  
-3. **Pantauan dan Analitik**: Laksanakan logging dan pemantauan penggunaan alat  
-4. **Skalakan Penyelesaian Anda**: Pertimbangkan pengimbangan beban dan seni bina pelayan MCP teragih  
+1. **Terokai Pelayan MCP Tersuai**: Bina pelayan MCP anda sendiri untuk sumber data proprietari
+2. **Laksanakan Keselamatan Lanjutan**: Tambah OAuth2 atau mekanisme pengesahan tersuai
+3. **Pantau dan Analitik**: Laksanakan log dan pemantauan penggunaan alat
+4. **Skalakan Penyelesaian Anda**: Pertimbangkan pengimbangan beban dan seni bina pelayan MCP teragih
 
 ## Sumber Tambahan
 
-- [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-foundry/)  
-- [Model Context Protocol Samples](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)  
-- [Azure AI Foundry Agents Overview](https://learn.microsoft.com/azure/ai-foundry/agents/)  
-- [MCP Specification](https://spec.modelcontextprotocol.io/)  
+- [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-foundry/)
+- [Model Context Protocol Samples](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
+- [Azure AI Foundry Agents Overview](https://learn.microsoft.com/azure/ai-foundry/agents/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
 
 ## Sokongan
 
-Untuk sokongan dan pertanyaan tambahan:  
-- Semak [dokumentasi Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)  
-- Rujuk [sumber komuniti MCP](https://modelcontextprotocol.io/)  
+Untuk sokongan dan pertanyaan tambahan:
+- Semak [dokumentasi Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
+- Lihat [sumber komuniti MCP](https://modelcontextprotocol.io/)
 
-
-## Apa seterusnya
+## Apa yang seterusnya
 
 - [6. Community Contributions](../../06-CommunityContributions/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

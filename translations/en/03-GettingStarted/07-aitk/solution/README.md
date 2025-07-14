@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e9490aedc71f99bc774af57b207a7adb",
-  "translation_date": "2025-06-13T02:30:32+00:00",
+  "translation_date": "2025-07-13T21:44:15+00:00",
   "source_file": "03-GettingStarted/07-aitk/solution/README.md",
   "language_code": "en"
 }
@@ -10,10 +10,10 @@ CO_OP_TRANSLATOR_METADATA:
 # 📘 Assignment Solution: Extending Your Calculator MCP Server with a Square Root Tool
 
 ## Overview
-In this assignment, you improved your calculator MCP server by adding a new tool that calculates the square root of a number. This enhancement enables your AI agent to handle more complex math queries like "What is the square root of 16?" or "Calculate √49," using natural language commands.
+In this assignment, you enhanced your calculator MCP server by adding a new tool that calculates the square root of a number. This addition allows your AI agent to handle more advanced mathematical queries, such as "What is the square root of 16?" or "Calculate √49," using natural language prompts.
 
 ## 🛠️ Implementing the Square Root Tool
-To add this feature, you created a new tool function in your server.py file. Here's the implementation:
+To add this functionality, you defined a new tool function in your server.py file. Here's the implementation:
 
 ```python
 """
@@ -70,11 +70,33 @@ def sqrt(a: float) -> float:
 
 ## 🔍 How It Works
 
-- **Import the `math` module** and use `math.sqrt()` within the `@server.tool()` decorated `sqrt` function.
-- Allowed your AI agent to perform square root calculations through natural language prompts.
-- Practiced adding new tools and restarting the server to incorporate additional functionalities.
+- **Import the `math` module**: To perform mathematical operations beyond basic arithmetic, Python provides the built-in `math` module. This module includes a variety of mathematical functions and constants. By importing it using `import math`, you gain access to functions like `math.sqrt()`, which computes the square root of a number.
+- **Function Definition**: The `@server.tool()` decorator registers the `sqrt` function as a tool accessible by your AI agent.
+- **Input Parameter**: The function accepts a single argument `a` of type `float`.
+- **Error Handling**: If `a` is negative, the function raises a `ValueError` to prevent computing the square root of a negative number, which is not supported by the `math.sqrt()` function.
+- **Return Value**: For non-negative inputs, the function returns the square root of `a` using Python's built-in `math.sqrt()` method.
 
-Feel free to continue experimenting by adding more math tools, such as exponentiation or logarithmic functions, to further expand your agent's capabilities!
+## 🔄 Restarting the Server
+After adding the new `sqrt` tool, it's essential to restart your MCP server to ensure the agent recognizes and can utilize the newly added functionality.
+
+## 💬 Example Prompts to Test the New Tool
+Here are some natural language prompts you can use to test the square root functionality:
+
+- "What is the square root of 25?"
+- "Calculate the square root of 81."
+- "Find the square root of 0."
+- "What is the square root of 2.25?"
+
+These prompts should trigger the agent to invoke the `sqrt` tool and return the correct results.
+
+## ✅ Summary
+By completing this assignment, you've:
+
+- Extended your calculator MCP server with a new `sqrt` tool.
+- Enabled your AI agent to handle square root calculations through natural language prompts.
+- Practiced adding new tools and restarting the server to integrate additional functionalities.
+
+Feel free to experiment further by adding more mathematical tools, such as exponentiation or logarithmic functions, to continue enhancing your agent's capabilities!
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

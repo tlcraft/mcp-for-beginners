@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T16:04:35+00:00",
+  "translation_date": "2025-07-13T22:06:43+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "hk"
 }
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 本地開發與部署
 
-如果你的伺服器是打算在使用者機器上運行並被使用，可以依照以下步驟：
+如果你的伺服器是要在使用者機器上運行並被使用，可以依照以下步驟：
 
 1. **下載伺服器**。如果你不是自己撰寫伺服器，請先下載到你的機器上。
 1. **啟動伺服器程序**：執行你的 MCP 伺服器應用程式。
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 針對 SSE（stdio 類型伺服器不需要此步驟）
 
 1. **設定網路**：確保伺服器在預期的埠口可被存取。
-1. **連接客戶端**：使用本地連線 URL，如 `http://localhost:3000`。
+1. **連接客戶端**：使用本地連線 URL，例如 `http://localhost:3000`。
 
 ## 雲端部署
 
@@ -40,7 +40,7 @@ MCP 伺服器可以部署到多種雲端平台：
 
 - **無伺服器函式**：將輕量級 MCP 伺服器部署為無伺服器函式。
 - **容器服務**：使用 Azure Container Apps、AWS ECS 或 Google Cloud Run 等服務。
-- **Kubernetes**：在 Kubernetes 叢集部署及管理 MCP 伺服器，以達到高可用性。
+- **Kubernetes**：在 Kubernetes 叢集部署並管理 MCP 伺服器，以達到高可用性。
 
 ### 範例：Azure Container Apps
 
@@ -48,7 +48,7 @@ Azure Container Apps 支援部署 MCP 伺服器。此功能仍在開發中，目
 
 以下是操作步驟：
 
-1. 克隆一個 repo：
+1. 複製一個 repo：
 
   ```sh
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git

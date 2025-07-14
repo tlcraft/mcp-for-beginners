@@ -2,21 +2,21 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:46:57+00:00",
+  "translation_date": "2025-07-13T21:11:41+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "el"
 }
 -->
 # Calculator HTTP Streaming Demo
 
-Αυτό το έργο παρουσιάζει το HTTP streaming χρησιμοποιώντας Server-Sent Events (SSE) με Spring Boot WebFlux. Αποτελείται από δύο εφαρμογές:
+Αυτό το έργο παρουσιάζει HTTP streaming χρησιμοποιώντας Server-Sent Events (SSE) με Spring Boot WebFlux. Αποτελείται από δύο εφαρμογές:
 
-- **Calculator Server**: Μια αντιδραστική web υπηρεσία που εκτελεί υπολογισμούς και μεταδίδει αποτελέσματα μέσω SSE
-- **Calculator Client**: Μια εφαρμογή πελάτη που καταναλώνει το streaming endpoint
+- **Calculator Server**: Μια αντιδραστική web υπηρεσία που εκτελεί υπολογισμούς και μεταδίδει αποτελέσματα μέσω SSE  
+- **Calculator Client**: Μια πελατειακή εφαρμογή που καταναλώνει το streaming endpoint
 
-## Απαιτήσεις
+## Προαπαιτούμενα
 
-- Java 17 ή νεότερη έκδοση
+- Java 17 ή νεότερη έκδοση  
 - Maven 3.6 ή νεότερη έκδοση
 
 ## Δομή Έργου
@@ -37,14 +37,14 @@ java/
 
 ## Πώς Λειτουργεί
 
-1. Ο **Calculator Server** εκθέτει το `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. Ο **Calculator Server** εκθέτει ένα endpoint `/calculate` που:  
+   - Δέχεται παραμέτρους ερωτήματος: `a` (αριθμός), `b` (αριθμός), `op` (λειτουργία)  
+   - Υποστηριζόμενες λειτουργίες: `add`, `sub`, `mul`, `div`  
+   - Επιστρέφει Server-Sent Events με την πρόοδο του υπολογισμού και το αποτέλεσμα
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
-   - Καταναλώνει την απάντηση streaming
+2. Ο **Calculator Client** συνδέεται με τον server και:  
+   - Κάνει αίτημα για τον υπολογισμό `7 * 5`  
+   - Καταναλώνει την streaming απάντηση  
    - Εκτυπώνει κάθε event στην κονσόλα
 
 ## Εκτέλεση των Εφαρμογών
@@ -63,7 +63,7 @@ mvn spring-boot:run
 
 Ο server θα ξεκινήσει στο `http://localhost:8080`
 
-Θα δεις έξοδο σαν την παρακάτω:
+Θα δεις έξοδο όπως:  
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
@@ -71,7 +71,7 @@ Netty started on port 8080 (http)
 
 #### 2. Εκτέλεση του Calculator Client
 
-Άνοιξε ένα **νέο τερματικό** και πήγαινε στον φάκελο του client:
+Άνοιξε **νέο τερματικό** και πήγαινε στον φάκελο του client:
 
 ```bash
 cd calculator-client
@@ -103,17 +103,17 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 Μπορείς επίσης να δοκιμάσεις τον server χρησιμοποιώντας έναν web browser ή curl:
 
-### Χρήση web browser:
+### Χρήση web browser:  
 Επισκέψου: `http://localhost:8080/calculate?a=10&b=5&op=add`
 
-### Χρήση curl:
+### Χρήση curl:  
 ```bash
 curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-stream"
 ```
 
 ## Αναμενόμενη Έξοδος
 
-Κατά την εκτέλεση του client, θα πρέπει να δεις streaming έξοδο παρόμοια με:
+Κατά την εκτέλεση του client, θα δεις streaming έξοδο παρόμοια με:
 
 ```
 event:info
@@ -125,32 +125,32 @@ data:35.0
 
 ## Υποστηριζόμενες Λειτουργίες
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - Πρόσθεση (a + b)  
+- `sub` - Αφαίρεση (a - b)  
+- `mul` - Πολλαπλασιασμός (a * b)  
+- `div` - Διαίρεση (a / b, επιστρέφει NaN αν b = 0)
 
-## API Reference
+## Αναφορά API
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Παράμετροι:**  
+- `a` (απαραίτητο): Πρώτος αριθμός (double)  
+- `b` (απαραίτητο): Δεύτερος αριθμός (double)  
+- `op` (απαραίτητο): Λειτουργία (`add`, `sub`, `mul`, `div`)
 
-**Response:**
-- Content-Type: `text/event-stream`
+**Απάντηση:**  
+- Content-Type: `text/event-stream`  
 - Επιστρέφει Server-Sent Events με την πρόοδο και το αποτέλεσμα του υπολογισμού
 
-**Παράδειγμα Αιτήματος:**
+**Παράδειγμα Αιτήματος:**  
 ```
 GET /calculate?a=7&b=5&op=mul HTTP/1.1
 Host: localhost:8080
 Accept: text/event-stream
 ```
 
-**Παράδειγμα Απάντησης:**
+**Παράδειγμα Απάντησης:**  
 ```
 event: info
 data: Calculating: 7.0 mul 5.0
@@ -161,42 +161,42 @@ data: 35.0
 
 ## Αντιμετώπιση Προβλημάτων
 
-### Συχνά Προβλήματα
+### Συνηθισμένα Προβλήματα
 
-1. **Η θύρα 8080 χρησιμοποιείται ήδη**
-   - Τερμάτισε οποιαδήποτε άλλη εφαρμογή που χρησιμοποιεί τη θύρα 8080
+1. **Η θύρα 8080 χρησιμοποιείται ήδη**  
+   - Σταμάτησε οποιεσδήποτε άλλες εφαρμογές που χρησιμοποιούν τη θύρα 8080  
    - Ή άλλαξε τη θύρα του server στο `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Απόρριψη σύνδεσης**  
+   - Βεβαιώσου ότι ο server τρέχει πριν ξεκινήσεις τον client  
+   - Έλεγξε ότι ο server ξεκίνησε επιτυχώς στη θύρα 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Προβλήματα με ονόματα παραμέτρων**  
+   - Το έργο περιλαμβάνει ρύθμιση Maven compiler με τη σημαία `-parameters`  
+   - Αν αντιμετωπίσεις προβλήματα με το binding παραμέτρων, βεβαιώσου ότι το έργο έχει χτιστεί με αυτή τη ρύθμιση
 
-### Stopping the Applications
+### Τερματισμός των Εφαρμογών
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` αν τρέχει ως background process
+- Πάτησε `Ctrl+C` στο τερματικό όπου τρέχει κάθε εφαρμογή  
+- Ή χρησιμοποίησε `mvn spring-boot:stop` αν τρέχει ως background process
 
 ## Τεχνολογικό Υπόβαθρο
 
-- **Spring Boot 3.3.1** - Πλαίσιο εφαρμογής
-- **Spring WebFlux** - Αντιδραστικό web framework
-- **Project Reactor** - Βιβλιοθήκη reactive streams
-- **Netty** - Μη αποκλειστικός I/O server
-- **Maven** - Εργαλείο κατασκευής
+- **Spring Boot 3.3.1** - Πλαίσιο εφαρμογής  
+- **Spring WebFlux** - Αντιδραστικό web πλαίσιο  
+- **Project Reactor** - Βιβλιοθήκη reactive streams  
+- **Netty** - Server μη αποκλειστικής εισόδου/εξόδου  
+- **Maven** - Εργαλείο κατασκευής  
 - **Java 17+** - Γλώσσα προγραμματισμού
 
 ## Επόμενα Βήματα
 
-Δοκίμασε να τροποποιήσεις τον κώδικα ώστε να:
-- Προσθέσεις περισσότερες μαθηματικές λειτουργίες
-- Ενσωματώσεις χειρισμό σφαλμάτων για μη έγκυρες λειτουργίες
-- Προσθέσεις καταγραφή αιτημάτων/απαντήσεων
-- Υλοποιήσεις authentication
+Δοκίμασε να τροποποιήσεις τον κώδικα για να:  
+- Προσθέσεις περισσότερες μαθηματικές λειτουργίες  
+- Ενσωματώσεις χειρισμό σφαλμάτων για μη έγκυρες λειτουργίες  
+- Προσθέσεις καταγραφή αιτημάτων/απαντήσεων  
+- Υλοποιήσεις αυθεντικοποίηση  
 - Προσθέσεις unit tests
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρότι επιδιώκουμε την ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η επίσημη πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να γνωρίζετε ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

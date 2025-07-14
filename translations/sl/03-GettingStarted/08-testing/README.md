@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T19:15:07+00:00",
+  "translation_date": "2025-07-13T22:04:34+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "sl"
 }
 -->
 ## Testiranje in odpravljanje napak
 
-Preden začnete s testiranjem vašega MCP strežnika, je pomembno razumeti razpoložljiva orodja in najboljše prakse za odpravljanje napak. Učinkovito testiranje zagotavlja, da vaš strežnik deluje tako, kot je pričakovano, in vam pomaga hitro odkriti ter odpraviti težave. Naslednji razdelek opisuje priporočene pristope za preverjanje vaše MCP implementacije.
+Preden začnete testirati svoj MCP strežnik, je pomembno, da razumete razpoložljiva orodja in najboljše prakse za odpravljanje napak. Učinkovito testiranje zagotavlja, da vaš strežnik deluje tako, kot je pričakovano, in vam pomaga hitro odkriti ter odpraviti težave. Naslednji razdelek opisuje priporočene pristope za preverjanje vaše MCP implementacije.
 
 ## Pregled
 
@@ -17,7 +17,7 @@ Ta lekcija zajema, kako izbrati pravi pristop k testiranju in najučinkovitejše
 
 ## Cilji učenja
 
-Do konca te lekcije boste znali:
+Ob koncu te lekcije boste znali:
 
 - Opisati različne pristope k testiranju.
 - Uporabiti različna orodja za učinkovito testiranje vaše kode.
@@ -26,13 +26,13 @@ Do konca te lekcije boste znali:
 
 MCP ponuja orodja, ki vam pomagajo testirati in odpravljati napake na vaših strežnikih:
 
-- **MCP Inspector**: Orodje ukazne vrstice, ki ga lahko uporabljate tako kot CLI orodje ali kot vizualno orodje.
-- **Ročno testiranje**: Uporabite lahko orodje, kot je curl, za izvajanje spletnih zahtevkov, vendar bo katerokoli orodje, ki podpira HTTP, prav tako ustrezno.
+- **MCP Inspector**: Orodje ukazne vrstice, ki ga lahko uporabljate tako kot CLI orodje kot tudi kot vizualno orodje.
+- **Ročno testiranje**: Lahko uporabite orodje, kot je curl, za izvajanje spletnih zahtev, vendar bo katerokoli orodje, ki podpira HTTP, prav tako ustrezno.
 - **Enotno testiranje**: Možno je uporabiti vaš najljubši testni okvir za testiranje funkcionalnosti tako strežnika kot odjemalca.
 
 ### Uporaba MCP Inspectorja
 
-Uporabo tega orodja smo opisali v prejšnjih lekcijah, a poglejmo ga na splošno. Gre za orodje, napisano v Node.js, ki ga lahko uporabite z zagonom izvršljive datoteke `npx`, ki bo začasno prenesla in namestila orodje ter ga po končanem izvajanju samodejno odstranila.
+Uporabo tega orodja smo opisali v prejšnjih lekcijah, a poglejmo ga na splošno. Gre za orodje, napisano v Node.js, ki ga lahko uporabite z zagonom izvršljive datoteke `npx`, ki bo začasno prenesla in namestila orodje ter ga po končani izvedbi vaše zahteve tudi odstranila.
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) vam pomaga:
 
@@ -46,7 +46,7 @@ Tipičen zagon orodja izgleda takole:
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Zgornji ukaz zažene MCP in njegovo vizualno vmesnik ter odpre lokalni spletni vmesnik v vašem brskalniku. Pričakujete lahko nadzorno ploščo, ki prikazuje vaše registrirane MCP strežnike, njihova razpoložljiva orodja, vire in pozive. Vmesnik omogoča interaktivno testiranje izvajanja orodij, pregled metapodatkov strežnika in ogled odzivov v realnem času, kar olajša preverjanje in odpravljanje napak v implementacijah MCP strežnikov.
+Zgornji ukaz zažene MCP in njegovo vizualno vmesnik ter odpre lokalni spletni vmesnik v vašem brskalniku. Pričakujete lahko nadzorno ploščo, ki prikazuje vaše registrirane MCP strežnike, njihova razpoložljiva orodja, vire in pozive. Vmesnik omogoča interaktivno testiranje izvajanja orodij, pregled metapodatkov strežnika in ogled odzivov v realnem času, kar olajša preverjanje in odpravljanje napak v vaših MCP implementacijah.
 
 Tako lahko izgleda: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sl.png)
 
@@ -60,7 +60,7 @@ npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/lis
 
 Poleg zagona orodja inspector za testiranje zmogljivosti strežnika, je podoben pristop zagon odjemalca, ki podpira HTTP, na primer curl.
 
-S curl lahko neposredno testirate MCP strežnike z uporabo HTTP zahtevkov:
+S curl lahko neposredno testirate MCP strežnike z uporabo HTTP zahtev:
 
 ```bash
 # Example: Test server metadata
@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Kot vidite iz zgornje uporabe curl, uporabite POST zahtevek za klic orodja z uporabo podatkov, ki vsebujejo ime orodja in njegove parametre. Uporabite pristop, ki vam najbolj ustreza. CLI orodja so na splošno hitrejša za uporabo in jih je mogoče avtomatizirati, kar je lahko koristno v CI/CD okolju.
+Kot vidite iz zgornje uporabe curl, uporabite POST zahtevo za klic orodja z uporabo podatkov, ki vsebujejo ime orodja in njegove parametre. Uporabite pristop, ki vam najbolj ustreza. CLI orodja so na splošno hitrejša za uporabo in jih je mogoče avtomatizirati, kar je lahko koristno v CI/CD okolju.
 
 ### Enotno testiranje
 
@@ -139,7 +139,7 @@ Oglejte si [celotno datoteko tukaj](https://github.com/modelcontextprotocol/pyth
 
 Na podlagi zgornje datoteke lahko testirate svoj strežnik, da zagotovite, da so zmogljivosti ustvarjene tako, kot je treba.
 
-Vsi glavni SDK-ji imajo podobne teste, zato jih lahko prilagodite svojemu izbranemu runtime okolju.
+Vsi večji SDK-ji imajo podobne teste, zato jih lahko prilagodite svojemu izbranemu runtime okolju.
 
 ## Primeri
 
@@ -158,4 +158,4 @@ Vsi glavni SDK-ji imajo podobne teste, zato jih lahko prilagodite svojemu izbran
 - Naslednje: [Deployment](../09-deployment/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

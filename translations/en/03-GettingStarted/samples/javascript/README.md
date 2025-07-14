@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0f27f8c14853621d982185e6bbdd1dc6",
-  "translation_date": "2025-05-17T13:19:49+00:00",
+  "translation_date": "2025-07-13T22:33:13+00:00",
   "source_file": "03-GettingStarted/samples/javascript/README.md",
   "language_code": "en"
 }
 -->
 # Sample
 
-This is a JavaScript example for an MCP Server
+This is a JavaScript sample for an MCP Server
 
-Here's how the calculator part looks:
+Here's what the calculator part looks like:
 
 ```javascript
 // Define calculator tools for each operation
@@ -70,7 +70,7 @@ server.tool(
 
 ## Install
 
-Execute the following command:
+Run the following command:
 
 ```bash
 npm install
@@ -83,4 +83,4 @@ npm start
 ```
 
 **Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

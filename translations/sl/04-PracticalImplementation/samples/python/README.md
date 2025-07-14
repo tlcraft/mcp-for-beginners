@@ -2,44 +2,44 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:34:01+00:00",
+  "translation_date": "2025-07-13T23:35:28+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "sl"
 }
 -->
-# Model Context Protocol (MCP) Python Implementation
+# Protokol modelnega konteksta (MCP) Python implementacija
 
-Ta repozitorij vsebuje Python implementacijo Model Context Protocol (MCP), ki prikazuje, kako ustvariti tako strežnik kot odjemalsko aplikacijo, ki komunicirata preko MCP standarda.
+Ta repozitorij vsebuje Python implementacijo protokola modelnega konteksta (MCP), ki prikazuje, kako ustvariti tako strežniško kot odjemalsko aplikacijo, ki komunicirata z uporabo standarda MCP.
 
 ## Pregled
 
-Implementacija MCP sestavlja dve glavni komponenti:
+Implementacija MCP je sestavljena iz dveh glavnih komponent:
 
-1. **MCP Server (`server.py`)** – strežnik, ki ponuja:
-   - **Orodja**: funkcije, ki jih je mogoče klicati na daljavo
-   - **Viri**: podatki, ki jih je mogoče pridobiti
-   - **Pozivi**: predloge za generiranje pozivov za jezikovne modele
+1. **MCP strežnik (`server.py`)** - Strežnik, ki omogoča:
+   - **Orodja**: Funkcije, ki jih je mogoče klicati na daljavo
+   - **Viri**: Podatki, ki jih je mogoče pridobiti
+   - **Pozivi**: Predloge za ustvarjanje pozivov za jezikovne modele
 
-2. **MCP Client (`client.py`)** – odjemalska aplikacija, ki se poveže na strežnik in uporablja njegove funkcije
+2. **MCP odjemalec (`client.py`)** - Odjemalska aplikacija, ki se poveže s strežnikom in uporablja njegove funkcije
 
-## Značilnosti
+## Funkcionalnosti
 
 Ta implementacija prikazuje več ključnih funkcij MCP:
 
 ### Orodja
-- `completion` – generira besedilne dokončave iz AI modelov (simulirano)
-- `add` – preprost kalkulator, ki sešteje dve števili
+- `completion` - Ustvarja besedilne zaključke iz AI modelov (simulirano)
+- `add` - Preprost kalkulator, ki sešteje dve števili
 
 ### Viri
-- `models://` – vrne informacije o razpoložljivih AI modelih
-- `greeting://{name}` – vrne osebno pozdravno sporočilo za dano ime
+- `models://` - Vrne informacije o razpoložljivih AI modelih
+- `greeting://{name}` - Vrne personaliziran pozdrav za dano ime
 
 ### Pozivi
-- `review_code` – generira poziv za pregled kode
+- `review_code` - Ustvari poziv za pregled kode
 
 ## Namestitev
 
-Za uporabo te MCP implementacije namestite potrebne pakete:
+Za uporabo te MCP implementacije namestite zahtevane pakete:
 
 ```powershell
 pip install mcp-server mcp-client
@@ -55,13 +55,13 @@ Strežnik zaženite v enem terminalskem oknu:
 python server.py
 ```
 
-Strežnik lahko zaženete tudi v razvojni različici z uporabo MCP CLI:
+Strežnik lahko zaženete tudi v razvojni načinu z uporabo MCP CLI:
 
 ```powershell
 mcp dev server.py
 ```
 
-Ali ga namestite v Claude Desktop (če je na voljo):
+Ali pa ga namestite v Claude Desktop (če je na voljo):
 
 ```powershell
 mcp install server.py
@@ -75,27 +75,27 @@ Odjemalca zaženite v drugem terminalskem oknu:
 python client.py
 ```
 
-S tem se povežete na strežnik in preizkusite vse razpoložljive funkcije.
+S tem se povežete s strežnikom in preizkusite vse razpoložljive funkcije.
 
 ### Uporaba odjemalca
 
-Odjemalec (`client.py`) prikazuje vse MCP zmogljivosti:
+Odjemalec (`client.py`) prikazuje vse zmogljivosti MCP:
 
 ```powershell
 python client.py
 ```
 
-S tem se povežete na strežnik in preizkusite vse funkcije, vključno z orodji, viri in pozivi. Izpis bo prikazal:
+S tem se povežete s strežnikom in preizkusite vse funkcije, vključno z orodji, viri in pozivi. Izhod bo prikazal:
 
-1. Rezultat kalkulatorja (5 + 7 = 12)
-2. Odgovor orodja za dokončanje na vprašanje "What is the meaning of life?"
+1. Rezultat orodja kalkulatorja (5 + 7 = 12)
+2. Odgovor orodja za dokončanje na vprašanje "Kaj je smisel življenja?"
 3. Seznam razpoložljivih AI modelov
-4. Osebno pozdravno sporočilo za "MCP Explorer"
+4. Personaliziran pozdrav za "MCP Explorer"
 5. Predlogo poziva za pregled kode
 
 ## Podrobnosti implementacije
 
-Strežnik je implementiran z uporabo `FastMCP` API-ja, ki omogoča visoko raven abstrakcije za definiranje MCP storitev. Tukaj je poenostavljen primer definicije orodij:
+Strežnik je implementiran z uporabo API-ja `FastMCP`, ki zagotavlja visokorazredne abstrakcije za definiranje MCP storitev. Tukaj je poenostavljen primer, kako so orodja definirana:
 
 ```python
 @mcp.tool()
@@ -113,7 +113,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-Odjemalec uporablja MCP knjižnico za povezavo in klic strežnika:
+Odjemalec uporablja MCP odjemalsko knjižnico za povezavo in klic strežnika:
 
 ```python
 async with stdio_client(server_params) as (reader, writer):
@@ -127,4 +127,4 @@ async with stdio_client(server_params) as (reader, writer):
 Za več informacij o MCP obiščite: https://modelcontextprotocol.io/
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvor nem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Ne odgovarjamo za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

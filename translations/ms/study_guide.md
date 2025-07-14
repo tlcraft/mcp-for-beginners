@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a607d4febc94caee9a12b77795f7fc9a",
-  "translation_date": "2025-06-11T16:48:21+00:00",
+  "translation_date": "2025-07-13T15:16:50+00:00",
   "source_file": "study_guide.md",
   "language_code": "ms"
 }
 -->
-# Model Context Protocol (MCP) למתחילים - מדריך לימוד
+# Model Context Protocol (MCP) untuk Pemula - Panduan Belajar
 
-מדריך לימוד זה מספק סקירה של מבנה התיקייה והתוכן של תוכנית הלימודים "Model Context Protocol (MCP) למתחילים". השתמש במדריך זה כדי לנווט בתיקייה ביעילות ולהפיק את המרב מהמשאבים הזמינים.
+Panduan belajar ini memberikan gambaran keseluruhan tentang struktur dan kandungan repositori untuk kurikulum "Model Context Protocol (MCP) untuk Pemula". Gunakan panduan ini untuk menavigasi repositori dengan cekap dan memanfaatkan sumber yang tersedia dengan sebaiknya.
 
-## סקירת התיקייה
+## Gambaran Keseluruhan Repositori
 
-Model Context Protocol (MCP) הוא מסגרת סטנדרטית לאינטראקציות בין מודלים של בינה מלאכותית ליישומי לקוח. תיקייה זו מציעה תוכנית לימודים מקיפה עם דוגמאות קוד מעשיות ב-C#, Java, JavaScript, Python ו-TypeScript, המתאימה למפתחי AI, אדריכלי מערכות ומהנדסי תוכנה.
+Model Context Protocol (MCP) adalah rangka kerja standard untuk interaksi antara model AI dan aplikasi klien. Repositori ini menyediakan kurikulum menyeluruh dengan contoh kod praktikal dalam C#, Java, JavaScript, Python, dan TypeScript, direka untuk pembangun AI, arkitek sistem, dan jurutera perisian.
 
-## מפת תוכנית לימודים ויזואלית
+## Peta Kurikulum Visual
 
 ```mermaid
 mindmap
@@ -86,112 +86,112 @@ mindmap
       (Production Deployment)
 ```
 
-## מבנה התיקייה
+## Struktur Repositori
 
-התיקייה מחולקת לעשרה חלקים עיקריים, שכל אחד מתמקד בהיבטים שונים של MCP:
+Repositori ini disusun kepada sepuluh bahagian utama, setiap satu memberi tumpuan kepada aspek berbeza MCP:
 
-1. **Introduction (00-Introduction/)**
-   - סקירה של Model Context Protocol
-   - למה סטנדרטיזציה חשובה בצינורות AI
-   - מקרי שימוש מעשיים ויתרונות
+1. **Pengenalan (00-Introduction/)**
+   - Gambaran keseluruhan Model Context Protocol
+   - Mengapa standardisasi penting dalam saluran AI
+   - Kes penggunaan praktikal dan manfaat
 
-2. **Core Concepts (01-CoreConcepts/)**
-   - ארכיטקטורת לקוח-שרת
-   - רכיבי הפרוטוקול המרכזיים
-   - דפוסי הודעות ב-MCP
+2. **Konsep Teras (01-CoreConcepts/)**
+   - Seni bina klien-pelayan
+   - Komponen utama protokol
+   - Corak penghantaran mesej dalam MCP
 
-3. **Security (02-Security/)**
-   - איומי אבטחה במערכות מבוססות MCP
-   - שיטות עבודה מומלצות לאבטחת יישומים
-   - אסטרטגיות אימות והרשאה
+3. **Keselamatan (02-Security/)**
+   - Ancaman keselamatan dalam sistem berasaskan MCP
+   - Amalan terbaik untuk mengamankan pelaksanaan
+   - Strategi pengesahan dan kebenaran
 
-4. **Getting Started (03-GettingStarted/)**
-   - הגדרת סביבה וקונפיגורציה
-   - יצירת שרתי ולקוחות MCP בסיסיים
-   - אינטגרציה עם יישומים קיימים
-   - תת-חלקים לשרת ראשון, לקוח ראשון, לקוח LLM, אינטגרציה עם VS Code, שרת SSE, AI Toolkit, בדיקות ופריסה
+4. **Memulakan (03-GettingStarted/)**
+   - Persediaan dan konfigurasi persekitaran
+   - Membina pelayan dan klien MCP asas
+   - Integrasi dengan aplikasi sedia ada
+   - Subseksyen untuk pelayan pertama, klien pertama, klien LLM, integrasi VS Code, pelayan SSE, AI Toolkit, ujian, dan penyebaran
 
-5. **Practical Implementation (04-PracticalImplementation/)**
-   - שימוש ב-SDKs בשפות תכנות שונות
-   - ניפוי שגיאות, בדיקות וטכניקות אימות
-   - יצירת תבניות פרומפט וזרימות עבודה לשימוש חוזר
-   - פרויקטים לדוגמה עם דוגמאות מימוש
+5. **Pelaksanaan Praktikal (04-PracticalImplementation/)**
+   - Menggunakan SDK dalam pelbagai bahasa pengaturcaraan
+   - Teknik debug, ujian, dan pengesahan
+   - Membina templat prompt dan aliran kerja yang boleh digunakan semula
+   - Projek contoh dengan contoh pelaksanaan
 
-6. **Advanced Topics (05-AdvancedTopics/)**
-   - זרימות עבודה רב-מודליות והרחבות
-   - אסטרטגיות סקיילינג מאובטחות
-   - MCP במערכות ארגוניות
-   - נושאים מיוחדים כולל אינטגרציה עם Azure, רב-מודליות, OAuth2, הקשרים שורשיים, ניתוב, דגימה, סקיילינג, אבטחה, אינטגרציית חיפוש באינטרנט וזרימה בזמן אמת.
+6. **Topik Lanjutan (05-AdvancedTopics/)**
+   - Aliran kerja AI multi-modal dan kebolehsambungan
+   - Strategi penskalaan selamat
+   - MCP dalam ekosistem perusahaan
+   - Topik khusus termasuk integrasi Azure, multi-modaliti, OAuth2, konteks akar, penghalaan, pensampelan, penskalaan, keselamatan, integrasi carian web, dan penstriman.
 
-7. **Community Contributions (06-CommunityContributions/)**
-   - איך לתרום קוד ותיעוד
-   - שיתוף פעולה דרך GitHub
-   - שיפורים והערות מהקהילה
+7. **Sumbangan Komuniti (06-CommunityContributions/)**
+   - Cara menyumbang kod dan dokumentasi
+   - Bekerjasama melalui GitHub
+   - Penambahbaikan dan maklum balas yang dipacu komuniti
 
-8. **Lessons from Early Adoption (07-LessonsfromEarlyAdoption/)**
-   - מימושים וסיפורי הצלחה מהשטח
-   - בנייה ופריסה של פתרונות מבוססי MCP
-   - מגמות ומפת דרכים עתידית
+8. **Pengajaran dari Penggunaan Awal (07-LessonsfromEarlyAdoption/)**
+   - Pelaksanaan dunia sebenar dan kisah kejayaan
+   - Membina dan menyebarkan penyelesaian berasaskan MCP
+   - Tren dan peta jalan masa depan
 
-9. **Best Practices (08-BestPractices/)**
-   - כיוונון ביצועים ואופטימיזציה
-   - תכנון מערכות MCP חסינות לתקלות
-   - אסטרטגיות בדיקה וחוסן
+9. **Amalan Terbaik (08-BestPractices/)**
+   - Penalaan prestasi dan pengoptimuman
+   - Reka bentuk sistem MCP tahan ralat
+   - Strategi ujian dan ketahanan
 
-10. **Case Studies (09-CaseStudy/)**
-    - ניתוחים מעמיקים של ארכיטקטורות פתרונות MCP
-    - תבניות פריסה וטיפים לאינטגרציה
-    - דיאגרמות מפורטות והסברים לפרויקטים
+10. **Kajian Kes (09-CaseStudy/)**
+    - Analisis mendalam seni bina penyelesaian MCP
+    - Pelan penyebaran dan petua integrasi
+    - Rajah beranotasi dan panduan projek
 
-11. **Hands-on Workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - סדנה מעשית מקיפה המשלבת MCP עם Microsoft AI Toolkit ל-VS Code
-    - בניית יישומים חכמים שמקשרים בין מודלי AI לכלים מעשיים
-    - מודולים פרקטיים הכוללים יסודות, פיתוח שרת מותאם ופריסת ייצור
+11. **Bengkel Praktikal (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
+    - Bengkel praktikal menyeluruh menggabungkan MCP dengan AI Toolkit Microsoft untuk VS Code
+    - Membina aplikasi pintar yang menghubungkan model AI dengan alat dunia sebenar
+    - Modul praktikal merangkumi asas, pembangunan pelayan tersuai, dan strategi penyebaran produksi
 
-## פרויקטים לדוגמה
+## Projek Contoh
 
-בתיקייה קיימים מספר פרויקטים לדוגמה המדגימים מימוש MCP בשפות תכנות שונות:
+Repositori ini mengandungi pelbagai projek contoh yang menunjukkan pelaksanaan MCP dalam pelbagai bahasa pengaturcaraan:
 
-### דוגמאות בסיסיות למחשבון MCP
-- דוגמת שרת MCP ב-C#
-- מחשבון MCP ב-Java
-- דמו MCP ב-JavaScript
-- שרת MCP ב-Python
-- דוגמה ב-TypeScript
+### Contoh Kalkulator MCP Asas
+- Contoh Pelayan MCP C#
+- Kalkulator MCP Java
+- Demo MCP JavaScript
+- Pelayan MCP Python
+- Contoh MCP TypeScript
 
-### פרויקטים מתקדמים למחשבון MCP
-- דוגמה מתקדמת ב-C#
-- אפליקציית מכולה ב-Java
-- דוגמה מתקדמת ב-JavaScript
-- מימוש מורכב ב-Python
-- דוגמת מכולה ב-TypeScript
+### Projek Kalkulator MCP Lanjutan
+- Contoh C# Lanjutan
+- Contoh Aplikasi Kontena Java
+- Contoh Lanjutan JavaScript
+- Pelaksanaan Kompleks Python
+- Contoh Kontena TypeScript
 
-## משאבים נוספים
+## Sumber Tambahan
 
-התיקייה כוללת משאבים תומכים:
+Repositori ini termasuk sumber sokongan:
 
-- **תיקיית Images**: מכילה דיאגרמות ואיורים לאורך כל התוכנית
-- **תרגומים**: תמיכה בריבוי שפות עם תרגומים אוטומטיים של התיעוד
-- **משאבים רשמיים של MCP**:
+- **Folder Imej**: Mengandungi rajah dan ilustrasi yang digunakan sepanjang kurikulum
+- **Terjemahan**: Sokongan pelbagai bahasa dengan terjemahan automatik dokumentasi
+- **Sumber Rasmi MCP**:
   - [MCP Documentation](https://modelcontextprotocol.io/)
   - [MCP Specification](https://spec.modelcontextprotocol.io/)
   - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
 
-## איך להשתמש בתיקייה זו
+## Cara Menggunakan Repositori Ini
 
-1. **למידה בסדר כרונולוגי**: עקבו אחרי הפרקים בסדר (00 עד 10) ללמידה מסודרת.
-2. **מיקוד בשפה ספציפית**: אם אתם מעוניינים בשפת תכנות מסוימת, בדקו את תיקיות הדוגמאות למימושים בשפה המועדפת עליכם.
-3. **מימוש מעשי**: התחילו ב-"Getting Started" כדי להגדיר את הסביבה וליצור את שרת ולקוח MCP הראשונים שלכם.
-4. **חקירה מתקדמת**: לאחר שתרגישו בנוח עם הבסיס, עברו לנושאים המתקדמים להרחבת הידע.
-5. **מעורבות בקהילה**: הצטרפו ל-[Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) כדי להתחבר למומחים ולמפתחים נוספים.
+1. **Pembelajaran Berurutan**: Ikuti bab mengikut urutan (00 hingga 10) untuk pengalaman pembelajaran yang tersusun.
+2. **Fokus Bahasa Tertentu**: Jika berminat dengan bahasa pengaturcaraan tertentu, terokai direktori contoh untuk pelaksanaan dalam bahasa pilihan anda.
+3. **Pelaksanaan Praktikal**: Mulakan dengan bahagian "Memulakan" untuk menyediakan persekitaran dan membina pelayan serta klien MCP pertama anda.
+4. **Eksplorasi Lanjutan**: Setelah selesa dengan asas, terokai topik lanjutan untuk memperluas pengetahuan anda.
+5. **Penglibatan Komuniti**: Sertai [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) untuk berhubung dengan pakar dan pembangun lain.
 
-## תרומה
+## Menyumbang
 
-תיקייה זו מקבלת בברכה תרומות מהקהילה. ראו את החלק Community Contributions לקבלת הנחיות כיצד לתרום.
+Repositori ini mengalu-alukan sumbangan daripada komuniti. Lihat bahagian Sumbangan Komuniti untuk panduan cara menyumbang.
 
 ---
 
-*מדריך לימוד זה נוצר ב-11 ביוני 2025, ומספק סקירה של התיקייה נכון לתאריך זה. ייתכן שתוכן התיקייה עודכן מאז.*
+*Panduan belajar ini dibuat pada 11 Jun 2025, dan memberikan gambaran keseluruhan repositori sehingga tarikh tersebut. Kandungan repositori mungkin telah dikemas kini sejak itu.*
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-17T12:07:13+00:00",
+  "translation_date": "2025-07-13T20:18:26+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "ar"
 }
 -->
-# تشغيل هذا النموذج
+# تشغيل هذا المثال
 
 ## -1- تثبيت التبعيات
 
@@ -15,40 +15,40 @@ CO_OP_TRANSLATOR_METADATA:
 npm install
 ```
 
-## -3- تشغيل النموذج
+## -3- تشغيل المثال
 
 ```bash
 npm run build
 ```
 
-## -4- اختبار النموذج
+## -4- اختبار المثال
 
-مع تشغيل الخادم في نافذة طرفية واحدة، افتح نافذة طرفية أخرى وشغل الأمر التالي:
+مع تشغيل الخادم في نافذة طرفية واحدة، افتح نافذة طرفية أخرى وقم بتشغيل الأمر التالي:
 
 ```bash
 npm run inspector
 ```
 
-يجب أن يبدأ هذا خادم ويب بواجهة بصرية تتيح لك اختبار النموذج.
+يجب أن يبدأ هذا خادم ويب بواجهة مرئية تتيح لك اختبار المثال.
 
 بمجرد اتصال الخادم:
 
-- حاول سرد الأدوات وتشغيل `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- جرب عرض الأدوات وتشغيل `add` مع الوسيطين 2 و4، يجب أن ترى النتيجة 6.
+- انتقل إلى الموارد وقالب الموارد واستدعِ "greeting"، اكتب اسمًا وسترى تحية تحتوي على الاسم الذي أدخلته.
 
-### Testing in CLI mode
+### الاختبار في وضع CLI
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+المفتش الذي قمت بتشغيله هو في الواقع تطبيق Node.js و`mcp dev` هو غلاف حوله.
 
-- Start up the server with the command `npm run build`.
+- ابدأ الخادم بالأمر `npm run build`.
 
-- في نافذة طرفية منفصلة، شغل الأمر التالي:
+- في نافذة طرفية منفصلة، شغّل الأمر التالي:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    سيقوم هذا بسرد جميع الأدوات المتاحة في الخادم. يجب أن ترى المخرجات التالية:
+    سيعرض هذا جميع الأدوات المتاحة في الخادم. يجب أن ترى المخرجات التالية:
 
     ```text
     {
@@ -79,7 +79,7 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     }
     ```
 
-- استدعاء نوع الأداة عن طريق كتابة الأمر التالي:
+- استدعِ نوع أداة بكتابة الأمر التالي:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
@@ -99,8 +99,8 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     ```
 
 > ![!TIP]
-> عادةً ما يكون أسرع بكثير تشغيل المفتش في وضع CLI مقارنةً بالمتصفح.
+> عادةً ما يكون تشغيل المفتش في وضع CLI أسرع بكثير من تشغيله في المتصفح.
 > اقرأ المزيد عن المفتش [هنا](https://github.com/modelcontextprotocol/inspector).
 
 **إخلاء المسؤولية**:  
-تمت ترجمة هذه الوثيقة باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار الوثيقة الأصلية بلغتها الأصلية المصدر الموثوق. بالنسبة للمعلومات الحساسة، يُوصى بالترجمة البشرية الاحترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة تنشأ عن استخدام هذه الترجمة.
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

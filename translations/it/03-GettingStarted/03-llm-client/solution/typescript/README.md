@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6d6315e03f591fb5a39be91da88585dc",
-  "translation_date": "2025-05-17T10:55:13+00:00",
+  "translation_date": "2025-07-13T19:19:41+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/typescript/README.md",
   "language_code": "it"
 }
 -->
 # Esecuzione di questo esempio
 
-Questo esempio prevede la presenza di un LLM sul client. L'LLM richiede che tu esegua questo esempio in un Codespaces o che tu configuri un token di accesso personale su GitHub per funzionare.
+Questo esempio prevede l’utilizzo di un LLM sul client. L’LLM richiede che tu esegua questo in un Codespaces oppure che configuri un token di accesso personale su GitHub per farlo funzionare.
 
 ## -1- Installa le dipendenze
 
@@ -17,13 +17,13 @@ Questo esempio prevede la presenza di un LLM sul client. L'LLM richiede che tu e
 npm install
 ```
 
-## -3- Esegui il server
+## -3- Avvia il server
 
 ```bash
 npm run build
 ```
 
-## -4- Esegui il client
+## -4- Avvia il client
 
 ```sh
 npm run client
@@ -41,4 +41,4 @@ Tool result:  { content: [ { type: 'text', text: '5' } ] }
 ```
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Anche se ci impegniamo per l'accuratezza, si prega di essere consapevoli che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua madre dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali malintesi o interpretazioni errate derivanti dall'uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

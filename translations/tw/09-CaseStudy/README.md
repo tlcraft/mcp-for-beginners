@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T16:07:43+00:00",
+  "translation_date": "2025-07-14T05:42:39+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "tw"
 }
 -->
 # MCP 實戰：真實案例研究
 
-Model Context Protocol (MCP) 正在改變 AI 應用程式與資料、工具及服務互動的方式。本節將介紹多個真實案例，展示 MCP 在各種企業場景中的實際應用。
+Model Context Protocol (MCP) 正在改變 AI 應用程式與資料、工具及服務的互動方式。本節將介紹多個真實案例，展示 MCP 在各種企業場景中的實際應用。
 
 ## 概覽
 
@@ -29,7 +29,7 @@ Model Context Protocol (MCP) 正在改變 AI 應用程式與資料、工具及�
 
 ### 1. [Azure AI 旅遊代理人 – 參考實作](./travelagentsample.md)
 
-本案例探討微軟的完整參考解決方案，展示如何利用 MCP、Azure OpenAI 與 Azure AI Search 建構多代理人 AI 驅動的旅遊規劃應用。專案重點包括：
+本案例探討微軟的完整參考解決方案，展示如何利用 MCP、Azure OpenAI 及 Azure AI Search 建構多代理人 AI 旅遊規劃應用。專案重點包括：
 
 - 透過 MCP 進行多代理人協調
 - 與 Azure AI Search 整合企業資料
@@ -48,22 +48,22 @@ Model Context Protocol (MCP) 正在改變 AI 應用程式與資料、工具及�
 - 建立可重複使用的自動化流程
 - 整合跨系統資料
 
-此範例說明即使是相對簡單的 MCP 實作，也能透過自動化例行任務與提升資料一致性，帶來顯著的效率提升。
+此範例說明即使是相對簡單的 MCP 實作，也能透過自動化例行任務及提升資料一致性，帶來顯著的效率提升。
 
 ### 3. [使用 MCP 即時文件檢索](./docs-mcp/README.md)
 
-本案例引導您如何將 Python 主控台客戶端連接至 Model Context Protocol (MCP) 伺服器，以檢索並記錄即時、具上下文感知的 Microsoft 文件。您將學習：
+本案例引導您如何將 Python 主控台客戶端連接至 Model Context Protocol (MCP) 伺服器，以檢索並記錄即時且具上下文感知的 Microsoft 文件。您將學習如何：
 
-- 使用 Python 客戶端與官方 MCP SDK 連接 MCP 伺服器
+- 使用 Python 客戶端及官方 MCP SDK 連接 MCP 伺服器
 - 利用串流 HTTP 客戶端高效取得即時資料
 - 呼叫伺服器上的文件工具並直接將回應記錄至主控台
 - 在不離開終端機的情況下，將最新 Microsoft 文件整合至工作流程
 
-本章包含實作練習、最小可行程式碼範例及進階學習資源連結。請參閱連結章節的完整教學與程式碼，了解 MCP 如何改變文件存取與開發者在主控台環境中的生產力。
+本章包含實作練習、最小可用程式碼範例及進階學習資源連結。請參閱連結章節的完整教學與程式碼，了解 MCP 如何改變文件存取及提升主控台環境下的開發者生產力。
 
 ### 4. [使用 MCP 的互動式學習計畫產生器網頁應用](./docs-mcp/README.md)
 
-本案例展示如何利用 Chainlit 與 Model Context Protocol (MCP) 建立互動式網頁應用，為任意主題生成個人化學習計畫。使用者可指定主題（如「AI-900 認證」）及學習週期（例如 8 週），應用將提供逐週推薦內容。Chainlit 創造對話式聊天介面，使體驗更具互動性與適應性。
+本案例展示如何利用 Chainlit 與 Model Context Protocol (MCP) 建立互動式網頁應用，為任一主題生成個人化學習計畫。使用者可指定主題（如「AI-900 認證」）及學習時長（例如 8 週），應用程式將提供逐週的推薦內容。Chainlit 創造對話式聊天介面，使體驗更具互動性與適應性。
 
 - 由 Chainlit 支援的對話式網頁應用
 - 使用者主導的主題與時長輸入
@@ -87,7 +87,7 @@ Model Context Protocol (MCP) 正在改變 AI 應用程式與資料、工具及�
 - 以截圖說明編輯器內的使用體驗
 - 結合 Copilot 與 MCP 的生產力提升技巧
 
-此場景非常適合課程作者、文件撰寫者及開發者，讓他們在編輯器中專注工作，同時使用文件、Copilot 與驗證工具，全部由 MCP 驅動。
+此情境非常適合課程作者、文件撰寫者及開發者，讓他們在編輯器中專注工作，同時使用文件、Copilot 及驗證工具，全部由 MCP 驅動。
 
 ### 6. [APIM MCP 伺服器建立](./apimsample.md)
 
@@ -104,7 +104,7 @@ Model Context Protocol (MCP) 正在改變 AI 應用程式與資料、工具及�
 
 這些案例突顯了 Model Context Protocol 在真實場景中的多樣性與實用性。從複雜的多代理人系統到針對性自動化工作流程，MCP 提供了一種標準化方式，連結 AI 系統與所需的工具及資料，創造價值。
 
-透過研究這些實作，您可以獲得架構模式、實施策略與最佳實踐的寶貴見解，並應用於自身的 MCP 專案。這些範例證明 MCP 不僅是理論框架，更是解決實際商業挑戰的實用方案。
+透過研究這些實作，您可以獲得架構模式、實施策略及最佳實踐的寶貴見解，並應用於自己的 MCP 專案。這些範例證明 MCP 不僅是理論框架，更是解決實際商業挑戰的實用方案。
 
 ## 其他資源
 
@@ -117,4 +117,4 @@ Model Context Protocol (MCP) 正在改變 AI 應用程式與資料、工具及�
 下一步：實作實驗室 [Streamlining AI Workflows: Building an MCP Server with AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

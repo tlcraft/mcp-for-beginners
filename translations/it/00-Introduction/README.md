@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "105c2ddbb77bc38f7e9df009e1b06e45",
-  "translation_date": "2025-07-04T17:03:50+00:00",
+  "translation_date": "2025-07-13T15:31:53+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "it"
 }
@@ -34,7 +34,7 @@ Con l’aumento della complessità delle applicazioni di AI generativa, è fonda
 Al termine di questo articolo, sarai in grado di:
 
 - Definire il **Model Context Protocol (MCP)** e i suoi casi d’uso
-- Comprendere come MCP standardizza la comunicazione tra modelli e strumenti
+- Comprendere come MCP standardizza la comunicazione modello-strumento
 - Identificare i componenti principali dell’architettura MCP
 - Esplorare applicazioni reali di MCP in contesti aziendali e di sviluppo
 
@@ -55,7 +55,7 @@ Prima di MCP, integrare modelli con strumenti richiedeva:
 
 | **Vantaggio**            | **Descrizione**                                                                 |
 |--------------------------|---------------------------------------------------------------------------------|
-| Interoperabilità         | Gli LLM funzionano senza problemi con strumenti di diversi fornitori           |
+| Interoperabilità         | Gli LLM lavorano senza problemi con strumenti di diversi fornitori             |
 | Coerenza                 | Comportamento uniforme su piattaforme e strumenti                              |
 | Riutilizzabilità         | Strumenti costruiti una volta possono essere usati in più progetti e sistemi   |
 | Sviluppo Accelerato      | Riduce i tempi di sviluppo grazie a interfacce standard plug-and-play          |
@@ -144,7 +144,7 @@ graph TD
 
 I server MCP ti permettono di estendere le capacità degli LLM fornendo dati e funzionalità.
 
-Pronto a provarci? Ecco esempi per creare un semplice MCP server in diversi linguaggi:
+Pronto a provarlo? Ecco esempi per creare un semplice MCP server in diversi linguaggi:
 
 - **Esempio Python**: https://github.com/modelcontextprotocol/python-sdk
 
@@ -162,7 +162,7 @@ MCP abilita una vasta gamma di applicazioni estendendo le capacità AI:
 |----------------------------|---------------------------------------------------------------------------------|
 | Integrazione Dati Aziendali| Collegare gli LLM a database, CRM o strumenti interni                           |
 | Sistemi AI Agentici        | Abilitare agenti autonomi con accesso a strumenti e flussi decisionali          |
-| Applicazioni Multi-modali  | Combinare testo, immagini e audio in un’unica app AI unificata                  |
+| Applicazioni Multi-modali   | Combinare testo, immagini e audio in un’unica app AI unificata                  |
 | Integrazione Dati in Tempo Reale | Integrare dati live nelle interazioni AI per output più accurati e aggiornati |
 
 ### 🧠 MCP = Standard Universale per le Interazioni AI
@@ -173,7 +173,7 @@ Con MCP, uno strumento compatibile (chiamato MCP server) segue uno standard unif
 
 ### 💡 Facilita l’accesso alla conoscenza
 
-Oltre a offrire strumenti, MCP facilita anche l’accesso alla conoscenza. Permette alle applicazioni di fornire contesto ai Large Language Models collegandoli a varie fonti di dati. Per esempio, un MCP server potrebbe rappresentare il repository documentale di un’azienda, consentendo agli agenti di recuperare informazioni rilevanti su richiesta. Un altro server potrebbe gestire azioni specifiche come inviare email o aggiornare record. Dal punto di vista dell’agente, questi sono semplicemente strumenti utilizzabili: alcuni restituiscono dati (contesto di conoscenza), altri eseguono azioni. MCP gestisce entrambi in modo efficiente.
+Oltre a offrire strumenti, MCP facilita anche l’accesso alla conoscenza. Permette alle applicazioni di fornire contesto ai Large Language Models collegandoli a diverse fonti di dati. Per esempio, un MCP server potrebbe rappresentare il repository documentale di un’azienda, consentendo agli agenti di recuperare informazioni rilevanti su richiesta. Un altro server potrebbe gestire azioni specifiche come inviare email o aggiornare record. Dal punto di vista dell’agente, questi sono semplicemente strumenti utilizzabili: alcuni restituiscono dati (contesto di conoscenza), altri eseguono azioni. MCP gestisce entrambi in modo efficiente.
 
 Un agente che si connette a un MCP server apprende automaticamente le capacità disponibili e i dati accessibili tramite un formato standard. Questa standardizzazione consente la disponibilità dinamica degli strumenti. Per esempio, aggiungere un nuovo MCP server al sistema di un agente rende subito utilizzabili le sue funzioni senza necessità di ulteriori personalizzazioni delle istruzioni dell’agente.
 
@@ -210,7 +210,7 @@ graph TD
 
 ### 🔄 Scenari Avanzati MCP con Integrazione LLM lato Client
 
-Oltre all’architettura MCP di base, esistono scenari avanzati in cui sia client che server contengono LLM, permettendo interazioni più sofisticate:
+Oltre all’architettura base MCP, esistono scenari avanzati in cui sia client che server contengono LLM, permettendo interazioni più sofisticate:
 
 ```mermaid
 ---
@@ -308,4 +308,4 @@ Pensa a un’applicazione AI che ti interessa sviluppare.
 Prossimo: [Capitolo 1: Concetti Fondamentali](../01-CoreConcepts/README.md)
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

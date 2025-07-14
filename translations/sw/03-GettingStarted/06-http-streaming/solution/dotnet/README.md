@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:18:53+00:00",
+  "translation_date": "2025-07-13T21:05:47+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "sw"
 }
@@ -23,32 +23,32 @@ dotnet run
 
 ## -3- Jaribu sampuli
 
-Anza terminali tofauti kabla ya kuendesha ifuatayo (hakikisha seva bado inaendelea).
+Anzisha terminali tofauti kabla ya kuendesha ifuatayo (hakikisha server bado inaendelea).
 
-Seva ikiwa inaendeshwa kwenye terminali moja, fungua terminali nyingine na endesha amri ifuatayo:
+Wakati server iko hai katika terminali moja, fungua terminali nyingine na endesha amri ifuatayo:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Hii inapaswa kuanzisha seva ya wavuti yenye kiolesura cha kuona kinachokuwezesha kujaribu sampuli.
+Hii inapaswa kuanzisha server ya wavuti yenye kiolesura cha kuona kinachokuwezesha kujaribu sampuli.
 
-> Hakikisha kwamba **Streamable HTTP** imechaguliwa kama aina ya usafirishaji, na URL ni `http://localhost:3001/mcp`.
+> Hakikisha kuwa **Streamable HTTP** imechaguliwa kama aina ya usafirishaji, na URL ni `http://localhost:3001/mcp`.
 
-Once the server is connected: 
+Mara server itakapounganishwa:
 
-- try listing tools and run `add`, ukiweka vigezo 2 na 4, unapaswa kuona 6 matokeo.
-- nenda kwenye resources na resource template na ita "greeting", andika jina na utapata salamu yenye jina ulilotoa.
+- jaribu kuorodhesha zana na endesha `add`, kwa hoja 2 na 4, unapaswa kuona 6 kama matokeo.
+- nenda kwenye rasilimali na templeti ya rasilimali na piga "greeting", andika jina na utapokea salamu yenye jina ulilotoa.
 
-### Kujaribu katika hali ya CLI
+### Kupima kwa njia ya CLI
 
-Unaweza kuanzisha moja kwa moja katika hali ya CLI kwa kuendesha amri ifuatayo:
+Unaweza kuanzisha moja kwa moja kwa njia ya CLI kwa kuendesha amri ifuatayo:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Hii itaorodhesha zana zote zinazopatikana kwenye seva. Unapaswa kuona matokeo yafuatayo:
+Hii itaorodhesha zana zote zinazopatikana kwenye server. Unapaswa kuona matokeo yafuatayo:
 
 ```text
 {
@@ -101,8 +101,8 @@ Unapaswa kuona matokeo yafuatayo:
 ```
 
 > ![!TIP]
-> Kwa kawaida ni haraka zaidi kuendesha inspector katika hali ya CLI kuliko katika kivinjari.
+> Kwa kawaida ni haraka zaidi kuendesha inspector kwa njia ya CLI kuliko kupitia kivinjari.
 > Soma zaidi kuhusu inspector [hapa](https://github.com/modelcontextprotocol/inspector).
 
-**Tangazo la Kutokujali**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upotovu. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatubebwi jukumu kwa maelewano au tafsiri potofu zitokanazo na matumizi ya tafsiri hii.
+**Kiarifu cha Msamaha**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

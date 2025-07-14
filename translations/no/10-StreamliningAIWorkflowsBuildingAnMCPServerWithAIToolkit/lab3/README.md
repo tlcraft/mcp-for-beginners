@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-06-10T06:13:25+00:00",
+  "translation_date": "2025-07-14T08:15:17+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
   "language_code": "no"
 }
@@ -17,12 +17,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 🎯 Læringsmål
 
-Når du er ferdig med denne laben, vil du kunne:
+Når du er ferdig med denne labben, vil du kunne:
 
-- ✅ Lage tilpassede MCP-servere med AI Toolkit
+- ✅ Lage tilpassede MCP-servere ved hjelp av AI Toolkit
 - ✅ Konfigurere og bruke den nyeste MCP Python SDK (v1.9.3)
 - ✅ Sette opp og bruke MCP Inspector for feilsøking
-- ✅ Feilsøke MCP-servere i både Agent Builder og Inspector
+- ✅ Feilsøke MCP-servere i både Agent Builder og Inspector-miljøer
 - ✅ Forstå avanserte arbeidsflyter for MCP-serverutvikling
 
 ## 📋 Forutsetninger
@@ -30,12 +30,11 @@ Når du er ferdig med denne laben, vil du kunne:
 - Fullført Lab 2 (MCP Grunnleggende)
 - VS Code med AI Toolkit-utvidelsen installert
 - Python 3.10+ miljø
-- Node.js og npm for Inspector-oppsett
+- Node.js og npm for oppsett av Inspector
 
-## 🏗️ Det du skal bygge
+## 🏗️ Hva du skal bygge
 
-I denne laben lager du en **Weather MCP Server** som viser:
-
+I denne labben skal du lage en **Weather MCP Server** som demonstrerer:
 - Tilpasset MCP-serverimplementasjon
 - Integrasjon med AI Toolkit Agent Builder
 - Profesjonelle feilsøkingsarbeidsflyter
@@ -46,20 +45,20 @@ I denne laben lager du en **Weather MCP Server** som viser:
 ## 🔧 Oversikt over kjernekomponenter
 
 ### 🐍 MCP Python SDK  
-Model Context Protocol Python SDK er grunnlaget for å bygge tilpassede MCP-servere. Du vil bruke versjon 1.9.3 med forbedrede feilsøkingsmuligheter.
+Model Context Protocol Python SDK gir grunnlaget for å bygge tilpassede MCP-servere. Du vil bruke versjon 1.9.3 med forbedrede feilsøkingsmuligheter.
 
 ### 🔍 MCP Inspector  
 Et kraftig feilsøkingsverktøy som tilbyr:  
-- Sanntidsovervåkning av server  
+- Sanntidsovervåking av server  
 - Visualisering av verktøykjøring  
-- Nettverksforespørsler/-svar inspeksjon  
-- Interaktiv testmiljø
+- Inspeksjon av nettverksforespørsler/-svar  
+- Interaktivt testmiljø  
 
 ---
 
-## 📖 Steg-for-steg implementering
+## 📖 Trinnvis implementering
 
-### Steg 1: Lag en WeatherAgent i Agent Builder
+### Trinn 1: Opprett en WeatherAgent i Agent Builder
 
 1. **Start Agent Builder** i VS Code via AI Toolkit-utvidelsen  
 2. **Opprett en ny agent** med følgende konfigurasjon:  
@@ -67,20 +66,20 @@ Et kraftig feilsøkingsverktøy som tilbyr:
 
 ![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.no.png)
 
-### Steg 2: Initialiser MCP Server-prosjekt
+### Trinn 2: Initialiser MCP Server-prosjekt
 
 1. **Gå til Tools** → **Add Tool** i Agent Builder  
 2. **Velg "MCP Server"** fra tilgjengelige alternativer  
 3. **Velg "Create A new MCP Server"**  
-4. **Velg `python-weather` malen**  
-5. **Gi serveren et navn:** `weather_mcp`
+4. **Velg malen `python-weather`**  
+5. **Gi serveren navnet:** `weather_mcp`
 
 ![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.no.png)
 
-### Steg 3: Åpne og gå gjennom prosjektet
+### Trinn 3: Åpne og undersøk prosjektet
 
 1. **Åpne det genererte prosjektet** i VS Code  
-2. **Se over prosjektstrukturen:**  
+2. **Gå gjennom prosjektstrukturen:**  
    ```
    weather_mcp/
    ├── src/
@@ -96,35 +95,33 @@ Et kraftig feilsøkingsverktøy som tilbyr:
    └── README.md
    ```
 
-### Steg 4: Oppgrader til nyeste MCP SDK
+### Trinn 4: Oppgrader til nyeste MCP SDK
 
-> **🔍 Hvorfor oppgradere?** Vi ønsker å bruke nyeste MCP SDK (v1.9.3) og Inspector-tjenesten (0.14.0) for flere funksjoner og bedre feilsøking.
+> **🔍 Hvorfor oppgradere?** Vi ønsker å bruke den nyeste MCP SDK (v1.9.3) og Inspector-tjenesten (0.14.0) for forbedrede funksjoner og bedre feilsøking.
 
 #### 4a. Oppdater Python-avhengigheter
 
-**Rediger `pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
+**Rediger `pyproject.toml`:** oppdater [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
 
+#### 4b. Oppdater Inspector-konfigurasjon
 
-#### 4b. Update Inspector Configuration
+**Rediger `inspector/package.json`:** oppdater [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
 
-**Edit `inspector/package.json`:** update [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
+#### 4c. Oppdater Inspector-avhengigheter
 
-#### 4c. Update Inspector Dependencies
+**Rediger `inspector/package-lock.json`:** oppdater [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
 
-**Edit `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
+> **📝 Merk:** Denne filen inneholder omfattende avhengighetsdefinisjoner. Nedenfor vises den essensielle strukturen – fullstendig innhold sikrer korrekt avhengighetsløsning.
 
-> **📝 Note:** This file contains extensive dependency definitions. Below is the essential structure - the full content ensures proper dependency resolution.
+> **⚡ Full Package Lock:** Den komplette package-lock.json inneholder ca. 3000 linjer med avhengighetsdefinisjoner. Ovenfor vises nøkkelstrukturen – bruk den medfølgende filen for fullstendig avhengighetsløsning.
 
+### Trinn 5: Konfigurer VS Code for feilsøking
 
-> **⚡ Full Package Lock:** The complete package-lock.json contains ~3000 lines of dependency definitions. The above shows the key structure - use the provided file for complete dependency resolution.
+*Merk: Vennligst kopier filen i angitt sti for å erstatte tilsvarende lokal fil*
 
-### Step 5: Configure VS Code Debugging
+#### 5a. Oppdater lanseringskonfigurasjon
 
-*Note: Please copy the file in the specified path to replace the corresponding local file*
-
-#### 5a. Update Launch Configuration
-
-**Edit `.vscode/launch.json`:**
+**Rediger `.vscode/launch.json`:**
 
 ```json
 {
@@ -307,7 +304,7 @@ Et kraftig feilsøkingsverktøy som tilbyr:
 
 ## 🚀 Kjøre og teste MCP-serveren din
 
-### Steg 6: Installer avhengigheter
+### Trinn 6: Installer avhengigheter
 
 Etter å ha gjort konfigurasjonsendringene, kjør følgende kommandoer:
 
@@ -322,10 +319,10 @@ cd inspector
 npm install
 ```
 
-### Steg 7: Feilsøk med Agent Builder
+### Trinn 7: Feilsøk med Agent Builder
 
 1. **Trykk F5** eller bruk konfigurasjonen **"Debug in Agent Builder"**  
-2. **Velg sammensatt konfigurasjon** fra feilsøkingspanelet  
+2. **Velg den sammensatte konfigurasjonen** i feilsøkingspanelet  
 3. **Vent på at serveren starter** og Agent Builder åpnes  
 4. **Test din weather MCP-server** med naturlige språkspørsmål
 
@@ -345,15 +342,15 @@ How's the weather like in Seattle
 
 ![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.no.png)
 
-### Steg 8: Feilsøk med MCP Inspector
+### Trinn 8: Feilsøk med MCP Inspector
 
 1. **Bruk konfigurasjonen "Debug in Inspector"** (Edge eller Chrome)  
 2. **Åpne Inspector-grensesnittet** på `http://localhost:6274`  
 3. **Utforsk det interaktive testmiljøet:**  
    - Se tilgjengelige verktøy  
-   - Test kjøring av verktøy  
+   - Test verktøykjøring  
    - Overvåk nettverksforespørsler  
-   - Feilsøk serversvar
+   - Feilsøk serverresponser  
 
 ![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.no.png)
 
@@ -361,29 +358,29 @@ How's the weather like in Seattle
 
 ## 🎯 Viktige læringsresultater
 
-Ved å fullføre denne laben har du:
+Ved å fullføre denne labben har du:
 
-- [x] **Laget en tilpasset MCP-server** med AI Toolkit-maler  
+- [x] **Opprettet en tilpasset MCP-server** ved hjelp av AI Toolkit-maler  
 - [x] **Oppgradert til nyeste MCP SDK** (v1.9.3) for forbedret funksjonalitet  
 - [x] **Konfigurert profesjonelle feilsøkingsarbeidsflyter** for både Agent Builder og Inspector  
 - [x] **Satt opp MCP Inspector** for interaktiv servertesting  
-- [x] **Behersket VS Code feilsøkingskonfigurasjoner** for MCP-utvikling
+- [x] **Behersket VS Code feilsøkingskonfigurasjoner** for MCP-utvikling  
 
 ## 🔧 Avanserte funksjoner utforsket
 
-| Funksjon | Beskrivelse | Bruksområde |
-|---------|-------------|-------------|
-| **MCP Python SDK v1.9.3** | Nyeste protokollimplementasjon | Moderne serverutvikling |
-| **MCP Inspector 0.14.0** | Interaktivt feilsøkingsverktøy | Sanntidstesting av server |
-| **VS Code Debugging** | Integrert utviklingsmiljø | Profesjonell feilsøkingsflyt |
-| **Agent Builder Integrasjon** | Direkte AI Toolkit-tilkobling | Helhetlig agenttesting |
+| Funksjon                  | Beskrivelse                  | Bruksområde                 |
+|---------------------------|-----------------------------|-----------------------------|
+| **MCP Python SDK v1.9.3** | Nyeste protokollimplementasjon | Moderne serverutvikling      |
+| **MCP Inspector 0.14.0**  | Interaktivt feilsøkingsverktøy | Sanntidstesting av server   |
+| **VS Code Debugging**     | Integrert utviklingsmiljø    | Profesjonell feilsøkingsflyt |
+| **Agent Builder Integration** | Direkte AI Toolkit-tilkobling | Helhetlig agenttesting       |
 
 ## 📚 Ekstra ressurser
 
 - [MCP Python SDK Dokumentasjon](https://modelcontextprotocol.io/docs/sdk/python)  
 - [AI Toolkit Utvidelsesguide](https://code.visualstudio.com/docs/ai/ai-toolkit)  
 - [VS Code Feilsøkingsdokumentasjon](https://code.visualstudio.com/docs/editor/debugging)  
-- [Model Context Protocol Spesifikasjon](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [Model Context Protocol Spesifikasjon](https://modelcontextprotocol.io/docs/concepts/architecture)  
 
 ---
 
@@ -391,8 +388,7 @@ Ved å fullføre denne laben har du:
 
 ### 🔜 Fortsett til neste modul
 
-Klar til å bruke MCP-ferdighetene dine i en reell utviklingsarbeidsflyt? Fortsett til **[Modul 4: Praktisk MCP-utvikling - Tilpasset GitHub-klone-server](../lab4/README.md)** hvor du vil:
-
+Klar til å bruke MCP-ferdighetene dine i en ekte utviklingsarbeidsflyt? Fortsett til **[Modul 4: Praktisk MCP-utvikling - Tilpasset GitHub Clone Server](../lab4/README.md)** hvor du vil:  
 - Bygge en produksjonsklar MCP-server som automatiserer GitHub-repositorieoperasjoner  
 - Implementere GitHub-repositorie-kloning via MCP  
 - Integrere tilpassede MCP-servere med VS Code og GitHub Copilot Agent Mode  
@@ -400,4 +396,4 @@ Klar til å bruke MCP-ferdighetene dine i en reell utviklingsarbeidsflyt? Fortse
 - Lære praktisk arbeidsflytautomatisering for utviklere
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk skal betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

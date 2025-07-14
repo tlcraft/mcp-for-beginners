@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:03:28+00:00",
+  "translation_date": "2025-07-13T21:21:35+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "tl"
 }
@@ -13,7 +13,7 @@ Narito kung paano patakbuhin ang klasikong HTTP streaming server at client, pati
 
 ### Pangkalahatang-ideya
 
-- Magse-set up ka ng MCP server na nag-stream ng mga progress notification sa client habang pinoproseso nito ang mga item.
+- Magse-set up ka ng MCP server na mag-stream ng mga notification ng progreso sa client habang pinoproseso nito ang mga item.
 - Ipapakita ng client ang bawat notification nang real time.
 - Saklaw ng gabay na ito ang mga kinakailangan, setup, pagpapatakbo, at pag-troubleshoot.
 
@@ -24,7 +24,7 @@ Narito kung paano patakbuhin ang klasikong HTTP streaming server at client, pati
 
 ### Pag-install at Setup
 
-1. I-clone ang repositoryo o i-download ang mga solution file.
+1. I-clone ang repositoryo o i-download ang mga solution files.
 
    ```pwsh
    git clone https://github.com/microsoft/mcp-for-beginners
@@ -64,7 +64,7 @@ Narito kung paano patakbuhin ang klasikong HTTP streaming server at client, pati
    python server.py
    ```
 
-3. Magsisimula ang server at ipapakita ang:
+3. Magsisimula ang server at ipapakita:
 
    ```
    Starting FastAPI server for classic HTTP streaming...
@@ -80,7 +80,7 @@ Narito kung paano patakbuhin ang klasikong HTTP streaming server at client, pati
    python client.py
    ```
 
-2. Makikita mo ang mga streamed message na naka-print nang sunud-sunod:
+2. Makikita mo ang mga streamed messages na naka-print nang sunud-sunod:
 
    ```text
    Running classic HTTP streaming client...
@@ -103,7 +103,7 @@ Narito kung paano patakbuhin ang klasikong HTTP streaming server at client, pati
    ```pwsh
    python server.py mcp
    ```
-3. Magsisimula ang server at ipapakita ang:
+3. Magsisimula ang server at ipapakita:
    ```
    Starting MCP server with streamable-http transport...
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
@@ -132,20 +132,20 @@ Narito kung paano patakbuhin ang klasikong HTTP streaming server at client, pati
 ### Pangunahing Hakbang sa Implementasyon
 
 1. **Gumawa ng MCP server gamit ang FastMCP.**
-2. **Magdeklara ng tool na nagpoproseso ng listahan at nagpapadala ng mga notification gamit ang `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+2. **Mag-define ng tool na nagpoproseso ng listahan at nagpapadala ng mga notification gamit ang `ctx.info()` o `ctx.log()`.**
+3. **Patakbuhin ang server gamit ang `transport="streamable-http"`.**
+4. **Mag-implement ng client na may message handler para ipakita ang mga notification habang dumarating.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Pagsusuri ng Code
+- Gumagamit ang server ng async functions at MCP context para magpadala ng mga update sa progreso.
+- Nag-implement ang client ng async message handler para i-print ang mga notification at ang panghuling resulta.
 
-### Tips & Troubleshooting
+### Mga Tip at Pag-troubleshoot
 
-- Use `async/await` para sa non-blocking operations.**
-- Laging i-handle ang mga exception sa server at client para sa mas matatag na sistema.
-- Subukan gamit ang maraming client para makita ang real-time na updates.
-- Kung may mga error, suriin ang iyong Python version at siguraduhing naka-install lahat ng dependencies.
+- Gamitin ang `async/await` para sa mga non-blocking na operasyon.
+- Laging i-handle ang mga exceptions sa parehong server at client para sa mas matibay na sistema.
+- Subukan gamit ang maraming client para makita ang mga real-time na update.
+- Kung makaranas ng mga error, suriin ang bersyon ng Python at tiyaking naka-install lahat ng dependencies.
 
-**Pahayag ng Pagsuway**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pinakapinagkukunan ng katotohanan. Para sa mga mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na nagmula sa paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

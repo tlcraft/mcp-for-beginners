@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:16:02+00:00",
+  "translation_date": "2025-07-13T23:56:39+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "sv"
 }
@@ -13,7 +13,7 @@ Denna guide visar hur du integrerar Model Context Protocol (MCP) servrar med Azu
 
 ## Introduktion
 
-Model Context Protocol (MCP) är en öppen standard som gör det möjligt för AI-applikationer att säkert ansluta till externa datakällor och verktyg. När MCP integreras med Azure AI Foundry kan agenter komma åt och interagera med olika externa tjänster, API:er och datakällor på ett standardiserat sätt.
+Model Context Protocol (MCP) är en öppen standard som gör det möjligt för AI-applikationer att säkert ansluta till externa datakällor och verktyg. När MCP integreras med Azure AI Foundry kan agenter få tillgång till och interagera med olika externa tjänster, API:er och datakällor på ett standardiserat sätt.
 
 Denna integration kombinerar flexibiliteten i MCP:s verktygsekosystem med Azure AI Foundrys robusta agentramverk, vilket ger företagsklassade AI-lösningar med omfattande anpassningsmöjligheter.
 
@@ -21,20 +21,20 @@ Denna integration kombinerar flexibiliteten i MCP:s verktygsekosystem med Azure 
 
 ## Lärandemål
 
-I slutet av denna guide kommer du att kunna:
+Efter att ha gått igenom denna guide kommer du att kunna:
 
 - Förstå Model Context Protocol och dess fördelar
 - Sätta upp MCP-servrar för användning med Azure AI Foundry-agenter
 - Skapa och konfigurera agenter med MCP-verktygsintegration
 - Implementera praktiska exempel med riktiga MCP-servrar
-- Hantera verktygssvar och källhänvisningar i agentkonversationer
+- Hantera verktygsrespons och källhänvisningar i agentkonversationer
 
 ## Förutsättningar
 
-Innan du börjar, säkerställ att du har:
+Innan du börjar, se till att du har:
 
-- En Azure-prenumeration med åtkomst till AI Foundry
-- Python 3.10+ 
+- Ett Azure-abonnemang med tillgång till AI Foundry
+- Python 3.10+
 - Azure CLI installerat och konfigurerat
 - Lämpliga behörigheter för att skapa AI-resurser
 
@@ -47,11 +47,11 @@ Model Context Protocol är ett standardiserat sätt för AI-applikationer att an
 - **Flexibilitet**: Stöd för olika datakällor, API:er och anpassade verktyg
 - **Utbyggbarhet**: Lätt att lägga till nya funktioner och integrationer
 
-## Att sätta upp MCP med Azure AI Foundry
+## Konfigurera MCP med Azure AI Foundry
 
 ### 1. Miljökonfiguration
 
-Börja med att konfigurera dina miljövariabler och beroenden:
+Börja med att ställa in dina miljövariabler och beroenden:
 
 ```python
 import os
@@ -80,7 +80,7 @@ with project_client:
     agent = project_client.agents.create_agent(
         model="gpt-4.1-nano", 
         name="mcp_agent", 
-        instructions="Du är en hjälpsam assistent. Använd de tillhandahållna verktygen för att besvara frågor. Var noga med att ange dina källor.",
+        instructions="Du är en hjälpsam assistent. Använd de tillgängliga verktygen för att besvara frågor. Var noga med att ange dina källor.",
         tools=[
             {
                 "type": "mcp",
@@ -104,8 +104,8 @@ When configuring MCP tools for your agent, you can specify several important par
 mcp_tool = {
     "type": "mcp",
     "server_label": "unique_server_name",      # Identifierare för MCP-servern
-    "server_url": "https://api.example.com/mcp", # MCP-serverns endpoint
-    "require_approval": "never"                 # Godkännande policy: stöder för tillfället endast "never"
+    "server_url": "https://api.example.com/mcp", # MCP-serverns slutpunkt
+    "require_approval": "never"                 # Godkännande-policy: stöder för närvarande endast "never"
 }
 ```
 
@@ -133,7 +133,7 @@ def create_mcp_agent_example():
         agent = project_client.agents.create_agent(
             model="gpt-4.1-nano", 
             name="documentation_assistant", 
-            instructions="Du är en hjälpsam assistent specialiserad på Microsoft-dokumentation. Använd Microsoft Learn MCP-servern för att söka efter korrekt och aktuell information. Ange alltid dina källor.",
+            instructions="Du är en hjälpsam assistent specialiserad på Microsoft-dokumentation. Använd Microsoft Learn MCP-servern för att söka efter korrekt och uppdaterad information. Ange alltid dina källor.",
             tools=[
                 {
                     "type": "mcp",
@@ -154,23 +154,23 @@ def create_mcp_agent_example():
         message = project_client.agents.messages.create(
             thread_id=thread.id, 
             role="user", 
-            content="Vad är .NET MAUI? Hur jämför det sig med Xamarin.Forms?",
+            content="Vad är .NET MAUI? Hur skiljer det sig från Xamarin.Forms?",
         )
         print(f"Meddelande skapat, meddelande-ID: {message.id}")
 
         # Kör agenten
         run = project_client.agents.runs.create(thread_id=thread.id, agent_id=agent.id)
         
-        # Poll för slutförande
+        # Vänta på att körningen ska slutföras
         while run.status in ["queued", "in_progress", "requires_action"]:
             time.sleep(1)
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
-            print(f"Körstatus: {run.status}")
+            print(f"Körningsstatus: {run.status}")
 
-        # Granska körsteg och verktygsanrop
+        # Granska körningssteg och verktygsanrop
         run_steps = project_client.agents.run_steps.list(thread_id=thread.id, run_id=run.id)
         for step in run_steps:
-            print(f"Körsteg: {step.id}, status: {step.status}, typ: {step.type}")
+            print(f"Körningssteg: {step.id}, status: {step.status}, typ: {step.type}")
             if step.type == "tool_calls":
                 print("Detaljer om verktygsanrop:")
                 for tool_call in step.step_details.tool_calls:
@@ -193,24 +193,24 @@ if __name__ == "__main__":
 
 ### 1. Anslutningsproblem
 - Kontrollera att MCP-serverns URL är åtkomlig
-- Verifiera autentiseringsuppgifter
+- Kontrollera autentiseringsuppgifter
 - Säkerställ nätverksanslutning
 
 ### 2. Fel vid verktygsanrop
-- Granska verktygsargument och format
+- Granska verktygsargument och formatering
 - Kontrollera serverns specifika krav
 - Implementera korrekt felhantering
 
 ### 3. Prestandaproblem
-- Optimera frekvensen för verktygsanrop
+- Optimera frekvensen av verktygsanrop
 - Använd caching där det är lämpligt
-- Övervaka svarstider från servern
+- Övervaka serverns svarstider
 
 ## Nästa steg
 
-För att förbättra din MCP-integration ytterligare:
+För att ytterligare förbättra din MCP-integration:
 
-1. **Utforska egna MCP-servrar**: Bygg dina egna MCP-servrar för proprietära datakällor
+1. **Utforska egna MCP-servrar**: Bygg egna MCP-servrar för proprietära datakällor
 2. **Implementera avancerad säkerhet**: Lägg till OAuth2 eller anpassade autentiseringsmekanismer
 3. **Övervakning och analys**: Implementera loggning och övervakning av verktygsanvändning
 4. **Skalning av lösningen**: Överväg lastbalansering och distribuerade MCP-serverarkitekturer
@@ -225,12 +225,12 @@ För att förbättra din MCP-integration ytterligare:
 ## Support
 
 För ytterligare support och frågor:
-- Läs igenom [Azure AI Foundry-dokumentationen](https://learn.microsoft.com/azure/ai-foundry/)
-- Kolla in [MCP community-resurser](https://modelcontextprotocol.io/)
+- Granska [Azure AI Foundry-dokumentationen](https://learn.microsoft.com/azure/ai-foundry/)
+- Kolla in [MCP community resources](https://modelcontextprotocol.io/)
 
 ## Vad händer härnäst
 
 - [6. Community Contributions](../../06-CommunityContributions/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För viktig information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.

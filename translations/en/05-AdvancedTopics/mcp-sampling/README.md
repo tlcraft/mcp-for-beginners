@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cb0da3badd51d73ab78ebade2827d98",
-  "translation_date": "2025-06-12T22:56:28+00:00",
+  "translation_date": "2025-07-14T02:18:04+00:00",
   "source_file": "05-AdvancedTopics/mcp-sampling/README.md",
   "language_code": "en"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 For applications that require consistent outputs, deterministic sampling guarantees reproducible results. It achieves this by using a fixed random seed and setting the temperature to zero.
 
-Let's review the sample implementation below to see how deterministic sampling is demonstrated in different programming languages.
+Let's review the sample implementation below to demonstrate deterministic sampling in various programming languages.
 
 ## Dynamic Sampling Configuration
 
-Smart sampling adjusts parameters based on the context and needs of each request. This means dynamically changing parameters like temperature, top_p, and penalties according to the task type, user preferences, or past performance.
+Intelligent sampling adjusts parameters dynamically based on the context and needs of each request. This means modifying parameters like temperature, top_p, and penalties according to the task type, user preferences, or past performance.
 
-Let's explore how to implement dynamic sampling in various programming languages.
+Let's see how to implement dynamic sampling in different programming languages.
 
 ## What's next
 

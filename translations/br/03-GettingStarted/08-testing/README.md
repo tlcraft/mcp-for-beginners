@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T17:02:19+00:00",
+  "translation_date": "2025-07-13T21:59:52+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "br"
 }
@@ -32,13 +32,13 @@ O MCP oferece ferramentas para ajudar a testar e depurar seus servidores:
 
 ### Usando o MCP Inspector
 
-Já descrevemos o uso dessa ferramenta em lições anteriores, mas vamos falar um pouco sobre ela em um nível mais geral. É uma ferramenta construída em Node.js e você pode usá-la chamando o executável `npx`, que fará o download e a instalação temporária da ferramenta, limpando tudo após executar sua requisição.
+Já descrevemos o uso dessa ferramenta em lições anteriores, mas vamos falar um pouco sobre ela em um nível mais geral. É uma ferramenta construída em Node.js e você pode usá-la executando o comando `npx`, que baixa e instala a ferramenta temporariamente e a remove após executar sua requisição.
 
 O [MCP Inspector](https://github.com/modelcontextprotocol/inspector) ajuda você a:
 
-- **Descobrir Capacidades do Servidor**: Detectar automaticamente recursos, ferramentas e prompts disponíveis
-- **Testar Execução de Ferramentas**: Experimentar diferentes parâmetros e ver as respostas em tempo real
-- **Visualizar Metadados do Servidor**: Examinar informações do servidor, esquemas e configurações
+- **Descobrir Capacidades do Servidor**: Detecta automaticamente recursos, ferramentas e prompts disponíveis
+- **Testar Execução de Ferramentas**: Experimente diferentes parâmetros e veja as respostas em tempo real
+- **Visualizar Metadados do Servidor**: Examine informações do servidor, esquemas e configurações
 
 Uma execução típica da ferramenta é assim:
 
@@ -46,7 +46,7 @@ Uma execução típica da ferramenta é assim:
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-O comando acima inicia um MCP e sua interface visual, lançando uma interface web local no seu navegador. Você verá um painel exibindo seus servidores MCP registrados, suas ferramentas, recursos e prompts disponíveis. A interface permite testar a execução das ferramentas de forma interativa, inspecionar metadados do servidor e visualizar respostas em tempo real, facilitando a validação e depuração das implementações do seu servidor MCP.
+O comando acima inicia um MCP e sua interface visual, abrindo uma interface web local no seu navegador. Você verá um painel exibindo seus servidores MCP registrados, suas ferramentas, recursos e prompts disponíveis. A interface permite testar a execução das ferramentas de forma interativa, inspecionar metadados do servidor e visualizar respostas em tempo real, facilitando a validação e depuração das implementações do seu servidor MCP.
 
 Veja como pode ser: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.br.png)
 
@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Como você pode ver no exemplo acima com curl, você usa uma requisição POST para invocar uma ferramenta, enviando um payload com o nome da ferramenta e seus parâmetros. Use a abordagem que melhor se adequar a você. Ferramentas CLI geralmente são mais rápidas de usar e podem ser automatizadas, o que é útil em ambientes de CI/CD.
+Como você pode ver no exemplo acima com curl, você usa uma requisição POST para invocar uma ferramenta, enviando um payload com o nome da ferramenta e seus parâmetros. Use a abordagem que for mais conveniente para você. Ferramentas CLI geralmente são mais rápidas e podem ser automatizadas, o que é útil em ambientes de CI/CD.
 
 ### Teste Unitário
 
@@ -139,7 +139,7 @@ Confira o [arquivo completo aqui](https://github.com/modelcontextprotocol/python
 
 Com base nesse arquivo, você pode testar seu próprio servidor para garantir que as capacidades sejam criadas corretamente.
 
-Todos os principais SDKs possuem seções de teste semelhantes, então você pode adaptar para o runtime escolhido.
+Todos os principais SDKs possuem seções de teste semelhantes, então você pode adaptar para o runtime que escolher.
 
 ## Exemplos
 

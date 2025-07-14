@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-09T23:08:21+00:00",
+  "translation_date": "2025-07-13T18:00:34+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "da"
 }
@@ -61,7 +61,7 @@ Du kan starte den direkte i CLI-tilstand ved at køre følgende kommando:
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Dette vil liste alle værktøjer, der er tilgængelige på serveren. Du skulle se følgende output:
+Dette vil liste alle tilgængelige værktøjer på serveren. Du skulle se følgende output:
 
 ```text
 {

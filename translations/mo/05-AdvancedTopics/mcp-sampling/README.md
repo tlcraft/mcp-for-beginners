@@ -2,30 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cb0da3badd51d73ab78ebade2827d98",
-  "translation_date": "2025-06-12T23:14:16+00:00",
+  "translation_date": "2025-07-14T02:19:36+00:00",
   "source_file": "05-AdvancedTopics/mcp-sampling/README.md",
   "language_code": "mo"
 }
 -->
-## Sampling Deterministik
+## 確定性取樣
 
-Untuk aplikasi yang membutuhkan keluaran yang konsisten, sampling deterministik memastikan hasil yang dapat direproduksi. Caranya adalah dengan menggunakan seed acak tetap dan mengatur temperature ke nol.
+對於需要一致輸出的應用程式，確定性取樣能確保結果可重現。它的做法是使用固定的隨機種子並將溫度設為零。
 
-Mari lihat contoh implementasi di bawah ini untuk mendemonstrasikan sampling deterministik dalam berbagai bahasa pemrograman.
+以下示範程式碼展示如何在不同程式語言中實現確定性取樣。
 
-## Konfigurasi Sampling Dinamis
+## 動態取樣配置
 
-Sampling cerdas menyesuaikan parameter berdasarkan konteks dan kebutuhan setiap permintaan. Ini berarti secara dinamis mengatur parameter seperti temperature, top_p, dan penalti berdasarkan jenis tugas, preferensi pengguna, atau performa historis.
+智慧取樣會根據每次請求的上下文和需求調整參數。這表示會根據任務類型、使用者偏好或歷史表現，動態調整溫度、top_p 和懲罰等參數。
 
-Mari lihat cara mengimplementasikan sampling dinamis dalam berbagai bahasa pemrograman.
+以下示範程式碼展示如何在不同程式語言中實現動態取樣。
 
-## Apa Selanjutnya
+## 接下來的內容
 
-- [5.7 Scaling](../mcp-scaling/README.md)
+- [5.7 擴展](../mcp-scaling/README.md)
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.  
-
----
-
-If you meant a specific language or code by "mo," please clarify so I can assist you accurately.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。

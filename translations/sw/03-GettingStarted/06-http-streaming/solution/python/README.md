@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:03:37+00:00",
+  "translation_date": "2025-07-13T21:21:43+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "sw"
 }
 -->
-# Kuendesha mfano huu
+# Kuendesha sampuli hii
 
-Hapa kuna jinsi ya kuendesha server na client wa classic HTTP streaming, pamoja na server na client wa MCP streaming kwa kutumia Python.
+Hapa kuna jinsi ya kuendesha seva ya kawaida ya HTTP streaming na mteja, pamoja na seva na mteja wa MCP streaming kwa kutumia Python.
 
 ### Muhtasari
 
-- Utaunda server ya MCP inayotuma arifa za maendeleo kwa client wakati inashughulikia vitu.
-- Client itaonyesha kila arifa kwa wakati halisi.
-- Mwongozo huu unajumuisha mahitaji, usanidi, kuendesha, na utatuzi wa matatizo.
+- Utaanzisha seva ya MCP inayotuma taarifa za maendeleo kwa mteja wakati inashughulikia vitu.
+- Mteja ataonyesha kila taarifa kwa wakati halisi.
+- Mwongozo huu unahusu mahitaji ya awali, usanidi, kuendesha, na utatuzi wa matatizo.
 
-### Mahitaji
+### Mahitaji ya Awali
 
 - Python 3.9 au toleo jipya zaidi
 - Kifurushi cha Python `mcp` (weka kwa kutumia `pip install mcp`)
 
-### Usanidi & Ufungaji
+### Usanidi na Ufungaji
 
-1. Nakili repository au pakua faili za suluhisho.
+1. Nakili hifadhidata au pakua faili za suluhisho.
 
    ```pwsh
    git clone https://github.com/microsoft/mcp-for-beginners
    ```
 
-1. **Tengeneza na wezesha virtual environment (inapendekezwa):**
+1. **Tengeneza na wezesha mazingira ya virtual (inapendekezwa):**
 
    ```pwsh
    python -m venv venv
@@ -47,10 +47,10 @@ Hapa kuna jinsi ya kuendesha server na client wa classic HTTP streaming, pamoja 
 
 ### Faili
 
-- **Server:** [server.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/server.py)
-- **Client:** [client.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/client.py)
+- **Seva:** [server.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/server.py)
+- **Mteja:** [client.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/client.py)
 
-### Kuendesha Classic HTTP Streaming Server
+### Kuendesha Seva ya Kawaida ya HTTP Streaming
 
 1. Nenda kwenye saraka ya suluhisho:
 
@@ -58,29 +58,29 @@ Hapa kuna jinsi ya kuendesha server na client wa classic HTTP streaming, pamoja 
    cd 03-GettingStarted/06-http-streaming/solution
    ```
 
-2. Anzisha classic HTTP streaming server:
+2. Anzisha seva ya kawaida ya HTTP streaming:
 
    ```pwsh
    python server.py
    ```
 
-3. Server itaanzishwa na kuonyesha:
+3. Seva itaanza na kuonyesha:
 
    ```
    Starting FastAPI server for classic HTTP streaming...
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### Kuendesha Classic HTTP Streaming Client
+### Kuendesha Mteja wa Kawaida wa HTTP Streaming
 
-1. Fungua terminal mpya (wezeshaji virtual environment na saraka sawa):
+1. Fungua terminal mpya (wezeshaji mazingira ya virtual na saraka ile ile):
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py
    ```
 
-2. Utapata ujumbe uliotumwa ukiandikwa mfululizo:
+2. Unapaswa kuona ujumbe unaotiririka ukichapishwa mfululizo:
 
    ```text
    Running classic HTTP streaming client...
@@ -93,30 +93,30 @@ Hapa kuna jinsi ya kuendesha server na client wa classic HTTP streaming, pamoja 
    --- Stream Ended ---
    ```
 
-### Kuendesha MCP Streaming Server
+### Kuendesha Seva ya MCP Streaming
 
 1. Nenda kwenye saraka ya suluhisho:
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
-2. Anzisha MCP server kwa kutumia usafirishaji wa streamable-http:
+2. Anzisha seva ya MCP kwa kutumia usafirishaji wa streamable-http:
    ```pwsh
    python server.py mcp
    ```
-3. Server itaanzishwa na kuonyesha:
+3. Seva itaanza na kuonyesha:
    ```
    Starting MCP server with streamable-http transport...
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### Kuendesha MCP Streaming Client
+### Kuendesha Mteja wa MCP Streaming
 
-1. Fungua terminal mpya (wezeshaji virtual environment na saraka sawa):
+1. Fungua terminal mpya (wezeshaji mazingira ya virtual na saraka ile ile):
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. Utapata arifa zikichapishwa kwa wakati halisi wakati server inashughulikia kila kipengee:
+2. Unapaswa kuona taarifa zikichapishwa kwa wakati halisi wakati seva inashughulikia kila kipengee:
    ```
    Running MCP client...
    Starting client...
@@ -131,21 +131,21 @@ Hapa kuna jinsi ya kuendesha server na client wa classic HTTP streaming, pamoja 
 
 ### Hatua Muhimu za Utekelezaji
 
-1. **Tengeneza MCP server ukitumia FastMCP.**
-2. **Fafanua zana inayoshughulikia orodha na kutuma arifa kwa kutumia `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+1. **Tengeneza seva ya MCP kwa kutumia FastMCP.**
+2. **Fafanua chombo kinachoshughulikia orodha na kutuma taarifa kwa kutumia `ctx.info()` au `ctx.log()`.**
+3. **Endesha seva kwa kutumia `transport="streamable-http"`.**
+4. **Tekeleza mteja mwenye mshughulikiaji wa ujumbe kuonyesha taarifa zinapofika.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Maelezo ya Msimbo
+- Seva hutumia kazi za async na muktadha wa MCP kutuma taarifa za maendeleo.
+- Mteja hutekeleza mshughulikiaji wa ujumbe wa async kuchapisha taarifa na matokeo ya mwisho.
 
-### Tips & Troubleshooting
+### Vidokezo na Utatuzi wa Matatizo
 
-- Use `async/await` kwa operesheni zisizozuia.
-- Daima shughulikia makosa katika server na client kwa ajili ya uimara.
+- Tumia `async/await` kwa shughuli zisizozuia.
+- Daima shughulikia makosa katika seva na mteja kwa ajili ya uimara.
 - Jaribu na wateja wengi kuona masasisho ya wakati halisi.
-- Ukikumbana na makosa, hakikisha toleo la Python ni sahihi na utegemezi wote umewekwa.
+- Ikiwa unakutana na makosa, hakikisha toleo la Python ni sahihi na utegemezi wote umewekwa.
 
-**Kiasi cha majibu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kuwa tafsiri za moja kwa moja zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatuna dhamana kwa maelewano au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

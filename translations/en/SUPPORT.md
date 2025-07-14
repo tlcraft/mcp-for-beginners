@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b3cffaf217113101e21eba532be806ea",
-  "translation_date": "2025-05-20T20:04:59+00:00",
+  "translation_date": "2025-07-13T15:20:14+00:00",
   "source_file": "SUPPORT.md",
   "language_code": "en"
 }
@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## How to file issues and get help  
 
-This project uses GitHub Issues to track bugs and feature requests. Please check existing issues before submitting new ones to avoid duplicates. For new problems or feature requests, create a new Issue.
+This project uses GitHub Issues to track bugs and feature requests. Please search the existing issues before submitting new ones to avoid duplicates. For new issues, submit your bug report or feature request as a new Issue.
 
 For help and questions about using this project, please:
-- Visit the [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) where experts and fellow developers gather
-- Use the [Model Context Protocol Community](https://modelcontextprotocol.io/community/) resources for protocol-related inquiries
+- Check the [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) where experts and fellow developers gather
+- Use the [Model Context Protocol Community](https://modelcontextprotocol.io/community/) resources for protocol-related questions
 
 ## Microsoft Support Policy  
 

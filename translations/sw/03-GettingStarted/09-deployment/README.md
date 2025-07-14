@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T18:24:43+00:00",
+  "translation_date": "2025-07-13T22:10:33+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "sw"
 }
 -->
 # Kuweka seva za MCP
 
-Kuweka seva yako ya MCP kunaruhusu wengine kufikia zana na rasilimali zake zaidi ya mazingira yako ya ndani. Kuna mikakati kadhaa ya kuweka seva unayoweza kuzingatia, kulingana na mahitaji yako ya upanuzi, uaminifu, na urahisi wa usimamizi. Hapa chini utapata mwongozo wa kuweka seva za MCP kwa ndani, kwenye kontena, na kwenye wingu.
+Kuweka seva yako ya MCP kunawawezesha wengine kufikia zana na rasilimali zake zaidi ya mazingira yako ya ndani. Kuna mikakati kadhaa ya kuweka seva unayoweza kuzingatia, kulingana na mahitaji yako ya upanuzi, uaminifu, na urahisi wa usimamizi. Hapa chini utapata mwongozo wa kuweka seva za MCP kwa njia ya ndani, kwenye kontena, na kwenye wingu.
 
 ## Muhtasari
 
@@ -24,12 +24,12 @@ Mwisho wa somo hili, utaweza:
 
 ## Maendeleo na kuweka kwa ndani
 
-Ikiwa seva yako inakusudiwa kutumika kwa kuendeshwa kwenye mashine za watumiaji, unaweza kufuata hatua zifuatazo:
+Kama seva yako inakusudiwa kutumika kwa kuendeshwa kwenye mashine za watumiaji, unaweza kufuata hatua zifuatazo:
 
-1. **Pakua seva**. Ikiwa hujaandika seva hiyo, pakua kwanza kwenye mashine yako.  
+1. **Pakua seva**. Kama hujaandika seva hiyo, pakua kwanza kwenye mashine yako.  
 1. **Anzisha mchakato wa seva**: Endesha programu yako ya MCP server
 
-Kwa SSE (si muhimu kwa seva ya aina ya stdio)
+Kwa SSE (si lazima kwa seva ya aina ya stdio)
 
 1. **Sanidi mtandao**: Hakikisha seva inapatikana kwenye bandari inayotarajiwa  
 1. **Unganisha wateja**: Tumia URL za muunganisho wa ndani kama `http://localhost:3000`
@@ -40,11 +40,11 @@ Seva za MCP zinaweza kuwekwa kwenye majukwaa mbalimbali ya wingu:
 
 - **Serverless Functions**: Weka seva nyepesi za MCP kama serverless functions  
 - **Huduma za Kontena**: Tumia huduma kama Azure Container Apps, AWS ECS, au Google Cloud Run  
-- **Kubernetes**: Weka na simamia seva za MCP kwenye makundi ya Kubernetes kwa upatikanaji wa juu
+- **Kubernetes**: Weka na simamia seva za MCP kwenye makundi ya Kubernetes kwa upatikanaji wa hali ya juu
 
 ### Mfano: Azure Container Apps
 
-Azure Container Apps inaunga mkono kuweka seva za MCP. Bado ni kazi inayoendelea na kwa sasa inaunga mkono seva za SSE.
+Azure Container Apps inaunga mkono kuweka seva za MCP. Hii bado ni kazi inayoendelea na kwa sasa inaunga mkono seva za SSE.
 
 Hivi ndivyo unavyoweza kuifanya:
 
@@ -92,7 +92,7 @@ Hivi ndivyo unavyoweza kuifanya:
   }
   ```
 
-  Mara seva ya SSE itakapozinduliwa, unaweza kubofya ikoni ya kucheza kwenye faili la JSON, sasa unapaswa kuona zana kwenye seva zikichukuliwa na GitHub Copilot, angalia ikoni ya Zana.
+  Mara seva ya SSE itakapozinduliwa, unaweza kubofya ikoni ya kucheza kwenye faili la JSON, sasa utaona zana kwenye seva zikichukuliwa na GitHub Copilot, angalia ikoni ya Zana.
 
 1. Ili kuweka, endesha amri ifuatayo:
 
@@ -100,7 +100,7 @@ Hivi ndivyo unavyoweza kuifanya:
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-Hivyo ndivyo ulivyo, weka kwa ndani, weka kwenye Azure kupitia hatua hizi.
+Hapo unao, weka kwa ndani, weka kwenye Azure kupitia hatua hizi.
 
 ## Rasilimali Zaidi
 
@@ -113,4 +113,4 @@ Hivyo ndivyo ulivyo, weka kwa ndani, weka kwenye Azure kupitia hatua hizi.
 - Ifuatayo: [Utekelezaji wa Kivitendo](../../04-PracticalImplementation/README.md)
 
 **Kiarifu cha Kutotegemea**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T15:22:31+00:00",
+  "translation_date": "2025-07-14T05:40:14+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "es"
 }
@@ -59,18 +59,18 @@ Este estudio de caso te guía para conectar un cliente de consola Python a un se
 - Llamar a herramientas de documentación en el servidor y registrar respuestas directamente en la consola
 - Integrar documentación actualizada de Microsoft en tu flujo de trabajo sin salir del terminal
 
-El capítulo incluye una tarea práctica, un ejemplo mínimo funcional de código y enlaces a recursos adicionales para un aprendizaje más profundo. Consulta el recorrido completo y el código en el capítulo enlazado para entender cómo MCP puede transformar el acceso a documentación y la productividad del desarrollador en entornos basados en consola.
+El capítulo incluye una tarea práctica, un ejemplo mínimo de código funcional y enlaces a recursos adicionales para profundizar en el aprendizaje. Consulta el recorrido completo y el código en el capítulo enlazado para entender cómo MCP puede transformar el acceso a documentación y la productividad del desarrollador en entornos basados en consola.
 
 ### 4. [Generador Interactivo de Planes de Estudio Web con MCP](./docs-mcp/README.md)
 
-Este estudio de caso muestra cómo construir una aplicación web interactiva usando Chainlit y el Model Context Protocol (MCP) para generar planes de estudio personalizados para cualquier tema. Los usuarios pueden especificar un tema (como "certificación AI-900") y una duración de estudio (por ejemplo, 8 semanas), y la aplicación proporcionará un desglose semanal del contenido recomendado. Chainlit permite una interfaz de chat conversacional, haciendo la experiencia atractiva y adaptable.
+Este estudio de caso muestra cómo construir una aplicación web interactiva usando Chainlit y el Model Context Protocol (MCP) para generar planes de estudio personalizados para cualquier tema. Los usuarios pueden especificar una materia (como "certificación AI-900") y una duración de estudio (por ejemplo, 8 semanas), y la aplicación proporcionará un desglose semanal del contenido recomendado. Chainlit permite una interfaz de chat conversacional, haciendo la experiencia atractiva y adaptable.
 
 - Aplicación web conversacional impulsada por Chainlit
-- Solicitudes dirigidas por el usuario para tema y duración
+- Indicaciones definidas por el usuario para tema y duración
 - Recomendaciones de contenido semana a semana usando MCP
 - Respuestas adaptativas en tiempo real en una interfaz de chat
 
-El proyecto ilustra cómo la IA conversacional y MCP pueden combinarse para crear herramientas educativas dinámicas y orientadas al usuario en un entorno web moderno.
+El proyecto ilustra cómo la IA conversacional y MCP pueden combinarse para crear herramientas educativas dinámicas y centradas en el usuario en un entorno web moderno.
 
 ### 5. [Documentación en el Editor con MCP Server en VS Code](./docs-mcp/README.md)
 
@@ -102,9 +102,9 @@ Este ejemplo ilustra cómo aprovechar las capacidades de Azure para crear un ser
 
 ## Conclusión
 
-Estos estudios de caso destacan la versatilidad y aplicaciones prácticas del Model Context Protocol en escenarios reales. Desde sistemas complejos multiagente hasta flujos de trabajo de automatización específicos, MCP ofrece una forma estandarizada de conectar sistemas de IA con las herramientas y datos que necesitan para generar valor.
+Estos estudios de caso resaltan la versatilidad y aplicaciones prácticas del Model Context Protocol en escenarios reales. Desde sistemas complejos multiagente hasta flujos de trabajo de automatización específicos, MCP ofrece una forma estandarizada de conectar sistemas de IA con las herramientas y datos que necesitan para generar valor.
 
-Al estudiar estas implementaciones, podrás obtener conocimientos sobre patrones arquitectónicos, estrategias de implementación y mejores prácticas que pueden aplicarse a tus propios proyectos MCP. Los ejemplos demuestran que MCP no es solo un marco teórico, sino una solución práctica para desafíos empresariales reales.
+Al estudiar estas implementaciones, podrás obtener conocimientos sobre patrones arquitectónicos, estrategias de implementación y mejores prácticas que puedes aplicar en tus propios proyectos MCP. Los ejemplos demuestran que MCP no es solo un marco teórico, sino una solución práctica para desafíos empresariales reales.
 
 ## Recursos Adicionales
 

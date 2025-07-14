@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2a58caa6e11faa09470b7f81e6729652",
-  "translation_date": "2025-06-18T05:59:04+00:00",
+  "translation_date": "2025-07-13T20:10:02+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "tr"
 }
 -->
-# Bu örneği çalıştırmak
+# Bu örneği çalıştırma
 
 ## -1- Bağımlılıkları yükleyin
 
@@ -23,9 +23,9 @@ dotnet run
 
 ## -3- Örneği test edin
 
-Aşağıdakileri çalıştırmadan önce ayrı bir terminal açın (sunucunun hala çalıştığından emin olun).
+Aşağıdaki komutu çalıştırmadan önce ayrı bir terminal açın (sunucunun hala çalıştığından emin olun).
 
-Bir terminalde sunucu çalışırken, başka bir terminal açın ve aşağıdaki komutu çalıştırın:
+Sunucu bir terminalde çalışırken, başka bir terminal açın ve aşağıdaki komutu çalıştırın:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
@@ -33,12 +33,12 @@ npx @modelcontextprotocol/inspector http://localhost:3001
 
 Bu, örneği test etmenize olanak tanıyan görsel arayüze sahip bir web sunucusu başlatmalıdır.
 
-> **SSE** taşıma türü olarak seçili olduğundan ve URL `http://localhost:3001/sse`.
+> **SSE**'nin taşıma türü olarak seçili olduğundan ve URL'nin `http://localhost:3001/sse` olduğundan emin olun.
 
-Once the server is connected: 
+Sunucu bağlandıktan sonra:
 
-- try listing tools and run `add` olduğundan emin olun, argümanlar 2 ve 4 ise sonuçta 6 görmelisiniz.
-- resources ve resource template'e gidin, "greeting" çağırın, bir isim yazın ve verdiğiniz isimle bir selamlama görmelisiniz.
+- araçları listelemeyi deneyin ve `add` komutunu, argümanlar olarak 2 ve 4 ile çalıştırın, sonuçta 6 görmelisiniz.
+- resources ve resource template bölümüne gidin, "greeting" fonksiyonunu çağırın, bir isim yazın ve verdiğiniz isimle bir selamlama görmelisiniz.
 
 ### CLI modunda test etme
 
@@ -48,7 +48,7 @@ Aşağıdaki komutu çalıştırarak doğrudan CLI modunda başlatabilirsiniz:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Bu, sunucuda mevcut tüm araçları listeleyecektir. Aşağıdaki çıktıyı görmelisiniz:
+Bu, sunucuda mevcut olan tüm araçları listeleyecektir. Aşağıdaki çıktıyı görmelisiniz:
 
 ```text
 {
@@ -105,4 +105,4 @@ Aşağıdaki çıktıyı görmelisiniz:
 > Inspector hakkında daha fazla bilgi için [buraya](https://github.com/modelcontextprotocol/inspector) bakabilirsiniz.
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı nedeniyle ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalar konusunda sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

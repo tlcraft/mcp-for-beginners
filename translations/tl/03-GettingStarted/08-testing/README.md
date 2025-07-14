@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T18:20:58+00:00",
+  "translation_date": "2025-07-13T22:02:45+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "tl"
 }
 -->
 ## Testing at Pag-debug
 
-Bago ka magsimulang mag-test ng iyong MCP server, mahalagang maintindihan ang mga available na tools at mga pinakamahusay na paraan para mag-debug. Ang epektibong testing ay nagsisiguro na ang iyong server ay gumagana ayon sa inaasahan at tumutulong sa mabilis na pagtukoy at paglutas ng mga isyu. Ang sumusunod na seksyon ay naglalahad ng mga inirerekomendang pamamaraan para sa pag-validate ng iyong MCP implementation.
+Bago ka magsimulang mag-test ng iyong MCP server, mahalagang maintindihan ang mga available na tools at mga pinakamahusay na paraan para mag-debug. Ang epektibong testing ay nagsisiguro na ang iyong server ay gumagana ayon sa inaasahan at tumutulong sa mabilis na pagtukoy at pag-aayos ng mga isyu. Ang sumusunod na seksyon ay naglalahad ng mga inirerekomendang pamamaraan para sa pag-validate ng iyong MCP implementation.
 
 ## Pangkalahatang-ideya
 
@@ -37,7 +37,7 @@ Nailarawan na namin ang paggamit ng tool na ito sa mga naunang aralin ngunit pag
 Ang [MCP Inspector](https://github.com/modelcontextprotocol/inspector) ay tumutulong sa iyo na:
 
 - **Matuklasan ang Kakayahan ng Server**: Awtomatikong tuklasin ang mga available na resources, tools, at prompts
-- **Subukan ang Pagpapatakbo ng Tool**: Subukan ang iba't ibang parameters at tingnan ang mga sagot nang real-time
+- **Subukan ang Pagpapatakbo ng Tool**: Subukan ang iba't ibang parameters at tingnan ang mga tugon nang real-time
 - **Tingnan ang Metadata ng Server**: Suriin ang impormasyon ng server, mga schema, at mga configuration
 
 Ganito ang karaniwang hitsura ng pagpapatakbo ng tool:
@@ -46,7 +46,7 @@ Ganito ang karaniwang hitsura ng pagpapatakbo ng tool:
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Ang utos sa itaas ay nagsisimula ng MCP at ang visual interface nito at naglulunsad ng lokal na web interface sa iyong browser. Makikita mo ang dashboard na nagpapakita ng iyong mga rehistradong MCP servers, ang kanilang mga available na tools, resources, at prompts. Pinapayagan ka ng interface na ito na interaktibong subukan ang pagpapatakbo ng mga tool, suriin ang metadata ng server, at tingnan ang mga sagot nang real-time, na nagpapadali sa pag-validate at pag-debug ng iyong mga MCP server implementations.
+Ang utos sa itaas ay nagsisimula ng MCP at ang visual interface nito at nagbubukas ng lokal na web interface sa iyong browser. Makikita mo ang dashboard na nagpapakita ng iyong mga rehistradong MCP servers, ang kanilang mga available na tools, resources, at prompts. Pinapayagan ka ng interface na ito na interaktibong subukan ang pagpapatakbo ng mga tool, suriin ang metadata ng server, at tingnan ang mga tugon nang real-time, na nagpapadali sa pag-validate at pag-debug ng iyong mga MCP server implementations.
 
 Ganito ang maaaring itsura nito: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.tl.png)
 
@@ -139,7 +139,7 @@ Tingnan ang [buong file dito](https://github.com/modelcontextprotocol/python-sdk
 
 Sa pamamagitan ng file na ito, maaari mong subukan ang sarili mong server upang matiyak na ang mga kakayahan ay nalilikha ayon sa dapat.
 
-Lahat ng pangunahing SDK ay may katulad na mga seksyon para sa testing kaya maaari mong i-adjust ito sa iyong napiling runtime.
+Lahat ng pangunahing SDK ay may katulad na mga seksyon para sa testing kaya maaari mong i-adjust ito sa iyong piniling runtime.
 
 ## Mga Halimbawa
 

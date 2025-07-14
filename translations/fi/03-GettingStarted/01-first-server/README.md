@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:09:10+00:00",
+  "translation_date": "2025-07-13T17:35:14+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "fi"
 }
@@ -61,7 +61,7 @@ MCP tarjoaa virallisia SDK:ita useille kielille:
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Ylläpidetään yhteistyössä Loopwork AI:n kanssa
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Virallinen Rust-toteutus
 
-## Keskeiset opit
+## Tärkeimmät opit
 
 - MCP-kehitysympäristön pystyttäminen on helppoa kielikohtaisten SDK:iden avulla
 - MCP-palvelinten rakentaminen sisältää työkalujen luomisen ja rekisteröinnin selkeillä skeemoilla

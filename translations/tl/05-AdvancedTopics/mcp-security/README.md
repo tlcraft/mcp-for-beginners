@@ -2,43 +2,43 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-06-13T00:41:07+00:00",
+  "translation_date": "2025-07-14T02:42:37+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "tl"
 }
 -->
 # Security Best Practices
 
-Ang seguridad ay napakahalaga para sa mga implementasyon ng MCP, lalo na sa mga enterprise na kapaligiran. Mahalaga na masiguro na ang mga tools at data ay protektado laban sa hindi awtorisadong pag-access, paglabag sa data, at iba pang banta sa seguridad.
+Mahalaga ang seguridad para sa mga implementasyon ng MCP, lalo na sa mga enterprise na kapaligiran. Kailangan tiyakin na ang mga tools at datos ay protektado laban sa hindi awtorisadong pag-access, paglabag sa datos, at iba pang banta sa seguridad.
 
-## Introduction
+## Panimula
 
-Sa araling ito, tatalakayin natin ang mga pinakamahusay na kasanayan sa seguridad para sa mga implementasyon ng MCP. Sasaklawin natin ang authentication at authorization, proteksyon ng data, ligtas na pagpapatakbo ng mga tool, at pagsunod sa mga regulasyon sa privacy ng data.
+Sa araling ito, tatalakayin natin ang mga pinakamahusay na kasanayan sa seguridad para sa mga implementasyon ng MCP. Saklaw nito ang authentication at authorization, proteksyon ng datos, ligtas na pagpapatakbo ng mga tool, at pagsunod sa mga regulasyon sa privacy ng datos.
 
-## Learning Objectives
+## Mga Layunin sa Pagkatuto
 
 Sa pagtatapos ng araling ito, magagawa mong:
 
-- Magpatupad ng ligtas na authentication at authorization na mekanismo para sa mga MCP server.
-- Protektahan ang sensitibong data gamit ang encryption at ligtas na imbakan.
-- Masiguro ang ligtas na pagpapatakbo ng mga tool gamit ang tamang kontrol sa pag-access.
-- Ipatupad ang mga pinakamahusay na kasanayan para sa proteksyon ng data at pagsunod sa privacy.
+- Magpatupad ng ligtas na mekanismo ng authentication at authorization para sa mga MCP server.
+- Protektahan ang sensitibong datos gamit ang encryption at ligtas na imbakan.
+- Siguraduhin ang ligtas na pagpapatakbo ng mga tool gamit ang tamang kontrol sa pag-access.
+- Ipatupad ang mga pinakamahusay na kasanayan para sa proteksyon ng datos at pagsunod sa privacy.
 
-## Authentication and Authorization
+## Authentication at Authorization
 
-Mahalaga ang authentication at authorization para sa pag-secure ng mga MCP server. Sinusagot ng authentication ang tanong na "Sino ka?" habang ang authorization naman ay "Ano ang kaya mong gawin?".
+Mahalaga ang authentication at authorization para sa seguridad ng mga MCP server. Sinusagot ng authentication ang tanong na "Sino ka?" habang sinasagot naman ng authorization ang "Ano ang kaya mong gawin?".
 
 Tingnan natin ang mga halimbawa kung paano magpatupad ng ligtas na authentication at authorization sa mga MCP server gamit ang .NET at Java.
 
 ### .NET Identity Integration
 
-Nagbibigay ang ASP .NET Core Identity ng matibay na framework para sa pamamahala ng user authentication at authorization. Maaari natin itong i-integrate sa mga MCP server upang ma-secure ang access sa mga tool at resources.
+Nagbibigay ang ASP .NET Core Identity ng matibay na framework para sa pamamahala ng user authentication at authorization. Maaari natin itong isama sa mga MCP server upang maprotektahan ang pag-access sa mga tool at resources.
 
-May ilang pangunahing konsepto na kailangang maintindihan kapag nag-iintegrate ng ASP.NET Core Identity sa mga MCP server, tulad ng:
+May ilang pangunahing konsepto na kailangang maunawaan kapag isinama ang ASP.NET Core Identity sa mga MCP server, tulad ng:
 
-- **Identity Configuration**: Pagsasaayos ng ASP.NET Core Identity kasama ang mga user roles at claims. Ang claim ay isang piraso ng impormasyon tungkol sa user, tulad ng kanilang role o mga pahintulot, halimbawa "Admin" o "User".
-- **JWT Authentication**: Paggamit ng JSON Web Tokens (JWT) para sa ligtas na access sa API. Ang JWT ay isang standard para sa ligtas na pagpapadala ng impormasyon sa pagitan ng mga partido bilang isang JSON object, na maaaring mapatunayan at mapagkakatiwalaan dahil ito ay digitally signed.
-- **Authorization Policies**: Pagde-define ng mga polisiya upang kontrolin ang access sa partikular na mga tool base sa mga user roles. Ginagamit ng MCP ang mga authorization policies upang tukuyin kung aling mga user ang maaaring mag-access ng mga tool base sa kanilang roles at claims.
+- **Identity Configuration**: Pagsasaayos ng ASP.NET Core Identity kasama ang mga user roles at claims. Ang claim ay isang piraso ng impormasyon tungkol sa user, tulad ng kanilang role o mga permiso, halimbawa "Admin" o "User".
+- **JWT Authentication**: Paggamit ng JSON Web Tokens (JWT) para sa ligtas na pag-access sa API. Ang JWT ay isang standard para sa ligtas na pagpapadala ng impormasyon sa pagitan ng mga partido bilang isang JSON object, na maaaring mapatunayan at pagkatiwalaan dahil ito ay digitally signed.
+- **Authorization Policies**: Pagdeklara ng mga polisiya upang kontrolin ang pag-access sa mga partikular na tool base sa mga user role. Ginagamit ng MCP ang mga authorization policies upang tukuyin kung aling mga user ang maaaring mag-access ng mga tool base sa kanilang mga role at claim.
 
 ```csharp
 public class SecureMcpStartup
@@ -109,24 +109,24 @@ public class SecureMcpStartup
 }
 ```
 
-Sa code na nasa itaas, ginawa natin ang mga sumusunod:
+Sa naunang code, ginawa natin ang mga sumusunod:
 
 - Na-configure ang ASP.NET Core Identity para sa pamamahala ng user.
-- Naitakda ang JWT authentication para sa ligtas na access sa API. Tinukoy natin ang mga token validation parameters, kasama na ang issuer, audience, at signing key.
-- Na-define ang mga authorization policies upang kontrolin ang access sa mga tool base sa user roles. Halimbawa, ang "CanUseAdminTools" policy ay nangangailangan ng user na may role na "Admin", habang ang "CanUseBasic" policy ay nangangailangan ng user na authenticated.
-- Nairehistro ang mga MCP tool na may partikular na authorization requirements, na tinitiyak na tanging mga user na may tamang roles lamang ang makaka-access sa mga ito.
+- Na-set up ang JWT authentication para sa ligtas na pag-access sa API. Tinukoy natin ang mga token validation parameters, kabilang ang issuer, audience, at signing key.
+- Na-define ang mga authorization policies upang kontrolin ang pag-access sa mga tool base sa mga user role. Halimbawa, ang polisiya na "CanUseAdminTools" ay nangangailangan na ang user ay may "Admin" role, habang ang "CanUseBasic" policy ay nangangailangan na ang user ay authenticated.
+- Na-rehistro ang mga MCP tool na may partikular na mga pangangailangan sa authorization, na tinitiyak na tanging mga user na may tamang role lamang ang makaka-access sa mga ito.
 
 ### Java Spring Security Integration
 
-Para sa Java, gagamitin natin ang Spring Security upang magpatupad ng ligtas na authentication at authorization para sa mga MCP server. Nagbibigay ang Spring Security ng komprehensibong security framework na seamless na nag-iintegrate sa mga Spring application.
+Para sa Java, gagamitin natin ang Spring Security upang magpatupad ng ligtas na authentication at authorization para sa mga MCP server. Nagbibigay ang Spring Security ng komprehensibong security framework na seamless na nakikipag-integrate sa mga Spring application.
 
-Mga pangunahing konsepto dito ay:
+Ang mga pangunahing konsepto dito ay:
 
-- **Spring Security Configuration**: Pagsasaayos ng security configurations para sa authentication at authorization.
-- **OAuth2 Resource Server**: Paggamit ng OAuth2 para sa ligtas na access sa mga MCP tool. Ang OAuth2 ay isang authorization framework na nagpapahintulot sa mga third-party services na magpalitan ng access tokens para sa ligtas na access sa API.
-- **Security Interceptors**: Pagpapatupad ng security interceptors upang ipatupad ang mga kontrol sa access sa pagpapatakbo ng mga tool.
-- **Role-Based Access Control**: Paggamit ng mga roles upang kontrolin ang access sa partikular na mga tool at resources.
-- **Security Annotations**: Paggamit ng mga annotations upang i-secure ang mga methods at endpoints.
+- **Spring Security Configuration**: Pagsasaayos ng mga security configuration para sa authentication at authorization.
+- **OAuth2 Resource Server**: Paggamit ng OAuth2 para sa ligtas na pag-access sa mga MCP tool. Ang OAuth2 ay isang authorization framework na nagpapahintulot sa mga third-party na serbisyo na magpalitan ng access tokens para sa ligtas na pag-access sa API.
+- **Security Interceptors**: Pagpapatupad ng mga security interceptor upang ipatupad ang mga kontrol sa pag-access sa pagpapatakbo ng mga tool.
+- **Role-Based Access Control**: Paggamit ng mga role upang kontrolin ang pag-access sa mga partikular na tool at resources.
+- **Security Annotations**: Paggamit ng mga annotation upang siguraduhin ang seguridad ng mga method at endpoints.
 
 ```java
 @Configuration
@@ -178,20 +178,20 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 }
 ```
 
-Sa code na nasa itaas, ginawa natin ang mga sumusunod:
+Sa naunang code, ginawa natin ang mga sumusunod:
 
-- Na-configure ang Spring Security upang i-secure ang mga MCP endpoints, pinapayagan ang public access sa tool discovery habang kinakailangan ang authentication para sa pagpapatakbo ng mga tool.
-- Ginamit ang OAuth2 bilang resource server upang pangasiwaan ang ligtas na access sa mga MCP tool.
-- Naipatupad ang security interceptor upang ipatupad ang mga kontrol sa access sa pagpapatakbo ng mga tool, sinusuri ang user roles at mga pahintulot bago payagan ang access sa partikular na mga tool.
-- Na-define ang role-based access control upang limitahan ang access sa admin tools at sensitibong data base sa user roles.
+- Na-configure ang Spring Security upang maprotektahan ang mga MCP endpoint, pinapayagan ang pampublikong pag-access sa tool discovery habang kinakailangan ang authentication para sa pagpapatakbo ng mga tool.
+- Ginamit ang OAuth2 bilang resource server upang pangasiwaan ang ligtas na pag-access sa mga MCP tool.
+- Naipatupad ang security interceptor upang ipatupad ang mga kontrol sa pag-access sa pagpapatakbo ng mga tool, sinusuri ang mga user role at permiso bago payagan ang pag-access sa mga partikular na tool.
+- Na-define ang role-based access control upang limitahan ang pag-access sa mga admin tool at sensitibong datos base sa mga user role.
 
-## Data Protection and Privacy
+## Proteksyon ng Datos at Privacy
 
-Napakahalaga ng proteksyon ng data upang masiguro na ang sensitibong impormasyon ay hinahawakan nang ligtas. Kasama dito ang pagprotekta sa personally identifiable information (PII), financial data, at iba pang sensitibong impormasyon mula sa hindi awtorisadong pag-access at paglabag.
+Mahalaga ang proteksyon ng datos upang matiyak na ang sensitibong impormasyon ay hinahawakan nang ligtas. Kasama dito ang pagprotekta sa personally identifiable information (PII), financial data, at iba pang sensitibong impormasyon mula sa hindi awtorisadong pag-access at paglabag.
 
-### Python Data Protection Example
+### Halimbawa ng Proteksyon ng Datos sa Python
 
-Tingnan natin ang halimbawa kung paano magpatupad ng proteksyon ng data sa Python gamit ang encryption at PII detection.
+Tingnan natin ang isang halimbawa kung paano magpatupad ng proteksyon ng datos sa Python gamit ang encryption at PII detection.
 
 ```python
 from mcp_server import McpServer
@@ -327,16 +327,16 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-Sa code na nasa itaas, ginawa natin ang mga sumusunod:
+Sa naunang code, ginawa natin ang mga sumusunod:
 
-- Naipatupad ang `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
-- Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
-- Defined a `secure_tool` decorator that wraps tool execution to check for PII, log access, and encrypt sensitive data if required.
-- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool` upang masiguro na ligtas nitong hinahawakan ang sensitibong data.
+- Nagpatupad ng `PiiDetector` class upang i-scan ang teksto at mga parameter para sa personally identifiable information (PII).
+- Nilikha ang `EncryptionService` class upang pangasiwaan ang encryption at decryption ng sensitibong datos gamit ang `cryptography` library.
+- Na-define ang `secure_tool` decorator na bumabalot sa pagpapatakbo ng tool upang suriin ang PII, mag-log ng pag-access, at i-encrypt ang sensitibong datos kung kinakailangan.
+- Inilapat ang `secure_tool` decorator sa isang sample tool (`SecureCustomerDataTool`) upang matiyak na ligtas nitong hinahawakan ang sensitibong datos.
 
-## What's next
+## Ano ang susunod
 
 - [5.9 Web search](../web-search-mcp/README.md)
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na bahagi. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaintindihan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

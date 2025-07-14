@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T18:34:53+00:00",
+  "translation_date": "2025-07-14T05:50:24+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "cs"
 }
@@ -13,7 +13,7 @@ Model Context Protocol (MCP) mění způsob, jakým AI aplikace komunikují s da
 
 ## Přehled
 
-Tato část ukazuje konkrétní příklady implementací MCP a zdůrazňuje, jak organizace využívají tento protokol k řešení složitých obchodních výzev. Prostřednictvím těchto případových studií získáte přehled o všestrannosti, škálovatelnosti a praktických přínosech MCP v reálných situacích.
+Tato část ukazuje konkrétní příklady implementací MCP a zdůrazňuje, jak organizace využívají tento protokol k řešení složitých obchodních výzev. Prozkoumáním těchto případových studií získáte přehled o všestrannosti, škálovatelnosti a praktických přínosech MCP v reálných situacích.
 
 ## Hlavní cíle učení
 
@@ -41,7 +41,7 @@ Architektura a detaily implementace poskytují cenné poznatky o budování slo�
 
 ### 2. [Aktualizace položek Azure DevOps z dat YouTube](./UpdateADOItemsFromYT.md)
 
-Tato případová studie ukazuje praktické využití MCP pro automatizaci pracovních procesů. Demonstruje, jak lze MCP nástroje použít k:
+Tato případová studie ukazuje praktické využití MCP pro automatizaci pracovních procesů. Demonstruje, jak lze nástroje MCP použít k:
 
 - Extrakci dat z online platforem (YouTube)
 - Aktualizaci pracovních položek v systémech Azure DevOps
@@ -63,14 +63,14 @@ Kapitola obsahuje praktické cvičení, minimální funkční ukázku kódu a od
 
 ### 4. [Interaktivní webová aplikace pro generování studijního plánu s MCP](./docs-mcp/README.md)
 
-Tato případová studie ukazuje, jak vytvořit interaktivní webovou aplikaci pomocí Chainlit a Model Context Protocol (MCP) pro generování personalizovaných studijních plánů na libovolné téma. Uživatelé mohou zadat předmět (například „certifikace AI-900“) a délku studia (např. 8 týdnů) a aplikace poskytne týdenní rozpis doporučeného obsahu. Chainlit umožňuje konverzační chatové rozhraní, které dělá zážitek poutavým a přizpůsobivým.
+Tato případová studie ukazuje, jak vytvořit interaktivní webovou aplikaci pomocí Chainlit a Model Context Protocol (MCP) pro generování personalizovaných studijních plánů na libovolné téma. Uživatelé mohou zadat předmět (např. „AI-900 certifikace“) a délku studia (např. 8 týdnů) a aplikace poskytne týdenní rozpis doporučeného obsahu. Chainlit umožňuje konverzační chatové rozhraní, které dělá zážitek poutavým a adaptivním.
 
 - Konverzační webová aplikace poháněná Chainlit
 - Uživatelské vstupy pro téma a délku studia
 - Doporučení obsahu týden po týdnu pomocí MCP
 - Adaptivní odpovědi v reálném čase v chatovém rozhraní
 
-Projekt ukazuje, jak lze konverzační AI a MCP kombinovat k vytvoření dynamických, uživatelsky řízených vzdělávacích nástrojů v moderním webovém prostředí.
+Projekt ukazuje, jak lze konverzační AI a MCP spojit k vytvoření dynamických, uživatelsky řízených vzdělávacích nástrojů v moderním webovém prostředí.
 
 ### 5. [Dokumentace přímo v editoru s MCP serverem ve VS Code](./docs-mcp/README.md)
 
@@ -78,7 +78,7 @@ Tato případová studie ukazuje, jak přinést Microsoft Learn Docs přímo do 
 
 - Okamžitě vyhledávat a číst dokumentaci přímo ve VS Code pomocí MCP panelu nebo příkazové palety
 - Odkazovat na dokumentaci a vkládat odkazy přímo do README nebo markdown souborů kurzů
-- Používat GitHub Copilot a MCP společně pro plynulé AI-poháněné pracovní postupy s dokumentací a kódem
+- Používat GitHub Copilot a MCP společně pro plynulé AI-poháněné workflow dokumentace a kódu
 - Validovat a vylepšovat dokumentaci s okamžitou zpětnou vazbou a přesností od Microsoftu
 - Integrovat MCP s GitHub workflow pro kontinuální validaci dokumentace
 
@@ -117,4 +117,4 @@ Studiem těchto implementací získáte přehled o architektonických vzorech, s
 Další: Hands on Lab [Zjednodušení AI workflow: Vytvoření MCP serveru s AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

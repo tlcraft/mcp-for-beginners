@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f7a8ffd07682d554929968dfc6ae2ecb",
-  "translation_date": "2025-05-17T15:05:22+00:00",
+  "translation_date": "2025-07-13T23:37:53+00:00",
   "source_file": "04-PracticalImplementation/samples/typescript/README.md",
   "language_code": "no"
 }
 -->
-# Prøve
+# Eksempel
 
 Dette er et Typescript-eksempel for en MCP-server
 
-Her er et eksempel på å lage et verktøy:
+Her er et eksempel på hvordan du oppretter et verktøy:
 
 ```typescript
 this.mcpServer.tool(
@@ -74,7 +74,7 @@ async ({ model, prompt, options }) => {
 );
 ```
 
-## Installere
+## Installer
 
 Kjør følgende kommando:
 
@@ -89,4 +89,4 @@ npm start
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

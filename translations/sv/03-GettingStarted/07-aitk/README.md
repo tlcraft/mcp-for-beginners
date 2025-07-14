@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8248e3491f5245ee6ab48ef724a4f65a",
-  "translation_date": "2025-07-04T17:36:58+00:00",
+  "translation_date": "2025-07-13T21:34:53+00:00",
   "source_file": "03-GettingStarted/07-aitk/README.md",
   "language_code": "sv"
 }
@@ -17,7 +17,7 @@ Låt oss säga att du kopplar en agent till din kalkylator-MCP-server. Plötslig
 
 Den här lektionen visar hur du kopplar en kalkylator-MCP-server till en agent med [AI Toolkit](https://aka.ms/AIToolkit)-tillägget i Visual Studio Code, vilket gör det möjligt för din agent att utföra matematiska operationer som addition, subtraktion, multiplikation och division via naturligt språk.
 
-AI Toolkit är ett kraftfullt tillägg för Visual Studio Code som förenklar agentutveckling. AI-ingenjörer kan enkelt bygga AI-applikationer genom att utveckla och testa generativa AI-modeller — lokalt eller i molnet. Tillägget stödjer de flesta större generativa modeller som finns idag.
+AI Toolkit är ett kraftfullt tillägg för Visual Studio Code som förenklar agentutveckling. AI-ingenjörer kan enkelt bygga AI-applikationer genom att utveckla och testa generativa AI-modeller — lokalt eller i molnet. Tillägget stödjer de flesta stora generativa modeller som finns idag.
 
 *Notera*: AI Toolkit stödjer för närvarande Python och TypeScript.
 
@@ -53,13 +53,13 @@ I den här övningen kommer du att bygga, köra och förbättra en AI-agent med 
 
 Övningen använder modellen **GPT-4o**. Modellen bör läggas till i **My Models** innan du skapar agenten.
 
-![Skärmdump av ett modellval i AI Toolkit-tillägget för Visual Studio Code. Rubriken lyder "Find the right model for your AI Solution" med en undertitel som uppmuntrar användare att upptäcka, testa och distribuera AI-modeller. Under ”Popular Models” visas sex modellkort: DeepSeek-R1 (hostad på GitHub), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Small, Fast) och DeepSeek-R1 (hostad på Ollama). Varje kort har alternativ för att ”Add” modellen eller ”Try in Playground”.](../../../../translated_images/aitk-model-catalog.2acd38953bb9c119aa629fe74ef34cc56e4eed35e7f5acba7cd0a59e614ab335.sv.png)
+![Skärmdump av ett modellval i AI Toolkit-tillägget för Visual Studio Code. Rubriken lyder "Find the right model for your AI Solution" med en undertitel som uppmuntrar användare att upptäcka, testa och distribuera AI-modeller. Under “Popular Models” visas sex modellkort: DeepSeek-R1 (hostad på GitHub), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Small, Fast) och DeepSeek-R1 (hostad på Ollama). Varje kort har alternativ för att “Add” modellen eller “Try in Playground”.](../../../../translated_images/aitk-model-catalog.2acd38953bb9c119aa629fe74ef34cc56e4eed35e7f5acba7cd0a59e614ab335.sv.png)
 
 1. Öppna **AI Toolkit**-tillägget från **Activity Bar**.
 1. I avsnittet **Catalog**, välj **Models** för att öppna **Model Catalog**. Att välja **Models** öppnar **Model Catalog** i en ny redigeringsflik.
 1. Skriv **OpenAI GPT-4o** i sökfältet i **Model Catalog**.
 1. Klicka på **+ Add** för att lägga till modellen i din lista **My Models**. Se till att du valt modellen som är **Hosted by GitHub**.
-1. I **Activity Bar**, kontrollera att modellen **OpenAI GPT-4o** visas i listan.
+1. I **Activity Bar**, kontrollera att modellen **OpenAI GPT-4o** finns med i listan.
 
 ### -1- Skapa en agent
 
@@ -77,7 +77,7 @@ I den här övningen kommer du att bygga, köra och förbättra en AI-agent med 
 
 När agenten är skapad är det dags att definiera dess personlighet och syfte. I det här avsnittet använder du funktionen **Generate system prompt** för att beskriva agentens avsedda beteende — i det här fallet en kalkylatoragent — och låta modellen skriva systemprompten åt dig.
 
-![Skärmdump av "Calculator Agent" i AI Toolkit för Visual Studio Code med ett modalt fönster öppet med titeln "Generate a prompt." Det modala fönstret förklarar att en promptmall kan genereras genom att dela grundläggande detaljer och innehåller en textruta med exempel på systemprompt: "You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result." Under textrutan finns knapparna "Close" och "Generate". I bakgrunden syns delar av agentkonfigurationen, inklusive vald modell "OpenAI GPT-4o (via GitHub)" och fält för system- och användarprompt.](../../../../translated_images/aitk-generate-prompt.ba9e69d3d2bbe2a26444d0c78775540b14196061eee32c2054e9ee68c4f51f3a.sv.png)
+![Skärmdump av "Calculator Agent" i AI Toolkit för Visual Studio Code med ett modalfönster öppet med titeln "Generate a prompt." Modalrutan förklarar att en promptmall kan genereras genom att dela grundläggande detaljer och innehåller en textruta med exempel på systemprompt: "You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result." Under textrutan finns knapparna "Close" och "Generate." I bakgrunden syns delar av agentkonfigurationen, inklusive vald modell "OpenAI GPT-4o (via GitHub)" och fält för system- och användarprompter.](../../../../translated_images/aitk-generate-prompt.ba9e69d3d2bbe2a26444d0c78775540b14196061eee32c2054e9ee68c4f51f3a.sv.png)
 
 1. I avsnittet **Prompts**, klicka på knappen **Generate system prompt**. Denna knapp öppnar promptbyggaren som använder AI för att generera en systemprompt för agenten.
 1. I fönstret **Generate a prompt**, skriv in följande: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
@@ -88,16 +88,16 @@ När agenten är skapad är det dags att definiera dess personlighet och syfte. 
 
 Nu när du har definierat agentens systemprompt — som styr dess beteende och svar — är det dags att utrusta agenten med praktiska funktioner. I det här avsnittet skapar du en kalkylator-MCP-server med verktyg för addition, subtraktion, multiplikation och division. Denna server gör det möjligt för din agent att utföra matematiska beräkningar i realtid som svar på naturliga språk-promptar.
 
-![Skärmdump av den nedre delen av Calculator Agent-gränssnittet i AI Toolkit-tillägget för Visual Studio Code. Den visar expanderbara menyer för ”Tools” och ”Structure output”, tillsammans med en rullgardinsmeny märkt ”Choose output format” inställd på ”text.” Till höger finns en knapp märkt ”+ MCP Server” för att lägga till en Model Context Protocol-server. En bildikon är placerad ovanför Tools-sektionen.](../../../../translated_images/aitk-add-mcp-server.9742cfddfe808353c0caf9cc0a7ed3e80e13abf4d2ebde315c81c3cb02a2a449.sv.png)
+![Skärmdump av den nedre delen av Calculator Agent-gränssnittet i AI Toolkit-tillägget för Visual Studio Code. Den visar expanderbara menyer för “Tools” och “Structure output,” tillsammans med en rullgardinsmeny märkt “Choose output format” inställd på “text.” Till höger finns en knapp märkt “+ MCP Server” för att lägga till en Model Context Protocol-server. En bildikon är placerad ovanför Tools-sektionen.](../../../../translated_images/aitk-add-mcp-server.9742cfddfe808353c0caf9cc0a7ed3e80e13abf4d2ebde315c81c3cb02a2a449.sv.png)
 
-AI Toolkit är utrustat med mallar för att underlätta skapandet av din egen MCP-server. Vi kommer att använda Python-mallen för att skapa kalkylator-MCP-servern.
+AI Toolkit har mallar som underlättar skapandet av din egen MCP-server. Vi använder Python-mallen för att skapa kalkylator-MCP-servern.
 
 *Notera*: AI Toolkit stödjer för närvarande Python och TypeScript.
 
 1. I avsnittet **Tools** i **Agent (Prompt) Builder**, klicka på knappen **+ MCP Server**. Tillägget startar en installationsguide via **Command Palette**.
 1. Välj **+ Add Server**.
 1. Välj **Create a New MCP Server**.
-1. Välj **python-weather** som mall.
+1. Välj mallen **python-weather**.
 1. Välj **Default folder** för att spara MCP-servermallen.
 1. Ange följande namn för servern: **Calculator**
 1. Ett nytt Visual Studio Code-fönster öppnas. Välj **Yes, I trust the authors**.
@@ -154,7 +154,7 @@ AI Toolkit är utrustat med mallar för att underlätta skapandet av din egen MC
 
 Nu när din agent har verktyg är det dags att använda dem! I det här avsnittet skickar du promptar till agenten för att testa och verifiera att agenten använder rätt verktyg från kalkylator-MCP-servern.
 
-![Skärmdump av Calculator Agent-gränssnittet i AI Toolkit-tillägget för Visual Studio Code. I vänster panel, under ”Tools,” är en MCP-server med namnet local-server-calculator_server tillagd, som visar fyra tillgängliga verktyg: add, subtract, multiply och divide. En badge visar att fyra verktyg är aktiva. Nedanför finns en ihopfälld sektion ”Structure output” och en blå ”Run”-knapp. I höger panel, under ”Model Response,” anropar agenten verktygen multiply och subtract med input {"a": 3, "b": 25} respektive {"a": 75, "b": 20}. Det slutgiltiga ”Tool Response” visas som 75.0. En knapp ”View Code” finns längst ner.](../../../../translated_images/aitk-agent-response-with-tools.e7c781869dc8041a25f9903ed4f7e8e0c7e13d7d94f6786a6c51b1e172f56866.sv.png)
+![Skärmdump av Calculator Agent-gränssnittet i AI Toolkit-tillägget för Visual Studio Code. I vänster panel, under “Tools,” är en MCP-server med namnet local-server-calculator_server tillagd, som visar fyra tillgängliga verktyg: add, subtract, multiply och divide. En badge visar att fyra verktyg är aktiva. Nedanför finns en ihopfälld sektion för “Structure output” och en blå “Run”-knapp. I höger panel, under “Model Response,” anropar agenten verktygen multiply och subtract med input {"a": 3, "b": 25} respektive {"a": 75, "b": 20}. Det slutgiltiga “Tool Response” visas som 75.0. En knapp “View Code” finns längst ner.](../../../../translated_images/aitk-agent-response-with-tools.e7c781869dc8041a25f9903ed4f7e8e0c7e13d7d94f6786a6c51b1e172f56866.sv.png)
 
 Du kommer att köra kalkylator-MCP-servern på din lokala utvecklingsmaskin via **Agent Builder** som MCP-klient.
 
@@ -168,7 +168,7 @@ Du kommer att köra kalkylator-MCP-servern på din lokala utvecklingsmaskin via 
     - De respektive värdena `a` och `b` tilldelas för verktyget **subtract**.
     - Svaren från varje verktyg visas i respektive **Tool Response**.
     - Det slutgiltiga svaret från modellen visas i den slutgiltiga **Model Response**.
-1. Skicka fler promptar för att testa agenten ytterligare. Du kan ändra den befintliga prompten i fältet **User prompt** genom att klicka i fältet och ersätta den befintliga prompten.
+1. Skicka fler promptar för att testa agenten ytterligare. Du kan ändra den befintliga prompten i fältet **User prompt** genom att klicka i fältet och ersätta den.
 1. När du är klar med att testa agenten kan du stoppa servern via terminalen genom att trycka **CTRL/CMD+C** för att avsluta.
 
 ## Uppgift

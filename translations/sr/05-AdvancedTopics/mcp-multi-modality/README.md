@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "56238122f67d302188668cd1e0371d5c",
-  "translation_date": "2025-06-13T01:16:31+00:00",
+  "translation_date": "2025-07-14T00:16:39+00:00",
   "source_file": "05-AdvancedTopics/mcp-multi-modality/README.md",
   "language_code": "sr"
 }
 -->
-## Primer: Obrada zvuka
+## Пример мулти-модалности: Обрада звука
 
-Obrada zvuka je još jedna česta modalnost u multi-modalnim aplikacijama. Ispod je primer kako implementirati alat za transkripciju zvuka koji može da obrađuje audio fajlove i vraća transkripte.
+Обрада звука је још једна уобичајена модалност у мулти-модалним апликацијама. Испод је пример како имплементирати алат за транскрипцију звука који може да обрађује аудио фајлове и враћа транскрипте.
 
-### Primer: Generisanje multi-modalnog odgovora
+### Пример мулти-модалности: Генерисање мулти-модалних одговора
 
-## Šta sledi
+## Шта следи
 
 - [5.3 Oauth 2](../mcp-oauth2-demo/README.md)
 
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korišćenjem AI prevodilačke usluge [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo tačnosti, imajte na umu da automatski prevodi mogu sadržati greške ili netačnosti. Originalni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prevod. Ne snosimo odgovornost za bilo kakva nesporazumevanja ili pogrešna tumačenja koja proisteknu iz korišćenja ovog prevoda.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

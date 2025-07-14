@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a05fb941810e539147fec53aaadbb6fd",
-  "translation_date": "2025-06-21T14:30:32+00:00",
+  "translation_date": "2025-07-14T06:41:12+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/python/README.md",
   "language_code": "da"
 }
 -->
-# Studieplansgenerator med Chainlit & Microsoft Learn Docs MCP
+# Study Plan Generator med Chainlit & Microsoft Learn Docs MCP
 
 ## Forudsætninger
 
 - Python 3.8 eller nyere  
-- pip (Python-pakkehåndtering)  
-- Internetadgang for at forbinde til Microsoft Learn Docs MCP-serveren  
+- pip (Python pakkehåndtering)  
+- Internetadgang for at kunne forbinde til Microsoft Learn Docs MCP-serveren  
 
 ## Installation
 
 1. Klon dette repository eller download projektfilerne.  
-2. Installer de nødvendige afhængigheder:
+2. Installer de nødvendige afhængigheder:  
 
    ```bash
    pip install -r requirements.txt
@@ -26,8 +26,8 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Brug
 
-### Scenario 1: Simpelt opslag til Docs MCP  
-En kommandolinjeklient, der forbinder til Docs MCP-serveren, sender et spørgsmål og viser resultatet.
+### Scenario 1: Simpelt forespørgsel til Docs MCP  
+En kommandolinjeklient, der forbinder til Docs MCP-serveren, sender en forespørgsel og udskriver resultatet.
 
 1. Kør scriptet:  
    ```bash
@@ -35,20 +35,20 @@ En kommandolinjeklient, der forbinder til Docs MCP-serveren, sender et spørgsm�
    ```  
 2. Indtast dit dokumentationsspørgsmål ved prompten.
 
-### Scenario 2: Studieplansgenerator (Chainlit Web App)  
-En webbaseret grænseflade (ved brug af Chainlit), der giver brugere mulighed for at generere en personlig, uge-for-uge studieplan for ethvert teknisk emne.
+### Scenario 2: Study Plan Generator (Chainlit Web App)  
+En webbaseret grænseflade (ved brug af Chainlit), som giver brugere mulighed for at generere en personlig, uge-for-uge studieplan for ethvert teknisk emne.
 
 1. Start Chainlit-appen:  
    ```bash
    chainlit run scenario2.py
    ```  
-2. Åbn den lokale URL, der vises i terminalen (f.eks. http://localhost:8000) i din browser.  
-3. Indtast dit studiemne og antallet af uger, du vil studere (f.eks. "AI-900 certification, 8 uger") i chatvinduet.  
-4. Appen vil svare med en uge-for-uge studieplan, inklusive links til relevant Microsoft Learn-dokumentation.
+2. Åbn den lokale URL, der vises i din terminal (f.eks. http://localhost:8000) i din browser.  
+3. Indtast dit studiemne og antal uger, du vil studere (f.eks. "AI-900 certification, 8 uger") i chatvinduet.  
+4. Appen svarer med en uge-for-uge studieplan, inklusive links til relevant Microsoft Learn-dokumentation.
 
-**Nødvendige miljøvariabler:**
+**Påkrævede miljøvariabler:**  
 
-For at bruge Scenario 2 (Chainlit webappen med Azure OpenAI) skal du sætte følgende miljøvariabler i en `.env` file in the `python`-fil:
+For at bruge Scenario 2 (Chainlit webapp med Azure OpenAI) skal du sætte følgende miljøvariabler i en `.env`-fil i `python`-mappen:  
 
 ```
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=
@@ -59,50 +59,50 @@ AZURE_OPENAI_API_VERSION=
 
 Udfyld disse værdier med dine Azure OpenAI-ressourcedetaljer, inden du kører appen.
 
-> **Tip:** Du kan nemt implementere dine egne modeller via [Azure AI Foundry](https://ai.azure.com/).
+> **Tip:** Du kan nemt udrulle dine egne modeller ved hjælp af [Azure AI Foundry](https://ai.azure.com/).
 
-### Scenario 3: Dokumentation i editoren med MCP-server i VS Code
+### Scenario 3: Docs i editoren med MCP-server i VS Code
 
-I stedet for at skifte browserfane for at søge dokumentation, kan du hente Microsoft Learn Docs direkte ind i VS Code ved hjælp af MCP-serveren. Dette gør det muligt at:  
-- Søge og læse dokumentation i VS Code uden at forlade dit udviklingsmiljø.  
+I stedet for at skifte browserfaner for at søge dokumentation, kan du hente Microsoft Learn Docs direkte ind i VS Code via MCP-serveren. Det giver dig mulighed for at:  
+- Søge og læse dokumentation i VS Code uden at forlade dit kode-miljø.  
 - Referere dokumentation og indsætte links direkte i dine README- eller kursusfiler.  
-- Bruge GitHub Copilot og MCP sammen for en smidig, AI-drevet dokumentationsworkflow.
+- Bruge GitHub Copilot og MCP sammen for en problemfri, AI-drevet dokumentationsarbejdsgang.
 
-**Eksempler på brugssituationer:**  
+**Eksempler på brug:**  
 - Tilføj hurtigt referencelinks til en README, mens du skriver kursus- eller projekt-dokumentation.  
-- Brug Copilot til at generere kode og MCP til øjeblikkeligt at finde og citere relevant dokumentation.  
+- Brug Copilot til at generere kode og MCP til straks at finde og citere relevant dokumentation.  
 - Forbliv fokuseret i din editor og øg produktiviteten.
 
 > [!IMPORTANT]  
-> Sørg for at have en gyldig [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) configuration in your workspace (location is `.vscode/mcp.json`).
+> Sørg for, at du har en gyldig [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) konfiguration i dit workspace (placering er `.vscode/mcp.json`).
 
-## Why Chainlit for Scenario 2?
+## Hvorfor Chainlit til Scenario 2?
 
-Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
+Chainlit er et moderne open source-framework til at bygge samtalebaserede webapplikationer. Det gør det nemt at skabe chat-baserede brugerflader, der forbinder til backend-tjenester som Microsoft Learn Docs MCP-serveren. Dette projekt bruger Chainlit til at tilbyde en enkel, interaktiv måde at generere personlige studieplaner i realtid. Ved at udnytte Chainlit kan du hurtigt bygge og udrulle chatbaserede værktøjer, der øger produktivitet og læring.
 
-## What This Does
+## Hvad denne app gør
 
-This app allows users to create a personalized study plan by simply entering a topic and a duration. The app parses your input, queries the Microsoft Learn Docs MCP server for relevant content, and organizes the results into a structured, week-by-week plan. Each week’s recommendations are displayed in the chat, making it easy to follow and track your progress. The integration ensures you always get the latest, most relevant learning resources.
+Denne app giver brugere mulighed for at oprette en personlig studieplan ved blot at indtaste et emne og en varighed. Appen analyserer din input, forespørger Microsoft Learn Docs MCP-serveren efter relevant indhold og organiserer resultaterne i en struktureret, uge-for-uge plan. Anbefalingerne for hver uge vises i chatten, så det er nemt at følge og holde styr på din fremgang. Integrationen sikrer, at du altid får de nyeste og mest relevante læringsressourcer.
 
-## Sample Queries
+## Eksempelspørgsmål
 
-Try these queries in the chat window to see how the app responds:
+Prøv disse forespørgsler i chatvinduet for at se, hvordan appen svarer:
 
-- `AI-900 certification, 8 weeks`
-- `Learn Azure Functions, 4 weeks`
-- `Azure DevOps, 6 weeks`
-- `Data engineering on Azure, 10 weeks`
-- `Microsoft security fundamentals, 5 weeks`
-- `Power Platform, 7 weeks`
-- `Azure AI services, 12 weeks`
-- `Cloud architecture, 9 weeks`
+- `AI-900 certification, 8 uger`  
+- `Learn Azure Functions, 4 uger`  
+- `Azure DevOps, 6 uger`  
+- `Data engineering on Azure, 10 uger`  
+- `Microsoft security fundamentals, 5 uger`  
+- `Power Platform, 7 uger`  
+- `Azure AI services, 12 uger`  
+- `Cloud architecture, 9 uger`
 
 Disse eksempler viser appens fleksibilitet til forskellige læringsmål og tidsrammer.
 
 ## Referencer
 
-- [Chainlit Dokumentation](https://docs.chainlit.io/)  
-- [MCP Dokumentation](https://github.com/MicrosoftDocs/mcp)
+- [Chainlit Documentation](https://docs.chainlit.io/)  
+- [MCP Documentation](https://github.com/MicrosoftDocs/mcp)
 
 **Ansvarsfraskrivelse**:  
 Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

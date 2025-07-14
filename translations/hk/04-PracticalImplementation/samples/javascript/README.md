@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:48:31+00:00",
+  "translation_date": "2025-07-13T23:26:51+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "hk"
 }
 -->
-# 樣本
+# 範例
 
-這是一個用於 MCP 伺服器的 JavaScript 範例
+這是一個用於 MCP Server 的 JavaScript 範例
 
-以下是一個工具註冊的例子，我們註冊了一個工具，這個工具會模擬呼叫一個 LLM：
+以下是一個工具註冊的例子，我們註冊了一個會對 LLM 進行模擬呼叫的工具：
 
 ```javascript
 this.mcpServer.tool(
@@ -76,7 +76,7 @@ this.mcpServer.tool(
 
 ## 安裝
 
-執行以下命令：
+執行以下指令：
 
 ```bash
 npm install
@@ -89,4 +89,4 @@ npm start
 ```
 
 **免責聲明**：  
-本文檔已使用AI翻譯服務[Co-op Translator](https://github.com/Azure/co-op-translator)進行翻譯。儘管我們努力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的本地語言版本應被視為權威來源。對於重要信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

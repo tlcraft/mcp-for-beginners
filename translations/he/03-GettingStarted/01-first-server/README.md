@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:10:17+00:00",
+  "translation_date": "2025-07-13T17:36:06+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "he"
 }
 -->
-### -2- צור פרויקט
+### -2- יצירת פרויקט
 
 עכשיו כשיש לך את ה-SDK מותקן, בוא ניצור פרויקט בשלב הבא:
 
-### -3- צור קבצי פרויקט
+### -3- יצירת קבצי הפרויקט
 
-### -4- צור את קוד השרת
+### -4- יצירת קוד השרת
 
 ### -5- הוספת כלי ומשאב
 
 הוסף כלי ומשאב על ידי הוספת הקוד הבא:
 
-### -6 קוד סופי
+### -6- הקוד הסופי
 
 בוא נוסיף את הקוד האחרון שאנחנו צריכים כדי שהשרת יוכל להתחיל לפעול:
 
-### -7- בדוק את השרת
+### -7- בדיקת השרת
 
 הפעל את השרת עם הפקודה הבאה:
 
@@ -31,7 +31,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ה-Inspector הוא כלי מצוין שיכול להפעיל את השרת שלך ומאפשר לך לתקשר איתו כדי לבדוק שהוא עובד. בוא נתחיל אותו:
 > [!NOTE]
-> זה עשוי להיראות שונה בשדה "command" כי הוא מכיל את הפקודה להרצת שרת עם סביבת הריצה הספציפית שלך/
+> זה עשוי להיראות שונה בשדה "command" מכיוון שהוא מכיל את הפקודה להרצת שרת עם סביבת הריצה הספציפית שלך/
 אתה אמור לראות את ממשק המשתמש הבא:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.he.png)
@@ -55,11 +55,11 @@ MCP מספק SDKs רשמיים למספר שפות:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - מתוחזק בשיתוף עם Microsoft  
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - מתוחזק בשיתוף עם Spring AI  
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - המימוש הרשמי של TypeScript  
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - המימוש הרשמי של Python  
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - המימוש הרשמי של Kotlin  
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - המימוש הרשמי ב-TypeScript  
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - המימוש הרשמי ב-Python  
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - המימוש הרשמי ב-Kotlin  
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - מתוחזק בשיתוף עם Loopwork AI  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - המימוש הרשמי של Rust  
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - המימוש הרשמי ב-Rust  
 
 ## נקודות מפתח
 
@@ -69,11 +69,11 @@ MCP מספק SDKs רשמיים למספר שפות:
 
 ## דוגמאות
 
-- [מחשבון Java](../samples/java/calculator/README.md)  
-- [מחשבון .Net](../../../../03-GettingStarted/samples/csharp)  
-- [מחשבון JavaScript](../samples/javascript/README.md)  
-- [מחשבון TypeScript](../samples/typescript/README.md)  
-- [מחשבון Python](../../../../03-GettingStarted/samples/python)  
+- [מחשבון ב-Java](../samples/java/calculator/README.md)  
+- [מחשבון ב-.Net](../../../../03-GettingStarted/samples/csharp)  
+- [מחשבון ב-JavaScript](../samples/javascript/README.md)  
+- [מחשבון ב-TypeScript](../samples/typescript/README.md)  
+- [מחשבון ב-Python](../../../../03-GettingStarted/samples/python)  
 
 ## משימה
 

@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T18:50:45+00:00",
+  "translation_date": "2025-07-13T20:01:34+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "ro"
 }
 -->
-Acum că știm puțin mai multe despre SSE, să construim următorul un server SSE.
+Acum că știm puțin mai multe despre SSE, să construim următor un server SSE.
 
 ## Exercițiu: Crearea unui server SSE
 
@@ -20,11 +20,11 @@ Pentru a crea serverul nostru, trebuie să ținem cont de două lucruri:
 
 Pentru a crea serverul, folosim aceleași tipuri ca la stdio. Totuși, pentru transport, trebuie să alegem SSE.
 
-Să adăugăm următor rutele necesare.
+Să adăugăm acum rutele necesare.
 
 ### -2- Adăugarea rutelor
 
-Să adăugăm rute care gestionează conexiunea și mesajele primite:
+Să adăugăm rute care să gestioneze conexiunea și mesajele primite:
 
 Să adăugăm acum capabilități serverului.
 
@@ -55,7 +55,7 @@ Pentru a porni inspectorul, trebuie mai întâi să ai un server SSE pornit, aș
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Pornirea inspectorului arată la fel în toate mediile de rulare. Observă cum în loc să trecem un path către server și o comandă pentru pornirea serverului, trecem URL-ul unde serverul rulează și specificăm ruta `/sse`.
+    Pornirea inspectorului arată la fel în toate mediile de rulare. Observă cum, în loc să trecem un path către server și o comandă pentru pornirea serverului, trecem URL-ul unde serverul rulează și specificăm ruta `/sse`.
 
 ### -2- Testarea uneltei
 
@@ -77,9 +77,9 @@ Minunat, poți lucra cu inspectorul, să vedem acum cum putem lucra cu Visual St
 
 Concluziile cheie din acest capitol sunt următoarele:
 
-- SSE este al doilea tip de transport suportat, după stdio.
+- SSE este al doilea tip de transport suportat, pe lângă stdio.
 - Pentru a suporta SSE, trebuie să gestionezi conexiunile și mesajele primite folosind un framework web.
-- Poți folosi atât Inspector cât și Visual Studio Code pentru a consuma un server SSE, la fel ca serverele stdio. Observă cum diferă puțin între stdio și SSE. Pentru SSE, trebuie să pornești serverul separat și apoi să rulezi unealta inspector. Pentru unealta inspector există și diferențe în sensul că trebuie să specifici URL-ul.
+- Poți folosi atât Inspector, cât și Visual Studio Code pentru a consuma un server SSE, la fel ca serverele stdio. Observă cum diferă puțin între stdio și SSE. Pentru SSE, trebuie să pornești serverul separat și apoi să rulezi unealta inspector. Pentru unealta inspector, există și diferențe în sensul că trebuie să specifici URL-ul.
 
 ## Exemple
 

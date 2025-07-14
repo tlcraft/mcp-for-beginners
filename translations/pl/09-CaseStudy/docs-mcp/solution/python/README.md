@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a05fb941810e539147fec53aaadbb6fd",
-  "translation_date": "2025-06-21T14:29:30+00:00",
+  "translation_date": "2025-07-14T06:40:05+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/python/README.md",
   "language_code": "pl"
 }
@@ -33,7 +33,7 @@ Klient wiersza poleceń, który łączy się z serwerem Docs MCP, wysyła zapyta
    ```bash
    python scenario1.py
    ```  
-2. Wpisz swoje pytanie dotyczące dokumentacji, gdy pojawi się zachęta.
+2. Wprowadź swoje pytanie dotyczące dokumentacji w wyświetlonym wierszu poleceń.
 
 ### Scenariusz 2: Generator planu nauki (aplikacja webowa Chainlit)  
 Interfejs webowy (oparty na Chainlit), który pozwala użytkownikom wygenerować spersonalizowany, tygodniowy plan nauki dla dowolnego tematu technicznego.
@@ -43,12 +43,12 @@ Interfejs webowy (oparty na Chainlit), który pozwala użytkownikom wygenerować
    chainlit run scenario2.py
    ```  
 2. Otwórz lokalny adres URL podany w terminalu (np. http://localhost:8000) w przeglądarce.  
-3. W oknie czatu wpisz temat nauki oraz liczbę tygodni, które chcesz poświęcić (np. "AI-900 certification, 8 weeks").  
-4. Aplikacja odpowie planem nauki rozpisanym na tygodnie, zawierającym linki do odpowiedniej dokumentacji Microsoft Learn.
+3. W oknie czatu wpisz temat nauki oraz liczbę tygodni, przez które chcesz się uczyć (np. „certyfikacja AI-900, 8 tygodni”).  
+4. Aplikacja odpowie tygodniowym planem nauki, zawierającym linki do odpowiedniej dokumentacji Microsoft Learn.
 
 **Wymagane zmienne środowiskowe:**  
 
-Aby korzystać ze Scenariusza 2 (aplikacji Chainlit z Azure OpenAI), musisz ustawić następujące zmienne środowiskowe w katalogu `.env` file in the `python`:
+Aby korzystać ze Scenariusza 2 (aplikacji webowej Chainlit z Azure OpenAI), musisz ustawić następujące zmienne środowiskowe w pliku `.env` w katalogu `python`:
 
 ```
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=
@@ -57,47 +57,47 @@ AZURE_OPENAI_ENDPOINT=
 AZURE_OPENAI_API_VERSION=
 ```
 
-Uzupełnij te wartości swoimi danymi zasobu Azure OpenAI przed uruchomieniem aplikacji.
+Wypełnij te wartości danymi swojego zasobu Azure OpenAI przed uruchomieniem aplikacji.
 
-> **Wskazówka:** Łatwo możesz wdrożyć własne modele korzystając z [Azure AI Foundry](https://ai.azure.com/).
+> **Tip:** Możesz łatwo wdrożyć własne modele korzystając z [Azure AI Foundry](https://ai.azure.com/).
 
 ### Scenariusz 3: Dokumentacja w edytorze z serwerem MCP w VS Code
 
-Zamiast przełączać się między kartami przeglądarki, aby szukać dokumentacji, możesz mieć Microsoft Learn Docs bezpośrednio w VS Code dzięki serwerowi MCP. Umożliwia to:  
-- Wyszukiwanie i czytanie dokumentacji w VS Code bez wychodzenia z środowiska kodowania.  
+Zamiast przełączać się między kartami przeglądarki, aby szukać dokumentacji, możesz mieć Microsoft Learn Docs bezpośrednio w VS Code dzięki serwerowi MCP. Pozwala to na:  
+- Wyszukiwanie i czytanie dokumentacji w VS Code bez opuszczania środowiska kodowania.  
 - Odwoływanie się do dokumentacji i wstawianie linków bezpośrednio do plików README lub materiałów kursu.  
-- Korzystanie jednocześnie z GitHub Copilot i MCP, tworząc płynny, wspomagany AI workflow dokumentacyjny.
+- Korzystanie z GitHub Copilot i MCP razem, tworząc płynny, wspierany AI workflow dokumentacyjny.
 
 **Przykładowe zastosowania:**  
 - Szybkie dodawanie linków referencyjnych do README podczas pisania dokumentacji kursu lub projektu.  
-- Wykorzystanie Copilota do generowania kodu oraz MCP do natychmiastowego znajdowania i cytowania odpowiednich materiałów.  
-- Skupienie się na edytorze i zwiększenie produktywności.
+- Używanie Copilota do generowania kodu i MCP do natychmiastowego znajdowania i cytowania odpowiednich dokumentów.  
+- Skupienie się na pracy w edytorze i zwiększenie produktywności.
 
 > [!IMPORTANT]  
-> Upewnij się, że posiadasz ważny plik [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) configuration in your workspace (location is `.vscode/mcp.json`).
+> Upewnij się, że masz poprawną konfigurację [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) w swoim workspace (lokalizacja to `.vscode/mcp.json`).
 
-## Why Chainlit for Scenario 2?
+## Dlaczego Chainlit dla Scenariusza 2?
 
-Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
+Chainlit to nowoczesny, open-source’owy framework do tworzenia konwersacyjnych aplikacji webowych. Umożliwia łatwe tworzenie interfejsów czatu, które łączą się z usługami backendowymi, takimi jak Microsoft Learn Docs MCP. Ten projekt wykorzystuje Chainlit, aby zapewnić prosty, interaktywny sposób generowania spersonalizowanych planów nauki w czasie rzeczywistym. Dzięki Chainlit możesz szybko budować i wdrażać narzędzia czatowe, które zwiększają produktywność i efektywność nauki.
 
-## What This Does
+## Co to robi
 
-This app allows users to create a personalized study plan by simply entering a topic and a duration. The app parses your input, queries the Microsoft Learn Docs MCP server for relevant content, and organizes the results into a structured, week-by-week plan. Each week’s recommendations are displayed in the chat, making it easy to follow and track your progress. The integration ensures you always get the latest, most relevant learning resources.
+Ta aplikacja pozwala użytkownikom stworzyć spersonalizowany plan nauki, wystarczy wpisać temat i czas trwania. Aplikacja analizuje Twoje dane wejściowe, wysyła zapytanie do serwera Microsoft Learn Docs MCP o odpowiednie materiały i organizuje wyniki w przejrzysty, tygodniowy plan. Zalecenia na każdy tydzień są wyświetlane w czacie, co ułatwia śledzenie postępów. Integracja gwarantuje, że zawsze otrzymujesz najnowsze i najbardziej adekwatne materiały do nauki.
 
-## Sample Queries
+## Przykładowe zapytania
 
-Try these queries in the chat window to see how the app responds:
+Wypróbuj te zapytania w oknie czatu, aby zobaczyć, jak aplikacja odpowiada:
 
-- `AI-900 certification, 8 weeks`
-- `Learn Azure Functions, 4 weeks`
-- `Azure DevOps, 6 weeks`
-- `Data engineering on Azure, 10 weeks`
-- `Microsoft security fundamentals, 5 weeks`
-- `Power Platform, 7 weeks`
-- `Azure AI services, 12 weeks`
-- `Cloud architecture, 9 weeks`
+- `certyfikacja AI-900, 8 tygodni`  
+- `Nauka Azure Functions, 4 tygodnie`  
+- `Azure DevOps, 6 tygodni`  
+- `Inżynieria danych na Azure, 10 tygodni`  
+- `Podstawy bezpieczeństwa Microsoft, 5 tygodni`  
+- `Power Platform, 7 tygodni`  
+- `Usługi Azure AI, 12 tygodni`  
+- `Architektura chmury, 9 tygodni`
 
-Te przykłady pokazują elastyczność aplikacji w zależności od celów nauki i dostępnego czasu.
+Te przykłady pokazują elastyczność aplikacji dla różnych celów i ram czasowych nauki.
 
 ## Źródła
 
@@ -105,4 +105,4 @@ Te przykłady pokazują elastyczność aplikacji w zależności od celów nauki 
 - [MCP Documentation](https://github.com/MicrosoftDocs/mcp)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczeń AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

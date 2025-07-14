@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a05fb941810e539147fec53aaadbb6fd",
-  "translation_date": "2025-06-21T14:28:11+00:00",
+  "translation_date": "2025-07-14T06:38:36+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/python/README.md",
   "language_code": "bn"
 }
 -->
-# চেইনলিট ও মাইক্রোসফট লার্ন ডকস MCP সহ স্টাডি প্ল্যান জেনারেটর
+# Study Plan Generator with Chainlit & Microsoft Learn Docs MCP
 
 ## প্রয়োজনীয়তা
 
-- পাইথন ৩.৮ বা তার উপরে
-- pip (পাইথন প্যাকেজ ম্যানেজার)
-- মাইক্রোসফট লার্ন ডকস MCP সার্ভারে সংযোগের জন্য ইন্টারনেট অ্যাক্সেস
+- Python 3.8 বা তার উপরে
+- pip (Python প্যাকেজ ম্যানেজার)
+- Microsoft Learn Docs MCP সার্ভারের সাথে সংযোগের জন্য ইন্টারনেট অ্যাক্সেস
 
 ## ইনস্টলেশন
 
-১. এই রিপোজিটরি ক্লোন করুন অথবা প্রজেক্ট ফাইলগুলো ডাউনলোড করুন।  
-২. প্রয়োজনীয় ডিপেন্ডেন্সি ইনস্টল করুন:
+1. এই রিপোজিটরি ক্লোন করুন অথবা প্রজেক্ট ফাইলগুলো ডাউনলোড করুন।
+2. প্রয়োজনীয় ডিপেন্ডেন্সিগুলো ইনস্টল করুন:
 
    ```bash
    pip install -r requirements.txt
@@ -26,29 +26,29 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## ব্যবহার
 
-### দৃশ্য ১: ডকস MCP-তে সরল কুয়েরি  
-একটি কমান্ড-লাইন ক্লায়েন্ট যা Docs MCP সার্ভারের সাথে সংযোগ স্থাপন করে, একটি প্রশ্ন পাঠায় এবং ফলাফল প্রিন্ট করে।
+### দৃশ্য ১: Docs MCP-তে সরল প্রশ্ন
+একটি কমান্ড-লাইন ক্লায়েন্ট যা Docs MCP সার্ভারের সাথে সংযোগ করে, একটি প্রশ্ন পাঠায় এবং ফলাফল প্রদর্শন করে।
 
-১. স্ক্রিপ্ট রান করুন:  
+1. স্ক্রিপ্ট চালান:
    ```bash
    python scenario1.py
-   ```  
-২. প্রম্পটে আপনার ডকুমেন্টেশন সম্পর্কিত প্রশ্ন লিখুন।
+   ```
+2. প্রম্পটে আপনার ডকুমেন্টেশন প্রশ্ন লিখুন।
 
-### দৃশ্য ২: স্টাডি প্ল্যান জেনারেটর (চেইনলিট ওয়েব অ্যাপ)  
-একটি ওয়েব ভিত্তিক ইন্টারফেস (চেইনলিট ব্যবহার করে) যা ব্যবহারকারীদের যেকোনো প্রযুক্তিগত বিষয়ে ব্যক্তিগতকৃত, সাপ্তাহিক স্টাডি প্ল্যান তৈরি করতে সাহায্য করে।
+### দৃশ্য ২: স্টাডি প্ল্যান জেনারেটর (Chainlit ওয়েব অ্যাপ)
+একটি ওয়েব-ভিত্তিক ইন্টারফেস (Chainlit ব্যবহার করে) যা ব্যবহারকারীদের যেকোনো প্রযুক্তিগত বিষয়ে ব্যক্তিগতকৃত, সপ্তাহ ভিত্তিক স্টাডি প্ল্যান তৈরি করতে সাহায্য করে।
 
-১. চেইনলিট অ্যাপ শুরু করুন:  
+1. Chainlit অ্যাপ শুরু করুন:
    ```bash
    chainlit run scenario2.py
-   ```  
-২. আপনার টার্মিনালে প্রদত্ত লোকাল URL (যেমন http://localhost:8000) ব্রাউজারে খুলুন।  
-৩. চ্যাট উইন্ডোতে আপনার স্টাডি বিষয় এবং কত সপ্তাহ পড়তে চান তা লিখুন (যেমন, "AI-900 certification, 8 weeks")।  
-৪. অ্যাপটি সাপ্তাহিক ভিত্তিতে স্টাডি প্ল্যান দেখাবে, সাথে প্রাসঙ্গিক মাইক্রোসফট লার্ন ডকুমেন্টেশনের লিঙ্কগুলো থাকবে।
+   ```
+2. টার্মিনালে প্রদত্ত লোকাল URL (যেমন, http://localhost:8000) আপনার ব্রাউজারে খুলুন।
+3. চ্যাট উইন্ডোতে আপনার স্টাডি টপিক এবং আপনি কত সপ্তাহ পড়তে চান তা লিখুন (যেমন, "AI-900 certification, 8 weeks")।
+4. অ্যাপটি সপ্তাহ ভিত্তিক স্টাডি প্ল্যান সহ প্রাসঙ্গিক Microsoft Learn ডকুমেন্টেশনের লিঙ্কগুলো প্রদান করবে।
 
-**প্রয়োজনীয় পরিবেশ ভেরিয়েবলসমূহ:**  
+**প্রয়োজনীয় পরিবেশ ভেরিয়েবল:**
 
-দৃশ্য ২ (Azure OpenAI সহ চেইনলিট ওয়েব অ্যাপ) ব্যবহারের জন্য, আপনাকে `.env` file in the `python` ডিরেক্টরিতে নিম্নলিখিত পরিবেশ ভেরিয়েবলগুলো সেট করতে হবে:
+দৃশ্য ২ (Azure OpenAI সহ Chainlit ওয়েব অ্যাপ) ব্যবহার করতে, আপনাকে `python` ডিরেক্টরির `.env` ফাইলে নিম্নলিখিত পরিবেশ ভেরিয়েবলগুলো সেট করতে হবে:
 
 ```
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=
@@ -59,34 +59,34 @@ AZURE_OPENAI_API_VERSION=
 
 অ্যাপ চালানোর আগে এই মানগুলো আপনার Azure OpenAI রিসোর্সের তথ্য দিয়ে পূরণ করুন।
 
-> **TIP:** আপনি সহজেই [Azure AI Foundry](https://ai.azure.com/) ব্যবহার করে নিজের মডেলগুলো ডিপ্লয় করতে পারেন।
+> **Tip:** আপনি সহজেই [Azure AI Foundry](https://ai.azure.com/) ব্যবহার করে নিজের মডেল ডিপ্লয় করতে পারেন।
 
 ### দৃশ্য ৩: VS Code-এ MCP সার্ভার সহ ইন-এডিটর ডকস
 
-ব্রাউজার ট্যাব পরিবর্তন করে ডকুমেন্টেশন খোঁজার পরিবর্তে, আপনি সরাসরি MCP সার্ভার ব্যবহার করে Microsoft Learn Docs VS Code-এ আনতে পারেন। এর ফলে আপনি পারবেন:  
-- VS Code-এ থেকেই ডকস সার্চ ও পড়া, আপনার কোডিং পরিবেশ ছাড়াই।  
-- ডকুমেন্টেশন রেফারেন্স ও লিঙ্ক সরাসরি README বা কোর্স ফাইলে ঢোকানো।  
-- GitHub Copilot এবং MCP একসাথে ব্যবহার করে একটি নির্বিঘ্ন, AI-চালিত ডকুমেন্টেশন ওয়ার্কফ্লো তৈরি করা।
+ব্রাউজার ট্যাব পরিবর্তন না করে সরাসরি VS Code-এ Microsoft Learn Docs আনতে MCP সার্ভার ব্যবহার করুন। এর মাধ্যমে আপনি:
+- VS Code-এ থেকেই ডকুমেন্টেশন সার্চ ও পড়তে পারবেন, কোডিং পরিবেশ ছাড়াই।
+- ডকুমেন্টেশন রেফারেন্স এবং লিঙ্ক সরাসরি README বা কোর্স ফাইলে ইনসার্ট করতে পারবেন।
+- GitHub Copilot এবং MCP একসাথে ব্যবহার করে একটি নির্বিঘ্ন, AI-চালিত ডকুমেন্টেশন ওয়ার্কফ্লো উপভোগ করতে পারবেন।
 
-**উদাহরণ ব্যবহার:**  
-- কোর্স বা প্রজেক্ট ডকুমেন্টেশন লিখার সময় দ্রুত README-তে রেফারেন্স লিঙ্ক যোগ করা।  
-- কোড জেনারেট করতে Copilot ব্যবহার করা এবং MCP দিয়ে প্রাসঙ্গিক ডকস খুঁজে তা উদ্ধৃত করা।  
+**উদাহরণ ব্যবহার:**
+- কোর্স বা প্রজেক্ট ডকুমেন্টেশন লেখার সময় দ্রুত README-তে রেফারেন্স লিঙ্ক যোগ করা।
+- Copilot দিয়ে কোড জেনারেট করা এবং MCP দিয়ে প্রাসঙ্গিক ডকস দ্রুত খুঁজে আনা।
 - এডিটরে ফোকাস রেখে উৎপাদনশীলতা বাড়ানো।
 
-> [!IMPORTANT]  
-> নিশ্চিত করুন আপনার কাছে একটি বৈধ [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) configuration in your workspace (location is `.vscode/mcp.json`).
+> [!IMPORTANT]
+> নিশ্চিত করুন আপনার ওয়ার্কস্পেসে একটি বৈধ [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) কনফিগারেশন আছে (অবস্থান: `.vscode/mcp.json`)।
 
-## Why Chainlit for Scenario 2?
+## কেন দৃশ্য ২ এর জন্য Chainlit?
 
-Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
+Chainlit একটি আধুনিক ওপেন-সোর্স ফ্রেমওয়ার্ক যা কথোপকথনভিত্তিক ওয়েব অ্যাপ্লিকেশন তৈরি করতে সাহায্য করে। এটি সহজে চ্যাট-ভিত্তিক ইউজার ইন্টারফেস তৈরি করতে দেয় যা ব্যাকএন্ড সার্ভিস যেমন Microsoft Learn Docs MCP সার্ভারের সাথে সংযুক্ত হয়। এই প্রজেক্টে Chainlit ব্যবহার করা হয়েছে ব্যক্তিগতকৃত স্টাডি প্ল্যান রিয়েল-টাইমে তৈরি করার জন্য একটি সরল, ইন্টারেক্টিভ উপায় হিসেবে। Chainlit ব্যবহার করে আপনি দ্রুত চ্যাট-ভিত্তিক টুল তৈরি ও ডিপ্লয় করতে পারবেন যা উৎপাদনশীলতা এবং শেখার অভিজ্ঞতা উন্নত করে।
 
-## What This Does
+## এটি কী করে
 
-This app allows users to create a personalized study plan by simply entering a topic and a duration. The app parses your input, queries the Microsoft Learn Docs MCP server for relevant content, and organizes the results into a structured, week-by-week plan. Each week’s recommendations are displayed in the chat, making it easy to follow and track your progress. The integration ensures you always get the latest, most relevant learning resources.
+এই অ্যাপ ব্যবহারকারীদের একটি বিষয় এবং সময়কাল লিখে ব্যক্তিগতকৃত স্টাডি প্ল্যান তৈরি করতে দেয়। অ্যাপটি আপনার ইনপুট বিশ্লেষণ করে, Microsoft Learn Docs MCP সার্ভারে প্রাসঙ্গিক বিষয়বস্তু অনুসন্ধান করে এবং ফলাফলগুলোকে একটি সুশৃঙ্খল, সপ্তাহ ভিত্তিক পরিকল্পনায় সাজায়। প্রতিটি সপ্তাহের সুপারিশ চ্যাটে প্রদর্শিত হয়, যা অনুসরণ এবং অগ্রগতি ট্র্যাক করা সহজ করে তোলে। ইন্টিগ্রেশন নিশ্চিত করে আপনি সর্বদা সর্বশেষ এবং সবচেয়ে প্রাসঙ্গিক শেখার রিসোর্স পাবেন।
 
-## Sample Queries
+## নমুনা প্রশ্ন
 
-Try these queries in the chat window to see how the app responds:
+চ্যাট উইন্ডোতে নিচের প্রশ্নগুলো চেষ্টা করে দেখুন অ্যাপ কীভাবে প্রতিক্রিয়া দেয়:
 
 - `AI-900 certification, 8 weeks`
 - `Learn Azure Functions, 4 weeks`
@@ -95,14 +95,14 @@ Try these queries in the chat window to see how the app responds:
 - `Microsoft security fundamentals, 5 weeks`
 - `Power Platform, 7 weeks`
 - `Azure AI services, 12 weeks`
-- `Cloud architecture, 9 weeks`] ফাইল রয়েছে।
+- `Cloud architecture, 9 weeks`
 
-এই উদাহরণগুলো অ্যাপের বিভিন্ন শেখার লক্ষ্য ও সময়সীমার জন্য নমনীয়তা প্রদর্শন করে।
+এই উদাহরণগুলো অ্যাপের বিভিন্ন শেখার লক্ষ্য এবং সময়সীমার জন্য নমনীয়তা প্রদর্শন করে।
 
-## রেফারেন্সসমূহ
+## রেফারেন্স
 
-- [Chainlit ডকুমেন্টেশন](https://docs.chainlit.io/)  
-- [MCP ডকুমেন্টেশন](https://github.com/MicrosoftDocs/mcp)
+- [Chainlit Documentation](https://docs.chainlit.io/)
+- [MCP Documentation](https://github.com/MicrosoftDocs/mcp)
 
 **অস্বীকৃতি**:  
-এই নথিটি AI অনুবাদ সেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনূদিত হয়েছে। আমরা যথাসাধ্য সঠিকতার চেষ্টা করি, তবে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা ভুল থাকতে পারে। মূল নথিটি তার নিজস্ব ভাষায়ই কর্তৃত্বপ্রাপ্ত উৎস হিসেবে বিবেচিত হওয়া উচিত। গুরুত্বপূর্ণ তথ্যের জন্য পেশাদার মানব অনুবাদ পরামর্শ দেওয়া হয়। এই অনুবাদের ব্যবহারে সৃষ্ট যেকোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়বদ্ধ নই।
+এই নথিটি AI অনুবাদ সেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনূদিত হয়েছে। আমরা যথাসাধ্য সঠিকতার চেষ্টা করি, তবে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসঙ্গতি থাকতে পারে। মূল নথিটি তার নিজস্ব ভাষায়ই কর্তৃত্বপূর্ণ উৎস হিসেবে বিবেচিত হওয়া উচিত। গুরুত্বপূর্ণ তথ্যের জন্য পেশাদার মানব অনুবাদ গ্রহণ করার পরামর্শ দেওয়া হয়। এই অনুবাদের ব্যবহারে সৃষ্ট কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী নই।

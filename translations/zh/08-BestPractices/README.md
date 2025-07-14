@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
-  "translation_date": "2025-07-02T07:52:43+00:00",
+  "translation_date": "2025-07-14T04:51:52+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "zh"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 概述
 
-本课重点介绍在生产环境中开发、测试和部署 MCP 服务器及功能的高级最佳实践。随着 MCP 生态系统的复杂性和重要性不断提升，遵循既定模式能够确保系统的可靠性、可维护性和互操作性。本课汇集了来自实际 MCP 实现的宝贵经验，指导你打造健壮、高效的服务器及其资源、提示和工具。
+本课重点介绍在生产环境中开发、测试和部署 MCP 服务器及功能的高级最佳实践。随着 MCP 生态系统的复杂性和重要性不断提升，遵循既定模式能够确保系统的可靠性、可维护性和互操作性。本课汇总了来自实际 MCP 实现的实用经验，指导你构建稳健、高效的服务器，并有效利用资源、提示和工具。
 
 ## 学习目标
 
@@ -19,15 +19,15 @@ CO_OP_TRANSLATOR_METADATA:
 - 在 MCP 服务器和功能设计中应用行业最佳实践
 - 制定全面的 MCP 服务器测试策略
 - 设计高效且可复用的复杂 MCP 应用工作流模式
-- 在 MCP 服务器中实现正确的错误处理、日志记录和可观测性
+- 实现 MCP 服务器中的正确错误处理、日志记录和可观测性
 - 优化 MCP 实现的性能、安全性和可维护性
 
 ## 额外参考资料
 
-获取最新 MCP 最佳实践信息，请参考：
-- [MCP 文档](https://modelcontextprotocol.io/)
-- [MCP 规范](https://spec.modelcontextprotocol.io/)
-- [GitHub 仓库](https://github.com/modelcontextprotocol)
+有关 MCP 最佳实践的最新信息，请参考：
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## MCP 工具开发最佳实践
 
@@ -37,7 +37,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 每个 MCP 功能应有明确且专注的目标。避免创建试图处理多种职责的单一庞大工具，而应开发专注于特定任务的专业工具。
 
-**良好示例：**  
+**良好示例：**
 ```csharp
 // A focused tool that does one thing well
 public class WeatherForecastTool : ITool
@@ -95,7 +95,7 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-**不良示例：**  
+**不良示例：**
 ```csharp
 // A tool trying to do too many things
 public class WeatherToolSuite : ITool
@@ -181,7 +181,7 @@ public class CurrencyConversionTool implements Tool {
 
 #### 3. 可组合工具
 
-设计可以组合在一起以构建更复杂工作流的工具：
+设计能够组合使用的工具，以构建更复杂的工作流：
 
 ```python
 # Python example showing composable tools
@@ -212,9 +212,9 @@ class DataVisualizationTool(Tool):
 # These tools can be used independently or as part of a workflow
 ```
 
-### Schema 设计最佳实践
+### 模式设计最佳实践
 
-Schema 是模型与工具之间的契约。设计良好的 schema 能提升工具的易用性。
+模式是模型与工具之间的契约。设计良好的模式能提升工具的易用性。
 
 #### 1. 清晰的参数描述
 
@@ -257,7 +257,7 @@ public object GetSchema()
 
 #### 2. 验证约束
 
-添加验证约束以防止无效输入：
+包含验证约束以防止无效输入：
 
 ```java
 Map<String, Object> getSchema() {
@@ -340,7 +340,7 @@ def _format_item(self, item):
 
 ### 错误处理
 
-健壮的错误处理对于 MCP 工具的可靠性至关重要。
+健壮的错误处理对 MCP 工具的可靠性至关重要。
 
 #### 1. 优雅的错误处理
 
@@ -418,9 +418,9 @@ public ToolResponse execute(ToolRequest request) {
 }
 ```
 
-#### 3. 重试机制
+#### 3. 重试逻辑
 
-为临时失败实现合适的重试逻辑：
+针对临时失败实现合适的重试机制：
 
 ```python
 async def execute_async(self, request):
@@ -450,7 +450,7 @@ async def execute_async(self, request):
 
 #### 1. 缓存
 
-对耗时操作实现缓存：
+对高开销操作实现缓存：
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -498,7 +498,7 @@ public class CachedDataTool : IMcpTool
 
 #### 2. 异步处理
 
-针对 I/O 密集型操作使用异步编程模式：
+对 I/O 密集型操作采用异步编程模式：
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -549,7 +549,7 @@ public class AsyncDocumentProcessingTool implements Tool {
 
 #### 3. 资源限流
 
-实现资源限流以防止系统过载：
+实现资源限流以防止过载：
 
 ```python
 class ThrottledApiTool(Tool):
@@ -615,7 +615,7 @@ class TokenBucketRateLimiter:
 
 #### 1. 输入验证
 
-始终彻底验证输入参数：
+始终对输入参数进行彻底验证：
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -658,7 +658,7 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. 授权检查
 
-实施正确的授权检查：
+实现正确的授权检查：
 
 ```java
 @Override
@@ -739,9 +739,9 @@ class SecureDataTool(Tool):
 
 ### 单元测试
 
-#### 1. 单独测试每个工具
+#### 1. 独立测试每个工具
 
-针对每个工具功能编写专注的测试：
+为每个工具的功能编写针对性测试：
 
 ```csharp
 [Fact]
@@ -801,9 +801,9 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 }
 ```
 
-#### 2. Schema 验证测试
+#### 2. 模式验证测试
 
-测试 schema 的有效性及约束的正确执行：
+测试模式的有效性及约束执行情况：
 
 ```java
 @Test
@@ -908,7 +908,7 @@ async def test_api_tool_handles_rate_limiting():
 
 #### 1. 工具链测试
 
-测试工具间按预期组合工作：
+测试工具按预期组合工作：
 
 ```csharp
 [Fact]
@@ -949,7 +949,7 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 
 #### 2. MCP 服务器测试
 
-测试 MCP 服务器的完整工具注册与执行：
+测试 MCP 服务器的完整工具注册和执行：
 
 ```java
 @SpringBootTest
@@ -1076,7 +1076,7 @@ async def test_model_interaction_with_tool():
 
 #### 1. 负载测试
 
-测试 MCP 服务器可处理的并发请求数量：
+测试 MCP 服务器能处理的并发请求数：
 
 ```csharp
 [Fact]
@@ -1210,11 +1210,11 @@ def configure_monitoring(server):
 
 ## MCP 工作流设计模式
 
-设计良好的 MCP 工作流可提升效率、可靠性和可维护性。以下是关键模式：
+设计良好的 MCP 工作流能提升效率、可靠性和可维护性。以下是关键模式：
 
 ### 1. 工具链模式
 
-将多个工具串联，每个工具的输出作为下一个工具的输入：
+将多个工具按顺序连接，每个工具的输出作为下一个工具的输入：
 
 ```python
 # Python Chain of Tools implementation
@@ -1253,9 +1253,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. 调度器模式
+### 2. 分发器模式
 
-使用中央工具根据输入调度到不同的专业工具：
+使用中央工具根据输入分发到专门工具：
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1508,34 +1508,34 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# MCP 服务器测试：最佳实践与实用技巧
+# MCP 服务器测试：最佳实践与顶级技巧
 
 ## 概述
 
-测试是开发可靠、高质量 MCP 服务器的重要环节。本指南涵盖从单元测试、集成测试到端到端验证的全面最佳实践和技巧。
+测试是开发可靠、高质量 MCP 服务器的关键环节。本指南提供了从单元测试到集成测试及端到端验证的全面最佳实践和技巧，贯穿整个开发生命周期。
 
-## MCP 服务器测试的重要性
+## 为什么 MCP 服务器测试很重要
 
-MCP 服务器作为 AI 模型与客户端应用之间的重要中间件，彻底测试能够确保：
+MCP 服务器作为 AI 模型与客户端应用之间的重要中间件，全面测试能确保：
 
-- 生产环境中的可靠性
+- 生产环境的可靠性
 - 请求和响应的准确处理
 - MCP 规范的正确实现
 - 对故障和边界情况的韧性
-- 在不同负载下的稳定性能
+- 在各种负载下的稳定性能
 
-## MCP 服务器的单元测试
+## MCP 服务器单元测试
 
-### 单元测试（基础层）
+### 单元测试（基础）
 
 单元测试验证 MCP 服务器中各个组件的独立功能。
 
 #### 测试内容
 
 1. **资源处理器**：独立测试每个资源处理器的逻辑
-2. **工具实现**：验证工具在各种输入下的行为
+2. **工具实现**：验证工具在不同输入下的行为
 3. **提示模板**：确保提示模板正确渲染
-4. **Schema 验证**：测试参数验证逻辑
+4. **模式验证**：测试参数验证逻辑
 5. **错误处理**：验证无效输入的错误响应
 
 #### 单元测试最佳实践
@@ -1584,14 +1584,14 @@ def test_calculator_tool_add():
 
 ### 集成测试（中间层）
 
-集成测试验证 MCP 服务器组件间的交互。
+集成测试验证 MCP 服务器各组件间的交互。
 
 #### 测试内容
 
-1. **服务器初始化**：测试服务器在不同配置下的启动
+1. **服务器初始化**：测试不同配置下的服务器启动
 2. **路由注册**：验证所有端点正确注册
 3. **请求处理**：测试完整的请求-响应流程
-4. **错误传播**：确保错误在组件间正确传递和处理
+4. **错误传播**：确保错误在组件间正确传递
 5. **认证与授权**：测试安全机制
 
 #### 集成测试最佳实践
@@ -1636,11 +1636,11 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 
 #### 测试内容
 
-1. **客户端-服务器通信**：测试完整请求-响应周期
+1. **客户端-服务器通信**：测试完整的请求-响应周期
 2. **真实客户端 SDK**：使用实际客户端实现进行测试
 3. **负载下性能**：验证多并发请求下的表现
-4. **错误恢复**：测试系统从故障中的恢复能力
-5. **长时操作**：验证流式和长时间操作的处理
+4. **错误恢复**：测试系统从故障中恢复能力
+5. **长时间运行操作**：验证流式和长时间操作的处理
 
 #### 端到端测试最佳实践
 
@@ -1676,16 +1676,16 @@ describe('MCP Server E2E Tests', () => {
 
 ## MCP 测试中的 Mock 策略
 
-Mock 对于隔离组件进行测试至关重要。
+Mock 是测试中隔离组件的关键手段。
 
 ### 需要 Mock 的组件
 
-1. **外部 AI 模型**：Mock 模型响应以实现可预测测试
-2. **外部服务**：Mock API 依赖（数据库、第三方服务）
-3. **认证服务**：Mock 身份提供者
-4. **资源提供者**：Mock 高耗资源处理器
+1. **外部 AI 模型**：模拟模型响应以实现可预测测试
+2. **外部服务**：模拟 API 依赖（数据库、第三方服务）
+3. **认证服务**：模拟身份提供者
+4. **资源提供者**：模拟高开销资源处理器
 
-### 示例：Mock AI 模型响应
+### 示例：模拟 AI 模型响应
 
 ```csharp
 // C# example with Moq
@@ -1719,7 +1719,7 @@ def test_with_mock_model(mock_model):
 
 ## 性能测试
 
-性能测试对生产环境 MCP 服务器至关重要。
+性能测试对生产环境的 MCP 服务器至关重要。
 
 ### 测量指标
 
@@ -1727,12 +1727,12 @@ def test_with_mock_model(mock_model):
 2. **吞吐量**：每秒处理请求数
 3. **资源利用率**：CPU、内存、网络使用情况
 4. **并发处理能力**：并行请求下的表现
-5. **扩展特性**：负载增加时的性能变化
+5. **扩展特性**：负载增加时的性能表现
 
 ### 性能测试工具
 
 - **k6**：开源负载测试工具
-- **JMeter**：全面的性能测试工具
+- **JMeter**：全面性能测试工具
 - **Locust**：基于 Python 的负载测试
 - **Azure Load Testing**：云端性能测试服务
 
@@ -1776,15 +1776,15 @@ export default function () {
 }
 ```
 
-## MCP 服务器的测试自动化
+## MCP 服务器测试自动化
 
-自动化测试确保质量一致，反馈更快。
+自动化测试确保质量稳定，反馈更快。
 
 ### CI/CD 集成
 
-1. **在 Pull Request 时运行单元测试**：确保代码变更不破坏现有功能
-2. **在预发布环境运行集成测试**：验证集成效果
-3. **性能基线维护**：保持性能基准，防止回退
+1. **在 Pull Request 上运行单元测试**：确保代码变更不破坏现有功能
+2. **在预发布环境运行集成测试**：保证集成质量
+3. **性能基线维护**：监控性能基准，防止回退
 4. **安全扫描**：将安全测试纳入流水线
 
 ### 示例 CI 流水线（GitHub Actions）
@@ -1830,11 +1830,11 @@ jobs:
 
 验证服务器正确实现 MCP 规范。
 
-### 关键合规领域
+### 关键合规点
 
-1. **API 端点**：测试必需端点（/resources, /tools 等）
-2. **请求/响应格式**：验证 schema 合规性
-3. **错误码**：确保各种场景下状态码正确
+1. **API 端点**：测试必需端点（/resources、/tools 等）
+2. **请求/响应格式**：验证模式合规性
+3. **错误码**：验证各种场景下的状态码正确性
 4. **内容类型**：测试不同内容类型的处理
 5. **认证流程**：验证符合规范的认证机制
 
@@ -1865,26 +1865,26 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 }
 ```
 
-## MCP 服务器测试十大实用技巧
+## MCP 服务器测试十大技巧
 
-1. **单独测试工具定义**：独立验证 schema 定义与工具逻辑
+1. **单独测试工具定义**：独立验证模式定义，分离工具逻辑
 2. **使用参数化测试**：用多样输入（含边界情况）测试工具
-3. **检查错误响应**：确保所有错误情况均正确处理
-4. **测试授权逻辑**：验证不同用户角色的访问控制
-5. **监控测试覆盖率**：确保关键代码路径高覆盖率
-6. **测试流式响应**：验证流式内容处理
-7. **模拟网络问题**：测试网络不佳情况下的表现
+3. **检查错误响应**：验证所有可能错误的正确处理
+4. **测试授权逻辑**：确保不同用户角色的访问控制
+5. **监控测试覆盖率**：争取关键路径代码的高覆盖率
+6. **测试流式响应**：验证流式内容的正确处理
+7. **模拟网络问题**：测试网络不佳时的表现
 8. **测试资源限制**：验证达到配额或速率限制时的行为
-9. **自动化回归测试**：建立每次代码变更都运行的测试套件
-10. **文档化测试用例**：保持测试场景清晰文档
+9. **自动化回归测试**：构建每次代码变更都运行的测试套件
+10. **文档化测试用例**：保持测试场景的清晰文档
 
-## 常见测试陷阱
+## 常见测试误区
 
 - **过度依赖正常路径测试**：务必充分测试错误情况
 - **忽视性能测试**：提前发现瓶颈，避免生产问题
 - **仅做孤立测试**：结合单元、集成和端到端测试
 - **API 覆盖不全**：确保所有端点和功能均被测试
-- **测试环境不一致**：使用容器确保环境一致性
+- **测试环境不一致**：使用容器保证环境一致性
 
 ## 结论
 
@@ -1892,35 +1892,35 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 
 ## 关键要点
 
-1. **工具设计**：遵循单一职责原则，使用依赖注入，设计可组合工具  
-2. **Schema 设计**：创建清晰、文档完善且具备正确验证约束的 schema  
-3. **错误处理**：实现优雅的错误处理、结构化错误响应及重试机制  
-4. **性能**：利用缓存、异步处理和资源限流  
-5. **安全**：全面的输入验证、授权检查及敏感数据处理  
-6. **测试**：构建全面的单元、集成和端到端测试  
-7. **工作流模式**：应用链式、调度器和并行处理等成熟模式
+1. **工具设计**：遵循单一职责原则，使用依赖注入，设计可组合工具
+2. **模式设计**：创建清晰、文档完善且具备验证约束的模式
+3. **错误处理**：实现优雅错误处理、结构化错误响应和重试机制
+4. **性能**：采用缓存、异步处理和资源限流
+5. **安全**：全面输入验证、授权检查和敏感数据处理
+6. **测试**：构建全面的单元、集成和端到端测试
+7. **工作流模式**：应用链式、分发器和并行处理等成熟模式
 
 ## 练习
 
-设计一个文档处理系统的 MCP 工具和工作流，要求：
+设计一个用于文档处理系统的 MCP 工具和工作流，该系统需：
 
-1. 支持多种格式的文档（PDF、DOCX、TXT）  
-2. 从文档中提取文本和关键信息  
-3. 根据类型和内容对文档进行分类  
-4. 生成每个文档的摘要  
+1. 支持多种格式的文档（PDF、DOCX、TXT）
+2. 从文档中提取文本和关键信息
+3. 根据类型和内容对文档进行分类
+4. 生成每个文档的摘要
 
-实现工具的 schema、错误处理，并设计最适合该场景的工作流模式。考虑如何测试该实现。
+实现工具模式、错误处理及最适合该场景的工作流模式。考虑如何测试该实现。
 
 ## 资源
 
-1. 加入 MCP 社区，关注最新动态：[Azure AI Foundry Discord Community](https://aka.ms/foundrydevs)  
-2. 参与开源 [MCP 项目](https://github.com/modelcontextprotocol)  
-3. 在自身组织的 AI 计划中应用 MCP 原则  
-4. 探索针对行业的专业 MCP 实现  
-5. 考虑参加高级 MCP 主题课程，如多模态集成或企业应用集成  
-6. 通过 [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) 实践学习 MCP 工具和工作流构建  
+1. 加入 [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) MCP 社区，获取最新动态
+2. 参与开源 [MCP 项目](https://github.com/modelcontextprotocol) 贡献
+3. 在贵组织的 AI 计划中应用 MCP 原则
+4. 探索适合行业的专用 MCP 实现方案
+5. 考虑参加关于特定 MCP 主题的高级课程，例如多模态集成或企业应用集成。  
+6. 通过[动手实验](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)中学到的原理，尝试构建自己的 MCP 工具和工作流程。  
 
-下一章：最佳实践[案例研究](../09-CaseStudy/README.md)
+下一步：最佳实践[案例研究](../09-CaseStudy/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能存在错误或不准确之处。原始语言的文档应被视为权威来源。对于重要信息，建议使用专业人工翻译。因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

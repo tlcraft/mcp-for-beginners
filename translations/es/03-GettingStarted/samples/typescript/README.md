@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d1fd6d5079bee9fe4f6ed9cfd8031d98",
-  "translation_date": "2025-05-16T15:01:06+00:00",
+  "translation_date": "2025-07-13T22:39:55+00:00",
   "source_file": "03-GettingStarted/samples/typescript/README.md",
   "language_code": "es"
 }
 -->
 # Ejemplo
 
-Este es un ejemplo de Typescript para un servidor MCP
+Este es un ejemplo en Typescript para un servidor MCP
 
 Así es como se ve la parte de la calculadora:
 
@@ -68,9 +68,9 @@ server.tool(
 );
 ```
 
-## Instalar
+## Instalación
 
-Ejecute el siguiente comando:
+Ejecuta el siguiente comando:
 
 ```bash
 npm install
@@ -83,4 +83,4 @@ npm start
 ```
 
 **Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

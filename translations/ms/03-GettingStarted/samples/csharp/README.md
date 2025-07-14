@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T06:04:41+00:00",
+  "translation_date": "2025-07-13T22:17:55+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "ms"
 }
 -->
 # Perkhidmatan Kalkulator Asas MCP
 
-Perkhidmatan ini menyediakan operasi kalkulator asas melalui Model Context Protocol (MCP). Ia direka sebagai contoh mudah untuk pemula yang belajar tentang pelaksanaan MCP.
+Perkhidmatan ini menyediakan operasi kalkulator asas melalui Model Context Protocol (MCP). Ia direka sebagai contoh mudah untuk pemula yang ingin mempelajari tentang pelaksanaan MCP.
 
 Untuk maklumat lanjut, lihat [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
@@ -19,16 +19,16 @@ Perkhidmatan kalkulator ini menawarkan keupayaan berikut:
 
 1. **Operasi Aritmetik Asas**:
    - Penambahan dua nombor
-   - Penolakan satu nombor dari nombor lain
+   - Penolakan satu nombor daripada nombor lain
    - Pendaraban dua nombor
-   - Pembahagian satu nombor dengan nombor lain (dengan semakan pembahagian dengan sifar)
+   - Pembahagian satu nombor dengan nombor lain (dengan pemeriksaan pembahagian dengan sifar)
 
-## Menggunakan `stdio` Jenis
-
+## Menggunakan Jenis `stdio`
+  
 ## Konfigurasi
 
 1. **Konfigurasikan Pelayan MCP**:
-   - Buka ruang kerja anda dalam VS Code.
+   - Buka ruang kerja anda di VS Code.
    - Buat fail `.vscode/mcp.json` dalam folder ruang kerja anda untuk mengkonfigurasi pelayan MCP. Contoh konfigurasi:
 
      ```jsonc
@@ -54,43 +54,42 @@ Perkhidmatan kalkulator ini menawarkan keupayaan berikut:
      }
      ```
 
-   - Anda akan diminta untuk memasukkan akar repositori GitHub, yang boleh diperoleh dari arahan, `git rev-parse --show-toplevel`.
+   - Anda akan diminta untuk memasukkan akar repositori GitHub, yang boleh diperoleh dari arahan `git rev-parse --show-toplevel`.
 
-## Using the Service
+## Menggunakan Perkhidmatan
 
-The service exposes the following API endpoints through the MCP protocol:
+Perkhidmatan ini mendedahkan API berikut melalui protokol MCP:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: Menambah dua nombor bersama
+- `subtract(a, b)`: Menolak nombor kedua daripada nombor pertama
+- `multiply(a, b)`: Mendarab dua nombor
+- `divide(a, b)`: Membahagikan nombor pertama dengan nombor kedua (dengan pemeriksaan sifar)
+- isPrime(n): Semak sama ada nombor itu nombor perdana
 
-## Test with Github Copilot Chat in VS Code
+## Uji dengan Github Copilot Chat di VS Code
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
-   - "Add 5 and 3"
-   - "Subtract 10 from 4"
-   - "Multiply 6 and 7"
-   - "Divide 8 by 2"
-   - "Does 37854 prime?"
-   - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
-   - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
+1. Cuba buat permintaan kepada perkhidmatan menggunakan protokol MCP. Contohnya, anda boleh bertanya:
+   - "Tambah 5 dan 3"
+   - "Tolak 10 daripada 4"
+   - "Darab 6 dan 7"
+   - "Bahagi 8 dengan 2"
+   - "Adakah 37854 nombor perdana?"
+   - "Apakah 3 nombor perdana sebelum dan selepas 4242?"
+2. Untuk memastikan ia menggunakan alat tersebut, tambah #MyCalculator pada arahan. Contohnya:
+   - "Tambah 5 dan 3 #MyCalculator"
+   - "Tolak 10 daripada 4 #MyCalculator"
 
+## Versi Berkontena
 
-## Containerized Version
+Penyelesaian sebelum ini sangat sesuai apabila anda telah memasang .NET SDK dan semua kebergantungan telah tersedia. Namun, jika anda ingin berkongsi penyelesaian atau menjalankannya dalam persekitaran berbeza, anda boleh menggunakan versi berkontena.
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
-
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` dengan nama pengguna Docker Hub anda):
+1. Mulakan Docker dan pastikan ia berjalan.
+1. Dari terminal, navigasi ke folder `03-GettingStarted\samples\csharp\src`
+1. Untuk membina imej Docker bagi perkhidmatan kalkulator, jalankan arahan berikut (gantikan `<YOUR-DOCKER-USERNAME>` dengan nama pengguna Docker Hub anda):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
-   ``` 
-1. Selepas imej dibina, mari muat naik ke Docker Hub. Jalankan arahan berikut:
+   ```
+1. Setelah imej dibina, mari muat naik ke Docker Hub. Jalankan arahan berikut:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
@@ -111,11 +110,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Melihat konfigurasi, anda boleh lihat bahawa arahan adalah `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Melihat konfigurasi tersebut, anda boleh lihat arahan adalah `docker` dan argumennya adalah `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. Flag `--rm` memastikan kontena dipadam selepas ia berhenti, dan flag `-i` membolehkan anda berinteraksi dengan input standard kontena. Argumen terakhir adalah nama imej yang baru sahaja kita bina dan muat naik ke Docker Hub.
 
-## Test the Dockerized Version
+## Uji Versi Dockerized
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, dan seperti sebelumnya anda boleh meminta perkhidmatan kalkulator untuk melakukan beberapa pengiraan untuk anda.
+Mulakan Pelayan MCP dengan mengklik butang Mula kecil di atas `"mcp-calc": {`, dan seperti sebelum ini anda boleh meminta perkhidmatan kalkulator melakukan pengiraan untuk anda.
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

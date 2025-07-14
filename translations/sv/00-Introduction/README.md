@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "105c2ddbb77bc38f7e9df009e1b06e45",
-  "translation_date": "2025-07-04T17:33:47+00:00",
+  "translation_date": "2025-07-13T15:33:51+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "sv"
 }
 -->
 # Introduktion till Model Context Protocol (MCP): Varför det är viktigt för skalbara AI-applikationer
 
-Generativa AI-applikationer är ett stort framsteg eftersom de ofta låter användaren interagera med appen via naturliga språkkommandon. Men när mer tid och resurser investeras i sådana appar vill du säkerställa att du enkelt kan integrera funktioner och resurser på ett sätt som gör det lätt att utöka, att din app kan hantera mer än en modell samtidigt och hantera olika modellkomplexiteter. Kort sagt, att bygga Gen AI-appar är enkelt i början, men när de växer och blir mer komplexa behöver du börja definiera en arkitektur och kommer sannolikt att behöva förlita dig på en standard för att säkerställa att dina appar byggs på ett konsekvent sätt. Här kommer MCP in för att organisera och tillhandahålla en standard.
+Generativa AI-applikationer är ett stort framsteg eftersom de ofta låter användaren interagera med appen via naturliga språkkommandon. Men när mer tid och resurser investeras i sådana appar vill du säkerställa att du enkelt kan integrera funktioner och resurser på ett sätt som gör det lätt att utöka, att din app kan hantera mer än en modell samtidigt och hantera olika modellkomplexiteter. Kort sagt, att bygga Gen AI-appar är enkelt i början, men när de växer och blir mer komplexa behöver du börja definiera en arkitektur och kommer sannolikt att behöva förlita dig på en standard för att säkerställa att dina appar byggs på ett konsekvent sätt. Här kommer MCP in för att organisera och erbjuda en standard.
 
 ---
 
@@ -46,7 +46,7 @@ Efter att ha läst denna artikel kommer du att kunna:
 
 Innan MCP krävde integration av modeller med verktyg:
 
-- Anpassad kod för varje verktygs- och modellpar  
+- Anpassad kod för varje verktyg-modell-par  
 - Icke-standardiserade API:er för varje leverantör  
 - Frekventa avbrott vid uppdateringar  
 - Dålig skalbarhet med fler verktyg  
@@ -55,14 +55,14 @@ Innan MCP krävde integration av modeller med verktyg:
 
 | **Fördel**               | **Beskrivning**                                                                |
 |--------------------------|--------------------------------------------------------------------------------|
-| Interoperabilitet        | LLMs fungerar sömlöst med verktyg från olika leverantörer                      |
+| Interoperabilitet        | LLMs fungerar sömlöst med verktyg från olika leverantörer                     |
 | Konsekvens               | Enhetligt beteende över plattformar och verktyg                               |
-| Återanvändbarhet         | Verktyg byggda en gång kan användas i flera projekt och system                 |
+| Återanvändbarhet         | Verktyg byggda en gång kan användas i flera projekt och system                |
 | Snabbare utveckling      | Minska utvecklingstid genom att använda standardiserade, plug-and-play-gränssnitt |
 
 ---
 
-## **🧱 Översikt över MCP:s arkitektur på hög nivå**
+## **🧱 Översikt av MCP:s arkitektur på hög nivå**
 
 MCP följer en **klient-server-modell**, där:
 
@@ -99,7 +99,7 @@ MCP-servrar fungerar på följande sätt:
     - Verktygen utför sina specialiserade funktioner (sökning, beräkning, databasfrågor etc.)  
     - Resultaten returneras till modellen i ett konsekvent format.  
 
-- **Svarskomplettering**:  
+- **Slutförande av svar**:  
     - AI-modellen införlivar verktygsresultaten i sitt svar.  
     - Det slutgiltiga svaret skickas tillbaka till klientapplikationen.  
 
@@ -175,7 +175,7 @@ Under MCP följer ett MCP-kompatibelt verktyg (kallat MCP-server) en enhetlig st
 
 Utöver att erbjuda verktyg underlättar MCP också tillgång till kunskap. Det gör det möjligt för applikationer att ge kontext till stora språkmodeller (LLMs) genom att koppla dem till olika datakällor. Till exempel kan en MCP-server representera ett företags dokumentarkiv, vilket gör att agenter kan hämta relevant information vid behov. En annan server kan hantera specifika åtgärder som att skicka e-post eller uppdatera register. Ur agentens perspektiv är detta helt enkelt verktyg den kan använda – vissa verktyg returnerar data (kunskapskontext), medan andra utför handlingar. MCP hanterar båda effektivt.
 
-En agent som ansluter till en MCP-server lär sig automatiskt serverns tillgängliga funktioner och åtkomliga data via ett standardformat. Denna standardisering möjliggör dynamisk tillgång till verktyg. Till exempel, när en ny MCP-server läggs till i en agents system blir dess funktioner omedelbart tillgängliga utan att agentens instruktioner behöver anpassas ytterligare.
+En agent som ansluter till en MCP-server lär sig automatiskt serverns tillgängliga funktioner och åtkomliga data via ett standardformat. Denna standardisering möjliggör dynamisk tillgång till verktyg. Till exempel gör tillägget av en ny MCP-server till en agents system dess funktioner omedelbart användbara utan att behöva anpassa agentens instruktioner ytterligare.
 
 Denna smidiga integration följer flödet som visas i mermaid-diagrammet, där servrar tillhandahåller både verktyg och kunskap, vilket säkerställer sömlöst samarbete mellan system.
 

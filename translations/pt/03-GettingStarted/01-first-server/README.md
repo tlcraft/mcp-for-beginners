@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:03:53+00:00",
+  "translation_date": "2025-07-13T17:30:48+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "pt"
 }
@@ -17,11 +17,11 @@ Agora que tens o SDK instalado, vamos criar um projeto a seguir:
 
 ### -5- Adicionar uma ferramenta e um recurso
 
-Adiciona uma ferramenta e um recurso com o seguinte código:
+Adiciona uma ferramenta e um recurso adicionando o seguinte código:
 
 ### -6 Código final
 
-Vamos adicionar o último código necessário para que o servidor possa arrancar:
+Vamos adicionar o último código que precisamos para que o servidor possa arrancar:
 
 ### -7- Testar o servidor
 
@@ -30,7 +30,7 @@ Inicia o servidor com o seguinte comando:
 ### -8- Executar usando o inspector
 
 O inspector é uma ótima ferramenta que pode arrancar o teu servidor e permite-te interagir com ele para testares se está a funcionar. Vamos arrancá-lo:
-> [!NOTE]
+> [!NOTE]  
 > pode parecer diferente no campo "command" pois contém o comando para executar um servidor com o seu runtime específico/
 Deverá ver a seguinte interface de utilizador:
 
@@ -94,9 +94,9 @@ Crie um servidor MCP simples com uma ferramenta à sua escolha:
 - [MCP Remoto com Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
 - [Agente MCP OpenAI .NET](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
-## Próximos passos
+## O que vem a seguir
 
 Seguinte: [Introdução aos Clientes MCP](../02-client/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos por garantir a precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.

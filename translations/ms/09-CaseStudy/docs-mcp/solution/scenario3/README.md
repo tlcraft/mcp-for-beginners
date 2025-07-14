@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "db532b1ec386c9ce38c791653dc3c881",
-  "translation_date": "2025-06-21T14:42:12+00:00",
+  "translation_date": "2025-07-14T06:54:15+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/scenario3/README.md",
   "language_code": "ms"
 }
@@ -11,17 +11,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Gambaran Keseluruhan
 
-Dalam senario ini, anda akan belajar cara membawa Microsoft Learn Docs terus ke dalam persekitaran Visual Studio Code anda menggunakan MCP server. Daripada sentiasa menukar tab pelayar untuk mencari dokumentasi, anda boleh mengakses, mencari, dan merujuk dokumen rasmi terus di dalam editor anda. Pendekatan ini mempermudah aliran kerja anda, mengekalkan fokus, dan membolehkan integrasi lancar dengan alat seperti GitHub Copilot.
+Dalam senario ini, anda akan belajar cara membawa Microsoft Learn Docs terus ke dalam persekitaran Visual Studio Code anda menggunakan server MCP. Daripada sentiasa bertukar tab pelayar untuk mencari dokumentasi, anda boleh mengakses, mencari, dan merujuk dokumen rasmi terus di dalam editor anda. Pendekatan ini memudahkan aliran kerja anda, mengekalkan fokus, dan membolehkan integrasi lancar dengan alat seperti GitHub Copilot.
 
 - Cari dan baca dokumen dalam VS Code tanpa meninggalkan persekitaran pengkodan anda.
-- Rujuk dokumentasi dan masukkan pautan terus ke dalam fail README atau kursus anda.
+- Rujuk dokumentasi dan masukkan pautan terus ke dalam fail README atau fail kursus anda.
 - Gunakan GitHub Copilot dan MCP bersama-sama untuk aliran kerja dokumentasi berkuasa AI yang lancar.
 
 ## Objektif Pembelajaran
 
-Menjelang akhir bab ini, anda akan memahami cara menyediakan dan menggunakan MCP server dalam VS Code untuk meningkatkan aliran kerja dokumentasi dan pembangunan anda. Anda akan dapat:
+Menjelang akhir bab ini, anda akan memahami cara menyediakan dan menggunakan server MCP dalam VS Code untuk meningkatkan aliran kerja dokumentasi dan pembangunan anda. Anda akan dapat:
 
-- Konfigurasikan ruang kerja anda untuk menggunakan MCP server bagi carian dokumentasi.
+- Konfigurasikan ruang kerja anda untuk menggunakan server MCP bagi pencarian dokumentasi.
 - Cari dan masukkan dokumentasi terus dari dalam VS Code.
 - Gabungkan kuasa GitHub Copilot dan MCP untuk aliran kerja yang lebih produktif dan dipertingkatkan AI.
 
@@ -29,7 +29,7 @@ Kemahiran ini akan membantu anda kekal fokus, meningkatkan kualiti dokumentasi, 
 
 ## Penyelesaian
 
-Untuk mencapai akses dokumentasi dalam editor, anda akan mengikuti beberapa langkah yang mengintegrasikan MCP server dengan VS Code dan GitHub Copilot. Penyelesaian ini sesuai untuk pengarang kursus, penulis dokumentasi, dan pembangun yang mahu mengekalkan fokus dalam editor sambil bekerja dengan dokumen dan Copilot.
+Untuk mencapai akses dokumentasi dalam editor, anda akan mengikuti beberapa langkah yang mengintegrasikan server MCP dengan VS Code dan GitHub Copilot. Penyelesaian ini sesuai untuk penulis kursus, penulis dokumentasi, dan pembangun yang ingin mengekalkan fokus dalam editor semasa bekerja dengan dokumen dan Copilot.
 
 - Tambah pautan rujukan dengan cepat ke README semasa menulis dokumentasi kursus atau projek.
 - Gunakan Copilot untuk menjana kod dan MCP untuk mencari serta memetik dokumen yang relevan dengan segera.
@@ -40,7 +40,7 @@ Untuk mencapai akses dokumentasi dalam editor, anda akan mengikuti beberapa lang
 Untuk memulakan, ikut langkah-langkah berikut. Untuk setiap langkah, anda boleh menambah tangkapan skrin dari folder aset untuk menggambarkan proses secara visual.
 
 1. **Tambah konfigurasi MCP:**
-   Di akar projek anda, cipta fail `.vscode/mcp.json` dan tambah konfigurasi berikut:
+   Di akar projek anda, buat fail `.vscode/mcp.json` dan tambah konfigurasi berikut:
    ```json
    {
      "servers": {
@@ -50,7 +50,7 @@ Untuk memulakan, ikut langkah-langkah berikut. Untuk setiap langkah, anda boleh 
      }
    }
    ```
-   Konfigurasi ini memberitahu VS Code bagaimana untuk berhubung dengan [`Microsoft Learn Docs MCP server`](https://github.com/MicrosoftDocs/mcp).
+   Konfigurasi ini memberitahu VS Code cara untuk berhubung dengan [`Microsoft Learn Docs MCP server`](https://github.com/MicrosoftDocs/mcp).
    
    ![Langkah 1: Tambah mcp.json ke folder .vscode](../../../../../../translated_images/step1-mcp-json.c06a007fccc3edfaf0598a31903c9ec71476d9fd3ae6c1b2b4321fd38688ca4b.ms.png)
     
@@ -64,11 +64,11 @@ Untuk memulakan, ikut langkah-langkah berikut. Untuk setiap langkah, anda boleh 
 
    ![Langkah 3: Aktifkan mod agen dan sahkan alat](../../../../../../translated_images/step3-agent-mode.cdc32520fd7dd1d149c3f5226763c1d85a06d3c041d4cc983447625bdbeff4d4.ms.png)
 
-   Selepas mengaktifkan mod agen, sahkan bahawa MCP server disenaraikan sebagai salah satu alat yang tersedia. Ini memastikan agen Copilot boleh mengakses server dokumentasi untuk mendapatkan maklumat yang relevan.
+   Selepas mengaktifkan mod agen, sahkan bahawa server MCP disenaraikan sebagai salah satu alat yang tersedia. Ini memastikan agen Copilot boleh mengakses server dokumentasi untuk mendapatkan maklumat yang relevan.
    
-   ![Langkah 3: Sahkan alat MCP server](../../../../../../translated_images/step3-verify-mcp-tool.76096a6329cbfecd42888780f322370a0d8c8fa003ed3eeb7ccd23f0fc50c1ad.ms.png)
+   ![Langkah 3: Sahkan alat server MCP](../../../../../../translated_images/step3-verify-mcp-tool.76096a6329cbfecd42888780f322370a0d8c8fa003ed3eeb7ccd23f0fc50c1ad.ms.png)
 4. **Mulakan sembang baru dan beri arahan kepada agen:**
-   Buka sembang baru dalam panel Copilot Chat. Anda kini boleh memberi arahan kepada agen dengan soalan dokumentasi anda. Agen akan menggunakan MCP server untuk mendapatkan dan memaparkan dokumentasi Microsoft Learn yang relevan terus dalam editor anda.
+   Buka sembang baru dalam panel Copilot Chat. Anda kini boleh memberi arahan kepada agen dengan soalan dokumentasi anda. Agen akan menggunakan server MCP untuk mendapatkan dan memaparkan dokumentasi Microsoft Learn yang relevan terus dalam editor anda.
 
    - *"Saya sedang cuba menulis pelan pembelajaran untuk topik X. Saya akan belajar selama 8 minggu, untuk setiap minggu, cadangkan kandungan yang patut saya ambil."*
 
@@ -76,27 +76,28 @@ Untuk memulakan, ikut langkah-langkah berikut. Untuk setiap langkah, anda boleh 
 
 5. **Pertanyaan Langsung:**
 
-   > Mari ambil pertanyaan langsung dari bahagian [#get-help](https://discord.gg/D6cRhjHWSC) dalam Discord Azure AI Foundry ([lihat mesej asal](https://discord.com/channels/1113626258182504448/1385498306720829572)):
+   > Mari kita ambil pertanyaan langsung dari bahagian [#get-help](https://discord.gg/D6cRhjHWSC) dalam Azure AI Foundry Discord ([lihat mesej asal](https://discord.com/channels/1113626258182504448/1385498306720829572)):
    
-   *"Saya mencari jawapan tentang cara untuk melaksanakan penyelesaian multi-agen dengan agen AI yang dibangunkan di Azure AI Foundry. Saya perhatikan tiada kaedah pelaksanaan langsung, seperti saluran Copilot Studio. Jadi, apakah cara berbeza untuk melaksanakan ini supaya pengguna perusahaan dapat berinteraksi dan menyelesaikan tugasan?
-Terdapat banyak artikel/blog yang mengatakan kita boleh gunakan perkhidmatan Azure Bot untuk tugasan ini yang boleh bertindak sebagai jambatan antara MS Teams dan Agen Azure AI Foundry, adakah ini akan berfungsi jika saya sediakan Azure bot yang bersambung dengan Orchestrator Agent di Azure AI Foundry melalui fungsi Azure untuk melakukan orkestrasi atau saya perlu cipta fungsi Azure untuk setiap agen AI yang merupakan sebahagian daripada penyelesaian multi-agen untuk melakukan orkestrasi pada rangka kerja Bot? Sebarang cadangan lain amat dialu-alukan."*
+   *"Saya sedang mencari jawapan tentang cara untuk melaksanakan penyelesaian multi-agen dengan agen AI yang dibangunkan di Azure AI Foundry. Saya lihat tiada kaedah pelaksanaan langsung, seperti saluran Copilot Studio. Jadi, apakah cara berbeza untuk melakukan pelaksanaan ini supaya pengguna perusahaan boleh berinteraksi dan menyelesaikan tugasan?
+Terdapat banyak artikel/blog yang mengatakan kita boleh menggunakan perkhidmatan Azure Bot untuk melakukan kerja ini yang boleh bertindak sebagai jambatan antara MS Teams dan Agen Azure AI Foundry, adakah ini akan berfungsi jika saya menyediakan bot Azure yang berhubung dengan Orchestrator Agent di Azure AI Foundry melalui fungsi Azure untuk melakukan orkestrasi atau saya perlu membuat fungsi Azure untuk setiap agen AI yang merupakan sebahagian daripada penyelesaian multi-agen untuk melakukan orkestrasi di rangka kerja Bot? Sebarang cadangan lain amat dialu-alukan.
+"*
 
    ![Langkah 5: Pertanyaan langsung](../../../../../../translated_images/step5-live-queries.49db3e4a50bea27327e3cb18c24d263b7d134930d78e7392f9515a1c00264a7f.ms.png)
 
-   Agen akan membalas dengan pautan dokumentasi dan ringkasan yang relevan, yang kemudian anda boleh masukkan terus ke dalam fail markdown anda atau gunakan sebagai rujukan dalam kod anda.
+   Agen akan membalas dengan pautan dokumentasi dan ringkasan yang relevan, yang kemudian boleh anda masukkan terus ke dalam fail markdown anda atau gunakan sebagai rujukan dalam kod anda.
    
 ### Contoh Pertanyaan
 
-Berikut adalah beberapa contoh pertanyaan yang boleh anda cuba. Pertanyaan ini akan menunjukkan bagaimana MCP server dan Copilot boleh bekerjasama untuk menyediakan dokumentasi dan rujukan yang segera dan berasaskan konteks tanpa meninggalkan VS Code:
+Berikut adalah beberapa contoh pertanyaan yang boleh anda cuba. Pertanyaan ini akan menunjukkan bagaimana server MCP dan Copilot boleh bekerjasama untuk menyediakan dokumentasi serta rujukan yang segera dan berasaskan konteks tanpa meninggalkan VS Code:
 
 - "Tunjukkan cara menggunakan pencetus Azure Functions."
 - "Masukkan pautan ke dokumentasi rasmi untuk Azure Key Vault."
 - "Apakah amalan terbaik untuk mengamankan sumber Azure?"
-- "Cari panduan permulaan pantas untuk perkhidmatan Azure AI."
+- "Cari panduan permulaan untuk perkhidmatan Azure AI."
 
-Pertanyaan ini akan menunjukkan bagaimana MCP server dan Copilot boleh bekerjasama untuk menyediakan dokumentasi dan rujukan yang segera dan berasaskan konteks tanpa meninggalkan VS Code.
+Pertanyaan ini akan menunjukkan bagaimana server MCP dan Copilot boleh bekerjasama untuk menyediakan dokumentasi serta rujukan yang segera dan berasaskan konteks tanpa meninggalkan VS Code.
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

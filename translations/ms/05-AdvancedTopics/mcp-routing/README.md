@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
-  "translation_date": "2025-06-13T00:37:52+00:00",
+  "translation_date": "2025-07-14T02:15:21+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "ms"
 }
 -->
-## MCP-ում նմուշառում և երթուղավորումի ճարտարապետություն
+## Seni Bina Pensampelan dan Penghalaan dalam MCP
 
-Նմուշարումը Model Context Protocol (MCP)-ի կարևոր բաղադրիչ է, որը հնարավորություն է տալիս արդյունավետ մշակել և երթուղավորել հարցումները: Այն ներառում է ներթափանցող հարցումների վերլուծություն՝ որոշելու համար ամենահարմար մոդելը կամ ծառայությունը, որը կկառավարի դրանք՝ հիմնվելով տարբեր չափանիշների վրա, ինչպիսիք են բովանդակության տեսակը, օգտվողի կոնտեքստը և համակարգի բեռնվածությունը:
+Pensampelan adalah komponen penting dalam Model Context Protocol (MCP) yang membolehkan pemprosesan dan penghalaan permintaan yang cekap. Ia melibatkan analisis permintaan yang masuk untuk menentukan model atau perkhidmatan yang paling sesuai untuk mengendalikannya, berdasarkan pelbagai kriteria seperti jenis kandungan, konteks pengguna, dan beban sistem.
 
-Նմուշարումը և երթուղավորումը կարող են համատեղ օգտագործվել՝ ստեղծելով ամուր ճարտարապետություն, որը օպտիմալացնում է ռեսուրսների օգտագործումը և ապահովում բարձր հասանելիություն: Նմուշարումն օգտագործվում է հարցումների դասակարգման համար, իսկ երթուղավորումը ուղղորդում է դրանք համապատասխան մոդելներին կամ ծառայություններին:
+Pensampelan dan penghalaan boleh digabungkan untuk mewujudkan seni bina yang kukuh yang mengoptimumkan penggunaan sumber dan memastikan ketersediaan tinggi. Proses pensampelan boleh digunakan untuk mengklasifikasikan permintaan, manakala penghalaan mengarahkannya ke model atau perkhidmatan yang sesuai.
 
-Ստորև ներկայացված է դիագրամ, որը ցույց է տալիս, թե ինչպես են նմուշարումն ու երթուղավորումը միասին աշխատում MCP-ի համապարփակ ճարտարապետության մեջ:
+Rajah di bawah menggambarkan bagaimana pensampelan dan penghalaan berfungsi bersama dalam seni bina MCP yang menyeluruh:
 
 ```mermaid
 flowchart TB
@@ -80,9 +80,9 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Ի՞նչ է հաջորդը
+## Apa yang seterusnya
 
-- [5.6 Նմուշառում](../mcp-sampling/README.md)
+- [5.6 Sampling](../mcp-sampling/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

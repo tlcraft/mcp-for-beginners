@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a607d4febc94caee9a12b77795f7fc9a",
-  "translation_date": "2025-06-11T16:45:46+00:00",
+  "translation_date": "2025-07-13T15:15:28+00:00",
   "source_file": "study_guide.md",
   "language_code": "no"
 }
 -->
-# Model Context Protocol (MCP) for Beginners - Studieveiledning
+# Model Context Protocol (MCP) for nybegynnere - Studieveiledning
 
-Denne studieveiledningen gir en oversikt over mappestrukturen og innholdet i "Model Context Protocol (MCP) for Beginners"-kurset. Bruk denne veiledningen for å navigere effektivt i repositoriet og få mest mulig ut av tilgjengelige ressurser.
+Denne studieveiledningen gir en oversikt over mappestrukturen og innholdet i "Model Context Protocol (MCP) for nybegynnere"-pensumet. Bruk denne veiledningen for å navigere i depotet effektivt og få mest mulig ut av de tilgjengelige ressursene.
 
-## Oversikt over Repositoriet
+## Oversikt over depotet
 
-Model Context Protocol (MCP) er et standardisert rammeverk for samhandling mellom AI-modeller og klientapplikasjoner. Dette repositoriet tilbyr et omfattende kurs med praktiske kodeeksempler i C#, Java, JavaScript, Python og TypeScript, designet for AI-utviklere, systemarkitekter og programvareingeniører.
+Model Context Protocol (MCP) er en standardisert ramme for samhandling mellom AI-modeller og klientapplikasjoner. Dette depotet tilbyr et omfattende pensum med praktiske kodeeksempler i C#, Java, JavaScript, Python og TypeScript, utviklet for AI-utviklere, systemarkitekter og programvareingeniører.
 
-## Visuell Kurskart
+## Visuelt pensumkart
 
 ```mermaid
 mindmap
@@ -86,9 +86,9 @@ mindmap
       (Production Deployment)
 ```
 
-## Struktur i Repositoriet
+## Depotstruktur
 
-Repositoriet er delt inn i ti hovedseksjoner, hver med fokus på ulike aspekter av MCP:
+Depotet er organisert i ti hovedseksjoner, hver med fokus på ulike aspekter av MCP:
 
 1. **Introduksjon (00-Introduction/)**
    - Oversikt over Model Context Protocol
@@ -97,7 +97,7 @@ Repositoriet er delt inn i ti hovedseksjoner, hver med fokus på ulike aspekter 
 
 2. **Kjernebegreper (01-CoreConcepts/)**
    - Klient-server-arkitektur
-   - Nøkkelkomponenter i protokollen
+   - Viktige protokollkomponenter
    - Meldingsmønstre i MCP
 
 3. **Sikkerhet (02-Security/)**
@@ -105,93 +105,93 @@ Repositoriet er delt inn i ti hovedseksjoner, hver med fokus på ulike aspekter 
    - Beste praksis for sikre implementasjoner
    - Autentisering og autorisasjonsstrategier
 
-4. **Kom i Gang (03-GettingStarted/)**
-   - Oppsett av miljø og konfigurasjon
+4. **Kom i gang (03-GettingStarted/)**
+   - Oppsett og konfigurasjon av miljø
    - Lage grunnleggende MCP-servere og klienter
    - Integrasjon med eksisterende applikasjoner
-   - Undersseksjoner for første server, første klient, LLM-klient, VS Code-integrasjon, SSE-server, AI Toolkit, testing og utrulling
+   - Undersseksjoner for første server, første klient, LLM-klient, VS Code-integrasjon, SSE-server, AI Toolkit, testing og distribusjon
 
-5. **Praktisk Implementering (04-PracticalImplementation/)**
-   - Bruk av SDK-er på ulike programmeringsspråk
+5. **Praktisk implementering (04-PracticalImplementation/)**
+   - Bruke SDK-er på tvers av ulike programmeringsspråk
    - Feilsøking, testing og valideringsteknikker
-   - Lage gjenbrukbare prompt-maler og arbeidsflyter
+   - Lage gjenbrukbare promptmaler og arbeidsflyter
    - Eksempelsprosjekter med implementasjonsdemonstrasjoner
 
-6. **Avanserte Emner (05-AdvancedTopics/)**
+6. **Avanserte emner (05-AdvancedTopics/)**
    - Multimodale AI-arbeidsflyter og utvidbarhet
    - Sikker skalering
    - MCP i bedriftsøkosystemer
-   - Spesialiserte temaer som Azure-integrasjon, multimodalitet, OAuth2, rotkontekster, ruting, sampling, skalering, sikkerhet, websøkintegrasjon og streaming.
+   - Spesialiserte temaer som Azure-integrasjon, multimodalitet, OAuth2, root contexts, ruting, sampling, skalering, sikkerhet, websøkintegrasjon og streaming.
 
-7. **Fellesskapsbidrag (06-CommunityContributions/)**
+7. **Bidrag fra fellesskapet (06-CommunityContributions/)**
    - Hvordan bidra med kode og dokumentasjon
    - Samarbeid via GitHub
    - Fellesskapsdrevne forbedringer og tilbakemeldinger
 
-8. **Lærdom fra Tidlig Adopsjon (07-LessonsfromEarlyAdoption/)**
+8. **Lærdom fra tidlig adopsjon (07-LessonsfromEarlyAdoption/)**
    - Virkelige implementasjoner og suksesshistorier
    - Bygging og utrulling av MCP-baserte løsninger
    - Trender og fremtidig veikart
 
-9. **Beste Praksis (08-BestPractices/)**
-   - Ytelsesoptimalisering
-   - Design av feilresistente MCP-systemer
+9. **Beste praksis (08-BestPractices/)**
+   - Ytelsesoptimalisering og tuning
+   - Design av feiltolerante MCP-systemer
    - Testing og robusthetsstrategier
 
-10. **Case Studier (09-CaseStudy/)**
-    - Dyptgående analyser av MCP-løsningsarkitekturer
-    - Utrullingsplaner og integrasjonstips
+10. **Case-studier (09-CaseStudy/)**
+    - Grundige gjennomganger av MCP-løsningsarkitekturer
+    - Distribusjonsplaner og integrasjonstips
     - Annoterte diagrammer og prosjektgjennomganger
 
-11. **Hands-on Workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
+11. **Praktisk workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - Omfattende praktisk workshop som kombinerer MCP med Microsofts AI Toolkit for VS Code
     - Bygge intelligente applikasjoner som kobler AI-modeller med virkelige verktøy
-    - Praktiske moduler som dekker grunnleggende, tilpasset serverutvikling og produksjonsutrulling
+    - Praktiske moduler som dekker grunnleggende, utvikling av egendefinert server og produksjonsutrulling
 
 ## Eksempelsprosjekter
 
-Repositoriet inneholder flere eksempelsprosjekter som viser MCP-implementasjon i ulike programmeringsspråk:
+Depotet inneholder flere eksempelsprosjekter som demonstrerer MCP-implementering på ulike programmeringsspråk:
 
-### Grunnleggende MCP Kalkulator Eksempler
-- C# MCP Server Eksempel
-- Java MCP Kalkulator
-- JavaScript MCP Demo
-- Python MCP Server
-- TypeScript MCP Eksempel
+### Enkle MCP-kalkulator-eksempler
+- C# MCP-servereksempel
+- Java MCP-kalkulator
+- JavaScript MCP-demo
+- Python MCP-server
+- TypeScript MCP-eksempel
 
-### Avanserte MCP Kalkulator Prosjekter
-- Avansert C# Eksempel
-- Java Container App Eksempel
-- JavaScript Avansert Eksempel
-- Python Kompleks Implementasjon
-- TypeScript Container Eksempel
+### Avanserte MCP-kalkulatorprosjekter
+- Avansert C#-eksempel
+- Java container-app-eksempel
+- JavaScript avansert eksempel
+- Python kompleks implementering
+- TypeScript container-eksempel
 
 ## Tilleggsressurser
 
-Repositoriet inneholder støtteressurser:
+Depotet inkluderer støtteressurser:
 
-- **Images-mappen**: Inneholder diagrammer og illustrasjoner brukt i kurset
-- **Oversettelser**: Flerspråklig støtte med automatiske oversettelser av dokumentasjon
-- **Offisielle MCP Ressurser**:
+- **Bilder-mappe**: Inneholder diagrammer og illustrasjoner brukt gjennom pensumet
+- **Oversettelser**: Flerspråklig støtte med automatiserte oversettelser av dokumentasjon
+- **Offisielle MCP-ressurser**:
   - [MCP Documentation](https://modelcontextprotocol.io/)
   - [MCP Specification](https://spec.modelcontextprotocol.io/)
   - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
 
-## Hvordan Bruke Dette Repositoriet
+## Hvordan bruke dette depotet
 
-1. **Sekvensiell Læring**: Følg kapitlene i rekkefølge (00 til 10) for en strukturert læringsopplevelse.
-2. **Språkspesifikt Fokus**: Hvis du er interessert i et bestemt programmeringsspråk, utforsk eksempelkatalogene for implementasjoner på ønsket språk.
-3. **Praktisk Implementering**: Start med "Kom i Gang"-seksjonen for å sette opp miljøet ditt og lage din første MCP-server og klient.
-4. **Avansert Utforskning**: Når du er komfortabel med det grunnleggende, dykk ned i avanserte emner for å utvide kunnskapen.
+1. **Sekvensiell læring**: Følg kapitlene i rekkefølge (00 til 10) for en strukturert læringsopplevelse.
+2. **Språkspesifikt fokus**: Hvis du er interessert i et bestemt programmeringsspråk, utforsk mappene med eksempler for implementasjoner i ditt foretrukne språk.
+3. **Praktisk implementering**: Start med "Kom i gang"-seksjonen for å sette opp miljøet ditt og lage din første MCP-server og klient.
+4. **Avansert utforskning**: Når du er komfortabel med det grunnleggende, kan du dykke ned i avanserte emner for å utvide kunnskapen din.
 5. **Fellesskapsengasjement**: Bli med i [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) for å knytte kontakt med eksperter og andre utviklere.
 
 ## Bidra
 
-Dette repositoriet ønsker bidrag fra fellesskapet velkommen. Se seksjonen Fellesskapsbidrag for veiledning om hvordan du kan bidra.
+Dette depotet ønsker bidrag fra fellesskapet velkommen. Se seksjonen Bidrag fra fellesskapet for veiledning om hvordan du kan bidra.
 
 ---
 
-*Denne studieveiledningen ble laget 11. juni 2025 og gir en oversikt over repositoriet per den datoen. Innholdet i repositoriet kan ha blitt oppdatert siden da.*
+*Denne studieveiledningen ble laget 11. juni 2025, og gir en oversikt over depotet per den datoen. Innholdet i depotet kan ha blitt oppdatert siden da.*
 
 **Ansvarsfraskrivelse**:  
 Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

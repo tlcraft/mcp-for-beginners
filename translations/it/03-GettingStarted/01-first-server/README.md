@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:04:52+00:00",
+  "translation_date": "2025-07-13T17:31:38+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "it"
 }
 -->
 ### -2- Crea il progetto
 
-Ora che hai installato l’SDK, creiamo un progetto.
+Ora che hai installato l’SDK, creiamo il progetto:
 
 ### -3- Crea i file del progetto
 
@@ -21,7 +21,7 @@ Aggiungi uno strumento e una risorsa inserendo il seguente codice:
 
 ### -6 Codice finale
 
-Aggiungiamo l’ultimo pezzo di codice necessario per far partire il server:
+Aggiungiamo l’ultimo codice necessario per far partire il server:
 
 ### -7- Testa il server
 
@@ -29,7 +29,7 @@ Avvia il server con il seguente comando:
 
 ### -8- Esegui usando l’inspector
 
-L’inspector è uno strumento eccellente che può avviare il server e ti permette di interagire con esso per testarne il funzionamento. Avviamolo:
+L’inspector è uno strumento eccellente che può avviare il server e permetterti di interagire con esso per testarne il funzionamento. Avviamolo:
 > [!NOTE]
 > potrebbe apparire diverso nel campo "command" poiché contiene il comando per avviare un server con il tuo runtime specifico/
 Dovresti vedere la seguente interfaccia utente:
@@ -47,11 +47,11 @@ Dovresti vedere la seguente interfaccia utente:
 
   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.it.png)
 
-Complimenti, sei riuscito a creare ed eseguire il tuo primo server!
+Congratulazioni, sei riuscito a creare ed eseguire il tuo primo server!
 
 ### SDK Ufficiali
 
-MCP fornisce SDK ufficiali per più linguaggi:
+MCP fornisce SDK ufficiali per diversi linguaggi:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Mantenuto in collaborazione con Microsoft
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Mantenuto in collaborazione con Spring AI
@@ -99,4 +99,4 @@ Crea un semplice server MCP con uno strumento a tua scelta:
 Prossimo: [Introduzione ai Client MCP](../02-client/README.md)
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

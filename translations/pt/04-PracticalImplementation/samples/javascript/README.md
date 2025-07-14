@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:49:55+00:00",
+  "translation_date": "2025-07-13T23:27:32+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "pt"
 }
 -->
 # Exemplo
 
-Este é um exemplo de JavaScript para um servidor MCP
+Este é um exemplo em JavaScript para um Servidor MCP
 
-Aqui está um exemplo de registro de ferramenta onde registramos uma ferramenta que faz uma chamada simulada a um LLM:
+Aqui está um exemplo de registo de uma ferramenta onde registamos uma ferramenta que faz uma chamada simulada a um LLM:
 
 ```javascript
 this.mcpServer.tool(
@@ -89,4 +89,4 @@ npm start
 ```
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se a tradução humana profissional. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

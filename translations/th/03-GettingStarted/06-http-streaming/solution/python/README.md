@@ -2,29 +2,29 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:01:59+00:00",
+  "translation_date": "2025-07-13T21:20:03+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "th"
 }
 -->
 # การรันตัวอย่างนี้
 
-นี่คือวิธีการรันเซิร์ฟเวอร์และไคลเอนต์ HTTP streaming แบบคลาสสิก รวมถึง MCP streaming server และไคลเอนต์ โดยใช้ Python
+นี่คือวิธีการรันเซิร์ฟเวอร์และไคลเอนต์ HTTP streaming แบบคลาสสิก รวมถึงเซิร์ฟเวอร์และไคลเอนต์ MCP streaming โดยใช้ Python
 
 ### ภาพรวม
 
-- คุณจะตั้งค่า MCP server ที่ส่งการแจ้งเตือนความคืบหน้าไปยังไคลเอนต์ขณะที่กำลังประมวลผลรายการ
+- คุณจะตั้งค่าเซิร์ฟเวอร์ MCP ที่สตรีมการแจ้งเตือนความคืบหน้าไปยังไคลเอนต์ในขณะที่ประมวลผลรายการ
 - ไคลเอนต์จะแสดงการแจ้งเตือนแต่ละรายการแบบเรียลไทม์
 - คู่มือนี้ครอบคลุมถึงข้อกำหนดเบื้องต้น การตั้งค่า การรัน และการแก้ไขปัญหา
 
 ### ข้อกำหนดเบื้องต้น
 
 - Python 3.9 หรือใหม่กว่า
-- แพ็กเกจ `mcp` ของ Python (ติดตั้งด้วย `pip install mcp`)
+- แพ็กเกจ Python `mcp` (ติดตั้งด้วยคำสั่ง `pip install mcp`)
 
-### การติดตั้งและตั้งค่า
+### การติดตั้งและการตั้งค่า
 
-1. โคลนรีโพสิทอรีหรือดาวน์โหลดไฟล์โซลูชัน
+1. โคลนรีโพซิทอรีหรือดาวน์โหลดไฟล์โซลูชัน
 
    ```pwsh
    git clone https://github.com/microsoft/mcp-for-beginners
@@ -47,18 +47,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### ไฟล์
 
-- **Server:** [server.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/server.py)
-- **Client:** [client.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/client.py)
+- **เซิร์ฟเวอร์:** [server.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/server.py)
+- **ไคลเอนต์:** [client.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/client.py)
 
 ### การรัน Classic HTTP Streaming Server
 
-1. ไปที่ไดเรกทอรีของโซลูชัน:
+1. ไปที่ไดเรกทอรีโซลูชัน:
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
 
-2. เริ่มต้น classic HTTP streaming server:
+2. เริ่มต้นเซิร์ฟเวอร์ HTTP streaming แบบคลาสสิก:
 
    ```pwsh
    python server.py
@@ -80,7 +80,7 @@ CO_OP_TRANSLATOR_METADATA:
    python client.py
    ```
 
-2. คุณจะเห็นข้อความที่ถูกสตรีมแสดงผลทีละข้อความ:
+2. คุณจะเห็นข้อความที่ถูกสตรีมแสดงผลตามลำดับ:
 
    ```text
    Running classic HTTP streaming client...
@@ -95,15 +95,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### การรัน MCP Streaming Server
 
-1. ไปที่ไดเรกทอรีของโซลูชัน:
+1. ไปที่ไดเรกทอรีโซลูชัน:
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
-2. เริ่ม MCP server ด้วยการขนส่งแบบ streamable-http:
+2. เริ่มเซิร์ฟเวอร์ MCP ด้วย transport แบบ streamable-http:
    ```pwsh
    python server.py mcp
    ```
-3. เซิร์ฟเวอร์จะเริ่มทำงานและแสดงผล:
+3. เซิร์ฟเวอร์จะเริ่มทำงานและแสดงผลดังนี้:
    ```
    Starting MCP server with streamable-http transport...
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
@@ -116,7 +116,7 @@ CO_OP_TRANSLATOR_METADATA:
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. คุณจะเห็นการแจ้งเตือนถูกพิมพ์แบบเรียลไทม์ขณะที่เซิร์ฟเวอร์กำลังประมวลผลแต่ละรายการ:
+2. คุณจะเห็นการแจ้งเตือนแสดงผลแบบเรียลไทม์ในขณะที่เซิร์ฟเวอร์ประมวลผลแต่ละรายการ:
    ```
    Running MCP client...
    Starting client...
@@ -131,21 +131,21 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### ขั้นตอนสำคัญในการพัฒนา
 
-1. **สร้าง MCP server โดยใช้ FastMCP**
-2. **กำหนดเครื่องมือที่ประมวลผลรายการและส่งการแจ้งเตือนโดยใช้ `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+1. **สร้างเซิร์ฟเวอร์ MCP โดยใช้ FastMCP**
+2. **กำหนดเครื่องมือที่ประมวลผลรายการและส่งการแจ้งเตือนโดยใช้ `ctx.info()` หรือ `ctx.log()`**
+3. **รันเซิร์ฟเวอร์ด้วย `transport="streamable-http"`**
+4. **พัฒนาไคลเอนต์ที่มี message handler เพื่อแสดงการแจ้งเตือนเมื่อได้รับ**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### การอธิบายโค้ด
+- เซิร์ฟเวอร์ใช้ฟังก์ชันแบบ async และบริบท MCP เพื่อส่งอัปเดตความคืบหน้า
+- ไคลเอนต์พัฒนาด้วย async message handler เพื่อพิมพ์การแจ้งเตือนและผลลัพธ์สุดท้าย
 
-### Tips & Troubleshooting
+### เคล็ดลับและการแก้ไขปัญหา
 
-- Use `async/await` สำหรับการทำงานแบบไม่บล็อก**
-- ควรจัดการข้อยกเว้นทั้งในเซิร์ฟเวอร์และไคลเอนต์เพื่อความเสถียร
+- ใช้ `async/await` เพื่อให้การทำงานไม่บล็อก
+- จัดการข้อผิดพลาดในทั้งเซิร์ฟเวอร์และไคลเอนต์เพื่อความเสถียร
 - ทดสอบกับไคลเอนต์หลายตัวเพื่อดูการอัปเดตแบบเรียลไทม์
-- หากพบข้อผิดพลาด ให้ตรวจสอบเวอร์ชัน Python และยืนยันว่าติดตั้ง dependencies ครบถ้วนแล้ว
+- หากพบข้อผิดพลาด ให้ตรวจสอบเวอร์ชัน Python และตรวจสอบว่าติดตั้ง dependencies ครบถ้วนแล้ว
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารฉบับนี้ได้รับการแปลโดยใช้บริการแปลภาษาด้วย AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้องได้ เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยมนุษย์ผู้เชี่ยวชาญ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดขึ้นจากการใช้การแปลนี้

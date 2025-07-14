@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
-  "translation_date": "2025-07-04T17:10:37+00:00",
+  "translation_date": "2025-07-13T18:14:56+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "pl"
 }
@@ -15,7 +15,7 @@ W poprzednim kodzie:
 
 Oto masz klienta, który potrafi komunikować się z serwerem MCP.
 
-W następnej sekcji ćwiczeń poświęcimy czas na rozbicie każdego fragmentu kodu i wyjaśnienie, co się dzieje.
+W następnej sekcji ćwiczeń poświęcimy czas na rozbicie każdego fragmentu kodu i wyjaśnimy, co się dzieje.
 
 ## Ćwiczenie: Pisanie klienta
 
@@ -23,7 +23,7 @@ Jak wspomniano wcześniej, poświęćmy czas na wyjaśnienie kodu, a jeśli chce
 
 ### -1- Importowanie bibliotek
 
-Zaimportujmy potrzebne biblioteki, będziemy potrzebować odniesień do klienta oraz do wybranego protokołu transportowego, czyli stdio. stdio to protokół przeznaczony do działania na lokalnej maszynie. SSE to inny protokół transportowy, który pokażemy w przyszłych rozdziałach, ale to jest twoja inna opcja. Na razie jednak kontynuujmy ze stdio.
+Zaimportujmy potrzebne biblioteki, będziemy potrzebować odniesień do klienta oraz do wybranego protokołu transportowego, czyli stdio. stdio to protokół przeznaczony do działania na lokalnej maszynie. SSE to inny protokół transportowy, który pokażemy w przyszłych rozdziałach, ale to jest twoja alternatywa. Na razie jednak kontynuujmy ze stdio.
 
 Przejdźmy teraz do tworzenia instancji.
 
@@ -39,7 +39,7 @@ Teraz mamy klienta, który może się połączyć, jeśli program zostanie uruch
 
 ### -4- Wywoływanie funkcji
 
-Aby wywołać funkcje, musimy upewnić się, że podajemy poprawne argumenty, a w niektórych przypadkach nazwę tego, co chcemy wywołać.
+Aby wywołać funkcje, musimy upewnić się, że podajemy odpowiednie argumenty, a w niektórych przypadkach nazwę tego, co chcemy wywołać.
 
 ### -5- Uruchomienie klienta
 
@@ -49,19 +49,19 @@ Aby uruchomić klienta, wpisz następujące polecenie w terminalu:
 
 W tym zadaniu wykorzystasz to, czego się nauczyłeś, tworząc własnego klienta.
 
-Oto serwer, którego możesz użyć i do którego musisz się odwołać za pomocą swojego kodu klienta. Spróbuj dodać więcej funkcji do serwera, aby uczynić go bardziej interesującym.
+Oto serwer, którego możesz użyć i do którego musisz się odwołać za pomocą swojego kodu klienta. Sprawdź, czy potrafisz dodać więcej funkcji do serwera, aby był ciekawszy.
 
 ## Rozwiązanie
 
 [Solution](./solution/README.md)
 
-## Najważniejsze wnioski
+## Najważniejsze informacje
 
-Najważniejsze wnioski z tego rozdziału dotyczące klientów to:
+Najważniejsze informacje dotyczące klientów w tym rozdziale to:
 
 - Mogą służyć zarówno do odkrywania, jak i wywoływania funkcji na serwerze.
 - Mogą uruchomić serwer podczas własnego startu (jak w tym rozdziale), ale klienci mogą też łączyć się z już działającymi serwerami.
-- To świetny sposób na testowanie możliwości serwera obok alternatyw takich jak Inspector, jak opisano w poprzednim rozdziale.
+- To świetny sposób na testowanie możliwości serwera obok alternatyw, takich jak Inspector, opisany w poprzednim rozdziale.
 
 ## Dodatkowe zasoby
 
@@ -80,4 +80,4 @@ Najważniejsze wnioski z tego rozdziału dotyczące klientów to:
 - Następny: [Tworzenie klienta z LLM](../03-llm-client/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło wiążące. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

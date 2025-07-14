@@ -2,43 +2,43 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-06-13T01:21:02+00:00",
+  "translation_date": "2025-07-14T02:44:41+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "hr"
 }
 -->
 # Najbolje sigurnosne prakse
 
-Sigurnost je ključna za MCP implementacije, posebno u poslovnim okruženjima. Važno je osigurati da su alati i podaci zaštićeni od neovlaštenog pristupa, curenja podataka i drugih sigurnosnih prijetnji.
+Sigurnost je ključna za implementacije MCP-a, osobito u poslovnim okruženjima. Važno je osigurati da su alati i podaci zaštićeni od neovlaštenog pristupa, curenja podataka i drugih sigurnosnih prijetnji.
 
 ## Uvod
 
-U ovoj lekciji istražit ćemo najbolje sigurnosne prakse za MCP implementacije. Pokrit ćemo autentikaciju i autorizaciju, zaštitu podataka, sigurno izvođenje alata te usklađenost s propisima o privatnosti podataka.
+U ovom ćemo poglavlju istražiti najbolje sigurnosne prakse za implementacije MCP-a. Obradit ćemo autentifikaciju i autorizaciju, zaštitu podataka, sigurno izvođenje alata te usklađenost s propisima o privatnosti podataka.
 
 ## Ciljevi učenja
 
-Na kraju ove lekcije moći ćete:
+Na kraju ovog poglavlja moći ćete:
 
-- Implementirati sigurne mehanizme autentikacije i autorizacije za MCP servere.
+- Implementirati sigurne mehanizme autentifikacije i autorizacije za MCP servere.
 - Zaštititi osjetljive podatke korištenjem enkripcije i sigurnog pohranjivanja.
-- Osigurati sigurno izvođenje alata s odgovarajućom kontrolom pristupa.
-- Primijeniti najbolje prakse za zaštitu podataka i usklađenost s pravilima privatnosti.
+- Osigurati sigurno izvođenje alata uz pravilnu kontrolu pristupa.
+- Primijeniti najbolje prakse za zaštitu podataka i usklađenost s propisima o privatnosti.
 
-## Autentikacija i autorizacija
+## Autentifikacija i autorizacija
 
-Autentikacija i autorizacija su ključni za sigurnost MCP servera. Autentikacija odgovara na pitanje "Tko ste vi?", dok autorizacija odgovara na "Što smijete raditi?".
+Autentifikacija i autorizacija su ključni za sigurnost MCP servera. Autentifikacija odgovara na pitanje "Tko ste vi?", dok autorizacija odgovara na pitanje "Što smijete raditi?".
 
-Pogledajmo primjere kako implementirati sigurnu autentikaciju i autorizaciju na MCP serverima koristeći .NET i Java.
+Pogledajmo primjere kako implementirati sigurnu autentifikaciju i autorizaciju u MCP serverima koristeći .NET i Java.
 
 ### Integracija .NET Identity
 
-ASP .NET Core Identity pruža snažan okvir za upravljanje autentikacijom i autorizacijom korisnika. Možemo ga integrirati s MCP serverima kako bismo osigurali pristup alatima i resursima.
+ASP .NET Core Identity pruža snažan okvir za upravljanje autentifikacijom i autorizacijom korisnika. Možemo ga integrirati s MCP serverima kako bismo osigurali pristup alatima i resursima.
 
-Postoje ključni koncepti koje trebamo razumjeti pri integraciji ASP.NET Core Identity s MCP serverima, a to su:
+Postoje osnovni pojmovi koje trebamo razumjeti pri integraciji ASP.NET Core Identity s MCP serverima, a to su:
 
-- **Konfiguracija Identity**: Postavljanje ASP.NET Core Identity s korisničkim ulogama i tvrdnjama (claims). Tvrdnja je informacija o korisniku, poput njegove uloge ili dozvola, na primjer "Admin" ili "User".
-- **JWT autentikacija**: Korištenje JSON Web Tokena (JWT) za siguran pristup API-ju. JWT je standard za siguran prijenos informacija između strana kao JSON objekt, koji se može verificirati i kojem se može vjerovati jer je digitalno potpisan.
-- **Politike autorizacije**: Definiranje politika za kontrolu pristupa određenim alatima na temelju korisničkih uloga. MCP koristi politike autorizacije za određivanje koji korisnici mogu pristupiti kojim alatima prema njihovim ulogama i tvrdnjama.
+- **Konfiguracija Identity-ja**: Postavljanje ASP.NET Core Identity-ja s korisničkim ulogama i tvrdnjama (claims). Tvrdnja je informacija o korisniku, poput njegove uloge ili dopuštenja, na primjer "Admin" ili "User".
+- **JWT autentifikacija**: Korištenje JSON Web Tokena (JWT) za siguran pristup API-ju. JWT je standard za siguran prijenos informacija između strana u obliku JSON objekta, koji se može provjeriti i kojem se može vjerovati jer je digitalno potpisan.
+- **Politike autorizacije**: Definiranje politika za kontrolu pristupa određenim alatima na temelju korisničkih uloga. MCP koristi politike autorizacije kako bi odredio koji korisnici mogu pristupiti kojim alatima na temelju njihovih uloga i tvrdnji.
 
 ```csharp
 public class SecureMcpStartup
@@ -112,21 +112,21 @@ public class SecureMcpStartup
 U prethodnom kodu smo:
 
 - Konfigurirali ASP.NET Core Identity za upravljanje korisnicima.
-- Postavili JWT autentikaciju za siguran pristup API-ju. Naveli smo parametre za validaciju tokena, uključujući izdavača, publiku i ključ za potpisivanje.
+- Postavili JWT autentifikaciju za siguran pristup API-ju. Definirali smo parametre za provjeru tokena, uključujući izdavača, publiku i ključ za potpisivanje.
 - Definirali politike autorizacije za kontrolu pristupa alatima na temelju korisničkih uloga. Na primjer, politika "CanUseAdminTools" zahtijeva da korisnik ima ulogu "Admin", dok politika "CanUseBasic" zahtijeva da korisnik bude autentificiran.
-- Registrirali MCP alate s posebnim zahtjevima za autorizaciju, osiguravajući da samo korisnici s odgovarajućim ulogama mogu pristupiti tim alatima.
+- Registrirali MCP alate s određenim zahtjevima za autorizaciju, osiguravajući da samo korisnici s odgovarajućim ulogama mogu pristupiti tim alatima.
 
 ### Integracija Java Spring Security
 
-Za Javu koristit ćemo Spring Security za implementaciju sigurne autentikacije i autorizacije MCP servera. Spring Security pruža sveobuhvatan sigurnosni okvir koji se besprijekorno integrira sa Spring aplikacijama.
+Za Javu ćemo koristiti Spring Security za implementaciju sigurne autentifikacije i autorizacije MCP servera. Spring Security pruža sveobuhvatan sigurnosni okvir koji se besprijekorno integrira sa Spring aplikacijama.
 
-Ključni koncepti ovdje su:
+Osnovni pojmovi su:
 
-- **Konfiguracija Spring Security**: Postavljanje sigurnosnih konfiguracija za autentikaciju i autorizaciju.
-- **OAuth2 Resource Server**: Korištenje OAuth2 za siguran pristup MCP alatima. OAuth2 je okvir za autorizaciju koji omogućava trećim stranama razmjenu pristupnih tokena za siguran pristup API-ju.
-- **Sigurnosni presretači (Interceptors)**: Implementacija sigurnosnih presretača za provođenje kontrole pristupa pri izvođenju alata.
+- **Konfiguracija Spring Security-ja**: Postavljanje sigurnosnih konfiguracija za autentifikaciju i autorizaciju.
+- **OAuth2 Resource Server**: Korištenje OAuth2 za siguran pristup MCP alatima. OAuth2 je okvir za autorizaciju koji omogućuje uslugama trećih strana razmjenu pristupnih tokena za siguran pristup API-ju.
+- **Sigurnosni presretači (interceptors)**: Implementacija sigurnosnih presretača za provođenje kontrole pristupa pri izvođenju alata.
 - **Kontrola pristupa temeljena na ulogama**: Korištenje uloga za kontrolu pristupa određenim alatima i resursima.
-- **Sigurnosne anotacije**: Korištenje anotacija za osiguranje metoda i krajnjih točaka.
+- **Sigurnosne anotacije**: Korištenje anotacija za zaštitu metoda i krajnjih točaka.
 
 ```java
 @Configuration
@@ -180,10 +180,10 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 U prethodnom kodu smo:
 
-- Konfigurirali Spring Security za zaštitu MCP krajnjih točaka, dopuštajući javni pristup otkrivanju alata, dok se za izvođenje alata zahtijeva autentikacija.
+- Konfigurirali Spring Security za zaštitu MCP krajnjih točaka, dopuštajući javni pristup otkrivanju alata, dok je za izvođenje alata potrebna autentifikacija.
 - Koristili OAuth2 kao resource server za upravljanje sigurnim pristupom MCP alatima.
-- Implementirali sigurnosni presretač za provođenje kontrole pristupa pri izvođenju alata, provjeravajući korisničke uloge i dozvole prije nego što se dozvoli pristup određenim alatima.
-- Definirali kontrolu pristupa temeljenu na ulogama za ograničavanje pristupa administratorskim alatima i pristupu osjetljivim podacima na temelju korisničkih uloga.
+- Implementirali sigurnosni presretač koji provodi kontrolu pristupa pri izvođenju alata, provjeravajući korisničke uloge i dopuštenja prije nego što se omogući pristup određenim alatima.
+- Definirali kontrolu pristupa temeljenu na ulogama kako bismo ograničili pristup administratorskim alatima i pristup osjetljivim podacima na temelju korisničkih uloga.
 
 ## Zaštita podataka i privatnost
 
@@ -329,14 +329,14 @@ class SecureCustomerDataTool(Tool):
 
 U prethodnom kodu smo:
 
-- Implementirali `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
-- Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
-- Defined a `secure_tool` decorator that wraps tool execution to check for PII, log access, and encrypt sensitive data if required.
-- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool` kako bismo osigurali da rukuje osjetljivim podacima na siguran način.
+- Implementirali klasu `PiiDetector` za skeniranje teksta i parametara u potrazi za osobnim podacima (PII).
+- Kreirali klasu `EncryptionService` za enkripciju i dekripciju osjetljivih podataka koristeći biblioteku `cryptography`.
+- Definirali dekorator `secure_tool` koji omotava izvođenje alata kako bi provjerio PII, bilježio pristup i enkriptirao osjetljive podatke ako je potrebno.
+- Primijenili dekorator `secure_tool` na primjer alata (`SecureCustomerDataTool`) kako bismo osigurali da se osjetljivi podaci obrađuju sigurno.
 
 ## Što slijedi
 
 - [5.9 Web search](../web-search-mcp/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba se smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

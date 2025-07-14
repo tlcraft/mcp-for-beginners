@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T18:43:23+00:00",
+  "translation_date": "2025-07-13T22:11:02+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "sk"
 }
@@ -26,7 +26,7 @@ Na konci tejto lekcie budete vedieť:
 
 Ak je váš server určený na používanie priamo na počítači používateľa, môžete postupovať podľa týchto krokov:
 
-1. **Stiahnite server**. Ak ste server nenapísali vy, najprv si ho stiahnite do svojho počítača.  
+1. **Stiahnite server**. Ak ste server nenapísali, najprv si ho stiahnite do svojho počítača.  
 1. **Spustite serverový proces**: Spustite vašu MCP serverovú aplikáciu.
 
 Pre SSE (nie je potrebné pre stdio typ servera)
@@ -38,7 +38,7 @@ Pre SSE (nie je potrebné pre stdio typ servera)
 
 MCP servery je možné nasadiť na rôzne cloudové platformy:
 
-- **Serverless Functions**: Nasadzujte ľahké MCP servery ako serverless funkcie.  
+- **Serverless Functions**: Nasadte ľahké MCP servery ako serverless funkcie.  
 - **Container Services**: Použite služby ako Azure Container Apps, AWS ECS alebo Google Cloud Run.  
 - **Kubernetes**: Nasadzujte a spravujte MCP servery v Kubernetes klastroch pre vysokú dostupnosť.
 
@@ -102,7 +102,7 @@ Tu je postup, ako na to:
 
 A je to, nasadíte ho lokálne alebo do Azure podľa týchto krokov.
 
-## Dodatočné zdroje
+## Ďalšie zdroje
 
 - [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
 - [Článok o Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
@@ -113,4 +113,4 @@ A je to, nasadíte ho lokálne alebo do Azure podľa týchto krokov.
 - Ďalej: [Praktická implementácia](../../04-PracticalImplementation/README.md)
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

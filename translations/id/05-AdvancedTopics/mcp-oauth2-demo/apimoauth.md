@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "32c9a4263be08f9050c8044bb26267c4",
-  "translation_date": "2025-05-17T15:35:05+00:00",
+  "translation_date": "2025-07-14T00:32:35+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/apimoauth.md",
   "language_code": "id"
 }
 -->
 # Mendeploy Aplikasi Spring AI MCP ke Azure Container Apps
 
-([Mengamankan server Spring AI MCP dengan OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *Gambar: Server Spring AI MCP diamankan dengan Spring Authorization Server. Server mengeluarkan token akses kepada klien dan memvalidasinya pada permintaan yang masuk (sumber: blog Spring) ([Mengamankan server Spring AI MCP dengan OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* Untuk mendeploy server Spring MCP, bangun sebagai container dan gunakan Azure Container Apps dengan ingress eksternal. Sebagai contoh, menggunakan Azure CLI Anda dapat menjalankan:
+([Mengamankan server Spring AI MCP dengan OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *Gambar: Server Spring AI MCP yang diamankan dengan Spring Authorization Server. Server mengeluarkan token akses ke klien dan memvalidasinya pada permintaan masuk (sumber: blog Spring) ([Mengamankan server Spring AI MCP dengan OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* Untuk mendeploy server Spring MCP, bangun sebagai container dan gunakan Azure Container Apps dengan ingress eksternal. Misalnya, menggunakan Azure CLI Anda dapat menjalankan:
 
 ```bash
 az containerapp up \
@@ -23,11 +23,11 @@ az containerapp up \
   --query properties.configuration.ingress.fqdn
 ```
 
-Ini membuat Container App yang dapat diakses publik dengan HTTPS diaktifkan (Azure mengeluarkan sertifikat TLS gratis untuk `*.azurecontainerapps.io` domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). The command output includes the app’s FQDN (e.g. `my-mcp-app.eastus.azurecontainerapps.io`), which becomes the **issuer URL** base. Ensure HTTP ingress is enabled (as above) so APIM can reach the app. In a test/dev setup, use the `--ingress external` option (or bind a custom domain with TLS per [Microsoft docs](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Store any sensitive properties (like OAuth client secrets) in Container Apps secrets or Azure Key Vault, and map them into the container as environment variables. 
+Ini membuat Container App yang dapat diakses publik dengan HTTPS diaktifkan (Azure mengeluarkan sertifikat TLS gratis untuk domain default `*.azurecontainerapps.io` ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Output perintah mencakup FQDN aplikasi (misalnya `my-mcp-app.eastus.azurecontainerapps.io`), yang menjadi basis **issuer URL**. Pastikan ingress HTTP diaktifkan (seperti di atas) agar APIM dapat mengakses aplikasi. Dalam pengaturan test/dev, gunakan opsi `--ingress external` (atau tautkan domain kustom dengan TLS sesuai [dokumentasi Microsoft](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Simpan properti sensitif (seperti rahasia klien OAuth) di Container Apps secrets atau Azure Key Vault, dan peta-kan ke dalam container sebagai variabel lingkungan.
 
-## Configuring Spring Authorization Server
+## Mengonfigurasi Spring Authorization Server
 
-In your Spring Boot app’s code, include the Spring Authorization Server and Resource Server starters. Configure a `RegisteredClient` (for the `client_credentials` grant in dev/test) and a JWT key source. For example, in `application.properties` Anda mungkin mengatur:
+Dalam kode aplikasi Spring Boot Anda, sertakan starter Spring Authorization Server dan Resource Server. Konfigurasikan `RegisteredClient` (untuk grant `client_credentials` di dev/test) dan sumber kunci JWT. Misalnya, di `application.properties` Anda bisa mengatur:
 
 ```properties
 # OAuth2 client (for testing token issuance)
@@ -37,7 +37,7 @@ spring.security.oauth2.authorizationserver.client.oidc-client.registration.autho
 spring.security.oauth2.authorizationserver.client.oidc-client.registration.client-authentication-methods=client_secret_basic
 ```
 
-Aktifkan Authorization Server dan Resource Server dengan mendefinisikan rantai filter keamanan. Misalnya:
+Aktifkan Authorization Server dan Resource Server dengan mendefinisikan security filter chain. Contohnya:
 
 ```java
 @Configuration
@@ -84,9 +84,9 @@ public class SecurityConfiguration {
 }
 ```
 
-Pengaturan ini akan mengekspos endpoint OAuth2 default: `/oauth2/token` for tokens and `/oauth2/jwks` for the JSON Web Key Set. (By default Spring’s `AuthorizationServerSettings` maps `/oauth2/token` and `/oauth2/jwks` ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).) The server will issue JWT access tokens signed by the RSA key above, and publish its public key at `https://<your-app>:/oauth2/jwks`. 
+Pengaturan ini akan mengekspos endpoint OAuth2 default: `/oauth2/token` untuk token dan `/oauth2/jwks` untuk JSON Web Key Set. (Secara default, `AuthorizationServerSettings` Spring memetakan `/oauth2/token` dan `/oauth2/jwks` ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).) Server akan mengeluarkan token akses JWT yang ditandatangani dengan kunci RSA di atas, dan mempublikasikan kunci publiknya di `https://<your-app>:/oauth2/jwks`.
 
-**Enable OpenID Connect discovery:** To let APIM automatically retrieve the issuer and JWKS, enable the OIDC provider configuration endpoint by adding `.oidc(Customizer.withDefaults())` dalam konfigurasi keamanan Anda ([Model Konfigurasi :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Misalnya:
+**Aktifkan OpenID Connect discovery:** Agar APIM dapat secara otomatis mengambil issuer dan JWKS, aktifkan endpoint konfigurasi penyedia OIDC dengan menambahkan `.oidc(Customizer.withDefaults())` dalam konfigurasi keamanan Anda ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Contohnya:
 
 ```java
 http
@@ -96,7 +96,7 @@ http
       .oidc(Customizer.withDefaults()));  // <– enables /.well-known/openid-configuration
 ```
 
-Ini mengekspos `/.well-known/openid-configuration`, which APIM can use for metadata. Finally, you may want to customize the JWT **audience** claim so that APIM’s `<audiences>` akan lolos. Misalnya, tambahkan customizer token:
+Ini mengekspos `/.well-known/openid-configuration`, yang dapat digunakan APIM untuk metadata. Terakhir, Anda mungkin ingin menyesuaikan klaim **audience** JWT agar pemeriksaan `<audiences>` APIM berhasil. Misalnya, tambahkan token customizer:
 
 ```java
 @Bean
@@ -108,21 +108,21 @@ public OAuth2TokenCustomizer<OAuth2TokenClaimsContext> tokenCustomizer() {
 }
 ```
 
-Ini memastikan token membawa `"aud": ["mcp-client"]`, matching the client ID or scope expected by APIM. 
+Ini memastikan token membawa `"aud": ["mcp-client"]`, yang sesuai dengan client ID atau scope yang diharapkan oleh APIM.
 
-## Exposing Token and JWKS Endpoints
+## Mengekspos Endpoint Token dan JWKS
 
-After deploying, your app’s **issuer URL** will be `https://<app-fqdn>`, e.g. `https://my-mcp-app.eastus.azurecontainerapps.io`. Its OAuth2 endpoints are:
+Setelah dideploy, **issuer URL** aplikasi Anda akan menjadi `https://<app-fqdn>`, misalnya `https://my-mcp-app.eastus.azurecontainerapps.io`. Endpoint OAuth2-nya adalah:
 
-- **Token endpoint:** `https://<app-fqdn>/oauth2/token` – clients obtain tokens here (client_credentials flow).
-- **JWKS endpoint:** `https://<app-fqdn>/oauth2/jwks` – returns the JWK set (used by APIM to get signing keys).
-- **OpenID Config:** `https://<app-fqdn>/.well-known/openid-configuration` – OIDC discovery JSON (contains `issuer`, `token_endpoint`, `jwks_uri`, etc.).  
+- **Token endpoint:** `https://<app-fqdn>/oauth2/token` – klien mendapatkan token di sini (flow client_credentials).
+- **JWKS endpoint:** `https://<app-fqdn>/oauth2/jwks` – mengembalikan set JWK (digunakan APIM untuk mendapatkan kunci tanda tangan).
+- **OpenID Config:** `https://<app-fqdn>/.well-known/openid-configuration` – JSON OIDC discovery (berisi `issuer`, `token_endpoint`, `jwks_uri`, dll.).
 
-APIM will point to the **OpenID configuration URL**, from which it discovers the `jwks_uri`. For example, if your Container App FQDN is `my-mcp-app.eastus.azurecontainerapps.io`, then APIM’s `<openid-config url="...">` should use `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`. (By default Spring will set the `issuer` in that metadata to the same base URL ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).)
+APIM akan mengarah ke **OpenID configuration URL**, dari situ ia menemukan `jwks_uri`. Misalnya, jika FQDN Container App Anda adalah `my-mcp-app.eastus.azurecontainerapps.io`, maka `<openid-config url="...">` APIM harus menggunakan `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`. (Secara default Spring akan mengatur `issuer` dalam metadata tersebut ke URL dasar yang sama ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).)
 
-## Configuring Azure API Management (`validate-jwt`)
+## Mengonfigurasi Azure API Management (`validate-jwt`)
 
-In Azure APIM, add an inbound policy that uses the `<validate-jwt>` kebijakan untuk memeriksa JWT yang masuk terhadap Spring Authorization Server Anda. Untuk pengaturan sederhana, Anda dapat menggunakan URL metadata OpenID Connect. Contoh potongan kebijakan:
+Di Azure APIM, tambahkan kebijakan inbound yang menggunakan kebijakan `<validate-jwt>` untuk memeriksa JWT yang masuk terhadap Spring Authorization Server Anda. Untuk pengaturan sederhana, Anda dapat menggunakan URL metadata OpenID Connect. Contoh potongan kebijakan:
 
 ```xml
 <inbound>
@@ -139,38 +139,37 @@ In Azure APIM, add an inbound policy that uses the `<validate-jwt>` kebijakan un
 </inbound>
 ```
 
-Kebijakan ini memberi tahu APIM untuk mengambil konfigurasi OpenID dari Spring Auth Server, mengambil JWKS-nya, dan memvalidasi bahwa setiap token ditandatangani oleh kunci yang terpercaya dan memiliki audiens yang benar. (Jika Anda mengabaikan `<issuers>`, APIM will use the `issuer` claim from the metadata automatically.) The `<audience>` should match your client ID or API resource identifier in the token (in the example above, we set it to `"mcp-client"`). This is consistent with Microsoft’s documentation on using `validate-jwt` with `<openid-config>` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)).
+Kebijakan ini memberitahu APIM untuk mengambil konfigurasi OpenID dari Spring Auth Server, mengambil JWKS-nya, dan memvalidasi bahwa setiap token ditandatangani oleh kunci yang dipercaya dan memiliki audience yang benar. (Jika Anda menghilangkan `<issuers>`, APIM akan otomatis menggunakan klaim `issuer` dari metadata.) `<audience>` harus sesuai dengan client ID atau identifier sumber daya API dalam token (dalam contoh di atas, kami mengaturnya ke `"mcp-client"`). Ini konsisten dengan dokumentasi Microsoft tentang penggunaan `validate-jwt` dengan `<openid-config>` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)).
 
-After validation, APIM will forward the request (including the original `Authorization` header) to the backend. Since the Spring app is also a resource server, it will re-validate the token, but APIM has already ensured its validity. (For development, you can rely on APIM’s check and disable additional checks in the app if desired, but it’s safer to keep both.)
+Setelah validasi, APIM akan meneruskan permintaan (termasuk header `Authorization` asli) ke backend. Karena aplikasi Spring juga merupakan resource server, ia akan memvalidasi ulang token, tetapi APIM sudah memastikan validitasnya. (Untuk pengembangan, Anda bisa mengandalkan pemeriksaan APIM dan menonaktifkan pemeriksaan tambahan di aplikasi jika diinginkan, tapi lebih aman mempertahankan keduanya.)
 
-## Example Settings
+## Contoh Pengaturan
 
-| Setting            | Example Value                                                        | Notes                                      |
-|--------------------|----------------------------------------------------------------------|--------------------------------------------|
-| **Issuer**         | `https://my-mcp-app.eastus.azurecontainerapps.io`                    | Your Container App’s URL (base URI)        |
-| **Token endpoint** | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`       | Default Spring token endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))  |
-| **JWKS endpoint**  | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`        | Default JWK Set endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))    |
-| **OpenID Config**  | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | OIDC discovery document (auto-generated)    |
-| **APIM audience**  | `mcp-client`                                                         | OAuth client ID or API resource name       |
-| **APIM policy**    | `<openid-config url="https://.../.well-known/openid-configuration" />` | `<validate-jwt>` uses this URL ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
+| Pengaturan          | Contoh Nilai                                                        | Catatan                                    |
+|---------------------|--------------------------------------------------------------------|--------------------------------------------|
+| **Issuer**          | `https://my-mcp-app.eastus.azurecontainerapps.io`                  | URL Container App Anda (base URI)          |
+| **Token endpoint**  | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`     | Endpoint token default Spring ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))  |
+| **JWKS endpoint**   | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`      | Endpoint JWK Set default ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))    |
+| **OpenID Config**   | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | Dokumen discovery OIDC (otomatis dibuat)  |
+| **APIM audience**   | `mcp-client`                                                       | OAuth client ID atau nama resource API     |
+| **APIM policy**     | `<openid-config url="https://.../.well-known/openid-configuration" />` | `<validate-jwt>` menggunakan URL ini ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
 
-## Common Pitfalls
+## Kesalahan Umum
 
-- **HTTPS/TLS:** The APIM gateway requires that the OpenID/JWKS endpoint be HTTPS with a valid certificate. By default, Azure Container Apps provides a trusted TLS cert for the Azure-managed domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If you use a custom domain, be sure to bind a certificate (you can use Azure’s free managed cert feature) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If APIM cannot trust the endpoint’s certificate, `<validate-jwt>` will fail to fetch the metadata.  
+- **HTTPS/TLS:** Gateway APIM mengharuskan endpoint OpenID/JWKS menggunakan HTTPS dengan sertifikat yang valid. Secara default, Azure Container Apps menyediakan sertifikat TLS terpercaya untuk domain yang dikelola Azure ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). Jika Anda menggunakan domain kustom, pastikan untuk mengikat sertifikat (Anda bisa menggunakan fitur sertifikat terkelola gratis Azure) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). Jika APIM tidak dapat mempercayai sertifikat endpoint, `<validate-jwt>` akan gagal mengambil metadata.
 
-- **Endpoint Accessibility:** Ensure the Spring app’s endpoints are reachable from APIM. Using `--ingress external` (or enabling ingress in the portal) is simplest. If you chose an internal or vNet-bound environment, APIM (by default public) might not reach it unless placed in the same VNet. In a test setup, prefer public ingress so APIM can call the `.well-known` and `/jwks` URLs. 
+- **Aksesibilitas Endpoint:** Pastikan endpoint aplikasi Spring dapat dijangkau dari APIM. Menggunakan `--ingress external` (atau mengaktifkan ingress di portal) adalah cara termudah. Jika Anda memilih lingkungan internal atau terikat vNet, APIM (yang secara default publik) mungkin tidak dapat mengaksesnya kecuali ditempatkan di vNet yang sama. Dalam pengaturan test, lebih baik menggunakan ingress publik agar APIM dapat memanggil URL `.well-known` dan `/jwks`.
 
-- **OpenID Discovery Enabled:** By default, Spring Authorization Server **does not expose** the `/.well-known/openid-configuration` unless OIDC is enabled. Make sure to include `.oidc(Customizer.withDefaults())` in your security config (see above) so that the provider configuration endpoint is active ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Otherwise APIM’s `<openid-config>` call will 404.
+- **OpenID Discovery Diaktifkan:** Secara default, Spring Authorization Server **tidak mengekspos** `/.well-known/openid-configuration` kecuali OIDC diaktifkan. Pastikan untuk menyertakan `.oidc(Customizer.withDefaults())` dalam konfigurasi keamanan Anda (lihat di atas) agar endpoint konfigurasi penyedia aktif ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Jika tidak, panggilan `<openid-config>` APIM akan menghasilkan 404.
 
-- **Audience Claim:** Spring’s default behavior is to set the `aud` claim to the client ID. If APIM’s `<audience>` check fails, you may need to customize the token (as shown above) or adjust the APIM policy. Ensure the audience in your JWT matches what you configure in `<audience>`. 
+- **Klaim Audience:** Perilaku default Spring adalah mengatur klaim `aud` ke client ID. Jika pemeriksaan `<audience>` APIM gagal, Anda mungkin perlu menyesuaikan token (seperti yang ditunjukkan di atas) atau mengubah kebijakan APIM. Pastikan audience dalam JWT Anda sesuai dengan yang dikonfigurasi di `<audience>`.
 
-- **JSON Metadata Parsing:** The OpenID configuration JSON must be valid. Spring’s default config will emit a standard OIDC metadata document. Verify that it contains the correct `issuer` and `jwks_uri`. If you host Spring behind a proxy or path-based route, double-check the URLs in this metadata. APIM will use these values as-is. 
+- **Parsing Metadata JSON:** JSON konfigurasi OpenID harus valid. Konfigurasi default Spring akan menghasilkan dokumen metadata OIDC standar. Verifikasi bahwa dokumen tersebut berisi `issuer` dan `jwks_uri` yang benar. Jika Anda menempatkan Spring di balik proxy atau rute berbasis path, periksa ulang URL dalam metadata ini. APIM akan menggunakan nilai tersebut apa adanya.
 
-- **Policy Ordering:** In the APIM policy, place `<validate-jwt>` **before** any routing to the backend. Otherwise, calls might reach your app without a valid token. Also ensure `<validate-jwt>` appears immediately under `<inbound>` (not nested inside another condition) so that APIM applies it.
+- **Urutan Kebijakan:** Dalam kebijakan APIM, tempatkan `<validate-jwt>` **sebelum** routing ke backend. Jika tidak, panggilan bisa sampai ke aplikasi tanpa token yang valid. Pastikan juga `<validate-jwt>` muncul langsung di bawah `<inbound>` (tidak bersarang dalam kondisi lain) agar APIM menerapkannya.
 
-By following the above steps, you can run your Spring AI MCP server in Azure Container Apps and have Azure API Management validate incoming OAuth2 JWTs with a minimal policy. The key points are: expose the Spring Auth endpoints publicly with TLS, enable OIDC discovery, and point APIM’s `validate-jwt` at the OpenID config URL (so it can fetch the JWKS automatically). This setup is suitable for a dev/test environment; for production, consider proper secret management, token lifetimes, and rotating keys in JWKS as needed. 
-
-**References:** See Spring Authorization Server docs for default endpoints ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) and OIDC configuration ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)); see Microsoft APIM docs for `validate-jwt` contoh ([Referensi kebijakan Manajemen API Azure - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)); dan dokumentasi Azure Container Apps untuk deployment dan sertifikat ([Mendeploy aplikasi Java Spring Boot ke Azure Container Apps - Java di Azure | Microsoft Learn](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([Nama domain kustom dan sertifikat gratis yang dikelola di Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)).
+Dengan mengikuti langkah-langkah di atas, Anda dapat menjalankan server Spring AI MCP di Azure Container Apps dan membuat Azure API Management memvalidasi JWT OAuth2 yang masuk dengan kebijakan minimal. Poin utama adalah: mengekspos endpoint Spring Auth secara publik dengan TLS, mengaktifkan discovery OIDC, dan mengarahkan `validate-jwt` APIM ke URL konfigurasi OpenID (agar dapat mengambil JWKS secara otomatis). Pengaturan ini cocok untuk lingkungan dev/test; untuk produksi, pertimbangkan manajemen rahasia yang tepat, masa berlaku token, dan rotasi kunci di JWKS sesuai kebutuhan.
+**Referensi:** Lihat dokumen Spring Authorization Server untuk endpoint default ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) dan konfigurasi OIDC ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)); lihat dokumen Microsoft APIM untuk contoh `validate-jwt` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)); dan dokumen Azure Container Apps untuk deployment dan sertifikat ([Deploy Java Spring Boot apps to Azure Container Apps - Java on Azure | Microsoft Learn](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)).
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan terjemahan yang akurat, harap disadari bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi yang penting, disarankan menggunakan terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

@@ -2,27 +2,27 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T17:54:43+00:00",
+  "translation_date": "2025-07-13T22:09:45+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "nl"
 }
 -->
-# MCP-servers implementeren
+# Deployen van MCP-servers
 
-Het implementeren van je MCP-server maakt het mogelijk dat anderen toegang krijgen tot de tools en bronnen, ook buiten je lokale omgeving. Er zijn verschillende implementatiestrategieën om te overwegen, afhankelijk van je wensen op het gebied van schaalbaarheid, betrouwbaarheid en gebruiksgemak. Hieronder vind je richtlijnen voor het lokaal implementeren van MCP-servers, in containers en in de cloud.
+Het deployen van je MCP-server maakt het mogelijk dat anderen toegang krijgen tot de tools en resources buiten je lokale omgeving. Er zijn verschillende strategieën om te deployen, afhankelijk van je wensen op het gebied van schaalbaarheid, betrouwbaarheid en beheer. Hieronder vind je richtlijnen voor het deployen van MCP-servers lokaal, in containers en in de cloud.
 
 ## Overzicht
 
-Deze les behandelt hoe je je MCP Server-app implementeert.
+Deze les behandelt hoe je je MCP Server-app kunt deployen.
 
 ## Leerdoelen
 
 Aan het einde van deze les kun je:
 
-- Verschillende implementatiebenaderingen beoordelen.
-- Je app implementeren.
+- Verschillende deploymethodes beoordelen.
+- Je app deployen.
 
-## Lokale ontwikkeling en implementatie
+## Lokale ontwikkeling en deployment
 
 Als je server bedoeld is om te draaien op de machine van de gebruiker, kun je de volgende stappen volgen:
 
@@ -31,20 +31,20 @@ Als je server bedoeld is om te draaien op de machine van de gebruiker, kun je de
 
 Voor SSE (niet nodig voor stdio-type server)
 
-1. **Configureer netwerken**: Zorg dat de server bereikbaar is op de verwachte poort.  
+1. **Configureer netwerk**: Zorg dat de server bereikbaar is op de verwachte poort.  
 1. **Verbind clients**: Gebruik lokale verbindings-URL’s zoals `http://localhost:3000`.
 
-## Cloud-implementatie
+## Cloud Deployment
 
-MCP-servers kunnen worden geïmplementeerd op verschillende cloudplatforms:
+MCP-servers kunnen worden gedeployed naar verschillende cloudplatformen:
 
-- **Serverless Functions**: Implementeer lichte MCP-servers als serverless functies.  
+- **Serverless Functions**: Deploy lichte MCP-servers als serverless functies.  
 - **Container Services**: Gebruik diensten zoals Azure Container Apps, AWS ECS of Google Cloud Run.  
-- **Kubernetes**: Implementeer en beheer MCP-servers in Kubernetes-clusters voor hoge beschikbaarheid.
+- **Kubernetes**: Deploy en beheer MCP-servers in Kubernetes-clusters voor hoge beschikbaarheid.
 
 ### Voorbeeld: Azure Container Apps
 
-Azure Container Apps ondersteunen de implementatie van MCP-servers. Dit is nog in ontwikkeling en ondersteunt momenteel SSE-servers.
+Azure Container Apps ondersteunen het deployen van MCP-servers. Dit is nog in ontwikkeling en ondersteunt momenteel SSE-servers.
 
 Zo pak je het aan:
 
@@ -54,7 +54,7 @@ Zo pak je het aan:
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
   ```
 
-1. Start het lokaal om het te testen:
+1. Run het lokaal om te testen:
 
   ```sh
   uv venv
@@ -68,7 +68,7 @@ Zo pak je het aan:
   uv run fastapi dev main.py
   ```
 
-1. Om het lokaal te proberen, maak een *mcp.json*-bestand aan in een *.vscode*-map en voeg de volgende inhoud toe:
+1. Om het lokaal te proberen, maak een *mcp.json* bestand aan in een *.vscode* map en voeg de volgende inhoud toe:
 
   ```json
   {
@@ -92,15 +92,15 @@ Zo pak je het aan:
   }
   ```
 
-  Zodra de SSE-server is gestart, kun je op het afspeelicoon in het JSON-bestand klikken. Je zou nu de tools op de server moeten zien verschijnen in GitHub Copilot, zie het Tool-icoon.
+  Zodra de SSE-server gestart is, kun je op het afspeel-icoon in het JSON-bestand klikken. Je zou nu de tools op de server moeten zien verschijnen in GitHub Copilot, herkenbaar aan het Tool-icoon.
 
-1. Om te implementeren, voer je het volgende commando uit:
+1. Om te deployen, voer het volgende commando uit:
 
   ```sh
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-Dat is alles, implementeer het lokaal of via deze stappen naar Azure.
+Dat is alles, deploy lokaal of deploy naar Azure via deze stappen.
 
 ## Aanvullende bronnen
 
@@ -110,7 +110,7 @@ Dat is alles, implementeer het lokaal of via deze stappen naar Azure.
 
 ## Wat volgt
 
-- Volgende: [Praktische implementatie](../../04-PracticalImplementation/README.md)
+- Volgende: [Praktische Implementatie](../../04-PracticalImplementation/README.md)
 
 **Disclaimer**:  
 Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

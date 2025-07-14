@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:19:42+00:00",
+  "translation_date": "2025-07-13T21:06:47+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "sl"
 }
@@ -23,24 +23,24 @@ dotnet run
 
 ## -3- Preizkusite primer
 
-Pred zagonom spodnjega ukaza odprite ločen terminal (poskrbite, da strežnik še vedno teče).
+Preden zaženete spodnje, odprite ločen terminal (prepričajte se, da strežnik še vedno teče).
 
-Ko strežnik teče v enem terminalu, odprite drug terminal in zaženite naslednji ukaz:
+Ko strežnik teče v enem terminalu, odprite drugega in zaženite naslednji ukaz:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-S tem bi se moral zagnati spletni strežnik z vizualnim vmesnikom, ki omogoča preizkus primera.
+To bo zagnalo spletni strežnik z vizualnim vmesnikom, ki vam omogoča testiranje primera.
 
-> Poskrbite, da je kot vrsta prenosa izbran **Streamable HTTP**, URL pa `http://localhost:3001/mcp`.
+> Prepričajte se, da je kot tip prenosa izbran **Streamable HTTP**, URL pa je `http://localhost:3001/mcp`.
 
-Once the server is connected: 
+Ko je strežnik povezan:
 
-- try listing tools and run `add`, z argumentoma 2 in 4, v rezultatu pa bi morali videti 6.
-- pojdite na resources in resource template ter pokličite "greeting", vnesite ime in prikazalo se bo pozdravno sporočilo z vašim imenom.
+- poskusite izpisati orodja in zaženite `add` z argumentoma 2 in 4, v rezultatu bi morali videti 6.
+- pojdite na resources in resource template ter pokličite "greeting", vnesite ime in videli boste pozdrav z vnesenim imenom.
 
-### Preizkušanje v CLI načinu
+### Testiranje v CLI načinu
 
 Lahko ga zaženete neposredno v CLI načinu z naslednjim ukazom:
 
@@ -48,7 +48,7 @@ Lahko ga zaženete neposredno v CLI načinu z naslednjim ukazom:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-S tem boste dobili seznam vseh orodij, ki so na voljo na strežniku. Prikazal se bo naslednji izpis:
+To bo izpisalo vsa orodja, ki so na voljo na strežniku. Izpis bi moral biti naslednji:
 
 ```text
 {
@@ -80,13 +80,13 @@ S tem boste dobili seznam vseh orodij, ki so na voljo na strežniku. Prikazal se
 }
 ```
 
-Za zagon orodja vnesite:
+Za klic orodja vnesite:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Prikazal se bo naslednji izpis:
+Videli boste naslednji izpis:
 
 ```text
 {
@@ -101,8 +101,8 @@ Prikazal se bo naslednji izpis:
 ```
 
 > ![!TIP]
-> Običajno je hitreje zagnati inspector v CLI načinu kot v brskalniku.
+> Običajno je veliko hitreje zagnati inspector v CLI načinu kot v brskalniku.
 > Več o inspectorju preberite [tukaj](https://github.com/modelcontextprotocol/inspector).
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatski prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v izvorni jezikovni različici velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

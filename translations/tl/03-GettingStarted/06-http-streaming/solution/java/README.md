@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:49:00+00:00",
+  "translation_date": "2025-07-13T21:13:48+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "tl"
 }
@@ -11,12 +11,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ipinapakita ng proyektong ito ang HTTP streaming gamit ang Server-Sent Events (SSE) sa Spring Boot WebFlux. Binubuo ito ng dalawang aplikasyon:
 
-- **Calculator Server**: Isang reactive web service na nagsasagawa ng mga kalkulasyon at nag-stream ng mga resulta gamit ang SSE  
+- **Calculator Server**: Isang reactive web service na nagsasagawa ng mga kalkulasyon at nag-stream ng mga resulta gamit ang SSE
 - **Calculator Client**: Isang client application na kumokonsumo sa streaming endpoint
 
 ## Prerequisites
 
-- Java 17 o mas mataas  
+- Java 17 o mas mataas
 - Maven 3.6 o mas mataas
 
 ## Project Structure
@@ -37,14 +37,14 @@ java/
 
 ## Paano Ito Gumagana
 
-1. Inilalantad ng **Calculator Server** ang `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. Ang **Calculator Server** ay nag-eexpose ng `/calculate` endpoint na:
+   - Tumanggap ng mga query parameter: `a` (numero), `b` (numero), `op` (operasyon)
+   - Sinusuportahang mga operasyon: `add`, `sub`, `mul`, `div`
+   - Nagbabalik ng Server-Sent Events na may progreso ng kalkulasyon at resulta
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`  
-   - Kinokonsumo ang streaming response  
+2. Ang **Calculator Client** ay kumokonekta sa server at:
+   - Gumagawa ng request para kalkulahin ang `7 * 5`
+   - Kinokonsumo ang streaming response
    - Ipinapakita ang bawat event sa console
 
 ## Pagpapatakbo ng mga Aplikasyon
@@ -63,7 +63,7 @@ mvn spring-boot:run
 
 Magsisimula ang server sa `http://localhost:8080`
 
-Makikita mo ang output na katulad ng:  
+Makikita mo ang output na tulad nito:
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
@@ -79,7 +79,7 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-Makakonekta ang client sa server, gagawin ang kalkulasyon, at ipapakita ang streaming na resulta.
+Kokonekta ang client sa server, gagawin ang kalkulasyon, at ipapakita ang streaming na mga resulta.
 
 ### Opsyon 2: Direktang Gamitin ang Java
 
@@ -99,21 +99,21 @@ mvn clean package
 java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-## Manwal na Pagsusuri sa Server
+## Pagsubok sa Server nang Manwal
 
-Pwede mo ring subukan ang server gamit ang web browser o curl:
+Maaari mo ring subukan ang server gamit ang web browser o curl:
 
-### Gamit ang web browser:  
-Bisitahin ang: `http://localhost:8080/calculate?a=10&b=5&op=add`
+### Gamit ang web browser:
+Bisitahin: `http://localhost:8080/calculate?a=10&b=5&op=add`
 
-### Gamit ang curl:  
+### Gamit ang curl:
 ```bash
 curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-stream"
 ```
 
 ## Inaasahang Output
 
-Kapag pinatakbo ang client, makikita mo ang streaming output na tulad nito:
+Kapag pinatakbo ang client, makikita mo ang streaming output na katulad nito:
 
 ```
 event:info
@@ -125,32 +125,32 @@ data:35.0
 
 ## Sinusuportahang Mga Operasyon
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - Pagdaragdag (a + b)
+- `sub` - Pagbabawas (a - b)
+- `mul` - Pagmumultiply (a * b)
+- `div` - Pagdidibide (a / b, magbabalik ng NaN kung b = 0)
 
 ## API Reference
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Mga Parameter:**
+- `a` (kailangan): Unang numero (double)
+- `b` (kailangan): Pangalawang numero (double)
+- `op` (kailangan): Operasyon (`add`, `sub`, `mul`, `div`)
 
-**Response:**
-- Content-Type: `text/event-stream`  
+**Sagot:**
+- Content-Type: `text/event-stream`
 - Nagbabalik ng Server-Sent Events na may progreso ng kalkulasyon at resulta
 
-**Halimbawang Request:**  
+**Halimbawang Request:**
 ```
 GET /calculate?a=7&b=5&op=mul HTTP/1.1
 Host: localhost:8080
 Accept: text/event-stream
 ```
 
-**Halimbawang Response:**  
+**Halimbawang Sagot:**
 ```
 event: info
 data: Calculating: 7.0 mul 5.0
@@ -163,40 +163,40 @@ data: 35.0
 
 ### Karaniwang Isyu
 
-1. **Port 8080 ay ginagamit na**  
-   - Itigil ang ibang aplikasyon na gumagamit ng port 8080  
+1. **Port 8080 ay ginagamit na**
+   - Itigil ang ibang aplikasyon na gumagamit ng port 8080
    - O palitan ang port ng server sa `calculator-server/src/main/resources/application.yml`
 
 2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+   - Siguraduhing tumatakbo ang server bago simulan ang client
+   - Tiyaking matagumpay na nagsimula ang server sa port 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Mga isyu sa pangalan ng parameter**
+   - Kasama sa proyektong ito ang Maven compiler configuration na may `-parameters` flag
+   - Kung may problema sa parameter binding, siguraduhing na-build ang proyekto gamit ang configuration na ito
 
-### Stopping the Applications
+### Pagtigil sa mga Aplikasyon
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` kung tumatakbo bilang background process
+- Pindutin ang `Ctrl+C` sa terminal kung saan tumatakbo ang bawat aplikasyon
+- O gamitin ang `mvn spring-boot:stop` kung tumatakbo bilang background process
 
-## Teknolohiyang Ginamit
+## Technology Stack
 
-- **Spring Boot 3.3.1** - Framework ng aplikasyon  
-- **Spring WebFlux** - Reactive web framework  
-- **Project Reactor** - Reactive streams library  
-- **Netty** - Non-blocking I/O server  
-- **Maven** - Build tool  
+- **Spring Boot 3.3.1** - Application framework
+- **Spring WebFlux** - Reactive web framework
+- **Project Reactor** - Reactive streams library
+- **Netty** - Non-blocking I/O server
+- **Maven** - Build tool
 - **Java 17+** - Programming language
 
 ## Susunod na Hakbang
 
-Subukan baguhin ang code para sa mga sumusunod:  
-- Magdagdag ng iba pang mga operasyong pang-matematika  
-- Isama ang error handling para sa mga invalid na operasyon  
-- Magdagdag ng logging para sa request/response  
-- Ipatupad ang authentication  
+Subukang baguhin ang code para:
+- Magdagdag ng mas maraming mathematical operations
+- Isama ang error handling para sa mga invalid na operasyon
+- Magdagdag ng request/response logging
+- Mag-implement ng authentication
 - Magdagdag ng unit tests
 
-**Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami na maging tumpak, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang orihinal na wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

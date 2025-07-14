@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f83bc722dc758efffd68667d6a1db470",
-  "translation_date": "2025-06-10T06:48:56+00:00",
+  "translation_date": "2025-07-14T08:41:35+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/README.md",
   "language_code": "pl"
 }
 -->
-# 🐙 Moduł 4: Praktyczny rozwój MCP – niestandardowy serwer klonujący GitHub
+# 🐙 Moduł 4: Praktyczny rozwój MCP - Własny serwer klonowania GitHub
 
 ![Duration](https://img.shields.io/badge/Duration-30_minutes-blue?style=flat-square)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=flat-square)
@@ -21,11 +21,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Po zakończeniu tego laboratorium będziesz potrafił:
 
-- ✅ Stworzyć niestandardowy serwer MCP do rzeczywistych procesów deweloperskich
+- ✅ Stworzyć własny serwer MCP do rzeczywistych procesów deweloperskich
 - ✅ Zaimplementować funkcję klonowania repozytoriów GitHub przez MCP
-- ✅ Zintegrować niestandardowe serwery MCP z VS Code i Agent Builder
-- ✅ Korzystać z trybu Agent Mode GitHub Copilot z niestandardowymi narzędziami MCP
-- ✅ Testować i wdrażać niestandardowe serwery MCP w środowiskach produkcyjnych
+- ✅ Zintegrować własne serwery MCP z VS Code i Agent Builder
+- ✅ Korzystać z trybu Agent Mode GitHub Copilot z własnymi narzędziami MCP
+- ✅ Testować i wdrażać własne serwery MCP w środowiskach produkcyjnych
 
 ## 📋 Wymagania wstępne
 
@@ -38,7 +38,7 @@ Po zakończeniu tego laboratorium będziesz potrafił:
 
 ### **Rzeczywiste wyzwanie deweloperskie**
 Jako programiści często korzystamy z GitHub, aby klonować repozytoria i otwierać je w VS Code lub VS Code Insiders. Ten ręczny proces obejmuje:
-1. Otwarcie terminala/polecenia
+1. Otwarcie terminala/wiersza poleceń
 2. Przejście do wybranego katalogu
 3. Uruchomienie polecenia `git clone`
 4. Otwarcie VS Code w sklonowanym katalogu
@@ -51,9 +51,9 @@ Jako programiści często korzystamy z GitHub, aby klonować repozytoria i otwie
 | Funkcja | Opis | Korzyść |
 |---------|-------------|---------|
 | 🔄 **Inteligentne klonowanie repozytoriów** | Klonowanie repozytoriów GitHub z walidacją | Automatyczne sprawdzanie błędów |
-| 📁 **Inteligentne zarządzanie katalogami** | Bezpieczne sprawdzanie i tworzenie katalogów | Zapobiega nadpisywaniu danych |
-| 🚀 **Wieloplatformowa integracja z VS Code** | Otwarcie projektów w VS Code/Insiders | Płynne przejście w procesie pracy |
-| 🛡️ **Solidna obsługa błędów** | Obsługa problemów z siecią, uprawnieniami i ścieżkami | Gotowość produkcyjna i niezawodność |
+| 📁 **Inteligentne zarządzanie katalogami** | Bezpieczne sprawdzanie i tworzenie katalogów | Zapobiega nadpisywaniu |
+| 🚀 **Wieloplatformowa integracja z VS Code** | Otwarcie projektów w VS Code/Insiders | Płynne przejście w workflow |
+| 🛡️ **Solidna obsługa błędów** | Obsługa problemów z siecią, uprawnieniami i ścieżkami | Gotowość do produkcji |
 
 ---
 
@@ -62,14 +62,14 @@ Jako programiści często korzystamy z GitHub, aby klonować repozytoria i otwie
 ### Krok 1: Utwórz agenta GitHub w Agent Builder
 
 1. **Uruchom Agent Builder** przez rozszerzenie AI Toolkit
-2. **Utwórz nowego agenta** z następującą konfiguracją:
+2. **Stwórz nowego agenta** z następującą konfiguracją:
    ```
    Agent Name: GitHubAgent
    ```
 
-3. **Zainicjuj niestandardowy serwer MCP:**
+3. **Zainicjuj własny serwer MCP:**
    - Przejdź do **Narzędzia** → **Dodaj narzędzie** → **Serwer MCP**
-   - Wybierz **„Utwórz nowy serwer MCP”**
+   - Wybierz **"Utwórz nowy serwer MCP"**
    - Wybierz **szablon Python** dla maksymalnej elastyczności
    - **Nazwa serwera:** `git_mcp_server`
 
@@ -77,10 +77,10 @@ Jako programiści często korzystamy z GitHub, aby klonować repozytoria i otwie
 
 1. **Otwórz GitHub Copilot** w VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
 2. **Wybierz model agenta** w interfejsie Copilot
-3. **Wybierz model Claude 3.7** dla lepszych możliwości rozumowania
+3. **Wybierz model Claude 3.7** dla lepszych zdolności rozumowania
 4. **Włącz integrację MCP** dla dostępu do narzędzi
 
-> **💡 Profesjonalna wskazówka:** Claude 3.7 zapewnia lepsze zrozumienie procesów deweloperskich i wzorców obsługi błędów.
+> **💡 Pro Tip:** Claude 3.7 zapewnia lepsze zrozumienie procesów deweloperskich i wzorców obsługi błędów.
 
 ### Krok 3: Zaimplementuj podstawową funkcjonalność serwera MCP
 
@@ -122,14 +122,14 @@ Additional Requirements:
 #### 4a. Test w Agent Builder
 
 1. **Uruchom konfigurację debugowania** w Agent Builder
-2. **Skonfiguruj agenta za pomocą tego promptu systemowego:**
+2. **Skonfiguruj swojego agenta tym promptem systemowym:**
 
 ```
 SYSTEM_PROMPT:
 You are my intelligent coding repository assistant. You help developers efficiently clone GitHub repositories and set up their development environment. Always provide clear feedback about operations and handle errors gracefully.
 ```
 
-3. **Przetestuj realistyczne scenariusze użytkownika:**
+3. **Testuj realistyczne scenariusze użytkownika:**
 
 ```
 USER_PROMPT EXAMPLES:
@@ -144,68 +144,65 @@ Scenario : Basic Clone and Open
 **Oczekiwane wyniki:**
 - ✅ Pomyślne klonowanie z potwierdzeniem ścieżki
 - ✅ Automatyczne uruchomienie VS Code
-- ✅ Jasne komunikaty o błędach dla nieprawidłowych przypadków
+- ✅ Jasne komunikaty o błędach dla nieprawidłowych scenariuszy
 - ✅ Poprawna obsługa przypadków brzegowych
 
 #### 4b. Test w MCP Inspector
-
 
 ![MCP Inspector Testing](../../../../translated_images/DebugInspector.eb5c95f94c69a8ba36944941b9a3588309a3a2fae101ace470ee09bde41d1667.pl.png)
 
 ---
 
-
-
-**🎉 Gratulacje!** Udało Ci się stworzyć praktyczny, produkcyjny serwer MCP, który rozwiązuje rzeczywiste wyzwania w procesach deweloperskich. Twój niestandardowy serwer klonujący GitHub pokazuje moc MCP w automatyzacji i usprawnianiu pracy programistów.
+**🎉 Gratulacje!** Udało Ci się stworzyć praktyczny, gotowy do produkcji serwer MCP, który rozwiązuje rzeczywiste wyzwania w procesach deweloperskich. Twój własny serwer klonowania GitHub pokazuje moc MCP w automatyzacji i zwiększaniu produktywności programistów.
 
 ### 🏆 Osiągnięcia:
-- ✅ **MCP Developer** – Stworzenie niestandardowego serwera MCP
-- ✅ **Workflow Automator** – Usprawnienie procesów deweloperskich  
-- ✅ **Integration Expert** – Połączenie wielu narzędzi deweloperskich
-- ✅ **Production Ready** – Budowa rozwiązań gotowych do wdrożenia
+- ✅ **MCP Developer** - Stworzenie własnego serwera MCP
+- ✅ **Workflow Automator** - Uproszczenie procesów deweloperskich  
+- ✅ **Integration Expert** - Połączenie wielu narzędzi deweloperskich
+- ✅ **Production Ready** - Budowa rozwiązań gotowych do wdrożenia
 
 ---
 
-## 🎓 Zakończenie warsztatu: Twoja droga z Model Context Protocol
+## 🎓 Zakończenie warsztatów: Twoja droga z Model Context Protocol
 
-**Drogi uczestniku warsztatu,**
+**Drogi Uczestniku Warsztatów,**
 
-Gratulacje z okazji ukończenia wszystkich czterech modułów warsztatu Model Context Protocol! Przeszedłeś długą drogę od poznania podstaw AI Toolkit do tworzenia produkcyjnych serwerów MCP, które rozwiązują rzeczywiste wyzwania w procesach deweloperskich.
+Gratulacje z okazji ukończenia wszystkich czterech modułów warsztatów Model Context Protocol! Przeszedłeś długą drogę od poznania podstaw AI Toolkit po tworzenie produkcyjnych serwerów MCP, które rozwiązują rzeczywiste wyzwania deweloperskie.
 
 ### 🚀 Podsumowanie Twojej ścieżki nauki:
 
-**[Moduł 1](../lab1/README.md)**: Zacząłeś od eksploracji podstaw AI Toolkit, testowania modeli i tworzenia pierwszego agenta AI.
+**[Moduł 1](../lab1/README.md)**: Zacząłeś od poznania podstaw AI Toolkit, testowania modeli i tworzenia pierwszego agenta AI.
 
-**[Moduł 2](../lab2/README.md)**: Poznałeś architekturę MCP, zintegrowałeś Playwright MCP i zbudowałeś pierwszego agenta automatyzującego przeglądarkę.
+**[Moduł 2](../lab2/README.md)**: Poznałeś architekturę MCP, zintegrowałeś Playwright MCP i stworzyłeś pierwszego agenta automatyzującego przeglądarkę.
 
-**[Moduł 3](../lab3/README.md)**: Rozwinąłeś umiejętności w tworzeniu niestandardowych serwerów MCP na przykładzie Weather MCP i opanowałeś narzędzia do debugowania.
+**[Moduł 3](../lab3/README.md)**: Rozwinąłeś umiejętności tworzenia własnych serwerów MCP na przykładzie Weather MCP i opanowałeś narzędzia do debugowania.
 
-**[Moduł 4](../lab4/README.md)**: Teraz zastosowałeś wszystko, aby stworzyć praktyczne narzędzie automatyzujące proces klonowania repozytoriów GitHub.
+**[Moduł 4](../lab4/README.md)**: Zastosowałeś wszystko, tworząc praktyczne narzędzie automatyzujące workflow z repozytoriami GitHub.
 
 ### 🌟 Co opanowałeś:
 
-- ✅ **Ekosystem AI Toolkit**: modele, agenci i wzorce integracji
-- ✅ **Architektura MCP**: projekt klient-serwer, protokoły transportowe i bezpieczeństwo
-- ✅ **Narzędzia deweloperskie**: od Playground przez Inspector po wdrożenia produkcyjne
-- ✅ **Niestandardowy rozwój**: budowa, testowanie i wdrażanie własnych serwerów MCP
-- ✅ **Praktyczne zastosowania**: rozwiązywanie rzeczywistych problemów workflow za pomocą AI
+- ✅ **Ekosystem AI Toolkit**: Modele, agenci i wzorce integracji
+- ✅ **Architektura MCP**: Projekt klient-serwer, protokoły transportowe i bezpieczeństwo
+- ✅ **Narzędzia deweloperskie**: Od Playground przez Inspector po wdrożenie produkcyjne
+- ✅ **Własny rozwój**: Budowa, testowanie i wdrażanie własnych serwerów MCP
+- ✅ **Praktyczne zastosowania**: Rozwiązywanie rzeczywistych problemów workflow za pomocą AI
 
-### 🔮 Twoje następne kroki:
+### 🔮 Twoje kolejne kroki:
 
-1. **Zbuduj własny serwer MCP**: wykorzystaj zdobyte umiejętności do automatyzacji swoich unikalnych procesów
-2. **Dołącz do społeczności MCP**: dziel się swoimi projektami i ucz się od innych
-3. **Eksploruj zaawansowaną integrację**: łącz serwery MCP z systemami korporacyjnymi
-4. **Wspieraj open source**: pomagaj rozwijać narzędzia i dokumentację MCP
+1. **Zbuduj własny serwer MCP**: Wykorzystaj zdobyte umiejętności do automatyzacji swoich unikalnych procesów
+2. **Dołącz do społeczności MCP**: Dziel się swoimi projektami i ucz się od innych
+3. **Poznaj zaawansowaną integrację**: Połącz serwery MCP z systemami korporacyjnymi
+4. **Wspieraj open source**: Pomagaj rozwijać narzędzia i dokumentację MCP
 
-Pamiętaj, że ten warsztat to dopiero początek. Ekosystem Model Context Protocol dynamicznie się rozwija, a Ty jesteś gotowy, by być na czele narzędzi wspierających rozwój oparty na AI.
+Pamiętaj, że te warsztaty to dopiero początek. Ekosystem Model Context Protocol szybko się rozwija, a Ty jesteś teraz gotowy, by być na czele narzędzi deweloperskich wspieranych przez AI.
 
 **Dziękujemy za udział i zaangażowanie w naukę!**
 
-Mamy nadzieję, że ten warsztat zainspirował Cię do tworzenia i korzystania z narzędzi AI w Twojej drodze deweloperskiej.
+Mamy nadzieję, że warsztaty zainspirowały Cię do tworzenia i korzystania z narzędzi AI w Twojej codziennej pracy deweloperskiej.
 
 **Powodzenia w kodowaniu!**
 
 ---
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

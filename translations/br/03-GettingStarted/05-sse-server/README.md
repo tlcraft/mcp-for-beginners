@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T17:02:11+00:00",
+  "translation_date": "2025-07-13T19:54:23+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "br"
 }
@@ -49,7 +49,7 @@ Para executar o inspector, você primeiro deve ter um servidor SSE rodando, ent�
 1. Execute o inspector
 
     > ![NOTE]
-    > Execute isso em uma janela de terminal separada daquela onde o servidor está rodando. Também note que você precisa ajustar o comando abaixo para se adequar à URL onde seu servidor está rodando.
+    > Execute isso em uma janela de terminal separada daquela onde o servidor está rodando. Também note que você precisa ajustar o comando abaixo para corresponder à URL onde seu servidor está rodando.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
@@ -79,7 +79,7 @@ As principais lições deste capítulo são as seguintes:
 
 - SSE é o segundo tipo de transporte suportado, ao lado do stdio.
 - Para suportar SSE, você precisa gerenciar conexões e mensagens recebidas usando um framework web.
-- Você pode usar tanto o Inspector quanto o Visual Studio Code para consumir um servidor SSE, assim como servidores stdio. Note como há pequenas diferenças entre stdio e SSE. Para SSE, você precisa iniciar o servidor separadamente e então rodar sua ferramenta inspector. Para o inspector, também há diferenças em que você precisa especificar a URL.
+- Você pode usar tanto o Inspector quanto o Visual Studio Code para consumir um servidor SSE, assim como servidores stdio. Note como há pequenas diferenças entre stdio e SSE. Para SSE, você precisa iniciar o servidor separadamente e depois rodar sua ferramenta inspector. Para a ferramenta inspector, também há diferenças em que você precisa especificar a URL.
 
 ## Exemplos
 

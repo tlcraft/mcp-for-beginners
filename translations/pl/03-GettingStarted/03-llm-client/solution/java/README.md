@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac2459c0d5cc823922e3d9240a95028c",
-  "translation_date": "2025-06-11T13:26:17+00:00",
+  "translation_date": "2025-07-13T19:09:18+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/java/README.md",
   "language_code": "pl"
 }
 -->
 # Calculator LLM Client
 
-Aplikacja Java, która pokazuje, jak używać LangChain4j do połączenia się z usługą kalkulatora MCP (Model Context Protocol) z integracją GitHub Models.
+Aplikacja Java, która pokazuje, jak używać LangChain4j do połączenia z usługą kalkulatora MCP (Model Context Protocol) z integracją GitHub Models.
 
 ## Wymagania wstępne
 
 - Java 21 lub nowsza
-- Maven 3.6+ (lub użyj dołączonego Maven wrappera)
+- Maven 3.6+ (lub użyj dołączonego wrappera Maven)
 - Konto GitHub z dostępem do GitHub Models
-- Usługa kalkulatora MCP działająca na `http://localhost:8080`
+- Usługa kalkulatora MCP działająca pod adresem `http://localhost:8080`
 
 ## Jak uzyskać token GitHub
 
-Ta aplikacja korzysta z GitHub Models, co wymaga osobistego tokenu dostępu GitHub. Postępuj według poniższych kroków, aby uzyskać token:
+Ta aplikacja korzysta z GitHub Models, co wymaga osobistego tokena dostępu GitHub. Wykonaj poniższe kroki, aby uzyskać swój token:
 
 ### 1. Wejdź na GitHub Models
 1. Przejdź do [GitHub Models](https://github.com/marketplace/models)
@@ -33,10 +33,10 @@ Ta aplikacja korzysta z GitHub Models, co wymaga osobistego tokenu dostępu GitH
 3. Nadaj tokenowi opisową nazwę (np. "MCP Calculator Client")
 4. Ustaw datę wygaśnięcia według potrzeb
 5. Wybierz następujące zakresy:
-   - `repo` (jeśli dostęp do prywatnych repozytoriów)
+   - `repo` (jeśli potrzebujesz dostępu do prywatnych repozytoriów)
    - `user:email`
 6. Kliknij "Generate token"
-7. **Ważne**: Skopiuj token od razu - nie będzie można go później zobaczyć!
+7. **Ważne**: Skopiuj token od razu – nie będziesz mógł go zobaczyć ponownie!
 
 ### 3. Ustaw zmienną środowiskową
 
@@ -63,7 +63,7 @@ export GITHUB_TOKEN=your_github_token_here
    ```cmd
    mvnw clean install
    ```
-   Lub jeśli masz globalnie zainstalowany Maven:
+   Lub jeśli masz globalnie zainstalowanego Mavena:
    ```cmd
    mvn clean install
    ```
@@ -71,7 +71,7 @@ export GITHUB_TOKEN=your_github_token_here
 3. **Ustaw zmienną środowiskową** (patrz sekcja "Jak uzyskać token GitHub" powyżej)
 
 4. **Uruchom usługę kalkulatora MCP**:
-   Upewnij się, że masz uruchomioną usługę kalkulatora MCP z rozdziału 1 na `http://localhost:8080/sse`. Powinna działać przed uruchomieniem klienta.
+   Upewnij się, że usługa kalkulatora MCP z rozdziału 1 działa pod adresem `http://localhost:8080/sse`. Powinna być uruchomiona przed startem klienta.
 
 ## Uruchamianie aplikacji
 
@@ -86,7 +86,7 @@ Aplikacja demonstruje trzy główne interakcje z usługą kalkulatora:
 
 1. **Dodawanie**: Oblicza sumę 24.5 i 17.3
 2. **Pierwiastek kwadratowy**: Oblicza pierwiastek kwadratowy z 144
-3. **Pomoc**: Pokazuje dostępne funkcje kalkulatora
+3. **Pomoc**: Wyświetla dostępne funkcje kalkulatora
 
 ## Oczekiwany wynik
 
@@ -103,20 +103,20 @@ The calculator service provides the following functions: add, subtract, multiply
 ### Najczęstsze problemy
 
 1. **"GITHUB_TOKEN environment variable not set"**
-   - Upewnij się, że ustawiłeś zmienną `GITHUB_TOKEN` environment variable
-   - Restart your terminal/command prompt after setting the variable
+   - Upewnij się, że ustawiłeś zmienną środowiskową `GITHUB_TOKEN`
+   - Zrestartuj terminal/wiersz poleceń po ustawieniu zmiennej
 
 2. **"Connection refused to localhost:8080"**
-   - Ensure the MCP calculator service is running on port 8080
-   - Check if another service is using port 8080
+   - Sprawdź, czy usługa kalkulatora MCP działa na porcie 8080
+   - Upewnij się, że inna usługa nie zajmuje portu 8080
 
 3. **"Authentication failed"**
-   - Verify your GitHub token is valid and has the correct permissions
-   - Check if you have access to GitHub Models
+   - Zweryfikuj, czy token GitHub jest ważny i ma odpowiednie uprawnienia
+   - Sprawdź, czy masz dostęp do GitHub Models
 
-4. **Maven build errors**
-   - Ensure you're using Java 21 or higher: `java -version`
-   - Try cleaning the build: `mvnw clean`
+4. **Błędy budowania Maven**
+   - Upewnij się, że używasz Java 21 lub nowszej: `java -version`
+   - Spróbuj wyczyścić build: `mvnw clean`
 
 ### Debugowanie
 
@@ -128,22 +128,22 @@ java -Dlogging.level.dev.langchain4j=DEBUG -jar target\calculator-llm-client-0.0
 ## Konfiguracja
 
 Aplikacja jest skonfigurowana do:
-- Korzystania z GitHub Models z `gpt-4.1-nano` model
-- Connect to MCP service at `http://localhost:8080/sse`
-- Ustawienia limitu czasu na 60 sekund dla żądań
-- Włączenia logowania żądań/odpowiedzi do celów debugowania
+- Korzystania z GitHub Models z modelem `gpt-4.1-nano`
+- Łączenia się z usługą MCP pod adresem `http://localhost:8080/sse`
+- Ustawienia limitu czasu na 60 sekund dla zapytań
+- Włączenia logowania zapytań/odpowiedzi do celów debugowania
 
 ## Zależności
 
-Główne zależności używane w projekcie:
+Kluczowe zależności użyte w tym projekcie:
 - **LangChain4j**: do integracji AI i zarządzania narzędziami
-- **LangChain4j MCP**: do wsparcia Model Context Protocol
-- **LangChain4j GitHub Models**: do integracji GitHub Models
-- **Spring Boot**: do frameworka aplikacji i wstrzykiwania zależności
+- **LangChain4j MCP**: wsparcie dla Model Context Protocol
+- **LangChain4j GitHub Models**: integracja z GitHub Models
+- **Spring Boot**: framework aplikacji i wstrzykiwanie zależności
 
 ## Licencja
 
-Projekt jest objęty licencją Apache License 2.0 - szczegóły w pliku [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE).
+Projekt jest licencjonowany na podstawie Apache License 2.0 – szczegóły w pliku [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE).
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy pamiętać, że tłumaczenia automatyczne mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym powinien być traktowany jako źródło wiążące. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

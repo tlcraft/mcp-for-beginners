@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T15:57:05+00:00",
+  "translation_date": "2025-07-13T21:57:32+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "zh"
 }
@@ -26,18 +26,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 MCP 提供了帮助你测试和调试服务器的工具：
 
-- **MCP Inspector**：一个命令行工具，可以作为 CLI 工具或可视化工具运行。
-- **手动测试**：你可以使用 curl 之类的工具发送网络请求，任何支持 HTTP 的工具都可以。
+- **MCP Inspector**：一个命令行工具，可作为 CLI 工具或可视化工具运行。
+- **手动测试**：你可以使用 curl 这类工具发送网络请求，任何支持 HTTP 的工具都可以。
 - **单元测试**：可以使用你喜欢的测试框架来测试服务器和客户端的功能。
 
 ### 使用 MCP Inspector
 
-我们在之前的课程中介绍过该工具的使用，这里做一个简要说明。它是基于 Node.js 构建的工具，你可以通过调用 `npx` 命令来使用，它会临时下载并安装该工具，运行完请求后会自动清理。
+我们在之前的课程中介绍过该工具的使用，这里做个简要说明。它是基于 Node.js 构建的工具，你可以通过调用 `npx` 命令来使用，`npx` 会临时下载并安装该工具，运行完成后会自动清理。
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) 可以帮助你：
 
 - **发现服务器功能**：自动检测可用的资源、工具和提示
-- **测试工具执行**：尝试不同参数并实时查看响应
+- **测试工具执行**：尝试不同参数，实时查看响应
 - **查看服务器元数据**：检查服务器信息、模式和配置
 
 工具的典型运行示例如下：
@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-从上面的 curl 用法可以看出，你通过 POST 请求调用工具，负载中包含工具名称和参数。选择最适合你的方法。CLI 工具通常使用更快，也便于脚本化，这在 CI/CD 环境中非常有用。
+如上所示，使用 curl 发送 POST 请求，调用工具时需要传递工具名称和参数的负载。选择最适合你的方法。CLI 工具通常使用更快，也便于脚本化，这在 CI/CD 环境中非常有用。
 
 ### 单元测试
 
@@ -135,11 +135,11 @@ async def test_list_tools_cursor_parameter():
 - 创建了一个包含两个不同工具的 MCP 服务器。
 - 使用 `assert` 语句检查特定条件是否满足。
 
-完整文件请查看 [这里](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
+完整文件请查看 [full file here](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
 基于上述文件，你可以测试自己的服务器，确保功能按预期创建。
 
-所有主流 SDK 都有类似的测试部分，你可以根据所选运行时进行调整。
+所有主流 SDK 都有类似的测试部分，你可以根据所选运行环境进行调整。
 
 ## 示例
 
@@ -153,9 +153,9 @@ async def test_list_tools_cursor_parameter():
 
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 
-## 接下来
+## 后续内容
 
-- 下一步：[部署](../09-deployment/README.md)
+- 下一节：[部署](../09-deployment/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

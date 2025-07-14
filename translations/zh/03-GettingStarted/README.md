@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:27:41+00:00",
+  "translation_date": "2025-07-13T17:12:23+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "zh"
 }
@@ -21,7 +21,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **5 使用 SSE（服务器发送事件）进行消费**。SSE 是一种服务器到客户端的流式传输标准，允许服务器通过 HTTP 向客户端推送实时更新，[查看课程](05-sse-server/README.md)
 
-- **6 使用 MCP 的 HTTP 流式传输（Streamable HTTP）**。了解现代 HTTP 流式传输、进度通知，以及如何使用 Streamable HTTP 实现可扩展的实时 MCP 服务器和客户端，[查看课程](06-http-streaming/README.md)
+- **6 使用 MCP 的 HTTP 流式传输（可流式 HTTP）**。了解现代 HTTP 流式传输、进度通知，以及如何使用可流式 HTTP 实现可扩展的实时 MCP 服务器和客户端，[查看课程](06-http-streaming/README.md)
 
 - **7 利用 VSCode 的 AI 工具包** 来消费和测试你的 MCP 客户端和服务器，[查看课程](07-aitk/README.md)
 
@@ -30,7 +30,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **9 部署**。本章将介绍部署 MCP 解决方案的不同方法，[查看课程](09-deployment/README.md)
 
 
-Model Context Protocol (MCP) 是一个开放协议，标准化了应用程序向 LLM 提供上下文的方式。可以把 MCP 想象成 AI 应用的 USB-C 接口——它为连接 AI 模型与不同数据源和工具提供了统一的标准。
+Model Context Protocol（MCP）是一种开放协议，标准化了应用程序向 LLM 提供上下文的方式。可以把 MCP 想象成 AI 应用的 USB-C 接口——它为连接 AI 模型与不同数据源和工具提供了统一的标准。
 
 ## 学习目标
 
@@ -45,7 +45,7 @@ Model Context Protocol (MCP) 是一个开放协议，标准化了应用程序向
 
 ## 设置你的 MCP 环境
 
-在开始使用 MCP 之前，准备好开发环境并了解基本工作流程非常重要。本节将指导你完成初始设置步骤，确保你能顺利开始 MCP 开发。
+在开始使用 MCP 之前，准备好开发环境并了解基本工作流程非常重要。本节将引导你完成初始设置步骤，确保你能顺利开始 MCP 开发。
 
 ### 前提条件
 
@@ -72,14 +72,14 @@ MCP 提供多语言官方 SDK：
 ## 关键要点
 
 - 使用针对特定语言的 SDK，设置 MCP 开发环境非常简单
-- 构建 MCP 服务器需要创建并注册具有明确模式的工具
+- 构建 MCP 服务器需要创建并注册带有清晰模式的工具
 - MCP 客户端连接服务器和模型，以利用扩展功能
-- 测试和调试对于实现可靠的 MCP 至关重要
+- 测试和调试对于可靠的 MCP 实现至关重要
 - 部署选项涵盖本地开发到云端解决方案
 
 ## 练习
 
-我们提供了一组示例，配合本节所有章节中的练习使用。此外，每个章节也包含各自的练习和作业。
+我们提供了一套示例，配合本节所有章节中的练习使用。此外，每个章节也包含各自的练习和作业。
 
 - [Java 计算器](./samples/java/calculator/README.md)
 - [.Net 计算器](../../../03-GettingStarted/samples/csharp)
@@ -98,4 +98,4 @@ MCP 提供多语言官方 SDK：
 下一步：[创建你的第一个 MCP 服务器](01-first-server/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。我们不对因使用本翻译而产生的任何误解或误释承担责任。

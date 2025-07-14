@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
-  "translation_date": "2025-06-18T05:52:56+00:00",
+  "translation_date": "2025-07-13T19:02:15+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "ko"
 }
@@ -28,15 +28,15 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-다음 라이브러리를 설치해야 합니다: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
+다음 라이브러리가 설치되어야 합니다: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
-## 실행하기
+## 실행
 
 ```sh 
 dotnet run
 ```
 
-다음과 유사한 출력이 나타납니다:
+다음과 유사한 출력이 보여야 합니다:
 
 ```text
 Setting up stdio transport
@@ -51,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-출력 대부분은 디버깅용이지만 중요한 것은 MCP 서버에서 도구를 나열하고, 이를 LLM 도구로 변환하여 최종적으로 MCP 클라이언트 응답인 "Sum 6"을 얻는다는 점입니다.
+출력의 대부분은 디버깅용이지만 중요한 점은 MCP 서버에서 도구를 나열하고, 이를 LLM 도구로 변환하여 MCP 클라이언트 응답 "Sum 6"을 얻는 것입니다.
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 양지해 주시기 바랍니다. 원문은 해당 언어의 원본 문서를 권위 있는 자료로 간주해야 합니다. 중요한 정보의 경우 전문 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의해 주시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

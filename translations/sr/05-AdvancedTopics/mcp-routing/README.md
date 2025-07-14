@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
-  "translation_date": "2025-06-13T01:17:47+00:00",
+  "translation_date": "2025-07-14T02:16:58+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "sr"
 }
 -->
-## Dinamično usmeravanje alata
+## Динамичко усмеравање алата
 
-Usmeravanje alata osigurava da se pozivi alata šalju najprikladnijoj usluzi na osnovu konteksta. Na primer, poziv alata za vremensku prognozu može biti usmeren na regionalnu tačku pristupa u zavisnosti od lokacije korisnika, ili alat za kalkulator može koristiti određenu verziju API-ja.
+Усмеравање алата обезбеђује да се позиви алата усмеравају ка најприкладнијој услузи на основу контекста. На пример, позив алата за временску прогнозу може бити усмерен ка регионалном крајњем чвору у зависности од локације корисника, или алат за калкулатор може користити одређену верзију API-ја.
 
-Pogledajmo primer implementacije koji prikazuje dinamično usmeravanje alata zasnovano na analizi zahteva, regionalnim tačkama pristupa i podršci za verzionisanje.
+Погледајмо пример имплементације који демонстрира динамичко усмеравање алата на основу анализе захтева, регионалних крајњих чворова и подршке за верзионисање.
 
-## Arhitektura uzorkovanja i usmeravanja u MCP
+## Архитектура узорковања и усмеравања у MCP
 
-Uzorkovanje je ključna komponenta Model Context Protocol-a (MCP) koja omogućava efikasnu obradu i usmeravanje zahteva. Ono podrazumeva analizu dolaznih zahteva kako bi se odredio najprikladniji model ili usluga za njihovo rukovanje, na osnovu različitih kriterijuma kao što su tip sadržaja, korisnički kontekst i opterećenje sistema.
+Узорковање је кључна компонента Протокола контекста модела (MCP) која омогућава ефикасну обраду и усмеравање захтева. Оно подразумева анализу долазних захтева како би се одредио најприкладнији модел или услуга за њихову обраду, на основу различитих критеријума као што су тип садржаја, контекст корисника и оптерећење система.
 
-Uzorkovanje i usmeravanje se mogu kombinovati kako bi se kreirala robusna arhitektura koja optimizuje korišćenje resursa i obezbeđuje visoku dostupnost. Proces uzorkovanja može se koristiti za klasifikaciju zahteva, dok ih usmeravanje šalje odgovarajućim modelima ili uslugama.
+Узорковање и усмеравање могу се комбиновати да би се створила робусна архитектура која оптимизује коришћење ресурса и обезбеђује високу доступност. Процес узорковања може се користити за класификацију захтева, док их усмеравање води ка одговарајућим моделима или услугама.
 
-Dijagram ispod ilustruje kako uzorkovanje i usmeravanje funkcionišu zajedno u sveobuhvatnoj MCP arhitekturi:
+Дијаграм испод илуструје како узорковање и усмеравање заједно функционишу у свеобухватној MCP архитектури:
 
 ```mermaid
 flowchart TB
@@ -86,9 +86,9 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Šta sledi
+## Шта следи
 
-- [5.6 Uzorkovanje](../mcp-sampling/README.md)
+- [5.6 Sampling](../mcp-sampling/README.md)
 
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korišćenjem AI prevodilačke usluge [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo tačnosti, imajte na umu da automatski prevodi mogu sadržavati greške ili netačnosti. Originalni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prevod. Ne snosimo odgovornost za bilo kakva nesporazumevanja ili pogrešna tumačenja nastala korišćenjem ovog prevoda.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T19:13:19+00:00",
+  "translation_date": "2025-07-13T22:11:48+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "sl"
 }
@@ -20,14 +20,14 @@ Ta lekcija zajema, kako namestiti vašo MCP Server aplikacijo.
 Do konca te lekcije boste znali:
 
 - Oceniti različne pristope namestitve.
-- Namestiti vašo aplikacijo.
+- Namestiti svojo aplikacijo.
 
 ## Lokalni razvoj in namestitev
 
 Če je vaš strežnik namenjen uporabi na uporabnikovem računalniku, lahko sledite naslednjim korakom:
 
 1. **Prenesite strežnik**. Če strežnika niste napisali sami, ga najprej prenesite na svoj računalnik.  
-1. **Zaženite strežniški proces**: Zaženite vašo MCP strežniško aplikacijo.
+1. **Zaženite strežniški proces**: Zaženite svojo MCP strežniško aplikacijo.
 
 Za SSE (ni potrebno za strežnik tipa stdio)
 
@@ -38,7 +38,7 @@ Za SSE (ni potrebno za strežnik tipa stdio)
 
 MCP strežnike lahko namestite na različne oblačne platforme:
 
-- **Serverless funkcije**: Namestite lahke MCP strežnike kot serverless funkcije.  
+- **Serverless Functions**: Namestite lahke MCP strežnike kot brezstrežniške funkcije.  
 - **Storitve vsebnikov**: Uporabite storitve, kot so Azure Container Apps, AWS ECS ali Google Cloud Run.  
 - **Kubernetes**: Namestite in upravljajte MCP strežnike v Kubernetes grozdih za visoko razpoložljivost.
 
@@ -104,13 +104,14 @@ Tako, namestite ga lokalno ali v Azure s temi koraki.
 
 ## Dodatni viri
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
-- [Članek o Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
-- [Azure Container Apps MCP repozitorij](https://github.com/anthonychu/azure-container-apps-mcp-sample)
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
+- [Članek o Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
+- [Azure Container Apps MCP repozitorij](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
+
 
 ## Kaj sledi
 
 - Naslednje: [Praktična izvedba](../../04-PracticalImplementation/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T15:20:44+00:00",
+  "translation_date": "2025-07-13T19:47:43+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "fr"
 }
@@ -34,7 +34,7 @@ Ajoutons ensuite des fonctionnalités au serveur.
 
 ### -3- Ajouter des capacités au serveur
 
-Maintenant que nous avons défini tout ce qui est spécifique à SSE, ajoutons des capacités au serveur comme des outils, des invites et des ressources.
+Maintenant que tout ce qui est spécifique à SSE est défini, ajoutons des capacités au serveur comme des outils, des invites et des ressources.
 
 ---
 
@@ -65,11 +65,11 @@ Pour lancer l'inspecteur, vous devez d'abord avoir un serveur SSE en fonctionnem
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    L'exécution de l'inspecteur est la même dans tous les environnements d'exécution. Notez qu'au lieu de passer un chemin vers notre serveur et une commande pour démarrer le serveur, nous passons l'URL où le serveur tourne et nous spécifions également la route `/sse`.
+    L'exécution de l'inspecteur est la même dans tous les environnements d'exécution. Notez qu'au lieu de passer un chemin vers notre serveur et une commande pour démarrer le serveur, nous passons l'URL où le serveur fonctionne et nous spécifions également la route `/sse`.
 
 ### -2- Tester l'outil
 
-Connectez-vous au serveur en sélectionnant SSE dans la liste déroulante et remplissez le champ URL avec l'adresse où votre serveur tourne, par exemple http://localhost:4321/sse. Cliquez ensuite sur le bouton "Connect". Comme précédemment, sélectionnez la liste des outils, choisissez un outil et fournissez les valeurs d'entrée. Vous devriez voir un résultat comme ci-dessous :
+Connectez-vous au serveur en sélectionnant SSE dans la liste déroulante et remplissez le champ URL avec l'adresse où votre serveur fonctionne, par exemple http://localhost:4321/sse. Cliquez ensuite sur le bouton "Connect". Comme précédemment, sélectionnez la liste des outils, choisissez un outil et fournissez les valeurs d'entrée. Vous devriez voir un résultat similaire à celui-ci :
 
 ![Serveur SSE en fonctionnement dans l'inspecteur](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.fr.png)
 
@@ -103,7 +103,7 @@ Les points clés de ce chapitre sont les suivants :
 
 - [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 
-## Et ensuite
+## Et après ?
 
 - Suivant : [Streaming HTTP avec MCP (HTTP Streamable)](../06-http-streaming/README.md)
 

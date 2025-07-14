@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:16:34+00:00",
+  "translation_date": "2025-07-13T18:37:38+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "ro"
 }
@@ -16,21 +16,21 @@ Acest proiect demonstrează cum să creezi un client Java care se conectează ș
 Înainte de a rula acest client, trebuie să:
 
 1. **Pornești Serverul Calculator** din Capitolul 01:
-   - Navighează către directorul serverului calculator: `03-GettingStarted/01-first-server/solution/java/`
-   - Construiește și pornește serverul calculator:
+   - Navighează în directorul serverului calculator: `03-GettingStarted/01-first-server/solution/java/`
+   - Compilează și pornește serverul calculator:
      ```cmd
      cd ..\01-first-server\solution\java
      .\mvnw clean install -DskipTests
      java -jar target\calculator-server-0.0.1-SNAPSHOT.jar
      ```
-   - Serverul ar trebui să fie activ la `http://localhost:8080`
+   - Serverul ar trebui să ruleze la `http://localhost:8080`
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. Ai instalat **Java 21 sau o versiune superioară** pe sistemul tău
+3. Ai instalat **Maven** (inclus prin Maven Wrapper)
 
-## What is the SDKClient?
+## Ce este SDKClient?
 
-The `SDKClient` este o aplicație Java care demonstrează cum să:
+`SDKClient` este o aplicație Java care demonstrează cum să:
 - Te conectezi la un server MCP folosind transportul Server-Sent Events (SSE)
 - Listezi uneltele disponibile de pe server
 - Apelezi diverse funcții ale calculatorului de la distanță
@@ -44,7 +44,7 @@ Clientul folosește cadrul Spring AI MCP pentru a:
 2. **Inițializa clientul**: Configurează clientul MCP și stabilește conexiunea
 3. **Descoperi uneltele**: Listează toate operațiile disponibile ale calculatorului
 4. **Executa operații**: Apelează diverse funcții matematice cu date de exemplu
-5. **Afișa rezultatele**: Arată rezultatele fiecărei calcule
+5. **Afișa rezultatele**: Arată rezultatele fiecărui calcul
 
 ## Structura proiectului
 
@@ -72,9 +72,9 @@ Proiectul folosește următoarele dependențe principale:
 ```
 
 Această dependență oferă:
-- `McpClient` - The main client interface
-- `WebFluxSseClientTransport` - transport SSE pentru comunicare web
-- schemele protocolului MCP și tipurile de cereri/răspunsuri
+- `McpClient` - Interfața principală a clientului
+- `WebFluxSseClientTransport` - Transport SSE pentru comunicare web
+- Schemele protocolului MCP și tipurile de cereri/răspunsuri
 
 ## Construirea proiectului
 
@@ -90,15 +90,15 @@ Construiește proiectul folosind Maven wrapper:
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**Notă**: Asigură-te că serverul calculator rulează la `http://localhost:8080` before executing any of these commands.
+**Notă**: Asigură-te că serverul calculator rulează la `http://localhost:8080` înainte de a executa oricare dintre aceste comenzi.
 
-## What the Client Does
+## Ce face clientul
 
-When you run the client, it will:
+Când rulezi clientul, acesta va:
 
-1. **Connect** to the calculator server at `http://localhost:8080`
-2. **Listează uneltele** - Afișează toate operațiile disponibile ale calculatorului
-3. **Efectuează calcule**:
+1. **Se conecta** la serverul calculator la `http://localhost:8080`
+2. **Lista uneltele** - Afișează toate operațiile disponibile ale calculatorului
+3. **Efectua calcule**:
    - Adunare: 5 + 3 = 8
    - Scădere: 10 - 4 = 6
    - Înmulțire: 6 × 7 = 42
@@ -122,7 +122,7 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**Notă**: Este posibil să vezi avertismente Maven despre fire rămase active la final – acest comportament este normal pentru aplicațiile reactive și nu indică o eroare.
+**Notă**: Este posibil să vezi avertismente Maven despre fire rămase active la final - acest comportament este normal pentru aplicațiile reactive și nu indică o eroare.
 
 ## Înțelegerea codului
 
@@ -130,7 +130,7 @@ Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\
 ```java
 var transport = new WebFluxSseClientTransport(WebClient.builder().baseUrl("http://localhost:8080"));
 ```
-Acest cod creează un transport SSE (Server-Sent Events) care se conectează la serverul calculator.
+Aceasta creează un transport SSE (Server-Sent Events) care se conectează la serverul calculator.
 
 ### 2. Crearea clientului
 ```java
@@ -143,7 +143,7 @@ Creează un client MCP sincron și inițializează conexiunea.
 ```java
 CallToolResult resultAdd = client.callTool(new CallToolRequest("add", Map.of("a", 5.0, "b", 3.0)));
 ```
-Apelează unealta „add” cu parametrii a=5.0 și b=3.0.
+Apelează unealta "add" cu parametrii a=5.0 și b=3.0.
 
 ## Depanare
 
@@ -154,7 +154,7 @@ Error: Connection refused
 ```
 **Soluție**: Pornește mai întâi serverul calculator.
 
-### Portul este deja ocupat
+### Portul este deja folosit
 Dacă portul 8080 este ocupat:
 ```
 Error: Address already in use
@@ -173,5 +173,5 @@ Dacă întâmpini erori la construire:
 - [Model Context Protocol Specification](https://modelcontextprotocol.io/)
 - [Spring WebFlux Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original, în limba sa nativă, trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

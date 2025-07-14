@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:11:47+00:00",
+  "translation_date": "2025-07-13T17:37:24+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "ms"
 }
 -->
-### -2- Cipta projek
+### -2- Buat projek
 
-Sekarang anda telah memasang SDK, mari kita cipta projek seterusnya:
+Sekarang anda telah memasang SDK, mari kita buat projek seterusnya:
 
-### -3- Cipta fail projek
+### -3- Buat fail projek
 
-### -4- Cipta kod server
+### -4- Buat kod server
 
 ### -5- Menambah alat dan sumber
 
@@ -29,7 +29,7 @@ Mulakan server dengan arahan berikut:
 
 ### -8- Jalankan menggunakan inspector
 
-Inspector adalah alat hebat yang boleh memulakan server anda dan membolehkan anda berinteraksi dengannya supaya anda boleh menguji bahawa ia berfungsi. Mari mulakan:
+Inspector adalah alat hebat yang boleh memulakan server anda dan membolehkan anda berinteraksi dengannya supaya anda boleh menguji fungsinya. Mari kita mulakan:
 > [!NOTE]
 > ia mungkin kelihatan berbeza dalam medan "command" kerana ia mengandungi arahan untuk menjalankan pelayan dengan runtime khusus anda/
 Anda sepatutnya melihat antara muka pengguna berikut:
@@ -41,7 +41,7 @@ Anda sepatutnya melihat antara muka pengguna berikut:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.ms.png)
 
-1. Pilih "Tools" dan "listTools", anda akan melihat "Add" muncul, pilih "Add" dan isikan nilai parameter.
+1. Pilih "Tools" dan "listTools", anda akan melihat "Add" muncul, pilih "Add" dan isi nilai parameter.
 
    Anda akan melihat respons berikut, iaitu hasil daripada alat "add":
 

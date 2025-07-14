@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-07-09T21:57:21+00:00",
+  "translation_date": "2025-07-13T17:47:32+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "hk"
 }
@@ -23,7 +23,7 @@ dotnet run
 
 ## -4- 測試範例
 
-在一個終端機啟動伺服器後，開啟另一個終端機並執行以下指令：
+當伺服器在一個終端機運行時，打開另一個終端機並執行以下指令：
 
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
@@ -74,7 +74,7 @@ npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 }
 ```
 
-要呼叫工具，請輸入：
+要呼叫工具，輸入：
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-name Add --tool-arg a=1 --tool-arg b=2

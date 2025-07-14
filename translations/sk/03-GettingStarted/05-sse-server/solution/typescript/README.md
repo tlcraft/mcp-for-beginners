@@ -2,53 +2,53 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-17T12:12:44+00:00",
+  "translation_date": "2025-07-13T20:22:04+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "sk"
 }
 -->
-# Spustenie tejto ukážky
+# Spustenie tohto príkladu
 
-## -1- Nainštalujte závislosti
+## -1- Inštalácia závislostí
 
 ```bash
 npm install
 ```
 
-## -3- Spustite ukážku
+## -3- Spustenie príkladu
 
 ```bash
 npm run build
 ```
 
-## -4- Otestujte ukážku
+## -4- Testovanie príkladu
 
-So spusteným serverom v jednom termináli otvorte ďalší terminál a spustite nasledujúci príkaz:
+Keď máte server spustený v jednom termináli, otvorte ďalší terminál a spustite nasledujúci príkaz:
 
 ```bash
 npm run inspector
 ```
 
-Tým by sa mal spustiť webový server s vizuálnym rozhraním, ktoré vám umožní otestovať ukážku.
+Týmto by sa mal spustiť webový server s vizuálnym rozhraním, ktoré vám umožní testovať príklad.
 
 Keď je server pripojený:
 
-- skúste zoznam nástrojov a spustite `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- skúste zobraziť zoznam nástrojov a spustiť `add` s argumentmi 2 a 4, výsledok by mal byť 6.
+- prejdite na resources a resource template, zavolajte "greeting", zadajte meno a mali by ste vidieť pozdrav s menom, ktoré ste zadali.
 
-### Testing in CLI mode
+### Testovanie v CLI režime
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+Inspector, ktorý ste spustili, je vlastne Node.js aplikácia a `mcp dev` je jej obal.
 
-- Start up the server with the command `npm run build`.
+- Spustite server príkazom `npm run build`.
 
-- V samostatnom termináli spustite nasledujúci príkaz:
+- V inom termináli spustite nasledujúci príkaz:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    Toto zobrazí všetky nástroje dostupné na serveri. Mali by ste vidieť nasledujúci výstup:
+    Tento príkaz zobrazí všetky nástroje dostupné na serveri. Mali by ste vidieť nasledovný výstup:
 
     ```text
     {
@@ -79,13 +79,13 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     }
     ```
 
-- Vyvolajte typ nástroja zadaním nasledujúceho príkazu:
+- Zavolajte nástroj zadaním nasledujúceho príkazu:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
     ```
 
-Mali by ste vidieť nasledujúci výstup:
+Mali by ste vidieť nasledovný výstup:
 
     ```text
     {
@@ -99,8 +99,8 @@ Mali by ste vidieť nasledujúci výstup:
     ```
 
 > ![!TIP]
-> Zvyčajne je oveľa rýchlejšie spustiť inšpektor v režime CLI než v prehliadači.
-> Viac o inšpektore si prečítajte [tu](https://github.com/modelcontextprotocol/inspector).
+> Zvyčajne je oveľa rýchlejšie spustiť inspector v CLI režime než v prehliadači.
+> Viac o inspectore si prečítate [tu](https://github.com/modelcontextprotocol/inspector).
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou služby prekladania AI [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, uvedomte si, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by sa mal považovať za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nezodpovedáme za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

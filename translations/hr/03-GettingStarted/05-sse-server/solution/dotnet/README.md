@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2a58caa6e11faa09470b7f81e6729652",
-  "translation_date": "2025-06-18T06:10:03+00:00",
+  "translation_date": "2025-07-13T20:12:09+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "hr"
 }
@@ -23,7 +23,7 @@ dotnet run
 
 ## -3- Testirajte primjer
 
-Prije nego što pokrenete naredbu ispod, otvorite zaseban terminal (provjerite je li server još uvijek pokrenut).
+Prije nego što pokrenete sljedeće, otvorite zasebni terminal (provjerite je li server još uvijek pokrenut).
 
 Dok je server pokrenut u jednom terminalu, otvorite drugi terminal i pokrenite sljedeću naredbu:
 
@@ -35,10 +35,10 @@ Ovo bi trebalo pokrenuti web server s vizualnim sučeljem koje vam omogućuje te
 
 > Provjerite je li **SSE** odabrana kao vrsta prijenosa, a URL je `http://localhost:3001/sse`.
 
-Once the server is connected: 
+Kada se server poveže:
 
-- try listing tools and run `add`, s argumentima 2 i 4, trebali biste vidjeti rezultat 6.
-- idite na resources i resource template i pozovite "greeting", unesite ime i trebali biste vidjeti pozdrav s imenom koje ste unijeli.
+- pokušajte popisati alate i pokrenuti `add` s argumentima 2 i 4, trebali biste vidjeti rezultat 6.
+- idite na resources i resource template te pozovite "greeting", unesite ime i trebali biste vidjeti pozdrav s imenom koje ste unijeli.
 
 ### Testiranje u CLI načinu
 
@@ -101,8 +101,8 @@ Trebali biste vidjeti sljedeći ispis:
 ```
 
 > ![!TIP]
-> Obično je puno brže pokrenuti inspector u CLI načinu nego u pregledniku.
-> Više o inspectoru pročitajte [ovdje](https://github.com/modelcontextprotocol/inspector).
+> Obično je puno brže pokrenuti inspektor u CLI načinu nego u pregledniku.
+> Više o inspektoru pročitajte [ovdje](https://github.com/modelcontextprotocol/inspector).
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument preveden je korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

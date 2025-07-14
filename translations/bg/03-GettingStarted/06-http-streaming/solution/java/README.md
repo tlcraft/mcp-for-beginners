@@ -2,17 +2,17 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:50:10+00:00",
+  "translation_date": "2025-07-13T21:15:03+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "bg"
 }
 -->
 # Calculator HTTP Streaming Demo
 
-Този проект демонстрира HTTP стрийминг с използване на Server-Sent Events (SSE) и Spring Boot WebFlux. Състои се от две приложения:
+Този проект демонстрира HTTP стрийминг с помощта на Server-Sent Events (SSE) и Spring Boot WebFlux. Състои се от две приложения:
 
-- **Calculator Server**: реактивен уеб сървис, който извършва изчисления и предава резултатите чрез SSE
-- **Calculator Client**: клиентско приложение, което консумира стрийминг крайна точка
+- **Calculator Server**: реактивен уеб сървис, който извършва изчисления и стриймва резултатите чрез SSE
+- **Calculator Client**: клиентско приложение, което консумира стрийминг ендпойнта
 
 ## Изисквания
 
@@ -37,13 +37,13 @@ java/
 
 ## Как работи
 
-1. **Calculator Server** предоставя `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** предоставя ендпойнт `/calculate`, който:
+   - Приема query параметри: `a` (число), `b` (число), `op` (операция)
+   - Поддържани операции: `add`, `sub`, `mul`, `div`
+   - Връща Server-Sent Events с прогреса на изчислението и резултата
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
+2. **Calculator Client** се свързва със сървъра и:
+   - Изпраща заявка за изчисление на `7 * 5`
    - Консумира стрийминг отговора
    - Извежда всяко събитие в конзолата
 
@@ -53,7 +53,7 @@ java/
 
 #### 1. Стартирайте Calculator Server
 
-Отворете терминал и навигирайте до директорията на сървъра:
+Отворете терминал и отидете в директорията на сървъра:
 
 ```bash
 cd calculator-server
@@ -63,7 +63,7 @@ mvn spring-boot:run
 
 Сървърът ще стартира на `http://localhost:8080`
 
-Ще видите изход като:
+Трябва да видите изход като:
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
@@ -71,7 +71,7 @@ Netty started on port 8080 (http)
 
 #### 2. Стартирайте Calculator Client
 
-Отворете **нов терминал** и навигирайте до директорията на клиента:
+Отворете **нов терминал** и отидете в директорията на клиента:
 
 ```bash
 cd calculator-client
@@ -101,7 +101,7 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 ## Ръчно тестване на сървъра
 
-Можете да тествате сървъра и с уеб браузър или curl:
+Можете да тествате сървъра и чрез уеб браузър или curl:
 
 ### С уеб браузър:
 Посетете: `http://localhost:8080/calculate?a=10&b=5&op=add`
@@ -113,7 +113,7 @@ curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-st
 
 ## Очакван изход
 
-При стартиране на клиента, трябва да видите стрийминг изход подобен на:
+При стартиране на клиента трябва да видите стрийминг изход, подобен на:
 
 ```
 event:info
@@ -125,23 +125,23 @@ data:35.0
 
 ## Поддържани операции
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - Събиране (a + b)
+- `sub` - Изваждане (a - b)
+- `mul` - Умножение (a * b)
+- `div` - Деление (a / b, връща NaN ако b = 0)
 
-## API Reference
+## API Референция
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Параметри:**
+- `a` (задължителен): Първо число (double)
+- `b` (задължителен): Второ число (double)
+- `op` (задължителен): Операция (`add`, `sub`, `mul`, `div`)
 
-**Response:**
+**Отговор:**
 - Content-Type: `text/event-stream`
-- Връща Server-Sent Events с прогреса и резултата от изчислението
+- Връща Server-Sent Events с прогреса на изчислението и резултата
 
 **Примерна заявка:**
 ```
@@ -163,40 +163,40 @@ data: 35.0
 
 ### Чести проблеми
 
-1. **Порт 8080 вече се използва**
-   - Затворете всички други приложения, които използват порт 8080
+1. **Порт 8080 вече е зает**
+   - Затворете други приложения, които използват порт 8080
    - Или променете порта на сървъра в `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Връзката е отказана**
+   - Уверете се, че сървърът работи преди да стартирате клиента
+   - Проверете дали сървърът е стартирал успешно на порт 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Проблеми с имената на параметрите**
+   - Този проект включва Maven конфигурация за компилатора с флага `-parameters`
+   - Ако имате проблеми с обвързването на параметрите, уверете се, че проектът е компилиран с тази настройка
 
-### Stopping the Applications
+### Спиране на приложенията
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop`, ако работи като фонов процес
+- Натиснете `Ctrl+C` в терминала, където работи всяко приложение
+- Или използвайте `mvn spring-boot:stop`, ако работят като фонов процес
 
 ## Технологичен стек
 
 - **Spring Boot 3.3.1** - Фреймуърк за приложения
 - **Spring WebFlux** - Реактивен уеб фреймуърк
 - **Project Reactor** - Библиотека за реактивни потоци
-- **Netty** - Неблокиращ I/O сървър
-- **Maven** - Инструмент за билд
+- **Netty** - Сървър с неблокиращ I/O
+- **Maven** - Инструмент за билдване
 - **Java 17+** - Програмен език
 
 ## Следващи стъпки
 
-Опитайте да модифицирате кода, за да:
+Опитайте да промените кода, за да:
 - Добавите още математически операции
 - Включите обработка на грешки при невалидни операции
 - Добавите логване на заявки и отговори
-- Имплементирате автентикация
+- Реализирате автентикация
 - Добавите unit тестове
 
 **Отказ от отговорност**:  
-Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за никакви недоразумения или неправилни тълкувания, произтичащи от използването на този превод.
+Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или неправилни тълкувания, произтичащи от използването на този превод.

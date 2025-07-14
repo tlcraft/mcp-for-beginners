@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6d6315e03f591fb5a39be91da88585dc",
-  "translation_date": "2025-05-17T10:53:34+00:00",
+  "translation_date": "2025-07-13T19:18:45+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/typescript/README.md",
   "language_code": "mo"
 }
 -->
-# تشغيل هذا المثال
+# 執行此範例
 
-يتطلب هذا المثال وجود LLM على العميل. يحتاج LLM منك إما تشغيل هذا في Codespaces أو إعداد رمز وصول شخصي في GitHub للعمل.
+這個範例需要在客戶端使用 LLM。你必須在 Codespaces 中執行，或是在 GitHub 設定個人存取權杖才能運作。
 
-## -1- تثبيت التبعيات
+## -1- 安裝相依套件
 
 ```bash
 npm install
 ```
 
-## -3- تشغيل الخادم
+## -3- 啟動伺服器
 
 ```bash
 npm run build
 ```
 
-## -4- تشغيل العميل
+## -4- 啟動客戶端
 
 ```sh
 npm run client
 ```
 
-يجب أن ترى نتيجة مشابهة لـ:
+你應該會看到類似以下的結果：
 
 ```text
 Asking server for available tools
@@ -40,4 +40,5 @@ Calling tool add with args "{\"a\":2,\"b\":3}"
 Tool result:  { content: [ { type: 'text', text: '5' } ] }
 ```
 
-I'm sorry, but I am not familiar with a language referred to as "mo." Could you please provide more context or clarify the language you are referring to?
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

@@ -2,53 +2,53 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-17T12:12:24+00:00",
+  "translation_date": "2025-07-13T20:21:50+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "hu"
 }
 -->
-# A példa futtatása
+# A minta futtatása
 
-## -1- Telepítse a függőségeket
+## -1- A függőségek telepítése
 
 ```bash
 npm install
 ```
 
-## -3- Futtassa a mintát
+## -3- A minta futtatása
 
 ```bash
 npm run build
 ```
 
-## -4- Tesztelje a mintát
+## -4- A minta tesztelése
 
-Amikor a szerver fut egy terminálban, nyisson meg egy másik terminált, és futtassa a következő parancsot:
+Amíg a szerver egy terminálban fut, nyiss meg egy másik terminált, és futtasd a következő parancsot:
 
 ```bash
 npm run inspector
 ```
 
-Ez elindít egy webes szervert vizuális felülettel, amely lehetővé teszi a minta tesztelését.
+Ez elindít egy web szervert vizuális felülettel, amely lehetővé teszi a minta tesztelését.
 
-Amikor a szerver csatlakozott:
+Miután a szerver csatlakozott:
 
-- próbálja meg felsorolni az eszközöket, és futtassa az `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- próbáld meg lekérdezni az eszközöket, és futtasd az `add` parancsot a 2 és 4 argumentummal, az eredménynek 6-nak kell lennie.
+- menj a resources és resource template részhez, hívd meg a "greeting" függvényt, írj be egy nevet, és egy névre szóló üdvözletet kell látnod.
 
-### Testing in CLI mode
+### Tesztelés CLI módban
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+Az általad futtatott inspector valójában egy Node.js alkalmazás, és a `mcp dev` egy wrapper köré épül.
 
-- Start up the server with the command `npm run build` parancsot.
+- Indítsd el a szervert a `npm run build` paranccsal.
 
-- Egy külön terminálban futtassa a következő parancsot:
+- Egy másik terminálban futtasd a következő parancsot:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    Ez felsorolja az összes elérhető eszközt a szerveren. A következő kimenetet kell látnia:
+    Ez kilistázza az összes elérhető eszközt a szerveren. A következő kimenetet kell látnod:
 
     ```text
     {
@@ -79,13 +79,13 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     }
     ```
 
-- Hívjon meg egy eszköztípust a következő parancs beírásával:
+- Egy eszköz típus meghívásához írd be a következő parancsot:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
     ```
 
-A következő kimenetet kell látnia:
+A következő kimenetet kell látnod:
 
     ```text
     {
@@ -99,8 +99,8 @@ A következő kimenetet kell látnia:
     ```
 
 > ![!TIP]
-> Általában sokkal gyorsabb az inspektort CLI módban futtatni, mint a böngészőben.
-> További információ az inspektorról [itt](https://github.com/modelcontextprotocol/inspector).
+> Általában sokkal gyorsabb az inspectort CLI módban futtatni, mint a böngészőben.
+> További információkat az inspectorról [itt](https://github.com/modelcontextprotocol/inspector) találsz.
 
-**Felelősség kizárása**:  
-Ezt a dokumentumot AI fordítási szolgáltatással, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordították. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt a professzionális emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félremagyarázásokért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:15:19+00:00",
+  "translation_date": "2025-07-13T21:01:56+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "en"
 }
@@ -23,26 +23,26 @@ dotnet run
 
 ## -3- Test the sample
 
-Start a separate terminal before running the following (make sure the server is still running).
+Open a separate terminal before running the command below (make sure the server is still running).
 
-With the server running in one terminal, open another terminal and run this command:
+With the server running in one terminal, open another terminal and run the following command:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-This should start a web server with a visual interface that lets you test the sample.
+This will start a web server with a visual interface that lets you test the sample.
 
-> Make sure that **Streamable HTTP** is selected as the transport type, and the URL is `http://localhost:3001/mcp`.
+> Make sure **Streamable HTTP** is selected as the transport type, and the URL is `http://localhost:3001/mcp`.
 
-Once the server is connected: 
+Once the server is connected:
 
-- try listing tools and run `add`. Using arguments 2 and 4, you should see 6 as the result.
-- Go to resources and resource template, call "greeting", enter a name, and you should see a greeting with the name you provided.
+- try listing tools and run `add` with arguments 2 and 4; you should see 6 as the result.
+- go to resources and resource template, call "greeting," enter a name, and you should see a greeting with the name you provided.
 
 ### Testing in CLI mode
 
-You can launch it directly in CLI mode by running this command:
+You can launch it directly in CLI mode by running the following command:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list

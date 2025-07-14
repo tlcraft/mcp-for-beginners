@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "33daea2e41ef7635cf13c41d6a3ea773",
-  "translation_date": "2025-06-12T22:56:58+00:00",
+  "translation_date": "2025-07-14T00:02:40+00:00",
   "source_file": "05-AdvancedTopics/mcp-integration/README.md",
   "language_code": "en"
 }
 -->
 ## Microsoft AI Foundry Integration
 
-Azure AI Foundry offers a platform for creating and deploying AI agents. Integrating MCP with AI Foundry lets you take advantage of its features while preserving MCP's flexibility.
+Azure AI Foundry offers a platform for building and deploying AI agents. Integrating MCP with AI Foundry lets you take advantage of its features while preserving MCP's flexibility.
 
-In the following code, we build an Agent integration that processes requests and manages tool calls using MCP.
+In the code below, we create an Agent integration that processes requests and manages tool calls using MCP.
 
 ## Integrating MCP with Azure ML
 
-Connecting MCP with Azure Machine Learning (ML) enables you to harness Azure's robust ML capabilities while keeping MCP's flexibility. This integration can be used to run ML pipelines, register models as tools, and handle compute resources.
+Connecting MCP with Azure Machine Learning (ML) enables you to harness Azure's robust ML capabilities while keeping MCP's flexibility. This integration can be used to run ML pipelines, register models as tools, and manage compute resources.
 
 ## What's next
 

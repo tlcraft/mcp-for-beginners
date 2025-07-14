@@ -2,100 +2,100 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:32:21+00:00",
+  "translation_date": "2025-07-13T23:34:06+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "ms"
 }
 -->
-# Model Context Protocol (MCP) Python Implementation
+# Model Context Protocol (MCP) Pelaksanaan Python
 
-This repository contains a Python implementation of the Model Context Protocol (MCP), demonstrating how to create both a server and client application that communicate using the MCP standard.
+Repositori ini mengandungi pelaksanaan Python bagi Model Context Protocol (MCP), yang menunjukkan cara untuk mencipta aplikasi server dan klien yang berkomunikasi menggunakan piawaian MCP.
 
-## Overview
+## Gambaran Keseluruhan
 
-The MCP implementation consists of two main components:
+Pelaksanaan MCP terdiri daripada dua komponen utama:
 
-1. **MCP Server (`server.py`)** - A server that exposes:
-   - **Tools**: Functions that can be called remotely
-   - **Resources**: Data that can be retrieved
-   - **Prompts**: Templates for generating prompts for language models
+1. **MCP Server (`server.py`)** - Server yang menyediakan:
+   - **Tools**: Fungsi yang boleh dipanggil dari jauh
+   - **Resources**: Data yang boleh diambil
+   - **Prompts**: Templat untuk menghasilkan arahan bagi model bahasa
 
-2. **MCP Client (`client.py`)** - A client application that connects to the server and uses its features
+2. **MCP Client (`client.py`)** - Aplikasi klien yang menyambung ke server dan menggunakan ciri-cirinya
 
-## Features
+## Ciri-ciri
 
-This implementation demonstrates several key MCP features:
+Pelaksanaan ini menunjukkan beberapa ciri utama MCP:
 
 ### Tools
-- `completion` - Generates text completions from AI models (simulated)
-- `add` - Simple calculator that adds two numbers
+- `completion` - Menjana teks lengkap dari model AI (disimulasikan)
+- `add` - Kalkulator ringkas yang menambah dua nombor
 
 ### Resources
-- `models://` - Returns information about available AI models
-- `greeting://{name}` - Returns a personalized greeting for a given name
+- `models://` - Mengembalikan maklumat tentang model AI yang tersedia
+- `greeting://{name}` - Mengembalikan ucapan peribadi untuk nama yang diberikan
 
 ### Prompts
-- `review_code` - Generates a prompt for reviewing code
+- `review_code` - Menjana arahan untuk menyemak kod
 
-## Installation
+## Pemasangan
 
-To use this MCP implementation, install the required packages:
+Untuk menggunakan pelaksanaan MCP ini, pasang pakej yang diperlukan:
 
 ```powershell
 pip install mcp-server mcp-client
 ```
 
-## Running the Server and Client
+## Menjalankan Server dan Klien
 
-### Starting the Server
+### Memulakan Server
 
-Run the server in one terminal window:
+Jalankan server dalam satu tetingkap terminal:
 
 ```powershell
 python server.py
 ```
 
-The server can also be run in development mode using the MCP CLI:
+Server juga boleh dijalankan dalam mod pembangunan menggunakan MCP CLI:
 
 ```powershell
 mcp dev server.py
 ```
 
-Or installed in Claude Desktop (if available):
+Atau dipasang dalam Claude Desktop (jika tersedia):
 
 ```powershell
 mcp install server.py
 ```
 
-### Running the Client
+### Menjalankan Klien
 
-Run the client in another terminal window:
-
-```powershell
-python client.py
-```
-
-This will connect to the server and demonstrate all available features.
-
-### Client Usage
-
-The client (`client.py`) demonstrates all the MCP capabilities:
+Jalankan klien dalam tetingkap terminal yang lain:
 
 ```powershell
 python client.py
 ```
 
-This will connect to the server and exercise all features including tools, resources, and prompts. The output will show:
+Ini akan menyambung ke server dan menunjukkan semua ciri yang tersedia.
 
-1. Calculator tool result (5 + 7 = 12)
-2. Completion tool response to "What is the meaning of life?"
-3. List of available AI models
-4. Personalized greeting for "MCP Explorer"
-5. Code review prompt template
+### Penggunaan Klien
 
-## Implementation Details
+Klien (`client.py`) menunjukkan semua keupayaan MCP:
 
-The server is implemented using the `FastMCP` API, which provides high-level abstractions for defining MCP services. Here's a simplified example of how tools are defined:
+```powershell
+python client.py
+```
+
+Ini akan menyambung ke server dan menggunakan semua ciri termasuk tools, resources, dan prompts. Output akan menunjukkan:
+
+1. Keputusan alat kalkulator (5 + 7 = 12)
+2. Respons alat completion untuk "What is the meaning of life?"
+3. Senarai model AI yang tersedia
+4. Ucapan peribadi untuk "MCP Explorer"
+5. Templat arahan semakan kod
+
+## Butiran Pelaksanaan
+
+Server dilaksanakan menggunakan API `FastMCP`, yang menyediakan abstraksi tahap tinggi untuk mentakrifkan perkhidmatan MCP. Berikut adalah contoh ringkas bagaimana tools ditakrifkan:
 
 ```python
 @mcp.tool()
@@ -113,7 +113,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-The client uses the MCP client library to connect to and call the server:
+Klien menggunakan perpustakaan klien MCP untuk menyambung dan memanggil server:
 
 ```python
 async with stdio_client(server_params) as (reader, writer):
@@ -122,9 +122,9 @@ async with stdio_client(server_params) as (reader, writer):
         result = await session.call_tool("add", arguments={"a": 5, "b": 7})
 ```
 
-## Learn More
+## Ketahui Lebih Lanjut
 
-For more information about MCP, visit: https://modelcontextprotocol.io/
+Untuk maklumat lanjut tentang MCP, lawati: https://modelcontextprotocol.io/
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

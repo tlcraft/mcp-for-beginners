@@ -2,114 +2,114 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a3f252a62f059360855de5331a575898",
-  "translation_date": "2025-06-10T07:20:34+00:00",
+  "translation_date": "2025-07-14T09:04:33+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/README.md",
   "language_code": "sl"
 }
 -->
 # Weather MCP Server
 
-Ini je contoh MCP Server di Python yang ngimplementasiin alat cuaca dengan respons palsu. Bisa dipakai sebagai kerangka buat MCP Server kamu sendiri. Fitur-fiturnya meliputi:
+To je primer MCP strežnika v Pythonu, ki implementira vremenska orodja z lažnimi odgovori. Uporabite ga lahko kot osnovo za svoj lasten MCP strežnik. Vključuje naslednje funkcije:
 
-- **Weather Tool**: Alat yang nyediain info cuaca palsu berdasarkan lokasi yang diberikan.
-- **Git Clone Tool**: Alat yang nge-clone repositori git ke folder yang ditentukan.
-- **VS Code Open Tool**: Alat yang buka folder di VS Code atau VS Code Insiders.
-- **Connect to Agent Builder**: Fitur yang memungkinkan kamu nyambungin MCP server ke Agent Builder buat testing dan debugging.
-- **Debug di [MCP Inspector](https://github.com/modelcontextprotocol/inspector)**: Fitur buat debug MCP Server pake MCP Inspector.
+- **Weather Tool**: Orodje, ki zagotavlja lažne vremenske informacije glede na podano lokacijo.
+- **Git Clone Tool**: Orodje, ki klonira git repozitorij v določeno mapo.
+- **VS Code Open Tool**: Orodje, ki odpre mapo v VS Code ali VS Code Insiders.
+- **Povezava z Agent Builderjem**: Funkcija, ki omogoča povezavo MCP strežnika z Agent Builderjem za testiranje in odpravljanje napak.
+- **Odpravljanje napak v [MCP Inspector](https://github.com/modelcontextprotocol/inspector)**: Funkcija, ki omogoča odpravljanje napak MCP strežnika z uporabo MCP Inspectorja.
 
-## Mulai dengan template Weather MCP Server
+## Začnite z Weather MCP Server predlogo
 
-> **Prasyarat**
+> **Pogoji**
 >
-> Buat ngejalanin MCP Server di mesin dev lokal kamu, kamu butuh:
+> Za zagon MCP strežnika na lokalnem razvojnem računalniku potrebujete:
 >
 > - [Python](https://www.python.org/)
-> - [Git](https://git-scm.com/) (dibutuhin buat git_clone_repo tool)
-> - [VS Code](https://code.visualstudio.com/) atau [VS Code Insiders](https://code.visualstudio.com/insiders/) (dibutuhin buat open_in_vscode tool)
-> - (*Opsional - kalau kamu suka uv*) [uv](https://github.com/astral-sh/uv)
-> - [Python Debugger Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
+> - [Git](https://git-scm.com/) (potrebno za orodje git_clone_repo)
+> - [VS Code](https://code.visualstudio.com/) ali [VS Code Insiders](https://code.visualstudio.com/insiders/) (potrebno za orodje open_in_vscode)
+> - (*Neobvezno - če raje uporabljate uv*) [uv](https://github.com/astral-sh/uv)
+> - [Razširitev za Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
 
-## Siapkan lingkungan
+## Priprava okolja
 
-Ada dua cara buat nyiapin lingkungan proyek ini. Kamu bisa pilih salah satu sesuai preferensi.
+Za nastavitev okolja za ta projekt obstajata dva pristopa. Izberete lahko tistega, ki vam bolj ustreza.
 
-> Catatan: Reload VSCode atau terminal supaya python dari virtual environment yang dipakai setelah bikin virtual environment.
+> Opomba: Ponovno naložite VSCode ali terminal, da zagotovite uporabo pythona iz virtualnega okolja po njegovi ustvaritvi.
 
-| Cara | Langkah |
+| Pristop | Koraki |
 | -------- | ----- |
-| Pakai `uv` | 1. Buat virtual environment: `uv venv` <br>2. Jalankan perintah VSCode "***Python: Select Interpreter***" dan pilih python dari virtual environment yang dibuat <br>3. Install dependensi (termasuk dev dependencies): `uv pip install -r pyproject.toml --extra dev` |
-| Pakai `pip` | 1. Buat virtual environment: `python -m venv .venv` <br>2. Jalankan perintah VSCode "***Python: Select Interpreter***" dan pilih python dari virtual environment yang dibuat<br>3. Install dependensi (termasuk dev dependencies): `pip install -e .[dev]` | 
+| Uporaba `uv` | 1. Ustvarite virtualno okolje: `uv venv` <br>2. Zaženite ukaz v VSCode "***Python: Select Interpreter***" in izberite python iz ustvarjenega virtualnega okolja <br>3. Namestite odvisnosti (vključno z razvojnimi): `uv pip install -r pyproject.toml --extra dev` |
+| Uporaba `pip` | 1. Ustvarite virtualno okolje: `python -m venv .venv` <br>2. Zaženite ukaz v VSCode "***Python: Select Interpreter***" in izberite python iz ustvarjenega virtualnega okolja<br>3. Namestite odvisnosti (vključno z razvojnimi): `pip install -e .[dev]` |
 
-Setelah nyiapin lingkungan, kamu bisa jalankan server di mesin dev lokal lewat Agent Builder sebagai MCP Client buat mulai:
-1. Buka panel Debug di VS Code. Pilih `Debug in Agent Builder` atau tekan `F5` buat mulai debugging MCP server.
-2. Pakai AI Toolkit Agent Builder buat tes server dengan [prompt ini](../../../../../../../../../../../open_prompt_builder). Server bakal otomatis tersambung ke Agent Builder.
-3. Klik `Run` buat tes server dengan prompt tersebut.
+Po nastavitvi okolja lahko strežnik zaženete na lokalnem razvojnem računalniku preko Agent Builderja kot MCP klienta, da začnete:
+1. Odprite razdelek za odpravljanje napak v VS Code. Izberite `Debug in Agent Builder` ali pritisnite `F5` za začetek odpravljanja napak MCP strežnika.
+2. Uporabite AI Toolkit Agent Builder za testiranje strežnika z [tem pozivom](../../../../../../../../../../open_prompt_builder). Strežnik bo samodejno povezan z Agent Builderjem.
+3. Kliknite `Run` za testiranje strežnika s pozivom.
 
-**Selamat**! Kamu berhasil menjalankan Weather MCP Server di mesin dev lokal lewat Agent Builder sebagai MCP Client.
+**Čestitke**! Uspešno ste zagnali Weather MCP Server na svojem lokalnem razvojnem računalniku preko Agent Builderja kot MCP klienta.
 ![DebugMCP](https://raw.githubusercontent.com/microsoft/windows-ai-studio-templates/refs/heads/dev/mcpServers/mcp_debug.gif)
 
-## Isi template ini
+## Kaj je vključeno v predlogo
 
-| Folder / File| Isi                                     |
-| ------------ | -------------------------------------------- |
-| `.vscode`    | File VSCode buat debugging                   |
-| `.aitk`      | Konfigurasi untuk AI Toolkit                |
-| `src`        | Kode sumber untuk weather mcp server   |
+| Mapa / Datoteka | Vsebina                                     |
+| --------------- | -------------------------------------------- |
+| `.vscode`       | Datoteke za odpravljanje napak v VSCode     |
+| `.aitk`         | Konfiguracije za AI Toolkit                   |
+| `src`           | Izvorna koda za weather mcp strežnik         |
 
-## Cara debug Weather MCP Server
+## Kako odpraviti napake v Weather MCP Serverju
 
-> Catatan:
-> - [MCP Inspector](https://github.com/modelcontextprotocol/inspector) adalah alat visual buat developer untuk testing dan debugging MCP server.
-> - Semua mode debugging mendukung breakpoint, jadi kamu bisa pasang breakpoint di kode implementasi alat.
+> Opombe:
+> - [MCP Inspector](https://github.com/modelcontextprotocol/inspector) je vizualno orodje za razvijalce za testiranje in odpravljanje napak MCP strežnikov.
+> - Vsi načini odpravljanja napak podpirajo točke prekinitve, zato lahko dodate točke prekinitve v kodo orodja.
 
-## Alat yang tersedia
+## Na voljo orodja
 
-### Weather Tool  
-Alat `get_weather` nyediain info cuaca palsu untuk lokasi yang ditentukan.
+### Weather Tool
+Orodje `get_weather` zagotavlja lažne vremenske informacije za določeno lokacijo.
 
-| Parameter | Tipe | Deskripsi |
-| --------- | ---- | ----------- |
-| `location` | string | Lokasi yang mau diambil info cuacanya (misal: nama kota, provinsi, atau koordinat) |
+| Parameter | Tip | Opis |
+| --------- | --- | ----- |
+| `location` | niz | Lokacija, za katero želite pridobiti vreme (npr. ime mesta, država ali koordinate) |
 
-### Git Clone Tool  
-Alat `git_clone_repo` nge-clone repositori git ke folder yang ditentukan.
+### Git Clone Tool
+Orodje `git_clone_repo` klonira git repozitorij v določeno mapo.
 
-| Parameter | Tipe | Deskripsi |
-| --------- | ---- | ----------- |
-| `repo_url` | string | URL repositori git yang mau di-clone |
-| `target_folder` | string | Path folder tempat repositori akan di-clone |
+| Parameter | Tip | Opis |
+| --------- | --- | ----- |
+| `repo_url` | niz | URL git repozitorija, ki ga želite klonirati |
+| `target_folder` | niz | Pot do mape, kamor naj se repozitorij klonira |
 
-Alat ini mengembalikan objek JSON dengan:
-- `success`: Boolean yang nunjukin apakah operasi berhasil
-- `target_folder` atau `error`: Path repositori yang di-clone atau pesan error
+Orodje vrne JSON objekt z:
+- `success`: Boolean, ki označuje, ali je bila operacija uspešna
+- `target_folder` ali `error`: Pot do kloniranega repozitorija ali sporočilo o napaki
 
-### VS Code Open Tool  
-Alat `open_in_vscode` buka folder di aplikasi VS Code atau VS Code Insiders.
+### VS Code Open Tool
+Orodje `open_in_vscode` odpre mapo v aplikaciji VS Code ali VS Code Insiders.
 
-| Parameter | Tipe | Deskripsi |
-| --------- | ---- | ----------- |
-| `folder_path` | string | Path folder yang mau dibuka |
-| `use_insiders` | boolean (opsional) | Apakah mau pakai VS Code Insiders daripada VS Code biasa |
+| Parameter | Tip | Opis |
+| --------- | --- | ----- |
+| `folder_path` | niz | Pot do mape, ki jo želite odpreti |
+| `use_insiders` | boolean (neobvezno) | Ali uporabiti VS Code Insiders namesto običajnega VS Code |
 
-Alat ini mengembalikan objek JSON dengan:
-- `success`: Boolean yang nunjukin apakah operasi berhasil
-- `message` atau `error`: Pesan konfirmasi atau pesan error
+Orodje vrne JSON objekt z:
+- `success`: Boolean, ki označuje, ali je bila operacija uspešna
+- `message` ali `error`: Potrdilno sporočilo ali sporočilo o napaki
 
-## Mode Debug | Deskripsi | Langkah debug |
-| ---------- | ----------- | --------------- |
-| Agent Builder | Debug MCP server di Agent Builder lewat AI Toolkit. | 1. Buka panel Debug di VS Code. Pilih `Debug in Agent Builder` dan tekan `F5` buat mulai debugging MCP server.<br>2. Pakai AI Toolkit Agent Builder buat tes server dengan [prompt ini](../../../../../../../../../../../open_prompt_builder). Server bakal otomatis tersambung ke Agent Builder.<br>3. Klik `Run` buat tes server dengan prompt tersebut. |
-| MCP Inspector | Debug MCP server pake MCP Inspector. | 1. Install [Node.js](https://nodejs.org/)<br> 2. Siapkan Inspector: `cd inspector` && `npm install` <br> 3. Buka panel Debug di VS Code. Pilih `Debug SSE in Inspector (Edge)` atau `Debug SSE in Inspector (Chrome)`. Tekan F5 buat mulai debugging.<br> 4. Saat MCP Inspector terbuka di browser, klik tombol `Connect` buat nyambungin MCP server ini.<br> 5. Lalu kamu bisa `List Tools`, pilih alat, input parameter, dan `Run Tool` buat debug kode server kamu.<br> |
+## Načini odpravljanja napak | Opis | Koraki za odpravljanje napak |
+| ------------------------- | ----------- | ---------------------------- |
+| Agent Builder | Odpravljanje napak MCP strežnika v Agent Builderju preko AI Toolkit. | 1. Odprite razdelek za odpravljanje napak v VS Code. Izberite `Debug in Agent Builder` in pritisnite `F5` za začetek odpravljanja napak MCP strežnika.<br>2. Uporabite AI Toolkit Agent Builder za testiranje strežnika z [tem pozivom](../../../../../../../../../../open_prompt_builder). Strežnik bo samodejno povezan z Agent Builderjem.<br>3. Kliknite `Run` za testiranje strežnika s pozivom. |
+| MCP Inspector | Odpravljanje napak MCP strežnika z uporabo MCP Inspectorja. | 1. Namestite [Node.js](https://nodejs.org/)<br> 2. Nastavite Inspector: `cd inspector` && `npm install` <br> 3. Odprite razdelek za odpravljanje napak v VS Code. Izberite `Debug SSE in Inspector (Edge)` ali `Debug SSE in Inspector (Chrome)`. Pritisnite F5 za začetek odpravljanja napak.<br> 4. Ko se MCP Inspector zažene v brskalniku, kliknite gumb `Connect` za povezavo tega MCP strežnika.<br> 5. Nato lahko `List Tools`, izberete orodje, vnesete parametre in `Run Tool` za odpravljanje napak vaše kode strežnika.<br> |
 
-## Port default dan kustomisasi
+## Privzeti porti in prilagoditve
 
-| Mode Debug | Port | Definisi | Kustomisasi | Catatan |
-| ---------- | ----- | ------------ | -------------- |-------------- |
-| Agent Builder | 3001 | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json) | Edit [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.aitk/mcp.json) buat ubah port di atas. | N/A |
-| MCP Inspector | 3001 (Server); 5173 dan 3000 (Inspector) | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json) | Edit [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.aitk/mcp.json) buat ubah port di atas.| N/A |
+| Način odpravljanja napak | Porti | Definicije | Prilagoditve | Opomba |
+| ------------------------ | ----- | ---------- | ------------ | ------ |
+| Agent Builder | 3001 | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json) | Uredite [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.aitk/mcp.json) za spremembo zgornjih portov. | N/A |
+| MCP Inspector | 3001 (strežnik); 5173 in 3000 (Inspector) | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json) | Uredite [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.aitk/mcp.json) za spremembo zgornjih portov. | N/A |
 
-## Feedback
+## Povratne informacije
 
-Kalau kamu punya masukan atau saran untuk template ini, silakan buka issue di [repository AI Toolkit GitHub](https://github.com/microsoft/vscode-ai-toolkit/issues)
+Če imate kakršnekoli povratne informacije ali predloge za to predlogo, prosimo, odprite zadevo na [AI Toolkit GitHub repozitoriju](https://github.com/microsoft/vscode-ai-toolkit/issues)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za kritične informacije priporočamo strokovni človeški prevod. Za kakršnekoli nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f74887f51a69d3f255cb83d0b517c623",
-  "translation_date": "2025-07-04T18:11:38+00:00",
+  "translation_date": "2025-07-13T18:54:19+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "id"
 }
@@ -15,7 +15,7 @@ Sekarang kita akan terhubung ke server dan meminta kapabilitasnya:
 
 ### -3- Ubah kapabilitas server menjadi alat LLM
 
-Langkah berikutnya setelah mendata kapabilitas server adalah mengubahnya ke dalam format yang dimengerti oleh LLM. Setelah itu, kita bisa menyediakan kapabilitas ini sebagai alat untuk LLM kita.
+Langkah berikutnya setelah mendaftar kapabilitas server adalah mengubahnya ke dalam format yang dimengerti oleh LLM. Setelah itu, kita bisa menyediakan kapabilitas ini sebagai alat untuk LLM kita.
 
 Bagus, sekarang kita sudah siap menangani permintaan pengguna, jadi mari kita selesaikan itu berikutnya.
 
@@ -53,4 +53,4 @@ Ambil kode dari latihan dan kembangkan server dengan beberapa alat tambahan. Kem
 - Selanjutnya: [Menggunakan server dengan Visual Studio Code](../04-vscode/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

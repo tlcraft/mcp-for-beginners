@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-09T23:11:00+00:00",
+  "translation_date": "2025-07-13T18:01:08+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "vi"
 }
@@ -38,7 +38,7 @@ mcp run server.py
 
 ## -4- Kiểm tra ví dụ
 
-Khi server đang chạy trong một terminal, mở terminal khác và chạy lệnh sau:
+Khi server đang chạy trong một terminal, mở một terminal khác và chạy lệnh sau:
 
 ```bash
 mcp dev server.py
@@ -48,13 +48,13 @@ Lệnh này sẽ khởi động một web server với giao diện trực quan c
 
 Khi server đã kết nối:
 
-- thử liệt kê các công cụ và chạy `add` với các tham số 2 và 4, bạn sẽ thấy kết quả là 6.
+- thử liệt kê các công cụ và chạy `add` với các đối số 2 và 4, bạn sẽ thấy kết quả là 6.
 
 - vào phần resources và resource template, gọi get_greeting, nhập tên và bạn sẽ thấy lời chào với tên bạn đã nhập.
 
 ### Kiểm tra ở chế độ CLI
 
-Inspector bạn chạy thực chất là một ứng dụng Node.js và `mcp dev` là một trình bao bọc cho nó.
+Inspector bạn chạy thực ra là một ứng dụng Node.js và `mcp dev` là một trình bao quanh nó.
 
 Bạn có thể khởi chạy trực tiếp ở chế độ CLI bằng cách chạy lệnh sau:
 
@@ -114,7 +114,7 @@ Bạn sẽ thấy kết quả như sau:
 ```
 
 > ![!TIP]
-> Thường thì chạy inspector ở chế độ CLI sẽ nhanh hơn nhiều so với chạy trên trình duyệt.
+> Thường thì chạy inspector ở chế độ CLI nhanh hơn nhiều so với chạy trên trình duyệt.
 > Đọc thêm về inspector [tại đây](https://github.com/modelcontextprotocol/inspector).
 
 **Tuyên bố từ chối trách nhiệm**:  

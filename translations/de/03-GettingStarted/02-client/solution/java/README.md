@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:03:51+00:00",
+  "translation_date": "2025-07-13T18:30:19+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "de"
 }
 -->
-# MCP Java Client - Calculator Demo
+# MCP Java Client - Rechner-Demo
 
-Dieses Projekt zeigt, wie man einen Java-Client erstellt, der eine Verbindung zu einem MCP (Model Context Protocol) Server herstellt und mit ihm interagiert. In diesem Beispiel verbinden wir uns mit dem Rechner-Server aus Kapitel 01 und führen verschiedene mathematische Operationen aus.
+Dieses Projekt zeigt, wie man einen Java-Client erstellt, der sich mit einem MCP (Model Context Protocol) Server verbindet und mit ihm interagiert. In diesem Beispiel verbinden wir uns mit dem Rechner-Server aus Kapitel 01 und führen verschiedene mathematische Operationen durch.
 
 ## Voraussetzungen
 
 Bevor Sie diesen Client ausführen, müssen Sie:
 
-1. **Den Rechner-Server aus Kapitel 01 starten**:
-   - Navigieren Sie zum Verzeichnis des Rechner-Servers: `03-GettingStarted/01-first-server/solution/java/`
+1. **Den Rechner-Server** aus Kapitel 01 starten:
+   - Wechseln Sie in das Verzeichnis des Rechner-Servers: `03-GettingStarted/01-first-server/solution/java/`
    - Bauen und starten Sie den Rechner-Server:
      ```cmd
      cd ..\01-first-server\solution\java
      .\mvnw clean install -DskipTests
      java -jar target\calculator-server-0.0.1-SNAPSHOT.jar
      ```
-   - Der Server sollte unter `http://localhost:8080`
+   - Der Server sollte unter `http://localhost:8080` laufen
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. **Java 21 oder höher** auf Ihrem System installiert haben
+3. **Maven** (über Maven Wrapper enthalten)
 
-## What is the SDKClient?
+## Was ist der SDKClient?
 
-The `SDKClient` laufen. Dies ist eine Java-Anwendung, die zeigt, wie man:
+Der `SDKClient` ist eine Java-Anwendung, die zeigt, wie man:
 - Eine Verbindung zu einem MCP-Server über Server-Sent Events (SSE) Transport herstellt
 - Verfügbare Tools vom Server auflistet
 - Verschiedene Rechner-Funktionen remote aufruft
@@ -40,7 +40,7 @@ The `SDKClient` laufen. Dies ist eine Java-Anwendung, die zeigt, wie man:
 
 Der Client nutzt das Spring AI MCP Framework, um:
 
-1. **Verbindung herzustellen**: Erstellt einen WebFlux SSE Client Transport, um eine Verbindung zum Rechner-Server aufzubauen
+1. **Verbindung herzustellen**: Erstellt einen WebFlux SSE Client Transport, um sich mit dem Rechner-Server zu verbinden
 2. **Client zu initialisieren**: Richtet den MCP-Client ein und stellt die Verbindung her
 3. **Tools zu entdecken**: Listet alle verfügbaren Rechner-Operationen auf
 4. **Operationen auszuführen**: Ruft verschiedene mathematische Funktionen mit Beispielwerten auf
@@ -62,7 +62,7 @@ src/
 
 ## Wichtige Abhängigkeiten
 
-Das Projekt verwendet folgende wichtige Abhängigkeiten:
+Das Projekt verwendet folgende zentrale Abhängigkeiten:
 
 ```xml
 <dependency>
@@ -72,8 +72,8 @@ Das Projekt verwendet folgende wichtige Abhängigkeiten:
 ```
 
 Diese Abhängigkeit stellt bereit:
-- `McpClient` - The main client interface
-- `WebFluxSseClientTransport` - SSE Transport für webbasierte Kommunikation
+- `McpClient` - Die Haupt-Client-Schnittstelle
+- `WebFluxSseClientTransport` - SSE-Transport für webbasierte Kommunikation
 - MCP-Protokoll-Schemata sowie Anfrage-/Antworttypen
 
 ## Projekt bauen
@@ -90,15 +90,15 @@ Bauen Sie das Projekt mit dem Maven Wrapper:
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**Hinweis**: Stellen Sie sicher, dass der Rechner-Server unter `http://localhost:8080` before executing any of these commands.
+**Hinweis**: Stellen Sie sicher, dass der Rechner-Server unter `http://localhost:8080` läuft, bevor Sie einen dieser Befehle ausführen.
 
-## What the Client Does
+## Was der Client macht
 
-When you run the client, it will:
+Beim Ausführen verbindet sich der Client mit dem Rechner-Server unter `http://localhost:8080` und:
 
-1. **Connect** to the calculator server at `http://localhost:8080` läuft.
-2. **Tools auflisten** - Zeigt alle verfügbaren Rechner-Operationen an
-3. **Berechnungen durchführen**:
+1. **Verbindet sich** mit dem Rechner-Server
+2. **Listet Tools auf** - Zeigt alle verfügbaren Rechner-Operationen an
+3. **Führt Berechnungen durch**:
    - Addition: 5 + 3 = 8
    - Subtraktion: 10 - 4 = 6
    - Multiplikation: 6 × 7 = 42
@@ -122,7 +122,7 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**Hinweis**: Am Ende können Maven-Warnungen wegen noch laufender Threads auftreten – das ist normal bei reaktiven Anwendungen und kein Fehler.
+**Hinweis**: Am Ende können Maven-Warnungen über verbleibende Threads erscheinen – das ist bei reaktiven Anwendungen normal und kein Fehler.
 
 ## Code verstehen
 
@@ -130,7 +130,7 @@ Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\
 ```java
 var transport = new WebFluxSseClientTransport(WebClient.builder().baseUrl("http://localhost:8080"));
 ```
-Dies erstellt einen SSE (Server-Sent Events) Transport, der eine Verbindung zum Rechner-Server herstellt.
+Dies erstellt einen SSE (Server-Sent Events) Transport, der sich mit dem Rechner-Server verbindet.
 
 ### 2. Client erstellen
 ```java
@@ -174,4 +174,4 @@ Wenn Build-Fehler auftreten:
 - [Spring WebFlux Dokumentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, bitten wir zu beachten, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

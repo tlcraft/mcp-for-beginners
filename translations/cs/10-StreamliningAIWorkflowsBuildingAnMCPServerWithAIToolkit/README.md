@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "787440926586cd064b0899fd1c514f52",
-  "translation_date": "2025-06-10T05:03:44+00:00",
+  "translation_date": "2025-07-14T07:12:56+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md",
   "language_code": "cs"
 }
 -->
-# Streamlining AI Workflows: Construyendo un Servidor MCP con AI Toolkit
+# Zjednodušení AI pracovních postupů: Vytvoření MCP serveru s AI Toolkit
 
 [![MCP Version](https://img.shields.io/badge/MCP-1.9.3-blue.svg)](https://modelcontextprotocol.io/)
 [![Python](https://img.shields.io/badge/Python-3.10+-green.svg)](https://python.org)
@@ -15,184 +15,184 @@ CO_OP_TRANSLATOR_METADATA:
 
 ![logo](../../../translated_images/logo.ec93918ec338dadde1715c8aaf118079e0ed0502e9efdfcc84d6a0f4a9a70ae8.cs.png)
 
-## 🎯 Visión General
+## 🎯 Přehled
 
-¡Bienvenido al **Model Context Protocol (MCP) Workshop**! Este taller práctico y completo combina dos tecnologías de vanguardia para revolucionar el desarrollo de aplicaciones de IA:
+Vítejte na **Model Context Protocol (MCP) Workshopu**! Tento komplexní praktický workshop spojuje dvě špičkové technologie, které změní vývoj AI aplikací:
 
-- **🔗 Model Context Protocol (MCP)**: Un estándar abierto para la integración fluida de herramientas de IA
-- **🛠️ AI Toolkit para Visual Studio Code (AITK)**: La potente extensión de desarrollo de IA de Microsoft
+- **🔗 Model Context Protocol (MCP)**: Otevřený standard pro bezproblémovou integraci AI nástrojů
+- **🛠️ AI Toolkit pro Visual Studio Code (AITK)**: Výkonné rozšíření pro vývoj AI od Microsoftu
 
-### 🎓 Qué Aprenderás
+### 🎓 Co se naučíte
 
-Al finalizar este taller, dominarás el arte de construir aplicaciones inteligentes que conectan modelos de IA con herramientas y servicios del mundo real. Desde pruebas automatizadas hasta integraciones personalizadas de API, adquirirás habilidades prácticas para resolver desafíos empresariales complejos.
+Na konci workshopu budete umět vytvářet inteligentní aplikace, které propojují AI modely s reálnými nástroji a službami. Od automatizovaného testování po vlastní API integrace získáte praktické dovednosti pro řešení složitých obchodních výzev.
 
-## 🏗️ Stack Tecnológico
+## 🏗️ Technologický stack
 
 ### 🔌 Model Context Protocol (MCP)
 
-MCP es el **"USB-C para IA"**: un estándar universal que conecta modelos de IA con herramientas externas y fuentes de datos.
+MCP je **„USB-C pro AI“** – univerzální standard, který propojuje AI modely s externími nástroji a zdroji dat.
 
-**✨ Características Clave:**
-- 🔄 **Integración Estandarizada**: Interfaz universal para conexiones de herramientas de IA
-- 🏛️ **Arquitectura Flexible**: Servidores locales y remotos mediante transporte stdio/SSE
-- 🧰 **Ecosistema Completo**: Herramientas, prompts y recursos en un solo protocolo
-- 🔒 **Preparado para Empresas**: Seguridad y fiabilidad incorporadas
+**✨ Klíčové vlastnosti:**
+- 🔄 **Standardizovaná integrace**: Univerzální rozhraní pro připojení AI nástrojů
+- 🏛️ **Flexibilní architektura**: Lokální i vzdálené servery přes stdio/SSE transport
+- 🧰 **Bohatý ekosystém**: Nástroje, prompty a zdroje v jednom protokolu
+- 🔒 **Podniková připravenost**: Vestavěná bezpečnost a spolehlivost
 
-**🎯 Por qué MCP es Importante:**
-Así como USB-C eliminó el caos de cables, MCP elimina la complejidad de las integraciones de IA. Un protocolo, infinitas posibilidades.
+**🎯 Proč je MCP důležitý:**
+Stejně jako USB-C odstranil chaos s kabely, MCP odstraňuje složitost AI integrací. Jeden protokol, nekonečné možnosti.
 
-### 🤖 AI Toolkit para Visual Studio Code (AITK)
+### 🤖 AI Toolkit pro Visual Studio Code (AITK)
 
-La extensión principal de Microsoft para desarrollo de IA que transforma VS Code en una potencia de IA.
+Vlajková loď Microsoftu pro vývoj AI, která promění VS Code v AI centrum.
 
-**🚀 Capacidades Principales:**
-- 📦 **Catálogo de Modelos**: Acceso a modelos de Azure AI, GitHub, Hugging Face, Ollama
-- ⚡ **Inferencia Local**: Ejecución optimizada ONNX en CPU/GPU/NPU
-- 🏗️ **Constructor de Agentes**: Desarrollo visual de agentes IA con integración MCP
-- 🎭 **Multimodal**: Soporte para texto, visión y salida estructurada
+**🚀 Hlavní funkce:**
+- 📦 **Katalog modelů**: Přístup k modelům z Azure AI, GitHub, Hugging Face, Ollama
+- ⚡ **Lokální inference**: ONNX optimalizované CPU/GPU/NPU zpracování
+- 🏗️ **Agent Builder**: Vizualní vývoj AI agentů s integrací MCP
+- 🎭 **Multimodální podpora**: Text, obraz a strukturovaný výstup
 
-**💡 Beneficios para el Desarrollo:**
-- Despliegue de modelos sin configuración
-- Ingeniería visual de prompts
-- Playground para pruebas en tiempo real
-- Integración fluida con servidores MCP
+**💡 Výhody pro vývojáře:**
+- Nasazení modelů bez konfigurace
+- Vizualní tvorba promptů
+- Testování v reálném čase
+- Plynulá integrace MCP serverů
 
-## 📚 Recorrido de Aprendizaje
+## 📚 Výuková cesta
 
-### [🚀 Módulo 1: Fundamentos de AI Toolkit](./lab1/README.md)
-**Duración**: 15 minutos
-- 🛠️ Instalar y configurar AI Toolkit para VS Code
-- 🗂️ Explorar el Catálogo de Modelos (más de 100 modelos de GitHub, ONNX, OpenAI, Anthropic, Google)
-- 🎮 Dominar el Playground Interactivo para pruebas en tiempo real
-- 🤖 Construir tu primer agente IA con Agent Builder
-- 📊 Evaluar el rendimiento del modelo con métricas integradas (F1, relevancia, similitud, coherencia)
-- ⚡ Aprender procesamiento por lotes y soporte multimodal
+### [🚀 Modul 1: Základy AI Toolkitu](./lab1/README.md)
+**Délka**: 15 minut
+- 🛠️ Instalace a konfigurace AI Toolkitu pro VS Code
+- 🗂️ Prozkoumání Katalogu modelů (100+ modelů z GitHub, ONNX, OpenAI, Anthropic, Google)
+- 🎮 Ovládnutí Interaktivního hřiště pro testování modelů v reálném čase
+- 🤖 Vytvoření prvního AI agenta pomocí Agent Builderu
+- 📊 Hodnocení výkonu modelů pomocí vestavěných metrik (F1, relevance, podobnost, koherence)
+- ⚡ Naučíte se dávkové zpracování a multimodální podporu
 
-**🎯 Resultado de Aprendizaje**: Crear un agente IA funcional con comprensión completa de las capacidades de AITK
+**🎯 Výsledek učení**: Vytvořit funkčního AI agenta s komplexním porozuměním možnostem AITK
 
-### [🌐 Módulo 2: Fundamentos de MCP con AI Toolkit](./lab2/README.md)
-**Duración**: 20 minutos
-- 🧠 Dominar la arquitectura y conceptos del Model Context Protocol (MCP)
-- 🌐 Explorar el ecosistema del servidor MCP de Microsoft
-- 🤖 Construir un agente de automatización de navegador usando Playwright MCP server
-- 🔧 Integrar servidores MCP con AI Toolkit Agent Builder
-- 📊 Configurar y probar herramientas MCP dentro de tus agentes
-- 🚀 Exportar y desplegar agentes potenciados por MCP para producción
+### [🌐 Modul 2: MCP a základy AI Toolkitu](./lab2/README.md)
+**Délka**: 20 minut
+- 🧠 Ovládnutí architektury a konceptů Model Context Protocolu (MCP)
+- 🌐 Prozkoumání ekosystému MCP serverů od Microsoftu
+- 🤖 Vytvoření agenta pro automatizaci prohlížeče pomocí Playwright MCP serveru
+- 🔧 Integrace MCP serverů s AI Toolkit Agent Builderem
+- 📊 Konfigurace a testování MCP nástrojů v rámci agentů
+- 🚀 Export a nasazení agentů s podporou MCP do produkce
 
-**🎯 Resultado de Aprendizaje**: Desplegar un agente IA potenciado con herramientas externas a través de MCP
+**🎯 Výsledek učení**: Nasadit AI agenta s rozšířením o externí nástroje přes MCP
 
-### [🔧 Módulo 3: Desarrollo Avanzado de MCP con AI Toolkit](./lab3/README.md)
-**Duración**: 20 minutos
-- 💻 Crear servidores MCP personalizados usando AI Toolkit
-- 🐍 Configurar y usar el último SDK de MCP para Python (v1.9.3)
-- 🔍 Configurar y utilizar MCP Inspector para depuración
-- 🛠️ Construir un Servidor MCP para clima con flujos de trabajo profesionales de depuración
-- 🧪 Depurar servidores MCP tanto en Agent Builder como en Inspector
+### [🔧 Modul 3: Pokročilý vývoj MCP s AI Toolkitem](./lab3/README.md)
+**Délka**: 20 minut
+- 💻 Vytvoření vlastních MCP serverů pomocí AI Toolkitu
+- 🐍 Konfigurace a použití nejnovějšího MCP Python SDK (v1.9.3)
+- 🔍 Nastavení a využití MCP Inspectoru pro ladění
+- 🛠️ Vytvoření Weather MCP Serveru s profesionálními ladícími postupy
+- 🧪 Ladění MCP serverů v prostředí Agent Builder a Inspector
 
-**🎯 Resultado de Aprendizaje**: Desarrollar y depurar servidores MCP personalizados con herramientas modernas
+**🎯 Výsledek učení**: Vyvíjet a ladit vlastní MCP servery s moderními nástroji
 
-### [🐙 Módulo 4: Desarrollo Práctico de MCP - Servidor GitHub Clone Personalizado](./lab4/README.md)
-**Duración**: 30 minutos
-- 🏗️ Construir un servidor MCP GitHub Clone real para flujos de trabajo de desarrollo
-- 🔄 Implementar clonación inteligente de repositorios con validación y manejo de errores
-- 📁 Crear gestión inteligente de directorios e integración con VS Code
-- 🤖 Usar GitHub Copilot Agent Mode con herramientas MCP personalizadas
-- 🛡️ Aplicar fiabilidad lista para producción y compatibilidad multiplataforma
+### [🐙 Modul 4: Praktický vývoj MCP – vlastní GitHub Clone Server](./lab4/README.md)
+**Délka**: 30 minut
+- 🏗️ Vytvoření reálného GitHub Clone MCP Serveru pro vývojové workflow
+- 🔄 Implementace chytrého klonování repozitářů s validací a ošetřením chyb
+- 📁 Vytvoření inteligentní správy adresářů a integrace s VS Code
+- 🤖 Použití GitHub Copilot Agent Mode s vlastními MCP nástroji
+- 🛡️ Aplikace produkčně připravené spolehlivosti a multiplatformní kompatibility
 
-**🎯 Resultado de Aprendizaje**: Desplegar un servidor MCP listo para producción que optimice flujos de trabajo reales de desarrollo
+**🎯 Výsledek učení**: Nasadit produkčně připravený MCP server, který zjednodušuje reálné vývojové procesy
 
-## 💡 Aplicaciones e Impacto en el Mundo Real
+## 💡 Reálné aplikace a dopad
 
-### 🏢 Casos de Uso Empresariales
+### 🏢 Podnikové scénáře
 
-#### 🔄 Automatización DevOps
-Transforma tu flujo de trabajo de desarrollo con automatización inteligente:
-- **Gestión Inteligente de Repositorios**: Revisión de código y decisiones de merge impulsadas por IA
-- **CI/CD Inteligente**: Optimización automática de pipelines basada en cambios de código
-- **Clasificación de Incidencias**: Asignación y categorización automática de bugs
+#### 🔄 Automatizace DevOps
+Proměňte svůj vývojový proces pomocí inteligentní automatizace:
+- **Chytrá správa repozitářů**: AI řízené revize kódu a rozhodování o merge
+- **Inteligentní CI/CD**: Automatická optimalizace pipeline na základě změn v kódu
+- **Třídění problémů**: Automatická klasifikace a přiřazení bugů
 
-#### 🧪 Revolución en Aseguramiento de Calidad
-Mejora las pruebas con automatización impulsada por IA:
-- **Generación Inteligente de Pruebas**: Creación automática de suites de prueba completas
-- **Pruebas de Regresión Visual**: Detección de cambios UI con IA
-- **Monitoreo de Rendimiento**: Identificación y resolución proactiva de problemas
+#### 🧪 Revoluce v testování kvality
+Zvyšte kvalitu testování pomocí AI automatizace:
+- **Inteligentní generování testů**: Automatické vytváření komplexních testovacích sad
+- **Vizualní regresní testování**: AI detekce změn v UI
+- **Monitorování výkonu**: Proaktivní identifikace a řešení problémů
 
-#### 📊 Inteligencia en Pipelines de Datos
-Construye flujos de datos más inteligentes:
-- **Procesos ETL Adaptativos**: Transformaciones de datos autooptimizables
-- **Detección de Anomalías**: Monitoreo en tiempo real de la calidad de datos
-- **Enrutamiento Inteligente**: Gestión inteligente del flujo de datos
+#### 📊 Inteligentní datové toky
+Vytvářejte chytřejší datové workflow:
+- **Adaptivní ETL procesy**: Samooptimalizující transformace dat
+- **Detekce anomálií**: Monitorování kvality dat v reálném čase
+- **Inteligentní směrování**: Chytré řízení toku dat
 
-#### 🎧 Mejora en la Experiencia del Cliente
-Crea interacciones excepcionales con los clientes:
-- **Soporte Contextual**: Agentes IA con acceso al historial del cliente
-- **Resolución Proactiva de Problemas**: Servicio predictivo al cliente
-- **Integración Multicanal**: Experiencia unificada de IA en todas las plataformas
+#### 🎧 Zlepšení zákaznické zkušenosti
+Vytvářejte výjimečné interakce se zákazníky:
+- **Podpora s kontextem**: AI agenti s přístupem k historii zákazníka
+- **Proaktivní řešení problémů**: Prediktivní zákaznický servis
+- **Multikanálová integrace**: Jednotný AI zážitek napříč platformami
 
-## 🛠️ Requisitos Previos e Instalación
+## 🛠️ Požadavky a nastavení
 
-### 💻 Requisitos del Sistema
+### 💻 Systémové požadavky
 
-| Componente            | Requisito               | Notas                      |
-|----------------------|-------------------------|----------------------------|
-| **Sistema Operativo** | Windows 10+, macOS 10.15+, Linux | Cualquier OS moderno       |
-| **Visual Studio Code**| Última versión estable  | Requerido para AITK        |
-| **Node.js**           | v18.0+ y npm            | Para desarrollo de servidores MCP |
-| **Python**            | 3.10+                   | Opcional para servidores MCP en Python |
-| **Memoria**           | Mínimo 8GB RAM          | Recomendado 16GB para modelos locales |
+| Komponenta | Požadavek | Poznámky |
+|------------|-----------|----------|
+| **Operační systém** | Windows 10+, macOS 10.15+, Linux | Jakýkoliv moderní OS |
+| **Visual Studio Code** | Nejnovější stabilní verze | Nutné pro AITK |
+| **Node.js** | v18.0+ a npm | Pro vývoj MCP serverů |
+| **Python** | 3.10+ | Volitelně pro Python MCP servery |
+| **Paměť** | Minimálně 8GB RAM | Doporučeno 16GB pro lokální modely |
 
-### 🔧 Entorno de Desarrollo
+### 🔧 Vývojové prostředí
 
-#### Extensiones recomendadas para VS Code
+#### Doporučená rozšíření pro VS Code
 - **AI Toolkit** (ms-windows-ai-studio.windows-ai-studio)
 - **Python** (ms-python.python)
 - **Python Debugger** (ms-python.debugpy)
-- **GitHub Copilot** (GitHub.copilot) - Opcional pero útil
+- **GitHub Copilot** (GitHub.copilot) – volitelné, ale užitečné
 
-#### Herramientas Opcionales
-- **uv**: Gestor moderno de paquetes para Python
-- **MCP Inspector**: Herramienta visual para depuración de servidores MCP
-- **Playwright**: Para ejemplos de automatización web
+#### Volitelné nástroje
+- **uv**: Moderní správce balíčků pro Python
+- **MCP Inspector**: Vizualní nástroj pro ladění MCP serverů
+- **Playwright**: Pro příklady webové automatizace
 
-## 🎖️ Resultados de Aprendizaje y Ruta de Certificación
+## 🎖️ Výsledky učení a certifikační cesta
 
-### 🏆 Lista de Competencias a Dominar
+### 🏆 Kontrolní seznam dovedností
 
-Al completar este taller, alcanzarás maestría en:
+Po dokončení workshopu dosáhnete mistrovství v:
 
-#### 🎯 Competencias Clave
-- [ ] **Dominio del Protocolo MCP**: Comprensión profunda de arquitectura y patrones de implementación
-- [ ] **Dominio de AITK**: Uso experto de AI Toolkit para desarrollo rápido
-- [ ] **Desarrollo de Servidores Personalizados**: Construir, desplegar y mantener servidores MCP en producción
-- [ ] **Excelencia en Integración de Herramientas**: Conectar IA con flujos de trabajo existentes sin problemas
-- [ ] **Aplicación para Resolución de Problemas**: Aplicar habilidades aprendidas a desafíos empresariales reales
+#### 🎯 Základní kompetence
+- [ ] **Mistrovství MCP protokolu**: Hluboké porozumění architektuře a implementačním vzorům
+- [ ] **Znalost AITK**: Expertní používání AI Toolkitu pro rychlý vývoj
+- [ ] **Vývoj vlastních serverů**: Vytváření, nasazení a údržba produkčních MCP serverů
+- [ ] **Excelence v integraci nástrojů**: Bezproblémové propojení AI s existujícími vývojovými procesy
+- [ ] **Aplikace řešení problémů**: Použití naučených dovedností na reálné obchodní výzvy
 
-#### 🔧 Habilidades Técnicas
-- [ ] Configurar y usar AI Toolkit en VS Code
-- [ ] Diseñar e implementar servidores MCP personalizados
-- [ ] Integrar modelos de GitHub con arquitectura MCP
-- [ ] Construir flujos de trabajo de pruebas automatizadas con Playwright
-- [ ] Desplegar agentes IA para uso en producción
-- [ ] Depurar y optimizar el rendimiento de servidores MCP
+#### 🔧 Technické dovednosti
+- [ ] Nastavení a konfigurace AI Toolkitu ve VS Code
+- [ ] Návrh a implementace vlastních MCP serverů
+- [ ] Integrace GitHub modelů s MCP architekturou
+- [ ] Vytváření automatizovaných testovacích workflow s Playwright
+- [ ] Nasazení AI agentů do produkce
+- [ ] Ladění a optimalizace výkonu MCP serverů
 
-#### 🚀 Capacidades Avanzadas
-- [ ] Arquitectura de integraciones IA a escala empresarial
-- [ ] Implementar mejores prácticas de seguridad para aplicaciones IA
-- [ ] Diseñar arquitecturas escalables de servidores MCP
-- [ ] Crear cadenas de herramientas personalizadas para dominios específicos
-- [ ] Mentoría en desarrollo nativo de IA
+#### 🚀 Pokročilé schopnosti
+- [ ] Návrh AI integrací na podnikové úrovni
+- [ ] Implementace bezpečnostních best practices pro AI aplikace
+- [ ] Návrh škálovatelných MCP serverových architektur
+- [ ] Vytváření vlastních nástrojových řetězců pro specifické oblasti
+- [ ] Mentorování ostatních ve vývoji AI-native aplikací
 
-## 📖 Recursos Adicionales
-- [MCP Specification](https://modelcontextprotocol.io/docs)
-- [AI Toolkit GitHub Repository](https://github.com/microsoft/vscode-ai-toolkit)
-- [Sample MCP Servers Collection](https://github.com/modelcontextprotocol/servers)
-- [Best Practices Guide](https://modelcontextprotocol.io/docs/best-practices)
+## 📖 Další zdroje
+- [MCP Specifikace](https://modelcontextprotocol.io/docs)
+- [AI Toolkit GitHub Repozitář](https://github.com/microsoft/vscode-ai-toolkit)
+- [Sbírka vzorových MCP serverů](https://github.com/modelcontextprotocol/servers)
+- [Průvodce nejlepšími postupy](https://modelcontextprotocol.io/docs/best-practices)
 
 ---
 
-**🚀 ¿Listo para revolucionar tu flujo de trabajo de desarrollo IA?**
+**🚀 Připraveni revolucionalizovat svůj AI vývojový workflow?**
 
-¡Construyamos juntos el futuro de las aplicaciones inteligentes con MCP y AI Toolkit!
+Pojďme společně budovat budoucnost inteligentních aplikací s MCP a AI Toolkitem!
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo mylné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

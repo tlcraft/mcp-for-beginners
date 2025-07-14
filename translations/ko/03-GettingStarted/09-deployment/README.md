@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T16:19:54+00:00",
+  "translation_date": "2025-07-13T22:07:10+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "ko"
 }
@@ -39,7 +39,7 @@ SSE의 경우 (stdio 타입 서버에는 필요 없음)
 MCP 서버는 다양한 클라우드 플랫폼에 배포할 수 있습니다:
 
 - **서버리스 함수**: 경량 MCP 서버를 서버리스 함수로 배포  
-- **컨테이너 서비스**: Azure Container Apps, AWS ECS, Google Cloud Run 같은 서비스를 활용  
+- **컨테이너 서비스**: Azure Container Apps, AWS ECS, Google Cloud Run 같은 서비스 활용  
 - **쿠버네티스**: 고가용성을 위해 쿠버네티스 클러스터에서 MCP 서버 배포 및 관리
 
 ### 예시: Azure Container Apps
@@ -92,7 +92,7 @@ Azure Container Apps는 MCP 서버 배포를 지원합니다. 아직 개발 중�
   }
   ```
 
-  SSE 서버가 시작되면 JSON 파일의 재생 아이콘을 클릭할 수 있습니다. 이제 GitHub Copilot이 서버의 도구를 인식하여 도구 아이콘이 표시됩니다.
+  SSE 서버가 시작되면 JSON 파일의 재생 아이콘을 클릭할 수 있습니다. 이제 GitHub Copilot이 서버의 도구를 인식하는 것을 볼 수 있으며, 도구 아이콘이 표시됩니다.
 
 1. 배포하려면 다음 명령어를 실행하세요:
 
@@ -113,4 +113,4 @@ Azure Container Apps는 MCP 서버 배포를 지원합니다. 아직 개발 중�
 - 다음: [실전 구현](../../04-PracticalImplementation/README.md)
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의하시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의해 주시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역의 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

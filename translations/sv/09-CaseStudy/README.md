@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T17:33:32+00:00",
+  "translation_date": "2025-07-14T05:47:08+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "sv"
 }
@@ -48,27 +48,27 @@ Denna fallstudie visar en praktisk användning av MCP för att automatisera arbe
 - Skapa upprepbara automatiseringsflöden
 - Integrera data mellan olika system
 
-Exemplet illustrerar hur även relativt enkla MCP-implementationer kan ge betydande effektivitetsvinster genom att automatisera rutinuppgifter och förbättra datakonsistens mellan system.
+Exemplet illustrerar hur även relativt enkla MCP-implementationer kan ge betydande effektivitetsvinster genom att automatisera rutinuppgifter och förbättra datakonsistens över system.
 
 ### 3. [Dokumentationshämtning i realtid med MCP](./docs-mcp/README.md)
 
 Denna fallstudie guidar dig genom att koppla en Python-konsolklient till en MCP-server för att hämta och logga realtids-, kontextmedveten Microsoft-dokumentation. Du lär dig hur du:
 
 - Ansluter till en MCP-server med en Python-klient och den officiella MCP SDK:n
-- Använder streaming HTTP-klienter för effektiv realtidsdatahämtning
+- Använder strömmande HTTP-klienter för effektiv realtidsdatahämtning
 - Anropar dokumentationsverktyg på servern och loggar svar direkt i konsolen
 - Integrerar uppdaterad Microsoft-dokumentation i ditt arbetsflöde utan att lämna terminalen
 
 Kapitel innehåller en praktisk uppgift, ett minimalt fungerande kodexempel och länkar till ytterligare resurser för fördjupning. Se hela genomgången och koden i det länkade kapitlet för att förstå hur MCP kan förändra tillgången till dokumentation och utvecklarproduktivitet i konsolbaserade miljöer.
 
-### 4. [Interaktiv studieplansgenerator-webbapp med MCP](./docs-mcp/README.md)
+### 4. [Interaktiv studieplansgenerator webbapp med MCP](./docs-mcp/README.md)
 
-Denna fallstudie visar hur man bygger en interaktiv webbapplikation med Chainlit och Model Context Protocol (MCP) för att generera personliga studieplaner för valfritt ämne. Användare kan ange ett ämne (t.ex. "AI-900 certification") och studietid (t.ex. 8 veckor), och appen ger en veckovis uppdelning av rekommenderat innehåll. Chainlit möjliggör en konversationsbaserad chattgränssnitt som gör upplevelsen engagerande och anpassningsbar.
+Denna fallstudie visar hur man bygger en interaktiv webbapplikation med Chainlit och Model Context Protocol (MCP) för att generera personliga studieplaner för valfritt ämne. Användare kan ange ett ämne (t.ex. "AI-900 certifiering") och studietid (t.ex. 8 veckor), och appen ger en veckovis uppdelning av rekommenderat innehåll. Chainlit möjliggör en konversationsbaserad chattgränssnitt som gör upplevelsen engagerande och anpassningsbar.
 
 - Konversationsbaserad webbapp driven av Chainlit
-- Användardrivna frågor om ämne och tidsram
+- Användardrivna frågor för ämne och tidslängd
 - Veckovisa innehållsrekommendationer med MCP
-- Realtids- och adaptiva svar i chattgränssnitt
+- Realtidsanpassade svar i chattgränssnitt
 
 Projektet visar hur konversations-AI och MCP kan kombineras för att skapa dynamiska, användardrivna utbildningsverktyg i en modern webbmiljö.
 
@@ -117,4 +117,4 @@ Genom att studera dessa implementationer kan du få insikter i arkitekturmönste
 Nästa: Hands on Lab [Streamlining AI Workflows: Building an MCP Server with AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "33daea2e41ef7635cf13c41d6a3ea773",
-  "translation_date": "2025-06-13T00:38:20+00:00",
+  "translation_date": "2025-07-14T00:08:11+00:00",
   "source_file": "05-AdvancedTopics/mcp-integration/README.md",
   "language_code": "ms"
 }
 -->
-## Microsoft AI Foundry Integration
+## Integrasi Microsoft AI Foundry
 
-Azure AI Foundry offers a platform for creating and deploying AI agents. By integrating MCP with AI Foundry, you can take advantage of its features while preserving MCP's flexibility.
+Azure AI Foundry menyediakan platform untuk membina dan melancarkan ejen AI. Mengintegrasikan MCP dengan AI Foundry membolehkan anda memanfaatkan keupayaannya sambil mengekalkan fleksibiliti MCP.
 
-The following code demonstrates how to develop an Agent integration that processes requests and manages tool calls using MCP.
+Dalam kod di bawah, kami membangunkan integrasi Ejen yang memproses permintaan dan mengendalikan panggilan alat menggunakan MCP.
 
-## Integrating MCP with Azure ML
+## Integrasi MCP dengan Azure ML
 
-Connecting MCP with Azure Machine Learning (ML) enables you to harness Azure’s robust ML capabilities while keeping MCP’s adaptability. This integration supports running ML pipelines, registering models as tools, and managing computing resources.
+Mengintegrasikan MCP dengan Azure Machine Learning (ML) membolehkan anda memanfaatkan keupayaan ML Azure yang hebat sambil mengekalkan fleksibiliti MCP. Integrasi ini boleh digunakan untuk melaksanakan saluran ML, mendaftar model sebagai alat, dan mengurus sumber pengkomputeran.
 
-## What's next
+## Apa seterusnya
 
 - [5.2 Multi modality](../mcp-multi-modality/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "32c9a4263be08f9050c8044bb26267c4",
-  "translation_date": "2025-05-17T15:34:49+00:00",
+  "translation_date": "2025-07-14T00:32:10+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/apimoauth.md",
   "language_code": "vi"
 }
 -->
-# Triển khai ứng dụng Spring AI MCP lên Azure Container Apps
+# Triển khai ứng dụng Spring AI MCP trên Azure Container Apps
 
-([Bảo mật máy chủ Spring AI MCP với OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *Hình: Máy chủ Spring AI MCP được bảo vệ với Spring Authorization Server. Máy chủ phát hành token truy cập cho khách hàng và xác thực chúng trên các yêu cầu đến (nguồn: Spring blog) ([Bảo mật máy chủ Spring AI MCP với OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* Để triển khai máy chủ Spring MCP, hãy xây dựng nó dưới dạng container và sử dụng Azure Container Apps với ingress bên ngoài. Ví dụ, sử dụng Azure CLI bạn có thể chạy:
+([Securing Spring AI MCP servers with OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *Hình minh họa: Máy chủ Spring AI MCP được bảo mật bằng Spring Authorization Server. Máy chủ phát hành token truy cập cho client và xác thực chúng trên các yêu cầu đến (nguồn: Spring blog) ([Securing Spring AI MCP servers with OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* Để triển khai máy chủ Spring MCP, bạn xây dựng nó dưới dạng container và sử dụng Azure Container Apps với ingress bên ngoài. Ví dụ, sử dụng Azure CLI bạn có thể chạy:
 
 ```bash
 az containerapp up \
@@ -23,11 +23,11 @@ az containerapp up \
   --query properties.configuration.ingress.fqdn
 ```
 
-Điều này tạo ra một Container App có thể truy cập công khai với HTTPS được kích hoạt (Azure phát hành một chứng chỉ TLS miễn phí cho mặc định `*.azurecontainerapps.io` domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). The command output includes the app’s FQDN (e.g. `my-mcp-app.eastus.azurecontainerapps.io`), which becomes the **issuer URL** base. Ensure HTTP ingress is enabled (as above) so APIM can reach the app. In a test/dev setup, use the `--ingress external` option (or bind a custom domain with TLS per [Microsoft docs](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Store any sensitive properties (like OAuth client secrets) in Container Apps secrets or Azure Key Vault, and map them into the container as environment variables. 
+Lệnh này tạo một Container App có thể truy cập công khai với HTTPS được bật (Azure cấp chứng chỉ TLS miễn phí cho domain mặc định `*.azurecontainerapps.io` ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Kết quả lệnh bao gồm FQDN của ứng dụng (ví dụ `my-mcp-app.eastus.azurecontainerapps.io`), đây sẽ là cơ sở của **issuer URL**. Đảm bảo ingress HTTP được bật (như trên) để APIM có thể truy cập ứng dụng. Trong môi trường thử nghiệm/phát triển, sử dụng tùy chọn `--ingress external` (hoặc liên kết domain tùy chỉnh với TLS theo [Microsoft docs](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Lưu trữ các thuộc tính nhạy cảm (như client secret OAuth) trong Container Apps secrets hoặc Azure Key Vault, và ánh xạ chúng vào container dưới dạng biến môi trường.
 
-## Configuring Spring Authorization Server
+## Cấu hình Spring Authorization Server
 
-In your Spring Boot app’s code, include the Spring Authorization Server and Resource Server starters. Configure a `RegisteredClient` (for the `client_credentials` grant in dev/test) and a JWT key source. For example, in `application.properties` bạn có thể thiết lập:
+Trong mã ứng dụng Spring Boot của bạn, bao gồm các starter Spring Authorization Server và Resource Server. Cấu hình một `RegisteredClient` (cho grant `client_credentials` trong dev/test) và nguồn khóa JWT. Ví dụ, trong `application.properties` bạn có thể đặt:
 
 ```properties
 # OAuth2 client (for testing token issuance)
@@ -37,7 +37,7 @@ spring.security.oauth2.authorizationserver.client.oidc-client.registration.autho
 spring.security.oauth2.authorizationserver.client.oidc-client.registration.client-authentication-methods=client_secret_basic
 ```
 
-Kích hoạt Authorization Server và Resource Server bằng cách định nghĩa một chuỗi lọc bảo mật. Ví dụ:
+Kích hoạt Authorization Server và Resource Server bằng cách định nghĩa một chuỗi filter bảo mật. Ví dụ:
 
 ```java
 @Configuration
@@ -84,9 +84,9 @@ public class SecurityConfiguration {
 }
 ```
 
-Thiết lập này sẽ lộ các điểm cuối OAuth2 mặc định: `/oauth2/token` for tokens and `/oauth2/jwks` for the JSON Web Key Set. (By default Spring’s `AuthorizationServerSettings` maps `/oauth2/token` and `/oauth2/jwks` ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).) The server will issue JWT access tokens signed by the RSA key above, and publish its public key at `https://<your-app>:/oauth2/jwks`. 
+Cấu hình này sẽ mở các endpoint OAuth2 mặc định: `/oauth2/token` để lấy token và `/oauth2/jwks` cho JSON Web Key Set. (Mặc định, `AuthorizationServerSettings` của Spring ánh xạ `/oauth2/token` và `/oauth2/jwks` ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).) Máy chủ sẽ phát hành token truy cập JWT được ký bằng khóa RSA ở trên, và công bố khóa công khai tại `https://<your-app>:/oauth2/jwks`.
 
-**Enable OpenID Connect discovery:** To let APIM automatically retrieve the issuer and JWKS, enable the OIDC provider configuration endpoint by adding `.oidc(Customizer.withDefaults())` trong cấu hình bảo mật của bạn ([Mô hình cấu hình :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Ví dụ:
+**Bật OpenID Connect discovery:** Để APIM tự động lấy issuer và JWKS, bật endpoint cấu hình nhà cung cấp OIDC bằng cách thêm `.oidc(Customizer.withDefaults())` trong cấu hình bảo mật của bạn ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Ví dụ:
 
 ```java
 http
@@ -96,7 +96,7 @@ http
       .oidc(Customizer.withDefaults()));  // <– enables /.well-known/openid-configuration
 ```
 
-Điều này lộ ra `/.well-known/openid-configuration`, which APIM can use for metadata. Finally, you may want to customize the JWT **audience** claim so that APIM’s `<audiences>` kiểm tra sẽ thành công. Ví dụ, thêm một token customizer:
+Điều này sẽ mở endpoint `/.well-known/openid-configuration`, mà APIM có thể dùng để lấy metadata. Cuối cùng, bạn có thể muốn tùy chỉnh claim **audience** trong JWT để APIM có thể kiểm tra `<audiences>` thành công. Ví dụ, thêm một token customizer:
 
 ```java
 @Bean
@@ -108,21 +108,21 @@ public OAuth2TokenCustomizer<OAuth2TokenClaimsContext> tokenCustomizer() {
 }
 ```
 
-Điều này đảm bảo token mang `"aud": ["mcp-client"]`, matching the client ID or scope expected by APIM. 
+Điều này đảm bảo token mang `"aud": ["mcp-client"]`, khớp với client ID hoặc scope mà APIM mong đợi.
 
-## Exposing Token and JWKS Endpoints
+## Mở các endpoint Token và JWKS
 
-After deploying, your app’s **issuer URL** will be `https://<app-fqdn>`, e.g. `https://my-mcp-app.eastus.azurecontainerapps.io`. Its OAuth2 endpoints are:
+Sau khi triển khai, **issuer URL** của ứng dụng bạn sẽ là `https://<app-fqdn>`, ví dụ `https://my-mcp-app.eastus.azurecontainerapps.io`. Các endpoint OAuth2 của nó là:
 
-- **Token endpoint:** `https://<app-fqdn>/oauth2/token` – clients obtain tokens here (client_credentials flow).
-- **JWKS endpoint:** `https://<app-fqdn>/oauth2/jwks` – returns the JWK set (used by APIM to get signing keys).
-- **OpenID Config:** `https://<app-fqdn>/.well-known/openid-configuration` – OIDC discovery JSON (contains `issuer`, `token_endpoint`, `jwks_uri`, etc.).  
+- **Token endpoint:** `https://<app-fqdn>/oauth2/token` – nơi client lấy token (flow client_credentials).
+- **JWKS endpoint:** `https://<app-fqdn>/oauth2/jwks` – trả về bộ JWK (APIM dùng để lấy khóa ký).
+- **OpenID Config:** `https://<app-fqdn>/.well-known/openid-configuration` – JSON OIDC discovery (chứa `issuer`, `token_endpoint`, `jwks_uri`, v.v.).
 
-APIM will point to the **OpenID configuration URL**, from which it discovers the `jwks_uri`. For example, if your Container App FQDN is `my-mcp-app.eastus.azurecontainerapps.io`, then APIM’s `<openid-config url="...">` should use `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`. (By default Spring will set the `issuer` in that metadata to the same base URL ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).)
+APIM sẽ trỏ đến **URL cấu hình OpenID**, từ đó nó phát hiện `jwks_uri`. Ví dụ, nếu FQDN Container App của bạn là `my-mcp-app.eastus.azurecontainerapps.io`, thì `<openid-config url="...">` của APIM nên dùng `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`. (Mặc định Spring sẽ đặt `issuer` trong metadata này là cùng URL cơ sở ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).)
 
-## Configuring Azure API Management (`validate-jwt`)
+## Cấu hình Azure API Management (`validate-jwt`)
 
-In Azure APIM, add an inbound policy that uses the `<validate-jwt>` chính sách để kiểm tra JWT đến từ Spring Authorization Server của bạn. Đối với một thiết lập đơn giản, bạn có thể sử dụng URL metadata OpenID Connect. Ví dụ đoạn chính sách:
+Trong Azure APIM, thêm một policy inbound sử dụng `<validate-jwt>` để kiểm tra JWT đến với Spring Authorization Server của bạn. Với cấu hình đơn giản, bạn có thể dùng URL metadata OpenID Connect. Ví dụ đoạn policy:
 
 ```xml
 <inbound>
@@ -139,38 +139,37 @@ In Azure APIM, add an inbound policy that uses the `<validate-jwt>` chính sách
 </inbound>
 ```
 
-Chính sách này yêu cầu APIM lấy cấu hình OpenID từ Spring Auth Server, truy xuất JWKS của nó và xác thực rằng mỗi token được ký bởi một khóa đáng tin cậy và có đúng audience. (Nếu bạn bỏ qua `<issuers>`, APIM will use the `issuer` claim from the metadata automatically.) The `<audience>` should match your client ID or API resource identifier in the token (in the example above, we set it to `"mcp-client"`). This is consistent with Microsoft’s documentation on using `validate-jwt` with `<openid-config>` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)).
+Policy này yêu cầu APIM lấy cấu hình OpenID từ Spring Auth Server, lấy JWKS, và xác thực mỗi token được ký bởi khóa tin cậy và có audience đúng. (Nếu bạn bỏ `<issuers>`, APIM sẽ tự động dùng claim `issuer` từ metadata.) `<audience>` phải khớp với client ID hoặc tên tài nguyên API trong token (ví dụ trên là `"mcp-client"`). Điều này phù hợp với tài liệu Microsoft về dùng `validate-jwt` với `<openid-config>` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)).
 
-After validation, APIM will forward the request (including the original `Authorization` header) to the backend. Since the Spring app is also a resource server, it will re-validate the token, but APIM has already ensured its validity. (For development, you can rely on APIM’s check and disable additional checks in the app if desired, but it’s safer to keep both.)
+Sau khi xác thực, APIM sẽ chuyển tiếp yêu cầu (bao gồm header `Authorization` gốc) đến backend. Vì ứng dụng Spring cũng là resource server, nó sẽ xác thực lại token, nhưng APIM đã đảm bảo token hợp lệ. (Trong phát triển, bạn có thể chỉ dựa vào kiểm tra của APIM và tắt kiểm tra thêm trong app nếu muốn, nhưng tốt hơn là giữ cả hai.)
 
-## Example Settings
+## Ví dụ cấu hình
 
-| Setting            | Example Value                                                        | Notes                                      |
+| Cài đặt            | Giá trị ví dụ                                                        | Ghi chú                                    |
 |--------------------|----------------------------------------------------------------------|--------------------------------------------|
-| **Issuer**         | `https://my-mcp-app.eastus.azurecontainerapps.io`                    | Your Container App’s URL (base URI)        |
-| **Token endpoint** | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`       | Default Spring token endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))  |
-| **JWKS endpoint**  | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`        | Default JWK Set endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))    |
-| **OpenID Config**  | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | OIDC discovery document (auto-generated)    |
-| **APIM audience**  | `mcp-client`                                                         | OAuth client ID or API resource name       |
-| **APIM policy**    | `<openid-config url="https://.../.well-known/openid-configuration" />` | `<validate-jwt>` uses this URL ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
+| **Issuer**         | `https://my-mcp-app.eastus.azurecontainerapps.io`                    | URL Container App của bạn (URI cơ sở)      |
+| **Token endpoint** | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`       | Endpoint token mặc định của Spring ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))  |
+| **JWKS endpoint**  | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`        | Endpoint JWK Set mặc định ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))    |
+| **OpenID Config**  | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | Tài liệu discovery OIDC (tự động tạo)       |
+| **APIM audience**  | `mcp-client`                                                         | Client ID OAuth hoặc tên tài nguyên API    |
+| **APIM policy**    | `<openid-config url="https://.../.well-known/openid-configuration" />` | `<validate-jwt>` dùng URL này ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
 
-## Common Pitfalls
+## Những lỗi thường gặp
 
-- **HTTPS/TLS:** The APIM gateway requires that the OpenID/JWKS endpoint be HTTPS with a valid certificate. By default, Azure Container Apps provides a trusted TLS cert for the Azure-managed domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If you use a custom domain, be sure to bind a certificate (you can use Azure’s free managed cert feature) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If APIM cannot trust the endpoint’s certificate, `<validate-jwt>` will fail to fetch the metadata.  
+- **HTTPS/TLS:** Cổng APIM yêu cầu endpoint OpenID/JWKS phải dùng HTTPS với chứng chỉ hợp lệ. Mặc định, Azure Container Apps cung cấp chứng chỉ TLS tin cậy cho domain do Azure quản lý ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). Nếu bạn dùng domain tùy chỉnh, hãy chắc chắn đã liên kết chứng chỉ (bạn có thể dùng tính năng chứng chỉ quản lý miễn phí của Azure) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). Nếu APIM không tin tưởng chứng chỉ của endpoint, `<validate-jwt>` sẽ không lấy được metadata.
 
-- **Endpoint Accessibility:** Ensure the Spring app’s endpoints are reachable from APIM. Using `--ingress external` (or enabling ingress in the portal) is simplest. If you chose an internal or vNet-bound environment, APIM (by default public) might not reach it unless placed in the same VNet. In a test setup, prefer public ingress so APIM can call the `.well-known` and `/jwks` URLs. 
+- **Khả năng truy cập endpoint:** Đảm bảo các endpoint của ứng dụng Spring có thể truy cập được từ APIM. Dùng `--ingress external` (hoặc bật ingress trong portal) là cách đơn giản nhất. Nếu bạn chọn môi trường nội bộ hoặc gắn với vNet, APIM (mặc định là công khai) có thể không truy cập được trừ khi đặt trong cùng vNet. Trong môi trường thử nghiệm, ưu tiên ingress công khai để APIM gọi được các URL `.well-known` và `/jwks`.
 
-- **OpenID Discovery Enabled:** By default, Spring Authorization Server **does not expose** the `/.well-known/openid-configuration` unless OIDC is enabled. Make sure to include `.oidc(Customizer.withDefaults())` in your security config (see above) so that the provider configuration endpoint is active ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Otherwise APIM’s `<openid-config>` call will 404.
+- **Bật OpenID Discovery:** Mặc định, Spring Authorization Server **không mở** `/.well-known/openid-configuration` nếu không bật OIDC. Hãy chắc chắn thêm `.oidc(Customizer.withDefaults())` trong cấu hình bảo mật (xem phần trên) để endpoint cấu hình nhà cung cấp hoạt động ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Nếu không, gọi `<openid-config>` của APIM sẽ trả về 404.
 
-- **Audience Claim:** Spring’s default behavior is to set the `aud` claim to the client ID. If APIM’s `<audience>` check fails, you may need to customize the token (as shown above) or adjust the APIM policy. Ensure the audience in your JWT matches what you configure in `<audience>`. 
+- **Claim Audience:** Hành vi mặc định của Spring là đặt claim `aud` bằng client ID. Nếu kiểm tra `<audience>` của APIM không thành công, bạn cần tùy chỉnh token (như ví dụ trên) hoặc điều chỉnh policy APIM. Đảm bảo audience trong JWT khớp với cấu hình `<audience>`.
 
-- **JSON Metadata Parsing:** The OpenID configuration JSON must be valid. Spring’s default config will emit a standard OIDC metadata document. Verify that it contains the correct `issuer` and `jwks_uri`. If you host Spring behind a proxy or path-based route, double-check the URLs in this metadata. APIM will use these values as-is. 
+- **Phân tích JSON Metadata:** JSON cấu hình OpenID phải hợp lệ. Cấu hình mặc định của Spring sẽ phát ra tài liệu metadata OIDC chuẩn. Kiểm tra xem nó có chứa `issuer` và `jwks_uri` chính xác không. Nếu bạn chạy Spring phía sau proxy hoặc route theo đường dẫn, hãy kiểm tra kỹ các URL trong metadata này. APIM sẽ dùng các giá trị này nguyên trạng.
 
-- **Policy Ordering:** In the APIM policy, place `<validate-jwt>` **before** any routing to the backend. Otherwise, calls might reach your app without a valid token. Also ensure `<validate-jwt>` appears immediately under `<inbound>` (not nested inside another condition) so that APIM applies it.
+- **Thứ tự policy:** Trong policy APIM, đặt `<validate-jwt>` **trước** bất kỳ routing nào đến backend. Nếu không, các yêu cầu có thể đến app mà không có token hợp lệ. Đồng thời, đảm bảo `<validate-jwt>` nằm ngay dưới `<inbound>` (không nằm trong điều kiện khác) để APIM áp dụng chính sách này.
 
-By following the above steps, you can run your Spring AI MCP server in Azure Container Apps and have Azure API Management validate incoming OAuth2 JWTs with a minimal policy. The key points are: expose the Spring Auth endpoints publicly with TLS, enable OIDC discovery, and point APIM’s `validate-jwt` at the OpenID config URL (so it can fetch the JWKS automatically). This setup is suitable for a dev/test environment; for production, consider proper secret management, token lifetimes, and rotating keys in JWKS as needed. 
+Bằng cách làm theo các bước trên, bạn có thể chạy máy chủ Spring AI MCP trong Azure Container Apps và để Azure API Management xác thực các JWT OAuth2 đến với một policy tối giản. Các điểm chính là: mở các endpoint Spring Auth công khai với TLS, bật OIDC discovery, và trỏ `validate-jwt` của APIM đến URL cấu hình OpenID (để tự động lấy JWKS). Cấu hình này phù hợp cho môi trường dev/test; với môi trường sản xuất, hãy cân nhắc quản lý bí mật đúng cách, thời gian sống token, và xoay khóa JWKS khi cần.
+**Tham khảo:** Xem tài liệu Spring Authorization Server để biết các điểm cuối mặc định ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) và cấu hình OIDC ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)); xem tài liệu Microsoft APIM để lấy ví dụ về `validate-jwt` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)); và tài liệu Azure Container Apps để biết về triển khai và chứng chỉ ([Deploy Java Spring Boot apps to Azure Container Apps - Java on Azure | Microsoft Learn](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)).
 
-**References:** See Spring Authorization Server docs for default endpoints ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) and OIDC configuration ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)); see Microsoft APIM docs for `validate-jwt` ví dụ ([Tham khảo chính sách Azure API Management - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)); và tài liệu Azure Container Apps cho triển khai và chứng chỉ ([Triển khai ứng dụng Java Spring Boot lên Azure Container Apps - Java trên Azure | Microsoft Learn](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([Tên miền tùy chỉnh và chứng chỉ miễn phí được quản lý trong Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)).
-
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc sự không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn đáng tin cậy. Đối với thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp của con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:48:41+00:00",
+  "translation_date": "2025-07-13T21:13:25+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "id"
 }
 -->
 # Calculator HTTP Streaming Demo
 
-Proyek ini menunjukkan HTTP streaming menggunakan Server-Sent Events (SSE) dengan Spring Boot WebFlux. Terdiri dari dua aplikasi:
+Proyek ini mendemonstrasikan HTTP streaming menggunakan Server-Sent Events (SSE) dengan Spring Boot WebFlux. Terdiri dari dua aplikasi:
 
 - **Calculator Server**: Layanan web reaktif yang melakukan perhitungan dan mengalirkan hasil menggunakan SSE
 - **Calculator Client**: Aplikasi klien yang mengonsumsi endpoint streaming
 
 ## Prasyarat
 
-- Java 17 atau lebih baru
-- Maven 3.6 atau lebih baru
+- Java 17 atau lebih tinggi
+- Maven 3.6 atau lebih tinggi
 
 ## Struktur Proyek
 
@@ -37,13 +37,13 @@ java/
 
 ## Cara Kerja
 
-1. **Calculator Server** membuka endpoint `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** menyediakan endpoint `/calculate` yang:
+   - Menerima parameter query: `a` (angka), `b` (angka), `op` (operasi)
+   - Operasi yang didukung: `add`, `sub`, `mul`, `div`
+   - Mengembalikan Server-Sent Events dengan progres perhitungan dan hasil
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
+2. **Calculator Client** terhubung ke server dan:
+   - Membuat permintaan untuk menghitung `7 * 5`
    - Mengonsumsi respons streaming
    - Mencetak setiap event ke konsol
 
@@ -125,21 +125,21 @@ data:35.0
 
 ## Operasi yang Didukung
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - Penjumlahan (a + b)
+- `sub` - Pengurangan (a - b)
+- `mul` - Perkalian (a * b)
+- `div` - Pembagian (a / b, mengembalikan NaN jika b = 0)
 
-## API Reference
+## Referensi API
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Parameter:**
+- `a` (wajib): Angka pertama (double)
+- `b` (wajib): Angka kedua (double)
+- `op` (wajib): Operasi (`add`, `sub`, `mul`, `div`)
 
-**Response:**
+**Respons:**
 - Content-Type: `text/event-stream`
 - Mengembalikan Server-Sent Events dengan progres perhitungan dan hasil
 
@@ -167,18 +167,18 @@ data: 35.0
    - Hentikan aplikasi lain yang menggunakan port 8080
    - Atau ubah port server di `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Koneksi ditolak**
+   - Pastikan server sudah berjalan sebelum menjalankan client
+   - Periksa apakah server berhasil dijalankan di port 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Masalah nama parameter**
+   - Proyek ini sudah menyertakan konfigurasi compiler Maven dengan flag `-parameters`
+   - Jika mengalami masalah binding parameter, pastikan proyek dibangun dengan konfigurasi ini
 
-### Stopping the Applications
+### Menghentikan Aplikasi
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` jika menjalankan sebagai proses latar belakang
+- Tekan `Ctrl+C` di terminal tempat aplikasi berjalan
+- Atau gunakan `mvn spring-boot:stop` jika dijalankan sebagai proses latar belakang
 
 ## Teknologi yang Digunakan
 
@@ -191,12 +191,12 @@ data: 35.0
 
 ## Langkah Selanjutnya
 
-Cobalah memodifikasi kode untuk:
+Coba modifikasi kode untuk:
 - Menambahkan operasi matematika lainnya
-- Menyertakan penanganan error untuk operasi tidak valid
-- Menambahkan logging permintaan/respons
+- Menyertakan penanganan error untuk operasi yang tidak valid
+- Menambahkan logging request/response
 - Mengimplementasikan autentikasi
 - Menambahkan unit test
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

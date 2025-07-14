@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-06-10T06:04:05+00:00",
+  "translation_date": "2025-07-14T08:08:04+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
   "language_code": "ur"
 }
@@ -17,15 +17,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 🎯 سیکھنے کے مقاصد
 
-اس لیب کے آخر تک، آپ کر سکیں گے:
+اس لیب کے اختتام تک، آپ قابل ہوں گے:
 
-- ✅ AI Toolkit کا استعمال کرتے ہوئے کسٹم MCP سرورز بنائیں
-- ✅ جدید ترین MCP Python SDK (v1.9.3) کو ترتیب دیں اور استعمال کریں
-- ✅ MCP Inspector کو ڈیبگنگ کے لیے سیٹ اپ اور استعمال کریں
-- ✅ Agent Builder اور Inspector دونوں ماحول میں MCP سرورز کو ڈیبگ کریں
-- ✅ جدید MCP سرور ڈیولپمنٹ ورک فلو کو سمجھیں
+- ✅ AI Toolkit کا استعمال کرتے ہوئے کسٹم MCP سرورز بنانا
+- ✅ جدید MCP Python SDK (v1.9.3) کو ترتیب دینا اور استعمال کرنا
+- ✅ MCP Inspector کو ڈیبگنگ کے لیے سیٹ اپ اور استعمال کرنا
+- ✅ Agent Builder اور Inspector دونوں ماحول میں MCP سرورز کی ڈیبگنگ کرنا
+- ✅ جدید MCP سرور ڈیولپمنٹ کے ورک فلو کو سمجھنا
 
-## 📋 پیشگی ضروریات
+## 📋 ضروریات
 
 - لیب 2 (MCP Fundamentals) مکمل کرنا
 - VS Code میں AI Toolkit ایکسٹینشن انسٹال ہونا
@@ -34,24 +34,24 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 🏗️ آپ کیا بنائیں گے
 
-اس لیب میں، آپ ایک **Weather MCP Server** بنائیں گے جو درج ذیل دکھاتا ہے:
-- کسٹم MCP سرور کی عمل درآمد
+اس لیب میں، آپ ایک **Weather MCP Server** بنائیں گے جو درج ذیل چیزوں کی مثال ہوگا:
+- کسٹم MCP سرور کی امپلیمنٹیشن
 - AI Toolkit Agent Builder کے ساتھ انٹیگریشن
-- پیشہ ورانہ ڈیبگنگ ورک فلو
-- جدید MCP SDK کے استعمال کے انداز
+- پروفیشنل ڈیبگنگ ورک فلو
+- جدید MCP SDK کے استعمال کے طریقے
 
 ---
 
 ## 🔧 بنیادی اجزاء کا جائزہ
 
 ### 🐍 MCP Python SDK
-Model Context Protocol Python SDK کسٹم MCP سرورز بنانے کی بنیاد فراہم کرتا ہے۔ آپ ورژن 1.9.3 استعمال کریں گے جس میں بہتر ڈیبگنگ صلاحیتیں شامل ہیں۔
+Model Context Protocol Python SDK کسٹم MCP سرورز بنانے کی بنیاد فراہم کرتا ہے۔ آپ ورژن 1.9.3 استعمال کریں گے جس میں بہتر ڈیبگنگ کی خصوصیات شامل ہیں۔
 
 ### 🔍 MCP Inspector
 ایک طاقتور ڈیبگنگ ٹول جو فراہم کرتا ہے:
-- سرور کی حقیقی وقت نگرانی
-- ٹول کے نفاذ کی بصری نمائندگی
-- نیٹ ورک ریکویسٹ/ریسپانس کی جانچ
+- سرور کی حقیقی وقت مانیٹرنگ
+- ٹول کے عمل کی بصری نمائندگی
+- نیٹ ورک درخواست/جواب کی جانچ
 - انٹرایکٹو ٹیسٹنگ ماحول
 
 ---
@@ -60,16 +60,16 @@ Model Context Protocol Python SDK کسٹم MCP سرورز بنانے کی بنی
 
 ### مرحلہ 1: Agent Builder میں WeatherAgent بنائیں
 
-1. **Agent Builder لانچ کریں** VS Code میں AI Toolkit ایکسٹینشن کے ذریعے
+1. **VS Code میں AI Toolkit ایکسٹینشن کے ذریعے Agent Builder شروع کریں**
 2. **نیا ایجنٹ بنائیں** درج ذیل کنفیگریشن کے ساتھ:
-   - Agent Name: `WeatherAgent`
+   - ایجنٹ کا نام: `WeatherAgent`
 
 ![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.ur.png)
 
 ### مرحلہ 2: MCP سرور پروجیکٹ شروع کریں
 
-1. **Tools میں جائیں** → **Add Tool** Agent Builder میں
-2. **"MCP Server" منتخب کریں** دستیاب آپشنز میں سے
+1. **Agent Builder میں Tools → Add Tool پر جائیں**
+2. **"MCP Server" منتخب کریں**
 3. **"Create A new MCP Server" منتخب کریں**
 4. **`python-weather` ٹیمپلیٹ منتخب کریں**
 5. **اپنے سرور کا نام رکھیں:** `weather_mcp`
@@ -95,35 +95,33 @@ Model Context Protocol Python SDK کسٹم MCP سرورز بنانے کی بنی
    └── README.md
    ```
 
-### مرحلہ 4: جدید ترین MCP SDK پر اپ گریڈ کریں
+### مرحلہ 4: جدید MCP SDK پر اپ گریڈ کریں
 
 > **🔍 اپ گریڈ کیوں؟** ہم جدید MCP SDK (v1.9.3) اور Inspector سروس (0.14.0) استعمال کرنا چاہتے ہیں تاکہ بہتر خصوصیات اور ڈیبگنگ ممکن ہو۔
 
 #### 4a. Python Dependencies اپ ڈیٹ کریں
 
-**`pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
+**`pyproject.toml` میں ترمیم کریں:** [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
 
+#### 4b. Inspector کنفیگریشن اپ ڈیٹ کریں
 
-#### 4b. Update Inspector Configuration
+**`inspector/package.json` میں ترمیم کریں:** [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
 
-**Edit `inspector/package.json`:** update [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
+#### 4c. Inspector Dependencies اپ ڈیٹ کریں
 
-#### 4c. Update Inspector Dependencies
+**`inspector/package-lock.json` میں ترمیم کریں:** [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
 
-**Edit `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
+> **📝 نوٹ:** یہ فائل وسیع ڈیپینڈنسیز پر مشتمل ہے۔ نیچے بنیادی ساخت دی گئی ہے - مکمل مواد مناسب ڈیپینڈنسی ریزولوشن کو یقینی بناتا ہے۔
 
-> **📝 Note:** This file contains extensive dependency definitions. Below is the essential structure - the full content ensures proper dependency resolution.
+> **⚡ مکمل پیکیج لاک:** مکمل package-lock.json میں تقریباً 3000 لائنز کی ڈیپینڈنسیز شامل ہیں۔ اوپر کی ساخت کلیدی ہے - مکمل ریزولوشن کے لیے فراہم کردہ فائل استعمال کریں۔
 
+### مرحلہ 5: VS Code ڈیبگنگ کنفیگریشن کریں
 
-> **⚡ Full Package Lock:** The complete package-lock.json contains ~3000 lines of dependency definitions. The above shows the key structure - use the provided file for complete dependency resolution.
+*نوٹ: براہ کرم مخصوص راستے میں فائل کو کاپی کر کے متعلقہ لوکل فائل کی جگہ رکھیں*
 
-### Step 5: Configure VS Code Debugging
+#### 5a. لانچ کنفیگریشن اپ ڈیٹ کریں
 
-*Note: Please copy the file in the specified path to replace the corresponding local file*
-
-#### 5a. Update Launch Configuration
-
-**Edit `.vscode/launch.json` ایڈٹ کریں:**
+**`.vscode/launch.json` میں ترمیم کریں:**
 
 ```json
 {
@@ -200,7 +198,7 @@ Model Context Protocol Python SDK کسٹم MCP سرورز بنانے کی بنی
 }
 ```
 
-**`.vscode/tasks.json` ایڈٹ کریں:**
+**`.vscode/tasks.json` میں ترمیم کریں:**
 
 ```
 {
@@ -302,14 +300,13 @@ Model Context Protocol Python SDK کسٹم MCP سرورز بنانے کی بنی
 }
 ```
 
-
 ---
 
 ## 🚀 اپنے MCP سرور کو چلائیں اور ٹیسٹ کریں
 
 ### مرحلہ 6: Dependencies انسٹال کریں
 
-کنفیگریشن تبدیلیوں کے بعد، درج ذیل کمانڈز چلائیں:
+کنفیگریشن میں تبدیلیوں کے بعد، درج ذیل کمانڈز چلائیں:
 
 **Python dependencies انسٹال کریں:**
 ```bash
@@ -327,9 +324,9 @@ npm install
 1. **F5 دبائیں** یا **"Debug in Agent Builder"** کنفیگریشن استعمال کریں
 2. **ڈیبگ پینل سے کمپاؤنڈ کنفیگریشن منتخب کریں**
 3. **سرور کے شروع ہونے اور Agent Builder کے کھلنے کا انتظار کریں**
-4. **اپنے Weather MCP سرور کو قدرتی زبان کی کوئریز کے ساتھ ٹیسٹ کریں**
+4. **اپنے weather MCP سرور کو قدرتی زبان کے سوالات کے ساتھ ٹیسٹ کریں**
 
-ایسا ان پٹ دیں
+اس طرح کا ان پٹ دیں
 
 SYSTEM_PROMPT
 
@@ -351,32 +348,32 @@ How's the weather like in Seattle
 2. **Inspector انٹرفیس کھولیں** `http://localhost:6274` پر
 3. **انٹرایکٹو ٹیسٹنگ ماحول کو دریافت کریں:**
    - دستیاب ٹولز دیکھیں
-   - ٹول کے نفاذ کو ٹیسٹ کریں
-   - نیٹ ورک ریکویسٹ مانیٹر کریں
-   - سرور کے جوابات کو ڈیبگ کریں
+   - ٹول کے عمل کو ٹیسٹ کریں
+   - نیٹ ورک درخواستوں کی نگرانی کریں
+   - سرور کے جوابات کی ڈیبگنگ کریں
 
 ![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.ur.png)
 
 ---
 
-## 🎯 کلیدی سیکھنے کے نتائج
+## 🎯 اہم سیکھنے کے نتائج
 
 اس لیب کو مکمل کر کے، آپ نے:
 
 - [x] **AI Toolkit ٹیمپلیٹس کا استعمال کرتے ہوئے کسٹم MCP سرور بنایا**
-- [x] **جدید ترین MCP SDK (v1.9.3) پر اپ گریڈ کیا** بہتر فعالیت کے لیے
-- [x] **Agent Builder اور Inspector دونوں کے لیے پیشہ ورانہ ڈیبگنگ ورک فلو ترتیب دیا**
+- [x] **جدید MCP SDK (v1.9.3) پر اپ گریڈ کیا تاکہ بہتر فعالیت حاصل ہو**
+- [x] **Agent Builder اور Inspector دونوں کے لیے پروفیشنل ڈیبگنگ ورک فلو ترتیب دیا**
 - [x] **MCP Inspector کو انٹرایکٹو سرور ٹیسٹنگ کے لیے سیٹ اپ کیا**
-- [x] **VS Code ڈیبگنگ کنفیگریشنز میں مہارت حاصل کی** MCP ڈیولپمنٹ کے لیے
+- [x] **MCP ڈیولپمنٹ کے لیے VS Code ڈیبگنگ کنفیگریشنز میں مہارت حاصل کی**
 
 ## 🔧 دریافت شدہ جدید خصوصیات
 
-| خصوصیت | وضاحت | استعمال کا کیس |
+| خصوصیت | وضاحت | استعمال کا موقع |
 |---------|-------------|----------|
-| **MCP Python SDK v1.9.3** | جدید پروٹوکول عمل درآمد | جدید سرور ڈیولپمنٹ |
+| **MCP Python SDK v1.9.3** | جدید پروٹوکول امپلیمنٹیشن | جدید سرور ڈیولپمنٹ |
 | **MCP Inspector 0.14.0** | انٹرایکٹو ڈیبگنگ ٹول | حقیقی وقت سرور ٹیسٹنگ |
-| **VS Code Debugging** | مربوط ڈیولپمنٹ ماحول | پیشہ ورانہ ڈیبگنگ ورک فلو |
-| **Agent Builder Integration** | براہ راست AI Toolkit کنکشن | اختتامی نقطہ ایجنٹ ٹیسٹنگ |
+| **VS Code Debugging** | مربوط ڈیولپمنٹ ماحول | پروفیشنل ڈیبگنگ ورک فلو |
+| **Agent Builder Integration** | AI Toolkit سے براہ راست کنکشن | مکمل ایجنٹ ٹیسٹنگ |
 
 ## 📚 اضافی وسائل
 
@@ -387,16 +384,16 @@ How's the weather like in Seattle
 
 ---
 
-**🎉 مبارک ہو!** آپ نے کامیابی سے لیب 3 مکمل کر لیا ہے اور اب آپ پیشہ ورانہ ڈیولپمنٹ ورک فلو کے ذریعے کسٹم MCP سرورز بنا، ڈیبگ اور ڈیپلائے کر سکتے ہیں۔
+**🎉 مبارک ہو!** آپ نے کامیابی سے لیب 3 مکمل کر لی ہے اور اب آپ پروفیشنل ڈیولپمنٹ ورک فلو کے ذریعے کسٹم MCP سرورز بنا، ڈیبگ اور ڈیپلائے کر سکتے ہیں۔
 
 ### 🔜 اگلے ماڈیول کی طرف بڑھیں
 
-اپنی MCP مہارتوں کو حقیقی دنیا کے ڈیولپمنٹ ورک فلو میں لاگو کرنے کے لیے تیار ہیں؟ جاری رکھیں **[Module 4: Practical MCP Development - Custom GitHub Clone Server](../lab4/README.md)** جہاں آپ:
-- پروڈکشن کے لیے تیار MCP سرور بنائیں گے جو GitHub ریپوزٹری آپریشنز کو خودکار بنائے گا
-- MCP کے ذریعے GitHub ریپوزٹری کلوننگ کی فعالیت نافذ کریں گے
+کیا آپ اپنے MCP ہنر کو حقیقی دنیا کے ڈیولپمنٹ ورک فلو میں استعمال کرنے کے لیے تیار ہیں؟ آگے بڑھیں **[ماڈیول 4: عملی MCP ڈیولپمنٹ - کسٹم GitHub Clone سرور](../lab4/README.md)** جہاں آپ:
+- ایک پروڈکشن کے قابل MCP سرور بنائیں گے جو GitHub ریپوزیٹری آپریشنز کو خودکار بنائے گا
+- MCP کے ذریعے GitHub ریپوزیٹری کلوننگ کی فعالیت نافذ کریں گے
 - VS Code اور GitHub Copilot Agent Mode کے ساتھ کسٹم MCP سرورز کو انٹیگریٹ کریں گے
-- پروڈکشن ماحول میں کسٹم MCP سرورز کو ٹیسٹ اور ڈیپلائے کریں گے
+- پروڈکشن ماحول میں کسٹم MCP سرورز کی ٹیسٹنگ اور ڈیپلائمنٹ کریں گے
 - ڈیولپرز کے لیے عملی ورک فلو آٹومیشن سیکھیں گے
 
-**ڈسکلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم اس بات سے آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ورانہ انسانی ترجمہ تجویز کیا جاتا ہے۔ ہم اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔
+**دستخطی نوٹ**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

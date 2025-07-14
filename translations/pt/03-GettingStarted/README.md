@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:30:13+00:00",
+  "translation_date": "2025-07-13T17:15:01+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "pt"
 }
@@ -15,11 +15,11 @@ Esta secção consiste em várias lições:
 
 - **2 Cliente**, nesta lição, vais aprender a escrever um cliente que pode ligar-se ao teu servidor, [para a lição](02-client/README.md)
 
-- **3 Cliente com LLM**, uma forma ainda melhor de escrever um cliente é adicionando-lhe um LLM para que possa "negociar" com o teu servidor sobre o que fazer, [para a lição](03-llm-client/README.md)
+- **3 Cliente com LLM**, uma forma ainda melhor de escrever um cliente é adicionando um LLM para que possa "negociar" com o teu servidor sobre o que fazer, [para a lição](03-llm-client/README.md)
 
 - **4 Consumir um servidor no modo Agente GitHub Copilot no Visual Studio Code**. Aqui, vamos ver como executar o nosso MCP Server a partir do Visual Studio Code, [para a lição](04-vscode/README.md)
 
-- **5 Consumir a partir de SSE (Server Sent Events)** SSE é um standard para streaming do servidor para o cliente, permitindo que os servidores enviem atualizações em tempo real para os clientes via HTTP [para a lição](05-sse-server/README.md)
+- **5 Consumir a partir de um SSE (Server Sent Events)** SSE é um standard para streaming do servidor para o cliente, permitindo que os servidores enviem atualizações em tempo real para os clientes via HTTP [para a lição](05-sse-server/README.md)
 
 - **6 Streaming HTTP com MCP (Streamable HTTP)**. Aprende sobre streaming HTTP moderno, notificações de progresso, e como implementar servidores e clientes MCP escaláveis e em tempo real usando Streamable HTTP. [para a lição](06-http-streaming/README.md)
 
@@ -96,7 +96,7 @@ Temos um conjunto de exemplos que complementa os exercícios que vais encontrar 
 
 ## O que vem a seguir
 
-A seguir: [Criar o teu primeiro Servidor MCP](01-first-server/README.md)
+Seguinte: [Criar o teu primeiro Servidor MCP](01-first-server/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.

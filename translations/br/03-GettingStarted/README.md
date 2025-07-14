@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:30:25+00:00",
+  "translation_date": "2025-07-13T17:15:15+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "br"
 }
@@ -21,7 +21,7 @@ Esta seção consiste em várias lições:
 
 - **5 Consumindo a partir de SSE (Server Sent Events)** SSE é um padrão para streaming do servidor para o cliente, permitindo que servidores enviem atualizações em tempo real para os clientes via HTTP [para a lição](05-sse-server/README.md)
 
-- **6 Streaming HTTP com MCP (HTTP Streamable)**. Aprenda sobre streaming HTTP moderno, notificações de progresso e como implementar servidores e clientes MCP escaláveis e em tempo real usando HTTP Streamable. [para a lição](06-http-streaming/README.md)
+- **6 Streaming HTTP com MCP (Streamable HTTP)**. Aprenda sobre streaming HTTP moderno, notificações de progresso e como implementar servidores e clientes MCP escaláveis e em tempo real usando Streamable HTTP. [para a lição](06-http-streaming/README.md)
 
 - **7 Utilizando AI Toolkit para VSCode** para consumir e testar seus Clientes e Servidores MCP [para a lição](07-aitk/README.md)
 
@@ -64,11 +64,11 @@ Nos próximos capítulos você verá soluções construídas usando Python, Type
 O MCP oferece SDKs oficiais para várias linguagens:
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Mantido em colaboração com a Microsoft
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Mantido em colaboração com Spring AI
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - A implementação oficial em TypeScript
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - A implementação oficial em Python
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - A implementação oficial em Kotlin
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Implementação oficial em TypeScript
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Implementação oficial em Python
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Implementação oficial em Kotlin
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Mantido em colaboração com Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - A implementação oficial em Rust
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Implementação oficial em Rust
 
 ## Principais Pontos
 

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e9490aedc71f99bc774af57b207a7adb",
-  "translation_date": "2025-06-13T02:33:28+00:00",
+  "translation_date": "2025-07-13T21:54:52+00:00",
   "source_file": "03-GettingStarted/07-aitk/solution/README.md",
   "language_code": "sk"
 }
@@ -10,10 +10,10 @@ CO_OP_TRANSLATOR_METADATA:
 # 📘 Riešenie úlohy: Rozšírenie vášho kalkulačkového MCP servera o nástroj na druhú odmocninu
 
 ## Prehľad
-V tejto úlohe ste rozšírili váš kalkulačkový MCP server pridaním nového nástroja, ktorý vypočíta druhú odmocninu čísla. Toto rozšírenie umožňuje vášmu AI agentovi riešiť zložitejšie matematické otázky, ako napríklad „Aká je druhá odmocnina z 16?“ alebo „Vypočítaj √49“ pomocou prirodzených jazykových príkazov.
+V tejto úlohe ste rozšírili svoj kalkulačkový MCP server pridaním nového nástroja, ktorý vypočíta druhú odmocninu čísla. Toto rozšírenie umožňuje vášmu AI agentovi riešiť pokročilejšie matematické otázky, ako napríklad „Aká je druhá odmocnina z 16?“ alebo „Vypočítaj √49“ pomocou prirodzených jazykových príkazov.
 
 ## 🛠️ Implementácia nástroja na druhú odmocninu
-Na pridanie tejto funkcie ste definovali novú nástrojovú funkciu vo vašom súbore server.py. Tu je implementácia:
+Na pridanie tejto funkcie ste definovali novú funkciu nástroja v súbore server.py. Tu je implementácia:
 
 ```python
 """
@@ -70,11 +70,33 @@ def sqrt(a: float) -> float:
 
 ## 🔍 Ako to funguje
 
-- **Importuje `math` knižnicu a používa funkciu `math.sqrt()` v nástroji `@server.tool()` s názvom `sqrt`.**
-- Umožňuje vášmu AI agentovi spracovávať výpočty druhej odmocniny prostredníctvom prirodzených jazykových príkazov.
-- Precvičili ste si pridávanie nových nástrojov a reštartovanie servera, aby sa nové funkcie integrovali.
+- **Import modulu `math`**: Na vykonávanie matematických operácií nad rámec základnej aritmetiky Python poskytuje vstavaný modul `math`. Tento modul obsahuje množstvo matematických funkcií a konštánt. Importovaním pomocou `import math` získate prístup k funkciám ako `math.sqrt()`, ktorá vypočíta druhú odmocninu čísla.
+- **Definícia funkcie**: Dekorátor `@server.tool()` zaregistruje funkciu `sqrt` ako nástroj, ktorý môže používať váš AI agent.
+- **Vstupný parameter**: Funkcia prijíma jeden argument `a` typu `float`.
+- **Spracovanie chýb**: Ak je `a` záporné, funkcia vyvolá výnimku `ValueError`, aby zabránila výpočtu druhej odmocniny zo záporného čísla, čo funkcia `math.sqrt()` nepodporuje.
+- **Návratová hodnota**: Pre nezáporné vstupy funkcia vráti druhú odmocninu čísla `a` pomocou vstavaného Pythonovho `math.sqrt()`.
 
-Neváhajte ďalej experimentovať a pridávať ďalšie matematické nástroje, ako sú umocňovanie alebo logaritmické funkcie, aby ste ešte viac rozšírili schopnosti vášho agenta!
+## 🔄 Reštartovanie servera
+Po pridaní nového nástroja `sqrt` je nevyhnutné reštartovať váš MCP server, aby agent rozpoznal a mohol využívať novú funkciu.
+
+## 💬 Príklady príkazov na otestovanie nového nástroja
+Tu je niekoľko prirodzených jazykových príkazov, ktoré môžete použiť na otestovanie funkcie druhej odmocniny:
+
+- „Aká je druhá odmocnina z 25?“
+- „Vypočítaj druhú odmocninu z 81.“
+- „Nájdi druhú odmocninu z 0.“
+- „Aká je druhá odmocnina z 2,25?“
+
+Tieto príkazy by mali spustiť volanie nástroja `sqrt` a vrátiť správne výsledky.
+
+## ✅ Zhrnutie
+Splnením tejto úlohy ste:
+
+- Rozšírili svoj kalkulačkový MCP server o nový nástroj `sqrt`.
+- Umožnili svojmu AI agentovi riešiť výpočty druhej odmocniny pomocou prirodzených jazykových príkazov.
+- Precvičili si pridávanie nových nástrojov a reštartovanie servera na integráciu ďalších funkcií.
+
+Neváhajte experimentovať ďalej a pridávať ďalšie matematické nástroje, ako sú umocňovanie alebo logaritmické funkcie, aby ste ešte viac rozšírili schopnosti svojho agenta!
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, vezmite prosím na vedomie, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

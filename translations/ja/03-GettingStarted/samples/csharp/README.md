@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T05:51:47+00:00",
+  "translation_date": "2025-07-13T22:14:12+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "ja"
 }
@@ -18,18 +18,18 @@ CO_OP_TRANSLATOR_METADATA:
 この計算機サービスは以下の機能を提供します：
 
 1. **基本的な算術演算**：
-   - 2つの数値の加算
-   - 1つの数値から別の数値の減算
-   - 2つの数値の乗算
-   - 1つの数値を別の数値で除算（ゼロ除算のチェック付き）
+   - 2つの数の加算
+   - 1つの数から別の数を減算
+   - 2つの数の乗算
+   - 1つの数を別の数で除算（ゼロ除算チェック付き）
 
 ## Using `stdio` Type
-
+  
 ## Configuration
 
 1. **MCPサーバーの設定**：
    - VS Codeでワークスペースを開きます。
-   - ワークスペースフォルダ内に`.vscode/mcp.json`ファイルを作成し、MCPサーバーを設定します。設定例：
+   - ワークスペースフォルダー内に `.vscode/mcp.json` ファイルを作成し、MCPサーバーを設定します。設定例：
 
      ```jsonc
      {
@@ -54,50 +54,49 @@ CO_OP_TRANSLATOR_METADATA:
      }
      ```
 
-   - GitHubリポジトリのルートを入力するよう求められます。これはコマンド `git rev-parse --show-toplevel`.
+   - GitHubリポジトリのルートを入力するよう求められます。これはコマンド `git rev-parse --show-toplevel` で取得可能です。
 
 ## Using the Service
 
-The service exposes the following API endpoints through the MCP protocol:
+このサービスはMCPプロトコルを通じて以下のAPIエンドポイントを公開しています：
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: 2つの数を加算
+- `subtract(a, b)`: 2番目の数を1番目の数から減算
+- `multiply(a, b)`: 2つの数を乗算
+- `divide(a, b)`: 1番目の数を2番目の数で除算（ゼロチェック付き）
+- isPrime(n): 数が素数かどうかを判定
 
 ## Test with Github Copilot Chat in VS Code
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
-   - "Add 5 and 3"
-   - "Subtract 10 from 4"
-   - "Multiply 6 and 7"
-   - "Divide 8 by 2"
-   - "Does 37854 prime?"
-   - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
-   - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
-
+1. MCPプロトコルを使ってサービスにリクエストを送ってみましょう。例えば、以下のように尋ねることができます：
+   - 「5と3を足して」
+   - 「4から10を引いて」
+   - 「6と7を掛けて」
+   - 「8を2で割って」
+   - 「37854は素数ですか？」
+   - 「4242の前後の3つの素数は何ですか？」
+2. ツールを使っていることを明示するために、プロンプトに #MyCalculator を追加してください。例えば：
+   - 「5と3を足して #MyCalculator」
+   - 「4から10を引いて #MyCalculator」
 
 ## Containerized Version
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
+.NET SDKがインストールされ、すべての依存関係が整っている場合は前述の方法が便利です。しかし、ソリューションを共有したり別の環境で実行したい場合は、コンテナ版を利用できます。
 
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` から取得できます（<YOUR-DOCKER-USERNAME>はDocker Hubのユーザー名に置き換えてください）：
+1. Dockerを起動し、動作していることを確認します。
+1. ターミナルで `03-GettingStarted\samples\csharp\src` フォルダーに移動します。
+1. 計算機サービスのDockerイメージをビルドするには、以下のコマンドを実行します（`<YOUR-DOCKER-USERNAME>`はDocker Hubのユーザー名に置き換えてください）：
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. イメージのビルドが完了したら、Docker Hubにアップロードしましょう。以下のコマンドを実行します：
+1. イメージのビルドが完了したら、Docker Hubにアップロードします。以下のコマンドを実行してください：
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Docker化されたバージョンの利用
+## Use the Dockerized Version
 
-1. `.vscode/mcp.json`ファイル内で、サーバーの設定を以下のように置き換えます：
+1. `.vscode/mcp.json` ファイル内のサーバー設定を以下の内容に置き換えます：
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -111,11 +110,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   設定を見ると、コマンドは `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   設定を見ると、コマンドは `docker`、引数は `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc` となっています。`--rm` フラグはコンテナ停止後に削除することを保証し、`-i` フラグはコンテナの標準入力と対話できるようにします。最後の引数は先ほどビルドしてDocker Hubにプッシュしたイメージ名です。
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {` となっており、前と同様に計算機サービスに計算を依頼できます。
+`"mcp-calc": {` の上にある小さなスタートボタンをクリックしてMCPサーバーを起動し、前と同様に計算機サービスに計算を依頼してみましょう。
 
 **免責事項**：  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。原文の言語によるオリジナル文書が正式な情報源とみなされます。重要な情報については、専門の人間翻訳をご利用いただくことを推奨します。本翻訳の使用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は一切の責任を負いかねます。

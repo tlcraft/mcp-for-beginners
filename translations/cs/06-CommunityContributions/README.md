@@ -2,83 +2,83 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-05-27T16:27:13+00:00",
+  "translation_date": "2025-07-14T04:03:16+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "cs"
 }
 -->
-# Community and Contributions
+# Komunita a příspěvky
 
-## Overview
+## Přehled
 
-Esta lección se centra en cómo interactuar con la comunidad MCP, contribuir al ecosistema MCP y seguir las mejores prácticas para el desarrollo colaborativo. Comprender cómo participar en proyectos MCP de código abierto es esencial para quienes desean moldear el futuro de esta tecnología.
+Tato lekce se zaměřuje na to, jak se zapojit do komunity MCP, přispívat do ekosystému MCP a dodržovat osvědčené postupy pro spolupráci na vývoji. Pochopení, jak se účastnit open-source projektů MCP, je klíčové pro ty, kteří chtějí ovlivnit budoucnost této technologie.
 
-## Learning Objectives
+## Cíle učení
 
-Al finalizar esta lección, podrás:
-- Entender la estructura de la comunidad y el ecosistema MCP
-- Participar eficazmente en foros y discusiones de la comunidad MCP
-- Contribuir a los repositorios open-source de MCP
-- Crear y compartir herramientas personalizadas para MCP
-- Seguir las mejores prácticas para el desarrollo y colaboración en MCP
+Na konci této lekce budete schopni:
+- Porozumět struktuře komunity a ekosystému MCP
+- Efektivně se zapojit do diskuzí a fór komunity MCP
+- Přispívat do open-source repozitářů MCP
+- Vytvářet a sdílet vlastní nástroje MCP
+- Dodržovat osvědčené postupy vývoje a spolupráce v MCP
 
-## The MCP Community Ecosystem
+## Ekosystém komunity MCP
 
-El ecosistema MCP está formado por varios componentes y participantes que trabajan juntos para avanzar el protocolo.
+Ekosystém MCP se skládá z různých komponent a účastníků, kteří společně posouvají protokol vpřed.
 
-### Key Community Components
+### Klíčové komponenty komunity
 
-1. **Core Protocol Maintainers**: Microsoft y otras organizaciones que mantienen las especificaciones centrales de MCP y las implementaciones de referencia
-2. **Tool Developers**: Personas y equipos que crean herramientas MCP
-3. **Integration Providers**: Empresas que integran MCP en sus productos y servicios
-4. **End Users**: Desarrolladores y organizaciones que usan MCP en sus aplicaciones
-5. **Contributors**: Miembros de la comunidad que aportan código, documentación u otros recursos
+1. **Správci jádra protokolu**: Microsoft a další organizace, které udržují základní specifikace MCP a referenční implementace  
+2. **Vývojáři nástrojů**: Jednotlivci a týmy, které vytvářejí nástroje MCP  
+3. **Poskytovatelé integrací**: Firmy, které integrují MCP do svých produktů a služeb  
+4. **Koneční uživatelé**: Vývojáři a organizace, které MCP používají ve svých aplikacích  
+5. **Přispěvatelé**: Členové komunity, kteří přispívají kódem, dokumentací nebo jinými zdroji  
 
-### Community Resources
+### Zdroje komunity
 
-#### Official Channels
+#### Oficiální kanály
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
-- [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
-- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP GitHub Repository](https://github.com/modelcontextprotocol)  
+- [MCP Documentation](https://modelcontextprotocol.io/)  
+- [MCP Specification](https://spec.modelcontextprotocol.io/)  
+- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)  
 
-#### Community-Driven Resources
+#### Zdroje řízené komunitou
 
-- Implementaciones SDK específicas por lenguaje
-- Implementaciones de servidores y librerías de herramientas
-- Publicaciones en blogs y tutoriales
-- Foros comunitarios y discusiones en redes sociales
+- Implementace SDK pro různé jazyky  
+- Serverové implementace a knihovny nástrojů  
+- Blogové příspěvky a návody  
+- Fóra komunity a diskuse na sociálních sítích  
 
-## Contributing to MCP
+## Přispívání do MCP
 
-### Types of Contributions
+### Typy příspěvků
 
-El ecosistema MCP recibe varios tipos de contribuciones:
+Ekosystém MCP vítá různé typy příspěvků:
 
-1. **Code Contributions**:
-   - Mejoras al protocolo central
-   - Corrección de errores
-   - Implementación de herramientas
-   - Librerías cliente/servidor en distintos lenguajes
+1. **Příspěvky kódu**:  
+   - Vylepšení jádra protokolu  
+   - Opravy chyb  
+   - Implementace nástrojů  
+   - Knihovny klientů/serverů v různých jazycích  
 
-2. **Documentation**:
-   - Mejorar la documentación existente
-   - Crear tutoriales y guías
-   - Traducir documentación
-   - Crear ejemplos y aplicaciones de muestra
+2. **Dokumentace**:  
+   - Vylepšování stávající dokumentace  
+   - Tvorba návodů a průvodců  
+   - Překlady dokumentace  
+   - Vytváření příkladů a ukázkových aplikací  
 
-3. **Community Support**:
-   - Responder preguntas en foros
-   - Probar y reportar problemas
-   - Organizar eventos comunitarios
-   - Mentorear a nuevos colaboradores
+3. **Podpora komunity**:  
+   - Odpovídání na dotazy ve fórech  
+   - Testování a hlášení problémů  
+   - Organizování komunitních akcí  
+   - Mentorování nových přispěvatelů  
 
-### Contribution Process: Core Protocol
+### Proces přispívání: Jádro protokolu
 
-Para contribuir al protocolo central de MCP o implementaciones oficiales:
+Pro přispění do jádra MCP protokolu nebo oficiálních implementací:
 
-#### .NET Example: Contributing a Protocol Enhancement
+#### Příklad .NET: Přispění vylepšením protokolu
 
 ```csharp
 // Example contribution to MCP protocol: Adding support for binary data streams
@@ -145,7 +145,7 @@ namespace Microsoft.Mcp.Protocol
 }
 ```
 
-#### Java Example: Contributing a Bug Fix
+#### Příklad Java: Přispění opravou chyby
 
 ```java
 package com.mcp.tools;
@@ -230,7 +230,7 @@ public class ToolParameterValidator {
 }
 ```
 
-#### Python Example: Contributing a New Tool to the Standard Library
+#### Příklad Python: Přispění novým nástrojem do standardní knihovny
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -390,18 +390,18 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Contribution Guidelines
+### Pokyny pro přispívání
 
-Para lograr una contribución exitosa en proyectos MCP:
+Pro úspěšné přispění do projektů MCP:
 
-1. **Start Small**: Comienza con documentación, correcciones de bugs o pequeñas mejoras
-2. **Follow the Style Guide**: Sigue el estilo de codificación y convenciones del proyecto
-3. **Write Tests**: Incluye pruebas unitarias para tus contribuciones de código
-4. **Document Your Work**: Añade documentación clara para nuevas funcionalidades o cambios
-5. **Submit Targeted PRs**: Mantén los pull requests enfocados en un solo problema o función
-6. **Engage with Feedback**: Sé receptivo a los comentarios sobre tus contribuciones
+1. **Začněte malými kroky**: Začněte dokumentací, opravami chyb nebo drobnými vylepšeními  
+2. **Dodržujte styl**: Respektujte styl kódování a konvence projektu  
+3. **Pište testy**: Přidejte jednotkové testy ke svým příspěvkům  
+4. **Dokumentujte svou práci**: Přidejte jasnou dokumentaci k novým funkcím nebo změnám  
+5. **Podávejte cílené PR**: Zaměřte pull requesty na jedno téma nebo funkci  
+6. **Reagujte na zpětnou vazbu**: Buďte otevření a reagujte na připomínky k vašim příspěvkům  
 
-### Example Contribution Workflow
+### Příklad pracovního postupu přispívání
 
 ```bash
 # Clone the repository
@@ -429,13 +429,13 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Creating and Sharing Custom MCP Tools
+## Vytváření a sdílení vlastních nástrojů MCP
 
-Una de las formas más valiosas de contribuir al ecosistema MCP es creando y compartiendo herramientas personalizadas.
+Jedním z nejcennějších způsobů, jak přispět do ekosystému MCP, je vytváření a sdílení vlastních nástrojů.
 
-### Developing Shareable Tools
+### Vývoj sdílitelných nástrojů
 
-#### .NET Example: Creating a Shareable Tool Package
+#### Příklad .NET: Vytvoření balíčku sdílitelných nástrojů
 
 ```csharp
 // Create a new .NET library project
@@ -541,7 +541,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Java Example: Creating a Maven Package for Tools
+#### Příklad Java: Vytvoření Maven balíčku pro nástroje
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -642,7 +642,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Python Example: Publishing a PyPI Package
+#### Příklad Python: Publikování balíčku na PyPI
 
 ```python
 # Directory structure for a PyPI package:
@@ -747,68 +747,68 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### Sharing Best Practices
+### Sdílení osvědčených postupů
 
-Al compartir herramientas MCP con la comunidad:
+Při sdílení nástrojů MCP s komunitou:
 
-1. **Complete Documentation**:
-   - Documenta el propósito, uso y ejemplos
-   - Explica parámetros y valores de retorno
-   - Documenta cualquier dependencia externa
+1. **Kompletní dokumentace**:  
+   - Popište účel, použití a příklady  
+   - Vysvětlete parametry a návratové hodnoty  
+   - Zdokumentujte případné externí závislosti  
 
-2. **Error Handling**:
-   - Implementa manejo robusto de errores
-   - Proporciona mensajes de error útiles
-   - Maneja casos límite de forma adecuada
+2. **Zpracování chyb**:  
+   - Implementujte robustní zpracování chyb  
+   - Poskytujte užitečné chybové zprávy  
+   - Ošetřete okrajové případy s rozvahou  
 
-3. **Performance Considerations**:
-   - Optimiza tanto para velocidad como para uso de recursos
-   - Implementa caching cuando sea apropiado
-   - Considera la escalabilidad
+3. **Výkonové aspekty**:  
+   - Optimalizujte rychlost i využití zdrojů  
+   - Používejte cache, pokud je to vhodné  
+   - Zvažte škálovatelnost  
 
-4. **Security**:
-   - Usa claves API y autenticación seguras
-   - Valida y sanitiza las entradas
-   - Implementa limitación de tasa para llamadas a APIs externas
+4. **Bezpečnost**:  
+   - Používejte bezpečné API klíče a autentizaci  
+   - Validujte a sanitizujte vstupy  
+   - Implementujte omezení počtu požadavků na externí API  
 
-5. **Testing**:
-   - Incluye cobertura completa de pruebas
-   - Prueba con distintos tipos de entrada y casos límite
-   - Documenta los procedimientos de prueba
+5. **Testování**:  
+   - Zajistěte komplexní pokrytí testy  
+   - Testujte různé typy vstupů a okrajové případy  
+   - Dokumentujte testovací postupy  
 
-## Community Collaboration and Best Practices
+## Spolupráce v komunitě a osvědčené postupy
 
-La colaboración efectiva es clave para un ecosistema MCP próspero.
+Efektivní spolupráce je klíčem k prosperujícímu ekosystému MCP.
 
-### Communication Channels
+### Komunikační kanály
 
-- GitHub Issues and Discussions
-- Microsoft Tech Community
-- Discord and Slack channels
-- Stack Overflow (tag: `model-context-protocol` or `mcp`)
+- GitHub Issues a Discussions  
+- Microsoft Tech Community  
+- Kanály na Discordu a Slacku  
+- Stack Overflow (tag: `model-context-protocol` nebo `mcp`)  
 
-### Code Reviews
+### Kontrola kódu
 
-Al revisar contribuciones MCP:
+Při kontrole příspěvků do MCP:
 
-1. **Clarity**: ¿El código es claro y está bien documentado?
-2. **Correctness**: ¿Funciona como se espera?
-3. **Consistency**: ¿Sigue las convenciones del proyecto?
-4. **Completeness**: ¿Incluye pruebas y documentación?
-5. **Security**: ¿Hay preocupaciones de seguridad?
+1. **Srozumitelnost**: Je kód jasný a dobře zdokumentovaný?  
+2. **Správnost**: Funguje podle očekávání?  
+3. **Konzistence**: Dodržuje konvence projektu?  
+4. **Kompletnost**: Jsou zahrnuty testy a dokumentace?  
+5. **Bezpečnost**: Existují bezpečnostní rizika?  
 
-### Version Compatibility
+### Kompatibilita verzí
 
-Al desarrollar para MCP:
+Při vývoji pro MCP:
 
-1. **Protocol Versioning**: Asegúrate de respetar la versión del protocolo MCP que soporta tu herramienta
-2. **Client Compatibility**: Considera compatibilidad hacia atrás
-3. **Server Compatibility**: Sigue las guías de implementación del servidor
-4. **Breaking Changes**: Documenta claramente cualquier cambio incompatible
+1. **Verzování protokolu**: Dodržujte verzi MCP protokolu, kterou váš nástroj podporuje  
+2. **Kompatibilita klienta**: Zvažte zpětnou kompatibilitu  
+3. **Kompatibilita serveru**: Dodržujte pokyny pro serverové implementace  
+4. **Zásadní změny**: Jasně dokumentujte jakékoliv zásadní změny  
 
-## Example Community Project: MCP Tool Registry
+## Příklad komunitního projektu: MCP Tool Registry
 
-Una contribución comunitaria importante puede ser desarrollar un registro público para herramientas MCP.
+Důležitým příspěvkem komunity může být vývoj veřejného registru nástrojů MCP.
 
 ```python
 # Example schema for a community tool registry API
@@ -887,30 +887,30 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## Key Takeaways
+## Hlavní poznatky
 
-- La comunidad MCP es diversa y recibe varios tipos de contribuciones
-- Contribuir a MCP puede ir desde mejoras al protocolo central hasta herramientas personalizadas
-- Seguir las guías de contribución mejora las posibilidades de que tu PR sea aceptado
-- Crear y compartir herramientas MCP es una forma valiosa de enriquecer el ecosistema
-- La colaboración comunitaria es esencial para el crecimiento y mejora de MCP
+- Komunita MCP je různorodá a vítá různé typy příspěvků  
+- Přispívání do MCP může zahrnovat vylepšení jádra protokolu i vlastní nástroje  
+- Dodržování pokynů pro přispívání zvyšuje šanci na přijetí vašeho PR  
+- Vytváření a sdílení nástrojů MCP je cenný způsob, jak rozšířit ekosystém  
+- Spolupráce v komunitě je nezbytná pro růst a zlepšování MCP  
 
-## Exercise
+## Cvičení
 
-1. Identifica un área en el ecosistema MCP donde puedas contribuir según tus habilidades e intereses
-2. Haz fork del repositorio MCP y configura un entorno de desarrollo local
-3. Crea una pequeña mejora, corrección de error o herramienta que beneficie a la comunidad
-4. Documenta tu contribución con pruebas y documentación adecuadas
-5. Envía un pull request al repositorio correspondiente
+1. Identifikujte oblast v ekosystému MCP, kde byste mohli přispět podle svých dovedností a zájmů  
+2. Forkněte repozitář MCP a nastavte si lokální vývojové prostředí  
+3. Vytvořte malé vylepšení, opravu chyby nebo nástroj, který by komunitě pomohl  
+4. Zdokumentujte svůj příspěvek s odpovídajícími testy a dokumentací  
+5. Odešlete pull request do příslušného repozitáře  
 
-## Additional Resources
+## Další zdroje
 
-- [MCP Community Projects](https://github.com/topics/model-context-protocol)
+- [MCP Community Projects](https://github.com/topics/model-context-protocol)  
 
 
 ---
 
-Next: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
+Další: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

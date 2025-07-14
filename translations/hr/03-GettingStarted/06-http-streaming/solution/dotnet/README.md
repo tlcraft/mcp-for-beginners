@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:19:36+00:00",
+  "translation_date": "2025-07-13T21:06:40+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "hr"
 }
@@ -23,7 +23,7 @@ dotnet run
 
 ## -3- Testirajte primjer
 
-Prije nego što pokrenete naredbu u nastavku, otvorite zasebni terminal (provjerite da je server još uvijek pokrenut).
+Prije nego što pokrenete sljedeće, otvorite zasebni terminal (provjerite je li server još uvijek pokrenut).
 
 Dok je server pokrenut u jednom terminalu, otvorite drugi terminal i pokrenite sljedeću naredbu:
 
@@ -31,18 +31,18 @@ Dok je server pokrenut u jednom terminalu, otvorite drugi terminal i pokrenite s
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Time bi se trebao pokrenuti web server s vizualnim sučeljem koje vam omogućuje testiranje primjera.
+Ovo bi trebalo pokrenuti web server s vizualnim sučeljem koje vam omogućuje testiranje primjera.
 
 > Provjerite je li kao tip prijenosa odabran **Streamable HTTP**, a URL je `http://localhost:3001/mcp`.
 
-Once the server is connected: 
+Kada se server poveže:
 
-- try listing tools and run `add`, s argumentima 2 i 4, trebali biste vidjeti rezultat 6.
-- idite na resources i resource template, pozovite "greeting", upišite ime i trebali biste vidjeti pozdrav s imenom koje ste unijeli.
+- pokušajte popisati alate i pokrenuti `add` s argumentima 2 i 4, trebali biste vidjeti rezultat 6.
+- idite na resurse i predložak resursa te pozovite "greeting", unesite ime i trebali biste vidjeti pozdrav s imenom koje ste unijeli.
 
 ### Testiranje u CLI načinu
 
-Možete ga pokrenuti izravno u CLI načinu pomoću sljedeće naredbe:
+Možete ga pokrenuti izravno u CLI načinu pokretanjem sljedeće naredbe:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
@@ -101,8 +101,8 @@ Trebali biste vidjeti sljedeći ispis:
 ```
 
 > ![!TIP]
-> Obično je puno brže pokrenuti inspector u CLI načinu nego u pregledniku.
-> Više o inspectoru pročitajte [ovdje](https://github.com/modelcontextprotocol/inspector).
+> Obično je puno brže pokrenuti inspektor u CLI načinu nego u pregledniku.
+> Više o inspektoru pročitajte [ovdje](https://github.com/modelcontextprotocol/inspector).
 
 **Odricanje od odgovornosti**:  
-Ovaj je dokument preveden pomoću AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Nismo odgovorni za bilo kakve nesporazume ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

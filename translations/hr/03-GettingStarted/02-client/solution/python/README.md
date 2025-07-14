@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0ab9613fc9595f493847f91275859a18",
-  "translation_date": "2025-05-17T10:05:25+00:00",
+  "translation_date": "2025-07-13T18:42:32+00:00",
   "source_file": "03-GettingStarted/02-client/solution/python/README.md",
   "language_code": "hr"
 }
 -->
 # Pokretanje ovog primjera
 
-Preporučuje se instalirati `uv`, ali nije nužno, pogledajte [upute](https://docs.astral.sh/uv/#highlights)
+Preporučuje se instalirati `uv`, ali nije obavezno, pogledajte [upute](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Kreirajte virtualno okruženje
 
@@ -23,7 +23,7 @@ python -m venv venv
 venv\Scrips\activate
 ```
 
-## -2- Instalirajte potrebne ovisnosti
+## -2- Instalirajte ovisnosti
 
 ```bash
 pip install "mcp[cli]"
@@ -31,11 +31,12 @@ pip install "mcp[cli]"
 
 ## -3- Pokrenite primjer
 
+
 ```bash
 python client.py
 ```
 
-Trebali biste vidjeti ispis sličan ovom:
+Trebali biste vidjeti izlaz sličan ovom:
 
 ```text
 LISTING RESOURCES
@@ -52,5 +53,5 @@ CALL TOOL
 [TextContent(type='text', text='8', annotations=None)]
 ```
 
-**Izjava o odricanju odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge prevođenja [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo ka točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne odgovaramo za nesporazume ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
+**Odricanje od odgovornosti**:  
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

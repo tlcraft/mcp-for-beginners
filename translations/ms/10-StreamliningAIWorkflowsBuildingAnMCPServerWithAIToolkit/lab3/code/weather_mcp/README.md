@@ -2,77 +2,77 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "999c5e7623c1e2d5e5a07c2feb39eb67",
-  "translation_date": "2025-06-10T06:34:50+00:00",
+  "translation_date": "2025-07-14T08:30:52+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/README.md",
   "language_code": "ms"
 }
 -->
 # Weather MCP Server
 
-This is a sample MCP Server in Python implementing weather tools with mock responses. It can be used as a scaffold for your own MCP Server. It includes the following features: 
+Ini adalah contoh MCP Server dalam Python yang melaksanakan alat cuaca dengan respons tiruan. Ia boleh digunakan sebagai rangka untuk MCP Server anda sendiri. Ia merangkumi ciri-ciri berikut:
 
-- **Weather Tool**: A tool that provides mocked weather information based on the given location.
-- **Connect to Agent Builder**: A feature that allows you to connect the MCP server to the Agent Builder for testing and debugging.
-- **Debug in [MCP Inspector](https://github.com/modelcontextprotocol/inspector)**: A feature that allows you to debug the MCP Server using the MCP Inspector.
+- **Weather Tool**: Alat yang menyediakan maklumat cuaca tiruan berdasarkan lokasi yang diberikan.
+- **Sambung ke Agent Builder**: Ciri yang membolehkan anda menyambungkan MCP server ke Agent Builder untuk ujian dan penyahpepijatan.
+- **Debug dalam [MCP Inspector](https://github.com/modelcontextprotocol/inspector)**: Ciri yang membolehkan anda menyahpepijat MCP Server menggunakan MCP Inspector.
 
-## Get started with the Weather MCP Server template
+## Mula dengan templat Weather MCP Server
 
-> **Prerequisites**
+> **Prasyarat**
 >
-> To run the MCP Server on your local dev machine, you will need:
+> Untuk menjalankan MCP Server di mesin pembangunan tempatan anda, anda memerlukan:
 >
 > - [Python](https://www.python.org/)
-> - (*Optional - if you prefer uv*) [uv](https://github.com/astral-sh/uv)
+> - (*Pilihan - jika anda lebih suka uv*) [uv](https://github.com/astral-sh/uv)
 > - [Python Debugger Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
 
-## Prepare environment
+## Sediakan persekitaran
 
-There are two ways to set up the environment for this project. You can choose whichever suits you best.
+Terdapat dua pendekatan untuk menyediakan persekitaran bagi projek ini. Anda boleh memilih salah satu mengikut kesukaan anda.
 
-> Note: Reload VSCode or your terminal to make sure the virtual environment's Python is used after creating it.
+> Nota: Muat semula VSCode atau terminal untuk memastikan python persekitaran maya digunakan selepas mencipta persekitaran maya.
 
-| Approach | Steps |
+| Pendekatan | Langkah |
 | -------- | ----- |
-| Using `uv` | 1. Create virtual environment: `uv venv` <br>2. Run VSCode Command "***Python: Select Interpreter***" and choose the Python from the created virtual environment <br>3. Install dependencies (including dev dependencies): `uv pip install -r pyproject.toml --extra dev` |
-| Using `pip` | 1. Create virtual environment: `python -m venv .venv` <br>2. Run VSCode Command "***Python: Select Interpreter***" and choose the Python from the created virtual environment<br>3. Install dependencies (including dev dependencies): `pip install -e .[dev]` | 
+| Menggunakan `uv` | 1. Cipta persekitaran maya: `uv venv` <br>2. Jalankan Perintah VSCode "***Python: Select Interpreter***" dan pilih python dari persekitaran maya yang dicipta <br>3. Pasang kebergantungan (termasuk kebergantungan pembangunan): `uv pip install -r pyproject.toml --extra dev` |
+| Menggunakan `pip` | 1. Cipta persekitaran maya: `python -m venv .venv` <br>2. Jalankan Perintah VSCode "***Python: Select Interpreter***" dan pilih python dari persekitaran maya yang dicipta<br>3. Pasang kebergantungan (termasuk kebergantungan pembangunan): `pip install -e .[dev]` |
 
-Once your environment is ready, you can run the server locally via Agent Builder as the MCP Client to get started:
-1. Open the VS Code Debug panel. Select `Debug in Agent Builder` or press `F5` to start debugging the MCP server.
-2. Use AI Toolkit Agent Builder to test the server with [this prompt](../../../../../../../../../../../open_prompt_builder). The server will automatically connect to the Agent Builder.
-3. Click `Run` to test the server with the prompt.
+Selepas menyediakan persekitaran, anda boleh menjalankan server di mesin pembangunan tempatan anda melalui Agent Builder sebagai MCP Client untuk memulakan:
+1. Buka panel Debug VS Code. Pilih `Debug in Agent Builder` atau tekan `F5` untuk mula menyahpepijat MCP server.
+2. Gunakan AI Toolkit Agent Builder untuk menguji server dengan [prompt ini](../../../../../../../../../../open_prompt_builder). Server akan disambungkan secara automatik ke Agent Builder.
+3. Klik `Run` untuk menguji server dengan prompt tersebut.
 
-**Congratulations**! You have successfully run the Weather MCP Server locally via Agent Builder as the MCP Client.
+**Tahniah**! Anda telah berjaya menjalankan Weather MCP Server di mesin pembangunan tempatan anda melalui Agent Builder sebagai MCP Client.  
 ![DebugMCP](https://raw.githubusercontent.com/microsoft/windows-ai-studio-templates/refs/heads/dev/mcpServers/mcp_debug.gif)
 
-## What's included in the template
+## Apa yang termasuk dalam templat
 
-| Folder / File| Contents                                     |
+| Folder / Fail | Kandungan                                     |
 | ------------ | -------------------------------------------- |
-| `.vscode`    | VSCode files for debugging                   |
-| `.aitk`      | Configurations for AI Toolkit                |
-| `src`        | The source code for the weather mcp server   |
+| `.vscode`    | Fail VSCode untuk penyahpepijatan            |
+| `.aitk`      | Konfigurasi untuk AI Toolkit                  |
+| `src`        | Kod sumber untuk weather mcp server           |
 
-## How to debug the Weather MCP Server
+## Cara menyahpepijat Weather MCP Server
 
-> Notes:
-> - [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is a visual developer tool for testing and debugging MCP servers.
-> - All debugging modes support breakpoints, so you can add breakpoints to the tool implementation code.
+> Nota:
+> - [MCP Inspector](https://github.com/modelcontextprotocol/inspector) adalah alat visual untuk pembangun bagi menguji dan menyahpepijat MCP server.
+> - Semua mod penyahpepijatan menyokong titik henti, jadi anda boleh menambah titik henti pada kod pelaksanaan alat.
 
-| Debug Mode | Description | Steps to debug |
+| Mod Penyahpepijatan | Penerangan | Langkah untuk menyahpepijat |
 | ---------- | ----------- | --------------- |
-| Agent Builder | Debug the MCP server in the Agent Builder via AI Toolkit. | 1. Open the VS Code Debug panel. Select `Debug in Agent Builder` and press `F5` to start debugging the MCP server.<br>2. Use AI Toolkit Agent Builder to test the server with [this prompt](../../../../../../../../../../../open_prompt_builder). The server will automatically connect to the Agent Builder.<br>3. Click `Run` to test the server with the prompt. |
-| MCP Inspector | Debug the MCP server using the MCP Inspector. | 1. Install [Node.js](https://nodejs.org/)<br> 2. Set up Inspector: `cd inspector` && `npm install` <br> 3. Open the VS Code Debug panel. Select `Debug SSE in Inspector (Edge)` or `Debug SSE in Inspector (Chrome)`. Press F5 to start debugging.<br> 4. When MCP Inspector opens in your browser, click the `Connect` button to connect this MCP server.<br> 5. Then you can `List Tools`, select a tool, input parameters, and `Run Tool` to debug your server code.<br> |
+| Agent Builder | Menyahpepijat MCP server dalam Agent Builder melalui AI Toolkit. | 1. Buka panel Debug VS Code. Pilih `Debug in Agent Builder` dan tekan `F5` untuk mula menyahpepijat MCP server.<br>2. Gunakan AI Toolkit Agent Builder untuk menguji server dengan [prompt ini](../../../../../../../../../../open_prompt_builder). Server akan disambungkan secara automatik ke Agent Builder.<br>3. Klik `Run` untuk menguji server dengan prompt tersebut. |
+| MCP Inspector | Menyahpepijat MCP server menggunakan MCP Inspector. | 1. Pasang [Node.js](https://nodejs.org/)<br> 2. Sediakan Inspector: `cd inspector` && `npm install` <br> 3. Buka panel Debug VS Code. Pilih `Debug SSE in Inspector (Edge)` atau `Debug SSE in Inspector (Chrome)`. Tekan F5 untuk mula menyahpepijat.<br> 4. Apabila MCP Inspector dilancarkan dalam pelayar, klik butang `Connect` untuk menyambungkan MCP server ini.<br> 5. Kemudian anda boleh `List Tools`, pilih alat, masukkan parameter, dan `Run Tool` untuk menyahpepijat kod server anda.<br> |
 
-## Default Ports and customizations
+## Port Lalai dan pengubahsuaian
 
-| Debug Mode | Ports | Definitions | Customizations | Note |
+| Mod Penyahpepijatan | Port | Definisi | Pengubahsuaian | Nota |
 | ---------- | ----- | ------------ | -------------- |-------------- |
-| Agent Builder | 3001 | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | Edit [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) to change these ports. | N/A |
-| MCP Inspector | 3001 (Server); 5173 and 3000 (Inspector) | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | Edit [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) to change these ports.| N/A |
+| Agent Builder | 3001 | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | Edit [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) untuk menukar port di atas. | N/A |
+| MCP Inspector | 3001 (Server); 5173 dan 3000 (Inspector) | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | Edit [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) untuk menukar port di atas.| N/A |
 
-## Feedback
+## Maklum balas
 
-If you have any feedback or suggestions for this template, please open an issue on the [AI Toolkit GitHub repository](https://github.com/microsoft/vscode-ai-toolkit/issues)
+Jika anda mempunyai sebarang maklum balas atau cadangan untuk templat ini, sila buka isu di [repositori AI Toolkit GitHub](https://github.com/microsoft/vscode-ai-toolkit/issues)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

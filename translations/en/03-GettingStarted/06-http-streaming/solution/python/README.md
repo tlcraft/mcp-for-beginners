@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T01:59:42+00:00",
+  "translation_date": "2025-07-13T21:16:14+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "en"
 }
@@ -142,10 +142,10 @@ Here's how to run the classic HTTP streaming server and client, as well as the M
 
 ### Tips & Troubleshooting
 
-- Use `async/await` for non-blocking operations.**
-- Always handle exceptions in both server and client for stability.
-- Test with multiple clients to see real-time updates.
-- If you encounter errors, verify your Python version and confirm all dependencies are installed.
+- Use `async/await` for non-blocking operations.
+- Always handle exceptions in both server and client for robustness.
+- Test with multiple clients to observe real-time updates.
+- If you encounter errors, check your Python version and ensure all dependencies are installed.
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

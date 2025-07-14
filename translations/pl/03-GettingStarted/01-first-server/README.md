@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:05:23+00:00",
+  "translation_date": "2025-07-13T17:32:04+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "pl"
 }
@@ -82,7 +82,7 @@ Stwórz prosty serwer MCP z narzędziem według własnego wyboru:
 1. Zaimplementuj narzędzie w preferowanym języku (.NET, Java, Python lub JavaScript).
 2. Zdefiniuj parametry wejściowe i wartości zwracane.
 3. Uruchom narzędzie inspektora, aby upewnić się, że serwer działa poprawnie.
-4. Przetestuj implementację z różnymi danymi wejściowymi.
+4. Przetestuj implementację na różnych danych wejściowych.
 
 ## Rozwiązanie
 
@@ -96,7 +96,7 @@ Stwórz prosty serwer MCP z narzędziem według własnego wyboru:
 
 ## Co dalej
 
-Następne: [Pierwsze kroki z klientami MCP](../02-client/README.md)
+Następny krok: [Pierwsze kroki z klientami MCP](../02-client/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

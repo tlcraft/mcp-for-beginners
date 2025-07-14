@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-12T21:15:31+00:00",
+  "translation_date": "2025-07-14T00:40:09+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "zh"
 }
 -->
 # MCP OAuth2 演示
 
-该项目是一个**最简化的 Spring Boot 应用程序**，同时充当：
+该项目是一个**最简化的 Spring Boot 应用程序**，同时扮演以下两个角色：
 
 * **Spring 授权服务器**（通过 `client_credentials` 流程颁发 JWT 访问令牌），以及  
-* **资源服务器**（保护其自身的 `/hello` 端点）。
+* **资源服务器**（保护自身的 `/hello` 端点）。
 
-它与 [Spring 博客文章（2025年4月2日）](https://spring.io/blog/2025/04/02/mcp-server-oauth2) 中展示的设置相对应。
+它复刻了[Spring 博客文章（2025 年 4 月 2 日）](https://spring.io/blog/2025/04/02/mcp-server-oauth2)中展示的配置。
 
 ---
 
@@ -38,7 +38,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 你可以通过以下步骤测试 OAuth2 安全配置：
 
-### 1. 验证服务器正在运行且已启用安全保护
+### 1. 验证服务器是否运行且已启用安全保护
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-注意：Basic 认证头部的值是 `bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`。
+注意：Basic 认证头（`bWNwLWNsaWVudDpzZWNyZXQ=`）是 `mcp-client:secret` 的 Base64 编码。
 
-### 3. 使用令牌访问受保护端点
+### 3. 使用令牌访问受保护的端点
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-若响应成功并返回 "Hello from MCP OAuth2 Demo!"，则说明 OAuth2 配置工作正常。
+如果成功响应并显示 “Hello from MCP OAuth2 Demo!”，则说明 OAuth2 配置工作正常。
 
 ---
 
@@ -95,8 +95,8 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-入口 FQDN 将成为你的**issuer**（`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`）。
+入口 FQDN 将成为你的**发行者**（`https://<fqdn>`）。  
+Azure 会自动为 `*.azurecontainerapps.io` 提供受信任的 TLS 证书。
 
 ---
 
@@ -125,4 +125,4 @@ APIM 会获取 JWKS 并验证每个请求。
 - [5.4 根上下文](../mcp-root-contexts/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意自动翻译可能存在错误或不准确之处。原始文件的母语版本应被视为权威来源。对于关键信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。

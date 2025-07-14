@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-06-10T06:12:37+00:00",
+  "translation_date": "2025-07-14T08:14:38+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
   "language_code": "sv"
 }
@@ -17,44 +17,43 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 🎯 Lärandemål
 
-I slutet av den här labben kommer du att kunna:
+I slutet av denna labb kommer du att kunna:
 
 - ✅ Skapa egna MCP-servrar med AI Toolkit
 - ✅ Konfigurera och använda den senaste MCP Python SDK (v1.9.3)
 - ✅ Sätta upp och använda MCP Inspector för felsökning
-- ✅ Felsöka MCP-servrar både i Agent Builder och Inspector
+- ✅ Felsöka MCP-servrar i både Agent Builder och Inspector-miljöer
 - ✅ Förstå avancerade arbetsflöden för MCP-serverutveckling
 
 ## 📋 Förkunskaper
 
-- Slutförd Lab 2 (MCP Fundamentals)
+- Genomförd Lab 2 (MCP Fundamentals)
 - VS Code med AI Toolkit-tillägget installerat
 - Python 3.10+ miljö
-- Node.js och npm för Inspector-installation
+- Node.js och npm för Inspector-uppsättning
 
 ## 🏗️ Vad du kommer att bygga
 
-I den här labben skapar du en **Weather MCP Server** som visar:
+I denna labb skapar du en **Weather MCP Server** som visar:
 
-- Egen implementation av MCP-server
+- Egen MCP-serverimplementation
 - Integration med AI Toolkit Agent Builder
-- Professionella arbetsflöden för felsökning
-- Moderna användningsmönster för MCP SDK
+- Professionella felsökningsarbetsflöden
+- Moderna MCP SDK-användningsmönster
 
 ---
 
 ## 🔧 Översikt av kärnkomponenter
 
-### 🐍 MCP Python SDK
+### 🐍 MCP Python SDK  
 Model Context Protocol Python SDK utgör grunden för att bygga egna MCP-servrar. Du kommer att använda version 1.9.3 med förbättrade felsökningsmöjligheter.
 
-### 🔍 MCP Inspector
-Ett kraftfullt felsökningsverktyg som erbjuder:
-
-- Realtidsövervakning av servern
-- Visualisering av verktygskörningar
-- Inspektion av nätverksförfrågningar/svar
-- Interaktiv testmiljö
+### 🔍 MCP Inspector  
+Ett kraftfullt felsökningsverktyg som erbjuder:  
+- Realtidsövervakning av servern  
+- Visualisering av verktygsexekvering  
+- Inspektion av nätverksförfrågningar och svar  
+- Interaktiv testmiljö  
 
 ---
 
@@ -62,26 +61,26 @@ Ett kraftfullt felsökningsverktyg som erbjuder:
 
 ### Steg 1: Skapa en WeatherAgent i Agent Builder
 
-1. **Starta Agent Builder** i VS Code via AI Toolkit-tillägget
-2. **Skapa en ny agent** med följande konfiguration:
+1. **Starta Agent Builder** i VS Code via AI Toolkit-tillägget  
+2. **Skapa en ny agent** med följande konfiguration:  
    - Agentnamn: `WeatherAgent`
 
 ![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.sv.png)
 
-### Steg 2: Initiera MCP Server-projektet
+### Steg 2: Initiera MCP Server-projekt
 
-1. **Gå till Tools** → **Add Tool** i Agent Builder
-2. **Välj "MCP Server"** från alternativen
-3. **Välj "Create A new MCP Server"**
-4. **Välj mallen `python-weather`**
+1. **Gå till Tools** → **Add Tool** i Agent Builder  
+2. **Välj "MCP Server"** från alternativen  
+3. **Välj "Create A new MCP Server"**  
+4. **Välj mallen `python-weather`**  
 5. **Namnge din server:** `weather_mcp`
 
 ![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.sv.png)
 
 ### Steg 3: Öppna och granska projektet
 
-1. **Öppna det genererade projektet** i VS Code
-2. **Granska projektstrukturen:**
+1. **Öppna det genererade projektet** i VS Code  
+2. **Granska projektstrukturen:**  
    ```
    weather_mcp/
    ├── src/
@@ -103,29 +102,27 @@ Ett kraftfullt felsökningsverktyg som erbjuder:
 
 #### 4a. Uppdatera Python-beroenden
 
-**Redigera `pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
+**Redigera `pyproject.toml`:** uppdatera [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
 
+#### 4b. Uppdatera Inspector-konfiguration
 
-#### 4b. Update Inspector Configuration
+**Redigera `inspector/package.json`:** uppdatera [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
 
-**Edit `inspector/package.json`:** update [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
+#### 4c. Uppdatera Inspector-beroenden
 
-#### 4c. Update Inspector Dependencies
+**Redigera `inspector/package-lock.json`:** uppdatera [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
 
-**Edit `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
+> **📝 Notera:** Denna fil innehåller omfattande beroendedefinitioner. Nedan visas den grundläggande strukturen – hela innehållet säkerställer korrekt beroendehantering.
 
-> **📝 Note:** This file contains extensive dependency definitions. Below is the essential structure - the full content ensures proper dependency resolution.
+> **⚡ Full Package Lock:** Den kompletta package-lock.json innehåller cirka 3000 rader med beroendedefinitioner. Ovan visas nyckelstrukturen – använd den medföljande filen för fullständig beroendehantering.
 
+### Steg 5: Konfigurera felsökning i VS Code
 
-> **⚡ Full Package Lock:** The complete package-lock.json contains ~3000 lines of dependency definitions. The above shows the key structure - use the provided file for complete dependency resolution.
+*Notera: Kopiera filen i angiven sökväg för att ersätta motsvarande lokala fil*
 
-### Step 5: Configure VS Code Debugging
+#### 5a. Uppdatera launch-konfiguration
 
-*Note: Please copy the file in the specified path to replace the corresponding local file*
-
-#### 5a. Update Launch Configuration
-
-**Edit `.vscode/launch.json`:**
+**Redigera `.vscode/launch.json`:**
 
 ```json
 {
@@ -310,14 +307,14 @@ Ett kraftfullt felsökningsverktyg som erbjuder:
 
 ### Steg 6: Installera beroenden
 
-Efter konfigurationsändringarna, kör följande kommandon:
+Efter att ha gjort konfigurationsändringarna, kör följande kommandon:
 
-**Installera Python-beroenden:**
+**Installera Python-beroenden:**  
 ```bash
 uv sync
 ```
 
-**Installera Inspector-beroenden:**
+**Installera Inspector-beroenden:**  
 ```bash
 cd inspector
 npm install
@@ -325,12 +322,12 @@ npm install
 
 ### Steg 7: Felsök med Agent Builder
 
-1. **Tryck på F5** eller använd konfigurationen **"Debug in Agent Builder"**
-2. **Välj den sammansatta konfigurationen** i felsökningspanelen
-3. **Vänta på att servern startar** och att Agent Builder öppnas
-4. **Testa din Weather MCP-server** med naturliga språkfrågor
+1. **Tryck på F5** eller använd konfigurationen **"Debug in Agent Builder"**  
+2. **Välj den sammansatta konfigurationen** i felsökningspanelen  
+3. **Vänta på att servern startar** och att Agent Builder öppnas  
+4. **Testa din weather MCP-server** med naturliga språkfrågor
 
-Skriv in prompt som denna
+Ange prompt som denna
 
 SYSTEM_PROMPT
 
@@ -348,27 +345,27 @@ How's the weather like in Seattle
 
 ### Steg 8: Felsök med MCP Inspector
 
-1. **Använd konfigurationen "Debug in Inspector"** (Edge eller Chrome)
-2. **Öppna Inspector-gränssnittet** på `http://localhost:6274`
-3. **Utforska den interaktiva testmiljön:**
-   - Se tillgängliga verktyg
-   - Testa verktygskörningar
-   - Övervaka nätverksförfrågningar
-   - Felsök serversvar
+1. **Använd konfigurationen "Debug in Inspector"** (Edge eller Chrome)  
+2. **Öppna Inspector-gränssnittet** på `http://localhost:6274`  
+3. **Utforska den interaktiva testmiljön:**  
+   - Visa tillgängliga verktyg  
+   - Testa verktygsexekvering  
+   - Övervaka nätverksförfrågningar  
+   - Felsök serverrespons  
 
 ![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.sv.png)
 
 ---
 
-## 🎯 Viktiga läranderesultat
+## 🎯 Viktiga lärdomar
 
 Genom att slutföra denna labb har du:
 
-- [x] **Skapat en egen MCP-server** med AI Toolkit-mallar
-- [x] **Uppgraderat till senaste MCP SDK** (v1.9.3) för förbättrad funktionalitet
-- [x] **Konfigurerat professionella felsökningsarbetsflöden** för både Agent Builder och Inspector
-- [x] **Satt upp MCP Inspector** för interaktiv servertestning
-- [x] **Behärskat VS Code-felsökningskonfigurationer** för MCP-utveckling
+- [x] **Skapat en egen MCP-server** med AI Toolkit-mallar  
+- [x] **Uppgraderat till senaste MCP SDK** (v1.9.3) för förbättrad funktionalitet  
+- [x] **Konfigurerat professionella felsökningsarbetsflöden** för både Agent Builder och Inspector  
+- [x] **Satt upp MCP Inspector** för interaktiv servertestning  
+- [x] **Behärskat VS Code-felsökningskonfigurationer** för MCP-utveckling  
 
 ## 🔧 Avancerade funktioner som utforskats
 
@@ -381,10 +378,10 @@ Genom att slutföra denna labb har du:
 
 ## 📚 Ytterligare resurser
 
-- [MCP Python SDK Documentation](https://modelcontextprotocol.io/docs/sdk/python)
-- [AI Toolkit Extension Guide](https://code.visualstudio.com/docs/ai/ai-toolkit)
-- [VS Code Debugging Documentation](https://code.visualstudio.com/docs/editor/debugging)
-- [Model Context Protocol Specification](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [MCP Python SDK Documentation](https://modelcontextprotocol.io/docs/sdk/python)  
+- [AI Toolkit Extension Guide](https://code.visualstudio.com/docs/ai/ai-toolkit)  
+- [VS Code Debugging Documentation](https://code.visualstudio.com/docs/editor/debugging)  
+- [Model Context Protocol Specification](https://modelcontextprotocol.io/docs/concepts/architecture)  
 
 ---
 
@@ -392,13 +389,12 @@ Genom att slutföra denna labb har du:
 
 ### 🔜 Fortsätt till nästa modul
 
-Redo att använda dina MCP-kunskaper i ett verkligt utvecklingsflöde? Fortsätt till **[Module 4: Practical MCP Development - Custom GitHub Clone Server](../lab4/README.md)** där du kommer att:
-
-- Bygga en produktionsklar MCP-server som automatiserar GitHub-repositorieoperationer
-- Implementera funktionalitet för att klona GitHub-repositorier via MCP
-- Integrera egna MCP-servrar med VS Code och GitHub Copilot Agent Mode
-- Testa och distribuera egna MCP-servrar i produktionsmiljöer
+Redo att använda dina MCP-kunskaper i ett verkligt utvecklingsflöde? Fortsätt till **[Modul 4: Praktisk MCP-utveckling - Egen GitHub Clone Server](../lab4/README.md)** där du kommer att:  
+- Bygga en produktionsklar MCP-server som automatiserar GitHub-repositorieoperationer  
+- Implementera funktionalitet för kloning av GitHub-repositorier via MCP  
+- Integrera egna MCP-servrar med VS Code och GitHub Copilot Agent Mode  
+- Testa och distribuera egna MCP-servrar i produktionsmiljöer  
 - Lära dig praktisk arbetsflödesautomatisering för utvecklare
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess ursprungsspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.

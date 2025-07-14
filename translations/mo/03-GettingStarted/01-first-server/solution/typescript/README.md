@@ -2,53 +2,53 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac67652abc453e2a7e2c75cd7a8897ae",
-  "translation_date": "2025-05-17T09:21:27+00:00",
+  "translation_date": "2025-07-13T18:03:49+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/typescript/README.md",
   "language_code": "mo"
 }
 -->
-# تشغيل هذا النموذج
+# 執行此範例
 
-يوصى بتثبيت `uv` ولكن ليس ضرورياً، راجع [التعليمات](https://docs.astral.sh/uv/#highlights)
+建議安裝 `uv`，但非必要，詳情請參考 [instructions](https://docs.astral.sh/uv/#highlights)
 
-## -1- تثبيت التبعيات
+## -1- 安裝相依套件
 
 ```bash
 npm install
 ```
 
-## -3- تشغيل النموذج
+## -3- 執行範例
 
 ```bash
 npm run build
 ```
 
-## -4- اختبار النموذج
+## -4- 測試範例
 
-مع تشغيل الخادم في نافذة طرفية واحدة، افتح نافذة طرفية أخرى وشغل الأمر التالي:
+在一個終端機啟動伺服器後，開啟另一個終端機並執行以下指令：
 
 ```bash
 npm run inspector
 ```
 
-يجب أن يبدأ هذا تشغيل خادم ويب بواجهة مرئية تسمح لك باختبار النموذج.
+這會啟動一個帶有視覺介面的網頁伺服器，讓你可以測試範例。
 
-بمجرد اتصال الخادم:
+伺服器連線後：
 
-- حاول سرد الأدوات وتشغيل `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- 試著列出工具並執行 `add`，參數為 2 和 4，結果應該會顯示 6。
+- 前往 resources 和 resource template，呼叫 "greeting"，輸入一個名字，你應該會看到帶有你輸入名字的問候語。
 
-### Testing in CLI mode
+### CLI 模式測試
 
-The inspector you ran is actually a Node.js app and `mcp dev` هو غلاف حولها.
+你執行的 inspector 實際上是個 Node.js 應用程式，而 `mcp dev` 是它的包裝器。
 
-يمكنك تشغيله مباشرة في وضع CLI عن طريق تشغيل الأمر التالي:
+你也可以直接用 CLI 模式啟動，執行以下指令：
 
 ```bash
 npx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/list
 ```
 
-سيقوم هذا بسرد جميع الأدوات المتاحة في الخادم. يجب أن ترى المخرجات التالية:
+這會列出伺服器中所有可用的工具。你應該會看到以下輸出：
 
 ```text
 {
@@ -79,13 +79,13 @@ npx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/l
 }
 ```
 
-لإستدعاء أداة، اكتب:
+要呼叫工具，輸入：
 
 ```bash
 nnpx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-يجب أن ترى المخرجات التالية:
+你應該會看到以下輸出：
 
 ```text
 {
@@ -100,7 +100,8 @@ nnpx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/
 ```
 
 > ![!TIP]
-> عادة ما يكون تشغيل المفتش في وضع CLI أسرع بكثير من تشغيله في المتصفح.
-> اقرأ المزيد عن المفتش [هنا](https://github.com/modelcontextprotocol/inspector).
+> 通常在 CLI 模式下執行 inspector 比在瀏覽器中快很多。
+> 更多關於 inspector 的資訊請參考 [here](https://github.com/modelcontextprotocol/inspector)。
 
-I'm sorry, but I need clarification on what language "mo" refers to. Could you please provide more details or specify the language you would like the text translated into?
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

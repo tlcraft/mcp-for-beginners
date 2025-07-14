@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
-  "translation_date": "2025-07-04T17:05:08+00:00",
+  "translation_date": "2025-07-13T18:14:38+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "it"
 }
@@ -19,11 +19,11 @@ Prendiamoci il tempo nella prossima sezione esercizi per analizzare ogni frammen
 
 ## Esercizio: Scrivere un client
 
-Come detto sopra, prendiamoci il tempo per spiegare il codice e, se vuoi, segui il codice passo passo.
+Come detto sopra, prendiamoci il tempo per spiegare il codice, e sentitevi liberi di scrivere il codice insieme a noi se volete.
 
 ### -1- Importare le librerie
 
-Importiamo le librerie di cui abbiamo bisogno, ci serviranno riferimenti a un client e al protocollo di trasporto scelto, stdio. stdio è un protocollo pensato per esecuzioni sulla tua macchina locale. SSE è un altro protocollo di trasporto che mostreremo nei capitoli futuri, ma questa è la tua altra opzione. Per ora, continuiamo con stdio.
+Importiamo le librerie di cui abbiamo bisogno, ci serviranno riferimenti a un client e al protocollo di trasporto scelto, stdio. stdio è un protocollo pensato per esecuzioni sulla macchina locale. SSE è un altro protocollo di trasporto che mostreremo nei capitoli futuri, ma questa è la vostra altra opzione. Per ora, continuiamo con stdio.
 
 Passiamo ora all'istanza.
 
@@ -43,11 +43,11 @@ Per invocare le funzionalità dobbiamo assicurarci di specificare gli argomenti 
 
 ### -5- Eseguire il client
 
-Per eseguire il client, digita il seguente comando nel terminale:
+Per eseguire il client, digitate il seguente comando nel terminale:
 
 ## Compito
 
-In questo compito, utilizzerai ciò che hai imparato per creare un client, ma questa volta uno tutto tuo.
+In questo compito, utilizzerai ciò che hai imparato per creare un client, ma questa volta un client tutto tuo.
 
 Ecco un server che puoi usare e che devi chiamare tramite il codice del tuo client, prova ad aggiungere più funzionalità al server per renderlo più interessante.
 

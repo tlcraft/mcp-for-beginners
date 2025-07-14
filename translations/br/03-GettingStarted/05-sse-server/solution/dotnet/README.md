@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2a58caa6e11faa09470b7f81e6729652",
-  "translation_date": "2025-06-18T05:57:05+00:00",
+  "translation_date": "2025-07-13T20:09:42+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "br"
 }
@@ -35,9 +35,9 @@ Isso deve iniciar um servidor web com uma interface visual que permite testar o 
 
 > Certifique-se de que o **SSE** está selecionado como tipo de transporte, e que a URL é `http://localhost:3001/sse`.
 
-Once the server is connected: 
+Uma vez que o servidor esteja conectado:
 
-- try listing tools and run `add`, com os argumentos 2 e 4, você deverá ver 6 no resultado.
+- tente listar as ferramentas e execute `add`, com os argumentos 2 e 4, você deve ver 6 no resultado.
 - vá para resources e resource template e chame "greeting", digite um nome e você verá uma saudação com o nome que forneceu.
 
 ### Testando no modo CLI
@@ -48,7 +48,7 @@ Você pode iniciar diretamente no modo CLI executando o seguinte comando:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Isso listará todas as ferramentas disponíveis no servidor. Você deverá ver a seguinte saída:
+Isso listará todas as ferramentas disponíveis no servidor. Você deve ver a seguinte saída:
 
 ```text
 {
@@ -86,7 +86,7 @@ Para invocar uma ferramenta, digite:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Você deverá ver a seguinte saída:
+Você deve ver a seguinte saída:
 
 ```text
 {
@@ -105,4 +105,4 @@ Você deverá ver a seguinte saída:
 > Leia mais sobre o inspector [aqui](https://github.com/modelcontextprotocol/inspector).
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

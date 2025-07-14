@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-06-10T06:17:27+00:00",
+  "translation_date": "2025-07-14T08:18:21+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
   "language_code": "hu"
 }
 -->
-# 🔧 Modul 3: Fejlett MCP Fejlesztés AI Toolkit-kel
+# 🔧 Modul 3: Fejlett MCP Fejlesztés az AI Toolkit segítségével
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
 ![AI Toolkit](https://img.shields.io/badge/AI_Toolkit-Required-orange?style=flat-square)
@@ -20,22 +20,22 @@ CO_OP_TRANSLATOR_METADATA:
 A labor végére képes leszel:
 
 - ✅ Egyedi MCP szervereket létrehozni az AI Toolkit segítségével
-- ✅ Beállítani és használni a legújabb MCP Python SDK-t (v1.9.3)
+- ✅ Beállítani és használni a legfrissebb MCP Python SDK-t (v1.9.3)
 - ✅ Telepíteni és használni az MCP Inspectort hibakereséshez
 - ✅ Hibakeresni MCP szervereket mind az Agent Builder, mind az Inspector környezetben
 - ✅ Megérteni a fejlett MCP szerverfejlesztési munkafolyamatokat
 
 ## 📋 Előfeltételek
 
-- A 2. labor (MCP alapok) elvégzése
-- VS Code AI Toolkit kiterjesztéssel
+- A 2. labor (MCP Alapok) elvégzése
+- VS Code AI Toolkit kiterjesztéssel telepítve
 - Python 3.10+ környezet
 - Node.js és npm az Inspector telepítéséhez
 
 ## 🏗️ Amit építeni fogsz
 
 Ebben a laborban egy **Weather MCP Server**-t hozol létre, amely bemutatja:
-- Egyedi MCP szerver megvalósítást
+- Egyedi MCP szerver megvalósítását
 - Integrációt az AI Toolkit Agent Builderrel
 - Professzionális hibakeresési munkafolyamatokat
 - Modern MCP SDK használati mintákat
@@ -45,40 +45,40 @@ Ebben a laborban egy **Weather MCP Server**-t hozol létre, amely bemutatja:
 ## 🔧 Fő komponensek áttekintése
 
 ### 🐍 MCP Python SDK  
-A Model Context Protocol Python SDK az alapot nyújtja egyedi MCP szerverek építéséhez. A 1.9.3-as verziót használjuk, amely fejlettebb hibakeresési lehetőségeket kínál.
+A Model Context Protocol Python SDK adja az alapot az egyedi MCP szerverek építéséhez. A 1.9.3-as verziót használod, amely fejlett hibakeresési funkciókat tartalmaz.
 
 ### 🔍 MCP Inspector  
-Egy erőteljes hibakereső eszköz, amely:
-- Valós idejű szerverfigyelést biztosít
-- Eszközök futtatásának vizualizálását
-- Hálózati kérések és válaszok ellenőrzését
+Egy erőteljes hibakereső eszköz, amely lehetővé teszi:
+- A szerver valós idejű monitorozását
+- Az eszközök futtatásának vizualizálását
+- Hálózati kérések és válaszok vizsgálatát
 - Interaktív tesztelési környezetet
 
 ---
 
 ## 📖 Lépésről lépésre megvalósítás
 
-### 1. lépés: WeatherAgent létrehozása az Agent Builderben
+### 1. lépés: Hozz létre egy WeatherAgent-et az Agent Builderben
 
 1. **Indítsd el az Agent Buildert** a VS Code AI Toolkit kiterjesztésén keresztül  
-2. **Hozz létre egy új agentet** az alábbi beállításokkal:  
-   - Agent név: `WeatherAgent`
+2. **Hozz létre egy új agentet** a következő beállításokkal:  
+   - Agent neve: `WeatherAgent`
 
 ![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.hu.png)
 
-### 2. lépés: MCP szerver projekt inicializálása
+### 2. lépés: Inicializáld az MCP Server projektet
 
-1. **Navigálj a Tools → Add Tool menüpontra** az Agent Builderben  
-2. **Válaszd az "MCP Server" lehetőséget**  
-3. **Válaszd a "Create A new MCP Server" opciót**  
-4. **Válaszd ki a `python-weather` sablont**  
-5. **Nevezd el a szervert:** `weather_mcp`
+1. **Navigálj a Tools → Add Tool** menüpontra az Agent Builderben  
+2. **Válaszd ki az "MCP Server" opciót**  
+3. **Válaszd a "Create A new MCP Server" lehetőséget**  
+4. **Válaszd a `python-weather` sablont**  
+5. **Nevezd el a szervered:** `weather_mcp`
 
 ![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.hu.png)
 
-### 3. lépés: Projekt megnyitása és átnézése
+### 3. lépés: Nyisd meg és vizsgáld meg a projektet
 
-1. **Nyisd meg a létrehozott projektet** VS Code-ban  
+1. **Nyisd meg a generált projektet** a VS Code-ban  
 2. **Tekintsd át a projekt struktúráját:**  
    ```
    weather_mcp/
@@ -95,35 +95,33 @@ Egy erőteljes hibakereső eszköz, amely:
    └── README.md
    ```
 
-### 4. lépés: Frissítés a legújabb MCP SDK-ra
+### 4. lépés: Frissítsd a legújabb MCP SDK-ra
 
 > **🔍 Miért frissítsünk?** A legújabb MCP SDK-t (v1.9.3) és Inspector szolgáltatást (0.14.0) szeretnénk használni a fejlettebb funkciók és jobb hibakeresés érdekében.
 
 #### 4a. Python függőségek frissítése
 
-**Szerkeszd a `pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
+**Szerkeszd a `pyproject.toml` fájlt:** frissítsd a [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml) fájlt
 
+#### 4b. Inspector konfiguráció frissítése
 
-#### 4b. Update Inspector Configuration
+**Szerkeszd az `inspector/package.json` fájlt:** frissítsd a [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json) fájlt
 
-**Edit `inspector/package.json`:** update [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
+#### 4c. Inspector függőségek frissítése
 
-#### 4c. Update Inspector Dependencies
+**Szerkeszd az `inspector/package-lock.json` fájlt:** frissítsd a [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json) fájlt
 
-**Edit `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
+> **📝 Megjegyzés:** Ez a fájl kiterjedt függőségdefiníciókat tartalmaz. Lentebb a lényeges szerkezet látható – a teljes tartalom biztosítja a helyes függőségkezelést.
 
-> **📝 Note:** This file contains extensive dependency definitions. Below is the essential structure - the full content ensures proper dependency resolution.
+> **⚡ Teljes Package Lock:** A teljes package-lock.json körülbelül 3000 sor függőségdefiníciót tartalmaz. A fentiek a kulcsfontosságú szerkezetet mutatják – a teljes függőségkezeléshez használd a mellékelt fájlt.
 
+### 5. lépés: VS Code hibakeresés beállítása
 
-> **⚡ Full Package Lock:** The complete package-lock.json contains ~3000 lines of dependency definitions. The above shows the key structure - use the provided file for complete dependency resolution.
+*Megjegyzés: Kérjük, másold át a megadott elérési úton található fájlt a helyi fájl felülírásához*
 
-### Step 5: Configure VS Code Debugging
+#### 5a. Indítási konfiguráció frissítése
 
-*Note: Please copy the file in the specified path to replace the corresponding local file*
-
-#### 5a. Update Launch Configuration
-
-**Edit `.vscode/launch.json` fájlokat:**
+**Szerkeszd a `.vscode/launch.json` fájlt:**
 
 ```json
 {
@@ -302,7 +300,6 @@ Egy erőteljes hibakereső eszköz, amely:
 }
 ```
 
-
 ---
 
 ## 🚀 MCP szerver futtatása és tesztelése
@@ -322,14 +319,14 @@ cd inspector
 npm install
 ```
 
-### 7. lépés: Hibakeresés Agent Builderrel
+### 7. lépés: Hibakeresés az Agent Builderrel
 
 1. **Nyomd meg az F5-öt** vagy válaszd a **"Debug in Agent Builder"** konfigurációt  
 2. **Válaszd ki az összetett konfigurációt** a hibakereső panelen  
 3. **Várd meg, amíg elindul a szerver és megnyílik az Agent Builder**  
-4. **Teszteld az időjárás MCP szervert természetes nyelvű lekérdezésekkel**
+4. **Teszteld az időjárás MCP szerveredet természetes nyelvű lekérdezésekkel**
 
-Például ilyen bemenettel:
+Írj be például ilyet:
 
 SYSTEM_PROMPT
 
@@ -345,15 +342,15 @@ How's the weather like in Seattle
 
 ![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.hu.png)
 
-### 8. lépés: Hibakeresés MCP Inspectorral
+### 8. lépés: Hibakeresés az MCP Inspectorral
 
 1. **Használd a "Debug in Inspector" konfigurációt** (Edge vagy Chrome böngészőben)  
 2. **Nyisd meg az Inspector felületét** a `http://localhost:6274` címen  
 3. **Fedezd fel az interaktív tesztelési környezetet:**  
-   - Elérhető eszközök megtekintése  
-   - Eszközök futtatásának tesztelése  
-   - Hálózati kérések figyelése  
-   - Szerver válaszainak hibakeresése
+   - Nézd meg az elérhető eszközöket  
+   - Teszteld az eszközök futtatását  
+   - Figyeld a hálózati kéréseket  
+   - Hibakeresd a szerver válaszait
 
 ![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.hu.png)
 
@@ -361,22 +358,22 @@ How's the weather like in Seattle
 
 ## 🎯 Fő tanulságok
 
-A labor elvégzése után:
+A labor elvégzésével:
 
-- [x] **Létrehoztál egyedi MCP szervert** AI Toolkit sablonok használatával  
-- [x] **Frissítettél a legújabb MCP SDK-ra** (v1.9.3) a bővített funkciókért  
-- [x] **Beállítottál professzionális hibakeresési munkafolyamatokat** mind Agent Builderben, mind Inspectorban  
+- [x] **Létrehoztál egy egyedi MCP szervert** az AI Toolkit sablonjai alapján  
+- [x] **Frissítettél a legújabb MCP SDK-ra** (v1.9.3) a jobb funkcionalitásért  
+- [x] **Beállítottál professzionális hibakeresési munkafolyamatokat** mind az Agent Builder, mind az Inspector számára  
 - [x] **Telepítetted az MCP Inspectort** az interaktív szerverteszteléshez  
-- [x] **Megtapasztaltad a VS Code hibakeresési konfigurációit** MCP fejlesztéshez
+- [x] **Elsajátítottad a VS Code hibakeresési konfigurációit** MCP fejlesztéshez
 
-## 🔧 Feltárt fejlett funkciók
+## 🔧 Felfedezett fejlett funkciók
 
 | Funkció | Leírás | Használati eset |
 |---------|---------|-----------------|
 | **MCP Python SDK v1.9.3** | Legújabb protokoll implementáció | Modern szerverfejlesztés |
 | **MCP Inspector 0.14.0** | Interaktív hibakereső eszköz | Valós idejű szervertesztelés |
 | **VS Code hibakeresés** | Integrált fejlesztői környezet | Professzionális hibakeresési munkafolyamat |
-| **Agent Builder integráció** | Közvetlen AI Toolkit kapcsolat | Teljes körű agent tesztelés |
+| **Agent Builder integráció** | Közvetlen AI Toolkit kapcsolat | Végponttól végpontig terjedő agent tesztelés |
 
 ## 📚 További források
 
@@ -387,16 +384,16 @@ A labor elvégzése után:
 
 ---
 
-**🎉 Gratulálunk!** Sikeresen befejezted a 3. laboratóriumot, és most már képes vagy egyedi MCP szervereket létrehozni, hibakeresni és éles környezetbe telepíteni professzionális fejlesztési munkafolyamatok segítségével.
+**🎉 Gratulálunk!** Sikeresen befejezted a 3. labort, és most már képes vagy egyedi MCP szervereket létrehozni, hibakeresni és telepíteni professzionális fejlesztési munkafolyamatokkal.
 
 ### 🔜 Folytatás a következő modullal
 
-Készen állsz, hogy a megszerzett MCP tudásodat valós fejlesztési munkafolyamatokban is használd? Folytasd a **[4. modul: Gyakorlati MCP fejlesztés – Egyedi GitHub klón szerver](../lab4/README.md)**-hez, ahol:  
-- Egy éles környezetbe alkalmas MCP szervert építesz, amely automatizálja a GitHub tároló műveleteket  
-- Megvalósítod a GitHub tároló klónozását MCP-n keresztül  
-- Integrálod az egyedi MCP szervereket VS Code-dal és GitHub Copilot Agent Mode-dal  
-- Teszteled és telepíted az egyedi MCP szervereket éles környezetben  
+Készen állsz, hogy az MCP tudásodat valós fejlesztési munkafolyamatban alkalmazd? Folytasd a **[4. modul: Gyakorlati MCP fejlesztés – Egyedi GitHub klón szerver](../lab4/README.md)** modullal, ahol:  
+- Egy éles környezetbe szánt MCP szervert építesz, amely automatizálja a GitHub tárhely műveleteket  
+- Megvalósítod a GitHub tárhely klónozását MCP-n keresztül  
+- Integrálod az egyedi MCP szervereket a VS Code-dal és a GitHub Copilot Agent Mode-dal  
+- Teszteled és élesíted az egyedi MCP szervereket  
 - Megtanulod a fejlesztők számára hasznos munkafolyamat-automatizálást
 
-**Felelősségkizárás**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális, emberi fordítást igénybe venni. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

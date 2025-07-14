@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a607d4febc94caee9a12b77795f7fc9a",
-  "translation_date": "2025-06-11T16:50:49+00:00",
+  "translation_date": "2025-07-13T15:18:18+00:00",
   "source_file": "study_guide.md",
   "language_code": "ro"
 }
 -->
 # Model Context Protocol (MCP) pentru Începători - Ghid de Studiu
 
-Acest ghid de studiu oferă o prezentare generală a structurii și conținutului repository-ului pentru curriculumul „Model Context Protocol (MCP) pentru Începători”. Folosește acest ghid pentru a naviga eficient prin repository și pentru a valorifica la maximum resursele disponibile.
+Acest ghid de studiu oferă o prezentare generală a structurii și conținutului repository-ului pentru curriculumul „Model Context Protocol (MCP) pentru Începători”. Folosește acest ghid pentru a naviga eficient prin repository și pentru a profita la maximum de resursele disponibile.
 
 ## Prezentare Generală a Repository-ului
 
-Model Context Protocol (MCP) este un cadru standardizat pentru interacțiunile dintre modelele AI și aplicațiile client. Acest repository oferă un curriculum complet cu exemple practice de cod în C#, Java, JavaScript, Python și TypeScript, destinat dezvoltatorilor AI, arhitecților de sistem și inginerilor software.
+Model Context Protocol (MCP) este un cadru standardizat pentru interacțiunile dintre modelele AI și aplicațiile client. Acest repository oferă un curriculum complet cu exemple practice de cod în C#, Java, JavaScript, Python și TypeScript, destinat dezvoltatorilor AI, arhitecților de sisteme și inginerilor software.
 
-## Harta Vizuală a Curriculumului
+## Hartă Vizuală a Curriculumului
 
 ```mermaid
 mindmap
@@ -92,8 +92,8 @@ Repository-ul este organizat în zece secțiuni principale, fiecare concentrând
 
 1. **Introducere (00-Introduction/)**
    - Prezentare generală a Model Context Protocol
-   - Importanța standardizării în pipeline-urile AI
-   - Cazuri practice și beneficii
+   - De ce este importantă standardizarea în pipeline-urile AI
+   - Cazuri practice de utilizare și beneficii
 
 2. **Concepte de Bază (01-CoreConcepts/)**
    - Arhitectura client-server
@@ -102,96 +102,96 @@ Repository-ul este organizat în zece secțiuni principale, fiecare concentrând
 
 3. **Securitate (02-Security/)**
    - Amenințări de securitate în sistemele bazate pe MCP
-   - Cele mai bune practici pentru securizarea implementărilor
+   - Cele mai bune practici pentru implementări sigure
    - Strategii de autentificare și autorizare
 
-4. **Primii Pași (03-GettingStarted/)**
+4. **Începutul Lucrului (03-GettingStarted/)**
    - Configurarea și pregătirea mediului
-   - Crearea primilor serveri și clienți MCP
+   - Crearea primelor servere și clienți MCP
    - Integrarea cu aplicații existente
    - Subsecțiuni pentru primul server, primul client, client LLM, integrare VS Code, server SSE, AI Toolkit, testare și implementare
 
 5. **Implementare Practică (04-PracticalImplementation/)**
    - Utilizarea SDK-urilor în diferite limbaje de programare
    - Tehnici de depanare, testare și validare
-   - Crearea de șabloane și fluxuri de lucru reutilizabile
-   - Proiecte exemplu cu implementări
+   - Crearea de șabloane și fluxuri de lucru reutilizabile pentru prompturi
+   - Proiecte exemplu cu implementări practice
 
 6. **Subiecte Avansate (05-AdvancedTopics/)**
    - Fluxuri de lucru AI multimodale și extensibilitate
    - Strategii sigure de scalare
-   - MCP în ecosistemele enterprise
-   - Subiecte specializate precum integrarea Azure, multimodalitate, OAuth2, root contexts, rutare, sampling, scalare, securitate, integrare web search și streaming
+   - MCP în ecosisteme enterprise
+   - Subiecte specializate, inclusiv integrare Azure, multimodalitate, OAuth2, contexte root, rutare, sampling, scalare, securitate, integrare căutare web și streaming.
 
-7. **Contribuții Comunitare (06-CommunityContributions/)**
+7. **Contribuții din Comunitate (06-CommunityContributions/)**
    - Cum să contribui cu cod și documentație
-   - Colaborarea prin GitHub
+   - Colaborare prin GitHub
    - Îmbunătățiri și feedback din partea comunității
 
 8. **Lecții din Primele Implementări (07-LessonsfromEarlyAdoption/)**
    - Implementări reale și povești de succes
-   - Construirea și lansarea soluțiilor bazate pe MCP
-   - Tendințe și planuri viitoare
+   - Construirea și implementarea soluțiilor bazate pe MCP
+   - Tendințe și planuri de viitor
 
 9. **Cele Mai Bune Practici (08-BestPractices/)**
-   - Optimizarea performanței
-   - Proiectarea sistemelor MCP rezistente la erori
+   - Optimizare și tuning de performanță
+   - Proiectarea sistemelor MCP tolerante la erori
    - Strategii de testare și reziliență
 
 10. **Studii de Caz (09-CaseStudy/)**
     - Analize detaliate ale arhitecturilor soluțiilor MCP
-    - Scheme de implementare și sfaturi de integrare
-    - Diagrame explicative și parcurgeri ale proiectelor
+    - Planuri de implementare și sfaturi de integrare
+    - Diagrame comentate și prezentări ale proiectelor
 
 11. **Atelier Practic (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - Atelier practic complet care combină MCP cu AI Toolkit de la Microsoft pentru VS Code
-    - Construirea de aplicații inteligente care leagă modelele AI de unelte reale
-    - Module practice ce acoperă fundamentele, dezvoltarea serverului personalizat și strategii de implementare în producție
+    - Construirea de aplicații inteligente care leagă modelele AI de instrumente reale
+    - Module practice care acoperă fundamente, dezvoltarea serverului personalizat și strategii de implementare în producție
 
 ## Proiecte Exemplu
 
-Repository-ul include mai multe proiecte exemplu care demonstrează implementarea MCP în diverse limbaje de programare:
+Repository-ul include mai multe proiecte exemplu care demonstrează implementarea MCP în diferite limbaje de programare:
 
-### Exemple de Calculatoare MCP de Bază
+### Exemple de Calculator MCP de Bază
 - Exemplu C# MCP Server
 - Calculator Java MCP
 - Demo JavaScript MCP
 - Server Python MCP
 - Exemplu TypeScript MCP
 
-### Proiecte Avansate de Calculatoare MCP
+### Proiecte Avansate de Calculator MCP
 - Exemplu avansat C#
-- Aplicație Container Java
+- Exemplu aplicație container Java
 - Exemplu avansat JavaScript
 - Implementare complexă Python
-- Exemplu Container TypeScript
+- Exemplu container TypeScript
 
 ## Resurse Suplimentare
 
 Repository-ul include resurse suport:
 
-- **Folderul Images**: Conține diagrame și ilustrații folosite pe parcursul curriculumului
+- **Folderul Images**: Conține diagrame și ilustrații folosite în tot curriculumul
 - **Traduceri**: Suport multilingv cu traduceri automate ale documentației
-- **Resurse oficiale MCP**:
+- **Resurse Oficiale MCP**:
   - [MCP Documentation](https://modelcontextprotocol.io/)
   - [MCP Specification](https://spec.modelcontextprotocol.io/)
   - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## Cum să Folosești Acest Repository
 
-1. **Învățare Secvențială**: Urmează capitolele în ordine (00 până la 10) pentru o experiență structurată.
-2. **Focus pe Limbajul Preferat**: Dacă ești interesat de un anumit limbaj de programare, explorează directoarele de exemple pentru implementări în limbajul ales.
+1. **Învățare Secvențială**: Parcurge capitolele în ordine (de la 00 la 10) pentru o experiență de învățare structurată.
+2. **Focus pe Limbajul Preferat**: Dacă ești interesat de un anumit limbaj de programare, explorează directoarele cu exemple pentru implementări în limbajul tău preferat.
 3. **Implementare Practică**: Începe cu secțiunea „Getting Started” pentru a-ți configura mediul și a crea primul server și client MCP.
-4. **Explorare Avansată**: După ce stăpânești bazele, aprofundează subiectele avansate pentru a-ți extinde cunoștințele.
-5. **Implicare în Comunitate**: Alătură-te [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) pentru a interacționa cu experți și alți dezvoltatori.
+4. **Explorare Avansată**: După ce stăpânești elementele de bază, aprofundează subiectele avansate pentru a-ți extinde cunoștințele.
+5. **Implicare în Comunitate**: Alătură-te [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) pentru a te conecta cu experți și alți dezvoltatori.
 
 ## Contribuții
 
-Acest repository primește cu plăcere contribuții din partea comunității. Consultă secțiunea Community Contributions pentru indicații despre cum să contribui.
+Acest repository primește cu plăcere contribuții din partea comunității. Consultă secțiunea Community Contributions pentru îndrumări despre cum să contribui.
 
 ---
 
-*Acest ghid de studiu a fost creat pe 11 iunie 2025 și oferă o privire de ansamblu a repository-ului la acea dată. Conținutul repository-ului poate fi fost actualizat între timp.*
+*Acest ghid de studiu a fost creat pe 11 iunie 2025 și oferă o prezentare a repository-ului la acea dată. Conținutul repository-ului poate fi actualizat ulterior.*
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

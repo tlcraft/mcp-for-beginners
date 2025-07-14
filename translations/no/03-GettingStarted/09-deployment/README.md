@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T17:44:39+00:00",
+  "translation_date": "2025-07-13T22:09:27+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "no"
 }
 -->
 # Distribuere MCP-servere
 
-Å distribuere MCP-serveren din gjør det mulig for andre å få tilgang til verktøyene og ressursene utover ditt lokale miljø. Det finnes flere distribusjonsstrategier å vurdere, avhengig av dine krav til skalerbarhet, pålitelighet og enkel administrasjon. Nedenfor finner du veiledning for å distribuere MCP-servere lokalt, i containere og i skyen.
+Å distribuere MCP-serveren din gjør det mulig for andre å få tilgang til verktøyene og ressursene utenfor ditt lokale miljø. Det finnes flere distribusjonsstrategier å vurdere, avhengig av dine krav til skalerbarhet, pålitelighet og enkel administrasjon. Nedenfor finner du veiledning for å distribuere MCP-servere lokalt, i containere og i skyen.
 
 ## Oversikt
 
@@ -44,9 +44,9 @@ MCP-servere kan distribueres til ulike skyplattformer:
 
 ### Eksempel: Azure Container Apps
 
-Azure Container Apps støtter distribusjon av MCP-servere. Det er fortsatt under utvikling, og støtter for øyeblikket SSE-servere.
+Azure Container Apps støtter distribusjon av MCP-servere. Dette er fortsatt under utvikling, og støtter for øyeblikket SSE-servere.
 
-Slik kan du gjøre det:
+Slik kan du gå frem:
 
 1. Klon et repo:
 
@@ -100,7 +100,7 @@ Slik kan du gjøre det:
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-Der har du det, distribuer det lokalt, eller distribuer det til Azure ved å følge disse stegene.
+Der har du det, distribuer det lokalt eller til Azure ved å følge disse stegene.
 
 ## Ekstra ressurser
 

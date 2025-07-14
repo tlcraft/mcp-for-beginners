@@ -2,29 +2,29 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-29T20:26:51+00:00",
+  "translation_date": "2025-07-13T23:32:13+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "br"
 }
 -->
-# Model Context Protocol (MCP) Implementação em Python
+# Implementação Python do Model Context Protocol (MCP)
 
-Este repositório contém uma implementação em Python do Model Context Protocol (MCP), demonstrando como criar tanto uma aplicação servidor quanto cliente que se comunicam usando o padrão MCP.
+Este repositório contém uma implementação em Python do Model Context Protocol (MCP), demonstrando como criar uma aplicação servidor e cliente que se comunicam usando o padrão MCP.
 
 ## Visão Geral
 
 A implementação do MCP consiste em dois componentes principais:
 
-1. **MCP Server (`server.py`)** - Um servidor que expõe:
+1. **Servidor MCP (`server.py`)** - Um servidor que expõe:
    - **Ferramentas**: Funções que podem ser chamadas remotamente
    - **Recursos**: Dados que podem ser recuperados
    - **Prompts**: Modelos para gerar prompts para modelos de linguagem
 
-2. **MCP Client (`client.py`)** - Uma aplicação cliente que se conecta ao servidor e usa suas funcionalidades
+2. **Cliente MCP (`client.py`)** - Uma aplicação cliente que se conecta ao servidor e utiliza seus recursos
 
 ## Funcionalidades
 
-Esta implementação demonstra várias funcionalidades chave do MCP:
+Esta implementação demonstra várias funcionalidades principais do MCP:
 
 ### Ferramentas
 - `completion` - Gera textos completados a partir de modelos de IA (simulado)
@@ -88,7 +88,7 @@ python client.py
 Isso irá conectar ao servidor e utilizar todas as funcionalidades, incluindo ferramentas, recursos e prompts. A saída mostrará:
 
 1. Resultado da ferramenta calculadora (5 + 7 = 12)
-2. Resposta da ferramenta de completamento para "Qual é o sentido da vida?"
+2. Resposta da ferramenta completion para "Qual é o sentido da vida?"
 3. Lista dos modelos de IA disponíveis
 4. Saudação personalizada para "MCP Explorer"
 5. Modelo de prompt para revisão de código
@@ -113,7 +113,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-O cliente usa a biblioteca MCP client para se conectar e chamar o servidor:
+O cliente usa a biblioteca cliente MCP para se conectar e chamar o servidor:
 
 ```python
 async with stdio_client(server_params) as (reader, writer):
@@ -124,7 +124,7 @@ async with stdio_client(server_params) as (reader, writer):
 
 ## Saiba Mais
 
-Para mais informações sobre MCP, visite: https://modelcontextprotocol.io/
+Para mais informações sobre o MCP, visite: https://modelcontextprotocol.io/
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

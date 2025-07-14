@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ed9cab32cc67c12d8969b407aa47100a",
-  "translation_date": "2025-06-11T09:34:09+00:00",
+  "translation_date": "2025-07-13T17:55:16+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/java/README.md",
   "language_code": "nl"
 }
@@ -21,9 +21,9 @@ De service biedt de volgende API-eindpunten via het MCP-protocol:
 - `add(a, b)`: Tel twee getallen bij elkaar op
 - `subtract(a, b)`: Trek het tweede getal af van het eerste
 - `multiply(a, b)`: Vermenigvuldig twee getallen
-- `divide(a, b)`: Deel het eerste getal door het tweede (controle op nul)
+- `divide(a, b)`: Deel het eerste getal door het tweede (met controle op nul)
 - `power(base, exponent)`: Bereken de macht van een getal
-- `squareRoot(number)`: Bereken de vierkantswortel (controle op negatief getal)
+- `squareRoot(number)`: Bereken de wortel (met controle op negatieve getallen)
 - `modulus(a, b)`: Bereken de rest bij deling
 - `absolute(number)`: Bereken de absolute waarde
 
@@ -55,7 +55,7 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 
 ### Met MCP Inspector
 
-De MCP Inspector is een handig hulpmiddel om met MCP-services te werken. Om het te gebruiken met deze rekenmachine-service:
+De MCP Inspector is een handig hulpmiddel om met MCP-services te communiceren. Om het te gebruiken met deze calculatorservice:
 
 1. **Installeer en start MCP Inspector** in een nieuw terminalvenster:
    ```bash
@@ -66,11 +66,11 @@ De MCP Inspector is een handig hulpmiddel om met MCP-services te werken. Om het 
 
 3. **Configureer de verbinding**:
    - Stel het transporttype in op "SSE"
-   - Stel de URL in op het SSE-eindpunt van je draaiende server: `http://localhost:8080/sse`
+   - Stel de URL in op de SSE-eindpunt van je draaiende server: `http://localhost:8080/sse`
    - Klik op "Connect"
 
 4. **Gebruik de tools**:
-   - Klik op "List Tools" om beschikbare rekenmachinebewerkingen te zien
+   - Klik op "List Tools" om beschikbare rekenkundige bewerkingen te zien
    - Selecteer een tool en klik op "Run Tool" om een bewerking uit te voeren
 
 ![MCP Inspector Screenshot](../../../../../../translated_images/tool.40e180a7b0d0fe2067cf96435532b01f63f7f8619d6b0132355a04b426b669ac.nl.png)

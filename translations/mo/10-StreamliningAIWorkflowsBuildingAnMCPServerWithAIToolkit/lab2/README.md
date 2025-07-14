@@ -2,60 +2,60 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a22b7dd11cd7690f99f9195877cafdc3",
-  "translation_date": "2025-06-10T05:39:27+00:00",
+  "translation_date": "2025-07-14T07:43:13+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab2/README.md",
   "language_code": "mo"
 }
 -->
-# 🌐 Module 2: MCP with AI Toolkit Fundamentals
+# 🌐 模組 2：MCP 與 AI Toolkit 基礎
 
 [![Duration](https://img.shields.io/badge/Duration-20%20minutes-blue.svg)]()
 [![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-yellow.svg)]()
 [![Prerequisites](https://img.shields.io/badge/Prerequisites-Module%201%20Complete-orange.svg)]()
 
-## 📋 Learning Objectives
+## 📋 學習目標
 
-By the end of this module, you will be able to:
-- ✅ Understand Model Context Protocol (MCP) architecture and benefits
-- ✅ Explore Microsoft's MCP server ecosystem
-- ✅ Integrate MCP servers with AI Toolkit Agent Builder
-- ✅ Build a functional browser automation agent using Playwright MCP
-- ✅ Configure and test MCP tools within your agents
-- ✅ Export and deploy MCP-powered agents for production use
+完成本模組後，您將能夠：
+- ✅ 了解 Model Context Protocol (MCP) 的架構與優勢
+- ✅ 探索 Microsoft 的 MCP 伺服器生態系
+- ✅ 將 MCP 伺服器整合至 AI Toolkit Agent Builder
+- ✅ 使用 Playwright MCP 建立功能完整的瀏覽器自動化代理
+- ✅ 在代理中設定並測試 MCP 工具
+- ✅ 匯出並部署具 MCP 功能的代理以供生產使用
 
-## 🎯 Building on Module 1
+## 🎯 建立在模組 1 的基礎上
 
-In Module 1, we mastered AI Toolkit basics and created our first Python Agent. Now we'll **supercharge** your agents by connecting them to external tools and services through the revolutionary **Model Context Protocol (MCP)**. 
+在模組 1 中，我們掌握了 AI Toolkit 的基礎並建立了第一個 Python 代理。現在，我們將透過革命性的 **Model Context Protocol (MCP)**，將您的代理升級，連接外部工具與服務。
 
-Think of this as upgrading from a basic calculator to a full computer - your AI agents will gain the ability to:
-- 🌐 Browse and interact with websites
-- 📁 Access and manipulate files
-- 🔧 Integrate with enterprise systems
-- 📊 Process real-time data from APIs
+可以把這比喻成從基本計算機升級到完整電腦——您的 AI 代理將具備以下能力：
+- 🌐 瀏覽並互動網站
+- 📁 存取與操作檔案
+- 🔧 整合企業系統
+- 📊 處理來自 API 的即時資料
 
-## 🧠 Understanding Model Context Protocol (MCP)
+## 🧠 了解 Model Context Protocol (MCP)
 
-### 🔍 What is MCP?
+### 🔍 什麼是 MCP？
 
-Model Context Protocol (MCP) is the **"USB-C for AI applications"** - a revolutionary open standard that connects Large Language Models (LLMs) to external tools, data sources, and services. Just as USB-C eliminated cable chaos by providing one universal connector, MCP eliminates AI integration complexity with one standardized protocol.
+Model Context Protocol (MCP) 是 AI 應用的 **「USB-C」** —— 一個革命性的開放標準，將大型語言模型（LLM）連接到外部工具、資料來源與服務。就像 USB-C 消除線材混亂，提供一個通用連接器，MCP 以單一標準協議消除 AI 整合的複雜性。
 
-### 🎯 The Problem MCP Solves
+### 🎯 MCP 解決的問題
 
-**Before MCP:**
-- 🔧 Custom integrations for every tool
-- 🔄 Vendor lock-in with proprietary solutions  
-- 🔒 Security vulnerabilities from ad-hoc connections
-- ⏱️ Months of development for basic integrations
+**MCP 出現前：**
+- 🔧 每個工具都需客製化整合
+- 🔄 供應商鎖定，依賴專有解決方案
+- 🔒 臨時連接帶來安全漏洞
+- ⏱️ 基本整合需耗費數月開發時間
 
-**With MCP:**
-- ⚡ Plug-and-play tool integration
-- 🔄 Vendor-agnostic architecture
-- 🛡️ Built-in security best practices
-- 🚀 Minutes to add new capabilities
+**有了 MCP：**
+- ⚡ 即插即用的工具整合
+- 🔄 供應商中立架構
+- 🛡️ 內建安全最佳實踐
+- 🚀 幾分鐘即可新增功能
 
-### 🏗️ MCP Architecture Deep Dive
+### 🏗️ MCP 架構深入解析
 
-MCP follows a **client-server architecture** that creates a secure, scalable ecosystem:
+MCP 採用 **客戶端-伺服器架構**，打造安全且可擴展的生態系：
 
 ```mermaid
 graph TB
@@ -71,203 +71,200 @@ graph TB
     F --> J[Enterprise Systems]
 ```
 
-**🔧 Core Components:**
+**🔧 核心元件：**
 
-| Component | Role | Examples |
+| 元件 | 角色 | 範例 |
 |-----------|------|----------|
-| **MCP Hosts** | Applications that consume MCP services | Claude Desktop, VS Code, AI Toolkit |
-| **MCP Clients** | Protocol handlers (1:1 with servers) | Built into host applications |
-| **MCP Servers** | Expose capabilities via standard protocol | Playwright, Files, Azure, GitHub |
-| **Transport Layer** | Communication methods | stdio, HTTP, WebSockets |
+| **MCP Hosts** | 使用 MCP 服務的應用程式 | Claude Desktop、VS Code、AI Toolkit |
+| **MCP Clients** | 協議處理器（與伺服器一對一） | 內建於 Host 應用程式中 |
+| **MCP Servers** | 透過標準協議提供功能 | Playwright、Files、Azure、GitHub |
+| **傳輸層** | 通訊方式 | stdio、HTTP、WebSockets |
 
+## 🏢 Microsoft 的 MCP 伺服器生態系
 
-## 🏢 Microsoft's MCP Server Ecosystem
+Microsoft 領導 MCP 生態系，提供一套企業級伺服器，滿足真實商業需求。
 
-Microsoft leads the MCP ecosystem with a comprehensive suite of enterprise-grade servers that address real-world business needs.
-
-### 🌟 Featured Microsoft MCP Servers
+### 🌟 Microsoft MCP 伺服器特色
 
 #### 1. ☁️ Azure MCP Server
-**🔗 Repository**: [azure/azure-mcp](https://github.com/azure/azure-mcp)
-**🎯 Purpose**: Comprehensive Azure resource management with AI integration
+**🔗 倉庫**：[azure/azure-mcp](https://github.com/azure/azure-mcp)  
+**🎯 目的**：結合 AI 的全面 Azure 資源管理
 
-**✨ Key Features:**
-- Declarative infrastructure provisioning
-- Real-time resource monitoring
-- Cost optimization recommendations
-- Security compliance checking
+**✨ 主要功能：**
+- 宣告式基礎架構配置
+- 即時資源監控
+- 成本優化建議
+- 安全合規檢查
 
-**🚀 Use Cases:**
-- Infrastructure-as-Code with AI assistance
-- Automated resource scaling
-- Cloud cost optimization
-- DevOps workflow automation
+**🚀 使用案例：**
+- AI 輔助的基礎架構即程式碼
+- 自動資源擴展
+- 雲端成本優化
+- DevOps 工作流程自動化
 
 #### 2. 📊 Microsoft Dataverse MCP
-**📚 Documentation**: [Microsoft Dataverse Integration](https://go.microsoft.com/fwlink/?linkid=2320176)
-**🎯 Purpose**: Natural language interface for business data
+**📚 文件**：[Microsoft Dataverse Integration](https://go.microsoft.com/fwlink/?linkid=2320176)  
+**🎯 目的**：商業資料的自然語言介面
 
-**✨ Key Features:**
-- Natural language database queries
-- Business context understanding
-- Custom prompt templates
-- Enterprise data governance
+**✨ 主要功能：**
+- 自然語言資料庫查詢
+- 商業情境理解
+- 自訂提示範本
+- 企業資料治理
 
-**🚀 Use Cases:**
-- Business intelligence reporting
-- Customer data analysis
-- Sales pipeline insights
-- Compliance data queries
+**🚀 使用案例：**
+- 商業智慧報告
+- 客戶資料分析
+- 銷售管道洞察
+- 合規資料查詢
 
 #### 3. 🌐 Playwright MCP Server
-**🔗 Repository**: [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)
-**🎯 Purpose**: Browser automation and web interaction capabilities
+**🔗 倉庫**：[microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)  
+**🎯 目的**：瀏覽器自動化與網頁互動功能
 
-**✨ Key Features:**
-- Cross-browser automation (Chrome, Firefox, Safari)
-- Intelligent element detection
-- Screenshot and PDF generation
-- Network traffic monitoring
+**✨ 主要功能：**
+- 跨瀏覽器自動化（Chrome、Firefox、Safari）
+- 智能元素偵測
+- 截圖與 PDF 產生
+- 網路流量監控
 
-**🚀 Use Cases:**
-- Automated testing workflows
-- Web scraping and data extraction
-- UI/UX monitoring
-- Competitive analysis automation
+**🚀 使用案例：**
+- 自動化測試流程
+- 網頁爬蟲與資料擷取
+- UI/UX 監控
+- 競爭分析自動化
 
 #### 4. 📁 Files MCP Server
-**🔗 Repository**: [microsoft/files-mcp-server](https://github.com/microsoft/files-mcp-server)
-**🎯 Purpose**: Intelligent file system operations
+**🔗 倉庫**：[microsoft/files-mcp-server](https://github.com/microsoft/files-mcp-server)  
+**🎯 目的**：智慧檔案系統操作
 
-**✨ Key Features:**
-- Declarative file management
-- Content synchronization
-- Version control integration
-- Metadata extraction
+**✨ 主要功能：**
+- 宣告式檔案管理
+- 內容同步
+- 版本控制整合
+- 元資料擷取
 
-**🚀 Use Cases:**
-- Documentation management
-- Code repository organization
-- Content publishing workflows
-- Data pipeline file handling
+**🚀 使用案例：**
+- 文件管理
+- 程式碼庫組織
+- 內容發佈流程
+- 資料管線檔案處理
 
 #### 5. 📝 MarkItDown MCP Server
-**🔗 Repository**: [microsoft/markitdown](https://github.com/microsoft/markitdown)
-**🎯 Purpose**: Advanced Markdown processing and manipulation
+**🔗 倉庫**：[microsoft/markitdown](https://github.com/microsoft/markitdown)  
+**🎯 目的**：進階 Markdown 處理與操作
 
-**✨ Key Features:**
-- Rich Markdown parsing
-- Format conversion (MD ↔ HTML ↔ PDF)
-- Content structure analysis
-- Template processing
+**✨ 主要功能：**
+- 豐富的 Markdown 解析
+- 格式轉換（MD ↔ HTML ↔ PDF）
+- 內容結構分析
+- 範本處理
 
-**🚀 Use Cases:**
-- Technical documentation workflows
-- Content management systems
-- Report generation
-- Knowledge base automation
+**🚀 使用案例：**
+- 技術文件流程
+- 內容管理系統
+- 報告產生
+- 知識庫自動化
 
 #### 6. 📈 Clarity MCP Server
-**📦 Package**: [@microsoft/clarity-mcp-server](https://www.npmjs.com/package/@microsoft/clarity-mcp-server)
-**🎯 Purpose**: Web analytics and user behavior insights
+**📦 套件**：[@microsoft/clarity-mcp-server](https://www.npmjs.com/package/@microsoft/clarity-mcp-server)  
+**🎯 目的**：網站分析與用戶行為洞察
 
-**✨ Key Features:**
-- Heatmap data analysis
-- User session recordings
-- Performance metrics
-- Conversion funnel analysis
+**✨ 主要功能：**
+- 熱點圖資料分析
+- 用戶會話錄影
+- 性能指標
+- 轉換漏斗分析
 
-**🚀 Use Cases:**
-- Website optimization
-- User experience research
-- A/B testing analysis
-- Business intelligence dashboards
+**🚀 使用案例：**
+- 網站優化
+- 用戶體驗研究
+- A/B 測試分析
+- 商業智慧儀表板
 
-### 🌍 Community Ecosystem
+### 🌍 社群生態系
 
-Beyond Microsoft's servers, the MCP ecosystem includes:
-- **🐙 GitHub MCP**: Repository management and code analysis
-- **🗄️ Database MCPs**: PostgreSQL, MySQL, MongoDB integrations
-- **☁️ Cloud Provider MCPs**: AWS, GCP, Digital Ocean tools
-- **📧 Communication MCPs**: Slack, Teams, Email integrations
+除了 Microsoft 的伺服器外，MCP 生態系還包括：
+- **🐙 GitHub MCP**：倉庫管理與程式碼分析
+- **🗄️ 資料庫 MCP**：PostgreSQL、MySQL、MongoDB 整合
+- **☁️ 雲端供應商 MCP**：AWS、GCP、Digital Ocean 工具
+- **📧 通訊 MCP**：Slack、Teams、Email 整合
 
-## 🛠️ Hands-On Lab: Building a Browser Automation Agent
+## 🛠️ 實作實驗：建立瀏覽器自動化代理
 
-**🎯 Project Goal**: Create an intelligent browser automation agent using Playwright MCP server that can navigate websites, extract information, and perform complex web interactions.
+**🎯 專案目標**：使用 Playwright MCP 伺服器建立智能瀏覽器自動化代理，能瀏覽網站、擷取資訊並執行複雜網頁互動。
 
-### 🚀 Phase 1: Agent Foundation Setup
+### 🚀 階段 1：代理基礎設定
 
-#### Step 1: Initialize Your Agent
-1. **Open AI Toolkit Agent Builder**
-2. **Create New Agent** with the following configuration:
-   - **Name**: `BrowserAgent`
-   - **Model**: Choose GPT-4o 
+#### 步驟 1：初始化您的代理
+1. **開啟 AI Toolkit Agent Builder**
+2. **建立新代理**，設定如下：
+   - **名稱**：`BrowserAgent`
+   - **模型**：選擇 GPT-4o
 
 ![BrowserAgent](../../../../translated_images/BrowserAgent.09c1adde5e136573b64ab1baecd830049830e295eac66cb18bebb85fb386e00a.mo.png)
 
+### 🔧 階段 2：MCP 整合流程
 
-### 🔧 Phase 2: MCP Integration Workflow
-
-#### Step 3: Add MCP Server Integration
-1. **Navigate to Tools Section** in Agent Builder
-2. **Click "Add Tool"** to open the integration menu
-3. **Select "MCP Server"** from available options
+#### 步驟 3：新增 MCP 伺服器整合
+1. **前往 Agent Builder 的工具區**
+2. **點擊「Add Tool」** 開啟整合選單
+3. **選擇「MCP Server」** 選項
 
 ![AddMCP](../../../../translated_images/AddMCP.afe3308ac20aa94469a5717b632d77b2197b9838a438b05d39aeb2db3ec47ef1.mo.png)
 
-**🔍 Understanding Tool Types:**
-- **Built-in Tools**: Pre-configured AI Toolkit functions
-- **MCP Servers**: External service integrations
-- **Custom APIs**: Your own service endpoints
-- **Function Calling**: Direct model function access
+**🔍 了解工具類型：**
+- **內建工具**：預設的 AI Toolkit 功能
+- **MCP 伺服器**：外部服務整合
+- **自訂 API**：您自己的服務端點
+- **函式呼叫**：直接存取模型函式
 
-#### Step 4: MCP Server Selection
-1. **Choose "MCP Server"** option to proceed
+#### 步驟 4：選擇 MCP 伺服器
+1. **選擇「MCP Server」** 繼續
 ![AddMCPServer](../../../../translated_images/AddMCPServer.69b911ccef872cbd0d0c0c2e6a00806916e1673e543b902a23dee23e6ff54b4c.mo.png)
 
-2. **Browse MCP Catalog** to explore available integrations
+2. **瀏覽 MCP 目錄**，探索可用整合
 ![MCPCatalog](../../../../translated_images/MCPCatalog.a817d053145699006264f5a475f2b48fbd744e43633f656b6453c15a09ba5130.mo.png)
 
+### 🎮 階段 3：Playwright MCP 設定
 
-### 🎮 Phase 3: Playwright MCP Configuration
-
-#### Step 5: Select and Configure Playwright
-1. **Click "Use Featured MCP Servers"** to access Microsoft's verified servers
-2. **Select "Playwright"** from the featured list
-3. **Accept Default MCP ID** or customize for your environment
+#### 步驟 5：選擇並設定 Playwright
+1. **點擊「Use Featured MCP Servers」** 進入 Microsoft 驗證伺服器列表
+2. **從特色清單中選擇「Playwright」**
+3. **接受預設 MCP ID** 或依環境自訂
 
 ![MCPID](../../../../translated_images/MCPID.67d446052979e819c945ff7b6430196ef587f5217daadd3ca52fa9659c1245c9.mo.png)
 
-#### Step 6: Enable Playwright Capabilities
-**🔑 Critical Step**: Select **ALL** available Playwright methods for maximum functionality
+#### 步驟 6：啟用 Playwright 功能
+**🔑 關鍵步驟**：選擇所有可用的 Playwright 方法以獲得最大功能
 
 ![Tools](../../../../translated_images/Tools.3ea23c447b4d9feccbd7101e6dcf9e27cb0e5273f351995fde62c5abf9a78b4c.mo.png)
 
-**🛠️ Essential Playwright Tools:**
-- **Navigation**: `goto`, `goBack`, `goForward`, `reload`
-- **Interaction**: `click`, `fill`, `press`, `hover`, `drag`
-- **Extraction**: `textContent`, `innerHTML`, `getAttribute`
-- **Validation**: `isVisible`, `isEnabled`, `waitForSelector`
-- **Capture**: `screenshot`, `pdf`, `video`
-- **Network**: `setExtraHTTPHeaders`, `route`, `waitForResponse`
+**🛠️ 重要 Playwright 工具：**
+- **導航**：`goto`、`goBack`、`goForward`、`reload`
+- **互動**：`click`、`fill`、`press`、`hover`、`drag`
+- **擷取**：`textContent`、`innerHTML`、`getAttribute`
+- **驗證**：`isVisible`、`isEnabled`、`waitForSelector`
+- **擷取畫面**：`screenshot`、`pdf`、`video`
+- **網路**：`setExtraHTTPHeaders`、`route`、`waitForResponse`
 
-#### Step 7: Verify Integration Success
-**✅ Success Indicators:**
-- All tools appear in Agent Builder interface
-- No error messages in the integration panel
-- Playwright server status shows "Connected"
+#### 步驟 7：確認整合成功
+**✅ 成功指標：**
+- 所有工具均顯示於 Agent Builder 介面
+- 整合面板無錯誤訊息
+- Playwright 伺服器狀態顯示「Connected」
 
 ![AgentTools](../../../../translated_images/AgentTools.053cfb96a17e02199dcc6563010d2b324d4fc3ebdd24889657a6950647a52f63.mo.png)
 
-**🔧 Troubleshooting Common Issues:**
-- **Connection Failed**: Check internet connectivity and firewall settings
-- **Missing Tools**: Ensure all capabilities were selected during setup
-- **Permission Errors**: Verify VS Code has necessary system permissions
+**🔧 常見問題排解：**
+- **連線失敗**：檢查網路連線與防火牆設定
+- **工具缺失**：確認設定時已選擇所有功能
+- **權限錯誤**：確認 VS Code 擁有必要系統權限
 
-### 🎯 Phase 4: Advanced Prompt Engineering
+### 🎯 階段 4：進階提示工程
 
-#### Step 8: Design Intelligent System Prompts
-Create sophisticated prompts that leverage Playwright's full capabilities:
+#### 步驟 8：設計智慧系統提示
+建立能充分利用 Playwright 功能的複雜提示：
 
 ```markdown
 # Web Automation Expert System Prompt
@@ -307,10 +304,10 @@ You are an advanced web automation specialist with deep expertise in browser aut
 - Follow website terms of service
 ```
 
-#### Step 9: Create Dynamic User Prompts
-Design prompts that demonstrate various capabilities:
+#### 步驟 9：建立動態使用者提示
+設計展示多種功能的提示範例：
 
-**🌐 Web Analysis Example:**
+**🌐 網頁分析範例：**
 ```markdown
 Navigate to github.com/kinfey and provide a comprehensive analysis including:
 1. Repository structure and organization
@@ -325,63 +322,58 @@ Include screenshots at key steps and provide actionable insights.
 
 ![Prompt](../../../../translated_images/Prompt.bfc846605db4999f4d9c1b09c710ef63cae7b3057444e68bf07240fb142d9f8f.mo.png)
 
-### 🚀 Phase 5: Execution and Testing
+### 🚀 階段 5：執行與測試
 
-#### Step 10: Execute Your First Automation
-1. **Click "Run"** to launch the automation sequence
-2. **Monitor Real-time Execution**:
-   - Chrome browser launches automatically
-   - Agent navigates to target website
-   - Screenshots capture each major step
-   - Analysis results stream in real-time
+#### 步驟 10：執行您的第一個自動化
+1. **點擊「Run」** 啟動自動化流程
+2. **監控即時執行狀態**：
+   - 自動啟動 Chrome 瀏覽器
+   - 代理導覽至目標網站
+   - 每個主要步驟截圖保存
+   - 分析結果即時串流
 
 ![Browser](../../../../translated_images/Browser.ec011d0bd64d0d112c8a29bd8cc44c76d0bbfd0b019cb2983ef679328435ce5d.mo.png)
 
-#### Step 11: Analyze Results and Insights
-Review comprehensive analysis in Agent Builder's interface:
+#### 步驟 11：分析結果與洞察
+在 Agent Builder 介面檢視完整分析報告：
 
 ![Result](../../../../translated_images/Result.8638f2b6703e9ea6d58d4e4475e39456b6a51d4c787f9bf481bae694d370a69a.mo.png)
 
-### 🌟 Phase 6: Advanced Capabilities and Deployment
+### 🌟 階段 6：進階功能與部署
 
-#### Step 12: Export and Production Deployment
-Agent Builder supports multiple deployment options:
+#### 步驟 12：匯出與生產部署
+Agent Builder 支援多種部署選項：
 
 ![Code](../../../../translated_images/Code.d9eeeead0b96db0ca19c5b10ad64cfea8c1d0d1736584262970a4d43e1403d13.mo.png)
 
-## 🎓 Module 2 Summary & Next Steps
+## 🎓 模組 2 總結與後續步驟
 
-### 🏆 Achievement Unlocked: MCP Integration Master
+### 🏆 成就解鎖：MCP 整合大師
 
-**✅ Skills Mastered:**
-- [ ] Understanding MCP architecture and benefits
-- [ ] Navigating Microsoft's MCP server ecosystem
-- [ ] Integrating Playwright MCP with AI Toolkit
-- [ ] Building sophisticated browser automation agents
-- [ ] Advanced prompt engineering for web automation
+**✅ 掌握技能：**
+- [ ] 了解 MCP 架構與優勢
+- [ ] 探索 Microsoft MCP 伺服器生態系
+- [ ] 將 Playwright MCP 整合至 AI Toolkit
+- [ ] 建立複雜的瀏覽器自動化代理
+- [ ] 進階網頁自動化提示工程
 
-### 📚 Additional Resources
+### 📚 其他資源
 
-- **🔗 MCP Specification**: [Official Protocol Documentation](https://modelcontextprotocol.io/)
-- **🛠️ Playwright API**: [Complete Method Reference](https://playwright.dev/docs/api/class-playwright)
-- **🏢 Microsoft MCP Servers**: [Enterprise Integration Guide](https://github.com/microsoft/mcp-servers)
-- **🌍 Community Examples**: [MCP Server Gallery](https://github.com/modelcontextprotocol/servers)
+- **🔗 MCP 規範**：[官方協議文件](https://modelcontextprotocol.io/)
+- **🛠️ Playwright API**：[完整方法參考](https://playwright.dev/docs/api/class-playwright)
+- **🏢 Microsoft MCP 伺服器**：[企業整合指南](https://github.com/microsoft/mcp-servers)
+- **🌍 社群範例**：[MCP 伺服器展示](https://github.com/modelcontextprotocol/servers)
 
-**🎉 Congratulations!** You've successfully mastered MCP integration and can now build production-ready AI agents with external tool capabilities!
+**🎉 恭喜！** 您已成功掌握 MCP 整合，現在可以打造具備外部工具能力的生產級 AI 代理！
 
+### 🔜 繼續下一模組
 
-### 🔜 Continue to Next Module
+準備好將 MCP 技能提升到更高層次了嗎？請前往 **[模組 3：使用 AI Toolkit 進階 MCP 開發](../lab3/README.md)**，您將學習如何：
+- 建立自訂 MCP 伺服器
+- 設定並使用最新 MCP Python SDK
+- 配置 MCP Inspector 進行除錯
+- 精通進階 MCP 伺服器開發流程
+- 從零開始建立一個 Weather MCP 伺服器
 
-Ready to take your MCP skills to the next level? Proceed to **[Module 3: Advanced MCP Development with AI Toolkit](../lab3/README.md)** where you'll learn how to:
-- Create your own custom MCP servers
-- Configure and use the latest MCP Python SDK
-- Set up the MCP Inspector for debugging
-- Master advanced MCP server development workflows
-- Build a Weather MCP Server from scratch
-
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-Could you please clarify what language "mo" refers to? There are several possibilities (e.g., Moldovan, a constructed language, or something else). Once confirmed, I can provide the translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

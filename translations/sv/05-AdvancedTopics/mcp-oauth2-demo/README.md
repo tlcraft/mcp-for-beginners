@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-13T00:02:15+00:00",
+  "translation_date": "2025-07-14T00:42:10+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "sv"
 }
@@ -18,7 +18,7 @@ Det speglar upplägget som visas i [Spring-blogginlägget (2 apr 2025)](https://
 
 ---
 
-## Kom igång snabbt (lokalt)
+## Snabbstart (lokalt)
 
 ```bash
 # build & run
@@ -45,7 +45,7 @@ Du kan testa OAuth2-säkerhetskonfigurationen med följande steg:
 curl -v http://localhost:8081/
 ```
 
-### 2. Hämta en access token med klientuppgifter
+### 2. Hämta en access token med client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Notera: Basic Authentication-headern (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Notera: Basic Authentication-headern (`bWNwLWNsaWVudDpzZWNyZXQ=`) är Base64-kodningen av `mcp-client:secret`.
 
 ### 3. Använd token för att nå den skyddade endpointen
 
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Ett lyckat svar med "Hello from MCP OAuth2 Demo!" bekräftar att OAuth2-konfigurationen fungerar korrekt.
+Ett lyckat svar med "Hello from MCP OAuth2 Demo!" bekräftar att OAuth2-konfigurationen fungerar som den ska.
 
 ---
 
@@ -96,13 +96,13 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 Ingressens FQDN blir din **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+Azure tillhandahåller automatiskt ett betrott TLS-certifikat för `*.azurecontainerapps.io`.
 
 ---
 
-## Integrera med **Azure API Management**
+## Koppla till **Azure API Management**
 
-Lägg till denna inbound policy i din API:
+Lägg till denna inbound-policy i din API:
 
 ```xml
 <inbound>
@@ -125,4 +125,4 @@ APIM hämtar JWKS och validerar varje förfrågan.
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen var medveten om att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår från användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0f27f8c14853621d982185e6bbdd1dc6",
-  "translation_date": "2025-05-17T13:24:14+00:00",
+  "translation_date": "2025-07-13T22:35:29+00:00",
   "source_file": "03-GettingStarted/samples/javascript/README.md",
   "language_code": "id"
 }
 -->
 # Contoh
 
-Ini adalah contoh JavaScript untuk Server MCP
+Ini adalah contoh JavaScript untuk MCP Server
 
-Berikut adalah tampilan bagian kalkulatornya:
+Berikut tampilan bagian kalkulatornya:
 
 ```javascript
 // Define calculator tools for each operation
@@ -68,7 +68,7 @@ server.tool(
 );
 ```
 
-## Instalasi
+## Instal
 
 Jalankan perintah berikut:
 
@@ -83,4 +83,4 @@ npm start
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemah AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk mencapai ketepatan, harap disadari bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi penting, disarankan menggunakan terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

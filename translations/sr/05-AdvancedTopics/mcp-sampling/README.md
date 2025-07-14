@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cb0da3badd51d73ab78ebade2827d98",
-  "translation_date": "2025-06-13T01:17:33+00:00",
+  "translation_date": "2025-07-14T02:25:35+00:00",
   "source_file": "05-AdvancedTopics/mcp-sampling/README.md",
   "language_code": "sr"
 }
 -->
-## Determinističko uzorkovanje
+## Детерминистичко узорковање
 
-Za aplikacije koje zahtevaju dosledne rezultate, determinističko uzorkovanje obezbeđuje ponovljive ishode. To postiže korišćenjem fiksnog slučajnog semena i podešavanjem temperature na nulu.
+За апликације које захтевају конзистентне резултате, детерминистичко узорковање обезбеђује репродуктивне исходе. То се постиже коришћењем фиксног случајног семена и подешавањем температуре на нулу.
 
-Pogledajmo sledeći primer implementacije koji prikazuje determinističko uzorkovanje u različitim programskim jezicima.
+Погледајмо пример имплементације детерминистичког узорковања у различитим програмским језицима.
 
-## Dinamička konfiguracija uzorkovanja
+## Динамичка конфигурација узорковања
 
-Pametno uzorkovanje prilagođava parametre u zavisnosti od konteksta i zahteva svakog zahteva. To znači dinamičko podešavanje parametara kao što su temperature, top_p i kazne u zavisnosti od tipa zadatka, korisničkih preferencija ili istorijskih performansi.
+Интелигентно узорковање прилагођава параметре у зависности од контекста и захтева сваког захтева. То значи динамичко подешавање параметара као што су temperature, top_p и казне у зависности од типа задатка, корисничких преференција или историјских резултата.
 
-Pogledajmo kako implementirati dinamičko uzorkovanje u različitim programskim jezicima.
+Погледајмо како имплементирати динамичко узорковање у различитим програмским језицима.
 
-## Šta sledi
+## Шта следи
 
-- [5.7 Skaliranje](../mcp-scaling/README.md)
+- [5.7 Scaling](../mcp-scaling/README.md)
 
-**Ограничење одговорности**:  
-Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако настојимо да превод буде тачан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне интерпретације које могу настати коришћењем овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

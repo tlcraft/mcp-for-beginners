@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f83bc722dc758efffd68667d6a1db470",
-  "translation_date": "2025-06-10T06:50:57+00:00",
+  "translation_date": "2025-07-14T08:42:55+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/README.md",
   "language_code": "sv"
 }
@@ -15,7 +15,7 @@ CO_OP_TRANSLATOR_METADATA:
 ![VS Code](https://img.shields.io/badge/VS%20Code-Integration-blue?style=flat-square&logo=visualstudiocode)
 ![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Agent%20Mode-green?style=flat-square&logo=github)
 
-> **⚡ Snabbstart:** Bygg en produktionsredo MCP-server som automatiserar kloning av GitHub-repositorier och VS Code-integration på bara 30 minuter!
+> **⚡ Snabbstart:** Bygg en produktionsklar MCP-server som automatiserar kloning av GitHub-repositorier och integration med VS Code på bara 30 minuter!
 
 ## 🎯 Lärandemål
 
@@ -30,7 +30,7 @@ I slutet av denna labb kommer du att kunna:
 ## 📋 Förkunskaper
 
 - Genomförda Labs 1-3 (MCP-grunder och avancerad utveckling)
-- Prenumeration på GitHub Copilot ([gratis registrering tillgänglig](https://github.com/github-copilot/signup))
+- Prenumeration på GitHub Copilot ([gratis registrering finns](https://github.com/github-copilot/signup))
 - VS Code med AI Toolkit och GitHub Copilot-tillägg
 - Git CLI installerat och konfigurerat
 
@@ -40,7 +40,7 @@ I slutet av denna labb kommer du att kunna:
 Som utvecklare använder vi ofta GitHub för att klona repositorier och öppna dem i VS Code eller VS Code Insiders. Denna manuella process innebär:
 1. Öppna terminal/kommandoprompt
 2. Navigera till önskad katalog
-3. Köra `git clone`-kommandot
+3. Köra kommandot `git clone`
 4. Öppna VS Code i den klonade katalogen
 
 **Vår MCP-lösning förenklar detta till ett enda intelligent kommando!**
@@ -50,10 +50,10 @@ En **GitHub Clone MCP Server** (`git_mcp_server`) som erbjuder:
 
 | Funktion | Beskrivning | Fördel |
 |---------|-------------|---------|
-| 🔄 **Smart Repository-kloning** | Klona GitHub-repos med validering | Automatisk felkontroll |
+| 🔄 **Smart kloning av repositorier** | Klona GitHub-repos med validering | Automatiserad felkontroll |
 | 📁 **Intelligent kataloghantering** | Kontrollera och skapa kataloger säkert | Förhindrar överskrivning |
 | 🚀 **Plattformsoberoende VS Code-integration** | Öppna projekt i VS Code/Insiders | Sömlös arbetsflödesövergång |
-| 🛡️ **Robust felhantering** | Hantera nätverk, behörigheter och sökvägsproblem | Produktionsredo pålitlighet |
+| 🛡️ **Robust felhantering** | Hantera nätverks-, behörighets- och sökvägsproblem | Produktionssäker pålitlighet |
 
 ---
 
@@ -68,16 +68,16 @@ En **GitHub Clone MCP Server** (`git_mcp_server`) som erbjuder:
    ```
 
 3. **Initiera anpassad MCP-server:**
-   - Gå till **Tools** → **Add Tool** → **MCP Server**
-   - Välj **"Create A new MCP Server"**
+   - Gå till **Verktyg** → **Lägg till verktyg** → **MCP Server**
+   - Välj **"Skapa en ny MCP Server"**
    - Välj **Python-mall** för maximal flexibilitet
    - **Servernamn:** `git_mcp_server`
 
 ### Steg 2: Konfigurera GitHub Copilot Agent Mode
 
 1. **Öppna GitHub Copilot** i VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
-2. **Välj Agent Model** i Copilot-gränssnittet
-3. **Välj Claude 3.7-modellen** för förbättrade resonemangsförmågor
+2. **Välj Agentmodell** i Copilot-gränssnittet
+3. **Välj Claude 3.7-modellen** för förbättrad resonemangsförmåga
 4. **Aktivera MCP-integration** för verktygsåtkomst
 
 > **💡 Proffstips:** Claude 3.7 ger överlägsen förståelse för utvecklingsflöden och felhanteringsmönster.
@@ -121,7 +121,7 @@ Additional Requirements:
 
 #### 4a. Testa i Agent Builder
 
-1. **Starta debug-konfigurationen** för Agent Builder
+1. **Starta felsökningskonfigurationen** för Agent Builder
 2. **Konfigurera din agent med denna systemprompt:**
 
 ```
@@ -143,7 +143,7 @@ Scenario : Basic Clone and Open
 
 **Förväntade resultat:**
 - ✅ Lyckad kloning med sökvägsbekräftelse
-- ✅ Automatisk VS Code-start
+- ✅ Automatisk start av VS Code
 - ✅ Tydliga felmeddelanden vid ogiltiga scenarier
 - ✅ Korrekt hantering av kantfall
 
@@ -153,13 +153,13 @@ Scenario : Basic Clone and Open
 
 ---
 
-**🎉 Grattis!** Du har framgångsrikt skapat en praktisk, produktionsredo MCP-server som löser verkliga utvecklingsflödesutmaningar. Din anpassade GitHub-klonserver visar kraften i MCP för att automatisera och förbättra utvecklares produktivitet.
+**🎉 Grattis!** Du har framgångsrikt skapat en praktisk, produktionsklar MCP-server som löser verkliga utvecklingsflödesutmaningar. Din anpassade GitHub-klonserver visar kraften i MCP för att automatisera och förbättra utvecklares produktivitet.
 
-### 🏆 Uppnådda prestationer:
+### 🏆 Uppnått:
 - ✅ **MCP-utvecklare** - Skapade anpassad MCP-server
 - ✅ **Automatiseringsspecialist** - Effektiviserade utvecklingsprocesser  
-- ✅ **Integrationsexpert** - Kopplade samman flera utvecklingsverktyg
-- ✅ **Produktionsredo** - Byggde lösningar för distribution
+- ✅ **Integreringsexpert** - Kopplade samman flera utvecklingsverktyg
+- ✅ **Produktionsklar** - Byggde lösningar redo för distribution
 
 ---
 
@@ -167,15 +167,15 @@ Scenario : Basic Clone and Open
 
 **Kära workshopdeltagare,**
 
-Grattis till att du har slutfört alla fyra moduler i Model Context Protocol-workshopen! Du har tagit dig från att förstå grundläggande AI Toolkit-koncept till att bygga produktionsklara MCP-servrar som löser verkliga utvecklingsutmaningar.
+Grattis till att du har slutfört alla fyra moduler i Model Context Protocol-workshopen! Du har gått från att förstå grundläggande AI Toolkit-koncept till att bygga produktionsklara MCP-servrar som löser verkliga utvecklingsutmaningar.
 
 ### 🚀 Sammanfattning av din läranderesa:
 
-**[Modul 1](../lab1/README.md)**: Du började med att utforska AI Toolkit-grunder, modelltestning och skapa din första AI-agent.
+**[Modul 1](../lab1/README.md)**: Du började med att utforska AI Toolkit-grunder, modelltestning och skapade din första AI-agent.
 
-**[Modul 2](../lab2/README.md)**: Du lärde dig MCP-arkitektur, integrerade Playwright MCP och byggde din första browserautomationsagent.
+**[Modul 2](../lab2/README.md)**: Du lärde dig MCP-arkitektur, integrerade Playwright MCP och byggde din första webbläsarautomationsagent.
 
-**[Modul 3](../lab3/README.md)**: Du avancerade till anpassad MCP-serverutveckling med Weather MCP-servern och behärskade felsökningsverktyg.
+**[Modul 3](../lab3/README.md)**: Du avancerade till anpassad MCP-serverutveckling med Weather MCP-servern och bemästrade felsökningsverktyg.
 
 **[Modul 4](../lab4/README.md)**: Nu har du tillämpat allt för att skapa ett praktiskt verktyg för automatisering av GitHub-repositoriearbetsflöden.
 
@@ -190,19 +190,19 @@ Grattis till att du har slutfört alla fyra moduler i Model Context Protocol-wor
 ### 🔮 Dina nästa steg:
 
 1. **Bygg din egen MCP-server**: Använd dessa färdigheter för att automatisera dina unika arbetsflöden
-2. **Gå med i MCP-communityn**: Dela dina skapelser och lär dig av andra
+2. **Gå med i MCP-communityn**: Dela dina skapelser och lär av andra
 3. **Utforska avancerad integration**: Koppla MCP-servrar till företagsystem
-4. **Bidra till öppen källkod**: Hjälp till att förbättra MCP-verktyg och dokumentation
+4. **Bidra till open source**: Hjälp till att förbättra MCP-verktyg och dokumentation
 
-Kom ihåg att denna workshop bara är början. Model Context Protocol-ekosystemet utvecklas snabbt, och du är nu rustad att ligga i framkant av AI-drivna utvecklingsverktyg.
+Kom ihåg, denna workshop är bara början. Model Context Protocol-ekosystemet utvecklas snabbt, och du är nu rustad att ligga i framkant av AI-drivna utvecklingsverktyg.
 
-**Tack för ditt deltagande och engagemang i lärandet!**
+**Tack för ditt deltagande och din vilja att lära!**
 
-Vi hoppas att denna workshop har väckt idéer som kommer att förändra hur du bygger och använder AI-verktyg i din utvecklingsresa.
+Vi hoppas att denna workshop har väckt idéer som kommer att förändra hur du bygger och interagerar med AI-verktyg i din utvecklingsresa.
 
 **Lycka till med kodandet!**
 
 ---
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.

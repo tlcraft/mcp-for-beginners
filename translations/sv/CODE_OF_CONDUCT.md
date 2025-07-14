@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c06b12caf3c901eb3156e3dd5b0aea56",
-  "translation_date": "2025-05-17T05:12:38+00:00",
+  "translation_date": "2025-07-13T14:28:43+00:00",
   "source_file": "CODE_OF_CONDUCT.md",
   "language_code": "sv"
 }
 -->
-# Microsoft Open Source Uppförandekod
+# Microsoft Open Source Code of Conduct
 
-Detta projekt har antagit [Microsoft Open Source Uppförandekod](https://opensource.microsoft.com/codeofconduct/).
+Det här projektet har antagit [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 
 Resurser:
 
-- [Microsoft Open Source Uppförandekod](https://opensource.microsoft.com/codeofconduct/)
-- [Microsoft Uppförandekod FAQ](https://opensource.microsoft.com/codeofconduct/faq/)
-- Kontakta [opencode@microsoft.com](mailto:opencode@microsoft.com) vid frågor eller bekymmer
+- [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)
+- [Microsoft Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)
+- Kontakta [opencode@microsoft.com](mailto:opencode@microsoft.com) vid frågor eller funderingar
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen notera att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller misstolkningar som uppstår från användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

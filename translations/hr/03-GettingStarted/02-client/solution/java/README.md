@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:17:39+00:00",
+  "translation_date": "2025-07-13T18:38:14+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "hr"
 }
 -->
 # MCP Java Client - Calculator Demo
 
-Ovaj projekt pokazuje kako kreirati Java klijenta koji se povezuje i komunicira s MCP (Model Context Protocol) serverom. U ovom primjeru povezujemo se na kalkulator server iz Poglavlja 01 i izvodimo različite matematičke operacije.
+Ovaj projekt pokazuje kako napraviti Java klijenta koji se povezuje i komunicira s MCP (Model Context Protocol) serverom. U ovom primjeru povezujemo se na kalkulator server iz Poglavlja 01 i izvršavamo različite matematičke operacije.
 
 ## Preduvjeti
 
@@ -25,26 +25,26 @@ Prije pokretanja ovog klijenta, potrebno je:
      ```
    - Server bi trebao biti dostupan na `http://localhost:8080`
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. Imati instaliran **Java 21 ili noviju verziju**
+3. Imati **Maven** (uključen preko Maven Wrappera)
 
-## What is the SDKClient?
+## Što je SDKClient?
 
-The `SDKClient` je Java aplikacija koja pokazuje kako:
+`SDKClient` je Java aplikacija koja pokazuje kako:
 - Povezati se na MCP server koristeći Server-Sent Events (SSE) transport
-- Nabrojati dostupne alate na serveru
-- Daljinski pozvati različite kalkulatorske funkcije
+- Prikazati dostupne alate s servera
+- Daljinski pozivati različite funkcije kalkulatora
 - Obraditi odgovore i prikazati rezultate
 
 ## Kako radi
 
-Klijent koristi Spring AI MCP framework da:
+Klijent koristi Spring AI MCP framework za:
 
-1. **Uspostavi vezu**: Kreira WebFlux SSE klijentski transport za povezivanje na kalkulator server
-2. **Inicijalizira klijenta**: Postavlja MCP klijenta i uspostavlja vezu
-3. **Otkrije alate**: Nabroji sve dostupne kalkulatorske operacije
-4. **Izvrši operacije**: Pozove različite matematičke funkcije s primjerima podataka
-5. **Prikaže rezultate**: Prikazuje rezultate svake kalkulacije
+1. **Uspostavljanje veze**: Kreira WebFlux SSE klijentski transport za povezivanje s kalkulator serverom
+2. **Inicijalizaciju klijenta**: Postavlja MCP klijenta i uspostavlja vezu
+3. **Otkrivanje alata**: Prikazuje sve dostupne kalkulator operacije
+4. **Izvršavanje operacija**: Poziva različite matematičke funkcije s primjerima podataka
+5. **Prikaz rezultata**: Prikazuje rezultate svake kalkulacije
 
 ## Struktura projekta
 
@@ -72,7 +72,7 @@ Projekt koristi sljedeće ključne ovisnosti:
 ```
 
 Ova ovisnost pruža:
-- `McpClient` - The main client interface
+- `McpClient` - Glavno klijentsko sučelje
 - `WebFluxSseClientTransport` - SSE transport za web komunikaciju
 - MCP protokol sheme i tipove zahtjeva/odgovora
 
@@ -90,25 +90,25 @@ Izgradite projekt koristeći Maven wrapper:
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**Note**: Provjerite da je kalkulator server pokrenut na `http://localhost:8080` before executing any of these commands.
+**Napomena**: Provjerite da je kalkulator server pokrenut na `http://localhost:8080` prije nego što izvršite bilo koju od ovih naredbi.
 
-## What the Client Does
+## Što klijent radi
 
-When you run the client, it will:
+Kada pokrenete klijenta, on će:
 
-1. **Connect** to the calculator server at `http://localhost:8080`
-2. **Nabrojite alate** - Prikazuje sve dostupne kalkulatorske operacije
-3. **Izvršite izračune**:
+1. **Povezati se** na kalkulator server na `http://localhost:8080`
+2. **Prikazati alate** - Prikazuje sve dostupne kalkulator operacije
+3. **Izvršiti izračune**:
    - Zbrajanje: 5 + 3 = 8
    - Oduzimanje: 10 - 4 = 6
    - Množenje: 6 × 7 = 42
    - Dijeljenje: 20 ÷ 4 = 5
-   - Stepenovanje: 2^8 = 256
-   - Kvadratni korijen: √16 = 4
+   - Potencija: 2^8 = 256
+   - Korijen kvadratni: √16 = 4
    - Apsolutna vrijednost: |-5.5| = 5.5
    - Pomoć: Prikazuje dostupne operacije
 
-## Očekivani izlaz
+## Očekivani ispis
 
 ```
 Available Tools = ListToolsResult[tools=[Tool[name=add, description=Add two numbers together, ...], ...]]
@@ -122,7 +122,7 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**Note**: Na kraju se mogu pojaviti Maven upozorenja o aktivnim threadovima – to je normalno za reaktivne aplikacije i ne ukazuje na grešku.
+**Napomena**: Možete vidjeti Maven upozorenja o zaostalim threadovima na kraju - to je normalno za reaktivne aplikacije i ne znači grešku.
 
 ## Razumijevanje koda
 
@@ -130,20 +130,20 @@ Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\
 ```java
 var transport = new WebFluxSseClientTransport(WebClient.builder().baseUrl("http://localhost:8080"));
 ```
-Ovim se kreira SSE (Server-Sent Events) transport koji se povezuje na kalkulator server.
+Ovo kreira SSE (Server-Sent Events) transport koji se povezuje na kalkulator server.
 
 ### 2. Kreiranje klijenta
 ```java
 var client = McpClient.sync(this.transport).build();
 client.initialize();
 ```
-Kreira se sinkroni MCP klijent i inicijalizira veza.
+Kreira sinkroni MCP klijent i inicijalizira vezu.
 
 ### 3. Pozivanje alata
 ```java
 CallToolResult resultAdd = client.callTool(new CallToolRequest("add", Map.of("a", 5.0, "b", 3.0)));
 ```
-Poziva se alat "add" s parametrima a=5.0 i b=3.0.
+Poziva "add" alat s parametrima a=5.0 i b=3.0.
 
 ## Rješavanje problema
 
@@ -174,4 +174,4 @@ Ako naiđete na greške pri izgradnji:
 - [Spring WebFlux Dokumentacija](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba se smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

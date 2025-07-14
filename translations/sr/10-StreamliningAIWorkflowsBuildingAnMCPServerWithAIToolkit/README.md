@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "787440926586cd064b0899fd1c514f52",
-  "translation_date": "2025-06-10T05:05:44+00:00",
+  "translation_date": "2025-07-14T07:14:42+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md",
   "language_code": "sr"
 }
 -->
-# Optimizacija AI radnih tokova: Izgradnja MCP servera sa AI Toolkit-om
+# Убрзавање AI радних токова: Изградња MCP сервера са AI Toolkit-ом
 
 [![MCP Version](https://img.shields.io/badge/MCP-1.9.3-blue.svg)](https://modelcontextprotocol.io/)
 [![Python](https://img.shields.io/badge/Python-3.10+-green.svg)](https://python.org)
@@ -15,184 +15,184 @@ CO_OP_TRANSLATOR_METADATA:
 
 ![logo](../../../translated_images/logo.ec93918ec338dadde1715c8aaf118079e0ed0502e9efdfcc84d6a0f4a9a70ae8.sr.png)
 
-## 🎯 Pregled
+## 🎯 Преглед
 
-Dobrodošli na **Model Context Protocol (MCP) radionicu**! Ovaj sveobuhvatni praktični kurs kombinuje dve najnovije tehnologije koje će promeniti razvoj AI aplikacija:
+Добродошли на **Model Context Protocol (MCP) радионицу**! Ова свеобухватна практична радионица спаја две најсавременије технологије које револуционишу развој AI апликација:
 
-- **🔗 Model Context Protocol (MCP)**: otvoreni standard za besprekornu integraciju AI alata
-- **🛠️ AI Toolkit za Visual Studio Code (AITK)**: moćan Microsoftov dodatak za AI razvoj
+- **🔗 Model Context Protocol (MCP)**: Отворени стандард за беспрекорну интеграцију AI алата
+- **🛠️ AI Toolkit за Visual Studio Code (AITK)**: Моћан Microsoft-ов додатак за развој AI
 
-### 🎓 Šta ćete naučiti
+### 🎓 Шта ћете научити
 
-Na kraju radionice, ovladaćete veštinom pravljenja inteligentnih aplikacija koje povezuju AI modele sa stvarnim alatima i servisima. Od automatizovanog testiranja do prilagođenih API integracija, steći ćete praktična znanja za rešavanje složenih poslovnih problema.
+До краја ове радионице овладаћете вештином изградње интелигентних апликација које повезују AI моделе са стварним алатима и услугама. Од аутоматизованог тестирања до прилагођених API интеграција, стечете практична знања за решавање сложених пословних изазова.
 
-## 🏗️ Tehnološki stack
+## 🏗️ Технолошки стек
 
 ### 🔌 Model Context Protocol (MCP)
 
-MCP je **"USB-C za AI"** – univerzalni standard koji povezuje AI modele sa spoljnim alatima i izvorima podataka.
+MCP је **„USB-C за AI“** – универзални стандард који повезује AI моделе са спољним алатима и изворима података.
 
-**✨ Ključne karakteristike:**
-- 🔄 **Standardizovana integracija**: univerzalni interfejs za povezivanje AI alata
-- 🏛️ **Fleksibilna arhitektura**: lokalni i udaljeni serveri preko stdio/SSE transporta
-- 🧰 **Bogati ekosistem**: alati, promptovi i resursi u jednom protokolu
-- 🔒 **Spreman za preduzeća**: ugrađena sigurnost i pouzdanost
+**✨ Кључне карактеристике:**
+- 🔄 **Стандаризована интеграција**: Универзални интерфејс за повезивање AI алата
+- 🏛️ **Флексибилна архитектура**: Локални и удаљени сервери преко stdio/SSE транспорта
+- 🧰 **Богат екосистем**: Алати, упити и ресурси у једном протоколу
+- 🔒 **Спреман за предузећа**: Уграђена безбедност и поузданост
 
-**🎯 Zašto je MCP važan:**
-Kao što je USB-C eliminisao haos sa kablovima, MCP uklanja složenost AI integracija. Jedan protokol, neograničene mogućnosti.
+**🎯 Зашто је MCP важан:**
+Као што је USB-C поједноставио каблове, MCP поједностављује интеграцију AI система. Један протокол, бескрајне могућности.
 
-### 🤖 AI Toolkit za Visual Studio Code (AITK)
+### 🤖 AI Toolkit за Visual Studio Code (AITK)
 
-Microsoftov vodeći dodatak za AI razvoj koji pretvara VS Code u AI moćnu platformu.
+Microsoft-ов водећи додатак за развој AI који претвара VS Code у моћан AI алат.
 
-**🚀 Osnovne mogućnosti:**
-- 📦 **Katalog modela**: pristup modelima sa Azure AI, GitHub, Hugging Face, Ollama
-- ⚡ **Lokalna inferencija**: ONNX optimizovano izvršavanje na CPU/GPU/NPU
-- 🏗️ **Agent Builder**: vizuelni razvoj AI agenata sa MCP integracijom
-- 🎭 **Višestruki modaliteti**: podrška za tekst, viziju i strukturisani izlaz
+**🚀 Основне могућности:**
+- 📦 **Каталог модела**: Приступ моделима са Azure AI, GitHub, Hugging Face, Ollama
+- ⚡ **Локално извођење**: ONNX оптимизовано за CPU/GPU/NPU
+- 🏗️ **Agent Builder**: Визуелни развој AI агената са MCP интеграцијом
+- 🎭 **Мултимодални рад**: Подршка за текст, слике и структурисани излаз
 
-**💡 Prednosti razvoja:**
-- Deploy modela bez konfiguracije
-- Vizuelno kreiranje promptova
-- Okruženje za testiranje u realnom vremenu
-- Besprekorno povezivanje sa MCP serverom
+**💡 Предности развоја:**
+- Постављање модела без конфигурације
+- Визуелно креирање упита
+- Тестирање у реалном времену
+- Беспрекорна интеграција MCP сервера
 
-## 📚 Put učenja
+## 📚 Пут учења
 
-### [🚀 Modul 1: Osnove AI Toolkita](./lab1/README.md)
-**Trajanje**: 15 minuta
-- 🛠️ Instalirajte i konfigurišite AI Toolkit za VS Code
-- 🗂️ Istražite Katalog modela (100+ modela sa GitHub, ONNX, OpenAI, Anthropic, Google)
-- 🎮 Savladajte Interaktivni Playground za testiranje modela u realnom vremenu
-- 🤖 Napravite svog prvog AI agenta pomoću Agent Builder-a
-- 📊 Procena performansi modela sa ugrađenim metrima (F1, relevantnost, sličnost, koherencija)
-- ⚡ Naučite o batch obradi i podršci za višemodalne modele
+### [🚀 Модул 1: Основе AI Toolkit-а](./lab1/README.md)
+**Трајање**: 15 минута
+- 🛠️ Инсталирање и подешавање AI Toolkit-а за VS Code
+- 🗂️ Истраживање Каталога модела (100+ модела са GitHub-а, ONNX-а, OpenAI-а, Anthropic-а, Google-а)
+- 🎮 Савладавање интерактивног окружења за тестирање модела у реалном времену
+- 🤖 Изградња првог AI агента помоћу Agent Builder-а
+- 📊 Процена перформанси модела уз уграђене метрике (F1, релевантност, сличност, кохерентност)
+- ⚡ Учење о пакетној обради и мултимодалној подршци
 
-**🎯 Ishod učenja**: Kreirajte funkcionalnog AI agenta sa sveobuhvatnim razumevanjem AITK mogućnosti
+**🎯 Резултат учења**: Креирање функционалног AI агента са детаљним разумевањем могућности AITK-а
 
-### [🌐 Modul 2: MCP sa osnovama AI Toolkita](./lab2/README.md)
-**Trajanje**: 20 minuta
-- 🧠 Ovladavanje arhitekturom i konceptima Model Context Protocol-a (MCP)
-- 🌐 Istražite Microsoftov MCP server ekosistem
-- 🤖 Napravite agenta za automatizaciju browsera koristeći Playwright MCP server
-- 🔧 Integracija MCP servera sa AI Toolkit Agent Builder-om
-- 📊 Konfigurišite i testirajte MCP alate unutar vaših agenata
-- 🚀 Izvezite i deploy-ujte agente pokretane MCP-om za produkciju
+### [🌐 Модул 2: MCP и основе AI Toolkit-а](./lab2/README.md)
+**Трајање**: 20 минута
+- 🧠 Савладавање архитектуре и концепата Model Context Protocol-а (MCP)
+- 🌐 Истраживање Microsoft-овог MCP сервер екосистема
+- 🤖 Изградња агента за аутоматизацију прегледача користећи Playwright MCP сервер
+- 🔧 Интеграција MCP сервера са AI Toolkit Agent Builder-ом
+- 📊 Конфигурисање и тестирање MCP алата унутар агената
+- 🚀 Извоз и имплементација агената са MCP подршком за продукцију
 
-**🎯 Ishod učenja**: Postavite AI agenta sa eksternim alatima putem MCP protokola
+**🎯 Резултат учења**: Деплој AI агента који користи спољне алате преко MCP-а
 
-### [🔧 Modul 3: Napredni razvoj MCP-a sa AI Toolkit-om](./lab3/README.md)
-**Trajanje**: 20 minuta
-- 💻 Kreirajte prilagođene MCP servere koristeći AI Toolkit
-- 🐍 Konfigurišite i koristite najnoviji MCP Python SDK (v1.9.3)
-- 🔍 Postavite i koristite MCP Inspector za debagovanje
-- 🛠️ Izgradite Weather MCP Server sa profesionalnim radnim tokovima za debagovanje
-- 🧪 Debagujte MCP servere u Agent Builder i Inspector okruženjima
+### [🔧 Модул 3: Напредни развој MCP-а са AI Toolkit-ом](./lab3/README.md)
+**Трајање**: 20 минута
+- 💻 Креирање прилагођених MCP сервера користећи AI Toolkit
+- 🐍 Конфигурисање и коришћење најновијег MCP Python SDK-а (v1.9.3)
+- 🔍 Подешавање и коришћење MCP Inspector-а за дебаговање
+- 🛠️ Изградња Weather MCP сервера са професионалним дебаговањем
+- 🧪 Дебаговање MCP сервера у Agent Builder и Inspector окружењима
 
-**🎯 Ishod učenja**: Razvijajte i debagujte prilagođene MCP servere sa modernim alatima
+**🎯 Резултат учења**: Развој и дебаговање прилагођених MCP сервера уз савремене алате
 
-### [🐙 Modul 4: Praktični razvoj MCP-a – prilagođeni GitHub Clone Server](./lab4/README.md)
-**Trajanje**: 30 minuta
-- 🏗️ Izgradite realan GitHub Clone MCP Server za razvojne tokove rada
-- 🔄 Implementirajte pametno kloniranje repozitorijuma sa validacijom i upravljanjem greškama
-- 📁 Kreirajte inteligentno upravljanje direktorijumima i VS Code integraciju
-- 🤖 Koristite GitHub Copilot Agent Mode sa prilagođenim MCP alatima
-- 🛡️ Primena pouzdanosti spremne za produkciju i kompatibilnosti na više platformi
+### [🐙 Модул 4: Практичан развој MCP-а - прилагођени GitHub Clone сервер](./lab4/README.md)
+**Трајање**: 30 минута
+- 🏗️ Изградња реалног GitHub Clone MCP сервера за развојне токове
+- 🔄 Имплементација паметног клонирања репозиторијума са валидацијом и обрадом грешака
+- 📁 Креирање интелигентног управљања фасциклама и интеграција са VS Code-ом
+- 🤖 Коришћење GitHub Copilot Agent Mode-а са прилагођеним MCP алатима
+- 🛡️ Примена поузданости спремне за продукцију и крос-платформске компатибилности
 
-**🎯 Ishod učenja**: Deploy produkcijski spreman MCP server koji pojednostavljuje stvarne razvojne tokove
+**🎯 Резултат учења**: Деплој MCP сервера спремног за продукцију који убрзава стварне развојне токове
 
-## 💡 Primene u stvarnom svetu i uticaj
+## 💡 Примена у стварном свету и утицај
 
-### 🏢 Upotreba u preduzećima
+### 🏢 Коришћење у предузећима
 
-#### 🔄 DevOps automatizacija
-Transformišite razvojni tok rada inteligentnom automatizacijom:
-- **Pametno upravljanje repozitorijumima**: AI pokretani pregledi koda i odluke o spajanju
-- **Inteligentni CI/CD**: Automatizovana optimizacija pipeline-a na osnovu promena u kodu
-- **Triage problema**: Automatska klasifikacija i dodela bagova
+#### 🔄 Аутоматизација DevOps-а
+Трансформишите свој развојни процес интелигентном аутоматизацијом:
+- **Паметно управљање репозиторијумима**: AI заснован преглед кода и одлуке о спајању
+- **Интелигентни CI/CD**: Аутоматска оптимизација цевовода на основу промена у коду
+- **Тријажа проблема**: Аутоматска класификација и додела багова
 
-#### 🧪 Revolucija u osiguranju kvaliteta
-Unapredite testiranje pomoću AI automatizacije:
-- **Inteligentno generisanje testova**: Automatsko kreiranje sveobuhvatnih test setova
-- **Vizuelno regresiono testiranje**: AI detekcija promena UI-ja
-- **Praćenje performansi**: Proaktivno otkrivanje i rešavanje problema
+#### 🧪 Револуција у осигурању квалитета
+Подигните тестирање уз AI аутоматизацију:
+- **Интелигентно генерисање тестова**: Аутоматско креирање свеобухватних тест пакета
+- **Визуелно регресионo тестирање**: AI детекција промена у UI-ју
+- **Праћење перформанси**: Проактивно откривање и решавање проблема
 
-#### 📊 Inteligencija u obradi podataka
-Izgradite pametnije tokove obrade podataka:
-- **Adaptivni ETL procesi**: Samooptimizujuće transformacije podataka
-- **Detekcija anomalija**: Praćenje kvaliteta podataka u realnom vremenu
-- **Inteligentno usmeravanje**: Pametno upravljanje protokom podataka
+#### 📊 Интелигенција у обради података
+Изградите паметније токове обраде података:
+- **Адаптивни ETL процеси**: Самооптимизујуће трансформације података
+- **Детекција аномалија**: Надзор квалитета података у реалном времену
+- **Интелигентно усмеравање**: Паметно управљање протоком података
 
-#### 🎧 Unapređenje korisničkog iskustva
-Kreirajte izuzetne interakcije sa korisnicima:
-- **Podrška sa kontekstom**: AI agenti sa pristupom istoriji korisnika
-- **Proaktivno rešavanje problema**: Prediktivna korisnička podrška
-- **Integracija na više kanala**: Jedinstveno AI iskustvo na različitim platformama
+#### 🎧 Побољшање корисничког искуства
+Креирајте изузетне интеракције са корисницима:
+- **Подршка свесна контекста**: AI агенти са приступом историји корисника
+- **Проактивно решавање проблема**: Предиктивна корисничка подршка
+- **Интеграција више канала**: Јединствен AI доживљај на свим платформама
 
-## 🛠️ Preduslovi i podešavanje
+## 🛠️ Захтеви и подешавање
 
-### 💻 Sistemски zahtevi
+### 💻 Захтеви система
 
-| Komponenta           | Zahtev                 | Napomene                 |
-|---------------------|-----------------------|--------------------------|
-| **Operativni sistem** | Windows 10+, macOS 10.15+, Linux | Bilo koji moderan OS       |
-| **Visual Studio Code** | Najnovija stabilna verzija | Potrebno za AITK          |
-| **Node.js**           | v18.0+ i npm           | Za razvoj MCP servera     |
-| **Python**            | 3.10+                  | Opcionalno za Python MCP servere |
-| **Memorija**          | Minimum 8GB RAM        | Preporučeno 16GB za lokalne modele |
+| Компонента | Захтев | Напомене |
+|------------|---------|----------|
+| **Оперативни систем** | Windows 10+, macOS 10.15+, Linux | Било који модерни ОС |
+| **Visual Studio Code** | Најновија стабилна верзија | Потребно за AITK |
+| **Node.js** | v18.0+ и npm | За развој MCP сервера |
+| **Python** | 3.10+ | Опционо за Python MCP сервере |
+| **Рам меморија** | Минимум 8GB | Препоручено 16GB за локалне моделе |
 
-### 🔧 Razvojno okruženje
+### 🔧 Развојно окружење
 
-#### Preporučeni VS Code dodaci
+#### Препоручени VS Code додаци
 - **AI Toolkit** (ms-windows-ai-studio.windows-ai-studio)
 - **Python** (ms-python.python)
 - **Python Debugger** (ms-python.debugpy)
-- **GitHub Copilot** (GitHub.copilot) – opcionalno, ali korisno
+- **GitHub Copilot** (GitHub.copilot) - Опционо али корисно
 
-#### Opcioni alati
-- **uv**: moderan Python paket menadžer
-- **MCP Inspector**: vizuelni alat za debagovanje MCP servera
-- **Playwright**: za primere web automatizacije
+#### Опционо
+- **uv**: Модеран Python пакет менаџер
+- **MCP Inspector**: Визуелни алат за дебаговање MCP сервера
+- **Playwright**: За примере веб аутоматизације
 
-## 🎖️ Ishodi učenja i putanja sertifikacije
+## 🎖️ Резултати учења и пут ка сертификату
 
-### 🏆 Lista za proveru savladanih veština
+### 🏆 Контролна листа вештина
 
-Završetkom ove radionice, steći ćete ekspertizu u:
+Завршетком ове радионице остварићете мајсторство у:
 
-#### 🎯 Osnovne kompetencije
-- [ ] **MCP protokol**: duboko razumevanje arhitekture i obrazaca implementacije
-- [ ] **AITK stručnost**: ekspertska upotreba AI Toolkita za brzi razvoj
-- [ ] **Razvoj prilagođenih servera**: izgradnja, deploy i održavanje produkcijskih MCP servera
-- [ ] **Izvrsna integracija alata**: besprekorno povezivanje AI sa postojećim razvojnim tokovima
-- [ ] **Primena u rešavanju problema**: korišćenje naučenih veština za stvarne poslovne izazove
+#### 🎯 Основне компетенције
+- [ ] **Мастер MCP протокола**: Дубоко разумевање архитектуре и образаца имплементације
+- [ ] **AITK стручност**: Експертско коришћење AI Toolkit-а за брзи развој
+- [ ] **Развој прилагођених сервера**: Изградња, деплој и одржавање продукционих MCP сервера
+- [ ] **Изврсност у интеграцији алата**: Беспрекорно повезивање AI са постојећим развојним токовима
+- [ ] **Примена решавања проблема**: Коришћење стечених вештина за реалне пословне изазове
 
-#### 🔧 Tehničke veštine
-- [ ] Postavljanje i konfiguracija AI Toolkita u VS Code-u
-- [ ] Dizajn i implementacija prilagođenih MCP servera
-- [ ] Integracija GitHub modela sa MCP arhitekturom
-- [ ] Izgradnja automatizovanih test tokova sa Playwright-om
-- [ ] Deploy AI agenata za produkciju
-- [ ] Debagovanje i optimizacija performansi MCP servera
+#### 🔧 Техничке вештине
+- [ ] Подешавање и конфигурација AI Toolkit-а у VS Code-у
+- [ ] Дизајн и имплементација прилагођених MCP сервера
+- [ ] Интеграција GitHub модела са MCP архитектуром
+- [ ] Изградња аутоматизованих тест радних токова са Playwright-ом
+- [ ] Деплој AI агената за продукцију
+- [ ] Дебаговање и оптимизација перформанси MCP сервера
 
-#### 🚀 Napredne sposobnosti
-- [ ] Arhitektura AI integracija na nivou preduzeća
-- [ ] Implementacija najboljih sigurnosnih praksi za AI aplikacije
-- [ ] Dizajn skalabilnih MCP server arhitektura
-- [ ] Kreiranje prilagođenih lanaca alata za specifične domene
-- [ ] Mentorstvo u AI-native razvoju
+#### 🚀 Напредне могућности
+- [ ] Архитектура AI интеграција на нивоу предузећа
+- [ ] Имплементација најбољих безбедносних пракси за AI апликације
+- [ ] Дизајн скалабилних MCP сервер архитектура
+- [ ] Креирање прилагођених ланаца алата за специфичне домене
+- [ ] Менторство у AI-нативном развоју
 
-## 📖 Dodatni resursi
-- [MCP specifikacija](https://modelcontextprotocol.io/docs)
-- [AI Toolkit GitHub repozitorijum](https://github.com/microsoft/vscode-ai-toolkit)
-- [Kolekcija primer MCP servera](https://github.com/modelcontextprotocol/servers)
-- [Vodič najboljih praksi](https://modelcontextprotocol.io/docs/best-practices)
+## 📖 Додатни ресурси
+- [MCP спецификација](https://modelcontextprotocol.io/docs)
+- [AI Toolkit GitHub репозиторијум](https://github.com/microsoft/vscode-ai-toolkit)
+- [Колекција пример MCP сервера](https://github.com/modelcontextprotocol/servers)
+- [Водич најбољих пракси](https://modelcontextprotocol.io/docs/best-practices)
 
 ---
 
-**🚀 Spremni da revolucionizujete svoj AI razvojni tok?**
+**🚀 Спремни да револуционишете свој AI развојни ток?**
 
-Hajde da zajedno gradimo budućnost inteligentnih aplikacija sa MCP-om i AI Toolkit-om!
+Хајде да заједно изградимо будућност интелигентних апликација уз MCP и AI Toolkit!
 
 **Одрицање од одговорности**:  
-Овај документ је преведен помоћу AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, имајте у виду да аутоматизовани преводи могу садржати грешке или нетачности. Изворни документ на оригиналном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Не сносимо одговорност за било каква неспоразума или погрешна тумачења настала употребом овог превода.
+Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

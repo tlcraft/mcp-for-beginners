@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:36:05+00:00",
+  "translation_date": "2025-07-13T17:21:06+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "sl"
 }
@@ -15,31 +15,31 @@ Ta razdelek vsebuje več lekcij:
 
 - **2 Odjemalec**, v tej lekciji se boste naučili, kako napisati odjemalca, ki se lahko poveže z vašim strežnikom, [do lekcije](02-client/README.md)
 
-- **3 Odjemalec z LLM**, še boljši način pisanja odjemalca je dodajanje LLM, da lahko "pogaja" z vašim strežnikom o tem, kaj naj naredi, [do lekcije](03-llm-client/README.md)
+- **3 Odjemalec z LLM**, še boljši način pisanja odjemalca je dodajanje LLM, da lahko "pogaja" s strežnikom o tem, kaj naj naredi, [do lekcije](03-llm-client/README.md)
 
-- **4 Uporaba strežnika v načinu GitHub Copilot Agent v Visual Studio Code**. Tukaj si ogledamo, kako zagnati naš MCP strežnik znotraj Visual Studio Code, [do lekcije](04-vscode/README.md)
+- **4 Uporaba strežnika v načinu GitHub Copilot Agent v Visual Studio Code**. Tukaj si ogledamo, kako zagnati naš MCP strežnik neposredno iz Visual Studio Code, [do lekcije](04-vscode/README.md)
 
-- **5 Poraba iz SSE (Server Sent Events)** SSE je standard za pretakanje s strežnika na odjemalca, ki omogoča strežnikom, da preko HTTP-ja pošiljajo posodobitve v realnem času, [do lekcije](05-sse-server/README.md)
+- **5 Uporaba SSE (Server Sent Events)** SSE je standard za pretakanje podatkov s strežnika na odjemalca, ki omogoča strežnikom pošiljanje posodobitev v realnem času prek HTTP, [do lekcije](05-sse-server/README.md)
 
 - **6 HTTP pretakanje z MCP (Streamable HTTP)**. Spoznajte sodobno HTTP pretakanje, obvestila o napredku in kako implementirati razširljive, realnočasovne MCP strežnike in odjemalce z uporabo Streamable HTTP, [do lekcije](06-http-streaming/README.md)
 
-- **7 Uporaba AI Toolkit za VSCode** za porabo in testiranje vaših MCP odjemalcev in strežnikov, [do lekcije](07-aitk/README.md)
+- **7 Uporaba AI Toolkit za VSCode** za uporabo in testiranje vaših MCP odjemalcev in strežnikov, [do lekcije](07-aitk/README.md)
 
 - **8 Testiranje**. Tukaj se bomo osredotočili predvsem na različne načine testiranja našega strežnika in odjemalca, [do lekcije](08-testing/README.md)
 
 - **9 Namestitev**. Ta poglavje bo obravnavalo različne načine nameščanja vaših MCP rešitev, [do lekcije](09-deployment/README.md)
 
 
-Model Context Protocol (MCP) je odprt protokol, ki standardizira, kako aplikacije zagotavljajo kontekst LLM-jem. MCP si lahko predstavljate kot USB-C priključek za AI aplikacije – omogoča standardiziran način povezovanja AI modelov z različnimi viri podatkov in orodji.
+Model Context Protocol (MCP) je odprt protokol, ki standardizira način, kako aplikacije zagotavljajo kontekst LLM-jem. MCP si lahko predstavljate kot USB-C priključek za AI aplikacije – omogoča standardiziran način povezovanja AI modelov z različnimi viri podatkov in orodji.
 
 ## Cilji učenja
 
-Na koncu te lekcije boste znali:
+Do konca te lekcije boste znali:
 
 - Nastaviti razvojna okolja za MCP v C#, Javi, Pythonu, TypeScriptu in JavaScriptu
 - Zgraditi in namestiti osnovne MCP strežnike s prilagojenimi funkcijami (viri, pozivi in orodja)
 - Ustvariti gostiteljske aplikacije, ki se povezujejo z MCP strežniki
-- Testirati in odpravljati napake v MCP implementacijah
+- Testirati in odpravljati napake v implementacijah MCP
 - Razumeti pogoste izzive pri nastavitvi in njihove rešitve
 - Povezati svoje MCP implementacije s priljubljenimi LLM storitvami
 
@@ -99,4 +99,4 @@ Imamo nabor primerov, ki dopolnjujejo vaje, ki jih boste videli v vseh poglavjih
 Naslednje: [Ustvarjanje vašega prvega MCP strežnika](01-first-server/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

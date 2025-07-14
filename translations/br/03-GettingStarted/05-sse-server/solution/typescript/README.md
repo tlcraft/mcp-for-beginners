@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-29T20:24:10+00:00",
+  "translation_date": "2025-07-13T20:20:02+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "br"
 }
@@ -16,7 +16,6 @@ npm install
 ```
 
 ## -3- Execute o exemplo
-
 
 ```bash
 npm run build
@@ -32,16 +31,16 @@ npm run inspector
 
 Isso deve iniciar um servidor web com uma interface visual que permite testar o exemplo.
 
-Quando o servidor estiver conectado:
+Uma vez que o servidor esteja conectado:
 
-- tente listar as ferramentas e execute `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- tente listar as ferramentas e execute `add`, com os argumentos 2 e 4, você deve ver 6 no resultado.
+- vá para resources e resource template e chame "greeting", digite um nome e você verá uma saudação com o nome que forneceu.
 
-### Testing in CLI mode
+### Testando no modo CLI
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+O inspector que você executou é na verdade um app Node.js e `mcp dev` é um wrapper em torno dele.
 
-- Start up the server with the command `npm run build`.
+- Inicie o servidor com o comando `npm run build`.
 
 - Em um terminal separado, execute o seguinte comando:
 
@@ -49,7 +48,7 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    Isso listará todas as ferramentas disponíveis no servidor. Você deverá ver a seguinte saída:
+    Isso listará todas as ferramentas disponíveis no servidor. Você deve ver a seguinte saída:
 
     ```text
     {
@@ -86,7 +85,7 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
     ```
 
-Você deverá ver a seguinte saída:
+Você deve ver a seguinte saída:
 
     ```text
     {
@@ -100,7 +99,7 @@ Você deverá ver a seguinte saída:
     ```
 
 > ![!TIP]
-> Normalmente, é muito mais rápido rodar o inspector no modo CLI do que no navegador.
+> Geralmente é muito mais rápido rodar o inspector no modo CLI do que no navegador.
 > Leia mais sobre o inspector [aqui](https://github.com/modelcontextprotocol/inspector).
 
 **Aviso Legal**:  

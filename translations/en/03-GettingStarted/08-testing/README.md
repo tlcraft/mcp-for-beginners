@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T15:16:08+00:00",
+  "translation_date": "2025-07-13T21:56:06+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "en"
 }
@@ -26,31 +26,31 @@ By the end of this lesson, you will be able to:
 
 MCP offers tools to help you test and debug your servers:
 
-- **MCP Inspector**: A command-line tool that can be used both as a CLI and as a visual interface.
+- **MCP Inspector**: A command-line tool that can be used both as a CLI and with a visual interface.
 - **Manual testing**: You can use tools like curl to send web requests, but any tool capable of making HTTP requests will work.
 - **Unit testing**: You can use your preferred testing framework to test features on both the server and client sides.
 
 ### Using MCP Inspector
 
-We’ve covered how to use this tool in previous lessons, but here’s a brief overview. It’s built with Node.js and can be run by calling the `npx` executable, which temporarily downloads and installs the tool, then cleans up after running your request.
+We’ve covered how to use this tool in previous lessons, but here’s a brief overview. It’s built with Node.js and can be run using the `npx` command, which temporarily downloads and installs the tool, then cleans up after running your request.
 
 The [MCP Inspector](https://github.com/modelcontextprotocol/inspector) helps you:
 
-- **Discover Server Capabilities**: Automatically detect available resources, tools, and prompts
-- **Test Tool Execution**: Experiment with different parameters and see responses in real time
-- **View Server Metadata**: Inspect server information, schemas, and configurations
+- **Discover Server Capabilities**: Automatically detect available resources, tools, and prompts.
+- **Test Tool Execution**: Experiment with different parameters and see responses in real time.
+- **View Server Metadata**: Inspect server information, schemas, and configurations.
 
-A typical run of the tool looks like this:
+A typical command to run the tool looks like this:
 
 ```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-The command above starts an MCP server and its visual interface, launching a local web interface in your browser. You’ll see a dashboard displaying your registered MCP servers, their available tools, resources, and prompts. The interface lets you interactively test tool execution, inspect server metadata, and view real-time responses, making it easier to validate and debug your MCP server implementations.
+This command starts an MCP server with its visual interface and opens a local web interface in your browser. You’ll see a dashboard showing your registered MCP servers, their available tools, resources, and prompts. The interface lets you interactively test tool execution, inspect server metadata, and view real-time responses, making it easier to validate and debug your MCP server implementations.
 
 Here’s an example of what it looks like: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.en.png)
 
-You can also run this tool in CLI mode by adding the `--cli` flag. Here’s an example of running the tool in CLI mode, which lists all the tools on the server:
+You can also run the tool in CLI mode by adding the `--cli` flag. Here’s an example of running it in CLI mode, which lists all the tools on the server:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-As shown in the curl example above, you use a POST request to invoke a tool by sending a payload containing the tool’s name and its parameters. Choose the approach that works best for you. CLI tools are generally faster to use and can be scripted, which is useful in CI/CD environments.
+As shown in the example above, you use a POST request to invoke a tool by sending a payload with the tool’s name and parameters. Choose the method that works best for you. CLI tools are generally faster and can be scripted, which is useful in CI/CD environments.
 
 ### Unit Testing
 
-Create unit tests for your tools and resources to ensure they work as expected. Here’s some example test code:
+Write unit tests for your tools and resources to ensure they work as expected. Here’s an example of test code:
 
 ```python
 import pytest
@@ -129,7 +129,7 @@ async def test_list_tools_cursor_parameter():
     
 ```
 
-The code above does the following:
+This code does the following:
 
 - Uses the pytest framework, which lets you write tests as functions and use assert statements.
 - Creates an MCP Server with two different tools.
@@ -139,7 +139,7 @@ Check out the [full file here](https://github.com/modelcontextprotocol/python-sd
 
 Using this file as a reference, you can test your own server to ensure capabilities are set up correctly.
 
-All major SDKs have similar testing sections, so you can adapt this to your chosen runtime.
+All major SDKs have similar testing sections, so you can adapt this to your preferred runtime.
 
 ## Samples
 
@@ -153,7 +153,7 @@ All major SDKs have similar testing sections, so you can adapt this to your chos
 
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 
-## What’s Next
+## What's Next
 
 - Next: [Deployment](../09-deployment/README.md)
 

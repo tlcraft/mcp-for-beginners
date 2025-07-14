@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-06-17T17:06:50+00:00",
+  "translation_date": "2025-07-13T23:29:28+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "uk"
 }
 -->
 # Приклад
 
-Це приклад на JavaScript для MCP Server
+Це приклад JavaScript для MCP Server
 
-Ось приклад реєстрації інструменту, де ми реєструємо інструмент, який робить тестовий виклик до LLM:
+Ось приклад реєстрації інструменту, де ми реєструємо інструмент, який робить імітований виклик до LLM:
 
 ```javascript
 this.mcpServer.tool(

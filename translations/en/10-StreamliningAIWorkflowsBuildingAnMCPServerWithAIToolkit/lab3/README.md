@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-06-10T06:01:23+00:00",
+  "translation_date": "2025-07-14T08:06:01+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
   "language_code": "en"
 }
@@ -20,21 +20,21 @@ CO_OP_TRANSLATOR_METADATA:
 By the end of this lab, you will be able to:
 
 - ✅ Build custom MCP servers using the AI Toolkit
-- ✅ Set up and use the latest MCP Python SDK (v1.9.3)
-- ✅ Configure and work with the MCP Inspector for debugging
-- ✅ Debug MCP servers within both Agent Builder and Inspector environments
-- ✅ Grasp advanced workflows for MCP server development
+- ✅ Configure and work with the latest MCP Python SDK (v1.9.3)
+- ✅ Set up and use the MCP Inspector for debugging
+- ✅ Debug MCP servers in both Agent Builder and Inspector environments
+- ✅ Understand advanced workflows for MCP server development
 
 ## 📋 Prerequisites
 
 - Completion of Lab 2 (MCP Fundamentals)
-- VS Code with the AI Toolkit extension installed
+- VS Code with AI Toolkit extension installed
 - Python 3.10+ environment
-- Node.js and npm installed for setting up the Inspector
+- Node.js and npm for setting up Inspector
 
 ## 🏗️ What You'll Build
 
-In this lab, you'll develop a **Weather MCP Server** that showcases:
+In this lab, you'll create a **Weather MCP Server** that showcases:
 - Custom MCP server implementation
 - Integration with AI Toolkit Agent Builder
 - Professional debugging workflows
@@ -45,14 +45,14 @@ In this lab, you'll develop a **Weather MCP Server** that showcases:
 ## 🔧 Core Components Overview
 
 ### 🐍 MCP Python SDK
-The Model Context Protocol Python SDK forms the base for building custom MCP servers. You'll be using version 1.9.3, which includes improved debugging features.
+The Model Context Protocol Python SDK is the foundation for building custom MCP servers. You'll use version 1.9.3, which includes improved debugging features.
 
 ### 🔍 MCP Inspector
 A powerful debugging tool that offers:
-- Real-time monitoring of the server
+- Real-time server monitoring
 - Visualization of tool execution
 - Inspection of network requests and responses
-- An interactive environment for testing
+- An interactive testing environment
 
 ---
 
@@ -60,7 +60,7 @@ A powerful debugging tool that offers:
 
 ### Step 1: Create a WeatherAgent in Agent Builder
 
-1. **Open Agent Builder** in VS Code through the AI Toolkit extension
+1. **Open Agent Builder** in VS Code via the AI Toolkit extension
 2. **Create a new agent** with the following settings:
    - Agent Name: `WeatherAgent`
 
@@ -69,8 +69,8 @@ A powerful debugging tool that offers:
 ### Step 2: Initialize MCP Server Project
 
 1. **Go to Tools** → **Add Tool** in Agent Builder
-2. **Choose "MCP Server"** from the options
-3. **Select "Create A new MCP Server"**
+2. **Select "MCP Server"** from the options
+3. **Choose "Create A new MCP Server"**
 4. **Pick the `python-weather` template**
 5. **Name your server:** `weather_mcp`
 
@@ -79,7 +79,7 @@ A powerful debugging tool that offers:
 ### Step 3: Open and Review the Project
 
 1. **Open the generated project** in VS Code
-2. **Look over the project structure:**
+2. **Examine the project structure:**
    ```
    weather_mcp/
    ├── src/
@@ -97,12 +97,11 @@ A powerful debugging tool that offers:
 
 ### Step 4: Upgrade to the Latest MCP SDK
 
-> **🔍 Why Upgrade?** Upgrading to the latest MCP SDK (v1.9.3) and Inspector (0.14.0) gives you access to enhanced features and improved debugging.
+> **🔍 Why Upgrade?** We want to use the latest MCP SDK (v1.9.3) and Inspector service (0.14.0) to access new features and improved debugging.
 
 #### 4a. Update Python Dependencies
 
-**Modify `pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
-
+**Edit `pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
 
 #### 4b. Update Inspector Configuration
 
@@ -112,14 +111,13 @@ A powerful debugging tool that offers:
 
 **Edit `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
 
-> **📝 Note:** This file contains extensive dependency definitions. Below is the essential structure - the full content ensures proper dependency resolution.
+> **📝 Note:** This file contains detailed dependency definitions. Below is the essential structure — the full file ensures proper dependency resolution.
 
-
-> **⚡ Full Package Lock:** The complete package-lock.json contains ~3000 lines of dependency definitions. The above shows the key structure - use the provided file for complete dependency resolution.
+> **⚡ Full Package Lock:** The complete package-lock.json has about 3000 lines of dependencies. The snippet above shows the key structure — use the provided file for full dependency resolution.
 
 ### Step 5: Configure VS Code Debugging
 
-*Note: Please copy the file in the specified path to replace the corresponding local file*
+*Note: Please copy the file at the specified path to replace the corresponding local file*
 
 #### 5a. Update Launch Configuration
 
@@ -200,7 +198,7 @@ A powerful debugging tool that offers:
 }
 ```
 
-**Modify `.vscode/tasks.json`:**
+**Edit `.vscode/tasks.json`:**
 
 ```
 {
@@ -302,7 +300,6 @@ A powerful debugging tool that offers:
 }
 ```
 
-
 ---
 
 ## 🚀 Running and Testing Your MCP Server
@@ -325,11 +322,11 @@ npm install
 ### Step 7: Debug with Agent Builder
 
 1. **Press F5** or select the **"Debug in Agent Builder"** configuration
-2. **Pick the compound configuration** in the debug panel
-3. **Wait for the server to start** and for Agent Builder to open
+2. **Choose the compound configuration** from the debug panel
+3. **Wait for the server to start** and Agent Builder to launch
 4. **Test your weather MCP server** using natural language queries
 
-Enter prompts like the following
+Example input prompt:
 
 SYSTEM_PROMPT
 
@@ -347,12 +344,12 @@ How's the weather like in Seattle
 
 ### Step 8: Debug with MCP Inspector
 
-1. **Select the "Debug in Inspector"** configuration (using Edge or Chrome)
-2. **Open the Inspector UI** at `http://localhost:6274`
-3. **Explore the interactive testing features:**
+1. **Select the "Debug in Inspector"** configuration (Edge or Chrome)
+2. **Open the Inspector interface** at `http://localhost:6274`
+3. **Explore the interactive testing environment:**
    - View available tools
    - Test tool execution
-   - Monitor network traffic
+   - Monitor network requests
    - Debug server responses
 
 ![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.en.png)
@@ -364,10 +361,10 @@ How's the weather like in Seattle
 By completing this lab, you have:
 
 - [x] **Built a custom MCP server** using AI Toolkit templates
-- [x] **Upgraded to the latest MCP SDK** (v1.9.3) for improved functionality
+- [x] **Upgraded to the latest MCP SDK** (v1.9.3) for improved features
 - [x] **Set up professional debugging workflows** for both Agent Builder and Inspector
 - [x] **Configured the MCP Inspector** for interactive server testing
-- [x] **Mastered VS Code debugging configurations** for MCP development
+- [x] **Mastered VS Code debugging setups** for MCP development
 
 ## 🔧 Advanced Features Explored
 
@@ -387,15 +384,15 @@ By completing this lab, you have:
 
 ---
 
-**🎉 Congratulations!** You’ve successfully completed Lab 3 and are now ready to create, debug, and deploy custom MCP servers using professional development workflows.
+**🎉 Congratulations!** You’ve successfully completed Lab 3 and can now create, debug, and deploy custom MCP servers using professional development workflows.
 
 ### 🔜 Continue to Next Module
 
-Ready to apply your MCP skills in a real-world setting? Move on to **[Module 4: Practical MCP Development - Custom GitHub Clone Server](../lab4/README.md)** where you will:
+Ready to apply your MCP skills in a real-world development workflow? Proceed to **[Module 4: Practical MCP Development - Custom GitHub Clone Server](../lab4/README.md)** where you will:
 - Build a production-ready MCP server that automates GitHub repository operations
-- Implement GitHub repository cloning via MCP
+- Implement GitHub repository cloning functionality via MCP
 - Integrate custom MCP servers with VS Code and GitHub Copilot Agent Mode
-- Test and deploy custom MCP servers in production
+- Test and deploy custom MCP servers in production environments
 - Learn practical workflow automation for developers
 
 **Disclaimer**:  

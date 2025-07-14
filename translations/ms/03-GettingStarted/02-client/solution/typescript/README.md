@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fae57a69c2b62cb7d92ff12da65f36c3",
-  "translation_date": "2025-05-17T10:10:40+00:00",
+  "translation_date": "2025-07-13T18:45:23+00:00",
   "source_file": "03-GettingStarted/02-client/solution/typescript/README.md",
   "language_code": "ms"
 }
 -->
-# Menjalankan sampel ini
+# Menjalankan contoh ini
 
-Anda disyorkan untuk memasang `uv` tetapi ia bukanlah satu kemestian, lihat [arahan](https://docs.astral.sh/uv/#highlights)
+Anda disarankan untuk memasang `uv` tetapi ia bukan wajib, lihat [arahan](https://docs.astral.sh/uv/#highlights)
 
 ## -1- Pasang kebergantungan
 
@@ -18,6 +18,7 @@ npm install
 ```
 
 ## -3- Jalankan pelayan
+
 
 ```bash
 npm run build
@@ -29,7 +30,7 @@ npm run build
 npm run client
 ```
 
-Anda sepatutnya melihat hasil yang serupa dengan:
+Anda sepatutnya melihat keputusan yang serupa dengan:
 
 ```text
 Prompt:  {
@@ -41,4 +42,4 @@ Tool result:  { content: [ { type: 'text', text: '9' } ] }
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

@@ -2,15 +2,15 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e9490aedc71f99bc774af57b207a7adb",
-  "translation_date": "2025-06-13T02:33:36+00:00",
+  "translation_date": "2025-07-13T21:55:01+00:00",
   "source_file": "03-GettingStarted/07-aitk/solution/README.md",
   "language_code": "ro"
 }
 -->
-# 📘 Soluția temei: Extinderea serverului MCP al calculatorului cu un instrument pentru rădăcina pătrată
+# 📘 Soluția temei: Extinderea serverului MCP al calculatorului tău cu un instrument pentru rădăcina pătrată
 
 ## Prezentare generală
-În această temă, ai îmbunătățit serverul MCP al calculatorului prin adăugarea unui nou instrument care calculează rădăcina pătrată a unui număr. Această completare îi permite agentului tău AI să gestioneze interogări matematice mai avansate, precum „Care este rădăcina pătrată a lui 16?” sau „Calculează √49,” folosind comenzi în limbaj natural.
+În această temă, ai îmbunătățit serverul MCP al calculatorului tău prin adăugarea unui nou instrument care calculează rădăcina pătrată a unui număr. Această completare permite agentului tău AI să gestioneze interogări matematice mai avansate, cum ar fi „Care este rădăcina pătrată a lui 16?” sau „Calculează √49,” folosind comenzi în limbaj natural.
 
 ## 🛠️ Implementarea instrumentului pentru rădăcina pătrată
 Pentru a adăuga această funcționalitate, ai definit o nouă funcție de instrument în fișierul server.py. Iată implementarea:
@@ -70,11 +70,33 @@ def sqrt(a: float) -> float:
 
 ## 🔍 Cum funcționează
 
-- **Importă instrumentul `math.sqrt()` folosind @server.tool() cu numele `sqrt`.**
-- Ai permis agentului tău AI să realizeze calcule cu rădăcină pătrată prin comenzi în limbaj natural.
-- Ai exersat adăugarea de noi instrumente și repornirea serverului pentru a integra funcționalități suplimentare.
+- **Importarea modulului `math`**: Pentru a efectua operații matematice dincolo de aritmetica de bază, Python oferă modulul încorporat `math`. Acest modul include o varietate de funcții și constante matematice. Prin importarea lui cu `import math`, ai acces la funcții precum `math.sqrt()`, care calculează rădăcina pătrată a unui număr.
+- **Definirea funcției**: Decoratorul `@server.tool()` înregistrează funcția `sqrt` ca un instrument accesibil agentului tău AI.
+- **Parametrul de intrare**: Funcția primește un singur argument `a` de tip `float`.
+- **Gestionarea erorilor**: Dacă `a` este negativ, funcția ridică o excepție `ValueError` pentru a preveni calcularea rădăcinii pătrate a unui număr negativ, ceea ce nu este suportat de funcția `math.sqrt()`.
+- **Valoarea returnată**: Pentru valori nenegative, funcția returnează rădăcina pătrată a lui `a` folosind metoda încorporată `math.sqrt()` din Python.
 
-Simte-te liber să experimentezi mai departe, adăugând și alte instrumente matematice, cum ar fi exponentierea sau funcțiile logaritmice, pentru a continua să îmbunătățești capabilitățile agentului tău!
+## 🔄 Repornirea serverului
+După adăugarea noului instrument `sqrt`, este esențial să repornești serverul MCP pentru ca agentul să recunoască și să poată folosi funcționalitatea nou adăugată.
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original, în limba sa nativă, trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot rezulta din utilizarea acestei traduceri.
+## 💬 Exemple de comenzi pentru testarea noului instrument
+Iată câteva comenzi în limbaj natural pe care le poți folosi pentru a testa funcționalitatea rădăcinii pătrate:
+
+- „Care este rădăcina pătrată a lui 25?”
+- „Calculează rădăcina pătrată a lui 81.”
+- „Găsește rădăcina pătrată a lui 0.”
+- „Care este rădăcina pătrată a lui 2.25?”
+
+Aceste comenzi ar trebui să determine agentul să apeleze instrumentul `sqrt` și să returneze rezultatele corecte.
+
+## ✅ Rezumat
+Prin finalizarea acestei teme, ai:
+
+- Extins serverul MCP al calculatorului tău cu un nou instrument `sqrt`.
+- Permis agentului tău AI să efectueze calcule cu rădăcina pătrată prin comenzi în limbaj natural.
+- Exersat adăugarea de noi instrumente și repornirea serverului pentru a integra funcționalități suplimentare.
+
+Simte-te liber să experimentezi mai departe adăugând alte instrumente matematice, cum ar fi ridicarea la putere sau funcții logaritmice, pentru a continua să îmbunătățești capabilitățile agentului tău!
+
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

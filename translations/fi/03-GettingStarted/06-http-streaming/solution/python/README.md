@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:02:37+00:00",
+  "translation_date": "2025-07-13T21:20:39+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "fi"
 }
 -->
-# Running this sample
+# Tämän esimerkin suorittaminen
 
-Tässä ohjeet klassisen HTTP-streamauspalvelimen ja -asiakkaan sekä MCP-streamauspalvelimen ja -asiakkaan ajamiseen Pythonilla.
+Tässä ohjeessa kerrotaan, miten ajetaan klassinen HTTP-streamauspalvelin ja -asiakas sekä MCP-streamauspalvelin ja -asiakas Pythonilla.
 
 ### Yleiskatsaus
 
-- Otat käyttöön MCP-palvelimen, joka lähettää etenemisilmoituksia asiakkaalle prosessoidessaan kohteita.
+- Määrität MCP-palvelimen, joka lähettää etenemisilmoituksia asiakkaalle prosessoidessaan kohteita.
 - Asiakas näyttää jokaisen ilmoituksen reaaliajassa.
-- Tämä opas kattaa vaatimukset, asennuksen, ajamisen ja vianetsinnän.
+- Tämä opas kattaa vaatimukset, asennuksen, ajon ja vianmäärityksen.
 
 ### Vaatimukset
 
 - Python 3.9 tai uudempi
-- `mcp` Python-paketti (asennus `pip install mcp`-komennolla)
+- `mcp`-Python-paketti (asennus komennolla `pip install mcp`)
 
 ### Asennus ja käyttöönotto
 
@@ -30,7 +30,7 @@ Tässä ohjeet klassisen HTTP-streamauspalvelimen ja -asiakkaan sekä MCP-stream
    git clone https://github.com/microsoft/mcp-for-beginners
    ```
 
-1. **Luo ja aktivoi virtuaaliympäristö (suositellaan):**
+1. **Luo ja aktivoi virtuaaliympäristö (suositeltavaa):**
 
    ```pwsh
    python -m venv venv
@@ -52,7 +52,7 @@ Tässä ohjeet klassisen HTTP-streamauspalvelimen ja -asiakkaan sekä MCP-stream
 
 ### Klassisen HTTP-streamauspalvelimen ajaminen
 
-1. Siirry ratkaisukansioon:
+1. Siirry ratkaisun hakemistoon:
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
@@ -80,7 +80,7 @@ Tässä ohjeet klassisen HTTP-streamauspalvelimen ja -asiakkaan sekä MCP-stream
    python client.py
    ```
 
-2. Näet striimatut viestit tulostettuna peräkkäin:
+2. Näet striimattuja viestejä tulostettuna peräkkäin:
 
    ```text
    Running classic HTTP streaming client...
@@ -95,11 +95,11 @@ Tässä ohjeet klassisen HTTP-streamauspalvelimen ja -asiakkaan sekä MCP-stream
 
 ### MCP-streamauspalvelimen ajaminen
 
-1. Siirry ratkaisukansioon:
+1. Siirry ratkaisun hakemistoon:
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
-2. Käynnistä MCP-palvelin käyttäen streamable-http -kuljetinta:
+2. Käynnistä MCP-palvelin käyttäen streamable-http-siirtoa:
    ```pwsh
    python server.py mcp
    ```
@@ -116,7 +116,7 @@ Tässä ohjeet klassisen HTTP-streamauspalvelimen ja -asiakkaan sekä MCP-stream
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. Näet ilmoitukset reaaliajassa, kun palvelin käsittelee kutakin kohdetta:
+2. Näet ilmoitukset tulostettuna reaaliajassa, kun palvelin käsittelee kutakin kohdetta:
    ```
    Running MCP client...
    Starting client...
@@ -129,23 +129,23 @@ Tässä ohjeet klassisen HTTP-streamauspalvelimen ja -asiakkaan sekä MCP-stream
    Tool result: meta=None content=[TextContent(type='text', text='Processed files: file_1.txt, file_2.txt, file_3.txt | Message: hello from client')]
    ```
 
-### Tärkeimmät toteutusvaiheet
+### Keskeiset toteutusvaiheet
 
 1. **Luo MCP-palvelin käyttäen FastMCP:ta.**
-2. **Määrittele työkalu, joka käsittelee listan ja lähettää ilmoituksia käyttäen `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+2. **Määrittele työkalu, joka käsittelee listan ja lähettää ilmoituksia `ctx.info()` tai `ctx.log()` avulla.**
+3. **Aja palvelin asetuksella `transport="streamable-http"`.**
+4. **Toteuta asiakas, jolla on viestinkäsittelijä ilmoitusten näyttämiseen saapuessaan.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Koodin läpikäynti
+- Palvelin käyttää asynkronisia funktioita ja MCP-kontekstia etenemispäivitysten lähettämiseen.
+- Asiakas toteuttaa asynkronisen viestinkäsittelijän ilmoitusten ja lopputuloksen tulostamiseen.
 
-### Tips & Troubleshooting
+### Vinkkejä ja vianmääritystä
 
-- Use `async/await` ei-synkronisiin operaatioihin.**
-- Käsittele aina poikkeukset sekä palvelimessa että asiakkaassa luotettavuuden varmistamiseksi.
+- Käytä `async/await` ei-estävissä toiminnoissa.
+- Käsittele aina poikkeukset sekä palvelimella että asiakkaalla luotettavuuden varmistamiseksi.
 - Testaa useilla asiakkailla nähdäksesi reaaliaikaiset päivitykset.
 - Jos kohtaat virheitä, tarkista Python-versiosi ja varmista, että kaikki riippuvuudet on asennettu.
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

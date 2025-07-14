@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-06-18T07:52:07+00:00",
+  "translation_date": "2025-07-13T23:08:39+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "ms"
 }
 -->
-# Contoh
+# Sample
 
-Contoh sebelumnya menunjukkan cara menggunakan projek .NET tempatan dengan jenis `stdio`. Dan cara menjalankan server secara tempatan dalam sebuah kontena. Ini adalah penyelesaian yang baik dalam banyak situasi. Namun, ia juga berguna untuk menjalankan server secara jauh, seperti dalam persekitaran awan. Di sinilah jenis `http` digunakan.
+Contoh sebelum ini menunjukkan cara menggunakan projek .NET tempatan dengan jenis `stdio`. Dan bagaimana untuk menjalankan pelayan secara tempatan dalam sebuah kontena. Ini adalah penyelesaian yang baik dalam banyak situasi. Walau bagaimanapun, ia boleh menjadi berguna untuk menjalankan pelayan secara jauh, seperti dalam persekitaran awan. Di sinilah jenis `http` digunakan.
 
-Melihat pada penyelesaian dalam folder `04-PracticalImplementation`, ia mungkin kelihatan jauh lebih kompleks daripada yang sebelumnya. Tetapi sebenarnya, tidak begitu. Jika anda perhatikan projek `src/Calculator` dengan teliti, anda akan lihat bahawa ia kebanyakannya adalah kod yang sama seperti contoh sebelumnya. Perbezaan satu-satunya ialah kita menggunakan perpustakaan berbeza `ModelContextProtocol.AspNetCore` untuk mengendalikan permintaan HTTP. Dan kita mengubah kaedah `IsPrime` menjadi peribadi, hanya untuk menunjukkan bahawa anda boleh mempunyai kaedah peribadi dalam kod anda. Selebihnya kod adalah sama seperti sebelum ini.
+Melihat penyelesaian dalam folder `04-PracticalImplementation`, ia mungkin kelihatan lebih kompleks berbanding yang sebelumnya. Tetapi sebenarnya, ia tidak begitu. Jika anda perhatikan dengan teliti projek `src/Calculator`, anda akan lihat bahawa ia kebanyakannya adalah kod yang sama seperti contoh sebelum ini. Perbezaan satu-satunya ialah kita menggunakan perpustakaan berbeza `ModelContextProtocol.AspNetCore` untuk mengendalikan permintaan HTTP. Dan kita mengubah kaedah `IsPrime` menjadi peribadi, hanya untuk menunjukkan bahawa anda boleh mempunyai kaedah peribadi dalam kod anda. Selebihnya kod adalah sama seperti sebelum ini.
 
-Projek lain adalah daripada [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). Mempunyai .NET Aspire dalam penyelesaian akan meningkatkan pengalaman pembangun semasa membangunkan dan menguji serta membantu dengan kebolehamatan. Ia tidak diwajibkan untuk menjalankan server, tetapi ia adalah amalan yang baik untuk ada dalam penyelesaian anda.
+Projek lain adalah dari [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). Mempunyai .NET Aspire dalam penyelesaian akan meningkatkan pengalaman pembangun semasa membangunkan dan menguji serta membantu dengan kebolehlihatan. Ia tidak diwajibkan untuk menjalankan pelayan, tetapi adalah amalan yang baik untuk memasukkannya dalam penyelesaian anda.
 
-## Mulakan server secara tempatan
+## Mulakan pelayan secara tempatan
 
 1. Dari VS Code (dengan sambungan C# DevKit), navigasi ke direktori `04-PracticalImplementation/samples/csharp`.
-1. Jalankan arahan berikut untuk memulakan server:
+1. Jalankan arahan berikut untuk memulakan pelayan:
 
    ```bash
     dotnet watch run --project ./src/AppHost
@@ -26,13 +26,13 @@ Projek lain adalah daripada [.NET Aspire](https://learn.microsoft.com/dotnet/asp
 
 1. Apabila pelayar web membuka papan pemuka .NET Aspire, perhatikan URL `http`. Ia sepatutnya seperti `http://localhost:5058/`.
 
-   ![Papan Pemuka .NET Aspire](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.ms.png)
+   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.ms.png)
 
 ## Uji Streamable HTTP dengan MCP Inspector
 
-Jika anda mempunyai Node.js versi 22.7.5 ke atas, anda boleh menggunakan MCP Inspector untuk menguji server anda.
+Jika anda mempunyai Node.js 22.7.5 dan ke atas, anda boleh menggunakan MCP Inspector untuk menguji pelayan anda.
 
-Mulakan server dan jalankan arahan berikut dalam terminal:
+Mulakan pelayan dan jalankan arahan berikut dalam terminal:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:5058
@@ -40,18 +40,18 @@ npx @modelcontextprotocol/inspector http://localhost:5058
 
 ![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.ms.png)
 
-- Pilih `Streamable HTTP` as the Transport type.
-- In the Url field, enter the URL of the server noted earlier, and append `/mcp`. Ia sepatutnya `http` (bukan `https`) something like `http://localhost:5058/mcp`.
-- select the Connect button.
+- Pilih `Streamable HTTP` sebagai jenis Pengangkutan.
+- Dalam medan Url, masukkan URL pelayan yang dicatat tadi, dan tambah `/mcp`. Ia sepatutnya `http` (bukan `https`) seperti `http://localhost:5058/mcp`.
+- pilih butang Connect.
 
-A nice thing about the Inspector is that it provide a nice visibility on what is happening.
+Satu perkara yang bagus tentang Inspector ialah ia memberikan kebolehlihatan yang baik tentang apa yang sedang berlaku.
 
-- Try listing the available tools
-- Try some of them, it should works just like before.
+- Cuba senaraikan alat yang tersedia
+- Cuba beberapa daripadanya, ia sepatutnya berfungsi seperti sebelum ini.
 
-## Test MCP Server with GitHub Copilot Chat in VS Code
+## Uji MCP Server dengan GitHub Copilot Chat dalam VS Code
 
-To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp` server yang telah dibuat sebelum ini untuk kelihatan seperti ini:
+Untuk menggunakan pengangkutan Streamable HTTP dengan GitHub Copilot Chat, ubah konfigurasi pelayan `calc-mcp` yang dibuat sebelum ini supaya kelihatan seperti ini:
 
 ```jsonc
 // .vscode/mcp.json
@@ -67,13 +67,13 @@ To use the Streamable HTTP transport with GitHub Copilot Chat, change the config
 
 Lakukan beberapa ujian:
 
-- Minta "3 nombor perdana selepas 6780". Perhatikan bagaimana Copilot akan menggunakan alat baru `NextFivePrimeNumbers` dan hanya memulangkan 3 nombor perdana pertama.
-- Minta "7 nombor perdana selepas 111", untuk lihat apa yang berlaku.
-- Minta "John mempunyai 24 gula-gula dan ingin membahagikannya kepada 3 anaknya. Berapa gula-gula yang setiap anak dapat?", untuk lihat apa yang berlaku.
+- Minta "3 nombor perdana selepas 6780". Perhatikan bagaimana Copilot akan menggunakan alat baru `NextFivePrimeNumbers` dan hanya mengembalikan 3 nombor perdana pertama.
+- Minta "7 nombor perdana selepas 111", untuk melihat apa yang berlaku.
+- Minta "John mempunyai 24 gula-gula dan ingin mengagihkannya kepada 3 anaknya. Berapa gula-gula yang setiap anak dapat?", untuk melihat apa yang berlaku.
 
-## Hantar server ke Azure
+## Hantar pelayan ke Azure
 
-Mari kita hantar server ke Azure supaya lebih ramai orang boleh menggunakannya.
+Mari kita hantar pelayan ke Azure supaya lebih ramai orang boleh menggunakannya.
 
 Dari terminal, navigasi ke folder `04-PracticalImplementation/samples/csharp` dan jalankan arahan berikut:
 
@@ -81,11 +81,11 @@ Dari terminal, navigasi ke folder `04-PracticalImplementation/samples/csharp` da
 azd up
 ```
 
-Setelah penghantaran selesai, anda akan melihat mesej seperti ini:
+Setelah penghantaran selesai, anda sepatutnya melihat mesej seperti ini:
 
-![Kejayaan penghantaran Azd](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.ms.png)
+![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.ms.png)
 
-Ambil URL tersebut dan gunakan dalam MCP Inspector serta dalam GitHub Copilot Chat.
+Salin URL tersebut dan gunakan dalam MCP Inspector dan GitHub Copilot Chat.
 
 ```jsonc
 // .vscode/mcp.json
@@ -101,7 +101,7 @@ Ambil URL tersebut dan gunakan dalam MCP Inspector serta dalam GitHub Copilot Ch
 
 ## Apa seterusnya?
 
-Kita cuba jenis pengangkutan dan alat ujian yang berbeza. Kita juga menghantar server MCP anda ke Azure. Tetapi bagaimana jika server kita perlu mengakses sumber peribadi? Contohnya, pangkalan data atau API peribadi? Dalam bab seterusnya, kita akan lihat bagaimana kita boleh meningkatkan keselamatan server kita.
+Kita cuba pelbagai jenis pengangkutan dan alat ujian. Kita juga menghantar pelayan MCP anda ke Azure. Tetapi bagaimana jika pelayan kita perlu mengakses sumber peribadi? Contohnya, pangkalan data atau API peribadi? Dalam bab seterusnya, kita akan lihat bagaimana kita boleh meningkatkan keselamatan pelayan kita.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat yang kritikal, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

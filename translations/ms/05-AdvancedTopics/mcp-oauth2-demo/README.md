@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-13T00:36:41+00:00",
+  "translation_date": "2025-07-14T00:43:02+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "ms"
 }
 -->
 # MCP OAuth2 Demo
 
-Este proyecto es una **aplicación mínima de Spring Boot** que funciona como:
+Projek ini adalah **aplikasi Spring Boot minimal** yang berfungsi sebagai:
 
-* un **Spring Authorization Server** (emitiendo tokens de acceso JWT mediante el flujo `client_credentials`), y  
-* un **Resource Server** (protegiendo su propio endpoint `/hello`).
+* **Spring Authorization Server** (mengeluarkan token akses JWT melalui aliran `client_credentials`), dan  
+* **Resource Server** (melindungi endpoint `/hello` sendiri).
 
-Refleja la configuración mostrada en el [post del blog de Spring (2 Abr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Ia meniru tetapan yang ditunjukkan dalam [catatan blog Spring (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
-## Inicio rápido (local)
+## Mula cepat (tempatan)
 
 ```bash
 # build & run
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Probando la configuración OAuth2
+## Uji Konfigurasi OAuth2
 
-Puedes probar la configuración de seguridad OAuth2 con los siguientes pasos:
+Anda boleh menguji konfigurasi keselamatan OAuth2 dengan langkah berikut:
 
-### 1. Verifica que el servidor esté funcionando y seguro
+### 1. Sahkan server berjalan dan dilindungi
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Obtén un token de acceso usando client credentials
+### 2. Dapatkan token akses menggunakan kelayakan klien
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Nota: El encabezado de autenticación Basic (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Nota: Header Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) adalah pengekodan Base64 bagi `mcp-client:secret`.
 
-### 3. Accede al endpoint protegido usando el token
+### 3. Akses endpoint yang dilindungi menggunakan token
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Una respuesta exitosa con "Hello from MCP OAuth2 Demo!" confirma que la configuración OAuth2 está funcionando correctamente.
+Respons berjaya dengan "Hello from MCP OAuth2 Demo!" mengesahkan bahawa konfigurasi OAuth2 berfungsi dengan betul.
 
 ---
 
-## Construcción del contenedor
+## Bina kontena
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Despliegue en **Azure Container Apps**
+## Deploy ke **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-El FQDN de ingreso se convierte en tu **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+FQDN ingress menjadi **issuer** anda (`https://<fqdn>`).  
+Azure menyediakan sijil TLS yang dipercayai secara automatik untuk `*.azurecontainerapps.io`.
 
 ---
 
-## Integración con **Azure API Management**
+## Sambungkan ke **Azure API Management**
 
-Agrega esta política de entrada a tu API:
+Tambah polisi inbound ini ke API anda:
 
 ```xml
 <inbound>
@@ -116,11 +116,11 @@ Agrega esta política de entrada a tu API:
 </inbound>
 ```
 
-APIM obtendrá el JWKS y validará cada solicitud.
+APIM akan mengambil JWKS dan mengesahkan setiap permintaan.
 
 ---
 
-## Qué sigue
+## Apa seterusnya
 
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 

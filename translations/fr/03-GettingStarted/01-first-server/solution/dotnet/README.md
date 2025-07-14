@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-07-09T21:56:32+00:00",
+  "translation_date": "2025-07-13T17:46:42+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "fr"
 }
@@ -34,7 +34,7 @@ Cela devrait démarrer un serveur web avec une interface visuelle vous permettan
 Une fois le serveur connecté :
 
 - essayez de lister les outils et exécutez `add` avec les arguments 2 et 4, vous devriez voir 6 dans le résultat.
-- allez dans resources et resource template et appelez "greeting", saisissez un nom et vous devriez voir un message de bienvenue avec le nom que vous avez fourni.
+- allez dans resources et resource template et appelez "greeting", saisissez un nom et vous devriez voir un message de salutation avec le nom que vous avez fourni.
 
 ### Tester en mode CLI
 

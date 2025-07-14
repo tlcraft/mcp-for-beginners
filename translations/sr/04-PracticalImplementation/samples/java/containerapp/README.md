@@ -2,122 +2,122 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e5ea5e7582f70008ea9bec3b3820f20a",
-  "translation_date": "2025-05-17T14:32:29+00:00",
+  "translation_date": "2025-07-13T23:20:30+00:00",
   "source_file": "04-PracticalImplementation/samples/java/containerapp/README.md",
   "language_code": "sr"
 }
 -->
-## Arhitektura sistema
+## Архитектура система
 
-Ovaj projekat demonstrira veb aplikaciju koja koristi proveru bezbednosti sadržaja pre nego što korisničke zahteve prosledi kalkulator servisu putem Model Context Protocol (MCP).
+Овај пројекат демонстрира веб апликацију која користи проверу безбедности садржаја пре него што проследи корисничке упите ка сервису калкулатора преко Model Context Protocol (MCP).
 
-![Dijagram arhitekture sistema](../../../../../../translated_images/plant.84b061907411570c4d69e747b3f5569a0783a9b3e7b81a8e0ffee5a0a459f312.sr.png)
+![System Architecture Diagram](../../../../../../translated_images/plant.b079fed84e945b7c2978993a16163bb53f0517cfe3548d2e442ff40d619ba4b4.sr.png)
 
-### Kako funkcioniše
+### Како функционише
 
-1. **Unos korisnika**: Korisnik unosi zahtev za računanje u veb interfejs
-2. **Provera bezbednosti sadržaja (Unos)**: Zahtev se analizira putem Azure Content Safety API-ja
-3. **Odluka o bezbednosti (Unos)**:
-   - Ako je sadržaj bezbedan (stepen ozbiljnosti < 2 u svim kategorijama), prosleđuje se kalkulatoru
-   - Ako je sadržaj označen kao potencijalno štetan, proces se zaustavlja i vraća se upozorenje
-4. **Integracija kalkulatora**: Bezbedan sadržaj obrađuje LangChain4j, koji komunicira sa MCP serverom kalkulatora
-5. **Provera bezbednosti sadržaja (Izlaz)**: Odgovor bota se analizira putem Azure Content Safety API-ja
-6. **Odluka o bezbednosti (Izlaz)**:
-   - Ako je odgovor bota bezbedan, prikazuje se korisniku
-   - Ako je odgovor bota označen kao potencijalno štetan, zamenjuje se upozorenjem
-7. **Odgovor**: Rezultati (ako su bezbedni) prikazuju se korisniku zajedno sa obe analize bezbednosti
+1. **Кориснички унос**: Корисник уноси упит за израчунавање у веб интерфејсу  
+2. **Провера безбедности садржаја (унос)**: Упит се анализира помоћу Azure Content Safety API  
+3. **Одлука о безбедности (унос)**:  
+   - Ако је садржај безбедан (озбиљност < 2 у свим категоријама), прослеђује се калкулатору  
+   - Ако је садржај означен као потенцијално штетан, процес се зауставља и враћа упозорење  
+4. **Интеграција калкулатора**: Безбедан садржај обрађује LangChain4j, који комуницира са MCP калкулатор сервером  
+5. **Провера безбедности садржаја (излаз)**: Одговор бота се анализира помоћу Azure Content Safety API  
+6. **Одлука о безбедности (излаз)**:  
+   - Ако је одговор бота безбедан, приказује се кориснику  
+   - Ако је одговор бота означен као потенцијално штетан, замењује се упозорењем  
+7. **Одговор**: Резултати (ако су безбедни) се приказују кориснику заједно са обе анализе безбедности
 
-## Korišćenje Model Context Protocol (MCP) sa kalkulator servisima
+## Коришћење Model Context Protocol (MCP) са сервисима калкулатора
 
-Ovaj projekat demonstrira kako koristiti Model Context Protocol (MCP) za pozivanje MCP servisa kalkulatora iz LangChain4j. Implementacija koristi lokalni MCP server koji radi na portu 8080 za pružanje operacija kalkulatora.
+Овај пројекат показује како користити Model Context Protocol (MCP) за позивање MCP сервиса калкулатора из LangChain4j. Имплементација користи локални MCP сервер који ради на порту 8080 за пружање калкулаторских операција.
 
-### Postavljanje Azure Content Safety servisa
+### Подешавање Azure Content Safety сервиса
 
-Pre korišćenja funkcija bezbednosti sadržaja, potrebno je kreirati resurs za Azure Content Safety servis:
+Пре коришћења функција безбедности садржаја, потребно је да креирате Azure Content Safety ресурс:
 
-1. Prijavite se na [Azure Portal](https://portal.azure.com)
-2. Kliknite na "Create a resource" i pretražite "Content Safety"
-3. Izaberite "Content Safety" i kliknite "Create"
-4. Unesite jedinstveno ime za vaš resurs
-5. Izaberite vašu pretplatu i grupu resursa (ili kreirajte novu)
-6. Izaberite podržani region (proverite [Dostupnost regiona](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services) za detalje)
-7. Izaberite odgovarajući nivo cena
-8. Kliknite "Create" da biste rasporedili resurs
-9. Kada je raspoređivanje završeno, kliknite "Go to resource"
-10. U levom panelu, pod "Resource Management", izaberite "Keys and Endpoint"
-11. Kopirajte jedan od ključeva i URL krajnje tačke za korišćenje u sledećem koraku
+1. Пријавите се на [Azure Portal](https://portal.azure.com)  
+2. Кликните на "Create a resource" и потражите "Content Safety"  
+3. Изаберите "Content Safety" и кликните "Create"  
+4. Унесите јединствено име за ваш ресурс  
+5. Изаберите вашу претплату и групу ресурса (или креирајте нову)  
+6. Изаберите подржани регион (погледајте [Region availability](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services) за детаље)  
+7. Изаберите одговарајући ниво цене  
+8. Кликните "Create" да бисте покренули ресурс  
+9. Када се имплементација заврши, кликните "Go to resource"  
+10. У левом менију, под "Resource Management", изаберите "Keys and Endpoint"  
+11. Копирајте један од кључева и URL крајње тачке за коришћење у следећем кораку
 
-### Konfigurisanje promenljivih okruženja
+### Конфигурисање променљивих окружења
 
-Postavite `GITHUB_TOKEN` promenljivu okruženja za GitHub models autentifikaciju:
+Подесите `GITHUB_TOKEN` променљиву окружења за аутентификацију GitHub модела:  
 ```sh
 export GITHUB_TOKEN=<your_github_token>
 ```
 
-Za funkcije bezbednosti sadržaja, postavite:
+За функције безбедности садржаја, подесите:  
 ```sh
 export CONTENT_SAFETY_ENDPOINT=<your_content_safety_endpoint>
 export CONTENT_SAFETY_KEY=<your_content_safety_key>
 ```
 
-Ove promenljive okruženja koristi aplikacija za autentifikaciju sa Azure Content Safety servisom. Ako ove promenljive nisu postavljene, aplikacija će koristiti vrednosti za demonstraciju, ali funkcije bezbednosti sadržaja neće raditi ispravno.
+Ове променљиве окружења користи апликација за аутентификацију са Azure Content Safety сервисом. Ако ове променљиве нису подешене, апликација ће користити замене за демонстрацију, али функције безбедности садржаја неће радити исправно.
 
-### Pokretanje MCP servera kalkulatora
+### Покретање MCP сервера калкулатора
 
-Pre pokretanja klijenta, potrebno je pokrenuti MCP server kalkulatora u SSE modu na localhost:8080.
+Пре покретања клијента, потребно је покренути MCP сервер калкулатора у SSE режиму на localhost:8080.
 
-## Opis projekta
+## Опис пројекта
 
-Ovaj projekat demonstrira integraciju Model Context Protocol (MCP) sa LangChain4j za pozivanje servisa kalkulatora. Ključne karakteristike uključuju:
+Овај пројекат демонстрира интеграцију Model Context Protocol (MCP) са LangChain4j за позивање калкулаторских сервиса. Кључне карактеристике укључују:
 
-- Korišćenje MCP-a za povezivanje sa servisom kalkulatora za osnovne matematičke operacije
-- Dvoslojna provera bezbednosti sadržaja za korisničke zahteve i odgovore bota
-- Integracija sa GitHub-ovim gpt-4.1-nano modelom putem LangChain4j
-- Korišćenje Server-Sent Events (SSE) za MCP transport
+- Коришћење MCP за повезивање са сервисом калкулатора за основне математичке операције  
+- Двострука провера безбедности садржаја на корисничким упитима и одговорима бота  
+- Интеграција са GitHub-овим gpt-4.1-nano моделом преко LangChain4j  
+- Коришћење Server-Sent Events (SSE) за MCP транспорт
 
-## Integracija bezbednosti sadržaja
+## Интеграција безбедности садржаја
 
-Projekat uključuje sveobuhvatne funkcije bezbednosti sadržaja kako bi osigurao da su i korisnički unosi i odgovori sistema bez štetnog sadržaja:
+Пројекат укључује свеобухватне функције безбедности садржаја како би се осигурало да су и кориснички уноси и системски одговори без штетног садржаја:
 
-1. **Provera unosa**: Svi korisnički zahtevi se analiziraju za kategorije štetnog sadržaja kao što su govor mržnje, nasilje, samopovređivanje i seksualni sadržaj pre obrade.
+1. **Провера уноса**: Сви кориснички упити се анализирају на категорије штетног садржаја као што су говор мржње, насиље, самоповређивање и сексуални садржај пре обраде.
 
-2. **Provera izlaza**: Čak i kada se koriste potencijalno necenzurisani modeli, sistem proverava sve generisane odgovore kroz iste filtere bezbednosti sadržaja pre nego što ih prikaže korisniku.
+2. **Провера излаза**: Чак и када се користе потенцијално неконтролисани модели, систем проверава све генерисане одговоре кроз исте филтере безбедности садржаја пре приказивања кориснику.
 
-Ovaj dvoslojni pristup osigurava da sistem ostaje bezbedan bez obzira na to koji AI model se koristi, štiteći korisnike od štetnih unosa i potencijalno problematičnih AI generisanih izlaza.
+Ова двострука провера осигурава да систем остане безбедан без обзира који AI модел се користи, штитећи кориснике од штетних уноса и потенцијално проблематичних AI генерисаних одговора.
 
-## Veb klijent
+## Веб клијент
 
-Aplikacija uključuje korisnički prijateljski veb interfejs koji omogućava korisnicima da interaguju sa sistemom Kalkulator bezbednosti sadržaja:
+Апликација укључује кориснички пријатељски веб интерфејс који омогућава интеракцију са системом Content Safety Calculator:
 
-### Karakteristike veb interfejsa
+### Карактеристике веб интерфејса
 
-- Jednostavan, intuitivan obrazac za unos zahteva za računanje
-- Dvoslojna validacija bezbednosti sadržaja (unos i izlaz)
-- Povratne informacije u realnom vremenu o bezbednosti zahteva i odgovora
-- Oznake bezbednosti u boji za lako tumačenje
-- Čist, responzivan dizajn koji radi na raznim uređajima
-- Primeri bezbednih zahteva za vođenje korisnika
+- Једноставан и интуитиван формулар за унос упита за израчунавање  
+- Двострука провера безбедности садржаја (унос и излаз)  
+- Повратне информације у реалном времену о безбедности упита и одговора  
+- Боје као индикатори безбедности за лакше разумевање  
+- Чист и прилагодљив дизајн који ради на различитим уређајима  
+- Примери безбедних упита као смернице за кориснике
 
-### Korišćenje veb klijenta
+### Коришћење веб клијента
 
-1. Pokrenite aplikaciju:
+1. Покрените апликацију:  
    ```sh
    mvn spring-boot:run
    ```
 
-2. Otvorite vaš pretraživač i idite na `http://localhost:8087`
+2. Отворите прегледач и идите на `http://localhost:8087`
 
-3. Unesite zahtev za računanje u predviđeno polje za tekst (npr. "Izračunaj zbir 24.5 i 17.3")
+3. Унесите упит за израчунавање у предвиђено поље (нпр. "Израчунај збир 24.5 и 17.3")
 
-4. Kliknite "Submit" da obradite vaš zahtev
+4. Кликните "Submit" да бисте обрадили захтев
 
-5. Pogledajte rezultate, koji će uključivati:
-   - Analizu bezbednosti sadržaja vašeg zahteva
-   - Izračunati rezultat (ako je zahtev bio bezbedan)
-   - Analizu bezbednosti sadržaja odgovora bota
-   - Bilo kakva upozorenja o bezbednosti ako su unos ili izlaz bili označeni
+5. Погледајте резултате, који укључују:  
+   - Анализу безбедности вашег упита  
+   - Израчунати резултат (ако је упит био безбедан)  
+   - Анализу безбедности одговора бота  
+   - Сва упозорења о безбедности ако је унос или излаз означен
 
-Veb klijent automatski upravlja oba procesa verifikacije bezbednosti sadržaja, osiguravajući da su sve interakcije bezbedne i prikladne bez obzira na to koji AI model se koristi.
+Веб клијент аутоматски обрађује оба процеса провере безбедности садржаја, осигуравајући да су све интеракције безбедне и прикладне без обзира који AI модел се користи.
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем услуге за превођење помоћу вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да обезбедимо тачност, молимо вас да будете свесни да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати меродавним извором. За критичне информације, препоручује се професионални људски превод. Не сносимо одговорност за било каква погрешна схватања или погрешне интерпретације које могу произаћи из коришћења овог превода.
+Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

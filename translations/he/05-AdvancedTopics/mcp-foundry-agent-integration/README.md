@@ -2,36 +2,36 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:17:42+00:00",
+  "translation_date": "2025-07-13T23:58:02+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "he"
 }
 -->
 # אינטגרציה של Model Context Protocol (MCP) עם Azure AI Foundry
 
-מדריך זה מציג כיצד לשלב שרתי Model Context Protocol (MCP) עם סוכני Azure AI Foundry, מה שמאפשר תזמור כלים חזק ויכולות AI ארגוניות.
+מדריך זה מציג כיצד לשלב שרתי Model Context Protocol (MCP) עם סוכני Azure AI Foundry, ומאפשר תזמור כלים מתקדם ויכולות AI ארגוניות.
 
 ## מבוא
 
-Model Context Protocol (MCP) הוא תקן פתוח שמאפשר ליישומי AI להתחבר בצורה מאובטחת למקורות נתונים וכלים חיצוניים. בשילוב עם Azure AI Foundry, MCP מאפשר לסוכנים לגשת ולפעול מול שירותים, APIs ומקורות נתונים חיצוניים שונים בצורה סטנדרטית.
+Model Context Protocol (MCP) הוא תקן פתוח המאפשר לאפליקציות AI להתחבר בצורה מאובטחת למקורות נתונים וכלים חיצוניים. בשילוב עם Azure AI Foundry, MCP מאפשר לסוכנים לגשת ולפעול מול שירותים, APIs ומקורות נתונים חיצוניים שונים בצורה סטנדרטית.
 
-שילוב זה מאחד את הגמישות של מערכת הכלים של MCP עם מסגרת הסוכנים החזקה של Azure AI Foundry, ומספק פתרונות AI ברמת ארגונים עם אפשרויות התאמה אישית נרחבות.
+שילוב זה מחבר בין הגמישות של מערכת הכלים של MCP לבין מסגרת הסוכנים החזקה של Azure AI Foundry, ומספק פתרונות AI ברמת ארגון עם אפשרויות התאמה נרחבות.
 
-**Note:** אם ברצונך להשתמש ב-MCP בשירות Azure AI Foundry Agent, כרגע נתמכות רק האזורים הבאים: westus, westus2, uaenorth, southindia ו-switzerlandnorth
+**[!NOTE]** אם ברצונך להשתמש ב-MCP בשירות סוכני Azure AI Foundry, כרגע נתמכים רק האזורים הבאים: westus, westus2, uaenorth, southindia ו-switzerlandnorth
 
 ## מטרות הלמידה
 
 בסיום מדריך זה תוכל:
 
-- להבין את Model Context Protocol ואת היתרונות שלו
+- להבין את Model Context Protocol ואת יתרונותיו
 - להגדיר שרתי MCP לשימוש עם סוכני Azure AI Foundry
-- ליצור ולהגדיר סוכנים עם אינטגרציית כלים של MCP
+- ליצור ולהגדיר סוכנים עם אינטגרציה לכלי MCP
 - ליישם דוגמאות מעשיות עם שרתי MCP אמיתיים
-- לטפל בתגובות כלים ובציטוטים בשיחות הסוכן
+- לטפל בתגובות כלים ובציטוטים בשיחות עם הסוכן
 
 ## דרישות מוקדמות
 
-לפני ההתחלה, וודא שיש לך:
+לפני שמתחילים, ודא שיש לך:
 
 - מנוי Azure עם גישה ל-AI Foundry
 - Python 3.10 ומעלה
@@ -40,12 +40,12 @@ Model Context Protocol (MCP) הוא תקן פתוח שמאפשר ליישומי 
 
 ## מהו Model Context Protocol (MCP)?
 
-Model Context Protocol הוא דרך סטנדרטית ליישומי AI להתחבר למקורות נתונים וכלים חיצוניים. היתרונות המרכזיים כוללים:
+Model Context Protocol הוא דרך סטנדרטית לאפליקציות AI להתחבר למקורות נתונים וכלים חיצוניים. היתרונות המרכזיים כוללים:
 
 - **אינטגרציה סטנדרטית**: ממשק אחיד בין כלים ושירותים שונים
 - **אבטחה**: מנגנוני אימות והרשאה מאובטחים
 - **גמישות**: תמיכה במקורות נתונים, APIs וכלים מותאמים שונים
-- **הרחבה**: קלות הוספת יכולות ואינטגרציות חדשות
+- **הרחבה**: קל להוסיף יכולות ואינטגרציות חדשות
 
 ## הגדרת MCP עם Azure AI Foundry
 
@@ -91,7 +91,7 @@ with project_client:
         ],
         tool_resources=None
     )
-    print(f"סוכן נוצר, מזהה סוכן: {agent.id}")
+    print(f"נוצר סוכן, מזהה סוכן: {agent.id}")
 ```
 
 ## MCP Tool Configuration Options
@@ -104,7 +104,7 @@ When configuring MCP tools for your agent, you can specify several important par
 mcp_tool = {
     "type": "mcp",
     "server_label": "unique_server_name",      # מזהה לשרת MCP
-    "server_url": "https://api.example.com/mcp", # נקודת הקצה של שרת MCP
+    "server_url": "https://api.example.com/mcp", # נקודת קצה של שרת MCP
     "require_approval": "never"                 # מדיניות אישור: כרגע נתמך רק "never"
 }
 ```
@@ -129,11 +129,11 @@ def create_mcp_agent_example():
     )
 
     with project_client:
-        # יצירת סוכן עם כלים של MCP
+        # יצירת סוכן עם כלים מסוג MCP
         agent = project_client.agents.create_agent(
             model="gpt-4.1-nano", 
             name="documentation_assistant", 
-            instructions="אתה עוזר מומחה לתיעוד Microsoft. השתמש בשרת MCP של Microsoft Learn כדי לחפש מידע מדויק ועדכני. תמיד ציין את המקורות שלך.",
+            instructions="אתה עוזר מומחה המתמחה בתיעוד של מיקרוסופט. השתמש בשרת MCP של Microsoft Learn כדי לחפש מידע מדויק ועדכני. תמיד ציין את המקורות שלך.",
             tools=[
                 {
                     "type": "mcp",
@@ -144,11 +144,11 @@ def create_mcp_agent_example():
             ],
             tool_resources=None
         )
-        print(f"סוכן נוצר, מזהה סוכן: {agent.id}")    
+        print(f"נוצר סוכן, מזהה סוכן: {agent.id}")    
         
         # יצירת שרשור שיחה
         thread = project_client.agents.threads.create()
-        print(f"שרשור שיחה נוצר, מזהה שרשור: {thread.id}")
+        print(f"נוצר שרשור, מזהה שרשור: {thread.id}")
 
         # שליחת הודעה
         message = project_client.agents.messages.create(
@@ -156,21 +156,21 @@ def create_mcp_agent_example():
             role="user", 
             content="מה זה .NET MAUI? איך הוא משתווה ל-Xamarin.Forms?",
         )
-        print(f"הודעה נוצרה, מזהה הודעה: {message.id}")
+        print(f"נוצרה הודעה, מזהה הודעה: {message.id}")
 
         # הרצת הסוכן
         run = project_client.agents.runs.create(thread_id=thread.id, agent_id=agent.id)
         
-        # בדיקת סטטוס עד לסיום
+        # בדיקת סטטוס הריצה
         while run.status in ["queued", "in_progress", "requires_action"]:
             time.sleep(1)
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
-            print(f"סטטוס הרצה: {run.status}")
+            print(f"סטטוס ריצה: {run.status}")
 
-        # בדיקת שלבי ההרצה וקריאות הכלים
+        # בדיקת שלבי הריצה וקריאות לכלים
         run_steps = project_client.agents.run_steps.list(thread_id=thread.id, run_id=run.id)
         for step in run_steps:
-            print(f"שלב הרצה: {step.id}, סטטוס: {step.status}, סוג: {step.type}")
+            print(f"שלב ריצה: {step.id}, סטטוס: {step.status}, סוג: {step.type}")
             if step.type == "tool_calls":
                 print("פרטי קריאת כלי:")
                 for tool_call in step.step_details.tool_calls:
@@ -187,18 +187,18 @@ def create_mcp_agent_example():
 
 if __name__ == "__main__":
     create_mcp_agent_example()
-  
+
 
 ## פתרון בעיות נפוצות
 
 ### 1. בעיות חיבור
 - ודא שניתן לגשת לכתובת ה-URL של שרת MCP
-- בדוק את אישורי האימות
+- בדוק את פרטי האימות
 - ודא שיש חיבור רשת תקין
 
-### 2. כשל בקריאות כלים
-- בדוק את הפרמטרים והפורמט של קריאות הכלים
-- בדוק דרישות ספציפיות לשרת
+### 2. כשל בקריאות לכלים
+- בדוק את הפרמטרים והפורמט של הקריאות לכלים
+- בדוק דרישות ספציפיות של השרת
 - יישם טיפול שגיאות מתאים
 
 ### 3. בעיות ביצועים
@@ -206,14 +206,14 @@ if __name__ == "__main__":
 - יישום מטמון במידת הצורך
 - ניטור זמני תגובה של השרת
 
-## שלבים הבאים
+## צעדים הבאים
 
 להעמקת האינטגרציה עם MCP:
 
 1. **חקור שרתי MCP מותאמים אישית**: בנה שרתי MCP משלך למקורות נתונים פרטיים
-2. **יישום אבטחה מתקדמת**: הוסף OAuth2 או מנגנוני אימות מותאמים
+2. **יישם אבטחה מתקדמת**: הוסף OAuth2 או מנגנוני אימות מותאמים
 3. **ניטור וניתוח**: יישם רישום וניטור לשימוש בכלים
-4. **הרחבת הפתרון**: שקול איזון עומסים וארכיטקטורות שרתי MCP מבוזרים
+4. **הרחבת הפתרון**: שקול איזון עומסים וארכיטקטורות שרתי MCP מבוזרות
 
 ## משאבים נוספים
 
@@ -224,7 +224,7 @@ if __name__ == "__main__":
 
 ## תמיכה
 
-לסיוע ושאלות נוספות:
+לתמיכה ושאלות נוספות:
 - עיין ב-[תיעוד Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
 - בדוק את [משאבי קהילת MCP](https://modelcontextprotocol.io/)
 
@@ -233,4 +233,4 @@ if __name__ == "__main__":
 - [6. תרומות מהקהילה](../../06-CommunityContributions/README.md)
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש להיות מודעים לכך שתרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו הוא המקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי אדם. אנו לא אחראים לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי אדם. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T15:17:26+00:00",
+  "translation_date": "2025-07-14T05:39:59+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "fr"
 }
 -->
 # MCP en action : Études de cas réelles
 
-Le Model Context Protocol (MCP) révolutionne la manière dont les applications d’IA interagissent avec les données, les outils et les services. Cette section présente des études de cas concrètes illustrant des applications pratiques du MCP dans divers contextes d’entreprise.
+Le Model Context Protocol (MCP) révolutionne la manière dont les applications d’IA interagissent avec les données, les outils et les services. Cette section présente des études de cas concrètes illustrant des applications pratiques du MCP dans divers scénarios d’entreprise.
 
 ## Aperçu
 
-Cette section met en avant des exemples concrets d’implémentations du MCP, soulignant comment les organisations exploitent ce protocole pour résoudre des problématiques métier complexes. En explorant ces études de cas, vous découvrirez la polyvalence, la scalabilité et les bénéfices concrets du MCP dans des situations réelles.
+Cette section met en avant des exemples concrets d’implémentations du MCP, soulignant comment les organisations exploitent ce protocole pour résoudre des défis métier complexes. En examinant ces études de cas, vous découvrirez la polyvalence, la scalabilité et les bénéfices concrets du MCP dans des contextes réels.
 
 ## Objectifs d’apprentissage clés
 
-En parcourant ces études de cas, vous allez :
+En explorant ces études de cas, vous allez :
 
 - Comprendre comment le MCP peut être utilisé pour résoudre des problèmes métier spécifiques
 - Découvrir différents modèles d’intégration et approches architecturales
-- Identifier les bonnes pratiques pour déployer le MCP en environnement d’entreprise
-- Appréhender les défis et solutions rencontrés lors d’implémentations réelles
-- Repérer des opportunités pour appliquer des schémas similaires dans vos propres projets
+- Identifier les bonnes pratiques pour implémenter le MCP en environnement d’entreprise
+- Obtenir des retours d’expérience sur les défis et solutions rencontrés lors d’implémentations réelles
+- Repérer des opportunités pour appliquer des modèles similaires dans vos propres projets
 
 ## Études de cas présentées
 
 ### 1. [Agents de voyage Azure AI – Implémentation de référence](./travelagentsample.md)
 
-Cette étude de cas analyse la solution de référence complète de Microsoft qui montre comment créer une application de planification de voyage multi-agents alimentée par l’IA, en utilisant MCP, Azure OpenAI et Azure AI Search. Le projet met en avant :
+Cette étude de cas analyse la solution de référence complète de Microsoft qui montre comment construire une application de planification de voyage multi-agents alimentée par l’IA, en utilisant MCP, Azure OpenAI et Azure AI Search. Le projet met en avant :
 
 - L’orchestration multi-agents via MCP
 - L’intégration des données d’entreprise avec Azure AI Search
@@ -37,7 +37,7 @@ Cette étude de cas analyse la solution de référence complète de Microsoft qu
 - Des outils extensibles avec des composants MCP réutilisables
 - Une expérience utilisateur conversationnelle propulsée par Azure OpenAI
 
-L’architecture et les détails d’implémentation offrent un aperçu précieux pour construire des systèmes multi-agents complexes avec MCP comme couche de coordination.
+L’architecture et les détails d’implémentation offrent des enseignements précieux pour concevoir des systèmes multi-agents complexes avec MCP comme couche de coordination.
 
 ### 2. [Mise à jour des éléments Azure DevOps à partir des données YouTube](./UpdateADOItemsFromYT.md)
 
@@ -59,7 +59,7 @@ Cette étude de cas vous guide pour connecter un client console Python à un ser
 - Appeler les outils de documentation sur le serveur et enregistrer les réponses directement dans la console
 - Intégrer la documentation Microsoft à jour dans votre flux de travail sans quitter le terminal
 
-Le chapitre inclut un exercice pratique, un exemple de code minimal fonctionnel, ainsi que des liens vers des ressources complémentaires pour approfondir. Consultez le tutoriel complet et le code dans le chapitre lié pour comprendre comment MCP peut transformer l’accès à la documentation et la productivité des développeurs en environnement console.
+Le chapitre inclut un exercice pratique, un exemple de code minimal fonctionnel, ainsi que des liens vers des ressources complémentaires pour approfondir. Consultez le tutoriel complet et le code dans le chapitre lié pour comprendre comment MCP peut transformer l’accès à la documentation et la productivité des développeurs dans un environnement console.
 
 ### 4. [Application web interactive de génération de plans d’étude avec MCP](./docs-mcp/README.md)
 
@@ -74,7 +74,7 @@ Le projet illustre comment l’IA conversationnelle et MCP peuvent être combin�
 
 ### 5. [Documentation intégrée dans l’éditeur avec MCP Server dans VS Code](./docs-mcp/README.md)
 
-Cette étude de cas montre comment intégrer directement Microsoft Learn Docs dans votre environnement VS Code grâce au serveur MCP — plus besoin de changer d’onglet dans le navigateur ! Vous découvrirez comment :
+Cette étude de cas montre comment intégrer directement Microsoft Learn Docs dans votre environnement VS Code grâce au serveur MCP — plus besoin de changer d’onglet de navigateur ! Vous découvrirez comment :
 
 - Rechercher et lire instantanément la documentation dans VS Code via le panneau MCP ou la palette de commandes
 - Référencer la documentation et insérer des liens directement dans vos fichiers README ou markdown de cours
@@ -104,7 +104,7 @@ Cet exemple montre comment tirer parti des capacités d’Azure pour créer un s
 
 Ces études de cas illustrent la polyvalence et les applications concrètes du Model Context Protocol dans des contextes réels. Des systèmes multi-agents complexes aux workflows d’automatisation ciblés, MCP offre une méthode standardisée pour connecter les systèmes IA aux outils et données nécessaires à la création de valeur.
 
-En étudiant ces implémentations, vous découvrirez des modèles architecturaux, des stratégies de mise en œuvre et des bonnes pratiques applicables à vos propres projets MCP. Ces exemples démontrent que MCP n’est pas qu’un cadre théorique, mais une solution pragmatique aux défis métier réels.
+En étudiant ces implémentations, vous découvrirez des modèles architecturaux, des stratégies d’implémentation et des bonnes pratiques applicables à vos propres projets MCP. Ces exemples démontrent que MCP n’est pas qu’un cadre théorique, mais une solution pragmatique aux défis métier réels.
 
 ## Ressources supplémentaires
 
@@ -114,7 +114,7 @@ En étudiant ces implémentations, vous découvrirez des modèles architecturaux
 - [Microsoft Docs MCP Server](https://github.com/MicrosoftDocs/mcp)
 - [MCP Community Examples](https://github.com/microsoft/mcp)
 
-Suivant : Hands on Lab [Optimisation des workflows IA : Création d’un serveur MCP avec AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+Suivant : Hands on Lab [Streamlining AI Workflows: Building an MCP Server with AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
 **Avertissement** :  
 Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

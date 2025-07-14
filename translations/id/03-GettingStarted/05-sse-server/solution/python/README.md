@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-05-17T12:04:36+00:00",
+  "translation_date": "2025-07-13T20:16:19+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "id"
 }
 -->
-# Menjalankan sampel ini
+# Menjalankan contoh ini
 
-Disarankan untuk menginstal `uv` tetapi tidak wajib, lihat [instruksi](https://docs.astral.sh/uv/#highlights)
+Disarankan untuk menginstal `uv` tapi tidak wajib, lihat [instruksi](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Buat lingkungan virtual
 
@@ -29,13 +29,14 @@ venv\Scrips\activate
 pip install "mcp[cli]"
 ```
 
-## -3- Jalankan sampel
+## -3- Jalankan contoh
+
 
 ```bash
 mcp run server.py
 ```
 
-## -4- Uji sampel
+## -4- Uji contoh
 
 Dengan server berjalan di satu terminal, buka terminal lain dan jalankan perintah berikut:
 
@@ -43,24 +44,24 @@ Dengan server berjalan di satu terminal, buka terminal lain dan jalankan perinta
 mcp dev server.py
 ```
 
-Ini akan memulai server web dengan antarmuka visual yang memungkinkan Anda menguji sampel.
+Ini akan memulai server web dengan antarmuka visual yang memungkinkan Anda menguji contoh.
 
 Setelah server terhubung:
 
-- coba daftar alat dan jalankan `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- coba daftar tools dan jalankan `add`, dengan argumen 2 dan 4, Anda harus melihat hasil 6.
+- pergi ke resources dan resource template lalu panggil get_greeting, ketikkan sebuah nama dan Anda akan melihat sapaan dengan nama yang Anda masukkan.
 
-### Testing in ClI mode
+### Pengujian dalam mode CLI
 
-The inspector you ran is actually a Node.js app and `mcp dev` adalah pembungkus di sekitarnya.
+Inspector yang Anda jalankan sebenarnya adalah aplikasi Node.js dan `mcp dev` adalah pembungkusnya.
 
-Anda dapat meluncurkannya langsung dalam mode CLI dengan menjalankan perintah berikut:
+Anda bisa menjalankannya langsung dalam mode CLI dengan menjalankan perintah berikut:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-Ini akan mencantumkan semua alat yang tersedia di server. Anda harus melihat output berikut:
+Ini akan menampilkan semua tools yang tersedia di server. Anda harus melihat output berikut:
 
 ```text
 {
@@ -91,7 +92,7 @@ Ini akan mencantumkan semua alat yang tersedia di server. Anda harus melihat out
 }
 ```
 
-Untuk memanggil alat ketik:
+Untuk memanggil sebuah tool ketik:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
@@ -112,8 +113,8 @@ Anda harus melihat output berikut:
 ```
 
 > ![!TIP]
-> Biasanya jauh lebih cepat menjalankan ispector dalam mode CLI daripada di browser.
-> Baca lebih lanjut tentang ispector [di sini](https://github.com/modelcontextprotocol/inspector).
+> Biasanya menjalankan inspector dalam mode CLI jauh lebih cepat daripada di browser.
+> Baca lebih lanjut tentang inspector [di sini](https://github.com/modelcontextprotocol/inspector).
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi penting, disarankan untuk menggunakan penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau salah penafsiran yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.

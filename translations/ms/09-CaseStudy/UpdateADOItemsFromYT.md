@@ -2,38 +2,38 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "14a2dfbea55ef735660a06bd6bdfe5f3",
-  "translation_date": "2025-06-13T21:37:23+00:00",
+  "translation_date": "2025-07-14T06:14:18+00:00",
   "source_file": "09-CaseStudy/UpdateADOItemsFromYT.md",
   "language_code": "ms"
 }
 -->
-# Case Study: Aktualizace položek Azure DevOps na základě dat z YouTube pomocí MCP
+# Kajian Kes: Mengemas Kini Item Azure DevOps dari Data YouTube dengan MCP
 
-> **Disclaimer:** Existují již online nástroje a reporty, které dokážou automatizovat proces aktualizace položek Azure DevOps daty z platforem jako YouTube. Následující scénář slouží pouze jako ukázkový případ, jak lze nástroje MCP využít pro automatizaci a integraci.
+> **Penafian:** Terdapat alat dan laporan dalam talian yang sedia ada yang boleh mengautomasikan proses mengemas kini item Azure DevOps dengan data dari platform seperti YouTube. Senario berikut disediakan semata-mata sebagai contoh penggunaan untuk menunjukkan bagaimana alat MCP boleh digunakan untuk tugasan automasi dan integrasi.
 
-## Přehled
+## Gambaran Keseluruhan
 
-Tato případová studie ukazuje jeden příklad, jak lze Model Context Protocol (MCP) a jeho nástroje použít k automatizaci aktualizace pracovních položek Azure DevOps (ADO) informacemi získanými z online platforem, jako je YouTube. Popisovaný scénář je jen ilustrací širších možností těchto nástrojů, které lze přizpůsobit mnoha podobným automatizačním potřebám.
+Kajian kes ini menunjukkan satu contoh bagaimana Model Context Protocol (MCP) dan alatnya boleh digunakan untuk mengautomasikan proses mengemas kini item kerja Azure DevOps (ADO) dengan maklumat yang diperoleh dari platform dalam talian, seperti YouTube. Senario yang diterangkan hanyalah satu ilustrasi bagi keupayaan lebih luas alat ini, yang boleh disesuaikan untuk pelbagai keperluan automasi yang serupa.
 
-V tomto příkladu Advocate sleduje online sezení pomocí ADO položek, kde každá položka obsahuje URL videa na YouTube. Díky nástrojům MCP může Advocate udržovat ADO položky aktuální s nejnovějšími metrikami videa, například počtem zhlédnutí, opakovatelným a automatizovaným způsobem. Tento přístup lze obecně použít i v dalších případech, kdy je potřeba integrovat informace z online zdrojů do ADO nebo jiných systémů.
+Dalam contoh ini, seorang Advocate menjejak sesi dalam talian menggunakan item ADO, di mana setiap item mengandungi URL video YouTube. Dengan menggunakan alat MCP, Advocate boleh memastikan item ADO sentiasa dikemas kini dengan metrik video terkini, seperti bilangan tontonan, secara berulang dan automatik. Pendekatan ini boleh digeneralisasikan kepada kes penggunaan lain di mana maklumat dari sumber dalam talian perlu diintegrasikan ke dalam ADO atau sistem lain.
 
-## Scénář
+## Senario
 
-Advocate je zodpovědný za sledování dopadu online sezení a zapojení komunity. Každé sezení je zaznamenáno jako pracovní položka ADO v projektu 'DevRel' a pracovní položka obsahuje pole s URL videa na YouTube. Pro přesné reportování dosahu sezení musí Advocate aktualizovat ADO položku o aktuální počet zhlédnutí videa a datum, kdy byla tato informace získána.
+Seorang Advocate bertanggungjawab untuk menjejak impak sesi dalam talian dan penglibatan komuniti. Setiap sesi direkodkan sebagai item kerja ADO dalam projek 'DevRel', dan item kerja tersebut mengandungi medan untuk URL video YouTube. Untuk melaporkan capaian sesi dengan tepat, Advocate perlu mengemas kini item ADO dengan bilangan tontonan video terkini dan tarikh maklumat ini diperoleh.
 
-## Použité nástroje
+## Alat Digunakan
 
-- [Azure DevOps MCP](https://github.com/microsoft/azure-devops-mcp): Umožňuje programatický přístup a aktualizace pracovních položek ADO přes MCP.
-- [Playwright MCP](https://github.com/microsoft/playwright-mcp): Automatizuje akce v prohlížeči pro získávání živých dat ze stránek, například statistik videí na YouTube.
+- [Azure DevOps MCP](https://github.com/microsoft/azure-devops-mcp): Membolehkan akses dan kemas kini item kerja ADO secara programatik melalui MCP.
+- [Playwright MCP](https://github.com/microsoft/playwright-mcp): Mengautomasikan tindakan pelayar untuk mengekstrak data langsung dari halaman web, seperti statistik video YouTube.
 
-## Postup krok za krokem
+## Aliran Kerja Langkah demi Langkah
 
-1. **Identifikace ADO položky**: Začíná se ID pracovní položky ADO (např. 1234) v projektu 'DevRel'.
-2. **Získání YouTube URL**: Pomocí Azure DevOps MCP nástroje se načte YouTube URL z pracovní položky.
-3. **Získání počtu zhlédnutí**: Pomocí Playwright MCP nástroje se přejde na YouTube URL a získá se aktuální počet zhlédnutí.
-4. **Aktualizace ADO položky**: Nejnovější počet zhlédnutí a datum získání se zapíší do sekce 'Impact and Learnings' pracovní položky ADO pomocí Azure DevOps MCP nástroje.
+1. **Kenal pasti Item ADO**: Mulakan dengan ID item kerja ADO (contoh: 1234) dalam projek 'DevRel'.
+2. **Dapatkan URL YouTube**: Gunakan alat Azure DevOps MCP untuk mendapatkan URL YouTube dari item kerja.
+3. **Ekstrak Bilangan Tontonan Video**: Gunakan alat Playwright MCP untuk melayari URL YouTube dan mengekstrak bilangan tontonan terkini.
+4. **Kemas Kini Item ADO**: Tulis bilangan tontonan terkini dan tarikh pengambilan maklumat ke dalam bahagian 'Impact and Learnings' item kerja ADO menggunakan alat Azure DevOps MCP.
 
-## Ukázkový prompt
+## Contoh Prompt
 
 ```bash
 - Work with the ADO Item ID: 1234
@@ -43,7 +43,7 @@ Advocate je zodpovědný za sledování dopadu online sezení a zapojení komuni
 - Update the ADO item with the current video views and the updated date of the information
 ```
 
-## Mermaid diagram
+## Carta Alir Mermaid
 
 ```mermaid
 flowchart TD
@@ -53,23 +53,23 @@ flowchart TD
     D --> E[End]
 ```
 
-## Technická implementace
+## Pelaksanaan Teknikal
 
-- **Orchestrace MCP**: Průběh řídí MCP server, který koordinuje využití nástrojů Azure DevOps MCP a Playwright MCP.
-- **Automatizace**: Proces lze spustit ručně nebo naplánovat, aby se pravidelně aktualizovaly položky ADO.
-- **Rozšiřitelnost**: Stejný vzor lze použít pro aktualizaci ADO položek o další online metriky (např. lajky, komentáře) nebo z jiných platforem.
+- **Orkestrasi MCP**: Aliran kerja diorkestrakan oleh pelayan MCP, yang menyelaraskan penggunaan kedua-dua alat Azure DevOps MCP dan Playwright MCP.
+- **Automasi**: Proses boleh dicetuskan secara manual atau dijadualkan untuk dijalankan pada selang masa tertentu bagi memastikan item ADO sentiasa dikemas kini.
+- **Kebolehlanjutan**: Corak yang sama boleh diperluaskan untuk mengemas kini item ADO dengan metrik dalam talian lain (contoh: suka, komen) atau dari platform lain.
 
-## Výsledky a dopad
+## Keputusan dan Impak
 
-- **Efektivita**: Snižuje manuální práci Advocate díky automatickému získávání a aktualizaci metrik videí.
-- **Přesnost**: Zajišťuje, že položky ADO obsahují vždy nejaktuálnější dostupná data z online zdrojů.
-- **Opakovatelnost**: Poskytuje znovupoužitelný postup pro podobné scénáře s jinými zdroji dat nebo metrikami.
+- **Kecekapan**: Mengurangkan usaha manual bagi Advocate dengan mengautomasikan pengambilan dan kemas kini metrik video.
+- **Ketepatan**: Memastikan item ADO mencerminkan data terkini yang tersedia dari sumber dalam talian.
+- **Pengulangan**: Menyediakan aliran kerja yang boleh digunakan semula untuk senario serupa yang melibatkan sumber data atau metrik lain.
 
-## Reference
+## Rujukan
 
 - [Azure DevOps MCP](https://github.com/microsoft/azure-devops-mcp)
 - [Playwright MCP](https://github.com/microsoft/playwright-mcp)
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau tafsiran yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

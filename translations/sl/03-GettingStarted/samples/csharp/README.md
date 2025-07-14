@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T06:10:14+00:00",
+  "translation_date": "2025-07-13T22:19:38+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "sl"
 }
 -->
 # Osnovna kalkulator MCP storitev
 
-Ta storitev omogoča osnovne kalkulatorske operacije preko Model Context Protocol (MCP). Namenjena je kot preprost primer za začetnike, ki se učijo o implementacijah MCP.
+Ta storitev omogoča osnovne kalkulator operacije preko Model Context Protocol (MCP). Namenjena je kot preprost primer za začetnike, ki se učijo o implementacijah MCP.
 
-Za več informacij glejte [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+Za več informacij glej [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
-## Funkcionalnosti
+## Značilnosti
 
-Ta kalkulatorska storitev ponuja naslednje zmogljivosti:
+Ta kalkulator storitev ponuja naslednje funkcionalnosti:
 
 1. **Osnovne aritmetične operacije**:
    - Seštevanje dveh števil
    - Odštevanje enega števila od drugega
    - Množenje dveh števil
-   - Deljenje enega števila z drugim (s preverjanjem deljenja z ničlo)
+   - Deljenje enega števila z drugim (s preverjanjem deljenja z nič)
 
-## Uporaba `stdio` tipa
-
+## Uporaba tipa `stdio`
+  
 ## Konfiguracija
 
 1. **Konfigurirajte MCP strežnike**:
    - Odprite svoj delovni prostor v VS Code.
-   - Ustvarite `.vscode/mcp.json` datoteko v mapi delovnega prostora za konfiguracijo MCP strežnikov. Primer konfiguracije:
+   - Ustvarite datoteko `.vscode/mcp.json` v mapi delovnega prostora za konfiguracijo MCP strežnikov. Primer konfiguracije:
 
      ```jsonc
      {
@@ -54,50 +54,49 @@ Ta kalkulatorska storitev ponuja naslednje zmogljivosti:
      }
      ```
 
-   - Pozvani boste, da vnesete koren GitHub repozitorija, ki ga lahko pridobite z ukazom, `git rev-parse --show-toplevel`.
+   - Zahtevalo vas bo, da vnesete koren GitHub repozitorija, ki ga lahko pridobite z ukazom `git rev-parse --show-toplevel`.
 
-## Using the Service
+## Uporaba storitve
 
-The service exposes the following API endpoints through the MCP protocol:
+Storitev izpostavlja naslednje API končne točke preko MCP protokola:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: Seštej dve števili
+- `subtract(a, b)`: Odštej drugo število od prvega
+- `multiply(a, b)`: Pomnoži dve števili
+- `divide(a, b)`: Deli prvo število z drugim (s preverjanjem ničle)
+- isPrime(n): Preveri, ali je število praštevilo
 
-## Test with Github Copilot Chat in VS Code
+## Testiranje z Github Copilot Chat v VS Code
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
+1. Poskusi poslati zahtevo storitvi preko MCP protokola. Na primer, lahko vprašaš:
    - "Add 5 and 3"
    - "Subtract 10 from 4"
    - "Multiply 6 and 7"
    - "Divide 8 by 2"
    - "Does 37854 prime?"
    - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
+2. Da se prepričaš, da uporablja orodja, dodaj #MyCalculator v poziv. Na primer:
    - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
+   - "Subtract 10 from 4 #MyCalculator"
 
+## Verzija v kontejnerju
 
-## Containerized Version
+Prejšnja rešitev je odlična, če imaš nameščen .NET SDK in so vse odvisnosti urejene. Če pa želiš rešitev deliti ali jo zagnati v drugem okolju, lahko uporabiš verzijo v kontejnerju.
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
-
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` z vašim uporabniškim imenom za Docker Hub):
+1. Zaženi Docker in preveri, da deluje.
+1. V terminalu se premakni v mapo `03-GettingStarted\samples\csharp\src`
+1. Za izdelavo Docker slike za kalkulator storitev zaženi naslednji ukaz (zamenjaj `<YOUR-DOCKER-USERNAME>` z uporabniškim imenom na Docker Hubu):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
-   ``` 
-1. Ko je slika zgrajena, jo naložimo na Docker Hub. Zaženite naslednji ukaz:
+   ```
+1. Ko je slika izdelana, jo naloži na Docker Hub z naslednjim ukazom:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Uporaba dockerizirane različice
+## Uporaba Dockerizirane verzije
 
-1. V datoteki `.vscode/mcp.json` zamenjajte konfiguracijo strežnika z naslednjo:
+1. V datoteki `.vscode/mcp.json` zamenjaj konfiguracijo strežnika z naslednjo:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -111,11 +110,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Če pogledate konfiguracijo, boste videli, da je ukaz `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Če pogledaš konfiguracijo, vidiš, da je ukaz `docker`, argumenti pa `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. Preklop `--rm` poskrbi, da se kontejner odstrani po zaustavitvi, `-i` pa omogoča interakcijo s standardnim vhodom kontejnerja. Zadnji argument je ime slike, ki smo jo pravkar izdelali in naložili na Docker Hub.
 
-## Test the Dockerized Version
+## Testiranje Dockerizirane verzije
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, in tako kot prej lahko prosite kalkulatorsko storitev, da za vas izvede nekaj računskih operacij.
+Zaženi MCP strežnik s klikom na majhno tipko Start nad `"mcp-calc": {`, in tako kot prej lahko prosiš kalkulator storitev, da opravi nekaj računskih operacij zate.
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

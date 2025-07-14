@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-05-20T21:55:58+00:00",
+  "translation_date": "2025-07-14T04:01:02+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "nl"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Overzicht
 
-Deze les gaat over hoe je betrokken raakt bij de MCP-community, bijdraagt aan het MCP-ecosysteem en de beste werkwijzen volgt voor gezamenlijke ontwikkeling. Begrijpen hoe je deelneemt aan open-source MCP-projecten is essentieel voor iedereen die de toekomst van deze technologie wil vormgeven.
+Deze les richt zich op hoe je betrokken kunt raken bij de MCP-community, kunt bijdragen aan het MCP-ecosysteem en de beste praktijken voor gezamenlijke ontwikkeling kunt volgen. Begrijpen hoe je kunt deelnemen aan open-source MCP-projecten is essentieel voor iedereen die de toekomst van deze technologie wil vormgeven.
 
 ## Leerdoelen
 
@@ -24,31 +24,31 @@ Aan het einde van deze les kun je:
 
 ## Het MCP Community Ecosysteem
 
-Het MCP-ecosysteem bestaat uit verschillende componenten en deelnemers die samenwerken om het protocol verder te ontwikkelen.
+Het MCP-ecosysteem bestaat uit verschillende componenten en deelnemers die samenwerken om het protocol te verbeteren.
 
-### Belangrijke Communitycomponenten
+### Belangrijke Community Componenten
 
-1. **Core Protocol Maintainers**: Microsoft en andere organisaties die verantwoordelijk zijn voor het onderhouden van de kern MCP-specificaties en referentie-implementaties
-2. **Tool Developers**: Individuen en teams die MCP-tools ontwikkelen
-3. **Integration Providers**: Bedrijven die MCP integreren in hun producten en diensten
-4. **End Users**: Ontwikkelaars en organisaties die MCP gebruiken in hun toepassingen
-5. **Contributors**: Communityleden die code, documentatie of andere middelen bijdragen
+1. **Core Protocol Maintainers**: Microsoft en andere organisaties die de kern MCP-specificaties en referentie-implementaties onderhouden  
+2. **Tool Developers**: Individuen en teams die MCP-tools ontwikkelen  
+3. **Integration Providers**: Bedrijven die MCP integreren in hun producten en diensten  
+4. **End Users**: Ontwikkelaars en organisaties die MCP gebruiken in hun applicaties  
+5. **Contributors**: Communityleden die code, documentatie of andere middelen bijdragen  
 
 ### Communitybronnen
 
 #### Officiële Kanalen
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
-- [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
-- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP GitHub Repository](https://github.com/modelcontextprotocol)  
+- [MCP Documentatie](https://modelcontextprotocol.io/)  
+- [MCP Specificatie](https://spec.modelcontextprotocol.io/)  
+- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)  
 
 #### Community-gedreven Bronnen
 
-- Taal-specifieke SDK-implementaties
-- Serverimplementaties en toolbibliotheken
-- Blogposts en tutorials
-- Communityforums en discussies op sociale media
+- Taal-specifieke SDK-implementaties  
+- Serverimplementaties en toolbibliotheken  
+- Blogposts en tutorials  
+- Communityforums en discussies op sociale media  
 
 ## Bijdragen aan MCP
 
@@ -56,23 +56,23 @@ Het MCP-ecosysteem bestaat uit verschillende componenten en deelnemers die samen
 
 Het MCP-ecosysteem verwelkomt verschillende soorten bijdragen:
 
-1. **Codebijdragen**:
-   - Verbeteringen van het core protocol
-   - Bugfixes
-   - Toolimplementaties
-   - Client/serverbibliotheken in diverse talen
+1. **Codebijdragen**:  
+   - Verbeteringen aan het core protocol  
+   - Bugfixes  
+   - Toolimplementaties  
+   - Client/server bibliotheken in verschillende talen  
 
-2. **Documentatie**:
-   - Bestaande documentatie verbeteren
-   - Tutorials en handleidingen maken
-   - Documentatie vertalen
-   - Voorbeelden en voorbeeldapplicaties creëren
+2. **Documentatie**:  
+   - Verbeteren van bestaande documentatie  
+   - Maken van tutorials en handleidingen  
+   - Vertalen van documentatie  
+   - Maken van voorbeelden en voorbeeldapplicaties  
 
-3. **Community Support**:
-   - Vragen beantwoorden op forums
-   - Testen en problemen rapporteren
-   - Community-evenementen organiseren
-   - Nieuwe bijdragers begeleiden
+3. **Community Support**:  
+   - Vragen beantwoorden op forums  
+   - Testen en problemen rapporteren  
+   - Organiseren van community-evenementen  
+   - Begeleiden van nieuwe bijdragers  
 
 ### Bijdragingsproces: Core Protocol
 
@@ -230,7 +230,7 @@ public class ToolParameterValidator {
 }
 ```
 
-#### Python Voorbeeld: Een Nieuwe Tool Toevoegen aan de Standaardbibliotheek
+#### Python Voorbeeld: Bijdragen aan een Nieuwe Tool voor de Standaardbibliotheek
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -394,12 +394,12 @@ class CsvProcessingTool(Tool):
 
 Om succesvol bij te dragen aan MCP-projecten:
 
-1. **Begin Klein**: Start met documentatie, bugfixes of kleine verbeteringen
-2. **Volg de Stijlregels**: Houd je aan de codeerstijl en conventies van het project
-3. **Schrijf Tests**: Voeg unittests toe voor je codebijdragen
-4. **Documenteer Je Werk**: Voeg duidelijke documentatie toe voor nieuwe functies of wijzigingen
-5. **Dien Gerichte PR’s In**: Houd pull requests gericht op één probleem of functie
-6. **Ga Om Met Feedback**: Reageer actief op feedback over je bijdragen
+1. **Begin Klein**: Start met documentatie, bugfixes of kleine verbeteringen  
+2. **Volg de Stijlrichtlijnen**: Houd je aan de codeerstijl en conventies van het project  
+3. **Schrijf Tests**: Voeg unittests toe voor je codebijdragen  
+4. **Documenteer Je Werk**: Voeg duidelijke documentatie toe voor nieuwe functies of wijzigingen  
+5. **Dien Gerichte PR’s In**: Houd pull requests gericht op één issue of functie  
+6. **Ga in op Feedback**: Reageer actief op feedback over je bijdragen  
 
 ### Voorbeeld van een Bijdragingsworkflow
 
@@ -433,7 +433,7 @@ git push origin feature/my-contribution
 
 Een van de meest waardevolle manieren om bij te dragen aan het MCP-ecosysteem is door eigen tools te maken en te delen.
 
-### Tools Ontwikkelen die Je Kunt Delen
+### Ontwikkelen van Deelbare Tools
 
 #### .NET Voorbeeld: Een Deelbaar Toolpakket Maken
 
@@ -541,7 +541,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Java Voorbeeld: Een Maven-pakket Maken voor Tools
+#### Java Voorbeeld: Een Maven-pakket voor Tools Maken
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -751,60 +751,60 @@ class SentimentAnalysisTool(Tool):
 
 Bij het delen van MCP-tools met de community:
 
-1. **Volledige Documentatie**:
-   - Documenteer het doel, gebruik en voorbeelden
-   - Leg parameters en returnwaarden uit
-   - Documenteer eventuele externe afhankelijkheden
+1. **Volledige Documentatie**:  
+   - Documenteer het doel, gebruik en voorbeelden  
+   - Leg parameters en returnwaarden uit  
+   - Documenteer eventuele externe afhankelijkheden  
 
-2. **Foutafhandeling**:
-   - Implementeer robuuste foutafhandeling
-   - Geef nuttige foutmeldingen
-   - Handel randgevallen netjes af
+2. **Foutafhandeling**:  
+   - Implementeer robuuste foutafhandeling  
+   - Geef nuttige foutmeldingen  
+   - Handel randgevallen netjes af  
 
-3. **Prestaties**:
-   - Optimaliseer voor snelheid en resourcegebruik
-   - Implementeer caching waar passend
-   - Houd rekening met schaalbaarheid
+3. **Prestaties**:  
+   - Optimaliseer voor snelheid en resourcegebruik  
+   - Implementeer caching waar passend  
+   - Houd rekening met schaalbaarheid  
 
-4. **Beveiliging**:
-   - Gebruik veilige API-sleutels en authenticatie
-   - Valideer en ontsmet invoer
-   - Implementeer rate limiting voor externe API-aanroepen
+4. **Beveiliging**:  
+   - Gebruik veilige API-sleutels en authenticatie  
+   - Valideer en reinig invoer  
+   - Implementeer rate limiting voor externe API-aanroepen  
 
-5. **Testen**:
-   - Zorg voor uitgebreide testdekking
-   - Test met verschillende invoertypes en randgevallen
-   - Documenteer testprocedures
+5. **Testen**:  
+   - Zorg voor uitgebreide testdekking  
+   - Test met verschillende invoertypen en randgevallen  
+   - Documenteer testprocedures  
 
 ## Samenwerking in de Community en Beste Praktijken
 
-Effectieve samenwerking is de sleutel tot een bloeiend MCP-ecosysteem.
+Effectieve samenwerking is essentieel voor een bloeiend MCP-ecosysteem.
 
 ### Communicatiekanalen
 
-- GitHub Issues en Discussions
-- Microsoft Tech Community
-- Discord- en Slack-kanalen
-- Stack Overflow (tag: `model-context-protocol` or `mcp`)
+- GitHub Issues en Discussions  
+- Microsoft Tech Community  
+- Discord- en Slack-kanalen  
+- Stack Overflow (tag: `model-context-protocol` of `mcp`)  
 
 ### Code Reviews
 
 Bij het reviewen van MCP-bijdragen:
 
-1. **Duidelijkheid**: Is de code helder en goed gedocumenteerd?
-2. **Correctheid**: Werkt het zoals verwacht?
-3. **Consistentie**: Volgt het de projectconventies?
-4. **Volledigheid**: Zijn tests en documentatie inbegrepen?
-5. **Beveiliging**: Zijn er beveiligingsproblemen?
+1. **Duidelijkheid**: Is de code duidelijk en goed gedocumenteerd?  
+2. **Correctheid**: Werkt het zoals verwacht?  
+3. **Consistentie**: Volgt het de projectconventies?  
+4. **Volledigheid**: Zijn tests en documentatie inbegrepen?  
+5. **Beveiliging**: Zijn er beveiligingsrisico’s?  
 
 ### Versiecompatibiliteit
 
-Bij ontwikkeling voor MCP:
+Bij het ontwikkelen voor MCP:
 
-1. **Protocolversiebeheer**: Houd je aan de MCP-protocolversie die je tool ondersteunt
-2. **Clientcompatibiliteit**: Houd rekening met backward compatibility
-3. **Servercompatibiliteit**: Volg richtlijnen voor serverimplementaties
-4. **Breaking Changes**: Documenteer duidelijk eventuele breaking changes
+1. **Protocolversies**: Houd je aan de MCP-protocolversie die je tool ondersteunt  
+2. **Clientcompatibiliteit**: Houd rekening met backward compatibility  
+3. **Servercompatibiliteit**: Volg de richtlijnen voor serverimplementaties  
+4. **Breaking Changes**: Documenteer duidelijk eventuele brekende wijzigingen  
 
 ## Voorbeeld Communityproject: MCP Tool Registry
 
@@ -889,23 +889,23 @@ async def delete_tool(tool_name: str):
 
 ## Belangrijkste Punten
 
-- De MCP-community is divers en staat open voor allerlei soorten bijdragen
-- Bijdragen aan MCP kan variëren van core protocol verbeteringen tot custom tools
-- Het volgen van richtlijnen vergroot de kans dat je PR wordt geaccepteerd
-- Eigen MCP-tools maken en delen is een waardevolle manier om het ecosysteem te versterken
-- Samenwerking in de community is essentieel voor groei en verbetering van MCP
+- De MCP-community is divers en verwelkomt verschillende soorten bijdragen  
+- Bijdragen aan MCP kan variëren van core protocolverbeteringen tot eigen tools  
+- Het volgen van richtlijnen vergroot de kans dat je PR wordt geaccepteerd  
+- Eigen MCP-tools maken en delen is een waardevolle manier om het ecosysteem te versterken  
+- Samenwerking in de community is essentieel voor groei en verbetering van MCP  
 
 ## Oefening
 
-1. Bepaal een gebied binnen het MCP-ecosysteem waar jij een bijdrage kunt leveren op basis van je vaardigheden en interesses
-2. Fork de MCP-repository en zet een lokale ontwikkelomgeving op
-3. Maak een kleine verbetering, bugfix of tool die de community ten goede komt
-4. Documenteer je bijdrage met passende tests en documentatie
-5. Dien een pull request in bij de juiste repository
+1. Bepaal een gebied binnen het MCP-ecosysteem waar jij een bijdrage kunt leveren op basis van je vaardigheden en interesses  
+2. Fork de MCP-repository en zet een lokale ontwikkelomgeving op  
+3. Maak een kleine verbetering, bugfix of tool die de community ten goede komt  
+4. Documenteer je bijdrage met de juiste tests en documentatie  
+5. Dien een pull request in bij de juiste repository  
 
 ## Aanvullende Bronnen
 
-- [MCP Community Projects](https://github.com/topics/model-context-protocol)
+- [MCP Community Projects](https://github.com/topics/model-context-protocol)  
 
 
 ---
@@ -913,4 +913,4 @@ async def delete_tool(tool_name: str):
 Volgende: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in de oorspronkelijke taal dient als de gezaghebbende bron te worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

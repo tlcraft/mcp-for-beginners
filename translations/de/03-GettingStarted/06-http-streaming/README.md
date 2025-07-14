@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
-  "translation_date": "2025-07-10T15:53:38+00:00",
+  "translation_date": "2025-07-13T20:24:35+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "de"
 }
@@ -19,9 +19,9 @@ Dieser Abschnitt untersucht die verschiedenen in MCP verfügbaren Transportmecha
 
 Ein Transportmechanismus definiert, wie Daten zwischen Client und Server ausgetauscht werden. MCP unterstützt mehrere Transporttypen, um unterschiedlichen Umgebungen und Anforderungen gerecht zu werden:
 
-- **stdio**: Standard-Ein-/Ausgabe, geeignet für lokale und CLI-basierte Tools. Einfach, aber nicht für Web oder Cloud geeignet.
+- **stdio**: Standard Ein-/Ausgabe, geeignet für lokale und CLI-basierte Tools. Einfach, aber nicht für Web oder Cloud geeignet.
 - **SSE (Server-Sent Events)**: Ermöglicht es Servern, Echtzeit-Updates über HTTP an Clients zu senden. Gut für Web-UIs, aber begrenzt in Skalierbarkeit und Flexibilität.
-- **Streamable HTTP**: Moderner, HTTP-basierter Streaming-Transport, der Benachrichtigungen und bessere Skalierbarkeit unterstützt. Empfohlen für die meisten Produktions- und Cloud-Szenarien.
+- **Streamable HTTP**: Moderner, HTTP-basierter Streaming-Transport, unterstützt Benachrichtigungen und bessere Skalierbarkeit. Empfohlen für die meisten Produktions- und Cloud-Szenarien.
 
 ### Vergleichstabelle
 
@@ -35,13 +35,13 @@ Werfen Sie einen Blick auf die folgende Vergleichstabelle, um die Unterschiede z
 
 > **Tipp:** Die Wahl des richtigen Transports beeinflusst Leistung, Skalierbarkeit und Benutzererlebnis. **Streamable HTTP** wird für moderne, skalierbare und cloudfähige Anwendungen empfohlen.
 
-Beachten Sie die Transports stdio und SSE, die in den vorherigen Kapiteln vorgestellt wurden, und wie streamfähiges HTTP der Transport ist, der in diesem Kapitel behandelt wird.
+Beachten Sie die Transports stdio und SSE, die in den vorherigen Kapiteln gezeigt wurden, und wie streamfähiges HTTP der Transport ist, der in diesem Kapitel behandelt wird.
 
 ## Streaming: Konzepte und Motivation
 
 Das Verständnis der grundlegenden Konzepte und Motivationen hinter Streaming ist entscheidend für die Implementierung effektiver Echtzeit-Kommunikationssysteme.
 
-**Streaming** ist eine Technik in der Netzwerkprogrammierung, die es ermöglicht, Daten in kleinen, handhabbaren Stücken oder als Ereignisfolge zu senden und zu empfangen, anstatt auf eine vollständige Antwort zu warten. Dies ist besonders nützlich für:
+**Streaming** ist eine Technik in der Netzwerkprogrammierung, die es erlaubt, Daten in kleinen, handhabbaren Stücken oder als Ereignisfolge zu senden und zu empfangen, anstatt auf eine vollständige Antwort zu warten. Dies ist besonders nützlich für:
 
 - Große Dateien oder Datensätze.
 - Echtzeit-Updates (z. B. Chat, Fortschrittsanzeigen).
@@ -51,11 +51,11 @@ Hier die wichtigsten Punkte zum Streaming auf einen Blick:
 
 - Daten werden schrittweise geliefert, nicht auf einmal.
 - Der Client kann Daten verarbeiten, sobald sie eintreffen.
-- Verringert wahrgenommene Latenz und verbessert das Benutzererlebnis.
+- Verringert wahrgenommene Latenz und verbessert das Nutzererlebnis.
 
 ### Warum Streaming verwenden?
 
-Die Gründe für den Einsatz von Streaming sind folgende:
+Die Gründe für Streaming sind folgende:
 
 - Nutzer erhalten sofort Feedback, nicht erst am Ende.
 - Ermöglicht Echtzeitanwendungen und reaktionsfähige UIs.
@@ -63,7 +63,7 @@ Die Gründe für den Einsatz von Streaming sind folgende:
 
 ### Einfaches Beispiel: HTTP-Streaming-Server & Client
 
-Hier ein einfaches Beispiel, wie Streaming implementiert werden kann:
+Hier ein einfaches Beispiel, wie Streaming umgesetzt werden kann:
 
 <details>
 <summary>Python</summary>
@@ -196,14 +196,14 @@ public class CalculatorClientApplication implements CommandLineRunner {
 
 ### Vergleich: Klassisches Streaming vs. MCP-Streaming
 
-Die Unterschiede zwischen klassischem Streaming und Streaming in MCP lassen sich folgendermaßen darstellen:
+Die Unterschiede zwischen klassischem Streaming und MCP-Streaming lassen sich folgendermaßen darstellen:
 
 | Merkmal               | Klassisches HTTP-Streaming       | MCP-Streaming (Benachrichtigungen)  |
 |-----------------------|---------------------------------|------------------------------------|
 | Hauptantwort          | Chunked                         | Einmalig, am Ende                  |
 | Fortschritts-Updates  | Werden als Datenblöcke gesendet | Werden als Benachrichtigungen gesendet |
 | Client-Anforderungen  | Muss Stream verarbeiten          | Muss Nachrichten-Handler implementieren |
-| Anwendungsfall        | Große Dateien, AI-Token-Streams  | Fortschritt, Logs, Echtzeit-Feedback |
+| Anwendungsfall        | Große Dateien, AI-Token-Streams | Fortschritt, Logs, Echtzeit-Feedback |
 
 ### Wichtige Unterschiede
 
@@ -233,11 +233,11 @@ Folgendes empfehlen wir bei der Wahl zwischen klassischem Streaming (wie im Beis
 
 - **Für komplexe, interaktive Anwendungen:** MCP-Streaming bietet einen strukturierteren Ansatz mit reichhaltigeren Metadaten und Trennung zwischen Benachrichtigungen und Endergebnissen.
 
-- **Für KI-Anwendungen:** Das Benachrichtigungssystem von MCP ist besonders nützlich für lang laufende KI-Aufgaben, bei denen Nutzer über Fortschritte informiert werden sollen.
+- **Für KI-Anwendungen:** Das Benachrichtigungssystem von MCP ist besonders nützlich für lang laufende KI-Aufgaben, bei denen Nutzer über den Fortschritt informiert werden sollen.
 
 ## Streaming in MCP
 
-Sie haben nun einige Empfehlungen und Vergleiche zwischen klassischem Streaming und MCP-Streaming gesehen. Nun gehen wir ins Detail, wie Sie Streaming in MCP konkret nutzen können.
+Sie haben nun einige Empfehlungen und Vergleiche zwischen klassischem Streaming und MCP-Streaming gesehen. Nun gehen wir ins Detail, wie Sie Streaming in MCP nutzen können.
 
 Das Verständnis, wie Streaming im MCP-Framework funktioniert, ist entscheidend, um reaktionsfähige Anwendungen zu bauen, die Nutzern während lang laufender Operationen Echtzeit-Feedback geben.
 
@@ -251,7 +251,7 @@ Das Hauptergebnis wird weiterhin als einzelne Antwort gesendet. Benachrichtigung
 
 Wir sprachen von „Benachrichtigung“ – was bedeutet das im Kontext von MCP?
 
-Eine Benachrichtigung ist eine Nachricht, die vom Server an den Client gesendet wird, um über Fortschritt, Status oder andere Ereignisse während einer lang laufenden Operation zu informieren. Benachrichtigungen erhöhen Transparenz und verbessern das Benutzererlebnis.
+Eine Benachrichtigung ist eine Nachricht, die vom Server an den Client gesendet wird, um über Fortschritt, Status oder andere Ereignisse während einer lang laufenden Operation zu informieren. Benachrichtigungen erhöhen Transparenz und verbessern das Nutzererlebnis.
 
 Beispielsweise soll ein Client eine Benachrichtigung senden, sobald der initiale Handshake mit dem Server erfolgt ist.
 
@@ -286,14 +286,14 @@ Es gibt verschiedene Arten von Benachrichtigungen:
 
 | Level     | Beschreibung                   | Beispielanwendung             |
 |-----------|-------------------------------|------------------------------|
-| debug     | Detaillierte Debug-Informationen | Funktionsaufruf/-rückkehr    |
+| debug     | Detaillierte Debug-Informationen | Funktions-Ein- und Austritt  |
 | info      | Allgemeine Informationsmeldungen | Fortschritts-Updates         |
 | notice    | Normale, aber bedeutende Ereignisse | Konfigurationsänderungen    |
-| warning   | Warnungen                     | Nutzung veralteter Features   |
-| error     | Fehlerbedingungen             | Fehler bei Operationen        |
-| critical  | Kritische Bedingungen         | Ausfälle von Systemkomponenten|
+| warning   | Warnungen                     | Nutzung veralteter Features  |
+| error     | Fehlerbedingungen             | Fehlgeschlagene Operationen  |
+| critical  | Kritische Bedingungen         | Ausfälle von Systemkomponenten |
 | alert     | Sofortiges Handeln erforderlich | Datenkorruption erkannt     |
-| emergency | System ist nicht nutzbar      | Komplettausfall des Systems   |
+| emergency | System ist nicht nutzbar      | Komplettausfall des Systems  |
 
 ## Benachrichtigungen in MCP implementieren
 
@@ -350,7 +350,7 @@ public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
 
 In diesem .NET-Beispiel ist das Tool `ProcessFiles` mit dem `Tool`-Attribut versehen und sendet drei Benachrichtigungen an den Client, während es jede Datei verarbeitet. Die Methode `ctx.Info()` wird verwendet, um Informationsmeldungen zu senden.
 
-Um Benachrichtigungen in Ihrem .NET-MCP-Server zu aktivieren, stellen Sie sicher, dass Sie einen Streaming-Transport verwenden:
+Um Benachrichtigungen in Ihrem .NET MCP-Server zu aktivieren, stellen Sie sicher, dass Sie einen Streaming-Transport verwenden:
 
 ```csharp
 var builder = McpBuilder.Create();
@@ -449,7 +449,7 @@ Fortschritts-Benachrichtigungen sind aus mehreren Gründen wichtig:
 - **Echtzeit-Feedback:** Clients können Fortschrittsbalken oder Logs anzeigen, was die App reaktionsschneller wirken lässt.
 - **Einfacheres Debugging und Monitoring:** Entwickler und Nutzer sehen, wo ein Prozess langsam ist oder hängt.
 
-### Wie Fortschritts-Benachrichtigungen implementieren
+### Wie Fortschritts-Benachrichtigungen implementieren?
 
 So setzen Sie Fortschritts-Benachrichtigungen in MCP um:
 
@@ -524,12 +524,12 @@ Es gibt zwei überzeugende Gründe, von SSE auf Streamable HTTP umzusteigen:
 
 ### Migrationsschritte
 
-So können Sie in Ihren MCP-Anwendungen von SSE auf Streamable HTTP umsteigen:
+So können Sie in Ihren MCP-Anwendungen von SSE auf Streamable HTTP migrieren:
 
 - **Servercode aktualisieren**, um `transport="streamable-http"` in `mcp.run()` zu verwenden.
 - **Clientcode anpassen**, um `streamablehttp_client` anstelle des SSE-Clients zu nutzen.
-- **Einen Nachrichten-Handler im Client implementieren**, um Benachrichtigungen zu verarbeiten.
-- **Kompatibilität mit bestehenden Tools und Workflows testen**.
+- **Einen Nachrichten-Handler implementieren**, der Benachrichtigungen im Client verarbeitet.
+- **Kompatibilität testen** mit bestehenden Tools und Workflows.
 
 ### Kompatibilität erhalten
 
@@ -540,10 +540,10 @@ Es wird empfohlen, während der Migration die Kompatibilität mit bestehenden SS
 
 ### Herausforderungen
 
-Folgende Herausforderungen sollten Sie bei der Migration beachten:
+Beachten Sie bei der Migration folgende Herausforderungen:
 
 - Sicherstellen, dass alle Clients aktualisiert werden
-- Umgang mit Unterschieden bei der Benachrichtigungszustellung
+- Umgang mit Unterschieden in der Benachrichtigungszustellung
 
 ## Sicherheitsaspekte
 
@@ -565,7 +565,7 @@ Hier einige wichtige Sicherheitsaspekte:
 
 ### Best Practices
 
-Zusätzlich hier einige bewährte Vorgehensweisen für die Sicherheit Ihres MCP-Streaming-Servers:
+Darüber hinaus sollten Sie folgende Best Practices bei der Absicherung Ihres MCP-Streaming-Servers beachten:
 
 - Vertrauen Sie eingehenden Anfragen niemals ohne Validierung.
 - Protokollieren und überwachen Sie alle Zugriffe und Fehler.
@@ -573,7 +573,7 @@ Zusätzlich hier einige bewährte Vorgehensweisen für die Sicherheit Ihres MCP-
 
 ### Herausforderungen
 
-Bei der Implementierung von Sicherheit in MCP-Streaming-Servern werden Sie auf folgende Herausforderungen stoßen:
+Bei der Implementierung der Sicherheit in MCP-Streaming-Servern werden Sie auf folgende Herausforderungen stoßen:
 
 - Balance zwischen Sicherheit und einfacher Entwicklung finden
 - Kompatibilität mit verschiedenen Client-Umgebungen sicherstellen
@@ -587,7 +587,7 @@ Erstellen Sie einen MCP-Server und -Client, bei dem der Server eine Liste von El
 
 1. Implementieren Sie ein Server-Tool, das eine Liste verarbeitet und für jedes Element Benachrichtigungen sendet.
 2. Implementieren Sie einen Client mit einem Nachrichten-Handler, der Benachrichtigungen in Echtzeit anzeigt.
-3. Testen Sie Ihre Umsetzung, indem Sie Server und Client ausführen und die Benachrichtigungen beobachten.
+3. Testen Sie Ihre Implementierung, indem Sie Server und Client ausführen und die Benachrichtigungen beobachten.
 
 [Solution](./solution/README.md)
 

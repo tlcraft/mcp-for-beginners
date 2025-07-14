@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fae57a69c2b62cb7d92ff12da65f36c3",
-  "translation_date": "2025-05-17T10:12:29+00:00",
+  "translation_date": "2025-07-13T18:46:06+00:00",
   "source_file": "03-GettingStarted/02-client/solution/typescript/README.md",
   "language_code": "hr"
 }
@@ -17,19 +17,19 @@ Preporučuje se instalirati `uv`, ali nije obavezno, pogledajte [upute](https://
 npm install
 ```
 
-## -3- Pokrenite poslužitelj
+## -3- Pokrenite server
 
 ```bash
 npm run build
 ```
 
-## -4- Pokrenite klijent
+## -4- Pokrenite klijenta
 
 ```sh
 npm run client
 ```
 
-Trebali biste vidjeti rezultat sličan:
+Trebali biste vidjeti rezultat sličan ovom:
 
 ```text
 Prompt:  {
@@ -40,5 +40,5 @@ Resource template:  file
 Tool result:  { content: [ { type: 'text', text: '9' } ] }
 ```
 
-**Odricanje odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge prevođenja [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo ka točnosti, imajte na umu da automatizirani prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne snosimo odgovornost za bilo kakva nesporazume ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
+**Odricanje od odgovornosti**:  
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

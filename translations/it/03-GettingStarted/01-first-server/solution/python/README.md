@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-09T23:05:04+00:00",
+  "translation_date": "2025-07-13T17:59:52+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "it"
 }
@@ -31,6 +31,7 @@ pip install "mcp[cli]"
 
 ## -3- Esegui l'esempio
 
+
 ```bash
 mcp run server.py
 ```
@@ -45,7 +46,7 @@ mcp dev server.py
 
 Questo dovrebbe avviare un server web con un'interfaccia visiva che ti permette di testare l'esempio.
 
-Una volta connesso il server:
+Una volta che il server è connesso:
 
 - prova a elencare gli strumenti ed esegui `add`, con argomenti 2 e 4, dovresti vedere 6 come risultato.
 

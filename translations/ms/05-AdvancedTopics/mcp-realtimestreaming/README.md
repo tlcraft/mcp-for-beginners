@@ -2,99 +2,99 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "195f7287638b77a549acadd96c8f981c",
-  "translation_date": "2025-06-13T00:37:09+00:00",
+  "translation_date": "2025-07-14T01:46:31+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimestreaming/README.md",
   "language_code": "ms"
 }
 -->
-# Model Context Protocol for Real-Time Data Streaming
+# Protokol Konteks Model untuk Penstriman Data Masa Nyata
 
-## Overview
+## Gambaran Keseluruhan
 
-Real-time data streaming has become vital in today’s data-driven world, where businesses and applications need instant access to information to make timely decisions. The Model Context Protocol (MCP) marks a major step forward in optimizing these streaming processes, improving data processing efficiency, preserving contextual integrity, and boosting overall system performance.
+Penstriman data masa nyata telah menjadi penting dalam dunia yang dipacu data hari ini, di mana perniagaan dan aplikasi memerlukan akses segera kepada maklumat untuk membuat keputusan tepat pada masanya. Protokol Konteks Model (MCP) mewakili kemajuan penting dalam mengoptimumkan proses penstriman masa nyata ini, meningkatkan kecekapan pemprosesan data, mengekalkan integriti konteks, dan memperbaiki prestasi sistem secara keseluruhan.
 
-This module examines how MCP revolutionizes real-time data streaming by offering a standardized way to manage context across AI models, streaming platforms, and applications.
+Modul ini meneroka bagaimana MCP mengubah penstriman data masa nyata dengan menyediakan pendekatan standard untuk pengurusan konteks merentasi model AI, platform penstriman, dan aplikasi.
 
-## Introduction to Real-Time Data Streaming
+## Pengenalan kepada Penstriman Data Masa Nyata
 
-Real-time data streaming is a technology approach that enables continuous transfer, processing, and analysis of data as it’s generated, allowing systems to respond immediately to new information. Unlike traditional batch processing that works on static datasets, streaming handles data in motion, providing insights and actions with minimal delay.
+Penstriman data masa nyata adalah paradigma teknologi yang membolehkan pemindahan, pemprosesan, dan analisis data secara berterusan semasa ia dijana, membolehkan sistem bertindak balas dengan segera terhadap maklumat baru. Berbeza dengan pemprosesan kelompok tradisional yang beroperasi pada set data statik, penstriman memproses data dalam pergerakan, menyampaikan pandangan dan tindakan dengan kelewatan yang minimum.
 
-### Core Concepts of Real-Time Data Streaming:
+### Konsep Teras Penstriman Data Masa Nyata:
 
-- **Continuous Data Flow**: Data is processed as an ongoing, never-ending stream of events or records.
-- **Low Latency Processing**: Systems are built to minimize the delay between data generation and processing.
-- **Scalability**: Streaming architectures must handle varying data volumes and speeds.
-- **Fault Tolerance**: Systems need resilience against failures to maintain uninterrupted data flow.
-- **Stateful Processing**: Keeping context across events is essential for meaningful analysis.
+- **Aliran Data Berterusan**: Data diproses sebagai aliran peristiwa atau rekod yang berterusan dan tidak berkesudahan.
+- **Pemprosesan Latensi Rendah**: Sistem direka untuk meminimumkan masa antara penjanaan data dan pemprosesan.
+- **Kebolehsuaian Skala**: Seni bina penstriman mesti mampu mengendalikan volum dan kelajuan data yang berubah-ubah.
+- **Ketahanan Ralat**: Sistem perlu tahan terhadap kegagalan untuk memastikan aliran data tidak terganggu.
+- **Pemprosesan Berkeadaan**: Mengekalkan konteks merentasi peristiwa adalah penting untuk analisis yang bermakna.
 
-### The Model Context Protocol and Real-Time Streaming
+### Protokol Konteks Model dan Penstriman Masa Nyata
 
-The Model Context Protocol (MCP) tackles several key challenges in real-time streaming environments:
+Protokol Konteks Model (MCP) menangani beberapa cabaran kritikal dalam persekitaran penstriman masa nyata:
 
-1. **Contextual Continuity**: MCP standardizes how context is preserved across distributed streaming components, ensuring AI models and processing nodes have access to relevant historical and environmental information.
+1. **Kesinambungan Konteks**: MCP menstandardkan cara konteks dikekalkan merentasi komponen penstriman yang diedarkan, memastikan model AI dan nod pemprosesan mempunyai akses kepada konteks sejarah dan persekitaran yang relevan.
 
-2. **Efficient State Management**: By offering structured ways to transmit context, MCP reduces the overhead of managing state in streaming pipelines.
+2. **Pengurusan Keadaan yang Efisien**: Dengan menyediakan mekanisme berstruktur untuk penghantaran konteks, MCP mengurangkan beban pengurusan keadaan dalam saluran penstriman.
 
-3. **Interoperability**: MCP establishes a common language for sharing context between different streaming technologies and AI models, enabling more flexible and extensible architectures.
+3. **Kebolehoperasian**: MCP mencipta bahasa umum untuk perkongsian konteks antara teknologi penstriman dan model AI yang pelbagai, membolehkan seni bina yang lebih fleksibel dan boleh dikembangkan.
 
-4. **Streaming-Optimized Context**: MCP implementations can prioritize the most relevant context elements for real-time decision making, optimizing both performance and accuracy.
+4. **Konteks Dioptimumkan untuk Penstriman**: Pelaksanaan MCP boleh mengutamakan elemen konteks yang paling relevan untuk membuat keputusan masa nyata, mengoptimumkan prestasi dan ketepatan.
 
-5. **Adaptive Processing**: With proper context management via MCP, streaming systems can dynamically adjust processing based on changing conditions and patterns in the data.
+5. **Pemprosesan Adaptif**: Dengan pengurusan konteks yang betul melalui MCP, sistem penstriman boleh menyesuaikan pemprosesan secara dinamik berdasarkan keadaan dan corak yang berubah dalam data.
 
-In modern applications—from IoT sensor networks to financial trading platforms—integrating MCP with streaming technologies enables smarter, context-aware processing that can respond appropriately to complex, evolving situations in real time.
+Dalam aplikasi moden dari rangkaian sensor IoT hingga platform perdagangan kewangan, integrasi MCP dengan teknologi penstriman membolehkan pemprosesan yang lebih pintar dan peka konteks yang dapat bertindak balas dengan sewajarnya terhadap situasi kompleks dan berubah-ubah secara masa nyata.
 
-## Learning Objectives
+## Objektif Pembelajaran
 
-By the end of this lesson, you will be able to:
+Menjelang akhir pelajaran ini, anda akan dapat:
 
-- Understand the basics of real-time data streaming and its challenges
-- Explain how the Model Context Protocol (MCP) improves real-time data streaming
-- Implement MCP-based streaming solutions using popular frameworks like Kafka and Pulsar
-- Design and deploy fault-tolerant, high-performance streaming architectures with MCP
-- Apply MCP concepts to IoT, financial trading, and AI-driven analytics use cases
-- Assess emerging trends and future innovations in MCP-based streaming technologies
+- Memahami asas penstriman data masa nyata dan cabarannya
+- Menerangkan bagaimana Protokol Konteks Model (MCP) meningkatkan penstriman data masa nyata
+- Melaksanakan penyelesaian penstriman berasaskan MCP menggunakan rangka kerja popular seperti Kafka dan Pulsar
+- Mereka bentuk dan melaksanakan seni bina penstriman yang tahan ralat dan berprestasi tinggi dengan MCP
+- Mengaplikasikan konsep MCP kepada kes penggunaan IoT, perdagangan kewangan, dan analitik berasaskan AI
+- Menilai trend terkini dan inovasi masa depan dalam teknologi penstriman berasaskan MCP
 
-### Definition and Significance
+### Definisi dan Kepentingan
 
-Real-time data streaming involves the continuous creation, processing, and delivery of data with minimal delay. Unlike batch processing, where data is collected and processed in chunks, streaming data is handled incrementally as it arrives, enabling immediate insights and actions.
+Penstriman data masa nyata melibatkan penjanaan, pemprosesan, dan penghantaran data secara berterusan dengan latensi yang minimum. Berbeza dengan pemprosesan kelompok, di mana data dikumpul dan diproses dalam kumpulan, data penstriman diproses secara berperingkat semasa ia tiba, membolehkan pandangan dan tindakan segera.
 
-Key traits of real-time data streaming include:
+Ciri utama penstriman data masa nyata termasuk:
 
-- **Low Latency**: Processing and analyzing data within milliseconds to seconds
-- **Continuous Flow**: Uninterrupted streams of data from multiple sources
-- **Immediate Processing**: Analyzing data as it arrives rather than in batches
-- **Event-Driven Architecture**: Reacting to events as they happen
+- **Latensi Rendah**: Memproses dan menganalisis data dalam milisaat hingga saat
+- **Aliran Berterusan**: Aliran data yang tidak terputus dari pelbagai sumber
+- **Pemprosesan Segera**: Menganalisis data semasa ia tiba dan bukan secara berkumpulan
+- **Seni Bina Berpandukan Peristiwa**: Bertindak balas terhadap peristiwa semasa ia berlaku
 
-### Challenges in Traditional Data Streaming
+### Cabaran dalam Penstriman Data Tradisional
 
-Traditional streaming approaches face several limitations:
+Pendekatan penstriman data tradisional menghadapi beberapa kekangan:
 
-1. **Context Loss**: Difficulty maintaining context across distributed systems
-2. **Scalability Issues**: Challenges scaling to handle high-volume, high-speed data
-3. **Integration Complexity**: Problems with interoperability between different systems
-4. **Latency Management**: Balancing throughput and processing time
-5. **Data Consistency**: Ensuring accuracy and completeness of data across the stream
+1. **Kehilangan Konteks**: Sukar mengekalkan konteks merentasi sistem yang diedarkan
+2. **Isu Kebolehsuaian Skala**: Cabaran dalam mengendalikan data berkelajuan dan berjumlah tinggi
+3. **Kerumitan Integrasi**: Masalah kebolehoperasian antara sistem yang berbeza
+4. **Pengurusan Latensi**: Mengimbangi kadar pemprosesan dengan masa pemprosesan
+5. **Konsistensi Data**: Memastikan ketepatan dan kelengkapan data merentasi aliran
 
-## Understanding Model Context Protocol (MCP)
+## Memahami Protokol Konteks Model (MCP)
 
-### What is MCP?
+### Apakah MCP?
 
-The Model Context Protocol (MCP) is a standardized communication protocol designed to enable efficient interaction between AI models and applications. In real-time data streaming, MCP provides a framework for:
+Protokol Konteks Model (MCP) adalah protokol komunikasi standard yang direka untuk memudahkan interaksi yang cekap antara model AI dan aplikasi. Dalam konteks penstriman data masa nyata, MCP menyediakan rangka kerja untuk:
 
-- Preserving context throughout the data pipeline
-- Standardizing data exchange formats
-- Optimizing transmission of large datasets
-- Enhancing communication between models and applications
+- Memelihara konteks sepanjang saluran data
+- Menstandardkan format pertukaran data
+- Mengoptimumkan penghantaran set data besar
+- Meningkatkan komunikasi antara model dan antara model dengan aplikasi
 
-### Core Components and Architecture
+### Komponen Teras dan Seni Bina
 
-MCP architecture for real-time streaming includes several key components:
+Seni bina MCP untuk penstriman masa nyata terdiri daripada beberapa komponen utama:
 
-1. **Context Handlers**: Manage and maintain contextual information across the streaming pipeline
-2. **Stream Processors**: Process incoming data streams using context-aware methods
-3. **Protocol Adapters**: Translate between different streaming protocols while preserving context
-4. **Context Store**: Efficiently store and retrieve contextual information
-5. **Streaming Connectors**: Connect to various streaming platforms (Kafka, Pulsar, Kinesis, etc.)
+1. **Pengendali Konteks**: Mengurus dan mengekalkan maklumat konteks merentasi saluran penstriman
+2. **Pemproses Aliran**: Memproses aliran data masuk menggunakan teknik peka konteks
+3. **Penyesuai Protokol**: Menukar antara protokol penstriman yang berbeza sambil mengekalkan konteks
+4. **Penyimpan Konteks**: Menyimpan dan mengambil maklumat konteks dengan cekap
+5. **Penyambung Penstriman**: Menyambung ke pelbagai platform penstriman (Kafka, Pulsar, Kinesis, dan lain-lain)
 
 ```mermaid
 graph TD
@@ -164,47 +164,47 @@ graph TD
     class DA,Alerts,DL,API apps
 ```
 
-### How MCP Improves Real-Time Data Handling
+### Bagaimana MCP Meningkatkan Pengendalian Data Masa Nyata
 
-MCP addresses traditional streaming challenges by:
+MCP menangani cabaran penstriman tradisional melalui:
 
-- **Contextual Integrity**: Keeping relationships between data points throughout the pipeline
-- **Optimized Transmission**: Reducing redundancy in data exchange through smart context management
-- **Standardized Interfaces**: Providing consistent APIs for streaming components
-- **Reduced Latency**: Minimizing processing overhead with efficient context handling
-- **Enhanced Scalability**: Supporting horizontal scaling while preserving context
+- **Integriti Konteks**: Mengekalkan hubungan antara titik data sepanjang saluran
+- **Penghantaran Dioptimumkan**: Mengurangkan pengulangan dalam pertukaran data melalui pengurusan konteks yang pintar
+- **Antara Muka Standard**: Menyediakan API yang konsisten untuk komponen penstriman
+- **Latensi Dikurangkan**: Meminimumkan beban pemprosesan melalui pengendalian konteks yang cekap
+- **Kebolehsuaian Skala Ditingkatkan**: Menyokong penskalaan mendatar sambil mengekalkan konteks
 
-## Integration and Implementation
+## Integrasi dan Pelaksanaan
 
-Real-time data streaming systems require careful architectural design and implementation to maintain both performance and contextual integrity. The Model Context Protocol offers a standardized way to integrate AI models and streaming technologies, enabling more advanced, context-aware processing pipelines.
+Sistem penstriman data masa nyata memerlukan reka bentuk seni bina dan pelaksanaan yang teliti untuk mengekalkan prestasi dan integriti konteks. Protokol Konteks Model menawarkan pendekatan standard untuk mengintegrasikan model AI dan teknologi penstriman, membolehkan saluran pemprosesan yang lebih canggih dan peka konteks.
 
-### Overview of MCP Integration in Streaming Architectures
+### Gambaran Keseluruhan Integrasi MCP dalam Seni Bina Penstriman
 
-Implementing MCP in real-time streaming involves several key considerations:
+Pelaksanaan MCP dalam persekitaran penstriman masa nyata melibatkan beberapa pertimbangan utama:
 
-1. **Context Serialization and Transport**: MCP provides efficient methods for encoding contextual information within streaming data packets, ensuring essential context travels with the data throughout processing. This includes standardized serialization formats optimized for streaming transport.
+1. **Penyerlahan dan Pengangkutan Konteks**: MCP menyediakan mekanisme cekap untuk menyandikan maklumat konteks dalam paket data penstriman, memastikan konteks penting mengikuti data sepanjang saluran pemprosesan. Ini termasuk format penyerlahan standard yang dioptimumkan untuk pengangkutan penstriman.
 
-2. **Stateful Stream Processing**: MCP enables smarter stateful processing by maintaining consistent context representation across processing nodes. This is especially valuable in distributed streaming architectures where state management is traditionally difficult.
+2. **Pemprosesan Aliran Berkeadaan**: MCP membolehkan pemprosesan berkeadaan yang lebih pintar dengan mengekalkan representasi konteks yang konsisten merentasi nod pemprosesan. Ini sangat bernilai dalam seni bina penstriman diedarkan di mana pengurusan keadaan biasanya mencabar.
 
-3. **Event-Time vs. Processing-Time**: MCP implementations must address the challenge of distinguishing when events occurred versus when they are processed. The protocol can include temporal context that preserves event time semantics.
+3. **Masa Peristiwa vs. Masa Pemprosesan**: Pelaksanaan MCP dalam sistem penstriman mesti menangani cabaran biasa membezakan antara masa peristiwa berlaku dan masa ia diproses. Protokol boleh menggabungkan konteks temporal yang mengekalkan semantik masa peristiwa.
 
-4. **Backpressure Management**: By standardizing context handling, MCP helps manage backpressure in streaming systems, allowing components to communicate their processing capacity and adjust flow accordingly.
+4. **Pengurusan Tekanan Balik (Backpressure)**: Dengan menstandardkan pengendalian konteks, MCP membantu mengurus tekanan balik dalam sistem penstriman, membolehkan komponen berkomunikasi keupayaan pemprosesan mereka dan menyesuaikan aliran dengan sewajarnya.
 
-5. **Context Windowing and Aggregation**: MCP supports more advanced windowing operations by providing structured representations of temporal and relational contexts, enabling more meaningful aggregations across event streams.
+5. **Penetapan Jendela dan Pengagregatan Konteks**: MCP memudahkan operasi penetapan jendela yang lebih canggih dengan menyediakan representasi berstruktur bagi konteks temporal dan hubungan, membolehkan pengagregatan yang lebih bermakna merentasi aliran peristiwa.
 
-6. **Exactly-Once Processing**: For streaming systems requiring exactly-once semantics, MCP can include processing metadata to help track and verify processing status across distributed components.
+6. **Pemprosesan Tepat-Satu Kali (Exactly-Once)**: Dalam sistem penstriman yang memerlukan semantik tepat-satu kali, MCP boleh menggabungkan metadata pemprosesan untuk membantu menjejak dan mengesahkan status pemprosesan merentasi komponen diedarkan.
 
-Implementing MCP across various streaming technologies creates a unified approach to context management, reducing the need for custom integration code while improving the system’s ability to maintain meaningful context as data flows through the pipeline.
+Pelaksanaan MCP merentasi pelbagai teknologi penstriman mencipta pendekatan bersatu untuk pengurusan konteks, mengurangkan keperluan kod integrasi khusus sambil meningkatkan keupayaan sistem untuk mengekalkan konteks bermakna semasa data mengalir melalui saluran.
 
-### MCP in Various Data Streaming Frameworks
+### MCP dalam Pelbagai Rangka Kerja Penstriman Data
 
-These examples follow the current MCP specification, which focuses on a JSON-RPC based protocol with distinct transport mechanisms. The code shows how you can implement custom transports that integrate streaming platforms like Kafka and Pulsar while maintaining full compatibility with the MCP protocol.
+Contoh-contoh ini mengikuti spesifikasi MCP semasa yang menumpukan pada protokol berasaskan JSON-RPC dengan mekanisme pengangkutan yang berbeza. Kod menunjukkan bagaimana anda boleh melaksanakan pengangkutan tersuai yang mengintegrasikan platform penstriman seperti Kafka dan Pulsar sambil mengekalkan keserasian penuh dengan protokol MCP.
 
-The examples demonstrate how streaming platforms can be integrated with MCP to provide real-time data processing while preserving the contextual awareness central to MCP. This approach ensures the code samples accurately reflect the MCP specification as of June 2025.
+Contoh ini direka untuk menunjukkan bagaimana platform penstriman boleh diintegrasikan dengan MCP untuk menyediakan pemprosesan data masa nyata sambil mengekalkan kesedaran konteks yang menjadi teras MCP. Pendekatan ini memastikan contoh kod mencerminkan keadaan semasa spesifikasi MCP sehingga Jun 2025.
 
-MCP can be integrated with popular streaming frameworks including:
+MCP boleh diintegrasikan dengan rangka kerja penstriman popular termasuk:
 
-#### Apache Kafka Integration
+#### Integrasi Apache Kafka
 
 ```python
 import asyncio
@@ -351,7 +351,7 @@ if __name__ == "__main__":
     asyncio.run(kafka_mcp_example())
 ```
 
-#### Apache Pulsar Implementation
+#### Pelaksanaan Apache Pulsar
 
 ```python
 import asyncio
@@ -514,131 +514,131 @@ if __name__ == "__main__":
     asyncio.run(run_mcp_server_with_pulsar())
 ```
 
-### Best Practices for Deployment
+### Amalan Terbaik untuk Pelaksanaan
 
-When implementing MCP for real-time streaming:
+Apabila melaksanakan MCP untuk penstriman masa nyata:
 
-1. **Design for Fault Tolerance**:
-   - Implement proper error handling
-   - Use dead-letter queues for failed messages
-   - Design idempotent processors
+1. **Reka Bentuk untuk Ketahanan Ralat**:
+   - Laksanakan pengendalian ralat yang betul
+   - Gunakan antrian dead-letter untuk mesej yang gagal
+   - Reka pemproses idempotent
 
-2. **Optimize for Performance**:
-   - Configure appropriate buffer sizes
-   - Use batching where suitable
-   - Implement backpressure mechanisms
+2. **Optimumkan Prestasi**:
+   - Konfigurasikan saiz penimbal yang sesuai
+   - Gunakan pengumpulan (batching) apabila sesuai
+   - Laksanakan mekanisme tekanan balik (backpressure)
 
-3. **Monitor and Observe**:
-   - Track stream processing metrics
-   - Monitor context propagation
-   - Set up alerts for anomalies
+3. **Pantau dan Perhatikan**:
+   - Jejaki metrik pemprosesan aliran
+   - Pantau penyebaran konteks
+   - Tetapkan amaran untuk anomali
 
-4. **Secure Your Streams**:
-   - Implement encryption for sensitive data
-   - Use authentication and authorization
-   - Apply proper access controls
+4. **Amankan Aliran Anda**:
+   - Laksanakan penyulitan untuk data sensitif
+   - Gunakan pengesahan dan kebenaran
+   - Terapkan kawalan akses yang betul
 
-### MCP in IoT and Edge Computing
+### MCP dalam IoT dan Pengkomputeran Edge
 
-MCP enhances IoT streaming by:
+MCP meningkatkan penstriman IoT dengan:
 
-- Preserving device context throughout the processing pipeline
-- Enabling efficient edge-to-cloud data streaming
-- Supporting real-time analytics on IoT data streams
-- Facilitating device-to-device communication with context
+- Memelihara konteks peranti merentasi saluran pemprosesan
+- Membolehkan penstriman data efisien dari edge ke awan
+- Menyokong analitik masa nyata pada aliran data IoT
+- Memudahkan komunikasi peranti-ke-peranti dengan konteks
 
-Example: Smart City Sensor Networks  
+Contoh: Rangkaian Sensor Bandar Pintar  
 ```
 Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → Automated Responses
 ```
 
-### Role in Financial Transactions and High-Frequency Trading
+### Peranan dalam Transaksi Kewangan dan Perdagangan Frekuensi Tinggi
 
-MCP offers major benefits for financial data streaming:
+MCP menyediakan kelebihan ketara untuk penstriman data kewangan:
 
-- Ultra-low latency processing for trading decisions
-- Maintaining transaction context throughout processing
-- Supporting complex event processing with contextual awareness
-- Ensuring data consistency across distributed trading systems
+- Pemprosesan latensi ultra-rendah untuk keputusan perdagangan
+- Mengekalkan konteks transaksi sepanjang pemprosesan
+- Menyokong pemprosesan peristiwa kompleks dengan kesedaran konteks
+- Memastikan konsistensi data merentasi sistem perdagangan diedarkan
 
-### Enhancing AI-Driven Data Analytics
+### Meningkatkan Analitik Data Berpandukan AI
 
-MCP opens new possibilities for streaming analytics:
+MCP membuka kemungkinan baru untuk analitik penstriman:
 
-- Real-time model training and inference
-- Continuous learning from streaming data
-- Context-aware feature extraction
-- Multi-model inference pipelines with preserved context
+- Latihan dan inferens model masa nyata
+- Pembelajaran berterusan dari data penstriman
+- Pengekstrakan ciri peka konteks
+- Saluran inferens pelbagai model dengan konteks yang dipelihara
 
-## Future Trends and Innovations
+## Trend dan Inovasi Masa Depan
 
-### Evolution of MCP in Real-Time Environments
+### Evolusi MCP dalam Persekitaran Masa Nyata
 
-Looking forward, MCP is expected to evolve to address:
+Melangkah ke hadapan, kami menjangkakan MCP akan berkembang untuk menangani:
 
-- **Quantum Computing Integration**: Preparing for quantum-based streaming systems
-- **Edge-Native Processing**: Shifting more context-aware processing to edge devices
-- **Autonomous Stream Management**: Self-optimizing streaming pipelines
-- **Federated Streaming**: Distributed processing while preserving privacy
+- **Integrasi Pengkomputeran Kuantum**: Bersedia untuk sistem penstriman berasaskan kuantum
+- **Pemprosesan Asli Edge**: Memindahkan lebih banyak pemprosesan peka konteks ke peranti edge
+- **Pengurusan Aliran Autonomi**: Saluran penstriman yang mengoptimumkan diri sendiri
+- **Penstriman Berfederasi**: Pemprosesan diedarkan sambil mengekalkan privasi
 
-### Potential Advancements in Technology
+### Kemajuan Potensi dalam Teknologi
 
-Emerging technologies shaping the future of MCP streaming include:
+Teknologi baru yang akan membentuk masa depan penstriman MCP:
 
-1. **AI-Optimized Streaming Protocols**: Custom protocols designed specifically for AI workloads
-2. **Neuromorphic Computing Integration**: Brain-inspired computing for stream processing
-3. **Serverless Streaming**: Event-driven, scalable streaming without infrastructure management
-4. **Distributed Context Stores**: Globally distributed yet highly consistent context management
+1. **Protokol Penstriman Dioptimumkan AI**: Protokol khusus direka untuk beban kerja AI
+2. **Integrasi Pengkomputeran Neuromorfik**: Pengkomputeran berinspirasikan otak untuk pemprosesan aliran
+3. **Penstriman Tanpa Pelayan (Serverless)**: Penstriman berasaskan peristiwa, boleh diskala tanpa pengurusan infrastruktur
+4. **Penyimpan Konteks Teragih**: Pengurusan konteks yang diedarkan secara global tetapi sangat konsisten
 
-## Hands-On Exercises
+## Latihan Praktikal
 
-### Exercise 1: Setting Up a Basic MCP Streaming Pipeline
+### Latihan 1: Menyediakan Saluran Penstriman MCP Asas
 
-In this exercise, you will learn how to:  
-- Configure a basic MCP streaming environment  
-- Implement context handlers for stream processing  
-- Test and validate context preservation  
+Dalam latihan ini, anda akan belajar bagaimana untuk:  
+- Mengkonfigurasi persekitaran penstriman MCP asas  
+- Melaksanakan pengendali konteks untuk pemprosesan aliran  
+- Menguji dan mengesahkan pemeliharaan konteks  
 
-### Exercise 2: Building a Real-Time Analytics Dashboard
+### Latihan 2: Membangunkan Papan Pemuka Analitik Masa Nyata
 
-Create a complete application that:  
-- Ingests streaming data using MCP  
-- Processes the stream while maintaining context  
-- Visualizes results in real time  
+Cipta aplikasi lengkap yang:  
+- Mengambil data penstriman menggunakan MCP  
+- Memproses aliran sambil mengekalkan konteks  
+- Memvisualisasikan keputusan secara masa nyata  
 
-### Exercise 3: Implementing Complex Event Processing with MCP
+### Latihan 3: Melaksanakan Pemprosesan Peristiwa Kompleks dengan MCP
 
-Advanced exercise covering:  
-- Pattern detection in streams  
-- Contextual correlation across multiple streams  
-- Generating complex events with preserved context  
+Latihan lanjutan merangkumi:  
+- Pengecaman corak dalam aliran  
+- Korelasi konteks merentasi pelbagai aliran  
+- Menjana peristiwa kompleks dengan konteks yang dipelihara  
 
-## Additional Resources
+## Sumber Tambahan
 
-- [Model Context Protocol Specification](https://github.com/modelcontextprotocol) - Official MCP specification and documentation  
-- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Learn about Kafka for stream processing  
-- [Apache Pulsar](https://pulsar.apache.org/) - Unified messaging and streaming platform  
-- [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - Comprehensive book on streaming architectures  
-- [Microsoft Azure Event Hubs](https://learn.microsoft.com/azure/event-hubs/event-hubs-about) - Managed event streaming service  
-- [MLflow Documentation](https://mlflow.org/docs/latest/index.html) - For ML model tracking and deployment  
-- [Real-Time Analytics with Apache Storm](https://storm.apache.org/releases/current/index.html) - Processing framework for real-time computation  
-- [Flink ML](https://nightlies.apache.org/flink/flink-ml-docs-master/) - Machine learning library for Apache Flink  
-- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Building applications with LLMs  
+- [Model Context Protocol Specification](https://github.com/modelcontextprotocol) - Spesifikasi dan dokumentasi rasmi MCP  
+- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Pelajari tentang Kafka untuk pemprosesan aliran  
+- [Apache Pulsar](https://pulsar.apache.org/) - Platform pesanan dan penstriman bersatu  
+- [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - Buku komprehensif mengenai seni bina penstriman  
+- [Microsoft Azure Event Hubs](https://learn.microsoft.com/azure/event-hubs/event-hubs-about) - Perkhidmatan penstriman peristiwa terurus  
+- [MLflow Documentation](https://mlflow.org/docs/latest/index.html) - Untuk penjejakan dan pelaksanaan model ML  
+- [Real-Time Analytics with Apache Storm](https://storm.apache.org/releases/current/index.html) - Rangka kerja pemprosesan untuk pengiraan masa nyata  
+- [Flink ML](https://nightlies.apache.org/flink/flink-ml-docs-master/) - Perpustakaan pembelajaran mesin untuk Apache Flink  
+- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Membangun aplikasi dengan LLM  
 
-## Learning Outcomes
+## Hasil Pembelajaran
 
-By completing this module, you will be able to:
+Dengan menamatkan modul ini, anda akan dapat:
 
-- Understand the fundamentals of real-time data streaming and its challenges  
-- Explain how the Model Context Protocol (MCP) enhances real-time data streaming  
-- Implement MCP-based streaming solutions using popular frameworks like Kafka and Pulsar  
-- Design and deploy fault-tolerant, high-performance streaming architectures with MCP  
-- Apply MCP concepts to IoT, financial trading, and AI-driven analytics use cases  
-- Evaluate emerging trends and future innovations in MCP-based streaming technologies  
+- Memahami asas penstriman data masa nyata dan cabarannya  
+- Menerangkan bagaimana Protokol Konteks Model (MCP) meningkatkan penstriman data masa nyata  
+- Melaksanakan penyelesaian penstriman berasaskan MCP menggunakan rangka kerja popular seperti Kafka dan Pulsar  
+- Mereka bentuk dan melaksanakan seni bina penstriman yang tahan ralat dan berprestasi tinggi dengan MCP  
+- Mengaplikasikan konsep MCP kepada kes penggunaan IoT, perdagangan kewangan, dan analitik berasaskan AI  
+- Menilai trend terkini dan inovasi masa depan dalam teknologi penstriman berasaskan MCP  
 
-## What's next
+## Apa Seterusnya
 
 - [5.11 Realtime Search](../mcp-realtimesearch/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bb55f3119d45c4412fc5555299e60498",
-  "translation_date": "2025-05-17T13:32:15+00:00",
+  "translation_date": "2025-07-13T22:39:04+00:00",
   "source_file": "03-GettingStarted/samples/python/README.md",
   "language_code": "hu"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ez egy Python példa egy MCP szerverhez
 
-Így néz ki a számológép rész:
+Így néz ki a számológép része:
 
 ```python
 @mcp.tool()
@@ -44,7 +44,7 @@ def divide(a: float, b: float) -> float:
 
 ## Telepítés
 
-Futtassa a következő parancsot:
+Futtasd a következő parancsot:
 
 ```bash
 pip install mcp
@@ -56,5 +56,5 @@ pip install mcp
 python mcp_calculator_server.py
 ```
 
-**Felelősségkizárás**:  
-Ezt a dokumentumot a [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével fordítottuk le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő a hiteles forrásnak. Kritikus információk esetén javasolt a professzionális emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

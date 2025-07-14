@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:42:59+00:00",
+  "translation_date": "2025-07-13T21:07:17+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "fr"
 }
 -->
-# Démonstration du streaming HTTP du calculateur
+# Démonstration de Streaming HTTP du Calculateur
 
-Ce projet illustre le streaming HTTP avec Server-Sent Events (SSE) en utilisant Spring Boot WebFlux. Il se compose de deux applications :
+Ce projet illustre le streaming HTTP en utilisant les Server-Sent Events (SSE) avec Spring Boot WebFlux. Il se compose de deux applications :
 
 - **Calculator Server** : un service web réactif qui effectue des calculs et diffuse les résultats via SSE
 - **Calculator Client** : une application cliente qui consomme le point de terminaison de streaming
@@ -19,7 +19,7 @@ Ce projet illustre le streaming HTTP avec Server-Sent Events (SSE) en utilisant 
 - Java 17 ou supérieur
 - Maven 3.6 ou supérieur
 
-## Structure du projet
+## Structure du Projet
 
 ```
 java/
@@ -35,25 +35,25 @@ java/
 └── README.md
 ```
 
-## Comment ça fonctionne
+## Fonctionnement
 
-1. Le **Calculator Server** expose un endpoint `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. Le **Calculator Server** expose un point de terminaison `/calculate` qui :
+   - Accepte les paramètres de requête : `a` (nombre), `b` (nombre), `op` (opération)
+   - Opérations supportées : `add`, `sub`, `mul`, `div`
+   - Retourne des Server-Sent Events avec la progression du calcul et le résultat
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
+2. Le **Calculator Client** se connecte au serveur et :
+   - Effectue une requête pour calculer `7 * 5`
    - Consomme la réponse en streaming
    - Affiche chaque événement dans la console
 
-## Lancement des applications
+## Lancement des Applications
 
-### Option 1 : Avec Maven (recommandé)
+### Option 1 : Utilisation de Maven (recommandé)
 
 #### 1. Démarrer le Calculator Server
 
-Ouvrez un terminal et rendez-vous dans le répertoire du serveur :
+Ouvrez un terminal et placez-vous dans le répertoire du serveur :
 
 ```bash
 cd calculator-server
@@ -71,7 +71,7 @@ Netty started on port 8080 (http)
 
 #### 2. Lancer le Calculator Client
 
-Ouvrez un **nouveau terminal** et rendez-vous dans le répertoire du client :
+Ouvrez un **nouveau terminal** et placez-vous dans le répertoire du client :
 
 ```bash
 cd calculator-client
@@ -81,7 +81,7 @@ mvn spring-boot:run
 
 Le client se connectera au serveur, effectuera le calcul et affichera les résultats en streaming.
 
-### Option 2 : Utiliser Java directement
+### Option 2 : Utilisation directe de Java
 
 #### 1. Compiler et lancer le serveur :
 
@@ -99,7 +99,7 @@ mvn clean package
 java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-## Tester le serveur manuellement
+## Tester le Serveur Manuellement
 
 Vous pouvez aussi tester le serveur via un navigateur web ou curl :
 
@@ -111,9 +111,9 @@ Visitez : `http://localhost:8080/calculate?a=10&b=5&op=add`
 curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-stream"
 ```
 
-## Résultat attendu
+## Résultat Attendu
 
-Lors de l’exécution du client, vous devriez voir une sortie en streaming similaire à :
+Lors de l’exécution du client, vous devriez voir un flux de sortie similaire à :
 
 ```
 event:info
@@ -123,25 +123,25 @@ event:result
 data:35.0
 ```
 
-## Opérations supportées
+## Opérations Supportées
 
 - `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
+- `sub` - Soustraction (a - b)
 - `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `div` - Division (a / b, retourne NaN si b = 0)
 
-## API Reference
+## Référence API
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Paramètres :**
+- `a` (obligatoire) : Premier nombre (double)
+- `b` (obligatoire) : Second nombre (double)
+- `op` (obligatoire) : Opération (`add`, `sub`, `mul`, `div`)
 
-**Response:**
-- Content-Type: `text/event-stream`
-- Retourne des Server-Sent Events avec la progression et le résultat du calcul
+**Réponse :**
+- Content-Type : `text/event-stream`
+- Retourne des Server-Sent Events avec la progression du calcul et le résultat
 
 **Exemple de requête :**
 ```
@@ -161,26 +161,26 @@ data: 35.0
 
 ## Dépannage
 
-### Problèmes courants
+### Problèmes Courants
 
-1. **Le port 8080 est déjà utilisé**
+1. **Port 8080 déjà utilisé**
    - Arrêtez toute autre application utilisant le port 8080
-   - Ou changez le port du serveur dans `calculator-server/src/main/resources/application.yml`
+   - Ou modifiez le port du serveur dans `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Connexion refusée**
+   - Assurez-vous que le serveur est lancé avant de démarrer le client
+   - Vérifiez que le serveur a bien démarré sur le port 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Problèmes de nom de paramètre**
+   - Ce projet inclut une configuration Maven du compilateur avec le flag `-parameters`
+   - Si vous rencontrez des problèmes de liaison des paramètres, assurez-vous que le projet est construit avec cette configuration
 
-### Stopping the Applications
+### Arrêter les Applications
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` si le serveur tourne en tâche de fond
+- Appuyez sur `Ctrl+C` dans le terminal où chaque application tourne
+- Ou utilisez `mvn spring-boot:stop` si elles tournent en arrière-plan
 
-## Technologies utilisées
+## Stack Technologique
 
 - **Spring Boot 3.3.1** - Framework d’application
 - **Spring WebFlux** - Framework web réactif
@@ -189,14 +189,14 @@ data: 35.0
 - **Maven** - Outil de build
 - **Java 17+** - Langage de programmation
 
-## Étapes suivantes
+## Étapes Suivantes
 
 Essayez de modifier le code pour :
 - Ajouter plus d’opérations mathématiques
-- Gérer les erreurs pour les opérations invalides
-- Ajouter des logs de requêtes/réponses
+- Inclure la gestion des erreurs pour les opérations invalides
+- Ajouter la journalisation des requêtes/réponses
 - Implémenter l’authentification
 - Ajouter des tests unitaires
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

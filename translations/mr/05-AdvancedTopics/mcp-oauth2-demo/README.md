@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-12T23:22:58+00:00",
+  "translation_date": "2025-07-14T00:41:02+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "mr"
 }
 -->
 # MCP OAuth2 डेमो
 
-हा प्रोजेक्ट एक **मिनिमल Spring Boot अॅप्लिकेशन** आहे जे दोन्ही म्हणून कार्य करते:
+हा प्रकल्प एक **मिनिमल Spring Boot अॅप्लिकेशन** आहे जो दोन्ही म्हणून कार्य करतो:
 
 * एक **Spring Authorization Server** (जो `client_credentials` फ्लो वापरून JWT ऍक्सेस टोकन्स जारी करतो), आणि  
-* एक **Resource Server** (जो स्वतःच्या `/hello` एन्डपॉइंटचे संरक्षण करतो).
+* एक **Resource Server** (जो स्वतःच्या `/hello` एंडपॉइंटचे संरक्षण करतो).
 
 हे [Spring ब्लॉग पोस्ट (2 एप्रिल 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) मध्ये दाखवलेल्या सेटअपचे प्रतिबिंब आहे.
 
 ---
 
-## जलद सुरुवात (लोकल)
+## जलद सुरुवात (स्थानिक)
 
 ```bash
 # build & run
@@ -36,7 +36,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## OAuth2 कॉन्फिगरेशनची चाचणी
 
-खालील स्टेप्स वापरून तुम्ही OAuth2 सिक्युरिटी कॉन्फिगरेशनची चाचणी करू शकता:
+खालील टप्प्यांद्वारे तुम्ही OAuth2 सुरक्षा कॉन्फिगरेशनची चाचणी करू शकता:
 
 ### 1. सर्व्हर चालू आहे आणि सुरक्षित आहे याची खात्री करा
 
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-टीप: Basic Authentication हेडर (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret` आहे.
+टीप: Basic Authentication हेडर (`bWNwLWNsaWVudDpzZWNyZXQ=`) हा `mcp-client:secret` चा Base64 एन्कोडिंग आहे.
 
-### 3. टोकन वापरून संरक्षित एन्डपॉइंटला प्रवेश करा
+### 3. टोकन वापरून संरक्षित एंडपॉइंटवर प्रवेश करा
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-"Hello from MCP OAuth2 Demo!" असा यशस्वी प्रतिसाद येणे म्हणजे OAuth2 कॉन्फिगरेशन योग्यरित्या कार्यरत आहे.
+"Hello from MCP OAuth2 Demo!" असा यशस्वी प्रतिसाद मिळाल्यास OAuth2 कॉन्फिगरेशन योग्यरित्या कार्यरत आहे हे पुष्टी होते.
 
 ---
 
@@ -95,8 +95,8 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Ingress FQDN तुमचा **issuer** बनतो (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`).
+इंग्रेस FQDN तुमचा **issuer** (`https://<fqdn>`) बनतो.  
+Azure आपोआप `*.azurecontainerapps.io` साठी विश्वासार्ह TLS प्रमाणपत्र प्रदान करते.
 
 ---
 
@@ -125,4 +125,4 @@ APIM JWKS प्राप्त करेल आणि प्रत्येक 
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **अस्वीकरण**:  
-हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून भाषांतरित केला आहे. आम्ही अचूकतेसाठी प्रयत्न करतो, तरी कृपया लक्षात घ्या की स्वयंचलित भाषांतरांमध्ये चुका किंवा अचूकतेचा अभाव असू शकतो. मूळ दस्तऐवज त्याच्या मूळ भाषेत अधिकृत स्रोत मानला पाहिजे. महत्त्वाची माहिती साठी व्यावसायिक मानवी भाषांतर शिफारसीय आहे. या भाषांतराच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलावांसाठी आम्ही जबाबदार नाही.
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद करण्याची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.

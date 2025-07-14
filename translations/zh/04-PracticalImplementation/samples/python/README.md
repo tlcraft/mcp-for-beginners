@@ -2,39 +2,39 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:28:03+00:00",
+  "translation_date": "2025-07-13T23:30:33+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "zh"
 }
 -->
 # Model Context Protocol (MCP) Python 实现
 
-本仓库包含了 Model Context Protocol (MCP) 的 Python 实现，演示了如何创建同时作为服务器和客户端的应用程序，通过 MCP 标准进行通信。
+本仓库包含 Model Context Protocol (MCP) 的 Python 实现，演示如何创建基于 MCP 标准通信的服务器和客户端应用。
 
 ## 概述
 
-MCP 实现由两个主要部分组成：
+MCP 实现包含两个主要部分：
 
-1. **MCP Server (`server.py`)** - 一个服务器，提供：
+1. **MCP 服务器（`server.py`）** - 一个提供以下功能的服务器：
    - **工具**：可远程调用的函数
    - **资源**：可获取的数据
-   - **提示模板**：用于生成语言模型提示的模板
+   - **提示**：用于生成语言模型提示的模板
 
-2. **MCP Client (`client.py`)** - 一个客户端应用，连接服务器并使用其功能
+2. **MCP 客户端（`client.py`）** - 连接服务器并使用其功能的客户端应用
 
 ## 功能
 
-该实现演示了几个关键的 MCP 功能：
+该实现展示了 MCP 的几个关键功能：
 
 ### 工具
 - `completion` - 生成 AI 模型的文本补全（模拟）
-- `add` - 简单计算器，执行两个数字相加
+- `add` - 简单的加法计算器，计算两个数字之和
 
 ### 资源
 - `models://` - 返回可用 AI 模型的信息
-- `greeting://{name}` - 根据给定名字返回个性化问候语
+- `greeting://{name}` - 返回针对指定名称的个性化问候
 
-### 提示模板
+### 提示
 - `review_code` - 生成代码审查的提示模板
 
 ## 安装
@@ -45,7 +45,7 @@ MCP 实现由两个主要部分组成：
 pip install mcp-server mcp-client
 ```
 
-## 运行服务器和客户端
+## 启动服务器和客户端
 
 ### 启动服务器
 
@@ -79,18 +79,18 @@ python client.py
 
 ### 客户端使用
 
-客户端 (`client.py`) 演示了所有 MCP 功能：
+客户端（`client.py`）演示了所有 MCP 功能：
 
 ```powershell
 python client.py
 ```
 
-这会连接服务器并调用所有功能，包括工具、资源和提示模板。输出内容包括：
+这将连接服务器并调用所有功能，包括工具、资源和提示。输出将显示：
 
 1. 计算器工具结果（5 + 7 = 12）
-2. 补全文本工具对“生命的意义是什么？”的回答
+2. 对 “What is the meaning of life?” 的补全工具响应
 3. 可用 AI 模型列表
-4. 针对“MCP Explorer”的个性化问候
+4. 针对 “MCP Explorer” 的个性化问候
 5. 代码审查提示模板
 
 ## 实现细节
@@ -124,7 +124,7 @@ async with stdio_client(server_params) as (reader, writer):
 
 ## 了解更多
 
-有关 MCP 的更多信息，请访问：https://modelcontextprotocol.io/
+欲了解更多关于 MCP 的信息，请访问：https://modelcontextprotocol.io/
 
 **免责声明**：  
-本文件由AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)翻译而成。尽管我们努力确保准确性，但请注意自动翻译可能存在错误或不准确之处。原始文件的原文版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件由 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻译而成。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

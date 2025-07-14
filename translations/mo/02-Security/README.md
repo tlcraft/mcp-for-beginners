@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c69f9df7f3215dac8d056020539bac36",
-  "translation_date": "2025-07-04T16:02:22+00:00",
+  "translation_date": "2025-07-13T16:37:07+00:00",
   "source_file": "02-Security/README.md",
   "language_code": "mo"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 採用 Model Context Protocol (MCP) 為 AI 驅動的應用程式帶來強大的新功能，但同時也引入了超越傳統軟體風險的獨特安全挑戰。除了既有的安全編碼、最小權限和供應鏈安全等問題外，MCP 和 AI 工作負載還面臨新的威脅，例如提示注入、工具中毒和動態工具修改。如果未妥善管理，這些風險可能導致資料外洩、隱私侵犯及系統行為異常。
 
-本課程探討與 MCP 相關的最重要安全風險，包括身份驗證、授權、過度權限、間接提示注入及供應鏈漏洞，並提供可行的控管措施與最佳實務來降低風險。您還將學習如何利用 Microsoft 解決方案，如 Prompt Shields、Azure Content Safety 和 GitHub Advanced Security，來強化 MCP 的實作。透過理解並應用這些控管措施，您可以大幅降低安全漏洞的可能性，確保 AI 系統的穩健與可信賴。
+本課程探討與 MCP 相關的最重要安全風險，包括身份驗證、授權、過度權限、間接提示注入及供應鏈漏洞，並提供可行的控管措施與最佳實務來降低風險。您還將學習如何利用 Microsoft 解決方案，如 Prompt Shields、Azure Content Safety 及 GitHub Advanced Security，來強化 MCP 的實作。透過理解並應用這些控管措施，您能大幅降低安全事件發生的可能性，確保 AI 系統的穩健與可信賴。
 
 # 學習目標
 
@@ -19,26 +19,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 - 辨識並說明 Model Context Protocol (MCP) 所帶來的獨特安全風險，包括提示注入、工具中毒、過度權限及供應鏈漏洞。
 - 描述並應用有效的 MCP 安全風險緩解控管，如強健的身份驗證、最小權限、安全的令牌管理及供應鏈驗證。
-- 了解並運用 Microsoft 解決方案，如 Prompt Shields、Azure Content Safety 和 GitHub Advanced Security，來保護 MCP 和 AI 工作負載。
+- 了解並運用 Microsoft 解決方案，如 Prompt Shields、Azure Content Safety 及 GitHub Advanced Security，來保護 MCP 與 AI 工作負載。
 - 認識驗證工具元資料、監控動態變更及防禦間接提示注入攻擊的重要性。
-- 將既有的安全最佳實務（如安全編碼、伺服器強化及零信任架構）整合到 MCP 實作中，以降低安全漏洞的發生率及影響。
+- 將既有的安全最佳實務（如安全編碼、伺服器強化及零信任架構）整合到 MCP 實作中，以降低安全事件的發生率及影響。
 
 # MCP 安全控管
 
 任何能存取重要資源的系統都存在隱含的安全挑戰。這些挑戰通常可透過正確應用基本安全控管與概念來解決。由於 MCP 是新近定義的協議，規範仍在快速變動與演進中。隨著協議成熟，相關安全控管也將逐步完善，促進與企業及既有安全架構和最佳實務的更好整合。
 
-根據[Microsoft Digital Defense Report](https://aka.ms/mddr)的研究，98% 的已報告資安事件可透過強健的安全衛生措施防範，而防止任何形式資安事件的最佳保護是確保基線安全衛生、遵循安全編碼最佳實務及供應鏈安全——這些經過驗證的做法仍是降低安全風險的關鍵。
+根據[Microsoft Digital Defense Report](https://aka.ms/mddr)的研究，98% 的已報告資安事件可透過良好的安全衛生習慣防範，而防止任何形式資安事件的最佳保護是確保基礎安全衛生、遵循安全編碼最佳實務及供應鏈安全——這些經過驗證的做法仍是降低安全風險的關鍵。
 
-以下將介紹採用 MCP 時可開始著手解決安全風險的幾種方法。
+以下將介紹您在採用 MCP 時可開始著手解決安全風險的方法。
 
-> **Note:** 以下資訊截至 **2025 年 5 月 29 日** 為準。MCP 協議持續演進，未來實作可能引入新的身份驗證模式與控管。欲取得最新更新與指引，請參考 [MCP 規範](https://spec.modelcontextprotocol.io/)、官方 [MCP GitHub 倉庫](https://github.com/modelcontextprotocol) 及 [安全最佳實務頁面](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)。
+> **Note:** 以下資訊截至 **2025 年 5 月 29 日** 為準。MCP 協議持續演進，未來實作可能引入新的身份驗證模式與控管。請隨時參考最新的 [MCP 規範](https://spec.modelcontextprotocol.io/)、官方 [MCP GitHub 倉庫](https://github.com/modelcontextprotocol) 及 [安全最佳實務頁面](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices) 以獲取最新資訊與指引。
 
-### 問題陳述  
-原始 MCP 規範假設開發者會自行撰寫身份驗證伺服器，這需要 OAuth 及相關安全限制的知識。MCP 伺服器作為 OAuth 2.0 授權伺服器，直接管理所需的使用者身份驗證，而非委派給外部服務（如 Microsoft Entra ID）。自 **2025 年 4 月 26 日** 起，MCP 規範更新允許 MCP 伺服器將使用者身份驗證委派給外部服務。
+### 問題說明  
+原始 MCP 規範假設開發者會自行撰寫身份驗證伺服器，這需要具備 OAuth 及相關安全限制的知識。MCP 伺服器作為 OAuth 2.0 授權伺服器，直接管理所需的使用者身份驗證，而非委派給外部服務（如 Microsoft Entra ID）。自 **2025 年 4 月 26 日** 起，MCP 規範更新允許 MCP 伺服器將使用者身份驗證委派給外部服務。
 
 ### 風險
-- MCP 伺服器中授權邏輯配置錯誤，可能導致敏感資料外洩及存取控制錯誤。
-- 本地 MCP 伺服器的 OAuth 令牌被竊取。若令牌遭竊，攻擊者可冒充 MCP 伺服器，存取該 OAuth 令牌所授權的服務資源與資料。
+- MCP 伺服器中錯誤配置的授權邏輯可能導致敏感資料外洩及存取控制錯誤。
+- 本地 MCP 伺服器上的 OAuth 令牌被竊取。若令牌遭竊，攻擊者可冒充 MCP 伺服器，存取該 OAuth 令牌所對應服務的資源與資料。
 
 #### 令牌直通
 授權規範明確禁止令牌直通，因其帶來多項安全風險，包括：
@@ -57,7 +57,7 @@ MCP 伺服器或下游 API 可能實施重要安全控管，如速率限制、�
 若令牌被多個服務接受且未經適當驗證，攻擊者若入侵其中一個服務，便可利用該令牌存取其他連接服務。
 
 #### 未來相容性風險
-即使 MCP 伺服器目前是「純代理」，未來可能需新增安全控管。從一開始就正確區分令牌受眾，有助於安全模型的演進。
+即使 MCP 伺服器目前是「純代理」，未來可能需新增安全控管。從一開始就正確分離令牌受眾，有助於安全模型的演進。
 
 ### 緩解控管
 
@@ -69,33 +69,33 @@ MCP 伺服器或下游 API 可能實施重要安全控管，如速率限制、�
 
 # MCP 伺服器的過度權限
 
-### 問題陳述  
-MCP 伺服器可能被授予過度的服務或資源權限。例如，作為 AI 銷售應用一部分的 MCP 伺服器，連接企業資料庫時，應僅限於存取銷售資料，而非整個資料庫的所有檔案。回歸最小權限原則（最古老的安全原則之一），任何資源都不應擁有超出其執行任務所需的權限。AI 在此領域帶來更大挑戰，因為為了保持彈性，準確定義所需權限可能相當困難。
+### 問題說明  
+MCP 伺服器可能被授予過度的服務或資源存取權限。例如，作為 AI 銷售應用一部分的 MCP 伺服器，連接企業資料庫時，應僅限於存取銷售資料，而非整個資料庫的所有檔案。回歸最小權限原則（最古老的安全原則之一），任何資源都不應擁有超出其執行任務所需的權限。AI 在此領域帶來更大挑戰，因為為了保持彈性，準確定義所需權限往往不易。
 
 ### 風險  
 - 授予過度權限可能導致 MCP 伺服器外洩或修改其不應存取的資料。若資料包含個人識別資訊（PII），也可能引發隱私問題。
 
 ### 緩解控管  
-- **應用最小權限原則：** 僅授予 MCP 伺服器執行所需任務的最低權限，並定期檢視與更新權限，確保不超出必要範圍。詳細指引請參考 [Secure least-privileged access](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access)。
+- **應用最小權限原則：** 僅授予 MCP 伺服器執行任務所需的最低權限，並定期檢視與更新權限，確保不超出必要範圍。詳細指引請參考 [Secure least-privileged access](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access)。
 - **使用基於角色的存取控制 (RBAC)：** 為 MCP 伺服器指派嚴格限定於特定資源與操作的角色，避免廣泛或不必要的權限。
 - **監控與稽核權限：** 持續監控權限使用情況，並稽核存取日誌，及時偵測與修正過度或未使用的權限。
 
 # 間接提示注入攻擊
 
-### 問題陳述
+### 問題說明
 
 惡意或遭入侵的 MCP 伺服器可能帶來重大風險，暴露客戶資料或觸發非預期行為。這些風險在 AI 與基於 MCP 的工作負載中特別重要，包括：
 
 - **提示注入攻擊**：攻擊者在提示或外部內容中嵌入惡意指令，導致 AI 系統執行非預期操作或洩漏敏感資料。詳見：[Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
 - **工具中毒**：攻擊者操控工具元資料（如描述或參數），影響 AI 行為，可能繞過安全控管或外洩資料。詳情：[Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
-- **跨域提示注入**：惡意指令藏於文件、網頁或電子郵件中，AI 處理時導致資料洩漏或操控。
+- **跨域提示注入**：惡意指令藏於文件、網頁或電子郵件中，AI 處理時導致資料外洩或操控。
 - **動態工具修改（Rug Pulls）**：工具定義在用戶批准後被更改，導入新的惡意行為而用戶不知情。
 
 這些漏洞凸顯在整合 MCP 伺服器與工具時，需強化驗證、監控與安全控管。欲深入了解，請參考上述連結。
 
 ![prompt-injection-lg-2048x1034](../../../translated_images/prompt-injection.ed9fbfde297ca877c15bc6daa808681cd3c3dc7bf27bbbda342ef1ba5fc4f52d.mo.png)
 
-**間接提示注入**（又稱跨域提示注入或 XPIA）是生成式 AI 系統中的嚴重漏洞，包括使用 Model Context Protocol (MCP) 的系統。此攻擊將惡意指令隱藏於外部內容（如文件、網頁或電子郵件）中。當 AI 系統處理這些內容時，可能將嵌入的指令誤判為合法使用者命令，導致非預期行為，如資料洩漏、生成有害內容或操控使用者互動。詳細說明與實例請見 [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)。
+**間接提示注入**（又稱跨域提示注入或 XPIA）是生成式 AI 系統中的嚴重漏洞，包括使用 Model Context Protocol (MCP) 的系統。此攻擊將惡意指令隱藏於外部內容（如文件、網頁或電子郵件）中，當 AI 系統處理這些內容時，可能將嵌入指令誤判為合法使用者命令，導致非預期行為，如資料外洩、生成有害內容或操控使用者互動。詳細說明與實例請見 [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)。
 
 其中一種特別危險的攻擊是 **工具中毒**。攻擊者將惡意指令注入 MCP 工具的元資料（如工具描述或參數）。由於大型語言模型（LLM）依賴這些元資料決定調用哪些工具，遭破壞的描述可能誘使模型執行未授權的工具呼叫或繞過安全控管。這些操控通常對終端使用者不可見，但 AI 系統會解讀並執行。此風險在託管 MCP 伺服器環境中更為嚴重，因工具定義可在用戶批准後被更新，這種情況有時稱為「[rug pull](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)」。在此情況下，先前安全的工具可能被修改為執行惡意行為，如資料外洩或系統行為變更，而用戶不知情。更多攻擊向量詳見 [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)。
 
@@ -114,13 +114,13 @@ MCP 伺服器可能被授予過度的服務或資源權限。例如，作為 AI 
     
 2.  **聚焦技術（Spotlighting）**：協助 AI 系統區分有效的系統指令與可能不可信的外部輸入。透過轉換輸入文字，使其更符合模型需求，Spotlighting 確保 AI 能更準確識別並忽略惡意指令。
     
-3.  **分隔符與資料標記**：在系統訊息中加入分隔符，明確標示輸入文字位置，幫助 AI 系統辨識並分離使用者輸入與潛在有害的外部內容。資料標記則利用特殊標記強調可信與不可信資料的界線。
+3.  **分隔符與資料標記**：在系統訊息中加入分隔符，明確標示輸入文字位置，幫助 AI 系統辨識並分離使用者輸入與潛在有害的外部內容。資料標記則利用特殊標記突出可信與不可信資料的邊界。
     
-4.  **持續監控與更新**：Microsoft 持續監控並更新 Prompt Shields，以應對新興與演變中的威脅。此積極作法確保防禦措施對最新攻擊技術保持有效。
+4.  **持續監控與更新**：Microsoft 持續監控並更新 Prompt Shields，以應對新興與演變中的威脅。此主動防禦確保防護措施對最新攻擊技術仍具效力。
     
 5. **與 Azure Content Safety 整合：** Prompt Shields 是 Azure AI Content Safety 套件的一部分，該套件提供額外工具來偵測越獄嘗試、有害內容及其他 AI 應用的安全風險。
 
-您可在 [Prompt Shields 文件](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection) 中閱讀更多相關資訊。
+您可參考 [Prompt Shields 文件](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection) 了解更多 AI Prompt Shields。
 
 ![prompt-shield-lg-2048x1328](../../../translated_images/prompt-shield.ff5b95be76e9c78c6ec0888206a4a6a0a5ab4bb787832a9eceef7a62fe0138d1.mo.png)
 
@@ -139,23 +139,23 @@ MCP 伺服器可能被授予過度的服務或資源權限。例如，作為 AI 
 微軟也在內部對所有產品實施廣泛的供應鏈安全措施。詳情請參閱 [The Journey to Secure the Software Supply Chain at Microsoft](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/)。
 
 
-# 建立安全最佳實踐，提升您的 MCP 實作安全態勢
+# 已建立的安全最佳實踐，提升您的 MCP 實作安全態勢
 
-任何 MCP 實作都繼承了其所建構組織環境的既有安全態勢，因此在考慮 MCP 作為整體 AI 系統元件的安全性時，建議提升整體既有的安全態勢。以下既有的安全控管尤其重要：
+任何 MCP 實作都繼承了其所建構組織環境的既有安全態勢，因此在將 MCP 視為整體 AI 系統的一部分時，建議提升整體既有的安全態勢。以下已建立的安全控管尤其相關：
 
--   AI 應用的安全程式設計最佳實踐 — 防範 [OWASP Top 10](https://owasp.org/www-project-top-ten/)、[OWASP Top 10 for LLMs](https://genai.owasp.org/download/43299/?tmstv=1731900559)，使用安全保管庫管理秘密與令牌，實現應用元件間的端對端安全通訊等。
--   伺服器強化 — 盡可能使用多重身份驗證（MFA）、保持系統補丁更新，並將伺服器整合第三方身份提供者以控管存取。
--   持續更新裝置、基礎設施與應用程式的補丁。
--   安全監控 — 實施 AI 應用（包含 MCP 用戶端/伺服器）的日誌記錄與監控，並將日誌傳送至中央 SIEM 以偵測異常行為。
--   零信任架構 — 透過網路與身份控管邏輯隔離元件，若 AI 應用遭入侵，可將橫向移動風險降至最低。
+-   AI 應用程式的安全程式設計最佳實踐 — 防範 [OWASP Top 10](https://owasp.org/www-project-top-ten/)、[OWASP Top 10 for LLMs](https://genai.owasp.org/download/43299/?tmstv=1731900559)，使用安全保管庫管理秘密與令牌，實現所有應用元件間的端對端安全通訊等。
+-   伺服器強化 — 盡可能使用多重身份驗證（MFA）、保持補丁更新、將伺服器整合第三方身份提供者以控管存取等。
+-   持續為裝置、基礎設施與應用程式套用最新補丁。
+-   安全監控 — 實施 AI 應用（包含 MCP 用戶端/伺服器）的日誌與監控，並將日誌傳送至中央 SIEM 以偵測異常行為。
+-   零信任架構 — 透過網路與身份控管邏輯隔離元件，若 AI 應用遭入侵，能將橫向移動風險降至最低。
 
 # 主要重點
 
-- 安全基礎依然關鍵：安全程式設計、最小權限、供應鏈驗證與持續監控對 MCP 和 AI 工作負載不可或缺。
-- MCP 帶來新風險，如提示注入、工具中毒及過度權限，需結合傳統與 AI 專屬控管。
+- 安全基礎依然關鍵：安全程式設計、最小權限、供應鏈驗證與持續監控對 MCP 與 AI 工作負載不可或缺。
+- MCP 帶來新風險——如提示注入、工具中毒與過度權限，需結合傳統與 AI 專屬控管。
 - 採用強健的身份驗證、授權與令牌管理，盡可能利用 Microsoft Entra ID 等外部身份提供者。
 - 透過驗證工具元資料、監控動態變更及使用 Microsoft Prompt Shields 等解決方案，防範間接提示注入與工具中毒。
-- 對 AI 供應鏈中的所有元件（包括模型、嵌入和上下文提供者）採取與程式碼依賴相同的嚴謹態度。
+- 對 AI 供應鏈中的所有元件（包括模型、嵌入與上下文提供者）採取與程式碼依賴相同的嚴謹態度。
 - 持續關注 MCP 規範的演進，並參與社群協助塑造安全標準。
 
 # 其他資源
@@ -184,4 +184,4 @@ MCP 伺服器可能被授予過度的服務或資源權限。例如，作為 AI 
 下一步：[Chapter 3: Getting Started](../03-GettingStarted/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。

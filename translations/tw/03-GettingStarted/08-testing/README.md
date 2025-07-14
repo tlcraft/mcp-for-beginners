@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T16:11:01+00:00",
+  "translation_date": "2025-07-13T21:58:02+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "tw"
 }
@@ -27,12 +27,12 @@ CO_OP_TRANSLATOR_METADATA:
 MCP 提供工具協助你測試與除錯伺服器：
 
 - **MCP Inspector**：一個可作為 CLI 工具或視覺化工具執行的命令列工具。
-- **手動測試**：你可以使用 curl 這類工具發送網路請求，任何能執行 HTTP 的工具都適用。
+- **手動測試**：你可以使用 curl 等工具發送網路請求，任何能執行 HTTP 的工具都適用。
 - **單元測試**：你可以使用喜歡的測試框架來測試伺服器和客戶端的功能。
 
 ### 使用 MCP Inspector
 
-我們在之前的課程中已介紹過此工具的使用方式，這裡簡單說明。它是用 Node.js 建置的工具，你可以透過執行 `npx` 指令來使用，這會暫時下載並安裝該工具，執行完請求後會自動清理。
+我們在之前的課程中已介紹過此工具的使用方式，這裡簡單說明。它是用 Node.js 建置的工具，你可以透過執行 `npx` 指令來使用，該指令會暫時下載並安裝工具，執行完請求後會自動清理。
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) 可協助你：
 
@@ -58,7 +58,7 @@ npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/lis
 
 ### 手動測試
 
-除了使用 inspector 工具測試伺服器功能外，另一種類似的方法是使用能執行 HTTP 的客戶端工具，例如 curl。
+除了使用 inspector 工具測試伺服器功能外，另一種類似的方法是使用能執行 HTTP 的客戶端，例如 curl。
 
 使用 curl，你可以直接透過 HTTP 請求測試 MCP 伺服器：
 
@@ -131,7 +131,7 @@ async def test_list_tools_cursor_parameter():
 
 上述程式碼做了以下事情：
 
-- 使用 pytest 框架，讓你能以函式形式撰寫測試並使用 assert 陳述式。
+- 使用 pytest 框架，讓你能以函式撰寫測試並使用 assert 陳述式。
 - 建立一個包含兩個不同工具的 MCP 伺服器。
 - 使用 `assert` 陳述式檢查特定條件是否成立。
 
@@ -139,7 +139,7 @@ async def test_list_tools_cursor_parameter():
 
 根據上述檔案，你可以測試自己的伺服器，確保功能如預期建立。
 
-所有主要 SDK 都有類似的測試章節，方便你依所選執行環境調整。
+所有主要 SDK 都有類似的測試章節，你可以依照所選的執行環境做調整。
 
 ## 範例
 

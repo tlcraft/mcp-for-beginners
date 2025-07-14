@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6d6315e03f591fb5a39be91da88585dc",
-  "translation_date": "2025-05-17T10:58:55+00:00",
+  "translation_date": "2025-07-13T19:21:17+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/typescript/README.md",
   "language_code": "sr"
 }
 -->
-# Pokretanje ovog primera
+# Покретање овог примера
 
-Ovaj primer podrazumeva da imate LLM na klijentu. LLM zahteva da ili pokrenete ovo u Codespaces ili da postavite lični pristupni token na GitHub-u da bi radilo.
+Овај пример подразумева да имате LLM на клијенту. LLM захтева да или покренете ово у Codespaces или да подесите лични приступни токен на GitHub-у да би радило.
 
-## -1- Instalirajte zavisnosti
+## -1- Инсталирање зависности
 
 ```bash
 npm install
 ```
 
-## -3- Pokrenite server
+## -3- Покретање сервера
 
 ```bash
 npm run build
 ```
 
-## -4- Pokrenite klijent
+## -4- Покретање клијента
 
 ```sh
 npm run client
 ```
 
-Treba da vidite rezultat sličan sledećem:
+Требало би да видите резултат сличан овом:
 
 ```text
 Asking server for available tools
@@ -40,5 +40,5 @@ Calling tool add with args "{\"a\":2,\"b\":3}"
 Tool result:  { content: [ { type: 'text', text: '5' } ] }
 ```
 
-**Ограничење одговорности**:  
-Овај документ је преведен користећи AI услугу превођења [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо тачности, молимо вас да будете свесни да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати меродавним извором. За критичне информације, препоручује се професионални људски превод. Не преузимамо одговорност за било каква погрешна разумевања или погрешна тумачења која произилазе из употребе овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

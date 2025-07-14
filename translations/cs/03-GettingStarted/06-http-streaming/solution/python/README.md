@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:03:57+00:00",
+  "translation_date": "2025-07-13T21:22:02+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "cs"
 }
 -->
-# Running this sample
+# Spuštění tohoto příkladu
 
-Вот как запустить классический HTTP streaming сервер и клиент, а также MCP streaming сервер и клиент с использованием Python.
+Zde je návod, jak spustit klasický HTTP streaming server a klienta, stejně jako MCP streaming server a klienta pomocí Pythonu.
 
-### Overview
+### Přehled
 
-- Вы настроите MCP сервер, который отправляет уведомления о прогрессе клиенту во время обработки элементов.
-- Клиент будет отображать каждое уведомление в реальном времени.
-- В этом руководстве рассматриваются требования, настройка, запуск и устранение неполадок.
+- Nastavíte MCP server, který bude klientovi posílat notifikace o průběhu zpracování položek.
+- Klient bude zobrazovat každou notifikaci v reálném čase.
+- Tento průvodce pokrývá požadavky, nastavení, spuštění a řešení problémů.
 
-### Prerequisites
+### Požadavky
 
-- Python 3.9 или новее
-- Пакет `mcp` для Python (установить с помощью `pip install mcp`)
+- Python 3.9 nebo novější
+- Python balíček `mcp` (nainstalujete pomocí `pip install mcp`)
 
-### Installation & Setup
+### Instalace a nastavení
 
-1. Клонируйте репозиторий или скачайте файлы решения.
+1. Naklonujte repozitář nebo stáhněte soubory řešení.
 
    ```pwsh
    git clone https://github.com/microsoft/mcp-for-beginners
    ```
 
-1. **Создайте и активируйте виртуальное окружение (рекомендуется):**
+1. **Vytvořte a aktivujte virtuální prostředí (doporučeno):**
 
    ```pwsh
    python -m venv venv
@@ -39,48 +39,48 @@ CO_OP_TRANSLATOR_METADATA:
    source venv/bin/activate      # On Linux/macOS
    ```
 
-1. **Установите необходимые зависимости:**
+1. **Nainstalujte potřebné závislosti:**
 
    ```pwsh
    pip install "mcp[cli]"
    ```
 
-### Files
+### Soubory
 
 - **Server:** [server.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/server.py)
-- **Client:** [client.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/client.py)
+- **Klient:** [client.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/client.py)
 
-### Running the Classic HTTP Streaming Server
+### Spuštění klasického HTTP streaming serveru
 
-1. Перейдите в каталог решения:
+1. Přejděte do adresáře s řešením:
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
 
-2. Запустите классический HTTP streaming сервер:
+2. Spusťte klasický HTTP streaming server:
 
    ```pwsh
    python server.py
    ```
 
-3. Сервер запустится и выведет:
+3. Server se spustí a zobrazí:
 
    ```
    Starting FastAPI server for classic HTTP streaming...
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### Running the Classic HTTP Streaming Client
+### Spuštění klasického HTTP streaming klienta
 
-1. Откройте новый терминал (активируйте то же виртуальное окружение и каталог):
+1. Otevřete nový terminál (aktivujte stejné virtuální prostředí a adresář):
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py
    ```
 
-2. Вы увидите последовательный вывод потоковых сообщений:
+2. Měli byste vidět postupně vytištěné streamované zprávy:
 
    ```text
    Running classic HTTP streaming client...
@@ -93,30 +93,30 @@ CO_OP_TRANSLATOR_METADATA:
    --- Stream Ended ---
    ```
 
-### Running the MCP Streaming Server
+### Spuštění MCP streaming serveru
 
-1. Перейдите в каталог решения:
+1. Přejděte do adresáře s řešením:
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
-2. Запустите MCP сервер с транспортом streamable-http:
+2. Spusťte MCP server s transportem streamable-http:
    ```pwsh
    python server.py mcp
    ```
-3. Сервер запустится и выведет:
+3. Server se spustí a zobrazí:
    ```
    Starting MCP server with streamable-http transport...
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### Running the MCP Streaming Client
+### Spuštění MCP streaming klienta
 
-1. Откройте новый терминал (активируйте то же виртуальное окружение и каталог):
+1. Otevřete nový terminál (aktivujte stejné virtuální prostředí a adresář):
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. Вы увидите уведомления в реальном времени по мере обработки сервером каждого элемента:
+2. Měli byste vidět notifikace vytištěné v reálném čase, jak server zpracovává jednotlivé položky:
    ```
    Running MCP client...
    Starting client...
@@ -129,23 +129,23 @@ CO_OP_TRANSLATOR_METADATA:
    Tool result: meta=None content=[TextContent(type='text', text='Processed files: file_1.txt, file_2.txt, file_3.txt | Message: hello from client')]
    ```
 
-### Key Implementation Steps
+### Klíčové kroky implementace
 
-1. **Создайте MCP сервер с помощью FastMCP.**
-2. **Определите инструмент, который обрабатывает список и отправляет уведомления с помощью `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+1. **Vytvořit MCP server pomocí FastMCP.**
+2. **Definovat nástroj, který zpracovává seznam a posílá notifikace pomocí `ctx.info()` nebo `ctx.log()`.**
+3. **Spustit server s `transport="streamable-http"`.**
+4. **Implementovat klienta s handlerem zpráv, který zobrazuje notifikace ihned po příchodu.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Procházení kódu
+- Server používá asynchronní funkce a MCP kontext pro odesílání aktualizací průběhu.
+- Klient implementuje asynchronní handler zpráv, který tiskne notifikace a konečný výsledek.
 
-### Tips & Troubleshooting
+### Tipy a řešení problémů
 
-- Use `async/await` для неблокирующих операций.**
-- Всегда обрабатывайте исключения как на сервере, так и на клиенте для надежности.
-- Тестируйте с несколькими клиентами, чтобы видеть обновления в реальном времени.
-- Если возникают ошибки, проверьте версию Python и убедитесь, что все зависимости установлены.
+- Používejte `async/await` pro neblokující operace.
+- Vždy ošetřujte výjimky jak na straně serveru, tak klienta pro větší spolehlivost.
+- Testujte s více klienty, abyste viděli aktualizace v reálném čase.
+- Pokud narazíte na chyby, zkontrolujte verzi Pythonu a ujistěte se, že jsou nainstalovány všechny závislosti.
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac2459c0d5cc823922e3d9240a95028c",
-  "translation_date": "2025-06-11T13:32:57+00:00",
+  "translation_date": "2025-07-13T19:12:47+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/java/README.md",
   "language_code": "sk"
 }
@@ -20,7 +20,7 @@ Java aplikácia, ktorá ukazuje, ako použiť LangChain4j na pripojenie k MCP (M
 
 ## Získanie GitHub Tokenu
 
-Táto aplikácia používa GitHub Models, ktoré vyžadujú osobný prístupový token GitHubu. Postupujte podľa týchto krokov, aby ste získali svoj token:
+Táto aplikácia používa GitHub Models, ktoré vyžadujú osobný prístupový token GitHub. Postupujte podľa týchto krokov, aby ste získali svoj token:
 
 ### 1. Prístup k GitHub Models
 1. Prejdite na [GitHub Models](https://github.com/marketplace/models)
@@ -28,19 +28,19 @@ Táto aplikácia používa GitHub Models, ktoré vyžadujú osobný prístupový
 3. Požiadajte o prístup k GitHub Models, ak ho ešte nemáte
 
 ### 2. Vytvorenie osobného prístupového tokenu
-1. Prejdite na [GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)](https://github.com/settings/tokens)
+1. Prejdite na [GitHub Nastavenia → Developer settings → Personal access tokens → Tokens (classic)](https://github.com/settings/tokens)
 2. Kliknite na "Generate new token" → "Generate new token (classic)"
-3. Pomenujte token (napr. "MCP Calculator Client")
+3. Pomenujte token popisným názvom (napr. "MCP Calculator Client")
 4. Nastavte platnosť podľa potreby
-5. Vyberte tieto oprávnenia:
+5. Vyberte nasledujúce oprávnenia:
    - `repo` (ak pristupujete k súkromným repozitárom)
    - `user:email`
 6. Kliknite na "Generate token"
-7. **Dôležité**: Token si okamžite skopírujte - už ho nebudete môcť zobraziť!
+7. **Dôležité**: Token si ihneď skopírujte – už ho nebudete môcť zobraziť!
 
-### 3. Nastavenie premennej prostredia
+### 3. Nastavenie environmentálnej premennej
 
-#### Na Windows (Command Prompt):
+#### Na Windows (Príkazový riadok):
 ```cmd
 set GITHUB_TOKEN=your_github_token_here
 ```
@@ -55,7 +55,7 @@ $env:GITHUB_TOKEN="your_github_token_here"
 export GITHUB_TOKEN=your_github_token_here
 ```
 
-## Inštalácia a nastavenie
+## Nastavenie a inštalácia
 
 1. **Naklonujte alebo prejdite do adresára projektu**
 
@@ -63,15 +63,15 @@ export GITHUB_TOKEN=your_github_token_here
    ```cmd
    mvnw clean install
    ```
-   Alebo ak máte Maven globálne nainštalovaný:
+   Alebo ak máte Maven nainštalovaný globálne:
    ```cmd
    mvn clean install
    ```
 
-3. **Nastavte premennú prostredia** (pozri sekciu "Získanie GitHub Tokenu" vyššie)
+3. **Nastavte environmentálnu premennú** (pozrite sekciu "Získanie GitHub Tokenu" vyššie)
 
 4. **Spustite MCP kalkulačnú službu**:
-   Uistite sa, že máte spustenú MCP kalkulačnú službu z kapitoly 1 na `http://localhost:8080/sse`. Mala by bežať pred spustením klienta.
+   Uistite sa, že máte spustenú MCP kalkulačnú službu z kapitoly 1 na `http://localhost:8080/sse`. Táto služba musí bežať pred spustením klienta.
 
 ## Spustenie aplikácie
 
@@ -86,11 +86,11 @@ Aplikácia demonštruje tri hlavné interakcie s kalkulačnou službou:
 
 1. **Sčítanie**: Vypočíta súčet 24.5 a 17.3
 2. **Druhá odmocnina**: Vypočíta druhú odmocninu z 144
-3. **Pomoc**: Zobrazí dostupné kalkulačné funkcie
+3. **Pomoc**: Zobrazí dostupné funkcie kalkulačky
 
 ## Očakávaný výstup
 
-Pri úspešnom spustení by ste mali vidieť výstup podobný:
+Pri úspešnom spustení by ste mali vidieť výstup podobný tomuto:
 
 ```
 The sum of 24.5 and 17.3 is 41.8.
@@ -103,35 +103,35 @@ The calculator service provides the following functions: add, subtract, multiply
 ### Bežné problémy
 
 1. **"GITHUB_TOKEN environment variable not set"**
-   - Skontrolujte, či ste nastavili premennú `GITHUB_TOKEN` environment variable
-   - Restart your terminal/command prompt after setting the variable
+   - Skontrolujte, či ste nastavili environmentálnu premennú `GITHUB_TOKEN`
+   - Po nastavení premennej reštartujte terminál/príkazový riadok
 
 2. **"Connection refused to localhost:8080"**
-   - Ensure the MCP calculator service is running on port 8080
-   - Check if another service is using port 8080
+   - Overte, či MCP kalkulačná služba beží na porte 8080
+   - Skontrolujte, či iná služba nepoužíva port 8080
 
 3. **"Authentication failed"**
-   - Verify your GitHub token is valid and has the correct permissions
-   - Check if you have access to GitHub Models
+   - Overte platnosť GitHub tokenu a správne oprávnenia
+   - Skontrolujte, či máte prístup k GitHub Models
 
-4. **Maven build errors**
-   - Ensure you're using Java 21 or higher: `java -version`
-   - Try cleaning the build: `mvnw clean`
+4. **Chyby pri buildovaní Mavenom**
+   - Uistite sa, že používate Java 21 alebo novšiu: `java -version`
+   - Skúste vyčistiť build: `mvnw clean`
 
 ### Ladenie
 
-Pre zapnutie debug logovania pridajte pri spustení JVM tento argument:
+Pre zapnutie debug logovania pridajte pri spustení JVM nasledujúci argument:
 ```cmd
 java -Dlogging.level.dev.langchain4j=DEBUG -jar target\calculator-llm-client-0.0.1-SNAPSHOT.jar
 ```
 
 ## Konfigurácia
 
-Aplikácia je nastavená takto:
-- Používa GitHub Models s `gpt-4.1-nano` model
-- Connect to MCP service at `http://localhost:8080/sse`
-- Časový limit požiadaviek je 60 sekúnd
-- Zapnuté logovanie požiadaviek a odpovedí pre ladenie
+Aplikácia je nakonfigurovaná tak, aby:
+- Používala GitHub Models s modelom `gpt-4.1-nano`
+- Pripájala sa k MCP službe na `http://localhost:8080/sse`
+- Mala timeout 60 sekúnd pre požiadavky
+- Povolené logovanie požiadaviek a odpovedí pre ladenie
 
 ## Závislosti
 
@@ -143,7 +143,7 @@ Hlavné závislosti použité v tomto projekte:
 
 ## Licencia
 
-Tento projekt je licencovaný pod Apache License 2.0 - viac informácií nájdete v súbore [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE).
+Tento projekt je licencovaný pod Apache License 2.0 - podrobnosti nájdete v súbore [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE).
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, majte prosím na pamäti, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

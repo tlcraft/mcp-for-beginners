@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T17:51:55+00:00",
+  "translation_date": "2025-07-13T22:01:38+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "fi"
 }
 -->
 ## Testaus ja virheenkorjaus
 
-Ennen kuin aloitat MCP-palvelimesi testaamisen, on tärkeää ymmärtää käytettävissä olevat työkalut ja parhaat käytännöt virheenkorjaukseen. Tehokas testaus varmistaa, että palvelimesi toimii odotetusti ja auttaa sinua nopeasti tunnistamaan ja ratkaisemaan ongelmat. Seuraavassa osiossa käydään läpi suositeltuja menetelmiä MCP-toteutuksesi validoimiseksi.
+Ennen kuin aloitat MCP-palvelimesi testaamisen, on tärkeää ymmärtää käytettävissä olevat työkalut ja parhaat käytännöt virheiden etsimiseen. Tehokas testaus varmistaa, että palvelimesi toimii odotetusti ja auttaa sinua nopeasti tunnistamaan ja korjaamaan ongelmat. Seuraavassa osiossa käydään läpi suositeltuja menetelmiä MCP-toteutuksesi validoimiseksi.
 
 ## Yleiskatsaus
 
@@ -32,7 +32,7 @@ MCP tarjoaa työkaluja palvelimiesi testaamiseen ja virheenkorjaukseen:
 
 ### MCP Inspectorin käyttö
 
-Olemme kuvanneet tämän työkalun käyttöä aiemmissa oppitunneissa, mutta käydään se tässä lyhyesti läpi. Työkalu on rakennettu Node.js:llä, ja sitä voi käyttää kutsumalla `npx`-suoritustiedostoa, joka lataa ja asentaa työkalun väliaikaisesti ja poistaa sen käytön jälkeen.
+Olemme kuvanneet tämän työkalun käyttöä aiemmissa oppitunneissa, mutta käydään se nyt lyhyesti läpi. Työkalu on rakennettu Node.js:llä, ja sitä voi käyttää kutsumalla `npx`-suoritustiedostoa, joka lataa ja asentaa työkalun väliaikaisesti ja poistaa sen käytön jälkeen.
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) auttaa sinua:
 
@@ -40,17 +40,17 @@ Olemme kuvanneet tämän työkalun käyttöä aiemmissa oppitunneissa, mutta kä
 - **Työkalujen suorittamisen testaamisessa**: Kokeile eri parametreja ja näe vastaukset reaaliajassa
 - **Palvelimen metatietojen tarkastelussa**: Tutki palvelimen tietoja, skeemoja ja asetuksia
 
-Tyypillinen työkalun suoritus näyttää tältä:
+Tyypillinen työkalun käynnistys näyttää tältä:
 
 ```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Yllä oleva komento käynnistää MCP:n ja sen visuaalisen käyttöliittymän sekä avaa paikallisen web-käyttöliittymän selaimessasi. Näet kojelaudan, jossa on rekisteröidyt MCP-palvelimesi, niiden käytettävissä olevat työkalut, resurssit ja kehotteet. Käyttöliittymän avulla voit testata työkalujen suorittamista vuorovaikutteisesti, tarkastella palvelimen metatietoja ja nähdä vastaukset reaaliajassa, mikä helpottaa MCP-palvelintoteutustesi validointia ja virheenkorjausta.
+Yllä oleva komento käynnistää MCP:n ja sen visuaalisen käyttöliittymän sekä avaa paikallisen web-käyttöliittymän selaimessasi. Näet kojelaudan, jossa on rekisteröidyt MCP-palvelimesi, niiden käytettävissä olevat työkalut, resurssit ja kehotteet. Käyttöliittymä mahdollistaa työkalujen suorittamisen interaktiivisen testauksen, palvelimen metatietojen tarkastelun ja reaaliaikaisten vastausten seuraamisen, mikä helpottaa MCP-palvelintoteutustesi validointia ja virheenkorjausta.
 
 Tältä se voi näyttää: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.fi.png)
 
-Voit myös käyttää tätä työkalua CLI-tilassa lisäämällä `--cli`-attribuutin. Tässä esimerkki työkalun ajamisesta "CLI"-tilassa, joka listaa kaikki palvelimen työkalut:
+Voit myös käyttää työkalua CLI-tilassa lisäämällä `--cli`-attribuutin. Tässä esimerkki työkalun ajamisesta "CLI"-tilassa, joka listaa kaikki palvelimen työkalut:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
@@ -58,9 +58,9 @@ npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/lis
 
 ### Manuaalinen testaus
 
-Inspector-työkalun lisäksi voit testata palvelimen ominaisuuksia ajamalla HTTP-pyyntöjä tukevan asiakkaan, kuten curlin.
+Inspector-työkalun lisäksi voit testata palvelimen ominaisuuksia käyttämällä HTTP-pyyntöjä tukevaa asiakasohjelmaa, kuten curlia.
 
-Curlilla voit testata MCP-palvelimia suoraan HTTP-pyynnöillä:
+Curlilla voit testata MCP-palvelimia suoraan HTTP-pyyntöjen avulla:
 
 ```bash
 # Example: Test server metadata
@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Kuten yllä olevasta curl-esimerkistä näet, käytät POST-pyyntöä kutsuaksesi työkalua, jonka nimi ja parametrit ovat mukana pyynnön sisällössä. Valitse sinulle parhaiten sopiva tapa. Komentorivityökalut ovat yleensä nopeampia käyttää ja ne soveltuvat hyvin skriptattaviksi, mikä on hyödyllistä CI/CD-ympäristössä.
+Kuten yllä olevasta curl-esimerkistä näkyy, käytät POST-pyyntöä kutsuaksesi työkalua, jonka kuormana on työkalun nimi ja sen parametrit. Valitse sinulle parhaiten sopiva tapa. Komentorivityökalut ovat yleensä nopeampia käyttää ja ne soveltuvat hyvin skriptattaviksi, mikä on hyödyllistä CI/CD-ympäristössä.
 
 ### Yksikkötestaus
 
@@ -135,11 +135,11 @@ Edellä oleva koodi tekee seuraavaa:
 - Luo MCP-palvelimen, jossa on kaksi eri työkalua.
 - Käyttää `assert`-lausetta tarkistaakseen, että tietyt ehdot täyttyvät.
 
-Tutustu [kokonaan tiedostoon täällä](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
+Tutustu [kokonaisiin tiedostoihin täällä](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
 Tämän tiedoston avulla voit testata omaa palvelintasi varmistaaksesi, että ominaisuudet luodaan oikein.
 
-Kaikissa suurissa SDK:issa on vastaavat testausosiot, joten voit mukauttaa ne valitsemaasi ajonaikaiseen ympäristöön.
+Kaikissa suurissa SDK:issa on vastaavat testausosiot, joten voit mukautua valitsemaasi ajonaikaiseen ympäristöön.
 
 ## Esimerkit
 

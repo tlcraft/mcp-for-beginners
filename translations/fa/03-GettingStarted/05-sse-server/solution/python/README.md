@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-05-17T12:00:23+00:00",
+  "translation_date": "2025-07-13T20:13:16+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "fa"
 }
 -->
 # اجرای این نمونه
 
-توصیه می‌شود `uv` را نصب کنید، اما الزامی نیست. به [دستورالعمل‌ها](https://docs.astral.sh/uv/#highlights) مراجعه کنید.
+توصیه می‌شود `uv` را نصب کنید اما اجباری نیست، راهنمایی‌ها را در [instructions](https://docs.astral.sh/uv/#highlights) ببینید
 
 ## -0- ایجاد یک محیط مجازی
 
@@ -31,36 +31,37 @@ pip install "mcp[cli]"
 
 ## -3- اجرای نمونه
 
+
 ```bash
 mcp run server.py
 ```
 
 ## -4- تست نمونه
 
-با اجرای سرور در یک ترمینال، ترمینال دیگری را باز کنید و فرمان زیر را اجرا کنید:
+با اجرای سرور در یک ترمینال، یک ترمینال دیگر باز کنید و دستور زیر را اجرا کنید:
 
 ```bash
 mcp dev server.py
 ```
 
-این باید یک وب سرور با رابط بصری راه‌اندازی کند که به شما اجازه می‌دهد نمونه را تست کنید.
+این باید یک وب‌سرور با رابط کاربری گرافیکی راه‌اندازی کند که به شما امکان می‌دهد نمونه را تست کنید.
 
-پس از اتصال سرور:
+وقتی سرور متصل شد:
 
-- سعی کنید ابزارها را فهرست کنید و `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- سعی کنید ابزارها را لیست کنید و دستور `add` را با آرگومان‌های ۲ و ۴ اجرا کنید، باید عدد ۶ را در نتیجه ببینید.
+- به بخش resources و resource template بروید و تابع get_greeting را فراخوانی کنید، یک نام وارد کنید و باید پیامی با نام وارد شده مشاهده کنید.
 
-### Testing in ClI mode
+### تست در حالت CLI
 
-The inspector you ran is actually a Node.js app and `mcp dev` یک wrapper دور آن است.
+ابزاری که اجرا کردید در واقع یک برنامه Node.js است و `mcp dev` یک پوشش برای آن است.
 
-می‌توانید آن را مستقیماً در حالت CLI با اجرای فرمان زیر راه‌اندازی کنید:
+می‌توانید آن را مستقیماً در حالت CLI با اجرای دستور زیر راه‌اندازی کنید:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-این همه ابزارهای موجود در سرور را فهرست خواهد کرد. باید خروجی زیر را ببینید:
+این دستور تمام ابزارهای موجود در سرور را لیست می‌کند. باید خروجی زیر را ببینید:
 
 ```text
 {
@@ -97,7 +98,7 @@ npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method too
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-باید خروجی زیر را ببینید:
+باید خروجی زیر را مشاهده کنید:
 
 ```text
 {
@@ -112,8 +113,8 @@ npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method too
 ```
 
 > ![!TIP]
-> معمولاً اجرای ispector در حالت CLI بسیار سریع‌تر از مرورگر است.
-> اطلاعات بیشتر درباره inspector را [اینجا](https://github.com/modelcontextprotocol/inspector) بخوانید.
+> معمولاً اجرای inspector در حالت CLI خیلی سریع‌تر از مرورگر است.
+> برای اطلاعات بیشتر درباره inspector اینجا را بخوانید [here](https://github.com/modelcontextprotocol/inspector).
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما برای دقت تلاش می‌کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادقتی‌ها باشند. سند اصلی به زبان بومی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه انسانی حرفه‌ای توصیه می‌شود. ما مسئولیتی در قبال هرگونه سوء تفاهم یا تفسیر نادرست ناشی از استفاده از این ترجمه نداریم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نادرستی‌هایی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده این ترجمه ناشی شود، نیستیم.

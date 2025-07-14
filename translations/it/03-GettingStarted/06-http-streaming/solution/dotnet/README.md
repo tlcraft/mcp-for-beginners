@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:17:24+00:00",
+  "translation_date": "2025-07-13T21:04:11+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "it"
 }
@@ -23,9 +23,9 @@ dotnet run
 
 ## -3- Testa l'esempio
 
-Apri un terminale separato prima di eseguire il comando seguente (assicurati che il server sia ancora in esecuzione).
+Apri un terminale separato prima di eseguire il comando qui sotto (assicurati che il server sia ancora in esecuzione).
 
-Con il server attivo in un terminale, apri un altro terminale ed esegui il comando seguente:
+Con il server attivo in un terminale, apri un altro terminale ed esegui il seguente comando:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
@@ -33,16 +33,16 @@ npx @modelcontextprotocol/inspector http://localhost:3001
 
 Questo dovrebbe avviare un server web con un'interfaccia visiva che ti permette di testare l'esempio.
 
-> Assicurati che il **Streamable HTTP** sia selezionato come tipo di trasporto, e che l'URL sia `http://localhost:3001/mcp`.
+> Assicurati che **Streamable HTTP** sia selezionato come tipo di trasporto e che l'URL sia `http://localhost:3001/mcp`.
 
-Once the server is connected: 
+Una volta connesso il server:
 
-- try listing tools and run `add`, con argomenti 2 e 4, dovresti vedere 6 come risultato.
+- prova a elencare gli strumenti e a eseguire `add`, con argomenti 2 e 4, dovresti vedere 6 come risultato.
 - vai su resources e resource template e chiama "greeting", inserisci un nome e vedrai un saluto con il nome che hai fornito.
 
 ### Test in modalità CLI
 
-Puoi avviarlo direttamente in modalità CLI eseguendo il comando seguente:
+Puoi avviarlo direttamente in modalità CLI eseguendo il seguente comando:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
@@ -105,4 +105,4 @@ Dovresti vedere il seguente output:
 > Leggi di più sull'inspector [qui](https://github.com/modelcontextprotocol/inspector).
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali fraintendimenti o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

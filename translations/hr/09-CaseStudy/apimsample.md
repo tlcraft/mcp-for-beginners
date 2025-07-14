@@ -2,67 +2,67 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "36de9fae488d6de554d969fe8e0801a8",
-  "translation_date": "2025-06-20T19:26:13+00:00",
+  "translation_date": "2025-07-14T05:38:10+00:00",
   "source_file": "09-CaseStudy/apimsample.md",
   "language_code": "hr"
 }
 -->
-# Case Study: Izlaganje REST API-ja u API Managementu kao MCP server
+# Studija slučaja: Izložite REST API u API Managementu kao MCP server
 
-Azure API Management je usluga koja pruža Gateway iznad vaših API Endpointa. Način rada je takav da Azure API Management djeluje kao proxy ispred vaših API-ja i može odlučiti što će napraviti s dolaznim zahtjevima.
+Azure API Management je usluga koja pruža Gateway iznad vaših API krajnjih točaka. Način na koji radi jest da Azure API Management djeluje kao proxy ispred vaših API-ja i može odlučiti što učiniti s dolaznim zahtjevima.
 
-Korištenjem ove usluge, dobivate cijeli niz značajki poput:
+Korištenjem ove usluge dobivate niz značajki kao što su:
 
-- **Sigurnosti**, možete koristiti sve od API ključeva, JWT do managed identity.
-- **Ograničenja brzine (Rate limiting)**, odlična značajka koja vam omogućuje da odlučite koliko poziva može proći u određenom vremenskom razdoblju. To pomaže osigurati da svi korisnici imaju izvrsno iskustvo i da vaš servis ne bude preopterećen zahtjevima.
-- **Skaliranje i balansiranje opterećenja**. Možete postaviti više endpointa za raspodjelu opterećenja i odlučiti kako želite "balansirati opterećenje".
-- **AI značajke poput semantičkog keširanja**, ograničenja tokena, praćenja tokena i još mnogo toga. Ove značajke poboljšavaju odzivnost i pomažu vam pratiti potrošnju tokena. [Više pročitajte ovdje](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
+- **Sigurnost**, možete koristiti sve od API ključeva, JWT do upravljanog identiteta.
+- **Ograničenje brzine poziva**, sjajna značajka koja vam omogućuje da odredite koliko poziva može proći u određenom vremenskom razdoblju. To pomaže osigurati da svi korisnici imaju izvrsno iskustvo i da vaša usluga nije preopterećena zahtjevima.
+- **Skaliranje i balansiranje opterećenja**. Možete postaviti više krajnjih točaka za raspodjelu opterećenja i također odlučiti kako želite "balansirati opterećenje".
+- **AI značajke poput semantičkog keširanja**, ograničenja tokena, praćenja tokena i još mnogo toga. To su izvrsne značajke koje poboljšavaju odzivnost i pomažu vam pratiti potrošnju tokena. [Pročitajte više ovdje](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
 
 ## Zašto MCP + Azure API Management?
 
-Model Context Protocol brzo postaje standard za agentne AI aplikacije i način izlaganja alata i podataka na dosljedan način. Azure API Management je prirodan izbor kad trebate "upravljati" API-jima. MCP serveri često se integriraju s drugim API-jima kako bi, na primjer, riješili zahtjeve prema nekom alatu. Stoga kombinacija Azure API Managementa i MCP-a ima puno smisla.
+Model Context Protocol brzo postaje standard za agentne AI aplikacije i način izlaganja alata i podataka na dosljedan način. Azure API Management je prirodan izbor kada trebate "upravljati" API-jima. MCP serveri često se integriraju s drugim API-jima kako bi, na primjer, riješili zahtjeve prema nekom alatu. Stoga kombinacija Azure API Managementa i MCP-a ima puno smisla.
 
 ## Pregled
 
-U ovom konkretnom slučaju naučit ćemo kako izložiti API endpoint kao MCP Server. Time možemo lako učiniti ove endpointove dijelom agentne aplikacije, a istovremeno iskoristiti značajke Azure API Managementa.
+U ovom konkretnom slučaju naučit ćemo kako izložiti API krajnje točke kao MCP server. Time možemo lako učiniti te krajnje točke dijelom agentne aplikacije, a istovremeno iskoristiti značajke Azure API Managementa.
 
 ## Ključne značajke
 
-- Birate metode endpointa koje želite izložiti kao alate.
-- Dodatne značajke koje dobivate ovise o konfiguraciji u sekciji politika za vaš API. Ovdje ćemo pokazati kako dodati ograničenje brzine (rate limiting).
+- Odabirete metode krajnjih točaka koje želite izložiti kao alate.
+- Dodatne značajke koje dobivate ovise o tome što konfigurirate u odjeljku politika za vaš API. Ovdje ćemo pokazati kako dodati ograničenje brzine poziva.
 
 ## Pripremni korak: uvoz API-ja
 
-Ako već imate API u Azure API Managementu, odlično, ovaj korak možete preskočiti. Ako ne, pogledajte ovaj link, [uvoz API-ja u Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
+Ako već imate API u Azure API Managementu, odlično, možete preskočiti ovaj korak. Ako ne, pogledajte ovaj link, [uvoz API-ja u Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
 
-## Izlaganje API-ja kao MCP Server
+## Izložite API kao MCP Server
 
-Za izlaganje API endpointa slijedite ove korake:
+Za izlaganje API krajnjih točaka slijedite ove korake:
 
-1. Otvorite Azure Portal i idite na adresu <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp>  
+1. Idite na Azure Portal i na adresu <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp>  
    Otvorite vašu instancu API Managementa.
 
 1. U lijevom izborniku odaberite APIs > MCP Servers > + Create new MCP Server.
 
-1. U API sekciji odaberite REST API koji želite izložiti kao MCP server.
+1. U API-ju odaberite REST API koji želite izložiti kao MCP server.
 
 1. Odaberite jednu ili više API operacija koje želite izložiti kao alate. Možete odabrati sve operacije ili samo određene.
 
-    ![Select methods to expose](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
+    ![Odaberite metode za izlaganje](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
 
-1. Kliknite **Create**.
+1. Odaberite **Create**.
 
-1. U izborniku odaberite **APIs** i **MCP Servers**, trebali biste vidjeti sljedeće:
+1. Idite na izbornik **APIs** i **MCP Servers**, trebali biste vidjeti sljedeće:
 
-    ![See the MCP Server in the main pane](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
+    ![Pogledajte MCP Server u glavnom prozoru](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
 
-    MCP server je kreiran, a API operacije su izložene kao alati. MCP server je prikazan u MCP Servers panelu. Stupac URL prikazuje endpoint MCP servera koji možete koristiti za testiranje ili u klijentskoj aplikaciji.
+    MCP server je kreiran, a API operacije su izložene kao alati. MCP server je naveden u odjeljku MCP Servers. Stupac URL prikazuje krajnju točku MCP servera koju možete pozvati za testiranje ili unutar klijentske aplikacije.
 
-## Opcionalno: Konfiguracija politika
+## Opcionalno: Konfigurirajte politike
 
-Azure API Management ima osnovni koncept politika u kojima postavljate različita pravila za vaše endpointove, poput ograničenja brzine ili semantičkog keširanja. Te se politike definiraju u XML formatu.
+Azure API Management ima osnovni koncept politika gdje postavljate različita pravila za svoje krajnje točke, poput ograničenja brzine poziva ili semantičkog keširanja. Te se politike pišu u XML formatu.
 
-Evo kako možete postaviti politiku za ograničenje brzine na vašem MCP Serveru:
+Evo kako možete postaviti politiku za ograničenje brzine poziva na vaš MCP Server:
 
 1. U portalu, pod APIs, odaberite **MCP Servers**.
 
@@ -70,7 +70,7 @@ Evo kako možete postaviti politiku za ograničenje brzine na vašem MCP Serveru
 
 1. U lijevom izborniku, pod MCP, odaberite **Policies**.
 
-1. U uređivaču politika dodajte ili uredite politike koje želite primijeniti na alate MCP servera. Politike su definirane u XML formatu. Na primjer, možete dodati politiku za ograničenje poziva na alate MCP servera (u ovom primjeru, 5 poziva na 30 sekundi po IP adresi klijenta). Evo XML koda koji će to omogućiti:
+1. U uređivaču politika dodajte ili uredite politike koje želite primijeniti na alate MCP servera. Politike su definirane u XML formatu. Na primjer, možete dodati politiku koja ograničava pozive alatima MCP servera (u ovom primjeru, 5 poziva na 30 sekundi po IP adresi klijenta). Evo XML-a koji će to omogućiti:
 
     ```xml
      <rate-limit-by-key calls="5" 
@@ -82,27 +82,27 @@ Evo kako možete postaviti politiku za ograničenje brzine na vašem MCP Serveru
 
     Evo slike uređivača politika:
 
-    ![Policy editor](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
-
+    ![Uređivač politika](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
+ 
 ## Isprobajte
 
 Provjerimo radi li naš MCP Server kako treba.
 
-Za ovo ćemo koristiti Visual Studio Code i GitHub Copilot u Agent modu. Dodati ćemo MCP server u *mcp.json*. Time će Visual Studio Code djelovati kao klijent s agentnim mogućnostima, a krajnji korisnici moći će unijeti prompt i komunicirati s tim serverom.
+Za to ćemo koristiti Visual Studio Code i GitHub Copilot u Agent modu. Dodati ćemo MCP server u *mcp.json* datoteku. Time će Visual Studio Code djelovati kao klijent s agentnim mogućnostima, a krajnji korisnici moći će upisivati upite i komunicirati s tim serverom.
 
 Evo kako dodati MCP server u Visual Studio Code:
 
-1. Koristite MCP: **Add Server command iz Command Palettea**.
+1. Koristite MCP: **Add Server naredbu iz Command Palette**.
 
-1. Kada vas se pita, odaberite tip servera: **HTTP (HTTP ili Server Sent Events)**.
+1. Kad se zatraži, odaberite tip servera: **HTTP (HTTP ili Server Sent Events)**.
 
-1. Unesite URL MCP servera u API Managementu. Primjer: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (za SSE endpoint) ili **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (za MCP endpoint). Obratite pažnju na razliku u transportu: `/sse` or `/mcp`.
+1. Unesite URL MCP servera u API Managementu. Primjer: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (za SSE krajnju točku) ili **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (za MCP krajnju točku), obratite pažnju na razliku u transportu `/sse` ili `/mcp`.
 
-1. Unesite ID servera po želji. Nije važno što odaberete, ali će vam pomoći da zapamtite o kojoj se instanci radi.
+1. Unesite ID servera po želji. Nije važna vrijednost, ali će vam pomoći da zapamtite o kojoj se instanci servera radi.
 
 1. Odaberite želite li spremiti konfiguraciju u postavke radnog prostora ili korisničke postavke.
 
-  - **Workspace settings** - Konfiguracija servera se sprema u datoteku .vscode/mcp.json koja je dostupna samo u trenutnom radnom prostoru.
+  - **Postavke radnog prostora** - Konfiguracija servera se sprema u .vscode/mcp.json datoteku koja je dostupna samo u trenutnom radnom prostoru.
 
     *mcp.json*
 
@@ -115,7 +115,7 @@ Evo kako dodati MCP server u Visual Studio Code:
     }
     ```
 
-    ili, ako odaberete streaming HTTP kao transport, izgledat će malo drugačije:
+    ili ako odaberete streaming HTTP kao transport, izgledat će malo drugačije:
 
     ```json
     "servers": {
@@ -126,15 +126,15 @@ Evo kako dodati MCP server u Visual Studio Code:
     }
     ```
 
-  - **User settings** - Konfiguracija servera se dodaje u globalnu *settings.json* datoteku i dostupna je u svim radnim prostorima. Konfiguracija izgleda ovako:
+  - **Korisničke postavke** - Konfiguracija servera se dodaje u globalnu *settings.json* datoteku i dostupna je u svim radnim prostorima. Konfiguracija izgleda otprilike ovako:
 
-    ![User setting](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
+    ![Korisnička postavka](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
 
-1. Također trebate dodati konfiguraciju, odnosno header za pravilnu autentikaciju prema Azure API Managementu. Koristi se header naziva **Ocp-Apim-Subscription-Key**.
+1. Također trebate dodati konfiguraciju, zaglavlje koje osigurava ispravnu autentifikaciju prema Azure API Managementu. Koristi se zaglavlje pod nazivom **Ocp-Apim-Subscription-Key**.
 
-    - Evo kako ga dodati u postavke:
+    - Evo kako ga možete dodati u postavke:
 
-    ![Adding header for authentication](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), što će uzrokovati da se pojavi prompt za unos vrijednosti API ključa koji možete pronaći u Azure Portalu za vašu instancu Azure API Managementa.
+    ![Dodavanje zaglavlja za autentifikaciju](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), što će prikazati upit za unos vrijednosti API ključa koji možete pronaći u Azure Portalu za vašu Azure API Management instancu.
 
    - Za dodavanje u *mcp.json* umjesto toga, možete ga dodati ovako:
 
@@ -162,40 +162,41 @@ Evo kako dodati MCP server u Visual Studio Code:
 
 Sada smo spremni, bilo u postavkama ili u *.vscode/mcp.json*. Isprobajmo.
 
-Trebala bi se pojaviti ikona Tools (Alati) poput ove, gdje su navedeni izloženi alati s vašeg servera:
+Trebao bi se pojaviti ikona Alata (Tools) kao na slici, gdje su navedeni izloženi alati s vašeg servera:
 
-![Tools from the server](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
+![Alati sa servera](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
 
 1. Kliknite na ikonu alata i trebali biste vidjeti popis alata kao na slici:
 
-    ![Tools](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/select-tools-visual-studio-code.png)
+    ![Alati](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/select-tools-visual-studio-code.png)
 
-1. Unesite prompt u chat za pokretanje alata. Na primjer, ako ste odabrali alat za dobivanje informacija o narudžbi, možete pitati agenta o narudžbi. Evo primjera prompta:
+1. Unesite upit u chat da pozovete alat. Na primjer, ako ste odabrali alat za dobivanje informacija o narudžbi, možete pitati agenta o narudžbi. Evo primjera upita:
 
     ```text
     get information from order 2
     ```
 
-    Sada će vam se pojaviti ikona alata koja traži da nastavite s pozivanjem alata. Odaberite nastavak pokretanja alata, trebali biste vidjeti izlaz poput ovog:
+    Sada će vam se prikazati ikona alata koja traži potvrdu za pozivanje alata. Odaberite da nastavite s izvršavanjem alata, trebali biste vidjeti izlaz kao na slici:
 
-    ![Result from prompt](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
+    ![Rezultat upita](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
 
-    **što vidite ovisi o alatima koje ste postavili, ali ideja je da dobijete tekstualni odgovor poput ovog gore**
+    **što vidite ovisi o alatima koje ste postavili, ali ideja je da dobijete tekstualni odgovor kao gore**
+
 
 ## Reference
 
 Evo gdje možete saznati više:
 
-- [Tutorial o Azure API Managementu i MCP](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
+- [Tutorial o Azure API Managementu i MCP-u](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
 - [Python primjer: Sigurni udaljeni MCP serveri koristeći Azure API Management (eksperimentalno)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
 
-- [Laboratorij za autorizaciju MCP klijenta](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
+- [MCP klijent autorizacijski laboratorij](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
 
 - [Koristite Azure API Management ekstenziju za VS Code za uvoz i upravljanje API-jima](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
 
-- [Registracija i pronalazak udaljenih MCP servera u Azure API Centeru](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
+- [Registrirajte i otkrijte udaljene MCP servere u Azure API Centeru](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
 - [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Odličan repozitorij koji prikazuje mnoge AI mogućnosti s Azure API Managementom
-- [AI Gateway radionice](https://azure-samples.github.io/AI-Gateway/) Sadrži radionice koristeći Azure Portal, što je odličan način za početak evaluacije AI mogućnosti.
+- [AI Gateway radionice](https://azure-samples.github.io/AI-Gateway/) Sadrži radionice koristeći Azure Portal, što je izvrstan način za početak evaluacije AI mogućnosti.
 
-**Izjava o odricanju odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+**Odricanje od odgovornosti**:  
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

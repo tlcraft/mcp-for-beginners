@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e9490aedc71f99bc774af57b207a7adb",
-  "translation_date": "2025-06-13T02:32:49+00:00",
+  "translation_date": "2025-07-13T21:53:59+00:00",
   "source_file": "03-GettingStarted/07-aitk/solution/README.md",
   "language_code": "id"
 }
 -->
 # 📘 Solusi Tugas: Memperluas Server MCP Kalkulator Anda dengan Alat Akar Kuadrat
 
-## Ikhtisar  
-Dalam tugas ini, Anda meningkatkan server MCP kalkulator Anda dengan menambahkan alat baru yang menghitung akar kuadrat dari sebuah angka. Penambahan ini memungkinkan agen AI Anda menangani pertanyaan matematika yang lebih kompleks, seperti "Berapa akar kuadrat dari 16?" atau "Hitung √49," menggunakan perintah dalam bahasa alami.
+## Ikhtisar
+Dalam tugas ini, Anda menambahkan alat baru pada server MCP kalkulator Anda yang dapat menghitung akar kuadrat dari sebuah angka. Penambahan ini memungkinkan agen AI Anda untuk menangani pertanyaan matematika yang lebih kompleks, seperti "Berapa akar kuadrat dari 16?" atau "Hitung √49," menggunakan perintah dalam bahasa alami.
 
-## 🛠️ Menerapkan Alat Akar Kuadrat  
-Untuk menambahkan fungsi ini, Anda mendefinisikan fungsi alat baru di file server.py Anda. Berikut implementasinya:
+## 🛠️ Mengimplementasikan Alat Akar Kuadrat
+Untuk menambahkan fungsi ini, Anda mendefinisikan sebuah fungsi alat baru di file server.py Anda. Berikut implementasinya:
 
 ```python
 """
@@ -68,13 +68,35 @@ def sqrt(a: float) -> float:
     return math.sqrt(a)
 ```
 
-## 🔍 Cara Kerjanya  
+## 🔍 Cara Kerjanya
 
-- **Impor alat `math.sqrt()`**.  
-- Memungkinkan agen AI Anda untuk menangani perhitungan akar kuadrat melalui perintah bahasa alami.  
-- Berlatih menambahkan alat baru dan me-restart server untuk mengintegrasikan fungsi tambahan.
+- **Mengimpor modul `math`**: Untuk melakukan operasi matematika yang lebih dari sekadar aritmatika dasar, Python menyediakan modul bawaan `math`. Modul ini berisi berbagai fungsi dan konstanta matematika. Dengan mengimpornya menggunakan `import math`, Anda dapat menggunakan fungsi seperti `math.sqrt()`, yang menghitung akar kuadrat dari sebuah angka.
+- **Definisi Fungsi**: Dekorator `@server.tool()` mendaftarkan fungsi `sqrt` sebagai alat yang dapat diakses oleh agen AI Anda.
+- **Parameter Input**: Fungsi ini menerima satu argumen `a` bertipe `float`.
+- **Penanganan Error**: Jika `a` bernilai negatif, fungsi akan memunculkan `ValueError` untuk mencegah perhitungan akar kuadrat dari angka negatif, yang tidak didukung oleh fungsi `math.sqrt()`.
+- **Nilai Kembali**: Untuk input yang tidak negatif, fungsi mengembalikan akar kuadrat dari `a` menggunakan metode bawaan Python `math.sqrt()`.
 
-Silakan bereksperimen lebih lanjut dengan menambahkan alat matematika lainnya, seperti perpangkatan atau fungsi logaritma, untuk terus meningkatkan kemampuan agen Anda!
+## 🔄 Memulai Ulang Server
+Setelah menambahkan alat `sqrt` baru, penting untuk memulai ulang server MCP Anda agar agen dapat mengenali dan menggunakan fungsi yang baru ditambahkan.
+
+## 💬 Contoh Perintah untuk Menguji Alat Baru
+Berikut beberapa perintah dalam bahasa alami yang bisa Anda gunakan untuk menguji fungsi akar kuadrat:
+
+- "Berapa akar kuadrat dari 25?"
+- "Hitung akar kuadrat dari 81."
+- "Cari akar kuadrat dari 0."
+- "Berapa akar kuadrat dari 2.25?"
+
+Perintah-perintah ini akan memicu agen untuk memanggil alat `sqrt` dan mengembalikan hasil yang benar.
+
+## ✅ Ringkasan
+Dengan menyelesaikan tugas ini, Anda telah:
+
+- Memperluas server MCP kalkulator Anda dengan alat `sqrt` baru.
+- Memungkinkan agen AI Anda untuk melakukan perhitungan akar kuadrat melalui perintah bahasa alami.
+- Berlatih menambahkan alat baru dan memulai ulang server untuk mengintegrasikan fungsi tambahan.
+
+Jangan ragu untuk bereksperimen lebih jauh dengan menambahkan alat matematika lain, seperti perpangkatan atau fungsi logaritma, untuk terus meningkatkan kemampuan agen Anda!
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

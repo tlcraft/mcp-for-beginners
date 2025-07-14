@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T18:49:03+00:00",
+  "translation_date": "2025-07-13T22:11:11+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "ro"
 }
@@ -38,9 +38,9 @@ Pentru SSE (nu este necesar pentru serverele de tip stdio)
 
 Serverele MCP pot fi implementate pe diverse platforme cloud:
 
-- **Funcții serverless**: Implementarea serverelor MCP ușoare ca funcții serverless  
-- **Servicii de containere**: Folosește servicii precum Azure Container Apps, AWS ECS sau Google Cloud Run  
-- **Kubernetes**: Implementarea și gestionarea serverelor MCP în clustere Kubernetes pentru disponibilitate ridicată
+- **Funcții serverless**: Implementarea serverelor MCP ușoare ca funcții serverless.  
+- **Servicii de containere**: Folosește servicii precum Azure Container Apps, AWS ECS sau Google Cloud Run.  
+- **Kubernetes**: Implementarea și gestionarea serverelor MCP în clustere Kubernetes pentru disponibilitate ridicată.
 
 ### Exemplu: Azure Container Apps
 
@@ -104,9 +104,10 @@ Asta este tot, implementează-l local sau în Azure urmând acești pași.
 
 ## Resurse suplimentare
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
-- [Articol Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
-- [Repo Azure Container Apps MCP](https://github.com/anthonychu/azure-container-apps-mcp-sample)
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
+- [Articol Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
+- [Repo Azure Container Apps MCP](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
+
 
 ## Ce urmează
 

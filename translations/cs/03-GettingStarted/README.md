@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:34:39+00:00",
+  "translation_date": "2025-07-13T17:19:33+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "cs"
 }
@@ -21,7 +21,7 @@ Tato sekce obsahuje několik lekcí:
 
 - **5 Použití SSE (Server Sent Events)** SSE je standard pro streamování ze serveru na klienta, který umožňuje serverům posílat klientům aktualizace v reálném čase přes HTTP [k lekci](05-sse-server/README.md)
 
-- **6 HTTP streamování s MCP (Streamable HTTP)**. Naučte se o moderním HTTP streamování, notifikacích o průběhu a jak implementovat škálovatelné, reálné MCP servery a klienty pomocí Streamable HTTP. [k lekci](06-http-streaming/README.md)
+- **6 HTTP streamování s MCP (Streamable HTTP)**. Naučte se o moderním HTTP streamování, notifikacích o průběhu a jak implementovat škálovatelné, real-time MCP servery a klienty pomocí Streamable HTTP. [k lekci](06-http-streaming/README.md)
 
 - **7 Využití AI Toolkit pro VSCode** k používání a testování vašich MCP klientů a serverů [k lekci](07-aitk/README.md)
 
@@ -30,13 +30,13 @@ Tato sekce obsahuje několik lekcí:
 - **9 Nasazení**. Tato kapitola se bude věnovat různým způsobům nasazení vašich MCP řešení, [k lekci](09-deployment/README.md)
 
 
-Model Context Protocol (MCP) je otevřený protokol, který standardizuje způsob, jakým aplikace poskytují kontext LLM. MCP si můžete představit jako USB-C port pro AI aplikace – poskytuje standardizovaný způsob připojení AI modelů k různým zdrojům dat a nástrojům.
+Model Context Protocol (MCP) je otevřený protokol, který standardizuje způsob, jakým aplikace poskytují kontext LLM. MCP si představte jako USB-C port pro AI aplikace – poskytuje standardizovaný způsob připojení AI modelů k různým zdrojům dat a nástrojům.
 
 ## Cíle učení
 
 Na konci této lekce budete schopni:
 
-- Nastavit vývojové prostředí pro MCP v C#, Java, Python, TypeScript a JavaScriptu
+- Nastavit vývojové prostředí pro MCP v C#, Java, Python, TypeScript a JavaScript
 - Vytvořit a nasadit základní MCP servery s vlastními funkcemi (zdroje, prompt, nástroje)
 - Vytvořit hostitelské aplikace, které se připojují k MCP serverům
 - Testovat a ladit implementace MCP
@@ -52,7 +52,7 @@ Než začnete pracovat s MCP, je důležité připravit si vývojové prostřed�
 Než se pustíte do vývoje s MCP, ujistěte se, že máte:
 
 - **Vývojové prostředí**: Pro vámi zvolený jazyk (C#, Java, Python, TypeScript nebo JavaScript)
-- **IDE/editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm nebo jakýkoli moderní editor kódu
+- **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm nebo jakýkoli moderní editor kódu
 - **Správce balíčků**: NuGet, Maven/Gradle, pip nebo npm/yarn
 - **API klíče**: Pro jakékoli AI služby, které plánujete používat ve svých hostitelských aplikacích
 
@@ -75,12 +75,12 @@ MCP poskytuje oficiální SDK pro více jazyků:
 - Nastavení vývojového prostředí pro MCP je jednoduché díky SDK specifickým pro jednotlivé jazyky
 - Vytváření MCP serverů zahrnuje tvorbu a registraci nástrojů s jasnými schématy
 - MCP klienti se připojují k serverům a modelům, aby využili rozšířené funkce
-- Testování a ladění jsou klíčové pro spolehlivé implementace MCP
+- Testování a ladění jsou klíčové pro spolehlivé MCP implementace
 - Možnosti nasazení sahají od lokálního vývoje až po cloudová řešení
 
 ## Procvičování
 
-Máme sadu ukázek, které doplňují cvičení, jež uvidíte ve všech kapitolách této sekce. Navíc má každá kapitola také vlastní cvičení a úkoly.
+Máme sadu ukázek, které doplňují cvičení, jež uvidíte ve všech kapitolách této sekce. Navíc má každá kapitola i vlastní cvičení a úkoly.
 
 - [Java Kalkulačka](./samples/java/calculator/README.md)
 - [.Net Kalkulačka](../../../03-GettingStarted/samples/csharp)
@@ -99,4 +99,4 @@ Máme sadu ukázek, které doplňují cvičení, jež uvidíte ve všech kapitol
 Další: [Vytvoření vašeho prvního MCP serveru](01-first-server/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

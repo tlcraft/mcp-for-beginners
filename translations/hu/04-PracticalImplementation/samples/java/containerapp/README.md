@@ -2,120 +2,122 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e5ea5e7582f70008ea9bec3b3820f20a",
-  "translation_date": "2025-05-17T14:30:40+00:00",
+  "translation_date": "2025-07-13T23:19:21+00:00",
   "source_file": "04-PracticalImplementation/samples/java/containerapp/README.md",
   "language_code": "hu"
 }
 -->
 ## Rendszerarchitektúra
 
-Ez a projekt bemutat egy webalkalmazást, amely tartalombiztonsági ellenőrzést használ, mielőtt a felhasználói utasításokat egy számológép szolgáltatásnak továbbítaná a Model Context Protocol (MCP) segítségével.
+Ez a projekt egy webalkalmazást mutat be, amely tartalombiztonsági ellenőrzést végez, mielőtt a felhasználói kéréseket a Model Context Protocol (MCP) segítségével egy számológép szolgáltatásnak továbbítaná.
 
-### Hogyan működik
+![System Architecture Diagram](../../../../../../translated_images/plant.b079fed84e945b7c2978993a16163bb53f0517cfe3548d2e442ff40d619ba4b4.hu.png)
 
-1. **Felhasználói bemenet**: A felhasználó egy számítási utasítást ad meg a webes felületen
-2. **Tartalombiztonsági ellenőrzés (bemenet)**: Az utasítást az Azure Content Safety API elemzi
-3. **Biztonsági döntés (bemenet)**:
-   - Ha a tartalom biztonságos (minden kategóriában < 2 a súlyosság), továbbítódik a számológéphez
-   - Ha a tartalom potenciálisan károsnak minősül, a folyamat leáll, és figyelmeztetést ad vissza
-4. **Számológép integráció**: A biztonságos tartalmat a LangChain4j dolgozza fel, amely kommunikál az MCP számológép szerverrel
-5. **Tartalombiztonsági ellenőrzés (kimenet)**: A bot válaszát az Azure Content Safety API elemzi
-6. **Biztonsági döntés (kimenet)**:
-   - Ha a bot válasza biztonságos, megjelenik a felhasználónak
-   - Ha a bot válasza potenciálisan károsnak minősül, figyelmeztetésre cserélődik
-7. **Válasz**: Az eredmények (ha biztonságosak) megjelennek a felhasználónak a két biztonsági elemzéssel együtt
+### Működése
+
+1. **Felhasználói bevitel**: A felhasználó egy számítási kérést ad meg a webes felületen  
+2. **Tartalombiztonsági szűrés (bemenet)**: A kérést az Azure Content Safety API elemzi  
+3. **Biztonsági döntés (bemenet)**:  
+   - Ha a tartalom biztonságos (minden kategóriában súlyosság < 2), továbbítódik a számológéphez  
+   - Ha a tartalom potenciálisan károsnak minősül, a folyamat leáll, és figyelmeztetés jelenik meg  
+4. **Számológép integráció**: A biztonságos tartalmat a LangChain4j dolgozza fel, amely kommunikál az MCP számológép szerverrel  
+5. **Tartalombiztonsági szűrés (kimenet)**: A bot válaszát az Azure Content Safety API elemzi  
+6. **Biztonsági döntés (kimenet)**:  
+   - Ha a bot válasza biztonságos, megjelenik a felhasználónak  
+   - Ha a bot válasza potenciálisan káros, figyelmeztetésre cserélődik  
+7. **Válasz**: Az eredmények (ha biztonságosak) megjelennek a felhasználónak, mindkét biztonsági elemzéssel együtt
 
 ## Model Context Protocol (MCP) használata számológép szolgáltatásokkal
 
-Ez a projekt bemutatja, hogyan lehet a Model Context Protocol (MCP) segítségével hívni számológép MCP szolgáltatásokat a LangChain4j-ből. A megvalósítás egy helyi MCP szervert használ, amely a 8080-as porton fut, hogy számológép műveleteket biztosítson.
+Ez a projekt bemutatja, hogyan lehet a Model Context Protocol-t (MCP) használni számológép MCP szolgáltatások hívására LangChain4j-ből. A megvalósítás egy helyi MCP szervert használ, amely a 8080-as porton fut, és számológép műveleteket biztosít.
 
-### Azure Content Safety Service beállítása
+### Azure Content Safety szolgáltatás beállítása
 
-A tartalombiztonsági funkciók használata előtt létre kell hoznia egy Azure Content Safety szolgáltatás erőforrást:
+A tartalombiztonsági funkciók használata előtt létre kell hoznod egy Azure Content Safety szolgáltatás erőforrást:
 
-1. Jelentkezzen be az [Azure Portálra](https://portal.azure.com)
-2. Kattintson a "Create a resource" lehetőségre, és keressen rá a "Content Safety"-re
-3. Válassza ki a "Content Safety"-t, és kattintson a "Create" gombra
-4. Adjon meg egy egyedi nevet az erőforrásának
-5. Válassza ki az előfizetését és erőforráscsoportját (vagy hozzon létre egy újat)
-6. Válasszon egy támogatott régiót (további információért nézze meg a [Region availability](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services) oldalt)
-7. Válasszon egy megfelelő árazási szintet
-8. Kattintson a "Create" gombra az erőforrás telepítéséhez
-9. A telepítés befejezése után kattintson a "Go to resource" gombra
-10. A bal oldali panelen, az "Resource Management" alatt válassza a "Keys and Endpoint" lehetőséget
-11. Másolja le az egyik kulcsot és az endpoint URL-t a következő lépéshez
+1. Jelentkezz be az [Azure Portal](https://portal.azure.com) oldalra  
+2. Kattints a „Create a resource” gombra, és keresd meg a „Content Safety” szolgáltatást  
+3. Válaszd ki a „Content Safety” lehetőséget, majd kattints a „Create” gombra  
+4. Adj meg egy egyedi nevet az erőforrásodnak  
+5. Válaszd ki az előfizetésedet és az erőforráscsoportot (vagy hozz létre újat)  
+6. Válassz egy támogatott régiót (részletekért lásd a [Region availability](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=cognitive-services) oldalt)  
+7. Válassz megfelelő árképzési szintet  
+8. Kattints a „Create” gombra az erőforrás telepítéséhez  
+9. A telepítés befejezése után kattints a „Go to resource” gombra  
+10. A bal oldali menüben, a „Resource Management” alatt válaszd a „Keys and Endpoint” lehetőséget  
+11. Másold ki az egyik kulcsot és az endpoint URL-t a következő lépéshez
 
-### Környezeti változók konfigurálása
+### Környezeti változók beállítása
 
-Állítsa be a `GITHUB_TOKEN` környezeti változót a GitHub modellek hitelesítéséhez:
+Állítsd be a `GITHUB_TOKEN` környezeti változót a GitHub modellek hitelesítéséhez:  
 ```sh
 export GITHUB_TOKEN=<your_github_token>
 ```
 
-A tartalombiztonsági funkciókhoz állítsa be:
+A tartalombiztonsági funkciókhoz állítsd be:  
 ```sh
 export CONTENT_SAFETY_ENDPOINT=<your_content_safety_endpoint>
 export CONTENT_SAFETY_KEY=<your_content_safety_key>
 ```
 
-Ezeket a környezeti változókat az alkalmazás használja az Azure Content Safety szolgáltatással való hitelesítéshez. Ha ezek a változók nincsenek beállítva, az alkalmazás helyőrző értékeket fog használni demonstrációs célokra, de a tartalombiztonsági funkciók nem fognak megfelelően működni.
+Ezeket a környezeti változókat az alkalmazás használja az Azure Content Safety szolgáltatás hitelesítéséhez. Ha ezek a változók nincsenek beállítva, az alkalmazás helykitöltő értékeket használ a bemutatóhoz, de a tartalombiztonsági funkciók nem fognak megfelelően működni.
 
-### Számológép MCP szerver indítása
+### A számológép MCP szerver indítása
 
-Mielőtt futtatná az ügyfelet, el kell indítania a számológép MCP szervert SSE módban a localhost:8080 címen.
+A kliens futtatása előtt el kell indítanod a számológép MCP szervert SSE módban a localhost:8080 címen.
 
 ## Projekt leírása
 
-Ez a projekt bemutatja a Model Context Protocol (MCP) integrációját a LangChain4j-vel számológép szolgáltatások hívására. Főbb jellemzők:
+Ez a projekt bemutatja a Model Context Protocol (MCP) integrációját a LangChain4j-vel számológép szolgáltatások hívásához. Főbb jellemzők:
 
-- MCP használata számológép szolgáltatás csatlakoztatásához alapvető matematikai műveletekhez
-- Két rétegű tartalombiztonsági ellenőrzés a felhasználói utasításokon és a bot válaszokon
-- Integráció a GitHub gpt-4.1-nano modellel a LangChain4j-en keresztül
-- Server-Sent Events (SSE) használata MCP szállításhoz
+- MCP használata számológép szolgáltatáshoz alapvető matematikai műveletekhez  
+- Kétszintű tartalombiztonsági ellenőrzés a felhasználói kéréseken és a bot válaszain  
+- Integráció a GitHub gpt-4.1-nano modelljével LangChain4j-n keresztül  
+- Server-Sent Events (SSE) használata az MCP kommunikációhoz
 
 ## Tartalombiztonsági integráció
 
-A projekt átfogó tartalombiztonsági funkciókat tartalmaz annak biztosítására, hogy mind a felhasználói bemenetek, mind a rendszer válaszai mentesek legyenek káros tartalmaktól:
+A projekt átfogó tartalombiztonsági funkciókat tartalmaz, hogy biztosítsa, hogy a felhasználói bemenetek és a rendszer válaszai egyaránt mentesek legyenek káros tartalmaktól:
 
-1. **Bemeneti ellenőrzés**: Minden felhasználói utasítást elemzünk káros tartalom kategóriákra, mint például gyűlöletbeszéd, erőszak, önkárosítás és szexuális tartalom, mielőtt feldolgoznánk.
+1. **Bemeneti szűrés**: Minden felhasználói kérés elemzésre kerül káros tartalmi kategóriák, például gyűlöletbeszéd, erőszak, önkárosítás és szexuális tartalom szempontjából, mielőtt feldolgozásra kerülne.  
 
-2. **Kimeneti ellenőrzés**: Még akkor is, ha potenciálisan cenzúrázatlan modelleket használunk, a rendszer az összes generált választ ugyanazon tartalombiztonsági szűrőkön keresztül ellenőrzi, mielőtt megjelenítené a felhasználónak.
+2. **Kimeneti szűrés**: Még potenciálisan nem cenzúrázott modellek használata esetén is a rendszer minden generált választ ugyanazon tartalombiztonsági szűrőkön futtat, mielőtt megjelenítené azokat a felhasználónak.
 
-Ez a két rétegű megközelítés biztosítja, hogy a rendszer biztonságos maradjon függetlenül attól, melyik AI modellt használják, védve a felhasználókat mind a káros bemenetektől, mind a potenciálisan problémás AI által generált kimenetektől.
+Ez a kétszintű megközelítés garantálja, hogy a rendszer biztonságos marad, függetlenül attól, melyik AI modellt használják, megvédve a felhasználókat mind a káros bemenetektől, mind a potenciálisan problémás AI által generált válaszoktól.
 
-## Webes ügyfél
+## Webes kliens
 
-Az alkalmazás egy felhasználóbarát webes felületet tartalmaz, amely lehetővé teszi a felhasználók számára, hogy kapcsolatba lépjenek a Tartalombiztonsági Számológép rendszerrel:
+Az alkalmazás egy felhasználóbarát webes felületet tartalmaz, amely lehetővé teszi a felhasználók számára, hogy interakcióba lépjenek a Content Safety Calculator rendszerrel:
 
 ### Webes felület jellemzői
 
-- Egyszerű, intuitív űrlap a számítási utasítások megadásához
-- Két rétegű tartalombiztonsági validáció (bemenet és kimenet)
-- Valós idejű visszajelzés az utasítás és válasz biztonságáról
-- Színkódolt biztonsági jelzések a könnyű értelmezéshez
-- Tiszta, reszponzív design, amely különböző eszközökön működik
-- Példa biztonságos utasítások a felhasználók útmutatásához
+- Egyszerű, intuitív űrlap számítási kérések megadásához  
+- Kétszintű tartalombiztonsági ellenőrzés (bemenet és kimenet)  
+- Valós idejű visszajelzés a kérés és a válasz biztonságosságáról  
+- Színkódolt biztonsági jelzések az egyszerű értelmezéshez  
+- Tiszta, reszponzív dizájn, amely különböző eszközökön is jól működik  
+- Példák biztonságos kérésekre a felhasználók segítéséhez
 
-### A webes ügyfél használata
+### A webes kliens használata
 
-1. Indítsa el az alkalmazást:
+1. Indítsd el az alkalmazást:  
    ```sh
    mvn spring-boot:run
    ```
 
-2. Nyissa meg a böngészőjét, és navigáljon a `http://localhost:8087` címre
+2. Nyisd meg a böngészőt, és navigálj a `http://localhost:8087` címre
 
-3. Adjon meg egy számítási utasítást a megadott szövegmezőben (pl. "Számítsa ki a 24,5 és 17,3 összegét")
+3. Írj be egy számítási kérést a megadott szövegmezőbe (pl. „Számold ki 24,5 és 17,3 összegét”)
 
-4. Kattintson a "Submit" gombra a kérés feldolgozásához
+4. Kattints a „Submit” gombra a kérés feldolgozásához
 
-5. Tekintse meg az eredményeket, amelyek tartalmazzák:
-   - Az utasítás tartalombiztonsági elemzését
-   - A számított eredményt (ha az utasítás biztonságos volt)
-   - A bot válaszának tartalombiztonsági elemzését
-   - Bármilyen biztonsági figyelmeztetést, ha a bemenet vagy kimenet megjelölésre került
+5. Tekintsd meg az eredményeket, amelyek tartalmazzák:  
+   - A kérés tartalombiztonsági elemzését  
+   - A kiszámított eredményt (ha a kérés biztonságos volt)  
+   - A bot válaszának tartalombiztonsági elemzését  
+   - Bármilyen biztonsági figyelmeztetést, ha a bemenet vagy a kimenet problémás volt
 
-A webes ügyfél automatikusan kezeli mindkét tartalombiztonsági ellenőrzési folyamatot, biztosítva, hogy minden interakció biztonságos és megfelelő legyen, függetlenül attól, melyik AI modellt használják.
+A webes kliens automatikusan kezeli mindkét tartalombiztonsági ellenőrzési folyamatot, biztosítva, hogy minden interakció biztonságos és megfelelő legyen, függetlenül attól, melyik AI modellt használják.
 
-**Felelősségi nyilatkozat**:  
-Ez a dokumentum az AI fordítószolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekinthető a hiteles forrásnak. Kritikus információk esetén javasolt a professzionális emberi fordítás igénybevétele. Nem vállalunk felelősséget semmilyen félreértésért vagy félremagyarázásért, amely a fordítás használatából ered.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

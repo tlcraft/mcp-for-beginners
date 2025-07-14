@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a05fb941810e539147fec53aaadbb6fd",
-  "translation_date": "2025-06-21T14:26:57+00:00",
+  "translation_date": "2025-07-14T06:36:57+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/python/README.md",
   "language_code": "ur"
 }
@@ -13,11 +13,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 - Python 3.8 یا اس سے جدید ورژن
 - pip (Python پیکیج مینیجر)
-- Microsoft Learn Docs MCP سرور سے کنیکٹ ہونے کے لیے انٹرنیٹ کی سہولت
+- Microsoft Learn Docs MCP سرور سے جڑنے کے لیے انٹرنیٹ کی سہولت
 
 ## تنصیب
 
-1. اس repository کو کلون کریں یا پروجیکٹ فائلز ڈاؤن لوڈ کریں۔
+1. اس ریپوزیٹری کو کلون کریں یا پروجیکٹ فائلز ڈاؤن لوڈ کریں۔
 2. مطلوبہ dependencies انسٹال کریں:
 
    ```bash
@@ -33,10 +33,10 @@ CO_OP_TRANSLATOR_METADATA:
    ```bash
    python scenario1.py
    ```
-2. پرامپٹ پر اپنی ڈاکیومنٹیشن کا سوال درج کریں۔
+2. پرامپٹ پر اپنی دستاویزی سوال درج کریں۔
 
 ### منظر نامہ 2: اسٹڈی پلان جنریٹر (Chainlit ویب ایپ)
-ایک ویب بیسڈ انٹرفیس (Chainlit استعمال کرتے ہوئے) جو صارفین کو کسی بھی تکنیکی موضوع کے لیے ہفتہ بہ ہفتہ ذاتی نوعیت کا مطالعہ پلان بنانے کی سہولت دیتا ہے۔
+ایک ویب بیسڈ انٹرفیس (Chainlit استعمال کرتے ہوئے) جو صارفین کو کسی بھی تکنیکی موضوع کے لیے ذاتی نوعیت کا ہفتہ بہ ہفتہ مطالعہ منصوبہ بنانے کی اجازت دیتا ہے۔
 
 1. Chainlit ایپ شروع کریں:
    ```bash
@@ -44,11 +44,11 @@ CO_OP_TRANSLATOR_METADATA:
    ```
 2. اپنے ٹرمینل میں دی گئی لوکل URL (مثلاً http://localhost:8000) کو اپنے براؤزر میں کھولیں۔
 3. چیٹ ونڈو میں اپنا مطالعہ موضوع اور مطالعہ کے ہفتوں کی تعداد درج کریں (مثلاً "AI-900 certification, 8 weeks")۔
-4. ایپ ہفتہ بہ ہفتہ مطالعہ پلان کے ساتھ جواب دے گی، جس میں متعلقہ Microsoft Learn ڈاکیومنٹیشن کے لنکس شامل ہوں گے۔
+4. ایپ آپ کو ہفتہ بہ ہفتہ مطالعہ منصوبہ فراہم کرے گی، جس میں متعلقہ Microsoft Learn دستاویزات کے لنکس شامل ہوں گے۔
 
-**ضروری ماحول کے متغیرات:**
+**ضروری Environment Variables:**
 
-منظر نامہ 2 (Azure OpenAI کے ساتھ Chainlit ویب ایپ) استعمال کرنے کے لیے، آپ کو `.env` file in the `python` ڈائریکٹری میں درج ذیل ماحول کے متغیرات سیٹ کرنے ہوں گے:
+منظر نامہ 2 (Azure OpenAI کے ساتھ Chainlit ویب ایپ) استعمال کرنے کے لیے، آپ کو `python` ڈائریکٹری میں `.env` فائل میں درج ذیل environment variables سیٹ کرنے ہوں گے:
 
 ```
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=
@@ -59,34 +59,34 @@ AZURE_OPENAI_API_VERSION=
 
 ایپ چلانے سے پہلے ان اقدار کو اپنے Azure OpenAI resource کی تفصیلات سے بھر دیں۔
 
-> **Tip:** آپ آسانی سے اپنے ماڈلز کو [Azure AI Foundry](https://ai.azure.com/) کے ذریعے ڈیپلائے کر سکتے ہیں۔
+> **Tip:** آپ آسانی سے اپنے ماڈلز [Azure AI Foundry](https://ai.azure.com/) کے ذریعے تعینات کر سکتے ہیں۔
 
-### منظر نامہ 3: VS Code میں MCP سرور کے ساتھ In-Editor Docs
+### منظر نامہ 3: VS Code میں MCP سرور کے ساتھ ان-ایڈیٹر Docs
 
-براؤزر کے ٹیبز تبدیل کرنے کی بجائے، آپ Microsoft Learn Docs کو براہ راست VS Code میں MCP سرور کے ذریعے لاسکتے ہیں۔ اس سے آپ کو یہ سہولیات ملتی ہیں:
-- VS Code کے اندر ہی ڈاکیومنٹیشن تلاش کریں اور پڑھیں، اپنے کوڈنگ ماحول سے باہر نکلے بغیر۔
-- ڈاکیومنٹیشن کا حوالہ دیں اور لنکس براہ راست اپنے README یا کورس فائلز میں شامل کریں۔
-- GitHub Copilot اور MCP کو ایک ساتھ استعمال کریں تاکہ ایک مربوط، AI سے چلنے والا ڈاکیومنٹیشن ورک فلو حاصل ہو۔
+دستاویزات تلاش کرنے کے لیے براؤزر کے ٹیبز تبدیل کرنے کی بجائے، آپ Microsoft Learn Docs کو براہ راست VS Code میں MCP سرور کے ذریعے لا سکتے ہیں۔ اس سے آپ کو یہ سہولیات ملتی ہیں:
+- VS Code کے اندر ہی دستاویزات تلاش اور پڑھنا بغیر کوڈنگ ماحول چھوڑے۔
+- دستاویزات کا حوالہ دینا اور لنکس براہ راست README یا کورس فائلز میں شامل کرنا۔
+- GitHub Copilot اور MCP کو ایک ساتھ استعمال کر کے ایک مربوط، AI سے چلنے والا دستاویزی ورک فلو حاصل کرنا۔
 
-**مثال کے استعمال کے کیسز:**
-- کورس یا پروجیکٹ ڈاکیومنٹیشن لکھتے ہوئے جلدی سے README میں حوالہ جات کے لنکس شامل کریں۔
-- کوڈ جنریٹ کرنے کے لیے Copilot استعمال کریں اور MCP کے ذریعے فوری طور پر متعلقہ ڈاکس تلاش کر کے حوالہ دیں۔
-- اپنے ایڈیٹر میں توجہ مرکوز رکھیں اور اپنی پیداواریت بڑھائیں۔
+**مثال کے طور پر استعمال:**
+- کورس یا پروجیکٹ کی دستاویزات لکھتے ہوئے README میں فوری حوالہ جات شامل کرنا۔
+- Copilot سے کوڈ جنریٹ کرنا اور MCP سے فوری طور پر متعلقہ دستاویزات تلاش کر کے حوالہ دینا۔
+- ایڈیٹر میں توجہ مرکوز رکھنا اور پیداواریت بڑھانا۔
 
 > [!IMPORTANT]
-> یقینی بنائیں کہ آپ کے پاس ایک درست [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) configuration in your workspace (location is `.vscode/mcp.json`).
+> یقینی بنائیں کہ آپ کے ورک اسپیس میں ایک درست [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) کنفیگریشن موجود ہے (مقام `.vscode/mcp.json` ہے)۔
 
-## Why Chainlit for Scenario 2?
+## منظر نامہ 2 کے لیے Chainlit کیوں؟
 
-Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
+Chainlit ایک جدید اوپن سورس فریم ورک ہے جو بات چیت پر مبنی ویب ایپلیکیشنز بنانے کے لیے استعمال ہوتا ہے۔ یہ آسانی سے چیٹ بیسڈ یوزر انٹرفیس بنانے کی سہولت دیتا ہے جو بیک اینڈ سروسز جیسے Microsoft Learn Docs MCP سرور سے جڑتا ہے۔ یہ پروجیکٹ Chainlit کو استعمال کرتا ہے تاکہ ذاتی نوعیت کے مطالعہ منصوبے حقیقی وقت میں آسانی سے بنائے جا سکیں۔ Chainlit کی مدد سے آپ تیزی سے چیٹ بیسڈ ٹولز بنا کر تعلیمی اور پیداواری صلاحیت کو بڑھا سکتے ہیں۔
 
-## What This Does
+## یہ کیا کرتا ہے
 
-This app allows users to create a personalized study plan by simply entering a topic and a duration. The app parses your input, queries the Microsoft Learn Docs MCP server for relevant content, and organizes the results into a structured, week-by-week plan. Each week’s recommendations are displayed in the chat, making it easy to follow and track your progress. The integration ensures you always get the latest, most relevant learning resources.
+یہ ایپ صارفین کو صرف ایک موضوع اور دورانیہ درج کر کے ذاتی نوعیت کا مطالعہ منصوبہ بنانے کی اجازت دیتی ہے۔ ایپ آپ کی ان پٹ کو سمجھتی ہے، Microsoft Learn Docs MCP سرور سے متعلقہ مواد تلاش کرتی ہے، اور نتائج کو منظم انداز میں ہفتہ بہ ہفتہ منصوبے کی شکل میں پیش کرتی ہے۔ ہر ہفتے کی سفارشات چیٹ میں دکھائی جاتی ہیں تاکہ آپ آسانی سے اپنی پیش رفت کو فالو اور ٹریک کر سکیں۔ انٹیگریشن اس بات کو یقینی بناتی ہے کہ آپ کو ہمیشہ تازہ ترین اور سب سے متعلقہ تعلیمی وسائل ملیں۔
 
-## Sample Queries
+## نمونہ سوالات
 
-Try these queries in the chat window to see how the app responds:
+چیٹ ونڈو میں یہ سوالات آزما کر دیکھیں کہ ایپ کیسے جواب دیتی ہے:
 
 - `AI-900 certification, 8 weeks`
 - `Learn Azure Functions, 4 weeks`
@@ -95,14 +95,14 @@ Try these queries in the chat window to see how the app responds:
 - `Microsoft security fundamentals, 5 weeks`
 - `Power Platform, 7 weeks`
 - `Azure AI services, 12 weeks`
-- `Cloud architecture, 9 weeks` موجود ہو۔
+- `Cloud architecture, 9 weeks`
 
-یہ مثالیں ایپ کی مختلف تعلیمی مقاصد اور وقت کے فریم کے لیے لچک کو ظاہر کرتی ہیں۔
+یہ مثالیں مختلف تعلیمی مقاصد اور وقت کے فریم کے لیے ایپ کی لچک کو ظاہر کرتی ہیں۔
 
 ## حوالہ جات
 
 - [Chainlit Documentation](https://docs.chainlit.io/)
 - [MCP Documentation](https://github.com/MicrosoftDocs/mcp)
 
-**ڈسکلیمَر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا نقائص ہو سکتے ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ تجویز کیا جاتا ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تعبیر کی ذمہ داری ہم پر عائد نہیں ہوگی۔
+**دستخطی دستبرداری**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

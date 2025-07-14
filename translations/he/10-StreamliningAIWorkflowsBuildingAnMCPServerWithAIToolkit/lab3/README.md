@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-06-10T06:14:39+00:00",
+  "translation_date": "2025-07-14T08:16:17+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
   "language_code": "he"
 }
@@ -17,12 +17,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 🎯 מטרות הלמידה
 
-בסיום המעבדה הזו תוכל/י:
+בסיום המעבדה הזו, תוכל/י:
 
-- ✅ ליצור שרתי MCP מותאמים אישית בעזרת AI Toolkit  
-- ✅ להגדיר ולהשתמש ב-MCP Python SDK העדכני ביותר (גרסה 1.9.3)  
-- ✅ להגדיר ולהשתמש ב-MCP Inspector לצורך איתור באגים  
-- ✅ לבצע איתור באגים לשרתי MCP הן בסביבת Agent Builder והן ב-Inspector  
+- ✅ ליצור שרתי MCP מותאמים אישית באמצעות AI Toolkit  
+- ✅ להגדיר ולהשתמש ב-MCP Python SDK העדכני ביותר (v1.9.3)  
+- ✅ להגדיר ולהשתמש ב-MCP Inspector לצורך איתור תקלות  
+- ✅ לבצע איתור תקלות בשרתי MCP בסביבות Agent Builder ו-Inspector  
 - ✅ להבין תהליכי פיתוח מתקדמים של שרתי MCP  
 
 ## 📋 דרישות מוקדמות
@@ -30,29 +30,29 @@ CO_OP_TRANSLATOR_METADATA:
 - השלמת מעבדה 2 (יסודות MCP)  
 - VS Code עם תוסף AI Toolkit מותקן  
 - סביבת Python 3.10 ומעלה  
-- Node.js ו-npm לצורך הגדרת Inspector  
+- Node.js ו-npm להגדרת Inspector  
 
 ## 🏗️ מה תבנה/י
 
-במעבדה זו תיצור/י **שרת MCP מזג אוויר** שמדגים:  
-- מימוש שרת MCP מותאם אישית  
-- אינטגרציה עם Agent Builder של AI Toolkit  
-- תהליכי איתור באגים מקצועיים  
-- דפוסי שימוש מודרניים של MCP SDK  
+במעבדה זו תיצור/י **שרת MCP למזג אוויר** שמדגים:  
+- יישום שרת MCP מותאם אישית  
+- אינטגרציה עם AI Toolkit Agent Builder  
+- תהליכי איתור תקלות מקצועיים  
+- דפוסי שימוש מודרניים ב-MCP SDK  
 
 ---
 
 ## 🔧 סקירת רכיבים מרכזיים
 
 ### 🐍 MCP Python SDK  
-ספריית ה-SDK של Model Context Protocol בפייתון מספקת את הבסיס לבניית שרתי MCP מותאמים. תשתמש/י בגרסה 1.9.3 עם יכולות איתור באגים משופרות.  
+ערכת הפיתוח של Model Context Protocol בפייתון מהווה את הבסיס לבניית שרתי MCP מותאמים. תשתמש/י בגרסה 1.9.3 עם יכולות איתור תקלות משופרות.
 
 ### 🔍 MCP Inspector  
-כלי איתור באגים חזק שמספק:  
+כלי איתור תקלות חזק שמספק:  
 - ניטור שרת בזמן אמת  
 - ויזואליזציה של ביצוע כלים  
 - בדיקת בקשות/תגובות ברשת  
-- סביבה אינטראקטיבית לבדיקות  
+- סביבת בדיקות אינטראקטיבית  
 
 ---
 
@@ -61,18 +61,18 @@ CO_OP_TRANSLATOR_METADATA:
 ### שלב 1: יצירת WeatherAgent ב-Agent Builder
 
 1. **הפעל/י את Agent Builder** ב-VS Code דרך תוסף AI Toolkit  
-2. **צור/י סוכן חדש** עם התצורה הבאה:  
+2. **צור/י סוכן חדש** עם ההגדרות הבאות:  
    - שם הסוכן: `WeatherAgent`  
 
 ![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.he.png)
 
 ### שלב 2: אתחול פרויקט שרת MCP
 
-1. **גש/י ל-Tools** → **Add Tool** ב-Agent Builder  
+1. **נווט/י ל-Tools** → **Add Tool** ב-Agent Builder  
 2. **בחר/י "MCP Server"** מתוך האפשרויות  
 3. **בחר/י "Create A new MCP Server"**  
 4. **בחר/י בתבנית `python-weather`**  
-5. **קבע/י שם לשרת:** `weather_mcp`  
+5. **תן/י שם לשרת:** `weather_mcp`  
 
 ![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.he.png)
 
@@ -93,37 +93,35 @@ CO_OP_TRANSLATOR_METADATA:
    │   └── tasks.json
    ├── pyproject.toml
    └── README.md
-   ```  
+   ```
 
-### שלב 4: שדרג/י לגרסת MCP SDK העדכנית ביותר
+### שלב 4: שדרוג ל-MCP SDK העדכני ביותר
 
-> **🔍 למה לשדרג?** אנו רוצים להשתמש בגרסת MCP SDK העדכנית (v1.9.3) ובשירות Inspector (0.14.0) כדי ליהנות מיכולות משופרות ואיתור באגים טוב יותר.
+> **🔍 למה לשדרג?** אנו רוצים להשתמש בגרסה העדכנית ביותר של MCP SDK (v1.9.3) ובשירות Inspector (0.14.0) כדי לקבל תכונות משופרות ויכולות איתור תקלות טובות יותר.
 
 #### 4א. עדכון תלותיות פייתון
 
-**ערוך/י את הקבצים `pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
+**ערוך/י את `pyproject.toml`:** עדכון [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
 
+#### 4ב. עדכון קונפיגורציית Inspector
 
-#### 4b. Update Inspector Configuration
+**ערוך/י את `inspector/package.json`:** עדכון [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
 
-**Edit `inspector/package.json`:** update [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
+#### 4ג. עדכון תלותיות Inspector
 
-#### 4c. Update Inspector Dependencies
+**ערוך/י את `inspector/package-lock.json`:** עדכון [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
 
-**Edit `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
+> **📝 הערה:** קובץ זה מכיל הגדרות תלות מורחבות. למטה מוצג המבנה העיקרי – התוכן המלא מבטיח פתרון תלות תקין.
 
-> **📝 Note:** This file contains extensive dependency definitions. Below is the essential structure - the full content ensures proper dependency resolution.
+> **⚡ קובץ package-lock מלא:** קובץ package-lock.json המלא מכיל כ-3000 שורות של הגדרות תלות. למעלה מוצג המבנה המרכזי – השתמש/י בקובץ המלא לפתרון תלות מלא.
 
+### שלב 5: הגדרת איתור תקלות ב-VS Code
 
-> **⚡ Full Package Lock:** The complete package-lock.json contains ~3000 lines of dependency definitions. The above shows the key structure - use the provided file for complete dependency resolution.
+*הערה: יש להעתיק את הקובץ שבנתיב שצוין כדי להחליף את הקובץ המקומי המתאים*
 
-### Step 5: Configure VS Code Debugging
+#### 5א. עדכון קונפיגורציית הפעלה
 
-*Note: Please copy the file in the specified path to replace the corresponding local file*
-
-#### 5a. Update Launch Configuration
-
-**Edit `.vscode/launch.json`:**
+**ערוך/י את `.vscode/launch.json`:**
 
 ```json
 {
@@ -302,32 +300,31 @@ CO_OP_TRANSLATOR_METADATA:
 }
 ```
 
-
 ---
 
-## 🚀 הרצת השרת ובדיקתו
+## 🚀 הרצה ובדיקת שרת MCP שלך
 
 ### שלב 6: התקנת תלותיות
 
-לאחר ביצוע השינויים, הרץ/י את הפקודות הבאות:
+לאחר ביצוע השינויים בקונפיגורציה, הרץ/י את הפקודות הבאות:
 
-**התקן/י את תלותיות הפייתון:**  
+**התקן/י תלותיות פייתון:**  
 ```bash
 uv sync
 ```
 
-**התקן/י את תלותיות ה-Inspector:**  
+**התקן/י תלותיות Inspector:**  
 ```bash
 cd inspector
 npm install
 ```
 
-### שלב 7: איתור באגים עם Agent Builder
+### שלב 7: איתור תקלות עם Agent Builder
 
-1. **לחץ/י F5** או השתמש/י בתצורת **"Debug in Agent Builder"**  
-2. **בחר/י בתצורת קומפאונד** מפאנל איתור הבאגים  
-3. **המתן/י לעליית השרת ולפתיחת Agent Builder**  
-4. **בדוק/י את שרת מזג האוויר שלך** עם שאילתות בשפה טבעית  
+1. **לחץ/י F5** או השתמש/י בקונפיגורציית **"Debug in Agent Builder"**  
+2. **בחר/י את הקונפיגורציה המשולבת** מפאנל הדיבוג  
+3. **המתן/י לעליית השרת** ולפתיחת Agent Builder  
+4. **בדוק/י את שרת ה-MCP למזג האוויר** עם שאילתות בשפה טבעית  
 
 הזן/י פקודה כמו זו
 
@@ -345,15 +342,15 @@ How's the weather like in Seattle
 
 ![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.he.png)
 
-### שלב 8: איתור באגים עם MCP Inspector
+### שלב 8: איתור תקלות עם MCP Inspector
 
-1. **השתמש/י בתצורת "Debug in Inspector"** (Edge או Chrome)  
-2. **פתח/י את ממשק ה-Inspector בכתובת** `http://localhost:6274`  
-3. **חקור/י את סביבה האינטראקטיבית לבדיקה:**  
-   - הצג/י את הכלים הזמינים  
+1. **השתמש/י בקונפיגורציית "Debug in Inspector"** (Edge או Chrome)  
+2. **פתח/י את ממשק Inspector** בכתובת `http://localhost:6274`  
+3. **חקור/י את סביבת הבדיקות האינטראקטיבית:**  
+   - הצג/י כלים זמינים  
    - בדוק/י ביצוע כלים  
    - נטר/י בקשות רשת  
-   - איתר/י באגים בתגובות השרת  
+   - איתר/י תקלות בתגובות השרת  
 
 ![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.he.png)
 
@@ -361,42 +358,42 @@ How's the weather like in Seattle
 
 ## 🎯 תוצאות למידה מרכזיות
 
-בסיום המעבדה הזו, ביצעת:
+בסיום מעבדה זו, ביצעת:
 
-- [x] **יצירת שרת MCP מותאם אישית** בעזרת תבניות AI Toolkit  
-- [x] **שדרוג לגרסת MCP SDK העדכנית** (v1.9.3) לפונקציונליות משופרת  
-- [x] **הגדרת תהליכי איתור באגים מקצועיים** הן ל-Agent Builder והן ל-Inspector  
+- [x] **יצירת שרת MCP מותאם אישית** באמצעות תבניות AI Toolkit  
+- [x] **שדרוג ל-MCP SDK העדכני ביותר** (v1.9.3) לתפקוד משופר  
+- [x] **הגדרת תהליכי איתור תקלות מקצועיים** הן ב-Agent Builder והן ב-Inspector  
 - [x] **הגדרת MCP Inspector** לבדיקות אינטראקטיביות של השרת  
-- [x] **שליטה בתצורות איתור באגים ב-VS Code** לפיתוח MCP  
+- [x] **שליטה בקונפיגורציות איתור תקלות ב-VS Code** לפיתוח MCP  
 
-## 🔧 תכונות מתקדמות שנחקרו
+## 🔧 תכונות מתקדמות שנבדקו
 
 | תכונה | תיאור | מקרה שימוש |
 |---------|-------------|----------|
-| **MCP Python SDK v1.9.3** | מימוש פרוטוקול עדכני | פיתוח שרתים מודרני |
-| **MCP Inspector 0.14.0** | כלי איתור באגים אינטראקטיבי | בדיקות שרת בזמן אמת |
-| **איתור באגים ב-VS Code** | סביבת פיתוח משולבת | תהליך איתור באגים מקצועי |
+| **MCP Python SDK v1.9.3** | יישום פרוטוקול עדכני | פיתוח שרת מודרני |
+| **MCP Inspector 0.14.0** | כלי איתור תקלות אינטראקטיבי | בדיקות שרת בזמן אמת |
+| **איתור תקלות ב-VS Code** | סביבת פיתוח משולבת | תהליך איתור תקלות מקצועי |
 | **אינטגרציה עם Agent Builder** | חיבור ישיר ל-AI Toolkit | בדיקות סוכן מקצה לקצה |
 
 ## 📚 משאבים נוספים
 
 - [תיעוד MCP Python SDK](https://modelcontextprotocol.io/docs/sdk/python)  
 - [מדריך תוסף AI Toolkit](https://code.visualstudio.com/docs/ai/ai-toolkit)  
-- [תיעוד איתור באגים ב-VS Code](https://code.visualstudio.com/docs/editor/debugging)  
+- [תיעוד איתור תקלות ב-VS Code](https://code.visualstudio.com/docs/editor/debugging)  
 - [מפרט Model Context Protocol](https://modelcontextprotocol.io/docs/concepts/architecture)  
 
 ---
 
-**🎉 מזל טוב!** סיימת בהצלחה את מעבדה 3 ועכשיו תוכל/י ליצור, לאתר באגים ולפרוס שרתי MCP מותאמים אישית באמצעות תהליכי פיתוח מקצועיים.
+**🎉 מזל טוב!** השלמת בהצלחה את מעבדה 3 וכעת תוכל/י ליצור, לאתר תקלות ולפרוס שרתי MCP מותאמים אישית באמצעות תהליכי פיתוח מקצועיים.
 
 ### 🔜 המשך למודול הבא
 
-מוכן/ה ליישם את מיומנויות ה-MCP שלך בסביבת פיתוח אמיתית? המשך ל-**[מודול 4: פיתוח MCP מעשי - שרת גיטאב מותאם אישית](../lab4/README.md)** שבו תוכל/י:  
-- לבנות שרת MCP מוכן לייצור שמבצע אוטומציה של פעולות במאגרי GitHub  
-- לממש פונקציונליות שיבוט מאגרי GitHub דרך MCP  
-- לשלב שרתי MCP מותאמים אישית עם VS Code ו-GitHub Copilot Agent Mode  
+מוכן/ה ליישם את כישורי ה-MCP שלך בתהליך פיתוח מעשי? המשך/י ל-**[מודול 4: פיתוח מעשי של MCP - שרת שכפול GitHub מותאם אישית](../lab4/README.md)** שבו תוכל/י:  
+- לבנות שרת MCP מוכן לייצור שמבצע אוטומציה של פעולות מאגרי GitHub  
+- ליישם פונקציונליות שכפול מאגרי GitHub דרך MCP  
+- לשלב שרתי MCP מותאמים עם VS Code ו-GitHub Copilot Agent Mode  
 - לבדוק ולפרוס שרתי MCP מותאמים בסביבות ייצור  
 - ללמוד אוטומציה מעשית של תהליכי עבודה למפתחים
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עלולים להכיל שגיאות או אי דיוקים. יש להתייחס למסמך המקורי בשפת המקור כמקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי אנושי. אנו לא נושאים באחריות לכל אי הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T18:26:29+00:00",
+  "translation_date": "2025-07-13T22:02:56+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "sw"
 }
@@ -27,12 +27,12 @@ Mwisho wa somo hili, utaweza:
 MCP hutoa zana za kusaidia kupima na kurekebisha seva zako:
 
 - **MCP Inspector**: Zana ya mstari wa amri inayoweza kutumika kama zana ya CLI na pia kama zana ya kuona.
-- **Kupima kwa mkono**: Unaweza kutumia zana kama curl kuendesha maombi ya wavuti, lakini zana yoyote inayoweza kuendesha HTTP itafanya kazi.
+- **Kupima kwa mkono**: Unaweza kutumia zana kama curl kutuma maombi ya wavuti, lakini zana yoyote inayoweza kutuma HTTP itafanya kazi.
 - **Kupima kwa vitengo**: Inawezekana kutumia mfumo wako unaopendelea wa kupima ili kupima vipengele vya seva na mteja.
 
 ### Kutumia MCP Inspector
 
-Tumeelezea matumizi ya zana hii katika masomo yaliyopita lakini hebu tuzungumze kidogo kwa kiwango cha juu. Ni zana iliyojengwa kwa Node.js na unaweza kuitumia kwa kuita kifanyikezo cha `npx` ambacho kitapakua na kusakinisha zana hiyo kwa muda na kisha kuondoa kila kitu baada ya kuendesha ombi lako.
+Tumeelezea matumizi ya zana hii katika masomo yaliyopita lakini hebu tuzungumzie kidogo kwa ujumla. Ni zana iliyojengwa kwa Node.js na unaweza kuitumia kwa kuita kifanyike `npx` ambacho kitapakua na kusakinisha zana hiyo kwa muda na kisha kuondoa kila kitu baada ya kumaliza kuendesha ombi lako.
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) inakusaidia:
 
@@ -40,17 +40,17 @@ Tumeelezea matumizi ya zana hii katika masomo yaliyopita lakini hebu tuzungumze 
 - **Jaribu Uendeshaji wa Zana**: Jaribu vigezo tofauti na uone majibu kwa wakati halisi
 - **Tazama Metadata ya Seva**: Chunguza taarifa za seva, skimu, na usanidi
 
-Uendeshaji wa kawaida wa zana unaonekana kama ifuatavyo:
+Kuendesha zana hii kawaida huonekana kama ifuatavyo:
 
 ```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Amri hapo juu inaanzisha MCP na kiolesura chake cha kuona na kuanzisha kiolesura cha wavuti cha ndani kwenye kivinjari chako. Unaweza kutarajia kuona dashibodi inayoonyesha seva zako za MCP zilizosajiliwa, zana zao zinazopatikana, rasilimali, na maelekezo. Kiolesura kinakuwezesha kupima uendeshaji wa zana kwa njia ya mwingiliano, kuchunguza metadata ya seva, na kuona majibu kwa wakati halisi, jambo linalorahisisha kuthibitisha na kurekebisha utekelezaji wa seva zako za MCP.
+Amri hapo juu inaanzisha MCP na kiolesura chake cha kuona na kuanzisha kiolesura cha wavuti cha ndani kwenye kivinjari chako. Unaweza kutarajia kuona dashibodi inayoonyesha seva zako za MCP zilizosajiliwa, zana zao zinazopatikana, rasilimali, na maelekezo. Kiolesura hiki kinakuwezesha kupima uendeshaji wa zana kwa njia ya mwingiliano, kuchunguza metadata ya seva, na kuona majibu kwa wakati halisi, jambo linalorahisisha kuthibitisha na kurekebisha utekelezaji wa seva zako za MCP.
 
 Hivi ndivyo kinaweza kuonekana: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sw.png)
 
-Pia unaweza kuendesha zana hii kwa hali ya CLI ambapo unatumia sifa ya `--cli`. Hapa kuna mfano wa kuendesha zana kwa hali ya "CLI" inayoorodhesha zana zote kwenye seva:
+Pia unaweza kuendesha zana hii kwa njia ya CLI ambapo unatumia sifa `--cli`. Hapa kuna mfano wa kuendesha zana kwa njia ya "CLI" inayoorodhesha zana zote kwenye seva:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Kama unavyoona kutoka kwa matumizi ya curl hapo juu, unatumia ombi la POST kuitisha zana kwa kutumia mzigo wa data unaojumuisha jina la zana na vigezo vyake. Tumia mbinu inayokufaa zaidi. Zana za CLI kwa ujumla huwa haraka zaidi kutumia na zinafaa kuandikwa kwa maandishi ambayo inaweza kuwa muhimu katika mazingira ya CI/CD.
+Kama unavyoona kutoka kwa matumizi ya curl hapo juu, unatumia ombi la POST kuitisha zana kwa kutumia mzigo wa data unaojumuisha jina la zana na vigezo vyake. Tumia mbinu inayokufaa zaidi. Zana za CLI kwa ujumla huwa haraka kutumia na zinaweza kuandikwa kwa maandishi (script) jambo ambalo linaweza kuwa na manufaa katika mazingira ya CI/CD.
 
 ### Kupima kwa Vitengo
 
-Tengeneza vipimo vya vitengo kwa zana na rasilimali zako kuhakikisha zinafanya kazi kama inavyotarajiwa. Hapa kuna mfano wa msimbo wa kupima.
+Tengeneza vipimo vya vitengo kwa zana na rasilimali zako ili kuhakikisha zinafanya kazi kama inavyotarajiwa. Hapa kuna mfano wa msimbo wa kupima.
 
 ```python
 import pytest
@@ -133,13 +133,13 @@ Msimbo uliotangulia unafanya yafuatayo:
 
 - Unatumia mfumo wa pytest unaokuwezesha kuunda vipimo kama kazi na kutumia kauli za assert.
 - Unaunda Seva ya MCP yenye zana mbili tofauti.
-- Unatumia kauli ya `assert` kuangalia kwamba masharti fulani yamekamilika.
+- Unatumia kauli ya `assert` kuhakikisha masharti fulani yamekamilika.
 
 Tazama [faili kamili hapa](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
 Kwa kuzingatia faili hapo juu, unaweza kupima seva yako mwenyewe kuhakikisha uwezo umeundwa kama inavyotakiwa.
 
-SDK zote kuu zina sehemu zinazofanana za kupima hivyo unaweza kubadilisha kwa runtime uliyochagua.
+SDK zote kuu zina sehemu zinazofanana za kupima hivyo unaweza kubadilisha kulingana na mazingira yako ya utekelezaji.
 
 ## Sampuli
 
@@ -158,4 +158,4 @@ SDK zote kuu zina sehemu zinazofanana za kupima hivyo unaweza kubadilisha kwa ru
 - Ifuatayo: [Utekelezaji](../09-deployment/README.md)
 
 **Kiarifu cha Kutotegemea**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

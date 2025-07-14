@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:53:59+00:00",
+  "translation_date": "2025-07-13T23:29:10+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "sr"
 }
 -->
 # Пример
 
-Ово је пример JavaScript-а за MCP сервер
+Ово је пример JavaScript кода за MCP сервер
 
-Ево примера регистрације алата где региструјемо алат који прави лажни позив LLM-у:
+Ево примера регистрације алата где региструјемо алат који прави симулирани позив ка LLM:
 
 ```javascript
 this.mcpServer.tool(
@@ -82,11 +82,11 @@ this.mcpServer.tool(
 npm install
 ```
 
-## Покретање
+## Покрени
 
 ```bash
 npm start
 ```
 
-**Odricanje odgovornosti**:  
-Ovaj dokument je preveden korišćenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako se trudimo da postignemo tačnost, imajte na umu da automatski prevodi mogu sadržati greške ili netačnosti. Originalni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prevod. Ne snosimo odgovornost za bilo kakva nesporazume ili pogrešna tumačenja koja proisteknu iz korišćenja ovog prevoda.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

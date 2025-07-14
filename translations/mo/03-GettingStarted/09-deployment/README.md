@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T15:59:47+00:00",
+  "translation_date": "2025-07-13T22:06:34+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "mo"
 }
@@ -24,12 +24,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 本地開發與部署
 
-如果您的伺服器是要在使用者機器上執行並被使用，您可以依照以下步驟：
+如果您的伺服器是要在使用者機器上運行並被使用，您可以依照以下步驟：
 
 1. **下載伺服器**。如果您不是自行撰寫伺服器，請先將其下載到您的機器。  
 1. **啟動伺服器程序**：執行您的 MCP 伺服器應用程式。
 
-針對 SSE（stdio 類型伺服器不需要）：
+針對 SSE（stdio 類型伺服器不需要此步驟）
 
 1. **設定網路**：確保伺服器在預期的埠口可被存取。  
 1. **連接客戶端**：使用類似 `http://localhost:3000` 的本地連接 URL。
@@ -48,7 +48,7 @@ Azure Container Apps 支援部署 MCP 伺服器。此功能仍在開發中，目
 
 操作步驟如下：
 
-1. 複製一個程式庫：
+1. 複製一個 repo：
 
   ```sh
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
@@ -106,7 +106,7 @@ Azure Container Apps 支援部署 MCP 伺服器。此功能仍在開發中，目
 
 - [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
 - [Azure Container Apps 文章](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
-- [Azure Container Apps MCP 程式庫](https://github.com/anthonychu/azure-container-apps-mcp-sample)
+- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)
 
 ## 接下來
 

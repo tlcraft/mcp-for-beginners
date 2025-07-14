@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a607d4febc94caee9a12b77795f7fc9a",
-  "translation_date": "2025-06-11T16:35:24+00:00",
+  "translation_date": "2025-07-13T15:09:25+00:00",
   "source_file": "study_guide.md",
   "language_code": "es"
 }
 -->
-# Model Context Protocol (MCP) para Principiantes - Guía de Estudio
+# Protocolo de Contexto de Modelo (MCP) para Principiantes - Guía de Estudio
 
-Esta guía de estudio ofrece una visión general de la estructura y contenido del repositorio para el currículo "Model Context Protocol (MCP) para Principiantes". Usa esta guía para navegar el repositorio de manera eficiente y aprovechar al máximo los recursos disponibles.
+Esta guía de estudio ofrece una visión general de la estructura y el contenido del repositorio para el currículo "Protocolo de Contexto de Modelo (MCP) para Principiantes". Usa esta guía para navegar el repositorio de manera eficiente y aprovechar al máximo los recursos disponibles.
 
-## Visión General del Repositorio
+## Resumen del Repositorio
 
-El Model Context Protocol (MCP) es un marco estandarizado para las interacciones entre modelos de IA y aplicaciones cliente. Este repositorio proporciona un currículo completo con ejemplos prácticos en C#, Java, JavaScript, Python y TypeScript, diseñado para desarrolladores de IA, arquitectos de sistemas e ingenieros de software.
+El Protocolo de Contexto de Modelo (MCP) es un marco estandarizado para las interacciones entre modelos de IA y aplicaciones cliente. Este repositorio proporciona un currículo completo con ejemplos prácticos de código en C#, Java, JavaScript, Python y TypeScript, diseñado para desarrolladores de IA, arquitectos de sistemas e ingenieros de software.
 
 ## Mapa Visual del Currículo
 
@@ -91,8 +91,8 @@ mindmap
 El repositorio está organizado en diez secciones principales, cada una enfocada en diferentes aspectos del MCP:
 
 1. **Introducción (00-Introduction/)**
-   - Visión general del Model Context Protocol
-   - Por qué la estandarización es importante en las pipelines de IA
+   - Visión general del Protocolo de Contexto de Modelo
+   - Por qué la estandarización es importante en las canalizaciones de IA
    - Casos de uso prácticos y beneficios
 
 2. **Conceptos Básicos (01-CoreConcepts/)**
@@ -114,11 +114,11 @@ El repositorio está organizado en diez secciones principales, cada una enfocada
 5. **Implementación Práctica (04-PracticalImplementation/)**
    - Uso de SDKs en diferentes lenguajes de programación
    - Técnicas de depuración, pruebas y validación
-   - Creación de plantillas reutilizables de prompts y flujos de trabajo
+   - Creación de plantillas de prompts reutilizables y flujos de trabajo
    - Proyectos de ejemplo con casos de implementación
 
 6. **Temas Avanzados (05-AdvancedTopics/)**
-   - Flujos de trabajo de IA multimodal y extensibilidad
+   - Flujos de trabajo multimodales de IA y extensibilidad
    - Estrategias seguras para escalabilidad
    - MCP en ecosistemas empresariales
    - Temas especializados incluyendo integración con Azure, multimodalidad, OAuth2, contextos raíz, enrutamiento, muestreo, escalado, seguridad, integración con búsqueda web y streaming.
@@ -126,14 +126,14 @@ El repositorio está organizado en diez secciones principales, cada una enfocada
 7. **Contribuciones de la Comunidad (06-CommunityContributions/)**
    - Cómo contribuir con código y documentación
    - Colaboración a través de GitHub
-   - Mejoras y retroalimentación impulsadas por la comunidad
+   - Mejoras impulsadas por la comunidad y retroalimentación
 
 8. **Lecciones de la Adopción Temprana (07-LessonsfromEarlyAdoption/)**
    - Implementaciones reales y casos de éxito
    - Construcción y despliegue de soluciones basadas en MCP
    - Tendencias y hoja de ruta futura
 
-9. **Buenas Prácticas (08-BestPractices/)**
+9. **Mejores Prácticas (08-BestPractices/)**
    - Optimización y ajuste de rendimiento
    - Diseño de sistemas MCP tolerantes a fallos
    - Estrategias de pruebas y resiliencia
@@ -144,13 +144,13 @@ El repositorio está organizado en diez secciones principales, cada una enfocada
     - Diagramas anotados y recorridos por proyectos
 
 11. **Taller Práctico (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - Taller práctico completo que combina MCP con AI Toolkit de Microsoft para VS Code
+    - Taller práctico integral que combina MCP con AI Toolkit de Microsoft para VS Code
     - Construcción de aplicaciones inteligentes que conectan modelos de IA con herramientas del mundo real
     - Módulos prácticos que cubren fundamentos, desarrollo de servidores personalizados y estrategias de despliegue en producción
 
 ## Proyectos de Ejemplo
 
-El repositorio incluye múltiples proyectos de ejemplo que demuestran la implementación de MCP en diferentes lenguajes de programación:
+El repositorio incluye varios proyectos de ejemplo que demuestran la implementación de MCP en diferentes lenguajes de programación:
 
 ### Ejemplos Básicos de Calculadora MCP
 - Ejemplo de Servidor MCP en C#
@@ -180,18 +180,18 @@ El repositorio incluye recursos complementarios:
 ## Cómo Usar Este Repositorio
 
 1. **Aprendizaje Secuencial**: Sigue los capítulos en orden (del 00 al 10) para una experiencia de aprendizaje estructurada.
-2. **Enfoque por Lenguaje**: Si te interesa un lenguaje de programación específico, explora los directorios de ejemplos para encontrar implementaciones en tu lenguaje preferido.
+2. **Enfoque por Lenguaje**: Si te interesa un lenguaje de programación en particular, explora los directorios de ejemplos para encontrar implementaciones en tu lenguaje preferido.
 3. **Implementación Práctica**: Comienza con la sección "Primeros Pasos" para configurar tu entorno y crear tu primer servidor y cliente MCP.
-4. **Exploración Avanzada**: Cuando domines lo básico, profundiza en los temas avanzados para ampliar tus conocimientos.
+4. **Exploración Avanzada**: Una vez que domines lo básico, profundiza en los temas avanzados para ampliar tus conocimientos.
 5. **Participación Comunitaria**: Únete al [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) para conectar con expertos y otros desarrolladores.
 
 ## Contribuciones
 
-Este repositorio da la bienvenida a las contribuciones de la comunidad. Consulta la sección de Contribuciones de la Comunidad para obtener orientación sobre cómo participar.
+Este repositorio recibe con gusto contribuciones de la comunidad. Consulta la sección Contribuciones de la Comunidad para obtener orientación sobre cómo contribuir.
 
 ---
 
 *Esta guía de estudio fue creada el 11 de junio de 2025 y ofrece una visión general del repositorio hasta esa fecha. El contenido del repositorio puede haber sido actualizado desde entonces.*
 
-**Aviso Legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea que surja del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

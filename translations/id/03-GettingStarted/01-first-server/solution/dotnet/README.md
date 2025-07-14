@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-07-09T21:59:33+00:00",
+  "translation_date": "2025-07-13T17:49:59+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "id"
 }
 -->
 # Menjalankan contoh ini
 
-## -1- Pasang dependensi
+## -1- Instal dependensi
 
 ```bash
 dotnet restore
@@ -39,7 +39,7 @@ Setelah server terhubung:
 
 ### Pengujian dalam mode CLI
 
-Anda dapat menjalankannya langsung dalam mode CLI dengan menjalankan perintah berikut:
+Anda bisa menjalankannya langsung dalam mode CLI dengan menjalankan perintah berikut:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
@@ -96,8 +96,8 @@ Anda harus melihat output berikut:
 ```
 
 > ![!TIP]
-> Biasanya menjalankan inspector dalam mode CLI jauh lebih cepat daripada di browser.
+> Biasanya menjalankan inspector dalam mode CLI jauh lebih cepat dibandingkan di browser.
 > Baca lebih lanjut tentang inspector [di sini](https://github.com/modelcontextprotocol/inspector).
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

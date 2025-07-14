@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8248e3491f5245ee6ab48ef724a4f65a",
-  "translation_date": "2025-07-04T17:41:50+00:00",
+  "translation_date": "2025-07-13T21:35:19+00:00",
   "source_file": "03-GettingStarted/07-aitk/README.md",
   "language_code": "da"
 }
@@ -36,7 +36,7 @@ Her er, hvordan vi skal gribe det an på et overordnet plan:
 - Opret en agent og definer dens systemprompt.
 - Opret en MCP-server med calculator-værktøjer.
 - Forbind Agent Builder til MCP-serveren.
-- Test agentens værktøjsanvendelse via naturligt sprog.
+- Test agentens brug af værktøjer via naturligt sprog.
 
 Fint, nu hvor vi forstår flowet, lad os konfigurere en AI-agent til at udnytte eksterne værktøjer gennem MCP og dermed forbedre dens evner!
 
@@ -58,7 +58,7 @@ I denne øvelse vil du bygge, køre og forbedre en AI-agent med værktøjer fra 
 1. Åbn **AI Toolkit**-udvidelsen fra **Activity Bar**.
 1. I **Catalog**-sektionen vælg **Models** for at åbne **Model Catalog**. Ved at vælge **Models** åbnes **Model Catalog** i en ny editor-fane.
 1. Søg efter **OpenAI GPT-4o** i søgefeltet i **Model Catalog**.
-1. Klik på **+ Add** for at tilføje modellen til din liste over **My Models**. Sørg for, at du har valgt modellen, der er **Hosted by GitHub**.
+1. Klik på **+ Add** for at tilføje modellen til din liste **My Models**. Sørg for, at du har valgt modellen, der er **Hosted by GitHub**.
 1. Bekræft i **Activity Bar**, at **OpenAI GPT-4o**-modellen vises på listen.
 
 ### -1- Opret en agent
@@ -75,7 +75,7 @@ I denne øvelse vil du bygge, køre og forbedre en AI-agent med værktøjer fra 
 
 ### -2- Opret en systemprompt til agenten
 
-Nu hvor agenten er oprettet, er det tid til at definere dens personlighed og formål. I denne sektion bruger du funktionen **Generate system prompt** til at beskrive agentens tiltænkte adfærd — i dette tilfælde en calculator-agent — og lade modellen skrive systemprompten for dig.
+Når agenten er oprettet, er det tid til at definere dens personlighed og formål. I denne sektion bruger du funktionen **Generate system prompt** til at beskrive agentens tiltænkte adfærd — i dette tilfælde en calculator-agent — og lade modellen skrive systemprompten for dig.
 
 ![Screenshot af "Calculator Agent"-grænsefladen i AI Toolkit til Visual Studio Code med et modalvindue åbent med titlen "Generate a prompt." Modalvinduet forklarer, at en prompt-skabelon kan genereres ved at dele grundlæggende oplysninger og indeholder en tekstboks med eksempel på systemprompt: "You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result." Under tekstboksen er knapperne "Close" og "Generate." I baggrunden ses dele af agentkonfigurationen, inklusive den valgte model "OpenAI GPT-4o (via GitHub)" og felter til system- og brugerprompter.](../../../../translated_images/aitk-generate-prompt.ba9e69d3d2bbe2a26444d0c78775540b14196061eee32c2054e9ee68c4f51f3a.da.png)
 
@@ -90,7 +90,7 @@ Nu hvor du har defineret agentens systemprompt — som styrer dens adfærd og sv
 
 !["Screenshot af den nederste del af Calculator Agent-grænsefladen i AI Toolkit-udvidelsen til Visual Studio Code. Den viser udvidelige menuer for “Tools” og “Structure output” samt en dropdown-menu mærket “Choose output format” sat til “text.” Til højre er en knap mærket “+ MCP Server” til at tilføje en Model Context Protocol-server. Et billedeikon-pladsholder vises over Tools-sektionen.](../../../../translated_images/aitk-add-mcp-server.9742cfddfe808353c0caf9cc0a7ed3e80e13abf4d2ebde315c81c3cb02a2a449.da.png)
 
-AI Toolkit har skabeloner, der gør det nemt at oprette din egen MCP-server. Vi bruger Python-skabelonen til at oprette calculator MCP-serveren.
+AI Toolkit er udstyret med skabeloner, der gør det nemt at oprette din egen MCP-server. Vi bruger Python-skabelonen til at oprette calculator MCP-serveren.
 
 *Note*: AI Toolkit understøtter i øjeblikket Python og TypeScript.
 
@@ -164,16 +164,16 @@ Du vil køre calculator MCP-serveren på din lokale udviklingsmaskine via **Agen
 1. Gennemgå agentens output. Modellen bør konkludere, at du betalte **$55**.
 1. Her er en oversigt over, hvad der bør ske:
     - Agenten vælger værktøjerne **multiply** og **subtract** for at hjælpe med beregningen.
-    - De respektive `a` og `b` værdier tildeles til **multiply**-værktøjet.
-    - De respektive `a` og `b` værdier tildeles til **subtract**-værktøjet.
+    - De respektive `a` og `b` værdier tildeles for **multiply**-værktøjet.
+    - De respektive `a` og `b` værdier tildeles for **subtract**-værktøjet.
     - Svaret fra hvert værktøj vises i den respektive **Tool Response**.
     - Det endelige output fra modellen vises i den endelige **Model Response**.
-1. Send flere prompts for at teste agenten yderligere. Du kan ændre den eksisterende prompt i **User prompt**-feltet ved at klikke i feltet og erstatte den eksisterende prompt.
+1. Send flere prompts for at teste agenten yderligere. Du kan ændre den eksisterende prompt i feltet **User prompt** ved at klikke i feltet og erstatte den eksisterende prompt.
 1. Når du er færdig med at teste agenten, kan du stoppe serveren via **terminalen** ved at trykke **CTRL/CMD+C** for at afslutte.
 
 ## Opgave
 
-Prøv at tilføje et ekstra værktøj til din **server.py**-fil (f.eks. returner kvadratroden af et tal). Send flere prompts, der kræver, at agenten bruger dit nye værktøj (eller eksisterende værktøjer). Husk at genstarte serveren for at indlæse de nyligt tilføjede værktøjer.
+Prøv at tilføje et ekstra værktøj til din **server.py**-fil (fx returner kvadratroden af et tal). Send flere prompts, der kræver, at agenten bruger dit nye værktøj (eller eksisterende værktøjer). Husk at genstarte serveren for at indlæse de nyligt tilføjede værktøjer.
 
 ## Løsning
 
@@ -185,7 +185,7 @@ De vigtigste pointer fra dette kapitel er:
 
 - AI Toolkit-udvidelsen er en fremragende klient, der lader dig forbruge MCP-servere og deres værktøjer.
 - Du kan tilføje nye værktøjer til MCP-servere og dermed udvide agentens evner til at imødekomme nye krav.
-- AI Toolkit inkluderer skabeloner (f.eks. Python MCP-server-skabeloner) for at gøre det nemmere at oprette brugerdefinerede værktøjer.
+- AI Toolkit inkluderer skabeloner (fx Python MCP-server-skabeloner) for at gøre det nemmere at oprette brugerdefinerede værktøjer.
 
 ## Yderligere ressourcer
 

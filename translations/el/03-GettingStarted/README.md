@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:31:20+00:00",
+  "translation_date": "2025-07-13T17:16:12+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "el"
 }
@@ -15,19 +15,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **2 Client**, σε αυτό το μάθημα, θα μάθετε πώς να γράψετε έναν client που μπορεί να συνδεθεί με τον server σας, [στο μάθημα](02-client/README.md)
 
-- **3 Client με LLM**, ένας ακόμη καλύτερος τρόπος να γράψετε έναν client είναι προσθέτοντας ένα LLM ώστε να μπορεί να "διαπραγματεύεται" με τον server σας για το τι πρέπει να κάνει, [στο μάθημα](03-llm-client/README.md)
+- **3 Client με LLM**, ένας ακόμα καλύτερος τρόπος να γράψετε έναν client είναι προσθέτοντας ένα LLM ώστε να μπορεί να "διαπραγματεύεται" με τον server σας για το τι πρέπει να κάνει, [στο μάθημα](03-llm-client/README.md)
 
 - **4 Χρήση του server σε λειτουργία GitHub Copilot Agent στο Visual Studio Code**. Εδώ, εξετάζουμε το πώς να τρέξουμε τον MCP Server μας μέσα από το Visual Studio Code, [στο μάθημα](04-vscode/README.md)
 
-- **5 Κατανάλωση από SSE (Server Sent Events)** SSE είναι ένα πρότυπο για streaming από server προς client, που επιτρέπει στους servers να στέλνουν ενημερώσεις σε πραγματικό χρόνο στους clients μέσω HTTP [στο μάθημα](05-sse-server/README.md)
+- **5 Κατανάλωση από SSE (Server Sent Events)**. Το SSE είναι ένα πρότυπο για streaming από server προς client, που επιτρέπει στους servers να στέλνουν ενημερώσεις σε πραγματικό χρόνο στους clients μέσω HTTP, [στο μάθημα](05-sse-server/README.md)
 
 - **6 HTTP Streaming με MCP (Streamable HTTP)**. Μάθετε για το σύγχρονο HTTP streaming, τις ειδοποιήσεις προόδου και πώς να υλοποιήσετε κλιμακούμενους, σε πραγματικό χρόνο MCP servers και clients χρησιμοποιώντας Streamable HTTP. [στο μάθημα](06-http-streaming/README.md)
 
-- **7 Χρήση του AI Toolkit για VSCode** για να καταναλώσετε και να δοκιμάσετε τους MCP Clients και Servers σας [στο μάθημα](07-aitk/README.md)
+- **7 Χρήση του AI Toolkit για VSCode** για να καταναλώσετε και να δοκιμάσετε τους MCP Clients και Servers σας, [στο μάθημα](07-aitk/README.md)
 
-- **8 Δοκιμές**. Εδώ θα εστιάσουμε ειδικά στο πώς μπορούμε να δοκιμάσουμε τον server και τον client μας με διάφορους τρόπους, [στο μάθημα](08-testing/README.md)
+- **8 Testing**. Εδώ θα εστιάσουμε κυρίως στο πώς μπορούμε να δοκιμάσουμε τον server και τον client μας με διάφορους τρόπους, [στο μάθημα](08-testing/README.md)
 
-- **9 Ανάπτυξη**. Αυτό το κεφάλαιο θα εξετάσει διάφορους τρόπους ανάπτυξης των λύσεων MCP σας, [στο μάθημα](09-deployment/README.md)
+- **9 Deployment**. Αυτό το κεφάλαιο θα εξετάσει διάφορους τρόπους για να αναπτύξετε τις λύσεις MCP σας, [στο μάθημα](09-deployment/README.md)
 
 
 Το Model Context Protocol (MCP) είναι ένα ανοιχτό πρωτόκολλο που τυποποιεί τον τρόπο με τον οποίο οι εφαρμογές παρέχουν context στα LLMs. Σκεφτείτε το MCP σαν μια θύρα USB-C για εφαρμογές AI - προσφέρει έναν τυποποιημένο τρόπο σύνδεσης μοντέλων AI με διάφορες πηγές δεδομένων και εργαλεία.
@@ -59,28 +59,28 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### Επίσημα SDKs
 
-Στα επόμενα κεφάλαια θα δείτε λύσεις που έχουν δημιουργηθεί με Python, TypeScript, Java και .NET. Εδώ είναι όλα τα επίσημα υποστηριζόμενα SDKs.
+Στα επόμενα κεφάλαια θα δείτε λύσεις που έχουν υλοποιηθεί με Python, TypeScript, Java και .NET. Εδώ είναι όλα τα επίσημα υποστηριζόμενα SDKs.
 
 Το MCP παρέχει επίσημα SDKs για πολλές γλώσσες:
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Συντηρείται σε συνεργασία με τη Microsoft
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Συντηρείται σε συνεργασία με τη Spring AI
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Η επίσημη υλοποίηση σε TypeScript
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Η επίσημη υλοποίηση σε Python
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Η επίσημη υλοποίηση σε Kotlin
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Η επίσημη υλοποίηση για TypeScript
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Η επίσημη υλοποίηση για Python
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Η επίσημη υλοποίηση για Kotlin
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Συντηρείται σε συνεργασία με τη Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Η επίσημη υλοποίηση σε Rust
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Η επίσημη υλοποίηση για Rust
 
 ## Βασικά Συμπεράσματα
 
-- Η ρύθμιση περιβάλλοντος ανάπτυξης MCP είναι απλή με τα SDKs ειδικά για κάθε γλώσσα
+- Η ρύθμιση ενός περιβάλλοντος ανάπτυξης MCP είναι απλή με τα SDKs ειδικά για κάθε γλώσσα
 - Η δημιουργία MCP servers περιλαμβάνει τη δημιουργία και καταχώρηση εργαλείων με σαφή σχήματα
-- Οι MCP clients συνδέονται με servers και μοντέλα για να αξιοποιήσουν επεκταμένες δυνατότητες
+- Οι MCP clients συνδέονται με servers και μοντέλα για να αξιοποιήσουν τις επεκταμένες δυνατότητες
 - Οι δοκιμές και ο εντοπισμός σφαλμάτων είναι απαραίτητα για αξιόπιστες υλοποιήσεις MCP
 - Οι επιλογές ανάπτυξης κυμαίνονται από τοπική ανάπτυξη έως λύσεις βασισμένες στο cloud
 
 ## Εξάσκηση
 
-Διαθέτουμε ένα σύνολο δειγμάτων που συμπληρώνουν τις ασκήσεις που θα δείτε σε όλα τα κεφάλαια αυτής της ενότητας. Επιπλέον, κάθε κεφάλαιο έχει τις δικές του ασκήσεις και εργασίες
+Διαθέτουμε ένα σύνολο δειγμάτων που συμπληρώνουν τις ασκήσεις που θα δείτε σε όλα τα κεφάλαια αυτής της ενότητας. Επιπλέον, κάθε κεφάλαιο έχει τις δικές του ασκήσεις και εργασίες.
 
 - [Java Calculator](./samples/java/calculator/README.md)
 - [.Net Calculator](../../../03-GettingStarted/samples/csharp)

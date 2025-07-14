@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T16:59:14+00:00",
+  "translation_date": "2025-07-14T05:45:19+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "br"
 }
@@ -48,7 +48,7 @@ Este estudo de caso demonstra uma aplicação prática do MCP para automatizar p
 - Criar fluxos de automação repetíveis
 - Integrar dados entre sistemas distintos
 
-Este exemplo ilustra como implementações relativamente simples do MCP podem gerar ganhos significativos de eficiência ao automatizar tarefas rotineiras e melhorar a consistência dos dados entre sistemas.
+Este exemplo ilustra como implementações relativamente simples do MCP podem proporcionar ganhos significativos de eficiência ao automatizar tarefas rotineiras e melhorar a consistência dos dados entre sistemas.
 
 ### 3. [Recuperação de Documentação em Tempo Real com MCP](./docs-mcp/README.md)
 
@@ -61,7 +61,7 @@ Este estudo de caso orienta você a conectar um cliente de console Python a um s
 
 O capítulo inclui um exercício prático, um exemplo mínimo de código funcional e links para recursos adicionais para aprofundar o aprendizado. Veja o passo a passo completo e o código no capítulo vinculado para entender como o MCP pode transformar o acesso à documentação e a produtividade do desenvolvedor em ambientes baseados em console.
 
-### 4. [Aplicativo Web Interativo para Gerar Plano de Estudos com MCP](./docs-mcp/README.md)
+### 4. [Aplicativo Web Gerador de Plano de Estudos Interativo com MCP](./docs-mcp/README.md)
 
 Este estudo de caso demonstra como construir um aplicativo web interativo usando Chainlit e o Model Context Protocol (MCP) para gerar planos de estudo personalizados para qualquer tema. Os usuários podem especificar um assunto (como "certificação AI-900") e uma duração de estudo (ex.: 8 semanas), e o app fornecerá um detalhamento semanal do conteúdo recomendado. O Chainlit possibilita uma interface de chat conversacional, tornando a experiência envolvente e adaptativa.
 
@@ -74,7 +74,7 @@ O projeto ilustra como IA conversacional e MCP podem ser combinados para criar f
 
 ### 5. [Documentação no Editor com Servidor MCP no VS Code](./docs-mcp/README.md)
 
-Este estudo de caso mostra como trazer a documentação Microsoft Learn diretamente para o seu ambiente VS Code usando o servidor MCP — sem precisar alternar abas do navegador! Você verá como:
+Este estudo de caso demonstra como trazer a documentação Microsoft Learn diretamente para o seu ambiente VS Code usando o servidor MCP — sem precisar alternar abas do navegador! Você verá como:
 
 - Pesquisar e ler documentação instantaneamente dentro do VS Code usando o painel MCP ou a paleta de comandos
 - Referenciar documentação e inserir links diretamente em seus arquivos README ou markdown de cursos
@@ -101,7 +101,7 @@ Este exemplo ilustra como aproveitar as capacidades do Azure para criar um servi
 
 ## Conclusão
 
-Esses estudos de caso destacam a versatilidade e as aplicações práticas do Model Context Protocol em cenários reais. Desde sistemas complexos multiagente até fluxos de trabalho de automação direcionados, o MCP oferece uma forma padronizada de conectar sistemas de IA às ferramentas e dados necessários para entregar valor.
+Estes estudos de caso destacam a versatilidade e as aplicações práticas do Model Context Protocol em cenários reais. Desde sistemas complexos multiagente até fluxos de automação direcionados, o MCP oferece uma forma padronizada de conectar sistemas de IA com as ferramentas e dados necessários para entregar valor.
 
 Ao estudar essas implementações, você pode obter insights sobre padrões arquiteturais, estratégias de implementação e melhores práticas que podem ser aplicadas em seus próprios projetos MCP. Os exemplos demonstram que o MCP não é apenas um framework teórico, mas uma solução prática para desafios reais de negócios.
 

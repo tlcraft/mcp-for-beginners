@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a05fb941810e539147fec53aaadbb6fd",
-  "translation_date": "2025-06-21T14:30:01+00:00",
+  "translation_date": "2025-07-14T06:40:30+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/python/README.md",
   "language_code": "el"
 }
 -->
-# Δημιουργός Σχεδίου Μελέτης με Chainlit & Microsoft Learn Docs MCP
+# Study Plan Generator with Chainlit & Microsoft Learn Docs MCP
 
 ## Προαπαιτούμενα
 
@@ -18,7 +18,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## Εγκατάσταση
 
 1. Κλωνοποιήστε αυτό το αποθετήριο ή κατεβάστε τα αρχεία του έργου.  
-2. Εγκαταστήστε τις απαραίτητες εξαρτήσεις:  
+2. Εγκαταστήστε τις απαιτούμενες εξαρτήσεις:  
 
    ```bash
    pip install -r requirements.txt
@@ -26,29 +26,29 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Χρήση
 
-### Σενάριο 1: Απλή Ερώτηση προς Docs MCP  
+### Σενάριο 1: Απλή Ερώτηση προς το Docs MCP  
 Ένας πελάτης γραμμής εντολών που συνδέεται με τον διακομιστή Docs MCP, στέλνει μια ερώτηση και εμφανίζει το αποτέλεσμα.
 
-1. Εκτελέστε το σενάριο:  
+1. Εκτελέστε το script:  
    ```bash
    python scenario1.py
    ```  
-2. Πληκτρολογήστε την ερώτηση τεκμηρίωσης στο προτροπή.
+2. Πληκτρολογήστε την ερώτησή σας για την τεκμηρίωση στο prompt.
 
 ### Σενάριο 2: Δημιουργός Σχεδίου Μελέτης (Chainlit Web App)  
 Μια διαδικτυακή διεπαφή (με χρήση Chainlit) που επιτρέπει στους χρήστες να δημιουργήσουν ένα εξατομικευμένο, εβδομαδιαίο σχέδιο μελέτης για οποιοδήποτε τεχνικό θέμα.
 
-1. Εκκινήστε την εφαρμογή Chainlit:  
+1. Ξεκινήστε την εφαρμογή Chainlit:  
    ```bash
    chainlit run scenario2.py
    ```  
 2. Ανοίξτε το τοπικό URL που εμφανίζεται στο τερματικό σας (π.χ., http://localhost:8000) στον περιηγητή σας.  
 3. Στο παράθυρο συνομιλίας, εισάγετε το θέμα μελέτης και τον αριθμό εβδομάδων που θέλετε να μελετήσετε (π.χ., "AI-900 certification, 8 weeks").  
-4. Η εφαρμογή θα απαντήσει με ένα εβδομαδιαίο σχέδιο μελέτης, περιλαμβάνοντας συνδέσμους σε σχετική τεκμηρίωση Microsoft Learn.
+4. Η εφαρμογή θα απαντήσει με ένα εβδομαδιαίο σχέδιο μελέτης, συμπεριλαμβανομένων συνδέσμων προς σχετική τεκμηρίωση Microsoft Learn.
 
-**Απαιτούμενες Μεταβλητές Περιβάλλοντος:**
+**Απαιτούμενες Μεταβλητές Περιβάλλοντος:**  
 
-Για να χρησιμοποιήσετε το Σενάριο 2 (την εφαρμογή Chainlit με Azure OpenAI), πρέπει να ορίσετε τις ακόλουθες μεταβλητές περιβάλλοντος σε έναν φάκελο `.env` file in the `python`:
+Για να χρησιμοποιήσετε το Σενάριο 2 (την εφαρμογή Chainlit με Azure OpenAI), πρέπει να ορίσετε τις παρακάτω μεταβλητές περιβάλλοντος σε ένα αρχείο `.env` στον φάκελο `python`:  
 
 ```
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=
@@ -61,12 +61,12 @@ AZURE_OPENAI_API_VERSION=
 
 > **Tip:** Μπορείτε εύκολα να αναπτύξετε τα δικά σας μοντέλα χρησιμοποιώντας το [Azure AI Foundry](https://ai.azure.com/).
 
-### Σενάριο 3: Τεκμηρίωση εντός Επεξεργαστή με MCP Server στο VS Code
+### Σενάριο 3: Τεκμηρίωση μέσα στον Επεξεργαστή με MCP Server στο VS Code
 
-Αντί να αλλάζετε καρτέλες στον περιηγητή για να αναζητήσετε τεκμηρίωση, μπορείτε να φέρετε το Microsoft Learn Docs απευθείας στο VS Code σας μέσω του MCP server. Αυτό σας επιτρέπει να:  
-- Αναζητάτε και διαβάζετε τεκμηρίωση μέσα στο VS Code χωρίς να βγαίνετε από το περιβάλλον προγραμματισμού σας.  
-- Αναφέρετε τεκμηρίωση και εισάγετε συνδέσμους απευθείας στα αρχεία README ή μαθήματός σας.  
-- Χρησιμοποιείτε το GitHub Copilot και το MCP μαζί για μια ομαλή ροή εργασίας με τεχνητή νοημοσύνη στην τεκμηρίωση.
+Αντί να αλλάζετε καρτέλες στον περιηγητή για να αναζητήσετε τεκμηρίωση, μπορείτε να φέρετε το Microsoft Learn Docs απευθείας στο VS Code χρησιμοποιώντας τον διακομιστή MCP. Αυτό σας επιτρέπει να:  
+- Αναζητάτε και να διαβάζετε τεκμηρίωση μέσα στο VS Code χωρίς να εγκαταλείπετε το περιβάλλον κωδικοποίησης.  
+- Αναφέρετε τεκμηρίωση και εισάγετε συνδέσμους απευθείας στα αρχεία README ή στα αρχεία μαθήματος.  
+- Χρησιμοποιείτε το GitHub Copilot και το MCP μαζί για μια ομαλή ροή εργασίας με τεκμηρίωση που υποστηρίζεται από AI.
 
 **Παραδείγματα Χρήσης:**  
 - Προσθέστε γρήγορα συνδέσμους αναφοράς σε ένα README ενώ γράφετε τεκμηρίωση μαθήματος ή έργου.  
@@ -74,27 +74,27 @@ AZURE_OPENAI_API_VERSION=
 - Παραμείνετε συγκεντρωμένοι στον επεξεργαστή σας και αυξήστε την παραγωγικότητα.
 
 > [!IMPORTANT]  
-> Βεβαιωθείτε ότι έχετε ένα έγκυρο [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) configuration in your workspace (location is `.vscode/mcp.json`).
+> Βεβαιωθείτε ότι έχετε μια έγκυρη διαμόρφωση [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) στον χώρο εργασίας σας (η θέση είναι `.vscode/mcp.json`).
 
-## Why Chainlit for Scenario 2?
+## Γιατί Chainlit για το Σενάριο 2;
 
-Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
+Το Chainlit είναι ένα σύγχρονο ανοιχτού κώδικα πλαίσιο για τη δημιουργία συνομιλιακών διαδικτυακών εφαρμογών. Διευκολύνει τη δημιουργία διεπαφών χρήστη βασισμένων σε συνομιλίες που συνδέονται με υπηρεσίες backend όπως ο διακομιστής Microsoft Learn Docs MCP. Αυτό το έργο χρησιμοποιεί το Chainlit για να προσφέρει έναν απλό, διαδραστικό τρόπο δημιουργίας εξατομικευμένων σχεδίων μελέτης σε πραγματικό χρόνο. Με το Chainlit, μπορείτε γρήγορα να δημιουργήσετε και να αναπτύξετε εργαλεία συνομιλίας που βελτιώνουν την παραγωγικότητα και τη μάθηση.
 
-## What This Does
+## Τι Κάνει Αυτό
 
-This app allows users to create a personalized study plan by simply entering a topic and a duration. The app parses your input, queries the Microsoft Learn Docs MCP server for relevant content, and organizes the results into a structured, week-by-week plan. Each week’s recommendations are displayed in the chat, making it easy to follow and track your progress. The integration ensures you always get the latest, most relevant learning resources.
+Αυτή η εφαρμογή επιτρέπει στους χρήστες να δημιουργήσουν ένα εξατομικευμένο σχέδιο μελέτης απλά εισάγοντας ένα θέμα και μια διάρκεια. Η εφαρμογή αναλύει την είσοδό σας, στέλνει ερώτηση στον διακομιστή Microsoft Learn Docs MCP για σχετικό περιεχόμενο και οργανώνει τα αποτελέσματα σε ένα δομημένο, εβδομαδιαίο σχέδιο. Οι προτάσεις κάθε εβδομάδας εμφανίζονται στη συνομιλία, καθιστώντας εύκολη την παρακολούθηση και την πρόοδο. Η ενσωμάτωση εξασφαλίζει ότι λαμβάνετε πάντα τους πιο πρόσφατους και σχετικούς πόρους μάθησης.
 
-## Sample Queries
+## Παραδείγματα Ερωτήσεων
 
-Try these queries in the chat window to see how the app responds:
+Δοκιμάστε αυτές τις ερωτήσεις στο παράθυρο συνομιλίας για να δείτε πώς ανταποκρίνεται η εφαρμογή:
 
-- `AI-900 certification, 8 weeks`
-- `Learn Azure Functions, 4 weeks`
-- `Azure DevOps, 6 weeks`
-- `Data engineering on Azure, 10 weeks`
-- `Microsoft security fundamentals, 5 weeks`
-- `Power Platform, 7 weeks`
-- `Azure AI services, 12 weeks`
+- `AI-900 certification, 8 weeks`  
+- `Learn Azure Functions, 4 weeks`  
+- `Azure DevOps, 6 weeks`  
+- `Data engineering on Azure, 10 weeks`  
+- `Microsoft security fundamentals, 5 weeks`  
+- `Power Platform, 7 weeks`  
+- `Azure AI services, 12 weeks`  
 - `Cloud architecture, 9 weeks`
 
 Αυτά τα παραδείγματα δείχνουν την ευελιξία της εφαρμογής για διαφορετικούς στόχους μάθησης και χρονικά πλαίσια.
@@ -105,4 +105,4 @@ Try these queries in the chat window to see how the app responds:
 - [MCP Documentation](https://github.com/MicrosoftDocs/mcp)
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που προσπαθούμε για ακρίβεια, παρακαλούμε να γνωρίζετε ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν σφάλματα ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες συνιστάται η επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

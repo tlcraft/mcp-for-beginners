@@ -2,81 +2,77 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "999c5e7623c1e2d5e5a07c2feb39eb67",
-  "translation_date": "2025-06-10T06:24:31+00:00",
+  "translation_date": "2025-07-14T08:24:09+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/README.md",
   "language_code": "mo"
 }
 -->
 # Weather MCP Server
 
-This is a sample MCP Server in Python implementing weather tools with mock responses. It can be used as a scaffold for your own MCP Server. It includes the following features: 
+這是一個使用 Python 實作的範例 MCP Server，提供天氣工具的模擬回應。你可以將它作為自己 MCP Server 的基礎架構。此範例包含以下功能：
 
-- **Weather Tool**: A tool that provides mocked weather information based on the given location.
-- **Connect to Agent Builder**: A feature that allows you to connect the MCP server to the Agent Builder for testing and debugging.
-- **Debug in [MCP Inspector](https://github.com/modelcontextprotocol/inspector)**: A feature that allows you to debug the MCP Server using the MCP Inspector.
+- **Weather Tool**：根據指定地點提供模擬的天氣資訊。
+- **Connect to Agent Builder**：允許你將 MCP Server 連接到 Agent Builder 以進行測試和除錯。
+- **Debug in [MCP Inspector](https://github.com/modelcontextprotocol/inspector)**：可使用 MCP Inspector 來除錯 MCP Server。
 
-## Get started with the Weather MCP Server template
+## 使用 Weather MCP Server 範本快速上手
 
-> **Prerequisites**
+> **先決條件**
 >
-> To run the MCP Server in your local dev machine, you will need:
+> 要在本機開發環境執行 MCP Server，你需要：
 >
 > - [Python](https://www.python.org/)
-> - (*Optional - if you prefer uv*) [uv](https://github.com/astral-sh/uv)
-> - [Python Debugger Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
+> - （*可選 - 若偏好使用 uv*）[uv](https://github.com/astral-sh/uv)
+> - [Python 除錯擴充套件](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
 
-## Prepare environment
+## 環境準備
 
-There are two approaches to set up the environment for this project. You can choose either one based on your preference.
+有兩種方式可以設定此專案的環境，你可以依照喜好選擇其中一種。
 
-> Note: Reload VSCode or terminal to ensure the virtual environment python is used after creating the virtual environment.
+> 注意：建立虛擬環境後，請重新載入 VSCode 或終端機，以確保使用虛擬環境中的 Python。
 
-| Approach | Steps |
-| -------- | ----- |
-| Using `uv` | 1. Create virtual environment: `uv venv` <br>2. Run VSCode Command "***Python: Select Interpreter***" and select the python from created virtual environment <br>3. Install dependencies (include dev dependencies): `uv pip install -r pyproject.toml --extra dev` |
-| Using `pip` | 1. Create virtual environment: `python -m venv .venv` <br>2. Run VSCode Command "***Python: Select Interpreter***" and select the python from created virtual environment<br>3. Install dependencies (include dev dependencies): `pip install -e .[dev]` | 
+| 方式       | 步驟                                                                                  |
+| ---------- | ------------------------------------------------------------------------------------- |
+| 使用 `uv`  | 1. 建立虛擬環境：`uv venv` <br>2. 執行 VSCode 指令 "***Python: Select Interpreter***"，選擇剛建立的虛擬環境 Python <br>3. 安裝依賴（包含開發依賴）：`uv pip install -r pyproject.toml --extra dev` |
+| 使用 `pip` | 1. 建立虛擬環境：`python -m venv .venv` <br>2. 執行 VSCode 指令 "***Python: Select Interpreter***"，選擇剛建立的虛擬環境 Python <br>3. 安裝依賴（包含開發依賴）：`pip install -e .[dev]` |
 
-After setting up the environment, you can run the server in your local dev machine via Agent Builder as the MCP Client to get started:
-1. Open VS Code Debug panel. Select `Debug in Agent Builder` or press `F5` to start debugging the MCP server.
-2. Use AI Toolkit Agent Builder to test the server with [this prompt](../../../../../../../../../../../open_prompt_builder). Server will be auto-connected to the Agent Builder.
-3. Click `Run` to test the server with the prompt.
+設定好環境後，你可以透過 Agent Builder 作為 MCP Client 在本機開發環境執行伺服器開始使用：
+1. 開啟 VS Code 除錯面板。選擇 `Debug in Agent Builder` 或按下 `F5` 開始除錯 MCP Server。
+2. 使用 AI Toolkit Agent Builder 透過[此提示](../../../../../../../../../../open_prompt_builder)測試伺服器。伺服器會自動連接到 Agent Builder。
+3. 點擊 `Run` 以使用該提示測試伺服器。
 
-**Congratulations**! You have successfully run the Weather MCP Server in your local dev machine via Agent Builder as the MCP Client.
+**恭喜！** 你已成功透過 Agent Builder 作為 MCP Client 在本機開發環境執行 Weather MCP Server。
 ![DebugMCP](https://raw.githubusercontent.com/microsoft/windows-ai-studio-templates/refs/heads/dev/mcpServers/mcp_debug.gif)
 
-## What's included in the template
+## 範本包含內容
 
-| Folder / File| Contents                                     |
-| ------------ | -------------------------------------------- |
-| `.vscode`    | VSCode files for debugging                   |
-| `.aitk`      | Configurations for AI Toolkit                |
-| `src`        | The source code for the weather mcp server   |
+| 資料夾 / 檔案 | 內容                           |
+| -------------- | ------------------------------ |
+| `.vscode`      | 用於除錯的 VSCode 設定檔       |
+| `.aitk`        | AI Toolkit 的設定檔            |
+| `src`          | weather mcp server 的原始程式碼 |
 
-## How to debug the Weather MCP Server
+## 如何除錯 Weather MCP Server
 
-> Notes:
-> - [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is a visual developer tool for testing and debugging MCP servers.
-> - All debugging modes support breakpoints, so you can add breakpoints to the tool implementation code.
+> 注意：
+> - [MCP Inspector](https://github.com/modelcontextprotocol/inspector) 是一款用於測試和除錯 MCP Server 的視覺化開發工具。
+> - 所有除錯模式皆支援斷點，你可以在工具實作程式碼中加入斷點。
 
-| Debug Mode | Description | Steps to debug |
-| ---------- | ----------- | --------------- |
-| Agent Builder | Debug the MCP server in the Agent Builder via AI Toolkit. | 1. Open VS Code Debug panel. Select `Debug in Agent Builder` and press `F5` to start debugging the MCP server.<br>2. Use AI Toolkit Agent Builder to test the server with [this prompt](../../../../../../../../../../../open_prompt_builder). Server will be auto-connected to the Agent Builder.<br>3. Click `Run` to test the server with the prompt. |
-| MCP Inspector | Debug the MCP server using the MCP Inspector. | 1. Install [Node.js](https://nodejs.org/)<br> 2. Set up Inspector: `cd inspector` && `npm install` <br> 3. Open VS Code Debug panel. Select `Debug SSE in Inspector (Edge)` or `Debug SSE in Inspector (Chrome)`. Press F5 to start debugging.<br> 4. When MCP Inspector launches in the browser, click the `Connect` button to connect this MCP server.<br> 5. Then you can `List Tools`, select a tool, input parameters, and `Run Tool` to debug your server code.<br> |
+| 除錯模式       | 說明                                   | 除錯步驟                                                                                                                         |
+| -------------- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Agent Builder  | 透過 AI Toolkit 在 Agent Builder 中除錯 MCP Server。 | 1. 開啟 VS Code 除錯面板。選擇 `Debug in Agent Builder` 並按下 `F5` 開始除錯 MCP Server。<br>2. 使用 AI Toolkit Agent Builder 透過[此提示](../../../../../../../../../../open_prompt_builder)測試伺服器。伺服器會自動連接到 Agent Builder。<br>3. 點擊 `Run` 以使用該提示測試伺服器。 |
+| MCP Inspector | 使用 MCP Inspector 除錯 MCP Server。 | 1. 安裝 [Node.js](https://nodejs.org/)<br>2. 設定 Inspector：`cd inspector` 並執行 `npm install` <br>3. 開啟 VS Code 除錯面板。選擇 `Debug SSE in Inspector (Edge)` 或 `Debug SSE in Inspector (Chrome)`，按下 F5 開始除錯。<br>4. MCP Inspector 在瀏覽器啟動後，點擊 `Connect` 按鈕連接此 MCP Server。<br>5. 接著你可以 `List Tools`，選擇工具，輸入參數，並 `Run Tool` 來除錯伺服器程式碼。<br> |
 
-## Default Ports and customizations
+## 預設埠號與自訂設定
 
-| Debug Mode | Ports | Definitions | Customizations | Note |
-| ---------- | ----- | ------------ | -------------- |-------------- |
-| Agent Builder | 3001 | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | Edit [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) to change above ports. | N/A |
-| MCP Inspector | 3001 (Server); 5173 and 3000 (Inspector) | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | Edit [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) to change above ports.| N/A |
+| 除錯模式       | 埠號                         | 定義檔案                         | 自訂方式                                                                                     | 備註 |
+| -------------- | ---------------------------- | -------------------------------- | -------------------------------------------------------------------------------------------- | ---- |
+| Agent Builder  | 3001                         | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | 編輯 [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json)、[tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json)、[\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py)、[mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) 以更改上述埠號。 | 無   |
+| MCP Inspector  | 3001（伺服器）；5173 和 3000（Inspector） | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | 編輯 [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json)、[tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json)、[\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py)、[mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) 以更改上述埠號。 | 無   |
 
-## Feedback
+## 回饋
 
-If you have any feedback or suggestions for this template, please open an issue on the [AI Toolkit GitHub repository](https://github.com/microsoft/vscode-ai-toolkit/issues)
+如果你對此範本有任何回饋或建議，請在 [AI Toolkit GitHub repository](https://github.com/microsoft/vscode-ai-toolkit/issues) 開啟 issue。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-Could you please clarify what you mean by "mo"? Are you referring to a specific language or dialect? This will help me provide the correct translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

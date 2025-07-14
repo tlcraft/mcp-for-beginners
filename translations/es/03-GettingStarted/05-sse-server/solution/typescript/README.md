@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-16T15:19:51+00:00",
+  "translation_date": "2025-07-13T20:18:08+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "es"
 }
 -->
-# Ejecutar este ejemplo
+# Ejecutando este ejemplo
 
 ## -1- Instalar las dependencias
 
@@ -16,7 +16,6 @@ npm install
 ```
 
 ## -3- Ejecutar el ejemplo
-
 
 ```bash
 npm run build
@@ -34,16 +33,16 @@ Esto debería iniciar un servidor web con una interfaz visual que te permitirá 
 
 Una vez que el servidor esté conectado:
 
-- intenta listar las herramientas y ejecutar `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- intenta listar las herramientas y ejecutar `add`, con los argumentos 2 y 4, deberías ver 6 como resultado.
+- ve a resources y resource template y llama a "greeting", escribe un nombre y deberías ver un saludo con el nombre que proporcionaste.
 
-### Testing in CLI mode
+### Pruebas en modo CLI
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+El inspector que ejecutaste es en realidad una aplicación Node.js y `mcp dev` es un envoltorio alrededor de ella.
 
-- Start up the server with the command `npm run build`.
+- Inicia el servidor con el comando `npm run build`.
 
-- En una terminal aparte ejecuta el siguiente comando:
+- En una terminal separada ejecuta el siguiente comando:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
@@ -100,8 +99,8 @@ Deberías ver la siguiente salida:
     ```
 
 > ![!TIP]
-> Normalmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
+> Usualmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
 > Lee más sobre el inspector [aquí](https://github.com/modelcontextprotocol/inspector).
 
 **Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea derivada del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

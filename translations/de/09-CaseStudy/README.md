@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T15:27:10+00:00",
+  "translation_date": "2025-07-14T05:40:28+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "de"
 }
@@ -48,7 +48,7 @@ Diese Fallstudie zeigt eine praktische Anwendung von MCP zur Automatisierung von
 - Wiederholbare Automatisierungs-Workflows zu erstellen
 - Daten über verschiedene Systeme hinweg zu integrieren
 
-Dieses Beispiel verdeutlicht, wie selbst relativ einfache MCP-Implementierungen erhebliche Effizienzsteigerungen durch Automatisierung routinemäßiger Aufgaben und verbesserte Datenkonsistenz bieten können.
+Dieses Beispiel verdeutlicht, wie selbst relativ einfache MCP-Implementierungen erhebliche Effizienzsteigerungen durch Automatisierung routinemäßiger Aufgaben und verbesserte Datenkonsistenz erzielen können.
 
 ### 3. [Echtzeit-Dokumentenabruf mit MCP](./docs-mcp/README.md)
 
@@ -63,11 +63,11 @@ Das Kapitel enthält eine praktische Aufgabe, ein minimales funktionierendes Cod
 
 ### 4. [Interaktive Lernplan-Generator-Web-App mit MCP](./docs-mcp/README.md)
 
-Diese Fallstudie zeigt, wie man mit Chainlit und dem Model Context Protocol (MCP) eine interaktive Webanwendung erstellt, die personalisierte Lernpläne für jedes Thema generiert. Nutzer können ein Fach (z. B. „AI-900 Zertifizierung“) und eine Lernzeit (z. B. 8 Wochen) angeben, und die App liefert eine wöchentliche Aufschlüsselung der empfohlenen Inhalte. Chainlit ermöglicht eine konversationelle Chat-Oberfläche, die das Erlebnis ansprechend und adaptiv gestaltet.
+Diese Fallstudie zeigt, wie man mit Chainlit und dem Model Context Protocol (MCP) eine interaktive Webanwendung erstellt, die personalisierte Lernpläne für jedes Thema generiert. Nutzer können ein Fachgebiet (z. B. „AI-900 Zertifizierung“) und eine Lernzeit (z. B. 8 Wochen) angeben, und die App liefert eine wöchentliche Aufschlüsselung der empfohlenen Inhalte. Chainlit ermöglicht eine konversationelle Chat-Oberfläche, die das Erlebnis ansprechend und adaptiv gestaltet.
 
 - Konversationelle Web-App mit Chainlit
 - Nutzerdefinierte Eingaben für Thema und Dauer
-- Wöchentliche Inhalts-Empfehlungen mit MCP
+- Wöchentliche Inhaltsvorschläge mit MCP
 - Echtzeit- und adaptive Antworten in einer Chat-Oberfläche
 
 Das Projekt zeigt, wie konversationelle KI und MCP kombiniert werden können, um dynamische, nutzerorientierte Bildungswerkzeuge in modernen Webumgebungen zu schaffen.
@@ -83,11 +83,11 @@ Diese Fallstudie zeigt, wie Sie Microsoft Learn Docs direkt in Ihre VS Code-Umge
 - MCP in GitHub-Workflows integrieren, um eine kontinuierliche Dokumentationsvalidierung zu gewährleisten
 
 Die Implementierung umfasst:
-- Beispielhafte `.vscode/mcp.json`-Konfiguration für einfache Einrichtung
+- Beispielkonfiguration `.vscode/mcp.json` für eine einfache Einrichtung
 - Screenshot-basierte Anleitungen zur In-Editor-Erfahrung
 - Tipps zur Kombination von Copilot und MCP für maximale Produktivität
 
-Dieses Szenario eignet sich ideal für Kursautoren, Dokumentationsschreiber und Entwickler, die fokussiert im Editor arbeiten möchten – mit Docs, Copilot und Validierungstools, alles unterstützt durch MCP.
+Dieses Szenario ist ideal für Kursautoren, Dokumentationsschreiber und Entwickler, die fokussiert im Editor arbeiten möchten, während sie mit Docs, Copilot und Validierungstools arbeiten – alles unterstützt durch MCP.
 
 ### 6. [Erstellung eines APIM MCP Servers](./apimsample.md)
 
@@ -102,7 +102,7 @@ Dieses Beispiel zeigt, wie man die Möglichkeiten von Azure nutzt, um einen robu
 
 ## Fazit
 
-Diese Fallstudien verdeutlichen die Vielseitigkeit und praktischen Einsatzmöglichkeiten des Model Context Protocol in realen Szenarien. Von komplexen Multi-Agenten-Systemen bis hin zu gezielten Automatisierungs-Workflows bietet MCP eine standardisierte Möglichkeit, KI-Systeme mit den benötigten Tools und Daten zu verbinden, um echten Mehrwert zu schaffen.
+Diese Fallstudien verdeutlichen die Vielseitigkeit und praktischen Einsatzmöglichkeiten des Model Context Protocol in realen Szenarien. Von komplexen Multi-Agenten-Systemen bis hin zu gezielten Automatisierungs-Workflows bietet MCP eine standardisierte Möglichkeit, KI-Systeme mit den benötigten Tools und Daten zu verbinden, um Mehrwert zu schaffen.
 
 Durch das Studium dieser Implementierungen erhalten Sie Einblicke in Architektur-Patterns, Implementierungsstrategien und Best Practices, die Sie in eigenen MCP-Projekten anwenden können. Die Beispiele zeigen, dass MCP nicht nur ein theoretisches Konzept, sondern eine praxisnahe Lösung für reale geschäftliche Herausforderungen ist.
 
@@ -117,4 +117,4 @@ Durch das Studium dieser Implementierungen erhalten Sie Einblicke in Architektur
 Nächster Schritt: Hands-on-Lab [Streamlining AI Workflows: Building an MCP Server with AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

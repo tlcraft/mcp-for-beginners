@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
-  "translation_date": "2025-07-04T18:04:47+00:00",
+  "translation_date": "2025-07-13T18:18:06+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "vi"
 }
@@ -27,7 +27,7 @@ Hãy nhập các thư viện cần thiết, chúng ta sẽ cần tham chiếu đ
 
 ---
 
-Chúng ta chuyển sang phần khởi tạo.
+Chúng ta hãy chuyển sang phần khởi tạo.
 
 ### -2- Khởi tạo client và giao thức truyền tải
 
@@ -37,7 +37,7 @@ Chúng ta sẽ cần tạo một thể hiện của giao thức truyền tải v
 
 ### -3- Liệt kê các tính năng của server
 
-Bây giờ, chúng ta đã có một client có thể kết nối khi chương trình được chạy. Tuy nhiên, nó chưa liệt kê các tính năng của server, vậy hãy làm điều đó ngay bây giờ:
+Bây giờ, chúng ta đã có một client có thể kết nối khi chương trình được chạy. Tuy nhiên, nó chưa thực sự liệt kê các tính năng của server, vậy hãy làm điều đó ngay bây giờ:
 
 ---
 
@@ -92,4 +92,4 @@ Những điểm chính cần nhớ về client trong chương này là:
 - Tiếp theo: [Tạo client với LLM](../03-llm-client/README.md)
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

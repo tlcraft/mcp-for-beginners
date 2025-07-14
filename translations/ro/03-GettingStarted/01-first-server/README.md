@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:15:04+00:00",
+  "translation_date": "2025-07-13T17:40:12+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "ro"
 }
@@ -41,7 +41,7 @@ Ar trebui să vezi următoarea interfață de utilizator:
 
   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.ro.png)
 
-1. Selectează "Tools" și "listTools", ar trebui să apară "Add", selectează "Add" și completează valorile parametrilor.
+1. Selectează "Tools" și "listTools", ar trebui să apară opțiunea "Add", selectează "Add" și completează valorile parametrilor.
 
   Ar trebui să vezi următorul răspuns, adică un rezultat de la instrumentul "add":
 
@@ -69,11 +69,11 @@ MCP oferă SDK-uri oficiale pentru mai multe limbaje:
 
 ## Exemple
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Calculator Java](../samples/java/calculator/README.md)
+- [Calculator .Net](../../../../03-GettingStarted/samples/csharp)
+- [Calculator JavaScript](../samples/javascript/README.md)
+- [Calculator TypeScript](../samples/typescript/README.md)
+- [Calculator Python](../../../../03-GettingStarted/samples/python)
 
 ## Exercițiu
 

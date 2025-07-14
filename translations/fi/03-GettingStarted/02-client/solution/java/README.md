@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:12:43+00:00",
+  "translation_date": "2025-07-13T18:35:27+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "fi"
 }
 -->
 # MCP Java Client - Laskin Demo
 
-Tämä projekti havainnollistaa, miten luodaan Java-asiakas, joka yhdistyy MCP (Model Context Protocol) -palvelimeen ja kommunikoi sen kanssa. Tässä esimerkissä yhdistämme luvun 01 laskinpalvelimeen ja suoritetaan erilaisia matemaattisia operaatioita.
+Tämä projekti näyttää, miten luodaan Java-asiakas, joka yhdistää MCP (Model Context Protocol) -palvelimeen ja kommunikoi sen kanssa. Tässä esimerkissä yhdistämme luvun 01 laskinpalvelimeen ja suoritetaan erilaisia matemaattisia operaatioita.
 
-## Esivaatimukset
+## Vaatimukset
 
 Ennen tämän asiakkaan käynnistämistä sinun tulee:
 
-1. **Käynnistää Laskinpalvelin** luvusta 01:
+1. **Käynnistää luvun 01 laskinpalvelin**:
    - Siirry laskinpalvelimen hakemistoon: `03-GettingStarted/01-first-server/solution/java/`
    - Käännä ja käynnistä laskinpalvelin:
      ```cmd
@@ -23,28 +23,28 @@ Ennen tämän asiakkaan käynnistämistä sinun tulee:
      .\mvnw clean install -DskipTests
      java -jar target\calculator-server-0.0.1-SNAPSHOT.jar
      ```
-   - Palvelimen tulisi olla käynnissä osoitteessa `http://localhost:8080`
+   - Palvelimen pitäisi olla käynnissä osoitteessa `http://localhost:8080`
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. **Java 21 tai uudempi** asennettuna järjestelmääsi
+3. **Maven** (sisältyy Maven Wrapperin kautta)
 
-## What is the SDKClient?
+## Mikä on SDKClient?
 
-The `SDKClient` on Java-sovellus, joka näyttää miten:
+`SDKClient` on Java-sovellus, joka näyttää, miten:
 - Yhdistetään MCP-palvelimeen Server-Sent Events (SSE) -kuljetuksella
-- Luetellaan palvelimen käytettävissä olevat työkalut
+- Listataan palvelimen tarjoamat työkalut
 - Kutsutaan erilaisia laskimen toimintoja etänä
-- Käsitellään vastaukset ja näytetään tulokset
+- Käsitellään vastauksia ja näytetään tulokset
 
 ## Miten se toimii
 
 Asiakas käyttää Spring AI MCP -kehystä seuraavasti:
 
-1. **Yhdistämisen muodostaminen**: Luo WebFlux SSE -asiakaskuljetuksen yhdistääkseen laskinpalvelimeen
-2. **Asiakkaan alustaminen**: Määrittää MCP-asiakkaan ja muodostaa yhteyden
-3. **Työkalujen löytäminen**: Listaa kaikki käytettävissä olevat laskinoperaatiot
-4. **Operaatioiden suorittaminen**: Kutsuu erilaisia matemaattisia funktioita esimerkkidatalla
-5. **Tulosten näyttäminen**: Näyttää kunkin laskutoimituksen tulokset
+1. **Yhdistää**: Luo WebFlux SSE -asiakaskuljetuksen yhdistääkseen laskinpalvelimeen
+2. **Alustaa asiakkaan**: Määrittää MCP-asiakkaan ja muodostaa yhteyden
+3. **Löytää työkalut**: Listaa kaikki käytettävissä olevat laskinoperaatiot
+4. **Suorittaa operaatiot**: Kutsuu erilaisia matemaattisia funktioita esimerkkidatalla
+5. **Näyttää tulokset**: Esittää kunkin laskutoimituksen tulokset
 
 ## Projektin rakenne
 
@@ -72,13 +72,13 @@ Projekti käyttää seuraavia keskeisiä riippuvuuksia:
 ```
 
 Tämä riippuvuus tarjoaa:
-- `McpClient` - The main client interface
-- `WebFluxSseClientTransport` - SSE-kuljetus verkkopohjaiseen viestintään
+- `McpClient` - pääasiakasrajapinnan
+- `WebFluxSseClientTransport` - SSE-kuljetuksen web-pohjaiseen viestintään
 - MCP-protokollan skeemat sekä pyyntö- ja vastaustyypit
 
 ## Projektin kääntäminen
 
-Käännä projekti Maven-wrapperilla:
+Käännä projekti Maven Wrapperilla:
 
 ```cmd
 .\mvnw clean install
@@ -90,15 +90,15 @@ Käännä projekti Maven-wrapperilla:
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**Huomio**: Varmista, että laskinpalvelin on käynnissä osoitteessa `http://localhost:8080` before executing any of these commands.
+**Huom**: Varmista, että laskinpalvelin on käynnissä osoitteessa `http://localhost:8080` ennen komentojen suorittamista.
 
-## What the Client Does
+## Mitä asiakas tekee
 
-When you run the client, it will:
+Kun ajat asiakkaan, se:
 
-1. **Connect** to the calculator server at `http://localhost:8080`
-2. **Listaa työkalut** - Näyttää kaikki käytettävissä olevat laskinoperaatiot
-3. **Suorita laskutoimitukset**:
+1. **Yhdistää** laskinpalvelimeen osoitteessa `http://localhost:8080`
+2. **Listaa työkalut** - näyttää kaikki käytettävissä olevat laskinoperaatiot
+3. **Suorittaa laskutoimituksia**:
    - Yhteenlasku: 5 + 3 = 8
    - Vähennyslasku: 10 - 4 = 6
    - Kertolasku: 6 × 7 = 42
@@ -106,7 +106,7 @@ When you run the client, it will:
    - Potenssi: 2^8 = 256
    - Neliöjuuri: √16 = 4
    - Absoluuttinen arvo: |-5.5| = 5.5
-   - Ohje: Näyttää käytettävissä olevat operaatiot
+   - Ohje: näyttää käytettävissä olevat operaatiot
 
 ## Odotettu tulos
 
@@ -122,7 +122,7 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**Huomio**: Maven saattaa antaa varoituksia päättyvistä säikeistä - tämä on normaalia reaktiivisissa sovelluksissa eikä tarkoita virhettä.
+**Huom**: Maven saattaa näyttää varoituksia jäljellä olevista säikeistä lopussa – tämä on normaalia reaktiivisissa sovelluksissa eikä tarkoita virhettä.
 
 ## Koodin ymmärtäminen
 
@@ -145,10 +145,10 @@ CallToolResult resultAdd = client.callTool(new CallToolRequest("add", Map.of("a"
 ```
 Kutsuu "add"-työkalua parametreilla a=5.0 ja b=3.0.
 
-## Vianmääritys
+## Vianetsintä
 
 ### Palvelin ei ole käynnissä
-Jos saat yhteysvirheitä, varmista että luvun 01 laskinpalvelin on käynnissä:
+Jos saat yhteysvirheitä, varmista, että luvun 01 laskinpalvelin on käynnissä:
 ```
 Error: Connection refused
 ```
@@ -173,5 +173,5 @@ Jos kohtaat käännösvirheitä:
 - [Model Context Protocol Specification](https://modelcontextprotocol.io/)
 - [Spring WebFlux Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
-**Vastuuvapauslauseke:**  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+**Vastuuvapauslauseke**:  
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

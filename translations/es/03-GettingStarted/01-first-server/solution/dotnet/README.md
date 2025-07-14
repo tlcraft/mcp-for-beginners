@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-07-09T21:56:37+00:00",
+  "translation_date": "2025-07-13T17:46:47+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "es"
 }
@@ -95,7 +95,7 @@ Deberías ver la siguiente salida:
 ```
 
 > ![!TIP]
-> Usualmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
+> Generalmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
 > Lee más sobre el inspector [aquí](https://github.com/modelcontextprotocol/inspector).
 
 **Aviso legal**:  

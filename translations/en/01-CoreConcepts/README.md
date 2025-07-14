@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "355b12a5970c5c9e6db0bee970c751ba",
-  "translation_date": "2025-07-04T15:13:36+00:00",
+  "translation_date": "2025-07-13T15:42:04+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "en"
 }

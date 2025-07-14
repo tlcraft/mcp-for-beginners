@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-07-09T21:57:55+00:00",
+  "translation_date": "2025-07-13T17:48:09+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "mr"
 }
@@ -33,7 +33,7 @@ npx @modelcontextprotocol/inspector dotnet run
 
 सर्व्हर कनेक्ट झाल्यानंतर:
 
-- टूल्सची यादी पाहा आणि `add` चालवा, 2 आणि 4 या आर्ग्युमेंट्ससह, तुम्हाला निकालात 6 दिसेल.
+- टूल्सची यादी पाहा आणि `add` चालवा, 2 आणि 4 या आर्ग्युमेंटसह, तुम्हाला निकालात 6 दिसेल.
 - resources आणि resource template मध्ये जा आणि "greeting" कॉल करा, नाव टाका आणि तुम्हाला दिलेल्या नावासह एक अभिवादन दिसेल.
 
 ### CLI मोडमध्ये चाचणी
@@ -74,7 +74,7 @@ npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 }
 ```
 
-टूल कॉल करण्यासाठी टाइप करा:
+टूल वापरण्यासाठी टाइप करा:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-name Add --tool-arg a=1 --tool-arg b=2

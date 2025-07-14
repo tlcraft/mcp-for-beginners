@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T22:58:43+00:00",
+  "translation_date": "2025-07-13T17:26:31+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "hk"
 }
@@ -29,9 +29,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### -8- 使用 inspector 執行
 
-Inspector 是一個很棒的工具，可以啟動你的伺服器並讓你與它互動，方便你測試功能是否正常。讓我們啟動它：
+inspector 是一個很棒的工具，可以啟動你的伺服器並讓你與它互動，方便你測試功能是否正常。讓我們啟動它：
 > [!NOTE]
-> 在「command」欄位中顯示可能會有所不同，因為它包含了用於運行伺服器的特定執行環境指令/
+> 在「command」欄位中顯示可能會有所不同，因為它包含了用於運行特定執行環境的伺服器指令/
 你應該會看到以下的使用者介面：
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.hk.png)

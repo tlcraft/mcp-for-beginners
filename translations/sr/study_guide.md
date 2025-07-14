@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a607d4febc94caee9a12b77795f7fc9a",
-  "translation_date": "2025-06-11T16:51:31+00:00",
+  "translation_date": "2025-07-13T15:18:47+00:00",
   "source_file": "study_guide.md",
   "language_code": "sr"
 }
 -->
-# Model Context Protocol (MCP) za početnike - Vodič za učenje
+# Model Context Protocol (MCP) за почетнике - Водич за учење
 
-Ovaj vodič pruža pregled strukture i sadržaja repozitorijuma za kurikulum "Model Context Protocol (MCP) za početnike". Koristite ovaj vodič da efikasno navigirate repozitorijumom i maksimalno iskoristite dostupne resurse.
+Овај водич пружа преглед структуре и садржаја репозиторијума за курс "Model Context Protocol (MCP) за почетнике". Користите овај водич да бисте ефикасно проналазили потребне материјале и максимално искористили расположиве ресурсе.
 
-## Pregled repozitorijuma
+## Преглед репозиторијума
 
-Model Context Protocol (MCP) je standardizovani okvir za interakciju između AI modela i klijentskih aplikacija. Ovaj repozitorijum nudi sveobuhvatan kurikulum sa praktičnim primerima koda u C#, Java, JavaScript, Python i TypeScript, namenjen AI developerima, sistemskim arhitektama i softverskim inženjerima.
+Model Context Protocol (MCP) је стандардизован оквир за интеракцију између AI модела и клијент апликација. Овај репозиторијум нуди свеобухватан курс са практичним примерима кода у C#, Java, JavaScript, Python и TypeScript, намењен AI програмерима, системским архитектама и софтверским инжењерима.
 
-## Vizuelna mapa kurikuluma
+## Визуелна мапа курса
 
 ```mermaid
 mindmap
@@ -86,112 +86,112 @@ mindmap
       (Production Deployment)
 ```
 
-## Struktura repozitorijuma
+## Структура репозиторијума
 
-Repozitorijum je organizovan u deset glavnih sekcija, od kojih se svaka fokusira na različite aspekte MCP-a:
+Репозиторијум је организован у десет главних секција, од којих се свака бави различитим аспектима MCP:
 
-1. **Uvod (00-Introduction/)**
-   - Pregled Model Context Protocol-a
-   - Zašto je standardizacija važna u AI procesima
-   - Praktični primeri upotrebe i prednosti
+1. **Увод (00-Introduction/)**
+   - Преглед Model Context Protocol-а
+   - Зашто је стандардизација важна у AI процесима
+   - Практичне примене и предности
 
-2. **Osnovni koncepti (01-CoreConcepts/)**
-   - Klijent-server arhitektura
-   - Ključne komponente protokola
-   - Obrasci razmene poruka u MCP-u
+2. **Основни појмови (01-CoreConcepts/)**
+   - Клијент-сервер архитектура
+   - Кључне компоненте протокола
+   - Обрасци размене порука у MCP
 
-3. **Bezbednost (02-Security/)**
-   - Bezbednosne pretnje u sistemima zasnovanim na MCP-u
-   - Najbolje prakse za bezbednu implementaciju
-   - Strategije autentifikacije i autorizacije
+3. **Безбедност (02-Security/)**
+   - Безбедносне претње у системима заснованим на MCP-у
+   - Најбоље праксе за обезбеђење имплементација
+   - Стратегије аутентификације и ауторизације
 
-4. **Početak rada (03-GettingStarted/)**
-   - Podešavanje okruženja i konfiguracija
-   - Kreiranje osnovnih MCP servera i klijenata
-   - Integracija sa postojećim aplikacijama
-   - Podsekcije za prvi server, prvi klijent, LLM klijent, VS Code integraciju, SSE server, AI Toolkit, testiranje i deployment
+4. **Почетак рада (03-GettingStarted/)**
+   - Подешавање окружења и конфигурација
+   - Креирање основних MCP сервера и клијената
+   - Интеграција са постојећим апликацијама
+   - Подсекције за први сервер, првог клијента, LLM клијента, интеграцију са VS Code, SSE сервер, AI Toolkit, тестирање и деплојмент
 
-5. **Praktična implementacija (04-PracticalImplementation/)**
-   - Korišćenje SDK-ova u različitim programskim jezicima
-   - Tehnike za debagovanje, testiranje i validaciju
-   - Kreiranje ponovo upotrebljivih šablona za promptove i tokove rada
-   - Primeri projekata sa implementacionim kodom
+5. **Практична имплементација (04-PracticalImplementation/)**
+   - Коришћење SDK-ова у различитим програмским језицима
+   - Технике дебаговања, тестирања и валидације
+   - Креирање поновљивих шаблона упита и радних токова
+   - Пример пројеката са примерима имплементације
 
-6. **Napredne teme (05-AdvancedTopics/)**
-   - Višemodalni AI tokovi rada i proširivost
-   - Strategije za bezbedno skaliranje
-   - MCP u poslovnim ekosistemima
-   - Specijalizovane teme uključujući Azure integraciju, multi-modalnost, OAuth2, root kontekste, rutiranje, uzorkovanje, skaliranje, bezbednost, integraciju web pretrage i streaming.
+6. **Напредне теме (05-AdvancedTopics/)**
+   - Мултимодални AI радни токови и проширивост
+   - Стратегије безбедног скалирања
+   - MCP у корпоративним екосистемима
+   - Специјализоване теме укључујући Azure интеграцију, мултимодалност, OAuth2, root context-ове, рутирање, узорковање, скалирање, безбедност, интеграцију веб претраге и стриминг.
 
-7. **Doprinosi zajednice (06-CommunityContributions/)**
-   - Kako doprineti kodom i dokumentacijom
-   - Saradnja preko GitHub-a
-   - Poboljšanja i povratne informacije iz zajednice
+7. **Заједнички доприноси (06-CommunityContributions/)**
+   - Како допринети кодом и документацијом
+   - Сарадња преко GitHub-а
+   - Побољшања и повратне информације од заједнице
 
-8. **Lekcije iz ranog usvajanja (07-LessonsfromEarlyAdoption/)**
-   - Implementacije iz stvarnog sveta i uspešne priče
-   - Izgradnja i deployment rešenja zasnovanih na MCP-u
-   - Trendovi i budući planovi razvoja
+8. **Усвојене лекције (07-LessonsfromEarlyAdoption/)**
+   - Реалне имплементације и успешне приче
+   - Изградња и деплојмент решења заснованих на MCP-у
+   - Трендови и будући планови
 
-9. **Najbolje prakse (08-BestPractices/)**
-   - Podešavanje performansi i optimizacija
-   - Dizajniranje otpornog MCP sistema
-   - Strategije testiranja i otpornosti
+9. **Најбоље праксе (08-BestPractices/)**
+   - Подешавање перформанси и оптимизација
+   - Дизајн отпорних MCP система
+   - Стратегије тестирања и отпорности
 
-10. **Studije slučaja (09-CaseStudy/)**
-    - Detaljna analiza arhitektura MCP rešenja
-    - Šabloni za deployment i saveti za integraciju
-    - Ilustrovani dijagrami i vođeni pregledi projekata
+10. **Студије случаја (09-CaseStudy/)**
+    - Детаљне анализе архитектура MCP решења
+    - Планови за деплојмент и савети за интеграцију
+    - Аннотовани дијаграми и вођење кроз пројекте
 
-11. **Praktična radionica (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - Sveobuhvatna radionica koja kombinuje MCP sa Microsoft-ovim AI Toolkit-om za VS Code
-    - Izgradnja inteligentnih aplikacija koje povezuju AI modele sa stvarnim alatima
-    - Praktični moduli koji pokrivaju osnove, razvoj prilagođenih servera i strategije produkcijskog deploymenta
+11. **Практична радионица (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
+    - Свеобухватна радионица која комбинује MCP са Microsoft-овим AI Toolkit-ом за VS Code
+    - Изградња интелигентних апликација које повезују AI моделе са стварним алатима
+    - Практични модули који покривају основе, развој прилагођених сервера и стратегије за продукцијски деплојмент
 
-## Primeri projekata
+## Пример пројеката
 
-Repozitorijum sadrži više primera projekata koji demonstriraju implementaciju MCP-a u različitim programskim jezicima:
+Репозиторијум садржи више пример пројеката који показују имплементацију MCP-а у различитим програмским језицима:
 
-### Osnovni MCP kalkulator primeri
-- C# MCP Server primer
-- Java MCP kalkulator
-- JavaScript MCP demo
-- Python MCP server
-- TypeScript MCP primer
+### Основни MCP калкулатор примери
+- C# MCP сервер пример
+- Java MCP калкулатор
+- JavaScript MCP демо
+- Python MCP сервер
+- TypeScript MCP пример
 
-### Napredni MCP kalkulator projekti
-- Napredni C# primer
-- Java Container App primer
-- JavaScript napredni primer
-- Python kompleksna implementacija
-- TypeScript Container primer
+### Напредни MCP калкулатор пројекти
+- Напредни C# пример
+- Java контејнер апликација пример
+- JavaScript напредни пример
+- Python комплексна имплементација
+- TypeScript контејнер пример
 
-## Dodatni resursi
+## Додатни ресурси
 
-Repozitorijum sadrži prateće resurse:
+Репозиторијум укључује пратеће ресурсе:
 
-- **Folder sa slikama**: Sadrži dijagrame i ilustracije korišćene kroz kurikulum
-- **Prevodi**: Višejezična podrška sa automatskim prevodima dokumentacije
-- **Zvanični MCP resursi**:
-  - [MCP Dokumentacija](https://modelcontextprotocol.io/)
-  - [MCP Specifikacija](https://spec.modelcontextprotocol.io/)
-  - [MCP GitHub Repozitorijum](https://github.com/modelcontextprotocol)
+- **Фолдер са сликама**: Садржи дијаграме и илустрације коришћене кроз цео курс
+- **Преводи**: Подршка за више језика са аутоматским преводима документације
+- **Званични MCP ресурси**:
+  - [MCP документација](https://modelcontextprotocol.io/)
+  - [MCP спецификација](https://spec.modelcontextprotocol.io/)
+  - [MCP GitHub репозиторијум](https://github.com/modelcontextprotocol)
 
-## Kako koristiti ovaj repozitorijum
+## Како користити овај репозиторијум
 
-1. **Učenje po redosledu**: Pratite poglavlja redom (00 do 10) za strukturisano učenje.
-2. **Fokus na određeni jezik**: Ako vas zanima određeni programski jezik, istražite direktorijume sa primerima za implementacije na željenom jeziku.
-3. **Praktična implementacija**: Počnite sa sekcijom "Getting Started" da podesite okruženje i napravite prvi MCP server i klijent.
-4. **Napredna istraživanja**: Kada savladate osnove, pređite na napredne teme da proširite svoje znanje.
-5. **Uključenje u zajednicu**: Pridružite se [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) da se povežete sa stručnjacima i drugim developerima.
+1. **Секвенцијално учење**: Пратите поглавља по реду (од 00 до 10) за структуриран процес учења.
+2. **Фокус на језик**: Ако вас занима одређени програмски језик, истражите директоријуме са примерима за имплементације на том језику.
+3. **Практична имплементација**: Почните са одељком "Почетак рада" да подесите окружење и направите први MCP сервер и клијента.
+4. **Напредна истраживања**: Када савладате основе, пређите на напредне теме да бисте проширили знање.
+5. **Укључивање у заједницу**: Придружите се [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) да бисте се повезали са стручњацима и другим програмерима.
 
-## Doprinos
+## Доприноси
 
-Ovaj repozitorijum je otvoren za doprinose iz zajednice. Pogledajte sekciju Community Contributions za uputstva kako da doprinesete.
+Овај репозиторијум је отворен за доприносе заједнице. Погледајте одељак Заједнички доприноси за упутства како да учествујете.
 
 ---
 
-*Ovaj vodič za učenje je napravljen 11. juna 2025. i pruža pregled repozitorijuma do tog datuma. Sadržaj repozitorijuma mogao je biti ažuriran od tada.*
+*Овај водич за учење је креиран 11. јуна 2025. и пружа преглед репозиторијума стања на тај датум. Садржај репозиторијума могао је бити ажуриран од тада.*
 
-**Ограничење одговорности**:  
-Овај документ је преведен помоћу AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако настојимо да превод буде прецизан, имајте у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било какве неспоразуме или погрешне тумачења која могу настати коришћењем овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

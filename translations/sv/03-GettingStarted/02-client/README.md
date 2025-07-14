@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
-  "translation_date": "2025-07-04T17:35:00+00:00",
+  "translation_date": "2025-07-13T18:16:14+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "sv"
 }
@@ -23,7 +23,7 @@ Som sagt ovan, låt oss ta oss tid att förklara koden, och koda gärna med om d
 
 ### -1- Importera biblioteken
 
-Låt oss importera de bibliotek vi behöver, vi kommer behöva referenser till en klient och till vårt valda transportprotokoll, stdio. stdio är ett protokoll för saker som ska köras på din lokala maskin. SSE är ett annat transportprotokoll som vi kommer visa i framtida kapitel, men det är ditt andra alternativ. För nu, låt oss fortsätta med stdio.
+Låt oss importera de bibliotek vi behöver, vi kommer att behöva referenser till en klient och till vårt valda transportprotokoll, stdio. stdio är ett protokoll för saker som är tänkta att köras på din lokala maskin. SSE är ett annat transportprotokoll som vi kommer att visa i framtida kapitel, men det är ditt andra alternativ. För nu, låt oss fortsätta med stdio.
 
 Låt oss gå vidare till instansiering.
 
@@ -33,9 +33,9 @@ Vi behöver skapa en instans av transporten och en av vår klient:
 
 ### -3- Lista serverns funktioner
 
-Nu har vi en klient som kan ansluta när programmet körs. Men den listar inte faktiskt sina funktioner, så låt oss göra det härnäst:
+Nu har vi en klient som kan ansluta till servern om programmet körs. Men den listar faktiskt inte dess funktioner, så låt oss göra det härnäst:
 
-Bra, nu har vi fångat alla funktioner. Nu är frågan när använder vi dem? Den här klienten är ganska enkel, enkel i den meningen att vi behöver anropa funktionerna explicit när vi vill använda dem. I nästa kapitel kommer vi skapa en mer avancerad klient som har tillgång till sin egen stora språkmodell, LLM. Men för nu, låt oss se hur vi kan anropa funktionerna på servern:
+Bra, nu har vi fångat alla funktioner. Nu är frågan när använder vi dem? Den här klienten är ganska enkel, enkel i den meningen att vi behöver anropa funktionerna explicit när vi vill använda dem. I nästa kapitel kommer vi att skapa en mer avancerad klient som har tillgång till sin egen stora språkmodell, LLM. Men för nu, låt oss se hur vi kan anropa funktionerna på servern:
 
 ### -4- Anropa funktioner
 
@@ -47,7 +47,7 @@ För att köra klienten, skriv följande kommando i terminalen:
 
 ## Uppgift
 
-I denna uppgift ska du använda det du lärt dig om att skapa en klient men skapa en klient på egen hand.
+I denna uppgift ska du använda det du lärt dig om att skapa en klient men skapa en egen klient.
 
 Här är en server du kan använda som du behöver anropa via din klientkod, se om du kan lägga till fler funktioner till servern för att göra den mer intressant.
 
@@ -60,7 +60,7 @@ Här är en server du kan använda som du behöver anropa via din klientkod, se 
 De viktigaste punkterna i detta kapitel om klienter är följande:
 
 - Kan användas både för att upptäcka och anropa funktioner på servern.
-- Kan starta en server samtidigt som den startar sig själv (som i detta kapitel) men klienter kan också ansluta till redan körande servrar.
+- Kan starta en server samtidigt som den startar sig själv (som i detta kapitel), men klienter kan också ansluta till redan körande servrar.
 - Är ett utmärkt sätt att testa serverns kapabiliteter bredvid alternativ som Inspector, som beskrevs i föregående kapitel.
 
 ## Ytterligare resurser

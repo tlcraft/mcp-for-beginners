@@ -2,51 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7a11a5dcf2f9fdf6392f5a4545cf005e",
-  "translation_date": "2025-06-11T16:07:37+00:00",
+  "translation_date": "2025-07-14T03:42:46+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "ms"
 }
 -->
-# Lesson: Building a Web Search MCP Server
+# Pelajaran: Membangun Pelayan MCP Carian Web
 
-This chapter shows how to create a real-world AI agent that integrates with external APIs, handles various data types, manages errors, and coordinates multiple tools—all in a production-ready setup. You'll learn about:
+Bab ini menunjukkan cara membina agen AI dunia sebenar yang mengintegrasikan dengan API luaran, mengendalikan pelbagai jenis data, menguruskan ralat, dan mengatur pelbagai alat—semuanya dalam format sedia untuk produksi. Anda akan melihat:
 
-- **Integration with external APIs that require authentication**
-- **Handling diverse data types from multiple endpoints**
-- **Robust error handling and logging strategies**
-- **Orchestrating multiple tools within a single server**
+- **Integrasi dengan API luaran yang memerlukan pengesahan**
+- **Mengendalikan pelbagai jenis data dari pelbagai titik akhir**
+- **Strategi pengendalian ralat dan pencatatan yang kukuh**
+- **Pengurusan pelbagai alat dalam satu pelayan**
 
-By the end, you'll gain practical experience with patterns and best practices essential for advanced AI and LLM-powered applications.
+Menjelang akhir, anda akan mempunyai pengalaman praktikal dengan corak dan amalan terbaik yang penting untuk aplikasi AI dan LLM yang maju.
 
-## Introduction
+## Pengenalan
 
-In this lesson, you'll learn how to build an advanced MCP server and client that enhance LLM capabilities with real-time web data using SerpAPI. This is a key skill for developing dynamic AI agents that access up-to-date information from the web.
+Dalam pelajaran ini, anda akan belajar cara membina pelayan dan klien MCP lanjutan yang memperluaskan keupayaan LLM dengan data web masa nyata menggunakan SerpAPI. Ini adalah kemahiran penting untuk membangunkan agen AI dinamik yang boleh mengakses maklumat terkini dari web.
 
-## Learning Objectives
+## Objektif Pembelajaran
 
-By the end of this lesson, you will be able to:
+Menjelang akhir pelajaran ini, anda akan dapat:
 
-- Integrate external APIs (like SerpAPI) securely into an MCP server
-- Implement multiple tools for web, news, product search, and Q&A
-- Parse and format structured data for LLM consumption
-- Handle errors and manage API rate limits effectively
-- Build and test both automated and interactive MCP clients
+- Mengintegrasikan API luaran (seperti SerpAPI) dengan selamat ke dalam pelayan MCP
+- Melaksanakan pelbagai alat untuk carian web, berita, produk, dan soal jawab
+- Memparsing dan memformat data berstruktur untuk penggunaan LLM
+- Mengendalikan ralat dan mengurus had kadar API dengan berkesan
+- Membina dan menguji klien MCP automatik dan interaktif
 
-## Web Search MCP Server
+## Pelayan MCP Carian Web
 
-This section introduces the architecture and features of the Web Search MCP Server. You'll see how FastMCP and SerpAPI work together to extend LLM capabilities with real-time web data.
+Bahagian ini memperkenalkan seni bina dan ciri-ciri Pelayan MCP Carian Web. Anda akan melihat bagaimana FastMCP dan SerpAPI digunakan bersama untuk memperluaskan keupayaan LLM dengan data web masa nyata.
 
-### Overview
+### Gambaran Keseluruhan
 
-This implementation includes four tools that demonstrate MCP's ability to handle diverse, external API-driven tasks securely and efficiently:
+Pelaksanaan ini menampilkan empat alat yang mempamerkan kebolehan MCP untuk mengendalikan tugasan berasaskan API luaran yang pelbagai dengan selamat dan cekap:
 
-- **general_search**: For broad web results
-- **news_search**: For recent headlines
-- **product_search**: For e-commerce data
-- **qna**: For question-and-answer snippets
+- **general_search**: Untuk keputusan web umum
+- **news_search**: Untuk tajuk berita terkini
+- **product_search**: Untuk data e-dagang
+- **qna**: Untuk petikan soal jawab
 
-### Features
-- **Code Examples**: Contains language-specific code blocks for Python (and easily extendable to other languages) using collapsible sections for clarity
+### Ciri-ciri
+- **Contoh Kod**: Termasuk blok kod khusus bahasa untuk Python (dan mudah diperluaskan ke bahasa lain) menggunakan bahagian boleh lipat untuk kejelasan
 
 <details>  
 <summary>Python</summary>  
@@ -69,14 +69,14 @@ async def run_search():
 ```
 </details>
 
-Before running the client, it helps to understand what the server does. The [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
+Sebelum menjalankan klien, adalah berguna untuk memahami apa yang dilakukan oleh pelayan. Fail [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) melaksanakan pelayan MCP, mendedahkan alat untuk carian web, berita, produk, dan soal jawab dengan mengintegrasikan SerpAPI. Ia mengendalikan permintaan masuk, mengurus panggilan API, memparsing respons, dan mengembalikan hasil berstruktur kepada klien.
 
-You can review the full implementation in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
+Anda boleh menyemak pelaksanaan penuh dalam [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
-Here is a brief example of how the server defines and registers a tool:
+Berikut adalah contoh ringkas bagaimana pelayan mentakrif dan mendaftar alat:
 
 <details>  
-<summary>Python Server</summary> 
+<summary>Pelayan Python</summary> 
 
 ```python
 # server.py (excerpt)
@@ -93,24 +93,24 @@ if __name__ == "__main__":
 ```
 </details>
 
-- **External API Integration**: Shows secure handling of API keys and external requests
-- **Structured Data Parsing**: Demonstrates how to convert API responses into LLM-friendly formats
-- **Error Handling**: Robust error management with appropriate logging
-- **Interactive Client**: Includes automated tests and an interactive mode for testing
-- **Context Management**: Uses MCP Context for logging and tracking requests
+- **Integrasi API Luaran**: Menunjukkan pengendalian kunci API dan permintaan luaran dengan selamat
+- **Parsing Data Berstruktur**: Menunjukkan cara menukar respons API ke format mesra LLM
+- **Pengendalian Ralat**: Pengendalian ralat yang kukuh dengan pencatatan yang sesuai
+- **Klien Interaktif**: Termasuk ujian automatik dan mod interaktif untuk pengujian
+- **Pengurusan Konteks**: Memanfaatkan MCP Context untuk pencatatan dan penjejakan permintaan
 
-## Prerequisites
+## Prasyarat
 
-Before starting, ensure your environment is set up properly by following these steps. This guarantees all dependencies are installed and your API keys are configured correctly for smooth development and testing.
+Sebelum anda mula, pastikan persekitaran anda disediakan dengan betul dengan mengikuti langkah-langkah ini. Ini akan memastikan semua kebergantungan dipasang dan kunci API anda dikonfigurasikan dengan betul untuk pembangunan dan pengujian yang lancar.
 
-- Python 3.8 or higher
-- SerpAPI API Key (Sign up at [SerpAPI](https://serpapi.com/) - free tier available)
+- Python 3.8 atau lebih tinggi
+- Kunci API SerpAPI (Daftar di [SerpAPI](https://serpapi.com/) - pelan percuma tersedia)
 
-## Installation
+## Pemasangan
 
-To get started, follow these steps to set up your environment:
+Untuk memulakan, ikut langkah-langkah berikut untuk menyediakan persekitaran anda:
 
-1. Install dependencies using uv (recommended) or pip:
+1. Pasang kebergantungan menggunakan uv (disyorkan) atau pip:
 
 ```bash
 # Using uv (recommended)
@@ -120,57 +120,57 @@ uv pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-2. Create a `.env` file in the project root with your SerpAPI key:
+2. Buat fail `.env` di akar projek dengan kunci SerpAPI anda:
 
 ```
 SERPAPI_KEY=your_serpapi_key_here
 ```
 
-## Usage
+## Penggunaan
 
-The Web Search MCP Server is the core component that exposes tools for web, news, product search, and Q&A by integrating with SerpAPI. It processes incoming requests, manages API calls, parses responses, and returns structured results to the client.
+Pelayan MCP Carian Web adalah komponen teras yang mendedahkan alat untuk carian web, berita, produk, dan soal jawab dengan mengintegrasikan SerpAPI. Ia mengendalikan permintaan masuk, mengurus panggilan API, memparsing respons, dan mengembalikan hasil berstruktur kepada klien.
 
-You can review the full implementation in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
+Anda boleh menyemak pelaksanaan penuh dalam [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
-### Running the Server
+### Menjalankan Pelayan
 
-To start the MCP server, use the following command:
+Untuk memulakan pelayan MCP, gunakan arahan berikut:
 
 ```bash
 python server.py
 ```
 
-The server will run as a stdio-based MCP server that the client can connect to directly.
+Pelayan akan berjalan sebagai pelayan MCP berasaskan stdio yang boleh disambungkan terus oleh klien.
 
-### Client Modes
+### Mod Klien
 
-The client (`client.py`) supports two modes for interacting with the MCP server:
+Klien (`client.py`) menyokong dua mod untuk berinteraksi dengan pelayan MCP:
 
-- **Normal mode**: Runs automated tests that exercise all the tools and verify their responses. This is useful for quickly checking that the server and tools are working as expected.
-- **Interactive mode**: Starts a menu-driven interface where you can manually select and call tools, enter custom queries, and see results in real time. This is ideal for exploring the server's capabilities and experimenting with different inputs.
+- **Mod Normal**: Menjalankan ujian automatik yang menguji semua alat dan mengesahkan respons mereka. Ini berguna untuk memeriksa dengan cepat bahawa pelayan dan alat berfungsi seperti yang dijangka.
+- **Mod Interaktif**: Memulakan antara muka berasaskan menu di mana anda boleh memilih dan memanggil alat secara manual, memasukkan pertanyaan tersuai, dan melihat hasil secara masa nyata. Ini sesuai untuk meneroka keupayaan pelayan dan bereksperimen dengan input yang berbeza.
 
-You can review the full implementation in [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
+Anda boleh menyemak pelaksanaan penuh dalam [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
 
-### Running the Client
+### Menjalankan Klien
 
-To run the automated tests (this will automatically start the server):
+Untuk menjalankan ujian automatik (ini akan memulakan pelayan secara automatik):
 
 ```bash
 python client.py
 ```
 
-Or run in interactive mode:
+Atau jalankan dalam mod interaktif:
 
 ```bash
 python client.py --interactive
 ```
 
-### Testing with Different Methods
+### Menguji dengan Kaedah Berbeza
 
-There are several ways to test and interact with the tools provided by the server, depending on your needs and workflow.
+Terdapat beberapa cara untuk menguji dan berinteraksi dengan alat yang disediakan oleh pelayan, bergantung pada keperluan dan aliran kerja anda.
 
-#### Writing Custom Test Scripts with the MCP Python SDK
-You can also create your own test scripts using the MCP Python SDK:
+#### Menulis Skrip Ujian Tersuai dengan MCP Python SDK
+Anda juga boleh membina skrip ujian anda sendiri menggunakan MCP Python SDK:
 
 <details>
 <summary>Python</summary>
@@ -195,30 +195,30 @@ async def test_custom_query():
 ```
 </details>
 
-In this context, a "test script" is a custom Python program you write to act as a client for the MCP server. Instead of a formal unit test, this script lets you programmatically connect to the server, call any of its tools with parameters you choose, and inspect the results. This approach is useful for:
-- Prototyping and experimenting with tool calls
-- Validating how the server responds to different inputs
-- Automating repeated tool invocations
-- Building your own workflows or integrations on top of the MCP server
+Dalam konteks ini, "skrip ujian" bermaksud program Python tersuai yang anda tulis untuk bertindak sebagai klien bagi pelayan MCP. Daripada menjadi ujian unit formal, skrip ini membolehkan anda menyambung secara programatik ke pelayan, memanggil mana-mana alat dengan parameter pilihan anda, dan memeriksa hasilnya. Pendekatan ini berguna untuk:
+- Membuat prototaip dan bereksperimen dengan panggilan alat
+- Mengesahkan bagaimana pelayan bertindak balas terhadap input berbeza
+- Mengautomasikan panggilan alat berulang
+- Membina aliran kerja atau integrasi anda sendiri di atas pelayan MCP
 
-You can use test scripts to quickly try new queries, debug tool behavior, or as a starting point for more advanced automation. Below is an example of how to use the MCP Python SDK to create such a script:
+Anda boleh menggunakan skrip ujian untuk mencuba pertanyaan baru dengan cepat, menyahpepijat tingkah laku alat, atau sebagai titik permulaan untuk automasi yang lebih maju. Berikut adalah contoh cara menggunakan MCP Python SDK untuk membuat skrip sedemikian:
 
-## Tool Descriptions
+## Penerangan Alat
 
-You can use the following tools provided by the server to perform different types of searches and queries. Each tool is described below with its parameters and example usage.
+Anda boleh menggunakan alat berikut yang disediakan oleh pelayan untuk melakukan pelbagai jenis carian dan pertanyaan. Setiap alat diterangkan di bawah dengan parameter dan contoh penggunaannya.
 
-This section details each available tool and their parameters.
+Bahagian ini menyediakan butiran tentang setiap alat yang tersedia dan parameternya.
 
 ### general_search
 
-Performs a general web search and returns formatted results.
+Melakukan carian web umum dan mengembalikan hasil yang diformat.
 
-**How to call this tool:**
+**Cara memanggil alat ini:**
 
-You can call `general_search` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
+Anda boleh memanggil `general_search` dari skrip anda sendiri menggunakan MCP Python SDK, atau secara interaktif menggunakan Inspector atau mod klien interaktif. Berikut adalah contoh kod menggunakan SDK:
 
 <details>
-<summary>Python Example</summary>
+<summary>Contoh Python</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -237,12 +237,12 @@ async def run_general_search():
 ```
 </details>
 
-Alternatively, in interactive mode, select `general_search` from the menu and enter your query when prompted.
+Sebagai alternatif, dalam mod interaktif, pilih `general_search` dari menu dan masukkan pertanyaan anda apabila diminta.
 
-**Parameters:**
-- `query` (string): The search query
+**Parameter:**
+- `query` (string): Pertanyaan carian
 
-**Example Request:**
+**Contoh Permintaan:**
 
 ```json
 {
@@ -252,14 +252,14 @@ Alternatively, in interactive mode, select `general_search` from the menu and en
 
 ### news_search
 
-Searches for recent news articles related to a query.
+Mencari artikel berita terkini berkaitan dengan pertanyaan.
 
-**How to call this tool:**
+**Cara memanggil alat ini:**
 
-You can call `news_search` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
+Anda boleh memanggil `news_search` dari skrip anda sendiri menggunakan MCP Python SDK, atau secara interaktif menggunakan Inspector atau mod klien interaktif. Berikut adalah contoh kod menggunakan SDK:
 
 <details>
-<summary>Python Example</summary>
+<summary>Contoh Python</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -278,12 +278,12 @@ async def run_news_search():
 ```
 </details>
 
-Alternatively, in interactive mode, select `news_search` from the menu and enter your query when prompted.
+Sebagai alternatif, dalam mod interaktif, pilih `news_search` dari menu dan masukkan pertanyaan anda apabila diminta.
 
-**Parameters:**
-- `query` (string): The search query
+**Parameter:**
+- `query` (string): Pertanyaan carian
 
-**Example Request:**
+**Contoh Permintaan:**
 
 ```json
 {
@@ -293,14 +293,14 @@ Alternatively, in interactive mode, select `news_search` from the menu and enter
 
 ### product_search
 
-Searches for products matching a query.
+Mencari produk yang sepadan dengan pertanyaan.
 
-**How to call this tool:**
+**Cara memanggil alat ini:**
 
-You can call `product_search` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
+Anda boleh memanggil `product_search` dari skrip anda sendiri menggunakan MCP Python SDK, atau secara interaktif menggunakan Inspector atau mod klien interaktif. Berikut adalah contoh kod menggunakan SDK:
 
 <details>
-<summary>Python Example</summary>
+<summary>Contoh Python</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -319,12 +319,12 @@ async def run_product_search():
 ```
 </details>
 
-Alternatively, in interactive mode, select `product_search` from the menu and enter your query when prompted.
+Sebagai alternatif, dalam mod interaktif, pilih `product_search` dari menu dan masukkan pertanyaan anda apabila diminta.
 
-**Parameters:**
-- `query` (string): The product search query
+**Parameter:**
+- `query` (string): Pertanyaan carian produk
 
-**Example Request:**
+**Contoh Permintaan:**
 
 ```json
 {
@@ -334,14 +334,14 @@ Alternatively, in interactive mode, select `product_search` from the menu and en
 
 ### qna
 
-Gets direct answers to questions from search engines.
+Mendapatkan jawapan langsung kepada soalan dari enjin carian.
 
-**How to call this tool:**
+**Cara memanggil alat ini:**
 
-You can call `qna` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
+Anda boleh memanggil `qna` dari skrip anda sendiri menggunakan MCP Python SDK, atau secara interaktif menggunakan Inspector atau mod klien interaktif. Berikut adalah contoh kod menggunakan SDK:
 
 <details>
-<summary>Python Example</summary>
+<summary>Contoh Python</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -360,12 +360,12 @@ async def run_qna():
 ```
 </details>
 
-Alternatively, in interactive mode, select `qna` from the menu and enter your question when prompted.
+Sebagai alternatif, dalam mod interaktif, pilih `qna` dari menu dan masukkan soalan anda apabila diminta.
 
-**Parameters:**
-- `question` (string): The question to find an answer for
+**Parameter:**
+- `question` (string): Soalan untuk mendapatkan jawapan
 
-**Example Request:**
+**Contoh Permintaan:**
 
 ```json
 {
@@ -373,14 +373,14 @@ Alternatively, in interactive mode, select `qna` from the menu and enter your qu
 }
 ```
 
-## Code Details
+## Butiran Kod
 
-This section provides code snippets and references for the server and client implementations.
+Bahagian ini menyediakan petikan kod dan rujukan untuk pelaksanaan pelayan dan klien.
 
 <details>
 <summary>Python</summary>
 
-See [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) and [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) for full implementation details.
+Lihat [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) dan [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) untuk butiran pelaksanaan penuh.
 
 ```python
 # Example snippet from server.py:
@@ -390,43 +390,43 @@ import httpx
 ```
 </details>
 
-## Advanced Concepts in This Lesson
+## Konsep Lanjutan dalam Pelajaran Ini
 
-Before you start building, here are some important advanced concepts that will appear throughout this chapter. Understanding these will help you follow along, even if you're new to them:
+Sebelum anda mula membina, berikut adalah beberapa konsep lanjutan penting yang akan muncul sepanjang bab ini. Memahami ini akan membantu anda mengikuti dengan lebih mudah, walaupun anda baru mengenalinya:
 
-- **Multi-tool Orchestration**: Running several different tools (like web search, news search, product search, and Q&A) within a single MCP server. This lets your server handle a variety of tasks, not just one.
-- **API Rate Limit Handling**: Many external APIs (like SerpAPI) limit how many requests you can make in a certain time. Good code checks for these limits and handles them gracefully, so your app doesn’t break if you hit a limit.
-- **Structured Data Parsing**: API responses are often complex and nested. This means converting those responses into clean, easy-to-use formats that work well with LLMs or other programs.
-- **Error Recovery**: Sometimes things go wrong—maybe the network fails, or the API doesn't return what you expect. Error recovery means your code can handle these problems and still provide useful feedback instead of crashing.
-- **Parameter Validation**: Checking that all inputs to your tools are correct and safe to use. This includes setting default values and ensuring types are correct, which helps prevent bugs and confusion.
+- **Pengurusan Pelbagai Alat**: Ini bermaksud menjalankan beberapa alat berbeza (seperti carian web, carian berita, carian produk, dan soal jawab) dalam satu pelayan MCP. Ia membolehkan pelayan anda mengendalikan pelbagai tugasan, bukan hanya satu.
+- **Pengendalian Had Kadar API**: Banyak API luaran (seperti SerpAPI) mengehadkan berapa banyak permintaan yang boleh anda buat dalam tempoh tertentu. Kod yang baik akan memeriksa had ini dan mengendalikannya dengan baik, supaya aplikasi anda tidak rosak jika anda mencapai had.
+- **Parsing Data Berstruktur**: Respons API sering kompleks dan bersarang. Konsep ini berkaitan dengan menukar respons tersebut menjadi format yang bersih dan mudah digunakan yang mesra untuk LLM atau program lain.
+- **Pemulihan Ralat**: Kadang-kadang berlaku masalah—mungkin rangkaian gagal, atau API tidak mengembalikan apa yang anda jangka. Pemulihan ralat bermaksud kod anda boleh mengendalikan masalah ini dan masih memberikan maklum balas berguna, bukannya terhenti.
+- **Pengesahan Parameter**: Ini berkaitan dengan memeriksa bahawa semua input kepada alat anda adalah betul dan selamat digunakan. Ia termasuk menetapkan nilai lalai dan memastikan jenis data betul, yang membantu mengelakkan pepijat dan kekeliruan.
 
-This section will help you diagnose and solve common issues you might face while working with the Web Search MCP Server. If you run into errors or unexpected behavior, this troubleshooting guide provides solutions to the most frequent problems. Review these tips before seeking further help—they often resolve issues quickly.
+Bahagian ini akan membantu anda mendiagnosis dan menyelesaikan masalah biasa yang mungkin anda hadapi semasa bekerja dengan Pelayan MCP Carian Web. Jika anda menghadapi ralat atau tingkah laku yang tidak dijangka semasa bekerja dengan Pelayan MCP Carian Web, bahagian penyelesaian masalah ini menyediakan penyelesaian untuk isu yang paling biasa. Semak petua ini sebelum mendapatkan bantuan lanjut—ia sering menyelesaikan masalah dengan cepat.
 
-## Troubleshooting
+## Penyelesaian Masalah
 
-When working with the Web Search MCP Server, you may occasionally encounter issues—this is normal when developing with external APIs and new tools. This section offers practical solutions to the most common problems, so you can get back on track quickly. If you encounter an error, start here: these tips address the issues most users face and often resolve your problem without extra assistance.
+Semasa bekerja dengan Pelayan MCP Carian Web, anda mungkin kadang-kadang menghadapi masalah—ini adalah perkara biasa apabila membangunkan dengan API luaran dan alat baru. Bahagian ini menyediakan penyelesaian praktikal untuk masalah yang paling biasa, supaya anda boleh kembali ke landasan dengan cepat. Jika anda menghadapi ralat, mulakan di sini: petua di bawah menangani isu yang paling kerap dihadapi pengguna dan sering dapat menyelesaikan masalah anda tanpa bantuan tambahan.
 
-### Common Issues
+### Isu Biasa
 
-Here are some of the most frequent problems users encounter, along with clear explanations and steps to fix them:
+Berikut adalah beberapa masalah yang paling kerap dihadapi pengguna, bersama dengan penjelasan jelas dan langkah untuk menyelesaikannya:
 
-1. **Missing SERPAPI_KEY in .env file**
-   - If you see the error `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
+1. **Kunci SERPAPI_KEY hilang dalam fail .env**
+   - Jika anda melihat ralat `SERPAPI_KEY environment variable not found`, ini bermakna aplikasi anda tidak dapat mencari kunci API yang diperlukan untuk mengakses SerpAPI. Untuk membetulkannya, buat fail bernama `.env` di akar projek anda (jika belum ada) dan tambah baris seperti `SERPAPI_KEY=your_serpapi_key_here`. Pastikan anda menggantikan `your_serpapi_key_here` dengan kunci sebenar anda dari laman web SerpAPI.
 
-2. **Module not found errors**
-   - Errors such as `ModuleNotFoundError: No module named 'httpx'` indicate that a required Python package is missing. This usually happens if you haven't installed all the dependencies. To resolve this, run `pip install -r requirements.txt` in your terminal to install everything your project needs.
+2. **Ralat modul tidak dijumpai**
+   - Ralat seperti `ModuleNotFoundError: No module named 'httpx'` menunjukkan bahawa pakej Python yang diperlukan tidak dipasang. Ini biasanya berlaku jika anda belum memasang semua kebergantungan. Untuk menyelesaikannya, jalankan `pip install -r requirements.txt` di terminal anda untuk memasang semua yang diperlukan oleh projek anda.
 
-3. **Connection issues**
-   - If you get an error like `Error during client execution`, it often means the client can't connect to the server, or the server isn't running as expected. Double-check that both the client and server are compatible versions, and that `server.py` is present and running in the correct directory. Restarting both the server and client can also help.
+3. **Masalah sambungan**
+   - Jika anda mendapat ralat seperti `Error during client execution`, ini sering bermakna klien tidak dapat menyambung ke pelayan, atau pelayan tidak berjalan seperti yang dijangka. Semak semula bahawa klien dan pelayan adalah versi yang serasi, dan bahawa `server.py` ada dan berjalan di direktori yang betul. Memulakan semula kedua-dua pelayan dan klien juga boleh membantu.
 
-4. **SerpAPI errors**
-   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env` file if needed. If your key is correct but you still see this error, check if your free tier has run out of quota.
+4. **Ralat SerpAPI**
+   - Melihat `Search API returned error status: 401` bermakna kunci SerpAPI anda hilang, salah, atau telah tamat tempoh. Pergi ke papan pemuka SerpAPI anda, sahkan kunci anda, dan kemas kini fail `.env` jika perlu. Jika kunci anda betul tetapi anda masih melihat ralat ini, periksa sama ada pelan percuma anda telah habis kuota.
 
-### Debug Mode
+### Mod Debug
 
-By default, the app logs only important information. If you want to see more details about what’s happening (for example, to diagnose tricky issues), you can enable DEBUG mode. This will show much more about each step the app takes.
+Secara lalai, aplikasi hanya mencatat maklumat penting. Jika anda mahu melihat lebih banyak butiran tentang apa yang sedang berlaku (contohnya, untuk mendiagnosis masalah yang sukar), anda boleh mengaktifkan mod DEBUG. Ini akan menunjukkan lebih banyak maklumat tentang setiap langkah yang diambil oleh aplikasi.
 
-**Example: Normal Output**
+**Contoh: Output Normal**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:24,123 - __main__ - INFO - Successfully called general_search
@@ -435,7 +435,7 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-**Example: DEBUG Output**
+**Contoh: Output DEBUG**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:23,457 - httpx - DEBUG - HTTP Request: GET https://serpapi.com/search ...
@@ -446,11 +446,10 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-Notice how DEBUG mode includes extra lines about HTTP requests, responses, and other internal details. This can be very helpful for troubleshooting.
+Perhatikan bagaimana mod DEBUG termasuk baris tambahan tentang permintaan HTTP, respons, dan butiran dalaman lain. Ini sangat membantu untuk penyelesaian masalah.
 
-To enable DEBUG mode, set the logging level to DEBUG at the top of your `client.py` or `server.py`:
+Untuk mengaktifkan mod DEBUG, tetapkan tahap pencatatan ke DEBUG di bahagian atas `client.py` atau `server.py` anda:
 
-<details>
 <summary>Python</summary>
 
 ```python
@@ -465,9 +464,9 @@ logging.basicConfig(
 
 ---
 
-## What's next 
+## Apa seterusnya
 
-- [5.10 Real Time Streaming](../mcp-realtimestreaming/README.md)
+- [5.10 Penstriman Masa Sebenar](../mcp-realtimestreaming/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

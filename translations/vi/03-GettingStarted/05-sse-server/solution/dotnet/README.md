@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2a58caa6e11faa09470b7f81e6729652",
-  "translation_date": "2025-06-18T06:04:00+00:00",
+  "translation_date": "2025-07-13T20:10:59+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "vi"
 }
@@ -23,9 +23,9 @@ dotnet run
 
 ## -3- Kiểm tra ví dụ
 
-Mở một terminal riêng biệt trước khi chạy lệnh dưới đây (đảm bảo server vẫn đang chạy).
+Mở một terminal riêng trước khi bạn chạy lệnh dưới đây (đảm bảo server vẫn đang chạy).
 
-Khi server đang chạy trong một terminal, mở một terminal khác và chạy lệnh sau:
+Khi server đang chạy ở một terminal, mở terminal khác và chạy lệnh sau:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
@@ -33,12 +33,12 @@ npx @modelcontextprotocol/inspector http://localhost:3001
 
 Lệnh này sẽ khởi động một web server với giao diện trực quan cho phép bạn kiểm tra ví dụ.
 
-> Đảm bảo rằng **SSE** được chọn làm loại kết nối, và URL là `http://localhost:3001/sse`.
+> Đảm bảo rằng **SSE** được chọn làm loại giao thức truyền tải, và URL là `http://localhost:3001/sse`.
 
-Once the server is connected: 
+Khi server đã kết nối:
 
-- try listing tools and run `add`, với các tham số 2 và 4, bạn sẽ thấy kết quả là 6.
-- vào resources và resource template, gọi "greeting", nhập tên và bạn sẽ thấy lời chào với tên bạn đã nhập.
+- thử liệt kê các công cụ và chạy `add` với các tham số 2 và 4, bạn sẽ thấy kết quả là 6.
+- vào phần resources và resource template, gọi "greeting", nhập một tên và bạn sẽ thấy lời chào với tên bạn đã nhập.
 
 ### Kiểm tra ở chế độ CLI
 
@@ -101,8 +101,8 @@ Bạn sẽ thấy kết quả như sau:
 ```
 
 > ![!TIP]
-> Thông thường chạy inspector ở chế độ CLI sẽ nhanh hơn nhiều so với chạy trong trình duyệt.
-> Tìm hiểu thêm về inspector [ở đây](https://github.com/modelcontextprotocol/inspector).
+> Thường thì chạy inspector ở chế độ CLI sẽ nhanh hơn nhiều so với chạy trên trình duyệt.
+> Tìm hiểu thêm về inspector [tại đây](https://github.com/modelcontextprotocol/inspector).
 
-**Tuyên bố miễn trách**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi nỗ lực đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được xem là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu nhầm hay giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

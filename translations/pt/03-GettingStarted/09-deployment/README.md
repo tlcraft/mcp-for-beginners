@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T16:56:17+00:00",
+  "translation_date": "2025-07-13T22:08:07+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "pt"
 }
 -->
 # Desdobramento de Servidores MCP
 
-Desdobrar o seu servidor MCP permite que outros acedam às suas ferramentas e recursos para além do seu ambiente local. Existem várias estratégias de desdobramento a considerar, dependendo dos seus requisitos de escalabilidade, fiabilidade e facilidade de gestão. A seguir, encontrará orientações para desdobrar servidores MCP localmente, em contentores e na cloud.
+Desdobrar o seu servidor MCP permite que outros acedam às suas ferramentas e recursos para além do seu ambiente local. Existem várias estratégias de desdobramento a considerar, dependendo dos seus requisitos de escalabilidade, fiabilidade e facilidade de gestão. Abaixo encontrará orientações para desdobrar servidores MCP localmente, em contentores e na cloud.
 
 ## Visão Geral
 
@@ -113,4 +113,4 @@ Está feito, desdobre localmente ou na Azure seguindo estes passos.
 - Seguinte: [Implementação Prática](../../04-PracticalImplementation/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.

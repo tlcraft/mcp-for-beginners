@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "24531f2b6b0f7fa3839accf4dc10088a",
-  "translation_date": "2025-05-17T10:50:37+00:00",
+  "translation_date": "2025-07-13T19:17:08+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/python/README.md",
   "language_code": "tl"
 }
 -->
-# Pagpapatakbo ng halimbawang ito
+# Pagpapatakbo ng sample na ito
 
-Inirerekomenda na i-install ang `uv` pero hindi ito kinakailangan, tingnan ang [mga tagubilin](https://docs.astral.sh/uv/#highlights)
+Inirerekomenda na i-install ang `uv` pero hindi ito kinakailangan, tingnan ang [instructions](https://docs.astral.sh/uv/#highlights)
 
-## -0- Gumawa ng virtual na kapaligiran
+## -0- Gumawa ng virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-## -1- I-activate ang virtual na kapaligiran
+## -1- I-activate ang virtual environment
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- I-install ang mga kinakailangang dependency
+## -2- I-install ang mga dependencies
 
 ```bash
 pip install "mcp[cli]"
@@ -31,13 +31,13 @@ pip install openai
 pip install azure-ai-inference
 ```
 
-## -3- Patakbuhin ang halimbawa
+## -3- Patakbuhin ang sample
 
 ```bash
 python client.py
 ```
 
-Dapat makakita ka ng output na katulad ng:
+Dapat kang makakita ng output na katulad nito:
 
 ```text
 LISTING RESOURCES
@@ -54,5 +54,5 @@ TOOL:  {'function': {'arguments': '{"a":2,"b":20}', 'name': 'add'}, 'id': 'call_
 TOOLS result:  [TextContent(type='text', text='22', annotations=None)]
 ```
 
-**Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Habang pinagsisikapan naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga error o hindi pagkakatumpak. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na mapagkakatiwalaang pinagmulan. Para sa kritikal na impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot para sa anumang hindi pagkakaintindihan o maling interpretasyon na nagmumula sa paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

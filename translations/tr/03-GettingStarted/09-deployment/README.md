@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T17:16:32+00:00",
+  "translation_date": "2025-07-13T22:08:39+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "tr"
 }
@@ -13,7 +13,7 @@ MCP sunucunuzu dağıtarak, araçlarına ve kaynaklarına yerel ortamınızın d
 
 ## Genel Bakış
 
-Bu ders, MCP Server uygulamanızı nasıl dağıtacağınızı kapsar.
+Bu ders, MCP Server uygulamanızı nasıl dağıtacağınızı ele almaktadır.
 
 ## Öğrenme Hedefleri
 
@@ -31,7 +31,7 @@ Sunucunuzun kullanıcıların makinelerinde çalıştırılarak kullanılacaksa,
 
 SSE için (stdio tipi sunucu için gerekmez)
 
-1. **Ağ yapılandırmasını yapın**: Sunucunun beklenen portta erişilebilir olduğundan emin olun.  
+1. **Ağ yapılandırmasını yapın**: Sunucunun beklenen port üzerinden erişilebilir olduğundan emin olun.  
 1. **İstemcileri bağlayın**: `http://localhost:3000` gibi yerel bağlantı URL’lerini kullanın.
 
 ## Bulut Dağıtımı
@@ -46,7 +46,7 @@ MCP sunucuları çeşitli bulut platformlarına dağıtılabilir:
 
 Azure Container Apps, MCP Sunucularının dağıtımını destekler. Hâlâ geliştirme aşamasında olup şu anda SSE sunucularını desteklemektedir.
 
-Bunu nasıl yapabileceğiniz aşağıda anlatılmıştır:
+Bunu nasıl yapabileceğiniz aşağıda açıklanmıştır:
 
 1. Bir repo klonlayın:
 
@@ -54,7 +54,7 @@ Bunu nasıl yapabileceğiniz aşağıda anlatılmıştır:
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
   ```
 
-1. Test etmek için yerel olarak çalıştırın:
+1. Yerelde test etmek için çalıştırın:
 
   ```sh
   uv venv
@@ -104,13 +104,13 @@ Bunu nasıl yapabileceğiniz aşağıda anlatılmıştır:
 
 ## Ek Kaynaklar
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
-- [Azure Container Apps makalesi](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
-- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
+- [Azure Container Apps makalesi](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
+- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
 
 ## Sonraki Adım
 
 - Sonraki: [Pratik Uygulama](../../04-PracticalImplementation/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

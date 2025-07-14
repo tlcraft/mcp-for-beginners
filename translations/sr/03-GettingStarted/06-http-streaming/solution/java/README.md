@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:50:20+00:00",
+  "translation_date": "2025-07-13T21:15:18+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "sr"
 }
@@ -14,10 +14,10 @@ CO_OP_TRANSLATOR_METADATA:
 - **Calculator Server**: реактивни веб сервис који изводи прорачуне и стримује резултате користећи SSE
 - **Calculator Client**: клијент апликација која конзумира стриминг крајњу тачку
 
-## Захтеви
+## Претпоставке
 
-- Java 17 или новији
-- Maven 3.6 или новији
+- Java 17 или новија верзија
+- Maven 3.6 или новија верзија
 
 ## Структура пројекта
 
@@ -37,23 +37,23 @@ java/
 
 ## Како ради
 
-1. **Calculator Server** излаже `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** излаже `/calculate` крајњу тачку која:
+   - Прихвата query параметре: `a` (број), `b` (број), `op` (операција)
+   - Подржане операције: `add`, `sub`, `mul`, `div`
+   - Враћа Server-Sent Events са напретком прорачуна и резултатом
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
+2. **Calculator Client** се повезује на сервер и:
+   - Слаже захтев за прорачун `7 * 5`
    - Конзумира стриминг одговор
-   - Исписује сваки догађај на конзолу
+   - Исписује сваки догађај у конзолу
 
 ## Покретање апликација
 
-### Опција 1: Користећи Maven (препоручено)
+### Опција 1: Коришћење Mavena (препоручено)
 
-#### 1. Покрените Calculator Server
+#### 1. Покрени Calculator Server
 
-Отворите терминал и идите у директоријум сервера:
+Отвори терминал и иди у директоријум сервера:
 
 ```bash
 cd calculator-server
@@ -63,15 +63,15 @@ mvn spring-boot:run
 
 Сервер ће се покренути на `http://localhost:8080`
 
-Требало би да видите излаз сличан овом:
+Требало би да видиш излаз сличан овоме:
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
 ```
 
-#### 2. Покрените Calculator Client
+#### 2. Покрени Calculator Client
 
-Отворите **нови терминал** и идите у директоријум клијента:
+Отвори **нови терминал** и иди у директоријум клијента:
 
 ```bash
 cd calculator-client
@@ -79,11 +79,11 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-Клијент ће се повезати на сервер, извршити прорачун и приказати резултате стриминга.
+Клијент ће се повезати на сервер, извршити прорачун и приказати стриминг резултате.
 
-### Опција 2: Директно коришћење Java
+### Опција 2: Коришћење Јаве директно
 
-#### 1. Компилирајте и покрените сервер:
+#### 1. Компајлирај и покрени сервер:
 
 ```bash
 cd calculator-server
@@ -91,7 +91,7 @@ mvn clean package
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-#### 2. Компилирајте и покрените клијента:
+#### 2. Компајлирај и покрени клијента:
 
 ```bash
 cd calculator-client
@@ -101,19 +101,19 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 ## Ручно тестирање сервера
 
-Сервер можете тестирати и помоћу веб прегледача или curl:
+Такође можете тестирати сервер преко веб прегледача или curl-а:
 
-### Користећи веб прегледач:
+### Коришћење веб прегледача:
 Посетите: `http://localhost:8080/calculate?a=10&b=5&op=add`
 
-### Користећи curl:
+### Коришћење curl-а:
 ```bash
 curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-stream"
 ```
 
 ## Очекивани излаз
 
-Када покренете клијента, требало би да видите стриминг излаз сличан овом:
+Када покренете клијента, требало би да видите стриминг излаз сличан овоме:
 
 ```
 event:info
@@ -125,21 +125,21 @@ data:35.0
 
 ## Подржане операције
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - Сабирање (a + b)
+- `sub` - Одузимање (a - b)
+- `mul` - Множење (a * b)
+- `div` - Дељење (a / b, враћа NaN ако је b = 0)
 
-## API Reference
+## API референца
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Параметри:**
+- `a` (обавезно): Први број (double)
+- `b` (обавезно): Други број (double)
+- `op` (обавезно): Операција (`add`, `sub`, `mul`, `div`)
 
-**Response:**
+**Одговор:**
 - Content-Type: `text/event-stream`
 - Враћа Server-Sent Events са напретком прорачуна и резултатом
 
@@ -167,24 +167,24 @@ data: 35.0
    - Зауставите све друге апликације које користе порт 8080
    - Или промените порт сервера у `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Повезивање одбијено**
+   - Уверите се да је сервер покренут пре него што покренете клијента
+   - Проверите да ли се сервер успешно покренуо на порту 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Проблеми са именима параметара**
+   - Овај пројекат укључује Maven конфигурацију компајлера са `-parameters` заставицом
+   - Ако наиђете на проблеме са везивањем параметара, уверите се да је пројекат изграђен са овом конфигурацијом
 
-### Stopping the Applications
+### Заустављање апликација
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` ако се покреће у позадини
+- Притисните `Ctrl+C` у терминалу у коме је апликација покренута
+- Или користите `mvn spring-boot:stop` ако се покреће као позадински процес
 
 ## Технолошки стек
 
 - **Spring Boot 3.3.1** - Апликациони фрејмворк
 - **Spring WebFlux** - Реактивни веб фрејмворк
-- **Project Reactor** - Библиотека за реактивне токове
+- **Project Reactor** - Библиотека за реактивне стримове
 - **Netty** - Сервер за не-блокирајући улаз/излаз
 - **Maven** - Алат за изградњу
 - **Java 17+** - Програмски језик
@@ -198,5 +198,5 @@ data: 35.0
 - Имплементирате аутентификацију
 - Додате јединичне тестове
 
-**Одрицање одговорности**:  
-Овај документ је преведен коришћењем АИ сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални превод од стране људског преводиоца. Нисмо одговорни за било каква неспоразума или погрешне тумачења настала коришћењем овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

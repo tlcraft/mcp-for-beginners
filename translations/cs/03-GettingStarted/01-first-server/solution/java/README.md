@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ed9cab32cc67c12d8969b407aa47100a",
-  "translation_date": "2025-06-11T09:35:40+00:00",
+  "translation_date": "2025-07-13T17:56:17+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/java/README.md",
   "language_code": "cs"
 }
 -->
-# Basic Calculator MCP Service
+# Základní kalkulační služba MCP
 
-This service provides basic calculator operations through the Model Context Protocol (MCP) using Spring Boot with WebFlux transport. It is designed as a simple example for beginners learning about MCP implementations.
+Tato služba poskytuje základní kalkulační operace prostřednictvím Model Context Protocolu (MCP) s využitím Spring Boot a WebFlux transportu. Je navržena jako jednoduchý příklad pro začátečníky, kteří se učí o implementacích MCP.
 
-For more information, see the [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html) reference documentation.
+Pro více informací si přečtěte referenční dokumentaci [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html).
 
 
-## Using the Service
+## Použití služby
 
-The service exposes the following API endpoints through the MCP protocol:
+Služba zpřístupňuje následující API endpointy přes MCP protokol:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- `power(base, exponent)`: Calculate the power of a number
-- `squareRoot(number)`: Calculate the square root (with negative number check)
-- `modulus(a, b)`: Calculate the remainder when dividing
-- `absolute(number)`: Calculate the absolute value
+- `add(a, b)`: Sečte dvě čísla
+- `subtract(a, b)`: Odečte druhé číslo od prvního
+- `multiply(a, b)`: Vynásobí dvě čísla
+- `divide(a, b)`: Vydělí první číslo druhým (s kontrolou dělení nulou)
+- `power(base, exponent)`: Vypočítá mocninu čísla
+- `squareRoot(number)`: Vypočítá druhou odmocninu (s kontrolou záporného čísla)
+- `modulus(a, b)`: Vypočítá zbytek po dělení
+- `absolute(number)`: Vypočítá absolutní hodnotu
 
-## Dependencies
+## Závislosti
 
-The project requires the following key dependencies:
+Projekt vyžaduje následující klíčové závislosti:
 
 ```xml
 <dependency>
@@ -38,42 +38,42 @@ The project requires the following key dependencies:
 </dependency>
 ```
 
-## Building the Project
+## Sestavení projektu
 
-Build the project using Maven:
+Projekt sestavíte pomocí Maven:
 ```bash
 ./mvnw clean install -DskipTests
 ```
 
-## Running the Server
+## Spuštění serveru
 
-### Using Java
+### Použití Java
 
 ```bash
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-### Using MCP Inspector
+### Použití MCP Inspectoru
 
-The MCP Inspector is a useful tool for interacting with MCP services. To use it with this calculator service:
+MCP Inspector je užitečný nástroj pro práci se službami MCP. Pro použití s touto kalkulační službou:
 
-1. **Install and run MCP Inspector** in a new terminal window:
+1. **Nainstalujte a spusťte MCP Inspector** v novém terminálovém okně:
    ```bash
    npx @modelcontextprotocol/inspector
    ```
 
-2. **Access the web UI** by clicking the URL shown by the app (usually http://localhost:6274)
+2. **Přistupte k webovému rozhraní** kliknutím na URL zobrazenou aplikací (obvykle http://localhost:6274)
 
-3. **Configure the connection**:
-   - Set the transport type to "SSE"
-   - Set the URL to your running server's SSE endpoint: `http://localhost:8080/sse`
-   - Click "Connect"
+3. **Nastavte připojení**:
+   - Zvolte typ transportu "SSE"
+   - Nastavte URL na SSE endpoint vašeho běžícího serveru: `http://localhost:8080/sse`
+   - Klikněte na "Connect"
 
-4. **Use the tools**:
-   - Click "List Tools" to view available calculator operations
-   - Select a tool and click "Run Tool" to execute an operation
+4. **Použijte nástroje**:
+   - Klikněte na "List Tools" pro zobrazení dostupných kalkulačních operací
+   - Vyberte nástroj a klikněte na "Run Tool" pro spuštění operace
 
 ![MCP Inspector Screenshot](../../../../../../translated_images/tool.40e180a7b0d0fe2067cf96435532b01f63f7f8619d6b0132355a04b426b669ac.cs.png)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo chybné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

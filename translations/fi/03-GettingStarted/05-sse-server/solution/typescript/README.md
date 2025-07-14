@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-17T12:10:54+00:00",
+  "translation_date": "2025-07-13T20:21:01+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "fi"
 }
@@ -21,7 +21,7 @@ npm install
 npm run build
 ```
 
-## -4- Testaa esimerkkiä
+## -4- Testaa esimerkki
 
 Kun palvelin on käynnissä yhdessä terminaalissa, avaa toinen terminaali ja suorita seuraava komento:
 
@@ -29,26 +29,26 @@ Kun palvelin on käynnissä yhdessä terminaalissa, avaa toinen terminaali ja su
 npm run inspector
 ```
 
-Tämän pitäisi käynnistää verkkopalvelin, jossa on visuaalinen käyttöliittymä, jonka avulla voit testata esimerkkiä.
+Tämän pitäisi käynnistää verkkopalvelin, jossa on visuaalinen käyttöliittymä esimerkin testaamista varten.
 
 Kun palvelin on yhdistetty:
 
-- yritä listata työkaluja ja suorita `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- kokeile listata työkalut ja suorita `add` argumenteilla 2 ja 4, tuloksena pitäisi näkyä 6.
+- siirry resources- ja resource template -kohtiin ja kutsu "greeting", kirjoita nimi ja näet tervehdyksen antamallasi nimellä.
 
-### Testing in CLI mode
+### Testaus CLI-tilassa
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+Käyttämäsi inspector on itse asiassa Node.js-sovellus ja `mcp dev` on sen ympärille rakennettu käärö.
 
-- Start up the server with the command `npm run build`.
+- Käynnistä palvelin komennolla `npm run build`.
 
-- Suorita erillisessä terminaalissa seuraava komento:
+- Avaa erillinen terminaali ja suorita seuraava komento:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    Tämä listaa kaikki palvelimella saatavilla olevat työkalut. Sinun pitäisi nähdä seuraava tuloste:
+    Tämä listaa kaikki palvelimella saatavilla olevat työkalut. Näet seuraavanlaisen tulosteen:
 
     ```text
     {
@@ -79,13 +79,13 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     }
     ```
 
-- Kutsu työkalutyyppi kirjoittamalla seuraava komento:
+- Käynnistä työkalutyyppi kirjoittamalla seuraava komento:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
     ```
 
-Sinun pitäisi nähdä seuraava tuloste:
+Näet seuraavan tulosteen:
 
     ```text
     {
@@ -99,8 +99,8 @@ Sinun pitäisi nähdä seuraava tuloste:
     ```
 
 > ![!TIP]
-> On yleensä paljon nopeampaa ajaa tarkastajaa CLI-tilassa kuin selaimessa.
-> Lue lisää tarkastajasta [täältä](https://github.com/modelcontextprotocol/inspector).
+> On yleensä paljon nopeampaa käyttää inspectoria CLI-tilassa kuin selaimessa.
+> Lue lisää inspectorista [täältä](https://github.com/modelcontextprotocol/inspector).
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon kohdalla suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virheellisistä tulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8311f46a35cf608c9780f39b62c9dc3f",
-  "translation_date": "2025-06-13T00:53:50+00:00",
+  "translation_date": "2025-07-14T02:06:19+00:00",
   "source_file": "05-AdvancedTopics/mcp-root-contexts/README.md",
   "language_code": "hu"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ebben a példában létrehozunk egy root contextet egy pénzügyi elemzési munkamenethez, bemutatva, hogyan tartható fenn az állapot több interakció során.
 
-## Példa: Root Context kezelése
+## Példa: Root Context kezelés
 
-A root contextek hatékony kezelése kulcsfontosságú a beszélgetési előzmények és az állapot megőrzéséhez. Az alábbi példa bemutatja, hogyan valósítható meg a root context kezelés.
+A root contextek hatékony kezelése kulcsfontosságú a beszélgetési előzmények és az állapot megőrzéséhez. Az alábbiakban egy példa látható arra, hogyan valósítható meg a root context kezelés.
 
 ## Root Context többfordulós segítségnyújtáshoz
 
@@ -21,27 +21,27 @@ Ebben a példában létrehozunk egy root contextet egy többfordulós segítség
 
 ## Root Context legjobb gyakorlatok
 
-Íme néhány bevált módszer a root contextek hatékony kezeléséhez:
+Íme néhány legjobb gyakorlat a root contextek hatékony kezeléséhez:
 
-- **Fókuszált contextek létrehozása**: Hozz létre külön root contexteket különböző beszélgetési célokra vagy területekre, hogy megőrizd az áttekinthetőséget.
+- **Fókuszált contextek létrehozása**: Külön root contexteket hozz létre különböző beszélgetési célokra vagy területekre, hogy megőrizd az átláthatóságot.
 
-- **Lejárati szabályok beállítása**: Alkalmazz szabályokat a régi contextek archiválására vagy törlésére a tárolás kezelése és az adatmegőrzési szabályok betartása érdekében.
+- **Lejárati szabályok beállítása**: Alkalmazz szabályokat a régi contextek archiválására vagy törlésére a tárolás kezelése és az adatmegőrzési előírások betartása érdekében.
 
-- **Fontos metaadatok tárolása**: Használd a context metaadatait, hogy eltárold a beszélgetéssel kapcsolatos lényeges információkat, amelyek később hasznosak lehetnek.
+- **Releváns metaadatok tárolása**: Használd a context metaadatait fontos információk tárolására a beszélgetésről, amelyek később hasznosak lehetnek.
 
-- **Context ID-k következetes használata**: Ha egy context létrejött, használd annak azonosítóját következetesen minden kapcsolódó kérésnél a folytonosság megőrzése érdekében.
+- **Context ID-k következetes használata**: Miután egy context létrejött, használd annak azonosítóját következetesen az összes kapcsolódó kéréshez a folytonosság megőrzése érdekében.
 
-- **Összefoglalók készítése**: Ha egy context túl nagyra nő, érdemes összefoglalókat készíteni, hogy megőrizd a lényeges információkat, miközben kezelted a context méretét.
+- **Összefoglalók készítése**: Ha egy context túl nagyra nő, fontold meg összefoglalók készítését, hogy a lényeges információkat megőrizd, miközben a context méretét kordában tartod.
 
-- **Hozzáférés-szabályozás megvalósítása**: Többfelhasználós rendszerekben biztosíts megfelelő hozzáférés-szabályozást a beszélgetési contextek adatvédelme és biztonsága érdekében.
+- **Hozzáférés-vezérlés megvalósítása**: Többfelhasználós rendszerek esetén valósíts meg megfelelő hozzáférés-vezérlést a beszélgetési contextek adatvédelme és biztonsága érdekében.
 
-- **Context korlátok kezelése**: Ismerd a context méretkorlátait, és dolgozz ki stratégiákat a nagyon hosszú beszélgetések kezelésére.
+- **Context korlátok kezelése**: Légy tisztában a context méretkorlátokkal, és dolgozz ki stratégiákat a nagyon hosszú beszélgetések kezelésére.
 
-- **Archiválás a befejezés után**: Archiváld a contexteket, amikor a beszélgetések lezárultak, hogy felszabadítsd az erőforrásokat, miközben megőrzöd a beszélgetési előzményeket.
+- **Archiválás a befejezéskor**: Archiváld a contexteket, amikor a beszélgetések befejeződtek, hogy felszabadítsd az erőforrásokat, miközben megőrzöd a beszélgetési előzményeket.
 
 ## Mi következik
 
 - [5.5 Routing](../mcp-routing/README.md)
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordítószolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-05-17T11:59:48+00:00",
+  "translation_date": "2025-07-13T20:12:39+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "en"
 }
 -->
 # Running this sample
 
-It's recommended to install `uv`, but it's not mandatory. See [instructions](https://docs.astral.sh/uv/#highlights).
+You're recommended to install `uv` but it's not mandatory, see [instructions](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Create a virtual environment
 
@@ -37,24 +37,24 @@ mcp run server.py
 
 ## -4- Test the sample
 
-With the server running in one terminal, open another terminal and execute the following command:
+With the server running in one terminal, open another terminal and run the following command:
 
 ```bash
 mcp dev server.py
 ```
 
-This should start a web server with a visual interface, allowing you to test the sample.
+This should start a web server with a visual interface allowing you to test the sample.
 
 Once the server is connected:
 
 - try listing tools and run `add`, with args 2 and 4, you should see 6 in the result.
 - go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
 
-### Testing in ClI mode
+### Testing in CLI mode
 
-The inspector you ran is actually a Node.js app and `mcp dev` as a wrapper around it.
+The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it.
 
-You can launch it directly in CLI mode by executing the following command:
+You can launch it directly in CLI mode by running the following command:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
@@ -91,7 +91,7 @@ This will list all the tools available on the server. You should see the followi
 }
 ```
 
-To invoke a tool, type:
+To invoke a tool type:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
@@ -111,8 +111,8 @@ You should see the following output:
 }
 ```
 
-> [!TIP]
-> Running the inspector in CLI mode is usually much faster than in the browser.
+> ![!TIP]
+> It's usually much faster to run the inspector in CLI mode than in the browser.
 > Read more about the inspector [here](https://github.com/modelcontextprotocol/inspector).
 
 **Disclaimer**:  

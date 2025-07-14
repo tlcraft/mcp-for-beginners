@@ -2,43 +2,43 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-06-12T23:13:10+00:00",
+  "translation_date": "2025-07-14T02:36:11+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "mo"
 }
 -->
-# Security Best Practices
+# 安全最佳實務
 
-Security is critical for MCP implementations, especially in enterprise environments. It's important to ensure that tools and data are protected against unauthorized access, data breaches, and other security threats.
+安全對於 MCP 實作至關重要，尤其是在企業環境中。確保工具和資料免於未經授權的存取、資料外洩及其他安全威脅是非常重要的。
 
-## Introduction
+## 介紹
 
-In this lesson, we will explore security best practices for MCP implementations. We will cover authentication and authorization, data protection, secure tool execution, and compliance with data privacy regulations.
+在本課程中，我們將探討 MCP 實作的安全最佳實務。我們會涵蓋身份驗證與授權、資料保護、安全的工具執行，以及遵守資料隱私法規。
 
-## Learning Objectives
+## 學習目標
 
-By the end of this lesson, you will be able to:
+完成本課程後，您將能夠：
 
-- Implement secure authentication and authorization mechanisms for MCP servers.
-- Protect sensitive data using encryption and secure storage.
-- Ensure secure execution of tools with proper access controls.
-- Apply best practices for data protection and privacy compliance.
+- 為 MCP 伺服器實作安全的身份驗證與授權機制。
+- 使用加密和安全儲存保護敏感資料。
+- 透過適當的存取控制確保工具的安全執行。
+- 應用資料保護與隱私合規的最佳實務。
 
-## Authentication and Authorization
+## 身份驗證與授權
 
-Authentication and authorization are essential for securing MCP servers. Authentication answers the question "Who are you?" while authorization answers "What can you do?".
+身份驗證與授權是保護 MCP 伺服器安全的關鍵。身份驗證回答「你是誰？」的問題，而授權則回答「你能做什麼？」。
 
-Let's look at examples of how to implement secure authentication and authorization in MCP servers using .NET and Java.
+讓我們來看看如何使用 .NET 和 Java 在 MCP 伺服器中實作安全的身份驗證與授權。
 
-### .NET Identity Integration
+### .NET 身份整合
 
-ASP .NET Core Identity provides a robust framework for managing user authentication and authorization. We can integrate it with MCP servers to secure access to tools and resources.
+ASP .NET Core Identity 提供了一個強大的框架來管理使用者身份驗證與授權。我們可以將它整合到 MCP 伺服器中，以保護工具和資源的存取。
 
-There are some core concepts we need to understand when integrating ASP.NET Core Identity with MCP servers namely:
+整合 ASP.NET Core Identity 與 MCP 伺服器時，有幾個核心概念需要了解：
 
-- **Identity Configuration**: Setting up ASP.NET Core Identity with user roles and claims. A claim is a piece of information about the user, such as their role or permissions for example "Admin" or "User".
-- **JWT Authentication**: Using JSON Web Tokens (JWT) for secure API access. JWT is a standard for securely transmitting information between parties as a JSON object, which can be verified and trusted because it is digitally signed.
-- **Authorization Policies**: Defining policies to control access to specific tools based on user roles. MCP uses authorization policies to determine which users can access which tools based on their roles and claims.
+- **Identity 配置**：設定 ASP.NET Core Identity，包含使用者角色和聲明。聲明是關於使用者的一項資訊，例如其角色或權限，如「Admin」或「User」。
+- **JWT 身份驗證**：使用 JSON Web Tokens (JWT) 來實現安全的 API 存取。JWT 是一種標準，用於在雙方之間以 JSON 物件安全傳輸資訊，因為它是數位簽章的，可以被驗證和信任。
+- **授權政策**：定義政策以根據使用者角色控制對特定工具的存取。MCP 使用授權政策來決定哪些使用者可以根據其角色和聲明存取哪些工具。
 
 ```csharp
 public class SecureMcpStartup
@@ -109,24 +109,24 @@ public class SecureMcpStartup
 }
 ```
 
-In the preceding code, we have:
+在上述程式碼中，我們：
 
-- Configured ASP.NET Core Identity for user management.
-- Set up JWT authentication for secure API access. We specified the token validation parameters, including the issuer, audience, and signing key.
-- Defined authorization policies to control access to tools based on user roles. For example, the "CanUseAdminTools" policy requires the user to have the "Admin" role, while the "CanUseBasic" policy requires the user to be authenticated.
-- Registered MCP tools with specific authorization requirements, ensuring that only users with the appropriate roles can access them.
+- 配置了 ASP.NET Core Identity 以管理使用者。
+- 設定了 JWT 身份驗證以確保 API 的安全存取，指定了令牌驗證參數，包括發行者、受眾和簽名金鑰。
+- 定義了授權政策，根據使用者角色控制工具存取。例如，「CanUseAdminTools」政策要求使用者擁有「Admin」角色，而「CanUseBasic」政策則要求使用者已通過身份驗證。
+- 註冊了具有特定授權需求的 MCP 工具，確保只有擁有適當角色的使用者才能存取。
 
-### Java Spring Security Integration
+### Java Spring Security 整合
 
-For Java, we will use Spring Security to implement secure authentication and authorization for MCP servers. Spring Security provides a comprehensive security framework that integrates seamlessly with Spring applications.
+對於 Java，我們將使用 Spring Security 來實作 MCP 伺服器的安全身份驗證與授權。Spring Security 提供了一個完整的安全框架，能與 Spring 應用程式無縫整合。
 
-Core concepts here are:
+這裡的核心概念包括：
 
-- **Spring Security Configuration**: Setting up security configurations for authentication and authorization.
-- **OAuth2 Resource Server**: Using OAuth2 for secure access to MCP tools. OAuth2 is an authorization framework that allows third-party services to exchange access tokens for secure API access.
-- **Security Interceptors**: Implementing security interceptors to enforce access controls on tool execution.
-- **Role-Based Access Control**: Using roles to control access to specific tools and resources.
-- **Security Annotations**: Using annotations to secure methods and endpoints.
+- **Spring Security 配置**：設定身份驗證與授權的安全配置。
+- **OAuth2 資源伺服器**：使用 OAuth2 來安全存取 MCP 工具。OAuth2 是一個授權框架，允許第三方服務交換存取令牌以安全存取 API。
+- **安全攔截器**：實作安全攔截器以強制執行工具執行的存取控制。
+- **基於角色的存取控制**：使用角色來控制對特定工具和資源的存取。
+- **安全註解**：使用註解來保護方法和端點。
 
 ```java
 @Configuration
@@ -178,20 +178,20 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 }
 ```
 
-In the preceding code, we have:
+在上述程式碼中，我們：
 
-- Configured Spring Security to secure MCP endpoints, allowing public access to tool discovery while requiring authentication for tool execution.
-- Used OAuth2 as a resource server to handle secure access to MCP tools.
-- Implemented a security interceptor to enforce access controls on tool execution, checking user roles and permissions before allowing access to specific tools.
-- Defined role-based access control to restrict access to admin tools and sensitive data access based on user roles.
+- 配置了 Spring Security 以保護 MCP 端點，允許公開存取工具發現功能，但執行工具時需要身份驗證。
+- 使用 OAuth2 作為資源伺服器來處理 MCP 工具的安全存取。
+- 實作了安全攔截器，在允許存取特定工具前檢查使用者角色和權限。
+- 定義了基於角色的存取控制，限制對管理工具和敏感資料的存取。
 
-## Data Protection and Privacy
+## 資料保護與隱私
 
-Data protection is crucial for ensuring that sensitive information is handled securely. This includes protecting personally identifiable information (PII), financial data, and other sensitive information from unauthorized access and breaches.
+資料保護對於確保敏感資訊的安全處理至關重要。這包括保護個人識別資訊 (PII)、財務資料及其他敏感資訊，避免未經授權的存取和外洩。
 
-### Python Data Protection Example
+### Python 資料保護範例
 
-Let's look at an example of how to implement data protection in Python using encryption and PII detection.
+讓我們來看一個如何使用加密和 PII 偵測在 Python 中實作資料保護的範例。
 
 ```python
 from mcp_server import McpServer
@@ -327,20 +327,16 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-In the preceding code, we have:
+在上述程式碼中，我們：
 
-- Implemented a `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
-- Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
-- Defined a `secure_tool` decorator that wraps tool execution to check for PII, log access, and encrypt sensitive data if required.
-- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool`) to ensure it handles sensitive data securely.
+- 實作了 `PiiDetector` 類別，用於掃描文字和參數中的個人識別資訊 (PII)。
+- 建立了 `EncryptionService` 類別，使用 `cryptography` 函式庫來處理敏感資料的加密與解密。
+- 定義了 `secure_tool` 裝飾器，包裹工具執行流程以檢查 PII、記錄存取並在需要時加密敏感資料。
+- 將 `secure_tool` 裝飾器應用於範例工具 (`SecureCustomerDataTool`)，確保其安全處理敏感資料。
 
-## What's next
+## 接下來的內容
 
 - [5.9 Web search](../web-search-mcp/README.md)
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-Could you please clarify what language "mo" refers to? There are multiple possibilities (e.g., Moldovan, a code for a language, or something else). This will help me provide the correct translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:18:31+00:00",
+  "translation_date": "2025-07-13T21:05:24+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "vi"
 }
@@ -23,7 +23,7 @@ dotnet run
 
 ## -3- Kiểm tra ví dụ
 
-Mở một terminal riêng trước khi chạy lệnh bên dưới (đảm bảo server vẫn đang chạy).
+Mở một terminal riêng trước khi bạn chạy lệnh dưới đây (đảm bảo server vẫn đang chạy).
 
 Khi server đang chạy ở một terminal, mở terminal khác và chạy lệnh sau:
 
@@ -33,12 +33,12 @@ npx @modelcontextprotocol/inspector http://localhost:3001
 
 Lệnh này sẽ khởi động một web server với giao diện trực quan cho phép bạn kiểm tra ví dụ.
 
-> Đảm bảo rằng **Streamable HTTP** được chọn làm loại giao thức, và URL là `http://localhost:3001/mcp`.
+> Đảm bảo rằng **Streamable HTTP** được chọn làm loại giao thức truyền tải, và URL là `http://localhost:3001/mcp`.
 
-Once the server is connected: 
+Khi server đã kết nối:
 
-- try listing tools and run `add`, với các tham số 2 và 4, bạn sẽ thấy kết quả là 6.
-- truy cập vào resources và resource template, gọi "greeting", nhập một tên và bạn sẽ thấy lời chào với tên bạn đã nhập.
+- thử liệt kê các công cụ và chạy `add` với các tham số 2 và 4, bạn sẽ thấy kết quả là 6.
+- vào phần resources và resource template, gọi "greeting", nhập một tên và bạn sẽ thấy lời chào với tên bạn đã nhập.
 
 ### Kiểm tra ở chế độ CLI
 
@@ -102,7 +102,7 @@ Bạn sẽ thấy kết quả như sau:
 
 > ![!TIP]
 > Thường thì chạy inspector ở chế độ CLI sẽ nhanh hơn nhiều so với chạy trên trình duyệt.
-> Đọc thêm về inspector [tại đây](https://github.com/modelcontextprotocol/inspector).
+> Tìm hiểu thêm về inspector [tại đây](https://github.com/modelcontextprotocol/inspector).
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc sai sót. Tài liệu gốc bằng ngôn ngữ bản địa của nó nên được xem là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu nhầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

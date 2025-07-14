@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T22:56:04+00:00",
+  "translation_date": "2025-07-13T17:24:22+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "ar"
 }
 -->
 ### -2- إنشاء مشروع
 
-الآن بعد أن قمت بتثبيت SDK الخاص بك، دعنا ننتقل لإنشاء مشروع جديد:
+الآن بعد أن قمت بتثبيت SDK الخاص بك، دعنا ننشئ مشروعًا في الخطوة التالية:
 
 ### -3- إنشاء ملفات المشروع
 
@@ -21,7 +21,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### -6- الكود النهائي
 
-لنضيف الكود الأخير الذي نحتاجه حتى يتمكن الخادم من البدء:
+لنضيف الكود الأخير الذي نحتاجه لكي يبدأ الخادم بالعمل:
 
 ### -7- اختبار الخادم
 
@@ -31,7 +31,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 أداة المفتش هي أداة رائعة يمكنها تشغيل الخادم الخاص بك وتتيح لك التفاعل معه حتى تتمكن من اختبار عمله. دعنا نبدأ تشغيلها:
 > [!NOTE]
-> قد يظهر بشكل مختلف في حقل "command" لأنه يحتوي على الأمر لتشغيل خادم باستخدام بيئة التشغيل الخاصة بك/
+> قد يبدو مختلفًا في حقل "command" لأنه يحتوي على الأمر لتشغيل خادم باستخدام بيئة التشغيل الخاصة بك/
 يجب أن ترى واجهة المستخدم التالية:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ar.png)
@@ -41,7 +41,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.ar.png)
 
-1. اختر "Tools" ثم "listTools"، يجب أن يظهر "Add"، اختر "Add" واملأ قيم المعلمات.
+1. اختر "Tools" ثم "listTools"، يجب أن يظهر "Add"، اختر "Add" واملأ قيم المعاملات.
 
    يجب أن ترى الاستجابة التالية، أي نتيجة من أداة "add":
 
@@ -69,11 +69,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## عينات
 
-- [حاسبة Java](../samples/java/calculator/README.md)  
-- [حاسبة .Net](../../../../03-GettingStarted/samples/csharp)  
-- [حاسبة JavaScript](../samples/javascript/README.md)  
-- [حاسبة TypeScript](../samples/typescript/README.md)  
-- [حاسبة Python](../../../../03-GettingStarted/samples/python)  
+- [Java Calculator](../samples/java/calculator/README.md)  
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
+- [JavaScript Calculator](../samples/javascript/README.md)  
+- [TypeScript Calculator](../samples/typescript/README.md)  
+- [Python Calculator](../../../../03-GettingStarted/samples/python)  
 
 ## المهمة
 
@@ -86,7 +86,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## الحل
 
-[الحل](./solution/README.md)
+[Solution](./solution/README.md)
 
 ## موارد إضافية
 

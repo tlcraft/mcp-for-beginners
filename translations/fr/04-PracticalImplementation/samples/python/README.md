@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:26:54+00:00",
+  "translation_date": "2025-07-13T23:29:39+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "fr"
 }
@@ -13,7 +13,7 @@ Ce dépôt contient une implémentation Python du Model Context Protocol (MCP), 
 
 ## Vue d'ensemble
 
-L'implémentation MCP se compose de deux composants principaux :
+L’implémentation MCP se compose de deux composants principaux :
 
 1. **Serveur MCP (`server.py`)** - Un serveur qui expose :
    - **Outils** : Fonctions pouvant être appelées à distance
@@ -31,8 +31,8 @@ Cette implémentation illustre plusieurs fonctionnalités clés du MCP :
 - `add` - Calculatrice simple qui additionne deux nombres
 
 ### Ressources
-- `models://` - Retourne des informations sur les modèles IA disponibles
-- `greeting://{name}` - Retourne un message personnalisé pour un nom donné
+- `models://` - Renvoie des informations sur les modèles IA disponibles
+- `greeting://{name}` - Renvoie un message personnalisé pour un nom donné
 
 ### Prompts
 - `review_code` - Génère un prompt pour la revue de code
@@ -45,9 +45,9 @@ Pour utiliser cette implémentation MCP, installez les paquets requis :
 pip install mcp-server mcp-client
 ```
 
-## Lancer le Serveur et le Client
+## Lancement du Serveur et du Client
 
-### Démarrage du Serveur
+### Démarrer le Serveur
 
 Lancez le serveur dans une fenêtre de terminal :
 
@@ -55,7 +55,7 @@ Lancez le serveur dans une fenêtre de terminal :
 python server.py
 ```
 
-Le serveur peut aussi être lancé en mode développement avec la CLI MCP :
+Le serveur peut aussi être lancé en mode développement via la CLI MCP :
 
 ```powershell
 mcp dev server.py
@@ -85,17 +85,17 @@ Le client (`client.py`) illustre toutes les capacités du MCP :
 python client.py
 ```
 
-Cela se connectera au serveur et testera toutes les fonctionnalités, y compris les outils, les ressources et les prompts. La sortie affichera :
+Cela connectera au serveur et testera toutes les fonctionnalités, y compris les outils, ressources et prompts. La sortie affichera :
 
-1. Résultat de l’outil calculatrice (5 + 7 = 12)
-2. Réponse de l’outil de complétion à "What is the meaning of life?"
-3. Liste des modèles IA disponibles
-4. Message personnalisé pour "MCP Explorer"
+1. Résultat de l’outil calculatrice (5 + 7 = 12)  
+2. Réponse de l’outil completion à la question « What is the meaning of life? »  
+3. Liste des modèles IA disponibles  
+4. Message personnalisé pour « MCP Explorer »  
 5. Modèle de prompt pour la revue de code
 
 ## Détails de l’implémentation
 
-Le serveur est implémenté en utilisant l’API `FastMCP`, qui fournit des abstractions de haut niveau pour définir des services MCP. Voici un exemple simplifié de définition des outils :
+Le serveur est implémenté avec l’API `FastMCP`, qui fournit des abstractions de haut niveau pour définir des services MCP. Voici un exemple simplifié de définition des outils :
 
 ```python
 @mcp.tool()
@@ -127,4 +127,4 @@ async with stdio_client(server_params) as (reader, writer):
 Pour plus d’informations sur MCP, visitez : https://modelcontextprotocol.io/
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous ne saurions être tenus responsables des malentendus ou des mauvaises interprétations résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

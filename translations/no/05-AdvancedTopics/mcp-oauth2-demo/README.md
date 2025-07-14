@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-13T00:10:36+00:00",
+  "translation_date": "2025-07-14T00:42:24+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "no"
 }
 -->
 # MCP OAuth2 Demo
 
-Dette prosjektet er en **minimal Spring Boot-applikasjon** som fungerer både som:
+Dette prosjektet er en **minimal Spring Boot-applikasjon** som fungerer som både:
 
-* en **Spring Authorization Server** (utsteder JWT access tokens via `client_credentials`-flyten), og  
-* en **Resource Server** (beskytter sitt eget `/hello` endepunkt).
+* en **Spring Authorization Server** (utsteder JWT-tilgangstokener via `client_credentials`-flyten), og  
+* en **Resource Server** (beskytter sin egen `/hello`-endepunkt).
 
-Den speiler oppsettet vist i [Spring blogginnlegg (2. april 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Det speiler oppsettet vist i [Spring-blogginnlegget (2. april 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -38,14 +38,14 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 Du kan teste OAuth2-sikkerhetskonfigurasjonen med følgende steg:
 
-### 1. Verifiser at serveren kjører og er sikret
+### 1. Bekreft at serveren kjører og er sikret
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Skaff et access token ved hjelp av klient-legitimasjon
+### 2. Skaff et tilgangstoken ved bruk av klientlegitimasjon
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Merk: Basic Authentication-headeren (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Merk: Basic Authentication-headeren (`bWNwLWNsaWVudDpzZWNyZXQ=`) er Base64-kodingen av `mcp-client:secret`.
 
-### 3. Tilgang til det beskyttede endepunktet med tokenet
+### 3. Få tilgang til det beskyttede endepunktet med tokenet
 
 ```bash
 # Using the saved token
@@ -96,13 +96,13 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 Ingress FQDN blir din **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+Azure leverer automatisk et betrodd TLS-sertifikat for `*.azurecontainerapps.io`.
 
 ---
 
 ## Koble til **Azure API Management**
 
-Legg til denne innkommende policyen i API-et ditt:
+Legg til denne inbound policyen i API-et ditt:
 
 ```xml
 <inbound>
@@ -120,9 +120,9 @@ APIM vil hente JWKS og validere hver forespørsel.
 
 ---
 
-## Hva er neste steg
+## Hva nå
 
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

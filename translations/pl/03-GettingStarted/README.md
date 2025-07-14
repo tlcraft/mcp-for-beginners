@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:30:50+00:00",
+  "translation_date": "2025-07-13T17:15:40+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "pl"
 }
@@ -19,7 +19,7 @@ Ta sekcja składa się z kilku lekcji:
 
 - **4 Konsumpcja serwera w trybie GitHub Copilot Agent w Visual Studio Code**. Tutaj przyjrzymy się uruchamianiu naszego MCP Server bezpośrednio w Visual Studio Code, [do lekcji](04-vscode/README.md)
 
-- **5 Konsumpcja z SSE (Server Sent Events)** SSE to standard do strumieniowania danych z serwera do klienta, pozwalający serwerom na przesyłanie aktualizacji w czasie rzeczywistym do klientów przez HTTP [do lekcji](05-sse-server/README.md)
+- **5 Konsumpcja z SSE (Server Sent Events)** SSE to standard do strumieniowania z serwera do klienta, pozwalający serwerom na przesyłanie aktualizacji w czasie rzeczywistym do klientów przez HTTP [do lekcji](05-sse-server/README.md)
 
 - **6 HTTP Streaming z MCP (Streamable HTTP)**. Poznaj nowoczesne strumieniowanie HTTP, powiadomienia o postępie oraz jak wdrożyć skalowalne, działające w czasie rzeczywistym serwery i klientów MCP korzystając ze Streamable HTTP. [do lekcji](06-http-streaming/README.md)
 
@@ -27,7 +27,7 @@ Ta sekcja składa się z kilku lekcji:
 
 - **8 Testowanie**. Skupimy się tutaj szczególnie na różnych sposobach testowania naszego serwera i klienta, [do lekcji](08-testing/README.md)
 
-- **9 Wdrożenie**. Ten rozdział pokaże różne sposoby wdrażania twoich rozwiązań MCP, [do lekcji](09-deployment/README.md)
+- **9 Wdrażanie**. Ten rozdział pokaże różne sposoby wdrażania twoich rozwiązań MCP, [do lekcji](09-deployment/README.md)
 
 
 Model Context Protocol (MCP) to otwarty protokół, który standaryzuje sposób, w jaki aplikacje dostarczają kontekst do LLM. Można go porównać do portu USB-C dla aplikacji AI – zapewnia ustandaryzowany sposób łączenia modeli AI z różnymi źródłami danych i narzędziami.
@@ -45,7 +45,7 @@ Po zakończeniu tej lekcji będziesz potrafił:
 
 ## Konfiguracja środowiska MCP
 
-Zanim zaczniesz pracę z MCP, ważne jest, aby przygotować środowisko programistyczne i zrozumieć podstawowy przebieg pracy. Ta sekcja przeprowadzi cię przez pierwsze kroki konfiguracji, aby zapewnić płynny start z MCP.
+Zanim zaczniesz pracę z MCP, ważne jest, aby przygotować środowisko programistyczne i zrozumieć podstawowy przepływ pracy. Ta sekcja przeprowadzi cię przez pierwsze kroki konfiguracji, aby zapewnić płynny start z MCP.
 
 ### Wymagania wstępne
 
@@ -54,14 +54,14 @@ Zanim zaczniesz rozwijać MCP, upewnij się, że masz:
 - **Środowisko programistyczne**: dla wybranego języka (C#, Java, Python, TypeScript lub JavaScript)
 - **IDE/Edytor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm lub dowolny nowoczesny edytor kodu
 - **Menadżery pakietów**: NuGet, Maven/Gradle, pip lub npm/yarn
-- **Klucze API**: do usług AI, które planujesz używać w swoich aplikacjach hostujących
+- **Klucze API**: do usług AI, których planujesz używać w aplikacjach hostujących
 
 
 ### Oficjalne SDK
 
 W kolejnych rozdziałach zobaczysz rozwiązania zbudowane w Pythonie, TypeScript, Javie i .NET. Oto wszystkie oficjalnie wspierane SDK.
 
-MCP udostępnia oficjalne SDK dla wielu języków:
+MCP oferuje oficjalne SDK dla wielu języków:
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - utrzymywane we współpracy z Microsoft
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - utrzymywane we współpracy ze Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - oficjalna implementacja TypeScript
@@ -70,12 +70,12 @@ MCP udostępnia oficjalne SDK dla wielu języków:
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - utrzymywane we współpracy z Loopwork AI
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - oficjalna implementacja Rust
 
-## Najważniejsze wnioski
+## Kluczowe wnioski
 
 - Konfiguracja środowiska programistycznego MCP jest prosta dzięki SDK specyficznym dla języków
 - Budowa serwerów MCP polega na tworzeniu i rejestrowaniu narzędzi z jasnymi schematami
 - Klienci MCP łączą się z serwerami i modelami, aby wykorzystać rozszerzone możliwości
-- Testowanie i debugowanie są kluczowe dla niezawodnych implementacji MCP
+- Testowanie i debugowanie są niezbędne dla niezawodnych implementacji MCP
 - Opcje wdrożenia obejmują zarówno lokalny rozwój, jak i rozwiązania chmurowe
 
 ## Ćwiczenia praktyczne
@@ -99,4 +99,4 @@ Mamy zestaw przykładów, które uzupełniają ćwiczenia widoczne we wszystkich
 Następne: [Tworzenie twojego pierwszego serwera MCP](01-first-server/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

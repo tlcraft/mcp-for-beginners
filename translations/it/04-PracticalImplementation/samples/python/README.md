@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:30:13+00:00",
+  "translation_date": "2025-07-13T23:32:20+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "it"
 }
 -->
 # Protocollo Model Context (MCP) Implementazione in Python
 
-Questo repository contiene un'implementazione in Python del Model Context Protocol (MCP), che mostra come creare sia un'applicazione server che client che comunicano utilizzando lo standard MCP.
+Questo repository contiene un'implementazione in Python del Protocollo Model Context (MCP), che mostra come creare sia un'applicazione server che client che comunicano utilizzando lo standard MCP.
 
 ## Panoramica
 
@@ -22,7 +22,7 @@ L'implementazione MCP è composta da due componenti principali:
 
 2. **MCP Client (`client.py`)** - Un'applicazione client che si connette al server e utilizza le sue funzionalità
 
-## Caratteristiche
+## Funzionalità
 
 Questa implementazione dimostra diverse funzionalità chiave di MCP:
 
@@ -75,7 +75,7 @@ Esegui il client in un'altra finestra del terminale:
 python client.py
 ```
 
-Questo si connetterà al server e mostrerà tutte le funzionalità disponibili.
+Questo si connetterà al server e dimostrerà tutte le funzionalità disponibili.
 
 ### Uso del Client
 
@@ -85,17 +85,17 @@ Il client (`client.py`) dimostra tutte le capacità MCP:
 python client.py
 ```
 
-Questo si connetterà al server e testerà tutte le funzionalità, inclusi tools, resources e prompts. L'output mostrerà:
+Questo si connetterà al server e utilizzerà tutte le funzionalità, inclusi tools, resources e prompts. L'output mostrerà:
 
 1. Risultato dello strumento calcolatrice (5 + 7 = 12)
-2. Risposta dello strumento completamento alla domanda "Qual è il significato della vita?"
+2. Risposta dello strumento completion a "Qual è il significato della vita?"
 3. Elenco dei modelli AI disponibili
 4. Saluto personalizzato per "MCP Explorer"
 5. Modello di prompt per la revisione del codice
 
-## Dettagli sull'Implementazione
+## Dettagli di Implementazione
 
-Il server è implementato usando l'API `FastMCP`, che fornisce astrazioni di alto livello per definire i servizi MCP. Ecco un esempio semplificato di come vengono definiti i tools:
+Il server è implementato usando l'API `FastMCP`, che fornisce astrazioni di alto livello per definire servizi MCP. Ecco un esempio semplificato di come vengono definiti i tools:
 
 ```python
 @mcp.tool()
@@ -127,4 +127,4 @@ async with stdio_client(server_params) as (reader, writer):
 Per maggiori informazioni su MCP, visita: https://modelcontextprotocol.io/
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale umana. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

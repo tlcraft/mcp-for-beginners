@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-07-09T21:58:49+00:00",
+  "translation_date": "2025-07-13T17:49:11+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "th"
 }
@@ -30,7 +30,7 @@ dotnet run
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-คำสั่งนี้จะเริ่มเว็บเซิร์ฟเวอร์พร้อมอินเทอร์เฟซแบบภาพที่ช่วยให้คุณทดสอบตัวอย่างได้
+คำสั่งนี้จะเริ่มเซิร์ฟเวอร์เว็บพร้อมอินเทอร์เฟซแบบกราฟิกที่ช่วยให้คุณทดสอบตัวอย่างได้
 
 เมื่อเซิร์ฟเวอร์เชื่อมต่อแล้ว:
 

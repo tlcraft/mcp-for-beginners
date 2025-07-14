@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8248e3491f5245ee6ab48ef724a4f65a",
-  "translation_date": "2025-07-04T17:56:25+00:00",
+  "translation_date": "2025-07-13T21:36:44+00:00",
   "source_file": "03-GettingStarted/07-aitk/README.md",
   "language_code": "nl"
 }
@@ -15,7 +15,7 @@ Stel dat je een agent koppelt aan je calculator MCP-server. Plots kan je agent w
 
 ## Overzicht
 
-Deze les behandelt hoe je een calculator MCP-server koppelt aan een agent met de [AI Toolkit](https://aka.ms/AIToolkit) extensie in Visual Studio Code, zodat je agent wiskundige bewerkingen kan uitvoeren zoals optellen, aftrekken, vermenigvuldigen en delen via natuurlijke taal.
+Deze les behandelt hoe je een calculator MCP-server koppelt aan een agent met de [AI Toolkit](https://aka.ms/AIToolkit) extensie in Visual Studio Code, zodat je agent wiskundige bewerkingen zoals optellen, aftrekken, vermenigvuldigen en delen kan uitvoeren via natuurlijke taal.
 
 AI Toolkit is een krachtige extensie voor Visual Studio Code die het ontwikkelen van agents vereenvoudigt. AI Engineers kunnen eenvoudig AI-toepassingen bouwen door generatieve AI-modellen te ontwikkelen en te testen—lokaal of in de cloud. De extensie ondersteunt de meeste grote generatieve modellen die vandaag beschikbaar zijn.
 
@@ -38,7 +38,7 @@ Dit is hoe we het op hoofdlijnen aanpakken:
 - Verbind de Agent Builder met de MCP-server.
 - Test het aanroepen van tools door de agent via natuurlijke taal.
 
-Top, nu we het proces begrijpen, laten we een AI-agent configureren om externe tools via MCP te gebruiken en zo zijn mogelijkheden te vergroten!
+Geweldig, nu we de flow begrijpen, laten we een AI-agent configureren om externe tools via MCP te gebruiken en zo zijn mogelijkheden te vergroten!
 
 ## Vereisten
 
@@ -47,41 +47,41 @@ Top, nu we het proces begrijpen, laten we een AI-agent configureren om externe t
 
 ## Oefening: Een server gebruiken
 
-In deze oefening bouw, start en verbeter je een AI-agent met tools van een MCP-server binnen Visual Studio Code met behulp van de AI Toolkit.
+In deze oefening bouw, draai en verbeter je een AI-agent met tools van een MCP-server binnen Visual Studio Code met behulp van de AI Toolkit.
 
 ### -0- Voorbereiding: voeg het OpenAI GPT-4o model toe aan Mijn Modellen
 
 De oefening maakt gebruik van het **GPT-4o** model. Dit model moet worden toegevoegd aan **Mijn Modellen** voordat je de agent maakt.
 
-![Screenshot van een modelselectie-interface in de AI Toolkit-extensie van Visual Studio Code. De koptekst luidt "Find the right model for your AI Solution" met een ondertitel die gebruikers aanmoedigt AI-modellen te ontdekken, testen en implementeren. Daaronder, onder “Popular Models,” worden zes modelkaarten getoond: DeepSeek-R1 (gehost op GitHub), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Klein, Snel), en DeepSeek-R1 (gehost op Ollama). Elke kaart bevat opties om het model toe te voegen of te proberen in de Playground.](../../../../translated_images/aitk-model-catalog.2acd38953bb9c119aa629fe74ef34cc56e4eed35e7f5acba7cd0a59e614ab335.nl.png)
+![Screenshot van een modelselectie-interface in de AI Toolkit-extensie van Visual Studio Code. De koptekst luidt "Find the right model for your AI Solution" met een ondertitel die gebruikers aanmoedigt AI-modellen te ontdekken, testen en implementeren. Onder “Popular Models” worden zes modelkaarten getoond: DeepSeek-R1 (gehost op GitHub), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Klein, Snel), en DeepSeek-R1 (gehost op Ollama). Elke kaart bevat opties om het model toe te voegen of te proberen in de Playground.](../../../../translated_images/aitk-model-catalog.2acd38953bb9c119aa629fe74ef34cc56e4eed35e7f5acba7cd0a59e614ab335.nl.png)
 
 1. Open de **AI Toolkit** extensie via de **Activity Bar**.
 1. Selecteer in de sectie **Catalog** de optie **Models** om de **Model Catalog** te openen. Dit opent de **Model Catalog** in een nieuw editor-tabblad.
 1. Typ in de zoekbalk van de **Model Catalog** **OpenAI GPT-4o**.
-1. Klik op **+ Add** om het model toe te voegen aan je lijst **Mijn Modellen**. Zorg dat je het model selecteert dat **Hosted by GitHub** is.
+1. Klik op **+ Add** om het model toe te voegen aan je lijst **Mijn Modellen**. Zorg dat je het model selecteert dat **gehost wordt door GitHub**.
 1. Controleer in de **Activity Bar** of het model **OpenAI GPT-4o** in de lijst verschijnt.
 
 ### -1- Maak een agent
 
 De **Agent (Prompt) Builder** stelt je in staat om je eigen AI-gestuurde agents te maken en aan te passen. In deze sectie maak je een nieuwe agent en wijs je een model toe om het gesprek aan te sturen.
 
-![Screenshot van de "Calculator Agent" builder-interface in de AI Toolkit-extensie voor Visual Studio Code. In het linker paneel is het geselecteerde model "OpenAI GPT-4o (via GitHub)." Een system prompt luidt "You are a professor in university teaching math," en de user prompt zegt "Explain to me the Fourier equation in simple terms." Extra opties zijn knoppen om tools toe te voegen, MCP Server in te schakelen en gestructureerde output te selecteren. Onderaan staat een blauwe “Run” knop. In het rechter paneel, onder "Get Started with Examples," staan drie voorbeeldagents: Web Developer (met MCP Server), Second-Grade Simplifier en Dream Interpreter, elk met een korte beschrijving van hun functies.](../../../../translated_images/aitk-agent-builder.901e3a2960c3e4774b29a23024ff5bec2d4232f57fae2a418b2aaae80f81c05f.nl.png)
+![Screenshot van de "Calculator Agent" builder-interface in de AI Toolkit-extensie voor Visual Studio Code. In het linker paneel is het model "OpenAI GPT-4o (via GitHub)" geselecteerd. Een system prompt luidt "You are a professor in university teaching math," en de user prompt zegt "Explain to me the Fourier equation in simple terms." Extra opties zijn knoppen om tools toe te voegen, MCP Server in te schakelen en gestructureerde output te selecteren. Onderaan staat een blauwe “Run” knop. In het rechter paneel, onder "Get Started with Examples," staan drie voorbeeldagents: Web Developer (met MCP Server), Second-Grade Simplifier en Dream Interpreter, elk met een korte beschrijving van hun functies.](../../../../translated_images/aitk-agent-builder.901e3a2960c3e4774b29a23024ff5bec2d4232f57fae2a418b2aaae80f81c05f.nl.png)
 
 1. Open de **AI Toolkit** extensie via de **Activity Bar**.
 1. Selecteer in de sectie **Tools** de optie **Agent (Prompt) Builder**. Dit opent de **Agent (Prompt) Builder** in een nieuw editor-tabblad.
 1. Klik op de knop **+ New Agent**. De extensie start een setup-wizard via de **Command Palette**.
 1. Voer de naam **Calculator Agent** in en druk op **Enter**.
-1. Selecteer in de **Agent (Prompt) Builder** bij het veld **Model** het model **OpenAI GPT-4o (via GitHub)**.
+1. Selecteer in het veld **Model** van de **Agent (Prompt) Builder** het model **OpenAI GPT-4o (via GitHub)**.
 
 ### -2- Maak een system prompt voor de agent
 
-Nu de agent is opgezet, is het tijd om zijn persoonlijkheid en doel te definiëren. In deze sectie gebruik je de functie **Generate system prompt** om het beoogde gedrag van de agent te beschrijven—in dit geval een calculator agent—en laat je het model de system prompt voor je schrijven.
+Nu de agent is opgezet, is het tijd om zijn persoonlijkheid en doel te definiëren. In deze sectie gebruik je de functie **Generate system prompt** om het beoogde gedrag van de agent te beschrijven—in dit geval een calculator-agent—en laat je het model de system prompt voor je schrijven.
 
 ![Screenshot van de "Calculator Agent" interface in de AI Toolkit voor Visual Studio Code met een modaal venster open getiteld "Generate a prompt." Het modale venster legt uit dat een prompttemplate gegenereerd kan worden door basisgegevens te delen en bevat een tekstvak met de voorbeeld system prompt: "You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result." Onder het tekstvak staan de knoppen "Close" en "Generate." Op de achtergrond is een deel van de agentconfiguratie zichtbaar, inclusief het geselecteerde model "OpenAI GPT-4o (via GitHub)" en velden voor system en user prompts.](../../../../translated_images/aitk-generate-prompt.ba9e69d3d2bbe2a26444d0c78775540b14196061eee32c2054e9ee68c4f51f3a.nl.png)
 
 1. Klik in de sectie **Prompts** op de knop **Generate system prompt**. Deze knop opent de prompt builder die AI gebruikt om een system prompt voor de agent te genereren.
 1. Voer in het venster **Generate a prompt** het volgende in: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
-1. Klik op de knop **Generate**. Onderaan rechts verschijnt een melding dat de system prompt wordt gegenereerd. Zodra de prompt klaar is, verschijnt deze in het veld **System prompt** van de **Agent (Prompt) Builder**.
+1. Klik op de knop **Generate**. Er verschijnt een melding rechtsonder dat de system prompt wordt gegenereerd. Zodra de prompt klaar is, verschijnt deze in het veld **System prompt** van de **Agent (Prompt) Builder**.
 1. Bekijk de **System prompt** en pas deze aan indien nodig.
 
 ### -3- Maak een MCP-server
@@ -106,8 +106,8 @@ AI Toolkit is uitgerust met templates om het maken van je eigen MCP-server te ve
     1. Windows - `.venv\Scripts\activate`
     1. macOS/Linux - `source venv/bin/activate`
 1. Installeer de dependencies via de terminal: `pip install -e .[dev]`
-1. Vouw in de **Explorer**-weergave van de **Activity Bar** de map **src** uit en open het bestand **server.py** in de editor.
-1. Vervang de code in **server.py** door de volgende code en sla op:
+1. Open in de **Explorer**-weergave van de **Activity Bar** de map **src** en selecteer **server.py** om het bestand te openen in de editor.
+1. Vervang de code in het bestand **server.py** door de volgende code en sla op:
 
     ```python
     """
@@ -150,7 +150,7 @@ AI Toolkit is uitgerust met templates om het maken van je eigen MCP-server te ve
         return a / b
     ```
 
-### -4- Start de agent met de calculator MCP-server
+### -4- Draai de agent met de calculator MCP-server
 
 Nu je agent tools heeft, is het tijd om ze te gebruiken! In deze sectie stuur je prompts naar de agent om te testen en te controleren of de agent de juiste tool van de calculator MCP-server gebruikt.
 
@@ -189,10 +189,10 @@ De belangrijkste punten uit dit hoofdstuk zijn:
 
 ## Extra bronnen
 
-- [AI Toolkit docs](https://aka.ms/AIToolkit/doc)
+- [AI Toolkit documentatie](https://aka.ms/AIToolkit/doc)
 
 ## Wat volgt
-- Volgende: [Testing & Debugging](../08-testing/README.md)
+- Volgende: [Testen & Debuggen](../08-testing/README.md)
 
 **Disclaimer**:  
 Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

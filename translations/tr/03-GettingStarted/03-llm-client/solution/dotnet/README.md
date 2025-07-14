@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
-  "translation_date": "2025-06-18T05:59:10+00:00",
+  "translation_date": "2025-07-13T19:03:07+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "tr"
 }
@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # Bu örneği çalıştır
 
 > [!NOTE]
-> Bu örnek, bir GitHub Codespaces örneği kullandığınızı varsayar. Bunu yerel olarak çalıştırmak isterseniz, GitHub üzerinde kişisel erişim belirteci (PAT) oluşturmanız gerekir.
+> Bu örnek, bir GitHub Codespaces örneği kullandığınızı varsayar. Bunu yerel olarak çalıştırmak istiyorsanız, GitHub üzerinde kişisel erişim belirteci (PAT) oluşturmanız gerekir.
 >
 > ```bash
 > # zsh/bash
@@ -28,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-Aşağıdaki kütüphaneleri yüklemelisiniz: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol 
+Aşağıdaki kütüphaneler yüklenmelidir: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
 ## Çalıştır
 
@@ -36,7 +36,7 @@ Aşağıdaki kütüphaneleri yüklemelisiniz: Azure AI Inference, Azure Identity
 dotnet run
 ```
 
-Şu şekilde bir çıktı görmelisiniz:
+Aşağıdakine benzer bir çıktı görmelisiniz:
 
 ```text
 Setting up stdio transport
@@ -51,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Çıktının çoğu hata ayıklama ile ilgili, ancak önemli olan MCP Sunucusundan araçları listelemeniz, bunları LLM araçlarına dönüştürmeniz ve sonunda "Sum 6" yanıtını veren bir MCP istemcisi elde etmeniz.
+Çıktının çoğu sadece hata ayıklama amaçlıdır ancak önemli olan, MCP Sunucusundan araçları listelemeniz, bunları LLM araçlarına dönüştürmeniz ve sonunda MCP istemcisinden "Sum 6" yanıtını almanızdır.
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalardan dolayı sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

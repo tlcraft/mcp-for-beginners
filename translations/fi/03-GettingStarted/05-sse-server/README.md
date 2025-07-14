@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T17:51:45+00:00",
+  "translation_date": "2025-07-13T19:57:34+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "fi"
 }
@@ -14,13 +14,13 @@ Nyt kun tiedämme hieman enemmän SSE:stä, rakennetaan seuraavaksi SSE-palvelin
 Palvelimen luomiseksi meidän on pidettävä mielessä kaksi asiaa:
 
 - Tarvitsemme web-palvelimen, joka tarjoaa päätepisteet yhteyksille ja viesteille.
-- Rakennamme palvelimen kuten tavallisesti käyttäen työkaluja, resursseja ja kehotteita, kuten stdioa käytettäessä.
+- Rakennamme palvelimen kuten tavallisesti työkaluilla, resursseilla ja kehotteilla, kuten stdioa käytettäessä.
 
 ### -1- Luo palvelininstanssi
 
 Palvelimen luomiseksi käytämme samoja tyyppejä kuin stdio:ssa. Kuljetustavaksi valitsemme kuitenkin SSE:n.
 
-Seuraavaksi lisätään tarvittavat reitit.
+Lisätään seuraavaksi tarvittavat reitit.
 
 ### -2- Lisää reitit
 
@@ -55,19 +55,19 @@ Inspectorin käynnistämiseksi sinun täytyy ensin saada SSE-palvelin käyntiin,
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-Inspectorin käynnistäminen näyttää samalta kaikissa ajoympäristöissä. Huomaa, että sen sijaan että antaisit polun palvelimelle ja komennon palvelimen käynnistämiseksi, annat URL-osoitteen, jossa palvelin toimii, ja määrität myös `/sse`-reitin.
+Inspectorin käynnistäminen näyttää samalta kaikissa ajoympäristöissä. Huomaa, että sen sijaan, että antaisit polun palvelimelle ja komennon palvelimen käynnistämiseksi, annat URL-osoitteen, jossa palvelin toimii, ja määrität myös `/sse`-reitin.
 
 ### -2- Työkalun kokeileminen
 
-Yhdistä palvelimeen valitsemalla pudotusvalikosta SSE ja täytä URL-kenttään palvelimesi osoite, esimerkiksi http:localhost:4321/sse. Klikkaa sitten "Connect"-painiketta. Valitse kuten ennenkin listaa työkaluja, valitse työkalu ja anna syötearvot. Näet tuloksen kuten alla:
+Yhdistä palvelimeen valitsemalla pudotusvalikosta SSE ja täytä URL-kenttään palvelimesi osoite, esimerkiksi http:localhost:4321/sse. Klikkaa sitten "Connect"-painiketta. Valitse kuten ennenkin listaa työkaluista, valitse työkalu ja anna syötearvot. Näet tuloksen kuten alla:
 
 ![SSE-palvelin käynnissä inspectorissa](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.fi.png)
 
-Hienoa, pystyt työskentelemään inspectorin kanssa, katsotaan seuraavaksi miten voit työskennellä Visual Studio Coden kanssa.
+Hienoa, pystyt työskentelemään inspectorin kanssa, katsotaan seuraavaksi, miten voimme työskennellä Visual Studio Coden kanssa.
 
 ## Tehtävä
 
-Yritä laajentaa palvelintasi lisäämällä siihen ominaisuuksia. Katso [tästä sivusta](https://api.chucknorris.io/) esimerkiksi, miten lisätä työkalu, joka kutsuu API:a. Sinä päätät, miltä palvelimen tulisi näyttää. Hauskaa koodausta :)
+Yritä laajentaa palvelintasi lisäämällä siihen ominaisuuksia. Katso [tästä sivusta](https://api.chucknorris.io/) esimerkiksi työkalu, joka kutsuu API:a. Sinä päätät, miltä palvelimen tulisi näyttää. Hauskaa koodausta :)
 
 ## Ratkaisu
 
@@ -77,17 +77,17 @@ Yritä laajentaa palvelintasi lisäämällä siihen ominaisuuksia. Katso [täst�
 
 Tämän luvun tärkeimmät opit ovat:
 
-- SSE on toinen stdio:n lisäksi tuetuista kuljetustavoista.
+- SSE on toinen stdion rinnalla tuetuista kuljetustavoista.
 - SSE:n tukemiseksi sinun täytyy hallita saapuvia yhteyksiä ja viestejä web-kehyksen avulla.
-- Voit käyttää sekä Inspectoria että Visual Studio Codea SSE-palvelimen kuluttamiseen, aivan kuten stdio-palvelimien kanssa. Huomaa, että stdio:n ja SSE:n välillä on pieniä eroja. SSE:n kanssa palvelin täytyy käynnistää erikseen ja sen jälkeen suorittaa inspector-työkalu. Inspector-työkalussa on myös eroavaisuuksia, sillä sinun täytyy määrittää URL-osoite.
+- Voit käyttää sekä Inspectoria että Visual Studio Codea SSE-palvelimen kuluttamiseen, aivan kuten stdio-palvelimien kanssa. Huomaa, että stdion ja SSE:n välillä on pieniä eroja. SSE:n kanssa palvelin täytyy käynnistää erikseen ja sen jälkeen suorittaa inspector-työkalu. Inspector-työkalussa on myös eroavaisuuksia, sillä sinun täytyy määrittää URL-osoite.
 
 ## Esimerkit
 
-- [Java-laskin](../samples/java/calculator/README.md)
-- [.Net-laskin](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript-laskin](../samples/javascript/README.md)
-- [TypeScript-laskin](../samples/typescript/README.md)
-- [Python-laskin](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## Lisäresurssit
 
@@ -95,7 +95,7 @@ Tämän luvun tärkeimmät opit ovat:
 
 ## Mitä seuraavaksi
 
-- Seuraavaksi: [HTTP Streaming MCP:llä (Streamable HTTP)](../06-http-streaming/README.md)
+- Seuraavaksi: [HTTP Streaming MCP:n kanssa (Streamable HTTP)](../06-http-streaming/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

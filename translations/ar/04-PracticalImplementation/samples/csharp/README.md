@@ -2,37 +2,37 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-06-18T07:46:42+00:00",
+  "translation_date": "2025-07-13T23:03:46+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "ar"
 }
 -->
 # مثال
 
-يُظهر المثال السابق كيفية استخدام مشروع .NET محلي مع النوع `stdio`، وكيفية تشغيل الخادم محليًا داخل حاوية. هذه طريقة جيدة في العديد من الحالات. ومع ذلك، قد يكون من المفيد تشغيل الخادم عن بُعد، مثل بيئة السحابة. هنا يأتي دور النوع `http`.
+يُظهر المثال السابق كيفية استخدام مشروع .NET محلي مع نوع `stdio`. وكيفية تشغيل الخادم محليًا داخل حاوية. هذا حل جيد في العديد من الحالات. ومع ذلك، قد يكون من المفيد تشغيل الخادم عن بُعد، مثل بيئة السحابة. وهنا يأتي دور نوع `http`.
 
-عند النظر إلى الحل في مجلد `04-PracticalImplementation`، قد يبدو أكثر تعقيدًا من المثال السابق. لكن في الواقع، ليس كذلك. إذا نظرت عن كثب إلى المشروع `src/Calculator`، سترى أنه يحتوي على نفس الشيفرة تقريبًا كما في المثال السابق. الاختلاف الوحيد هو أننا نستخدم مكتبة مختلفة `ModelContextProtocol.AspNetCore` للتعامل مع طلبات HTTP. كما قمنا بتغيير الطريقة `IsPrime` لتصبح خاصة، فقط لإظهار أنه يمكنك وجود طرق خاصة في الشيفرة الخاصة بك. بقية الشيفرة هي نفسها كما من قبل.
+عند النظر إلى الحل في مجلد `04-PracticalImplementation`، قد يبدو أكثر تعقيدًا من المثال السابق. لكن في الواقع، ليس كذلك. إذا نظرت عن كثب إلى مشروع `src/Calculator`، سترى أنه في الغالب نفس الكود كما في المثال السابق. الاختلاف الوحيد هو أننا نستخدم مكتبة مختلفة `ModelContextProtocol.AspNetCore` للتعامل مع طلبات HTTP. ونغير الطريقة `IsPrime` لتصبح خاصة، فقط لإظهار أنه يمكنك وجود طرق خاصة في كودك. بقية الكود هو نفسه كما كان من قبل.
 
-المشاريع الأخرى هي من [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). وجود .NET Aspire في الحل يحسن تجربة المطور أثناء التطوير والاختبار ويساعد في الرصد. ليس من الضروري تشغيل الخادم، لكنه من الممارسات الجيدة وجوده في الحل الخاص بك.
+المشاريع الأخرى هي من [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). وجود .NET Aspire في الحل سيحسن تجربة المطور أثناء التطوير والاختبار ويساعد في الرصد. ليس من الضروري لتشغيل الخادم، لكنه ممارسة جيدة أن يكون موجودًا في الحل الخاص بك.
 
 ## تشغيل الخادم محليًا
 
 1. من VS Code (مع امتداد C# DevKit)، انتقل إلى مجلد `04-PracticalImplementation/samples/csharp`.
-2. نفذ الأمر التالي لتشغيل الخادم:
+1. نفذ الأمر التالي لتشغيل الخادم:
 
    ```bash
     dotnet watch run --project ./src/AppHost
    ```
 
-3. عندما يفتح متصفح الويب لوحة تحكم .NET Aspire، لاحظ عنوان URL الخاص بـ `http`. يجب أن يكون شيئًا مثل `http://localhost:5058/`.
+1. عندما يفتح متصفح الويب لوحة تحكم .NET Aspire، لاحظ عنوان URL الخاص بـ `http`. يجب أن يكون شيئًا مثل `http://localhost:5058/`.
 
    ![لوحة تحكم .NET Aspire](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.ar.png)
 
 ## اختبار Streamable HTTP باستخدام MCP Inspector
 
-إذا كان لديك Node.js إصدار 22.7.5 أو أحدث، يمكنك استخدام MCP Inspector لاختبار الخادم الخاص بك.
+إذا كان لديك Node.js إصدار 22.7.5 أو أعلى، يمكنك استخدام MCP Inspector لاختبار الخادم الخاص بك.
 
-ابدأ تشغيل الخادم ونفذ الأمر التالي في الطرفية:
+شغّل الخادم ونفذ الأمر التالي في الطرفية:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:5058
@@ -40,18 +40,18 @@ npx @modelcontextprotocol/inspector http://localhost:5058
 
 ![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.ar.png)
 
-- اختر `Streamable HTTP` as the Transport type.
-- In the Url field, enter the URL of the server noted earlier, and append `/mcp`. يجب أن يكون `http` (وليس `https`) something like `http://localhost:5058/mcp`.
-- select the Connect button.
+- اختر `Streamable HTTP` كنوع النقل.
+- في حقل Url، أدخل عنوان URL الخاص بالخادم الذي لاحظته سابقًا، وأضف `/mcp` في النهاية. يجب أن يكون `http` (وليس `https`) مثل `http://localhost:5058/mcp`.
+- اضغط على زر Connect.
 
-A nice thing about the Inspector is that it provide a nice visibility on what is happening.
+ميزة جيدة في Inspector هي أنه يوفر رؤية واضحة لما يحدث.
 
-- Try listing the available tools
-- Try some of them, it should works just like before.
+- جرب عرض الأدوات المتاحة
+- جرب بعضها، يجب أن تعمل كما في السابق.
 
-## Test MCP Server with GitHub Copilot Chat in VS Code
+## اختبار MCP Server مع GitHub Copilot Chat في VS Code
 
-To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp` الخادم الذي تم إنشاؤه سابقًا ليبدو هكذا:
+لاستخدام نقل Streamable HTTP مع GitHub Copilot Chat، غيّر إعدادات خادم `calc-mcp` الذي أنشأته سابقًا ليبدو كالتالي:
 
 ```jsonc
 // .vscode/mcp.json
@@ -69,13 +69,13 @@ To use the Streamable HTTP transport with GitHub Copilot Chat, change the config
 
 - اطلب "3 أعداد أولية بعد 6780". لاحظ كيف سيستخدم Copilot الأدوات الجديدة `NextFivePrimeNumbers` ويعيد فقط أول 3 أعداد أولية.
 - اطلب "7 أعداد أولية بعد 111"، لترى ماذا يحدث.
-- اطلب "جون لديه 24 مصاصة ويريد توزيعها كلها على أولاده الثلاثة. كم عدد المصاصات التي يحصل عليها كل طفل؟"، لترى ماذا يحدث.
+- اطلب "جون لديه 24 مصاصة ويريد توزيعها كلها على أطفاله الثلاثة. كم عدد المصاصات التي يحصل عليها كل طفل؟"، لترى ماذا يحدث.
 
 ## نشر الخادم على Azure
 
 لنشر الخادم على Azure ليتمكن المزيد من الأشخاص من استخدامه.
 
-من الطرفية، انتقل إلى المجلد `04-PracticalImplementation/samples/csharp` ونفذ الأمر التالي:
+من الطرفية، انتقل إلى مجلد `04-PracticalImplementation/samples/csharp` ونفذ الأمر التالي:
 
 ```bash
 azd up
@@ -101,7 +101,7 @@ azd up
 
 ## ماذا بعد؟
 
-جربنا أنواع نقل مختلفة وأدوات اختبار متعددة. كما نشرنا خادم MCP الخاص بك على Azure. ولكن ماذا لو كان خادمنا يحتاج إلى الوصول إلى موارد خاصة؟ مثل قاعدة بيانات أو API خاصة؟ في الفصل القادم، سنرى كيف يمكننا تحسين أمان الخادم الخاص بنا.
+جربنا أنواع نقل مختلفة وأدوات اختبار. كما نشرنا خادم MCP الخاص بك على Azure. لكن ماذا لو كان خادمنا يحتاج إلى الوصول إلى موارد خاصة؟ مثل قاعدة بيانات أو API خاصة؟ في الفصل القادم، سنرى كيف يمكننا تحسين أمان الخادم الخاص بنا.
 
-**تنويه**:  
-تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.
+**إخلاء المسؤولية**:  
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

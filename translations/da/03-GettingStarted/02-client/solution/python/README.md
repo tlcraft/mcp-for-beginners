@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0ab9613fc9595f493847f91275859a18",
-  "translation_date": "2025-05-17T10:02:24+00:00",
+  "translation_date": "2025-07-13T18:41:13+00:00",
   "source_file": "03-GettingStarted/02-client/solution/python/README.md",
   "language_code": "da"
 }
 -->
-# Kør denne prøve
+# Kør dette eksempel
 
-Det anbefales at installere `uv`, men det er ikke et krav, se [instruktioner](https://docs.astral.sh/uv/#highlights)
+Det anbefales at installere `uv`, men det er ikke et krav, se [instructions](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Opret et virtuelt miljø
 
@@ -29,13 +29,13 @@ venv\Scrips\activate
 pip install "mcp[cli]"
 ```
 
-## -3- Kør prøven
+## -3- Kør eksemplet
 
 ```bash
 python client.py
 ```
 
-Du bør se en output, der ligner:
+Du burde se en output, der ligner:
 
 ```text
 LISTING RESOURCES
@@ -53,4 +53,4 @@ CALL TOOL
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

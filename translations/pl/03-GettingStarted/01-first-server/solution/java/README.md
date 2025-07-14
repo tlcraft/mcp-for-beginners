@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ed9cab32cc67c12d8969b407aa47100a",
-  "translation_date": "2025-06-11T09:32:16+00:00",
+  "translation_date": "2025-07-13T17:54:15+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/java/README.md",
   "language_code": "pl"
 }
 -->
-# Basic Calculator MCP Service
+# Podstawowa usługa kalkulatora MCP
 
-Ta usługa zapewnia podstawowe operacje kalkulatora za pomocą Model Context Protocol (MCP) wykorzystując Spring Boot z transportem WebFlux. Została zaprojektowana jako prosty przykład dla początkujących uczących się implementacji MCP.
+Ta usługa udostępnia podstawowe operacje kalkulatora za pomocą Model Context Protocol (MCP) wykorzystując Spring Boot z transportem WebFlux. Została zaprojektowana jako prosty przykład dla początkujących uczących się implementacji MCP.
 
 Więcej informacji znajdziesz w dokumentacji referencyjnej [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html).
 
@@ -40,14 +40,14 @@ Projekt wymaga następujących kluczowych zależności:
 
 ## Budowanie projektu
 
-Zbuduj projekt za pomocą Mavena:
+Zbuduj projekt używając Maven:
 ```bash
 ./mvnw clean install -DskipTests
 ```
 
 ## Uruchamianie serwera
 
-### Korzystanie z Java
+### Za pomocą Java
 
 ```bash
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
@@ -55,25 +55,25 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 
 ### Korzystanie z MCP Inspector
 
-MCP Inspector to przydatne narzędzie do interakcji z usługami MCP. Aby użyć go z tym serwisem kalkulatora:
+MCP Inspector to przydatne narzędzie do interakcji z usługami MCP. Aby użyć go z tą usługą kalkulatora:
 
 1. **Zainstaluj i uruchom MCP Inspector** w nowym oknie terminala:
    ```bash
    npx @modelcontextprotocol/inspector
    ```
 
-2. **Otwórz interfejs webowy** klikając w adres URL wyświetlony przez aplikację (zwykle http://localhost:6274)
+2. **Otwórz interfejs webowy** klikając w URL wyświetlony przez aplikację (zazwyczaj http://localhost:6274)
 
 3. **Skonfiguruj połączenie**:
    - Ustaw typ transportu na "SSE"
-   - Ustaw URL na punkt SSE twojego działającego serwera: `http://localhost:8080/sse`
+   - Ustaw URL na endpoint SSE działającego serwera: `http://localhost:8080/sse`
    - Kliknij "Connect"
 
 4. **Korzystaj z narzędzi**:
    - Kliknij "List Tools", aby zobaczyć dostępne operacje kalkulatora
    - Wybierz narzędzie i kliknij "Run Tool", aby wykonać operację
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.40e180a7b0d0fe2067cf96435532b01f63f7f8619d6b0132355a04b426b669ac.pl.png)
+![Zrzut ekranu MCP Inspector](../../../../../../translated_images/tool.40e180a7b0d0fe2067cf96435532b01f63f7f8619d6b0132355a04b426b669ac.pl.png)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być traktowany jako wiarygodne źródło informacji. W przypadku istotnych informacji zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "24531f2b6b0f7fa3839accf4dc10088a",
-  "translation_date": "2025-05-27T16:20:15+00:00",
+  "translation_date": "2025-07-13T19:17:22+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/python/README.md",
   "language_code": "cs"
 }
 -->
-# Запуск этого примера
+# Spuštění tohoto příkladu
 
-Рекомендуется установить `uv`, но это не обязательно, см. [инструкции](https://docs.astral.sh/uv/#highlights)
+Doporučujeme nainstalovat `uv`, ale není to nutné, viz [instructions](https://docs.astral.sh/uv/#highlights)
 
-## -0- Создайте виртуальное окружение
+## -0- Vytvoření virtuálního prostředí
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Активируйте виртуальное окружение
+## -1- Aktivace virtuálního prostředí
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Установите зависимости
+## -2- Instalace závislostí
 
 ```bash
 pip install "mcp[cli]"
@@ -31,14 +31,13 @@ pip install openai
 pip install azure-ai-inference
 ```
 
-## -3- Запустите пример
-
+## -3- Spuštění příkladu
 
 ```bash
 python client.py
 ```
 
-Вы должны увидеть вывод, похожий на:
+Měli byste vidět výstup podobný tomuto:
 
 ```text
 LISTING RESOURCES
@@ -56,4 +55,4 @@ TOOLS result:  [TextContent(type='text', text='22', annotations=None)]
 ```
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

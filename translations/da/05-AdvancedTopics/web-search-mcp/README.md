@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7a11a5dcf2f9fdf6392f5a4545cf005e",
-  "translation_date": "2025-06-11T15:49:36+00:00",
+  "translation_date": "2025-07-14T03:39:00+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "da"
 }
 -->
-# Lesson: Bygning af en Web Search MCP Server
+# Lektion: Bygning af en Web Search MCP Server
 
-Dette kapitel viser, hvordan man bygger en AI-agent til den virkelige verden, som integrerer med eksterne API’er, håndterer forskellige datatyper, styrer fejl og koordinerer flere værktøjer — alt sammen i et produktionsklart format. Du vil se:
+Dette kapitel viser, hvordan man bygger en AI-agent til den virkelige verden, som integrerer med eksterne API'er, håndterer forskellige datatyper, styrer fejl og orkestrerer flere værktøjer – alt sammen i et produktionsklart format. Du vil se:
 
-- **Integration med eksterne API’er, der kræver autentifikation**
+- **Integration med eksterne API'er, der kræver autentificering**
 - **Håndtering af forskellige datatyper fra flere endpoints**
 - **Robust fejlhåndtering og logningsstrategier**
 - **Multi-værktøjs orkestrering i en enkelt server**
@@ -20,16 +20,16 @@ Ved slutningen vil du have praktisk erfaring med mønstre og bedste praksis, som
 
 ## Introduktion
 
-I denne lektion lærer du, hvordan du bygger en avanceret MCP-server og klient, som udvider LLM-funktionalitet med realtidsdata fra nettet ved hjælp af SerpAPI. Dette er en vigtig færdighed til at udvikle dynamiske AI-agenter, der kan tilgå opdateret information fra nettet.
+I denne lektion lærer du at bygge en avanceret MCP-server og klient, der udvider LLM-funktionalitet med realtidsdata fra nettet ved hjælp af SerpAPI. Dette er en vigtig færdighed til at udvikle dynamiske AI-agenter, der kan tilgå opdateret information fra nettet.
 
 ## Læringsmål
 
 Ved slutningen af denne lektion vil du kunne:
 
-- Integrere eksterne API’er (som SerpAPI) sikkert i en MCP-server
+- Integrere eksterne API'er (som SerpAPI) sikkert i en MCP-server
 - Implementere flere værktøjer til web-, nyheds-, produkt-søgning og Q&A
 - Parse og formatere strukturerede data til LLM-forbrug
-- Håndtere fejl og styre API-ratelimits effektivt
+- Håndtere fejl og styre API-ratebegrænsninger effektivt
 - Bygge og teste både automatiserede og interaktive MCP-klienter
 
 ## Web Search MCP Server
@@ -38,15 +38,15 @@ Denne sektion introducerer arkitekturen og funktionerne i Web Search MCP Server.
 
 ### Oversigt
 
-Denne implementering indeholder fire værktøjer, som viser MCP’s evne til sikkert og effektivt at håndtere forskellige opgaver drevet af eksterne API’er:
+Denne implementering indeholder fire værktøjer, der demonstrerer MCP’s evne til sikkert og effektivt at håndtere forskellige opgaver drevet af eksterne API’er:
 
 - **general_search**: Til brede webresultater
-- **news_search**: Til nylige overskrifter
+- **news_search**: Til seneste overskrifter
 - **product_search**: Til e-handelsdata
 - **qna**: Til spørgsmål-og-svar uddrag
 
 ### Funktioner
-- **Kodeeksempler**: Indeholder sprog-specifikke kodeblokke for Python (og nemt udvideligt til andre sprog) med sammenklappelige sektioner for overskuelighed
+- **Kodeeksempler**: Indeholder sprog-specifikke kodeblokke for Python (og let udvidelige til andre sprog) med sammenklappelige sektioner for overskuelighed
 
 <details>  
 <summary>Python</summary>  
@@ -69,9 +69,9 @@ async def run_search():
 ```
 </details>
 
-Før du kører klienten, er det nyttigt at forstå, hvad serveren gør. [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
+Før du kører klienten, er det nyttigt at forstå, hvad serveren gør. Filen [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) implementerer MCP-serveren, som eksponerer værktøjer til web-, nyheds-, produkt-søgning og Q&A ved at integrere med SerpAPI. Den håndterer indkommende forespørgsler, styrer API-kald, parser svar og returnerer strukturerede resultater til klienten.
 
-You can review the full implementation in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
+Du kan gennemgå hele implementeringen i [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
 Her er et kort eksempel på, hvordan serveren definerer og registrerer et værktøj:
 
@@ -96,19 +96,19 @@ if __name__ == "__main__":
 - **Integration med eksternt API**: Viser sikker håndtering af API-nøgler og eksterne forespørgsler
 - **Parsing af strukturerede data**: Viser, hvordan API-svar omdannes til LLM-venlige formater
 - **Fejlhåndtering**: Robust fejlhåndtering med passende logning
-- **Interaktiv klient**: Indeholder både automatiserede tests og en interaktiv tilstand til test
+- **Interaktiv klient**: Indeholder både automatiserede tests og en interaktiv tilstand til testning
 - **Context Management**: Udnytter MCP Context til logning og sporing af forespørgsler
 
 ## Forudsætninger
 
-Før du går i gang, skal du sikre dig, at dit miljø er korrekt opsat ved at følge disse trin. Det sikrer, at alle afhængigheder er installeret, og at dine API-nøgler er konfigureret korrekt til problemfri udvikling og test.
+Før du går i gang, skal du sikre, at dit miljø er sat korrekt op ved at følge disse trin. Det sikrer, at alle afhængigheder er installeret, og at dine API-nøgler er konfigureret korrekt for problemfri udvikling og test.
 
 - Python 3.8 eller nyere
 - SerpAPI API-nøgle (Tilmeld dig på [SerpAPI](https://serpapi.com/) - gratis niveau tilgængeligt)
 
 ## Installation
 
-For at komme i gang, følg disse trin for at opsætte dit miljø:
+For at komme i gang, følg disse trin for at sætte dit miljø op:
 
 1. Installer afhængigheder med uv (anbefalet) eller pip:
 
@@ -120,7 +120,7 @@ uv pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-2. Opret en `.env`-fil i projektets rod med din SerpAPI-nøgle:
+2. Opret en `.env`-fil i projektets rodmappe med din SerpAPI-nøgle:
 
 ```
 SERPAPI_KEY=your_serpapi_key_here
@@ -130,9 +130,9 @@ SERPAPI_KEY=your_serpapi_key_here
 
 Web Search MCP Server er den centrale komponent, der eksponerer værktøjer til web-, nyheds-, produkt-søgning og Q&A ved at integrere med SerpAPI. Den håndterer indkommende forespørgsler, styrer API-kald, parser svar og returnerer strukturerede resultater til klienten.
 
-Du kan gennemgå den fulde implementering i [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
+Du kan gennemgå hele implementeringen i [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
-### Kør serveren
+### Kørsel af serveren
 
 For at starte MCP-serveren, brug følgende kommando:
 
@@ -144,16 +144,16 @@ Serveren kører som en stdio-baseret MCP-server, som klienten kan forbinde til d
 
 ### Klienttilstande
 
-Klienten (`client.py`) supports two modes for interacting with the MCP server:
+Klienten (`client.py`) understøtter to tilstande til interaktion med MCP-serveren:
 
-- **Normal mode**: Runs automated tests that exercise all the tools and verify their responses. This is useful for quickly checking that the server and tools are working as expected.
-- **Interactive mode**: Starts a menu-driven interface where you can manually select and call tools, enter custom queries, and see results in real time. This is ideal for exploring the server's capabilities and experimenting with different inputs.
+- **Normal tilstand**: Kører automatiserede tests, der afprøver alle værktøjer og verificerer deres svar. Dette er nyttigt til hurtigt at tjekke, at serveren og værktøjerne fungerer som forventet.
+- **Interaktiv tilstand**: Starter en menu-baseret grænseflade, hvor du manuelt kan vælge og kalde værktøjer, indtaste brugerdefinerede forespørgsler og se resultater i realtid. Dette er ideelt til at udforske serverens funktioner og eksperimentere med forskellige input.
 
-You can review the full implementation in [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
+Du kan gennemgå hele implementeringen i [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
 
-### Kør klienten
+### Kørsel af klienten
 
-For at køre de automatiserede tests (det starter automatisk serveren):
+For at køre de automatiserede tests (dette starter automatisk serveren):
 
 ```bash
 python client.py
@@ -167,7 +167,7 @@ python client.py --interactive
 
 ### Test med forskellige metoder
 
-Der findes flere måder at teste og interagere med de værktøjer, serveren tilbyder, afhængigt af dine behov og arbejdsgange.
+Der er flere måder at teste og interagere med de værktøjer, som serveren tilbyder, afhængigt af dine behov og arbejdsgange.
 
 #### Skriv brugerdefinerede test-scripts med MCP Python SDK
 Du kan også bygge dine egne test-scripts ved hjælp af MCP Python SDK:
@@ -195,23 +195,23 @@ async def test_custom_query():
 ```
 </details>
 
-I denne sammenhæng betyder et "test-script" et brugerdefineret Python-program, du skriver for at agere som klient til MCP-serveren. I stedet for at være en formel enhedstest, lader dette script dig programmere en forbindelse til serveren, kalde dens værktøjer med valgte parametre og inspicere resultaterne. Denne tilgang er nyttig til:
+I denne sammenhæng betyder et "test-script" et brugerdefineret Python-program, du skriver for at fungere som klient til MCP-serveren. I stedet for at være en formel enhedstest, lader dette script dig programmæssigt forbinde til serveren, kalde et hvilket som helst af dens værktøjer med valgte parametre og inspicere resultaterne. Denne tilgang er nyttig til:
 - Prototyping og eksperimentering med værktøjskald
 - Validering af, hvordan serveren reagerer på forskellige input
 - Automatisering af gentagne værktøjskald
-- Opbygning af dine egne arbejdsgange eller integrationer ovenpå MCP-serveren
+- Opbygning af egne arbejdsgange eller integrationer oven på MCP-serveren
 
-Du kan bruge test-scripts til hurtigt at prøve nye forespørgsler, debugge værktøjers opførsel eller som udgangspunkt for mere avanceret automatisering. Nedenfor er et eksempel på, hvordan man bruger MCP Python SDK til at lave sådan et script:
+Du kan bruge test-scripts til hurtigt at prøve nye forespørgsler, fejlfinde værktøjsadfærd eller endda som udgangspunkt for mere avanceret automatisering. Nedenfor er et eksempel på, hvordan du bruger MCP Python SDK til at lave sådan et script:
 
 ## Værktøjsbeskrivelser
 
-Du kan bruge følgende værktøjer, som serveren stiller til rådighed, til at udføre forskellige typer søgninger og forespørgsler. Hvert værktøj beskrives nedenfor med dets parametre og eksempler på brug.
+Du kan bruge følgende værktøjer, som serveren stiller til rådighed, til at udføre forskellige typer søgninger og forespørgsler. Hvert værktøj er beskrevet nedenfor med dets parametre og eksempel på brug.
 
 Denne sektion giver detaljer om hvert tilgængeligt værktøj og deres parametre.
 
 ### general_search
 
-Udfører en generel web-søgning og returnerer formaterede resultater.
+Udfører en generel websøgning og returnerer formaterede resultater.
 
 **Sådan kalder du dette værktøj:**
 
@@ -237,9 +237,9 @@ async def run_general_search():
 ```
 </details>
 
-Alternativt, i interaktiv tilstand, vælg `general_search` from the menu and enter your query when prompted.
+Alternativt, i interaktiv tilstand, vælg `general_search` fra menuen og indtast din forespørgsel, når du bliver bedt om det.
 
-**Parameters:**
+**Parametre:**
 - `query` (string): Søgeforespørgslen
 
 **Eksempel på forespørgsel:**
@@ -256,7 +256,7 @@ Søger efter nylige nyhedsartikler relateret til en forespørgsel.
 
 **Sådan kalder du dette værktøj:**
 
-Du kan kalde `news_search` fra dit eget script med MCP Python SDK eller interaktivt via Inspector eller den interaktive klienttilstand. Her er et kodeeksempel med SDK:
+Du kan kalde `news_search` fra dit eget script ved hjælp af MCP Python SDK eller interaktivt via Inspector eller den interaktive klienttilstand. Her er et kodeeksempel med SDK:
 
 <details>
 <summary>Python Eksempel</summary>
@@ -278,9 +278,9 @@ async def run_news_search():
 ```
 </details>
 
-Alternativt, i interaktiv tilstand, vælg `news_search` from the menu and enter your query when prompted.
+Alternativt, i interaktiv tilstand, vælg `news_search` fra menuen og indtast din forespørgsel, når du bliver bedt om det.
 
-**Parameters:**
+**Parametre:**
 - `query` (string): Søgeforespørgslen
 
 **Eksempel på forespørgsel:**
@@ -297,7 +297,7 @@ Søger efter produkter, der matcher en forespørgsel.
 
 **Sådan kalder du dette værktøj:**
 
-Du kan kalde `product_search` fra dit eget script med MCP Python SDK eller interaktivt via Inspector eller den interaktive klienttilstand. Her er et kodeeksempel med SDK:
+Du kan kalde `product_search` fra dit eget script ved hjælp af MCP Python SDK eller interaktivt via Inspector eller den interaktive klienttilstand. Her er et kodeeksempel med SDK:
 
 <details>
 <summary>Python Eksempel</summary>
@@ -319,9 +319,9 @@ async def run_product_search():
 ```
 </details>
 
-Alternativt, i interaktiv tilstand, vælg `product_search` from the menu and enter your query when prompted.
+Alternativt, i interaktiv tilstand, vælg `product_search` fra menuen og indtast din forespørgsel, når du bliver bedt om det.
 
-**Parameters:**
+**Parametre:**
 - `query` (string): Produkt-søgeforespørgslen
 
 **Eksempel på forespørgsel:**
@@ -334,11 +334,11 @@ Alternativt, i interaktiv tilstand, vælg `product_search` from the menu and ent
 
 ### qna
 
-Får direkte svar på spørgsmål fra søgemaskiner.
+Henter direkte svar på spørgsmål fra søgemaskiner.
 
 **Sådan kalder du dette værktøj:**
 
-Du kan kalde `qna` fra dit eget script med MCP Python SDK eller interaktivt via Inspector eller den interaktive klienttilstand. Her er et kodeeksempel med SDK:
+Du kan kalde `qna` fra dit eget script ved hjælp af MCP Python SDK eller interaktivt via Inspector eller den interaktive klienttilstand. Her er et kodeeksempel med SDK:
 
 <details>
 <summary>Python Eksempel</summary>
@@ -360,9 +360,9 @@ async def run_qna():
 ```
 </details>
 
-Alternativt, i interaktiv tilstand, vælg `qna` from the menu and enter your question when prompted.
+Alternativt, i interaktiv tilstand, vælg `qna` fra menuen og indtast dit spørgsmål, når du bliver bedt om det.
 
-**Parameters:**
+**Parametre:**
 - `question` (string): Spørgsmålet, der skal findes svar på
 
 **Eksempel på forespørgsel:**
@@ -375,12 +375,12 @@ Alternativt, i interaktiv tilstand, vælg `qna` from the menu and enter your que
 
 ## Kodedetaljer
 
-Denne sektion giver kodeeksempler og referencer til server- og klientimplementeringer.
+Denne sektion indeholder kodeudsnit og referencer til server- og klientimplementeringerne.
 
 <details>
 <summary>Python</summary>
 
-Se [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) and [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) for fulde implementeringsdetaljer.
+Se [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) og [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) for fulde implementeringsdetaljer.
 
 ```python
 # Example snippet from server.py:
@@ -392,39 +392,39 @@ import httpx
 
 ## Avancerede koncepter i denne lektion
 
-Før du begynder at bygge, er her nogle vigtige avancerede koncepter, som vil optræde gennem hele kapitlet. At forstå disse hjælper dig med at følge med, selv hvis du er ny til dem:
+Før du begynder at bygge, er her nogle vigtige avancerede koncepter, som vil optræde gennem hele kapitlet. At forstå disse vil hjælpe dig med at følge med, selv hvis du er ny til dem:
 
-- **Multi-værktøjs orkestrering**: Det betyder at køre flere forskellige værktøjer (som web-søgning, nyhedssøgning, produktsøgning og Q&A) inden for en enkelt MCP-server. Det gør det muligt for din server at håndtere en bred vifte af opgaver, ikke bare én.
-- **Håndtering af API-rate limits**: Mange eksterne API’er (som SerpAPI) begrænser, hvor mange forespørgsler du kan sende inden for en bestemt tid. God kode tjekker for disse begrænsninger og håndterer dem pænt, så din app ikke går ned, hvis du rammer en grænse.
+- **Multi-værktøjs orkestrering**: Det betyder at køre flere forskellige værktøjer (som web-søgning, nyhedssøgning, produkt-søgning og Q&A) inden for en enkelt MCP-server. Det giver din server mulighed for at håndtere en række opgaver, ikke kun én.
+- **Håndtering af API-ratebegrænsninger**: Mange eksterne API’er (som SerpAPI) begrænser, hvor mange forespørgsler du kan lave inden for en bestemt tid. God kode tjekker for disse begrænsninger og håndterer dem elegant, så din app ikke går ned, hvis du rammer en grænse.
 - **Parsing af strukturerede data**: API-svar er ofte komplekse og indlejrede. Dette koncept handler om at omdanne disse svar til rene, let anvendelige formater, som er venlige for LLM’er eller andre programmer.
-- **Fejlgenopretning**: Nogle gange går ting galt — måske netværket fejler, eller API’et returnerer ikke det forventede. Fejlgenopretning betyder, at din kode kan håndtere disse problemer og stadig give brugbar feedback i stedet for at crashe.
+- **Fejlgenopretning**: Nogle gange går ting galt – måske fejler netværket, eller API’en returnerer ikke det forventede. Fejlgenopretning betyder, at din kode kan håndtere disse problemer og stadig give brugbar feedback i stedet for at crashe.
 - **Parameter-validering**: Det handler om at sikre, at alle input til dine værktøjer er korrekte og sikre at bruge. Det inkluderer at sætte standardværdier og sikre, at typerne er rigtige, hvilket hjælper med at forhindre fejl og forvirring.
 
-Denne sektion hjælper dig med at diagnosticere og løse almindelige problemer, du kan støde på, når du arbejder med Web Search MCP Server. Hvis du oplever fejl eller uventet adfærd, giver denne fejlsøgningssektion løsninger på de mest almindelige problemer. Gennemgå disse tips, før du søger yderligere hjælp — de løser ofte problemer hurtigt.
+Denne sektion hjælper dig med at diagnosticere og løse almindelige problemer, du kan støde på, mens du arbejder med Web Search MCP Server. Hvis du oplever fejl eller uventet adfærd, giver denne fejlfinding sektion løsninger på de mest almindelige problemer. Gennemgå disse tips, før du søger yderligere hjælp – de løser ofte problemer hurtigt.
 
-## Fejlsøgning
+## Fejlfinding
 
-Når du arbejder med Web Search MCP Server, kan du af og til støde på problemer — det er normalt, når man udvikler med eksterne API’er og nye værktøjer. Denne sektion giver praktiske løsninger på de mest almindelige problemer, så du hurtigt kan komme tilbage på sporet. Hvis du får en fejl, start her: tipsene nedenfor tager fat på de problemer, som de fleste brugere møder, og kan ofte løse dit problem uden yderligere hjælp.
+Når du arbejder med Web Search MCP Server, kan du af og til støde på problemer – det er normalt, når man udvikler med eksterne API’er og nye værktøjer. Denne sektion giver praktiske løsninger på de mest almindelige problemer, så du hurtigt kan komme videre. Hvis du støder på en fejl, start her: tipsene nedenfor adresserer de problemer, som de fleste brugere møder, og kan ofte løse dit problem uden ekstra hjælp.
 
 ### Almindelige problemer
 
-Nedenfor er nogle af de mest hyppige problemer, brugere støder på, med klare forklaringer og trin til at løse dem:
+Nedenfor er nogle af de hyppigste problemer, brugere støder på, sammen med klare forklaringer og trin til at løse dem:
 
 1. **Manglende SERPAPI_KEY i .env-filen**
-   - Hvis du ser fejlen `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
+   - Hvis du ser fejlen `SERPAPI_KEY environment variable not found`, betyder det, at din applikation ikke kan finde API-nøglen, der er nødvendig for at tilgå SerpAPI. For at løse dette, opret en fil med navnet `.env` i din projektmappe (hvis den ikke allerede findes) og tilføj en linje som `SERPAPI_KEY=din_serpapi_nøgle_her`. Sørg for at erstatte `din_serpapi_nøgle_her` med din faktiske nøgle fra SerpAPI-websitet.
 
-2. **Module not found errors**
-   - Errors such as `ModuleNotFoundError: No module named 'httpx'` indicate that a required Python package is missing. This usually happens if you haven't installed all the dependencies. To resolve this, run `pip install -r requirements.txt` in your terminal to install everything your project needs.
+2. **Modul ikke fundet fejl**
+   - Fejl som `ModuleNotFoundError: No module named 'httpx'` indikerer, at et nødvendigt Python-pakke mangler. Dette sker typisk, hvis du ikke har installeret alle afhængigheder. For at løse dette, kør `pip install -r requirements.txt` i din terminal for at installere alt, hvad dit projekt behøver.
 
-3. **Connection issues**
-   - If you get an error like `Error during client execution`, it often means the client can't connect to the server, or the server isn't running as expected. Double-check that both the client and server are compatible versions, and that `server.py` is present and running in the correct directory. Restarting both the server and client can also help.
+3. **Forbindelsesproblemer**
+   - Hvis du får en fejl som `Error during client execution`, betyder det ofte, at klienten ikke kan forbinde til serveren, eller at serveren ikke kører som forventet. Tjek, at både klient og server er kompatible versioner, og at `server.py` findes og kører i den korrekte mappe. Genstart både server og klient kan også hjælpe.
 
-4. **SerpAPI errors**
-   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env` filen om nødvendigt. Hvis din nøgle er korrekt, men du stadig får denne fejl, så tjek, om din gratis kvote er opbrugt.
+4. **SerpAPI fejl**
+   - Hvis du ser `Search API returned error status: 401`, betyder det, at din SerpAPI-nøgle mangler, er forkert eller udløbet. Gå til dit SerpAPI-dashboard, bekræft din nøgle, og opdater din `.env`-fil om nødvendigt. Hvis din nøgle er korrekt, men du stadig ser denne fejl, tjek om din gratis kvote er opbrugt.
 
 ### Debug-tilstand
 
-Som standard logger appen kun vigtig information. Hvis du vil se flere detaljer om, hvad der sker (for eksempel for at diagnosticere svære problemer), kan du aktivere DEBUG-tilstand. Det viser meget mere om hvert trin, appen tager.
+Som standard logger appen kun vigtig information. Hvis du vil se flere detaljer om, hvad der sker (for eksempel for at diagnosticere vanskelige problemer), kan du aktivere DEBUG-tilstand. Det vil vise dig meget mere om hvert trin, appen tager.
 
 **Eksempel: Normal output**
 ```plaintext
@@ -446,11 +446,10 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-Bemærk, hvordan DEBUG-tilstand inkluderer ekstra linjer om HTTP-forespørgsler, svar og andre interne detaljer. Det kan være meget hjælpsomt til fejlsøgning.
+Bemærk, hvordan DEBUG-tilstand inkluderer ekstra linjer om HTTP-forespørgsler, svar og andre interne detaljer. Dette kan være meget hjælpsomt til fejlfinding.
 
-For at aktivere DEBUG-tilstand, sæt logningsniveauet til DEBUG øverst i din `client.py` or `server.py`:
+For at aktivere DEBUG-tilstand, sæt logningsniveauet til DEBUG øverst i din `client.py` eller `server.py`:
 
-<details>
 <summary>Python</summary>
 
 ```python
@@ -470,4 +469,4 @@ logging.basicConfig(
 - [5.10 Real Time Streaming](../mcp-realtimestreaming/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T17:41:40+00:00",
+  "translation_date": "2025-07-13T22:01:17+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "da"
 }
@@ -27,7 +27,7 @@ Når du har gennemført denne lektion, vil du kunne:
 MCP tilbyder værktøjer, der hjælper dig med at teste og fejlsøge dine servere:
 
 - **MCP Inspector**: Et kommandolinjeværktøj, der kan køres både som CLI-værktøj og som et visuelt værktøj.
-- **Manuel test**: Du kan bruge et værktøj som curl til at sende web-forespørgsler, men ethvert værktøj, der kan håndtere HTTP, kan bruges.
+- **Manuel test**: Du kan bruge et værktøj som curl til at køre web-forespørgsler, men ethvert værktøj, der kan håndtere HTTP, kan bruges.
 - **Unit testing**: Det er muligt at bruge dit foretrukne testframework til at teste funktionerne i både server og klient.
 
 ### Brug af MCP Inspector
@@ -50,7 +50,7 @@ Ovenstående kommando starter en MCP og dens visuelle interface og åbner en lok
 
 Sådan kan det se ud: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.da.png)
 
-Du kan også køre dette værktøj i CLI-tilstand ved at tilføje `--cli`-attributten. Her er et eksempel på at køre værktøjet i "CLI"-tilstand, som viser alle værktøjer på serveren:
+Du kan også køre dette værktøj i CLI-tilstand ved at tilføje `--cli` attributten. Her er et eksempel på at køre værktøjet i "CLI"-tilstand, som viser alle værktøjer på serveren:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
@@ -133,11 +133,11 @@ Koden ovenfor gør følgende:
 
 - Benytter pytest-frameworket, som lader dig oprette tests som funktioner og bruge assert-udsagn.
 - Opretter en MCP-server med to forskellige værktøjer.
-- Bruger `assert` til at kontrollere, at visse betingelser er opfyldt.
+- Bruger `assert`-udsagn til at kontrollere, at visse betingelser er opfyldt.
 
 Tag et kig på [den fulde fil her](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-Med udgangspunkt i denne fil kan du teste din egen server for at sikre, at funktionaliteterne oprettes som forventet.
+Med udgangspunkt i denne fil kan du teste din egen server for at sikre, at funktionaliteterne oprettes som de skal.
 
 Alle større SDK’er har lignende testsektioner, så du kan tilpasse det til dit valgte runtime-miljø.
 

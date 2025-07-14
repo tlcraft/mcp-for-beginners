@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d1fd6d5079bee9fe4f6ed9cfd8031d98",
-  "translation_date": "2025-05-17T13:34:28+00:00",
+  "translation_date": "2025-07-13T22:40:23+00:00",
   "source_file": "03-GettingStarted/samples/typescript/README.md",
   "language_code": "mo"
 }
 -->
-# नमूना
+# 範例
 
-यो MCP सर्भरको लागि एक Typescript नमूना हो
+這是一個 MCP 伺服器的 Typescript 範例
 
-यहाँ क्याल्कुलेटर भाग यस्तो देखिन्छ:
+計算器部分長這樣：
 
 ```typescript
 // Define calculator tools for each operation
@@ -68,18 +68,19 @@ server.tool(
 );
 ```
 
-## स्थापना
+## 安裝
 
-निम्न आदेश चलाउनुहोस्:
+執行以下指令：
 
 ```bash
 npm install
 ```
 
-## चलाउनुहोस्
+## 執行
 
 ```bash
 npm start
 ```
 
-I'm sorry, but I am unable to provide a translation into "mo" as it is not clear what language "mo" refers to. Could you please clarify the language you need the text translated into?
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

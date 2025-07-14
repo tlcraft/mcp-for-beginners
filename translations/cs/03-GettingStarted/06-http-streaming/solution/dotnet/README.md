@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:19:05+00:00",
+  "translation_date": "2025-07-13T21:06:06+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "cs"
 }
@@ -23,9 +23,9 @@ dotnet run
 
 ## -3- Otestujte příklad
 
-Než spustíte níže uvedené příkazy, otevřete si samostatný terminál (ujistěte se, že server stále běží).
+Před spuštěním níže otevřete samostatný terminál (ujistěte se, že server stále běží).
 
-Se serverem spuštěným v jednom terminálu otevřete další terminál a spusťte následující příkaz:
+Když server běží v jednom terminálu, otevřete další terminál a spusťte následující příkaz:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
@@ -35,10 +35,10 @@ Tím by se měl spustit webový server s vizuálním rozhraním, které vám umo
 
 > Ujistěte se, že jako typ přenosu je vybrán **Streamable HTTP** a URL je `http://localhost:3001/mcp`.
 
-Once the server is connected: 
+Jakmile je server připojen:
 
-- try listing tools and run `add`, s argumenty 2 a 4, měli byste v výsledku vidět číslo 6.
-- přejděte na resources a resource template, zavolejte "greeting", zadejte jméno a měli byste vidět pozdrav s vámi zadaným jménem.
+- zkuste vypsat nástroje a spusťte `add` s argumenty 2 a 4, ve výsledku byste měli vidět 6.
+- přejděte na resources a resource template a zavolejte "greeting", zadejte jméno a měli byste vidět pozdrav s vámi zadaným jménem.
 
 ### Testování v režimu CLI
 
@@ -48,7 +48,7 @@ Můžete jej spustit přímo v režimu CLI pomocí následujícího příkazu:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Tento příkaz zobrazí všechny nástroje dostupné na serveru. Měli byste vidět následující výstup:
+Tím se vypíšou všechny nástroje dostupné na serveru. Měli byste vidět následující výstup:
 
 ```text
 {
@@ -80,7 +80,7 @@ Tento příkaz zobrazí všechny nástroje dostupné na serveru. Měli byste vid
 }
 ```
 
-Pro vyvolání nástroje zadejte:
+Pro zavolání nástroje napište:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
@@ -101,8 +101,8 @@ Měli byste vidět následující výstup:
 ```
 
 > ![!TIP]
-> Obvykle je rychlejší spustit inspector v režimu CLI než v prohlížeči.
+> Obvykle je mnohem rychlejší spustit inspector v režimu CLI než v prohlížeči.
 > Více o inspectoru si přečtěte [zde](https://github.com/modelcontextprotocol/inspector).
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo chybné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

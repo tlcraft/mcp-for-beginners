@@ -2,38 +2,38 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "14a2dfbea55ef735660a06bd6bdfe5f3",
-  "translation_date": "2025-06-13T21:36:19+00:00",
+  "translation_date": "2025-07-14T06:13:27+00:00",
   "source_file": "09-CaseStudy/UpdateADOItemsFromYT.md",
   "language_code": "fi"
 }
 -->
-# Case Study: Azure DevOps -kohteiden päivittäminen YouTube-datalla MCP:n avulla
+# Case Study: Azure DevOps -kohteiden päivittäminen YouTube-datan avulla MCP:llä
 
-> **Disclaimer:** On olemassa valmiita verkkotyökaluja ja raportteja, jotka voivat automatisoida Azure DevOps -kohteiden päivittämisen esimerkiksi YouTube-alustan datalla. Seuraava esimerkki on tarkoitettu ainoastaan havainnollistamaan, miten MCP-työkaluja voidaan hyödyntää automaatio- ja integraatiotehtävissä.
+> **Disclaimer:** Verkossa on olemassa työkaluja ja raportteja, jotka voivat automatisoida Azure DevOps -kohteiden päivittämisen esimerkiksi YouTube-alustalta saatavalla datalla. Seuraava esimerkki on tarkoitettu ainoastaan havainnollistamaan, miten MCP-työkaluja voidaan hyödyntää automaatio- ja integraatiotehtävissä.
 
 ## Yleiskatsaus
 
-Tässä case-esimerkissä näytetään, miten Model Context Protocol (MCP) ja siihen liittyvät työkalut voivat automatisoida Azure DevOps (ADO) -työkohteiden päivittämisen verkosta haetulla tiedolla, kuten YouTube-videoiden tiedoilla. Kuvattu tilanne on vain yksi esimerkki laajemmista mahdollisuuksista, joita nämä työkalut tarjoavat, ja niitä voidaan soveltaa monenlaisiin vastaaviin automaatioratkaisuihin.
+Tässä case studyssä esitellään yksi tapa, jolla Model Context Protocol (MCP) ja sen työkalut voivat automatisoida Azure DevOps (ADO) -työkohteiden päivittämisen verkkoalustoilta, kuten YouTubesta, saatavalla tiedolla. Kuvaus on vain yksi esimerkki näiden työkalujen laajemmista mahdollisuuksista, joita voidaan soveltaa monenlaisiin vastaaviin automaatiotarpeisiin.
 
-Tässä esimerkissä Advocate seuraa verkkotilaisuuksia ADO-kohteiden avulla, joista jokainen sisältää YouTube-videon URL-osoitteen. MCP-työkaluja hyödyntämällä Advocate voi päivittää ADO-kohteet automaattisesti uusimmilla videon katselumäärillä. Tätä lähestymistapaa voi yleistää muihin käyttötapauksiin, joissa verkosta haettu tieto integroidaan ADO:hon tai muihin järjestelmiin.
+Tässä esimerkissä Advocate seuraa verkossa pidettyjä sessioita ADO-kohteiden avulla, joista jokainen sisältää YouTube-videon URL-osoitteen. MCP-työkaluja hyödyntämällä Advocate voi pitää ADO-kohteet ajan tasalla viimeisimmillä videon katselumäärillä toistettavalla ja automatisoidulla tavalla. Tätä lähestymistapaa voidaan soveltaa myös muihin tilanteisiin, joissa verkosta saatava tieto pitää integroida ADO:hon tai muihin järjestelmiin.
 
-## Tilanne
+## Tilannekuvaus
 
-Advocate vastaa verkkotilaisuuksien ja yhteisön osallistumisen vaikutusten seurannasta. Jokainen tilaisuus kirjataan ADO-työkohteeksi 'DevRel'-projektiin, ja työkohteessa on kenttä YouTube-videon URL:lle. Tarkkojen raporttien laatimiseksi Advocate päivittää ADO-kohteen nykyisellä katselumäärällä ja tiedon hakupäivästä.
+Advocate vastaa verkossa pidettyjen sessioiden ja yhteisön osallistumisten vaikutusten seurannasta. Jokainen sessio kirjataan ADO-työkohteeksi 'DevRel' -projektiin, ja työkohteessa on kenttä YouTube-videon URL-osoitteelle. Tarkkojen raporttien laatimiseksi Advocate tarvitsee päivittää ADO-kohde videon nykyisellä katselumäärällä sekä tiedolla, milloin tämä tieto on haettu.
 
 ## Käytetyt työkalut
 
 - [Azure DevOps MCP](https://github.com/microsoft/azure-devops-mcp): Mahdollistaa ohjelmallisen pääsyn ja päivitykset ADO-työkohteisiin MCP:n kautta.
-- [Playwright MCP](https://github.com/microsoft/playwright-mcp): Automatisoi selaimen toimintoja ja poimii reaaliaikaista dataa verkkosivuilta, kuten YouTube-videoiden tilastoja.
+- [Playwright MCP](https://github.com/microsoft/playwright-mcp): Automatisoi selaintoiminnot ja poimii reaaliaikaista dataa verkkosivuilta, kuten YouTube-videon tilastoja.
 
 ## Vaiheittainen työnkulku
 
-1. **Tunnista ADO-kohde**: Aloita ADO-työkohteen ID:llä (esim. 1234) 'DevRel'-projektissa.
-2. **Hae YouTube-URL**: Käytä Azure DevOps MCP -työkalua saadaksesi videon URL-osoitteen työkohteesta.
-3. **Poimi katselumäärä**: Käytä Playwright MCP:tä siirtyäksesi YouTube-URL:iin ja saadaksesi ajantasaisen katselumäärän.
-4. **Päivitä ADO-kohde**: Kirjoita uusin katselumäärä ja hakupäivämäärä 'Impact and Learnings' -osioon ADO-työkohteessa Azure DevOps MCP -työkalulla.
+1. **ADO-kohteen tunnistaminen**: Aloita ADO-työkohteen ID:llä (esim. 1234) 'DevRel' -projektissa.
+2. **YouTube-URL:n hakeminen**: Käytä Azure DevOps MCP -työkalua saadaksesi YouTube-URL työkohteesta.
+3. **Katselumäärän poiminta**: Käytä Playwright MCP -työkalua siirtyäksesi YouTube-URL:iin ja poimiaksesi nykyinen katselumäärä.
+4. **ADO-kohteen päivittäminen**: Kirjoita uusin katselumäärä ja hakupäivämäärä 'Impact and Learnings' -osioon ADO-työkohteessa Azure DevOps MCP -työkalulla.
 
-## Esimerkkiprompti
+## Esimerkkiprompt
 
 ```bash
 - Work with the ADO Item ID: 1234
@@ -56,14 +56,14 @@ flowchart TD
 ## Tekninen toteutus
 
 - **MCP-orchestrointi**: Työnkulun hallinnasta vastaa MCP-palvelin, joka koordinoi Azure DevOps MCP:n ja Playwright MCP:n käyttöä.
-- **Automaatio**: Prosessi voidaan käynnistää manuaalisesti tai ajastaa säännöllisesti pitämään ADO-kohteet ajan tasalla.
-- **Laajennettavuus**: Sama toimintamalli voidaan laajentaa päivittämään ADO-kohteita muilla verkkometrisillä (esim. tykkäykset, kommentit) tai muilta alustoilta saatavilla tiedoilla.
+- **Automaatio**: Prosessi voidaan käynnistää manuaalisesti tai ajastaa toistumaan säännöllisesti, jotta ADO-kohteet pysyvät ajan tasalla.
+- **Laajennettavuus**: Sama malli voidaan laajentaa päivittämään ADO-kohteita muilla verkkometriikoilla (esim. tykkäykset, kommentit) tai muilta alustoilta.
 
 ## Tulokset ja vaikutus
 
-- **Tehokkuus**: Vähentää Advocaten manuaalista työtä videoiden tilastojen hakemisessa ja päivittämisessä.
-- **Tarkkuus**: Varmistaa, että ADO-kohteissa on aina ajantasaisin verkosta saatava tieto.
-- **Toistettavuus**: Tarjoaa uudelleenkäytettävän työnkulun vastaaviin tilanteisiin, joissa tarvitaan tietojen integrointia eri lähteistä.
+- **Tehokkuus**: Vähentää Advocaten manuaalista työtä automatisoimalla videomittareiden haun ja päivityksen.
+- **Tarkkuus**: Varmistaa, että ADO-kohteet heijastavat verkosta saatavilla olevaa ajantasaisinta tietoa.
+- **Toistettavuus**: Tarjoaa uudelleenkäytettävän työnkulun vastaaviin tilanteisiin, joissa käytetään muita tietolähteitä tai mittareita.
 
 ## Viitteet
 

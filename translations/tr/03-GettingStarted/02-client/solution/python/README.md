@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0ab9613fc9595f493847f91275859a18",
-  "translation_date": "2025-05-17T10:01:42+00:00",
+  "translation_date": "2025-07-13T18:40:54+00:00",
   "source_file": "03-GettingStarted/02-client/solution/python/README.md",
   "language_code": "tr"
 }
 -->
-# Bu örneği çalıştırma
+# Bu örneği çalıştırmak
 
-`uv` yüklemeniz önerilir, ancak zorunlu değildir, [talimatlara](https://docs.astral.sh/uv/#highlights) bakın
+`uv` kurmanız önerilir ancak zorunlu değildir, detaylar için [talimatlara](https://docs.astral.sh/uv/#highlights) bakabilirsiniz.
 
-## -0- Sanal bir ortam oluşturun
+## -0- Sanal ortam oluşturun
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Sanal ortamı etkinleştirin
+## -1- Sanal ortamı aktif edin
 
 ```bash
 venv\Scrips\activate
@@ -35,7 +35,7 @@ pip install "mcp[cli]"
 python client.py
 ```
 
-Benzer bir çıktı görmelisiniz:
+Aşağıdakine benzer bir çıktı görmelisiniz:
 
 ```text
 LISTING RESOURCES
@@ -53,4 +53,4 @@ CALL TOOL
 ```
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluğu sağlamak için çabalasak da, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dilindeki hali, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlama veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

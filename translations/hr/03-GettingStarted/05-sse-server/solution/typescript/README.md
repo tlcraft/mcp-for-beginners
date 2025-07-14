@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-17T12:13:29+00:00",
+  "translation_date": "2025-07-13T20:22:31+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "hr"
 }
@@ -17,38 +17,39 @@ npm install
 
 ## -3- Pokrenite primjer
 
+
 ```bash
 npm run build
 ```
 
 ## -4- Testirajte primjer
 
-S pokrenutim serverom u jednom terminalu, otvorite drugi terminal i pokrenite sljedeću naredbu:
+Dok je server pokrenut u jednom terminalu, otvorite drugi terminal i pokrenite sljedeću naredbu:
 
 ```bash
 npm run inspector
 ```
 
-To bi trebalo pokrenuti web server s vizualnim sučeljem koje vam omogućuje testiranje primjera.
+Ovo bi trebalo pokrenuti web server s vizualnim sučeljem koje vam omogućuje testiranje primjera.
 
-Nakon što se server poveže:
+Kada se server poveže:
 
-- pokušajte navesti alate i pokrenite `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- pokušajte nabrojati alate i pokrenuti `add` s argumentima 2 i 4, trebali biste vidjeti rezultat 6.
+- idite na resources i resource template te pozovite "greeting", unesite ime i trebali biste vidjeti pozdrav s imenom koje ste unijeli.
 
-### Testing in CLI mode
+### Testiranje u CLI načinu
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+Inspector koji ste pokrenuli zapravo je Node.js aplikacija, a `mcp dev` je omot oko nje.
 
-- Start up the server with the command `npm run build`.
+- Pokrenite server naredbom `npm run build`.
 
-- U odvojenom terminalu pokrenite sljedeću naredbu:
+- U drugom terminalu pokrenite sljedeću naredbu:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    Ovo će navesti sve dostupne alate na serveru. Trebali biste vidjeti sljedeći izlaz:
+    Ovo će prikazati sve alate dostupne na serveru. Trebali biste vidjeti sljedeći ispis:
 
     ```text
     {
@@ -79,13 +80,13 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     }
     ```
 
-- Pokrenite tip alata upisivanjem sljedeće naredbe:
+- Pozovite alat tako da upišete sljedeću naredbu:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
     ```
 
-Trebali biste vidjeti sljedeći izlaz:
+Trebali biste vidjeti sljedeći ispis:
 
     ```text
     {
@@ -100,7 +101,7 @@ Trebali biste vidjeti sljedeći izlaz:
 
 > ![!TIP]
 > Obično je puno brže pokrenuti inspector u CLI načinu nego u pregledniku.
-> Pročitajte više o inspectoru [ovdje](https://github.com/modelcontextprotocol/inspector).
+> Više o inspectoru pročitajte [ovdje](https://github.com/modelcontextprotocol/inspector).
 
-**Odricanje odgovornosti**:  
-Ovaj dokument je preveden koristeći AI uslugu za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako se trudimo postići točnost, molimo vas da budete svjesni da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne odgovaramo za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+**Odricanje od odgovornosti**:  
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

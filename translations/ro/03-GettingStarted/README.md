@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:35:05+00:00",
+  "translation_date": "2025-07-13T17:20:02+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "ro"
 }
@@ -17,15 +17,15 @@ Această secțiune cuprinde mai multe lecții:
 
 - **3 Client cu LLM**, o metodă și mai bună de a scrie un client este să adaugi un LLM astfel încât să poată „negocia” cu serverul tău ce trebuie făcut, [la lecție](03-llm-client/README.md)
 
-- **4 Consumarea unui server în modul Agent GitHub Copilot în Visual Studio Code**. Aici vom vedea cum să rulăm MCP Server-ul nostru din interiorul Visual Studio Code, [la lecție](04-vscode/README.md)
+- **4 Consumarea unui server în modul Agent GitHub Copilot în Visual Studio Code**. Aici vom vedea cum să rulăm MCP Server-ul nostru din Visual Studio Code, [la lecție](04-vscode/README.md)
 
-- **5 Consumarea prin SSE (Server Sent Events)** SSE este un standard pentru streaming server-către-client, permițând serverelor să trimită actualizări în timp real către clienți prin HTTP [la lecție](05-sse-server/README.md)
+- **5 Consumarea din SSE (Server Sent Events)** SSE este un standard pentru streaming server-către-client, permițând serverelor să trimită actualizări în timp real către clienți prin HTTP [la lecție](05-sse-server/README.md)
 
-- **6 Streaming HTTP cu MCP (Streamable HTTP)**. Află despre streaming-ul HTTP modern, notificările de progres și cum să implementezi servere și clienți MCP scalabili, în timp real, folosind Streamable HTTP. [la lecție](06-http-streaming/README.md)
+- **6 HTTP Streaming cu MCP (Streamable HTTP)**. Află despre streaming-ul modern HTTP, notificările de progres și cum să implementezi servere și clienți MCP scalabili, în timp real, folosind Streamable HTTP. [la lecție](06-http-streaming/README.md)
 
-- **7 Utilizarea AI Toolkit pentru VSCode** pentru a consuma și testa MCP Clients și Servers [la lecție](07-aitk/README.md)
+- **7 Utilizarea AI Toolkit pentru VSCode** pentru a consuma și testa MCP Clienții și Serverele tale [la lecție](07-aitk/README.md)
 
-- **8 Testare**. Aici ne vom concentra în special pe diferite metode de testare a serverului și clientului nostru, [la lecție](08-testing/README.md)
+- **8 Testare**. Aici ne vom concentra în special pe diferite metode de a testa serverul și clientul nostru, [la lecție](08-testing/README.md)
 
 - **9 Implementare**. Acest capitol va analiza diferite modalități de a implementa soluțiile tale MCP, [la lecție](09-deployment/README.md)
 
@@ -70,7 +70,7 @@ MCP oferă SDK-uri oficiale pentru mai multe limbaje:
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Menținut în colaborare cu Loopwork AI
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Implementarea oficială Rust
 
-## Aspecte esențiale
+## Aspecte importante
 
 - Configurarea unui mediu de dezvoltare MCP este simplă cu SDK-urile specifice fiecărui limbaj
 - Construirea serverelor MCP implică crearea și înregistrarea uneltelor cu scheme clare
@@ -96,7 +96,7 @@ Avem un set de exemple care completează exercițiile pe care le vei vedea în t
 
 ## Ce urmează
 
-Următorul: [Crearea primului tău MCP Server](01-first-server/README.md)
+Următorul pas: [Crearea primului tău MCP Server](01-first-server/README.md)
 
 **Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2a58caa6e11faa09470b7f81e6729652",
-  "translation_date": "2025-06-18T06:08:16+00:00",
+  "translation_date": "2025-07-13T20:11:50+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "ro"
 }
@@ -23,7 +23,7 @@ dotnet run
 
 ## -3- Testează exemplul
 
-Deschide un terminal separat înainte de a rula comanda de mai jos (asigură-te că serverul este încă pornit).
+Deschide un terminal separat înainte să rulezi comanda de mai jos (asigură-te că serverul este încă pornit).
 
 Cu serverul pornit într-un terminal, deschide un alt terminal și rulează următoarea comandă:
 
@@ -35,14 +35,14 @@ Aceasta ar trebui să pornească un server web cu o interfață vizuală care î
 
 > Asigură-te că **SSE** este selectat ca tip de transport, iar URL-ul este `http://localhost:3001/sse`.
 
-Once the server is connected: 
+Odată ce serverul este conectat:
 
-- try listing tools and run `add`, cu argumentele 2 și 4, ar trebui să vezi 6 ca rezultat.
+- încearcă să listezi uneltele și rulează `add`, cu argumentele 2 și 4, ar trebui să vezi 6 ca rezultat.
 - mergi la resources și resource template și apelează "greeting", introdu un nume și ar trebui să vezi un mesaj de salut cu numele pe care l-ai introdus.
 
 ### Testare în modul CLI
 
-Poți să-l lansezi direct în modul CLI rulând următoarea comandă:
+Poți lansa direct în modul CLI rulând următoarea comandă:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
@@ -105,4 +105,4 @@ Ar trebui să vezi următorul rezultat:
 > Citește mai multe despre inspector [aici](https://github.com/modelcontextprotocol/inspector).
 
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să țineți cont că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

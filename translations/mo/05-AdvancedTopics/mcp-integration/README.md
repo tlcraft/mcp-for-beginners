@@ -2,28 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "33daea2e41ef7635cf13c41d6a3ea773",
-  "translation_date": "2025-06-12T23:14:57+00:00",
+  "translation_date": "2025-07-14T00:04:02+00:00",
   "source_file": "05-AdvancedTopics/mcp-integration/README.md",
   "language_code": "mo"
 }
 -->
-## Microsoft AI Foundry Integration
+## Microsoft AI Foundry 整合
 
-Azure AI Foundry menyediakan platform untuk membangun dan menerapkan agen AI. Mengintegrasikan MCP dengan AI Foundry memungkinkan Anda memanfaatkan kemampuannya sambil mempertahankan fleksibilitas MCP.
+Azure AI Foundry 提供了一個用於構建和部署 AI 代理的平台。將 MCP 與 AI Foundry 整合，可以讓你在保持 MCP 靈活性的同時，充分利用其功能。
 
-Dalam kode di bawah ini, kita mengembangkan integrasi Agen yang memproses permintaan dan menangani panggilan alat menggunakan MCP.
+以下程式碼展示了如何開發一個代理整合，使用 MCP 來處理請求並管理工具調用。
 
-## Integrasi MCP dengan Azure ML
+## 與 Azure ML 整合 MCP
 
-Mengintegrasikan MCP dengan Azure Machine Learning (ML) memungkinkan Anda memanfaatkan kemampuan ML Azure yang kuat sambil mempertahankan fleksibilitas MCP. Integrasi ini dapat digunakan untuk menjalankan pipeline ML, mendaftarkan model sebagai alat, dan mengelola sumber daya komputasi.
+將 MCP 與 Azure 機器學習（ML）整合，可以讓你利用 Azure 強大的機器學習能力，同時保持 MCP 的靈活性。這種整合可用於執行 ML 管線、將模型註冊為工具，以及管理計算資源。
 
-## Apa selanjutnya
+## 接下來的內容
 
-- [5.2 Multi modality](../mcp-multi-modality/README.md)
+- [5.2 多模態](../mcp-multi-modality/README.md)
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-If by "mo" you mean a specific language or code, please clarify which language "mo" refers to so I can provide the correct translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

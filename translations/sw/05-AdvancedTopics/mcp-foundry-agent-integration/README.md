@@ -2,56 +2,56 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:19:15+00:00",
+  "translation_date": "2025-07-13T23:59:21+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "sw"
 }
 -->
-# Muungano wa Model Context Protocol (MCP) na Azure AI Foundry
+# Model Context Protocol (MCP) Kuunganishwa na Azure AI Foundry
 
-Mwongozo huu unaonyesha jinsi ya kuunganisha seva za Model Context Protocol (MCP) na mawakala wa Azure AI Foundry, kuruhusu upangaji mzuri wa zana na uwezo wa AI kwa biashara.
+Mwongozo huu unaonyesha jinsi ya kuunganisha seva za Model Context Protocol (MCP) na mawakala wa Azure AI Foundry, kuwezesha upangaji mzuri wa zana na uwezo wa AI wa biashara.
 
 ## Utangulizi
 
-Model Context Protocol (MCP) ni kiwango wazi kinachowezesha programu za AI kuungana kwa usalama na vyanzo vya data na zana za nje. Inapounganishwa na Azure AI Foundry, MCP inaruhusu mawakala kupata na kuingiliana na huduma mbalimbali za nje, API, na vyanzo vya data kwa njia iliyo sanifu.
+Model Context Protocol (MCP) ni kiwango wazi kinachowezesha programu za AI kuunganishwa kwa usalama na vyanzo vya data na zana za nje. Inapounganishwa na Azure AI Foundry, MCP huruhusu mawakala kufikia na kuingiliana na huduma mbalimbali za nje, API, na vyanzo vya data kwa njia iliyopangwa.
 
-Muungano huu unaunganisha unyumbufu wa mfumo wa zana za MCP na mfumo thabiti wa mawakala wa Azure AI Foundry, ukitoa suluhisho za AI za kiwango cha biashara zenye uwezo mkubwa wa kubinafsisha.
+Muunganiko huu unachanganya unyumbufu wa mfumo wa zana za MCP na mfumo thabiti wa mawakala wa Azure AI Foundry, ukitoa suluhisho za AI za kiwango cha biashara zenye uwezo mkubwa wa kubinafsisha.
 
-**Note:** Ikiwa unataka kutumia MCP katika Azure AI Foundry Agent Service, kwa sasa maeneo yafuatayo tu yanasaidiwa: westus, westus2, uaenorth, southindia na switzerlandnorth
+**Note:** Ikiwa unataka kutumia MCP katika Azure AI Foundry Agent Service, kwa sasa maeneo yafuatayo pekee yanasaidiwa: westus, westus2, uaenorth, southindia na switzerlandnorth
 
 ## Malengo ya Kujifunza
 
 Mwisho wa mwongozo huu, utaweza:
 
 - Kuelewa Model Context Protocol na faida zake
-- Kusanidi seva za MCP kwa matumizi na mawakala wa Azure AI Foundry
-- Kuunda na kusanidi mawakala kwa muungano wa zana za MCP
-- Kutekeleza mifano halisi ukitumia seva halisi za MCP
-- Kushughulikia majibu ya zana na marejeo katika mazungumzo ya mawakala
+- Kuweka seva za MCP kwa matumizi na mawakala wa Azure AI Foundry
+- Kuunda na kusanidi mawakala kwa kuunganishwa kwa zana za MCP
+- Kutekeleza mifano halisi kwa kutumia seva halisi za MCP
+- Kushughulikia majibu ya zana na marejeo katika mazungumzo ya wakala
 
 ## Mahitaji ya Awali
 
 Kabla ya kuanza, hakikisha una:
 
-- Usajili wa Azure unaopata huduma ya AI Foundry
-- Python 3.10+
+- Usajili wa Azure wenye ufikiaji wa AI Foundry
+- Python 3.10+ 
 - Azure CLI imewekwa na kusanidiwa
 - Ruhusa zinazofaa za kuunda rasilimali za AI
 
 ## Model Context Protocol (MCP) ni Nini?
 
-Model Context Protocol ni njia iliyo sanifu kwa programu za AI kuungana na vyanzo vya data na zana za nje. Faida kuu ni:
+Model Context Protocol ni njia iliyopangwa kwa programu za AI kuunganishwa na vyanzo vya data na zana za nje. Faida kuu ni:
 
-- **Muungano Sanifu**: Kiolesura cha kuaminika kati ya zana na huduma tofauti
+- **Muunganiko wa Kiwango**: Kiolesura kinacholingana kwa zana na huduma mbalimbali
 - **Usalama**: Mbinu salama za uthibitishaji na idhini
 - **Unyumbufu**: Msaada kwa vyanzo mbalimbali vya data, API, na zana maalum
-- **Uwezo wa Kuongezeka**: Rahisi kuongeza uwezo mpya na muungano
+- **Uwezo wa Kuongezeka**: Rahisi kuongeza uwezo na muunganiko mpya
 
-## Kusanidi MCP na Azure AI Foundry
+## Kuweka MCP na Azure AI Foundry
 
 ### 1. Usanidi wa Mazingira
 
-Kwanza, weka vigezo vya mazingira na utegemezi:
+Kwanza, weka mabadiliko ya mazingira na utegemezi wako:
 
 ```python
 import os
@@ -80,7 +80,7 @@ with project_client:
     agent = project_client.agents.create_agent(
         model="gpt-4.1-nano", 
         name="mcp_agent", 
-        instructions="Wewe ni msaidizi mkarimu. Tumia zana zilizotolewa kujibu maswali. Hakikisha unataja vyanzo vyako.",
+        instructions="Wewe ni msaidizi mwenye msaada. Tumia zana zilizotolewa kujibu maswali. Hakikisha unarejelea vyanzo vyako.",
         tools=[
             {
                 "type": "mcp",
@@ -105,7 +105,7 @@ mcp_tool = {
     "type": "mcp",
     "server_label": "unique_server_name",      # Kitambulisho cha seva ya MCP
     "server_url": "https://api.example.com/mcp", # Anuani ya seva ya MCP
-    "require_approval": "never"                 # Sera ya idhini: kwa sasa inasaidia tu "never"
+    "require_approval": "never"                 # Sera ya idhini: kwa sasa inasaidia "never" pekee
 }
 ```
 
@@ -129,11 +129,11 @@ def create_mcp_agent_example():
     )
 
     with project_client:
-        # Unda wakala kwa kutumia zana za MCP
+        # Unda wakala na zana za MCP
         agent = project_client.agents.create_agent(
             model="gpt-4.1-nano", 
             name="documentation_assistant", 
-            instructions="Wewe ni msaidizi mkarimu mtaalamu wa nyaraka za Microsoft. Tumia seva ya MCP ya Microsoft Learn kutafuta taarifa sahihi na za kisasa. Daima taja vyanzo vyako.",
+            instructions="Wewe ni msaidizi mwenye msaada maalum kwa nyaraka za Microsoft. Tumia seva ya MCP ya Microsoft Learn kutafuta taarifa sahihi na za kisasa. Daima rejelea vyanzo vyako.",
             tools=[
                 {
                     "type": "mcp",
@@ -154,7 +154,7 @@ def create_mcp_agent_example():
         message = project_client.agents.messages.create(
             thread_id=thread.id, 
             role="user", 
-            content="Ni nini .NET MAUI? Inalinganishwaje na Xamarin.Forms?",
+            content="NET MAUI ni nini? Inalinganishwaje na Xamarin.Forms?",
         )
         print(f"Created message, message ID: {message.id}")
 
@@ -187,18 +187,18 @@ def create_mcp_agent_example():
 
 if __name__ == "__main__":
     create_mcp_agent_example()
-  
 
-## Kutatua Matatizo Yanayojirudia
+
+## Kutatua Matatizo ya Kawaida
 
 ### 1. Matatizo ya Muunganisho
-- Hakikisha URL ya seva ya MCP inapatikana
-- Kagua vyeti vya uthibitishaji
+- Hakiki kuwa URL ya seva ya MCP inapatikana
+- Angalia vyeti vya uthibitishaji
 - Hakikisha muunganisho wa mtandao uko sawa
 
 ### 2. Kushindwa kwa Simu za Zana
-- Angalia hoja na muundo wa simu za zana
-- Kagua mahitaji maalum ya seva
+- Kagua hoja na muundo wa simu za zana
+- Angalia mahitaji maalum ya seva
 - Tekeleza usimamizi mzuri wa makosa
 
 ### 3. Matatizo ya Utendaji
@@ -208,12 +208,12 @@ if __name__ == "__main__":
 
 ## Hatua Zifuatazo
 
-Ili kuboresha muungano wako wa MCP:
+Ili kuboresha zaidi muunganiko wako wa MCP:
 
 1. **Chunguza Seva Maalum za MCP**: Jenga seva zako za MCP kwa vyanzo vya data vya kipekee
 2. **Tekeleza Usalama wa Juu**: Ongeza OAuth2 au mbinu maalum za uthibitishaji
 3. **Fuatilia na Uchambuzi**: Tekeleza ufuatiliaji na uchambuzi wa matumizi ya zana
-4. **Panua Suluhisho Lako**: Fikiria usawazishaji mzigo na usanifu wa seva za MCP zilizoenea
+4. **Panua Suluhisho Lako**: Fikiria usawazishaji mzigo na usanifu wa seva za MCP zilizosambazwa
 
 ## Rasilimali Zaidi
 
@@ -232,5 +232,5 @@ Kwa msaada zaidi na maswali:
 
 - [6. Community Contributions](../../06-CommunityContributions/README.md)
 
-**Kielelezo cha Majukumu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati asilia katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inashauriwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

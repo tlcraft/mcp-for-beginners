@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2aa9dbc165e104764fa57e8a0d3f1c73",
-  "translation_date": "2025-06-10T05:30:08+00:00",
+  "translation_date": "2025-07-14T07:34:00+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab1/README.md",
   "language_code": "sk"
 }
@@ -13,50 +13,50 @@ CO_OP_TRANSLATOR_METADATA:
 [![Difficulty](https://img.shields.io/badge/Difficulty-Beginner-green.svg)]()
 [![Prerequisites](https://img.shields.io/badge/Prerequisites-VS%20Code-orange.svg)]()
 
-## 📋 Výučbové ciele
+## 📋 Ciele učenia
 
 Na konci tohto modulu budete vedieť:
 - ✅ Nainštalovať a nakonfigurovať AI Toolkit pre Visual Studio Code
-- ✅ Prezerať Model Catalog a rozumieť rôznym zdrojom modelov
+- ✅ Pohybovať sa v Katalógu modelov a porozumieť rôznym zdrojom modelov
 - ✅ Používať Playground na testovanie a experimentovanie s modelmi
 - ✅ Vytvárať vlastných AI agentov pomocou Agent Builder
-- ✅ Porovnávať výkon modelov naprieč rôznymi poskytovateľmi
+- ✅ Porovnávať výkonnosť modelov od rôznych poskytovateľov
 - ✅ Aplikovať osvedčené postupy pre prompt engineering
 
 ## 🧠 Úvod do AI Toolkit (AITK)
 
-**AI Toolkit pre Visual Studio Code** je vlajkovým rozšírením Microsoftu, ktoré premení VS Code na komplexné prostredie pre vývoj AI. Spojuje výskum AI s praktickým vývojom aplikácií a sprístupňuje generatívnu AI vývojárom na všetkých úrovniach.
+**AI Toolkit pre Visual Studio Code** je vlajkovým rozšírením Microsoftu, ktoré premení VS Code na komplexné vývojové prostredie pre AI. Prepojuje výskum AI s praktickým vývojom aplikácií a sprístupňuje generatívnu AI vývojárom na všetkých úrovniach.
 
 ### 🌟 Kľúčové funkcie
 
 | Funkcia | Popis | Použitie |
 |---------|-------------|----------|
-| **🗂️ Model Catalog** | Prístup k viac ako 100 modelom z GitHub, ONNX, OpenAI, Anthropic, Google | Objavovanie a výber modelov |
-| **🔌 BYOM Support** | Integrácia vlastných modelov (lokálnych alebo vzdialených) | Nasadenie vlastných modelov |
-| **🎮 Interaktívny Playground** | Testovanie modelov v reálnom čase s chat rozhraním | Rýchle prototypovanie a testovanie |
-| **📎 Multi-Modal Support** | Práca s textom, obrázkami a prílohami | Zložité AI aplikácie |
-| **⚡ Batch Processing** | Spúšťanie viacerých promptov naraz | Efektívne testovacie postupy |
-| **📊 Hodnotenie modelov** | Vstavané metriky (F1, relevantnosť, podobnosť, koherencia) | Hodnotenie výkonu |
+| **🗂️ Katalóg modelov** | Prístup k viac ako 100 modelom z GitHub, ONNX, OpenAI, Anthropic, Google | Objavovanie a výber modelov |
+| **🔌 Podpora BYOM** | Integrácia vlastných modelov (lokálnych alebo vzdialených) | Nasadenie vlastných modelov |
+| **🎮 Interaktívny Playground** | Testovanie modelov v reálnom čase s chatovým rozhraním | Rýchle prototypovanie a testovanie |
+| **📎 Podpora multimodálnych vstupov** | Práca s textom, obrázkami a prílohami | Zložité AI aplikácie |
+| **⚡ Hromadné spracovanie** | Spustenie viacerých promptov naraz | Efektívne testovacie procesy |
+| **📊 Hodnotenie modelov** | Vstavané metriky (F1, relevantnosť, podobnosť, koherencia) | Posúdenie výkonnosti |
 
 ### 🎯 Prečo je AI Toolkit dôležitý
 
 - **🚀 Rýchlejší vývoj**: Od nápadu k prototypu za pár minút
-- **🔄 Jednotný pracovný tok**: Jedno rozhranie pre viacerých poskytovateľov AI
-- **🧪 Jednoduché experimentovanie**: Porovnanie modelov bez komplikovanej konfigurácie
-- **📈 Pripravené na produkciu**: Plynulý prechod od prototypu k nasadeniu
+- **🔄 Jednotný pracovný tok**: Jedno rozhranie pre viacerých AI poskytovateľov
+- **🧪 Jednoduché experimentovanie**: Porovnávajte modely bez zložitého nastavenia
+- **📈 Pripravený na produkciu**: Plynulý prechod z prototypu do nasadenia
 
 ## 🛠️ Požiadavky a nastavenie
 
 ### 📦 Inštalácia rozšírenia AI Toolkit
 
-**Krok 1: Otvorte Extensions Marketplace**
+**Krok 1: Otvorte Marketplace rozšírení**
 1. Spustite Visual Studio Code
-2. Prejdite do sekcie Extensions (`Ctrl+Shift+X` alebo `Cmd+Shift+X`)
+2. Prejdite do zobrazenia rozšírení (`Ctrl+Shift+X` alebo `Cmd+Shift+X`)
 3. Vyhľadajte "AI Toolkit"
 
 **Krok 2: Vyberte verziu**
 - **🟢 Release**: Odporúčané pre produkčné použitie
-- **🔶 Pre-release**: Skorý prístup k najnovším funkciám
+- **🔶 Pre-release**: Predbežný prístup k najnovším funkciám
 
 **Krok 3: Inštalujte a aktivujte**
 
@@ -67,13 +67,13 @@ Na konci tohto modulu budete vedieť:
 - [ ] Rozšírenie je povolené a aktívne
 - [ ] V paneli výstupu nie sú žiadne chyby inštalácie
 
-## 🧪 Praktické cvičenie 1: Preskúmanie GitHub modelov
+## 🧪 Praktické cvičenie 1: Preskúmanie modelov na GitHub
 
-**🎯 Cieľ**: Ovládnuť Model Catalog a otestovať svoj prvý AI model
+**🎯 Cieľ**: Ovládnuť Katalóg modelov a otestovať svoj prvý AI model
 
-### 📊 Krok 1: Prezrite Model Catalog
+### 📊 Krok 1: Preskúmajte Katalóg modelov
 
-Model Catalog je vstupnou bránou do AI ekosystému. Zoskupuje modely od rôznych poskytovateľov, čo uľahčuje ich objavovanie a porovnávanie.
+Katalóg modelov je vašou bránou do AI ekosystému. Zhromažďuje modely od viacerých poskytovateľov, čo uľahčuje ich objavovanie a porovnávanie.
 
 **🔍 Navigačný návod:**
 
@@ -81,9 +81,9 @@ Kliknite na **MODELS - Catalog** v bočnom paneli AI Toolkit
 
 ![Model Catalog](../../../../translated_images/aimodel.263ed2be013d8fb0e2265c4f742cfe490f6f00eca5e132ec50438c8e826e34ed.sk.png)
 
-**💡 Tip**: Hľadajte modely s konkrétnymi schopnosťami, ktoré zodpovedajú vašim potrebám (napr. generovanie kódu, kreatívne písanie, analýza).
+**💡 Tip**: Hľadajte modely s konkrétnymi schopnosťami, ktoré zodpovedajú vášmu prípadu použitia (napr. generovanie kódu, kreatívne písanie, analýza).
 
-**⚠️ Poznámka**: Modely hostované na GitHub (GitHub Models) sú zadarmo, ale podliehajú limitom na počet požiadaviek a tokenov. Ak chcete pristupovať k ne-GitHub modelom (t.j. externým modelom cez Azure AI alebo iné endpointy), budete potrebovať príslušný API kľúč alebo autentifikáciu.
+**⚠️ Poznámka**: Modely hostované na GitHub (GitHub Models) sú zadarmo, ale podliehajú limitom na počet požiadaviek a tokenov. Ak chcete pristupovať k modelom mimo GitHub (napr. externé modely cez Azure AI alebo iné endpointy), budete potrebovať príslušný API kľúč alebo autentifikáciu.
 
 ### 🚀 Krok 2: Pridajte a nakonfigurujte svoj prvý model
 
@@ -91,10 +91,10 @@ Kliknite na **MODELS - Catalog** v bočnom paneli AI Toolkit
 - **GPT-4.1**: Najlepší pre zložité uvažovanie a analýzu
 - **Phi-4-mini**: Ľahký, rýchly na jednoduché úlohy
 
-**🔧 Postup konfigurácie:**
+**🔧 Proces konfigurácie:**
 1. Vyberte **OpenAI GPT-4.1** z katalógu
-2. Kliknite na **Add to My Models** – tým model zaregistrujete na použitie
-3. Zvoľte **Try in Playground** na spustenie testovacieho prostredia
+2. Kliknite na **Add to My Models** – tým sa model zaregistruje na použitie
+3. Zvoľte **Try in Playground** pre spustenie testovacieho prostredia
 4. Počkajte na inicializáciu modelu (prvé spustenie môže chvíľu trvať)
 
 ![Playground Setup](../../../../translated_images/playground.dd6f5141344878ca4d4f3de819775da7b113518941accf37c291117c602f85db.sk.png)
@@ -106,13 +106,13 @@ Kliknite na **MODELS - Catalog** v bočnom paneli AI Toolkit
 
 ### 🎯 Krok 3: Ovládnite rozhranie Playground
 
-Playground je vaše laboratórium na experimentovanie s AI. Tu je, ako ho využiť naplno:
+Playground je vaše laboratórium na experimentovanie s AI. Tu je, ako vyťažiť z neho maximum:
 
-**🎨 Najlepšie praktiky pre prompt engineering:**
+**🎨 Najlepšie postupy pre prompt engineering:**
 1. **Buďte konkrétni**: Jasné a detailné inštrukcie prinášajú lepšie výsledky
-2. **Poskytnite kontext**: Pridajte relevantné informácie na pozadí
-3. **Používajte príklady**: Ukážte modelu, čo očakávate, na príkladoch
-4. **Iterujte**: Vylepšujte prompt na základe prvých výsledkov
+2. **Poskytnite kontext**: Pridajte relevantné pozadie
+3. **Používajte príklady**: Ukážte modelu, čo chcete, na príkladoch
+4. **Iterujte**: Vylepšujte prompt podľa prvých výsledkov
 
 **🧪 Testovacie scenáre:**
 ```markdown
@@ -128,12 +128,12 @@ Playground je vaše laboratórium na experimentovanie s AI. Tu je, ako ho využi
 
 ![Testing Results](../../../../translated_images/result.1dfcf211fb359cf65902b09db191d3bfc65713ca15e279c1a30be213bb526949.sk.png)
 
-### 🏆 Výzva: Porovnanie výkonu modelov
+### 🏆 Výzva: Porovnanie výkonnosti modelov
 
 **🎯 Cieľ**: Porovnať rôzne modely pomocou rovnakých promptov a pochopiť ich silné stránky
 
-**📋 Pokyny:**
-1. Pridajte **Phi-4-mini** do svojho workspace
+**📋 Inštrukcie:**
+1. Pridajte **Phi-4-mini** do svojho pracovného priestoru
 2. Použite rovnaký prompt pre GPT-4.1 aj Phi-4-mini
 
 ![set](../../../../translated_images/set.88132df189ecde2cbbda256c1841db5aac8e9bdeba1a4e343dfa031b9545d6c9.sk.png)
@@ -145,7 +145,7 @@ Playground je vaše laboratórium na experimentovanie s AI. Tu je, ako ho využi
 
 **💡 Kľúčové poznatky:**
 - Kedy použiť LLM vs SLM
-- Pomery cena vs výkon
+- Pomery nákladov a výkonu
 - Špecializované schopnosti rôznych modelov
 
 ## 🤖 Praktické cvičenie 2: Vytváranie vlastných agentov pomocou Agent Builder
@@ -154,20 +154,20 @@ Playground je vaše laboratórium na experimentovanie s AI. Tu je, ako ho využi
 
 ### 🏗️ Krok 1: Pochopenie Agent Builder
 
-Agent Builder je miesto, kde AI Toolkit naozaj vyniká. Umožňuje vytvárať na mieru šité AI asistenty, ktoré kombinujú silu veľkých jazykových modelov s vlastnými inštrukciami, špecifickými parametrami a odbornými znalosťami.
+Agent Builder je miesto, kde AI Toolkit naozaj vyniká. Umožňuje vytvárať účelovo zameraných AI asistentov, ktorí kombinujú silu veľkých jazykových modelov s vlastnými inštrukciami, špecifickými parametrami a odbornými znalosťami.
 
 **🧠 Komponenty architektúry agenta:**
-- **Core Model**: Základný LLM (GPT-4, Groks, Phi a pod.)
-- **System Prompt**: Definuje osobnosť a správanie agenta
-- **Parameters**: Jemne doladené nastavenia pre optimálny výkon
-- **Tools Integration**: Prepojenie na externé API a MCP služby
-- **Memory**: Kontext konverzácie a uchovávanie relácie
+- **Jadrový model**: Základný LLM (GPT-4, Groks, Phi, atď.)
+- **Systémový prompt**: Definuje osobnosť a správanie agenta
+- **Parametre**: Jemné doladenie pre optimálny výkon
+- **Integrácia nástrojov**: Prepojenie na externé API a MCP služby
+- **Pamäť**: Kontext konverzácie a ukladanie relácií
 
 ![Agent Builder Interface](../../../../translated_images/agentbuilder.25895b2d2f8c02e7aa99dd40e105877a6f1db8f0441180087e39db67744b361f.sk.png)
 
-### ⚙️ Krok 2: Detailná konfigurácia agenta
+### ⚙️ Krok 2: Hlbší pohľad na konfiguráciu agenta
 
-**🎨 Vytváranie efektívnych system promptov:**
+**🎨 Vytváranie efektívnych systémových promptov:**
 ```markdown
 # Template Structure:
 ## Role Definition
@@ -187,25 +187,25 @@ You are a [specific role] with expertise in [domain].
 Provide 2-3 examples of ideal interactions
 ```
 
-*Samozrejme, môžete použiť aj Generate System Prompt na pomoc s generovaním a optimalizáciou promptov pomocou AI*
+*Samozrejme, môžete použiť aj Generate System Prompt, aby vám AI pomohla s tvorbou a optimalizáciou promptov*
 
 **🔧 Optimalizácia parametrov:**
 | Parameter | Odporúčaný rozsah | Použitie |
 |-----------|------------------|----------|
 | **Temperature** | 0.1-0.3 | Technické/faktické odpovede |
-| **Temperature** | 0.7-0.9 | Kreatívne/myšlienkové úlohy |
+| **Temperature** | 0.7-0.9 | Kreatívne/brainstormingové úlohy |
 | **Max Tokens** | 500-1000 | Stručné odpovede |
 | **Max Tokens** | 2000-4000 | Podrobné vysvetlenia |
 
 ### 🐍 Krok 3: Praktické cvičenie – Python programovací agent
 
-**🎯 Misia**: Vytvoriť špecializovaného asistenta pre programovanie v Pythone
+**🎯 Misia**: Vytvoriť špecializovaného asistenta pre Python kódovanie
 
-**📋 Konfiguračné kroky:**
+**📋 Kroky konfigurácie:**
 
-1. **Výber modelu**: Zvoľte **Claude 3.5 Sonnet** (vynikajúci na kódovanie)
+1. **Výber modelu**: Zvoľte **Claude 3.5 Sonnet** (vynikajúci pre kódovanie)
 
-2. **Návrh system promptu**:
+2. **Návrh systémového promptu**:
 ```markdown
 # Python Programming Expert Agent
 
@@ -234,7 +234,7 @@ You are a senior Python developer with 10+ years of experience. You excel at wri
 
 3. **Nastavenie parametrov**:
    - Temperature: 0.2 (pre konzistentný a spoľahlivý kód)
-   - Max Tokens: 2000 (detailné vysvetlenia)
+   - Max Tokens: 2000 (podrobné vysvetlenia)
    - Top-p: 0.9 (vyvážená kreativita)
 
 ![Python Agent Configuration](../../../../translated_images/pythonagent.5e51b406401c165fcabfd66f2d943c27f46b5fed0f9fb73abefc9e91ca3489d4.sk.png)
@@ -244,13 +244,13 @@ You are a senior Python developer with 10+ years of experience. You excel at wri
 **Testovacie scenáre:**
 1. **Základná funkcia**: "Vytvor funkciu na hľadanie prvočísel"
 2. **Zložitý algoritmus**: "Implementuj binárny vyhľadávací strom s metódami insert, delete a search"
-3. **Reálny problém**: "Vytvor web scraper, ktorý zvláda obmedzenia rýchlosti a opakovania"
-4. **Ladenie**: "Oprav tento kód [vložiť chybný kód]"
+3. **Reálny problém**: "Vytvor web scraper, ktorý zvláda limitovanie požiadaviek a opakovania"
+4. **Ladenie chýb**: "Oprav tento kód [vložiť chybný kód]"
 
 **🏆 Kritériá úspechu:**
 - ✅ Kód beží bez chýb
 - ✅ Obsahuje správnu dokumentáciu
-- ✅ Dodržiava Python best practices
+- ✅ Dodržiava najlepšie praktiky Pythonu
 - ✅ Poskytuje jasné vysvetlenia
 - ✅ Navrhuje vylepšenia
 
@@ -261,24 +261,24 @@ You are a senior Python developer with 10+ years of experience. You excel at wri
 Otestujte svoje znalosti:
 - [ ] Viete vysvetliť rozdiely medzi modelmi v katalógu?
 - [ ] Podarilo sa vám vytvoriť a otestovať vlastného agenta?
-- [ ] Rozumiete, ako optimalizovať parametre pre rôzne použitia?
-- [ ] Viete navrhnúť efektívne system prompty?
+- [ ] Rozumiete, ako optimalizovať parametre pre rôzne prípady použitia?
+- [ ] Viete navrhnúť efektívne systémové prompty?
 
 ### 📚 Dodatočné zdroje
 
-- **AI Toolkit dokumentácia**: [Official Microsoft Docs](https://github.com/microsoft/vscode-ai-toolkit)
-- **Príručka prompt engineering**: [Best Practices](https://platform.openai.com/docs/guides/prompt-engineering)
-- **Modely v AI Toolkit**: [Models in Develpment](https://github.com/microsoft/vscode-ai-toolkit/blob/main/doc/models.md)
+- **Dokumentácia AI Toolkit**: [Oficiálne Microsoft Docs](https://github.com/microsoft/vscode-ai-toolkit)
+- **Sprievodca prompt engineeringom**: [Najlepšie postupy](https://platform.openai.com/docs/guides/prompt-engineering)
+- **Modely v AI Toolkit**: [Modely vo vývoji](https://github.com/microsoft/vscode-ai-toolkit/blob/main/doc/models.md)
 
-**🎉 Gratulujeme!** Ovládli ste základy AI Toolkit a ste pripravení tvoriť pokročilejšie AI aplikácie!
+**🎉 Gratulujeme!** Ovládli ste základy AI Toolkit a ste pripravení vytvárať pokročilejšie AI aplikácie!
 
 ### 🔜 Pokračujte do ďalšieho modulu
 
-Chcete sa naučiť pokročilé funkcie? Pokračujte do **[Modul 2: MCP with AI Toolkit Fundamentals](../lab2/README.md)**, kde sa naučíte:
-- Prepojiť agentov s externými nástrojmi pomocou Model Context Protocol (MCP)
-- Vytvárať automatizačné agentov pre prehliadače pomocou Playwright
-- Integrovať MCP servery s AI Toolkit agentmi
-- Posilniť agentov externými dátami a schopnosťami
+Ste pripravení na pokročilejšie funkcie? Pokračujte do **[Modul 2: MCP s AI Toolkit – základy](../lab2/README.md)**, kde sa naučíte:
+- Pripojiť agentov k externým nástrojom pomocou Model Context Protocol (MCP)
+- Vytvárať agentov pre automatizáciu prehliadača s Playwright
+- Integrovať MCP servery s vašimi AI Toolkit agentmi
+- Vylepšiť agentov externými dátami a schopnosťami
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, vezmite prosím na vedomie, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

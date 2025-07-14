@@ -2,119 +2,119 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2aa9dbc165e104764fa57e8a0d3f1c73",
-  "translation_date": "2025-06-10T05:12:15+00:00",
+  "translation_date": "2025-07-14T07:20:37+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab1/README.md",
   "language_code": "mo"
 }
 -->
-# 🚀 Module 1: AI Toolkit Fundamentals
+# 🚀 模組 1：AI 工具組基礎
 
 [![Duration](https://img.shields.io/badge/Duration-15%20minutes-blue.svg)]()
 [![Difficulty](https://img.shields.io/badge/Difficulty-Beginner-green.svg)]()
 [![Prerequisites](https://img.shields.io/badge/Prerequisites-VS%20Code-orange.svg)]()
 
-## 📋 Learning Objectives
+## 📋 學習目標
 
-By the end of this module, you will be able to:
-- ✅ Install and configure AI Toolkit for Visual Studio Code
-- ✅ Navigate the Model Catalog and understand different model sources
-- ✅ Use the Playground for model testing and experimentation
-- ✅ Create custom AI agents using Agent Builder
-- ✅ Compare model performance across different providers
-- ✅ Apply best practices for prompt engineering
+完成本模組後，您將能夠：
+- ✅ 安裝並設定 Visual Studio Code 的 AI 工具組
+- ✅ 瀏覽模型目錄並了解不同模型來源
+- ✅ 使用 Playground 進行模型測試與實驗
+- ✅ 利用 Agent Builder 創建自訂 AI 代理
+- ✅ 比較不同供應商的模型效能
+- ✅ 應用提示工程的最佳實務
 
-## 🧠 Introduction to AI Toolkit (AITK)
+## 🧠 AI 工具組 (AITK) 簡介
 
-The **AI Toolkit for Visual Studio Code** is Microsoft's flagship extension that transforms VS Code into a comprehensive AI development environment. It bridges the gap between AI research and practical application development, making generative AI accessible to developers of all skill levels.
+**Visual Studio Code 的 AI 工具組** 是微軟的旗艦擴充功能，將 VS Code 轉變為完整的 AI 開發環境。它架起 AI 研究與實務應用開發之間的橋樑，讓各種技能層級的開發者都能輕鬆使用生成式 AI。
 
-### 🌟 Key Capabilities
+### 🌟 主要功能
 
-| Feature | Description | Use Case |
+| 功能 | 說明 | 使用情境 |
 |---------|-------------|----------|
-| **🗂️ Model Catalog** | Access 100+ models from GitHub, ONNX, OpenAI, Anthropic, Google | Model discovery and selection |
-| **🔌 BYOM Support** | Integrate your own models (local/remote) | Custom model deployment |
-| **🎮 Interactive Playground** | Real-time model testing with chat interface | Rapid prototyping and testing |
-| **📎 Multi-Modal Support** | Handle text, images, and attachments | Complex AI applications |
-| **⚡ Batch Processing** | Run multiple prompts simultaneously | Efficient testing workflows |
-| **📊 Model Evaluation** | Built-in metrics (F1, relevance, similarity, coherence) | Performance assessment |
+| **🗂️ 模型目錄** | 存取來自 GitHub、ONNX、OpenAI、Anthropic、Google 的 100 多款模型 | 模型探索與選擇 |
+| **🔌 BYOM 支援** | 整合您自己的模型（本地或遠端） | 自訂模型部署 |
+| **🎮 互動式 Playground** | 透過聊天介面即時測試模型 | 快速原型與測試 |
+| **📎 多模態支援** | 處理文字、圖片與附件 | 複雜 AI 應用 |
+| **⚡ 批次處理** | 同時執行多個提示 | 高效測試流程 |
+| **📊 模型評估** | 內建指標（F1、相關性、相似度、一致性） | 效能評估 |
 
-### 🎯 Why AI Toolkit Matters
+### 🎯 為什麼 AI 工具組很重要
 
-- **🚀 Accelerated Development**: From idea to prototype in minutes
-- **🔄 Unified Workflow**: One interface for multiple AI providers
-- **🧪 Easy Experimentation**: Compare models without complex setup
-- **📈 Production Ready**: Seamless transition from prototype to deployment
+- **🚀 加速開發**：從構想到原型只需數分鐘
+- **🔄 統一工作流程**：一個介面管理多個 AI 供應商
+- **🧪 簡易實驗**：無需複雜設定即可比較模型
+- **📈 生產就緒**：從原型無縫過渡到部署
 
-## 🛠️ Prerequisites & Setup
+## 🛠️ 前置條件與設定
 
-### 📦 Install AI Toolkit Extension
+### 📦 安裝 AI 工具組擴充功能
 
-**Step 1: Access Extensions Marketplace**
-1. Open Visual Studio Code
-2. Navigate to the Extensions view (`Ctrl+Shift+X` or `Cmd+Shift+X`)
-3. Search for "AI Toolkit"
+**步驟 1：進入擴充功能市集**
+1. 開啟 Visual Studio Code
+2. 前往擴充功能視窗（`Ctrl+Shift+X` 或 `Cmd+Shift+X`）
+3. 搜尋「AI Toolkit」
 
-**Step 2: Choose Your Version**
-- **🟢 Release**: Recommended for production use
-- **🔶 Pre-release**: Early access to cutting-edge features
+**步驟 2：選擇版本**
+- **🟢 正式版**：建議用於生產環境
+- **🔶 預覽版**：搶先體驗最新功能
 
-**Step 3: Install and Activate**
+**步驟 3：安裝並啟用**
 
 ![AI Toolkit Extension](../../../../translated_images/aitkext.d28945a03eed003c39fc39bc96ae655af9b64b9b922e78e88b07214420ed7985.mo.png)
 
-### ✅ Verification Checklist
-- [ ] AI Toolkit icon appears in the VS Code sidebar
-- [ ] Extension is enabled and activated
-- [ ] No installation errors in the output panel
+### ✅ 驗證清單
+- [ ] AI Toolkit 圖示出現在 VS Code 側邊欄
+- [ ] 擴充功能已啟用並激活
+- [ ] 輸出面板無安裝錯誤
 
-## 🧪 Hands-on Exercise 1: Exploring GitHub Models
+## 🧪 實作練習 1：探索 GitHub 模型
 
-**🎯 Objective**: Master the Model Catalog and test your first AI model
+**🎯 目標**：熟悉模型目錄並測試您的第一個 AI 模型
 
-### 📊 Step 1: Navigate the Model Catalog
+### 📊 步驟 1：瀏覽模型目錄
 
-The Model Catalog is your gateway to the AI ecosystem. It aggregates models from multiple providers, making it easy to discover and compare options.
+模型目錄是您進入 AI 生態系的入口。它整合多個供應商的模型，方便您發現並比較選項。
 
-**🔍 Navigation Guide:**
+**🔍 導覽指南：**
 
-Click on **MODELS - Catalog** in the AI Toolkit sidebar
+點擊 AI Toolkit 側邊欄的 **MODELS - Catalog**
 
 ![Model Catalog](../../../../translated_images/aimodel.263ed2be013d8fb0e2265c4f742cfe490f6f00eca5e132ec50438c8e826e34ed.mo.png)
 
-**💡 Pro Tip**: Look for models with specific capabilities that match your use case (e.g., code generation, creative writing, analysis).
+**💡 專家提示**：尋找具備符合您需求的特定功能的模型（例如程式碼生成、創意寫作、分析）。
 
-**⚠️ Note**: GitHub-hosted models (i.e. GitHub Models) are free to use but are subject to rate limits on requests and tokens. If you want to access non-GitHub models (that is, external models hosted via Azure AI or other endpoints), you'll need to supply the appropriate API key or authentication.
+**⚠️ 注意**：GitHub 托管的模型（即 GitHub Models）免費使用，但請注意請求與令牌的速率限制。若要使用非 GitHub 模型（例如透過 Azure AI 或其他端點托管的外部模型），您需要提供相應的 API 金鑰或認證。
 
-### 🚀 Step 2: Add and Configure Your First Model
+### 🚀 步驟 2：新增並設定您的第一個模型
 
-**Model Selection Strategy:**
-- **GPT-4.1**: Best for complex reasoning and analysis
-- **Phi-4-mini**: Lightweight, fast responses for simple tasks
+**模型選擇策略：**
+- **GPT-4.1**：適合複雜推理與分析
+- **Phi-4-mini**：輕量且快速回應，適合簡單任務
 
-**🔧 Configuration Process:**
-1. Select **OpenAI GPT-4.1** from the catalog
-2. Click **Add to My Models** - this registers the model for use
-3. Choose **Try in Playground** to launch the testing environment
-4. Wait for model initialization (first-time setup may take a moment)
+**🔧 設定流程：**
+1. 從目錄中選擇 **OpenAI GPT-4.1**
+2. 點擊 **Add to My Models**，將模型註冊至您的清單
+3. 選擇 **Try in Playground** 啟動測試環境
+4. 等待模型初始化（首次設定可能需稍候）
 
 ![Playground Setup](../../../../translated_images/playground.dd6f5141344878ca4d4f3de819775da7b113518941accf37c291117c602f85db.mo.png)
 
-**⚙️ Understanding Model Parameters:**
-- **Temperature**: Controls creativity (0 = deterministic, 1 = creative)
-- **Max Tokens**: Maximum response length
-- **Top-p**: Nucleus sampling for response diversity
+**⚙️ 了解模型參數：**
+- **Temperature**：控制創意程度（0 = 確定性，1 = 創意）
+- **Max Tokens**：最大回應長度
+- **Top-p**：核取樣，提升回應多樣性
 
-### 🎯 Step 3: Master the Playground Interface
+### 🎯 步驟 3：掌握 Playground 介面
 
-The Playground is your AI experimentation lab. Here's how to maximize its potential:
+Playground 是您的 AI 實驗室。以下是最大化其效能的方法：
 
-**🎨 Prompt Engineering Best Practices:**
-1. **Be Specific**: Clear, detailed instructions yield better results
-2. **Provide Context**: Include relevant background information
-3. **Use Examples**: Show the model what you want with examples
-4. **Iterate**: Refine prompts based on initial results
+**🎨 提示工程最佳實務：**
+1. **具體明確**：清楚且詳盡的指令效果更佳
+2. **提供背景**：包含相關背景資訊
+3. **使用範例**：用範例示範您想要的結果
+4. **反覆調整**：根據初步結果優化提示
 
-**🧪 Testing Scenarios:**
+**🧪 測試情境：**
 ```markdown
 # Example 1: Code Generation
 "Write a Python function that calculates the factorial of a number using recursion. Include error handling and docstrings."
@@ -128,46 +128,46 @@ The Playground is your AI experimentation lab. Here's how to maximize its potent
 
 ![Testing Results](../../../../translated_images/result.1dfcf211fb359cf65902b09db191d3bfc65713ca15e279c1a30be213bb526949.mo.png)
 
-### 🏆 Challenge Exercise: Model Performance Comparison
+### 🏆 挑戰練習：模型效能比較
 
-**🎯 Goal**: Compare different models using identical prompts to understand their strengths
+**🎯 目標**：使用相同提示比較不同模型，了解各自優勢
 
-**📋 Instructions:**
-1. Add **Phi-4-mini** to your workspace
-2. Use the same prompt for both GPT-4.1 and Phi-4-mini
+**📋 操作說明：**
+1. 將 **Phi-4-mini** 新增至您的工作區
+2. 對 GPT-4.1 與 Phi-4-mini 使用相同提示
 
 ![set](../../../../translated_images/set.88132df189ecde2cbbda256c1841db5aac8e9bdeba1a4e343dfa031b9545d6c9.mo.png)
 
-3. Compare response quality, speed, and accuracy
-4. Document your findings in the results section
+3. 比較回應品質、速度與準確度
+4. 將結果記錄於成果區
 
 ![Model Comparison](../../../../translated_images/compare.97746cd0f907495503c1fc217739f3890dc76ea5f6fd92379a6db0cc331feb58.mo.png)
 
-**💡 Key Insights to Discover:**
-- When to use LLM vs SLM
-- Cost vs. performance trade-offs
-- Specialized capabilities of different models
+**💡 重要洞見：**
+- 何時使用大型語言模型 (LLM) 與小型語言模型 (SLM)
+- 成本與效能的權衡
+- 不同模型的專長功能
 
-## 🤖 Hands-on Exercise 2: Building Custom Agents with Agent Builder
+## 🤖 實作練習 2：使用 Agent Builder 建立自訂代理
 
-**🎯 Objective**: Create specialized AI agents tailored for specific tasks and workflows
+**🎯 目標**：打造專門針對特定任務與工作流程的 AI 代理
 
-### 🏗️ Step 1: Understanding Agent Builder
+### 🏗️ 步驟 1：認識 Agent Builder
 
-Agent Builder is where AI Toolkit truly shines. It allows you to create purpose-built AI assistants that combine the power of large language models with custom instructions, specific parameters, and specialized knowledge.
+Agent Builder 是 AI 工具組的核心亮點。它讓您能創建具備大型語言模型能力，並結合自訂指令、特定參數與專業知識的專用 AI 助手。
 
-**🧠 Agent Architecture Components:**
-- **Core Model**: The foundation LLM (GPT-4, Groks, Phi, etc.)
-- **System Prompt**: Defines agent personality and behavior
-- **Parameters**: Fine-tuned settings for optimal performance
-- **Tools Integration**: Connect to external APIs and MCP services
-- **Memory**: Conversation context and session persistence
+**🧠 代理架構組件：**
+- **核心模型**：基礎大型語言模型（GPT-4、Groks、Phi 等）
+- **系統提示**：定義代理的個性與行為
+- **參數**：微調設定以達最佳效能
+- **工具整合**：連接外部 API 與 MCP 服務
+- **記憶體**：對話上下文與會話持續性
 
 ![Agent Builder Interface](../../../../translated_images/agentbuilder.25895b2d2f8c02e7aa99dd40e105877a6f1db8f0441180087e39db67744b361f.mo.png)
 
-### ⚙️ Step 2: Agent Configuration Deep Dive
+### ⚙️ 步驟 2：深入代理設定
 
-**🎨 Creating Effective System Prompts:**
+**🎨 創建有效的系統提示：**
 ```markdown
 # Template Structure:
 ## Role Definition
@@ -187,25 +187,25 @@ You are a [specific role] with expertise in [domain].
 Provide 2-3 examples of ideal interactions
 ```
 
-*Of course, you can also use Generate System Prompt to use AI to help you generate and optimize prompts*
+*當然，您也可以使用 Generate System Prompt 功能，讓 AI 協助您生成與優化提示*
 
-**🔧 Parameter Optimization:**
-| Parameter | Recommended Range | Use Case |
+**🔧 參數優化：**
+| 參數 | 建議範圍 | 使用情境 |
 |-----------|------------------|----------|
-| **Temperature** | 0.1-0.3 | Technical/factual responses |
-| **Temperature** | 0.7-0.9 | Creative/brainstorming tasks |
-| **Max Tokens** | 500-1000 | Concise responses |
-| **Max Tokens** | 2000-4000 | Detailed explanations |
+| **Temperature** | 0.1-0.3 | 技術性/事實性回應 |
+| **Temperature** | 0.7-0.9 | 創意/腦力激盪任務 |
+| **Max Tokens** | 500-1000 | 簡潔回應 |
+| **Max Tokens** | 2000-4000 | 詳細說明 |
 
-### 🐍 Step 3: Practical Exercise - Python Programming Agent
+### 🐍 步驟 3：實作練習 - Python 程式代理
 
-**🎯 Mission**: Create a specialized Python coding assistant
+**🎯 任務**：打造專門的 Python 程式助理
 
-**📋 Configuration Steps:**
+**📋 設定步驟：**
 
-1. **Model Selection**: Choose **Claude 3.5 Sonnet** (excellent for code)
+1. **模型選擇**：選擇 **Claude 3.5 Sonnet**（擅長程式碼）
 
-2. **System Prompt Design**:
+2. **系統提示設計**：
 ```markdown
 # Python Programming Expert Agent
 
@@ -232,57 +232,53 @@ You are a senior Python developer with 10+ years of experience. You excel at wri
 - Write readable, maintainable code
 ```
 
-3. **Parameter Configuration**:
-   - Temperature: 0.2 (for consistent, reliable code)
-   - Max Tokens: 2000 (detailed explanations)
-   - Top-p: 0.9 (balanced creativity)
+3. **參數設定**：
+   - Temperature：0.2（保持一致且可靠的程式碼）
+   - Max Tokens：2000（詳細說明）
+   - Top-p：0.9（平衡創意）
 
 ![Python Agent Configuration](../../../../translated_images/pythonagent.5e51b406401c165fcabfd66f2d943c27f46b5fed0f9fb73abefc9e91ca3489d4.mo.png)
 
-### 🧪 Step 4: Testing Your Python Agent
+### 🧪 步驟 4：測試您的 Python 代理
 
-**Test Scenarios:**
-1. **Basic Function**: "Create a function to find prime numbers"
-2. **Complex Algorithm**: "Implement a binary search tree with insert, delete, and search methods"
-3. **Real-world Problem**: "Build a web scraper that handles rate limiting and retries"
-4. **Debugging**: "Fix this code [paste buggy code]"
+**測試情境：**
+1. **基本功能**：「建立一個尋找質數的函式」
+2. **複雜演算法**：「實作包含插入、刪除與搜尋方法的二元搜尋樹」
+3. **實務問題**：「建立一個能處理速率限制與重試的網頁爬蟲」
+4. **除錯**：「修正這段程式碼 [貼上有錯誤的程式碼]」
 
-**🏆 Success Criteria:**
-- ✅ Code runs without errors
-- ✅ Includes proper documentation
-- ✅ Follows Python best practices
-- ✅ Provides clear explanations
-- ✅ Suggests improvements
+**🏆 成功標準：**
+- ✅ 程式碼能正常執行
+- ✅ 包含適當文件說明
+- ✅ 遵循 Python 最佳實務
+- ✅ 提供清楚解釋
+- ✅ 建議改進方案
 
-## 🎓 Module 1 Wrap-Up & Next Steps
+## 🎓 模組 1 總結與後續步驟
 
-### 📊 Knowledge Check
+### 📊 知識檢核
 
-Test your understanding:
-- [ ] Can you explain the difference between models in the catalog?
-- [ ] Have you successfully created and tested a custom agent?
-- [ ] Do you understand how to optimize parameters for different use cases?
-- [ ] Can you design effective system prompts?
+測試您的理解：
+- [ ] 能否說明目錄中模型的差異？
+- [ ] 是否成功建立並測試自訂代理？
+- [ ] 是否了解如何針對不同使用情境優化參數？
+- [ ] 是否能設計有效的系統提示？
 
-### 📚 Additional Resources
+### 📚 其他資源
 
-- **AI Toolkit Documentation**: [Official Microsoft Docs](https://github.com/microsoft/vscode-ai-toolkit)
-- **Prompt Engineering Guide**: [Best Practices](https://platform.openai.com/docs/guides/prompt-engineering)
-- **Models in AI Toolkit**: [Models in Develpment](https://github.com/microsoft/vscode-ai-toolkit/blob/main/doc/models.md)
+- **AI 工具組文件**：[官方微軟文件](https://github.com/microsoft/vscode-ai-toolkit)
+- **提示工程指南**：[最佳實務](https://platform.openai.com/docs/guides/prompt-engineering)
+- **AI 工具組中的模型**：[開發中的模型](https://github.com/microsoft/vscode-ai-toolkit/blob/main/doc/models.md)
 
-**🎉 Congratulations!** You've mastered the fundamentals of AI Toolkit and are ready to build more advanced AI applications!
+**🎉 恭喜！** 您已掌握 AI 工具組的基礎，準備好打造更進階的 AI 應用！
 
-### 🔜 Continue to Next Module
+### 🔜 繼續下一模組
 
-Ready for more advanced capabilities? Continue to **[Module 2: MCP with AI Toolkit Fundamentals](../lab2/README.md)** where you'll learn how to:
-- Connect your agents to external tools using Model Context Protocol (MCP)
-- Build browser automation agents with Playwright
-- Integrate MCP servers with your AI Toolkit agents
-- Supercharge your agents with external data and capabilities
+準備好學習更進階功能了嗎？請繼續前往 **[模組 2：MCP 與 AI 工具組基礎](../lab2/README.md)**，您將學習如何：
+- 使用 Model Context Protocol (MCP) 連接代理與外部工具
+- 建立 Playwright 瀏覽器自動化代理
+- 將 MCP 伺服器整合至您的 AI 工具組代理
+- 利用外部資料與功能強化您的代理
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-Could you please clarify what language or code "mo" refers to? There are several possibilities (e.g., Moldovan, a constructed language, or a shorthand), and I want to ensure I provide the correct translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

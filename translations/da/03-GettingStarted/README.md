@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:32:08+00:00",
+  "translation_date": "2025-07-13T17:16:58+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "da"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 Denne sektion består af flere lektioner:
 
-- **1 Din første server**, i denne første lektion lærer du, hvordan du opretter din første server og inspicerer den med inspektørværktøjet, en værdifuld måde at teste og fejlfinde din server på, [til lektionen](01-first-server/README.md)
+- **1 Din første server**, i denne første lektion lærer du, hvordan du opretter din første server og inspicerer den med inspector-værktøjet, en værdifuld måde at teste og fejlfinde din server på, [til lektionen](01-first-server/README.md)
 
-- **2 Client**, i denne lektion lærer du at skrive en client, der kan forbinde til din server, [til lektionen](02-client/README.md)
+- **2 Client**, i denne lektion lærer du, hvordan du skriver en client, der kan oprette forbindelse til din server, [til lektionen](02-client/README.md)
 
 - **3 Client med LLM**, en endnu bedre måde at skrive en client på er ved at tilføje en LLM, så den kan "forhandle" med din server om, hvad der skal gøres, [til lektionen](03-llm-client/README.md)
 
@@ -21,9 +21,9 @@ Denne sektion består af flere lektioner:
 
 - **5 Forbrug fra en SSE (Server Sent Events)** SSE er en standard for server-til-client streaming, som tillader servere at sende realtidsopdateringer til klienter over HTTP [til lektionen](05-sse-server/README.md)
 
-- **6 HTTP Streaming med MCP (Streamable HTTP)**. Lær om moderne HTTP streaming, fremdriftsnotifikationer, og hvordan man implementerer skalerbare, realtids MCP servere og clients ved hjælp af Streamable HTTP. [til lektionen](06-http-streaming/README.md)
+- **6 HTTP Streaming med MCP (Streamable HTTP)**. Lær om moderne HTTP streaming, fremdriftsnotifikationer, og hvordan du implementerer skalerbare, realtids MCP-servere og -clients ved hjælp af Streamable HTTP. [til lektionen](06-http-streaming/README.md)
 
-- **7 Udnyttelse af AI Toolkit for VSCode** til at forbruge og teste dine MCP Clients og Servere [til lektionen](07-aitk/README.md)
+- **7 Udnyttelse af AI Toolkit for VSCode** til at forbruge og teste dine MCP Clients og Servers [til lektionen](07-aitk/README.md)
 
 - **8 Testning**. Her fokuserer vi især på, hvordan vi kan teste vores server og client på forskellige måder, [til lektionen](08-testing/README.md)
 
@@ -45,7 +45,7 @@ Når du er færdig med denne lektion, vil du kunne:
 
 ## Opsætning af dit MCP-miljø
 
-Før du begynder at arbejde med MCP, er det vigtigt at forberede dit udviklingsmiljø og forstå den grundlæggende arbejdsgang. Denne sektion guider dig gennem de indledende opsætningsskridt for at sikre en god start med MCP.
+Før du begynder at arbejde med MCP, er det vigtigt at forberede dit udviklingsmiljø og forstå den grundlæggende arbejdsgang. Denne sektion guider dig gennem de indledende opsætningsskridt for at sikre en glidende start med MCP.
 
 ### Forudsætninger
 
@@ -54,7 +54,7 @@ Før du går i gang med MCP-udvikling, skal du sikre dig, at du har:
 - **Udviklingsmiljø**: Til dit valgte sprog (C#, Java, Python, TypeScript eller JavaScript)
 - **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm eller en hvilken som helst moderne kodeeditor
 - **Pakkestyring**: NuGet, Maven/Gradle, pip eller npm/yarn
-- **API-nøgler**: Til de AI-tjenester, du planlægger at bruge i dine host-applikationer
+- **API-nøgler**: Til eventuelle AI-tjenester, du planlægger at bruge i dine host-applikationer
 
 
 ### Officielle SDK’er
@@ -74,7 +74,7 @@ MCP tilbyder officielle SDK’er til flere sprog:
 
 - Opsætning af et MCP-udviklingsmiljø er enkelt med sprog-specifikke SDK’er
 - At bygge MCP-servere indebærer at oprette og registrere værktøjer med klare skemaer
-- MCP-klienter forbinder til servere og modeller for at udnytte udvidede funktioner
+- MCP-clients forbinder til servere og modeller for at udnytte udvidede funktioner
 - Test og fejlretning er afgørende for pålidelige MCP-implementeringer
 - Udrulningsmuligheder spænder fra lokal udvikling til cloud-baserede løsninger
 
@@ -90,8 +90,8 @@ Vi har et sæt eksempler, der supplerer øvelserne, du vil se i alle kapitler i 
 
 ## Yderligere ressourcer
 
-- [Byg agenter med Model Context Protocol på Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [Remote MCP med Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Hvad er det næste

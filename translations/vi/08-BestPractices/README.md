@@ -2,40 +2,40 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
-  "translation_date": "2025-07-02T08:10:57+00:00",
+  "translation_date": "2025-07-14T05:08:33+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "vi"
 }
 -->
-# MCP Phát Triển Theo Các Thực Hành Tốt Nhất
+# Thực Tiễn Phát Triển MCP Tốt Nhất
 
 ## Tổng Quan
 
-Bài học này tập trung vào các thực hành nâng cao trong phát triển, kiểm thử và triển khai các máy chủ MCP và tính năng trong môi trường sản xuất. Khi hệ sinh thái MCP ngày càng phức tạp và quan trọng, việc tuân thủ các mẫu thiết kế đã được chứng minh giúp đảm bảo độ tin cậy, dễ bảo trì và khả năng tương tác. Bài học này tổng hợp kinh nghiệm thực tế từ các triển khai MCP thực tế để hướng dẫn bạn tạo ra các máy chủ vững chắc, hiệu quả với các tài nguyên, lời nhắc và công cụ phù hợp.
+Bài học này tập trung vào các thực tiễn nâng cao trong việc phát triển, kiểm thử và triển khai các máy chủ và tính năng MCP trong môi trường sản xuất. Khi hệ sinh thái MCP ngày càng phức tạp và quan trọng, việc tuân theo các mẫu đã được thiết lập giúp đảm bảo độ tin cậy, khả năng bảo trì và khả năng tương tác. Bài học này tổng hợp những kinh nghiệm thực tiễn từ các triển khai MCP thực tế để hướng dẫn bạn tạo ra các máy chủ vững chắc, hiệu quả với tài nguyên, lời nhắc và công cụ phù hợp.
 
 ## Mục Tiêu Học Tập
 
-Sau khi hoàn thành bài học, bạn sẽ có thể:
-- Áp dụng các thực hành tốt nhất trong thiết kế máy chủ và tính năng MCP
-- Tạo các chiến lược kiểm thử toàn diện cho máy chủ MCP
+Sau khi hoàn thành bài học này, bạn sẽ có khả năng:
+- Áp dụng các thực tiễn tốt nhất trong thiết kế máy chủ và tính năng MCP
+- Tạo chiến lược kiểm thử toàn diện cho các máy chủ MCP
 - Thiết kế các mẫu quy trình làm việc hiệu quả, có thể tái sử dụng cho các ứng dụng MCP phức tạp
-- Triển khai xử lý lỗi, ghi nhật ký và quan sát phù hợp trong máy chủ MCP
+- Triển khai xử lý lỗi, ghi nhật ký và quan sát đúng cách trong máy chủ MCP
 - Tối ưu hóa các triển khai MCP về hiệu suất, bảo mật và khả năng bảo trì
 
-## Tài Liệu Tham Khảo Bổ Sung
+## Tham Khảo Bổ Sung
 
-Để có thông tin cập nhật nhất về các thực hành tốt MCP, hãy tham khảo:
+Để có thông tin cập nhật nhất về các thực tiễn tốt nhất của MCP, tham khảo:
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
-## Thực Hành Tốt Nhất Trong Phát Triển Công Cụ MCP
+## Thực Tiễn Phát Triển Công Cụ MCP
 
 ### Nguyên Tắc Kiến Trúc
 
 #### 1. Nguyên Tắc Trách Nhiệm Đơn
 
-Mỗi tính năng MCP nên có mục đích rõ ràng, tập trung. Thay vì tạo ra các công cụ khổng lồ xử lý nhiều vấn đề cùng lúc, hãy phát triển các công cụ chuyên biệt, làm tốt từng nhiệm vụ cụ thể.
+Mỗi tính năng MCP nên có mục đích rõ ràng và tập trung. Thay vì tạo ra các công cụ đơn khối cố gắng xử lý nhiều vấn đề, hãy phát triển các công cụ chuyên biệt, xuất sắc trong từng nhiệm vụ cụ thể.
 
 **Ví dụ Tốt:**
 ```csharp
@@ -153,9 +153,9 @@ public class WeatherToolSuite : ITool
 }
 ```
 
-#### 2. Dependency Injection và Khả Năng Kiểm Thử
+#### 2. Tiêm Phụ Thuộc và Khả Năng Kiểm Thử
 
-Thiết kế công cụ nhận các phụ thuộc qua constructor injection, giúp dễ dàng kiểm thử và cấu hình:
+Thiết kế công cụ để nhận các phụ thuộc thông qua tiêm trong hàm khởi tạo, giúp chúng dễ kiểm thử và cấu hình:
 
 ```java
 // Java example with dependency injection
@@ -181,7 +181,7 @@ public class CurrencyConversionTool implements Tool {
 
 #### 3. Công Cụ Có Thể Kết Hợp
 
-Thiết kế công cụ sao cho có thể kết hợp với nhau để tạo thành các quy trình phức tạp hơn:
+Thiết kế các công cụ có thể kết hợp với nhau để tạo ra các quy trình làm việc phức tạp hơn:
 
 ```python
 # Python example showing composable tools
@@ -212,13 +212,13 @@ class DataVisualizationTool(Tool):
 # These tools can be used independently or as part of a workflow
 ```
 
-### Thực Hành Tốt Nhất Trong Thiết Kế Schema
+### Thực Tiễn Thiết Kế Schema
 
 Schema là hợp đồng giữa mô hình và công cụ của bạn. Schema được thiết kế tốt giúp công cụ dễ sử dụng hơn.
 
 #### 1. Mô Tả Tham Số Rõ Ràng
 
-Luôn cung cấp thông tin mô tả cho từng tham số:
+Luôn bao gồm thông tin mô tả cho từng tham số:
 
 ```csharp
 public object GetSchema()
@@ -257,7 +257,7 @@ public object GetSchema()
 
 #### 2. Ràng Buộc Xác Thực
 
-Bao gồm các ràng buộc xác thực để ngăn chặn dữ liệu đầu vào không hợp lệ:
+Bao gồm các ràng buộc xác thực để ngăn chặn đầu vào không hợp lệ:
 
 ```java
 Map<String, Object> getSchema() {
@@ -340,11 +340,11 @@ def _format_item(self, item):
 
 ### Xử Lý Lỗi
 
-Xử lý lỗi vững chắc là điều cần thiết để các công cụ MCP duy trì độ tin cậy.
+Xử lý lỗi vững chắc là yếu tố quan trọng để các công cụ MCP duy trì độ tin cậy.
 
 #### 1. Xử Lý Lỗi Nhẹ Nhàng
 
-Xử lý lỗi ở mức phù hợp và cung cấp thông điệp thông tin:
+Xử lý lỗi ở các cấp độ phù hợp và cung cấp thông báo rõ ràng:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -420,7 +420,7 @@ public ToolResponse execute(ToolRequest request) {
 
 #### 3. Logic Thử Lại
 
-Triển khai logic thử lại thích hợp cho các lỗi tạm thời:
+Triển khai logic thử lại phù hợp cho các lỗi tạm thời:
 
 ```python
 async def execute_async(self, request):
@@ -448,9 +448,9 @@ async def execute_async(self, request):
 
 ### Tối Ưu Hiệu Suất
 
-#### 1. Caching
+#### 1. Bộ Nhớ Đệm
 
-Triển khai caching cho các thao tác tốn kém:
+Triển khai bộ nhớ đệm cho các thao tác tốn kém:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -611,11 +611,11 @@ class TokenBucketRateLimiter:
         self.last_refill = now
 ```
 
-### Thực Hành Tốt Nhất Về Bảo Mật
+### Thực Tiễn Bảo Mật
 
 #### 1. Xác Thực Đầu Vào
 
-Luôn xác thực kỹ các tham số đầu vào:
+Luôn xác thực kỹ lưỡng các tham số đầu vào:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -684,7 +684,7 @@ public ToolResponse execute(ToolRequest request) {
 
 #### 3. Xử Lý Dữ Liệu Nhạy Cảm
 
-Xử lý dữ liệu nhạy cảm một cách cẩn trọng:
+Xử lý dữ liệu nhạy cảm một cách cẩn thận:
 
 ```python
 class SecureDataTool(Tool):
@@ -733,15 +733,15 @@ class SecureDataTool(Tool):
         return redacted
 ```
 
-## Thực Hành Tốt Nhất Trong Kiểm Thử Công Cụ MCP
+## Thực Tiễn Kiểm Thử Công Cụ MCP
 
-Kiểm thử toàn diện đảm bảo các công cụ MCP hoạt động chính xác, xử lý các trường hợp biên và tích hợp tốt với hệ thống.
+Kiểm thử toàn diện đảm bảo các công cụ MCP hoạt động chính xác, xử lý các trường hợp biên và tích hợp đúng với hệ thống.
 
 ### Kiểm Thử Đơn Vị
 
 #### 1. Kiểm Thử Từng Công Cụ Riêng Lẻ
 
-Tạo các bài kiểm thử tập trung cho từng chức năng của công cụ:
+Tạo các bài kiểm thử tập trung cho chức năng của từng công cụ:
 
 ```csharp
 [Fact]
@@ -803,7 +803,7 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 
 #### 2. Kiểm Thử Xác Thực Schema
 
-Kiểm tra schema có hợp lệ và thực thi đúng các ràng buộc:
+Kiểm tra schema hợp lệ và thực thi đúng các ràng buộc:
 
 ```java
 @Test
@@ -908,7 +908,7 @@ async def test_api_tool_handles_rate_limiting():
 
 #### 1. Kiểm Thử Chuỗi Công Cụ
 
-Kiểm tra các công cụ hoạt động cùng nhau trong các kết hợp mong đợi:
+Kiểm thử các công cụ hoạt động cùng nhau theo các kết hợp dự kiến:
 
 ```csharp
 [Fact]
@@ -1076,7 +1076,7 @@ async def test_model_interaction_with_tool():
 
 #### 1. Kiểm Thử Tải
 
-Kiểm tra máy chủ MCP có thể xử lý bao nhiêu yêu cầu đồng thời:
+Kiểm thử khả năng xử lý các yêu cầu đồng thời của máy chủ MCP:
 
 ```csharp
 [Fact]
@@ -1111,7 +1111,7 @@ public async Task McpServer_HandlesHighConcurrency()
 
 #### 2. Kiểm Thử Căng Thẳng
 
-Kiểm tra hệ thống dưới tải cực đại:
+Kiểm thử hệ thống dưới tải cực đoan:
 
 ```java
 @Test
@@ -1166,7 +1166,7 @@ public void testServerUnderStress() {
 
 #### 3. Giám Sát và Phân Tích Hiệu Suất
 
-Thiết lập giám sát để phân tích hiệu suất lâu dài:
+Thiết lập giám sát để phân tích hiệu suất dài hạn:
 
 ```python
 # Configure monitoring for an MCP server
@@ -1208,9 +1208,9 @@ def configure_monitoring(server):
     return server
 ```
 
-## Các Mẫu Thiết Kế Quy Trình MCP
+## Mẫu Thiết Kế Quy Trình MCP
 
-Các quy trình MCP được thiết kế tốt giúp cải thiện hiệu quả, độ tin cậy và khả năng bảo trì. Dưới đây là các mẫu chính nên áp dụng:
+Các quy trình MCP được thiết kế tốt giúp cải thiện hiệu quả, độ tin cậy và khả năng bảo trì. Dưới đây là các mẫu chính cần tuân theo:
 
 ### 1. Mẫu Chuỗi Công Cụ
 
@@ -1255,7 +1255,7 @@ result = await data_processing_chain.execute(
 
 ### 2. Mẫu Bộ Phân Phối
 
-Sử dụng một công cụ trung tâm phân phối đến các công cụ chuyên biệt dựa trên đầu vào:
+Sử dụng một công cụ trung tâm để phân phối đến các công cụ chuyên biệt dựa trên đầu vào:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1337,7 +1337,7 @@ public class ContentDispatcherTool : IMcpTool
 
 ### 3. Mẫu Xử Lý Song Song
 
-Thực thi nhiều công cụ cùng lúc để tăng hiệu quả:
+Thực thi nhiều công cụ đồng thời để tăng hiệu quả:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1508,11 +1508,11 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# Kiểm Thử Máy Chủ MCP: Thực Hành Tốt Nhất và Mẹo Hàng Đầu
+# Kiểm Thử Máy Chủ MCP: Thực Tiễn Tốt Nhất và Mẹo Hàng Đầu
 
 ## Tổng Quan
 
-Kiểm thử là một khía cạnh quan trọng trong phát triển máy chủ MCP đáng tin cậy và chất lượng cao. Hướng dẫn này cung cấp các thực hành tốt nhất và mẹo kiểm thử toàn diện cho máy chủ MCP trong suốt vòng đời phát triển, từ kiểm thử đơn vị đến kiểm thử tích hợp và kiểm thử đầu-cuối.
+Kiểm thử là một khía cạnh quan trọng trong việc phát triển các máy chủ MCP đáng tin cậy và chất lượng cao. Hướng dẫn này cung cấp các thực tiễn tốt nhất và mẹo toàn diện để kiểm thử máy chủ MCP trong suốt vòng đời phát triển, từ kiểm thử đơn vị đến kiểm thử tích hợp và xác thực đầu-cuối.
 
 ## Tại Sao Kiểm Thử Quan Trọng Với Máy Chủ MCP
 
@@ -1520,7 +1520,7 @@ Máy chủ MCP đóng vai trò trung gian quan trọng giữa các mô hình AI 
 
 - Độ tin cậy trong môi trường sản xuất
 - Xử lý chính xác các yêu cầu và phản hồi
-- Triển khai đúng theo đặc tả MCP
+- Triển khai đúng các đặc tả MCP
 - Khả năng chịu lỗi và xử lý các trường hợp biên
 - Hiệu suất ổn định dưới các mức tải khác nhau
 
@@ -1528,17 +1528,17 @@ Máy chủ MCP đóng vai trò trung gian quan trọng giữa các mô hình AI 
 
 ### Kiểm Thử Đơn Vị (Nền Tảng)
 
-Kiểm thử đơn vị xác minh từng thành phần của máy chủ MCP một cách độc lập.
+Kiểm thử đơn vị xác minh các thành phần riêng lẻ của máy chủ MCP một cách độc lập.
 
 #### Những Gì Cần Kiểm Thử
 
-1. **Xử lý Tài nguyên**: Kiểm thử logic của từng bộ xử lý tài nguyên
-2. **Triển khai Công cụ**: Xác minh hành vi công cụ với các đầu vào khác nhau
-3. **Mẫu Lời Nhắc**: Đảm bảo các mẫu lời nhắc hiển thị đúng
+1. **Bộ Xử Lý Tài Nguyên**: Kiểm thử logic của từng bộ xử lý tài nguyên riêng biệt
+2. **Triển Khai Công Cụ**: Xác minh hành vi công cụ với các đầu vào khác nhau
+3. **Mẫu Lời Nhắc**: Đảm bảo mẫu lời nhắc hiển thị đúng
 4. **Xác Thực Schema**: Kiểm thử logic xác thực tham số
-5. **Xử Lý Lỗi**: Xác minh phản hồi lỗi cho các đầu vào không hợp lệ
+5. **Xử Lý Lỗi**: Xác minh phản hồi lỗi với đầu vào không hợp lệ
 
-#### Thực Hành Tốt Nhất Cho Kiểm Thử Đơn Vị
+#### Thực Tiễn Tốt Nhất Cho Kiểm Thử Đơn Vị
 
 ```csharp
 // Example unit test for a calculator tool in C#
@@ -1589,12 +1589,12 @@ Kiểm thử tích hợp xác minh sự tương tác giữa các thành phần c
 #### Những Gì Cần Kiểm Thử
 
 1. **Khởi Tạo Máy Chủ**: Kiểm thử khởi động máy chủ với các cấu hình khác nhau
-2. **Đăng Ký Đường Dẫn**: Xác minh tất cả các điểm cuối được đăng ký đúng
-3. **Xử Lý Yêu Cầu**: Kiểm thử chu trình yêu cầu-phản hồi đầy đủ
+2. **Đăng Ký Đường Dẫn**: Xác minh tất cả các điểm cuối được đăng ký chính xác
+3. **Xử Lý Yêu Cầu**: Kiểm thử toàn bộ chu trình yêu cầu-phản hồi
 4. **Phân Tán Lỗi**: Đảm bảo lỗi được xử lý đúng qua các thành phần
 5. **Xác Thực & Ủy Quyền**: Kiểm thử các cơ chế bảo mật
 
-#### Thực Hành Tốt Nhất Cho Kiểm Thử Tích Hợp
+#### Thực Tiễn Tốt Nhất Cho Kiểm Thử Tích Hợp
 
 ```csharp
 // Example integration test for MCP server in C#
@@ -1632,17 +1632,17 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 
 ### Kiểm Thử Đầu-cuối (Lớp Trên Cùng)
 
-Kiểm thử đầu-cuối xác minh toàn bộ hành vi hệ thống từ client đến server.
+Kiểm thử đầu-cuối xác minh hành vi toàn bộ hệ thống từ khách đến máy chủ.
 
 #### Những Gì Cần Kiểm Thử
 
-1. **Giao Tiếp Client-Server**: Kiểm thử chu trình yêu cầu-phản hồi hoàn chỉnh
-2. **SDK Client Thực Tế**: Kiểm thử với các triển khai client thật
+1. **Giao Tiếp Khách-Máy Chủ**: Kiểm thử chu trình yêu cầu-phản hồi hoàn chỉnh
+2. **SDK Khách Thực Tế**: Kiểm thử với các triển khai khách thực tế
 3. **Hiệu Suất Dưới Tải**: Xác minh hành vi với nhiều yêu cầu đồng thời
-4. **Phục Hồi Lỗi**: Kiểm thử khả năng phục hồi hệ thống khi xảy ra lỗi
-5. **Hoạt Động Kéo Dài**: Xác minh xử lý luồng dữ liệu và các tác vụ dài hạn
+4. **Phục Hồi Lỗi**: Kiểm thử khả năng phục hồi hệ thống sau lỗi
+5. **Thao Tác Dài Hạn**: Xác minh xử lý luồng dữ liệu và các thao tác kéo dài
 
-#### Thực Hành Tốt Nhất Cho Kiểm Thử E2E
+#### Thực Tiễn Tốt Nhất Cho Kiểm Thử Đầu-cuối
 
 ```typescript
 // Example E2E test with a client in TypeScript
@@ -1674,18 +1674,18 @@ describe('MCP Server E2E Tests', () => {
 });
 ```
 
-## Chiến Lược Mock Trong Kiểm Thử MCP
+## Chiến Lược Giả Lập Cho Kiểm Thử MCP
 
-Mocking rất cần thiết để cô lập các thành phần trong quá trình kiểm thử.
+Giả lập là cần thiết để cô lập các thành phần trong quá trình kiểm thử.
 
-### Thành Phần Cần Mock
+### Các Thành Phần Cần Giả Lập
 
-1. **Mô Hình AI Bên Ngoài**: Mock phản hồi mô hình để kiểm thử dự đoán được
-2. **Dịch Vụ Bên Ngoài**: Mock các API phụ thuộc (cơ sở dữ liệu, dịch vụ bên thứ ba)
-3. **Dịch Vụ Xác Thực**: Mock nhà cung cấp định danh
-4. **Nhà Cung Cấp Tài Nguyên**: Mock các bộ xử lý tài nguyên tốn kém
+1. **Mô Hình AI Bên Ngoài**: Giả lập phản hồi mô hình để kiểm thử có thể dự đoán
+2. **Dịch Vụ Bên Ngoài**: Giả lập các API phụ thuộc (cơ sở dữ liệu, dịch vụ bên thứ ba)
+3. **Dịch Vụ Xác Thực**: Giả lập nhà cung cấp định danh
+4. **Nhà Cung Cấp Tài Nguyên**: Giả lập các bộ xử lý tài nguyên tốn kém
 
-### Ví Dụ: Mock Phản Hồi Mô Hình AI
+### Ví Dụ: Giả Lập Phản Hồi Mô Hình AI
 
 ```csharp
 // C# example with Moq
@@ -1721,13 +1721,13 @@ def test_with_mock_model(mock_model):
 
 Kiểm thử hiệu suất rất quan trọng cho các máy chủ MCP trong môi trường sản xuất.
 
-### Những Gì Cần Đo
+### Những Gì Cần Đo Lường
 
 1. **Độ Trễ**: Thời gian phản hồi cho các yêu cầu
 2. **Thông Lượng**: Số yêu cầu xử lý mỗi giây
 3. **Sử Dụng Tài Nguyên**: CPU, bộ nhớ, mạng
-4. **Xử Lý Đồng Thời**: Hành vi khi có nhiều yêu cầu song song
-5. **Khả Năng Mở Rộng**: Hiệu suất khi tải tăng lên
+4. **Xử Lý Đồng Thời**: Hành vi dưới các yêu cầu song song
+5. **Đặc Tính Mở Rộng**: Hiệu suất khi tải tăng
 
 ### Công Cụ Kiểm Thử Hiệu Suất
 
@@ -1778,13 +1778,13 @@ export default function () {
 
 ## Tự Động Hóa Kiểm Thử Cho Máy Chủ MCP
 
-Tự động hóa kiểm thử giúp đảm bảo chất lượng đồng đều và tăng tốc phản hồi.
+Tự động hóa kiểm thử giúp đảm bảo chất lượng nhất quán và rút ngắn vòng phản hồi.
 
 ### Tích Hợp CI/CD
 
-1. **Chạy Kiểm Thử Đơn Vị Khi Có Pull Request**: Đảm bảo thay đổi mã không phá vỡ chức năng hiện tại
-2. **Kiểm Thử Tích Hợp Trong Môi Trường Staging**: Chạy kiểm thử tích hợp ở môi trường tiền sản xuất
-3. **Duy Trì Chuẩn Hiệu Suất**: Giữ chuẩn hiệu suất để phát hiện suy giảm
+1. **Chạy Kiểm Thử Đơn Vị Khi Có Pull Request**: Đảm bảo thay đổi mã không làm hỏng chức năng hiện có
+2. **Kiểm Thử Tích Hợp Trong Môi Trường Staging**: Chạy kiểm thử tích hợp trong môi trường tiền sản xuất
+3. **Duy Trì Chuẩn Hiệu Suất**: Giữ các chuẩn hiệu suất để phát hiện suy giảm
 4. **Quét Bảo Mật**: Tự động kiểm thử bảo mật trong pipeline
 
 ### Ví Dụ Pipeline CI (GitHub Actions)
@@ -1832,11 +1832,11 @@ Xác minh máy chủ của bạn triển khai đúng đặc tả MCP.
 
 ### Các Lĩnh Vực Tuân Thủ Chính
 
-1. **Điểm Cuối API**: Kiểm thử các điểm cuối bắt buộc (/resources, /tools, v.v.)
+1. **Các Điểm Cuối API**: Kiểm thử các điểm cuối bắt buộc (/resources, /tools, v.v.)
 2. **Định Dạng Yêu Cầu/Phản Hồi**: Xác thực tuân thủ schema
 3. **Mã Lỗi**: Xác minh mã trạng thái đúng cho các tình huống khác nhau
 4. **Loại Nội Dung**: Kiểm thử xử lý các loại nội dung khác nhau
-5. **Luồng Xác Thực**: Kiểm tra cơ chế xác thực theo đặc tả
+5. **Luồng Xác Thực**: Xác minh cơ chế xác thực tuân thủ đặc tả
 
 ### Bộ Kiểm Thử Tuân Thủ
 
@@ -1868,36 +1868,38 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 ## 10 Mẹo Hàng Đầu Cho Kiểm Thử Máy Chủ MCP Hiệu Quả
 
 1. **Kiểm Thử Định Nghĩa Công Cụ Riêng Biệt**: Xác minh schema độc lập với logic công cụ
-2. **Sử Dụng Kiểm Thử Tham Số**: Kiểm thử công cụ với nhiều đầu vào đa dạng, bao gồm các trường hợp biên
-3. **Kiểm Tra Phản Hồi Lỗi**: Xác minh xử lý lỗi đúng với mọi tình huống lỗi có thể xảy ra
-4. **Kiểm Thử Logic Ủy Quyền**: Đảm bảo kiểm soát truy cập phù hợp cho các vai trò người dùng khác nhau
-5. **Giám Sát Độ Bao Phủ Kiểm Thử**: Hướng đến độ bao phủ cao cho các đoạn mã quan trọng
-6. **Kiểm Thử Phản Hồi Luồng**: Xác minh xử lý đúng nội dung streaming
+2. **Sử Dụng Kiểm Thử Tham Số**: Kiểm thử công cụ với nhiều đầu vào khác nhau, bao gồm các trường hợp biên
+3. **Kiểm Tra Phản Hồi Lỗi**: Xác minh xử lý lỗi đúng cho mọi điều kiện lỗi có thể xảy ra
+4. **Kiểm Thử Logic Ủy Quyền**: Đảm bảo kiểm soát truy cập đúng cho các vai trò người dùng khác nhau
+5. **Giám Sát Độ Bao Phủ Kiểm Thử**: Hướng tới độ bao phủ cao cho các đoạn mã quan trọng
+6. **Kiểm Thử Phản Hồi Luồng**: Xác minh xử lý đúng nội dung luồng
 7. **Mô Phỏng Sự Cố Mạng**: Kiểm thử hành vi dưới điều kiện mạng kém
-8. **Kiểm Thử Giới Hạn Tài Nguyên**: Xác minh hành vi khi đạt hạn mức hoặc giới hạn tốc độ
+8. **Kiểm Thử Giới Hạn Tài Nguyên**: Xác minh hành vi khi đạt giới hạn quota hoặc tốc độ
 9. **Tự Động Hóa Kiểm Thử Hồi Quy**: Xây dựng bộ kiểm thử chạy mỗi khi có thay đổi mã
 10. **Tài Liệu Hóa Các Trường Hợp Kiểm Thử**: Duy trì tài liệu rõ ràng về các kịch bản kiểm thử
 
-## Các Sai Lầm Thường Gặp Khi Kiểm Thử
+## Những Sai Lầm Thường Gặp Khi Kiểm Thử
 
-- **Quá phụ thuộc vào kiểm thử đường dẫn thuận lợi**: Hãy đảm bảo kiểm thử kỹ các trường hợp lỗi
-- **Bỏ qua kiểm thử hiệu suất**: Xác định nút thắt cổ chai trước khi ảnh hưởng sản xuất
+- **Quá phụ thuộc vào kiểm thử đường dẫn thuận lợi**: Hãy chắc chắn kiểm thử kỹ các trường hợp lỗi
+- **Bỏ qua kiểm thử hiệu suất**: Xác định điểm nghẽn trước khi ảnh hưởng đến sản xuất
 - **Chỉ kiểm thử riêng lẻ**: Kết hợp kiểm thử đơn vị, tích hợp và đầu-cuối
 - **Bao phủ API không đầy đủ**: Đảm bảo tất cả điểm cuối và tính năng được kiểm thử
-- **Môi trường kiểm thử không đồng nhất**: Sử dụng container để đảm bảo môi trường kiểm thử nhất quán
+- **Môi trường kiểm thử không nhất quán**: Sử dụng container để đảm bảo môi trường kiểm thử đồng nhất
 
 ## Kết Luận
 
-Một chiến lược kiểm thử toàn diện là điều cần thiết để phát triển máy chủ MCP đáng tin cậy, chất lượng cao. Bằng cách áp dụng các thực hành và mẹo được trình bày trong hướng dẫn này, bạn có thể đảm bảo các triển khai MCP đạt tiêu chuẩn cao nhất về chất lượng, độ tin cậy và hiệu suất.
+Chiến lược kiểm thử toàn diện là yếu tố thiết yếu để phát triển các máy chủ MCP đáng tin cậy và chất lượng cao. Bằng cách áp dụng các thực tiễn và mẹo được trình bày trong hướng dẫn này, bạn có thể đảm bảo các triển khai MCP của mình đạt tiêu chuẩn cao nhất về chất lượng, độ tin cậy và hiệu suất.
 
-## Những Điều Cần Nhớ
+## Những Điểm Chính Cần Nhớ
 
-1. **Thiết Kế Công Cụ**: Tuân theo nguyên tắc trách nhiệm đơn, sử dụng dependency injection và thiết kế để có thể kết hợp
-2. **Thiết Kế Schema**: Tạo schema rõ ràng, có tài liệu đầy đủ và ràng buộc xác thực thích hợp
+1. **Thiết Kế Công Cụ**: Tuân theo nguyên tắc trách nhiệm đơn, sử dụng tiêm phụ thuộc và thiết kế để có thể kết hợp
+2. **Thiết Kế Schema**: Tạo schema rõ ràng, có tài liệu đầy đủ với các ràng buộc xác thực phù hợp
 3. **Xử Lý Lỗi**: Triển khai xử lý lỗi nhẹ nhàng, phản hồi lỗi có cấu trúc và logic thử lại
-4. **Hiệu Suất**: Sử dụng caching, xử lý bất đồng bộ và giới hạn tài nguyên
-5. **Bảo Mật**: Áp dụng xác thực đầu vào kỹ lưỡng, kiểm tra ủy quyền và xử lý dữ liệu nhạy cảm
-6. **Kiểm Thử**: T
+4. **Hiệu Suất**: Sử dụng bộ
+5. Hãy cân nhắc tham gia các khóa học nâng cao về các chủ đề MCP cụ thể, chẳng hạn như tích hợp đa phương thức hoặc tích hợp ứng dụng doanh nghiệp.  
+6. Thử nghiệm xây dựng các công cụ và quy trình làm việc MCP của riêng bạn dựa trên các nguyên tắc đã học qua [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
 
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc sai sót. Tài liệu gốc bằng ngôn ngữ nguyên bản nên được coi là nguồn tham khảo chính xác nhất. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm đối với bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tiếp theo: Các thực hành tốt nhất [case studies](../09-CaseStudy/README.md)
+
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

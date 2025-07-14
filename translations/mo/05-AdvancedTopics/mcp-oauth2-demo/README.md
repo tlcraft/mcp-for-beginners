@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-12T23:12:54+00:00",
+  "translation_date": "2025-07-14T00:40:15+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "mo"
 }
 -->
 # MCP OAuth2 Demo
 
-Este proyecto es una **aplicación mínima de Spring Boot** que funciona como:
+此專案是一個**簡易的 Spring Boot 應用程式**，同時扮演：
 
-* un **Servidor de Autorización Spring** (emitiendo tokens de acceso JWT mediante el flujo `client_credentials`), y  
-* un **Servidor de Recursos** (protegiendo su propio endpoint `/hello`).
+* **Spring 授權伺服器**（透過 `client_credentials` 流程發行 JWT 存取權杖），以及  
+* **資源伺服器**（保護自身的 `/hello` 端點）。
 
-Refleja la configuración mostrada en el [post del blog de Spring (2 Abr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+它模擬了[Spring 部落格文章（2025 年 4 月 2 日）](https://spring.io/blog/2025/04/02/mcp-server-oauth2)中展示的設定。
 
 ---
 
-## Inicio rápido (local)
+## 快速開始（本機）
 
 ```bash
 # build & run
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Probando la configuración de OAuth2
+## 測試 OAuth2 設定
 
-Puedes probar la configuración de seguridad OAuth2 con los siguientes pasos:
+你可以透過以下步驟測試 OAuth2 的安全設定：
 
-### 1. Verifica que el servidor esté en ejecución y seguro
+### 1. 確認伺服器正在運行且已啟用安全性
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Obtén un token de acceso usando credenciales de cliente
+### 2. 使用 client credentials 取得存取權杖
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Nota: El encabezado de Autenticación Básica (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+註：Basic Authentication 標頭（`bWNwLWNsaWVudDpzZWNyZXQ=`）是 `mcp-client:secret` 的 Base64 編碼。
 
-### 3. Accede al endpoint protegido usando el token
+### 3. 使用該權杖存取受保護的端點
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Una respuesta exitosa con "Hello from MCP OAuth2 Demo!" confirma que la configuración OAuth2 está funcionando correctamente.
+若成功回應「Hello from MCP OAuth2 Demo!」，表示 OAuth2 設定運作正常。
 
 ---
 
-## Construcción del contenedor
+## 建置容器映像
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Desplegar en **Azure Container Apps**
+## 部署至 **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-El FQDN de ingreso se convierte en tu **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+入口 FQDN 將成為你的**發行者**（`https://<fqdn>`）。  
+Azure 會自動為 `*.azurecontainerapps.io` 提供受信任的 TLS 憑證。
 
 ---
 
-## Integrar con **Azure API Management**
+## 整合至 **Azure API Management**
 
-Agrega esta política de entrada a tu API:
+將此入站政策加入你的 API：
 
 ```xml
 <inbound>
@@ -116,13 +116,13 @@ Agrega esta política de entrada a tu API:
 </inbound>
 ```
 
-APIM obtendrá el JWKS y validará cada solicitud.
+APIM 將會擷取 JWKS 並驗證每個請求。
 
 ---
 
-## Qué sigue
+## 接下來的步驟
 
-- [5.4 Root contexts](../mcp-root-contexts/README.md)
+- [5.4 根目錄上下文](../mcp-root-contexts/README.md)
 
-**Disclaimer**:  
-Thiz dokyument haz bin translaited yusing AI translaition serviz [Co-op Translator](https://github.com/Azure/co-op-translator). Whil wi striv for akyurasi, pleez bi aware that otomaytid translaitions may contain erors or inakyeraseez. Thuh orijinal dokyument in its naytiv langwaj shud bi konsidird thuh authorityv sors. For kritikall informayshun, profeshunal hyuman translaition iz rekomended. Wi ar not layabul for enny misundurstandings or misinterpretayshuns arising from thuh yus of this translaition.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。

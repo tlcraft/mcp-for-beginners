@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-13T00:23:39+00:00",
+  "translation_date": "2025-07-14T00:42:44+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "he"
 }
 -->
 # הדגמת MCP OAuth2
 
-הפרויקט הזה הוא **אפליקציית Spring Boot מינימלית** שפועלת בתור גם:
+הפרויקט הזה הוא **יישום מינימלי ב-Spring Boot** שמשמש גם כ:
 
-* **שרת הרשאות Spring** (המנפיק אסימוני גישה JWT דרך הזרם `client_credentials`), וגם  
+* **שרת הרשאות Spring** (המנפיק אסימוני גישה JWT דרך זרימת `client_credentials`), וגם  
 * **שרת משאבים** (המגן על נקודת הקצה שלו `/hello`).
 
-הוא משקף את ההגדרה שמוצגת ב-[פוסט הבלוג של Spring (2 באפריל 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+הוא משקף את ההגדרות המוצגות ב-[פוסט הבלוג של Spring (2 באפריל 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -38,7 +38,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ניתן לבדוק את תצורת האבטחה של OAuth2 באמצעות השלבים הבאים:
 
-### 1. וודא שהשרת פועל ומאובטח
+### 1. ודא שהשרת פועל ומאובטח
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-[!NOTE] כותרת האימות הבסיסית (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+הערה: כותרת ה-Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) היא קידוד Base64 של `mcp-client:secret`.
 
 ### 3. גש לנקודת הקצה המוגנת באמצעות האסימון
 
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-שם המארח המלא של ה-ingress הופך ל**המנפיק שלך** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+שם המארח המלא (FQDN) של ה-ingress יהפוך ל-**issuer** שלך (`https://<fqdn>`).  
+Azure מספקת תעודת TLS מהימנה אוטומטית עבור `*.azurecontainerapps.io`.
 
 ---
 
 ## חיבור ל-**Azure API Management**
 
-הוסף מדיניות נכנסת זו ל-API שלך:
+הוסף מדיניות inbound זו ל-API שלך:
 
 ```xml
 <inbound>
@@ -116,7 +116,7 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 </inbound>
 ```
 
-APIM ימשוך את JWKS ויוודא כל בקשה.
+APIM ימשוך את ה-JWKS ויוודא כל בקשה.
 
 ---
 
@@ -125,4 +125,4 @@ APIM ימשוך את JWKS ויוודא כל בקשה.
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפתו המקורית הוא המקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי אנושי. אנו לא נושאים באחריות על כל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

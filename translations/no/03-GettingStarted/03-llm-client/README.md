@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f74887f51a69d3f255cb83d0b517c623",
-  "translation_date": "2025-07-04T17:46:55+00:00",
+  "translation_date": "2025-07-13T18:53:05+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "no"
 }
@@ -15,9 +15,9 @@ Nå skal vi koble til serveren og spørre om dens kapabiliteter:
 
 ### -3- Konverter serverkapabiliteter til LLM-verktøy
 
-Neste steg etter å ha listet opp serverkapabilitetene er å konvertere dem til et format som LLM forstår. Når vi har gjort det, kan vi tilby disse kapabilitetene som verktøy til vår LLM.
+Neste steg etter å ha listet opp serverkapabiliteter er å konvertere dem til et format som LLM forstår. Når vi har gjort det, kan vi tilby disse kapabilitetene som verktøy til vår LLM.
 
-Flott, nå er vi klare til å håndtere brukerforespørsler, så la oss ta for oss det neste.
+Flott, nå er vi klare til å håndtere brukerforespørsler, så la oss ta tak i det neste.
 
 ### -4- Håndter brukerprompt-forespørsel
 
@@ -27,11 +27,11 @@ Flott, du klarte det!
 
 ## Oppgave
 
-Ta koden fra øvelsen og bygg ut serveren med flere verktøy. Deretter lager du en klient med en LLM, som i øvelsen, og tester det med forskjellige prompts for å sikre at alle serververktøyene dine blir kalt dynamisk. Denne måten å bygge en klient på gir sluttbrukeren en god brukeropplevelse, siden de kan bruke naturlige språk-prompt i stedet for eksakte klientkommandoer, og være uvitende om at en MCP-server blir kalt.
+Ta koden fra øvelsen og bygg ut serveren med flere verktøy. Deretter lager du en klient med en LLM, som i øvelsen, og tester den med forskjellige prompts for å sikre at alle serververktøyene dine blir kalt dynamisk. Denne måten å bygge en klient på gir sluttbrukeren en god brukeropplevelse, siden de kan bruke naturlige språk-prompt i stedet for eksakte klientkommandoer, og de trenger ikke å vite at en MCP-server blir kalt.
 
 ## Løsning
 
-[Løsning](/03-GettingStarted/03-llm-client/solution/README.md)
+[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
 ## Viktige punkter
 
@@ -40,15 +40,15 @@ Ta koden fra øvelsen og bygg ut serveren med flere verktøy. Deretter lager du 
 
 ## Eksempler
 
-- [Java Kalkulator](../samples/java/calculator/README.md)
-- [.Net Kalkulator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Kalkulator](../samples/javascript/README.md)
-- [TypeScript Kalkulator](../samples/typescript/README.md)
-- [Python Kalkulator](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## Ytterligere ressurser
 
-## Hva er neste steg
+## Hva er neste
 
 - Neste: [Bruke en server med Visual Studio Code](../04-vscode/README.md)
 

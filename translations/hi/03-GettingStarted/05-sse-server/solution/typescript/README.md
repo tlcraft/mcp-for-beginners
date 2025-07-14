@@ -2,53 +2,53 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-17T12:08:20+00:00",
+  "translation_date": "2025-07-13T20:19:22+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "hi"
 }
 -->
-# इस नमूने को चलाना
+# इस सैंपल को चलाना
 
-## -1- आवश्यकताएं स्थापित करें
+## -1- निर्भरताएँ इंस्टॉल करें
 
 ```bash
 npm install
 ```
 
-## -3- नमूना चलाएं
+## -3- सैंपल चलाएँ
 
 ```bash
 npm run build
 ```
 
-## -4- नमूना परीक्षण करें
+## -4- सैंपल का परीक्षण करें
 
-जब सर्वर एक टर्मिनल में चल रहा हो, तो दूसरा टर्मिनल खोलें और निम्नलिखित कमांड चलाएं:
+जब सर्वर एक टर्मिनल में चल रहा हो, तो दूसरा टर्मिनल खोलें और निम्नलिखित कमांड चलाएँ:
 
 ```bash
 npm run inspector
 ```
 
-यह एक वेब सर्वर शुरू करना चाहिए जिसमें एक दृश्य इंटरफ़ेस होगा जो आपको नमूने का परीक्षण करने की अनुमति देगा।
+इससे एक वेब सर्वर शुरू होगा जिसमें एक विज़ुअल इंटरफ़ेस होगा, जिससे आप सैंपल का परीक्षण कर सकेंगे।
 
-एक बार सर्वर कनेक्ट हो जाने पर:
+सर्वर कनेक्ट होने के बाद:
 
-- टूल्स की सूची बनाने का प्रयास करें और `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- टूल्स की सूची देखें और `add` कमांड चलाएँ, जिसमें आर्ग्स 2 और 4 हों, आपको परिणाम में 6 दिखना चाहिए।
+- resources और resource template में जाएँ और "greeting" कॉल करें, एक नाम टाइप करें और आपको उस नाम के साथ एक अभिवादन दिखेगा।
 
-### Testing in CLI mode
+### CLI मोड में परीक्षण
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+आपने जो inspector चलाया है वह वास्तव में एक Node.js ऐप है और `mcp dev` इसके ऊपर एक रैपर है।
 
-- Start up the server with the command `npm run build` चलाएं।
+- सर्वर को कमांड `npm run build` से शुरू करें।
 
-- एक अलग टर्मिनल में निम्नलिखित कमांड चलाएं:
+- एक अलग टर्मिनल में निम्नलिखित कमांड चलाएँ:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    यह सर्वर में उपलब्ध सभी टूल्स की सूची बनाएगा। आपको निम्नलिखित आउटपुट दिखाई देना चाहिए:
+    यह सर्वर में उपलब्ध सभी टूल्स की सूची दिखाएगा। आपको निम्नलिखित आउटपुट दिखना चाहिए:
 
     ```text
     {
@@ -79,13 +79,13 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     }
     ```
 
-- टूल प्रकार को निम्नलिखित कमांड टाइप करके बुलाएं:
+- टूल टाइप को निम्नलिखित कमांड टाइप करके कॉल करें:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
     ```
 
-आपको निम्नलिखित आउटपुट दिखाई देना चाहिए:
+आपको निम्नलिखित आउटपुट दिखना चाहिए:
 
     ```text
     {
@@ -99,8 +99,8 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     ```
 
 > ![!TIP]
-> आमतौर पर ब्राउज़र की तुलना में CLI मोड में इंस्पेक्टर चलाना बहुत तेज होता है।
-> इंस्पेक्टर के बारे में अधिक पढ़ें [यहां](https://github.com/modelcontextprotocol/inspector)।
+> CLI मोड में inspector चलाना ब्राउज़र की तुलना में आमतौर पर कहीं तेज़ होता है।
+> inspector के बारे में अधिक पढ़ें [यहाँ](https://github.com/modelcontextprotocol/inspector)।
 
 **अस्वीकरण**:  
-यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता के लिए प्रयास करते हैं, कृपया ध्यान दें कि स्वचालित अनुवाद में त्रुटियाँ या अशुद्धियाँ हो सकती हैं। मूल दस्तावेज़ को इसकी मूल भाषा में आधिकारिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सिफारिश की जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम उत्तरदायी नहीं हैं।
+यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता के लिए प्रयासरत हैं, कृपया ध्यान दें कि स्वचालित अनुवादों में त्रुटियाँ या असंगतियाँ हो सकती हैं। मूल दस्तावेज़ अपनी मूल भाषा में ही अधिकारिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सलाह दी जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम जिम्मेदार नहीं हैं।

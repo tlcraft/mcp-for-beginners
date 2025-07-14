@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-06-10T06:18:01+00:00",
+  "translation_date": "2025-07-14T08:18:45+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
   "language_code": "cs"
 }
 -->
-# 🔧 Module 3: Desarrollo Avanzado de MCP con AI Toolkit
+# 🔧 Modul 3: Pokročilý vývoj MCP s AI Toolkit
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
 ![AI Toolkit](https://img.shields.io/badge/AI_Toolkit-Required-orange?style=flat-square)
@@ -15,71 +15,71 @@ CO_OP_TRANSLATOR_METADATA:
 ![MCP SDK](https://img.shields.io/badge/MCP_SDK-1.9.3-purple?style=flat-square)
 ![Inspector](https://img.shields.io/badge/MCP_Inspector-0.14.0-blue?style=flat-square)
 
-## 🎯 Objetivos de Aprendizaje
+## 🎯 Cíle učení
 
-Al finalizar este laboratorio, podrás:
+Na konci tohoto labu budete schopni:
 
-- ✅ Crear servidores MCP personalizados usando AI Toolkit  
-- ✅ Configurar y utilizar la última versión del MCP Python SDK (v1.9.3)  
-- ✅ Configurar y usar MCP Inspector para depuración  
-- ✅ Depurar servidores MCP tanto en Agent Builder como en Inspector  
-- ✅ Comprender flujos de trabajo avanzados para desarrollo de servidores MCP  
+- ✅ Vytvořit vlastní MCP servery pomocí AI Toolkit
+- ✅ Nakonfigurovat a používat nejnovější MCP Python SDK (verze 1.9.3)
+- ✅ Nastavit a využívat MCP Inspector pro ladění
+- ✅ Ladit MCP servery v prostředí Agent Builder i Inspector
+- ✅ Porozumět pokročilým pracovním postupům vývoje MCP serverů
 
-## 📋 Requisitos Previos
+## 📋 Požadavky
 
-- Haber completado el Laboratorio 2 (Fundamentos de MCP)  
-- VS Code con la extensión AI Toolkit instalada  
-- Entorno Python 3.10+  
-- Node.js y npm para configurar Inspector  
+- Dokončení Labu 2 (Základy MCP)
+- VS Code s nainstalovaným rozšířením AI Toolkit
+- Prostředí Python 3.10+
+- Node.js a npm pro nastavení Inspectoru
 
-## 🏗️ Lo Que Vas a Construir
+## 🏗️ Co vytvoříte
 
-En este laboratorio crearás un **Servidor MCP de Clima** que demostrará:  
-- Implementación personalizada de un servidor MCP  
-- Integración con AI Toolkit Agent Builder  
-- Flujos de trabajo profesionales de depuración  
-- Uso moderno del SDK MCP  
-
----
-
-## 🔧 Resumen de Componentes Clave
-
-### 🐍 MCP Python SDK  
-El SDK Python del Protocolo de Contexto de Modelo proporciona la base para construir servidores MCP personalizados. Usarás la versión 1.9.3 con capacidades mejoradas de depuración.
-
-### 🔍 MCP Inspector  
-Una herramienta potente para depuración que ofrece:  
-- Monitoreo en tiempo real del servidor  
-- Visualización de la ejecución de herramientas  
-- Inspección de solicitudes y respuestas de red  
-- Entorno interactivo de pruebas  
+V tomto labu vytvoříte **Weather MCP Server**, který demonstruje:
+- Vlastní implementaci MCP serveru
+- Integraci s AI Toolkit Agent Builderem
+- Profesionální pracovní postupy ladění
+- Moderní způsoby využití MCP SDK
 
 ---
 
-## 📖 Implementación Paso a Paso
+## 🔧 Přehled hlavních komponent
 
-### Paso 1: Crear un WeatherAgent en Agent Builder
+### 🐍 MCP Python SDK
+Model Context Protocol Python SDK poskytuje základ pro tvorbu vlastních MCP serverů. Budete používat verzi 1.9.3 s rozšířenými možnostmi ladění.
 
-1. **Lanza Agent Builder** en VS Code a través de la extensión AI Toolkit  
-2. **Crea un nuevo agente** con la siguiente configuración:  
-   - Nombre del agente: `WeatherAgent`  
+### 🔍 MCP Inspector
+Výkonný nástroj pro ladění, který nabízí:
+- Monitorování serveru v reálném čase
+- Vizualizaci spouštění nástrojů
+- Kontrolu síťových požadavků a odpovědí
+- Interaktivní testovací prostředí
+
+---
+
+## 📖 Krok za krokem: Implementace
+
+### Krok 1: Vytvoření WeatherAgent v Agent Builderu
+
+1. **Spusťte Agent Builder** ve VS Code přes rozšíření AI Toolkit
+2. **Vytvořte nového agenta** s následující konfigurací:
+   - Název agenta: `WeatherAgent`
 
 ![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.cs.png)
 
-### Paso 2: Inicializar el Proyecto del Servidor MCP
+### Krok 2: Inicializace projektu MCP serveru
 
-1. **Navega a Tools** → **Add Tool** en Agent Builder  
-2. **Selecciona "MCP Server"** de las opciones disponibles  
-3. **Elige "Create A new MCP Server"**  
-4. **Selecciona la plantilla `python-weather`**  
-5. **Nombra tu servidor:** `weather_mcp`  
+1. **Přejděte do Tools** → **Add Tool** v Agent Builderu
+2. **Vyberte "MCP Server"** z dostupných možností
+3. **Zvolte "Create A new MCP Server"**
+4. **Vyberte šablonu `python-weather`**
+5. **Pojmenujte server:** `weather_mcp`
 
 ![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.cs.png)
 
-### Paso 3: Abrir y Examinar el Proyecto
+### Krok 3: Otevření a prozkoumání projektu
 
-1. **Abre el proyecto generado** en VS Code  
-2. **Revisa la estructura del proyecto:**  
+1. **Otevřete vygenerovaný projekt** ve VS Code
+2. **Prohlédněte si strukturu projektu:**
    ```
    weather_mcp/
    ├── src/
@@ -95,35 +95,33 @@ Una herramienta potente para depuración que ofrece:
    └── README.md
    ```
 
-### Paso 4: Actualizar al Último MCP SDK
+### Krok 4: Aktualizace na nejnovější MCP SDK
 
-> **🔍 ¿Por qué actualizar?** Queremos usar el último MCP SDK (v1.9.3) y el servicio Inspector (0.14.0) para aprovechar nuevas funcionalidades y mejorar la depuración.
+> **🔍 Proč aktualizovat?** Chceme využít nejnovější MCP SDK (verze 1.9.3) a službu Inspector (0.14.0) pro lepší funkce a ladění.
 
-#### 4a. Actualizar Dependencias de Python
+#### 4a. Aktualizace Python závislostí
 
-**Edita `pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
+**Upravte `pyproject.toml`:** aktualizace v [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
 
+#### 4b. Aktualizace konfigurace Inspectoru
 
-#### 4b. Update Inspector Configuration
+**Upravte `inspector/package.json`:** aktualizace v [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
 
-**Edit `inspector/package.json`:** update [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
+#### 4c. Aktualizace závislostí Inspectoru
 
-#### 4c. Update Inspector Dependencies
+**Upravte `inspector/package-lock.json`:** aktualizace v [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
 
-**Edit `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
+> **📝 Poznámka:** Tento soubor obsahuje rozsáhlé definice závislostí. Níže je základní struktura – kompletní obsah zajišťuje správné vyřešení závislostí.
 
-> **📝 Note:** This file contains extensive dependency definitions. Below is the essential structure - the full content ensures proper dependency resolution.
+> **⚡ Kompletní package-lock:** Plný package-lock.json obsahuje cca 3000 řádků definic závislostí. Výše je klíčová struktura – pro kompletní vyřešení použijte poskytnutý soubor.
 
+### Krok 5: Nastavení ladění ve VS Code
 
-> **⚡ Full Package Lock:** The complete package-lock.json contains ~3000 lines of dependency definitions. The above shows the key structure - use the provided file for complete dependency resolution.
+*Poznámka: Prosím zkopírujte soubor na uvedenou cestu a nahraďte odpovídající lokální soubor*
 
-### Step 5: Configure VS Code Debugging
+#### 5a. Aktualizace konfigurace spuštění
 
-*Note: Please copy the file in the specified path to replace the corresponding local file*
-
-#### 5a. Update Launch Configuration
-
-**Edit `.vscode/launch.json`:**
+**Upravte `.vscode/launch.json`:**
 
 ```json
 {
@@ -200,7 +198,7 @@ Una herramienta potente para depuración que ofrece:
 }
 ```
 
-**Edita `.vscode/tasks.json`:**
+**Upravte `.vscode/tasks.json`:**
 
 ```
 {
@@ -302,34 +300,33 @@ Una herramienta potente para depuración que ofrece:
 }
 ```
 
-
 ---
 
-## 🚀 Ejecutar y Probar tu Servidor MCP
+## 🚀 Spuštění a testování vašeho MCP serveru
 
-### Paso 6: Instalar Dependencias
+### Krok 6: Instalace závislostí
 
-Después de hacer los cambios de configuración, ejecuta los siguientes comandos:
+Po provedení změn konfigurace spusťte následující příkazy:
 
-**Instalar dependencias de Python:**  
+**Instalace Python závislostí:**
 ```bash
 uv sync
 ```
 
-**Instalar dependencias de Inspector:**  
+**Instalace závislostí Inspectoru:**
 ```bash
 cd inspector
 npm install
 ```
 
-### Paso 7: Depurar con Agent Builder
+### Krok 7: Ladění v Agent Builderu
 
-1. **Presiona F5** o usa la configuración **"Debug in Agent Builder"**  
-2. **Selecciona la configuración compuesta** en el panel de depuración  
-3. **Espera a que el servidor inicie** y se abra Agent Builder  
-4. **Prueba tu servidor MCP de clima** con consultas en lenguaje natural  
+1. **Stiskněte F5** nebo použijte konfiguraci **"Debug in Agent Builder"**
+2. **Vyberte složenou konfiguraci** v panelu ladění
+3. **Počkejte na spuštění serveru** a otevření Agent Builderu
+4. **Otestujte svůj weather MCP server** pomocí dotazů v přirozeném jazyce
 
-Ejemplo de entrada:
+Zadejte prompt jako tento
 
 SYSTEM_PROMPT
 
@@ -345,58 +342,58 @@ How's the weather like in Seattle
 
 ![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.cs.png)
 
-### Paso 8: Depurar con MCP Inspector
+### Krok 8: Ladění s MCP Inspectorem
 
-1. **Usa la configuración "Debug in Inspector"** (Edge o Chrome)  
-2. **Abre la interfaz de Inspector** en `http://localhost:6274`  
-3. **Explora el entorno interactivo de pruebas:**  
-   - Visualiza las herramientas disponibles  
-   - Prueba la ejecución de herramientas  
-   - Monitorea solicitudes de red  
-   - Depura las respuestas del servidor  
+1. **Použijte konfiguraci "Debug in Inspector"** (v Edge nebo Chrome)
+2. **Otevřete rozhraní Inspectoru** na adrese `http://localhost:6274`
+3. **Prozkoumejte interaktivní testovací prostředí:**
+   - Zobrazte dostupné nástroje
+   - Otestujte spouštění nástrojů
+   - Sledujte síťové požadavky
+   - Laděte odpovědi serveru
 
 ![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.cs.png)
 
 ---
 
-## 🎯 Resultados Clave de Aprendizaje
+## 🎯 Klíčové výsledky učení
 
-Al completar este laboratorio, has:
+Dokončením tohoto labu jste:
 
-- [x] **Creado un servidor MCP personalizado** usando plantillas de AI Toolkit  
-- [x] **Actualizado al último MCP SDK** (v1.9.3) para funcionalidades mejoradas  
-- [x] **Configurado flujos de trabajo profesionales de depuración** para Agent Builder e Inspector  
-- [x] **Configurado MCP Inspector** para pruebas interactivas del servidor  
-- [x] **Dominado configuraciones de depuración en VS Code** para desarrollo MCP  
+- [x] **Vytvořili vlastní MCP server** pomocí šablon AI Toolkit
+- [x] **Aktualizovali na nejnovější MCP SDK** (verze 1.9.3) pro rozšířené funkce
+- [x] **Nakonfigurovali profesionální pracovní postupy ladění** pro Agent Builder i Inspector
+- [x] **Nastavili MCP Inspector** pro interaktivní testování serveru
+- [x] **Ovládáte konfigurace ladění ve VS Code** pro vývoj MCP
 
-## 🔧 Funcionalidades Avanzadas Exploradas
+## 🔧 Prozkoumané pokročilé funkce
 
-| Funcionalidad           | Descripción                   | Caso de Uso                |
-|------------------------|------------------------------|----------------------------|
-| **MCP Python SDK v1.9.3**  | Última implementación del protocolo | Desarrollo moderno de servidores |
-| **MCP Inspector 0.14.0**    | Herramienta interactiva de depuración | Pruebas en tiempo real del servidor |
-| **Depuración en VS Code**   | Entorno integrado de desarrollo | Flujo profesional de depuración |
-| **Integración con Agent Builder** | Conexión directa con AI Toolkit | Pruebas completas de agentes |
+| Funkce | Popis | Použití |
+|---------|-------------|----------|
+| **MCP Python SDK v1.9.3** | Nejnovější implementace protokolu | Moderní vývoj serverů |
+| **MCP Inspector 0.14.0** | Interaktivní nástroj pro ladění | Testování serveru v reálném čase |
+| **Ladění ve VS Code** | Integrované vývojové prostředí | Profesionální pracovní postup ladění |
+| **Integrace Agent Builderu** | Přímé propojení s AI Toolkit | Kompletní testování agenta |
 
-## 📚 Recursos Adicionales
+## 📚 Další zdroje
 
-- [MCP Python SDK Documentation](https://modelcontextprotocol.io/docs/sdk/python)  
-- [AI Toolkit Extension Guide](https://code.visualstudio.com/docs/ai/ai-toolkit)  
-- [VS Code Debugging Documentation](https://code.visualstudio.com/docs/editor/debugging)  
-- [Model Context Protocol Specification](https://modelcontextprotocol.io/docs/concepts/architecture)  
+- [Dokumentace MCP Python SDK](https://modelcontextprotocol.io/docs/sdk/python)
+- [Průvodce rozšířením AI Toolkit](https://code.visualstudio.com/docs/ai/ai-toolkit)
+- [Dokumentace ladění ve VS Code](https://code.visualstudio.com/docs/editor/debugging)
+- [Specifikace Model Context Protocol](https://modelcontextprotocol.io/docs/concepts/architecture)
 
 ---
 
-**🎉 ¡Felicidades!** Has completado con éxito el Laboratorio 3 y ahora puedes crear, depurar y desplegar servidores MCP personalizados usando flujos de trabajo profesionales de desarrollo.
+**🎉 Gratulujeme!** Úspěšně jste dokončili Lab 3 a nyní umíte vytvářet, ladit a nasazovat vlastní MCP servery s profesionálními pracovními postupy.
 
-### 🔜 Continúa al Siguiente Módulo
+### 🔜 Pokračujte do dalšího modulu
 
-¿Listo para aplicar tus habilidades MCP en un flujo de trabajo de desarrollo real? Continúa a **[Módulo 4: Desarrollo Práctico de MCP - Servidor Clone Personalizado de GitHub](../lab4/README.md)** donde podrás:  
-- Construir un servidor MCP listo para producción que automatice operaciones de repositorios GitHub  
-- Implementar funcionalidad de clonación de repositorios GitHub vía MCP  
-- Integrar servidores MCP personalizados con VS Code y GitHub Copilot Agent Mode  
-- Probar y desplegar servidores MCP personalizados en entornos de producción  
-- Aprender automatización práctica de flujos de trabajo para desarrolladores
+Jste připraveni aplikovat své MCP dovednosti v reálném vývojovém workflow? Pokračujte do **[Modulu 4: Praktický vývoj MCP - Vlastní GitHub Clone Server](../lab4/README.md)**, kde:
+- Vytvoříte produkčně připravený MCP server automatizující operace s GitHub repozitáři
+- Implementujete funkci klonování GitHub repozitářů přes MCP
+- Integrujete vlastní MCP servery s VS Code a GitHub Copilot Agent Mode
+- Testujete a nasadíte vlastní MCP servery v produkčním prostředí
+- Naučíte se praktickou automatizaci pracovních postupů pro vývojáře
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo chybné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

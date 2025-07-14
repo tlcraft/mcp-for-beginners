@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bb55f3119d45c4412fc5555299e60498",
-  "translation_date": "2025-05-17T13:30:41+00:00",
+  "translation_date": "2025-07-13T22:38:30+00:00",
   "source_file": "03-GettingStarted/samples/python/README.md",
   "language_code": "fi"
 }
 -->
 # Esimerkki
 
-Tämä on Python-esimerkki MCP-palvelimelle
+Tässä on Python-esimerkki MCP-palvelimelle
 
-Tältä laskinosa näyttää:
+Näin laskinosa näyttää:
 
 ```python
 @mcp.tool()
@@ -42,7 +42,7 @@ def divide(a: float, b: float) -> float:
     return a / b
 ```
 
-## Asenna
+## Asennus
 
 Suorita seuraava komento:
 
@@ -57,4 +57,4 @@ python mcp_calculator_server.py
 ```
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälykäännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, ole tietoinen siitä, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinkäsityksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

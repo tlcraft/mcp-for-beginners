@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:10:48+00:00",
+  "translation_date": "2025-07-13T17:36:31+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "vi"
 }
@@ -65,7 +65,7 @@ MCP cung cấp các SDK chính thức cho nhiều ngôn ngữ:
 
 - Thiết lập môi trường phát triển MCP rất đơn giản với các SDK theo từng ngôn ngữ  
 - Xây dựng server MCP bao gồm việc tạo và đăng ký các công cụ với các schema rõ ràng  
-- Việc kiểm thử và gỡ lỗi rất quan trọng để đảm bảo triển khai MCP đáng tin cậy  
+- Kiểm thử và gỡ lỗi là rất quan trọng để đảm bảo triển khai MCP đáng tin cậy  
 
 ## Ví dụ mẫu
 

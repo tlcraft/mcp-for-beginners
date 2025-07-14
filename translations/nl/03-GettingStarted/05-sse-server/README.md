@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T17:56:07+00:00",
+  "translation_date": "2025-07-13T19:57:59+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "nl"
 }
@@ -38,7 +38,7 @@ Geweldig, we hebben een server die SSE gebruikt, laten we die nu eens uitprobere
 
 ## Oefening: Debuggen van een SSE-server met Inspector
 
-Inspector is een geweldige tool die we in een vorige les hebben gezien [Je eerste server maken](/03-GettingStarted/01-first-server/README.md). Laten we kijken of we de Inspector ook hier kunnen gebruiken:
+Inspector is een geweldig hulpmiddel dat we in een vorige les hebben gezien [Je eerste server maken](/03-GettingStarted/01-first-server/README.md). Laten we kijken of we de Inspector ook hier kunnen gebruiken:
 
 ### -1- De inspector starten
 
@@ -57,9 +57,9 @@ Om de inspector te starten, moet je eerst een SSE-server draaien, dus laten we d
 
     Het starten van de inspector ziet er in alle runtimes hetzelfde uit. Let erop dat we in plaats van een pad naar onze server en een commando om de server te starten, nu de URL doorgeven waar de server draait en ook de `/sse` route specificeren.
 
-### -2- De tool uitproberen
+### -2- Het hulpmiddel uitproberen
 
-Verbind met de server door in de keuzelijst SSE te selecteren en vul het URL-veld in waar jouw server draait, bijvoorbeeld http://localhost:4321/sse. Klik vervolgens op de knop "Connect". Selecteer zoals eerder een tool, kies een tool en geef invoerwaarden op. Je zou een resultaat moeten zien zoals hieronder:
+Verbind met de server door in de keuzelijst SSE te selecteren en vul het URL-veld in waar jouw server draait, bijvoorbeeld http://localhost:4321/sse. Klik vervolgens op de knop "Connect". Selecteer zoals eerder een tool, geef invoerwaarden op en je zou een resultaat moeten zien zoals hieronder:
 
 ![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.nl.png)
 
@@ -79,7 +79,7 @@ De belangrijkste punten uit dit hoofdstuk zijn:
 
 - SSE is het tweede ondersteunde transport naast stdio.
 - Om SSE te ondersteunen, moet je binnenkomende verbindingen en berichten beheren met een webframework.
-- Je kunt zowel Inspector als Visual Studio Code gebruiken om een SSE-server te gebruiken, net als bij stdio-servers. Let op dat het iets anders werkt tussen stdio en SSE. Voor SSE moet je de server apart opstarten en daarna je inspector-tool draaien. Voor de inspector-tool moet je ook de URL specificeren.
+- Je kunt zowel Inspector als Visual Studio Code gebruiken om een SSE-server te gebruiken, net als bij stdio-servers. Let op dat het iets anders werkt tussen stdio en SSE. Voor SSE moet je de server apart opstarten en daarna je inspectietool draaien. Voor de inspectietool moet je ook de URL specificeren.
 
 ## Voorbeelden
 

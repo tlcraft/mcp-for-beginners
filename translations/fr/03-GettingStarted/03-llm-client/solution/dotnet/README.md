@@ -2,21 +2,21 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
-  "translation_date": "2025-06-18T05:46:09+00:00",
+  "translation_date": "2025-07-13T19:01:14+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "fr"
 }
 -->
-# Exécuter cet exemple
+# Exécutez cet exemple
 
-> [!NOTE]
-> Cet exemple suppose que vous utilisez une instance GitHub Codespaces. Si vous souhaitez l’exécuter localement, vous devez configurer un jeton d’accès personnel (PAT) sur GitHub.
->
+> [!NOTE]  
+> Cet exemple suppose que vous utilisez une instance GitHub Codespaces. Si vous souhaitez l'exécuter localement, vous devez configurer un jeton d'accès personnel (PAT) sur GitHub.  
+>  
 > ```bash
 > # zsh/bash
 > export GITHUB_TOKEN="{{YOUR_GITHUB_PAT}}"
-> ```
->
+> ```  
+>  
 > ```powershell
 > # PowerShell
 > $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
@@ -51,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Une grande partie de la sortie est juste du débogage, mais l’essentiel est que vous listez les outils du serveur MCP, que vous transformez en outils LLM, et vous obtenez une réponse client MCP « Sum 6 ».
+Une grande partie de la sortie est juste du débogage, mais l’essentiel est que vous listez les outils du serveur MCP, que vous transformez en outils LLM, et vous obtenez une réponse client MCP "Sum 6".
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

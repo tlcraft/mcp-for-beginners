@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:33:48+00:00",
+  "translation_date": "2025-07-13T23:35:20+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "hr"
 }
 -->
-# Model Context Protocol (MCP) Python Implementacija
+# Model Context Protocol (MCP) Python implementacija
 
 Ovaj repozitorij sadrži Python implementaciju Model Context Protocol (MCP), koja pokazuje kako kreirati i serversku i klijentsku aplikaciju koje komuniciraju koristeći MCP standard.
 
 ## Pregled
 
-MCP implementacija se sastoji od dvije glavne komponente:
+MCP implementacija sastoji se od dva glavna dijela:
 
 1. **MCP Server (`server.py`)** - Server koji izlaže:
    - **Alate**: Funkcije koje se mogu pozivati na daljinu
@@ -27,12 +27,12 @@ MCP implementacija se sastoji od dvije glavne komponente:
 Ova implementacija demonstrira nekoliko ključnih MCP značajki:
 
 ### Alati
-- `completion` - Generira tekstualna dovršenja iz AI modela (simulirano)
+- `completion` - Generira tekstualne dovršetke iz AI modela (simulirano)
 - `add` - Jednostavan kalkulator koji zbraja dva broja
 
 ### Resursi
 - `models://` - Vraća informacije o dostupnim AI modelima
-- `greeting://{name}` - Vraća personalizirani pozdrav za zadano ime
+- `greeting://{name}` - Vraća personaliziranu pozdravnu poruku za zadano ime
 
 ### Promptovi
 - `review_code` - Generira prompt za pregled koda
@@ -45,11 +45,11 @@ Za korištenje ove MCP implementacije, instalirajte potrebne pakete:
 pip install mcp-server mcp-client
 ```
 
-## Pokretanje Servera i Klijenta
+## Pokretanje servera i klijenta
 
-### Pokretanje Servera
+### Pokretanje servera
 
-Pokrenite server u jednom terminal prozoru:
+Pokrenite server u jednom terminalu:
 
 ```powershell
 python server.py
@@ -67,17 +67,17 @@ Ili instalirati u Claude Desktop (ako je dostupan):
 mcp install server.py
 ```
 
-### Pokretanje Klijenta
+### Pokretanje klijenta
 
-Pokrenite klijenta u drugom terminal prozoru:
+Pokrenite klijenta u drugom terminalu:
 
 ```powershell
 python client.py
 ```
 
-Ovo će se povezati na server i demonstrirati sve dostupne funkcije.
+Ovo će se povezati na server i demonstrirati sve dostupne značajke.
 
-### Korištenje Klijenta
+### Korištenje klijenta
 
 Klijent (`client.py`) demonstrira sve MCP mogućnosti:
 
@@ -85,17 +85,17 @@ Klijent (`client.py`) demonstrira sve MCP mogućnosti:
 python client.py
 ```
 
-Ovo će se povezati na server i isprobati sve funkcije uključujući alate, resurse i promptove. Izlaz će prikazati:
+Ovo će se povezati na server i isprobati sve značajke uključujući alate, resurse i promptove. Izlaz će prikazati:
 
 1. Rezultat kalkulatora (5 + 7 = 12)
-2. Odgovor alata za dovršavanje na pitanje "What is the meaning of life?"
+2. Odgovor alata za dovršetak na pitanje "What is the meaning of life?"
 3. Popis dostupnih AI modela
 4. Personalizirani pozdrav za "MCP Explorer"
 5. Predložak prompta za pregled koda
 
-## Detalji Implementacije
+## Detalji implementacije
 
-Server je implementiran koristeći `FastMCP` API, koji pruža apstrakcije visokog nivoa za definiranje MCP servisa. Evo pojednostavljenog primjera kako se definiraju alati:
+Server je implementiran koristeći `FastMCP` API, koji pruža visoke apstrakcije za definiranje MCP servisa. Evo pojednostavljenog primjera kako se definiraju alati:
 
 ```python
 @mcp.tool()
@@ -122,9 +122,9 @@ async with stdio_client(server_params) as (reader, writer):
         result = await session.call_tool("add", arguments={"a": 5, "b": 7})
 ```
 
-## Saznajte Više
+## Saznajte više
 
 Za više informacija o MCP-u, posjetite: https://modelcontextprotocol.io/
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument preveden je korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba se smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-17T16:43:12+00:00",
+  "translation_date": "2025-07-13T21:23:08+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "my"
 }
 -->
-# ဤနမူနာကို ပြေးရန်
+# ဤနမူနာကို ပြေးဆွဲခြင်း
 
-Python ကို အသုံးပြု၍ classic HTTP streaming server နှင့် client၊ MCP streaming server နှင့် client ကို မည်သို့ပြေးရမည်ကို ဖော်ပြထားသည်။
+Python ကို အသုံးပြု၍ classic HTTP streaming server နှင့် client ကို run ပြီး MCP streaming server နှင့် client ကို run ပြုလုပ်နည်းကို ဖော်ပြထားသည်။
 
-### အကျဉ်းချုပ်
+### အနှစ်ချုပ်
 
-- မိမိသည် MCP server တစ်ခုကို တည်ဆောက်မည်ဖြစ်ပြီး၊ အရာများကို 처리စဉ် client သို့ progress အသိပေးချက်များကို stream ပြသပေးမည်။
-- client သည် တစ်ခုချင်းစီသော အသိပေးချက်များကို real time ဖြင့် ပြသမည်။
-- ဤလမ်းညွှန်တွင် မတိုင်မီလိုအပ်ချက်များ၊ တပ်ဆင်ခြင်း၊ ပြေးခြင်းနှင့် ပြဿနာဖြေရှင်းခြင်းတို့ကို ဖော်ပြထားသည်။
+- MCP server တစ်ခုကို စတင်တည်ဆောက်ပြီး အရာဝတ္ထုများကို ပြုလုပ်စဉ် client သို့ progress notifications များကို stream ပေးမည်။
+- client သည် အဲဒီ notification များကို real time ဖြင့် ပြသမည်။
+- ဤလမ်းညွှန်တွင် လိုအပ်ချက်များ၊ တပ်ဆင်ခြင်း၊ run ပြုလုပ်ခြင်းနှင့် ပြဿနာဖြေရှင်းနည်းများ ပါဝင်သည်။
 
-### မတိုင်မီလိုအပ်ချက်များ
+### လိုအပ်ချက်များ
 
 - Python 3.9 သို့မဟုတ် အထက်
 - `mcp` Python package (`pip install mcp` ဖြင့် တပ်ဆင်ရန်)
 
 ### တပ်ဆင်ခြင်းနှင့် ပြင်ဆင်ခြင်း
 
-1. repository ကို clone ရယူရန် သို့မဟုတ် solution ဖိုင်များကို download ဆွဲရန်။
+1. repository ကို clone ရယူရန် သို့မဟုတ် solution ဖိုင်များကို download ရယူရန်။
 
    ```pwsh
    git clone https://github.com/microsoft/mcp-for-beginners
    ```
 
-1. **Virtual environment တစ်ခု ဖန်တီးပြီး အလုပ်လုပ်စေပါ (အကြံပြုသည်။):**
+1. **Virtual environment တစ်ခု ဖန်တီးပြီး ဖွင့်ပါ (အကြံပြုသည်):**
 
    ```pwsh
    python -m venv venv
@@ -39,7 +39,7 @@ Python ကို အသုံးပြု၍ classic HTTP streaming server န�
    source venv/bin/activate      # On Linux/macOS
    ```
 
-1. **လိုအပ်သော dependency များကို တပ်ဆင်ပါ။**
+1. **လိုအပ်သော dependencies များကို တပ်ဆင်ပါ:**
 
    ```pwsh
    pip install "mcp[cli]"
@@ -50,9 +50,9 @@ Python ကို အသုံးပြု၍ classic HTTP streaming server န�
 - **Server:** [server.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/server.py)
 - **Client:** [client.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/client.py)
 
-### Classic HTTP Streaming Server ပြေးခြင်း
+### Classic HTTP Streaming Server ကို run ပြုလုပ်ခြင်း
 
-1. solution directory သို့ သွားရောက်ပါ။
+1. solution directory သို့ သွားပါ။
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
@@ -71,16 +71,16 @@ Python ကို အသုံးပြု၍ classic HTTP streaming server န�
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### Classic HTTP Streaming Client ပြေးခြင်း
+### Classic HTTP Streaming Client ကို run ပြုလုပ်ခြင်း
 
-1. terminal အသစ်တစ်ခုဖွင့်ပါ (အထက်ပါ virtual environment နှင့် directory ကို အသုံးပြုပါ)။
+1. terminal အသစ် ဖွင့်ပြီး (တူညီသော virtual environment နှင့် directory ကို ဖွင့်ထားပါ)။
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py
    ```
 
-2. စီးရီးလိုက် streaming message များကို စာရွက်ပေါ်တွင် မြင်ရမည်။
+2. streamed message များကို အဆက်မပြတ် ပုံနှိပ်ပြသမည်။
 
    ```text
    Running classic HTTP streaming client...
@@ -93,7 +93,7 @@ Python ကို အသုံးပြု၍ classic HTTP streaming server န�
    --- Stream Ended ---
    ```
 
-### MCP Streaming Server ပြေးခြင်း
+### MCP Streaming Server ကို run ပြုလုပ်ခြင်း
 
 1. solution directory သို့ သွားပါ။
    ```pwsh
@@ -109,14 +109,14 @@ Python ကို အသုံးပြု၍ classic HTTP streaming server န�
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### MCP Streaming Client ပြေးခြင်း
+### MCP Streaming Client ကို run ပြုလုပ်ခြင်း
 
-1. terminal အသစ်ဖွင့်ပါ (အထက်ပါ virtual environment နှင့် directory ကို အသုံးပြုပါ)။
+1. terminal အသစ် ဖွင့်ပြီး (တူညီသော virtual environment နှင့် directory ကို ဖွင့်ထားပါ)။
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. server သည် အရာတစ်ခုချင်းစီကို 처리စဉ် real time ဖြင့် အသိပေးချက်များကို မြင်ရမည်။
+2. server သည် အရာဝတ္ထုတစ်ခုချင်းစီကို ပြုလုပ်စဉ် notification များကို real time ဖြင့် ပြသမည်။
    ```
    Running MCP client...
    Starting client...
@@ -129,23 +129,24 @@ Python ကို အသုံးပြု၍ classic HTTP streaming server န�
    Tool result: meta=None content=[TextContent(type='text', text='Processed files: file_1.txt, file_2.txt, file_3.txt | Message: hello from client')]
    ```
 
-### အဓိက ဆောင်ရွက်ချက်များ
+### အဓိက အကောင်အထည်ဖော်ခြင်း အဆင့်များ
 
 1. **FastMCP ကို အသုံးပြု၍ MCP server ကို ဖန်တီးပါ။**
-2. **စာရင်းတစ်ခုကို 처리ပြီး `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+2. **စာရင်းတစ်ခုကို ပြုလုပ်ပြီး `ctx.info()` သို့မဟုတ် `ctx.log()` ဖြင့် notification များ ပို့ပေးသော tool တစ်ခု သတ်မှတ်ပါ။**
+3. **`transport="streamable-http"` ဖြင့် server ကို run ပါ။**
+4. **notification များ ရောက်ရှိလာသလို ပြသရန် message handler ပါရှိသော client ကို အကောင်အထည်ဖော်ပါ။**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### ကုဒ် လမ်းညွှန်ချက်
 
-### Tips & Troubleshooting
+- server သည် async function များနှင့် MCP context ကို အသုံးပြု၍ progress update များ ပို့ပေးသည်။
+- client သည် async message handler ကို အသုံးပြု၍ notification များနှင့် နောက်ဆုံးရလဒ်ကို ပုံနှိပ်ပြသသည်။
 
-- Use `async/await` ဖြင့် non-blocking လုပ်ဆောင်ချက်များအတွက် အသိပေးချက်များ ပို့ပေးသည့် tool ကို သတ်မှတ်ပါ။**
-- server နှင့် client နှစ်ဖက်စလုံးတွင် exception များကို အမြဲ ထိန်းချုပ်ပါ။
-- client များစွာဖြင့် စမ်းသပ်ပြီး real-time update များကို ကြည့်ရှုပါ။
-- အမှားများကြုံတွေ့ပါက Python ဗားရှင်းနှင့် dependency များ တပ်ဆင်ထားမှုကို စစ်ဆေးပါ။
+### အကြံပြုချက်များနှင့် ပြဿနာဖြေရှင်းနည်းများ
 
-**ပယ်ချမှုချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးပမ်းပေမယ့်၊ စက်ရုပ်ဘာသာပြန်ခြင်းကြောင့် အမှားများ သို့မဟုတ် တိကျမှုလွဲမှားမှုများ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံပါသည်။ မူရင်းစာတမ်းကို မူလဘာသာဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုခြင်းကြောင့် ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုအမှားများ သို့မဟုတ် မှားယွင်းဖော်ပြချက်များအတွက် ကျွန်ုပ်တို့မှာ တာဝန်မရှိပါ။
+- non-blocking operation များအတွက် `async/await` ကို အသုံးပြုပါ။
+- server နှင့် client နှစ်ဖက်စလုံးတွင် exception များကို အမြဲတမ်း ကိုင်တွယ်ပါ။
+- client များစွာဖြင့် စမ်းသပ်၍ real-time update များကို ကြည့်ရှုပါ။
+- အမှားများ ဖြစ်ပေါ်ပါက Python version ကို စစ်ဆေးပြီး လိုအပ်သော dependencies များ တပ်ဆင်ထားမှုရှိမရှိ စစ်ဆေးပါ။
+
+**အကြောင်းကြားချက်**  
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အရင်းအမြစ်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

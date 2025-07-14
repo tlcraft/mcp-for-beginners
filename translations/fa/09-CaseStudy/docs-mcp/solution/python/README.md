@@ -2,32 +2,32 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a05fb941810e539147fec53aaadbb6fd",
-  "translation_date": "2025-06-21T14:26:48+00:00",
+  "translation_date": "2025-07-14T06:36:43+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/python/README.md",
   "language_code": "fa"
 }
 -->
-# تولید برنامه مطالعه با Chainlit و Microsoft Learn Docs MCP
+# تولیدکننده برنامه مطالعه با Chainlit و Microsoft Learn Docs MCP
 
 ## پیش‌نیازها
 
-- پایتون نسخه ۳.۸ یا بالاتر  
+- پایتون ۳.۸ یا بالاتر  
 - pip (مدیر بسته پایتون)  
 - دسترسی به اینترنت برای اتصال به سرور Microsoft Learn Docs MCP  
 
 ## نصب
 
 ۱. این مخزن را کلون کنید یا فایل‌های پروژه را دانلود کنید.  
-۲. وابستگی‌های مورد نیاز را نصب کنید:
+۲. وابستگی‌های مورد نیاز را نصب کنید:  
 
    ```bash
    pip install -r requirements.txt
    ```
 
-## نحوه استفاده
+## استفاده
 
 ### سناریو ۱: پرس‌وجوی ساده به Docs MCP  
-یک کلاینت خط فرمان که به سرور Docs MCP متصل می‌شود، پرس‌وجو را ارسال می‌کند و نتیجه را نمایش می‌دهد.
+یک کلاینت خط فرمان که به سرور Docs MCP متصل می‌شود، پرس‌وجویی ارسال می‌کند و نتیجه را چاپ می‌کند.
 
 ۱. اسکریپت را اجرا کنید:  
    ```bash
@@ -35,20 +35,20 @@ CO_OP_TRANSLATOR_METADATA:
    ```  
 ۲. سوال مستندات خود را در خط فرمان وارد کنید.
 
-### سناریو ۲: تولید برنامه مطالعه (اپ وب Chainlit)  
-رابط کاربری تحت وب (با استفاده از Chainlit) که به کاربران امکان می‌دهد برنامه مطالعه شخصی‌سازی‌شده و هفتگی برای هر موضوع فنی ایجاد کنند.
+### سناریو ۲: تولیدکننده برنامه مطالعه (اپ وب Chainlit)  
+یک رابط وب (با استفاده از Chainlit) که به کاربران اجازه می‌دهد برنامه مطالعه شخصی‌سازی شده و هفتگی برای هر موضوع فنی ایجاد کنند.
 
 ۱. اپ Chainlit را راه‌اندازی کنید:  
    ```bash
    chainlit run scenario2.py
    ```  
-۲. آدرس محلی که در ترمینال نمایش داده می‌شود (مثلاً http://localhost:8000) را در مرورگر خود باز کنید.  
+۲. آدرس محلی ارائه شده در ترمینال (مثلاً http://localhost:8000) را در مرورگر خود باز کنید.  
 ۳. در پنجره چت، موضوع مطالعه و تعداد هفته‌های مورد نظر خود را وارد کنید (مثلاً "گواهینامه AI-900، ۸ هفته").  
-۴. اپ پاسخ می‌دهد با برنامه مطالعه هفتگی به همراه لینک‌هایی به مستندات مرتبط Microsoft Learn.
+۴. اپ پاسخ می‌دهد با برنامه مطالعه هفتگی، شامل لینک‌هایی به مستندات مرتبط Microsoft Learn.
 
 **متغیرهای محیطی مورد نیاز:**  
 
-برای استفاده از سناریو ۲ (اپ وب Chainlit با Azure OpenAI)، باید متغیرهای محیطی زیر را در دایرکتوری `.env` file in the `python` تنظیم کنید:
+برای استفاده از سناریو ۲ (اپ وب Chainlit با Azure OpenAI)، باید متغیرهای محیطی زیر را در فایل `.env` در پوشه `python` تنظیم کنید:  
 
 ```
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=
@@ -57,47 +57,47 @@ AZURE_OPENAI_ENDPOINT=
 AZURE_OPENAI_API_VERSION=
 ```
 
-قبل از اجرای اپ، این مقادیر را با اطلاعات منابع Azure OpenAI خود پر کنید.
+قبل از اجرای اپ، این مقادیر را با جزئیات منبع Azure OpenAI خود پر کنید.
 
-> **نکته:** می‌توانید به راحتی مدل‌های خود را با استفاده از [Azure AI Foundry](https://ai.azure.com/) مستقر کنید.
+> **نکته:** می‌توانید به‌راحتی مدل‌های خود را با استفاده از [Azure AI Foundry](https://ai.azure.com/) مستقر کنید.
 
-### سناریو ۳: مستندات درون ویرایشگر با سرور MCP در VS Code  
+### سناریو ۳: مستندات درون ویرایشگر با سرور MCP در VS Code
 
-به جای جابجایی بین تب‌های مرورگر برای جستجوی مستندات، می‌توانید Microsoft Learn Docs را مستقیماً داخل VS Code خود با استفاده از سرور MCP داشته باشید. این امکان به شما می‌دهد:  
-- جستجو و خواندن مستندات در داخل VS Code بدون ترک محیط کدنویسی.  
-- ارجاع به مستندات و درج لینک‌ها مستقیماً در فایل README یا دوره‌های آموزشی.  
-- استفاده همزمان از GitHub Copilot و MCP برای جریان کاری مستندسازی هوشمند و یکپارچه.
+به جای جابجایی بین تب‌های مرورگر برای جستجوی مستندات، می‌توانید Microsoft Learn Docs را مستقیماً در VS Code خود با استفاده از سرور MCP بیاورید. این امکان را به شما می‌دهد که:  
+- مستندات را در داخل VS Code جستجو و مطالعه کنید بدون ترک محیط کدنویسی.  
+- به مستندات ارجاع دهید و لینک‌ها را مستقیماً در فایل README یا دوره خود وارد کنید.  
+- از GitHub Copilot و MCP به صورت همزمان برای یک جریان کاری مستندات هوشمند و یکپارچه استفاده کنید.
 
 **نمونه کاربردها:**  
-- اضافه کردن سریع لینک‌های مرجع به README هنگام نوشتن مستندات دوره یا پروژه.  
+- افزودن سریع لینک‌های مرجع به README هنگام نوشتن مستندات دوره یا پروژه.  
 - استفاده از Copilot برای تولید کد و MCP برای یافتن و ارجاع فوری به مستندات مرتبط.  
-- حفظ تمرکز در ویرایشگر و افزایش بهره‌وری.
+- تمرکز در ویرایشگر و افزایش بهره‌وری.
 
 > [!IMPORTANT]  
-> اطمینان حاصل کنید که فایل [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) configuration in your workspace (location is `.vscode/mcp.json`).
+> اطمینان حاصل کنید که پیکربندی معتبر [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) را در فضای کاری خود دارید (مکان آن `.vscode/mcp.json` است).
 
-## Why Chainlit for Scenario 2?
+## چرا Chainlit برای سناریو ۲؟
 
-Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
+Chainlit یک فریم‌ورک متن‌باز و مدرن برای ساخت برنامه‌های وب مکالمه‌ای است. این فریم‌ورک ایجاد رابط‌های کاربری مبتنی بر چت که به سرویس‌های پشتیبان مانند Microsoft Learn Docs MCP متصل می‌شوند را آسان می‌کند. این پروژه از Chainlit استفاده می‌کند تا روشی ساده و تعاملی برای تولید برنامه‌های مطالعه شخصی‌سازی شده در زمان واقعی فراهم کند. با بهره‌گیری از Chainlit، می‌توانید به سرعت ابزارهای مبتنی بر چت بسازید و مستقر کنید که بهره‌وری و یادگیری را افزایش می‌دهند.
 
-## What This Does
+## این برنامه چه کاری انجام می‌دهد
 
-This app allows users to create a personalized study plan by simply entering a topic and a duration. The app parses your input, queries the Microsoft Learn Docs MCP server for relevant content, and organizes the results into a structured, week-by-week plan. Each week’s recommendations are displayed in the chat, making it easy to follow and track your progress. The integration ensures you always get the latest, most relevant learning resources.
+این اپ به کاربران اجازه می‌دهد با وارد کردن موضوع و مدت زمان، برنامه مطالعه شخصی‌سازی شده بسازند. اپ ورودی شما را تحلیل می‌کند، از سرور Microsoft Learn Docs MCP محتوای مرتبط را می‌گیرد و نتایج را به صورت برنامه‌ای ساختار یافته و هفتگی سازماندهی می‌کند. توصیه‌های هر هفته در چت نمایش داده می‌شود تا دنبال کردن و پیگیری پیشرفت آسان باشد. این یکپارچگی تضمین می‌کند که همیشه به جدیدترین و مرتبط‌ترین منابع یادگیری دسترسی داشته باشید.
 
-## Sample Queries
+## نمونه پرس‌وجوها
 
-Try these queries in the chat window to see how the app responds:
+این پرس‌وجوها را در پنجره چت امتحان کنید تا ببینید اپ چگونه پاسخ می‌دهد:
 
-- `AI-900 certification, 8 weeks`
-- `Learn Azure Functions, 4 weeks`
-- `Azure DevOps, 6 weeks`
-- `Data engineering on Azure, 10 weeks`
-- `Microsoft security fundamentals, 5 weeks`
-- `Power Platform, 7 weeks`
-- `Azure AI services, 12 weeks`
-- `Cloud architecture, 9 weeks`] معتبر دارید.
+- `گواهینامه AI-900، ۸ هفته`  
+- `یادگیری Azure Functions، ۴ هفته`  
+- `Azure DevOps، ۶ هفته`  
+- `مهندسی داده در Azure، ۱۰ هفته`  
+- `مبانی امنیت مایکروسافت، ۵ هفته`  
+- `Power Platform، ۷ هفته`  
+- `خدمات Azure AI، ۱۲ هفته`  
+- `معماری ابری، ۹ هفته`
 
-این مثال‌ها انعطاف‌پذیری اپ را برای اهداف یادگیری و بازه‌های زمانی مختلف نشان می‌دهند.
+این مثال‌ها انعطاف‌پذیری اپ را برای اهداف و بازه‌های زمانی مختلف یادگیری نشان می‌دهند.
 
 ## منابع
 
@@ -105,4 +105,4 @@ Try these queries in the chat window to see how the app responds:
 - [مستندات MCP](https://github.com/MicrosoftDocs/mcp)
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نادرستی‌هایی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوء تفاهم یا برداشت نادرستی که از استفاده از این ترجمه ناشی شود، نیستیم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نادرستی‌هایی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده این ترجمه ناشی شود، نیستیم.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:16:43+00:00",
+  "translation_date": "2025-07-13T17:41:35+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "hr"
 }
 -->
 ### -2- Kreirajte projekt
 
-Sada kada imate instaliran SDK, sljedeći korak je kreirati projekt:
+Sada kada ste instalirali SDK, sljedeći korak je kreirati projekt:
 
 ### -3- Kreirajte datoteke projekta
 
@@ -29,7 +29,7 @@ Pokrenite server sljedećom naredbom:
 
 ### -8- Pokrenite pomoću inspektora
 
-Inspektor je izvrstan alat koji može pokrenuti vaš server i omogućiti vam interakciju s njim kako biste testirali radi li ispravno. Pokrenimo ga:
+Inspektor je izvrstan alat koji može pokrenuti vaš server i omogućiti vam interakciju s njim kako biste testirali njegov rad. Pokrenimo ga:
 > [!NOTE]
 > u polju "command" može izgledati drugačije jer sadrži naredbu za pokretanje servera s vašim specifičnim runtime-om/
 Trebali biste vidjeti sljedeće korisničko sučelje:
@@ -99,4 +99,4 @@ Kreirajte jednostavan MCP server s alatom po vašem izboru:
 Sljedeće: [Uvod u MCP klijente](../02-client/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

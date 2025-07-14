@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-05-16T15:01:37+00:00",
+  "translation_date": "2025-07-13T22:20:41+00:00",
   "source_file": "03-GettingStarted/samples/java/calculator/README.md",
   "language_code": "es"
 }
 -->
-# Basic Calculator MCP Service
+# Servicio Básico de Calculadora MCP
 
-Este servicio proporciona operaciones básicas de calculadora a través del Model Context Protocol (MCP) usando Spring Boot con transporte WebFlux. Está diseñado como un ejemplo sencillo para principiantes que aprenden sobre implementaciones MCP.
+Este servicio ofrece operaciones básicas de calculadora a través del Protocolo de Contexto de Modelo (MCP) usando Spring Boot con transporte WebFlux. Está diseñado como un ejemplo sencillo para principiantes que están aprendiendo sobre implementaciones MCP.
 
 Para más información, consulta la documentación de referencia de [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html).
 
-## Visión general
+## Resumen
 
 El servicio muestra:
 - Soporte para SSE (Server-Sent Events)
@@ -36,38 +36,38 @@ Este servicio de calculadora ofrece las siguientes capacidades:
 
 2. **Operaciones avanzadas**:
    - Cálculo de potencia (elevar una base a un exponente)
-   - Cálculo de raíz cuadrada (con verificación de número negativo)
-   - Cálculo del módulo (resto)
-   - Cálculo del valor absoluto
+   - Cálculo de raíz cuadrada (con verificación de números negativos)
+   - Cálculo de módulo (resto)
+   - Cálculo de valor absoluto
 
 3. **Sistema de ayuda**:
-   - Función de ayuda integrada que explica todas las operaciones disponibles
+   - Función de ayuda incorporada que explica todas las operaciones disponibles
 
-## Uso del servicio
+## Uso del Servicio
 
 El servicio expone los siguientes endpoints API a través del protocolo MCP:
 
-- `add(a, b)`: Sumar dos números
-- `subtract(a, b)`: Restar el segundo número del primero
-- `multiply(a, b)`: Multiplicar dos números
-- `divide(a, b)`: Dividir el primer número por el segundo (con verificación de cero)
-- `power(base, exponent)`: Calcular la potencia de un número
-- `squareRoot(number)`: Calcular la raíz cuadrada (con verificación de número negativo)
-- `modulus(a, b)`: Calcular el resto de una división
-- `absolute(number)`: Calcular el valor absoluto
-- `help()`: Obtener información sobre las operaciones disponibles
+- `add(a, b)`: Suma dos números
+- `subtract(a, b)`: Resta el segundo número del primero
+- `multiply(a, b)`: Multiplica dos números
+- `divide(a, b)`: Divide el primer número por el segundo (con verificación de cero)
+- `power(base, exponent)`: Calcula la potencia de un número
+- `squareRoot(number)`: Calcula la raíz cuadrada (con verificación de número negativo)
+- `modulus(a, b)`: Calcula el resto de la división
+- `absolute(number)`: Calcula el valor absoluto
+- `help()`: Obtiene información sobre las operaciones disponibles
 
-## Cliente de prueba
+## Cliente de Prueba
 
-Se incluye un cliente de prueba simple en el paquete `com.microsoft.mcp.sample.client`. La clase `SampleCalculatorClient` muestra las operaciones disponibles del servicio de calculadora.
+Se incluye un cliente de prueba simple en el paquete `com.microsoft.mcp.sample.client`. La clase `SampleCalculatorClient` demuestra las operaciones disponibles del servicio de calculadora.
 
-## Uso del cliente LangChain4j
+## Uso del Cliente LangChain4j
 
-El proyecto incluye un cliente de ejemplo LangChain4j en `com.microsoft.mcp.sample.client.LangChain4jClient` que demuestra cómo integrar el servicio de calculadora con LangChain4j y modelos de GitHub:
+El proyecto incluye un cliente de ejemplo LangChain4j en `com.microsoft.mcp.sample.client.LangChain4jClient` que muestra cómo integrar el servicio de calculadora con LangChain4j y modelos de GitHub:
 
-### Requisitos previos
+### Requisitos Previos
 
-1. **Configuración del token de GitHub**:
+1. **Configuración del Token de GitHub**:
    
    Para usar los modelos de IA de GitHub (como phi-4), necesitas un token de acceso personal de GitHub:
 
@@ -79,9 +79,9 @@ El proyecto incluye un cliente de ejemplo LangChain4j en `com.microsoft.mcp.samp
    
    d. Selecciona los siguientes permisos:
       - `repo` (Control total de repositorios privados)
-      - `read:org` (Leer membresía de organizaciones y equipos, leer proyectos de organización)
+      - `read:org` (Leer membresía de organización y equipo, leer proyectos de organización)
       - `gist` (Crear gists)
-      - `user:email` (Acceder a direcciones de correo del usuario (solo lectura))
+      - `user:email` (Acceso a direcciones de correo electrónico del usuario (solo lectura))
    
    e. Haz clic en "Generate token" y copia tu nuevo token
    
@@ -97,7 +97,7 @@ El proyecto incluye un cliente de ejemplo LangChain4j en `com.microsoft.mcp.samp
       export GITHUB_TOKEN=your-github-token
       ```
 
-   g. Para configuración persistente, agrégalo a las variables de entorno mediante la configuración del sistema
+   g. Para configuración persistente, agrégalo a tus variables de entorno mediante la configuración del sistema
 
 2. Añade la dependencia de LangChain4j GitHub a tu proyecto (ya incluida en pom.xml):
    ```xml
@@ -108,25 +108,25 @@ El proyecto incluye un cliente de ejemplo LangChain4j en `com.microsoft.mcp.samp
    </dependency>
    ```
 
-3. Asegúrate de que el servidor de calculadora esté corriendo en `localhost:8080`
+3. Asegúrate de que el servidor de la calculadora esté corriendo en `localhost:8080`
 
-### Ejecutando el cliente LangChain4j
+### Ejecutando el Cliente LangChain4j
 
-Este ejemplo muestra:
-- Conexión al servidor MCP de calculadora vía transporte SSE
+Este ejemplo demuestra:
+- Conexión al servidor MCP de la calculadora mediante transporte SSE
 - Uso de LangChain4j para crear un chatbot que aprovecha las operaciones de la calculadora
 - Integración con modelos de IA de GitHub (ahora usando el modelo phi-4)
 
 El cliente envía las siguientes consultas de ejemplo para demostrar la funcionalidad:
 1. Calcular la suma de dos números
 2. Encontrar la raíz cuadrada de un número
-3. Obtener información de ayuda sobre las operaciones disponibles en la calculadora
+3. Obtener información de ayuda sobre las operaciones disponibles de la calculadora
 
 Ejecuta el ejemplo y revisa la salida en consola para ver cómo el modelo de IA usa las herramientas de la calculadora para responder a las consultas.
 
-### Configuración del modelo GitHub
+### Configuración del Modelo GitHub
 
-El cliente LangChain4j está configurado para usar el modelo phi-4 de GitHub con la siguiente configuración:
+El cliente LangChain4j está configurado para usar el modelo phi-4 de GitHub con los siguientes ajustes:
 
 ```java
 ChatLanguageModel model = GitHubChatModel.builder()
@@ -166,14 +166,14 @@ El proyecto requiere las siguientes dependencias clave:
 </dependency>
 ```
 
-## Construcción del proyecto
+## Construcción del Proyecto
 
 Construye el proyecto usando Maven:
 ```bash
 ./mvnw clean install -DskipTests
 ```
 
-## Ejecución del servidor
+## Ejecución del Servidor
 
 ### Usando Java
 
@@ -194,14 +194,14 @@ El MCP Inspector es una herramienta útil para interactuar con servicios MCP. Pa
 
 3. **Configura la conexión**:
    - Establece el tipo de transporte a "SSE"
-   - Configura la URL al endpoint SSE de tu servidor en ejecución: `http://localhost:8080/sse`
+   - Establece la URL al endpoint SSE de tu servidor en ejecución: `http://localhost:8080/sse`
    - Haz clic en "Connect"
 
 4. **Usa las herramientas**:
-   - Haz clic en "List Tools" para ver las operaciones de la calculadora disponibles
+   - Haz clic en "List Tools" para ver las operaciones disponibles de la calculadora
    - Selecciona una herramienta y haz clic en "Run Tool" para ejecutar una operación
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.es.png)
+![Captura de pantalla de MCP Inspector](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.es.png)
 
 ### Usando Docker
 
@@ -218,26 +218,26 @@ El proyecto incluye un Dockerfile para despliegue en contenedor:
    ```
 
 Esto hará:
-- Construir una imagen Docker multietapa con Maven 3.9.9 y Eclipse Temurin 24 JDK
+- Construir una imagen Docker multi-etapa con Maven 3.9.9 y Eclipse Temurin 24 JDK
 - Crear una imagen optimizada para contenedor
 - Exponer el servicio en el puerto 8080
 - Iniciar el servicio MCP de calculadora dentro del contenedor
 
 Podrás acceder al servicio en `http://localhost:8080` una vez que el contenedor esté en ejecución.
 
-## Solución de problemas
+## Solución de Problemas
 
-### Problemas comunes con el token de GitHub
+### Problemas Comunes con el Token de GitHub
 
-1. **Problemas de permisos del token**: Si recibes un error 403 Forbidden, verifica que tu token tenga los permisos correctos según los requisitos previos.
+1. **Problemas de permisos del token**: Si recibes un error 403 Forbidden, verifica que tu token tenga los permisos correctos según lo indicado en los requisitos previos.
 
-2. **Token no encontrado**: Si aparece un error "No API key found", asegúrate de que la variable de entorno GITHUB_TOKEN esté configurada correctamente.
+2. **Token no encontrado**: Si recibes un error "No API key found", asegúrate de que la variable de entorno GITHUB_TOKEN esté correctamente configurada.
 
-3. **Limitación de tasa**: La API de GitHub tiene límites de uso. Si encuentras un error por límite de tasa (código 429), espera unos minutos antes de intentar de nuevo.
+3. **Limitación de tasa**: La API de GitHub tiene límites de uso. Si encuentras un error de límite de tasa (código de estado 429), espera unos minutos antes de intentarlo de nuevo.
 
 4. **Expiración del token**: Los tokens de GitHub pueden expirar. Si recibes errores de autenticación después de un tiempo, genera un nuevo token y actualiza tu variable de entorno.
 
 Si necesitas más ayuda, consulta la [documentación de LangChain4j](https://github.com/langchain4j/langchain4j) o la [documentación de la API de GitHub](https://docs.github.com/en/rest).
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

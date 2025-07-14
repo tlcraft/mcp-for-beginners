@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:01:47+00:00",
+  "translation_date": "2025-07-13T21:19:53+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "el"
 }
 -->
-# Εκτέλεση αυτού του δείγματος
+# Εκτέλεση αυτού του παραδείγματος
 
-Εδώ θα δείτε πώς να εκτελέσετε τον κλασικό HTTP streaming server και client, καθώς και τον MCP streaming server και client χρησιμοποιώντας Python.
+Ακολουθεί πώς να εκτελέσετε τον κλασικό HTTP streaming server και client, καθώς και τον MCP streaming server και client χρησιμοποιώντας Python.
 
 ### Επισκόπηση
 
-- Θα ρυθμίσετε έναν MCP server που στέλνει ειδοποιήσεις προόδου στον client καθώς επεξεργάζεται αντικείμενα.
+- Θα ρυθμίσετε έναν MCP server που στέλνει ειδοποιήσεις προόδου στον client καθώς επεξεργάζεται στοιχεία.
 - Ο client θα εμφανίζει κάθε ειδοποίηση σε πραγματικό χρόνο.
-- Ο οδηγός καλύπτει τις προαπαιτήσεις, τη ρύθμιση, την εκτέλεση και την αντιμετώπιση προβλημάτων.
+- Αυτός ο οδηγός καλύπτει τις προαπαιτήσεις, τη ρύθμιση, την εκτέλεση και την αντιμετώπιση προβλημάτων.
 
 ### Προαπαιτήσεις
 
 - Python 3.9 ή νεότερη έκδοση
-- Το πακέτο `mcp` για Python (εγκατάσταση με `pip install mcp`)
+- Το πακέτο Python `mcp` (εγκατάσταση με `pip install mcp`)
 
 ### Εγκατάσταση & Ρύθμιση
 
@@ -39,7 +39,7 @@ CO_OP_TRANSLATOR_METADATA:
    source venv/bin/activate      # On Linux/macOS
    ```
 
-1. **Εγκαταστήστε τις απαραίτητες εξαρτήσεις:**
+1. **Εγκαταστήστε τις απαιτούμενες εξαρτήσεις:**
 
    ```pwsh
    pip install "mcp[cli]"
@@ -58,7 +58,7 @@ CO_OP_TRANSLATOR_METADATA:
    cd 03-GettingStarted/06-http-streaming/solution
    ```
 
-2. Εκκινήστε τον κλασικό HTTP streaming server:
+2. Ξεκινήστε τον κλασικό HTTP streaming server:
 
    ```pwsh
    python server.py
@@ -80,7 +80,7 @@ CO_OP_TRANSLATOR_METADATA:
    python client.py
    ```
 
-2. Θα δείτε τα μηνύματα να εμφανίζονται διαδοχικά σε streaming:
+2. Θα δείτε τα μηνύματα να προβάλλονται διαδοχικά:
 
    ```text
    Running classic HTTP streaming client...
@@ -99,7 +99,7 @@ CO_OP_TRANSLATOR_METADATA:
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
-2. Εκκινήστε τον MCP server με το streamable-http transport:
+2. Ξεκινήστε τον MCP server με το transport streamable-http:
    ```pwsh
    python server.py mcp
    ```
@@ -116,7 +116,7 @@ CO_OP_TRANSLATOR_METADATA:
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. Θα δείτε τις ειδοποιήσεις να εμφανίζονται σε πραγματικό χρόνο καθώς ο server επεξεργάζεται κάθε αντικείμενο:
+2. Θα δείτε τις ειδοποιήσεις να εμφανίζονται σε πραγματικό χρόνο καθώς ο server επεξεργάζεται κάθε στοιχείο:
    ```
    Running MCP client...
    Starting client...
@@ -129,23 +129,23 @@ CO_OP_TRANSLATOR_METADATA:
    Tool result: meta=None content=[TextContent(type='text', text='Processed files: file_1.txt, file_2.txt, file_3.txt | Message: hello from client')]
    ```
 
-### Κύρια Βήματα Υλοποίησης
+### Βασικά Βήματα Υλοποίησης
 
-1. **Δημιουργήστε τον MCP server χρησιμοποιώντας το FastMCP.**
-2. **Ορίστε ένα εργαλείο που επεξεργάζεται μια λίστα και στέλνει ειδοποιήσεις χρησιμοποιώντας `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+1. **Δημιουργήστε τον MCP server χρησιμοποιώντας FastMCP.**
+2. **Ορίστε ένα εργαλείο που επεξεργάζεται μια λίστα και στέλνει ειδοποιήσεις με `ctx.info()` ή `ctx.log()`.**
+3. **Τρέξτε τον server με `transport="streamable-http"`.**
+4. **Υλοποιήστε έναν client με handler μηνυμάτων για να εμφανίζει τις ειδοποιήσεις καθώς φτάνουν.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Περιήγηση στον Κώδικα
+- Ο server χρησιμοποιεί ασύγχρονες συναρτήσεις και το MCP context για να στέλνει ενημερώσεις προόδου.
+- Ο client υλοποιεί έναν ασύγχρονο handler μηνυμάτων για να εκτυπώνει τις ειδοποιήσεις και το τελικό αποτέλεσμα.
 
-### Tips & Troubleshooting
+### Συμβουλές & Αντιμετώπιση Προβλημάτων
 
-- Use `async/await` για ασύγχρονες λειτουργίες χωρίς μπλοκάρισμα.**
-- Φροντίστε να χειρίζεστε πάντα τις εξαιρέσεις τόσο στον server όσο και στον client για αξιοπιστία.
-- Δοκιμάστε με πολλούς clients για να δείτε ενημερώσεις σε πραγματικό χρόνο.
+- Χρησιμοποιήστε `async/await` για λειτουργίες που δεν μπλοκάρουν.
+- Πάντα χειριστείτε εξαιρέσεις τόσο στον server όσο και στον client για μεγαλύτερη αξιοπιστία.
+- Δοκιμάστε με πολλαπλούς clients για να δείτε ενημερώσεις σε πραγματικό χρόνο.
 - Αν αντιμετωπίσετε σφάλματα, ελέγξτε την έκδοση της Python και βεβαιωθείτε ότι όλες οι εξαρτήσεις είναι εγκατεστημένες.
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία μετάφρασης με τεχνητή νοημοσύνη [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που προσπαθούμε για ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτοματοποιημένες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται η επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

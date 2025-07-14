@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T17:10:46+00:00",
+  "translation_date": "2025-07-13T22:08:30+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "pl"
 }
@@ -17,17 +17,17 @@ Ta lekcja omawia, jak wdrożyć aplikację MCP Server.
 
 ## Cele nauki
 
-Po ukończeniu tej lekcji będziesz potrafił:
+Po zakończeniu tej lekcji będziesz potrafił:
 
 - Ocenić różne podejścia do wdrażania.
 - Wdrożyć swoją aplikację.
 
 ## Lokalny rozwój i wdrożenie
 
-Jeśli Twój serwer ma być używany na komputerze użytkownika, możesz postępować według poniższych kroków:
+Jeśli Twój serwer ma działać na komputerze użytkownika, możesz postępować według poniższych kroków:
 
 1. **Pobierz serwer**. Jeśli nie napisałeś serwera, najpierw pobierz go na swój komputer.  
-1. **Uruchom proces serwera**: Uruchom swoją aplikację MCP Server.
+1. **Uruchom proces serwera**: Uruchom aplikację MCP server.
 
 Dla SSE (nie jest potrzebne dla serwera typu stdio)
 
@@ -54,7 +54,7 @@ Oto jak możesz to zrobić:
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
   ```
 
-1. Uruchom je lokalnie, aby przetestować:
+1. Uruchom lokalnie, aby przetestować:
 
   ```sh
   uv venv
@@ -106,11 +106,11 @@ I to wszystko, wdrażaj lokalnie lub do Azure według tych kroków.
 
 - [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
 - [Artykuł o Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
-- [Repozytorium Azure Container Apps MCP](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
+- [Repozytorium MCP dla Azure Container Apps](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
 
 ## Co dalej
 
 - Następne: [Praktyczna implementacja](../../04-PracticalImplementation/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

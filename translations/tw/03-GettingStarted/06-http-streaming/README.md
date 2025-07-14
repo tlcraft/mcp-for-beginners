@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
-  "translation_date": "2025-07-10T16:00:07+00:00",
+  "translation_date": "2025-07-13T20:29:40+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "tw"
 }
@@ -19,8 +19,8 @@ CO_OP_TRANSLATOR_METADATA:
 
 傳輸機制定義了客戶端與伺服器之間資料交換的方式。MCP 支援多種傳輸類型，以適應不同環境與需求：
 
-- **stdio**：標準輸入/輸出，適合本地及 CLI 工具。簡單但不適合網頁或雲端環境。
-- **SSE (Server-Sent Events)**：允許伺服器透過 HTTP 向客戶端推送即時更新。適合網頁 UI，但在擴展性與彈性上有限。
+- **stdio**：標準輸入/輸出，適合本地及 CLI 工具。簡單但不適用於網頁或雲端。
+- **SSE (Server-Sent Events)**：允許伺服器透過 HTTP 推送即時更新給客戶端。適合網頁 UI，但在擴展性與彈性上有限。
 - **Streamable HTTP**：現代基於 HTTP 的串流傳輸，支援通知與更佳的擴展性。建議用於大多數生產與雲端場景。
 
 ### 比較表
@@ -211,15 +211,15 @@ public class CalculatorClientApplication implements CommandLineRunner {
 
 - **通訊模式：**
    - 傳統 HTTP 串流：使用簡單的分塊傳輸編碼送出資料
-   - MCP 串流：使用結構化通知系統，基於 JSON-RPC 協定
+   - MCP 串流：使用結構化通知系統與 JSON-RPC 協定
 
 - **訊息格式：**
-   - 傳統 HTTP：純文字區塊，使用換行符號分隔
-   - MCP：結構化的 LoggingMessageNotification 物件，帶有元資料
+   - 傳統 HTTP：純文字區塊，帶換行符號
+   - MCP：結構化的 LoggingMessageNotification 物件，含元資料
 
 - **客戶端實作：**
    - 傳統 HTTP：簡單客戶端處理串流回應
-   - MCP：較複雜的客戶端，需實作訊息處理器以處理不同訊息類型
+   - MCP：較複雜的客戶端，需有訊息處理器以處理不同訊息類型
 
 - **進度更新：**
    - 傳統 HTTP：進度包含在主要回應串流中
@@ -230,14 +230,14 @@ public class CalculatorClientApplication implements CommandLineRunner {
 在選擇實作傳統串流（如前述使用 `/stream` 的端點）或 MCP 串流時，我們有以下建議：
 
 - **簡單串流需求：** 傳統 HTTP 串流較易實作，適合基本串流需求。
-- **複雜互動應用：** MCP 串流提供更結構化的方式，帶有豐富元資料，且通知與最終結果分離。
-- **AI 應用：** MCP 的通知系統特別適合長時間運算的 AI 任務，可持續向使用者回報進度。
+- **複雜互動應用：** MCP 串流提供更結構化的方式，含豐富元資料，且通知與最終結果分離。
+- **AI 應用：** MCP 的通知系統特別適合長時間運算的 AI 任務，能持續向使用者回報進度。
 
 ## MCP 中的串流
 
-到目前為止，你已看到關於傳統串流與 MCP 串流的建議與比較。接下來深入說明如何在 MCP 中利用串流。
+到目前為止，你已看到關於傳統串流與 MCP 串流的比較與建議。接下來深入說明如何在 MCP 中利用串流。
 
-理解 MCP 框架中串流的運作方式，對於建立在長時間運算中能即時回饋使用者的回應式應用至關重要。
+理解 MCP 框架內串流的運作方式，對於打造在長時間運算中能即時回饋使用者的應用至關重要。
 
 在 MCP 中，串流並非將主要回應分塊傳送，而是在工具處理請求時，向客戶端發送**通知**。這些通知可包含進度更新、日誌或其他事件。
 
@@ -249,11 +249,11 @@ public class CalculatorClientApplication implements CommandLineRunner {
 
 我們提到「通知」，在 MCP 中這是什麼意思？
 
-通知是伺服器向客戶端發送的訊息，用以告知長時間運算中的進度、狀態或其他事件。通知提升透明度與使用者體驗。
+通知是伺服器在長時間運算過程中，向客戶端發送的訊息，用以告知進度、狀態或其他事件。通知提升透明度與使用者體驗。
 
-例如，客戶端在與伺服器完成初始握手後，應該發送一則通知。
+例如，客戶端在與伺服器完成初步握手後，應該會收到一則通知。
 
-通知的 JSON 訊息格式如下：
+通知的 JSON 格式如下：
 
 ```json
 {
@@ -267,7 +267,7 @@ public class CalculatorClientApplication implements CommandLineRunner {
 
 通知屬於 MCP 中稱為 ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging) 的主題。
 
-要啟用日誌功能，伺服器需將其設定為功能/能力，如下所示：
+要啟用日誌功能，伺服器需將其設定為功能/能力，如下：
 
 ```json
 {
@@ -278,20 +278,20 @@ public class CalculatorClientApplication implements CommandLineRunner {
 ```
 
 > [!NOTE]
-> 根據所使用的 SDK，日誌功能可能預設啟用，或需在伺服器設定中明確啟用。
+> 根據所使用的 SDK，日誌功能可能預設啟用，或需在伺服器設定中明確開啟。
 
 通知有不同類型：
 
-| 等級       | 說明                         | 範例使用情境                 |
+| 等級       | 說明                         | 範例使用情境                  |
 |------------|------------------------------|------------------------------|
 | debug      | 詳細除錯資訊                 | 函式進入/退出點              |
 | info       | 一般資訊訊息                 | 操作進度更新                |
 | notice     | 正常但重要事件               | 設定變更                    |
 | warning    | 警告狀況                    | 使用已棄用功能              |
 | error      | 錯誤狀況                    | 操作失敗                    |
-| critical   | 致命狀況                    | 系統元件故障                |
+| critical   | 關鍵狀況                    | 系統元件故障                |
 | alert      | 必須立即採取行動            | 偵測到資料損毀              |
-| emergency  | 系統無法使用                | 完整系統故障                |
+| emergency  | 系統無法使用                | 完全系統故障                |
 
 ## 在 MCP 中實作通知
 
@@ -316,7 +316,7 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-在上述範例中，`process_files` 工具在處理每個檔案時會發送三則通知給客戶端。`ctx.info()` 方法用於發送資訊訊息。
+上述範例中，`process_files` 工具在處理每個檔案時會發送三則通知給客戶端。`ctx.info()` 方法用於發送資訊訊息。
 
 </details>
 
@@ -346,9 +346,9 @@ public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
 }
 ```
 
-在此 .NET 範例中，`ProcessFiles` 工具以 `Tool` 屬性標註，並在處理每個檔案時發送三則通知給客戶端。`ctx.Info()` 方法用於發送資訊訊息。
+此 .NET 範例中，`ProcessFiles` 工具以 `Tool` 屬性標註，並在處理每個檔案時發送三則通知給客戶端。`ctx.Info()` 方法用於發送資訊訊息。
 
-要在 .NET MCP 伺服器中啟用通知，請確保使用串流傳輸：
+要在 .NET MCP 伺服器啟用通知，請確保使用串流傳輸：
 
 ```csharp
 var builder = McpBuilder.Create();
@@ -362,7 +362,7 @@ await builder
 
 ### 客戶端：接收通知
 
-客戶端必須實作訊息處理器，以處理並顯示接收到的通知。
+客戶端必須實作訊息處理器，來處理並顯示接收到的通知。
 
 <details>
 <summary>Python</summary>
@@ -424,9 +424,9 @@ await client.InitializeAsync();
 
 ## 進度通知與應用場景
 
-本節說明 MCP 中進度通知的概念、重要性，以及如何使用 Streamable HTTP 實作。你也會看到一個實務練習以加深理解。
+本節說明 MCP 中進度通知的概念、重要性，以及如何使用 Streamable HTTP 實作。你也會看到一個實務練習，幫助加深理解。
 
-進度通知是伺服器在長時間運算中，向客戶端即時發送的訊息。伺服器不必等整個流程完成，便能持續更新客戶端當前狀態。這提升透明度、使用者體驗，並方便除錯。
+進度通知是伺服器在長時間運算過程中，向客戶端即時發送的訊息。伺服器不必等整個流程完成，便能持續更新客戶端當前狀態。這提升透明度、使用者體驗，並方便除錯。
 
 **範例：**
 
@@ -441,11 +441,11 @@ await client.InitializeAsync();
 
 ### 為什麼要使用進度通知？
 
-進度通知的重要原因包括：
+進度通知的重要性包括：
 
 - **提升使用者體驗：** 使用者能看到工作進展，而非僅在結束時。
 - **即時回饋：** 客戶端可顯示進度條或日誌，讓應用感覺更有回應性。
-- **方便除錯與監控：** 開發者與使用者能了解流程卡在哪裡或變慢。
+- **方便除錯與監控：** 開發者與使用者能了解流程卡在哪裡或是否緩慢。
 
 ### 如何實作進度通知
 
@@ -486,21 +486,21 @@ async def message_handler(message):
 
 ## 安全性考量
 
-在使用基於 HTTP 的傳輸實作 MCP 伺服器時，安全性是首要考量，需要仔細注意多種攻擊向量與防護機制。
+在使用基於 HTTP 的傳輸實作 MCP 伺服器時，安全性成為首要關注點，需要仔細防範多種攻擊向量並採取保護措施。
 
 ### 概述
 
-當 MCP 伺服器透過 HTTP 暴露時，安全性至關重要。Streamable HTTP 引入了新的攻擊面，必須謹慎設定。
+當 MCP 伺服器透過 HTTP 對外提供服務時，安全性非常重要。Streamable HTTP 引入了新的攻擊面，必須謹慎設定。
 
-### 重要重點
+### 重要要點
 - **Origin 標頭驗證**：務必驗證 `Origin` 標頭，以防止 DNS 重綁定攻擊。
-- **綁定 localhost**：在本地開發時，將伺服器綁定到 `localhost`，避免暴露於公網。
-- **身份驗證**：在正式環境部署時，實作身份驗證（例如 API 金鑰、OAuth）。
+- **綁定 localhost**：開發階段請將伺服器綁定在 `localhost`，避免暴露於公網。
+- **身份驗證**：正式部署時實作身份驗證（例如 API 金鑰、OAuth）。
 - **CORS**：設定跨來源資源共享（CORS）政策以限制存取。
-- **HTTPS**：正式環境使用 HTTPS 以加密流量。
+- **HTTPS**：生產環境使用 HTTPS 以加密流量。
 
 ### 最佳實踐
-- 不要信任未經驗證的請求。
+- 不要輕信未經驗證的請求。
 - 記錄並監控所有存取與錯誤。
 - 定期更新相依套件以修補安全漏洞。
 
@@ -517,7 +517,7 @@ async def message_handler(message):
 
 升級 SSE 至 Streamable HTTP 有兩大理由：
 
-- Streamable HTTP 比 SSE 提供更好的擴展性、相容性與更豐富的通知支援。
+- Streamable HTTP 比 SSE 提供更佳的擴展性、相容性與更豐富的通知支援。
 - 它是新 MCP 應用程式推薦使用的傳輸方式。
 
 ### 遷移步驟
@@ -527,45 +527,45 @@ async def message_handler(message):
 - **更新伺服器程式碼**，在 `mcp.run()` 中使用 `transport="streamable-http"`。
 - **更新客戶端程式碼**，改用 `streamablehttp_client` 取代 SSE 客戶端。
 - **在客戶端實作訊息處理器**，用以處理通知。
-- **測試相容性**，確保與現有工具和工作流程兼容。
+- **測試與現有工具和工作流程的相容性**。
 
 ### 維持相容性
 
-建議在遷移過程中維持與現有 SSE 客戶端的相容性。以下是一些策略：
+建議在遷移期間保持與現有 SSE 客戶端的相容性。以下是一些策略：
 
-- 可同時支援 SSE 與 Streamable HTTP，分別在不同端點運行兩種傳輸。
+- 可同時支援 SSE 與 Streamable HTTP，分別在不同端點運行。
 - 逐步將客戶端遷移至新傳輸方式。
 
 ### 挑戰
 
-遷移時需注意以下挑戰：
+遷移過程中需注意以下挑戰：
 
 - 確保所有客戶端都完成更新
 - 處理通知傳遞上的差異
 
 ## 安全性考量
 
-實作任何伺服器時，安全性都應是首要任務，尤其是使用像 Streamable HTTP 這類基於 HTTP 的傳輸於 MCP。
+實作任何伺服器時，安全性都應是首要任務，尤其是使用像 Streamable HTTP 這類基於 HTTP 的傳輸方式時。
 
-在使用基於 HTTP 的傳輸實作 MCP 伺服器時，安全性是首要考量，需要仔細注意多種攻擊向量與防護機制。
+在使用基於 HTTP 的傳輸實作 MCP 伺服器時，安全性成為首要關注點，需要仔細防範多種攻擊向量並採取保護措施。
 
 ### 概述
 
-當 MCP 伺服器透過 HTTP 暴露時，安全性至關重要。Streamable HTTP 引入了新的攻擊面，必須謹慎設定。
+當 MCP 伺服器透過 HTTP 對外提供服務時，安全性非常重要。Streamable HTTP 引入了新的攻擊面，必須謹慎設定。
 
 以下是一些重要的安全性考量：
 
 - **Origin 標頭驗證**：務必驗證 `Origin` 標頭，以防止 DNS 重綁定攻擊。
-- **綁定 localhost**：在本地開發時，將伺服器綁定到 `localhost`，避免暴露於公網。
-- **身份驗證**：在正式環境部署時，實作身份驗證（例如 API 金鑰、OAuth）。
+- **綁定 localhost**：開發階段請將伺服器綁定在 `localhost`，避免暴露於公網。
+- **身份驗證**：正式部署時實作身份驗證（例如 API 金鑰、OAuth）。
 - **CORS**：設定跨來源資源共享（CORS）政策以限制存取。
-- **HTTPS**：正式環境使用 HTTPS 以加密流量。
+- **HTTPS**：生產環境使用 HTTPS 以加密流量。
 
 ### 最佳實踐
 
 此外，實作 MCP 串流伺服器時，建議遵循以下最佳實踐：
 
-- 不要信任未經驗證的請求。
+- 不要輕信未經驗證的請求。
 - 記錄並監控所有存取與錯誤。
 - 定期更新相依套件以修補安全漏洞。
 
@@ -589,9 +589,9 @@ async def message_handler(message):
 
 [解答](./solution/README.md)
 
-## 延伸閱讀與後續建議
+## 延伸閱讀與後續步驟
 
-為了持續深入 MCP 串流的學習並擴展知識，本節提供額外資源與建議的後續步驟，協助你打造更進階的應用程式。
+想繼續深入 MCP 串流的學習並擴展知識，本節提供額外資源與建議的後續行動，幫助你打造更進階的應用程式。
 
 ### 延伸閱讀
 
@@ -607,4 +607,4 @@ async def message_handler(message):
 - 下一步：[利用 VSCode 的 AI 工具包](../07-aitk/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

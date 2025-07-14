@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:21:44+00:00",
+  "translation_date": "2025-07-14T00:01:21+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "hr"
 }
 -->
 # Integracija Model Context Protocol (MCP) s Azure AI Foundry
 
-Ovaj vodič prikazuje kako integrirati Model Context Protocol (MCP) servere s Azure AI Foundry agentima, omogućujući moćnu orkestraciju alata i enterprise AI mogućnosti.
+Ovaj vodič pokazuje kako integrirati Model Context Protocol (MCP) servere s Azure AI Foundry agentima, omogućujući snažnu orkestraciju alata i AI mogućnosti za poduzeća.
 
 ## Uvod
 
-Model Context Protocol (MCP) je otvoreni standard koji omogućuje AI aplikacijama sigurnu povezanost s vanjskim izvorima podataka i alatima. Kada se integrira s Azure AI Foundry, MCP omogućuje agentima pristup i interakciju s raznim vanjskim servisima, API-jima i izvorima podataka na standardiziran način.
+Model Context Protocol (MCP) je otvoreni standard koji omogućuje AI aplikacijama sigurno povezivanje s vanjskim izvorima podataka i alatima. Kada se integrira s Azure AI Foundry, MCP omogućuje agentima pristup i interakciju s različitim vanjskim uslugama, API-jima i izvorima podataka na standardiziran način.
 
-Ova integracija spaja fleksibilnost MCP-ovog ekosustava alata s robusnim agent frameworkom Azure AI Foundry, pružajući enterprise AI rješenja s opsežnim mogućnostima prilagodbe.
+Ova integracija spaja fleksibilnost MCP-ovog ekosustava alata s robusnim okvirom Azure AI Foundry agenata, pružajući AI rješenja razine poduzeća s opsežnim mogućnostima prilagodbe.
 
 **Note:** Ako želite koristiti MCP u Azure AI Foundry Agent Service, trenutno su podržane samo sljedeće regije: westus, westus2, uaenorth, southindia i switzerlandnorth
 
@@ -27,14 +27,14 @@ Na kraju ovog vodiča moći ćete:
 - Postaviti MCP servere za korištenje s Azure AI Foundry agentima
 - Kreirati i konfigurirati agente s MCP integracijom alata
 - Implementirati praktične primjere koristeći stvarne MCP servere
-- Rukovati odgovorima alata i citatima u razgovorima agenata
+- Upravljati odgovorima alata i citatima u razgovorima agenata
 
 ## Preduvjeti
 
-Prije početka, osigurajte da imate:
+Prije početka, provjerite imate li:
 
 - Azure pretplatu s pristupom AI Foundry
-- Python 3.10+
+- Python 3.10+ 
 - Instaliran i konfiguriran Azure CLI
 - Odgovarajuće dozvole za kreiranje AI resursa
 
@@ -42,16 +42,16 @@ Prije početka, osigurajte da imate:
 
 Model Context Protocol je standardizirani način za AI aplikacije da se povežu s vanjskim izvorima podataka i alatima. Ključne prednosti uključuju:
 
-- **Standardizirana integracija**: Dosljedno sučelje preko različitih alata i servisa
+- **Standardizirana integracija**: Dosljedno sučelje za različite alate i usluge
 - **Sigurnost**: Sigurni mehanizmi autentikacije i autorizacije
 - **Fleksibilnost**: Podrška za razne izvore podataka, API-je i prilagođene alate
 - **Proširivost**: Jednostavno dodavanje novih mogućnosti i integracija
 
-## Postavljanje MCP s Azure AI Foundry
+## Postavljanje MCP-a s Azure AI Foundry
 
 ### 1. Konfiguracija okruženja
 
-Prvo postavite varijable okruženja i ovisnosti:
+Prvo, postavite varijable okruženja i ovisnosti:
 
 ```python
 import os
@@ -146,7 +146,7 @@ def create_mcp_agent_example():
         )
         print(f"Created agent, agent ID: {agent.id}")    
         
-        # Kreiraj nit za razgovor
+        # Kreiraj razgovor
         thread = project_client.agents.threads.create()
         print(f"Created thread, thread ID: {thread.id}")
 
@@ -161,7 +161,7 @@ def create_mcp_agent_example():
         # Pokreni agenta
         run = project_client.agents.runs.create(thread_id=thread.id, agent_id=agent.id)
         
-        # Poll za završetak
+        # Čekaj dovršetak
         while run.status in ["queued", "in_progress", "requires_action"]:
             time.sleep(1)
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
@@ -187,50 +187,50 @@ def create_mcp_agent_example():
 
 if __name__ == "__main__":
     create_mcp_agent_example()
-  
+
 
 ## Rješavanje uobičajenih problema
 
 ### 1. Problemi s povezivanjem
-- Provjerite je li MCP URL servera dostupan
+- Provjerite je li MCP server URL dostupan
 - Provjerite vjerodajnice za autentikaciju
 - Osigurajte mrežnu povezanost
 
-### 2. Neuspjesi poziva alata
+### 2. Neuspjeli pozivi alata
 - Pregledajte argumente i format poziva alata
 - Provjerite zahtjeve specifične za server
-- Implementirajte pravilno rukovanje greškama
+- Implementirajte ispravno rukovanje greškama
 
 ### 3. Problemi s performansama
 - Optimizirajte učestalost poziva alata
-- Implementirajte keširanje gdje je prikladno
+- Koristite keširanje gdje je prikladno
 - Pratite vrijeme odziva servera
 
 ## Sljedeći koraci
 
-Za dodatno unapređenje vaše MCP integracije:
+Za daljnje unapređenje vaše MCP integracije:
 
 1. **Istražite prilagođene MCP servere**: Izgradite vlastite MCP servere za vlasničke izvore podataka
 2. **Implementirajte naprednu sigurnost**: Dodajte OAuth2 ili prilagođene mehanizme autentikacije
-3. **Praćenje i analitika**: Implementirajte logiranje i nadzor korištenja alata
-4. **Skalirajte svoje rješenje**: Razmotrite load balancing i distribuirane MCP arhitekture
+3. **Praćenje i analitika**: Implementirajte zapisivanje i nadzor korištenja alata
+4. **Skalirajte svoje rješenje**: Razmotrite balansiranje opterećenja i distribuirane MCP server arhitekture
 
 ## Dodatni resursi
 
 - [Azure AI Foundry Dokumentacija](https://learn.microsoft.com/azure/ai-foundry/)
-- [Primjeri Model Context Protocol](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
-- [Pregled Azure AI Foundry agenata](https://learn.microsoft.com/azure/ai-foundry/agents/)
-- [MCP specifikacija](https://spec.modelcontextprotocol.io/)
+- [Model Context Protocol Primjeri](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
+- [Pregled Azure AI Foundry Agenata](https://learn.microsoft.com/azure/ai-foundry/agents/)
+- [MCP Specifikacija](https://spec.modelcontextprotocol.io/)
 
 ## Podrška
 
 Za dodatnu podršku i pitanja:
 - Pregledajte [Azure AI Foundry dokumentaciju](https://learn.microsoft.com/azure/ai-foundry/)
-- Provjerite [MCP community resurse](https://modelcontextprotocol.io/)
+- Provjerite [MCP zajedničke resurse](https://modelcontextprotocol.io/)
 
 ## Što slijedi
 
 - [6. Community Contributions](../../06-CommunityContributions/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj je dokument preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za važne informacije preporučuje se profesionalni ljudski prijevod. Nismo odgovorni za bilo kakva nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

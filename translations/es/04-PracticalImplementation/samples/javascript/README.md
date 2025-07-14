@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-16T15:42:53+00:00",
+  "translation_date": "2025-07-13T23:26:18+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "es"
 }
 -->
 # Ejemplo
 
-Este es un ejemplo en JavaScript para un MCP Server
+Este es un ejemplo en JavaScript para un servidor MCP
 
-Aquí hay un ejemplo de registro de una herramienta donde registramos una herramienta que hace una llamada simulada a un LLM:
+Aquí tienes un ejemplo de registro de una herramienta donde registramos una herramienta que realiza una llamada simulada a un LLM:
 
 ```javascript
 this.mcpServer.tool(
@@ -74,9 +74,9 @@ this.mcpServer.tool(
 );
 ```
 
-## Instalar
+## Instalación
 
-Ejecute el siguiente comando:
+Ejecuta el siguiente comando:
 
 ```bash
 npm install
@@ -88,5 +88,5 @@ npm install
 npm start
 ```
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea que surja del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

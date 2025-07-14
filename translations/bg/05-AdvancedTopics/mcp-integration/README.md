@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "33daea2e41ef7635cf13c41d6a3ea773",
-  "translation_date": "2025-06-13T01:13:47+00:00",
+  "translation_date": "2025-07-14T00:09:19+00:00",
   "source_file": "05-AdvancedTopics/mcp-integration/README.md",
   "language_code": "bg"
 }

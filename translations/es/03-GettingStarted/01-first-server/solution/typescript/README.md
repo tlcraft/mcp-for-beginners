@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac67652abc453e2a7e2c75cd7a8897ae",
-  "translation_date": "2025-05-16T15:10:14+00:00",
+  "translation_date": "2025-07-13T18:03:05+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/typescript/README.md",
   "language_code": "es"
 }
@@ -25,7 +25,7 @@ npm run build
 
 ## -4- Probar el ejemplo
 
-Con el servidor ejecutándose en una terminal, abre otra terminal y ejecuta el siguiente comando:
+Con el servidor en ejecución en una terminal, abre otra terminal y ejecuta el siguiente comando:
 
 ```bash
 npm run inspector
@@ -35,12 +35,12 @@ Esto debería iniciar un servidor web con una interfaz visual que te permitirá 
 
 Una vez que el servidor esté conectado:
 
-- intenta listar las herramientas y ejecutar `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- intenta listar las herramientas y ejecutar `add` con los argumentos 2 y 4, deberías ver 6 como resultado.
+- ve a resources y resource template y llama a "greeting", escribe un nombre y deberías ver un saludo con el nombre que proporcionaste.
 
-### Testing in CLI mode
+### Pruebas en modo CLI
 
-The inspector you ran is actually a Node.js app and `mcp dev` que es un envoltorio alrededor de esto.
+El inspector que ejecutaste es en realidad una aplicación Node.js y `mcp dev` es un envoltorio alrededor de ella.
 
 Puedes iniciarlo directamente en modo CLI ejecutando el siguiente comando:
 
@@ -100,8 +100,8 @@ Deberías ver la siguiente salida:
 ```
 
 > ![!TIP]
-> Usualmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
+> Generalmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
 > Lee más sobre el inspector [aquí](https://github.com/modelcontextprotocol/inspector).
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac67652abc453e2a7e2c75cd7a8897ae",
-  "translation_date": "2025-05-17T09:27:11+00:00",
+  "translation_date": "2025-07-13T18:07:41+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/typescript/README.md",
   "language_code": "hr"
 }
 -->
 # Pokretanje ovog primjera
 
-Preporučuje se instalacija `uv`, ali nije obavezna, pogledajte [upute](https://docs.astral.sh/uv/#highlights)
+Preporučuje se instalacija `uv`, ali nije obavezno, pogledajte [upute](https://docs.astral.sh/uv/#highlights)
 
 ## -1- Instalirajte ovisnosti
 
@@ -19,28 +19,29 @@ npm install
 
 ## -3- Pokrenite primjer
 
+
 ```bash
 npm run build
 ```
 
 ## -4- Testirajte primjer
 
-S pokrenutim serverom u jednom terminalu, otvorite drugi terminal i pokrenite sljedeću naredbu:
+Dok je server pokrenut u jednom terminalu, otvorite drugi terminal i pokrenite sljedeću naredbu:
 
 ```bash
 npm run inspector
 ```
 
-To bi trebalo pokrenuti web server s vizualnim sučeljem koje vam omogućuje testiranje primjera.
+Ovo bi trebalo pokrenuti web server s vizualnim sučeljem koje vam omogućuje testiranje primjera.
 
 Kada se server poveže:
 
-- pokušajte nabrojati alate i pokrenuti `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- pokušajte ispisati alate i pokrenuti `add` s argumentima 2 i 4, trebali biste vidjeti rezultat 6.
+- idite na resources i resource template i pozovite "greeting", unesite ime i trebali biste vidjeti pozdrav s imenom koje ste unijeli.
 
-### Testing in CLI mode
+### Testiranje u CLI načinu
 
-The inspector you ran is actually a Node.js app and `mcp dev` je omotač oko njega.
+Inspector koji ste pokrenuli zapravo je Node.js aplikacija, a `mcp dev` je omotač oko nje.
 
 Možete ga pokrenuti izravno u CLI načinu pokretanjem sljedeće naredbe:
 
@@ -48,7 +49,7 @@ Možete ga pokrenuti izravno u CLI načinu pokretanjem sljedeće naredbe:
 npx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/list
 ```
 
-Ovo će prikazati sve alate dostupne na serveru. Trebali biste vidjeti sljedeći izlaz:
+Ovo će ispisati sve alate dostupne na serveru. Trebali biste vidjeti sljedeći ispis:
 
 ```text
 {
@@ -79,13 +80,13 @@ Ovo će prikazati sve alate dostupne na serveru. Trebali biste vidjeti sljedeći
 }
 ```
 
-Za pokretanje alata upišite:
+Za pozivanje alata upišite:
 
 ```bash
 nnpx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Trebali biste vidjeti sljedeći izlaz:
+Trebali biste vidjeti sljedeći ispis:
 
 ```text
 {
@@ -100,8 +101,8 @@ Trebali biste vidjeti sljedeći izlaz:
 ```
 
 > ![!TIP]
-> Obično je puno brže pokrenuti inspektor u CLI načinu nego u pregledniku.
-> Pročitajte više o inspektoru [ovdje](https://github.com/modelcontextprotocol/inspector).
+> Obično je puno brže pokrenuti inspector u CLI načinu nego u pregledniku.
+> Više o inspectoru pročitajte [ovdje](https://github.com/modelcontextprotocol/inspector).
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden koristeći AI uslugu za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, molimo vas da budete svjesni da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne odgovaramo za nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

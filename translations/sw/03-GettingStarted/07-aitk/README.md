@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8248e3491f5245ee6ab48ef724a4f65a",
-  "translation_date": "2025-07-04T18:26:40+00:00",
+  "translation_date": "2025-07-13T21:39:08+00:00",
   "source_file": "03-GettingStarted/07-aitk/README.md",
   "language_code": "sw"
 }
 -->
 # Kutumia server kutoka kwa ugani wa AI Toolkit kwa Visual Studio Code
 
-Unapojenga wakala wa AI, siyo tu kuhusu kutoa majibu mahiri; pia ni kuhusu kumpa wakala wako uwezo wa kuchukua hatua. Hapa ndipo Model Context Protocol (MCP) inapoingia. MCP inafanya iwe rahisi kwa mawakala kufikia zana na huduma za nje kwa njia thabiti. Fikiria kama unamuunganisha wakala wako kwenye sanduku la zana anazoweza *kwelikweli* kutumia.
+Unapojenga wakala wa AI, siyo tu kuhusu kutoa majibu mahiri; pia ni kuhusu kumpa wakala wako uwezo wa kuchukua hatua. Hapa ndipo Model Context Protocol (MCP) inapoingia. MCP hufanya iwe rahisi kwa mawakala kufikia zana na huduma za nje kwa njia thabiti. Fikiria kama unamunganisha wakala wako kwenye sanduku la zana ambalo anaweza *kutumia kweli*.
 
 Tuseme unamuunganisha wakala kwenye server ya calculator ya MCP. Ghafla, wakala wako anaweza kufanya hesabu za hisabati kwa kupokea tu ombi kama “Ni 47 mara 89 ni kiasi gani?”—hakuna haja ya kuandika mantiki ngumu au kujenga API maalum.
 
@@ -65,7 +65,7 @@ Zoezi linatumia mfano wa **GPT-4o**. Mfano huu unapaswa kuongezwa kwenye **My Mo
 
 **Agent (Prompt) Builder** inakuwezesha kuunda na kubinafsisha mawakala wako wenye nguvu za AI. Katika sehemu hii, utaunda wakala mpya na kumtenga mfano wa kuendesha mazungumzo.
 
-![Picha ya kiolesura cha "Calculator Agent" katika ugani wa AI Toolkit kwa Visual Studio Code. Paneli ya kushoto inaonyesha mfano ulioteuliwa "OpenAI GPT-4o (via GitHub)." OMBI la mfumo linasema "Wewe ni profesa wa chuo kikuu anaye fundisha hisabati," na ombi la mtumiaji linasema, "Nielezee mlinganyo wa Fourier kwa maneno rahisi." Chaguzi za ziada ni vifungo vya kuongeza zana, kuwezesha MCP Server, na kuchagua muundo wa matokeo. Kitufe cha buluu cha “Run” kiko chini. Paneli ya kulia inaonyesha mifano mitatu ya wakala: Web Developer (na MCP Server, Second-Grade Simplifier, na Dream Interpreter, kila moja na maelezo mafupi ya kazi zao.](../../../../translated_images/aitk-agent-builder.901e3a2960c3e4774b29a23024ff5bec2d4232f57fae2a418b2aaae80f81c05f.sw.png)
+![Picha ya kiolesura cha "Calculator Agent" katika ugani wa AI Toolkit kwa Visual Studio Code. Paneli ya kushoto inaonyesha mfano ulioteuliwa "OpenAI GPT-4o (via GitHub)." Ombi la mfumo linasema "Wewe ni profesa wa chuo kikuu anaye fundisha hisabati," na ombi la mtumiaji linasema, "Nielezee mlinganyo wa Fourier kwa maneno rahisi." Chaguzi za ziada ni vifungo vya kuongeza zana, kuwezesha MCP Server, na kuchagua muundo wa matokeo. Kuna kitufe cha buluu cha “Run” chini. Paneli ya kulia inaonyesha "Anza na Mifano," na mawakala watatu wa mfano: Web Developer (na MCP Server, Second-Grade Simplifier, na Dream Interpreter, kila mmoja na maelezo mafupi ya kazi zao.](../../../../translated_images/aitk-agent-builder.901e3a2960c3e4774b29a23024ff5bec2d4232f57fae2a418b2aaae80f81c05f.sw.png)
 
 1. Fungua ugani wa **AI Toolkit** kutoka **Activity Bar**.
 1. Katika sehemu ya **Tools**, chagua **Agent (Prompt) Builder**. Kuchagua **Agent (Prompt) Builder** hufungua kichupo kipya cha mhariri.
@@ -75,13 +75,13 @@ Zoezi linatumia mfano wa **GPT-4o**. Mfano huu unapaswa kuongezwa kwenye **My Mo
 
 ### -2- Unda ombi la mfumo kwa wakala
 
-Baada ya kuanzisha wakala, ni wakati wa kufafanua tabia na kusudi lake. Katika sehemu hii, utatumia kipengele cha **Generate system prompt** kuelezea tabia inayotarajiwa ya wakala—katika kesi hii, wakala wa calculator—na kumruhusu mfano kuandika ombi la mfumo kwako.
+Baada ya kuanzisha wakala, ni wakati wa kufafanua tabia na kusudi lake. Katika sehemu hii, utatumia kipengele cha **Generate system prompt** kuelezea tabia inayotarajiwa ya wakala—katika kesi hii, wakala wa calculator—na kumruhusu mfano kuandika ombi la mfumo kwa niaba yako.
 
-![Picha ya kiolesura cha "Calculator Agent" katika AI Toolkit kwa Visual Studio Code na dirisha la modal linaloitwa "Generate a prompt." Modal linaelezea kuwa templeti ya ombi inaweza kuzalishwa kwa kushiriki maelezo ya msingi na lina sanduku la maandishi lenye mfano wa ombi wa mfumo: "Wewe ni msaidizi wa hisabati mwenye msaada na ufanisi. Unapopewa tatizo linalohusiana na hesabu za msingi, unajibu kwa matokeo sahihi." Chini ya sanduku kuna vifungo vya "Close" na "Generate." Nyuma, sehemu ya usanidi wa wakala inaonekana, ikiwa ni pamoja na mfano ulioteuliwa "OpenAI GPT-4o (via GitHub)" na sehemu za ombi la mfumo na mtumiaji.](../../../../translated_images/aitk-generate-prompt.ba9e69d3d2bbe2a26444d0c78775540b14196061eee32c2054e9ee68c4f51f3a.sw.png)
+![Picha ya kiolesura cha "Calculator Agent" katika AI Toolkit kwa Visual Studio Code na dirisha la modal linaloitwa "Generate a prompt." Modal linaelezea kuwa templeti ya ombi inaweza kutengenezwa kwa kushiriki maelezo ya msingi na lina sanduku la maandishi lenye mfano wa ombi wa mfumo: "Wewe ni msaidizi wa hisabati mwenye msaada na ufanisi. Unapopewa tatizo linalohusiana na hesabu za msingi, unajibu kwa jibu sahihi." Chini ya sanduku kuna vifungo vya "Close" na "Generate." Nyuma, sehemu ya usanidi wa wakala inaonekana, ikiwa ni pamoja na mfano ulioteuliwa "OpenAI GPT-4o (via GitHub)" na sehemu za ombi la mfumo na mtumiaji.](../../../../translated_images/aitk-generate-prompt.ba9e69d3d2bbe2a26444d0c78775540b14196061eee32c2054e9ee68c4f51f3a.sw.png)
 
-1. Kwa sehemu ya **Prompts**, bonyeza kitufe cha **Generate system prompt**. Kitufe hiki hufungua mjenzi wa ombi unaotumia AI kuzalisha ombi la mfumo kwa wakala.
-1. Katika dirisha la **Generate a prompt**, andika yafuatayo: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
-1. Bonyeza kitufe cha **Generate**. Taarifa itatokea chini kulia kuthibitisha kuwa ombi la mfumo linaendelea kuzalishwa. Baada ya kumaliza, ombi litaonekana kwenye sehemu ya **System prompt** ya **Agent (Prompt) Builder**.
+1. Kwa sehemu ya **Prompts**, bonyeza kitufe cha **Generate system prompt**. Kitufe hiki hufungua mjenzi wa ombi unaotumia AI kuunda ombi la mfumo kwa wakala.
+1. Katika dirisha la **Generate a prompt**, andika yafuatayo: `Wewe ni msaidizi wa hisabati mwenye msaada na ufanisi. Unapopewa tatizo linalohusiana na hesabu za msingi, unajibu kwa jibu sahihi.`
+1. Bonyeza kitufe cha **Generate**. Taarifa itatokea chini kulia kuthibitisha kuwa ombi la mfumo linaandaliwa. Baada ya kumaliza, ombi litaonekana kwenye sehemu ya **System prompt** ya **Agent (Prompt) Builder**.
 1. Kagua **System prompt** na ubadilishe kama inahitajika.
 
 ### -3- Unda server ya MCP
@@ -154,38 +154,38 @@ AI Toolkit ina templeti zinazorahisisha kuunda server yako ya MCP. Tutatumia tem
 
 Sasa wakala wako ana zana, ni wakati wa kuzitumia! Katika sehemu hii, utatuma maombi kwa wakala kujaribu na kuthibitisha kama wakala anatumia zana sahihi kutoka kwa server ya calculator MCP.
 
-![Picha ya kiolesura cha Calculator Agent katika ugani wa AI Toolkit kwa Visual Studio Code. Paneli ya kushoto, chini ya “Tools,” server ya MCP iitwayo local-server-calculator_server imeongezwa, ikionyesha zana nne zinazopatikana: add, subtract, multiply, na divide. Bango linaonyesha zana nne zinafanya kazi. Chini kuna sehemu iliyofungwa ya “Structure output” na kitufe cha buluu cha “Run.” Paneli ya kulia, chini ya “Model Response,” wakala anaitisha zana za multiply na subtract kwa maingizo {"a": 3, "b": 25} na {"a": 75, "b": 20} mtawalia. Jibu la mwisho la “Tool Response” linaonyeshwa kama 75.0. Kitufe cha “View Code” kiko chini.](../../../../translated_images/aitk-agent-response-with-tools.e7c781869dc8041a25f9903ed4f7e8e0c7e13d7d94f6786a6c51b1e172f56866.sw.png)
+![Picha ya kiolesura cha Calculator Agent katika ugani wa AI Toolkit kwa Visual Studio Code. Paneli ya kushoto, chini ya “Tools,” server ya MCP iitwayo local-server-calculator_server imeongezwa, ikionyesha zana nne zinazopatikana: add, subtract, multiply, na divide. Bango linaonyesha zana nne ziko hai. Chini kuna sehemu iliyofungwa ya “Structure output” na kitufe cha buluu cha “Run.” Paneli ya kulia, chini ya “Model Response,” wakala anaitisha zana za multiply na subtract kwa maingizo {"a": 3, "b": 25} na {"a": 75, "b": 20} mtawalia. Jibu la mwisho la “Tool Response” linaonyeshwa kama 75.0. Kitufe cha “View Code” kiko chini.](../../../../translated_images/aitk-agent-response-with-tools.e7c781869dc8041a25f9903ed4f7e8e0c7e13d7d94f6786a6c51b1e172f56866.sw.png)
 
 Utaendesha server ya calculator MCP kwenye mashine yako ya maendeleo kama mteja wa MCP kupitia **Agent Builder**.
 
 1. Bonyeza `F5` kuanza debugging ya server ya MCP. **Agent (Prompt) Builder** itaonekana kwenye kichupo kipya cha mhariri. Hali ya server itaonekana kwenye terminal.
-1. Katika sehemu ya **User prompt** ya **Agent (Prompt) Builder**, andika ombi lifuatalo: `I bought 3 items priced at $25 each, and then used a $20 discount. How much did I pay?`
+1. Katika sehemu ya **User prompt** ya **Agent (Prompt) Builder**, andika ombi lifuatalo: `Nimenunua vitu 3 kila kimoja kwa bei ya $25, kisha nikatumia punguzo la $20. Nililipa kiasi gani?`
 1. Bonyeza kitufe cha **Run** kuunda jibu la wakala.
-1. Kagua matokeo ya wakala. Mfano unapaswa kuhitimisha kuwa uliyalipa **$55**.
+1. Kagua matokeo ya wakala. Mfano unapaswa kuhitimisha kuwa ulilipa **$55**.
 1. Hapa ni muhtasari wa kinachotakiwa kutokea:
     - Wakala huchagua zana za **multiply** na **subtract** kusaidia katika hesabu.
     - Thamani za `a` na `b` zinatengwa kwa zana ya **multiply**.
     - Thamani za `a` na `b` zinatengwa kwa zana ya **subtract**.
-    - Majibu kutoka kwa kila zana yanatolewa katika sehemu ya **Tool Response**.
-    - Matokeo ya mwisho kutoka kwa mfano yanatolewa katika sehemu ya mwisho ya **Model Response**.
+    - Jibu kutoka kwa kila zana hutolewa katika sehemu ya **Tool Response**.
+    - Matokeo ya mwisho kutoka kwa mfano hutolewa katika sehemu ya mwisho ya **Model Response**.
 1. Tuma maombi zaidi kujaribu zaidi wakala. Unaweza kubadilisha ombi lililopo katika sehemu ya **User prompt** kwa kubonyeza na kuandika upya.
 1. Ukimaliza kujaribu wakala, unaweza kuacha server kupitia **terminal** kwa kubonyeza **CTRL/CMD+C** kuacha.
 
 ## Kazi ya Nyumbani
 
-Jaribu kuongeza zana nyingine kwenye faili yako ya **server.py** (mfano: rudisha mzizi wa mraba wa nambari). Tuma maombi zaidi yanayomlazimu wakala kutumia zana yako mpya (au zana zilizopo). Hakikisha unaanzisha upya server ili zana mpya zipakuliwe.
+Jaribu kuongeza zana mpya kwenye faili yako ya **server.py** (mfano: rudisha mzizi wa mraba wa nambari). Tuma maombi zaidi yanayomlazimu wakala kutumia zana yako mpya (au zana zilizopo). Hakikisha unaanzisha upya server ili zana mpya zipakuliwe.
 
 ## Suluhisho
 
 [Suluhisho](./solution/README.md)
 
-## Muhimu Kumbuka
+## Muhimu wa Kumbuka
 
 Mambo muhimu ya kuchukua kutoka sura hii ni:
 
 - Ugani wa AI Toolkit ni mteja mzuri unaokuwezesha kutumia MCP Servers na zana zao.
 - Unaweza kuongeza zana mpya kwa MCP servers, ukiongeza uwezo wa wakala kukidhi mahitaji yanayobadilika.
-- AI Toolkit ina templeti (mfano, templeti za server ya MCP za Python) kurahisisha uundaji wa zana maalum.
+- AI Toolkit ina templeti (mfano, templeti za server ya MCP za Python) zinazorahisisha kuunda zana maalum.
 
 ## Rasilimali Zaidi
 
@@ -195,4 +195,4 @@ Mambo muhimu ya kuchukua kutoka sura hii ni:
 - Ifuatayo: [Testing & Debugging](../08-testing/README.md)
 
 **Kiarifu cha Kutotegemea**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

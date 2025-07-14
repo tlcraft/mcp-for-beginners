@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T15:14:28+00:00",
+  "translation_date": "2025-07-13T22:05:20+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "en"
 }
 -->
 # Deploying MCP Servers
 
-Deploying your MCP server allows others to access its tools and resources beyond your local environment. There are several deployment strategies to consider, depending on your needs for scalability, reliability, and ease of management. Below you'll find guidance for deploying MCP servers locally, in containers, and in the cloud.
+Deploying your MCP server lets others access its tools and resources beyond your local setup. There are several deployment options depending on your needs for scalability, reliability, and ease of management. Below you'll find guidance for deploying MCP servers locally, in containers, and in the cloud.
 
 ## Overview
 
@@ -24,12 +24,12 @@ By the end of this lesson, you will be able to:
 
 ## Local development and deployment
 
-If your server is intended to be used by running it on users' machines, you can follow these steps:
+If your server is intended to run on users' machines, follow these steps:
 
-1. **Download the server**. If you didn’t create the server yourself, download it first to your machine.  
+1. **Download the server**. If you didn’t create the server, download it to your machine first.  
 1. **Start the server process**: Run your MCP server application.
 
-For SSE (not required for stdio type server):
+For SSE (not required for stdio type servers):
 
 1. **Configure networking**: Make sure the server is accessible on the expected port.  
 1. **Connect clients**: Use local connection URLs like `http://localhost:3000`.
@@ -68,7 +68,7 @@ Here’s how you can do it:
   uv run fastapi dev main.py
   ```
 
-1. To test locally, create a *mcp.json* file in a *.vscode* directory and add the following content:
+1. To test locally, create a *mcp.json* file in a *.vscode* folder and add the following content:
 
   ```json
   {
@@ -92,7 +92,7 @@ Here’s how you can do it:
   }
   ```
 
-  Once the SSE server is running, you can click the play icon in the JSON file. You should now see the server’s tools being recognized by GitHub Copilot, indicated by the Tool icon.
+  Once the SSE server is running, click the play icon in the JSON file. You should now see the server’s tools being recognized by GitHub Copilot, indicated by the Tool icon.
 
 1. To deploy, run the following command:
 
@@ -100,13 +100,14 @@ Here’s how you can do it:
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-That’s it! Deploy it locally or deploy it to Azure by following these steps.
+That’s it—deploy locally or deploy to Azure by following these steps.
 
 ## Additional Resources
 
 - [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
 - [Azure Container Apps article](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
 - [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
+
 
 ## What's Next
 

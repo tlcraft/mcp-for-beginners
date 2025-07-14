@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
-  "translation_date": "2025-07-04T17:54:36+00:00",
+  "translation_date": "2025-07-13T18:17:30+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "nl"
 }
 -->
-In de vorige code hebben we:
+In de bovenstaande code hebben we:
 
 - De bibliotheken geïmporteerd
 - Een instantie van een client gemaakt en verbonden via stdio als transport.
@@ -19,7 +19,7 @@ Laten we in de volgende oefensectie de tijd nemen om elke codefragment te ontled
 
 ## Oefening: Een client schrijven
 
-Zoals hierboven gezegd, laten we de tijd nemen om de code uit te leggen, en voel je vrij om mee te coderen als je dat wilt.
+Zoals hierboven gezegd, nemen we de tijd om de code uit te leggen, en voel je vrij om mee te coderen als je dat wilt.
 
 ### -1- Bibliotheken importeren
 

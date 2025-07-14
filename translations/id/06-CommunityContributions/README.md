@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-05-20T22:06:04+00:00",
+  "translation_date": "2025-07-14T04:01:50+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "id"
 }
@@ -11,20 +11,20 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Ikhtisar
 
-Pelajaran ini berfokus pada cara berinteraksi dengan komunitas MCP, berkontribusi pada ekosistem MCP, dan mengikuti praktik terbaik untuk pengembangan kolaboratif. Memahami cara berpartisipasi dalam proyek MCP sumber terbuka sangat penting bagi mereka yang ingin membentuk masa depan teknologi ini.
+Pelajaran ini membahas cara berinteraksi dengan komunitas MCP, berkontribusi pada ekosistem MCP, dan mengikuti praktik terbaik untuk pengembangan kolaboratif. Memahami cara berpartisipasi dalam proyek MCP open-source sangat penting bagi mereka yang ingin membentuk masa depan teknologi ini.
 
 ## Tujuan Pembelajaran
 
-Pada akhir pelajaran ini, Anda akan dapat:
+Pada akhir pelajaran ini, Anda akan mampu:
 - Memahami struktur komunitas dan ekosistem MCP
 - Berpartisipasi secara efektif dalam forum dan diskusi komunitas MCP
-- Berkontribusi pada repositori sumber terbuka MCP
+- Berkontribusi pada repositori open-source MCP
 - Membuat dan membagikan alat MCP kustom
 - Mengikuti praktik terbaik untuk pengembangan dan kolaborasi MCP
 
 ## Ekosistem Komunitas MCP
 
-Ekosistem MCP terdiri dari berbagai komponen dan peserta yang bekerja sama untuk memajukan protokol.
+Ekosistem MCP terdiri dari berbagai komponen dan peserta yang bekerja sama untuk mengembangkan protokol.
 
 ### Komponen Utama Komunitas
 
@@ -43,32 +43,32 @@ Ekosistem MCP terdiri dari berbagai komponen dan peserta yang bekerja sama untuk
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
 
-#### Sumber Daya yang Didukung Komunitas
+#### Sumber Daya yang Didorong oleh Komunitas
 
-- Implementasi SDK berdasarkan bahasa pemrograman
+- Implementasi SDK spesifik bahasa
 - Implementasi server dan perpustakaan alat
 - Posting blog dan tutorial
-- Forum komunitas dan diskusi di media sosial
+- Forum komunitas dan diskusi media sosial
 
-## Berkontribusi ke MCP
+## Berkontribusi pada MCP
 
 ### Jenis Kontribusi
 
 Ekosistem MCP menerima berbagai jenis kontribusi:
 
-1. **Code Contributions**:
+1. **Kontribusi Kode**:
    - Peningkatan protokol inti
    - Perbaikan bug
    - Implementasi alat
    - Perpustakaan client/server dalam berbagai bahasa
 
-2. **Documentation**:
-   - Memperbaiki dokumentasi yang sudah ada
+2. **Dokumentasi**:
+   - Memperbaiki dokumentasi yang ada
    - Membuat tutorial dan panduan
    - Menerjemahkan dokumentasi
    - Membuat contoh dan aplikasi sampel
 
-3. **Community Support**:
+3. **Dukungan Komunitas**:
    - Menjawab pertanyaan di forum
    - Menguji dan melaporkan masalah
    - Mengorganisir acara komunitas
@@ -78,7 +78,7 @@ Ekosistem MCP menerima berbagai jenis kontribusi:
 
 Untuk berkontribusi pada protokol inti MCP atau implementasi resmi:
 
-#### Contoh .NET: Berkontribusi pada Peningkatan Protokol
+#### Contoh .NET: Berkontribusi Peningkatan Protokol
 
 ```csharp
 // Example contribution to MCP protocol: Adding support for binary data streams
@@ -145,7 +145,7 @@ namespace Microsoft.Mcp.Protocol
 }
 ```
 
-#### Contoh Java: Berkontribusi pada Perbaikan Bug
+#### Contoh Java: Berkontribusi Perbaikan Bug
 
 ```java
 package com.mcp.tools;
@@ -390,7 +390,7 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Panduan Kontribusi
+### Pedoman Kontribusi
 
 Untuk membuat kontribusi yang berhasil pada proyek MCP:
 
@@ -398,8 +398,8 @@ Untuk membuat kontribusi yang berhasil pada proyek MCP:
 2. **Ikuti Panduan Gaya**: Patuhi gaya pengkodean dan konvensi proyek
 3. **Tulis Tes**: Sertakan unit test untuk kontribusi kode Anda
 4. **Dokumentasikan Pekerjaan Anda**: Tambahkan dokumentasi yang jelas untuk fitur atau perubahan baru
-5. **Ajukan PR yang Terfokus**: Jaga agar pull request fokus pada satu isu atau fitur saja
-6. **Tanggapi Masukan**: Responsif terhadap masukan pada kontribusi Anda
+5. **Ajukan PR yang Terfokus**: Jaga pull request agar fokus pada satu masalah atau fitur
+6. **Tanggapi Masukan**: Responsif terhadap umpan balik pada kontribusi Anda
 
 ### Contoh Alur Kerja Kontribusi
 
@@ -754,7 +754,7 @@ Saat membagikan alat MCP dengan komunitas:
 1. **Dokumentasi Lengkap**:
    - Dokumentasikan tujuan, cara penggunaan, dan contoh
    - Jelaskan parameter dan nilai pengembalian
-   - Dokumentasikan ketergantungan eksternal apa pun
+   - Dokumentasikan ketergantungan eksternal jika ada
 
 2. **Penanganan Error**:
    - Terapkan penanganan error yang kuat
@@ -762,8 +762,8 @@ Saat membagikan alat MCP dengan komunitas:
    - Tangani kasus tepi dengan baik
 
 3. **Pertimbangan Performa**:
-   - Optimalkan kecepatan dan penggunaan sumber daya
-   - Terapkan caching jika perlu
+   - Optimalkan untuk kecepatan dan penggunaan sumber daya
+   - Terapkan caching jika sesuai
    - Pertimbangkan skalabilitas
 
 4. **Keamanan**:
@@ -772,20 +772,20 @@ Saat membagikan alat MCP dengan komunitas:
    - Terapkan pembatasan laju untuk panggilan API eksternal
 
 5. **Pengujian**:
-   - Sertakan cakupan tes yang komprehensif
+   - Sertakan cakupan pengujian yang komprehensif
    - Uji dengan berbagai tipe input dan kasus tepi
    - Dokumentasikan prosedur pengujian
 
 ## Kolaborasi Komunitas dan Praktik Terbaik
 
-Kolaborasi yang efektif adalah kunci ekosistem MCP yang berkembang.
+Kolaborasi yang efektif adalah kunci untuk ekosistem MCP yang berkembang.
 
 ### Saluran Komunikasi
 
 - GitHub Issues dan Discussions
 - Microsoft Tech Community
 - Saluran Discord dan Slack
-- Stack Overflow (tag: `model-context-protocol` or `mcp`)
+- Stack Overflow (tag: `model-context-protocol` atau `mcp`)
 
 ### Review Kode
 
@@ -793,7 +793,7 @@ Saat meninjau kontribusi MCP:
 
 1. **Kejelasan**: Apakah kode jelas dan terdokumentasi dengan baik?
 2. **Kebenaran**: Apakah kode berfungsi sesuai harapan?
-3. **Konsistensi**: Apakah kode mengikuti konvensi proyek?
+3. **Konsistensi**: Apakah mengikuti konvensi proyek?
 4. **Kelengkapan**: Apakah tes dan dokumentasi sudah disertakan?
 5. **Keamanan**: Apakah ada masalah keamanan?
 
@@ -802,13 +802,13 @@ Saat meninjau kontribusi MCP:
 Saat mengembangkan untuk MCP:
 
 1. **Versi Protokol**: Patuhi versi protokol MCP yang didukung alat Anda
-2. **Kompatibilitas Klien**: Pertimbangkan kompatibilitas ke belakang
+2. **Kompatibilitas Client**: Pertimbangkan kompatibilitas ke belakang
 3. **Kompatibilitas Server**: Ikuti panduan implementasi server
 4. **Perubahan yang Memutuskan**: Dokumentasikan dengan jelas setiap perubahan yang memutuskan kompatibilitas
 
 ## Contoh Proyek Komunitas: MCP Tool Registry
 
-Kontribusi komunitas penting bisa berupa mengembangkan registri publik untuk alat MCP.
+Kontribusi komunitas yang penting bisa berupa pengembangan registri publik untuk alat MCP.
 
 ```python
 # Example schema for a community tool registry API
@@ -890,14 +890,14 @@ async def delete_tool(tool_name: str):
 ## Poin Penting
 
 - Komunitas MCP beragam dan menerima berbagai jenis kontribusi
-- Kontribusi ke MCP bisa berupa peningkatan protokol inti hingga alat kustom
-- Mengikuti panduan kontribusi meningkatkan peluang PR Anda diterima
+- Kontribusi pada MCP bisa berupa peningkatan protokol inti hingga alat kustom
+- Mengikuti pedoman kontribusi meningkatkan peluang PR Anda diterima
 - Membuat dan membagikan alat MCP adalah cara berharga untuk memperkaya ekosistem
 - Kolaborasi komunitas sangat penting untuk pertumbuhan dan perbaikan MCP
 
 ## Latihan
 
-1. Identifikasi area dalam ekosistem MCP di mana Anda bisa berkontribusi berdasarkan keterampilan dan minat Anda
+1. Identifikasi area dalam ekosistem MCP di mana Anda bisa berkontribusi berdasarkan keahlian dan minat Anda
 2. Fork repositori MCP dan siapkan lingkungan pengembangan lokal
 3. Buat peningkatan kecil, perbaikan bug, atau alat yang bermanfaat bagi komunitas
 4. Dokumentasikan kontribusi Anda dengan tes dan dokumentasi yang tepat
@@ -913,4 +913,4 @@ async def delete_tool(tool_name: str):
 Selanjutnya: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

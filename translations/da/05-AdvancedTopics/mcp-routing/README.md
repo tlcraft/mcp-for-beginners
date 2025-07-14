@@ -2,18 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
-  "translation_date": "2025-06-13T00:07:47+00:00",
+  "translation_date": "2025-07-14T02:14:05+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "da"
 }
 -->
-## Prøvetagning og Routing Arkitektur i MCP
+## Dynamisk værktøjsrouting
 
-Prøvetagning er en vigtig komponent i Model Context Protocol (MCP), som muliggør effektiv behandling og routing af forespørgsler. Det indebærer at analysere indkommende forespørgsler for at bestemme den mest passende model eller service til at håndtere dem, baseret på forskellige kriterier som indholdstype, brugerens kontekst og systembelastning.
+Værktøjsrouting sikrer, at kald til værktøjer dirigeres til den mest passende service baseret på konteksten. For eksempel kan et kald til et vejrværktøj skulle rutes til en regional endpoint baseret på brugerens placering, eller et regneværktøj kan have brug for at anvende en specifik version af API'en.
 
-Prøvetagning og routing kan kombineres for at skabe en robust arkitektur, der optimerer ressourceudnyttelsen og sikrer høj tilgængelighed. Prøvetagningsprocessen kan bruges til at klassificere forespørgsler, mens routing sørger for at dirigere dem til de rette modeller eller services.
+Lad os se på et eksempel på implementering, der demonstrerer dynamisk værktøjsrouting baseret på anlyse af forespørgslen, regionale endpoints og versionsunderstøttelse.
 
-Diagrammet nedenfor illustrerer, hvordan prøvetagning og routing arbejder sammen i en omfattende MCP-arkitektur:
+## Sampling og routing-arkitektur i MCP
+
+Sampling er en afgørende komponent i Model Context Protocol (MCP), som muliggør effektiv behandling og routing af forespørgsler. Det indebærer at analysere indkommende forespørgsler for at bestemme den mest passende model eller service til at håndtere dem, baseret på forskellige kriterier som indholdstype, brugerens kontekst og systembelastning.
+
+Sampling og routing kan kombineres for at skabe en robust arkitektur, der optimerer ressourceudnyttelsen og sikrer høj tilgængelighed. Sampling-processen kan bruges til at klassificere forespørgsler, mens routing dirigerer dem til de relevante modeller eller services.
+
+Diagrammet nedenfor illustrerer, hvordan sampling og routing arbejder sammen i en omfattende MCP-arkitektur:
 
 ```mermaid
 flowchart TB
@@ -85,4 +91,4 @@ flowchart TB
 - [5.6 Sampling](../mcp-sampling/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

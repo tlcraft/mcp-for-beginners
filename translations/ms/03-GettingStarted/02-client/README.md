@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
-  "translation_date": "2025-07-04T18:13:38+00:00",
+  "translation_date": "2025-07-13T18:18:42+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "ms"
 }
@@ -15,7 +15,7 @@ Dalam kod sebelum ini kami:
 
 Itulah dia, sebuah klien yang boleh berkomunikasi dengan MCP Server.
 
-Mari kita luangkan masa dalam bahagian latihan seterusnya dan pecahkan setiap potongan kod serta terangkan apa yang sedang berlaku.
+Mari kita luangkan masa dalam bahagian latihan seterusnya dan huraikan setiap potongan kod serta terangkan apa yang sedang berlaku.
 
 ## Latihan: Menulis klien
 
@@ -27,13 +27,13 @@ Mari kita import perpustakaan yang kita perlukan, kita akan memerlukan rujukan k
 
 Mari kita teruskan ke instansiasi.
 
-### -2- Menginstansiasi klien dan pengangkutan
+### -2- Menginstansikan klien dan pengangkutan
 
-Kita perlu membuat instans pengangkutan dan juga instans klien kita:
+Kita perlu mencipta satu instans pengangkutan dan satu instans klien kita:
 
 ### -3- Menyenaraikan ciri-ciri server
 
-Sekarang, kita mempunyai klien yang boleh menyambung apabila program dijalankan. Namun, ia tidak menyenaraikan ciri-cirinya, jadi mari kita lakukan itu sekarang:
+Sekarang, kita mempunyai klien yang boleh menyambung apabila program dijalankan. Walau bagaimanapun, ia tidak menyenaraikan ciri-cirinya, jadi mari kita lakukan itu sekarang:
 
 Bagus, sekarang kita telah menangkap semua ciri. Soalannya, bila kita gunakan ciri-ciri ini? Klien ini agak mudah, maksudnya kita perlu memanggil ciri-ciri tersebut secara eksplisit apabila kita mahu menggunakannya. Dalam bab seterusnya, kita akan mencipta klien yang lebih maju yang mempunyai akses kepada model bahasa besar sendiri, LLM. Buat masa ini, mari lihat bagaimana kita boleh memanggil ciri-ciri pada server:
 

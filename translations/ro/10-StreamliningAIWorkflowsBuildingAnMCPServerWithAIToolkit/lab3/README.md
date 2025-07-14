@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-06-10T06:18:58+00:00",
+  "translation_date": "2025-07-14T08:19:27+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
   "language_code": "ro"
 }
@@ -17,38 +17,38 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 🎯 Obiective de Învățare
 
-La finalul acestui laborator vei putea:
+La finalul acestui laborator, vei putea:
 
-- ✅ Crea servere MCP personalizate folosind AI Toolkit
-- ✅ Configura și utiliza cea mai recentă versiune a MCP Python SDK (v1.9.3)
-- ✅ Configura și folosi MCP Inspector pentru depanare
-- ✅ Depana servere MCP atât în Agent Builder cât și în Inspector
-- ✅ Înțelege fluxurile de lucru avansate pentru dezvoltarea serverelor MCP
+- ✅ Să creezi servere MCP personalizate folosind AI Toolkit
+- ✅ Să configurezi și să folosești cea mai recentă versiune a MCP Python SDK (v1.9.3)
+- ✅ Să configurezi și să utilizezi MCP Inspector pentru depanare
+- ✅ Să depanezi servere MCP atât în Agent Builder, cât și în Inspector
+- ✅ Să înțelegi fluxurile avansate de dezvoltare a serverelor MCP
 
 ## 📋 Cerințe Prealabile
 
 - Finalizarea Laboratorului 2 (Fundamente MCP)
 - VS Code cu extensia AI Toolkit instalată
 - Mediu Python 3.10+
-- Node.js și npm pentru configurarea Inspectorului
+- Node.js și npm pentru configurarea Inspector
 
 ## 🏗️ Ce Vei Construi
 
-În acest laborator vei crea un **Weather MCP Server** care demonstrează:
+În acest laborator, vei crea un **Server MCP pentru Vreme** care demonstrează:
 - Implementarea unui server MCP personalizat
 - Integrarea cu AI Toolkit Agent Builder
-- Fluxuri de lucru profesionale pentru depanare
+- Fluxuri profesionale de depanare
 - Modele moderne de utilizare a MCP SDK
 
 ---
 
-## 🔧 Prezentare Generală a Componentelor Principale
+## 🔧 Prezentare Generală a Componentelor Cheie
 
 ### 🐍 MCP Python SDK  
-Model Context Protocol Python SDK oferă baza pentru construirea serverelor MCP personalizate. Vei folosi versiunea 1.9.3 cu capabilități avansate de depanare.
+Model Context Protocol Python SDK oferă baza pentru construirea serverelor MCP personalizate. Vei folosi versiunea 1.9.3 cu capabilități îmbunătățite de depanare.
 
 ### 🔍 MCP Inspector  
-Un instrument puternic pentru depanare care oferă:  
+Un instrument puternic de depanare care oferă:  
 - Monitorizare în timp real a serverului  
 - Vizualizarea execuției uneltelor  
 - Inspectarea cererilor și răspunsurilor de rețea  
@@ -62,11 +62,11 @@ Un instrument puternic pentru depanare care oferă:
 
 1. **Deschide Agent Builder** în VS Code prin extensia AI Toolkit  
 2. **Creează un agent nou** cu următoarea configurație:  
-   - Nume Agent: `WeatherAgent`
+   - Nume agent: `WeatherAgent`
 
 ![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.ro.png)
 
-### Pasul 2: Inițializează Proiectul MCP Server
+### Pasul 2: Inițializează Proiectul Server MCP
 
 1. **Mergi la Tools** → **Add Tool** în Agent Builder  
 2. **Selectează "MCP Server"** din opțiunile disponibile  
@@ -95,35 +95,33 @@ Un instrument puternic pentru depanare care oferă:
    └── README.md
    ```
 
-### Pasul 4: Actualizează la Ultima Versiune MCP SDK
+### Pasul 4: Actualizează la Cea Mai Recentă Versiune MCP SDK
 
-> **🔍 De ce să actualizăm?** Dorim să folosim cea mai recentă versiune MCP SDK (v1.9.3) și serviciul Inspector (0.14.0) pentru funcționalități extinse și capacități mai bune de depanare.
+> **🔍 De ce să actualizăm?** Dorim să folosim cea mai nouă versiune MCP SDK (v1.9.3) și serviciul Inspector (0.14.0) pentru funcționalități îmbunătățite și o depanare mai bună.
 
 #### 4a. Actualizează Dependențele Python
 
-**Editează `pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
+**Editează `pyproject.toml`:** actualizează [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
 
+#### 4b. Actualizează Configurația Inspector
 
-#### 4b. Update Inspector Configuration
+**Editează `inspector/package.json`:** actualizează [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
 
-**Edit `inspector/package.json`:** update [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
+#### 4c. Actualizează Dependențele Inspector
 
-#### 4c. Update Inspector Dependencies
+**Editează `inspector/package-lock.json`:** actualizează [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
 
-**Edit `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
+> **📝 Notă:** Acest fișier conține definiții extinse ale dependențelor. Mai jos este structura esențială – conținutul complet asigură rezolvarea corectă a dependențelor.
 
-> **📝 Note:** This file contains extensive dependency definitions. Below is the essential structure - the full content ensures proper dependency resolution.
+> **⚡ Pachet Complet Lock:** Fișierul complet package-lock.json conține aproximativ 3000 de linii cu definiții de dependențe. Mai sus este prezentată structura cheie – folosește fișierul furnizat pentru rezolvarea completă a dependențelor.
 
+### Pasul 5: Configurează Depanarea în VS Code
 
-> **⚡ Full Package Lock:** The complete package-lock.json contains ~3000 lines of dependency definitions. The above shows the key structure - use the provided file for complete dependency resolution.
+*Notă: Te rugăm să copiezi fișierul în calea specificată pentru a înlocui fișierul local corespunzător*
 
-### Step 5: Configure VS Code Debugging
+#### 5a. Actualizează Configurația de Lansare
 
-*Note: Please copy the file in the specified path to replace the corresponding local file*
-
-#### 5a. Update Launch Configuration
-
-**Edit `.vscode/launch.json`:**
+**Editează `.vscode/launch.json`:**
 
 ```json
 {
@@ -304,11 +302,11 @@ Un instrument puternic pentru depanare care oferă:
 
 ---
 
-## 🚀 Pornirea și Testarea Serverului MCP
+## 🚀 Rularea și Testarea Serverului MCP
 
 ### Pasul 6: Instalează Dependențele
 
-După ce ai făcut modificările de configurare, execută următoarele comenzi:
+După ce ai făcut modificările de configurare, rulează următoarele comenzi:
 
 **Instalează dependențele Python:**  
 ```bash
@@ -326,7 +324,7 @@ npm install
 1. **Apasă F5** sau folosește configurația **"Debug in Agent Builder"**  
 2. **Selectează configurația compusă** din panoul de depanare  
 3. **Așteaptă să pornească serverul** și să se deschidă Agent Builder  
-4. **Testează serverul tău weather MCP** cu întrebări în limbaj natural
+4. **Testează serverul tău MCP pentru vreme** cu întrebări în limbaj natural
 
 Introdu un prompt de genul acesta
 
@@ -360,28 +358,28 @@ How's the weather like in Seattle
 
 ## 🎯 Rezultate Cheie ale Învățării
 
-Finalizând acest laborator, ai:
+Prin finalizarea acestui laborator, ai:
 
 - [x] **Creat un server MCP personalizat** folosind șabloanele AI Toolkit  
-- [x] **Actualizat la cea mai recentă versiune MCP SDK** (v1.9.3) pentru funcționalități extinse  
+- [x] **Actualizat la cea mai recentă versiune MCP SDK** (v1.9.3) pentru funcționalități îmbunătățite  
 - [x] **Configurat fluxuri profesionale de depanare** pentru Agent Builder și Inspector  
-- [x] **Setat MCP Inspector** pentru testarea interactivă a serverului  
+- [x] **Setat MCP Inspector** pentru testare interactivă a serverului  
 - [x] **Stăpânit configurările de depanare VS Code** pentru dezvoltarea MCP
 
-## 🔧 Funcționalități Avansate Exploatate
+## 🔧 Funcționalități Avansate Explorate
 
-| Funcționalitate | Descriere | Caz de Utilizare |
-|-----------------|-----------|------------------|
-| **MCP Python SDK v1.9.3** | Implementarea protocolului cea mai nouă | Dezvoltare modernă de servere |
-| **MCP Inspector 0.14.0** | Instrument interactiv de depanare | Testare server în timp real |
-| **Depanare VS Code** | Mediu integrat de dezvoltare | Flux profesional de depanare |
-| **Integrare Agent Builder** | Conexiune directă cu AI Toolkit | Testare completă a agenților |
+| Funcționalitate           | Descriere                      | Caz de Utilizare               |
+|--------------------------|-------------------------------|-------------------------------|
+| **MCP Python SDK v1.9.3** | Implementare protocol actuală  | Dezvoltare modernă de server   |
+| **MCP Inspector 0.14.0**  | Instrument interactiv de depanare | Testare server în timp real    |
+| **Depanare VS Code**      | Mediu integrat de dezvoltare  | Flux profesional de depanare   |
+| **Integrare Agent Builder** | Conexiune directă cu AI Toolkit | Testare completă a agenților   |
 
 ## 📚 Resurse Suplimentare
 
 - [Documentația MCP Python SDK](https://modelcontextprotocol.io/docs/sdk/python)  
-- [Ghidul extensiei AI Toolkit](https://code.visualstudio.com/docs/ai/ai-toolkit)  
-- [Documentația depanării VS Code](https://code.visualstudio.com/docs/editor/debugging)  
+- [Ghidul Extensiei AI Toolkit](https://code.visualstudio.com/docs/ai/ai-toolkit)  
+- [Documentația Depanării VS Code](https://code.visualstudio.com/docs/editor/debugging)  
 - [Specificația Model Context Protocol](https://modelcontextprotocol.io/docs/concepts/architecture)
 
 ---
@@ -390,12 +388,12 @@ Finalizând acest laborator, ai:
 
 ### 🔜 Continuă cu Modulul Următor
 
-Ești gata să aplici abilitățile MCP într-un flux real de dezvoltare? Continuă cu **[Modulul 4: Dezvoltare Practică MCP - Server Custom GitHub Clone](../lab4/README.md)** unde vei:  
-- Construi un server MCP pregătit pentru producție care automatizează operațiuni pe repo-uri GitHub  
-- Implementa funcționalitatea de clonare a repo-urilor GitHub prin MCP  
+Ești gata să aplici abilitățile MCP într-un flux de lucru real? Continuă cu **[Modulul 4: Dezvoltare Practică MCP - Server Personalizat de Clonare GitHub](../lab4/README.md)** unde vei:  
+- Construi un server MCP pregătit pentru producție care automatizează operațiuni pe depozite GitHub  
+- Implementa funcționalitatea de clonare a depozitelor GitHub prin MCP  
 - Integra servere MCP personalizate cu VS Code și GitHub Copilot Agent Mode  
 - Testa și implementa servere MCP personalizate în medii de producție  
 - Învața automatizarea practică a fluxurilor de lucru pentru dezvoltatori
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original, în limba sa nativă, trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea ca urmare a utilizării acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

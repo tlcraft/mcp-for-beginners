@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:15:29+00:00",
+  "translation_date": "2025-07-13T21:02:08+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "es"
 }
@@ -25,7 +25,7 @@ dotnet run
 
 Abre una terminal aparte antes de ejecutar lo siguiente (asegúrate de que el servidor siga en ejecución).
 
-Con el servidor corriendo en una terminal, abre otra terminal y ejecuta el siguiente comando:
+Con el servidor corriendo en una terminal, abre otra y ejecuta el siguiente comando:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
@@ -35,14 +35,14 @@ Esto debería iniciar un servidor web con una interfaz visual que te permitirá 
 
 > Asegúrate de que **Streamable HTTP** esté seleccionado como tipo de transporte, y que la URL sea `http://localhost:3001/mcp`.
 
-Once the server is connected: 
+Una vez que el servidor esté conectado:
 
-- try listing tools and run `add`, con los argumentos 2 y 4; deberías ver 6 en el resultado.
+- intenta listar las herramientas y ejecutar `add` con los argumentos 2 y 4, deberías ver 6 como resultado.
 - ve a resources y resource template y llama a "greeting", escribe un nombre y deberías ver un saludo con el nombre que proporcionaste.
 
 ### Pruebas en modo CLI
 
-Puedes lanzarlo directamente en modo CLI ejecutando el siguiente comando:
+Puedes iniciarlo directamente en modo CLI ejecutando el siguiente comando:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
@@ -104,5 +104,5 @@ Deberías ver la siguiente salida:
 > Usualmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
 > Lee más sobre el inspector [aquí](https://github.com/modelcontextprotocol/inspector).
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos responsabilizamos por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

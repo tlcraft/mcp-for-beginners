@@ -2,95 +2,95 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac2459c0d5cc823922e3d9240a95028c",
-  "translation_date": "2025-06-11T13:34:11+00:00",
+  "translation_date": "2025-07-13T19:13:23+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/java/README.md",
   "language_code": "sr"
 }
 -->
 # Calculator LLM Client
 
-Java aplikacija koja pokazuje kako koristiti LangChain4j za povezivanje sa MCP (Model Context Protocol) kalkulator servisom uz integraciju GitHub Models.
+Java апликација која показује како користити LangChain4j за повезивање са MCP (Model Context Protocol) сервисом калкулатора уз интеграцију GitHub Models.
 
-## Preduslovi
+## Захтеви
 
-- Java 21 ili noviji
-- Maven 3.6+ (ili koristite uključen Maven wrapper)
-- GitHub nalog sa pristupom GitHub Models
-- MCP kalkulator servis koji radi na `http://localhost:8080`
+- Java 21 или новија верзија
+- Maven 3.6+ (или користите укључени Maven wrapper)
+- GitHub налог са приступом GitHub Models
+- MCP сервис калкулатора који ради на `http://localhost:8080`
 
-## Kako doći do GitHub Tokena
+## Како добити GitHub Token
 
-Ova aplikacija koristi GitHub Models, što zahteva GitHub personalni pristupni token. Pratite sledeće korake da dobijete token:
+Ова апликација користи GitHub Models који захтева GitHub personal access token. Пратите ове кораке да бисте добили свој token:
 
-### 1. Pristupite GitHub Models
-1. Idite na [GitHub Models](https://github.com/marketplace/models)
-2. Prijavite se sa svojim GitHub nalogom
-3. Zatražite pristup GitHub Models ako već nemate
+### 1. Приступите GitHub Models
+1. Идите на [GitHub Models](https://github.com/marketplace/models)
+2. Пријавите се са својим GitHub налогом
+3. Затражите приступ GitHub Models ако га већ немате
 
-### 2. Kreirajte Personal Access Token
-1. Idite na [GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)](https://github.com/settings/tokens)
-2. Kliknite na "Generate new token" → "Generate new token (classic)"
-3. Dajte tokenu opisno ime (npr. "MCP Calculator Client")
-4. Podesite rok važenja po potrebi
-5. Izaberite sledeće scope-ove:
-   - `repo` (ako pristupate privatnim repozitorijumima)
+### 2. Креирајте Personal Access Token
+1. Идите на [GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)](https://github.com/settings/tokens)
+2. Кликните на "Generate new token" → "Generate new token (classic)"
+3. Дајте свом token-у описно име (нпр. "MCP Calculator Client")
+4. Подесите рок важења по потреби
+5. Изаберите следеће опсеге:
+   - `repo` (ако приступате приватним репозиторијумима)
    - `user:email`
-6. Kliknite na "Generate token"
-7. **Važno**: Odmah kopirajte token - nećete ga moći ponovo videti!
+6. Кликните на "Generate token"
+7. **Важно**: Одмах копирајте token - нећете га поново видети!
 
-### 3. Podesite Environment Varijablu
+### 3. Подесите Environment Variable
 
-#### Na Windows-u (Command Prompt):
+#### На Windows (Command Prompt):
 ```cmd
 set GITHUB_TOKEN=your_github_token_here
 ```
 
-#### Na Windows-u (PowerShell):
+#### На Windows (PowerShell):
 ```powershell
 $env:GITHUB_TOKEN="your_github_token_here"
 ```
 
-#### Na macOS/Linux:
+#### На macOS/Linux:
 ```bash
 export GITHUB_TOKEN=your_github_token_here
 ```
 
-## Podešavanje i Instalacija
+## Подешавање и инсталација
 
-1. **Klonirajte ili se prebacite u direktorijum projekta**
+1. **Клонирајте или идите у директоријум пројекта**
 
-2. **Instalirajte zavisnosti**:
+2. **Инсталирајте зависности**:
    ```cmd
    mvnw clean install
    ```
-   Ili ako imate globalno instaliran Maven:
+   Или ако имате Maven инсталиран глобално:
    ```cmd
    mvn clean install
    ```
 
-3. **Podesite environment varijablu** (pogledajte deo "Kako doći do GitHub Tokena" iznad)
+3. **Подесите environment variable** (погледајте одељак "Како добити GitHub Token" изнад)
 
-4. **Pokrenite MCP Calculator Service**:
-   Proverite da li je MCP kalkulator servis iz poglavlja 1 pokrenut na `http://localhost:8080/sse`. Servis mora biti aktivan pre pokretanja klijenta.
+4. **Покрените MCP Calculator Service**:
+   Уверите се да је MCP сервис калкулатора из поглавља 1 покренут на `http://localhost:8080/sse`. Ово мора бити покренуто пре него што стартујете клијента.
 
-## Pokretanje Aplikacije
+## Покретање апликације
 
 ```cmd
 mvnw clean package
 java -jar target\calculator-llm-client-0.0.1-SNAPSHOT.jar
 ```
 
-## Šta Aplikacija Radi
+## Шта апликација ради
 
-Aplikacija demonstrira tri glavne interakcije sa kalkulator servisom:
+Апликација демонстрира три главне интеракције са сервисом калкулатора:
 
-1. **Sabiranje**: Izračunava zbir 24.5 i 17.3
-2. **Kvadratni koren**: Izračunava kvadratni koren od 144
-3. **Pomoć**: Prikazuje dostupne funkcije kalkulatora
+1. **Сабирање**: Израчунава збир 24.5 и 17.3
+2. **Корен квадратни**: Израчунава корен квадратни од 144
+3. **Помоћ**: Приказује доступне функције калкулатора
 
-## Očekivani Izlaz
+## Очекујени излаз
 
-Kada aplikacija uspešno radi, trebalo bi da vidite izlaz sličan ovom:
+Када апликација успешно ради, требало би да видите излаз сличан овоме:
 
 ```
 The sum of 24.5 and 17.3 is 41.8.
@@ -98,52 +98,52 @@ The square root of 144 is 12.
 The calculator service provides the following functions: add, subtract, multiply, divide, sqrt, power...
 ```
 
-## Rešavanje Problema
+## Решавање проблема
 
-### Česti Problemi
+### Чести проблеми
 
 1. **"GITHUB_TOKEN environment variable not set"**
-   - Proverite da li ste podesili `GITHUB_TOKEN` environment variable
-   - Restart your terminal/command prompt after setting the variable
+   - Проверите да ли сте поставили `GITHUB_TOKEN` environment variable
+   - Поново покрените терминал/command prompt након постављања променљиве
 
 2. **"Connection refused to localhost:8080"**
-   - Ensure the MCP calculator service is running on port 8080
-   - Check if another service is using port 8080
+   - Уверите се да MCP сервис калкулатора ради на порту 8080
+   - Проверите да ли неки други сервис користи порт 8080
 
 3. **"Authentication failed"**
-   - Verify your GitHub token is valid and has the correct permissions
-   - Check if you have access to GitHub Models
+   - Проверите да ли је ваш GitHub token важећи и да има одговарајуће дозволе
+   - Проверите да ли имате приступ GitHub Models
 
-4. **Maven build errors**
-   - Ensure you're using Java 21 or higher: `java -version`
-   - Try cleaning the build: `mvnw clean`
+4. **Грешке при Maven build-у**
+   - Уверите се да користите Java 21 или новију верзију: `java -version`
+   - Покушајте да очистите build: `mvnw clean`
 
-### Debugovanje
+### Дебаговање
 
-Da omogućite debug logovanje, dodajte sledeći JVM argument prilikom pokretanja:
+Да бисте омогућили debug логовање, додајте следећи JVM аргумент приликом покретања:
 ```cmd
 java -Dlogging.level.dev.langchain4j=DEBUG -jar target\calculator-llm-client-0.0.1-SNAPSHOT.jar
 ```
 
-## Konfiguracija
+## Конфигурација
 
-Aplikacija je konfigurisana da:
-- Koristi GitHub Models sa `gpt-4.1-nano` model
-- Connect to MCP service at `http://localhost:8080/sse`
-- Koristi timeout od 60 sekundi za zahteve
-- Omogućava logovanje zahteva/odgovora radi debugovanja
+Апликација је конфигурисана да:
+- Користи GitHub Models са моделом `gpt-4.1-nano`
+- Повезује се на MCP сервис на `http://localhost:8080/sse`
+- Користи timeout од 60 секунди за захтеве
+- Омогућава логовање захтева/одговора ради дебаговања
 
-## Zavisnosti
+## Зависности
 
-Glavne zavisnosti u ovom projektu:
-- **LangChain4j**: Za AI integraciju i upravljanje alatima
-- **LangChain4j MCP**: Za podršku Model Context Protocol-a
-- **LangChain4j GitHub Models**: Za integraciju GitHub Models
-- **Spring Boot**: Za framework aplikacije i dependency injection
+Кључне зависности коришћене у овом пројекту:
+- **LangChain4j**: За AI интеграцију и управљање алатима
+- **LangChain4j MCP**: За подршку Model Context Protocol-а
+- **LangChain4j GitHub Models**: За интеграцију GitHub Models
+- **Spring Boot**: За апликациони фрејмворк и dependency injection
 
-## Licenca
+## Лиценца
 
-Ovaj projekat je licenciran pod Apache License 2.0 - pogledajte [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE) fajl za detalje.
+Овај пројекат је лиценциран под Apache License 2.0 - погледајте [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE) фајл за детаље.
 
 **Одрицање од одговорности**:  
-Овај документ је преведен помоћу AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако настојимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне тумачења настала коришћењем овог превода.
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

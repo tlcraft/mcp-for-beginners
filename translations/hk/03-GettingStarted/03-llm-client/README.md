@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f74887f51a69d3f255cb83d0b517c623",
-  "translation_date": "2025-07-04T16:07:02+00:00",
+  "translation_date": "2025-07-13T18:48:44+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "hk"
 }
@@ -17,7 +17,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 列出伺服器功能後的下一步是將它們轉換成 LLM 能理解的格式。完成後，我們就可以將這些功能作為工具提供給 LLM。
 
-太好了，我們還沒準備好處理使用者請求，接下來就來解決這個問題。
+太好了，我們還沒有設定處理使用者請求的部分，接下來就來處理這個。
 
 ### -4 處理使用者提示請求
 
@@ -27,7 +27,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 作業
 
-使用練習中的程式碼，擴充伺服器，加入更多工具。然後像練習中一樣建立一個帶有 LLM 的客戶端，並用不同的提示測試，確保所有伺服器工具都能動態被呼叫。這種建立客戶端的方式能讓最終使用者有更好的體驗，因為他們可以使用自然語言提示，而不需要精確的客戶端指令，且不必知道背後有 MCP 伺服器被呼叫。
+使用練習中的程式碼，擴充伺服器，加入更多工具。然後像練習中一樣建立一個帶有 LLM 的客戶端，並用不同的提示測試，確保所有伺服器工具都能動態被呼叫。這種建立客戶端的方式能讓最終使用者有更好的體驗，因為他們可以使用自然語言提示，而不需要精確的客戶端指令，也不必知道背後有 MCP 伺服器被呼叫。
 
 ## 解答
 
@@ -46,7 +46,7 @@ CO_OP_TRANSLATOR_METADATA:
 - [TypeScript 計算機](../samples/typescript/README.md)
 - [Python 計算機](../../../../03-GettingStarted/samples/python)
 
-## 額外資源
+## 其他資源
 
 ## 下一步
 

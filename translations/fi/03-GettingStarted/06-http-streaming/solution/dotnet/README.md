@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:18:12+00:00",
+  "translation_date": "2025-07-13T21:05:05+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "fi"
 }
 -->
-# Näytteen suorittaminen
+# Tämän esimerkin suorittaminen
 
 ## -1- Asenna riippuvuudet
 
@@ -15,13 +15,13 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-## -2- Suorita näyte
+## -2- Suorita esimerkki
 
 ```bash
 dotnet run
 ```
 
-## -3- Testaa näyte
+## -3- Testaa esimerkki
 
 Avaa erillinen terminaali ennen alla olevan komennon suorittamista (varmista, että palvelin on edelleen käynnissä).
 
@@ -31,13 +31,13 @@ Kun palvelin on käynnissä yhdessä terminaalissa, avaa toinen terminaali ja su
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Tämän pitäisi käynnistää web-palvelin, jossa on visuaalinen käyttöliittymä, jonka avulla voit testata näytettä.
+Tämän pitäisi käynnistää web-palvelin, jossa on visuaalinen käyttöliittymä esimerkin testaamista varten.
 
-> Varmista, että **Streamable HTTP** on valittu siirtotavaksi ja URL on `http://localhost:3001/mcp`.
+> Varmista, että **Streamable HTTP** on valittuna siirtotyyppinä ja URL on `http://localhost:3001/mcp`.
 
-Once the server is connected: 
+Kun palvelin on yhdistetty:
 
-- try listing tools and run `add`, argumenteilla 2 ja 4, jolloin tuloksena pitäisi näkyä 6.
+- kokeile listata työkalut ja suorita `add` argumenteilla 2 ja 4, tuloksena pitäisi näkyä 6.
 - siirry resources- ja resource template -kohtiin ja kutsu "greeting", kirjoita nimi ja näet tervehdyksen antamallasi nimellä.
 
 ### Testaus CLI-tilassa
@@ -48,7 +48,7 @@ Voit käynnistää sen suoraan CLI-tilassa suorittamalla seuraavan komennon:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Tämä listaa kaikki palvelimella käytettävissä olevat työkalut. Näet seuraavan tulosteen:
+Tämä listaa kaikki palvelimella saatavilla olevat työkalut. Näet seuraavan tulosteen:
 
 ```text
 {
@@ -101,8 +101,8 @@ Näet seuraavan tulosteen:
 ```
 
 > ![!TIP]
-> On yleensä paljon nopeampaa suorittaa inspector CLI-tilassa kuin selaimessa.
+> On yleensä paljon nopeampaa käyttää inspector-työkalua CLI-tilassa kuin selaimessa.
 > Lue lisää inspectorista [täältä](https://github.com/modelcontextprotocol/inspector).
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää ensisijaisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

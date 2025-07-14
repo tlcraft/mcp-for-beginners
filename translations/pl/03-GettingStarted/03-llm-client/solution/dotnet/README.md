@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
-  "translation_date": "2025-06-18T05:58:24+00:00",
+  "translation_date": "2025-07-13T19:03:02+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "pl"
 }
@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # Uruchom ten przykład
 
 > [!NOTE]
-> Ten przykład zakłada, że korzystasz z instancji GitHub Codespaces. Jeśli chcesz uruchomić go lokalnie, musisz utworzyć token dostępu osobistego (PAT) na GitHub.
+> Ten przykład zakłada, że korzystasz z instancji GitHub Codespaces. Jeśli chcesz uruchomić go lokalnie, musisz utworzyć personalny token dostępu (PAT) na GitHub.
 >
 > ```bash
 > # zsh/bash
@@ -22,21 +22,21 @@ CO_OP_TRANSLATOR_METADATA:
 > $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
 > ```
 
-## Zainstaluj biblioteki
+## Instalacja bibliotek
 
 ```sh
 dotnet restore
 ```
 
-Powinny zostać zainstalowane następujące biblioteki: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
+Powinno to zainstalować następujące biblioteki: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
-## Uruchom
+## Uruchomienie
 
 ```sh 
 dotnet run
 ```
 
-Powinieneś zobaczyć wyjście podobne do:
+Powinieneś zobaczyć wynik podobny do:
 
 ```text
 Setting up stdio transport
@@ -51,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Wiele z wyjścia to tylko debugowanie, ale ważne jest to, że wyświetlasz narzędzia z serwera MCP, przekształcasz je w narzędzia LLM i otrzymujesz odpowiedź klienta MCP „Sum 6”.
+Wiele z wyjścia to tylko debugowanie, ale ważne jest to, że wyświetlasz narzędzia z MCP Server, przekształcasz je w narzędzia LLM i otrzymujesz odpowiedź klienta MCP "Sum 6".
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczeń AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najdokładniejsze, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło wiarygodne. W przypadku informacji o krytycznym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

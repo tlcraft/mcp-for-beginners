@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-06-10T06:05:19+00:00",
+  "translation_date": "2025-07-14T08:08:50+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
   "language_code": "mo"
 }
 -->
-# 🔧 Module 3: Advanced MCP Development with AI Toolkit
+# 🔧 模組 3：使用 AI 工具包進階 MCP 開發
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
 ![AI Toolkit](https://img.shields.io/badge/AI_Toolkit-Required-orange?style=flat-square)
@@ -15,71 +15,73 @@ CO_OP_TRANSLATOR_METADATA:
 ![MCP SDK](https://img.shields.io/badge/MCP_SDK-1.9.3-purple?style=flat-square)
 ![Inspector](https://img.shields.io/badge/MCP_Inspector-0.14.0-blue?style=flat-square)
 
-## 🎯 Learning Objectives
+## 🎯 學習目標
 
-By the end of this lab, you will be able to:
+完成本實驗後，您將能夠：
 
-- ✅ Build custom MCP servers using the AI Toolkit
-- ✅ Set up and work with the latest MCP Python SDK (v1.9.3)
-- ✅ Configure and use the MCP Inspector for debugging
-- ✅ Debug MCP servers within both Agent Builder and Inspector environments
-- ✅ Gain a solid understanding of advanced MCP server development workflows
+- ✅ 使用 AI 工具包建立自訂 MCP 伺服器
+- ✅ 設定並使用最新的 MCP Python SDK（v1.9.3）
+- ✅ 設置並運用 MCP Inspector 進行除錯
+- ✅ 在 Agent Builder 與 Inspector 環境中除錯 MCP 伺服器
+- ✅ 理解進階 MCP 伺服器開發流程
 
-## 📋 Prerequisites
+## 📋 先決條件
 
-- Completion of Lab 2 (MCP Fundamentals)
-- VS Code with AI Toolkit extension installed
-- Python 3.10+ environment
-- Node.js and npm installed for Inspector setup
+- 完成實驗 2（MCP 基礎）
+- 安裝 AI 工具包擴充功能的 VS Code
+- Python 3.10+ 環境
+- 用於 Inspector 設定的 Node.js 與 npm
 
-## 🏗️ What You'll Build
+## 🏗️ 您將建立的內容
 
-In this lab, you'll create a **Weather MCP Server** that demonstrates:
-- Custom MCP server implementation
-- Integration with AI Toolkit Agent Builder
-- Professional debugging workflows
-- Modern MCP SDK usage patterns
+在本實驗中，您將建立一個 **天氣 MCP 伺服器**，示範：
+
+- 自訂 MCP 伺服器實作
+- 與 AI 工具包 Agent Builder 整合
+- 專業除錯流程
+- 現代 MCP SDK 使用模式
 
 ---
 
-## 🔧 Core Components Overview
+## 🔧 核心元件概覽
 
 ### 🐍 MCP Python SDK
-The Model Context Protocol Python SDK forms the base for building custom MCP servers. You'll use version 1.9.3, which includes improved debugging features.
+Model Context Protocol Python SDK 是建立自訂 MCP 伺服器的基礎。您將使用具備強化除錯功能的 1.9.3 版本。
 
 ### 🔍 MCP Inspector
-A powerful debugging tool offering:
-- Real-time monitoring of your server
-- Visualization of tool executions
-- Inspection of network requests and responses
-- An interactive testing environment
+一款強大的除錯工具，提供：
+
+- 即時伺服器監控
+- 工具執行視覺化
+- 網路請求/回應檢視
+- 互動式測試環境
 
 ---
 
-## 📖 Step-by-Step Implementation
+## 📖 逐步實作
 
-### Step 1: Create a WeatherAgent in Agent Builder
+### 步驟 1：在 Agent Builder 建立 WeatherAgent
 
-1. **Open Agent Builder** in VS Code via the AI Toolkit extension
-2. **Create a new agent** with the following configuration:
-   - Agent Name: `WeatherAgent`
+1. **透過 AI 工具包擴充功能在 VS Code 啟動 Agent Builder**
+2. **建立新代理人**，設定如下：
+   - 代理人名稱：`WeatherAgent`
 
 ![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.mo.png)
 
-### Step 2: Initialize MCP Server Project
+### 步驟 2：初始化 MCP 伺服器專案
 
-1. **Go to Tools** → **Add Tool** in Agent Builder
-2. **Select "MCP Server"** from the list
-3. **Choose "Create A new MCP Server"**
-4. **Pick the `python-weather` template**
-5. **Name your server:** `weather_mcp`
+1. **在 Agent Builder 中前往工具 → 新增工具**
+2. **選擇「MCP Server」**
+3. **選擇「建立新的 MCP Server」**
+4. **選擇 `python-weather` 範本**
+5. **命名您的伺服器：** `weather_mcp`
 
 ![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.mo.png)
 
-### Step 3: Open and Examine the Project
+### 步驟 3：開啟並檢視專案
 
-1. **Open the generated project** in VS Code
-2. **Check the project structure:**
+1. **在 VS Code 中開啟產生的專案**
+2. **檢視專案結構：**
    ```
    weather_mcp/
    ├── src/
@@ -95,35 +97,33 @@ A powerful debugging tool offering:
    └── README.md
    ```
 
-### Step 4: Upgrade to Latest MCP SDK
+### 步驟 4：升級至最新 MCP SDK
 
-> **🔍 Why Upgrade?** We want to use the latest MCP SDK (v1.9.3) and Inspector service (0.14.0) for improved features and better debugging.
+> **🔍 為什麼要升級？** 我們希望使用最新的 MCP SDK（v1.9.3）與 Inspector 服務（0.14.0），以獲得更強大的功能與更佳的除錯體驗。
 
-#### 4a. Update Python Dependencies
+#### 4a. 更新 Python 依賴
 
-**Edit `pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
+**編輯 `pyproject.toml`：** 更新 [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
 
+#### 4b. 更新 Inspector 設定
 
-#### 4b. Update Inspector Configuration
+**編輯 `inspector/package.json`：** 更新 [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
 
-**Edit `inspector/package.json`:** update [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
+#### 4c. 更新 Inspector 依賴
 
-#### 4c. Update Inspector Dependencies
+**編輯 `inspector/package-lock.json`：** 更新 [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
 
-**Edit `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
+> **📝 注意：** 此檔案包含大量依賴定義，下方為主要結構示意，完整內容確保依賴正確解析。
 
-> **📝 Note:** This file contains extensive dependency definitions. Below is the essential structure - the full content ensures proper dependency resolution.
+> **⚡ 完整的 package-lock.json：** 完整檔案約有 3000 行依賴定義，上述為關鍵結構，請使用提供的檔案以確保完整依賴解析。
 
+### 步驟 5：設定 VS Code 除錯
 
-> **⚡ Full Package Lock:** The complete package-lock.json contains ~3000 lines of dependency definitions. The above shows the key structure - use the provided file for complete dependency resolution.
+*注意：請複製指定路徑的檔案以取代本地對應檔案*
 
-### Step 5: Configure VS Code Debugging
+#### 5a. 更新啟動設定
 
-*Note: Please copy the file in the specified path to replace the corresponding local file*
-
-#### 5a. Update Launch Configuration
-
-**Edit `.vscode/launch.json`:**
+**編輯 `.vscode/launch.json`：**
 
 ```json
 {
@@ -200,7 +200,7 @@ A powerful debugging tool offering:
 }
 ```
 
-**Edit `.vscode/tasks.json`:**
+**編輯 `.vscode/tasks.json`：**
 
 ```
 {
@@ -302,34 +302,33 @@ A powerful debugging tool offering:
 }
 ```
 
-
 ---
 
-## 🚀 Running and Testing Your MCP Server
+## 🚀 執行與測試您的 MCP 伺服器
 
-### Step 6: Install Dependencies
+### 步驟 6：安裝依賴
 
-After updating the configurations, run the following commands:
+完成設定變更後，執行以下指令：
 
-**Install Python dependencies:**
+**安裝 Python 依賴：**
 ```bash
 uv sync
 ```
 
-**Install Inspector dependencies:**
+**安裝 Inspector 依賴：**
 ```bash
 cd inspector
 npm install
 ```
 
-### Step 7: Debug with Agent Builder
+### 步驟 7：使用 Agent Builder 除錯
 
-1. **Press F5** or select the **"Debug in Agent Builder"** configuration
-2. **Choose the compound configuration** in the debug panel
-3. **Wait for the server to start** and Agent Builder to open
-4. **Test your weather MCP server** using natural language queries
+1. **按下 F5** 或使用 **「在 Agent Builder 中除錯」** 設定
+2. **從除錯面板選擇複合設定**
+3. **等待伺服器啟動並開啟 Agent Builder**
+4. **使用自然語言查詢測試您的天氣 MCP 伺服器**
 
-Example input prompt:
+輸入提示如下
 
 SYSTEM_PROMPT
 
@@ -345,62 +344,59 @@ How's the weather like in Seattle
 
 ![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.mo.png)
 
-### Step 8: Debug with MCP Inspector
+### 步驟 8：使用 MCP Inspector 除錯
 
-1. **Use the "Debug in Inspector"** configuration (Edge or Chrome)
-2. **Open the Inspector interface** at `http://localhost:6274`
-3. **Explore the interactive testing environment:**
-   - View available tools
-   - Test tool execution
-   - Monitor network requests
-   - Debug server responses
+1. **使用「在 Inspector 中除錯」設定（Edge 或 Chrome）**
+2. **開啟 Inspector 介面，網址為 `http://localhost:6274`**
+3. **探索互動式測試環境：**
+   - 查看可用工具
+   - 測試工具執行
+   - 監控網路請求
+   - 除錯伺服器回應
 
 ![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.mo.png)
 
 ---
 
-## 🎯 Key Learning Outcomes
+## 🎯 主要學習成果
 
-By completing this lab, you have:
+完成本實驗後，您已：
 
-- [x] **Built a custom MCP server** using AI Toolkit templates
-- [x] **Upgraded to the latest MCP SDK** (v1.9.3) for enhanced capabilities
-- [x] **Set up professional debugging workflows** for both Agent Builder and Inspector
-- [x] **Configured the MCP Inspector** for interactive server testing
-- [x] **Mastered VS Code debugging setups** for MCP development
+- [x] **使用 AI 工具包範本建立自訂 MCP 伺服器**
+- [x] **升級至最新 MCP SDK（v1.9.3）以強化功能**
+- [x] **設定 Agent Builder 與 Inspector 的專業除錯流程**
+- [x] **設置 MCP Inspector 以進行互動式伺服器測試**
+- [x] **掌握 MCP 開發的 VS Code 除錯設定**
 
-## 🔧 Advanced Features Explored
+## 🔧 探索的進階功能
 
-| Feature | Description | Use Case |
+| 功能 | 說明 | 使用情境 |
 |---------|-------------|----------|
-| **MCP Python SDK v1.9.3** | Latest protocol implementation | Modern server development |
-| **MCP Inspector 0.14.0** | Interactive debugging tool | Real-time server testing |
-| **VS Code Debugging** | Integrated development environment | Professional debugging workflow |
-| **Agent Builder Integration** | Direct AI Toolkit connection | End-to-end agent testing |
+| **MCP Python SDK v1.9.3** | 最新協定實作 | 現代伺服器開發 |
+| **MCP Inspector 0.14.0** | 互動式除錯工具 | 即時伺服器測試 |
+| **VS Code 除錯** | 整合開發環境 | 專業除錯流程 |
+| **Agent Builder 整合** | 直接連接 AI 工具包 | 端對端代理人測試 |
 
-## 📚 Additional Resources
+## 📚 其他資源
 
-- [MCP Python SDK Documentation](https://modelcontextprotocol.io/docs/sdk/python)
-- [AI Toolkit Extension Guide](https://code.visualstudio.com/docs/ai/ai-toolkit)
-- [VS Code Debugging Documentation](https://code.visualstudio.com/docs/editor/debugging)
-- [Model Context Protocol Specification](https://modelcontextprotocol.io/docs/concepts/architecture)
-
----
-
-**🎉 Congratulations!** You’ve successfully completed Lab 3 and can now create, debug, and deploy custom MCP servers using professional development workflows.
-
-### 🔜 Continue to Next Module
-
-Ready to apply your MCP skills in a real-world scenario? Proceed to **[Module 4: Practical MCP Development - Custom GitHub Clone Server](../lab4/README.md)** where you will:
-- Build a production-ready MCP server that automates GitHub repository operations
-- Implement GitHub repository cloning functionality via MCP
-- Integrate custom MCP servers with VS Code and GitHub Copilot Agent Mode
-- Test and deploy custom MCP servers in production
-- Learn practical workflow automation for developers
-
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+- [MCP Python SDK 文件](https://modelcontextprotocol.io/docs/sdk/python)
+- [AI 工具包擴充功能指南](https://code.visualstudio.com/docs/ai/ai-toolkit)
+- [VS Code 除錯文件](https://code.visualstudio.com/docs/editor/debugging)
+- [Model Context Protocol 規範](https://modelcontextprotocol.io/docs/concepts/architecture)
 
 ---
 
-(Note: "mo" is not a recognized language code or language name in standard linguistic references. If you meant a specific language or dialect, please clarify so I can provide an accurate translation.)
+**🎉 恭喜！** 您已成功完成實驗 3，現在能使用專業開發流程建立、除錯並部署自訂 MCP 伺服器。
+
+### 🔜 繼續下一模組
+
+準備將 MCP 技能應用於實務開發流程？請繼續前往 **[模組 4：實務 MCP 開發 - 自訂 GitHub Clone 伺服器](../lab4/README.md)**，您將：
+
+- 建立可用於生產的 MCP 伺服器，自動化 GitHub 倉庫操作
+- 實作透過 MCP 的 GitHub 倉庫複製功能
+- 將自訂 MCP 伺服器整合至 VS Code 與 GitHub Copilot Agent 模式
+- 在生產環境中測試與部署自訂 MCP 伺服器
+- 學習開發者實務工作流程自動化
+
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

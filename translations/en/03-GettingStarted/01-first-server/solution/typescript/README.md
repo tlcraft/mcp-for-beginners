@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac67652abc453e2a7e2c75cd7a8897ae",
-  "translation_date": "2025-05-17T09:20:31+00:00",
+  "translation_date": "2025-07-13T18:02:53+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/typescript/README.md",
   "language_code": "en"
 }
 -->
 # Running this sample
 
-It's recommended to install `uv`, but it's not mandatory. See [instructions](https://docs.astral.sh/uv/#highlights).
+You're recommended to install `uv` but it's not mandatory, see [instructions](https://docs.astral.sh/uv/#highlights)
 
 ## -1- Install the dependencies
 
@@ -31,16 +31,16 @@ With the server running in one terminal, open another terminal and run the follo
 npm run inspector
 ```
 
-This should start a web server with a visual interface allowing you to test the sample.
+This should start a web server with a visual interface that lets you test the sample.
 
 Once the server is connected:
 
-- Try listing tools and run `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- try listing tools and run `add` with arguments 2 and 4; you should see 6 as the result.
+- go to resources and resource template, call "greeting", enter a name, and you should see a greeting with the name you provided.
 
 ### Testing in CLI mode
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it.
+The inspector you ran is actually a Node.js app, and `mcp dev` is a wrapper around it.
 
 You can launch it directly in CLI mode by running the following command:
 
@@ -48,7 +48,7 @@ You can launch it directly in CLI mode by running the following command:
 npx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/list
 ```
 
-This will list all the tools available in the server. You should see the following output:
+This will list all the tools available on the server. You should see the following output:
 
 ```text
 {
@@ -79,7 +79,7 @@ This will list all the tools available in the server. You should see the followi
 }
 ```
 
-To invoke a tool type:
+To invoke a tool, type:
 
 ```bash
 nnpx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
@@ -99,8 +99,8 @@ You should see the following output:
 }
 ```
 
-> [!TIP]
-> It's usually much faster to run the inspector in CLI mode than in the browser.
+> ![!TIP]
+> Running the inspector in CLI mode is usually much faster than in the browser.
 > Read more about the inspector [here](https://github.com/modelcontextprotocol/inspector).
 
 **Disclaimer**:  

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T18:09:32+00:00",
+  "translation_date": "2025-07-13T22:10:08+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "id"
 }
@@ -34,7 +34,7 @@ Untuk SSE (tidak diperlukan untuk server tipe stdio)
 1. **Konfigurasikan jaringan**: Pastikan server dapat diakses pada port yang diharapkan.  
 1. **Hubungkan klien**: Gunakan URL koneksi lokal seperti `http://localhost:3000`.
 
-## Deployment Cloud
+## Deployment ke Cloud
 
 Server MCP dapat di-deploy ke berbagai platform cloud:
 
@@ -113,4 +113,4 @@ Itulah cara men-deploy secara lokal dan ke Azure melalui langkah-langkah ini.
 - Selanjutnya: [Implementasi Praktis](../../04-PracticalImplementation/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2a58caa6e11faa09470b7f81e6729652",
-  "translation_date": "2025-06-18T05:52:10+00:00",
+  "translation_date": "2025-07-13T20:08:46+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "ja"
 }
@@ -25,19 +25,19 @@ dotnet run
 
 以下を実行する前に別のターミナルを開き（サーバーがまだ動作していることを確認してください）。
 
-一つのターミナルでサーバーが動いている状態で、別のターミナルを開き、次のコマンドを実行します：
+サーバーが一つのターミナルで動作している状態で、別のターミナルを開き、次のコマンドを実行します：
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-これにより、サンプルをテストできるビジュアルインターフェース付きのウェブサーバーが起動します。
+これで、サンプルをテストできるビジュアルインターフェース付きのウェブサーバーが起動するはずです。
 
-> **SSE** がトランスポートタイプとして選択されていること、URLが `http://localhost:3001/sse`.
+> **SSE** がトランスポートタイプとして選択されていて、URLが `http://localhost:3001/sse` になっていることを確認してください。
 
-Once the server is connected: 
+サーバーが接続されたら：
 
-- try listing tools and run `add` で、引数に 2 と 4 を指定すると、結果に 6 が表示されることを確認してください。
+- ツールの一覧を試し、`add` を引数 2 と 4 で実行してみてください。結果に 6 が表示されるはずです。
 - resources と resource template に移動し、「greeting」を呼び出して名前を入力すると、入力した名前を使った挨拶が表示されます。
 
 ### CLIモードでのテスト
@@ -48,7 +48,7 @@ Once the server is connected:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-これにより、サーバーで利用可能なすべてのツールが一覧表示されます。以下のような出力が表示されるはずです：
+これでサーバーで利用可能なすべてのツールが一覧表示されます。以下のような出力が表示されるはずです：
 
 ```text
 {
@@ -101,8 +101,8 @@ npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/c
 ```
 
 > ![!TIP]
-> ブラウザよりもCLIモードでinspectorを実行したほうが、通常ははるかに高速です。
-> inspectorについての詳細は[こちら](https://github.com/modelcontextprotocol/inspector)をご覧ください。
+> ブラウザよりもCLIモードでinspectorを実行したほうが通常はずっと速いです。
+> inspectorの詳細は[こちら](https://github.com/modelcontextprotocol/inspector)をご覧ください。
 
 **免責事項**：  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご了承ください。原文（原言語の文書）が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

@@ -2,53 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:05:06+00:00",
+  "translation_date": "2025-07-13T18:31:03+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "ur"
 }
 -->
-# MCP Java Client - Calculator Demo
+# MCP Java Client - کیلکولیٹر ڈیمو
 
-یہ پروجیکٹ دکھاتا ہے کہ کیسے ایک Java کلائنٹ بنایا جائے جو MCP (Model Context Protocol) سرور سے جڑتا ہے اور اس کے ساتھ تعامل کرتا ہے۔ اس مثال میں، ہم چپٹر 01 کے کیلکولیٹر سرور سے جڑیں گے اور مختلف ریاضیاتی آپریشنز انجام دیں گے۔
+یہ پروجیکٹ دکھاتا ہے کہ کیسے ایک جاوا کلائنٹ بنایا جائے جو MCP (Model Context Protocol) سرور سے جڑتا ہے اور اس کے ساتھ تعامل کرتا ہے۔ اس مثال میں، ہم چپٹر 01 کے کیلکولیٹر سرور سے کنیکٹ ہوں گے اور مختلف ریاضیاتی عملیات انجام دیں گے۔
 
-## Prerequisites
+## ضروریات
 
-اس کلائنٹ کو چلانے سے پہلے، آپ کو یہ کرنا ہوگا:
+اس کلائنٹ کو چلانے سے پہلے آپ کو یہ کرنا ہوگا:
 
 1. **چپٹر 01 سے کیلکولیٹر سرور شروع کریں**:
-   - کیلکولیٹر سرور ڈائریکٹری میں جائیں: `03-GettingStarted/01-first-server/solution/java/`
+   - کیلکولیٹر سرور ڈائریکٹری پر جائیں: `03-GettingStarted/01-first-server/solution/java/`
    - کیلکولیٹر سرور کو بنائیں اور چلائیں:
      ```cmd
      cd ..\01-first-server\solution\java
      .\mvnw clean install -DskipTests
      java -jar target\calculator-server-0.0.1-SNAPSHOT.jar
      ```
-   - سرور `http://localhost:8080`
+   - سرور `http://localhost:8080` پر چل رہا ہونا چاہیے
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. آپ کے سسٹم پر **Java 21 یا اس سے جدید** انسٹال ہو
+3. **Maven** (Maven Wrapper کے ذریعے شامل)
 
-## What is the SDKClient?
+## SDKClient کیا ہے؟
 
-The `` پر چل رہا ہونا چاہیے
-
-`SDKClient` ایک Java ایپلیکیشن ہے جو دکھاتی ہے کہ کیسے:
-- Server-Sent Events (SSE) ٹرانسپورٹ کے ذریعے MCP سرور سے جڑا جائے
+`SDKClient` ایک جاوا ایپلیکیشن ہے جو یہ دکھاتی ہے کہ کیسے:
+- MCP سرور سے Server-Sent Events (SSE) ٹرانسپورٹ کے ذریعے کنیکٹ کیا جائے
 - سرور سے دستیاب ٹولز کی فہرست حاصل کی جائے
-- مختلف کیلکولیٹر فنکشنز کو ریموٹلی کال کیا جائے
+- کیلکولیٹر کے مختلف فنکشنز کو ریموٹلی کال کیا جائے
 - جوابات کو ہینڈل کیا جائے اور نتائج دکھائے جائیں
 
-## How It Works
+## یہ کیسے کام کرتا ہے
 
 کلائنٹ Spring AI MCP فریم ورک استعمال کرتا ہے تاکہ:
 
-1. **کنکشن قائم کرے**: WebFlux SSE کلائنٹ ٹرانسپورٹ بناتا ہے جو کیلکولیٹر سرور سے جڑتا ہے  
-2. **کلائنٹ کو انیشیالائز کرے**: MCP کلائنٹ سیٹ اپ کرتا ہے اور کنکشن قائم کرتا ہے  
-3. **ٹولز دریافت کرے**: تمام دستیاب کیلکولیٹر آپریشنز کی فہرست دکھاتا ہے  
-4. **آپریشنز انجام دے**: مختلف ریاضیاتی فنکشنز کو سیمپل ڈیٹا کے ساتھ کال کرتا ہے  
-5. **نتائج دکھائے**: ہر کیلکولیشن کے نتائج دکھاتا ہے  
+1. **کنکشن قائم کرے**: کیلکولیٹر سرور سے جڑنے کے لیے WebFlux SSE کلائنٹ ٹرانسپورٹ بنائے
+2. **کلائنٹ کو انیشیئلائز کرے**: MCP کلائنٹ سیٹ اپ کرے اور کنکشن قائم کرے
+3. **ٹولز دریافت کرے**: تمام دستیاب کیلکولیٹر آپریشنز کی فہرست بنائے
+4. **آپریشنز انجام دے**: مختلف ریاضیاتی فنکشنز کو سیمپل ڈیٹا کے ساتھ کال کرے
+5. **نتائج دکھائے**: ہر حساب کا نتیجہ ظاہر کرے
 
-## Project Structure
+## پروجیکٹ کی ساخت
 
 ```
 src/
@@ -62,9 +60,9 @@ src/
                             └── SDKClient.java    # Main client implementation
 ```
 
-## Key Dependencies
+## اہم انحصار
 
-پروجیکٹ درج ذیل اہم dependencies استعمال کرتا ہے:
+پروجیکٹ میں درج ذیل اہم انحصار استعمال ہوتے ہیں:
 
 ```xml
 <dependency>
@@ -73,44 +71,44 @@ src/
 </dependency>
 ```
 
-یہ dependency فراہم کرتی ہے:
-- `McpClient` - The main client interface
-- `WebFluxSseClientTransport` - ویب پر مبنی کمیونیکیشن کے لیے SSE ٹرانسپورٹ  
-- MCP پروٹوکول اسکیماز اور درخواست/جواب کی اقسام  
+یہ انحصار فراہم کرتا ہے:
+- `McpClient` - مرکزی کلائنٹ انٹرفیس
+- `WebFluxSseClientTransport` - ویب بیسڈ کمیونیکیشن کے لیے SSE ٹرانسپورٹ
+- MCP پروٹوکول کے اسکیمے اور درخواست/جواب کی اقسام
 
-## Building the Project
+## پروجیکٹ بنانا
 
-Maven wrapper استعمال کرتے ہوئے پروجیکٹ بنائیں:
+Maven wrapper کے ذریعے پروجیکٹ بنائیں:
 
 ```cmd
 .\mvnw clean install
 ```
 
-## Running the Client
+## کلائنٹ چلانا
 
 ```cmd
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**Note**: یقینی بنائیں کہ کیلکولیٹر سرور `http://localhost:8080` before executing any of these commands.
+**نوٹ**: ان کمانڈز کو چلانے سے پہلے یقینی بنائیں کہ کیلکولیٹر سرور `http://localhost:8080` پر چل رہا ہو۔
 
-## What the Client Does
+## کلائنٹ کیا کرتا ہے
 
-When you run the client, it will:
+جب آپ کلائنٹ چلائیں گے، تو یہ:
 
-1. **Connect** to the calculator server at `http://localhost:8080` پر چل رہا ہے  
-2. **ٹولز کی فہرست دکھائیں** - تمام دستیاب کیلکولیٹر آپریشنز دکھاتا ہے  
-3. **کیلکولیشنز کریں**:  
-   - جمع: 5 + 3 = 8  
-   - تفریق: 10 - 4 = 6  
-   - ضرب: 6 × 7 = 42  
-   - تقسیم: 20 ÷ 4 = 5  
-   - طاقت: 2^8 = 256  
-   - مربع جذر: √16 = 4  
-   - مطلق قیمت: |-5.5| = 5.5  
-   - مدد: دستیاب آپریشنز دکھاتا ہے  
+1. `http://localhost:8080` پر کیلکولیٹر سرور سے **کنیکٹ** کرے گا
+2. **ٹولز کی فہرست** دکھائے گا - تمام دستیاب کیلکولیٹر آپریشنز
+3. **حسابات انجام دے گا**:
+   - جمع: 5 + 3 = 8
+   - تفریق: 10 - 4 = 6
+   - ضرب: 6 × 7 = 42
+   - تقسیم: 20 ÷ 4 = 5
+   - طاقت: 2^8 = 256
+   - مربع جذر: √16 = 4
+   - مطلق قیمت: |-5.5| = 5.5
+   - مدد: دستیاب آپریشنز دکھائے گا
 
-## Expected Output
+## متوقع نتیجہ
 
 ```
 Available Tools = ListToolsResult[tools=[Tool[name=add, description=Add two numbers together, ...], ...]]
@@ -124,56 +122,56 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**Note**: آپ Maven وارننگز دیکھ سکتے ہیں جو تھریڈز کے باقی رہنے کے بارے میں ہیں - یہ reactive applications کے لیے معمول کی بات ہے اور یہ کوئی ایرر نہیں ہے۔
+**نوٹ**: آپ کو Maven کی وارننگز نظر آ سکتی ہیں جو تھریڈز کے باقی رہنے کے بارے میں ہوں - یہ reactive ایپلیکیشنز کے لیے معمول کی بات ہے اور کسی غلطی کی نشاندہی نہیں کرتا۔
 
-## Understanding the Code
+## کوڈ کو سمجھنا
 
-### 1. Transport Setup  
+### 1. ٹرانسپورٹ سیٹ اپ
 ```java
 var transport = new WebFluxSseClientTransport(WebClient.builder().baseUrl("http://localhost:8080"));
-```  
+```
 یہ ایک SSE (Server-Sent Events) ٹرانسپورٹ بناتا ہے جو کیلکولیٹر سرور سے جڑتا ہے۔
 
-### 2. Client Creation  
+### 2. کلائنٹ بنانا
 ```java
 var client = McpClient.sync(this.transport).build();
 client.initialize();
-```  
-ایک synchronous MCP کلائنٹ بناتا ہے اور کنکشن کو انیشیالائز کرتا ہے۔
+```
+ایک synchronous MCP کلائنٹ بناتا ہے اور کنکشن کو انیشیئلائز کرتا ہے۔
 
-### 3. Calling Tools  
+### 3. ٹولز کال کرنا
 ```java
 CallToolResult resultAdd = client.callTool(new CallToolRequest("add", Map.of("a", 5.0, "b", 3.0)));
-```  
-"add" ٹول کو a=5.0 اور b=3.0 پیرامیٹرز کے ساتھ کال کرتا ہے۔
+```
+"add" ٹول کو پیرامیٹرز a=5.0 اور b=3.0 کے ساتھ کال کرتا ہے۔
 
-## Troubleshooting
+## مسائل کا حل
 
-### Server Not Running  
-اگر کنکشن ایررز آئیں، تو یقینی بنائیں کہ چپٹر 01 کا کیلکولیٹر سرور چل رہا ہے:  
+### سرور چل نہیں رہا
+اگر کنکشن کی غلطیاں آئیں، تو یقینی بنائیں کہ چپٹر 01 کا کیلکولیٹر سرور چل رہا ہے:
 ```
 Error: Connection refused
-```  
-**Solution**: پہلے کیلکولیٹر سرور شروع کریں۔
+```
+**حل**: پہلے کیلکولیٹر سرور شروع کریں۔
 
-### Port Already in Use  
-اگر پورٹ 8080 مصروف ہے:  
+### پورٹ پہلے سے استعمال میں ہے
+اگر پورٹ 8080 مصروف ہے:
 ```
 Error: Address already in use
-```  
-**Solution**: دوسرے ایپلیکیشنز جو پورٹ 8080 استعمال کر رہے ہیں بند کریں یا سرور کو کسی اور پورٹ پر چلائیں۔
+```
+**حل**: پورٹ 8080 استعمال کرنے والی دوسری ایپلیکیشنز کو بند کریں یا سرور کو مختلف پورٹ پر چلائیں۔
 
-### Build Errors  
-اگر بلڈ ایررز آئیں:  
+### بلڈ کی غلطیاں
+اگر بلڈ میں غلطیاں آئیں:
 ```cmd
 .\mvnw clean install -DskipTests
 ```
 
-## Learn More
+## مزید جانیں
 
-- [Spring AI MCP Documentation](https://docs.spring.io/spring-ai/reference/api/mcp/)  
-- [Model Context Protocol Specification](https://modelcontextprotocol.io/)  
+- [Spring AI MCP Documentation](https://docs.spring.io/spring-ai/reference/api/mcp/)
+- [Model Context Protocol Specification](https://modelcontextprotocol.io/)
 - [Spring WebFlux Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
-**ڈس کلیمر**:  
-اس دستاویز کا ترجمہ AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے کیا گیا ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم اس بات سے آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی مادری زبان میں معتبر ماخذ سمجھا جانا چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لیے ہم ذمہ دار نہیں ہیں۔
+**دستخطی نوٹ**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

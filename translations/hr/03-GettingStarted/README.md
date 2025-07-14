@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:35:50+00:00",
+  "translation_date": "2025-07-13T17:20:51+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "hr"
 }
@@ -15,9 +15,9 @@ Ovaj odjeljak sastoji se od nekoliko lekcija:
 
 - **2 Klijent**, u ovoj lekciji naučit ćete kako napisati klijenta koji se može povezati s vašim serverom, [na lekciju](02-client/README.md)
 
-- **3 Klijent s LLM-om**, još bolji način pisanja klijenta je dodavanjem LLM-a kako bi mogao "pregovarati" sa serverom o tome što treba napraviti, [na lekciju](03-llm-client/README.md)
+- **3 Klijent s LLM-om**, još bolji način pisanja klijenta je dodavanjem LLM-a kako bi mogao "pregovarati" sa serverom o tome što treba raditi, [na lekciju](03-llm-client/README.md)
 
-- **4 Korištenje servera u GitHub Copilot Agent modu u Visual Studio Code-u**. Ovdje ćemo pogledati kako pokrenuti naš MCP Server unutar Visual Studio Code-a, [na lekciju](04-vscode/README.md)
+- **4 Korištenje servera u GitHub Copilot Agent modu u Visual Studio Code-u**. Ovdje gledamo kako pokrenuti naš MCP Server iz Visual Studio Code-a, [na lekciju](04-vscode/README.md)
 
 - **5 Korištenje SSE (Server Sent Events)** SSE je standard za streaming s poslužitelja na klijenta, koji omogućuje serverima da šalju ažuriranja u stvarnom vremenu klijentima preko HTTP-a [na lekciju](05-sse-server/README.md)
 
@@ -25,7 +25,7 @@ Ovaj odjeljak sastoji se od nekoliko lekcija:
 
 - **7 Korištenje AI Toolkit-a za VSCode** za korištenje i testiranje vaših MCP klijenata i servera [na lekciju](07-aitk/README.md)
 
-- **8 Testiranje**. Ovdje ćemo se posebno usredotočiti na različite načine testiranja servera i klijenta, [na lekciju](08-testing/README.md)
+- **8 Testiranje**. Ovdje ćemo se posebno usredotočiti na različite načine testiranja našeg servera i klijenta, [na lekciju](08-testing/README.md)
 
 - **9 Deployanje**. Ovaj će poglavlje obraditi različite načine deployanja vaših MCP rješenja, [na lekciju](09-deployment/README.md)
 
@@ -34,7 +34,7 @@ Model Context Protocol (MCP) je otvoreni protokol koji standardizira način na k
 
 ## Ciljevi učenja
 
-Na kraju ove lekcije moći ćete:
+Do kraja ove lekcije moći ćete:
 
 - Postaviti razvojna okruženja za MCP u C#, Javi, Pythonu, TypeScriptu i JavaScriptu
 - Izgraditi i deployati osnovne MCP servere s prilagođenim značajkama (resursi, promptovi i alati)
@@ -61,7 +61,7 @@ Prije nego što se upustite u razvoj s MCP-om, provjerite imate li:
 
 U nadolazećim poglavljima vidjet ćete rješenja izrađena u Pythonu, TypeScriptu, Javi i .NET-u. Ovo su svi službeno podržani SDK-ovi.
 
-MCP nudi službene SDK-ove za više jezika:
+MCP pruža službene SDK-ove za više jezika:
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Održava se u suradnji s Microsoftom
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Održava se u suradnji sa Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Službena TypeScript implementacija
@@ -80,7 +80,7 @@ MCP nudi službene SDK-ove za više jezika:
 
 ## Vježbanje
 
-Imamo skup primjera koji nadopunjuju vježbe koje ćete vidjeti u svim poglavljima ovog odjeljka. Osim toga, svako poglavlje ima i svoje vježbe i zadatke
+Imamo skup primjera koji nadopunjuju vježbe koje ćete vidjeti u svim poglavljima ovog odjeljka. Osim toga, svako poglavlje ima i svoje vježbe i zadatke.
 
 - [Java Kalkulator](./samples/java/calculator/README.md)
 - [.Net Kalkulator](../../../03-GettingStarted/samples/csharp)
@@ -99,4 +99,4 @@ Imamo skup primjera koji nadopunjuju vježbe koje ćete vidjeti u svim poglavlji
 Sljedeće: [Kreiranje vašeg prvog MCP Servera](01-first-server/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

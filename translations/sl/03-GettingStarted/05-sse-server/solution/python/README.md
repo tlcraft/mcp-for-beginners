@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-05-17T12:06:40+00:00",
+  "translation_date": "2025-07-13T20:17:33+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "sl"
 }
 -->
-# Zagon tega vzorca
+# Zagon tega primera
 
-Priporočljivo je namestiti `uv`, ni pa nujno, glejte [navodila](https://docs.astral.sh/uv/#highlights)
+Priporočamo, da namestite `uv`, vendar ni nujno, poglejte [navodila](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Ustvarite virtualno okolje
 
@@ -29,13 +29,14 @@ venv\Scrips\activate
 pip install "mcp[cli]"
 ```
 
-## -3- Zaženite vzorec
+## -3- Zaženite primer
+
 
 ```bash
 mcp run server.py
 ```
 
-## -4- Testirajte vzorec
+## -4- Preizkusite primer
 
 Ko je strežnik zagnan v enem terminalu, odprite drug terminal in zaženite naslednji ukaz:
 
@@ -43,24 +44,24 @@ Ko je strežnik zagnan v enem terminalu, odprite drug terminal in zaženite nasl
 mcp dev server.py
 ```
 
-To bi moralo zagnati spletni strežnik z vizualnim vmesnikom, ki vam omogoča testiranje vzorca.
+To bi moralo zagnati spletni strežnik z vizualnim vmesnikom, ki vam omogoča testiranje primera.
 
 Ko je strežnik povezan:
 
-- poskusite naštevati orodja in zaženite `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- poskusite izpisati orodja in zaženite `add` z argumenti 2 in 4, v rezultatu bi morali videti 6.
+- pojdite na resources in resource template ter pokličite get_greeting, vnesite ime in videli boste pozdrav z vnesenim imenom.
 
-### Testing in ClI mode
+### Testiranje v CLI načinu
 
-The inspector you ran is actually a Node.js app and `mcp dev`, ki je ovoj okoli njega.
+Inspector, ki ste ga zagnali, je pravzaprav Node.js aplikacija, `mcp dev` pa je ovitek okoli nje.
 
-Lahko ga neposredno zaženete v načinu CLI z naslednjim ukazom:
+Lahko ga zaženete neposredno v CLI načinu z naslednjim ukazom:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-To bo prikazalo vsa orodja, ki so na voljo v strežniku. Videti bi morali naslednji izhod:
+To bo izpisalo vsa orodja, ki so na voljo na strežniku. Morali bi videti naslednji izpis:
 
 ```text
 {
@@ -97,7 +98,7 @@ Za klic orodja vnesite:
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Videti bi morali naslednji izhod:
+Videli boste naslednji izpis:
 
 ```text
 {
@@ -112,8 +113,8 @@ Videti bi morali naslednji izhod:
 ```
 
 > ![!TIP]
-> Običajno je veliko hitreje zagnati inšpektor v načinu CLI kot v brskalniku.
-> Več o inšpektorju preberite [tukaj](https://github.com/modelcontextprotocol/inspector).
+> Običajno je veliko hitreje zagnati inspector v CLI načinu kot v brskalniku.
+> Več o inspectorju preberite [tukaj](https://github.com/modelcontextprotocol/inspector).
 
-**Omejitev odgovornosti**:
-Ta dokument je bil preveden z uporabo storitve AI prevajanja [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za kritične informacije se priporoča profesionalni človeški prevod. Ne odgovarjamo za morebitna napačna razumevanja ali napačne interpretacije, ki bi nastale zaradi uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

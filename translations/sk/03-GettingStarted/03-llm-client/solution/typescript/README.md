@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6d6315e03f591fb5a39be91da88585dc",
-  "translation_date": "2025-05-17T10:58:20+00:00",
+  "translation_date": "2025-07-13T19:21:04+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/typescript/README.md",
   "language_code": "sk"
 }
 -->
-# Spustenie tejto ukážky
+# Spustenie tohto príkladu
 
-Táto ukážka zahŕňa použitie LLM na klientovi. LLM vyžaduje, aby ste ju buď spustili v Codespaces, alebo nastavili osobný prístupový token v GitHub, aby fungovala.
+Tento príklad vyžaduje mať LLM na klientovi. LLM potrebuje, aby ste to buď spustili v Codespaces, alebo si nastavili osobný prístupový token v GitHub, aby to fungovalo.
 
-## -1- Nainštalujte závislosti
+## -1- Inštalácia závislostí
 
 ```bash
 npm install
 ```
 
-## -3- Spustite server
+## -3- Spustenie servera
 
 ```bash
 npm run build
 ```
 
-## -4- Spustite klienta
+## -4- Spustenie klienta
 
 ```sh
 npm run client
 ```
 
-Mali by ste vidieť výsledok podobný:
+Mali by ste vidieť výsledok podobný tomuto:
 
 ```text
 Asking server for available tools
@@ -40,5 +40,5 @@ Calling tool add with args "{\"a\":2,\"b\":3}"
 Tool result:  { content: [ { type: 'text', text: '5' } ] }
 ```
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, uvedomte si, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny preklad ľudským prekladateľom. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

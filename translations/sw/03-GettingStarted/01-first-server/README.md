@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:12:50+00:00",
+  "translation_date": "2025-07-13T17:38:18+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "sw"
 }
@@ -41,7 +41,7 @@ Unapaswa kuona kiolesura cha mtumiaji kama ifuatavyo:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.sw.png)
 
-1. Chagua "Tools" kisha "listTools", unapaswa kuona "Add" inaonekana, chagua "Add" na jaza thamani za vigezo.
+1. Chagua "Tools" kisha "listTools", unapaswa kuona "Add" ikionekana, chagua "Add" na jaza thamani za vigezo.
 
    Unapaswa kuona jibu kama lifuatalo, yaani matokeo kutoka kwa chombo cha "add":
 
@@ -61,9 +61,9 @@ MCP hutoa SDK rasmi kwa lugha mbalimbali:
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Inasimamiwa kwa ushirikiano na Loopwork AI  
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Utekelezaji rasmi wa Rust  
 
-## Muhimu Kuu
+## Muhimu Kukumbuka
 
-- Kuanzisha mazingira ya maendeleo ya MCP ni rahisi kwa kutumia SDK za lugha maalum  
+- Kuanzisha mazingira ya maendeleo ya MCP ni rahisi kwa kutumia SDK maalum za lugha  
 - Kujenga seva za MCP kunahusisha kuunda na kusajili zana zenye miundo wazi  
 - Kupima na kutatua matatizo ni muhimu kwa utekelezaji wa MCP unaotegemewa  
 
