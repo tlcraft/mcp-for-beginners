@@ -29,9 +29,9 @@ You can control your MCP server in two different ways:
   <details>
   <summary>Screenshots</summary>
 
-  ![Guided MCP server configuration in Visual Studio Code](../images/03-GettingStarted/chat-mode-agent.png)
-  ![Tool selection per agent session](../images/03-GettingStarted/agent-mode-select-tools.png)
-  ![Easily debug errors during MCP development](../images/03-GettingStarted/mcp-list-servers.png)
+  ![Guided MCP server configuration in Visual Studio Code](../../images/03-GettingStarted/chat-mode-agent.png)
+  ![Tool selection per agent session](../../images/03-GettingStarted/agent-mode-select-tools.png)
+  ![Easily debug errors during MCP development](../../images/03-GettingStarted/mcp-list-servers.png)
   </details>
 
 Let's talk more about how we use the visual interface in the next sections.
